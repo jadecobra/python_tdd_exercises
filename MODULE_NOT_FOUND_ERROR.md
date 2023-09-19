@@ -192,6 +192,6 @@ tests/test_<PROJECT_NAME>.py .                           [100%]
 ================= 1 passed in 0.06s =========================
 ```
 
-***WELL DONE!!!***
+***WELL DONE!***
 You are on your way to being a troubleshooting master.
 You now know how to solve `ModuleNotFoundError`

@@ -1,4 +1,4 @@
-# How to solve the AttributeError in python
+# How to solve AttributeError in python
 
 Our exploration of python using Test Driven Development continues in this chapter with the `AttributeError`
 
@@ -13,7 +13,7 @@ Our exploration of python using Test Driven Development continues in this chapte
 An Attribute is a property, variable, function or name that belongs to an `object`. For example if we describe a human being we could list of attributes like height, weight, sex and color.
 An `AttributeError` is raised when there is a reference to a name in an `object` that does not exist.
 
-## How to solve the AttributeError by defining a Variable
+## How to solve AttributeError by defining a Variable
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -107,12 +107,12 @@ To get more practice on solving this error see [ModuleNotFoundError](./MODULE_NO
     ```python
     variable_0 = None
     ```
-    this explicity defines `variable_0` with a value of `None` and the terminal updates to show a passing test. YES!!!
+    this explicity defines `variable_0` with a value of `None` and the terminal updates to show a passing test. YES!
     ```shell
     collected 2 items
 
     tests/test_attribute_error.py .                                             [ 50%]
-    tests/test_<PROJECT_NAME>.py .                                                [100%]
+    tests/test_<PROJECT_NAME>.py .                                              [100%]
 
     ============================== 2 passed in 0.03s==================================
     ```
@@ -129,17 +129,12 @@ What is similar between `ModuleNotFoundError`, `AttributeError` and `NameError`?
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-There's not much to do here, we could repeat the above as a drill to make sure we remember the solution
+There's not much to do here, we could repeat the above as a drill to help remember the solution
 
 #### <span style="color:red">**RED**</span>: make it fail
-- Update `tests/test_attribute_error.py`
+
+- add a failing line to `test_defining_variables_to_solve_attribute_errors`
     ```python
-    import unittest
-    import module
-
-
-    class TestAttributeErrors(unittest.TestCase):
-
         def test_defining_variables_to_solve_attribute_errors(self):
             self.assertIsNone(module.variable_0)
             self.assertIsNone(module.variable_1)
@@ -149,53 +144,47 @@ There's not much to do here, we could repeat the above as a drill to make sure w
     E       AttributeError: module 'module' has no attribute 'variable_1'
     ```
 #### <span style="color:green">**GREEN**</span>: make it pass
-- <span style="color:red">**RED**</span>: make it fail - Update `module.py`
+- <span style="color:red">**RED**</span>: make it fail - add the name to `module.py`
     ```python
     variable_0 = None
     variable_1
     ```
-    the terminal will update to show a `NameError`
-    ```shell
+    the terminal shows a `NameError`
+    ```python
     E   NameError: name 'variable_1' is not defined
     ```
-- <span style="color:green">**GREEN**</span>: make it pass - Update `module.py`
+- <span style="color:green">**GREEN**</span>: make it pass - add a definition for `variable_1`
     ```python
     variable_0 = None
     variable_1 = None
     ```
-    The terminal will update to show passing tests
+    the terminal displays passing tests
 
 #### <span style="color:red">**RED**</span>: make it fail
-- Update `tests/test_attribute_error.py`
+- we add another failing line to `test_defining_variables_to_solve_attribute_errors`
     ```python
-    import unittest
-    import module
-
-
-    class TestAttributeErrors(unittest.TestCase):
-
         def test_defining_variables_to_solve_attribute_errors(self):
             self.assertIsNone(module.variable_0)
             self.assertIsNone(module.variable_1)
             self.assertIsNone(module.variable_2)
     ```
-    the terminal will update to show an `AttributeError`
+    the terminal shows an `AttributeError`
     ```shell
     >       self.assertIsNone(module.variable_2)
     E       AttributeError: module 'module' has no attribute 'variable_2'
     ```
 ##### <span style="color:green">**GREEN**</span>: make it pass
-- <span style="color:red">**RED**</span>: make it fail - Update `module.py`
+- <span style="color:red">**RED**</span>: make it fail - add the name to `module.py`
     ```python
     variable_0 = None
     variable_1 = None
     variable_2
     ```
-    the terminal will update to show a `NameError`
+    the terminal shows a `NameError`
     ```shell
     E   NameError: name 'variable_2' is not defined
     ```
-- <span style="color:green">**GREEN**</span>: make it pass - Update `module.py`
+- <span style="color:green">**GREEN**</span>: make it pass - define `variable_2` in `module.py`
     ```python
     variable_0 = None
     variable_1 = None
@@ -204,37 +193,32 @@ There's not much to do here, we could repeat the above as a drill to make sure w
     The tests pass
 
 ##### <span style="color:red">**RED**</span>: make it fail
-- Update `tests/test_attribute_error.py`
+- we add another failing line to `test_defining_variables_to_solve_attribute_errors`
     ```python
-    import unittest
-    import module
-
-
-    class TestAttributeErrors(unittest.TestCase):
-
         def test_defining_variables_to_solve_attribute_errors(self):
             self.assertIsNone(module.variable_0)
             self.assertIsNone(module.variable_1)
             self.assertIsNone(module.variable_2)
             self.assertIsNone(module.variable_3)
     ```
-    the terminal will update to show an `AttributeError`
+    the terminal shows an `AttributeError`
     ```shell
     E       AttributeError: module 'module' has no attribute 'variable_3'
     ```
+
 ##### <span style="color:green">**GREEN**</span>: make it pass
-- <span style="color:red">**RED**</span>: make it fail - Update `module.py`
+- <span style="color:red">**RED**</span>: make it fail - we add the name
     ```python
     variable_0 = None
     variable_1 = None
     variable_2 = None
     variable_3
     ```
-    the terminal will update to show a `NameError`
+    the terminal displays a `NameError`
     ```shell
     E   NameError: name 'variable_3' is not defined
     ```
-- <span style="color:green">**GREEN**</span>: make it pass - Update `module.py`
+- <span style="color:green">**GREEN**</span>: make it pass - we define the name
     ```python
     variable_0 = None
     variable_1 = None
@@ -242,7 +226,7 @@ There's not much to do here, we could repeat the above as a drill to make sure w
     variable_3 = None
     ```
 
-***LET'S MAKE A DRILL!!!***
+***LET'S MAKE A DRILL!***
 We know the pattern so we can drill it for practice. Update the `TestAttributeError` class in `tests/test_attribute_error.py` by sequentially adding more tests until you get to `self.assertIsNone(module.variable_99)`, you will have 102 statements in total
 ```python
 def test_defining_variables_to_solve_attribute_errors(self):
@@ -264,67 +248,67 @@ Repeat the pattern until all tests pass.
     false = False
     ```
 
-***WELL DONE!!!***
-You now know how to solve
-- `AssertionError`
-- `ModuleNotFoundError`
-- `NameError` using variables
-- `AttributeError` using variables
+***WELL DONE!***
+You now know
+- How to solve `ModuleNotFoundError`
+- How to solve `NameError` using variables
+- How to solve `AttributeError` using variables
 
-## How to solve the AttributeError by defining a Function
-Let us take a look at solving `AttributeError` for functions
+## How to solve AttributeError by defining a Function
+
+Let us take a look at solving `AttributeError` with functions
+
 ### <span style="color:red">**RED**</span>: make it fail
 
-- Update the `TestAttributeError` class in `tests/test_attribute_error.py` with
-    ```python
+Update the `TestAttributeError` class in `tests/test_attribute_error.py` with a new test
+
+```python
         def test_defining_functions_to_solve_attribute_errors(self):
             self.assertIsNone(module.function_0())
-    ```
-    the terminal updates to show
-    ```shell
-    E       AttributeError: module 'module' has no attribute 'function_0'
-    ```
-    solving it the same way as the previous `AttributeError` we update `module.py`
+```
+
+the terminal updates to show
+```shell
+E       AttributeError: module 'module' has no attribute 'function_0'
+```
+
+### <span style="color:green">**GREEN**</span>: make it pass
+- we try the solution we know for solving `AttributeError` using variables and update `module.py`
     ```python
-    ...
     function_0 = None
     ```
-    the terminal updates to show
+    the terminal shows a `TypeError`
     ```shell
     E       TypeError: 'NoneType' object is not callable
     ```
-    - we have encountered a new exception `TypeError`
-    - a `TypeError` occurs in this case because we `called` an object that was not `callable`
-    - What is a callable object? In python, it is any object you can reference that does something other than return a value. You can define a callable as a `class` or a `function`
-    - When an object is defined as a callable, we call it by adding parentheses at the end e.g. `function_0()` will call `function_0` in `module.py`
-    - Add `TypeError` to our list of exceptions encountered
-    ```python
-    # Exceptions Encountered
-    # AssertionError
-    # ModuleNotFoundError
-    # AttributeError
-    # NameError
-    # TypeError
-    ```
+    - this is new so we update our list of exceptions encountered
+        ```python
+        # Exceptions Encountered
+        # AssertionError
+        # ModuleNotFoundError
+        # AttributeError
+        # NameError
+        # TypeError
+        ```
+    a `TypeError` occurs in this case because we `called` an object that was not `callable`. A callable object is an object that can take potentially take in arguments(inputs). We can define a callable as a `class` or a `function`. We go over callables in [Functions](./FUNCTIONS.md) and [Classes](./CLASSES.md)
 
-### <span style="color:green">**GREEN**</span>: make it pass
-
-- change `function_0` in `module.py` to a function by updating `module.py` to
+    When an object is defined as a callable, we call it by adding parentheses at the end e.g. `module.function_0()` will call `function_0` in `module.py`
+- we change `function_0` in `module.py` to a function by modifying its definition using the `def` keyword
     ```python
     def function_0():
         return None
     ```
     the terminal updates to show tests pass
 
-> ***What is a Function?***
-> - A `function` is a named block of code that performs some action or series of actions
-> - In python a function always returns something
-> - the default return value of a function is `None`
-> - the line with `return` is the last executable line of code in a function
+    > ***What is a Function?***
+    > - A `function` is a named block of code that performs some action or series of actions
+    > - In python a function always returns something
+    > - the default return value of a function is `None`
+    > - the line with `return` is the last executable line of code in a function
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-- Let's make it a drill, update `test_defining_functions_to_solve_attribute_errors` in the `TestAttributeError` class in`tests/test_attribute_error.py` to include
+- Let's make it a drill like we did with variables, update `test_defining_functions_to_solve_attribute_errors` in the `TestAttributeError` class in`tests/test_attribute_error.py` to include
     ```python
     def test_defining_functions_to_solve_attribute_errors(self):
         self.assertIsNone(module.function_0())
@@ -340,16 +324,14 @@ Let us take a look at solving `AttributeError` for functions
     ```
     update `module.py` with the solution until all tests pass
 
-***WELL DONE!!!***
-You now know how to solve
-- `AssertionError`
-- `ModuleNotFoundError`
-- `NameError`
-- `AttributeError` by defining
-    - variables
-    - functions
+***YOU DID IT AGAIN!***
+You now know
+- How to solve `AssertionError`
+- How to solve `ModuleNotFoundError`
+- How to solve `NameError`
+- How to solve  `AttributeError` by defining variables and functions
 
-## How to solve the AttributeError by defining a Class
+## How to solve AttributeError by defining a Class
 
 Classes
 - A class is a blueprint that represents an object
@@ -414,7 +396,7 @@ Classes
     ```
     update `module.py` with the solution until all tests pass
 
-***WELL DONE!!!***
+***WELL DONE!***
 You now know how to solve
 - `AssertionError`
 - `ModuleNotFoundError`
@@ -425,7 +407,7 @@ You now know how to solve
     - classes?
         - do we know how to define classes? so far our solution looks the same as defining functions. What's the difference between functions and classes?
 
-## How to solve the AttributeError by defining an Attribute in a Class
+## How to solve AttributeError by defining an Attribute in a Class
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -522,7 +504,7 @@ You now know how to solve
     ```
     update `module.py` with the solution until all tests pass
 
-***WELL DONE!!!***
+***WELL DONE!***
 You now know how to solve
 - `AssertionError`
 - `ModuleNotFoundError`
@@ -533,7 +515,7 @@ You now know how to solve
     - classes
     - attributes in classes
 
-## How to solve the AttributeError by defining a Method(Function) in a Class
+## How to solve AttributeError by defining a Method(Function) in a Class
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -585,7 +567,7 @@ def test_defining_functions_in_classes_to_solve_attribute_errors(self):
 ```
 repeat the solution until all tests pass
 
-***WELL DONE!!!***
+***WELL DONE!***
 You now know how to solve
 - `AssertionError`
 - `ModuleNotFoundError`

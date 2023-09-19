@@ -252,7 +252,7 @@ Let's test this with `function_a`. update `function_a` in `functions.py` with `*
 
 Try this with both `function_c` and `function_d`, all tests still pass.
 
-***LOVELY!!!***
+***LOVELY!***
 You now know how to solve
 - `AssertionError`
 - `ModuleNotFoundError`

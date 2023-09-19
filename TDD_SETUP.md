@@ -31,7 +31,7 @@ Here's the Test Driven Development mantra paraphrased -
     ```shell
     mkdir -p project_name/tests
     cd project_name
-    touch project_name.py
+    touch <PROJECT_NAME>.py
     touch tests/__init__.py
     touch tests/test_<PROJECT_NAME>.py
     ```
@@ -39,7 +39,7 @@ Here's the Test Driven Development mantra paraphrased -
 - Tests are stored in the `tests` folder to separate them from the actual source code
 - The `__init__.py` file in the `tests` folder tells python that this is a python package
 - The actual test file is called `test_<PROJECT_NAME>.py`
-- The python module we are creating is called `project_name.py`
+- The python module we are creating is called `<PROJECT_NAME>.py`
 - What is a module? A python module is any file that ends in `.py`
 - Your folder structure should look like this
     ```
@@ -47,7 +47,7 @@ Here's the Test Driven Development mantra paraphrased -
     |--tests
     |   |--__init__.py
     |   |--test_<PROJECT_NAME>.py
-    |--project_name.py
+    |--<PROJECT_NAME>.py
     ```
 
 ---
@@ -193,7 +193,7 @@ How do we avoid this repetition and focus on tests and solutions?
     |--tests
     |   |--__init__.py
     |   |--test_<PROJECT_NAME>.py
-    |--project_name.py
+    |--<PROJECT_NAME>.py
     |--requirements.txt
     ```
 
