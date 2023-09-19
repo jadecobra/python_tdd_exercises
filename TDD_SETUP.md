@@ -168,7 +168,7 @@ How do we avoid this repetition and focus on tests and solutions?
 
 ### How to Automatically Run Tests
 
-#### How to Setup a Virtual Environment
+#### Setup a Virtual Environment
 
 > ***Are you on a Windows machine? If you are not using WSL***
 > - replace `python3` in the examples with `python`
@@ -219,10 +219,9 @@ You just created a [virtual environment](https://docs.python.org/3/library/venv.
     ======================= 1 passed in 0.00s ============================
     ```
 
-> ***NOTE***
-> #### How To activate a virtual environment when one exists
-> - Open your terminal
-> - change directory to <PROJECT_NAME>
-> - activate the virtual environment by typing `source .venv/bin/activate`
+#### Activate a Virtual Environment
+- Open your terminal
+- change directory to <PROJECT_NAME>
+- activate the virtual environment by typing `source .venv/bin/activate`
 
 ***CONGRATULATIONS!*** You have successfully setup a python Test Driven Environment and can build anything you want. Go forth and conquer the world
