@@ -6,7 +6,7 @@ We know that there are two boolean values
 - `True`
 - `False`
 
-## Prerequisites
+### Prerequisites
 
 - [Setup a Test Driven Development Environment](./TDD_SETUP.md)
 

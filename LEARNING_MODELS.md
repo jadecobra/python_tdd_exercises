@@ -2,7 +2,7 @@
 
 Congratulations! You have journeyed with me through some exercises to help you get more familiar with Test Driven Development and Python. What follows is an exercise in measuring learning. It is somewhat philosophical in its meaning but arithmetic in its representation. I am curious to know what you think and what solutions you come up with
 
-## Prerequisites
+### Prerequisites
 
 - [Setup a Test Driven Development Environment](./TDD_SETUP.md)
 

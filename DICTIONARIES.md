@@ -2,7 +2,7 @@
 
 We will cover `lists/arrays` in python using Test Driven Development
 
-## Prerequisites
+### Prerequisites
 
 - [Setup a Test Driven Development Environment](./TDD_SETUP.md)
 
@@ -688,4 +688,3 @@ the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 update the test with the right value to make it pass
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
-

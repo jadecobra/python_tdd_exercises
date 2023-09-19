@@ -2,7 +2,7 @@
 
 We will step through solving a `ModuleNotFoundError` in python using Test Driven Development
 
-## Prerequisites
+### Prerequisites
 
 - [Setup a Test Driven Development Environment](./TDD_SETUP.md)
 

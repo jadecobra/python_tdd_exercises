@@ -11,7 +11,7 @@ Reviewing what we know so far
 - `False` is `False`
 - `True` is `True`
 
-## Prerequisites
+### Prerequisites
 
 - [Setup a Test Driven Development Environment](./TDD_SETUP.md)
 

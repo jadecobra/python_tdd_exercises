@@ -1,8 +1,8 @@
 # How to solve the AttributeError in python
 
-We will step through solving an `AttributeError` in python using Test Driven Development
+Our exploration of python using Test Driven Development continues in this chapter with the `AttributeError`
 
-## Prerequisites
+### Prerequisites
 
 - [Setup a Test Driven Development Environment](./TDD_SETUP.md)
 

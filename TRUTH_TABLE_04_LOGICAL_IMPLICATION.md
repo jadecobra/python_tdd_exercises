@@ -14,7 +14,7 @@ Reviewing what we know so far, for any boolean operation involving 2 inputs - `p
 - `return True if x else y` can be rewritten as `return x` if `x` evaluates to `True`
 - when there are multiple outcomes we only need to write the condition for the special case and use `else` for the others
 
-## Prerequisites
+### Prerequisites
 
 - [Setup a Test Driven Development Environment](./TDD_SETUP.md)
 

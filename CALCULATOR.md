@@ -2,7 +2,7 @@
 
 We will step through creating a calculator using Test Driven Development
 
-## Prerequisites
+### Prerequisites
 
 - [Setup a Test Driven Development Environment](./TDD_SETUP.md)
 
