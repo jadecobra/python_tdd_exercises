@@ -221,7 +221,7 @@ the terminal updates to show a `NameError`
     import exceptions
     ```
     the terminal updates to show a `ModuleNotFoundError`
-- create a file named `exceptions.py` in the `project_name` folder, and the terminal updates to show an `AttributeError`
+- create a file named `exceptions.py` in the `<PROJECT_NAME>` folder, and the terminal updates to show an `AttributeError`
 - update `exceptions.py` and the terminal updates to show a `NameError` since we have not defined `raises_exception_error`
     ```python
     raises_exception_error

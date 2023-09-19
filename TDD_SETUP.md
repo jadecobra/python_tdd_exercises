@@ -33,12 +33,12 @@ Here's the Test Driven Development mantra paraphrased -
     cd project_name
     touch project_name.py
     touch tests/__init__.py
-    touch tests/test_project_name.py
+    touch tests/test_<PROJECT_NAME>.py
     ```
 - `project_name` is a placeholder for the name of the project e.g. if you are building a project called `the_greatest_application`, replace `project_name` with `the_greatest_application`. We are going to place all our code for this project in the `project_name` folder
 - Tests are stored in the `tests` folder to separate them from the actual source code
 - The `__init__.py` file in the `tests` folder tells python that this is a python package
-- The actual test file is called `test_project_name.py`
+- The actual test file is called `test_<PROJECT_NAME>.py`
 - The python module we are creating is called `project_name.py`
 - What is a module? A python module is any file that ends in `.py`
 - Your folder structure should look like this
@@ -46,7 +46,7 @@ Here's the Test Driven Development mantra paraphrased -
     project_name
     |--tests
     |   |--__init__.py
-    |   |--test_project_name.py
+    |   |--test_<PROJECT_NAME>.py
     |--project_name.py
     ```
 
@@ -54,7 +54,7 @@ Here's the Test Driven Development mantra paraphrased -
 
 ## <span style="color:red">**RED**</span>: make it fail
 
-- Open up `project_name/tests/test_project_name.py` in your Interactive Development Environment(IDE) and type the following
+- Open up `project_name/tests/test_<PROJECT_NAME>.py` in your Interactive Development Environment(IDE) and type the following
     ```python
     import unittest
 
@@ -83,7 +83,7 @@ Here's the Test Driven Development mantra paraphrased -
     FAIL: test_failure (tests.TestProjectName.test_failure)
     ------------------------------------------------------
     Traceback (most recent call last):
-    File "/<PATH_TO_PROJECT>/project_name/tests/test_project_name.py", line 7, in test_failure
+    File "/<PATH_TO_PROJECT>/<PROJECT_NAME>/tests/test_<PROJECT_NAME>.py", line 7, in test_failure
         self.assertFalse(True)
     AssertionError: True is not false
 
@@ -117,7 +117,7 @@ The error provides important information about the code. Looking at it from the 
     # AssertionError
     ```
 - `self.assertFalse(True)` the line of code that caused the failure
-- `File "/<PATH_TO_CALCULATOR>/project_name/tests/test_project_name.py", line 7, in test_failure` where in the file the error occurred - line 7 in the `test_failure` function in the `test_project_name.py` file. Clicking on this line will place your cursor at the position in the Interactive Development Environment(IDE)
+- `File "/<PATH_TO_PROJECT>/<PROJECT_NAME>/tests/test_<PROJECT_NAME>.py", line 7, in test_failure` where in the file the error occurred - line 7 in the `test_failure` function in the `test_<PROJECT_NAME>.py` file. Clicking on this line will place your cursor at the position in the Interactive Development Environment(IDE)
 - `Traceback (most recent call last):` all the information returned by python is the traceback, showing the most recent call python made last
 - `FAIL: test_failure (tests.TestProjectName.test_failure)` a header giving information about the test
     - `tests.TestProjectName.test_failure` is the location of the failing test
@@ -192,7 +192,7 @@ How do we avoid this repetition and focus on tests and solutions?
     |--.venv
     |--tests
     |   |--__init__.py
-    |   |--test_project_name.py
+    |   |--test_<PROJECT_NAME>.py
     |--project_name.py
     |--requirements.txt
     ```
@@ -214,7 +214,7 @@ You just created a [virtual environment](https://docs.python.org/3/library/venv.
     rootdir: <YOUR_PATH>/project_name
     collected 1 item
 
-    tests/test_project_name.py .                                                                                                    [100%]
+    tests/test_<PROJECT_NAME>.py .                                                                                                    [100%]
 
     ======================= 1 passed in 0.00s ============================
     ```

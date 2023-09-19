@@ -127,7 +127,7 @@ import module_99
 If you left `pytest-watch` running from [Setup a Test Driven Development Environment](./TDD_SETUP.md) you should see the following in the terminal
 
 ```shell
-ImportError while importing test module '/<PATH_TO_PROJECT_NAME>/project_name/tests/test_module_not_found_error.py'.
+ImportError while importing test module '/<PATH_TO_PROJECT_NAME>/<PROJECT_NAME>/tests/test_module_not_found_error.py'.
 Hint: make sure your test modules/packages have valid python names.
 Traceback:
 /Library/Frameworks/python.framework/Versions/3.11/lib/python3.11/importlib/__init__.py:126: in import_module
@@ -143,7 +143,7 @@ Looking at the traceback starting from the bottom
 - `import module_0` - the piece of code that caused the failure
 - `tests/test_module_not_found_error.py:1: in <module>` - the file that caused the failure and the line in the file where the failure occurs
 - `Hint: make sure your test modules/packages have valid python names.` depending on your python version you might not see this. A suggestion to help solve the problem
-- `ImportError while importing test module '/Users/johnnyblase/gym/gym/python_tdd/project_name/tests/test_module_not_found_error.py'.` - A description of the error encountered and when in the execution it occurred
+- `ImportError while importing test module '/Users/johnnyblase/gym/gym/python_tdd/<PROJECT_NAME>/tests/test_module_not_found_error.py'.` - A description of the error encountered and when in the execution it occurred
 - Add the errors to the running list of Exceptions encountered
     ```
     # Exceptions Encountered
@@ -155,7 +155,7 @@ For more information about imports you can read [The Import Statement](https://d
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
-- create `module_0.py` in the `project_name` folder
+- create `module_0.py` in the `<PROJECT_NAME>` folder
 - the terminal will update to show the following
 
 ```shell
@@ -163,7 +163,7 @@ For more information about imports you can read [The Import Statement](https://d
 E   ModuleNotFoundError: No module named 'module_1'
 ```
 
-- create `module_1.py` in the `project_name` folder
+- create `module_1.py` in the `<PROJECT_NAME>` folder
 - the terminal will update to show the following
 
 ```shell
@@ -171,7 +171,7 @@ E   ModuleNotFoundError: No module named 'module_1'
 E   ModuleNotFoundError: No module named 'module_2'
 ```
 
-- create `module_2.py` in the `project_name` folder
+- create `module_2.py` in the `<PROJECT_NAME>` folder
 - the terminal will update to show the following
 
 ```shell
@@ -187,7 +187,7 @@ platform darwin -- python 3.11.0, pytest-7.4.0, pluggy-1.2.0
 rootdir: /Users/johnnyblase/gym/gym/python_tdd/project_name
 collected 1 item
 
-tests/test_project_name.py .                           [100%]
+tests/test_<PROJECT_NAME>.py .                           [100%]
 
 ================= 1 passed in 0.06s =========================
 ```

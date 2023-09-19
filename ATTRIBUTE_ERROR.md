@@ -17,44 +17,51 @@ An `AttributeError` is raised when there is a reference to a name in an `object`
 
 ### <span style="color:red">**RED**</span>: make it fail
 
-- We open a new file in the editor and save it as `test_attribute_error.py` in the `tests` folder you created in [Setup a Test Driven Development Environment](./TDD_SETUP.md) then type the following in the file
+We open a new file, save it as `test_attribute_error.py` in the `tests` folder you created in [Setup a Test Driven Development Environment](./TDD_SETUP.md) then type the following
 
-    ```python
-    import unittest
+```python
+import unittest
+import module
+
+
+class TestAttributeErrors(unittest.TestCase):
+
+    def test_defining_variables_to_solve_attribute_errors(self):
+        self.assertIsNone(module.variable_0)
+```
+
+What does the code above mean?
+- `import unittest` imports the unittest module from the python standard library
+- `import module` import module from somewhere - this is going to hold the solution we write
+- `class TestAttributeErrors(unittest.TestCase):` - a class definition that inherits from `unittest.TestCase` and will hold our tests
+- `def test_defining_variables_to_solve_attribute_errors(self):` the definition of our first test function. we try to test one thing with our test function. In this case we are testing if definining variables can solve an `AttributeError`
+- `self.assertIsNone(module.variable_0)` - the actual test. This is equivalent to asking the question `is module.variable_0 equal to None`
+- `assertIsNone` is one of the helper functions inherited from `unittest.TestCase`. See [AssertionError](./ASSERTION_ERROR.md) for more details
+- `self` refers to the `TestAttributeError` class
+
+If you left `pytest-watch` running from [Setup a Test Driven Development Environment](./TDD_SETUP.md) you should see a message similar to the following in the terminal
+```shell
+ImportError while importing test module '/<PATH_TO_PROJECT_NAME>/<PROJECT_NAME>/tests/test_attribute_error.py'.
+Hint: make sure your test modules/packages have valid python names.
+Traceback:
+/Library/Frameworks/python.framework/Versions/3.11/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+tests/test_attribute_error.py:2: in <module>
     import module
+E   ModuleNotFoundError: No module named 'module'
+```
 
-
-    class TestAttributeErrors(unittest.TestCase):
-
-        def test_defining_variables_to_solve_attribute_errors(self):
-            self.assertIsNone(module.variable_0)
-    ```
-    What is the code above doing?
-    - `import unittest` imports the unittest module from the python standard library
-    - `import module` import module from somewhere - this is going to hold the solution we write
-    - `class TestAttributeErrors(unittest.TestCase):` - a class definition that inherits from `unittest.TestCase` and will hold our tests
-    - `def test_defining_variables_to_solve_attribute_errors(self):` the definition of our first test function. we try to test one thing with our test function. In this case we are testing if definining variables can solve an `AttributeError`
-    - `self.assertIsNone(module.variable_0)` - the actual test. This is equivalent to asking the question `is module.variable_0 equal to None`
-    - `assertIsNone` is one of the helper functions inherited from `unittest.TestCase`
-    - `self` refers to the `TestAttributeError` class
-
-    If you left `pytest-watch` running from [Setup a Test Driven Development Environment](./TDD_SETUP.md) you should see the following in the terminal
-    ```shell
-    ImportError while importing test module '/<PATH_TO_PROJECT_NAME>/project_name/tests/test_attribute_error.py'.
-    Hint: make sure your test modules/packages have valid python names.
-    Traceback:
-    /Library/Frameworks/python.framework/Versions/3.11/lib/python3.11/importlib/__init__.py:126: in import_module
-        return _bootstrap._gcd_import(name[level:], package, level)
-    tests/test_attribute_error.py:2: in <module>
-        import module
-    E   ModuleNotFoundError: No module named 'module'
-    ```
-
-    This error was encountered in [00_TDD_MODULE_NOT_FOUND_ERROR](./00_TDD_MODULE_NOT_FOUND_ERROR.md). We know how to solve it.
+To get more practice on solving this error see [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
-- create `module.py` in the `project_name` folder and the terminal will update to show the following
+- we update the running list of exceptions encountered
+    ```python
+    # Exceptions Encountered
+    # AssertionError
+    # ModuleNotFoundError
+    ```
+- create `module.py` in the `<PROJECT_NAME>` folder and the terminal will update to show the following
     ```shell
     self = <tests.test_attribute_error.TestAttributeError testMethod=test_defining_variables_to_solve_attribute_errors>
 
@@ -63,24 +70,30 @@ An `AttributeError` is raised when there is a reference to a name in an `object`
     E       AttributeError: module 'module' has no attribute 'variable_0'
     ```
     Looking at the traceback starting from the bottom
-    - `tests/test_attribute_error.py:7: AttributeError` the location and name of the Error that causes the failure
-    - `E       AttributeError: module 'module' has no attribute 'variable_0'` the module we imported has no definitions named `variable_0`
-    - `>       self.assertIsNone(module.variable_0)` the line of code that errored out during execution
+    - `tests/test_attribute_error.py:7: AttributeError` the location i.e. filename and line number and name of the Exception that is raised
+    - `E       AttributeError: module 'module' has no attribute 'variable_0'` an explanation of the error which is raised because the module we imported has no definitions named `variable_0`. we update our list of exceptions encountered
+        ```python
+        # Exceptions Encountered
+        # AssertionError
+        # ModuleNotFoundError
+        # AttributeError
+        ```
+    - `>       self.assertIsNone(module.variable_0)` the line of code that caused the error. As seen from the error explanation above the file `module.py` has no definitions named `variable_0`. This is like making a phone call to a number that is not in service or sending an e-mail to an address that does not exist
     - `def test_defining_variables_to_solve_attribute_errors(self):` the function definition where the error occurs
-    - `self = <tests.test_attribute_error.TestAttributeError testMethod=test_defining_variables_to_solve_attribute_errors>` - A reference to the class and method(function) that caused the failure
-- Open `module.py` in the Interactive Development Environment(IDE) and add the following
+    - `self = <tests.test_attribute_error.TestAttributeError testMethod=test_defining_variables_to_solve_attribute_errors>` - A reference to the class and method(function) where the failure occurred
+- edit `module.py` with a name
     ```python
     variable_0
     ```
     The terminal will update to show the following
-    ```shell
+    ```
     tests/test_attribute_error.py:2: in <module>
         import module
     module.py:1: in <module>
         variable_0
     E   NameError: name 'variable_0' is not defined
     ```
-    - `E   NameError: name 'variable_0' is not defined` this is a new error so we add it to our running list of errors encountered. The running list now looks like this
+    - `E   NameError: name 'variable_0' is not defined` this is a new error so we add it to our running list of errors encountered. The running list of exceptions encountered now looks like this
         ```
         # Exceptions Encountered
         # AssertionError
@@ -88,11 +101,6 @@ An `AttributeError` is raised when there is a reference to a name in an `object`
         # AttributeError
         # NameError
         ```
-        A `NameError` is raised when there is a reference in an object with no definition
-        - What is the difference between a `NameError` and an `AttributeError`?
-            - An `AttributeError` occurs when there is a reference to a name in an object and the name does not exist e.g. `object.name`
-            - A `NameError` occurs when there is a reference to a name with no prior definition
-        - What is similar between `ModuleNotFoundError`, `AttributeError` and `NameError`?
     - `variable_0` the offending line
     - `module.py:1: in <module>` the location of the offending line
 - Update `module.py` in the Interactive Development Environment(IDE) to
@@ -104,14 +112,20 @@ An `AttributeError` is raised when there is a reference to a name in an `object`
     collected 2 items
 
     tests/test_attribute_error.py .                                             [ 50%]
-    tests/test_project_name.py .                                                [100%]
+    tests/test_<PROJECT_NAME>.py .                                                [100%]
 
     ============================== 2 passed in 0.03s==================================
     ```
 
-> ***What is the difference between `=` and `==` in python?***
-> - `=` is used to assign names to objects e.g. `five = 5` means we can later refer to the number `5` with the name `five`
-> - `==` is used to check if two things are equal e.g. `5 == 4` means we want to know if `5` is equal to `4`
+#### What is similar? What is different?
+
+An `AttributeError` occurs when there is a reference to a name in an object from outside the object and the name does not exist e.g. `object.name` while a `NameError` occurs when there is a reference to a name within an object and there is no prior definition of the name e.g. `name`
+
+What is similar between `ModuleNotFoundError`, `AttributeError` and `NameError`?
+
+> NOTE
+>
+> In python `=` is used to assign names to objects, so if we have this line `five = 5`, it means we can later refer to the number `5` with the name `five`, the equality sign `==` on the other hand is used to check if two things are equal e.g. `5 == 4` means we want to know if `5` is equal to `4`
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 

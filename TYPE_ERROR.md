@@ -37,7 +37,7 @@ What does it mean to call a function?
         import functions
     E   ModuleNotFoundError: No module named 'functions'
     ```
-- Ah, a `ModuleNotFoundError`, We have a lot of practice solving this error from [00_TDD_MODULE_NOT_FOUND_ERROR](./00_TDD_MODULE_NOT_FOUND_ERROR.md). Let's create a file named `functions.py` and the terminal updates to show
+- Ah, a `ModuleNotFoundError`, We have a lot of practice solving this error from [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md). Let's create a file named `functions.py` and the terminal updates to show
     ```python
     >       self.assertIsNone(functions.function_a("a"))
     E       AttributeError: module 'functions' has no attribute 'function_a'
