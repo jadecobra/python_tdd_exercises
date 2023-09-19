@@ -28,6 +28,7 @@ What does it mean to call a function?
 
 
     class TestTypeErrors(unittest.TestCase):
+
         def test_function_signatures_solve_type_errors(self):
             self.assertIsNone(functions.function_a("a"))
     ```

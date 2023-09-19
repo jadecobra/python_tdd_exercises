@@ -41,7 +41,7 @@ We will create a new file in the `tests` folder named `test_assertion_error.py`.
 import unittest
 
 
-class TestAssertionError(unittest.TestCase):
+class TestAssertionErrors(unittest.TestCase):
 
     def test_assertion_errors_with_none(self):
         assert False is None

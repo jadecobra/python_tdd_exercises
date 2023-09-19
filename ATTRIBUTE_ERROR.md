@@ -8,30 +8,31 @@ Our exploration of python using Test Driven Development continues in this chapte
 
 ---
 
-## Attributes
+## What is an Attribute?
 
-Attributes are properties/variables/names that belong to an object.
-An `AttributeError` is raised when there is a reference an attribute/property/name/variable that does not exist in the object called
+An Attribute is a property, variable, function or name that belongs to an `object`. For example if we describe a human being we could list of attributes like height, weight, sex and color.
+An `AttributeError` is raised when there is a reference to a name in an `object` that does not exist.
 
 ## How to solve the AttributeError by defining a Variable
 
 ### <span style="color:red">**RED**</span>: make it fail
 
-- Open a new file in the editor and save it as `tests/test_attribute_error.py` in the `tests` folder you created in [Setup a Test Driven Development Environment](./TDD_SETUP.md) and type the following in the file
+- We open a new file in the editor and save it as `test_attribute_error.py` in the `tests` folder you created in [Setup a Test Driven Development Environment](./TDD_SETUP.md) then type the following in the file
 
     ```python
     import unittest
     import module
 
 
-    class TestAttributeError(unittest.TestCase):
+    class TestAttributeErrors(unittest.TestCase):
+
         def test_defining_variables_to_solve_attribute_errors(self):
             self.assertIsNone(module.variable_0)
     ```
     What is the code above doing?
     - `import unittest` imports the unittest module from the python standard library
     - `import module` import module from somewhere - this is going to hold the solution we write
-    - `class TestAttributeError(unittest.TestCase):` - a class definition that inherits from `unittest.TestCase` and will hold our tests
+    - `class TestAttributeErrors(unittest.TestCase):` - a class definition that inherits from `unittest.TestCase` and will hold our tests
     - `def test_defining_variables_to_solve_attribute_errors(self):` the definition of our first test function. we try to test one thing with our test function. In this case we are testing if definining variables can solve an `AttributeError`
     - `self.assertIsNone(module.variable_0)` - the actual test. This is equivalent to asking the question `is module.variable_0 equal to None`
     - `assertIsNone` is one of the helper functions inherited from `unittest.TestCase`
@@ -123,7 +124,8 @@ There's not much to do here, we could repeat the above as a drill to make sure w
     import module
 
 
-    class TestAttributeError(unittest.TestCase):
+    class TestAttributeErrors(unittest.TestCase):
+
         def test_defining_variables_to_solve_attribute_errors(self):
             self.assertIsNone(module.variable_0)
             self.assertIsNone(module.variable_1)
@@ -156,7 +158,8 @@ There's not much to do here, we could repeat the above as a drill to make sure w
     import module
 
 
-    class TestAttributeError(unittest.TestCase):
+    class TestAttributeErrors(unittest.TestCase):
+
         def test_defining_variables_to_solve_attribute_errors(self):
             self.assertIsNone(module.variable_0)
             self.assertIsNone(module.variable_1)
@@ -193,7 +196,8 @@ There's not much to do here, we could repeat the above as a drill to make sure w
     import module
 
 
-    class TestAttributeError(unittest.TestCase):
+    class TestAttributeErrors(unittest.TestCase):
+
         def test_defining_variables_to_solve_attribute_errors(self):
             self.assertIsNone(module.variable_0)
             self.assertIsNone(module.variable_1)
