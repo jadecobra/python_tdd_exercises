@@ -73,7 +73,7 @@ and the terminal shows the test passed
 
 We can also use some methods from the `unittest.TestCase` class to make assertions
 
-- ##### <span style="color:red">**RED**</span>: make it fail
+- #### <span style="color:red">**RED**</span>: make it fail
     let's add another line to `test_assertion_errors_with_none` using the `unittest.TestCase.assertIsNone` method
     ```python
             self.assertIsNone(False)
