@@ -10,14 +10,14 @@ Our exploration of python using Test Driven Development continues in this chapte
 
 ## What is an Attribute?
 
-An Attribute is a property, variable, function or name that belongs to an `object`. For example if we describe a human being we could list of attributes like height, weight, sex and color.
+An Attribute is a property, variable, function or name that belongs to an `object`. For example, if we describe a human being we could list attributes like height, weight, sex and color.
 An `AttributeError` is raised when there is a reference to a name in an `object` that does not exist.
 
 ## How to solve AttributeError by defining a Variable
 
 ### <span style="color:red">**RED**</span>: make it fail
 
-We open a new file, save it as `test_attribute_error.py` in the `tests` folder you created in [Setup a Test Driven Development Environment](./TDD_SETUP.md) then type the following
+We open a new file, save it as `test_attribute_error.py` in the `tests` folder created in [Setup a Test Driven Development Environment](./TDD_SETUP.md) and type the following
 
 ```python
 import unittest
@@ -31,12 +31,12 @@ class TestAttributeErrors(unittest.TestCase):
 ```
 
 What does the code above mean?
-- `import unittest` imports the unittest module from the python standard library
-- `import module` import module from somewhere - this is going to hold the solution we write
-- `class TestAttributeErrors(unittest.TestCase):` - a class definition that inherits from `unittest.TestCase` and will hold our tests
-- `def test_defining_variables_to_solve_attribute_errors(self):` the definition of our first test function. we try to test one thing with our test function. In this case we are testing if definining variables can solve an `AttributeError`
+- `import unittest` imports the `unittest` module from the python standard library
+- `import module` imports the `module` module - this is going to hold the solution we write
+- `class TestAttributeErrors(unittest.TestCase):` - a class definition that inherits from `unittest.TestCase` and will hold our tests. We learn more about this in [Classes](./CLASSES.md)
+- `def test_defining_variables_to_solve_attribute_errors(self):` the definition of our first test function to find out if defining variables can solve an `AttributeError`
 - `self.assertIsNone(module.variable_0)` - the actual test. This is equivalent to asking the question `is module.variable_0 equal to None`
-- `assertIsNone` is one of the helper functions inherited from `unittest.TestCase`. See [AssertionError](./ASSERTION_ERROR.md) for more details
+- `assertIsNone` is one of the helper functions inherited from `unittest.TestCase`. We learn more about this in [AssertionError](./ASSERTION_ERROR.md)
 - `self` refers to the `TestAttributeError` class
 
 If you left `pytest-watch` running from [Setup a Test Driven Development Environment](./TDD_SETUP.md) you should see a message similar to the following in the terminal
@@ -44,14 +44,13 @@ If you left `pytest-watch` running from [Setup a Test Driven Development Environ
 ImportError while importing test module '/<PATH_TO_PROJECT_NAME>/<PROJECT_NAME>/tests/test_attribute_error.py'.
 Hint: make sure your test modules/packages have valid python names.
 Traceback:
-/Library/Frameworks/python.framework/Versions/3.11/lib/python3.11/importlib/__init__.py:126: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
+...
 tests/test_attribute_error.py:2: in <module>
     import module
 E   ModuleNotFoundError: No module named 'module'
 ```
 
-To get more practice on solving this error see [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md)
+We practice solving this error in [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
@@ -62,7 +61,7 @@ To get more practice on solving this error see [ModuleNotFoundError](./MODULE_NO
     # ModuleNotFoundError
     ```
 - create `module.py` in the `<PROJECT_NAME>` folder and the terminal will update to show the following
-    ```shell
+    ```python
     self = <tests.test_attribute_error.TestAttributeError testMethod=test_defining_variables_to_solve_attribute_errors>
 
         def test_defining_variables_to_solve_attribute_errors(self):
@@ -71,7 +70,7 @@ To get more practice on solving this error see [ModuleNotFoundError](./MODULE_NO
     ```
     Looking at the traceback starting from the bottom
     - `tests/test_attribute_error.py:7: AttributeError` the location i.e. filename and line number and name of the Exception that is raised
-    - `E       AttributeError: module 'module' has no attribute 'variable_0'` an explanation of the error which is raised because the module we imported has no definitions named `variable_0`. we update our list of exceptions encountered
+    - `E       AttributeError: module 'module' has no attribute 'variable_0'` an explanation of the error raised. The module we imported has no definitions named `variable_0`. We update our list of exceptions encountered
         ```python
         # Exceptions Encountered
         # AssertionError
@@ -93,7 +92,8 @@ To get more practice on solving this error see [ModuleNotFoundError](./MODULE_NO
         variable_0
     E   NameError: name 'variable_0' is not defined
     ```
-    - `E   NameError: name 'variable_0' is not defined` this is a new error so we add it to our running list of errors encountered. The running list of exceptions encountered now looks like this
+    Looking at the traceback going from the bottom upwards
+    - `E   NameError: name 'variable_0' is not defined` this is a new error, we add it to our running list of errors encountered. The running list of exceptions encountered is now
         ```
         # Exceptions Encountered
         # AssertionError
@@ -103,7 +103,7 @@ To get more practice on solving this error see [ModuleNotFoundError](./MODULE_NO
         ```
     - `variable_0` the offending line
     - `module.py:1: in <module>` the location of the offending line
-- Update `module.py` in the Interactive Development Environment(IDE) to
+- Update the failing line in `module.py` in the Interactive Development Environment(IDE) to fix it
     ```python
     variable_0 = None
     ```
@@ -119,13 +119,13 @@ To get more practice on solving this error see [ModuleNotFoundError](./MODULE_NO
 
 #### What is similar? What is different?
 
-An `AttributeError` occurs when there is a reference to a name in an object from outside the object and the name does not exist e.g. `object.name` while a `NameError` occurs when there is a reference to a name within an object and there is no prior definition of the name e.g. `name`
+An `AttributeError` occurs when there is a reference to a name in an object from outside the object and the name does not exist e.g. `humans.wings` while a `NameError` occurs when there is a reference to a name within an object and there is no prior definition of the name e.g. `wings`
 
 What is similar between `ModuleNotFoundError`, `AttributeError` and `NameError`?
 
 > NOTE
 >
-> In python `=` is used to assign names to objects, so if we have this line `five = 5`, it means we can later refer to the number `5` with the name `five`, the equality sign `==` on the other hand is used to check if two things are equal e.g. `5 == 4` means we want to know if `5` is equal to `4`
+> In python `=` is used to assign names to objects, for example `five = 5`, means we can later refer to the number `5` with the name `five`, the equality sign `==` on the other hand is used to check if two things are equal e.g. `5 == 4` means "is `5` is equal to `4`?"
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
@@ -140,7 +140,7 @@ There's not much to do here, we could repeat the above as a drill to help rememb
             self.assertIsNone(module.variable_1)
     ```
     the terminal will update to show an `AttributeError`
-    ```shell
+    ```python
     E       AttributeError: module 'module' has no attribute 'variable_1'
     ```
 #### <span style="color:green">**GREEN**</span>: make it pass
@@ -163,17 +163,18 @@ There's not much to do here, we could repeat the above as a drill to help rememb
 #### <span style="color:red">**RED**</span>: make it fail
 - we add another failing line to `test_defining_variables_to_solve_attribute_errors`
     ```python
-        def test_defining_variables_to_solve_attribute_errors(self):
-            self.assertIsNone(module.variable_0)
-            self.assertIsNone(module.variable_1)
-            self.assertIsNone(module.variable_2)
+    def test_defining_variables_to_solve_attribute_errors(self):
+        self.assertIsNone(module.variable_0)
+        self.assertIsNone(module.variable_1)
+        self.assertIsNone(module.variable_2)
     ```
     the terminal shows an `AttributeError`
     ```shell
     >       self.assertIsNone(module.variable_2)
     E       AttributeError: module 'module' has no attribute 'variable_2'
     ```
-##### <span style="color:green">**GREEN**</span>: make it pass
+
+#### <span style="color:green">**GREEN**</span>: make it pass
 - <span style="color:red">**RED**</span>: make it fail - add the name to `module.py`
     ```python
     variable_0 = None
@@ -192,14 +193,14 @@ There's not much to do here, we could repeat the above as a drill to help rememb
     ```
     The tests pass
 
-##### <span style="color:red">**RED**</span>: make it fail
+#### <span style="color:red">**RED**</span>: make it fail
 - we add another failing line to `test_defining_variables_to_solve_attribute_errors`
     ```python
-        def test_defining_variables_to_solve_attribute_errors(self):
-            self.assertIsNone(module.variable_0)
-            self.assertIsNone(module.variable_1)
-            self.assertIsNone(module.variable_2)
-            self.assertIsNone(module.variable_3)
+    def test_defining_variables_to_solve_attribute_errors(self):
+        self.assertIsNone(module.variable_0)
+        self.assertIsNone(module.variable_1)
+        self.assertIsNone(module.variable_2)
+        self.assertIsNone(module.variable_3)
     ```
     the terminal shows an `AttributeError`
     ```shell
@@ -226,18 +227,22 @@ There's not much to do here, we could repeat the above as a drill to help rememb
     variable_3 = None
     ```
 
-***LET'S MAKE A DRILL!***
-We know the pattern so we can drill it for practice. Update the `TestAttributeError` class in `tests/test_attribute_error.py` by sequentially adding more tests until you get to `self.assertIsNone(module.variable_99)`, you will have 102 statements in total
+We have a pattern for our drill. When we test an attribute in a module, we encounter
+- an `AttributeError` when the attribute does not exist
+- a `NameError` when we add the name to the module
+- a passing test when we define the name as a variable
+
+Update the `TestAttributeError` class in `tests/test_attribute_error.py` by adding more tests until you get to `self.assertIsNone(module.variable_99)`, you will have 102 statements in total
 ```python
-def test_defining_variables_to_solve_attribute_errors(self):
-    self.assertIsNone(module.variable_0)
-    self.assertIsNone(module.variable_1)
-    self.assertIsNone(module.variable_2)
-    self.assertIsNone(module.variable_3)
-    ...
-    self.assertIsNone(module.variable_99)
-    self.assertFalse(module.false)
-    self.assertTrue(module.true)
+    def test_defining_variables_to_solve_attribute_errors(self):
+        self.assertIsNone(module.variable_0)
+        self.assertIsNone(module.variable_1)
+        self.assertIsNone(module.variable_2)
+        self.assertIsNone(module.variable_3)
+        ...
+        self.assertIsNone(module.variable_99)
+        self.assertFalse(module.false)
+        self.assertTrue(module.true)
 ```
 
 Repeat the pattern until all tests pass.
@@ -248,11 +253,10 @@ Repeat the pattern until all tests pass.
     false = False
     ```
 
-***WELL DONE!***
-You now know
-- How to solve `ModuleNotFoundError`
+***WELL DONE!*** You now know
+- How to solve [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md)
 - How to solve `NameError` using variables
-- How to solve `AttributeError` using variables
+- How to solve [AttributeError](./ATTRIBUTE_ERROR.md) by defining variables
 
 ## How to solve AttributeError by defining a Function
 
@@ -268,7 +272,7 @@ Update the `TestAttributeError` class in `tests/test_attribute_error.py` with a 
 ```
 
 the terminal updates to show
-```shell
+```python
 E       AttributeError: module 'module' has no attribute 'function_0'
 ```
 
@@ -281,19 +285,19 @@ E       AttributeError: module 'module' has no attribute 'function_0'
     ```shell
     E       TypeError: 'NoneType' object is not callable
     ```
-    - this is new so we update our list of exceptions encountered
-        ```python
-        # Exceptions Encountered
-        # AssertionError
-        # ModuleNotFoundError
-        # AttributeError
-        # NameError
-        # TypeError
-        ```
-    a `TypeError` occurs in this case because we `called` an object that was not `callable`. A callable object is an object that can take potentially take in arguments(inputs). We can define a callable as a `class` or a `function`. We go over callables in [Functions](./FUNCTIONS.md) and [Classes](./CLASSES.md)
+    this is new so we update our list of exceptions encountered
+    ```python
+    # Exceptions Encountered
+    # AssertionError
+    # ModuleNotFoundError
+    # AttributeError
+    # NameError
+    # TypeError
+    ```
+    a `TypeError` is raised in this case because we `called` an object that was not `callable`. A callable object is an object that can potentially handle inputs. We can define a callable as a `class` or a `function`.
 
-    When an object is defined as a callable, we call it by adding parentheses at the end e.g. `module.function_0()` will call `function_0` in `module.py`
-- we change `function_0` in `module.py` to a function by modifying its definition using the `def` keyword
+    We go over callables in [Functions](./FUNCTIONS.md) and [Classes](./CLASSES.md). When an object is defined as a callable, we call it by adding parentheses at the end e.g. `module.function_0()` will call `function_0` in `module.py`
+- let us change `function_0` in `module.py` to a function by modifying its definition using the `def` keyword
     ```python
     def function_0():
         return None
@@ -308,7 +312,7 @@ E       AttributeError: module 'module' has no attribute 'function_0'
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-- Let's make it a drill like we did with variables, update `test_defining_functions_to_solve_attribute_errors` in the `TestAttributeError` class in`tests/test_attribute_error.py` to include
+- Time to a drill like we did with variables. Update `test_defining_functions_to_solve_attribute_errors` in the `TestAttributeError` class in`tests/test_attribute_error.py` to include calls to functions in `module.py` until you have one for `module.function_99()`, you will have 100 tests in total
     ```python
     def test_defining_functions_to_solve_attribute_errors(self):
         self.assertIsNone(module.function_0())
@@ -324,37 +328,24 @@ E       AttributeError: module 'module' has no attribute 'function_0'
     ```
     update `module.py` with the solution until all tests pass
 
-***YOU DID IT AGAIN!***
-You now know
-- How to solve `AssertionError`
-- How to solve `ModuleNotFoundError`
+***YOU DID IT AGAIN!*** You now know
+- How to solve [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md)
 - How to solve `NameError`
-- How to solve  `AttributeError` by defining variables and functions
+- How to solve [AttributeError](./ATTRIBUTE_ERROR.md) by defining variables and functions
 
 ## How to solve AttributeError by defining a Class
 
-Classes
-- A class is a blueprint that represents an object
-- It is a collection of functions(methods) and attributes
-- Attributes are variables that contain some value
-- Methods are functions that perform some action and return a value
-- For example if we define a Human class we can have
-    - attributes
-        - eye color
-        - date of birth
-    - methods
-        - age - return age based on date of birth
-        - speak - return words
+A class is a blueprint that represents an object, it is a collection of functions(methods) and attributes. Attributes are names which represent a value. Methods are functions that can accept inputs and return a value. For example we could define a "Human" class with attributes like eye color, date of birth, height and weight, and methods like age which returns a value based on the current year and date of birth. Let us explore `AttributeError` with classes.
 
 ### <span style="color:red">**RED**</span>: make it fail
 
-- Update the `TestAttributeError` class in `tests/test_attribute_error.py` with
+- We add a test function to the `TestAttributeError` class in `tests/test_attribute_error.py`
     ```python
-        def test_defining_functions_to_solve_attribute_errors(self):
-            self.assertIsNone(module.Class0())
+    def test_defining_functions_to_solve_attribute_errors(self):
+        self.assertIsNone(module.Class0())
     ```
-    the terminal updates to show
-    ```shell
+    the terminal shows
+    ```python
     E       AttributeError: module 'module' has no attribute 'Class0'
     ```
     Looking at the traceback we see it's the line we added that caused the failure
@@ -371,47 +362,42 @@ Classes
     ```shell
     E       TypeError: 'NoneType' object is not callable
     ```
-    We dealt with a similar issue earlier, let's make `Class0` callable the way we know how. update `module.py`
+    We dealt with a similar issue earlier, let us make `Class0` callable the way we know how. Change the variable to a function using the `def` keyword in `module.py`
     ```python
     def Class():
         return None
     ```
-    The tests pass! But what is the difference between Classes and Functions? Why are we writing a different set of tests for Classes?
+    The tests pass! Something is odd here, what is the difference between [Classes](./CLASSES.md) and [Functions](./FUNCTIONS.md)? Why are we writing a different set of tests for Classes if the solutions are the same?
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-- Let's make it a drill. - Update `test_defining_functions_to_solve_attribute_errors` in the `TestAttributeError` class in `tests/test_attribute_error.py`
+- let us make it a drill. Add lines to `test_defining_functions_to_solve_attribute_errors` in the `TestAttributeError` class in `tests/test_attribute_error.py` until we have one for `module.Class99()`, there will be 100 tests in total
     ```python
-        def test_defining_classes_to_solve_attribute_errors(self):
-            self.assertIsNone(module.Class0())
-            self.assertIsNone(module.Class1())
-            self.assertIsNone(module.Class2())
-            self.assertIsNone(module.Class3())
-            ...
-            self.assertIsNone(module.Class99())
+    def test_defining_classes_to_solve_attribute_errors(self):
+        self.assertIsNone(module.Class0())
+        self.assertIsNone(module.Class1())
+        self.assertIsNone(module.Class2())
+        self.assertIsNone(module.Class3())
+        ...
+        self.assertIsNone(module.Class99())
     ```
     the terminal updates to show
     ```shell
         E       AttributeError: module 'module' has no attribute 'Class1'
     ```
-    update `module.py` with the solution until all tests pass
+    update `module.py` with each solution until all tests pass
 
-***WELL DONE!***
-You now know how to solve
-- `AssertionError`
-- `ModuleNotFoundError`
-- `NameError`
-- `AttributeError` by defining
-    - variables
-    - functions
-    - classes?
-        - do we know how to define classes? so far our solution looks the same as defining functions. What's the difference between functions and classes?
+***WELL DONE!*** You now know
+- How to solve [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md)
+- How to solve `NameError`
+- How to solve [AttributeError](./ATTRIBUTE_ERROR.md) by defining variables, [functions](./FUNCTIONS.md) and [classes](./CLASSES.md)
+    - do we know how to define [classes](./CLASSES.md) if we define them the same was as [functions](./FUNCTIONS.md)?
 
 ## How to solve AttributeError by defining an Attribute in a Class
 
 ### <span style="color:red">**RED**</span>: make it fail
 
-- update the `TestAttributeError` class in `test_attribute_error.py`
+- We add a new test to the `TestAttributeError` class in `test_attribute_error.py`
     ```python
     def test_defining_attributes_in_classes_to_solve_attribute_errors(self):
         self.assertIsNone(module.Class.attribute_0)
@@ -424,15 +410,15 @@ You now know how to solve
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
-- update `module.py`
+- update `module.py` with a variable
     ```python
     Class = None
     ```
     the terminal updates to show
-    ```shell
+    ```python
     E       AttributeError: 'NoneType' object has no attribute 'attribute_0'
     ```
-    update `module.py`
+    change the variable to a function
     ```python
     def Class():
         return None
@@ -441,39 +427,38 @@ You now know how to solve
     ```shell
     E       AttributeError: 'function' object has no attribute 'attribute_0'
     ```
-    how do we define an attribute in a function?
+    is it possible to define an attribute in a function and access it?
     update `module.py`
     ```python
     def Class():
         attribute_0 = None
         return None
     ```
-    the terminal still shows the same error
-- update `module.py` to change the definition of `Class` using the `class` keyword instead of `def`
+    the terminal still shows the same error, our experiment had no effect on the test
+- what if we use the `class` keyword to define `Class` instead of `def`
     ```python
     class Class():
         attribute_0 = None
         return None
     ```
-
-    the terminal will update to show a `SyntaxError`
+    the terminal now shows a `SyntaxError`
     ```shell
     E       return None
     E       ^^^^^^^^^^^
     E   SyntaxError: 'return' outside function
     ```
-    - We have a new error `SyntaxError` add this to the running list of Exceptions
+    - We add `SyntaxError` to our running list of exceptions
+        ```python
+        # Exceptions Encountered
+        # AssertionError
+        # ModuleNotFoundError
+        # AttributeError
+        # NameError
+        # TypeError
+        # SyntaxError
+        ```
     - The error is caused by the `return` statement being outside of a function
-    ```python
-    # Exceptions Encountered
-    # AssertionError
-    # ModuleNotFoundError
-    # AttributeError
-    # NameError
-    # TypeError
-    # SyntaxError
-    ```
-- remove the troublesome line from `module.py`
+- remove the return statement
     ```python
     class Class():
         attribute_0 = None
@@ -482,13 +467,16 @@ You now know how to solve
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-- The current solution for `test_defining_classes_to_solve_attribute_errors` was done by defining functions but the test says `definining_classes`. Let's update those to use the proper way to define classes. Update `module.py` to use `class` instead of `def` e.g.
+- The current solution for `test_defining_classes_to_solve_attribute_errors` was done by defining functions but the test says `definining_classes`. let us update those tests to use the proper way of defining [classes](./CLASSES.md) that we just learned. Update `module.py` to use `class` instead of `def` e.g.
     ```python
     class Class0():
         pass
+    ...
+    class Class99():
+        pass
     ```
     `pass` is a keyword used as a placeholder that does nothing
-- We now know how to properly define a class and define an attribute. To practice defining an attribute, let's make a drill. Update `test_defining_attributes_in_classes_to_solve_attribute_errors` in `TestAttributeError` in `test_attribute_error.py`
+- We now know how to properly define a class with an attribute. To practice defining an attribute we will make a drill by adding more lines like we did for variables, functions and classes, until you have a total of 100 lines with the last test for module.Class.attribute_99
     ```python
     def test_defining_attributes_in_classes_to_solve_attribute_errors(self):
         self.assertIsNone(module.Class.attribute_0)
@@ -499,27 +487,26 @@ You now know how to solve
         self.assertIsNone(module.Class.attribute_99)
     ```
     the terminal updates to show
-    ```shell
+    ```python
     E       AttributeError: type object 'Class' has no attribute 'attribute_1'
     ```
-    update `module.py` with the solution until all tests pass
+    update `module.py` with the solutions until all tests pass
 
-***WELL DONE!***
-You now know how to solve
-- `AssertionError`
-- `ModuleNotFoundError`
-- `NameError`
-- `AttributeError` by defining
+***WELL DONE!*** You now know You now know
+- How to solve [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md)
+- How to solve `NameError`
+- How to solve [AttributeError](./ATTRIBUTE_ERROR.md) by defining variables, [functions](./FUNCTIONS.md) and [classes](./CLASSES.md)
+- How to solve [AttributeError](./ATTRIBUTE_ERROR.md) by defining
     - variables
-    - functions
-    - classes
-    - attributes in classes
+    - [functions](./FUNCTIONS.md)
+    - [classes](./ASSERTION_ERROR.md)
+    - attributes(variables) in classes
 
 ## How to solve AttributeError by defining a Method(Function) in a Class
 
 ### <span style="color:red">**RED**</span>: make it fail
 
-- update the `TestAttributeError` class in `test_attribute_error.py`
+- we add a new test to the `TestAttributeError` class in `test_attribute_error.py`
     ```python
     def test_defining_functions_in_classes_to_solve_attribute_errors(self):
         self.assertIsNone(module.Class.method_0())
@@ -543,44 +530,43 @@ You now know how to solve
     >       self.assertIsNone(module.Class.method_0())
     E       TypeError: 'NoneType' object is not callable
     ```
-    this is in our list of errors and we have solved this before
-- change `method_0` in the class `Class` in `module.py` to a function to make it callable
+    this is in our list of errors
+- using the solution we know for it, we change `method_0` from an attribute to a method using the `def` keyword to make it callable
     ```python
     class Class():
         ...
         def method_0():
             return None
     ```
-    the tests pass. Fantastic
+    Fantastic! the terminal has all tests passing.
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-You know the `drill`, let's make it. Update `test_defining_functions_in_classes_to_solve_attribute_errors` in `TestAttributeError` in `test_attribute_error.py`
+You know the "drill", update `test_defining_functions_in_classes_to_solve_attribute_errors` in `TestAttributeError` in `test_attribute_error.py` with more lines until we have 100 tests ending with one for `module.Class.method_99()`
 ```python
-def test_defining_functions_in_classes_to_solve_attribute_errors(self):
-    self.assertIsNone(module.Class.method_0())
-    self.assertIsNone(module.Class.method_1())
-    self.assertIsNone(module.Class.method_2())
-    self.assertIsNone(module.Class.method_3())
-    ...
-    self.assertIsNone(module.Class.method_99())
+    def test_defining_functions_in_classes_to_solve_attribute_errors(self):
+        self.assertIsNone(module.Class.method_0())
+        self.assertIsNone(module.Class.method_1())
+        self.assertIsNone(module.Class.method_2())
+        self.assertIsNone(module.Class.method_3())
+        ...
+        self.assertIsNone(module.Class.method_99())
 ```
 repeat the solution until all tests pass
 
-***WELL DONE!***
-You now know how to solve
-- `AssertionError`
-- `ModuleNotFoundError`
-- `NameError`
-- `AttributeError` by defining
+***CONGRATULATIONS!*** You now know
+- How to solve [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md)
+- How to solve `NameError`
+- How to solve [AttributeError](./ATTRIBUTE_ERROR.md) by defining variables, [functions](./FUNCTIONS.md) and [classes](./CLASSES.md)
+- How to solve [AttributeError](./ATTRIBUTE_ERROR.md) by defining
     - variables
-    - functions
-    - classes
-    - attributes in classes
-    - functions/methods in classes
+    - [functions](./FUNCTIONS.md)
+    - [classes](./ASSERTION_ERROR.md)
+    - attributes(variables) in classes
+    - methods(functions) in classes
 
-***WHAT'S THE DIFFERENCE BETWEEN CLASSES AND FUNCTIONS?***
-- we cannot access attributes we define in a function outside the function
-- `def` vs `class`
-- `snake_case` vs `CamelCase` names
-- accessibility of attributes and methods from outside the definitions/declarations
+***WHAT IS THE DIFFERENCE BETWEEN CLASSES AND FUNCTIONS?***
+- we can access attributes(variables) we define in a class from outside the class
+- we cannot access variables we define in a function from outside the function
+- the keywords used to define them are different - `def` vs `class`
+- their naming conventions are different - `snake_case` vs `CamelCase`

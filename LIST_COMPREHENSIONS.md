@@ -104,7 +104,7 @@ the tests pass
 
 ## Creating a List with a For Loop
 
-Let's test creating a list with a for loop like the example above
+let us test creating a list with a for loop like the example above
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -173,7 +173,7 @@ Now that we know how to create a `list` using
 - `list`
 - `for`
 
-Let's try creating a `list` using a `list comprehension`. It looks similar to a `for` loop but allows us to achieve the same thing with less words
+let us try creating a `list` using a `list comprehension`. It looks similar to a `for` loop but allows us to achieve the same thing with less words
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -257,7 +257,7 @@ the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-Let's see what else we can do with a `list comprehension`
+let us see what else we can do with a `list comprehension`
 
 - add a failing test to `TestListComprehensions`
     ```python
@@ -305,7 +305,7 @@ Let's see what else we can do with a `list comprehension`
         )
     ```
     the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
-- let's try using a `list comprehension` like we did in the last example
+- let us try using a `list comprehension` like we did in the last example
     ```python
     def test_list_comprehensions_with_conditions_i(self):
         collection = range(10)
@@ -344,7 +344,7 @@ Let's see what else we can do with a `list comprehension`
     def get_even_numbers(argument):
         return [element for element in argument if element % 2 == 0]
     ```
-- let's try another `list comprehension` with a different condition. Add a test to `TestListComprehensions`
+- let us try another `list comprehension` with a different condition. Add a test to `TestListComprehensions`
     ```python
     def test_list_comprehensions_with_conditions_ii(self):
         collection = range(10)

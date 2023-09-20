@@ -99,7 +99,7 @@ We can add variable values to strings by using [string interpolation](https://pe
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-Let's try it with other python data structures.
+let us try it with other python data structures.
 
 - update `test_text_messages` with a new test
     ```python

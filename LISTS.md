@@ -39,7 +39,7 @@ In python
 - Lists are mutable which means they can be changed after creation, tuples are not, they are immutable
 
 
-Let's play with lists
+let us play with lists
 
 ## How to create a list
 
@@ -89,7 +89,7 @@ the terminal shows a [TypeError](./03_TYPE_ERROR.md)
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-- we know we can create a list with the `list` keyword but our passing test also shows we can create a list with `[]` and it uses less characters. Let's test it, add a test
+- we know we can create a list with the `list` keyword but our passing test also shows we can create a list with `[]` and it uses less characters. let us test it, add a test
     ```python
     def test_creating_list_with_square_brackets(self):
         self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 3)))
@@ -190,7 +190,7 @@ we are green. tests are passing
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
 What if there was more than one element, how does python decide which to remove when we call `.remove(element)` on a list?
-Let's find out
+let us find out
 
 - add a failing test
     ```python
@@ -348,7 +348,7 @@ the terminal updates to show an [IndexError](https://docs.python.org/3/library/e
 
 ## How to view the attributes and methods of a list
 
-[CLASSES] covers how to view the `attributes` and `methods` of an object. Let's do the same for `lists`
+[CLASSES] covers how to view the `attributes` and `methods` of an object. let us do the same for `lists`
 
 ### <span style="color:red">**RED**</span>: make it fail
 

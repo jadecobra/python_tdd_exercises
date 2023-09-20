@@ -74,7 +74,7 @@ and the terminal shows the test passed
 We can also use some methods from the `unittest.TestCase` class to make assertions
 
 - #### <span style="color:red">**RED**</span>: make it fail
-    let's add another line to `test_assertion_errors_with_none` using the `unittest.TestCase.assertIsNone` method
+    let us add another line to `test_assertion_errors_with_none` using the `unittest.TestCase.assertIsNone` method
     ```python
             self.assertIsNone(False)
     ```
@@ -108,7 +108,7 @@ We can also use some methods from the `unittest.TestCase` class to make assertio
     ```
     the terminal shows passing tests
 - #### <span style="color:red">**RED**</span>: make it fail
-    let's add a variation of the above statement using the identical `unittest.TestCase` method to `test_assertion_errors_with_none`
+    let us add a variation of the above statement using the identical `unittest.TestCase` method to `test_assertion_errors_with_none`
     ```python
             self.assertIsNone(True)
     ```
@@ -125,7 +125,7 @@ We can also use some methods from the `unittest.TestCase` class to make assertio
     - `True` is not `None`
     - `False` is not `None`
 - #### <span style="color:red">**RED**</span>: make it fail
-    let's add another test to `test_assertion_errors_with_none`
+    let us add another test to `test_assertion_errors_with_none`
     ```python
             assert None is not None
     ```
@@ -169,7 +169,7 @@ Going with what we know so far, can we raise an `AssertionError` for things that
 
 ### <span style="color:red">**RED**</span>: make it fail
 
-let's update `TestAssertionError` in `test_assertion_error.py` with the following test to find out
+let us update `TestAssertionError` in `test_assertion_error.py` with the following test to find out
 
 ```python
     def test_assertion_errors_with_false(self):
@@ -188,7 +188,7 @@ update `test_assertion_errors_with_false`
 and the terminal now displays passing tests
 
 ### <span style="color:red">**RED**</span>: make it fail
-let's try the same test using the equivalent `unittest.TestCase` method by adding this line to `test_assertion_errors_with_false`
+let us try the same test using the equivalent `unittest.TestCase` method by adding this line to `test_assertion_errors_with_false`
 
 ```python
         self.assertFalse(True)
@@ -237,7 +237,7 @@ the terminal shows passing tests
 
 ### <span style="color:red">**RED**</span>: make it fail
 
-let's try the above test with the `unittest.TestCase` equivalent method by updating `test_assertion_errors_with_true`
+let us try the above test with the `unittest.TestCase` equivalent method by updating `test_assertion_errors_with_true`
 
 ```python
         self.assertTrue(False)
@@ -367,7 +367,7 @@ the terminal displays passing tests because `False` is not equal to `None`
     - `True` is not `None` and `True` is not equal to `None`
     - `False` is not `None` and `False` is not equal to `None`
 
-    There is a pattern here, let's update the test with the other cases from our statement above in the same manner
+    There is a pattern here, let us update the test with the other cases from our statement above in the same manner
 - #### <span style="color:red">**RED**</span>: make it fail
     add the tests below to `test_assertion_errors_with_equality`
 

@@ -48,7 +48,7 @@ the test passes. Why?
 
 ## <span style="color:orange">**REFACTOR**</span>: make it better
 
-Let's test if functions really always return `None` by default
+let us test if functions really always return `None` by default
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -71,7 +71,7 @@ why does this also pass? we have defined 2 functions with different statements i
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-Let's add one more test
+let us add one more test
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -108,7 +108,7 @@ Here's what we know so far about functions in python
 
 ## Passthrough Functions
 
-What else can we do with functions? We know a function can produce/return an output, and it can take in an input. As a simple test let's create a passthrough function.
+What else can we do with functions? We know a function can produce/return an output, and it can take in an input. As a simple test let us create a passthrough function.
 What is a passthrough function? A function that returns the input given
 
 ### <span style="color:red">**RED**</span>: make it fail
@@ -151,7 +151,7 @@ the terminal updates to show an `AttributeError`
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-Wait a minute. Something is not quite right here. The definition for a passthrough function was that it returned the same thing it was given, our test passes when `False` is given but will it still pass when another value is given as the input or will it always return `False`? Let's test it
+Wait a minute. Something is not quite right here. The definition for a passthrough function was that it returned the same thing it was given, our test passes when `False` is given but will it still pass when another value is given as the input or will it always return `False`? let us test it
 
 #### <span style="color:red">**RED**</span>: make it fail
 
@@ -174,7 +174,7 @@ update the definition of `passthrough` in `functions.py`
 def passthrough(input_data):
     return input_data
 ```
-the terminal updates to show passing tests. We have more confidence that our passthrough function will likely return the input data it is given. Let's add more tests to be sure
+the terminal updates to show passing tests. We have more confidence that our passthrough function will likely return the input data it is given. let us add more tests to be sure
 
 #### <span style="color:orange">**REFACTOR**</span>: make it better
 
@@ -240,7 +240,7 @@ How can we make this better?
         return first_argument, second_argument
     ```
     the terminal still shows passing tests
-- let's add another test to ensure that it outputs data in the order given. update `test_functions_with_positional_arguments`
+- let us add another test to ensure that it outputs data in the order given. update `test_functions_with_positional_arguments`
     ```python
     self.assertEqual(
         functions.passthrough_with_positional_arguments('my_last_name', 'my_first_name'),
@@ -259,7 +259,7 @@ How can we make this better?
 - our function only takes in 2 positional arguments
     - how do we take in 2 or more positional arguments?
     - what do we do if we do not know the number of positional arguments that will be given?
-- let's update `test_functions_with_positional_arguments` to add tests for these cases
+- let us update `test_functions_with_positional_arguments` to add tests for these cases
     ```python
     self.assertEqual(
         functions.passthrough_with_positional_arguments(0, 1, 2, 3),
@@ -350,7 +350,7 @@ So far `passthrough_with_keyword_arguments` looks the same as `passthrough_with_
 - this function only takes in 2 keyword arguments. what if we wanted a function that can take in any number of keyword arguments? There is a starred expression for keyword arguments. It uses `**`.
 
 ### <span style="color:red">**RED**</span>: make it fail
-Let's add a test to `test_functions_with_keyword_arguments`
+let us add a test to `test_functions_with_keyword_arguments`
 ```python
     self.assertEqual(
         functions.passthrough_with_keyword_arguments(
@@ -404,7 +404,7 @@ the terminal updates to show a [TypeError](./03_TYPE_ERROR.md)
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-Let's add one more test for good measure
+let us add one more test for good measure
 - update `test_functions_with_keyword_arguments`
     ```python
     self.assertEqual(
@@ -535,12 +535,12 @@ Hold on a second. This looks exactly like what we did in `test_functions_with_po
         return first_name, last_name
     ```
     all tests are still passing
-- why didn't we add a default argument for `first_name`? What would happen if we did? Let's test it
+- why didn't we add a default argument for `first_name`? What would happen if we did? let us test it
     ```python
     def accepts_positional_and_keyword_arguments(first_name=None, last_name=None):
         return first_name, last_name
     ```
-    it looks like python lets us use default arguments with no issues, and we can provide keyword arguments positionally without using the keyword. Let's add another test to prove this
+    it looks like python lets us use default arguments with no issues, and we can provide keyword arguments positionally without using the keyword. let us add another test to prove this
 - add a test to `test_functions_with_positional_and_keyword_arguments`
     ```python
     self.assertEqual(
@@ -549,7 +549,7 @@ Hold on a second. This looks exactly like what we did in `test_functions_with_po
     )
     ```
     all the tests are still passing. The problem here is without the names the program is going to take the input data in the order we provide it so it is better to be explicit with the names.
-- let's add another test, this time with an unknown number of parameters and keyword arguments
+- let us add another test, this time with an unknown number of parameters and keyword arguments
     ```python
     self.assertEqual(
         functions.accepts_positional_and_keyword_arguments(

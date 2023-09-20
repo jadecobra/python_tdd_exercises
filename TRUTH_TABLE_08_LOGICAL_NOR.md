@@ -31,7 +31,7 @@ the terminal shows an [AttributeError](./01_ATTRIBUTE_ERROR.md)
     def logical_nor(p, q):
         return False
     ```
-- the first 3 pass and we see a failure for the 4th case, let's add a condition for it
+- the first 3 pass and we see a failure for the 4th case, let us add a condition for it
     ```python
     def logical_nor(p, q):
         if p == False and q == False:

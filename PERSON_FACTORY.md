@@ -59,7 +59,7 @@ the terminal updates to show a `ModuleNotFoundError`
         )
     ```
     the terminal updates to show a `NameError` for `this_year`
-- let's add a definition for it to the top of `test_person_factory.py`
+- let us add a definition for it to the top of `test_person_factory.py`
     ```python
     import unittest
     import person
@@ -81,7 +81,7 @@ the terminal updates to show a `ModuleNotFoundError`
         return None
     ```
     the terminal updates to show a [TypeError](./TYPE_ERROR.md) for the next keyword argument
-- we update the `factory` function definition for each keyword until we get a [TypeError](./TYPE_ERROR.md) for the line where we subtract `this_year() - this_year()` because we cannot perform a subtraction operation on `None` and our `this_year` function currently returns `None`. Let's update our definition using a function from the [datetime](https://docs.python.org/3/library/datetime.html?highlight=datetime#module-datetime) library that returns the current year we are in
+- we update the `factory` function definition for each keyword until we get a [TypeError](./TYPE_ERROR.md) for the line where we subtract `this_year() - this_year()` because we cannot perform a subtraction operation on `None` and our `this_year` function currently returns `None`. let us update our definition using a function from the [datetime](https://docs.python.org/3/library/datetime.html?highlight=datetime#module-datetime) library that returns the current year we are in
     ```python
     import unittest
     import person
@@ -93,7 +93,7 @@ the terminal updates to show a `ModuleNotFoundError`
     - we import the `datetime` library so we can use its `methods` and `attributes`
     - we return the `year` attribute of the object returned by the `now` method which is a representation of the current local date and time, we could also use `today` or `utcnow` to achieve the same thing
     - we get the `year` attribute of the object returned since that is all we are interested in
-- the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) since our `factory` function returns `None` and the test expects a [dictionary](./DICTIONARIES.md). Let's update the function to return an empty dictionary
+- the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) since our `factory` function returns `None` and the test expects a [dictionary](./DICTIONARIES.md). let us update the function to return an empty dictionary
     ```python
     def factory(first_name=None, last_name=None, year_of_birth=None, sex=None):
         return {}
@@ -110,7 +110,7 @@ the terminal updates to show a `ModuleNotFoundError`
         }
     ```
     ***LOVELY!*** the tests pass! There's one problem with this function. It is going to return the exact same thing every time, regardless of what information is given to it, to make it more useful we need it to be able to use the inputs given.
-- Let's add another test with a different set of inputs
+- let us add another test with a different set of inputs
     ```python
     def test_person_factory_takes_in_variable_inputs(self):
         self.assertEqual(
@@ -139,8 +139,8 @@ the terminal updates to show a `ModuleNotFoundError`
             'sex': 'F',
         }
     ```
-    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) but it no longer shows a difference for `first_name`. Good, let's repeat it step by step for every other input until the only error left is for the age
-- we need to calculate the age. We have a function that returns the current year and we have the `year_of_birth` as an input, we also have this line in the test `this_year() - 1983`. Since `1983` is the `year_of_birth` in this case let's update the `factory` function to use that calculation
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) but it no longer shows a difference for `first_name`. Good, let us repeat it step by step for every other input until the only error left is for the age
+- we need to calculate the age. We have a function that returns the current year and we have the `year_of_birth` as an input, we also have this line in the test `this_year() - 1983`. Since `1983` is the `year_of_birth` in this case let us update the `factory` function to use that calculation
     ```python
     def factory(first_name=None, last_name=None, year_of_birth=None, sex=None):
         return {

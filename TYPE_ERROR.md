@@ -37,7 +37,7 @@ What does it mean to call a function?
         import functions
     E   ModuleNotFoundError: No module named 'functions'
     ```
-- Ah, a `ModuleNotFoundError`, We have a lot of practice solving this error from [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md). Let's create a file named `functions.py` and the terminal updates to show
+- Ah, a `ModuleNotFoundError`, We have a lot of practice solving this error from [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md). let us create a file named `functions.py` and the terminal updates to show
     ```python
     >       self.assertIsNone(functions.function_a("a"))
     E       AttributeError: module 'functions' has no attribute 'function_a'
@@ -137,7 +137,7 @@ There's not much to do here but add more tests for practice.
 - What's another solution to the above test?
 - How can we define a function that takes in any number of parameters? see [TDD_FUNCTIONS](./TDD_FUNCTIONS.md)
 
-### Let's add more tests
+### let us add more tests
 
 #### <span style="color:red">**RED**</span>: make it fail
 
@@ -196,7 +196,7 @@ and the terminal updates to show all tests pass
 
 #### <span style="color:orange">**REFACTOR**</span>: make it better
 
-are you bored yet? let's add one more test
+are you bored yet? let us add one more test
 
 update `TestTypeErrors` in `test_type_error.py`
 ```python
@@ -223,7 +223,7 @@ the terminal updates to show
 ```
 TypeError: function_d() takes 0 positional arguments but 4 were given
 ```
-let's try our solution for the previous test. update the signature of `function_d` in `functions.py`
+let us try our solution for the previous test. update the signature of `function_d` in `functions.py`
 ```python
 def function_d(arg1, arg2, arg3):
     return None
@@ -248,7 +248,7 @@ def function_d(*args):
 ```
 the terminal shows all tests as still passing. FANTASTIC!!
 
-Let's test this with `function_a`. update `function_a` in `functions.py` with `*args` and the terminal shows all tests as still passing.
+let us test this with `function_a`. update `function_a` in `functions.py` with `*args` and the terminal shows all tests as still passing.
 
 Try this with both `function_c` and `function_d`, all tests still pass.
 

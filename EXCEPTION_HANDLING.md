@@ -81,7 +81,7 @@ update `test_catching_attribute_errors_in_tests` with `self.assertRaises`
         with self.assertRaises(AttributeError):
             module.non_existent_attribute
 ```
-the terminal updates to show passing tests. Let's do it again
+the terminal updates to show passing tests. let us do it again
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -106,7 +106,7 @@ the terminal updates to show passing tests
 
 ### <span style="color:red">**RED**</span>: make it fail
 
-let's add another failing line to `test_catching_attribute_errors_in_tests`
+let us add another failing line to `test_catching_attribute_errors_in_tests`
 
 ```python
         module.NonExistentClass()
@@ -148,7 +148,7 @@ the terminal updates to show passing tests
 
 ### <span style="color:red">**RED**</span>: make it fail
 
-let's add another attribute error, update `test_catching_attribute_errors_in_tests`
+let us add another attribute error, update `test_catching_attribute_errors_in_tests`
 ```python
         module.Class.non_existent_method()
 ```
@@ -167,7 +167,7 @@ the terminal updates to show passing tests
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-We just wrote the same context manager 5 times, this is a good candidate for a rewrite. Let's remove the duplication. Update `test_catching_attribute_errors_in_tests`
+We just wrote the same context manager 5 times, this is a good candidate for a rewrite. let us remove the duplication. Update `test_catching_attribute_errors_in_tests`
 ```python
         with self.assertRaises(AttributeError):
             module.non_existent_attribute
@@ -180,7 +180,7 @@ the terminal shows our tests are still passing
 
 ### <span style="color:red">**RED**</span>: make it fail
 
-Let's try another exception. add a new test to `test_exception_handling.py`
+let us try another exception. add a new test to `test_exception_handling.py`
 ```python
     def test_catching_zero_dvision_error_in_tests(self):
         1 / 0
@@ -190,7 +190,7 @@ the terminal updates to show
 E       ZeroDivisionError: division by zero
 ```
 
-In [TDD_CALCULATOR](./TDD_CALCULATOR.md), we built a calculator and ran into issues when dividing by zero. In Mathematics, dividing by zero is undefined and in python it raises a `ZeroDivisionError`. To solve that problem we modified the test to do something else if the divisor was ever 0. Let's take a different approach.
+In [TDD_CALCULATOR](./TDD_CALCULATOR.md), we built a calculator and ran into issues when dividing by zero. In Mathematics, dividing by zero is undefined and in python it raises a `ZeroDivisionError`. To solve that problem we modified the test to do something else if the divisor was ever 0. let us take a different approach.
 - What if we want the program to return a message instead of ending execution of the program abruptly?
 - What if we want to assert that dividing by zero causes an error but the error it causes does not end our tests?
 
@@ -235,7 +235,7 @@ the terminal updates to show a `NameError`
     def raises_exception_error():
         return None
     ```
-- let's update the function to raise an Exception
+- let us update the function to raise an Exception
     ```python
     def raises_exception_error():
         raise Exception
@@ -256,7 +256,7 @@ You now know how to deliberately create an exception.
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-Let's add exception handling to our program so it does not end when it encounters the exceptions we handle
+let us add exception handling to our program so it does not end when it encounters the exceptions we handle
 
 #### <span style="color:red">**RED**</span>: make it fail
 
@@ -413,7 +413,7 @@ update `test_exception_handling.py` and the terminal updates to show an `Attribu
             return 'always_returns_this'
     ```
     the terminal updates to show passing tests. the `finally` clause is always executed regardless of what happens in the `try` block
-- let's add one more test to verify that the code in the `finally` block will always execute. update `test_finally_always_returns`
+- let us add one more test to verify that the code in the `finally` block will always execute. update `test_finally_always_returns`
     ```python
         self.assertEqual(
             exceptions.always_returns(exceptions.raises_exception_error),

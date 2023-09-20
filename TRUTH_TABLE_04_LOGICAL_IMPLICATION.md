@@ -56,7 +56,7 @@ the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-- How can we make this better? let's make the nested condition one line
+- How can we make this better? let us make the nested condition one line
     ```python
     def logical_implication(p, q):
         if p == True and q == False:
@@ -72,7 +72,7 @@ the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
         return True
     ```
     this looks simpler and the tests still pass.
-- let's write out the second half with an `else` statement to be explicit
+- let us write out the second half with an `else` statement to be explicit
     ```python
     def logical_implication(p, q):
         if p and not q:

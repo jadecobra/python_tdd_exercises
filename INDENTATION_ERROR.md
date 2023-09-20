@@ -52,7 +52,7 @@ Some people indent with 2 spaces, others indent with 4. In this exercise we will
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-Let's add more indentation errors to `test_indentation_error.py`
+let us add more indentation errors to `test_indentation_error.py`
 ```python
 'a'
 'b'
@@ -68,7 +68,7 @@ fix the offending lines until all tests are green.
 
 ## How to solve the IndentationError for functions
 
-Let's add more tests, this time indentation errors with functions, what's the difference in the spacing?
+let us add more tests, this time indentation errors with functions, what's the difference in the spacing?
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -107,7 +107,7 @@ Let's add more tests, this time indentation errors with functions, what's the di
 
 ## How to solve the IndentationError in Classes
 
-Let's add more tests, this time indentation errors in Classes, what's the difference in the spacing?
+let us add more tests, this time indentation errors in Classes, what's the difference in the spacing?
 
 ### <span style="color:red">**RED**</span>: make it fail
 

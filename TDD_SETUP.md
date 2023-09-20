@@ -103,7 +103,7 @@ The error provides important information about the code. Looking at it from the 
 - `Ran 1 test in 0.000s` python ran the 1 test written so far in 0.000s
 - `AssertionError: True is not false` The error is an [AssertionError](./04_ASSERTION_ERROR.md). This is raised by python when an assert statement fails
 - It further gives the False Assertion `True is not false`
-- Let's keep a running tab of Errors aka [Exceptions](https://docs.python.org/3/library/exceptions.html) seen as we go through this exercise, they will help you be a better python programmer
+- let us keep a running tab of Errors aka [Exceptions](https://docs.python.org/3/library/exceptions.html) seen as we go through this exercise, they will help you be a better python programmer
     ```python
     import unittest
 

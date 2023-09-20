@@ -41,7 +41,7 @@ the terminal shows an [AttributeError](./01_ATTRIBUTE_ERROR.md)
 - before we add a condition for it, this looks similar to `logical_equality`, `exclusive_disjunction`, `negate_first` and `negate_second` because 2 out of the 4 cases have the same return value. We observe that
     - if `p == True` the result is `True`
     - if `p == False` the result is `False`
-- let's add conditions to represent our observations
+- let us add conditions to represent our observations
     ```python
     def project_first(p, q):
         if p == True:
@@ -106,12 +106,12 @@ the terminal shows an [AttributeError](./01_ATTRIBUTE_ERROR.md)
 - before we add a condition for it, this looks similar to `logical_equality`, `exclusive_disjunction`, `negate_first`, `negate_second` and `project_first` because 2 out of the 4 cases have the same return value. We observe that
     - if `q == True` the result is `True`
     - if `q == False` the result is `False`
-- let's try using our conclusion from `project_first`
+- let us try using our conclusion from `project_first`
     ```python
     def project_second(p, q):
         return p
     ```
-    the terminal still shows an [AssertionError](./04_ASSERTION_ERROR.md). Let's return `q` instead
+    the terminal still shows an [AssertionError](./04_ASSERTION_ERROR.md). let us return `q` instead
     ```python
     def project_second(p, q):
         return q

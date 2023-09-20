@@ -112,7 +112,7 @@ We can summarize what we know about `None` so far
 
 - What about other values in python?
 - Is `None` equal to any `int`, `float`, `string`, `tuple`, `list`, `set` or `dict`?
-Let's find out
+let us find out
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -163,7 +163,7 @@ So far we know that in python
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-Let's add a test for `strings`
+let us add a test for `strings`
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -186,7 +186,7 @@ update `test_is_none_a_string` to make it pass
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-`strings` are represented by the `str` class keyword in python. Let's add a test that checks if `None` is an instance of the `string` class
+`strings` are represented by the `str` class keyword in python. let us add a test that checks if `None` is an instance of the `string` class
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -260,7 +260,7 @@ AssertionError: () is not None
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
 Based on what we have seen so far, is it safe to assume that `None` is only `None` and is not any other data structure?
-Let's find out if this assumption is true.
+let us find out if this assumption is true.
 
 Is `None` a list | array?
 
@@ -363,7 +363,7 @@ update the tests to make them pass and we can update our knowledge of `None` to 
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-We just learned about `None`, which also introduced us to all the `objects` that it is not. Let's do the same with the first `object` we encountered `False`. What is `False` in python?
+We just learned about `None`, which also introduced us to all the `objects` that it is not. let us do the same with the first `object` we encountered `False`. What is `False` in python?
 
 ### <span style="color:red">**RED**</span>: make it fail
 

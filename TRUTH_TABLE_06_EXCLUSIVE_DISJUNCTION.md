@@ -53,7 +53,7 @@ the terminal shows an [AttributeError](./01_ATTRIBUTE_ERROR.md)
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-Let's try to refactor those statements to make them better
+let us try to refactor those statements to make them better
 
 - in the first case `p` and `q` have the same value, can we change the statement to reflect this like we did with `logical_equality`?
     ```python

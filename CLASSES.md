@@ -159,7 +159,7 @@ We now know that in python
 
 ## Class Attributes
 
-Since we know how to define a class, let's add some tests for attributes.
+Since we know how to define a class, let us add some tests for attributes.
 
 ### <span style="color:red">**RED**</span>: make it fail
 - update `TestClasses` in `classes.py`
@@ -210,7 +210,7 @@ Since we know how to define a class, let's add some tests for attributes.
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-Let's repeat this with other python `objects/data structures`
+let us repeat this with other python `objects/data structures`
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -308,7 +308,7 @@ the terminal updates to show [AttributeError](./01_ATTRIBUTE_ERROR.md)
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-- Let's add a few more tests for fun to `test_classes_with_methods`
+- let us add a few more tests for fun to `test_classes_with_methods`
     ```python
         def test_classes_with_methods(self):
             self.assertEqual(classes.ClassWithMethods.method_a(), 'You called MethodA')
@@ -318,7 +318,7 @@ the terminal updates to show [AttributeError](./01_ATTRIBUTE_ERROR.md)
     ```
     the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
 - update `ClassWithmethods` to make it pass
-- let's add another test for a class that has both attributes and methods
+- let us add another test for a class that has both attributes and methods
     ```python
         def test_classes_with_attributes_and_methods(self):
             self.assertEqual(classes.ClassWithAttributesAndMethods.attribute, 'attribute')
@@ -341,7 +341,7 @@ the terminal updates to show [AttributeError](./01_ATTRIBUTE_ERROR.md)
 
 ## Class Initializers
 
-CONGRATULATIONS. You now know how to define classes, attributes and methods. Let's expand on this knowledge. How do we use classes?
+CONGRATULATIONS. You now know how to define classes, attributes and methods. let us expand on this knowledge. How do we use classes?
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -384,7 +384,7 @@ the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-- Let's add another test to `test_classes_with_initializers`
+- let us add another test to `test_classes_with_initializers`
     ```python
             self.assertEqual(classes.Girl(sex='F').sex, 'F')
     ```
@@ -426,7 +426,7 @@ the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
         pass
     ```
     the terminal updates to show passing tests
-- let's add another test we can use an initializer with to `test_classes_with_initializers`
+- let us add another test we can use an initializer with to `test_classes_with_initializers`
     ```python
         self.assertEqual(classes.Other(sex='?').sex, '?')
     ```
@@ -447,7 +447,7 @@ the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
     - We defined a `class` with a name
     - defined an attribute named `sex`
     - defined an `__init__` method which takes in a `sex` keyword argument
-- let's make the repetition complete by redefining the `Boy` class to match the `Girl` and `Other` class
+- let us make the repetition complete by redefining the `Boy` class to match the `Girl` and `Other` class
     ```python
 
 
@@ -491,7 +491,7 @@ the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
         pass
     ```
     the terminal still shows passing tests
-- Let's try the same thing with the `Girl` class. update the definition to inherit from the `Human` class
+- let us try the same thing with the `Girl` class. update the definition to inherit from the `Human` class
     ```python
     class Girl(Human):
         ...

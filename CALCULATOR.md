@@ -173,7 +173,7 @@ class TestCalculator(unittest.TestCase):
     ```
 
 - The `AttributeError` was fixed by declaring a variable `add` in the `calculator` module, even though it is currently defined as the null value `None`
-- The new error is [TypeError](https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError) occurs when an `object` is used in a way that it was not intended for. The `add` variable is not callable. Let's make it callable
+- The new error is [TypeError](https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError) occurs when an `object` is used in a way that it was not intended for. The `add` variable is not callable. let us make it callable
 
     update `calculator.py` to
     ```python
@@ -224,7 +224,7 @@ class TestCalculator(unittest.TestCase):
     ```
     This one is familiar. An `AssertionError` was the first error we solved in our test for failure.
     This is caused by the left side not being equal to the right side.
-    Let's make them equal. update the `add` function in `calculator.py`
+    let us make them equal. update the `add` function in `calculator.py`
     ```python
     def add(x, y):
         return 1
@@ -313,7 +313,7 @@ Can we make it better?
     ```
 - <span style="color:orange">**REFACTOR**</span>: Make it Better
 
-    let's randomize the inputs to make sure the function behaves the way we expect for any integers.
+    let us randomize the inputs to make sure the function behaves the way we expect for any integers.
     update `test_calculator.py` to use the [random](https://docs.python.org/3/library/random.html?highlight=random#module-random) library
     ```python
     import unittest
@@ -365,7 +365,7 @@ That's the pattern <span style="color:red">**RED**</span> <span style="color:gre
 
 ### Test Subtraction
 
-Let's add the other tests
+let us add the other tests
 #### <span style="color:red">**RED**</span> : make it fail
 
 - update `test_calculator.py` with `test_subtraction`

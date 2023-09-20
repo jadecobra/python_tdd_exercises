@@ -14,7 +14,7 @@ We know that there are two boolean values
 
 # Binary Operations - It takes 2 to tango
 
-Let's test the 16 outcomes of binary operations
+let us test the 16 outcomes of binary operations
 
 ## Logical Conjunction
 
@@ -69,7 +69,7 @@ the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
             return True
     ```
     the terminal still shows an [AssertionError](./04_ASSERTION_ERROR.md)
-- let's add a condition for the second input value
+- let us add a condition for the second input value
     ```python
     def logical_conjunction(p, q):
         if p == True:
@@ -84,7 +84,7 @@ the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
 - Why does this work?
     - we add a condition for when the value of `p` is equal to `True` and inside that condition we have another for when the value of `q` is equal to `True`
     - if both conditions are met, the `logical_conjunction` function returns True but what does it do when those two conditions are not met?
-- we know by default a function returns `None` so it must be returning `None` for the other cases. Does this mean `None` is `False`? We know the answer to this from [data structures](./06_DATA_STRUCTURES.md), let's test it as a reminder. add another return statement to the definition of `logical_conjunction`
+- we know by default a function returns `None` so it must be returning `None` for the other cases. Does this mean `None` is `False`? We know the answer to this from [data structures](./06_DATA_STRUCTURES.md), let us test it as a reminder. add another return statement to the definition of `logical_conjunction`
     ```python
     def logical_conjunction(p, q):
         if p == True:

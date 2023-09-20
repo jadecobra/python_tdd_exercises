@@ -74,7 +74,7 @@ the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
             return False
         return True
     ```
-- `not` happens twice in that statement. Let's see if we can "factor" it out using algebra
+- `not` happens twice in that statement. let us see if we can "factor" it out using algebra
     ```python
     def logical_disjunction(p, q):
         if not(p and q):
@@ -102,7 +102,7 @@ the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
             return False
         return True
     ```
-    okay, this looks more like, if we "multiply" this out we get our original statement since the opposite of the opposite of something is something. Let's fix the syntax. The opposite of and is `or`
+    okay, this looks more like, if we "multiply" this out we get our original statement since the opposite of the opposite of something is something. let us fix the syntax. The opposite of and is `or`
     ```python
     def logical_disjunction(p, q):
         if not(p or q):

@@ -84,7 +84,7 @@ add a file named `dictionaries.py` to the project folder and the tests pass
         return {'key': 'value'}
     ```
     ***VOILA!*** The tests pass. You now know how to create a `dictionary`
-- let's look at creating a dictionary with the `dict` keyword. add a test to `test_creating_dictionaries_with_strings_as_keys`
+- let us look at creating a dictionary with the `dict` keyword. add a test to `test_creating_dictionaries_with_strings_as_keys`
     ```python
     def test_creating_dictionaries_with_strings_as_keys(self):
         self.assertEqual(dictionaries.a_dict(), {'key': 'value'})
@@ -125,7 +125,7 @@ the terminal updates to show passing tests
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-- Our knowledge of dictionaries is growing. We know we can use `strings` and `integers` as dictionary keys. Can we use floats? Let's add a test to check
+- Our knowledge of dictionaries is growing. We know we can use `strings` and `integers` as dictionary keys. Can we use floats? let us add a test to check
     ```python
         def test_creating_dictionaries_with_numbers_as_keys(self):
             self.assertEqual({1: 'boom'}, {'one': 'boom'})
@@ -144,7 +144,7 @@ the terminal updates to show passing tests
 
 ### <span style="color:red">**RED**</span>: make it fail
 
-is it possible for us to use `False` or `True` as `dictionary` keys? Let's add a test to find out
+is it possible for us to use `False` or `True` as `dictionary` keys? let us add a test to find out
 
 ```python
     def test_creating_dictionaries_with_booleans_as_keys(self):
@@ -203,7 +203,7 @@ we fix update the values to make it pass
 
 ### <span style="color:red">**RED**</span>: make it fail
 
-let's add a test to `TestDictionaries` using a list as a key
+let us add a test to `TestDictionaries` using a list as a key
 
 ```python
     def test_creating_dictionaries_with_lists_as_keys(self):
@@ -229,7 +229,7 @@ all green here
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-- let's try the same using a set as a key
+- let us try the same using a set as a key
     ```python
     def test_creating_dictionaries_with_sets_as_keys(self):
         {{1, 2}: "BOOM"}
@@ -320,7 +320,7 @@ the tests pass
             ['value1', 'value2', 'value3', 'valueN']
         )
     ```
-- we can do the same thing with the keys of the dictionary. let's add a test
+- we can do the same thing with the keys of the dictionary. let us add a test
     ```python
     def test_listing_dictionary_keys(self):
         a_dictionary = {
@@ -384,7 +384,7 @@ the terminal updates to show a [KeyError](https://docs.python.org/3/library/exce
     # IndexError
     # KeyError
     ```
-- let's add an exception handler for the error like in [Exception Handling](./EXCEPTION_HANDLING.md)
+- let us add an exception handler for the error like in [Exception Handling](./EXCEPTION_HANDLING.md)
     ```python
         def test_dictionaries_raise_key_error_when_key_does_not_exist(self):
             a_dictionary = {
@@ -424,7 +424,7 @@ What if we want to call a dictionary and not have an error? We could use the `ge
         self.assertIsNone(a_dictionary.get('non_existent_key'))
     ```
     the terminal updates to show a passing test. This means that when we use the `get` method and the `key` does not exist, we get `None` as the `return` value.
-- let's state the above explicitly
+- let us state the above explicitly
     ```python
     def test_how_to_get_a_value_when_a_key_does_not_exist(self):
         a_dictionary = {
@@ -447,7 +447,7 @@ What if we want to call a dictionary and not have an error? We could use the `ge
         except KeyError:
             return default
     ```
-- let's try the `get` method with an existing key
+- let us try the `get` method with an existing key
     ```python
     def test_how_to_get_a_value_when_a_key_does_not_exist(self):
         a_dictionary = {
@@ -465,7 +465,7 @@ What if we want to call a dictionary and not have an error? We could use the `ge
 
 ## How to view the attributes and methods of a dictionary
 
-[CLASSES] covers how to view the `attributes` and `methods` of an object. Let's do the same for `dictionaries`
+[CLASSES] covers how to view the `attributes` and `methods` of an object. let us do the same for `dictionaries`
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -545,7 +545,7 @@ the tests pass
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-We see some of the methods we have covered so far and others we did not. You can write tests on the others to discover what they do and/or [read more about dictionaries](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict). Let's list out what we know so far and you can fill in the others as you learn them
+We see some of the methods we have covered so far and others we did not. You can write tests on the others to discover what they do and/or [read more about dictionaries](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict). let us list out what we know so far and you can fill in the others as you learn them
 - clear
 - copy
 - fromkeys
@@ -560,7 +560,7 @@ We see some of the methods we have covered so far and others we did not. You can
 
 ## How to set a default value for a given key
 
-Let's test the `setdefault` method
+let us test the `setdefault` method
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -611,7 +611,7 @@ add a `self.assertRaises` to confirm that the `KeyError` gets raised and make th
         a_dictionary.setdefault('another_key')
         self.assertEqual(a_dictionary, {'bippity': 'boppity', 'another_key': None})
     ```
-- What if we want to add a `key` but set the default value to something other than `None`? Good question, Let's add a test to find out
+- What if we want to add a `key` but set the default value to something other than `None`? Good question, let us add a test to find out
     ```python
         a_dictionary.setdefault('a_new_key', 'a_default_value')
         self.assertEqual(a_dictionary, {'bippity': 'boppity', 'another_key': None})

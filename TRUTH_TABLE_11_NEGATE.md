@@ -35,7 +35,7 @@ the terminal shows an [AttributeError](./01_ATTRIBUTE_ERROR.md)
 - before we add a condition for it, this looks similar to `logical_equality` and `exclusive_disjunction` because 2 out of the 4 cases have the same return value. We observe that
     - if `p == True` the result is `False`
     - if `p == False` the result is `True`
-- let's add conditions to represent our observation
+- let us add conditions to represent our observation
     ```python
     def negate_first(p, q):
         if p == True:
@@ -97,12 +97,12 @@ the terminal shows an [AttributeError](./01_ATTRIBUTE_ERROR.md)
 - before we add a condition for it, this looks similar to `logical_equality`, `exclusive_disjunction` and `negate_first` because 2 out of the 4 cases have the same return value. We observe that
     - if `q == True` the result is `False`
     - if `q == False` the result is `True`
-- let's try using our conclusion from `negate_first`
+- let us try using our conclusion from `negate_first`
     ```python
     def negate_second(p, q):
         return not p
     ```
-    the terminal still shows an [AssertionError](./04_ASSERTION_ERROR.md). Let's try `q` instead
+    the terminal still shows an [AssertionError](./04_ASSERTION_ERROR.md). let us try `q` instead
     ```python
     def negate_second(p, q):
         return not q
@@ -111,7 +111,7 @@ the terminal shows an [AttributeError](./01_ATTRIBUTE_ERROR.md)
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-I don't think we can make it better. Let's update what we know so far
+I don't think we can make it better. let us update what we know so far
 
 For any boolean operation involving 2 inputs - `p` and `q` which can take the values `True` or `False`
 - `negate_first` always return `not p`

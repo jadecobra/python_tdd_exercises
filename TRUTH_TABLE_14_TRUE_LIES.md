@@ -75,7 +75,7 @@ the terminal shows an [AttributeError](./01_ATTRIBUTE_ERROR.md)
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-Nothing to do here either. Let's update what we know so far
+Nothing to do here either. let us update what we know so far
 
 ***YOU DID IT!***
 For any boolean operation involving 2 inputs - `p` and `q` which can take the values `True` or `False`

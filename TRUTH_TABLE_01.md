@@ -45,7 +45,7 @@ the terminal updates to show a [ModuleNotFoundError](./00_MODULE_NOT_FOUND_ERROR
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-Let's add a test for `logical_false`
+let us add a test for `logical_false`
 
 - add a test to `TestNullaryOperations`
     ```python
