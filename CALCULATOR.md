@@ -1,16 +1,16 @@
 # How to create a Calculator using Test Driven Development
 
-We will step through creating a calculator using Test Driven Development
+We are going to explore creating a calculator in python using Test Driven Development
 
 ### Prerequisites
 
-- [Setup a Test Driven Development Environment](./TDD_SETUP.md)
+- [Setup a Test Driven Development Environment](./TDD_SETUP.md) with `calculator` as the project name
 
 ---
 
 ## Add Tests
 
-Update `test_calculator.py` with a TODO list to keep track of what needs to be done
+we add a TODO list to `test_calculator.py` to keep track of action items
 ```python
 import unittest
 
@@ -31,10 +31,10 @@ class TestCalculator(unittest.TestCase):
 # AssertionError
 ```
 
-the terminal should respond since a change was made
+the terminal responds to our change, though it still shows passing tests
 
 ```shell
-=============== 1 passed in 0.01s ===========================
+==================== 1 passed in 0.01s ======================
 
 Change detected: tests/test_calculator.py
 
@@ -46,14 +46,15 @@ collected 1 item
 
 tests/test_calculator.py .                                                                                                    [100%]
 
-==================== 1 passed in 0.00s =====================
+==================== 1 passed in 0.00s ======================
 ```
 
-### Add the import test
+## Test Imports
 
+add an import statement for the `calculator` module we are working on
 ```python
-import unittest
 import calculator
+import unittest
 
 
 class TestCalculator(unittest.TestCase):
@@ -72,55 +73,54 @@ class TestCalculator(unittest.TestCase):
 # AssertionError
 ```
 
-- `import calculator` - imports the calculator module we are writing/testing
+since the test passes we can remove `test importing` from our todo list
 
-### Test Addition
+## Test Addition
 
-#### <span style="color:red">**RED**</span>: make it fail
+Moving on to the next item from our TODO list, we add a test for addition
 
-```python
-import unittest
-import calculator
+### <span style="color:red">**RED**</span>: make it fail
+
+- let us add a method named `test_addition` to the `TestCalculator` class
+    ```python
+    import unittest
+    import calculator
 
 
-class TestCalculator(unittest.TestCase):
+    class TestCalculator(unittest.TestCase):
 
-    def test_failure(self):
-        self.assertTrue(True)
+        def test_failure(self):
+            self.assertTrue(True)
 
-    def test_addition(self):
-        self.assertEqual(
-            calculator.add(0, 1),
-            1
-        )
+        def test_addition(self):
+            self.assertEqual(
+                calculator.add(0, 1),
+                1
+            )
 
-# TODO
-# test addition
-# test subtraction
-# test multiplication
-# test division
+    # TODO
+    # test addition
+    # test subtraction
+    # test multiplication
+    # test division
 
-# Exceptions Encountered
-# AssertionError
-```
-
-- remove `test import` from the TODO list since it passed and the task is completed
-- add `test_addition` to the list of tests
-- there's a new method `self.assertEqual` this checks if 2 things are the same it is similar to `assert x == y` or asking `is x equal to y?`
-- there are two things passed to the `self.assertEqual` for evaluation
-    - calculator.add(0, 1) - when we pass the values 0 and 1 to the addition function
-    - 1 - we expect it to return one
-
-    the terminal updates with the following
-
+    # Exceptions Encountered
+    # AssertionError
+    ```
+    - we called a new testing method `self.assertEqual` which checks if 2 things are equal. It is similar to the statement `assert x == y` or asking `is x equal to y?`, we get more experience with using `self.assertEqual` in [AssertionError](./ASSERTION_ERROR.md)
+    - there are two things passed to the `self.assertEqual` for evaluation in this case
+        - first - `calculator.add(0, 1)` - where we pass the values `0` and `1` to the addition function we are testing
+        - second - `1` - our expected result of the addition operation when it is given `0` and `1`
+        - our expectation is that `calculator.add(0, 1) is equal to 1`
+- the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
     ```python
     ...
     collected 2 items
 
-    tests/test_calculator.py F.                                                                                                   [100%]
+    tests/test_calculator.py F.                                     [100%]
 
-    =========================== FAILURES =======================
-    ______________ TestCalculator.test_addition ________________
+    =========================== FAILURES =================================
+    __________________ TestCalculator.test_addition ______________________
 
     self = <tests.test_calculator.TestCalculator testMethod=test_addition>
 
@@ -132,26 +132,38 @@ class TestCalculator(unittest.TestCase):
     E       AttributeError: module 'calculator' has no attribute 'add'
 
     tests/test_calculator.py:12: AttributeError
-    ============== short test summary info +=======================
+    ==================== short test summary info =========================
     FAILED tests/test_calculator.py::TestCalculator::test_addition - AttributeError: module 'calculator' has no attribute 'add'
-    ============ 1 failed, 1 passed in 0.02s ======================
+    ================== 1 failed, 1 passed in 0.02s =======================
     ```
 
     What does this mean?
     - The error is an `AttributeError` at line 12 in `test_calculator.py`
-    - [AttributeError](https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError) is raised when you try to access an attribute and python cannot find it
-    - `calculator.add` is similar to an address. `calculator` refers to `calculator.py` - the python module we wrote at the beginning
-    - `add` refers to something in that file that currently does not exist
+    - [AttributeError](https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError) is raised when we try to access/call an attribute and python cannot find it
+    - we can think of `calculator.add` as an address. `calculator` refers to `calculator.py` and `add` refers to something in that file that currently does not exist
 
+### <span style="color:green">**GREEN**</span>: make it pass
 
-#### <span style="color:green">**GREEN**</span>: make it pass
-
-- open `calculator.py` in your Interactive Development Environment(IDE) and add this
+- open `calculator.py` in your Interactive Development Environment(IDE) and add the name `add`
+    ```python
+    add
+    ```
+    the terminal updates to show a `NameError` because `add` is not defined, there is no assignment to the name
+    ```python
+    E   NameError: name 'add' is not defined
+    ```
+- let us update our list of exceptions encountered with `NameError`
+    ```python
+    # Exceptions Encountered
+    # AssertionError
+    # NameError
+    ```
+- assign the name `add` to the null value `None`
     ```python
     add = None
     ```
 
-    the terminal will update to show a new Error
+    the terminal now shows a new Error
 
     ```python
     ================== FAILURES =============================
@@ -173,16 +185,19 @@ class TestCalculator(unittest.TestCase):
     ```
 
 - The `AttributeError` was fixed by declaring a variable `add` in the `calculator` module, even though it is currently defined as the null value `None`
-- The new error is [TypeError](https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError) occurs when an `object` is used in a way that it was not intended for. The `add` variable is not callable. let us make it callable
-
-    update `calculator.py` to
+- The new error is [TypeError](./TYPE_ERROR.md) which can occur when an `object` is used in a way that it was not intended for. In this case the `add` variable is not callable. Let us update our list of exceptions encountered
+    ```python
+    # Exceptions Encountered
+    # AssertionError
+    # NameError
+    # TypeError
+    ```
+- To make it callable we have to define it as a [function](./FUNCTIONS.md) or a [class](./CLASSES.md). Testing the `def` keyword for creating functions we update our add variable in `calculator.py` to
     ```python
     def add():
         return None
     ```
-
-    the terminal will update to a different message for the TypeError
-
+    the terminal displays a different message but still a [TypeError](./TYPE_ERROR.md)
     ```python
     ===================== FAILURES ===========================
     ___________ TestCalculator.test_addition _________________
@@ -201,14 +216,14 @@ class TestCalculator(unittest.TestCase):
     FAILED tests/test_calculator.py::TestCalculator::test_addition - TypeError: add() takes 0 positional arguments but 2 were given
     ============= 1 failed, 1 passed in 0.02s ===================
     ```
-- This `TypeError` indicates that the current definition of the `add` function takes in no arguments but we provided 2. update the `add` function in `calculator.py` to match the test
-    ```
+- This `TypeError` indicates that the current definition of the `add` function takes in no arguments but we provided 2 in our call, since part of our requirements is that the function should be able to take in two numbers, we will update the `add` function in `calculator.py` to match
+    ```python
     def add(x, y):
         return None
     ```
-    the terminal updates to a new error
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
     ```python
-        self = <tests.test_calculator.TestCalculator testMethod=test_addition>
+    self = <tests.test_calculator.TestCalculator testMethod=test_addition>
 
         def test_addition(self):
     >       self.assertEqual(
@@ -222,38 +237,38 @@ class TestCalculator(unittest.TestCase):
     FAILED tests/test_calculator.py::TestCalculator::test_addition - AssertionError: None != 1
     ================ 1 failed, 1 passed in 0.02s ==================
     ```
-    This one is familiar. An `AssertionError` was the first error we solved in our test for failure.
-    This is caused by the left side not being equal to the right side.
-    let us make them equal. update the `add` function in `calculator.py`
+    An `AssertionError` was the first error we encountered in [Setup TDD](./TDD_SETUP.md) when we added a test for failure.
+    It is raised when an assertion is `False`, since we are using `self.assertEqual` it means the two things we provided to as inputs are not equal. In other words `calculator.add(0, 1)` is currently not equal to `1`. Let us update the `add` function in `calculator.py` so it gives the expected value
     ```python
     def add(x, y):
         return 1
     ```
     Eureka! The test passes
     ```python
-    tests/test_calculator.py ..                                                                                                             [100%]
+    tests/test_calculator.py ..                             [100%]
 
     ===================== 2 passed in 0.01s ======================
     ```
-#### <span style="color:orange">**REFACTOR**</span>: Make it Better
 
-Wait a minute. Is it that easy? Do we just provide the solution to make it pass? In the green phase, yes. We do whatever it takes to make the test pass even if we have to cheat.
-This shows us that our test needs to be better.
-What happens if our calculator users try to add other numbers?
-What happens if our calculator users try to add a negative number?
-Can we make it better?
+### <span style="color:orange">**REFACTOR**</span>: Make it Better
 
-- <span style="color:red">**RED**</span>: make it fail - update `test_calculator.py` with a new test
+Wait a minute. Is it that easy? Do we just provide the solution to make it pass? In the green phase, yes. We do whatever it takes to make the test pass even if we have to cheat. The ease with which we solved this problems reveals a problem with our test, which means we need to Make it Better.
+
+There are a few scenarios we can consider from the users perspective. If our users try to add other numbers that are not 0 and 1, the calculator will return 1, if they also try to add negative numbers, it will return 1. It always returns 1 so the addition function even though it passes our existing test does not quite meet the requirement.
+
+- remove `test_failure` from `test_calculator.py` since we no longer need it
     ```python
-    import unittest
-    import calculator
-
-
     class TestCalculator(unittest.TestCase):
 
-        def test_failure(self):
-            self.assertTrue(True)
-
+        def test_addition(self):
+            self.assertEqual(
+                calculator.add(0, 1),
+                1
+            )
+    ```
+- <span style="color:red">**RED**</span>: make it fail
+    add a new test to `test_addition` in `test_calculator.py`
+    ```python
         def test_addition(self):
             self.assertEqual(
                 calculator.add(0, 1),
@@ -263,20 +278,8 @@ Can we make it better?
                 calculator.add(-1, 1),
                 0
             )
-
-    # TODO
-    # test addition
-    # test subtraction
-    # test multiplication
-    # test division
-
-    # Exceptions Encountered
-    # AssertionError
-    # AttributeError
-    # TypeError
     ```
-    terminal response
-
+    the terminal responds with an [AssertionError](./ASSERTION_ERROR.md) confirming that the `add` function always returns `1` regardless of inputs
     ```python
     ======================= FAILURES =====================================
     _____________ TestCalculator.test_addition ___________________________
@@ -299,32 +302,27 @@ Can we make it better?
     FAILED tests/test_calculator.py::TestCalculator::test_addition - AssertionError: 1 != 0
     ================= 1 failed, 1 passed in 0.02s ========================
     ```
-    Another AssertionError
-- <span style="color:green">**GREEN**</span>: make it pass - update the `add` function in `calculator.py`
+- <span style="color:green">**GREEN**</span>: make it pass
+    let us update the `add` function in `calculator.py` to do something with the inputs
     ```python
     def add(x, y):
-    return x + y
+        return x + y
     ```
-    terminal response
-    ```
+    and the terminal shows passing tests, our confidence in the `add` function has grown
+    ```python
     tests/test_calculator.py ..                      [100%]
 
     ====================== 2 passed in 0.01s ==============
     ```
 - <span style="color:orange">**REFACTOR**</span>: Make it Better
-
-    let us randomize the inputs to make sure the function behaves the way we expect for any integers.
-    update `test_calculator.py` to use the [random](https://docs.python.org/3/library/random.html?highlight=random#module-random) library
+    what if we randomize the inputs to make sure the function behaves the way we expect for any given numbers? Update `test_calculator.py` to use the [random](https://docs.python.org/3/library/random.html?highlight=random#module-random) library
     ```python
-    import unittest
     import calculator
     import random
+    import unittest
 
 
     class TestCalculator(unittest.TestCase):
-
-        def test_failure(self):
-            self.assertTrue(True)
 
         def test_addition(self):
             x = random.randint(-1, 1)
@@ -333,40 +331,35 @@ Can we make it better?
                 calculator.add(x, y),
                 x+y
             )
-
-    # TODO
-    # test addition
-    # test subtraction
-    # test multiplication
-    # test division
-
-    # Exceptions Encountered
-    # AssertionError
-    # AttributeError
-    # TypeError
     ```
-    - set a variable x to a random integer between -1 and 1
-    - set a variable y to a random integer between -1 and 1
-    - test that when you give these two variables to the `add` function you get a sum of the 2 variables back
+    - we assign a variable named `x` to a random integer between -1 and 1
+    - we assign a variable named `y` to a random integer between -1 and 1
+    - we then test that when these two variables are given to the `add` function we get the sum of the 2 variables back
 
-    terminal response
-    ```
-    tests/test_calculator.py ..           [100%]
+    the terminal updates to show passing tests
+    ```python
+    tests/test_calculator.py ..                             [100%]
 
     ================ 2 passed in 0.01s ===========================
     ```
-    - we no longer need the previous 2 tests because this new test covers those cases and more
-    - remove `test addition` from the TODO list since it passed and the task is completed
+    - we no longer need the previous 2 tests because this new test covers the scenarios for any positive and negative number including zero
+    - we can remove `test addition` from the TODO list since it passed and the task is completed
+    ```python
+    # TODO
+    # test subtraction
+    # test multiplication
+    # test division
+    ```
 
-That's the pattern <span style="color:red">**RED**</span> <span style="color:green">**GREEN**</span> <span style="color:orange">**REFACTOR**</span>
+That's the Test Driven Development pattern <span style="color:red">**RED**</span> <span style="color:green">**GREEN**</span> <span style="color:orange">**REFACTOR**</span>
 
 ---
 
 
-### Test Subtraction
+## Test Subtraction
 
 let us add the other tests
-#### <span style="color:red">**RED**</span> : make it fail
+### <span style="color:red">**RED**</span> : make it fail
 
 - update `test_calculator.py` with `test_subtraction`
     ```python
@@ -477,7 +470,7 @@ let us add the other tests
     =================== 1 failed, 2 passed in 0.02s =========================
     ```
 
-#### <span style="color:green">**GREEN**</span> : make it pass
+### <span style="color:green">**GREEN**</span> : make it pass
 
 - update `calculator.py`
     ```python
@@ -523,7 +516,7 @@ let us add the other tests
     ```
 - remove `test subtraction` from the TODO list
 
-#### <span style="color:orange">**REFACTOR**</span>: make it better
+### <span style="color:orange">**REFACTOR**</span>: make it better
 
 - How can we make this better?
 - Is there any duplication that could be removed? Yes
@@ -574,7 +567,7 @@ let us add the other tests
 
 ### Test Multiplication
 
-#### <span style="color:red">**RED**</span> : make it fail
+### <span style="color:red">**RED**</span> : make it fail
 
 update `test_calculator.py` with `test_multiplication`
 ```python
@@ -620,7 +613,7 @@ class TestCalculator(unittest.TestCase):
 ```
 terminal response - AttributeError
 
-#### <span style="color:green">**GREEN**</span> : make it pass
+### <span style="color:green">**GREEN**</span> : make it pass
 update `calculator.py`
 ```python
 def add(x, y):
@@ -633,7 +626,7 @@ def multiply(x, y):
     return x * y
 ```
 terminal response - SUCCESS
-#### <span style="color:orange">**REFACTOR**</span>: make it better
+### <span style="color:orange">**REFACTOR**</span>: make it better
 
 - remove `test_multiplication` from the TODO list
 - Can you think of any way to make the code better?
@@ -642,7 +635,7 @@ terminal response - SUCCESS
 
 ### Test Division
 
-#### <span style="color:red">**RED**</span> : make it fail
+### <span style="color:red">**RED**</span> : make it fail
 - update `test_calculator.py` with `test_division`
     ```python
     import unittest
@@ -720,7 +713,7 @@ terminal response - SUCCESS
     ```
     add `ZeroDivisionError` to the list of errors encountered
 
-##### How to test for Errors
+#### How to test for Errors
 - <span style="color:red">**RED**</span> : make it fail
     - update `test_calculator.py` with a test for division by zero
     ```python
