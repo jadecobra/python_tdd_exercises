@@ -1,6 +1,6 @@
 # How to create a Calculator using Test Driven Development
 
-We are going to explore creating a calculator in python using Test Driven Development
+We are going to explore creating a calculator with python using Test Driven Development
 
 ### Prerequisites
 
@@ -10,7 +10,7 @@ We are going to explore creating a calculator in python using Test Driven Develo
 
 ## Add Tests
 
-we add a TODO list to `test_calculator.py` to keep track of action items
+let us add a TODO list to `test_calculator.py` to keep track of action items
 ```python
 import unittest
 
@@ -73,11 +73,11 @@ class TestCalculator(unittest.TestCase):
 # AssertionError
 ```
 
-since the test passes we can remove `test importing` from our todo list
+since the test passes we can remove `test importing` from our TODO list
 
 ## Test Addition
 
-Moving on to the next item from our TODO list, we add a test for addition
+Moving on to the next item we test for addition
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -107,10 +107,10 @@ Moving on to the next item from our TODO list, we add a test for addition
     # Exceptions Encountered
     # AssertionError
     ```
-    - we called a new testing method `self.assertEqual` which checks if 2 things are equal. It is similar to the statement `assert x == y` or asking `is x equal to y?`, we get more experience with using `self.assertEqual` in [AssertionError](./ASSERTION_ERROR.md)
-    - there are two things passed to the `self.assertEqual` for evaluation in this case
-        - first - `calculator.add(0, 1)` - where we pass the values `0` and `1` to the addition function we are testing
-        - second - `1` - our expected result of the addition operation when it is given `0` and `1`
+    - we called a new testing method from the `unittest.TestCase` class called `assertEqual` which checks if 2 things are equal. It is similar to the statement `assert x == y` or asking `is x equal to y?`
+    - there are two things passed to the `assertEqual` method for evaluation in this case
+        - first - `calculator.add(0, 1)` - where we give the values `0` and `1` as inputs
+        - second - `1` - our expected result from `calculator.add` when it is given `0` and `1`
         - our expectation is that `calculator.add(0, 1) is equal to 1`
 - the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
     ```python
@@ -139,8 +139,10 @@ Moving on to the next item from our TODO list, we add a test for addition
 
     What does this mean?
     - The error is an `AttributeError` at line 12 in `test_calculator.py`
-    - [AttributeError](https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError) is raised when we try to access/call an attribute and python cannot find it
-    - we can think of `calculator.add` as an address. `calculator` refers to `calculator.py` and `add` refers to something in that file that currently does not exist
+    - [AttributeError](https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError) is raised when we try to access or call an attribute that python cannot find
+    - we can think of `calculator.add` as an address
+        - `calculator` refers to `calculator.py`
+        - `add` refers to something with `calculator.py` file that currently does not exist
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
@@ -163,25 +165,10 @@ Moving on to the next item from our TODO list, we add a test for addition
     add = None
     ```
 
-    the terminal now shows a new Error
+    the terminal now shows a new error
 
     ```python
-    ================== FAILURES =============================
-    ___________ TestCalculator.test_addition ________________
-
-    self = <tests.test_calculator.TestCalculator testMethod=test_addition>
-
-        def test_addition(self):
-            self.assertEqual(
-    >           calculator.add(0, 1),
-                1
-            )
     E       TypeError: 'NoneType' object is not callable
-
-    tests/test_calculator.py:12: TypeError
-    =============== short test summary info ========================
-    FAILED tests/test_calculator.py::TestCalculator::test_addition - TypeError: 'NoneType' object is not callable
-    ============== 1 failed, 1 passed in 0.03s ======================
     ```
 
 - The `AttributeError` was fixed by declaring a variable `add` in the `calculator` module, even though it is currently defined as the null value `None`
@@ -197,48 +184,21 @@ Moving on to the next item from our TODO list, we add a test for addition
     def add():
         return None
     ```
-    the terminal displays a different message but still a [TypeError](./TYPE_ERROR.md)
+    the terminal still shows a [TypeError](./TYPE_ERROR.md) but with a different message, progress
     ```python
-    ===================== FAILURES ===========================
-    ___________ TestCalculator.test_addition _________________
-
-    self = <tests.test_calculator.TestCalculator testMethod=test_addition>
-
-        def test_addition(self):
-            self.assertEqual(
-    >           calculator.add(0, 1),
-                1
-            )
     E       TypeError: add() takes 0 positional arguments but 2 were given
-
-    tests/test_calculator.py:12: TypeError
-    ============== short test summary info ======================
-    FAILED tests/test_calculator.py::TestCalculator::test_addition - TypeError: add() takes 0 positional arguments but 2 were given
-    ============= 1 failed, 1 passed in 0.02s ===================
     ```
-- This `TypeError` indicates that the current definition of the `add` function takes in no arguments but we provided 2 in our call, since part of our requirements is that the function should be able to take in two numbers, we will update the `add` function in `calculator.py` to match
+- This `TypeError` indicates that the current definition of the `add` function takes in no arguments but we provided 2 in our call, since part of our requirement is that the `add` function should take in two numbers, we will update it in `calculator.py` to match
     ```python
     def add(x, y):
         return None
     ```
     the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
     ```python
-    self = <tests.test_calculator.TestCalculator testMethod=test_addition>
-
-        def test_addition(self):
-    >       self.assertEqual(
-                calculator.add(0, 1),
-                1
-            )
     E       AssertionError: None != 1
-
-    tests/test_calculator.py:11: AssertionError
-    ================ short test summary info ======================
-    FAILED tests/test_calculator.py::TestCalculator::test_addition - AssertionError: None != 1
-    ================ 1 failed, 1 passed in 0.02s ==================
     ```
-    An `AssertionError` was the first error we encountered in [Setup TDD](./TDD_SETUP.md) when we added a test for failure.
-    It is raised when an assertion is `False`, since we are using `self.assertEqual` it means the two things we provided to as inputs are not equal. In other words `calculator.add(0, 1)` is currently not equal to `1`. Let us update the `add` function in `calculator.py` so it gives the expected value
+    An `AssertionError` was the first error we encountered in [Setup TDD](./TDD_SETUP.md) after adding a test for failure.
+    It is raised when an assertion is `False`, since we are using `self.assertEqual` it means the two things we provided as inputs are not equal. In other words `calculator.add(0, 1)` is currently not equal to `1`. Let us update the `add` function in `calculator.py` so it gives the expected value
     ```python
     def add(x, y):
         return 1
@@ -252,9 +212,9 @@ Moving on to the next item from our TODO list, we add a test for addition
 
 ### <span style="color:orange">**REFACTOR**</span>: Make it Better
 
-Wait a minute. Is it that easy? Do we just provide the solution to make it pass? In the green phase, yes. We do whatever it takes to make the test pass even if we have to cheat. The ease with which we solved this problems reveals a problem with our test, which means we need to Make it Better.
+Wait a minute. Is it that easy? Do we just provide the solution to make it pass? In the green phase, yes. We do whatever it takes to make the test pass even if we have to cheat. The ease with which we solved this problems reveals a problem with our test, which means we need to "Make it Better".
 
-There are a few scenarios we can consider from the users perspective. If our users try to add other numbers that are not 0 and 1, the calculator will return 1, if they also try to add negative numbers, it will return 1. It always returns 1 so the addition function even though it passes our existing test does not quite meet the requirement.
+There are a few scenarios we can consider from the users perspective. If our users try to add other numbers that are not 0 and 1, the calculator will return 1. If they also try to add negative numbers, it will also return 1. The function always returns 1 regardless of the inputs the user gives, even though it passes our existing test it still does not meet the actual requirement.
 
 - remove `test_failure` from `test_calculator.py` since we no longer need it
     ```python
@@ -266,8 +226,7 @@ There are a few scenarios we can consider from the users perspective. If our use
                 1
             )
     ```
-- <span style="color:red">**RED**</span>: make it fail
-    add a new test to `test_addition` in `test_calculator.py`
+- <span style="color:red">**RED**</span>: make it fail by adding a new test to `test_addition` in `test_calculator.py`
     ```python
         def test_addition(self):
             self.assertEqual(
@@ -281,41 +240,20 @@ There are a few scenarios we can consider from the users perspective. If our use
     ```
     the terminal responds with an [AssertionError](./ASSERTION_ERROR.md) confirming that the `add` function always returns `1` regardless of inputs
     ```python
-    ======================= FAILURES =====================================
-    _____________ TestCalculator.test_addition ___________________________
-
-    self = <tests.test_calculator.TestCalculator testMethod=test_addition>
-
-        def test_addition(self):
-            self.assertEqual(
-                calculator.add(0, 1),
-                1
-            )
-    >       self.assertEqual(
-                calculator.add(-1, 1),
-                0
-            )
     E       AssertionError: 1 != 0
-
-    tests/test_calculator.py:15: AssertionError
-    ================== short test summary info ===========================
-    FAILED tests/test_calculator.py::TestCalculator::test_addition - AssertionError: 1 != 0
-    ================= 1 failed, 1 passed in 0.02s ========================
     ```
-- <span style="color:green">**GREEN**</span>: make it pass
-    let us update the `add` function in `calculator.py` to do something with the inputs
+- <span style="color:green">**GREEN**</span>: make it pass by updating the `add` function in `calculator.py` to add up the inputs
     ```python
     def add(x, y):
         return x + y
     ```
-    and the terminal shows passing tests, our confidence in the `add` function has grown
+    and the terminal shows passing tests, increasing our confidence in the `add` function
     ```python
     tests/test_calculator.py ..                      [100%]
 
     ====================== 2 passed in 0.01s ==============
     ```
-- <span style="color:orange">**REFACTOR**</span>: Make it Better
-    what if we randomize the inputs to make sure the function behaves the way we expect for any given numbers? Update `test_calculator.py` to use the [random](https://docs.python.org/3/library/random.html?highlight=random#module-random) library
+- <span style="color:orange">**REFACTOR**</span>: Make it Better by randomizing the inputs to make sure the function behaves the way we expect for any given numbers. Update `test_calculator.py` to use the [random](https://docs.python.org/3/library/random.html?highlight=random#module-random) library
     ```python
     import calculator
     import random
@@ -332,8 +270,8 @@ There are a few scenarios we can consider from the users perspective. If our use
                 x+y
             )
     ```
-    - we assign a variable named `x` to a random integer between -1 and 1
-    - we assign a variable named `y` to a random integer between -1 and 1
+    - we assign a variable named `x` to a random integer between -1 and 1 to represent the case of negative numbers, positive numbers and zero
+    - we assign a variable named `y` to a random integer between -1 and 1 just like above
     - we then test that when these two variables are given to the `add` function we get the sum of the 2 variables back
 
     the terminal updates to show passing tests
@@ -342,8 +280,8 @@ There are a few scenarios we can consider from the users perspective. If our use
 
     ================ 2 passed in 0.01s ===========================
     ```
-    - we no longer need the previous 2 tests because this new test covers the scenarios for any positive and negative number including zero
-    - we can remove `test addition` from the TODO list since it passed and the task is completed
+    - we no longer need the previous tests because this new test covers the scenarios for zero, positive and negative numbers
+    - we can remove `test addition` from our TODO list since it passed and the task is completed
     ```python
     # TODO
     # test subtraction
@@ -355,23 +293,15 @@ That's the Test Driven Development pattern <span style="color:red">**RED**</span
 
 ---
 
-
 ## Test Subtraction
 
-let us add the other tests
+We will now add a failing test since addition works and our next action item from the TODO list is to test subtraction,
+
 ### <span style="color:red">**RED**</span> : make it fail
 
-- update `test_calculator.py` with `test_subtraction`
+- update `test_calculator.py` with a method named `test_subtraction`
     ```python
-    import unittest
-    import calculator
-    import random
-
-
     class TestCalculator(unittest.TestCase):
-
-        def test_failure(self):
-            self.assertTrue(True)
 
         def test_addition(self):
             x = random.randint(-1, 1)
@@ -388,62 +318,32 @@ let us add the other tests
                 calculator.subtract(x, y),
                 x-y
             )
-
-    # TODO
-    # test subtraction
-    # test multiplication
-    # test division
-
-    # Exceptions Encountered
-    # AssertionError
-    # AttributeError
-    # TypeError
     ```
-    terminal response - AttributeError
+
+    the terminal responds with an [AttributeError](./ATTRIBUTE_ERROR.md)
+
     ```python
-
-    self = <tests.test_calculator.TestCalculator testMethod=test_subtraction>
-
-        def test_subtraction(self):
-            x = random.randint(-1, 1)
-            y = random.randint(-1, 1)
             self.assertEqual(
     >           calculator.subtract(x, y),
                 x-y
             )
     E       AttributeError: module 'calculator' has no attribute 'subtract'
-
-    tests/test_calculator.py:23: AttributeError
-    =============== short test summary info ======================
-    FAILED tests/test_calculator.py::TestCalculator::test_subtraction - AttributeError: module 'calculator' has no attribute 'subtract'
-    ============== 1 failed, 2 passed in 0.03s ==================
     ```
-    update `calculator.py`
+
+### <span style="color:green">**GREEN**</span> : make it pass
+- add a variable assignment to `calculator.py`
     ```python
     def add(x, y):
         return x + y
 
     subtract = None
     ```
-    terminal response - TypeError
+    and the terminal gives us a [TypeError](./TYPE_ERROR.md)
+
     ```python
-    self = <tests.test_calculator.TestCalculator testMethod=test_subtraction>
-
-        def test_subtraction(self):
-            x = random.randint(-1, 1)
-            y = random.randint(-1, 1)
-            self.assertEqual(
-    >           calculator.subtract(x, y),
-                x-y
-            )
     E       TypeError: 'NoneType' object is not callable
-
-    tests/test_calculator.py:23: TypeError
-    =================== short test summary info =============
-    FAILED tests/test_calculator.py::TestCalculator::test_subtraction - TypeError: 'NoneType' object is not callable
-    =============== 1 failed, 2 passed in 0.02s ============
     ```
-    update `calculator.py`
+- change the definition of the `subtract` variable to make it callable
     ```python
     def add(x, y):
         return x + y
@@ -451,28 +351,11 @@ let us add the other tests
     def subtract():
         return None
     ```
-    terminal response - TypeError
+    the terminal now shows a [TypeError](./TYPE_ERROR.md) with a different error message
     ```python
-    self = <tests.test_calculator.TestCalculator testMethod=test_subtraction>
-
-        def test_subtraction(self):
-            x = random.randint(-1, 1)
-            y = random.randint(-1, 1)
-            self.assertEqual(
-    >           calculator.subtract(x, y),
-                x-y
-            )
     E       TypeError: subtract() takes 0 positional arguments but 2 were given
-
-    tests/test_calculator.py:23: TypeError
-    =================== short test summary info ============================
-    FAILED tests/test_calculator.py::TestCalculator::test_subtraction - TypeError: subtract() takes 0 positional arguments but 2 were given
-    =================== 1 failed, 2 passed in 0.02s =========================
     ```
-
-### <span style="color:green">**GREEN**</span> : make it pass
-
-- update `calculator.py`
+- we change the definition of the `subtract` function to match our expectation
     ```python
     def add(x, y):
         return x + y
@@ -480,25 +363,15 @@ let us add the other tests
     def subtract(x, y):
         return None
     ```
-    terminal response - AssertionError
+    the terminal responds with an [AssertionError](./ASSERTION_ERROR.md)
     ```python
-    self = <tests.test_calculator.TestCalculator testMethod=test_subtraction>
-
-        def test_subtraction(self):
-            x = random.randint(-1, 1)
-            y = random.randint(-1, 1)
     >       self.assertEqual(
                 calculator.subtract(x, y),
                 x-y
             )
     E       AssertionError: None != 0
-
-    tests/test_calculator.py:22: AssertionError
-    ================= short test summary info ===================
-    FAILED tests/test_calculator.py::TestCalculator::test_subtraction - AssertionError: None != 0
-    ================ 1 failed, 2 passed in 0.02s ================
     ```
-    update `calculator.py`
+- we update the `subtract` function in `calculator.py` to perform an operation on its inputs
     ```python
     def add(x, y):
         return x + y
@@ -506,15 +379,20 @@ let us add the other tests
     def subtract(x, y):
         return x - y
     ```
-    terminal response - SUCCESS!
-    ```shell
+    the terminal shows passing tests - SUCCESS!
+    ```python
     collected 3 items
 
     tests/test_calculator.py ...                          [100%]
 
     ======================= 3 passed in 0.01s ==================
     ```
-- remove `test subtraction` from the TODO list
+- `test subtraction` can now be removed from our TODO list
+    ```python
+    # TODO
+    # test multiplication
+    # test division
+    ```
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
