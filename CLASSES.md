@@ -1,6 +1,6 @@
 # How to write classes in python
 
-We will step through classes in python using Test Driven Development
+We will step through writing classes in python using Test Driven Development
 
 ### Prerequisites
 
@@ -10,9 +10,9 @@ We will step through classes in python using Test Driven Development
 
 ## Classes
 
-`classes` are a template that we can use to represent an object. It is collection of `functions/methods` and `variables/attributes` that belong together
+`classes` are a template or blueprint that we can use to represent an object. It is collection of `functions/methods` and `variables/attributes` that belong together
 
-## How to define Class
+## How to define a Class
 
 - use the `class` keyword
 - use `TitleCase` for naming
