@@ -396,26 +396,21 @@ We will now add a failing test since addition works and our next action item fro
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-- How can we make this better?
-- Is there any duplication that could be removed? Yes
-    - `x = random.randint(-1, 1)` happens 2 times
-    - `y = random.randint(-1, 1)` happens 2 times
+- How can we make this better? Is there any duplication that could be removed?
+    - `x = random.randint(-1, 1)` happens twice
+    - `y = random.randint(-1, 1)` happens twice
+- we could update `test_calculator.py` to create the random variables once
 
-
-- update `test_calculator.py`
     ```python
-    import unittest
     import calculator
     import random
+    import unittest
 
 
     class TestCalculator(unittest.TestCase):
 
         x = random.randint(-1, 1)
         y = random.randint(-1, 1)
-
-        def test_failure(self):
-            self.assertTrue(True)
 
         def test_addition(self):
             self.assertEqual(
@@ -428,26 +423,18 @@ We will now add a failing test since addition works and our next action item fro
                 calculator.subtract(self.x, self.y),
                 self.x-self.y
             )
-
-    # TODO
-    # test multiplication
-    # test division
-
-    # Exceptions Encountered
-    # AssertionError
-    # AttributeError
-    # TypeError
     ```
-    terminal response stays the same
-    the x and y variables are now initialized as class variables that can be referenced later using `self.x` and `self.y`
+    the x and y variables are now initialized once as class attributes that can be referenced later in every test using `self.x` and `self.y`, the terminal shows all tests are still passing
 
 ---
 
-### Test Multiplication
+## Test Multiplication
+
+We will now move on the next item on the TODO list which is to test multiplication
 
 ### <span style="color:red">**RED**</span> : make it fail
 
-update `test_calculator.py` with `test_multiplication`
+we add a failing test `test_calculator.py` named `test_multiplication`
 ```python
 import unittest
 import calculator
@@ -458,9 +445,6 @@ class TestCalculator(unittest.TestCase):
 
     x = random.randint(-1, 1)
     y = random.randint(-1, 1)
-
-    def test_failure(self):
-        self.assertTrue(True)
 
     def test_addition(self):
         self.assertEqual(
@@ -479,20 +463,14 @@ class TestCalculator(unittest.TestCase):
             calculator.multiply(self.x, self.y),
             self.x*self.y
         )
-
-# TODO
-# test multiplication
-# test division
-
-# Exceptions Encountered
-# AssertionError
-# AttributeError
-# TypeError
 ```
-terminal response - AttributeError
+
+the terminal responds with an [AttributeError](./ATTRIBUTE_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span> : make it pass
-update `calculator.py`
+
+using what we know so far we update `calculator.py` with a definition for multiplication
+
 ```python
 def add(x, y):
     return x + y
@@ -503,17 +481,26 @@ def subtract(x, y):
 def multiply(x, y):
     return x * y
 ```
-terminal response - SUCCESS
+
+SUCCESS! The terminal shows passing tests and we remove `test_multiplication` from the TODO list
+
+```python
+# TODO
+# test division
+```
+
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-- remove `test_multiplication` from the TODO list
-- Can you think of any way to make the code better?
+Can you think of a way to make the code we have better?
 
 ---
 
-### Test Division
+## Test Division
+
+Let us now add the final test from our TODO list, the division test
 
 ### <span style="color:red">**RED**</span> : make it fail
+
 - update `test_calculator.py` with `test_division`
     ```python
     import unittest
@@ -552,17 +539,12 @@ terminal response - SUCCESS
                 calculator.divide(self.x, self.y),
                 self.x/self.y
             )
-
-    # TODO
-    # test division
-
-    # Exceptions Encountered
-    # AssertionError
-    # AttributeError
-    # TypeError
     ```
-    terminal response - AttributeError
-- update `calculator.py` with `divide`
+    once again the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
+
+### <span style="color:green">**GREEN**</span> : make it pass
+
+- update `calculator.py` with a `divide` function
     ```python
     def add(x, y):
         return x + y
@@ -576,56 +558,28 @@ terminal response - SUCCESS
     def divide(x, y):
         return x / y
     ```
-    terminal response may vary. When y is 0 we get a [ZeroDivisionError](https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError)
+    here our terminal response varies, When `y` is 0 we get a [ZeroDivisionError](https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError) like below
     ```python
     x = 1, y = 0
 
         def divide(x, y):
     >       return x / y
     E       ZeroDivisionError: division by zero
-
-    calculator.py:11: ZeroDivisionError
-    ================= short test summary info ========================
-    FAILED tests/test_calculator.py::TestCalculator::test_division - ZeroDivisionError: division by zero
-    ==================== 1 failed, 4 passed in 0.03s =================
     ```
-    add `ZeroDivisionError` to the list of errors encountered
+- we add `ZeroDivisionError` to the list of exceptions encountered
+    ```python
+    # Exceptions Encountered
+    # AssertionError
+    # NameError
+    # TypeError
+    # ZeroDivisionError
+    ```
 
 #### How to test for Errors
 - <span style="color:red">**RED**</span> : make it fail
-    - update `test_calculator.py` with a test for division by zero
+
+    we add a failing test to `test_calculator.py` to intentionally trigger a `ZeroDivisionError` and comment out our test previous test that sometimes fails, this helps us remove the variability from the test
     ```python
-    import unittest
-    import calculator
-    import random
-
-
-    class TestCalculator(unittest.TestCase):
-
-        x = random.randint(-1, 1)
-        y = random.randint(-1, 1)
-
-        def test_failure(self):
-            self.assertTrue(True)
-
-        def test_addition(self):
-            self.assertEqual(
-                calculator.add(self.x, self.y),
-                self.x+self.y
-            )
-
-        def test_subtraction(self):
-            self.assertEqual(
-                calculator.subtract(self.x, self.y),
-                self.x-self.y
-            )
-
-        def test_multiplication(self):
-            self.assertEqual(
-                calculator.multiply(self.x, self.y),
-                self.x*self.y
-            )
-
         def test_division(self):
             self.assertEqual(
                 calculator.divide(self.x, 0),
@@ -635,17 +589,8 @@ terminal response - SUCCESS
             #     calculator.divide(self.x, self.y),
             #     self.x/self.y
             # )
-
-    # TODO
-    # test division
-
-    # Exceptions Encountered
-    # AssertionError
-    # AttributeError
-    # TypeError
-    # ZeroDivisionError
     ```
-    terminal response
+    the terminal confirms our expectations with a failure
     ```python
     _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
     x = 0, y = 0
@@ -653,47 +598,11 @@ terminal response - SUCCESS
         def divide(x, y):
     >       return x / y
     E       ZeroDivisionError: division by zero
-
-    calculator.py:11: ZeroDivisionError
-    ================= short test summary info ======================
-    FAILED tests/test_calculator.py::TestCalculator::test_division - ZeroDivisionError: division by zero
-    =================== 1 failed, 4 passed in 0.02s ================
     ```
-
 - <span style="color:green">**GREEN**</span> : make it pass
-    - update `test_calculator.py` to confirm that `ZeroDivisionError` is raised when dividing by 0
+
+    we update `test_calculator.py` to confirm that a `ZeroDivisionError` is raised when we try to divide a number by 0 by using `self.assertRaises`
     ```python
-    import unittest
-    import calculator
-    import random
-
-
-    class TestCalculator(unittest.TestCase):
-
-        x = random.randint(-1, 1)
-        y = random.randint(-1, 1)
-
-        def test_failure(self):
-            self.assertTrue(True)
-
-        def test_addition(self):
-            self.assertEqual(
-                calculator.add(self.x, self.y),
-                self.x+self.y
-            )
-
-        def test_subtraction(self):
-            self.assertEqual(
-                calculator.subtract(self.x, self.y),
-                self.x-self.y
-            )
-
-        def test_multiplication(self):
-            self.assertEqual(
-                calculator.multiply(self.x, self.y),
-                self.x*self.y
-            )
-
         def test_division(self):
             with self.assertRaises(ZeroDivisionError):
                 calculator.divide(self.x, 0)
@@ -701,52 +610,12 @@ terminal response - SUCCESS
             #     calculator.divide(self.x, self.y),
             #     self.x/self.y
             # )
-
-    # TODO
-    # test division
-
-    # Exceptions Encountered
-    # AssertionError
-    # AttributeError
-    # TypeError
-    # ZeroDivisionError
     ```
-    terminal response - SUCCESS - We now have a way to `catch` Exceptions in testing, allowing tests to continue when they encounter expected failures
+    the terminal shows passing tests, and we now have a way to `catch` Exceptions when testing, which allows us to confirm that code raises an error and allow our other tests to continue when they encounter expected failures
 
 - <span style="color:orange">**REFACTOR**</span>: make it better
-    - update `test_calculator.py` to test other division cases when the divisor is not 0 by adding a while condition
+    we can update `test_division` to test other division cases when the divisor is not 0 by adding a condition
     ```python
-    import unittest
-    import calculator
-    import random
-
-
-    class TestCalculator(unittest.TestCase):
-
-        x = random.randint(-1, 1)
-        y = random.randint(-1, 1)
-
-        def test_failure(self):
-            self.assertTrue(True)
-
-        def test_addition(self):
-            self.assertEqual(
-                calculator.add(self.x, self.y),
-                self.x+self.y
-            )
-
-        def test_subtraction(self):
-            self.assertEqual(
-                calculator.subtract(self.x, self.y),
-                self.x-self.y
-            )
-
-        def test_multiplication(self):
-            self.assertEqual(
-                calculator.multiply(self.x, self.y),
-                self.x*self.y
-            )
-
         def test_division(self):
             with self.assertRaises(ZeroDivisionError):
                 calculator.divide(self.x, 0)
@@ -756,19 +625,12 @@ terminal response - SUCCESS
                 calculator.divide(self.x, self.y),
                 self.x/self.y
             )
-
-    # TODO
-    # test division
-
-    # Exceptions Encountered
-    # AssertionError
-    # AttributeError
-    # TypeError
-    # ZeroDivisionError
     ```
-    - `while self.y == 0:` this creates a loop, you are telling python to repeat the block that follows as long as `self.y is equal to 0`
-    - remove `test_division` from `TODO`
+    - `while self.y == 0:` creates a loop that repeats whatever indented code follows as long as `self.y` is equal to `0`
+    - `self.y = random.randint(-1, 1)` assigns a random variable to `self.y` that could be -1, 0 or 1
+    - our loop tells python to assign a random variable to `self.y` as long as it is equal to 0
+- remove `test_division` from our TODO list since the tests all pass
 
 ---
 
-***CONGRATULATIONS*** You made it through writing a program that can perform the 4 basic arithmetic operations using Test Driven Development
+***CONGRATULATIONS*** You made it through writing a program that can perform the 4 basic arithmetic operations using Test Driven Development. What would you like to do next?
