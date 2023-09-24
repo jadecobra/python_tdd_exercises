@@ -33,7 +33,7 @@ class TestBinaryOperations(unittest.TestCase):
         self.assertFalse(truth_table.logical_conjunction(False, True))
         self.assertFalse(truth_table.logical_conjunction(False, False))
 ```
-the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
+the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 

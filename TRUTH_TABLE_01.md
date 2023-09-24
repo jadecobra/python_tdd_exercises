@@ -30,11 +30,11 @@ class TestNullaryOperations(unittest.TestCase):
     def test_logical_true(self):
         self.assertTrue(truth_table.logical_true())
 ```
-the terminal updates to show a [ModuleNotFoundError](./00_MODULE_NOT_FOUND_ERROR.md)
+the terminal updates to show a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
-- create a module named `truth_table.py` and the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
+- create a module named `truth_table.py` and the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 - add a singleton function named `logical_true`
     ```python
     def logical_true():
@@ -52,7 +52,7 @@ let us add a test for `logical_false`
     def test_logical_false(self):
         self.assertFalse(truth_table.logical_false())
     ```
-    the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
+    the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 - add a function definition to `truth_table.py`
     ```python
     def logical_false():
@@ -88,7 +88,7 @@ class TestUnaryOperations(unittest.TestCase):
         self.assertFalse(truth_table.logical_identity(False))
 ```
 
-the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
+the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 
 #### <span style="color:green">**GREEN**</span>: make it pass
 
@@ -109,7 +109,7 @@ add a test for `logical_negation`
         self.assertFalse(truth_table.logical_negation(True))
         self.assertTrue(truth_table.logical_negation(False))
 ```
-the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
+the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 
 #### <span style="color:green">**GREEN**</span>: make it pass
 

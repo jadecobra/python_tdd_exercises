@@ -10,9 +10,9 @@ We will step through writing classes in python using Test Driven Development
 
 ## Classes
 
-`classes` are a template or blueprint that we can use to represent an object. It is collection of `functions/methods` and `variables/attributes` that belong together
+`classes` are a template or blueprint that represent an object. They are a collection of `methods(functions)` and `attributes(variables)` that belong together
 
-## How to define a Class
+## How to define a Class with pass
 
 - use the `class` keyword
 - use `TitleCase` for naming
@@ -20,7 +20,8 @@ We will step through writing classes in python using Test Driven Development
 
 ### <span style="color:red">**RED**</span>: make it fail
 
-create a new file named `test_classes.py`
+we create a new file named `test_classes.py` in the `tests` directory
+
 ```python
 import unittest
 import classes
@@ -31,32 +32,33 @@ class TestClasses(unittest.TestCase):
     def test_class_definitions_with_pass(self):
         self.assertIsInstance(classes.ClassWithPass(), object)
 ```
-the terminal updates to show a [ModuleNotFoundError](./00_MODULE_NOT_FOUND_ERROR.md)
+
+the terminal shows a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
-- create a python module named `classes.py` and the terminal updates to show [AttributeError](./01_ATTRIBUTE_ERROR.md)
+- create a python module named `classes.py` and the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 - add the name `ClassWithPass` to the module
     ```python
 
 
     ClassWithPass
     ```
-    the terminal updates to show a `NameError`
-- update the name to define a variable
+    and the terminal updates to show a `NameError` because `ClassWithPass` is not defined anywhere
+- update the name as an assignment to the null value `None`
     ```python
 
 
     ClassWithPass = None
     ```
-- redefine the variable as a class
+- redefine the variable as a class using the `class` keyword
     ```python
 
 
     class ClassWithPass:
     ```
     the terminal updates to show an [IndentationError](./02_INDENTATION_ERROR.md)
-- add `pass` to the definition like we did in [Functions](./07_FUNCTIONS.md)
+- add the `pass` keyword as a placeholder to the definition
     ```python
 
 
@@ -64,13 +66,16 @@ the terminal updates to show a [ModuleNotFoundError](./00_MODULE_NOT_FOUND_ERROR
 
         pass
     ```
-    the terminal updates to show passing tests
+    and the terminal updates to show passing tests
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-- We learned in [Functions](./07_FUNCTIONS.md) that `pass` is a placeholder.
-- In python everything is an `object`, including classes. Our the test `self.assertIsInstance(classes.ClassWithPass(), object)` checks if `ClassWithPass` is an `object`
-- What other ways can we define `classes`?
+Let us review what we have written so far
+- `pass` is a placeholder
+- `self.assertIsInstance` is a `unittest.TestCase` method that checks if the first input to the method is an instance of the second input
+- in python everything is an `object` which means there's a class definition for it, our test `self.assertIsInstance(classes.ClassWithPass(), object)` checks if `ClassWithPass` is an `object`
+
+## How to define a Class with parentheses
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -79,7 +84,7 @@ add another test to `TestClasses` in `test_classes.py`
     def test_classes_definitions_with_parentheses(self):
         self.assertIsInstance(classes.ClassWithParentheses(), object)
 ```
-the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
+the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
@@ -108,22 +113,25 @@ the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-In object oriented programming there is a concept called [Inheritance]() and just like genetic inheritance in biology we can define `objects` that inherit from other `objects`.
+In object oriented programming there is a concept called [Inheritance](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)). With Inheritance we can define new `objects` that inherit from other existing `objects`. This makes creating things easier because we do not have to reinvent or rewrite things that already exist, we can inherit them instead.
 
-To do this we specify the parent in parentheses when we define the child, to establish the relationship
+
+## How to define a Class with inheritance
+
+To use inheritance we specify the "parent" in parentheses when we define the new object (the child) to establish the relationship
 
 ### <span style="color:red">**RED**</span>: make it fail
 
-add another test to `TestClasses` in `test_classes.py`
+we add another test to `TestClasses` in `test_classes.py`
 ```python
     def test_class_definition_with_object(self):
         self.assertIsInstance(classes.ClassWithObject(), object)
 ```
-the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
+and the terminal displays an [AttributeError](./ATTRIBUTE_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
-- add a class definition to `classes.py`
+- let us add a class definition to `classes.py`
     ```python
 
 
@@ -140,35 +148,35 @@ the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
 
         pass
     ```
-    the terminal updates to show passing tests
+    and the terminal still shows passing tests
 
 We now know that in python
 - classes can be defined
     - with parentheses explicitly stating what object the class inherits from
+    - with parentheses without stating what object the class inherits from
     - without parentheses
-    - pass is a placeholder
-- classes inherit from the `object` class, because in each of our tests, whether explicitly stated or not, the class is an `instance` of an `object`
+    - `pass` is a placeholder
+- classes implicitly inherit from the `object` class, because in each of our tests, whether explicitly stated or not, the class is an `instance` of an `object`
 - what is an [object](https://docs.python.org/3/glossary.html#term-object)?
 
 ***RULE OF THUMB***
 > From [the zen of python](https://peps.python.org/pep-0020/)
-> `Explicit is better than implicit.`
-> We will use the explicit form of class definitions with the parent `object` in parentheses
+> `Explicit is better than implicit`
+> we will use the explicit form of class definitions with the parent `object` in parentheses
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+## How to define a Class with attributes
 
-## Class Attributes
-
-Since we know how to define a class, let us add some tests for attributes.
+Since we know how to define a class, let us add some tests for attributes
 
 ### <span style="color:red">**RED**</span>: make it fail
-- update `TestClasses` in `classes.py`
+
+- we add a failing test to `TestClasses` in `classes.py`
     ```python
         def test_classes_with_attributes(self):
             self.assertEqual(classes.ClassWithAttributes.an_integer, int)
     ```
-    the terminal updates to show [AttributeError](./01_ATTRIBUTE_ERROR.md)
-- update `classes.py` with a `class` definition
+    the terminal updates to show [AttributeError](./ATTRIBUTE_ERROR.md)
+- add a class definition to `classes.py`
     ```python
 
 
@@ -176,7 +184,7 @@ Since we know how to define a class, let us add some tests for attributes.
 
         pass
     ```
-    the terminal updates to show another [AttributeError](./01_ATTRIBUTE_ERROR.md), this time for a missing attribute in our newly defined class
+    though the terminal still shows an [AttributeError](./ATTRIBUTE_ERROR.md), this time it is for a missing attribute in our newly defined class
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
@@ -226,7 +234,7 @@ update `test_classes_with_attributes` with more tests
         self.assertEqual(classes.ClassWithAttributes.a_set, set)
         self.assertEqual(classes.ClassWithAttributes.a_dictionary, dict)
 ```
-the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
+the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
@@ -258,7 +266,7 @@ Let us add some tests for class methods. update `TestClasses` in `classes.py`
     def test_classes_with_methods(self):
         self.assertEqual(classes.ClassWithMethods.method_a(), 'You called MethodA')
 ```
-the terminal updates to show [AttributeError](./01_ATTRIBUTE_ERROR.md)
+the terminal updates to show [AttributeError](./ATTRIBUTE_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
@@ -270,7 +278,7 @@ the terminal updates to show [AttributeError](./01_ATTRIBUTE_ERROR.md)
 
         pass
     ```
-    the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
+    the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 - add an attribute to the `ClassWithMethods`
     ```python
 
@@ -316,7 +324,7 @@ the terminal updates to show [AttributeError](./01_ATTRIBUTE_ERROR.md)
             self.assertEqual(classes.ClassWithMethods.method_c(), 'You called MethodC')
             self.assertEqual(classes.ClassWithMethods.method_d(), 'You called MethodD')
     ```
-    the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
+    the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 - update `ClassWithmethods` to make it pass
 - let us add another test for a class that has both attributes and methods
     ```python
@@ -324,7 +332,7 @@ the terminal updates to show [AttributeError](./01_ATTRIBUTE_ERROR.md)
             self.assertEqual(classes.ClassWithAttributesAndMethods.attribute, 'attribute')
             self.assertEqual(classes.ClassWithAttributesAndMethods.method(), 'you called a method')
     ```
-    the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
+    the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 - update `classes.py` to make the tests pass by defining the class, attribute and methods
     ```python
 
@@ -350,7 +358,7 @@ add a test to `test_clases.py`
     def test_classes_with_initializers(self):
         self.assertEqual(classes.Boy().sex, 'M')
 ```
-the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
+the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
@@ -362,7 +370,7 @@ the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
 
         pass
     ```
-    the terminal updates to show another [AttributeError](./01_ATTRIBUTE_ERROR.md)
+    the terminal updates to show another [AttributeError](./ATTRIBUTE_ERROR.md)
 - add the name `sex` to the `Boy` class
     ```oython
 
@@ -388,7 +396,7 @@ the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
     ```python
             self.assertEqual(classes.Girl(sex='F').sex, 'F')
     ```
-    the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
+    the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 - update `classes.py` with a definition for the `Girl` class
     ```python
 
@@ -430,7 +438,7 @@ the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
     ```python
         self.assertEqual(classes.Other(sex='?').sex, '?')
     ```
-    the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
+    the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 - add a class definition to `classes.py`
     ```python
 

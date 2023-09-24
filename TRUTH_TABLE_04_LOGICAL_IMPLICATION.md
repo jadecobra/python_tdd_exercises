@@ -34,7 +34,7 @@ add a test for logical implication to `TestBinaryOperations`
         self.assertTrue(truth_table.logical_implication(False, False))
 ```
 
-the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
+the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 

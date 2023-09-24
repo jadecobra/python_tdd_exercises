@@ -32,7 +32,7 @@ class TestFunctions(unittest.TestCase):
         self.assertIsNone(functions.function_with_pass())
 ```
 
-the terminal updates to show an `AttributeError`. We played with those in [01_TDD_ATTRIBUTE_ERROR](./01_ATTRIBUTE_ERROR.md)
+the terminal updates to show an `AttributeError`. We played with those in [01_TDD_ATTRIBUTE_ERROR](./ATTRIBUTE_ERROR.md)
 
 ## <span style="color:green">**GREEN**</span>: make it pass
 
@@ -207,7 +207,7 @@ update `test_functions.py` with a new test, replacing `my_first_name` and `my_la
             ('my_first_name', 'my_last_name')
         )
 ```
-the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
+the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
@@ -297,7 +297,7 @@ add a new test to `test_functions.py`
             ('my_first_name', 'my_last_name')
         )
 ```
-the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
+the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
@@ -477,7 +477,7 @@ how can we write a test for a function that accepts positional and keyword argum
         {}
     )
     ```
-    the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
+    the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 - add a definition for the function to `functions.py`
     ```python
     def accepts_positional_and_keyword_arguments():
@@ -692,7 +692,7 @@ add a test to `test_functions.py`
     def test_singleton_function(self):
         self.assertEqual(functions.singleton(), 'my_first_name')
 ```
-the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
+the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
@@ -712,7 +712,7 @@ add a new test that checks if a singleton that accepts inputs returns the same v
         self.assertEqual(functions.singleton_with_input('Bob', 'James', 'Frank'), 'joe')
         self.assertEqual(functions.singleton_with_input('a', 2, 'c', 3), 'joe')
     ```
-    the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
+    the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 - update `singleton_with_inputs` to make the test pass
     ```python
     def singleton_with_inputs(*args):

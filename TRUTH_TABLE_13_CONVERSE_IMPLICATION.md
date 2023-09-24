@@ -22,7 +22,7 @@ add a test for converse implication to `TestBinaryOperations`
         self.assertTrue(truth_table.converse_implication(False, False))
 ```
 
-the terminal shows an [AttributeError](./01_ATTRIBUTE_ERROR.md)
+the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 

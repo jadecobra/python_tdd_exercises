@@ -22,7 +22,7 @@ add a test for project first to `TestBinaryOperations`
         self.assertFalse(truth_table.project_first(False, False))
 ```
 
-the terminal shows an [AttributeError](./01_ATTRIBUTE_ERROR.md)
+the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
@@ -87,7 +87,7 @@ add a test for project second to `TestBinaryOperations`
         self.assertFalse(truth_table.project_second(False, False))
 ```
 
-the terminal shows an [AttributeError](./01_ATTRIBUTE_ERROR.md)
+the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 

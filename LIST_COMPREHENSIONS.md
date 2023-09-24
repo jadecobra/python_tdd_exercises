@@ -81,8 +81,8 @@ the tests pass
     import list_comprehensions
     import unittest
     ```
-    the terminal updates to show a [ModuleNotFoundError](./00_MODULE_NOT_FOUND_ERROR.md)
-- create `list_comprehensions.py` in the project folder and the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
+    the terminal updates to show a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md)
+- create `list_comprehensions.py` in the project folder and the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 - update `list_comprehensions.py` with a function
     ```python
     def make_a_list():

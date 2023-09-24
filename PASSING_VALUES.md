@@ -29,18 +29,18 @@ class TestPassingValues(unittest.TestCase):
             'I received this message: hello'
         )
 ```
-the terminal updates to show a [ModuleNotFoundError](./00_MODULE_NOT_FOUND_ERROR.md)
+the terminal updates to show a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
-- create a file named `telephone.py` in the project folder and the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
+- create a file named `telephone.py` in the project folder and the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 - update `telephone.py` with a class definition
     ```python
     class Telephone(object):
 
         pass
     ```
-    the terminal updates to show an [AttributeError](./01_ATTRIBUTE_ERROR.md)
+    the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 - add a definition for an attribute named `text`
     ```python
     class Telephone(object):
