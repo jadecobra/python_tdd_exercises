@@ -592,7 +592,6 @@ Let us now add the final test from our TODO list, the division test
     ```
     the terminal confirms our expectations with a failure
     ```python
-    _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
     x = 0, y = 0
 
         def divide(x, y):
