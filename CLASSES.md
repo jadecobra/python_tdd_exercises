@@ -173,7 +173,7 @@ Since we know how to define a class, let us add some tests for attributes
 - we add a failing test to `TestClasses` in `classes.py`
     ```python
         def test_classes_with_attributes(self):
-            self.assertEqual(classes.ClassWithAttributes.an_integer, int)
+            self.assertEqual(classes.ClassWithAttributes.a_boolean, bool)
     ```
     the terminal updates to show [AttributeError](./ATTRIBUTE_ERROR.md)
 - add a class definition to `classes.py`
@@ -188,7 +188,7 @@ Since we know how to define a class, let us add some tests for attributes
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
-- add an attribute to `ClassWithAttributes`
+- we add an attribute to `ClassWithAttributes`
     ```python
 
 
@@ -196,8 +196,8 @@ Since we know how to define a class, let us add some tests for attributes
 
         a_boolean
     ```
-    the terminal updates to show a `NameError`
-- update the name with a definition
+    and the terminal updates to show a `NameError`
+- after updating the name with an assignment to `None`
     ```python
 
 
@@ -205,8 +205,8 @@ Since we know how to define a class, let us add some tests for attributes
 
         a_boolean = None
     ```
-    the terminal updates show an [AssertionError](./04_ASSERTION_ERROR.md)
-- redefine the attribute to make the test pass
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
+- we redefine the attribute to make the test pass
     ```python
 
 
@@ -218,7 +218,7 @@ Since we know how to define a class, let us add some tests for attributes
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-let us repeat this with other python `objects/data structures`
+let us repeat this with other python [data structures](./DATA_STRUCTURES.md)
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -238,7 +238,7 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
-update `ClassWithAttributes` with attributes sto make the tests pass
+update `ClassWithAttributes` with attributes to make the tests pass
 ```python
 
 
@@ -255,22 +255,25 @@ class ClassWithAttributes(object):
 ```
 the terminal updates to show passing tests
 
-## Class Methods
+## How to define a Class with Methods
 
-Classes can have `methods/functions`
+We can define classes with methods which are function definitions within the class
 
 ### <span style="color:red">**RED**</span>: make it fail
 
 Let us add some tests for class methods. update `TestClasses` in `classes.py`
 ```python
     def test_classes_with_methods(self):
-        self.assertEqual(classes.ClassWithMethods.method_a(), 'You called MethodA')
+        self.assertEqual(
+            classes.ClassWithMethods.method_a(),
+            'You called MethodA'
+        )
 ```
 the terminal updates to show [AttributeError](./ATTRIBUTE_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
-- update `classes.py` with a class definition
+- we add a class definition to `classes.py`
     ```python
 
 
@@ -278,8 +281,8 @@ the terminal updates to show [AttributeError](./ATTRIBUTE_ERROR.md)
 
         pass
     ```
-    the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
-- add an attribute to the `ClassWithMethods`
+    the terminal now shows an [AttributeError](./ATTRIBUTE_ERROR.md) with a different error
+- let us add the missing attribute to the `ClassWithMethods` class
     ```python
 
 
@@ -287,8 +290,8 @@ the terminal updates to show [AttributeError](./ATTRIBUTE_ERROR.md)
 
         method_a
     ```
-    the terminal updates to show a `Nameerror`
-- define `method_a` as an attribute
+    the terminal updates to show a `Nameerror` because there is no definition for `method_a`
+- when we define `method_a` as an attribute by assigning it as the name for the null value `None`
     ```python
 
 
@@ -296,8 +299,8 @@ the terminal updates to show [AttributeError](./ATTRIBUTE_ERROR.md)
 
         method_a = None
     ```
-    the terminal updates to show a [TypeError](./03_TYPE_ERROR.md) since `method_a` is not callable
-- update the definition of `method_a` to make it a function
+    the terminal now displays a [TypeError](./TYPE_ERROR.md) since `method_a` is not callable
+- let us update the definition of `method_a` to make it a function
     ```python
 
 
@@ -306,17 +309,17 @@ the terminal updates to show [AttributeError](./ATTRIBUTE_ERROR.md)
         def method_a():
             return None
     ```
-    the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md)
--  change the value the function returns to match the expectation in our test
+    and the terminal shows an [AssertionError](./ASSERTION_ERROR.md)
+- what we do now is change the value the function returns to match the expectation of our test
     ```python
         def method_a():
             return 'You called MethodA'
     ```
-    the terminal updates to show passing tests
+    for the terminal to show passing tests
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-- let us add a few more tests for fun to `test_classes_with_methods`
+- we can make this better by adding a few more tests to `test_classes_with_methods` for fun
     ```python
         def test_classes_with_methods(self):
             self.assertEqual(classes.ClassWithMethods.method_a(), 'You called MethodA')
@@ -325,35 +328,58 @@ the terminal updates to show [AttributeError](./ATTRIBUTE_ERROR.md)
             self.assertEqual(classes.ClassWithMethods.method_d(), 'You called MethodD')
     ```
     the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
-- update `ClassWithmethods` to make it pass
-- let us add another test for a class that has both attributes and methods
-    ```python
-        def test_classes_with_attributes_and_methods(self):
-            self.assertEqual(classes.ClassWithAttributesAndMethods.attribute, 'attribute')
-            self.assertEqual(classes.ClassWithAttributesAndMethods.method(), 'you called a method')
-    ```
-    the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
-- update `classes.py` to make the tests pass by defining the class, attribute and methods
-    ```python
+- update `ClassWithmethods` in `classes.py` until all tests pass
 
+---
 
-    class ClassWithAttributesAndMethods(object):
+## How to define a Class with Methods and Attributes
 
-        attribute = 'attribute'
-
-        def method():
-            return 'you called a method'
-    ```
-    the terminal updates to show passing tests
-
-
-## Class Initializers
-
-CONGRATULATIONS. You now know how to define classes, attributes and methods. let us expand on this knowledge. How do we use classes?
+Since we know how to define classes with methods and how to define classes with attributes, let us try defining a class that has both
 
 ### <span style="color:red">**RED**</span>: make it fail
 
-add a test to `test_clases.py`
+we add another test for a class that has both attributes and methods
+
+```python
+    def test_classes_with_attributes_and_methods(self):
+        self.assertEqual(
+            classes.ClassWithAttributesAndMethods.attribute,
+            'attribute'
+        )
+        self.assertEqual(
+            classes.ClassWithAttributesAndMethods.method(),
+            'you called a method'
+        )
+```
+with the terminal giving an [AttributeError](./ATTRIBUTE_ERROR.md)
+
+### <span style="color:green">**GREEN**</span>: make it pass
+
+update `classes.py` to make the tests pass by defining the class, attribute and methods
+
+```python
+
+
+class ClassWithAttributesAndMethods(object):
+
+    attribute = 'attribute'
+
+    def method():
+        return 'you called a method'
+```
+
+the terminal once again shows passing tests
+
+---
+
+## How to define a Class with an initializer
+
+CONGRATULATIONS. You now know how to define classes, attributes and methods. We will now expand on this knowledge to learn how to use classes
+
+### <span style="color:red">**RED**</span>: make it fail
+
+we will add a failing test to `test_classes.py`
+
 ```python
     def test_classes_with_initializers(self):
         self.assertEqual(classes.Boy().sex, 'M')
@@ -371,33 +397,35 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
         pass
     ```
     the terminal updates to show another [AttributeError](./ATTRIBUTE_ERROR.md)
-- add the name `sex` to the `Boy` class
-    ```oython
+- update the `Boy` class with the name `sex`
+    ```python
 
 
     class Boy(object):
 
         sex
     ```
-    the terminal updates to show a `NameError`
-- add a definition for the `sex` attribute
+    the terminal now shows a `NameError`
+- we add a definition for the `sex` attribute
     ```python
 
 
     class Boy(object):
 
-        sex = 'M
+        sex = 'M'
     ```
-    the terminal updates to show passing tests
+    the terminal updates to show passing tests. Yes!
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
 - let us add another test to `test_classes_with_initializers`
     ```python
-            self.assertEqual(classes.Girl(sex='F').sex, 'F')
+    def test_classes_with_initializers(self):
+        self.assertEqual(classes.Boy().sex, 'M')
+        self.assertEqual(classes.Girl(sex='F').sex, 'F')
     ```
-    the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
-- update `classes.py` with a definition for the `Girl` class
+    the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
+- trying the same solution we used for the `Boy` class, add a definition for the `Girl` class to `classes.py`
     ```python
 
 
@@ -405,14 +433,13 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 
         sex = 'M'
     ```
-    the terminal updates to show
+    and the terminal displays a [TypeError](./TYPE_ERROR.md)
     ```python
     TypeError: Girl() takes no arguments
     ```
-    here we see a similarity between `classes` and [functions](./07_FUNCTIONS.md)
-    - the call `classes.Girl(sex='F')` looks like a call to a function with keyword arguments
-    - How do we define classes to accept keyword arguments when the definition of a class defines the parent it inherits from e.g. `class Class(object)`? We use an initializer
-    - What's an initializer? a class method that allows customization of `instances/copies` of a `class`
+    - If you have gone through the [functions](./07_FUNCTIONS.md) chapter you will see a similarity in this last test and passing inputs to functions. The call `classes.Girl(sex='F')` looks like a call to a function with keyword arguments
+    - Which begs the question - How do we define classes to accept keyword arguments when the definition of a class defines the parent it inherits from e.g. `class Class(object)`? The answer - We use an initializer
+    - What's an initializer? a class method(function) that allows customization of `instances/copies` of a `class`
 - add an initiializer to the `Girl` class
     ```python
 
@@ -424,7 +451,7 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
         def __init__(self):
             pass
     ```
-    the terminal updates to show
+    the terminal shows a [TypeError](./TYPE_ERROR.md)
     ```python
     TypeError: __init__() got an unexpected keyword argument 'sex'
     ```
@@ -434,23 +461,26 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
         pass
     ```
     the terminal updates to show passing tests
-- let us add another test we can use an initializer with to `test_classes_with_initializers`
+- let us add another test for a class initializer to `test_classes_with_initializers`
     ```python
+    def test_classes_with_initializers(self):
+        self.assertEqual(classes.Boy().sex, 'M')
+        self.assertEqual(classes.Girl(sex='F').sex, 'F')
         self.assertEqual(classes.Other(sex='?').sex, '?')
     ```
-    the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
+    the terminal displays an [AttributeError](./ATTRIBUTE_ERROR.md)
 - add a class definition to `classes.py`
     ```python
 
 
     class Other(object):
 
-    sex = '?'
+        sex = '?'
 
-    def __init__(self, sex=None):
-        pass
+        def __init__(self, sex=None):
+            pass
     ```
-    the terminal updates to show passing tests
+    the terminal now shows passing tests
 - Wait a minute, we just repeated the same thing twice.
     - We defined a `class` with a name
     - defined an attribute named `sex`
@@ -466,8 +496,8 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
         def __init__(self, sex=None):
             pass
     ```
-    the terminal shows tests are still passing. Now we have written the same thing 3 times, how can we remove this duplication? Inheritance/Abstraction
-- We have 3 classes that are defined in exactly the same way, how can we abstract these things to a parent class that they inherit from? add a new class called `Human` to `classes.py` before the definition for `Boy`
+    the terminal shows tests are still passing and we have now written the same thing 3 times. Earlier on we discussed inheritance, and will now try to use it to remove this duplication
+- try adding a new class called `Human` to `classes.py` before the definition for `Boy` with the same attribute and method of the classes we are trying to abstract
     ```python
 
 
@@ -490,7 +520,7 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
     ```
     the terminal shows passing tests
 - remove the `sex` attribute from the `Boy` class and the tests continue to pass
-- remove the `__init__` method, updating the class definition
+- remove the `__init__` method, and add the `pass` placeholder
     ```python
 
 
@@ -499,13 +529,13 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
         pass
     ```
     the terminal still shows passing tests
-- let us try the same thing with the `Girl` class. update the definition to inherit from the `Human` class
+- let us try the same thing with the `Girl` class and update its definition to inherit from the `Human` class
     ```python
     class Girl(Human):
         ...
     ```
     the terminal shows passing tests
-- remove the `sex` attribute and the terminal shows an [AssertionError](./04_ASSERTION_ERROR.md)
+- remove the `sex` attribute and the terminal shows an [AssertionError](./ASSERTION_ERROR.md)
 - update the `Human` class to set the `sex` attribute in the initializer instead of at the class level
     ```python
     class Human(object):
@@ -515,37 +545,38 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
         def __init__(self, sex='M'):
             self.sex = sex
     ```
-    the terminal still shows an [AssertionError](./04_ASSERTION_ERROR.md)
-- remove the `__init__` method from the `Girl` class
+    the terminal still shows an [AssertionError](./ASSERTION_ERROR.md)
+- when we remove the `__init__` method from the `Girl` class
     ```python
     class Girl(Human):
 
         pass
     ```
     the terminal updates to show passing tests
-- can we do the same with the `Other` class? update the definition of the class to inherit from the `Human` class
+- can we do the same with the `Other` class? update the definition to inherit from the `Human` class
     ```python
     class Other(Human):
 
         pass
     ```
-    the terminal updates to show passing tests.
-- one last change, we remove the `sex` attribute from the `Human` class
+    the terminal updates to show passing tests
+- one last change and we remove the `sex` attribute from the `Human` class
     ```python
     class Human(object):
 
         def __init__(self, sex='M'):
             self.sex = sex
     ```
-    the terminal still shows passing tests
+    the terminal still shows passing tests, we have successfully refactored the 3 classes and abstracted a `Human` class
 
 Why did that work?
 - the `Boy`, `Girl` and `Other` class now inherit from the `Human` class which means they all get the same methods and attributes that the `Human` class has, including the `__init__` method
-- `self.sex` within each class refers to the `sex` attribute in the class, allowing its definition from the `__init__` method
+- `self.sex` within each class refers to the `sex` attribute in the class, allowing its definition from the withing the `__init__` method
+- since `self.sex` is defined as a class attribute, it is accessible from outside the class as we do in our tests i.e `classes.Girl(sex='F').sex` and `classes.Other(sex='?').sex`
 
 ## How to view the Attributes and Methods of a Class
 
-To view what `attributes` and `methods` are defined for any object we can call `dir` on the object
+To view what `attributes` and `methods` are defined for any object we can call `dir` on the object. The `dir` method returns a [list](./LISTS.md) that contains the names of all attributes and methods in the class
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -560,11 +591,11 @@ add a test to `test_classes.py`
         )
 ```
 
-the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md) as our expected and real values do not match
+the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) as our expected and real values do not match
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
-update the test with the correct values shown in the terminal
+copy the values from the terminal to update the test to make it pass
 
 ```python
     def test_view_attributes_and_methods_of_an_object(self):
@@ -607,9 +638,8 @@ the tests pass and we see the last two values in our list are `attribute` and `m
 
 ***CONGRATULATIONS***
 You know
-- how to define a class with
-    - an attribute
-    - a method
-    - an initializer
+- how to define a class with an attribute
+- how to define a class with a method
+- how to define a class with an initializer
 - how to view the attributes and methods defined for a class
-- Do you want to [read more about classes](https://docs.python.org/3/tutorial/classes.html#tut-firstclasses)
+- Do you want to [read more about classes?](https://docs.python.org/3/tutorial/classes.html#tut-firstclasses)

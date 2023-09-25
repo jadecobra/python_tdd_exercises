@@ -216,13 +216,13 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
     def test_passthrough_with_positional_arguments(input_data):
         return input_data
     ```
-    the terminal updates to show a [TypeError](./03_TYPE_ERROR.md)
+    the terminal updates to show a [TypeError](./TYPE_ERROR.md)
 - update the signature of `passthrough_with_positional_arguments` to take in more than one argument
     ```python
     def passthrough_with_positional_arguments(input_data, second_argument):
         return input_data
     ```
-    the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md)
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 - update `passthrough_with_positional_arguments` to return the two arguments it receives
     ```python
     def passthrough_with_positional_arguments(input_data, second_argument):
@@ -247,7 +247,7 @@ How can we make this better?
         ('my_first_name', 'my_last_name')
     )
     ```
-    the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md)
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 - update the test to the correct output
     ```python
     self.assertEqual(
@@ -270,7 +270,7 @@ How can we make this better?
         (bool, int, float, str, tuple, list, set, dict)
     )
     ```
-    the terminal updates to show a [TypeError](./03_TYPE_ERROR.md) because 2 positional arguments were expected by the function but 4 were given
+    the terminal updates to show a [TypeError](./TYPE_ERROR.md) because 2 positional arguments were expected by the function but 4 were given
 - update the signature of `functions_with_positional_arguments` with a starred expression to take in any number of arguments
     ```python
     def passthrough_with_positional_arguments(*arguments):
@@ -324,7 +324,7 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
     def passthrough_with_keyword_arguments(first_name, last_name):
         return None
     ```
-    the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md)
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 - update the return statement to make the test pass
     ```python
     def passthrough_with_keyword_arguments(first_name, last_name):
@@ -359,7 +359,7 @@ let us add a test to `test_functions_with_keyword_arguments`
         {}
     )
 ```
-the terminal updates to show a [TypeError](./03_TYPE_ERROR.md)
+the terminal updates to show a [TypeError](./TYPE_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
@@ -368,7 +368,7 @@ the terminal updates to show a [TypeError](./03_TYPE_ERROR.md)
     def passthrough_with_keyword_arguments(**keyword_arguments):
         return keyword_arguments
     ```
-    the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md) for our previous test that was passing. We have introduced a regression
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) for our previous test that was passing. We have introduced a regression
 - update `test_functions_with_keyword_arguments` to the updated output
     ```python
     self.assertEqual(
@@ -379,7 +379,7 @@ the terminal updates to show a [TypeError](./03_TYPE_ERROR.md)
         {'first_name': 'my_first_name', 'last_name': 'my_last_name'}
     )
     ```
-    the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md) for the next test that was passing. Still a regression
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) for the next test that was passing. Still a regression
 - update the next test to make the output more appropriate
     ```python
     self.assertEqual(
@@ -390,7 +390,7 @@ the terminal updates to show a [TypeError](./03_TYPE_ERROR.md)
         {'first_name': 'my_first_name', 'last_name': 'my_last_name'}
     )
     ```
-    the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md) for the last test we added.
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) for the last test we added.
 - update the test to the expected value in the comparison
     ```python
     self.assertEqual(
@@ -421,7 +421,7 @@ let us add one more test for good measure
         {}
     )
     ```
-    the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md)
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 - update the test with the right values to make the test pass
     ```python
     self.assertEqual(
@@ -483,7 +483,7 @@ how can we write a test for a function that accepts positional and keyword argum
     def accepts_positional_and_keyword_arguments():
         return None
     ```
-    the terminal updates to show a [TypeError](./03_TYPE_ERROR.md)
+    the terminal updates to show a [TypeError](./TYPE_ERROR.md)
     ```python
      TypeError: accepts_positional_and_keyword_arguments() got an unexpected keyword argument 'last_name'
     ```
@@ -492,7 +492,7 @@ how can we write a test for a function that accepts positional and keyword argum
     def accepts_positional_and_keyword_arguments(last_name):
         return None
     ```
-    the terminal updates to show another [TypeError](./03_TYPE_ERROR.md)
+    the terminal updates to show another [TypeError](./TYPE_ERROR.md)
     ```python
     TypeError: accepts_positional_and_keyword_arguments() got multiple values for argument 'last_name'
     ```
@@ -507,13 +507,13 @@ how can we write a test for a function that accepts positional and keyword argum
     def accepts_positional_and_keyword_arguments(first_name, last_name):
         return None
     ```
-    the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md)
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 - update the return statement to make the test pass
     ```python
     def accepts_positional_and_keyword_arguments(first_name, last_name):
         return first_name, last_name
     ```
-    the terminal updates the [AssertionError](./04_ASSERTION_ERROR.md) with the values we just added
+    the terminal updates the [AssertionError](./ASSERTION_ERROR.md) with the values we just added
 - update `test_functions_with_positional_and_keyword_arguments` to make our results match the expectation
     ```python
     def test_functions_with_positional_and_keyword_arguments(self):
@@ -559,7 +559,7 @@ Hold on a second. This looks exactly like what we did in `test_functions_with_po
         ()
     )
     ```
-    the terminal updates to show a [TypeError](./03_TYPE_ERROR.md) because the function signature specifically only has two keyword arguments which are not provided in the call
+    the terminal updates to show a [TypeError](./TYPE_ERROR.md) because the function signature specifically only has two keyword arguments which are not provided in the call
 - using what we know from previous tests we update the function using starred expressions
     ```python
     def accepts_positional_and_keyword_arguments(*args, **kwargs):
@@ -635,7 +635,7 @@ Hold on a second. This looks exactly like what we did in `test_functions_with_po
             (None, None)
         )
     ```
-    the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md)
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
     ```python
     AssertionError: Tuples differ: ((), {}) != (None, None)
     ```
@@ -646,7 +646,7 @@ Hold on a second. This looks exactly like what we did in `test_functions_with_po
             ((), {})
         )
     ```
-- uncomment the last test to see it fail and the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md)
+- uncomment the last test to see it fail and the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
     ```python
     AssertionError: Tuples differ: ((<class 'bool'>, <class 'int'>, <class 'f[307 chars]t'>}) != ()
     ```

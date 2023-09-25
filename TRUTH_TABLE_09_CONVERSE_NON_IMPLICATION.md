@@ -31,7 +31,7 @@ the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
     def converse_non_implication(p, q):
         return False
     ```
-    since the first two cases pass, the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md) for the third case
+    since the first two cases pass, the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) for the third case
 - add a condition for it
     ```python
     def converse_non_implication(p, q):

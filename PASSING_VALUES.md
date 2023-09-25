@@ -47,7 +47,7 @@ the terminal updates to show a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md
 
         text = None
     ```
-    the terminal updates to show a [TypeError](./03_TYPE_ERROR.md) because `text` is not callable
+    the terminal updates to show a [TypeError](./TYPE_ERROR.md) because `text` is not callable
 - change `text` to a method to make it callable
     ```python
     class Telephone(object):
@@ -55,13 +55,13 @@ the terminal updates to show a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md
         def text():
             return None
     ```
-    the terminal updates to show a [TypeError](./03_TYPE_ERROR.md) because a positional argument was given in the caller, but the signature we defined does not take in any arguments
+    the terminal updates to show a [TypeError](./TYPE_ERROR.md) because a positional argument was given in the caller, but the signature we defined does not take in any arguments
 - update the definition for `text` to take in a value
     ```python
         def text(value):
             return None
     ```
-    the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md)
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 - update the return statement to make the test pass
     ```python
         def text(value):
@@ -84,7 +84,7 @@ add a new test to `test_text_messages`
         )
 ```
 
-the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md)
+the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
@@ -108,7 +108,7 @@ let us try it with other python data structures.
             "I received this message: 'None'"
         )
     ```
-    the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md)
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 - update the test to match the expected value
     ```python
         self.assertEqual(
@@ -148,7 +148,7 @@ let us try it with other python data structures.
             "I received this message: 'dict'"
         )
     ```
-    the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md)
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 - update the test to match the expected output
     ```python
         self.assertEqual(
@@ -156,7 +156,7 @@ let us try it with other python data structures.
             "I received this message: <class 'bool'>"
         )
     ```
-    the terminal updates with an [AssertionError](./04_ASSERTION_ERROR.md) for the next test.
+    the terminal updates with an [AssertionError](./ASSERTION_ERROR.md) for the next test.
 - repeat the above solution until all tests pass.
 
 ***VOILA***

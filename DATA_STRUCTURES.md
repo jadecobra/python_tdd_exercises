@@ -54,7 +54,7 @@ update `test_none_is_none` to make the test pass
 ```python
         self.assertIsNone(None)
 ```
-we assert what we learned in [04_ASSERTION_ERROR](04_ASSERTION_ERROR.md) that `None` is `None`
+we assert what we learned in [04_ASSERTION_ERROR](ASSERTION_ERROR.md) that `None` is `None`
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 

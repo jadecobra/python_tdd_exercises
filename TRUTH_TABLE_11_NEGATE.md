@@ -31,7 +31,7 @@ the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
     def negate_first(p, q):
         return False
     ```
-    the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md) for the third case
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) for the third case
 - before we add a condition for it, this looks similar to `logical_equality` and `exclusive_disjunction` because 2 out of the 4 cases have the same return value. We observe that
     - if `p == True` the result is `False`
     - if `p == False` the result is `True`
@@ -93,7 +93,7 @@ the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
     def negate_second(p, q):
         return False
     ```
-    the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md) for the third case
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) for the third case
 - before we add a condition for it, this looks similar to `logical_equality`, `exclusive_disjunction` and `negate_first` because 2 out of the 4 cases have the same return value. We observe that
     - if `q == True` the result is `False`
     - if `q == False` the result is `True`
@@ -102,7 +102,7 @@ the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
     def negate_second(p, q):
         return not p
     ```
-    the terminal still shows an [AssertionError](./04_ASSERTION_ERROR.md). let us try `q` instead
+    the terminal still shows an [AssertionError](./ASSERTION_ERROR.md). let us try `q` instead
     ```python
     def negate_second(p, q):
         return not q

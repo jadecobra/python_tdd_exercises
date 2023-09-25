@@ -42,19 +42,19 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
     def logical_conjunction():
         return None
     ```
-    the terminal updates to show a [TypeError](./03_TYPE_ERROR.md)
+    the terminal updates to show a [TypeError](./TYPE_ERROR.md)
 - update the function signature with a positional argument
     ```python
     def logical_conjunction(p):
         return None
     ```
-    the terminal updates to show another [TypeError](./03_TYPE_ERROR.md)
+    the terminal updates to show another [TypeError](./TYPE_ERROR.md)
 - add another positional argument
     ```python
     def logical_conjunction(p, q):
         return None
     ```
-    the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md)
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 - update `logical_conjunction` in `truth_table.py`
     ```python
     def logical_conjunction(p, q):
@@ -68,7 +68,7 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
         if p == True:
             return True
     ```
-    the terminal still shows an [AssertionError](./04_ASSERTION_ERROR.md)
+    the terminal still shows an [AssertionError](./ASSERTION_ERROR.md)
 - let us add a condition for the second input value
     ```python
     def logical_conjunction(p, q):

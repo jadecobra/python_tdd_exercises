@@ -39,7 +39,7 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
     def logical_disjunction(p, q):
         return True
     ```
-    the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md)
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 - 3 of the test cases are passing because `logical_disjunction` returns `True` in 3 of the 4. We need a condition for the fourth case to pass. update the definition
     ```python
     def logical_disjunction(p, q):

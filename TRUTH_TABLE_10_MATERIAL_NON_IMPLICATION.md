@@ -31,7 +31,7 @@ the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
     def material_non_implication(p, q):
         return False
     ```
-    the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md) for the second case
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) for the second case
 - add a condition for it
     ```python
     def material_non_implication(p, q):

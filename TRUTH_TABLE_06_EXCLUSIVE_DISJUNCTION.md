@@ -31,7 +31,7 @@ the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
     def exclusive_disjunction(p, q):
         return True
     ```
-    we get an [AssertionError](./04_ASSERTION_ERROR.md) for the second case
+    we get an [AssertionError](./ASSERTION_ERROR.md) for the second case
 - add a condition for it
     ```python
     def exclusive_disjunction(p , q):
@@ -39,7 +39,7 @@ the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
             return False
         return True
     ```
-    the terminal shows an [AssertionError](./04_ASSERTION_ERROR.md) for the fourth case
+    the terminal shows an [AssertionError](./ASSERTION_ERROR.md) for the fourth case
 - add a condition
     ```python
     def exclusive_disjunction(p, q):

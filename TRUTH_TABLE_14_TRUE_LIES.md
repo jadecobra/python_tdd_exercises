@@ -31,7 +31,7 @@ the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
     def tautology(p, q):
         return False
     ```
-    the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md) for the first case
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) for the first case
 - replace the return value
     ```python
     def tautology(p, q):
@@ -66,7 +66,7 @@ the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
     def contradiction(p, q):
         return True
     ```
-    the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md) for the first case
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) for the first case
 - update the return value
     ```python
     def contradiction(p, q):

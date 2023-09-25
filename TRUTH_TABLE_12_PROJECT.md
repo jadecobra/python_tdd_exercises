@@ -31,13 +31,13 @@ the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
     def project_first(p, q):
         return False
     ```
-    the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md) foe the first case
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) foe the first case
 - change the return statement
     ```python
     def project_first(p, q):
         return True
     ```
-    the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md) for the third case
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) for the third case
 - before we add a condition for it, this looks similar to `logical_equality`, `exclusive_disjunction`, `negate_first` and `negate_second` because 2 out of the 4 cases have the same return value. We observe that
     - if `p == True` the result is `True`
     - if `p == False` the result is `False`
@@ -96,13 +96,13 @@ the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
     def project_second(p, q):
         return False
     ```
-    the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md) for the first case
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) for the first case
 - change the return value to make it pass
     ```python
     def project_second(p, q):
         return True
     ```
-    the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md) for the second case
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) for the second case
 - before we add a condition for it, this looks similar to `logical_equality`, `exclusive_disjunction`, `negate_first`, `negate_second` and `project_first` because 2 out of the 4 cases have the same return value. We observe that
     - if `q == True` the result is `True`
     - if `q == False` the result is `False`
@@ -111,7 +111,7 @@ the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
     def project_second(p, q):
         return p
     ```
-    the terminal still shows an [AssertionError](./04_ASSERTION_ERROR.md). let us return `q` instead
+    the terminal still shows an [AssertionError](./ASSERTION_ERROR.md). let us return `q` instead
     ```python
     def project_second(p, q):
         return q

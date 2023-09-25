@@ -35,7 +35,7 @@ class TestListComprehensions(unittest.TestCase):
 - what is the `range` object? it creates an `iterable` of numbers from 0 to the number we give minus 1. [read more](https://docs.python.org/3/library/stdtypes.html?highlight=range#range)
 - we create a list named `list_a` that has no elements and confirm it is empty with an `assertEqual`
 - we then create a loop using the `for` keyword, that goes over every element of `collection_a` and adds it to `list_a` using the `append` method we learned in [TDD_LISTS](./TDD_LISTS.md)
-- the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md) for our  test to check the elements of `list_a` after the loop runs
+- the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) for our  test to check the elements of `list_a` after the loop runs
     ```python
     E       AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
     E
@@ -88,13 +88,13 @@ the tests pass
     def make_a_list():
         return None
     ```
-    the terminal updates to show a [TypeError](./03_TYPE_ERROR.md)
+    the terminal updates to show a [TypeError](./TYPE_ERROR.md)
 - we update the signature of the function to take in an argument
     ```python
     def make_a_list(argument):
         return None
     ```
-    the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md)
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 - update the function to return a list of whatever argument it gets
     ```python
     def make_a_list(argument):
@@ -123,7 +123,7 @@ def test_creating_a_list_with_a_for_loop(self):
     self.assertEqual(list_comprehensions.for_loop(collection), a_list)
 ```
 
-the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md) for the values of `a_list` after we loop through `collection` and add elements
+the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) for the values of `a_list` after we loop through `collection` and add elements
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
@@ -146,7 +146,7 @@ the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md) for th
     def for_loop():
         return None
     ```
-    the terminal updates to show a [TypeError](./03_TYPE_ERROR.md)
+    the terminal updates to show a [TypeError](./TYPE_ERROR.md)
 - we update the signature of the function
     ```python
     def for_loop(argument):

@@ -31,7 +31,7 @@ the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
     def logical_nand(p, q):
         return True
     ```
-    the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md) for the first case
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) for the first case
 - add a condition for the one case that returns `False`
     ```python
     def logical_nand(p, q):

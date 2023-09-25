@@ -56,7 +56,7 @@ class TestLists(unittest.TestCase):
     def test_creating_list_with_list_keyword(self):
         self.assertEqual(list(0, 1, 2, 3), [])
 ```
-the terminal shows a [TypeError](./03_TYPE_ERROR.md)
+the terminal shows a [TypeError](./TYPE_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
@@ -68,7 +68,7 @@ the terminal shows a [TypeError](./03_TYPE_ERROR.md)
     def test_creating_list_with_list_keyword(self):
         self.assertEqual(list((0, 1, 2, 3)), [])
     ```
-    the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md)
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
     ```python
     >       self.assertEqual(list((0, 1, 2, 3)), [])
     E       AssertionError: Lists differ: [0, 1, 2, 3] != []
@@ -109,7 +109,7 @@ add a test to `TestLists` in `test_lists.py`
         self.assertEqual(a_list, [0, 1, 2, 3])
 ```
 
-the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md) because after we call `a_list.append(5)`, the values in `a_list` change
+the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) because after we call `a_list.append(5)`, the values in `a_list` change
 
 ```python
 >       self.assertEqual(a_list, [0, 1, 2, 3])
@@ -200,7 +200,7 @@ let us find out
         a_list.remove(2)
         self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
     ```
-    the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md)
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 - update the  values on the right to match the expectation
     ```python
     def test_remove_an_item_from_a_list_when_multiple_exist(self):
@@ -229,7 +229,7 @@ add a test to `TestLists` in `test_lists.py`
 - we call the `pop` function, then check the value that gets popped
 - we check the list to see what values remain after calling `pop`
 
-the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md) for the test that checks the value of the item that is popped
+the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) for the test that checks the value of the item that is popped
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
@@ -242,7 +242,7 @@ the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md) for th
         self.assertEqual(last_item, 3)
         self.assertEqual(a_list, [0, 1, 2, 3])
     ```
-    the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md) for the values of `a_list` after `pop` is called
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) for the values of `a_list` after `pop` is called
 - update the test
     ```python
     def test_removing_the_last_item_of_a_list(self):
@@ -271,7 +271,7 @@ add a failing test
         self.assertEqual(a_list[3], '')
 ```
 
-the terminal shows an [AssertionError](./04_ASSERTION_ERROR.md)
+the terminal shows an [AssertionError](./ASSERTION_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
@@ -290,7 +290,7 @@ the terminal shows an [AssertionError](./04_ASSERTION_ERROR.md)
         self.assertEqual(a_list[-2], '')
         self.assertEqual(a_list[-4], '')
     ```
-    the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md) for the next test
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) for the next test
 - update the value
     ```python
     def test_getting_items_in_a_list(self):
@@ -363,7 +363,7 @@ add a failing test
         )
 ```
 - `self.maxDiff` is an attribute of the `unittest.TestCase` class that tells python to show every difference between the two values in the `assertEqual` call
-- the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md)
+- the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 

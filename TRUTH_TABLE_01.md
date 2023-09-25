@@ -58,7 +58,7 @@ let us add a test for `logical_false`
     def logical_false():
         return True
     ```
-    the terminal shows an [AssertionError](./04_ASSERTION_ERROR.md)
+    the terminal shows an [AssertionError](./ASSERTION_ERROR.md)
 - update the return value to `False` and the terminal updates to show passing tests
     ```python
     def logical_false():
@@ -118,7 +118,7 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
     def logical_negation(value):
         return value
     ```
-    the terminal updates to show an [AssertionError](./04_ASSERTION_ERROR.md). The `logical_negation` function returns the value it receives as input.
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md). The `logical_negation` function returns the value it receives as input.
 - How do we make the function return the opposite of what it receives? use the `not` keyword. update `logical_negation` to return the opposite of the `bool` value it returns
     ```python
     def logical_negation(value):
