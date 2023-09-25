@@ -1,6 +1,6 @@
 # Data Structures
 
-Let us take a look at Data Structures in python using Test Driven Development
+Let us take a look at Data Structures in python using Test Driven Development. This chapter covers the null value `None`
 
 ### Prerequisites
 
@@ -35,11 +35,11 @@ you could be familiar with this from mathematics
 | tuple    | tuples                | immutable sequence of values in parentheses e.g. (1, 2.3, "three", (4, 5.6, 'seven')) |
 | list     | lists/arrays          | mutable sequence of values in square brackets e.g. [1, 2.3, "three", (4, 5.6, 'seven')] |
 | set      | sets                  | sequence of values with in curly/squiggly braces with no duplicates e.g. {1, 2, 3} |
-| dict     | dictionaries/mappings | mapping of key/value pairs in curly/squggly braces e.g. {"a": "apple", "b": "ball", "c": "car", "d": "dog"} |
+| dict     | dictionaries/mappings | mapping of key/value pairs in curly/squiggly braces e.g. {"a": "apple", "b": "ball", "c": "car", "d": "dog"} |
 
 ## What is None?
 
-`None` is an object used to represent the absence of a value
+`None` is an object used to represent the absence of a value, let us explore it with tests
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -53,15 +53,14 @@ class TestDataStructures(unittest.TestCase):
     def test_none_is_none(self):
         self.assertIsNotNone(None)
 ```
-the terminal updates to show an `AssertionError`
+the terminal gives us [AssertionError](./ASSERTION_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
-update `test_none_is_none` to make the test pass
+change the `assert` statement in `test_none_is_none` to make it pass
 ```python
         self.assertIsNone(None)
 ```
-we assert what we learned in [04_ASSERTION_ERROR](ASSERTION_ERROR.md) that `None` is `None`
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
@@ -75,7 +74,7 @@ add a new test to compare `None` with booleans
         self.assertIsNone(True)
         self.assertIsNone(False)
 ```
-the terminal updates to show an `AssertionError`
+the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
@@ -97,13 +96,16 @@ booleans are represented by the keyword `bool` in python so we can do an instanc
 
 update `test_is_none_a_boolean` with `self.assertIsInstance`
 ```python
-    self.assertIsInstance(None, bool)
+    def test_is_none_a_boolean(self):
+        self.assertIsNotNone(True)
+        self.assertIsNotNone(False)
+        self.assertIsInstance(None, bool)
 ```
-the terminal updates to show
+we now see an [AssertionError](./ASSERTION_ERROR.md) in the terminal
 ```python
 AssertionError: None is not an instance of <class 'bool'>
 ```
-because `None` is not an instance of an integer
+because `None` is not an instance of a boolean
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
@@ -117,9 +119,7 @@ We can summarize what we know about `None` so far
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-- What about other values in python?
-- Is `None` equal to any `int`, `float`, `string`, `tuple`, `list`, `set` or `dict`?
-let us find out
+- What about other data types in python? Let us find out if `None` equal to any `int`, `float`, `string`, `tuple`, `list`, `set` or `dict`
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -130,7 +130,7 @@ add a new test to compare `None` with `int`
         self.assertIsNone(0)
         self.assertIsNone(1)
 ```
-the terminal updates to show an `AssertionError`
+the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
@@ -147,11 +147,15 @@ integers are represented by the keyword `int` in python so we can do an instance
 
 ### <span style="color:red">**RED**</span>: make it fail
 
-update `test_is_none_an_integer` with `self.assertIsInstance`
+add a new line to `test_is_none_an_integer` with `self.assertIsInstance`
 ```python
-    self.assertIsInstance(None, int)
+    def test_is_none_an_integer(self):
+        self.assertIsNotNone(-1)
+        self.assertIsNotNone(0)
+        self.assertIsNotNone(1)
+        self.assertIsInstance(None, int)
 ```
-the terminal updates to show
+an [AssertionError](./ASSERTION_ERROR.md) is displayed in the terminal
 ```python
 AssertionError: None is not an instance of <class 'int'>
 ```
@@ -159,11 +163,15 @@ because `None` is not an instance of an integer
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
-update `test_is_none_an_integer` to make the test pass
+we update `test_is_none_an_integer` to make the test pass
 ```python
+    def test_is_none_an_integer(self):
+        self.assertIsNotNone(-1)
+        self.assertIsNotNone(0)
+        self.assertIsNotNone(1)
         self.assertNotIsInstance(None, int)
 ```
-So far we know that in python
+our summary of what we know about None so far is that in python
 - `None` is not an integer
 - `None` is not a boolean
 - `None` is `None`
@@ -180,7 +188,7 @@ update `test_data_structures.py`
         self.assertIsNone('')
         self.assertIsNone("text")
 ```
-the terminal updates to show an `AssertionError`
+the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
@@ -227,7 +235,7 @@ add a new test to `test_data_structures.py`
         self.assertIsNone((1, 2, 3, 'n'))
         self.assertIsInstance(None, tuple)
 ```
-the terminal updates to show an `AssertionError`
+the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 ```python
 AssertionError: () is not None
 ```
@@ -280,7 +288,7 @@ add a new test
         self.assertIsNone([1, 2, 3, "n"])
         self.assertIsInstance(None, list)
 ```
-the terminal updates to show an `AssertionError`
+the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 ```python
 AssertionError: [] is not None
 ```
@@ -311,7 +319,7 @@ add a new test
         self.assertIsNone({1, 2, 3, "n"})
         self.assertIsInstance(None, set)
 ```
-the terminal updates to show an `AssertionError`
+the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 ```python
 AssertionError: {} is not None
 ```
@@ -347,7 +355,7 @@ add a new test
         })
         self.assertIsInstance(None, dict)
 ```
-the terminal updates to show an `AssertionError`
+the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 ```python
 AssertionError: {} is not None
 ```
@@ -387,7 +395,7 @@ update `test_data_structures.py` with a new test
         self.assertTrue(dict())
         self.assertNotIsInstance(False, bool)
 ```
-the terminal updates to show an `AssertionError`
+the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
@@ -440,7 +448,7 @@ update `test_data_structures.py` with a new test
         })
         self.assertNotIsInstance(True, bool)
 ```
-the terminal updates to show an `AssertionError`
+the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
