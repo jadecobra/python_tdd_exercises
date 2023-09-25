@@ -1,6 +1,6 @@
-# Lists
+# Dictionaries
 
-We will cover `lists/arrays` in python using Test Driven Development
+In this chapter We are going to  cover dictionaries in python using Test Driven Development
 
 ### Prerequisites
 
