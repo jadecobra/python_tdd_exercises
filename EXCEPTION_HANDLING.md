@@ -240,21 +240,32 @@ Since we know how to catch/handle an exception with `unittest`, there are a few 
 
 ## How to catch ZeroDivisionError
 
+We can try another exception for fun, this time use `ZeroDivisionError` as an example
+
 ### <span style="color:red">**RED**</span>: make it fail
 
-let us try another exception. add a new test to `test_exception_handling.py`
+add a new test to `test_exception_handling.py`
 ```python
     def test_catching_zero_dvision_error_in_tests(self):
         1 / 0
 ```
+
 the terminal updates to show
+
 ```python
 E       ZeroDivisionError: division by zero
 ```
 
-In [TDD_CALCULATOR](./TDD_CALCULATOR.md), we built a calculator and ran into issues when dividing by zero. In Mathematics, dividing by zero is undefined and in python it raises a `ZeroDivisionError`. To solve that problem we modified the test to do something else if the divisor was ever 0. let us take a different approach.
-- What if we want the program to return a message instead of ending execution of the program abruptly?
-- What if we want to assert that dividing by zero causes an error but the error it causes does not end our tests?
+we add `ZeroDivisionError` to our list of exceptions encountered
+
+```python
+# Exceptions Encountered
+# AssertionError
+# ModuleNotFoundError
+# AttributeError
+```
+
+In [TDD_CALCULATOR](./TDD_CALCULATOR.md) we build a calculator and run into issues when dividing by zero. Since this operation is undefined in Mathematics, it raises a `ZeroDivisionError` in python
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
