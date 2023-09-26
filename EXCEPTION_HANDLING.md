@@ -115,10 +115,10 @@ Since we know how to catch/handle an exception with `unittest`, there are a few 
     add `self.assertRaises` and indent the failing line to place it within the context
     ```python
         def test_catching_attribute_errors_in_tests(self):
-                with self.assertRaises(AttributeError):
-                    module.non_existent_attribute
-                with self.assertRaises(AttributeError):
-                    module.non_existent_function()
+            with self.assertRaises(AttributeError):
+                module.non_existent_attribute
+            with self.assertRaises(AttributeError):
+                module.non_existent_function()
     ```
     the terminal updates to show passing tests
 
@@ -127,7 +127,12 @@ Since we know how to catch/handle an exception with `unittest`, there are a few 
     let us add another failing line to `test_catching_attribute_errors_in_tests`
 
     ```python
-        module.NonExistentClass()
+        def test_catching_attribute_errors_in_tests(self):
+            with self.assertRaises(AttributeError):
+                module.non_existent_attribute
+            with self.assertRaises(AttributeError):
+                module.non_existent_function()
+            module.NonExistentClass()
     ```
     the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
     ```python
@@ -138,62 +143,102 @@ Since we know how to catch/handle an exception with `unittest`, there are a few 
 
     add `self.assertRaises` to make it pass
     ```python
+        def test_catching_attribute_errors_in_tests(self):
+            with self.assertRaises(AttributeError):
+                module.non_existent_attribute
+            with self.assertRaises(AttributeError):
+                module.non_existent_function()
             with self.assertRaises(AttributeError):
                 module.NonExistentClass()
     ```
-    the terminal shows passing tests
+    the terminal displays passing tests
 
-### <span style="color:red">**RED**</span>: make it fail
+- #### <span style="color:red">**RED**</span>: make it fail
 
-update `test_catching_attribute_errors_in_tests` with the following
-```python
-        module.Class.non_existent_attribute
-```
-the terminal updates to show
-```python
-E       AttributeError: type object 'Class' has no attribute 'non_existent_attribute'
-```
-
-### <span style="color:green">**GREEN**</span>: make it pass
-
-add `self.assertRaises` to catch the error
-```python
-        with self.assertRaises(AttributeError):
+    update `test_catching_attribute_errors_in_tests` with a new failing line
+    ```python
+        def test_catching_attribute_errors_in_tests(self):
+            with self.assertRaises(AttributeError):
+                module.non_existent_attribute
+            with self.assertRaises(AttributeError):
+                module.non_existent_function()
+            with self.assertRaises(AttributeError):
+                module.NonExistentClass()
             module.Class.non_existent_attribute
-```
-the terminal updates to show passing tests
+    ```
+    the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
+    ```python
+    E       AttributeError: type object 'Class' has no attribute 'non_existent_attribute'
+    ```
 
-### <span style="color:red">**RED**</span>: make it fail
+- #### <span style="color:green">**GREEN**</span>: make it pass
 
-let us add another attribute error, update `test_catching_attribute_errors_in_tests`
-```python
-        module.Class.non_existent_method()
-```
-the terminal updates to show
-```python
-E       AttributeError: type object 'Class' has no attribute 'non_existent_method'
-```
-### <span style="color:green">**GREEN**</span>: make it pass
+    add `self.assertRaises` to catch the error
+    ```python
+        def test_catching_attribute_errors_in_tests(self):
+            with self.assertRaises(AttributeError):
+                module.non_existent_attribute
+            with self.assertRaises(AttributeError):
+                module.non_existent_function()
+            with self.assertRaises(AttributeError):
+                module.NonExistentClass()
+            with self.assertRaises(AttributeError):
+                module.Class.non_existent_attribute
+    ```
+    the terminal updates to show passing tests
 
-add `self.assertRaises` to make it pass
-```python
-        with self.assertRaises(AttributeError):
+- #### <span style="color:red">**RED**</span>: make it fail
+
+    we trigger another attribute error, by adding a line to `test_catching_attribute_errors_in_tests`
+    ```python
+        def test_catching_attribute_errors_in_tests(self):
+            with self.assertRaises(AttributeError):
+                module.non_existent_attribute
+            with self.assertRaises(AttributeError):
+                module.non_existent_function()
+            with self.assertRaises(AttributeError):
+                module.NonExistentClass()
+            with self.assertRaises(AttributeError):
+                module.Class.non_existent_attribute
             module.Class.non_existent_method()
-```
-the terminal updates to show passing tests
+    ```
+    the terminal updates to show another [AttributeError](./ATTRIBUTE_ERROR.md)
+    ```python
+        E       AttributeError: type object 'Class' has no attribute 'non_existent_method'
+    ```
+- #### <span style="color:green">**GREEN**</span>: make it pass
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+    add `self.assertRaises` to make it pass
+    ```python
+        def test_catching_attribute_errors_in_tests(self):
+            with self.assertRaises(AttributeError):
+                module.non_existent_attribute
+            with self.assertRaises(AttributeError):
+                module.non_existent_function()
+            with self.assertRaises(AttributeError):
+                module.NonExistentClass()
+            with self.assertRaises(AttributeError):
+                module.Class.non_existent_attribute
+            with self.assertRaises(AttributeError):
+                module.Class.non_existent_method()
+    ```
+    the terminal updates to show passing tests
 
-We just wrote the same context manager 5 times, this is a good candidate for a rewrite. let us remove the duplication. Update `test_catching_attribute_errors_in_tests`
-```python
-        with self.assertRaises(AttributeError):
-            module.non_existent_attribute
-            module.non_existent_function()
-            module.NonExistentClass()
-            module.Class.non_existent_attribute
-            module.Class.non_existent_method()
-```
-the terminal shows our tests are still passing
+- ### <span style="color:orange">**REFACTOR**</span>: make it better
+
+    We just wrote the same context manager 5 times, this is a good candidate for a rewrite. let us remove the duplication. since our `self.assertRaises` catches an [AttributeError](./ATTRIBUTE_ERROR.md) in each case, we only need to state it once and place all the lines that raise the error underneath it.
+    ```python
+        def test_catching_attribute_errors_in_tests(self):
+            with self.assertRaises(AttributeError):
+                module.non_existent_attribute
+                module.non_existent_function()
+                module.NonExistentClass()
+                module.Class.non_existent_attribute
+                module.Class.non_existent_method()
+    ```
+    the terminal shows our tests are still passing
+
+## How to catch ZeroDivisionError
 
 ### <span style="color:red">**RED**</span>: make it fail
 
