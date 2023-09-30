@@ -201,7 +201,7 @@ let us find out
         self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
     ```
     the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
-- update the  values on the right to match the expectation
+- update the values on the right to match the expectation
     ```python
     def test_remove_an_item_from_a_list_when_multiple_exist(self):
         a_list = [0, 2, 1, 2, 3, 2]

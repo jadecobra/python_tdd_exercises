@@ -1,6 +1,6 @@
 # How can we tell if we are learning something?
 
-Congratulations! You have journeyed with me through some exercises to help you get more familiar with Test Driven Development and Python. What follows is an exercise in measuring learning. It is somewhat philosophical in its meaning but arithmetic in its representation. I am curious to know what you think and what solutions you come up with
+What follows is an exercise in measuring learning. It is somewhat philosophical in its meaning but arithmetic in its representation. I am curious to know what you think and what solutions you come up with
 
 ### Prerequisites
 
@@ -21,7 +21,7 @@ import learning
 
 class TestInfiniteLearningModel(unittest.TestCase):
 
-    def test_learning_model_when_expectations_greater_than_reality(self):
+    def test_learning_model_when_expectations_are_greater_than_reality(self):
         '''When expectations are greater than reality,
         increase reality until it is greater than expectations'''
 
@@ -33,7 +33,7 @@ class TestInfiniteLearningModel(unittest.TestCase):
             expectations
         )
 
-    def test_learning_model_when_expectations_less_than_reality(self):
+    def test_learning_model_when_expectations_are_less_than_reality(self):
         '''When expectations are less than reality,
         increase expectations until they are greater than reality'''
 
@@ -45,7 +45,7 @@ class TestInfiniteLearningModel(unittest.TestCase):
             reality
         )
 
-    def test_learning_model_when_expectations_equal_to_reality(self):
+    def test_learning_model_when_expectations_equal_reality(self):
         '''When expectations equal reality, increase expectations'''
 
         reality = 1
@@ -63,4 +63,4 @@ If you've gone through any of the other exercises in this book, then you have wh
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-Please send me your solutions. I am curious to see them. Enjoy
+Please send me your solutions. I would love to see them. Enjoy

@@ -1,6 +1,6 @@
 # Dictionaries
 
-In this chapter We are going to  cover dictionaries in python using Test Driven Development
+We are going to cover dictionaries in python In this chapter using Test Driven Development
 
 ### Prerequisites
 
