@@ -881,7 +881,7 @@ You now know
 - we can define default values for arguments
 - positional arguments must come before keyword arguments
 
-Do you want to read more about
+Do you want to read more?
 - [functions](https://docs.python.org/3/glossary.html#term-function)
 - [methods](https://docs.python.org/3/glossary.html#term-method)
 - [parameters](https://docs.python.org/3/glossary.html#term-parameter)
