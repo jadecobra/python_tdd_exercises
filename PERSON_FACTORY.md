@@ -1,6 +1,6 @@
-# How to use dictionaries as Factories in python
+# Person Factory
 
-We will step through creating a Person Factory in python using Test Driven Development
+This is an exercise in creating [dictionaries](./DICTIONARIES.md) with [functions](./FUNCTIONS.md). It assumes you are familiar with [Functions](./FUNCTIONS.md) and [Dictionaries](./DICTIONARIES.md) though you can attempyt it even if you are not
 
 ### Prerequisites
 
@@ -8,9 +8,7 @@ We will step through creating a Person Factory in python using Test Driven Devel
 
 ---
 
-## Person Factory
-
-This is an exercise in creating dictionaries using functions. It assumes you are familiar with [Functions](./FUNCTIONS.md) and [Dictionaries](./DICTIONARIES.md), We are going to attempt it even if you are not
+## PHow to use dictionaries as factories in python
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -27,12 +25,23 @@ class TestPersonFactory(unittest.TestCase):
         self.assertEqual(person.factory(), None)
 ```
 
-the terminal updates to show a `ModuleNotFoundError`
+the terminal updates to show a `ModuleNotFoundError` and we add it to our list of exceptions encountered
+```python
+# Exceptions Encountered
+# AssertionError
+# ModuleNotFoundError
+```
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
-- create a file named `person.py`, the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
-- create a function named `factory`, the terminal updates to show passing tests
+- create a file named `person.py` in the `<PROJECT_NAME>` folder and the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md) which we add to our list of exceptions
+    ```python
+    # Exceptions Encountered
+    # AssertionError
+    # ModuleNotFoundError
+    # AttributeError
+    ```
+- create a function named `factory` in `person.py` and the terminal shows passing tests
     ```python
     def factory():
         return None
@@ -40,26 +49,34 @@ the terminal updates to show a `ModuleNotFoundError`
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-- update `test_person_factory` with details
+- we will now add more details to `test_person_factory`
     ```python
-    def test_person_factory(self):
-        self.assertEqual(
-            person.factory(
-                first_name="sibling",
-                last_name="last_name",
-                year_of_birth=this_year(),
-                sex="F"
-            ),
-            {
-                "first_name": "sibling",
-                "last_name": "last_name",
-                "sex": "F",
-                "age": this_year() - this_year()
-            }
-        )
+        def test_person_factory(self):
+            self.assertEqual(
+                person.factory(
+                    first_name="sibling",
+                    last_name="last_name",
+                    year_of_birth=this_year(),
+                    sex="F"
+                ),
+                {
+                    "first_name": "sibling",
+                    "last_name": "last_name",
+                    "sex": "F",
+                    "age": this_year() - this_year()
+                }
+            )
     ```
-    the terminal updates to show a `NameError` for `this_year`
-- let us add a definition for it to the top of `test_person_factory.py`
+    the terminal shows a `NameError` is raised for `this_year`
+- we add the new exception to our running list
+    ```python
+    # Exceptions Encountered
+    # AssertionError
+    # ModuleNotFoundError
+    # AttributeError
+    # NameError
+    ```
+- let us add a definition for `this_year` to the top of `test_person_factory.py`
     ```python
     import unittest
     import person
@@ -68,7 +85,16 @@ the terminal updates to show a `ModuleNotFoundError`
         return None
     ...
     ```
-    the terminal updates to show a [TypeError](./TYPE_ERROR.md) since our function signature does not yet accept arguments
+    the terminal updates to show a [TypeError](./TYPE_ERROR.md) since our `person.factory` function signature does not allow arguments to be passed to it.
+- we update our list of exceptions encountered
+    ```python
+    # Exceptions Encountered
+    # AssertionError
+    # ModuleNotFoundError
+    # AttributeError
+    # NameError
+    # TypeError
+    ```
 - add a keyword argument for `first_name` to the `factory` function
     ```python
     def factory(first_name=None):
@@ -81,7 +107,8 @@ the terminal updates to show a `ModuleNotFoundError`
         return None
     ```
     the terminal updates to show a [TypeError](./TYPE_ERROR.md) for the next keyword argument
-- we update the `factory` function definition for each keyword until we get a [TypeError](./TYPE_ERROR.md) for the line where we subtract `this_year() - this_year()` because we cannot perform a subtraction operation on `None` and our `this_year` function currently returns `None`. let us update our definition using a function from the [datetime](https://docs.python.org/3/library/datetime.html?highlight=datetime#module-datetime) library that returns the current year we are in
+- we update the `factory` function definition for each keyword until we get a [TypeError](./TYPE_ERROR.md) for the line where we subtract `this_year() - this_year()` because we cannot perform a subtraction operation on `None` and our `this_year` function currently returns `None`
+- let us update our definition for `this_year` using a function from the [datetime](https://docs.python.org/3/library/datetime.html?highlight=datetime#module-datetime) library that returns the current year we are in
     ```python
     import unittest
     import person
@@ -90,15 +117,15 @@ the terminal updates to show a `ModuleNotFoundError`
     def this_year():
         return datetime.datetime.now().year
     ```
-    - we import the `datetime` library so we can use its `methods` and `attributes`
-    - we return the `year` attribute of the object returned by the `now` method which is a representation of the current local date and time, we could also use `today` or `utcnow` to achieve the same thing
+    - we import the `datetime` library so we can use its [functions](./FUNCTIONS.md) and [classes](./CLASSES.md)
+    - we return the `year` attribute of the object returned by the `now` method of the `datetime.datetime` class, which is a representation of the current local date and time, we could also use `today` or `utcnow` to achieve the same result
     - we get the `year` attribute of the object returned since that is all we are interested in
-- the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) since our `factory` function returns `None` and the test expects a [dictionary](./DICTIONARIES.md). let us update the function to return an empty dictionary
+- the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) since our `person.factory` function returns `None` but the test expects a [dictionary](./DICTIONARIES.md). We should update the function to return an empty dictionary
     ```python
     def factory(first_name=None, last_name=None, year_of_birth=None, sex=None):
         return {}
     ```
-    the terminal updates to show the difference between the [dictionary](./DICTIONARIES.md) returned by the `factory` function and the one expected in the test
+    the terminal updates to show the differences between the [dictionary](./DICTIONARIES.md) returned by the `factory` function and the one expected in the test
 - we update the empty `dictionary` in the `factory` function to match the expected results
     ```python
     def factory(first_name=None, last_name=None, year_of_birth=None, sex=None):
@@ -109,27 +136,27 @@ the terminal updates to show a `ModuleNotFoundError`
             "sex": "F",
         }
     ```
-    ***LOVELY!*** the tests pass! There's one problem with this function. It is going to return the exact same thing every time, regardless of what information is given to it, to make it more useful we need it to be able to use the inputs given.
-- let us add another test with a different set of inputs
+    ***LOVELY!*** the tests pass! Even though the tests pass, the factory function currently returns the exact same dictionary every time, regardless of what information is given to it. To make it more useful we need it to be able to use the inputs given.
+- let us add another test to `test_person_factory.py` with a different set of inputs
     ```python
-    def test_person_factory_takes_in_variable_inputs(self):
-        self.assertEqual(
-            person.factory(
-                first_name="me",
-                last_name="last_name",
-                year_of_birth=1983,
-                sex="M",
-            ),
-            {
-                "first_name": "me",
-                "last_name": "last_name",
-                "sex": "M",
-                "age": this_year() - 1983
-            }
-        )
+        def test_person_factory_takes_in_variable_inputs(self):
+            self.assertEqual(
+                person.factory(
+                    first_name="me",
+                    last_name="last_name",
+                    year_of_birth=1983,
+                    sex="M",
+                ),
+                {
+                    "first_name": "me",
+                    "last_name": "last_name",
+                    "sex": "M",
+                    "age": this_year() - 1983
+                }
+            )
     ```
     the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) because the expected and returned dictionaries are different
-- update the `factory` function to use the input provided for first_name
+- modify the `factory` function to use the input provided for `first_name`
     ```python
     def factory(first_name=None, last_name=None, year_of_birth=None, sex=None):
         return {
@@ -140,7 +167,7 @@ the terminal updates to show a `ModuleNotFoundError`
         }
     ```
     the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) but it no longer shows a difference for `first_name`. Good, let us repeat it step by step for every other input until the only error left is for the age
-- we need to calculate the age. We have a function that returns the current year and we have the `year_of_birth` as an input, we also have this line in the test `this_year() - 1983`. Since `1983` is the `year_of_birth` in this case let us update the `factory` function to use that calculation
+- For the age to be accurate it has to be a calculation based on the current year. We have a function that returns the current year and we have the `year_of_birth` as an input, we also have this line in the test `this_year() - 1983`. Since `1983` is the `year_of_birth` in this case. We can try updating the `factory` function to use that calculation
     ```python
     def factory(first_name=None, last_name=None, year_of_birth=None, sex=None):
         return {
@@ -151,7 +178,7 @@ the terminal updates to show a `ModuleNotFoundError`
         }
     ```
     the terminal updates to show a `NameError` since we are calling a function that does not exist in `person.py`
-- replace `this_year()` with the return value from `test_person.this_year` and add an import statement
+- replace `this_year()` with the return value from `test_person_factory.this_year` and add an import statement
     ```python
     import datetime
 
@@ -164,7 +191,7 @@ the terminal updates to show a `ModuleNotFoundError`
         }
     ```
     ***HOORAY!*** the terminal updates to show passing tests
-- add another test to `test_person.py`, this time we will test default values
+- we will now add another test to `test_person.py`, this time for default values
     ```python
     def test_person_factory_with_default_keyword_arguments(self):
         self.assertEqual(
@@ -182,7 +209,7 @@ the terminal updates to show a `ModuleNotFoundError`
         )
     ```
     the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) since the value for `last_name` does not match the expected value
-- since we now have 3 tests with the same value for `last_name` we could use that value as the default value in the absence of any other examples. modify the default value for the parameter in `person.factory`
+- since we now have 3 tests with the same value for `last_name` we could use that value as the default value in the absence of any other examples. modify the default value for `last_name` in the `person.factory` definition
     ```python
     def factory(first_name=None, last_name="last_name", year_of_birth=None, sex=None):
     ```
@@ -203,13 +230,8 @@ the terminal updates to show a `ModuleNotFoundError`
         )
     ```
     the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
-- since 3 out of our 4 persons created have `M` as their sex and 1 has `F` as their sex, we could set the majority to the default to reduce the number of repetitions. modify the default value for the parameter in `person.factory`
+- since 3 out of our 4 persons created have `M` as their sex and 1 has `F` as their sex, we could set the majority as the default value to reduce the number of repetitions. modify the default value for the parameter in `person.factory`
     ```python
     def factory(first_name=None, last_name="last_name", year_of_birth=None, sex='M'):
     ```
-    the terminal updates to show passing tests
-
-***CONGRATULATIONS***
-You know how to define
-- functions with keyword arguments with defaults
-- dictionaries
+    the terminal updates to show passing tests.
