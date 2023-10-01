@@ -1,2 +1,49 @@
-# python_tdd_exercises
-Exercises to get you familiar with Python using Test Driven Development
+# Python Test Driven Development Exercises
+
+This book contains a few exercises to get you familiar with Python using Test Driven Development. It is written to help anyone who is just starting with the language using tests and drills that teach concepts but also allow exploration. It is also for anyone who is new to Test Driven Development in python.
+
+## How to use the book
+
+The chapters are currently listed in alphabetical order with no prescription on what sequence to follow the book in, you can follow your interests or the particular need you have at any time. The only recommendation is that you start with [TDD_SETUP](./TDD_SETUP.md) since that is required for every other chapter
+
+## Chapters
+
+- [ASSERTION_ERROR](./ASSERTION_ERROR.md)
+- [ATTRIBUTE_ERROR](./ATTRIBUTE_ERROR.md)
+- [BOOLEANS](./BOOLEANS.md)
+- [CLASSES](./CLASSES.md)
+- [DATA_STRUCTURES](./DATA_STRUCTURES.md)
+- [DICTIONARIES](./DICTIONARIES.md)
+- [EXCEPTION_HANDLING](./EXCEPTION_HANDLING.md)
+- [FUNCTIONS](./FUNCTIONS.md)
+- [GLOSSARY](./GLOSSARY.md)
+- [INDENTATION_ERROR](./INDENTATION_ERROR.md)
+- [INPUTS_AND_OUTPUTS](./INPUTS_AND_OUTPUTS.md)
+- [LEARNING_MODELS](./LEARNING_MODELS.md)
+- [LISTS](./LISTS.md)
+- [LIST_COMPREHENSIONS](./LIST_COMPREHENSIONS.md)
+- [MODULE_NOT_FOUND_ERROR](./MODULE_NOT_FOUND_ERROR.md)
+- [NONE](./NONE.md)
+- [PASSING_VALUES](./PASSING_VALUES.md)
+- [PERSON_FACTORY](./PERSON_FACTORY.md)
+- [PHONE_BOOK](./PHONE_BOOK.md)
+- [README](./README.md)
+- [REFERENCES](./REFERENCES.md)
+- [TDD_CALCULATOR](./TDD_CALCULATOR.md)
+- [TDD_SETUP](./TDD_SETUP.md)
+- [TDD_SLEEP_DURATION](./TDD_SLEEP_DURATION.md)
+- [TRUTH_TABLE_01](./TRUTH_TABLE_01.md)
+- [TRUTH_TABLE_02_LOGICAL_CONJUNCTION](./TRUTH_TABLE_02_LOGICAL_CONJUNCTION.md)
+- [TRUTH_TABLE_03_LOGICAL_DISJUNCTION](./TRUTH_TABLE_03_LOGICAL_DISJUNCTION.md)
+- [TRUTH_TABLE_04_LOGICAL_IMPLICATION](./TRUTH_TABLE_04_LOGICAL_IMPLICATION.md)
+- [TRUTH_TABLE_05_LOGICAL_EQUALITY](./TRUTH_TABLE_05_LOGICAL_EQUALITY.md)
+- [TRUTH_TABLE_06_EXCLUSIVE_DISJUNCTION](./TRUTH_TABLE_06_EXCLUSIVE_DISJUNCTION.md)
+- [TRUTH_TABLE_07_LOGICAL_NAND](./TRUTH_TABLE_07_LOGICAL_NAND.md)
+- [TRUTH_TABLE_08_LOGICAL_NOR](./TRUTH_TABLE_08_LOGICAL_NOR.md)
+- [TRUTH_TABLE_09_CONVERSE_NON_IMPLICATION](./TRUTH_TABLE_09_CONVERSE_NON_IMPLICATION.md)
+- [TRUTH_TABLE_10_MATERIAL_NON_IMPLICATION](./TRUTH_TABLE_10_MATERIAL_NON_IMPLICATION.md)
+- [TRUTH_TABLE_11_NEGATE](./TRUTH_TABLE_11_NEGATE.md)
+- [TRUTH_TABLE_12_PROJECT](./TRUTH_TABLE_12_PROJECT.md)
+- [TRUTH_TABLE_13_CONVERSE_IMPLICATION](./TRUTH_TABLE_13_CONVERSE_IMPLICATION.md)
+- [TRUTH_TABLE_14_TRUE_LIES](./TRUTH_TABLE_14_TRUE_LIES.md)
+- [TYPE_ERROR](./TYPE_ERROR.md)
