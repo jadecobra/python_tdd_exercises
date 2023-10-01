@@ -149,7 +149,7 @@ There's not much to do here, we could repeat the above as a drill to help rememb
     variable_0 = None
     variable_1
     ```
-    the terminal shows a `NameError`
+    the terminal reveals a `NameError`
     ```python
     E   NameError: name 'variable_1' is not defined
     ```
@@ -168,7 +168,7 @@ There's not much to do here, we could repeat the above as a drill to help rememb
         self.assertIsNone(module.variable_1)
         self.assertIsNone(module.variable_2)
     ```
-    the terminal shows an `AttributeError`
+    the terminal updates with an `AttributeError`
     ```shell
     >       self.assertIsNone(module.variable_2)
     E       AttributeError: module 'module' has no attribute 'variable_2'
@@ -181,7 +181,7 @@ There's not much to do here, we could repeat the above as a drill to help rememb
     variable_1 = None
     variable_2
     ```
-    the terminal shows a `NameError`
+    the terminal outputs a `NameError`
     ```shell
     E   NameError: name 'variable_2' is not defined
     ```
@@ -202,7 +202,7 @@ There's not much to do here, we could repeat the above as a drill to help rememb
         self.assertIsNone(module.variable_2)
         self.assertIsNone(module.variable_3)
     ```
-    the terminal shows an `AttributeError`
+    the terminal gives an `AttributeError`
     ```shell
     E       AttributeError: module 'module' has no attribute 'variable_3'
     ```
@@ -281,7 +281,7 @@ E       AttributeError: module 'module' has no attribute 'function_0'
     ```python
     function_0 = None
     ```
-    the terminal shows a `TypeError`
+    we see a `TypeError` in the terminal
     ```shell
     E       TypeError: 'NoneType' object is not callable
     ```
@@ -434,7 +434,7 @@ A class is a blueprint that represents an object, it is a collection of function
         attribute_0 = None
         return None
     ```
-    the terminal still shows the same error, our experiment had no effect on the test
+    the terminal still gives the same error, our experiment had no effect on the test
 - what if we use the `class` keyword to define `Class` instead of `def`
     ```python
     class Class():
