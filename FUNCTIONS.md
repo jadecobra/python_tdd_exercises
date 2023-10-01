@@ -12,6 +12,13 @@ The focus of this chapter is on functions in python using Test Driven Developmen
 
 `functions` are a callable unit/block of code. It is a way to encapsulate statements that can be used at a different time from when they are defined to accomplish a task. With functions we make code modular which makes it easier to test and reuse.
 
+In programming we process input data of some form and output data in some form. We can think of it as
+
+```python
+    input_data -> program -> output_data
+    program(input_data) -> output_data
+```
+
 ## How to define functions
 
 `functions` are defined using the `def` keyword, a name, parentheses and a colon at the end

@@ -1,51 +1,24 @@
 # Lists
 
-We will cover `lists/arrays` in python using Test Driven Development
+Let us explore `lists/arrays` in python using Test Driven Development
 
 ### Prerequisites
 
 - [Setup a Test Driven Development Environment](./TDD_SETUP.md)
+- [Data Structures](./DATA_STRUCTURES.md)
 
 ---
 
-## Data Structures
-
-In programming we process input data of some form and output data in some form.
-We can think of it as
-
-```python
-input_data -> program -> output_data
-f(input_data) -> output_data # where f is the program|procress
-```
-
-## What are the data structures in python
-
-- `None` - none - no value
-- `bool` - boolean - True | False
-- `int` - integers - positive/negative whole numbers e.g. -1, 0, 1
-- `float` - floats - floating point numbers e.g. -1.1, 0.1, 1.1
-- `str` - string - any text in strings"
-- `tuple` - tuples - an immutable sequence of values
-- `list` - lists | arrays - a mutable sequence of values
-- `set` - sets - a sequence of values with no duplicates
-- `dict` - dictionaries - a mapping of key, values
-
-## What is a list/array?
-
 A `list` is an object that holds elements. It is a container like `tuples` and `sets`.
-In python
 - Lists are represented with `[]`
-- Lists can also be created with the `list` keyword
-- Lists are mutable which means they can be changed after creation, tuples are not, they are immutable
-
-
-let us play with lists
+- They can also be created with the `list` keyword
+- They are mutable which means they can be changed after creation by calling some operation on them
 
 ## How to create a list
 
 ### <span style="color:red">**RED**</span>: make it fail
 
-add a file named `test_lists.py` to the `tests` folder
+create a file named `test_lists.py` in the `tests` folder with the following code
 
 ```python
 import unittest
@@ -53,20 +26,25 @@ import unittest
 
 class TestLists(unittest.TestCase):
 
-    def test_creating_list_with_list_keyword(self):
+    def test_creating_a_list_with_the_list_keyword(self):
         self.assertEqual(list(0, 1, 2, 3), [])
 ```
-the terminal shows a [TypeError](./TYPE_ERROR.md)
+the terminal shows a [TypeError](./TYPE_ERROR.md) and we add it to our list of exceptions encountered
+
+```python
+# Exceptions Encountered
+# AssertionError
+# TypeError
+```
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
 - Looking at the error we see that the `list` keyword expects one argument but we gave it four, so we are violating the signature for creating lists. How can we pass in values correctly to this object?
-- We check out the [documentation](https://docs.python.org/3/library/stdtypes.html?highlight=list#list) and see that list takes in an `iterable`
-- What is an iterable? any object that we can loop over
-- update the left value in the test
+- We check out the [documentation](https://docs.python.org/3/library/stdtypes.html?highlight=list#list) and see that list takes in an `iterable`. An iterable is an object that we can loop over
+- update the left input of the `self.assertEqual` by putting the values in an iterable, we will use a tuple for this example by placing parentheses around the values
     ```python
-    def test_creating_list_with_list_keyword(self):
-        self.assertEqual(list((0, 1, 2, 3)), [])
+        def test_creating_a_list_with_the_list_keyword(self):
+            self.assertEqual(list((0, 1, 2, 3)), [])
     ```
     the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
     ```python
@@ -80,26 +58,26 @@ the terminal shows a [TypeError](./TYPE_ERROR.md)
     E       - [0, 1, 2, 3]
     E       + []
     ```
-- update the right side to match the values on the left from the terminal
+- change the right side to match the values on the left from the terminal
     ```python
-    def test_creating_list_with_list_keyword(self):
-        self.assertEqual(list((0, 1, 2, 3)), [0, 1, 2, 3])
+        def test_creating_a_list_with_the_list_keyword(self):
+            self.assertEqual(list((0, 1, 2, 3)), [0, 1, 2, 3])
     ```
     the test passes
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-- we know we can create a list with the `list` keyword but our passing test also shows we can create a list with `[]` and it uses less characters. let us test it, add a test
+- we now know we can create a list with the `list` keyword but our passing test also shows we can create a list with `[]` which uses less characters, let us test this out
     ```python
-    def test_creating_list_with_square_brackets(self):
-        self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 3)))
+        def test_creating_a_list_with_square_brackets(self):
+            self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 3)))
     ```
 
 ## How to add items to a list
 
 ### <span style="color:red">**RED**</span>: make it fail
 
-add a test to `TestLists` in `test_lists.py`
+let us add a test to `TestLists` in `test_lists.py` to learn about updating an existing list using the `append` method
 
 ```python
     def test_adding_an_item_to_a_list(self):
@@ -127,7 +105,7 @@ E       + [0, 1, 2, 3]
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
-update the values on the right side of the `assertEqual` to make it match the expectation
+update the values on the right side of the `assertEqual` statement to make it match the expectation
 ```python
     def test_adding_an_item_to_a_list(self):
         a_list = [0, 1, 2, 3]
@@ -135,17 +113,13 @@ update the values on the right side of the `assertEqual` to make it match the ex
         a_list.append(4)
         self.assertEqual(a_list, [0, 1, 2, 3, 4])
 ```
-the terminal updates to show passing tests
-- we started with a list that contained 4 elements
-- we added an element
-- our test confirms that the element we added is the extra element in the list
+the terminal updates to show passing tests, we started with a list that contained 4 elements then added an element using the `append` method, and confirmed that the element we added is now part of the list
 
 ## How to remove an item from a list
 
-
 ### <span style="color:red">**RED**</span>: make it fail
 
-add a test to `TestLists`
+since we know how to add an item to a `list` let us add a test for removing an item from a list using the `remove` method
 
 ```python
     def test_removing_any_item_from_a_list(self):
@@ -155,7 +129,7 @@ add a test to `TestLists`
         self.assertEqual(a_list, [0, 1, 2, 3])
 ```
 
-the terminal updates to show a difference after we call `a_list.remove(2)`, because the call removes an element from `a_list`
+the terminal updates to show a difference after we call `a_list.remove(2)`, because the operation removes an element from `a_list`
 ```python
 >       self.assertEqual(a_list, [0, 1, 2, 3])
 E       AssertionError: Lists differ: [0, 1, 3] != [0, 1, 2, 3]
@@ -175,7 +149,7 @@ E       ?
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
-update the test to make the values on the right match the expected value
+update the test to make the values on the right to match the expected values and we are green again with passing tests
 
 ```python
     def test_removing_any_item_from_a_list(self):
@@ -185,20 +159,17 @@ update the test to make the values on the right match the expected value
         self.assertEqual(a_list, [0, 1, 3])
 ```
 
-we are green. tests are passing
-
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-What if there was more than one element, how does python decide which to remove when we call `.remove(element)` on a list?
-let us find out
+What if there was more than one element, how does python decide which to remove when we call `.remove(element)` on a list? There is a way to find out
 
 - add a failing test
     ```python
-    def test_removing_an_item_from_a_list_when_multiple_exist(self):
-        a_list = [0, 2, 1, 2, 3, 2]
-        self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
-        a_list.remove(2)
-        self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
+        def test_removing_an_item_from_a_list_when_multiple_exist(self):
+            a_list = [0, 2, 1, 2, 3, 2]
+            self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
+            a_list.remove(2)
+            self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
     ```
     the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 - update the values on the right to match the expectation
@@ -209,7 +180,7 @@ let us find out
         a_list.remove(2)
         self.assertEqual(a_list, [0, 1, 2, 3, 2])
     ```
-    the tests pass. We can conclude from our experiment that the `remove` function removes the first occurrence of an item from a list
+    the tests pass, show us from our experiment that the `remove` function removes the first occurrence of an item from a list
 
 ## How to remove the last item in a list
 
@@ -225,9 +196,8 @@ add a test to `TestLists` in `test_lists.py`
         self.assertEqual(last_item, 0)
         self.assertEqual(a_list, [0, 1, 2, 3])
 ```
-- we define a list as containing 4 elements and confirm the values
-- we call the `pop` function, then check the value that gets popped
-- we check the list to see what values remain after calling `pop`
+- we define `a list` with 4 elements and confirm the values, then call the `pop` method
+- we check the value that gets popped and check the list to see what values remain after calling `pop`
 
 the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) for the test that checks the value of the item that is popped
 
@@ -242,8 +212,8 @@ the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) for the t
         self.assertEqual(last_item, 3)
         self.assertEqual(a_list, [0, 1, 2, 3])
     ```
-    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) for the values of `a_list` after `pop` is called
-- update the test
+    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) for the values of `a_list` after the last item is popped
+- update the values in the `self.assertEqual` to make the tests pass
     ```python
     def test_removing_the_last_item_of_a_list(self):
         a_list = [0, 1, 2, 3]
@@ -252,11 +222,11 @@ the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) for the t
         self.assertEqual(last_item, 3)
         self.assertEqual(a_list, [0, 1, 2])
     ```
-    the tests pass
 
 ## How to get a specific item in a list aka Indexing
 
-to view an item in a list we provide the position as an index in `[]` to the list. `python` uses zero-based indexing which means the position of elements starts at 0
+To view an item in a list we provide the position as an index in `[]` to the list. `python` uses zero-based indexing which means the position of elements starts at 0
+
 ### <span style="color:red">**RED**</span>: make it fail
 
 add a failing test
@@ -269,6 +239,11 @@ add a failing test
         self.assertEqual(a_list[2], '')
         self.assertEqual(a_list[1], '')
         self.assertEqual(a_list[3], '')
+        self.assertEqual(a_list[4], '')
+        self.assertEqual(a_list[-1], '')
+        self.assertEqual(a_list[-3], '')
+        self.assertEqual(a_list[-2], '')
+        self.assertEqual(a_list[-4], '')
 ```
 
 the terminal shows an [AssertionError](./ASSERTION_ERROR.md)
@@ -306,15 +281,15 @@ the terminal shows an [AssertionError](./ASSERTION_ERROR.md)
         self.assertEqual(a_list[-4], '')
     ```
     the terminal shows a failure for the next test
-- update the tests until they all pass
+- modify each failing line till all the tests pass
 
 ## IndexError
 
-What happens when we try to get an item from a list but use an index that is greater than the number of items in a list
+An `IndexError` is raised when we try to get an item from a list but use an index that is greater than the number of items in the list
 
 ### <span style="color:red">**RED**</span>: make it fail
 
-add a failing test
+let us add a failing test to illustrate this
 
 ```python
     def test_indexing_with_a_number_greater_than_the_length_of_the_list(self):
@@ -329,26 +304,20 @@ the terminal updates to show an [IndexError](https://docs.python.org/3/library/e
     ```python
     # Exceptions Encountered
     # AssertionError
-    # ModuleNotFoundError
-    # AttributeError
-    # NameError
     # TypeError
-    # SyntaxError
-    # IndentationError
-    # IndexError
     ```
-- add a `self.assertRaises` like we did in [Exception Handling](./05_EXCEPTION_HANDLING.md) to make the test pass
+- add a `self.assertRaises` to confirm that the `IndexError` gets raised. You can read more about `self.assertRaises` in [Exception Handling](./05_EXCEPTION_HANDLING.md)
     ```python
     def test_indexing_with_a_number_greater_than_the_length_of_the_list(self):
         a_list = ['a', 'b', 'c', 'd']
         with self.assertRaises(IndexError):
             a_list[5]
     ```
-### <span style="color:orange">**REFACTOR**</span>: make it better
+    the test passes
 
 ## How to view the attributes and methods of a list
 
-[CLASSES] covers how to view the `attributes` and `methods` of an object. let us do the same for `lists`
+In [Classes](./CLASSES.md) we cover how to view the `attributes` and `methods` of an object. let us do the same for `lists`
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -362,8 +331,8 @@ add a failing test
             []
         )
 ```
-- `self.maxDiff` is an attribute of the `unittest.TestCase` class that tells python to show every difference between the two values in the `assertEqual` call
 - the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
+- `maxDiff` is an attribute of the `unittest.TestCase` class that sets the maximum amount of differences to show between two objects that are being compared. When it is set to `None` it shows every difference
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
@@ -426,11 +395,11 @@ update the test with the expected values
         )
 ```
 
-the tests pass
+all our tests are passing again
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-We see more methods listed than what we have reviewed. What do you think each one of them does? We know some already
+There are more methods listed than what we have reviewed. Based on their names, we can make a guess as to what they do, and we know some from our tests above
 - append - adds an item to the list
 - clear
 - copy
@@ -439,8 +408,8 @@ We see more methods listed than what we have reviewed. What do you think each on
 - index
 - insert
 - pop - removes the last item in the list
-- remove - removes the first occurrence of an item in the list
+- remove - removes the first occurrence of a given item in the list
 - reverse
 - sort
 
-You can add tests for these methods to make sure we see and know what they do. Do you want to [read more about lists](https://docs.python.org/3/tutorial/datastructures.html?highlight=list%20remove#more-on-lists)
+You can add tests for these methods to find out what they do. Do you want to [read more about lists](https://docs.python.org/3/tutorial/datastructures.html?highlight=list%20remove#more-on-lists)
