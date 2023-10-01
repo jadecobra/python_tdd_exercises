@@ -33,7 +33,7 @@ class TestClasses(unittest.TestCase):
         self.assertIsInstance(classes.ClassWithPass(), object)
 ```
 
-the terminal shows a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md)
+the terminal displays a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
@@ -139,7 +139,7 @@ and the terminal displays an [AttributeError](./ATTRIBUTE_ERROR.md)
 
         pass
     ```
-    the terminal updates to show passing tests
+    the terminal reveals passing tests
 - update the definition to explicitly state the parent `object`
     ```python
 
@@ -184,7 +184,7 @@ Since we know how to define a class, let us add some tests for attributes
 
         pass
     ```
-    though the terminal still shows an [AttributeError](./ATTRIBUTE_ERROR.md), this time it is for a missing attribute in our newly defined class
+    though the terminal still outputs an [AttributeError](./ATTRIBUTE_ERROR.md), this time it is for a missing attribute in our newly defined class
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
@@ -281,7 +281,7 @@ the terminal updates to show [AttributeError](./ATTRIBUTE_ERROR.md)
 
         pass
     ```
-    the terminal now shows an [AttributeError](./ATTRIBUTE_ERROR.md) with a different error
+    the terminal now gives an [AttributeError](./ATTRIBUTE_ERROR.md) with a different error
 - let us add the missing attribute to the `ClassWithMethods` class
     ```python
 
@@ -368,8 +368,6 @@ class ClassWithAttributesAndMethods(object):
         return 'you called a method'
 ```
 
-the terminal once again shows passing tests
-
 ---
 
 ## How to define a Class with an initializer
@@ -405,7 +403,7 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 
         sex
     ```
-    the terminal now shows a `NameError`
+    the terminal produces a `NameError`
 - we add a definition for the `sex` attribute
     ```python
 
@@ -424,7 +422,7 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
         self.assertEqual(classes.Boy().sex, 'M')
         self.assertEqual(classes.Girl(sex='F').sex, 'F')
     ```
-    the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
+    the terminal gives an [AttributeError](./ATTRIBUTE_ERROR.md)
 - trying the same solution we used for the `Boy` class, add a definition for the `Girl` class to `classes.py`
     ```python
 
@@ -451,7 +449,7 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
         def __init__(self):
             pass
     ```
-    the terminal shows a [TypeError](./TYPE_ERROR.md)
+    the terminal responds with a [TypeError](./TYPE_ERROR.md)
     ```python
     TypeError: __init__() got an unexpected keyword argument 'sex'
     ```
@@ -480,7 +478,7 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
         def __init__(self, sex=None):
             pass
     ```
-    the terminal now shows passing tests
+    the terminal reveals passing tests
 - Wait a minute, we just repeated the same thing twice.
     - We defined a `class` with a name
     - defined an attribute named `sex`
@@ -496,7 +494,7 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
         def __init__(self, sex=None):
             pass
     ```
-    the terminal shows tests are still passing and we have now written the same thing 3 times. Earlier on we discussed inheritance, and will now try to use it to remove this duplication
+    the terminal responds with all tests still passing and we have now written the same thing 3 times. Earlier on we discussed inheritance, and will now try to use it to remove this duplication
 - try adding a new class called `Human` to `classes.py` before the definition for `Boy` with the same attribute and method of the classes we are trying to abstract
     ```python
 
@@ -513,12 +511,11 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
         ...
     ```
     the terminal still shows passing tests
-- Update the definitions for `Boy` to inherit from the `Human` class
+- Update the definitions for `Boy` to inherit from the `Human` class and all tests are still passing
     ```python
     class Boy(Human):
         ...
     ```
-    the terminal shows passing tests
 - remove the `sex` attribute from the `Boy` class and the tests continue to pass
 - remove the `__init__` method, and add the `pass` placeholder
     ```python
@@ -528,14 +525,12 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 
         pass
     ```
-    the terminal still shows passing tests
 - let us try the same thing with the `Girl` class and update its definition to inherit from the `Human` class
     ```python
     class Girl(Human):
         ...
     ```
-    the terminal shows passing tests
-- remove the `sex` attribute and the terminal shows an [AssertionError](./ASSERTION_ERROR.md)
+- remove the `sex` attribute and the terminal outputs an [AssertionError](./ASSERTION_ERROR.md)
 - update the `Human` class to set the `sex` attribute in the initializer instead of at the class level
     ```python
     class Human(object):
@@ -545,7 +540,7 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
         def __init__(self, sex='M'):
             self.sex = sex
     ```
-    the terminal still shows an [AssertionError](./ASSERTION_ERROR.md)
+    the terminal still responds with an [AssertionError](./ASSERTION_ERROR.md)
 - when we remove the `__init__` method from the `Girl` class
     ```python
     class Girl(Human):
@@ -567,7 +562,7 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
         def __init__(self, sex='M'):
             self.sex = sex
     ```
-    the terminal still shows passing tests, we have successfully refactored the 3 classes and abstracted a `Human` class
+    all tests are passing in the terminal, we have successfully refactored the 3 classes and abstracted a `Human` class
 
 Why did that work?
 - the `Boy`, `Girl` and `Other` class now inherit from the `Human` class which means they all get the same methods and attributes that the `Human` class has, including the `__init__` method
