@@ -91,7 +91,7 @@ We can also use some methods from the `unittest.TestCase` class to make assertio
     ```python
             self.assertIsNotNone(False)
     ```
-    the terminal shows passing tests because this `assert` statement is `True`, which tells us that in python `False` is not `None`
+    the terminal displays passing tests because this `assert` statement is `True`, which tells us that in python `False` is not `None`
 - #### <span style="color:red">**RED**</span>: make it fail
     we add another test to `test_assertion_errors_with_none` to find out the relation of `None` to `True`
     ```python
@@ -106,7 +106,7 @@ We can also use some methods from the `unittest.TestCase` class to make assertio
     ```python
             assert True is not None
     ```
-    the terminal shows passing tests
+    the terminal reveals passing tests
 - #### <span style="color:red">**RED**</span>: make it fail
     let us add a variation of the above statement using the identical `unittest.TestCase` method to `test_assertion_errors_with_none`
     ```python
@@ -121,7 +121,7 @@ We can also use some methods from the `unittest.TestCase` class to make assertio
     ```python
             self.assertIsNotNone(True)
     ```
-    since the terminal shows passing tests, we can conclude that in python
+    since all our tests are passing we can conclude that in python
     - `True` is not `None`
     - `False` is not `None`
 - #### <span style="color:red">**RED**</span>: make it fail
@@ -233,7 +233,6 @@ update `test_assertion_errors_with_true` to make it pass
 ```python
         assert True is True
 ```
-the terminal shows passing tests
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -242,7 +241,7 @@ let us try the above test with the `unittest.TestCase` equivalent method by upda
 ```python
         self.assertTrue(False)
 ```
-the terminal shows a failure
+the terminal produces a failure
 ```python
 E       AssertionError: False is not true
 ```
@@ -301,7 +300,7 @@ the terminal displays passing tests because `False` is not equal to `None`
     ```python
             self.assertEqual(False, None)
     ```
-    the terminal shows
+    the terminal outputs
     ```python
     E       AssertionError: False != None
     ```
@@ -321,7 +320,7 @@ the terminal displays passing tests because `False` is not equal to `None`
     ```python
         self.assertNotEqual(False, None)
     ```
-    the terminal now shows all tests are passing. We have learned that in python
+    We have learned that in python
     - `True` is `True`
     - `True` is not `False`
     - `False` is `False`
@@ -335,7 +334,7 @@ the terminal displays passing tests because `False` is not equal to `None`
     ```python
             assert True == None
     ```
-    and the terminal shows
+    and the terminal responds with a failure
     ```python
     E       assert True == None
     ```
@@ -349,7 +348,7 @@ the terminal displays passing tests because `False` is not equal to `None`
     ```python
             self.assertEqual(True, None)
     ```
-    the terminal now shows
+    the terminal outputs
     ```python
     E       AssertionError: True != None
     ```

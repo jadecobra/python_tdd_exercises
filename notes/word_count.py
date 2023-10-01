@@ -39,6 +39,15 @@ def to_json(dictionary, filename):
         json.dump(dictionary, file, indent=2)
 
 if __name__ == '__main__':
-    word_occurrences = get_word_occurrences()
-    to_json(word_occurrences, 'notes/word_count.json')
-    print('total word count: ', sum(word_occurrences.values()))
+    word_count = get_word_occurrences()
+    to_json(word_count, 'notes/word_count.json')
+    print('total word count: ', sum(word_count.values()))
+    for name in sorted((
+        'AssertionError',
+        'AttributeError',
+        'ModuleNotFoundError',
+        'TypeError',
+        'SyntaxError',
+        'NameError',
+    )):
+        print(name, word_count.get(name.lower(), 0))
