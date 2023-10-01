@@ -359,16 +359,16 @@ Let us explore what else we can do with a `list comprehension`
             even_numbers
         )
     ```
-    the terminal shows an [AssertionError](./ASSERTION_ERROR.md) because our lists differ, we have too many values
+    the terminal shows an [AssertionError](./ASSERTION_ERROR.md) because our lists are not the same, we have too many values
     ```python
     AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != [0, 2, 4, 6, 8]
     ```
-    we have not added the `if` condition to the `list comprehension`, after adding it
+    we have not added the `if` condition to the `list comprehension`, let's do that now
     ```python
-    self.assertEqual(
-        [element for element in collection if element % 2 == 0],
-        even_numbers
-    )
+        self.assertEqual(
+            [element for element in collection if element % 2 == 0],
+            even_numbers
+        )
     ```
     the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md) for the next test
 - add a function definition to `list_comprehensions.py` using the `list comprehension` we just wrote
@@ -422,7 +422,7 @@ Let us explore what else we can do with a `list comprehension`
 
         self.assertEqual(odd_numbers, [1, 3, 5, 7, 9])
         self.assertEqual(
-            [element for element in argument if element % 2 != 0],
+            [element for element in collection if element % 2 != 0],
             odd_numbers
         )
         self.assertEqual(list_comprehensions.get_odd_numbers(collection), odd_numbers)
