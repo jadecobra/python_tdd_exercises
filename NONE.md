@@ -1,6 +1,6 @@
 # Data Structures
 
-Let us take a look at Data Structures in python using Test Driven Development. This chapter covers the null object `None`
+This chapter covers the null object `None` using Test Driven Development in python
 
 ### Prerequisites
 
@@ -25,7 +25,7 @@ class TestDataStructures(unittest.TestCase):
     def test_none_is_none(self):
         self.assertIsNotNone(None)
 ```
-the terminal gives us [AssertionError](./ASSERTION_ERROR.md)
+the terminal gives us an [AssertionError](./ASSERTION_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
@@ -36,9 +36,10 @@ change the `assert` statement in `test_none_is_none` to make it pass
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-What other things can we compare with `None` to learn more about what it is or is not
+There are other python objects we can compare with `None` to learn more about what it is or is not
 
 ## Is None a boolean?
+
 ### <span style="color:red">**RED**</span>: make it fail
 
 add a new test to compare `None` with booleans
@@ -53,17 +54,18 @@ the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 
 update `test_is_none_a_boolean` to make the tests pass
 ```python
+    def test_is_none_a_boolean(self):
         self.assertIsNotNone(True)
         self.assertIsNotNone(False)
 ```
-we are reminded that
+we now know that
 - `False` is not `None`
 - `True` is not `None`
 - `None` is `None`
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-booleans are represented by the keyword `bool` in python so we can do an instance test using another `unittest.TestCase` method that checks if an `object` is an instance of a `class`. We cover classes in [CLASSES](CLASSES.md)
+booleans are represented by the keyword `bool` in python so we can do an instance test using another `unittest.TestCase` method that checks if an `object` is an instance of a [class](./CLASSES.md)
 
 - ### <span style="color:red">**RED**</span>: make it fail
 
@@ -74,24 +76,25 @@ booleans are represented by the keyword `bool` in python so we can do an instanc
             self.assertIsNotNone(False)
             self.assertIsInstance(None, bool)
     ```
-    we now see an [AssertionError](./ASSERTION_ERROR.md) in the terminal
+    we now see an [AssertionError](./ASSERTION_ERROR.md) in the terminal because `None` is not an instance of a boolean
     ```python
     AssertionError: None is not an instance of <class 'bool'>
     ```
-    because `None` is not an instance of a boolean
+
 - ### <span style="color:green">**GREEN**</span>: make it pass
 
     update `test_is_none_a_boolean` to make the test pass
     ```python
+        def test_is_none_a_boolean(self):
+            self.assertIsNotNone(True)
+            self.assertIsNotNone(False)
             self.assertNotIsInstance(None, bool)
     ```
-- We can summarize what we know about `None` so far
-    - `None` is not a boolean
-    - `None` is `None`
+- We can summarize what we know about `None` so far as it is not a boolean and it is `None`
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-What about other data types in python? Let us find out if `None` equal to any `int`, `float`, `string`, `tuple`, `list`, `set` or `dict`
+What about other data types in python? Let us find out if `None` is equal to any `int`, `float`, `string`, `tuple`, `list`, `set` or `dict`
 
 ## Is None an integer?
 
@@ -108,7 +111,7 @@ the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
-update `test_is_none_an_integer` to make it pass
+we update `test_is_none_an_integer` to make it pass
 ```python
         self.assertIsNotNone(-1)
         self.assertIsNotNone(0)
@@ -117,7 +120,7 @@ update `test_is_none_an_integer` to make it pass
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-integers are represented by the keyword `int` in python so we can do an instance test using another `unittest.TestCase` method that checks if an `object` is an instance of a `class`. We cover classes in [CLASSES](CLASSES.md)
+integers are represented by the keyword `int` in python so we can do an instance test like we did above
 
 - ### <span style="color:red">**RED**</span>: make it fail
 
@@ -129,11 +132,10 @@ integers are represented by the keyword `int` in python so we can do an instance
             self.assertIsNotNone(1)
             self.assertIsInstance(None, int)
     ```
-    an [AssertionError](./ASSERTION_ERROR.md) is displayed in the terminal
+    an [AssertionError](./ASSERTION_ERROR.md) is displayed in the terminal because `None` is not an instance of an integer
     ```python
     AssertionError: None is not an instance of <class 'int'>
     ```
-    because `None` is not an instance of an integer
 - ### <span style="color:green">**GREEN**</span>: make it pass
 
     we update `test_is_none_an_integer` to make the test pass
@@ -144,7 +146,7 @@ integers are represented by the keyword `int` in python so we can do an instance
             self.assertIsNotNone(1)
             self.assertNotIsInstance(None, int)
     ```
-- summarizing what we know about `None` so far
+- summarizing what we know about `None` so far as
     - `None` is not an integer
     - `None` is not a boolean
     - `None` is `None`
@@ -152,11 +154,11 @@ integers are represented by the keyword `int` in python so we can do an instance
 
 ## Is None a string?
 
-let us add a test for `strings`. A string is any characters that are enclosed by single, double or triple quotes
+let us add a test for `strings`. A string is any characters that are enclosed by single, double or triple quotes e.g. `'single quotes'`, `"double quotes"`, `'''triple single quotes'''`, `"""triple double quotes"""`
 
 ### <span style="color:red">**RED**</span>: make it fail
 
-we add a new failing test to `test_data_structures.py`
+we add a new failing test to `test_data_structures.py` to compare `None` with a `string`
 
 ```python
     def test_is_none_a_string(self):
@@ -178,7 +180,7 @@ update `test_is_none_a_string` to make it pass
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-`strings` are represented by the `str` class keyword in python. We will add a test to check if `None` is an instance of the `string` class
+`strings` are represented by the `str` class keyword in python, we will add a test to check if `None` is an instance of the `string` class
 
 - ### <span style="color:red">**RED**</span>: make it fail
 
@@ -228,8 +230,8 @@ AssertionError: () is not None
 
 - modify the first line in`test_is_none_a_tuple` to make it pass
     ```python
-    def test_is_none_a_tuple(self):
-        self.assertIsNotNone(())
+        def test_is_none_a_tuple(self):
+            self.assertIsNotNone(())
     ```
     and the terminal displays an [AssertionError](./ASSERTION_ERROR.md) for the second line
     ```python
@@ -238,20 +240,20 @@ AssertionError: () is not None
     because the `tuple` that contains the four elements `1, 2, 3, 'n'` is not `None`
 - update the failing line in `test_is_none_a_tuple`
     ```python
-    def test_is_none_a_tuple(self):
-        self.assertIsNotNone(())
-        self.assertIsNotNone((1, 2, 3, 'n'))
+        def test_is_none_a_tuple(self):
+            self.assertIsNotNone(())
+            self.assertIsNotNone((1, 2, 3, 'n'))
     ```
     the terminal now shows another [AssertionError](./ASSERTION_ERROR.md) for the next line in our test but with a different message
     ```python
     AssertionError: None is not an instance of <class 'tuple'>
     ```
-- change the failing line to make the test to make it pass
+- change the failing line in the test to make it pass
     ```python
-    def test_is_none_a_tuple(self):
-        self.assertIsNotNone(())
-        self.assertIsNotNone((1, 2, 3, 'n'))
-        self.assertNotIsInstance(None, tuple)
+        def test_is_none_a_tuple(self):
+            self.assertIsNotNone(())
+            self.assertIsNotNone((1, 2, 3, 'n'))
+            self.assertNotIsInstance(None, tuple)
     ```
 - we now know that in python
     - `None` is not a `tuple`
@@ -263,8 +265,7 @@ AssertionError: () is not None
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
-Based on what we have seen so far, is it safe to assume that `None` is only `None` and is not any other data structure?
-let us find out if this assumption is true.
+Based on what we have seen so far, it is safe to assume that `None` is only `None` and is not any other data structure, let us find out if this assumption is false.
 
 ## Is None a list(array)?
 
@@ -281,7 +282,7 @@ the terminal shows an [AssertionError](./ASSERTION_ERROR.md)
 ```python
 AssertionError: [] is not None
 ```
-- `[]` is how `lists` are represented in python
+- `[]` is how [lists](./LISTS.md) are represented in python
 - what is the difference between a `list` and a `tuple` other than `[]` vs `()`?
 - Do you want to [read more about lists](https://docs.python.org/3/library/stdtypes.html?highlight=tuple#list)
 
@@ -299,7 +300,7 @@ We've done this dance a few times now so we can update `test_is_none_a_list` to 
 
 ### <span style="color:red">**RED**</span>: make it fail
 
-following the same pattern from above, we add a new failing test, this time for sets
+following the same pattern from earlier, we add a new failing test, this time for sets
 ```python
     def test_is_none_a_set(self):
         self.assertIsNone({})
@@ -324,7 +325,7 @@ update the tests to make them pass and we can update our knowledge of `None` to 
 - `None` is not a `boolean`
 - `None` is `None`
 
-## Is None a dictionary(mapping)?
+## Is None a dictionary?
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -346,8 +347,7 @@ the terminal displays an [AssertionError](./ASSERTION_ERROR.md)
 AssertionError: {} is not None
 ```
 - `dict()` is how we create an empty `dictionary`
-- `{}` is how `dictionaries` are represented in python. Wait a minute? What's the difference between a `set` and a `dictionary` if they are both represented with `{}`?
-- There are more tests on `dictionaries` in [Dictionaries](./DICTIONARIES.md)
+- `{}` is how [dictionaries](./DICTIONARIES.md) are represented in python. Wait a minute, sets are also represented with `{}`, the difference is that dictionaries contain key/value pairs
 - Do you want to [read more about dictionaries](https://docs.python.org/3/tutorial/datastructures.html?highlight=sets#dictionaries)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
@@ -361,104 +361,3 @@ update the tests to make them pass and we can update our knowledge of `None` to 
 - `None` is not an `integer`
 - `None` is not a `boolean`
 - `None` is `None`
-
-### <span style="color:orange">**REFACTOR**</span>: make it better
-
-We just learned about `None`, which also introduced us to all the `objects` that it is not. let us do the same with the first `object` we encountered `False`. What is `False` in python?
-
-### <span style="color:red">**RED**</span>: make it fail
-
-update `test_data_structures.py` with a new test
-```python
-    def test_what_is_false(self):
-        self.assertTrue(None)
-        self.assertTrue(False)
-        self.assertTrue(0)
-        self.assertTrue("")
-        self.assertTrue(())
-        self.assertTrue([])
-        self.assertTrue({})
-        self.assertTrue(dict())
-        self.assertNotIsInstance(False, bool)
-```
-the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
-
-### <span style="color:green">**GREEN**</span>: make it pass
-
-- change all the `self.assertTrue` statements in `test_what_is_false` to `self.assertFalse` and we have one failing test left.
-- update `self.assertNotIsInstance` to `self.assertIsInstance` and all the tests pass
-- we now know that in python
-    - `False` is a `boolean`
-    - `dict()` is `False`
-    - `{}` is `False`
-    - `[]` is `False`
-    - `()` is `False`
-    - `""` is `False`
-    - `0` is `False`
-    - `None` is `False`
-    - `None` is not a `dictionary`
-    - `None` is not a `set`
-    - `None` is not a `list`
-    - `None` is not a `tuple`
-    - `None` is not a `string`
-    - `None` is not an `integer`
-    - `None` is not a `boolean`
-    - `None` is `None`
-
-we can sum this up as, in python
-- `False` is a `boolean`
-- empty things including `0` and `None` are `False`
-- `None` is `None`
-
-### <span style="color:orange">**REFACTOR**</span>: make it better
-
-What is `True` in python?
-
-### <span style="color:red">**RED**</span>: make it fail
-
-update `test_data_structures.py` with a new test
-```python
-    def test_what_is_true(self):
-        self.assertFalse(True)
-        self.assertFalse(1)
-        self.assertFalse(-1)
-        self.assertFalse("text")
-        self.assertFalse((1, 2, 3, "n"))
-        self.assertFalse([1, 2, 3, 'n'])
-        self.assertFalse({1, 2, 3, "n"})
-        self.assertFalse({
-            "a": 1,
-            "b": 2,
-            "c":  3,
-            "n": "n"
-        })
-        self.assertNotIsInstance(True, bool)
-```
-the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
-
-### <span style="color:green">**GREEN**</span>: make it pass
-
-- change all the `self.assertFalse` statements in `test_what_is_true` to `self.assertTrue` and we have one failing test left.
-- update `self.assertNotIsInstance` to `self.assertIsInstance` and all the tests pass
-- we can sum up our current knowledge of python thus
-    - any value except `0` and `None` is `True`
-    - empty things including `0` and `None` are `False`
-    - `False` is a `boolean`
-    - `True` is a `boolean`
-    - `None` is `None`
-
-***HOORAY***
-
-You have built up your knowledge of python, you now know
-- Exceptions
-- Exception Handling
-- Data Structures
-    - None
-    - boolean
-    - int
-    - float
-    - tuple
-    - list
-    - dictionary
-
-Take a moment to celebrate

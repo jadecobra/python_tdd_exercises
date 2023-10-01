@@ -11,7 +11,7 @@ Let us take a look at Data Structures in python using Test Driven Development. T
 
 ## What is a Boolean?
 
-There are only two values that are boolean - `True` and `False`. We will learn about booleans the same way we learn about  [None](./NONE.md) by way of what they are and what they are not, using all the data structures in python.
+There are only two values that are boolean - `True` and `False`. We will learn about booleans by comparing it with the data structures in python to figure what they are and what they are not
 
 ## What is False?
 
@@ -69,7 +69,7 @@ the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
     - `""` is `False` which means an empty `string` is `False`
     - `0` is `False`
 
-we can sum this up as - in python
+we can sum this up as
 - `False` is a `boolean`
 - empty things including `0` and `None` are `False`
 
