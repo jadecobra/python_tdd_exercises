@@ -299,7 +299,7 @@ the terminal updates to show [AttributeError](./ATTRIBUTE_ERROR.md)
 
         method_a = None
     ```
-    the terminal now displays a [TypeError](./TYPE_ERROR.md) since `method_a` is not callable
+    the terminal now reveals a [TypeError](./TYPE_ERROR.md) since `method_a` is not callable
 - let us update the definition of `method_a` to make it a function
     ```python
 

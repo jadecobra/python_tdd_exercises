@@ -60,7 +60,7 @@ add a file named `dictionaries.py` to the project folder and the test passes
     def a_dict():
         return {}
     ```
-    the terminal still shows an [AssertionError](./ASSERTION_ERROR.md) but now our return value looks more like what is expected
+    the terminal still shows an [AssertionError](./ASSERTION_ERROR.md) but now our return value looks more similar to what is expected
     ```python
     E       AssertionError: {} != {'key': 'value'}
     E       - {}
@@ -80,7 +80,7 @@ add a file named `dictionaries.py` to the project folder and the test passes
         self.assertEqual(dictionaries.a_dict(), {'key': 'value'})
         self.assertEqual(dictionaries.a_dict(), dict(key='value'))
     ```
-    the terminal shows passing tests, which means `dict(key='value')` and `{'key': 'value'}` produce the same results
+    the terminal displays passing tests, which means `dict(key='value')` and `{'key': 'value'}` produce the same results
 - we can add another test to confirm this assumption even though it repeats the two tests above
     ```python
     def test_creating_dictionaries_with_strings_as_keys(self):
@@ -128,7 +128,7 @@ the terminal updates to show passing tests
         self.assertEqual({1: 'boom'}, {'one': 'boom'})
         self.assertEqual({2.5: 'works'}, {2.5: 'works'})
     ```
-    the terminal shows passing tests
+    the terminal reveals passing tests
 
 ## How to create a dictionary with booleans as keys
 
@@ -141,7 +141,7 @@ Is it possible for us to use `False` or `True` as `dictionary` keys?
         self.assertEqual({False: 'boom'}, {False: 'bap'})
 ```
 
-the terminal shows an [AssertionError](./ASSERTION_ERROR.md)
+the terminal outputs an [AssertionError](./ASSERTION_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
@@ -180,7 +180,7 @@ add a test to `TestDictionaries`
         self.assertEqual({(1, 2): "value"}, {(1, 2): "key"})
 ```
 
-the terminal shows an [AssertionError](./ASSERTION_ERROR.md)
+the terminal outputs an [AssertionError](./ASSERTION_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
@@ -203,7 +203,7 @@ let us add a test to `TestDictionaries` using a list as a key
         {[1, 2]: "BOOM"}
 ```
 
-the terminal shows a [TypeError](./ASSERTION_ERROR.md) because only `hashable` types can be used as dictionary keys and [lists](./LISTS.md) are not `hashable`
+the terminal gives a [TypeError](./ASSERTION_ERROR.md) because only `hashable` types can be used as dictionary keys and [lists](./LISTS.md) are not `hashable`
 ```
 E       TypeError: unhashable type: 'list'
 ```
@@ -238,7 +238,7 @@ let us try a similar test using a set as a key
         {{1, 2}: "BOOM"}
 ```
 
-the terminal shows a [TypeError](./ASSERTION_ERROR.md)
+the terminal responds with a [TypeError](./ASSERTION_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 which we handle using `self.assertRaises`
@@ -260,7 +260,7 @@ add a new test
         {a_dictionary: "BOOM"}
 ```
 
-and the terminal shows a [TypeError](./TYPE_ERROR.md)
+and the terminal outputs a [TypeError](./TYPE_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 we add a handler to confirm our findings

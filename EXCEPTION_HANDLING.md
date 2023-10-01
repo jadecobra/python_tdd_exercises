@@ -236,7 +236,7 @@ Since we know how to catch/handle an exception with `unittest`, there are a few 
                 module.Class.non_existent_attribute
                 module.Class.non_existent_method()
     ```
-    the terminal shows our tests are still passing
+    all our tests are still passing
 
 ---
 

@@ -38,7 +38,7 @@ class TestFunctions(unittest.TestCase):
         self.assertIsNone(functions.function_with_pass())
 ```
 
-the terminal shows a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md), and we add it to our list of exceptions encountered
+the terminal displays a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md), and we add it to our list of exceptions encountered
 ```python
 # Exceptions Encountered
 # AssertionError
@@ -251,7 +251,7 @@ How can we make this better?
     def passthrough_with_positional_arguments(first_argument, second_argument):
         return first_argument, second_argument
     ```
-    the terminal still shows passing tests
+    the terminal still outputs passing tests
 - let us add another test to ensure that it outputs data in the order given. update `test_functions_with_positional_arguments`
     ```python
         def test_functions_with_positional_arguments(self):
@@ -642,7 +642,7 @@ the terminal updates to show a `SyntaxError` because we put a positional argumen
                 ('my_first_name', 'my_last_name')
             )
     ```
-    the terminal shows passing tests
+    the terminal reveals passing tests
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 

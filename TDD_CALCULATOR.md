@@ -31,7 +31,7 @@ class TestCalculator(unittest.TestCase):
 # AssertionError
 ```
 
-the terminal responds to our change, though it still shows passing tests
+the terminal responds to our change, though all tests are still passing
 
 ```shell
 ==================== 1 passed in 0.01s ======================
@@ -165,7 +165,7 @@ Moving on to the next item we test for addition
     add = None
     ```
 
-    the terminal now shows a new error
+    the terminal reveals a new error
 
     ```python
     E       TypeError: 'NoneType' object is not callable
@@ -184,7 +184,7 @@ Moving on to the next item we test for addition
     def add():
         return None
     ```
-    the terminal still shows a [TypeError](./TYPE_ERROR.md) but with a different message, progress
+    the terminal still shows a [TypeError](./TYPE_ERROR.md) but with a different message. Progress
     ```python
     E       TypeError: add() takes 0 positional arguments but 2 were given
     ```
@@ -247,7 +247,7 @@ There are a few scenarios we can consider from the users perspective. If our use
     def add(x, y):
         return x + y
     ```
-    and the terminal shows passing tests, increasing our confidence in the `add` function
+    and the terminal reveals passing tests, increasing our confidence in the `add` function
     ```python
     tests/test_calculator.py ..                      [100%]
 
@@ -351,7 +351,7 @@ We will now add a failing test since addition works and our next action item fro
     def subtract():
         return None
     ```
-    the terminal now shows a [TypeError](./TYPE_ERROR.md) with a different error message
+    the terminal still displays a [TypeError](./TYPE_ERROR.md) though with a different error message
     ```python
     E       TypeError: subtract() takes 0 positional arguments but 2 were given
     ```
@@ -379,7 +379,7 @@ We will now add a failing test since addition works and our next action item fro
     def subtract(x, y):
         return x - y
     ```
-    the terminal shows passing tests - SUCCESS!
+    all tests passed - SUCCESS!
     ```python
     collected 3 items
 
@@ -482,7 +482,7 @@ def multiply(x, y):
     return x * y
 ```
 
-SUCCESS! The terminal shows passing tests and we remove `test_multiplication` from the TODO list
+SUCCESS! The terminal gives passing tests and we remove `test_multiplication` from the TODO list
 
 ```python
 # TODO
@@ -610,7 +610,7 @@ Let us now add the final test from our TODO list, the division test
             #     self.x/self.y
             # )
     ```
-    the terminal shows passing tests, and we now have a way to `catch` Exceptions when testing, which allows us to confirm that code raises an error and allow our other tests to continue when they encounter expected failures
+    the terminal reveals passing tests, and we now have a way to `catch` Exceptions when testing, which allows us to confirm that code raises an error and allow our other tests to continue when they encounter expected failures
 
 - <span style="color:orange">**REFACTOR**</span>: make it better
     we can update `test_division` to test other division cases when the divisor is not 0 by adding a condition

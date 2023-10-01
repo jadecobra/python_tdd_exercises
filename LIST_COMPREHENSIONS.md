@@ -155,16 +155,16 @@ the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) for the v
 
 - update the right side of the test with the expected values
     ```python
-    def test_creating_a_list_with_a_for_loop(self):
-        collection = range(10)
-        a_list = []
-        self.assertEqual(a_list, [])
+        def test_creating_a_list_with_a_for_loop(self):
+            collection = range(10)
+            a_list = []
+            self.assertEqual(a_list, [])
 
-        for element in collection:
-            a_list.append(element)
+            for element in collection:
+                a_list.append(element)
 
-        self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-        self.assertEqual(list_comprehensions.for_loop(collection), a_list)
+            self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+            self.assertEqual(list_comprehensions.for_loop(collection), a_list)
     ```
     the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md) since `list_comprehensions.py` does not have a definition for `for_loop`
 - we add a function definition for `for_loop` to `list_comprehensions.py`
@@ -193,16 +193,11 @@ the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) for the v
     - append each element from `argument` to the empty list
     - return the result after the loop
 
-    the terminal shows all tests are passing
+    the terminal reveals all tests are passing
 
 ## List Comprehension
 
-Now that we know how to create a `list` using
-- `[]`
-- `list`
-- `for`
-
-let us try creating a `list` using a `list comprehension`. It looks similar to a `for` loop but allows us to achieve the same thing with less words
+Now that we know how to create a `list` using `[]`, `list` and `for`, let us try creating a [list](./LISTS.md) using a `list comprehension`. It looks similar to a `for` loop but allows us to achieve the same thing with less words
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -264,7 +259,7 @@ the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
                 a_list
             )
     ```
-    the test now shows an [AttributeError](./ATTRIBUTE_ERROR.md) for the last line
+    the terminal now outputs an [AttributeError](./ATTRIBUTE_ERROR.md) for the last line
 - update `list_comprehensions.py` with a function that uses a list comprehension
     ```python
     def list_comprehension(argument):
@@ -290,25 +285,25 @@ Let us explore what else we can do with a `list comprehension`
 
 - add a failing test to `TestListComprehensions`
     ```python
-    def test_list_comprehensions_with_conditions_i(self):
-        collection = range(10)
+        def test_list_comprehensions_with_conditions_i(self):
+            collection = range(10)
 
-        even_numbers = []
-        self.assertEqual(even_numbers, [])
+            even_numbers = []
+            self.assertEqual(even_numbers, [])
 
-        for element in collection:
-            if element % 2 == 0:
-                even_numbers.append(element)
+            for element in collection:
+                if element % 2 == 0:
+                    even_numbers.append(element)
 
-        self.assertEqual(even_numbers, [])
-        self.assertEqual(
-            [],
-            even_numbers
-        )
-        self.assertEqual(
-            list_comprehensions.get_even_numbers(collection),
-            even_numbers
-        )
+            self.assertEqual(even_numbers, [])
+            self.assertEqual(
+                [],
+                even_numbers
+            )
+            self.assertEqual(
+                list_comprehensions.get_even_numbers(collection),
+                even_numbers
+            )
     ```
     the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
     - In this loop we update the empty list after the condition `if element % 2 == 0` is met.
@@ -316,61 +311,61 @@ Let us explore what else we can do with a `list comprehension`
     - If the remainder is `0`, it means the number is divisible by 2 with no remainder meaning its an even number
 - we update the test with the expected values to make it pass
     ```python
-    def test_list_comprehensions_with_conditions_i(self):
-        collection = range(10)
+        def test_list_comprehensions_with_conditions_i(self):
+            collection = range(10)
 
-        even_numbers = []
-        self.assertEqual(even_numbers, [])
+            even_numbers = []
+            self.assertEqual(even_numbers, [])
 
-        for element in collection:
-            if element % 2 == 0:
-                even_numbers.append(element)
+            for element in collection:
+                if element % 2 == 0:
+                    even_numbers.append(element)
 
-        self.assertEqual(even_numbers, [0, 2, 4, 6, 8])
-        self.assertEqual(
-            [],
-            even_numbers
-        )
-        self.assertEqual(
-            list_comprehensions.get_even_numbers(collection),
-            even_numbers
-        )
+            self.assertEqual(even_numbers, [0, 2, 4, 6, 8])
+            self.assertEqual(
+                [],
+                even_numbers
+            )
+            self.assertEqual(
+                list_comprehensions.get_even_numbers(collection),
+                even_numbers
+            )
     ```
     the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 - try using a `list comprehension` like we did in the last example
     ```python
-    def test_list_comprehensions_with_conditions_i(self):
-        collection = range(10)
+        def test_list_comprehensions_with_conditions_i(self):
+            collection = range(10)
 
-        even_numbers = []
-        self.assertEqual(even_numbers, [])
+            even_numbers = []
+            self.assertEqual(even_numbers, [])
 
-        for element in collection:
-            if element % 2 == 0:
-                even_numbers.append(element)
+            for element in collection:
+                if element % 2 == 0:
+                    even_numbers.append(element)
 
-        self.assertEqual(even_numbers, [0, 2, 4, 6, 8])
-        self.assertEqual(
-            [element for element in collection],
-            even_numbers
-        )
-        self.assertEqual(
-            list_comprehensions.get_even_numbers(collection),
-            even_numbers
-        )
+            self.assertEqual(even_numbers, [0, 2, 4, 6, 8])
+            self.assertEqual(
+                [element for element in collection],
+                even_numbers
+            )
+            self.assertEqual(
+                list_comprehensions.get_even_numbers(collection),
+                even_numbers
+            )
     ```
-    the terminal shows an [AssertionError](./ASSERTION_ERROR.md) because our lists are not the same, we have too many values
+    the terminal reveals an [AssertionError](./ASSERTION_ERROR.md) because our lists are not the same, we have too many values
     ```python
     AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != [0, 2, 4, 6, 8]
     ```
     we have not added the `if` condition to the `list comprehension`, let's do that now
     ```python
-        self.assertEqual(
-            [element for element in collection if element % 2 == 0],
-            even_numbers
-        )
+            self.assertEqual(
+                [element for element in collection if element % 2 == 0],
+                even_numbers
+            )
     ```
-    the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md) for the next test
+    the terminal outputs an [AttributeError](./ATTRIBUTE_ERROR.md) for the next test
 - add a function definition to `list_comprehensions.py` using the `list comprehension` we just wrote
     ```python
     def get_even_numbers(argument):
@@ -379,53 +374,53 @@ Let us explore what else we can do with a `list comprehension`
     and the terminal shows passing tests! Hooray
 - let us try another `list comprehension` with a different condition. Add a test to `TestListComprehensions`
     ```python
-    def test_list_comprehensions_with_conditions_ii(self):
-        collection = range(10)
-        odd_numbers = []
-        self.assertEqual(odd_numbers, [])
+        def test_list_comprehensions_with_conditions_ii(self):
+            collection = range(10)
+            odd_numbers = []
+            self.assertEqual(odd_numbers, [])
 
-        for element in collection:
-            if element % 2 != 0:
-                odd_numbers.append(element)
+            for element in collection:
+                if element % 2 != 0:
+                    odd_numbers.append(element)
 
-        self.assertEqual(odd_numbers, [])
-        self.assertEqual([], odd_numbers)
-        self.assertEqual(list_comprehensions.get_odd_numbers(collection), odd_numbers)
+            self.assertEqual(odd_numbers, [])
+            self.assertEqual([], odd_numbers)
+            self.assertEqual(list_comprehensions.get_odd_numbers(collection), odd_numbers)
     ```
     the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 - when we update the values to match
     ```python
-    def test_list_comprehensions_with_conditions_ii(self):
-        collection = range(10)
-        odd_numbers = []
-        self.assertEqual(odd_numbers, [])
+        def test_list_comprehensions_with_conditions_ii(self):
+            collection = range(10)
+            odd_numbers = []
+            self.assertEqual(odd_numbers, [])
 
-        for element in collection:
-            if element % 2 != 0:
-                odd_numbers.append(element)
+            for element in collection:
+                if element % 2 != 0:
+                    odd_numbers.append(element)
 
-        self.assertEqual(odd_numbers, [1, 3, 5, 7, 9])
-        self.assertEqual([], odd_numbers)
-        self.assertEqual(list_comprehensions.get_odd_numbers(collection), odd_numbers)
+            self.assertEqual(odd_numbers, [1, 3, 5, 7, 9])
+            self.assertEqual([], odd_numbers)
+            self.assertEqual(list_comprehensions.get_odd_numbers(collection), odd_numbers)
     ```
     the terminal shows an [AssertionError](./ASSERTION_ERROR.md) for the next test
 - after updating the value on the left with a `list comprehension` that uses the same condition we used to create `odd_numbers`
     ```python
-    def test_list_comprehensions_with_conditions_ii(self):
-        collection = range(10)
-        odd_numbers = []
-        self.assertEqual(odd_numbers, [])
+        def test_list_comprehensions_with_conditions_ii(self):
+            collection = range(10)
+            odd_numbers = []
+            self.assertEqual(odd_numbers, [])
 
-        for element in collection:
-            if element % 2 != 0:
-                odd_numbers.append(element)
+            for element in collection:
+                if element % 2 != 0:
+                    odd_numbers.append(element)
 
-        self.assertEqual(odd_numbers, [1, 3, 5, 7, 9])
-        self.assertEqual(
-            [element for element in collection if element % 2 != 0],
-            odd_numbers
-        )
-        self.assertEqual(list_comprehensions.get_odd_numbers(collection), odd_numbers)
+            self.assertEqual(odd_numbers, [1, 3, 5, 7, 9])
+            self.assertEqual(
+                [element for element in collection if element % 2 != 0],
+                odd_numbers
+            )
+            self.assertEqual(list_comprehensions.get_odd_numbers(collection), odd_numbers)
     ```
     the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 - define a function that returns a list comprehension in `list_comprehensions.py` to make the test pass

@@ -185,7 +185,7 @@ update `test_assertion_errors_with_false`
 ```python
         assert False is False
 ```
-and the terminal now displays passing tests
+and the terminal now reveals passing tests
 
 ### <span style="color:red">**RED**</span>: make it fail
 let us try the same test using the equivalent `unittest.TestCase` method by adding this line to `test_assertion_errors_with_false`

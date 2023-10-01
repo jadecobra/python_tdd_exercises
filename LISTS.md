@@ -246,7 +246,7 @@ add a failing test
         self.assertEqual(a_list[-4], '')
 ```
 
-the terminal shows an [AssertionError](./ASSERTION_ERROR.md)
+the terminal output an [AssertionError](./ASSERTION_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
