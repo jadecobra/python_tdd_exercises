@@ -10,7 +10,8 @@ We are going to explore creating a calculator with python using Test Driven Deve
 
 ## Add Tests
 
-let us add a TODO list to `test_calculator.py` to keep track of action items
+let us add a TODO list to `test_calculator.py` to keep track of what we are doing
+
 ```python
 import unittest
 
@@ -31,7 +32,7 @@ class TestCalculator(unittest.TestCase):
 # AssertionError
 ```
 
-the terminal responds to our change, though all tests are still passing
+the terminal responds to our change, with the one test still passing from [Setup a Test Driven Development Environment](./TDD_SETUP.md)
 
 ```shell
 ==================== 1 passed in 0.01s ======================
@@ -75,6 +76,8 @@ class TestCalculator(unittest.TestCase):
 
 since the test passes we can remove `test importing` from our TODO list
 
+---
+
 ## Test Addition
 
 Moving on to the next item we test for addition
@@ -107,9 +110,9 @@ Moving on to the next item we test for addition
     # Exceptions Encountered
     # AssertionError
     ```
-    - we called a new testing method from the `unittest.TestCase` class called `assertEqual` which checks if 2 things are equal. It is similar to the statement `assert x == y` or asking `is x equal to y?`
+    - we call a new testing method from the `unittest.TestCase` class `assertEqual` which checks if 2 things are equal. It is similar to the statement `assert x == y` or asking `is x equal to y?`
     - there are two things passed to the `assertEqual` method for evaluation in this case
-        - first - `calculator.add(0, 1)` - where we give the values `0` and `1` as inputs
+        - first - `calculator.add(0, 1)` - where we give the values `0` and `1` as inputs to our addition function
         - second - `1` - our expected result from `calculator.add` when it is given `0` and `1`
         - our expectation is that `calculator.add(0, 1) is equal to 1`
 - the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
@@ -139,10 +142,10 @@ Moving on to the next item we test for addition
 
     What does this mean?
     - The error is an `AttributeError` at line 12 in `test_calculator.py`
-    - [AttributeError](https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError) is raised when we try to access or call an attribute that python cannot find
+    - An [AttributeError](https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError) is raised when we try to access or call an attribute that python cannot find
     - we can think of `calculator.add` as an address
         - `calculator` refers to `calculator.py`
-        - `add` refers to something with `calculator.py` file that currently does not exist
+        - `add` refers to something(an attribute) within the `calculator.py` file
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
@@ -171,7 +174,7 @@ Moving on to the next item we test for addition
     E       TypeError: 'NoneType' object is not callable
     ```
 
-- The `AttributeError` was fixed by declaring a variable `add` in the `calculator` module, even though it is currently defined as the null value `None`
+- The `AttributeError` was fixed by declaring a variable `add` in the `calculator` module, even though it is currently assigned to the null value `None`
 - The new error is [TypeError](./TYPE_ERROR.md) which can occur when an `object` is used in a way that it was not intended for. In this case the `add` variable is not callable. Let us update our list of exceptions encountered
     ```python
     # Exceptions Encountered
@@ -203,7 +206,7 @@ Moving on to the next item we test for addition
     def add(x, y):
         return 1
     ```
-    Eureka! The test passes
+    Eureka! The test passes. Time for a victory lap.
     ```python
     tests/test_calculator.py ..                             [100%]
 
@@ -212,9 +215,9 @@ Moving on to the next item we test for addition
 
 ### <span style="color:orange">**REFACTOR**</span>: Make it Better
 
-Wait a minute. Is it that easy? Do we just provide the solution to make it pass? In the green phase, yes. We do whatever it takes to make the test pass even if we have to cheat. The ease with which we solved this problems reveals a problem with our test, which means we need to "Make it Better".
+Wait a minute. Is it that easy? Do we just provide the solution to make it pass? In the green phase, yes. We do whatever it takes to make the test pass even if we have to cheat. Solving the problem this way reveals a problem with our test, which means we need to "Make it Better".
 
-There are a few scenarios we can consider from the users perspective. If our users try to add other numbers that are not 0 and 1, the calculator will return 1. If they also try to add negative numbers, it will also return 1. The function always returns 1 regardless of the inputs the user gives, even though it passes our existing test it still does not meet the actual requirement.
+There are a few scenarios we can consider from the users' perspective. If our users try to add other numbers that are not 0 and 1, the calculator will return 1. If they also try to add negative numbers, it will still return 1. The function always returns 1 regardless of the inputs the user gives. Even though the add function currently passes our existing test it still does not meet the actual requirement.
 
 - remove `test_failure` from `test_calculator.py` since we no longer need it
     ```python
@@ -270,18 +273,18 @@ There are a few scenarios we can consider from the users perspective. If our use
                 x+y
             )
     ```
-    - we assign a variable named `x` to a random integer between -1 and 1 to represent the case of negative numbers, positive numbers and zero
+    - we assign a variable named `x` to a random integer between -1 and 1 to represent the case of negative numbers, zero and positive numbers
     - we assign a variable named `y` to a random integer between -1 and 1 just like above
-    - we then test that when these two variables are given to the `add` function we get the sum of the 2 variables back
+    - we then test that when these two variables are given to the `add` function as inputs it returns the sum of the 2 variables as output
 
-    the terminal updates to show passing tests
+    the terminal still displays passing tests
     ```python
     tests/test_calculator.py ..                             [100%]
 
     ================ 2 passed in 0.01s ===========================
     ```
-    - we no longer need the previous tests because this new test covers the scenarios for zero, positive and negative numbers
-    - we can remove `test addition` from our TODO list since it passed and the task is completed
+    - we no longer need the previous tests because this new test covers the scenarios for zero, negative and positive numbers
+    - we can remove `test addition` from our TODO list since it passed to mark the task as completed
     ```python
     # TODO
     # test subtraction
@@ -289,7 +292,9 @@ There are a few scenarios we can consider from the users perspective. If our use
     # test division
     ```
 
-That's the Test Driven Development pattern <span style="color:red">**RED**</span> <span style="color:green">**GREEN**</span> <span style="color:orange">**REFACTOR**</span>
+That's the Test Driven Development pattern at work <span style="color:red">**RED**</span> <span style="color:green">**GREEN**</span> <span style="color:orange">**REFACTOR**</span>
+
+We write a failing test, then make it pass by any means necessary, and make it better repeating the process until we have a working program that has been tested and gives us confidence it will behave in an expected way
 
 ---
 
@@ -351,7 +356,7 @@ We will now add a failing test since addition works and our next action item fro
     def subtract():
         return None
     ```
-    the terminal still displays a [TypeError](./TYPE_ERROR.md) though with a different error message
+    the terminal displays a [TypeError](./TYPE_ERROR.md) with a different error message
     ```python
     E       TypeError: subtract() takes 0 positional arguments but 2 were given
     ```
@@ -381,8 +386,6 @@ We will now add a failing test since addition works and our next action item fro
     ```
     all tests passed - SUCCESS!
     ```python
-    collected 3 items
-
     tests/test_calculator.py ...                          [100%]
 
     ======================= 3 passed in 0.01s ==================
@@ -399,7 +402,7 @@ We will now add a failing test since addition works and our next action item fro
 - How can we make this better? Is there any duplication that could be removed?
     - `x = random.randint(-1, 1)` happens twice
     - `y = random.randint(-1, 1)` happens twice
-- we could update `test_calculator.py` to create the random variables once
+- we could update the `TestCalculator` class in `test_calculator.py` to create the random variables once
 
     ```python
     import calculator
@@ -430,11 +433,11 @@ We will now add a failing test since addition works and our next action item fro
 
 ## Test Multiplication
 
-We will now move on the next item on the TODO list which is to test multiplication
+We will now move on test multiplication, the next item on the TODO list
 
 ### <span style="color:red">**RED**</span> : make it fail
 
-we add a failing test `test_calculator.py` named `test_multiplication`
+we add a failing test to `test_calculator.py` named `test_multiplication`
 ```python
 import unittest
 import calculator
@@ -540,7 +543,7 @@ Let us now add the final test from our TODO list, the division test
                 self.x/self.y
             )
     ```
-    once again the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
+    once again the terminal outputs an [AttributeError](./ATTRIBUTE_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span> : make it pass
 
@@ -578,7 +581,7 @@ Let us now add the final test from our TODO list, the division test
 #### How to test for Errors
 - <span style="color:red">**RED**</span> : make it fail
 
-    we add a failing test to `test_calculator.py` to intentionally trigger a `ZeroDivisionError` and comment out our test previous test that sometimes fails, this helps us remove the variability from the test
+    we add a failing test to `test_calculator.py` to intentionally trigger a `ZeroDivisionError` and comment out our previous test that sometimes fails, this helps us remove the variability from the test
     ```python
         def test_division(self):
             self.assertEqual(
@@ -590,7 +593,7 @@ Let us now add the final test from our TODO list, the division test
             #     self.x/self.y
             # )
     ```
-    the terminal confirms our expectations with a failure
+    the terminal confirms our expectations with a failure for any value of `x`
     ```python
     x = 0, y = 0
 
@@ -610,10 +613,10 @@ Let us now add the final test from our TODO list, the division test
             #     self.x/self.y
             # )
     ```
-    the terminal reveals passing tests, and we now have a way to `catch` Exceptions when testing, which allows us to confirm that code raises an error and allow our other tests to continue when they encounter expected failures
+    the terminal reveals passing tests, and we now have a way to `catch` Exceptions when testing, which allows us to confirm that the code raises an error, and allows our other tests to continue when we encounter the expected failure
 
 - <span style="color:orange">**REFACTOR**</span>: make it better
-    we can update `test_division` to test other division cases when the divisor is not 0 by adding a condition
+    we can update `test_division` to test other division cases when the divisor is not 0 by making sure our random variable `y` is never 0
     ```python
         def test_division(self):
             with self.assertRaises(ZeroDivisionError):
@@ -627,8 +630,8 @@ Let us now add the final test from our TODO list, the division test
     ```
     - `while self.y == 0:` creates a loop that repeats whatever indented code follows as long as `self.y` is equal to `0`
     - `self.y = random.randint(-1, 1)` assigns a random variable to `self.y` that could be -1, 0 or 1
-    - our loop tells python to assign a random variable to `self.y` as long as it is equal to 0
-- remove `test_division` from our TODO list since the tests all pass
+    - our loop tells python to assign a new random variable to `self.y` as long as `self.y` is equal to 0
+- remove `test_division` from our TODO list since our tests all pass
 
 ---
 
