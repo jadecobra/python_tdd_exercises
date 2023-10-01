@@ -1,6 +1,6 @@
-# How to solve the AttributeError in python
+# How to solve the ModuleNotFoundError in python
 
-We will step through solving a `ModuleNotFoundError` in python using Test Driven Development
+Let us step through solving a `ModuleNotFoundError` in python using Test Driven Development
 
 ### Prerequisites
 
@@ -8,13 +8,11 @@ We will step through solving a `ModuleNotFoundError` in python using Test Driven
 
 ---
 
-# Imports
+# ModuleNotFoundError
 
-The ModuleNotFoundError is raised when you try to import a module that does not exist.
-A Module is a file that ends in `.py` or a directory that contains an `__init__.py`.
-Programming allows us to gain from our previous efforts as well as the efforts of others.
-We can package, distribute and publish programs for other people to use.
-To use these packages in python we have to import them.
+The `ModuleNotFoundError` is raised when you try to import a module that does not exist.
+A Python Module is a file that ends in `.py` or a directory that contains an `__init__.py`.
+Programming allows us to gain from our previous efforts as well as the efforts of others in the form of packages and modules that can be distributed for other people to use. To use these packages in python we have to import them.
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -124,28 +122,18 @@ import module_98
 import module_99
 ```
 
-If you left `pytest-watch` running from [Setup a Test Driven Development Environment](./TDD_SETUP.md) you should see the following in the terminal
+If you left `pytest-watch` running from [Setup a Test Driven Development Environment](./TDD_SETUP.md) you should see something like the following in your terminal
 
-```shell
-ImportError while importing test module '/<PATH_TO_PROJECT_NAME>/<PROJECT_NAME>/tests/test_module_not_found_error.py'.
-Hint: make sure your test modules/packages have valid python names.
-Traceback:
-/Library/Frameworks/python.framework/Versions/3.11/lib/python3.11/importlib/__init__.py:126: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-tests/test_module_not_found_error.py:1: in <module>
+```python
     import module_0
 E   ModuleNotFoundError: No module named 'module_0'
 ```
 
 Looking at the traceback starting from the bottom
-
-- `ModuleNotFoundError` - this error is raised when an import statement fails because python cannot find a module/package with the given name in this case `module_0`
-- `import module_0` - the piece of code that caused the failure
-- `tests/test_module_not_found_error.py:1: in <module>` - the file that caused the failure and the line in the file where the failure occurs
-- `Hint: make sure your test modules/packages have valid python names.` depending on your python version you might not see this. A suggestion to help solve the problem
-- `ImportError while importing test module '/Users/johnnyblase/gym/gym/python_tdd/<PROJECT_NAME>/tests/test_module_not_found_error.py'.` - A description of the error encountered and when in the execution it occurred
+- `ModuleNotFoundError` - this error is raised when an import statement fails because python cannot find a module/package with the given name, in this case `module_0` does not exist
+- `import module_0` - the line of code that caused the failure
 - Add the errors to the running list of Exceptions encountered
-    ```
+    ```python
     # Exceptions Encountered
     # AssertionError
     # ImportError
@@ -155,42 +143,27 @@ For more information about imports you can read [The Import Statement](https://d
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
-- create `module_0.py` in the `<PROJECT_NAME>` folder
-- the terminal will update to show the following
+- create `module_0.py` in the `<PROJECT_NAME>` folder and the terminal shows
+    ```python
+        import module_1
+    E   ModuleNotFoundError: No module named 'module_1'
+    ```
+- create `module_1.py` in the `<PROJECT_NAME>` folder, the terminal shows the same error for a new line
+    ```python
+        import module_2
+    E   ModuleNotFoundError: No module named 'module_2'
+    ```
+- create `module_2.py` in the `<PROJECT_NAME>` folder, the terminal will update to show the following
+    ```python
+        import module_3
+    E   ModuleNotFoundError: No module named 'module_3'
+    ```
+- this is the pattern, repeat it until you have created `module_99.py` and the terminal will update to show a passing test
+    ```python
+    tests/test_<PROJECT_NAME>.py .                           [100%]
 
-```shell
-    import module_1
-E   ModuleNotFoundError: No module named 'module_1'
-```
-
-- create `module_1.py` in the `<PROJECT_NAME>` folder
-- the terminal will update to show the following
-
-```shell
-    import module_2
-E   ModuleNotFoundError: No module named 'module_2'
-```
-
-- create `module_2.py` in the `<PROJECT_NAME>` folder
-- the terminal will update to show the following
-
-```shell
-    import module_3
-E   ModuleNotFoundError: No module named 'module_3'
-```
-
-this is the pattern, repeat it until you have created `module_99.py` and the terminal will update to
-
-```shell
-============== test session starts ==========================
-platform darwin -- python 3.11.0, pytest-7.4.0, pluggy-1.2.0
-rootdir: /Users/johnnyblase/gym/gym/python_tdd/project_name
-collected 1 item
-
-tests/test_<PROJECT_NAME>.py .                           [100%]
-
-================= 1 passed in 0.06s =========================
-```
+    ================= 1 passed in 0.06s =========================
+    ```
 
 ***WELL DONE!***
 You are on your way to being a troubleshooting master.
