@@ -49,5 +49,7 @@ if __name__ == '__main__':
         'TypeError',
         'SyntaxError',
         'NameError',
+        'KeyError',
+        'IndexError',
     )):
         print(name, word_count.get(name.lower(), 0))
