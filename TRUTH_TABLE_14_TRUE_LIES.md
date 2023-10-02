@@ -77,7 +77,7 @@ the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
 
 Nothing to do here either. let us update what we know so far
 
-***YOU DID IT!***
+*YOU DID IT!*
 For any boolean operation involving 2 inputs - `p` and `q` which can take the values `True` or `False`
 - `contradition` always returns `False`
 - `tautology` always returns `True`

@@ -398,7 +398,7 @@ the terminal displays passing tests because `False` is not equal to `None`
 
 ---
 
-***WELL DONE!*** Your magic powers are growing. From our experiments you now know
+*WELL DONE!* Your magic powers are growing. From our experiments you now know
 - how to test for equality
 - how to test if something is `None` or not
 - how to test if something is `False` or not
@@ -412,6 +412,6 @@ the terminal displays passing tests because `False` is not equal to `None`
   - `assertEqual`      - are these two things equal?
   - `assertNotEqual`   - are these two things not equal?
 
-> ***FOOD FOR THOUGHT***
+> *FOOD FOR THOUGHT*
 > - when x is y, is x also equal to y?
 > - when x is not y, is x also not equal to y?

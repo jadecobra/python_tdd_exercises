@@ -308,7 +308,7 @@ the terminal updates to show a `NameError` and we update our running list of exc
     ```
     the terminal shows passing tests
 
-***CONGRATULATIONS!***
+*CONGRATULATIONS!*
 You now know how to deliberately create an exception, you now have absolute power to reshape the universe to your will
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
@@ -517,7 +517,7 @@ this will cause an [AttributeError](./ATTRIBUTE_ERROR.md)
         return 'always_returns_this`
     ```
 
-***CONGRATULATIONS***
+*CONGRATULATIONS*
 Your python powers are growing, you now know
 - how to deliberately raise exceptions
 - how to verify that exceptions are raised

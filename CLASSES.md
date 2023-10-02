@@ -159,7 +159,7 @@ We now know that in python
 - classes implicitly inherit from the `object` class, because in each of our tests, whether explicitly stated or not, the class is an `instance` of an `object`
 - what is an [object](https://docs.python.org/3/glossary.html#term-object)?
 
-***RULE OF THUMB***
+*RULE OF THUMB*
 > From [the zen of python](https://peps.python.org/pep-0020/)
 > `Explicit is better than implicit`
 > we will use the explicit form of class definitions with the parent `object` in parentheses
@@ -631,7 +631,7 @@ copy the values from the terminal to update the test to make it pass
 
 the tests pass and we see the last two values in our list are `attribute` and `method` which we defined earlier
 
-***CONGRATULATIONS***
+*CONGRATULATIONS*
 You know
 - how to define a class with an attribute
 - how to define a class with a method

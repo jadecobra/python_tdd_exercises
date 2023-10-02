@@ -332,7 +332,7 @@ add a failing test
         )
 ```
 - the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
-- `maxDiff` is an attribute of the `unittest.TestCase` class that sets the maximum amount of differences to show between two objects that are being compared. When it is set to `None` it shows every difference
+- `maxDiff` is an attribute of the `unittest.TestCase` class that sets the maximum amount of characters to show in the comparison between the two objects that is displayed in the terminal. When it is set to `None` there is no limit to the number of characters
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 

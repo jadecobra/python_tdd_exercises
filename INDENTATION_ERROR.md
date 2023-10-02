@@ -16,7 +16,7 @@ Spacing/Indentation matters in python. Where you place code and how you space th
 
 ### <span style="color:red">**RED**</span>: make it fail
 
-- Open a new file in the editor and save it as `tests/test_indentation_error.py` in the `tests` folder you created in [Setup a Test Driven Development Environment](./TDD_SETUP.md), then type the following lines in the file ***paying attention to the spacing***
+- Open a new file in the editor and save it as `tests/test_indentation_error.py` in the `tests` folder you created in [Setup a Test Driven Development Environment](./TDD_SETUP.md), then type the following lines in the file *paying attention to the spacing*
 
     ```python
     'a'
@@ -62,7 +62,7 @@ fix the offending lines until all tests are green.
 
 ## How to solve the IndentationError for functions
 
-let us add more tests, this time indentation errors with functions ***noting the difference in spacing***
+let us add more tests, this time indentation errors with functions *noting the difference in spacing*
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -101,7 +101,7 @@ let us add more tests, this time indentation errors with functions ***noting the
 
 ## How to solve the IndentationError in Classes
 
-let us add more tests, this time to raise indentation errors for [Class](./CLASSES.md) definitions ***noting the difference in spacing***
+let us add more tests, this time to raise indentation errors for [Class](./CLASSES.md) definitions *noting the difference in spacing*
 
 ### <span style="color:red">**RED**</span>: make it fail
 

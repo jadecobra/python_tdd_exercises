@@ -253,7 +253,7 @@ Repeat the pattern until all tests pass.
     false = False
     ```
 
-***WELL DONE!*** You now know
+*WELL DONE!* You now know
 - How to solve [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md)
 - How to solve `NameError` using variables
 - How to solve [AttributeError](./ATTRIBUTE_ERROR.md) by defining variables
@@ -304,7 +304,7 @@ E       AttributeError: module 'module' has no attribute 'function_0'
     ```
     the terminal updates to show tests pass
 
-    > ***What is a Function?***
+    > *What is a Function?*
     > - A `function` is a named block of code that performs some action or series of actions
     > - In python a function always returns something
     > - the default return value of a function is `None`
@@ -328,7 +328,7 @@ E       AttributeError: module 'module' has no attribute 'function_0'
     ```
     update `module.py` with the solution until all tests pass
 
-***YOU DID IT AGAIN!*** You now know
+*YOU DID IT AGAIN!* You now know
 - How to solve [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md)
 - How to solve `NameError`
 - How to solve [AttributeError](./ATTRIBUTE_ERROR.md) by defining variables and functions
@@ -387,7 +387,7 @@ A class is a blueprint that represents an object, it is a collection of function
     ```
     update `module.py` with each solution until all tests pass
 
-***WELL DONE!*** You now know
+*WELL DONE!* You now know
 - How to solve [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md)
 - How to solve `NameError`
 - How to solve [AttributeError](./ATTRIBUTE_ERROR.md) by defining variables, [functions](./FUNCTIONS.md) and [classes](./CLASSES.md)
@@ -492,7 +492,7 @@ A class is a blueprint that represents an object, it is a collection of function
     ```
     update `module.py` with the solutions until all tests pass
 
-***WELL DONE!*** You now know You now know
+*WELL DONE!* You now know You now know
 - How to solve [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md)
 - How to solve `NameError`
 - How to solve [AttributeError](./ATTRIBUTE_ERROR.md) by defining variables, [functions](./FUNCTIONS.md) and [classes](./CLASSES.md)
@@ -554,7 +554,7 @@ You know the "drill", update `test_defining_functions_in_classes_to_solve_attrib
 ```
 repeat the solution until all tests pass
 
-***CONGRATULATIONS!*** You now know
+*CONGRATULATIONS!* You now know
 - How to solve [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md)
 - How to solve `NameError`
 - How to solve [AttributeError](./ATTRIBUTE_ERROR.md) by defining variables, [functions](./FUNCTIONS.md) and [classes](./CLASSES.md)
@@ -565,7 +565,7 @@ repeat the solution until all tests pass
     - attributes(variables) in classes
     - methods(functions) in classes
 
-***WHAT IS THE DIFFERENCE BETWEEN CLASSES AND FUNCTIONS?***
+*WHAT IS THE DIFFERENCE BETWEEN CLASSES AND FUNCTIONS?*
 - we can access attributes(variables) we define in a class from outside the class
 - we cannot access variables we define in a function from outside the function
 - the keywords used to define them are different - `def` vs `class`

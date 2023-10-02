@@ -136,7 +136,7 @@ the terminal updates to show a `ModuleNotFoundError` and we add it to our list o
             "sex": "F",
         }
     ```
-    ***LOVELY!*** the tests pass! Even though the tests pass, the factory function currently returns the exact same dictionary every time, regardless of what information is given to it. To make it more useful we need it to be able to use the inputs given.
+    *LOVELY!* the tests pass! Even though the tests pass, the factory function currently returns the exact same dictionary every time, regardless of what information is given to it. To make it more useful we need it to be able to use the inputs given.
 - let us add another test to `test_person_factory.py` with a different set of inputs
     ```python
         def test_person_factory_takes_in_variable_inputs(self):
@@ -190,7 +190,7 @@ the terminal updates to show a `ModuleNotFoundError` and we add it to our list o
             'sex': sex,
         }
     ```
-    ***HOORAY!*** the terminal updates to show passing tests
+    *HOORAY!* the terminal updates to show passing tests
 - we will now add another test to `test_person.py`, this time for default values
     ```python
     def test_person_factory_with_default_keyword_arguments(self):

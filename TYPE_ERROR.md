@@ -133,7 +133,7 @@ There's not much to do here but add more tests for practice.
     ```
     the terminal updates to show all tests pass.
 
-***EXTRA***
+*EXTRA*
 - What's another solution to the above test?
 - How can we define a function that takes in any number of parameters? see [TDD_FUNCTIONS](./TDD_FUNCTIONS.md)
 
@@ -252,7 +252,7 @@ let us test this with `function_a`. update `function_a` in `functions.py` with `
 
 Try this with both `function_c` and `function_d`, all tests still pass.
 
-***LOVELY!***
+*LOVELY!*
 You now know how to solve
 - `AssertionError`
 - `ModuleNotFoundError`

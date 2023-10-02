@@ -429,6 +429,6 @@ Let us explore what else we can do with a `list comprehension`
         return [element for element in argument if element % 2 != 0]
     ```
 
-***WOW!***
+*WOW!*
 
 You now know a couple of ways to loop through `iterables` and have your program make decisions by using `conditions`. You also know how to do it with less words using `list comprehensions`. Well done!

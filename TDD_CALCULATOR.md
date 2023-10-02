@@ -635,4 +635,4 @@ Let us now add the final test from our TODO list, the division test
 
 ---
 
-***CONGRATULATIONS*** You made it through writing a program that can perform the 4 basic arithmetic operations using Test Driven Development. What would you like to do next?
+*CONGRATULATIONS* You made it through writing a program that can perform the 4 basic arithmetic operations using Test Driven Development. What would you like to do next?

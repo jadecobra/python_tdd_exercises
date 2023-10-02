@@ -877,7 +877,7 @@ add a new test that checks if a singleton that accepts inputs returns the same v
         return 'joe'
     ```
 
-***WELL DONE!***
+*WELL DONE!*
 You now know
 - that singleton functions return the same thing every time they are called
 - that positional arguments are represented as [tuples](./DATA_STRUCTURES.md) with parentheses - `()`

@@ -95,7 +95,7 @@ the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
     ```
     I don't think we can get simpler than this and all the tests are still passing
 
-***REVIEW***
+*REVIEW*
 We know that for any boolean operation involving 2 inputs - `p` and `q` which can take the values `True` or `False`
 - `logical_nand` is `not(p and q)`
 - `exclusive_disjunction` is `!=` aka opposite of `logical_equality`

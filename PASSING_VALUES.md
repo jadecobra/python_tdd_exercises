@@ -222,5 +222,5 @@ the terminal shows passing tests
     the terminal updates with an [AssertionError](./ASSERTION_ERROR.md) for the next test.
 - repeat the solution for each data type until all tests pass
 
-***VOILA***
+*VOILA*
 You now know how to pass values and represent values as strings using interpolation

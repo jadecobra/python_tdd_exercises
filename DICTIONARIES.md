@@ -73,7 +73,7 @@ add a file named `dictionaries.py` to the project folder and the test passes
     def a_dict():
         return {'key': 'value'}
     ```
-    ***VOILA!*** The tests pass and you now know how to create a `dictionary`
+    *VOILA!* The tests pass and you now know how to create a `dictionary`
 - it is also possible to create a dictionary by using the `dict` keyword. add another test to `test_creating_dictionaries_with_strings_as_keys`
     ```python
     def test_creating_dictionaries_with_strings_as_keys(self):

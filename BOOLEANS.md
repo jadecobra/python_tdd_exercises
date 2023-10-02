@@ -144,6 +144,6 @@ the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
     - `False` is a `boolean`
     - `None` is `None`
 
-***HOORAY***
+*HOORAY*
 
 You have built up your knowledge of python, you now know about booleans. Take a moment to celebrate
