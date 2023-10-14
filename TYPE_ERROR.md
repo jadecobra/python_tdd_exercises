@@ -1,4 +1,4 @@
-# How to solve the TypeError in python
+# Solve the TypeError in python
 
 We will step through solving a `TypeError` in python using Test Driven Development
 
@@ -16,7 +16,7 @@ This means the defined signature of the function was not used when the function 
 What is a function signature?
 What does it mean to call a function?
 
-## How to solve the TypeError in functions
+## Solve the TypeError in functions
 
 ### <span style="color:red">**RED**</span>: make it fail
 

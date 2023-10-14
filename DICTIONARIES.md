@@ -9,7 +9,7 @@ We are going to cover dictionaries in python In this chapter using Test Driven D
 
 ---
 
-## How to create a dictionary with strings as keys
+## Create a dictionary with strings as keys
 
 Dictionaries/Mappings are key, value pairs that we can use to represent data. `values` can be any of the [data structures](./DATA_STRUCTURES.md) including dictionaries
 
@@ -89,7 +89,7 @@ add a file named `dictionaries.py` to the project folder and the test passes
         self.assertEqual({"key": "value"}, dict(key='value'))
     ```
 
-## How to create a dictionary with numbers as keys
+## Create a dictionary with numbers as keys
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -130,7 +130,7 @@ the terminal updates to show passing tests
     ```
     the terminal reveals passing tests
 
-## How to create a dictionary with booleans as keys
+## Create a dictionary with booleans as keys
 
 Is it possible for us to use `False` or `True` as `dictionary` keys?
 
@@ -169,7 +169,7 @@ update the return values to make them match and we are green again
     ```
 - We now know that we can use `booleans`, `floats`, `integers` and `strings` as keys in a dictionary
 
-## How to create a dictionary with tuples as keys
+## Create a dictionary with tuples as keys
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -280,7 +280,7 @@ all tests pass and we now know that we can create dictionaries with the followin
 
 ---
 
-## How to access dictionary values
+## Access dictionary values
 
 From the tests above we learned how to create `dictionaries`, and what we can use as `keys`. How do we access the values of a dictionary?
 ### <span style="color:red">**RED**</span>: make it fail
@@ -365,7 +365,7 @@ update the expected value to make the tests pass
         )
     ```
 
-## How to get a value when the key does not exist
+## Get a value when the key does not exist
 
 Sometimes we might try to access values in a dictionary but use a key that does not exist in the dictionary or misspell a key that does exist
 ### <span style="color:red">**RED**</span>: make it fail
@@ -488,7 +488,7 @@ What if we want to call a dictionary and not have python raise an error when it 
     the terminal updates to show an [Assertion Error](./ASSERTION_ERROR.md) because `value1` is not equal to `None`
 - update the test to make it pass
 
-## How to view the attributes and methods of a dictionary
+## View the attributes and methods of a dictionary
 
 [Classes](./CLASSES.md) covers how to view the `attributes` and `methods` of an object. let us do the same for `dictionaries`
 
@@ -584,7 +584,7 @@ We see some of the methods we have covered so far and others we did not. You can
 - update
 - values - returns the list of `values` in a dictionary
 
-## How to set a default value for a given key
+## Set a default value for a given key
 
 let us test the `setdefault` method
 
@@ -656,7 +656,7 @@ add a `self.assertRaises` to confirm that the `KeyError` gets raised, allowing t
     ```
     all tests pass, and we update the list of methods with what we now know about `setdefault`
 
-## How to update a Dictionary with another dictionary
+## Update a Dictionary with another dictionary
 
 What if we have a dictionary and want to `add` the `keys` and `values` of another dictionary to it?
 
@@ -687,7 +687,7 @@ the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) because t
 
 update values to make it pass
 
-## How to remove an item from a dictionary
+## Remove an item from a dictionary
 
 We can remove an item from a dictionary with the `pop` method. It deletes the key and value from the dictionary and returns the value
 

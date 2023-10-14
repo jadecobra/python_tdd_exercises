@@ -1,4 +1,4 @@
-# How to solve the ModuleNotFoundError in python
+# Solve the ModuleNotFoundError in python
 
 Let us step through solving a `ModuleNotFoundError` in python using Test Driven Development
 

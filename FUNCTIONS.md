@@ -1,4 +1,4 @@
-# How to write functions in python
+# Write functions in python
 
 The focus of this chapter is on functions in python using Test Driven Development
 
@@ -19,7 +19,7 @@ In programming we process input data of some form and output data in some form. 
     program(input_data) -> output_data
 ```
 
-## How to define functions
+## Define functions
 
 `functions` are defined using the `def` keyword, a name, parentheses and a colon at the end
 

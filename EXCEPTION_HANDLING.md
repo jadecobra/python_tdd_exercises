@@ -1,4 +1,4 @@
-# How to handle Exceptions in python
+# handle Exceptions in python
 
 This chapter covers how to handle Exceptions in python using Test Driven Development
 
@@ -17,7 +17,7 @@ It also a pain when it causes the program to exit prematurely. What if we want o
 
 Enter Exception Handling. In python there is a mechanism for handling exceptions that allows a program to "make a decision" when it encounters an Exception. Enough words, let us write some code
 
-## How to test that an Exception is raised
+## Test that an Exception is raised
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -240,7 +240,7 @@ Since we know how to catch/handle an exception with `unittest`, there are a few 
 
 ---
 
-## How to handle Exceptions in programs
+## handle Exceptions in programs
 
 Earlier on we learned how to verify that an exception gets raised, we will now look at how to handle exceptions in programs
 

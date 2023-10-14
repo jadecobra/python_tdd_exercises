@@ -1,4 +1,4 @@
-# How to solve AttributeError in python
+# Solve AttributeError in python
 
 Our exploration of python using Test Driven Development continues in this chapter with the `AttributeError`
 
@@ -13,7 +13,7 @@ Our exploration of python using Test Driven Development continues in this chapte
 An Attribute is a property, variable, function or name that belongs to an `object`. For example, if we describe a human being we could list attributes like height, weight, sex and color.
 An `AttributeError` is raised when there is a reference to a name in an `object` that does not exist.
 
-## How to solve AttributeError by defining a Variable
+## Solve AttributeError by defining a Variable
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -258,7 +258,7 @@ Repeat the pattern until all tests pass.
 - How to solve `NameError` using variables
 - How to solve [AttributeError](./ATTRIBUTE_ERROR.md) by defining variables
 
-## How to solve AttributeError by defining a Function
+## Solve AttributeError by defining a Function
 
 Let us take a look at solving `AttributeError` with functions
 
@@ -333,7 +333,7 @@ E       AttributeError: module 'module' has no attribute 'function_0'
 - How to solve `NameError`
 - How to solve [AttributeError](./ATTRIBUTE_ERROR.md) by defining variables and functions
 
-## How to solve AttributeError by defining a Class
+## Solve AttributeError by defining a Class
 
 A class is a blueprint that represents an object, it is a collection of functions(methods) and attributes. Attributes are names which represent a value. Methods are functions that can accept inputs and return a value. For example we could define a "Human" class with attributes like eye color, date of birth, height and weight, and methods like age which returns a value based on the current year and date of birth. Let us explore `AttributeError` with classes.
 
@@ -393,7 +393,7 @@ A class is a blueprint that represents an object, it is a collection of function
 - How to solve [AttributeError](./ATTRIBUTE_ERROR.md) by defining variables, [functions](./FUNCTIONS.md) and [classes](./CLASSES.md)
     - do we know how to define [classes](./CLASSES.md) if we define them the same was as [functions](./FUNCTIONS.md)?
 
-## How to solve AttributeError by defining an Attribute in a Class
+## Solve AttributeError by defining an Attribute in a Class
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -502,7 +502,7 @@ A class is a blueprint that represents an object, it is a collection of function
     - [classes](./ASSERTION_ERROR.md)
     - attributes(variables) in classes
 
-## How to solve AttributeError by defining a Method(Function) in a Class
+## Solve AttributeError by defining a Method(Function) in a Class
 
 ### <span style="color:red">**RED**</span>: make it fail
 

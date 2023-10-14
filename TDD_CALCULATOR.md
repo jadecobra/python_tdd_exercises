@@ -1,4 +1,4 @@
-# How to create a Calculator using Test Driven Development
+# Create a Calculator using Test Driven Development
 
 We are going to explore creating a calculator with python using Test Driven Development
 
@@ -578,7 +578,7 @@ Let us now add the final test from our TODO list, the division test
     # ZeroDivisionError
     ```
 
-#### How to test for Errors
+#### Test for Errors
 - <span style="color:red">**RED**</span> : make it fail
 
     we add a failing test to `test_calculator.py` to intentionally trigger a `ZeroDivisionError` and comment out our previous test that sometimes fails, this helps us remove the variability from the test

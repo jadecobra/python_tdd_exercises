@@ -14,7 +14,7 @@ A `list` is an object that holds elements. It is a container like `tuples` and `
 - They can also be created with the `list` keyword
 - They are mutable which means they can be changed after creation by calling some operation on them
 
-## How to create a list
+## Create a list
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -115,7 +115,7 @@ update the values on the right side of the `assertEqual` statement to make it ma
 ```
 the terminal updates to show passing tests, we started with a list that contained 4 elements then added an element using the `append` method, and confirmed that the element we added is now part of the list
 
-## How to remove an item from a list
+## Remove an item from a list
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -182,7 +182,7 @@ What if there was more than one element, how does python decide which to remove 
     ```
     the tests pass, show us from our experiment that the `remove` function removes the first occurrence of an item from a list
 
-## How to remove the last item in a list
+## Remove the last item in a list
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -223,7 +223,7 @@ the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) for the t
         self.assertEqual(a_list, [0, 1, 2])
     ```
 
-## How to get a specific item in a list aka Indexing
+## Get a specific item in a list aka Indexing
 
 To view an item in a list we provide the position as an index in `[]` to the list. `python` uses zero-based indexing which means the position of elements starts at 0
 
@@ -315,7 +315,7 @@ the terminal updates to show an [IndexError](https://docs.python.org/3/library/e
     ```
     the test passes
 
-## How to view the attributes and methods of a list
+## View the attributes and methods of a list
 
 In [Classes](./CLASSES.md) we cover how to view the `attributes` and `methods` of an object. let us do the same for `lists`
 

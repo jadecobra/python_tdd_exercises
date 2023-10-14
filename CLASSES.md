@@ -1,4 +1,4 @@
-# How to write classes in python
+# Write classes in python
 
 We will step through writing classes in python using Test Driven Development
 
@@ -12,7 +12,7 @@ We will step through writing classes in python using Test Driven Development
 
 `classes` are a template or blueprint that represent an object. They are a collection of `methods(functions)` and `attributes(variables)` that belong together
 
-## How to define a Class with pass
+## Define a Class with pass
 
 - use the `class` keyword
 - use `TitleCase` for naming
@@ -75,7 +75,7 @@ Let us review what we have written so far
 - `self.assertIsInstance` is a `unittest.TestCase` method that checks if the first input to the method is an instance of the second input
 - in python everything is an `object` which means there's a class definition for it, our test `self.assertIsInstance(classes.ClassWithPass(), object)` checks if `ClassWithPass` is an `object`
 
-## How to define a Class with parentheses
+## Define a Class with parentheses
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -116,7 +116,7 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 In object oriented programming there is a concept called [Inheritance](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)). With Inheritance we can define new `objects` that inherit from other existing `objects`. This makes creating things easier because we do not have to reinvent or rewrite things that already exist, we can inherit them instead.
 
 
-## How to define a Class with inheritance
+## Define a Class with inheritance
 
 To use inheritance we specify the "parent" in parentheses when we define the new object (the child) to establish the relationship
 
@@ -164,7 +164,7 @@ We now know that in python
 > `Explicit is better than implicit`
 > we will use the explicit form of class definitions with the parent `object` in parentheses
 
-## How to define a Class with attributes
+## Define a Class with attributes
 
 Since we know how to define a class, let us add some tests for attributes
 
@@ -255,7 +255,7 @@ class ClassWithAttributes(object):
 ```
 the terminal updates to show passing tests
 
-## How to define a Class with Methods
+## Define a Class with Methods
 
 We can define classes with methods which are function definitions within the class
 
@@ -332,7 +332,7 @@ the terminal updates to show [AttributeError](./ATTRIBUTE_ERROR.md)
 
 ---
 
-## How to define a Class with Methods and Attributes
+## Define a Class with Methods and Attributes
 
 Since we know how to define classes with methods and how to define classes with attributes, let us try defining a class that has both
 
@@ -370,7 +370,7 @@ class ClassWithAttributesAndMethods(object):
 
 ---
 
-## How to define a Class with an initializer
+## Define a Class with an initializer
 
 CONGRATULATIONS. You now know how to define classes, attributes and methods. We will now expand on this knowledge to learn how to use classes
 
@@ -569,7 +569,7 @@ Why did that work?
 - `self.sex` within each class refers to the `sex` attribute in the class, allowing its definition from the withing the `__init__` method
 - since `self.sex` is defined as a class attribute, it is accessible from outside the class as we do in our tests i.e `classes.Girl(sex='F').sex` and `classes.Other(sex='?').sex`
 
-## How to view the Attributes and Methods of a Class
+## View the Attributes and Methods of a Class
 
 To view what `attributes` and `methods` are defined for any object we can call `dir` on the object. The `dir` method returns a [list](./LISTS.md) that contains the names of all attributes and methods in the class
 

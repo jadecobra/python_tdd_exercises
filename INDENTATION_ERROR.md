@@ -1,4 +1,4 @@
-# How to solve the IndentationError in python
+# Solve the IndentationError in python
 
 In the beginning of our journey with python we will make many mistakes, one of which will cause the `IndentationError` if we do not understand the indentation rules of python. We will step through solving this error in python using Test Driven Development
 
@@ -12,7 +12,7 @@ In the beginning of our journey with python we will make many mistakes, one of w
 
 Spacing/Indentation matters in python. Where you place code and how you space them out have an effect on how the code is interpreted as well as how a human being comprehends your intention. Some people indent with 2 spaces, others indent with 4. In this exercise we will indent with 4 as that is the [recommended convention](https://peps.python.org/pep-0008/#indentation)
 
-## How to solve the IndentationError
+## Solve the IndentationError
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -60,7 +60,7 @@ E   IndentationError: unexpected indent
 ```
 fix the offending lines until all tests are green.
 
-## How to solve the IndentationError for functions
+## Solve the IndentationError for functions
 
 let us add more tests, this time indentation errors with functions *noting the difference in spacing*
 
@@ -99,7 +99,7 @@ let us add more tests, this time indentation errors with functions *noting the d
     ```
     all the tests pass
 
-## How to solve the IndentationError in Classes
+## Solve the IndentationError in Classes
 
 let us add more tests, this time to raise indentation errors for [Class](./CLASSES.md) definitions *noting the difference in spacing*
 
@@ -135,7 +135,7 @@ let us add more tests, this time to raise indentation errors for [Class](./CLASS
         pass
     ```
 
-## How to solve the IndentationError in Classes with Methods
+## Solve the IndentationError in Classes with Methods
 
 ### <span style="color:red">**RED**</span>: make it fail
 
@@ -175,7 +175,7 @@ let us add more tests, this time to raise indentation errors for [Class](./CLASS
             return
     ```
 
-## How to solve the IndentationError in Classes with Attributes
+## Solve the IndentationError in Classes with Attributes
 
 ### <span style="color:red">**RED**</span>: make it fail
 
