@@ -23,7 +23,7 @@ In programming we process input data of some form and output data in some form. 
 
 `functions` are defined using the `def` keyword, a name, parentheses and a colon at the end
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 let us a create a file named `test_functions.py` in the `tests` folder and add the following failing test
 
@@ -45,7 +45,7 @@ the terminal displays a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md), and 
 # ModuleNotFoundError
 ```
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - create a file named `functions.py` in the project folder and the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md), which we add to our running list of exceptions encountered
     ```python
@@ -65,11 +65,11 @@ the terminal displays a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md), and 
     - `pass` is just a placeholder that allows the function definition to follow the syntax rules of python
     - the test passes because in python all functions return `None` by default, we can imagine the function has an invisible line that says `return None`
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 let us test if functions really always return `None` by default
 
-- #### <span style="color:red">**RED**</span>: make it fail
+- #### **RED**: make it fail
     add a new failing test to `TestFunctions` in `test_functions.py`
 
     ```python
@@ -78,7 +78,7 @@ let us test if functions really always return `None` by default
     ```
     the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 
-- #### <span style="color:green">**GREEN**</span>: make it pass
+- #### **GREEN**: make it pass
 
     add a new function to `functions.py` to make the test pass, this time with a `return` statement instead of `pass`
     ```python
@@ -86,14 +86,14 @@ let us test if functions really always return `None` by default
             return
     ```
     the terminal shows this test is also passing. We have defined 2 functions with different statements in their body but they both return the same result, because it bears repeating that "in python all functions return `None` by default, we can imagine the function has an invisible line that says `return None`"
-- #### <span style="color:red">**RED**</span>: make it fail
+- #### **RED**: make it fail
     we can add one more test to the `TestFunctions` class in `test_functions.py` to help drive the point home
     ```python
         def test_functions_with_return_none(self):
             self.assertIsNone(functions.function_with_return_none())
     ```
     the terminal updates to show an [AttributeError]
-- #### <span style="color:green">**GREEN**</span>: make it pass
+- #### **GREEN**: make it pass
 
     from the [Zen of Python](https://peps.python.org/pep-0020/) - `Explicit is better than implicit.` Let us add a function definition to `functions.py` this time with an explicit `return` statement showing the value returned
 
@@ -113,7 +113,7 @@ Here is what we know so far about functions in python
 
 A function returns output, and can take in input. As a simple test let us create a passthrough function which is a function that returns as output, the input it receives
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 we add a failing test to the `TestFunctions` class in `test_functions.py`
 
@@ -123,7 +123,7 @@ we add a failing test to the `TestFunctions` class in `test_functions.py`
 ```
 the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - update `functions.py` with a function definition
     ```python
@@ -159,11 +159,11 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
     ```
     the terminal updates to show passing tests. We are geniuses!
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 Wait a minute. Something is not quite right here. The definition for a `passthrough` function was that it returned the same thing it was given, our test passes when `False` is given but will it still pass when another value is given as the input or will it always return `False`? let us test it
 
-- #### <span style="color:red">**RED**</span>: make it fail
+- #### **RED**: make it fail
 
     update `test_passthrough_function` in `TestFunctions` with a new test
     ```python
@@ -177,7 +177,7 @@ Wait a minute. Something is not quite right here. The definition for a `passthro
     ```
     the function returns `False` instead of `True` in the second case, confirming our suspicions, we are not all the way geniuses yet
 
-- #### <span style="color:green">**GREEN**</span>: make it pass
+- #### **GREEN**: make it pass
 
     change the definition of `passthrough` in `functions.py`
     ```python
@@ -186,7 +186,7 @@ Wait a minute. Something is not quite right here. The definition for a `passthro
     ```
     the terminal updates to show passing tests. We have more confidence that our passthrough function will likely return the input data it is given. Let us add more tests for good measure using the other python [Data Structures](./DATA_STRUCTURES.md)
 
-- #### <span style="color:orange">**REFACTOR**</span>: make it better
+- #### **REFACTOR**: make it better
 
     update `test_passthrough_function`
     ```python
@@ -207,7 +207,7 @@ Wait a minute. Something is not quite right here. The definition for a `passthro
 
 We cam define our function to take in more than one input? For instance if we are writing a function to perform operations on 2 numbers as we do in [TDD_CALCULATOR](./TDD_CALCULATOR.md), the function has to be able to accept the 2 numbers it performs operations on
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 update `test_functions.py` with a new test, replacing `my_first_name` and `my_last_name` with your first and last names
 ```python
@@ -221,7 +221,7 @@ update `test_functions.py` with a new test, replacing `my_first_name` and `my_la
 ```
 the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - update `functions.py` with the solution we know works from `test_passthrough_function`
     ```python
@@ -242,7 +242,7 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
     ```
     the terminal updates to show passing tests
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 How can we make this better?
 - we named the first argument `input_data` and the second argument `second_argument`. Technically, both arguments are input data, so we need a better name that is more descriptive
@@ -327,7 +327,7 @@ How can we make this better?
 
 There is an inherent problem with using positional arguments in functions. It requires the inputs to always be supplied in the correct sequence. If the program is dependent on that sequence, then it will behave in an unintended way when it receives input out of order. There is a way to ensure our function behaves correctly regardless of what order the user provides the input - Keyword Arguments
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 add a new test to `test_functions.py`
 
@@ -343,7 +343,7 @@ add a new test to `test_functions.py`
 ```
 the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - add a function definition to `functions.py`
     ```python
@@ -376,7 +376,7 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
     ```
     Eureka! the terminal updates to show passing tests
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 So far `passthrough_with_keyword_arguments` looks the same as `passthrough_with_positional_arguments` did when it took in 2 positional arguments, we have not yet seen a difference between a positional argument and a keyword argument
 
@@ -402,7 +402,7 @@ So far `passthrough_with_keyword_arguments` looks the same as `passthrough_with_
 
     Our function currently only takes in 2 keyword arguments. What if we wanted a function that can take in any number of keyword arguments? There is a starred expression for keyword arguments - `**`.
 
-- #### <span style="color:red">**RED**</span>: make it fail
+- #### **RED**: make it fail
     let us add a test to `test_functions_with_keyword_arguments`
     ```python
         def test_functions_with_keyword_arguments(self):
@@ -429,7 +429,7 @@ So far `passthrough_with_keyword_arguments` looks the same as `passthrough_with_
     ```
     the terminal updates to show a [TypeError](./TYPE_ERROR.md)
 
-- #### <span style="color:green">**GREEN**</span>: make it pass
+- #### **GREEN**: make it pass
 
     - change the signature of `passthrough_with_keyword_arguments` to accept any number of keyword arguments
         ```python
@@ -494,7 +494,7 @@ So far `passthrough_with_keyword_arguments` looks the same as `passthrough_with_
         ```
         the terminal updates to show passing tests. We now know that keyword arguments are treated as [Dictionaries](./09_DICTIONARIES.md) in python
 
-- #### <span style="color:orange">**REFACTOR**</span>: make it better
+- #### **REFACTOR**: make it better
 
     let us add one more test to `test_functions_with_keyword_arguments` to drill the lesson
     ```python
@@ -563,7 +563,7 @@ So far `passthrough_with_keyword_arguments` looks the same as `passthrough_with_
 
 We could also define functions to take in both positional arguments and keyword arguments
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 add a new failing test to `test_functions.py`
 ```python
@@ -585,7 +585,7 @@ the terminal updates to show a `SyntaxError` because we put a positional argumen
 # TypeError
 ```
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - fix the order of arguments in `test_functions_with_positional_and_keyword_arguments`
     ```python
@@ -644,7 +644,7 @@ the terminal updates to show a `SyntaxError` because we put a positional argumen
     ```
     the terminal reveals passing tests
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 Hold on a second. This looks exactly like what we did in `test_functions_with_positional_arguments`. We cannot tell from the function signature which argument is positional and which is a keyword argument and do not want to wait for the function to fail when we send in values to figure it out
 - change the function signature of `accepts_positional_and_keyword_arguments` to have a default value for the keyword argument
@@ -843,7 +843,7 @@ Hold on a second. This looks exactly like what we did in `test_functions_with_po
 
 A singleton function is a function that returns the same thing every time it is called.
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 add a test to `test_functions.py`
 ```python
@@ -852,7 +852,7 @@ add a test to `test_functions.py`
 ```
 the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 update `functions.py` to make it pass
 ```python
@@ -860,7 +860,7 @@ def singleton():
     return 'my_first_name'
 ```
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 add a new test that checks if a singleton that accepts inputs returns the same value when it is given inputs
 

@@ -10,7 +10,7 @@ We will continue to step through learning conditional statements in python using
 
 ## Logical NAND
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 add a test for exclusive disjunction to `TestBinaryOperations`
 
@@ -24,7 +24,7 @@ add a test for exclusive disjunction to `TestBinaryOperations`
 
 the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - add a definition for the function to `truth_table.py` returning `True` since 3 out of the 4 cases return that value
     ```python
@@ -41,7 +41,7 @@ the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
     ```
     We are green! All tests pass
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 - add an `else` to be explicit
     ```python

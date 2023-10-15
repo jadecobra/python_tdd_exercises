@@ -10,7 +10,7 @@ Let us take a look at building a program which gives us the amount of time we ha
 
 ## Duration when given hours only
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 write a failing test in `test_sleep_duration.py`
 ```python
@@ -32,7 +32,7 @@ the terminal shows a `NameError` which we add to our list of exceptions encounte
 # NameError
 ```
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - add an import statement for the missing name
     ```python
@@ -92,7 +92,7 @@ the terminal shows a `NameError` which we add to our list of exceptions encounte
     ```
     green! all tests are passing
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 The function currently returns `1` regardless of the inputs given but for it to be useful it has to calculate the difference between the wake time and the sleep time. It would be a large effort to write a test case for every permutation of sleep and wake times.
 
@@ -473,7 +473,7 @@ Let us try writing a test that uses a random variable for the sleep and wake tim
 
 We found a solution that provides the right duration when given sleep time and wake time in a given day. Our solution does not take into account minutes in the calculation
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 we are going to add a failing test for that scenario to `test_sleep_duration.py`
 
@@ -494,7 +494,7 @@ we are going to add a failing test for that scenario to `test_sleep_duration.py`
 
 the terminal shows an [AssertionError](./ASSERTION_ERROR.md) the expected value is now a string that contains the subtraction of the sleep hour from the wake hour, separated by a delimiter `:` and the subtraction of the sleep minute from the wake minute, so if we have a wake_time of `08:30` and a sleep_time of `07:11` we should have `1:19` as the output
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - update the output of the `duration` function in `sleep_duration.py` to match the format of the expected value
     ```python
@@ -548,7 +548,7 @@ the terminal shows an [AssertionError](./ASSERTION_ERROR.md) the expected value 
     we get an [AssertionError](./ASSERTION_ERROR.md) in the terminal because we have two zeros `:00` in the expected return value but the duration function returns `0` for the minute side of our timestamp after doing a subtraction, i.e. `00` minus `00` is `0` not `00`. We could update the right side of the expected value to `0` to make it pass, but that would not be necessary because `test_duration_when_given_hours_and_minutes` already covers the cases where the minutes are zero since we are doing a random number from `0` to `23` for hours and a random number from `0` to `59` for minutes.
 - delete `test_duration_when_given_hours_only` since we no longer need it and the terminal shows passing tests
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 The `duration` function currently returns a subtraction of hours and a subtraction of minutes but is not accurate for calculating real differences in time. For instance if you give a wake time of `3:30` and a sleep time of `2:59` it will give us `1:-29` which is not a real duration instead of `0:31` which is the actual duration, this means that even though our tests are passing, once again the `duration` function does not meet the requirement of calculating the duration between two timestamps. We need a better way.
 
@@ -780,7 +780,7 @@ The `duration` function currently returns a subtraction of hours and a subtracti
     ```
     all tests are still passing
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 Taking another look at the failing test we notice that our `duration` function returns negative numbers when given a `wake_time` that is earlier than a `sleep_time` e.g. `'-1 day, 14:01:00'`
 
@@ -862,7 +862,7 @@ Our `duration` function now accounts for a time traveling sleep scenario where y
 
 ## Duration when given day, hours and minutes
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 add a failing test to `test_sleep_duration.py` called `test_duration_when_given_date_and_time`
 
@@ -889,7 +889,7 @@ E           ValueError: time data '21/11/06 21/11/06 8:9' does not match format 
 
 the timestamps we provide to the `duration` function as inputs do not match the expected format of `%d/%m/%y %H:%M`, we get a repetition of the date portion because in the `get_datetime_object` we added a date to the timestamp to make it match the pattern
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - remove `21/11/06` from the string in `get_datetime_object` in `sleep_duration.py`
     ```python

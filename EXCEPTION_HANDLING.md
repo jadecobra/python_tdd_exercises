@@ -19,7 +19,7 @@ Enter Exception Handling. In python there is a mechanism for handling exceptions
 
 ## Test that an Exception is raised
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 create a file named `test_exception_handling.py` in the `tests` folder and add the following
 
@@ -42,7 +42,7 @@ the terminal gives us a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md) and w
 # ModuleNotFoundError
 ```
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 One way to take care of this error is to create the module, but in this case we want to catch/handle the exception in the test as a way to prove in the code that a `ModuleNotFoundError` will be raised for this module named `non_existent_module`. We add a `self.assertRaises` to `test_catching_module_not_found_error_in_tests`
 
@@ -59,11 +59,11 @@ the terminal updates to show passing tests. How does all this work?
     - Do you want to [read more about with statement context managers](https://docs.python.org/3/reference/datamodel.html#with-statement-context-managers)?
     - Do you want to [read PEP 343 - The "with" Statement](https://peps.python.org/pep-0343/)?
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 Since we know how to catch/handle an exception with `unittest`, there are a few things we can do with this information. We can test that a program fails in an expected way, deliberately cause failures and design for failure
 
-- #### <span style="color:red">**RED**</span>: make it fail
+- #### **RED**: make it fail
 
     add a new test to `TestExceptionHandling` in `test_exception_handling.py`
 
@@ -83,7 +83,7 @@ Since we know how to catch/handle an exception with `unittest`, there are a few 
     # AttributeError
     ```
 
-- #### <span style="color:green">**GREEN**</span>: make it pass
+- #### **GREEN**: make it pass
 
     update `test_catching_attribute_errors_in_tests` with `self.assertRaises`
 
@@ -95,7 +95,7 @@ Since we know how to catch/handle an exception with `unittest`, there are a few 
 
     the terminal updates to show passing tests. Let's do it again with `methods` for good measure
 
-- #### <span style="color:red">**RED**</span>: make it fail
+- #### **RED**: make it fail
 
     add a failing line to `test_catching_attribute_errors_in_tests`
 
@@ -110,7 +110,7 @@ Since we know how to catch/handle an exception with `unittest`, there are a few 
     E       AttributeError: module 'module' has no attribute 'non_existent_function'
     ```
 
-- #### <span style="color:green">**GREEN**</span>: make it pass
+- #### **GREEN**: make it pass
 
     add `self.assertRaises` and indent the failing line to place it within the context
     ```python
@@ -122,7 +122,7 @@ Since we know how to catch/handle an exception with `unittest`, there are a few 
     ```
     the terminal updates to show passing tests
 
-- #### <span style="color:red">**RED**</span>: make it fail
+- #### **RED**: make it fail
 
     let us add another failing line to `test_catching_attribute_errors_in_tests`
 
@@ -139,7 +139,7 @@ Since we know how to catch/handle an exception with `unittest`, there are a few 
     E       AttributeError: module 'module' has no attribute 'NonExistentClass'
     ```
 
-- #### <span style="color:green">**GREEN**</span>: make it pass
+- #### **GREEN**: make it pass
 
     add `self.assertRaises` to make it pass
     ```python
@@ -153,7 +153,7 @@ Since we know how to catch/handle an exception with `unittest`, there are a few 
     ```
     the terminal displays passing tests
 
-- #### <span style="color:red">**RED**</span>: make it fail
+- #### **RED**: make it fail
 
     update `test_catching_attribute_errors_in_tests` with a new failing line
     ```python
@@ -171,7 +171,7 @@ Since we know how to catch/handle an exception with `unittest`, there are a few 
     E       AttributeError: type object 'Class' has no attribute 'non_existent_attribute'
     ```
 
-- #### <span style="color:green">**GREEN**</span>: make it pass
+- #### **GREEN**: make it pass
 
     add `self.assertRaises` to catch the error
     ```python
@@ -187,7 +187,7 @@ Since we know how to catch/handle an exception with `unittest`, there are a few 
     ```
     the terminal updates to show passing tests
 
-- #### <span style="color:red">**RED**</span>: make it fail
+- #### **RED**: make it fail
 
     we trigger another attribute error, by adding a line to `test_catching_attribute_errors_in_tests`
     ```python
@@ -206,7 +206,7 @@ Since we know how to catch/handle an exception with `unittest`, there are a few 
     ```python
         E       AttributeError: type object 'Class' has no attribute 'non_existent_method'
     ```
-- #### <span style="color:green">**GREEN**</span>: make it pass
+- #### **GREEN**: make it pass
 
     add `self.assertRaises` to make it pass
     ```python
@@ -224,7 +224,7 @@ Since we know how to catch/handle an exception with `unittest`, there are a few 
     ```
     the terminal updates to show passing tests
 
-- #### <span style="color:orange">**REFACTOR**</span>: make it better
+- #### **REFACTOR**: make it better
 
     We just created the same context 5 times, this is a good candidate for a rewrite. let us remove the duplication. since our `self.assertRaises` catches an [AttributeError](./ATTRIBUTE_ERROR.md) in each case, we only need to state it once and place all the lines that raise the error underneath it.
     ```python
@@ -244,7 +244,7 @@ Since we know how to catch/handle an exception with `unittest`, there are a few 
 
 Earlier on we learned how to verify that an exception gets raised, we will now look at how to handle exceptions in programs
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 Let us deliberately trigger an exception in our code and then handle it, add a failing test to `test_exception_handling.py` with a new test
 ```python
@@ -261,7 +261,7 @@ the terminal updates to show a `NameError` and we update our running list of exc
 # NameError
 ```
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 - A `NameError` is raised when a name is used within a module and there is no definition for it. In our code above we call `exceptions.raise_exception_error` but there is no definition for `exceptions`. update the `import` section with a new line
     ```python
     import unittest
@@ -311,11 +311,11 @@ the terminal updates to show a `NameError` and we update our running list of exc
 *CONGRATULATIONS!*
 You now know how to deliberately create an exception, you now have absolute power to reshape the universe to your will
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 let us add exception handling to our program so it does not end when it encounters an exception but instead gives a message
 
-- #### <span style="color:red">**RED**</span>: make it fail
+- #### **RED**: make it fail
 
     add a new test to `test_exception_handling`
     ```python
@@ -328,7 +328,7 @@ let us add exception handling to our program so it does not end when it encounte
 
     the terminal updates to show an [AttributeError](./AttributeError)
 
-- ### <span style="color:green">**GREEN**</span>: make it pass
+- ### **GREEN**: make it pass
     add a name to `exceptions.py` and the terminal updates to show `NameError`
         ```python
         exception_handler
@@ -358,7 +358,7 @@ let us add exception handling to our program so it does not end when it encounte
             return 'failed'
         ```
 
-- #### <span style="color:red">**RED**</span>: make it fail
+- #### **RED**: make it fail
 
     our solution is faulty, the `exception_handler` always returns `failed` regardless of what we provide as an argument, we should add a new test to `test_exception_handling` that provides a different input with an expectation of a different result
     ```python
@@ -370,7 +370,7 @@ let us add exception handling to our program so it does not end when it encounte
     ```
     the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 
-- #### <span style="color:green">**GREEN**</span>: make it pass
+- #### **GREEN**: make it pass
 
     add `does_not_raise_exception_error` to `exceptions.py` and the terminal updates to show a `NameError`
     ```python
@@ -425,7 +425,7 @@ let us add exception handling to our program so it does not end when it encounte
 
 ## How to use try...except...else...finally
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 add a new failing test to `test_exception_handling.py`
 ```python
@@ -438,7 +438,7 @@ add a new failing test to `test_exception_handling.py`
 
 this will cause an [AttributeError](./ATTRIBUTE_ERROR.md)
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - add a name to `exceptions.py` and the terminal updates to show a `NameError`
     ```python

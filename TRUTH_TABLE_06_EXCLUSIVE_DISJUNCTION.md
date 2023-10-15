@@ -10,7 +10,7 @@ We will continue to step through learning conditional statements in python using
 
 ## Exclusive Disjunction
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 add a test for exclusive disjunction to `TestBinaryOperations`
 
@@ -24,7 +24,7 @@ add a test for exclusive disjunction to `TestBinaryOperations`
 
 the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - add a definition that returns `True`
     ```python
@@ -51,7 +51,7 @@ the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
     ```
     Wonderful! All the tests are passing
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 let us try to refactor those statements to make them better
 

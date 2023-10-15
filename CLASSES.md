@@ -18,7 +18,7 @@ We will step through writing classes in python using Test Driven Development
 - use `TitleCase` for naming
 - use Descriptive names
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 we create a new file named `test_classes.py` in the `tests` directory
 
@@ -35,7 +35,7 @@ class TestClasses(unittest.TestCase):
 
 the terminal displays a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md)
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - create a python module named `classes.py` and the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 - add the name `ClassWithPass` to the module
@@ -68,7 +68,7 @@ the terminal displays a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md)
     ```
     and the terminal updates to show passing tests
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 Let us review what we have written so far
 - `pass` is a placeholder
@@ -77,7 +77,7 @@ Let us review what we have written so far
 
 ## Define a Class with parentheses
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 add another test to `TestClasses` in `test_classes.py`
 ```python
@@ -86,7 +86,7 @@ add another test to `TestClasses` in `test_classes.py`
 ```
 the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - update `classes.py` with a class definition
     ```python
@@ -111,7 +111,7 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
     - without parentheses
     - `pass` is a placeholder
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 In object oriented programming there is a concept called [Inheritance](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)). With Inheritance we can define new `objects` that inherit from other existing `objects`. This makes creating things easier because we do not have to reinvent or rewrite things that already exist, we can inherit them instead.
 
@@ -120,7 +120,7 @@ In object oriented programming there is a concept called [Inheritance](https://e
 
 To use inheritance we specify the "parent" in parentheses when we define the new object (the child) to establish the relationship
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 we add another test to `TestClasses` in `test_classes.py`
 ```python
@@ -129,7 +129,7 @@ we add another test to `TestClasses` in `test_classes.py`
 ```
 and the terminal displays an [AttributeError](./ATTRIBUTE_ERROR.md)
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - let us add a class definition to `classes.py`
     ```python
@@ -168,7 +168,7 @@ We now know that in python
 
 Since we know how to define a class, let us add some tests for attributes
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 - we add a failing test to `TestClasses` in `classes.py`
     ```python
@@ -186,7 +186,7 @@ Since we know how to define a class, let us add some tests for attributes
     ```
     though the terminal still outputs an [AttributeError](./ATTRIBUTE_ERROR.md), this time it is for a missing attribute in our newly defined class
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - we add an attribute to `ClassWithAttributes`
     ```python
@@ -216,11 +216,11 @@ Since we know how to define a class, let us add some tests for attributes
     ```
     the terminal updates to show passing tests
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 let us repeat this with other python [data structures](./DATA_STRUCTURES.md)
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 update `test_classes_with_attributes` with more tests
 ```python
@@ -236,7 +236,7 @@ update `test_classes_with_attributes` with more tests
 ```
 the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 update `ClassWithAttributes` with attributes to make the tests pass
 ```python
@@ -259,7 +259,7 @@ the terminal updates to show passing tests
 
 We can define classes with methods which are function definitions within the class
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 Let us add some tests for class methods. update `TestClasses` in `classes.py`
 ```python
@@ -271,7 +271,7 @@ Let us add some tests for class methods. update `TestClasses` in `classes.py`
 ```
 the terminal updates to show [AttributeError](./ATTRIBUTE_ERROR.md)
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - we add a class definition to `classes.py`
     ```python
@@ -317,7 +317,7 @@ the terminal updates to show [AttributeError](./ATTRIBUTE_ERROR.md)
     ```
     for the terminal to show passing tests
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 - we can make this better by adding a few more tests to `test_classes_with_methods` for fun
     ```python
@@ -336,7 +336,7 @@ the terminal updates to show [AttributeError](./ATTRIBUTE_ERROR.md)
 
 Since we know how to define classes with methods and how to define classes with attributes, let us try defining a class that has both
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 we add another test for a class that has both attributes and methods
 
@@ -353,7 +353,7 @@ we add another test for a class that has both attributes and methods
 ```
 with the terminal giving an [AttributeError](./ATTRIBUTE_ERROR.md)
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 update `classes.py` to make the tests pass by defining the class, attribute and methods
 
@@ -374,7 +374,7 @@ class ClassWithAttributesAndMethods(object):
 
 CONGRATULATIONS. You now know how to define classes, attributes and methods. We will now expand on this knowledge to learn how to use classes
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 we will add a failing test to `test_classes.py`
 
@@ -384,7 +384,7 @@ we will add a failing test to `test_classes.py`
 ```
 the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - add a definition for the class
     ```python
@@ -414,7 +414,7 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
     ```
     the terminal updates to show passing tests. Yes!
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 - let us add another test to `test_classes_with_initializers`
     ```python
@@ -573,7 +573,7 @@ Why did that work?
 
 To view what `attributes` and `methods` are defined for any object we can call `dir` on the object. The `dir` method returns a [list](./LISTS.md) that contains the names of all attributes and methods in the class
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 add a test to `test_classes.py`
 ```python
@@ -588,7 +588,7 @@ add a test to `test_classes.py`
 
 the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) as our expected and real values do not match
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 copy the values from the terminal to update the test to make it pass
 

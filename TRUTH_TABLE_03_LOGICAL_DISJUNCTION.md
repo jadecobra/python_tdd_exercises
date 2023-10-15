@@ -19,7 +19,7 @@ Reviewing what we know so far
 
 ## Logical Disjunction
 
-#### <span style="color:red">**RED**</span>: make it fail
+#### **RED**: make it fail
 
 add a test for logical disjunction to `TestBinaryOperations` in `test_truth_table.py`
 
@@ -32,7 +32,7 @@ add a test for logical disjunction to `TestBinaryOperations` in `test_truth_tabl
 ```
 the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 
-#### <span style="color:green">**GREEN**</span>: make it pass
+#### **GREEN**: make it pass
 
 - update `truth_table.py` with a function definition like we did for `logical_conjunction`
     ```python
@@ -50,7 +50,7 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
     ```
     the terminal updates to show passing tests
 
-#### <span style="color:orange">**REFACTOR**</span>: make it better
+#### **REFACTOR**: make it better
 
 - we know from earlier that when we have a nested if statement it can be replaced with an `and`, so we update our condition
     ```python

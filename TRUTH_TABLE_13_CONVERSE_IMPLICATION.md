@@ -10,7 +10,7 @@ We will continue to step through learning conditional statements in python using
 
 ## Converse Implication
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 add a test for converse implication to `TestBinaryOperations`
 
@@ -24,7 +24,7 @@ add a test for converse implication to `TestBinaryOperations`
 
 the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - add a function definition to `truth_table.py`
     ```python
@@ -48,7 +48,7 @@ the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
     ```
     all the tests pass
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 - use implied conditional testing
     ```python

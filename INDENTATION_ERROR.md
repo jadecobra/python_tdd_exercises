@@ -14,7 +14,7 @@ Spacing/Indentation matters in python. Where you place code and how you space th
 
 ## Solve the IndentationError
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 - Open a new file in the editor and save it as `tests/test_indentation_error.py` in the `tests` folder you created in [Setup a Test Driven Development Environment](./TDD_SETUP.md), then type the following lines in the file *paying attention to the spacing*
 
@@ -35,7 +35,7 @@ Spacing/Indentation matters in python. Where you place code and how you space th
     ```
     python raises an `IndentationError` for line 2 because it was not expecting the indentation there. Indentation has meaning in python and in this case it does not meet the predefined rules for indentation
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - update `test_indentation_error.py` by making the lines match up in spacing
     ```python
@@ -44,7 +44,7 @@ Spacing/Indentation matters in python. Where you place code and how you space th
     ```
     the terminal updates to show passing tests
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 let us add more indentation errors to `test_indentation_error.py`
 ```python
@@ -64,7 +64,7 @@ fix the offending lines until all tests are green.
 
 let us add more tests, this time indentation errors with functions *noting the difference in spacing*
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 - add the [functions](./FUNCTIONS.md) below to `test_indentation_error.py`
     ```python
@@ -81,7 +81,7 @@ let us add more tests, this time indentation errors with functions *noting the d
         pass
     ```
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - update `test_indentation_error.py` to make the spacing/indentation match for each function
     ```python
@@ -103,7 +103,7 @@ let us add more tests, this time indentation errors with functions *noting the d
 
 let us add more tests, this time to raise indentation errors for [Class](./CLASSES.md) definitions *noting the difference in spacing*
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 - update `test_indentation_error.py`
     ```python
@@ -121,7 +121,7 @@ let us add more tests, this time to raise indentation errors for [Class](./CLASS
     E    IndentationError: expected an indented block after class definition on line 18
     ```
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - update `test_indentation_error.py` to make the spacing/indentation match
     ```python
@@ -137,7 +137,7 @@ let us add more tests, this time to raise indentation errors for [Class](./CLASS
 
 ## Solve the IndentationError in Classes with Methods
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 - building on what we have done so far, we will add failing tests for [methods](./CLASSES.md), update `test_indentation_error.py`
     ```python
@@ -158,7 +158,7 @@ let us add more tests, this time to raise indentation errors for [Class](./CLASS
     E    IndentationError: expected an indented block after function definition on line 28
     ```
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - update `test_indentation_error.py` to make the spacing/indentation match
     ```python
@@ -177,7 +177,7 @@ let us add more tests, this time to raise indentation errors for [Class](./CLASS
 
 ## Solve the IndentationError in Classes with Attributes
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 - update `test_indentation_error.py`
     ```python
@@ -192,7 +192,7 @@ let us add more tests, this time to raise indentation errors for [Class](./CLASS
     E    IndentationError: unexpected indent
     ```
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - update `test_indentation_error.py` to make the spacing/indentation match
     ```python
@@ -203,7 +203,7 @@ let us add more tests, this time to raise indentation errors for [Class](./CLASS
         attribute = None
     ```
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 The point of this exercise was to get familiar with python spacing convention to help understand the `IndentationError` and its solution.
 

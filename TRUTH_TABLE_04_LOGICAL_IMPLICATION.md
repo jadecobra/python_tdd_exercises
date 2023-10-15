@@ -22,7 +22,7 @@ Reviewing what we know so far, for any boolean operation involving 2 inputs - `p
 
 ## Logical Implication/Material Implication
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 add a test for logical implication to `TestBinaryOperations`
 
@@ -36,7 +36,7 @@ add a test for logical implication to `TestBinaryOperations`
 
 the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - add a function definition with `True` as the return value since that is what is expected in 3 out of the 4 cases
     ```python
@@ -54,7 +54,7 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
     ```
     the tests pass!
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 - How can we make this better? let us make the nested condition one line
     ```python

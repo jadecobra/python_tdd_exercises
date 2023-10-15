@@ -10,7 +10,7 @@ We will continue to step through learning conditional statements in python using
 
 ## Logical Equality/Logical Bi-conditional
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 add a test for logical equality to `TestBinaryOperations`
 
@@ -24,7 +24,7 @@ add a test for logical equality to `TestBinaryOperations`
 
 the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - add a definition to `truth_table.py` with a return statement, we can pick `True` or `False` since 2 out of the 4 cases are either `True` or `False`
     ```python
@@ -51,7 +51,7 @@ the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
     ```
     We are green!
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 What can we do to make this better?
 

@@ -13,7 +13,7 @@ We are going to cover dictionaries in python In this chapter using Test Driven D
 
 Dictionaries/Mappings are key, value pairs that we can use to represent data. `values` can be any of the [data structures](./DATA_STRUCTURES.md) including dictionaries
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 first we add a file named `test_dictionaries.py` to the `tests` folder with the following text
 
@@ -28,11 +28,11 @@ the terminal gives us a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md), and 
 # ModuleNotFoundError
 ```
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 add a file named `dictionaries.py` to the project folder and the test passes
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 - we will now proceed to look at the ways we can create a dictionary, by adding a failing test
     ```python
@@ -91,7 +91,7 @@ add a file named `dictionaries.py` to the project folder and the test passes
 
 ## Create a dictionary with numbers as keys
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 add a failing test to `TestDictionaries`
 
@@ -102,7 +102,7 @@ add a failing test to `TestDictionaries`
 
 the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) since the two values are different
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 update the test to make it pass
 
@@ -113,7 +113,7 @@ update the test to make it pass
 
 the terminal updates to show passing tests
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 - Our knowledge of dictionaries is growing. We know we can use `integers` and `strings` as dictionary keys. Can we use `floats`? We are going to find out by adding a test
     ```python
@@ -134,7 +134,7 @@ the terminal updates to show passing tests
 
 Is it possible for us to use `False` or `True` as `dictionary` keys?
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 ```python
     def test_creating_dictionaries_with_booleans_as_keys(self):
@@ -143,7 +143,7 @@ Is it possible for us to use `False` or `True` as `dictionary` keys?
 
 the terminal outputs an [AssertionError](./ASSERTION_ERROR.md)
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 update the return values to make them match and we are green again
 
@@ -152,7 +152,7 @@ update the return values to make them match and we are green again
         self.assertEqual({False: 'boom'}, {False: 'boom'})
 ```
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 - add a test for using `True` as a `dictionary` key
     ```python
@@ -171,7 +171,7 @@ update the return values to make them match and we are green again
 
 ## Create a dictionary with tuples as keys
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 add a test to `TestDictionaries`
 
@@ -182,7 +182,7 @@ add a test to `TestDictionaries`
 
 the terminal outputs an [AssertionError](./ASSERTION_ERROR.md)
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 we update the values to make it pass
 
@@ -194,7 +194,7 @@ and update our knowledge of creating dictionaries to say we can use `tuples`, `b
 
 ## Can we create a Dictionary with lists as keys?
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 let us add a test to `TestDictionaries` using a list as a key
 
@@ -216,7 +216,7 @@ we also update our list of exceptions encountered
 # TypeError
 ```
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 In [Exception Handling](./EXCEPTION_HANDLING.md) we learn how to use `self.assertRaises` to confirm that an error is raised by some code without having it crash our tests. We will do the same here to confirm that creating a dictionary with a `list` as the key raises a [TypeError](./TYPE_ERROR.md)
 
@@ -230,7 +230,7 @@ all green here
 
 ## Can we create a Dictionary with sets as keys?
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 let us try a similar test using a set as a key
 
 ```python
@@ -240,7 +240,7 @@ let us try a similar test using a set as a key
 
 the terminal responds with a [TypeError](./ASSERTION_ERROR.md)
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 which we handle using `self.assertRaises`
 ```python
     def test_creating_dictionaries_with_sets_as_keys(self):
@@ -252,7 +252,7 @@ all tests are passing
 
 ## Can we create a Dictionary with dictionaries as keys?
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 add a new test
 ```python
     def test_creating_dictionaries_with_dictionaries_as_keys(self):
@@ -262,7 +262,7 @@ add a new test
 
 and the terminal outputs a [TypeError](./TYPE_ERROR.md)
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 we add a handler to confirm our findings
 ```python
     def test_creating_dictionaries_with_dictionaries_as_keys(self):
@@ -283,7 +283,7 @@ all tests pass and we now know that we can create dictionaries with the followin
 ## Access dictionary values
 
 From the tests above we learned how to create `dictionaries`, and what we can use as `keys`. How do we access the values of a dictionary?
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 we are going to add a test to `TestDictionaries` in `test_dictionaries.py`
 
@@ -295,7 +295,7 @@ we are going to add a test to `TestDictionaries` in `test_dictionaries.py`
 
 the terminal displays a failing test with an [AssertionError](./ASSERTION_ERROR.md) because `bob` is not equal to `value`
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 update the expected value to make the tests pass
 
@@ -305,7 +305,7 @@ update the expected value to make the tests pass
         self.assertEqual(a_dictionary["key"], "value")
 ```
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 - we can also display the values of a dictionary as a list without the keys, add a test
     ```python
@@ -368,7 +368,7 @@ update the expected value to make the tests pass
 ## Get a value when the key does not exist
 
 Sometimes we might try to access values in a dictionary but use a key that does not exist in the dictionary or misspell a key that does exist
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 add a test
 
@@ -386,7 +386,7 @@ add a test
 
 the terminal updates to show a [KeyError](https://docs.python.org/3/library/exceptions.html?highlight=keyerror#KeyError). A `KeyError` is raised when a `dictionary` is called with a `key` that does not exist.
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - add `KeyError` to our running list of list of exceptions encountered
     ```python
@@ -422,7 +422,7 @@ the terminal updates to show a [KeyError](https://docs.python.org/3/library/exce
                 a_dictionary['ky1']
     ```
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 What if we want to call a dictionary and not have python raise an error when it does not find the key? We could use the `get` function
 - add a test to `TestDictionaries`
@@ -492,7 +492,7 @@ What if we want to call a dictionary and not have python raise an error when it 
 
 [Classes](./CLASSES.md) covers how to view the `attributes` and `methods` of an object. let us do the same for `dictionaries`
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 add a test to `TestDictionaries`
 
@@ -507,7 +507,7 @@ add a test to `TestDictionaries`
 
 the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 copy the expected values shown in the terminal to make the test pass
 > WARNING: Your results may vary depending on your python version
@@ -569,7 +569,7 @@ copy the expected values shown in the terminal to make the test pass
 
 the tests pass
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 We see some of the methods we have covered so far and others we did not. You can write tests on the others to discover what they do and/or [read more about dictionaries](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict). let us list out what we know so far and you can fill in the others as you learn them
 - clear
@@ -588,7 +588,7 @@ We see some of the methods we have covered so far and others we did not. You can
 
 let us test the `setdefault` method
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 add a failing test
 
@@ -600,7 +600,7 @@ add a failing test
 
 the terminal updates to show a `KeyError`
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 add a `self.assertRaises` to confirm that the `KeyError` gets raised, allowing the test to pass
 
@@ -612,7 +612,7 @@ add a `self.assertRaises` to confirm that the `KeyError` gets raised, allowing t
             a_dictionary['another_key']
 ```
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 - add a test for `setdefault`
     ```python
@@ -660,7 +660,7 @@ add a `self.assertRaises` to confirm that the `KeyError` gets raised, allowing t
 
 What if we have a dictionary and want to `add` the `keys` and `values` of another dictionary to it?
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 add a test to `TestDictionaries`
 
@@ -683,7 +683,7 @@ add a test to `TestDictionaries`
 
 the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) because the values of `a_dictionary` were updated when we called the `update` method on it
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 update values to make it pass
 
@@ -691,7 +691,7 @@ update values to make it pass
 
 We can remove an item from a dictionary with the `pop` method. It deletes the key and value from the dictionary and returns the value
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 add a failing test to `TestDictionaries`
 
@@ -709,6 +709,6 @@ add a failing test to `TestDictionaries`
 
 the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 update the test with the right value to make it pass

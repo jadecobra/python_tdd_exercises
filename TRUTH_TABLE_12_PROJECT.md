@@ -10,7 +10,7 @@ We will continue to step through learning conditional statements in python using
 
 ## Project First
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 add a test for project first to `TestBinaryOperations`
 
@@ -24,7 +24,7 @@ add a test for project first to `TestBinaryOperations`
 
 the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - add a function definition to `truth_table.py`
     ```python
@@ -51,7 +51,7 @@ the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
     ```
     all the tests pass
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 - use implied conditional testing
     ```python
@@ -75,7 +75,7 @@ the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
 
 ## Project Second
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 add a test for project second to `TestBinaryOperations`
 
@@ -89,7 +89,7 @@ add a test for project second to `TestBinaryOperations`
 
 the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - add a function definition to `truth_table.py`
     ```python
@@ -118,7 +118,7 @@ the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
     ```
     All tests pass and it's a simple line
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 Since there is no refactoring to do here, we update what we know so far. For any boolean operation involving 2 inputs - `p` and `q` which can take the values `True` or `False`
 - `project_first` always returns `p`

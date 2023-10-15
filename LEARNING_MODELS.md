@@ -10,7 +10,7 @@ What follows is an exercise in measuring learning. It is somewhat philosophical 
 
 ## An Infinite Learning Model
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 add a file named `test_learning_models.py` to the `tests` folder with the following contents
 
@@ -57,10 +57,10 @@ class TestInfiniteLearningModel(unittest.TestCase):
         )
 ```
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 If you've gone through any of the other exercises in this book, then you have what you need to solve these problems
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 Please send me your solutions. I would love to see them. Enjoy

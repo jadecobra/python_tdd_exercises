@@ -16,7 +16,7 @@ A `list` is an object that holds elements. It is a container like `tuples` and `
 
 ## Create a list
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 create a file named `test_lists.py` in the `tests` folder with the following code
 
@@ -37,7 +37,7 @@ the terminal shows a [TypeError](./TYPE_ERROR.md) and we add it to our list of e
 # TypeError
 ```
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - Looking at the error we see that the `list` keyword expects one argument but we gave it four, so we are violating the signature for creating lists. How can we pass in values correctly to this object?
 - We check out the [documentation](https://docs.python.org/3/library/stdtypes.html?highlight=list#list) and see that list takes in an `iterable`. An iterable is an object that we can loop over
@@ -65,7 +65,7 @@ the terminal shows a [TypeError](./TYPE_ERROR.md) and we add it to our list of e
     ```
     the test passes
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 - we now know we can create a list with the `list` keyword but our passing test also shows we can create a list with `[]` which uses less characters, let us test this out
     ```python
@@ -75,7 +75,7 @@ the terminal shows a [TypeError](./TYPE_ERROR.md) and we add it to our list of e
 
 ## How to add items to a list
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 let us add a test to `TestLists` in `test_lists.py` to learn about updating an existing list using the `append` method
 
@@ -103,7 +103,7 @@ E
 E       + [0, 1, 2, 3]
 ```
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 update the values on the right side of the `assertEqual` statement to make it match the expectation
 ```python
@@ -117,7 +117,7 @@ the terminal updates to show passing tests, we started with a list that containe
 
 ## Remove an item from a list
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 since we know how to add an item to a `list` let us add a test for removing an item from a list using the `remove` method
 
@@ -147,7 +147,7 @@ E       + [0, 1, 2, 3]
 E       ?
 ```
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 update the test to make the values on the right to match the expected values and we are green again with passing tests
 
@@ -159,7 +159,7 @@ update the test to make the values on the right to match the expected values and
         self.assertEqual(a_list, [0, 1, 3])
 ```
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 What if there was more than one element, how does python decide which to remove when we call `.remove(element)` on a list? There is a way to find out
 
@@ -184,7 +184,7 @@ What if there was more than one element, how does python decide which to remove 
 
 ## Remove the last item in a list
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 add a test to `TestLists` in `test_lists.py`
 
@@ -201,7 +201,7 @@ add a test to `TestLists` in `test_lists.py`
 
 the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) for the test that checks the value of the item that is popped
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - update the value to match the actual value popped
     ```python
@@ -227,7 +227,7 @@ the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) for the t
 
 To view an item in a list we provide the position as an index in `[]` to the list. `python` uses zero-based indexing which means the position of elements starts at 0
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 add a failing test
 
@@ -248,7 +248,7 @@ add a failing test
 
 the terminal output an [AssertionError](./ASSERTION_ERROR.md)
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - update the value on the right for the failing test
     ```python
@@ -287,7 +287,7 @@ the terminal output an [AssertionError](./ASSERTION_ERROR.md)
 
 An `IndexError` is raised when we try to get an item from a list but use an index that is greater than the number of items in the list
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 let us add a failing test to illustrate this
 
@@ -298,7 +298,7 @@ let us add a failing test to illustrate this
 ```
 the terminal updates to show an [IndexError](https://docs.python.org/3/library/exceptions.html?highlight=exceptions#IndexError)
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - add `IndexError` to the running list of exceptions encountered
     ```python
@@ -319,7 +319,7 @@ the terminal updates to show an [IndexError](https://docs.python.org/3/library/e
 
 In [Classes](./CLASSES.md) we cover how to view the `attributes` and `methods` of an object. let us do the same for `lists`
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 add a failing test
 
@@ -334,7 +334,7 @@ add a failing test
 - the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 - `maxDiff` is an attribute of the `unittest.TestCase` class that sets the maximum amount of characters to show in the comparison between the two objects that is displayed in the terminal. When it is set to `None` there is no limit to the number of characters
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 update the test with the expected values
 
@@ -397,7 +397,7 @@ update the test with the expected values
 
 all our tests are passing again
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 There are more methods listed than what we have reviewed. Based on their names, we can make a guess as to what they do, and we know some from our tests above
 - append - adds an item to the list

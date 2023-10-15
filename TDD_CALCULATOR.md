@@ -82,7 +82,7 @@ since the test passes we can remove `test importing` from our TODO list
 
 Moving on to the next item we test for addition
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 - let us add a method named `test_addition` to the `TestCalculator` class
     ```python
@@ -147,7 +147,7 @@ Moving on to the next item we test for addition
         - `calculator` refers to `calculator.py`
         - `add` refers to something(an attribute) within the `calculator.py` file
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - open `calculator.py` in your Interactive Development Environment(IDE) and add the name `add`
     ```python
@@ -213,7 +213,7 @@ Moving on to the next item we test for addition
     ===================== 2 passed in 0.01s ======================
     ```
 
-### <span style="color:orange">**REFACTOR**</span>: Make it Better
+### **REFACTOR**: Make it Better
 
 Wait a minute. Is it that easy? Do we just provide the solution to make it pass? In the green phase, yes. We do whatever it takes to make the test pass even if we have to cheat. Solving the problem this way reveals a problem with our test, which means we need to "Make it Better".
 
@@ -229,7 +229,7 @@ There are a few scenarios we can consider from the users' perspective. If our us
                 1
             )
     ```
-- <span style="color:red">**RED**</span>: make it fail by adding a new test to `test_addition` in `test_calculator.py`
+- **RED**: make it fail by adding a new test to `test_addition` in `test_calculator.py`
     ```python
         def test_addition(self):
             self.assertEqual(
@@ -245,7 +245,7 @@ There are a few scenarios we can consider from the users' perspective. If our us
     ```python
     E       AssertionError: 1 != 0
     ```
-- <span style="color:green">**GREEN**</span>: make it pass by updating the `add` function in `calculator.py` to add up the inputs
+- **GREEN**: make it pass by updating the `add` function in `calculator.py` to add up the inputs
     ```python
     def add(x, y):
         return x + y
@@ -256,7 +256,7 @@ There are a few scenarios we can consider from the users' perspective. If our us
 
     ====================== 2 passed in 0.01s ==============
     ```
-- <span style="color:orange">**REFACTOR**</span>: Make it Better by randomizing the inputs to make sure the function behaves the way we expect for any given numbers. Update `test_calculator.py` to use the [random](https://docs.python.org/3/library/random.html?highlight=random#module-random) library
+- **REFACTOR**: Make it Better by randomizing the inputs to make sure the function behaves the way we expect for any given numbers. Update `test_calculator.py` to use the [random](https://docs.python.org/3/library/random.html?highlight=random#module-random) library
     ```python
     import calculator
     import random
@@ -292,7 +292,7 @@ There are a few scenarios we can consider from the users' perspective. If our us
     # test division
     ```
 
-That's the Test Driven Development pattern at work <span style="color:red">**RED**</span> <span style="color:green">**GREEN**</span> <span style="color:orange">**REFACTOR**</span>
+That's the Test Driven Development pattern at work **RED** **GREEN** **REFACTOR**
 
 We write a failing test, then make it pass by any means necessary, and make it better repeating the process until we have a working program that has been tested and gives us confidence it will behave in an expected way
 
@@ -302,7 +302,7 @@ We write a failing test, then make it pass by any means necessary, and make it b
 
 We will now add a failing test since addition works and our next action item from the TODO list is to test subtraction,
 
-### <span style="color:red">**RED**</span> : make it fail
+### **RED** : make it fail
 
 - update `test_calculator.py` with a method named `test_subtraction`
     ```python
@@ -335,7 +335,7 @@ We will now add a failing test since addition works and our next action item fro
     E       AttributeError: module 'calculator' has no attribute 'subtract'
     ```
 
-### <span style="color:green">**GREEN**</span> : make it pass
+### **GREEN** : make it pass
 - add a variable assignment to `calculator.py`
     ```python
     def add(x, y):
@@ -397,7 +397,7 @@ We will now add a failing test since addition works and our next action item fro
     # test division
     ```
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 - How can we make this better? Is there any duplication that could be removed?
     - `x = random.randint(-1, 1)` happens twice
@@ -435,7 +435,7 @@ We will now add a failing test since addition works and our next action item fro
 
 We will now move on test multiplication, the next item on the TODO list
 
-### <span style="color:red">**RED**</span> : make it fail
+### **RED** : make it fail
 
 we add a failing test to `test_calculator.py` named `test_multiplication`
 ```python
@@ -470,7 +470,7 @@ class TestCalculator(unittest.TestCase):
 
 the terminal responds with an [AttributeError](./ATTRIBUTE_ERROR.md)
 
-### <span style="color:green">**GREEN**</span> : make it pass
+### **GREEN** : make it pass
 
 using what we know so far we update `calculator.py` with a definition for multiplication
 
@@ -492,7 +492,7 @@ SUCCESS! The terminal gives passing tests and we remove `test_multiplication` fr
 # test division
 ```
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 Can you think of a way to make the code we have better?
 
@@ -502,7 +502,7 @@ Can you think of a way to make the code we have better?
 
 Let us now add the final test from our TODO list, the division test
 
-### <span style="color:red">**RED**</span> : make it fail
+### **RED** : make it fail
 
 - update `test_calculator.py` with `test_division`
     ```python
@@ -545,7 +545,7 @@ Let us now add the final test from our TODO list, the division test
     ```
     once again the terminal outputs an [AttributeError](./ATTRIBUTE_ERROR.md)
 
-### <span style="color:green">**GREEN**</span> : make it pass
+### **GREEN** : make it pass
 
 - update `calculator.py` with a `divide` function
     ```python
@@ -579,7 +579,7 @@ Let us now add the final test from our TODO list, the division test
     ```
 
 #### Test for Errors
-- <span style="color:red">**RED**</span> : make it fail
+- **RED** : make it fail
 
     we add a failing test to `test_calculator.py` to intentionally trigger a `ZeroDivisionError` and comment out our previous test that sometimes fails, this helps us remove the variability from the test
     ```python
@@ -601,7 +601,7 @@ Let us now add the final test from our TODO list, the division test
     >       return x / y
     E       ZeroDivisionError: division by zero
     ```
-- <span style="color:green">**GREEN**</span> : make it pass
+- **GREEN** : make it pass
 
     we update `test_calculator.py` to confirm that a `ZeroDivisionError` is raised when we try to divide a number by 0 by using `self.assertRaises`
     ```python
@@ -615,7 +615,7 @@ Let us now add the final test from our TODO list, the division test
     ```
     the terminal reveals passing tests, and we now have a way to `catch` Exceptions when testing, which allows us to confirm that the code raises an error, and allows our other tests to continue when we encounter the expected failure
 
-- <span style="color:orange">**REFACTOR**</span>: make it better
+- **REFACTOR**: make it better
     we can update `test_division` to test other division cases when the divisor is not 0 by making sure our random variable `y` is never 0
     ```python
         def test_division(self):

@@ -15,7 +15,7 @@ An `AttributeError` is raised when there is a reference to a name in an `object`
 
 ## Solve AttributeError by defining a Variable
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 We open a new file, save it as `test_attribute_error.py` in the `tests` folder created in [Setup a Test Driven Development Environment](./TDD_SETUP.md) and type the following
 
@@ -52,7 +52,7 @@ E   ModuleNotFoundError: No module named 'module'
 
 We practice solving this error in [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md)
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - we update the running list of exceptions encountered
     ```python
@@ -127,11 +127,11 @@ What is similar between `ModuleNotFoundError`, `AttributeError` and `NameError`?
 >
 > In python `=` is used to assign names to objects, for example `five = 5`, means we can later refer to the number `5` with the name `five`, the equality sign `==` on the other hand is used to check if two things are equal e.g. `5 == 4` means "is `5` is equal to `4`?"
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 There's not much to do here, we could repeat the above as a drill to help remember the solution
 
-#### <span style="color:red">**RED**</span>: make it fail
+#### **RED**: make it fail
 
 - add a failing line to `test_defining_variables_to_solve_attribute_errors`
     ```python
@@ -143,8 +143,8 @@ There's not much to do here, we could repeat the above as a drill to help rememb
     ```python
     E       AttributeError: module 'module' has no attribute 'variable_1'
     ```
-#### <span style="color:green">**GREEN**</span>: make it pass
-- <span style="color:red">**RED**</span>: make it fail - add the name to `module.py`
+#### **GREEN**: make it pass
+- **RED**: make it fail - add the name to `module.py`
     ```python
     variable_0 = None
     variable_1
@@ -153,14 +153,14 @@ There's not much to do here, we could repeat the above as a drill to help rememb
     ```python
     E   NameError: name 'variable_1' is not defined
     ```
-- <span style="color:green">**GREEN**</span>: make it pass - add a definition for `variable_1`
+- **GREEN**: make it pass - add a definition for `variable_1`
     ```python
     variable_0 = None
     variable_1 = None
     ```
     the terminal displays passing tests
 
-#### <span style="color:red">**RED**</span>: make it fail
+#### **RED**: make it fail
 - we add another failing line to `test_defining_variables_to_solve_attribute_errors`
     ```python
     def test_defining_variables_to_solve_attribute_errors(self):
@@ -174,8 +174,8 @@ There's not much to do here, we could repeat the above as a drill to help rememb
     E       AttributeError: module 'module' has no attribute 'variable_2'
     ```
 
-#### <span style="color:green">**GREEN**</span>: make it pass
-- <span style="color:red">**RED**</span>: make it fail - add the name to `module.py`
+#### **GREEN**: make it pass
+- **RED**: make it fail - add the name to `module.py`
     ```python
     variable_0 = None
     variable_1 = None
@@ -185,7 +185,7 @@ There's not much to do here, we could repeat the above as a drill to help rememb
     ```shell
     E   NameError: name 'variable_2' is not defined
     ```
-- <span style="color:green">**GREEN**</span>: make it pass - define `variable_2` in `module.py`
+- **GREEN**: make it pass - define `variable_2` in `module.py`
     ```python
     variable_0 = None
     variable_1 = None
@@ -193,7 +193,7 @@ There's not much to do here, we could repeat the above as a drill to help rememb
     ```
     The tests pass
 
-#### <span style="color:red">**RED**</span>: make it fail
+#### **RED**: make it fail
 - we add another failing line to `test_defining_variables_to_solve_attribute_errors`
     ```python
     def test_defining_variables_to_solve_attribute_errors(self):
@@ -207,8 +207,8 @@ There's not much to do here, we could repeat the above as a drill to help rememb
     E       AttributeError: module 'module' has no attribute 'variable_3'
     ```
 
-##### <span style="color:green">**GREEN**</span>: make it pass
-- <span style="color:red">**RED**</span>: make it fail - we add the name
+##### **GREEN**: make it pass
+- **RED**: make it fail - we add the name
     ```python
     variable_0 = None
     variable_1 = None
@@ -219,7 +219,7 @@ There's not much to do here, we could repeat the above as a drill to help rememb
     ```shell
     E   NameError: name 'variable_3' is not defined
     ```
-- <span style="color:green">**GREEN**</span>: make it pass - we define the name
+- **GREEN**: make it pass - we define the name
     ```python
     variable_0 = None
     variable_1 = None
@@ -262,7 +262,7 @@ Repeat the pattern until all tests pass.
 
 Let us take a look at solving `AttributeError` with functions
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 Update the `TestAttributeError` class in `tests/test_attribute_error.py` with a new test
 
@@ -276,7 +276,7 @@ the terminal updates to show
 E       AttributeError: module 'module' has no attribute 'function_0'
 ```
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 - we try the solution we know for solving `AttributeError` using variables and update `module.py`
     ```python
     function_0 = None
@@ -310,7 +310,7 @@ E       AttributeError: module 'module' has no attribute 'function_0'
     > - the default return value of a function is `None`
     > - the line with `return` is the last executable line of code in a function
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 - Time to a drill like we did with variables. Update `test_defining_functions_to_solve_attribute_errors` in the `TestAttributeError` class in`tests/test_attribute_error.py` to include calls to functions in `module.py` until you have one for `module.function_99()`, you will have 100 tests in total
     ```python
@@ -337,7 +337,7 @@ E       AttributeError: module 'module' has no attribute 'function_0'
 
 A class is a blueprint that represents an object, it is a collection of functions(methods) and attributes. Attributes are names which represent a value. Methods are functions that can accept inputs and return a value. For example we could define a "Human" class with attributes like eye color, date of birth, height and weight, and methods like age which returns a value based on the current year and date of birth. Let us explore `AttributeError` with classes.
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 - We add a test function to the `TestAttributeError` class in `tests/test_attribute_error.py`
     ```python
@@ -353,7 +353,7 @@ A class is a blueprint that represents an object, it is a collection of function
     - This also looks exactly like the tests in `test_defining_functions_to_solve_attribute_errors`
     - What's the difference?
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 - Update `module.py`
     ```python
     Class0 = None
@@ -369,7 +369,7 @@ A class is a blueprint that represents an object, it is a collection of function
     ```
     The tests pass! Something is odd here, what is the difference between [Classes](./CLASSES.md) and [Functions](./FUNCTIONS.md)? Why are we writing a different set of tests for Classes if the solutions are the same?
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 - let us make it a drill. Add lines to `test_defining_functions_to_solve_attribute_errors` in the `TestAttributeError` class in `tests/test_attribute_error.py` until we have one for `module.Class99()`, there will be 100 tests in total
     ```python
@@ -395,7 +395,7 @@ A class is a blueprint that represents an object, it is a collection of function
 
 ## Solve AttributeError by defining an Attribute in a Class
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 - We add a new test to the `TestAttributeError` class in `test_attribute_error.py`
     ```python
@@ -408,7 +408,7 @@ A class is a blueprint that represents an object, it is a collection of function
     E       AttributeError: module 'module' has no attribute 'Class'
     ```
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - update `module.py` with a variable
     ```python
@@ -465,7 +465,7 @@ A class is a blueprint that represents an object, it is a collection of function
     ```
     Eureka! The Tests pass!!
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 - The current solution for `test_defining_classes_to_solve_attribute_errors` was done by defining functions but the test says `definining_classes`. let us update those tests to use the proper way of defining [classes](./CLASSES.md) that we just learned. Update `module.py` to use `class` instead of `def` e.g.
     ```python
@@ -504,7 +504,7 @@ A class is a blueprint that represents an object, it is a collection of function
 
 ## Solve AttributeError by defining a Method(Function) in a Class
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 - we add a new test to the `TestAttributeError` class in `test_attribute_error.py`
     ```python
@@ -517,7 +517,7 @@ A class is a blueprint that represents an object, it is a collection of function
     E       AttributeError: type object 'Class' has no attribute 'method_0'
     ```
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - Update the class `Class` in `module.py`
     ```python
@@ -540,7 +540,7 @@ A class is a blueprint that represents an object, it is a collection of function
     ```
     Fantastic! the terminal has all tests passing.
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 You know the "drill", update `test_defining_functions_in_classes_to_solve_attribute_errors` in `TestAttributeError` in `test_attribute_error.py` with more lines until we have 100 tests ending with one for `module.Class.method_99()`
 ```python

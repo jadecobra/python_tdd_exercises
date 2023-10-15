@@ -3,10 +3,10 @@
 We will step through creating a [Test Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) Environment in python
 
 The Test Driven Development mantra paraphrased is
-    <span style="color:red">**RED**</span> <span style="color:green">**GREEN**</span> <span style="color:orange">**REFACTOR**</span>
-- <span style="color:red">**RED**</span>: make it fail - we write a failing test to make sure our test works
-- <span style="color:green">**GREEN**</span>: make it pass - we write only the code necessary to make the test pass
-- <span style="color:orange">**REFACTOR**</span>: make it better - we make the code/tests better
+    **RED** **GREEN** **REFACTOR**
+- **RED**: make it fail - we write a failing test to make sure our test works
+- **GREEN**: make it pass - we write only the code necessary to make the test pass
+- **REFACTOR**: make it better - we make the code/tests better
 
 ## Requirements
 
@@ -51,7 +51,7 @@ The Test Driven Development mantra paraphrased is
 
 ---
 
-## <span style="color:red">**RED**</span>: make it fail
+## **RED**: make it fail
 
 - We are ready to begin writing our first test. Open up `project_name/tests/test_<PROJECT_NAME>.py` in your Interactive Development Environment(IDE) and type the following
     ```python
@@ -95,9 +95,9 @@ The Test Driven Development mantra paraphrased is
 
 *CONGRATULATIONS!* You have written your first test.
 
-Following the iterative process of <span style="color:red">**RED**</span> <span style="color:green">**GREEN**</span> <span style="color:orange">**REFACTOR**</span>, we are currently <span style="color:red">**RED**</span>.
+Following the iterative process of **RED** **GREEN** **REFACTOR**, we are currently **RED**.
 The error provides important information about the code. Looking at it from the last line
-- `FAILED (failures=1)` The test failed - <span style="color:red">**RED**</span>
+- `FAILED (failures=1)` The test failed - **RED**
 - `Ran 1 test in 0.000s` tells us how long it took to run the test
 - `AssertionError: True is not false` The error is an [AssertionError](./ASSERTION_ERROR.md) which is raised by python when an assert statement is `False`, in this case `True is not false`
 - `self.assertFalse(True)` the line of code that caused the failure
@@ -112,7 +112,7 @@ The error provides important information about the code. Looking at it from the 
 
 ---
 
-## <span style="color:green">**GREEN**</span>: make it pass
+## **GREEN**: make it pass
 
 - as part of our practice we will keep a list of Errors/[Exceptions](https://docs.python.org/3/library/exceptions.html) encountered as we go through our python journey. This will help us become better python programmers as we will be familiar with the cause and solutions to these exceptions. Add [AssertionError](./ASSERTION_ERROR.md) to the list
     ```python
@@ -142,11 +142,11 @@ The error provides important information about the code. Looking at it from the 
     OK
     ```
 
-<span style="color:green">*CONGRATULATIONS!*</span> You have a passing test. We are <span style="color:green">**GREEN**</span>
+*CONGRATULATIONS!* You have a passing test. We are **GREEN**
 
 ---
 
-## <span style="color:orange">**REFACTOR**</span>: make it better
+## **REFACTOR**: make it better
 
 We can make code better by using the
 - [Abstraction Principle](https://en.wikipedia.org/wiki/Abstraction_principle_(computer_programming))

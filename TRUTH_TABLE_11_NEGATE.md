@@ -10,7 +10,7 @@ We will continue to step through learning conditional statements in python using
 
 ## Negate First
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 add a test for negate first to `TestBinaryOperations`
 
@@ -24,7 +24,7 @@ add a test for negate first to `TestBinaryOperations`
 
 the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - add a function definition to `truth_table.py`
     ```python
@@ -45,7 +45,7 @@ the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
     ```
     all the tests pass
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 - use implied conditional testing
     ```python
@@ -72,7 +72,7 @@ the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
 
 ## Negate Second
 
-### <span style="color:red">**RED**</span>: make it fail
+### **RED**: make it fail
 
 add a test for negate second to `TestBinaryOperations`
 
@@ -86,7 +86,7 @@ add a test for negate second to `TestBinaryOperations`
 
 the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
 
-### <span style="color:green">**GREEN**</span>: make it pass
+### **GREEN**: make it pass
 
 - add a function definition to `truth_table.py`
     ```python
@@ -109,7 +109,7 @@ the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
     ```
     All tests pass
 
-### <span style="color:orange">**REFACTOR**</span>: make it better
+### **REFACTOR**: make it better
 
 I don't think we can make it better. let us update what we know so far
 
