@@ -9,15 +9,19 @@ The Test Driven Development mantra paraphrased is
 - **REFACTOR**: make it better - we make the code/tests better
 
 # Table of Contents
-1. [Requirements](##Requirements)
-2. [Setup](##Setup)
-3. [RED: make it fail](##RED:makeit fail)
-4. [Fourth Example](#fourth-examplehttpwwwfourthexamplecom)
+1. [Requirements](#requirements)
+2. [Setup](#setup)
+3. [**RED**: make it fail](#red-make-it-fail)
+4. [**GREEN**: make it pass](#green-make-it-pass)
+5. [**REFACTOR**: make it better](#refactor-make-it-better)
+    - [Automatically Run Tests](#how-to-automatically-run-tests)
+        - [Create a Virtual Environment](#create-a-virtual-environment)
+        - [Activate a Virtual Environment](#activate-a-virtual-environment)
 
 ## Requirements
 
 - [download and install python](https://www.python.org/downloads/)
-- an Interactive Development Environment(IDE) - Here are a few options
+- download and install an Interactive Development Environment(IDE) - Here are a few options
     - [VSCode in a Browser](http://vscode.dev)
     - [Download VSCode](https://code.visualstudio.com/download)
     - [Download PyCharm](https://www.jetbrains.com/pycharm/download/#section=mac)
@@ -26,9 +30,12 @@ The Test Driven Development mantra paraphrased is
 
 ## Setup
 
-> *Are you on a Windows machine?*
-> - [install Git](https://github.com/git-for-windows/git/releases/download/v2.41.0.windows.3/Git-2.41.0.3-32-bit.exe)
-> - install WSLv2 by running the following in a terminal - `wsl --install`
+> *The following are required if you on a Windows machine*
+> - [download and install Git](https://github.com/git-for-windows/git/releases/download/v2.41.0.windows.3/Git-2.41.0.3-32-bit.exe)
+> - open a command line or PowerShell terminal and install WSLv2 by typing
+>   ```shell
+>   wsl --install`
+>   ```
 > - run subsequent commands in WSL
 
 ### Setup File Structure
@@ -168,7 +175,7 @@ How do we avoid this repetition and focus on tests and solutions?
 
 ### How to Automatically Run Tests
 
-#### Setup a Virtual Environment
+#### Create a Virtual Environment
 
 > *Are you on a Windows machine? If you are not using WSL*
 > - replace `python3` in the examples with `python`
@@ -216,7 +223,7 @@ You just created a [virtual environment](https://docs.python.org/3/library/venv.
     ======================= 1 passed in 0.00s ============================
     ```
 
-#### How to activate a Virtual Environment
+#### Activate a Virtual Environment
 
 If you already have a virtual environment setup in a project, you can activate it by following the steps below
 - Open your terminal
@@ -224,3 +231,5 @@ If you already have a virtual environment setup in a project, you can activate i
 - activate the virtual environment by typing `source .venv/bin/activate`
 
 *CONGRATULATIONS!* You have successfully setup a python Test Driven Environment and can build anything you want. Go forth and conquer the world
+
+---
