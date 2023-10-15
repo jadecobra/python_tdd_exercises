@@ -10,16 +10,9 @@ The Test Driven Development mantra paraphrased is
 
 # Table of Contents
 1. [Requirements](##Requirements)
-2. [Example2](#example2)
-3. [Third Example](#third-example)
+2. [Setup](##Setup)
+3. [RED: make it fail](##RED:makeitfail)
 4. [Fourth Example](#fourth-examplehttpwwwfourthexamplecom)
-
-
-## Example
-## Example2
-## Third Example
-## [Fourth Example](http://www.fourthexample.com)
-
 
 ## Requirements
 
