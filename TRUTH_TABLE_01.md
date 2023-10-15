@@ -1,8 +1,9 @@
-# Write conditions in python
+# Conditions
 
-We will step through learning conditional statements in python using Test Driven Development using the [Truth Table](https://en.wikipedia.org/wiki/Truth_table)
+Sometimes we want programs to make decisions based on inputs or conditions, and can make this happen with conditional statements. Let us explore writing conditional statements in python with Test Driven Development using the [Truth Table](https://en.wikipedia.org/wiki/Truth_table) from mathematics
 
-We know that there are two boolean values
+There are two boolean values
+
 - `True`
 - `False`
 
@@ -14,11 +15,11 @@ We know that there are two boolean values
 
 ## Nullary Operations
 
-These operations take in no inputs and always return the same value. They are singleton [functions](./07_FUNCTIONS.md)
+Nullary operations do not take in inputs and always return the same value. They are singleton [functions](./07_FUNCTIONS.md)
 
 ### <span style="color:red">**RED**</span>: make it fail
 
-create a file named `test_truth_table.py` in the `tests` folder and add the following
+create a file named `test_truth_table.py` in the `tests` folder and add the text below
 
 ```python
 import unittest
@@ -30,53 +31,70 @@ class TestNullaryOperations(unittest.TestCase):
     def test_logical_true(self):
         self.assertTrue(truth_table.logical_true())
 ```
+
 the terminal updates to show a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md)
 
 ### <span style="color:green">**GREEN**</span>: make it pass
 
-- create a module named `truth_table.py` and the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
-- add a singleton function named `logical_true`
-    ```python
-    def logical_true():
-        return True
-    ```
-    the terminal updates to show passing tests
-- We are reminded that `True` is `True`
+- add [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md) to the list of exceptions encountered
+  ```python
+  # Exceptions Encountered
+  # AssertionError
+  # ModuleNotFoundError
+  ```
+- create a file named `truth_table.py` in the project folder and the terminal displays an [AttributeError](./ATTRIBUTE_ERROR.md) which we add to our list of exceptions encountered
+  ```python
+  # Exceptions Encountered
+  # AssertionError
+  # ModuleNotFoundError
+  # AttributeError
+  ```
+- add a singleton function named `logical_true` to `truth_table.py`
+  ```python
+  def logical_true():
+      return True
+  ```
+  the terminal updates to show passing tests and we are reminded that `True` is `True`
 
 ### <span style="color:orange">**REFACTOR**</span>: make it better
 
 let us add a test for `logical_false`
 
-- add a test to `TestNullaryOperations`
-    ```python
-    def test_logical_false(self):
-        self.assertFalse(truth_table.logical_false())
-    ```
-    the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
-- add a function definition to `truth_table.py`
-    ```python
-    def logical_false():
-        return True
-    ```
-    the terminal shows an [AssertionError](./ASSERTION_ERROR.md)
-- update the return value to `False` and the terminal updates to show passing tests
-    ```python
-    def logical_false():
-        return False
-    ```
-- We are again reminded that
-    - `False` is `False`
-    - `True` is `True`
+- add a test to `TestNullaryOperations` class in `test_truth_table.py`
+  ```python
+  def test_logical_false(self):
+      self.assertFalse(truth_table.logical_false())
+  ```
+  the terminal gives another [AttributeError](./ATTRIBUTE_ERROR.md) since there is no definition for `logical_false` in `truth_table.py`
+- add a function definition for `logical_false` to `truth_table.py`
+  ```python
+  def logical_false():
+      return True
+  ```
+  and the terminal shows an [AssertionError](./ASSERTION_ERROR.md) since `logical_false` currently returns a different value from what is expected
+- update the return value to `False` and the terminal shows passing tests
+  ```python
+  def logical_false():
+      return False
+  ```
+- We are again reminded that `False` is `False` and `True` is `True`
 
+---
 
 ## Unary Operations
 
-These take in one input and return the input, they are passthrough [functions](./07_FUNCTIONS.md)
+There are two unary operations
+
+- Logical Identity
+- Logical Negation
+
 ### Logical Identity
+
+A Logical Identity operation takes in an input and returns it as output, it is a passthrough [function](./07_FUNCTIONS.md)
 
 #### <span style="color:red">**RED**</span>: make it fail
 
-We add a new `TestCase` to `test_truth_table.py`
+Add a new `TestCase` to `test_truth_table.py`
 
 ```python
 
@@ -88,46 +106,55 @@ class TestUnaryOperations(unittest.TestCase):
         self.assertFalse(truth_table.logical_identity(False))
 ```
 
-the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
+the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md) because there is no definition for `logical_identity` in `truth_table.py`
 
 #### <span style="color:green">**GREEN**</span>: make it pass
 
-add a function definition to `truth_table.py`
+add a function definition for `logical_identity` to `truth_table.py`
+
 ```python
 def logical_identity(value):
     return value
 ```
+
 the terminal updates to show passing tests
 
 ### Logical Negation
 
+A Logical Negation operation takes in an input and returns the opposite of the input as output
+
 #### <span style="color:red">**RED**</span>: make it fail
 
-add a test for `logical_negation`
+add a test for `logical_negation` to `test_truth_table.py`
+
 ```python
     def test_logical_negation(self):
         self.assertFalse(truth_table.logical_negation(True))
         self.assertTrue(truth_table.logical_negation(False))
 ```
-the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
+
+the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md), there is no definition for `logical_negation` in `truth_table.py`
 
 #### <span style="color:green">**GREEN**</span>: make it pass
 
-- update `truth_table.py` with a definition for `logical_negation`
-    ```python
-    def logical_negation(value):
-        return value
-    ```
-    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md). The `logical_negation` function returns the value it receives as input.
-- How do we make the function return the opposite of what it receives? use the `not` keyword. update `logical_negation` to return the opposite of the `bool` value it returns
-    ```python
-    def logical_negation(value):
-        return not value
-    ```
-    the terminal updates to show passing tests
+- update `truth_table.py` with a definition for `logical_negation` using the solution we had for `logical_identity`
+  ```python
+  def logical_negation(value):
+      return value
+  ```
+  the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md). The `logical_negation` function returns the value it receives as input but the test expects it to return the opposite
+- we use the `not` keyword to make the function return the opposite of what it receives. Update the return statement in `logical_negation` to return the opposite of the value it receives
+  ```python
+  def logical_negation(value):
+      return not value
+  ```
+  the terminal updates to show passing tests
 
 Reviewing what we know so far
-    - `True` is `not False`
-    - `False` is `not True`
-    - `False` is `False`
-    - `True` is `True`
+
+- `True` is `not False`
+- `False` is `not True`
+- `False` is `False`
+- `True` is `True`
+
+So far we have not written any conditional statements, we have only covered the boolean values and their opposites. Read [Logical Conjunction](./TRUTH_TABLE_02_LOGICAL_CONJUNCTION.md) next
