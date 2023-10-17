@@ -269,7 +269,7 @@ the terminal updates to show a `NameError` and we update our running list of exc
     import exceptions
     ```
     the terminal now gives us a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md)
-- create a file named `exceptions.py` in the `<PROJECT_NAME>` folder, and the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
+- create a file named `exceptions.py` in the `{PROJECT_NAME}` folder, and the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 - update `exceptions.py` with the name of the attribute called in the test, and the terminal updates to show a `NameError` since we have not defined `raises_exception_error`
     ```python
     raises_exception_error

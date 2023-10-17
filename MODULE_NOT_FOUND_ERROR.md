@@ -143,24 +143,24 @@ For more information about imports you can read [The Import Statement](https://d
 
 ### **GREEN**: make it pass
 
-- create `module_0.py` in the `<PROJECT_NAME>` folder and the terminal shows
+- create `module_0.py` in the `{PROJECT_NAME}` folder and the terminal shows
     ```python
         import module_1
     E   ModuleNotFoundError: No module named 'module_1'
     ```
-- create `module_1.py` in the `<PROJECT_NAME>` folder, the terminal shows the same error for a new line
+- create `module_1.py` in the `{PROJECT_NAME}` folder, the terminal shows the same error for a new line
     ```python
         import module_2
     E   ModuleNotFoundError: No module named 'module_2'
     ```
-- create `module_2.py` in the `<PROJECT_NAME>` folder, the terminal will update to show the following
+- create `module_2.py` in the `{PROJECT_NAME}` folder, the terminal will update to show the following
     ```python
         import module_3
     E   ModuleNotFoundError: No module named 'module_3'
     ```
 - this is the pattern, repeat it until you have created `module_99.py` and the terminal will update to show a passing test
     ```python
-    tests/test_<PROJECT_NAME>.py .                           [100%]
+    tests/test_{PROJECT_NAME}.py .                           [100%]
 
     ================= 1 passed in 0.06s =========================
     ```

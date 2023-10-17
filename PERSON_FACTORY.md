@@ -34,7 +34,7 @@ the terminal updates to show a `ModuleNotFoundError` and we add it to our list o
 
 ### **GREEN**: make it pass
 
-- create a file named `person.py` in the `<PROJECT_NAME>` folder and the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md) which we add to our list of exceptions
+- create a file named `person.py` in the `{PROJECT_NAME}` folder and the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md) which we add to our list of exceptions
     ```python
     # Exceptions Encountered
     # AssertionError

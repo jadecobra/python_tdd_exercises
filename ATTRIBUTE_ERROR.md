@@ -41,7 +41,7 @@ What does the code above mean?
 
 If you left `pytest-watch` running from [Setup a Test Driven Development Environment](./TDD_SETUP.md) you should see a message similar to the following in the terminal
 ```shell
-ImportError while importing test module '/<PATH_TO_PROJECT_NAME>/<PROJECT_NAME>/tests/test_attribute_error.py'.
+ImportError while importing test module '/<PATH_TO_PROJECT_NAME>/{PROJECT_NAME}/tests/test_attribute_error.py'.
 Hint: make sure your test modules/packages have valid python names.
 Traceback:
 ...
@@ -60,7 +60,7 @@ We practice solving this error in [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR
     # AssertionError
     # ModuleNotFoundError
     ```
-- create `module.py` in the `<PROJECT_NAME>` folder and the terminal will update to show the following
+- create `module.py` in the `{PROJECT_NAME}` folder and the terminal will update to show the following
     ```python
     self = <tests.test_attribute_error.TestAttributeError testMethod=test_defining_variables_to_solve_attribute_errors>
 
@@ -112,7 +112,7 @@ We practice solving this error in [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR
     collected 2 items
 
     tests/test_attribute_error.py .                                             [ 50%]
-    tests/test_<PROJECT_NAME>.py .                                              [100%]
+    tests/test_{PROJECT_NAME}.py .                                              [100%]
 
     ============================== 2 passed in 0.03s==================================
     ```
