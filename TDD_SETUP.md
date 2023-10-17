@@ -38,7 +38,7 @@ The Test Driven Development mantra paraphrased is
 >   ```
 > - run subsequent commands in WSL
 
-### Setup File Structure
+### File Structure
 
 - type the following in a terminal to setup the directory structure
     ```shell
@@ -240,13 +240,14 @@ We can make code better by using the
 - [Abstraction Principle](https://en.wikipedia.org/wiki/Abstraction_principle_(computer_programming))
 - [Do Not Repeat Yourself (DRY) Principle](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 
+My take on the principles above can be summed up in one sentence as `repeat then generalize`. When we repeat something, there is an opportunity to take out the parts that are common to the repetitions and make that into a thing that can be used by both or subsequent examples we encounter.
+
 So far there's not much to improve on what has been written but there has been duplication.
 - we ran `python3 -m unittest` to see the test fail
 - we ran `python3 -m unittest` to see the test pass
 - we will run `python3 -m unittest` again to make sure our improvements do not break previous passing tests
 
-This means for every test we introduce we have to run that command 3 times.
-How do we avoid this repetition and focus on tests and solutions?
+This means for every test we introduce we have to run `python -m unittest` 3 times, avoiding this repetition would save us time and effort so we can focus on tests and solutions
 
 ### How to Automatically Run Tests
 
@@ -303,8 +304,50 @@ You just created a [virtual environment](https://docs.python.org/3/library/venv.
 If you already have a virtual environment setup in a project, you can activate it by following the steps below
 - Open your terminal
 - change directory to {PROJECT_NAME}
-- activate the virtual environment by typing `source .venv/bin/activate`
+- activate the virtual environment by typing `source .venv/bin/activate` in the terminal
 
-*CONGRATULATIONS!* You have successfully setup a python Test Driven Environment and can build anything you want. Go forth and conquer the world
+*CONGRATULATIONS!* You have successfully setup a python Test Driven Environment and can build anything you want. "Go forth and conquer the world"
 
 ---
+
+## Automatically create a Python Test Driven Development Environment
+
+You made it this far and have become the greatest programmer in the world, let us follow the practice of removing duplication. We can write a program that contains all the steps we did above, and call that program everytime we want to setup a new environment
+- open a new file in your Interactive Development Environment(IDE) and type the following then save the file with a name that describes what it does so you remember later, e.g. `setupPythonTdd.sh`
+
+    ```shell
+    project_name=$1
+    mkdir -p $project_name/tests
+    cd $project_name
+    touch $project_name.py
+    touch tests/__init__.py
+
+    test_file=tests/test_$project_name.py
+
+    cat << DELIMITER > $test_file
+    from unittest import TestCase
+
+    class Test$project_name(TestCase):
+
+        def test_failure(self):
+            self.assertTrue(False)
+    DELIMITER
+
+    echo "pytest-watch" > requirements.txt
+
+    python3 -m pip install --upgrade pip
+    python3 -m venv .venv
+    source .venv/bin/activate
+    python3 -m pip install -r requirements.txt
+    pytest-watch
+    ```
+- make the program executable by typing this command in the terminal
+    ```shell
+    chmod +x setupPythonTdd.sh
+    ```
+- create a Test Driven Development environment by providing a value for the `$project_name` variable when you call the program e.g. typing this command in the terminal will setup the environment for a project named `the_greatest_application`
+    ```
+    ./setupPythonTdd the_greatest_application
+    ```
+
+This is one of the advantages of programming, we can take a series of actions and make them a one line command that the computer does on our behalf
