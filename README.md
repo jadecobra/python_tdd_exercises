@@ -1,6 +1,6 @@
 # Python Test Driven Development Exercises
 
-This book contains a few exercises to get you familiar with Python using Test Driven Development. It is written to help anyone who is just starting with the language using tests and drills that teach concepts but also allow exploration. It is also for anyone who is new to Test Driven Development in python.
+This book contains a few exercises to get you familiar with Python using Test Driven Development. It is written to help anyone who is just starting with the language using tests and drills to learn and explore concepts. 
 
 ## How to use the book
 
