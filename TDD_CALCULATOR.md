@@ -229,7 +229,8 @@ There are a few scenarios we can consider from the users' perspective. If our us
                 1
             )
     ```
-- **RED**: make it fail by adding a new test to `test_addition` in `test_calculator.py`
+- **RED**: make it fail
+    add a new test to `test_addition` in `test_calculator.py`
     ```python
         def test_addition(self):
             self.assertEqual(
@@ -245,7 +246,8 @@ There are a few scenarios we can consider from the users' perspective. If our us
     ```python
     E       AssertionError: 1 != 0
     ```
-- **GREEN**: make it pass by updating the `add` function in `calculator.py` to add up the inputs
+- **GREEN**: make it pass
+    update the `add` function in `calculator.py` to add up the inputs
     ```python
     def add(x, y):
         return x + y
@@ -256,7 +258,8 @@ There are a few scenarios we can consider from the users' perspective. If our us
 
     ====================== 2 passed in 0.01s ==============
     ```
-- **REFACTOR**: Make it Better by randomizing the inputs to make sure the function behaves the way we expect for any given numbers. Update `test_calculator.py` to use the [random](https://docs.python.org/3/library/random.html?highlight=random#module-random) library
+- **REFACTOR**: make it better
+    we can randomize the inputs to test that the function behaves the way we expect for any given numbers. Update `test_calculator.py` to use python's [random](https://docs.python.org/3/library/random.html?highlight=random#module-random) library
     ```python
     import calculator
     import random
@@ -275,7 +278,7 @@ There are a few scenarios we can consider from the users' perspective. If our us
     ```
     - we assign a variable named `x` to a random integer between -1 and 1 to represent the case of negative numbers, zero and positive numbers
     - we assign a variable named `y` to a random integer between -1 and 1 just like above
-    - we then test that when these two variables are given to the `add` function as inputs it returns the sum of the 2 variables as output
+    - we test that when these two variables are given to the `add` function as inputs it returns the sum of the 2 variables as output
 
     the terminal still displays passing tests
     ```python
@@ -284,7 +287,7 @@ There are a few scenarios we can consider from the users' perspective. If our us
     ================ 2 passed in 0.01s ===========================
     ```
     - we no longer need the previous tests because this new test covers the scenarios for zero, negative and positive numbers
-    - we can remove `test addition` from our TODO list since it passed to mark the task as completed
+    - we can remove `test addition` from our TODO list since it passed, marking the task as completed
     ```python
     # TODO
     # test subtraction
@@ -294,7 +297,7 @@ There are a few scenarios we can consider from the users' perspective. If our us
 
 That's the Test Driven Development pattern at work **RED** **GREEN** **REFACTOR**
 
-We write a failing test, then make it pass by any means necessary, and make it better repeating the process until we have a working program that has been tested and gives us confidence it will behave in an expected way
+We make a test that fails, then make it pass by any means necessary, and make it better, repeating the process until we have a working program that has been tested and gives us confidence it will behave in an expected way
 
 ---
 
@@ -427,17 +430,17 @@ We will now add a failing test since addition works and our next action item fro
                 self.x-self.y
             )
     ```
-    the x and y variables are now initialized once as class attributes that can be referenced later in every test using `self.x` and `self.y`, the terminal shows all tests are still passing
+    our `x` and `y` variables are now initialized once as class attributes that can be referenced later in every test using `self.x` and `self.y`, the terminal shows all tests are still passing
 
 ---
 
 ## Test Multiplication
 
-We will now move on test multiplication, the next item on the TODO list
+Moving on to test multiplication, the next item on the TODO list
 
 ### **RED** : make it fail
 
-we add a failing test to `test_calculator.py` named `test_multiplication`
+add a failing test to `test_calculator.py` named `test_multiplication`
 ```python
 import unittest
 import calculator
@@ -485,7 +488,7 @@ def multiply(x, y):
     return x * y
 ```
 
-SUCCESS! The terminal gives passing tests and we remove `test_multiplication` from the TODO list
+SUCCESS! The terminal shows passing tests and we remove `test_multiplication` from the TODO list
 
 ```python
 # TODO
@@ -494,13 +497,13 @@ SUCCESS! The terminal gives passing tests and we remove `test_multiplication` fr
 
 ### **REFACTOR**: make it better
 
-Can you think of a way to make the code we have better?
+Can you think of a way to make the code better?
 
 ---
 
 ## Test Division
 
-Let us now add the final test from our TODO list, the division test
+On to the final test from the TODO list - division
 
 ### **RED** : make it fail
 
@@ -562,6 +565,8 @@ Let us now add the final test from our TODO list, the division test
         return x / y
     ```
     here our terminal response varies, When `y` is 0 we get a [ZeroDivisionError](https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError) like below
+
+
     ```python
     x = 1, y = 0
 
@@ -569,7 +574,7 @@ Let us now add the final test from our TODO list, the division test
     >       return x / y
     E       ZeroDivisionError: division by zero
     ```
-- we add `ZeroDivisionError` to the list of exceptions encountered
+- add `ZeroDivisionError` to the list of exceptions encountered
     ```python
     # Exceptions Encountered
     # AssertionError
@@ -578,60 +583,62 @@ Let us now add the final test from our TODO list, the division test
     # ZeroDivisionError
     ```
 
-#### Test for Errors
-- **RED** : make it fail
+## Test for Errors
 
-    we add a failing test to `test_calculator.py` to intentionally trigger a `ZeroDivisionError` and comment out our previous test that sometimes fails, this helps us remove the variability from the test
-    ```python
-        def test_division(self):
-            self.assertEqual(
-                calculator.divide(self.x, 0),
-                self.x/0
-            )
-            # self.assertEqual(
-            #     calculator.divide(self.x, self.y),
-            #     self.x/self.y
-            # )
-    ```
-    the terminal confirms our expectations with a failure for any value of `x`
-    ```python
-    x = 0, y = 0
+### **RED** : make it fail
 
-        def divide(x, y):
-    >       return x / y
-    E       ZeroDivisionError: division by zero
-    ```
-- **GREEN** : make it pass
+add a failing test to `test_calculator.py` to intentionally trigger a `ZeroDivisionError` and comment out our previous test that sometimes fails, this helps us remove the variability of the test
+```python
+    def test_division(self):
+        self.assertEqual(
+            calculator.divide(self.x, 0),
+            self.x/0
+        )
+        # self.assertEqual(
+        #     calculator.divide(self.x, self.y),
+        #     self.x/self.y
+        # )
+```
+the terminal confirms our expectations with a failure for any value of `x`
+```python
+x = 0, y = 0
 
-    we update `test_calculator.py` to confirm that a `ZeroDivisionError` is raised when we try to divide a number by 0 by using `self.assertRaises`
-    ```python
-        def test_division(self):
-            with self.assertRaises(ZeroDivisionError):
-                calculator.divide(self.x, 0)
-            # self.assertEqual(
-            #     calculator.divide(self.x, self.y),
-            #     self.x/self.y
-            # )
-    ```
-    the terminal reveals passing tests, and we now have a way to `catch` Exceptions when testing, which allows us to confirm that the code raises an error, and allows our other tests to continue when we encounter the expected failure
+    def divide(x, y):
+>       return x / y
+E       ZeroDivisionError: division by zero
+```
 
-- **REFACTOR**: make it better
-    we can update `test_division` to test other division cases when the divisor is not 0 by making sure our random variable `y` is never 0
-    ```python
-        def test_division(self):
-            with self.assertRaises(ZeroDivisionError):
-                calculator.divide(self.x, 0)
-            while self.y == 0:
-                self.y = random.randint(-1, 1)
-            self.assertEqual(
-                calculator.divide(self.x, self.y),
-                self.x/self.y
-            )
-    ```
-    - `while self.y == 0:` creates a loop that repeats whatever indented code follows as long as `self.y` is equal to `0`
-    - `self.y = random.randint(-1, 1)` assigns a random variable to `self.y` that could be -1, 0 or 1
-    - our loop tells python to assign a new random variable to `self.y` as long as `self.y` is equal to 0
-- remove `test_division` from our TODO list since our tests all pass
+## **GREEN** : make it pass
+
+update `test_calculator.py` to confirm that a `ZeroDivisionError` is raised when we try to divide a number by `0` by using `self.assertRaises`
+```python
+def test_division(self):
+    with self.assertRaises(ZeroDivisionError):
+        calculator.divide(self.x, 0)
+    # self.assertEqual(
+    #     calculator.divide(self.x, self.y),
+    #     self.x/self.y
+    # )
+```
+the terminal reveals passing tests, and we now have a way to `catch` Exceptions when testing, allowing us to confirm that the code raises an error, and the other tests to continue when they encounter the expected failure
+
+## **REFACTOR**: make it better
+update `test_division` to test other division cases when the divisor is not 0 by making sure our random variable `y` is never 0
+```python
+def test_division(self):
+    with self.assertRaises(ZeroDivisionError):
+        calculator.divide(self.x, 0)
+    while self.y == 0:
+        self.y = random.randint(-1, 1)
+    self.assertEqual(
+        calculator.divide(self.x, self.y),
+        self.x/self.y
+    )
+```
+- `while self.y == 0:` creates a loop that repeats whatever indented code follows as long as `self.y` is equal to `0`
+- `self.y = random.randint(-1, 1)` assigns a random variable to `self.y` that could be -1, 0 or 1
+- our loop tells python to assign a new random variable to `self.y` as long as `self.y` is equal to 0
+- remove `test_division` from the TODO list since all the tests pass
 
 ---
 
