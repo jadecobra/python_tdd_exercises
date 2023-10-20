@@ -155,4 +155,4 @@ Reviewing what we know so far
 - `False` is `False`
 - `True` is `True`
 
-We have not written any conditional statements yet, only boolean values and their opposites. Read [Logical Conjunction](./TRUTH_TABLE_02_LOGICAL_CONJUNCTION.md) next
+We have not written any conditional statements yet, only boolean values and their opposites. We will write some in [Logical Conjunction](./TRUTH_TABLE_02_LOGICAL_CONJUNCTION.md) next
