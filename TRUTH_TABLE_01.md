@@ -58,12 +58,10 @@ the terminal updates to show a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md
 
 ### REFACTOR: make it better
 
-let us add a test for `logical_false`
-
-- add a test to `TestNullaryOperations` class in `test_truth_table.py`
+- let us add a test for `logical_false` to teh `TestNullaryOperations` class in `test_truth_table.py`
   ```python
-  def test_logical_false(self):
-      self.assertFalse(truth_table.logical_false())
+    def test_logical_false(self):
+        self.assertFalse(truth_table.logical_false())
   ```
   the terminal gives another [AttributeError](./ATTRIBUTE_ERROR.md) since there is no definition for `logical_false` in `truth_table.py`
 - add a function definition for `logical_false` to `truth_table.py`
@@ -71,7 +69,7 @@ let us add a test for `logical_false`
   def logical_false():
       return True
   ```
-  and the terminal shows an [AssertionError](./ASSERTION_ERROR.md) since `logical_false` currently returns a different value from what is expected
+  and the terminal shows an [AssertionError](./ASSERTION_ERROR.md) since the `logical_false` function currently returns a different value from what is expected
 - update the return value to `False` and the terminal shows passing tests
   ```python
   def logical_false():
@@ -121,7 +119,7 @@ the terminal updates to show passing tests
 
 ### Logical Negation
 
-A Logical Negation operation takes in an input and returns the opposite of the input as output
+A Logical Negation operation takes in an input and returns its opposite as output
 
 #### RED: make it fail
 
@@ -145,8 +143,8 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md), there is
   the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md). The `logical_negation` function returns the value it receives as input but the test expects it to return the opposite
 - we use the `not` keyword to make the function return the opposite of what it receives. Update the return statement in `logical_negation` to return the opposite of the value it receives
   ```python
-  def logical_negation(value):
-      return not value
+def logical_negation(value):
+    return not value
   ```
   the terminal updates to show passing tests
 
@@ -157,4 +155,4 @@ Reviewing what we know so far
 - `False` is `False`
 - `True` is `True`
 
-So far we have not written any conditional statements, we have only covered the boolean values and their opposites. Read [Logical Conjunction](./TRUTH_TABLE_02_LOGICAL_CONJUNCTION.md) next
+We have not written any conditional statements yet, only boolean values and their opposites. Read [Logical Conjunction](./TRUTH_TABLE_02_LOGICAL_CONJUNCTION.md) next
