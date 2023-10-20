@@ -17,7 +17,6 @@ The Test Driven Development mantra paraphrased is
     - [Automatically Run Tests](#how-to-automatically-run-tests)
         - [Create a Virtual Environment](#create-a-virtual-environment)
         - [Activate a Virtual Environment](#activate-a-virtual-environment)
-6. []
 
 ## Requirements
 
@@ -128,7 +127,7 @@ The error provides important information about the code. Looking at it from the 
 
 ## **GREEN**: make it pass
 
-- I think keeping a list of Errors/[Exceptions](https://docs.python.org/3/library/exceptions.html) encountered as we go through our python journey will help us become better python programmers as we will be familiar with the cause and inevitably the solutions we come up with to these exceptions. Add [AssertionError](./ASSERTION_ERROR.md) to the list
+- I think we should keep a list of Errors/Exceptions encountered as we go through our python journey to help us become better python programmers, it will help us keep track of the cause and inevitably the solutions we come up with to these exceptions. Add [AssertionError](./ASSERTION_ERROR.md) to the list
     ```python
     import unittest
 
@@ -166,10 +165,15 @@ We can make code better by using the
 - [Abstraction Principle](https://en.wikipedia.org/wiki/Abstraction_principle_(computer_programming))
 - [Do Not Repeat Yourself (DRY) Principle](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 
-So far there's not much to improve on what has been written but there has been duplication.
+My take on the principles above can be summed up as `repeat then generalize`. When we repeat something, there is an opportunity to take out the parts that are common to the repetitions and make that into a thing that can be used by both or subsequent examples we encounter, to achieve this I ask two questions
+- What is similar? this tells me what parts are common in the examples
+- What is different? this tells me what parts are specific to the example
+Another way to think of it is to note which parts are `constant` or `changing`
+
+So far there is not much to improve on what has been written but there has been duplication.
 - we ran `python3 -m unittest` to see the test fail
 - we ran `python3 -m unittest` to see the test pass
-- we will run `python3 -m unittest` again to make sure our improvements do not break previous passing tests
+- we run `python3 -m unittest` again to make sure our improvements do not break previous passing tests
 
 This means for every test we introduce we have to run that command 3 times.
 How do we avoid this repetition and focus on tests and solutions?
@@ -178,15 +182,15 @@ How do we avoid this repetition and focus on tests and solutions?
 
 #### Create a Virtual Environment
 
-> *Are you on a Windows machine? If you are not using WSL*
-> - replace `python3` in the examples with `python`
-> - replace `source .venv/bin/activate` in the example below with `.venv/scripts/activate`
+> *Are you on a Windows machine? If you are not using WSL make the following changes to the examples*
+> - replace `python3` with `python`
+> - replace `source .venv/bin/activate` with `.venv/scripts/activate`
 
-- in your editor create a file named `requirements.txt` and add this line
+- create a file named `requirements.txt` in your editor and add this line
     ```python
     pytest-watch
     ```
-- after saving the file, type the following in the terminal
+- save the file and type the following in the terminal
     ```shell
     python3 -m venv .venv
     source .venv/bin/activate
@@ -282,7 +286,7 @@ This means for every test we introduce we have to run `python -m unittest` 3 tim
 
 You just created a [virtual environment](https://docs.python.org/3/library/venv.html)
 - `python3 -m venv .venv` creates a virtual environment named `.venv` - you can use any name you want
-- [venv](https://docs.python.org/3/library/venv.html#module-venv) is a python module for creating virtual environments, which is an isolated `subfolder` that holds any dependencies we install. It helps keep our dependencies for a specific project in the same place as the project
+- [venv](https://docs.python.org/3/library/venv.html#module-venv) is a python module for creating virtual environments, which is an isolated `subfolder` that holds any dependencies installed. It helps keep dependencies for a specific project in the same place as the project
 - `source .venv/bin/activate` or `.venv/scripts/activate` activates the virtual environment
 - `pip install --upgrade pip` - upgrades `pip` the [python package manager](https://pypi.org/project/pip/) to the latest version
 - `pip install --requirement requirements.txt` installs any python libraries listed in `requirements.txt`
