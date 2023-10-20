@@ -17,7 +17,7 @@ There are two boolean values
 
 Nullary operations do not take in inputs and always return the same value. They are singleton [functions](./07_FUNCTIONS.md)
 
-### **RED**: make it fail
+### RED: make it fail
 
 create a file named `test_truth_table.py` in the `tests` folder and add the text below
 
@@ -34,7 +34,7 @@ class TestNullaryOperations(unittest.TestCase):
 
 the terminal updates to show a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md)
 
-### **GREEN**: make it pass
+### GREEN: make it pass
 
 - add [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md) to the list of exceptions encountered
   ```python
@@ -56,7 +56,7 @@ the terminal updates to show a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md
   ```
   the terminal updates to show passing tests and we are reminded that `True` is `True`
 
-### **REFACTOR**: make it better
+### REFACTOR: make it better
 
 let us add a test for `logical_false`
 
@@ -92,7 +92,7 @@ There are two unary operations
 
 A Logical Identity operation takes in an input and returns it as output, it is a passthrough [function](./07_FUNCTIONS.md)
 
-#### **RED**: make it fail
+#### RED: make it fail
 
 Add a new `TestCase` to `test_truth_table.py`
 
@@ -108,7 +108,7 @@ class TestUnaryOperations(unittest.TestCase):
 
 the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md) because there is no definition for `logical_identity` in `truth_table.py`
 
-#### **GREEN**: make it pass
+#### GREEN: make it pass
 
 add a function definition for `logical_identity` to `truth_table.py`
 
@@ -123,7 +123,7 @@ the terminal updates to show passing tests
 
 A Logical Negation operation takes in an input and returns the opposite of the input as output
 
-#### **RED**: make it fail
+#### RED: make it fail
 
 add a test for `logical_negation` to `test_truth_table.py`
 
@@ -135,7 +135,7 @@ add a test for `logical_negation` to `test_truth_table.py`
 
 the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md), there is no definition for `logical_negation` in `truth_table.py`
 
-#### **GREEN**: make it pass
+#### GREEN: make it pass
 
 - update `truth_table.py` with a definition for `logical_negation` using the solution we had for `logical_identity`
   ```python

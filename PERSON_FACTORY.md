@@ -10,7 +10,7 @@ This is an exercise in creating [dictionaries](./DICTIONARIES.md) with [function
 
 ## PHow to use dictionaries as factories in python
 
-### **RED**: make it fail
+### RED: make it fail
 
 create a file named `test_person_factory.py` in the `tests` folder and add the following
 
@@ -32,7 +32,7 @@ the terminal updates to show a `ModuleNotFoundError` and we add it to our list o
 # ModuleNotFoundError
 ```
 
-### **GREEN**: make it pass
+### GREEN: make it pass
 
 - create a file named `person.py` in the `{PROJECT_NAME}` folder and the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md) which we add to our list of exceptions
     ```python
@@ -47,7 +47,7 @@ the terminal updates to show a `ModuleNotFoundError` and we add it to our list o
         return None
     ```
 
-### **REFACTOR**: make it better
+### REFACTOR: make it better
 
 - we will now add more details to `test_person_factory`
     ```python

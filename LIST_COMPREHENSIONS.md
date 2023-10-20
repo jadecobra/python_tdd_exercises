@@ -12,7 +12,7 @@ We will cover `list comprehensions` in python using Test Driven Development
 
 List comprehensions are a way to create lists from another iterable. It is a nice way to loop over elements and perform some operation
 
-### **RED**: make it fail
+### RED: make it fail
 
 add a file named `test_list_comprehension.py` to the `tests` folder
 
@@ -47,7 +47,7 @@ class TestListComprehensions(unittest.TestCase):
     E       + []
     ```
 
-### **GREEN**: make it pass
+### GREEN: make it pass
 
 update the tests with the expected values
 
@@ -64,7 +64,7 @@ update the tests with the expected values
 
 the tests pass
 
-### **REFACTOR**: make it better
+### REFACTOR: make it better
 
 - let us add another test to check what happens when we call the `list` keyword on the `collection_a` iterable
     ```python
@@ -132,7 +132,7 @@ the tests pass
 
 let us test creating a list with a for loop like the example above
 
-### **RED**: make it fail
+### RED: make it fail
 
 add a test to `TestListComprehensions`
 
@@ -151,7 +151,7 @@ add a test to `TestListComprehensions`
 
 the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) for the values of `a_list` after we loop through `collection` and add elements because it is no longer empty
 
-### **GREEN**: make it pass
+### GREEN: make it pass
 
 - update the right side of the test with the expected values
     ```python
@@ -199,7 +199,7 @@ the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md) for the v
 
 Now that we know how to create a `list` using `[]`, `list` and `for`, let us try creating a [list](./LISTS.md) using a `list comprehension`. It looks similar to a `for` loop but allows us to achieve the same thing with less words
 
-### **RED**: make it fail
+### RED: make it fail
 
 add a failing test to `TestListComprehensions`
 
@@ -222,7 +222,7 @@ add a failing test to `TestListComprehensions`
 
 the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 
-### **GREEN**: make it pass
+### GREEN: make it pass
 
 - update the values to make it pass
     ```python
@@ -279,7 +279,7 @@ and
 ```
 Is in the first case we have to declare a variable, create a loop then update the variable we declared, with the list comprehension we can achieve the same thing with less words/lines
 
-### **REFACTOR**: make it better
+### REFACTOR: make it better
 
 Let us explore what else we can do with a `list comprehension`
 

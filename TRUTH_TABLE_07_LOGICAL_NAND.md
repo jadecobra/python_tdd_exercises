@@ -10,7 +10,7 @@ We will continue to step through learning conditional statements in python using
 
 ## Logical NAND
 
-### **RED**: make it fail
+### RED: make it fail
 
 add a test for exclusive disjunction to `TestBinaryOperations`
 
@@ -24,7 +24,7 @@ add a test for exclusive disjunction to `TestBinaryOperations`
 
 the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
 
-### **GREEN**: make it pass
+### GREEN: make it pass
 
 - add a definition for the function to `truth_table.py` returning `True` since 3 out of the 4 cases return that value
     ```python
@@ -41,7 +41,7 @@ the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
     ```
     We are green! All tests pass
 
-### **REFACTOR**: make it better
+### REFACTOR: make it better
 
 - add an `else` to be explicit
     ```python
@@ -95,7 +95,7 @@ the terminal shows an [AttributeError](./ATTRIBUTE_ERROR.md)
     ```
     I don't think we can get simpler than this and all the tests are still passing
 
-*REVIEW*
+REVIEW
 We know that for any boolean operation involving 2 inputs - `p` and `q` which can take the values `True` or `False`
 - `logical_nand` is `not(p and q)`
 - `exclusive_disjunction` is `!=` aka opposite of `logical_equality`

@@ -18,7 +18,7 @@ What does it mean to call a function?
 
 ## Solve the TypeError in functions
 
-### **RED**: make it fail
+### RED: make it fail
 
 - Open a new file in the editor and save it as `tests/test_type_error.py` in the `tests` folder you created in [Setup a Test Driven Development Environment](./TDD_SETUP.md) and type the following in the file
 
@@ -75,7 +75,7 @@ What does it mean to call a function?
         - the number you provide is like `"a"` and hitting dial is like `()`
         We will practice this some more in [TDD_FUNCTIONS](./TDD_FUNCTIONS.md)
 
-### **GREEN**: make it pass
+### GREEN: make it pass
 
 Update `function_a` in `functions.py`
 ```python
@@ -84,7 +84,7 @@ def function_a(data):
 ```
 the terminal updates to show passing tests
 
-### **REFACTOR**: make it better
+### REFACTOR: make it better
 
 There's not much to do here but add more tests for practice.
 
@@ -133,13 +133,13 @@ There's not much to do here but add more tests for practice.
     ```
     the terminal updates to show all tests pass.
 
-*EXTRA*
+EXTRA
 - What's another solution to the above test?
 - How can we define a function that takes in any number of parameters? see [TDD_FUNCTIONS](./TDD_FUNCTIONS.md)
 
 ### let us add more tests
 
-#### **RED**: make it fail
+#### RED: make it fail
 
 update `TestTypeErrors` in `test_type_error.py` to add more tests
 ```python
@@ -150,7 +150,7 @@ the terminal updates to show
 AttributeError: module 'functions' has no attribute 'function_c'
 ```
 
-#### **GREEN**: make it pass
+#### GREEN: make it pass
 
 update `functions.py`
 ```python
@@ -194,7 +194,7 @@ def function_c(arg1, arg2, arg3):
 ```
 and the terminal updates to show all tests pass
 
-#### **REFACTOR**: make it better
+#### REFACTOR: make it better
 
 are you bored yet? let us add one more test
 

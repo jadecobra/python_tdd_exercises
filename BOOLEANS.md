@@ -15,7 +15,7 @@ There are only two values that are boolean - `True` and `False`. We will learn a
 
 ## What is False?
 
-### **RED**: make it fail
+### RED: make it fail
 
 add a failing test to `test_data_structures.py` named `test_what_is_false`
 ```python
@@ -32,7 +32,7 @@ add a failing test to `test_data_structures.py` named `test_what_is_false`
 ```
 the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 
-### **GREEN**: make it pass
+### GREEN: make it pass
 
 - when we change all the `self.assertTrue` statements in `test_what_is_false` to `self.assertFalse` we are left with one failing test
     ```python
@@ -75,7 +75,7 @@ we can sum this up as
 
 ## What is True?
 
-### **RED**: make it fail
+### RED: make it fail
 
 let us try a similar series of failing tests for `True` by adding the following to `test_data_structures.py`
 
@@ -99,7 +99,7 @@ let us try a similar series of failing tests for `True` by adding the following 
 
 the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 
-### **GREEN**: make it pass
+### GREEN: make it pass
 
 - change all the `self.assertFalse` statements in `test_what_is_true` to `self.assertTrue` and we have one failing test left
     ```python
@@ -144,6 +144,6 @@ the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
     - `False` is a `boolean`
     - `None` is `None`
 
-*HOORAY*
+HOORAY
 
 You have built up your knowledge of python, you now know about booleans. Take a moment to celebrate

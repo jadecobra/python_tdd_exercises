@@ -14,7 +14,7 @@ The `ModuleNotFoundError` is raised when you try to import a module that does no
 A Python Module is a file that ends in `.py` or a directory that contains an `__init__.py`.
 Programming allows us to gain from our previous efforts as well as the efforts of others in the form of packages and modules that can be distributed for other people to use. To use these packages in python we have to import them.
 
-### **RED**: make it fail
+### RED: make it fail
 
 Open a new file in your editor and save it as `test_module_not_found_error.py` in the `tests` folder you created in [Setup a Test Driven Development Environment](./TDD_SETUP.md)
 Type the following in the file
@@ -141,7 +141,7 @@ Looking at the traceback starting from the bottom
     ```
 For more information about imports you can read [The Import Statement](https://docs.python.org/3/reference/simple_stmts.html#import)
 
-### **GREEN**: make it pass
+### GREEN: make it pass
 
 - create `module_0.py` in the `{PROJECT_NAME}` folder and the terminal shows
     ```python

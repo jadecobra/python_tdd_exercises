@@ -3,17 +3,17 @@
 We will step through creating a [Test Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) Environment in python
 
 The Test Driven Development mantra paraphrased is
-    **RED** **GREEN** **REFACTOR**
-- **RED**: make it fail - we write a failing test to make sure our test works
-- **GREEN**: make it pass - we write only the code necessary to make the test pass
-- **REFACTOR**: make it better - we make the code/tests better
+    RED GREEN REFACTOR
+- RED: make it fail - we write a failing test to make sure our test works
+- GREEN: make it pass - we write only the code necessary to make the test pass
+- REFACTOR: make it better - we make the code/tests better
 
 # Table of Contents
 1. [Requirements](#requirements)
 2. [Setup](#setup)
-3. [**RED**: make it fail](#red-make-it-fail)
-4. [**GREEN**: make it pass](#green-make-it-pass)
-5. [**REFACTOR**: make it better](#refactor-make-it-better)
+3. [RED: make it fail](#red-make-it-fail)
+4. [GREEN: make it pass](#green-make-it-pass)
+5. [REFACTOR: make it better](#refactor-make-it-better)
     - [Automatically Run Tests](#how-to-automatically-run-tests)
         - [Create a Virtual Environment](#create-a-virtual-environment)
         - [Activate a Virtual Environment](#activate-a-virtual-environment)
@@ -64,7 +64,7 @@ The Test Driven Development mantra paraphrased is
 
 ---
 
-## **RED**: make it fail
+## RED: make it fail
 
 - We are ready to begin writing our first test. Open up `project_name/tests/test_{PROJECT_NAME}.py` in your Interactive Development Environment(IDE) and type the following
     ```python
@@ -108,9 +108,9 @@ The Test Driven Development mantra paraphrased is
 
 *CONGRATULATIONS!* You have written your first test.
 
-Following the iterative process of **RED** **GREEN** **REFACTOR**, we are currently **RED**.
+Following the iterative process of RED GREEN REFACTOR, we are currently RED.
 The error provides important information about the code. Looking at it from the last line
-- `FAILED (failures=1)` The test failed - **RED**
+- `FAILED (failures=1)` The test failed - RED
 - `Ran 1 test in 0.000s` tells us how long it took to run the test
 - `AssertionError: True is not false` The error is an [AssertionError](./ASSERTION_ERROR.md) which is raised by python when an assert statement is `False`, in this case `True is not false`
 - `self.assertFalse(True)` the line of code that caused the failure
@@ -125,7 +125,7 @@ The error provides important information about the code. Looking at it from the 
 
 ---
 
-## **GREEN**: make it pass
+## GREEN: make it pass
 
 - I think we should keep a list of Errors/Exceptions encountered as we go through our python journey to help us become better python programmers, it will help us keep track of the cause and inevitably the solutions we come up with to these exceptions. Add [AssertionError](./ASSERTION_ERROR.md) to the list
     ```python
@@ -155,11 +155,11 @@ The error provides important information about the code. Looking at it from the 
     OK
     ```
 
-*CONGRATULATIONS!* You have a passing test. We are **GREEN**
+*CONGRATULATIONS!* You have a passing test. We are GREEN
 
 ---
 
-## **REFACTOR**: make it better
+## REFACTOR: make it better
 
 We can make code better by using the
 - [Abstraction Principle](https://en.wikipedia.org/wiki/Abstraction_principle_(computer_programming))
@@ -239,7 +239,7 @@ If you already have a virtual environment setup in a project, you can activate i
 
 ---
 
-## **REFACTOR**: make it better
+## REFACTOR: make it better
 
 We can make code better by using the
 - [Abstraction Principle](https://en.wikipedia.org/wiki/Abstraction_principle_(computer_programming))

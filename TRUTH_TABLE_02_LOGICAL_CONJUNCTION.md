@@ -18,7 +18,7 @@ let us test the 16 outcomes of binary operations
 
 ## Logical Conjunction
 
-### **RED**: make it fail
+### RED: make it fail
 
 create a `TestCase` for binary operations in `test_truth_table.py`
 
@@ -35,7 +35,7 @@ class TestBinaryOperations(unittest.TestCase):
 ```
 the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
 
-### **GREEN**: make it pass
+### GREEN: make it pass
 
 - add a definition for `logical_conjunction` to `truth_table.py`
     ```python
@@ -79,7 +79,7 @@ the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md)
     the test updates to show passing tests. Lovely!
 
 
-### **REFACTOR**: make it better
+### REFACTOR: make it better
 
 - Why does this work?
     - we add a condition for when the value of `p` is equal to `True` and inside that condition we have another for when the value of `q` is equal to `True`
