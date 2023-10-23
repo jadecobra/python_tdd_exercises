@@ -9,6 +9,7 @@ We know that there are two boolean values
 * ``(True)``
 * ``(False)``
 
+
 Prerequisites
 -------------
 
@@ -16,11 +17,6 @@ Prerequisites
 * `How I setup a Test Driven Development Environment.md <./How I How I setup a Test Driven Development Environment.md.md>`_
 
 ----
-
-Binary Operations - It takes 2 to tango
-=======================================
-
-let us test the 16 outcomes of binary operations
 
 Logical Conjunction
 -------------------

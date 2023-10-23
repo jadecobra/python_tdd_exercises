@@ -9,6 +9,8 @@ There are two boolean values
 * ``(True)``
 * ``(False)``
 
+The Truth Table gives the 16 outcomes of binary operations
+
 Prerequisites
 -------------
 
