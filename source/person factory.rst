@@ -17,7 +17,7 @@ PHow to use dictionaries as factories in python
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-create a file named ``test_person_factory.py`` in the ``(tests)`` folder and add the following
+create a file named ``test_person_factory.py`` in the ``tests`` folder and add the following
 
 .. code-block:: python
 
@@ -30,7 +30,7 @@ create a file named ``test_person_factory.py`` in the ``(tests)`` folder and add
        def test_person_factory(self):
            self.assertEqual(person.factory(), None)
 
-the terminal updates to show a ``(ModuleNotFoundError)`` and we add it to our list of exceptions encountered
+the terminal updates to show a ``ModuleNotFoundError`` and we add it to our list of exceptions encountered
 
 .. code-block:: python
 
@@ -50,7 +50,7 @@ GREEN: make it pass
        # ModuleNotFoundError
        # AttributeError
 
-* create a function named ``(factory)`` in ``person.py`` and the terminal shows passing tests
+* create a function named ``factory`` in ``person.py`` and the terminal shows passing tests
   .. code-block:: python
 
        def factory():
@@ -60,7 +60,7 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* we will now add more details to ``(test_person_factory)``
+* we will now add more details to ``test_person_factory``
   .. code-block:: python
 
            def test_person_factory(self):
@@ -78,7 +78,7 @@ REFACTOR: make it better
                        "age": this_year() - this_year()
                    }
                )
-    the terminal shows a ``(NameError)`` is raised for ``(this_year)``
+    the terminal shows a ``NameError`` is raised for ``this_year``
 * we add the new exception to our running list
   .. code-block:: python
 
@@ -89,7 +89,7 @@ REFACTOR: make it better
        # NameError
 
 *
-  let us add a definition for ``(this_year)`` to the top of ``test_person_factory.py``
+  let us add a definition for ``this_year`` to the top of ``test_person_factory.py``
 
   .. code-block:: python
 
@@ -112,21 +112,21 @@ REFACTOR: make it better
        # NameError
        # TypeError
 
-* add a keyword argument for ``(first_name)`` to the ``(factory)`` function
+* add a keyword argument for ``first_name`` to the ``factory`` function
   .. code-block:: python
 
        def factory(first_name=None):
            return None
     the terminal updates to show a `TypeError <./TYPE_ERROR.rst>`_ for the next keyword argument
-* add a keyword argument for ``(last_name)``  to the ``(factory)`` function
+* add a keyword argument for ``last_name``  to the ``factory`` function
   .. code-block:: python
 
        def factory(first_name=None, last_name=None):
            return None
     the terminal updates to show a `TypeError <./TYPE_ERROR.rst>`_ for the next keyword argument
-* we update the ``(factory)`` function definition for each keyword until we get a `TypeError <./TYPE_ERROR.rst>`_ for the line where we subtract ``this_year() - this_year()`` because we cannot perform a subtraction operation on ``(None)`` and our ``(this_year)`` function currently returns ``(None)``
+* we update the ``factory`` function definition for each keyword until we get a `TypeError <./TYPE_ERROR.rst>`_ for the line where we subtract ``this_year() - this_year()`` because we cannot perform a subtraction operation on ``None`` and our ``this_year`` function currently returns ``None``
 *
-  let us update our definition for ``(this_year)`` using a function from the `datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#module-datetime>`_ library that returns the current year we are in
+  let us update our definition for ``this_year`` using a function from the `datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#module-datetime>`_ library that returns the current year we are in
 
   .. code-block:: python
 
@@ -138,17 +138,17 @@ REFACTOR: make it better
            return datetime.datetime.now().year
 
 
-  * we import the ``(datetime)`` library so we can use its `functions <./FUNCTIONS.rst>`_ and `classes <./CLASSES.rst>`_
-  * we return the ``(year)`` attribute of the object returned by the ``(now)`` method of the ``datetime.datetime`` class, which is a representation of the current local date and time, we could also use ``(today)`` or ``(utcnow)`` to achieve the same result
-  * we get the ``(year)`` attribute of the object returned since that is all we are interested in
+  * we import the ``datetime`` library so we can use its `functions <./FUNCTIONS.rst>`_ and `classes <./CLASSES.rst>`_
+  * we return the ``year`` attribute of the object returned by the ``now`` method of the ``datetime.datetime`` class, which is a representation of the current local date and time, we could also use ``today`` or ``utcnow`` to achieve the same result
+  * we get the ``year`` attribute of the object returned since that is all we are interested in
 
-* the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ since our ``person.factory`` function returns ``(None)`` but the test expects a `dictionary <./DICTIONARIES.rst>`_. We should update the function to return an empty dictionary
+* the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ since our ``person.factory`` function returns ``None`` but the test expects a `dictionary <./DICTIONARIES.rst>`_. We should update the function to return an empty dictionary
   .. code-block:: python
 
        def factory(first_name=None, last_name=None, year_of_birth=None, sex=None):
            return {}
-    the terminal updates to show the differences between the `dictionary <./DICTIONARIES.rst>`_ returned by the ``(factory)`` function and the one expected in the test
-* we update the empty ``(dictionary)`` in the ``(factory)`` function to match the expected results
+    the terminal updates to show the differences between the `dictionary <./DICTIONARIES.rst>`_ returned by the ``factory`` function and the one expected in the test
+* we update the empty ``dictionary`` in the ``factory`` function to match the expected results
   .. code-block:: python
 
        def factory(first_name=None, last_name=None, year_of_birth=None, sex=None):
@@ -178,7 +178,7 @@ REFACTOR: make it better
                    }
                )
     the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ because the expected and returned dictionaries are different
-* modify the ``(factory)`` function to use the input provided for ``(first_name)``
+* modify the ``factory`` function to use the input provided for ``first_name``
   .. code-block:: python
 
        def factory(first_name=None, last_name=None, year_of_birth=None, sex=None):
@@ -188,8 +188,8 @@ REFACTOR: make it better
                'last_name': 'last_name',
                'sex': 'F',
            }
-    the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ but it no longer shows a difference for ``(first_name)``. Good, let us repeat it step by step for every other input until the only error left is for the age
-* For the age to be accurate it has to be a calculation based on the current year. We have a function that returns the current year and we have the ``(year_of_birth)`` as input, we also have this line in the test ``this_year() - 1983``. Since ``(1983)`` is the ``(year_of_birth)`` in this case. We can try updating the ``(factory)`` function to use that calculation
+    the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ but it no longer shows a difference for ``first_name``. Good, let us repeat it step by step for every other input until the only error left is for the age
+* For the age to be accurate it has to be a calculation based on the current year. We have a function that returns the current year and we have the ``year_of_birth`` as input, we also have this line in the test ``this_year() - 1983``. Since ``1983`` is the ``year_of_birth`` in this case. We can try updating the ``factory`` function to use that calculation
   .. code-block:: python
 
        def factory(first_name=None, last_name=None, year_of_birth=None, sex=None):
@@ -199,7 +199,7 @@ REFACTOR: make it better
                'last_name': last_name,
                'sex': sex,
            }
-    the terminal updates to show a ``(NameError)`` since we are calling a function that does not exist in ``person.py``
+    the terminal updates to show a ``NameError`` since we are calling a function that does not exist in ``person.py``
 *
   replace ``this_year()`` with the return value from ``test_person_factory.this_year`` and add an import statement
 
@@ -234,13 +234,13 @@ REFACTOR: make it better
                    "age": this_year() - 2014
                }
            )
-    the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ since the value for ``(last_name)`` does not match the expected value
-* since we now have 3 tests with the same value for ``(last_name)`` we could use that value as the default value in the absence of any other examples. modify the default value for ``(last_name)`` in the ``person.factory`` definition
+    the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ since the value for ``last_name`` does not match the expected value
+* since we now have 3 tests with the same value for ``last_name`` we could use that value as the default value in the absence of any other examples. modify the default value for ``last_name`` in the ``person.factory`` definition
   .. code-block:: python
 
        def factory(first_name=None, last_name="last_name", year_of_birth=None, sex=None):
     the terminal updates to show passing tests
-* what if we try another default value, this time say for sex. add a test to ``(test_person_factory_with_default_keyword_arguments)``
+* what if we try another default value, this time say for sex. add a test to ``test_person_factory_with_default_keyword_arguments``
   .. code-block:: python
 
            self.assertEqual(
@@ -256,7 +256,7 @@ REFACTOR: make it better
                }
            )
     the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_
-* since 3 out of our 4 persons created have ``(M)`` as their sex and 1 has ``(F)`` as their sex, we could set the majority as the default value to reduce the number of repetitions. modify the default value for the parameter in ``person.factory``
+* since 3 out of our 4 persons created have ``M`` as their sex and 1 has ``F`` as their sex, we could set the majority as the default value to reduce the number of repetitions. modify the default value for the parameter in ``person.factory``
   .. code-block:: python
 
        def factory(first_name=None, last_name="last_name", year_of_birth=None, sex='M'):

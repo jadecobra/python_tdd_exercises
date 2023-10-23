@@ -6,8 +6,8 @@ Sometimes we want programs to make decisions based on inputs or conditions, and 
 There are two boolean values
 
 
-* ``(True)``
-* ``(False)``
+* ``True``
+* ``False``
 
 The Truth Table gives the 16 outcomes of binary operations
 
@@ -27,7 +27,7 @@ Nullary operations do not take in inputs and always return the same value. They 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-create a file named ``test_truth_table.py`` in the ``(tests)`` folder and add the text below
+create a file named ``test_truth_table.py`` in the ``tests`` folder and add the text below
 
 .. code-block:: python
 
@@ -61,36 +61,36 @@ GREEN: make it pass
      # ModuleNotFoundError
      # AttributeError
 
-* add a singleton function named ``(logical_true)`` to ``truth_table.py``
+* add a singleton function named ``logical_true`` to ``truth_table.py``
   .. code-block:: python
 
      def logical_true():
          return True
-  the terminal updates to show passing tests and we are reminded that ``(True)`` is ``(True)``
+  the terminal updates to show passing tests and we are reminded that ``True`` is ``True``
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* let us add a test for ``(logical_false)`` to teh ``(TestNullaryOperations)`` class in ``test_truth_table.py``
+* let us add a test for ``logical_false`` to teh ``TestNullaryOperations`` class in ``test_truth_table.py``
   .. code-block:: python
 
        def test_logical_false(self):
            self.assertFalse(truth_table.logical_false())
-  the terminal gives another `AttributeError <./ATTRIBUTE_ERROR.rst>`_ since there is no definition for ``(logical_false)`` in ``truth_table.py``
-* add a function definition for ``(logical_false)`` to ``truth_table.py``
+  the terminal gives another `AttributeError <./ATTRIBUTE_ERROR.rst>`_ since there is no definition for ``logical_false`` in ``truth_table.py``
+* add a function definition for ``logical_false`` to ``truth_table.py``
   .. code-block:: python
 
      def logical_false():
          return True
-  and the terminal shows an `AssertionError <./ASSERTION_ERROR.rst>`_ since the ``(logical_false)`` function currently returns a different value from what is expected
-* update the return value to ``(False)`` and the terminal shows passing tests
+  and the terminal shows an `AssertionError <./ASSERTION_ERROR.rst>`_ since the ``logical_false`` function currently returns a different value from what is expected
+* update the return value to ``False`` and the terminal shows passing tests
   .. code-block:: python
 
      def logical_false():
          return False
 
-* We are again reminded that ``(False)`` is ``(False)`` and ``(True)`` is ``(True)``
+* We are again reminded that ``False`` is ``False`` and ``True`` is ``True``
 
 ----
 
@@ -111,7 +111,7 @@ A Logical Identity operation takes input and returns it as output, it is a passt
 RED: make it fail
 ~~~~~~~~~~~~~~~~~
 
-Add a new ``(TestCase)`` to ``test_truth_table.py``
+Add a new ``TestCase`` to ``test_truth_table.py``
 
 .. code-block:: python
 
@@ -123,12 +123,12 @@ Add a new ``(TestCase)`` to ``test_truth_table.py``
            self.assertTrue(truth_table.logical_identity(True))
            self.assertFalse(truth_table.logical_identity(False))
 
-the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.rst>`_ because there is no definition for ``(logical_identity)`` in ``truth_table.py``
+the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.rst>`_ because there is no definition for ``logical_identity`` in ``truth_table.py``
 
 GREEN: make it pass
 ~~~~~~~~~~~~~~~~~~~
 
-add a function definition for ``(logical_identity)`` to ``truth_table.py``
+add a function definition for ``logical_identity`` to ``truth_table.py``
 
 .. code-block:: python
 
@@ -145,7 +145,7 @@ A Logical Negation operation takes input and returns its opposite as output
 RED: make it fail
 ~~~~~~~~~~~~~~~~~
 
-add a test for ``(logical_negation)`` to ``test_truth_table.py``
+add a test for ``logical_negation`` to ``test_truth_table.py``
 
 .. code-block:: python
 
@@ -153,19 +153,19 @@ add a test for ``(logical_negation)`` to ``test_truth_table.py``
            self.assertFalse(truth_table.logical_negation(True))
            self.assertTrue(truth_table.logical_negation(False))
 
-the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.rst>`_\ , there is no definition for ``(logical_negation)`` in ``truth_table.py``
+the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.rst>`_\ , there is no definition for ``logical_negation`` in ``truth_table.py``
 
 GREEN: make it pass
 ~~~~~~~~~~~~~~~~~~~
 
 
-* update ``truth_table.py`` with a definition for ``(logical_negation)`` using the solution we had for ``(logical_identity)``
+* update ``truth_table.py`` with a definition for ``logical_negation`` using the solution we had for ``logical_identity``
   .. code-block:: python
 
      def logical_negation(value):
          return value
-  the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_. The ``(logical_negation)`` function returns the value it receives as input but the test expects it to return the opposite
-* we use the ``(not)`` keyword to make the function return the opposite of what it receives. Update the return statement in ``(logical_negation)`` to return the opposite of the value it receives
+  the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_. The ``logical_negation`` function returns the value it receives as input but the test expects it to return the opposite
+* we use the ``not`` keyword to make the function return the opposite of what it receives. Update the return statement in ``logical_negation`` to return the opposite of the value it receives
   .. code-block:: python
 
      def logical_negation(value):
@@ -175,9 +175,9 @@ GREEN: make it pass
 Reviewing what we know so far
 
 
-* ``(True)`` is ``not False``
-* ``(False)`` is ``not True``
-* ``(False)`` is ``(False)``
-* ``(True)`` is ``(True)``
+* ``True`` is ``not False``
+* ``False`` is ``not True``
+* ``False`` is ``False``
+* ``True`` is ``True``
 
 We have not written any conditional statements yet, only boolean values and their opposites. We will write some in `Logical Conjunction <./TRUTH_TABLE_02_LOGICAL_CONJUNCTION.rst>`_ next

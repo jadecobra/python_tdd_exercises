@@ -17,7 +17,7 @@ Tautology
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a test for tautology to ``(TestBinaryOperations)``
+add a test for tautology to ``TestBinaryOperations``
 
 .. code-block:: python
 
@@ -57,7 +57,7 @@ Contradiction
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a test for contradiction to ``(TestBinaryOperations)``
+add a test for contradiction to ``TestBinaryOperations``
 
 .. code-block:: python
 
@@ -91,21 +91,21 @@ REFACTOR: make it better
 Nothing to do here either. let us update what we know so far
 
 *YOU DID IT!*
-For any boolean operation involving 2 inputs - ``(p)`` and ``(q)`` which can take the values ``(True)`` or ``(False)``
+For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
 
 
-* ``(contradition)`` always returns ``(False)``
-* ``(tautology)`` always returns ``(True)``
-* ``(converse_implication)`` is ``not p and q`` which is different from ``not(p and q)``
-* ``(logical_nor)`` is ``not(p or q)``
-* ``(logical_nand)`` is ``not(p and q)``
-* ``(exclusive_disjunction)`` is ``!=`` aka opposite of ``(logical_equality)``
-* ``(logical_equality)`` is ``==``
-* ``(logical_disjunction)`` is ``(or)``
-* ``(logical_conjunction)`` is ``(and)``
-* ``(and)`` is "not ``(or)``\ "
-* ``(or)`` is "not ``(and)``\ "
-* ``(False)`` is ``not True``
-* ``(True)`` is ``not False``
-* ``(False)`` is ``(False)``
-* ``(True)`` is ``(True)``
+* ``contradition`` always returns ``False``
+* ``tautology`` always returns ``True``
+* ``converse_implication`` is ``not p and q`` which is different from ``not(p and q)``
+* ``logical_nor`` is ``not(p or q)``
+* ``logical_nand`` is ``not(p and q)``
+* ``exclusive_disjunction`` is ``!=`` aka opposite of ``logical_equality``
+* ``logical_equality`` is ``==``
+* ``logical_disjunction`` is ``or``
+* ``logical_conjunction`` is ``and``
+* ``and`` is "not ``or``\ "
+* ``or`` is "not ``and``\ "
+* ``False`` is ``not True``
+* ``True`` is ``not False``
+* ``False`` is ``False``
+* ``True`` is ``True``

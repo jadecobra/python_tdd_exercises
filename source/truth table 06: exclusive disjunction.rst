@@ -17,7 +17,7 @@ Exclusive Disjunction
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a test for exclusive disjunction to ``(TestBinaryOperations)``
+add a test for exclusive disjunction to ``TestBinaryOperations``
 
 .. code-block:: python
 
@@ -33,7 +33,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* add a definition that returns ``(True)``
+* add a definition that returns ``True``
   .. code-block:: python
 
        def exclusive_disjunction(p, q):
@@ -64,7 +64,7 @@ REFACTOR: make it better
 let us try to refactor those statements to make them better
 
 
-* in the first case ``(p)`` and ``(q)`` have the same value, can we change the statement to reflect this like we did with ``(logical_equality)``\ ?
+* in the first case ``p`` and ``q`` have the same value, can we change the statement to reflect this like we did with ``logical_equality``\ ?
   .. code-block:: python
 
        def exclusive_disjunction(p, q):
@@ -91,7 +91,7 @@ let us try to refactor those statements to make them better
                return False
            return True
 
-* add ``(else)``
+* add ``else``
   .. code-block:: python
 
        def exclusive_disjunction(p, q):
@@ -100,7 +100,7 @@ let us try to refactor those statements to make them better
            else:
                return True
 
-* add the opposite ``(if)`` statement
+* add the opposite ``if`` statement
   .. code-block:: python
 
        def exclusive_disjunction(p, q):
@@ -118,7 +118,7 @@ let us try to refactor those statements to make them better
            if p == q:
                return False
 
-* replace with ``(else)``
+* replace with ``else``
   .. code-block:: python
 
        def exclusive_disjunction(p, q):
@@ -139,17 +139,17 @@ let us try to refactor those statements to make them better
        def exclusive_disjunction(p, q):
            return p != q
 
-What do we know so far? For any boolean operation involving 2 inputs - ``(p)`` and ``(q)`` which can take the values ``(True)`` or ``(False)``
+What do we know so far? For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
 
 
-* ``(exclusive_disjunction)`` is ``!=``
-* ``(logical_equality)`` is ``==``
-* ``(logical_disjunction)`` is ``(or)``
-* ``(logical_conjunction)`` is ``(and)``
-* ``(and)`` is "not ``(or)``\ "
-* ``(or)`` is "not ``(and)``\ "
-* ``(False)`` is ``not True``
-* ``(True)`` is ``not False``
-* ``(False)`` is ``(False)``
-* ``(True)`` is ``(True)``
-* ``return True if x else y`` can be rewritten as ``return x`` if ``(x)`` evaluates to ``(True)``
+* ``exclusive_disjunction`` is ``!=``
+* ``logical_equality`` is ``==``
+* ``logical_disjunction`` is ``or``
+* ``logical_conjunction`` is ``and``
+* ``and`` is "not ``or``\ "
+* ``or`` is "not ``and``\ "
+* ``False`` is ``not True``
+* ``True`` is ``not False``
+* ``False`` is ``False``
+* ``True`` is ``True``
+* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to ``True``

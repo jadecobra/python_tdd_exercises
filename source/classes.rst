@@ -3,7 +3,7 @@ classes
 
 We will step through writing classes in python using Test Driven Development
 
-``(classes)`` are a template or blueprint that represent an object. They are a collection of ``methods(functions)`` and ``attributes(variables)`` that belong together
+``classes`` are a template or blueprint that represent an object. They are a collection of ``methods(functions)`` and ``attributes(variables)`` that belong together
 
 Prerequisites
 -------------
@@ -18,14 +18,14 @@ How to define a Class with pass
 ------------------------
 
 
-* use the ``(class)`` keyword
-* use ``(TitleCase)`` for naming
+* use the ``class`` keyword
+* use ``TitleCase`` for naming
 * use Descriptive names
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-we create a new file named ``test_classes.py`` in the ``(tests)`` directory
+we create a new file named ``test_classes.py`` in the ``tests`` directory
 
 .. code-block:: python
 
@@ -45,7 +45,7 @@ GREEN: make it pass
 
 
 * create a python module named ``classes.py`` and the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
-* add the name ``(ClassWithPass)`` to the module
+* add the name ``ClassWithPass`` to the module
 
 .. code-block:: python
 
@@ -53,10 +53,10 @@ GREEN: make it pass
 
    ClassWithPass
    ```
-   and the terminal updates to show a ``(NameError)`` because ``(ClassWithPass)`` is not defined anywhere
+   and the terminal updates to show a ``NameError`` because ``ClassWithPass`` is not defined anywhere
 
 
-* update the name as an assignment to the null value ``(None)``
+* update the name as an assignment to the null value ``None``
 
 .. code-block:: python
 
@@ -66,7 +66,7 @@ GREEN: make it pass
    ```
 
 
-* redefine the variable as a class using the ``(class)`` keyword
+* redefine the variable as a class using the ``class`` keyword
 
 .. code-block:: python
 
@@ -77,7 +77,7 @@ GREEN: make it pass
    the terminal updates to show an [IndentationError](./02_INDENTATION_ERROR.rst)
 
 
-* add the ``(pass)`` keyword as a placeholder to the definition
+* add the ``pass`` keyword as a placeholder to the definition
 
 .. code-block:: python
 
@@ -96,9 +96,9 @@ REFACTOR: make it better
 Let us review what we have written so far
 
 
-* ``(pass)`` is a placeholder
+* ``pass`` is a placeholder
 * ``self.assertIsInstance`` is a ``unittest.TestCase`` method that checks if the first input to the method is an instance of the second input
-* in python everything is an ``(object)`` which means there's a class definition for it, our test ``self.assertIsInstance(classes.ClassWithPass(), object)`` checks if ``(ClassWithPass)`` is an ``(object)``
+* in python everything is an ``object`` which means there's a class definition for it, our test ``self.assertIsInstance(classes.ClassWithPass(), object)`` checks if ``ClassWithPass`` is an ``object``
 
 How to define a Class with parentheses
 -------------------------------
@@ -106,7 +106,7 @@ How to define a Class with parentheses
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add another test to ``(TestClasses)`` in ``test_classes.py``
+add another test to ``TestClasses`` in ``test_classes.py``
 
 .. code-block:: python
 
@@ -145,16 +145,16 @@ GREEN: make it pass
    the terminal shows all tests are still passing.
 
 
-* We now know that we can define ``(classes)``
+* We now know that we can define ``classes``
 
   * with parentheses
   * without parentheses
-  * ``(pass)`` is a placeholder
+  * ``pass`` is a placeholder
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-In object oriented programming there is a concept called `Inheritance <https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming>`_\ ). With Inheritance we can define new ``(objects)`` that inherit from other existing ``(objects)``. This makes creating things easier because we do not have to reinvent or rewrite things that already exist, we can inherit them instead.
+In object oriented programming there is a concept called `Inheritance <https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming>`_\ ). With Inheritance we can define new ``objects`` that inherit from other existing ``objects``. This makes creating things easier because we do not have to reinvent or rewrite things that already exist, we can inherit them instead.
 
 How to define a Class with inheritance
 -------------------------------
@@ -164,7 +164,7 @@ To use inheritance we specify the "parent" in parentheses when we define the new
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-we add another test to ``(TestClasses)`` in ``test_classes.py``
+we add another test to ``TestClasses`` in ``test_classes.py``
 
 .. code-block:: python
 
@@ -190,7 +190,7 @@ GREEN: make it pass
    the terminal reveals passing tests
 
 
-* update the definition to explicitly state the parent ``(object)``
+* update the definition to explicitly state the parent ``object``
 
 .. code-block:: python
 
@@ -211,9 +211,9 @@ We now know that in python
   * with parentheses explicitly stating what object the class inherits from
   * with parentheses without stating what object the class inherits from
   * without parentheses
-  * ``(pass)`` is a placeholder
+  * ``pass`` is a placeholder
 
-* classes implicitly inherit from the ``(object)`` class, because in each of our tests, whether explicitly stated or not, the class is an ``(instance)`` of an ``(object)``
+* classes implicitly inherit from the ``object`` class, because in each of our tests, whether explicitly stated or not, the class is an ``instance`` of an ``object``
 * what is an `object <https://docs.python.org/3/glossary.html#term-object>`_\ ?
 
 *RULE OF THUMB*
@@ -222,7 +222,7 @@ We now know that in python
 
    From `the zen of python <https://peps.python.org/pep-0020/>`_
    ``Explicit is better than implicit``
-   we will use the explicit form of class definitions with the parent ``(object)`` in parentheses
+   we will use the explicit form of class definitions with the parent ``object`` in parentheses
 
 
 How to define a Class with attributes
@@ -234,7 +234,7 @@ RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
 
-* we add a failing test to ``(TestClasses)`` in ``classes.py``
+* we add a failing test to ``TestClasses`` in ``classes.py``
   .. code-block:: python
 
            def test_classes_with_attributes(self):
@@ -257,7 +257,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* we add an attribute to ``(ClassWithAttributes)``
+* we add an attribute to ``ClassWithAttributes``
 
 .. code-block:: python
 
@@ -267,10 +267,10 @@ GREEN: make it pass
 
        a_boolean
    ```
-   and the terminal updates to show a ``(NameError)``
+   and the terminal updates to show a ``NameError``
 
 
-* after updating the name with an assignment to ``(None)``
+* after updating the name with an assignment to ``None``
 
 .. code-block:: python
 
@@ -304,7 +304,7 @@ let us repeat this with other python `data structures <./DATA_STRUCTURES.rst>`_
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-update ``(test_classes_with_attributes)`` with more tests
+update ``test_classes_with_attributes`` with more tests
 
 .. code-block:: python
 
@@ -323,7 +323,7 @@ the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-update ``(ClassWithAttributes)`` with attributes to make the tests pass
+update ``ClassWithAttributes`` with attributes to make the tests pass
 
 .. code-block:: python
 
@@ -350,7 +350,7 @@ We can define classes with methods which are function definitions within the cla
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-Let us add some tests for class methods. update ``(TestClasses)`` in ``classes.py``
+Let us add some tests for class methods. update ``TestClasses`` in ``classes.py``
 
 .. code-block:: python
 
@@ -379,7 +379,7 @@ GREEN: make it pass
    the terminal now gives an [AttributeError](./ATTRIBUTE_ERROR.rst) with a different error
 
 
-* let us add the missing attribute to the ``(ClassWithMethods)`` class
+* let us add the missing attribute to the ``ClassWithMethods`` class
 
 .. code-block:: python
 
@@ -389,10 +389,10 @@ GREEN: make it pass
 
        method_a
    ```
-   the terminal updates to show a ``(Nameerror)`` because there is no definition for ``(method_a)``
+   the terminal updates to show a ``Nameerror`` because there is no definition for ``method_a``
 
 
-* when we define ``(method_a)`` as an attribute by assigning it as the name for the null value ``(None)``
+* when we define ``method_a`` as an attribute by assigning it as the name for the null value ``None``
 
 .. code-block:: python
 
@@ -402,10 +402,10 @@ GREEN: make it pass
 
        method_a = None
    ```
-   the terminal now reveals a [TypeError](./TYPE_ERROR.rst) since ``(method_a)`` is not callable
+   the terminal now reveals a [TypeError](./TYPE_ERROR.rst) since ``method_a`` is not callable
 
 
-* let us update the definition of ``(method_a)`` to make it a function
+* let us update the definition of ``method_a`` to make it a function
 
 .. code-block:: python
 
@@ -430,7 +430,7 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* we can make this better by adding a few more tests to ``(test_classes_with_methods)`` for fun
+* we can make this better by adding a few more tests to ``test_classes_with_methods`` for fun
   .. code-block:: python
 
            def test_classes_with_methods(self):
@@ -439,7 +439,7 @@ REFACTOR: make it better
                self.assertEqual(classes.ClassWithMethods.method_c(), 'You called MethodC')
                self.assertEqual(classes.ClassWithMethods.method_d(), 'You called MethodD')
     the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
-* update ``(ClassWithmethods)`` in ``classes.py`` until all tests pass
+* update ``ClassWithmethods`` in ``classes.py`` until all tests pass
 
 ----
 
@@ -519,7 +519,7 @@ GREEN: make it pass
    the terminal updates to show another [AttributeError](./ATTRIBUTE_ERROR.rst)
 
 
-* update the ``(Boy)`` class with the name ``(sex)``
+* update the ``Boy`` class with the name ``sex``
 
 .. code-block:: python
 
@@ -529,10 +529,10 @@ GREEN: make it pass
 
        sex
    ```
-   the terminal produces a ``(NameError)``
+   the terminal produces a ``NameError``
 
 
-* we add a definition for the ``(sex)`` attribute
+* we add a definition for the ``sex`` attribute
 
 .. code-block:: python
 
@@ -549,14 +549,14 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* let us add another test to ``(test_classes_with_initializers)``
+* let us add another test to ``test_classes_with_initializers``
   .. code-block:: python
 
        def test_classes_with_initializers(self):
            self.assertEqual(classes.Boy().sex, 'M')
            self.assertEqual(classes.Girl(sex='F').sex, 'F')
     the terminal gives an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
-* trying the same solution we used for the ``(Boy)`` class, add a definition for the ``(Girl)`` class to ``classes.py``
+* trying the same solution we used for the ``Boy`` class, add a definition for the ``Girl`` class to ``classes.py``
 
 .. code-block:: python
 
@@ -573,10 +573,10 @@ REFACTOR: make it better
    ```
    - If you have gone through the [functions](./07_FUNCTIONS.rst) chapter you will see a similarity in this last test and passing inputs to functions. The call `classes.Girl(sex='F')` looks like a call to a function with keyword arguments
    - Which begs the question - How do we define classes to accept keyword arguments when the definition of a class defines the parent it inherits from e.g. `class Class(object)`? The answer - We use an initializer
-   - What's an initializer? a class method(function) that allows customization of `instances/copies` of a ``(class)``
+   - What's an initializer? a class method(function) that allows customization of `instances/copies` of a ``class``
 
 
-* add an initiializer to the ``(Girl)`` class
+* add an initiializer to the ``Girl`` class
 
 .. code-block:: python
 
@@ -596,13 +596,13 @@ REFACTOR: make it better
    ```
 
 
-* update the signature of the ``(__init__)`` method to accept a keyword argument
+* update the signature of the ``__init__`` method to accept a keyword argument
   .. code-block:: python
 
        def __init__(self, sex=None):
            pass
     the terminal updates to show passing tests
-* let us add another test for a class initializer to ``(test_classes_with_initializers)``
+* let us add another test for a class initializer to ``test_classes_with_initializers``
   .. code-block:: python
 
        def test_classes_with_initializers(self):
@@ -628,11 +628,11 @@ REFACTOR: make it better
 
 * Wait a minute, we just repeated the same thing twice.
 
-  * We defined a ``(class)`` with a name
-  * defined an attribute named ``(sex)``
-  * defined an ``(__init__)`` method which takes in a ``(sex)`` keyword argument
+  * We defined a ``class`` with a name
+  * defined an attribute named ``sex``
+  * defined an ``__init__`` method which takes in a ``sex`` keyword argument
 
-* let us make the repetition complete by redefining the ``(Boy)`` class to match the ``(Girl)`` and ``(Other)`` class
+* let us make the repetition complete by redefining the ``Boy`` class to match the ``Girl`` and ``Other`` class
 
 .. code-block:: python
 
@@ -648,7 +648,7 @@ REFACTOR: make it better
    the terminal responds with all tests still passing and we have now written the same thing 3 times. Earlier on we discussed inheritance, and will now try to use it to remove this duplication
 
 
-* try adding a new class called ``(Human)`` to ``classes.py`` before the definition for ``(Boy)`` with the same attribute and method of the classes we are trying to abstract
+* try adding a new class called ``Human`` to ``classes.py`` before the definition for ``Boy`` with the same attribute and method of the classes we are trying to abstract
 
 .. code-block:: python
 
@@ -668,14 +668,14 @@ REFACTOR: make it better
    the terminal still shows passing tests
 
 
-* Update the definitions for ``(Boy)`` to inherit from the ``(Human)`` class and all tests are still passing
+* Update the definitions for ``Boy`` to inherit from the ``Human`` class and all tests are still passing
   .. code-block:: python
 
        class Boy(Human):
            ...
 
-* remove the ``(sex)`` attribute from the ``(Boy)`` class and the tests continue to pass
-* remove the ``(__init__)`` method, and add the ``(pass)`` placeholder
+* remove the ``sex`` attribute from the ``Boy`` class and the tests continue to pass
+* remove the ``__init__`` method, and add the ``pass`` placeholder
 
 .. code-block:: python
 
@@ -687,15 +687,15 @@ REFACTOR: make it better
    ```
 
 
-* let us try the same thing with the ``(Girl)`` class and update its definition to inherit from the ``(Human)`` class
+* let us try the same thing with the ``Girl`` class and update its definition to inherit from the ``Human`` class
   .. code-block:: python
 
        class Girl(Human):
            ...
 
-* remove the ``(sex)`` attribute and the terminal outputs an `AssertionError <./ASSERTION_ERROR.rst>`_
+* remove the ``sex`` attribute and the terminal outputs an `AssertionError <./ASSERTION_ERROR.rst>`_
 *
-  update the ``(Human)`` class to set the ``(sex)`` attribute in the initializer instead of at the class level
+  update the ``Human`` class to set the ``sex`` attribute in the initializer instead of at the class level
 
   .. code-block:: python
 
@@ -709,7 +709,7 @@ REFACTOR: make it better
     the terminal still responds with an `AssertionError <./ASSERTION_ERROR.rst>`_
 
 *
-  when we remove the ``(__init__)`` method from the ``(Girl)`` class
+  when we remove the ``__init__`` method from the ``Girl`` class
 
   .. code-block:: python
 
@@ -720,7 +720,7 @@ REFACTOR: make it better
     the terminal updates to show passing tests
 
 *
-  can we do the same with the ``(Other)`` class? update the definition to inherit from the ``(Human)`` class
+  can we do the same with the ``Other`` class? update the definition to inherit from the ``Human`` class
 
   .. code-block:: python
 
@@ -731,7 +731,7 @@ REFACTOR: make it better
     the terminal updates to show passing tests
 
 *
-  one last change and we remove the ``(sex)`` attribute from the ``(Human)`` class
+  one last change and we remove the ``sex`` attribute from the ``Human`` class
 
   .. code-block:: python
 
@@ -740,19 +740,19 @@ REFACTOR: make it better
            def __init__(self, sex='M'):
                self.sex = sex
 
-    all tests are passing in the terminal, we have successfully refactored the 3 classes and abstracted a ``(Human)`` class
+    all tests are passing in the terminal, we have successfully refactored the 3 classes and abstracted a ``Human`` class
 
 Why did that work?
 
 
-* the ``(Boy)``\ , ``(Girl)`` and ``(Other)`` class now inherit from the ``(Human)`` class which means they all get the same methods and attributes that the ``(Human)`` class has, including the ``(__init__)`` method
-* ``self.sex`` within each class refers to the ``(sex)`` attribute in the class, allowing its definition from the withing the ``(__init__)`` method
+* the ``Boy``\ , ``Girl`` and ``Other`` class now inherit from the ``Human`` class which means they all get the same methods and attributes that the ``Human`` class has, including the ``__init__`` method
+* ``self.sex`` within each class refers to the ``sex`` attribute in the class, allowing its definition from the withing the ``__init__`` method
 * since ``self.sex`` is defined as a class attribute, it is accessible from outside the class as we do in our tests i.e ``classes.Girl(sex='F').sex`` and ``classes.Other(sex='?').sex``
 
 How to View the Attributes and Methods of a Class
 ------------------------------------------
 
-To view what ``(attributes)`` and ``(methods)`` are defined for any object we can call ``(dir)`` on the object. The ``(dir)`` method returns a `list <./LISTS.rst>`_ that contains the names of all attributes and methods in the class
+To view what ``attributes`` and ``methods`` are defined for any object we can call ``dir`` on the object. The ``dir`` method returns a `list <./LISTS.rst>`_ that contains the names of all attributes and methods in the class
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -813,7 +813,7 @@ copy the values from the terminal to update the test to make it pass
                ]
            )
 
-the tests pass and we see the last two values in our list are ``(attribute)`` and ``(method)`` which we defined earlier
+the tests pass and we see the last two values in our list are ``attribute`` and ``method`` which we defined earlier
 
 CONGRATULATIONS
 You know

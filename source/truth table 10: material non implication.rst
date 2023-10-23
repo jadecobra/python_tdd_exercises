@@ -17,7 +17,7 @@ Material NonImplication
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a test for material non-implication to ``(TestBinaryOperations)``
+add a test for material non-implication to ``TestBinaryOperations``
 
 .. code-block:: python
 
@@ -69,27 +69,27 @@ REFACTOR: make it better
            else:
                return False
 
-* rewrite with a ``(return)`` statement
+* rewrite with a ``return`` statement
   .. code-block:: python
 
        def material_non_implication(p, q):
            return p and not q
     We are still green
 
-Our knowledge is growing, we now know that for any boolean operation involving 2 inputs - ``(p)`` and ``(q)`` which can take the values ``(True)`` or ``(False)``
+Our knowledge is growing, we now know that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
 
 
-* ``(material_non_implication)`` is ``p and not q``
-* ``(converse_non_implication)`` is ``not p and q`` which is different from ``not(p and q)``
-* ``(logical_nor)`` is ``not(p or q)``
-* ``(logical_nand)`` is ``not(p and q)``
-* ``(exclusive_disjunction)`` is ``!=`` aka opposite of ``(logical_equality)``
-* ``(logical_equality)`` is ``==``
-* ``(logical_disjunction)`` is ``(or)``
-* ``(logical_conjunction)`` is ``(and)``
-* ``(and)`` is "not ``(or)``\ "
-* ``(or)`` is "not ``(and)``\ "
-* ``(False)`` is ``not True``
-* ``(True)`` is ``not False``
-* ``(False)`` is ``(False)``
-* ``(True)`` is ``(True)``
+* ``material_non_implication`` is ``p and not q``
+* ``converse_non_implication`` is ``not p and q`` which is different from ``not(p and q)``
+* ``logical_nor`` is ``not(p or q)``
+* ``logical_nand`` is ``not(p and q)``
+* ``exclusive_disjunction`` is ``!=`` aka opposite of ``logical_equality``
+* ``logical_equality`` is ``==``
+* ``logical_disjunction`` is ``or``
+* ``logical_conjunction`` is ``and``
+* ``and`` is "not ``or``\ "
+* ``or`` is "not ``and``\ "
+* ``False`` is ``not True``
+* ``True`` is ``not False``
+* ``False`` is ``False``
+* ``True`` is ``True``

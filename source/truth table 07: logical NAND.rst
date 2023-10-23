@@ -17,7 +17,7 @@ Logical NAND
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a test for exclusive disjunction to ``(TestBinaryOperations)``
+add a test for exclusive disjunction to ``TestBinaryOperations``
 
 .. code-block:: python
 
@@ -33,13 +33,13 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* add a definition for the function to ``truth_table.py`` returning ``(True)`` since 3 out of the 4 cases return that value
+* add a definition for the function to ``truth_table.py`` returning ``True`` since 3 out of the 4 cases return that value
   .. code-block:: python
 
        def logical_nand(p, q):
            return True
     the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ for the first case
-* add a condition for the one case that returns ``(False)``
+* add a condition for the one case that returns ``False``
   .. code-block:: python
 
        def logical_nand(p, q):
@@ -52,7 +52,7 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* add an ``(else)`` to be explicit
+* add an ``else`` to be explicit
   .. code-block:: python
 
        def logical_nand(p, q):
@@ -61,7 +61,7 @@ REFACTOR: make it better
            else:
                return True
 
-* change to an implied ``(if)`` statement
+* change to an implied ``if`` statement
   .. code-block:: python
 
        def logical_nand(p, q):
@@ -70,7 +70,7 @@ REFACTOR: make it better
            else:
                return True
 
-* change it to the opposite of the ``(if)`` statement
+* change it to the opposite of the ``if`` statement
   .. code-block:: python
 
        def logical_nand(p, q):
@@ -88,7 +88,7 @@ REFACTOR: make it better
            if p and q:
                return False
 
-* replace second statement with ``(else)``
+* replace second statement with ``else``
   .. code-block:: python
 
        def logical_nand(p, q):
@@ -111,18 +111,18 @@ REFACTOR: make it better
     I don't think we can get simpler than this and all the tests are still passing
 
 REVIEW
-We know that for any boolean operation involving 2 inputs - ``(p)`` and ``(q)`` which can take the values ``(True)`` or ``(False)``
+We know that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
 
 
-* ``(logical_nand)`` is ``not(p and q)``
-* ``(exclusive_disjunction)`` is ``!=`` aka opposite of ``(logical_equality)``
-* ``(logical_equality)`` is ``==``
-* ``(logical_disjunction)`` is ``(or)``
-* ``(logical_conjunction)`` is ``(and)``
-* ``(and)`` is "not ``(or)``\ "
-* ``(or)`` is "not ``(and)``\ "
-* ``(False)`` is ``not True``
-* ``(True)`` is ``not False``
-* ``(False)`` is ``(False)``
-* ``(True)`` is ``(True)``
-* ``return True if x else y`` can be rewritten as ``return x`` if ``(x)`` evaluates to ``(True)``
+* ``logical_nand`` is ``not(p and q)``
+* ``exclusive_disjunction`` is ``!=`` aka opposite of ``logical_equality``
+* ``logical_equality`` is ``==``
+* ``logical_disjunction`` is ``or``
+* ``logical_conjunction`` is ``and``
+* ``and`` is "not ``or``\ "
+* ``or`` is "not ``and``\ "
+* ``False`` is ``not True``
+* ``True`` is ``not False``
+* ``False`` is ``False``
+* ``True`` is ``True``
+* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to ``True``

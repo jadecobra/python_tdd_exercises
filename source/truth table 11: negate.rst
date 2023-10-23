@@ -17,7 +17,7 @@ Negate First
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a test for negate first to ``(TestBinaryOperations)``
+add a test for negate first to ``TestBinaryOperations``
 
 .. code-block:: python
 
@@ -39,10 +39,10 @@ GREEN: make it pass
        def negate_first(p, q):
            return False
     the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ for the third case
-* before we add a condition for it, this looks similar to ``(logical_equality)`` and ``(exclusive_disjunction)`` because 2 out of the 4 cases have the same return value. We observe that
+* before we add a condition for it, this looks similar to ``logical_equality`` and ``exclusive_disjunction`` because 2 out of the 4 cases have the same return value. We observe that
 
-  * if ``p == True`` the result is ``(False)``
-  * if ``p == False`` the result is ``(True)``
+  * if ``p == True`` the result is ``False``
+  * if ``p == False`` the result is ``True``
 
 * let us add conditions to represent our observation
   .. code-block:: python
@@ -67,7 +67,7 @@ REFACTOR: make it better
            if not p:
                return True
 
-* reorder and use ``(else)``
+* reorder and use ``else``
   .. code-block:: python
 
        def negate_first(p, q):
@@ -89,7 +89,7 @@ Negate Second
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a test for negate second to ``(TestBinaryOperations)``
+add a test for negate second to ``TestBinaryOperations``
 
 .. code-block:: python
 
@@ -111,17 +111,17 @@ GREEN: make it pass
        def negate_second(p, q):
            return False
     the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ for the third case
-* before we add a condition for it, this looks similar to ``(logical_equality)``\ , ``(exclusive_disjunction)`` and ``(negate_first)`` because 2 out of the 4 cases have the same return value. We observe that
+* before we add a condition for it, this looks similar to ``logical_equality``\ , ``exclusive_disjunction`` and ``negate_first`` because 2 out of the 4 cases have the same return value. We observe that
 
-  * if ``q == True`` the result is ``(False)``
-  * if ``q == False`` the result is ``(True)``
+  * if ``q == True`` the result is ``False``
+  * if ``q == False`` the result is ``True``
 
-* let us try using our conclusion from ``(negate_first)``
+* let us try using our conclusion from ``negate_first``
   .. code-block:: python
 
        def negate_second(p, q):
            return not p
-    the terminal still shows an `AssertionError <./ASSERTION_ERROR.rst>`_. let us try ``(q)`` instead
+    the terminal still shows an `AssertionError <./ASSERTION_ERROR.rst>`_. let us try ``q`` instead
   .. code-block:: python
 
        def negate_second(p, q):
@@ -133,22 +133,22 @@ REFACTOR: make it better
 
 I don't think we can make it better. let us update what we know so far
 
-For any boolean operation involving 2 inputs - ``(p)`` and ``(q)`` which can take the values ``(True)`` or ``(False)``
+For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
 
 
-* ``(negate_first)`` always return ``not p``
-* ``(negate_second)`` always returns ``not q``
-* ``(material_non_implication)`` is ``p and not q``
-* ``(converse_non_implication)`` is ``not p and q`` which is different from ``not(p and q)``
-* ``(logical_nor)`` is ``not(p or q)``
-* ``(logical_nand)`` is ``not(p and q)``
-* ``(exclusive_disjunction)`` is ``!=`` aka opposite of ``(logical_equality)``
-* ``(logical_equality)`` is ``==``
-* ``(logical_disjunction)`` is ``(or)``
-* ``(logical_conjunction)`` is ``(and)``
-* ``(and)`` is "not ``(or)``\ "
-* ``(or)`` is "not ``(and)``\ "
-* ``(False)`` is ``not True``
-* ``(True)`` is ``not False``
-* ``(False)`` is ``(False)``
-* ``(True)`` is ``(True)``
+* ``negate_first`` always return ``not p``
+* ``negate_second`` always returns ``not q``
+* ``material_non_implication`` is ``p and not q``
+* ``converse_non_implication`` is ``not p and q`` which is different from ``not(p and q)``
+* ``logical_nor`` is ``not(p or q)``
+* ``logical_nand`` is ``not(p and q)``
+* ``exclusive_disjunction`` is ``!=`` aka opposite of ``logical_equality``
+* ``logical_equality`` is ``==``
+* ``logical_disjunction`` is ``or``
+* ``logical_conjunction`` is ``and``
+* ``and`` is "not ``or``\ "
+* ``or`` is "not ``and``\ "
+* ``False`` is ``not True``
+* ``True`` is ``not False``
+* ``False`` is ``False``
+* ``True`` is ``True``

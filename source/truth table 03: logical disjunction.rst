@@ -6,13 +6,13 @@ We will continue to step through learning conditional statements in python using
 Reviewing what we know so far
 
 
-* we can express ``conditional statements`` on one line with ``(return)``
-* when there are multiple outcomes we only need to write the condition for the special case and use ``(else)`` for the others
-* ``(logical_conjunction)`` is ``(and)``
-* ``(False)`` is ``not True``
-* ``(True)`` is ``not False``
-* ``(False)`` is ``(False)``
-* ``(True)`` is ``(True)``
+* we can express ``conditional statements`` on one line with ``return``
+* when there are multiple outcomes we only need to write the condition for the special case and use ``else`` for the others
+* ``logical_conjunction`` is ``and``
+* ``False`` is ``not True``
+* ``True`` is ``not False``
+* ``False`` is ``False``
+* ``True`` is ``True``
 
 Prerequisites
 -------------
@@ -28,7 +28,7 @@ Logical Disjunction
 RED: make it fail
 ~~~~~~~~~~~~~~~~~
 
-add a test for logical disjunction to ``(TestBinaryOperations)`` in ``test_truth_table.py``
+add a test for logical disjunction to ``TestBinaryOperations`` in ``test_truth_table.py``
 
 .. code-block:: python
 
@@ -44,13 +44,13 @@ GREEN: make it pass
 ~~~~~~~~~~~~~~~~~~~
 
 
-* update ``truth_table.py`` with a function definition like we did for ``(logical_conjunction)``
+* update ``truth_table.py`` with a function definition like we did for ``logical_conjunction``
   .. code-block:: python
 
        def logical_disjunction(p, q):
            return True
     the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_
-* 3 of the test cases are passing because ``(logical_disjunction)`` returns ``(True)`` in 3 of the 4. We need a condition for the fourth case to pass. update the definition
+* 3 of the test cases are passing because ``logical_disjunction`` returns ``True`` in 3 of the 4. We need a condition for the fourth case to pass. update the definition
   .. code-block:: python
 
        def logical_disjunction(p, q):
@@ -64,7 +64,7 @@ REFACTOR: make it better
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-* we know from earlier that when we have a nested if statement it can be replaced with an ``(and)``\ , so we update our condition
+* we know from earlier that when we have a nested if statement it can be replaced with an ``and``\ , so we update our condition
   .. code-block:: python
 
        def logical_disjunction(p, q):
@@ -72,7 +72,7 @@ REFACTOR: make it better
                return False
            return True
     the terminal shows our tests are still passing
-* we can restate the equality comparison against ``(False)`` in terms of ``(True)`` by using the ``not equal`` comparison operator ``!=``
+* we can restate the equality comparison against ``False`` in terms of ``True`` by using the ``not equal`` comparison operator ``!=``
   .. code-block:: python
 
        def logical_disjunction(p, q):
@@ -80,7 +80,7 @@ REFACTOR: make it better
                return False
            return True
 
-* how can we express the ``(if)`` statement using python's implied comparison evaluation? we can use the ``(not)`` keyword like we did with ``(logical_negation)``
+* how can we express the ``if`` statement using python's implied comparison evaluation? we can use the ``not`` keyword like we did with ``logical_negation``
   .. code-block:: python
 
        def logical_disjunction(p, q):
@@ -88,7 +88,7 @@ REFACTOR: make it better
                return False
            return True
 
-* ``(not)`` happens twice in that statement. let us see if we can "factor" it out using algebra
+* ``not`` happens twice in that statement. let us see if we can "factor" it out using algebra
   .. code-block:: python
 
        def logical_disjunction(p, q):
@@ -102,7 +102,7 @@ REFACTOR: make it better
            if not p not and not q:
                return False
            return True
-    We get a ``(SyntaxError)``\ , the result of the "multiplication" is different from what we started with so we need something different. It should be something that expands out to
+    We get a ``SyntaxError``\ , the result of the "multiplication" is different from what we started with so we need something different. It should be something that expands out to
   .. code-block:: python
 
        def logical_disjunction(p, q):
@@ -116,7 +116,7 @@ REFACTOR: make it better
            if not(p not and q):
                return False
            return True
-    okay, this looks more like, if we "multiply" this out we get our original statement since the opposite of the opposite of something is something. let us fix the syntax. The opposite of and is ``(or)``
+    okay, this looks more like, if we "multiply" this out we get our original statement since the opposite of the opposite of something is something. let us fix the syntax. The opposite of and is ``or``
   .. code-block:: python
 
        def logical_disjunction(p, q):
@@ -133,7 +133,7 @@ REFACTOR: make it better
            else:
                return True
 
-* the ``(else)`` statement that returns ``(True)`` can be restated as the opposite of the ``(if)`` statement
+* the ``else`` statement that returns ``True`` can be restated as the opposite of the ``if`` statement
   .. code-block:: python
 
        def logical_disjunction(p, q):
@@ -159,7 +159,7 @@ REFACTOR: make it better
            if not(p or q):
                return False
 
-* restate using ``(else)``
+* restate using ``else``
   .. code-block:: python
 
        def logical_disjunction(p, q):
@@ -168,7 +168,7 @@ REFACTOR: make it better
            else:
                return False
 
-* rewriting to one line with a ``(return)`` statement
+* rewriting to one line with a ``return`` statement
   .. code-block:: python
 
        def logical_disjunction(p, q):
@@ -179,18 +179,18 @@ REFACTOR: make it better
 
        def logical_disjunction(p, q):
            return p or q
-    *VOILA!* the tests still pass and we have a simple statement that makes all 4 states pass for ``(logical_disjunction)``
+    *VOILA!* the tests still pass and we have a simple statement that makes all 4 states pass for ``logical_disjunction``
 
-Our knowledge is updated to show that for any boolean operation involving 2 inputs - ``(p)`` and ``(q)`` which can take the values ``(True)`` or ``(False)``
+Our knowledge is updated to show that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
 
 
-* ``(and)`` is "not ``(or)``\ "
-* ``(or)`` is "not ``(and)``\ "
-* ``(logical_disjunction)`` is ``(or)``
-* ``(logical_conjunction)`` is ``(and)``
-* ``(False)`` is ``not True``
-* ``(True)`` is ``not False``
-* ``(False)`` is ``(False)``
-* ``(True)`` is ``(True)``
-* ``return True if x else y`` can be rewritten as ``return x`` if ``(x)`` evaluates to ``(True)``
-* when there are multiple outcomes we only need to write the condition for the special case and use ``(else)`` for the others
+* ``and`` is "not ``or``\ "
+* ``or`` is "not ``and``\ "
+* ``logical_disjunction`` is ``or``
+* ``logical_conjunction`` is ``and``
+* ``False`` is ``not True``
+* ``True`` is ``not False``
+* ``False`` is ``False``
+* ``True`` is ``True``
+* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to ``True``
+* when there are multiple outcomes we only need to write the condition for the special case and use ``else`` for the others

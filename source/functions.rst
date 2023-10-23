@@ -3,7 +3,7 @@ functions
 
 The focus of this chapter is on functions in python using Test Driven Development
 
-A ``(function)`` is a callable unit/block of code. It is a way to encapsulate statements that can be used after they are written to accomplish a task. With functions we make code modular which makes it easier to test and reuse.
+A ``function`` is a callable unit/block of code. It is a way to encapsulate statements that can be used after they are written to accomplish a task. With functions we make code modular which makes it easier to test and reuse.
 
 In programming we process input data of some form and output data in some form. We can think of it as
 
@@ -12,7 +12,7 @@ In programming we process input data of some form and output data in some form. 
        input_data -> program -> output_data
        program(input_data) -> output_data
 
-We can think of the ``(program)`` in this illustration as the ``(function)`` that carries out the processing of ``(input_data)`` to return ``(output_data)``
+We can think of the ``program`` in this illustration as the ``function`` that carries out the processing of ``input_data`` to return ``output_data``
 
 Prerequisites
 -------------
@@ -25,12 +25,12 @@ Prerequisites
 How to Define functions
 -----------------------
 
-``(functions)`` are defined using the ``(def)`` keyword, a name, parentheses and a colon at the end
+``functions`` are defined using the ``def`` keyword, a name, parentheses and a colon at the end
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-let us a create a file named ``test_functions.py`` in the ``(tests)`` folder and add the following failing test
+let us a create a file named ``test_functions.py`` in the ``tests`` folder and add the following failing test
 
 .. code-block:: python
 
@@ -70,20 +70,20 @@ GREEN: make it pass
            pass
     and the terminal displays a passing test
 
-  * the test checks if the value of the call to ``functions.function_with_pass`` is ``(None)``
-  * the function definition simply says ``(pass)`` yet the test passes
-  * ``(pass)`` is a placeholder keyword which allows the function definition to follow python syntax rules
-  * the test passes because in python all functions return ``(None)`` by default, we can imagine the function has an invisible line that says ``return None``
+  * the test checks if the value of the call to ``functions.function_with_pass`` is ``None``
+  * the function definition simply says ``pass`` yet the test passes
+  * ``pass`` is a placeholder keyword which allows the function definition to follow python syntax rules
+  * the test passes because in python all functions return ``None`` by default, we can imagine the function has an invisible line that says ``return None``
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-let us test if functions really always return ``(None)`` by default
+let us test if functions really always return ``None`` by default
 
 
 *
   RED: make it fail
-    add a new failing test to ``(TestFunctions)`` in ``test_functions.py``
+    add a new failing test to ``TestFunctions`` in ``test_functions.py``
 
   .. code-block:: python
 
@@ -95,17 +95,17 @@ let us test if functions really always return ``(None)`` by default
 *
   GREEN: make it pass
 
-    add a new function to ``functions.py`` to make the test pass, this time with a ``(return)`` statement instead of ``(pass)``
+    add a new function to ``functions.py`` to make the test pass, this time with a ``return`` statement instead of ``pass``
 
   .. code-block:: python
 
        def function_with_return(self):
            return
 
-    the terminal shows this test is also passing. We have defined 2 functions with different statements in their body but they both return the same result, because "in python all functions return ``(None)`` by default, we can imagine the function has an invisible line that says ``return None``\ "
+    the terminal shows this test is also passing. We have defined 2 functions with different statements in their body but they both return the same result, because "in python all functions return ``None`` by default, we can imagine the function has an invisible line that says ``return None``\ "
 
 * RED: make it fail
-    we can add one more test to the ``(TestFunctions)`` class in ``test_functions.py`` to help drive home the point
+    we can add one more test to the ``TestFunctions`` class in ``test_functions.py`` to help drive home the point
   .. code-block:: python
 
            def test_functions_with_return_none(self):
@@ -114,7 +114,7 @@ let us test if functions really always return ``(None)`` by default
 *
   GREEN: make it pass
 
-    from the `Zen of Python <https://peps.python.org/pep-0020/>`_ - ``Explicit is better than implicit.`` Let us add a function definition to ``functions.py`` this time with an explicit ``(return)`` statement showing the value returned
+    from the `Zen of Python <https://peps.python.org/pep-0020/>`_ - ``Explicit is better than implicit.`` Let us add a function definition to ``functions.py`` this time with an explicit ``return`` statement showing the value returned
 
   .. code-block:: python
 
@@ -128,18 +128,18 @@ The 3 ways we have defined functions so far have the exact same outcome, they al
 Here is what we know so far about functions in python
 
 
-* functions are defined using the ``(def)`` keyword
-* functions return ``(None)`` by default
+* functions are defined using the ``def`` keyword
+* functions return ``None`` by default
 
 Passthrough Functions
 ---------------------
 
-A function returns ``(output)``\ , and can take :raw-html-m2r:`<code class="docutils literal"><span class="pre">&#96;(input)&#96;&#96;&#96;. As a simple test let us create a</span></code>`\ passthrough function` which is a function that returns the input it receives as output
+A function returns ``output``\ , and can take :raw-html-m2r:`<code class="docutils literal"><span class="pre">&#96;(input)&#96;&#96;&#96;. As a simple test let us create a</span></code>`\ passthrough function` which is a function that returns the input it receives as output
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a failing test to the ``(TestFunctions)`` class in ``test_functions.py``
+add a failing test to the ``TestFunctions`` class in ``test_functions.py``
 
 .. code-block:: python
 
@@ -157,7 +157,7 @@ GREEN: make it pass
 
        def passthrough():
            return None
-    the terminal updates to show a `TypeError <./TYPE_ERROR.rst>`_ because the definition for ``(passthrough)`` does not allow ``(inputs)`` but our test sends ``(False)`` as input
+    the terminal updates to show a `TypeError <./TYPE_ERROR.rst>`_ because the definition for ``passthrough`` does not allow ``inputs`` but our test sends ``False`` as input
   .. code-block:: python
 
        TypeError: passthrough() takes 0 positional arguments but 1 was given
@@ -171,7 +171,7 @@ GREEN: make it pass
        # AttributeError
        # TypeError
 
-* update ``(passthrough)`` in ``functions.py`` to take 1 positional argument
+* update ``passthrough`` in ``functions.py`` to take 1 positional argument
   .. code-block:: python
 
        def passthrough(input_data):
@@ -180,8 +180,8 @@ GREEN: make it pass
   .. code-block:: python
 
        AssertionError: None != False
-    because the result of calling ``functions.passthrough`` with ``(False)`` as input is ``(None)`` which is not equal to ``(False)`` which is our expected result
-* change the definition of ``(passthrough)`` to make the test pass
+    because the result of calling ``functions.passthrough`` with ``False`` as input is ``None`` which is not equal to ``False`` which is our expected result
+* change the definition of ``passthrough`` to make the test pass
   .. code-block:: python
 
        def passthrough(input_data):
@@ -191,13 +191,13 @@ GREEN: make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Wait a minute! Something is not quite right here. The definition for a ``(passthrough)`` function was that it returned the same thing it was given, our test passes when ``(False)`` is given as input, will it still pass when another value is given or will it always return ``(False)``\ ? There is a way to find out, let us test it
+Wait a minute! Something is not quite right here. The definition for a ``passthrough`` function was that it returned the same thing it was given, our test passes when ``False`` is given as input, will it still pass when another value is given or will it always return ``False``\ ? There is a way to find out, let us test it
 
 
 *
   RED: make it fail
 
-    update ``(test_passthrough_function)`` in ``(TestFunctions)`` in ``test_functions.py``  with a new test
+    update ``test_passthrough_function`` in ``TestFunctions`` in ``test_functions.py``  with a new test
 
   .. code-block:: python
 
@@ -211,12 +211,12 @@ Wait a minute! Something is not quite right here. The definition for a ``(passth
 
        AssertionError: False != True
 
-    the function returns ``(False)`` instead of ``(True)`` in the second case, confirming our suspicions, we are not all the way geniuses, yet
+    the function returns ``False`` instead of ``True`` in the second case, confirming our suspicions, we are not all the way geniuses, yet
 
 *
   GREEN: make it pass
 
-    change the definition of ``(passthrough)`` in ``functions.py``
+    change the definition of ``passthrough`` in ``functions.py``
 
   .. code-block:: python
 
@@ -228,7 +228,7 @@ Wait a minute! Something is not quite right here. The definition for a ``(passth
 *
   REFACTOR: make it better
 
-    update ``(test_passthrough_function)``
+    update ``test_passthrough_function``
 
   .. code-block:: python
 
@@ -253,7 +253,7 @@ We can define our function to take in more than one input, For instance if we ar
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a new test to ``test_functions.py``\ , replacing ``(my_first_name)`` and ``(my_last_name)`` with your first and last names
+add a new test to ``test_functions.py``\ , replacing ``my_first_name`` and ``my_last_name`` with your first and last names
 
 .. code-block:: python
 
@@ -271,19 +271,19 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* update ``functions.py`` with the solution we know works from ``(test_passthrough_function)``
+* update ``functions.py`` with the solution we know works from ``test_passthrough_function``
   .. code-block:: python
 
        def passthrough_with_positional_arguments(input_data):
            return input_data
     the terminal updates to show a `TypeError <./TYPE_ERROR.rst>`_
-* change the signature of ``(passthrough_with_positional_arguments)`` to take in more than one argument
+* change the signature of ``passthrough_with_positional_arguments`` to take in more than one argument
   .. code-block:: python
 
        def passthrough_with_positional_arguments(input_data, second_argument):
            return input_data
     the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_
-* update ``(passthrough_with_positional_arguments)`` to return the two arguments it receives
+* update ``passthrough_with_positional_arguments`` to return the two arguments it receives
   .. code-block:: python
 
        def passthrough_with_positional_arguments(input_data, second_argument):
@@ -296,14 +296,14 @@ REFACTOR: make it better
 How can we make this better?
 
 
-* We named the first argument ``(input_data)`` and the second argument ``(second_argument)``. Technically, both arguments are input data, so we need a better name that is more descriptive, How can we make this better?
-* modify the signature of ``(passthrough_with_positional_arguments)`` to use more descriptive names
+* We named the first argument ``input_data`` and the second argument ``second_argument``. Technically, both arguments are input data, so we need a better name that is more descriptive, How can we make this better?
+* modify the signature of ``passthrough_with_positional_arguments`` to use more descriptive names
   .. code-block:: python
 
        def passthrough_with_positional_arguments(first_argument, second_argument):
            return first_argument, second_argument
     we still have passing tests
-* let us add another test to ensure that ``(passthrough_with_positional_arguments)`` outputs data in the order given. update ``(test_functions_with_positional_arguments)``
+* let us add another test to ensure that ``passthrough_with_positional_arguments`` outputs data in the order given. update ``test_functions_with_positional_arguments``
   .. code-block:: python
 
            def test_functions_with_positional_arguments(self):
@@ -338,7 +338,7 @@ How can we make this better?
                )
     the terminal updates to show passing tests
 * our function only takes in 2 positional arguments, though there are scenarios where a function needs to take in more arguments. For instance, if we do not know the number of positional arguments that will be given before hand
-* let us update ``(test_functions_with_positional_arguments)`` with tests for cases where the number of positional arguments received is not known
+* let us update ``test_functions_with_positional_arguments`` with tests for cases where the number of positional arguments received is not known
   .. code-block:: python
 
            def test_functions_with_positional_arguments(self):
@@ -367,7 +367,7 @@ How can we make this better?
                    (bool, int, float, str, tuple, list, set, dict)
                )
     the terminal updates to show a `TypeError <./TYPE_ERROR.rst>`_ because 2 positional arguments were expected by the function but 4 were given
-* In python we can represent multiple arguments using a starred expression `see arbitrary argument lists <https://docs.python.org/3/tutorial/controlflow.html#arbitrary-argument-lists>`_. Let us update the signature of ``(functions_with_positional_arguments)`` with a starred expression to take in any number of arguments
+* In python we can represent multiple arguments using a starred expression `see arbitrary argument lists <https://docs.python.org/3/tutorial/controlflow.html#arbitrary-argument-lists>`_. Let us update the signature of ``functions_with_positional_arguments`` with a starred expression to take in any number of arguments
   .. code-block:: python
 
        def passthrough_with_positional_arguments(*arguments):
@@ -437,7 +437,7 @@ GREEN: make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-So far ``(passthrough_with_keyword_arguments)`` looks the same as ``(passthrough_with_positional_arguments)`` did when it took in 2 positional arguments, we have not yet seen a difference between a ``positional argument`` and a ``keyword argument``
+So far ``passthrough_with_keyword_arguments`` looks the same as ``passthrough_with_positional_arguments`` did when it took in 2 positional arguments, we have not yet seen a difference between a ``positional argument`` and a ``keyword argument``
 
 
 *
@@ -461,13 +461,13 @@ So far ``(passthrough_with_keyword_arguments)`` looks the same as ``(passthrough
                    ('my_first_name', 'my_last_name')
                )
 
-    the terminal updates to show passing tests. Unlike in ``(test_functions_with_positional_arguments)`` using the name when passing inputs, ensures the function always displays output in the right order regardless of the order in which the input data is given
+    the terminal updates to show passing tests. Unlike in ``test_functions_with_positional_arguments`` using the name when passing inputs, ensures the function always displays output in the right order regardless of the order in which the input data is given
 
     Our function currently only takes in 2 keyword arguments. What if we wanted a function that can take in any number of keyword arguments? There is a starred expression for keyword arguments - ``**``.
 
 *
   RED: make it fail
-    let us add a test to ``(test_functions_with_keyword_arguments)``
+    let us add a test to ``test_functions_with_keyword_arguments``
 
   .. code-block:: python
 
@@ -499,13 +499,13 @@ So far ``(passthrough_with_keyword_arguments)`` looks the same as ``(passthrough
   GREEN: make it pass
 
 
-  * change the signature of ``(passthrough_with_keyword_arguments)`` to accept any number of keyword arguments
+  * change the signature of ``passthrough_with_keyword_arguments`` to accept any number of keyword arguments
     .. code-block:: python
 
          def passthrough_with_keyword_arguments(**keyword_arguments):
              return keyword_arguments
       the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ for our previous test that was passing. We have introduced a regression - our new code has caused an old passing test to fail.
-  * update the expected result of ``(test_functions_with_keyword_arguments)`` from the terminal's output
+  * update the expected result of ``test_functions_with_keyword_arguments`` from the terminal's output
     .. code-block:: python
 
        def test_functions_with_keyword_arguments(self):
@@ -565,7 +565,7 @@ So far ``(passthrough_with_keyword_arguments)`` looks the same as ``(passthrough
 *
   REFACTOR: make it better
 
-    let us add one more test to ``(test_functions_with_keyword_arguments)`` to drill the lesson
+    let us add one more test to ``test_functions_with_keyword_arguments`` to drill the lesson
 
   .. code-block:: python
 
@@ -651,7 +651,7 @@ add a new failing test to ``test_functions.py``
                {}
            )
 
-the terminal updates to show a ``(SyntaxError)`` because we put a positional argument after a keyword argument and we update our running list of exceptions encountered
+the terminal updates to show a ``SyntaxError`` because we put a positional argument after a keyword argument and we update our running list of exceptions encountered
 
 .. code-block:: python
 
@@ -666,7 +666,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* fix the order of arguments in ``(test_functions_with_positional_and_keyword_arguments)``
+* fix the order of arguments in ``test_functions_with_positional_and_keyword_arguments``
   .. code-block:: python
 
        def test_functions_with_positional_and_keyword_arguments(self):
@@ -713,7 +713,7 @@ GREEN: make it pass
        def accepts_positional_and_keyword_arguments(first_name, last_name):
            return first_name, last_name
     the terminal updates the `AssertionError <./ASSERTION_ERROR.rst>`_ with the values we just added
-* modify ``(test_functions_with_positional_and_keyword_arguments)`` to make our results match the expectation
+* modify ``test_functions_with_positional_and_keyword_arguments`` to make our results match the expectation
   .. code-block:: python
 
            def test_functions_with_positional_and_keyword_arguments(self):
@@ -728,22 +728,22 @@ GREEN: make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Hold on a second. This looks exactly like what we did in ``(test_functions_with_positional_arguments)``. We cannot tell from the function signature which argument is positional and which is a keyword argument and do not want to wait for the function to fail when we send in values to figure it out
+Hold on a second. This looks exactly like what we did in ``test_functions_with_positional_arguments``. We cannot tell from the function signature which argument is positional and which is a keyword argument and do not want to wait for the function to fail when we send in values to figure it out
 
 
-* change the function signature of ``(accepts_positional_and_keyword_arguments)`` to have a default value for the keyword argument
+* change the function signature of ``accepts_positional_and_keyword_arguments`` to have a default value for the keyword argument
   .. code-block:: python
 
        def accepts_positional_and_keyword_arguments(first_name, last_name=None):
            return first_name, last_name
     all tests are still passing
-* we did not add a default argument for ``(first_name)``\ , let us test What would happen if we did
+* we did not add a default argument for ``first_name``\ , let us test What would happen if we did
   .. code-block:: python
 
        def accepts_positional_and_keyword_arguments(first_name=None, last_name=None):
            return first_name, last_name
     we still have passing tests. It looks like python lets us use default arguments with no issues, and we can provide keyword arguments positionally without using the name. let us add another test to prove this
-* add a test to ``(test_functions_with_positional_and_keyword_arguments)``
+* add a test to ``test_functions_with_positional_and_keyword_arguments``
   .. code-block:: python
 
            def test_functions_with_positional_and_keyword_arguments(self):
@@ -970,7 +970,7 @@ add a new test that checks if a singleton that accepts inputs returns the same v
                self.assertEqual(functions.singleton_with_input('Bob', 'James', 'Frank'), 'joe')
                self.assertEqual(functions.singleton_with_input('a', 2, 'c', 3), 'joe')
     the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
-* add a function for ``(singleton_with_inputs)`` to ``functions.py`` to make the test pass
+* add a function for ``singleton_with_inputs`` to ``functions.py`` to make the test pass
   .. code-block:: python
 
        def singleton_with_inputs(*args):

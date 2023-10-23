@@ -17,7 +17,7 @@ Converse Implication
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a test for converse implication to ``(TestBinaryOperations)``
+add a test for converse implication to ``TestBinaryOperations``
 
 .. code-block:: python
 
@@ -68,7 +68,7 @@ REFACTOR: make it better
            else:
                return True
     still passing
-* change ``(else)`` to the opposite of the ``(if)`` statement
+* change ``else`` to the opposite of the ``if`` statement
   .. code-block:: python
 
        def converse_implication(p, q):
@@ -85,7 +85,7 @@ REFACTOR: make it better
                return False
            if not not p not and not q:
                return True
-    the terminal shows a ``(SyntaxError)``\ , fix the syntax
+    the terminal shows a ``SyntaxError``\ , fix the syntax
   .. code-block:: python
 
        def converse_implication(p, q):
@@ -103,7 +103,7 @@ REFACTOR: make it better
            if not p and q:
                return False
 
-* replace the second condition with ``(else)``
+* replace the second condition with ``else``
   .. code-block:: python
 
        def converse_implication(p, q):
@@ -122,16 +122,16 @@ REFACTOR: make it better
 Our knowledge has increased
 
 
-* ``(converse_implication)`` is ``not p and q`` which is different from ``not(p and q)``
-* ``(logical_nor)`` is ``not(p or q)``
-* ``(logical_nand)`` is ``not(p and q)``
-* ``(exclusive_disjunction)`` is ``!=`` aka opposite of ``(logical_equality)``
-* ``(logical_equality)`` is ``==``
-* ``(logical_disjunction)`` is ``(or)``
-* ``(logical_conjunction)`` is ``(and)``
-* ``(and)`` is "not ``(or)``\ "
-* ``(or)`` is "not ``(and)``\ "
-* ``(False)`` is ``not True``
-* ``(True)`` is ``not False``
-* ``(False)`` is ``(False)``
-* ``(True)`` is ``(True)``
+* ``converse_implication`` is ``not p and q`` which is different from ``not(p and q)``
+* ``logical_nor`` is ``not(p or q)``
+* ``logical_nand`` is ``not(p and q)``
+* ``exclusive_disjunction`` is ``!=`` aka opposite of ``logical_equality``
+* ``logical_equality`` is ``==``
+* ``logical_disjunction`` is ``or``
+* ``logical_conjunction`` is ``and``
+* ``and`` is "not ``or``\ "
+* ``or`` is "not ``and``\ "
+* ``False`` is ``not True``
+* ``True`` is ``not False``
+* ``False`` is ``False``
+* ``True`` is ``True``

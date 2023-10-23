@@ -17,7 +17,7 @@ Logical Equality/Logical Bi-conditional
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a test for logical equality to ``(TestBinaryOperations)``
+add a test for logical equality to ``TestBinaryOperations``
 
 .. code-block:: python
 
@@ -33,7 +33,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* add a definition to ``truth_table.py`` with a return statement, we can pick ``(True)`` or ``(False)`` since 2 out of the 4 cases are either ``(True)`` or ``(False)``
+* add a definition to ``truth_table.py`` with a return statement, we can pick ``True`` or ``False`` since 2 out of the 4 cases are either ``True`` or ``False``
   .. code-block:: python
 
        def logical_equality(p, q):
@@ -66,8 +66,8 @@ What can we do to make this better?
 
 * looking at the test cases, we can summarize them as 2 states
 
-  * logical_equality returns True when ``(p)`` and ``(q)`` are the same
-  * logical_equality returns False when ``(p)`` and ``(q)`` are not the same
+  * logical_equality returns True when ``p`` and ``q`` are the same
+  * logical_equality returns False when ``p`` and ``q`` are not the same
 
 * we rewrite the condition statements to reflect the second observation
   .. code-block:: python
@@ -95,7 +95,7 @@ What can we do to make this better?
            if p != q:
                return False
 
-* replace with ``(else)``
+* replace with ``else``
   .. code-block:: python
 
        def logical_equality(p, q):
@@ -104,7 +104,7 @@ What can we do to make this better?
            else:
                return False
 
-* rewrite as one line with the ``(return)`` statement
+* rewrite as one line with the ``return`` statement
   .. code-block:: python
 
        def logical_equality(p, q):
@@ -117,16 +117,16 @@ What can we do to make this better?
            return p == q
     Well done! the tests are still green
 
-let us review. For any boolean operation involving 2 inputs - ``(p)`` and ``(q)`` which can take the values ``(True)`` or ``(False)``
+let us review. For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
 
 
-* ``(logical_equality)`` is ``==``
-* ``(logical_disjunction)`` is ``(or)``
-* ``(logical_conjunction)`` is ``(and)``
-* ``(and)`` is "not ``(or)``\ "
-* ``(or)`` is "not ``(and)``\ "
-* ``(False)`` is ``not True``
-* ``(True)`` is ``not False``
-* ``(False)`` is ``(False)``
-* ``(True)`` is ``(True)``
-* ``return True if x else y`` can be rewritten as ``return x`` if ``(x)`` evaluates to ``(True)``
+* ``logical_equality`` is ``==``
+* ``logical_disjunction`` is ``or``
+* ``logical_conjunction`` is ``and``
+* ``and`` is "not ``or``\ "
+* ``or`` is "not ``and``\ "
+* ``False`` is ``not True``
+* ``True`` is ``not False``
+* ``False`` is ``False``
+* ``True`` is ``True``
+* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to ``True``

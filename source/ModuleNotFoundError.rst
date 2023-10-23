@@ -1,9 +1,9 @@
 ModuleNotFoundError
 ===================
 
-Let us step through solving a ``(ModuleNotFoundError)`` in python using Test Driven Development
+Let us step through solving a ``ModuleNotFoundError`` in python using Test Driven Development
 
-The ``(ModuleNotFoundError)`` is raised when you try to import a module that does not exist.
+The ``ModuleNotFoundError`` is raised when you try to import a module that does not exist.
 A Python Module is a file that ends in ``.py`` or a directory that contains an ``__init__.py``.
 Programming allows us to gain from our previous efforts as well as the efforts of others in the form of packages and modules that can be distributed for other people to use. To use these packages in python we have to import them.
 
@@ -18,7 +18,7 @@ Prerequisites
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-Open a new file in your editor and save it as ``test_module_not_found_error.py`` in the ``(tests)`` folder you created in `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_
+Open a new file in your editor and save it as ``test_module_not_found_error.py`` in the ``tests`` folder you created in `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_
 Type the following in the file
 
 .. code-block:: python
@@ -134,7 +134,7 @@ If you left ``pytest-watch`` running from `How I setup a Test Driven Development
 Looking at the traceback starting from the bottom
 
 
-* ``(ModuleNotFoundError)`` - this error is raised when an import statement fails because python cannot find a module/package with the given name, in this case ``(module_0)`` does not exist
+* ``ModuleNotFoundError`` - this error is raised when an import statement fails because python cannot find a module/package with the given name, in this case ``module_0`` does not exist
 * ``import module_0`` - the line of code that caused the failure
 * Add the errors to the running list of Exceptions encountered
   .. code-block:: python
@@ -178,4 +178,4 @@ GREEN: make it pass
 
 *WELL DONE!*
 You are on your way to being a troubleshooting master.
-You now know how to solve ``(ModuleNotFoundError)``
+You now know how to solve ``ModuleNotFoundError``

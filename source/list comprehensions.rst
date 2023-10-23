@@ -20,7 +20,7 @@ List comprehensions are a way to create lists from another iterable. It is a nic
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a file named ``test_list_comprehension.py`` to the ``(tests)`` folder
+add a file named ``test_list_comprehension.py`` to the ``tests`` folder
 
 .. code-block:: python
 
@@ -39,11 +39,11 @@ add a file named ``test_list_comprehension.py`` to the ``(tests)`` folder
            self.assertEqual(list_a, [])
 
 
-* we create ``(collection_a)`` which uses the ``(range)`` object
-* the ``(range)`` object creates an ``(iterable)`` of numbers from 0 to the number we give minus 1. `read more <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_
-* we create a list named ``(list_a)`` that has no elements and confirm it is empty with a ``self.assertEqual(list_a, [])``
-* we then create a loop using the ``(for)`` keyword, that goes over every element of ``(collection_a)`` and adds it to ``(list_a)`` using the ``(append)`` method see `Lists <./LISTS.rst>`_
-* the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ for our test that checks the elements of ``(list_a)`` after the loop ran, because the list is no longer empty, it now contains 10 elements
+* we create ``collection_a`` which uses the ``range`` object
+* the ``range`` object creates an ``iterable`` of numbers from 0 to the number we give minus 1. `read more <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_
+* we create a list named ``list_a`` that has no elements and confirm it is empty with a ``self.assertEqual(list_a, [])``
+* we then create a loop using the ``for`` keyword, that goes over every element of ``collection_a`` and adds it to ``list_a`` using the ``append`` method see `Lists <./LISTS.rst>`_
+* the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ for our test that checks the elements of ``list_a`` after the loop ran, because the list is no longer empty, it now contains 10 elements
   .. code-block:: python
 
        E       AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
@@ -77,23 +77,23 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* let us add another test to check what happens when we call the ``(list)`` keyword on the ``(collection_a)`` iterable
+* let us add another test to check what happens when we call the ``list`` keyword on the ``collection_a`` iterable
   .. code-block:: python
 
            self.assertEqual(list(collection_a), list_a)
-    the tests pass because calling ``(list)`` on an ``(iterable)`` creates a `list <./LISTS.rst>`_
+    the tests pass because calling ``list`` on an ``iterable`` creates a `list <./LISTS.rst>`_
 * add another test
   .. code-block:: python
 
            self.assertEqual(list_comprehensions.make_a_list(collection_a), list_a)
-    the terminal updates to show a ``(NameError)`` and we add it to our list of exceptions encountered
+    the terminal updates to show a ``NameError`` and we add it to our list of exceptions encountered
   .. code-block:: python
 
        # Exceptions Encountered
        # AssertionError
        # NameError
 
-* add an import statement for ``(list_comprehensions)`` at the beginning of ``test_list_comprehension.py`` to define the name in our tests
+* add an import statement for ``list_comprehensions`` at the beginning of ``test_list_comprehension.py`` to define the name in our tests
   .. code-block:: python
 
        import list_comprehensions
@@ -151,7 +151,7 @@ let us test creating a list with a for loop like the example above
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a test to ``(TestListComprehensions)``
+add a test to ``TestListComprehensions``
 
 .. code-block:: python
 
@@ -166,7 +166,7 @@ add a test to ``(TestListComprehensions)``
            self.assertEqual(a_list, [])
            self.assertEqual(list_comprehensions.for_loop(collection), a_list)
 
-the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ for the values of ``(a_list)`` after we loop through ``(collection)`` and add elements because it is no longer empty
+the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ for the values of ``a_list`` after we loop through ``collection`` and add elements because it is no longer empty
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -188,9 +188,9 @@ GREEN: make it pass
                self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
                self.assertEqual(list_comprehensions.for_loop(collection), a_list)
 
-    the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.rst>`_ since ``list_comprehensions.py`` does not have a definition for ``(for_loop)``
+    the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.rst>`_ since ``list_comprehensions.py`` does not have a definition for ``for_loop``
 
-* we add a function definition for ``(for_loop)`` to ``list_comprehensions.py``
+* we add a function definition for ``for_loop`` to ``list_comprehensions.py``
   .. code-block:: python
 
        def for_loop():
@@ -203,7 +203,7 @@ GREEN: make it pass
            return None
     the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_
 *
-  we change the behavior of the function by adding a ``(for)`` loop
+  we change the behavior of the function by adding a ``for`` loop
 
   .. code-block:: python
 
@@ -217,8 +217,8 @@ GREEN: make it pass
 
 
   * we create an empty list
-  * loop over the elements of ``(argument)`` which is an ``(iterable)`` passed into the function
-  * append each element from ``(argument)`` to the empty list
+  * loop over the elements of ``argument`` which is an ``iterable`` passed into the function
+  * append each element from ``argument`` to the empty list
   *
     return the result after the loop
 
@@ -227,12 +227,12 @@ GREEN: make it pass
 List Comprehension
 ------------------
 
-Now that we know how to create a ``(list)`` using ``[]``\ , ``(list)`` and ``(for)``\ , let us try creating a `list <./LISTS.rst>`_ using a ``list comprehension``. It looks similar to a ``(for)`` loop but allows us to achieve the same thing with less words
+Now that we know how to create a ``list`` using ``[]``\ , ``list`` and ``for``\ , let us try creating a `list <./LISTS.rst>`_ using a ``list comprehension``. It looks similar to a ``for`` loop but allows us to achieve the same thing with less words
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a failing test to ``(TestListComprehensions)``
+add a failing test to ``TestListComprehensions``
 
 .. code-block:: python
 
@@ -331,7 +331,7 @@ Let us explore what else we can do with a ``list comprehension``
 
 
 *
-  add a failing test to ``(TestListComprehensions)``
+  add a failing test to ``TestListComprehensions``
 
   .. code-block:: python
 
@@ -360,7 +360,7 @@ Let us explore what else we can do with a ``list comprehension``
 
   * In this loop we update the empty list after the condition ``if element % 2 == 0`` is met.
   * The ``%`` is a modulo operator for modulo division which divides the number on the left by the number on the right and gives the remainder.
-  * If the remainder is ``(0)``\ , it means the number is divisible by 2 with no remainder meaning its an even number
+  * If the remainder is ``0``\ , it means the number is divisible by 2 with no remainder meaning its an even number
 
 *
   we update the test with the expected values to make it pass
@@ -420,7 +420,7 @@ Let us explore what else we can do with a ``list comprehension``
 
        AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != [0, 2, 4, 6, 8]
 
-    we have not added the ``(if)`` condition to the ``list comprehension``\ , let's do that now
+    we have not added the ``if`` condition to the ``list comprehension``\ , let's do that now
 
   .. code-block:: python
 
@@ -438,7 +438,7 @@ Let us explore what else we can do with a ``list comprehension``
            return [element for element in argument if element % 2 == 0]
     and the terminal shows passing tests! Hooray
 *
-  let us try another ``list comprehension`` with a different condition. Add a test to ``(TestListComprehensions)``
+  let us try another ``list comprehension`` with a different condition. Add a test to ``TestListComprehensions``
 
   .. code-block:: python
 
@@ -478,7 +478,7 @@ Let us explore what else we can do with a ``list comprehension``
     the terminal shows an `AssertionError <./ASSERTION_ERROR.rst>`_ for the next test
 
 *
-  after updating the value on the left with a ``list comprehension`` that uses the same condition we used to create ``(odd_numbers)``
+  after updating the value on the left with a ``list comprehension`` that uses the same condition we used to create ``odd_numbers``
 
   .. code-block:: python
 
@@ -508,4 +508,4 @@ Let us explore what else we can do with a ``list comprehension``
 
 *WOW!*
 
-You now know a couple of ways to loop through ``(iterables)`` and have your program make decisions by using ``(conditions)``. You also know how to do it with less words using ``list comprehensions``. Well done!
+You now know a couple of ways to loop through ``iterables`` and have your program make decisions by using ``conditions``. You also know how to do it with less words using ``list comprehensions``. Well done!

@@ -7,7 +7,7 @@ Prerequisites
 -------------
 
 
-* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_ with ``(calculator)`` as the project name
+* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_ with ``calculator`` as the project name
 
 ----
 
@@ -57,7 +57,7 @@ the terminal responds to our change, with the one test still passing from `How I
 Test Imports
 ------------
 
-add an import statement for the ``(calculator)`` module we are working on
+add an import statement for the ``calculator`` module we are working on
 
 .. code-block:: python
 
@@ -93,7 +93,7 @@ RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
 
-* let us add a method named ``(test_addition)`` to the ``(TestCalculator)`` class
+* let us add a method named ``test_addition`` to the ``TestCalculator`` class
 
 .. code-block:: python
     import unittest
@@ -121,10 +121,10 @@ RED: make it fail
    # Exceptions Encountered
    # AssertionError
    ```
-   - we call a new testing method from the `unittest.TestCase` class ``(assertEqual)`` which checks if 2 things are equal. It is similar to the statement `assert x == y` or asking `is x equal to y?`
-   - there are two things passed to the ``(assertEqual)`` method for evaluation in this case
-       - first - `calculator.add(0, 1)` - where we give the values ``(0)`` and ``(1)`` as inputs to our addition function
-       - second - ``(1)`` - our expected result from `calculator.add` when it is given ``(0)`` and ``(1)``
+   - we call a new testing method from the `unittest.TestCase` class ``assertEqual`` which checks if 2 things are equal. It is similar to the statement `assert x == y` or asking `is x equal to y?`
+   - there are two things passed to the ``assertEqual`` method for evaluation in this case
+       - first - `calculator.add(0, 1)` - where we give the values ``0`` and ``1`` as inputs to our addition function
+       - second - ``1`` - our expected result from `calculator.add` when it is given ``0`` and ``1``
        - our expectation is that `calculator.add(0, 1) is equal to 1`
 
 
@@ -158,27 +158,27 @@ RED: make it fail
     What does this mean?
 
 
-  * The error is an ``(AttributeError)`` at line 12 in ``test_calculator.py``
+  * The error is an ``AttributeError`` at line 12 in ``test_calculator.py``
   * An `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when we try to access or call an attribute that python cannot find
   * we can think of ``calculator.add`` as an address
 
-    * ``(calculator)`` refers to ``calculator.py``
-    * ``(add)`` refers to something(an attribute) within the ``calculator.py`` file
+    * ``calculator`` refers to ``calculator.py``
+    * ``add`` refers to something(an attribute) within the ``calculator.py`` file
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* open ``calculator.py`` in your Interactive Development Environment(IDE) and add the name ``(add)``
+* open ``calculator.py`` in your Interactive Development Environment(IDE) and add the name ``add``
   .. code-block:: python
 
        add
-    the terminal updates to show a ``(NameError)`` because ``(add)`` is not defined, there is no assignment to the name
+    the terminal updates to show a ``NameError`` because ``add`` is not defined, there is no assignment to the name
   .. code-block:: python
 
        E   NameError: name 'add' is not defined
 
-* let us update our list of exceptions encountered with ``(NameError)``
+* let us update our list of exceptions encountered with ``NameError``
   .. code-block:: python
 
        # Exceptions Encountered
@@ -186,7 +186,7 @@ GREEN: make it pass
        # NameError
 
 *
-  assign the name ``(add)`` to the null value ``(None)``
+  assign the name ``add`` to the null value ``None``
 
   .. code-block:: python
 
@@ -199,9 +199,9 @@ GREEN: make it pass
        E       TypeError: 'NoneType' object is not callable
 
 *
-  The ``(AttributeError)`` was fixed by declaring a variable ``(add)`` in the ``(calculator)`` module, even though it is currently assigned to the null value ``(None)``
+  The ``AttributeError`` was fixed by declaring a variable ``add`` in the ``calculator`` module, even though it is currently assigned to the null value ``None``
 
-* The new error is `TypeError <./TYPE_ERROR.rst>`_ which can occur when an ``(object)`` is used in a way that it was not intended for. In this case the ``(add)`` variable is not callable. Let us update our list of exceptions encountered
+* The new error is `TypeError <./TYPE_ERROR.rst>`_ which can occur when an ``object`` is used in a way that it was not intended for. In this case the ``add`` variable is not callable. Let us update our list of exceptions encountered
   .. code-block:: python
 
        # Exceptions Encountered
@@ -209,7 +209,7 @@ GREEN: make it pass
        # NameError
        # TypeError
 
-* To make it callable we have to define it as a `function <./FUNCTIONS.rst>`_ or a `class <./CLASSES.rst>`_. Testing the ``(def)`` keyword for creating functions we update our add variable in ``calculator.py`` to
+* To make it callable we have to define it as a `function <./FUNCTIONS.rst>`_ or a `class <./CLASSES.rst>`_. Testing the ``def`` keyword for creating functions we update our add variable in ``calculator.py`` to
   .. code-block:: python
 
        def add():
@@ -220,7 +220,7 @@ GREEN: make it pass
        E       TypeError: add() takes 0 positional arguments but 2 were given
 
 *
-  This ``(TypeError)`` indicates that the current definition of the ``(add)`` function takes in no arguments but we provided 2 in our call, since part of our requirement is that the ``(add)`` function should take in two numbers, we will update it in ``calculator.py`` to match
+  This ``TypeError`` indicates that the current definition of the ``add`` function takes in no arguments but we provided 2 in our call, since part of our requirement is that the ``add`` function should take in two numbers, we will update it in ``calculator.py`` to match
 
   .. code-block:: python
 
@@ -233,8 +233,8 @@ GREEN: make it pass
 
        E       AssertionError: None != 1
 
-    An ``(AssertionError)`` was the first error we encountered in `Setup TDD <./How I How I setup a Test Driven Development Environment.rst>`_ after adding a test for failure.
-    It is raised when an assertion is ``(False)``\ , since we are using ``self.assertEqual`` it means the two things we provided as inputs are not equal. In other words ``calculator.add(0, 1)`` is currently not equal to ``(1)``. Let us update the ``(add)`` function in ``calculator.py`` so it gives the expected value
+    An ``AssertionError`` was the first error we encountered in `Setup TDD <./How I How I setup a Test Driven Development Environment.rst>`_ after adding a test for failure.
+    It is raised when an assertion is ``False``\ , since we are using ``self.assertEqual`` it means the two things we provided as inputs are not equal. In other words ``calculator.add(0, 1)`` is currently not equal to ``1``. Let us update the ``add`` function in ``calculator.py`` so it gives the expected value
 
   .. code-block:: python
 
@@ -258,7 +258,7 @@ There are a few scenarios we can consider from the users' perspective. If our us
 
 
 *
-  remove ``(test_failure)`` from ``test_calculator.py`` since we no longer need it
+  remove ``test_failure`` from ``test_calculator.py`` since we no longer need it
 
   .. code-block:: python
 
@@ -273,7 +273,7 @@ There are a few scenarios we can consider from the users' perspective. If our us
 *
  RED: make it fail
 
-    add a new test to ``(test_addition)`` in ``test_calculator.py``
+    add a new test to ``test_addition`` in ``test_calculator.py``
 
   .. code-block:: python
 
@@ -287,7 +287,7 @@ There are a few scenarios we can consider from the users' perspective. If our us
                    0
                )
 
-    the terminal responds with an `AssertionError <./ASSERTION_ERROR.rst>`_ confirming that the ``(add)`` function always returns ``(1)`` regardless of inputs
+    the terminal responds with an `AssertionError <./ASSERTION_ERROR.rst>`_ confirming that the ``add`` function always returns ``1`` regardless of inputs
 
   .. code-block:: python
 
@@ -296,14 +296,14 @@ There are a few scenarios we can consider from the users' perspective. If our us
 *
  GREEN: make it pass
 
-    update the ``(add)`` function in ``calculator.py`` to add up the inputs
+    update the ``add`` function in ``calculator.py`` to add up the inputs
 
   .. code-block:: python
 
        def add(x, y):
            return x + y
 
-    and the terminal reveals passing tests, increasing our confidence in the ``(add)`` function
+    and the terminal reveals passing tests, increasing our confidence in the ``add`` function
 
   .. code-block:: python
 
@@ -333,9 +333,9 @@ There are a few scenarios we can consider from the users' perspective. If our us
                x+y
            )
    ```
-   - we assign a variable named ``(x)`` to a random integer between -1 and 1 to represent the case of negative numbers, zero and positive numbers
-   - we assign a variable named ``(y)`` to a random integer between -1 and 1 just like above
-   - we test that when these two variables are given to the ``(add)`` function as inputs it returns the sum of the 2 variables as output
+   - we assign a variable named ``x`` to a random integer between -1 and 1 to represent the case of negative numbers, zero and positive numbers
+   - we assign a variable named ``y`` to a random integer between -1 and 1 just like above
+   - we test that when these two variables are given to the ``add`` function as inputs it returns the sum of the 2 variables as output
 
    the terminal still displays passing tests
 
@@ -371,7 +371,7 @@ RED : make it fail
 
 
 *
-  update ``test_calculator.py`` with a method named ``(test_subtraction)``
+  update ``test_calculator.py`` with a method named ``test_subtraction``
 
   .. code-block:: python
 
@@ -424,7 +424,7 @@ GREEN : make it pass
        E       TypeError: 'NoneType' object is not callable
 
 *
-  change the definition of the ``(subtract)`` variable to make it callable
+  change the definition of the ``subtract`` variable to make it callable
 
   .. code-block:: python
 
@@ -441,7 +441,7 @@ GREEN : make it pass
        E       TypeError: subtract() takes 0 positional arguments but 2 were given
 
 *
-  we change the definition of the ``(subtract)`` function to match our expectation
+  we change the definition of the ``subtract`` function to match our expectation
 
   .. code-block:: python
 
@@ -462,7 +462,7 @@ GREEN : make it pass
        E       AssertionError: None != 0
 
 *
-  we update the ``(subtract)`` function in ``calculator.py`` to perform an operation on its inputs
+  we update the ``subtract`` function in ``calculator.py`` to perform an operation on its inputs
 
   .. code-block:: python
 
@@ -497,7 +497,7 @@ REFACTOR: make it better
   * ``y = random.randint(-1, 1)`` happens twice
 
 *
-  we could update the ``(TestCalculator)`` class in ``test_calculator.py`` to create the random variables once
+  we could update the ``TestCalculator`` class in ``test_calculator.py`` to create the random variables once
 
 
 .. code-block:: python
@@ -524,7 +524,7 @@ REFACTOR: make it better
                self.x-self.y
            )
    ```
-   our ``(x)`` and ``(y)`` variables are now initialized once as class attributes that can be referenced later in every test using `self.x` and `self.y`, the terminal shows all tests are still passing
+   our ``x`` and ``y`` variables are now initialized once as class attributes that can be referenced later in every test using `self.x` and `self.y`, the terminal shows all tests are still passing
 
 
 ----
@@ -537,7 +537,7 @@ Moving on to test multiplication, the next item on the TODO list
 RED : make it fail
 ^^^^^^^^^^^^^^^^^^
 
-add a failing test to ``test_calculator.py`` named ``(test_multiplication)``
+add a failing test to ``test_calculator.py`` named ``test_multiplication``
 
 .. code-block:: python
 
@@ -587,7 +587,7 @@ using what we know so far we update ``calculator.py`` with a definition for mult
    def multiply(x, y):
        return x * y
 
-SUCCESS! The terminal shows passing tests and we remove ``(test_multiplication)`` from the TODO list
+SUCCESS! The terminal shows passing tests and we remove ``test_multiplication`` from the TODO list
 
 .. code-block:: python
 
@@ -610,7 +610,7 @@ RED : make it fail
 ^^^^^^^^^^^^^^^^^^
 
 
-* update ``test_calculator.py`` with ``(test_division)``
+* update ``test_calculator.py`` with ``test_division``
 
 .. code-block:: python
     import unittest
@@ -659,7 +659,7 @@ GREEN : make it pass
 
 
 *
-  update ``calculator.py`` with a ``(divide)`` function
+  update ``calculator.py`` with a ``divide`` function
 
   .. code-block:: python
 
@@ -675,7 +675,7 @@ GREEN : make it pass
        def divide(x, y):
            return x / y
 
-    here our terminal response varies, When ``(y)`` is 0 we get a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ like below
+    here our terminal response varies, When ``y`` is 0 we get a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ like below
 
 .. code-block::
 
@@ -689,7 +689,7 @@ GREEN : make it pass
    ```
 
 
-* add ``(ZeroDivisionError)`` to the list of exceptions encountered
+* add ``ZeroDivisionError`` to the list of exceptions encountered
   .. code-block:: python
 
        # Exceptions Encountered
@@ -704,7 +704,7 @@ Test for Errors
 RED : make it fail
 ^^^^^^^^^^^^^^^^^^
 
-add a failing test to ``test_calculator.py`` to intentionally trigger a ``(ZeroDivisionError)`` and comment out our previous test that sometimes fails, this helps us remove the variability of the test
+add a failing test to ``test_calculator.py`` to intentionally trigger a ``ZeroDivisionError`` and comment out our previous test that sometimes fails, this helps us remove the variability of the test
 
 .. code-block:: python
 
@@ -718,7 +718,7 @@ add a failing test to ``test_calculator.py`` to intentionally trigger a ``(ZeroD
            #     self.x/self.y
            # )
 
-the terminal confirms our expectations with a failure for any value of ``(x)``
+the terminal confirms our expectations with a failure for any value of ``x``
 
 .. code-block:: python
 
@@ -731,7 +731,7 @@ the terminal confirms our expectations with a failure for any value of ``(x)``
 GREEN : make it pass
 --------------------
 
-update ``test_calculator.py`` to confirm that a ``(ZeroDivisionError)`` is raised when we try to divide a number by ``(0)`` by using ``self.assertRaises``
+update ``test_calculator.py`` to confirm that a ``ZeroDivisionError`` is raised when we try to divide a number by ``0`` by using ``self.assertRaises``
 
 .. code-block:: python
 
@@ -743,12 +743,12 @@ update ``test_calculator.py`` to confirm that a ``(ZeroDivisionError)`` is raise
        #     self.x/self.y
        # )
 
-the terminal reveals passing tests, and we now have a way to ``(catch)`` Exceptions when testing, allowing us to confirm that the code raises an error, and the other tests to continue when they encounter the expected failure
+the terminal reveals passing tests, and we now have a way to ``catch`` Exceptions when testing, allowing us to confirm that the code raises an error, and the other tests to continue when they encounter the expected failure
 
 REFACTOR: make it better
 ------------------------
 
-update ``(test_division)`` to test other division cases when the divisor is not 0 by making sure our random variable ``(y)`` is never 0
+update ``test_division`` to test other division cases when the divisor is not 0 by making sure our random variable ``y`` is never 0
 
 .. code-block:: python
 
@@ -763,10 +763,10 @@ update ``(test_division)`` to test other division cases when the divisor is not 
        )
 
 
-* ``while self.y == 0:`` creates a loop that repeats whatever indented code follows as long as ``self.y`` is equal to ``(0)``
+* ``while self.y == 0:`` creates a loop that repeats whatever indented code follows as long as ``self.y`` is equal to ``0``
 * ``self.y = random.randint(-1, 1)`` assigns a random variable to ``self.y`` that could be -1, 0 or 1
 * our loop tells python to assign a new random variable to ``self.y`` as long as ``self.y`` is equal to 0
-* remove ``(test_division)`` from the TODO list since all the tests pass
+* remove ``test_division`` from the TODO list since all the tests pass
 
 ----
 

@@ -17,7 +17,7 @@ An Infinite Learning Model
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a file named ``test_learning_models.py`` to the ``(tests)`` folder with the following contents
+add a file named ``test_learning_models.py`` to the ``tests`` folder with the following contents
 
 .. code-block:: python
 

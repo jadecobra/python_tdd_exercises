@@ -7,14 +7,14 @@ When testing or using a program, we provide data as inputs to the program with a
     input_data -> process -> output
 ```
 
-It is similar to functions in mathematics where we represent a function as ``(f)`` with inputs ``(x)`` and a return value of ``(y)``
+It is similar to functions in mathematics where we represent a function as ``f`` with inputs ``x`` and a return value of ``y``
 
 
 .. code-block:: python
     f(x) -> y
 ```
 
-In testing we are asking the question is `f(x)` equal to ``(y)`` for the given input ``(x)`` e.g. we could use an assert statement
+In testing we are asking the question is `f(x)` equal to ``y`` for the given input ``x`` e.g. we could use an assert statement
 
 .. code-block:: python
     assert f(x) == y
@@ -38,7 +38,7 @@ Prerequisites
 
 ### RED: make it fail
 
-create a file named `test_passing_values.py` in the ``(tests)`` folder with the following text
+create a file named `test_passing_values.py` in the ``tests`` folder with the following text
 
 
 .. code-block:: python
@@ -80,14 +80,14 @@ the terminal updates to show a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.rs
         pass
     ```
     the terminal still displays an [AttributeError](./ATTRIBUTE_ERROR.rst) but with a different message
-- we add a definition for an attribute named ``(text)`` to the ``(Telephone)`` class
+- we add a definition for an attribute named ``text`` to the ``Telephone`` class
 
 .. code-block:: python
     class Telephone(object):
 
         text = None
     ```
-    the terminal updates to show a [TypeError](./TYPE_ERROR.rst) because ``(text)`` is not callable and we add the new exception to our list of exceptions encountered
+    the terminal updates to show a [TypeError](./TYPE_ERROR.rst) because ``text`` is not callable and we add the new exception to our list of exceptions encountered
 
 .. code-block:: python
     # Exceptions Encountered
@@ -96,7 +96,7 @@ the terminal updates to show a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.rs
     # AttributeError
     # TypeError
     ```
-- change ``(text)`` to a method to make it callable
+- change ``text`` to a method to make it callable
 
 .. code-block:: python
     class Telephone(object):
@@ -104,8 +104,8 @@ the terminal updates to show a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.rs
         def text():
             return None
     ```
-    the terminal displays a [TypeError](./TYPE_ERROR.rst) this time because when we called `telephone.Telephone.text('hello')` in the test we provided a positional argument as input with the value ``(hello)``, but the signature of the method we defined does not take in any arguments
-- modify the definition for ``(text)`` to take in a value
+    the terminal displays a [TypeError](./TYPE_ERROR.rst) this time because when we called `telephone.Telephone.text('hello')` in the test we provided a positional argument as input with the value ``hello``, but the signature of the method we defined does not take in any arguments
+- modify the definition for ``text`` to take in a value
 
 .. code-block:: python
     class Telephone(object):
@@ -129,7 +129,7 @@ The problem with this solution is that no matter what value we send to the `Tele
 
 - RED: make it fail
 
-    let us add a new failing test to ``(test_text_messages)``
+    let us add a new failing test to ``test_text_messages``
 
 
 .. code-block:: python
@@ -148,7 +148,7 @@ The problem with this solution is that no matter what value we send to the `Tele
 
 - GREEN: make it pass
 
-    We can add variable values to strings by using [string interpolation](https://peps.python.org/pep-0498/). Let us try this out by changing the ``(text)`` method in `telephone.py`
+    We can add variable values to strings by using [string interpolation](https://peps.python.org/pep-0498/). Let us try this out by changing the ``text`` method in `telephone.py`
 
 .. code-block:: python
     def text(value):
@@ -162,7 +162,7 @@ we can try this with other python [data structures](./DATA_STRUCTURES.rst) to se
 
 ### RED: make it fail
 
-update ``(test_text_messages)`` with a new test
+update ``test_text_messages`` with a new test
 
 .. code-block:: python
     def test_text_messages(self):
@@ -198,7 +198,7 @@ the terminal shows passing tests
 
 ### REFACTOR: make it better
 
-- as an exercise add the following tests to ``(test_text_messages)``
+- as an exercise add the following tests to ``test_text_messages``
 
 .. code-block:: python
         self.assertEqual(

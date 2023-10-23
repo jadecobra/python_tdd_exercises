@@ -3,19 +3,19 @@ Truth Table: Logical Implication
 
 We will continue to step through learning conditional statements in python using Test Driven Development using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
-Reviewing what we know so far, for any boolean operation involving 2 inputs - ``(p)`` and ``(q)`` which can take the values ``(True)`` or ``(False)``
+Reviewing what we know so far, for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
 
 
-* ``(and)`` is "not ``(or)``\ "
-* ``(or)`` is "not ``(and)``\ "
-* ``(logical_disjunction)`` is ``(or)``
-* ``(logical_conjunction)`` is ``(and)``
-* ``(False)`` is ``not True``
-* ``(True)`` is ``not False``
-* ``(False)`` is ``(False)``
-* ``(True)`` is ``(True)``
-* ``return True if x else y`` can be rewritten as ``return x`` if ``(x)`` evaluates to ``(True)``
-* when there are multiple outcomes we only need to write the condition for the special case and use ``(else)`` for the others
+* ``and`` is "not ``or``\ "
+* ``or`` is "not ``and``\ "
+* ``logical_disjunction`` is ``or``
+* ``logical_conjunction`` is ``and``
+* ``False`` is ``not True``
+* ``True`` is ``not False``
+* ``False`` is ``False``
+* ``True`` is ``True``
+* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to ``True``
+* when there are multiple outcomes we only need to write the condition for the special case and use ``else`` for the others
 
 Prerequisites
 -------------
@@ -31,7 +31,7 @@ Logical Implication/Material Implication
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a test for logical implication to ``(TestBinaryOperations)``
+add a test for logical implication to ``TestBinaryOperations``
 
 .. code-block:: python
 
@@ -47,7 +47,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* add a function definition with ``(True)`` as the return value since that is what is expected in 3 out of the 4 cases
+* add a function definition with ``True`` as the return value since that is what is expected in 3 out of the 4 cases
   .. code-block:: python
 
        def logical_implication(p, q):
@@ -83,7 +83,7 @@ REFACTOR: make it better
                return False
            return True
     this looks simpler and the tests still pass.
-* let us write out the second half with an ``(else)`` statement to be explicit
+* let us write out the second half with an ``else`` statement to be explicit
   .. code-block:: python
 
        def logical_implication(p, q):
@@ -92,7 +92,7 @@ REFACTOR: make it better
            else:
                return True
 
-* if we replace the ``(else)`` with the opposite of the ``(if)`` statement we get
+* if we replace the ``else`` with the opposite of the ``if`` statement we get
   .. code-block:: python
 
        def logical_implication(p, q):
@@ -109,7 +109,7 @@ REFACTOR: make it better
                return False
            if not p not and not not q:
                return True
-    We get a ``(SyntaxError)`` and correct the syntax to get
+    We get a ``SyntaxError`` and correct the syntax to get
   .. code-block:: python
 
        def logical_implication(p, q):
@@ -127,7 +127,7 @@ REFACTOR: make it better
            if p and not q:
                return False
 
-* replace the second statement with an ``(else)``
+* replace the second statement with an ``else``
   .. code-block:: python
 
        def logical_implication(p, q):
