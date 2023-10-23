@@ -1219,17 +1219,17 @@ GREEN: make it pass
 Clean up
 --------
 
-``(test_duration_when_given_day_and_time)`` looks like a duplicate of ``(test_duration_when_given_hours_and_minutes)``\ , it has the exact same variable assignment setup with the exact same test, it is only missing the ``try...except`` block, which means we can remove ``(test_duration_when_given_day_and_time)``
+* ``(test_duration_when_given_day_and_time)`` looks like a duplicate of ``(test_duration_when_given_hours_and_minutes)``\ , it has the exact same variable assignment setup with the exact same test, it is only missing the ``try...except`` block, which means we can remove ``(test_duration_when_given_day_and_time)``
 
-``(test_duration_calculation)`` gives specific timestamps of ``3:30`` for ``(wake_time)`` and ``2:59`` for ``(sleep_time)``\ , while ``(test_duration_when_given_hours_and_minutes)`` uses random timestamps from ``0:00`` to ``23:59`` for those variables. Since the random variables cover every timestamp in a given day we can remove ``(test_duration_calculation)``
+* ``(test_duration_calculation)`` gives specific timestamps of ``3:30`` for ``(wake_time)`` and ``2:59`` for ``(sleep_time)``\ , while ``(test_duration_when_given_hours_and_minutes)`` uses random timestamps from ``0:00`` to ``23:59`` for those variables. Since the random variables cover every timestamp in a given day we can remove ``(test_duration_calculation)``
 
-The same argument could be made for ``(test_duration_when_given_earlier_wake_time_than_sleep_time)`` since we have a ``try...except`` block with a ``(assertRaisesRegex)`` that catches the random timestamps where ``(wake_time)`` is earlier than ``(sleep_time)`` we can remove ``(test_duration_when_given_earlier_wake_time_than_sleep_time)``
+* The same argument could be made for ``(test_duration_when_given_earlier_wake_time_than_sleep_time)`` since we have a ``try...except`` block with a ``(assertRaisesRegex)`` that catches the random timestamps where ``(wake_time)`` is earlier than ``(sleep_time)`` we can remove ``(test_duration_when_given_earlier_wake_time_than_sleep_time)``
 
-The first test we wrote was ``(test_failure)`` and we no longer need it
+* The first test we wrote was ``(test_failure)`` and we no longer need it
 
-We also need a more descriptive name for ``(test_duration_when_given_hours_and_minutes)`` we could rename it to ``(test_duration_when_given_a_timestamp)`` or ``(test_duration_when_given_date_and_time)``\ , the choice is yours programmer.
+* We also need a more descriptive name for ``(test_duration_when_given_hours_and_minutes)`` we could rename it to ``(test_duration_when_given_a_timestamp)`` or ``(test_duration_when_given_date_and_time)``\ , the choice is yours programmer.
 
-Recap
+Review
 -----
 
 Our challenge was to create a function that calculates the difference between two given timestamps and to make it happen we learned
