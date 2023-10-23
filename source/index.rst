@@ -10,10 +10,10 @@ Welcome to pumping pythons documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   How I setup my Interactive Development Environment
+   How I setup a Test Driven Development Environment
    AssertionError
    AttributeError
-   How I setup a Test Driven Development Environment
-   How I setup my IDE
    IndentationError
    ModuleNotFoundError
    None

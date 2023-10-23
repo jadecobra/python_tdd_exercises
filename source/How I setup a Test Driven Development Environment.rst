@@ -11,21 +11,6 @@ The Test Driven Development mantra paraphrased is
 * GREEN: make it pass - we write only the code necessary to make the test pass
 * REFACTOR: make it better - we make the code/tests better
 
-Table of Contents
-=================
-
-
-#. `Requirements <#requirements>`_
-#. `Setup <#setup>`_
-#. `RED: make it fail <#red-make-it-fail>`_
-#. `GREEN: make it pass <#green-make-it-pass>`_
-#. `REFACTOR: make it better <#refactor-make-it-better>`_
-
-   * `Automatically Run Tests <#how-to-automatically-run-tests>`_
-
-     * `Create a Virtual Environment <#create-a-virtual-environment>`_
-     * `Activate a Virtual Environment <#activate-a-virtual-environment>`_
-
 Requirements
 ------------
 
