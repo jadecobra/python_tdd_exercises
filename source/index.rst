@@ -16,8 +16,8 @@ Welcome to pumping pythons documentation!
    AttributeError
    IndentationError
    ModuleNotFoundError
-   None
    TypeError
+   None
    booleans
    calculator
    classes

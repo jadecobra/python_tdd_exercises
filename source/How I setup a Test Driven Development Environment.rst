@@ -218,7 +218,7 @@ How to Automatically Run Tests
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Create a Virtual Environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+++++++++++++++++++++++++++++
 
 ..
 
@@ -278,7 +278,7 @@ You just created a `virtual environment <https://docs.python.org/3/library/venv.
        ======================= 1 passed in 0.00s ============================
 
 Activate a Virtual Environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+++++++++++++++++++++++++++++++
 
 If you already have a virtual environment setup in a project, you can activate it by following the steps below
 
@@ -288,103 +288,6 @@ If you already have a virtual environment setup in a project, you can activate i
 * activate the virtual environment by typing ``source .venv/bin/activate``
 
 *CONGRATULATIONS!* You have successfully setup a python Test Driven Environment and can build anything you want. Go forth and conquer the world
-
-----
-
-REFACTOR: make it better
-------------------------
-
-We can make code better by using the
-
-
-* `Abstraction Principle <https://en.wikipedia.org/wiki/Abstraction_principle_(computer_programming>`_\ )
-* `Do Not Repeat Yourself (DRY) Principle <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
-
-My take on the principles above can be summed up in one sentence as ``repeat then generalize``. When we repeat something, there is an opportunity to take out the parts that are common to the repetitions and make that into a thing that can be used by both or subsequent examples we encounter.
-
-So far there's not much to improve on what has been written but there has been duplication.
-
-
-* we ran ``python3 -m unittest`` to see the test fail
-* we ran ``python3 -m unittest`` to see the test pass
-* we will run ``python3 -m unittest`` again to make sure our improvements do not break previous passing tests
-
-This means for every test we introduce we have to run ``python -m unittest`` 3 times, avoiding this repetition would save us time and effort so we can focus on tests and solutions
-
-How to Automatically Run Tests
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Create a Virtual Environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-..
-
-   *Are you on a Windows machine? If you are not using WSL*
-
-
-   * replace ``(python3)`` in the examples with ``(python)``
-   * replace ``source .venv/bin/activate`` in the example below with ``.venv/scripts/activate``
-
-
-
-* in your editor create a file named ``requirements.txt`` and add this line
-  .. code-block:: python
-
-       pytest-watch
-
-* after saving the file, type the following in the terminal
-  .. code-block:: shell
-
-       python3 -m venv .venv
-       source .venv/bin/activate
-       pip install --upgrade pip
-       pip install --requirement requirements.txt
-    Your folder structure should now look like this
-  .. code-block::
-
-       project_name
-       |--.venv
-       |--tests
-       |   |--__init__.py
-       |   |--test_{PROJECT_NAME}.py
-       |--{PROJECT_NAME}.py
-       |--requirements.txt
-
-You just created a `virtual environment <https://docs.python.org/3/library/venv.html>`_
-
-
-* ``python3 -m venv .venv`` creates a virtual environment named ``.venv`` - you can use any name you want
-* `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ is a python module for creating virtual environments, which is an isolated ``(subfolder)`` that holds any dependencies installed. It helps keep dependencies for a specific project in the same place as the project
-* ``source .venv/bin/activate`` or ``.venv/scripts/activate`` activates the virtual environment
-* ``pip install --upgrade pip`` - upgrades ``(pip)`` the `python package manager <https://pypi.org/project/pip/>`_ to the latest version
-* ``pip install --requirement requirements.txt`` installs any python libraries listed in ``requirements.txt``
-* ``pytest-watch`` is a library that automatically runs tests when a change is made to our python files in the project
-*
-  type ``pytest-watch`` in the terminal to run the tests and the terminal displays
-
-  .. code-block:: shell
-
-       [TODAYS_DATE] Running: py.test
-       ======================= test session starts==========================
-       platform <YOUR_OPERATING_SYSTEM> -- python <YOUR_python_VERSION >, pytest-<VERSION>, pluggy-<VERSION>
-       rootdir: <YOUR_PATH>/project_name
-       collected 1 item
-
-       tests/test_{PROJECT_NAME}.py .                                                                                                    [100%]
-
-       ======================= 1 passed in 0.00s ============================
-
-Activate a Virtual Environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you already have a virtual environment setup in a project, you can activate it by following the steps below
-
-
-* Open your terminal
-* change directory to {PROJECT_NAME}
-* activate the virtual environment by typing ``source .venv/bin/activate`` in the terminal
-
-*CONGRATULATIONS!* You have successfully setup a python Test Driven Environment and can build anything you want. "Go forth and conquer the world"
 
 ----
 

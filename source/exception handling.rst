@@ -3,6 +3,14 @@ How to handle Exceptions (Errors)
 
 This chapter covers how to handle Exceptions in python using Test Driven Development
 
+Exceptions are raised in python when an error occurs and break execution of the program. When an exception is encountered no further instructions in the program will run.
+This is useful because it means there is some violation that should be taken care of for the program to proceed as intended.
+
+It also a pain when it causes the program to exit prematurely. What if we want our program to run regardless of errors? We might want it to give messages to the user who may not care or understand the details that come with Exceptions?
+
+Enter Exception Handling. In python there is a mechanism for handling exceptions that allows a program to "make a decision" when it encounters an Exception. Enough words, let us write some code
+
+
 Prerequisites
 -------------
 
@@ -11,15 +19,6 @@ Prerequisites
 
 ----
 
-Exceptions
-----------
-
-Exceptions are raised in python when an error occurs and break execution of the program. When an exception is encountered no further instructions in the program will run.
-This is useful because it means there is some violation that should be taken care of for the program to proceed as intended.
-
-It also a pain when it causes the program to exit prematurely. What if we want our program to run regardless of errors? We might want it to give messages to the user who may not care or understand the details that come with Exceptions?
-
-Enter Exception Handling. In python there is a mechanism for handling exceptions that allows a program to "make a decision" when it encounters an Exception. Enough words, let us write some code
 
 Test that an Exception is raised
 --------------------------------

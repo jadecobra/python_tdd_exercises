@@ -3,6 +3,8 @@ Data Structures: Booleans
 
 Let us take a look at Data Structures in python using Test Driven Development. This chapter covers ``(booleans)``
 
+There are only two values that are boolean - ``(True)`` and ``(False)``. We will learn about booleans by comparing it with the data structures in python to figure what they are and what they are not
+
 Prerequisites
 -------------
 
@@ -11,11 +13,6 @@ Prerequisites
 * `Data Structures <./DATA_STRUCTURES.md>`_
 
 ----
-
-What is a Boolean?
-------------------
-
-There are only two values that are boolean - ``(True)`` and ``(False)``. We will learn about booleans by comparing it with the data structures in python to figure what they are and what they are not
 
 What is False?
 --------------

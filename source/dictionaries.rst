@@ -12,7 +12,7 @@ Prerequisites
 
 ----
 
-Create a dictionary with strings as keys
+How to create a dictionary with strings as keys
 ----------------------------------------
 
 Dictionaries/Mappings are key, value pairs that we can use to represent data. ``(values)`` can be any of the `data structures <./DATA_STRUCTURES.md>`_ including dictionaries
@@ -104,7 +104,7 @@ REFACTOR: make it better
            self.assertEqual(dictionaries.a_dict(), dict(key='value'))
            self.assertEqual({"key": "value"}, dict(key='value'))
 
-Create a dictionary with numbers as keys
+How to create a dictionary with numbers as keys
 ----------------------------------------
 
 RED: make it fail
@@ -150,7 +150,7 @@ REFACTOR: make it better
            self.assertEqual({2.5: 'works'}, {2.5: 'works'})
     the terminal reveals passing tests
 
-Create a dictionary with booleans as keys
+How to create a dictionary with booleans as keys
 -----------------------------------------
 
 Is it possible for us to use ``(False)`` or ``(True)`` as ``(dictionary)`` keys?
@@ -195,7 +195,7 @@ REFACTOR: make it better
 
 * We now know that we can use ``(booleans)``\ , ``(floats)``\ , ``(integers)`` and ``(strings)`` as keys in a dictionary
 
-Create a dictionary with tuples as keys
+How to create a dictionary with tuples as keys
 ---------------------------------------
 
 RED: make it fail
@@ -329,7 +329,7 @@ all tests pass and we now know that we can create dictionaries with the followin
 
 ----
 
-Access dictionary values
+How to access dictionary values
 ------------------------
 
 From the tests above we learned how to create ``(dictionaries)``\ , and what we can use as ``(keys)``. How do we access the values of a dictionary?
@@ -421,7 +421,7 @@ REFACTOR: make it better
                ['key1', 'key2', 'key3', 'keyN']
            )
 
-Get a value when the key does not exist
+How to get a value when the key does not exist
 ---------------------------------------
 
 Sometimes we might try to access values in a dictionary but use a key that does not exist in the dictionary or misspell a key that does exist
@@ -558,7 +558,7 @@ What if we want to call a dictionary and not have python raise an error when it 
     the terminal updates to show an `Assertion Error <./ASSERTION_ERROR.md>`_ because ``(value1)`` is not equal to ``(None)``
 * update the test to make it pass
 
-View the attributes and methods of a dictionary
+How to view the attributes and methods of a dictionary
 -----------------------------------------------
 
 `Classes <./CLASSES.md>`_ covers how to view the ``(attributes)`` and ``(methods)`` of an object. let us do the same for ``(dictionaries)``
@@ -748,8 +748,8 @@ REFACTOR: make it better
            )
     all tests pass, and we update the list of methods with what we now know about ``(setdefault)``
 
-Update a Dictionary with another dictionary
--------------------------------------------
+How to update one Dictionary with another
+-----------------------------------------
 
 What if we have a dictionary and want to ``(add)`` the ``(keys)`` and ``(values)`` of another dictionary to it?
 
@@ -782,8 +782,8 @@ GREEN: make it pass
 
 update values to make it pass
 
-Remove an item from a dictionary
---------------------------------
+How to Remove an item from a dictionary
+---------------------------------------
 
 We can remove an item from a dictionary with the ``(pop)`` method. It deletes the key and value from the dictionary and returns the value
 

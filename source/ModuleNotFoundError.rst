@@ -3,6 +3,10 @@ ModuleNotFoundError
 
 Let us step through solving a ``(ModuleNotFoundError)`` in python using Test Driven Development
 
+The ``(ModuleNotFoundError)`` is raised when you try to import a module that does not exist.
+A Python Module is a file that ends in ``.py`` or a directory that contains an ``__init__.py``.
+Programming allows us to gain from our previous efforts as well as the efforts of others in the form of packages and modules that can be distributed for other people to use. To use these packages in python we have to import them.
+
 Prerequisites
 -------------
 
@@ -10,13 +14,6 @@ Prerequisites
 * `How I setup a Test Driven Development Environment.md <./How I How I setup a Test Driven Development Environment.md.md>`_
 
 ----
-
-ModuleNotFoundError
-===================
-
-The ``(ModuleNotFoundError)`` is raised when you try to import a module that does not exist.
-A Python Module is a file that ends in ``.py`` or a directory that contains an ``__init__.py``.
-Programming allows us to gain from our previous efforts as well as the efforts of others in the form of packages and modules that can be distributed for other people to use. To use these packages in python we have to import them.
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^

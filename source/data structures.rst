@@ -3,17 +3,6 @@ Data Structures
 
 Let us take a look at Data Structures in python using Test Driven Development. This chapter covers the null object ``(None)``
 
-Prerequisites
--------------
-
-
-* `How I setup a Test Driven Development Environment.md <./How I How I setup a Test Driven Development Environment.md.md>`_
-
-----
-
-Data Structures
----------------
-
 In programming we process input data of some form and output data in some form.
 We can think of it as
 
@@ -27,6 +16,16 @@ you could be familiar with this from mathematics
 
                  f(     x    ) -> y
            program(input_data) -> output_data
+
+
+Prerequisites
+-------------
+
+
+* `How I setup a Test Driven Development Environment.md <./How I How I setup a Test Driven Development Environment.md.md>`_
+
+----
+
 
 What are the data structures in python?
 ---------------------------------------
