@@ -45,7 +45,7 @@ Welcome to pumping pythons documentation!
    person factory
    sleep duration
    learning models
-   glossary
+   conventions
 
 Indices and tables
 ==================

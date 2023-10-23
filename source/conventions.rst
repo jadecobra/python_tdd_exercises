@@ -1,5 +1,5 @@
-Glossary
-========
+Conventions
+===========
 
 The following are a few conventions to know in python
 
