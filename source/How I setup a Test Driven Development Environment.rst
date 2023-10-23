@@ -1,4 +1,4 @@
-How I How I setup a Test Driven Development Environment.md
+How I setup a Test Driven Development Environment.md
 ==========================================================
 
 We will step through creating a `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ Environment in python

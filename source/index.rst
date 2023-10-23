@@ -17,22 +17,15 @@ Welcome to pumping pythons documentation!
    IndentationError
    ModuleNotFoundError
    TypeError
-   None
-   booleans
-   calculator
-   classes
-   data structures
-   data structures: lists
-   data structures: dictionaries
    exception handling
    functions
-   glossary
-   learning models
+   classes
+   data structures
+   data structures: None
+   data structures: booleans
+   data structures: lists
    list comprehensions
-   passing values
-   person factory
-   sleep duration
-   truth table 01
+   data structures: dictionaries
    truth table 02: logical conjunction
    truth table 03: logical disjunction
    truth table 04: logical implication
@@ -46,6 +39,13 @@ Welcome to pumping pythons documentation!
    truth table 12: project
    truth table 13: converse implication
    truth table 14: true lies
+   calculator
+   passing values
+   person factory
+   sleep duration
+   learning models
+   glossary
+   truth table 01
 
 Indices and tables
 ==================
