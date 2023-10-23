@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = "pumping python"
-copyright = "2023, © JadeCobra LLC"
+copyright = "2023, JadeCobra LLC"
 author = "Jacob Itegboje"
 
 # -- General configuration ---------------------------------------------------

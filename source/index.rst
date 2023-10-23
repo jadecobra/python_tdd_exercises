@@ -10,47 +10,45 @@ Welcome to pumping pythons documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   passing values
-   TDD_PITFALLS
+   AssertionError
+   AttributeError
+   How I setup a Test Driven Development Environment
+   How I setup my IDE
+   IndentationError
+   ModuleNotFoundError
+   None
+   TypeError
+   booleans
+   calculator
+   classes
+   data structures
    dictionaries
+   exception handling
+   functions
+   glossary
    learning models
+   list comprehensions
+   lists
+   passing values
+   person factory
+   sleep duration
+   truth table 01
+   truth table 02: logical conjunction
+   truth table 03: logical disjunction
    truth table 04: logical implication
    truth table 05: logical equality
-   truth table 03: logical disjunction
-   ModuleNotFoundError
-   calculator
-   truth table 02: logical conjunction
-   truth table 13: converse implication
-   How I setup my IDE
-   glossary
-   exception handling
-   data structures
-   truth table 12: project
-   truth table 08: logical NOR
-   classes
-   IndentationError
-   How I How I setup a Test Driven Development Environment.md
-   truth table 09: converse non implication
-   lists
-   AssertionError
-   TypeError
-   truth table 01
-   functions
-   None
-   AttributeError
-   truth table 14: true lies
-   truth table 10: material non implication
-   person factory
-   truth table 11: negate
-   truth table 07: logical NAND
-   list comprehensions
    truth table 06: exclusive disjunction
-   booleans
-   sleep duration
+   truth table 07: logical NAND
+   truth table 08: logical NOR
+   truth table 09: converse non implication
+   truth table 10: material non implication
+   truth table 11: negate
+   truth table 12: project
+   truth table 13: converse implication
+   truth table 14: true lies
 
 Indices and tables
 ==================
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`

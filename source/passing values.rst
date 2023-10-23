@@ -1,17 +1,18 @@
-# Passing Values
+How to Pass Values
+==================
 
 When testing or using a program, we provide data as inputs to the program with an expectation of a return value.
 ```python
     input_data -> process -> output
 ```
 
-It is similar to functions in mathematics where we represent a function as `f` with inputs `x` and a return value of `y`
+It is similar to functions in mathematics where we represent a function as ``(f)`` with inputs ``(x)`` and a return value of ``(y)``
 
 ```python
     f(x) -> y
 ```
 
-In testing we are asking the question is `f(x)` equal to `y` for the given input `x` e.g. we could use an assert statement
+In testing we are asking the question is `f(x)` equal to ``(y)`` for the given input ``(x)`` e.g. we could use an assert statement
 ```python
     assert f(x) == y
 ```
@@ -23,9 +24,9 @@ or use the `self.assertEqual` method from `unittest.TestCase`
 
 We are going to look at how to pass values from tests to programs using `string interpolation` with Test Driven Development
 
-### Prerequisites
-
-- [How I setup a Test Driven Development Environment.md](./How I How I setup a Test Driven Development Environment.md.md)
+Prerequisites
+-------------
+[How I setup a Test Driven Development Environment.md](./How I How I setup a Test Driven Development Environment.md.md)
 
 ---
 
@@ -33,7 +34,7 @@ We are going to look at how to pass values from tests to programs using `string 
 
 ### RED: make it fail
 
-create a file named `test_passing_values.py` in the `tests` folder with the following text
+create a file named `test_passing_values.py` in the ``(tests)`` folder with the following text
 
 ```python
 import unittest
@@ -71,13 +72,13 @@ the terminal updates to show a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md
         pass
     ```
     the terminal still displays an [AttributeError](./ATTRIBUTE_ERROR.md) but with a different message
-- we add a definition for an attribute named `text` to the `Telephone` class
+- we add a definition for an attribute named ``(text)`` to the ``(Telephone)`` class
     ```python
     class Telephone(object):
 
         text = None
     ```
-    the terminal updates to show a [TypeError](./TYPE_ERROR.md) because `text` is not callable and we add the new exception to our list of exceptions encountered
+    the terminal updates to show a [TypeError](./TYPE_ERROR.md) because ``(text)`` is not callable and we add the new exception to our list of exceptions encountered
     ```python
     # Exceptions Encountered
     # AssertionError
@@ -85,15 +86,15 @@ the terminal updates to show a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md
     # AttributeError
     # TypeError
     ```
-- change `text` to a method to make it callable
+- change ``(text)`` to a method to make it callable
     ```python
     class Telephone(object):
 
         def text():
             return None
     ```
-    the terminal displays a [TypeError](./TYPE_ERROR.md) this time because when we called `telephone.Telephone.text('hello')` in the test we provided a positional argument as input with the value `hello`, but the signature of the method we defined does not take in any arguments
-- modify the definition for `text` to take in a value
+    the terminal displays a [TypeError](./TYPE_ERROR.md) this time because when we called `telephone.Telephone.text('hello')` in the test we provided a positional argument as input with the value ``(hello)``, but the signature of the method we defined does not take in any arguments
+- modify the definition for ``(text)`` to take in a value
     ```python
     class Telephone(object):
 
@@ -115,7 +116,7 @@ The problem with this solution is that no matter what value we send to the `Tele
 
 - #### RED: make it fail
 
-    let us add a new failing test to `test_text_messages`
+    let us add a new failing test to ``(test_text_messages)``
 
     ```python
         def test_text_messages(self):
@@ -133,7 +134,7 @@ The problem with this solution is that no matter what value we send to the `Tele
 
 - #### GREEN: make it pass
 
-    We can add variable values to strings by using [string interpolation](https://peps.python.org/pep-0498/). Let us try this out by changing the `text` method in `telephone.py`
+    We can add variable values to strings by using [string interpolation](https://peps.python.org/pep-0498/). Let us try this out by changing the ``(text)`` method in `telephone.py`
     ```python
     def text(value):
         return f'I received this message: {value}'
@@ -146,7 +147,7 @@ we can try this with other python [data structures](./DATA_STRUCTURES.md) to see
 
 ### RED: make it fail
 
-update `test_text_messages` with a new test
+update ``(test_text_messages)`` with a new test
 ```python
     def test_text_messages(self):
         self.assertEqual(
@@ -180,7 +181,7 @@ the terminal shows passing tests
 
 ### REFACTOR: make it better
 
-- as an exercise add the following tests to `test_text_messages`
+- as an exercise add the following tests to ``(test_text_messages)``
     ```python
         self.assertEqual(
             telephone.Telephone.text(bool),
