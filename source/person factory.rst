@@ -1,4 +1,4 @@
-Person Factory
+How to create a Person Factory
 ==============
 
 This is an exercise in creating `dictionaries <./DICTIONARIES.md>`_ with `functions <./FUNCTIONS.md>`_. It assumes you are familiar with `Functions <./FUNCTIONS.md>`_ and `Dictionaries <./DICTIONARIES.md>`_ though you can attempyt it even if you are not
