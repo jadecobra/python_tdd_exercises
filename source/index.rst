@@ -26,6 +26,7 @@ Welcome to pumping pythons documentation!
    data structures: lists
    list comprehensions
    data structures: dictionaries
+   truth table 01
    truth table 02: logical conjunction
    truth table 03: logical disjunction
    truth table 04: logical implication
@@ -45,7 +46,6 @@ Welcome to pumping pythons documentation!
    sleep duration
    learning models
    glossary
-   truth table 01
 
 Indices and tables
 ==================
