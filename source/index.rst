@@ -22,13 +22,13 @@ Welcome to pumping pythons documentation!
    calculator
    classes
    data structures
-   dictionaries
+   data structures: lists
+   data structures: dictionaries
    exception handling
    functions
    glossary
    learning models
    list comprehensions
-   lists
    passing values
    person factory
    sleep duration
