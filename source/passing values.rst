@@ -114,7 +114,7 @@ the terminal updates to show a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md
 
 The problem with this solution is that no matter what value we send to the `Telephone.text` method it will always return `'I received this message: hello'`. We need to make it more generic so it returns a value that is dependent on the input
 
-- #### RED: make it fail
+- RED: make it fail
 
     let us add a new failing test to ``(test_text_messages)``
 
@@ -132,7 +132,7 @@ The problem with this solution is that no matter what value we send to the `Tele
 
     the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 
-- #### GREEN: make it pass
+- GREEN: make it pass
 
     We can add variable values to strings by using [string interpolation](https://peps.python.org/pep-0498/). Let us try this out by changing the ``(text)`` method in `telephone.py`
     ```python

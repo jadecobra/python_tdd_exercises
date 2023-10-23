@@ -75,7 +75,7 @@ Since we know how to catch/handle an exception with ``(unittest)``\ , there are 
 
 
 *
-  #### RED: make it fail
+  RED: make it fail
 
     add a new test to ``(TestExceptionHandling)`` in ``test_exception_handling.py``
 
@@ -100,7 +100,7 @@ Since we know how to catch/handle an exception with ``(unittest)``\ , there are 
        # AttributeError
 
 *
-  #### GREEN: make it pass
+  GREEN: make it pass
 
     update ``(test_catching_attribute_errors_in_tests)`` with ``self.assertRaises``
 
@@ -113,7 +113,7 @@ Since we know how to catch/handle an exception with ``(unittest)``\ , there are 
     the terminal updates to show passing tests. Let's do it again with ``(methods)`` for good measure
 
 *
-  #### RED: make it fail
+  RED: make it fail
 
     add a failing line to ``(test_catching_attribute_errors_in_tests)``
 
@@ -131,7 +131,7 @@ Since we know how to catch/handle an exception with ``(unittest)``\ , there are 
        E       AttributeError: module 'module' has no attribute 'non_existent_function'
 
 *
-  #### GREEN: make it pass
+  GREEN: make it pass
 
     add ``self.assertRaises`` and indent the failing line to place it within the context
 
@@ -146,7 +146,7 @@ Since we know how to catch/handle an exception with ``(unittest)``\ , there are 
     the terminal updates to show passing tests
 
 *
-  #### RED: make it fail
+  RED: make it fail
 
     let us add another failing line to ``(test_catching_attribute_errors_in_tests)``
 
@@ -166,7 +166,7 @@ Since we know how to catch/handle an exception with ``(unittest)``\ , there are 
        E       AttributeError: module 'module' has no attribute 'NonExistentClass'
 
 *
-  #### GREEN: make it pass
+  GREEN: make it pass
 
     add ``self.assertRaises`` to make it pass
 
@@ -183,7 +183,7 @@ Since we know how to catch/handle an exception with ``(unittest)``\ , there are 
     the terminal displays passing tests
 
 *
-  #### RED: make it fail
+  RED: make it fail
 
     update ``(test_catching_attribute_errors_in_tests)`` with a new failing line
 
@@ -205,7 +205,7 @@ Since we know how to catch/handle an exception with ``(unittest)``\ , there are 
        E       AttributeError: type object 'Class' has no attribute 'non_existent_attribute'
 
 *
-  #### GREEN: make it pass
+  GREEN: make it pass
 
     add ``self.assertRaises`` to catch the error
 
@@ -224,7 +224,7 @@ Since we know how to catch/handle an exception with ``(unittest)``\ , there are 
     the terminal updates to show passing tests
 
 *
-  #### RED: make it fail
+  RED: make it fail
 
     we trigger another attribute error, by adding a line to ``(test_catching_attribute_errors_in_tests)``
 
@@ -248,7 +248,7 @@ Since we know how to catch/handle an exception with ``(unittest)``\ , there are 
            E       AttributeError: type object 'Class' has no attribute 'non_existent_method'
 
 *
-  #### GREEN: make it pass
+  GREEN: make it pass
 
     add ``self.assertRaises`` to make it pass
 
@@ -269,7 +269,7 @@ Since we know how to catch/handle an exception with ``(unittest)``\ , there are 
     the terminal updates to show passing tests
 
 *
-  #### REFACTOR: make it better
+  REFACTOR: make it better
 
     We just created the same context 5 times, this is a good candidate for a rewrite. let us remove the duplication. since our ``self.assertRaises`` catches an `AttributeError <./ATTRIBUTE_ERROR.md>`_ in each case, we only need to state it once and place all the lines that raise the error underneath it.
 
@@ -376,7 +376,7 @@ let us add exception handling to our program so it does not end when it encounte
 
 
 *
-  #### RED: make it fail
+  RED: make it fail
 
     add a new test to ``(test_exception_handling)``
 
@@ -408,7 +408,7 @@ let us add exception handling to our program so it does not end when it encounte
        exception_handler = None
        ```
 
-    redefine ``(exception_handler)`` as a function updates the `TypeError <./TYPE_ERROR.md>`_ with a new message
+   REDefine ``(exception_handler)`` as a function updates the `TypeError <./TYPE_ERROR.md>`_ with a new message
 
   .. code-block::
 
@@ -441,7 +441,7 @@ let us add exception handling to our program so it does not end when it encounte
        ```
 
 *
-  #### RED: make it fail
+  RED: make it fail
 
     our solution is faulty, the ``(exception_handler)`` always returns ``(failed)`` regardless of what we provide as an argument, we should add a new test to ``(test_exception_handling)`` that provides a different input with an expectation of a different result
 
@@ -456,7 +456,7 @@ let us add exception handling to our program so it does not end when it encounte
     the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.md>`_
 
 *
-  #### GREEN: make it pass
+  GREEN: make it pass
 
     add ``(does_not_raise_exception_error)`` to ``exceptions.py`` and the terminal updates to show a ``(NameError)``
 

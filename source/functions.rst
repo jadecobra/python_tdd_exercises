@@ -82,7 +82,7 @@ let us test if functions really always return ``(None)`` by default
 
 
 *
-  #### RED: make it fail
+  RED: make it fail
     add a new failing test to ``(TestFunctions)`` in ``test_functions.py``
 
   .. code-block:: python
@@ -93,7 +93,7 @@ let us test if functions really always return ``(None)`` by default
     the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.md>`_
 
 *
-  #### GREEN: make it pass
+  GREEN: make it pass
 
     add a new function to ``functions.py`` to make the test pass, this time with a ``(return)`` statement instead of ``(pass)``
 
@@ -104,7 +104,7 @@ let us test if functions really always return ``(None)`` by default
 
     the terminal shows this test is also passing. We have defined 2 functions with different statements in their body but they both return the same result, because "in python all functions return ``(None)`` by default, we can imagine the function has an invisible line that says ``return None``\ "
 
-* #### RED: make it fail
+* RED: make it fail
     we can add one more test to the ``(TestFunctions)`` class in ``test_functions.py`` to help drive home the point
   .. code-block:: python
 
@@ -112,7 +112,7 @@ let us test if functions really always return ``(None)`` by default
                self.assertIsNone(functions.function_with_return_none())
     the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.md>`_
 *
-  #### GREEN: make it pass
+  GREEN: make it pass
 
     from the `Zen of Python <https://peps.python.org/pep-0020/>`_ - ``Explicit is better than implicit.`` Let us add a function definition to ``functions.py`` this time with an explicit ``(return)`` statement showing the value returned
 
@@ -195,7 +195,7 @@ Wait a minute! Something is not quite right here. The definition for a ``(passth
 
 
 *
-  #### RED: make it fail
+  RED: make it fail
 
     update ``(test_passthrough_function)`` in ``(TestFunctions)`` in ``test_functions.py``  with a new test
 
@@ -214,7 +214,7 @@ Wait a minute! Something is not quite right here. The definition for a ``(passth
     the function returns ``(False)`` instead of ``(True)`` in the second case, confirming our suspicions, we are not all the way geniuses, yet
 
 *
-  #### GREEN: make it pass
+  GREEN: make it pass
 
     change the definition of ``(passthrough)`` in ``functions.py``
 
@@ -226,7 +226,7 @@ Wait a minute! Something is not quite right here. The definition for a ``(passth
     the terminal updates to show passing tests. We have more confidence that our passthrough function will likely return the input data it is given. Let us add more tests for good measure using the other python `Data Structures <./DATA_STRUCTURES.md>`_
 
 *
-  #### REFACTOR: make it better
+  REFACTOR: make it better
 
     update ``(test_passthrough_function)``
 
@@ -466,7 +466,7 @@ So far ``(passthrough_with_keyword_arguments)`` looks the same as ``(passthrough
     Our function currently only takes in 2 keyword arguments. What if we wanted a function that can take in any number of keyword arguments? There is a starred expression for keyword arguments - ``**``.
 
 *
-  #### RED: make it fail
+  RED: make it fail
     let us add a test to ``(test_functions_with_keyword_arguments)``
 
   .. code-block:: python
@@ -496,7 +496,7 @@ So far ``(passthrough_with_keyword_arguments)`` looks the same as ``(passthrough
     the terminal updates to show a `TypeError <./TYPE_ERROR.md>`_
 
 *
-  #### GREEN: make it pass
+  GREEN: make it pass
 
 
   * change the signature of ``(passthrough_with_keyword_arguments)`` to accept any number of keyword arguments
@@ -563,7 +563,7 @@ So far ``(passthrough_with_keyword_arguments)`` looks the same as ``(passthrough
       the terminal updates to show passing tests. We now know that keyword arguments are treated as `Dictionaries <./09_DICTIONARIES.md>`_ in python
 
 *
-  #### REFACTOR: make it better
+  REFACTOR: make it better
 
     let us add one more test to ``(test_functions_with_keyword_arguments)`` to drill the lesson
 

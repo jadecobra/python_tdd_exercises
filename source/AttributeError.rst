@@ -176,7 +176,7 @@ RED: make it fail
   .. code-block:: python
 
        E       AttributeError: module 'module' has no attribute 'variable_1'
-  #### GREEN: make it pass
+  GREEN: make it pass
 * RED: make it fail - add the name to ``module.py``
   .. code-block:: python
 

@@ -270,7 +270,7 @@ There are a few scenarios we can consider from the users' perspective. If our us
                )
 
 *
-  RED: make it fail
+ RED: make it fail
 
     add a new test to ``(test_addition)`` in ``test_calculator.py``
 
@@ -293,7 +293,7 @@ There are a few scenarios we can consider from the users' perspective. If our us
        E       AssertionError: 1 != 0
 
 *
-  GREEN: make it pass
+ GREEN: make it pass
 
     update the ``(add)`` function in ``calculator.py`` to add up the inputs
 
@@ -311,7 +311,7 @@ There are a few scenarios we can consider from the users' perspective. If our us
        ====================== 2 passed in 0.01s ==============
 
 *
-  REFACTOR: make it better
+ REFACTOR: make it better
 
     we can randomize the inputs to test that the function behaves the way we expect for any given numbers. Update ``test_calculator.py`` to use python's `random <https://docs.python.org/3/library/random.html?highlight=random#module-random>`_ library
     ```python

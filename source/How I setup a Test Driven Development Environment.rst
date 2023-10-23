@@ -4,7 +4,7 @@ How I setup a Test Driven Development Environment.md
 We will step through creating a `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ Environment in python
 
 The Test Driven Development mantra paraphrased is
-    RED GREEN REFACTOR
+   RED GREEN REFACTOR
 
 
 * RED: make it fail - we write a failing test to make sure our test works

@@ -103,7 +103,7 @@ GREEN: make it pass
 
        def duration(wake_time, sleep_time):
            return 1
-    green! all tests are passing
+   GREEN! all tests are passing
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
