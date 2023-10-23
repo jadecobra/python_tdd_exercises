@@ -14,7 +14,7 @@ author = "Jacob Itegboje"
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = ["m2r"]
-source_suffix = [".rst", ".md"]
+source_suffix = [".rst", ".rst"]
 templates_path = ["_templates"]
 exclude_patterns = []
 

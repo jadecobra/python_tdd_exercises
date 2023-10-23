@@ -22,7 +22,7 @@ Prerequisites
 -------------
 
 
-* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.md>`_
+* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_
 
 ----
 
@@ -68,7 +68,7 @@ What are the data structures in python?
 The following chapters go into more detail about some of these data structures
 
 
-* `None <./NONE.md>`_
-* `Booleans <./BOOLEANS.md>`_
-* `Lists <./LISTS.md>`_
-* `Dictionaries <./DICTIONARIES.md>`_
+* `None <./NONE.rst>`_
+* `Booleans <./BOOLEANS.rst>`_
+* `Lists <./LISTS.rst>`_
+* `Dictionaries <./DICTIONARIES.rst>`_

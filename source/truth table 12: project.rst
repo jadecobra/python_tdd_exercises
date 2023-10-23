@@ -7,7 +7,7 @@ Prerequisites
 -------------
 
 
-* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.md>`_
+* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_
 
 ----
 
@@ -27,7 +27,7 @@ add a test for project first to ``(TestBinaryOperations)``
            self.assertFalse(truth_table.project_first(False, True))
            self.assertFalse(truth_table.project_first(False, False))
 
-the terminal shows an `AttributeError <./ATTRIBUTE_ERROR.md>`_
+the terminal shows an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -38,13 +38,13 @@ GREEN: make it pass
 
        def project_first(p, q):
            return False
-    the terminal updates to show an `AssertionError <./ASSERTION_ERROR.md>`_ foe the first case
+    the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ foe the first case
 * change the return statement
   .. code-block:: python
 
        def project_first(p, q):
            return True
-    the terminal updates to show an `AssertionError <./ASSERTION_ERROR.md>`_ for the third case
+    the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ for the third case
 * before we add a condition for it, this looks similar to ``(logical_equality)``\ , ``(exclusive_disjunction)``\ , ``(negate_first)`` and ``(negate_second)`` because 2 out of the 4 cases have the same return value. We observe that
 
   * if ``p == True`` the result is ``(True)``
@@ -102,7 +102,7 @@ add a test for project second to ``(TestBinaryOperations)``
            self.assertTrue(truth_table.project_second(False, True))
            self.assertFalse(truth_table.project_second(False, False))
 
-the terminal shows an `AttributeError <./ATTRIBUTE_ERROR.md>`_
+the terminal shows an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -113,13 +113,13 @@ GREEN: make it pass
 
        def project_second(p, q):
            return False
-    the terminal updates to show an `AssertionError <./ASSERTION_ERROR.md>`_ for the first case
+    the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ for the first case
 * change the return value to make it pass
   .. code-block:: python
 
        def project_second(p, q):
            return True
-    the terminal updates to show an `AssertionError <./ASSERTION_ERROR.md>`_ for the second case
+    the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ for the second case
 * before we add a condition for it, this looks similar to ``(logical_equality)``\ , ``(exclusive_disjunction)``\ , ``(negate_first)``\ , ``(negate_second)`` and ``(project_first)`` because 2 out of the 4 cases have the same return value. We observe that
 
   * if ``q == True`` the result is ``(True)``
@@ -130,7 +130,7 @@ GREEN: make it pass
 
        def project_second(p, q):
            return p
-    the terminal still shows an `AssertionError <./ASSERTION_ERROR.md>`_. let us return ``(q)`` instead
+    the terminal still shows an `AssertionError <./ASSERTION_ERROR.rst>`_. let us return ``(q)`` instead
   .. code-block:: python
 
        def project_second(p, q):

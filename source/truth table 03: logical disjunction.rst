@@ -18,7 +18,7 @@ Prerequisites
 -------------
 
 
-* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.md>`_
+* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_
 
 ----
 
@@ -38,7 +38,7 @@ add a test for logical disjunction to ``(TestBinaryOperations)`` in ``test_truth
            self.assertTrue(truth_table.logical_disjunction(False, True))
            self.assertFalse(truth_table.logical_disjunction(False, False))
 
-the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.md>`_
+the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
 
 GREEN: make it pass
 ~~~~~~~~~~~~~~~~~~~
@@ -49,7 +49,7 @@ GREEN: make it pass
 
        def logical_disjunction(p, q):
            return True
-    the terminal updates to show an `AssertionError <./ASSERTION_ERROR.md>`_
+    the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_
 * 3 of the test cases are passing because ``(logical_disjunction)`` returns ``(True)`` in 3 of the 4. We need a condition for the fourth case to pass. update the definition
   .. code-block:: python
 

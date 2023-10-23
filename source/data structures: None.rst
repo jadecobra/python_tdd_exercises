@@ -7,8 +7,8 @@ Prerequisites
 -------------
 
 
-* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.md>`_
-* `Data Structures <./DATA_STRUCTURES.md>`_
+* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_
+* `Data Structures <./DATA_STRUCTURES.rst>`_
 
 ----
 
@@ -32,7 +32,7 @@ create a file named ``test_data_structures.py`` in the ``(tests)`` folder
        def test_none_is_none(self):
            self.assertIsNotNone(None)
 
-the terminal gives us an `AssertionError <./ASSERTION_ERROR.md>`_
+the terminal gives us an `AssertionError <./ASSERTION_ERROR.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -62,7 +62,7 @@ add a new test to compare ``(None)`` with booleans
            self.assertIsNone(True)
            self.assertIsNone(False)
 
-the terminal updates to show an `AssertionError <./ASSERTION_ERROR.md>`_
+the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -85,7 +85,7 @@ we now know that
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-booleans are represented by the keyword ``(bool)`` in python so we can do an instance test using another ``unittest.TestCase`` method that checks if an ``(object)`` is an instance of a `class <./CLASSES.md>`_
+booleans are represented by the keyword ``(bool)`` in python so we can do an instance test using another ``unittest.TestCase`` method that checks if an ``(object)`` is an instance of a `class <./CLASSES.rst>`_
 
 
 *
@@ -100,7 +100,7 @@ booleans are represented by the keyword ``(bool)`` in python so we can do an ins
                self.assertIsNotNone(False)
                self.assertIsInstance(None, bool)
 
-    we now see an `AssertionError <./ASSERTION_ERROR.md>`_ in the terminal because ``(None)`` is not an instance of a boolean
+    we now see an `AssertionError <./ASSERTION_ERROR.rst>`_ in the terminal because ``(None)`` is not an instance of a boolean
 
   .. code-block:: python
 
@@ -140,7 +140,7 @@ add a new test to compare ``(None)`` with ``(int)``
            self.assertIsNone(0)
            self.assertIsNone(1)
 
-the terminal updates to show an `AssertionError <./ASSERTION_ERROR.md>`_
+the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -172,7 +172,7 @@ integers are represented by the keyword ``(int)`` in python so we can do an inst
                self.assertIsNotNone(1)
                self.assertIsInstance(None, int)
 
-    an `AssertionError <./ASSERTION_ERROR.md>`_ is displayed in the terminal because ``(None)`` is not an instance of an integer
+    an `AssertionError <./ASSERTION_ERROR.rst>`_ is displayed in the terminal because ``(None)`` is not an instance of an integer
 
   .. code-block:: python
 
@@ -213,7 +213,7 @@ we add a new failing test to ``test_data_structures.py`` to compare ``(None)`` w
            self.assertIsNone('')
            self.assertIsNone("text")
 
-and the terminal gives us an `AssertionError <./ASSERTION_ERROR.md>`_
+and the terminal gives us an `AssertionError <./ASSERTION_ERROR.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -277,7 +277,7 @@ add a new test to ``test_data_structures.py``
            self.assertIsNone((1, 2, 3, 'n'))
            self.assertIsInstance(None, tuple)
 
-the terminal updates to show an `AssertionError <./ASSERTION_ERROR.md>`_
+the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_
 
 .. code-block:: python
 
@@ -296,7 +296,7 @@ GREEN: make it pass
 
            def test_is_none_a_tuple(self):
                self.assertIsNotNone(())
-    and the terminal displays an `AssertionError <./ASSERTION_ERROR.md>`_ for the second line
+    and the terminal displays an `AssertionError <./ASSERTION_ERROR.rst>`_ for the second line
   .. code-block:: python
 
        AssertionError: (1, 2, 3, 'n') is not None
@@ -307,7 +307,7 @@ GREEN: make it pass
            def test_is_none_a_tuple(self):
                self.assertIsNotNone(())
                self.assertIsNotNone((1, 2, 3, 'n'))
-    the terminal now shows another `AssertionError <./ASSERTION_ERROR.md>`_ for the next line in our test but with a different message
+    the terminal now shows another `AssertionError <./ASSERTION_ERROR.rst>`_ for the next line in our test but with a different message
   .. code-block:: python
 
        AssertionError: None is not an instance of <class 'tuple'>
@@ -348,14 +348,14 @@ we add a new test to our series of tests
            self.assertIsNone([1, 2, 3, "n"])
            self.assertIsInstance(None, list)
 
-the terminal shows an `AssertionError <./ASSERTION_ERROR.md>`_
+the terminal shows an `AssertionError <./ASSERTION_ERROR.rst>`_
 
 .. code-block:: python
 
    AssertionError: [] is not None
 
 
-* ``[]`` is how `lists <./LISTS.md>`_ are represented in python
+* ``[]`` is how `lists <./LISTS.rst>`_ are represented in python
 * what is the difference between a ``(list)`` and a ``(tuple)`` other than ``[]`` vs ``()``\ ?
 * Do you want to `read more about lists <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#list>`_
 
@@ -387,7 +387,7 @@ following the same pattern from earlier, we add a new failing test, this time fo
            self.assertIsNone({1, 2, 3, "n"})
            self.assertIsInstance(None, set)
 
-the terminal updates to show an `AssertionError <./ASSERTION_ERROR.md>`_
+the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_
 
 .. code-block:: python
 
@@ -431,7 +431,7 @@ let us add a new test
            })
            self.assertIsInstance(None, dict)
 
-the terminal displays an `AssertionError <./ASSERTION_ERROR.md>`_
+the terminal displays an `AssertionError <./ASSERTION_ERROR.rst>`_
 
 .. code-block:: python
 
@@ -439,7 +439,7 @@ the terminal displays an `AssertionError <./ASSERTION_ERROR.md>`_
 
 
 * ``dict()`` is how we create an empty ``(dictionary)``
-* ``{}`` is how `dictionaries <./DICTIONARIES.md>`_ are represented in python. Wait a minute, sets are also represented with ``{}``\ , the difference is that dictionaries contain key/value pairs
+* ``{}`` is how `dictionaries <./DICTIONARIES.rst>`_ are represented in python. Wait a minute, sets are also represented with ``{}``\ , the difference is that dictionaries contain key/value pairs
 * Do you want to `read more about dictionaries <https://docs.python.org/3/tutorial/datastructures.html?highlight=sets#dictionaries>`_
 
 GREEN: make it pass

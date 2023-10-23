@@ -15,7 +15,7 @@ Prerequisites
 -------------
 
 
-* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.md>`_
+* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_
 
 ----
 
@@ -39,7 +39,7 @@ create a file named ``test_exception_handling.py`` in the ``(tests)`` folder and
        def test_catching_module_not_found_error_in_tests(self):
            import non_existent_module
 
-the terminal gives us a `ModuleNotFoundError <./MODULE_NOT_FOUND_ERROR.md>`_ and we add it to our list of exceptions encountered
+the terminal gives us a `ModuleNotFoundError <./MODULE_NOT_FOUND_ERROR.rst>`_ and we add it to our list of exceptions encountered
 
 .. code-block:: python
 
@@ -84,7 +84,7 @@ Since we know how to catch/handle an exception with ``(unittest)``\ , there are 
            def test_catching_attribute_errors_in_tests(self):
                module.non_existent_attribute
 
-    the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.md>`_ because the called attribute ``(non_existent_attribute)`` does not exist in ``module.py``
+    the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.rst>`_ because the called attribute ``(non_existent_attribute)`` does not exist in ``module.py``
 
   .. code-block:: python
 
@@ -124,7 +124,7 @@ Since we know how to catch/handle an exception with ``(unittest)``\ , there are 
                    module.non_existent_attribute
                module.non_existent_function()
 
-    the terminal updates to show `AttributeError <./ATTRIBUTE_ERROR.md>`_ because the called method ``(non_existent_function)`` does not exist in ``module.py``
+    the terminal updates to show `AttributeError <./ATTRIBUTE_ERROR.rst>`_ because the called method ``(non_existent_function)`` does not exist in ``module.py``
 
   .. code-block:: python
 
@@ -159,7 +159,7 @@ Since we know how to catch/handle an exception with ``(unittest)``\ , there are 
                    module.non_existent_function()
                module.NonExistentClass()
 
-    the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.md>`_
+    the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
 
   .. code-block:: python
 
@@ -198,7 +198,7 @@ Since we know how to catch/handle an exception with ``(unittest)``\ , there are 
                    module.NonExistentClass()
                module.Class.non_existent_attribute
 
-    the terminal shows an `AttributeError <./ATTRIBUTE_ERROR.md>`_
+    the terminal shows an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
 
   .. code-block:: python
 
@@ -241,7 +241,7 @@ Since we know how to catch/handle an exception with ``(unittest)``\ , there are 
                    module.Class.non_existent_attribute
                module.Class.non_existent_method()
 
-    the terminal updates to show another `AttributeError <./ATTRIBUTE_ERROR.md>`_
+    the terminal updates to show another `AttributeError <./ATTRIBUTE_ERROR.rst>`_
 
   .. code-block:: python
 
@@ -271,7 +271,7 @@ Since we know how to catch/handle an exception with ``(unittest)``\ , there are 
 *
   REFACTOR: make it better
 
-    We just created the same context 5 times, this is a good candidate for a rewrite. let us remove the duplication. since our ``self.assertRaises`` catches an `AttributeError <./ATTRIBUTE_ERROR.md>`_ in each case, we only need to state it once and place all the lines that raise the error underneath it.
+    We just created the same context 5 times, this is a good candidate for a rewrite. let us remove the duplication. since our ``self.assertRaises`` catches an `AttributeError <./ATTRIBUTE_ERROR.rst>`_ in each case, we only need to state it once and place all the lines that raise the error underneath it.
 
   .. code-block:: python
 
@@ -322,14 +322,14 @@ GREEN: make it pass
        import unittest
        import module
        import exceptions
-    the terminal now gives us a `ModuleNotFoundError <./MODULE_NOT_FOUND_ERROR.md>`_
-* create a file named ``exceptions.py`` in the ``{PROJECT_NAME}`` folder, and the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.md>`_
+    the terminal now gives us a `ModuleNotFoundError <./MODULE_NOT_FOUND_ERROR.rst>`_
+* create a file named ``exceptions.py`` in the ``{PROJECT_NAME}`` folder, and the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
 * update ``exceptions.py`` with the name of the attribute called in the test, and the terminal updates to show a ``(NameError)`` since we have not defined ``(raises_exception_error)``
   .. code-block:: python
 
        raises_exception_error
 
-* define ``(raises_exception_error)`` and the terminal updates to show a `TypeError <./TYPE_ERROR.md>`_
+* define ``(raises_exception_error)`` and the terminal updates to show a `TypeError <./TYPE_ERROR.rst>`_
   .. code-block:: python
 
        raises_exception_error = None
@@ -401,7 +401,7 @@ let us add exception handling to our program so it does not end when it encounte
        exception_handler
        ```
 
-    define ``(exception_handler)`` and the terminal displays a `TypeError <./TYPE_ERROR.md>`_
+    define ``(exception_handler)`` and the terminal displays a `TypeError <./TYPE_ERROR.rst>`_
 
   .. code-block::
 
@@ -410,7 +410,7 @@ let us add exception handling to our program so it does not end when it encounte
        exception_handler = None
        ```
 
-   REDefine ``(exception_handler)`` as a function updates the `TypeError <./TYPE_ERROR.md>`_ with a new message
+   REDefine ``(exception_handler)`` as a function updates the `TypeError <./TYPE_ERROR.rst>`_ with a new message
 
   .. code-block::
 
@@ -429,7 +429,7 @@ let us add exception handling to our program so it does not end when it encounte
        def exception_handler(argument):
            return None
        ```
-       the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
+       the terminal updates to show an [AssertionError](./ASSERTION_ERROR.rst)
 
 .. code-block:: python
        E       AssertionError: None != 'failed'
@@ -459,7 +459,7 @@ let us add exception handling to our program so it does not end when it encounte
                    'succeeded'
                )
 
-    the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.md>`_
+    the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
 
 *
   GREEN: make it pass
@@ -476,7 +476,7 @@ let us add exception handling to our program so it does not end when it encounte
 
        does_not_raise_exception_error = None
 
-    and the terminal updates to show `AssertionError <./ASSERTION_ERROR.md>`_
+    and the terminal updates to show `AssertionError <./ASSERTION_ERROR.rst>`_
 
   .. code-block::
 
@@ -491,7 +491,7 @@ let us add exception handling to our program so it does not end when it encounte
        def exception_handler(function):
            return function()
 
-    the terminal updates to show a `TypeError <./TYPE_ERROR.md>`_ because ``(does_not_raise_exception_error)`` is not a function, we will redefine ``(does_not_raise_exception_error)`` to make it callable
+    the terminal updates to show a `TypeError <./TYPE_ERROR.rst>`_ because ``(does_not_raise_exception_error)`` is not a function, we will redefine ``(does_not_raise_exception_error)`` to make it callable
 
   .. code-block:: python
 
@@ -547,7 +547,7 @@ add a new failing test to ``test_exception_handling.py``
                "always_returns_this"
            )
 
-this will cause an `AttributeError <./ATTRIBUTE_ERROR.md>`_
+this will cause an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -558,12 +558,12 @@ GREEN: make it pass
 
        always_returns
 
-* define ``(always_returns)`` as a variable and we get an `AttributeError <./ATTRIBUTE_ERROR.md>`_
+* define ``(always_returns)`` as a variable and we get an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
   .. code-block:: python
 
        always_returns = None
 
-* redefine ``(always_returns)`` as a function and the terminal displays a `TypeError <./TYPE_ERROR.md>`_
+* redefine ``(always_returns)`` as a function and the terminal displays a `TypeError <./TYPE_ERROR.rst>`_
   .. code-block:: python
 
        def always_returns():
@@ -589,7 +589,7 @@ GREEN: make it pass
                return 'failed'
            else:
                return 'succeeded'
-    the terminal displays an `AssertionError <./ASSERTION_ERROR.md>`_ and since no exception is raised when ``(does_not_raise_exception_error)`` is called by ``(always_returns_this)``\ , it returns ``(succeeded)`` which is not equal to ``(always_returns_this)``
+    the terminal displays an `AssertionError <./ASSERTION_ERROR.rst>`_ and since no exception is raised when ``(does_not_raise_exception_error)`` is called by ``(always_returns_this)``\ , it returns ``(succeeded)`` which is not equal to ``(always_returns_this)``
 * we can try adding another return statement to the function to see if that would work
   .. code-block:: python
 
@@ -627,7 +627,7 @@ GREEN: make it pass
                exceptions.always_returns(exceptions.raises_exception_error),
                'always_returns_this'
            )
-    It is important to note that ``(always_returns)`` could have been defined as a ``(singleton)`` `function <./FUNCTIONS.md>`_ and the tests would still pass, but that would not illustrate how to use ``try...except...else...finally``
+    It is important to note that ``(always_returns)`` could have been defined as a ``(singleton)`` `function <./FUNCTIONS.rst>`_ and the tests would still pass, but that would not illustrate how to use ``try...except...else...finally``
   .. code-block:: python
 
        def always_returns(function):

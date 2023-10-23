@@ -9,8 +9,8 @@ Prerequisites
 -------------
 
 
-* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.md>`_
-* `Data Structures <./DATA_STRUCTURES.md>`_
+* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_
+* `Data Structures <./DATA_STRUCTURES.rst>`_
 
 ----
 
@@ -35,7 +35,7 @@ add a failing test to ``test_data_structures.py`` named ``(test_what_is_false)``
            self.assertTrue(dict())
            self.assertNotIsInstance(False, bool)
 
-the terminal updates to show an `AssertionError <./ASSERTION_ERROR.md>`_
+the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -111,7 +111,7 @@ let us try a similar series of failing tests for ``(True)`` by adding the follow
            })
            self.assertNotIsInstance(True, bool)
 
-the terminal updates to show an `AssertionError <./ASSERTION_ERROR.md>`_
+the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

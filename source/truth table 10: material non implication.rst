@@ -7,7 +7,7 @@ Prerequisites
 -------------
 
 
-* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.md>`_
+* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_
 
 ----
 
@@ -27,7 +27,7 @@ add a test for material non-implication to ``(TestBinaryOperations)``
            self.assertFalse(truth_table.material_non_implication(False, True))
            self.assertFalse(truth_table.material_non_implication(False, False))
 
-the terminal shows an `AttributeError <./ATTRIBUTE_ERROR.md>`_
+the terminal shows an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -38,7 +38,7 @@ GREEN: make it pass
 
        def material_non_implication(p, q):
            return False
-    the terminal updates to show an `AssertionError <./ASSERTION_ERROR.md>`_ for the second case
+    the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ for the second case
 * add a condition for it
   .. code-block:: python
 

@@ -6,7 +6,7 @@ Let us take a look at building a program which gives us the amount of time we ha
 Prerequisites
 -------------
 
-* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.md>`_ with ``(sleep_duration)`` as the project name
+* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_ with ``(sleep_duration)`` as the project name
 
 ----
 
@@ -51,7 +51,7 @@ GREEN: make it pass
     class TestSleepDuration(unittest.TestCase):
 
 
-  the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md) since we do not have a definition for ``(duration)`` in `sleep_duration.py`
+  the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.rst) since we do not have a definition for ``(duration)`` in `sleep_duration.py`
 
 
 * we update our list of exceptions encountered
@@ -75,7 +75,7 @@ GREEN: make it pass
 
     duration = None
 
-  the terminal outputs a `TypeError <./TYPE_ERROR.md>`_ because ``(None)`` is not callable
+  the terminal outputs a `TypeError <./TYPE_ERROR.rst>`_ because ``(None)`` is not callable
 * we add the exception to our running list
 
   .. code-block:: python
@@ -93,7 +93,7 @@ GREEN: make it pass
     def duration():
         return None
 
-  the `TypeError <./TYPE_ERROR.md>`_ remains but with a different message about the first argument passed in from the test
+  the `TypeError <./TYPE_ERROR.rst>`_ remains but with a different message about the first argument passed in from the test
 
 * change the definition of ``(duration)`` to accept the required keyword argument
 
@@ -111,7 +111,7 @@ GREEN: make it pass
        def duration(wake_time, sleep_time):
            return None
 
-  the terminal now shows an `AssertionError <./ASSERTION_ERROR.md>`_ since our duration function returns ``(None)`` and the test expects ``(1)`` as the duration when a sleep time of ``07:00`` and a wake time of ``08:00`` is given
+  the terminal now shows an `AssertionError <./ASSERTION_ERROR.rst>`_ since our duration function returns ``(None)`` and the test expects ``(1)`` as the duration when a sleep time of ``07:00`` and a wake time of ``08:00`` is given
 
 * modify the return value for the duration function to our expectation
 
@@ -127,7 +127,7 @@ REFACTOR: make it better
 
 The function currently returns ``(1)`` regardless of the inputs given but for it to be useful it has to calculate the difference between the wake time and the sleep time. It would be a large effort to write a test case for every permutation of sleep and wake times.
 
-Let us try writing a test that uses a random variable for the sleep and wake times. If you have done the `TDD_CALCULATOR <./TDD_CALCULATOR.md>`_ then you already know how to implement this solution
+Let us try writing a test that uses a random variable for the sleep and wake times. If you have done the `TDD_CALCULATOR <./TDD_CALCULATOR.rst>`_ then you already know how to implement this solution
 
 
 * add an import statement for the ``(random)`` library to ``test_sleep_duration.py``
@@ -172,7 +172,7 @@ Let us try writing a test that uses a random variable for the sleep and wake tim
               wake_hour-sleep_hour
           )
 
-  now we have an `AssertionError <./ASSERTION_ERROR.md>`_ because ``sleep_duration.duration`` still returns ``(1)`` but from our test we expect the difference between ``(wake_time)`` and ``(sleep_time)``
+  now we have an `AssertionError <./ASSERTION_ERROR.rst>`_ because ``sleep_duration.duration`` still returns ``(1)`` but from our test we expect the difference between ``(wake_time)`` and ``(sleep_time)``
 * let us update the ``(duration)`` function in ``sleep_duration.py`` to return a difference between the ``(wake_time)`` and ``(sleep_time)``
 
   .. code-block:: python
@@ -180,7 +180,7 @@ Let us try writing a test that uses a random variable for the sleep and wake tim
        def duration(wake_time, sleep_time):
            return wake_time - sleep_time
 
-  the terminal outputs a `TypeError <./TYPE_ERROR.md>`_\ , we passed in two strings and python does not have an operation defined for subtracting one string from another. We need to find a way to convert the timestamp from a string to a number. We know that our two inputs are currently in the format ``XX:00``\ , if we can parse the string to get the first two characters and convert that those digits to a number we should be able to get our calculation
+  the terminal outputs a `TypeError <./TYPE_ERROR.rst>`_\ , we passed in two strings and python does not have an operation defined for subtracting one string from another. We need to find a way to convert the timestamp from a string to a number. We know that our two inputs are currently in the format ``XX:00``\ , if we can parse the string to get the first two characters and convert that those digits to a number we should be able to get our calculation
 * to find out what options are available to us, we look at the ``(methods)`` and ``(attributes)`` of strings by adding a failing test to ``test_sleep_duration.py``\ , this time using the ``(dir)`` function
 
   .. code-block:: python
@@ -191,7 +191,7 @@ Let us try writing a test that uses a random variable for the sleep and wake tim
                  None
              )
 
-  an `AssertionError <./ASSERTION_ERROR.md>`_ is raised
+  an `AssertionError <./ASSERTION_ERROR.rst>`_ is raised
 
   .. code-block:: python
 
@@ -225,7 +225,7 @@ Let us try writing a test that uses a random variable for the sleep and wake tim
                    ['__add__', '__class__', '__contains__', '[918 chars]ill']
                )
 
-    we still have an `AssertionError <./ASSERTION_ERROR.md>`_ but with a different message and a suggestion
+    we still have an `AssertionError <./ASSERTION_ERROR.rst>`_ but with a different message and a suggestion
 
   .. code-block:: python
 
@@ -334,7 +334,7 @@ Let us try writing a test that uses a random variable for the sleep and wake tim
                    ]
                )
 
-* the terminal displays a `TypeError <./TYPE_ERROR.md>`_ because python does not support subtracting one string from another
+* the terminal displays a `TypeError <./TYPE_ERROR.rst>`_ because python does not support subtracting one string from another
 
   .. code-block:: python
 
@@ -386,7 +386,7 @@ Let us try writing a test that uses a random variable for the sleep and wake tim
 
        E       AssertionError: ['00:00'] != None
 
-  we change the expectation from ``(None)`` and the test passes with the terminal showing us the `TypeError <./TYPE_ERROR.md>`_ that took us down this path
+  we change the expectation from ``(None)`` and the test passes with the terminal showing us the `TypeError <./TYPE_ERROR.rst>`_ that took us down this path
 
   .. code-block:: python
 
@@ -402,7 +402,7 @@ Let us try writing a test that uses a random variable for the sleep and wake tim
                    ['00', '00']
                )
 
-  the terminal shows an `AssertionError <./ASSERTION_ERROR.md>`_\ , our use of the ``(split)`` method has not yet given us what we want. Looking back at the documentation, the definition for ``(split)`` takes in ``self, /, sep=None, maxsplit=-1`` and ``(sep)`` is the delimiter
+  the terminal shows an `AssertionError <./ASSERTION_ERROR.rst>`_\ , our use of the ``(split)`` method has not yet given us what we want. Looking back at the documentation, the definition for ``(split)`` takes in ``self, /, sep=None, maxsplit=-1`` and ``(sep)`` is the delimiter
 * passing in ``:`` as the delimiter, we change the test
 
   .. code-block:: python
@@ -421,7 +421,7 @@ Let us try writing a test that uses a random variable for the sleep and wake tim
        def duration(wake_time, sleep_time):
            return wake_time.split(':') - sleep_time.split(':')
 
-  the terminal still shows a `TypeError <./TYPE_ERROR.md>`_\ , this time for trying to subtract a list from a list
+  the terminal still shows a `TypeError <./TYPE_ERROR.rst>`_\ , this time for trying to subtract a list from a list
 
   .. code-block:: python
 
@@ -446,7 +446,7 @@ Let us try writing a test that uses a random variable for the sleep and wake tim
                    0
                )
 
-  the terminal updates to show us an `AssertionError <./ASSERTION_ERROR.md>`_ because the first item (item zero) from splitting ``"12:34"`` on the delimiter ``:`` is ``"12"``\ , good, we are closer to what we want
+  the terminal updates to show us an `AssertionError <./ASSERTION_ERROR.rst>`_ because the first item (item zero) from splitting ``"12:34"`` on the delimiter ``:`` is ``"12"``\ , good, we are closer to what we want
 * change the expected value in the test to match the value in the terminal
 
   .. code-block:: python
@@ -465,7 +465,7 @@ Let us try writing a test that uses a random variable for the sleep and wake tim
                    0
                )
 
-  the terminal shows another `AssertionError <./ASSERTION_ERROR.md>`_\ , this time to confirm that the second item (item one) from splitting ``"12:34"`` on the delimiter ``:`` is ``"34"``\ , we are not dealing with this part yet but we can assume we would use it soon, update the expected value in the same way and the test passes bringing us back to our unsolved `TypeError <./TYPE_ERROR.md>`_
+  the terminal shows another `AssertionError <./ASSERTION_ERROR.rst>`_\ , this time to confirm that the second item (item one) from splitting ``"12:34"`` on the delimiter ``:`` is ``"34"``\ , we are not dealing with this part yet but we can assume we would use it soon, update the expected value in the same way and the test passes bringing us back to our unsolved `TypeError <./TYPE_ERROR.rst>`_
 * using what we know, how to ``(split)`` a string on a delimiter method and how to index a list, update the duration function to only return the subtraction of the first parts of ``(wake_time)`` and ``(sleep_time)``
 
   .. code-block:: python
@@ -473,7 +473,7 @@ Let us try writing a test that uses a random variable for the sleep and wake tim
        def duration(wake_time, sleep_time):
            return wake_time.split(':')[0] - sleep_time.split(':')[0]
 
-  the terminal still outputs to show a `TypeError <./TYPE_ERROR.md>`_ for an unsupported operation of trying to subtract a string from another, and though it is not obvious here, the strings being subtracted are the values to the left of the delimiter ``:`` not the entire string value of ``(wake_time)`` and ``(sleep_time)`` i.e. for a given wake_time of "02:00" and a given sleep_time of "01:00" our program is currently trying to subtract "01" from "02"
+  the terminal still outputs to show a `TypeError <./TYPE_ERROR.rst>`_ for an unsupported operation of trying to subtract a string from another, and though it is not obvious here, the strings being subtracted are the values to the left of the delimiter ``:`` not the entire string value of ``(wake_time)`` and ``(sleep_time)`` i.e. for a given wake_time of "02:00" and a given sleep_time of "01:00" our program is currently trying to subtract "01" from "02"
 * we now have the task of converting our string to a number so we can do the subtraction, for this we use the ``(int)`` keyword which returns an integer for a given value. We should add a test to see how it works, update ``test_sleep_duration.py`` and comment out the current failing test
 
   .. code-block:: python
@@ -492,7 +492,7 @@ Let us try writing a test that uses a random variable for the sleep and wake tim
            def test_converting_a_string_to_an_integer(self):
                self.assertEqual(int("12"), 0)
 
-  the terminal shows an `AssertionError <./ASSERTION_ERROR.md>`_ since ``12 != 0``\ , we update the test and it shows passing tests
+  the terminal shows an `AssertionError <./ASSERTION_ERROR.rst>`_ since ``12 != 0``\ , we update the test and it shows passing tests
 
   .. code-block:: python
 
@@ -501,7 +501,7 @@ Let us try writing a test that uses a random variable for the sleep and wake tim
 
   we now have another tool to use to solve the problem
 
-* after uncommenting the commented test, we are back to the `TypeError <./TYPE_ERROR.md>`_ we have been trying to solve. We update the duration function with our knowledge to see if it makes the test pass
+* after uncommenting the commented test, we are back to the `TypeError <./TYPE_ERROR.rst>`_ we have been trying to solve. We update the duration function with our knowledge to see if it makes the test pass
 
   .. code-block:: python
 
@@ -595,7 +595,7 @@ we are going to add a failing test for that scenario to ``test_sleep_duration.py
                f'{wake_hour-sleep_hour}:{wake_minute-sleep_minute}'
            )
 
-the terminal shows an `AssertionError <./ASSERTION_ERROR.md>`_ the expected value is now a string that contains the subtraction of the sleep hour from the wake hour, separated by a delimiter ``:`` and the subtraction of the sleep minute from the wake minute, so if we have a wake_time of ``08:30`` and a sleep_time of ``07:11`` we should have ``1:19`` as the output
+the terminal shows an `AssertionError <./ASSERTION_ERROR.rst>`_ the expected value is now a string that contains the subtraction of the sleep hour from the wake hour, separated by a delimiter ``:`` and the subtraction of the sleep minute from the wake minute, so if we have a wake_time of ``08:30`` and a sleep_time of ``07:11`` we should have ``1:19`` as the output
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -607,7 +607,7 @@ GREEN: make it pass
        def duration(wake_time, sleep_time):
            return f'{get_hour(wake_time)-get_hour(sleep_time)}:{wake_time-sleep_time}'
 
-  we get a `TypeError <./ASSERTION_ERROR.md>`_ because we just tried to subtract one string from another
+  we get a `TypeError <./ASSERTION_ERROR.rst>`_ because we just tried to subtract one string from another
 * we modify the second part of our timestamp to use the ``(get_hour)`` function
 
   .. code-block:: python
@@ -615,7 +615,7 @@ GREEN: make it pass
        def duration(wake_time, sleep_time):
            return f'{get_hour(wake_time)-get_hour(sleep_time)}:{get_hour(wake_time)-get_hour(sleep_time)}'
 
-  the terminal now shows an `AssertionError <./ASSERTION_ERROR.md>`_ because the difference in minutes is not yet calculated
+  the terminal now shows an `AssertionError <./ASSERTION_ERROR.rst>`_ because the difference in minutes is not yet calculated
 * let us use the ``(get_hour)`` function to create a similar function which gets the minutes from a given timestamp
 
   .. code-block:: python
@@ -629,7 +629,7 @@ GREEN: make it pass
        def duration(wake_time, sleep_time):
            return f'{get_hour(wake_time)-get_hour(sleep_time)}:{get_hour(wake_time)-get_hour(sleep_time)}'
 
-  the terminal still shows an `AssertionError <./ASSERTION_ERROR.md>`_
+  the terminal still shows an `AssertionError <./ASSERTION_ERROR.rst>`_
 
 * after updating the ``(duration)`` function with a call to the new ``(get_minute)`` function, the test passes
 
@@ -661,7 +661,7 @@ GREEN: make it pass
                    f'{wake_hour-sleep_hour}:00'
                )
 
-  we get an `AssertionError <./ASSERTION_ERROR.md>`_ in the terminal because we have two zeros ``:00`` in the expected return value but the duration function returns ``(0)`` for the minute side of our timestamp after doing a subtraction, i.e. ``(00)`` minus ``(00)`` is ``(0)`` not ``(00)``. We could update the right side of the expected value to ``(0)`` to make it pass, but that would not be necessary because ``(test_duration_when_given_hours_and_minutes)`` already covers the cases where the minutes are zero since we are doing a random number from ``(0)`` to ``(23)`` for hours and a random number from ``(0)`` to ``(59)`` for minutes.
+  we get an `AssertionError <./ASSERTION_ERROR.rst>`_ in the terminal because we have two zeros ``:00`` in the expected return value but the duration function returns ``(0)`` for the minute side of our timestamp after doing a subtraction, i.e. ``(00)`` minus ``(00)`` is ``(0)`` not ``(00)``. We could update the right side of the expected value to ``(0)`` to make it pass, but that would not be necessary because ``(test_duration_when_given_hours_and_minutes)`` already covers the cases where the minutes are zero since we are doing a random number from ``(0)`` to ``(23)`` for hours and a random number from ``(0)`` to ``(59)`` for minutes.
 * delete ``(test_duration_when_given_hours_only)`` since we no longer need it and the terminal shows passing tests
 
 REFACTOR: make it better
@@ -687,7 +687,7 @@ The ``(duration)`` function currently returns a subtraction of hours and a subtr
                    '0:31'
                )
 
-  the terminal shows an `AssertionError <./ASSERTION_ERROR.md>`_ since ``1:-29`` is not equal to ``0:31``
+  the terminal shows an `AssertionError <./ASSERTION_ERROR.rst>`_ since ``1:-29`` is not equal to ``0:31``
 * we do a quick search in the python documentation for `time difference <https://docs.python.org/3/search.html?q=time+difference>`_ on https://docs.python.org/3/search.html and select the `datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#module-datetime>`_ library since it looks like the most appropriate for our problem, after reading through the available types in the module we come upon
 
   .. code-block:: python
@@ -727,7 +727,7 @@ The ``(duration)`` function currently returns a subtraction of hours and a subtr
        import sleep_duration
        import unittest
 
-  the terminal reveals an `AssertionError <./ASSERTION_ERROR.md>`_
+  the terminal reveals an `AssertionError <./ASSERTION_ERROR.rst>`_
 
   .. code-block:: python
 
@@ -794,7 +794,7 @@ The ``(duration)`` function currently returns a subtraction of hours and a subtr
                    ''
                )
 
-  and we get an `AssertionError <./ASSERTION_ERROR.md>`_ that looks more like what we are expecting
+  and we get an `AssertionError <./ASSERTION_ERROR.rst>`_ that looks more like what we are expecting
 
   .. code-block:: python
 
@@ -816,7 +816,7 @@ Putting it all together
 -----------------------
 
 
-* uncomment ``(test_duration_calculation)`` and we get the `AssertionError <./ASSERTION_ERROR.md>`_ we had before
+* uncomment ``(test_duration_calculation)`` and we get the `AssertionError <./ASSERTION_ERROR.rst>`_ we had before
 * add a function called ``(get_datetime_object)`` to use for converting timestamps in the format we want in ``sleep_duration.py``
 
   .. code-block:: python
@@ -865,7 +865,7 @@ Putting it all together
        def get_datetime_object(timestamp):
            return datetime.datetime.strptime(f'21/11/06 {timestamp}', "%d/%m/%y %H:%M")
 
-  the terminal now shows an `AssertionError <./ASSERTION_ERROR.md>`_ because our function is currently returning a ``(datetime)`` object not a string
+  the terminal now shows an `AssertionError <./ASSERTION_ERROR.rst>`_ because our function is currently returning a ``(datetime)`` object not a string
 * change the return in the ``(duration)`` function to return a string
 
   .. code-block:: python
@@ -875,7 +875,7 @@ Putting it all together
            return str(difference)
            return f'{get_hour(wake_time)-get_hour(sleep_time)}:{get_minute(wake_time)-get_minute(sleep_time)}'
 
-  the terminal shows an `AssertionError <./ASSERTION_ERROR.md>`_\ , this time our values are the same except we are missing the part for seconds
+  the terminal shows an `AssertionError <./ASSERTION_ERROR.rst>`_\ , this time our values are the same except we are missing the part for seconds
 
   .. code-block:: python
 
@@ -898,8 +898,8 @@ Putting it all together
                    f'{wake_hour-sleep_hour}:{wake_minute-sleep_minute}:00'
                )
 
-  we get another `AssertionError <./ASSERTION_ERROR.md>`_ in the terminal since we have not yet updated ``(test_duration_calculation)`` with the new format
-* we will randomly get an `AssertionError <./ASSERTION_ERROR.md>`_ for ``(test_duration_when_given_hours_and_minutes)``. Since we are using random integers for hours and minutes, there will be instances where the ``(wake_hour)`` is earlier than the ``(sleep_hour)`` leading to a negative number e.g.
+  we get another `AssertionError <./ASSERTION_ERROR.rst>`_ in the terminal since we have not yet updated ``(test_duration_calculation)`` with the new format
+* we will randomly get an `AssertionError <./ASSERTION_ERROR.rst>`_ for ``(test_duration_when_given_hours_and_minutes)``. Since we are using random integers for hours and minutes, there will be instances where the ``(wake_hour)`` is earlier than the ``(sleep_hour)`` leading to a negative number e.g.
 
   .. code-block:: python
 
@@ -973,7 +973,7 @@ Our ``(duration)`` function now accounts for a time traveling sleep scenario whe
                    "-01:00:00"
                )
 
-  the terminal shows an `AssertionError <./ASSERTION_ERROR.md>`_
+  the terminal shows an `AssertionError <./ASSERTION_ERROR.rst>`_
 
   .. code-block:: python
 
@@ -992,7 +992,7 @@ Our ``(duration)`` function now accounts for a time traveling sleep scenario whe
                )
 
   we are green again
-* we want the ``(duration)`` function to make a decision based on a comparison of ``(wake_time)`` and ``(sleep_time)``. If ``(wake_time)`` is earlier than ``(sleep_time)`` it should raise an `Exception <./EXCEPTION_HANDLING.md>`_
+* we want the ``(duration)`` function to make a decision based on a comparison of ``(wake_time)`` and ``(sleep_time)``. If ``(wake_time)`` is earlier than ``(sleep_time)`` it should raise an `Exception <./EXCEPTION_HANDLING.rst>`_
 
   .. code-block:: python
 
@@ -1016,7 +1016,7 @@ Our ``(duration)`` function now accounts for a time traveling sleep scenario whe
 
        E           ValueError: wake_time: 2006-11-21 01:00:00 is earlier than sleep_time: 2006-11-21 02:00:00
 
-* to catch the error we need to add an `Exception Handler <./EXCEPTION_HANDLING.md>`_ using a ``try...except`` statement and a ``self.assertRaises`` method call to confirm that the error is raised, update ``(test_duration_when_given_hours_and_minutes)``
+* to catch the error we need to add an `Exception Handler <./EXCEPTION_HANDLING.rst>`_ using a ``try...except`` statement and a ``self.assertRaises`` method call to confirm that the error is raised, update ``(test_duration_when_given_hours_and_minutes)``
 
   .. code-block:: python
 
@@ -1121,7 +1121,7 @@ GREEN: make it pass
                with self.assertRaisesRegex(ValueError, f'wake_time: {wake_time} is earlier than sleep_time: {sleep_time}'):
                    sleep_duration.duration(wake_time, sleep_time)
 
-  the terminal responds with an `AssertionError <./ASSERTION_ERROR.md>`_ because the message raised by the ``(ValueError)`` is different from what we expect
+  the terminal responds with an `AssertionError <./ASSERTION_ERROR.rst>`_ because the message raised by the ``(ValueError)`` is different from what we expect
 
   .. code-block:: python
 
@@ -1156,7 +1156,7 @@ GREEN: make it pass
            with self.assertRaisesRegex(ValueError, f'wake_time: {wake_time} is earlier than sleep_time: {sleep_time}'):
                sleep_duration.duration(wake_time, sleep_time)
 
-  the terminal still shows an `AssertionError <./ASSERTION_ERROR.md>`_ this time with an updated message showing the returned values from the ``(get_datetime_object)`` function
+  the terminal still shows an `AssertionError <./ASSERTION_ERROR.rst>`_ this time with an updated message showing the returned values from the ``(get_datetime_object)`` function
 * we update the test using the ``(get_datetime_object)`` function to display the correct timestamps in the ``(ValueError)`` message
 
   .. code-block:: python

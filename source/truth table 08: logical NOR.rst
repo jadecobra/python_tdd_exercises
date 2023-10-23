@@ -7,7 +7,7 @@ Prerequisites
 -------------
 
 
-* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.md>`_
+* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_
 
 ----
 
@@ -27,7 +27,7 @@ add a test for exclusive disjunction to ``(TestBinaryOperations)``
            self.assertFalse(truth_table.logical_nor(False, True))
            self.assertTrue(truth_table.logical_nor(False, False))
 
-the terminal shows an `AttributeError <./ATTRIBUTE_ERROR.md>`_
+the terminal shows an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

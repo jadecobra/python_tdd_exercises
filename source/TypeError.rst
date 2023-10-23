@@ -8,7 +8,7 @@ Prerequisites
 -------------
 
 
-* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.md>`_
+* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_
 
 ----
 
@@ -29,7 +29,7 @@ RED: make it fail
 
 
 *
-  Open a new file in the editor and save it as ``tests/test_type_error.py`` in the ``(tests)`` folder you created in `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.md>`_ and type the following in the file
+  Open a new file in the editor and save it as ``tests/test_type_error.py`` in the ``(tests)`` folder you created in `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_ and type the following in the file
 
 
 .. code-block:: python
@@ -51,13 +51,13 @@ RED: make it fail
    ```
 
 
-* Ah, a ``(ModuleNotFoundError)``\ , We have a lot of practice solving this error from `ModuleNotFoundError <./MODULE_NOT_FOUND_ERROR.md>`_. let us create a file named ``functions.py`` and the terminal updates to show
+* Ah, a ``(ModuleNotFoundError)``\ , We have a lot of practice solving this error from `ModuleNotFoundError <./MODULE_NOT_FOUND_ERROR.rst>`_. let us create a file named ``functions.py`` and the terminal updates to show
   .. code-block:: python
 
        >       self.assertIsNone(functions.function_a("a"))
        E       AttributeError: module 'functions' has no attribute 'function_a'
 
-* We also have some practice with ``(AttributeError)`` from `01_TDD_ATTRIBUTE_ERROR <./01_TDD_ATTRIBUTE_ERROR.md>`_. Add this line ``functions.py``
+* We also have some practice with ``(AttributeError)`` from `01_TDD_ATTRIBUTE_ERROR <./01_TDD_ATTRIBUTE_ERROR.rst>`_. Add this line ``functions.py``
   .. code-block:: python
 
        function_a = None
@@ -66,7 +66,7 @@ RED: make it fail
 
        >       self.assertIsNone(functions.function_a("a"))
        E       TypeError: 'NoneType' object is not callable
-    A reminder of our first encounter with ``(TypeError)`` from `How to solve the AttributeError by defining a Function <./01_TDD_ATTRIBUTE_ERROR.md>`_
+    A reminder of our first encounter with ``(TypeError)`` from `How to solve the AttributeError by defining a Function <./01_TDD_ATTRIBUTE_ERROR.rst>`_
 * We solve this ``(TypeError)`` by definining a ``(callable)``\ , in this case a function. Update ``functions.py``
   .. code-block:: python
 
@@ -90,7 +90,7 @@ RED: make it fail
       Imagine you have a telephone, it has a call function but to make a call you must provide a number then hit dial.
     * ``(call)`` is like ``(function_a)``
     * the number you provide is like ``"a"`` and hitting dial is like ``()``
-      We will practice this some more in `TDD_FUNCTIONS <./TDD_FUNCTIONS.md>`_
+      We will practice this some more in `TDD_FUNCTIONS <./TDD_FUNCTIONS.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -166,7 +166,7 @@ EXTRA
 
 
 * What's another solution to the above test?
-* How can we define a function that takes in any number of parameters? see `TDD_FUNCTIONS <./TDD_FUNCTIONS.md>`_
+* How can we define a function that takes in any number of parameters? see `TDD_FUNCTIONS <./TDD_FUNCTIONS.rst>`_
 
 let us add more tests
 ^^^^^^^^^^^^^^^^^^^^^

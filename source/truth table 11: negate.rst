@@ -7,7 +7,7 @@ Prerequisites
 -------------
 
 
-* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.md>`_
+* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_
 
 ----
 
@@ -27,7 +27,7 @@ add a test for negate first to ``(TestBinaryOperations)``
            self.assertTrue(truth_table.negate_first(False, True))
            self.assertTrue(truth_table.negate_first(False, False))
 
-the terminal shows an `AttributeError <./ATTRIBUTE_ERROR.md>`_
+the terminal shows an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -38,7 +38,7 @@ GREEN: make it pass
 
        def negate_first(p, q):
            return False
-    the terminal updates to show an `AssertionError <./ASSERTION_ERROR.md>`_ for the third case
+    the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ for the third case
 * before we add a condition for it, this looks similar to ``(logical_equality)`` and ``(exclusive_disjunction)`` because 2 out of the 4 cases have the same return value. We observe that
 
   * if ``p == True`` the result is ``(False)``
@@ -99,7 +99,7 @@ add a test for negate second to ``(TestBinaryOperations)``
            self.assertFalse(truth_table.negate_second(False, True))
            self.assertTrue(truth_table.negate_second(False, False))
 
-the terminal shows an `AttributeError <./ATTRIBUTE_ERROR.md>`_
+the terminal shows an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -110,7 +110,7 @@ GREEN: make it pass
 
        def negate_second(p, q):
            return False
-    the terminal updates to show an `AssertionError <./ASSERTION_ERROR.md>`_ for the third case
+    the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ for the third case
 * before we add a condition for it, this looks similar to ``(logical_equality)``\ , ``(exclusive_disjunction)`` and ``(negate_first)`` because 2 out of the 4 cases have the same return value. We observe that
 
   * if ``q == True`` the result is ``(False)``
@@ -121,7 +121,7 @@ GREEN: make it pass
 
        def negate_second(p, q):
            return not p
-    the terminal still shows an `AssertionError <./ASSERTION_ERROR.md>`_. let us try ``(q)`` instead
+    the terminal still shows an `AssertionError <./ASSERTION_ERROR.rst>`_. let us try ``(q)`` instead
   .. code-block:: python
 
        def negate_second(p, q):

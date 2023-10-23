@@ -89,8 +89,8 @@ RED: make it fail
    Below is an explanation of the code you just wrote
    - `import unittest` imports an existing module from the python standard library that is used for testing.
    - ``(unittest)`` is a module/library/package that comes with python for testing code, earlier it was mentioned that a python module is any file that ends in `.py` so we can assume there is a file somewhere on the computer called `unittest.py` or a folder named ``(unittest)`` with an `__init__.py` like our ``(tests)`` folder, we can take a look at the [unittest source code](https://github.com/python/cpython/blob/3.11/Lib/unittest/__init__.py) to confirm
-   - ``(TestProjectName)`` is a [class](./CLASSES.md), a "container" for the tests we are about to write
-   - `unittest.TestCase` is a [class](./CLASSES.md) defined in the ``(unittest)`` library which contains a bunch of `methods/functions` for testing code that ``(TestProjectName)`` inherits so they do not have to be rewritten
+   - ``(TestProjectName)`` is a [class](./CLASSES.rst), a "container" for the tests we are about to write
+   - `unittest.TestCase` is a [class](./CLASSES.rst) defined in the ``(unittest)`` library which contains a bunch of `methods/functions` for testing code that ``(TestProjectName)`` inherits so they do not have to be rewritten
    - a simple way to think of inheritance is that ``(TestProjectName)`` is a child of `unittest.TestCase` and can do the same things that its parent can do
    - `def test_failure` is the definition of a test function to test the system being built
    - ``(self)`` refers to the ``(TestProjectName)`` class. To access ``(methods)`` and ``(attributes)`` within the ``(TestProjectName)`` class we use ``(self)``. It avoids having to say `TestProjectName.assertFalse(True)`
@@ -130,7 +130,7 @@ The error provides important information about the code. Looking at it from the 
 
 * ``FAILED (failures=1)`` The test failed - RED
 * ``Ran 1 test in 0.000s`` tells us how long it took to run the test
-* ``AssertionError: True is not false`` The error is an `AssertionError <./ASSERTION_ERROR.md>`_ which is raised by python when an assert statement is ``(False)``\ , in this case ``True is not false``
+* ``AssertionError: True is not false`` The error is an `AssertionError <./ASSERTION_ERROR.rst>`_ which is raised by python when an assert statement is ``(False)``\ , in this case ``True is not false``
 * ``self.assertFalse(True)`` the line of code that caused the failure
 * ``File "/<PATH_TO_PROJECT>/{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py", line 7, in test_failure`` the line number and location of the file where the error occurred. Clicking on this line will place your cursor at the position in the Interactive Development Environment(IDE)
 * ``Traceback (most recent call last):`` all the information returned by python for the exception is the traceback, showing the most recent call python made last
@@ -150,7 +150,7 @@ GREEN: make it pass
 -------------------
 
 
-* I think we should keep a list of Errors/Exceptions encountered as we go through our python journey to help us become better python programmers, it will help us keep track of the cause and inevitably the solutions we come up with to these exceptions. Add `AssertionError <./ASSERTION_ERROR.md>`_ to the list
+* I think we should keep a list of Errors/Exceptions encountered as we go through our python journey to help us become better python programmers, it will help us keep track of the cause and inevitably the solutions we come up with to these exceptions. Add `AssertionError <./ASSERTION_ERROR.rst>`_ to the list
 
 .. code-block:: python
     import unittest

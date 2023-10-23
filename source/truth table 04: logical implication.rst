@@ -21,7 +21,7 @@ Prerequisites
 -------------
 
 
-* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.md>`_
+* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_
 
 ----
 
@@ -41,7 +41,7 @@ add a test for logical implication to ``(TestBinaryOperations)``
            self.assertTrue(truth_table.logical_implication(False, True))
            self.assertTrue(truth_table.logical_implication(False, False))
 
-the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.md>`_
+the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

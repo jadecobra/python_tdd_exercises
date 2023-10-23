@@ -7,7 +7,7 @@ Prerequisites
 -------------
 
 
-* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.md>`_
+* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_
 
 ----
 
@@ -24,7 +24,7 @@ RED: make it fail
 
 
 *
-  Open a new file in the editor and save it as ``tests/test_indentation_error.py`` in the ``(tests)`` folder you created in `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.md>`_\ , then type the following lines in the file *paying attention to the spacing*
+  Open a new file in the editor and save it as ``tests/test_indentation_error.py`` in the ``(tests)`` folder you created in `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_\ , then type the following lines in the file *paying attention to the spacing*
 
   .. code-block:: python
 
@@ -90,7 +90,7 @@ RED: make it fail
 
 
 *
-  add the `functions <./FUNCTIONS.md>`_ below to ``test_indentation_error.py``
+  add the `functions <./FUNCTIONS.rst>`_ below to ``test_indentation_error.py``
 
   .. code-block:: python
 
@@ -132,7 +132,7 @@ GREEN: make it pass
 Solve the IndentationError in Classes
 -------------------------------------
 
-let us add more tests, this time to raise indentation errors for `Class <./CLASSES.md>`_ definitions *noting the difference in spacing*
+let us add more tests, this time to raise indentation errors for `Class <./CLASSES.rst>`_ definitions *noting the difference in spacing*
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -184,7 +184,7 @@ RED: make it fail
 
 
 *
-  building on what we have done so far, we will add failing tests for `methods <./CLASSES.md>`_\ , update ``test_indentation_error.py``
+  building on what we have done so far, we will add failing tests for `methods <./CLASSES.rst>`_\ , update ``test_indentation_error.py``
 
   .. code-block:: python
 
@@ -265,6 +265,6 @@ REFACTOR: make it better
 
 The point of this exercise was to get familiar with python spacing convention to help understand the ``(IndentationError)`` and its solution.
 
-Indentation matters in python because it is how blocks of code are segmented. When a `function <./FUNCTIONS.md>`_ is defined, all the statements that belong to the it are indented, same with a `class <./CLASSES.md>`_\ , all the statements that belong to the it, its methods and attributes are indented underneath it.
+Indentation matters in python because it is how blocks of code are segmented. When a `function <./FUNCTIONS.rst>`_ is defined, all the statements that belong to the it are indented, same with a `class <./CLASSES.rst>`_\ , all the statements that belong to the it, its methods and attributes are indented underneath it.
 
 This helps with reading the code so we can tell what belongs to a namespace the same way curly braces do for languages that use them for that purpose. Interactive Development Environments have gotten a lot better and automatically indent code for you using the convention of the language you are writing, which saves time spent counting the number of spaces to indent.

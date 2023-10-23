@@ -8,7 +8,7 @@ Prerequisites
 -------------
 
 
-* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.md>`_
+* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_
 
 ----
 
@@ -16,7 +16,7 @@ What is an AssertionError?
 --------------------------
 
 An ``(AssertionError)`` is an Exception that is raised when the result of an ``(assert)`` statement is ``(False)``.
-We encountered this when we wrote the first failing test below in `Setup TDD <./How I How I setup a Test Driven Development Environment.md>`_
+We encountered this when we wrote the first failing test below in `Setup TDD <./How I How I setup a Test Driven Development Environment.rst>`_
 
 .. code-block:: python
 
@@ -242,7 +242,7 @@ the terminal updates to show a failure
 
    E       AssertionError: True is not false
 
-this is familiar, it was the first failing test we wrote in `TDD Setup <./How I How I setup a Test Driven Development Environment.md>`_
+this is familiar, it was the first failing test we wrote in `TDD Setup <./How I How I setup a Test Driven Development Environment.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -316,7 +316,7 @@ we update ``(test_assertion_errors_with_false)`` to make it pass
 
            self.assertTrue(True)
 
-This was one of the options to solve the failing test in `TDD Setup <./How I How I setup a Test Driven Development Environment.md>`_. Our knowledge of python has grown, we now know that
+This was one of the options to solve the failing test in `TDD Setup <./How I How I setup a Test Driven Development Environment.rst>`_. Our knowledge of python has grown, we now know that
 
 
 * ``(True)`` is ``(True)``
@@ -381,7 +381,7 @@ REFACTOR: make it better
 
        E       AssertionError: False != None
 
-    The ``(assertEqual)`` method from ``unittest.TestCase`` checks if the two given inputs, ``(False)`` and ``(None)`` are equal. We look at function signatures in `TypeError <./TYPE_ERROR.md>`_ to get a better understanding of passing inputs to functions.
+    The ``(assertEqual)`` method from ``unittest.TestCase`` checks if the two given inputs, ``(False)`` and ``(None)`` are equal. We look at function signatures in `TypeError <./TYPE_ERROR.rst>`_ to get a better understanding of passing inputs to functions.
 
     For now, we could imagine that in a file named ``unittest.py`` there is a definition which means something like the code below. We could also `look at the real definition of the assertEqual method <https://github.com/python/cpython/blob/f1f85a42eafd31720cf905c5407ca3e043946698/Lib/unittest/case.py#L868>`_
 

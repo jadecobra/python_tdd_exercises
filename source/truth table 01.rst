@@ -15,14 +15,14 @@ Prerequisites
 -------------
 
 
-* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.md>`_
+* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_
 
 ----
 
 Nullary Operations
 ------------------
 
-Nullary operations do not take in inputs and always return the same value. They are singleton `functions <./07_FUNCTIONS.md>`_
+Nullary operations do not take in inputs and always return the same value. They are singleton `functions <./07_FUNCTIONS.rst>`_
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -40,20 +40,20 @@ create a file named ``test_truth_table.py`` in the ``(tests)`` folder and add th
        def test_logical_true(self):
            self.assertTrue(truth_table.logical_true())
 
-the terminal updates to show a `ModuleNotFoundError <./MODULE_NOT_FOUND_ERROR.md>`_
+the terminal updates to show a `ModuleNotFoundError <./MODULE_NOT_FOUND_ERROR.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* add `ModuleNotFoundError <./MODULE_NOT_FOUND_ERROR.md>`_ to the list of exceptions encountered
+* add `ModuleNotFoundError <./MODULE_NOT_FOUND_ERROR.rst>`_ to the list of exceptions encountered
   .. code-block:: python
 
      # Exceptions Encountered
      # AssertionError
      # ModuleNotFoundError
 
-* create a file named ``truth_table.py`` in the project folder and the terminal displays an `AttributeError <./ATTRIBUTE_ERROR.md>`_ which we add to our list of exceptions encountered
+* create a file named ``truth_table.py`` in the project folder and the terminal displays an `AttributeError <./ATTRIBUTE_ERROR.rst>`_ which we add to our list of exceptions encountered
   .. code-block:: python
 
      # Exceptions Encountered
@@ -77,13 +77,13 @@ REFACTOR: make it better
 
        def test_logical_false(self):
            self.assertFalse(truth_table.logical_false())
-  the terminal gives another `AttributeError <./ATTRIBUTE_ERROR.md>`_ since there is no definition for ``(logical_false)`` in ``truth_table.py``
+  the terminal gives another `AttributeError <./ATTRIBUTE_ERROR.rst>`_ since there is no definition for ``(logical_false)`` in ``truth_table.py``
 * add a function definition for ``(logical_false)`` to ``truth_table.py``
   .. code-block:: python
 
      def logical_false():
          return True
-  and the terminal shows an `AssertionError <./ASSERTION_ERROR.md>`_ since the ``(logical_false)`` function currently returns a different value from what is expected
+  and the terminal shows an `AssertionError <./ASSERTION_ERROR.rst>`_ since the ``(logical_false)`` function currently returns a different value from what is expected
 * update the return value to ``(False)`` and the terminal shows passing tests
   .. code-block:: python
 
@@ -106,7 +106,7 @@ There are two unary operations
 Logical Identity
 ^^^^^^^^^^^^^^^^
 
-A Logical Identity operation takes input and returns it as output, it is a passthrough `function <./07_FUNCTIONS.md>`_
+A Logical Identity operation takes input and returns it as output, it is a passthrough `function <./07_FUNCTIONS.rst>`_
 
 RED: make it fail
 ~~~~~~~~~~~~~~~~~
@@ -123,7 +123,7 @@ Add a new ``(TestCase)`` to ``test_truth_table.py``
            self.assertTrue(truth_table.logical_identity(True))
            self.assertFalse(truth_table.logical_identity(False))
 
-the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.md>`_ because there is no definition for ``(logical_identity)`` in ``truth_table.py``
+the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.rst>`_ because there is no definition for ``(logical_identity)`` in ``truth_table.py``
 
 GREEN: make it pass
 ~~~~~~~~~~~~~~~~~~~
@@ -153,7 +153,7 @@ add a test for ``(logical_negation)`` to ``test_truth_table.py``
            self.assertFalse(truth_table.logical_negation(True))
            self.assertTrue(truth_table.logical_negation(False))
 
-the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.md>`_\ , there is no definition for ``(logical_negation)`` in ``truth_table.py``
+the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.rst>`_\ , there is no definition for ``(logical_negation)`` in ``truth_table.py``
 
 GREEN: make it pass
 ~~~~~~~~~~~~~~~~~~~
@@ -164,7 +164,7 @@ GREEN: make it pass
 
      def logical_negation(value):
          return value
-  the terminal updates to show an `AssertionError <./ASSERTION_ERROR.md>`_. The ``(logical_negation)`` function returns the value it receives as input but the test expects it to return the opposite
+  the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_. The ``(logical_negation)`` function returns the value it receives as input but the test expects it to return the opposite
 * we use the ``(not)`` keyword to make the function return the opposite of what it receives. Update the return statement in ``(logical_negation)`` to return the opposite of the value it receives
   .. code-block:: python
 
@@ -180,4 +180,4 @@ Reviewing what we know so far
 * ``(False)`` is ``(False)``
 * ``(True)`` is ``(True)``
 
-We have not written any conditional statements yet, only boolean values and their opposites. We will write some in `Logical Conjunction <./TRUTH_TABLE_02_LOGICAL_CONJUNCTION.md>`_ next
+We have not written any conditional statements yet, only boolean values and their opposites. We will write some in `Logical Conjunction <./TRUTH_TABLE_02_LOGICAL_CONJUNCTION.rst>`_ next
