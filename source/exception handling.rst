@@ -15,7 +15,7 @@ Prerequisites
 -------------
 
 
-* `How I setup a Test Driven Development Environment.md <./How I How I setup a Test Driven Development Environment.md.md>`_
+* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.md>`_
 
 ----
 
@@ -396,7 +396,8 @@ let us add exception handling to our program so it does not end when it encounte
 
   .. code-block::
 
-       ```python
+
+.. code-block:: python
        exception_handler
        ```
 
@@ -404,7 +405,8 @@ let us add exception handling to our program so it does not end when it encounte
 
   .. code-block::
 
-       ```python
+
+.. code-block:: python
        exception_handler = None
        ```
 
@@ -412,7 +414,8 @@ let us add exception handling to our program so it does not end when it encounte
 
   .. code-block::
 
-       ```python
+
+.. code-block:: python
        def exception_handler():
            return None
        ```
@@ -421,12 +424,14 @@ let us add exception handling to our program so it does not end when it encounte
 
   .. code-block::
 
-       ```python
+
+.. code-block:: python
        def exception_handler(argument):
            return None
        ```
        the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
-       ```python
+
+.. code-block:: python
        E       AssertionError: None != 'failed'
        ```
        because the result of calling `exceptions.exception_handler` with `exceptions.raises_exception_error`  as the input is currently ``(None)`` which is not equal to ``(failed)``
@@ -435,7 +440,8 @@ let us add exception handling to our program so it does not end when it encounte
 
   .. code-block::
 
-       ```python
+
+.. code-block:: python
        def exception_handler(argument):
            return 'failed'
        ```

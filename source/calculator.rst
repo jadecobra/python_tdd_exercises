@@ -7,7 +7,7 @@ Prerequisites
 -------------
 
 
-* `How I setup a Test Driven Development Environment.md <./How I How I setup a Test Driven Development Environment.md.md>`_ with ``(calculator)`` as the project name
+* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.md>`_ with ``(calculator)`` as the project name
 
 ----
 
@@ -36,7 +36,7 @@ let us add a TODO list to ``test_calculator.py`` to keep track of what we are do
    # Exceptions Encountered
    # AssertionError
 
-the terminal responds to our change, with the one test still passing from `How I setup a Test Driven Development Environment.md <./How I How I setup a Test Driven Development Environment.md.md>`_
+the terminal responds to our change, with the one test still passing from `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.md>`_
 
 .. code-block:: shell
 
@@ -94,7 +94,8 @@ RED: make it fail
 
 
 * let us add a method named ``(test_addition)`` to the ``(TestCalculator)`` class
-    ```python
+
+.. code-block:: python
     import unittest
     import calculator
 
@@ -232,7 +233,7 @@ GREEN: make it pass
 
        E       AssertionError: None != 1
 
-    An ``(AssertionError)`` was the first error we encountered in `Setup TDD <./How I How I setup a Test Driven Development Environment.md.md>`_ after adding a test for failure.
+    An ``(AssertionError)`` was the first error we encountered in `Setup TDD <./How I How I setup a Test Driven Development Environment.md>`_ after adding a test for failure.
     It is raised when an assertion is ``(False)``\ , since we are using ``self.assertEqual`` it means the two things we provided as inputs are not equal. In other words ``calculator.add(0, 1)`` is currently not equal to ``(1)``. Let us update the ``(add)`` function in ``calculator.py`` so it gives the expected value
 
   .. code-block:: python
@@ -314,7 +315,8 @@ There are a few scenarios we can consider from the users' perspective. If our us
  REFACTOR: make it better
 
     we can randomize the inputs to test that the function behaves the way we expect for any given numbers. Update ``test_calculator.py`` to use python's `random <https://docs.python.org/3/library/random.html?highlight=random#module-random>`_ library
-    ```python
+
+.. code-block:: python
     import calculator
     import random
     import unittest
@@ -336,14 +338,16 @@ There are a few scenarios we can consider from the users' perspective. If our us
    - we test that when these two variables are given to the ``(add)`` function as inputs it returns the sum of the 2 variables as output
 
    the terminal still displays passing tests
-   ```python
+
+.. code-block:: python
    tests/test_calculator.py ..                             [100%]
 
    ================ 2 passed in 0.01s ===========================
    ```
    - we no longer need the previous tests because this new test covers the scenarios for zero, negative and positive numbers
    - we can remove `test addition` from our TODO list since it passed, marking the task as completed
-   ```python
+
+.. code-block:: python
    # TODO
    # test subtraction
    # test multiplication
@@ -495,7 +499,8 @@ REFACTOR: make it better
 *
   we could update the ``(TestCalculator)`` class in ``test_calculator.py`` to create the random variables once
 
-    ```python
+
+.. code-block:: python
     import calculator
     import random
     import unittest
@@ -606,7 +611,8 @@ RED : make it fail
 
 
 * update ``test_calculator.py`` with ``(test_division)``
-    ```python
+
+.. code-block:: python
     import unittest
     import calculator
     import random
@@ -673,7 +679,8 @@ GREEN : make it pass
 
 .. code-block::
 
-   ```python
+
+.. code-block:: python
    x = 1, y = 0
 
        def divide(x, y):

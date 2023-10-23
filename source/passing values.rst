@@ -2,23 +2,27 @@ How to Pass Values
 ==================
 
 When testing or using a program, we provide data as inputs to the program with an expectation of a return value.
-```python
+
+.. code-block:: python
     input_data -> process -> output
 ```
 
 It is similar to functions in mathematics where we represent a function as ``(f)`` with inputs ``(x)`` and a return value of ``(y)``
 
-```python
+
+.. code-block:: python
     f(x) -> y
 ```
 
 In testing we are asking the question is `f(x)` equal to ``(y)`` for the given input ``(x)`` e.g. we could use an assert statement
-```python
+
+.. code-block:: python
     assert f(x) == y
 ```
 
 or use the `self.assertEqual` method from `unittest.TestCase`
-```python
+
+.. code-block:: python
     self.assertEqual(f(x), y)
 ```
 
@@ -26,7 +30,7 @@ We are going to look at how to pass values from tests to programs using `string 
 
 Prerequisites
 -------------
-[How I setup a Test Driven Development Environment.md](./How I How I setup a Test Driven Development Environment.md.md)
+[How I setup a Test Driven Development Environment](./How I How I setup a Test Driven Development Environment.md)
 
 ---
 
@@ -36,7 +40,8 @@ Prerequisites
 
 create a file named `test_passing_values.py` in the ``(tests)`` folder with the following text
 
-```python
+
+.. code-block:: python
 import unittest
 import telephone
 
@@ -50,7 +55,8 @@ class TestPassingValues(unittest.TestCase):
         )
 ```
 the terminal updates to show a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md) and we add it to our list of exceptions encountered
-```python
+
+.. code-block:: python
 # Exceptions Encountered
 # AssertionError
 # ModuleNotFoundError
@@ -59,27 +65,31 @@ the terminal updates to show a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md
 ### GREEN: make it pass
 
 - create a file named `telephone.py` in the project folder and the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md) which we add to our list of exceptions
-    ```python
+
+.. code-block:: python
     # Exceptions Encountered
     # AssertionError
     # ModuleNotFoundError
     # AttributeError
     ```
 - update `telephone.py` with a class definition
-    ```python
+
+.. code-block:: python
     class Telephone(object):
 
         pass
     ```
     the terminal still displays an [AttributeError](./ATTRIBUTE_ERROR.md) but with a different message
 - we add a definition for an attribute named ``(text)`` to the ``(Telephone)`` class
-    ```python
+
+.. code-block:: python
     class Telephone(object):
 
         text = None
     ```
     the terminal updates to show a [TypeError](./TYPE_ERROR.md) because ``(text)`` is not callable and we add the new exception to our list of exceptions encountered
-    ```python
+
+.. code-block:: python
     # Exceptions Encountered
     # AssertionError
     # ModuleNotFoundError
@@ -87,7 +97,8 @@ the terminal updates to show a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md
     # TypeError
     ```
 - change ``(text)`` to a method to make it callable
-    ```python
+
+.. code-block:: python
     class Telephone(object):
 
         def text():
@@ -95,7 +106,8 @@ the terminal updates to show a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md
     ```
     the terminal displays a [TypeError](./TYPE_ERROR.md) this time because when we called `telephone.Telephone.text('hello')` in the test we provided a positional argument as input with the value ``(hello)``, but the signature of the method we defined does not take in any arguments
 - modify the definition for ``(text)`` to take in a value
-    ```python
+
+.. code-block:: python
     class Telephone(object):
 
 
@@ -104,7 +116,8 @@ the terminal updates to show a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.md
     ```
     we now see an [AssertionError](./ASSERTION_ERROR.md) in the terminal
 - update the return statement with the expected value to make the test pass
-    ```python
+
+.. code-block:: python
         def text(value):
             return 'I received this message: hello'
     ```
@@ -118,7 +131,8 @@ The problem with this solution is that no matter what value we send to the `Tele
 
     let us add a new failing test to ``(test_text_messages)``
 
-    ```python
+
+.. code-block:: python
         def test_text_messages(self):
             self.assertEqual(
                 telephone.Telephone.text('hello'),
@@ -135,7 +149,8 @@ The problem with this solution is that no matter what value we send to the `Tele
 - GREEN: make it pass
 
     We can add variable values to strings by using [string interpolation](https://peps.python.org/pep-0498/). Let us try this out by changing the ``(text)`` method in `telephone.py`
-    ```python
+
+.. code-block:: python
     def text(value):
         return f'I received this message: {value}'
     ```
@@ -148,7 +163,8 @@ we can try this with other python [data structures](./DATA_STRUCTURES.md) to see
 ### RED: make it fail
 
 update ``(test_text_messages)`` with a new test
-```python
+
+.. code-block:: python
     def test_text_messages(self):
         self.assertEqual(
             telephone.Telephone.text('hello'),
@@ -170,7 +186,8 @@ the terminal updates to show an [AssertionError](./ASSERTION_ERROR.md)
 
 update the test to match the expected value
 
-```python
+
+.. code-block:: python
     self.assertEqual(
         telephone.Telephone.text(None),
         "I received this message: None"
@@ -182,7 +199,8 @@ the terminal shows passing tests
 ### REFACTOR: make it better
 
 - as an exercise add the following tests to ``(test_text_messages)``
-    ```python
+
+.. code-block:: python
         self.assertEqual(
             telephone.Telephone.text(bool),
             "I received this message: 'bool'"
@@ -214,7 +232,8 @@ the terminal shows passing tests
     ```
     an [AssertionError](./ASSERTION_ERROR.md) is displayed in the terminal
 - update the test to match the expected output
-    ```python
+
+.. code-block:: python
         self.assertEqual(
             telephone.Telephone.text(bool),
             "I received this message: <class 'bool'>"

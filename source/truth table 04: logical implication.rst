@@ -21,7 +21,7 @@ Prerequisites
 -------------
 
 
-* `How I setup a Test Driven Development Environment.md <./How I How I setup a Test Driven Development Environment.md.md>`_
+* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.md>`_
 
 ----
 

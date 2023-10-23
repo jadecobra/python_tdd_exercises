@@ -6,7 +6,7 @@ Let us take a look at building a program which gives us the amount of time we ha
 Prerequisites
 -------------
 
-* `How I setup a Test Driven Development Environment.md <./How I How I setup a Test Driven Development Environment.md.md>`_ with ``(sleep_duration)`` as the project name
+* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.md>`_ with ``(sleep_duration)`` as the project name
 
 ----
 
@@ -20,36 +20,36 @@ write a failing test in ``test_sleep_duration.py``
 
 .. code-block:: python
 
-       def test_duration_when_given_hours_only(self):
-           self.assertEqual(
-               sleep_duration.duration(
-                   wake_time='08:00',
-                   sleep_time='07:00'
-               ),
-               1
-           )
+    def test_duration_when_given_hours_only(self):
+        self.assertEqual(
+            sleep_duration.duration(
+                wake_time='08:00',
+                sleep_time='07:00'
+            ),
+            1
+        )
 
 the terminal shows a ``(NameError)`` which we add to our list of exceptions encountered
 
 .. code-block:: python
 
-   # Exceptions Encountered
-   # AssertionError
-   # NameError
+# Exceptions Encountered
+# AssertionError
+# NameError
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
 * add an import statement for the missing name
-    ```python
-    import sleep_duration
-    import unittest
 
-.. code-block::
+    .. code-block:: python
 
-   class TestSleepDuration(unittest.TestCase):
-   ```
+        import sleep_duration
+        import unittest
+
+        class TestSleepDuration(unittest.TestCase):
+
    the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md) since we do not have a definition for ``(duration)`` in `sleep_duration.py`
 
 
@@ -750,14 +750,16 @@ Putting it all together
        E       NameError: name 'datetime' is not defined
     we encountered this earlier when we were testing the ``(datetime)`` library
 * update ``sleep_duration.py`` with an import statement at the beginning of the filoe
-    ```python
+
+.. code-block:: python
     import datetime
 
 .. code-block::
 
    ```
    the terminal now shows a ``(ValueError)`` since the ``(timestamp)`` we give the ``(strptime)`` function in does not match the pattern we provided as the second option, we need to have a date as part of the pattern like the example since
-   ```python
+
+.. code-block:: python
    E           ValueError: time data '10:57' does not match format '%d/%m/%y %H:%M'
    ```
 

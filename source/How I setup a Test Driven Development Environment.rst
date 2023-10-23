@@ -1,4 +1,4 @@
-How I setup a Test Driven Development Environment.md
+How I setup a Test Driven Development Environment
 ==========================================================
 
 We will step through creating a `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ Environment in python
@@ -75,7 +75,8 @@ RED: make it fail
 
 
 * We are ready to begin writing our first test. Open up ``project_name/tests/test_{PROJECT_NAME}.py`` in your Interactive Development Environment(IDE) and type the following
-    ```python
+
+.. code-block:: python
     import unittest
 
 .. code-block::
@@ -150,7 +151,8 @@ GREEN: make it pass
 
 
 * I think we should keep a list of Errors/Exceptions encountered as we go through our python journey to help us become better python programmers, it will help us keep track of the cause and inevitably the solutions we come up with to these exceptions. Add `AssertionError <./ASSERTION_ERROR.md>`_ to the list
-    ```python
+
+.. code-block:: python
     import unittest
 
 .. code-block::

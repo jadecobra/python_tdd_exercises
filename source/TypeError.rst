@@ -8,7 +8,7 @@ Prerequisites
 -------------
 
 
-* `How I setup a Test Driven Development Environment.md <./How I How I setup a Test Driven Development Environment.md.md>`_
+* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.md>`_
 
 ----
 
@@ -29,9 +29,10 @@ RED: make it fail
 
 
 *
-  Open a new file in the editor and save it as ``tests/test_type_error.py`` in the ``(tests)`` folder you created in `How I setup a Test Driven Development Environment.md <./How I How I setup a Test Driven Development Environment.md.md>`_ and type the following in the file
+  Open a new file in the editor and save it as ``tests/test_type_error.py`` in the ``(tests)`` folder you created in `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.md>`_ and type the following in the file
 
-    ```python
+
+.. code-block:: python
     import unittest
     import functions
 
@@ -43,7 +44,8 @@ RED: make it fail
            self.assertIsNone(functions.function_a("a"))
    ```
    the terminal updates to show
-   ```python
+
+.. code-block:: python
        import functions
    E   ModuleNotFoundError: No module named 'functions'
    ```

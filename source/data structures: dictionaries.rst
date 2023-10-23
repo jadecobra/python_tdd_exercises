@@ -7,7 +7,7 @@ Prerequisites
 -------------
 
 
-* `How I setup a Test Driven Development Environment.md <./How I How I setup a Test Driven Development Environment.md.md>`_
+* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.md>`_
 * `Data Structures <./DATA_STRUCTURES.md>`_
 
 ----
@@ -44,7 +44,8 @@ REFACTOR: make it better
 
 
 * we will now proceed to look at the ways we can create a dictionary, by adding a failing test
-    ```python
+
+.. code-block:: python
 
 .. code-block::
 
@@ -54,7 +55,8 @@ REFACTOR: make it better
            self.assertEqual(dictionaries.a_dict(), {"key": "value"})
    ```
    the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.md) and we add it to our list of exceptions encountered
-   ```python
+
+.. code-block:: python
    # Exceptions Encountered
    # ModuleNotFoundError
    # AttributeError

@@ -9,7 +9,7 @@ Prerequisites
 -------------
 
 
-* `How I setup a Test Driven Development Environment.md <./How I How I setup a Test Driven Development Environment.md.md>`_
+* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.md>`_
 
 ----
 
@@ -46,7 +46,8 @@ GREEN: make it pass
 
 * create a python module named ``classes.py`` and the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.md>`_
 * add the name ``(ClassWithPass)`` to the module
-    ```python
+
+.. code-block:: python
 
 .. code-block::
 
@@ -56,7 +57,8 @@ GREEN: make it pass
 
 
 * update the name as an assignment to the null value ``(None)``
-    ```python
+
+.. code-block:: python
 
 .. code-block::
 
@@ -65,7 +67,8 @@ GREEN: make it pass
 
 
 * redefine the variable as a class using the ``(class)`` keyword
-    ```python
+
+.. code-block:: python
 
 .. code-block::
 
@@ -75,7 +78,8 @@ GREEN: make it pass
 
 
 * add the ``(pass)`` keyword as a placeholder to the definition
-    ```python
+
+.. code-block:: python
 
 .. code-block::
 
@@ -116,7 +120,8 @@ GREEN: make it pass
 
 
 * update ``classes.py`` with a class definition
-    ```python
+
+.. code-block:: python
 
 .. code-block::
 
@@ -128,7 +133,8 @@ GREEN: make it pass
 
 
 * update the definition to include parentheses
-    ```python
+
+.. code-block:: python
 
 .. code-block::
 
@@ -172,7 +178,8 @@ GREEN: make it pass
 
 
 * let us add a class definition to ``classes.py``
-    ```python
+
+.. code-block:: python
 
 .. code-block::
 
@@ -184,7 +191,8 @@ GREEN: make it pass
 
 
 * update the definition to explicitly state the parent ``(object)``
-    ```python
+
+.. code-block:: python
 
 .. code-block::
 
@@ -233,7 +241,8 @@ RED: make it fail
                self.assertEqual(classes.ClassWithAttributes.a_boolean, bool)
     the terminal updates to show `AttributeError <./ATTRIBUTE_ERROR.md>`_
 * add a class definition to ``classes.py``
-    ```python
+
+.. code-block:: python
 
 .. code-block::
 
@@ -249,7 +258,8 @@ GREEN: make it pass
 
 
 * we add an attribute to ``(ClassWithAttributes)``
-    ```python
+
+.. code-block:: python
 
 .. code-block::
 
@@ -261,7 +271,8 @@ GREEN: make it pass
 
 
 * after updating the name with an assignment to ``(None)``
-    ```python
+
+.. code-block:: python
 
 .. code-block::
 
@@ -273,7 +284,8 @@ GREEN: make it pass
 
 
 * we redefine the attribute to make the test pass
-    ```python
+
+.. code-block:: python
 
 .. code-block::
 
@@ -355,7 +367,8 @@ GREEN: make it pass
 
 
 * we add a class definition to ``classes.py``
-    ```python
+
+.. code-block:: python
 
 .. code-block::
 
@@ -367,7 +380,8 @@ GREEN: make it pass
 
 
 * let us add the missing attribute to the ``(ClassWithMethods)`` class
-    ```python
+
+.. code-block:: python
 
 .. code-block::
 
@@ -379,7 +393,8 @@ GREEN: make it pass
 
 
 * when we define ``(method_a)`` as an attribute by assigning it as the name for the null value ``(None)``
-    ```python
+
+.. code-block:: python
 
 .. code-block::
 
@@ -391,7 +406,8 @@ GREEN: make it pass
 
 
 * let us update the definition of ``(method_a)`` to make it a function
-    ```python
+
+.. code-block:: python
 
 .. code-block::
 
@@ -491,7 +507,8 @@ GREEN: make it pass
 
 
 * add a definition for the class
-    ```python
+
+.. code-block:: python
 
 .. code-block::
 
@@ -503,7 +520,8 @@ GREEN: make it pass
 
 
 * update the ``(Boy)`` class with the name ``(sex)``
-    ```python
+
+.. code-block:: python
 
 .. code-block::
 
@@ -515,7 +533,8 @@ GREEN: make it pass
 
 
 * we add a definition for the ``(sex)`` attribute
-    ```python
+
+.. code-block:: python
 
 .. code-block::
 
@@ -538,7 +557,8 @@ REFACTOR: make it better
            self.assertEqual(classes.Girl(sex='F').sex, 'F')
     the terminal gives an `AttributeError <./ATTRIBUTE_ERROR.md>`_
 * trying the same solution we used for the ``(Boy)`` class, add a definition for the ``(Girl)`` class to ``classes.py``
-    ```python
+
+.. code-block:: python
 
 .. code-block::
 
@@ -547,7 +567,8 @@ REFACTOR: make it better
        sex = 'M'
    ```
    and the terminal displays a [TypeError](./TYPE_ERROR.md)
-   ```python
+
+.. code-block:: python
    TypeError: Girl() takes no arguments
    ```
    - If you have gone through the [functions](./07_FUNCTIONS.md) chapter you will see a similarity in this last test and passing inputs to functions. The call `classes.Girl(sex='F')` looks like a call to a function with keyword arguments
@@ -556,7 +577,8 @@ REFACTOR: make it better
 
 
 * add an initiializer to the ``(Girl)`` class
-    ```python
+
+.. code-block:: python
 
 .. code-block::
 
@@ -568,7 +590,8 @@ REFACTOR: make it better
            pass
    ```
    the terminal responds with a [TypeError](./TYPE_ERROR.md)
-   ```python
+
+.. code-block:: python
    TypeError: __init__() got an unexpected keyword argument 'sex'
    ```
 
@@ -588,7 +611,8 @@ REFACTOR: make it better
            self.assertEqual(classes.Other(sex='?').sex, '?')
     the terminal displays an `AttributeError <./ATTRIBUTE_ERROR.md>`_
 * add a class definition to ``classes.py``
-    ```python
+
+.. code-block:: python
 
 .. code-block::
 
@@ -609,7 +633,8 @@ REFACTOR: make it better
   * defined an ``(__init__)`` method which takes in a ``(sex)`` keyword argument
 
 * let us make the repetition complete by redefining the ``(Boy)`` class to match the ``(Girl)`` and ``(Other)`` class
-    ```python
+
+.. code-block:: python
 
 .. code-block::
 
@@ -624,7 +649,8 @@ REFACTOR: make it better
 
 
 * try adding a new class called ``(Human)`` to ``classes.py`` before the definition for ``(Boy)`` with the same attribute and method of the classes we are trying to abstract
-    ```python
+
+.. code-block:: python
 
 .. code-block::
 
@@ -650,7 +676,8 @@ REFACTOR: make it better
 
 * remove the ``(sex)`` attribute from the ``(Boy)`` class and the tests continue to pass
 * remove the ``(__init__)`` method, and add the ``(pass)`` placeholder
-    ```python
+
+.. code-block:: python
 
 .. code-block::
 
