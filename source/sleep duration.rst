@@ -1238,13 +1238,13 @@ Our challenge was to create a function that calculates the difference between tw
 * how to convert a ``string`` to an ``integer``
 * how to split a ``string`` into a ``list`` using a given delimiter/separator
 * how to index a ``list`` to get specific elements
-* how to convert a ``string`` to a ``datetime`` object using the ``datetime.datetime.strptime`` function
+* how to convert a ``string`` to a ``datetime`` object using the ``datetime.datetime.strptime`` method
 * how to convert a ``datetime`` object to a ``string``
 * how to subtract two ``datetime`` objects
 * how to convert a ``timedelta`` to a ``string``
 * how to use ``assertRaisesRegex`` to catch a specific exception and message
-* how to view the ``methods`` and ``attributes`` of the ``string`` object
-* how to use the ``random.randint`` to generate a random integer between two given integers
+* how to view the ``methods`` and ``attributes`` of a ``string`` object
+* how to generate a random integer between two given integers using ``random.randint``
 * how to use the ``help`` keyword to view documentation
 
 If you want to do more, try playing with the timestamp format and pattern in ``get_datetime_object``. What would you change in ``"%d/%m/%y %H:%M"`` to make it accept dates in a different format e.g. ``2006/11/21`` or ``11/21/2006``\ ?
