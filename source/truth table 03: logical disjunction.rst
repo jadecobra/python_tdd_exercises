@@ -45,12 +45,16 @@ GREEN: make it pass
 
 
 * update ``truth_table.py`` with a function definition like we did for ``logical_conjunction``
+
   .. code-block:: python
 
        def logical_disjunction(p, q):
            return True
-    the terminal updates to show an `AssertionError <./AssertionError.rst>`_
+
+  the terminal updates to show an `AssertionError <./AssertionError.rst>`_
+
 * 3 of the test cases are passing because ``logical_disjunction`` returns ``True`` in 3 of the 4. We need a condition for the fourth case to pass. update the definition
+
   .. code-block:: python
 
        def logical_disjunction(p, q):
@@ -58,21 +62,26 @@ GREEN: make it pass
                if q == False:
                    return False
            return True
-    the terminal updates to show passing tests
+
+  the terminal updates to show passing tests
 
 REFACTOR: make it better
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 * we know from earlier that when we have a nested if statement it can be replaced with an ``and``, so we update our condition
+
   .. code-block:: python
 
        def logical_disjunction(p, q):
            if p == False and q == False:
                return False
            return True
-    the terminal shows our tests are still passing
+
+  the terminal shows our tests are still passing
+
 * we can restate the equality comparison against ``False`` in terms of ``True`` by using the ``not equal`` comparison operator ``!=``
+
   .. code-block:: python
 
        def logical_disjunction(p, q):
@@ -81,6 +90,7 @@ REFACTOR: make it better
            return True
 
 * how can we express the ``if`` statement using python's implied comparison evaluation? we can use the ``not`` keyword like we did with ``logical_negation``
+
   .. code-block:: python
 
        def logical_disjunction(p, q):
@@ -89,42 +99,54 @@ REFACTOR: make it better
            return True
 
 * ``not`` happens twice in that statement. let us see if we can "factor" it out using algebra
+
   .. code-block:: python
 
        def logical_disjunction(p, q):
            if not(p and q):
                return False
            return True
-     the terminal shows a failing test. OOPS! We've introduced a regression. If we expand our statement using "multiplication" rules. What we have above is
+
+  the terminal shows a failing test. OOPS! We've introduced a regression. If we expand our statement using "multiplication" rules. What we have above is
+
   .. code-block:: python
 
        def logical_disjunction(p, q):
            if not p not and not q:
                return False
            return True
-    We get a ``SyntaxError``, the result of the "multiplication" is different from what we started with so we need something different. It should be something that expands out to
+
+  We get a ``SyntaxError``, the result of the "multiplication" is different from what we started with so we need something different. It should be something that expands out to
+
   .. code-block:: python
 
        def logical_disjunction(p, q):
            if not p not not and not q:
                return False
            return True
-    this would "factor" out to be
+
+  this would "factor" out to be
+
   .. code-block:: python
 
        def logical_disjunction(p, q):
            if not(p not and q):
                return False
            return True
-    okay, this looks more like, if we "multiply" this out we get our original statement since the opposite of the opposite of something is something. let us fix the syntax. The opposite of and is ``or``
+
+  okay, this looks more like, if we "multiply" this out we get our original statement since the opposite of the opposite of something is something. let us fix the syntax. The opposite of and is ``or``
+
   .. code-block:: python
 
        def logical_disjunction(p, q):
            if not(p or q):
                return False
            return True
-    Hooray! tests are passing again
+
+  Hooray! tests are passing again
+
 * add an else statement
+
   .. code-block:: python
 
        def logical_disjunction(p, q):
@@ -134,6 +156,7 @@ REFACTOR: make it better
                return True
 
 * the ``else`` statement that returns ``True`` can be restated as the opposite of the ``if`` statement
+
   .. code-block:: python
 
        def logical_disjunction(p, q):
@@ -141,7 +164,9 @@ REFACTOR: make it better
                return False
            if not(not(p or q)):
                return True
-    since the negation of a negation gives the original thing we can say
+
+  since the negation of a negation gives the original thing we can say
+
   .. code-block:: python
 
        def logical_disjunction(p, q):
@@ -151,6 +176,7 @@ REFACTOR: make it better
                return True
 
 * reorder the statements
+
   .. code-block:: python
 
        def logical_disjunction(p, q):
@@ -160,6 +186,7 @@ REFACTOR: make it better
                return False
 
 * restate using ``else``
+
   .. code-block:: python
 
        def logical_disjunction(p, q):
@@ -169,17 +196,20 @@ REFACTOR: make it better
                return False
 
 * rewriting to one line with a ``return`` statement
+
   .. code-block:: python
 
        def logical_disjunction(p, q):
            return True if p or q else return False
 
 * using python's implicit conditional evaluation we simplify to
+
   .. code-block:: python
 
        def logical_disjunction(p, q):
            return p or q
-    *VOILA!* the tests still pass and we have a simple statement that makes all 4 states pass for ``logical_disjunction``
+
+  *VOILA!* the tests still pass and we have a simple statement that makes all 4 states pass for ``logical_disjunction``
 
 Our knowledge is updated to show that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
 
