@@ -137,6 +137,7 @@ We can also use some methods from the ``unittest.TestCase`` class to make assert
       assert True is not None
 
   the terminal reveals passing tests
+
 * RED: make it fail
 
   let us add a variation of the above statement using the identical ``unittest.TestCase`` method to ``test_assertion_errors_with_none``
@@ -187,6 +188,7 @@ We can also use some methods from the ``unittest.TestCase`` class to make assert
     assert None is None
 
   the terminal changes to show passing tests
+
 * RED: make it fail
 
   add another test to ``test_assertion_errors_with_none`` using the ``unittest.TestCase`` method
@@ -515,6 +517,7 @@ REFACTOR: make it better
       self.assertNotEqual(None, None)
 
 * GREEN: make it pass
+
   update ``test_assertion_errors_with_equality`` to make it pass. Once all the tests pass we can conclude that in python
 
   * ``True`` is ``True`` and ``True`` is equal to ``True``
@@ -537,17 +540,16 @@ REFACTOR: make it better
 * how to use ``assert`` statements
 * how to use the following ``unittest.TestCase.assert`` methods
 
-  * ``assertIsNone``     - is this thing ``None``?
-  * ``assertIsNotNone``  - is this thing not ``None``?
-  * ``assertFalse``      - is this thing ``False``?
-  * ``assertTrue``       - is this thing ``True``?
-  * ``assertEqual``      - are these two things equal?
-  * ``assertNotEqual``   - are these two things not equal?
+  - ``assertIsNone``     - is this thing ``None``?
+  - ``assertIsNotNone``  - is this thing not ``None``?
+  - ``assertFalse``      - is this thing ``False``?
+  - ``assertTrue``       - is this thing ``True``?
+  - ``assertEqual``      - are these two things equal?
+  - ``assertNotEqual``   - are these two things not equal?
 
 ..
+.. admonition:: *FOOD FOR THOUGHT*
 
-   *FOOD FOR THOUGHT*
 
-
-   * when x is y, is x also equal to y?
-   * when x is not y, is x also not equal to y?
+  * when x is y, is x also equal to y?
+  * when x is not y, is x also not equal to y?
