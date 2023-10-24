@@ -788,9 +788,9 @@ repeat the solution until all tests pass
   - attributes (variables) in classes
   - methods (functions) in classes
 
-  .. *WHAT IS THE DIFFERENCE BETWEEN CLASSES AND FUNCTIONS?*::
+.. NOTE:: *WHAT IS THE DIFFERENCE BETWEEN CLASSES AND FUNCTIONS?*
 
   * we can access attributes (variables) we define in a class from outside the class
   * we cannot access variables we define in a function from outside the function
-  * the keywords used to define them are different - ``def`` vs ``class``
-  * their naming conventions are different - ``snake_case`` vs ``CamelCase``
+  * the keywords used to define them are different - `def` vs `class`
+  * their naming conventions are different - `snake_case` vs `CamelCase`
