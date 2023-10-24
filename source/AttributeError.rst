@@ -16,7 +16,7 @@ Prerequisites
 
 ----
 
-Solve AttributeError by defining a Variable
+Solve the AttributeError by defining a Variable
 -------------------------------------------
 
 RED: make it fail
@@ -352,7 +352,7 @@ Repeat the pattern until all tests pass.
 ----
 
 
-Solve AttributeError by defining a Function
+Solve the AttributeError by defining a Function
 -------------------------------------------
 
 Let us take a look at solving ``AttributeError`` with functions
@@ -459,7 +459,7 @@ REFACTOR: make it better
 ----
 
 
-Solve AttributeError by defining a Class
+Solve the AttributeError by defining a Class
 ----------------------------------------
 
 A class is a blueprint that represents an object, it is a collection of functions(methods) and attributes. Attributes are names which represent a value. Methods are functions that can accept inputs and return a value. For example we could define a `Human` class with attributes like eye color, date of birth, height and weight, and methods like age which returns a value based on the current year and date of birth. Let us explore ``AttributeError`` with classes.
@@ -548,7 +548,7 @@ REFACTOR: make it better
 ----
 
 
-Solve AttributeError by defining an Attribute in a Class
+Solve the AttributeError by defining an Attribute in a Class
 --------------------------------------------------------
 
 RED: make it fail
@@ -701,7 +701,7 @@ REFACTOR: make it better
 ----
 
 
-Solve AttributeError by defining a Method(Function) in a Class
+Solve the AttributeError by defining a Method(Function) in a Class
 --------------------------------------------------------------
 
 RED: make it fail
