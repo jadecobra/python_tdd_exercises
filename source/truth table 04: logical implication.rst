@@ -67,7 +67,7 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* How can we make this better? let us make the nested condition one line
+* How can we make this better? What if we make the nested condition one line
   .. code-block:: python
 
        def logical_implication(p, q):
@@ -83,7 +83,7 @@ REFACTOR: make it better
                return False
            return True
     this looks simpler and the tests still pass.
-* let us write out the second half with an ``else`` statement to be explicit
+* What if we write out the second half with an ``else`` statement to be explicit
   .. code-block:: python
 
        def logical_implication(p, q):

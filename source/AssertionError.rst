@@ -235,7 +235,7 @@ Going with what we know so far, can we raise an ``AssertionError`` for things th
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-let us update ``TestAssertionError`` in ``test_AssertionError.py`` with the following test to find out
+update ``TestAssertionError`` in ``test_AssertionError.py`` with the following test to find out
 
 .. code-block:: python
 
@@ -262,7 +262,7 @@ and the terminal now reveals passing tests
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-let us try the same test using the equivalent ``unittest.TestCase`` method by adding this line to ``test_AssertionErrors_with_false``
+What if we try the same test using the equivalent ``unittest.TestCase`` method by adding this line to ``test_AssertionErrors_with_false``
 
 .. code-block:: python
 
@@ -328,7 +328,7 @@ update ``test_AssertionErrors_with_true`` to make it pass
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-let us try the above test with the ``unittest.TestCase`` equivalent method by updating ``test_AssertionErrors_with_true``
+What if we try the above test with the ``unittest.TestCase`` equivalent method by updating ``test_AssertionErrors_with_true``
 
 .. code-block:: python
 
@@ -499,7 +499,7 @@ REFACTOR: make it better
   * ``True`` is not ``None`` and ``True`` is not equal to ``None``
   * ``False`` is not ``None`` and ``False`` is not equal to ``None``
 
-  There is a pattern here, let us update the test with the other cases from our statement above in the same manner
+  There is a pattern here, update the test with the other cases from our statement above in the same manner
 
 * RED: make it fail
 

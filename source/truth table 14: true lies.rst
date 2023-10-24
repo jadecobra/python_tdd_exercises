@@ -88,7 +88,7 @@ GREEN: make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Nothing to do here either. let us update what we know so far
+Nothing to do here either. update what we know so far
 
 *YOU DID IT!*
 For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``

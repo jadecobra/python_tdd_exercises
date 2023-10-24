@@ -125,12 +125,12 @@ GREEN: make it pass
   * if ``q == True`` the result is ``True``
   * if ``q == False`` the result is ``False``
 
-* let us try using our conclusion from ``project_first``
+* What if we try using our conclusion from ``project_first``
   .. code-block:: python
 
        def project_second(p, q):
            return p
-    the terminal still shows an `AssertionError <./AssertionError.rst>`_. let us return ``q`` instead
+    the terminal still shows an `AssertionError <./AssertionError.rst>`_. What if we return ``q`` instead
   .. code-block:: python
 
        def project_second(p, q):

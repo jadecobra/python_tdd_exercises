@@ -98,7 +98,7 @@ REFACTOR: make it better
                return False
            return True
 
-* ``not`` happens twice in that statement. let us see if we can "factor" it out using algebra
+* ``not`` happens twice in that statement. What if we see if we can "factor" it out using algebra
 
   .. code-block:: python
 
@@ -134,7 +134,7 @@ REFACTOR: make it better
                return False
            return True
 
-  okay, this looks more like, if we "multiply" this out we get our original statement since the opposite of the opposite of something is something. let us fix the syntax. The opposite of and is ``or``
+  okay, this looks more like, if we "multiply" this out we get our original statement since the opposite of the opposite of something is something. What if we fix the syntax. The opposite of and is ``or``
 
   .. code-block:: python
 

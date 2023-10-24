@@ -404,7 +404,7 @@ GREEN: make it pass
 
   We go over callables in `Functions <./functions.rst>`_ and `Classes <./classes.rst>`_. When an object is defined as a callable, we call it by adding parentheses at the end e.g. ``module.function_0()`` will call ``function_0`` in ``module.py``
 
-* let us change ``function_0`` in ``module.py`` to a function by modifying its definition using the ``def`` keyword
+* What if we change ``function_0`` in ``module.py`` to a function by modifying its definition using the ``def`` keyword
 
   .. code-block:: python
 
@@ -503,7 +503,7 @@ GREEN: make it pass
 
       E       TypeError: 'NoneType' object is not callable
 
-  We dealt with a similar issue earlier, let us make ``Class0`` callable the way we know how. Change the variable to a function using the ``def`` keyword in ``module.py``
+  We dealt with a similar issue earlier, What if we make ``Class0`` callable the way we know how. Change the variable to a function using the ``def`` keyword in ``module.py``
 
   .. code-block:: python
 
@@ -516,7 +516,7 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* let us make it a drill. Add lines to ``test_defining_functions_to_solve_attribute_errors`` in the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` until we have one for ``module.Class99()``, there will be 100 tests in total
+* What if we make it a drill. Add lines to ``test_defining_functions_to_solve_attribute_errors`` in the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` until we have one for ``module.Class99()``, there will be 100 tests in total
 
   .. code-block:: python
 
@@ -652,7 +652,7 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* The current solution for ``test_defining_classes_to_solve_attribute_errors`` was done by defining functions but the test says ``definining_classes``. let us update those tests to use the proper way of defining `classes <./classes.rst>`_ that we just learned. Update ``module.py`` to use ``class`` instead of ``def`` e.g.
+* The current solution for ``test_defining_classes_to_solve_attribute_errors`` was done by defining functions but the test says ``definining_classes``. update those tests to use the proper way of defining `classes <./classes.rst>`_ that we just learned. Update ``module.py`` to use ``class`` instead of ``def`` e.g.
 
   .. code-block:: python
 

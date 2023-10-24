@@ -15,7 +15,7 @@ Prerequisites
 What is None?
 -------------
 
-``None`` is an object used to represent the absence of a value, let us explore it with tests
+``None`` is an object used to represent the absence of a value, What if we explore it with tests
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -331,7 +331,7 @@ GREEN: make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Based on what we have seen so far, it is safe to assume that ``None`` is only ``None`` and is not any other data structure, let us find out if this assumption is false.
+Based on what we have seen so far, it is safe to assume that ``None`` is only ``None`` and is not any other data structure, What if we find out if this assumption is false.
 
 Is None a list(array)?
 ----------------------

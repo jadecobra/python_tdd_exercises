@@ -117,7 +117,7 @@ What can we do to make this better?
            return p == q
     Well done! the tests are still green
 
-let us review. For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
+What if we review. For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
 
 
 * ``logical_equality`` is ``==``

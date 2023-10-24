@@ -280,7 +280,7 @@ GREEN: make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-let us repeat this with other python `data structures <./DATA_STRUCTURES.rst>`_
+What if we repeat this with other python `data structures <./DATA_STRUCTURES.rst>`_
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -383,7 +383,7 @@ GREEN: make it pass
   the terminal now reveals a [TypeError](./TypeError.rst) since ``method_a`` is not callable
 
 
-* let us update the definition of ``method_a`` to make it a function
+* update the definition of ``method_a`` to make it a function
 
   .. code-block:: python
 
@@ -428,7 +428,7 @@ REFACTOR: make it better
 How to define a Class with Methods and Attributes
 ------------------------------------------
 
-Since we know how to define classes with methods and how to define classes with attributes, let us try defining a class that has both
+Since we know how to define classes with methods and how to define classes with attributes, What if we try defining a class that has both
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -615,7 +615,7 @@ REFACTOR: make it better
   - defined an attribute named ``sex``
   - defined an ``__init__`` method which takes in a ``sex`` keyword argument
 
-* let us make the repetition complete by redefining the ``Boy`` class to match the ``Girl`` and ``Other`` class
+* What if we make the repetition complete by redefining the ``Boy`` class to match the ``Girl`` and ``Other`` class
 
   .. code-block:: python
 
@@ -668,7 +668,7 @@ REFACTOR: make it better
         pass
 
 
-* let us try the same thing with the ``Girl`` class and update its definition to inherit from the ``Human`` class
+* What if we try the same thing with the ``Girl`` class and update its definition to inherit from the ``Human`` class
 
   .. code-block:: python
 

@@ -116,12 +116,12 @@ GREEN: make it pass
   * if ``q == True`` the result is ``False``
   * if ``q == False`` the result is ``True``
 
-* let us try using our conclusion from ``negate_first``
+* What if we try using our conclusion from ``negate_first``
   .. code-block:: python
 
        def negate_second(p, q):
            return not p
-    the terminal still shows an `AssertionError <./AssertionError.rst>`_. let us try ``q`` instead
+    the terminal still shows an `AssertionError <./AssertionError.rst>`_. What if we try ``q`` instead
   .. code-block:: python
 
        def negate_second(p, q):
@@ -131,7 +131,7 @@ GREEN: make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-I don't think we can make it better. let us update what we know so far
+I don't think we can make it better. update what we know so far
 
 For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
 

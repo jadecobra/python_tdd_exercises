@@ -270,7 +270,7 @@ Can we create a Dictionary with sets as keys?
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-let us try a similar test using a set as a key
+What if we try a similar test using a set as a key
 
 .. code-block:: python
 
@@ -517,7 +517,7 @@ What if we want to call a dictionary and not have python raise an error when it 
            }
            self.assertIsNone(a_dictionary.get('non_existent_key'))
     the terminal updates to show a passing test. This means that when we use the ``get`` method and the ``key`` does not exist, we get ``None`` as the ``return`` value.
-* let us state the above explicitly because ``Explicit is better than implicit`` see `Zen of Python <https://peps.python.org/pep-0020/>`_
+* What if we state the above explicitly because ``Explicit is better than implicit`` see `Zen of Python <https://peps.python.org/pep-0020/>`_
   .. code-block:: python
 
        def test_how_to_get_a_value_when_a_key_does_not_exist(self):
@@ -544,7 +544,7 @@ What if we want to call a dictionary and not have python raise an error when it 
            except KeyError:
                return default
 
-* let us try the ``get`` method with an existing key
+* What if we try the ``get`` method with an existing key
   .. code-block:: python
 
        def test_how_to_get_a_value_when_a_key_does_not_exist(self):
@@ -563,7 +563,7 @@ What if we want to call a dictionary and not have python raise an error when it 
 How to view the attributes and methods of a dictionary
 -----------------------------------------------
 
-`Classes <./classes.rst>`_ covers how to view the ``attributes`` and ``methods`` of an object. let us do the same for ``dictionaries``
+`Classes <./classes.rst>`_ covers how to view the ``attributes`` and ``methods`` of an object. What if we do the same for ``dictionaries``
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -651,7 +651,7 @@ the tests pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-We see some of the methods we have covered so far and others we did not. You can write tests on the others to discover what they do and/or `read more about dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_. let us list out what we know so far and you can fill in the others as you learn them
+We see some of the methods we have covered so far and others we did not. You can write tests on the others to discover what they do and/or `read more about dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_. What if we list out what we know so far and you can fill in the others as you learn them
 
 
 * clear
@@ -669,7 +669,7 @@ We see some of the methods we have covered so far and others we did not. You can
 Set a default value for a given key
 -----------------------------------
 
-let us test the ``setdefault`` method
+What if we test the ``setdefault`` method
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^

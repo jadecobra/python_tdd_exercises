@@ -126,7 +126,7 @@ REFACTOR: make it better
     the terminal updates to show a `TypeError <./TypeError.rst>`_ for the next keyword argument
 * we update the ``factory`` function definition for each keyword until we get a `TypeError <./TypeError.rst>`_ for the line where we subtract ``this_year() - this_year()`` because we cannot perform a subtraction operation on ``None`` and our ``this_year`` function currently returns ``None``
 *
-  let us update our definition for ``this_year`` using a function from the `datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#module-datetime>`_ library that returns the current year we are in
+  update our definition for ``this_year`` using a function from the `datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#module-datetime>`_ library that returns the current year we are in
 
   .. code-block:: python
 
@@ -188,7 +188,7 @@ REFACTOR: make it better
                'last_name': 'last_name',
                'sex': 'F',
            }
-    the terminal updates to show an `AssertionError <./AssertionError.rst>`_ but it no longer shows a difference for ``first_name``. Good, let us repeat it step by step for every other input until the only error left is for the age
+    the terminal updates to show an `AssertionError <./AssertionError.rst>`_ but it no longer shows a difference for ``first_name``. Good, What if we repeat it step by step for every other input until the only error left is for the age
 * For the age to be accurate it has to be a calculation based on the current year. We have a function that returns the current year and we have the ``year_of_birth`` as input, we also have this line in the test ``this_year() - 1983``. Since ``1983`` is the ``year_of_birth`` in this case. We can try updating the ``factory`` function to use that calculation
   .. code-block:: python
 

@@ -146,7 +146,7 @@ REFACTOR: make it better
 Creating a List with a For Loop
 -------------------------------
 
-let us test creating a list with a for loop like the example above
+What if we test creating a list with a for loop like the example above
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -227,7 +227,7 @@ GREEN: make it pass
 List Comprehension
 ------------------
 
-Now that we know how to create a ``list`` using ``[]``, ``list`` and ``for``, let us try creating a `list <./LISTS.rst>`_ using a ``list comprehension``. It looks similar to a ``for`` loop but allows us to achieve the same thing with less words
+Now that we know how to create a ``list`` using ``[]``, ``list`` and ``for``, What if we try creating a `list <./LISTS.rst>`_ using a ``list comprehension``. It looks similar to a ``for`` loop but allows us to achieve the same thing with less words
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -438,7 +438,7 @@ Let us explore what else we can do with a ``list comprehension``
            return [element for element in argument if element % 2 == 0]
     and the terminal shows passing tests! Hooray
 *
-  let us try another ``list comprehension`` with a different condition. Add a test to ``TestListComprehensions``
+  What if we try another ``list comprehension`` with a different condition. Add a test to ``TestListComprehensions``
 
   .. code-block:: python
 

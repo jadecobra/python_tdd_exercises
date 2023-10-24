@@ -80,7 +80,7 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* we now know we can create a list with the ``list`` keyword but our passing test also shows we can create a list with ``[]`` which uses less characters, let us test this out
+* we now know we can create a list with the ``list`` keyword but our passing test also shows we can create a list with ``[]`` which uses less characters, What if we test this out
   .. code-block:: python
 
            def test_creating_a_list_with_square_brackets(self):
@@ -358,7 +358,7 @@ GREEN: make it pass
 View the attributes and methods of a list
 -----------------------------------------
 
-In `Classes <./classes.rst>`_ we cover how to view the ``attributes`` and ``methods`` of an object. let us do the same for ``lists``
+In `Classes <./classes.rst>`_ we cover how to view the ``attributes`` and ``methods`` of an object. What if we do the same for ``lists``
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^

@@ -91,7 +91,7 @@ What is True?
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-let us try a similar series of failing tests for ``True`` by adding the following to ``test_data_structures.py``
+What if we try a similar series of failing tests for ``True`` by adding the following to ``test_data_structures.py``
 
 .. code-block:: python
 

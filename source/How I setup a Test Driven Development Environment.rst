@@ -296,7 +296,7 @@ If you already have a virtual environment setup in a project, you can activate i
 Automatically create a Python Test Driven Development Environment
 -----------------------------------------------------------------
 
-You made it this far and have become the greatest programmer in the world, let us follow the practice of removing duplication. We can write a program that contains all the steps we did above, and call that program everytime we want to setup a new environment
+You made it this far and have become the greatest programmer in the world, What if we follow the practice of removing duplication. We can write a program that contains all the steps we did above, and call that program everytime we want to setup a new environment
 
 
 *

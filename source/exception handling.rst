@@ -8,7 +8,7 @@ This is useful because it means there is some violation that should be taken car
 
 It also a pain when it causes the program to exit prematurely. What if we want our program to run regardless of errors? We might want it to give messages to the user who may not care or understand the details that come with Exceptions?
 
-Enter Exception Handling. In python there is a mechanism for handling exceptions that allows a program to "make a decision" when it encounters an Exception. Enough words, let us write some code
+Enter Exception Handling. In python there is a mechanism for handling exceptions that allows a program to "make a decision" when it encounters an Exception. Enough words, What if we write some code
 
 
 Prerequisites
@@ -271,7 +271,7 @@ Since we know how to catch/handle an exception with ``unittest``, there are a fe
 *
   REFACTOR: make it better
 
-    We just created the same context 5 times, this is a good candidate for a rewrite. let us remove the duplication. since our ``self.assertRaises`` catches an `AttributeError <./AttributeError.rst>`_ in each case, we only need to state it once and place all the lines that raise the error underneath it.
+    We just created the same context 5 times, this is a good candidate for a rewrite. What if we remove the duplication. since our ``self.assertRaises`` catches an `AttributeError <./AttributeError.rst>`_ in each case, we only need to state it once and place all the lines that raise the error underneath it.
 
   .. code-block:: python
 
@@ -348,7 +348,7 @@ GREEN: make it pass
        def raises_exception_error():
            return None
 
-* let us update the function to trigger an ``Exception`` by using the ``raise`` keyword
+* update the function to trigger an ``Exception`` by using the ``raise`` keyword
   .. code-block:: python
 
        def raises_exception_error():

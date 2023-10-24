@@ -181,7 +181,7 @@ GREEN: make it pass
 
        E   NameError: name 'add' is not defined
 
-* let us update our list of exceptions encountered with ``NameError``
+* update our list of exceptions encountered with ``NameError``
 
   .. code-block:: python
 

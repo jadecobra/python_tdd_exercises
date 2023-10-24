@@ -48,7 +48,7 @@ RED: make it fail
       E   ModuleNotFoundError: No module named 'functions'
 
 
-* Ah, a ``ModuleNotFoundError``, We have a lot of practice solving this error from `ModuleNotFoundError <./ModuleNotFoundError.rst>`_. let us create a file named ``functions.py`` and the terminal updates to show
+* Ah, a ``ModuleNotFoundError``, We have a lot of practice solving this error from `ModuleNotFoundError <./ModuleNotFoundError.rst>`_. What if we create a file named ``functions.py`` and the terminal updates to show
 
   .. code-block:: python
 
@@ -308,7 +308,7 @@ the terminal updates to show
 
    TypeError: function_d() takes 0 positional arguments but 4 were given
 
-let us try our solution for the previous test. update the signature of ``function_d`` in ``functions.py``
+What if we try our solution for the previous test. update the signature of ``function_d`` in ``functions.py``
 
 .. code-block:: python
 
@@ -341,7 +341,7 @@ update ``function_d`` in ``functions.py`` with ``*args``
 
 the terminal shows all tests as still passing. FANTASTIC!!
 
-let us test this with ``function_a``. update ``function_a`` in ``functions.py`` with ``*args`` and the terminal shows all tests as still passing.
+What if we test this with ``function_a``. update ``function_a`` in ``functions.py`` with ``*args`` and the terminal shows all tests as still passing.
 
 Try this with both ``function_c`` and ``function_d``, all tests still pass.
 
