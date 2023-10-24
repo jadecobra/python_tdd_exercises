@@ -89,8 +89,8 @@ RED: make it fail
    Below is an explanation of the code you just wrote
    - `import unittest` imports an existing module from the python standard library that is used for testing.
    - ``unittest`` is a module/library/package that comes with python for testing code, earlier it was mentioned that a python module is any file that ends in `.py` so we can assume there is a file somewhere on the computer called `unittest.py` or a folder named ``unittest`` with an `__init__.py` like our ``tests`` folder, we can take a look at the [unittest source code](https://github.com/python/cpython/blob/3.11/Lib/unittest/__init__.py) to confirm
-   - ``TestProjectName`` is a [class](./CLASSES.rst), a "container" for the tests we are about to write
-   - `unittest.TestCase` is a [class](./CLASSES.rst) defined in the ``unittest`` library which contains a bunch of `methods/functions` for testing code that ``TestProjectName`` inherits so they do not have to be rewritten
+   - ``TestProjectName`` is a [class](./classes.rst), a "container" for the tests we are about to write
+   - `unittest.TestCase` is a [class](./classes.rst) defined in the ``unittest`` library which contains a bunch of `methods/functions` for testing code that ``TestProjectName`` inherits so they do not have to be rewritten
    - a simple way to think of inheritance is that ``TestProjectName`` is a child of `unittest.TestCase` and can do the same things that its parent can do
    - `def test_failure` is the definition of a test function to test the system being built
    - ``self`` refers to the ``TestProjectName`` class. To access ``methods`` and ``attributes`` within the ``TestProjectName`` class we use ``self``. It avoids having to say `TestProjectName.assertFalse(True)`

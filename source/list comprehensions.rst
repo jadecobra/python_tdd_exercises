@@ -115,7 +115,7 @@ REFACTOR: make it better
        # ModuleNotFoundError
        # AttributeError
 
-* we then add a `function <./FUNCTIONS.rst>`_ definition to ``list_comprehensions.py``
+* we then add a `function <./functions.rst>`_ definition to ``list_comprehensions.py``
   .. code-block:: python
 
        def make_a_list():
@@ -213,7 +213,7 @@ GREEN: make it pass
                result.append(element)
            return result
 
-    in this `function <./FUNCTIONS.rst>`_
+    in this `function <./functions.rst>`_
 
 
   * we create an empty list

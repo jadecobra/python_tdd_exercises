@@ -209,7 +209,7 @@ GREEN: make it pass
        # NameError
        # TypeError
 
-* To make it callable we have to define it as a `function <./FUNCTIONS.rst>`_ or a `class <./CLASSES.rst>`_. Testing the ``def`` keyword for creating functions we update our add variable in ``calculator.py`` to
+* To make it callable we have to define it as a `function <./functions.rst>`_ or a `class <./classes.rst>`_. Testing the ``def`` keyword for creating functions we update our add variable in ``calculator.py`` to
   .. code-block:: python
 
        def add():

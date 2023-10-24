@@ -97,7 +97,7 @@ RED: make it fail
       Imagine you have a telephone, it has a call function but to make a call you must provide a number then hit dial.
     - ``call`` is like ``function_a``
     - the number you provide is like ``"a"`` and hitting dial is like ``()``
-      We will practice this some more in `TDD_FUNCTIONS <./TDD_FUNCTIONS.rst>`_
+      We will practice this some more in `TDD_FUNCTIONS <./TDD_functions.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -183,7 +183,7 @@ There's not much to do here but add more tests for practice.
 .. EXTRA::
 
 * What's another solution to the above test?
-* How can we define a function that takes in any number of parameters? see `TDD_FUNCTIONS <./TDD_FUNCTIONS.rst>`_
+* How can we define a function that takes in any number of parameters? see `TDD_FUNCTIONS <./TDD_functions.rst>`_
 
 let us add more tests
 ^^^^^^^^^^^^^^^^^^^^^

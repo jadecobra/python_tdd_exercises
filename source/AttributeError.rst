@@ -43,7 +43,7 @@ What does the code above mean?
 
 * ``import unittest`` imports the ``unittest`` module from the python standard library
 * ``import module`` imports the ``module`` module - this is going to hold the solution we write
-* ``class TestAttributeErrors(unittest.TestCase):`` - a class definition that inherits from ``unittest.TestCase`` and will hold our tests. We learn more about this in `Classes <./CLASSES.rst>`_
+* ``class TestAttributeErrors(unittest.TestCase):`` - a class definition that inherits from ``unittest.TestCase`` and will hold our tests. We learn more about this in `Classes <./classes.rst>`_
 * ``def test_defining_variables_to_solve_attribute_errors(self):`` the definition of our first test function to find out if defining variables can solve an ``AttributeError``
 * ``self.assertIsNone(module.variable_0)`` - the actual test. This is equivalent to asking the question ``is module.variable_0 equal to None``
 * ``assertIsNone`` is one of the helper functions inherited from ``unittest.TestCase``. We learn more about this in `AssertionError <./AssertionError.rst>`_
@@ -339,6 +339,7 @@ Repeat the pattern until all tests pass.
 
 * What's your solution to the last two tests? They are similar to the test for failure in `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_
 * did you update ``module.py`` this way?
+
   .. code-block::
 
       true = True
@@ -404,7 +405,7 @@ GREEN: make it pass
 
   a ``TypeError`` is raised in this case because we ``called`` an object that was not ``callable``. A callable object is an object that can potentially handle inputs. We can define a callable as a ``class`` or a ``function``.
 
-  We go over callables in `Functions <./FUNCTIONS.rst>`_ and `Classes <./CLASSES.rst>`_. When an object is defined as a callable, we call it by adding parentheses at the end e.g. ``module.function_0()`` will call ``function_0`` in ``module.py``
+  We go over callables in `Functions <./functions.rst>`_ and `Classes <./classes.rst>`_. When an object is defined as a callable, we call it by adding parentheses at the end e.g. ``module.function_0()`` will call ``function_0`` in ``module.py``
 
 * let us change ``function_0`` in ``module.py`` to a function by modifying its definition using the ``def`` keyword
 
@@ -512,7 +513,7 @@ GREEN: make it pass
       def Class():
           return None
 
-  The tests pass! Something is odd here, what is the difference between `Classes <./CLASSES.rst>`_ and `Functions <./FUNCTIONS.rst>`_\ ? Why are we writing a different set of tests for Classes if the solutions are the same?
+  The tests pass! Something is odd here, what is the difference between `Classes <./classes.rst>`_ and `Functions <./functions.rst>`_\ ? Why are we writing a different set of tests for Classes if the solutions are the same?
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -543,9 +544,9 @@ REFACTOR: make it better
 
 * How to solve `ModuleNotFoundError <./ModuleNotFoundError.rst>`_
 * How to solve ``NameError``
-* How to solve `AttributeError <./AttributeError.rst>`_ by defining variables, `functions <./FUNCTIONS.rst>`_ and `classes <./CLASSES.rst>`_
+* How to solve `AttributeError <./AttributeError.rst>`_ by defining variables, `functions <./functions.rst>`_ and `classes <./classes.rst>`_
 
-  * do we know how to define `classes <./CLASSES.rst>`_ if we define them the same was as `functions <./FUNCTIONS.rst>`_\ ?
+  * do we know how to define `classes <./classes.rst>`_ if we define them the same was as `functions <./functions.rst>`_\ ?
 
 ----
 
@@ -654,7 +655,7 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* The current solution for ``test_defining_classes_to_solve_attribute_errors`` was done by defining functions but the test says ``definining_classes``. let us update those tests to use the proper way of defining `classes <./CLASSES.rst>`_ that we just learned. Update ``module.py`` to use ``class`` instead of ``def`` e.g.
+* The current solution for ``test_defining_classes_to_solve_attribute_errors`` was done by defining functions but the test says ``definining_classes``. let us update those tests to use the proper way of defining `classes <./classes.rst>`_ that we just learned. Update ``module.py`` to use ``class`` instead of ``def`` e.g.
 
   .. code-block:: python
 
@@ -691,13 +692,13 @@ REFACTOR: make it better
 
 * How to solve `ModuleNotFoundError <./ModuleNotFoundError.rst>`_
 * How to solve ``NameError``
-* How to solve `AttributeError <./AttributeError.rst>`_ by defining variables, `functions <./FUNCTIONS.rst>`_ and `classes <./CLASSES.rst>`_
+* How to solve `AttributeError <./AttributeError.rst>`_ by defining variables, `functions <./functions.rst>`_ and `classes <./classes.rst>`_
 * How to solve `AttributeError <./AttributeError.rst>`_ by defining
 
   * variables
-  * `functions <./FUNCTIONS.rst>`_
+  * `functions <./functions.rst>`_
   * `classes <./AssertionError.rst>`_
-  * attributes(variables) in classes
+  * attributes (variables) in classes
 
 
 ----
@@ -778,11 +779,11 @@ repeat the solution until all tests pass
 
 * How to solve `ModuleNotFoundError <./ModuleNotFoundError.rst>`_
 * How to solve ``NameError``
-* How to solve `AttributeError <./AttributeError.rst>`_ by defining variables, `functions <./FUNCTIONS.rst>`_ and `classes <./CLASSES.rst>`_
+* How to solve `AttributeError <./AttributeError.rst>`_ by defining variables, `functions <./functions.rst>`_ and `classes <./classes.rst>`_
 * How to solve `AttributeError <./AttributeError.rst>`_ by defining
 
   - variables
-  - `functions <./FUNCTIONS.rst>`_
+  - `functions <./functions.rst>`_
   - `classes <./AssertionError.rst>`_
   - attributes(variables) in classes
   - methods(functions) in classes

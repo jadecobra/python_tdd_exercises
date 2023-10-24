@@ -85,7 +85,7 @@ we now know that
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-booleans are represented by the keyword ``bool`` in python so we can do an instance test using another ``unittest.TestCase`` method that checks if an ``object`` is an instance of a `class <./CLASSES.rst>`_
+booleans are represented by the keyword ``bool`` in python so we can do an instance test using another ``unittest.TestCase`` method that checks if an ``object`` is an instance of a `class <./classes.rst>`_
 
 
 *

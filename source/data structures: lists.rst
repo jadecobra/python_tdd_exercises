@@ -358,7 +358,7 @@ GREEN: make it pass
 View the attributes and methods of a list
 -----------------------------------------
 
-In `Classes <./CLASSES.rst>`_ we cover how to view the ``attributes`` and ``methods`` of an object. let us do the same for ``lists``
+In `Classes <./classes.rst>`_ we cover how to view the ``attributes`` and ``methods`` of an object. let us do the same for ``lists``
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^

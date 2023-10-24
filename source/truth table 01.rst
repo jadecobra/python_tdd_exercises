@@ -22,7 +22,7 @@ Prerequisites
 Nullary Operations
 ------------------
 
-Nullary operations do not take in inputs and always return the same value. They are singleton `functions <./07_FUNCTIONS.rst>`_
+Nullary operations do not take in inputs and always return the same value. They are singleton `functions <./07_functions.rst>`_
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -106,7 +106,7 @@ There are two unary operations
 Logical Identity
 ^^^^^^^^^^^^^^^^
 
-A Logical Identity operation takes input and returns it as output, it is a passthrough `function <./07_FUNCTIONS.rst>`_
+A Logical Identity operation takes input and returns it as output, it is a passthrough `function <./07_functions.rst>`_
 
 RED: make it fail
 ~~~~~~~~~~~~~~~~~

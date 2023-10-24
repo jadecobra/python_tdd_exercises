@@ -90,7 +90,7 @@ RED: make it fail
 
 
 *
-  add the `functions <./FUNCTIONS.rst>`_ below to ``test_indentation_error.py``
+  add the `functions <./functions.rst>`_ below to ``test_indentation_error.py``
 
   .. code-block:: python
 
@@ -132,7 +132,7 @@ GREEN: make it pass
 Solve the IndentationError in Classes
 -------------------------------------
 
-let us add more tests, this time to raise indentation errors for `Class <./CLASSES.rst>`_ definitions *noting the difference in spacing*
+let us add more tests, this time to raise indentation errors for `Class <./classes.rst>`_ definitions *noting the difference in spacing*
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -184,7 +184,7 @@ RED: make it fail
 
 
 *
-  building on what we have done so far, we will add failing tests for `methods <./CLASSES.rst>`_\ , update ``test_indentation_error.py``
+  building on what we have done so far, we will add failing tests for `methods <./classes.rst>`_\ , update ``test_indentation_error.py``
 
   .. code-block:: python
 
@@ -265,6 +265,6 @@ REFACTOR: make it better
 
 The point of this exercise was to get familiar with python spacing convention to help understand the ``IndentationError`` and its solution.
 
-Indentation matters in python because it is how blocks of code are segmented. When a `function <./FUNCTIONS.rst>`_ is defined, all the statements that belong to the it are indented, same with a `class <./CLASSES.rst>`_\ , all the statements that belong to the it, its methods and attributes are indented underneath it.
+Indentation matters in python because it is how blocks of code are segmented. When a `function <./functions.rst>`_ is defined, all the statements that belong to the it are indented, same with a `class <./classes.rst>`_\ , all the statements that belong to the it, its methods and attributes are indented underneath it.
 
 This helps with reading the code so we can tell what belongs to a namespace the same way curly braces do for languages that use them for that purpose. Interactive Development Environments have gotten a lot better and automatically indent code for you using the convention of the language you are writing, which saves time spent counting the number of spaces to indent.

@@ -1,7 +1,7 @@
 How to create a Person Factory
 ==============
 
-This is an exercise in creating `dictionaries <./DICTIONARIES.rst>`_ with `functions <./FUNCTIONS.rst>`_. It assumes you are familiar with `Functions <./FUNCTIONS.rst>`_ and `Dictionaries <./DICTIONARIES.rst>`_ though you can attempyt it even if you are not
+This is an exercise in creating `dictionaries <./DICTIONARIES.rst>`_ with `functions <./functions.rst>`_. It assumes you are familiar with `Functions <./functions.rst>`_ and `Dictionaries <./DICTIONARIES.rst>`_ though you can attempyt it even if you are not
 
 Prerequisites
 -------------
@@ -138,7 +138,7 @@ REFACTOR: make it better
            return datetime.datetime.now().year
 
 
-  * we import the ``datetime`` library so we can use its `functions <./FUNCTIONS.rst>`_ and `classes <./CLASSES.rst>`_
+  * we import the ``datetime`` library so we can use its `functions <./functions.rst>`_ and `classes <./classes.rst>`_
   * we return the ``year`` attribute of the object returned by the ``now`` method of the ``datetime.datetime`` class, which is a representation of the current local date and time, we could also use ``today`` or ``utcnow`` to achieve the same result
   * we get the ``year`` attribute of the object returned since that is all we are interested in
 
