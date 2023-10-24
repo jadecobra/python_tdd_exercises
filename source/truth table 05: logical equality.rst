@@ -27,7 +27,7 @@ add a test for logical equality to ``TestBinaryOperations``
            self.assertFalse(truth_table.logical_equality(False, True))
            self.assertTrue(truth_table.logical_equality(False, False))
 
-the terminal shows an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
+the terminal shows an `AttributeError <./AttributeError.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

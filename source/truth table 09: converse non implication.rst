@@ -27,7 +27,7 @@ add a test for converse nonimplication to ``TestBinaryOperations``
            self.assertTrue(truth_table.converse_non_implication(False, True))
            self.assertFalse(truth_table.converse_non_implication(False, False))
 
-the terminal shows an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
+the terminal shows an `AttributeError <./AttributeError.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -38,7 +38,7 @@ GREEN: make it pass
 
        def converse_non_implication(p, q):
            return False
-    since the first two cases pass, the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ for the third case
+    since the first two cases pass, the terminal updates to show an `AssertionError <./AssertionError.rst>`_ for the third case
 * add a condition for it
   .. code-block:: python
 

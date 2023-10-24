@@ -28,68 +28,75 @@ RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
 
-*
-  Open a new file in the editor and save it as ``tests/test_type_error.py`` in the ``tests`` folder you created in `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_ and type the following in the file
+* Open a new file in the editor and save it as ``tests/test_type_error.py`` in the ``tests`` folder you created in `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_ and type the following in the file
 
 
-.. code-block:: python
-    import unittest
-    import functions
+   .. code-block:: python
+      import unittest
+      import functions
 
-.. code-block::
 
-   class TestTypeErrors(unittest.TestCase):
+      class TestTypeErrors(unittest.TestCase):
 
-       def test_function_signatures_solve_type_errors(self):
-           self.assertIsNone(functions.function_a("a"))
-   ```
+         def test_function_signatures_solve_type_errors(self):
+            self.assertIsNone(functions.function_a("a"))
+
    the terminal updates to show
 
-.. code-block:: python
-       import functions
-   E   ModuleNotFoundError: No module named 'functions'
-   ```
+   .. code-block:: python
+         import functions
+      E   ModuleNotFoundError: No module named 'functions'
 
 
-* Ah, a ``ModuleNotFoundError``, We have a lot of practice solving this error from `ModuleNotFoundError <./MODULE_NOT_FOUND_ERROR.rst>`_. let us create a file named ``functions.py`` and the terminal updates to show
+* Ah, a ``ModuleNotFoundError``, We have a lot of practice solving this error from `ModuleNotFoundError <./ModuleNotFoundError.rst>`_. let us create a file named ``functions.py`` and the terminal updates to show
+
   .. code-block:: python
 
        >       self.assertIsNone(functions.function_a("a"))
        E       AttributeError: module 'functions' has no attribute 'function_a'
 
-* We also have some practice with ``AttributeError`` from `01_TDD_ATTRIBUTE_ERROR <./01_TDD_ATTRIBUTE_ERROR.rst>`_. Add this line ``functions.py``
+* We also have some practice with ``AttributeError`` from `AttributeError <./AttributeError.rst>`_. Add this line ``functions.py``
+
   .. code-block:: python
 
        function_a = None
-    the terminal updates to show
+
+   the terminal updates to show
+
   .. code-block:: python
 
-       >       self.assertIsNone(functions.function_a("a"))
-       E       TypeError: 'NoneType' object is not callable
-    A reminder of our first encounter with ``TypeError`` from `How to solve the AttributeError by defining a Function <./01_TDD_ATTRIBUTE_ERROR.rst>`_
+      >       self.assertIsNone(functions.function_a("a"))
+      E       TypeError: 'NoneType' object is not callable
+
+   A reminder of our first encounter with ``TypeError`` from `How to solve the AttributeError by defining a Function <./AttributeError.rst>`_
+
 * We solve this ``TypeError`` by definining a ``callable``, in this case a function. Update ``functions.py``
+
   .. code-block:: python
 
        def function_a():
            return None
-    the terminal updates to show
+
+   the terminal updates to show
+
   .. code-block:: python
 
        >       self.assertIsNone(functions.function_a("a"))
        E       TypeError: function_a() takes 0 positional arguments but 1 was given
-    Another ``TypeError`` but with a message we have not seen before. Reading the error from the bottom up
+
+  Another ``TypeError`` but with a message we have not seen before. Reading the error from the bottom up
 
   * ``function_a() takes 0 positional arguments but 1 was given`` explains that there was an expectation which was not met in how the function is called. In order words the call violates the signature defined.
   * ``self.assertIsNone(functions.function_a("a"))`` the offending line. in this line we are checking if this call ``functions.function_a("a")`` is equal to ``None``
   * ``functions.function_a("a")`` is the call. We can think of it like an address
 
-    * ``functions`` refers to ``functions.py`` which is a python module
-    * ``function_a`` refers to ``function_a`` defined in ``functions.py``
-    * ``()`` is how a function is called after it is defined
-    * ``"a"`` is the data/parameter/argument/value that is passed into ``function_a``
+    - ``functions`` refers to ``functions.py`` which is a python module
+    - ``function_a`` refers to ``function_a`` defined in ``functions.py``
+    - ``()`` is how a function is called after it is defined
+    - ``"a"`` is the data/parameter/argument/value that is passed into ``function_a``
       Imagine you have a telephone, it has a call function but to make a call you must provide a number then hit dial.
-    * ``call`` is like ``function_a``
-    * the number you provide is like ``"a"`` and hitting dial is like ``()``
+    - ``call`` is like ``function_a``
+    - the number you provide is like ``"a"`` and hitting dial is like ``()``
       We will practice this some more in `TDD_FUNCTIONS <./TDD_FUNCTIONS.rst>`_
 
 GREEN: make it pass
@@ -114,56 +121,66 @@ There's not much to do here but add more tests for practice.
   .. code-block:: python
 
        self.assertIsNone(functions.function_b("a", "b"))
-    the terminal updates to show
-  .. code-block:: python
 
-       AttributeError: module 'functions' has no attribute 'function_b'
-    update ``functions.py``
-  .. code-block:: python
-
-       function_b = None
-    the terminal updates to show
-  .. code-block:: python
-
-       TypeError: 'NoneType' object is not callable
-    change ``function_b`` to a function, update ``function.py``
-  .. code-block:: python
-
-       def function_b():
-           return None
-    the terminal updates to show
-  .. code-block:: python
-
-       >       self.assertIsNone(functions.function_b("a", "b"))
-       E       TypeError: function_b() takes 0 positional arguments but 2 were given
-    the offending line ``functions.function_b("a", "b")`` called ``function_b`` with 2 parameters but the definition has the function taking no parameters.
-*
-  update ``function_b`` in ``functions.py``
+  the terminal updates to show
 
   .. code-block:: python
 
-       def function_b(positional_argument_1):
-           return None
+      AttributeError: module 'functions' has no attribute 'function_b'
 
-    the terminal updates to show
-
-  .. code-block:: python
-
-       TypeError: function_b() takes 1 positional argument but 2 were given
-
-    ah, our previous definition only allowed for 0 positional arguments, now it allows for 1 positional argument but we are still calling with 2 positional arguments.
-
-    update ``function_b`` in ``functions.py`` to take in 2 positional arguments
+ update ``functions.py``
 
   .. code-block:: python
 
-       def function_b(positional_argument_1, positional_argument_2):
-           return None
+      function_b = None
 
-    the terminal updates to show all tests pass.
+   the terminal updates to show
 
-EXTRA
+  .. code-block:: python
 
+      TypeError: 'NoneType' object is not callable
+
+   change ``function_b`` to a function, update ``function.py``
+
+  .. code-block:: python
+
+      def function_b():
+         return None
+
+   the terminal updates to show
+
+  .. code-block:: python
+
+      >       self.assertIsNone(functions.function_b("a", "b"))
+      E       TypeError: function_b() takes 0 positional arguments but 2 were given
+
+   the offending line ``functions.function_b("a", "b")`` called ``function_b`` with 2 parameters but the definition has the function taking no parameters.
+
+* update ``function_b`` in ``functions.py``
+
+  .. code-block:: python
+
+      def function_b(positional_argument_1):
+         return None
+
+   the terminal updates to show
+
+  .. code-block:: python
+
+      TypeError: function_b() takes 1 positional argument but 2 were given
+
+   ah, our previous definition only allowed for 0 positional arguments, now it allows for 1 positional argument but we are still calling with 2 positional arguments.
+
+   update ``function_b`` in ``functions.py`` to take in 2 positional arguments
+
+  .. code-block:: python
+
+      def function_b(positional_argument_1, positional_argument_2):
+         return None
+
+   the terminal updates to show all tests pass.
+
+.. EXTRA::
 
 * What's another solution to the above test?
 * How can we define a function that takes in any number of parameters? see `TDD_FUNCTIONS <./TDD_FUNCTIONS.rst>`_
@@ -258,7 +275,7 @@ update ``TestTypeErrors`` in ``test_type_error.py``
 
 .. code-block:: python
 
-       self.assertIsNone(functions.function_d("a", "b", "c", "d"))
+   self.assertIsNone(functions.function_d("a", "b", "c", "d"))
 
 the terminal updates to show
 
@@ -276,7 +293,7 @@ the terminal updates to show
 
 .. code-block:: python
 
-    TypeError: 'NoneType' object is not callable
+   TypeError: 'NoneType' object is not callable
 
 update ``function_d`` in ``functions.py``
 
@@ -337,10 +354,10 @@ You now know how to solve
 * ``NameError``
 * ``AttributeError`` by defining
 
-  * variables
-  * functions
-  * classes
-  * attributes in classes
-  * functions/methods in classes
+  - variables
+  - functions
+  - classes
+  - attributes in classes
+  - functions/methods in classes
 
 * ``TypeError`` by matching function signatures and their calls

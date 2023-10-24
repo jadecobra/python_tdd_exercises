@@ -129,7 +129,7 @@ RED: make it fail
 
 
 *
-  the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
+  the terminal updates to show an `AttributeError <./AttributeError.rst>`_
 
   .. code-block:: python
 
@@ -201,7 +201,7 @@ GREEN: make it pass
 *
   The ``AttributeError`` was fixed by declaring a variable ``add`` in the ``calculator`` module, even though it is currently assigned to the null value ``None``
 
-* The new error is `TypeError <./TYPE_ERROR.rst>`_ which can occur when an ``object`` is used in a way that it was not intended for. In this case the ``add`` variable is not callable. Let us update our list of exceptions encountered
+* The new error is `TypeError <./TypeError.rst>`_ which can occur when an ``object`` is used in a way that it was not intended for. In this case the ``add`` variable is not callable. Let us update our list of exceptions encountered
   .. code-block:: python
 
        # Exceptions Encountered
@@ -214,7 +214,7 @@ GREEN: make it pass
 
        def add():
            return None
-    the terminal still shows a `TypeError <./TYPE_ERROR.rst>`_ but with a different message. Progress
+    the terminal still shows a `TypeError <./TypeError.rst>`_ but with a different message. Progress
   .. code-block:: python
 
        E       TypeError: add() takes 0 positional arguments but 2 were given
@@ -227,7 +227,7 @@ GREEN: make it pass
        def add(x, y):
            return None
 
-    the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_
+    the terminal updates to show an `AssertionError <./AssertionError.rst>`_
 
   .. code-block:: python
 
@@ -287,7 +287,7 @@ There are a few scenarios we can consider from the users' perspective. If our us
                    0
                )
 
-    the terminal responds with an `AssertionError <./ASSERTION_ERROR.rst>`_ confirming that the ``add`` function always returns ``1`` regardless of inputs
+    the terminal responds with an `AssertionError <./AssertionError.rst>`_ confirming that the ``add`` function always returns ``1`` regardless of inputs
 
   .. code-block:: python
 
@@ -393,7 +393,7 @@ RED : make it fail
                    x-y
                )
 
-    the terminal responds with an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
+    the terminal responds with an `AttributeError <./AttributeError.rst>`_
 
   .. code-block:: python
 
@@ -417,7 +417,7 @@ GREEN : make it pass
 
        subtract = None
 
-    and the terminal gives us a `TypeError <./TYPE_ERROR.rst>`_
+    and the terminal gives us a `TypeError <./TypeError.rst>`_
 
   .. code-block:: python
 
@@ -434,7 +434,7 @@ GREEN : make it pass
        def subtract():
            return None
 
-    the terminal displays a `TypeError <./TYPE_ERROR.rst>`_ with a different error message
+    the terminal displays a `TypeError <./TypeError.rst>`_ with a different error message
 
   .. code-block:: python
 
@@ -451,7 +451,7 @@ GREEN : make it pass
        def subtract(x, y):
            return None
 
-    the terminal responds with an `AssertionError <./ASSERTION_ERROR.rst>`_
+    the terminal responds with an `AssertionError <./AssertionError.rst>`_
 
   .. code-block:: python
 
@@ -569,7 +569,7 @@ add a failing test to ``test_calculator.py`` named ``test_multiplication``
                self.x*self.y
            )
 
-the terminal responds with an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
+the terminal responds with an `AttributeError <./AttributeError.rst>`_
 
 GREEN : make it pass
 ^^^^^^^^^^^^^^^^^^^^
@@ -651,7 +651,7 @@ RED : make it fail
                self.x/self.y
            )
    ```
-   once again the terminal outputs an [AttributeError](./ATTRIBUTE_ERROR.rst)
+   once again the terminal outputs an [AttributeError](./AttributeError.rst)
 
 
 GREEN : make it pass

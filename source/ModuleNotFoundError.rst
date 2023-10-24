@@ -18,7 +18,7 @@ Prerequisites
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-Open a new file in your editor and save it as ``test_module_not_found_error.py`` in the ``tests`` folder you created in `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_
+Open a new file in your editor and save it as ``test_ModuleNotFoundError.py`` in the ``tests`` folder you created in `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_
 Type the following in the file
 
 .. code-block:: python

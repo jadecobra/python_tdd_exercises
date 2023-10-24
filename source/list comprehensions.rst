@@ -43,7 +43,7 @@ add a file named ``test_list_comprehension.py`` to the ``tests`` folder
 * the ``range`` object creates an ``iterable`` of numbers from 0 to the number we give minus 1. `read more <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_
 * we create a list named ``list_a`` that has no elements and confirm it is empty with a ``self.assertEqual(list_a, [])``
 * we then create a loop using the ``for`` keyword, that goes over every element of ``collection_a`` and adds it to ``list_a`` using the ``append`` method see `Lists <./LISTS.rst>`_
-* the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ for our test that checks the elements of ``list_a`` after the loop ran, because the list is no longer empty, it now contains 10 elements
+* the terminal updates to show an `AssertionError <./AssertionError.rst>`_ for our test that checks the elements of ``list_a`` after the loop ran, because the list is no longer empty, it now contains 10 elements
   .. code-block:: python
 
        E       AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
@@ -98,7 +98,7 @@ REFACTOR: make it better
 
        import list_comprehensions
        import unittest
-    the terminal displays a `ModuleNotFoundError <./MODULE_NOT_FOUND_ERROR.rst>`_ and we add that to our running list of exceptions
+    the terminal displays a `ModuleNotFoundError <./ModuleNotFoundError.rst>`_ and we add that to our running list of exceptions
   .. code-block:: python
 
        # Exceptions Encountered
@@ -106,7 +106,7 @@ REFACTOR: make it better
        # NameError
        # ModuleNotFoundError
 
-* create a file named ``list_comprehensions.py`` in the project folder and the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.rst>`_\ , which we add to our expanding list of exceptions encountered
+* create a file named ``list_comprehensions.py`` in the project folder and the terminal updates to show an `AttributeError <./AttributeError.rst>`_\ , which we add to our expanding list of exceptions encountered
   .. code-block:: python
 
        # Exceptions Encountered
@@ -120,7 +120,7 @@ REFACTOR: make it better
 
        def make_a_list():
            return None
-    and the terminal updates to show a `TypeError <./TYPE_ERROR.rst>`_\ , updating our list of exceptions encountered to
+    and the terminal updates to show a `TypeError <./TypeError.rst>`_\ , updating our list of exceptions encountered to
   .. code-block:: python
 
        # Exceptions Encountered
@@ -135,7 +135,7 @@ REFACTOR: make it better
 
        def make_a_list(argument):
            return None
-    the terminal shows an `AssertionError <./ASSERTION_ERROR.rst>`_
+    the terminal shows an `AssertionError <./AssertionError.rst>`_
 * update the function to return a list of whatever argument it gets
   .. code-block:: python
 
@@ -166,7 +166,7 @@ add a test to ``TestListComprehensions``
            self.assertEqual(a_list, [])
            self.assertEqual(list_comprehensions.for_loop(collection), a_list)
 
-the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ for the values of ``a_list`` after we loop through ``collection`` and add elements because it is no longer empty
+the terminal updates to show an `AssertionError <./AssertionError.rst>`_ for the values of ``a_list`` after we loop through ``collection`` and add elements because it is no longer empty
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -188,20 +188,20 @@ GREEN: make it pass
                self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
                self.assertEqual(list_comprehensions.for_loop(collection), a_list)
 
-    the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.rst>`_ since ``list_comprehensions.py`` does not have a definition for ``for_loop``
+    the terminal updates to show an `AttributeError <./AttributeError.rst>`_ since ``list_comprehensions.py`` does not have a definition for ``for_loop``
 
 * we add a function definition for ``for_loop`` to ``list_comprehensions.py``
   .. code-block:: python
 
        def for_loop():
            return None
-    the terminal updates to show a `TypeError <./TYPE_ERROR.rst>`_
+    the terminal updates to show a `TypeError <./TypeError.rst>`_
 * we update the signature of the function to take in an input argument
   .. code-block:: python
 
        def for_loop(argument):
            return None
-    the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_
+    the terminal updates to show an `AssertionError <./AssertionError.rst>`_
 *
   we change the behavior of the function by adding a ``for`` loop
 
@@ -251,7 +251,7 @@ add a failing test to ``TestListComprehensions``
                a_list
            )
 
-the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_
+the terminal updates to show an `AssertionError <./AssertionError.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -277,7 +277,7 @@ GREEN: make it pass
                    a_list
                )
 
-    the terminal updates to show another `AssertionError <./ASSERTION_ERROR.rst>`_ for the next line
+    the terminal updates to show another `AssertionError <./AssertionError.rst>`_ for the next line
 
 *
   this time we add a ``list comprehension`` to the left side to practice writing it
@@ -299,7 +299,7 @@ GREEN: make it pass
                    a_list
                )
 
-    the terminal now outputs an `AttributeError <./ATTRIBUTE_ERROR.rst>`_ for the last line
+    the terminal now outputs an `AttributeError <./AttributeError.rst>`_ for the last line
 
 * update ``list_comprehensions.py`` with a function that uses a list comprehension
   .. code-block:: python
@@ -355,7 +355,7 @@ Let us explore what else we can do with a ``list comprehension``
                    even_numbers
                )
 
-    the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_
+    the terminal updates to show an `AssertionError <./AssertionError.rst>`_
 
 
   * In this loop we update the empty list after the condition ``if element % 2 == 0`` is met.
@@ -387,7 +387,7 @@ Let us explore what else we can do with a ``list comprehension``
                    even_numbers
                )
 
-    the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_
+    the terminal updates to show an `AssertionError <./AssertionError.rst>`_
 
 *
   try using a ``list comprehension`` like we did in the last example
@@ -414,7 +414,7 @@ Let us explore what else we can do with a ``list comprehension``
                    even_numbers
                )
 
-    the terminal reveals an `AssertionError <./ASSERTION_ERROR.rst>`_ because our lists are not the same, we have too many values
+    the terminal reveals an `AssertionError <./AssertionError.rst>`_ because our lists are not the same, we have too many values
 
   .. code-block:: python
 
@@ -429,7 +429,7 @@ Let us explore what else we can do with a ``list comprehension``
                    even_numbers
                )
 
-    the terminal outputs an `AttributeError <./ATTRIBUTE_ERROR.rst>`_ for the next test
+    the terminal outputs an `AttributeError <./AttributeError.rst>`_ for the next test
 
 * add a function definition to ``list_comprehensions.py`` using the ``list comprehension`` we just wrote
   .. code-block:: python
@@ -455,7 +455,7 @@ Let us explore what else we can do with a ``list comprehension``
                self.assertEqual([], odd_numbers)
                self.assertEqual(list_comprehensions.get_odd_numbers(collection), odd_numbers)
 
-    the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_
+    the terminal updates to show an `AssertionError <./AssertionError.rst>`_
 
 *
   when we update the values to match
@@ -475,7 +475,7 @@ Let us explore what else we can do with a ``list comprehension``
                self.assertEqual([], odd_numbers)
                self.assertEqual(list_comprehensions.get_odd_numbers(collection), odd_numbers)
 
-    the terminal shows an `AssertionError <./ASSERTION_ERROR.rst>`_ for the next test
+    the terminal shows an `AssertionError <./AssertionError.rst>`_ for the next test
 
 *
   after updating the value on the left with a ``list comprehension`` that uses the same condition we used to create ``odd_numbers``
@@ -498,7 +498,7 @@ Let us explore what else we can do with a ``list comprehension``
                )
                self.assertEqual(list_comprehensions.get_odd_numbers(collection), odd_numbers)
 
-    the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
+    the terminal updates to show an `AttributeError <./AttributeError.rst>`_
 
 * define a function that returns a list comprehension in ``list_comprehensions.py`` to make the test pass
   .. code-block:: python

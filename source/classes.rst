@@ -38,13 +38,13 @@ we create a new file named ``test_classes.py`` in the ``tests`` directory
        def test_class_definitions_with_pass(self):
            self.assertIsInstance(classes.ClassWithPass(), object)
 
-the terminal displays a `ModuleNotFoundError <./MODULE_NOT_FOUND_ERROR.rst>`_
+the terminal displays a `ModuleNotFoundError <./ModuleNotFoundError.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* create a python module named ``classes.py`` and the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
+* create a python module named ``classes.py`` and the terminal updates to show an `AttributeError <./AttributeError.rst>`_
 * add the name ``ClassWithPass`` to the module
 
 .. code-block:: python
@@ -113,7 +113,7 @@ add another test to ``TestClasses`` in ``test_classes.py``
        def test_classes_definitions_with_parentheses(self):
            self.assertIsInstance(classes.ClassWithParentheses(), object)
 
-the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
+the terminal updates to show an `AttributeError <./AttributeError.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -171,7 +171,7 @@ we add another test to ``TestClasses`` in ``test_classes.py``
        def test_class_definition_with_object(self):
            self.assertIsInstance(classes.ClassWithObject(), object)
 
-and the terminal displays an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
+and the terminal displays an `AttributeError <./AttributeError.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -239,7 +239,7 @@ RED: make it fail
 
            def test_classes_with_attributes(self):
                self.assertEqual(classes.ClassWithAttributes.a_boolean, bool)
-    the terminal updates to show `AttributeError <./ATTRIBUTE_ERROR.rst>`_
+    the terminal updates to show `AttributeError <./AttributeError.rst>`_
 * add a class definition to ``classes.py``
 
 .. code-block:: python
@@ -250,7 +250,7 @@ RED: make it fail
 
        pass
    ```
-   though the terminal still outputs an [AttributeError](./ATTRIBUTE_ERROR.rst), this time it is for a missing attribute in our newly defined class
+   though the terminal still outputs an [AttributeError](./AttributeError.rst), this time it is for a missing attribute in our newly defined class
 
 
 GREEN: make it pass
@@ -280,7 +280,7 @@ GREEN: make it pass
 
        a_boolean = None
    ```
-   the terminal updates to show an [AssertionError](./ASSERTION_ERROR.rst)
+   the terminal updates to show an [AssertionError](./AssertionError.rst)
 
 
 * we redefine the attribute to make the test pass
@@ -318,7 +318,7 @@ update ``test_classes_with_attributes`` with more tests
            self.assertEqual(classes.ClassWithAttributes.a_set, set)
            self.assertEqual(classes.ClassWithAttributes.a_dictionary, dict)
 
-the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
+the terminal updates to show an `AttributeError <./AttributeError.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -360,7 +360,7 @@ Let us add some tests for class methods. update ``TestClasses`` in ``classes.py`
                'You called MethodA'
            )
 
-the terminal updates to show `AttributeError <./ATTRIBUTE_ERROR.rst>`_
+the terminal updates to show `AttributeError <./AttributeError.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -376,7 +376,7 @@ GREEN: make it pass
 
        pass
    ```
-   the terminal now gives an [AttributeError](./ATTRIBUTE_ERROR.rst) with a different error
+   the terminal now gives an [AttributeError](./AttributeError.rst) with a different error
 
 
 * let us add the missing attribute to the ``ClassWithMethods`` class
@@ -402,7 +402,7 @@ GREEN: make it pass
 
        method_a = None
    ```
-   the terminal now reveals a [TypeError](./TYPE_ERROR.rst) since ``method_a`` is not callable
+   the terminal now reveals a [TypeError](./TypeError.rst) since ``method_a`` is not callable
 
 
 * let us update the definition of ``method_a`` to make it a function
@@ -416,7 +416,7 @@ GREEN: make it pass
        def method_a():
            return None
    ```
-   and the terminal shows an [AssertionError](./ASSERTION_ERROR.rst)
+   and the terminal shows an [AssertionError](./AssertionError.rst)
 
 
 * what we do now is change the value the function returns to match the expectation of our test
@@ -438,7 +438,7 @@ REFACTOR: make it better
                self.assertEqual(classes.ClassWithMethods.method_b(), 'You called MethodB')
                self.assertEqual(classes.ClassWithMethods.method_c(), 'You called MethodC')
                self.assertEqual(classes.ClassWithMethods.method_d(), 'You called MethodD')
-    the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
+    the terminal updates to show an `AttributeError <./AttributeError.rst>`_
 * update ``ClassWithmethods`` in ``classes.py`` until all tests pass
 
 ----
@@ -465,7 +465,7 @@ we add another test for a class that has both attributes and methods
                'you called a method'
            )
 
-with the terminal giving an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
+with the terminal giving an `AttributeError <./AttributeError.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -500,7 +500,7 @@ we will add a failing test to ``test_classes.py``
        def test_classes_with_initializers(self):
            self.assertEqual(classes.Boy().sex, 'M')
 
-the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
+the terminal updates to show an `AttributeError <./AttributeError.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -516,7 +516,7 @@ GREEN: make it pass
 
        pass
    ```
-   the terminal updates to show another [AttributeError](./ATTRIBUTE_ERROR.rst)
+   the terminal updates to show another [AttributeError](./AttributeError.rst)
 
 
 * update the ``Boy`` class with the name ``sex``
@@ -555,7 +555,7 @@ REFACTOR: make it better
        def test_classes_with_initializers(self):
            self.assertEqual(classes.Boy().sex, 'M')
            self.assertEqual(classes.Girl(sex='F').sex, 'F')
-    the terminal gives an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
+    the terminal gives an `AttributeError <./AttributeError.rst>`_
 * trying the same solution we used for the ``Boy`` class, add a definition for the ``Girl`` class to ``classes.py``
 
 .. code-block:: python
@@ -566,7 +566,7 @@ REFACTOR: make it better
 
        sex = 'M'
    ```
-   and the terminal displays a [TypeError](./TYPE_ERROR.rst)
+   and the terminal displays a [TypeError](./TypeError.rst)
 
 .. code-block:: python
    TypeError: Girl() takes no arguments
@@ -589,7 +589,7 @@ REFACTOR: make it better
        def __init__(self):
            pass
    ```
-   the terminal responds with a [TypeError](./TYPE_ERROR.rst)
+   the terminal responds with a [TypeError](./TypeError.rst)
 
 .. code-block:: python
    TypeError: __init__() got an unexpected keyword argument 'sex'
@@ -609,7 +609,7 @@ REFACTOR: make it better
            self.assertEqual(classes.Boy().sex, 'M')
            self.assertEqual(classes.Girl(sex='F').sex, 'F')
            self.assertEqual(classes.Other(sex='?').sex, '?')
-    the terminal displays an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
+    the terminal displays an `AttributeError <./AttributeError.rst>`_
 * add a class definition to ``classes.py``
 
 .. code-block:: python
@@ -693,7 +693,7 @@ REFACTOR: make it better
        class Girl(Human):
            ...
 
-* remove the ``sex`` attribute and the terminal outputs an `AssertionError <./ASSERTION_ERROR.rst>`_
+* remove the ``sex`` attribute and the terminal outputs an `AssertionError <./AssertionError.rst>`_
 *
   update the ``Human`` class to set the ``sex`` attribute in the initializer instead of at the class level
 
@@ -706,7 +706,7 @@ REFACTOR: make it better
            def __init__(self, sex='M'):
                self.sex = sex
 
-    the terminal still responds with an `AssertionError <./ASSERTION_ERROR.rst>`_
+    the terminal still responds with an `AssertionError <./AssertionError.rst>`_
 
 *
   when we remove the ``__init__`` method from the ``Girl`` class
@@ -769,7 +769,7 @@ add a test to ``test_classes.py``
                ]
            )
 
-the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ as our expected and real values do not match
+the terminal updates to show an `AssertionError <./AssertionError.rst>`_ as our expected and real values do not match
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

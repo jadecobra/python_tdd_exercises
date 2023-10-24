@@ -27,7 +27,7 @@ add a test for tautology to ``TestBinaryOperations``
            self.assertTrue(truth_table.tautology(False, True))
            self.assertTrue(truth_table.tautology(False, False))
 
-the terminal shows an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
+the terminal shows an `AttributeError <./AttributeError.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -38,7 +38,7 @@ GREEN: make it pass
 
        def tautology(p, q):
            return False
-    the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ for the first case
+    the terminal updates to show an `AssertionError <./AssertionError.rst>`_ for the first case
 * replace the return value
   .. code-block:: python
 
@@ -67,7 +67,7 @@ add a test for contradiction to ``TestBinaryOperations``
            self.assertFalse(truth_table.contradiction(False, True))
            self.assertFalse(truth_table.contradiction(False, False))
 
-the terminal shows an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
+the terminal shows an `AttributeError <./AttributeError.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -78,7 +78,7 @@ GREEN: make it pass
 
        def contradiction(p, q):
            return True
-    the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ for the first case
+    the terminal updates to show an `AssertionError <./AssertionError.rst>`_ for the first case
 * update the return value
   .. code-block:: python
 

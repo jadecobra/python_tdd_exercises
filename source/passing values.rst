@@ -54,7 +54,7 @@ class TestPassingValues(unittest.TestCase):
             'I received this message: hello'
         )
 ```
-the terminal updates to show a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.rst) and we add it to our list of exceptions encountered
+the terminal updates to show a [ModuleNotFoundError](./ModuleNotFoundError.rst) and we add it to our list of exceptions encountered
 
 .. code-block:: python
 # Exceptions Encountered
@@ -64,7 +64,7 @@ the terminal updates to show a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.rs
 
 ### GREEN: make it pass
 
-- create a file named `telephone.py` in the project folder and the terminal updates to show an [AttributeError](./ATTRIBUTE_ERROR.rst) which we add to our list of exceptions
+- create a file named `telephone.py` in the project folder and the terminal updates to show an [AttributeError](./AttributeError.rst) which we add to our list of exceptions
 
 .. code-block:: python
     # Exceptions Encountered
@@ -79,7 +79,7 @@ the terminal updates to show a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.rs
 
         pass
     ```
-    the terminal still displays an [AttributeError](./ATTRIBUTE_ERROR.rst) but with a different message
+    the terminal still displays an [AttributeError](./AttributeError.rst) but with a different message
 - we add a definition for an attribute named ``text`` to the ``Telephone`` class
 
 .. code-block:: python
@@ -87,7 +87,7 @@ the terminal updates to show a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.rs
 
         text = None
     ```
-    the terminal updates to show a [TypeError](./TYPE_ERROR.rst) because ``text`` is not callable and we add the new exception to our list of exceptions encountered
+    the terminal updates to show a [TypeError](./TypeError.rst) because ``text`` is not callable and we add the new exception to our list of exceptions encountered
 
 .. code-block:: python
     # Exceptions Encountered
@@ -104,7 +104,7 @@ the terminal updates to show a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.rs
         def text():
             return None
     ```
-    the terminal displays a [TypeError](./TYPE_ERROR.rst) this time because when we called `telephone.Telephone.text('hello')` in the test we provided a positional argument as input with the value ``hello``, but the signature of the method we defined does not take in any arguments
+    the terminal displays a [TypeError](./TypeError.rst) this time because when we called `telephone.Telephone.text('hello')` in the test we provided a positional argument as input with the value ``hello``, but the signature of the method we defined does not take in any arguments
 - modify the definition for ``text`` to take in a value
 
 .. code-block:: python
@@ -114,7 +114,7 @@ the terminal updates to show a [ModuleNotFoundError](./MODULE_NOT_FOUND_ERROR.rs
         def text(value):
             return None
     ```
-    we now see an [AssertionError](./ASSERTION_ERROR.rst) in the terminal
+    we now see an [AssertionError](./AssertionError.rst) in the terminal
 - update the return statement with the expected value to make the test pass
 
 .. code-block:: python
@@ -144,7 +144,7 @@ The problem with this solution is that no matter what value we send to the `Tele
             )
     ```
 
-    the terminal updates to show an [AssertionError](./ASSERTION_ERROR.rst)
+    the terminal updates to show an [AssertionError](./AssertionError.rst)
 
 - GREEN: make it pass
 
@@ -180,7 +180,7 @@ update ``test_text_messages`` with a new test
         )
 ```
 
-the terminal updates to show an [AssertionError](./ASSERTION_ERROR.rst)
+the terminal updates to show an [AssertionError](./AssertionError.rst)
 
 ### GREEN: make it pass
 
@@ -230,7 +230,7 @@ the terminal shows passing tests
             "I received this message: 'dict'"
         )
     ```
-    an [AssertionError](./ASSERTION_ERROR.rst) is displayed in the terminal
+    an [AssertionError](./AssertionError.rst) is displayed in the terminal
 - update the test to match the expected output
 
 .. code-block:: python
@@ -239,7 +239,7 @@ the terminal shows passing tests
             "I received this message: <class 'bool'>"
         )
     ```
-    the terminal updates with an [AssertionError](./ASSERTION_ERROR.rst) for the next test.
+    the terminal updates with an [AssertionError](./AssertionError.rst) for the next test.
 - repeat the solution for each data type until all tests pass
 
 VOILA

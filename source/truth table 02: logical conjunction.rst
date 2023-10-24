@@ -38,7 +38,7 @@ create a ``TestCase`` for binary operations in ``test_truth_table.py``
            self.assertFalse(truth_table.logical_conjunction(False, True))
            self.assertFalse(truth_table.logical_conjunction(False, False))
 
-the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
+the terminal updates to show an `AttributeError <./AttributeError.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -49,19 +49,19 @@ GREEN: make it pass
 
        def logical_conjunction():
            return None
-    the terminal updates to show a `TypeError <./TYPE_ERROR.rst>`_
+    the terminal updates to show a `TypeError <./TypeError.rst>`_
 * update the function signature with a positional argument
   .. code-block:: python
 
        def logical_conjunction(p):
            return None
-    the terminal updates to show another `TypeError <./TYPE_ERROR.rst>`_
+    the terminal updates to show another `TypeError <./TypeError.rst>`_
 * add another positional argument
   .. code-block:: python
 
        def logical_conjunction(p, q):
            return None
-    the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_
+    the terminal updates to show an `AssertionError <./AssertionError.rst>`_
 * update ``logical_conjunction`` in ``truth_table.py``
   .. code-block:: python
 
@@ -75,7 +75,7 @@ GREEN: make it pass
        def logical_conjunction(p, q):
            if p == True:
                return True
-    the terminal still shows an `AssertionError <./ASSERTION_ERROR.rst>`_
+    the terminal still shows an `AssertionError <./AssertionError.rst>`_
 * let us add a condition for the second input value
   .. code-block:: python
 

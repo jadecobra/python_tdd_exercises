@@ -27,7 +27,7 @@ add a test for exclusive disjunction to ``TestBinaryOperations``
            self.assertFalse(truth_table.logical_nor(False, True))
            self.assertTrue(truth_table.logical_nor(False, False))
 
-the terminal shows an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
+the terminal shows an `AttributeError <./AttributeError.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

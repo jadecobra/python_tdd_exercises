@@ -40,20 +40,20 @@ create a file named ``test_truth_table.py`` in the ``tests`` folder and add the 
        def test_logical_true(self):
            self.assertTrue(truth_table.logical_true())
 
-the terminal updates to show a `ModuleNotFoundError <./MODULE_NOT_FOUND_ERROR.rst>`_
+the terminal updates to show a `ModuleNotFoundError <./ModuleNotFoundError.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* add `ModuleNotFoundError <./MODULE_NOT_FOUND_ERROR.rst>`_ to the list of exceptions encountered
+* add `ModuleNotFoundError <./ModuleNotFoundError.rst>`_ to the list of exceptions encountered
   .. code-block:: python
 
      # Exceptions Encountered
      # AssertionError
      # ModuleNotFoundError
 
-* create a file named ``truth_table.py`` in the project folder and the terminal displays an `AttributeError <./ATTRIBUTE_ERROR.rst>`_ which we add to our list of exceptions encountered
+* create a file named ``truth_table.py`` in the project folder and the terminal displays an `AttributeError <./AttributeError.rst>`_ which we add to our list of exceptions encountered
   .. code-block:: python
 
      # Exceptions Encountered
@@ -77,13 +77,13 @@ REFACTOR: make it better
 
        def test_logical_false(self):
            self.assertFalse(truth_table.logical_false())
-  the terminal gives another `AttributeError <./ATTRIBUTE_ERROR.rst>`_ since there is no definition for ``logical_false`` in ``truth_table.py``
+  the terminal gives another `AttributeError <./AttributeError.rst>`_ since there is no definition for ``logical_false`` in ``truth_table.py``
 * add a function definition for ``logical_false`` to ``truth_table.py``
   .. code-block:: python
 
      def logical_false():
          return True
-  and the terminal shows an `AssertionError <./ASSERTION_ERROR.rst>`_ since the ``logical_false`` function currently returns a different value from what is expected
+  and the terminal shows an `AssertionError <./AssertionError.rst>`_ since the ``logical_false`` function currently returns a different value from what is expected
 * update the return value to ``False`` and the terminal shows passing tests
   .. code-block:: python
 
@@ -123,7 +123,7 @@ Add a new ``TestCase`` to ``test_truth_table.py``
            self.assertTrue(truth_table.logical_identity(True))
            self.assertFalse(truth_table.logical_identity(False))
 
-the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.rst>`_ because there is no definition for ``logical_identity`` in ``truth_table.py``
+the terminal updates to show an `AttributeError <./AttributeError.rst>`_ because there is no definition for ``logical_identity`` in ``truth_table.py``
 
 GREEN: make it pass
 ~~~~~~~~~~~~~~~~~~~
@@ -153,7 +153,7 @@ add a test for ``logical_negation`` to ``test_truth_table.py``
            self.assertFalse(truth_table.logical_negation(True))
            self.assertTrue(truth_table.logical_negation(False))
 
-the terminal updates to show an `AttributeError <./ATTRIBUTE_ERROR.rst>`_\ , there is no definition for ``logical_negation`` in ``truth_table.py``
+the terminal updates to show an `AttributeError <./AttributeError.rst>`_\ , there is no definition for ``logical_negation`` in ``truth_table.py``
 
 GREEN: make it pass
 ~~~~~~~~~~~~~~~~~~~
@@ -164,7 +164,7 @@ GREEN: make it pass
 
      def logical_negation(value):
          return value
-  the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_. The ``logical_negation`` function returns the value it receives as input but the test expects it to return the opposite
+  the terminal updates to show an `AssertionError <./AssertionError.rst>`_. The ``logical_negation`` function returns the value it receives as input but the test expects it to return the opposite
 * we use the ``not`` keyword to make the function return the opposite of what it receives. Update the return statement in ``logical_negation`` to return the opposite of the value it receives
   .. code-block:: python
 

@@ -27,7 +27,7 @@ add a test for exclusive disjunction to ``TestBinaryOperations``
            self.assertTrue(truth_table.exclusive_disjunction(False, True))
            self.assertFalse(truth_table.exclusive_disjunction(False, False))
 
-the terminal shows an `AttributeError <./ATTRIBUTE_ERROR.rst>`_
+the terminal shows an `AttributeError <./AttributeError.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -38,7 +38,7 @@ GREEN: make it pass
 
        def exclusive_disjunction(p, q):
            return True
-    we get an `AssertionError <./ASSERTION_ERROR.rst>`_ for the second case
+    we get an `AssertionError <./AssertionError.rst>`_ for the second case
 * add a condition for it
   .. code-block:: python
 
@@ -46,7 +46,7 @@ GREEN: make it pass
            if p == True and q == True:
                return False
            return True
-    the terminal shows an `AssertionError <./ASSERTION_ERROR.rst>`_ for the fourth case
+    the terminal shows an `AssertionError <./AssertionError.rst>`_ for the fourth case
 * add a condition
   .. code-block:: python
 

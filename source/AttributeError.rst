@@ -46,7 +46,7 @@ What does the code above mean?
 * ``class TestAttributeErrors(unittest.TestCase):`` - a class definition that inherits from ``unittest.TestCase`` and will hold our tests. We learn more about this in `Classes <./CLASSES.rst>`_
 * ``def test_defining_variables_to_solve_attribute_errors(self):`` the definition of our first test function to find out if defining variables can solve an ``AttributeError``
 * ``self.assertIsNone(module.variable_0)`` - the actual test. This is equivalent to asking the question ``is module.variable_0 equal to None``
-* ``assertIsNone`` is one of the helper functions inherited from ``unittest.TestCase``. We learn more about this in `AssertionError <./ASSERTION_ERROR.rst>`_
+* ``assertIsNone`` is one of the helper functions inherited from ``unittest.TestCase``. We learn more about this in `AssertionError <./AssertionError.rst>`_
 * ``self`` refers to the ``TestAttributeError`` class
 
 If you left ``pytest-watch`` running from `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_ you should see a message similar to the following in the terminal
@@ -61,7 +61,7 @@ If you left ``pytest-watch`` running from `How I setup a Test Driven Development
        import module
    E   ModuleNotFoundError: No module named 'module'
 
-We practice solving this error in `ModuleNotFoundError <./MODULE_NOT_FOUND_ERROR.rst>`_
+We practice solving this error in `ModuleNotFoundError <./ModuleNotFoundError.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -347,9 +347,9 @@ Repeat the pattern until all tests pass.
 *WELL DONE!* You now know
 
 
-* How to solve `ModuleNotFoundError <./MODULE_NOT_FOUND_ERROR.rst>`_
+* How to solve `ModuleNotFoundError <./ModuleNotFoundError.rst>`_
 * How to solve ``NameError`` using variables
-* How to solve `AttributeError <./ATTRIBUTE_ERROR.rst>`_ by defining variables
+* How to solve `AttributeError <./AttributeError.rst>`_ by defining variables
 
 ----
 
@@ -453,9 +453,9 @@ REFACTOR: make it better
 *YOU DID IT AGAIN!* You now know
 
 
-* How to solve `ModuleNotFoundError <./MODULE_NOT_FOUND_ERROR.rst>`_
+* How to solve `ModuleNotFoundError <./ModuleNotFoundError.rst>`_
 * How to solve ``NameError``
-* How to solve `AttributeError <./ATTRIBUTE_ERROR.rst>`_ by defining variables and functions
+* How to solve `AttributeError <./AttributeError.rst>`_ by defining variables and functions
 
 
 ----
@@ -541,9 +541,9 @@ REFACTOR: make it better
 *WELL DONE!* You now know
 
 
-* How to solve `ModuleNotFoundError <./MODULE_NOT_FOUND_ERROR.rst>`_
+* How to solve `ModuleNotFoundError <./ModuleNotFoundError.rst>`_
 * How to solve ``NameError``
-* How to solve `AttributeError <./ATTRIBUTE_ERROR.rst>`_ by defining variables, `functions <./FUNCTIONS.rst>`_ and `classes <./CLASSES.rst>`_
+* How to solve `AttributeError <./AttributeError.rst>`_ by defining variables, `functions <./FUNCTIONS.rst>`_ and `classes <./CLASSES.rst>`_
 
   * do we know how to define `classes <./CLASSES.rst>`_ if we define them the same was as `functions <./FUNCTIONS.rst>`_\ ?
 
@@ -689,14 +689,14 @@ REFACTOR: make it better
 *WELL DONE!* You now know You now know
 
 
-* How to solve `ModuleNotFoundError <./MODULE_NOT_FOUND_ERROR.rst>`_
+* How to solve `ModuleNotFoundError <./ModuleNotFoundError.rst>`_
 * How to solve ``NameError``
-* How to solve `AttributeError <./ATTRIBUTE_ERROR.rst>`_ by defining variables, `functions <./FUNCTIONS.rst>`_ and `classes <./CLASSES.rst>`_
-* How to solve `AttributeError <./ATTRIBUTE_ERROR.rst>`_ by defining
+* How to solve `AttributeError <./AttributeError.rst>`_ by defining variables, `functions <./FUNCTIONS.rst>`_ and `classes <./CLASSES.rst>`_
+* How to solve `AttributeError <./AttributeError.rst>`_ by defining
 
   * variables
   * `functions <./FUNCTIONS.rst>`_
-  * `classes <./ASSERTION_ERROR.rst>`_
+  * `classes <./AssertionError.rst>`_
   * attributes(variables) in classes
 
 
@@ -776,14 +776,14 @@ repeat the solution until all tests pass
 *CONGRATULATIONS!* You now know
 
 
-* How to solve `ModuleNotFoundError <./MODULE_NOT_FOUND_ERROR.rst>`_
+* How to solve `ModuleNotFoundError <./ModuleNotFoundError.rst>`_
 * How to solve ``NameError``
-* How to solve `AttributeError <./ATTRIBUTE_ERROR.rst>`_ by defining variables, `functions <./FUNCTIONS.rst>`_ and `classes <./CLASSES.rst>`_
-* How to solve `AttributeError <./ATTRIBUTE_ERROR.rst>`_ by defining
+* How to solve `AttributeError <./AttributeError.rst>`_ by defining variables, `functions <./FUNCTIONS.rst>`_ and `classes <./CLASSES.rst>`_
+* How to solve `AttributeError <./AttributeError.rst>`_ by defining
 
   - variables
   - `functions <./FUNCTIONS.rst>`_
-  - `classes <./ASSERTION_ERROR.rst>`_
+  - `classes <./AssertionError.rst>`_
   - attributes(variables) in classes
   - methods(functions) in classes
 
