@@ -599,12 +599,12 @@ REFACTOR: make it better
   .. code-block:: python
 
 
-  class Other(object):
+    class Other(object):
 
-      sex = '?'
+        sex = '?'
 
-      def __init__(self, sex=None):
-          pass
+        def __init__(self, sex=None):
+            pass
 
   the terminal reveals passing tests
 
@@ -713,8 +713,7 @@ REFACTOR: make it better
 
     the terminal updates to show passing tests
 
-*
-  one last change and we remove the ``sex`` attribute from the ``Human`` class
+* one last change and we remove the ``sex`` attribute from the ``Human`` class
 
   .. code-block:: python
 
@@ -723,17 +722,19 @@ REFACTOR: make it better
            def __init__(self, sex='M'):
                self.sex = sex
 
-    all tests are passing in the terminal, we have successfully refactored the 3 classes and abstracted a ``Human`` class
+  all tests are passing in the terminal, we have successfully refactored the 3 classes and abstracted a ``Human`` class
 
 Why did that work?
 
 
 * the ``Boy``, ``Girl`` and ``Other`` class now inherit from the ``Human`` class which means they all get the same methods and attributes that the ``Human`` class has, including the ``__init__`` method
-* ``self.sex`` within each class refers to the ``sex`` attribute in the class, allowing its definition from the withing the ``__init__`` method
+* ``self.sex`` within each class refers to the ``sex`` attribute in the class, allowing its definition from within the ``__init__`` method
 * since ``self.sex`` is defined as a class attribute, it is accessible from outside the class as we do in our tests i.e ``classes.Girl(sex='F').sex`` and ``classes.Other(sex='?').sex``
 
+----
+
 How to View the Attributes and Methods of a Class
-------------------------------------------
+--------------------------------------------------
 
 To view what ``attributes`` and ``methods`` are defined for any object we can call ``dir`` on the object. The ``dir`` method returns a `list <./LISTS.rst>`_ that contains the names of all attributes and methods in the class
 
@@ -805,5 +806,6 @@ You know
 * how to define a class with an attribute
 * how to define a class with a method
 * how to define a class with an initializer
-* how to view the attributes and methods defined for a class
-* Do you want to `read more about classes? <https://docs.python.org/3/tutorial/classes.html#tut-firstclasses>`_
+* how to view the attributes and methods of a class
+
+Do you want to `read more about classes? <https://docs.python.org/3/tutorial/classes.html#tut-firstclasses>`_
