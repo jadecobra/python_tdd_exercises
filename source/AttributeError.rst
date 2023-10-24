@@ -785,13 +785,13 @@ repeat the solution until all tests pass
   - variables
   - `functions <./functions.rst>`_
   - `classes <./AssertionError.rst>`_
-  - attributes(variables) in classes
-  - methods(functions) in classes
+  - attributes (variables) in classes
+  - methods (functions) in classes
 
 *WHAT IS THE DIFFERENCE BETWEEN CLASSES AND FUNCTIONS?*
 
 
-* we can access attributes(variables) we define in a class from outside the class
+* we can access attributes (variables) we define in a class from outside the class
 * we cannot access variables we define in a function from outside the function
 * the keywords used to define them are different - ``def`` vs ``class``
 * their naming conventions are different - ``snake_case`` vs ``CamelCase``
