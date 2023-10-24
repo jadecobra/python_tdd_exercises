@@ -10,7 +10,6 @@ Prerequisites
 
 * `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_
 
-----
 
 What is an AssertionError?
 --------------------------
