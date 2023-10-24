@@ -9,13 +9,15 @@ Prerequisites
 
 * `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_
 
-----
 
 What is an Attribute?
 ---------------------
 
 An Attribute is a property, variable, function or name that belongs to an ``object``. For example, if we describe a human being we could list attributes like height, weight, sex and color.
 An ``AttributeError`` is raised when there is a reference to a name in an ``object`` that does not exist.
+
+
+----
 
 Solve AttributeError by defining a Variable
 -------------------------------------------
@@ -341,6 +343,9 @@ Repeat the pattern until all tests pass.
 * How to solve ``NameError`` using variables
 * How to solve `AttributeError <./ATTRIBUTE_ERROR.rst>`_ by defining variables
 
+----
+
+
 Solve AttributeError by defining a Function
 -------------------------------------------
 
@@ -444,6 +449,10 @@ REFACTOR: make it better
 * How to solve ``NameError``
 * How to solve `AttributeError <./ATTRIBUTE_ERROR.rst>`_ by defining variables and functions
 
+
+----
+
+
 Solve AttributeError by defining a Class
 ----------------------------------------
 
@@ -529,6 +538,9 @@ REFACTOR: make it better
 * How to solve `AttributeError <./ATTRIBUTE_ERROR.rst>`_ by defining variables, `functions <./FUNCTIONS.rst>`_ and `classes <./CLASSES.rst>`_
 
   * do we know how to define `classes <./CLASSES.rst>`_ if we define them the same was as `functions <./FUNCTIONS.rst>`_\ ?
+
+----
+
 
 Solve AttributeError by defining an Attribute in a Class
 --------------------------------------------------------
@@ -678,6 +690,10 @@ REFACTOR: make it better
   * `functions <./FUNCTIONS.rst>`_
   * `classes <./ASSERTION_ERROR.rst>`_
   * attributes(variables) in classes
+
+
+----
+
 
 Solve AttributeError by defining a Method(Function) in a Class
 --------------------------------------------------------------
