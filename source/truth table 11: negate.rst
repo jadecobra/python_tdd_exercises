@@ -44,7 +44,7 @@ GREEN: make it pass
   * if ``p == True`` the result is ``False``
   * if ``p == False`` the result is ``True``
 
-* let us add conditions to represent our observation
+* add conditions to represent our observation
   .. code-block:: python
 
        def negate_first(p, q):

@@ -303,7 +303,7 @@ How can we make this better?
        def passthrough_with_positional_arguments(first_argument, second_argument):
            return first_argument, second_argument
     we still have passing tests
-* let us add another test to ensure that ``passthrough_with_positional_arguments`` outputs data in the order given. update ``test_functions_with_positional_arguments``
+* add another test to ensure that ``passthrough_with_positional_arguments`` outputs data in the order given. update ``test_functions_with_positional_arguments``
   .. code-block:: python
 
            def test_functions_with_positional_arguments(self):
@@ -467,7 +467,7 @@ So far ``passthrough_with_keyword_arguments`` looks the same as ``passthrough_wi
 
 *
   RED: make it fail
-    let us add a test to ``test_functions_with_keyword_arguments``
+    add a test to ``test_functions_with_keyword_arguments``
 
   .. code-block:: python
 
@@ -565,7 +565,7 @@ So far ``passthrough_with_keyword_arguments`` looks the same as ``passthrough_wi
 *
   REFACTOR: make it better
 
-    let us add one more test to ``test_functions_with_keyword_arguments`` to drill the lesson
+    add one more test to ``test_functions_with_keyword_arguments`` to drill the lesson
 
   .. code-block:: python
 
@@ -742,7 +742,7 @@ Hold on a second. This looks exactly like what we did in ``test_functions_with_p
 
        def accepts_positional_and_keyword_arguments(first_name=None, last_name=None):
            return first_name, last_name
-    we still have passing tests. It looks like python lets us use default arguments with no issues, and we can provide keyword arguments positionally without using the name. let us add another test to prove this
+    we still have passing tests. It looks like python lets us use default arguments with no issues, and we can provide keyword arguments positionally without using the name. add another test to prove this
 * add a test to ``test_functions_with_positional_and_keyword_arguments``
   .. code-block:: python
 
@@ -760,7 +760,7 @@ Hold on a second. This looks exactly like what we did in ``test_functions_with_p
                    ('my_first_name', 'my_last_name')
                )
     all the tests are still passing. The problem here is without the names the program is going to take the input data in the order we provide it so it is better to be explicit with the names because from the `Zen of Python <https://peps.python.org/pep-0020/>`_ ``Explicit is better than implicit.``
-* let us add 2 tests, this time for an unknown number of positional and keyword arguments
+* add 2 tests, this time for an unknown number of positional and keyword arguments
   .. code-block:: python
 
        def test_functions_with_positional_and_keyword_arguments(self):

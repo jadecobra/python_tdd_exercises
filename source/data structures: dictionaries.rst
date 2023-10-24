@@ -229,7 +229,7 @@ Can we create a Dictionary with lists as keys?
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-let us add a test to ``TestDictionaries`` using a list as a key
+add a test to ``TestDictionaries`` using a list as a key
 
 .. code-block:: python
 
@@ -460,7 +460,7 @@ GREEN: make it pass
        # TypeError
        # KeyError
 
-* let us add an exception handler to make it pass
+* add an exception handler to make it pass
   .. code-block:: python
 
            def test_dictionaries_raise_key_error_when_key_does_not_exist(self):
@@ -731,7 +731,7 @@ REFACTOR: make it better
            a_dictionary.setdefault('another_key')
            self.assertEqual(a_dictionary, {'bippity': 'boppity', 'another_key': None})
 
-* What if we want to add a ``key`` but set the default value to something other than ``None``? Good question, let us add a test to find out
+* What if we want to add a ``key`` but set the default value to something other than ``None``? Good question, add a test to find out
   .. code-block:: python
 
            a_dictionary.setdefault('a_new_key', 'a_default_value')

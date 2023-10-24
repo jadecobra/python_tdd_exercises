@@ -215,7 +215,7 @@ Let us try writing a test that uses a random variable for the sleep and wake tim
        E                                                     ^
        E   SyntaxError: invalid syntax
 
-  ah, there is a closing quote, with no open quote, let us add an opening quote
+  ah, there is a closing quote, with no open quote, add an opening quote
 
   .. code-block:: python
 
@@ -427,7 +427,7 @@ Let us try writing a test that uses a random variable for the sleep and wake tim
 
        E       TypeError: unsupported operand type(s) for -: 'list' and 'list'
 
-  Since we only need the first part of our list, we can get the specific item by using its index. Python uses zero-based indexing so our first item is at index 0 and the second item at 1, let us add a test to understand this
+  Since we only need the first part of our list, we can get the specific item by using its index. Python uses zero-based indexing so our first item is at index 0 and the second item at 1, add a test to understand this
 * add a failing test to ``test_string_split_method``
 
   .. code-block:: python
@@ -756,7 +756,7 @@ The ``duration`` function currently returns a subtraction of hours and a subtrac
     * ``%H`` means hour
     * ``%M`` means minute
 
-* let us add a test for ``timedelta`` to test subtracting two datetime objects
+* add a test for ``timedelta`` to test subtracting two datetime objects
 
   .. code-block:: python
 

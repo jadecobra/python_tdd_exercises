@@ -50,7 +50,7 @@ GREEN: make it pass
   * if ``p == True`` the result is ``True``
   * if ``p == False`` the result is ``False``
 
-* let us add conditions to represent our observations
+* add conditions to represent our observations
   .. code-block:: python
 
        def project_first(p, q):

@@ -76,7 +76,7 @@ GREEN: make it pass
            if p == True:
                return True
     the terminal still shows an `AssertionError <./AssertionError.rst>`_
-* let us add a condition for the second input value
+* add a condition for the second input value
   .. code-block:: python
 
        def logical_conjunction(p, q):

@@ -39,7 +39,7 @@ GREEN: make it pass
        def logical_nor(p, q):
            return False
 
-* the first 3 pass and we see a failure for the 4th case, let us add a condition for it
+* the first 3 pass and we see a failure for the 4th case, add a condition for it
   .. code-block:: python
 
        def logical_nor(p, q):

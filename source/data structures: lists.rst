@@ -92,7 +92,7 @@ How to add items to a list
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-let us add a test to ``TestLists`` in ``test_lists.py`` to learn about updating an existing list using the ``append`` method
+add a test to ``TestLists`` in ``test_lists.py`` to learn about updating an existing list using the ``append`` method
 
 .. code-block:: python
 
@@ -139,7 +139,7 @@ Remove an item from a list
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-since we know how to add an item to a ``list`` let us add a test for removing an item from a list using the ``remove`` method
+since we know how to add an item to a ``list`` add a test for removing an item from a list using the ``remove`` method
 
 .. code-block:: python
 
@@ -325,7 +325,7 @@ An ``IndexError`` is raised when we try to get an item from a list but use an in
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-let us add a failing test to illustrate this
+add a failing test to illustrate this
 
 .. code-block:: python
 

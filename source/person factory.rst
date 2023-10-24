@@ -89,7 +89,7 @@ REFACTOR: make it better
        # NameError
 
 *
-  let us add a definition for ``this_year`` to the top of ``test_person_factory.py``
+  add a definition for ``this_year`` to the top of ``test_person_factory.py``
 
   .. code-block:: python
 
@@ -159,7 +159,7 @@ REFACTOR: make it better
                "sex": "F",
            }
     *LOVELY!* the tests pass! Even though the tests pass, the factory function currently returns the exact same dictionary every time, regardless of what information is given to it. To make it more useful we need it to be able to use the inputs given.
-* let us add another test to ``test_person_factory.py`` with a different set of inputs
+* add another test to ``test_person_factory.py`` with a different set of inputs
   .. code-block:: python
 
            def test_person_factory_takes_in_variable_inputs(self):

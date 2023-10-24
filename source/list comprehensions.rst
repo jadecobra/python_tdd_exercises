@@ -77,7 +77,7 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* let us add another test to check what happens when we call the ``list`` keyword on the ``collection_a`` iterable
+* add another test to check what happens when we call the ``list`` keyword on the ``collection_a`` iterable
   .. code-block:: python
 
            self.assertEqual(list(collection_a), list_a)

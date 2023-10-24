@@ -62,7 +62,7 @@ GREEN: make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-let us add more indentation errors to ``test_indentation_error.py``
+add more indentation errors to ``test_indentation_error.py``
 
 .. code-block:: python
 
@@ -83,7 +83,7 @@ fix the offending lines until all tests are green.
 Solve the IndentationError for functions
 ----------------------------------------
 
-let us add more tests, this time indentation errors with functions *noting the difference in spacing*
+add more tests, this time indentation errors with functions *noting the difference in spacing*
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -132,7 +132,7 @@ GREEN: make it pass
 Solve the IndentationError in Classes
 -------------------------------------
 
-let us add more tests, this time to raise indentation errors for `Class <./classes.rst>`_ definitions *noting the difference in spacing*
+add more tests, this time to raise indentation errors for `Class <./classes.rst>`_ definitions *noting the difference in spacing*
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^

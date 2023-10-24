@@ -129,7 +129,7 @@ The problem with this solution is that no matter what value we send to the `Tele
 
 - RED: make it fail
 
-    let us add a new failing test to ``test_text_messages``
+    add a new failing test to ``test_text_messages``
 
 
 .. code-block:: python

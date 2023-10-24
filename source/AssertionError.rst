@@ -91,7 +91,7 @@ We can also use some methods from the ``unittest.TestCase`` class to make assert
 
 * RED: make it fail
 
-  let us add another line to ``test_AssertionErrors_with_none`` using the ``unittest.TestCase.assertIsNone`` method
+  add another line to ``test_AssertionErrors_with_none`` using the ``unittest.TestCase.assertIsNone`` method
 
   .. code-block:: python
 
@@ -143,7 +143,7 @@ We can also use some methods from the ``unittest.TestCase`` class to make assert
 
 * RED: make it fail
 
-  let us add a variation of the above statement using the identical ``unittest.TestCase`` method to ``test_AssertionErrors_with_none``
+  add a variation of the above statement using the identical ``unittest.TestCase`` method to ``test_AssertionErrors_with_none``
 
   .. code-block:: python
 
@@ -170,7 +170,7 @@ We can also use some methods from the ``unittest.TestCase`` class to make assert
 
 * RED: make it fail
 
-  let us add another test to ``test_AssertionErrors_with_none``
+  add another test to ``test_AssertionErrors_with_none``
 
   .. code-block:: python
 

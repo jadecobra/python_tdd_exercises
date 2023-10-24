@@ -14,7 +14,7 @@ Prerequisites
 Add Tests
 ---------
 
-let us add a TODO list to ``test_calculator.py`` to keep track of what we are doing
+add a TODO list to ``test_calculator.py`` to keep track of what we are doing
 
 .. code-block:: python
 
@@ -93,7 +93,7 @@ RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
 
-* let us add a method named ``test_addition`` to the ``TestCalculator`` class
+* add a method named ``test_addition`` to the ``TestCalculator`` class
 
 .. code-block:: python
     import unittest

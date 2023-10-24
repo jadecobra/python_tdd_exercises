@@ -72,7 +72,7 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* let us add a test for ``logical_false`` to teh ``TestNullaryOperations`` class in ``test_truth_table.py``
+* add a test for ``logical_false`` to teh ``TestNullaryOperations`` class in ``test_truth_table.py``
   .. code-block:: python
 
        def test_logical_false(self):

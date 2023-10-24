@@ -185,7 +185,7 @@ There's not much to do here but add more tests for practice.
 * What's another solution to the above test?
 * How can we define a function that takes in any number of parameters? see `TDD_FUNCTIONS <./TDD_functions.rst>`_
 
-let us add more tests
+add more tests
 ^^^^^^^^^^^^^^^^^^^^^
 
 RED: make it fail
@@ -269,7 +269,7 @@ and the terminal updates to show all tests pass
 REFACTOR: make it better
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-are you bored yet? let us add one more test
+are you bored yet? add one more test
 
 update ``TestTypeErrors`` in ``test_type_error.py``
 

@@ -148,7 +148,7 @@ Since we know how to catch/handle an exception with ``unittest``, there are a fe
 *
   RED: make it fail
 
-    let us add another failing line to ``test_catching_attribute_errors_in_tests``
+    add another failing line to ``test_catching_attribute_errors_in_tests``
 
   .. code-block:: python
 
@@ -372,7 +372,7 @@ You now know how to deliberately create an exception, you now have absolute powe
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-let us add exception handling to our program so it does not end when it encounters an exception but instead gives a message
+add exception handling to our program so it does not end when it encounters an exception but instead gives a message
 
 
 *
@@ -615,7 +615,7 @@ GREEN: make it pass
            finally:
                return 'always_returns_this'
     the terminal updates to show passing tests. the ``finally`` clause is always executed regardless of what happens in the ``try`` block
-* let us add one more test to verify that the code in the ``finally`` block will always execute, update ``test_finally_always_returns``
+* add one more test to verify that the code in the ``finally`` block will always execute, update ``test_finally_always_returns``
   .. code-block:: python
 
        def test_finally_always_returns(self):

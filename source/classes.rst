@@ -162,7 +162,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* let us add a class definition to ``classes.py``
+* add a class definition to ``classes.py``
 
   .. code-block:: python
 
@@ -204,13 +204,13 @@ We now know that in python
 
     From `the zen of python <https://peps.python.org/pep-0020/>`_
     ``Explicit is better than implicit``
-    we will use the explicit form of class definitions with the parent ``object`` in parentheses
+    I prefer to use the explicit form of class definitions with the parent ``object`` in parentheses
 
 
 How to define a Class with attributes
 ------------------------------
 
-Since we know how to define a class, let us add some tests for attributes
+Since we know how to define a class, add some tests for attributes
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -223,7 +223,7 @@ RED: make it fail
            def test_classes_with_attributes(self):
                self.assertEqual(classes.ClassWithAttributes.a_boolean, bool)
 
-  the terminal updates to show `AttributeError <./AttributeError.rst>`_
+  the terminal updates to show an `AttributeError <./AttributeError.rst>`_
 
 * add a class definition to ``classes.py``
 
@@ -358,7 +358,7 @@ GREEN: make it pass
   the terminal now gives an [AttributeError](./AttributeError.rst) with a different error
 
 
-* let us add the missing attribute to the ``ClassWithMethods`` class
+* add the missing attribute to the ``ClassWithMethods`` class
 
   .. code-block:: python
 
@@ -489,36 +489,36 @@ GREEN: make it pass
 
 * add a definition for the class
 
-.. code-block:: python
+  .. code-block:: python
 
 
-   class Boy(object):
+     class Boy(object):
 
-       pass
+         pass
 
   the terminal updates to show another [AttributeError](./AttributeError.rst)
 
 
 * update the ``Boy`` class with the name ``sex``
 
-.. code-block:: python
+  .. code-block:: python
 
 
-   class Boy(object):
+     class Boy(object):
 
-       sex
+         sex
 
   the terminal produces a ``NameError``
 
 
 * we add a definition for the ``sex`` attribute
 
-.. code-block:: python
+  .. code-block:: python
 
 
-   class Boy(object):
+     class Boy(object):
 
-       sex = 'M'
+         sex = 'M'
 
   the terminal updates to show passing tests. Yes!
 
@@ -527,7 +527,7 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* let us add another test to ``test_classes_with_initializers``
+* add another test to ``test_classes_with_initializers``
 
   .. code-block:: python
 
@@ -535,7 +535,7 @@ REFACTOR: make it better
            self.assertEqual(classes.Boy().sex, 'M')
            self.assertEqual(classes.Girl(sex='F').sex, 'F')
 
-  the terminal gives an `AttributeError <./AttributeError.rst>`_
+  the terminal displays an `AttributeError <./AttributeError.rst>`_
 
 * trying the same solution we used for the ``Boy`` class, add a definition for the ``Girl`` class to ``classes.py``
 
@@ -551,9 +551,9 @@ REFACTOR: make it better
   .. code-block:: python
      TypeError: Girl() takes no arguments
 
-   - If you have gone through the [functions](./07_functions.rst) chapter you will see a similarity in this last test and passing inputs to functions. The call `classes.Girl(sex='F')` looks like a call to a function with keyword arguments
-   - Which begs the question - How do we define classes to accept keyword arguments when the definition of a class defines the parent it inherits from e.g. `class Class(object)`? The answer - We use an initializer
-   - What's an initializer? a class method(function) that allows customization of `instances/copies` of a ``class``
+  - If you have gone through the [functions](./07_functions.rst) chapter you will see a similarity in this last test and passing inputs to functions. The call `classes.Girl(sex='F')` looks like a call to a function with keyword arguments
+  - Which begs the question - How do we define classes to accept keyword arguments when the definition of a class defines the parent it inherits from e.g. `class Class(object)`? The answer - We use an initializer
+  - What is an initializer? a class method(function) that allows customization of `instances/copies` of a ``class``
 
 
 * add an initiializer to the ``Girl`` class
@@ -583,7 +583,7 @@ REFACTOR: make it better
 
   the terminal updates to show passing tests
 
-* let us add another test for a class initializer to ``test_classes_with_initializers``
+* add another test for a class initializer to ``test_classes_with_initializers``
 
   .. code-block:: python
 
