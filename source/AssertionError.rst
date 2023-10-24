@@ -38,6 +38,8 @@ When building a program we have certain expectations based on given inputs. To t
 
 A difference between our expectations and reality (the result of our programs), gives us a clue about what changes are needed to make them match.
 
+----
+
 AssertionError with None
 ------------------------
 
@@ -284,6 +286,7 @@ we will update ``test_assertion_errors_with_false`` to make it pass
     self.assertFalse(False)
 
 the terminal updates to show passing tests and we now know that in python
+
 * ``False`` is ``False``
 * ``False`` is not ``True``
 * ``None`` is ``None``
@@ -357,7 +360,7 @@ This was one of the options to solve the failing test in `How I setup a Test Dri
 * ``True`` is not ``None``
 * ``False`` is not ``None``
 
-We could sum up the above statements this way - in python ``True``, ``False`` and ``None`` are different. Understanding these differences helps us write useful programs. They show how python behaves and form our core truths - a foundation of predictable expectations of the language.
+We could sum up the above statements this way - in python ``True``, ``False`` and ``None`` are different. Understanding these differences helps us write useful programs. They show how python behaves and form our core truths, a foundation of predictable expectations of the language.
 
 ----
 
@@ -434,7 +437,6 @@ REFACTOR: make it better
 
   We have learned that in python
 
-
   * ``True`` is ``True``
   * ``True`` is not ``False``
   * ``False`` is ``False``
@@ -489,7 +491,6 @@ REFACTOR: make it better
 
   the terminal updates to show passing tests. We can now say that in python
 
-
   * ``True`` is ``True``
   * ``True`` is not ``False``
   * ``False`` is ``False``
@@ -534,6 +535,7 @@ REFACTOR: make it better
   * ``False`` is not ``None`` and ``False`` is not equal to ``None``
 
 ----
+
 
 *WELL DONE!* Your magic powers are growing. From our experiments you now know
 
