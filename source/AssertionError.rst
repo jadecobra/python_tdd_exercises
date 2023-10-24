@@ -87,7 +87,8 @@ We can also use some methods from the ``unittest.TestCase`` class to make assert
 
 
 * RED: make it fail
-    let us add another line to ``test_assertion_errors_with_none`` using the ``unittest.TestCase.assertIsNone`` method
+
+  let us add another line to ``test_assertion_errors_with_none`` using the ``unittest.TestCase.assertIsNone`` method
 
   .. code-block:: python
 
@@ -104,7 +105,8 @@ We can also use some methods from the ``unittest.TestCase`` class to make assert
   since ``False is not None`` we get an ``AssertionError``
 
 * GREEN: make it pass
-    when we update the assert statement to
+
+  when we update the assert statement to
 
   .. code-block:: python
 
@@ -113,6 +115,7 @@ We can also use some methods from the ``unittest.TestCase`` class to make assert
   the terminal displays passing tests because this ``assert`` statement is ``True``, which tells us that in python ``False`` is not ``None``
 
 * RED: make it fail
+
   we add another test to ``test_assertion_errors_with_none`` to find out the relation of ``None`` to ``True``
 
   .. code-block:: python
@@ -126,6 +129,7 @@ We can also use some methods from the ``unittest.TestCase`` class to make assert
       E       assert True is None
 
 * GREEN: make it pass
+
   when we update the failing line in ``test_assertion_errors_with_none`` to
 
   .. code-block:: python
@@ -134,6 +138,7 @@ We can also use some methods from the ``unittest.TestCase`` class to make assert
 
   the terminal reveals passing tests
 * RED: make it fail
+
   let us add a variation of the above statement using the identical ``unittest.TestCase`` method to ``test_assertion_errors_with_none``
 
   .. code-block:: python
@@ -147,6 +152,7 @@ We can also use some methods from the ``unittest.TestCase`` class to make assert
     E       AssertionError: True is not None
 
 * GREEN: make it pass
+
   update the failing line in ``test_assertion_errors_with_none`` to make it pass
 
   .. code-block:: python
@@ -159,6 +165,7 @@ We can also use some methods from the ``unittest.TestCase`` class to make assert
   * ``False`` is not ``None``
 
 * RED: make it fail
+
   let us add another test to ``test_assertion_errors_with_none``
 
   .. code-block:: python
@@ -172,6 +179,7 @@ We can also use some methods from the ``unittest.TestCase`` class to make assert
       E       assert None is not None
 
 * GREEN: make it pass
+
   change the failing line in ``test_assertion_errors_with_none`` to make it pass
 
   .. code-block:: python
@@ -180,6 +188,7 @@ We can also use some methods from the ``unittest.TestCase`` class to make assert
 
   the terminal changes to show passing tests
 * RED: make it fail
+
   add another test to ``test_assertion_errors_with_none`` using the ``unittest.TestCase`` method
 
   .. code-block:: python
@@ -194,6 +203,7 @@ We can also use some methods from the ``unittest.TestCase`` class to make assert
       E       AssertionError: unexpectedly None
 
 * GREEN: make it pass
+
   update ``test_assertion_errors_with_none`` to make it pass
 
   .. code-block:: python
@@ -383,6 +393,7 @@ REFACTOR: make it better
 
 
 * RED: make it fail
+
   update ``test_assertion_errors_with_equality`` with the equivalent ``unittest.TestCase`` method
 
   .. code-block:: python
@@ -407,6 +418,7 @@ REFACTOR: make it better
               assert positional_argument_1 == positional_argument_2
 
 * GREEN: make it pass
+
   change ``test_assertion_errors_with_equality`` to make it pass
 
   .. code-block:: python
@@ -425,6 +437,7 @@ REFACTOR: make it better
   * ``False`` is not ``None`` and ``False`` is not equal to ``None``
 
 * RED: make it fail
+
   we add a new line to ``test_assertion_errors_with_equality``
 
   .. code-block:: python
@@ -438,6 +451,7 @@ REFACTOR: make it better
       E       assert True == None
 
 * GREEN: make it pass
+
   update the line we added in ``test_assertion_errors_with_equality`` to make it pass
 
   .. code-block:: python
@@ -445,6 +459,7 @@ REFACTOR: make it better
       assert True != None
 
 * RED: make it fail
+
   add the equivalent ``unittest.TestCase`` method to ``test_assertion_errors_with_equality``
 
   .. code-block:: python
@@ -458,6 +473,7 @@ REFACTOR: make it better
       E       AssertionError: True != None
 
 * GREEN: make it pass
+
   update ``test_assertion_errors_with_equality`` to make it pass
 
   .. code-block:: python
@@ -478,6 +494,7 @@ REFACTOR: make it better
   There is a pattern here, let us update the test with the other cases from our statement above in the same manner
 
 * RED: make it fail
+
   add the tests below to ``test_assertion_errors_with_equality``
 
   .. code-block:: python
