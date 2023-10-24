@@ -33,7 +33,7 @@ RED: make it fail
 
     the terminal updates to show
 
-  .. code-block:: shell
+  .. code-block:: python
 
        E       'b'
        E   IndentationError: unexpected indent
@@ -73,7 +73,7 @@ let us add more indentation errors to ``test_indentation_error.py``
 
 The terminal updates to show
 
-.. code-block:: shell
+.. code-block:: python
 
    E       'c'
    E   IndentationError: unexpected indent
@@ -154,7 +154,7 @@ RED: make it fail
 
     the terminal will update to show an ``IndentationError`` and the offending line
 
-  .. code-block:: shell
+  .. code-block:: python
 
        E    IndentationError: expected an indented block after class definition on line 18
 
@@ -202,7 +202,7 @@ RED: make it fail
 
     the terminal displays an IndentationError and the line that caused the exception
 
-  .. code-block:: shell
+  .. code-block:: python
 
        E    IndentationError: expected an indented block after function definition on line 28
 
@@ -243,7 +243,7 @@ RED: make it fail
               attribute = None
           attribute = None
     the terminal will update to show an IndentationError and the offending line
-  .. code-block:: shell
+  .. code-block:: python
 
        E    IndentationError: unexpected indent
 

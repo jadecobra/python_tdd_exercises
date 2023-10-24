@@ -38,7 +38,7 @@ let us add a TODO list to ``test_calculator.py`` to keep track of what we are do
 
 the terminal responds to our change, with the one test still passing from `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_
 
-.. code-block:: shell
+.. code-block:: python
 
    ==================== 1 passed in 0.01s ======================
 

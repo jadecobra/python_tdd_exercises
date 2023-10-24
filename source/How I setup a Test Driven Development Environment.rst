@@ -34,7 +34,7 @@ Setup
 
    * `download and install Git <https://github.com/git-for-windows/git/releases/download/v2.41.0.windows.3/Git-2.41.0.3-32-bit.exe>`_
    * open a command line or PowerShell terminal and install WSLv2 by typing
-     .. code-block:: shell
+     .. code-block:: python
 
         wsl --install`
 
@@ -46,7 +46,7 @@ File Structure
 
 
 * type the following in a terminal to setup the directory structure
-  .. code-block:: shell
+  .. code-block:: python
 
        mkdir -p {PROJECT_NAME}/tests
        cd {PROJECT_NAME}
@@ -100,7 +100,7 @@ RED: make it fail
 *
   to test the code, write the following in the terminal
 
-  .. code-block:: shell
+  .. code-block:: python
 
        python3 -m unittest
 
@@ -172,13 +172,13 @@ GREEN: make it pass
 *
   run the test again from the terminal
 
-  .. code-block:: shell
+  .. code-block:: python
 
        python3 -m unittest
 
     the terminal updates to show
 
-  .. code-block:: shell
+  .. code-block:: python
 
        .
        ------------------------------------------------------
@@ -238,7 +238,7 @@ Create a Virtual Environment
        pytest-watch
 
 * save the file and type the following in the terminal
-  .. code-block:: shell
+  .. code-block:: python
 
        python3 -m venv .venv
        source .venv/bin/activate
@@ -267,7 +267,7 @@ You just created a `virtual environment <https://docs.python.org/3/library/venv.
 *
   type ``pytest-watch`` in the terminal to run the tests and the terminal displays
 
-  .. code-block:: shell
+  .. code-block:: python
 
        [TODAYS_DATE] Running: py.test
        ======================= test session starts==========================
@@ -302,7 +302,7 @@ You made it this far and have become the greatest programmer in the world, let u
 *
   open a new file in your Interactive Development Environment(IDE) and type the following then save the file with a name that describes what it does so you remember later, e.g. ``setupPythonTdd.sh``
 
-  .. code-block:: shell
+  .. code-block:: python
 
        project_name=$1
        mkdir -p $project_name/tests
@@ -330,7 +330,7 @@ You made it this far and have become the greatest programmer in the world, let u
        pytest-watch
 
 * make the program executable by typing this command in the terminal
-  .. code-block:: shell
+  .. code-block:: python
 
        chmod +x setupPythonTdd.sh
 

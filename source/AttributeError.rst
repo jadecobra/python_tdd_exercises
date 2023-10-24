@@ -49,7 +49,7 @@ What does the code above mean?
 
 If you left ``pytest-watch`` running from `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_ you should see a message similar to the following in the terminal
 
-.. code-block:: shell
+.. code-block:: python
 
    ImportError while importing test module '/<PATH_TO_PROJECT_NAME>/{PROJECT_NAME}/tests/test_attribute_error.py'.
    Hint: make sure your test modules/packages have valid python names.
@@ -66,14 +66,14 @@ GREEN: make it pass
 
 
 * we update the running list of exceptions encountered
+
   .. code-block:: python
 
        # Exceptions Encountered
        # AssertionError
        # ModuleNotFoundError
 
-*
-  create ``module.py`` in the ``{PROJECT_NAME}`` folder and the terminal will update to show the following
+* create ``module.py`` in the ``{PROJECT_NAME}`` folder and the terminal will update to show the following
 
   .. code-block:: python
 
@@ -83,11 +83,12 @@ GREEN: make it pass
        >       self.assertIsNone(module.variable_0)
        E       AttributeError: module 'module' has no attribute 'variable_0'
 
-    Looking at the traceback starting from the bottom
+  Looking at the traceback starting from the bottom
 
 
   * ``tests/test_attribute_error.py:7: AttributeError`` the location i.e. filename and line number and name of the Exception that is raised
   * ``E       AttributeError: module 'module' has no attribute 'variable_0'`` an explanation of the error raised. The module we imported has no definitions named ``variable_0``. We update our list of exceptions encountered
+
     .. code-block:: python
 
          # Exceptions Encountered
@@ -103,7 +104,9 @@ GREEN: make it pass
   .. code-block:: python
 
        variable_0
-    The terminal will update to show the following
+
+  The terminal will update to show the following
+
   .. code-block::
 
        tests/test_attribute_error.py:2: in <module>
@@ -111,37 +114,38 @@ GREEN: make it pass
        module.py:1: in <module>
            variable_0
        E   NameError: name 'variable_0' is not defined
-    Looking at the traceback going from the bottom upwards
+
+  Looking at the traceback going from the bottom upwards
 
   * ``E   NameError: name 'variable_0' is not defined`` this is a new error, we add it to our running list of errors encountered. The running list of exceptions encountered is now
+
     .. code-block::
 
-         # Exceptions Encountered
-         # AssertionError
-         # ModuleNotFoundError
-         # AttributeError
-         # NameError
+        # Exceptions Encountered
+        # AssertionError
+        # ModuleNotFoundError
+        # AttributeError
+        # NameError
 
   * ``variable_0`` the offending line
   * ``module.py:1: in <module>`` the location of the offending line
 
-*
-  Update the failing line in ``module.py`` in the Interactive Development Environment(IDE) to fix it
+* update the failing line in ``module.py`` in the Interactive Development Environment(IDE) to fix it
 
   .. code-block:: python
 
-       variable_0 = None
+      variable_0 = None
 
-    this explicity defines ``variable_0`` with a value of ``None`` and the terminal updates to show a passing test. YES!
+  this explicity defines ``variable_0`` with a value of ``None`` and the terminal updates to show a passing test. YES!
 
-  .. code-block:: shell
+  .. code-block:: python
 
-       collected 2 items
+      collected 2 items
 
-       tests/test_attribute_error.py .                                             [ 50%]
-       tests/test_{PROJECT_NAME}.py .                                              [100%]
+      tests/test_attribute_error.py .                                             [ 50%]
+      tests/test_{PROJECT_NAME}.py .                                              [100%]
 
-       ============================== 2 passed in 0.03s==================================
+      ============================== 2 passed in 0.03s==================================
 
 What is similar? What is different?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -150,11 +154,9 @@ An ``AttributeError`` occurs when there is a reference to a name in an object fr
 
 What is similar between ``ModuleNotFoundError``, ``AttributeError`` and ``NameError``?
 
-..
+..NOTE::
 
-   NOTE
-
-   In python ``=`` is used to assign names to objects, for example ``five = 5``, means we can later refer to the number ``5`` with the name ``five``, the equality sign ``==`` on the other hand is used to check if two things are equal e.g. ``5 == 4`` means "is ``5`` is equal to ``4``?"
+  In python ``=`` is used to assign names to objects, for example ``five = 5``, means we can later refer to the number ``5`` with the name ``five``, the equality sign ``==`` on the other hand is used to check if two things are equal e.g. ``5 == 4`` means "is ``5`` is equal to ``4``?"
 
 
 REFACTOR: make it better
@@ -167,113 +169,139 @@ RED: make it fail
 
 
 * add a failing line to ``test_defining_variables_to_solve_attribute_errors``
+
   .. code-block:: python
 
-           def test_defining_variables_to_solve_attribute_errors(self):
-               self.assertIsNone(module.variable_0)
-               self.assertIsNone(module.variable_1)
-    the terminal will update to show an ``AttributeError``
+      def test_defining_variables_to_solve_attribute_errors(self):
+          self.assertIsNone(module.variable_0)
+          self.assertIsNone(module.variable_1)
+
+  the terminal will update to show an ``AttributeError``
+
   .. code-block:: python
 
-       E       AttributeError: module 'module' has no attribute 'variable_1'
-  GREEN: make it pass
+      E       AttributeError: module 'module' has no attribute 'variable_1'
+
+GREEN: make it pass
+~~~~~~~~~~~~~~~~~~~
+
 * RED: make it fail - add the name to ``module.py``
+
   .. code-block:: python
 
-       variable_0 = None
-       variable_1
-    the terminal reveals a ``NameError``
+      variable_0 = None
+      variable_1
+
+  the terminal reveals a ``NameError``
+
   .. code-block:: python
 
-       E   NameError: name 'variable_1' is not defined
+      E   NameError: name 'variable_1' is not defined
 
 * GREEN: make it pass - add a definition for ``variable_1``
+
   .. code-block:: python
 
-       variable_0 = None
-       variable_1 = None
-    the terminal displays passing tests
+      variable_0 = None
+      variable_1 = None
+
+  the terminal displays passing tests
 
 RED: make it fail
 ~~~~~~~~~~~~~~~~~
 
 
 * we add another failing line to ``test_defining_variables_to_solve_attribute_errors``
+
   .. code-block:: python
 
-       def test_defining_variables_to_solve_attribute_errors(self):
-           self.assertIsNone(module.variable_0)
-           self.assertIsNone(module.variable_1)
-           self.assertIsNone(module.variable_2)
-    the terminal updates with an ``AttributeError``
-  .. code-block:: shell
+    def test_defining_variables_to_solve_attribute_errors(self):
+        self.assertIsNone(module.variable_0)
+        self.assertIsNone(module.variable_1)
+        self.assertIsNone(module.variable_2)
 
-       >       self.assertIsNone(module.variable_2)
-       E       AttributeError: module 'module' has no attribute 'variable_2'
+  the terminal updates with an ``AttributeError``
+
+  .. code-block:: python
+
+      >       self.assertIsNone(module.variable_2)
+      E       AttributeError: module 'module' has no attribute 'variable_2'
 
 GREEN: make it pass
 ~~~~~~~~~~~~~~~~~~~
 
 
 * RED: make it fail - add the name to ``module.py``
+
   .. code-block:: python
 
-       variable_0 = None
-       variable_1 = None
-       variable_2
-    the terminal outputs a ``NameError``
-  .. code-block:: shell
+      variable_0 = None
+      variable_1 = None
+      variable_2
 
-       E   NameError: name 'variable_2' is not defined
+  the terminal outputs a ``NameError``
+
+  .. code-block:: python
+
+      E   NameError: name 'variable_2' is not defined
 
 * GREEN: make it pass - define ``variable_2`` in ``module.py``
+
   .. code-block:: python
 
-       variable_0 = None
-       variable_1 = None
-       variable_2 = None
-    The tests pass
+      variable_0 = None
+      variable_1 = None
+      variable_2 = None
+
+  The tests pass
 
 RED: make it fail
 ~~~~~~~~~~~~~~~~~
 
 
 * we add another failing line to ``test_defining_variables_to_solve_attribute_errors``
+
   .. code-block:: python
 
-       def test_defining_variables_to_solve_attribute_errors(self):
-           self.assertIsNone(module.variable_0)
-           self.assertIsNone(module.variable_1)
-           self.assertIsNone(module.variable_2)
-           self.assertIsNone(module.variable_3)
-    the terminal gives an ``AttributeError``
-  .. code-block:: shell
+      def test_defining_variables_to_solve_attribute_errors(self):
+          self.assertIsNone(module.variable_0)
+          self.assertIsNone(module.variable_1)
+          self.assertIsNone(module.variable_2)
+          self.assertIsNone(module.variable_3)
 
-       E       AttributeError: module 'module' has no attribute 'variable_3'
+  the terminal gives an ``AttributeError``
+
+  .. code-block:: python
+
+      E       AttributeError: module 'module' has no attribute 'variable_3'
 
 GREEN: make it pass
 """""""""""""""""""
 
 
 * RED: make it fail - we add the name
+
   .. code-block:: python
 
-       variable_0 = None
-       variable_1 = None
-       variable_2 = None
-       variable_3
-    the terminal displays a ``NameError``
-  .. code-block:: shell
+      variable_0 = None
+      variable_1 = None
+      variable_2 = None
+      variable_3
 
-       E   NameError: name 'variable_3' is not defined
+  the terminal displays a ``NameError``
+
+  .. code-block:: python
+
+      E   NameError: name 'variable_3' is not defined
 
 * GREEN: make it pass - we define the name
+
   .. code-block:: python
 
-       variable_0 = None
-       variable_1 = None
-       variable_2 = None
-       variable_3 = None
+      variable_0 = None
+      variable_1 = None
+      variable_2 = None
+      variable_3 = None
 
 We have a pattern for our drill. When we test an attribute in a module, we encounter
 
@@ -286,15 +314,15 @@ Update the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` by 
 
 .. code-block:: python
 
-       def test_defining_variables_to_solve_attribute_errors(self):
-           self.assertIsNone(module.variable_0)
-           self.assertIsNone(module.variable_1)
-           self.assertIsNone(module.variable_2)
-           self.assertIsNone(module.variable_3)
-           ...
-           self.assertIsNone(module.variable_99)
-           self.assertFalse(module.false)
-           self.assertTrue(module.true)
+    def test_defining_variables_to_solve_attribute_errors(self):
+        self.assertIsNone(module.variable_0)
+        self.assertIsNone(module.variable_1)
+        self.assertIsNone(module.variable_2)
+        self.assertIsNone(module.variable_3)
+        ...
+        self.assertIsNone(module.variable_99)
+        self.assertFalse(module.false)
+        self.assertTrue(module.true)
 
 Repeat the pattern until all tests pass.
 
@@ -303,8 +331,8 @@ Repeat the pattern until all tests pass.
 * did you update ``module.py`` this way?
   .. code-block::
 
-       true = True
-       false = False
+      true = True
+      false = False
 
 *WELL DONE!* You now know
 
@@ -325,8 +353,8 @@ Update the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` wit
 
 .. code-block:: python
 
-           def test_defining_functions_to_solve_attribute_errors(self):
-               self.assertIsNone(module.function_0())
+    def test_defining_functions_to_solve_attribute_errors(self):
+        self.assertIsNone(module.function_0())
 
 the terminal updates to show
 
@@ -338,45 +366,43 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-*
-  we try the solution we know for solving ``AttributeError`` using variables and update ``module.py``
+* we try the solution we know for solving ``AttributeError`` using variables and update ``module.py``
 
   .. code-block:: python
 
-       function_0 = None
+      function_0 = None
 
-    we see a ``TypeError`` in the terminal
-
-  .. code-block:: shell
-
-       E       TypeError: 'NoneType' object is not callable
-
-    this is new so we update our list of exceptions encountered
+  we see a ``TypeError`` in the terminal
 
   .. code-block:: python
 
-       # Exceptions Encountered
-       # AssertionError
-       # ModuleNotFoundError
-       # AttributeError
-       # NameError
-       # TypeError
+      E       TypeError: 'NoneType' object is not callable
 
-    a ``TypeError`` is raised in this case because we ``called`` an object that was not ``callable``. A callable object is an object that can potentially handle inputs. We can define a callable as a ``class`` or a ``function``.
-
-    We go over callables in `Functions <./FUNCTIONS.rst>`_ and `Classes <./CLASSES.rst>`_. When an object is defined as a callable, we call it by adding parentheses at the end e.g. ``module.function_0()`` will call ``function_0`` in ``module.py``
-
-*
-  let us change ``function_0`` in ``module.py`` to a function by modifying its definition using the ``def`` keyword
+  this is new so we update our list of exceptions encountered
 
   .. code-block:: python
 
-       def function_0():
-           return None
+      # Exceptions Encountered
+      # AssertionError
+      # ModuleNotFoundError
+      # AttributeError
+      # NameError
+      # TypeError
 
-    the terminal updates to show tests pass
+  a ``TypeError`` is raised in this case because we ``called`` an object that was not ``callable``. A callable object is an object that can potentially handle inputs. We can define a callable as a ``class`` or a ``function``.
 
-  ..
+  We go over callables in `Functions <./FUNCTIONS.rst>`_ and `Classes <./CLASSES.rst>`_. When an object is defined as a callable, we call it by adding parentheses at the end e.g. ``module.function_0()`` will call ``function_0`` in ``module.py``
+
+* let us change ``function_0`` in ``module.py`` to a function by modifying its definition using the ``def`` keyword
+
+  .. code-block:: python
+
+      def function_0():
+          return None
+
+  the terminal updates to show tests pass
+
+  .. note::
 
      *What is a Function?*
 
@@ -392,20 +418,24 @@ REFACTOR: make it better
 
 
 * Time to a drill like we did with variables. Update ``test_defining_functions_to_solve_attribute_errors`` in the ``TestAttributeError`` class in\ ``tests/test_attribute_error.py`` to include calls to functions in ``module.py`` until you have one for ``module.function_99()``, you will have 100 tests in total
+
   .. code-block:: python
 
-       def test_defining_functions_to_solve_attribute_errors(self):
-           self.assertIsNone(module.function_0())
-           self.assertIsNone(module.function_1())
-           self.assertIsNone(module.function_2())
-           self.assertIsNone(module.function_3())
-           ...
-           self.assertIsNone(module.function_99())
-    the terminal updates to show an error
-  .. code-block:: shell
+      def test_defining_functions_to_solve_attribute_errors(self):
+          self.assertIsNone(module.function_0())
+          self.assertIsNone(module.function_1())
+          self.assertIsNone(module.function_2())
+          self.assertIsNone(module.function_3())
+          ...
+          self.assertIsNone(module.function_99())
 
-       E       AttributeError: module 'module' has no attribute 'function_1'
-    update ``module.py`` with the solution until all tests pass
+  the terminal updates to show an error
+
+  .. code-block:: python
+
+      E       AttributeError: module 'module' has no attribute 'function_1'
+
+  update ``module.py`` with the solution until all tests pass
 
 *YOU DID IT AGAIN!* You now know
 
@@ -424,15 +454,19 @@ RED: make it fail
 
 
 * We add a test function to the ``TestAttributeError`` class in ``tests/test_attribute_error.py``
+
   .. code-block:: python
 
        def test_defining_functions_to_solve_attribute_errors(self):
            self.assertIsNone(module.Class0())
-    the terminal shows
+
+  the terminal shows
+
   .. code-block:: python
 
-       E       AttributeError: module 'module' has no attribute 'Class0'
-    Looking at the traceback we see it's the line we added that caused the failure
+      E       AttributeError: module 'module' has no attribute 'Class0'
+
+  Looking at the traceback we see it's the line we added that caused the failure
 
   * We are familiar with an ``AttributeError``
   * This also looks exactly like the tests in ``test_defining_functions_to_solve_attribute_errors``
@@ -443,39 +477,49 @@ GREEN: make it pass
 
 
 * Update ``module.py``
+
   .. code-block:: python
 
-       Class0 = None
-    the terminal updates to show a ``TypeError``
-  .. code-block:: shell
+      Class0 = None
 
-       E       TypeError: 'NoneType' object is not callable
-    We dealt with a similar issue earlier, let us make ``Class0`` callable the way we know how. Change the variable to a function using the ``def`` keyword in ``module.py``
+  the terminal updates to show a ``TypeError``
+
   .. code-block:: python
 
-       def Class():
-           return None
-    The tests pass! Something is odd here, what is the difference between `Classes <./CLASSES.rst>`_ and `Functions <./FUNCTIONS.rst>`_\ ? Why are we writing a different set of tests for Classes if the solutions are the same?
+      E       TypeError: 'NoneType' object is not callable
+
+  We dealt with a similar issue earlier, let us make ``Class0`` callable the way we know how. Change the variable to a function using the ``def`` keyword in ``module.py``
+
+  .. code-block:: python
+
+      def Class():
+          return None
+
+  The tests pass! Something is odd here, what is the difference between `Classes <./CLASSES.rst>`_ and `Functions <./FUNCTIONS.rst>`_\ ? Why are we writing a different set of tests for Classes if the solutions are the same?
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 * let us make it a drill. Add lines to ``test_defining_functions_to_solve_attribute_errors`` in the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` until we have one for ``module.Class99()``, there will be 100 tests in total
+
   .. code-block:: python
 
-       def test_defining_classes_to_solve_attribute_errors(self):
-           self.assertIsNone(module.Class0())
-           self.assertIsNone(module.Class1())
-           self.assertIsNone(module.Class2())
-           self.assertIsNone(module.Class3())
-           ...
-           self.assertIsNone(module.Class99())
-    the terminal updates to show
-  .. code-block:: shell
+      def test_defining_classes_to_solve_attribute_errors(self):
+          self.assertIsNone(module.Class0())
+          self.assertIsNone(module.Class1())
+          self.assertIsNone(module.Class2())
+          self.assertIsNone(module.Class3())
+          ...
+          self.assertIsNone(module.Class99())
 
-           E       AttributeError: module 'module' has no attribute 'Class1'
-    update ``module.py`` with each solution until all tests pass
+  the terminal updates to show
+
+  .. code-block:: python
+
+      E       AttributeError: module 'module' has no attribute 'Class1'
+
+  update ``module.py`` with each solution until all tests pass
 
 *WELL DONE!* You now know
 
@@ -494,11 +538,14 @@ RED: make it fail
 
 
 * We add a new test to the ``TestAttributeError`` class in ``test_attribute_error.py``
+
   .. code-block:: python
 
        def test_defining_attributes_in_classes_to_solve_attribute_errors(self):
            self.assertIsNone(module.Class.attribute_0)
-    the terminal updates to show an ``AttributeError``
+
+  the terminal updates to show an ``AttributeError``
+
   .. code-block:: python
 
        >       self.assertIsNone(module.Class.attribute_0)
@@ -509,92 +556,115 @@ GREEN: make it pass
 
 
 * update ``module.py`` with a variable
+
   .. code-block:: python
 
        Class = None
-    the terminal updates to show
+
+  the terminal updates to show
+
   .. code-block:: python
 
-       E       AttributeError: 'NoneType' object has no attribute 'attribute_0'
-    change the variable to a function
+      E       AttributeError: 'NoneType' object has no attribute 'attribute_0'
+
+  change the variable to a function
+
   .. code-block:: python
 
-       def Class():
-           return None
-    the terminal updates to show
-  .. code-block:: shell
+      def Class():
+          return None
 
-       E       AttributeError: 'function' object has no attribute 'attribute_0'
-    is it possible to define an attribute in a function and access it?
-    update ``module.py``
+  the terminal updates to show
+
   .. code-block:: python
 
-       def Class():
-           attribute_0 = None
-           return None
-    the terminal still gives the same error, our experiment had no effect on the test
+      E       AttributeError: 'function' object has no attribute 'attribute_0'
+
+  is it possible to define an attribute in a function and access it? update ``module.py``
+
+  .. code-block:: python
+
+      def Class():
+          attribute_0 = None
+          return None
+
+  the terminal still gives the same error, our experiment had no effect on the test
+
 * what if we use the ``class`` keyword to define ``Class`` instead of ``def``
+
   .. code-block:: python
 
-       class Class():
-           attribute_0 = None
-           return None
-    the terminal now shows a ``SyntaxError``
-  .. code-block:: shell
+      class Class():
+          attribute_0 = None
+          return None
 
-       E       return None
-       E       ^^^^^^^^^^^
-       E   SyntaxError: 'return' outside function
+  the terminal now shows a ``SyntaxError``
+
+  .. code-block:: python
+
+      E       return None
+      E       ^^^^^^^^^^^
+      E   SyntaxError: 'return' outside function
 
 
   * We add ``SyntaxError`` to our running list of exceptions
+
     .. code-block:: python
 
-         # Exceptions Encountered
-         # AssertionError
-         # ModuleNotFoundError
-         # AttributeError
-         # NameError
-         # TypeError
-         # SyntaxError
+        # Exceptions Encountered
+        # AssertionError
+        # ModuleNotFoundError
+        # AttributeError
+        # NameError
+        # TypeError
+        # SyntaxError
 
   * The error is caused by the ``return`` statement being outside of a function
 
 * remove the return statement
+
   .. code-block:: python
 
-       class Class():
-           attribute_0 = None
-    Eureka! The Tests pass!!
+      class Class():
+          attribute_0 = None
+
+  Eureka! The Tests pass!!
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 * The current solution for ``test_defining_classes_to_solve_attribute_errors`` was done by defining functions but the test says ``definining_classes``. let us update those tests to use the proper way of defining `classes <./CLASSES.rst>`_ that we just learned. Update ``module.py`` to use ``class`` instead of ``def`` e.g.
+
   .. code-block:: python
 
-       class Class0():
-           pass
-       ...
-       class Class99():
-           pass
-    ``pass`` is a keyword used as a placeholder that does nothing
-* We now know how to properly define a class with an attribute. To practice defining an attribute we will make a drill by adding more lines like we did for variables, functions and classes, until you have a total of 100 lines with the last test for module.Class.attribute_99
+      class Class0():
+          pass
+      ...
+      class Class99():
+          pass
+
+  ``pass`` is a keyword used as a placeholder that does nothing
+
+* We now know how to properly define a class with an attribute. To practice defining an attribute we will make a drill by adding more lines like we did for variables, functions and classes, until you have a total of 100 lines with the last test for ``module.Class.attribute_99``
+
   .. code-block:: python
 
-       def test_defining_attributes_in_classes_to_solve_attribute_errors(self):
-           self.assertIsNone(module.Class.attribute_0)
-           self.assertIsNone(module.Class.attribute_1)
-           self.assertIsNone(module.Class.attribute_2)
-           self.assertIsNone(module.Class.attribute_3)
-           ...
-           self.assertIsNone(module.Class.attribute_99)
-    the terminal updates to show
+      def test_defining_attributes_in_classes_to_solve_attribute_errors(self):
+          self.assertIsNone(module.Class.attribute_0)
+          self.assertIsNone(module.Class.attribute_1)
+          self.assertIsNone(module.Class.attribute_2)
+          self.assertIsNone(module.Class.attribute_3)
+          ...
+          self.assertIsNone(module.Class.attribute_99)
+
+  the terminal updates to show
+
   .. code-block:: python
 
-       E       AttributeError: type object 'Class' has no attribute 'attribute_1'
-    update ``module.py`` with the solutions until all tests pass
+      E       AttributeError: type object 'Class' has no attribute 'attribute_1'
+
+  update ``module.py`` with the solutions until all tests pass
 
 *WELL DONE!* You now know You now know
 
@@ -617,40 +687,50 @@ RED: make it fail
 
 
 * we add a new test to the ``TestAttributeError`` class in ``test_attribute_error.py``
+
   .. code-block:: python
 
-       def test_defining_functions_in_classes_to_solve_attribute_errors(self):
-           self.assertIsNone(module.Class.method_0())
-    the terminal updates to show an ``AttributeError``
+      def test_defining_functions_in_classes_to_solve_attribute_errors(self):
+          self.assertIsNone(module.Class.method_0())
+
+  the terminal updates to show an ``AttributeError``
+
   .. code-block:: python
 
-       >       self.assertIsNone(module.Class.method_0())
-       E       AttributeError: type object 'Class' has no attribute 'method_0'
+      >       self.assertIsNone(module.Class.method_0())
+      E       AttributeError: type object 'Class' has no attribute 'method_0'
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
 * Update the class ``Class`` in ``module.py``
+
   .. code-block:: python
 
-       class Class():
-           ...
-           method_0 = None
-    the terminal will update to show a ``TypeError``
-  .. code-block:: shell
+      class Class():
+          ...
+          method_0 = None
 
-       >       self.assertIsNone(module.Class.method_0())
-       E       TypeError: 'NoneType' object is not callable
-    this is in our list of errors
+  the terminal will update to show a ``TypeError``
+
+  .. code-block:: python
+
+      >       self.assertIsNone(module.Class.method_0())
+      E       TypeError: 'NoneType' object is not callable
+
+  this is in our list of errors
+
 * using the solution we know for it, we change ``method_0`` from an attribute to a method using the ``def`` keyword to make it callable
+
   .. code-block:: python
 
-       class Class():
-           ...
-           def method_0():
-               return None
-    Fantastic! the terminal has all tests passing.
+      class Class():
+          ...
+          def method_0():
+              return None
+
+  Fantastic! the terminal has all tests passing.
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -659,13 +739,13 @@ You know the "drill", update ``test_defining_functions_in_classes_to_solve_attri
 
 .. code-block:: python
 
-       def test_defining_functions_in_classes_to_solve_attribute_errors(self):
-           self.assertIsNone(module.Class.method_0())
-           self.assertIsNone(module.Class.method_1())
-           self.assertIsNone(module.Class.method_2())
-           self.assertIsNone(module.Class.method_3())
-           ...
-           self.assertIsNone(module.Class.method_99())
+      def test_defining_functions_in_classes_to_solve_attribute_errors(self):
+          self.assertIsNone(module.Class.method_0())
+          self.assertIsNone(module.Class.method_1())
+          self.assertIsNone(module.Class.method_2())
+          self.assertIsNone(module.Class.method_3())
+          ...
+          self.assertIsNone(module.Class.method_99())
 
 repeat the solution until all tests pass
 
@@ -677,11 +757,11 @@ repeat the solution until all tests pass
 * How to solve `AttributeError <./ATTRIBUTE_ERROR.rst>`_ by defining variables, `functions <./FUNCTIONS.rst>`_ and `classes <./CLASSES.rst>`_
 * How to solve `AttributeError <./ATTRIBUTE_ERROR.rst>`_ by defining
 
-  * variables
-  * `functions <./FUNCTIONS.rst>`_
-  * `classes <./ASSERTION_ERROR.rst>`_
-  * attributes(variables) in classes
-  * methods(functions) in classes
+  - variables
+  - `functions <./FUNCTIONS.rst>`_
+  - `classes <./ASSERTION_ERROR.rst>`_
+  - attributes(variables) in classes
+  - methods(functions) in classes
 
 *WHAT IS THE DIFFERENCE BETWEEN CLASSES AND FUNCTIONS?*
 
