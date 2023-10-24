@@ -65,7 +65,9 @@ the terminal updates to show
 
   tests/test_assertion_error.py:7: AssertionError
 
-This ``AssertionError`` is raised by the line ``assert False is None``, which is similar to asking the question "is ``False`` the same as ``None``?" The difference is that the ``assert`` at the beginning of the line makes the statement more like "DO NOT PROCEED UNLESS ``False`` is ``None``"
+This ``AssertionError`` is raised by the line ``assert False is None``, which is similar to asking the question "is ``False`` the same as ``None``?"
+
+The difference is that the ``assert`` at the beginning of the line makes the statement more like "DO NOT PROCEED UNLESS ``False`` is ``None``"
 
 Since ``None`` and ``False`` are different objects and not equal, the ``assert`` statement is ``False`` and python raises an ``AssertionError``
 
