@@ -8,7 +8,7 @@ Prerequisites
 -------------
 
 
-* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_
+* `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_
 
 ----
 
@@ -16,7 +16,7 @@ What is an AssertionError?
 --------------------------
 
 An ``AssertionError`` is an Exception that is raised when the result of an ``assert`` statement is ``False``.
-We encountered this when we wrote the first failing test below in `Setup TDD <./How I How I setup a Test Driven Development Environment.rst>`_
+We encountered this when we wrote the first failing test below in `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_
 
 .. code-block:: python
 
@@ -271,7 +271,7 @@ the terminal updates to show a failure
 
    E       AssertionError: True is not false
 
-this is familiar, it was the first failing test we wrote in `How I How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_
+this is familiar, it was the first failing test we wrote in `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -343,7 +343,7 @@ we update ``test_assertion_errors_with_false`` to make it pass
 
     self.assertTrue(True)
 
-This was one of the options to solve the failing test in `How I How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_. Our knowledge of python has grown, we now know that
+This was one of the options to solve the failing test in `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_. Our knowledge of python has grown, we now know that
 
 
 * ``True`` is ``True``

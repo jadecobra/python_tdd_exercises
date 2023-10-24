@@ -7,7 +7,7 @@ Prerequisites
 -------------
 
 
-* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_
+* `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_
 
 ----
 
@@ -23,7 +23,7 @@ Solve AttributeError by defining a Variable
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-We open a new file, save it as ``test_attribute_error.py`` in the ``tests`` folder created in `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_ and type the following
+We open a new file, save it as ``test_attribute_error.py`` in the ``tests`` folder created in `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_ and type the following
 
 .. code-block:: python
 
@@ -47,7 +47,7 @@ What does the code above mean?
 * ``assertIsNone`` is one of the helper functions inherited from ``unittest.TestCase``. We learn more about this in `AssertionError <./ASSERTION_ERROR.rst>`_
 * ``self`` refers to the ``TestAttributeError`` class
 
-If you left ``pytest-watch`` running from `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_ you should see a message similar to the following in the terminal
+If you left ``pytest-watch`` running from `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_ you should see a message similar to the following in the terminal
 
 .. code-block:: shell
 
@@ -299,7 +299,7 @@ Update the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` by 
 Repeat the pattern until all tests pass.
 
 
-* What's your solution to the last two tests? They are similar to the test for failure in `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_
+* What's your solution to the last two tests? They are similar to the test for failure in `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_
 * did you update ``module.py`` this way?
   .. code-block::
 

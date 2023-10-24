@@ -8,7 +8,7 @@ Prerequisites
 -------------
 
 
-* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_
+* `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_
 
 ----
 
@@ -29,7 +29,7 @@ RED: make it fail
 
 
 *
-  Open a new file in the editor and save it as ``tests/test_type_error.py`` in the ``tests`` folder you created in `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_ and type the following in the file
+  Open a new file in the editor and save it as ``tests/test_type_error.py`` in the ``tests`` folder you created in `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_ and type the following in the file
 
 
 .. code-block:: python

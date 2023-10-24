@@ -7,7 +7,7 @@ Prerequisites
 -------------
 
 
-* `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_ with ``calculator`` as the project name
+* `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_ with ``calculator`` as the project name
 
 ----
 
@@ -36,7 +36,7 @@ let us add a TODO list to ``test_calculator.py`` to keep track of what we are do
    # Exceptions Encountered
    # AssertionError
 
-the terminal responds to our change, with the one test still passing from `How I setup a Test Driven Development Environment <./How I How I setup a Test Driven Development Environment.rst>`_
+the terminal responds to our change, with the one test still passing from `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_
 
 .. code-block:: shell
 
@@ -233,7 +233,7 @@ GREEN: make it pass
 
        E       AssertionError: None != 1
 
-    An ``AssertionError`` was the first error we encountered in `Setup TDD <./How I How I setup a Test Driven Development Environment.rst>`_ after adding a test for failure.
+    An ``AssertionError`` was the first error we encountered in `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_ after adding a test for failure.
     It is raised when an assertion is ``False``, since we are using ``self.assertEqual`` it means the two things we provided as inputs are not equal. In other words ``calculator.add(0, 1)`` is currently not equal to ``1``. Let us update the ``add`` function in ``calculator.py`` so it gives the expected value
 
   .. code-block:: python
