@@ -745,7 +745,7 @@ REFACTOR: make it better
 Why did that work?
 
 
-* the ``Boy``\ , ``Girl`` and ``Other`` class now inherit from the ``Human`` class which means they all get the same methods and attributes that the ``Human`` class has, including the ``__init__`` method
+* the ``Boy``, ``Girl`` and ``Other`` class now inherit from the ``Human`` class which means they all get the same methods and attributes that the ``Human`` class has, including the ``__init__`` method
 * ``self.sex`` within each class refers to the ``sex`` attribute in the class, allowing its definition from the withing the ``__init__`` method
 * since ``self.sex`` is defined as a class attribute, it is accessible from outside the class as we do in our tests i.e ``classes.Girl(sex='F').sex`` and ``classes.Other(sex='?').sex``
 

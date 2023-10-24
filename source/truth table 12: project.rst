@@ -45,7 +45,7 @@ GREEN: make it pass
        def project_first(p, q):
            return True
     the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ for the third case
-* before we add a condition for it, this looks similar to ``logical_equality``\ , ``exclusive_disjunction``\ , ``negate_first`` and ``negate_second`` because 2 out of the 4 cases have the same return value. We observe that
+* before we add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction``, ``negate_first`` and ``negate_second`` because 2 out of the 4 cases have the same return value. We observe that
 
   * if ``p == True`` the result is ``True``
   * if ``p == False`` the result is ``False``
@@ -120,7 +120,7 @@ GREEN: make it pass
        def project_second(p, q):
            return True
     the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ for the second case
-* before we add a condition for it, this looks similar to ``logical_equality``\ , ``exclusive_disjunction``\ , ``negate_first``\ , ``negate_second`` and ``project_first`` because 2 out of the 4 cases have the same return value. We observe that
+* before we add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction``, ``negate_first``, ``negate_second`` and ``project_first`` because 2 out of the 4 cases have the same return value. We observe that
 
   * if ``q == True`` the result is ``True``
   * if ``q == False`` the result is ``False``
@@ -155,8 +155,8 @@ Since there is no refactoring to do here, we update what we know so far. For any
 * ``logical_equality`` is ``==``
 * ``logical_disjunction`` is ``or``
 * ``logical_conjunction`` is ``and``
-* ``and`` is "not ``or``\ "
-* ``or`` is "not ``and``\ "
+* ``and`` is "not ``or``"
+* ``or`` is "not ``and``"
 * ``False`` is ``not True``
 * ``True`` is ``not False``
 * ``False`` is ``False``

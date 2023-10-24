@@ -94,7 +94,7 @@ REFACTOR: make it better
   * we add a condition for when the value of ``p`` is equal to ``True`` and inside that condition we have another for when the value of ``q`` is equal to ``True``
   * if both conditions are met, the ``logical_conjunction`` function returns True but what does it do when those two conditions are not met?
 
-* we know by default a function returns ``None`` so it must be returning ``None`` for the other cases. Does this mean ``None`` is ``False``\ ? We know the answer to this from `data structures <./06_DATA_STRUCTURES.rst>`_\ , let us test it as a reminder. add another return statement to the definition of ``logical_conjunction``
+* we know by default a function returns ``None`` so it must be returning ``None`` for the other cases. Does this mean ``None`` is ``False``? We know the answer to this from `data structures <./06_DATA_STRUCTURES.rst>`_\ , let us test it as a reminder. add another return statement to the definition of ``logical_conjunction``
   .. code-block:: python
 
        def logical_conjunction(p, q):

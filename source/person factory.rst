@@ -217,7 +217,7 @@ REFACTOR: make it better
 
     *HOORAY!* the terminal updates to show passing tests
 
-* we will now add another test to ``test_person.py``\ , this time for default values
+* we will now add another test to ``test_person.py``, this time for default values
   .. code-block:: python
 
        def test_person_factory_with_default_keyword_arguments(self):

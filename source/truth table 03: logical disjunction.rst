@@ -64,7 +64,7 @@ REFACTOR: make it better
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-* we know from earlier that when we have a nested if statement it can be replaced with an ``and``\ , so we update our condition
+* we know from earlier that when we have a nested if statement it can be replaced with an ``and``, so we update our condition
   .. code-block:: python
 
        def logical_disjunction(p, q):
@@ -102,7 +102,7 @@ REFACTOR: make it better
            if not p not and not q:
                return False
            return True
-    We get a ``SyntaxError``\ , the result of the "multiplication" is different from what we started with so we need something different. It should be something that expands out to
+    We get a ``SyntaxError``, the result of the "multiplication" is different from what we started with so we need something different. It should be something that expands out to
   .. code-block:: python
 
        def logical_disjunction(p, q):
@@ -184,8 +184,8 @@ REFACTOR: make it better
 Our knowledge is updated to show that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
 
 
-* ``and`` is "not ``or``\ "
-* ``or`` is "not ``and``\ "
+* ``and`` is "not ``or``"
+* ``or`` is "not ``and``"
 * ``logical_disjunction`` is ``or``
 * ``logical_conjunction`` is ``and``
 * ``False`` is ``not True``

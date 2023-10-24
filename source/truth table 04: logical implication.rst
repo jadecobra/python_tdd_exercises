@@ -6,8 +6,8 @@ We will continue to step through learning conditional statements in python using
 Reviewing what we know so far, for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
 
 
-* ``and`` is "not ``or``\ "
-* ``or`` is "not ``and``\ "
+* ``and`` is "not ``or``"
+* ``or`` is "not ``and``"
 * ``logical_disjunction`` is ``or``
 * ``logical_conjunction`` is ``and``
 * ``False`` is ``not True``

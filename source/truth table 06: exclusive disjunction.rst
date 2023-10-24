@@ -64,7 +64,7 @@ REFACTOR: make it better
 let us try to refactor those statements to make them better
 
 
-* in the first case ``p`` and ``q`` have the same value, can we change the statement to reflect this like we did with ``logical_equality``\ ?
+* in the first case ``p`` and ``q`` have the same value, can we change the statement to reflect this like we did with ``logical_equality``?
   .. code-block:: python
 
        def exclusive_disjunction(p, q):
@@ -146,8 +146,8 @@ What do we know so far? For any boolean operation involving 2 inputs - ``p`` and
 * ``logical_equality`` is ``==``
 * ``logical_disjunction`` is ``or``
 * ``logical_conjunction`` is ``and``
-* ``and`` is "not ``or``\ "
-* ``or`` is "not ``and``\ "
+* ``and`` is "not ``or``"
+* ``or`` is "not ``and``"
 * ``False`` is ``not True``
 * ``True`` is ``not False``
 * ``False`` is ``False``

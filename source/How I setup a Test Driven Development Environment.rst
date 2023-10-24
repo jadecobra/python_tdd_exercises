@@ -54,7 +54,7 @@ File Structure
        touch tests/__init__.py
        touch tests/test_{PROJECT_NAME}.py
 
-* ``{PROJECT_NAME}`` is a placeholder for the name of the project e.g. if you are building a project called ``the_greatest_application``\ , replace ``{PROJECT_NAME}`` with ``the_greatest_application``. We are going to place all our code for this project in the ``{PROJECT_NAME}`` folder
+* ``{PROJECT_NAME}`` is a placeholder for the name of the project e.g. if you are building a project called ``the_greatest_application``, replace ``{PROJECT_NAME}`` with ``the_greatest_application``. We are going to place all our code for this project in the ``{PROJECT_NAME}`` folder
 * Tests are stored in the ``tests`` folder to separate them from the actual source code
 * The ``__init__.py`` file in the ``tests`` folder tells python that it is a python package
 * The actual test file is called ``test_{PROJECT_NAME}.py``
@@ -130,7 +130,7 @@ The error provides important information about the code. Looking at it from the 
 
 * ``FAILED (failures=1)`` The test failed - RED
 * ``Ran 1 test in 0.000s`` tells us how long it took to run the test
-* ``AssertionError: True is not false`` The error is an `AssertionError <./ASSERTION_ERROR.rst>`_ which is raised by python when an assert statement is ``False``\ , in this case ``True is not false``
+* ``AssertionError: True is not false`` The error is an `AssertionError <./ASSERTION_ERROR.rst>`_ which is raised by python when an assert statement is ``False``, in this case ``True is not false``
 * ``self.assertFalse(True)`` the line of code that caused the failure
 * ``File "/<PATH_TO_PROJECT>/{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py", line 7, in test_failure`` the line number and location of the file where the error occurred. Clicking on this line will place your cursor at the position in the Interactive Development Environment(IDE)
 * ``Traceback (most recent call last):`` all the information returned by python for the exception is the traceback, showing the most recent call python made last

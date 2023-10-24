@@ -148,13 +148,13 @@ What is similar? What is different?
 
 An ``AttributeError`` occurs when there is a reference to a name in an object from outside the object and the name does not exist e.g. ``humans.wings`` while a ``NameError`` occurs when there is a reference to a name within an object and there is no prior definition of the name e.g. ``wings``
 
-What is similar between ``ModuleNotFoundError``\ , ``AttributeError`` and ``NameError``\ ?
+What is similar between ``ModuleNotFoundError``, ``AttributeError`` and ``NameError``?
 
 ..
 
    NOTE
 
-   In python ``=`` is used to assign names to objects, for example ``five = 5``\ , means we can later refer to the number ``5`` with the name ``five``\ , the equality sign ``==`` on the other hand is used to check if two things are equal e.g. ``5 == 4`` means "is ``5`` is equal to ``4``\ ?"
+   In python ``=`` is used to assign names to objects, for example ``five = 5``, means we can later refer to the number ``5`` with the name ``five``, the equality sign ``==`` on the other hand is used to check if two things are equal e.g. ``5 == 4`` means "is ``5`` is equal to ``4``?"
 
 
 REFACTOR: make it better
@@ -282,7 +282,7 @@ We have a pattern for our drill. When we test an attribute in a module, we encou
 * a ``NameError`` when we add the name to the module
 * a passing test when we define the name as a variable
 
-Update the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` by adding more tests until you get to ``self.assertIsNone(module.variable_99)``\ , you will have 102 statements in total
+Update the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` by adding more tests until you get to ``self.assertIsNone(module.variable_99)``, you will have 102 statements in total
 
 .. code-block:: python
 
@@ -391,7 +391,7 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* Time to a drill like we did with variables. Update ``test_defining_functions_to_solve_attribute_errors`` in the ``TestAttributeError`` class in\ ``tests/test_attribute_error.py`` to include calls to functions in ``module.py`` until you have one for ``module.function_99()``\ , you will have 100 tests in total
+* Time to a drill like we did with variables. Update ``test_defining_functions_to_solve_attribute_errors`` in the ``TestAttributeError`` class in\ ``tests/test_attribute_error.py`` to include calls to functions in ``module.py`` until you have one for ``module.function_99()``, you will have 100 tests in total
   .. code-block:: python
 
        def test_defining_functions_to_solve_attribute_errors(self):
@@ -461,7 +461,7 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* let us make it a drill. Add lines to ``test_defining_functions_to_solve_attribute_errors`` in the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` until we have one for ``module.Class99()``\ , there will be 100 tests in total
+* let us make it a drill. Add lines to ``test_defining_functions_to_solve_attribute_errors`` in the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` until we have one for ``module.Class99()``, there will be 100 tests in total
   .. code-block:: python
 
        def test_defining_classes_to_solve_attribute_errors(self):

@@ -102,7 +102,7 @@ let us add a test to ``TestLists`` in ``test_lists.py`` to learn about updating 
            a_list.append(4)
            self.assertEqual(a_list, [0, 1, 2, 3])
 
-the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ because after we call ``a_list.append(5)``\ , the values in ``a_list`` change
+the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ because after we call ``a_list.append(5)``, the values in ``a_list`` change
 
 .. code-block:: python
 
@@ -149,7 +149,7 @@ since we know how to add an item to a ``list`` let us add a test for removing an
            a_list.remove(2)
            self.assertEqual(a_list, [0, 1, 2, 3])
 
-the terminal updates to show a difference after we call ``a_list.remove(2)``\ , because the operation removes an element from ``a_list``
+the terminal updates to show a difference after we call ``a_list.remove(2)``, because the operation removes an element from ``a_list``
 
 .. code-block:: python
 

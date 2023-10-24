@@ -51,7 +51,7 @@ RED: make it fail
    ```
 
 
-* Ah, a ``ModuleNotFoundError``\ , We have a lot of practice solving this error from `ModuleNotFoundError <./MODULE_NOT_FOUND_ERROR.rst>`_. let us create a file named ``functions.py`` and the terminal updates to show
+* Ah, a ``ModuleNotFoundError``, We have a lot of practice solving this error from `ModuleNotFoundError <./MODULE_NOT_FOUND_ERROR.rst>`_. let us create a file named ``functions.py`` and the terminal updates to show
   .. code-block:: python
 
        >       self.assertIsNone(functions.function_a("a"))
@@ -67,7 +67,7 @@ RED: make it fail
        >       self.assertIsNone(functions.function_a("a"))
        E       TypeError: 'NoneType' object is not callable
     A reminder of our first encounter with ``TypeError`` from `How to solve the AttributeError by defining a Function <./01_TDD_ATTRIBUTE_ERROR.rst>`_
-* We solve this ``TypeError`` by definining a ``callable``\ , in this case a function. Update ``functions.py``
+* We solve this ``TypeError`` by definining a ``callable``, in this case a function. Update ``functions.py``
   .. code-block:: python
 
        def function_a():
@@ -326,7 +326,7 @@ the terminal shows all tests as still passing. FANTASTIC!!
 
 let us test this with ``function_a``. update ``function_a`` in ``functions.py`` with ``*args`` and the terminal shows all tests as still passing.
 
-Try this with both ``function_c`` and ``function_d``\ , all tests still pass.
+Try this with both ``function_c`` and ``function_d``, all tests still pass.
 
 *LOVELY!*
 You now know how to solve

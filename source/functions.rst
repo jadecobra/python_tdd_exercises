@@ -102,7 +102,7 @@ let us test if functions really always return ``None`` by default
        def function_with_return(self):
            return
 
-    the terminal shows this test is also passing. We have defined 2 functions with different statements in their body but they both return the same result, because "in python all functions return ``None`` by default, we can imagine the function has an invisible line that says ``return None``\ "
+    the terminal shows this test is also passing. We have defined 2 functions with different statements in their body but they both return the same result, because "in python all functions return ``None`` by default, we can imagine the function has an invisible line that says ``return None``"
 
 * RED: make it fail
     we can add one more test to the ``TestFunctions`` class in ``test_functions.py`` to help drive home the point
@@ -134,7 +134,7 @@ Here is what we know so far about functions in python
 Passthrough Functions
 ---------------------
 
-A function returns ``output``\ , and can take :raw-html-m2r:`<code class="docutils literal"><span class="pre">&#96;(input)&#96;&#96;&#96;. As a simple test let us create a</span></code>`\ passthrough function` which is a function that returns the input it receives as output
+A function returns ``output``, and can take :raw-html-m2r:`<code class="docutils literal"><span class="pre">&#96;(input)&#96;&#96;&#96;. As a simple test let us create a</span></code>`\ passthrough function` which is a function that returns the input it receives as output
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -191,7 +191,7 @@ GREEN: make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Wait a minute! Something is not quite right here. The definition for a ``passthrough`` function was that it returned the same thing it was given, our test passes when ``False`` is given as input, will it still pass when another value is given or will it always return ``False``\ ? There is a way to find out, let us test it
+Wait a minute! Something is not quite right here. The definition for a ``passthrough`` function was that it returned the same thing it was given, our test passes when ``False`` is given as input, will it still pass when another value is given or will it always return ``False``? There is a way to find out, let us test it
 
 
 *
@@ -253,7 +253,7 @@ We can define our function to take in more than one input, For instance if we ar
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a new test to ``test_functions.py``\ , replacing ``my_first_name`` and ``my_last_name`` with your first and last names
+add a new test to ``test_functions.py``, replacing ``my_first_name`` and ``my_last_name`` with your first and last names
 
 .. code-block:: python
 
@@ -737,7 +737,7 @@ Hold on a second. This looks exactly like what we did in ``test_functions_with_p
        def accepts_positional_and_keyword_arguments(first_name, last_name=None):
            return first_name, last_name
     all tests are still passing
-* we did not add a default argument for ``first_name``\ , let us test What would happen if we did
+* we did not add a default argument for ``first_name``, let us test What would happen if we did
   .. code-block:: python
 
        def accepts_positional_and_keyword_arguments(first_name=None, last_name=None):

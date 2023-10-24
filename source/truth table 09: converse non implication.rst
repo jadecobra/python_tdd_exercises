@@ -86,8 +86,8 @@ Our knowledge has increased. We know that for any boolean operation involving 2 
 * ``logical_equality`` is ``==``
 * ``logical_disjunction`` is ``or``
 * ``logical_conjunction`` is ``and``
-* ``and`` is "not ``or``\ "
-* ``or`` is "not ``and``\ "
+* ``and`` is "not ``or``"
+* ``or`` is "not ``and``"
 * ``False`` is ``not True``
 * ``True`` is ``not False``
 * ``False`` is ``False``

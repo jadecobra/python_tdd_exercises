@@ -71,7 +71,7 @@ the terminal updates to show passing tests. How does all this work?
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Since we know how to catch/handle an exception with ``unittest``\ , there are a few things we can do with this information. We can test that a program fails in an expected way, deliberately cause failures and design for failure
+Since we know how to catch/handle an exception with ``unittest``, there are a few things we can do with this information. We can test that a program fails in an expected way, deliberately cause failures and design for failure
 
 
 *
@@ -504,7 +504,7 @@ let us add exception handling to our program so it does not end when it encounte
 
        AssertionError: None != 'succeeded'
 
-    because the ``exception_handler`` function returns the result of calling the function it receives as input, when we call ``exceptions.exception_handler(exceptions.does_not_raise_exception_error)`` it in turn calls ``does_not_raise_exception_error`` and returns the result of the call which we defined as ``None``. Since the result is not equal to ``succeeded``\ , our expectation is not met.
+    because the ``exception_handler`` function returns the result of calling the function it receives as input, when we call ``exceptions.exception_handler(exceptions.does_not_raise_exception_error)`` it in turn calls ``does_not_raise_exception_error`` and returns the result of the call which we defined as ``None``. Since the result is not equal to ``succeeded``, our expectation is not met.
 
     To catch/handle exceptions in python we use a ``try...except...else`` statement. This allows the program to make a decision when it encounters an Exception. Update ``exception_handler`` in ``exceptions.py`` to handle exceptions
 
@@ -589,7 +589,7 @@ GREEN: make it pass
                return 'failed'
            else:
                return 'succeeded'
-    the terminal displays an `AssertionError <./ASSERTION_ERROR.rst>`_ and since no exception is raised when ``does_not_raise_exception_error`` is called by ``always_returns_this``\ , it returns ``succeeded`` which is not equal to ``always_returns_this``
+    the terminal displays an `AssertionError <./ASSERTION_ERROR.rst>`_ and since no exception is raised when ``does_not_raise_exception_error`` is called by ``always_returns_this``, it returns ``succeeded`` which is not equal to ``always_returns_this``
 * we can try adding another return statement to the function to see if that would work
   .. code-block:: python
 

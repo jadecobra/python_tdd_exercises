@@ -123,7 +123,7 @@ booleans are represented by the keyword ``bool`` in python so we can do an insta
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-What about other data types in python? Let us find out if ``None`` is equal to any ``int``\ , ``float``\ , ``string``\ , ``tuple``\ , ``list``\ , ``set`` or ``dict``
+What about other data types in python? Let us find out if ``None`` is equal to any ``int``, ``float``, ``string``, ``tuple``, ``list``, ``set`` or ``dict``
 
 Is None an integer?
 -------------------
@@ -200,7 +200,7 @@ integers are represented by the keyword ``int`` in python so we can do an instan
 Is None a string?
 -----------------
 
-let us add a test for ``strings``. A string is any characters that are enclosed by single, double or triple quotes e.g. ``'single quotes'``\ , ``"double quotes"``\ , ``'''triple single quotes'''``\ , ``"""triple double quotes"""``
+let us add a test for ``strings``. A string is any characters that are enclosed by single, double or triple quotes e.g. ``'single quotes'``, ``"double quotes"``, ``'''triple single quotes'''``, ``"""triple double quotes"""``
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -356,7 +356,7 @@ the terminal shows an `AssertionError <./ASSERTION_ERROR.rst>`_
 
 
 * ``[]`` is how `lists <./LISTS.rst>`_ are represented in python
-* what is the difference between a ``list`` and a ``tuple`` other than ``[]`` vs ``()``\ ?
+* what is the difference between a ``list`` and a ``tuple`` other than ``[]`` vs ``()``?
 * Do you want to `read more about lists <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#list>`_
 
 GREEN: make it pass
@@ -439,7 +439,7 @@ the terminal displays an `AssertionError <./ASSERTION_ERROR.rst>`_
 
 
 * ``dict()`` is how we create an empty ``dictionary``
-* ``{}`` is how `dictionaries <./DICTIONARIES.rst>`_ are represented in python. Wait a minute, sets are also represented with ``{}``\ , the difference is that dictionaries contain key/value pairs
+* ``{}`` is how `dictionaries <./DICTIONARIES.rst>`_ are represented in python. Wait a minute, sets are also represented with ``{}``, the difference is that dictionaries contain key/value pairs
 * Do you want to `read more about dictionaries <https://docs.python.org/3/tutorial/datastructures.html?highlight=sets#dictionaries>`_
 
 GREEN: make it pass

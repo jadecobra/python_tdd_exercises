@@ -96,8 +96,8 @@ Knowledge update. For any boolean operation involving 2 inputs - ``p`` and ``q``
 * ``logical_equality`` is ``==``
 * ``logical_disjunction`` is ``or``
 * ``logical_conjunction`` is ``and``
-* ``and`` is "not ``or``\ "
-* ``or`` is "not ``and``\ "
+* ``and`` is "not ``or``"
+* ``or`` is "not ``and``"
 * ``False`` is ``not True``
 * ``True`` is ``not False``
 * ``False`` is ``False``

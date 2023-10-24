@@ -85,7 +85,7 @@ REFACTOR: make it better
                return False
            if not not p not and not q:
                return True
-    the terminal shows a ``SyntaxError``\ , fix the syntax
+    the terminal shows a ``SyntaxError``, fix the syntax
   .. code-block:: python
 
        def converse_implication(p, q):
@@ -129,8 +129,8 @@ Our knowledge has increased
 * ``logical_equality`` is ``==``
 * ``logical_disjunction`` is ``or``
 * ``logical_conjunction`` is ``and``
-* ``and`` is "not ``or``\ "
-* ``or`` is "not ``and``\ "
+* ``and`` is "not ``or``"
+* ``or`` is "not ``and``"
 * ``False`` is ``not True``
 * ``True`` is ``not False``
 * ``False`` is ``False``

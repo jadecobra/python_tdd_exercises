@@ -180,8 +180,8 @@ Let us try writing a test that uses a random variable for the sleep and wake tim
        def duration(wake_time, sleep_time):
            return wake_time - sleep_time
 
-  the terminal outputs a `TypeError <./TYPE_ERROR.rst>`_\ , we passed in two strings and python does not have an operation defined for subtracting one string from another. We need to find a way to convert the timestamp from a string to a number. We know that our two inputs are currently in the format ``XX:00``\ , if we can parse the string to get the first two characters and convert that those digits to a number we should be able to get our calculation
-* to find out what options are available to us, we look at the ``methods`` and ``attributes`` of strings by adding a failing test to ``test_sleep_duration.py``\ , this time using the ``dir`` function
+  the terminal outputs a `TypeError <./TYPE_ERROR.rst>`_\ , we passed in two strings and python does not have an operation defined for subtracting one string from another. We need to find a way to convert the timestamp from a string to a number. We know that our two inputs are currently in the format ``XX:00``, if we can parse the string to get the first two characters and convert that those digits to a number we should be able to get our calculation
+* to find out what options are available to us, we look at the ``methods`` and ``attributes`` of strings by adding a failing test to ``test_sleep_duration.py``, this time using the ``dir`` function
 
   .. code-block:: python
 
@@ -392,7 +392,7 @@ Let us try writing a test that uses a random variable for the sleep and wake tim
 
        E       TypeError: unsupported operand type(s) for -: 'str' and 'str'
 
-* but what we want is to split the string on a ``delimiter`` so we get the separate parts, something like ``["00", "00"]``\ , using ``:`` as our delimeter let us update the test to reflect our desires
+* but what we want is to split the string on a ``delimiter`` so we get the separate parts, something like ``["00", "00"]``, using ``:`` as our delimeter let us update the test to reflect our desires
 
   .. code-block:: python
 
@@ -446,7 +446,7 @@ Let us try writing a test that uses a random variable for the sleep and wake tim
                    0
                )
 
-  the terminal updates to show us an `AssertionError <./ASSERTION_ERROR.rst>`_ because the first item (item zero) from splitting ``"12:34"`` on the delimiter ``:`` is ``"12"``\ , good, we are closer to what we want
+  the terminal updates to show us an `AssertionError <./ASSERTION_ERROR.rst>`_ because the first item (item zero) from splitting ``"12:34"`` on the delimiter ``:`` is ``"12"``, good, we are closer to what we want
 * change the expected value in the test to match the value in the terminal
 
   .. code-block:: python
@@ -465,7 +465,7 @@ Let us try writing a test that uses a random variable for the sleep and wake tim
                    0
                )
 
-  the terminal shows another `AssertionError <./ASSERTION_ERROR.rst>`_\ , this time to confirm that the second item (item one) from splitting ``"12:34"`` on the delimiter ``:`` is ``"34"``\ , we are not dealing with this part yet but we can assume we would use it soon, update the expected value in the same way and the test passes bringing us back to our unsolved `TypeError <./TYPE_ERROR.rst>`_
+  the terminal shows another `AssertionError <./ASSERTION_ERROR.rst>`_\ , this time to confirm that the second item (item one) from splitting ``"12:34"`` on the delimiter ``:`` is ``"34"``, we are not dealing with this part yet but we can assume we would use it soon, update the expected value in the same way and the test passes bringing us back to our unsolved `TypeError <./TYPE_ERROR.rst>`_
 * using what we know, how to ``split`` a string on a delimiter method and how to index a list, update the duration function to only return the subtraction of the first parts of ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
@@ -492,7 +492,7 @@ Let us try writing a test that uses a random variable for the sleep and wake tim
            def test_converting_a_string_to_an_integer(self):
                self.assertEqual(int("12"), 0)
 
-  the terminal shows an `AssertionError <./ASSERTION_ERROR.rst>`_ since ``12 != 0``\ , we update the test and it shows passing tests
+  the terminal shows an `AssertionError <./ASSERTION_ERROR.rst>`_ since ``12 != 0``, we update the test and it shows passing tests
 
   .. code-block:: python
 
@@ -519,7 +519,7 @@ Let us try writing a test that uses a random variable for the sleep and wake tim
            wake_time_hour_integer = int(wake_time_hour)
            return wake_time_hour_integer - int(sleep_time.split(':')[0])
 
-  the terminal shows all tests are still passing. The refactor we wrote works. After doing the same thing for ``sleep_time``\ , we still have passing tests
+  the terminal shows all tests are still passing. The refactor we wrote works. After doing the same thing for ``sleep_time``, we still have passing tests
 * there is a repetition in our function, for each string given we
   * split the string on the delimiter ``:``
   * get the first(0th) value from the split
@@ -717,7 +717,7 @@ The ``duration`` function currently returns a subtraction of hours and a subtrac
                    ""
                )
 
-  once again we have to comment out ``test_duration_calculation`` to see the results of the test we just added. The terminal shows a ``NameError`` because ``datetime`` is not defined in ``test_sleep_duration.py``\ , we need to import it
+  once again we have to comment out ``test_duration_calculation`` to see the results of the test we just added. The terminal shows a ``NameError`` because ``datetime`` is not defined in ``test_sleep_duration.py``, we need to import it
 * add an ``import`` statement for the ``datetime`` library
 
   .. code-block:: python
@@ -746,7 +746,7 @@ The ``duration`` function currently returns a subtraction of hours and a subtrac
   from the results we can make the following conclusions about ``datetime`` objects from the ``datetime`` library.
 
   * ``datetime.datetime.strptime`` takes a ``string`` and ``pattern`` as inputs
-  * ``datetime.datetime`` takes ``year``\ , ``month``\ , ``date``\ , ``hours`` and ``minutes`` as inputs
+  * ``datetime.datetime`` takes ``year``, ``month``, ``date``, ``hours`` and ``minutes`` as inputs
   * when we use ``strptime`` it returns a ``datetime.datetime`` object
   * we can also deduce from the pattern provided that
 
@@ -1079,7 +1079,7 @@ the terminal updates to show a ``ValueError`` similar to this
 
    E           ValueError: time data '21/11/06 21/11/06 8:9' does not match format '%d/%m/%y %H:%M'
 
-the timestamps we provide to the ``duration`` function as inputs do not match the expected format of ``%d/%m/%y %H:%M``\ , we get a repetition of the date portion because in the ``get_datetime_object`` we added a date to the timestamp to make it match the pattern
+the timestamps we provide to the ``duration`` function as inputs do not match the expected format of ``%d/%m/%y %H:%M``, we get a repetition of the date portion because in the ``get_datetime_object`` we added a date to the timestamp to make it match the pattern
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -1219,15 +1219,15 @@ GREEN: make it pass
 Clean up
 --------
 
-* ``test_duration_when_given_day_and_time`` looks like a duplicate of ``test_duration_when_given_hours_and_minutes``\ , it has the exact same variable assignment setup with the exact same test, it is only missing the ``try...except`` block, which means we can remove ``test_duration_when_given_day_and_time``
+* ``test_duration_when_given_day_and_time`` looks like a duplicate of ``test_duration_when_given_hours_and_minutes``, it has the exact same variable assignment setup with the exact same test, it is only missing the ``try...except`` block, which means we can remove ``test_duration_when_given_day_and_time``
 
-* ``test_duration_calculation`` gives specific timestamps of ``3:30`` for ``wake_time`` and ``2:59`` for ``sleep_time``\ , while ``test_duration_when_given_hours_and_minutes`` uses random timestamps from ``0:00`` to ``23:59`` for those variables. Since the random variables cover every timestamp in a given day we can remove ``test_duration_calculation``
+* ``test_duration_calculation`` gives specific timestamps of ``3:30`` for ``wake_time`` and ``2:59`` for ``sleep_time``, while ``test_duration_when_given_hours_and_minutes`` uses random timestamps from ``0:00`` to ``23:59`` for those variables. Since the random variables cover every timestamp in a given day we can remove ``test_duration_calculation``
 
 * The same argument could be made for ``test_duration_when_given_earlier_wake_time_than_sleep_time`` since we have a ``try...except`` block with a ``assertRaisesRegex`` that catches the random timestamps where ``wake_time`` is earlier than ``sleep_time`` we can remove ``test_duration_when_given_earlier_wake_time_than_sleep_time``
 
 * The first test we wrote was ``test_failure`` and we no longer need it
 
-* We also need a more descriptive name for ``test_duration_when_given_hours_and_minutes`` we could rename it to ``test_duration_when_given_a_timestamp`` or ``test_duration_when_given_date_and_time``\ , the choice is yours programmer.
+* We also need a more descriptive name for ``test_duration_when_given_hours_and_minutes`` we could rename it to ``test_duration_when_given_a_timestamp`` or ``test_duration_when_given_date_and_time``, the choice is yours programmer.
 
 Review
 -----
@@ -1247,4 +1247,4 @@ Our challenge was to create a function that calculates the difference between tw
 * how to generate a random integer between two given integers using ``random.randint``
 * how to use the ``help`` keyword to view documentation
 
-If you want to do more, try playing with the timestamp format and pattern in ``get_datetime_object``. What would you change in ``"%d/%m/%y %H:%M"`` to make it accept dates in a different format e.g. ``2006/11/21`` or ``11/21/2006``\ ?
+If you want to do more, try playing with the timestamp format and pattern in ``get_datetime_object``. What would you change in ``"%d/%m/%y %H:%M"`` to make it accept dates in a different format e.g. ``2006/11/21`` or ``11/21/2006``?

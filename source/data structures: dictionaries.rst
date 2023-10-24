@@ -137,7 +137,7 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* Our knowledge of dictionaries is growing. We know we can use ``integers`` and ``strings`` as dictionary keys. Can we use ``floats``\ ? We are going to find out by adding a test
+* Our knowledge of dictionaries is growing. We know we can use ``integers`` and ``strings`` as dictionary keys. Can we use ``floats``? We are going to find out by adding a test
   .. code-block:: python
 
            def test_creating_dictionaries_with_numbers_as_keys(self):
@@ -195,7 +195,7 @@ REFACTOR: make it better
            self.assertEqual({False: 'boom'}, {False: 'boom'})
            self.assertEqual({True: 'bap'}, {True: 'bap'})
 
-* We now know that we can use ``booleans``\ , ``floats``\ , ``integers`` and ``strings`` as keys in a dictionary
+* We now know that we can use ``booleans``, ``floats``, ``integers`` and ``strings`` as keys in a dictionary
 
 How to create a dictionary with tuples as keys
 ---------------------------------------
@@ -221,7 +221,7 @@ we update the values to make it pass
 
            self.assertEqual({(1, 2): "value"}, {(1, 2): "value"})
 
-and update our knowledge of creating dictionaries to say we can use ``tuples``\ , ``booleans``\ , ``floats``\ , ``integers``\ , and ``strings`` as keys in a dictionary
+and update our knowledge of creating dictionaries to say we can use ``tuples``, ``booleans``, ``floats``, ``integers``, and ``strings`` as keys in a dictionary
 
 Can we create a Dictionary with lists as keys?
 ----------------------------------------------
@@ -334,7 +334,7 @@ all tests pass and we now know that we can create dictionaries with the followin
 How to access dictionary values
 ------------------------
 
-From the tests above we learned how to create ``dictionaries``\ , and what we can use as ``keys``. How do we access the values of a dictionary?
+From the tests above we learned how to create ``dictionaries``, and what we can use as ``keys``. How do we access the values of a dictionary?
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -731,7 +731,7 @@ REFACTOR: make it better
            a_dictionary.setdefault('another_key')
            self.assertEqual(a_dictionary, {'bippity': 'boppity', 'another_key': None})
 
-* What if we want to add a ``key`` but set the default value to something other than ``None``\ ? Good question, let us add a test to find out
+* What if we want to add a ``key`` but set the default value to something other than ``None``? Good question, let us add a test to find out
   .. code-block:: python
 
            a_dictionary.setdefault('a_new_key', 'a_default_value')

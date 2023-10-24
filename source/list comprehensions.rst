@@ -227,7 +227,7 @@ GREEN: make it pass
 List Comprehension
 ------------------
 
-Now that we know how to create a ``list`` using ``[]``\ , ``list`` and ``for``\ , let us try creating a `list <./LISTS.rst>`_ using a ``list comprehension``. It looks similar to a ``for`` loop but allows us to achieve the same thing with less words
+Now that we know how to create a ``list`` using ``[]``, ``list`` and ``for``, let us try creating a `list <./LISTS.rst>`_ using a ``list comprehension``. It looks similar to a ``for`` loop but allows us to achieve the same thing with less words
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -360,7 +360,7 @@ Let us explore what else we can do with a ``list comprehension``
 
   * In this loop we update the empty list after the condition ``if element % 2 == 0`` is met.
   * The ``%`` is a modulo operator for modulo division which divides the number on the left by the number on the right and gives the remainder.
-  * If the remainder is ``0``\ , it means the number is divisible by 2 with no remainder meaning its an even number
+  * If the remainder is ``0``, it means the number is divisible by 2 with no remainder meaning its an even number
 
 *
   we update the test with the expected values to make it pass
@@ -420,7 +420,7 @@ Let us explore what else we can do with a ``list comprehension``
 
        AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != [0, 2, 4, 6, 8]
 
-    we have not added the ``if`` condition to the ``list comprehension``\ , let's do that now
+    we have not added the ``if`` condition to the ``list comprehension``, let's do that now
 
   .. code-block:: python
 

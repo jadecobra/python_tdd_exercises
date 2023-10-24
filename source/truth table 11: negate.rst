@@ -111,7 +111,7 @@ GREEN: make it pass
        def negate_second(p, q):
            return False
     the terminal updates to show an `AssertionError <./ASSERTION_ERROR.rst>`_ for the third case
-* before we add a condition for it, this looks similar to ``logical_equality``\ , ``exclusive_disjunction`` and ``negate_first`` because 2 out of the 4 cases have the same return value. We observe that
+* before we add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction`` and ``negate_first`` because 2 out of the 4 cases have the same return value. We observe that
 
   * if ``q == True`` the result is ``False``
   * if ``q == False`` the result is ``True``
@@ -146,8 +146,8 @@ For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take th
 * ``logical_equality`` is ``==``
 * ``logical_disjunction`` is ``or``
 * ``logical_conjunction`` is ``and``
-* ``and`` is "not ``or``\ "
-* ``or`` is "not ``and``\ "
+* ``and`` is "not ``or``"
+* ``or`` is "not ``and``"
 * ``False`` is ``not True``
 * ``True`` is ``not False``
 * ``False`` is ``False``

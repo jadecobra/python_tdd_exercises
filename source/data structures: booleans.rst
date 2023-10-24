@@ -73,7 +73,7 @@ GREEN: make it pass
 
   * ``False`` is a ``boolean``
   * ``dict()`` is ``False`` which means an empty ``dictionary`` is ``False``
-  * ``{}`` is ``False`` which means an empty ``set``\ /\ ``dictionary`` is ``False``
+  * ``{}`` is ``False`` which means an empty ``set``/\ ``dictionary`` is ``False``
   * ``[]`` is ``False`` which means an empty ``list`` is ``False``
   * ``()`` is ``False`` which means an empty ``tuple`` is ``False``
   * ``""`` is ``False`` which means an empty ``string`` is ``False``
@@ -157,7 +157,7 @@ GREEN: make it pass
 
 * we can sum up our current knowledge of python thus
 
-  * any value except ``0``\ , empty objects and ``None`` is ``True``
+  * any value except ``0``, empty objects and ``None`` is ``True``
   * empty objects including ``0`` and ``None`` are ``False``
   * ``True`` is a ``boolean``
   * ``False`` is a ``boolean``
