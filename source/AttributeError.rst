@@ -103,9 +103,10 @@ GREEN: make it pass
   * ``self = <tests.test_attribute_error.TestAttributeError testMethod=test_defining_variables_to_solve_attribute_errors>`` - A reference to the class and method(function) where the failure occurred
 
 * edit ``module.py`` with a name
+
   .. code-block:: python
 
-       variable_0
+      variable_0
 
   The terminal will update to show the following
 
@@ -156,7 +157,7 @@ An ``AttributeError`` occurs when there is a reference to a name in an object fr
 
 What is similar between ``ModuleNotFoundError``, ``AttributeError`` and ``NameError``?
 
-..NOTE::
+.. NOTE::
 
   In python ``=`` is used to assign names to objects, for example ``five = 5``, means we can later refer to the number ``5`` with the name ``five``, the equality sign ``==`` on the other hand is used to check if two things are equal e.g. ``5 == 4`` means "is ``5`` is equal to ``4``?"
 
@@ -187,7 +188,9 @@ RED: make it fail
 GREEN: make it pass
 ~~~~~~~~~~~~~~~~~~~
 
-* RED: make it fail - add the name to ``module.py``
+* RED: make it fail
+
+  add the name to ``module.py``
 
   .. code-block:: python
 
@@ -200,7 +203,8 @@ GREEN: make it pass
 
       E   NameError: name 'variable_1' is not defined
 
-* GREEN: make it pass - add a definition for ``variable_1``
+* GREEN: make it pass
+  add a definition for ``variable_1``
 
   .. code-block:: python
 
@@ -281,7 +285,9 @@ GREEN: make it pass
 """""""""""""""""""
 
 
-* RED: make it fail - we add the name
+* RED: make it fail
+
+  we add the name
 
   .. code-block:: python
 
@@ -296,7 +302,9 @@ GREEN: make it pass
 
       E   NameError: name 'variable_3' is not defined
 
-* GREEN: make it pass - we define the name
+* GREEN: make it pass
+
+  we define the name
 
   .. code-block:: python
 
@@ -456,7 +464,7 @@ REFACTOR: make it better
 Solve AttributeError by defining a Class
 ----------------------------------------
 
-A class is a blueprint that represents an object, it is a collection of functions(methods) and attributes. Attributes are names which represent a value. Methods are functions that can accept inputs and return a value. For example we could define a "Human" class with attributes like eye color, date of birth, height and weight, and methods like age which returns a value based on the current year and date of birth. Let us explore ``AttributeError`` with classes.
+A class is a blueprint that represents an object, it is a collection of functions(methods) and attributes. Attributes are names which represent a value. Methods are functions that can accept inputs and return a value. For example we could define a `Human` class with attributes like eye color, date of birth, height and weight, and methods like age which returns a value based on the current year and date of birth. Let us explore ``AttributeError`` with classes.
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -475,7 +483,7 @@ RED: make it fail
 
       E       AttributeError: module 'module' has no attribute 'Class0'
 
-  Looking at the traceback we see it's the line we added that caused the failure
+  Looking at the `traceback` we see it's the line we added that caused the failure
 
   * We are familiar with an ``AttributeError``
   * This also looks exactly like the tests in ``test_defining_functions_to_solve_attribute_errors``
@@ -755,13 +763,13 @@ You know the "drill", update ``test_defining_functions_in_classes_to_solve_attri
 
 .. code-block:: python
 
-      def test_defining_functions_in_classes_to_solve_attribute_errors(self):
-          self.assertIsNone(module.Class.method_0())
-          self.assertIsNone(module.Class.method_1())
-          self.assertIsNone(module.Class.method_2())
-          self.assertIsNone(module.Class.method_3())
-          ...
-          self.assertIsNone(module.Class.method_99())
+    def test_defining_functions_in_classes_to_solve_attribute_errors(self):
+        self.assertIsNone(module.Class.method_0())
+        self.assertIsNone(module.Class.method_1())
+        self.assertIsNone(module.Class.method_2())
+        self.assertIsNone(module.Class.method_3())
+        ...
+        self.assertIsNone(module.Class.method_99())
 
 repeat the solution until all tests pass
 
