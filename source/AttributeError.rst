@@ -3,18 +3,15 @@ AttributeError
 
 Our exploration of python using Test Driven Development continues in this chapter with the ``AttributeError``
 
+An Attribute is a property, variable, function or name that belongs to an ``object``. For example, if we describe a human being we could list attributes like height, weight, sex and color.
+An ``AttributeError`` is raised when there is a reference to a name in an ``object`` that does not exist.
+
+
 Prerequisites
 -------------
 
 
 * `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_
-
-
-What is an Attribute?
----------------------
-
-An Attribute is a property, variable, function or name that belongs to an ``object``. For example, if we describe a human being we could list attributes like height, weight, sex and color.
-An ``AttributeError`` is raised when there is a reference to a name in an ``object`` that does not exist.
 
 
 ----
