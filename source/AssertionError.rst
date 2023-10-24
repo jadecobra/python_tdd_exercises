@@ -224,7 +224,7 @@ Which of these ``assert`` statements do you prefer when testing ``None``?
 * ``assert x is None``
 * ``self.assertIsNone(x)``
 
----
+----
 
 AssertionError with False
 -------------------------
@@ -290,6 +290,8 @@ the terminal updates to show passing tests and we now know that in python
 * ``None`` is ``None``
 * ``True`` is not ``None``
 * ``False`` is not ``None``
+
+----
 
 AssertionError with True
 ------------------------
@@ -357,6 +359,8 @@ This was one of the options to solve the failing test in `How I setup a Test Dri
 * ``False`` is not ``None``
 
 We could sum up the above statements this way - in python ``True``, ``False`` and ``None`` are different. Understanding these differences helps us write useful programs. They show how python behaves and form our core truths - a foundation of predictable expectations of the language.
+
+----
 
 AssertionError with Equality
 ----------------------------
