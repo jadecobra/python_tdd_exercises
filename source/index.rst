@@ -14,11 +14,11 @@ How to use this book
 
 The chapters are currently listed with no prescription on how to go through them, you can follow your interests or the particular need you have at any time.
 
-The only recommendation is that you start with [How I Setup a Test Driven Development Environment](./How I setup a Test Driven Development Environment.rst) – it is required for every other chapter
+The only recommendation is that you start with ``How I Setup a Test Driven Development Environment`` it is required for every other chapter
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 1
+   :caption: Chapters:
 
    How I setup my Interactive Development Environment
    How I setup a Test Driven Development Environment

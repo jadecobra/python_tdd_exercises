@@ -29,7 +29,7 @@ Setup
 
     .. note:: *If you are on a windows machine*
 
-     * `download and install Git <https://github.com/git-for-windows/git/releases/download/v2.41.0.windows.3/Git-2.41.0.3-32-bit.exe>`_
+     * `download and install Git <https://github.com/git-for-windows/git/releases>`_
      * open a command line or PowerShell terminal and install WSLv2 by typing
 
       .. code-block:: python
@@ -150,7 +150,7 @@ GREEN: make it pass
 -------------------
 
 
-* Let us keep a list of Errors/Exceptions encountered as we go through our python journey to help us become better python programmers, keeping track of the cause and solutions we come up with to these exceptions. Add `AssertionError <./AssertionError.rst>`_ to the list
+* Let us keep a list of Errors/Exceptions encountered as we go through our python journey to help us become better python programmers, keeping track of the cause and solutions we come up with to these exceptions. Add :doc:`AssertionError` to the list
 
   .. code-block:: python
 
