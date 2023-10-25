@@ -199,11 +199,9 @@ We can make code better by using the
 * `Abstraction Principle <https://en.wikipedia.org/wiki/Abstraction_principle_(computer_programming>`_\ )
 * `Do Not Repeat Yourself (DRY) Principle <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
-My take on the principles above can be summed up as ``repeat then generalize``. When we repeat something, there is an opportunity to take out the parts that are common to the repetitions and make that into a thing that can be used by both or subsequent examples we encounter, to achieve this I ask two questions
-
-
+I ask two questions to help me remove duplication when I see it
 * What is similar? this tells me what parts are common in the examples
-* What is different? this tells me what parts are specific to the example
+* What is different? this tells me what parts are specific to an example
   Another way to think of it is to note which parts are ``constant`` or ``changing``
 
 So far there is not much to improve on what has been written but there has been duplication.
