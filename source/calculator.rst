@@ -169,7 +169,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* open ``calculator.py`` in your Interactive Development Environment(IDE) and add the name ``add``
+* open ``calculator.py`` in your Interactive Development Environment (IDE) and add the name ``add``
 
   .. code-block:: python
 

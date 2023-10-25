@@ -3,8 +3,18 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to pumping pythons documentation!
-==========================================
+Welcome to pumping python!
+==========================
+This book contains a few exercises to get you familiar with Python using Test Driven Development.
+
+It is written to help anyone who is just starting with the language using tests and drills that teach concepts but also allow exploration. If you are new to Test Driven Development in python this book is also for you.
+
+How to use this book
+--------------------
+
+The chapters are currently listed with no prescription on how to go through them, you can follow your interests or the particular need you have at any time.
+
+The only recommendation is that you start with [How I Setup a Test Driven Development Environment](./How I setup a Test Driven Development Environment.rst) – it is required for every other chapter
 
 .. toctree::
    :maxdepth: 2

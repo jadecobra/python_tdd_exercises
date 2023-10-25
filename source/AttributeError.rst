@@ -130,7 +130,7 @@ GREEN: make it pass
   * ``variable_0`` the offending line
   * ``module.py:1: in <module>`` the location of the offending line
 
-* update the failing line in ``module.py`` in the Interactive Development Environment(IDE) to fix it
+* update the failing line in ``module.py`` in the Interactive Development Environment (IDE) to fix it
 
   .. code-block:: python
 

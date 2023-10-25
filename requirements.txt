@@ -1,2 +1,4 @@
 sphinx
 docutils
+esbonio
+rstcheck
