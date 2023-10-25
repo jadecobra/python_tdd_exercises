@@ -17,7 +17,8 @@ The chapters are currently listed with no prescription on how to go through them
 The only recommendation is that you start with ``How I Setup a Test Driven Development Environment`` it is required for every other chapter
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
+   :titlesonly:
 
    How I setup a Test Driven Development Environment
    AssertionError
@@ -55,8 +56,4 @@ The only recommendation is that you start with ``How I Setup a Test Driven Devel
    learning models
    conventions
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`search`
+:ref:`search`

@@ -557,7 +557,7 @@ REFACTOR: make it better
   - ``assertEqual``      - are these two things equal?
   - ``assertNotEqual``   - are these two things not equal?
 
-..
+
 .. admonition:: *FOOD FOR THOUGHT*
 
 

@@ -627,7 +627,7 @@ GREEN: make it pass
                exceptions.always_returns(exceptions.raises_exception_error),
                'always_returns_this'
            )
-    It is important to note that ``always_returns`` could have been defined as a ``singleton`` :doc:`function` and the tests would still pass, but that would not illustrate how to use ``try...except...else...finally``
+    It is important to note that ``always_returns`` could have been defined as a ``singleton`` :doc:`functions` and the tests would still pass, but that would not illustrate how to use ``try...except...else...finally``
   .. code-block:: python
 
        def always_returns(function):

@@ -115,7 +115,7 @@ REFACTOR: make it better
        # ModuleNotFoundError
        # AttributeError
 
-* we then add a :doc:`function` definition to ``list_comprehensions.py``
+* we then add a :doc:`functions` definition to ``list_comprehensions.py``
   .. code-block:: python
 
        def make_a_list():
@@ -213,7 +213,7 @@ GREEN: make it pass
                result.append(element)
            return result
 
-    in this :doc:`function`
+    in this :doc:`functions`
 
 
   * we create an empty list

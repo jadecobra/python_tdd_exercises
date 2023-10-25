@@ -212,7 +212,7 @@ GREEN: make it pass
        # NameError
        # TypeError
 
-* To make it callable we have to define it as a :doc:`function` or a :doc:`class`. Testing the ``def`` keyword for creating functions we update our add variable in ``calculator.py`` to
+* To make it callable we have to define it as a :doc:`functions` or a :doc:`class`. Testing the ``def`` keyword for creating functions we update our add variable in ``calculator.py`` to
 
   .. code-block:: python
 

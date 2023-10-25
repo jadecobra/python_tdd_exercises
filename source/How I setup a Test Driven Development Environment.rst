@@ -25,15 +25,10 @@ Requirements
 Setup
 -----
 
-    .. note:: *If you are on a windows machine*
+    .. admonition:: *If you are on a windows machine*
 
      * `download and install Git <https://github.com/git-for-windows/git/releases>`_
-     * open a command line or PowerShell terminal and install WSLv2 by typing
-
-      .. code-block::
-
-        wsl --install
-
+     * open a command line or PowerShell terminal and install WSLv2 by typing ``wsl --install``
      * run subsequent commands in WSL
 
 
@@ -222,9 +217,9 @@ Create a Virtual Environment
 ++++++++++++++++++++++++++++
 
 
+  .. admonition:: *Are you on a Windows machine?*
 
-   .. *Are you on a Windows machine? If you are not using WSL make the following changes to the examples*::
-
+    If you are not using WSL make the following changes to the examples
 
    * replace ``python3`` with ``python``
    * replace ``source .venv/bin/activate`` with ``.venv/scripts/activate``
@@ -306,6 +301,7 @@ You made it this far and have become the greatest programmer in the world. Follo
 * open a new file in your Interactive Development Environment (IDE) and type the following then save the file with a name that describes what it does so you remember later, e.g. ``setupPythonTdd.sh``
 
   .. code-block:: shell
+   :linenos:
 
     project_name=$1
     mkdir -p $project_name/tests

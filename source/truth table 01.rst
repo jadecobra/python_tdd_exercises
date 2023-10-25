@@ -106,7 +106,7 @@ There are two unary operations
 Logical Identity
 ^^^^^^^^^^^^^^^^
 
-A Logical Identity operation takes input and returns it as output, it is a passthrough :doc:`function`
+A Logical Identity operation takes input and returns it as output, it is a passthrough :doc:`functions`
 
 RED: make it fail
 ~~~~~~~~~~~~~~~~~

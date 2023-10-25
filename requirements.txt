@@ -3,3 +3,4 @@ docutils
 esbonio
 rstcheck
 sniffer
+sphinx-press-theme
