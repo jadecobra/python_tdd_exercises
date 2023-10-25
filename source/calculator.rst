@@ -7,7 +7,7 @@ Prerequisites
 -------------
 
 
-* :doc:`How I setup a Test Driven Development Environment` with ``calculator`` as the project name
+:doc:`How I setup a Test Driven Development Environment` with ``calculator`` as the project name
 
 ----
 

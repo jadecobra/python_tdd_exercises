@@ -22,7 +22,7 @@ Prerequisites
 -------------
 
 
-* :doc:`How I setup a Test Driven Development Environment`
+:doc:`How I setup a Test Driven Development Environment`
 
 ----
 

@@ -6,7 +6,7 @@ Let us take a look at building a program which gives us the amount of time we ha
 Prerequisites
 -------------
 
-* :doc:`How I setup a Test Driven Development Environment` with ``sleep_duration`` as the project name
+:doc:`How I setup a Test Driven Development Environment` with ``sleep_duration`` as the project name
 
 ----
 
@@ -1007,7 +1007,7 @@ Our ``duration`` function now accounts for a time traveling sleep scenario where
                )
 
   we are green again
-* we want the ``duration`` function to make a decision based on a comparison of ``wake_time`` and ``sleep_time``. If ``wake_time`` is earlier than ``sleep_time`` it should raise an :doc:`Exception`
+* we want the ``duration`` function to make a decision based on a comparison of ``wake_time`` and ``sleep_time``. If ``wake_time`` is earlier than ``sleep_time`` it should raise an :doc:`exception handling`
 
   .. code-block:: python
 
