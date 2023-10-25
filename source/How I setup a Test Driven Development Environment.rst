@@ -68,7 +68,9 @@ File Structure
         |   |--test_{PROJECT_NAME}.py
         |--{PROJECT_NAME}.py
 
+
 ----
+
 
 RED: make it fail
 -----------------
