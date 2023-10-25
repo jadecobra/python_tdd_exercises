@@ -439,7 +439,7 @@ the terminal displays an :doc:`AssertionError`
 
 
 * ``dict()`` is how we create an empty ``dictionary``
-* ``{}`` is how :doc:`dictionaries` are represented in python. Wait a minute, sets are also represented with ``{}``, the difference is that dictionaries contain key/value pairs
+* ``{}`` is how :doc:`data structures: dictionaries` are represented in python. Wait a minute, sets are also represented with ``{}``, the difference is that dictionaries contain key/value pairs
 * Do you want to `read more about dictionaries <https://docs.python.org/3/tutorial/datastructures.html?highlight=sets#dictionaries>`_
 
 GREEN: make it pass

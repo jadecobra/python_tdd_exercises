@@ -560,7 +560,7 @@ So far ``passthrough_with_keyword_arguments`` looks the same as ``passthrough_wi
              ),
              {'a': 1, 'b': 2, 'c': 3, 'd': 4}
          )
-      the terminal updates to show passing tests. We now know that keyword arguments are treated as :doc:`Dictionaries` in python
+      the terminal updates to show passing tests. We now know that keyword arguments are treated as :doc:`data structures: dictionaries` in python
 
 *
   REFACTOR: make it better
@@ -924,7 +924,7 @@ Hold on a second. This looks exactly like what we did in ``test_functions_with_p
 * From what we have seen so far, in python
 
   * positional arguments are represented as :doc:`tuples` with parentheses - ``()``
-  * keyword arguments are represented as :doc:`dictionaries` with curly braces - ``{}``
+  * keyword arguments are represented as :doc:`data structures: dictionaries` with curly braces - ``{}``
   * we can use ``*name`` to represent any number of positional arguments
   * we can use ``**name`` to represent any number of keyword arguments
   * we can define default values for arguments
@@ -982,7 +982,7 @@ You now know
 
 * that singleton functions return the same thing every time they are called
 * that positional arguments are represented as :doc:`tuples` with parentheses - ``()``
-* that keyword arguments are represented as :doc:`dictionaries` with curly braces - ``{}``
+* that keyword arguments are represented as :doc:`data structures: dictionaries` with curly braces - ``{}``
 * how to write functions in python that can take in any number of positional or keyword arguments as inputs
 * we can use ``*name`` to represent any number of positional arguments
 * we can use ``**name`` to represent any number of keyword arguments

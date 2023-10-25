@@ -1,7 +1,7 @@
 How to create a Person Factory
 ==============
 
-This is an exercise in creating :doc:`dictionaries` with :doc:`functions`. It assumes you are familiar with :doc:`Functions` and :doc:`Dictionaries` though you can attempyt it even if you are not
+This is an exercise in creating :doc:`data structures: dictionaries` with :doc:`functions`. It assumes you are familiar with :doc:`Functions` and :doc:`data structures: dictionaries` though you can attempyt it even if you are not
 
 Prerequisites
 -------------
@@ -153,14 +153,14 @@ REFACTOR: make it better
   - we return the ``year`` attribute of the object returned by the ``now`` method of the ``datetime.datetime`` class, which is a representation of the current local date and time, we could also use ``today`` or ``utcnow`` to achieve the same result
   - we get the ``year`` attribute of the object returned since that is all we are interested in
 
-* the terminal updates to show an :doc:`AssertionError` since our ``person.factory`` function returns ``None`` but the test expects a :doc:`dictionary`. We should update the function to return an empty dictionary
+* the terminal updates to show an :doc:`AssertionError` since our ``person.factory`` function returns ``None`` but the test expects a :doc:`data structures: dictionaries`. We should update the function to return an empty dictionary
 
   .. code-block:: python
 
        def factory(first_name=None, last_name=None, year_of_birth=None, sex=None):
            return {}
 
-  the terminal updates to show the differences between the :doc:`dictionary` returned by the ``factory`` function and the one expected in the test
+  the terminal updates to show the differences between the :doc:`data structures: dictionaries` returned by the ``factory`` function and the one expected in the test
 
 * we update the empty ``dictionary`` in the ``factory`` function to match the expected results
 
