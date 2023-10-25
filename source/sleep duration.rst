@@ -6,7 +6,7 @@ Let us take a look at building a program which gives us the amount of time we ha
 Prerequisites
 -------------
 
-* `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_ with ``sleep_duration`` as the project name
+* :doc:`How I setup a Test Driven Development Environment` with ``sleep_duration`` as the project name
 
 ----
 
@@ -737,7 +737,7 @@ This means that even though our tests are passing, once again the ``duration`` f
     import sleep_duration
     import unittest
 
-  the terminal reveals an :doc:`AssertionError`
+  the terminal displays an :doc:`AssertionError`
 
   .. code-block:: python
 

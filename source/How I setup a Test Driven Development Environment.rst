@@ -166,8 +166,11 @@ GREEN: make it pass
     # AssertionError
 
 
-* change line 7 to make the test pass. Which of these is a better solution? ``self.assertTrue(True)`` or ``self.assertFalse(False)``
-* What was the deciding factor in picking one over the other?
+* change line 7 to make the test pass. Which of these is a better solution?
+
+  ``self.assertTrue(True)`` or ``self.assertFalse(False)``
+
+  What was the deciding factor in picking one over the other?
 * run the test again from the terminal
 
   .. code-block:: python
@@ -194,7 +197,7 @@ REFACTOR: make it better
 We can make code better by using the
 
 
-* `Abstraction Principle <https://en.wikipedia.org/wiki/Abstraction_principle_(computer_programming>`_\ )
+* `Abstraction Principle <https://en.wikipedia.org/wiki/Abstraction_principle_(computer_programming)>`_
 * `Do Not Repeat Yourself (DRY) Principle <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
 Both of these can be summed up as ``remove duplication``. I ask two questions to help me remove duplication when I write code

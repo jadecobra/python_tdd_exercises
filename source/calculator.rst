@@ -7,7 +7,7 @@ Prerequisites
 -------------
 
 
-* `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_ with ``calculator`` as the project name
+* :doc:`How I setup a Test Driven Development Environment` with ``calculator`` as the project name
 
 ----
 
@@ -36,7 +36,7 @@ add a TODO list to ``test_calculator.py`` to keep track of what we are doing
    # Exceptions Encountered
    # AssertionError
 
-the terminal responds to our change, with the one test still passing from `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_
+the terminal responds to our change, with the one test still passing from :doc:`How I setup a Test Driven Development Environment`
 
 .. code-block:: python
 
@@ -195,7 +195,7 @@ GREEN: make it pass
 
        add = None
 
-  the terminal reveals a new error
+  the terminal displays a new error
 
   .. code-block:: python
 
@@ -238,7 +238,7 @@ GREEN: make it pass
 
        E       AssertionError: None != 1
 
-  An ``AssertionError`` was the first error we encountered in `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_ after adding a test for failure.
+  An ``AssertionError`` was the first error we encountered in :doc:`How I setup a Test Driven Development Environment` after adding a test for failure.
 
   It is raised when an assertion is ``False``, since we are using ``self.assertEqual`` it means the two things we provided as inputs are not equal. In other words ``calculator.add(0, 1)`` is currently not equal to ``1``. Let us update the ``add`` function in ``calculator.py`` so it gives the expected value
 
@@ -306,7 +306,7 @@ There are a few scenarios we can consider from the users' perspective. If our us
        def add(x, y):
            return x + y
 
-  and the terminal reveals passing tests, increasing our confidence in the ``add`` function
+  and the terminal displays passing tests, increasing our confidence in the ``add`` function
 
   .. code-block:: python
 
@@ -736,7 +736,7 @@ update ``test_calculator.py`` to confirm that a ``ZeroDivisionError`` is raised 
        #     self.x/self.y
        # )
 
-the terminal reveals passing tests, and we now have a way to ``catch`` Exceptions when testing, allowing us to confirm that the code raises an error, and the other tests to continue when they encounter the expected failure
+the terminal displays passing tests, and we now have a way to ``catch`` Exceptions when testing, allowing us to confirm that the code raises an error, and the other tests to continue when they encounter the expected failure
 
 REFACTOR: make it better
 ------------------------

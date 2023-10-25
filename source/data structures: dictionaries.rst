@@ -7,7 +7,7 @@ Prerequisites
 -------------
 
 
-* `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_
+* :doc:`How I setup a Test Driven Development Environment`
 * `Data Structures <./DATA_STRUCTURES.rst>`_
 
 ----
@@ -150,7 +150,7 @@ REFACTOR: make it better
        def test_creating_dictionaries_with_numbers_as_keys(self):
            self.assertEqual({1: 'boom'}, {'one': 'boom'})
            self.assertEqual({2.5: 'works'}, {2.5: 'works'})
-    the terminal reveals passing tests
+    the terminal displays passing tests
 
 How to create a dictionary with booleans as keys
 -----------------------------------------

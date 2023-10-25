@@ -15,7 +15,7 @@ Prerequisites
 -------------
 
 
-* `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_
+* :doc:`How I setup a Test Driven Development Environment`
 
 ----
 

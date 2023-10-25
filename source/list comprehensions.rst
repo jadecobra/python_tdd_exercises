@@ -8,7 +8,7 @@ Prerequisites
 -------------
 
 
-* `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_
+* :doc:`How I setup a Test Driven Development Environment`
 
 ----
 
@@ -222,7 +222,7 @@ GREEN: make it pass
   *
     return the result after the loop
 
-    the terminal reveals all tests are passing
+    the terminal displays all tests are passing
 
 List Comprehension
 ------------------
@@ -414,7 +414,7 @@ Let us explore what else we can do with a ``list comprehension``
                    even_numbers
                )
 
-    the terminal reveals an :doc:`AssertionError` because our lists are not the same, we have too many values
+    the terminal displays an :doc:`AssertionError` because our lists are not the same, we have too many values
 
   .. code-block:: python
 

@@ -18,7 +18,7 @@ Prerequisites
 -------------
 
 
-* `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_
+* :doc:`How I setup a Test Driven Development Environment`
 
 ----
 
@@ -723,7 +723,7 @@ GREEN: make it pass
                    ),
                    ('my_first_name', 'my_last_name')
                )
-    the terminal reveals passing tests
+    the terminal displays passing tests
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^

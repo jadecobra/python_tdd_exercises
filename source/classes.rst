@@ -9,7 +9,7 @@ Prerequisites
 -------------
 
 
-* `How I setup a Test Driven Development Environment <./How I setup a Test Driven Development Environment.rst>`_
+* :doc:`How I setup a Test Driven Development Environment`
 
 ----
 
@@ -171,7 +171,7 @@ GREEN: make it pass
 
       pass
 
-  the terminal reveals passing tests
+  the terminal displays passing tests
 
 
 * update the definition to explicitly state the parent ``object``
@@ -606,7 +606,7 @@ REFACTOR: make it better
         def __init__(self, sex=None):
             pass
 
-  the terminal reveals passing tests
+  the terminal displays passing tests
 
 
 * Wait a minute, we just repeated the same thing twice.
