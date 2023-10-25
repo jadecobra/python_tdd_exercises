@@ -27,7 +27,7 @@ add a test for exclusive disjunction to ``TestBinaryOperations``
            self.assertTrue(truth_table.logical_nand(False, True))
            self.assertTrue(truth_table.logical_nand(False, False))
 
-the terminal shows an `AttributeError <./AttributeError.rst>`_
+the terminal shows an :doc:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -38,7 +38,7 @@ GREEN: make it pass
 
        def logical_nand(p, q):
            return True
-    the terminal updates to show an `AssertionError <./AssertionError.rst>`_ for the first case
+    the terminal updates to show an :doc:`AssertionError` for the first case
 * add a condition for the one case that returns ``False``
   .. code-block:: python
 

@@ -2,3 +2,4 @@ sphinx
 docutils
 esbonio
 rstcheck
+sniffer

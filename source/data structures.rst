@@ -68,7 +68,7 @@ What are the data structures in python?
 The following chapters go into more detail about some of these data structures
 
 
-* `None <./NONE.rst>`_
-* `Booleans <./BOOLEANS.rst>`_
-* `Lists <./LISTS.rst>`_
-* `Dictionaries <./DICTIONARIES.rst>`_
+* :doc:`None`
+* :doc:`Booleans`
+* :doc:`Lists`
+* :doc:`Dictionaries`

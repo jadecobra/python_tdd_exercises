@@ -3,13 +3,11 @@ How I setup a Test Driven Development Environment
 
 We will step through creating a `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ Environment in python
 
-The Test Driven Development mantra paraphrased is
-   RED GREEN REFACTOR
+The Test Driven Development mantra paraphrased is ``RED GREEN REFACTOR``
 
-
-* RED: make it fail - we write a failing test to make sure our test works
-* GREEN: make it pass - we write only the code necessary to make the test pass
-* REFACTOR: make it better - we make the code/tests better
+* **RED**: make it fail - we write a failing test to make sure our test works
+* **GREEN**: make it pass - we write only the code necessary to make the test pass
+* **REFACTOR**: make it better - we make the code/tests better
 
 Requirements
 ------------
@@ -32,7 +30,7 @@ Setup
      * `download and install Git <https://github.com/git-for-windows/git/releases>`_
      * open a command line or PowerShell terminal and install WSLv2 by typing
 
-      .. code-block:: python
+      .. code-block::
 
         wsl --install
 
@@ -45,7 +43,7 @@ File Structure
 
 * type the following in a terminal to setup the directory structure
 
-  .. code-block:: python
+  .. code-block:: shell
 
     mkdir -p {PROJECT_NAME}/tests
     cd {PROJECT_NAME}
@@ -53,11 +51,11 @@ File Structure
     touch tests/__init__.py
     touch tests/test_{PROJECT_NAME}.py
 
-* ``{PROJECT_NAME}`` is a placeholder for the name of the project e.g. if you are building a project called ``the_greatest_application``, replace ``{PROJECT_NAME}`` with ``the_greatest_application``. We are going to place all our code for this project in the ``{PROJECT_NAME}`` folder
-* Tests are stored in the ``tests`` folder to separate them from the actual source code
-* The ``__init__.py`` file in the ``tests`` folder tells python that it is a python package
-* The actual test file is called ``test_{PROJECT_NAME}.py``
-* The python module we are creating is called ``{PROJECT_NAME}.py``. A python module is any file that ends in ``.py``
+  - ``{PROJECT_NAME}`` is a placeholder for the name of the project e.g. if you are building a project called ``the_greatest_application``, replace ``{PROJECT_NAME}`` with ``the_greatest_application``. We are going to place all our code for this project in the ``{PROJECT_NAME}`` folder
+  - Tests are stored in the ``tests`` folder to separate them from the actual source code
+  - The ``__init__.py`` file in the ``tests`` folder tells python that it is a python package
+  - The actual test file is called ``test_{PROJECT_NAME}.py``
+  - The python module we are creating is called ``{PROJECT_NAME}.py``. A python module is any file that ends in ``.py``
 * Your folder structure should look like this
 
   .. code-block::
@@ -100,7 +98,7 @@ RED: make it fail
   - `self.assertFalse(True)` is an assert statement that is a substitute for `assert False == True` which is similar to asking the question `is False equal to True?`
 
 
-* to test the code, write the following in the terminal
+* we are ready to test the code, write the following in the terminal
 
   .. code-block:: python
 
@@ -132,7 +130,7 @@ The error provides important information about the code. Looking at it from the 
 
 * ``FAILED (failures=1)`` The test failed - RED
 * ``Ran 1 test in 0.000s`` tells us how long it took to run the test
-* ``AssertionError: True is not false`` The error is an `AssertionError <./AssertionError.rst>`_ which is raised by python when an assert statement is ``False``, in this case ``True is not false``
+* ``AssertionError: True is not false`` The error is an :doc:`AssertionError` which is raised by python when an assert statement is ``False``, in this case ``True is not false``
 * ``self.assertFalse(True)`` the line of code that caused the failure
 * ``File "/<PATH_TO_PROJECT>/{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py", line 7, in test_failure`` the line number and location of the file where the error occurred. Clicking on this line will place your cursor at the position in the Interactive Development Environment (IDE)
 * ``Traceback (most recent call last):`` all the information returned by python for the exception is the traceback, showing the most recent call python made last
@@ -257,15 +255,16 @@ Create a Virtual Environment
       |--<PROJECT_NAME>.py
       |--requirements.txt
 
-You just created a `virtual environment <https://docs.python.org/3/library/venv.html>`_
+  You just created a `virtual environment <https://docs.python.org/3/library/venv.html>`_
 
 
-* ``python3 -m venv .venv`` creates a virtual environment named ``.venv`` - you can use any name you want
-* `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ is a python module for creating virtual environments, which is an isolated ``subfolder`` that holds any dependencies we install. It helps keep our dependencies for a specific project in the same place as the project
-* ``source .venv/bin/activate`` or ``.venv/scripts/activate`` activates the virtual environment
-* ``pip install --upgrade pip`` - upgrades ``pip`` the `python package manager <https://pypi.org/project/pip/>`_ to the latest version
-* ``pip install --requirement requirements.txt`` installs any python libraries listed in ``requirements.txt``
-* ``pytest-watch`` is a library that automatically runs tests when a change is made to our python files in the project
+  - ``python3 -m venv .venv`` creates a virtual environment named ``.venv`` - you can use any name you want
+  - `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ is a python module for creating virtual environments, which is an isolated ``subfolder`` that holds any dependencies we install. It helps keep our dependencies for a specific project in the same place as the project
+  - ``source .venv/bin/activate`` or ``.venv/scripts/activate`` activates the virtual environment
+  - ``pip install --upgrade pip`` - upgrades ``pip`` the `python package manager <https://pypi.org/project/pip/>`_ to the latest version
+  - ``pip install --requirement requirements.txt`` installs any python libraries listed in ``requirements.txt``
+  - ``pytest-watch`` is a library that automatically runs tests when a change is made to our python files in the project
+
 * type ``pytest-watch`` in the terminal to run the tests and the terminal displays
 
   .. code-block:: python
@@ -279,6 +278,7 @@ You just created a `virtual environment <https://docs.python.org/3/library/venv.
     tests/test_<PROJECT_NAME>.py .                                                                                                    [100%]
 
     ======================= 1 passed in 0.00s ============================
+
 
 Activate a Virtual Environment
 ++++++++++++++++++++++++++++++
@@ -331,14 +331,14 @@ You made it this far and have become the greatest programmer in the world. Follo
 
 * make the program executable by typing this command in the terminal
 
-  .. code-block:: python
+  .. code-block:: shell
 
     chmod +x setupPythonTdd.sh
 
 * you can now create a Test Driven Development environment by giving a name you want for the ``$project_name`` variable when the program is called e.g. typing this command in the terminal will setup the environment for a project named ``the_greatest_application``
 
-  .. code-block::
+  .. code-block:: shell
 
     ./setupPythonTdd the_greatest_application
 
-This is one of the advantages of programming, we can take a series of steps and make them a one line command that the computer does on our behalf
+This is one of the advantages of programming, we can take a series of steps and make them a one line command which the computer does on our behalf

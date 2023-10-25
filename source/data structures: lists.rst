@@ -37,7 +37,7 @@ create a file named ``test_lists.py`` in the ``tests`` folder with the following
        def test_creating_a_list_with_the_list_keyword(self):
            self.assertEqual(list(0, 1, 2, 3), [])
 
-the terminal shows a `TypeError <./TypeError.rst>`_ and we add it to our list of exceptions encountered
+the terminal shows a :doc:`TypeError` and we add it to our list of exceptions encountered
 
 .. code-block:: python
 
@@ -56,7 +56,7 @@ GREEN: make it pass
 
            def test_creating_a_list_with_the_list_keyword(self):
                self.assertEqual(list((0, 1, 2, 3)), [])
-    the terminal updates to show an `AssertionError <./AssertionError.rst>`_
+    the terminal updates to show an :doc:`AssertionError`
   .. code-block:: python
 
        >       self.assertEqual(list((0, 1, 2, 3)), [])
@@ -102,7 +102,7 @@ add a test to ``TestLists`` in ``test_lists.py`` to learn about updating an exis
            a_list.append(4)
            self.assertEqual(a_list, [0, 1, 2, 3])
 
-the terminal updates to show an `AssertionError <./AssertionError.rst>`_ because after we call ``a_list.append(5)``, the values in ``a_list`` change
+the terminal updates to show an :doc:`AssertionError` because after we call ``a_list.append(5)``, the values in ``a_list`` change
 
 .. code-block:: python
 
@@ -195,7 +195,7 @@ What if there was more than one element, how does python decide which to remove 
                self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
                a_list.remove(2)
                self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
-    the terminal updates to show an `AssertionError <./AssertionError.rst>`_
+    the terminal updates to show an :doc:`AssertionError`
 * update the values on the right to match the expectation
   .. code-block:: python
 
@@ -227,7 +227,7 @@ add a test to ``TestLists`` in ``test_lists.py``
 * we define ``a list`` with 4 elements and confirm the values, then call the ``pop`` method
 * we check the value that gets popped and check the list to see what values remain after calling ``pop``
 
-the terminal updates to show an `AssertionError <./AssertionError.rst>`_ for the test that checks the value of the item that is popped
+the terminal updates to show an :doc:`AssertionError` for the test that checks the value of the item that is popped
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -242,7 +242,7 @@ GREEN: make it pass
            last_item = a_list.pop()
            self.assertEqual(last_item, 3)
            self.assertEqual(a_list, [0, 1, 2, 3])
-    the terminal updates to show an `AssertionError <./AssertionError.rst>`_ for the values of ``a_list`` after the last item is popped
+    the terminal updates to show an :doc:`AssertionError` for the values of ``a_list`` after the last item is popped
 * update the values in the ``self.assertEqual`` to make the tests pass
   .. code-block:: python
 
@@ -278,7 +278,7 @@ add a failing test
            self.assertEqual(a_list[-2], '')
            self.assertEqual(a_list[-4], '')
 
-the terminal output an `AssertionError <./AssertionError.rst>`_
+the terminal output an :doc:`AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -299,7 +299,7 @@ GREEN: make it pass
            self.assertEqual(a_list[-3], '')
            self.assertEqual(a_list[-2], '')
            self.assertEqual(a_list[-4], '')
-    the terminal updates to show an `AssertionError <./AssertionError.rst>`_ for the next test
+    the terminal updates to show an :doc:`AssertionError` for the next test
 * update the value
   .. code-block:: python
 
@@ -358,7 +358,7 @@ GREEN: make it pass
 View the attributes and methods of a list
 -----------------------------------------
 
-In `Classes <./classes.rst>`_ we cover how to view the ``attributes`` and ``methods`` of an object. What if we do the same for ``lists``
+In :doc:`Classes` we cover how to view the ``attributes`` and ``methods`` of an object. What if we do the same for ``lists``
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -375,7 +375,7 @@ add a failing test
            )
 
 
-* the terminal updates to show an `AssertionError <./AssertionError.rst>`_
+* the terminal updates to show an :doc:`AssertionError`
 * ``maxDiff`` is an attribute of the ``unittest.TestCase`` class that sets the maximum amount of characters to show in the comparison between the two objects that is displayed in the terminal. When it is set to ``None`` there is no limit to the number of characters
 
 GREEN: make it pass

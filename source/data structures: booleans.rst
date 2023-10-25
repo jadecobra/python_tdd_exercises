@@ -35,7 +35,7 @@ add a failing test to ``test_data_structures.py`` named ``test_what_is_false``
            self.assertTrue(dict())
            self.assertNotIsInstance(False, bool)
 
-the terminal updates to show an `AssertionError <./AssertionError.rst>`_
+the terminal updates to show an :doc:`AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -111,7 +111,7 @@ What if we try a similar series of failing tests for ``True`` by adding the foll
            })
            self.assertNotIsInstance(True, bool)
 
-the terminal updates to show an `AssertionError <./AssertionError.rst>`_
+the terminal updates to show an :doc:`AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

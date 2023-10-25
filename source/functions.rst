@@ -43,7 +43,7 @@ What if we a create a file named ``test_functions.py`` in the ``tests`` folder a
        def test_functions_with_pass(self):
            self.assertIsNone(functions.function_with_pass())
 
-the terminal displays a `ModuleNotFoundError <./ModuleNotFoundError.rst>`_\ , and we add it to our list of exceptions encountered
+the terminal displays a :doc:`ModuleNotFoundError`\ , and we add it to our list of exceptions encountered
 
 .. code-block:: python
 
@@ -55,7 +55,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* create a file named ``functions.py`` in the project folder and the terminal updates to show an `AttributeError <./AttributeError.rst>`_\ , which we add to our running list of exceptions encountered
+* create a file named ``functions.py`` in the project folder and the terminal updates to show an :doc:`AttributeError`\ , which we add to our running list of exceptions encountered
   .. code-block:: python
 
        # Exceptions Encountered
@@ -90,7 +90,7 @@ What if we test if functions really always return ``None`` by default
            def test_functions_with_return(self):
                self.assertIsNone(functions.function_with_return())
 
-    the terminal updates to show an `AttributeError <./AttributeError.rst>`_
+    the terminal updates to show an :doc:`AttributeError`
 
 *
   GREEN: make it pass
@@ -110,7 +110,7 @@ What if we test if functions really always return ``None`` by default
 
            def test_functions_with_return_none(self):
                self.assertIsNone(functions.function_with_return_none())
-    the terminal updates to show an `AttributeError <./AttributeError.rst>`_
+    the terminal updates to show an :doc:`AttributeError`
 *
   GREEN: make it pass
 
@@ -146,7 +146,7 @@ add a failing test to the ``TestFunctions`` class in ``test_functions.py``
        def test_passthrough_function(self):
            self.assertEqual(functions.passthrough(False), False)
 
-the terminal updates to show an `AttributeError <./AttributeError.rst>`_
+the terminal updates to show an :doc:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -157,7 +157,7 @@ GREEN: make it pass
 
        def passthrough():
            return None
-    the terminal updates to show a `TypeError <./TypeError.rst>`_ because the definition for ``passthrough`` does not allow ``inputs`` but our test sends ``False`` as input
+    the terminal updates to show a :doc:`TypeError` because the definition for ``passthrough`` does not allow ``inputs`` but our test sends ``False`` as input
   .. code-block:: python
 
        TypeError: passthrough() takes 0 positional arguments but 1 was given
@@ -176,7 +176,7 @@ GREEN: make it pass
 
        def passthrough(input_data):
            return None
-    the terminal updates to show an `AssertionError <./AssertionError.rst>`_
+    the terminal updates to show an :doc:`AssertionError`
   .. code-block:: python
 
        AssertionError: None != False
@@ -205,7 +205,7 @@ Wait a minute! Something is not quite right here. The definition for a ``passthr
                self.assertEqual(functions.passthrough(False), False)
                self.assertEqual(functions.passthrough(True), True)
 
-    the terminal shows an `AssertionError <./AssertionError.rst>`_
+    the terminal shows an :doc:`AssertionError`
 
   .. code-block:: python
 
@@ -243,12 +243,12 @@ Wait a minute! Something is not quite right here. The definition for a ``passthr
                self.assertEqual(functions.passthrough(set), False)
                self.assertEqual(functions.passthrough(dict), False)
 
-    the terminal updates to show an `AssertionError <./AssertionError.rst>`_ for each line until we make the input match the output, proving that the passthrough function we have defined returns the input it is given. Hooray! We are geniuses again
+    the terminal updates to show an :doc:`AssertionError` for each line until we make the input match the output, proving that the passthrough function we have defined returns the input it is given. Hooray! We are geniuses again
 
 Functions with positional arguments
 -----------------------------------
 
-We can define our function to take in more than one input, For instance if we are writing a function to perform operations on 2 numbers as we do in `calculator <./calculator.rst>`_\ , the function has to be able to accept the 2 numbers it performs operations on
+We can define our function to take in more than one input, For instance if we are writing a function to perform operations on 2 numbers as we do in :doc:`calculator`\ , the function has to be able to accept the 2 numbers it performs operations on
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -265,7 +265,7 @@ add a new test to ``test_functions.py``, replacing ``my_first_name`` and ``my_la
                ('my_first_name', 'my_last_name')
            )
 
-the terminal updates to show an `AttributeError <./AttributeError.rst>`_
+the terminal updates to show an :doc:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -276,13 +276,13 @@ GREEN: make it pass
 
        def passthrough_with_positional_arguments(input_data):
            return input_data
-    the terminal updates to show a `TypeError <./TypeError.rst>`_
+    the terminal updates to show a :doc:`TypeError`
 * change the signature of ``passthrough_with_positional_arguments`` to take in more than one argument
   .. code-block:: python
 
        def passthrough_with_positional_arguments(input_data, second_argument):
            return input_data
-    the terminal updates to show an `AssertionError <./AssertionError.rst>`_
+    the terminal updates to show an :doc:`AssertionError`
 * update ``passthrough_with_positional_arguments`` to return the two arguments it receives
   .. code-block:: python
 
@@ -319,7 +319,7 @@ How can we make this better?
                    ),
                    ('my_first_name', 'my_last_name')
                )
-    the terminal updates to show an `AssertionError <./AssertionError.rst>`_
+    the terminal updates to show an :doc:`AssertionError`
 * update the test to the correct output
   .. code-block:: python
 
@@ -366,7 +366,7 @@ How can we make this better?
                    ),
                    (bool, int, float, str, tuple, list, set, dict)
                )
-    the terminal updates to show a `TypeError <./TypeError.rst>`_ because 2 positional arguments were expected by the function but 4 were given
+    the terminal updates to show a :doc:`TypeError` because 2 positional arguments were expected by the function but 4 were given
 * In python we can represent multiple arguments using a starred expression `see arbitrary argument lists <https://docs.python.org/3/tutorial/controlflow.html#arbitrary-argument-lists>`_. Let us update the signature of ``functions_with_positional_arguments`` with a starred expression to take in any number of arguments
   .. code-block:: python
 
@@ -395,7 +395,7 @@ add a new test to ``test_functions.py``
                ('my_first_name', 'my_last_name')
            )
 
-the terminal updates to show an `AttributeError <./AttributeError.rst>`_
+the terminal updates to show an :doc:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -426,7 +426,7 @@ GREEN: make it pass
 
        def passthrough_with_keyword_arguments(first_name, last_name):
            return None
-    the terminal updates to show an `AssertionError <./AssertionError.rst>`_
+    the terminal updates to show an :doc:`AssertionError`
 * adjust the return statement to make the test pass
   .. code-block:: python
 
@@ -493,7 +493,7 @@ So far ``passthrough_with_keyword_arguments`` looks the same as ``passthrough_wi
                    {}
                )
 
-    the terminal updates to show a `TypeError <./TypeError.rst>`_
+    the terminal updates to show a :doc:`TypeError`
 
 *
   GREEN: make it pass
@@ -504,7 +504,7 @@ So far ``passthrough_with_keyword_arguments`` looks the same as ``passthrough_wi
 
          def passthrough_with_keyword_arguments(**keyword_arguments):
              return keyword_arguments
-      the terminal updates to show an `AssertionError <./AssertionError.rst>`_ for our previous test that was passing. We have introduced a regression - our new code has caused an old passing test to fail.
+      the terminal updates to show an :doc:`AssertionError` for our previous test that was passing. We have introduced a regression - our new code has caused an old passing test to fail.
   * update the expected result of ``test_functions_with_keyword_arguments`` from the terminal's output
     .. code-block:: python
 
@@ -516,7 +516,7 @@ So far ``passthrough_with_keyword_arguments`` looks the same as ``passthrough_wi
              ),
              {'first_name': 'my_first_name', 'last_name': 'my_last_name'}
          )
-      the terminal updates to show an `AssertionError <./AssertionError.rst>`_ for the next test that was passing. We have another regression
+      the terminal updates to show an :doc:`AssertionError` for the next test that was passing. We have another regression
   * change the next test to make the output match the expectation
     .. code-block:: python
 
@@ -535,7 +535,7 @@ So far ``passthrough_with_keyword_arguments`` looks the same as ``passthrough_wi
                      ),
                      {'first_name': 'my_first_name', 'last_name': 'my_last_name'}
                  )
-      the terminal updates to show an `AssertionError <./AssertionError.rst>`_ for the last test we added
+      the terminal updates to show an :doc:`AssertionError` for the last test we added
   * time to match the last test to the expected value in the comparison
     .. code-block:: python
 
@@ -560,7 +560,7 @@ So far ``passthrough_with_keyword_arguments`` looks the same as ``passthrough_wi
              ),
              {'a': 1, 'b': 2, 'c': 3, 'd': 4}
          )
-      the terminal updates to show passing tests. We now know that keyword arguments are treated as `Dictionaries <./09_DICTIONARIES.rst>`_ in python
+      the terminal updates to show passing tests. We now know that keyword arguments are treated as :doc:`Dictionaries` in python
 
 *
   REFACTOR: make it better
@@ -604,7 +604,7 @@ So far ``passthrough_with_keyword_arguments`` looks the same as ``passthrough_wi
                    {}
                )
 
-    the terminal updates to show an `AssertionError <./AssertionError.rst>`_ and we update the test with the right values to make the test pass
+    the terminal updates to show an :doc:`AssertionError` and we update the test with the right values to make the test pass
 
   .. code-block:: python
 
@@ -674,13 +674,13 @@ GREEN: make it pass
                functions.accepts_positional_and_keyword_arguments('my_first_name', last_name='my_last_name'),
                {}
            )
-    the terminal updates to show an `AttributeError <./AttributeError.rst>`_
+    the terminal updates to show an :doc:`AttributeError`
 * add a definition for the function to ``functions.py``
   .. code-block:: python
 
        def accepts_positional_and_keyword_arguments():
            return None
-    the terminal updates to show a `TypeError <./TypeError.rst>`_
+    the terminal updates to show a :doc:`TypeError`
   .. code-block:: python
 
        TypeError: accepts_positional_and_keyword_arguments() got an unexpected keyword argument 'last_name'
@@ -690,7 +690,7 @@ GREEN: make it pass
 
        def accepts_positional_and_keyword_arguments(last_name):
            return None
-    the terminal updates to show another `TypeError <./TypeError.rst>`_
+    the terminal updates to show another :doc:`TypeError`
   .. code-block:: python
 
        TypeError: accepts_positional_and_keyword_arguments() got multiple values for argument 'last_name'
@@ -706,13 +706,13 @@ GREEN: make it pass
 
        def accepts_positional_and_keyword_arguments(first_name, last_name):
            return None
-    the terminal updates to show an `AssertionError <./AssertionError.rst>`_
+    the terminal updates to show an :doc:`AssertionError`
 * edit the return statement to make the test pass
   .. code-block:: python
 
        def accepts_positional_and_keyword_arguments(first_name, last_name):
            return first_name, last_name
-    the terminal updates the `AssertionError <./AssertionError.rst>`_ with the values we just added
+    the terminal updates the :doc:`AssertionError` with the values we just added
 * modify ``test_functions_with_positional_and_keyword_arguments`` to make our results match the expectation
   .. code-block:: python
 
@@ -789,7 +789,7 @@ Hold on a second. This looks exactly like what we did in ``test_functions_with_p
                ),
                ()
            )
-    the terminal updates to show a `TypeError <./TypeError.rst>`_ because the function signature specifically only has two keyword arguments which are not provided in the call
+    the terminal updates to show a :doc:`TypeError` because the function signature specifically only has two keyword arguments which are not provided in the call
 * using what we know from previous tests we can alter the function to use starred expressions
   .. code-block:: python
 
@@ -878,7 +878,7 @@ Hold on a second. This looks exactly like what we did in ``test_functions_with_p
                    functions.accepts_positional_and_keyword_arguments(),
                    (None, None)
                )
-    the terminal updates to show an `AssertionError <./AssertionError.rst>`_
+    the terminal updates to show an :doc:`AssertionError`
   .. code-block:: python
 
        AssertionError: Tuples differ: ((), {}) != (None, None)
@@ -891,7 +891,7 @@ Hold on a second. This looks exactly like what we did in ``test_functions_with_p
                    ((), {})
                )
 
-* uncomment the last test to see it fail and the terminal updates to show an `AssertionError <./AssertionError.rst>`_
+* uncomment the last test to see it fail and the terminal updates to show an :doc:`AssertionError`
   .. code-block:: python
 
        AssertionError: Tuples differ: ((<class 'bool'>, <class 'int'>, <class 'f[307 chars]t'>}) != ()
@@ -923,8 +923,8 @@ Hold on a second. This looks exactly like what we did in ``test_functions_with_p
     the terminal updates to show passing tests
 * From what we have seen so far, in python
 
-  * positional arguments are represented as `tuples <./DATA_STRUCTURES.rst>`_ with parentheses - ``()``
-  * keyword arguments are represented as `dictionaries <./DICTIONARIES.rst>`_ with curly braces - ``{}``
+  * positional arguments are represented as :doc:`tuples` with parentheses - ``()``
+  * keyword arguments are represented as :doc:`dictionaries` with curly braces - ``{}``
   * we can use ``*name`` to represent any number of positional arguments
   * we can use ``**name`` to represent any number of keyword arguments
   * we can define default values for arguments
@@ -945,7 +945,7 @@ add a test to ``test_functions.py``
        def test_singleton_function(self):
            self.assertEqual(functions.singleton(), 'my_first_name')
 
-the terminal updates to show an `AttributeError <./AttributeError.rst>`_
+the terminal updates to show an :doc:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -969,7 +969,7 @@ add a new test that checks if a singleton that accepts inputs returns the same v
            def test_singleton_function_with_input(self):
                self.assertEqual(functions.singleton_with_input('Bob', 'James', 'Frank'), 'joe')
                self.assertEqual(functions.singleton_with_input('a', 2, 'c', 3), 'joe')
-    the terminal updates to show an `AttributeError <./AttributeError.rst>`_
+    the terminal updates to show an :doc:`AttributeError`
 * add a function for ``singleton_with_inputs`` to ``functions.py`` to make the test pass
   .. code-block:: python
 
@@ -981,8 +981,8 @@ You now know
 
 
 * that singleton functions return the same thing every time they are called
-* that positional arguments are represented as `tuples <./DATA_STRUCTURES.rst>`_ with parentheses - ``()``
-* that keyword arguments are represented as `dictionaries <./DICTIONARIES.rst>`_ with curly braces - ``{}``
+* that positional arguments are represented as :doc:`tuples` with parentheses - ``()``
+* that keyword arguments are represented as :doc:`dictionaries` with curly braces - ``{}``
 * how to write functions in python that can take in any number of positional or keyword arguments as inputs
 * we can use ``*name`` to represent any number of positional arguments
 * we can use ``**name`` to represent any number of keyword arguments

@@ -18,7 +18,6 @@ The only recommendation is that you start with ``How I Setup a Test Driven Devel
 
 .. toctree::
    :maxdepth: 1
-   :caption: Chapters:
 
    How I setup my Interactive Development Environment
    How I setup a Test Driven Development Environment

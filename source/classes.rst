@@ -38,13 +38,13 @@ we create a new file named ``test_classes.py`` in the ``tests`` directory
        def test_class_definitions_with_pass(self):
            self.assertIsInstance(classes.ClassWithPass(), object)
 
-the terminal displays a `ModuleNotFoundError <./ModuleNotFoundError.rst>`_
+the terminal displays a :doc:`ModuleNotFoundError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* create a python module named ``classes.py`` and the terminal updates to show an `AttributeError <./AttributeError.rst>`_
+* create a python module named ``classes.py`` and the terminal updates to show an :doc:`AttributeError`
 * add the name ``ClassWithPass`` to the module
 
   .. code-block:: python
@@ -101,7 +101,7 @@ add another test to ``TestClasses`` in ``test_classes.py``
        def test_classes_definitions_with_parentheses(self):
            self.assertIsInstance(classes.ClassWithParentheses(), object)
 
-the terminal updates to show an `AttributeError <./AttributeError.rst>`_
+the terminal updates to show an :doc:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -156,7 +156,7 @@ we add another test to ``TestClasses`` in ``test_classes.py``
        def test_class_definition_with_object(self):
            self.assertIsInstance(classes.ClassWithObject(), object)
 
-and the terminal displays an `AttributeError <./AttributeError.rst>`_
+and the terminal displays an :doc:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -223,7 +223,7 @@ RED: make it fail
            def test_classes_with_attributes(self):
                self.assertEqual(classes.ClassWithAttributes.a_boolean, bool)
 
-  the terminal updates to show an `AttributeError <./AttributeError.rst>`_
+  the terminal updates to show an :doc:`AttributeError`
 
 * add a class definition to ``classes.py``
 
@@ -299,7 +299,7 @@ update ``test_classes_with_attributes`` with more tests
            self.assertEqual(classes.ClassWithAttributes.a_set, set)
            self.assertEqual(classes.ClassWithAttributes.a_dictionary, dict)
 
-the terminal updates to show an `AttributeError <./AttributeError.rst>`_
+the terminal updates to show an :doc:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -340,7 +340,7 @@ Let us add some tests for class methods. update ``TestClasses`` in ``classes.py`
               'You called MethodA'
           )
 
-the terminal updates to show `AttributeError <./AttributeError.rst>`_
+the terminal updates to show :doc:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -419,7 +419,7 @@ REFACTOR: make it better
                self.assertEqual(classes.ClassWithMethods.method_c(), 'You called MethodC')
                self.assertEqual(classes.ClassWithMethods.method_d(), 'You called MethodD')
 
-  the terminal updates to show an `AttributeError <./AttributeError.rst>`_
+  the terminal updates to show an :doc:`AttributeError`
 
 * update ``ClassWithmethods`` in ``classes.py`` until all tests pass
 
@@ -447,7 +447,7 @@ we add another test for a class that has both attributes and methods
                'you called a method'
            )
 
-with the terminal giving an `AttributeError <./AttributeError.rst>`_
+with the terminal giving an :doc:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -481,7 +481,7 @@ we will add a failing test to ``test_classes.py``
        def test_classes_with_initializers(self):
            self.assertEqual(classes.Boy().sex, 'M')
 
-the terminal updates to show an `AttributeError <./AttributeError.rst>`_
+the terminal updates to show an :doc:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -535,7 +535,7 @@ REFACTOR: make it better
            self.assertEqual(classes.Boy().sex, 'M')
            self.assertEqual(classes.Girl(sex='F').sex, 'F')
 
-  the terminal displays an `AttributeError <./AttributeError.rst>`_
+  the terminal displays an :doc:`AttributeError`
 
 * trying the same solution we used for the ``Boy`` class, add a definition for the ``Girl`` class to ``classes.py``
 
@@ -592,7 +592,7 @@ REFACTOR: make it better
            self.assertEqual(classes.Girl(sex='F').sex, 'F')
            self.assertEqual(classes.Other(sex='?').sex, '?')
 
-  the terminal displays an `AttributeError <./AttributeError.rst>`_
+  the terminal displays an :doc:`AttributeError`
 
 * add a class definition to ``classes.py``
 
@@ -676,7 +676,7 @@ REFACTOR: make it better
        class Girl(Human):
            ...
 
-* remove the ``sex`` attribute and the terminal outputs an `AssertionError <./AssertionError.rst>`_
+* remove the ``sex`` attribute and the terminal outputs an :doc:`AssertionError`
 * update the ``Human`` class to set the ``sex`` attribute in the initializer instead of at the class level
 
   .. code-block:: python
@@ -689,7 +689,7 @@ REFACTOR: make it better
            def __init__(self, sex='M'):
                self.sex = sex
 
-  the terminal still shows an `AssertionError <./AssertionError.rst>`_
+  the terminal still shows an :doc:`AssertionError`
 
 * when we remove the ``__init__`` method from the ``Girl`` class
 
@@ -736,7 +736,7 @@ Why did that work?
 How to View the Attributes and Methods of a Class
 --------------------------------------------------
 
-To view what ``attributes`` and ``methods`` are defined for any object we can call ``dir`` on the object. The ``dir`` method returns a `list <./LISTS.rst>`_ that contains the names of all attributes and methods in the class
+To view what ``attributes`` and ``methods`` are defined for any object we can call ``dir`` on the object. The ``dir`` method returns a :doc:`list` that contains the names of all attributes and methods in the class
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -753,7 +753,7 @@ add a test to ``test_classes.py``
                ]
            )
 
-the terminal updates to show an `AssertionError <./AssertionError.rst>`_ as our expected and real values do not match
+the terminal updates to show an :doc:`AssertionError` as our expected and real values do not match
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

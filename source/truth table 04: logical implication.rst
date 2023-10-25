@@ -41,7 +41,7 @@ add a test for logical implication to ``TestBinaryOperations``
            self.assertTrue(truth_table.logical_implication(False, True))
            self.assertTrue(truth_table.logical_implication(False, False))
 
-the terminal updates to show an `AttributeError <./AttributeError.rst>`_
+the terminal updates to show an :doc:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

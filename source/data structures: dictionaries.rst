@@ -27,7 +27,7 @@ first we add a file named ``test_dictionaries.py`` to the ``tests`` folder with 
    import unittest
    import dictionaries
 
-the terminal gives us a `ModuleNotFoundError <./ModuleNotFoundError.rst>`_\ , and we add it to our list of exceptions encountered
+the terminal gives us a :doc:`ModuleNotFoundError`\ , and we add it to our list of exceptions encountered
 
 .. code-block:: python
 
@@ -68,13 +68,13 @@ REFACTOR: make it better
 
        def a_dict():
            return None
-    the terminal updates to show an `AssertionError <./AssertionError.rst>`_ since the function we defined returns ``None`` not a dictionary
+    the terminal updates to show an :doc:`AssertionError` since the function we defined returns ``None`` not a dictionary
 * update the return statement to return an empty dictionary
   .. code-block:: python
 
        def a_dict():
            return {}
-    the terminal still shows an `AssertionError <./AssertionError.rst>`_ but now our return value looks more similar to what is expected
+    the terminal still shows an :doc:`AssertionError` but now our return value looks more similar to what is expected
   .. code-block:: python
 
        E       AssertionError: {} != {'key': 'value'}
@@ -119,7 +119,7 @@ add a failing test to ``TestDictionaries``
        def test_creating_dictionaries_with_numbers_as_keys(self):
            self.assertEqual({1: 'boom'}, {'one': 'boom'})
 
-the terminal updates to show an `AssertionError <./AssertionError.rst>`_ since the two values are different
+the terminal updates to show an :doc:`AssertionError` since the two values are different
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -143,7 +143,7 @@ REFACTOR: make it better
            def test_creating_dictionaries_with_numbers_as_keys(self):
                self.assertEqual({1: 'boom'}, {'one': 'boom'})
                self.assertEqual({2.5: 'works'}, {2.5: 'fails'})
-    the terminal updates to show an `AssertionError <./AssertionError.rst>`_ since the values are different
+    the terminal updates to show an :doc:`AssertionError` since the values are different
 * update the value on the right to make it pass
   .. code-block:: python
 
@@ -165,7 +165,7 @@ RED: make it fail
        def test_creating_dictionaries_with_booleans_as_keys(self):
            self.assertEqual({False: 'boom'}, {False: 'bap'})
 
-the terminal outputs an `AssertionError <./AssertionError.rst>`_
+the terminal outputs an :doc:`AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -187,7 +187,7 @@ REFACTOR: make it better
        def test_creating_dictionaries_with_booleans_as_keys(self):
            self.assertEqual({False: 'boom'}, {False: 'boom'})
            self.assertEqual({True: 'bap'}, {True: 'boom'})
-    the terminal updates to show an `AssertionError <./AssertionError.rst>`_
+    the terminal updates to show an :doc:`AssertionError`
 * update the values to make the tests pass
   .. code-block:: python
 
@@ -210,7 +210,7 @@ add a test to ``TestDictionaries``
        def test_creating_dictionaries_with_tuples_as_keys(self):
            self.assertEqual({(1, 2): "value"}, {(1, 2): "key"})
 
-the terminal outputs an `AssertionError <./AssertionError.rst>`_
+the terminal outputs an :doc:`AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -236,7 +236,7 @@ add a test to ``TestDictionaries`` using a list as a key
        def test_creating_dictionaries_with_lists_as_keys(self):
            {[1, 2]: "BOOM"}
 
-the terminal gives a `TypeError <./AssertionError.rst>`_ because only ``hashable`` types can be used as dictionary keys and `lists <./LISTS.rst>`_ are not ``hashable``
+the terminal gives a :doc:`TypeError` because only ``hashable`` types can be used as dictionary keys and :doc:`lists` are not ``hashable``
 
 .. code-block::
 
@@ -254,7 +254,7 @@ we also update our list of exceptions encountered
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-In `Exception Handling <./EXCEPTION_HANDLING.rst>`_ we learn how to use ``self.assertRaises`` to confirm that an error is raised by some code without having it crash our tests. We will do the same here to confirm that creating a dictionary with a ``list`` as the key raises a `TypeError <./TypeError.rst>`_
+In `Exception Handling <./EXCEPTION_HANDLING.rst>`_ we learn how to use ``self.assertRaises`` to confirm that an error is raised by some code without having it crash our tests. We will do the same here to confirm that creating a dictionary with a ``list`` as the key raises a :doc:`TypeError`
 
 .. code-block:: python
 
@@ -277,7 +277,7 @@ What if we try a similar test using a set as a key
        def test_creating_dictionaries_with_sets_as_keys(self):
            {{1, 2}: "BOOM"}
 
-the terminal responds with a `TypeError <./AssertionError.rst>`_
+the terminal responds with a :doc:`TypeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -306,7 +306,7 @@ add a new test
            a_dictionary = {"key": "value"}
            {a_dictionary: "BOOM"}
 
-and the terminal outputs a `TypeError <./TypeError.rst>`_
+and the terminal outputs a :doc:`TypeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -347,7 +347,7 @@ we are going to add a test to ``TestDictionaries`` in ``test_dictionaries.py``
            a_dictionary = {"key": "value"}
            self.assertEqual(a_dictionary["key"], "bob")
 
-the terminal displays a failing test with an `AssertionError <./AssertionError.rst>`_ because ``bob`` is not equal to ``value``
+the terminal displays a failing test with an :doc:`AssertionError` because ``bob`` is not equal to ``value``
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -377,7 +377,7 @@ REFACTOR: make it better
                self.assertEqual(
                    list(a_dictionary.values()), []
                )
-    the terminal gives us an `AssertionError <./AssertionError.rst>`_
+    the terminal gives us an :doc:`AssertionError`
 * update the values to make the test pass
   .. code-block:: python
 
@@ -407,7 +407,7 @@ REFACTOR: make it better
                list(a_dictionary.keys()),
                []
            )
-    the terminal updates to show an `AssertionError <./AssertionError.rst>`_
+    the terminal updates to show an :doc:`AssertionError`
 * update the test to make it pass
   .. code-block:: python
 
@@ -563,7 +563,7 @@ What if we want to call a dictionary and not have python raise an error when it 
 How to view the attributes and methods of a dictionary
 -----------------------------------------------
 
-`Classes <./classes.rst>`_ covers how to view the ``attributes`` and ``methods`` of an object. What if we do the same for ``dictionaries``
+:doc:`Classes` covers how to view the ``attributes`` and ``methods`` of an object. What if we do the same for ``dictionaries``
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -579,7 +579,7 @@ add a test to ``TestDictionaries``
                []
            )
 
-the terminal updates to show an `AssertionError <./AssertionError.rst>`_
+the terminal updates to show an :doc:`AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -715,7 +715,7 @@ REFACTOR: make it better
            a_dictionary.setdefault('another_key')
            self.assertEqual(a_dictionary, {'bippity': 'boppity'})
 
-    the terminal updates to show that ``a_dictionary`` has changed, by giving us an `AssertionError <./AssertionError.rst>`_. It has a new key which was not there before
+    the terminal updates to show that ``a_dictionary`` has changed, by giving us an :doc:`AssertionError`. It has a new key which was not there before
 
 *
   update the test to make it pass
@@ -736,7 +736,7 @@ REFACTOR: make it better
 
            a_dictionary.setdefault('a_new_key', 'a_default_value')
            self.assertEqual(a_dictionary, {'bippity': 'boppity', 'another_key': None})
-    the terminal updates to show an `AssertionError <./AssertionError.rst>`_ since ``a_dictionary`` now has a new ``key`` and ``value``
+    the terminal updates to show an :doc:`AssertionError` since ``a_dictionary`` now has a new ``key`` and ``value``
 * update the test to make it pass
   .. code-block:: python
 
@@ -777,7 +777,7 @@ add a test to ``TestDictionaries``
                {"basic": "toothpaste", "whitening": "peroxide"}
            )
 
-the terminal updates to show an `AssertionError <./AssertionError.rst>`_ because the values of ``a_dictionary`` were updated when we called the ``update`` method on it
+the terminal updates to show an :doc:`AssertionError` because the values of ``a_dictionary`` were updated when we called the ``update`` method on it
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -806,7 +806,7 @@ add a failing test to ``TestDictionaries``
            }
            self.assertEqual(a_dictionary.pop("basic"), None)
 
-the terminal updates to show an `AssertionError <./AssertionError.rst>`_
+the terminal updates to show an :doc:`AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

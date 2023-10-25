@@ -48,14 +48,14 @@ RED: make it fail
       E   ModuleNotFoundError: No module named 'functions'
 
 
-* Ah, a ``ModuleNotFoundError``, We have a lot of practice solving this error from `ModuleNotFoundError <./ModuleNotFoundError.rst>`_. What if we create a file named ``functions.py`` and the terminal updates to show
+* Ah, a ``ModuleNotFoundError``, We have a lot of practice solving this error from :doc:`ModuleNotFoundError`. What if we create a file named ``functions.py`` and the terminal updates to show
 
   .. code-block:: python
 
        >       self.assertIsNone(functions.function_a("a"))
        E       AttributeError: module 'functions' has no attribute 'function_a'
 
-* We also have some practice with ``AttributeError`` from `AttributeError <./AttributeError.rst>`_. Add this line ``functions.py``
+* We also have some practice with ``AttributeError`` from :doc:`AttributeError`. Add this line ``functions.py``
 
   .. code-block:: python
 
@@ -97,7 +97,7 @@ RED: make it fail
       Imagine you have a telephone, it has a call function but to make a call you must provide a number then hit dial.
     - ``call`` is like ``function_a``
     - the number you provide is like ``"a"`` and hitting dial is like ``()``
-      We will practice this some more in `TDD_FUNCTIONS <./TDD_functions.rst>`_
+      We will practice this some more in :doc:`TDD_FUNCTIONS`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -183,7 +183,7 @@ There's not much to do here but add more tests for practice.
 .. EXTRA::
 
 * What's another solution to the above test?
-* How can we define a function that takes in any number of parameters? see `TDD_FUNCTIONS <./TDD_functions.rst>`_
+* How can we define a function that takes in any number of parameters? see :doc:`TDD_FUNCTIONS`
 
 add more tests
 ^^^^^^^^^^^^^^^^^^^^^

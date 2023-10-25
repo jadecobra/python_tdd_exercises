@@ -27,7 +27,7 @@ add a test for negate first to ``TestBinaryOperations``
            self.assertTrue(truth_table.negate_first(False, True))
            self.assertTrue(truth_table.negate_first(False, False))
 
-the terminal shows an `AttributeError <./AttributeError.rst>`_
+the terminal shows an :doc:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -38,7 +38,7 @@ GREEN: make it pass
 
        def negate_first(p, q):
            return False
-    the terminal updates to show an `AssertionError <./AssertionError.rst>`_ for the third case
+    the terminal updates to show an :doc:`AssertionError` for the third case
 * before we add a condition for it, this looks similar to ``logical_equality`` and ``exclusive_disjunction`` because 2 out of the 4 cases have the same return value. We observe that
 
   * if ``p == True`` the result is ``False``
@@ -99,7 +99,7 @@ add a test for negate second to ``TestBinaryOperations``
            self.assertFalse(truth_table.negate_second(False, True))
            self.assertTrue(truth_table.negate_second(False, False))
 
-the terminal shows an `AttributeError <./AttributeError.rst>`_
+the terminal shows an :doc:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -110,7 +110,7 @@ GREEN: make it pass
 
        def negate_second(p, q):
            return False
-    the terminal updates to show an `AssertionError <./AssertionError.rst>`_ for the third case
+    the terminal updates to show an :doc:`AssertionError` for the third case
 * before we add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction`` and ``negate_first`` because 2 out of the 4 cases have the same return value. We observe that
 
   * if ``q == True`` the result is ``False``
@@ -121,7 +121,7 @@ GREEN: make it pass
 
        def negate_second(p, q):
            return not p
-    the terminal still shows an `AssertionError <./AssertionError.rst>`_. What if we try ``q`` instead
+    the terminal still shows an :doc:`AssertionError`. What if we try ``q`` instead
   .. code-block:: python
 
        def negate_second(p, q):

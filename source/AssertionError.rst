@@ -416,7 +416,7 @@ REFACTOR: make it better
 
       E       AssertionError: False != None
 
-  The ``assertEqual`` method from ``unittest.TestCase`` checks if the two given inputs, ``False`` and ``None`` are equal. We look at function signatures in `TypeError <./TypeError.rst>`_ to get a better understanding of passing inputs to functions.
+  The ``assertEqual`` method from ``unittest.TestCase`` checks if the two given inputs, ``False`` and ``None`` are equal. We look at function signatures in :doc:`TypeError` to get a better understanding of passing inputs to functions.
 
   For now, we could imagine that in a file named ``unittest.py`` there is a definition which means something like the code below. We could also `look at the real definition of the assertEqual method <https://github.com/python/cpython/blob/f1f85a42eafd31720cf905c5407ca3e043946698/Lib/unittest/case.py#L868>`_
 
