@@ -563,7 +563,7 @@ What if we want to call a dictionary and not have python raise an error when it 
 How to view the attributes and methods of a dictionary
 -----------------------------------------------
 
-:doc:`Classes` covers how to view the ``attributes`` and ``methods`` of an object. What if we do the same for ``dictionaries``
+:doc:`classes` covers how to view the ``attributes`` and ``methods`` of an object. What if we do the same for ``dictionaries``
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^

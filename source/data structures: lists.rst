@@ -358,7 +358,7 @@ GREEN: make it pass
 View the attributes and methods of a list
 -----------------------------------------
 
-In :doc:`Classes` we cover how to view the ``attributes`` and ``methods`` of an object. What if we do the same for ``lists``
+In :doc:`classes` we cover how to view the ``attributes`` and ``methods`` of an object. What if we do the same for ``lists``
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^

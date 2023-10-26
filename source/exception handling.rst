@@ -359,15 +359,18 @@ GREEN: make it pass
        E       Exception
 
 * we add a ``self.assertRaises`` to ``test_catching_exceptions`` in ``test_exception_handling.py`` to confirm that this error happens and allow our tests to continue
+
   .. code-block:: python
 
        def test_catching_exceptions(self):
            with self.assertRaises(Exception):
                exceptions.raises_exception_error()
-    the terminal shows passing tests
+
+  the terminal shows passing tests
 
 *CONGRATULATIONS!*
-You now know how to deliberately create an exception, you now have absolute power to reshape the universe to your will
+You now know how to deliberately create an exception which means you have absolute power to reshape the universe to your will
+
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -375,161 +378,147 @@ REFACTOR: make it better
 add exception handling to our program so it does not end when it encounters an exception but instead gives a message
 
 
-*
-  RED: make it fail
+* RED: make it fail
 
-    add a new test to ``test_exception_handling``
+  add a new test to ``test_exception_handling``
 
-  .. code-block:: python
+    .. code-block:: python
 
-           def test_catching_things_that_fail(self):
-               self.assertEqual(
-                   exceptions.exception_handler(exceptions.raises_exception_error),
-                   'failed'
-               )
+      def test_catching_things_that_fail(self):
+         self.assertEqual(
+             exceptions.exception_handler(exceptions.raises_exception_error),
+             'failed'
+         )
 
-    the terminal updates to show an `AttributeError <./AttributeError>`_
+  the terminal updates to show an `AttributeError <./AttributeError>`_
 
-*
-  ### GREEN: make it pass
-    add a name to ``exceptions.py`` and the terminal updates to show ``NameError``
+* ### GREEN: make it pass
 
-  .. code-block::
+  add a name to ``exceptions.py`` and the terminal updates to show ``NameError``
 
+    .. code-block:: python
 
-.. code-block:: python
-       exception_handler
-       ```
+      exception_handler
 
-    define ``exception_handler`` and the terminal displays a :doc:`TypeError`
+  define ``exception_handler`` and the terminal displays a :doc:`TypeError`
 
-  .. code-block::
+    .. code-block:: python
 
+      exception_handler = None
 
-.. code-block:: python
-       exception_handler = None
-       ```
+  changing ``exception_handler`` to a function updates the :doc:`TypeError` with a new message
 
-   REDefine ``exception_handler`` as a function updates the :doc:`TypeError` with a new message
+    .. code-block:: python
 
-  .. code-block::
+      def exception_handler():
+         return None
 
+  update the signature for ``exception_handler`` to accept a positional argument
 
-.. code-block:: python
-       def exception_handler():
-           return None
-       ```
+    .. code-block:: python
 
-    update the signature for ``exception_handler`` to accept a positional argument
+      def exception_handler(argument):
+         return None
 
-  .. code-block::
+  the terminal updates to show an [AssertionError](./AssertionError.rst)
 
+    .. code-block:: python
 
-.. code-block:: python
-       def exception_handler(argument):
-           return None
-       ```
-       the terminal updates to show an [AssertionError](./AssertionError.rst)
+      E       AssertionError: None != 'failed'
 
-.. code-block:: python
-       E       AssertionError: None != 'failed'
-       ```
-       because the result of calling `exceptions.exception_handler` with `exceptions.raises_exception_error`  as the input is currently ``None`` which is not equal to ``failed``
+  because the result of calling `exceptions.exception_handler` with `exceptions.raises_exception_error`  as the input is currently ``None`` which is not equal to ``failed``
 
-    change ``exception_handler`` to return ``failed`` and the terminal updates to show passing tests
+  change ``exception_handler`` to return ``failed`` and the terminal updates to show passing tests
 
-  .. code-block::
+    .. code-block:: python
 
+      def exception_handler(argument):
+         return 'failed'
 
-.. code-block:: python
-       def exception_handler(argument):
-           return 'failed'
-       ```
+* RED: make it fail
 
-*
-  RED: make it fail
+  our solution is faulty, the ``exception_handler`` always returns ``failed`` regardless of what we provide as an argument, we should add a new test to ``test_exception_handling`` that provides a different input with an expectation of a different result
 
-    our solution is faulty, the ``exception_handler`` always returns ``failed`` regardless of what we provide as an argument, we should add a new test to ``test_exception_handling`` that provides a different input with an expectation of a different result
+    .. code-block:: python
 
-  .. code-block:: python
+      def test_catching_things_that_succeed(self):
+          self.assertEqual(
+              exceptions.exception_handler(exceptions.does_not_raise_exception_error),
+              'succeeded'
+          )
 
-           def test_catching_things_that_succeed(self):
-               self.assertEqual(
-                   exceptions.exception_handler(exceptions.does_not_raise_exception_error),
-                   'succeeded'
-               )
+  the terminal updates to show an :doc:`AttributeError`
 
-    the terminal updates to show an :doc:`AttributeError`
+* GREEN: make it pass
 
-*
-  GREEN: make it pass
+  add ``does_not_raise_exception_error`` to ``exceptions.py`` and the terminal updates to show a ``NameError``
 
-    add ``does_not_raise_exception_error`` to ``exceptions.py`` and the terminal updates to show a ``NameError``
+    .. code-block:: python
 
-  .. code-block:: python
+         does_not_raise_exception_error
 
-       does_not_raise_exception_error
+  define ``does_not_raise_exception_error`` as a variable
 
-    define ``does_not_raise_exception_error`` as a variable
+    .. code-block:: python
 
-  .. code-block:: python
+         does_not_raise_exception_error = None
 
-       does_not_raise_exception_error = None
+  and the terminal updates to show :doc:`AssertionError`
 
-    and the terminal updates to show :doc:`AssertionError`
+    .. code-block::
 
-  .. code-block::
+         E       AssertionError: 'failed' != 'succeeded'
 
-       E       AssertionError: 'failed' != 'succeeded'
+  because the value returned by ``exceptions.exception_handler`` when given ``exceptions.does_not_raise_exception_error`` as input is ``failed`` which is not equal to ``succeeded``
 
-    because the value returned by ``exceptions.exception_handler`` when given ``exceptions.does_not_raise_exception_error`` as input is ``failed`` which is not equal to ``succeeded``
+  We want the ``exception_handler`` function to return a different input based on the exceptions that occur within the function to help us learn how to handle exceptions. Let us update ``exception_handler`` in ``exceptions.py`` to call a function it receives as input
 
-    For our purpose of learning to handle exceptions we want the ``exception_handler`` function to return a different input based on the exceptions that occur within the function. Let us update ``exception_handler`` in ``exceptions.py`` to call a function it receives as input
+    .. code-block:: python
 
-  .. code-block:: python
+         def exception_handler(function):
+             return function()
 
-       def exception_handler(function):
-           return function()
+  the terminal updates to show a :doc:`TypeError` because ``does_not_raise_exception_error`` is not a function, we will redefine ``does_not_raise_exception_error`` to make it callable
 
-    the terminal updates to show a :doc:`TypeError` because ``does_not_raise_exception_error`` is not a function, we will redefine ``does_not_raise_exception_error`` to make it callable
+    .. code-block:: python
 
-  .. code-block:: python
+         def does_not_raise_exception_error():
+             return None
 
-       def does_not_raise_exception_error():
-           return None
+  the terminal updates to show
 
-    the terminal updates to show
+    .. code-block:: python
 
-  .. code-block:: python
+        AssertionError: None != 'succeeded'
 
-       AssertionError: None != 'succeeded'
+  because the ``exception_handler`` function returns the result of calling the function it receives as input, when we call ``exceptions.exception_handler(exceptions.does_not_raise_exception_error)`` it in turn calls ``does_not_raise_exception_error`` and returns the result of the call which we defined as ``None``. Since the result is not equal to ``succeeded``, our expectation is not met.
 
-    because the ``exception_handler`` function returns the result of calling the function it receives as input, when we call ``exceptions.exception_handler(exceptions.does_not_raise_exception_error)`` it in turn calls ``does_not_raise_exception_error`` and returns the result of the call which we defined as ``None``. Since the result is not equal to ``succeeded``, our expectation is not met.
+  To catch/handle exceptions in python we use a ``try...except...else`` statement. This allows the program to make a decision when it encounters an Exception. Update ``exception_handler`` in ``exceptions.py`` to handle exceptions
 
-    To catch/handle exceptions in python we use a ``try...except...else`` statement. This allows the program to make a decision when it encounters an Exception. Update ``exception_handler`` in ``exceptions.py`` to handle exceptions
+    .. code-block:: python
 
-  .. code-block:: python
+      def exception_handler(function):
+          try:
+              function()
+          except Exception:
+              return 'failed'
+          else:
+              return 'succeeded'
 
-       def exception_handler(function):
-           try:
-               function()
-           except Exception:
-               return 'failed'
-           else:
-               return 'succeeded'
+  the terminal updates to show passing tests
 
-    the terminal updates to show passing tests
-
-    We can think of the  ``try...except...else`` statement as ``try`` something, if it raises an ``Exception`` do this, if it does not raise an exception do do something else. In this case
+  We can think of the  ``try...except...else`` statement as ``try`` something, if it raises an ``Exception`` do this, if it does not raise an exception do something else. In this case
 
 
   * ``try`` calling ``function()``
   * ``except Exception`` - if ``function()`` raises an Exception return ``failed``
   * ``else`` - if ``function()`` does not raise an Exception return ``succeeded``
-  * do you want to
 
-    * `read more about the try statement? <https://docs.python.org/3/reference/compound_stmts.html#the-try-statement>`_
-    * `read more about exception handling? <https://docs.python.org/3/tutorial/errors.html?highlight=try%20except#handling-exceptions>`_
+.. admonition:: do you want to
+
+  - `read more about the try statement? <https://docs.python.org/3/reference/compound_stmts.html#the-try-statement>`_
+  - `read more about exception handling? <https://docs.python.org/3/tutorial/errors.html?highlight=try%20except#handling-exceptions>`_
+
 
 How to use try...except...else...finally
 ----------------------------------------
@@ -554,68 +543,86 @@ GREEN: make it pass
 
 
 * add a name to ``exceptions.py`` and the terminal updates to show a ``NameError``
+
   .. code-block:: python
 
        always_returns
 
 * define ``always_returns`` as a variable and we get an :doc:`AttributeError`
+
   .. code-block:: python
 
        always_returns = None
 
 * redefine ``always_returns`` as a function and the terminal displays a :doc:`TypeError`
+
   .. code-block:: python
 
        def always_returns():
            return None
 
 * update the signature of ``always_returns`` to accept a function that we call and return its value
+
   .. code-block:: python
 
        def always_returns(function):
            return function()
-    the terminal updates to show
+
+  the terminal updates to show
+
   .. code-block:: python
 
        AssertionError: None != 'always_returns_this'
-    because ``exceptions.always_returns`` returns the value of ``does_not_raise_exception_error`` which is ``None`` and is not equal to our expectation in the test which is ``always_returns_this``
+
+  because ``exceptions.always_returns`` returns the value of ``does_not_raise_exception_error`` which is ``None`` and is not equal to our expectation in the test which is ``always_returns_this``
+
 * add exception handling with using ``try...except...else``
+
   .. code-block:: python
 
-       def always_returns(function):
-           try:
-               function()
-           except Exception:
-               return 'failed'
-           else:
-               return 'succeeded'
-    the terminal displays an :doc:`AssertionError` and since no exception is raised when ``does_not_raise_exception_error`` is called by ``always_returns_this``, it returns ``succeeded`` which is not equal to ``always_returns_this``
+     def always_returns(function):
+         try:
+             function()
+         except Exception:
+             return 'failed'
+         else:
+             return 'succeeded'
+
+  the terminal displays an :doc:`AssertionError` and since no exception is raised when ``does_not_raise_exception_error`` is called by ``always_returns_this``, it returns ``succeeded`` which is not equal to ``always_returns_this``
+
 * we can try adding another return statement to the function to see if that would work
+
   .. code-block:: python
 
-       def always_returns(function):
-           try:
-               function()
-           except Exception:
-               return 'failed'
-           else:
-               return 'succeeded'
-           return 'always_returns_this'
-    no change, the terminal still has the same error. In python the ``return`` statement is the last thing executed in the function, nothing else after that statement. Since the function returns ``suceeded`` it ignores the return statement below it. We can add a clause to force it to ignore the other return statements and only return what we want
+     def always_returns(function):
+         try:
+             function()
+         except Exception:
+             return 'failed'
+         else:
+             return 'succeeded'
+         return 'always_returns_this'
+
+  no change, the terminal still has the same error. In python the ``return`` statement is the last thing executed in the function, nothing else after that statement. Since the function returns ``suceeded`` it ignores the return statement below it. We can add a clause to force it to ignore the other return statements and only return what we want
+
 * add a ``finally`` clause to the ``try...except...else`` block
+
   .. code-block:: python
 
-       def always_returns(function):
-           try:
-               function()
-           except Exception:
-               return 'failed'
-           else:
-               return 'succeeded'
-           finally:
-               return 'always_returns_this'
-    the terminal updates to show passing tests. the ``finally`` clause is always executed regardless of what happens in the ``try`` block
+     def always_returns(function):
+         try:
+             function()
+         except Exception:
+             return 'failed'
+         else:
+             return 'succeeded'
+         finally:
+             return 'always_returns_this'
+
+  the terminal updates to show passing tests. the ``finally`` clause is always executed regardless of what happens in the ``try`` block
+
 * add one more test to verify that the code in the ``finally`` block will always execute, update ``test_finally_always_returns``
+
   .. code-block:: python
 
        def test_finally_always_returns(self):
@@ -627,7 +634,8 @@ GREEN: make it pass
                exceptions.always_returns(exceptions.raises_exception_error),
                'always_returns_this'
            )
-    It is important to note that ``always_returns`` could have been defined as a ``singleton`` :doc:`functions` and the tests would still pass, but that would not illustrate how to use ``try...except...else...finally``
+
+  It is important to note that ``always_returns`` could have been defined as a ``singleton`` :doc:`function <functions>` and the tests would still pass, but that would not illustrate how to use ``try...except...else...finally``
   .. code-block:: python
 
        def always_returns(function):

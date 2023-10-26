@@ -1,3 +1,4 @@
+
 AttributeError
 ==============
 
@@ -40,7 +41,7 @@ What does the code above mean?
 
 * ``import unittest`` imports the ``unittest`` module from the python standard library
 * ``import module`` imports the ``module`` module - this is going to hold the solution we write
-* ``class TestAttributeErrors(unittest.TestCase):`` - a class definition that inherits from ``unittest.TestCase`` and will hold our tests. We learn more about this in :doc:`Classes`
+* ``class TestAttributeErrors(unittest.TestCase):`` - a class definition that inherits from ``unittest.TestCase`` and will hold our tests. We learn more about this in :doc:`classes`
 * ``def test_defining_variables_to_solve_attribute_errors(self):`` the definition of our first test function to find out if defining variables can solve an ``AttributeError``
 * ``self.assertIsNone(module.variable_0)`` - the actual test. This is equivalent to asking the question ``is module.variable_0 equal to None``
 * ``assertIsNone`` is one of the helper functions inherited from ``unittest.TestCase``. We learn more about this in :doc:`AssertionError`
@@ -383,7 +384,7 @@ GREEN: make it pass
 
       function_0 = None
 
-  we see a ``TypeError`` in the terminal
+  we see a :doc:`TypeError` in the terminal
 
   .. code-block:: python
 
@@ -400,9 +401,9 @@ GREEN: make it pass
       # NameError
       # TypeError
 
-  a ``TypeError`` is raised in this case because we ``called`` an object that was not ``callable``. A callable object is an object that can potentially handle inputs. We can define a callable as a ``class`` or a ``function``.
+  a :doc:`TypeError` is raised in this case because we ``called`` an object that was not ``callable``. A callable object is an object that can potentially handle inputs. We can define a callable as a ``class`` or a ``function``.
 
-  We go over callables in :doc:`Functions` and :doc:`Classes`. When an object is defined as a callable, we call it by adding parentheses at the end e.g. ``module.function_0()`` will call ``function_0`` in ``module.py``
+  We go over callables in :doc:`functions` and :doc:`classes`. When an object is defined as a callable, we call it by adding parentheses at the end e.g. ``module.function_0()`` will call ``function_0`` from ``module.py``
 
 * What if we change ``function_0`` in ``module.py`` to a function by modifying its definition using the ``def`` keyword
 
@@ -497,7 +498,7 @@ GREEN: make it pass
 
       Class0 = None
 
-  the terminal updates to show a ``TypeError``
+  the terminal updates to show a :doc:`TypeError`
 
   .. code-block:: python
 
@@ -510,7 +511,7 @@ GREEN: make it pass
       def Class():
           return None
 
-  The tests pass! Something is odd here, what is the difference between :doc:`Classes` and :doc:`Functions`\ ? Why are we writing a different set of tests for Classes if the solutions are the same?
+  The tests pass! Something is odd here, what is the difference between :doc:`classes` and :doc:`functions`? Why are we writing a different set of tests for Classes if the solutions are the same?
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -543,13 +544,13 @@ REFACTOR: make it better
 * How to solve ``NameError``
 * How to solve :doc:`AttributeError` by defining variables, :doc:`functions` and :doc:`classes`
 
-  * do we know how to define :doc:`classes` if we define them the same was as :doc:`functions`\ ?
+do we know how to define :doc:`classes` if we define them the same was as :doc:`functions` ?
 
 ----
 
 
 Solve the AttributeError by defining an Attribute in a Class
---------------------------------------------------------
+------------------------------------------------------------
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -692,10 +693,10 @@ REFACTOR: make it better
 * How to solve :doc:`AttributeError` by defining variables, :doc:`functions` and :doc:`classes`
 * How to solve :doc:`AttributeError` by defining
 
-  * variables
-  * :doc:`functions`
-  * :doc:`classes`
-  * attributes (variables) in classes
+  - variables
+  - :doc:`functions`
+  - :doc:`classes`
+  - attributes (variables) in classes
 
 
 ----
@@ -734,7 +735,7 @@ GREEN: make it pass
           ...
           method_0 = None
 
-  the terminal will update to show a ``TypeError``
+  the terminal will update to show a :doc:`TypeError`
 
   .. code-block:: python
 
@@ -782,8 +783,8 @@ repeat the solution until all tests pass
   - variables
   - :doc:`functions`
   - :doc:`classes`
-  - attributes (variables) in classes
-  - methods (functions) in classes
+  - attributes (variables) in :doc:`classes`
+  - methods (:doc:`functions`) in :doc:`classes`
 
 .. NOTE:: *WHAT IS THE DIFFERENCE BETWEEN CLASSES AND FUNCTIONS?*
 

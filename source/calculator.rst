@@ -212,7 +212,7 @@ GREEN: make it pass
        # NameError
        # TypeError
 
-* To make it callable we have to define it as a :doc:`functions` or a :doc:`class`. Testing the ``def`` keyword for creating functions we update our add variable in ``calculator.py`` to
+* To make it callable we have to define it as a :doc:`function <functions>` or a :doc:`class <classes>`. Testing the ``def`` keyword for creating :doc:`functions` we update our add variable in ``calculator.py`` to
 
   .. code-block:: python
 
@@ -225,7 +225,7 @@ GREEN: make it pass
 
        E       TypeError: add() takes 0 positional arguments but 2 were given
 
-* This ``TypeError`` indicates that the current definition of the ``add`` function takes in no arguments but we provided 2 in our call, since part of our requirement is that the ``add`` function should take in two numbers, we will update it in ``calculator.py`` to match
+* This :doc:`TypeError` indicates that the current definition of the ``add`` function takes in no arguments but we provided 2 in our call, since part of our requirement is that the ``add`` function should take in two numbers, we will update it in ``calculator.py`` to match
 
   .. code-block:: python
 

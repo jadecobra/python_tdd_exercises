@@ -1,7 +1,7 @@
 How to create a Person Factory
 ==============
 
-This is an exercise in creating :doc:`data structures: dictionaries` with :doc:`functions`. It assumes you are familiar with :doc:`Functions` and :doc:`data structures: dictionaries` though you can attempyt it even if you are not
+This is an exercise in creating :doc:`data structures: dictionaries` with :doc:`functions`. It assumes you are familiar with :doc:`functions` and :doc:`data structures: dictionaries` though you can attempyt it even if you are not
 
 Prerequisites
 -------------
