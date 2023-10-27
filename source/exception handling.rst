@@ -645,14 +645,13 @@ GREEN: make it pass
             'always_returns_this'
         )
 
-  .. note::
 
-    ``always_returns`` could have been defined as a ``singleton`` :doc:`function <functions>` and the tests would still pass, but that would not illustrate how to use ``try...except...else...finally``
+  ``always_returns`` could have been defined as a ``singleton`` :doc:`function <functions>` and the tests would still pass, but that would not illustrate how to use ``try...except...else...finally``
 
-      .. code-block:: python
+  .. code-block:: python
 
-           def always_returns(function):
-               return 'always_returns_this`
+        def always_returns(function):
+            return 'always_returns_this`
 ----
 
 CONGRATULATIONS
