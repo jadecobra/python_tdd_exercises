@@ -114,7 +114,7 @@ the terminal updates to show a [ModuleNotFoundError](./ModuleNotFoundError.rst) 
         def text(value):
             return None
     ```
-    we now see an [AssertionError](./AssertionError.rst) in the terminal
+    we now see an :doc:`AssertionError` in the terminal
 - update the return statement with the expected value to make the test pass
 
 .. code-block:: python
@@ -144,7 +144,7 @@ The problem with this solution is that no matter what value we send to the `Tele
             )
     ```
 
-    the terminal updates to show an [AssertionError](./AssertionError.rst)
+    the terminal updates to show an :doc:`AssertionError`
 
 - GREEN: make it pass
 
@@ -180,7 +180,7 @@ update ``test_text_messages`` with a new test
         )
 ```
 
-the terminal updates to show an [AssertionError](./AssertionError.rst)
+the terminal updates to show an :doc:`AssertionError`
 
 ### GREEN: make it pass
 
@@ -230,7 +230,7 @@ the terminal shows passing tests
             "I received this message: 'dict'"
         )
     ```
-    an [AssertionError](./AssertionError.rst) is displayed in the terminal
+    an :doc:`AssertionError` is displayed in the terminal
 - update the test to match the expected output
 
 .. code-block:: python
@@ -239,7 +239,7 @@ the terminal shows passing tests
             "I received this message: <class 'bool'>"
         )
     ```
-    the terminal updates with an [AssertionError](./AssertionError.rst) for the next test.
+    the terminal updates with an :doc:`AssertionError` for the next test.
 - repeat the solution for each data type until all tests pass
 
 VOILA

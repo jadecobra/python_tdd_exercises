@@ -262,7 +262,7 @@ GREEN: make it pass
 
          a_boolean = None
 
-  the terminal updates to show an [AssertionError](./AssertionError.rst)
+  the terminal updates to show an :doc:`AssertionError`
 
 
 * we redefine the attribute to make the test pass
@@ -393,7 +393,7 @@ GREEN: make it pass
          def method_a():
              return None
 
-  and the terminal shows an [AssertionError](./AssertionError.rst)
+  and the terminal shows an :doc:`AssertionError`
 
 
 * what we do now is change the value the function returns to match the expectation of our test

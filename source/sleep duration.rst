@@ -145,8 +145,8 @@ What if we write a test that uses a random variable for the sleep and wake times
     class TestSleepDuration(unittest.TestCase):
 
         def test_duration_when_given_hours_only(self):
-            wake_hour = random.randint(0, 24)
-            sleep_hour = random.randint(0, 24)
+            wake_hour = random.randint(0, 23)
+            sleep_hour = random.randint(0, 23)
             self.assertEqual(
                 sleep_duration.duration(
                     wake_time=f'{wake_hour}:00',
@@ -585,10 +585,10 @@ we are going to add a failing test for that scenario to ``test_sleep_duration.py
 .. code-block:: python
 
        def test_duration_when_given_hours_and_minutes(self):
-           wake_hour = random.randint(0, 24)
-           sleep_hour = random.randint(0, 24)
-           wake_minute = random.randint(0, 60)
-           sleep_minute = random.randint(0, 60)
+           wake_hour = random.randint(0, 23)
+           sleep_hour = random.randint(0, 23)
+           wake_minute = random.randint(0, 59)
+           sleep_minute = random.randint(0, 59)
            self.assertEqual(
                sleep_duration.duration(
                    wake_time=f'{wake_hour}:{wake_minute}',
@@ -901,10 +901,10 @@ Putting it all together
   .. code-block:: python
 
            def test_duration_when_given_hours_and_minutes(self):
-               wake_hour = random.randint(0, 24)
-               sleep_hour = random.randint(0, 24)
-               wake_minute = random.randint(0, 60)
-               sleep_minute = random.randint(0, 60)
+               wake_hour = random.randint(0, 23)
+               sleep_hour = random.randint(0, 23)
+               wake_minute = random.randint(0, 59)
+               sleep_minute = random.randint(0, 59)
                self.assertEqual(
                    sleep_duration.duration(
                        wake_time=f'{wake_hour}:{wake_minute}',
@@ -926,10 +926,10 @@ Putting it all together
   .. code-block:: python
 
            def test_duration_when_given_hours_and_minutes(self):
-               wake_hour = random.randint(0, 24)
-               sleep_hour = random.randint(0, 24)
-               wake_minute = random.randint(0, 60)
-               sleep_minute = random.randint(0, 60)
+               wake_hour = random.randint(0, 23)
+               sleep_hour = random.randint(0, 23)
+               wake_minute = random.randint(0, 59)
+               sleep_minute = random.randint(0, 59)
                wake_time = f'{wake_hour}:{wake_minute}'
                sleep_time = f'{sleep_hour}:{sleep_minute}'
                self.assertEqual(
@@ -1036,10 +1036,10 @@ Our ``duration`` function now accounts for a time traveling sleep scenario where
   .. code-block:: python
 
            def test_duration_when_given_hours_and_minutes(self):
-               wake_hour = random.randint(0, 24)
-               sleep_hour = random.randint(0, 24)
-               wake_minute = random.randint(0, 60)
-               sleep_minute = random.randint(0, 60)
+               wake_hour = random.randint(0, 23)
+               sleep_hour = random.randint(0, 23)
+               wake_minute = random.randint(0, 59)
+               sleep_minute = random.randint(0, 59)
                wake_time = f'{wake_hour}:{wake_minute}'
                sleep_time = f'{sleep_hour}:{sleep_minute}'
                try:
@@ -1076,10 +1076,10 @@ add a failing test to ``test_sleep_duration.py`` called ``test_duration_when_giv
 .. code-block:: python
 
        def test_duration_when_given_date_and_time(self):
-           wake_hour = random.randint(0, 24)
-           sleep_hour = random.randint(0, 24)
-           wake_minute = random.randint(0, 60)
-           sleep_minute = random.randint(0, 60)
+           wake_hour = random.randint(0, 23)
+           sleep_hour = random.randint(0, 23)
+           wake_minute = random.randint(0, 59)
+           sleep_minute = random.randint(0, 59)
            wake_time = f'21/11/06 {wake_hour}:{wake_minute}'
            sleep_time = f'21/11/07 {sleep_hour}:{sleep_minute}'
 
@@ -1188,10 +1188,10 @@ GREEN: make it pass
   .. code-block:: python
 
            def test_duration_when_given_hours_and_minutes(self):
-               wake_hour = random.randint(0, 24)
-               sleep_hour = random.randint(0, 24)
-               wake_minute = random.randint(0, 60)
-               sleep_minute = random.randint(0, 60)
+               wake_hour = random.randint(0, 23)
+               sleep_hour = random.randint(0, 23)
+               wake_minute = random.randint(0, 59)
+               sleep_minute = random.randint(0, 59)
                wake_time = f'{wake_hour}:{wake_minute}'
                sleep_time = f'{sleep_hour}:{sleep_minute}'
                try:
@@ -1214,10 +1214,10 @@ GREEN: make it pass
   .. code-block:: python
 
            def test_duration_when_given_hours_and_minutes(self):
-               wake_hour = random.randint(0, 24)
-               sleep_hour = random.randint(0, 24)
-               wake_minute = random.randint(0, 60)
-               sleep_minute = random.randint(0, 60)
+               wake_hour = random.randint(0, 23)
+               sleep_hour = random.randint(0, 23)
+               wake_minute = random.randint(0, 59)
+               sleep_minute = random.randint(0, 59)
                wake_time = f'21/11/06 {wake_hour}:{wake_minute}'
                sleep_time = f'21/11/06 {sleep_hour}:{sleep_minute}'
                try:
