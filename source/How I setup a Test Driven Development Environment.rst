@@ -67,7 +67,7 @@ File Structure
         |--{PROJECT_NAME}.py
 
 
-----
+
 
 
 RED: make it fail
@@ -89,11 +89,11 @@ RED: make it fail
   Below is an explanation of the code you just wrote
 
   - ``import unittest`` imports an existing module from the python standard library
-  - ``unittest`` is a module that comes with python for testing code, earlier it was mentioned that a python module is any file that ends in ``.py`` so we can assume there is a file somewhere on the computer called ``unittest.py`` or a folder named ``unittest`` with an ``__init__.py`` the same way we setup the ``tests`` folder, we could also take a look at the `unittest source code <https://github.com/python/cpython/blob/3.11/Lib/unittest/__init__.py>`_ to confirm
+  - ``unittest`` is a module that comes with python for testing code, earlier it was mentioned that a python module is any file that ends in ``.py`` so we can assume there is a file somewhere on the computer called ``unittest.py`` or a folder named ``unittest`` with an ``__init__.py`` the similar to  the setup for the ``tests`` folder, we could also confirm by taking a look at the `unittest source code <https://github.com/python/cpython/blob/3.11/Lib/unittest/__init__.py>`_
   - ``TestProjectName`` is a :doc:`class <classes>` that will hold the tests we write
-  - `unittest.TestCase` is a :doc:`class <classes>` defined in the ``unittest`` library which contains a bunch of `methods/functions` for testing code that ``TestProjectName`` inherits from so we do not have to write them from scratch
+  - ``unittest.TestCase`` is a :doc:`class <classes>` defined in the ``unittest`` library which contains :doc:`methods/functions <functions>` for testing code that ``TestProjectName`` inherits from
   - a simple way to think of inheritance is that ``TestProjectName`` is a child of `unittest.TestCase` and can do the same things that its parent can do
-  - `def test_failure` is the definition of a test function to test the program being built
+  - ``def test_failure`` is the definition of a test function to test the program we are creating
   - ``self`` refers to the ``TestProjectName`` class. To access ``methods`` and ``attributes`` within the ``TestProjectName`` class we use ``self``. It avoids having to say ``TestProjectName.assertFalse(True)``
   - ``self.assertFalse(True)`` is an assert statement that is a substitute for ``assert False == True`` which is similar to asking the question ``is False equal to True?``
 
@@ -102,7 +102,7 @@ RED: make it fail
 
   .. code-block:: python
 
-      python3 -m unittest
+    python3 -m unittest
 
   the terminal updates to show
 
@@ -125,7 +125,7 @@ RED: make it fail
 *CONGRATULATIONS!* You have written your first test.
 
 Following the repeating process of RED GREEN REFACTOR, we are currently RED.
-The error gives us important information about the code. Looking at it from the bottom up
+The error in the terminal gives us important information about the code. Looking at it from the bottom up
 
 
 * ``FAILED (failures=1)`` The test failed - RED
@@ -149,7 +149,7 @@ GREEN: make it pass
 -------------------
 
 
-* Let us keep a list of Exceptions we encounter as we go through our python journey. Keeping track of the cause and solutions we come up with to these exceptions will help us become better programmers. Add :doc:`AssertionError` to the list
+* Let us keep a list of Exceptions we encounter as we go through our journey. Keeping track of the cause and solutions we come up with to these exceptions will help us become better programmers. Add :doc:`AssertionError` to the list
 
   .. code-block:: python
 
