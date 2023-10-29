@@ -364,4 +364,4 @@ Any time we want to setup a test driven development environment we can call the 
 
     ./setupPythonTdd.sh the_greatest_application
 
-This is one of the advantages of programming, we can take a series of steps and make them a one line command which the computer does on our behalf
+This is one of the advantages of programming, we can take a series of steps and make them a one line command which the computer does on our behalf. Happy Trails!
