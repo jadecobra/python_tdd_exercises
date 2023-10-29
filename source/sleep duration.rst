@@ -552,7 +552,7 @@ What if we write a test that uses a random variable for the sleep and wake times
        def duration(wake_time, sleep_time):
          return get_hour(wake_time) - get_hour(sleep_time)
 
-* we could rewrite the ``get_hour`` function to use the same variable name in the operation e.g.
+* we could rewrite the ``get_hour`` function to use the same variable name in the operation for example,
 
   .. code-block:: python
 
@@ -914,7 +914,7 @@ Putting it all together
                )
 
   we get another :doc:`AssertionError` in the terminal since we have not yet updated ``test_duration_calculation`` with the new format
-* we will randomly get an :doc:`AssertionError` for ``test_duration_when_given_hours_and_minutes``. Since we are using random integers for hours and minutes, there will be instances where the ``wake_hour`` is earlier than the ``sleep_hour`` leading to a negative number e.g.
+* we will randomly get an :doc:`AssertionError` for ``test_duration_when_given_hours_and_minutes``. Since we are using random integers for hours and minutes, there will be instances where the ``wake_hour`` is earlier than the ``sleep_hour`` leading to a negative number for example,
 
   .. code-block:: python
 
@@ -971,7 +971,7 @@ Putting it all together
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Taking another look at the failing test we notice that our ``duration`` function returns negative numbers when given a ``wake_time`` that is earlier than a ``sleep_time`` e.g. ``'-1 day, 14:01:00'``
+Taking another look at the failing test we notice that our ``duration`` function returns negative numbers when given a ``wake_time`` that is earlier than a ``sleep_time`` for example,  ``'-1 day, 14:01:00'``
 
 Our ``duration`` function now accounts for a time traveling sleep scenario where you can go to sleep and wake up in the past.
 
@@ -1262,4 +1262,4 @@ Our challenge was to create a function that calculates the difference between tw
 * how to generate a random integer between two given integers using ``random.randint``
 * how to use the ``help`` keyword to view documentation
 
-If you want to do more, try playing with the timestamp format and pattern in ``get_datetime_object``. What would you change in ``"%d/%m/%y %H:%M"`` to make it accept dates in a different format e.g. ``2006/11/21`` or ``11/21/2006``?
+If you want to do more, try playing with the timestamp format and pattern in ``get_datetime_object``. What would you change in ``"%d/%m/%y %H:%M"`` to make it accept dates in a different format for example,  ``2006/11/21`` or ``11/21/2006``?

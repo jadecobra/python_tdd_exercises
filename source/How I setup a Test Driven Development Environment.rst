@@ -2,15 +2,17 @@
 How I setup a Test Driven Development Environment
 =================================================
 
-`Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ is a way of developing software with a focus on tests. We come up with ideas to achieve a goal and test them, the results of the tests inform us about our direction in relation to the goal.
+`Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ is a way of developing software with a focus on tests. We come up with ideas to reach a goal and test the ideas, the results of the tests inform us about our direction in relation to the goal. We repeat this process until we reach the goal.
 
 I learned Test Driven Development by reading `Kent Beck’s <https://en.wikipedia.org/wiki/Kent_Beck>`_ `Test Driven Development by Example <https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk>`_ and `Martin Fowler’s <https://en.wikipedia.org/wiki/Martin_Fowler_(software_engineer)>`_ `Refactoring <https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk>`_, they both influenced me in a great way.
 
-In this chapter I will show you how I setup a Test Driven Development environment for Python projects. The Test Driven Development mantra paraphrased is ``RED GREEN REFACTOR``
+The Test Driven Development mantra paraphrased is ``RED GREEN REFACTOR``
 
 * **RED**: make it fail - write a failing test to make sure the test works
 * **GREEN**: make it pass - write only the code necessary to make the test pass
 * **REFACTOR**: make it better
+
+Here is how I setup a Test Driven Development environment for Python projects.
 
 Requirements
 ------------
@@ -39,32 +41,34 @@ File Structure
 ^^^^^^^^^^^^^^
 
 
-* Open a terminal in the Interactive Development Environment (IDE) and type the following commands to setup the directory structure. Note that ``{PROJECT_NAME}`` is a placeholder for the name of the project. For example if you are building a project called ``the_greatest_application`` replace ``{PROJECT_NAME}`` with ``the_greatest_application``
+Open a terminal in the Interactive Development Environment (IDE) and type the following commands to setup the directory structure.
 
-  .. code-block:: shell
+Note that ``{PROJECT_NAME}`` is a placeholder for the name of the project. For example if you are building a project called ``the_greatest_application`` replace ``{PROJECT_NAME}`` with ``the_greatest_application``
 
-    mkdir -p {PROJECT_NAME}/tests
-    cd {PROJECT_NAME}
-    touch {PROJECT_NAME}.py
-    touch tests/__init__.py
-    touch tests/test_{PROJECT_NAME}.py
+.. code-block:: shell
 
-  - We are going to place all our code for this project in the ``{PROJECT_NAME}`` folder
-  - Tests are stored in the ``tests`` folder to separate them from the actual source code
-  - The ``__init__.py`` file in the ``tests`` folder tells python that it is a python package
-  - The actual test file is called ``test_{PROJECT_NAME}.py``
-  - The python module we are creating is called ``{PROJECT_NAME}.py``
-  - A python module is any file that ends in ``.py``
+  mkdir -p {PROJECT_NAME}/tests
+  cd {PROJECT_NAME}
+  touch {PROJECT_NAME}.py
+  touch tests/__init__.py
+  touch tests/test_{PROJECT_NAME}.py
 
-* Your folder structure should look like this
+* We are going to place all our code for this project in the ``{PROJECT_NAME}`` folder
+* Tests will be stored in the ``tests`` folder to separate them from the source code (the actual program)
+* The ``__init__.py`` file in the ``tests`` folder tells python that the ``tests`` folder is a python package
+* The test file is called ``test_{PROJECT_NAME}.py`` and is where we write our tests
+* The source code for our program will be written in ``{PROJECT_NAME}.py``
 
-  .. code-block::
 
-    {PROJECT_NAME}
-        |--tests
-        |   |--__init__.py
-        |   |--test_{PROJECT_NAME}.py
-        |--{PROJECT_NAME}.py
+Your folder structure should look like this
+
+.. code-block::
+
+  {PROJECT_NAME}
+      |--tests
+      |   |--__init__.py
+      |   |--test_{PROJECT_NAME}.py
+      |--{PROJECT_NAME}.py
 
 
 
@@ -74,29 +78,31 @@ RED: make it fail
 -----------------
 
 
-* We are ready to begin writing our first test. Open up ``project_name/tests/test_{PROJECT_NAME}.py`` in your Interactive Development Environment (IDE) and type the following text paying attention to spacing
+* We are ready to begin writing our first test. Open up ``{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py`` in your Interactive Development Environment (IDE) and type the following text paying attention to spacing
 
   .. code-block:: python
 
     import unittest
 
 
-    class TestProjectName(unittest.TestCase):
+    class Test{PROJECT_NAME}(unittest.TestCase):
 
         def test_failure(self):
             self.assertFalse(True)
 
-  Below is an explanation of the code you just wrote
+  Here is an explanation of the code you just wrote
 
   - ``import unittest`` imports an existing module from the python standard library
   - ``unittest`` is a module that comes with python for testing code, earlier it was mentioned that a python module is any file that ends in ``.py`` so we can assume there is a file somewhere on the computer called ``unittest.py`` or a folder named ``unittest`` with an ``__init__.py`` the similar to  the setup for the ``tests`` folder, we could also confirm by taking a look at the `unittest source code <https://github.com/python/cpython/blob/3.11/Lib/unittest/__init__.py>`_
-  - ``TestProjectName`` is a :doc:`class <classes>` that will hold the tests we write
-  - ``unittest.TestCase`` is a :doc:`class <classes>` defined in the ``unittest`` library which contains :doc:`methods/functions <functions>` for testing code that ``TestProjectName`` inherits from
-  - a simple way to think of inheritance is that ``TestProjectName`` is a child of `unittest.TestCase` and can do the same things that its parent can do
+  - ``Test{PROJECT_NAME}`` is a :doc:`class <classes>` that will hold the tests we write
+  - ``unittest.TestCase`` is a :doc:`class <classes>` defined in the ``unittest`` library which contains :doc:`methods/functions <functions>` for testing code that ``Test{PROJECT_NAME}`` inherits from
+  - a simple way to think of inheritance is that ``Test{PROJECT_NAME}`` is a child of `unittest.TestCase` and can do the same things that its parent can do
   - ``def test_failure`` is the definition of a test function to test the program we are creating
-  - ``self`` refers to the ``TestProjectName`` class. To access ``methods`` and ``attributes`` within the ``TestProjectName`` class we use ``self``. It avoids having to say ``TestProjectName.assertFalse(True)``
+  - ``self`` refers to the ``Test{PROJECT_NAME}`` class. To access ``methods`` and ``attributes`` within the ``Test{PROJECT_NAME}`` class we use ``self``. It avoids having to say ``Test{PROJECT_NAME}.assertFalse(True)``
   - ``self.assertFalse(True)`` is an assert statement that is a substitute for ``assert False == True`` which is similar to asking the question ``is False equal to True?``
 
+* save the file
+* turn on the ``Auto Save`` feature in your Interactive Development Environment (IDE)
 
 * we are ready to test the code, write the following in the terminal
 
@@ -110,7 +116,7 @@ RED: make it fail
 
     F
     ======================================================
-    FAIL: test_failure (tests.TestProjectName.test_failure)
+    FAIL: test_failure (tests.Test{PROJECT_NAME}.test_failure)
     ------------------------------------------------------
     Traceback (most recent call last):
     File "/<PATH_TO_PROJECT>/{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py", line 7, in test_failure
@@ -124,8 +130,7 @@ RED: make it fail
 
 *CONGRATULATIONS!* You have written your first test.
 
-Following the repeating process of RED GREEN REFACTOR, we are currently RED.
-The error in the terminal gives us important information about the code. Looking at it from the bottom up
+We are in the RED part of the Test Driven Development cycle. The error in the terminal gives us important information about the code which we can use to come up with a solution. Looking at it from the bottom
 
 
 * ``FAILED (failures=1)`` The test failed - RED
@@ -134,15 +139,19 @@ The error in the terminal gives us important information about the code. Looking
 * ``self.assertFalse(True)`` the line of code that caused the failure
 * ``File "/<PATH_TO_PROJECT>/{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py", line 7, in test_failure`` the line number and location of the file where the error occurred. Clicking on this line will place your cursor at the position in the file where the error occurred
 * ``Traceback (most recent call last):`` all the information returned by python for the exception is the traceback, showing the most recent call python made last
-* ``FAIL: test_failure (tests.TestProjectName.test_failure)`` a header giving information about the test
+* ``FAIL: test_failure (tests.Test{PROJECT_NAME}.test_failure)`` a header giving information about the test
 
-  - ``tests.TestProjectName.test_failure`` is the location of the failing test
+  - ``tests.Test{PROJECT_NAME}.test_failure`` is the location of the failing test
   -  ``tests`` - our tests folder
-  - ``TestProjectName`` - the class defined on line 4
+  - ``Test{PROJECT_NAME}`` - the class defined on line 4
   - ``test_failure`` - the function defined on line 6
 
 * ``F`` indicates a failure
+* ``python3 -m unittest``
 
+  - ``python3`` the major version of python we are currently using
+  - ``-m`` an option given to python to call the module given after the option
+  - ``unittest`` a python standard library module designed for testing
 
 
 GREEN: make it pass
@@ -156,7 +165,7 @@ GREEN: make it pass
     import unittest
 
 
-    class TestProjectName(unittest.TestCase):
+    class Test{PROJECT_NAME}(unittest.TestCase):
 
         def test_failure(self):
            self.assertFalse(True)
@@ -214,7 +223,7 @@ So far there is not much to improve on what has been written but there has been 
 * we run ``python3 -m unittest`` again to make sure our improvements do not break previous passing tests
 
 This means for every test we introduce we have to run ``python3 -m unittest`` at least 3 times.
-How do we avoid this repetition and focus on tests and solutions?
+How do we avoid this repetition and focus on tests and solutions? We can automate the repeating parts so you `Do Not Repeat Yourself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
 How to Automatically Run Tests
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -225,13 +234,13 @@ Create a Virtual Environment
 
 .. admonition:: *Are you on a Windows machine?*
 
-  If you are not using WSL make the following changes to the examples
+  If you are not using WSL make the following changes when you type the code below
 
   * replace ``python3`` with ``python``
   * replace ``source .venv/bin/activate`` with ``.venv/scripts/activate``
 
 
-* create a file named ``requirements.txt`` in your editor and add this line
+* create a file named ``requirements.txt`` in your editor then add this line
 
   .. code-block:: shell
 
@@ -243,7 +252,7 @@ Create a Virtual Environment
 
       python3 -m venv .venv
       source .venv/bin/activate
-      pip install --upgrade pip
+      python3 -m pip install --upgrade pip
       pip install --requirement requirements.txt
 
   Your folder structure should now look like this
@@ -262,11 +271,12 @@ Create a Virtual Environment
 
 
   - ``python3 -m venv .venv`` creates a virtual environment named ``.venv`` - you can use any name you want
-  - `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ is a python module for creating virtual environments, which is an isolated ``subfolder`` that holds any dependencies we install. It helps keep our dependencies for a specific project in the same place as the project
+  - `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ is a python standard library module for creating virtual environments
+  - a virtual environment is an isolated ``subfolder`` that holds any dependencies we install. It helps keep our dependencies for a specific project in the same place as the project, while isolating it from the source code and tests
   - ``source .venv/bin/activate`` or ``.venv/scripts/activate`` activates the virtual environment
-  - ``pip install --upgrade pip`` - upgrades ``pip`` the `python package manager <https://pypi.org/project/pip/>`_ to the latest version
+  - ``python3 -m pip install --upgrade pip`` - upgrades ``pip`` the `python package manager <https://pypi.org/project/pip/>`_ to the latest version
   - ``pip install --requirement requirements.txt`` installs any python libraries listed in ``requirements.txt``
-  - ``pytest-watch`` is a library that automatically runs tests when a change is made to our python files in the project
+  - ``pytest-watch`` is a library that automatically runs tests when a change is made to python files in the project
 
 * type ``pytest-watch`` in the terminal to run the tests and the terminal displays
 
@@ -290,7 +300,7 @@ If you already have a virtual environment setup in a project, you can activate i
 
 
 * Open a terminal
-* change directory to ``<PROJECT_NAME>``
+* change directory to ``{PROJECT_NAME}``
 * activate the virtual environment by typing ``source .venv/bin/activate`` in the terminal
 
 *CONGRATULATIONS!* You have successfully setup a python Test Driven Environment and can build anything you want. Go forth and conquer the world
@@ -305,7 +315,7 @@ You made it this far and have become the greatest programmer in the world. Follo
 Any time we want to setup a test driven development environment we can call the program instead of repeating and remembering each step
 
 
-* open a new file in your Interactive Development Environment (IDE), type the following then save the file with a name that describes what it does so you remember later, e.g. ``setupPythonTdd.sh``
+* open a new file in your Interactive Development Environment (IDE) then type the following
 
   .. code-block:: shell
    :linenos:
@@ -319,9 +329,10 @@ Any time we want to setup a test driven development environment we can call the 
     test_file=tests/test_$project_name.py
 
     cat << DELIMITER > $test_file
-    from unittest import TestCase
+    import unittest
 
-    class Test$project_name(TestCase):
+
+    class Test$project_name(unittest.TestCase):
 
         def test_failure(self):
             self.assertTrue(False)
@@ -329,19 +340,25 @@ Any time we want to setup a test driven development environment we can call the 
 
     echo "pytest-watch" > requirements.txt
 
-    python3 -m pip install --upgrade pip
     python3 -m venv .venv
     source .venv/bin/activate
+    python3 -m pip install --upgrade pip
     python3 -m pip install -r requirements.txt
     pytest-watch
 
+* save the file with a name that describes what it does so you remember later, for example,  ``setupPythonTdd.sh`` in the folder that contains your ``{PROJECT_NAME}`` folder.
+
+  .. warning::
+
+    DO NOT SAVE the script in the ``{PROJECT_NAME}`` folder, save it in the parent
+
 * make the program executable by typing this command in the terminal
 
-  .. code-block:: shell
+  .. code-block:: python
 
     chmod +x setupPythonTdd.sh
 
-* you can now create a Test Driven Development environment by giving a name you want for the ``$project_name`` variable when the program is called e.g. typing this command in the terminal will setup the environment for a project named ``the_greatest_application``
+* you can now create a Test Driven Development environment by giving a name you want for the ``$project_name`` variable when the program is called. For example,  typing this command in the terminal will setup the environment for a project called ``the_greatest_application``
 
   .. code-block:: shell
 

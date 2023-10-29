@@ -552,7 +552,7 @@ REFACTOR: make it better
      TypeError: Girl() takes no arguments
 
   - If you have gone through the [functions](./07_functions.rst) chapter you will see a similarity in this last test and passing inputs to functions. The call `classes.Girl(sex='F')` looks like a call to a function with keyword arguments
-  - Which begs the question - How do we define classes to accept keyword arguments when the definition of a class defines the parent it inherits from e.g. `class Class(object)`? The answer - We use an initializer
+  - Which begs the question - How do we define classes to accept keyword arguments when the definition of a class defines the parent it inherits from for example,  `class Class(object)`? The answer - We use an initializer
   - What is an initializer? a class method(function) that allows customization of `instances/copies` of a ``class``
 
 

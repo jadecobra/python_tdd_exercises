@@ -44,25 +44,25 @@ What are the data structures in python?
      - True / False
    * - int
      - integers
-     - positive/negative whole numbers e.g. -1, 0, 1
+     - positive/negative whole numbers for example,  -1, 0, 1
    * - float
      - floats
-     - floating point numbers e.g. -1.1, 0.1, 1.1
+     - floating point numbers for example,  -1.1, 0.1, 1.1
    * - str
      - string
-     - any text in quotes e.g. "text", """text""", 'text', '''text'''
+     - any text in quotes for example,  "text", """text""", 'text', '''text'''
    * - tuple
      - tuples
-     - immutable sequence of values in parentheses e.g. (1, 2.3, "three", (4, 5.6, 'seven'))
+     - immutable sequence of values in parentheses for example,  (1, 2.3, "three", (4, 5.6, 'seven'))
    * - list
      - lists/arrays
-     - mutable sequence of values in square brackets e.g. [1, 2.3, "three", (4, 5.6, 'seven')]
+     - mutable sequence of values in square brackets for example,  [1, 2.3, "three", (4, 5.6, 'seven')]
    * - set
      - sets
-     - sequence of values with in curly/squiggly braces with no duplicates e.g. {1, 2, 3}
+     - sequence of values with in curly/squiggly braces with no duplicates for example,  {1, 2, 3}
    * - dict
      - dictionaries/mappings
-     - mapping of key/value pairs in curly/squiggly braces e.g. {"a": "apple", "b": "ball", "c": "car", "d": "dog"}
+     - mapping of key/value pairs in curly/squiggly braces for example,  {"a": "apple", "b": "ball", "c": "car", "d": "dog"}
 
 
 The following chapters go into more detail about some of these data structures

@@ -151,13 +151,13 @@ GREEN: make it pass
 What is similar? What is different?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-An ``AttributeError`` occurs when there is a reference to a name in an object from outside the object and the name does not exist e.g. ``humans.wings`` while a ``NameError`` occurs when there is a reference to a name within an object and there is no prior definition of the name e.g. ``wings``
+An ``AttributeError`` occurs when there is a reference to a name in an object from outside the object and the name does not exist for example,  ``humans.wings`` while a ``NameError`` occurs when there is a reference to a name within an object and there is no prior definition of the name for example,  ``wings``
 
 What is similar between ``ModuleNotFoundError``, ``AttributeError`` and ``NameError``?
 
 .. NOTE::
 
-  In python ``=`` is used to assign names to objects, for example ``five = 5``, means we can later refer to the number ``5`` with the name ``five``, the equality sign ``==`` on the other hand is used to check if two things are equal e.g. ``5 == 4`` means "is ``5`` is equal to ``4``?"
+  In python ``=`` is used to assign names to objects, for example ``five = 5``, means we can later refer to the number ``5`` with the name ``five``, the equality sign ``==`` on the other hand is used to check if two things are equal for example,  ``5 == 4`` means "is ``5`` is equal to ``4``?"
 
 
 REFACTOR: make it better
@@ -403,7 +403,7 @@ GREEN: make it pass
 
   a :doc:`TypeError` is raised in this case because we ``called`` an object that was not ``callable``. A callable object is an object that can potentially handle inputs. We can define a callable as a ``class`` or a ``function``.
 
-  We go over callables in :doc:`functions` and :doc:`classes`. When an object is defined as a callable, we call it by adding parentheses at the end e.g. ``module.function_0()`` will call ``function_0`` from ``module.py``
+  We go over callables in :doc:`functions` and :doc:`classes`. When an object is defined as a callable, we call it by adding parentheses at the end for example,  ``module.function_0()`` will call ``function_0`` from ``module.py``
 
 * What if we change ``function_0`` in ``module.py`` to a function by modifying its definition using the ``def`` keyword
 
@@ -653,7 +653,7 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* The current solution for ``test_defining_classes_to_solve_attribute_errors`` was done by defining functions but the test says ``definining_classes``. update those tests to use the proper way of defining :doc:`classes` that we just learned. Update ``module.py`` to use ``class`` instead of ``def`` e.g.
+* The current solution for ``test_defining_classes_to_solve_attribute_errors`` was done by defining functions but the test says ``definining_classes``. update those tests to use the proper way of defining :doc:`classes` that we just learned. Update ``module.py`` to use ``class`` instead of ``def`` for example,
 
   .. code-block:: python
 

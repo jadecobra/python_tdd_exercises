@@ -200,7 +200,7 @@ integers are represented by the keyword ``int`` in python so we can do an instan
 Is None a string?
 -----------------
 
-add a test for ``strings``. A string is any characters that are enclosed by single, double or triple quotes e.g. ``'single quotes'``, ``"double quotes"``, ``'''triple single quotes'''``, ``"""triple double quotes"""``
+add a test for ``strings``. A string is any characters that are enclosed by single, double or triple quotes for example,  ``'single quotes'``, ``"double quotes"``, ``'''triple single quotes'''``, ``"""triple double quotes"""``
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^

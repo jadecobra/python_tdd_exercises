@@ -72,7 +72,7 @@ The Test Driven Development mantra paraphrased is
     import unittest
 
 
-    class TestProjectName(unittest.TestCase):
+    class Test{PROJECT_NAME}(unittest.TestCase):
 
         def test_failure(self):
             self.assertFalse(True)
@@ -80,11 +80,11 @@ The Test Driven Development mantra paraphrased is
     Below is an explanation of the code you just wrote
     - `import unittest` imports an existing module from the python standard library that is used for testing.
     - ``(unittest)`` is a module/library/package that comes with python for testing code, earlier it was mentioned that a python module is any file that ends in `.py` so we can assume there is a file somewhere on the computer called `unittest.py` or a folder named ``(unittest)`` with an `__init__.py` like our ``(tests)`` folder, we can take a look at the [unittest source code](https://github.com/python/cpython/blob/3.11/Lib/unittest/__init__.py) to confirm
-    - ``(TestProjectName)`` is a [class](./CLASSES.md), a "container" for the tests we are about to write
-    - `unittest.TestCase` is a [class](./CLASSES.md) defined in the ``(unittest)`` library which contains a bunch of `methods/functions` for testing code that ``(TestProjectName)`` inherits so they do not have to be rewritten
-    - a simple way to think of inheritance is that ``(TestProjectName)`` is a child of `unittest.TestCase` and can do the same things that its parent can do
+    - ``(Test{PROJECT_NAME})`` is a [class](./CLASSES.md), a "container" for the tests we are about to write
+    - `unittest.TestCase` is a [class](./CLASSES.md) defined in the ``(unittest)`` library which contains a bunch of `methods/functions` for testing code that ``(Test{PROJECT_NAME})`` inherits so they do not have to be rewritten
+    - a simple way to think of inheritance is that ``(Test{PROJECT_NAME})`` is a child of `unittest.TestCase` and can do the same things that its parent can do
     - `def test_failure` is the definition of a test function to test the system being built
-    - ``(self)`` refers to the ``(TestProjectName)`` class. To access ``(methods)`` and ``(attributes)`` within the ``(TestProjectName)`` class we use ``(self)``. It avoids having to say `TestProjectName.assertFalse(True)`
+    - ``(self)`` refers to the ``(Test{PROJECT_NAME})`` class. To access ``(methods)`` and ``(attributes)`` within the ``(Test{PROJECT_NAME})`` class we use ``(self)``. It avoids having to say `Test{PROJECT_NAME}.assertFalse(True)`
     - `self.assertFalse(True)` is an assert statement that is a substitute for `assert False == True` which is similar to asking the question `is False equal to True?`
 - to test the code, write the following in the terminal
     ```shell
@@ -94,7 +94,7 @@ The Test Driven Development mantra paraphrased is
     ```python
     F
     ======================================================
-    FAIL: test_failure (tests.TestProjectName.test_failure)
+    FAIL: test_failure (tests.Test{PROJECT_NAME}.test_failure)
     ------------------------------------------------------
     Traceback (most recent call last):
     File "/<PATH_TO_PROJECT>/{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py", line 7, in test_failure
@@ -117,10 +117,10 @@ The error provides important information about the code. Looking at it from the 
 - `self.assertFalse(True)` the line of code that caused the failure
 - `File "/<PATH_TO_PROJECT>/{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py", line 7, in test_failure` the line number and location of the file where the error occurred. Clicking on this line will place your cursor at the position in the Interactive Development Environment(IDE)
 - `Traceback (most recent call last):` all the information returned by python for the exception is the traceback, showing the most recent call python made last
-- `FAIL: test_failure (tests.TestProjectName.test_failure)` a header giving information about the test
-    - `tests.TestProjectName.test_failure` is the location of the failing test
+- `FAIL: test_failure (tests.Test{PROJECT_NAME}.test_failure)` a header giving information about the test
+    - `tests.Test{PROJECT_NAME}.test_failure` is the location of the failing test
       - ``(tests)`` - our tests folder
-      - ``(TestProjectName)`` - the class defined on line 4
+      - ``(Test{PROJECT_NAME})`` - the class defined on line 4
       - ``(test_failure)`` - the function defined on line 6
 - ``(F)`` indicates a failure
 
@@ -133,7 +133,7 @@ The error provides important information about the code. Looking at it from the 
     import unittest
 
 
-    class TestProjectName(unittest.TestCase):
+    class Test{PROJECT_NAME}(unittest.TestCase):
 
         def test_failure(self):
             self.assertFalse(True)
