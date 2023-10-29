@@ -5,16 +5,16 @@
 
 Welcome to pumping python!
 ==========================
-This book contains a few exercises to get you familiar with Python using Test Driven Development.
+This book is a collection of exercises to get you familiar with Python using Test Driven Development.
 
-It is written to help anyone who is just starting with the language using tests and drills that teach concepts but also allow exploration. If you are new to Test Driven Development in python this book is also for you.
+If you are just starting your journey, congratulations! You have made a decision from the list of programming languages available to you. You are in for a good time.
+
+The exercises are written to help anyone who is just starting with the language using tests and drills that teach concepts but also allow exploration. If you are new to Test Driven Development in python this book is also for you.
 
 How to use this book
 --------------------
 
-The chapters are currently listed with no prescription on how to go through them, you can follow your interests or the particular need you have at any time.
-
-The only recommendation is that you start with ``How I Setup a Test Driven Development Environment`` it is required for every other chapter
+You choose how you go through the chapters, you can start with anyone you like or the one that looks like it could solve your current problem. The only recommendation is that you start with ``How I Setup a Test Driven Development Environment`` as it is required by every other chapter
 
 .. toctree::
    :maxdepth: 2

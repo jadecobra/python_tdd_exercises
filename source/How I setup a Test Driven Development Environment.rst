@@ -1,13 +1,16 @@
+
 How I setup a Test Driven Development Environment
-==========================================================
+=================================================
 
-We will step through creating a `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ Environment in python
+`Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ is a way of developing software with a focus on tests. We come up with ideas to achieve a goal and test them, the results of the tests inform us about our direction in relation to the goal.
 
-The Test Driven Development mantra paraphrased is ``RED GREEN REFACTOR``
+I learned Test Driven Development by reading `Kent Beck’s <https://en.wikipedia.org/wiki/Kent_Beck>`_ `Test Driven Development by Example <https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk>`_ and `Martin Fowler’s <https://en.wikipedia.org/wiki/Martin_Fowler_(software_engineer)>`_ `Refactoring <https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk>`_, they both influenced me in a great way.
 
-* **RED**: make it fail - we write a failing test to make sure our test works
-* **GREEN**: make it pass - we write only the code necessary to make the test pass
-* **REFACTOR**: make it better - we make the code/tests better
+In this chapter I will show you how I setup a Test Driven Development environment for Python projects. The Test Driven Development mantra paraphrased is ``RED GREEN REFACTOR``
+
+* **RED**: make it fail - write a failing test to make sure the test works
+* **GREEN**: make it pass - write only the code necessary to make the test pass
+* **REFACTOR**: make it better - make the code better
 
 Requirements
 ------------
@@ -17,26 +20,26 @@ Requirements
 * download and install an Interactive Development Environment (IDE) - Here are a few options
 
   * `VSCode in a Browser <http://vscode.dev>`_
-  * `Download VSCode <https://code.visualstudio.com/download>`_
-  * `Download PyCharm <https://www.jetbrains.com/pycharm/download/#section=mac>`_
-  * `Download Sublime <https://www.sublimetext.com>`_
+  * `VSCode <https://code.visualstudio.com/download>`_
+  * `PyCharm <https://www.jetbrains.com/pycharm/download/#section=mac>`_
+  * `Sublime <https://www.sublimetext.com>`_
   * `Other Interactive Development Environment (IDE) options <https://wiki.python.org/moin/IntegratedDevelopmentEnvironments>`_
 
 Setup
 -----
 
-    .. admonition:: *If you are on a windows machine*
+.. admonition:: *If you are on a windows machine*
 
-     * `download and install Git <https://github.com/git-for-windows/git/releases>`_
-     * open a command line or PowerShell terminal and install WSLv2 by typing ``wsl --install``
-     * run subsequent commands in WSL
+  * `download and install Git <https://github.com/git-for-windows/git/releases>`_
+  * open a command line or PowerShell terminal and install WSLv2 by typing ``wsl --install``
+  * run subsequent commands in WSL
 
 
 File Structure
 ^^^^^^^^^^^^^^
 
 
-* type the following in a terminal to setup the directory structure
+* Open a terminal in the Interactive Development Environment (IDE) and type the following commands to setup the directory structure. Note that ``{PROJECT_NAME}`` is a placeholder for the name of the project. For example if you are building a project called ``the_greatest_application`` replace ``{PROJECT_NAME}`` with ``the_greatest_application``
 
   .. code-block:: shell
 
@@ -46,11 +49,13 @@ File Structure
     touch tests/__init__.py
     touch tests/test_{PROJECT_NAME}.py
 
-  - ``{PROJECT_NAME}`` is a placeholder for the name of the project e.g. if you are building a project called ``the_greatest_application``, replace ``{PROJECT_NAME}`` with ``the_greatest_application``. We are going to place all our code for this project in the ``{PROJECT_NAME}`` folder
+  - We are going to place all our code for this project in the ``{PROJECT_NAME}`` folder
   - Tests are stored in the ``tests`` folder to separate them from the actual source code
   - The ``__init__.py`` file in the ``tests`` folder tells python that it is a python package
   - The actual test file is called ``test_{PROJECT_NAME}.py``
-  - The python module we are creating is called ``{PROJECT_NAME}.py``. A python module is any file that ends in ``.py``
+  - The python module we are creating is called ``{PROJECT_NAME}.py``
+  - A python module is any file that ends in ``.py``
+
 * Your folder structure should look like this
 
   .. code-block::
@@ -69,7 +74,7 @@ RED: make it fail
 -----------------
 
 
-* We are ready to begin writing our first test. Open up ``project_name/tests/test_{PROJECT_NAME}.py`` in your Interactive Development Environment (IDE) and type the following
+* We are ready to begin writing our first test. Open up ``project_name/tests/test_{PROJECT_NAME}.py`` in your Interactive Development Environment (IDE) and type the following text paying attention to spacing
 
   .. code-block:: python
 
@@ -83,14 +88,14 @@ RED: make it fail
 
   Below is an explanation of the code you just wrote
 
-  - `import unittest` imports an existing module from the python standard library that is used for testing.
-  - ``unittest`` is a module/library/package that comes with python for testing code, earlier it was mentioned that a python module is any file that ends in `.py` so we can assume there is a file somewhere on the computer called `unittest.py` or a folder named ``unittest`` with an `__init__.py` like our ``tests`` folder, we can take a look at the [unittest source code](https://github.com/python/cpython/blob/3.11/Lib/unittest/__init__.py) to confirm
-  - ``TestProjectName`` is a [class](./classes.rst), a "container" for the tests we are about to write
-  - `unittest.TestCase` is a [class](./classes.rst) defined in the ``unittest`` library which contains a bunch of `methods/functions` for testing code that ``TestProjectName`` inherits so they do not have to be rewritten
+  - ``import unittest`` imports an existing module from the python standard library
+  - ``unittest`` is a module that comes with python for testing code, earlier it was mentioned that a python module is any file that ends in ``.py`` so we can assume there is a file somewhere on the computer called ``unittest.py`` or a folder named ``unittest`` with an ``__init__.py`` the same way we setup the ``tests`` folder, we could also take a look at the `unittest source code <https://github.com/python/cpython/blob/3.11/Lib/unittest/__init__.py>`_ to confirm
+  - ``TestProjectName`` is a :doc:`class <classes>` that will hold the tests we write
+  - `unittest.TestCase` is a :doc:`class <classes>` defined in the ``unittest`` library which contains a bunch of `methods/functions` for testing code that ``TestProjectName`` inherits from so we do not have to write them from scratch
   - a simple way to think of inheritance is that ``TestProjectName`` is a child of `unittest.TestCase` and can do the same things that its parent can do
-  - `def test_failure` is the definition of a test function to test the system being built
-  - ``self`` refers to the ``TestProjectName`` class. To access ``methods`` and ``attributes`` within the ``TestProjectName`` class we use ``self``. It avoids having to say `TestProjectName.assertFalse(True)`
-  - `self.assertFalse(True)` is an assert statement that is a substitute for `assert False == True` which is similar to asking the question `is False equal to True?`
+  - `def test_failure` is the definition of a test function to test the program being built
+  - ``self`` refers to the ``TestProjectName`` class. To access ``methods`` and ``attributes`` within the ``TestProjectName`` class we use ``self``. It avoids having to say ``TestProjectName.assertFalse(True)``
+  - ``self.assertFalse(True)`` is an assert statement that is a substitute for ``assert False == True`` which is similar to asking the question ``is False equal to True?``
 
 
 * we are ready to test the code, write the following in the terminal
@@ -120,32 +125,31 @@ RED: make it fail
 *CONGRATULATIONS!* You have written your first test.
 
 Following the repeating process of RED GREEN REFACTOR, we are currently RED.
-The error provides important information about the code. Looking at it from the bottom up
+The error gives us important information about the code. Looking at it from the bottom up
 
 
 * ``FAILED (failures=1)`` The test failed - RED
 * ``Ran 1 test in 0.000s`` tells us how long it took to run the test
-* ``AssertionError: True is not false`` The error is an :doc:`AssertionError` which is raised by python when an assert statement is ``False``, in this case ``True is not false``
+* ``AssertionError: True is not false`` The error is an :doc:`AssertionError` which is raised by python when an assert statement is ``False``, in this case ``True is not false`` raises the error
 * ``self.assertFalse(True)`` the line of code that caused the failure
-* ``File "/<PATH_TO_PROJECT>/{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py", line 7, in test_failure`` the line number and location of the file where the error occurred. Clicking on this line will place your cursor at the position in the Interactive Development Environment (IDE)
+* ``File "/<PATH_TO_PROJECT>/{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py", line 7, in test_failure`` the line number and location of the file where the error occurred. Clicking on this line will place your cursor at the position in the file where the error occurred
 * ``Traceback (most recent call last):`` all the information returned by python for the exception is the traceback, showing the most recent call python made last
 * ``FAIL: test_failure (tests.TestProjectName.test_failure)`` a header giving information about the test
 
   - ``tests.TestProjectName.test_failure`` is the location of the failing test
-
-    * ``tests`` - our tests folder
-    * ``TestProjectName`` - the class defined on line 4
-    * ``test_failure`` - the function defined on line 6
+  -  ``tests`` - our tests folder
+  - ``TestProjectName`` - the class defined on line 4
+  - ``test_failure`` - the function defined on line 6
 
 * ``F`` indicates a failure
 
-----
+
 
 GREEN: make it pass
 -------------------
 
 
-* Let us keep a list of Errors/Exceptions encountered as we go through our python journey to help us become better python programmers, keeping track of the cause and solutions we come up with to these exceptions. Add :doc:`AssertionError` to the list
+* Let us keep a list of Exceptions we encounter as we go through our python journey. Keeping track of the cause and solutions we come up with to these exceptions will help us become better programmers. Add :doc:`AssertionError` to the list
 
   .. code-block:: python
 
@@ -166,6 +170,7 @@ GREEN: make it pass
   ``self.assertTrue(True)`` or ``self.assertFalse(False)``
 
   What was the deciding factor in picking one over the other?
+
 * run the test again from the terminal
 
   .. code-block:: python
@@ -176,15 +181,15 @@ GREEN: make it pass
 
   .. code-block:: python
 
-      .
-      ------------------------------------------------------
-      Ran 1 test in 0.000s
+    .
+    ------------------------------------------------------
+    Ran 1 test in 0.000s
 
-      OK
+    OK
 
-*CONGRATULATIONS!* You have a passing test. We are GREEN
+We are GREEN. *CONGRATULATIONS!* You have a passing test
 
-----
+
 
 REFACTOR: make it better
 ------------------------
@@ -196,6 +201,7 @@ We can make code better by using the
 * `Do Not Repeat Yourself (DRY) Principle <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
 Both of these can be summed up as ``remove duplication``. I ask two questions to help me remove duplication when I write code
+
 * What is similar? this tells me what parts are common
 * What is different? this tells me what parts are specific
 
@@ -217,18 +223,17 @@ Create a Virtual Environment
 ++++++++++++++++++++++++++++
 
 
-  .. admonition:: *Are you on a Windows machine?*
+.. admonition:: *Are you on a Windows machine?*
 
-    If you are not using WSL make the following changes to the examples
+  If you are not using WSL make the following changes to the examples
 
-   * replace ``python3`` with ``python``
-   * replace ``source .venv/bin/activate`` with ``.venv/scripts/activate``
-
+  * replace ``python3`` with ``python``
+  * replace ``source .venv/bin/activate`` with ``.venv/scripts/activate``
 
 
 * create a file named ``requirements.txt`` in your editor and add this line
 
-  .. code-block:: python
+  .. code-block:: shell
 
     pytest-watch
 
@@ -290,15 +295,17 @@ If you already have a virtual environment setup in a project, you can activate i
 
 *CONGRATULATIONS!* You have successfully setup a python Test Driven Environment and can build anything you want. Go forth and conquer the world
 
-----
+
 
 Automatically create a Python Test Driven Development Environment
 -----------------------------------------------------------------
 
-You made it this far and have become the greatest programmer in the world. Following the practice of removing duplication, let us write a program that contains all the steps we did above. That way any time we want to setup a test driven development environment we can call the program instead of repeating and remembering each step
+You made it this far and have become the greatest programmer in the world. Following the practice of removing duplication, let us write a program that contains all the steps we did above.
+
+Any time we want to setup a test driven development environment we can call the program instead of repeating and remembering each step
 
 
-* open a new file in your Interactive Development Environment (IDE) and type the following then save the file with a name that describes what it does so you remember later, e.g. ``setupPythonTdd.sh``
+* open a new file in your Interactive Development Environment (IDE), type the following then save the file with a name that describes what it does so you remember later, e.g. ``setupPythonTdd.sh``
 
   .. code-block:: shell
    :linenos:
@@ -338,6 +345,6 @@ You made it this far and have become the greatest programmer in the world. Follo
 
   .. code-block:: shell
 
-    ./setupPythonTdd the_greatest_application
+    ./setupPythonTdd.sh the_greatest_application
 
 This is one of the advantages of programming, we can take a series of steps and make them a one line command which the computer does on our behalf
