@@ -10,7 +10,7 @@ In this chapter I will show you how I setup a Test Driven Development environmen
 
 * **RED**: make it fail - write a failing test to make sure the test works
 * **GREEN**: make it pass - write only the code necessary to make the test pass
-* **REFACTOR**: make it better - make the code better
+* **REFACTOR**: make it better
 
 Requirements
 ------------
@@ -31,7 +31,7 @@ Setup
 .. admonition:: *If you are on a windows machine*
 
   * `download and install Git <https://github.com/git-for-windows/git/releases>`_
-  * open a command line or PowerShell terminal and install WSLv2 by typing ``wsl --install``
+  * open a terminal and install WSLv2 by typing ``wsl --install``
   * run subsequent commands in WSL
 
 
