@@ -14,6 +14,7 @@ The Test Driven Development mantra paraphrased is ``RED GREEN REFACTOR``
 
 Here is a way to setup a Test Driven Development environment for Python projects.
 
+
 Requirements
 ------------
 
@@ -41,7 +42,7 @@ File Structure
 ^^^^^^^^^^^^^^
 
 
-Open a terminal in your Interactive Development Environment (IDE) and type the following commands to setup the directory structure.
+To setup the file structure for the project, Open a terminal in your Interactive Development Environment (IDE) and type the following commands to setup the directory structure.
 
 Note that ``{PROJECT_NAME}`` is a placeholder for the name of the project. For example if you are building a project called ``the_greatest_application`` replace ``{PROJECT_NAME}`` with ``the_greatest_application``
 
