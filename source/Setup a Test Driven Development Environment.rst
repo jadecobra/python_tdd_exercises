@@ -70,10 +70,10 @@ The folder structure should look like this
 .. code-block::
 
   {PROJECT_NAME}
-      |--tests
-      |   |--__init__.py
-      |   |--test_{PROJECT_NAME}.py
-      |--{PROJECT_NAME}.py
+      ╰──tests
+      |   ╰──__init__.py
+      |   ╰──test_{PROJECT_NAME}.py
+      ╰──{PROJECT_NAME}.py
 
 
 
@@ -255,12 +255,12 @@ Create a Virtual Environment
   .. code-block::
 
       {PROJECT_NAME}
-      |--.venv
-      |--tests
-      |   |--__init__.py
-      |   |--test_{PROJECT_NAME}.py
-      |--{PROJECT_NAME}.py
-      |--requirements.txt
+          ╰──.venv
+          ╰──tests
+          |   ╰──__init__.py
+          |   ╰──test_{PROJECT_NAME}.py
+          ╰──{PROJECT_NAME}.py
+          ╰──requirements.txt
 
 * You just created a `virtual environment <https://docs.python.org/3/library/venv.html>`_
 
