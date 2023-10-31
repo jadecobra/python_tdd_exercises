@@ -139,10 +139,10 @@ We are in the RED part of the Test Driven Development cycle. The error in the te
 
 * ``FAILED (failures=1)`` There is a failure and the number of failures
 * ``Ran 1 test in 0.000s`` how long it took the test took to run
-* ``AssertionError: True is not false`` The error is an :doc:`AssertionError` which is raised by python when an assert statement is ``False``, in this case ``True is not false`` raises the error
+* ``AssertionError: True is not false`` The error is an :doc:`AssertionError` which is raised by python when an assert statement is ``False``, in this case the error is raised because ``True is not false``
 * ``self.assertFalse(True)`` the line of code that caused the failure
 
-  - the ``unittest.TestCase`` method ``assertFalse`` takes an input and checks if it is ``False``
+  - ``assertFalse`` is a method in the ``unittest.TestCase`` class which takes an input and checks if the input is ``False``
   - ``True`` is given as input to ``assertFalse`` and the statement raises an error because ``True`` is not ``False``
 
 * ``File "/<PATH_TO_PROJECT>/{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py", line 7, in test_failure`` the line number and location of the file where the error occurred. Holding down ``ctrl/option`` on your keyboard and clicking on this line will place your cursor at the position in the file where the error occurred
@@ -183,11 +183,11 @@ GREEN: make it pass
     # AssertionError
 
 
-* change line 7 to make the test pass. Which of these is a better solution?
+* change line 7 to make the test pass
 
-  ``self.assertTrue(True)`` or ``self.assertFalse(False)``
+  .. code-block:: python
 
-  What was the deciding factor in picking one over the other?
+    self.assertFalse(False)
 
 * run the test again from the terminal
 
@@ -195,7 +195,7 @@ GREEN: make it pass
 
     python3 -m unittest
 
-  the terminal updates to show
+  and we get
 
   .. code-block:: python
 
@@ -220,13 +220,6 @@ We can make code better by using
 
 Both of these can be summed up as ``remove duplication``
 
-I ask two questions to help me remove duplication when I write code
-
-* What is similar? this tells me what parts are common
-* What is different? this tells me what parts are specific
-
-Another way I think of it is to note which parts are ``fixed`` and which parts ``change``
-
 So far there is not much to improve on what has been written but there has been duplication.
 
 * we ran ``python3 -m unittest`` to see the test fail
@@ -234,7 +227,7 @@ So far there is not much to improve on what has been written but there has been 
 * we run ``python3 -m unittest`` again to make sure our improvements do not break previous passing tests
 
 This means for every test introduced ``python3 -m unittest`` is run at least 3 times.
-To avoid this repetition and focus on tests and solutions we can automate the repeating parts so you `Do Not Repeat Yourself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
+To avoid this repetition and focus on tests and solutions, automate the repeating parts so you `Do Not Repeat Yourself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
 How to Automatically Run Tests
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -278,7 +271,7 @@ Create a Virtual Environment
   - ``source .venv/bin/activate`` activates the virtual environment, the ``(.venv)`` in the terminal indicates the virtual environment was activated
   - ``python3 -m pip install --upgrade pip`` upgrades ``pip`` the `python package manager <https://pypi.org/project/pip/>`_ to the latest version
   - ``pip install --requirement requirements.txt`` installs any python libraries listed in ``requirements.txt`` in the virtual environment, in this case ``pytest-watch``
-  - ``pytest-watch`` is a program that automatically uses the `pytest <https://docs.pytest.org/>`_ library to runs tests when a change is made to python files in the project
+  - ``pytest-watch`` is a program that automatically uses the `pytest <https://docs.pytest.org/>`_ library to runs tests when a python file in the project changes
   - `pytest <https://docs.pytest.org/>`_ is an external library for running tests in python
 
 * type ``pytest-watch`` in the terminal to run the tests and the terminal displays
@@ -295,9 +288,15 @@ Create a Virtual Environment
 
     =============== 1 passed in 0.00s =======================
 
+* to stop the tests at anytime, type `ctrl+C` in the terminal
 
-Activate a Virtual Environment
-++++++++++++++++++++++++++++++
+How to Deactivate a Virtual Environment
++++++++++++++++++++++++++++++++++++++++
+
+type ``deactivate`` in the terminal
+
+How to Activate a Virtual Environment
++++++++++++++++++++++++++++++++++++++
 
 If you already have a virtual environment setup in a project, you can activate it by following the steps below
 
@@ -311,7 +310,7 @@ If you already have a virtual environment setup in a project, you can activate i
 Automatically create a Python Test Driven Development Environment
 -----------------------------------------------------------------
 
-You made it this far and have become the greatest programmer in the world. Following the practice of removing duplication, I would write a program that contains all the steps above.
+You made it this far and have become the greatest programmer in the world. Following the practice of removing duplication, I would write a program that contains all the steps above following `The Do Not Repeat Yourself (DRY) Principle <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
 I can call the program any time I want to setup a Test Driven Development Environment instead of remembering and manually repeating each step of the process
 
@@ -358,7 +357,7 @@ I can call the program any time I want to setup a Test Driven Development Enviro
 
     chmod +x setupPythonTdd.sh
 
-* I can now create a Test Driven Development environment by giving a name for the ``$PROJECT_NAME`` variable when the program is called. For example,  typing this command in the terminal in the folder where ``setupTdd.sh`` is saved, will setup a Test Driven Development environment for a project called ``the_greatest_application``
+* I can now create a Test Driven Development environment by giving a name for the ``$PROJECT_NAME`` variable when the program is called. For example,  typing this command in the terminal in the folder where ``setupPythonTdd.sh`` is saved will setup a Test Driven Development environment for a project called ``the_greatest_application``
 
   .. code-block:: shell
 
