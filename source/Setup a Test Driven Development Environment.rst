@@ -94,20 +94,20 @@ RED: make it fail
         def test_failure(self):
             self.assertFalse(True)
 
-  Here is an explanation of the code you just wrote
+  Here is an explanation of the code above
 
   - ``import unittest`` imports a module named ``unittest`` to use for testing
   - ``unittest`` is a module from the python standard library used for testing
   - ``Test{PROJECT_NAME}`` is a :doc:`class <classes>` that will hold the tests we write
-  - ``unittest.TestCase`` is a :doc:`class <classes>` defined in the ``unittest`` library which contains :doc:`methods/functions <functions>` for testing that ``Test{PROJECT_NAME}`` inherits from
+  - ``unittest.TestCase`` is a :doc:`class <classes>` defined in the ``unittest`` library which contains :doc:`methods/functions <functions>` for testing and ``Test{PROJECT_NAME}`` inherits from it
   - a simple way to think of inheritance is that ``Test{PROJECT_NAME}`` is a child of ``unittest.TestCase`` and can do the same things that its parent can do
   - ``def test_failure`` is the definition of a test :doc:`function <functions>` to test the program we are creating
 
     * ``self`` refers to the ``Test{PROJECT_NAME}`` class. To access ``methods`` and ``attributes`` within the ``Test{PROJECT_NAME}`` class we use ``self``. It avoids having to say ``Test{PROJECT_NAME}().assertFalse(True)``
-    * ``self.assertFalse(True)`` is an assert statement that is a substitute for ``assert False == True`` which is similar to asking the question ``is False equal to True?``
+    * ``self.assertFalse(True)`` is a statement that is a substitute for ``assert False == True`` which is similar to asking the question ``is False equal to True?``
 
 * save the file
-* turn on the ``Auto Save`` feature in your Interactive Development Environment (IDE)
+* turn on the ``Auto Save`` feature in your Interactive Development Environment (IDE) to avoid having to repeat saving a file each time you make a change
 * type this in the terminal to test the code
 
   .. code-block:: python
