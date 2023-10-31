@@ -11,14 +11,14 @@ Prerequisites
 -------------
 
 
-:doc:`How I setup a Test Driven Development Environment`
+:doc:`Setup a Test Driven Development Environment`
 
 ----
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-Open a new file in your editor and save it as ``test_ModuleNotFoundError.py`` in the ``tests`` folder you created in :doc:`How I setup a Test Driven Development Environment`
+Open a new file in your editor and save it as ``test_ModuleNotFoundError.py`` in the ``tests`` folder you created in :doc:`Setup a Test Driven Development Environment`
 Type the following in the file
 
 .. code-block:: python
@@ -124,7 +124,7 @@ Type the following in the file
    import module_98
    import module_99
 
-If you left ``pytest-watch`` running from :doc:`How I setup a Test Driven Development Environment` you should see something like the following in your terminal
+If you left ``pytest-watch`` running from :doc:`Setup a Test Driven Development Environment` you should see something like the following in your terminal
 
 .. code-block:: python
 

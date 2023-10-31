@@ -7,7 +7,7 @@ Prerequisites
 -------------
 
 
-:doc:`How I setup a Test Driven Development Environment`
+:doc:`Setup a Test Driven Development Environment`
 
 ----
 
@@ -24,7 +24,7 @@ RED: make it fail
 
 
 *
-  Open a new file in the editor and save it as ``tests/test_indentation_error.py`` in the ``tests`` folder you created in :doc:`How I setup a Test Driven Development Environment`\ , then type the following lines in the file *paying attention to the spacing*
+  Open a new file in the editor and save it as ``tests/test_indentation_error.py`` in the ``tests`` folder you created in :doc:`Setup a Test Driven Development Environment`\ , then type the following lines in the file *paying attention to the spacing*
 
   .. code-block:: python
 

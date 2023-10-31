@@ -30,7 +30,7 @@ We are going to look at how to pass values from tests to programs using `string 
 
 Prerequisites
 -------------
-[How I setup a Test Driven Development Environment](./How I setup a Test Driven Development Environment.rst)
+[Setup a Test Driven Development Environment](./Setup a Test Driven Development Environment.rst)
 
 ---
 

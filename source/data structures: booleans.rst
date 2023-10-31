@@ -9,7 +9,7 @@ Prerequisites
 -------------
 
 
-:doc:`How I setup a Test Driven Development Environment`
+:doc:`Setup a Test Driven Development Environment`
 * `Data Structures <./DATA_STRUCTURES.rst>`_
 
 ----

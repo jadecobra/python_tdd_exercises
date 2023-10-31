@@ -14,13 +14,13 @@ The exercises are written to help anyone who is just starting with the language 
 How to use this book
 --------------------
 
-You choose how you go through the chapters, you can start with anyone you like or the one that looks like it could solve your current problem. The only recommendation is that you start with ``How I Setup a Test Driven Development Environment`` as it is required by every other chapter
+You choose how you go through the chapters, you can start with anyone you like or the one that looks like it could solve your current problem. The only recommendation is that you start with ``Setup a Test Driven Development Environment`` as it is required by every other chapter
 
 .. toctree::
    :maxdepth: 2
    :titlesonly:
 
-   How I setup a Test Driven Development Environment
+   Setup a Test Driven Development Environment
    AssertionError
    AttributeError
    IndentationError
