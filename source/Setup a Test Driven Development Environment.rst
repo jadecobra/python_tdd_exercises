@@ -57,7 +57,7 @@ Note that ``{PROJECT_NAME}`` is a placeholder for the name of the project. For e
 * ``cd {PROJECT_NAME}`` changes the directory to ``{PROJECT_NAME}`` so we can work there
 * we are going to place all our code for this project in the ``{PROJECT_NAME}`` folder
 * tests will be stored in the ``tests`` folder to separate them from the source code (the actual program)
-* ``touch`` is a program which creates an empty file with the name given after the command
+* ``touch`` is a program which creates an empty file with the given name
 
   - ``touch __init__.py`` creates an empty file named ``__init__.py`` in the ``tests`` folder which tells python that the ``tests`` folder is a python package
   - ``touch test_{PROJECT_NAME}.py`` creates an empty file named ``test_{PROJECT_NAME}.py`` where we will write our tests
@@ -96,18 +96,18 @@ RED: make it fail
   Here is an explanation of the code you just wrote
 
   - ``import unittest`` imports a module named ``unittest`` to use for testing
-  - ``unittest`` is a module from the python standard library used for testing code
+  - ``unittest`` is a module from the python standard library used for testing
   - ``Test{PROJECT_NAME}`` is a :doc:`class <classes>` that will hold the tests we write
-  - ``unittest.TestCase`` is a :doc:`class <classes>` defined in the ``unittest`` library which contains :doc:`methods/functions <functions>` for testing code that ``Test{PROJECT_NAME}`` inherits from
+  - ``unittest.TestCase`` is a :doc:`class <classes>` defined in the ``unittest`` library which contains :doc:`methods/functions <functions>` for testing that ``Test{PROJECT_NAME}`` inherits from
   - a simple way to think of inheritance is that ``Test{PROJECT_NAME}`` is a child of ``unittest.TestCase`` and can do the same things that its parent can do
   - ``def test_failure`` is the definition of a test :doc:`function <functions>` to test the program we are creating
 
-    * ``self`` refers to the ``Test{PROJECT_NAME}`` class. To access ``methods`` and ``attributes`` within the ``Test{PROJECT_NAME}`` class we use ``self``. It avoids having to say ``Test{PROJECT_NAME}.assertFalse(True)``
+    * ``self`` refers to the ``Test{PROJECT_NAME}`` class. To access ``methods`` and ``attributes`` within the ``Test{PROJECT_NAME}`` class we use ``self``. It avoids having to say ``Test{PROJECT_NAME}().assertFalse(True)``
     * ``self.assertFalse(True)`` is an assert statement that is a substitute for ``assert False == True`` which is similar to asking the question ``is False equal to True?``
 
 * save the file
 * turn on the ``Auto Save`` feature in your Interactive Development Environment (IDE)
-* type the following in the terminal to test the code
+* type this in the terminal to test the code
 
   .. code-block:: python
 
@@ -144,7 +144,7 @@ We are in the RED part of the Test Driven Development cycle. The error in the te
   - the ``unittest.TestCase`` method ``assertFalse`` takes an input and checks if it is ``False``
   - ``True`` is given as input to ``assertFalse`` and the statement raises an error because ``True`` is not ``False``
 
-* ``File "/<PATH_TO_PROJECT>/{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py", line 7, in test_failure`` the line number and location of the file where the error occurred. Holding down ``Ctrl/option`` on your keyboard and clicking on this line will place your cursor at the position in the file where the error occurred
+* ``File "/<PATH_TO_PROJECT>/{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py", line 7, in test_failure`` the line number and location of the file where the error occurred. Holding down ``ctrl/option`` on your keyboard and clicking on this line will place your cursor at the position in the file where the error occurred
 * ``Traceback (most recent call last):`` all the information returned by python after this line is the ``traceback`` showing the most recent call python made last
 * ``FAIL: test_failure (tests.Test{PROJECT_NAME}.test_failure)`` a header with information about the test
 
@@ -217,7 +217,9 @@ We can make code better by using
 * `The Abstraction Principle <https://en.wikipedia.org/wiki/Abstraction_principle_(computer_programming)>`_
 * `The Do Not Repeat Yourself (DRY) Principle <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
-Both of these can be summed up as ``remove duplication``. I ask two questions to help me remove duplication when I write code
+Both of these can be summed up as ``remove duplication``
+
+I ask two questions to help me remove duplication when I write code
 
 * What is similar? this tells me what parts are common
 * What is different? this tells me what parts are specific
@@ -271,7 +273,7 @@ Create a Virtual Environment
 
   - ``python3 -m venv .venv`` creates a virtual environment named ``.venv`` - you can use any name you want
   - `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ is a python standard library module for creating virtual environments
-  - a virtual environment is an isolated folder to hold dependencies installed for the project where it resides. It helps keep dependencies for a specific project in the same place as the project, while isolating it from the source code and tests
+  - a virtual environment is an isolated folder to hold dependencies installed for the project where it resides. It helps keep dependencies for a specific project in the same place as the project, while keeping it separate from the source code and tests
   - ``source .venv/bin/activate`` activates the virtual environment, the ``(.venv)`` in the terminal indicates the virtual environment was activated
   - ``python3 -m pip install --upgrade pip`` upgrades ``pip`` the `python package manager <https://pypi.org/project/pip/>`_ to the latest version
   - ``pip install --requirement requirements.txt`` installs any python libraries listed in ``requirements.txt`` in the virtual environment, in this case ``pytest-watch``
@@ -299,14 +301,9 @@ Activate a Virtual Environment
 If you already have a virtual environment setup in a project, you can activate it by following the steps below
 
 
-* Open a terminal
+* open a terminal
 * change directory to ``{PROJECT_NAME}``
 * activate the virtual environment by typing ``source .venv/bin/activate`` in the terminal
-
------
-
-
-*CONGRATULATIONS!* You have successfully setup a Python Test Driven Environment and can build anything you want. Go forth and conquer the world
 
 
 
@@ -315,7 +312,7 @@ Automatically create a Python Test Driven Development Environment
 
 You made it this far and have become the greatest programmer in the world. Following the practice of removing duplication, I would write a program that contains all the steps above.
 
-I can call the program any time I want to setup a Test Driven Development Environment instead of remembering and manually repeating each step
+I can call the program any time I want to setup a Test Driven Development Environment instead of remembering and manually repeating each step of the process
 
 
 * open a new file in your Interactive Development Environment (IDE) then type the following
@@ -323,17 +320,17 @@ I can call the program any time I want to setup a Test Driven Development Enviro
   .. code-block:: shell
    :linenos:
 
-    project_name=$1
-    mkdir -p $project_name/tests
-    cd $project_name
-    touch $project_name.py
+    PROJECT_NAME=$1
+    mkdir -p $PROJECT_NAME/tests
+    cd $PROJECT_NAME
+    touch $PROJECT_NAME.py
     touch tests/__init__.py
 
-    cat << DELIMITER > tests/test_$project_name.py
+    cat << DELIMITER > tests/test_$PROJECT_NAME.py
     import unittest
 
 
-    class Test$project_name(unittest.TestCase):
+    class Test$PROJECT_NAME(unittest.TestCase):
 
         def test_failure(self):
             self.assertTrue(False)
@@ -351,7 +348,7 @@ I can call the program any time I want to setup a Test Driven Development Enviro
 
   .. caution::
 
-    DO NOT SAVE the script in the ``{PROJECT_NAME}`` folder, save it in the parent
+    DO NOT save the script in the ``{PROJECT_NAME}`` folder, save it in the parent
 
 * open a new terminal
 * make the program executable by typing this command in the terminal
@@ -360,7 +357,7 @@ I can call the program any time I want to setup a Test Driven Development Enviro
 
     chmod +x setupPythonTdd.sh
 
-* you can now create a Test Driven Development environment by giving a name you want for the ``$project_name`` variable when the program is called. For example,  typing this command in the terminal in the folder where ``setupTdd.sh`` is saved, will setup the environment for a project called ``the_greatest_application``
+* I can now create a Test Driven Development environment by giving a name for the ``$PROJECT_NAME`` variable when the program is called. For example,  typing this command in the terminal in the folder where ``setupTdd.sh`` is saved, will setup a Test Driven Development environment for a project called ``the_greatest_application``
 
   .. code-block:: shell
 
