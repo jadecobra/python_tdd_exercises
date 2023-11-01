@@ -98,9 +98,9 @@ RED: make it fail
   - ``import unittest`` imports a module named ``unittest`` to use for testing
   - ``unittest`` is a module from the python standard library used for testing
   - ``Test{PROJECT_NAME}`` is a :doc:`class <classes>` that will hold the tests we write
-  - ``unittest.TestCase`` is a :doc:`class <classes>` defined in the ``unittest`` library which contains :doc:`methods/functions <functions>` for testing and ``Test{PROJECT_NAME}`` inherits from it
+  - ``unittest.TestCase`` is a :doc:`class <classes>` defined in the ``unittest`` library which contains :doc:`methods (functions) <functions>` for testing and ``Test{PROJECT_NAME}`` inherits from it
   - a simple way to think of inheritance is that ``Test{PROJECT_NAME}`` is a child of ``unittest.TestCase`` and can do the same things that its parent can do
-  - ``def test_failure`` is the definition of a test :doc:`function <functions>` to test the program we are creating
+  - ``def test_failure`` is the definition of a test :doc:`method (function) <functions>` to test the program we are creating
 
     * ``self`` refers to the ``Test{PROJECT_NAME}`` class. To access ``methods`` and ``attributes`` within the ``Test{PROJECT_NAME}`` class we use ``self``. It avoids having to say ``Test{PROJECT_NAME}().assertFalse(True)``
     * ``self.assertFalse(True)`` is a statement that is a substitute for ``assert False == True`` which is similar to asking the question ``is False equal to True?``
@@ -113,7 +113,7 @@ RED: make it fail
 
     python3 -m unittest
 
-  the terminal updates to show
+  the terminal updates to show a failure
 
   .. code-block:: python
 
@@ -165,7 +165,7 @@ GREEN: make it pass
 -------------------
 
 
-* Create a list of Exceptions encountered as we go through our journey, to keep track of the cause and solutions we come up with. This will help us become more familiar with python's exceptions. Add :doc:`AssertionError` to the list
+* I will create a list of Exceptions encountered as we go through our journey, to keep track of causes and solutions we come up with. This will help us become more familiar with python's exceptions. Add :doc:`AssertionError` to the list
 
   .. code-block:: python
     :linenos:
@@ -270,7 +270,7 @@ Create a Virtual Environment
   - ``source .venv/bin/activate`` activates the virtual environment, the ``(.venv)`` in the terminal indicates the virtual environment was activated
   - ``python3 -m pip install --upgrade pip`` upgrades ``pip`` the `python package manager <https://pypi.org/project/pip/>`_ to the latest version
   - ``pip install --requirement requirements.txt`` installs any python libraries listed in ``requirements.txt`` in the virtual environment, in this case ``pytest-watch``
-  - ``pytest-watch`` is a program that automatically uses the `pytest <https://docs.pytest.org/>`_ library to runs tests when a python file in the project changes
+  - ``pytest-watch`` is a program that automatically uses the `pytest <https://docs.pytest.org/>`_ library to run tests when a python file in the project changes
   - `pytest <https://docs.pytest.org/>`_ is an external library for running tests in python
 
 * type ``pytest-watch`` in the terminal to run the tests and the terminal displays
@@ -287,7 +287,7 @@ Create a Virtual Environment
 
     =============== 1 passed in 0.00s =======================
 
-* to stop the tests at anytime, type `ctrl+C` in the terminal
+* to stop the tests at anytime, type `ctrl+c` in the terminal
 
 How to Deactivate a Virtual Environment
 +++++++++++++++++++++++++++++++++++++++
@@ -301,12 +301,12 @@ If you already have a virtual environment setup in a project, you can activate i
 
 
 * open a terminal
-* change directory to ``{PROJECT_NAME}``
+* make sure you are in the directory for that contains the virtual environment for example ``{PROJECT_NAME}``
 * activate the virtual environment by typing ``source .venv/bin/activate`` in the terminal
 
 
 
-Automatically create a Python Test Driven Development Environment
+BONUS: Automatically create a Python Test Driven Development Environment
 -----------------------------------------------------------------
 
 You made it this far and have become the greatest programmer in the world. Following the practice of removing duplication, I would write a program that contains all the steps above following `The Do Not Repeat Yourself (DRY) Principle <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
@@ -361,5 +361,7 @@ I can call the program any time I want to setup a Test Driven Development Enviro
   .. code-block:: shell
 
     ./setupPythonTdd.sh the_greatest_application
+
+There you have it. You now know one way to Setup a Test Driven Development Environmnet for Python projects.
 
 This is one of the advantages of programming, we can take a series of steps and make them a one line command which the computer does on our behalf. Happy Trails!
