@@ -78,20 +78,15 @@ Note that ``{PROJECT_NAME}`` is a placeholder for the name of the project. For e
 
 
 * tests will be stored in the ``tests`` folder to separate them from the source code (the actual program)
+* The folder structure should look like this
 
+  .. code-block::
 
-
-
-
-The folder structure should look like this
-
-.. code-block::
-
-  {PROJECT_NAME}
-      ╰──tests
-      |   ╰──__init__.py
-      |   ╰──test_{PROJECT_NAME}.py
-      ╰──{PROJECT_NAME}.py
+    {PROJECT_NAME}
+        ╰──tests
+        |   ╰──__init__.py
+        |   ╰──test_{PROJECT_NAME}.py
+        ╰──{PROJECT_NAME}.py
 
 The Test Driven Development mantra paraphrased is ``RED GREEN REFACTOR``
 
@@ -269,11 +264,34 @@ Create a Virtual Environment
   .. code-block:: python
 
       python3 -m venv .venv
+
+  - this tells python to use the `venv <https://docs.python.org/3/library/venv.html#module-venv>` module from the python library to create a virtual environment ``.venv`` - you can use any name you want
+  - a virtual environment is an isolated folder to hold dependencies installed for the project where it resides. It helps keep dependencies for a specific project in the same place as the project, while keeping it separate from the source code and tests
+
+* after creating the virtual environment, I activate it to use it
+
+  .. code-block:: python
+
       source .venv/bin/activate
+
+  the ``(.venv)`` on the far left of the command line in the terminal indicates the virtual environment successfully activated
+
+* I upgrade ``pip`` the `python package manager <https://pypi.org/project/pip/>`_ to the latest version
+
+  .. code-block:: python
+
       python3 -m pip install --upgrade pip
+
+* I then install any python libraries listed in ``requirements.txt`` in the virtual environment, in this case ``pytest-watch``
+
+  .. code-block:: python
+
       pip install --requirement requirements.txt
 
-  you will see a ``(.venv)`` at the far left of the command line in your terminal indicating that you are working in a virtual environment. Your folder structure should now look like this
+  - ``pytest-watch`` is a program that automatically uses the `pytest <https://docs.pytest.org/>`_ library to run tests when a python file in the project changes
+  - `pytest <https://docs.pytest.org/>`_ is an external library for running tests in python
+
+* Your folder structure should now look like this
 
   .. code-block::
 
@@ -284,18 +302,6 @@ Create a Virtual Environment
           |   ╰──test_{PROJECT_NAME}.py
           ╰──{PROJECT_NAME}.py
           ╰──requirements.txt
-
-* You just created a `virtual environment <https://docs.python.org/3/library/venv.html>`_
-
-
-  - ``python3 -m venv .venv`` creates a virtual environment named ``.venv`` - you can use any name you want
-  - `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ is a python standard library module for creating virtual environments
-  - a virtual environment is an isolated folder to hold dependencies installed for the project where it resides. It helps keep dependencies for a specific project in the same place as the project, while keeping it separate from the source code and tests
-  - ``source .venv/bin/activate`` activates the virtual environment, the ``(.venv)`` in the terminal indicates the virtual environment was activated
-  - ``python3 -m pip install --upgrade pip`` upgrades ``pip`` the `python package manager <https://pypi.org/project/pip/>`_ to the latest version
-  - ``pip install --requirement requirements.txt`` installs any python libraries listed in ``requirements.txt`` in the virtual environment, in this case ``pytest-watch``
-  - ``pytest-watch`` is a program that automatically uses the `pytest <https://docs.pytest.org/>`_ library to run tests when a python file in the project changes
-  - `pytest <https://docs.pytest.org/>`_ is an external library for running tests in python
 
 * type ``pytest-watch`` in the terminal to run the tests and the terminal displays
 
@@ -311,7 +317,7 @@ Create a Virtual Environment
 
     =============== 1 passed in 0.00s =======================
 
-* to stop the tests at anytime, type `ctrl+c` in the terminal
+* to stop the tests at anytime, hit `ctrl` + `c` in the terminal
 
 How to Deactivate a Virtual Environment
 +++++++++++++++++++++++++++++++++++++++
@@ -331,7 +337,7 @@ If you already have a virtual environment setup in a project, you can activate i
 
 
 BONUS: Automatically create a Python Test Driven Development Environment
------------------------------------------------------------------
+-------------------------------------------------------------------------
 
 You made it this far and have become the greatest programmer in the world. Following the practice of removing duplication, I would write a program that contains all the steps above following `The Do Not Repeat Yourself (DRY) Principle <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
