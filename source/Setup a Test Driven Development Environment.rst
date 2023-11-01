@@ -32,31 +32,55 @@ Setup
   * run subsequent commands in WSL
 
 
-File Structure
+Structure
 ^^^^^^^^^^^^^^
 
 
-To setup the file structure for the project, Open a terminal in your Interactive Development Environment (IDE) and type the following commands to setup the directory structure.
+To setup the structure for the project, Open a terminal in your Interactive Development Environment (IDE) and type the following commands to setup the directory structure.
 
 Note that ``{PROJECT_NAME}`` is a placeholder for the name of the project. For example if you are building a project called ``the_greatest_application`` replace ``{PROJECT_NAME}`` with ``the_greatest_application``
 
-.. code-block:: shell
+* first we create a directory for our project and a tests folder
 
-  mkdir -p {PROJECT_NAME}/tests
-  cd {PROJECT_NAME}
-  touch {PROJECT_NAME}.py
-  touch tests/__init__.py
-  touch tests/test_{PROJECT_NAME}.py
+  .. code-block:: shell
 
-* ``mkdir -p {PROJECT_NAME}/tests`` creates a folder named ``tests`` in a folder named ``{PROJECT_NAME}``
-* ``cd {PROJECT_NAME}`` changes the directory to ``{PROJECT_NAME}`` so we can work there
-* we are going to place all our code for this project in the ``{PROJECT_NAME}`` folder
+    mkdir -p {PROJECT_NAME}/tests
+
+  this creates a folder named ``tests`` in a folder named ``{PROJECT_NAME}``
+
+* we then change directory to ``{PROJECT_NAME}`` so we can work in there, it is where we will place all the code for this project
+
+  .. code-block:: shell
+
+    cd {PROJECT_NAME}
+
+  this keeps all our work in a separate dedicated workspace where we store only things related to the project
+
+* ``touch`` is a program which creates an empty file with the given name, we will use it to create empty files for our project
+
+  - we will create an empty file named ``__init__.py`` in the ``tests`` folder which tells python that the ``tests`` folder is a python package, this helps python find our tests later
+
+    .. code-block:: shell
+
+      touch tests/__init__.py
+
+  - then create an empty file named ``test_{PROJECT_NAME}.py`` in the ``tests`` folder where we will write our tests
+
+    .. code-block:: shell
+
+      touch tests/test_{PROJECT_NAME}.py
+
+  - and finally create an empty file named ``{PROJECT_NAME}.py`` which will contain the source code for our program
+
+    .. code-block:: shell
+
+      touch {PROJECT_NAME}.py
+
+
 * tests will be stored in the ``tests`` folder to separate them from the source code (the actual program)
-* ``touch`` is a program which creates an empty file with the given name
 
-  - ``touch __init__.py`` creates an empty file named ``__init__.py`` in the ``tests`` folder which tells python that the ``tests`` folder is a python package
-  - ``touch test_{PROJECT_NAME}.py`` creates an empty file named ``test_{PROJECT_NAME}.py`` where we will write our tests
-  - ``touch {PROJECT_NAME}.py`` creates an empty file named ``{PROJECT_NAME}.py`` which will contain the source code for our program
+
+
 
 
 The folder structure should look like this
