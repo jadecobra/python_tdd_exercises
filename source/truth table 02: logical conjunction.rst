@@ -14,7 +14,7 @@ Prerequisites
 -------------
 
 
-:doc:`Setup a Test Driven Development Environment`
+:doc:`How to Setup a Test Driven Development Environment`
 
 ----
 

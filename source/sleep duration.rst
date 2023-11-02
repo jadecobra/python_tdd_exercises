@@ -6,7 +6,7 @@ Let us take a look at building a program which gives us the amount of time we ha
 Prerequisites
 -------------
 
-:doc:`Setup a Test Driven Development Environment` with ``sleep_duration`` as the project name
+:doc:`How to Setup a Test Driven Development Environment` with ``sleep_duration`` as the project name
 
 ----
 

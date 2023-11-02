@@ -8,14 +8,14 @@ Prerequisites
 -------------
 
 
-:doc:`Setup a Test Driven Development Environment`
+:doc:`How to Setup a Test Driven Development Environment`
 
 
 What is an AssertionError?
 --------------------------
 
 An ``AssertionError`` is an Exception that is raised when the result of an ``assert`` statement is ``False``.
-We encountered this when we wrote the first failing test below in :doc:`Setup a Test Driven Development Environment`
+We encountered this when we wrote the first failing test below in :doc:`How to Setup a Test Driven Development Environment`
 
 .. code-block:: python
 
@@ -277,7 +277,7 @@ the terminal updates to show a failure
 
    E       AssertionError: True is not false
 
-this is familiar, it was the first failing test we wrote in :doc:`Setup a Test Driven Development Environment`
+this is familiar, it was the first failing test we wrote in :doc:`How to Setup a Test Driven Development Environment`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -352,7 +352,7 @@ we update ``test_assertion_errors_with_false`` to make it pass
 
     self.assertTrue(True)
 
-This was one of the options to solve the failing test in :doc:`Setup a Test Driven Development Environment`. Our knowledge of python has grown, we now know that
+This was one of the options to solve the failing test in :doc:`How to Setup a Test Driven Development Environment`. Our knowledge of python has grown, we now know that
 
 
 * ``True`` is ``True``
