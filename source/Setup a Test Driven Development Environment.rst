@@ -32,15 +32,15 @@ Setup
   * run subsequent commands in WSL
 
 
-Structure
-^^^^^^^^^^^^^^
+Project Structure
+^^^^^^^^^^^^^^^^^
 
 
-To setup the structure for the project, Open a terminal in your Interactive Development Environment (IDE) and type the following commands to setup the directory structure.
+Open a terminal in your Interactive Development Environment (IDE) and type the following commands to setup the structure for the project
 
-Note that ``{PROJECT_NAME}`` is a placeholder for the name of the project. For example if you are building a project called ``the_greatest_application`` replace ``{PROJECT_NAME}`` with ``the_greatest_application``
+Note that ``{PROJECT_NAME}`` is a placeholder for the name of the project. For example if you are building a project called ``magic`` replace ``{PROJECT_NAME}`` with ``magic``
 
-* first we create a directory for our project and a tests folder
+* I first create a directory for the project and a tests folder within the project
 
   .. code-block:: shell
 
@@ -48,36 +48,34 @@ Note that ``{PROJECT_NAME}`` is a placeholder for the name of the project. For e
 
   this creates a folder named ``tests`` in a folder named ``{PROJECT_NAME}``
 
-* we then change directory to ``{PROJECT_NAME}`` so we can work in there, it is where we will place all the code for this project
+* Then I change directory to ``{PROJECT_NAME}`` so I can work in there, it is where all the code for this project will reside
 
   .. code-block:: shell
 
     cd {PROJECT_NAME}
 
-  this keeps all our work in a separate dedicated workspace where we store only things related to the project
+  this keeps all work for the project in a separate dedicated workspace
 
-* ``touch`` is a program which creates an empty file with the given name, we will use it to create empty files for our project
+* ``touch`` is a program which creates an empty file with the given name, I will use it to create empty files for the project
 
-  - we will create an empty file named ``__init__.py`` in the ``tests`` folder which tells python that the ``tests`` folder is a python package, this helps python find our tests later
-
-    .. code-block:: shell
-
-      touch tests/__init__.py
-
-  - then create an empty file named ``test_{PROJECT_NAME}.py`` in the ``tests`` folder where we will write our tests
-
-    .. code-block:: shell
-
-      touch tests/test_{PROJECT_NAME}.py
-
-  - and finally create an empty file named ``{PROJECT_NAME}.py`` which will contain the source code for our program
+  - I create an empty file named ``{PROJECT_NAME}.py`` which will contain the source code for the program
 
     .. code-block:: shell
 
       touch {PROJECT_NAME}.py
 
+  - Tests will be stored in the ``tests`` folder to separate them from the source code (the actual program), so I create an empty file named ``__init__.py`` in the ``tests`` folder to tell python that the ``tests`` folder is a python package, this helps python find the tests
 
-* tests will be stored in the ``tests`` folder to separate them from the source code (the actual program)
+    .. code-block:: shell
+
+      touch tests/__init__.py
+
+  - I also create an empty file named ``test_{PROJECT_NAME}.py`` in the ``tests`` folder where I will write tests
+
+    .. code-block:: shell
+
+      touch tests/test_{PROJECT_NAME}.py
+
 * The folder structure should look like this
 
   .. code-block::
@@ -88,7 +86,7 @@ Note that ``{PROJECT_NAME}`` is a placeholder for the name of the project. For e
         |   ╰──test_{PROJECT_NAME}.py
         ╰──{PROJECT_NAME}.py
 
-The Test Driven Development mantra paraphrased is ``RED GREEN REFACTOR``
+The Test Driven Development cycle paraphrased is ``RED GREEN REFACTOR``
 
 * **RED**: make it fail - write a failing test to make sure the test works
 * **GREEN**: make it pass - write only the code necessary to make the test pass
@@ -99,7 +97,7 @@ RED: make it fail
 -----------------
 
 
-* We are ready to begin writing our first test. Open up ``{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py`` in your Interactive Development Environment (IDE) and type the following text paying attention to spacing
+* We are ready to begin writing our first test. Open up ``{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py`` in your Interactive Development Environment (IDE) and type the following text paying attention to spacing, the line numbers are there as a guide
 
   .. code-block:: python
     :linenos:
@@ -118,7 +116,7 @@ RED: make it fail
   - ``unittest`` is a module from the python standard library used for testing
   - ``Test{PROJECT_NAME}`` is a :doc:`class <classes>` that will hold the tests we write
   - ``unittest.TestCase`` is a :doc:`class <classes>` defined in the ``unittest`` library which contains :doc:`methods (functions) <functions>` for testing and ``Test{PROJECT_NAME}`` inherits from it
-  - a simple way to think of inheritance is that ``Test{PROJECT_NAME}`` is a child of ``unittest.TestCase`` and can do the same things that its parent can do
+  - a simple way to think of inheritance is that ``Test{PROJECT_NAME}`` is a child of ``unittest.TestCase`` and can do the same things that it can do
   - ``def test_failure`` is the definition of a test :doc:`method (function) <functions>` to test the program we are creating
 
     * ``self`` refers to the ``Test{PROJECT_NAME}`` class. To access ``methods`` and ``attributes`` within the ``Test{PROJECT_NAME}`` class we use ``self``. It avoids having to say ``Test{PROJECT_NAME}().assertFalse(True)``
@@ -152,18 +150,18 @@ RED: make it fail
 
 *CONGRATULATIONS!* You have written your first test.
 
-We are in the RED part of the Test Driven Development cycle. The error in the terminal gives us important information about the code which we can use to come up with a solution. Looking at it from the bottom
+We are in the RED part of the Test Driven Development cycle. The error in the terminal gives us important information about the code. Looking at it from the bottom
 
 
 * ``FAILED (failures=1)`` There is a failure and the number of failures
-* ``Ran 1 test in 0.000s`` how long it took the test took to run
+* ``Ran 1 test in 0.000s`` how long it took the test to run
 * ``AssertionError: True is not false`` The error is an :doc:`AssertionError` which is raised by python when an assert statement is ``False``, in this case the error is raised because ``True is not false``
 * ``self.assertFalse(True)`` the line of code that caused the failure
 
-  - ``assertFalse`` is a method in the ``unittest.TestCase`` class which takes an input and checks if the input is ``False``
+  - ``assertFalse`` is a method (function) in the ``unittest.TestCase`` class which takes an input and checks if the input is ``False``
   - ``True`` is given as input to ``assertFalse`` and the statement raises an error because ``True`` is not ``False``
 
-* ``File "/<PATH_TO_PROJECT>/{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py", line 7, in test_failure`` the line number and location of the file where the error occurred. Holding down ``ctrl/option`` on your keyboard and clicking on this line will place your cursor at the position in the file where the error occurred
+* ``File "/<PATH_TO_PROJECT>/{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py", line 7, in test_failure`` is the line number and location of the file where the error occurred. Holding down ``ctrl/option`` on your keyboard and clicking on this line will place your cursor at the position in the file where the error occurred
 * ``Traceback (most recent call last):`` all the information returned by python after this line is the ``traceback`` showing the most recent call python made last
 * ``FAIL: test_failure (tests.Test{PROJECT_NAME}.test_failure)`` a header with information about the test
 
@@ -386,11 +384,11 @@ I can call the program any time I want to setup a Test Driven Development Enviro
 
     chmod +x setupPythonTdd.sh
 
-* I can now create a Test Driven Development environment by giving a name for the ``$PROJECT_NAME`` variable when the program is called. For example,  typing this command in the terminal in the folder where ``setupPythonTdd.sh`` is saved will setup a Test Driven Development environment for a project called ``the_greatest_application``
+* I can now create a Test Driven Development environment by giving a name for the ``$PROJECT_NAME`` variable when the program is called. For example,  typing this command in the terminal in the folder where ``setupPythonTdd.sh`` is saved will setup a Test Driven Development environment for a project called ``magic``
 
   .. code-block:: shell
 
-    ./setupPythonTdd.sh the_greatest_application
+    ./setupPythonTdd.sh magic
 
 There you have it. You now know one way to Setup a Test Driven Development Environmnet for Python projects.
 
