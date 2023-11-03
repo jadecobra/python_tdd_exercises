@@ -15,7 +15,7 @@ What is an AssertionError?
 --------------------------
 
 An ``AssertionError`` is an Exception that is raised when the result of an ``assert`` statement is ``False``.
-We encountered this when we wrote the first failing test below in :doc:`How to Setup a Test Driven Development Environment`
+We encountered this when we wrote the first failing test in :doc:`How to Setup a Test Driven Development Environment`
 
 .. code-block:: python
 
@@ -46,7 +46,7 @@ AssertionError with None
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-We will create a new file in the ``tests`` folder named ``test_AssertionError.py``. In this file, we add a test named ``test_assertion_errors_with_none`` which uses the python ``assert`` keyword to intentionally trigger an ``AssertionError`` to get familiar with it
+We will create a new file in the ``tests`` folder named ``test_assertion_error.py``. In this file, we add a test named ``test_assertion_errors_with_none`` which uses the python ``assert`` keyword to intentionally cause an ``AssertionError``
 
 .. code-block:: python
 
@@ -64,9 +64,9 @@ the terminal updates to show
 
   E       assert False is None
 
-  tests/test_AssertionError.py:7: AssertionError
+  tests/test_assertion_error.py:7: AssertionError
 
-This ``AssertionError`` is raised by the line ``assert False is None``, which is similar to asking the question "is ``False`` the same as ``None``?"
+This ``AssertionError`` is raised by the line ``assert False is None``, which is similar to asking the question "is False the same as None?"
 
 The difference is that the ``assert`` at the beginning of the line makes the statement more like "DO NOT PROCEED UNLESS ``False`` is ``None``"
 
@@ -75,7 +75,7 @@ Since ``None`` and ``False`` are different objects and not equal, the ``assert``
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-we modify the failing line of ``test_assertion_errors_with_none`` in ``test_AssertionError.py``
+we modify the failing line of ``test_assertion_errors_with_none`` in ``test_assertion_error.py``
 
 .. code-block:: python
 
@@ -103,7 +103,7 @@ We can also use some methods from the ``unittest.TestCase`` class to make assert
 
       E       AssertionError: False is not None
 
-      tests/test_AssertionError.py:8: AssertionError
+      tests/test_assertion_error.py:8: AssertionError
 
   since ``False is not None`` we get an ``AssertionError``
 
@@ -238,7 +238,7 @@ Going with what we know so far, can we raise an ``AssertionError`` for things th
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-update ``TestAssertionError`` in ``test_AssertionError.py`` with the following test to find out
+update ``TestAssertionError`` in ``test_assertion_error.py`` with the following test to find out
 
 .. code-block:: python
 
@@ -306,7 +306,7 @@ Can we raise an ``AssertionError`` for things that are ``True``?
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-update ``TestAssertionError`` in ``test_AssertionError.py`` with the following test
+update ``TestAssertionError`` in ``test_assertion_error.py`` with the following test
 
 .. code-block:: python
 
@@ -375,7 +375,7 @@ We can also make assertions of equality, where we compare if two things are the 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-we add a new test to ``TestAssertionError`` in ``test_AssertionError.py``
+we add a new test to ``TestAssertionError`` in ``test_assertion_error.py``
 
 .. code-block:: python
 
