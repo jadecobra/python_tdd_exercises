@@ -13,7 +13,7 @@ Requirements
 ------------
 
 
-* `download and install python <https://www.python.org/downloads/>`_
+* `download and install Python <https://www.python.org/downloads/>`_
 * download and install an Interactive Development Environment (IDE) - Here are a few options
 
   * `VSCode in a Browser <http://vscode.dev>`_
@@ -36,7 +36,7 @@ Project Structure
 ^^^^^^^^^^^^^^^^^
 
 
-Open a terminal in your Interactive Development Environment (IDE) and type the following commands to setup the structure for the project
+Open a terminal in your Interactive Development Environment (IDE) and type the following commands to setup the project
 
 Note that ``{PROJECT_NAME}`` is a placeholder for the name of the project. For example if I were building a project called ``magic`` I would replace ``{PROJECT_NAME}`` with ``magic``
 
@@ -52,7 +52,7 @@ Note that ``{PROJECT_NAME}`` is a placeholder for the name of the project. For e
 
     cd {PROJECT_NAME}
 
-* ``touch`` is a program which creates an empty file with the given name, I will use it to create empty files for the project
+* ``touch`` is a program which creates an empty file with the name you give it, I will use it to create empty files for the project
 
   - I create an empty file named ``{PROJECT_NAME}.py`` which will contain the source code for the program
 
@@ -109,14 +109,14 @@ RED: make it fail
 
   Here is an explanation of the code above
 
-  - ``import unittest`` imports a module named ``unittest`` to use for testing
-  - ``unittest`` is a module from the python standard library used for testing
+  - ``import unittest`` imports the `unittest <https://docs.python.org/3/library/unittest.html>`_ module
+  - `unittest <https://docs.python.org/3/library/unittest.html>`_ is a module from the python standard library used for testing
   - ``Test{PROJECT_NAME}`` is a :doc:`class <classes>` that will hold the tests we write
-  - ``unittest.TestCase`` is a :doc:`class <classes>` defined in the ``unittest`` library which contains :doc:`methods (functions) <functions>` for testing and ``Test{PROJECT_NAME}`` inherits from it
+  - ``unittest.TestCase`` is a :doc:`class <classes>` defined in the `unittest <https://docs.python.org/3/library/unittest.html>`_ library which contains :doc:`methods (functions) <functions>` for testing and ``Test{PROJECT_NAME}`` inherits from it
   - a simple way to think of inheritance is that ``Test{PROJECT_NAME}`` is a child of ``unittest.TestCase`` and can do the same things it can do
   - ``def test_failure`` is the definition of a test :doc:`method (function) <functions>` to test the program we are creating
 
-    * ``self`` refers to the ``Test{PROJECT_NAME}`` class. To access ``methods`` and ``attributes`` within the ``Test{PROJECT_NAME}`` class we use ``self``. It avoids having to say ``Test{PROJECT_NAME}().assertFalse(True)``
+    * ``self`` is the ``Test{PROJECT_NAME}`` class. To access ``methods`` and ``attributes`` within the ``Test{PROJECT_NAME}`` class we use ``self``. It avoids having to say ``Test{PROJECT_NAME}().assertFalse(True)``
     * ``self.assertFalse(True)`` is a statement that is a substitute for ``assert False == True`` which is similar to asking the question ``is False equal to True?``
 
 * save the file
@@ -145,41 +145,41 @@ RED: make it fail
 
     FAILED (failures=1)
 
-*CONGRATULATIONS!* You have written your first test.
+If you are typing along *CONGRATULATIONS!* You have written your first test.
 
 We are in the RED part of the Test Driven Development cycle. The error in the terminal gives us important information. Looking at it from the bottom
 
 
-* ``FAILED (failures=1)`` there is a failure and the number of failures is currently 1
+* ``FAILED (failures=1)`` there is one failure
 * ``Ran 1 test in 0.000s`` how long it took the test to run
 * ``AssertionError: True is not false`` The error is an :doc:`AssertionError` which is raised by python when an assert statement is ``False``, in this case the error is raised because ``True is not false``
 * ``self.assertFalse(True)`` the line of code that caused the failure
 
-  - ``assertFalse`` is a :doc:`method (function) <functions>` in the ``unittest.TestCase`` class which takes an input and checks if the input is ``False``
+  - ``assertFalse`` is a :doc:`method (function) <functions>` in the ``unittest.TestCase`` class which checks if its input is ``False``
   - ``True`` is given as input to ``assertFalse`` and the statement raises an error because ``True`` is not ``False``
 
-* ``File "/<PATH_TO_PROJECT>/{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py", line 7, in test_failure`` is the line number and location of the file where the error occurred. Holding down ``ctrl`` (if you are on windows/linux ) or ``option`` (if you are on a mac) on your keyboard and clicking on this line will place your cursor at the position in the file where the error occurred
+* ``File "/<PATH_TO_PROJECT>/{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py", line 7, in test_failure`` is the line number and location of the file where the error occurred. Holding down ``ctrl`` (windows/linux ) or ``option`` (mac) on the keyboard and clicking on this line will place the cursor at the position in the file where the error occurred
 * ``Traceback (most recent call last):`` all the information returned by python after this line is the ``traceback`` showing the most recent call python made last
 * ``FAIL: test_failure (tests.Test{PROJECT_NAME}.test_failure)`` a header with information about the test
 
   - ``tests.Test{PROJECT_NAME}.test_failure`` is the location of the failing test
-  -  ``tests`` - refers to the tests folder
-  - ``Test{PROJECT_NAME}`` - refers to the class defined on line 4
-  - ``test_failure`` - refers to the function defined on line 6
+  -  ``tests`` - is the tests folder
+  - ``Test{PROJECT_NAME}`` - is the class defined on line 4
+  - ``test_failure`` - is the function defined on line 6
 
 * ``F`` indicates a failure
-* ``python3 -m unittest`` is the command to run our tests using the ``unittest`` module
+* ``python3 -m unittest`` is the command to run our tests using the `unittest`_ module
 
-  - ``python3`` is the major version of python we are currently using
+  - ``python3`` is the major version of python being used
   - ``-m`` is an option passed to python to call the module given after the option
-  - ``unittest`` is a module in the python standard library designed for testing
+  - `unittest <https://docs.python.org/3/library/unittest.html>`_ is a module from the python standard library used for testing
 
 
 GREEN: make it pass
 -------------------
 
 
-* I would keep track of Exceptions encountered to help become more familiar with python's exceptions. Add :doc:`AssertionError` to the list
+* I keep track of Exceptions encountered to help become more familiar with python's exceptions. Let us add :doc:`AssertionError` to the list
 
   .. code-block:: python
     :linenos:
@@ -217,7 +217,7 @@ GREEN: make it pass
 
     OK
 
-We are GREEN. *WOO HOO!* The test passes
+The test passes. *CELEBRATION DANCE!* We are GREEN.
 
 
 REFACTOR: make it better
@@ -233,11 +233,11 @@ Both of these can be summed up as ``remove duplication``
 
 So far there is not much to improve on what has been written but there has been duplication.
 
-* we ran ``python3 -m unittest`` to see the test fail
-* we ran ``python3 -m unittest`` to see the test pass
-* we run ``python3 -m unittest`` again to make sure our improvements do not break previous passing tests
+* ``python3 -m unittest`` was run to see the test fail
+* ``python3 -m unittest`` was run to see the test pass
+* ``python3 -m unittest`` will be run to make sure changes do not break previous passing tests
 
-This means ``python3 -m unittest`` is run for every part of the Test Driven Development cycle. To avoid this repetition and focus on tests and solutions, I automate the repeating parts so I `Do Not Repeat Myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
+This means ``python3 -m unittest`` is run for each part of the Test Driven Development cycle. To avoid this repetition, I automate the repeating parts so I `Do Not Repeat Myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
 How to Automatically Run Tests
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -252,16 +252,20 @@ How to Create a Virtual Environment
     echo "pytest-watch" > requirements.txt
 
   - ``pytest-watch`` is a program that automatically uses the `pytest <https://docs.pytest.org/>`_ library to run tests when a python file in the project changes
-  - `pytest <https://docs.pytest.org/>`_ is an external library for running tests in python
+  - `pytest <https://docs.pytest.org/>`_ is a library like `unittest <https://docs.python.org/3/library/unittest.html>`_ for running tests in python
+  - ``requirements.txt`` is a file where we can list required dependencies of a project for `pip <https://pypi.org/project/pip/>`_ to install later, you can use any name you like
 
-* I then create a virtual environment using the `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ module from the python standard library
+* I create a virtual environment using the `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ module from the python standard library
 
   .. code-block:: python
 
       python3 -m venv .venv
 
-  - this tells python to use the `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ module from the python library to create a virtual environment ``.venv`` - you can use any name you want
+  - ``python3`` is the major version of python being used
+  - ``-m`` is an option passed to python to call the module given after the option
+  - `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ is a module from the python library for creating virtual environments a given name
   - a virtual environment is an isolated folder that holds dependencies. It helps keep dependencies for a specific project separate from other python dependencies you install on the computer, source code and tests
+  - ``.venv`` is the standard name for virtual environments in python, you can use any name you want
 
 * after creating the virtual environment, I activate it to use it
 
@@ -271,13 +275,13 @@ How to Create a Virtual Environment
 
   the ``(.venv)`` on the far left of the command line in the terminal indicates the virtual environment successfully activated
 
-* I upgrade ``pip`` the `python package manager <https://pypi.org/project/pip/>`_ to the latest version
+* I upgrade `pip <https://pypi.org/project/pip/>`_ the `python package manager <https://pypi.org/project/pip/>`_ to the latest version
 
   .. code-block:: python
 
       python3 -m pip install --upgrade pip
 
-* I can now use ``pip`` to install any python libraries listed in ``requirements.txt`` in the virtual environment, in this case ``pytest-watch``
+* I can now use `pip <https://pypi.org/project/pip/>`_ to install any python libraries listed in ``requirements.txt`` in the virtual environment, in this case ``pytest-watch``
 
   .. code-block:: python
 
@@ -285,7 +289,7 @@ How to Create a Virtual Environment
 
 * The folder structure now looks like this
 
-  .. code-block::
+  .. code-block:: ruby
 
       {PROJECT_NAME}
           ╰──.venv
@@ -297,7 +301,7 @@ How to Create a Virtual Environment
 
 * typing ``pytest-watch`` in the terminal runs the tests and the terminal displays
 
-  .. code-block:: python
+  .. code-block:: ruby
 
     [TODAYS_DATE] Running: py.test
     ================== test session starts===================
@@ -327,9 +331,7 @@ Make sure you are in the directory that contains the virtual environment for exa
 BONUS: Automatically create a Python Test Driven Development Environment
 -------------------------------------------------------------------------
 
-You made it this far and have become the greatest programmer in the world. Following the practice of removing duplication, I would write a program that contains all the steps above following `The Do Not Repeat Yourself (DRY) Principle <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
-
-I can then call the program any time I want to setup a Test Driven Development Environment instead of manually repeating each step of the process
+You made it this far and have become the greatest programmer in the world. Following the practice of removing duplication, I would write a program that contains all the steps above following `The Do Not Repeat Yourself (DRY) Principle <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_. I can then call the program any time I want to setup a Test Driven Development Environment
 
 * exit the tests in the terminal by hitting ``ctrl`` + ``c`` on the keyboard
 * type ``deactivate`` to deactivate the virtual environment if you have not already
@@ -339,7 +341,7 @@ I can then call the program any time I want to setup a Test Driven Development E
 
       cd ..
 
-* type ``history`` in the terminal to see the commands we have typed in this session as a reference for the program
+* type ``history`` in the terminal to see the commands typed in this session as a reference for the program
 * create an empty file with a name that describes what it does so it is easy to remember later, for example, ``setupPythonTdd.sh``
 
   .. code-block:: shell

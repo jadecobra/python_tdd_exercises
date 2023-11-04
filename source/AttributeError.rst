@@ -39,7 +39,7 @@ We open a new file, save it as ``test_attribute_error.py`` in the ``tests`` fold
 What does the code above mean?
 
 
-* ``import unittest`` imports the ``unittest`` module from the python standard library
+* ``import unittest`` imports the `unittest <https://docs.python.org/3/library/unittest.html>`_ module from the python standard library
 * ``import module`` imports the ``module`` module - this is going to hold the solution we write
 * ``class TestAttributeErrors(unittest.TestCase):`` - a class definition that inherits from ``unittest.TestCase`` and will hold our tests. We learn more about this in :doc:`classes`
 * ``def test_defining_variables_to_solve_attribute_errors(self):`` the definition of our first test function to find out if defining variables can solve an ``AttributeError``
