@@ -33,9 +33,9 @@ Setup
 
 Open a terminal in your Interactive Development Environment (IDE) and type the following commands to setup the project
 
-  .. note::
+.. note::
 
-    ``{PROJECT_NAME}`` is a placeholder for the name of the project. For example to build a project called ``magic`` replace ``{PROJECT_NAME}`` with ``magic``
+  ``{PROJECT_NAME}`` is a placeholder for the name of the project. For example to build a project called ``magic`` replace ``{PROJECT_NAME}`` with ``magic``
 
 * create a directory for the project named ``{PROJECT_NAME}`` and a folder named ``tests`` within the project
 
@@ -115,11 +115,10 @@ RED: make it fail
   - ``unittest.TestCase`` is a :doc:`class <classes>` defined in the `unittest <https://docs.python.org/3/library/unittest.html>`_ module which contains :doc:`methods (functions) <functions>` for testing and ``Test{PROJECT_NAME}`` inherits from it. A simple way to think of inheritance is that ``Test{PROJECT_NAME}`` is a child of ``unittest.TestCase`` and can do the same things it can do
   - ``def test_failure`` is the definition of a test :doc:`method (function) <functions>` to test the program we are creating
 
-    * ``self`` is the ``Test{PROJECT_NAME}`` class. To access ``methods`` and ``attributes`` within the ``Test{PROJECT_NAME}`` class we use ``self``. It avoids using ``Test{PROJECT_NAME}().assertFalse(True)`` to access the ``assertFalse`` :doc:`method (function) <functions>`
+    * ``self`` is the ``Test{PROJECT_NAME}`` class. To access ``methods`` and ``attributes`` within the ``Test{PROJECT_NAME}`` class we use ``self``. It avoids using ``Test{PROJECT_NAME}().assertFalse(True)`` to access the ``assertFalse`` :doc:`method (function) <functions>` for instance
     * ``self.assertFalse(True)`` is a statement that is a substitute for ``assert False == True`` which is asking the question ``is False equal to True?``
 
-* save the file
-* turn on the ``Auto Save`` feature in your Interactive Development Environment (IDE) to avoid manually saving a file each time you make a change
+* save the file, turn on the ``Auto Save`` feature in your Interactive Development Environment (IDE) to avoid manually saving a file each time you make a change
 * type this in the terminal to test the code
 
   .. code-block:: python
@@ -167,7 +166,7 @@ We are in the RED part of the Test Driven Development cycle. The error in the te
   - ``test_failure`` - is the function defined on line 6
 
 * ``F`` indicates a failure
-* ``python3 -m unittest`` is the command to run our tests using the `unittest`_ module
+* ``python3 -m unittest`` is the command to run our tests with `unittest`_
 
   - ``python3`` is the major version of python being used
   - ``-m`` is an option passed to python to call the module given after the option
@@ -236,7 +235,7 @@ So far there is not much to improve on what has been written but there has been 
 * ``python3 -m unittest`` was run to see the test pass
 * ``python3 -m unittest`` will be run to make sure changes do not break previous passing tests
 
-This means ``python3 -m unittest`` is run for each part of the Test Driven Development cycle. I automate this repetition so I `Do Not Repeat Myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_, it would be better for a program to automatically run the tests when I make a change
+This means ``python3 -m unittest`` is run for each part of the Test Driven Development cycle. I automate this so I `Do Not Repeat Myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_, it would be better for a program to automatically run the tests when I make a change
 
 How to Automatically Run Tests
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -250,9 +249,9 @@ How to Create a Virtual Environment
 
     echo "pytest-watch" > requirements.txt
 
-  - ``pytest-watch`` is a program that automatically uses the `pytest <https://docs.pytest.org/>`_ library to run tests when a python file in the project changes
-  - `pytest <https://docs.pytest.org/>`_ is a library like `unittest <https://docs.python.org/3/library/unittest.html>`_ for running tests in python
-  - ``requirements.txt`` is a file where we can list required dependencies of a project for `pip <https://pypi.org/project/pip/>`_ the `python package manager <https://pypi.org/project/pip/>`_ to install later, you can use any name you like
+  - ``pytest-watch`` is a python program that automatically uses the `pytest <https://docs.pytest.org/>`_ python package to run tests when a python file in the project changes
+  - `pytest <https://docs.pytest.org/>`_ is a python package like `unittest <https://docs.python.org/3/library/unittest.html>`_ for running tests in python
+  - ``requirements.txt`` is a file where we can list required python packages for a project for `pip <https://pypi.org/project/pip/>`_ the `python package manager <https://pypi.org/project/pip/>`_ to install later, you can use any name you like
 
 * create a virtual environment using the `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ module from the python standard library
 
@@ -282,18 +281,18 @@ How to Create a Virtual Environment
 
   - ``python3`` is the major version of python being used
   - ``-m`` is an option passed to python to call the module given after the option
-  - `pip <https://pypi.org/project/pip/>`_ is a module from the python standard library for installing python libraries
-  - ``install`` is an argument given to `pip <https://pypi.org/project/pip/>`_ to tell it to install a given library name
-  - ``pip`` is the given library name for `pip <https://pypi.org/project/pip/>`_ to install, in this case it is ``pip`` is installing ``pip``
-  - ``--upgrade`` is the option given for the ``install`` argument for `pip <https://pypi.org/project/pip/>`_ to install the latest version of the name given
+  - `pip <https://pypi.org/project/pip/>`_ is a module from the python standard library for installing python packages
+  - ``install`` is an argument given to `pip <https://pypi.org/project/pip/>`_ to tell it to install a given package name
+  - ``pip`` is the given package name for `pip <https://pypi.org/project/pip/>`_ to install, in this case  ``pip`` installs ``pip``
+  - ``--upgrade`` is an option given to the ``install`` argument for `pip <https://pypi.org/project/pip/>`_ to install the latest version of the name given
 
-* we can now use `pip <https://pypi.org/project/pip/>`_ to install any python libraries listed in ``requirements.txt`` in the virtual environment, in this case ``pytest-watch``
+* we can now use `pip <https://pypi.org/project/pip/>`_ to install any python packages listed in ``requirements.txt`` in the virtual environment, in this case ``pytest-watch``
 
   .. code-block:: python
 
       pip install --requirement requirements.txt
 
-  ``--requirement`` is another option that can be passed to the ``install`` argument to install libraries from a given file name
+  ``--requirement`` is another option that can be passed to the ``install`` argument to install python packages from a given file name
   ``requirements.txt`` the file that contains a list of libraries for `pip <https://pypi.org/project/pip/>`_ to install
 
 * The folder structure now looks like this
@@ -308,7 +307,7 @@ How to Create a Virtual Environment
           ╰──{PROJECT_NAME}.py
           ╰──requirements.txt
 
-* typing ``pytest-watch`` in the terminal runs the tests and the terminal displays information about the passing test but does not release the terminal
+* typing ``pytest-watch`` in the terminal runs the tests and the terminal displays information about the passing test but no longer releases the terminal
 
   .. code-block:: ruby
 
@@ -323,7 +322,7 @@ How to Create a Virtual Environment
     =============== 1 passed in 0.00s =======================
 
 * to verify that the terminal now responds to changes, modify the input on line 7 in ``test_{PROJECT_NAME}.py`` to ``True`` to see it fail and back to ``False`` to see it pass
-* hit `ctrl` + `c` in the terminal to stop the tests at anytime
+* press ``ctrl`` + ``c`` on the keyboard in the terminal to stop the tests at anytime
 
 How to Deactivate a Virtual Environment
 +++++++++++++++++++++++++++++++++++++++
@@ -340,9 +339,9 @@ Make sure you are in the directory that contains the virtual environment for exa
 BONUS: Automatically create a Python Test Driven Development Environment
 -------------------------------------------------------------------------
 
-You made it this far and have become the greatest programmer in the world. Following the practice of removing duplication, I would write a program that contains all the steps above following `The Do Not Repeat Yourself (DRY) Principle <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_. I can then call the program any time I want to setup a Test Driven Development Environment
+You made it this far and have become the greatest programmer in the world. Following the `The Do Not Repeat Yourself (DRY) Principle <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_, I would write a program that contains all the steps above. I can then use it any time I want to setup a Test Driven Development Environment
 
-* exit the tests in the terminal by hitting ``ctrl`` + ``c`` on the keyboard
+* exit the tests in the terminal by pressting ``ctrl`` + ``c`` on the keyboard
 * type ``deactivate`` to deactivate the virtual environment if it is still activated
 * change directory to the parent of ``{PROJECT_NAME}``
 
