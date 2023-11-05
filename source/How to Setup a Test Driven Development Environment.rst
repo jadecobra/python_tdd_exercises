@@ -22,19 +22,14 @@ Requirements
   * `Sublime <https://www.sublimetext.com>`_
   * `Other Interactive Development Environment (IDE) options <https://wiki.python.org/moin/IntegratedDevelopmentEnvironments>`_
 
-Setup
------
-
 .. admonition:: *are you on a windows computer?*
 
-  * `download and install Git <https://github.com/git-for-windows/git/releases>`_
   * open PowerShell and install `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_ by typing ``wsl --install``
   * run subsequent commands in `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
 
 
-Project Structure
-^^^^^^^^^^^^^^^^^
-
+Setup
+-----
 
 Open a terminal in your Interactive Development Environment (IDE) and type the following commands to setup the project
 
@@ -257,7 +252,7 @@ How to Create a Virtual Environment
 
   - ``pytest-watch`` is a program that automatically uses the `pytest <https://docs.pytest.org/>`_ library to run tests when a python file in the project changes
   - `pytest <https://docs.pytest.org/>`_ is a library like `unittest <https://docs.python.org/3/library/unittest.html>`_ for running tests in python
-  - ``requirements.txt`` is a file where we can list required dependencies of a project for `pip <https://pypi.org/project/pip/>`_ to install later, you can use any name you like
+  - ``requirements.txt`` is a file where we can list required dependencies of a project for `pip <https://pypi.org/project/pip/>`_ the `python package manager <https://pypi.org/project/pip/>`_ to install later, you can use any name you like
 
 * create a virtual environment using the `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ module from the python standard library
 
@@ -285,11 +280,21 @@ How to Create a Virtual Environment
 
       python3 -m pip install --upgrade pip
 
+  - ``python3`` is the major version of python being used
+  - ``-m`` is an option passed to python to call the module given after the option
+  - `pip <https://pypi.org/project/pip/>`_ is a module from the python standard library for installing python libraries
+  - ``install`` is an argument given to `pip <https://pypi.org/project/pip/>`_ to tell it to install a given library name
+  - ``pip`` is the given library name for `pip <https://pypi.org/project/pip/>`_ to install, in this case it is ``pip`` is installing ``pip``
+  - ``--upgrade`` is the option given for the ``install`` argument for `pip <https://pypi.org/project/pip/>`_ to install the latest version of the name given
+
 * we can now use `pip <https://pypi.org/project/pip/>`_ to install any python libraries listed in ``requirements.txt`` in the virtual environment, in this case ``pytest-watch``
 
   .. code-block:: python
 
       pip install --requirement requirements.txt
+
+  ``--requirement`` is another option that can be passed to the ``install`` argument to install libraries from a given file name
+  ``requirements.txt`` the file that contains a list of libraries for `pip <https://pypi.org/project/pip/>`_ to install
 
 * The folder structure now looks like this
 
@@ -423,7 +428,7 @@ You made it this far and have become the greatest programmer in the world. Follo
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-  all the text betweeen the two ``DELIMITER`` words will be written to ``tests/test_$PROJECT_NAME.py``
+  all the text between the two ``DELIMITER`` words will be written to ``tests/test_$PROJECT_NAME.py``
 
 * use ``chmod`` to make the program executable, this makes it usable on its own
 
