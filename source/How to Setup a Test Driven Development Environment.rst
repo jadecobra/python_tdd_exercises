@@ -263,7 +263,7 @@ How to Create a Virtual Environment
   - ``python3`` is the major version of python being used
   - ``-m`` is an option passed to python to call the module given after the option
   - `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ is a module from the python standard library for creating virtual environments when given a name
-  - a virtual environment is an isolated folder that holds dependencies. It keeps the dependencies for a specific project separate from other python dependencies installed on the computer, source code and tests
+  - a virtual environment is an isolated folder that holds dependencies. It keeps the dependencies for a specific project separate
   - ``.venv`` is the standard name for virtual environments in python, you can use any name you like
 
 * after creating the virtual environment, activate it to use it
