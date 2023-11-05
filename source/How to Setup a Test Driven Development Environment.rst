@@ -2,7 +2,7 @@
 How to Setup a Test Driven Development Environment
 ==================================================
 
-`Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ is a way of developing software with a focus on tests where we come up with ideas to reach a goal and test those ideas, the results of these tests tell us if we are closer or further away from the goal and we repeat the process until we reach the goal.
+`Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ is a way of developing software with a focus on tests.  We come up with ideas to reach a goal and test those ideas, the results of these tests tell us if we are closer or further away from the goal and we repeat the process until we reach the goal.
 
 I learned Test Driven Development from reading `Kent Beck’s <https://en.wikipedia.org/wiki/Kent_Beck>`_ `Test Driven Development by Example <https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk>`_ and `Martin Fowler’s <https://en.wikipedia.org/wiki/Martin_Fowler_(software_engineer)>`_ `Refactoring <https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk>`_, they both influenced me in a great way.
 
@@ -38,9 +38,11 @@ Project Structure
 
 Open a terminal in your Interactive Development Environment (IDE) and type the following commands to setup the project
 
-Note that ``{PROJECT_NAME}`` is a placeholder for the name of the project. For example to build a project called ``magic`` replace ``{PROJECT_NAME}`` with ``magic``
+  .. note::
 
-* create a directory for the project named ``{PROJECT_NAME}`` and a folder named ``tests`` folder within the project
+    ``{PROJECT_NAME}`` is a placeholder for the name of the project. For example to build a project called ``magic`` replace ``{PROJECT_NAME}`` with ``magic``
+
+* create a directory for the project named ``{PROJECT_NAME}`` and a folder named ``tests`` within the project
 
   .. code-block:: shell
 
@@ -56,7 +58,7 @@ Note that ``{PROJECT_NAME}`` is a placeholder for the name of the project. For e
 
 * ``touch`` is a program which creates an empty file with the name it is given
 
-  - create an empty file named ``{PROJECT_NAME}.py`` which will contain the source code for the program
+  - create an empty file named ``{PROJECT_NAME}.py`` to hold the source code for the program
 
     .. code-block:: shell
 
@@ -69,7 +71,7 @@ Note that ``{PROJECT_NAME}`` is a placeholder for the name of the project. For e
 
       touch tests/__init__.py
 
-  - create an empty file named ``test_{PROJECT_NAME}.py`` in the ``tests`` folder, this will hold the testing code
+  - create an empty file named ``test_{PROJECT_NAME}.py`` in the ``tests`` folder to hold the testing code
 
     .. code-block:: shell
 
@@ -97,7 +99,7 @@ RED: make it fail
 -----------------
 
 
-* We are ready to begin writing our first test. Open up ``{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py`` in the Interactive Development Environment (IDE) and type the following text paying attention to spacing, line numbers are given here as a guide
+* We are ready to begin writing our first test. Open up ``{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py`` in the Interactive Development Environment (IDE) and type this, pay attention to spacing, line numbers are also given here as a guide
 
   .. code-block:: python
     :linenos:
@@ -115,14 +117,14 @@ RED: make it fail
   - ``import unittest`` imports the `unittest <https://docs.python.org/3/library/unittest.html>`_ module
   - `unittest <https://docs.python.org/3/library/unittest.html>`_ is a module from the python standard library used for testing
   - ``Test{PROJECT_NAME}`` is a :doc:`class <classes>` that will hold the tests we write
-  - ``unittest.TestCase`` is a :doc:`class <classes>` defined in the `unittest <https://docs.python.org/3/library/unittest.html>`_ module which contains :doc:`methods (functions) <functions>` for testing and ``Test{PROJECT_NAME}`` inherits from it, a simple way to think of inheritance is that ``Test{PROJECT_NAME}`` is a child of ``unittest.TestCase`` and can do the same things it can do
+  - ``unittest.TestCase`` is a :doc:`class <classes>` defined in the `unittest <https://docs.python.org/3/library/unittest.html>`_ module which contains :doc:`methods (functions) <functions>` for testing and ``Test{PROJECT_NAME}`` inherits from it. A simple way to think of inheritance is that ``Test{PROJECT_NAME}`` is a child of ``unittest.TestCase`` and can do the same things it can do
   - ``def test_failure`` is the definition of a test :doc:`method (function) <functions>` to test the program we are creating
 
-    * ``self`` is the ``Test{PROJECT_NAME}`` class. To access ``methods`` and ``attributes`` within the ``Test{PROJECT_NAME}`` class we use ``self``. It avoids having to say ``Test{PROJECT_NAME}().assertFalse(True)``
+    * ``self`` is the ``Test{PROJECT_NAME}`` class. To access ``methods`` and ``attributes`` within the ``Test{PROJECT_NAME}`` class we use ``self``. It avoids using ``Test{PROJECT_NAME}().assertFalse(True)`` to access the ``assertFalse`` :doc:`method (function) <functions>`
     * ``self.assertFalse(True)`` is a statement that is a substitute for ``assert False == True`` which is asking the question ``is False equal to True?``
 
 * save the file
-* turn on the ``Auto Save`` feature in your Interactive Development Environment (IDE) to avoid having to repeat saving a file each time you make a change
+* turn on the ``Auto Save`` feature in your Interactive Development Environment (IDE) to avoid manually saving a file each time you make a change
 * type this in the terminal to test the code
 
   .. code-block:: python
@@ -160,7 +162,7 @@ We are in the RED part of the Test Driven Development cycle. The error in the te
   - ``assertFalse`` is a :doc:`method (function) <functions>` in the ``unittest.TestCase`` class which checks if its input is ``False``
   - ``True`` is given as input to ``assertFalse`` and the statement raises an error because ``True`` is not ``False``
 
-* ``File "/<PATH_TO_PROJECT>/{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py", line 7, in test_failure`` is the line number and location of the file where the error occurred. Holding down ``ctrl`` (windows/linux ) or ``option`` (mac) on the keyboard and clicking on this line with the mouse will place the cursor at the position in the file where the error occurred
+* ``File "/<PATH_TO_PROJECT>/{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py", line 7, in test_failure`` is the line number and location of the file where the error occurred. Hold down ``ctrl`` (windows/linux ) or ``option`` (mac) on the keyboard and click on this line with the mouse to place the cursor at the position in the file where the error occurred
 * ``Traceback (most recent call last):`` all the information returned by python after this line is the ``traceback`` showing the most recent call python made last
 * ``FAIL: test_failure (tests.Test{PROJECT_NAME}.test_failure)`` a header with information about the test
 
@@ -209,7 +211,7 @@ GREEN: make it pass
 
     python3 -m unittest
 
-  and we get
+  and we get a passing test
 
   .. code-block:: python
 
@@ -219,7 +221,7 @@ GREEN: make it pass
 
     OK
 
-The test passes. *cue CELEBRATION MUSIC AND DANCE!* We are GREEN.
+  *cue CELEBRATION MUSIC AND DANCE!* We are GREEN.
 
 
 REFACTOR: make it better
@@ -267,7 +269,7 @@ How to Create a Virtual Environment
   - ``-m`` is an option passed to python to call the module given after the option
   - `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ is a module from the python standard library for creating virtual environments when given a name
   - a virtual environment is an isolated folder that holds dependencies. It keeps the dependencies for a specific project separate from other python dependencies installed on the computer, source code and tests
-  - ``.venv`` is the standard name for virtual environments in python, you can use any name you want
+  - ``.venv`` is the standard name for virtual environments in python, you can use any name you like
 
 * after creating the virtual environment, activate it to use it
 
@@ -301,7 +303,7 @@ How to Create a Virtual Environment
           ╰──{PROJECT_NAME}.py
           ╰──requirements.txt
 
-* typing ``pytest-watch`` in the terminal runs the tests and the terminal displays
+* typing ``pytest-watch`` in the terminal runs the tests and the terminal displays information about the passing test but does not release the terminal
 
   .. code-block:: ruby
 
@@ -343,16 +345,21 @@ You made it this far and have become the greatest programmer in the world. Follo
 
       cd ..
 
-* type ``history`` in the terminal to see the commands typed in this session as a reference for the program
-* create an empty file with a name that describes what it does so it is easy to remember later, for example, ``setupPythonTdd.sh``
+* list the commands typed in this session so far as a reference for the program by typing ``history`` in the terminal
+
+  .. code-block:: shell
+
+    history
+
+* create an empty file with a name that describes what the program does so it is easy to remember later, for example, ``setupPythonTdd.sh``
 
   .. code-block:: shell
 
       touch setupPythonTdd.sh
 
-* open ``setupPythonTdd.sh`` in the Interactive Development Environment (IDE), copy each command from the history
+* open ``setupPythonTdd.sh`` in the Interactive Development Environment (IDE) and copy each command displayed in the terminal when you typed ``history``
 
-  .. code-block:: shell
+  .. code-block:: ruby
    :linenos:
 
     mkdir -p {PROJECT_NAME}/tests
@@ -360,9 +367,7 @@ You made it this far and have become the greatest programmer in the world. Follo
     touch {PROJECT_NAME}.py
     touch tests/__init__.py
     touch tests/test_{PROJECT_NAME}.py
-
     echo "pytest-watch" > requirements.txt
-
     python3 -m venv .venv
     source .venv/bin/activate
     python3 -m pip install --upgrade pip
@@ -389,7 +394,7 @@ You made it this far and have become the greatest programmer in the world. Follo
     python3 -m pip install -r requirements.txt
     pytest-watch
 
-* to add the test for failure in ``test_$PROJECT_NAME.py``, use the ``concatenate`` program to add the text for .. important:: text
+* to add the test for failure in ``test_$PROJECT_NAME.py``, use the ``concatenate`` program to make the program add the text
 
   .. code-block:: shell
     :linenos:
@@ -418,7 +423,9 @@ You made it this far and have become the greatest programmer in the world. Follo
     python3 -m pip install -r requirements.txt
     pytest-watch
 
-* use ``chmod`` to make the program executable
+  all the text betweeen the two ``DELIMITER`` words will be written to ``tests/test_$PROJECT_NAME.py``
+
+* use ``chmod`` to make the program executable, this makes it usable on its own
 
   .. code-block:: python
 
@@ -432,6 +439,6 @@ You made it this far and have become the greatest programmer in the world. Follo
 
 This is one of the advantages of programming, I can take a series of steps and make them a one line command which the computer does on my behalf
 
-There you have it. You now know one way to Setup a Test Driven Development Environmnet for Python projects, and have a program to do it for you anytime you want
+You now know one way to Setup a Test Driven Development Environment for Python projects, and have a program to do it for you anytime you want
 
 Happy Trails!
