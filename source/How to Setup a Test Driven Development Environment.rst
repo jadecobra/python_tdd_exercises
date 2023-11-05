@@ -371,7 +371,7 @@ You made it this far and have become the greatest programmer in the world. Follo
     python3 -m venv .venv
     source .venv/bin/activate
     python3 -m pip install --upgrade pip
-    python3 -m pip install -r requirements.txt
+    python3 -m pip install --requirement requirements.txt
     pytest-watch
 
 * There is a problem with the program, it will always create a project named ``{PROJECT_NAME}`` so we need to add a variable to make it create any project name we pass to the program as input. Update the program with a variable named ``PROJECT_NAME`` which is referenced with ``$PROJECT_NAME``
@@ -391,7 +391,7 @@ You made it this far and have become the greatest programmer in the world. Follo
     python3 -m venv .venv
     source .venv/bin/activate
     python3 -m pip install --upgrade pip
-    python3 -m pip install -r requirements.txt
+    python3 -m pip install --requirement requirements.txt
     pytest-watch
 
 * to add the test for failure in ``test_$PROJECT_NAME.py``, use the ``concatenate`` program to make the program add the text
@@ -420,7 +420,7 @@ You made it this far and have become the greatest programmer in the world. Follo
     python3 -m venv .venv
     source .venv/bin/activate
     python3 -m pip install --upgrade pip
-    python3 -m pip install -r requirements.txt
+    python3 -m pip install --requirement requirements.txt
     pytest-watch
 
   all the text betweeen the two ``DELIMITER`` words will be written to ``tests/test_$PROJECT_NAME.py``
