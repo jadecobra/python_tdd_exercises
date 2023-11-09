@@ -20,7 +20,7 @@ What is None?
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-create a file named ``test_data_structures.py`` in the ``tests`` folder
+create a file called ``test_data_structures.py`` in the ``tests`` folder
 
 .. code-block:: python
 

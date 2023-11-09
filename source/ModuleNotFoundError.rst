@@ -129,7 +129,7 @@ If you left ``pytest-watch`` running from :doc:`How to Setup a Test Driven Devel
 .. code-block:: python
 
        import module_0
-   E   ModuleNotFoundError: No module named 'module_0'
+   E   ModuleNotFoundError: No module called 'module_0'
 
 Looking at the traceback starting from the bottom
 
@@ -153,19 +153,19 @@ GREEN: make it pass
   .. code-block:: python
 
            import module_1
-       E   ModuleNotFoundError: No module named 'module_1'
+       E   ModuleNotFoundError: No module called 'module_1'
 
 * create ``module_1.py`` in the ``{PROJECT_NAME}`` folder, the terminal shows the same error for a new line
   .. code-block:: python
 
            import module_2
-       E   ModuleNotFoundError: No module named 'module_2'
+       E   ModuleNotFoundError: No module called 'module_2'
 
 * create ``module_2.py`` in the ``{PROJECT_NAME}`` folder, the terminal will update to show the following
   .. code-block:: python
 
            import module_3
-       E   ModuleNotFoundError: No module named 'module_3'
+       E   ModuleNotFoundError: No module called 'module_3'
 
 *
   this is the pattern, repeat it until you have created ``module_99.py`` and the terminal will update to show a passing test

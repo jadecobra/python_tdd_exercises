@@ -20,7 +20,7 @@ List comprehensions are a way to create lists from another iterable. It is a nic
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a file named ``test_list_comprehension.py`` to the ``tests`` folder
+add a file called ``test_list_comprehension.py`` to the ``tests`` folder
 
 .. code-block:: python
 
@@ -41,7 +41,7 @@ add a file named ``test_list_comprehension.py`` to the ``tests`` folder
 
 * we create ``collection_a`` which uses the ``range`` object
 * the ``range`` object creates an ``iterable`` of numbers from 0 to the number we give minus 1. `read more <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_
-* we create a list named ``list_a`` that has no elements and confirm it is empty with a ``self.assertEqual(list_a, [])``
+* we create a list called ``list_a`` that has no elements and confirm it is empty with a ``self.assertEqual(list_a, [])``
 * we then create a loop using the ``for`` keyword, that goes over every element of ``collection_a`` and adds it to ``list_a`` using the ``append`` method see :doc:`Lists`
 * the terminal updates to show an :doc:`AssertionError` for our test that checks the elements of ``list_a`` after the loop ran, because the list is no longer empty, it now contains 10 elements
   .. code-block:: python
@@ -106,7 +106,7 @@ REFACTOR: make it better
        # NameError
        # ModuleNotFoundError
 
-* create a file named ``list_comprehensions.py`` in the project folder and the terminal updates to show an :doc:`AttributeError`\ , which we add to our expanding list of exceptions encountered
+* create a file called ``list_comprehensions.py`` in the project folder and the terminal updates to show an :doc:`AttributeError`\ , which we add to our expanding list of exceptions encountered
   .. code-block:: python
 
        # Exceptions Encountered

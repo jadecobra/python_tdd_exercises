@@ -17,7 +17,7 @@ How to use dictionaries as factories in python
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-create a file named ``test_person_factory.py`` in the ``tests`` folder and add the following
+create a file called ``test_person_factory.py`` in the ``tests`` folder and add the following
 
 .. code-block:: python
 
@@ -42,7 +42,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* create a file named ``person.py`` in the ``{PROJECT_NAME}`` folder and the terminal updates to show an :doc:`AttributeError` which we add to our list of exceptions
+* create a file called ``person.py`` in the ``{PROJECT_NAME}`` folder and the terminal updates to show an :doc:`AttributeError` which we add to our list of exceptions
 
   .. code-block:: python
 
@@ -51,7 +51,7 @@ GREEN: make it pass
        # ModuleNotFoundError
        # AttributeError
 
-* create a function named ``factory`` in ``person.py`` and the terminal shows passing tests
+* create a function called ``factory`` in ``person.py`` and the terminal shows passing tests
 
   .. code-block:: python
 

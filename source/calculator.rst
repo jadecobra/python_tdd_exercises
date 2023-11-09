@@ -93,7 +93,7 @@ RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
 
-* add a method named ``test_addition`` to the ``TestCalculator`` class
+* add a method called ``test_addition`` to the ``TestCalculator`` class
 
 .. code-block:: python
     import unittest
@@ -334,8 +334,8 @@ There are a few scenarios we can consider from the users' perspective. If our us
                 x+y
             )
 
-   - we assign a variable named ``x`` to a random integer between -1 and 1 to represent the case of negative numbers, zero and positive numbers
-   - we assign a variable named ``y`` to a random integer between -1 and 1 just like above
+   - we assign a variable called ``x`` to a random integer between -1 and 1 to represent the case of negative numbers, zero and positive numbers
+   - we assign a variable called ``y`` to a random integer between -1 and 1 just like above
    - we test that when these two variables are given to the ``add`` function as inputs it returns the sum of the 2 variables as output
 
   the terminal still displays passing tests
@@ -372,7 +372,7 @@ RED : make it fail
 ^^^^^^^^^^^^^^^^^^
 
 
-* update ``test_calculator.py`` with a method named ``test_subtraction``
+* update ``test_calculator.py`` with a method called ``test_subtraction``
 
   .. code-block:: python
 
@@ -534,7 +534,7 @@ Moving on to test multiplication, the next item on the TODO list
 RED : make it fail
 ^^^^^^^^^^^^^^^^^^
 
-add a failing test to ``test_calculator.py`` named ``test_multiplication``
+add a failing test to ``test_calculator.py`` called ``test_multiplication``
 
 .. code-block:: python
 

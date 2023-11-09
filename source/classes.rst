@@ -25,7 +25,7 @@ How to define a Class with pass
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-we create a new file named ``test_classes.py`` in the ``tests`` directory
+we create a new file called ``test_classes.py`` in the ``tests`` directory
 
 .. code-block:: python
 
@@ -44,7 +44,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* create a python module named ``classes.py`` and the terminal updates to show an :doc:`AttributeError`
+* create a python module called ``classes.py`` and the terminal updates to show an :doc:`AttributeError`
 * add the name ``ClassWithPass`` to the module
 
   .. code-block:: python
@@ -612,7 +612,7 @@ REFACTOR: make it better
 * Wait a minute, we just repeated the same thing twice.
 
   - We defined a ``class`` with a name
-  - defined an attribute named ``sex``
+  - defined an attribute called ``sex``
   - defined an ``__init__`` method which takes in a ``sex`` keyword argument
 
 * What if we make the repetition complete by redefining the ``Boy`` class to match the ``Girl`` and ``Other`` class

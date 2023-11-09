@@ -38,7 +38,7 @@ Prerequisites
 
 ### RED: make it fail
 
-create a file named `test_passing_values.py` in the ``tests`` folder with the following text
+create a file called `test_passing_values.py` in the ``tests`` folder with the following text
 
 
 .. code-block:: python
@@ -64,7 +64,7 @@ the terminal updates to show a [ModuleNotFoundError](./ModuleNotFoundError.rst) 
 
 ### GREEN: make it pass
 
-- create a file named `telephone.py` in the project folder and the terminal updates to show an [AttributeError](./AttributeError.rst) which we add to our list of exceptions
+- create a file called `telephone.py` in the project folder and the terminal updates to show an [AttributeError](./AttributeError.rst) which we add to our list of exceptions
 
 .. code-block:: python
     # Exceptions Encountered
@@ -80,7 +80,7 @@ the terminal updates to show a [ModuleNotFoundError](./ModuleNotFoundError.rst) 
         pass
     ```
     the terminal still displays an [AttributeError](./AttributeError.rst) but with a different message
-- we add a definition for an attribute named ``text`` to the ``Telephone`` class
+- we add a definition for an attribute called ``text`` to the ``Telephone`` class
 
 .. code-block:: python
     class Telephone(object):

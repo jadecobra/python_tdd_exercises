@@ -27,7 +27,7 @@ How to test that an Exception is raised
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-create a file named ``test_exception_handling.py`` in the ``tests`` folder and add the following
+create a file called ``test_exception_handling.py`` in the ``tests`` folder and add the following
 
 .. code-block:: python
 
@@ -320,7 +320,7 @@ GREEN: make it pass
 
   the terminal now gives us a :doc:`ModuleNotFoundError`
 
-* create a file named ``exceptions.py`` in the ``{PROJECT_NAME}`` folder, and the terminal updates to show an :doc:`AttributeError`
+* create a file called ``exceptions.py`` in the ``{PROJECT_NAME}`` folder, and the terminal updates to show an :doc:`AttributeError`
 * update ``exceptions.py`` with the name of the attribute called in the test, and the terminal updates to show a ``NameError`` since we have not defined ``raises_exception_error`` in ``exceptions.py``
 
   .. code-block:: python

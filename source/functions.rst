@@ -30,7 +30,7 @@ How to Define functions
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-What if we a create a file named ``test_functions.py`` in the ``tests`` folder and add the following failing test
+What if we a create a file called ``test_functions.py`` in the ``tests`` folder and add the following failing test
 
 .. code-block:: python
 
@@ -55,7 +55,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* create a file named ``functions.py`` in the project folder and the terminal updates to show an :doc:`AttributeError`\ , which we add to our running list of exceptions encountered
+* create a file called ``functions.py`` in the project folder and the terminal updates to show an :doc:`AttributeError`\ , which we add to our running list of exceptions encountered
   .. code-block:: python
 
        # Exceptions Encountered
@@ -296,7 +296,7 @@ REFACTOR: make it better
 How can we make this better?
 
 
-* We named the first argument ``input_data`` and the second argument ``second_argument``. Technically, both arguments are input data, so we need a better name that is more descriptive, How can we make this better?
+* We called the first argument ``input_data`` and the second argument ``second_argument``. Technically, both arguments are input data, so we need a better name that is more descriptive, How can we make this better?
 * modify the signature of ``passthrough_with_positional_arguments`` to use more descriptive names
   .. code-block:: python
 

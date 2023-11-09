@@ -27,7 +27,7 @@ Nullary operations do not take in inputs and always return the same value. They 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-create a file named ``test_truth_table.py`` in the ``tests`` folder and add the text below
+create a file called ``test_truth_table.py`` in the ``tests`` folder and add the text below
 
 .. code-block:: python
 
@@ -53,7 +53,7 @@ GREEN: make it pass
      # AssertionError
      # ModuleNotFoundError
 
-* create a file named ``truth_table.py`` in the project folder and the terminal displays an :doc:`AttributeError` which we add to our list of exceptions encountered
+* create a file called ``truth_table.py`` in the project folder and the terminal displays an :doc:`AttributeError` which we add to our list of exceptions encountered
   .. code-block:: python
 
      # Exceptions Encountered
@@ -61,7 +61,7 @@ GREEN: make it pass
      # ModuleNotFoundError
      # AttributeError
 
-* add a singleton function named ``logical_true`` to ``truth_table.py``
+* add a singleton function called ``logical_true`` to ``truth_table.py``
   .. code-block:: python
 
      def logical_true():

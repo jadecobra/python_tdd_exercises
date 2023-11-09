@@ -20,7 +20,7 @@ What is False?
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a failing test to ``test_data_structures.py`` named ``test_what_is_false``
+add a failing test to ``test_data_structures.py`` called ``test_what_is_false``
 
 .. code-block:: python
 

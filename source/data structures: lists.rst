@@ -25,7 +25,7 @@ Create a list
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-create a file named ``test_lists.py`` in the ``tests`` folder with the following code
+create a file called ``test_lists.py`` in the ``tests`` folder with the following code
 
 .. code-block:: python
 

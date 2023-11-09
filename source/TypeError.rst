@@ -45,10 +45,10 @@ RED: make it fail
 
    .. code-block:: python
          import functions
-      E   ModuleNotFoundError: No module named 'functions'
+      E   ModuleNotFoundError: No module called 'functions'
 
 
-* Ah, a ``ModuleNotFoundError``, We have a lot of practice solving this error from :doc:`ModuleNotFoundError`. What if we create a file named ``functions.py`` and the terminal updates to show
+* Ah, a ``ModuleNotFoundError``, We have a lot of practice solving this error from :doc:`ModuleNotFoundError`. What if we create a file called ``functions.py`` and the terminal updates to show
 
   .. code-block:: python
 

@@ -20,7 +20,7 @@ Dictionaries/Mappings are key, value pairs that we can use to represent data. ``
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-first we add a file named ``test_dictionaries.py`` to the ``tests`` folder with the following text
+first we add a file called ``test_dictionaries.py`` to the ``tests`` folder with the following text
 
 .. code-block:: python
 
@@ -37,7 +37,7 @@ the terminal gives us a :doc:`ModuleNotFoundError`\ , and we add it to our list 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-add a file named ``dictionaries.py`` to the project folder and the test passes
+add a file called ``dictionaries.py`` to the project folder and the test passes
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^

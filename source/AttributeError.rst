@@ -57,7 +57,7 @@ If you left ``pytest-watch`` running from :doc:`How to Setup a Test Driven Devel
    ...
    tests/test_attribute_error.py:2: in <module>
        import module
-   E   ModuleNotFoundError: No module named 'module'
+   E   ModuleNotFoundError: No module called 'module'
 
 We practice solving this error in :doc:`ModuleNotFoundError`
 
@@ -87,7 +87,7 @@ GREEN: make it pass
 
 
   * ``tests/test_attribute_error.py:7: AttributeError`` the location i.e. filename and line number and name of the Exception that is raised
-  * ``E       AttributeError: module 'module' has no attribute 'variable_0'`` an explanation of the error raised. The module we imported has no definitions named ``variable_0``. We update our list of exceptions encountered
+  * ``E       AttributeError: module 'module' has no attribute 'variable_0'`` an explanation of the error raised. The module we imported has no definitions called ``variable_0``. We update our list of exceptions encountered
 
     .. code-block:: python
 
@@ -96,7 +96,7 @@ GREEN: make it pass
          # ModuleNotFoundError
          # AttributeError
 
-  * ``>       self.assertIsNone(module.variable_0)`` the line of code that caused the error. As seen from the error explanation above the file ``module.py`` has no definitions named ``variable_0``. This is like making a phone call to a number that is not in service or sending an e-mail to an address that does not exist
+  * ``>       self.assertIsNone(module.variable_0)`` the line of code that caused the error. As seen from the error explanation above the file ``module.py`` has no definitions called ``variable_0``. This is like making a phone call to a number that is not in service or sending an e-mail to an address that does not exist
   * ``def test_defining_variables_to_solve_attribute_errors(self):`` the function definition where the error occurs
   * ``self = <tests.test_attribute_error.TestAttributeError testMethod=test_defining_variables_to_solve_attribute_errors>`` - A reference to the class and method(function) where the failure occurred
 
@@ -419,7 +419,7 @@ GREEN: make it pass
      *What is a Function?*
 
 
-     * A ``function`` is a named block of code that performs some action or series of actions
+     * A ``function`` is a called block of code that performs some action or series of actions
      * In python a function always returns something
      * the default return value of a function is ``None``
      * the line with ``return`` is the last executable line of code in a function
