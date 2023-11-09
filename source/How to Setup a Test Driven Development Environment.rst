@@ -419,7 +419,7 @@ You made it this far and have become the greatest programmer in the world. Follo
     touch $PROJECT_NAME.py
     touch tests/__init__.py
 
-    cat << DELIMITER > touch tests/test_$PROJECT_NAME.py
+    cat << DELIMITER > tests/test_$PROJECT_NAME.py
     import unittest
 
 
