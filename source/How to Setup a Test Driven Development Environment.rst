@@ -37,7 +37,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
   ``{PROJECT_NAME}`` is a placeholder for the name of the project. For example to setup for a project called ``magic`` replace ``{PROJECT_NAME}`` with ``magic``
 
-* I create a directory for the project with a folder named ``tests`` inside it
+* I create a directory for the project with a folder called ``tests`` inside it
 
   .. code-block:: shell
 
@@ -53,20 +53,20 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
 * ``touch`` is a program which creates an empty file with the name it is given
 
-  - I create an empty file named ``{PROJECT_NAME}.py`` to hold the source code for the program
+  - I create an empty file called ``{PROJECT_NAME}.py`` to hold the source code for the program
 
     .. code-block:: shell
 
       touch {PROJECT_NAME}.py
 
   - tests will be stored in the ``tests`` folder to separate them from the source code (the actual program)
-  - I create an empty file named ``__init__.py`` in the ``tests`` folder to tell python that the ``tests`` folder is a python `package <https://docs.python.org/3/glossary.html#term-regular-package>`_, so it can find the tests later
+  - I create an empty file called ``__init__.py`` in the ``tests`` folder to tell python that the ``tests`` folder is a python `package <https://docs.python.org/3/glossary.html#term-regular-package>`_, so it can find the tests later
 
     .. code-block:: shell
 
       touch tests/__init__.py
 
-  - I create an empty file named ``test_{PROJECT_NAME}.py`` in the ``tests`` folder to hold the testing code
+  - I create an empty file called ``test_{PROJECT_NAME}.py`` in the ``tests`` folder to hold the testing code
 
     .. code-block:: shell
 
@@ -255,7 +255,7 @@ How to Automatically Run Tests
 How to create a Virtual Environment
 +++++++++++++++++++++++++++++++++++
 
-* Using ``echo`` I create a file named ``requirements.txt`` in the ``{PROJECT_NAME}`` folder with ``pytest-watch`` as the text
+* Using ``echo`` I create a file called ``requirements.txt`` in the ``{PROJECT_NAME}`` folder with ``pytest-watch`` as the text
 
   .. code-block:: shell
 
@@ -390,7 +390,7 @@ You made it this far and have become the greatest programmer in the world. Follo
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-* There is a problem with the program, it will always create a project named ``{PROJECT_NAME}`` so I need to add a variable to make it create any project name I pass to the program as input. I update the program with a variable named ``PROJECT_NAME`` which is referenced with ``$PROJECT_NAME``
+* There is a problem with the program, it will always create a project called ``{PROJECT_NAME}`` so I need to add a variable to make it create any project name I pass to the program as input. I update the program with a variable called ``PROJECT_NAME`` which is referenced with ``$PROJECT_NAME``
 
   .. code-block:: shell
     :linenos:

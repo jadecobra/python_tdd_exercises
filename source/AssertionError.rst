@@ -52,7 +52,7 @@ RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
 * I create a new file in the ``tests`` folder with the name ``test_assertion_error.py``
-* I then add a test named ``test_assertion_errors_with_none`` with the python ``assert`` keyword to intentionally cause an ``AssertionError``
+* I then add a test called ``test_assertion_errors_with_none`` with the python ``assert`` keyword to intentionally cause an ``AssertionError``
 
   .. code-block:: python
 
