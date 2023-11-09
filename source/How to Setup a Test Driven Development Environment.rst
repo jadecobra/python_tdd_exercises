@@ -2,7 +2,7 @@
 How to Setup a Test Driven Development Environment
 ==================================================
 
-`Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ is a way of developing software with a focus on tests.  We come up with ideas to reach a goal and test those ideas, the results of these tests tell us if we are closer or further away from the goal and we repeat the process until we reach the goal.
+`Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ is a way of developing software with a focus on tests.  I come up with ideas to reach a goal and test those ideas, the results of these tests tell us if I am closer or further away from the goal and I repeat the process until I reach the goal.
 
 I recommend reading `Kent Beck’s <https://en.wikipedia.org/wiki/Kent_Beck>`_ `Test Driven Development by Example <https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk>`_ and `Martin Fowler’s <https://en.wikipedia.org/wiki/Martin_Fowler_(software_engineer)>`_ `Refactoring <https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk>`_, they both influenced the way I write programs.
 
@@ -31,19 +31,19 @@ Requirements
 Setup
 -----
 
-Open a terminal in your Interactive Development Environment (IDE) and type the following commands to setup the project
+I open a terminal in the Interactive Development Environment (IDE) and type the following commands to setup the project
 
 .. note::
 
   ``{PROJECT_NAME}`` is a placeholder for the name of the project. For example to setup for a project called ``magic`` replace ``{PROJECT_NAME}`` with ``magic``
 
-* create a directory for the project with a folder named ``tests`` inside it
+* I create a directory for the project with a folder named ``tests`` inside it
 
   .. code-block:: shell
 
     mkdir -p {PROJECT_NAME}/tests
 
-* change directory to ``{PROJECT_NAME}``
+* I change directory to ``{PROJECT_NAME}``
 
   .. code-block:: shell
 
@@ -53,26 +53,26 @@ Open a terminal in your Interactive Development Environment (IDE) and type the f
 
 * ``touch`` is a program which creates an empty file with the name it is given
 
-  - create an empty file named ``{PROJECT_NAME}.py`` to hold the source code for the program
+  - I create an empty file named ``{PROJECT_NAME}.py`` to hold the source code for the program
 
     .. code-block:: shell
 
       touch {PROJECT_NAME}.py
 
   - tests will be stored in the ``tests`` folder to separate them from the source code (the actual program)
-  - create an empty file named ``__init__.py`` in the ``tests`` folder to tell python that the ``tests`` folder is a python `package <https://docs.python.org/3/glossary.html#term-regular-package>`_, so it can find the tests later
+  - I create an empty file named ``__init__.py`` in the ``tests`` folder to tell python that the ``tests`` folder is a python `package <https://docs.python.org/3/glossary.html#term-regular-package>`_, so it can find the tests later
 
     .. code-block:: shell
 
       touch tests/__init__.py
 
-  - create an empty file named ``test_{PROJECT_NAME}.py`` in the ``tests`` folder to hold the testing code
+  - I create an empty file named ``test_{PROJECT_NAME}.py`` in the ``tests`` folder to hold the testing code
 
     .. code-block:: shell
 
       touch tests/test_{PROJECT_NAME}.py
 
-* The folder structure should look like this
+* The folder structure now looks like this
 
   .. code-block:: ruby
 
@@ -99,7 +99,7 @@ RED: make it fail
 -----------------
 
 
-* We are ready to begin writing our first test. Open up ``{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py`` in the Interactive Development Environment (IDE) and type the following
+* I open up ``{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py`` in the Interactive Development Environment (IDE) and type the following
 
   .. code-block:: python
     :linenos:
@@ -116,20 +116,22 @@ RED: make it fail
 
   - ``import unittest`` imports the `unittest <https://docs.python.org/3/library/unittest.html>`_ module
   - `unittest <https://docs.python.org/3/library/unittest.html>`_ is a module from the python standard library used for testing
-  - ``Test{PROJECT_NAME}`` is a :doc:`class <classes>` that will hold the tests we write
+  - ``Test{PROJECT_NAME}`` is a :doc:`class <classes>` that will hold the tests I write
   - ``unittest.TestCase`` is a :doc:`class <classes>` defined in the `unittest <https://docs.python.org/3/library/unittest.html>`_ module which contains :doc:`methods (functions) <functions>` for testing and ``Test{PROJECT_NAME}`` inherits from it. A simple way to think of inheritance is that ``Test{PROJECT_NAME}`` is a child of ``unittest.TestCase`` and can do the same things it can
-  - ``def test_failure`` is the definition of a test :doc:`method (function) <functions>` to test the program we are creating
+  - ``def test_failure`` is the definition of a test :doc:`method (function) <functions>` to test the program I am creating
 
-    * ``def`` is the keyword in python for defining :doc:`functions`
+    * ``def`` is the keyword in python for creating :doc:`functions`
     * ``test_failure`` is the name of the :doc:`function <functions>`
-    * ``self`` is the ``Test{PROJECT_NAME}`` class. To access ``methods`` and ``attributes`` within the ``Test{PROJECT_NAME}`` class we use ``self``. For instance, it avoids using ``Test{PROJECT_NAME}().assertFalse(True)`` to access the ``assertFalse`` :doc:`method (function) <functions>`
-    * ``self.assertFalse(True)`` is a call to the ``assertFalse`` :doc:`method <functions>` from the ``unittest.TestCase`` class that checks if its given input is ``False`` it is similar to asking the question ``is False the same as True?``, we expect this line to fail because ``True`` is not ``False``
+    * ``self`` is the ``Test{PROJECT_NAME}`` class. To access ``methods`` and ``attributes`` within the ``Test{PROJECT_NAME}`` class I can use ``self``, this avoids using ``Test{PROJECT_NAME}().assertFalse(True)`` to access the ``assertFalse`` :doc:`method (function) <functions>`
+    * ``self.assertFalse(True)`` the actual test
 
       - ``assertFalse`` is a :doc:`method (function) <functions>` in the ``unittest.TestCase`` class which checks if its input is ``False``
       - ``True`` is given as input to ``assertFalse``
 
-* save the file, turn on the ``Auto Save`` feature in the Interactive Development Environment (IDE) to avoid manually saving a file each time a change is made
-* type this in the terminal to test the code
+      I expect this line to fail because ``True`` is not ``False``
+
+* I save the file and turn on the ``Auto Save`` feature in the Interactive Development Environment (IDE) to avoid manually saving a file each time a change is made
+* I type this in the terminal to test the code
 
   .. code-block:: python
 
@@ -153,7 +155,7 @@ RED: make it fail
 
     FAILED (failures=1)
 
-If you are typing along, *CONGRATULATIONS!* You have written your first test.
+If you are typing along, *CONGRATULATIONS!* You have written the first test.
 
 This is the RED part of the Test Driven Development cycle. The error in the terminal has important information. Looking at it from the bottom
 
@@ -171,9 +173,9 @@ This is the RED part of the Test Driven Development cycle. The error in the term
 * ``FAIL: test_failure (tests.Test{PROJECT_NAME}.test_failure)`` a header with information about the test
 
   - ``tests.Test{PROJECT_NAME}.test_failure`` is the location of the failing test
-  -  ``tests`` - is the tests folder
-  - ``Test{PROJECT_NAME}`` - is the class defined on line 4
-  - ``test_failure`` - is the function defined on line 6
+  -  ``tests`` is the tests folder
+  - ``Test{PROJECT_NAME}`` is the class defined on line 4
+  - ``test_failure`` is the function defined on line 6
 
 * ``F`` indicates a failure
 * ``python3 -m unittest`` is the command to run tests with `unittest`_
@@ -187,7 +189,7 @@ GREEN: make it pass
 -------------------
 
 
-* keep track of Exceptions encountered to help become more familiar with python's exceptions. Add :doc:`AssertionError` to the list
+* I keep track of Exceptions encountered to help become more familiar with python's exceptions, adding :doc:`AssertionError` to the list
 
   .. code-block:: python
     :linenos:
@@ -203,13 +205,13 @@ GREEN: make it pass
     # Exceptions Encountered
     # AssertionError
 
-* change the input on line 7 to make the test pass
+* I change the input on line 7 to make the test pass
 
   .. code-block:: python
 
     self.assertFalse(False)
 
-* run the test again from the terminal
+* I run the test again from the terminal
 
   .. code-block:: python
 
@@ -225,13 +227,13 @@ GREEN: make it pass
 
     OK
 
-  *cue CELEBRATION MUSIC AND DANCE!* We are GREEN.
+  *cue CELEBRATION MUSIC AND DANCE!* I am GREEN.
 
 
 REFACTOR: make it better
 ------------------------
 
-We can make code better by using
+I can make code better by using
 
 
 * `The Abstraction Principle <https://en.wikipedia.org/wiki/Abstraction_principle_(computer_programming)>`_ or
@@ -245,15 +247,15 @@ So far there is not much to improve on what has been written but there has been 
 * ``python3 -m unittest`` was run to see the test pass
 * ``python3 -m unittest`` will be run to make sure changes do not break previous passing tests
 
-This means ``python3 -m unittest`` is run for each part of the Test Driven Development cycle or each time there is a code change. Automate this so you `Do Not Repeat Yourself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_, it would be better for a program to automatically run the tests when there is a change to the code
+This means ``python3 -m unittest`` is run for each part of the Test Driven Development cycle or each time there is a code change. I automate this so I `Do Not Repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_, it would be better for a program to automatically run the tests when there is a change to the code
 
 How to Automatically Run Tests
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-How to Create a Virtual Environment
+How to create a Virtual Environment
 +++++++++++++++++++++++++++++++++++
 
-* Using ``echo`` create a file named ``requirements.txt`` in the ``{PROJECT_NAME}`` folder with ``pytest-watch`` as the text
+* Using ``echo`` I create a file named ``requirements.txt`` in the ``{PROJECT_NAME}`` folder with ``pytest-watch`` as the text
 
   .. code-block:: shell
 
@@ -261,9 +263,9 @@ How to Create a Virtual Environment
 
   - ``pytest-watch`` is a python program that automatically uses the `pytest <https://docs.pytest.org/>`_ python package to run tests when a python file in the project changes
   - `pytest <https://docs.pytest.org/>`_ is a python package like `unittest <https://docs.python.org/3/library/unittest.html>`_ for running tests in python
-  - ``requirements.txt`` is a file where we can list required python packages for `pip <https://pypi.org/project/pip/>`_ the `python package manager <https://pypi.org/project/pip/>`_ to install later, you can use any name you like
+  - ``requirements.txt`` is a file where I can list required python packages for `pip <https://pypi.org/project/pip/>`_ the `python package manager <https://pypi.org/project/pip/>`_ to install later, you can use any name you like
 
-* create a virtual environment using the `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ module from the python standard library
+* I create a virtual environment using the `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ module from the python standard library
 
   .. code-block:: python
 
@@ -272,10 +274,10 @@ How to Create a Virtual Environment
   - ``python3`` is the major version of python being used
   - ``-m`` is an option passed to python to call the module given after the option
   - `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ is a module from the python standard library for creating virtual environments when given a name
-  - a virtual environment is an isolated folder that holds dependencies. It keeps the dependencies for a specific project separate
+  - a virtual environment is an isolated folder that holds dependencies, it keeps the dependencies for a specific project separate
   - ``.venv`` is the standard name for virtual environments in python, you can use any name you like
 
-* activate the virtual environment to use it
+* I activate the virtual environment to use it
 
   .. code-block:: python
 
@@ -283,7 +285,7 @@ How to Create a Virtual Environment
 
   the ``(.venv)`` on the far left of the command line in the terminal indicates the virtual environment is activated
 
-* upgrade `pip <https://pypi.org/project/pip/>`_ the `python package manager <https://pypi.org/project/pip/>`_ to the latest version
+* I upgrade `pip <https://pypi.org/project/pip/>`_ the `python package manager <https://pypi.org/project/pip/>`_ to the latest version
 
   .. code-block:: python
 
@@ -296,14 +298,14 @@ How to Create a Virtual Environment
   - ``pip`` is the given package name for `pip <https://pypi.org/project/pip/>`_ to install, in this case  ``pip`` installs ``pip``
   - ``--upgrade`` is an option given to the ``install`` argument for `pip <https://pypi.org/project/pip/>`_ to install the latest version of the name given
 
-* we can now use `pip <https://pypi.org/project/pip/>`_ to install any python packages listed in ``requirements.txt`` in the virtual environment. In this case `pip <https://pypi.org/project/pip/>`_ will install ``pytest-watch``
+* I can now use `pip <https://pypi.org/project/pip/>`_ to install any python packages listed in ``requirements.txt`` in the virtual environment. In this case `pip <https://pypi.org/project/pip/>`_ will install ``pytest-watch``
 
   .. code-block:: python
 
       pip install --requirement requirements.txt
 
-  ``--requirement`` is another option that can be passed to the ``install`` argument to install python packages from a given file name
-  ``requirements.txt`` is the file that contains a list of libraries for `pip <https://pypi.org/project/pip/>`_ to install
+  - ``--requirement`` is another option that can be passed to the ``install`` argument to install python packages from a given file name
+  - ``requirements.txt`` is the file that contains a list of libraries for `pip <https://pypi.org/project/pip/>`_ to install
 
 * The folder structure now looks like this
 
@@ -317,7 +319,7 @@ How to Create a Virtual Environment
           ╰──{PROJECT_NAME}.py
           ╰──requirements.txt
 
-* typing ``pytest-watch`` in the terminal runs the tests and displays information about the test without going back to the command line
+* I type ``pytest-watch`` in the terminal to run the tests and it displays information about the test without going back to the command line
 
   .. code-block:: ruby
 
@@ -331,8 +333,8 @@ How to Create a Virtual Environment
 
     =============== 1 passed in 0.00s =======================
 
-* to verify that the terminal now responds to changes, modify the input on line 7 in ``test_{PROJECT_NAME}.py`` to ``True`` to see it fail and back to ``False`` to see it pass
-* press ``ctrl`` + ``c`` on the keyboard in the terminal to stop the tests at anytime
+* to verify that the terminal now responds to changes, I modify the input on line 7 in ``test_{PROJECT_NAME}.py`` to ``True`` to see it fail and back to ``False`` to see it pass
+* I can press ``ctrl`` + ``c`` on the keyboard in the terminal to stop the tests at anytime
 
 How to Deactivate a Virtual Environment
 +++++++++++++++++++++++++++++++++++++++
@@ -351,27 +353,27 @@ BONUS: Automatically create a Python Test Driven Development Environment
 
 You made it this far and have become the greatest programmer in the world. Following the `The Do Not Repeat Yourself (DRY) Principle <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_, I would write a program that contains all the steps above. I can then use it to setup a Test Driven Development Environment any time I want without having to remember each step of the process
 
-* exit the tests in the terminal by pressting ``ctrl`` + ``c`` on the keyboard
-* type ``deactivate`` to deactivate the virtual environment if it is still activated
-* change directory to the parent of ``{PROJECT_NAME}``
+* I exit the tests in the terminal by pressing ``ctrl`` + ``c`` on the keyboard
+* I type ``deactivate`` to deactivate the virtual environment
+* I change directory to the parent of ``{PROJECT_NAME}``
 
   .. code-block:: shell
 
       cd ..
 
-* typing ``history`` in the terminal lists the commands typed in this session so far as a reference for the program
+* I type ``history`` in the terminal to list the commands typed in this session so far as a reference for the program
 
   .. code-block:: shell
 
     history
 
-* create an empty file with a name that describes what the program does so it is easy to remember later, for example, ``setupPythonTdd.sh``
+* I create an empty file with a name that describes what the program does so it is easy to remember later, for example ``setupPythonTdd.sh``
 
   .. code-block:: shell
 
       touch setupPythonTdd.sh
 
-* open ``setupPythonTdd.sh`` in the Interactive Development Environment (IDE) and copy each command displayed in the terminal when you typed ``history``
+* I open ``setupPythonTdd.sh`` in the Interactive Development Environment (IDE) and copy each command displayed in the terminal from ``history``
 
   .. code-block:: ruby
    :linenos:
@@ -388,7 +390,7 @@ You made it this far and have become the greatest programmer in the world. Follo
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-* There is a problem with the program, it will always create a project named ``{PROJECT_NAME}`` so we need to add a variable to make it create any project name we pass to the program as input. Update the program with a variable named ``PROJECT_NAME`` which is referenced with ``$PROJECT_NAME``
+* There is a problem with the program, it will always create a project named ``{PROJECT_NAME}`` so I need to add a variable to make it create any project name I pass to the program as input. I update the program with a variable named ``PROJECT_NAME`` which is referenced with ``$PROJECT_NAME``
 
   .. code-block:: shell
     :linenos:
@@ -408,7 +410,7 @@ You made it this far and have become the greatest programmer in the world. Follo
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-* to add the test for failure in ``test_$PROJECT_NAME.py``, use the ``concatenate`` program to make the program add the text
+* to add the test for failure in ``test_$PROJECT_NAME.py``, I use the ``concatenate`` program to add the text
 
   .. code-block:: shell
     :linenos:
@@ -439,13 +441,13 @@ You made it this far and have become the greatest programmer in the world. Follo
 
   all the text between the two ``DELIMITER`` words will be written to ``tests/test_$PROJECT_NAME.py``
 
-* use ``chmod`` to make the program executable
+* I use ``chmod`` to make the program executable
 
   .. code-block:: python
 
     chmod +x setupPythonTdd.sh
 
-* You can now create a Test Driven Development environment on demand by giving a name for the ``{PROJECT_NAME}`` variable when the program is called. For example, typing this command in the terminal in the folder where ``setupPythonTdd.sh`` is saved will setup a Test Driven Development environment for a project called ``magic``
+* I can now create a Test Driven Development environment on demand by giving a name for the ``{PROJECT_NAME}`` variable when the program is called. For example, typing this command in the terminal in the folder where ``setupPythonTdd.sh`` is saved will setup a Test Driven Development environment for a project called ``magic``
 
   .. code-block:: shell
 
