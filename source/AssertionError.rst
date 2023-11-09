@@ -2,7 +2,7 @@
 AssertionError
 ==============
 
-This chapter explores the `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ exception in Python using Test Driven Development (TDD)
+This chapter explores the `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ in Python using Test Driven Development (TDD)
 
 Prerequisites
 -------------
@@ -14,7 +14,7 @@ Prerequisites
 What is an AssertionError?
 --------------------------
 
-An ``AssertionError`` is an Exception that is raised when the result of an ``assert`` statement is ``False``.
+An ``AssertionError`` is an Exception that is raised when the result of an ``assert`` statement is ``False``
 
 It was introduced in :doc:`How to Setup a Test Driven Development Environment` with the first failing test
 
@@ -51,8 +51,8 @@ AssertionError with None
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-* create a new file in the ``tests`` folder with the name ``test_assertion_error.py``
-* I add a test named ``test_assertion_errors_with_none`` with the python ``assert`` keyword to intentionally cause an ``AssertionError``
+* I create a new file in the ``tests`` folder with the name ``test_assertion_error.py``
+* I then add a test named ``test_assertion_errors_with_none`` with the python ``assert`` keyword to intentionally cause an ``AssertionError``
 
   .. code-block:: python
 
@@ -64,7 +64,7 @@ RED: make it fail
           def test_assertion_errors_with_none(self):
               assert False is None
 
-  the terminal updates to show
+  the terminal updates to show an ``AssertionError``
 
   .. code-block:: python
 
@@ -85,7 +85,7 @@ I modify the failing line of ``test_assertion_errors_with_none`` in ``test_asser
 
   assert False is not None
 
-the test passes because the assert statement is now true since `False` is not `None`
+the test passes because the assert statement is now true since ``False`` is not ``None``
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -117,7 +117,7 @@ I can also make assertions with some methods from the ``unittest.TestCase`` clas
 
       self.assertIsNotNone(False)
 
-  the terminal displays passing tests because the statement is ``True``, I can say that in python ``False`` is not ``None``
+  the terminal displays passing tests because the statement is ``True``. I can say that in python ``False`` is not ``None``
 
 * RED: make it fail
 
@@ -326,13 +326,13 @@ I update ``test_assertion_errors_with_true`` to make it pass
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-What if I try the above test with the ``unittest.TestCase`` method by updating ``test_assertion_errors_with_true``?
+What if I try the above test with the ``unittest.TestCase.assertTrue`` method ?
 
 .. code-block:: python
 
     self.assertTrue(False)
 
-the terminal shows a failure
+the terminal shows an ``AssertionError``
 
 .. code-block:: python
 
@@ -377,13 +377,12 @@ I add a new test to ``TestAssertionError`` in ``test_assertion_error.py``
     def test_assertion_errors_with_equality(self):
         assert False == None
 
-the terminal displays
+the terminal displays an ``AssertionError``
 
 .. code-block:: python
 
   E       assert False == None
 
-I could take this ``assert`` statement to mean ``DO NOT PROCEED UNLESS False is equal to None``
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -442,7 +441,7 @@ REFACTOR: make it better
 
       assert True == None
 
-  and the terminal responds with a failure
+  and the terminal responds with an ``AssertionError``
 
   .. code-block:: python
 
@@ -458,13 +457,13 @@ REFACTOR: make it better
 
 * RED: make it fail
 
-  I add the ``unittest.TestCase`` method to ``test_assertion_errors_with_equality``
+  I add the ``unittest.TestCase.assertEqual`` method to ``test_assertion_errors_with_equality``
 
   .. code-block:: python
 
       self.assertEqual(True, None)
 
-  the terminal outputs
+  the terminal outputs an ``AssertionError``
 
   .. code-block:: python
 
