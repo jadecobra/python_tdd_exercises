@@ -2,7 +2,7 @@
 How to Setup a Test Driven Development Environment
 ==================================================
 
-`Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ is a way of developing software with a focus on tests.  I come up with ideas to reach a goal and test those ideas, the results of these tests tell us if I am closer or further away from the goal and I repeat the process until I reach the goal.
+`Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ is a way of developing software with a focus on tests.  I come up with ideas to reach a goal and test those ideas, the results of these tests tell me if I am closer or further away from the goal and I repeat the process until I reach the goal.
 
 I recommend reading `Kent Beck’s <https://en.wikipedia.org/wiki/Kent_Beck>`_ `Test Driven Development by Example <https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk>`_ and `Martin Fowler’s <https://en.wikipedia.org/wiki/Martin_Fowler_(software_engineer)>`_ `Refactoring <https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk>`_, they both influenced the way I write programs.
 
@@ -35,7 +35,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
 .. note::
 
-  ``{PROJECT_NAME}`` is a placeholder for the name of the project. For example to setup for a project called ``magic`` replace ``{PROJECT_NAME}`` with ``magic``
+  ``{PROJECT_NAME}`` is a placeholder for the name of the project. For example to setup a project called ``magic`` I would replace ``{PROJECT_NAME}`` with ``magic``
 
 * I create a directory for the project with a folder called ``tests`` inside it
 
@@ -83,9 +83,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
         ╰──{PROJECT_NAME}.py
 
 
-
 ----
-
 
 
 The Test Driven Development cycle paraphrased is ``RED GREEN REFACTOR``
@@ -120,9 +118,9 @@ RED: make it fail
   - ``unittest.TestCase`` is a :doc:`class <classes>` defined in the `unittest <https://docs.python.org/3/library/unittest.html>`_ module which contains :doc:`methods (functions) <functions>` for testing and ``Test{PROJECT_NAME}`` inherits from it. A simple way to think of inheritance is that ``Test{PROJECT_NAME}`` is a child of ``unittest.TestCase`` and can do the same things it can
   - ``def test_failure`` is the definition of a test :doc:`method (function) <functions>` to test the program I am creating
 
-    * ``def`` is the keyword in python for creating :doc:`functions`
+    * ``def`` is the python keyword for creating :doc:`functions`
     * ``test_failure`` is the name of the :doc:`function <functions>`
-    * ``self`` is the ``Test{PROJECT_NAME}`` class. To access ``methods`` and ``attributes`` within the ``Test{PROJECT_NAME}`` class I can use ``self``, this avoids using ``Test{PROJECT_NAME}().assertFalse(True)`` to access the ``assertFalse`` :doc:`method (function) <functions>`
+    * ``self`` is the ``Test{PROJECT_NAME}`` class. I can use ``self`` to access ``methods`` and ``attributes`` within the ``Test{PROJECT_NAME}`` class, this avoids having to type ``Test{PROJECT_NAME}().assertFalse(True)`` to access the ``assertFalse`` :doc:`method (function) <functions>` for instance
     * ``self.assertFalse(True)`` the actual test
 
       - ``assertFalse`` is a :doc:`method (function) <functions>` in the ``unittest.TestCase`` class which checks if its input is ``False``
@@ -157,7 +155,7 @@ RED: make it fail
 
 If you are typing along, *CONGRATULATIONS!* You have written the first test.
 
-This is the RED part of the Test Driven Development cycle. The error in the terminal has important information. Looking at it from the bottom
+This is the `RED` part of the Test Driven Development cycle. The error in the terminal has important information. Looking at it from the bottom
 
 
 * ``FAILED (failures=1)`` there is one failure
@@ -168,7 +166,7 @@ This is the RED part of the Test Driven Development cycle. The error in the term
   - ``assertFalse`` is a :doc:`method (function) <functions>` in the ``unittest.TestCase`` class which checks if its input is ``False``
   - ``True`` is given as input to ``assertFalse`` and the statement raises an error because ``True`` is not ``False``
 
-* ``File "/<PATH_TO_PROJECT>/{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py", line 7, in test_failure`` is the line number and location of the file where the error occurred. Hold down ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on this line with the mouse to place the cursor at the position in the file where the error occurred
+* ``File "/<PATH_TO_PROJECT>/{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py", line 7, in test_failure`` is the line number and location of the file where the error occurred. Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on this line with the mouse to place the cursor at the position in the file where the error occurred
 * ``Traceback (most recent call last):`` all the information returned by python after this line is the ``traceback`` showing the most recent call python made last
 * ``FAIL: test_failure (tests.Test{PROJECT_NAME}.test_failure)`` a header with information about the test
 
@@ -181,7 +179,7 @@ This is the RED part of the Test Driven Development cycle. The error in the term
 * ``python3 -m unittest`` is the command to run tests with `unittest`_
 
   - ``python3`` is the major version of python being used
-  - ``-m`` is an option passed to python to call the module given after the option
+  - ``-m`` is an option passed to python to call a module given after the option
   - `unittest <https://docs.python.org/3/library/unittest.html>`_ is a module from the python standard library used for testing
 
 
@@ -189,7 +187,7 @@ GREEN: make it pass
 -------------------
 
 
-* I keep track of Exceptions encountered to help become more familiar with python's exceptions, adding :doc:`AssertionError` to the list
+* I write down Exceptions I encounter to help become more familiar with errors in python. I add :doc:`AssertionError` to the list
 
   .. code-block:: python
     :linenos:
