@@ -735,7 +735,7 @@ Why did that work?
 
 ----
 
-How to View the Attributes and Methods of a Class
+How to View the attributes and methods of a Class
 --------------------------------------------------
 
 To view what ``attributes`` and ``methods`` are defined for any object I can call ``dir`` on the object. The ``dir`` :doc:`method <functions>` returns a :doc:`list </data structures: lists>` that contains the names of all attributes and :doc:`methods <functions>` in the class
