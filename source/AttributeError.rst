@@ -463,7 +463,7 @@ REFACTOR: make it better
 Solve the AttributeError by defining a Class
 ----------------------------------------
 
-A class is a blueprint that represents an object, it is a collection of functions (methods) and attributes. Attributes are names which represent a value.:doc:`methods <functions>`are functions that can accept inputs and return a value. For example we could define a `Human` class with attributes like eye color, date of birth, height and weight, and :doc:`methods <functions>`like age which returns a value based on the current year and date of birth. Let us explore ``AttributeError`` with classes.
+A class is a blueprint that represents an object, it is a collection of functions (methods) and attributes. Attributes are names which represent a value.:doc:`methods <functions>`are functions that can accept inputs and return a value. For example we could define a ``Human`` class with attributes like eye color, date of birth, height and weight, and :doc:`methods <functions>`like age which returns a value based on the current year and date of birth. Let us explore ``AttributeError`` with classes.
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -482,7 +482,7 @@ RED: make it fail
 
       E       AttributeError: module 'module' has no attribute 'Class0'
 
-  Looking at the `traceback` we see it's the line we added that caused the failure
+  Looking at the ``traceback`` we see it's the line we added that caused the failure
 
   * We are familiar with an ``AttributeError``
   * This also looks exactly like the tests in ``test_defining_functions_to_solve_attribute_errors``
@@ -790,5 +790,5 @@ repeat the solution until all tests pass
 
   * we can access attributes (variables) we define in a class from outside the class
   * we cannot access variables we define in a function from outside the function
-  * the keywords used to define them are different - `def` vs `class`
-  * their naming conventions are different - `snake_case` vs `CamelCase`
+  * the keywords used to define them are different - ``def`` vs ``class``
+  * their naming conventions are different - ``snake_case`` vs ``CamelCase``

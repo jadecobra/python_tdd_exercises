@@ -155,7 +155,7 @@ RED: make it fail
 
 If you are typing along, *CONGRATULATIONS!* You have written the first test.
 
-This is the `RED` part of the Test Driven Development cycle. The error in the terminal has important information. Looking at it from the bottom
+This is the ``RED`` part of the Test Driven Development cycle. The error in the terminal has important information. Looking at it from the bottom
 
 
 * ``FAILED (failures=1)`` there is one failure
@@ -176,7 +176,7 @@ This is the `RED` part of the Test Driven Development cycle. The error in the te
   - ``test_failure`` is the function defined on line 6
 
 * ``F`` indicates a failure
-* ``python3 -m unittest`` is the command to run tests with `unittest`_
+* ``python3 -m unittest`` is the command to run tests with ``unittest``_
 
   - ``python3`` is the major version of python being used
   - ``-m`` is an option passed to python to call a module given after the option
