@@ -1,5 +1,6 @@
-How to Pass Values
-==================
+
+Passing Values
+==============
 
 When testing or using a program, we provide data as inputs to the program with an expectation of a return value.
 

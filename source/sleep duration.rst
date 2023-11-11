@@ -1,5 +1,5 @@
-How to measure Sleep Duration
-==============
+Measure Sleep Duration
+======================
 
 Let us take a look at building a program which gives us the amount of time we have been asleep based on a given sleep, wake time and dates to give an accurate result.
 
