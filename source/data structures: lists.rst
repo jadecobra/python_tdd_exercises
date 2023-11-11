@@ -121,7 +121,7 @@ the terminal updates to show an :doc:`AssertionError` because after we call ``a_
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-update the values on the right side of the ``assertEqual`` statement to make it match the expectation
+update the values on the right side of the `assertEqual  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ statement to make it match the expectation
 
 .. code-block:: python
 
@@ -376,7 +376,7 @@ add a failing test
 
 
 * the terminal updates to show an :doc:`AssertionError`
-* ``maxDiff`` is an attribute of the ``unittest.TestCase`` class that sets the maximum amount of characters to show in the comparison between the two objects that is displayed in the terminal. When it is set to ``None`` there is no limit to the number of characters
+* ``maxDiff`` is an attribute of the `unittest.TestCase  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class that sets the maximum amount of characters to show in the comparison between the two objects that is displayed in the terminal. When it is set to ``None`` there is no limit to the number of characters
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

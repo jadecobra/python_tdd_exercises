@@ -64,7 +64,7 @@ Add a ``self.assertRaises`` to ``test_catching_module_not_found_error_in_tests``
 the terminal updates to show passing tests. How does all this work?
 
 
-* we use the ``self.assertRaises`` method from the ``unittest.TestCase`` class which takes a given exception as its input, in this case ``ModuleNotFoundError`` and checks if that error is raised by the statements given in the context below (the indented block after the ``with`` statement)
+* we use the ``self.assertRaises`` :doc:`method <functions>` from the `unittest.TestCase  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class which takes a given exception as its input, in this case ``ModuleNotFoundError`` and checks if that error is raised by the statements given in the context below (the indented block after the ``with`` statement)
 * ``with`` - creates the context where we test that the exception is raised
 
   - `read more about the with statement <https://docs.python.org/3/reference/compound_stmts.html?highlight=statement#the-with-statement>`_
@@ -294,7 +294,7 @@ Let us deliberately trigger an exception in our code and then handle it. Add a f
     def test_catching_exceptions(self):{
         exceptions.raises_exception_error()}
 
-the terminal displays a ``NameError`` and we update our running list of exceptions encountered
+the terminal displays a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ and we update our running list of exceptions encountered
 
 .. code-block:: python
 
@@ -308,7 +308,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* A ``NameError`` is raised when a name is used within a module and there with no definition for the name. In our code above we call ``exceptions.raises_exception_error`` and there is no definition for ``exceptions``
+* A `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ is raised when a name is used within a module and there with no definition for the name. In our code above we call ``exceptions.raises_exception_error`` and there is no definition for ``exceptions``
 
   update the ``import`` section with a new line
 
@@ -321,7 +321,7 @@ GREEN: make it pass
   the terminal now gives us a :doc:`ModuleNotFoundError`
 
 * create a file called ``exceptions.py`` in the ``{PROJECT_NAME}`` folder, and the terminal updates to show an :doc:`AttributeError`
-* update ``exceptions.py`` with the name of the attribute called in the test, and the terminal updates to show a ``NameError`` since we have not defined ``raises_exception_error`` in ``exceptions.py``
+* update ``exceptions.py`` with the name of the attribute called in the test, and the terminal updates to show a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ since we have not defined ``raises_exception_error`` in ``exceptions.py``
 
   .. code-block:: python
 
@@ -400,7 +400,7 @@ Let us add exception handling to our program so it does not end when it encounte
 
 * GREEN: make it pass
 
-  add a name to ``exceptions.py`` and the terminal updates to show ``NameError``
+  add a name to ``exceptions.py`` and the terminal updates to show `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
   .. code-block:: python
 
@@ -455,7 +455,7 @@ Let us add exception handling to our program so it does not end when it encounte
 
 * GREEN: make it pass
 
-  add ``does_not_raise_exception_error`` to ``exceptions.py`` and the terminal updates to show a ``NameError``
+  add ``does_not_raise_exception_error`` to ``exceptions.py`` and the terminal updates to show a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
   .. code-block:: python
 
@@ -548,7 +548,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* add a name to ``exceptions.py`` and the terminal updates to show a ``NameError``
+* add a name to ``exceptions.py`` and the terminal updates to show a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
   .. code-block:: python
 

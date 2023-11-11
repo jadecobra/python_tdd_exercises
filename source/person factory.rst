@@ -83,7 +83,7 @@ REFACTOR: make it better
             }
         )
 
-  the terminal shows a ``NameError`` is raised for ``this_year``
+  the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ is raised for ``this_year``
 
 * we add the new exception to our running list
 
@@ -151,7 +151,7 @@ REFACTOR: make it better
 
 
   - we import the ``datetime`` library so we can use its :doc:`functions` and :doc:`classes`
-  - we return the ``year`` attribute of the object returned by the ``now`` method of the ``datetime.datetime`` class, which is a representation of the current local date and time, we could also use ``today`` or ``utcnow`` to achieve the same result
+  - we return the ``year`` attribute of the object returned by the ``now`` :doc:`method <functions>` of the ``datetime.datetime`` class, which is a representation of the current local date and time, we could also use ``today`` or ``utcnow`` to achieve the same result
   - we get the ``year`` attribute of the object returned since that is all we are interested in
 
 * the terminal updates to show an :doc:`AssertionError` since our ``person.factory`` function returns ``None`` but the test expects a :doc:`data structures: dictionaries`. We should update the function to return an empty dictionary
@@ -225,7 +225,7 @@ REFACTOR: make it better
              'sex': sex,
          }
 
-  the terminal updates to show a ``NameError`` since we are calling a function that does not exist in ``person.py``
+  the terminal updates to show a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ since we are calling a function that does not exist in ``person.py``
 
 * replace ``this_year()`` with the return value from ``test_person_factory.this_year`` and add an import statement
 

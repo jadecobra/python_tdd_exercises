@@ -58,7 +58,7 @@ the terminal responds to the change, the test from :doc:`How to Setup a Test Dri
 Test Imports
 ------------
 
-I add an import statement for the ``calculator`` module, it will contain the program I am testing
+I add an import statement for the ``calculator`` module that will contain the source code for the program I am testing
 
 .. code-block:: python
 
@@ -93,7 +93,7 @@ RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
 
-* I add a method called ``test_addition`` to the ``TestCalculator`` class
+* I add a :doc:`method <functions>` called ``test_addition`` to the ``TestCalculator`` :doc:`class <classes>`
 
   .. code-block:: python
 
@@ -122,8 +122,8 @@ RED: make it fail
     # AssertionError
 
 
-  - I call a new testing method from the ``unittest.TestCase`` class called ``assertEqual`` which checks if its 2 inputs are equal. It is similar to the statement ``assert x == y`` or asking ``is x equal to y?``
-  - there are two things passed to the ``assertEqual`` method for evaluation in this case
+  - I call a new testing :doc:`method <functions>` from the `unittest.TestCase  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`class <classes>` called `assertEqual  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ which checks if its 2 inputs are equal. It is similar to the statement ``assert x == y`` or asking ``is x equal to y?``
+  - there are two things passed to the `assertEqual  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ :doc:`method <functions>` for evaluation in this case
 
     * first - ``calculator.add(0, 1)`` - where I give the values ``0`` and ``1`` as inputs to the addition function
     * second - ``1`` - the expected result from calling ``calculator.add`` when it is given ``0`` and ``1`` as inputs
@@ -157,11 +157,11 @@ RED: make it fail
     ================== 1 failed, 1 passed in 0.02s =======================
 
   - The :doc:`AttributeError` is at line 12 in ``test_calculator.py``
-  - An :doc:`AttributeError` is raised when trying to access or call an attribute that python cannot find
+  - An :doc:`AttributeError` is raised when accessing or calling an attribute that python cannot find
   - I think of ``calculator.add`` as an address
 
     * ``calculator`` refers to ``calculator.py``
-    * ``add`` refers to something(an attribute) within the ``calculator.py`` file
+    * ``add`` refers to something (an attribute) within the ``calculator.py`` file
 
 
 GREEN: make it pass
@@ -173,13 +173,13 @@ GREEN: make it pass
 
        add
 
-  the terminal shows a ``NameError`` because ``add`` is not defined (there is no assignment to the name)
+  the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ because ``add`` is not defined (there is no assignment to the name)
 
   .. code-block:: python
 
        E   NameError: name 'add' is not defined
 
-* I update the list of exceptions encountered with ``NameError``
+* I update the list of exceptions encountered with `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
   .. code-block:: python
 
@@ -258,7 +258,7 @@ GREEN: make it pass
 REFACTOR: Make it Better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Wait a minute. Is it that easy? Do I just provide the solution to make it pass? In the green phase, yes. I do whatever it takes to make the test pass even if I have to cheat.
+Wait a minute. Is it that easy? Do I just provide the expectation of the test to make it pass? In the green phase, yes. I do whatever it takes to make the test pass even if I have to cheat.
 
 Solving the problem this way reveals a problem with the test, which means I need to "Make it Better"
 
@@ -376,13 +376,13 @@ I repeat this process until I have a working program that has been tested which 
 Test Subtraction
 ----------------
 
-Since addition works and the next item from the TODO list is to test subtraction, I will add a failing test for it
+Since addition works and the next item from the TODO list is test subtraction, I will add a failing test for it
 
 RED : make it fail
 ^^^^^^^^^^^^^^^^^^
 
 
-* I update ``test_calculator.py`` with a method called ``test_subtraction``
+* I update ``test_calculator.py`` with a :doc:`method <functions>` called ``test_subtraction``
 
   .. code-block:: python
 
@@ -505,7 +505,7 @@ REFACTOR: make it better
   - ``x = random.randint(-1, 1)`` happens twice
   - ``y = random.randint(-1, 1)`` happens twice
 
-* I could update the ``TestCalculator`` class in ``test_calculator.py`` to create the random variables only once by using class variables and reference them in the tests
+* I could update the ``TestCalculator`` :doc:`class <classes>` in ``test_calculator.py`` to create the random variables only once by using :doc:`class <classes>` attributes (variables) and reference them in the tests
 
   .. code-block:: python
 
@@ -532,7 +532,7 @@ REFACTOR: make it better
             )
 
   - all tests are still passing, so my change did not break anything. Fantastic!
-  - The ``x`` and ``y`` variables are now initialized once as class attributes and can be accessed later in every test using ``self.x`` and ``self.y`` the same way I can call ``unittest.TestCase`` methods like ``assertEqual`` by typing ``self.assertEqual``
+  - The ``x`` and ``y`` variables are now initialized once as :doc:`class <classes>` attributes (variables) and can be accessed later in every test using ``self.x`` and ``self.y`` the same way I can call `unittest.TestCase  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ methods like `assertEqual  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ by typing ``self.assertEqual``
 
 
 ----
@@ -686,7 +686,7 @@ GREEN : make it pass
      >       return x / y
      E       ZeroDivisionError: division by zero
 
-* I add ``ZeroDivisionError`` to the list of exceptions encountered
+* I add `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -702,7 +702,7 @@ How to Test for Errors
 RED : make it fail
 ^^^^^^^^^^^^^^^^^^
 
-I will add a failing test to ``test_calculator.py`` to make  a ``ZeroDivisionError`` happen, then comment out the previous test that sometimes fails, to remove the variability of the test while I figure out the error
+I will add a failing test to ``test_calculator.py`` to make  a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ happen, then comment out the previous test that sometimes fails, to remove the variability of the test while I figure out the error
 
 .. code-block:: python
 
@@ -716,7 +716,7 @@ I will add a failing test to ``test_calculator.py`` to make  a ``ZeroDivisionErr
         #     self.x/self.y
         # )
 
-the terminal confirms my expectations with a failure for any value of ``x`` when ``y`` is 0. :doc:`Exceptions </exception handling>` like ``ZeroDivisionError`` break execution of a program. No further code is run when an exception is raised which means that no other tests will run until I take care of the error
+the terminal confirms my expectations with a failure for any value of ``x`` when ``y`` is 0. :doc:`Exceptions </exception handling>` like `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ break execution of a program. No further code is run when an exception is raised which means that no other tests will run until I take care of the error
 
 .. code-block:: python
 
@@ -729,7 +729,7 @@ the terminal confirms my expectations with a failure for any value of ``x`` when
 GREEN : make it pass
 --------------------
 
-I can use the ``unittest.TestCase.assertRaises`` :doc:`method <functions>` in ``test_division`` to confirm that a ``ZeroDivisionError`` is raised when I try to divide a number by ``0``
+I can use the `unittest.TestCase.assertRaises <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises>`_ :doc:`method <functions>` in ``test_division`` to confirm that a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ is raised when I try to divide a number by ``0``
 
 .. code-block:: python
 

@@ -351,7 +351,7 @@ You now know how to solve
 
 * ``AssertionError``
 * ``ModuleNotFoundError``
-* ``NameError``
+* `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 * ``AttributeError`` by defining
 
   - variables

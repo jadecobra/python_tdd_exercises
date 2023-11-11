@@ -516,7 +516,7 @@ What if we want to call a dictionary and not have python raise an error when it 
                'keyN': 'valueN',
            }
            self.assertIsNone(a_dictionary.get('non_existent_key'))
-    the terminal updates to show a passing test. This means that when we use the ``get`` method and the ``key`` does not exist, we get ``None`` as the ``return`` value.
+    the terminal updates to show a passing test. This means that when we use the ``get`` :doc:`method <functions>` and the ``key`` does not exist, we get ``None`` as the ``return`` value.
 * What if we state the above explicitly because ``Explicit is better than implicit`` see `Zen of Python <https://peps.python.org/pep-0020/>`_
   .. code-block:: python
 
@@ -529,13 +529,13 @@ What if we want to call a dictionary and not have python raise an error when it 
            }
            self.assertIsNone(a_dictionary.get('non_existent_key'))
            self.assertIsNone(a_dictionary.get('non_existent_key', None))
-    the terminal shows passing tests. The ``get`` method takes in 2 inputs
+    the terminal shows passing tests. The ``get`` :doc:`method <functions>` takes in 2 inputs
   .. code-block::
 
        - the ``key``
        - the ``value`` it should return if the ``key`` does not exist
 
-* If you have gone through `Exception Handling <./EXCEPTION_HANDLING.rst>`_\ , we can assume the definition of the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ method of the dictionary object looks something like this
+* If you have gone through `Exception Handling <./EXCEPTION_HANDLING.rst>`_\ , we can assume the definition of the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :doc:`method <functions>` of the dictionary object looks something like this
   .. code-block:: python
 
        def get(dictionary, key, default=None):
@@ -544,7 +544,7 @@ What if we want to call a dictionary and not have python raise an error when it 
            except KeyError:
                return default
 
-* What if we try the ``get`` method with an existing key
+* What if we try the ``get`` :doc:`method <functions>` with an existing key
   .. code-block:: python
 
        def test_how_to_get_a_value_when_a_key_does_not_exist(self):
@@ -777,7 +777,7 @@ add a test to ``TestDictionaries``
                {"basic": "toothpaste", "whitening": "peroxide"}
            )
 
-the terminal updates to show an :doc:`AssertionError` because the values of ``a_dictionary`` were updated when we called the ``update`` method on it
+the terminal updates to show an :doc:`AssertionError` because the values of ``a_dictionary`` were updated when we called the ``update`` :doc:`method <functions>` on it
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

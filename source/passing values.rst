@@ -21,7 +21,7 @@ In testing we are asking the question is `f(x)` equal to ``y`` for the given inp
     assert f(x) == y
 ```
 
-or use the `self.assertEqual` method from `unittest.TestCase`
+or use the `self.assertEqual` :doc:`method <functions>` from `unittest.TestCase`
 
 .. code-block:: python
     self.assertEqual(f(x), y)
@@ -97,7 +97,7 @@ the terminal updates to show a [ModuleNotFoundError](./ModuleNotFoundError.rst) 
     # AttributeError
     # TypeError
     ```
-- change ``text`` to a method to make it callable
+- change ``text`` to a :doc:`method <functions>` to make it callable
 
 .. code-block:: python
     class Telephone(object):
@@ -105,7 +105,7 @@ the terminal updates to show a [ModuleNotFoundError](./ModuleNotFoundError.rst) 
         def text():
             return None
     ```
-    the terminal displays a [TypeError](./TypeError.rst) this time because when we called `telephone.Telephone.text('hello')` in the test we provided a positional argument as input with the value ``hello``, but the signature of the method we defined does not take in any arguments
+    the terminal displays a [TypeError](./TypeError.rst) this time because when we called `telephone.Telephone.text('hello')` in the test we provided a positional argument as input with the value ``hello``, but the signature of the :doc:`method <functions>` we defined does not take in any arguments
 - modify the definition for ``text`` to take in a value
 
 .. code-block:: python
@@ -126,7 +126,7 @@ the terminal updates to show a [ModuleNotFoundError](./ModuleNotFoundError.rst) 
 
 ### REFACTOR: make it better
 
-The problem with this solution is that no matter what value we send to the `Telephone.text` method it will always return `'I received this message: hello'`. We need to make it more generic so it returns a value that is dependent on the input
+The problem with this solution is that no matter what value we send to the `Telephone.text` :doc:`method <functions>` it will always return `'I received this message: hello'`. We need to make it more generic so it returns a value that is dependent on the input
 
 - RED: make it fail
 
@@ -149,7 +149,7 @@ The problem with this solution is that no matter what value we send to the `Tele
 
 - GREEN: make it pass
 
-    We can add variable values to strings by using [string interpolation](https://peps.python.org/pep-0498/). Let us try this out by changing the ``text`` method in `telephone.py`
+    We can add variable values to strings by using [string interpolation](https://peps.python.org/pep-0498/). Let us try this out by changing the ``text`` :doc:`method <functions>` in `telephone.py`
 
 .. code-block:: python
     def text(value):

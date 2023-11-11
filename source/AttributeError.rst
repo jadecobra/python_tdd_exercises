@@ -41,10 +41,10 @@ What does the code above mean?
 
 * ``import unittest`` imports the `unittest <https://docs.python.org/3/library/unittest.html>`_ module from the python standard library
 * ``import module`` imports the ``module`` module - this is going to hold the solution we write
-* ``class TestAttributeErrors(unittest.TestCase):`` - a class definition that inherits from ``unittest.TestCase`` and will hold our tests. We learn more about this in :doc:`classes`
+* ``class TestAttributeErrors(unittest.TestCase):`` - a class definition that inherits from `unittest.TestCase  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ and will hold our tests. We learn more about this in :doc:`classes`
 * ``def test_defining_variables_to_solve_attribute_errors(self):`` the definition of our first test function to find out if defining variables can solve an ``AttributeError``
 * ``self.assertIsNone(module.variable_0)`` - the actual test. This is equivalent to asking the question ``is module.variable_0 equal to None``
-* ``assertIsNone`` is one of the helper functions inherited from ``unittest.TestCase``. We learn more about this in :doc:`AssertionError`
+* ``assertIsNone`` is one of the helper functions inherited from `unittest.TestCase  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_. We learn more about this in :doc:`AssertionError`
 * ``self`` refers to the ``TestAttributeError`` class
 
 If you left ``pytest-watch`` running from :doc:`How to Setup a Test Driven Development Environment` you should see a message similar to the following in the terminal
@@ -151,9 +151,9 @@ GREEN: make it pass
 What is similar? What is different?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-An ``AttributeError`` occurs when there is a reference to a name in an object from outside the object and the name does not exist for example,  ``humans.wings`` while a ``NameError`` occurs when there is a reference to a name within an object and there is no prior definition of the name for example,  ``wings``
+An ``AttributeError`` occurs when there is a reference to a name in an object from outside the object and the name does not exist for example,  ``humans.wings`` while a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ occurs when there is a reference to a name within an object and there is no prior definition of the name for example,  ``wings``
 
-What is similar between ``ModuleNotFoundError``, ``AttributeError`` and ``NameError``?
+What is similar between ``ModuleNotFoundError``, ``AttributeError`` and `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_?
 
 .. NOTE::
 
@@ -195,7 +195,7 @@ GREEN: make it pass
       variable_0 = None
       variable_1
 
-  the terminal displays a ``NameError``
+  the terminal displays a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
   .. code-block:: python
 
@@ -243,7 +243,7 @@ GREEN: make it pass
       variable_1 = None
       variable_2
 
-  the terminal outputs a ``NameError``
+  the terminal outputs a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
   .. code-block:: python
 
@@ -294,7 +294,7 @@ GREEN: make it pass
       variable_2 = None
       variable_3
 
-  the terminal displays a ``NameError``
+  the terminal displays a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
   .. code-block:: python
 
@@ -315,7 +315,7 @@ We have a pattern for our drill. When we test an attribute in a module, we encou
 
 
 * an ``AttributeError`` when the attribute does not exist
-* a ``NameError`` when we add the name to the module
+* a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ when we add the name to the module
 * a passing test when we define the name as a variable
 
 Update the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` by adding more tests until you get to ``self.assertIsNone(module.variable_99)``, you will have 102 statements in total
@@ -347,7 +347,7 @@ Repeat the pattern until all tests pass.
 
 
 * How to solve :doc:`ModuleNotFoundError`
-* How to solve ``NameError`` using variables
+* How to solve `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ using variables
 * How to solve :doc:`AttributeError` by defining variables
 
 ----
@@ -453,7 +453,7 @@ REFACTOR: make it better
 
 
 * How to solve :doc:`ModuleNotFoundError`
-* How to solve ``NameError``
+* How to solve `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 * How to solve :doc:`AttributeError` by defining variables and functions
 
 
@@ -541,7 +541,7 @@ REFACTOR: make it better
 
 
 * How to solve :doc:`ModuleNotFoundError`
-* How to solve ``NameError``
+* How to solve `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 * How to solve :doc:`AttributeError` by defining variables, :doc:`functions` and :doc:`classes`
 
 do we know how to define :doc:`classes` if we define them the same was as :doc:`functions` ?
@@ -689,7 +689,7 @@ REFACTOR: make it better
 
 
 * How to solve :doc:`ModuleNotFoundError`
-* How to solve ``NameError``
+* How to solve `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 * How to solve :doc:`AttributeError` by defining variables, :doc:`functions` and :doc:`classes`
 * How to solve :doc:`AttributeError` by defining
 
@@ -702,7 +702,7 @@ REFACTOR: make it better
 ----
 
 
-Solve the AttributeError by defining a Method (Function) in a Class
+Solve the AttributeError by defining a :doc:`method <functions>` (Function) in a Class
 -------------------------------------------------------------------
 
 RED: make it fail
@@ -744,7 +744,7 @@ GREEN: make it pass
 
   this is in our list of errors
 
-* using the solution we know for it, we change ``method_0`` from an attribute to a method using the ``def`` keyword to make it callable
+* using the solution we know for it, we change ``method_0`` from an attribute to a :doc:`method <functions>` using the ``def`` keyword to make it callable
 
   .. code-block:: python
 
@@ -776,7 +776,7 @@ repeat the solution until all tests pass
 
 
 * How to solve :doc:`ModuleNotFoundError`
-* How to solve ``NameError``
+* How to solve `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 * How to solve :doc:`AttributeError` by defining variables, :doc:`functions` and :doc:`classes`
 * How to solve :doc:`AttributeError` by defining
 

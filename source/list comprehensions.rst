@@ -42,7 +42,7 @@ add a file called ``test_list_comprehension.py`` to the ``tests`` folder
 * we create ``collection_a`` which uses the ``range`` object
 * the ``range`` object creates an ``iterable`` of numbers from 0 to the number we give minus 1. `read more <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_
 * we create a list called ``list_a`` that has no elements and confirm it is empty with a ``self.assertEqual(list_a, [])``
-* we then create a loop using the ``for`` keyword, that goes over every element of ``collection_a`` and adds it to ``list_a`` using the ``append`` method see :doc:`Lists`
+* we then create a loop using the ``for`` keyword, that goes over every element of ``collection_a`` and adds it to ``list_a`` using the ``append`` :doc:`method <functions>` see :doc:`Lists`
 * the terminal updates to show an :doc:`AssertionError` for our test that checks the elements of ``list_a`` after the loop ran, because the list is no longer empty, it now contains 10 elements
   .. code-block:: python
 
@@ -86,7 +86,7 @@ REFACTOR: make it better
   .. code-block:: python
 
            self.assertEqual(list_comprehensions.make_a_list(collection_a), list_a)
-    the terminal updates to show a ``NameError`` and we add it to our list of exceptions encountered
+    the terminal updates to show a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ and we add it to our list of exceptions encountered
   .. code-block:: python
 
        # Exceptions Encountered

@@ -29,7 +29,7 @@ write a failing test in ``test_sleep_duration.py``
             1
         )
 
-the terminal shows a ``NameError`` which we add to our list of exceptions encountered
+the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ which we add to our list of exceptions encountered
 
 .. code-block:: python
 
@@ -63,7 +63,7 @@ GREEN: make it pass
     # NameError
     # AttributeError
 
-* add a name to ``sleep_duration.py`` and the terminal displays a ``NameError``
+* add a name to ``sleep_duration.py`` and the terminal displays a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
   .. code-block:: python
 
@@ -354,7 +354,7 @@ What if we write a test that uses a random variable for the sleep and wake times
          help("00:00"),
      )
 
-  the terminal outputs documentation for the string, we scroll through reading through the descriptions for each method until we see one that looks like it can solve our problem
+  the terminal outputs documentation for the string, we scroll through reading through the descriptions for each :doc:`method <functions>` until we see one that looks like it can solve our problem
 
   .. code-block:: python
 
@@ -369,7 +369,7 @@ What if we write a test that uses a random variable for the sleep and wake times
        |        Maximum number of splits to do.
        |        -1 (the default value) means no limit.
 
-  the ``split`` method looks like a good solution since it splits up a word when given a delimeter
+  the ``split`` :doc:`method <functions>` looks like a good solution since it splits up a word when given a delimeter
 
 * remove the failing test and replace it with one for the ``split`` method
 
@@ -403,7 +403,7 @@ What if we write a test that uses a random variable for the sleep and wake times
             ['00', '00']
         )
 
-  the terminal shows an :doc:`AssertionError`\ , our use of the ``split`` method has not yet given us what we want. Looking back at the documentation, the definition for ``split`` takes in ``self, /, sep=None, maxsplit=-1`` and ``sep`` is the delimiter
+  the terminal shows an :doc:`AssertionError`\ , our use of the ``split`` :doc:`method <functions>` has not yet given us what we want. Looking back at the documentation, the definition for ``split`` takes in ``self, /, sep=None, maxsplit=-1`` and ``sep`` is the delimiter
 * change the test by passing in ``:`` as the delimiter
 
   .. code-block:: python
@@ -468,7 +468,7 @@ What if we write a test that uses a random variable for the sleep and wake times
                )
 
   the terminal shows another :doc:`AssertionError`\ , this time to confirm that the second item (item one) from splitting ``"12:34"`` on the delimiter ``:`` is ``"34"``, we are not dealing with this part yet but we can assume we would use it soon, update the expected value in the same way and the test passes bringing us back to our unsolved :doc:`TypeError`
-* using what we know, how to ``split`` a string on a delimiter method and how to index a list, update the duration function to only return the subtraction of the first parts of ``wake_time`` and ``sleep_time``
+* using what we know, how to ``split`` a string on a delimiter :doc:`method <functions>` and how to index a list, update the duration function to only return the subtraction of the first parts of ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
 
@@ -726,7 +726,7 @@ This means that even though our tests are passing, once again the ``duration`` f
            ""
        )
 
-  Once again we have to comment out ``test_duration_calculation`` for a short time, to see the results of the test we just added. The terminal shows a ``NameError`` because ``datetime`` is not defined in ``test_sleep_duration.py``, we need to import it
+  Once again we have to comment out ``test_duration_calculation`` for a short time, to see the results of the test we just added. The terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ because ``datetime`` is not defined in ``test_sleep_duration.py``, we need to import it
 
 * add an ``import`` statement for the ``datetime`` library
 
@@ -845,7 +845,7 @@ Putting it all together
      return get_datetime_object(wake_time) - get_datetime_object(sleep_time)
      return f'{get_hour(wake_time)-get_hour(sleep_time)}:{get_minute(wake_time)-get_minute(sleep_time)}'
 
-  the terminal displays a ``NameError``
+  the terminal displays a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
   .. code-block:: python
 
@@ -1031,7 +1031,7 @@ Our ``duration`` function now accounts for a time traveling sleep scenario where
 
        E           ValueError: wake_time: 2006-11-21 01:00:00 is earlier than sleep_time: 2006-11-21 02:00:00
 
-* to catch the error we need to add an `Exception Handler <./EXCEPTION_HANDLING.rst>`_ using a ``try...except`` statement and a ``self.assertRaises`` method call to confirm that the error is raised, update ``test_duration_when_given_hours_and_minutes``
+* to catch the error we need to add an `Exception Handler <./EXCEPTION_HANDLING.rst>`_ using a ``try...except`` statement and a ``self.assertRaises`` :doc:`method <functions>` call to confirm that the error is raised, update ``test_duration_when_given_hours_and_minutes``
 
   .. code-block:: python
 

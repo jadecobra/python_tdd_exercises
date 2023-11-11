@@ -90,7 +90,7 @@ the test passes because the assert statement is now true since ``False`` is not 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-I can also make assertions with some methods from the ``unittest.TestCase`` class
+I can also make assertions with some methods from the `unittest.TestCase  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class
 
 
 * RED: make it fail
@@ -192,7 +192,7 @@ I can also make assertions with some methods from the ``unittest.TestCase`` clas
 
 * RED: make it fail
 
-  I add another test to ``test_assertion_errors_with_none`` using the ``unittest.TestCase`` method
+  I add another test to ``test_assertion_errors_with_none`` using the `unittest.TestCase  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ method
 
   .. code-block:: python
 
@@ -260,7 +260,7 @@ I update ``test_assertion_errors_with_false`` to make the test pass
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-What if I try the same test using the ``unittest.TestCase.assertFalse`` method by adding this line to ``test_assertion_errors_with_false``
+What if I try the same test using the ``unittest.TestCase.assertFalse`` :doc:`method <functions>` by adding this line to ``test_assertion_errors_with_false``
 
 .. code-block:: python
 
@@ -326,7 +326,7 @@ I update ``test_assertion_errors_with_true`` to make it pass
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-What if I try the above test with the ``unittest.TestCase.assertTrue`` method ?
+What if I try the above test with the ``unittest.TestCase.assertTrue`` :doc:`method <functions>` ?
 
 .. code-block:: python
 
@@ -401,7 +401,7 @@ REFACTOR: make it better
 
 * RED: make it fail
 
-  I update ``test_assertion_errors_with_equality`` with the ``unittest.TestCase`` method
+  I update ``test_assertion_errors_with_equality`` with the `unittest.TestCase  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ method
 
   .. code-block:: python
 
@@ -457,7 +457,7 @@ REFACTOR: make it better
 
 * RED: make it fail
 
-  I add the ``unittest.TestCase.assertEqual`` method to ``test_assertion_errors_with_equality``
+  I add the ``unittest.TestCase.assertEqual`` :doc:`method <functions>` to ``test_assertion_errors_with_equality``
 
   .. code-block:: python
 
@@ -556,5 +556,5 @@ If you have been typing along *WELL DONE!* Your magic powers are growing. From t
   - ``assertIsNotNone`` - is this thing not ``None``?
   - ``assertFalse`` - is this thing ``False``?
   - ``assertTrue`` - is this thing ``True``?
-  - ``assertEqual`` - are these two things equal?
+  - `assertEqual  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ - are these two things equal?
   - ``assertNotEqual`` - are these two things not equal?

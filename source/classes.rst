@@ -51,7 +51,7 @@ GREEN: make it pass
 
     ClassWithPass
 
-  and the terminal updates to show a ``NameError`` because ``ClassWithPass`` is not defined anywhere
+  and the terminal updates to show a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ because ``ClassWithPass`` is not defined anywhere
 
 * update the name as an assignment to the null value ``None``
 
@@ -85,7 +85,7 @@ Let us review what we have written so far
 
 
 * ``pass`` is a placeholder
-* ``self.assertIsInstance`` is a ``unittest.TestCase`` method that checks if the first input to the method is an instance of the second input
+* ``self.assertIsInstance`` is a `unittest.TestCase  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`method <functions>` that checks if the first input to the :doc:`method <functions>` is an instance of the second input
 * in python everything is an ``object`` which means there's a class definition for it, our test ``self.assertIsInstance(classes.ClassWithPass(), object)`` checks if ``ClassWithPass`` is an ``object``
 
 How to define a Class with parentheses
@@ -250,7 +250,7 @@ GREEN: make it pass
 
          a_boolean
 
-  and the terminal updates to show a ``NameError``
+  and the terminal updates to show a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
 
 * after updating the name with an assignment to ``None``
@@ -367,7 +367,7 @@ GREEN: make it pass
 
          method_a
 
-  the terminal updates to show a ``NameError`` because there is no definition for ``method_a``
+  the terminal updates to show a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ because there is no definition for ``method_a``
 
 
 * when we define ``method_a`` as an attribute by assigning it as the name for the null value ``None``
@@ -508,7 +508,7 @@ GREEN: make it pass
 
          sex
 
-  the terminal produces a ``NameError``
+  the terminal produces a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
 
 * we add a definition for the ``sex`` attribute
@@ -574,7 +574,7 @@ REFACTOR: make it better
      TypeError: __init__() got an unexpected keyword argument 'sex'
 
 
-* update the signature of the ``__init__`` method to accept a keyword argument
+* update the signature of the ``__init__`` :doc:`method <functions>` to accept a keyword argument
 
   .. code-block:: python
 
@@ -613,7 +613,7 @@ REFACTOR: make it better
 
   - We defined a ``class`` with a name
   - defined an attribute called ``sex``
-  - defined an ``__init__`` method which takes in a ``sex`` keyword argument
+  - defined an ``__init__`` :doc:`method <functions>` which takes in a ``sex`` keyword argument
 
 * What if we make the repetition complete by redefining the ``Boy`` class to match the ``Girl`` and ``Other`` class
 
@@ -630,7 +630,7 @@ REFACTOR: make it better
   the terminal responds with all tests still passing and we have now written the same thing 3 times. Earlier on we discussed inheritance, and will now try to use it to remove this duplication
 
 
-* try adding a new class called ``Human`` to ``classes.py`` before the definition for ``Boy`` with the same attribute and method of the classes we are trying to abstract
+* try adding a new class called ``Human`` to ``classes.py`` before the definition for ``Boy`` with the same attribute and :doc:`method <functions>` of the classes we are trying to abstract
 
   .. code-block:: python
 
@@ -691,7 +691,7 @@ REFACTOR: make it better
 
   the terminal still shows an :doc:`AssertionError`
 
-* when we remove the ``__init__`` method from the ``Girl`` class
+* when we remove the ``__init__`` :doc:`method <functions>` from the ``Girl`` class
 
   .. code-block:: python
 
@@ -736,7 +736,7 @@ Why did that work?
 How to View the Attributes and Methods of a Class
 --------------------------------------------------
 
-To view what ``attributes`` and ``methods`` are defined for any object we can call ``dir`` on the object. The ``dir`` method returns a :doc:`list` that contains the names of all attributes and methods in the class
+To view what ``attributes`` and ``methods`` are defined for any object we can call ``dir`` on the object. The ``dir`` :doc:`method <functions>` returns a :doc:`list` that contains the names of all attributes and methods in the class
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^

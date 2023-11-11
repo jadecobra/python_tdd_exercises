@@ -115,15 +115,15 @@ RED: make it fail
   - ``import unittest`` imports the `unittest <https://docs.python.org/3/library/unittest.html>`_ module
   - `unittest <https://docs.python.org/3/library/unittest.html>`_ is a module from the python standard library used for testing
   - ``Test{PROJECT_NAME}`` is a :doc:`class <classes>` that will hold the tests I write
-  - ``unittest.TestCase`` is a :doc:`class <classes>` defined in the `unittest <https://docs.python.org/3/library/unittest.html>`_ module which contains :doc:`methods (functions) <functions>` for testing and ``Test{PROJECT_NAME}`` inherits from it. A simple way to think of inheritance is that ``Test{PROJECT_NAME}`` is a child of ``unittest.TestCase`` and can do the same things it can
-  - ``def test_failure`` is the definition of a test :doc:`method (function) <functions>` to test the program I am creating
+  - `unittest.TestCase  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ is a :doc:`class <classes>` defined in the `unittest <https://docs.python.org/3/library/unittest.html>`_ module which contains :doc:`methods (functions) <functions>` for testing and ``Test{PROJECT_NAME}`` inherits from it. A simple way to think of inheritance is that ``Test{PROJECT_NAME}`` is a child of `unittest.TestCase  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ and can do the same things it can
+  - ``def test_failure`` is the definition of a test :doc:`method <functions>` to test the program I am creating
 
     * ``def`` is the python keyword for creating :doc:`functions`
     * ``test_failure`` is the name of the :doc:`function <functions>`
-    * ``self`` is the ``Test{PROJECT_NAME}`` class. I can use ``self`` to access ``methods`` and ``attributes`` within the ``Test{PROJECT_NAME}`` class, this avoids having to type ``Test{PROJECT_NAME}().assertFalse(True)`` to access the ``assertFalse`` :doc:`method (function) <functions>` for instance
+    * ``self`` is the ``Test{PROJECT_NAME}`` class. I can use ``self`` to access ``methods`` and ``attributes`` within the ``Test{PROJECT_NAME}`` class, this avoids having to type ``Test{PROJECT_NAME}().assertFalse(True)`` to access the ``assertFalse`` :doc:`method <functions>` for instance
     * ``self.assertFalse(True)`` the actual test
 
-      - ``assertFalse`` is a :doc:`method (function) <functions>` in the ``unittest.TestCase`` class which checks if its input is ``False``
+      - ``assertFalse`` is a :doc:`method <functions>` in the `unittest.TestCase  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class which checks if its input is ``False``
       - ``True`` is given as input to ``assertFalse``
 
       I expect this line to fail because ``True`` is not ``False``
@@ -163,7 +163,7 @@ This is the `RED` part of the Test Driven Development cycle. The error in the te
 * ``AssertionError: True is not false`` The error is an :doc:`AssertionError` which is raised by python when an assert statement is ``False``, in this case the error is raised because ``True is not false``
 * ``self.assertFalse(True)`` the line of code that caused the failure
 
-  - ``assertFalse`` is a :doc:`method (function) <functions>` in the ``unittest.TestCase`` class which checks if its input is ``False``
+  - ``assertFalse`` is a :doc:`method <functions>` in the `unittest.TestCase  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class which checks if its input is ``False``
   - ``True`` is given as input to ``assertFalse`` and the statement raises an error because ``True`` is not ``False``
 
 * ``File "/<PATH_TO_PROJECT>/{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py", line 7, in test_failure`` is the line number and location of the file where the error occurred. Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on this line with the mouse to place the cursor at the position in the file where the error occurred
