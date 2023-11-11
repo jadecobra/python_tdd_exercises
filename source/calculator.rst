@@ -2,7 +2,7 @@
 Create a Calculator using Test Driven Development
 ==================================================
 
-In this chapter I explore creating a calculator with python using Test Driven Development
+In this chapter I will use python Test Driven Development to create a basic calculator that can perform addition, subtraction, division and multiplication
 
 Prerequisites
 -------------
@@ -37,7 +37,7 @@ I add a TODO list to ``test_calculator.py`` to keep track of requirements for th
    # Exceptions Encountered
    # AssertionError
 
-the terminal responds to the change with a passing test from :doc:`How to Setup a Test Driven Development Environment`
+the terminal responds to the change, the test from :doc:`How to Setup a Test Driven Development Environment` is still passing
 
 .. code-block:: python
 
@@ -156,8 +156,8 @@ RED: make it fail
     FAILED tests/test_calculator.py::TestCalculator::test_addition - AttributeError: module 'calculator' has no attribute 'add'
     ================== 1 failed, 1 passed in 0.02s =======================
 
-  - The error is an ``AttributeError`` at line 12 in ``test_calculator.py``
-  - An `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when trying to access or call an attribute that python cannot find
+  - The :doc:`AttributeError` is at line 12 in ``test_calculator.py``
+  - An :doc:`AttributeError` is raised when trying to access or call an attribute that python cannot find
   - I think of ``calculator.add`` as an address
 
     * ``calculator`` refers to ``calculator.py``
@@ -187,7 +187,7 @@ GREEN: make it pass
        # AssertionError
        # NameError
 
-* then assign the name ``add`` to the null value ``None``
+* then assign the name ``add`` to the null value :doc:`None </data structures: None>`
 
   .. code-block:: python
 
@@ -199,7 +199,7 @@ GREEN: make it pass
 
        E       TypeError: 'NoneType' object is not callable
 
-  The ``AttributeError`` was fixed by declaring a variable ``add`` in the ``calculator`` module, even though it is currently assigned to the null value ``None``
+  The :doc:`AttributeError` was fixed by declaring a variable ``add`` in the ``calculator`` module, even though it is currently assigned to the null value :doc:`None </data structures: None>`
 
 * The new error is a :doc:`TypeError` which can occur when an ``object`` is used in a way that it is not supposed to be used. In this case the ``add`` variable is not callable because it refers to ``None`` which is not a callable object. I update the list of exceptions encountered
 
@@ -223,7 +223,7 @@ GREEN: make it pass
 
        E       TypeError: add() takes 0 positional arguments but 2 were given
 
-* This :doc:`TypeError` indicates that the current definition of the ``add`` function takes in no arguments but I provided 2 in the call in the test ``calculator.add(0, 1)``, since part of the requirement is that the ``add`` function should take in two numbers, I will update it in ``calculator.py`` to match
+* This :doc:`TypeError` indicates that the current definition of the ``add`` function takes in no arguments but I provided 2 in the call in the test ``calculator.add(0, 1)``. Since part of the requirement is that the ``add`` function should take in two numbers, I will update it in ``calculator.py`` to match
 
   .. code-block:: python
 
@@ -236,8 +236,8 @@ GREEN: make it pass
 
        E       AssertionError: None != 1
 
-  - An ``AssertionError`` was the first error I encountered in :doc:`How to Setup a Test Driven Development Environment` after adding a test for failure, and is raised when an assertion is ``False``.
-  - Since I am using ``self.assertEqual`` it means the two inputs are not equal. In other words ``calculator.add(0, 1)`` is currently not equal to ``1``.
+  - An :doc:`AssertionError` was the first error I encountered in :doc:`How to Setup a Test Driven Development Environment` after adding a test for failure, and is raised when an assertion is ``False``
+  - Since I am using ``self.assertEqual`` it means the two inputs are not equal. In other words ``calculator.add(0, 1)`` is currently not equal to ``1``
 
 * I update the ``add`` function in ``calculator.py`` so it gives the expected value
 
@@ -260,9 +260,9 @@ REFACTOR: Make it Better
 
 Wait a minute. Is it that easy? Do I just provide the solution to make it pass? In the green phase, yes. I do whatever it takes to make the test pass even if I have to cheat.
 
-Solving the problem this way reveals a problem with the test, which means I need to "Make it Better".
+Solving the problem this way reveals a problem with the test, which means I need to "Make it Better"
 
-There are a few scenarios to consider from a user's perspective.
+There are a few scenarios to consider from a user's perspective
 
 * If a user tries to add other numbers that are not 0 and 1, the calculator will return 1
 * If they also try to add negative numbers, it will still return 1
@@ -376,7 +376,7 @@ I repeat this process until I have a working program that has been tested and gi
 Test Subtraction
 ----------------
 
-I will now add a failing test since addition works and the next action item from the TODO list is to test subtraction
+I will now add a failing test since addition works and the next item from the TODO list is to test subtraction
 
 RED : make it fail
 ^^^^^^^^^^^^^^^^^^
@@ -443,7 +443,7 @@ GREEN : make it pass
     def subtract():
         return None
 
-  and the terminal displays a :doc:`TypeError` with a different error message
+  and the terminal displays a :doc:`TypeError` with a different error message. Progress!
 
   .. code-block:: python
 
@@ -605,7 +605,7 @@ SUCCESS! The terminal shows passing tests and I remove ``test_multiplication`` f
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-I cannot think of a way to make the code better so I move on to the final test from the TODO list - division
+I cannot think of a way to make the code better so I move on to the final test from the TODO list - test division
 
 ----
 
@@ -702,7 +702,7 @@ How to Test for Errors
 RED : make it fail
 ^^^^^^^^^^^^^^^^^^
 
-I will add a failing test to ``test_calculator.py`` to intentionally trigger a ``ZeroDivisionError`` and comment out the previous test that sometimes fails, to help remove the variability of the test for some time while I figure out the error
+I will add a failing test to ``test_calculator.py`` to intentionally trigger a ``ZeroDivisionError`` and comment out the previous test that sometimes fails, to help remove the variability of the test while I figure out the error
 
 .. code-block:: python
 
