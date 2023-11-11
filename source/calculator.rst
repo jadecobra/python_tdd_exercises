@@ -2,7 +2,7 @@
 Create a Calculator using Test Driven Development
 ==================================================
 
-In this chapter I will use python Test Driven Development to create a basic calculator that can perform addition, subtraction, division and multiplication
+In this chapter I will use Test Driven Development to create a calculator in python that can perform addition, subtraction, division and multiplication
 
 Prerequisites
 -------------
@@ -173,7 +173,7 @@ GREEN: make it pass
 
        add
 
-  the terminal shows a ``NameError`` because ``add`` is not defined, there is no assignment to the name
+  the terminal shows a ``NameError`` because ``add`` is not defined (there is no assignment to the name)
 
   .. code-block:: python
 
@@ -236,7 +236,7 @@ GREEN: make it pass
 
        E       AssertionError: None != 1
 
-  - An :doc:`AssertionError` was the first error I encountered in :doc:`How to Setup a Test Driven Development Environment` after adding a test for failure, and is raised when an assertion is ``False``
+  - An :doc:`AssertionError` is raised when an assertion is ``False``
   - Since I am using ``self.assertEqual`` it means the two inputs are not equal. In other words ``calculator.add(0, 1)`` is currently not equal to ``1``
 
 * I update the ``add`` function in ``calculator.py`` so it gives the expected value
@@ -363,11 +363,11 @@ Even though the add function currently passes the existing test it does not meet
 
 ----
 
-This is the Test Driven Development cycle in practice: RED GREEN REFACTOR
+This is the Test Driven Development cycle in practice
 
-* **RED**: make it fail - I write a failing test
-* **GREEN**: make it pass - I make the test pass by any means necessary
-* **REFACTOR**: make it better
+* **RED**: I write a failing test
+* **GREEN**: I make the test pass by any means necessary
+* **REFACTOR**: I make it better
 
 I repeat this process until I have a working program that has been tested and gives me confidence it will behave in an expected way that meets the requirements of the program
 
