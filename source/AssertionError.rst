@@ -73,8 +73,8 @@ RED: make it fail
     tests/test_assertion_error.py:7: AssertionError
 
   - This ``AssertionError`` is raised by the line ``assert False is None`` which is similar to asking the question "is False the same as None?"
-  - The difference is that the ``assert`` at the beginning of the line makes the statement more like "DO NOT PROCEED UNLESS ``False`` is ``None``"
-  - Since ``None`` and ``False`` are different objects and not equal, the ``assert`` statement is ``False`` and python raises an ``AssertionError``
+  - The difference is that the ``assert`` at the beginning of the line makes the statement more like "DO NOT PROCEED UNLESS ``False`` is :doc:`None </data structures: None>`"
+  - Since :doc:`None </data structures: None>` and ``False`` are different objects and not equal, the ``assert`` statement is ``False`` and python raises an ``AssertionError``
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -85,12 +85,12 @@ I modify the failing line of ``test_assertion_errors_with_none`` in ``test_asser
 
   assert False is not None
 
-the test passes because the assert statement is now true since ``False`` is not ``None``
+the test passes because the assert statement is now true since ``False`` is not :doc:`None </data structures: None>`
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-I can also make assertions with some methods from the `unittest.TestCase  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class
+I can also make assertions with some:doc:`methods <functions>`from the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class
 
 
 * RED: make it fail
@@ -117,11 +117,11 @@ I can also make assertions with some methods from the `unittest.TestCase  <https
 
       self.assertIsNotNone(False)
 
-  the terminal displays passing tests because the statement is ``True``. I can say that in python ``False`` is not ``None``
+  the terminal displays passing tests because the statement is ``True``. I can say that in python ``False`` is not :doc:`None </data structures: None>`
 
 * RED: make it fail
 
-  I add another test to ``test_assertion_errors_with_none`` to find out how ``None`` is related to ``True``
+  I add another test to ``test_assertion_errors_with_none`` to find out how :doc:`None </data structures: None>` is related to ``True``
 
   .. code-block:: python
 
@@ -165,8 +165,8 @@ I can also make assertions with some methods from the `unittest.TestCase  <https
 
   since all my tests are passing I can say that in python
 
-  - ``True`` is not ``None``
-  - ``False`` is not ``None``
+  - ``True`` is not :doc:`None </data structures: None>`
+  - ``False`` is not :doc:`None </data structures: None>`
 
 * RED: make it fail
 
@@ -192,7 +192,7 @@ I can also make assertions with some methods from the `unittest.TestCase  <https
 
 * RED: make it fail
 
-  I add another test to ``test_assertion_errors_with_none`` using the `unittest.TestCase  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ method
+  I add another test to ``test_assertion_errors_with_none`` using the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ method
 
   .. code-block:: python
 
@@ -215,11 +215,11 @@ I can also make assertions with some methods from the `unittest.TestCase  <https
 
 My knowledge of python has increased, I now know that
 
-* ``None`` is ``None``
-* ``True`` is not ``None``
-* ``False`` is not ``None``
+* :doc:`None </data structures: None>` is :doc:`None </data structures: None>`
+* ``True`` is not :doc:`None </data structures: None>`
+* ``False`` is not :doc:`None </data structures: None>`
 
-Which of these ``assert`` statements do you prefer when testing ``None``?
+Which of these ``assert`` statements do you prefer when testing :doc:`None </data structures: None>`?
 
 * ``assert x is None``
 * ``self.assertIsNone(x)``
@@ -287,9 +287,9 @@ I now know that in python
 
 * ``False`` is ``False``
 * ``False`` is not ``True``
-* ``None`` is ``None``
-* ``True`` is not ``None``
-* ``False`` is not ``None``
+* :doc:`None </data structures: None>` is :doc:`None </data structures: None>`
+* ``True`` is not :doc:`None </data structures: None>`
+* ``False`` is not :doc:`None </data structures: None>`
 
 ----
 
@@ -354,11 +354,11 @@ My knowledge of python has grown, I now know that
 * ``True`` is not ``False``
 * ``False`` is ``False``
 * ``False`` is not ``True``
-* ``None`` is ``None``
-* ``True`` is not ``None``
-* ``False`` is not ``None``
+* :doc:`None </data structures: None>` is :doc:`None </data structures: None>`
+* ``True`` is not :doc:`None </data structures: None>`
+* ``False`` is not :doc:`None </data structures: None>`
 
-I could sum up the above statements this way - in python ``True``, ``False`` and ``None`` are different. Understanding these differences helps me write useful programs. They show how python behaves and give a foundation of predictable expectations of the language.
+I could sum up the above statements this way - in python ``True``, ``False`` and :doc:`None </data structures: None>` are different. Understanding these differences helps me write useful programs. They show how python behaves and give a foundation of predictable expectations of the language.
 
 ----
 
@@ -393,7 +393,7 @@ I change ``test_assertion_errors_with_equality`` to make it pass
 
     assert False != None
 
-the test passes because ``False`` is not equal to ``None``
+the test passes because ``False`` is not equal to :doc:`None </data structures: None>`
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -401,7 +401,7 @@ REFACTOR: make it better
 
 * RED: make it fail
 
-  I update ``test_assertion_errors_with_equality`` with the `unittest.TestCase  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ method
+  I update ``test_assertion_errors_with_equality`` with the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ method
 
   .. code-block:: python
 
@@ -413,7 +413,7 @@ REFACTOR: make it better
 
       E       AssertionError: False != None
 
-  The ``unittest.TestCase.assertEqual`` :doc:`method <functions>` checks if the two given inputs, ``False`` and ``None`` are equal
+  The ``unittest.TestCase.assertEqual`` :doc:`method <functions>` checks if the two given inputs, ``False`` and :doc:`None </data structures: None>` are equal
 
 * GREEN: make it pass
 
@@ -429,9 +429,9 @@ REFACTOR: make it better
   * ``True`` is not ``False``
   * ``False`` is ``False``
   * ``False`` is not ``True``
-  * ``None`` is ``None``
-  * ``True`` is not ``None``
-  * ``False`` is not ``None`` and ``False`` is not equal to ``None``
+  * :doc:`None </data structures: None>` is :doc:`None </data structures: None>`
+  * ``True`` is not :doc:`None </data structures: None>`
+  * ``False`` is not :doc:`None </data structures: None>` and ``False`` is not equal to :doc:`None </data structures: None>`
 
 * RED: make it fail
 
@@ -483,9 +483,9 @@ REFACTOR: make it better
   * ``True`` is not ``False``
   * ``False`` is ``False``
   * ``False`` is not ``True``
-  * ``None`` is ``None``
-  * ``True`` is not ``None`` and ``True`` is not equal to ``None``
-  * ``False`` is not ``None`` and ``False`` is not equal to ``None``
+  * :doc:`None </data structures: None>` is :doc:`None </data structures: None>`
+  * ``True`` is not :doc:`None </data structures: None>` and ``True`` is not equal to :doc:`None </data structures: None>`
+  * ``False`` is not :doc:`None </data structures: None>` and ``False`` is not equal to :doc:`None </data structures: None>`
 
 * RED: make it fail
 
@@ -535,9 +535,9 @@ REFACTOR: make it better
   * ``True`` is not ``False`` and ``True`` is not equal to ``False``
   * ``False`` is ``False`` and ``False`` is equal to ``False``
   * ``False`` is not ``True`` and ``False`` is not equal to ``True``
-  * ``None`` is ``None`` and ``None`` is equal to ``None``
-  * ``True`` is not ``None`` and ``True`` is not equal to ``None``
-  * ``False`` is not ``None`` and ``False`` is not equal to ``None``
+  * :doc:`None </data structures: None>` is :doc:`None </data structures: None>` and :doc:`None </data structures: None>` is equal to :doc:`None </data structures: None>`
+  * ``True`` is not :doc:`None </data structures: None>` and ``True`` is not equal to :doc:`None </data structures: None>`
+  * ``False`` is not :doc:`None </data structures: None>` and ``False`` is not equal to :doc:`None </data structures: None>`
 
 ----
 
@@ -546,15 +546,15 @@ If you have been typing along *WELL DONE!* Your magic powers are growing. From t
 
 
 * how to test for equality
-* how to test if something is ``None`` or not
+* how to test if something is :doc:`None </data structures: None>` or not
 * how to test if something is ``False`` or not
 * how to test if something is ``True`` or not
 * how to use ``assert`` statements
 * how to use the following ``unittest.TestCase.assert`` methods
 
-  - ``assertIsNone`` - is this thing ``None``?
-  - ``assertIsNotNone`` - is this thing not ``None``?
+  - ``assertIsNone`` - is this thing :doc:`None </data structures: None>`?
+  - ``assertIsNotNone`` - is this thing not :doc:`None </data structures: None>`?
   - ``assertFalse`` - is this thing ``False``?
   - ``assertTrue`` - is this thing ``True``?
-  - `assertEqual  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ - are these two things equal?
+  - `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ - are these two things equal?
   - ``assertNotEqual`` - are these two things not equal?

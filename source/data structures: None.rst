@@ -1,7 +1,7 @@
 Data Structures: None
 =====================
 
-This chapter covers the null object ``None`` using Test Driven Development in python
+This chapter covers the null object :doc:`None </data structures: None>` using Test Driven Development in python
 
 Prerequisites
 -------------
@@ -15,7 +15,7 @@ Prerequisites
 What is None?
 -------------
 
-``None`` is an object used to represent the absence of a value, What if we explore it with tests
+:doc:`None </data structures: None>` is an object used to represent the absence of a value, What if we explore it with tests
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -46,7 +46,7 @@ change the ``assert`` statement in ``test_none_is_none`` to make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-There are other python objects we can compare with ``None`` to learn more about what it is or is not
+There are other python objects we can compare with :doc:`None </data structures: None>` to learn more about what it is or is not
 
 Is None a boolean?
 ------------------
@@ -54,7 +54,7 @@ Is None a boolean?
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a new test to compare ``None`` with booleans
+add a new test to compare :doc:`None </data structures: None>` with booleans
 
 .. code-block:: python
 
@@ -78,14 +78,14 @@ update ``test_is_none_a_boolean`` to make the tests pass
 we now know that
 
 
-* ``False`` is not ``None``
-* ``True`` is not ``None``
-* ``None`` is ``None``
+* ``False`` is not :doc:`None </data structures: None>`
+* ``True`` is not :doc:`None </data structures: None>`
+* :doc:`None </data structures: None>` is :doc:`None </data structures: None>`
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-booleans are represented by the keyword ``bool`` in python so we can do an instance test using another `unittest.TestCase  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`method <functions>` that checks if an ``object`` is an instance of a :doc:`class`
+booleans are represented by the keyword ``bool`` in python so we can do an instance test using another `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`method <functions>` that checks if an ``object`` is an instance of a :doc:`class`
 
 
 *
@@ -100,7 +100,7 @@ booleans are represented by the keyword ``bool`` in python so we can do an insta
                self.assertIsNotNone(False)
                self.assertIsInstance(None, bool)
 
-    we now see an :doc:`AssertionError` in the terminal because ``None`` is not an instance of a boolean
+    we now see an :doc:`AssertionError` in the terminal because :doc:`None </data structures: None>` is not an instance of a boolean
 
   .. code-block:: python
 
@@ -118,12 +118,12 @@ booleans are represented by the keyword ``bool`` in python so we can do an insta
                self.assertIsNotNone(False)
                self.assertNotIsInstance(None, bool)
 
-* We can summarize what we know about ``None`` so far as it is not a boolean and it is ``None``
+* We can summarize what we know about :doc:`None </data structures: None>` so far as it is not a boolean and it is :doc:`None </data structures: None>`
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-What about other data types in python? Let us find out if ``None`` is equal to any ``int``, ``float``, ``string``, ``tuple``, ``list``, ``set`` or ``dict``
+What about other data types in python? Let us find out if :doc:`None </data structures: None>` is equal to any ``int``, ``float``, ``string``, ``tuple``, ``list``, ``set`` or ``dict``
 
 Is None an integer?
 -------------------
@@ -131,7 +131,7 @@ Is None an integer?
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a new test to compare ``None`` with ``int``
+add a new test to compare :doc:`None </data structures: None>` with ``int``
 
 .. code-block:: python
 
@@ -172,7 +172,7 @@ integers are represented by the keyword ``int`` in python so we can do an instan
                self.assertIsNotNone(1)
                self.assertIsInstance(None, int)
 
-    an :doc:`AssertionError` is displayed in the terminal because ``None`` is not an instance of an integer
+    an :doc:`AssertionError` is displayed in the terminal because :doc:`None </data structures: None>` is not an instance of an integer
 
   .. code-block:: python
 
@@ -191,11 +191,11 @@ integers are represented by the keyword ``int`` in python so we can do an instan
                self.assertIsNotNone(1)
                self.assertNotIsInstance(None, int)
 
-* summarizing what we know about ``None`` so far as
+* summarizing what we know about :doc:`None </data structures: None>` so far as
 
-  * ``None`` is not an integer
-  * ``None`` is not a boolean
-  * ``None`` is ``None``
+  * :doc:`None </data structures: None>` is not an integer
+  * :doc:`None </data structures: None>` is not a boolean
+  * :doc:`None </data structures: None>` is :doc:`None </data structures: None>`
 
 Is None a string?
 -----------------
@@ -205,7 +205,7 @@ add a test for ``strings``. A string is any characters that are enclosed by sing
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-we add a new failing test to ``test_data_structures.py`` to compare ``None`` with a ``string``
+we add a new failing test to ``test_data_structures.py`` to compare :doc:`None </data structures: None>` with a ``string``
 
 .. code-block:: python
 
@@ -229,7 +229,7 @@ update ``test_is_none_a_string`` to make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-``strings`` are represented by the ``str`` class keyword in python, we will add a test to check if ``None`` is an instance of the ``string`` class
+``strings`` are represented by the ``str`` class keyword in python, we will add a test to check if :doc:`None </data structures: None>` is an instance of the ``string`` class
 
 
 *
@@ -255,12 +255,12 @@ REFACTOR: make it better
                self.assertIsNotNone("text")
                self.assertNotIsInstance(None, str)
 
-* Our knowledge of ``None`` has grown to
+* Our knowledge of :doc:`None </data structures: None>` has grown to
 
-  * ``None`` is not a string
-  * ``None`` is not an integer
-  * ``None`` is not a boolean
-  * ``None`` is ``None``
+  * :doc:`None </data structures: None>` is not a string
+  * :doc:`None </data structures: None>` is not an integer
+  * :doc:`None </data structures: None>` is not a boolean
+  * :doc:`None </data structures: None>` is :doc:`None </data structures: None>`
 
 Is None a tuple?
 ----------------
@@ -300,7 +300,7 @@ GREEN: make it pass
   .. code-block:: python
 
        AssertionError: (1, 2, 3, 'n') is not None
-    because the ``tuple`` that contains the four elements ``1, 2, 3, 'n'`` is not ``None``
+    because the ``tuple`` that contains the four elements ``1, 2, 3, 'n'`` is not :doc:`None </data structures: None>`
 * update the failing line in ``test_is_none_a_tuple``
   .. code-block:: python
 
@@ -322,16 +322,16 @@ GREEN: make it pass
 
 * we now know that in python
 
-  * ``None`` is not a ``tuple``
-  * ``None`` is not a ``string``
-  * ``None`` is not an ``integer``
-  * ``None`` is not a ``boolean``
-  * ``None`` is ``None``
+  * :doc:`None </data structures: None>` is not a ``tuple``
+  * :doc:`None </data structures: None>` is not a ``string``
+  * :doc:`None </data structures: None>` is not an ``integer``
+  * :doc:`None </data structures: None>` is not a ``boolean``
+  * :doc:`None </data structures: None>` is :doc:`None </data structures: None>`
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Based on what we have seen so far, it is safe to assume that ``None`` is only ``None`` and is not any other data structure, What if we find out if this assumption is false.
+Based on what we have seen so far, it is safe to assume that :doc:`None </data structures: None>` is only :doc:`None </data structures: None>` and is not any other data structure, What if we find out if this assumption is false.
 
 Is None a list(array)?
 ----------------------
@@ -362,15 +362,15 @@ the terminal shows an :doc:`AssertionError`
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-We've done this dance a few times now so we can update ``test_is_none_a_list`` to make it pass. With the passing tests our knowledge of ``None`` is updated to
+We've done this dance a few times now so we can update ``test_is_none_a_list`` to make it pass. With the passing tests our knowledge of :doc:`None </data structures: None>` is updated to
 
 
-* ``None`` is not a ``list``
-* ``None`` is not a ``tuple``
-* ``None`` is not a ``string``
-* ``None`` is not an ``integer``
-* ``None`` is not a ``boolean``
-* ``None`` is ``None``
+* :doc:`None </data structures: None>` is not a ``list``
+* :doc:`None </data structures: None>` is not a ``tuple``
+* :doc:`None </data structures: None>` is not a ``string``
+* :doc:`None </data structures: None>` is not an ``integer``
+* :doc:`None </data structures: None>` is not a ``boolean``
+* :doc:`None </data structures: None>` is :doc:`None </data structures: None>`
 
 Is None a set?
 --------------
@@ -400,16 +400,16 @@ the terminal updates to show an :doc:`AssertionError`
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-update the tests to make them pass and we can update our knowledge of ``None`` to state that
+update the tests to make them pass and we can update our knowledge of :doc:`None </data structures: None>` to state that
 
 
-* ``None`` is not a ``set``
-* ``None`` is not a ``list``
-* ``None`` is not a ``tuple``
-* ``None`` is not a ``string``
-* ``None`` is not an ``integer``
-* ``None`` is not a ``boolean``
-* ``None`` is ``None``
+* :doc:`None </data structures: None>` is not a ``set``
+* :doc:`None </data structures: None>` is not a ``list``
+* :doc:`None </data structures: None>` is not a ``tuple``
+* :doc:`None </data structures: None>` is not a ``string``
+* :doc:`None </data structures: None>` is not an ``integer``
+* :doc:`None </data structures: None>` is not a ``boolean``
+* :doc:`None </data structures: None>` is :doc:`None </data structures: None>`
 
 Is None a dictionary?
 ---------------------
@@ -445,14 +445,14 @@ the terminal displays an :doc:`AssertionError`
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-update the tests to make them pass and we can update our knowledge of ``None`` to state that
+update the tests to make them pass and we can update our knowledge of :doc:`None </data structures: None>` to state that
 
 
-* ``None`` is not a ``dictionary``
-* ``None`` is not a ``set``
-* ``None`` is not a ``list``
-* ``None`` is not a ``tuple``
-* ``None`` is not a ``string``
-* ``None`` is not an ``integer``
-* ``None`` is not a ``boolean``
-* ``None`` is ``None``
+* :doc:`None </data structures: None>` is not a ``dictionary``
+* :doc:`None </data structures: None>` is not a ``set``
+* :doc:`None </data structures: None>` is not a ``list``
+* :doc:`None </data structures: None>` is not a ``tuple``
+* :doc:`None </data structures: None>` is not a ``string``
+* :doc:`None </data structures: None>` is not an ``integer``
+* :doc:`None </data structures: None>` is not a ``boolean``
+* :doc:`None </data structures: None>` is :doc:`None </data structures: None>`

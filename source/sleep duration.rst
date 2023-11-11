@@ -69,13 +69,13 @@ GREEN: make it pass
 
     duration
 
-* make ``duration`` a variable by assigning it to the null value ``None``
+* make ``duration`` a variable by assigning it to the null value :doc:`None </data structures: None>`
 
   .. code-block:: python
 
     duration = None
 
-  the terminal outputs a :doc:`TypeError` because ``None`` is not callable
+  the terminal outputs a :doc:`TypeError` because :doc:`None </data structures: None>` is not callable
 * we add the exception to our running list
 
   .. code-block:: python
@@ -111,7 +111,7 @@ GREEN: make it pass
      def duration(wake_time, sleep_time):
          return None
 
-  the terminal now shows an :doc:`AssertionError` since our duration function returns ``None`` and the test expects ``1`` as the duration when a sleep time of ``07:00`` and a wake time of ``08:00`` is given
+  the terminal now shows an :doc:`AssertionError` since our duration function returns :doc:`None </data structures: None>` and the test expects ``1`` as the duration when a sleep time of ``07:00`` and a wake time of ``08:00`` is given
 
 * modify the return value for the duration function to our expectation
 
@@ -197,7 +197,7 @@ What if we write a test that uses a random variable for the sleep and wake times
 
     E       AssertionError: ['__add__', '__class__', '__contains__', [918 chars]ill'] != None
 
-* copy the value on the left side of the comparison and replace ``None`` as the expected value in the test
+* copy the value on the left side of the comparison and replace :doc:`None </data structures: None>` as the expected value in the test
 
   .. code-block:: python
 
@@ -346,7 +346,7 @@ What if we write a test that uses a random variable for the sleep and wake times
 
   we are now at a point where we get the two random values passed in and are trying to do a calculation, but because both values are strings, the calculation does not work. We need to find a way to convert the strings to numbers
 
-* What if we try one of the methods listed from ``test_string_methods_and_attributes`` to see if one of them might get us closer to a solution? Going with just the names of methods and attributes might not be enough since we do not know what they do, let us take a look at the documentation for extra details. Add a failing test with the ``help`` keyword to see documentation about ``strings``
+* What if we try one of the :doc:`methods <functions>` listed from ``test_string_methods_and_attributes`` to see if one of them might get us closer to a solution? Going with just the names of :doc:`methods <functions>` and attributes might not be enough since we do not know what they do, let us take a look at the documentation for extra details. Add a failing test with the ``help`` keyword to see documentation about ``strings``
 
   .. code-block:: python
 
@@ -387,7 +387,7 @@ What if we write a test that uses a random variable for the sleep and wake times
 
        E       AssertionError: ['00:00'] != None
 
-  we change the expectation from ``None`` and the test passes with the terminal showing us the :doc:`TypeError` that took us down this path
+  we change the expectation from :doc:`None </data structures: None>` and the test passes with the terminal showing us the :doc:`TypeError` that took us down this path
 
   .. code-block:: python
 

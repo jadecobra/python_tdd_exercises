@@ -122,8 +122,8 @@ RED: make it fail
     # AssertionError
 
 
-  - I call a new testing :doc:`method <functions>` from the `unittest.TestCase  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`class <classes>` called `assertEqual  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ which checks if its 2 inputs are equal. It is similar to the statement ``assert x == y`` or asking ``is x equal to y?``
-  - there are two things passed to the `assertEqual  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ :doc:`method <functions>` for evaluation in this case
+  - I call a new testing :doc:`method <functions>` from the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`class <classes>` called `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ which checks if its 2 inputs are equal. It is similar to the statement ``assert x == y`` or asking ``is x equal to y?``
+  - there are two things passed to `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ for evaluation in this case
 
     * first - ``calculator.add(0, 1)`` - where I give the values ``0`` and ``1`` as inputs to the addition function
     * second - ``1`` - the expected result from calling ``calculator.add`` when it is given ``0`` and ``1`` as inputs
@@ -201,7 +201,7 @@ GREEN: make it pass
 
   The :doc:`AttributeError` was fixed by declaring a variable ``add`` in the ``calculator`` module, even though it is currently assigned to the null value :doc:`None </data structures: None>`
 
-* The new error is a :doc:`TypeError` which can occur when an ``object`` is used in a way that it is not supposed to be used. In this case the ``add`` variable is not callable because it refers to ``None`` which is not a callable object. I update the list of exceptions encountered
+* The new error is a :doc:`TypeError` which can occur when an ``object`` is used in a way that it is not supposed to be used. In this case the ``add`` variable is not callable because it refers to :doc:`None </data structures: None>` which is not a callable object. I update the list of exceptions encountered
 
   .. code-block:: python
 
@@ -210,7 +210,7 @@ GREEN: make it pass
     # NameError
     # TypeError
 
-* I have to define ``add`` as a :doc:`function <functions>` or a :doc:`class <classes>` to make it callable. I know the ``def`` keyword is used for creating :doc:`functions` and will test changing the ``add`` variable in ``calculator.py`` to a :doc:`function <functions>`
+* I have to define ``add`` as a :doc:`function <functions>` or a :doc:`class <classes>` to make it callable. I know the ``def`` keyword is used for creating :doc:`functions` and will test changing the ``add`` variable in ``calculator.py``
 
   .. code-block:: python
 
@@ -246,7 +246,7 @@ GREEN: make it pass
     def add(x, y):
         return 1
 
-  Eureka! The test passes. Time for a victory lap.
+  Eureka! The test passed. Time for a victory lap.
 
   .. code-block:: python
 
@@ -532,7 +532,7 @@ REFACTOR: make it better
             )
 
   - all tests are still passing, so my change did not break anything. Fantastic!
-  - The ``x`` and ``y`` variables are now initialized once as :doc:`class <classes>` attributes (variables) and can be accessed later in every test using ``self.x`` and ``self.y`` the same way I can call `unittest.TestCase  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ methods like `assertEqual  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ by typing ``self.assertEqual``
+  - The ``x`` and ``y`` variables are now initialized once as :doc:`class <classes>` attributes (variables) and can be accessed later in every test using ``self.x`` and ``self.y`` the same way I can call `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`methods <functions>` like `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ by typing ``self.assertEqual``
 
 
 ----
@@ -716,7 +716,7 @@ I will add a failing test to ``test_calculator.py`` to make  a `ZeroDivisionErro
         #     self.x/self.y
         # )
 
-the terminal confirms my expectations with a failure for any value of ``x`` when ``y`` is 0. :doc:`Exceptions </exception handling>` like `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ break execution of a program. No further code is run when an exception is raised which means that no other tests will run until I take care of the error
+the terminal confirms my expectations with a failure for any value of ``x`` when ``y`` is 0. :doc:`Exceptions </exception handling>` like `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ break execution of a program. No further code is run when an :doc:`exception </exception handling>` is raised which means that no other tests will run until I take care of the error
 
 .. code-block:: python
 

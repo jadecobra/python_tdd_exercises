@@ -70,15 +70,15 @@ GREEN: make it pass
            pass
     and the terminal displays a passing test
 
-  * the test checks if the value of the call to ``functions.function_with_pass`` is ``None``
+  * the test checks if the value of the call to ``functions.function_with_pass`` is :doc:`None </data structures: None>`
   * the function definition simply says ``pass`` yet the test passes
   * ``pass`` is a placeholder keyword which allows the function definition to follow python syntax rules
-  * the test passes because in python all functions return ``None`` by default, we can imagine the function has an invisible line that says ``return None``
+  * the test passes because in python all functions return :doc:`None </data structures: None>` by default, we can imagine the function has an invisible line that says ``return None``
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-What if we test if functions really always return ``None`` by default
+What if we test if functions really always return :doc:`None </data structures: None>` by default
 
 
 *
@@ -102,7 +102,7 @@ What if we test if functions really always return ``None`` by default
        def function_with_return(self):
            return
 
-    the terminal shows this test is also passing. We have defined 2 functions with different statements in their body but they both return the same result, because "in python all functions return ``None`` by default, we can imagine the function has an invisible line that says ``return None``"
+    the terminal shows this test is also passing. We have defined 2 functions with different statements in their body but they both return the same result, because "in python all functions return :doc:`None </data structures: None>` by default, we can imagine the function has an invisible line that says ``return None``"
 
 * RED: make it fail
     we can add one more test to the ``TestFunctions`` class in ``test_functions.py`` to help drive home the point
@@ -129,7 +129,7 @@ Here is what we know so far about functions in python
 
 
 * functions are defined using the ``def`` keyword
-* functions return ``None`` by default
+* functions return :doc:`None </data structures: None>` by default
 
 Passthrough Functions
 ---------------------
@@ -180,7 +180,7 @@ GREEN: make it pass
   .. code-block:: python
 
        AssertionError: None != False
-    because the result of calling ``functions.passthrough`` with ``False`` as input is ``None`` which is not equal to ``False`` which is our expected result
+    because the result of calling ``functions.passthrough`` with ``False`` as input is :doc:`None </data structures: None>` which is not equal to ``False`` which is our expected result
 * change the definition of ``passthrough`` to make the test pass
   .. code-block:: python
 

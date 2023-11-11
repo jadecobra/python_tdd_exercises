@@ -68,7 +68,7 @@ REFACTOR: make it better
 
        def a_dict():
            return None
-    the terminal updates to show an :doc:`AssertionError` since the function we defined returns ``None`` not a dictionary
+    the terminal updates to show an :doc:`AssertionError` since the function we defined returns :doc:`None </data structures: None>` not a dictionary
 * update the return statement to return an empty dictionary
   .. code-block:: python
 
@@ -516,7 +516,7 @@ What if we want to call a dictionary and not have python raise an error when it 
                'keyN': 'valueN',
            }
            self.assertIsNone(a_dictionary.get('non_existent_key'))
-    the terminal updates to show a passing test. This means that when we use the ``get`` :doc:`method <functions>` and the ``key`` does not exist, we get ``None`` as the ``return`` value.
+    the terminal updates to show a passing test. This means that when we use the ``get`` :doc:`method <functions>` and the ``key`` does not exist, we get :doc:`None </data structures: None>` as the ``return`` value.
 * What if we state the above explicitly because ``Explicit is better than implicit`` see `Zen of Python <https://peps.python.org/pep-0020/>`_
   .. code-block:: python
 
@@ -557,10 +557,10 @@ What if we want to call a dictionary and not have python raise an error when it 
            self.assertIsNone(a_dictionary.get('non_existent_key'))
            self.assertIsNone(a_dictionary.get('non_existent_key', None))
            self.assertEqual(a_dictionary.get('key1', None), None)
-    the terminal updates to show an `Assertion Error <./AssertionError.rst>`_ because ``value1`` is not equal to ``None``
+    the terminal updates to show an `Assertion Error <./AssertionError.rst>`_ because ``value1`` is not equal to :doc:`None </data structures: None>`
 * update the test to make it pass
 
-How to view the attributes and methods of a dictionary
+How to view the attributes and :doc:`methods <functions>`of a dictionary
 -----------------------------------------------
 
 :doc:`classes` covers how to view the ``attributes`` and ``methods`` of an object. What if we do the same for ``dictionaries``
@@ -651,13 +651,13 @@ the tests pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-We see some of the methods we have covered so far and others we did not. You can write tests on the others to discover what they do and/or `read more about dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_. What if we list out what we know so far and you can fill in the others as you learn them
+We see some of the :doc:`methods <functions>` we have covered so far and others we did not. You can write tests on the others to discover what they do and/or `read more about dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_. What if we list out what we know so far and you can fill in the others as you learn them
 
 
 * clear
 * copy
 * fromkeys
-* get - gets the ``value`` for a ``key`` and returns a default value or ``None`` if the key does not exist
+* get - gets the ``value`` for a ``key`` and returns a default value or :doc:`None </data structures: None>` if the key does not exist
 * items
 * keys - returns the list of ``keys`` in a dictionary
 * pop
@@ -731,7 +731,7 @@ REFACTOR: make it better
            a_dictionary.setdefault('another_key')
            self.assertEqual(a_dictionary, {'bippity': 'boppity', 'another_key': None})
 
-* What if we want to add a ``key`` but set the default value to something other than ``None``? Good question, add a test to find out
+* What if we want to add a ``key`` but set the default value to something other than :doc:`None </data structures: None>`? Good question, add a test to find out
   .. code-block:: python
 
            a_dictionary.setdefault('a_new_key', 'a_default_value')
@@ -748,7 +748,7 @@ REFACTOR: make it better
                    'a_new_key': 'a_default_value',
                }
            )
-    all tests pass, and we update the list of methods with what we now know about ``setdefault``
+    all tests pass, and we update the list of :doc:`methods <functions>` with what we now know about ``setdefault``
 
 How to update one Dictionary with another
 -----------------------------------------

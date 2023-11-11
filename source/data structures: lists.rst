@@ -121,7 +121,7 @@ the terminal updates to show an :doc:`AssertionError` because after we call ``a_
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-update the values on the right side of the `assertEqual  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ statement to make it match the expectation
+update the values on the right side of the `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ statement to make it match the expectation
 
 .. code-block:: python
 
@@ -355,7 +355,7 @@ GREEN: make it pass
                a_list[5]
     the test passes
 
-View the attributes and methods of a list
+View the attributes and :doc:`methods <functions>` of a list
 -----------------------------------------
 
 In :doc:`classes` we cover how to view the ``attributes`` and ``methods`` of an object. What if we do the same for ``lists``
@@ -376,7 +376,7 @@ add a failing test
 
 
 * the terminal updates to show an :doc:`AssertionError`
-* ``maxDiff`` is an attribute of the `unittest.TestCase  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class that sets the maximum amount of characters to show in the comparison between the two objects that is displayed in the terminal. When it is set to ``None`` there is no limit to the number of characters
+* ``maxDiff`` is an attribute of the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class that sets the maximum amount of characters to show in the comparison between the two objects that is displayed in the terminal. When it is set to :doc:`None </data structures: None>` there is no limit to the number of characters
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -445,7 +445,7 @@ all our tests are passing again
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-There are more methods listed than what we have reviewed. Based on their names, we can make a guess as to what they do, and we know some from our tests above
+There are more :doc:`methods <functions>` listed than what we have reviewed. Based on their names, we can make a guess as to what they do, and we know some from our tests above
 
 
 * append - adds an item to the list
@@ -460,4 +460,4 @@ There are more methods listed than what we have reviewed. Based on their names, 
 * reverse
 * sort
 
-You can add tests for these methods to find out what they do. Do you want to `read more about lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list%20remove#more-on-lists>`_
+You can add tests for these :doc:`methods <functions>` to find out what they do. Do you want to `read more about lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list%20remove#more-on-lists>`_

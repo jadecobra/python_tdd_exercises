@@ -41,10 +41,10 @@ What does the code above mean?
 
 * ``import unittest`` imports the `unittest <https://docs.python.org/3/library/unittest.html>`_ module from the python standard library
 * ``import module`` imports the ``module`` module - this is going to hold the solution we write
-* ``class TestAttributeErrors(unittest.TestCase):`` - a class definition that inherits from `unittest.TestCase  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ and will hold our tests. We learn more about this in :doc:`classes`
+* ``class TestAttributeErrors(unittest.TestCase):`` - a class definition that inherits from `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ and will hold our tests. We learn more about this in :doc:`classes`
 * ``def test_defining_variables_to_solve_attribute_errors(self):`` the definition of our first test function to find out if defining variables can solve an ``AttributeError``
 * ``self.assertIsNone(module.variable_0)`` - the actual test. This is equivalent to asking the question ``is module.variable_0 equal to None``
-* ``assertIsNone`` is one of the helper functions inherited from `unittest.TestCase  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_. We learn more about this in :doc:`AssertionError`
+* ``assertIsNone`` is one of the helper functions inherited from `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_. We learn more about this in :doc:`AssertionError`
 * ``self`` refers to the ``TestAttributeError`` class
 
 If you left ``pytest-watch`` running from :doc:`How to Setup a Test Driven Development Environment` you should see a message similar to the following in the terminal
@@ -137,7 +137,7 @@ GREEN: make it pass
 
       variable_0 = None
 
-  this explicity defines ``variable_0`` with a value of ``None`` and the terminal updates to show a passing test. YES!
+  this explicity defines ``variable_0`` with a value of :doc:`None </data structures: None>` and the terminal updates to show a passing test. YES!
 
   .. code-block:: python
 
@@ -421,7 +421,7 @@ GREEN: make it pass
 
      * A ``function`` is a called block of code that performs some action or series of actions
      * In python a function always returns something
-     * the default return value of a function is ``None``
+     * the default return value of a function is :doc:`None </data structures: None>`
      * the line with ``return`` is the last executable line of code in a function
 
 
@@ -463,7 +463,7 @@ REFACTOR: make it better
 Solve the AttributeError by defining a Class
 ----------------------------------------
 
-A class is a blueprint that represents an object, it is a collection of functions (methods) and attributes. Attributes are names which represent a value. Methods are functions that can accept inputs and return a value. For example we could define a `Human` class with attributes like eye color, date of birth, height and weight, and methods like age which returns a value based on the current year and date of birth. Let us explore ``AttributeError`` with classes.
+A class is a blueprint that represents an object, it is a collection of functions (methods) and attributes. Attributes are names which represent a value.:doc:`methods <functions>`are functions that can accept inputs and return a value. For example we could define a `Human` class with attributes like eye color, date of birth, height and weight, and:doc:`methods <functions>`like age which returns a value based on the current year and date of birth. Let us explore ``AttributeError`` with classes.
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -784,7 +784,7 @@ repeat the solution until all tests pass
   - :doc:`functions`
   - :doc:`classes`
   - attributes (variables) in :doc:`classes`
-  - methods (:doc:`functions`) in :doc:`classes`
+  -:doc:`methods <functions>`(:doc:`functions`) in :doc:`classes`
 
 .. NOTE:: *WHAT IS THE DIFFERENCE BETWEEN CLASSES AND FUNCTIONS?*
 

@@ -53,7 +53,7 @@ GREEN: make it pass
 
   and the terminal updates to show a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ because ``ClassWithPass`` is not defined anywhere
 
-* update the name as an assignment to the null value ``None``
+* update the name as an assignment to the null value :doc:`None </data structures: None>`
 
   .. code-block:: python
 
@@ -85,7 +85,7 @@ Let us review what we have written so far
 
 
 * ``pass`` is a placeholder
-* ``self.assertIsInstance`` is a `unittest.TestCase  <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`method <functions>` that checks if the first input to the :doc:`method <functions>` is an instance of the second input
+* ``self.assertIsInstance`` is a `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`method <functions>` that checks if the first input to the :doc:`method <functions>` is an instance of the second input
 * in python everything is an ``object`` which means there's a class definition for it, our test ``self.assertIsInstance(classes.ClassWithPass(), object)`` checks if ``ClassWithPass`` is an ``object``
 
 How to define a Class with parentheses
@@ -253,7 +253,7 @@ GREEN: make it pass
   and the terminal updates to show a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
 
-* after updating the name with an assignment to ``None``
+* after updating the name with an assignment to :doc:`None </data structures: None>`
 
   .. code-block:: python
 
@@ -325,7 +325,7 @@ the terminal updates to show passing tests
 How to define a Class with Methods
 ----------------------------------
 
-We can define classes with methods which are function definitions within the class
+We can define classes with:doc:`methods <functions>`which are function definitions within the class
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -370,7 +370,7 @@ GREEN: make it pass
   the terminal updates to show a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ because there is no definition for ``method_a``
 
 
-* when we define ``method_a`` as an attribute by assigning it as the name for the null value ``None``
+* when we define ``method_a`` as an attribute by assigning it as the name for the null value :doc:`None </data structures: None>`
 
   .. code-block:: python
 
@@ -425,10 +425,10 @@ REFACTOR: make it better
 
 ----
 
-How to define a Class with Methods and Attributes
+How to define a Class with:doc:`methods <functions>`and Attributes
 ------------------------------------------
 
-Since we know how to define classes with methods and how to define classes with attributes, What if we try defining a class that has both
+Since we know how to define classes with:doc:`methods <functions>`and how to define classes with attributes, What if we try defining a class that has both
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -727,16 +727,16 @@ REFACTOR: make it better
 Why did that work?
 
 
-* the ``Boy``, ``Girl`` and ``Other`` class now inherit from the ``Human`` class which means they all get the same methods and attributes that the ``Human`` class has, including the ``__init__`` method
+* the ``Boy``, ``Girl`` and ``Other`` class now inherit from the ``Human`` class which means they all get the same:doc:`methods <functions>`and attributes that the ``Human`` class has, including the ``__init__`` method
 * ``self.sex`` within each class refers to the ``sex`` attribute in the class, allowing its definition from within the ``__init__`` method
 * since ``self.sex`` is defined as a class attribute, it is accessible from outside the class as we do in our tests i.e ``classes.Girl(sex='F').sex`` and ``classes.Other(sex='?').sex``
 
 ----
 
-How to View the Attributes and Methods of a Class
+How to View the Attributes and:doc:`methods <functions>`of a Class
 --------------------------------------------------
 
-To view what ``attributes`` and ``methods`` are defined for any object we can call ``dir`` on the object. The ``dir`` :doc:`method <functions>` returns a :doc:`list` that contains the names of all attributes and methods in the class
+To view what ``attributes`` and ``methods`` are defined for any object we can call ``dir`` on the object. The ``dir`` :doc:`method <functions>` returns a :doc:`list` that contains the names of all attributes and :doc:`methods <functions>`in the class
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -806,6 +806,6 @@ You know
 * how to define a class with an attribute
 * how to define a class with a method
 * how to define a class with an initializer
-* how to view the attributes and methods of a class
+* how to view the attributes and :doc:`methods <functions>`of a class
 
 Do you want to `read more about classes? <https://docs.python.org/3/tutorial/classes.html#tut-firstclasses>`_

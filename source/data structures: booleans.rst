@@ -83,7 +83,7 @@ we can sum this up as
 
 
 * ``False`` is a ``boolean``
-* empty things including ``0`` and ``None`` are ``False``
+* empty things including ``0`` and :doc:`None </data structures: None>` are ``False``
 
 What is True?
 -------------
@@ -157,11 +157,11 @@ GREEN: make it pass
 
 * we can sum up our current knowledge of python thus
 
-  * any value except ``0``, empty objects and ``None`` is ``True``
-  * empty objects including ``0`` and ``None`` are ``False``
+  * any value except ``0``, empty objects and :doc:`None </data structures: None>` is ``True``
+  * empty objects including ``0`` and :doc:`None </data structures: None>` are ``False``
   * ``True`` is a ``boolean``
   * ``False`` is a ``boolean``
-  * ``None`` is ``None``
+  * :doc:`None </data structures: None>` is :doc:`None </data structures: None>`
 
 HOORAY
 
