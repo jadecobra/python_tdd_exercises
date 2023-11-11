@@ -37,7 +37,7 @@ I add a TODO list to ``test_calculator.py`` to keep track of requirements for th
    # Exceptions Encountered
    # AssertionError
 
-the terminal responds to the change, with one passing from :doc:`How to Setup a Test Driven Development Environment`
+the terminal responds to the change with a passing test from :doc:`How to Setup a Test Driven Development Environment`
 
 .. code-block:: python
 
@@ -58,7 +58,7 @@ the terminal responds to the change, with one passing from :doc:`How to Setup a 
 Test Imports
 ------------
 
-I add an import statement for the ``calculator`` module
+I add an import statement for the ``calculator`` module, it will contain the program I am testing
 
 .. code-block:: python
 
@@ -81,7 +81,7 @@ I add an import statement for the ``calculator`` module
    # Exceptions Encountered
    # AssertionError
 
-since the test passes I can remove ``test importing`` from the TODO list
+since there is no failure I can remove ``test importing`` from the TODO list
 
 ----
 
@@ -167,13 +167,13 @@ RED: make it fail
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-* I open ``calculator.py`` in the Interactive Development Environment (IDE) and add the name ``add``
+* I open ``calculator.py`` in the Interactive Development Environment (IDE) and type the name ``add``
 
   .. code-block:: python
 
        add
 
-  the terminal updates to show a ``NameError`` because ``add`` is not defined, there is no assignment to the name
+  the terminal shows a ``NameError`` because ``add`` is not defined, there is no assignment to the name
 
   .. code-block:: python
 
@@ -187,7 +187,7 @@ GREEN: make it pass
        # AssertionError
        # NameError
 
-* I assign the name ``add`` to the null value ``None``
+* then assign the name ``add`` to the null value ``None``
 
   .. code-block:: python
 
@@ -201,7 +201,7 @@ GREEN: make it pass
 
   The ``AttributeError`` was fixed by declaring a variable ``add`` in the ``calculator`` module, even though it is currently assigned to the null value ``None``
 
-* The new error is :doc:`TypeError` which can occur when an ``object`` is used in a way that it is not supposed to be used. In this case the ``add`` variable is not callable. I update the list of exceptions encountered
+* The new error is a :doc:`TypeError` which can occur when an ``object`` is used in a way that it is not supposed to be used. In this case the ``add`` variable is not callable because it refers to ``None`` which is not a callable object. I update the list of exceptions encountered
 
   .. code-block:: python
 
@@ -264,11 +264,11 @@ Solving the problem this way reveals a problem with the test, which means I need
 
 There are a few scenarios to consider from a user's perspective.
 
-* If a user tries to add other numbers that are not 0 and 1, the calculator will return 1.
-* If they also try to add negative numbers, it will still return 1.
-* The function always returns 1 no matter what inputs the user gives.
+* If a user tries to add other numbers that are not 0 and 1, the calculator will return 1
+* If they also try to add negative numbers, it will still return 1
+* The function always returns 1 no matter what inputs the user gives
 
-Even though the add function currently passes the existing test it still does not meet the actual requirement.
+Even though the add function currently passes the existing test it does not meet the actual requirement.
 
 * I remove ``test_failure`` from ``test_calculator.py`` since it is no longer needed
 
@@ -298,7 +298,7 @@ Even though the add function currently passes the existing test it still does no
             0
         )
 
-  the terminal responds with an :doc:`AssertionError`, confirmation that the ``add`` function always returns ``1`` no matter what inputs are given
+  the terminal responds with an :doc:`AssertionError`, proof that the ``add`` function always returns ``1`` no matter what inputs are given
 
   .. code-block:: python
 
@@ -343,26 +343,25 @@ Even though the add function currently passes the existing test it still does no
 
   - I assign a variable called ``x`` to a random integer between -1 and 1 to represent the case of negative numbers, zero and positive numbers
   - I assign a variable called ``y`` to a random integer between -1 and 1 to represent the case of negative numbers, zero and positive numbers
-  - I test that when these two variables are given to the ``add`` function as inputs it returns the sum of the 2 variables as output
+  - I test that when these two random numbers are given to the ``add`` function as inputs it returns their sum  as output and the terminal still displays passing tests
 
-  the terminal still displays passing tests
+    .. code-block:: python
 
-  .. code-block:: python
+        tests/test_calculator.py ..                             [100%]
 
-    tests/test_calculator.py ..                             [100%]
-
-    ================ 2 passed in 0.01s ===========================
+        ================ 2 passed in 0.01s ===========================
 
   - I no longer need the previous tests because this new test covers the scenarios for zero, negative and positive numbers
   - I can remove ``test addition`` from the TODO list since it passed, marking the task as completed
 
-  .. code-block:: python
+    .. code-block:: python
 
-     # TODO
-     # test subtraction
-     # test multiplication
-     # test division
+       # TODO
+       # test subtraction
+       # test multiplication
+       # test division
 
+----
 
 This is the Test Driven Development cycle in practice: RED GREEN REFACTOR
 
@@ -370,14 +369,14 @@ This is the Test Driven Development cycle in practice: RED GREEN REFACTOR
 * **GREEN**: make it pass - I make the test pass by any means necessary
 * **REFACTOR**: make it better
 
-I repeat the process until I have a working program that has been tested and gives me confidence it will behave in an expected way that meets the requirements of the program
+I repeat this process until I have a working program that has been tested and gives me confidence it will behave in an expected way that meets the requirements of the program
 
 ----
 
 Test Subtraction
 ----------------
 
-I will now add a failing test since addition works and the next action item from the TODO list is to test subtraction,
+I will now add a failing test since addition works and the next action item from the TODO list is to test subtraction
 
 RED : make it fail
 ^^^^^^^^^^^^^^^^^^
@@ -506,7 +505,7 @@ REFACTOR: make it better
   - ``x = random.randint(-1, 1)`` happens twice
   - ``y = random.randint(-1, 1)`` happens twice
 
-* I could update the ``TestCalculator`` class in ``test_calculator.py`` to create the random variables only once by using class variables and reference the variables in the tests
+* I could update the ``TestCalculator`` class in ``test_calculator.py`` to create the random variables only once by using class variables and reference them in the tests
 
   .. code-block:: python
 
@@ -532,7 +531,7 @@ REFACTOR: make it better
                 self.x-self.y
             )
 
-  - all tests are still passing, so my change did not break anything
+  - all tests are still passing, so my change did not break anything. Fantastic!
   - The ``x`` and ``y`` variables are now initialized once as class attributes and can be accessed later in every test using ``self.x`` and ``self.y`` the same way I can call ``unittest.TestCase`` methods like ``assertEqual`` by typing ``self.assertEqual``
 
 
@@ -677,7 +676,7 @@ GREEN : make it pass
        def divide(x, y):
            return x / y
 
-  the terminal response varies since I am using random variables, When ``y`` is 0 I get a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ like below
+  the terminal response varies since I am using random variables, When ``y`` is 0 I get a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ like below, otherwise it passes
 
   .. code-block:: python
 
@@ -703,7 +702,7 @@ How to Test for Errors
 RED : make it fail
 ^^^^^^^^^^^^^^^^^^
 
-I am going to add a failing test to ``test_calculator.py`` to intentionally trigger a ``ZeroDivisionError`` and comment out the previous test that sometimes fails, this helps me remove the variability of the test for some time while I figure out the error
+I will add a failing test to ``test_calculator.py`` to intentionally trigger a ``ZeroDivisionError`` and comment out the previous test that sometimes fails, to help remove the variability of the test for some time while I figure out the error
 
 .. code-block:: python
 
@@ -717,7 +716,7 @@ I am going to add a failing test to ``test_calculator.py`` to intentionally trig
         #     self.x/self.y
         # )
 
-the terminal confirms my expectations with a failure for any value of ``x`` when ``y`` is 0
+the terminal confirms my expectations with a failure for any value of ``x`` when ``y`` is 0. :doc:`Exceptions </exception handling>` like ``ZeroDivisionError`` break execution of a program. No further code is run when an exception is raised which means that no other tests will run until I take care of the error
 
 .. code-block:: python
 
@@ -742,7 +741,7 @@ I can use the ``unittest.TestCase.assertRaises`` :doc:`method <functions>` in ``
        #     self.x/self.y
        # )
 
-the terminal displays passing tests, and I now have a way to ``catch`` Exceptions when testing, allowing me to confirm that the code raises an error, and the other tests can continue when they encounter the expected failure
+the terminal displays passing tests, and I now have a way to ``catch`` Exceptions when testing, allowing me to confirm that the code raises an error, and the other tests can continue to run when they encounter the expected failure
 
 REFACTOR: make it better
 ------------------------
