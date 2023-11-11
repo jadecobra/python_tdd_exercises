@@ -2,7 +2,7 @@
 List Comprehensions
 ===================
 
-We will cover ``list comprehensions`` in python using Test Driven Development
+I will cover ``list comprehensions`` in python using Test Driven Development
 
 Prerequisites
 -------------
@@ -39,11 +39,11 @@ add a file called ``test_list_comprehension.py`` to the ``tests`` folder
            self.assertEqual(list_a, [])
 
 
-* we create ``collection_a`` which uses the ``range`` object
-* the ``range`` object creates an ``iterable`` of numbers from 0 to the number we give minus 1. `read more <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_
-* we create a list called ``list_a`` that has no elements and confirm it is empty with a ``self.assertEqual(list_a, [])``
-* we then create a loop using the ``for`` keyword, that goes over every element of ``collection_a`` and adds it to ``list_a`` using the ``append`` :doc:`method <functions>` see :doc:`Lists`
-* the terminal updates to show an :doc:`AssertionError` for our test that checks the elements of ``list_a`` after the loop ran, because the list is no longer empty, it now contains 10 elements
+* I create ``collection_a`` which uses the ``range`` object
+* the ``range`` object creates an ``iterable`` of numbers from 0 to the number I give minus 1. `read more <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_
+* I create a list called ``list_a`` that has no elements and confirm it is empty with a ``self.assertEqual(list_a, [])``
+* I then create a loop using the ``for`` keyword, that goes over every element of ``collection_a`` and adds it to ``list_a`` using the ``append`` :doc:`method <functions>` see :doc:`Lists`
+* the terminal updates to show an :doc:`AssertionError` for the test that checks the elements of ``list_a`` after the loop ran, because the list is no longer empty, it now contains 10 elements
   .. code-block:: python
 
        E       AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
@@ -77,7 +77,7 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* add another test to check what happens when we call the ``list`` keyword on the ``collection_a`` iterable
+* add another test to check what happens when I call the ``list`` keyword on the ``collection_a`` iterable
   .. code-block:: python
 
            self.assertEqual(list(collection_a), list_a)
@@ -86,19 +86,19 @@ REFACTOR: make it better
   .. code-block:: python
 
            self.assertEqual(list_comprehensions.make_a_list(collection_a), list_a)
-    the terminal updates to show a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ and we add it to our list of exceptions encountered
+    the terminal updates to show a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ and I add it to the list of exceptions encountered
   .. code-block:: python
 
        # Exceptions Encountered
        # AssertionError
        # NameError
 
-* add an import statement for ``list_comprehensions`` at the beginning of ``test_list_comprehension.py`` to define the name in our tests
+* add an import statement for ``list_comprehensions`` at the beginning of ``test_list_comprehension.py`` to define the name in the tests
   .. code-block:: python
 
        import list_comprehensions
        import unittest
-    the terminal displays a :doc:`ModuleNotFoundError` and we add that to our running list of exceptions
+    the terminal displays a :doc:`ModuleNotFoundError` and I add that to the running list of exceptions
   .. code-block:: python
 
        # Exceptions Encountered
@@ -106,7 +106,7 @@ REFACTOR: make it better
        # NameError
        # ModuleNotFoundError
 
-* create a file called ``list_comprehensions.py`` in the project folder and the terminal updates to show an :doc:`AttributeError`\ , which we add to our expanding list of exceptions encountered
+* create a file called ``list_comprehensions.py`` in the project folder and the terminal updates to show an :doc:`AttributeError`\ , which I add to the expanding list of exceptions encountered
   .. code-block:: python
 
        # Exceptions Encountered
@@ -115,12 +115,12 @@ REFACTOR: make it better
        # ModuleNotFoundError
        # AttributeError
 
-* we then add a :doc:`functions` definition to ``list_comprehensions.py``
+* I then add a :doc:`functions` definition to ``list_comprehensions.py``
   .. code-block:: python
 
        def make_a_list():
            return None
-    and the terminal updates to show a :doc:`TypeError`\ , updating our list of exceptions encountered to
+    and the terminal updates to show a :doc:`TypeError`\ , updating the list of exceptions encountered to
   .. code-block:: python
 
        # Exceptions Encountered
@@ -130,7 +130,7 @@ REFACTOR: make it better
        # AttributeError
        # TypeError
 
-* we update the signature of the function to take in an argument
+* I update the signature of the function to take in an argument
   .. code-block:: python
 
        def make_a_list(argument):
@@ -146,7 +146,7 @@ REFACTOR: make it better
 Creating a List with a For Loop
 -------------------------------
 
-What if we test creating a list with a for loop like the example above
+What if I test creating a list with a for loop like the example above
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -166,7 +166,7 @@ add a test to ``TestListComprehensions``
            self.assertEqual(a_list, [])
            self.assertEqual(list_comprehensions.for_loop(collection), a_list)
 
-the terminal updates to show an :doc:`AssertionError` for the values of ``a_list`` after we loop through ``collection`` and add elements because it is no longer empty
+the terminal updates to show an :doc:`AssertionError` for the values of ``a_list`` after I loop through ``collection`` and add elements because it is no longer empty
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -190,20 +190,20 @@ GREEN: make it pass
 
     the terminal updates to show an :doc:`AttributeError` since ``list_comprehensions.py`` does not have a definition for ``for_loop``
 
-* we add a function definition for ``for_loop`` to ``list_comprehensions.py``
+* I add a function definition for ``for_loop`` to ``list_comprehensions.py``
   .. code-block:: python
 
        def for_loop():
            return None
     the terminal updates to show a :doc:`TypeError`
-* we update the signature of the function to take in an input argument
+* I update the signature of the function to take in an input argument
   .. code-block:: python
 
        def for_loop(argument):
            return None
     the terminal updates to show an :doc:`AssertionError`
 *
-  we change the behavior of the function by adding a ``for`` loop
+  I change the behavior of the function by adding a ``for`` loop
 
   .. code-block:: python
 
@@ -216,7 +216,7 @@ GREEN: make it pass
     in this :doc:`functions`
 
 
-  * we create an empty list
+  * I create an empty list
   * loop over the elements of ``argument`` which is an ``iterable`` passed into the function
   * append each element from ``argument`` to the empty list
   *
@@ -227,7 +227,7 @@ GREEN: make it pass
 List Comprehension
 ------------------
 
-Now that we know how to create a ``list`` using ``[]``, ``list`` and ``for``, What if we try creating a :doc:`list` using a ``list comprehension``. It looks similar to a ``for`` loop but allows us to achieve the same thing with less words
+Now that I know how to create a ``list`` using ``[]``, ``list`` and ``for``, What if I try creating a :doc:`list` using a ``list comprehension``. It looks similar to a ``for`` loop but allows us to achieve the same thing with less words
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -280,7 +280,7 @@ GREEN: make it pass
     the terminal updates to show another :doc:`AssertionError` for the next line
 
 *
-  this time we add a ``list comprehension`` to the left side to practice writing it
+  this time I add a ``list comprehension`` to the left side to practice writing it
 
   .. code-block:: python
 
@@ -308,7 +308,7 @@ GREEN: make it pass
            return [element for element in argument]
     all tests pass
 
-We just created two functions, one that uses a traditional for loop and another that uses a list comprehension to achive the same thing. The difference between
+I just created two functions, one that uses a traditional for loop and another that uses a list comprehension to achive the same thing. The difference between
 
 .. code-block:: python
 
@@ -322,12 +322,12 @@ and
 
        [element for element in collection]
 
-Is in the first case we have to declare a variable, create a loop then update the variable we declared, with the list comprehension we can achieve the same thing with less words/lines
+Is in the first case I have to declare a variable, create a loop then update the variable I declared, with the list comprehension I can achieve the same thing with less words/lines
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Let us explore what else we can do with a ``list comprehension``
+Let us explore what else I can do with a ``list comprehension``
 
 
 *
@@ -358,12 +358,12 @@ Let us explore what else we can do with a ``list comprehension``
     the terminal updates to show an :doc:`AssertionError`
 
 
-  * In this loop we update the empty list after the condition ``if element % 2 == 0`` is met.
+  * In this loop I update the empty list after the condition ``if element % 2 == 0`` is met.
   * The ``%`` is a modulo operator for modulo division which divides the number on the left by the number on the right and gives the remainder.
   * If the remainder is ``0``, it means the number is divisible by 2 with no remainder meaning its an even number
 
 *
-  we update the test with the expected values to make it pass
+  I update the test with the expected values to make it pass
 
   .. code-block:: python
 
@@ -390,7 +390,7 @@ Let us explore what else we can do with a ``list comprehension``
     the terminal updates to show an :doc:`AssertionError`
 
 *
-  try using a ``list comprehension`` like we did in the last example
+  try using a ``list comprehension`` like I did in the last example
 
   .. code-block:: python
 
@@ -414,13 +414,13 @@ Let us explore what else we can do with a ``list comprehension``
                    even_numbers
                )
 
-    the terminal displays an :doc:`AssertionError` because our lists are not the same, we have too many values
+    the terminal displays an :doc:`AssertionError` because the lists are not the same, I have too many values
 
   .. code-block:: python
 
        AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != [0, 2, 4, 6, 8]
 
-    we have not added the ``if`` condition to the ``list comprehension``, let's do that now
+    I have not added the ``if`` condition to the ``list comprehension``, let's do that now
 
   .. code-block:: python
 
@@ -431,14 +431,14 @@ Let us explore what else we can do with a ``list comprehension``
 
     the terminal outputs an :doc:`AttributeError` for the next test
 
-* add a function definition to ``list_comprehensions.py`` using the ``list comprehension`` we just wrote
+* add a function definition to ``list_comprehensions.py`` using the ``list comprehension`` I just wrote
   .. code-block:: python
 
        def get_even_numbers(argument):
            return [element for element in argument if element % 2 == 0]
     and the terminal shows passing tests! Hooray
 *
-  What if we try another ``list comprehension`` with a different condition. Add a test to ``TestListComprehensions``
+  What if I try another ``list comprehension`` with a different condition. Add a test to ``TestListComprehensions``
 
   .. code-block:: python
 
@@ -458,7 +458,7 @@ Let us explore what else we can do with a ``list comprehension``
     the terminal updates to show an :doc:`AssertionError`
 
 *
-  when we update the values to match
+  when I update the values to match
 
   .. code-block:: python
 
@@ -478,7 +478,7 @@ Let us explore what else we can do with a ``list comprehension``
     the terminal shows an :doc:`AssertionError` for the next test
 
 *
-  after updating the value on the left with a ``list comprehension`` that uses the same condition we used to create ``odd_numbers``
+  after updating the value on the left with a ``list comprehension`` that uses the same condition I used to create ``odd_numbers``
 
   .. code-block:: python
 

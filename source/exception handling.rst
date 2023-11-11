@@ -7,7 +7,7 @@ This chapter covers how to handle Exceptions in python using Test Driven Develop
 Exceptions are raised in python when an error occurs and break execution of the program. When an exception is encountered no further instructions in the program will run.
 This is useful because it means there is some violation that should be taken care of for the program to proceed as intended.
 
-It also a pain when it causes the program to exit prematurely. What if we want our program to run regardless of errors? We might want it to give messages to the user who may not care or understand the details that come with Exceptions?
+It also a pain when it causes the program to exit prematurely. What if I want the program to run regardless of errors? I might want it to give messages to the user who may not care or understand the details that come with Exceptions?
 
 Enter Exception Handling, In python there is a way to handling exceptions that allows a program to make a decision when an Exception is encountered. Enough words, time to write some code.
 
@@ -40,7 +40,7 @@ create a file called ``test_exception_handling.py`` in the ``tests`` folder and 
       def test_catching_module_not_found_error_in_tests(self):
           import non_existent_module
 
-the terminal gives us a :doc:`ModuleNotFoundError` and we add it to our list of exceptions encountered
+the terminal gives us a :doc:`ModuleNotFoundError` and I add it to the list of exceptions encountered
 
 .. code-block:: python
 
@@ -51,7 +51,7 @@ the terminal gives us a :doc:`ModuleNotFoundError` and we add it to our list of 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-We could take care of this error by creating the module, but in this case we want to catch or handle the exception in the test as a way to prove that a ``ModuleNotFoundError`` was raised when we refer to ``non_existent_module``.
+I could take care of this error by creating the module, but in this case I want to catch or handle the exception in the test as a way to prove that a ``ModuleNotFoundError`` was raised when I refer to ``non_existent_module``.
 
 Add a ``self.assertRaises`` to ``test_catching_module_not_found_error_in_tests``
 
@@ -64,8 +64,8 @@ Add a ``self.assertRaises`` to ``test_catching_module_not_found_error_in_tests``
 the terminal updates to show passing tests. How does all this work?
 
 
-* we use the ``self.assertRaises`` :doc:`method <functions>` from the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class which takes a given exception as its input, in this case ``ModuleNotFoundError`` and checks if that error is raised by the statements given in the context below (the indented block after the ``with`` statement)
-* ``with`` - creates the context where we test that the exception is raised
+* I use the ``self.assertRaises`` :doc:`method <functions>` from the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class which takes a given exception as its input, in this case ``ModuleNotFoundError`` and checks if that error is raised by the statements given in the context below (the indented block after the ``with`` statement)
+* ``with`` - creates the context where I test that the exception is raised
 
   - `read more about the with statement <https://docs.python.org/3/reference/compound_stmts.html?highlight=statement#the-with-statement>`_
   - `read more about with statement context managers <https://docs.python.org/3/reference/datamodel.html#with-statement-context-managers>`_
@@ -75,7 +75,7 @@ the terminal updates to show passing tests. How does all this work?
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-With what we have learned about catching or handling exceptions we can test that a program fails in an expected way
+With what I have learned about catching or handling exceptions I can test that a program fails in an expected way
 
 * RED: make it fail
 
@@ -92,7 +92,7 @@ With what we have learned about catching or handling exceptions we can test that
 
       E       AttributeError: module 'module' has no attribute 'non_existent_attribute'
 
-  add the exception to our running list
+  add the exception to the running list
 
   .. code-block:: python
 
@@ -220,7 +220,7 @@ With what we have learned about catching or handling exceptions we can test that
 
 * RED: make it fail
 
-  we trigger another attribute error, by adding a line to ``test_catching_attribute_errors_in_tests``
+  I trigger another attribute error, by adding a line to ``test_catching_attribute_errors_in_tests``
 
   .. code-block:: python
 
@@ -263,7 +263,7 @@ With what we have learned about catching or handling exceptions we can test that
 
 * REFACTOR: make it better
 
-  We just created the same context 5 times, this is a good candidate for a rewrite. What if we remove the duplication? Since our ``self.assertRaises`` catches an :doc:`AttributeError` in each case, we only need to state it once and place all the lines that raise the error underneath it.
+  I just created the same context 5 times, this is a good candidate for a rewrite. What if I remove the duplication? Since the ``self.assertRaises`` catches an :doc:`AttributeError` in each case, I only need to state it once and place all the lines that raise the error underneath it.
 
   .. code-block:: python
 
@@ -275,26 +275,26 @@ With what we have learned about catching or handling exceptions we can test that
               module.Class.non_existent_attribute
               module.Class.non_existent_method()
 
-  Fantastic! all our tests are still passing
+  Fantastic! all the tests are still passing
 
 ----
 
 How to handle Exceptions in programs
 ------------------------------------
 
-Earlier on we saw how to verify that an exception gets raised, we will now look at how to handle exceptions when they are raised
+Earlier on I saw how to verify that an exception gets raised, I will now look at how to handle exceptions when they are raised
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-Let us deliberately trigger an exception in our code and then handle it. Add a failing test to ``test_exception_handling.py`` with a new test
+Let us deliberately trigger an exception in the code and then handle it. Add a failing test to ``test_exception_handling.py`` with a new test
 
 .. code-block:: python
 
     def test_catching_exceptions(self):{
         exceptions.raises_exception_error()}
 
-the terminal displays a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ and we update our running list of exceptions encountered
+the terminal displays a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ and I update the running list of exceptions encountered
 
 .. code-block:: python
 
@@ -308,7 +308,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* A `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ is raised when a name is used within a module and there with no definition for the name. In our code above we call ``exceptions.raises_exception_error`` and there is no definition for ``exceptions``
+* A `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ is raised when a name is used within a module and there with no definition for the name. In the code above I call ``exceptions.raises_exception_error`` and there is no definition for ``exceptions``
 
   update the ``import`` section with a new line
 
@@ -321,7 +321,7 @@ GREEN: make it pass
   the terminal now gives us a :doc:`ModuleNotFoundError`
 
 * create a file called ``exceptions.py`` in the ``{PROJECT_NAME}`` folder, and the terminal updates to show an :doc:`AttributeError`
-* update ``exceptions.py`` with the name of the attribute called in the test, and the terminal updates to show a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ since we have not defined ``raises_exception_error`` in ``exceptions.py``
+* update ``exceptions.py`` with the name of the attribute called in the test, and the terminal updates to show a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ since I have not defined ``raises_exception_error`` in ``exceptions.py``
 
   .. code-block:: python
 
@@ -333,7 +333,7 @@ GREEN: make it pass
 
      raises_exception_error = None
 
-  which we add to our running list of exceptions encountered
+  which I add to the running list of exceptions encountered
 
   .. code-block:: python
 
@@ -364,7 +364,7 @@ GREEN: make it pass
 
       E       Exception
 
-* we add a ``self.assertRaises`` to ``test_catching_exceptions`` in ``test_exception_handling.py`` to confirm that this exception is raised and allow our tests to continue even though there is a failure
+* I add a ``self.assertRaises`` to ``test_catching_exceptions`` in ``test_exception_handling.py`` to confirm that this exception is raised and allow the tests to continue even though there is a failure
 
   .. code-block:: python
 
@@ -381,7 +381,7 @@ You now know how to deliberately create an exception which means you have absolu
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Let us add exception handling to our program so it does not end when it encounters an exception but instead gives a message
+Let us add exception handling to the program so it does not end when it encounters an exception but instead gives a message
 
 
 * RED: make it fail
@@ -441,7 +441,7 @@ Let us add exception handling to our program so it does not end when it encounte
 
 * RED: make it fail
 
-  our solution has a problem, the ``exception_handler`` always returns ``failed`` regardless of what we provide as an argument, we should add a new test to ``test_exception_handling`` that provides a different input with an expectation of a different result
+  the solution has a problem, the ``exception_handler`` always returns ``failed`` regardless of what I provide as an argument, I should add a new test to ``test_exception_handling`` that provides a different input with an expectation of a different result
 
   .. code-block:: python
 
@@ -473,7 +473,7 @@ Let us add exception handling to our program so it does not end when it encounte
 
     E       AssertionError: 'failed' != 'succeeded'
 
-  We want the ``exception_handler`` function to return a different input based on the exceptions that occur within the function to help us learn how to handle exceptions.
+  I want the ``exception_handler`` function to return a different input based on the exceptions that occur within the function to help us learn how to handle exceptions.
 
   Let us update ``exception_handler`` in ``exceptions.py`` to call a function it receives as input
 
@@ -482,7 +482,7 @@ Let us add exception handling to our program so it does not end when it encounte
     def exception_handler(function):
         return function()
 
-  the terminal updates to show a :doc:`TypeError` because ``does_not_raise_exception_error`` is not a function, we will redefine ``does_not_raise_exception_error`` to make it callable
+  the terminal updates to show a :doc:`TypeError` because ``does_not_raise_exception_error`` is not a function, I will redefine ``does_not_raise_exception_error`` to make it callable
 
   .. code-block:: python
 
@@ -496,10 +496,10 @@ Let us add exception handling to our program so it does not end when it encounte
     AssertionError: None != 'succeeded'
 
   - The ``exception_handler`` function returns the result of calling the function it receives as input
-  - When we call ``exceptions.exception_handler(exceptions.does_not_raise_exception_error)`` it in turn calls ``does_not_raise_exception_error`` and returns the result of the call which is currently defined as :doc:`None </data structures: None>`
-  - Since the result is not equal to ``succeeded``, our expectation is not met.
+  - When I call ``exceptions.exception_handler(exceptions.does_not_raise_exception_error)`` it in turn calls ``does_not_raise_exception_error`` and returns the result of the call which is currently defined as :doc:`None </data structures: None>`
+  - Since the result is not equal to ``succeeded``, the expectation is not met.
 
-  we use a ``try...except...else`` statement to catch or handle exceptions in python. This allows the program to make a decision when it encounters an Exception.
+  I use a ``try...except...else`` statement to catch or handle exceptions in python. This allows the program to make a decision when it encounters an Exception.
 
   Update ``exception_handler`` in ``exceptions.py`` to handle exceptions
 
@@ -515,7 +515,7 @@ Let us add exception handling to our program so it does not end when it encounte
 
   the terminal updates to show passing tests
 
-We can think of the  ``try...except...else`` statement as
+I can think of the  ``try...except...else`` statement as
 * ``try`` something, if it raises an ``Exception`` do this
 *-* if it does not raise an exception do that
 
@@ -554,7 +554,7 @@ GREEN: make it pass
 
     always_returns
 
-* define ``always_returns`` as a variable and we get an :doc:`AttributeError`
+* define ``always_returns`` as a variable and I get an :doc:`AttributeError`
 
   .. code-block:: python
 
@@ -567,7 +567,7 @@ GREEN: make it pass
     def always_returns():
         return None
 
-* update the signature of ``always_returns`` to accept a function that we call and return its value
+* update the signature of ``always_returns`` to accept a function that I call and return its value
 
   .. code-block:: python
 
@@ -580,7 +580,7 @@ GREEN: make it pass
 
     AssertionError: None != 'always_returns_this'
 
-  because ``exceptions.always_returns`` returns the value of ``does_not_raise_exception_error`` which is :doc:`None </data structures: None>` and is not equal to our expectation in the test which is ``always_returns_this``
+  because ``exceptions.always_returns`` returns the value of ``does_not_raise_exception_error`` which is :doc:`None </data structures: None>` and is not equal to the expectation in the test which is ``always_returns_this``
 
 * add exception handling with using ``try...except...else``
 
@@ -596,7 +596,7 @@ GREEN: make it pass
 
   the terminal displays an :doc:`AssertionError` and since no exception is raised when ``does_not_raise_exception_error`` is called by ``always_returns_this``, it returns ``succeeded`` which is not equal to ``always_returns_this``
 
-* we can try adding another return statement to the function to see if that would work
+* I can try adding another return statement to the function to see if that would work
 
   .. code-block:: python
 
@@ -613,7 +613,7 @@ GREEN: make it pass
 
   Since the function returns ``succeeded`` it ignores the return statement below it.
 
-  We can add a clause to force it to ignore the other return statements and only return what we want
+  I can add a clause to force it to ignore the other return statements and only return what I want
 
 * add a ``finally`` clause to the ``try...except...else`` block
 

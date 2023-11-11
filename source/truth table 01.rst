@@ -1,7 +1,7 @@
 Truth Table
 ===========
 
-Sometimes we want programs to make decisions based on inputs or conditions, and can make this happen with conditional statements. Let us explore writing conditional statements in python with Test Driven Development using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_ from mathematics
+Sometimes I want programs to make decisions based on inputs or conditions, and can make this happen with conditional statements. Let us explore writing conditional statements in python with Test Driven Development using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_ from mathematics
 
 There are two boolean values
 
@@ -53,7 +53,7 @@ GREEN: make it pass
      # AssertionError
      # ModuleNotFoundError
 
-* create a file called ``truth_table.py`` in the project folder and the terminal displays an :doc:`AttributeError` which we add to our list of exceptions encountered
+* create a file called ``truth_table.py`` in the project folder and the terminal displays an :doc:`AttributeError` which I add to the list of exceptions encountered
   .. code-block:: python
 
      # Exceptions Encountered
@@ -66,7 +66,7 @@ GREEN: make it pass
 
      def logical_true():
          return True
-  the terminal updates to show passing tests and we are reminded that ``True`` is ``True``
+  the terminal updates to show passing tests and I are reminded that ``True`` is ``True``
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -90,7 +90,7 @@ REFACTOR: make it better
      def logical_false():
          return False
 
-* We are again reminded that ``False`` is ``False`` and ``True`` is ``True``
+* I are again reminded that ``False`` is ``False`` and ``True`` is ``True``
 
 ----
 
@@ -159,20 +159,20 @@ GREEN: make it pass
 ~~~~~~~~~~~~~~~~~~~
 
 
-* update ``truth_table.py`` with a definition for ``logical_negation`` using the solution we had for ``logical_identity``
+* update ``truth_table.py`` with a definition for ``logical_negation`` using the solution I had for ``logical_identity``
   .. code-block:: python
 
      def logical_negation(value):
          return value
   the terminal updates to show an :doc:`AssertionError`. The ``logical_negation`` function returns the value it receives as input but the test expects it to return the opposite
-* we use the ``not`` keyword to make the function return the opposite of what it receives. Update the return statement in ``logical_negation`` to return the opposite of the value it receives
+* I use the ``not`` keyword to make the function return the opposite of what it receives. Update the return statement in ``logical_negation`` to return the opposite of the value it receives
   .. code-block:: python
 
      def logical_negation(value):
        return not value
   the terminal updates to show passing tests
 
-Reviewing what we know so far
+Reviewing what I know so far
 
 
 * ``True`` is ``not False``
@@ -180,4 +180,4 @@ Reviewing what we know so far
 * ``False`` is ``False``
 * ``True`` is ``True``
 
-We have not written any conditional statements yet, only boolean values and their opposites. We will write some in `Logical Conjunction <./TRUTH_TABLE_02_LOGICAL_CONJUNCTION.rst>`_ next
+I have not written any conditional statements yet, only boolean values and their opposites. I will write some in `Logical Conjunction <./TRUTH_TABLE_02_LOGICAL_CONJUNCTION.rst>`_ next

@@ -1,7 +1,7 @@
 Truth Table: Logical Equality
 =============================
 
-We will continue to step through learning conditional statements in python using Test Driven Development using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
+I will continue to step through learning conditional statements in python using Test Driven Development using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
 Prerequisites
 -------------
@@ -33,7 +33,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* add a definition to ``truth_table.py`` with a return statement, we can pick ``True`` or ``False`` since 2 out of the 4 cases are either ``True`` or ``False``
+* add a definition to ``truth_table.py`` with a return statement, I can pick ``True`` or ``False`` since 2 out of the 4 cases are either ``True`` or ``False``
   .. code-block:: python
 
        def logical_equality(p, q):
@@ -56,20 +56,20 @@ GREEN: make it pass
            if p == False and q == True:
                return False
            return True
-    We are green!
+    I are green!
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-What can we do to make this better?
+What can I do to make this better?
 
 
-* looking at the test cases, we can summarize them as 2 states
+* looking at the test cases, I can summarize them as 2 states
 
   * logical_equality returns True when ``p`` and ``q`` are the same
   * logical_equality returns False when ``p`` and ``q`` are not the same
 
-* we rewrite the condition statements to reflect the second observation
+* I rewrite the condition statements to reflect the second observation
   .. code-block:: python
 
        def logical_equality(p, q):
@@ -77,7 +77,7 @@ What can we do to make this better?
                return False
            return True
 
-* updating the function with the first observation we have
+* updating the function with the first observation I have
   .. code-block:: python
 
        def logical_equality(p, q):
@@ -117,7 +117,7 @@ What can we do to make this better?
            return p == q
     Well done! the tests are still green
 
-What if we review. For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
+What if I review. For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
 
 
 * ``logical_equality`` is ``==``

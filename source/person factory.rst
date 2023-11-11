@@ -31,7 +31,7 @@ create a file called ``test_person_factory.py`` in the ``tests`` folder and add 
        def test_person_factory(self):
            self.assertEqual(person.factory(), None)
 
-the terminal updates to show a ``ModuleNotFoundError`` and we add it to our list of exceptions encountered
+the terminal updates to show a ``ModuleNotFoundError`` and I add it to the list of exceptions encountered
 
 .. code-block:: python
 
@@ -43,7 +43,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* create a file called ``person.py`` in the ``{PROJECT_NAME}`` folder and the terminal updates to show an :doc:`AttributeError` which we add to our list of exceptions
+* create a file called ``person.py`` in the ``{PROJECT_NAME}`` folder and the terminal updates to show an :doc:`AttributeError` which I add to the list of exceptions
 
   .. code-block:: python
 
@@ -63,7 +63,7 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* we will now add more details to ``test_person_factory``
+* I will now add more details to ``test_person_factory``
 
   .. code-block:: python
 
@@ -85,7 +85,7 @@ REFACTOR: make it better
 
   the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ is raised for ``this_year``
 
-* we add the new exception to our running list
+* I add the new exception to the running list
 
   .. code-block:: python
 
@@ -106,9 +106,9 @@ REFACTOR: make it better
            return None
        ...
 
-  the terminal updates to show a :doc:`TypeError` since our ``person.factory`` function signature does not allow arguments to be passed to it.
+  the terminal updates to show a :doc:`TypeError` since the ``person.factory`` function signature does not allow arguments to be passed to it.
 
-* we update our list of exceptions encountered
+* I update the list of exceptions encountered
 
   .. code-block:: python
 
@@ -137,8 +137,8 @@ REFACTOR: make it better
 
   the terminal updates to show a :doc:`TypeError` for the next keyword argument
 
-* we update the ``factory`` function definition for each keyword until we get a :doc:`TypeError` for the line where we subtract ``this_year() - this_year()`` because we cannot perform a subtraction operation on :doc:`None </data structures: None>` and our ``this_year`` function currently returns :doc:`None </data structures: None>`
-* update our definition for ``this_year`` using a function from the `datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#module-datetime>`_ library that returns the current year we are in
+* I update the ``factory`` function definition for each keyword until I get a :doc:`TypeError` for the line where I subtract ``this_year() - this_year()`` because I cannot perform a subtraction operation on :doc:`None </data structures: None>` and the ``this_year`` function currently returns :doc:`None </data structures: None>`
+* update the definition for ``this_year`` using a function from the `datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#module-datetime>`_ library that returns the current year I are in
 
   .. code-block:: python
 
@@ -150,11 +150,11 @@ REFACTOR: make it better
        return datetime.datetime.now().year
 
 
-  - we import the ``datetime`` library so we can use its :doc:`functions` and :doc:`classes`
-  - we return the ``year`` attribute of the object returned by the ``now`` :doc:`method <functions>` of the ``datetime.datetime`` class, which is a representation of the current local date and time, we could also use ``today`` or ``utcnow`` to achieve the same result
-  - we get the ``year`` attribute of the object returned since that is all we are interested in
+  - I import the ``datetime`` library so I can use its :doc:`functions` and :doc:`classes`
+  - I return the ``year`` attribute of the object returned by the ``now`` :doc:`method <functions>` of the ``datetime.datetime`` class, which is a representation of the current local date and time, I could also use ``today`` or ``utcnow`` to achieve the same result
+  - I get the ``year`` attribute of the object returned since that is all I are interested in
 
-* the terminal updates to show an :doc:`AssertionError` since our ``person.factory`` function returns :doc:`None </data structures: None>` but the test expects a :doc:`data structures: dictionaries`. We should update the function to return an empty dictionary
+* the terminal updates to show an :doc:`AssertionError` since the ``person.factory`` function returns :doc:`None </data structures: None>` but the test expects a :doc:`data structures: dictionaries`. I should update the function to return an empty dictionary
 
   .. code-block:: python
 
@@ -163,7 +163,7 @@ REFACTOR: make it better
 
   the terminal updates to show the differences between the :doc:`data structures: dictionaries` returned by the ``factory`` function and the one expected in the test
 
-* we update the empty ``dictionary`` in the ``factory`` function to match the expected results
+* I update the empty ``dictionary`` in the ``factory`` function to match the expected results
 
   .. code-block:: python
 
@@ -175,7 +175,7 @@ REFACTOR: make it better
                "sex": "F",
            }
 
-  *LOVELY!* the tests pass! Even though the tests pass, the factory function currently returns the exact same dictionary every time, regardless of what information is given to it. To make it more useful we need it to be able to use the inputs given.
+  *LOVELY!* the tests pass! Even though the tests pass, the factory function currently returns the exact same dictionary every time, regardless of what information is given to it. To make it more useful I need it to be able to use the inputs given.
 
 * add another test to ``test_person_factory.py`` with a different set of inputs
 
@@ -211,9 +211,9 @@ REFACTOR: make it better
                'sex': 'F',
            }
 
-  the terminal updates to show an :doc:`AssertionError` but it no longer shows a difference for ``first_name``. Good, What if we repeat it step by step for every other input until the only error left is for the age
+  the terminal updates to show an :doc:`AssertionError` but it no longer shows a difference for ``first_name``. Good, What if I repeat it step by step for every other input until the only error left is for the age
 
-* For the age to be accurate it has to be a calculation based on the current year. We have a function that returns the current year and we have the ``year_of_birth`` as input, we also have this line in the test ``this_year() - 1983``. Since ``1983`` is the ``year_of_birth`` in this case. We can try updating the ``factory`` function to use that calculation
+* For the age to be accurate it has to be a calculation based on the current year. I have a function that returns the current year and I have the ``year_of_birth`` as input, I also have this line in the test ``this_year() - 1983``. Since ``1983`` is the ``year_of_birth`` in this case. I can try updating the ``factory`` function to use that calculation
 
   .. code-block:: python
 
@@ -225,7 +225,7 @@ REFACTOR: make it better
              'sex': sex,
          }
 
-  the terminal updates to show a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ since we are calling a function that does not exist in ``person.py``
+  the terminal updates to show a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ since I are calling a function that does not exist in ``person.py``
 
 * replace ``this_year()`` with the return value from ``test_person_factory.this_year`` and add an import statement
 
@@ -243,7 +243,7 @@ REFACTOR: make it better
 
   *HOORAY!* the terminal updates to show passing tests
 
-* we will now add another test to ``test_person.py``, this time for default values
+* I will now add another test to ``test_person.py``, this time for default values
 
   .. code-block:: python
 
@@ -264,7 +264,7 @@ REFACTOR: make it better
 
   the terminal updates to show an :doc:`AssertionError` since the value for ``last_name`` does not match the expected value
 
-* since we now have 3 tests with the same value for ``last_name`` we could use that value as the default value in the absence of any other examples. modify the default value for ``last_name`` in the ``person.factory`` definition
+* since I now have 3 tests with the same value for ``last_name`` I could use that value as the default value in the absence of any other examples. modify the default value for ``last_name`` in the ``person.factory`` definition
 
   .. code-block:: python
 
@@ -272,7 +272,7 @@ REFACTOR: make it better
 
   the terminal updates to show passing tests
 
-* what if we try another default value, this time say for sex. add a test to ``test_person_factory_with_default_keyword_arguments``
+* what if I try another default value, this time say for sex. add a test to ``test_person_factory_with_default_keyword_arguments``
 
   .. code-block:: python
 
@@ -291,7 +291,7 @@ REFACTOR: make it better
 
   the terminal updates to show an :doc:`AssertionError`
 
-* since 3 out of our 4 persons created have ``M`` as their sex and 1 has ``F`` as their sex, we could set the majority as the default value to reduce the number of repetitions. modify the default value for the parameter in ``person.factory``
+* since 3 out of the 4 persons created have ``M`` as their sex and 1 has ``F`` as their sex, I could set the majority as the default value to reduce the number of repetitions. modify the default value for the parameter in ``person.factory``
 
   .. code-block:: python
 

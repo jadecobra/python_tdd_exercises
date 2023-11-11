@@ -1,13 +1,13 @@
 Truth Table: Logical Disjunction
 ================================
 
-We will continue to step through learning conditional statements in python using Test Driven Development using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
+I will continue to step through learning conditional statements in python using Test Driven Development using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
-Reviewing what we know so far
+Reviewing what I know so far
 
 
-* we can express ``conditional statements`` on one line with ``return``
-* when there are multiple outcomes we only need to write the condition for the special case and use ``else`` for the others
+* I can express ``conditional statements`` on one line with ``return``
+* when there are multiple outcomes I only need to write the condition for the special case and use ``else`` for the others
 * ``logical_conjunction`` is ``and``
 * ``False`` is ``not True``
 * ``True`` is ``not False``
@@ -44,7 +44,7 @@ GREEN: make it pass
 ~~~~~~~~~~~~~~~~~~~
 
 
-* update ``truth_table.py`` with a function definition like we did for ``logical_conjunction``
+* update ``truth_table.py`` with a function definition like I did for ``logical_conjunction``
 
   .. code-block:: python
 
@@ -53,7 +53,7 @@ GREEN: make it pass
 
   the terminal updates to show an :doc:`AssertionError`
 
-* 3 of the test cases are passing because ``logical_disjunction`` returns ``True`` in 3 of the 4. We need a condition for the fourth case to pass. update the definition
+* 3 of the test cases are passing because ``logical_disjunction`` returns ``True`` in 3 of the 4. I need a condition for the fourth case to pass. update the definition
 
   .. code-block:: python
 
@@ -69,7 +69,7 @@ REFACTOR: make it better
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-* we know from earlier that when we have a nested if statement it can be replaced with an ``and``, so we update our condition
+* I know from earlier that when I have a nested if statement it can be replaced with an ``and``, so I update the condition
 
   .. code-block:: python
 
@@ -78,9 +78,9 @@ REFACTOR: make it better
                return False
            return True
 
-  the terminal shows our tests are still passing
+  the terminal shows the tests are still passing
 
-* we can restate the equality comparison against ``False`` in terms of ``True`` by using the ``not equal`` comparison operator ``!=``
+* I can restate the equality comparison against ``False`` in terms of ``True`` by using the ``not equal`` comparison operator ``!=``
 
   .. code-block:: python
 
@@ -89,7 +89,7 @@ REFACTOR: make it better
                return False
            return True
 
-* how can we express the ``if`` statement using python's implied comparison evaluation? we can use the ``not`` keyword like we did with ``logical_negation``
+* how can I express the ``if`` statement using python's implied comparison evaluation? I can use the ``not`` keyword like I did with ``logical_negation``
 
   .. code-block:: python
 
@@ -98,7 +98,7 @@ REFACTOR: make it better
                return False
            return True
 
-* ``not`` happens twice in that statement. What if we see if we can "factor" it out using algebra
+* ``not`` happens twice in that statement. What if I see if I can "factor" it out using algebra
 
   .. code-block:: python
 
@@ -107,7 +107,7 @@ REFACTOR: make it better
                return False
            return True
 
-  the terminal shows a failing test. OOPS! We've introduced a regression. If we expand our statement using "multiplication" rules. What we have above is
+  the terminal shows a failing test. OOPS! We've introduced a regression. If I expand the statement using "multiplication" rules. What I have above is
 
   .. code-block:: python
 
@@ -116,7 +116,7 @@ REFACTOR: make it better
                return False
            return True
 
-  We get a ``SyntaxError``, the result of the "multiplication" is different from what we started with so we need something different. It should be something that expands out to
+  I get a ``SyntaxError``, the result of the "multiplication" is different from what I started with so I need something different. It should be something that expands out to
 
   .. code-block:: python
 
@@ -134,7 +134,7 @@ REFACTOR: make it better
                return False
            return True
 
-  okay, this looks more like, if we "multiply" this out we get our original statement since the opposite of the opposite of something is something. What if we fix the syntax. The opposite of and is ``or``
+  okay, this looks more like, if I "multiply" this out I get the original statement since the opposite of the opposite of something is something. What if I fix the syntax. The opposite of and is ``or``
 
   .. code-block:: python
 
@@ -165,7 +165,7 @@ REFACTOR: make it better
            if not(not(p or q)):
                return True
 
-  since the negation of a negation gives the original thing we can say
+  since the negation of a negation gives the original thing I can say
 
   .. code-block:: python
 
@@ -202,14 +202,14 @@ REFACTOR: make it better
        def logical_disjunction(p, q):
            return True if p or q else return False
 
-* using python's implicit conditional evaluation we simplify to
+* using python's implicit conditional evaluation I simplify to
 
   .. code-block:: python
 
        def logical_disjunction(p, q):
            return p or q
 
-  *VOILA!* the tests still pass and we have a simple statement that makes all 4 states pass for ``logical_disjunction``
+  *VOILA!* the tests still pass and I have a simple statement that makes all 4 states pass for ``logical_disjunction``
 
 Our knowledge is updated to show that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
 
@@ -223,4 +223,4 @@ Our knowledge is updated to show that for any boolean operation involving 2 inpu
 * ``False`` is ``False``
 * ``True`` is ``True``
 * ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to ``True``
-* when there are multiple outcomes we only need to write the condition for the special case and use ``else`` for the others
+* when there are multiple outcomes I only need to write the condition for the special case and use ``else`` for the others

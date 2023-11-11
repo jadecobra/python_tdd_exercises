@@ -1,7 +1,7 @@
 Truth Table: Project
 ====================
 
-We will continue to step through learning conditional statements in python using Test Driven Development using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
+I will continue to step through learning conditional statements in python using Test Driven Development using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
 Prerequisites
 -------------
@@ -45,12 +45,12 @@ GREEN: make it pass
        def project_first(p, q):
            return True
     the terminal updates to show an :doc:`AssertionError` for the third case
-* before we add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction``, ``negate_first`` and ``negate_second`` because 2 out of the 4 cases have the same return value. We observe that
+* before I add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction``, ``negate_first`` and ``negate_second`` because 2 out of the 4 cases have the same return value. I observe that
 
   * if ``p == True`` the result is ``True``
   * if ``p == False`` the result is ``False``
 
-* add conditions to represent our observations
+* add conditions to represent the observations
   .. code-block:: python
 
        def project_first(p, q):
@@ -84,7 +84,7 @@ REFACTOR: make it better
 
        def project_first(p, q):
            return p
-    we are still green
+    I are still green
 
 Project Second
 --------------
@@ -120,17 +120,17 @@ GREEN: make it pass
        def project_second(p, q):
            return True
     the terminal updates to show an :doc:`AssertionError` for the second case
-* before we add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction``, ``negate_first``, ``negate_second`` and ``project_first`` because 2 out of the 4 cases have the same return value. We observe that
+* before I add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction``, ``negate_first``, ``negate_second`` and ``project_first`` because 2 out of the 4 cases have the same return value. I observe that
 
   * if ``q == True`` the result is ``True``
   * if ``q == False`` the result is ``False``
 
-* What if we try using our conclusion from ``project_first``
+* What if I try using the conclusion from ``project_first``
   .. code-block:: python
 
        def project_second(p, q):
            return p
-    the terminal still shows an :doc:`AssertionError`. What if we return ``q`` instead
+    the terminal still shows an :doc:`AssertionError`. What if I return ``q`` instead
   .. code-block:: python
 
        def project_second(p, q):
@@ -140,7 +140,7 @@ GREEN: make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Since there is no refactoring to do here, we update what we know so far. For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
+Since there is no refactoring to do here, I update what I know so far. For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
 
 
 * ``project_first`` always returns ``p``

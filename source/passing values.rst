@@ -2,20 +2,20 @@
 Passing Values
 ==============
 
-When testing or using a program, we provide data as inputs to the program with an expectation of a return value.
+When testing or using a program, I provide data as inputs to the program with an expectation of a return value.
 
 .. code-block:: python
     input_data -> process -> output
 ```
 
-It is similar to functions in mathematics where we represent a function as ``f`` with inputs ``x`` and a return value of ``y``
+It is similar to functions in mathematics where I represent a function as ``f`` with inputs ``x`` and a return value of ``y``
 
 
 .. code-block:: python
     f(x) -> y
 ```
 
-In testing we are asking the question is `f(x)` equal to ``y`` for the given input ``x`` for example,  we could use an assert statement
+In testing I are asking the question is `f(x)` equal to ``y`` for the given input ``x`` for example,  I could use an assert statement
 
 .. code-block:: python
     assert f(x) == y
@@ -27,7 +27,7 @@ or use the `self.assertEqual` :doc:`method <functions>` from `unittest.TestCase`
     self.assertEqual(f(x), y)
 ```
 
-We are going to look at how to pass values from tests to programs using `string interpolation` with Test Driven Development
+I are going to look at how to pass values from tests to programs using `string interpolation` with Test Driven Development
 
 Prerequisites
 -------------
@@ -55,7 +55,7 @@ class TestPassingValues(unittest.TestCase):
             'I received this message: hello'
         )
 ```
-the terminal updates to show a [ModuleNotFoundError](./ModuleNotFoundError.rst) and we add it to our list of exceptions encountered
+the terminal updates to show a [ModuleNotFoundError](./ModuleNotFoundError.rst) and I add it to the list of exceptions encountered
 
 .. code-block:: python
 # Exceptions Encountered
@@ -65,7 +65,7 @@ the terminal updates to show a [ModuleNotFoundError](./ModuleNotFoundError.rst) 
 
 ### GREEN: make it pass
 
-- create a file called `telephone.py` in the project folder and the terminal updates to show an :doc:`AttributeError` which we add to our list of exceptions
+- create a file called `telephone.py` in the project folder and the terminal updates to show an :doc:`AttributeError` which I add to the list of exceptions
 
 .. code-block:: python
     # Exceptions Encountered
@@ -81,14 +81,14 @@ the terminal updates to show a [ModuleNotFoundError](./ModuleNotFoundError.rst) 
         pass
     ```
     the terminal still displays an :doc:`AttributeError` but with a different message
-- we add a definition for an attribute called ``text`` to the ``Telephone`` class
+- I add a definition for an attribute called ``text`` to the ``Telephone`` class
 
 .. code-block:: python
     class Telephone(object):
 
         text = None
     ```
-    the terminal updates to show a [TypeError](./TypeError.rst) because ``text`` is not callable and we add the new exception to our list of exceptions encountered
+    the terminal updates to show a :doc:`TypeError` because ``text`` is not callable and I add the new exception to the list of exceptions encountered
 
 .. code-block:: python
     # Exceptions Encountered
@@ -105,7 +105,7 @@ the terminal updates to show a [ModuleNotFoundError](./ModuleNotFoundError.rst) 
         def text():
             return None
     ```
-    the terminal displays a [TypeError](./TypeError.rst) this time because when we called `telephone.Telephone.text('hello')` in the test we provided a positional argument as input with the value ``hello``, but the signature of the :doc:`method <functions>` we defined does not take in any arguments
+    the terminal displays a :doc:`TypeError` this time because when I called `telephone.Telephone.text('hello')` in the test I provided a positional argument as input with the value ``hello``, but the signature of the :doc:`method <functions>` I defined does not take in any arguments
 - modify the definition for ``text`` to take in a value
 
 .. code-block:: python
@@ -115,7 +115,7 @@ the terminal updates to show a [ModuleNotFoundError](./ModuleNotFoundError.rst) 
         def text(value):
             return None
     ```
-    we now see an :doc:`AssertionError` in the terminal
+    I now see an :doc:`AssertionError` in the terminal
 - update the return statement with the expected value to make the test pass
 
 .. code-block:: python
@@ -126,7 +126,7 @@ the terminal updates to show a [ModuleNotFoundError](./ModuleNotFoundError.rst) 
 
 ### REFACTOR: make it better
 
-The problem with this solution is that no matter what value we send to the `Telephone.text` :doc:`method <functions>` it will always return `'I received this message: hello'`. We need to make it more generic so it returns a value that is dependent on the input
+The problem with this solution is that no matter what value I send to the `Telephone.text` :doc:`method <functions>` it will always return `'I received this message: hello'`. I need to make it more generic so it returns a value that is dependent on the input
 
 - RED: make it fail
 
@@ -149,7 +149,7 @@ The problem with this solution is that no matter what value we send to the `Tele
 
 - GREEN: make it pass
 
-    We can add variable values to strings by using [string interpolation](https://peps.python.org/pep-0498/). Let us try this out by changing the ``text`` :doc:`method <functions>` in `telephone.py`
+    I can add variable values to strings by using [string interpolation](https://peps.python.org/pep-0498/). Let us try this out by changing the ``text`` :doc:`method <functions>` in `telephone.py`
 
 .. code-block:: python
     def text(value):
@@ -159,7 +159,7 @@ The problem with this solution is that no matter what value we send to the `Tele
 
 ## Passing Data Structures
 
-we can try this with other python [data structures](./DATA_STRUCTURES.rst) to see what happens
+I can try this with other python [data structures](./DATA_STRUCTURES.rst) to see what happens
 
 ### RED: make it fail
 

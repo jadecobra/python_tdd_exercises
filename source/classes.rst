@@ -2,7 +2,7 @@
 classes
 =======
 
-We will step through writing classes in python using Test Driven Development
+I will step through writing classes in python using Test Driven Development
 
 ``classes`` are a template or blueprint that represent an object. They are a collection of ``methods(functions)`` and ``attributes(variables)`` that belong together
 
@@ -26,7 +26,7 @@ How to define a Class with pass
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-we create a new file called ``test_classes.py`` in the ``tests`` directory
+I create a new file called ``test_classes.py`` in the ``tests`` directory
 
 .. code-block:: python
 
@@ -82,12 +82,12 @@ GREEN: make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Let us review what we have written so far
+Let us review what I have written so far
 
 
 * ``pass`` is a placeholder
 * ``self.assertIsInstance`` is a `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`method <functions>` that checks if the first input to the :doc:`method <functions>` is an instance of the second input
-* in python everything is an ``object`` which means there's a class definition for it, our test ``self.assertIsInstance(classes.ClassWithPass(), object)`` checks if ``ClassWithPass`` is an ``object``
+* in python everything is an ``object`` which means there's a class definition for it, the test ``self.assertIsInstance(classes.ClassWithPass(), object)`` checks if ``ClassWithPass`` is an ``object``
 
 How to define a Class with parentheses
 --------------------------------------
@@ -131,7 +131,7 @@ GREEN: make it pass
   the terminal shows all tests are still passing.
 
 
-* We now know that we can define ``classes``
+* I now know that I can define ``classes``
 
   - with parentheses
   - without parentheses
@@ -140,17 +140,17 @@ GREEN: make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-In object oriented programming there is a concept called `Inheritance <https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming>`_\ ). With Inheritance we can define new ``objects`` that inherit from other existing ``objects``. This makes creating things easier because we do not have to reinvent or rewrite things that already exist, we can inherit them instead.
+In object oriented programming there is a concept called `Inheritance <https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming>`_\ ). With Inheritance I can define new ``objects`` that inherit from other existing ``objects``. This makes creating things easier because I do not have to reinvent or rewrite things that already exist, I can inherit them instead.
 
 How to define a Class with inheritance
 -------------------------------
 
-To use inheritance we specify the "parent" in parentheses when we define the new object (the child) to establish the relationship
+To use inheritance I specify the "parent" in parentheses when I define the new object (the child) to establish the relationship
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-we add another test to ``TestClasses`` in ``test_classes.py``
+I add another test to ``TestClasses`` in ``test_classes.py``
 
 .. code-block:: python
 
@@ -187,7 +187,7 @@ GREEN: make it pass
   and the terminal still shows passing tests
 
 
-We now know that in python
+I now know that in python
 
 
 * classes can be defined
@@ -197,7 +197,7 @@ We now know that in python
   - without parentheses
   - ``pass`` is a placeholder
 
-* classes implicitly inherit from the ``object`` class, because in each of our tests, whether explicitly stated or not, the class is an ``instance`` of an ``object``
+* classes implicitly inherit from the ``object`` class, because in each of the tests, whether explicitly stated or not, the class is an ``instance`` of an ``object``
 * what is an `object <https://docs.python.org/3/glossary.html#term-object>`_\ ?
 
 .. admonition:: RULE OF THUMB
@@ -209,15 +209,15 @@ We now know that in python
 
 
 How to define a Class with attributes
-------------------------------
+--------------------------------------
 
-Since we know how to define a class, add some tests for attributes
+Since I know how to define a class, add some tests for attributes
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
 
-* we add a failing test to ``TestClasses`` in ``classes.py``
+* I add a failing test to ``TestClasses`` in ``classes.py``
 
   .. code-block:: python
 
@@ -235,14 +235,14 @@ RED: make it fail
 
         pass
 
-  though the terminal still outputs an :doc:`AttributeError`, this time it is for a missing attribute in our newly defined class
+  though the terminal still outputs an :doc:`AttributeError`, this time it is for a missing attribute in the newly defined class
 
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* we add an attribute to ``ClassWithAttributes``
+* I add an attribute to ``ClassWithAttributes``
 
   .. code-block:: python
 
@@ -266,7 +266,7 @@ GREEN: make it pass
   the terminal updates to show an :doc:`AssertionError`
 
 
-* we redefine the attribute to make the test pass
+* I redefine the attribute to make the test pass
 
   .. code-block:: python
 
@@ -281,7 +281,7 @@ GREEN: make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-What if we repeat this with other python `data structures <./DATA_STRUCTURES.rst>`_
+What if I repeat this with other python `data structures <./DATA_STRUCTURES.rst>`_
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -323,10 +323,10 @@ update ``ClassWithAttributes`` with attributes to make the tests pass
 
 the terminal updates to show passing tests
 
-How to define a Class with Methods
+How to define a Class with methods
 ----------------------------------
 
-We can define classes with :doc:`methods <functions>` which are function definitions within the class
+I can define classes with :doc:`methods <functions>` which are function definitions within the class
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -347,7 +347,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* we add a class definition to ``classes.py``
+* I add a class definition to ``classes.py``
 
   .. code-block:: python
 
@@ -371,7 +371,7 @@ GREEN: make it pass
   the terminal updates to show a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ because there is no definition for ``method_a``
 
 
-* when we define ``method_a`` as an attribute by assigning it as the name for the null value :doc:`None </data structures: None>`
+* when I define ``method_a`` as an attribute by assigning it as the name for the null value :doc:`None </data structures: None>`
 
   .. code-block:: python
 
@@ -381,7 +381,7 @@ GREEN: make it pass
 
         method_a = None
 
-  the terminal now reveals a [TypeError](./TypeError.rst) since ``method_a`` is not callable
+  the terminal now reveals a :doc:`TypeError` since ``method_a`` is not callable
 
 
 * update the definition of ``method_a`` to make it a function
@@ -397,7 +397,7 @@ GREEN: make it pass
   and the terminal shows an :doc:`AssertionError`
 
 
-* what we do now is change the value the function returns to match the expectation of our test
+* what I do now is change the value the function returns to match the expectation of the test
 
   .. code-block:: python
 
@@ -410,7 +410,7 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* we can make this better by adding a few more tests to ``test_classes_with_methods`` for fun
+* I can make this better by adding a few more tests to ``test_classes_with_methods`` for fun
 
   .. code-block:: python
 
@@ -426,15 +426,15 @@ REFACTOR: make it better
 
 ----
 
-How to define a Class with Methods and Attributes
-------------------------------------------
+How to define a Class with attributes and methods
+-------------------------------------------------
 
-Since we know how to define classeswith Methods and how to define classes with attributes, What if we try defining a class that has both
+Since I know how to define classes with methods and how to define classes with attributes, What if I try defining a class that has both
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-we add another test for a class that has both attributes and methods
+I add another test for a class that has both attributes and methods
 
 .. code-block:: python
 
@@ -468,14 +468,14 @@ update ``classes.py`` to make the tests pass by defining the class, attribute an
 ----
 
 How to define a Class with an initializer
-----------------------------------
+------------------------------------------
 
-CONGRATULATIONS. You now know how to define classes, attributes and methods. We will now expand on this knowledge to learn how to use classes
+CONGRATULATIONS. You now know how to define classes, attributes and methods. I will now expand on this knowledge to learn how to use classes
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-we will add a failing test to ``test_classes.py``
+I will add a failing test to ``test_classes.py``
 
 .. code-block:: python
 
@@ -512,7 +512,7 @@ GREEN: make it pass
   the terminal produces a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
 
-* we add a definition for the ``sex`` attribute
+* I add a definition for the ``sex`` attribute
 
   .. code-block:: python
 
@@ -538,7 +538,7 @@ REFACTOR: make it better
 
   the terminal displays an :doc:`AttributeError`
 
-* trying the same solution we used for the ``Boy`` class, add a definition for the ``Girl`` class to ``classes.py``
+* trying the same solution I used for the ``Boy`` class, add a definition for the ``Girl`` class to ``classes.py``
 
   .. code-block:: python
 
@@ -547,18 +547,18 @@ REFACTOR: make it better
 
          sex = 'M'
 
-  and the terminal displays a [TypeError](./TypeError.rst)
+  and the terminal displays a :doc:`TypeError`
 
   .. code-block:: python
 
     TypeError: Girl() takes no arguments
 
   - If you have gone through the [functions](./07_functions.rst) chapter you will see a similarity in this last test and passing inputs to functions. The call `classes.Girl(sex='F')` looks like a call to a function with keyword arguments
-  - Which begs the question - How do we define classes to accept keyword arguments when the definition of a class defines the parent it inherits from for example,  `class Class(object)`? The answer - We use an initializer
+  - Which begs the question - How do I define classes to accept keyword arguments when the definition of a class defines the parent it inherits from for example,  `class Class(object)`? The answer - I use an initializer
   - What is an initializer? a class method(function) that allows customization of `instances/copies` of a ``class``
 
 
-* add an initiializer to the ``Girl`` class
+* add an initializer to the ``Girl`` class
 
   .. code-block:: python
 
@@ -570,7 +570,7 @@ REFACTOR: make it better
          def __init__(self):
              pass
 
-  the terminal responds with a [TypeError](./TypeError.rst)
+  the terminal responds with a :doc:`TypeError`
 
   .. code-block:: python
 
@@ -611,13 +611,13 @@ REFACTOR: make it better
   the terminal displays passing tests
 
 
-* Wait a minute, we just repeated the same thing twice.
+* Wait a minute, I just repeated the same thing twice.
 
-  - We defined a ``class`` with a name
+  - I defined a ``class`` with a name
   - defined an attribute called ``sex``
   - defined an ``__init__`` :doc:`method <functions>` which takes in a ``sex`` keyword argument
 
-* What if we make the repetition complete by redefining the ``Boy`` class to match the ``Girl`` and ``Other`` class
+* What if I make the repetition complete by redefining the ``Boy`` class to match the ``Girl`` and ``Other`` class
 
   .. code-block:: python
 
@@ -629,10 +629,10 @@ REFACTOR: make it better
         def __init__(self, sex=None):
             pass
 
-  the terminal responds with all tests still passing and we have now written the same thing 3 times. Earlier on we discussed inheritance, and will now try to use it to remove this duplication
+  the terminal responds with all tests still passing and I have now written the same thing 3 times. Earlier on I discussed inheritance, and will now try to use it to remove this duplication
 
 
-* try adding a new class called ``Human`` to ``classes.py`` before the definition for ``Boy`` with the same attribute and :doc:`method <functions>` of the classes we are trying to abstract
+* try adding a new class called ``Human`` to ``classes.py`` before the definition for ``Boy`` with the same attribute and :doc:`method <functions>` of the classes I are trying to abstract
 
   .. code-block:: python
 
@@ -670,7 +670,7 @@ REFACTOR: make it better
         pass
 
 
-* What if we try the same thing with the ``Girl`` class and update its definition to inherit from the ``Human`` class
+* What if I try the same thing with the ``Girl`` class and update its definition to inherit from the ``Human`` class
 
   .. code-block:: python
 
@@ -693,7 +693,7 @@ REFACTOR: make it better
 
   the terminal still shows an :doc:`AssertionError`
 
-* when we remove the ``__init__`` :doc:`method <functions>` from the ``Girl`` class
+* when I remove the ``__init__`` :doc:`method <functions>` from the ``Girl`` class
 
   .. code-block:: python
 
@@ -704,7 +704,7 @@ REFACTOR: make it better
 
   the terminal updates to show passing tests
 
-* can we do the same with the ``Other`` class? update the definition to inherit from the ``Human`` class
+* can I do the same with the ``Other`` class? update the definition to inherit from the ``Human`` class
 
   .. code-block:: python
 
@@ -715,7 +715,7 @@ REFACTOR: make it better
 
     the terminal updates to show passing tests
 
-* one last change and we remove the ``sex`` attribute from the ``Human`` class
+* one last change and I remove the ``sex`` attribute from the ``Human`` class
 
   .. code-block:: python
 
@@ -724,21 +724,21 @@ REFACTOR: make it better
            def __init__(self, sex='M'):
                self.sex = sex
 
-  all tests are passing in the terminal, we have successfully refactored the 3 classes and abstracted a ``Human`` class
+  all tests are passing in the terminal, I have successfully refactored the 3 classes and abstracted a ``Human`` class
 
 Why did that work?
 
 
 * the ``Boy``, ``Girl`` and ``Other`` class now inherit from the ``Human`` class which means they all get the same :doc:`methods <functions>` and attributes that the ``Human`` class has, including the ``__init__`` method
 * ``self.sex`` within each class refers to the ``sex`` attribute in the class, allowing its definition from within the ``__init__`` method
-* since ``self.sex`` is defined as a class attribute, it is accessible from outside the class as we do in our tests i.e ``classes.Girl(sex='F').sex`` and ``classes.Other(sex='?').sex``
+* since ``self.sex`` is defined as a class attribute, it is accessible from outside the class as I do in the tests i.e ``classes.Girl(sex='F').sex`` and ``classes.Other(sex='?').sex``
 
 ----
 
 How to View the Attributes and Methods of a Class
 --------------------------------------------------
 
-To view what ``attributes`` and ``methods`` are defined for any object we can call ``dir`` on the object. The ``dir`` :doc:`method <functions>` returns a :doc:`list` that contains the names of all attributes and :doc:`methods <functions>` in the class
+To view what ``attributes`` and ``methods`` are defined for any object I can call ``dir`` on the object. The ``dir`` :doc:`method <functions>` returns a :doc:`list </data structures: lists>` that contains the names of all attributes and :doc:`methods <functions>` in the class
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -755,7 +755,7 @@ add a test to ``test_classes.py``
           ]
       )
 
-the terminal updates to show an :doc:`AssertionError` as our expected and real values do not match
+the terminal updates to show an :doc:`AssertionError` as the expected and real values do not match
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -799,7 +799,7 @@ copy the values from the terminal to update the test to make it pass
           ]
       )
 
-the tests pass and we see the last two values in our list are ``attribute`` and ``method`` which we defined earlier
+the tests pass and I see the last two values in the list are ``attribute`` and ``method`` which I defined earlier
 
 CONGRATULATIONS
 You know
@@ -808,6 +808,6 @@ You know
 * how to define a class with an attribute
 * how to define a class with a method
 * how to define a class with an initializer
-* how to view the attributes and :doc:`methods <functions>`of a class
+* how to view the attributes and :doc:`methods <functions>` of a class
 
 Do you want to `read more about classes? <https://docs.python.org/3/tutorial/classes.html#tut-firstclasses>`_

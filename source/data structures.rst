@@ -3,8 +3,8 @@ Data Structures
 
 Let us take a look at Data Structures in python using Test Driven Development. This chapter covers the null object :doc:`None </data structures: None>`
 
-In programming we process input data of some form and output data in some form.
-We can think of it as
+In programming I process input data of some form and output data in some form.
+I can think of it as
 
 .. code-block:: python
 

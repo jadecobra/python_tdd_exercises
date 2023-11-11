@@ -1,7 +1,7 @@
 Truth Table: Negate
 ===================
 
-We will continue to step through learning conditional statements in python using Test Driven Development using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
+I will continue to step through learning conditional statements in python using Test Driven Development using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
 Prerequisites
 -------------
@@ -39,12 +39,12 @@ GREEN: make it pass
        def negate_first(p, q):
            return False
     the terminal updates to show an :doc:`AssertionError` for the third case
-* before we add a condition for it, this looks similar to ``logical_equality`` and ``exclusive_disjunction`` because 2 out of the 4 cases have the same return value. We observe that
+* before I add a condition for it, this looks similar to ``logical_equality`` and ``exclusive_disjunction`` because 2 out of the 4 cases have the same return value. I observe that
 
   * if ``p == True`` the result is ``False``
   * if ``p == False`` the result is ``True``
 
-* add conditions to represent our observation
+* add conditions to represent the observation
   .. code-block:: python
 
        def negate_first(p, q):
@@ -111,17 +111,17 @@ GREEN: make it pass
        def negate_second(p, q):
            return False
     the terminal updates to show an :doc:`AssertionError` for the third case
-* before we add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction`` and ``negate_first`` because 2 out of the 4 cases have the same return value. We observe that
+* before I add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction`` and ``negate_first`` because 2 out of the 4 cases have the same return value. I observe that
 
   * if ``q == True`` the result is ``False``
   * if ``q == False`` the result is ``True``
 
-* What if we try using our conclusion from ``negate_first``
+* What if I try using the conclusion from ``negate_first``
   .. code-block:: python
 
        def negate_second(p, q):
            return not p
-    the terminal still shows an :doc:`AssertionError`. What if we try ``q`` instead
+    the terminal still shows an :doc:`AssertionError`. What if I try ``q`` instead
   .. code-block:: python
 
        def negate_second(p, q):
@@ -131,7 +131,7 @@ GREEN: make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-I don't think we can make it better. update what we know so far
+I don't think I can make it better. update what I know so far
 
 For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
 

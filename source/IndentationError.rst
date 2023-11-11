@@ -1,7 +1,7 @@
 IndentationError
 ================
 
-In the beginning of our journey with python we will make many mistakes, one of which will cause the ``IndentationError`` if we do not understand the indentation rules of python. We will step through solving this error in python using Test Driven Development
+In the beginning of the journey with python I will make many mistakes, one of which will cause the ``IndentationError`` if I do not understand the indentation rules of python. I will step through solving this error in python using Test Driven Development
 
 Prerequisites
 -------------
@@ -14,7 +14,7 @@ Prerequisites
 Indentation Matters
 -------------------
 
-Spacing/Indentation matters in python. Where you place code and how you space them out have an effect on how the code is interpreted as well as how a human being comprehends your intention. Some people indent with 2 spaces, others indent with 4. In this exercise we will indent with 4 as that is the `recommended convention <https://peps.python.org/pep-0008/#indentation>`_
+Spacing/Indentation matters in python. Where you place code and how you space them out have an effect on how the code is interpreted as well as how a human being comprehends your intention. Some people indent with 2 spaces, others indent with 4. In this exercise I will indent with 4 as that is the `recommended convention <https://peps.python.org/pep-0008/#indentation>`_
 
 Solve the IndentationError
 --------------------------
@@ -184,7 +184,7 @@ RED: make it fail
 
 
 *
-  building on what we have done so far, we will add failing tests for :doc:`methods`\ , update ``test_indentation_error.py``
+  building on what I have done so far, I will add failing tests for :doc:`methods`\ , update ``test_indentation_error.py``
 
   .. code-block:: python
 
@@ -267,4 +267,4 @@ The point of this exercise was to get familiar with python spacing convention to
 
 Indentation matters in python because it is how blocks of code are segmented. When a :doc:`functions` is defined, all the statements that belong to the it are indented, same with a :doc:`class`\ , all the statements that belong to the it, its :doc:`methods <functions>` and attributes are indented underneath it.
 
-This helps with reading the code so we can tell what belongs to a namespace the same way curly braces do for languages that use them for that purpose. Interactive Development Environments have gotten a lot better and automatically indent code for you using the convention of the language you are writing, which saves time spent counting the number of spaces to indent.
+This helps with reading the code so I can tell what belongs to a namespace the same way curly braces do for languages that use them for that purpose. Interactive Development Environments have gotten a lot better and automatically indent code for you using the convention of the language you are writing, which saves time spent counting the number of spaces to indent.

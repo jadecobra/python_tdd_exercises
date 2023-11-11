@@ -1,7 +1,7 @@
 Truth Table: True Lies
 ======================
 
-We will continue to step through learning conditional statements in python using Test Driven Development using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
+I will continue to step through learning conditional statements in python using Test Driven Development using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
 Prerequisites
 -------------
@@ -88,7 +88,7 @@ GREEN: make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Nothing to do here either. update what we know so far
+Nothing to do here either. update what I know so far
 
 *YOU DID IT!*
 For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``

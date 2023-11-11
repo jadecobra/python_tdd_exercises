@@ -3,7 +3,7 @@ Data Structures: Booleans
 
 Let us take a look at Data Structures in python using Test Driven Development. This chapter covers ``booleans``
 
-There are only two values that are boolean - ``True`` and ``False``. We will learn about booleans by comparing it with the data structures in python to figure what they are and what they are not
+There are only two values that are boolean - ``True`` and ``False``. I will learn about booleans by comparing it with the data structures in python to figure what they are and what they are not
 
 Prerequisites
 -------------
@@ -41,7 +41,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* when we change all the ``self.assertTrue`` statements in ``test_what_is_false`` to ``self.assertFalse`` we are left with one failing test
+* when I change all the ``self.assertTrue`` statements in ``test_what_is_false`` to ``self.assertFalse`` I are left with one failing test
   .. code-block:: python
 
            def test_what_is_false(self):
@@ -69,7 +69,7 @@ GREEN: make it pass
                self.assertFalse(dict())
                self.assertIsInstance(False, bool)
 
-* we now know that in python
+* I now know that in python
 
   * ``False`` is a ``boolean``
   * ``dict()`` is ``False`` which means an empty ``dictionary`` is ``False``
@@ -79,7 +79,7 @@ GREEN: make it pass
   * ``""`` is ``False`` which means an empty ``string`` is ``False``
   * ``0`` is ``False``
 
-we can sum this up as
+I can sum this up as
 
 
 * ``False`` is a ``boolean``
@@ -91,7 +91,7 @@ What is True?
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-What if we try a similar series of failing tests for ``True`` by adding the following to ``test_data_structures.py``
+What if I try a similar series of failing tests for ``True`` by adding the following to ``test_data_structures.py``
 
 .. code-block:: python
 
@@ -117,7 +117,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* change all the ``self.assertFalse`` statements in ``test_what_is_true`` to ``self.assertTrue`` and we have one failing test left
+* change all the ``self.assertFalse`` statements in ``test_what_is_true`` to ``self.assertTrue`` and I have one failing test left
   .. code-block:: python
 
            def test_what_is_true(self):
@@ -155,7 +155,7 @@ GREEN: make it pass
                })
                self.assertIsInstance(True, bool)
 
-* we can sum up our current knowledge of python thus
+* I can sum up the current knowledge of python thus
 
   * any value except ``0``, empty objects and :doc:`None </data structures: None>` is ``True``
   * empty objects including ``0`` and :doc:`None </data structures: None>` are ``False``

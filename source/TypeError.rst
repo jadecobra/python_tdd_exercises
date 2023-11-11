@@ -2,7 +2,7 @@
 TypeError
 =========
 
-We will step through solving a ``TypeError`` in python using Test Driven Development
+I will step through solving a ``TypeError`` in python using Test Driven Development
 
 Prerequisites
 -------------
@@ -48,14 +48,14 @@ RED: make it fail
       E   ModuleNotFoundError: No module called 'functions'
 
 
-* Ah, a ``ModuleNotFoundError``, We have a lot of practice solving this error from :doc:`ModuleNotFoundError`. What if we create a file called ``functions.py`` and the terminal updates to show
+* Ah, a ``ModuleNotFoundError``, I have a lot of practice solving this error from :doc:`ModuleNotFoundError`. What if I create a file called ``functions.py`` and the terminal updates to show
 
   .. code-block:: python
 
        >       self.assertIsNone(functions.function_a("a"))
        E       AttributeError: module 'functions' has no attribute 'function_a'
 
-* We also have some practice with ``AttributeError`` from :doc:`AttributeError`. Add this line ``functions.py``
+* I also have some practice with ``AttributeError`` from :doc:`AttributeError`. Add this line ``functions.py``
 
   .. code-block:: python
 
@@ -68,9 +68,9 @@ RED: make it fail
       >       self.assertIsNone(functions.function_a("a"))
       E       TypeError: 'NoneType' object is not callable
 
-   A reminder of our first encounter with ``TypeError`` from `How to solve the AttributeError by defining a Function <./AttributeError.rst>`_
+   A reminder of the first encounter with ``TypeError`` from `How to solve the AttributeError by defining a Function <./AttributeError.rst>`_
 
-* We solve this ``TypeError`` by definining a ``callable``, in this case a function. Update ``functions.py``
+* I solve this ``TypeError`` by definining a ``callable``, in this case a function. Update ``functions.py``
 
   .. code-block:: python
 
@@ -84,11 +84,11 @@ RED: make it fail
        >       self.assertIsNone(functions.function_a("a"))
        E       TypeError: function_a() takes 0 positional arguments but 1 was given
 
-  Another ``TypeError`` but with a message we have not seen before. Reading the error from the bottom up
+  Another ``TypeError`` but with a message I have not seen before. Reading the error from the bottom up
 
   * ``function_a() takes 0 positional arguments but 1 was given`` explains that there was an expectation which was not met in how the function is called. In order words the call violates the signature defined.
-  * ``self.assertIsNone(functions.function_a("a"))`` the offending line. in this line we are checking if this call ``functions.function_a("a")`` is equal to :doc:`None </data structures: None>`
-  * ``functions.function_a("a")`` is the call. We can think of it like an address
+  * ``self.assertIsNone(functions.function_a("a"))`` the offending line. in this line I are checking if this call ``functions.function_a("a")`` is equal to :doc:`None </data structures: None>`
+  * ``functions.function_a("a")`` is the call. I can think of it like an address
 
     - ``functions`` refers to ``functions.py`` which is a python module
     - ``function_a`` refers to ``function_a`` defined in ``functions.py``
@@ -97,7 +97,7 @@ RED: make it fail
       Imagine you have a telephone, it has a call function but to make a call you must provide a number then hit dial.
     - ``call`` is like ``function_a``
     - the number you provide is like ``"a"`` and hitting dial is like ``()``
-      We will practice this some more in :doc:`TDD_FUNCTIONS`
+      I will practice this some more in :doc:`TDD_FUNCTIONS`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -169,7 +169,7 @@ There's not much to do here but add more tests for practice.
 
       TypeError: function_b() takes 1 positional argument but 2 were given
 
-   ah, our previous definition only allowed for 0 positional arguments, now it allows for 1 positional argument but we are still calling with 2 positional arguments.
+   ah, the previous definition only allowed for 0 positional arguments, now it allows for 1 positional argument but I are still calling with 2 positional arguments.
 
    update ``function_b`` in ``functions.py`` to take in 2 positional arguments
 
@@ -183,7 +183,7 @@ There's not much to do here but add more tests for practice.
 .. EXTRA::
 
 * What's another solution to the above test?
-* How can we define a function that takes in any number of parameters? see :doc:`TDD_FUNCTIONS`
+* How can I define a function that takes in any number of parameters? see :doc:`TDD_FUNCTIONS`
 
 add more tests
 ^^^^^^^^^^^^^^^^^^^^^
@@ -308,7 +308,7 @@ the terminal updates to show
 
    TypeError: function_d() takes 0 positional arguments but 4 were given
 
-What if we try our solution for the previous test. update the signature of ``function_d`` in ``functions.py``
+What if I try the solution for the previous test. update the signature of ``function_d`` in ``functions.py``
 
 .. code-block:: python
 
@@ -328,9 +328,9 @@ update ``function_d`` in ``functions.py`` to take 4 arguments
    def function_d(arg1, arg2, arg3, arg4):
        return None
 
-the terminal updates to show all tests pass...but wait! there's more. We can make this better. There's another solution to the above test. What if we can define a function that takes in any number of parameters, is there a signature that allows a function to take 1 argument, 4 arguments, or any number of arguments?
+the terminal updates to show all tests pass...but wait! there's more. I can make this better. There's another solution to the above test. What if I can define a function that takes in any number of parameters, is there a signature that allows a function to take 1 argument, 4 arguments, or any number of arguments?
 
-YES! There is we can use the ``*args`` keyword to pass in any number of positional arguments to a function
+YES! There is I can use the ``*args`` keyword to pass in any number of positional arguments to a function
 
 update ``function_d`` in ``functions.py`` with ``*args``
 
@@ -341,7 +341,7 @@ update ``function_d`` in ``functions.py`` with ``*args``
 
 the terminal shows all tests as still passing. FANTASTIC!!
 
-What if we test this with ``function_a``. update ``function_a`` in ``functions.py`` with ``*args`` and the terminal shows all tests as still passing.
+What if I test this with ``function_a``. update ``function_a`` in ``functions.py`` with ``*args`` and the terminal shows all tests as still passing.
 
 Try this with both ``function_c`` and ``function_d``, all tests still pass.
 

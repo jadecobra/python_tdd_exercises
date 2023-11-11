@@ -1,7 +1,7 @@
 Truth Table: Logical NOR
 ========================
 
-We will continue to step through learning conditional statements in python using Test Driven Development using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
+I will continue to step through learning conditional statements in python using Test Driven Development using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
 Prerequisites
 -------------
@@ -39,7 +39,7 @@ GREEN: make it pass
        def logical_nor(p, q):
            return False
 
-* the first 3 pass and we see a failure for the 4th case, add a condition for it
+* the first 3 pass and I see a failure for the 4th case, add a condition for it
   .. code-block:: python
 
        def logical_nor(p, q):
@@ -51,7 +51,7 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* we restate the ``if`` condition using implicit conditional testing
+* I restate the ``if`` condition using implicit conditional testing
   .. code-block:: python
 
        def logical_nor(p, q):
@@ -59,14 +59,14 @@ REFACTOR: make it better
                return True
            return False
 
-* we abstract the repetition of ``not`` by rewriting the entire statement in terms of ``not``
+* I abstract the repetition of ``not`` by rewriting the entire statement in terms of ``not``
   .. code-block:: python
 
        def logical_nor(p, q):
            if not p not or not q:
                return True
            return False
-    the terminal shows a ``SyntaxError`` and we rewrite the syntax properly
+    the terminal shows a ``SyntaxError`` and I rewrite the syntax properly
   .. code-block:: python
 
        def logical_nor(p, q):
@@ -85,7 +85,7 @@ REFACTOR: make it better
 
        def logical_nor(p, q):
            return not(p or q)
-    BOOM! all the tests pass. Are we getting better at this?
+    BOOM! all the tests pass. Are I getting better at this?
 
 Knowledge update. For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
 

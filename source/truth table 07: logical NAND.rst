@@ -1,7 +1,7 @@
 Truth Table: Logical NAND
 =========================
 
-We will continue to step through learning conditional statements in python using Test Driven Development using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
+I will continue to step through learning conditional statements in python using Test Driven Development using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
 Prerequisites
 -------------
@@ -46,7 +46,7 @@ GREEN: make it pass
            if p == True and q == True:
                return False
            return True
-    We are green! All tests pass
+    I are green! All tests pass
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -108,10 +108,10 @@ REFACTOR: make it better
 
        def logical_nand(p, q):
            return not(p and q)
-    I don't think we can get simpler than this and all the tests are still passing
+    I don't think I can get simpler than this and all the tests are still passing
 
 REVIEW
-We know that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
+I know that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
 
 
 * ``logical_nand`` is ``not(p and q)``

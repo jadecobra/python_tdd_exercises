@@ -1,7 +1,7 @@
 Truth Table: Material NonImplication
 ====================================
 
-We will continue to step through learning conditional statements in python using Test Driven Development using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
+I will continue to step through learning conditional statements in python using Test Driven Development using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
 Prerequisites
 -------------
@@ -74,9 +74,9 @@ REFACTOR: make it better
 
        def material_non_implication(p, q):
            return p and not q
-    We are still green
+    I are still green
 
-Our knowledge is growing, we now know that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
+Our knowledge is growing, I now know that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
 
 
 * ``material_non_implication`` is ``p and not q``

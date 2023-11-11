@@ -1,7 +1,7 @@
 Data Structures: Dictionaries
 =============================
 
-We are going to cover dictionaries in python In this chapter using Test Driven Development
+I are going to cover dictionaries in python In this chapter using Test Driven Development
 
 Prerequisites
 -------------
@@ -15,19 +15,19 @@ Prerequisites
 How to create a dictionary with strings as keys
 ----------------------------------------
 
-Dictionaries/Mappings are key, value pairs that we can use to represent data. ``values`` can be any of the `data structures <./DATA_STRUCTURES.rst>`_ including dictionaries
+Dictionaries/Mappings are key, value pairs that I can use to represent data. ``values`` can be any of the `data structures <./DATA_STRUCTURES.rst>`_ including dictionaries
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-first we add a file called ``test_dictionaries.py`` to the ``tests`` folder with the following text
+first I add a file called ``test_dictionaries.py`` to the ``tests`` folder with the following text
 
 .. code-block:: python
 
    import unittest
    import dictionaries
 
-the terminal gives us a :doc:`ModuleNotFoundError`\ , and we add it to our list of exceptions encountered
+the terminal gives us a :doc:`ModuleNotFoundError`\ , and I add it to the list of exceptions encountered
 
 .. code-block:: python
 
@@ -43,7 +43,7 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* we will now proceed to look at the ways we can create a dictionary, by adding a failing test
+* I will now proceed to look at the ways I can create a dictionary, by adding a failing test
 
 .. code-block:: python
 
@@ -54,7 +54,7 @@ REFACTOR: make it better
        def test_creating_dictionaries_with_strings_as_keys(self):
            self.assertEqual(dictionaries.a_dict(), {"key": "value"})
    ```
-   the terminal updates to show an :doc:`AttributeError` and we add it to our list of exceptions encountered
+   the terminal updates to show an :doc:`AttributeError` and I add it to the list of exceptions encountered
 
 .. code-block:: python
    # Exceptions Encountered
@@ -68,13 +68,13 @@ REFACTOR: make it better
 
        def a_dict():
            return None
-    the terminal updates to show an :doc:`AssertionError` since the function we defined returns :doc:`None </data structures: None>` not a dictionary
+    the terminal updates to show an :doc:`AssertionError` since the function I defined returns :doc:`None </data structures: None>` not a dictionary
 * update the return statement to return an empty dictionary
   .. code-block:: python
 
        def a_dict():
            return {}
-    the terminal still shows an :doc:`AssertionError` but now our return value looks more similar to what is expected
+    the terminal still shows an :doc:`AssertionError` but now the return value looks more similar to what is expected
   .. code-block:: python
 
        E       AssertionError: {} != {'key': 'value'}
@@ -82,7 +82,7 @@ REFACTOR: make it better
        E       + {'key': 'value'}
 
 
-  * the value on the left ``{}`` is what our function returns and the value on the right ``{'key': 'value'}`` is what is expected
+  * the value on the left ``{}`` is what the function returns and the value on the right ``{'key': 'value'}`` is what is expected
   * the ``!=`` symbol means ``not equal to``
 
 * update the return statement with the expected values
@@ -98,7 +98,7 @@ REFACTOR: make it better
            self.assertEqual(dictionaries.a_dict(), {'key': 'value'})
            self.assertEqual(dictionaries.a_dict(), dict(key='value'))
     the terminal displays passing tests, which means ``dict(key='value')`` and ``{'key': 'value'}`` produce the same results
-* we can add another test to confirm this assumption even though it repeats the two tests above
+* I can add another test to confirm this assumption even though it repeats the two tests above
   .. code-block:: python
 
        def test_creating_dictionaries_with_strings_as_keys(self):
@@ -137,7 +137,7 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* Our knowledge of dictionaries is growing. We know we can use ``integers`` and ``strings`` as dictionary keys. Can we use ``floats``? We are going to find out by adding a test
+* the knowledge of dictionaries is growing. I know I can use ``integers`` and ``strings`` as dictionary keys. Can I use ``floats``? I are going to find out by adding a test
   .. code-block:: python
 
            def test_creating_dictionaries_with_numbers_as_keys(self):
@@ -170,7 +170,7 @@ the terminal outputs an :doc:`AssertionError`
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-update the return values to make them match and we are green again
+update the return values to make them match and I are green again
 
 .. code-block:: python
 
@@ -195,7 +195,7 @@ REFACTOR: make it better
            self.assertEqual({False: 'boom'}, {False: 'boom'})
            self.assertEqual({True: 'bap'}, {True: 'bap'})
 
-* We now know that we can use ``booleans``, ``floats``, ``integers`` and ``strings`` as keys in a dictionary
+* I now know that I can use ``booleans``, ``floats``, ``integers`` and ``strings`` as keys in a dictionary
 
 How to create a dictionary with tuples as keys
 ---------------------------------------
@@ -215,15 +215,15 @@ the terminal outputs an :doc:`AssertionError`
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-we update the values to make it pass
+I update the values to make it pass
 
 .. code-block:: python
 
            self.assertEqual({(1, 2): "value"}, {(1, 2): "value"})
 
-and update our knowledge of creating dictionaries to say we can use ``tuples``, ``booleans``, ``floats``, ``integers``, and ``strings`` as keys in a dictionary
+and update the knowledge of creating dictionaries to say I can use ``tuples``, ``booleans``, ``floats``, ``integers``, and ``strings`` as keys in a dictionary
 
-Can we create a Dictionary with lists as keys?
+Can I create a Dictionary with lists as keys?
 ----------------------------------------------
 
 RED: make it fail
@@ -242,7 +242,7 @@ the terminal gives a :doc:`TypeError` because only ``hashable`` types can be use
 
    E       TypeError: unhashable type: 'list'
 
-we also update our list of exceptions encountered
+I also update the list of exceptions encountered
 
 .. code-block:: python
 
@@ -254,7 +254,7 @@ we also update our list of exceptions encountered
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-In `Exception Handling <./EXCEPTION_HANDLING.rst>`_ we learn how to use ``self.assertRaises`` to confirm that an error is raised by some code without having it crash our tests. We will do the same here to confirm that creating a dictionary with a ``list`` as the key raises a :doc:`TypeError`
+In `Exception Handling <./EXCEPTION_HANDLING.rst>`_ I learn how to use ``self.assertRaises`` to confirm that an error is raised by some code without having it crash the tests. I will do the same here to confirm that creating a dictionary with a ``list`` as the key raises a :doc:`TypeError`
 
 .. code-block:: python
 
@@ -264,13 +264,13 @@ In `Exception Handling <./EXCEPTION_HANDLING.rst>`_ we learn how to use ``self.a
 
 all green here
 
-Can we create a Dictionary with sets as keys?
+Can I create a Dictionary with sets as keys?
 ---------------------------------------------
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-What if we try a similar test using a set as a key
+What if I try a similar test using a set as a key
 
 .. code-block:: python
 
@@ -282,7 +282,7 @@ the terminal responds with a :doc:`TypeError`
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-which we handle using ``self.assertRaises``
+which I handle using ``self.assertRaises``
 
 .. code-block:: python
 
@@ -292,7 +292,7 @@ which we handle using ``self.assertRaises``
 
 all tests are passing
 
-Can we create a Dictionary with dictionaries as keys?
+Can I create a Dictionary with dictionaries as keys?
 -----------------------------------------------------
 
 RED: make it fail
@@ -311,7 +311,7 @@ and the terminal outputs a :doc:`TypeError`
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-we add a handler to confirm our findings
+I add a handler to confirm the findings
 
 .. code-block:: python
 
@@ -320,7 +320,7 @@ we add a handler to confirm our findings
            with self.assertRaises(TypeError):
                {a_dictionary: "BOOM"}
 
-all tests pass and we now know that we can create dictionaries with the following `data structures <./DATA_STRUCTURES.rst>`_ as keys
+all tests pass and I now know that I can create dictionaries with the following `data structures <./DATA_STRUCTURES.rst>`_ as keys
 
 
 * strings
@@ -334,12 +334,12 @@ all tests pass and we now know that we can create dictionaries with the followin
 How to access dictionary values
 ------------------------
 
-From the tests above we learned how to create ``dictionaries``, and what we can use as ``keys``. How do we access the values of a dictionary?
+From the tests above I learned how to create ``dictionaries``, and what I can use as ``keys``. How do I access the values of a dictionary?
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-we are going to add a test to ``TestDictionaries`` in ``test_dictionaries.py``
+I are going to add a test to ``TestDictionaries`` in ``test_dictionaries.py``
 
 .. code-block:: python
 
@@ -364,7 +364,7 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* we can also display the values of a dictionary as a list without the keys, add a test
+* I can also display the values of a dictionary as a list without the keys, add a test
   .. code-block:: python
 
            def test_listing_dictionary_values(self):
@@ -393,7 +393,7 @@ REFACTOR: make it better
                ['value1', 'value2', 'value3', 'valueN']
            )
 
-* we can do the same thing with the keys of the dictionary, add another test
+* I can do the same thing with the keys of the dictionary, add another test
   .. code-block:: python
 
        def test_listing_dictionary_keys(self):
@@ -426,7 +426,7 @@ REFACTOR: make it better
 How to get a value when the key does not exist
 ---------------------------------------
 
-Sometimes we might try to access values in a dictionary but use a key that does not exist in the dictionary or misspell a key that does exist
+Sometimes I might try to access values in a dictionary but use a key that does not exist in the dictionary or misspell a key that does exist
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -451,7 +451,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* add ``KeyError`` to our running list of list of exceptions encountered
+* add ``KeyError`` to the running list of list of exceptions encountered
   .. code-block:: python
 
        # Exceptions Encountered
@@ -473,7 +473,7 @@ GREEN: make it pass
                with self.assertRaises(KeyError):
                    a_dictionary['non_existent_key']
 
-* the terminal shows a ``KeyError`` for the next line where we misspelled the key and we add it to the exception handler to make it pass
+* the terminal shows a ``KeyError`` for the next line where I misspelled the key and I add it to the exception handler to make it pass
   .. code-block:: python
 
            def test_dictionaries_raise_key_error_when_key_does_not_exist(self):
@@ -490,7 +490,7 @@ GREEN: make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-What if we want to call a dictionary and not have python raise an error when it does not find the key? We could use the ``get`` function
+What if I want to call a dictionary and not have python raise an error when it does not find the key? I could use the ``get`` function
 
 
 * add a test to ``TestDictionaries``
@@ -516,8 +516,8 @@ What if we want to call a dictionary and not have python raise an error when it 
                'keyN': 'valueN',
            }
            self.assertIsNone(a_dictionary.get('non_existent_key'))
-    the terminal updates to show a passing test. This means that when we use the ``get`` :doc:`method <functions>` and the ``key`` does not exist, we get :doc:`None </data structures: None>` as the ``return`` value.
-* What if we state the above explicitly because ``Explicit is better than implicit`` see `Zen of Python <https://peps.python.org/pep-0020/>`_
+    the terminal updates to show a passing test. This means that when I use the ``get`` :doc:`method <functions>` and the ``key`` does not exist, I get :doc:`None </data structures: None>` as the ``return`` value.
+* What if I state the above explicitly because ``Explicit is better than implicit`` see `Zen of Python <https://peps.python.org/pep-0020/>`_
   .. code-block:: python
 
        def test_how_to_get_a_value_when_a_key_does_not_exist(self):
@@ -535,7 +535,7 @@ What if we want to call a dictionary and not have python raise an error when it 
        - the ``key``
        - the ``value`` it should return if the ``key`` does not exist
 
-* If you have gone through `Exception Handling <./EXCEPTION_HANDLING.rst>`_\ , we can assume the definition of the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :doc:`method <functions>` of the dictionary object looks something like this
+* If you have gone through `Exception Handling <./EXCEPTION_HANDLING.rst>`_\ , I can assume the definition of the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :doc:`method <functions>` of the dictionary object looks something like this
   .. code-block:: python
 
        def get(dictionary, key, default=None):
@@ -544,7 +544,7 @@ What if we want to call a dictionary and not have python raise an error when it 
            except KeyError:
                return default
 
-* What if we try the ``get`` :doc:`method <functions>` with an existing key
+* What if I try the ``get`` :doc:`method <functions>` with an existing key
   .. code-block:: python
 
        def test_how_to_get_a_value_when_a_key_does_not_exist(self):
@@ -563,7 +563,7 @@ What if we want to call a dictionary and not have python raise an error when it 
 How to view the attributes and :doc:`methods <functions>`of a dictionary
 -----------------------------------------------
 
-:doc:`classes` covers how to view the ``attributes`` and ``methods`` of an object. What if we do the same for ``dictionaries``
+:doc:`classes` covers how to view the ``attributes`` and ``methods`` of an object. What if I do the same for ``dictionaries``
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -651,7 +651,7 @@ the tests pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-We see some of the :doc:`methods <functions>` we have covered so far and others we did not. You can write tests on the others to discover what they do and/or `read more about dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_. What if we list out what we know so far and you can fill in the others as you learn them
+I see some of the :doc:`methods <functions>` I have covered so far and others I did not. You can write tests on the others to discover what they do and/or `read more about dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_. What if I list out what I know so far and you can fill in the others as you learn them
 
 
 * clear
@@ -669,7 +669,7 @@ We see some of the :doc:`methods <functions>` we have covered so far and others 
 Set a default value for a given key
 -----------------------------------
 
-What if we test the ``setdefault`` method
+What if I test the ``setdefault`` method
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -731,7 +731,7 @@ REFACTOR: make it better
            a_dictionary.setdefault('another_key')
            self.assertEqual(a_dictionary, {'bippity': 'boppity', 'another_key': None})
 
-* What if we want to add a ``key`` but set the default value to something other than :doc:`None </data structures: None>`? Good question, add a test to find out
+* What if I want to add a ``key`` but set the default value to something other than :doc:`None </data structures: None>`? Good question, add a test to find out
   .. code-block:: python
 
            a_dictionary.setdefault('a_new_key', 'a_default_value')
@@ -748,12 +748,12 @@ REFACTOR: make it better
                    'a_new_key': 'a_default_value',
                }
            )
-    all tests pass, and we update the list of :doc:`methods <functions>` with what we now know about ``setdefault``
+    all tests pass, and I update the list of :doc:`methods <functions>` with what I now know about ``setdefault``
 
 How to update one Dictionary with another
 -----------------------------------------
 
-What if we have a dictionary and want to ``add`` the ``keys`` and ``values`` of another dictionary to it?
+What if I have a dictionary and want to ``add`` the ``keys`` and ``values`` of another dictionary to it?
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -777,7 +777,7 @@ add a test to ``TestDictionaries``
                {"basic": "toothpaste", "whitening": "peroxide"}
            )
 
-the terminal updates to show an :doc:`AssertionError` because the values of ``a_dictionary`` were updated when we called the ``update`` :doc:`method <functions>` on it
+the terminal updates to show an :doc:`AssertionError` because the values of ``a_dictionary`` were updated when I called the ``update`` :doc:`method <functions>` on it
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -787,7 +787,7 @@ update values to make it pass
 How to Remove an item from a dictionary
 ---------------------------------------
 
-We can remove an item from a dictionary with the ``pop`` method. It deletes the key and value from the dictionary and returns the value
+I can remove an item from a dictionary with the ``pop`` method. It deletes the key and value from the dictionary and returns the value
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^

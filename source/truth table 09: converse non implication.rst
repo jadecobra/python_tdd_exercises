@@ -1,7 +1,7 @@
 Truth Table: Converse NonImplication
 ====================================
 
-We will continue to step through learning conditional statements in python using Test Driven Development using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
+I will continue to step through learning conditional statements in python using Test Driven Development using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
 Prerequisites
 -------------
@@ -76,7 +76,7 @@ REFACTOR: make it better
            return not p and q
     Another success! All tests pass
 
-Our knowledge has increased. We know that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
+Our knowledge has increased. I know that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
 
 
 * ``converse_non_implication`` is ``not p and q`` which is different from ``not(p and q)``

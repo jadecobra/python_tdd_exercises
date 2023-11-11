@@ -1,7 +1,7 @@
 Truth Table: Exclusive Disjunction
 ==================================
 
-We will continue to step through learning conditional statements in python using Test Driven Development using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
+I will continue to step through learning conditional statements in python using Test Driven Development using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
 Prerequisites
 -------------
@@ -38,7 +38,7 @@ GREEN: make it pass
 
        def exclusive_disjunction(p, q):
            return True
-    we get an :doc:`AssertionError` for the second case
+    I get an :doc:`AssertionError` for the second case
 * add a condition for it
   .. code-block:: python
 
@@ -61,10 +61,10 @@ GREEN: make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-What if we try to refactor those statements to make them better
+What if I try to refactor those statements to make them better
 
 
-* in the first case ``p`` and ``q`` have the same value, can we change the statement to reflect this like we did with ``logical_equality``?
+* in the first case ``p`` and ``q`` have the same value, can I change the statement to reflect this like I did with ``logical_equality``?
   .. code-block:: python
 
        def exclusive_disjunction(p, q):
@@ -74,7 +74,7 @@ What if we try to refactor those statements to make them better
                return False
            return True
     tests still pass
-* the next statement looks similar, we can rewrite it as
+* the next statement looks similar, I can rewrite it as
   .. code-block:: python
 
        def exclusive_disjunction(p, q):
@@ -83,7 +83,7 @@ What if we try to refactor those statements to make them better
            if p == q:
                return False
            return True
-    since it's exactly the same statement, we remove the repetition
+    since it's exactly the same statement, I remove the repetition
   .. code-block:: python
 
        def exclusive_disjunction(p, q):
@@ -139,7 +139,7 @@ What if we try to refactor those statements to make them better
        def exclusive_disjunction(p, q):
            return p != q
 
-What do we know so far? For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
+What do I know so far? For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
 
 
 * ``exclusive_disjunction`` is ``!=``
