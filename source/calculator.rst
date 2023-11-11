@@ -369,14 +369,14 @@ This is the Test Driven Development cycle in practice
 * **GREEN**: I make the test pass by any means necessary
 * **REFACTOR**: I make it better
 
-I repeat this process until I have a working program that has been tested and gives me confidence it will behave in an expected way that meets the requirements of the program
+I repeat this process until I have a working program that has been tested which gives me confidence it will behave in an expected way that meets the requirements of the program.
 
 ----
 
 Test Subtraction
 ----------------
 
-I will now add a failing test since addition works and the next item from the TODO list is to test subtraction
+Since addition works and the next item from the TODO list is to test subtraction, I will add a failing test for it
 
 RED : make it fail
 ^^^^^^^^^^^^^^^^^^
@@ -676,7 +676,7 @@ GREEN : make it pass
        def divide(x, y):
            return x / y
 
-  the terminal response varies since I am using random variables, When ``y`` is 0 I get a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ like below, otherwise it passes
+  the terminal response varies since I am using random variables, When ``y`` is 0 I get a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ and when ``y`` is -1 or 1 it passes
 
   .. code-block:: python
 
@@ -702,7 +702,7 @@ How to Test for Errors
 RED : make it fail
 ^^^^^^^^^^^^^^^^^^
 
-I will add a failing test to ``test_calculator.py`` to intentionally trigger a ``ZeroDivisionError`` and comment out the previous test that sometimes fails, to help remove the variability of the test while I figure out the error
+I will add a failing test to ``test_calculator.py`` to make  a ``ZeroDivisionError`` happen, then comment out the previous test that sometimes fails, to remove the variability of the test while I figure out the error
 
 .. code-block:: python
 
@@ -741,12 +741,12 @@ I can use the ``unittest.TestCase.assertRaises`` :doc:`method <functions>` in ``
        #     self.x/self.y
        # )
 
-the terminal displays passing tests, and I now have a way to ``catch`` Exceptions when testing, allowing me to confirm that the code raises an error, and the other tests can continue to run when they encounter the expected failure
+the terminal displays passing tests, and I now have a way to ``catch`` :doc:`Exceptions </exception handling>` when testing, which helps to confirm that the code raises an error, and other tests can continue to run
 
 REFACTOR: make it better
 ------------------------
 
-I update ``test_division`` to test other division cases when the divisor is not 0 by making sure the random variable ``y`` is never 0
+I update ``test_division`` to test other division cases when the divisor is not 0 by making sure the value of ``y`` that is passed to ``calculator.divide`` is never 0
 
 .. code-block:: python
 
@@ -763,7 +763,7 @@ I update ``test_division`` to test other division cases when the divisor is not 
 
 * ``while self.y == 0:`` creates a loop that repeats whatever indented code follows as long as ``self.y`` is equal to ``0``
 * ``self.y = random.randint(-1, 1)`` assigns a new random variable to ``self.y`` that could be -1, 0 or 1
-* the loop tells python to assign a new random variable to ``self.y`` as long as ``self.y`` is equal to 0
+* the loop tells python to assign a new random variable to ``self.y`` as long as it is equal to 0. The loop stops when ``self.y`` is not equal to 0
 * I remove ``test_division`` from the TODO list since all the tests pass
 
 ----
