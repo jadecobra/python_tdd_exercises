@@ -90,7 +90,7 @@ the test passes because the assert statement is now true since ``False`` is not 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-I can also make assertions with some:doc:`methods <functions>`from the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class
+I can also make assertions with som e :doc:`methods <functions>`from the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class
 
 
 * RED: make it fail

@@ -463,7 +463,7 @@ REFACTOR: make it better
 Solve the AttributeError by defining a Class
 ----------------------------------------
 
-A class is a blueprint that represents an object, it is a collection of functions (methods) and attributes. Attributes are names which represent a value.:doc:`methods <functions>`are functions that can accept inputs and return a value. For example we could define a `Human` class with attributes like eye color, date of birth, height and weight, and:doc:`methods <functions>`like age which returns a value based on the current year and date of birth. Let us explore ``AttributeError`` with classes.
+A class is a blueprint that represents an object, it is a collection of functions (methods) and attributes. Attributes are names which represent a value.:doc:`methods <functions>`are functions that can accept inputs and return a value. For example we could define a `Human` class with attributes like eye color, date of birth, height and weight, and :doc:`methods <functions>`like age which returns a value based on the current year and date of birth. Let us explore ``AttributeError`` with classes.
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^

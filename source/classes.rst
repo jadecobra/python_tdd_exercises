@@ -65,7 +65,7 @@ GREEN: make it pass
 
    class ClassWithPass:
 
-  the terminal updates to show an [IndentationError](./IndentationError.rst)
+  the terminal updates to show an :doc:`IndentationError`
 
 * add the ``pass`` keyword as a placeholder to the definition
 
@@ -325,7 +325,7 @@ the terminal updates to show passing tests
 How to define a Class with Methods
 ----------------------------------
 
-We can define classes with:doc:`methods <functions>`which are function definitions within the class
+We can define classes with :doc:`methods <functions>` which are function definitions within the class
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -425,10 +425,10 @@ REFACTOR: make it better
 
 ----
 
-How to define a Class with:doc:`methods <functions>`and Attributes
+How to define a Class with Methods and Attributes
 ------------------------------------------
 
-Since we know how to define classes with:doc:`methods <functions>`and how to define classes with attributes, What if we try defining a class that has both
+Since we know how to define classeswith Methods and how to define classes with attributes, What if we try defining a class that has both
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -727,13 +727,13 @@ REFACTOR: make it better
 Why did that work?
 
 
-* the ``Boy``, ``Girl`` and ``Other`` class now inherit from the ``Human`` class which means they all get the same:doc:`methods <functions>`and attributes that the ``Human`` class has, including the ``__init__`` method
+* the ``Boy``, ``Girl`` and ``Other`` class now inherit from the ``Human`` class which means they all get the same :doc:`methods <functions>` and attributes that the ``Human`` class has, including the ``__init__`` method
 * ``self.sex`` within each class refers to the ``sex`` attribute in the class, allowing its definition from within the ``__init__`` method
 * since ``self.sex`` is defined as a class attribute, it is accessible from outside the class as we do in our tests i.e ``classes.Girl(sex='F').sex`` and ``classes.Other(sex='?').sex``
 
 ----
 
-How to View the Attributes and:doc:`methods <functions>`of a Class
+How to View the Attributes and Methods of a Class
 --------------------------------------------------
 
 To view what ``attributes`` and ``methods`` are defined for any object we can call ``dir`` on the object. The ``dir`` :doc:`method <functions>` returns a :doc:`list` that contains the names of all attributes and :doc:`methods <functions>`in the class

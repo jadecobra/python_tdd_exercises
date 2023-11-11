@@ -716,7 +716,7 @@ I will add a failing test to ``test_calculator.py`` to make  a `ZeroDivisionErro
         #     self.x/self.y
         # )
 
-the terminal confirms my expectations with a failure for any value of ``x`` when ``y`` is 0. :doc:`Exceptions </exception handling>` like `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ break execution of a program. No further code is run when an :doc:`exception </exception handling>` is raised which means that no other tests will run until I take care of the error
+the terminal confirms my expectations with a failure for any value of ``x`` when ``y`` is 0. :doc:`Exceptions </exception handling>` like `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ break execution of a program. No further code is run when an :doc:`Exception </exception handling>` is raised which means that no other tests will run until I take care of the error
 
 .. code-block:: python
 
