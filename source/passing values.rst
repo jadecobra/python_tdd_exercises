@@ -15,7 +15,7 @@ It is similar to functions in mathematics where I represent a function as ``f`` 
     f(x) -> y
 ```
 
-In testing I are asking the question is `f(x)` equal to ``y`` for the given input ``x`` for example,  I could use an assert statement
+In testing I am asking the question is `f(x)` equal to ``y`` for the given input ``x`` for example,  I could use an assert statement
 
 .. code-block:: python
     assert f(x) == y
@@ -27,7 +27,7 @@ or use the `self.assertEqual` :doc:`method <functions>` from `unittest.TestCase`
     self.assertEqual(f(x), y)
 ```
 
-I are going to look at how to pass values from tests to programs using `string interpolation` with Test Driven Development
+I am going to look at how to pass values from tests to programs using `string interpolation` with Test Driven Development
 
 Prerequisites
 -------------

@@ -56,7 +56,7 @@ GREEN: make it pass
            if p == False and q == True:
                return False
            return True
-    I are green!
+    I am green!
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^

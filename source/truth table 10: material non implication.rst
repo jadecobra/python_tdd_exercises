@@ -74,7 +74,7 @@ REFACTOR: make it better
 
        def material_non_implication(p, q):
            return p and not q
-    I are still green
+    I am still green
 
 Our knowledge is growing, I now know that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
 

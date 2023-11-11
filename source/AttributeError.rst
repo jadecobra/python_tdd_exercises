@@ -484,7 +484,7 @@ RED: make it fail
 
   Looking at the ``traceback`` I see it's the line I added that caused the failure
 
-  * I are familiar with an ``AttributeError``
+  * I am familiar with an ``AttributeError``
   * This also looks exactly like the tests in ``test_defining_functions_to_solve_attribute_errors``
   * What's the difference?
 

@@ -1,7 +1,7 @@
 Data Structures: Dictionaries
 =============================
 
-I are going to cover dictionaries in python In this chapter using Test Driven Development
+I am going to cover dictionaries in python In this chapter using Test Driven Development
 
 Prerequisites
 -------------
@@ -137,7 +137,7 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* the knowledge of dictionaries is growing. I know I can use ``integers`` and ``strings`` as dictionary keys. Can I use ``floats``? I are going to find out by adding a test
+* the knowledge of dictionaries is growing. I know I can use ``integers`` and ``strings`` as dictionary keys. Can I use ``floats``? I am going to find out by adding a test
   .. code-block:: python
 
            def test_creating_dictionaries_with_numbers_as_keys(self):
@@ -170,7 +170,7 @@ the terminal outputs an :doc:`AssertionError`
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-update the return values to make them match and I are green again
+update the return values to make them match and I am green again
 
 .. code-block:: python
 
@@ -339,7 +339,7 @@ From the tests above I learned how to create ``dictionaries``, and what I can us
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I are going to add a test to ``TestDictionaries`` in ``test_dictionaries.py``
+I am going to add a test to ``TestDictionaries`` in ``test_dictionaries.py``
 
 .. code-block:: python
 

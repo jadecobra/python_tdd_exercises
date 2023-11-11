@@ -186,7 +186,7 @@ GREEN: make it pass
 
        def passthrough(input_data):
            return False
-    the terminal updates to show passing tests. I are geniuses!
+    the terminal updates to show passing tests. I am geniuses!
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -211,7 +211,7 @@ Wait a minute! Something is not quite right here. The definition for a ``passthr
 
        AssertionError: False != True
 
-    the function returns ``False`` instead of ``True`` in the second case, confirming the suspicions, I are not all the way geniuses, yet
+    the function returns ``False`` instead of ``True`` in the second case, confirming the suspicions, I am not all the way geniuses, yet
 
 *
   GREEN: make it pass
@@ -243,12 +243,12 @@ Wait a minute! Something is not quite right here. The definition for a ``passthr
                self.assertEqual(functions.passthrough(set), False)
                self.assertEqual(functions.passthrough(dict), False)
 
-    the terminal updates to show an :doc:`AssertionError` for each line until I make the input match the output, proving that the passthrough function I have defined returns the input it is given. Hooray! I are geniuses again
+    the terminal updates to show an :doc:`AssertionError` for each line until I make the input match the output, proving that the passthrough function I have defined returns the input it is given. Hooray! I am geniuses again
 
 Functions with positional arguments
 -----------------------------------
 
-I can define the function to take in more than one input, For instance if I are writing a function to perform operations on 2 numbers as I do in :doc:`calculator`\ , the function has to be able to accept the 2 numbers it performs operations on
+I can define the function to take in more than one input, For instance if I am writing a function to perform operations on 2 numbers as I do in :doc:`calculator`\ , the function has to be able to accept the 2 numbers it performs operations on
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^

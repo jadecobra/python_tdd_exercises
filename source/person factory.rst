@@ -138,7 +138,7 @@ REFACTOR: make it better
   the terminal updates to show a :doc:`TypeError` for the next keyword argument
 
 * I update the ``factory`` function definition for each keyword until I get a :doc:`TypeError` for the line where I subtract ``this_year() - this_year()`` because I cannot perform a subtraction operation on :doc:`None </data structures: None>` and the ``this_year`` function currently returns :doc:`None </data structures: None>`
-* update the definition for ``this_year`` using a function from the `datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#module-datetime>`_ library that returns the current year I are in
+* update the definition for ``this_year`` using a function from the `datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#module-datetime>`_ library that returns the current year I am in
 
   .. code-block:: python
 
@@ -152,7 +152,7 @@ REFACTOR: make it better
 
   - I import the ``datetime`` library so I can use its :doc:`functions` and :doc:`classes`
   - I return the ``year`` attribute of the object returned by the ``now`` :doc:`method <functions>` of the ``datetime.datetime`` class, which is a representation of the current local date and time, I could also use ``today`` or ``utcnow`` to achieve the same result
-  - I get the ``year`` attribute of the object returned since that is all I are interested in
+  - I get the ``year`` attribute of the object returned since that is all I am interested in
 
 * the terminal updates to show an :doc:`AssertionError` since the ``person.factory`` function returns :doc:`None </data structures: None>` but the test expects a :doc:`data structures: dictionaries`. I should update the function to return an empty dictionary
 
@@ -225,7 +225,7 @@ REFACTOR: make it better
              'sex': sex,
          }
 
-  the terminal updates to show a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ since I are calling a function that does not exist in ``person.py``
+  the terminal updates to show a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ since I am calling a function that does not exist in ``person.py``
 
 * replace ``this_year()`` with the return value from ``test_person_factory.this_year`` and add an import statement
 

@@ -66,7 +66,7 @@ GREEN: make it pass
 
      def logical_true():
          return True
-  the terminal updates to show passing tests and I are reminded that ``True`` is ``True``
+  the terminal updates to show passing tests and I am reminded that ``True`` is ``True``
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -90,7 +90,7 @@ REFACTOR: make it better
      def logical_false():
          return False
 
-* I are again reminded that ``False`` is ``False`` and ``True`` is ``True``
+* I am again reminded that ``False`` is ``False`` and ``True`` is ``True``
 
 ----
 

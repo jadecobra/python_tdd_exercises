@@ -41,7 +41,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* when I change all the ``self.assertTrue`` statements in ``test_what_is_false`` to ``self.assertFalse`` I are left with one failing test
+* when I change all the ``self.assertTrue`` statements in ``test_what_is_false`` to ``self.assertFalse`` I am left with one failing test
   .. code-block:: python
 
            def test_what_is_false(self):

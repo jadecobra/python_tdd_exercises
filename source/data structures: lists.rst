@@ -49,7 +49,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* Looking at the error I see that the ``list`` keyword expects one argument but I gave it four, so I are violating the signature for creating lists. How can I pass in values correctly to this object?
+* Looking at the error I see that the ``list`` keyword expects one argument but I gave it four, so I am violating the signature for creating lists. How can I pass in values correctly to this object?
 * I check out the `documentation <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ and see that list takes in an ``iterable``. An iterable is an object that I can loop over
 * update the left input of the ``self.assertEqual`` by putting the values in an iterable, I will use a tuple for this example by placing parentheses around the values
   .. code-block:: python
@@ -171,7 +171,7 @@ the terminal updates to show a difference after I call ``a_list.remove(2)``, bec
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-update the test to make the values on the right to match the expected values and I are green again with passing tests
+update the test to make the values on the right to match the expected values and I am green again with passing tests
 
 .. code-block:: python
 

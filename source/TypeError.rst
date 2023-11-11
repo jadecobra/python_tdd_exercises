@@ -87,7 +87,7 @@ RED: make it fail
   Another ``TypeError`` but with a message I have not seen before. Reading the error from the bottom up
 
   * ``function_a() takes 0 positional arguments but 1 was given`` explains that there was an expectation which was not met in how the function is called. In order words the call violates the signature defined.
-  * ``self.assertIsNone(functions.function_a("a"))`` the offending line. in this line I are checking if this call ``functions.function_a("a")`` is equal to :doc:`None </data structures: None>`
+  * ``self.assertIsNone(functions.function_a("a"))`` the offending line. in this line I am checking if this call ``functions.function_a("a")`` is equal to :doc:`None </data structures: None>`
   * ``functions.function_a("a")`` is the call. I can think of it like an address
 
     - ``functions`` refers to ``functions.py`` which is a python module
@@ -169,7 +169,7 @@ There's not much to do here but add more tests for practice.
 
       TypeError: function_b() takes 1 positional argument but 2 were given
 
-   ah, the previous definition only allowed for 0 positional arguments, now it allows for 1 positional argument but I are still calling with 2 positional arguments.
+   ah, the previous definition only allowed for 0 positional arguments, now it allows for 1 positional argument but I am still calling with 2 positional arguments.
 
    update ``function_b`` in ``functions.py`` to take in 2 positional arguments
 

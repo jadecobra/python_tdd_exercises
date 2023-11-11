@@ -84,7 +84,7 @@ REFACTOR: make it better
 
        def project_first(p, q):
            return p
-    I are still green
+    I am still green
 
 Project Second
 --------------

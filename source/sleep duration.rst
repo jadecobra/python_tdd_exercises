@@ -344,7 +344,7 @@ What if I write a test that uses a random variable for the sleep and wake times?
        >       return wake_time - sleep_time
        E       TypeError: unsupported operand type(s) for -: 'str' and 'str'
 
-  I are now at a point where I get the two random values passed in and are trying to do a calculation, but because both values are strings, the calculation does not work. I need to find a way to convert the strings to numbers
+  I am now at a point where I get the two random values passed in and are trying to do a calculation, but because both values are strings, the calculation does not work. I need to find a way to convert the strings to numbers
 
 * What if I try one of the :doc:`methods <functions>` listed from ``test_string_methods_and_attributes`` to see if one of them might get us closer to a solution? Going with just the names of :doc:`methods <functions>` and attributes might not be enough since I do not know what they do, let us take a look at the documentation for extra details. Add a failing test with the ``help`` keyword to see documentation about ``strings``
 
@@ -448,7 +448,7 @@ What if I write a test that uses a random variable for the sleep and wake times?
                    0
                )
 
-  the terminal updates to show us an :doc:`AssertionError` because the first item (item zero) from splitting ``"12:34"`` on the delimiter ``:`` is ``"12"``, good, I are closer to what I want
+  the terminal updates to show us an :doc:`AssertionError` because the first item (item zero) from splitting ``"12:34"`` on the delimiter ``:`` is ``"12"``, good, I am closer to what I want
 * change the expected value in the test to match the value in the terminal
 
   .. code-block:: python
@@ -467,7 +467,7 @@ What if I write a test that uses a random variable for the sleep and wake times?
                    0
                )
 
-  the terminal shows another :doc:`AssertionError`\ , this time to confirm that the second item (item one) from splitting ``"12:34"`` on the delimiter ``:`` is ``"34"``, I are not dealing with this part yet but I can assume I would use it soon, update the expected value in the same way and the test passes bringing us back to the unsolved :doc:`TypeError`
+  the terminal shows another :doc:`AssertionError`\ , this time to confirm that the second item (item one) from splitting ``"12:34"`` on the delimiter ``:`` is ``"34"``, I am not dealing with this part yet but I can assume I would use it soon, update the expected value in the same way and the test passes bringing us back to the unsolved :doc:`TypeError`
 * using what I know, how to ``split`` a string on a delimiter :doc:`method <functions>` and how to index a list, update the duration function to only return the subtraction of the first parts of ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
@@ -503,14 +503,14 @@ What if I write a test that uses a random variable for the sleep and wake times?
 
   I now have another tool to use to solve the problem
 
-* after uncommenting the commented test, I are back to the :doc:`TypeError` I have been trying to solve. I update the duration function with the knowledge to see if it makes the test pass
+* after uncommenting the commented test, I am back to the :doc:`TypeError` I have been trying to solve. I update the duration function with the knowledge to see if it makes the test pass
 
   .. code-block:: python
 
        def duration(wake_time, sleep_time):
            return int(wake_time.split(':')[0]) - int(sleep_time.split(':')[0])
 
-  EUREKA! I are green, with a way to randomly test if the duration function can calculate the sleep duration given any random ``sleep`` and ``wake`` time.
+  EUREKA! I am green, with a way to randomly test if the duration function can calculate the sleep duration given any random ``sleep`` and ``wake`` time.
 * You could also write the solution I have in a way that explains what is happening to someone who does not know how to index a list or use ``int`` or\ ``split``. Let's try adding some variables
 
   .. code-block:: python
@@ -570,7 +570,7 @@ What if I write a test that uses a random variable for the sleep and wake times?
        def get_hour(value):
            return int(value.split(':')[0])
 
-  the terminal still shows passing tests. Since I are green you can try any ideas you have until you understand what I have written so far.
+  the terminal still shows passing tests. Since I am green you can try any ideas you have until you understand what I have written so far.
 
 Duration when given hours and minutes
 -------------------------------------
@@ -580,7 +580,7 @@ I found a solution that provides the right duration when given sleep time and wa
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I are going to add a failing test for that scenario to ``test_sleep_duration.py``
+I am going to add a failing test for that scenario to ``test_sleep_duration.py``
 
 .. code-block:: python
 
@@ -704,7 +704,7 @@ This means that even though the tests are passing, once again the ``duration`` f
     class datetime.timedelta
        A duration expressing the difference between two date, time, or datetime instances to microsecond resolution.
 
-  This looks exactly like what I are trying to achieve. I just need to know how to create ``datetime`` instances, which is also listed in the available types right above ``datetime.timedelta``
+  This looks exactly like what I am trying to achieve. I just need to know how to create ``datetime`` instances, which is also listed in the available types right above ``datetime.timedelta``
 
   .. code-block:: python
 
@@ -805,7 +805,7 @@ This means that even though the tests are passing, once again the ``duration`` f
            ''
        )
 
-  and I get an :doc:`AssertionError` that looks more like what I are expecting
+  and I get an :doc:`AssertionError` that looks more like what I am expecting
 
   .. code-block:: python
 
@@ -890,7 +890,7 @@ Putting it all together
            return str(difference)
            return f'{get_hour(wake_time)-get_hour(sleep_time)}:{get_minute(wake_time)-get_minute(sleep_time)}'
 
-  the terminal shows an :doc:`AssertionError`\ , this time the values are the same except I are missing the part for seconds
+  the terminal shows an :doc:`AssertionError`\ , this time the values are the same except I am missing the part for seconds
 
   .. code-block:: python
 
@@ -914,7 +914,7 @@ Putting it all together
                )
 
   I get another :doc:`AssertionError` in the terminal since I have not yet updated ``test_duration_calculation`` with the new format
-* I will randomly get an :doc:`AssertionError` for ``test_duration_when_given_hours_and_minutes``. Since I are using random integers for hours and minutes, there will be instances where the ``wake_hour`` is earlier than the ``sleep_hour`` leading to a negative number for example,
+* I will randomly get an :doc:`AssertionError` for ``test_duration_when_given_hours_and_minutes``. Since I am using random integers for hours and minutes, there will be instances where the ``wake_hour`` is earlier than the ``sleep_hour`` leading to a negative number for example,
 
   .. code-block:: python
 
@@ -957,7 +957,7 @@ Putting it all together
                    '0:31:00'
                )
 
-  and I are green again! Lovely
+  and I am green again! Lovely
 * What if I remove the second return statement in the ``duration`` function in ``sleep_duration.py`` I left it there as a way to save what worked until confirmation that the new solution works better
 
   .. code-block:: python
@@ -1006,7 +1006,7 @@ Our ``duration`` function now accounts for a time traveling sleep scenario where
                    '-1 day, 23:00:00'
                )
 
-  I are green again
+  I am green again
 * I want the ``duration`` function to make a decision based on a comparison of ``wake_time`` and ``sleep_time``. If ``wake_time`` is earlier than ``sleep_time`` it should raise an :doc:`exception handling`
 
   .. code-block:: python
@@ -1051,7 +1051,7 @@ Our ``duration`` function now accounts for a time traveling sleep scenario where
                    with self.assertRaises(ValueError):
                        sleep_duration.duration(wake_time, sleep_time)
 
-  I are left with the ``ValueError`` for ``test_duration_when_given_earlier_wake_time_than_sleep_time``
+  I am left with the ``ValueError`` for ``test_duration_when_given_earlier_wake_time_than_sleep_time``
 * update ``test_duration_when_given_earlier_wake_time_than_sleep_time`` with a ``self.assertRaises`` to catch the ``ValueError``
 
   .. code-block:: python
@@ -1125,7 +1125,7 @@ GREEN: make it pass
                    '0:31:00'
                )
 
-  all the tests pass, though I have a few cases that are not raising errors because I are catching any ``ValueError`` with the ``try...except`` block in ``test_duration_when_given_hours_and_minutes`` and the ``self.assertRaises`` in ``test_duration_when_given_earlier_wake_time_than_sleep_time``
+  all the tests pass, though I have a few cases that are not raising errors because I am catching any ``ValueError`` with the ``try...except`` block in ``test_duration_when_given_hours_and_minutes`` and the ``self.assertRaises`` in ``test_duration_when_given_earlier_wake_time_than_sleep_time``
 * I update the ``self.assertRaises`` from ``test_duration_when_given_earlier_wake_time_than_sleep_time`` to catch the specific failure I expect using ``self.assertRaisesRegex`` which takes in as input an expected exception and the message it returns
 
   .. code-block:: python
@@ -1182,7 +1182,7 @@ GREEN: make it pass
                with self.assertRaisesRegex(ValueError, f'wake_time: {sleep_duration.get_datetime_object(wake_time)} is earlier than sleep_time: {sleep_duration.get_datetime_object(sleep_time)}'):
                    sleep_duration.duration(wake_time, sleep_time)
 
-  all tests are passing again, the test is very specific for the case when ``wake_time`` is earlier than ``sleep_time`` and displays an appropriate error message, I are left with ``test_duration_when_given_hours_and_minutes``
+  all tests are passing again, the test is very specific for the case when ``wake_time`` is earlier than ``sleep_time`` and displays an appropriate error message, I am left with ``test_duration_when_given_hours_and_minutes``
 * change the ``self.assertRaises(ValueError)`` statement in ``test_duration_when_given_hours_and_minutes`` to match what I did in ``test_duration_when_given_earlier_wake_time_than_sleep_time``
 
   .. code-block:: python
