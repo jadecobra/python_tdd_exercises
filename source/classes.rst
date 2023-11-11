@@ -1,3 +1,4 @@
+
 classes
 =======
 
@@ -29,14 +30,14 @@ we create a new file called ``test_classes.py`` in the ``tests`` directory
 
 .. code-block:: python
 
-   import unittest
-   import classes
+  import unittest
+  import classes
 
 
-   class TestClasses(unittest.TestCase):
+  class TestClasses(unittest.TestCase):
 
-       def test_class_definitions_with_pass(self):
-           self.assertIsInstance(classes.ClassWithPass(), object)
+     def test_class_definitions_with_pass(self):
+         self.assertIsInstance(classes.ClassWithPass(), object)
 
 the terminal displays a :doc:`ModuleNotFoundError`
 
@@ -61,19 +62,19 @@ GREEN: make it pass
 
 * redefine the variable as a class using the ``class`` keyword
 
-.. code-block:: python
+  .. code-block:: python
 
-   class ClassWithPass:
+     class ClassWithPass:
 
   the terminal updates to show an :doc:`IndentationError`
 
 * add the ``pass`` keyword as a placeholder to the definition
 
-.. code-block:: python
+  .. code-block:: python
 
-   class ClassWithPass:
+     class ClassWithPass:
 
-       pass
+         pass
 
   and the terminal updates to show passing tests
 
@@ -120,7 +121,7 @@ GREEN: make it pass
 
 * update the definition to include parentheses
 
-    .. code-block:: python
+  .. code-block:: python
 
 
     class ClassWithParentheses():
@@ -153,8 +154,8 @@ we add another test to ``TestClasses`` in ``test_classes.py``
 
 .. code-block:: python
 
-       def test_class_definition_with_object(self):
-           self.assertIsInstance(classes.ClassWithObject(), object)
+  def test_class_definition_with_object(self):
+      self.assertIsInstance(classes.ClassWithObject(), object)
 
 and the terminal displays an :doc:`AttributeError`
 
@@ -167,9 +168,9 @@ GREEN: make it pass
   .. code-block:: python
 
 
-  class ClassWithObject():
+    class ClassWithObject():
 
-      pass
+        pass
 
   the terminal displays passing tests
 
@@ -220,8 +221,8 @@ RED: make it fail
 
   .. code-block:: python
 
-           def test_classes_with_attributes(self):
-               self.assertEqual(classes.ClassWithAttributes.a_boolean, bool)
+    def test_classes_with_attributes(self):
+        self.assertEqual(classes.ClassWithAttributes.a_boolean, bool)
 
   the terminal updates to show an :doc:`AttributeError`
 
@@ -230,9 +231,9 @@ RED: make it fail
   .. code-block:: python
 
 
-     class ClassWithAttributes(object):
+    class ClassWithAttributes(object):
 
-         pass
+        pass
 
   though the terminal still outputs an :doc:`AttributeError`, this time it is for a missing attribute in our newly defined class
 
@@ -289,15 +290,15 @@ update ``test_classes_with_attributes`` with more tests
 
 .. code-block:: python
 
-       def test_classes_with_attributes(self):
-           self.assertEqual(classes.ClassWithAttributes.a_boolean, bool)
-           self.assertEqual(classes.ClassWithAttributes.an_integer, int)
-           self.assertEqual(classes.ClassWithAttributes.a_float, float)
-           self.assertEqual(classes.ClassWithAttributes.a_string, str)
-           self.assertEqual(classes.ClassWithAttributes.a_tuple, tuple)
-           self.assertEqual(classes.ClassWithAttributes.a_list, list)
-           self.assertEqual(classes.ClassWithAttributes.a_set, set)
-           self.assertEqual(classes.ClassWithAttributes.a_dictionary, dict)
+  def test_classes_with_attributes(self):
+      self.assertEqual(classes.ClassWithAttributes.a_boolean, bool)
+      self.assertEqual(classes.ClassWithAttributes.an_integer, int)
+      self.assertEqual(classes.ClassWithAttributes.a_float, float)
+      self.assertEqual(classes.ClassWithAttributes.a_string, str)
+      self.assertEqual(classes.ClassWithAttributes.a_tuple, tuple)
+      self.assertEqual(classes.ClassWithAttributes.a_list, list)
+      self.assertEqual(classes.ClassWithAttributes.a_set, set)
+      self.assertEqual(classes.ClassWithAttributes.a_dictionary, dict)
 
 the terminal updates to show an :doc:`AttributeError`
 
@@ -306,19 +307,19 @@ GREEN: make it pass
 
 update ``ClassWithAttributes`` with attributes to make the tests pass
 
-  .. code-block:: python
+.. code-block:: python
 
 
-     class ClassWithAttributes(object):
+  class ClassWithAttributes(object):
 
-         a_boolean = bool
-         an_integer = int
-         a_float = float
-         a_string = str
-         a_tuple = tuple
-         a_list = list
-         a_set = set
-         a_dictionary = dict
+      a_boolean = bool
+      an_integer = int
+      a_float = float
+      a_string = str
+      a_tuple = tuple
+      a_list = list
+      a_set = set
+      a_dictionary = dict
 
 the terminal updates to show passing tests
 
@@ -332,13 +333,13 @@ RED: make it fail
 
 Let us add some tests for class methods. update ``TestClasses`` in ``classes.py``
 
-  .. code-block:: python
+.. code-block:: python
 
-      def test_classes_with_methods(self):
-          self.assertEqual(
-              classes.ClassWithMethods.method_a(),
-              'You called MethodA'
-          )
+    def test_classes_with_methods(self):
+        self.assertEqual(
+            classes.ClassWithMethods.method_a(),
+            'You called MethodA'
+        )
 
 the terminal updates to show :doc:`AttributeError`
 
@@ -351,9 +352,9 @@ GREEN: make it pass
   .. code-block:: python
 
 
-  class ClassWithMethods(object):
+    class ClassWithMethods(object):
 
-      pass
+        pass
 
   the terminal now gives an :doc:`AttributeError` with a different error
 
@@ -376,9 +377,9 @@ GREEN: make it pass
 
 
 
-  class ClassWithMethods(object):
+    class ClassWithMethods(object):
 
-      method_a = None
+        method_a = None
 
   the terminal now reveals a [TypeError](./TypeError.rst) since ``method_a`` is not callable
 
@@ -400,8 +401,8 @@ GREEN: make it pass
 
   .. code-block:: python
 
-           def method_a():
-               return 'You called MethodA'
+    def method_a():
+        return 'You called MethodA'
 
   for the terminal to show passing tests
 
@@ -413,11 +414,11 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-           def test_classes_with_methods(self):
-               self.assertEqual(classes.ClassWithMethods.method_a(), 'You called MethodA')
-               self.assertEqual(classes.ClassWithMethods.method_b(), 'You called MethodB')
-               self.assertEqual(classes.ClassWithMethods.method_c(), 'You called MethodC')
-               self.assertEqual(classes.ClassWithMethods.method_d(), 'You called MethodD')
+    def test_classes_with_methods(self):
+        self.assertEqual(classes.ClassWithMethods.method_a(), 'You called MethodA')
+        self.assertEqual(classes.ClassWithMethods.method_b(), 'You called MethodB')
+        self.assertEqual(classes.ClassWithMethods.method_c(), 'You called MethodC')
+        self.assertEqual(classes.ClassWithMethods.method_d(), 'You called MethodD')
 
   the terminal updates to show an :doc:`AttributeError`
 
@@ -437,15 +438,15 @@ we add another test for a class that has both attributes and methods
 
 .. code-block:: python
 
-       def test_classes_with_attributes_and_methods(self):
-           self.assertEqual(
-               classes.ClassWithAttributesAndMethods.attribute,
-               'attribute'
-           )
-           self.assertEqual(
-               classes.ClassWithAttributesAndMethods.method(),
-               'you called a method'
-           )
+  def test_classes_with_attributes_and_methods(self):
+      self.assertEqual(
+          classes.ClassWithAttributesAndMethods.attribute,
+          'attribute'
+      )
+      self.assertEqual(
+          classes.ClassWithAttributesAndMethods.method(),
+          'you called a method'
+      )
 
 with the terminal giving an :doc:`AttributeError`
 
@@ -478,8 +479,8 @@ we will add a failing test to ``test_classes.py``
 
 .. code-block:: python
 
-       def test_classes_with_initializers(self):
-           self.assertEqual(classes.Boy().sex, 'M')
+  def test_classes_with_initializers(self):
+      self.assertEqual(classes.Boy().sex, 'M')
 
 the terminal updates to show an :doc:`AttributeError`
 
@@ -492,9 +493,9 @@ GREEN: make it pass
   .. code-block:: python
 
 
-     class Boy(object):
+    class Boy(object):
 
-         pass
+        pass
 
   the terminal updates to show another :doc:`AttributeError`
 
@@ -531,9 +532,9 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-       def test_classes_with_initializers(self):
-           self.assertEqual(classes.Boy().sex, 'M')
-           self.assertEqual(classes.Girl(sex='F').sex, 'F')
+    def test_classes_with_initializers(self):
+        self.assertEqual(classes.Boy().sex, 'M')
+        self.assertEqual(classes.Girl(sex='F').sex, 'F')
 
   the terminal displays an :doc:`AttributeError`
 
@@ -549,7 +550,8 @@ REFACTOR: make it better
   and the terminal displays a [TypeError](./TypeError.rst)
 
   .. code-block:: python
-     TypeError: Girl() takes no arguments
+
+    TypeError: Girl() takes no arguments
 
   - If you have gone through the [functions](./07_functions.rst) chapter you will see a similarity in this last test and passing inputs to functions. The call `classes.Girl(sex='F')` looks like a call to a function with keyword arguments
   - Which begs the question - How do we define classes to accept keyword arguments when the definition of a class defines the parent it inherits from for example,  `class Class(object)`? The answer - We use an initializer
@@ -571,8 +573,8 @@ REFACTOR: make it better
   the terminal responds with a [TypeError](./TypeError.rst)
 
   .. code-block:: python
-     TypeError: __init__() got an unexpected keyword argument 'sex'
 
+     TypeError: __init__() got an unexpected keyword argument 'sex'
 
 * update the signature of the ``__init__`` :doc:`method <functions>` to accept a keyword argument
 
@@ -587,10 +589,10 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-       def test_classes_with_initializers(self):
-           self.assertEqual(classes.Boy().sex, 'M')
-           self.assertEqual(classes.Girl(sex='F').sex, 'F')
-           self.assertEqual(classes.Other(sex='?').sex, '?')
+    def test_classes_with_initializers(self):
+        self.assertEqual(classes.Boy().sex, 'M')
+        self.assertEqual(classes.Girl(sex='F').sex, 'F')
+        self.assertEqual(classes.Other(sex='?').sex, '?')
 
   the terminal displays an :doc:`AttributeError`
 
@@ -736,7 +738,7 @@ Why did that work?
 How to View the Attributes and Methods of a Class
 --------------------------------------------------
 
-To view what ``attributes`` and ``methods`` are defined for any object we can call ``dir`` on the object. The ``dir`` :doc:`method <functions>` returns a :doc:`list` that contains the names of all attributes and :doc:`methods <functions>`in the class
+To view what ``attributes`` and ``methods`` are defined for any object we can call ``dir`` on the object. The ``dir`` :doc:`method <functions>` returns a :doc:`list` that contains the names of all attributes and :doc:`methods <functions>` in the class
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -745,13 +747,13 @@ add a test to ``test_classes.py``
 
 .. code-block:: python
 
-       def test_view_attributes_and_methods_of_an_object(self):
-           self.assertEqual(
-               dir(classes.ClassWithAttributesAndMethods),
-               [
+  def test_view_attributes_and_methods_of_an_object(self):
+      self.assertEqual(
+          dir(classes.ClassWithAttributesAndMethods),
+          [
 
-               ]
-           )
+          ]
+      )
 
 the terminal updates to show an :doc:`AssertionError` as our expected and real values do not match
 
@@ -762,40 +764,40 @@ copy the values from the terminal to update the test to make it pass
 
 .. code-block:: python
 
-       def test_view_attributes_and_methods_of_an_object(self):
-           self.assertEqual(
-               dir(classes.ClassWithAttributesAndMethods),
-               [
-                   '__class__',
-                   '__delattr__',
-                   '__dict__',
-                   '__dir__',
-                   '__doc__',
-                   '__eq__',
-                   '__format__',
-                   '__ge__',
-                   '__getattribute__',
-                   '__gt__',
-                   '__hash__',
-                   '__init__',
-                   '__init_subclass__',
-                   '__le__',
-                   '__lt__',
-                   '__module__',
-                   '__ne__',
-                   '__new__',
-                   '__reduce__',
-                   '__reduce_ex__',
-                   '__repr__',
-                   '__setattr__',
-                   '__sizeof__',
-                   '__str__',
-                   '__subclasshook__',
-                   '__weakref__',
-                   'attribute',
-                   'method'
-               ]
-           )
+  def test_view_attributes_and_methods_of_an_object(self):
+      self.assertEqual(
+          dir(classes.ClassWithAttributesAndMethods),
+          [
+              '__class__',
+              '__delattr__',
+              '__dict__',
+              '__dir__',
+              '__doc__',
+              '__eq__',
+              '__format__',
+              '__ge__',
+              '__getattribute__',
+              '__gt__',
+              '__hash__',
+              '__init__',
+              '__init_subclass__',
+              '__le__',
+              '__lt__',
+              '__module__',
+              '__ne__',
+              '__new__',
+              '__reduce__',
+              '__reduce_ex__',
+              '__repr__',
+              '__setattr__',
+              '__sizeof__',
+              '__str__',
+              '__subclasshook__',
+              '__weakref__',
+              'attribute',
+              'method'
+          ]
+      )
 
 the tests pass and we see the last two values in our list are ``attribute`` and ``method`` which we defined earlier
 
