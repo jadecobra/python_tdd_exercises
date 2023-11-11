@@ -51,7 +51,7 @@ GREEN: make it pass
     class TestSleepDuration(unittest.TestCase):
 
 
-  the terminal updates to show an [AttributeError](./AttributeError.rst) since we do not have a definition for ``duration`` in `sleep_duration.py`
+  the terminal updates to show an :doc:`AttributeError` since we do not have a definition for ``duration`` in `sleep_duration.py`
 
 
 * we update our list of exceptions encountered

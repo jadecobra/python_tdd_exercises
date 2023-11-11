@@ -54,7 +54,7 @@ REFACTOR: make it better
        def test_creating_dictionaries_with_strings_as_keys(self):
            self.assertEqual(dictionaries.a_dict(), {"key": "value"})
    ```
-   the terminal updates to show an [AttributeError](./AttributeError.rst) and we add it to our list of exceptions encountered
+   the terminal updates to show an :doc:`AttributeError` and we add it to our list of exceptions encountered
 
 .. code-block:: python
    # Exceptions Encountered

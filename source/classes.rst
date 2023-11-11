@@ -234,7 +234,7 @@ RED: make it fail
 
          pass
 
-  though the terminal still outputs an [AttributeError](./AttributeError.rst), this time it is for a missing attribute in our newly defined class
+  though the terminal still outputs an :doc:`AttributeError`, this time it is for a missing attribute in our newly defined class
 
 
 GREEN: make it pass
@@ -355,7 +355,7 @@ GREEN: make it pass
 
       pass
 
-  the terminal now gives an [AttributeError](./AttributeError.rst) with a different error
+  the terminal now gives an :doc:`AttributeError` with a different error
 
 
 * add the missing attribute to the ``ClassWithMethods`` class
@@ -496,7 +496,7 @@ GREEN: make it pass
 
          pass
 
-  the terminal updates to show another [AttributeError](./AttributeError.rst)
+  the terminal updates to show another :doc:`AttributeError`
 
 
 * update the ``Boy`` class with the name ``sex``

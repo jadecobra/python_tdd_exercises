@@ -65,7 +65,7 @@ the terminal updates to show a [ModuleNotFoundError](./ModuleNotFoundError.rst) 
 
 ### GREEN: make it pass
 
-- create a file called `telephone.py` in the project folder and the terminal updates to show an [AttributeError](./AttributeError.rst) which we add to our list of exceptions
+- create a file called `telephone.py` in the project folder and the terminal updates to show an :doc:`AttributeError` which we add to our list of exceptions
 
 .. code-block:: python
     # Exceptions Encountered
@@ -80,7 +80,7 @@ the terminal updates to show a [ModuleNotFoundError](./ModuleNotFoundError.rst) 
 
         pass
     ```
-    the terminal still displays an [AttributeError](./AttributeError.rst) but with a different message
+    the terminal still displays an :doc:`AttributeError` but with a different message
 - we add a definition for an attribute called ``text`` to the ``Telephone`` class
 
 .. code-block:: python
