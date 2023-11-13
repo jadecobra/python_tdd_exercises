@@ -201,7 +201,7 @@ GREEN: make it pass
 
   The :doc:`AttributeError` was fixed by declaring a variable ``add`` in the ``calculator`` module, even though it is currently assigned to the null value :doc:`None </data structures: None>`
 
-* The new error isa :doc:`TypeError` which can occur when an `object <https://docs.python.org/3/glossary.html#term-object>`_ is used in a way that it is not supposed to be used. In this case the ``add`` variable is not callable because it refers to :doc:`None </data structures: None>` which is not a callable object. I update the list of exceptions encountered
+* The new error isa :doc:`TypeError` which can occur when an `object <https://docs.python.org/3/glossary.html#term-object>`_ is used in a way that it is not supposed to be used. In this case the ``add`` variable is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_ because it refers to :doc:`None </data structures: None>` which is not a `callable <https://docs.python.org/3/glossary.html#term-callable>`_ object. I update the list of exceptions encountered
 
   .. code-block:: python
 
@@ -210,7 +210,7 @@ GREEN: make it pass
     # NameError
     # TypeError
 
-* I have to define ``add`` asa :doc:`function <functions>` ora :doc:`class <classes>` to make it callable. I know the ``def`` keyword is used for creating :doc:`functions` and will test changing the ``add`` variable in ``calculator.py``
+* I have to define ``add`` asa :doc:`function <functions>` ora :doc:`class <classes>` to make it callable. I know the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword is used for creating :doc:`functions` and will test changing the ``add`` variable in ``calculator.py``
 
   .. code-block:: python
 

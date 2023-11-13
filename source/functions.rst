@@ -3,7 +3,7 @@ functions
 
 The focus of this chapter is on functions in python using Test Driven Development
 
-A ``function`` is a callable unit/block of code. It is a way to encapsulate statements that can be used after they are written to accomplish a task. With functions I make code modular which makes it easier to test and reuse.
+A ``function`` is a `callable <https://docs.python.org/3/glossary.html#term-callable>`_ unit/block of code. It is a way to encapsulate statements that can be used after they are written to accomplish a task. With functions I make code modular which makes it easier to test and reuse.
 
 In programming I process input data of some form and output data in some form. I can think of it as
 
@@ -25,7 +25,7 @@ Prerequisites
 How to Define functions
 -----------------------
 
-``functions`` are defined using the ``def`` keyword, a name, parentheses and a colon at the end
+``functions`` are defined using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword, a name, parentheses and a colon at the end
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -71,8 +71,8 @@ GREEN: make it pass
     and the terminal displays a passing test
 
   * the test checks if the value of the call to ``functions.function_with_pass`` is :doc:`None </data structures: None>`
-  * the function definition simply says ``pass`` yet the test passes
-  * ``pass`` is a placeholder keyword which allows the function definition to follow python syntax rules
+  * the function definition simply says `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ yet the test passes
+  * `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is a placeholder keyword which allows the function definition to follow python syntax rules
   * the test passes because in python all functions return :doc:`None </data structures: None>` by default, I can imagine the function has an invisible line that says ``return None``
 
 REFACTOR: make it better
@@ -95,7 +95,7 @@ What if I test if functions really always return :doc:`None </data structures: N
 *
   GREEN: make it pass
 
-    add a new function to ``functions.py`` to make the test pass, this time with a ``return`` statement instead of ``pass``
+    add a new function to ``functions.py`` to make the test pass, this time with a ``return`` statement instead of `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
 
   .. code-block:: python
 
@@ -128,7 +128,7 @@ The 3 ways I have defined functions so far have the exact same outcome, they all
 Here is what I know so far about functions in python
 
 
-* functions are defined using the ``def`` keyword
+* functions are defined using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword
 * functions return :doc:`None </data structures: None>` by default
 
 Passthrough Functions

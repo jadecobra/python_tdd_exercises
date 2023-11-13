@@ -28,7 +28,7 @@ How to define a Class with pass
 -------------------------------
 
 
-* use the ``class`` keyword
+* use the `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword
 * use ``TitleCase`` for the name
 * use a descriptive name that describe the collection of :doc:`methods (functions) <functions>` and ``attributes(variables)`` - this is hard to do and is something I am still learning
 
@@ -94,7 +94,7 @@ GREEN: make it pass
 
     ClassWithPass = None
 
-* and then redefine the variable as a class using the python ``class`` keyword
+* and then redefine the variable as a class using the python `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword
 
   .. code-block:: python
 
@@ -112,7 +112,7 @@ GREEN: make it pass
     # NameError
     # IndentationError
 
-* python has the ``pass`` keyword to use as a placeholder for moments like this
+* python has the `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword to use as a placeholder for moments like this
 
   .. code-block:: python
 
@@ -128,7 +128,7 @@ REFACTOR: make it better
 
 Here is a quick review of what has happened so far
 
-* ``pass`` is a placeholder
+* `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is a placeholder
 * ``self.assertIsInstance`` is a `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`method <functions>` that checks if the first input to the :doc:`method <functions>` is an instance of the second input
 * the test ``self.assertIsInstance(classes.ClassWithPass(), object)`` checks if ``ClassWithPass`` is an `object <https://docs.python.org/3/glossary.html#term-object>`_
 * in python everything is an `object <https://docs.python.org/3/glossary.html#term-object>`_ , which means if it exists in python there is a class definition for it somewhere or it inherits from a class
@@ -179,7 +179,7 @@ GREEN: make it pass
 
   - I can define ``classes`` with parentheses
   - I can define ``classes`` without parentheses
-  - ``pass`` is a placeholder
+  - `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is a placeholder
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -239,7 +239,7 @@ Here is a little summary
   - with parentheses stating what `object <https://docs.python.org/3/glossary.html#term-object>`_ the class inherits from
   - with parentheses without stating what `object <https://docs.python.org/3/glossary.html#term-object>`_ the class inherits from
   - without parentheses
-  - ``pass`` is a placeholder
+  - `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is a placeholder
 
 * classes by default inherit from the `object <https://docs.python.org/3/glossary.html#term-object>`_  class, because in each of the tests, whether the parent is stated or not, each class I defined is an ``instance`` of an `object <https://docs.python.org/3/glossary.html#term-object>`_
 
@@ -599,7 +599,7 @@ REFACTOR: make it better
 
   - ``classes.Girl(sex='F')`` looks like a call to a :doc:`function <functions>`
   - I can define classes that accept values by using an initializer
-  - An initializer is a class method (:doc:`function <functions>`) that allows customization of instances/copies of a ``class``
+  - An initializer is a class method (:doc:`function <functions>`) that allows customization of instances/copies of a `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
   - Initializers are also called constructors in some other languages
 
 
@@ -658,7 +658,7 @@ REFACTOR: make it better
 
 * Wait a minute, I just repeated the same thing twice.
 
-  - I defined a ``class`` with a name
+  - I defined a `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ with a name
   - I defined an attribute called ``sex``
   - I defined an ``__init__`` :doc:`method <functions>` which takes in a ``sex`` keyword argument
 
@@ -705,7 +705,7 @@ REFACTOR: make it better
          ...
 
 * I remove the ``sex`` attribute from the ``Boy`` class and the tests continue to pass
-* I remove the ``__init__`` method, and add the ``pass`` placeholder
+* I remove the ``__init__`` method, and add the `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ placeholder
 
   .. code-block:: python
 

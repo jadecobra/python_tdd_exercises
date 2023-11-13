@@ -118,7 +118,7 @@ RED: make it fail
   - `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ isa :doc:`class <classes>` defined in the `unittest <https://docs.python.org/3/library/unittest.html>`_ module which contains :doc:`methods (functions) <functions>` for testing and ``Test{PROJECT_NAME}`` inherits from it. A simple way to think of inheritance is that ``Test{PROJECT_NAME}`` is a child of `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ and can do the same things it can
   - ``def test_failure`` is the definition of a test :doc:`method <functions>` to test the program I am creating
 
-    * ``def`` is the python keyword for creating :doc:`functions`
+    * `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is the python keyword for creating :doc:`functions`
     * ``test_failure`` is the name of the :doc:`function <functions>`
     * ``self`` is the ``Test{PROJECT_NAME}`` class. I can use ``self`` to access ``methods`` and ``attributes`` within the ``Test{PROJECT_NAME}`` class, this avoids having to type ``Test{PROJECT_NAME}().assertFalse(True)`` to access the ``assertFalse`` :doc:`method <functions>` for instance
     * ``self.assertFalse(True)`` the actual test I expect this line to fail because :doc:`True </data structures: booleans>` is not :doc:`False </data structures: booleans>`
@@ -448,7 +448,7 @@ You made it this far and have become the greatest programmer in the world. Follo
 
     chmod +x setupPythonTdd.sh
 
-* I can now create a Test Driven Development environment on demand by giving a name for the ``{PROJECT_NAME}`` variable when the program is called. For example, typing this command in the terminal in the folder where ``setupPythonTdd.sh`` is saved will setup a Test Driven Development environment for a project called ``calculator``
+* I can now create a Test Driven Development environment on demand by giving a name for the ``{PROJECT_NAME}`` variable when the program is called. for example typing this command in the terminal in the folder where ``setupPythonTdd.sh`` is saved will setup a Test Driven Development environment for a project called ``calculator``
 
   .. code-block:: shell
 

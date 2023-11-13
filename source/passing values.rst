@@ -15,7 +15,7 @@ It is similar to functions in mathematics where I represent a function as ``f`` 
     f(x) -> y
 ```
 
-In testing I am asking the question is `f(x)` equal to ``y`` for the given input ``x`` for example,  I could use an assert statement
+In testing I am asking the question is `f(x)` equal to ``y`` for the given input ``x`` for example  I could use an assert statement
 
 .. code-block:: python
     assert f(x) == y
@@ -88,7 +88,7 @@ the terminal updates to show a [ModuleNotFoundError](./ModuleNotFoundError.rst) 
 
         text = None
     ```
-    the terminal updates to show a :doc:`TypeError` because ``text`` is not callable and I add the new exception to the list of exceptions encountered
+    the terminal updates to show a :doc:`TypeError` because ``text`` is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_ and I add the new exception to the list of exceptions encountered
 
 .. code-block:: python
     # Exceptions Encountered
