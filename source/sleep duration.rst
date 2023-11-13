@@ -75,7 +75,7 @@ GREEN: make it pass
 
     duration = None
 
-  the terminal outputs a :doc:`TypeError` because :doc:`None </data structures: None>` is not callable
+  the terminal outputsa :doc:`TypeError` because :doc:`None </data structures: None>` is not callable
 * I add the exception to the running list
 
   .. code-block:: python
@@ -180,7 +180,7 @@ What if I write a test that uses a random variable for the sleep and wake times?
        def duration(wake_time, sleep_time):
            return wake_time - sleep_time
 
-  the terminal outputs a :doc:`TypeError`\ , I passed in two strings and python does not have an operation defined for subtracting one string from another. I need to find a way to convert the timestamp from a string to a number. I know that the two inputs are currently in the format ``XX:00``, if I can parse the string to get the first two characters and convert those digits to a number I should be able to get the calculation
+  the terminal outputsa :doc:`TypeError`\ , I passed in two strings and python does not have an operation defined for subtracting one string from another. I need to find a way to convert the timestamp from a string to a number. I know that the two inputs are currently in the format ``XX:00``, if I can parse the string to get the first two characters and convert those digits to a number I should be able to get the calculation
 * to find out what options are available to us, look at the ``methods`` and ``attributes`` of strings by adding a failing test to ``test_sleep_duration.py``, this time using the ``dir`` function
 
   .. code-block:: python
@@ -334,7 +334,7 @@ What if I write a test that uses a random variable for the sleep and wake times?
                    ]
                )
 
-* the terminal displays a :doc:`TypeError` because python does not support subtracting one string from another
+* the terminal displaysa :doc:`TypeError` because python does not support subtracting one string from another
 
   .. code-block:: python
 
@@ -609,7 +609,7 @@ GREEN: make it pass
        def duration(wake_time, sleep_time):
            return f'{get_hour(wake_time)-get_hour(sleep_time)}:{wake_time-sleep_time}'
 
-  I get a :doc:`TypeError` because I just tried to subtract one string from another
+  I geta :doc:`TypeError` because I just tried to subtract one string from another
 * I modify the second part of the timestamp to use the ``get_hour`` function
 
   .. code-block:: python

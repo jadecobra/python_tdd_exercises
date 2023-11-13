@@ -33,7 +33,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* add a definition that returns ``True``
+* add a definition that returns :doc:`True </data structures: booleans>`
   .. code-block:: python
 
        def exclusive_disjunction(p, q):
@@ -139,7 +139,7 @@ What if I try to refactor those statements to make them better
        def exclusive_disjunction(p, q):
            return p != q
 
-What do I know so far? For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
+What do I know so far? For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>`
 
 
 * ``exclusive_disjunction`` is ``!=``
@@ -148,8 +148,8 @@ What do I know so far? For any boolean operation involving 2 inputs - ``p`` and 
 * ``logical_conjunction`` is ``and``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
-* ``False`` is ``not True``
-* ``True`` is ``not False``
-* ``False`` is ``False``
-* ``True`` is ``True``
-* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to ``True``
+* :doc:`False </data structures: booleans>` is ``not True``
+* :doc:`True </data structures: booleans>` is ``not False``
+* :doc:`False </data structures: booleans>` is :doc:`False </data structures: booleans>`
+* :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`
+* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :doc:`True </data structures: booleans>`

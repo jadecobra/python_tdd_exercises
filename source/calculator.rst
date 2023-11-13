@@ -93,7 +93,7 @@ RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
 
-* I add a :doc:`method <functions>` called ``test_addition`` to the ``TestCalculator`` :doc:`class <classes>`
+* I adda :doc:`method <functions>` called ``test_addition`` to the ``TestCalculator`` :doc:`class <classes>`
 
   .. code-block:: python
 
@@ -193,7 +193,7 @@ GREEN: make it pass
 
        add = None
 
-  the terminal displays a :doc:`TypeError`
+  the terminal displaysa :doc:`TypeError`
 
   .. code-block:: python
 
@@ -201,7 +201,7 @@ GREEN: make it pass
 
   The :doc:`AttributeError` was fixed by declaring a variable ``add`` in the ``calculator`` module, even though it is currently assigned to the null value :doc:`None </data structures: None>`
 
-* The new error is a :doc:`TypeError` which can occur when an ``object`` is used in a way that it is not supposed to be used. In this case the ``add`` variable is not callable because it refers to :doc:`None </data structures: None>` which is not a callable object. I update the list of exceptions encountered
+* The new error isa :doc:`TypeError` which can occur when an `object <https://docs.python.org/3/glossary.html#term-object>`_ is used in a way that it is not supposed to be used. In this case the ``add`` variable is not callable because it refers to :doc:`None </data structures: None>` which is not a callable object. I update the list of exceptions encountered
 
   .. code-block:: python
 
@@ -210,7 +210,7 @@ GREEN: make it pass
     # NameError
     # TypeError
 
-* I have to define ``add`` as a :doc:`function <functions>` or a :doc:`class <classes>` to make it callable. I know the ``def`` keyword is used for creating :doc:`functions` and will test changing the ``add`` variable in ``calculator.py``
+* I have to define ``add`` asa :doc:`function <functions>` ora :doc:`class <classes>` to make it callable. I know the ``def`` keyword is used for creating :doc:`functions` and will test changing the ``add`` variable in ``calculator.py``
 
   .. code-block:: python
 
@@ -236,7 +236,7 @@ GREEN: make it pass
 
        E       AssertionError: None != 1
 
-  - An :doc:`AssertionError` is raised when an assertion is ``False``
+  - An :doc:`AssertionError` is raised when an assertion is :doc:`False </data structures: booleans>`
   - Since I am using ``self.assertEqual`` it means the two inputs are not equal. In other words ``calculator.add(0, 1)`` is currently not equal to ``1``
 
 * I update the ``add`` function in ``calculator.py`` so it gives the expected value
@@ -382,7 +382,7 @@ RED : make it fail
 ^^^^^^^^^^^^^^^^^^
 
 
-* I update ``test_calculator.py`` with a :doc:`method <functions>` called ``test_subtraction``
+* I update ``test_calculator.py`` witha :doc:`method <functions>` called ``test_subtraction``
 
   .. code-block:: python
 
@@ -443,7 +443,7 @@ GREEN : make it pass
     def subtract():
         return None
 
-  and the terminal displays a :doc:`TypeError` with a different error message. Progress!
+  and the terminal displaysa :doc:`TypeError` with a different error message. Progress!
 
   .. code-block:: python
 

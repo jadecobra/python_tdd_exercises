@@ -47,8 +47,8 @@ GREEN: make it pass
     the terminal updates to show an :doc:`AssertionError` for the third case
 * before I add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction``, ``negate_first`` and ``negate_second`` because 2 out of the 4 cases have the same return value. I observe that
 
-  * if ``p == True`` the result is ``True``
-  * if ``p == False`` the result is ``False``
+  * if ``p == True`` the result is :doc:`True </data structures: booleans>`
+  * if ``p == False`` the result is :doc:`False </data structures: booleans>`
 
 * add conditions to represent the observations
   .. code-block:: python
@@ -122,8 +122,8 @@ GREEN: make it pass
     the terminal updates to show an :doc:`AssertionError` for the second case
 * before I add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction``, ``negate_first``, ``negate_second`` and ``project_first`` because 2 out of the 4 cases have the same return value. I observe that
 
-  * if ``q == True`` the result is ``True``
-  * if ``q == False`` the result is ``False``
+  * if ``q == True`` the result is :doc:`True </data structures: booleans>`
+  * if ``q == False`` the result is :doc:`False </data structures: booleans>`
 
 * What if I try using the conclusion from ``project_first``
   .. code-block:: python
@@ -140,7 +140,7 @@ GREEN: make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Since there is no refactoring to do here, I update what I know so far. For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
+Since there is no refactoring to do here, I update what I know so far. For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>`
 
 
 * ``project_first`` always returns ``p``
@@ -157,7 +157,7 @@ Since there is no refactoring to do here, I update what I know so far. For any b
 * ``logical_conjunction`` is ``and``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
-* ``False`` is ``not True``
-* ``True`` is ``not False``
-* ``False`` is ``False``
-* ``True`` is ``True``
+* :doc:`False </data structures: booleans>` is ``not True``
+* :doc:`True </data structures: booleans>` is ``not False``
+* :doc:`False </data structures: booleans>` is :doc:`False </data structures: booleans>`
+* :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`

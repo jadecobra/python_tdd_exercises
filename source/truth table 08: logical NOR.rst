@@ -87,7 +87,7 @@ REFACTOR: make it better
            return not(p or q)
     BOOM! all the tests pass. Are I getting better at this?
 
-Knowledge update. For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
+Knowledge update. For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>`
 
 
 * ``logical_nor`` is ``not(p or q)``
@@ -98,7 +98,7 @@ Knowledge update. For any boolean operation involving 2 inputs - ``p`` and ``q``
 * ``logical_conjunction`` is ``and``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
-* ``False`` is ``not True``
-* ``True`` is ``not False``
-* ``False`` is ``False``
-* ``True`` is ``True``
+* :doc:`False </data structures: booleans>` is ``not True``
+* :doc:`True </data structures: booleans>` is ``not False``
+* :doc:`False </data structures: booleans>` is :doc:`False </data structures: booleans>`
+* :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`

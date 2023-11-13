@@ -114,17 +114,17 @@ RED: make it fail
 
   - ``import unittest`` imports the `unittest <https://docs.python.org/3/library/unittest.html>`_ module
   - `unittest <https://docs.python.org/3/library/unittest.html>`_ is a module from the python standard library used for testing
-  - ``Test{PROJECT_NAME}`` is a :doc:`class <classes>` that will hold the tests I write
-  - `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ is a :doc:`class <classes>` defined in the `unittest <https://docs.python.org/3/library/unittest.html>`_ module which contains :doc:`methods (functions) <functions>` for testing and ``Test{PROJECT_NAME}`` inherits from it. A simple way to think of inheritance is that ``Test{PROJECT_NAME}`` is a child of `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ and can do the same things it can
+  - ``Test{PROJECT_NAME}`` isa :doc:`class <classes>` that will hold the tests I write
+  - `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ isa :doc:`class <classes>` defined in the `unittest <https://docs.python.org/3/library/unittest.html>`_ module which contains :doc:`methods (functions) <functions>` for testing and ``Test{PROJECT_NAME}`` inherits from it. A simple way to think of inheritance is that ``Test{PROJECT_NAME}`` is a child of `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ and can do the same things it can
   - ``def test_failure`` is the definition of a test :doc:`method <functions>` to test the program I am creating
 
     * ``def`` is the python keyword for creating :doc:`functions`
     * ``test_failure`` is the name of the :doc:`function <functions>`
     * ``self`` is the ``Test{PROJECT_NAME}`` class. I can use ``self`` to access ``methods`` and ``attributes`` within the ``Test{PROJECT_NAME}`` class, this avoids having to type ``Test{PROJECT_NAME}().assertFalse(True)`` to access the ``assertFalse`` :doc:`method <functions>` for instance
-    * ``self.assertFalse(True)`` the actual test I expect this line to fail because ``True`` is not ``False``
+    * ``self.assertFalse(True)`` the actual test I expect this line to fail because :doc:`True </data structures: booleans>` is not :doc:`False </data structures: booleans>`
 
-      - ``assertFalse`` is a :doc:`method <functions>` in the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class which checks if its input is ``False``
-      - ``True`` is given as input to ``assertFalse``
+      - ``assertFalse`` isa :doc:`method <functions>` in the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class which checks if its input is :doc:`False </data structures: booleans>`
+      - :doc:`True </data structures: booleans>` is given as input to ``assertFalse``
 
 * I save the file and turn on the ``Auto Save`` feature in the Interactive Development Environment (IDE) to avoid manually saving a file each time a change is made
 * I type this in the terminal to test the code
@@ -158,11 +158,11 @@ This is the ``RED`` part of the Test Driven Development cycle. The error in the 
 
 * ``FAILED (failures=1)`` there is one failure
 * ``Ran 1 test in 0.000s`` how long it took the test to run
-* ``AssertionError: True is not false`` The error is an :doc:`AssertionError` which is raised by python when an assert statement is ``False``. In this case the error is raised because ``True is not false``
+* ``AssertionError: True is not false`` The error is an :doc:`AssertionError` which is raised by python when an assert statement is :doc:`False </data structures: booleans>`. In this case the error is raised because ``True is not false``
 * ``self.assertFalse(True)`` is the line of code that caused the failure
 
-  - ``assertFalse`` is a :doc:`method <functions>` in the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class which checks if its input is ``False``
-  - ``True`` is given as input to ``assertFalse`` and the statement raises an error because ``True`` is not ``False``
+  - ``assertFalse`` isa :doc:`method <functions>` in the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class which checks if its input is :doc:`False </data structures: booleans>`
+  - :doc:`True </data structures: booleans>` is given as input to ``assertFalse`` and the statement raises an error because :doc:`True </data structures: booleans>` is not :doc:`False </data structures: booleans>`
 
 * ``File "/<PATH_TO_PROJECT>/{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py", line 7, in test_failure`` is the line number and location of the file where the error occurred.
 
@@ -334,7 +334,7 @@ How to create a Virtual Environment
 
     =============== 1 passed in 0.00s =======================
 
-* to verify that the terminal now responds to changes, I modify the input on line 7 in ``test_{PROJECT_NAME}.py`` to ``True`` to see it fail and back to ``False`` to see it pass
+* to verify that the terminal now responds to changes, I modify the input on line 7 in ``test_{PROJECT_NAME}.py`` to :doc:`True </data structures: booleans>` to see it fail and back to :doc:`False </data structures: booleans>` to see it pass
 * I can press ``ctrl`` + ``c`` on the keyboard in the terminal to stop the tests at anytime
 
 How to Deactivate a Virtual Environment

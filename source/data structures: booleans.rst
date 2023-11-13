@@ -3,7 +3,7 @@ Data Structures: Booleans
 
 Let us take a look at Data Structures in python using Test Driven Development. This chapter covers ``booleans``
 
-There are only two values that are boolean - ``True`` and ``False``. I will learn about booleans by comparing it with the data structures in python to figure what they are and what they are not
+There are only two values that are boolean - :doc:`True </data structures: booleans>` and :doc:`False </data structures: booleans>`. I will learn about booleans by comparing it with the data structures in python to figure what they are and what they are not
 
 Prerequisites
 -------------
@@ -71,19 +71,19 @@ GREEN: make it pass
 
 * I now know that in python
 
-  * ``False`` is a ``boolean``
-  * ``dict()`` is ``False`` which means an empty ``dictionary`` is ``False``
-  * ``{}`` is ``False`` which means an empty ``set``/\ ``dictionary`` is ``False``
-  * ``[]`` is ``False`` which means an empty ``list`` is ``False``
-  * ``()`` is ``False`` which means an empty ``tuple`` is ``False``
-  * ``""`` is ``False`` which means an empty ``string`` is ``False``
-  * ``0`` is ``False``
+  * :doc:`False </data structures: booleans>` is a ``boolean``
+  * ``dict()`` is :doc:`False </data structures: booleans>` which means an empty ``dictionary`` is :doc:`False </data structures: booleans>`
+  * ``{}`` is :doc:`False </data structures: booleans>` which means an empty ``set``/\ ``dictionary`` is :doc:`False </data structures: booleans>`
+  * ``[]`` is :doc:`False </data structures: booleans>` which means an empty ``list`` is :doc:`False </data structures: booleans>`
+  * ``()`` is :doc:`False </data structures: booleans>` which means an empty ``tuple`` is :doc:`False </data structures: booleans>`
+  * ``""`` is :doc:`False </data structures: booleans>` which means an empty ``string`` is :doc:`False </data structures: booleans>`
+  * ``0`` is :doc:`False </data structures: booleans>`
 
 I can sum this up as
 
 
-* ``False`` is a ``boolean``
-* empty things including ``0`` and :doc:`None </data structures: None>` are ``False``
+* :doc:`False </data structures: booleans>` is a ``boolean``
+* empty things including ``0`` and :doc:`None </data structures: None>` are :doc:`False </data structures: booleans>`
 
 What is True?
 -------------
@@ -91,7 +91,7 @@ What is True?
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-What if I try a similar series of failing tests for ``True`` by adding the following to ``test_data_structures.py``
+What if I try a similar series of failing tests for :doc:`True </data structures: booleans>` by adding the following to ``test_data_structures.py``
 
 .. code-block:: python
 
@@ -157,10 +157,10 @@ GREEN: make it pass
 
 * I can sum up the current knowledge of python thus
 
-  * any value except ``0``, empty objects and :doc:`None </data structures: None>` is ``True``
-  * empty objects including ``0`` and :doc:`None </data structures: None>` are ``False``
-  * ``True`` is a ``boolean``
-  * ``False`` is a ``boolean``
+  * any value except ``0``, empty objects and :doc:`None </data structures: None>` is :doc:`True </data structures: booleans>`
+  * empty objects including ``0`` and :doc:`None </data structures: None>` are :doc:`False </data structures: booleans>`
+  * :doc:`True </data structures: booleans>` is a ``boolean``
+  * :doc:`False </data structures: booleans>` is a ``boolean``
   * :doc:`None </data structures: None>` is :doc:`None </data structures: None>`
 
 HOORAY

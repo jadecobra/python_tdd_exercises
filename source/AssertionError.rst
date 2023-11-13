@@ -2,7 +2,7 @@
 AssertionError
 ==============
 
-This chapter explores the `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ in Python using Test Driven Development (TDD)
+I will be exploring the `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ in Python using Test Driven Development (TDD) in this chapter
 
 Prerequisites
 -------------
@@ -14,7 +14,7 @@ Prerequisites
 What is an AssertionError?
 --------------------------
 
-An ``AssertionError`` is an Exception that is raised when the result of an ``assert`` statement is ``False``
+An `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ is an Exception that is raised when the result of an ``assert`` statement is :doc:`False </data structures: booleans>`
 
 It was introduced in :doc:`How to Setup a Test Driven Development Environment` with the first failing test
 
@@ -52,7 +52,7 @@ RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
 * I create a new file in the ``tests`` folder with the name ``test_assertion_error.py``
-* I then add a test called ``test_assertion_errors_with_none`` with the python ``assert`` keyword to intentionally cause an ``AssertionError``
+* and add a test called ``test_assertion_errors_with_none`` using the python ``assert`` keyword to intentionally cause an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
   .. code-block:: python
 
@@ -64,7 +64,7 @@ RED: make it fail
           def test_assertion_errors_with_none(self):
               assert False is None
 
-  the terminal updates to show an ``AssertionError``
+  the terminal updates to show an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
   .. code-block:: python
 
@@ -72,9 +72,9 @@ RED: make it fail
 
     tests/test_assertion_error.py:7: AssertionError
 
-  - This ``AssertionError`` is raised by the line ``assert False is None`` which is similar to asking the question "is False the same as None?"
-  - The difference is that the ``assert`` at the beginning of the line makes the statement more like "DO NOT PROCEED UNLESS ``False`` is :doc:`None </data structures: None>`"
-  - Since :doc:`None </data structures: None>` and ``False`` are different objects and not equal, the ``assert`` statement is ``False`` and python raises an ``AssertionError``
+  - This `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ is raised by the line ``assert False is None`` which is similar to asking the question "is False the same as None?"
+  - The difference is that the ``assert`` at the beginning of the line makes the statement more like "DO NOT PROCEED UNLESS :doc:`False </data structures: booleans>` is :doc:`None </data structures: None>`"
+  - Since :doc:`None </data structures: None>` and :doc:`False </data structures: booleans>` are different objects and not equal, the ``assert`` statement is :doc:`False </data structures: booleans>` and python raises an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -85,23 +85,23 @@ I modify the failing line of ``test_assertion_errors_with_none`` in ``test_asser
 
   assert False is not None
 
-the test passes because the assert statement is now true since ``False`` is not :doc:`None </data structures: None>`
+the test passes because the assert statement is now true since :doc:`False </data structures: booleans>` is not :doc:`None </data structures: None>`
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-I can also make assertions with som e :doc:`methods <functions>`from the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class
+I can also make assertions with some :doc:`methods <functions>` from the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class
 
 
 * RED: make it fail
 
-  I add another line to ``test_assertion_errors_with_none`` using the ``unittest.TestCase.assertIsNone`` :doc:`method <functions>`
+  I add another line to ``test_assertion_errors_with_none`` using the `unittest.TestCase.assertIsNone <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNone>`_ :doc:`method <functions>`
 
   .. code-block:: python
 
     self.assertIsNone(False)
 
-  the terminal updates to show a more descriptive ``AssertionError`` since ``False is not None``
+  the terminal updates to show a more descriptive `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ since ``False is not None``
 
   .. code-block:: python
 
@@ -117,17 +117,17 @@ I can also make assertions with som e :doc:`methods <functions>`from the `unitte
 
       self.assertIsNotNone(False)
 
-  the terminal displays passing tests because the statement is ``True``. I can say that in python ``False`` is not :doc:`None </data structures: None>`
+  the terminal displays passing tests because the statement is :doc:`True </data structures: booleans>`. I can now say that in python :doc:`False </data structures: booleans>` is not :doc:`None </data structures: None>`
 
 * RED: make it fail
 
-  I add another test to ``test_assertion_errors_with_none`` to find out how :doc:`None </data structures: None>` is related to ``True``
+  I add another test to ``test_assertion_errors_with_none`` to find out how :doc:`None </data structures: None>` is related to :doc:`True </data structures: booleans>`
 
   .. code-block:: python
 
       assert True is None
 
-  the terminal shows another ``AssertionError``
+  the terminal shows another `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
   .. code-block:: python
 
@@ -143,13 +143,13 @@ I can also make assertions with som e :doc:`methods <functions>`from the `unitte
 
 * RED: make it fail
 
-  I add a variation of the above statement using the ``unittest.TestCase.assertIsNone`` :doc:`method <functions>` to ``test_assertion_errors_with_none``
+  I add a variation of the above statement using the `unittest.TestCase.assertIsNone <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNone>`_ :doc:`method <functions>` to ``test_assertion_errors_with_none``
 
   .. code-block:: python
 
       self.assertIsNone(True)
 
-  and the terminal displays an ``AssertionError``
+  and the terminal displays an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
   .. code-block:: python
 
@@ -165,8 +165,8 @@ I can also make assertions with som e :doc:`methods <functions>`from the `unitte
 
   since all my tests are passing I can say that in python
 
-  - ``True`` is not :doc:`None </data structures: None>`
-  - ``False`` is not :doc:`None </data structures: None>`
+  - :doc:`True </data structures: booleans>` is not :doc:`None </data structures: None>`
+  - :doc:`False </data structures: booleans>` is not :doc:`None </data structures: None>`
 
 * RED: make it fail
 
@@ -198,7 +198,7 @@ I can also make assertions with som e :doc:`methods <functions>`from the `unitte
 
       self.assertIsNotNone(None)
 
-  and the terminal updates to show an ``AssertionError``
+  and the terminal updates to show an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
   .. code-block:: python
 
@@ -216,8 +216,8 @@ I can also make assertions with som e :doc:`methods <functions>`from the `unitte
 My knowledge of python has increased, I now know that
 
 * :doc:`None </data structures: None>` is :doc:`None </data structures: None>`
-* ``True`` is not :doc:`None </data structures: None>`
-* ``False`` is not :doc:`None </data structures: None>`
+* :doc:`True </data structures: booleans>` is not :doc:`None </data structures: None>`
+* :doc:`False </data structures: booleans>` is not :doc:`None </data structures: None>`
 
 Which of these ``assert`` statements do you prefer when testing :doc:`None </data structures: None>`?
 
@@ -229,7 +229,7 @@ Which of these ``assert`` statements do you prefer when testing :doc:`None </dat
 AssertionError with False
 -------------------------
 
-Can I raise an ``AssertionError`` for things that are ``False``?
+Can I raise an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ for things that are :doc:`False </data structures: booleans>`?
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -260,7 +260,7 @@ I update ``test_assertion_errors_with_false`` to make the test pass
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-What if I try the same test using the ``unittest.TestCase.assertFalse`` :doc:`method <functions>` by adding this line to ``test_assertion_errors_with_false``
+What if I try the same test using the `unittest.TestCase.assertFalse <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse>`_ :doc:`method <functions>` by adding this line to ``test_assertion_errors_with_false``
 
 .. code-block:: python
 
@@ -285,18 +285,18 @@ I update ``test_assertion_errors_with_false`` to make it pass
 
 I now know that in python
 
-* ``False`` is ``False``
-* ``False`` is not ``True``
+* :doc:`False </data structures: booleans>` is :doc:`False </data structures: booleans>`
+* :doc:`False </data structures: booleans>` is not :doc:`True </data structures: booleans>`
 * :doc:`None </data structures: None>` is :doc:`None </data structures: None>`
-* ``True`` is not :doc:`None </data structures: None>`
-* ``False`` is not :doc:`None </data structures: None>`
+* :doc:`True </data structures: booleans>` is not :doc:`None </data structures: None>`
+* :doc:`False </data structures: booleans>` is not :doc:`None </data structures: None>`
 
 ----
 
 AssertionError with True
 ------------------------
 
-Can I raise an ``AssertionError`` for things that are ``True``?
+Can I raise an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ for things that are :doc:`True </data structures: booleans>`?
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -326,13 +326,13 @@ I update ``test_assertion_errors_with_true`` to make it pass
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-What if I try the above test with the ``unittest.TestCase.assertTrue`` :doc:`method <functions>` ?
+What if I try the above test using the `unittest.TestCase.assertTrue <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertTrue>`_ :doc:`method <functions>` ?
 
 .. code-block:: python
 
     self.assertTrue(False)
 
-the terminal shows an ``AssertionError``
+the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
 .. code-block:: python
 
@@ -350,15 +350,15 @@ I update ``test_assertion_errors_with_false`` to make it pass
 My knowledge of python has grown, I now know that
 
 
-* ``True`` is ``True``
-* ``True`` is not ``False``
-* ``False`` is ``False``
-* ``False`` is not ``True``
+* :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`
+* :doc:`True </data structures: booleans>` is not :doc:`False </data structures: booleans>`
+* :doc:`False </data structures: booleans>` is :doc:`False </data structures: booleans>`
+* :doc:`False </data structures: booleans>` is not :doc:`True </data structures: booleans>`
 * :doc:`None </data structures: None>` is :doc:`None </data structures: None>`
-* ``True`` is not :doc:`None </data structures: None>`
-* ``False`` is not :doc:`None </data structures: None>`
+* :doc:`True </data structures: booleans>` is not :doc:`None </data structures: None>`
+* :doc:`False </data structures: booleans>` is not :doc:`None </data structures: None>`
 
-I could sum up the above statements this way - in python ``True``, ``False`` and :doc:`None </data structures: None>` are different. Understanding these differences helps me write useful programs. They show how python behaves and give a foundation of predictable expectations of the language.
+I could sum up the above statements this way - in python :doc:`True </data structures: booleans>`, :doc:`False </data structures: booleans>` and :doc:`None </data structures: None>` are different. My understanding of these differences helps me shows how python behaves and give a foundation of predictable expectations of the language.
 
 ----
 
@@ -377,7 +377,7 @@ I add a new test to ``TestAssertionError`` in ``test_assertion_error.py``
     def test_assertion_errors_with_equality(self):
         assert False == None
 
-the terminal displays an ``AssertionError``
+the terminal displays an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
 .. code-block:: python
 
@@ -393,7 +393,7 @@ I change ``test_assertion_errors_with_equality`` to make it pass
 
     assert False != None
 
-the test passes because ``False`` is not equal to :doc:`None </data structures: None>`
+the test passes because :doc:`False </data structures: booleans>` is not equal to :doc:`None </data structures: None>`
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -401,19 +401,19 @@ REFACTOR: make it better
 
 * RED: make it fail
 
-  I update ``test_assertion_errors_with_equality`` with the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ method
+  I update ``test_assertion_errors_with_equality`` with the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ method for equality testing
 
   .. code-block:: python
 
       self.assertEqual(False, None)
 
-  the terminal outputs an ``AssertionError``
+  the terminal outputs an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
   .. code-block:: python
 
       E       AssertionError: False != None
 
-  The ``unittest.TestCase.assertEqual`` :doc:`method <functions>` checks if the two given inputs, ``False`` and :doc:`None </data structures: None>` are equal
+  The `unittest.TestCase.assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ :doc:`method <functions>` checks if the two given inputs, :doc:`False </data structures: booleans>` and :doc:`None </data structures: None>` are equal
 
 * GREEN: make it pass
 
@@ -425,13 +425,13 @@ REFACTOR: make it better
 
   I have learned that in python
 
-  * ``True`` is ``True``
-  * ``True`` is not ``False``
-  * ``False`` is ``False``
-  * ``False`` is not ``True``
+  * :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`
+  * :doc:`True </data structures: booleans>` is not :doc:`False </data structures: booleans>`
+  * :doc:`False </data structures: booleans>` is :doc:`False </data structures: booleans>`
+  * :doc:`False </data structures: booleans>` is not :doc:`True </data structures: booleans>`
   * :doc:`None </data structures: None>` is :doc:`None </data structures: None>`
-  * ``True`` is not :doc:`None </data structures: None>`
-  * ``False`` is not :doc:`None </data structures: None>` and ``False`` is not equal to :doc:`None </data structures: None>`
+  * :doc:`True </data structures: booleans>` is not :doc:`None </data structures: None>`
+  * :doc:`False </data structures: booleans>` is not :doc:`None </data structures: None>` and :doc:`False </data structures: booleans>` is not equal to :doc:`None </data structures: None>`
 
 * RED: make it fail
 
@@ -441,7 +441,7 @@ REFACTOR: make it better
 
       assert True == None
 
-  and the terminal responds with an ``AssertionError``
+  and the terminal responds with an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
   .. code-block:: python
 
@@ -457,13 +457,13 @@ REFACTOR: make it better
 
 * RED: make it fail
 
-  I add the ``unittest.TestCase.assertEqual`` :doc:`method <functions>` to ``test_assertion_errors_with_equality``
+  I add the `unittest.TestCase.assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ :doc:`method <functions>` to ``test_assertion_errors_with_equality``
 
   .. code-block:: python
 
       self.assertEqual(True, None)
 
-  the terminal outputs an ``AssertionError``
+  the terminal outputs an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
   .. code-block:: python
 
@@ -479,13 +479,13 @@ REFACTOR: make it better
 
   the terminal updates to show passing tests. I can now say that in python
 
-  * ``True`` is ``True``
-  * ``True`` is not ``False``
-  * ``False`` is ``False``
-  * ``False`` is not ``True``
+  * :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`
+  * :doc:`True </data structures: booleans>` is not :doc:`False </data structures: booleans>`
+  * :doc:`False </data structures: booleans>` is :doc:`False </data structures: booleans>`
+  * :doc:`False </data structures: booleans>` is not :doc:`True </data structures: booleans>`
   * :doc:`None </data structures: None>` is :doc:`None </data structures: None>`
-  * ``True`` is not :doc:`None </data structures: None>` and ``True`` is not equal to :doc:`None </data structures: None>`
-  * ``False`` is not :doc:`None </data structures: None>` and ``False`` is not equal to :doc:`None </data structures: None>`
+  * :doc:`True </data structures: booleans>` is not :doc:`None </data structures: None>` and :doc:`True </data structures: booleans>` is not equal to :doc:`None </data structures: None>`
+  * :doc:`False </data structures: booleans>` is not :doc:`None </data structures: None>` and :doc:`False </data structures: booleans>` is not equal to :doc:`None </data structures: None>`
 
 * RED: make it fail
 
@@ -531,13 +531,13 @@ REFACTOR: make it better
 
   I can now say that in python
 
-  * ``True`` is ``True`` and ``True`` is equal to ``True``
-  * ``True`` is not ``False`` and ``True`` is not equal to ``False``
-  * ``False`` is ``False`` and ``False`` is equal to ``False``
-  * ``False`` is not ``True`` and ``False`` is not equal to ``True``
+  * :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>` and :doc:`True </data structures: booleans>` is equal to :doc:`True </data structures: booleans>`
+  * :doc:`True </data structures: booleans>` is not :doc:`False </data structures: booleans>` and :doc:`True </data structures: booleans>` is not equal to :doc:`False </data structures: booleans>`
+  * :doc:`False </data structures: booleans>` is :doc:`False </data structures: booleans>` and :doc:`False </data structures: booleans>` is equal to :doc:`False </data structures: booleans>`
+  * :doc:`False </data structures: booleans>` is not :doc:`True </data structures: booleans>` and :doc:`False </data structures: booleans>` is not equal to :doc:`True </data structures: booleans>`
   * :doc:`None </data structures: None>` is :doc:`None </data structures: None>` and :doc:`None </data structures: None>` is equal to :doc:`None </data structures: None>`
-  * ``True`` is not :doc:`None </data structures: None>` and ``True`` is not equal to :doc:`None </data structures: None>`
-  * ``False`` is not :doc:`None </data structures: None>` and ``False`` is not equal to :doc:`None </data structures: None>`
+  * :doc:`True </data structures: booleans>` is not :doc:`None </data structures: None>` and :doc:`True </data structures: booleans>` is not equal to :doc:`None </data structures: None>`
+  * :doc:`False </data structures: booleans>` is not :doc:`None </data structures: None>` and :doc:`False </data structures: booleans>` is not equal to :doc:`None </data structures: None>`
 
 ----
 
@@ -547,14 +547,14 @@ If you have been typing along *WELL DONE!* Your magic powers are growing. From t
 
 * how to test for equality
 * how to test if something is :doc:`None </data structures: None>` or not
-* how to test if something is ``False`` or not
-* how to test if something is ``True`` or not
+* how to test if something is :doc:`False </data structures: booleans>` or not
+* how to test if something is :doc:`True </data structures: booleans>` or not
 * how to use ``assert`` statements
 * how to use the following ``unittest.TestCase.assert`` methods
 
-  - ``assertIsNone`` - is this thing :doc:`None </data structures: None>`?
-  - ``assertIsNotNone`` - is this thing not :doc:`None </data structures: None>`?
-  - ``assertFalse`` - is this thing ``False``?
-  - ``assertTrue`` - is this thing ``True``?
+  - `assertIsNone <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNone>`_ - is this thing :doc:`None </data structures: None>`?
+  - `assertIsNotNone <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNotNone>`_ - is this thing not :doc:`None </data structures: None>`?
+  - `assertFalse <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse>`_ - is this thing :doc:`False </data structures: booleans>`?
+  - `assertTrue <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertTrue>`_ - is this thing :doc:`True </data structures: booleans>`?
   - `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ - are these two things equal?
-  - ``assertNotEqual`` - are these two things not equal?
+  - `assertNotEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotEqual>`_ - are these two things not equal?

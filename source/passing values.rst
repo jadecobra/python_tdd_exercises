@@ -105,7 +105,7 @@ the terminal updates to show a [ModuleNotFoundError](./ModuleNotFoundError.rst) 
         def text():
             return None
     ```
-    the terminal displays a :doc:`TypeError` this time because when I called `telephone.Telephone.text('hello')` in the test I provided a positional argument as input with the value ``hello``, but the signature of the :doc:`method <functions>` I defined does not take in any arguments
+    the terminal displaysa :doc:`TypeError` this time because when I called `telephone.Telephone.text('hello')` in the test I provided a positional argument as input with the value ``hello``, but the signature of the :doc:`method <functions>` I defined does not take in any arguments
 - modify the definition for ``text`` to take in a value
 
 .. code-block:: python

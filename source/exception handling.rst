@@ -40,7 +40,7 @@ create a file called ``test_exception_handling.py`` in the ``tests`` folder and 
       def test_catching_module_not_found_error_in_tests(self):
           import non_existent_module
 
-the terminal gives us a :doc:`ModuleNotFoundError` and I add it to the list of exceptions encountered
+the terminal gives usa :doc:`ModuleNotFoundError` and I add it to the list of exceptions encountered
 
 .. code-block:: python
 
@@ -318,7 +318,7 @@ GREEN: make it pass
     import module
     import exceptions
 
-  the terminal now gives us a :doc:`ModuleNotFoundError`
+  the terminal now gives usa :doc:`ModuleNotFoundError`
 
 * create a file called ``exceptions.py`` in the ``{PROJECT_NAME}`` folder, and the terminal updates to show an :doc:`AttributeError`
 * update ``exceptions.py`` with the name of the attribute called in the test, and the terminal updates to show a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ since I have not defined ``raises_exception_error`` in ``exceptions.py``
@@ -406,7 +406,7 @@ Let us add exception handling to the program so it does not end when it encounte
 
     exception_handler
 
-  define ``exception_handler`` and the terminal displays a :doc:`TypeError`
+  define ``exception_handler`` and the terminal displaysa :doc:`TypeError`
 
   .. code-block:: python
 
@@ -560,7 +560,7 @@ GREEN: make it pass
 
     always_returns = None
 
-* redefine ``always_returns`` as a function and the terminal displays a :doc:`TypeError`
+* redefine ``always_returns`` as a function and the terminal displaysa :doc:`TypeError`
 
   .. code-block:: python
 

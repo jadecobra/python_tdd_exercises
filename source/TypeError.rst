@@ -55,7 +55,7 @@ RED: make it fail
        >       self.assertIsNone(functions.function_a("a"))
        E       AttributeError: module 'functions' has no attribute 'function_a'
 
-* I also have some practice with ``AttributeError`` from :doc:`AttributeError`. Add this line ``functions.py``
+* I also have some practice with :doc:`AttributeError` from :doc:`AttributeError`. Add this line ``functions.py``
 
   .. code-block:: python
 
@@ -349,10 +349,10 @@ Try this with both ``function_c`` and ``function_d``, all tests still pass.
 You now know how to solve
 
 
-* ``AssertionError``
+* :doc:`AssertionError`
 * ``ModuleNotFoundError``
 * `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
-* ``AttributeError`` by defining
+* :doc:`AttributeError` by defining
 
   - variables
   - functions
@@ -360,4 +360,4 @@ You now know how to solve
   - attributes in classes
   - functions/methods in classes
 
-* ``TypeError`` by matching function signatures and their calls
+* `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#TypeError>`_ by matching function signatures and their calls

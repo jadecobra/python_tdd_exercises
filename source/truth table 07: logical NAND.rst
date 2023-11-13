@@ -33,13 +33,13 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* add a definition for the function to ``truth_table.py`` returning ``True`` since 3 out of the 4 cases return that value
+* add a definition for the function to ``truth_table.py`` returning :doc:`True </data structures: booleans>` since 3 out of the 4 cases return that value
   .. code-block:: python
 
        def logical_nand(p, q):
            return True
     the terminal updates to show an :doc:`AssertionError` for the first case
-* add a condition for the one case that returns ``False``
+* add a condition for the one case that returns :doc:`False </data structures: booleans>`
   .. code-block:: python
 
        def logical_nand(p, q):
@@ -111,7 +111,7 @@ REFACTOR: make it better
     I don't think I can get simpler than this and all the tests are still passing
 
 REVIEW
-I know that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
+I know that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>`
 
 
 * ``logical_nand`` is ``not(p and q)``
@@ -121,8 +121,8 @@ I know that for any boolean operation involving 2 inputs - ``p`` and ``q`` which
 * ``logical_conjunction`` is ``and``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
-* ``False`` is ``not True``
-* ``True`` is ``not False``
-* ``False`` is ``False``
-* ``True`` is ``True``
-* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to ``True``
+* :doc:`False </data structures: booleans>` is ``not True``
+* :doc:`True </data structures: booleans>` is ``not False``
+* :doc:`False </data structures: booleans>` is :doc:`False </data structures: booleans>`
+* :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`
+* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :doc:`True </data structures: booleans>`

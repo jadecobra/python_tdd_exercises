@@ -81,7 +81,7 @@ REFACTOR: make it better
   .. code-block:: python
 
            self.assertEqual(list(collection_a), list_a)
-    the tests pass because calling ``list`` on an ``iterable`` creates a :doc:`list`
+    the tests pass because calling ``list`` on an ``iterable`` createsa :doc:`list`
 * add another test
   .. code-block:: python
 
@@ -98,7 +98,7 @@ REFACTOR: make it better
 
        import list_comprehensions
        import unittest
-    the terminal displays a :doc:`ModuleNotFoundError` and I add that to the running list of exceptions
+    the terminal displaysa :doc:`ModuleNotFoundError` and I add that to the running list of exceptions
   .. code-block:: python
 
        # Exceptions Encountered
@@ -115,7 +115,7 @@ REFACTOR: make it better
        # ModuleNotFoundError
        # AttributeError
 
-* I then add a :doc:`functions` definition to ``list_comprehensions.py``
+* I then adda :doc:`functions` definition to ``list_comprehensions.py``
   .. code-block:: python
 
        def make_a_list():
@@ -227,7 +227,7 @@ GREEN: make it pass
 List Comprehension
 ------------------
 
-Now that I know how to create a ``list`` using ``[]``, ``list`` and ``for``, What if I try creating a :doc:`list` using a ``list comprehension``. It looks similar to a ``for`` loop but allows us to achieve the same thing with less words
+Now that I know how to create a ``list`` using ``[]``, ``list`` and ``for``, What if I try creatinga :doc:`list` using a ``list comprehension``. It looks similar to a ``for`` loop but allows us to achieve the same thing with less words
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^

@@ -33,7 +33,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* add a definition to ``truth_table.py`` with a return statement, I can pick ``True`` or ``False`` since 2 out of the 4 cases are either ``True`` or ``False``
+* add a definition to ``truth_table.py`` with a return statement, I can pick :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>` since 2 out of the 4 cases are either :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>`
   .. code-block:: python
 
        def logical_equality(p, q):
@@ -117,7 +117,7 @@ What can I do to make this better?
            return p == q
     Well done! the tests are still green
 
-What if I review. For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
+What if I review. For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>`
 
 
 * ``logical_equality`` is ``==``
@@ -125,8 +125,8 @@ What if I review. For any boolean operation involving 2 inputs - ``p`` and ``q``
 * ``logical_conjunction`` is ``and``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
-* ``False`` is ``not True``
-* ``True`` is ``not False``
-* ``False`` is ``False``
-* ``True`` is ``True``
-* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to ``True``
+* :doc:`False </data structures: booleans>` is ``not True``
+* :doc:`True </data structures: booleans>` is ``not False``
+* :doc:`False </data structures: booleans>` is :doc:`False </data structures: booleans>`
+* :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`
+* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :doc:`True </data structures: booleans>`

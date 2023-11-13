@@ -152,7 +152,7 @@ RED: make it fail
            class Class():
                    pass
 
-    the terminal will update to show an ``IndentationError`` and the offending line
+    the terminal shows an ``IndentationError`` and the offending line
 
   .. code-block:: python
 
@@ -242,7 +242,7 @@ RED: make it fail
          attribute = None
               attribute = None
           attribute = None
-    the terminal will update to show an IndentationError and the offending line
+    the terminal shows an IndentationError and the offending line
   .. code-block:: python
 
        E    IndentationError: unexpected indent
@@ -265,6 +265,6 @@ REFACTOR: make it better
 
 The point of this exercise was to get familiar with python spacing convention to help understand the ``IndentationError`` and its solution.
 
-Indentation matters in python because it is how blocks of code are segmented. When a :doc:`functions` is defined, all the statements that belong to the it are indented, same with a :doc:`class`\ , all the statements that belong to the it, its :doc:`methods <functions>` and attributes are indented underneath it.
+Indentation matters in python because it is how blocks of code are segmented. Whena :doc:`functions` is defined, all the statements that belong to the it are indented, same witha :doc:`class`\ , all the statements that belong to the it, its :doc:`methods <functions>` and attributes are indented underneath it.
 
 This helps with reading the code so I can tell what belongs to a namespace the same way curly braces do for languages that use them for that purpose. Interactive Development Environments have gotten a lot better and automatically indent code for you using the convention of the language you are writing, which saves time spent counting the number of spaces to indent.

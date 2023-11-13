@@ -78,14 +78,14 @@ update ``test_is_none_a_boolean`` to make the tests pass
 I now know that
 
 
-* ``False`` is not :doc:`None </data structures: None>`
-* ``True`` is not :doc:`None </data structures: None>`
+* :doc:`False </data structures: booleans>` is not :doc:`None </data structures: None>`
+* :doc:`True </data structures: booleans>` is not :doc:`None </data structures: None>`
 * :doc:`None </data structures: None>` is :doc:`None </data structures: None>`
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-booleans are represented by the keyword ``bool`` in python so I can do an instance test using another `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`method <functions>` that checks if an ``object`` is an instance of a :doc:`class`
+booleans are represented by the keyword ``bool`` in python so I can do an instance test using another `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`method <functions>` that checks if an `object <https://docs.python.org/3/glossary.html#term-object>`_ is an instance ofa :doc:`class`
 
 
 *

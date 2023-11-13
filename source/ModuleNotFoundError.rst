@@ -161,14 +161,14 @@ GREEN: make it pass
            import module_2
        E   ModuleNotFoundError: No module called 'module_2'
 
-* create ``module_2.py`` in the ``{PROJECT_NAME}`` folder, the terminal will update to show the following
+* create ``module_2.py`` in the ``{PROJECT_NAME}`` folder, the terminal shows the following
   .. code-block:: python
 
            import module_3
        E   ModuleNotFoundError: No module called 'module_3'
 
 *
-  this is the pattern, repeat it until you have created ``module_99.py`` and the terminal will update to show a passing test
+  this is the pattern, repeat it until you have created ``module_99.py`` and the terminal shows a passing test
 
   .. code-block:: python
 

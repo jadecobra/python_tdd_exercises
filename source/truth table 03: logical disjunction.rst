@@ -9,10 +9,10 @@ Reviewing what I know so far
 * I can express ``conditional statements`` on one line with ``return``
 * when there are multiple outcomes I only need to write the condition for the special case and use ``else`` for the others
 * ``logical_conjunction`` is ``and``
-* ``False`` is ``not True``
-* ``True`` is ``not False``
-* ``False`` is ``False``
-* ``True`` is ``True``
+* :doc:`False </data structures: booleans>` is ``not True``
+* :doc:`True </data structures: booleans>` is ``not False``
+* :doc:`False </data structures: booleans>` is :doc:`False </data structures: booleans>`
+* :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`
 
 Prerequisites
 -------------
@@ -53,7 +53,7 @@ GREEN: make it pass
 
   the terminal updates to show an :doc:`AssertionError`
 
-* 3 of the test cases are passing because ``logical_disjunction`` returns ``True`` in 3 of the 4. I need a condition for the fourth case to pass. update the definition
+* 3 of the test cases are passing because ``logical_disjunction`` returns :doc:`True </data structures: booleans>` in 3 of the 4. I need a condition for the fourth case to pass. update the definition
 
   .. code-block:: python
 
@@ -80,7 +80,7 @@ REFACTOR: make it better
 
   the terminal shows the tests are still passing
 
-* I can restate the equality comparison against ``False`` in terms of ``True`` by using the ``not equal`` comparison operator ``!=``
+* I can restate the equality comparison against :doc:`False </data structures: booleans>` in terms of :doc:`True </data structures: booleans>` by using the ``not equal`` comparison operator ``!=``
 
   .. code-block:: python
 
@@ -155,7 +155,7 @@ REFACTOR: make it better
            else:
                return True
 
-* the ``else`` statement that returns ``True`` can be restated as the opposite of the ``if`` statement
+* the ``else`` statement that returns :doc:`True </data structures: booleans>` can be restated as the opposite of the ``if`` statement
 
   .. code-block:: python
 
@@ -211,16 +211,16 @@ REFACTOR: make it better
 
   *VOILA!* the tests still pass and I have a simple statement that makes all 4 states pass for ``logical_disjunction``
 
-Our knowledge is updated to show that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values ``True`` or ``False``
+Our knowledge is updated to show that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>`
 
 
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
 * ``logical_disjunction`` is ``or``
 * ``logical_conjunction`` is ``and``
-* ``False`` is ``not True``
-* ``True`` is ``not False``
-* ``False`` is ``False``
-* ``True`` is ``True``
-* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to ``True``
+* :doc:`False </data structures: booleans>` is ``not True``
+* :doc:`True </data structures: booleans>` is ``not False``
+* :doc:`False </data structures: booleans>` is :doc:`False </data structures: booleans>`
+* :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`
+* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :doc:`True </data structures: booleans>`
 * when there are multiple outcomes I only need to write the condition for the special case and use ``else`` for the others

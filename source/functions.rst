@@ -43,7 +43,7 @@ What if I a create a file called ``test_functions.py`` in the ``tests`` folder a
        def test_functions_with_pass(self):
            self.assertIsNone(functions.function_with_pass())
 
-the terminal displays a :doc:`ModuleNotFoundError`\ , and I add it to the list of exceptions encountered
+the terminal displaysa :doc:`ModuleNotFoundError`\ , and I add it to the list of exceptions encountered
 
 .. code-block:: python
 
@@ -157,7 +157,7 @@ GREEN: make it pass
 
        def passthrough():
            return None
-    the terminal updates to show a :doc:`TypeError` because the definition for ``passthrough`` does not allow ``inputs`` but the test sends ``False`` as input
+    the terminal updates to show a :doc:`TypeError` because the definition for ``passthrough`` does not allow ``inputs`` but the test sends :doc:`False </data structures: booleans>` as input
   .. code-block:: python
 
        TypeError: passthrough() takes 0 positional arguments but 1 was given
@@ -180,7 +180,7 @@ GREEN: make it pass
   .. code-block:: python
 
        AssertionError: None != False
-    because the result of calling ``functions.passthrough`` with ``False`` as input is :doc:`None </data structures: None>` which is not equal to ``False`` which is the expected result
+    because the result of calling ``functions.passthrough`` with :doc:`False </data structures: booleans>` as input is :doc:`None </data structures: None>` which is not equal to :doc:`False </data structures: booleans>` which is the expected result
 * change the definition of ``passthrough`` to make the test pass
   .. code-block:: python
 
@@ -191,7 +191,7 @@ GREEN: make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Wait a minute! Something is not quite right here. The definition for a ``passthrough`` function was that it returned the same thing it was given, the test passes when ``False`` is given as input, will it still pass when another value is given or will it always return ``False``? There is a way to find out, What if I test it
+Wait a minute! Something is not quite right here. The definition for a ``passthrough`` function was that it returned the same thing it was given, the test passes when :doc:`False </data structures: booleans>` is given as input, will it still pass when another value is given or will it always return :doc:`False </data structures: booleans>`? There is a way to find out, What if I test it
 
 
 *
@@ -211,7 +211,7 @@ Wait a minute! Something is not quite right here. The definition for a ``passthr
 
        AssertionError: False != True
 
-    the function returns ``False`` instead of ``True`` in the second case, confirming the suspicions, I am not all the way geniuses, yet
+    the function returns :doc:`False </data structures: booleans>` instead of :doc:`True </data structures: booleans>` in the second case, confirming the suspicions, I am not all the way geniuses, yet
 
 *
   GREEN: make it pass

@@ -6,8 +6,8 @@ Sometimes I want programs to make decisions based on inputs or conditions, and c
 There are two boolean values
 
 
-* ``True``
-* ``False``
+* :doc:`True </data structures: booleans>`
+* :doc:`False </data structures: booleans>`
 
 The Truth Table gives the 16 outcomes of binary operations
 
@@ -66,7 +66,7 @@ GREEN: make it pass
 
      def logical_true():
          return True
-  the terminal updates to show passing tests and I am reminded that ``True`` is ``True``
+  the terminal updates to show passing tests and I am reminded that :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -84,13 +84,13 @@ REFACTOR: make it better
      def logical_false():
          return True
   and the terminal shows an :doc:`AssertionError` since the ``logical_false`` function currently returns a different value from what is expected
-* update the return value to ``False`` and the terminal shows passing tests
+* update the return value to :doc:`False </data structures: booleans>` and the terminal shows passing tests
   .. code-block:: python
 
      def logical_false():
          return False
 
-* I am again reminded that ``False`` is ``False`` and ``True`` is ``True``
+* I am again reminded that :doc:`False </data structures: booleans>` is :doc:`False </data structures: booleans>` and :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`
 
 ----
 
@@ -175,9 +175,9 @@ GREEN: make it pass
 Reviewing what I know so far
 
 
-* ``True`` is ``not False``
-* ``False`` is ``not True``
-* ``False`` is ``False``
-* ``True`` is ``True``
+* :doc:`True </data structures: booleans>` is ``not False``
+* :doc:`False </data structures: booleans>` is ``not True``
+* :doc:`False </data structures: booleans>` is :doc:`False </data structures: booleans>`
+* :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`
 
 I have not written any conditional statements yet, only boolean values and their opposites. I will write some in `Logical Conjunction <./TRUTH_TABLE_02_LOGICAL_CONJUNCTION.rst>`_ next

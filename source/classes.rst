@@ -48,7 +48,7 @@ I create a new file called ``test_classes.py`` in the ``tests`` directory
      def test_class_definitions_with_pass(self):
          self.assertIsInstance(classes.ClassWithPass(), object)
 
-the terminal displays a :doc:`ModuleNotFoundError` because I have an import statement for a module called ``classes``
+the terminal displaysa :doc:`ModuleNotFoundError` because I have an import statement for a module called ``classes``
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -424,9 +424,9 @@ GREEN: make it pass
 
         method_a = None
 
-  the terminal now reveals a :doc:`TypeError` since ``method_a`` refers to :doc:`None </data structures: None>` which is not callable
+  the terminal now revealsa :doc:`TypeError` since ``method_a`` refers to :doc:`None </data structures: None>` which is not callable
 
-* I update the definition of ``method_a`` to make it a :doc:`function <functions>` which makes it callable
+* I update the definition of ``method_a`` to make ita :doc:`function <functions>` which makes it callable
 
   .. code-block:: python
 
@@ -515,7 +515,7 @@ How to define a Class with an initializer
 
 So far I have gone over how to define classes, attributes and methods. I will now expand on this to show how to use classes.
 
-When creating a new class, we define an initializer which is a :doc:`method <functions>` that can receive inputs which can be used to customize instances/copies of the class
+When creating a new class, we define an initializer which isa :doc:`method <functions>` that can receive inputs which can be used to customize instances/copies of the class
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -591,7 +591,7 @@ REFACTOR: make it better
 
          sex = 'M'
 
-  and the terminal displays a :doc:`TypeError`
+  and the terminal displaysa :doc:`TypeError`
 
   .. code-block:: python
 
@@ -615,7 +615,7 @@ REFACTOR: make it better
        def __init__(self):
            pass
 
-  and the terminal responds with a :doc:`TypeError`
+  and the terminal responds witha :doc:`TypeError`
 
   .. code-block:: python
 
@@ -785,7 +785,7 @@ How to View the attributes and methods of a Class
 
 To view what ``attributes`` and ``methods`` are defined for any `object <https://docs.python.org/3/glossary.html#term-object>`_ I can call ``dir`` on the `object <https://docs.python.org/3/glossary.html#term-object>`_.
 
-The ``dir`` :doc:`method <functions>` returns a :doc:`list </data structures: lists>` of all attributes and :doc:`methods <functions>` or its given input
+The ``dir`` :doc:`method <functions>` returnsa :doc:`list </data structures: lists>` of all attributes and :doc:`methods <functions>` or its given input
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -851,7 +851,7 @@ and it passes, the last two values in the list are ``attribute`` and ``method`` 
 CONGRATULATIONS! If you made it this far and typed along with me, You know
 
 * how to define a class with an attribute
-* how to define a class with a :doc:`method <functions>`
+* how to define a class witha :doc:`method <functions>`
 * how to define a class with an initializer
 * how to view the attributes and :doc:`methods <functions>` of a class
 

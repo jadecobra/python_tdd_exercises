@@ -27,7 +27,7 @@ first I add a file called ``test_dictionaries.py`` to the ``tests`` folder with 
    import unittest
    import dictionaries
 
-the terminal gives us a :doc:`ModuleNotFoundError`\ , and I add it to the list of exceptions encountered
+the terminal gives usa :doc:`ModuleNotFoundError`\ , and I add it to the list of exceptions encountered
 
 .. code-block:: python
 
@@ -155,7 +155,7 @@ REFACTOR: make it better
 How to create a dictionary with booleans as keys
 -----------------------------------------
 
-Is it possible for us to use ``False`` or ``True`` as ``dictionary`` keys?
+Is it possible for us to use :doc:`False </data structures: booleans>` or :doc:`True </data structures: booleans>` as ``dictionary`` keys?
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -181,7 +181,7 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* add a test for using ``True`` as a ``dictionary`` key
+* add a test for using :doc:`True </data structures: booleans>` as a ``dictionary`` key
   .. code-block:: python
 
        def test_creating_dictionaries_with_booleans_as_keys(self):
@@ -236,7 +236,7 @@ add a test to ``TestDictionaries`` using a list as a key
        def test_creating_dictionaries_with_lists_as_keys(self):
            {[1, 2]: "BOOM"}
 
-the terminal gives a :doc:`TypeError` because only ``hashable`` types can be used as dictionary keys and :doc:`lists` are not ``hashable``
+the terminal givesa :doc:`TypeError` because only ``hashable`` types can be used as dictionary keys and :doc:`lists` are not ``hashable``
 
 .. code-block::
 
@@ -254,7 +254,7 @@ I also update the list of exceptions encountered
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-In `Exception Handling <./EXCEPTION_HANDLING.rst>`_ I learn how to use ``self.assertRaises`` to confirm that an error is raised by some code without having it crash the tests. I will do the same here to confirm that creating a dictionary with a ``list`` as the key raises a :doc:`TypeError`
+In `Exception Handling <./EXCEPTION_HANDLING.rst>`_ I learn how to use ``self.assertRaises`` to confirm that an error is raised by some code without having it crash the tests. I will do the same here to confirm that creating a dictionary with a ``list`` as the key raisesa :doc:`TypeError`
 
 .. code-block:: python
 
@@ -277,7 +277,7 @@ What if I try a similar test using a set as a key
        def test_creating_dictionaries_with_sets_as_keys(self):
            {{1, 2}: "BOOM"}
 
-the terminal responds with a :doc:`TypeError`
+the terminal responds witha :doc:`TypeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -306,7 +306,7 @@ add a new test
            a_dictionary = {"key": "value"}
            {a_dictionary: "BOOM"}
 
-and the terminal outputs a :doc:`TypeError`
+and the terminal outputsa :doc:`TypeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -560,7 +560,7 @@ What if I want to call a dictionary and not have python raise an error when it d
     the terminal updates to show an `Assertion Error <./AssertionError.rst>`_ because ``value1`` is not equal to :doc:`None </data structures: None>`
 * update the test to make it pass
 
-How to view the attributes and :doc:`methods <functions>`of a dictionary
+How to view the attributes and :doc:`methods <functions>` of a dictionary
 -----------------------------------------------
 
 :doc:`classes` covers how to view the ``attributes`` and ``methods`` of an object. What if I do the same for ``dictionaries``
