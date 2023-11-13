@@ -2,10 +2,10 @@
 AttributeError
 ==============
 
-My exploration of python using Test Driven Development continues in this chapter with the `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AttributeError>`_
+My exploration of python using Test Driven Development continues in this chapter with the `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
 An Attribute is a property, variable, function or name that belongs to an `object <https://docs.python.org/3/glossary.html#term-object>`_. For example, if I describe a human being I could list attributes like height, weight, sex and color.
-An `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AttributeError>`_ is raised when there is a reference to a name in an `object <https://docs.python.org/3/glossary.html#term-object>`_ that does not exist.
+An `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name in an `object <https://docs.python.org/3/glossary.html#term-object>`_ that does not exist.
 
 
 Prerequisites
@@ -74,12 +74,12 @@ GREEN: make it pass
              self.assertIsNone(module.variable_0)
 
   - ``class TestAttributeErrors(unittest.TestCase):`` is a class definition that inherits from `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ and will hold the tests
-  - ``def test_defining_variables_to_solve_attribute_errors(self):`` is the definition of the first test function to find out if defining variables can solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AttributeError>`_
+  - ``def test_defining_variables_to_solve_attribute_errors(self):`` is the definition of the first test function to find out if defining variables can solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
   - ``self.assertIsNone(module.variable_0)`` - the actual test. This is equivalent to asking the question ``is module.variable_0 equal to None``
   - ``assertIsNone`` is one of the helper functions inherited from the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class. I use it in the :doc:`AssertionError` chapter
   - ``self`` refers to the ``TestAttributeError`` class
 
-* the terminal updates to show an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AttributeError>`_
+* the terminal updates to show an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
@@ -154,12 +154,12 @@ GREEN: make it pass
 
       ============================== 2 passed in 0.03s==================================
 
-I solved the `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AttributeError>`_ by defining a variable
+I solved the `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a variable
 
 What is similar? What is different?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-An `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AttributeError>`_ occurs when there is a reference to a name in an object from outside the object and the name does not exist for example,  ``humans.wings`` while a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ occurs when there is a reference to a name within an object and there is no prior definition of the name for example,  ``wings``
+An `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ occurs when there is a reference to a name in an object from outside the object and the name does not exist for example,  ``humans.wings`` while a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ occurs when there is a reference to a name within an object and there is no prior definition of the name for example,  ``wings``
 
 .. NOTE::
 
@@ -184,7 +184,7 @@ RED: make it fail
           self.assertIsNone(module.variable_0)
           self.assertIsNone(module.variable_1)
 
-  the terminal shows an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AttributeError>`_
+  the terminal shows an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
@@ -231,7 +231,7 @@ RED: make it fail
         self.assertIsNone(module.variable_1)
         self.assertIsNone(module.variable_2)
 
-  the terminal updates with an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AttributeError>`_
+  the terminal updates with an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
@@ -280,7 +280,7 @@ RED: make it fail
           self.assertIsNone(module.variable_2)
           self.assertIsNone(module.variable_3)
 
-  the terminal shows an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AttributeError>`_
+  the terminal shows an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
@@ -321,7 +321,7 @@ GREEN: make it pass
 I have a pattern for the drill. When I test an attribute in a module, I get
 
 
-* an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AttributeError>`_ when the attribute does not exist
+* an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ when the attribute does not exist
 * a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ when I add the name to the module
 * a passing test when I define the name as a variable
 
@@ -375,7 +375,7 @@ I update the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` w
     def test_defining_functions_to_solve_attribute_errors(self):
         self.assertIsNone(module.function_0())
 
-the terminal responds with an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AttributeError>`_ as expected
+the terminal responds with an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ as expected
 
 .. code-block:: python
 
@@ -385,7 +385,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* I try the solution I know for solving `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AttributeError>`_ with variables and update ``module.py``
+* I try the solution I know for solving `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ with variables and update ``module.py``
 
   .. code-block:: python
 
@@ -487,7 +487,7 @@ RED: make it fail
 
   Looking at the ``traceback`` I see it's the line I added that caused the failure
 
-  * I am familiar with `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AttributeError>`_ at this point and this looks exactly like the tests in ``test_defining_functions_to_solve_attribute_errors``
+  * I am familiar with `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ at this point and this looks exactly like the tests in ``test_defining_functions_to_solve_attribute_errors``
   * What's the difference?
 
 GREEN: make it pass
@@ -564,7 +564,7 @@ RED: make it fail
        def test_defining_attributes_in_classes_to_solve_attribute_errors(self):
            self.assertIsNone(module.Class.attribute_0)
 
-  the terminal updates to show an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AttributeError>`_
+  the terminal updates to show an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
@@ -581,7 +581,7 @@ GREEN: make it pass
 
        Class = None
 
-  and the terminal still displays an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AttributeError>`_ but with a different message
+  and the terminal still displays an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ but with a different message
 
   .. code-block:: python
 
@@ -594,7 +594,7 @@ GREEN: make it pass
       def Class():
           return None
 
-  the terminal updates to show an an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AttributeError>`_ but with a slightly different message
+  the terminal updates to show an an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ but with a slightly different message
 
   .. code-block:: python
 
@@ -714,7 +714,7 @@ RED: make it fail
       def test_defining_functions_in_classes_to_solve_attribute_errors(self):
           self.assertIsNone(module.Class.method_0())
 
-  the terminal updates to show an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AttributeError>`_
+  the terminal updates to show an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
