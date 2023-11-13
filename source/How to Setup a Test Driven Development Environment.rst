@@ -2,7 +2,7 @@
 How to Setup a Test Driven Development Environment
 ==================================================
 
-`Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ is a way of developing software with a focus on tests.  I come up with ideas to reach a goal and test those ideas, the results of these tests tell me if I am closer or further away from the goal and I repeat the process until I reach the goal.
+`Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ is a way of developing software with a focus on tests. I come up with ideas to reach a goal and test those ideas, the results of these tests tell me if I am closer or further away from the goal and I repeat the process until I reach the goal.
 
 I recommend reading `Kent Beck’s <https://en.wikipedia.org/wiki/Kent_Beck>`_ `Test Driven Development by Example <https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk>`_ and `Martin Fowler’s <https://en.wikipedia.org/wiki/Martin_Fowler_(software_engineer)>`_ `Refactoring <https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk>`_, they both influenced the way I write programs.
 
@@ -16,11 +16,11 @@ Requirements
 * `download and install Python <https://www.python.org/downloads/>`_
 * download and install an Interactive Development Environment (IDE) - Here are a few options
 
-  * `VSCode in a Browser <http://vscode.dev>`_
-  * `VSCode <https://code.visualstudio.com/download>`_
-  * `PyCharm <https://www.jetbrains.com/pycharm/download/#section=mac>`_
-  * `Sublime <https://www.sublimetext.com>`_
-  * `Other Interactive Development Environment (IDE) options <https://wiki.python.org/moin/IntegratedDevelopmentEnvironments>`_
+  - `VSCode in a Browser <http://vscode.dev>`_
+  - `VSCode <https://code.visualstudio.com/download>`_
+  - `PyCharm <https://www.jetbrains.com/pycharm/download/#section=mac>`_
+  - `Sublime <https://www.sublimetext.com>`_
+  - `Other Interactive Development Environment (IDE) options <https://wiki.python.org/moin/IntegratedDevelopmentEnvironments>`_
 
 .. admonition:: *are you on a windows computer?*
 
@@ -35,7 +35,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
 .. note::
 
-  ``{PROJECT_NAME}`` is a placeholder for the name of the project. For example to setup a project called ``magic`` I would replace ``{PROJECT_NAME}`` with ``magic``
+  ``{PROJECT_NAME}`` is a placeholder for the name of the project. For example to setup a project called ``calculator`` I would replace ``{PROJECT_NAME}`` with ``calculator``
 
 * I create a directory for the project with a folder called ``tests`` inside it
 
@@ -43,7 +43,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
     mkdir -p {PROJECT_NAME}/tests
 
-* I change directory to ``{PROJECT_NAME}``
+* and change directory to ``{PROJECT_NAME}``
 
   .. code-block:: shell
 
@@ -66,7 +66,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
       touch tests/__init__.py
 
-  - I create an empty file called ``test_{PROJECT_NAME}.py`` in the ``tests`` folder to hold the testing code
+  - I also create an empty file called ``test_{PROJECT_NAME}.py`` in the ``tests`` folder to hold the testing code
 
     .. code-block:: shell
 
@@ -86,7 +86,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 ----
 
 
-The Test Driven Development cycle paraphrased is ``RED GREEN REFACTOR``
+The Test Driven Development cycle is ``RED GREEN REFACTOR``
 
 * **RED**: make it fail - write a failing test to make sure the test works
 * **GREEN**: make it pass - write only the code necessary to make the test pass
@@ -121,12 +121,10 @@ RED: make it fail
     * ``def`` is the python keyword for creating :doc:`functions`
     * ``test_failure`` is the name of the :doc:`function <functions>`
     * ``self`` is the ``Test{PROJECT_NAME}`` class. I can use ``self`` to access ``methods`` and ``attributes`` within the ``Test{PROJECT_NAME}`` class, this avoids having to type ``Test{PROJECT_NAME}().assertFalse(True)`` to access the ``assertFalse`` :doc:`method <functions>` for instance
-    * ``self.assertFalse(True)`` the actual test
+    * ``self.assertFalse(True)`` the actual test I expect this line to fail because ``True`` is not ``False``
 
       - ``assertFalse`` is a :doc:`method <functions>` in the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class which checks if its input is ``False``
       - ``True`` is given as input to ``assertFalse``
-
-      I expect this line to fail because ``True`` is not ``False``
 
 * I save the file and turn on the ``Auto Save`` feature in the Interactive Development Environment (IDE) to avoid manually saving a file each time a change is made
 * I type this in the terminal to test the code
@@ -153,22 +151,27 @@ RED: make it fail
 
     FAILED (failures=1)
 
-If you are typing along, *CONGRATULATIONS!* You have written the first test.
+If you are typing along, *CONGRATULATIONS!* You have written your first test.
 
 This is the ``RED`` part of the Test Driven Development cycle. The error in the terminal has important information. Looking at it from the bottom
 
 
 * ``FAILED (failures=1)`` there is one failure
 * ``Ran 1 test in 0.000s`` how long it took the test to run
-* ``AssertionError: True is not false`` The error is an :doc:`AssertionError` which is raised by python when an assert statement is ``False``, in this case the error is raised because ``True is not false``
-* ``self.assertFalse(True)`` the line of code that caused the failure
+* ``AssertionError: True is not false`` The error is an :doc:`AssertionError` which is raised by python when an assert statement is ``False``. In this case the error is raised because ``True is not false``
+* ``self.assertFalse(True)`` is the line of code that caused the failure
 
   - ``assertFalse`` is a :doc:`method <functions>` in the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class which checks if its input is ``False``
   - ``True`` is given as input to ``assertFalse`` and the statement raises an error because ``True`` is not ``False``
 
-* ``File "/<PATH_TO_PROJECT>/{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py", line 7, in test_failure`` is the line number and location of the file where the error occurred. Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on this line with the mouse to place the cursor at the position in the file where the error occurred
+* ``File "/<PATH_TO_PROJECT>/{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py", line 7, in test_failure`` is the line number and location of the file where the error occurred.
+
+  .. tip::
+
+    Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on this line with the mouse to place the cursor at the position in the file where the error occurred
+
 * ``Traceback (most recent call last):`` all the information returned by python after this line is the ``traceback`` showing the most recent call python made last
-* ``FAIL: test_failure (tests.Test{PROJECT_NAME}.test_failure)`` a header with information about the test
+* ``FAIL: test_failure (tests.Test{PROJECT_NAME}.test_failure)`` is a header with information about the test
 
   - ``tests.Test{PROJECT_NAME}.test_failure`` is the location of the failing test
   -  ``tests`` is the tests folder
@@ -245,7 +248,7 @@ So far there is not much to improve on what has been written but there has been 
 * ``python3 -m unittest`` was run to see the test pass
 * ``python3 -m unittest`` will be run to make sure changes do not break previous passing tests
 
-This means ``python3 -m unittest`` is run for each part of the Test Driven Development cycle or each time there is a code change. I automate this so I `Do Not Repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_, it would be better for a program to automatically run the tests when there is a change to the code
+This means ``python3 -m unittest`` is run for each part of the Test Driven Development cycle or each time there is a code change. I automate this so `I Do Not Repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_, it would be better for a program to automatically run the tests when there is a change to the code
 
 How to Automatically Run Tests
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -408,7 +411,7 @@ You made it this far and have become the greatest programmer in the world. Follo
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-* to add the test for failure in ``test_$PROJECT_NAME.py``, I use the ``concatenate`` program to add the text
+* I use the ``concatenate`` program to add the text for the failure test in ``test_$PROJECT_NAME.py``
 
   .. code-block:: shell
     :linenos:
@@ -445,13 +448,13 @@ You made it this far and have become the greatest programmer in the world. Follo
 
     chmod +x setupPythonTdd.sh
 
-* I can now create a Test Driven Development environment on demand by giving a name for the ``{PROJECT_NAME}`` variable when the program is called. For example, typing this command in the terminal in the folder where ``setupPythonTdd.sh`` is saved will setup a Test Driven Development environment for a project called ``magic``
+* I can now create a Test Driven Development environment on demand by giving a name for the ``{PROJECT_NAME}`` variable when the program is called. For example, typing this command in the terminal in the folder where ``setupPythonTdd.sh`` is saved will setup a Test Driven Development environment for a project called ``calculator``
 
   .. code-block:: shell
 
-    ./setupPythonTdd.sh magic
+    ./setupPythonTdd.sh calculator
 
-This is one of the advantages of programming, I can take a series of steps and make them a one line command which the computer does on my behalf
+One of the advantages of programming is that I can take a series of steps and make them a one line command which the computer does on my behalf
 
 You now know one way to Setup a Test Driven Development Environment for Python projects, and have a program to do it for you anytime you want
 
