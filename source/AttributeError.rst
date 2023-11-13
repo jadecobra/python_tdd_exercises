@@ -71,11 +71,11 @@ GREEN: make it pass
      class TestAttributeErrors(unittest.TestCase):
 
          def test_defining_variables_to_solve_attribute_errors(self):
-             self.assertIsNone(module.variable_0)
+             module.variable_0
 
   - ``class TestAttributeErrors(unittest.TestCase):`` is a class definition that inherits from `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ and will hold the tests
   - ``def test_defining_variables_to_solve_attribute_errors(self):`` is the definition of the first test function to find out if defining variables can solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
-  - ``self.assertIsNone(module.variable_0)`` - the actual test. This is equivalent to asking the question ``is module.variable_0 equal to None``
+  - ``module.variable_0)`` - the actual test. This is equivalent to asking the question ``is module.variable_0 equal to None``
   - ``assertIsNone`` is one of the helper functions inherited from the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class. I use it in the :doc:`AssertionError` chapter
   - ``self`` refers to the ``TestAttributeError`` class
 
@@ -86,7 +86,7 @@ GREEN: make it pass
        self = <tests.test_attribute_error.TestAttributeError testMethod=test_defining_variables_to_solve_attribute_errors>
 
            def test_defining_variables_to_solve_attribute_errors(self):
-       >       self.assertIsNone(module.variable_0)
+       >       module.variable_0
        E       AttributeError: module 'module' has no attribute 'variable_0'
 
   Looking at the traceback starting from the bottom
@@ -94,9 +94,9 @@ GREEN: make it pass
 
   * ``tests/test_attribute_error.py:7: AttributeError`` the location i.e. filename and line number and name of the Exception that is raised
   * ``E       AttributeError: module 'module' has no attribute 'variable_0'`` an explanation of the error raised. The module I imported has no definitions called ``variable_0``
-  * ``>       self.assertIsNone(module.variable_0)`` the line of code that caused the error. As seen from the error explanation above the file ``module.py`` has no definitions called ``variable_0``. This is like making a phone call to a number that is not in service or sending an e-mail to an address that does not exist
+  * ``>       module.variable_0`` the line of code that caused the error. As seen from the error explanation above the file ``module.py`` has no definitions called ``variable_0``. This is like making a phone call to a number that is not in service or sending an e-mail to an address that does not exist
   * ``def test_defining_variables_to_solve_attribute_errors(self):`` the function definition where the error occurs
-  * ``self = <tests.test_attribute_error.TestAttributeError testMethod=test_defining_variables_to_solve_attribute_errors>`` - A reference to the class and method(function) where the failure occurred
+  * ``self = <tests.test_attribute_error.TestAttributeError testMethod=test_defining_variables_to_solve_attribute_errors>`` - A reference to the class and method (function) where the failure occurred
 
 * I update the list of exceptions encountered
 
@@ -127,15 +127,15 @@ GREEN: make it pass
   - ``variable_0`` the offending line
   - ``module.py:1: in <module>`` the location of the offending line
 
-* I add `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ my running list of errors encountered
+* I add `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ to my running list of errors encountered
 
   .. code-block::
 
-    # Exceptions Encountered
-    # AssertionError
-    # ModuleNotFoundError
-    # AttributeError
-    # NameError
+  # Exceptions Encountered
+  # AssertionError
+  # ModuleNotFoundError
+  # AttributeError
+  # NameError
 
 * then update the failing line in ``module.py`` in the Interactive Development Environment (IDE) to fix it
 
@@ -181,8 +181,8 @@ RED: make it fail
   .. code-block:: python
 
       def test_defining_variables_to_solve_attribute_errors(self):
-          self.assertIsNone(module.variable_0)
-          self.assertIsNone(module.variable_1)
+          module.variable_0
+          module.variable_1
 
   the terminal shows an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
@@ -227,15 +227,15 @@ RED: make it fail
   .. code-block:: python
 
     def test_defining_variables_to_solve_attribute_errors(self):
-        self.assertIsNone(module.variable_0)
-        self.assertIsNone(module.variable_1)
-        self.assertIsNone(module.variable_2)
+        module.variable_0
+        module.variable_1
+        module.variable_2
 
   the terminal updates with an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
-      >       self.assertIsNone(module.variable_2)
+      >       module.variable_2
       E       AttributeError: module 'module' has no attribute 'variable_2'
 
 GREEN: make it pass
@@ -275,10 +275,10 @@ RED: make it fail
   .. code-block:: python
 
       def test_defining_variables_to_solve_attribute_errors(self):
-          self.assertIsNone(module.variable_0)
-          self.assertIsNone(module.variable_1)
-          self.assertIsNone(module.variable_2)
-          self.assertIsNone(module.variable_3)
+          module.variable_0
+          module.variable_1
+          module.variable_2
+          module.variable_3
 
   the terminal shows an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
@@ -325,30 +325,24 @@ I have a pattern for the drill. When I test an attribute in a module, I get
 * a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ when I add the name to the module
 * a passing test when I define the name as a variable
 
-If you are feeling adventurous you can Update the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` by adding more tests until you get to ``self.assertIsNone(module.variable_99)``, you will have 102 statements in total
+If you are feeling adventurous you can Update the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` by adding more tests until you get to ``module.variable_99)``, you will have 102 statements in total
 
 .. code-block:: python
 
     def test_defining_variables_to_solve_attribute_errors(self):
-        self.assertIsNone(module.variable_0)
-        self.assertIsNone(module.variable_1)
-        self.assertIsNone(module.variable_2)
-        self.assertIsNone(module.variable_3)
+        module.variable_0
+        module.variable_1
+        module.variable_2
+        module.variable_3
         ...
-        self.assertIsNone(module.variable_99)
-        self.assertFalse(module.false)
-        self.assertTrue(module.true)
+        module.variable_99
+        module.false
+        module.true
 
 Repeat the pattern until all tests pass.
 
 
 * What's your solution to the last two tests? They are similar to the test for failure in :doc:`How to Setup a Test Driven Development Environment`
-* did you update ``module.py`` this way?
-
-  .. code-block::
-
-      true = True
-      false = False
 
 If you are typing along *WELL DONE!* You now know
 
@@ -363,8 +357,6 @@ If you are typing along *WELL DONE!* You now know
 Solve the AttributeError by defining functions
 ----------------------------------------------
 
-There are also `AttributeErrors <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AttributeError>`_ that can be solved with functions
-
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
@@ -373,7 +365,7 @@ I update the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` w
 .. code-block:: python
 
     def test_defining_functions_to_solve_attribute_errors(self):
-        self.assertIsNone(module.function_0())
+        module.function_0()
 
 the terminal responds with an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ as expected
 
@@ -431,12 +423,12 @@ REFACTOR: make it better
   .. code-block:: python
 
       def test_defining_functions_to_solve_attribute_errors(self):
-          self.assertIsNone(module.function_0())
-          self.assertIsNone(module.function_1())
-          self.assertIsNone(module.function_2())
-          self.assertIsNone(module.function_3())
+          module.function_0()
+          module.function_1()
+          module.function_2()
+          module.function_3()
           ...
-          self.assertIsNone(module.function_99())
+          module.function_99()
 
   the terminal updates to show an error
 
@@ -477,7 +469,7 @@ RED: make it fail
   .. code-block:: python
 
        def test_defining_classes_to_solve_attribute_errors(self):
-           self.assertIsNone(module.Class0())
+           module.Class0()
 
   the terminal shows
 
@@ -524,12 +516,12 @@ REFACTOR: make it better
   .. code-block:: python
 
       def test_defining_classes_to_solve_attribute_errors(self):
-          self.assertIsNone(module.Class0())
-          self.assertIsNone(module.Class1())
-          self.assertIsNone(module.Class2())
-          self.assertIsNone(module.Class3())
+          module.Class0()
+          module.Class1()
+          module.Class2()
+          module.Class3()
           ...
-          self.assertIsNone(module.Class99())
+          module.Class99()
 
   the terminal updates to show
 
@@ -562,13 +554,13 @@ RED: make it fail
   .. code-block:: python
 
        def test_defining_attributes_in_classes_to_solve_attribute_errors(self):
-           self.assertIsNone(module.Class.attribute_0)
+           module.Class.attribute_0
 
   the terminal updates to show an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
-       >       self.assertIsNone(module.Class.attribute_0)
+       >       module.Class.attribute_0
        E       AttributeError: module 'module' has no attribute 'Class'
 
 GREEN: make it pass
@@ -671,12 +663,12 @@ REFACTOR: make it better
   .. code-block:: python
 
       def test_defining_attributes_in_classes_to_solve_attribute_errors(self):
-          self.assertIsNone(module.Class.attribute_0)
-          self.assertIsNone(module.Class.attribute_1)
-          self.assertIsNone(module.Class.attribute_2)
-          self.assertIsNone(module.Class.attribute_3)
+          module.Class.attribute_0
+          module.Class.attribute_1
+          module.Class.attribute_2
+          module.Class.attribute_3
           ...
-          self.assertIsNone(module.Class.attribute_99)
+          module.Class.attribute_99
 
   the terminal updates to show
 
@@ -712,13 +704,13 @@ RED: make it fail
   .. code-block:: python
 
       def test_defining_functions_in_classes_to_solve_attribute_errors(self):
-          self.assertIsNone(module.Class.method_0())
+          module.Class.method_0()
 
   the terminal updates to show an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
-      >       self.assertIsNone(module.Class.method_0())
+      >       module.Class.method_0()
       E       AttributeError: type object 'Class' has no attribute 'method_0'
 
 GREEN: make it pass
@@ -737,7 +729,7 @@ GREEN: make it pass
 
   .. code-block:: python
 
-      >       self.assertIsNone(module.Class.method_0())
+      >       module.Class.method_0()
       E       TypeError: 'NoneType' object is not callable
 
 * I change ``method_0`` from an attribute to a :doc:`method <functions>` using the ``def`` keyword to make it callable
@@ -759,12 +751,12 @@ You know the "drill", update ``test_defining_functions_in_classes_to_solve_attri
 .. code-block:: python
 
     def test_defining_functions_in_classes_to_solve_attribute_errors(self):
-        self.assertIsNone(module.Class.method_0())
-        self.assertIsNone(module.Class.method_1())
-        self.assertIsNone(module.Class.method_2())
-        self.assertIsNone(module.Class.method_3())
+        module.Class.method_0()
+        module.Class.method_1()
+        module.Class.method_2()
+        module.Class.method_3()
         ...
-        self.assertIsNone(module.Class.method_99())
+        module.Class.method_99()
 
 repeat the solution until all tests pass
 
