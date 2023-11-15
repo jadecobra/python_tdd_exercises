@@ -3,18 +3,20 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root ``toctree`` directive.
 
-Welcome to pumping python!
+Welcome to pumping python
 ==========================
-This book is a collection of exercises to get you familiar with Python using Test Driven Development.
+This book is a collection of exercises to get you writing python code immediately using Test Driven Development.
 
-If you are just starting your journey, congratulations! You have made a decision from the list of programming languages available to you. You are in for a good time.
+It is a culmination of what has worked for me over the past 10 years in learning the language. If you are just starting your journey, congratulations! You made a decision from the many choices of programming languages available to you. If you are new to Test Driven Development in python this book is also for you.
 
-The exercises are written to help anyone who is just starting with the language using tests and drills that teach concepts but also allow exploration. If you are new to Test Driven Development in python this book is also for you.
+These exercises are written to help you by using tests and drills that explore concepts but also allow exploration.
 
 How to use this book
 --------------------
 
-You choose how you go through the chapters, you can start with anyone you like or the one that looks like it could solve your current problem. The only recommendation is that you start with ``How to Setup a Test Driven Development Environment`` as it is required by every other chapter
+You choose how you go through the chapters, you can start with any one you like or the one that looks like it could solve your current problem.
+
+The only recommendation is that you start with  :doc:`How to Setup a Test Driven Development Environment` which is required by every other chapter
 
 .. toctree::
    :maxdepth: 2
@@ -23,7 +25,6 @@ You choose how you go through the chapters, you can start with anyone you like o
    How to Setup a Test Driven Development Environment
    AssertionError
    AttributeError
-   IndentationError
    ModuleNotFoundError
    TypeError
    exception handling

@@ -47,4 +47,21 @@ The following are a few conventions to know in python
 
     [1, 2.5, 'three', (4, "five")]
 
-* Sets/Dictionaries/Mappings are represented with curly braces/brackets - ``{}``
+* Sets are represented with curly braces/brackets
+
+  .. code-block:: python
+
+    {1, 2.5, 'three', (4, 'five')}
+
+* Dictionaries/Mappings are also represented with curly braces/brackets
+
+  .. code-block:: python
+
+    {
+      'integer': 1,
+      'floating_point': 2.5,
+      'string': 'three',
+      'tuple': (1, 2.5, "three", [4, 'five'])
+      'list': [1, 2.5, 'three', (4, "five")]
+      'set': {1, 2.5, 'three', (4, 'five')}
+    }

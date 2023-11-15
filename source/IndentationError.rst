@@ -1,20 +1,21 @@
 IndentationError
 ================
 
-In the beginning of the journey with python I will make many mistakes, one of which will cause the ``IndentationError`` if I do not understand the indentation rules of python. I will step through solving this error in python using Test Driven Development
+Spacing/Indentation matters in python. Where code is placed and how it is spaced has an effect on how the code is interpreted as well as how a human being comprehends the intention behind the code. Some people indent with 2 spaces, others indent with 4. This exercises uses 4 spaces to indent as it is the `recommended convention <https://peps.python.org/pep-0008/#indentation>`_
+
+An `<https://docs.python.org/3/library/exceptions.html?highlight=exceptions#IndentationError>`_ is raised when indentation is not correct
+
+The exercises in this chapter are intended to get you familiar with proper Inden
+
+
 
 Prerequisites
 -------------
-
 
 :doc:`How to Setup a Test Driven Development Environment`
 
 ----
 
-Indentation Matters
--------------------
-
-Spacing/Indentation matters in python. Where you place code and how you space them out have an effect on how the code is interpreted as well as how a human being comprehends your intention. Some people indent with 2 spaces, others indent with 4. In this exercise I will indent with 4 as that is the `recommended convention <https://peps.python.org/pep-0008/#indentation>`_
 
 Solve the IndentationError
 --------------------------
@@ -23,8 +24,7 @@ RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
 
-*
-  Open a new file in the editor and save it as ``tests/test_indentation_error.py`` in the ``tests`` folder you created in :doc:`How to Setup a Test Driven Development Environment`\ , then type the following lines in the file *paying attention to the spacing*
+* Open a new file in the editor and save it as ``tests/test_indentation_error.py`` in the ``tests`` folder you created in :doc:`How to Setup a Test Driven Development Environment`\ , then type the following lines in the file *paying attention to the spacing*
 
   .. code-block:: python
 
