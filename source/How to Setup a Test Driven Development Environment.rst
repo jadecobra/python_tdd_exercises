@@ -14,7 +14,7 @@ Requirements
 
 
 * `download and install Python <https://www.python.org/downloads/>`_
-* download and install an Interactive Development Environment (IDE) - Here are a few options
+* download and install an Interactive Development Environment (IDE). Here are a few options
 
   - `VSCode in a Browser <http://vscode.dev>`_
   - `VSCode <https://code.visualstudio.com/download>`_
@@ -72,7 +72,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
       touch tests/test_{PROJECT_NAME}.py
 
-* The folder structure now looks like this
+* Here is what the folder structure looks like
 
   .. code-block:: ruby
 

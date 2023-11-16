@@ -7,13 +7,13 @@ Welcome to pumping python
 ==========================
 This book is a collection of exercises to get you writing python code immediately using Test Driven Development.
 
-It is a culmination of what has worked for me over the past 10 years in learning the language and observing other people use it.
+It is a culmination of what has worked for me over the past 10 years learning the language and observing other people use it.
 
 If you are just starting your journey, congratulations! You made a decision from the many choices of programming languages available. Celebrate it.
 
 If you are new to Test Driven Development in python this book is also for you.
 
-The exercises are written to help you by testing and exploring ideas.
+The exercises are written to help you test and explore ideas.
 
 How to use this book
 --------------------
