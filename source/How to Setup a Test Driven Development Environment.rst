@@ -37,7 +37,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
   ``{PROJECT_NAME}`` is a placeholder for the name of the project. For example to setup a project called ``calculator`` I would replace ``{PROJECT_NAME}`` with ``calculator``
 
-* I create a directory for the project with a folder called ``tests`` inside it
+* then create a directory for the project with a folder called ``tests`` inside it
 
   .. code-block:: shell
 
@@ -66,7 +66,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
       touch tests/__init__.py
 
-  - I also create an empty file called ``test_{PROJECT_NAME}.py`` in the ``tests`` folder to hold the testing code
+  - and another empty file called ``test_{PROJECT_NAME}.py`` in the ``tests`` folder to hold the testing code
 
     .. code-block:: shell
 

@@ -2,7 +2,7 @@
 AssertionError
 ==============
 
-I will be exploring the `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ in Python using Test Driven Development (TDD) in this chapter
+I will go through the `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ in Python using Test Driven Development (TDD) in this chapter
 
 Prerequisites
 -------------
