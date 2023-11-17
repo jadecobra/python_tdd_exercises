@@ -324,7 +324,7 @@ GREEN: make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-What if I repeat this with other python `data structures <./DATA_STRUCTURES.rst>`_?
+What if I repeat this with other python :doc:`/data structures`?
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -615,7 +615,7 @@ REFACTOR: make it better
        def __init__(self):
            pass
 
-  and the terminal responds witha :doc:`TypeError`
+  and the terminal responds with a :doc:`TypeError`
 
   .. code-block:: python
 
@@ -851,7 +851,7 @@ and it passes, the last two values in the list are ``attribute`` and ``method`` 
 CONGRATULATIONS! If you made it this far and typed along with me, You know
 
 * how to define a class with an attribute
-* how to define a class witha :doc:`method <functions>`
+* how to define a class with a :doc:`method <functions>`
 * how to define a class with an initializer
 * how to view the attributes and :doc:`methods <functions>` of a class
 

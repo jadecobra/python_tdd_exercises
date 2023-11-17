@@ -7,12 +7,12 @@ Prerequisites
 -------------
 
 
-:doc:`How to Setup a Test Driven Development Environment`
-* `Data Structures <./DATA_STRUCTURES.rst>`_
+* :doc:`How to Setup a Test Driven Development Environment`
+* :doc:`Data Structures </data structures>`
 
 ----
 
-A ``list`` is an object that holds elements. It is a container like ``tuples`` and ``sets``.
+A ``list`` is an object that holds elements. It is a container like `tuples <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_ and ``sets``.
 
 
 * Lists are represented with ``[]``

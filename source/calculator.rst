@@ -382,7 +382,7 @@ RED : make it fail
 ^^^^^^^^^^^^^^^^^^
 
 
-* I update ``test_calculator.py`` witha :doc:`method <functions>` called ``test_subtraction``
+* I update ``test_calculator.py`` with a :doc:`method <functions>` called ``test_subtraction``
 
   .. code-block:: python
 

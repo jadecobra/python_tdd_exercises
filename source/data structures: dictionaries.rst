@@ -1,33 +1,34 @@
+
 Data Structures: Dictionaries
 =============================
 
-I am going to cover dictionaries in python In this chapter using Test Driven Development
+This chapter covers dictionaries in python using Test Driven Development. I think this is the most important data structure to know as it can contain all the other data structures and in your programming journey you will come across JSON which converts nicely to dictionaries.
 
 Prerequisites
 -------------
 
 
-:doc:`How to Setup a Test Driven Development Environment`
-* `Data Structures <./DATA_STRUCTURES.rst>`_
+* :doc:`How to Setup a Test Driven Development Environment`
+* :doc:`Data Structures </data structures>`
 
 ----
 
 How to create a dictionary with strings as keys
-----------------------------------------
+------------------------------------------------
 
-Dictionaries/Mappings are key, value pairs that I can use to represent data. ``values`` can be any of the `data structures <./DATA_STRUCTURES.rst>`_ including dictionaries
+Dictionaries/Mappings are key, value pairs that represent data. ``values`` can be any of the :doc:`Data Structures </data structures>` including dictionaries
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-first I add a file called ``test_dictionaries.py`` to the ``tests`` folder with the following text
+first I add a file called ``test_dictionaries.py`` to the ``tests`` folder with the following import statements
 
 .. code-block:: python
 
    import unittest
    import dictionaries
 
-the terminal gives usa :doc:`ModuleNotFoundError`\ , and I add it to the list of exceptions encountered
+the terminal displays a :doc:`ModuleNotFoundError`\ , and I add it to the list of exceptions encountered
 
 .. code-block:: python
 
@@ -37,7 +38,7 @@ the terminal gives usa :doc:`ModuleNotFoundError`\ , and I add it to the list of
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-add a file called ``dictionaries.py`` to the project folder and the test passes
+after adding a file called ``dictionaries.py`` to the project folder, the test passes
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -45,183 +46,258 @@ REFACTOR: make it better
 
 * I will now proceed to look at the ways I can create a dictionary, by adding a failing test
 
-.. code-block:: python
-
-.. code-block::
+  .. code-block:: python
 
    class TestDictionaries(unittest.TestCase):
 
        def test_creating_dictionaries_with_strings_as_keys(self):
-           self.assertEqual(dictionaries.a_dict(), {"key": "value"})
-   ```
-   the terminal updates to show an :doc:`AttributeError` and I add it to the list of exceptions encountered
+           self.assertEqual(
+               dictionaries.a_dict(),
+               {"key": "value"}
+           )
 
-.. code-block:: python
+  the terminal updates to show an :doc:`AttributeError` and I add it to the list of exceptions encountered
+
+  .. code-block:: python
+
    # Exceptions Encountered
    # ModuleNotFoundError
    # AttributeError
-   ```
 
+* I add a function definition to ``dictionaries.py``
 
-* add a definition for a function to ``dictionaries.py``
   .. code-block:: python
 
        def a_dict():
            return None
-    the terminal updates to show an :doc:`AssertionError` since the function I defined returns :doc:`None </data structures: None>` not a dictionary
-* update the return statement to return an empty dictionary
+
+  and the terminal updates to show an :doc:`AssertionError` since the function I defined returns :doc:`None </data structures: None>` instead of a dictionary
+* I then update the return statement to return an empty dictionary
+
   .. code-block:: python
 
        def a_dict():
            return {}
-    the terminal still shows an :doc:`AssertionError` but now the return value looks more similar to what is expected
+
+  the terminal still shows an :doc:`AssertionError` but now the return value looks more like to what is expected
+
   .. code-block:: python
 
-       E       AssertionError: {} != {'key': 'value'}
-       E       - {}
-       E       + {'key': 'value'}
+     E       AssertionError: {} != {'key': 'value'}
+     E       - {}
+     E       + {'key': 'value'}
 
+  - the ``AssertionError:`` shows that two values are not equal
+  - the value on the left ``{}`` is what the function returns, in other words the result of calling ``dictionaries.a_dict()`` from the test
+  - the value on the right ``{'key': 'value'}`` is what is expected
+  - the ``!=`` symbol means ``not equal to``
 
-  * the value on the left ``{}`` is what the function returns and the value on the right ``{'key': 'value'}`` is what is expected
-  * the ``!=`` symbol means ``not equal to``
+* I update the return statement with the expected values and I get a passing test. YES!
 
-* update the return statement with the expected values
   .. code-block:: python
 
-       def a_dict():
-           return {'key': 'value'}
-    *VOILA!* The tests pass and you now know how to create a ``dictionary``
-* it is also possible to create a dictionary by using the ``dict`` keyword. add another test to ``test_creating_dictionaries_with_strings_as_keys``
+    def a_dict():
+        return {'key': 'value'}
+
+* it is also possible to create a dictionary by using the `dict <https://docs.python.org/3/library/stdtypes.html#dict>`_ class. I add another test to ``test_creating_dictionaries_with_strings_as_keys``
+
   .. code-block:: python
 
-       def test_creating_dictionaries_with_strings_as_keys(self):
-           self.assertEqual(dictionaries.a_dict(), {'key': 'value'})
-           self.assertEqual(dictionaries.a_dict(), dict(key='value'))
-    the terminal displays passing tests, which means ``dict(key='value')`` and ``{'key': 'value'}`` produce the same results
-* I can add another test to confirm this assumption even though it repeats the two tests above
+    def test_creating_dictionaries_with_strings_as_keys(self):
+        self.assertEqual(
+            dictionaries.a_dict(),
+            {'key': 'value'}
+        )
+        self.assertEqual(
+            dictionaries.a_dict(),
+            dict(key='value')
+        )
+
+  the terminal shows passing tests, because ``dict(key='value')`` and ``{'key': 'value'}`` produce the same results
+* I can add another test to confirm, even though it repeats the two tests above
+
   .. code-block:: python
 
-       def test_creating_dictionaries_with_strings_as_keys(self):
-           self.assertEqual(dictionaries.a_dict(), {"key": "value"})
-           self.assertEqual(dictionaries.a_dict(), dict(key='value'))
-           self.assertEqual({"key": "value"}, dict(key='value'))
+    def test_creating_dictionaries_with_strings_as_keys(self):
+        self.assertEqual(
+            dictionaries.a_dict(),
+            {"key": "value"}
+        )
+        self.assertEqual(
+            dictionaries.a_dict(),
+            dict(key='value')
+        )
+        self.assertEqual(
+            {"key": "value"},
+            dict(key='value')
+        )
 
 How to create a dictionary with numbers as keys
-----------------------------------------
+------------------------------------------------
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a failing test to ``TestDictionaries``
+I add a failing test to ``TestDictionaries``
 
 .. code-block:: python
 
-       def test_creating_dictionaries_with_numbers_as_keys(self):
-           self.assertEqual({1: 'boom'}, {'one': 'boom'})
+  def test_creating_dictionaries_with_numbers_as_keys(self):
+      self.assertEqual(
+        {1: 'boom'},
+        {'one': 'boom'}
+    )
 
 the terminal updates to show an :doc:`AssertionError` since the two values are different
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-update the test to make it pass
+I update the test to make it pass
 
 .. code-block:: python
 
-       def test_creating_dictionaries_with_numbers_as_keys(self):
-           self.assertEqual({1: 'boom'}, {1: 'boom'})
+    def test_creating_dictionaries_with_numbers_as_keys(self):
+        self.assertEqual(
+            {1: 'boom'},
+            {1: 'boom'}
+        )
 
-the terminal updates to show passing tests
+the terminal updates to show passing tests confirming that `integers <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ can be used as dictionary keys
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
+* I know I can use `integers <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ and `strings <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ as dictionary keys. I want to add a test to see if I can use `floats <https://docs.python.org/3/library/functions.html?highlight=float#float>`_
 
-* the knowledge of dictionaries is growing. I know I can use ``integers`` and ``strings`` as dictionary keys. Can I use ``floats``? I am going to find out by adding a test
   .. code-block:: python
 
-           def test_creating_dictionaries_with_numbers_as_keys(self):
-               self.assertEqual({1: 'boom'}, {'one': 'boom'})
-               self.assertEqual({2.5: 'works'}, {2.5: 'fails'})
-    the terminal updates to show an :doc:`AssertionError` since the values are different
-* update the value on the right to make it pass
+    def test_creating_dictionaries_with_numbers_as_keys(self):
+        self.assertEqual(
+            {1: 'boom'},
+            {1: 'boom'}
+        )
+        self.assertEqual(
+            {2.5: 'works'},
+            {2.5: 'fails'}
+        )
+
+  the terminal updates to show an :doc:`AssertionError` since the values are different
+* I update the value on the right to make it pass
+
   .. code-block:: python
 
-       def test_creating_dictionaries_with_numbers_as_keys(self):
-           self.assertEqual({1: 'boom'}, {'one': 'boom'})
-           self.assertEqual({2.5: 'works'}, {2.5: 'works'})
-    the terminal displays passing tests
+    def test_creating_dictionaries_with_numbers_as_keys(self):
+        self.assertEqual(
+            {1: 'boom'},
+            {1: 'boom'}
+        )
+        self.assertEqual(
+            {2.5: 'works'},
+            {2.5: 'works'}
+        )
+
+  the terminal displays passing tests confirming that I can use `integers <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ and `floats <https://docs.python.org/3/library/functions.html?highlight=float#float>`_ as keys in a dictionary.
 
 How to create a dictionary with booleans as keys
------------------------------------------
+-------------------------------------------------
 
-Is it possible for us to use :doc:`False </data structures: booleans>` or :doc:`True </data structures: booleans>` as ``dictionary`` keys?
+Is it possible to use :doc:`False </data structures: booleans>` or :doc:`True </data structures: booleans>` as `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ keys?
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
 .. code-block:: python
 
-       def test_creating_dictionaries_with_booleans_as_keys(self):
-           self.assertEqual({False: 'boom'}, {False: 'bap'})
+    def test_creating_dictionaries_with_booleans_as_keys(self):
+        self.assertEqual(
+            {False: 'boom'},
+            {False: 'bap'}
+        )
 
 the terminal outputs an :doc:`AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-update the return values to make them match and I am green again
+when I update the values to make them match I am green again
 
 .. code-block:: python
 
-       def test_creating_dictionaries_with_booleans_as_keys(self):
-           self.assertEqual({False: 'boom'}, {False: 'boom'})
+  def test_creating_dictionaries_with_booleans_as_keys(self):
+      self.assertEqual(
+        {False: 'boom'},
+        {False: 'boom'}
+    )
+
+I can use :doc:`False </data structures: booleans>` as a key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* add a test for using :doc:`True </data structures: booleans>` as a ``dictionary`` key
+* I add a test for using :doc:`True </data structures: booleans>` as a key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+
   .. code-block:: python
 
-       def test_creating_dictionaries_with_booleans_as_keys(self):
-           self.assertEqual({False: 'boom'}, {False: 'boom'})
-           self.assertEqual({True: 'bap'}, {True: 'boom'})
-    the terminal updates to show an :doc:`AssertionError`
-* update the values to make the tests pass
+    def test_creating_dictionaries_with_booleans_as_keys(self):
+        self.assertEqual(
+            {False: 'boom'},
+            {False: 'boom'}
+        )
+        self.assertEqual(
+            {True: 'bap'},
+            {True: 'boom'}
+        )
+
+  the terminal updates to show an :doc:`AssertionError`
+* I then update the values to make the tests pass
+
   .. code-block:: python
 
-       def test_creating_dictionaries_with_booleans_as_keys(self):
-           self.assertEqual({False: 'boom'}, {False: 'boom'})
-           self.assertEqual({True: 'bap'}, {True: 'bap'})
+     def test_creating_dictionaries_with_booleans_as_keys(self):
+         self.assertEqual(
+            {False: 'boom'},
+            {False: 'boom'}
+        )
+         self.assertEqual(
+            {True: 'bap'},
+            {True: 'bap'}
+        )
 
-* I now know that I can use ``booleans``, ``floats``, ``integers`` and ``strings`` as keys in a dictionary
+* So far from the tests I see that I can use `booleans <https://docs.python.org/3/library/stdtypes.html#boolean-type-bool>`_, `floats <https://docs.python.org/3/library/functions.html?highlight=float#float>`_, `integers <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ and `strings <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ as keys in a dictionary
 
 How to create a dictionary with tuples as keys
----------------------------------------
+----------------------------------------------
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a test to ``TestDictionaries``
+I add a test to ``TestDictionaries``
 
 .. code-block:: python
 
-       def test_creating_dictionaries_with_tuples_as_keys(self):
-           self.assertEqual({(1, 2): "value"}, {(1, 2): "key"})
+  def test_creating_dictionaries_with_tuples_as_keys(self):
+      self.assertEqual(
+        {(1, 2): "value"},
+        {(1, 2): "key"}
+    )
 
 the terminal outputs an :doc:`AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I update the values to make it pass
+I update the values to make the test pass
 
 .. code-block:: python
 
-           self.assertEqual({(1, 2): "value"}, {(1, 2): "value"})
+  self.assertEqual(
+      {(1, 2): "value"},
+      {(1, 2): "value"}
+  )
 
-and update the knowledge of creating dictionaries to say I can use ``tuples``, ``booleans``, ``floats``, ``integers``, and ``strings`` as keys in a dictionary
+and update my knowledge of creating dictionaries to say I can use `tuples <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_, `booleans <https://docs.python.org/3/library/stdtypes.html#boolean-type-bool>`_, `floats <https://docs.python.org/3/library/functions.html?highlight=float#float>`_, `integers <https://docs.python.org/3/library/functions.html?highlight=int#int>`_, and `strings <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ as keys in a dictionary
 
 Can I create a Dictionary with lists as keys?
 ----------------------------------------------
@@ -229,20 +305,20 @@ Can I create a Dictionary with lists as keys?
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a test to ``TestDictionaries`` using a list as a key
+I add a test to ``TestDictionaries`` using a list as a key
 
 .. code-block:: python
 
-       def test_creating_dictionaries_with_lists_as_keys(self):
-           {[1, 2]: "BOOM"}
+  def test_creating_dictionaries_with_lists_as_keys(self):
+      {[1, 2]: "BOOM"}
 
-the terminal givesa :doc:`TypeError` because only ``hashable`` types can be used as dictionary keys and :doc:`lists` are not ``hashable``
+the terminal shows a :doc:`TypeError` because only `hashable <https://docs.python.org/3/glossary.html#term-hashable>`_ types can be used as dictionary keys and :doc:`lists` are not `hashable <https://docs.python.org/3/glossary.html#term-hashable>`_
 
 .. code-block::
 
    E       TypeError: unhashable type: 'list'
 
-I also update the list of exceptions encountered
+I also update the list of exceptions encountered to include :doc:`TypeError`
 
 .. code-block:: python
 
@@ -254,30 +330,29 @@ I also update the list of exceptions encountered
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-In `Exception Handling <./EXCEPTION_HANDLING.rst>`_ I learn how to use ``self.assertRaises`` to confirm that an error is raised by some code without having it crash the tests. I will do the same here to confirm that creating a dictionary with a ``list`` as the key raisesa :doc:`TypeError`
+From :doc:`/exception handling` I can use ``self.assertRaises`` to confirm that an error is raised by some code without having it crash the tests. I will use it here to confirm that when I try to create a dictionary with a ``list`` as the key, python raises a :doc:`TypeError`
 
 .. code-block:: python
 
-       def test_creating_dictionaries_with_lists_as_keys(self):
-           with self.assertRaises(TypeError):
-               {[1, 2]: "BOOM"}
+    def test_creating_dictionaries_with_lists_as_keys(self):
+        with self.assertRaises(TypeError):
+            {[1, 2]: "BOOM"}
 
-all green here
 
 Can I create a Dictionary with sets as keys?
 ---------------------------------------------
 
+What if I try a similar test using a set as a key
+
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-What if I try a similar test using a set as a key
-
 .. code-block:: python
 
-       def test_creating_dictionaries_with_sets_as_keys(self):
-           {{1, 2}: "BOOM"}
+    def test_creating_dictionaries_with_sets_as_keys(self):
+        {{1, 2}: "BOOM"}
 
-the terminal responds witha :doc:`TypeError`
+the terminal responds with a :doc:`TypeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -286,11 +361,11 @@ which I handle using ``self.assertRaises``
 
 .. code-block:: python
 
-       def test_creating_dictionaries_with_sets_as_keys(self):
-           with self.assertRaises(TypeError):
-               {{1, 2}: "BOOM"}
+    def test_creating_dictionaries_with_sets_as_keys(self):
+        with self.assertRaises(TypeError):
+            {{1, 2}: "BOOM"}
 
-all tests are passing
+I am green again
 
 Can I create a Dictionary with dictionaries as keys?
 -----------------------------------------------------
@@ -298,15 +373,15 @@ Can I create a Dictionary with dictionaries as keys?
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a new test
+I add a new test
 
 .. code-block:: python
 
-       def test_creating_dictionaries_with_dictionaries_as_keys(self):
-           a_dictionary = {"key": "value"}
-           {a_dictionary: "BOOM"}
+    def test_creating_dictionaries_with_dictionaries_as_keys(self):
+        a_dictionary = {"key": "value"}
+        {a_dictionary: "BOOM"}
 
-and the terminal outputsa :doc:`TypeError`
+and the terminal outputs a :doc:`TypeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -320,45 +395,44 @@ I add a handler to confirm the findings
            with self.assertRaises(TypeError):
                {a_dictionary: "BOOM"}
 
-all tests pass and I now know that I can create dictionaries with the following `data structures <./DATA_STRUCTURES.rst>`_ as keys
+all tests pass and I know that I can create dictionaries with the following :doc:`/data structures` as keys
 
-
-* strings
-* booleans
-* integers
-* floats
-* tuples
+* `strings <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_
+* `booleans <https://docs.python.org/3/library/stdtypes.html#boolean-type-bool>`_
+* `integers <https://docs.python.org/3/library/functions.html?highlight=int#int>`_
+* `floats <https://docs.python.org/3/library/functions.html?highlight=float#float>`_
+* `tuples <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_
 
 ----
 
 How to access dictionary values
 ------------------------
 
-From the tests above I learned how to create ``dictionaries``, and what I can use as ``keys``. How do I access the values of a dictionary?
+The tests cover how to create `dictionaries  <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_, and what I can use as ``keys``. How do I access the values of a dictionary?
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I am going to add a test to ``TestDictionaries`` in ``test_dictionaries.py``
+I am going to add a test to ``TestDictionaries`` in ``test_dictionaries.py`` for this
 
 .. code-block:: python
 
-       def test_accessing_dictionary_values(self):
-           a_dictionary = {"key": "value"}
-           self.assertEqual(a_dictionary["key"], "bob")
+    def test_accessing_dictionary_values(self):
+        a_dictionary = {"key": "value"}
+        self.assertEqual(a_dictionary["key"], "bob")
 
 the terminal displays a failing test with an :doc:`AssertionError` because ``bob`` is not equal to ``value``
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-update the expected value to make the tests pass
+I update the expected value to make the tests pass
 
 .. code-block:: python
 
-       def test_accessing_dictionary_values(self):
-           a_dictionary = {"key": "value"}
-           self.assertEqual(a_dictionary["key"], "value")
+    def test_accessing_dictionary_values(self):
+        a_dictionary = {"key": "value"}
+        self.assertEqual(a_dictionary["key"], "value")
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -445,7 +519,7 @@ add a test
            a_dictionary['non_existent_key']
            a_dictionary['ky1']
 
-the terminal updates to show a `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=keyerror#KeyError>`_. A ``KeyError`` is raised when a ``dictionary`` is called with a ``key`` that does not exist.
+the terminal updates to show a `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=keyerror#KeyError>`_. A ``KeyError`` is raised when a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ is called with a ``key`` that does not exist.
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -454,11 +528,11 @@ GREEN: make it pass
 * add ``KeyError`` to the running list of list of exceptions encountered
   .. code-block:: python
 
-       # Exceptions Encountered
-       # ModuleNotFoundError
-       # AttributeError
-       # TypeError
-       # KeyError
+    # Exceptions Encountered
+    # ModuleNotFoundError
+    # AttributeError
+    # TypeError
+    # KeyError
 
 * add an exception handler to make it pass
   .. code-block:: python
@@ -563,7 +637,7 @@ What if I want to call a dictionary and not have python raise an error when it d
 How to view the attributes and :doc:`methods <functions>` of a dictionary
 -----------------------------------------------
 
-:doc:`classes` covers how to view the ``attributes`` and ``methods`` of an object. What if I do the same for ``dictionaries``
+:doc:`classes` covers how to view the ``attributes`` and ``methods`` of an object. What if I do the same for `dictionaries  <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^

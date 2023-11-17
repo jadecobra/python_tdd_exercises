@@ -119,7 +119,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* When I change all the ``self.assertFalse`` statements in ``test_what_is_true`` to ``self.assertTrue`` I am left with a failing test for the ``assertNotIsInstance`` statement
+* When I change all the ``self.assertFalse`` statements to ``self.assertTrue`` in ``test_what_is_true`` I am left with a failing test for the ``assertNotIsInstance`` statement
 
   .. code-block:: python
 
@@ -139,7 +139,7 @@ GREEN: make it pass
         })
         self.assertNotIsInstance(True, bool)
 
-* I update ``self.assertNotIsInstance`` to ``self.assertIsInstance`` and all the tests pass
+* I update ``self.assertNotIsInstance`` to ``self.assertIsInstance`` and all the tests pass, confirming that ``True`` is an instance of the ``boolean`` object
 
   .. code-block:: python
 
@@ -166,5 +166,3 @@ GREEN: make it pass
   - ``True`` is a ``boolean``
   - ``False`` is a ``boolean``
   - :doc:`None </data structures: None>` is :doc:`None </data structures: None>`
-
-HOORAY! You have built up your knowledge of python, you now know about booleans. Take a moment to celebrate

@@ -7,8 +7,8 @@ Prerequisites
 -------------
 
 
-:doc:`How to Setup a Test Driven Development Environment`
-* `Data Structures <./DATA_STRUCTURES.rst>`_
+* :doc:`How to Setup a Test Driven Development Environment`
+* :doc:`Data Structures </data structures>`
 
 ----
 
@@ -284,7 +284,7 @@ the terminal updates to show an :doc:`AssertionError`
    AssertionError: () is not None
 
 
-* ``()`` is how ``tuples`` are represented in python
+* ``()`` is how `tuples <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_ are represented in python
 * Do you want to `read more about tuples <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_
 
 GREEN: make it pass
