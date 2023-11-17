@@ -408,7 +408,7 @@ all tests pass and I know that I can create dictionaries with the following :doc
 How to access dictionary values
 ------------------------
 
-The tests cover how to create `dictionaries  <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_, and what I can use as ``keys``. How do I access the values of a dictionary?
+The tests cover how to create `dictionaries  <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_, and what I can use as ``keys``. This part covers how to access the values of a dictionary
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -438,94 +438,101 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* I can also display the values of a dictionary as a list without the keys, add a test
+* I can also display the values of a dictionary as a list without the keys
+
   .. code-block:: python
 
-           def test_listing_dictionary_values(self):
-               a_dictionary = {
-                   'key1': 'value1',
-                   'key2': 'value2',
-                   'key3': 'value3',
-                   'keyN': 'valueN',
-               }
-               self.assertEqual(
-                   list(a_dictionary.values()), []
-               )
-    the terminal gives us an :doc:`AssertionError`
-* update the values to make the test pass
+    def test_listing_dictionary_values(self):
+        a_dictionary = {
+            'key1': 'value1',
+            'key2': 'value2',
+            'key3': 'value3',
+            'keyN': 'valueN',
+        }
+        self.assertEqual(
+            list(a_dictionary.values()), []
+        )
+
+  the terminal outputs an :doc:`AssertionError`
+* I update the values to make the test pass
+
   .. code-block:: python
 
-       def test_listing_dictionary_values(self):
-           a_dictionary = {
-               'key1': 'value1',
-               'key2': 'value2',
-               'key3': 'value3',
-               'keyN': 'valueN',
-           }
-           self.assertEqual(
-               list(a_dictionary.values()),
-               ['value1', 'value2', 'value3', 'valueN']
-           )
+    def test_listing_dictionary_values(self):
+        a_dictionary = {
+            'key1': 'value1',
+            'key2': 'value2',
+            'key3': 'value3',
+            'keyN': 'valueN',
+        }
+        self.assertEqual(
+            list(a_dictionary.values()),
+            ['value1', 'value2', 'value3', 'valueN']
+        )
 
-* I can do the same thing with the keys of the dictionary, add another test
+* I can also display the keys of a dictionary as a list
+
   .. code-block:: python
 
-       def test_listing_dictionary_keys(self):
-           a_dictionary = {
-               'key1': 'value1',
-               'key2': 'value2',
-               'key3': 'value3',
-               'keyN': 'valueN',
-           }
-           self.assertEqual(
-               list(a_dictionary.keys()),
-               []
-           )
-    the terminal updates to show an :doc:`AssertionError`
-* update the test to make it pass
+    def test_listing_dictionary_keys(self):
+        a_dictionary = {
+            'key1': 'value1',
+            'key2': 'value2',
+            'key3': 'value3',
+            'keyN': 'valueN',
+        }
+        self.assertEqual(
+            list(a_dictionary.keys()),
+            []
+        )
+
+  the terminal updates to show an :doc:`AssertionError`
+* I update the test to make it pass
+
   .. code-block:: python
 
-       def test_listing_dictionary_keys(self):
-           a_dictionary = {
-               'key1': 'value1',
-               'key2': 'value2',
-               'key3': 'value3',
-               'keyN': 'valueN',
-           }
-           self.assertEqual(
-               list(a_dictionary.keys()),
-               ['key1', 'key2', 'key3', 'keyN']
-           )
+    def test_listing_dictionary_keys(self):
+        a_dictionary = {
+            'key1': 'value1',
+            'key2': 'value2',
+            'key3': 'value3',
+            'keyN': 'valueN',
+        }
+        self.assertEqual(
+            list(a_dictionary.keys()),
+            ['key1', 'key2', 'key3', 'keyN']
+        )
 
 How to get a value when the key does not exist
----------------------------------------
+-----------------------------------------------
 
-Sometimes I might try to access values in a dictionary but use a key that does not exist in the dictionary or misspell a key that does exist
+Sometimes I can try to access values in a dictionary with a key that does not exist in the dictionary or misspell a key that does exist
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a test
+I add a test for both cases
 
 .. code-block:: python
 
-       def test_dictionaries_raise_key_error_when_key_does_not_exist(self):
-           a_dictionary = {
-               'key1': 'value1',
-               'key2': 'value2',
-               'key3': 'value3',
-               'keyN': 'valueN',
-           }
-           a_dictionary['non_existent_key']
-           a_dictionary['ky1']
+  def test_dictionaries_raise_key_error_when_key_does_not_exist(self):
+      a_dictionary = {
+          'key1': 'value1',
+          'key2': 'value2',
+          'key3': 'value3',
+          'keyN': 'valueN',
+      }
+      a_dictionary['non_existent_key']
+      a_dictionary['ky1']
 
-the terminal updates to show a `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=keyerror#KeyError>`_. A ``KeyError`` is raised when a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ is called with a ``key`` that does not exist.
+the terminal updates to show a `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=keyerror#KeyError>`_. A `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ is raised when a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ is called with a ``key`` that does not exist.
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* add ``KeyError`` to the running list of list of exceptions encountered
+* I add `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ to the list of exceptions encountered
+
   .. code-block:: python
 
     # Exceptions Encountered
@@ -534,198 +541,201 @@ GREEN: make it pass
     # TypeError
     # KeyError
 
-* add an exception handler to make it pass
+* then add an exception handler to acknowledge the error is raised
+
   .. code-block:: python
 
-           def test_dictionaries_raise_key_error_when_key_does_not_exist(self):
-               a_dictionary = {
-                   'key1': 'value1',
-                   'key2': 'value2',
-                   'key3': 'value3',
-                   'keyN': 'valueN',
-               }
-               with self.assertRaises(KeyError):
-                   a_dictionary['non_existent_key']
+    def test_dictionaries_raise_key_error_when_key_does_not_exist(self):
+        a_dictionary = {
+            'key1': 'value1',
+            'key2': 'value2',
+            'key3': 'value3',
+            'keyN': 'valueN',
+        }
+        with self.assertRaises(KeyError):
+             a_dictionary['non_existent_key']
 
-* the terminal shows a ``KeyError`` for the next line where I misspelled the key and I add it to the exception handler to make it pass
+* the terminal shows a `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ for the next line where I misspelled the key and I add it to the exception handler to make it pass as well
+
   .. code-block:: python
 
-           def test_dictionaries_raise_key_error_when_key_does_not_exist(self):
-               a_dictionary = {
-                   'key1': 'value1',
-                   'key2': 'value2',
-                   'key3': 'value3',
-                   'keyN': 'valueN',
-               }
-               with self.assertRaises(KeyError):
-                   a_dictionary['non_existent_key']
-                   a_dictionary['ky1']
+    def test_dictionaries_raise_key_error_when_key_does_not_exist(self):
+        a_dictionary = {
+            'key1': 'value1',
+            'key2': 'value2',
+            'key3': 'value3',
+            'keyN': 'valueN',
+        }
+        with self.assertRaises(KeyError):
+            a_dictionary['non_existent_key']
+            a_dictionary['ky1']
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-What if I want to call a dictionary and not have python raise an error when it does not find the key? I could use the ``get`` function
+What if I want to call a dictionary and not have python raise an error when it does not find the key? I could use the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :doc:`method <functions>`
 
 
-* add a test to ``TestDictionaries``
+* I add a test to ``TestDictionaries``
+
   .. code-block:: python
 
-       def test_how_to_get_a_value_when_a_key_does_not_exist(self):
-           a_dictionary = {
-               'key1': 'value1',
-               'key2': 'value2',
-               'key3': 'value3',
-               'keyN': 'valueN',
-           }
-           self.assertIsNone(a_dictionary['non_existent_key'])
-    as expected the terminal updates to show a ``KeyError``
-* update the test using the ``get`` method
+    def test_how_to_get_a_value_when_a_key_does_not_exist(self):
+        a_dictionary = {
+            'key1': 'value1',
+            'key2': 'value2',
+            'key3': 'value3',
+            'keyN': 'valueN',
+        }
+        self.assertIsNone(a_dictionary['non_existent_key'])
+
+  as expected the terminal updates to show a `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_
+* I update the test using the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :doc:`method <functions>`
+
   .. code-block:: python
 
-       def test_how_to_get_a_value_when_a_key_does_not_exist(self):
-           a_dictionary = {
-               'key1': 'value1',
-               'key2': 'value2',
-               'key3': 'value3',
-               'keyN': 'valueN',
-           }
-           self.assertIsNone(a_dictionary.get('non_existent_key'))
-    the terminal updates to show a passing test. This means that when I use the ``get`` :doc:`method <functions>` and the ``key`` does not exist, I get :doc:`None </data structures: None>` as the ``return`` value.
-* What if I state the above explicitly because ``Explicit is better than implicit`` see `Zen of Python <https://peps.python.org/pep-0020/>`_
+    def test_how_to_get_a_value_when_a_key_does_not_exist(self):
+        a_dictionary = {
+            'key1': 'value1',
+            'key2': 'value2',
+            'key3': 'value3',
+            'keyN': 'valueN',
+        }
+        self.assertIsNone(a_dictionary.get('non_existent_key'))
+
+  the terminal updates to show a passing test. This means that when I use the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :doc:`method <functions>` and the ``key`` does not exist, I get :doc:`None </data structures: None>` as the ``return`` value.
+* I can state the above explicitly because ``Explicit is better than implicit`` see `Zen of Python <https://peps.python.org/pep-0020/>`_
+
   .. code-block:: python
 
-       def test_how_to_get_a_value_when_a_key_does_not_exist(self):
-           a_dictionary = {
-               'key1': 'value1',
-               'key2': 'value2',
-               'key3': 'value3',
-               'keyN': 'valueN',
-           }
-           self.assertIsNone(a_dictionary.get('non_existent_key'))
-           self.assertIsNone(a_dictionary.get('non_existent_key', None))
-    the terminal shows passing tests. The ``get`` :doc:`method <functions>` takes in 2 inputs
-  .. code-block::
+    def test_how_to_get_a_value_when_a_key_does_not_exist(self):
+        a_dictionary = {
+            'key1': 'value1',
+            'key2': 'value2',
+            'key3': 'value3',
+            'keyN': 'valueN',
+        }
+        self.assertIsNone(a_dictionary.get('non_existent_key'))
+        self.assertIsNone(a_dictionary.get('non_existent_key', None))
 
-       - the ``key``
-       - the ``value`` it should return if the ``key`` does not exist
+  the terminal shows passing tests.
+* The `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :doc:`method <functions>` takes in 2 inputs
 
-* If you have gone through `Exception Handling <./EXCEPTION_HANDLING.rst>`_\ , I can assume the definition of the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :doc:`method <functions>` of the dictionary object looks something like this
+  - the ``key``
+  - the ``default value`` it should return if the ``key`` does not exist
+
+* I can also use the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :doc:`method <functions>` with an existing key
+
   .. code-block:: python
 
-       def get(dictionary, key, default=None):
-           try:
-               return dictionary[key]
-           except KeyError:
-               return default
+    def test_how_to_get_a_value_when_a_key_does_not_exist(self):
+        a_dictionary = {
+            'key1': 'value1',
+            'key2': 'value2',
+            'key3': 'value3',
+            'keyN': 'valueN',
+        }
+        self.assertIsNone(a_dictionary.get('non_existent_key'))
+        self.assertIsNone(a_dictionary.get('non_existent_key', None))
+        self.assertEqual(a_dictionary.get('key1', None), None)
 
-* What if I try the ``get`` :doc:`method <functions>` with an existing key
-  .. code-block:: python
+  the terminal updates to show an `Assertion Error <./AssertionError.rst>`_ because ``value1`` is not equal to :doc:`None </data structures: None>`
+* I update the test to make it pass
 
-       def test_how_to_get_a_value_when_a_key_does_not_exist(self):
-           a_dictionary = {
-               'key1': 'value1',
-               'key2': 'value2',
-               'key3': 'value3',
-               'keyN': 'valueN',
-           }
-           self.assertIsNone(a_dictionary.get('non_existent_key'))
-           self.assertIsNone(a_dictionary.get('non_existent_key', None))
-           self.assertEqual(a_dictionary.get('key1', None), None)
-    the terminal updates to show an `Assertion Error <./AssertionError.rst>`_ because ``value1`` is not equal to :doc:`None </data structures: None>`
-* update the test to make it pass
+How to view the attributes and methods of a dictionary
+------------------------------------------------------
 
-How to view the attributes and :doc:`methods <functions>` of a dictionary
------------------------------------------------
-
-:doc:`classes` covers how to view the ``attributes`` and ``methods`` of an object. What if I do the same for `dictionaries  <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+:doc:`classes` covers how to view the ``attributes`` and ``methods`` of an object. Let us look at the attributes and :doc:`methods <functions>` of  `dictionaries  <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ to help understand them better
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a test to ``TestDictionaries``
+I add a new test to ``TestDictionaries``
 
 .. code-block:: python
 
-       def test_dictionary_attributes(self):
-           self.maxDiff = None
-           self.assertEqual(
-               dir(dictionaries.a_dict()),
-               []
-           )
+    def test_dictionary_attributes(self):
+        self.maxDiff = None
+        self.assertEqual(
+            dir(dictionaries.a_dict()),
+            []
+        )
 
 the terminal updates to show an :doc:`AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-copy the expected values shown in the terminal to make the test pass
+I copy the expected values shown in the terminal to make the test pass
 
-..
+.. warning::
 
-   WARNING: Your results may vary depending on your python version
+  Your results may vary based on your python version
 
 
 .. code-block:: python
 
-       def test_dictionary_attributes(self):
-           self.maxDiff = None
-           self.assertEqual(
-               dir(dictionaries.a_dict()),
-               [
-                   '__class__',
-                   '__class_getitem__',
-                   '__contains__',
-                   '__delattr__',
-                   '__delitem__',
-                   '__dir__',
-                   '__doc__',
-                   '__eq__',
-                   '__format__',
-                   '__ge__',
-                   '__getattribute__',
-                   '__getitem__',
-                   '__gt__',
-                   '__hash__',
-                   '__init__',
-                   '__init_subclass__',
-                   '__ior__',
-                   '__iter__',
-                   '__le__',
-                   '__len__',
-                   '__lt__',
-                   '__ne__',
-                   '__new__',
-                   '__or__',
-                   '__reduce__',
-                   '__reduce_ex__',
-                   '__repr__',
-                   '__reversed__',
-                   '__ror__',
-                   '__setattr__',
-                   '__setitem__',
-                   '__sizeof__',
-                   '__str__',
-                   '__subclasshook__',
-                   'clear',
-                   'copy',
-                   'fromkeys',
-                   'get',
-                   'items',
-                   'keys',
-                   'pop',
-                   'popitem',
-                   'setdefault',
-                   'update',
-                   'values'
-               ]
-           )
+def test_dictionary_attributes(self):
+    self.maxDiff = None
+    self.assertEqual(
+        dir(dictionaries.a_dict()),
+        [
+            '__class__',
+            '__class_getitem__',
+            '__contains__',
+            '__delattr__',
+            '__delitem__',
+            '__dir__',
+            '__doc__',
+            '__eq__',
+            '__format__',
+            '__ge__',
+            '__getattribute__',
+            '__getitem__',
+            '__gt__',
+            '__hash__',
+            '__init__',
+            '__init_subclass__',
+            '__ior__',
+            '__iter__',
+            '__le__',
+            '__len__',
+            '__lt__',
+            '__ne__',
+            '__new__',
+            '__or__',
+            '__reduce__',
+            '__reduce_ex__',
+            '__repr__',
+            '__reversed__',
+            '__ror__',
+            '__setattr__',
+            '__setitem__',
+            '__sizeof__',
+            '__str__',
+            '__subclasshook__',
+            'clear',
+            'copy',
+            'fromkeys',
+            'get',
+            'items',
+            'keys',
+            'pop',
+            'popitem',
+            'setdefault',
+            'update',
+            'values'
+        ]
+    )
 
 the tests pass
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-I see some of the :doc:`methods <functions>` I have covered so far and others I did not. You can write tests on the others to discover what they do and/or `read more about dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_. What if I list out what I know so far and you can fill in the others as you learn them
+I see some of the :doc:`methods <functions>` I have covered so far and others I did not. I  could write tests on the others to discover what they do and/or `read more about dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_.
+
+If you want more practice you could list out what has been covered so farand you fill in the others as you learn them
 
 
 * clear
@@ -740,149 +750,171 @@ I see some of the :doc:`methods <functions>` I have covered so far and others I 
 * update
 * values - returns the list of ``values`` in a dictionary
 
-Set a default value for a given key
------------------------------------
+How to set a default value for a given key
+------------------------------------------
 
-What if I test the ``setdefault`` method
+I want to take a look at the `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_ method
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a failing test
+I add a failing test
 
 .. code-block:: python
 
-       def test_set_default_for_a_given_key(self):
-           a_dictionary = {'bippity': 'boppity'}
-           a_dictionary['another_key']
+  def test_set_default_for_a_given_key(self):
+      a_dictionary = {'bippity': 'boppity'}
+      a_dictionary['another_key']
 
-the terminal updates to show a ``KeyError``
+the terminal shows a `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-add a ``self.assertRaises`` to confirm that the ``KeyError`` gets raised, allowing the test to pass
+I add a ``self.assertRaises`` to confirm that the `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ gets raised, allowing the test to pass
 
 .. code-block:: python
 
-       def test_set_default_for_a_given_key(self):
-           a_dictionary = {'bippity': 'boppity'}
+    def test_set_default_for_a_given_key(self):
+        a_dictionary = {'bippity': 'boppity'}
 
-           with self.assertRaises(KeyError):
-               a_dictionary['another_key']
+        with self.assertRaises(KeyError):
+            a_dictionary['another_key']
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-
-*
-  add a test for ``setdefault``
+* I add a test for `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_
 
   .. code-block:: python
 
-       def test_set_default_for_a_given_key(self):
-           a_dictionary = {'bippity': 'boppity'}
+    def test_set_default_for_a_given_key(self):
+        a_dictionary = {'bippity': 'boppity'}
 
-           with self.assertRaises(KeyError):
-               a_dictionary['another_key']
+        with self.assertRaises(KeyError):
+            a_dictionary['another_key']
 
-           a_dictionary.setdefault('another_key')
-           self.assertEqual(a_dictionary, {'bippity': 'boppity'})
+        a_dictionary.setdefault('another_key')
+        self.assertEqual(a_dictionary, {'bippity': 'boppity'})
 
-    the terminal updates to show that ``a_dictionary`` has changed, by giving us an :doc:`AssertionError`. It has a new key which was not there before
+  the terminal updates to show that ``a_dictionary`` has changed, by giving us an :doc:`AssertionError`. It has a new key which was not there before
 
-*
-  update the test to make it pass
+* I update the test to make it pass
 
   .. code-block:: python
 
-       def test_set_default_for_a_given_key(self):
-           a_dictionary = {'bippity': 'boppity'}
+    def test_set_default_for_a_given_key(self):
+        a_dictionary = {'bippity': 'boppity'}
 
-           with self.assertRaises(KeyError):
-               a_dictionary['another_key']
+        with self.assertRaises(KeyError):
+            a_dictionary['another_key']
 
-           a_dictionary.setdefault('another_key')
-           self.assertEqual(a_dictionary, {'bippity': 'boppity', 'another_key': None})
+        a_dictionary.setdefault('another_key')
+        self.assertEqual(
+            a_dictionary,
+            {
+                'bippity': 'boppity',
+                'another_key': None
+            }
+        )
 
-* What if I want to add a ``key`` but set the default value to something other than :doc:`None </data structures: None>`? Good question, add a test to find out
+* What if I want to add a ``key`` but set the default value to something other than :doc:`None </data structures: None>`? Good question, I will add a test to find out
+
   .. code-block:: python
 
-           a_dictionary.setdefault('a_new_key', 'a_default_value')
-           self.assertEqual(a_dictionary, {'bippity': 'boppity', 'another_key': None})
-    the terminal updates to show an :doc:`AssertionError` since ``a_dictionary`` now has a new ``key`` and ``value``
-* update the test to make it pass
+    a_dictionary.setdefault('a_new_key', 'a_default_value')
+    self.assertEqual(
+        a_dictionary,
+        {
+            'bippity': 'boppity',
+            'another_key': None
+        }
+
+    )
+
+  the terminal updates to show an :doc:`AssertionError` since ``a_dictionary`` now has a new ``key`` and ``value``
+* I update the test to make it pass
+
   .. code-block:: python
 
-           self.assertEqual(
-               a_dictionary,
-               {
-                   'bippity': 'boppity',
-                   'another_key': None,
-                   'a_new_key': 'a_default_value',
-               }
-           )
-    all tests pass, and I update the list of :doc:`methods <functions>` with what I now know about ``setdefault``
+    self.assertEqual(
+        a_dictionary,
+        {
+            'bippity': 'boppity',
+            'another_key': None,
+            'a_new_key': 'a_default_value',
+        }
+    )
+
+  all tests pass, and I update the list of :doc:`methods <functions>` with what I now know about `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_
 
 How to update one Dictionary with another
 -----------------------------------------
 
-What if I have a dictionary and want to ``add`` the ``keys`` and ``values`` of another dictionary to it?
+What if I have a dictionary and want to add the ``keys`` and ``values`` of another dictionary to it?
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a test to ``TestDictionaries``
+I add another test to ``TestDictionaries``
 
 .. code-block:: python
 
-       def test_adding_two_dictionaries(self):
-           a_dictionary = {
-               "basic": "toothpaste",
-               "whitening": "peroxide",
-           }
-           a_dictionary.update({
-               "non_basic": "chewing stick",
-               "browning": "tobacco",
-               "decaying": "sugar"
-           })
-           self.assertEqual(
-               a_dictionary,
-               {"basic": "toothpaste", "whitening": "peroxide"}
-           )
+  def test_adding_two_dictionaries(self):
+      a_dictionary = {
+          "basic": "toothpaste",
+          "whitening": "peroxide",
+      }
+      a_dictionary.update({
+          "non_basic": "chewing stick",
+          "browning": "tobacco",
+          "decaying": "sugar"
+      })
+      self.assertEqual(
+          a_dictionary,
+          {"basic": "toothpaste", "whitening": "peroxide"}
+      )
 
-the terminal updates to show an :doc:`AssertionError` because the values of ``a_dictionary`` were updated when I called the ``update`` :doc:`method <functions>` on it
+the terminal displays an :doc:`AssertionError` because the values of ``a_dictionary`` were updated when I called the `update <https://docs.python.org/3/library/stdtypes.html#dict.update>`_ :doc:`method <functions>` on it
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-update values to make it pass
+I update the values to make it pass
+
 
 How to Remove an item from a dictionary
 ---------------------------------------
 
-I can remove an item from a dictionary with the ``pop`` method. It deletes the key and value from the dictionary and returns the value
+I can remove an item from a dictionary with the `pop <https://docs.python.org/3/library/stdtypes.html#dict.pop>`_ method. It deletes the ``key`` and ``value`` from the dictionary and returns the ``value``
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a failing test to ``TestDictionaries``
+I add a failing test to ``TestDictionaries``
 
 .. code-block:: python
 
-       def test_pop(self):
-           a_dictionary = {
-               "basic": "toothpaste",
-               "whitening": "peroxide",
-               "non_basic": "chewing stick",
-               "browning": "tobacco",
-               "decaying": "sugar"
-           }
-           self.assertEqual(a_dictionary.pop("basic"), None)
+   def test_pop(self):
+       a_dictionary = {
+           "basic": "toothpaste",
+           "whitening": "peroxide",
+           "non_basic": "chewing stick",
+           "browning": "tobacco",
+           "decaying": "sugar"
+       }
+       self.assertEqual(a_dictionary.pop("basic"), None)
 
 the terminal updates to show an :doc:`AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-update the test with the right value to make it pass
+I update the test with the right value to make it pass
+
+WOW! You made it this far as I went through dictionaries. You now know
+* How to create a dictionary
+* What objects can be used as dictionary keys
+* How to view dictionary keys
+* How to view dictionary values
+* The attributes and methods of a dictionary
