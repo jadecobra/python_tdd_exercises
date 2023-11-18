@@ -589,7 +589,7 @@ What if I want to call a dictionary and not have python raise an error when it d
         }
         self.assertIsNone(a_dictionary['non_existent_key'])
 
-  as expected the terminal updates to show a `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_
+  as expected the terminal updates to show a `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ because the ``non_existent_key`` does not exist in ``a_dictionary``
 * I update the test using the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :doc:`method <functions>`
 
   .. code-block:: python
@@ -735,7 +735,7 @@ REFACTOR: make it better
 
 I see some of the :doc:`methods <functions>` I have covered so far and others I did not. I  could write tests on the others to discover what they do and/or `read more about dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_.
 
-If you want more practice you could list out what has been covered so farand you fill in the others as you learn them
+If you want more practice you could list out what has been covered so far, and write tests for the others and fill in details as you learn them
 
 
 * clear
@@ -744,16 +744,16 @@ If you want more practice you could list out what has been covered so farand you
 * get - gets the ``value`` for a ``key`` and returns a default value or :doc:`None </data structures: None>` if the key does not exist
 * items
 * keys - returns the list of ``keys`` in a dictionary
-* pop
+* `pop <https://docs.python.org/3/library/stdtypes.html#dict.pop>`_
 * popitem
-* setdefault
-* update
+* `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_
+* `update <https://docs.python.org/3/library/stdtypes.html#dict.update>`_
 * values - returns the list of ``values`` in a dictionary
 
 How to set a default value for a given key
 ------------------------------------------
 
-I want to take a look at the `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_ method
+Let us say I want to take a look at the `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_ method for instance
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -784,7 +784,7 @@ I add a ``self.assertRaises`` to confirm that the `KeyError <https://docs.python
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-* I add a test for `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_
+* I then add a test for `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_
 
   .. code-block:: python
 
@@ -818,7 +818,27 @@ REFACTOR: make it better
             }
         )
 
-* What if I want to add a ``key`` but set the default value to something other than :doc:`None </data structures: None>`? Good question, I will add a test to find out
+  when I first try to access the value for ``another_key`` in ``a_dictionary``, I get a `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ because the key does not exist in the dictionary. After using `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_ and passing in ``another_key`` as the key, it gets added to the dictionary so I will not get an error when I try accessing it again
+
+  .. code-block:: python
+
+    def test_set_default_for_a_given_key(self):
+        a_dictionary = {'bippity': 'boppity'}
+
+        with self.assertRaises(KeyError):
+            a_dictionary['another_key']
+
+        a_dictionary.setdefault('another_key')
+        self.assertEqual(
+            a_dictionary,
+            {
+                'bippity': 'boppity',
+                'another_key': None
+            }
+        )
+        self.assertIsNone(a_dictionary['another_key'])
+
+* I will now add a test for setting the default value to something other than :doc:`None </data structures: None>`
 
   .. code-block:: python
 
@@ -848,10 +868,10 @@ REFACTOR: make it better
 
   all tests pass, and I update the list of :doc:`methods <functions>` with what I now know about `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_
 
-How to update one Dictionary with another
------------------------------------------
+How to update a dictionary with another dictionary
+--------------------------------------------------
 
-What if I have a dictionary and want to add the ``keys`` and ``values`` of another dictionary to it?
+What if I have a dictionary and want to add the ``keys`` and ``values`` of one dictionary to another?
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -866,9 +886,9 @@ I add another test to ``TestDictionaries``
           "whitening": "peroxide",
       }
       a_dictionary.update({
-          "non_basic": "chewing stick",
+          "traditional": "chewing stick",
           "browning": "tobacco",
-          "decaying": "sugar"
+          "decaying": "sugar",
       })
       self.assertEqual(
           a_dictionary,
@@ -883,7 +903,7 @@ GREEN: make it pass
 I update the values to make it pass
 
 
-How to Remove an item from a dictionary
+How to remove an item from a dictionary
 ---------------------------------------
 
 I can remove an item from a dictionary with the `pop <https://docs.python.org/3/library/stdtypes.html#dict.pop>`_ method. It deletes the ``key`` and ``value`` from the dictionary and returns the ``value``
@@ -899,9 +919,9 @@ I add a failing test to ``TestDictionaries``
        a_dictionary = {
            "basic": "toothpaste",
            "whitening": "peroxide",
-           "non_basic": "chewing stick",
+           "traditional": "chewing stick",
            "browning": "tobacco",
-           "decaying": "sugar"
+           "decaying": "sugar",
        }
        self.assertEqual(a_dictionary.pop("basic"), None)
 
@@ -912,9 +932,15 @@ GREEN: make it pass
 
 I update the test with the right value to make it pass
 
+---
+
 WOW! You made it this far as I went through dictionaries. You now know
 * How to create a dictionary
 * What objects can be used as dictionary keys
+* What objects cannot be used as dictionary keys
 * How to view dictionary keys
 * How to view dictionary values
-* The attributes and methods of a dictionary
+* How to view the attributes and methods of a dictionary
+* How to set a default value for a key
+* How to update a dictionary with another dictionary
+* How to remove an item from a dictionary
