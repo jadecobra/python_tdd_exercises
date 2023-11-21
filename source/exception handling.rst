@@ -37,16 +37,16 @@ create a file called ``test_exception_handling.py`` in the ``tests`` folder and 
 
   class TestExceptionHandling(unittest.TestCase):
 
-      def test_catching_module_not_found_error_in_tests(self):
-          import non_existent_module
+   def test_catching_module_not_found_error_in_tests(self):
+     import non_existent_module
 
 the terminal gives us a :doc:`ModuleNotFoundError` and I add it to the list of exceptions encountered
 
 .. code-block:: python
 
-   # Exceptions Encountered
-   # AssertionError
-   # ModuleNotFoundError
+  # Exceptions Encountered
+  # AssertionError
+  # ModuleNotFoundError
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -57,9 +57,9 @@ Add a ``self.assertRaises`` to ``test_catching_module_not_found_error_in_tests``
 
 .. code-block:: python
 
-    def test_catching_module_not_found_error_in_tests(self):
-        with self.assertRaises(ModuleNotFoundError):
-            import non_existent_module
+  def test_catching_module_not_found_error_in_tests(self):
+    with self.assertRaises(ModuleNotFoundError):
+      import non_existent_module
 
 the terminal updates to show passing tests. How does all this work?
 
@@ -83,23 +83,23 @@ With what I have learned about catching or handling exceptions I can test that a
 
   .. code-block:: python
 
-      def test_catching_attribute_errors_in_tests(self):
-          module.non_existent_attribute
+   def test_catching_attribute_errors_in_tests(self):
+     module.non_existent_attribute
 
   the terminal updates to show an :doc:`AttributeError` because the called attribute ``non_existent_attribute`` does not exist in ``module.py``
 
   .. code-block:: python
 
-      E       AttributeError: module 'module' has no attribute 'non_existent_attribute'
+   E    AttributeError: module 'module' has no attribute 'non_existent_attribute'
 
   add the exception to the running list
 
   .. code-block:: python
 
-    # Exceptions Encountered
-    # AssertionError
-    # ModuleNotFoundError
-    # AttributeError
+  # Exceptions Encountered
+  # AssertionError
+  # ModuleNotFoundError
+  # AttributeError
 
 * GREEN: make it pass
 
@@ -107,9 +107,9 @@ With what I have learned about catching or handling exceptions I can test that a
 
   .. code-block:: python
 
-     def test_catching_attribute_errors_in_tests(self):
-         with self.assertRaises(AttributeError):
-             module.non_existent_attribute
+   def test_catching_attribute_errors_in_tests(self):
+    with self.assertRaises(AttributeError):
+      module.non_existent_attribute
 
   the terminal updates to show passing tests. Let's do it again with ``methods`` for good measure
 
@@ -119,16 +119,16 @@ With what I have learned about catching or handling exceptions I can test that a
 
   .. code-block:: python
 
-     def test_catching_attribute_errors_in_tests(self):
-         with self.assertRaises(AttributeError):
-             module.non_existent_attribute
-         module.non_existent_function()
+   def test_catching_attribute_errors_in_tests(self):
+    with self.assertRaises(AttributeError):
+      module.non_existent_attribute
+    module.non_existent_function()
 
   the terminal updates to show :doc:`AttributeError` because ``non_existent_function`` does not exist in ``module.py``
 
   .. code-block:: python
 
-    E       AttributeError: module 'module' has no attribute 'non_existent_function'
+  E    AttributeError: module 'module' has no attribute 'non_existent_function'
 
 * GREEN: make it pass
 
@@ -136,11 +136,11 @@ With what I have learned about catching or handling exceptions I can test that a
 
   .. code-block:: python
 
-    def test_catching_attribute_errors_in_tests(self):
-        with self.assertRaises(AttributeError):
-            module.non_existent_attribute
-        with self.assertRaises(AttributeError):
-            module.non_existent_function()
+  def test_catching_attribute_errors_in_tests(self):
+    with self.assertRaises(AttributeError):
+      module.non_existent_attribute
+    with self.assertRaises(AttributeError):
+      module.non_existent_function()
 
   the terminal updates to show passing tests
 
@@ -150,18 +150,18 @@ With what I have learned about catching or handling exceptions I can test that a
 
   .. code-block:: python
 
-    def test_catching_attribute_errors_in_tests(self):
-        with self.assertRaises(AttributeError):
-            module.non_existent_attribute
-        with self.assertRaises(AttributeError):
-            module.non_existent_function()
-        module.NonExistentClass()
+  def test_catching_attribute_errors_in_tests(self):
+    with self.assertRaises(AttributeError):
+      module.non_existent_attribute
+    with self.assertRaises(AttributeError):
+      module.non_existent_function()
+    module.NonExistentClass()
 
   the terminal updates to show an :doc:`AttributeError`
 
   .. code-block:: python
 
-    E       AttributeError: module 'module' has no attribute 'NonExistentClass'
+  E    AttributeError: module 'module' has no attribute 'NonExistentClass'
 
 * GREEN: make it pass
 
@@ -169,13 +169,13 @@ With what I have learned about catching or handling exceptions I can test that a
 
   .. code-block:: python
 
-    def test_catching_attribute_errors_in_tests(self):
-        with self.assertRaises(AttributeError):
-            module.non_existent_attribute
-        with self.assertRaises(AttributeError):
-            module.non_existent_function()
-        with self.assertRaises(AttributeError):
-            module.NonExistentClass()
+  def test_catching_attribute_errors_in_tests(self):
+    with self.assertRaises(AttributeError):
+      module.non_existent_attribute
+    with self.assertRaises(AttributeError):
+      module.non_existent_function()
+    with self.assertRaises(AttributeError):
+      module.NonExistentClass()
 
   the terminal displays passing tests
 
@@ -185,20 +185,20 @@ With what I have learned about catching or handling exceptions I can test that a
 
   .. code-block:: python
 
-    def test_catching_attribute_errors_in_tests(self):
-        with self.assertRaises(AttributeError):
-            module.non_existent_attribute
-        with self.assertRaises(AttributeError):
-            module.non_existent_function()
-        with self.assertRaises(AttributeError):
-            module.NonExistentClass()
-        module.Class.non_existent_attribute
+  def test_catching_attribute_errors_in_tests(self):
+    with self.assertRaises(AttributeError):
+      module.non_existent_attribute
+    with self.assertRaises(AttributeError):
+      module.non_existent_function()
+    with self.assertRaises(AttributeError):
+      module.NonExistentClass()
+    module.Class.non_existent_attribute
 
   the terminal shows an :doc:`AttributeError`
 
   .. code-block:: python
 
-    E       AttributeError: type object 'Class' has no attribute 'non_existent_attribute'
+  E    AttributeError: type object 'Class' has no attribute 'non_existent_attribute'
 
 * GREEN: make it pass
 
@@ -206,15 +206,15 @@ With what I have learned about catching or handling exceptions I can test that a
 
   .. code-block:: python
 
-    def test_catching_attribute_errors_in_tests(self):
-        with self.assertRaises(AttributeError):
-            module.non_existent_attribute
-        with self.assertRaises(AttributeError):
-            module.non_existent_function()
-        with self.assertRaises(AttributeError):
-            module.NonExistentClass()
-        with self.assertRaises(AttributeError):
-            module.Class.non_existent_attribute
+  def test_catching_attribute_errors_in_tests(self):
+    with self.assertRaises(AttributeError):
+      module.non_existent_attribute
+    with self.assertRaises(AttributeError):
+      module.non_existent_function()
+    with self.assertRaises(AttributeError):
+      module.NonExistentClass()
+    with self.assertRaises(AttributeError):
+      module.Class.non_existent_attribute
 
   the terminal updates to show passing tests
 
@@ -224,22 +224,22 @@ With what I have learned about catching or handling exceptions I can test that a
 
   .. code-block:: python
 
-    def test_catching_attribute_errors_in_tests(self):
-        with self.assertRaises(AttributeError):
-            module.non_existent_attribute
-        with self.assertRaises(AttributeError):
-            module.non_existent_function()
-        with self.assertRaises(AttributeError):
-            module.NonExistentClass()
-        with self.assertRaises(AttributeError):
-            module.Class.non_existent_attribute
-        module.Class.non_existent_method()
+  def test_catching_attribute_errors_in_tests(self):
+    with self.assertRaises(AttributeError):
+      module.non_existent_attribute
+    with self.assertRaises(AttributeError):
+      module.non_existent_function()
+    with self.assertRaises(AttributeError):
+      module.NonExistentClass()
+    with self.assertRaises(AttributeError):
+      module.Class.non_existent_attribute
+    module.Class.non_existent_method()
 
   the terminal updates to show another :doc:`AttributeError`
 
   .. code-block:: python
 
-    E       AttributeError: type object 'Class' has no attribute 'non_existent_method'
+  E    AttributeError: type object 'Class' has no attribute 'non_existent_method'
 
 * GREEN: make it pass
 
@@ -247,17 +247,17 @@ With what I have learned about catching or handling exceptions I can test that a
 
   .. code-block:: python
 
-    def test_catching_attribute_errors_in_tests(self):
-        with self.assertRaises(AttributeError):
-            module.non_existent_attribute
-        with self.assertRaises(AttributeError):
-            module.non_existent_function()
-        with self.assertRaises(AttributeError):
-            module.NonExistentClass()
-        with self.assertRaises(AttributeError):
-            module.Class.non_existent_attribute
-        with self.assertRaises(AttributeError):
-            module.Class.non_existent_method()
+  def test_catching_attribute_errors_in_tests(self):
+    with self.assertRaises(AttributeError):
+      module.non_existent_attribute
+    with self.assertRaises(AttributeError):
+      module.non_existent_function()
+    with self.assertRaises(AttributeError):
+      module.NonExistentClass()
+    with self.assertRaises(AttributeError):
+      module.Class.non_existent_attribute
+    with self.assertRaises(AttributeError):
+      module.Class.non_existent_method()
 
   the terminal updates to show passing tests
 
@@ -267,13 +267,13 @@ With what I have learned about catching or handling exceptions I can test that a
 
   .. code-block:: python
 
-      def test_catching_attribute_errors_in_tests(self):
-          with self.assertRaises(AttributeError):
-              module.non_existent_attribute
-              module.non_existent_function()
-              module.NonExistentClass()
-              module.Class.non_existent_attribute
-              module.Class.non_existent_method()
+   def test_catching_attribute_errors_in_tests(self):
+     with self.assertRaises(AttributeError):
+       module.non_existent_attribute
+       module.non_existent_function()
+       module.NonExistentClass()
+       module.Class.non_existent_attribute
+       module.Class.non_existent_method()
 
   Fantastic! all the tests are still passing
 
@@ -291,18 +291,18 @@ Let us deliberately trigger an exception in the code and then handle it. Add a f
 
 .. code-block:: python
 
-    def test_catching_exceptions(self):{
-        exceptions.raises_exception_error()}
+  def test_catching_exceptions(self):{
+    exceptions.raises_exception_error()}
 
 the terminal displays a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ and I update the running list of exceptions encountered
 
 .. code-block:: python
 
-    # Exceptions Encountered
-    # AssertionError
-    # ModuleNotFoundError
-    # AttributeError
-    # NameError
+  # Exceptions Encountered
+  # AssertionError
+  # ModuleNotFoundError
+  # AttributeError
+  # NameError
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -314,9 +314,9 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    import unittest
-    import module
-    import exceptions
+  import unittest
+  import module
+  import exceptions
 
   the terminal now gives us a :doc:`ModuleNotFoundError`
 
@@ -325,52 +325,52 @@ GREEN: make it pass
 
   .. code-block:: python
 
-     raises_exception_error
+   raises_exception_error
 
 * define ``raises_exception_error`` and the terminal updates to show a :doc:`TypeError`
 
   .. code-block:: python
 
-     raises_exception_error = None
+   raises_exception_error = None
 
   which I add to the running list of exceptions encountered
 
   .. code-block:: python
 
-     # Exceptions Encountered
-     # AssertionError
-     # ModuleNotFoundError
-     # AttributeError
-     # NameError
-     # TypeError
+   # Exceptions Encountered
+   # AssertionError
+   # ModuleNotFoundError
+   # AttributeError
+   # NameError
+   # TypeError
 
 * redefine ``raises_exception_error`` as a function and the terminal updates to show passing tests
 
   .. code-block:: python
 
-    def raises_exception_error():
-        return None
+  def raises_exception_error():
+    return None
 
 * update the function to trigger an ``Exception`` by using the ``raise`` keyword
 
   .. code-block:: python
 
-    def raises_exception_error():
-        raise Exception
+  def raises_exception_error():
+    raise Exception
 
   the terminal updates to show
 
   .. code-block:: python
 
-      E       Exception
+   E    Exception
 
 * I add a ``self.assertRaises`` to ``test_catching_exceptions`` in ``test_exception_handling.py`` to confirm that this exception is raised and allow the tests to continue even though there is a failure
 
   .. code-block:: python
 
-    def test_catching_exceptions(self):
-        with self.assertRaises(Exception):
-            exceptions.raises_exception_error()
+  def test_catching_exceptions(self):
+    with self.assertRaises(Exception):
+      exceptions.raises_exception_error()
 
   the terminal shows passing tests
 
@@ -390,11 +390,11 @@ Let us add exception handling to the program so it does not end when it encounte
 
   .. code-block:: python
 
-    def test_catching_things_that_fail(self):
-        self.assertEqual(
-            exceptions.exception_handler(exceptions.raises_exception_error),
-            'failed'
-        )
+  def test_catching_things_that_fail(self):
+    self.assertEqual(
+      exceptions.exception_handler(exceptions.raises_exception_error),
+      'failed'
+    )
 
   the terminal updates to show an `AttributeError <./AttributeError>`_
 
@@ -404,40 +404,40 @@ Let us add exception handling to the program so it does not end when it encounte
 
   .. code-block:: python
 
-    exception_handler
+  exception_handler
 
   define ``exception_handler`` and the terminal displaysa :doc:`TypeError`
 
   .. code-block:: python
 
-    exception_handler = None
+  exception_handler = None
 
   changing ``exception_handler`` to a function updates the :doc:`TypeError` with a new message
 
   .. code-block:: python
 
-    def exception_handler():
-        return None
+  def exception_handler():
+    return None
 
   update the signature for ``exception_handler`` to accept a positional argument
 
   .. code-block:: python
 
-    def exception_handler(argument):
-        return None
+  def exception_handler(argument):
+    return None
 
   the terminal updates to show an :doc:`AssertionError` because the result of calling ``exceptions.exception_handler`` with ``exceptions.raises_exception_error`` as the input is currently :doc:`None </data structures: None>` which is not equal to ``failed``
 
   .. code-block:: python
 
-    E       AssertionError: None != 'failed'
+  E    AssertionError: None != 'failed'
 
   change ``exception_handler`` to return ``failed`` and the terminal updates to show passing tests
 
   .. code-block:: python
 
-    def exception_handler(argument):
-        return 'failed'
+  def exception_handler(argument):
+    return 'failed'
 
 * RED: make it fail
 
@@ -445,11 +445,11 @@ Let us add exception handling to the program so it does not end when it encounte
 
   .. code-block:: python
 
-    def test_catching_things_that_succeed(self):
-        self.assertEqual(
-            exceptions.exception_handler(exceptions.does_not_raise_exception_error),
-            'succeeded'
-        )
+  def test_catching_things_that_succeed(self):
+    self.assertEqual(
+      exceptions.exception_handler(exceptions.does_not_raise_exception_error),
+      'succeeded'
+    )
 
   the terminal updates to show an :doc:`AttributeError`
 
@@ -459,19 +459,19 @@ Let us add exception handling to the program so it does not end when it encounte
 
   .. code-block:: python
 
-    does_not_raise_exception_error
+  does_not_raise_exception_error
 
   define ``does_not_raise_exception_error`` as a variable
 
   .. code-block:: python
 
-      does_not_raise_exception_error = None
+   does_not_raise_exception_error = None
 
   and the terminal updates to show an :doc:`AssertionError` because the value returned by ``exceptions.exception_handler`` when given ``exceptions.does_not_raise_exception_error`` as input is ``failed`` which is not equal to ``succeeded``
 
   .. code-block::
 
-    E       AssertionError: 'failed' != 'succeeded'
+  E    AssertionError: 'failed' != 'succeeded'
 
   I want the ``exception_handler`` function to return a different input based on the exceptions that occur within the function to help us learn how to handle exceptions.
 
@@ -479,21 +479,21 @@ Let us add exception handling to the program so it does not end when it encounte
 
   .. code-block:: python
 
-    def exception_handler(function):
-        return function()
+  def exception_handler(function):
+    return function()
 
   the terminal updates to show a :doc:`TypeError` because ``does_not_raise_exception_error`` is not a function, I will redefine ``does_not_raise_exception_error`` to make it callable
 
   .. code-block:: python
 
-    def does_not_raise_exception_error():
-        return None
+  def does_not_raise_exception_error():
+    return None
 
   the terminal updates to show
 
   .. code-block:: python
 
-    AssertionError: None != 'succeeded'
+  AssertionError: None != 'succeeded'
 
   - The ``exception_handler`` function returns the result of calling the function it receives as input
   - When I call ``exceptions.exception_handler(exceptions.does_not_raise_exception_error)`` it in turn calls ``does_not_raise_exception_error`` and returns the result of the call which is currently defined as :doc:`None </data structures: None>`
@@ -505,13 +505,13 @@ Let us add exception handling to the program so it does not end when it encounte
 
   .. code-block:: python
 
-    def exception_handler(function):
-        try:
-            function()
-        except Exception:
-            return 'failed'
-        else:
-            return 'succeeded'
+  def exception_handler(function):
+    try:
+      function()
+    except Exception:
+      return 'failed'
+    else:
+      return 'succeeded'
 
   the terminal updates to show passing tests
 
@@ -537,10 +537,10 @@ add a new failing test to ``test_exception_handling.py``
 .. code-block:: python
 
   def test_finally_always_returns(self):
-      self.assertEqual(
-          exceptions.always_returns(exceptions.does_not_raise_exception_error),
-          "always_returns_this"
-      )
+   self.assertEqual(
+     exceptions.always_returns(exceptions.does_not_raise_exception_error),
+     "always_returns_this"
+   )
 
 this will cause an :doc:`AttributeError`
 
@@ -552,33 +552,33 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    always_returns
+  always_returns
 
 * define ``always_returns`` as a variable and I get an :doc:`AttributeError`
 
   .. code-block:: python
 
-    always_returns = None
+  always_returns = None
 
 * redefine ``always_returns`` as a function and the terminal displaysa :doc:`TypeError`
 
   .. code-block:: python
 
-    def always_returns():
-        return None
+  def always_returns():
+    return None
 
 * update the signature of ``always_returns`` to accept a function that I call and return its value
 
   .. code-block:: python
 
-    def always_returns(function):
-        return function()
+  def always_returns(function):
+    return function()
 
   the terminal updates to show
 
   .. code-block:: python
 
-    AssertionError: None != 'always_returns_this'
+  AssertionError: None != 'always_returns_this'
 
   because ``exceptions.always_returns`` returns the value of ``does_not_raise_exception_error`` which is :doc:`None </data structures: None>` and is not equal to the expectation in the test which is ``always_returns_this``
 
@@ -586,13 +586,13 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    def always_returns(function):
-        try:
-            function()
-        except Exception:
-            return 'failed'
-        else:
-            return 'succeeded'
+  def always_returns(function):
+    try:
+      function()
+    except Exception:
+      return 'failed'
+    else:
+      return 'succeeded'
 
   the terminal displays an :doc:`AssertionError` and since no exception is raised when ``does_not_raise_exception_error`` is called by ``always_returns_this``, it returns ``succeeded`` which is not equal to ``always_returns_this``
 
@@ -600,14 +600,14 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    def always_returns(function):
-        try:
-            function()
-        except Exception:
-            return 'failed'
-        else:
-            return 'succeeded'
-        return 'always_returns_this'
+  def always_returns(function):
+    try:
+      function()
+    except Exception:
+      return 'failed'
+    else:
+      return 'succeeded'
+    return 'always_returns_this'
 
   no change, the terminal still has the same error. In python the ``return`` statement is the last thing executed in the function, anything written after a ``return`` statement is ignored
 
@@ -619,15 +619,15 @@ GREEN: make it pass
 
   .. code-block:: python
 
-     def always_returns(function):
-         try:
-             function()
-         except Exception:
-             return 'failed'
-         else:
-             return 'succeeded'
-         finally:
-             return 'always_returns_this'
+   def always_returns(function):
+    try:
+      function()
+    except Exception:
+      return 'failed'
+    else:
+      return 'succeeded'
+    finally:
+      return 'always_returns_this'
 
   the terminal updates to show passing tests. the ``finally`` clause is always executed regardless of what happens in the ``try..except..else`` parts
 
@@ -635,23 +635,23 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    def test_finally_always_returns(self):
-        self.assertEqual(
-            exceptions.always_returns(exceptions.does_not_raise_exception_error),
-            "always_returns_this"
-        )
-        self.assertEqual(
-            exceptions.always_returns(exceptions.raises_exception_error),
-            'always_returns_this'
-        )
+  def test_finally_always_returns(self):
+    self.assertEqual(
+      exceptions.always_returns(exceptions.does_not_raise_exception_error),
+      "always_returns_this"
+    )
+    self.assertEqual(
+      exceptions.always_returns(exceptions.raises_exception_error),
+      'always_returns_this'
+    )
 
 
   ``always_returns`` could have been defined as a ``singleton`` :doc:`function <functions>` and the tests would still pass, but that would not illustrate how to use ``try...except...else...finally``
 
   .. code-block:: python
 
-        def always_returns(function):
-            return 'always_returns_this`
+    def always_returns(function):
+      return 'always_returns_this`
 ----
 
 CONGRATULATIONS

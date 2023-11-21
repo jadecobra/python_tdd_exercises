@@ -21,11 +21,11 @@ add a test for negate first to ``TestBinaryOperations``
 
 .. code-block:: python
 
-       def test_negate_first(self):
-           self.assertFalse(truth_table.negate_first(True, True))
-           self.assertFalse(truth_table.negate_first(True, False))
-           self.assertTrue(truth_table.negate_first(False, True))
-           self.assertTrue(truth_table.negate_first(False, False))
+    def test_negate_first(self):
+      self.assertFalse(truth_table.negate_first(True, True))
+      self.assertFalse(truth_table.negate_first(True, False))
+      self.assertTrue(truth_table.negate_first(False, True))
+      self.assertTrue(truth_table.negate_first(False, False))
 
 the terminal shows an :doc:`AttributeError`
 
@@ -36,9 +36,9 @@ GREEN: make it pass
 * add a function definition to ``truth_table.py``
   .. code-block:: python
 
-       def negate_first(p, q):
-           return False
-    the terminal updates to show an :doc:`AssertionError` for the third case
+    def negate_first(p, q):
+      return False
+  the terminal updates to show an :doc:`AssertionError` for the third case
 * before I add a condition for it, this looks similar to ``logical_equality`` and ``exclusive_disjunction`` because 2 out of the 4 cases have the same return value. I observe that
 
   * if ``p == True`` the result is :doc:`False </data structures: booleans>`
@@ -47,12 +47,12 @@ GREEN: make it pass
 * add conditions to represent the observation
   .. code-block:: python
 
-       def negate_first(p, q):
-           if p == True:
-               return False
-           if p == False:
-               return True
-    all the tests pass
+    def negate_first(p, q):
+      if p == True:
+       return False
+      if p == False:
+       return True
+  all the tests pass
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -61,27 +61,27 @@ REFACTOR: make it better
 * use implied conditional testing
   .. code-block:: python
 
-       def negate_first(p, q):
-           if p:
-               return False
-           if not p:
-               return True
+    def negate_first(p, q):
+      if p:
+       return False
+      if not p:
+       return True
 
 * reorder and use ``else``
   .. code-block:: python
 
-       def negate_first(p, q):
-           if not p:
-               return True
-           else:
-               return False
+    def negate_first(p, q):
+      if not p:
+       return True
+      else:
+       return False
 
 * simplify
   .. code-block:: python
 
-       def negate_first(p, q):
-           return not p
-    ah, just like the name and all tests pass
+    def negate_first(p, q):
+      return not p
+  ah, just like the name and all tests pass
 
 Negate Second
 -------------
@@ -93,11 +93,11 @@ add a test for negate second to ``TestBinaryOperations``
 
 .. code-block:: python
 
-       def test_negate_second(self):
-           self.assertFalse(truth_table.negate_second(True, True))
-           self.assertTrue(truth_table.negate_second(True, False))
-           self.assertFalse(truth_table.negate_second(False, True))
-           self.assertTrue(truth_table.negate_second(False, False))
+    def test_negate_second(self):
+      self.assertFalse(truth_table.negate_second(True, True))
+      self.assertTrue(truth_table.negate_second(True, False))
+      self.assertFalse(truth_table.negate_second(False, True))
+      self.assertTrue(truth_table.negate_second(False, False))
 
 the terminal shows an :doc:`AttributeError`
 
@@ -108,9 +108,9 @@ GREEN: make it pass
 * add a function definition to ``truth_table.py``
   .. code-block:: python
 
-       def negate_second(p, q):
-           return False
-    the terminal updates to show an :doc:`AssertionError` for the third case
+    def negate_second(p, q):
+      return False
+  the terminal updates to show an :doc:`AssertionError` for the third case
 * before I add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction`` and ``negate_first`` because 2 out of the 4 cases have the same return value. I observe that
 
   * if ``q == True`` the result is :doc:`False </data structures: booleans>`
@@ -119,14 +119,14 @@ GREEN: make it pass
 * What if I try using the conclusion from ``negate_first``
   .. code-block:: python
 
-       def negate_second(p, q):
-           return not p
-    the terminal still shows an :doc:`AssertionError`. What if I try ``q`` instead
+    def negate_second(p, q):
+      return not p
+  the terminal still shows an :doc:`AssertionError`. What if I try ``q`` instead
   .. code-block:: python
 
-       def negate_second(p, q):
-           return not q
-    All tests pass
+    def negate_second(p, q):
+      return not q
+  All tests pass
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^

@@ -21,11 +21,11 @@ add a test for logical equality to ``TestBinaryOperations``
 
 .. code-block:: python
 
-       def test_logical_equality_aka_logical_biconditional(self):
-           self.assertTrue(truth_table.logical_equality(True, True))
-           self.assertFalse(truth_table.logical_equality(True, False))
-           self.assertFalse(truth_table.logical_equality(False, True))
-           self.assertTrue(truth_table.logical_equality(False, False))
+    def test_logical_equality_aka_logical_biconditional(self):
+      self.assertTrue(truth_table.logical_equality(True, True))
+      self.assertFalse(truth_table.logical_equality(True, False))
+      self.assertFalse(truth_table.logical_equality(False, True))
+      self.assertTrue(truth_table.logical_equality(False, False))
 
 the terminal shows an :doc:`AttributeError`
 
@@ -36,27 +36,27 @@ GREEN: make it pass
 * add a definition to ``truth_table.py`` with a return statement, I can pick :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>` since 2 out of the 4 cases are either :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>`
   .. code-block:: python
 
-       def logical_equality(p, q):
-           return True
-    the terminal updates to show the second case failing
+    def logical_equality(p, q):
+      return True
+  the terminal updates to show the second case failing
 * add a condition for it
   .. code-block:: python
 
-       def logical_equality(p, q):
-           if p == True and q == False:
-               return False
-           return True
-    the terminal shows a failure for the 3rd case
+    def logical_equality(p, q):
+      if p == True and q == False:
+       return False
+      return True
+  the terminal shows a failure for the 3rd case
 * add a condition
   .. code-block:: python
 
-       def logical_equality(p, q):
-           if p == True and q == False:
-               return False
-           if p == False and q == True:
-               return False
-           return True
-    I am green!
+    def logical_equality(p, q):
+      if p == True and q == False:
+       return False
+      if p == False and q == True:
+       return False
+      return True
+  I am green!
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -72,50 +72,50 @@ What can I do to make this better?
 * I rewrite the condition statements to reflect the second observation
   .. code-block:: python
 
-       def logical_equality(p, q):
-           if p != q:
-               return False
-           return True
+    def logical_equality(p, q):
+      if p != q:
+       return False
+      return True
 
 * updating the function with the first observation I have
   .. code-block:: python
 
-       def logical_equality(p, q):
-           if p != q:
-               return False
-           if p == q:
-               return True
+    def logical_equality(p, q):
+      if p != q:
+       return False
+      if p == q:
+       return True
 
 * reorder
   .. code-block:: python
 
-       def logical_equality(p, q):
-           if p == q:
-               return True
-           if p != q:
-               return False
+    def logical_equality(p, q):
+      if p == q:
+       return True
+      if p != q:
+       return False
 
 * replace with ``else``
   .. code-block:: python
 
-       def logical_equality(p, q):
-           if p == q:
-               return True
-           else:
-               return False
+    def logical_equality(p, q):
+      if p == q:
+       return True
+      else:
+       return False
 
 * rewrite as one line with the ``return`` statement
   .. code-block:: python
 
-       def logical_equality(p, q):
-           return True if p == q else False
+    def logical_equality(p, q):
+      return True if p == q else False
 
 * use implicit condition comparison
   .. code-block:: python
 
-       def logical_equality(p, q):
-           return p == q
-    Well done! the tests are still green
+    def logical_equality(p, q):
+      return p == q
+  Well done! the tests are still green
 
 What if I review. For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>`
 

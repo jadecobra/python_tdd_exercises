@@ -32,11 +32,11 @@ add a test for logical disjunction to ``TestBinaryOperations`` in ``test_truth_t
 
 .. code-block:: python
 
-       def test_logical_disjunction(self):
-           self.assertTrue(truth_table.logical_disjunction(True, True))
-           self.assertTrue(truth_table.logical_disjunction(True, False))
-           self.assertTrue(truth_table.logical_disjunction(False, True))
-           self.assertFalse(truth_table.logical_disjunction(False, False))
+    def test_logical_disjunction(self):
+      self.assertTrue(truth_table.logical_disjunction(True, True))
+      self.assertTrue(truth_table.logical_disjunction(True, False))
+      self.assertTrue(truth_table.logical_disjunction(False, True))
+      self.assertFalse(truth_table.logical_disjunction(False, False))
 
 the terminal updates to show an :doc:`AttributeError`
 
@@ -48,8 +48,8 @@ GREEN: make it pass
 
   .. code-block:: python
 
-       def logical_disjunction(p, q):
-           return True
+    def logical_disjunction(p, q):
+      return True
 
   the terminal updates to show an :doc:`AssertionError`
 
@@ -57,11 +57,11 @@ GREEN: make it pass
 
   .. code-block:: python
 
-       def logical_disjunction(p, q):
-           if p == False:
-               if q == False:
-                   return False
-           return True
+    def logical_disjunction(p, q):
+      if p == False:
+       if q == False:
+         return False
+      return True
 
   the terminal updates to show passing tests
 
@@ -73,10 +73,10 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-       def logical_disjunction(p, q):
-           if p == False and q == False:
-               return False
-           return True
+    def logical_disjunction(p, q):
+      if p == False and q == False:
+       return False
+      return True
 
   the terminal shows the tests are still passing
 
@@ -84,64 +84,64 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-       def logical_disjunction(p, q):
-           if p != False and q != False:
-               return False
-           return True
+    def logical_disjunction(p, q):
+      if p != False and q != False:
+       return False
+      return True
 
 * how can I express the ``if`` statement using python's implied comparison evaluation? I can use the ``not`` keyword like I did with ``logical_negation``
 
   .. code-block:: python
 
-       def logical_disjunction(p, q):
-           if not p and not q:
-               return False
-           return True
+    def logical_disjunction(p, q):
+      if not p and not q:
+       return False
+      return True
 
 * ``not`` happens twice in that statement. What if I see if I can "factor" it out using algebra
 
   .. code-block:: python
 
-       def logical_disjunction(p, q):
-           if not(p and q):
-               return False
-           return True
+    def logical_disjunction(p, q):
+      if not(p and q):
+       return False
+      return True
 
   the terminal shows a failing test. OOPS! We've introduced a regression. If I expand the statement using "multiplication" rules. What I have above is
 
   .. code-block:: python
 
-       def logical_disjunction(p, q):
-           if not p not and not q:
-               return False
-           return True
+    def logical_disjunction(p, q):
+      if not p not and not q:
+       return False
+      return True
 
   I get a ``SyntaxError``, the result of the "multiplication" is different from what I started with so I need something different. It should be something that expands out to
 
   .. code-block:: python
 
-       def logical_disjunction(p, q):
-           if not p not not and not q:
-               return False
-           return True
+    def logical_disjunction(p, q):
+      if not p not not and not q:
+       return False
+      return True
 
   this would "factor" out to be
 
   .. code-block:: python
 
-       def logical_disjunction(p, q):
-           if not(p not and q):
-               return False
-           return True
+    def logical_disjunction(p, q):
+      if not(p not and q):
+       return False
+      return True
 
   okay, this looks more like, if I "multiply" this out I get the original statement since the opposite of the opposite of something is something. What if I fix the syntax. The opposite of and is ``or``
 
   .. code-block:: python
 
-       def logical_disjunction(p, q):
-           if not(p or q):
-               return False
-           return True
+    def logical_disjunction(p, q):
+      if not(p or q):
+       return False
+      return True
 
   Hooray! tests are passing again
 
@@ -149,65 +149,65 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-       def logical_disjunction(p, q):
-           if not(p or q):
-               return False
-           else:
-               return True
+    def logical_disjunction(p, q):
+      if not(p or q):
+       return False
+      else:
+       return True
 
 * the ``else`` statement that returns :doc:`True </data structures: booleans>` can be restated as the opposite of the ``if`` statement
 
   .. code-block:: python
 
-       def logical_disjunction(p, q):
-           if not(p or q):
-               return False
-           if not(not(p or q)):
-               return True
+    def logical_disjunction(p, q):
+      if not(p or q):
+       return False
+      if not(not(p or q)):
+       return True
 
   since the negation of a negation gives the original thing I can say
 
   .. code-block:: python
 
-       def logical_disjunction(p, q):
-           if not(p or q):
-               return False
-           if p or q:
-               return True
+    def logical_disjunction(p, q):
+      if not(p or q):
+       return False
+      if p or q:
+       return True
 
 * reorder the statements
 
   .. code-block:: python
 
-       def logical_disjunction(p, q):
-           if p or q:
-               return True
-           if not(p or q):
-               return False
+    def logical_disjunction(p, q):
+      if p or q:
+       return True
+      if not(p or q):
+       return False
 
 * restate using ``else``
 
   .. code-block:: python
 
-       def logical_disjunction(p, q):
-           if p or q:
-               return True
-           else:
-               return False
+    def logical_disjunction(p, q):
+      if p or q:
+       return True
+      else:
+       return False
 
 * rewriting to one line with a ``return`` statement
 
   .. code-block:: python
 
-       def logical_disjunction(p, q):
-           return True if p or q else return False
+    def logical_disjunction(p, q):
+      return True if p or q else return False
 
 * using python's implicit conditional evaluation I simplify to
 
   .. code-block:: python
 
-       def logical_disjunction(p, q):
-           return p or q
+    def logical_disjunction(p, q):
+      return p or q
 
   *VOILA!* the tests still pass and I have a simple statement that makes all 4 states pass for ``logical_disjunction``
 

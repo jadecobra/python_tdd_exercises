@@ -21,11 +21,11 @@ add a test for exclusive disjunction to ``TestBinaryOperations``
 
 .. code-block:: python
 
-       def test_logical_nor(self):
-           self.assertFalse(truth_table.logical_nor(True, True))
-           self.assertFalse(truth_table.logical_nor(True, False))
-           self.assertFalse(truth_table.logical_nor(False, True))
-           self.assertTrue(truth_table.logical_nor(False, False))
+    def test_logical_nor(self):
+      self.assertFalse(truth_table.logical_nor(True, True))
+      self.assertFalse(truth_table.logical_nor(True, False))
+      self.assertFalse(truth_table.logical_nor(False, True))
+      self.assertTrue(truth_table.logical_nor(False, False))
 
 the terminal shows an :doc:`AttributeError`
 
@@ -36,16 +36,16 @@ GREEN: make it pass
 * add a function definition to ``truth_table.py``
   .. code-block:: python
 
-       def logical_nor(p, q):
-           return False
+    def logical_nor(p, q):
+      return False
 
 * the first 3 pass and I see a failure for the 4th case, add a condition for it
   .. code-block:: python
 
-       def logical_nor(p, q):
-           if p == False and q == False:
-               return True
-           return False
+    def logical_nor(p, q):
+      if p == False and q == False:
+       return True
+      return False
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -54,38 +54,38 @@ REFACTOR: make it better
 * I restate the ``if`` condition using implicit conditional testing
   .. code-block:: python
 
-       def logical_nor(p, q):
-           if not p and not q:
-               return True
-           return False
+    def logical_nor(p, q):
+      if not p and not q:
+       return True
+      return False
 
 * I abstract the repetition of ``not`` by rewriting the entire statement in terms of ``not``
   .. code-block:: python
 
-       def logical_nor(p, q):
-           if not p not or not q:
-               return True
-           return False
-    the terminal shows a ``SyntaxError`` and I rewrite the syntax properly
+    def logical_nor(p, q):
+      if not p not or not q:
+       return True
+      return False
+  the terminal shows a ``SyntaxError`` and I rewrite the syntax properly
   .. code-block:: python
 
-       def logical_nor(p, q):
-           if not(p or q):
-               return True
-           return False
+    def logical_nor(p, q):
+      if not(p or q):
+       return True
+      return False
 
 * rewrite the entire thing on one line
   .. code-block:: python
 
-       def logical_nor(p, q):
-           return True if not(p or q) else False
+    def logical_nor(p, q):
+      return True if not(p or q) else False
 
 * simplify using implied conditional testing
   .. code-block:: python
 
-       def logical_nor(p, q):
-           return not(p or q)
-    BOOM! all the tests pass. Are I getting better at this?
+    def logical_nor(p, q):
+      return not(p or q)
+  BOOM! all the tests pass. Are I getting better at this?
 
 Knowledge update. For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>`
 

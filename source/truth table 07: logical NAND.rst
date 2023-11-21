@@ -21,11 +21,11 @@ add a test for exclusive disjunction to ``TestBinaryOperations``
 
 .. code-block:: python
 
-       def test_logical_nand(self):
-           self.assertFalse(truth_table.logical_nand(True, True))
-           self.assertTrue(truth_table.logical_nand(True, False))
-           self.assertTrue(truth_table.logical_nand(False, True))
-           self.assertTrue(truth_table.logical_nand(False, False))
+    def test_logical_nand(self):
+      self.assertFalse(truth_table.logical_nand(True, True))
+      self.assertTrue(truth_table.logical_nand(True, False))
+      self.assertTrue(truth_table.logical_nand(False, True))
+      self.assertTrue(truth_table.logical_nand(False, False))
 
 the terminal shows an :doc:`AttributeError`
 
@@ -36,17 +36,17 @@ GREEN: make it pass
 * add a definition for the function to ``truth_table.py`` returning :doc:`True </data structures: booleans>` since 3 out of the 4 cases return that value
   .. code-block:: python
 
-       def logical_nand(p, q):
-           return True
-    the terminal updates to show an :doc:`AssertionError` for the first case
+    def logical_nand(p, q):
+      return True
+  the terminal updates to show an :doc:`AssertionError` for the first case
 * add a condition for the one case that returns :doc:`False </data structures: booleans>`
   .. code-block:: python
 
-       def logical_nand(p, q):
-           if p == True and q == True:
-               return False
-           return True
-    I am green! All tests pass
+    def logical_nand(p, q):
+      if p == True and q == True:
+       return False
+      return True
+  I am green! All tests pass
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -55,60 +55,60 @@ REFACTOR: make it better
 * add an ``else`` to be explicit
   .. code-block:: python
 
-       def logical_nand(p, q):
-           if p == True and q == True:
-               return False
-           else:
-               return True
+    def logical_nand(p, q):
+      if p == True and q == True:
+       return False
+      else:
+       return True
 
 * change to an implied ``if`` statement
   .. code-block:: python
 
-       def logical_nand(p, q):
-           if p and q:
-               return False
-           else:
-               return True
+    def logical_nand(p, q):
+      if p and q:
+       return False
+      else:
+       return True
 
 * change it to the opposite of the ``if`` statement
   .. code-block:: python
 
-       def logical_nand(p, q):
-           if p and q:
-               return False
-           if not(p and q):
-               return True
+    def logical_nand(p, q):
+      if p and q:
+       return False
+      if not(p and q):
+       return True
 
 * reorder
   .. code-block:: python
 
-       def logical_nand(p, q):
-           if not(p and q):
-               return True
-           if p and q:
-               return False
+    def logical_nand(p, q):
+      if not(p and q):
+       return True
+      if p and q:
+       return False
 
 * replace second statement with ``else``
   .. code-block:: python
 
-       def logical_nand(p, q):
-           if not(p and q):
-               return True
-           else:
-               return False
+    def logical_nand(p, q):
+      if not(p and q):
+       return True
+      else:
+       return False
 
 * return on one line
   .. code-block:: python
 
-       def logical_nand(p, q):
-           return True if not(p and q) else False
+    def logical_nand(p, q):
+      return True if not(p and q) else False
 
 * simplify to
   .. code-block:: python
 
-       def logical_nand(p, q):
-           return not(p and q)
-    I don't think I can get simpler than this and all the tests are still passing
+    def logical_nand(p, q):
+      return not(p and q)
+  I don't think I can get simpler than this and all the tests are still passing
 
 REVIEW
 I know that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>`

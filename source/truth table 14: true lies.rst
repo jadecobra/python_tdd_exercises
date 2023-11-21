@@ -21,11 +21,11 @@ add a test for tautology to ``TestBinaryOperations``
 
 .. code-block:: python
 
-       def test_tautology(self):
-           self.assertTrue(truth_table.tautology(True, True))
-           self.assertTrue(truth_table.tautology(True, False))
-           self.assertTrue(truth_table.tautology(False, True))
-           self.assertTrue(truth_table.tautology(False, False))
+    def test_tautology(self):
+      self.assertTrue(truth_table.tautology(True, True))
+      self.assertTrue(truth_table.tautology(True, False))
+      self.assertTrue(truth_table.tautology(False, True))
+      self.assertTrue(truth_table.tautology(False, False))
 
 the terminal shows an :doc:`AttributeError`
 
@@ -36,15 +36,15 @@ GREEN: make it pass
 * add a function definition to ``truth_table.py``
   .. code-block:: python
 
-       def tautology(p, q):
-           return False
-    the terminal updates to show an :doc:`AssertionError` for the first case
+    def tautology(p, q):
+      return False
+  the terminal updates to show an :doc:`AssertionError` for the first case
 * replace the return value
   .. code-block:: python
 
-       def tautology(p, q):
-           return True
-    all tests pass
+    def tautology(p, q):
+      return True
+  all tests pass
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -61,11 +61,11 @@ add a test for contradiction to ``TestBinaryOperations``
 
 .. code-block:: python
 
-       def test_contradiction(self):
-           self.assertFalse(truth_table.contradiction(True, True))
-           self.assertFalse(truth_table.contradiction(True, False))
-           self.assertFalse(truth_table.contradiction(False, True))
-           self.assertFalse(truth_table.contradiction(False, False))
+    def test_contradiction(self):
+      self.assertFalse(truth_table.contradiction(True, True))
+      self.assertFalse(truth_table.contradiction(True, False))
+      self.assertFalse(truth_table.contradiction(False, True))
+      self.assertFalse(truth_table.contradiction(False, False))
 
 the terminal shows an :doc:`AttributeError`
 
@@ -76,14 +76,14 @@ GREEN: make it pass
 * add a function definition to ``truth_table.py``
   .. code-block:: python
 
-       def contradiction(p, q):
-           return True
-    the terminal updates to show an :doc:`AssertionError` for the first case
+    def contradiction(p, q):
+      return True
+  the terminal updates to show an :doc:`AssertionError` for the first case
 * update the return value
   .. code-block:: python
 
-       def contradiction(p, q):
-           return False
+    def contradiction(p, q):
+      return False
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^

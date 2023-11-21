@@ -21,11 +21,11 @@ add a test for converse implication to ``TestBinaryOperations``
 
 .. code-block:: python
 
-       def test_converse_implication(self):
-           self.assertTrue(truth_table.converse_implication(True, True))
-           self.assertTrue(truth_table.converse_implication(True, False))
-           self.assertFalse(truth_table.converse_implication(False, True))
-           self.assertTrue(truth_table.converse_implication(False, False))
+    def test_converse_implication(self):
+      self.assertTrue(truth_table.converse_implication(True, True))
+      self.assertTrue(truth_table.converse_implication(True, False))
+      self.assertFalse(truth_table.converse_implication(False, True))
+      self.assertTrue(truth_table.converse_implication(False, False))
 
 the terminal shows an :doc:`AttributeError`
 
@@ -36,24 +36,24 @@ GREEN: make it pass
 * add a function definition to ``truth_table.py``
   .. code-block:: python
 
-       def converse_implication(p, q):
-           return False
-    the terminal updates to show an :doc:`AssertionError` for the first case
+    def converse_implication(p, q):
+      return False
+  the terminal updates to show an :doc:`AssertionError` for the first case
 * change the return value
   .. code-block:: python
 
-       def converse_implication(p, q):
-           return True
-    the terminal updates to show an :doc:`AssertionError` for the third case
+    def converse_implication(p, q):
+      return True
+  the terminal updates to show an :doc:`AssertionError` for the third case
 * add a condition for it
   .. code-block:: python
 
-       def converse_implication(p, q):
-           if p == False and q == True:
-               return False
-           else:
-               return True
-    all the tests pass
+    def converse_implication(p, q):
+      if p == False and q == True:
+       return False
+      else:
+       return True
+  all the tests pass
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -62,62 +62,62 @@ REFACTOR: make it better
 * use implied conditional testing
   .. code-block:: python
 
-       def converse_implication(p, q):
-           if not p and q:
-               return False
-           else:
-               return True
-    still passing
+    def converse_implication(p, q):
+      if not p and q:
+       return False
+      else:
+       return True
+  still passing
 * change ``else`` to the opposite of the ``if`` statement
   .. code-block:: python
 
-       def converse_implication(p, q):
-           if not p and q:
-               return False
-           if not(not p and q):
-               return True
+    def converse_implication(p, q):
+      if not p and q:
+       return False
+      if not(not p and q):
+       return True
 
 * "multiply" out the values in the second condition
   .. code-block:: python
 
-       def converse_implication(p, q):
-           if not p and q:
-               return False
-           if not not p not and not q:
-               return True
-    the terminal shows a ``SyntaxError``, fix the syntax
+    def converse_implication(p, q):
+      if not p and q:
+       return False
+      if not not p not and not q:
+       return True
+  the terminal shows a ``SyntaxError``, fix the syntax
   .. code-block:: python
 
-       def converse_implication(p, q):
-           if not p and q:
-               return False
-           if p or not q:
-               return True
+    def converse_implication(p, q):
+      if not p and q:
+       return False
+      if p or not q:
+       return True
 
 * reorder the statements
   .. code-block:: python
 
-       def converse_implication(p, q):
-           if p or not q:
-               return True
-           if not p and q:
-               return False
+    def converse_implication(p, q):
+      if p or not q:
+       return True
+      if not p and q:
+       return False
 
 * replace the second condition with ``else``
   .. code-block:: python
 
-       def converse_implication(p, q):
-           if p or not q:
-               return True
-           else:
-               return False
+    def converse_implication(p, q):
+      if p or not q:
+       return True
+      else:
+       return False
 
 * simplify it to one line
   .. code-block:: python
 
-       def converse_implication(p, q):
-           return p or not q
-    You win again! All tests pass
+    def converse_implication(p, q):
+      return p or not q
+  You win again! All tests pass
 
 Our knowledge has increased
 

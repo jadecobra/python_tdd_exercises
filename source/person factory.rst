@@ -22,22 +22,22 @@ create a file called ``test_person_factory.py`` in the ``tests`` folder and add 
 
 .. code-block:: python
 
-   import unittest
-   import person
+  import unittest
+  import person
 
 
-   class TestPersonFactory(unittest.TestCase):
+  class TestPersonFactory(unittest.TestCase):
 
-       def test_person_factory(self):
-           self.assertEqual(person.factory(), None)
+    def test_person_factory(self):
+      self.assertEqual(person.factory(), None)
 
 the terminal updates to show a ``ModuleNotFoundError`` and I add it to the list of exceptions encountered
 
 .. code-block:: python
 
-   # Exceptions Encountered
-   # AssertionError
-   # ModuleNotFoundError
+  # Exceptions Encountered
+  # AssertionError
+  # ModuleNotFoundError
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -47,17 +47,17 @@ GREEN: make it pass
 
   .. code-block:: python
 
-       # Exceptions Encountered
-       # AssertionError
-       # ModuleNotFoundError
-       # AttributeError
+    # Exceptions Encountered
+    # AssertionError
+    # ModuleNotFoundError
+    # AttributeError
 
 * create a function called ``factory`` in ``person.py`` and the terminal shows passing tests
 
   .. code-block:: python
 
-       def factory():
-           return None
+    def factory():
+      return None
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -67,21 +67,21 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-    def test_person_factory(self):
-        self.assertEqual(
-            person.factory(
-                first_name="sibling",
-                last_name="last_name",
-                year_of_birth=this_year(),
-                sex="F"
-            ),
-            {
-                "first_name": "sibling",
-                "last_name": "last_name",
-                "sex": "F",
-                "age": this_year() - this_year()
-            }
-        )
+  def test_person_factory(self):
+    self.assertEqual(
+      person.factory(
+        first_name="sibling",
+        last_name="last_name",
+        year_of_birth=this_year(),
+        sex="F"
+      ),
+      {
+        "first_name": "sibling",
+        "last_name": "last_name",
+        "sex": "F",
+        "age": this_year() - this_year()
+      }
+    )
 
   the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ is raised for ``this_year``
 
@@ -89,22 +89,22 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-     # Exceptions Encountered
-     # AssertionError
-     # ModuleNotFoundError
-     # AttributeError
-     # NameError
+   # Exceptions Encountered
+   # AssertionError
+   # ModuleNotFoundError
+   # AttributeError
+   # NameError
 
 * add a definition for ``this_year`` to the top of ``test_person_factory.py``
 
   .. code-block:: python
 
-       import unittest
-       import person
+    import unittest
+    import person
 
-       def this_year():
-           return None
-       ...
+    def this_year():
+      return None
+    ...
 
   the terminal updates to show a :doc:`TypeError` since the ``person.factory`` function signature does not allow arguments to be passed to it.
 
@@ -112,19 +112,19 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-    # Exceptions Encountered
-    # AssertionError
-    # ModuleNotFoundError
-    # AttributeError
-    # NameError
-    # TypeError
+  # Exceptions Encountered
+  # AssertionError
+  # ModuleNotFoundError
+  # AttributeError
+  # NameError
+  # TypeError
 
 * add a keyword argument for ``first_name`` to the ``factory`` function
 
   .. code-block:: python
 
-       def factory(first_name=None):
-           return None
+    def factory(first_name=None):
+      return None
 
   the terminal updates to show a :doc:`TypeError` for the next keyword argument
 
@@ -132,8 +132,8 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-     def factory(first_name=None, last_name=None):
-         return None
+   def factory(first_name=None, last_name=None):
+    return None
 
   the terminal updates to show a :doc:`TypeError` for the next keyword argument
 
@@ -142,12 +142,12 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-    import unittest
-    import person
-    import datetime
+  import unittest
+  import person
+  import datetime
 
-    def this_year():
-       return datetime.datetime.now().year
+  def this_year():
+    return datetime.datetime.now().year
 
 
   - I import the ``datetime`` library so I can use its :doc:`functions` and :doc:`classes`
@@ -158,8 +158,8 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-       def factory(first_name=None, last_name=None, year_of_birth=None, sex=None):
-           return {}
+    def factory(first_name=None, last_name=None, year_of_birth=None, sex=None):
+      return {}
 
   the terminal updates to show the differences between the :doc:`data structures: dictionaries` returned by the ``factory`` function and the one expected in the test
 
@@ -167,13 +167,13 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-       def factory(first_name=None, last_name=None, year_of_birth=None, sex=None):
-           return {
-               "age": 0,
-               "first_name": "sibling",
-               "last_name": "last_name",
-               "sex": "F",
-           }
+    def factory(first_name=None, last_name=None, year_of_birth=None, sex=None):
+      return {
+       "age": 0,
+       "first_name": "sibling",
+       "last_name": "last_name",
+       "sex": "F",
+      }
 
   *LOVELY!* the tests pass! Even though the tests pass, the factory function currently returns the exact same dictionary every time, regardless of what information is given to it. To make it more useful I need it to be able to use the inputs given.
 
@@ -181,21 +181,21 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-     def test_person_factory_takes_in_variable_inputs(self):
-         self.assertEqual(
-             person.factory(
-                 first_name="me",
-                 last_name="last_name",
-                 year_of_birth=1983,
-                 sex="M",
-             ),
-             {
-                 "first_name": "me",
-                 "last_name": "last_name",
-                 "sex": "M",
-                 "age": this_year() - 1983
-             }
-         )
+   def test_person_factory_takes_in_variable_inputs(self):
+    self.assertEqual(
+      person.factory(
+        first_name="me",
+        last_name="last_name",
+        year_of_birth=1983,
+        sex="M",
+      ),
+      {
+        "first_name": "me",
+        "last_name": "last_name",
+        "sex": "M",
+        "age": this_year() - 1983
+      }
+    )
 
   the terminal updates to show an :doc:`AssertionError` because the expected and returned dictionaries are different
 
@@ -203,13 +203,13 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-       def factory(first_name=None, last_name=None, year_of_birth=None, sex=None):
-           return {
-               'age': 0,
-               'first_name': first_name,
-               'last_name': 'last_name',
-               'sex': 'F',
-           }
+    def factory(first_name=None, last_name=None, year_of_birth=None, sex=None):
+      return {
+       'age': 0,
+       'first_name': first_name,
+       'last_name': 'last_name',
+       'sex': 'F',
+      }
 
   the terminal updates to show an :doc:`AssertionError` but it no longer shows a difference for ``first_name``. Good, What if I repeat it step by step for every other input until the only error left is for the age
 
@@ -217,13 +217,13 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-     def factory(first_name=None, last_name=None, year_of_birth=None, sex=None):
-         return {
-             'age': this_year() - year_of_birth,
-             'first_name': first_name,
-             'last_name': last_name,
-             'sex': sex,
-         }
+   def factory(first_name=None, last_name=None, year_of_birth=None, sex=None):
+    return {
+      'age': this_year() - year_of_birth,
+      'first_name': first_name,
+      'last_name': last_name,
+      'sex': sex,
+    }
 
   the terminal updates to show a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ since I am calling a function that does not exist in ``person.py``
 
@@ -231,15 +231,15 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-     import datetime
+   import datetime
 
-     def factory(first_name=None, last_name=None, year_of_birth=None, sex=None):
-         return {
-             'age': datetime.datetime.now().year - year_of_birth,
-             'first_name': first_name,
-             'last_name': last_name,
-             'sex': sex,
-         }
+   def factory(first_name=None, last_name=None, year_of_birth=None, sex=None):
+    return {
+      'age': datetime.datetime.now().year - year_of_birth,
+      'first_name': first_name,
+      'last_name': last_name,
+      'sex': sex,
+    }
 
   *HOORAY!* the terminal updates to show passing tests
 
@@ -247,20 +247,20 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-    def test_person_factory_with_default_keyword_arguments(self):
-       self.assertEqual(
-           person.factory(
-               first_name="child_a",
-               year_of_birth=2014,
-               sex="M",
-           ),
-           {
-               "first_name": "child_a",
-               "last_name": "last_name",
-               "sex": "M",
-               "age": this_year() - 2014
-           }
-       )
+  def test_person_factory_with_default_keyword_arguments(self):
+    self.assertEqual(
+      person.factory(
+       first_name="child_a",
+       year_of_birth=2014,
+       sex="M",
+      ),
+      {
+       "first_name": "child_a",
+       "last_name": "last_name",
+       "sex": "M",
+       "age": this_year() - 2014
+      }
+    )
 
   the terminal updates to show an :doc:`AssertionError` since the value for ``last_name`` does not match the expected value
 
@@ -268,7 +268,7 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-       def factory(first_name=None, last_name="last_name", year_of_birth=None, sex=None):
+    def factory(first_name=None, last_name="last_name", year_of_birth=None, sex=None):
 
   the terminal updates to show passing tests
 
@@ -276,18 +276,18 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-     self.assertEqual(
-         person.factory(
-             first_name="person",
-             year_of_birth=1900,
-         ),
-         {
-             "first_name": "person",
-             "last_name": "last_name",
-             "age": this_year() - 1900,
-             "sex": "M"
-         }
-     )
+   self.assertEqual(
+    person.factory(
+      first_name="person",
+      year_of_birth=1900,
+    ),
+    {
+      "first_name": "person",
+      "last_name": "last_name",
+      "age": this_year() - 1900,
+      "sex": "M"
+    }
+   )
 
   the terminal updates to show an :doc:`AssertionError`
 
@@ -295,6 +295,6 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-       def factory(first_name=None, last_name="last_name", year_of_birth=None, sex='M'):
+    def factory(first_name=None, last_name="last_name", year_of_birth=None, sex='M'):
 
   the terminal updates to show passing tests.

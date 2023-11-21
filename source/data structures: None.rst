@@ -24,13 +24,13 @@ create a file called ``test_data_structures.py`` in the ``tests`` folder
 
 .. code-block:: python
 
-   import unittest
+  import unittest
 
 
-   class TestDataStructures(unittest.TestCase):
+  class TestDataStructures(unittest.TestCase):
 
-       def test_none_is_none(self):
-           self.assertIsNotNone(None)
+    def test_none_is_none(self):
+      self.assertIsNotNone(None)
 
 the terminal gives us an :doc:`AssertionError`
 
@@ -41,7 +41,7 @@ change the ``assert`` statement in ``test_none_is_none`` to make it pass
 
 .. code-block:: python
 
-           self.assertIsNone(None)
+      self.assertIsNone(None)
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -58,9 +58,9 @@ add a new test to compare :doc:`None </data structures: None>` with booleans
 
 .. code-block:: python
 
-       def test_is_none_a_boolean(self):
-           self.assertIsNone(True)
-           self.assertIsNone(False)
+    def test_is_none_a_boolean(self):
+      self.assertIsNone(True)
+      self.assertIsNone(False)
 
 the terminal updates to show an :doc:`AssertionError`
 
@@ -71,9 +71,9 @@ update ``test_is_none_a_boolean`` to make the tests pass
 
 .. code-block:: python
 
-       def test_is_none_a_boolean(self):
-           self.assertIsNotNone(True)
-           self.assertIsNotNone(False)
+    def test_is_none_a_boolean(self):
+      self.assertIsNotNone(True)
+      self.assertIsNotNone(False)
 
 I now know that
 
@@ -91,32 +91,32 @@ booleans are represented by the keyword ``bool`` in python so I can do an instan
 *
   ### RED: make it fail
 
-    update ``test_is_none_a_boolean`` with ``self.assertIsInstance``
+  update ``test_is_none_a_boolean`` with ``self.assertIsInstance``
 
   .. code-block:: python
 
-           def test_is_none_a_boolean(self):
-               self.assertIsNotNone(True)
-               self.assertIsNotNone(False)
-               self.assertIsInstance(None, bool)
+      def test_is_none_a_boolean(self):
+       self.assertIsNotNone(True)
+       self.assertIsNotNone(False)
+       self.assertIsInstance(None, bool)
 
-    I now see an :doc:`AssertionError` in the terminal because :doc:`None </data structures: None>` is not an instance of a boolean
+  I now see an :doc:`AssertionError` in the terminal because :doc:`None </data structures: None>` is not an instance of a boolean
 
   .. code-block:: python
 
-       AssertionError: None is not an instance of <class 'bool'>
+    AssertionError: None is not an instance of <class 'bool'>
 
 *
   ### GREEN: make it pass
 
-    update ``test_is_none_a_boolean`` to make the test pass
+  update ``test_is_none_a_boolean`` to make the test pass
 
   .. code-block:: python
 
-           def test_is_none_a_boolean(self):
-               self.assertIsNotNone(True)
-               self.assertIsNotNone(False)
-               self.assertNotIsInstance(None, bool)
+      def test_is_none_a_boolean(self):
+       self.assertIsNotNone(True)
+       self.assertIsNotNone(False)
+       self.assertNotIsInstance(None, bool)
 
 * I can summarize what I know about :doc:`None </data structures: None>` so far as it is not a boolean and it is :doc:`None </data structures: None>`
 
@@ -135,10 +135,10 @@ add a new test to compare :doc:`None </data structures: None>` with ``int``
 
 .. code-block:: python
 
-       def test_is_none_an_integer(self):
-           self.assertIsNone(-1)
-           self.assertIsNone(0)
-           self.assertIsNone(1)
+    def test_is_none_an_integer(self):
+      self.assertIsNone(-1)
+      self.assertIsNone(0)
+      self.assertIsNone(1)
 
 the terminal updates to show an :doc:`AssertionError`
 
@@ -149,9 +149,9 @@ I update ``test_is_none_an_integer`` to make it pass
 
 .. code-block:: python
 
-           self.assertIsNotNone(-1)
-           self.assertIsNotNone(0)
-           self.assertIsNotNone(1)
+      self.assertIsNotNone(-1)
+      self.assertIsNotNone(0)
+      self.assertIsNotNone(1)
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -162,34 +162,34 @@ integers are represented by the keyword ``int`` in python so I can do an instanc
 *
   ### RED: make it fail
 
-    add a new line to ``test_is_none_an_integer`` with ``self.assertIsInstance``
+  add a new line to ``test_is_none_an_integer`` with ``self.assertIsInstance``
 
   .. code-block:: python
 
-           def test_is_none_an_integer(self):
-               self.assertIsNotNone(-1)
-               self.assertIsNotNone(0)
-               self.assertIsNotNone(1)
-               self.assertIsInstance(None, int)
+      def test_is_none_an_integer(self):
+       self.assertIsNotNone(-1)
+       self.assertIsNotNone(0)
+       self.assertIsNotNone(1)
+       self.assertIsInstance(None, int)
 
-    an :doc:`AssertionError` is displayed in the terminal because :doc:`None </data structures: None>` is not an instance of an integer
+  an :doc:`AssertionError` is displayed in the terminal because :doc:`None </data structures: None>` is not an instance of an integer
 
   .. code-block:: python
 
-       AssertionError: None is not an instance of <class 'int'>
+    AssertionError: None is not an instance of <class 'int'>
 
 *
   ### GREEN: make it pass
 
-    I update ``test_is_none_an_integer`` to make the test pass
+  I update ``test_is_none_an_integer`` to make the test pass
 
   .. code-block:: python
 
-           def test_is_none_an_integer(self):
-               self.assertIsNotNone(-1)
-               self.assertIsNotNone(0)
-               self.assertIsNotNone(1)
-               self.assertNotIsInstance(None, int)
+      def test_is_none_an_integer(self):
+       self.assertIsNotNone(-1)
+       self.assertIsNotNone(0)
+       self.assertIsNotNone(1)
+       self.assertNotIsInstance(None, int)
 
 * summarizing what I know about :doc:`None </data structures: None>` so far as
 
@@ -209,9 +209,9 @@ I add a new failing test to ``test_data_structures.py`` to compare :doc:`None </
 
 .. code-block:: python
 
-       def test_is_none_a_string(self):
-           self.assertIsNone('')
-           self.assertIsNone("text")
+    def test_is_none_a_string(self):
+      self.assertIsNone('')
+      self.assertIsNone("text")
 
 and the terminal gives us an :doc:`AssertionError`
 
@@ -222,9 +222,9 @@ update ``test_is_none_a_string`` to make it pass
 
 .. code-block:: python
 
-       def test_is_none_a_string(self):
-           self.assertIsNotNone('')
-           self.assertIsNotNone("text")
+    def test_is_none_a_string(self):
+      self.assertIsNotNone('')
+      self.assertIsNotNone("text")
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -235,25 +235,25 @@ REFACTOR: make it better
 *
   ### RED: make it fail
 
-    update ``test_is_none_a_string`` and the terminal updates to show a failing test
+  update ``test_is_none_a_string`` and the terminal updates to show a failing test
 
   .. code-block:: python
 
-           def test_is_none_a_string(self):
-               self.assertIsNotNone('')
-               self.assertIsNotNone("text")
-               self.assertIsInstance(None, str)
+      def test_is_none_a_string(self):
+       self.assertIsNotNone('')
+       self.assertIsNotNone("text")
+       self.assertIsInstance(None, str)
 
 *
   ### GREEN: make it pass
-    change the failing line in the test to make it pass
+  change the failing line in the test to make it pass
 
   .. code-block:: python
 
-           def test_is_none_a_string(self):
-               self.assertIsNotNone('')
-               self.assertIsNotNone("text")
-               self.assertNotIsInstance(None, str)
+      def test_is_none_a_string(self):
+       self.assertIsNotNone('')
+       self.assertIsNotNone("text")
+       self.assertNotIsInstance(None, str)
 
 * the knowledge of :doc:`None </data structures: None>` has grown to
 
@@ -272,16 +272,16 @@ add a new test to ``test_data_structures.py``
 
 .. code-block:: python
 
-       def test_is_none_a_tuple(self):
-           self.assertIsNone(())
-           self.assertIsNone((1, 2, 3, 'n'))
-           self.assertIsInstance(None, tuple)
+    def test_is_none_a_tuple(self):
+      self.assertIsNone(())
+      self.assertIsNone((1, 2, 3, 'n'))
+      self.assertIsInstance(None, tuple)
 
 the terminal updates to show an :doc:`AssertionError`
 
 .. code-block:: python
 
-   AssertionError: () is not None
+  AssertionError: () is not None
 
 
 * ``()`` is how `tuples <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_ are represented in python
@@ -294,31 +294,31 @@ GREEN: make it pass
 * modify the first line in\ ``test_is_none_a_tuple`` to make it pass
   .. code-block:: python
 
-           def test_is_none_a_tuple(self):
-               self.assertIsNotNone(())
-    and the terminal displays an :doc:`AssertionError` for the second line
+      def test_is_none_a_tuple(self):
+       self.assertIsNotNone(())
+  and the terminal displays an :doc:`AssertionError` for the second line
   .. code-block:: python
 
-       AssertionError: (1, 2, 3, 'n') is not None
-    because the ``tuple`` that contains the four elements ``1, 2, 3, 'n'`` is not :doc:`None </data structures: None>`
+    AssertionError: (1, 2, 3, 'n') is not None
+  because the ``tuple`` that contains the four elements ``1, 2, 3, 'n'`` is not :doc:`None </data structures: None>`
 * update the failing line in ``test_is_none_a_tuple``
   .. code-block:: python
 
-           def test_is_none_a_tuple(self):
-               self.assertIsNotNone(())
-               self.assertIsNotNone((1, 2, 3, 'n'))
-    the terminal now shows another :doc:`AssertionError` for the next line in the test but with a different message
+      def test_is_none_a_tuple(self):
+       self.assertIsNotNone(())
+       self.assertIsNotNone((1, 2, 3, 'n'))
+  the terminal now shows another :doc:`AssertionError` for the next line in the test but with a different message
   .. code-block:: python
 
-       AssertionError: None is not an instance of <class 'tuple'>
+    AssertionError: None is not an instance of <class 'tuple'>
 
 * change the failing line in the test to make it pass
   .. code-block:: python
 
-           def test_is_none_a_tuple(self):
-               self.assertIsNotNone(())
-               self.assertIsNotNone((1, 2, 3, 'n'))
-               self.assertNotIsInstance(None, tuple)
+      def test_is_none_a_tuple(self):
+       self.assertIsNotNone(())
+       self.assertIsNotNone((1, 2, 3, 'n'))
+       self.assertNotIsInstance(None, tuple)
 
 * I now know that in python
 
@@ -343,16 +343,16 @@ I add a new test to the series of tests
 
 .. code-block:: python
 
-       def test_is_none_a_list(self):
-           self.assertIsNone([])
-           self.assertIsNone([1, 2, 3, "n"])
-           self.assertIsInstance(None, list)
+    def test_is_none_a_list(self):
+      self.assertIsNone([])
+      self.assertIsNone([1, 2, 3, "n"])
+      self.assertIsInstance(None, list)
 
 the terminal shows an :doc:`AssertionError`
 
 .. code-block:: python
 
-   AssertionError: [] is not None
+  AssertionError: [] is not None
 
 
 * ``[]`` is how :doc:`lists` are represented in python
@@ -382,16 +382,16 @@ following the same pattern from earlier, I add a new failing test, this time for
 
 .. code-block:: python
 
-       def test_is_none_a_set(self):
-           self.assertIsNone({})
-           self.assertIsNone({1, 2, 3, "n"})
-           self.assertIsInstance(None, set)
+    def test_is_none_a_set(self):
+      self.assertIsNone({})
+      self.assertIsNone({1, 2, 3, "n"})
+      self.assertIsInstance(None, set)
 
 the terminal updates to show an :doc:`AssertionError`
 
 .. code-block:: python
 
-   AssertionError: {} is not None
+  AssertionError: {} is not None
 
 
 * ``{}`` is how ``sets`` are represented in python
@@ -421,21 +421,21 @@ add a new test
 
 .. code-block:: python
 
-       def test_is_none_a_dictionary(self):
-           self.assertIsNone(dict())
-           self.assertIsNone({
-               "a": 1,
-               "b": 2,
-               "c":  3,
-               "n": "n"
-           })
-           self.assertIsInstance(None, dict)
+    def test_is_none_a_dictionary(self):
+      self.assertIsNone(dict())
+      self.assertIsNone({
+       "a": 1,
+       "b": 2,
+       "c":  3,
+       "n": "n"
+      })
+      self.assertIsInstance(None, dict)
 
 the terminal displays an :doc:`AssertionError`
 
 .. code-block:: python
 
-   AssertionError: {} is not None
+  AssertionError: {} is not None
 
 
 * ``dict()`` is how I create an empty ``dictionary``

@@ -21,11 +21,11 @@ add a test for project first to ``TestBinaryOperations``
 
 .. code-block:: python
 
-       def test_project_first(self):
-           self.assertTrue(truth_table.project_first(True, True))
-           self.assertTrue(truth_table.project_first(True, False))
-           self.assertFalse(truth_table.project_first(False, True))
-           self.assertFalse(truth_table.project_first(False, False))
+    def test_project_first(self):
+      self.assertTrue(truth_table.project_first(True, True))
+      self.assertTrue(truth_table.project_first(True, False))
+      self.assertFalse(truth_table.project_first(False, True))
+      self.assertFalse(truth_table.project_first(False, False))
 
 the terminal shows an :doc:`AttributeError`
 
@@ -36,15 +36,15 @@ GREEN: make it pass
 * add a function definition to ``truth_table.py``
   .. code-block:: python
 
-       def project_first(p, q):
-           return False
-    the terminal updates to show an :doc:`AssertionError` foe the first case
+    def project_first(p, q):
+      return False
+  the terminal updates to show an :doc:`AssertionError` foe the first case
 * change the return statement
   .. code-block:: python
 
-       def project_first(p, q):
-           return True
-    the terminal updates to show an :doc:`AssertionError` for the third case
+    def project_first(p, q):
+      return True
+  the terminal updates to show an :doc:`AssertionError` for the third case
 * before I add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction``, ``negate_first`` and ``negate_second`` because 2 out of the 4 cases have the same return value. I observe that
 
   * if ``p == True`` the result is :doc:`True </data structures: booleans>`
@@ -53,12 +53,12 @@ GREEN: make it pass
 * add conditions to represent the observations
   .. code-block:: python
 
-       def project_first(p, q):
-           if p == True:
-               return True
-           if p == False:
-               return False
-    all the tests pass
+    def project_first(p, q):
+      if p == True:
+       return True
+      if p == False:
+       return False
+  all the tests pass
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -67,24 +67,24 @@ REFACTOR: make it better
 * use implied conditional testing
   .. code-block:: python
 
-       def project_first(p, q):
-           if p:
-               return True
-           if not p:
-               return False
+    def project_first(p, q):
+      if p:
+       return True
+      if not p:
+       return False
 
 * simplify
   .. code-block:: python
 
-       def project_first(p, q):
-           return True if p else False
+    def project_first(p, q):
+      return True if p else False
 
 * simplify further
   .. code-block:: python
 
-       def project_first(p, q):
-           return p
-    I am still green
+    def project_first(p, q):
+      return p
+  I am still green
 
 Project Second
 --------------
@@ -96,11 +96,11 @@ add a test for project second to ``TestBinaryOperations``
 
 .. code-block:: python
 
-       def test_project_second(self):
-           self.assertTrue(truth_table.project_second(True, True))
-           self.assertFalse(truth_table.project_second(True, False))
-           self.assertTrue(truth_table.project_second(False, True))
-           self.assertFalse(truth_table.project_second(False, False))
+    def test_project_second(self):
+      self.assertTrue(truth_table.project_second(True, True))
+      self.assertFalse(truth_table.project_second(True, False))
+      self.assertTrue(truth_table.project_second(False, True))
+      self.assertFalse(truth_table.project_second(False, False))
 
 the terminal shows an :doc:`AttributeError`
 
@@ -111,15 +111,15 @@ GREEN: make it pass
 * add a function definition to ``truth_table.py``
   .. code-block:: python
 
-       def project_second(p, q):
-           return False
-    the terminal updates to show an :doc:`AssertionError` for the first case
+    def project_second(p, q):
+      return False
+  the terminal updates to show an :doc:`AssertionError` for the first case
 * change the return value to make it pass
   .. code-block:: python
 
-       def project_second(p, q):
-           return True
-    the terminal updates to show an :doc:`AssertionError` for the second case
+    def project_second(p, q):
+      return True
+  the terminal updates to show an :doc:`AssertionError` for the second case
 * before I add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction``, ``negate_first``, ``negate_second`` and ``project_first`` because 2 out of the 4 cases have the same return value. I observe that
 
   * if ``q == True`` the result is :doc:`True </data structures: booleans>`
@@ -128,14 +128,14 @@ GREEN: make it pass
 * What if I try using the conclusion from ``project_first``
   .. code-block:: python
 
-       def project_second(p, q):
-           return p
-    the terminal still shows an :doc:`AssertionError`. What if I return ``q`` instead
+    def project_second(p, q):
+      return p
+  the terminal still shows an :doc:`AssertionError`. What if I return ``q`` instead
   .. code-block:: python
 
-       def project_second(p, q):
-           return q
-    All tests pass and it's a simple line
+    def project_second(p, q):
+      return q
+  All tests pass and it's a simple line
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^

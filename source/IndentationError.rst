@@ -28,25 +28,25 @@ RED: make it fail
 
   .. code-block:: python
 
-       'a'
-        'b'
+    'a'
+    'b'
 
-    the terminal updates to show
-
-  .. code-block:: python
-
-       E       'b'
-       E   IndentationError: unexpected indent
-
-    add ``IndentationError`` to the running list of Exceptions encountered
+  the terminal updates to show
 
   .. code-block:: python
 
-       # Exceptions Encountered
-       # AssertionError
-       # IndentationError
+    E    'b'
+    E  IndentationError: unexpected indent
 
-    python raises an ``IndentationError`` for line 2 because it was not expecting the indentation there. Indentation has meaning in python and in this case it does not meet the predefined rules for indentation
+  add ``IndentationError`` to the running list of Exceptions encountered
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AssertionError
+    # IndentationError
+
+  python raises an ``IndentationError`` for line 2 because it was not expecting the indentation there. Indentation has meaning in python and in this case it does not meet the predefined rules for indentation
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -55,9 +55,9 @@ GREEN: make it pass
 * update ``test_indentation_error.py`` by making the lines match up in spacing
   .. code-block:: python
 
-       'a'
-       'b'
-    the terminal updates to show passing tests
+    'a'
+    'b'
+  the terminal updates to show passing tests
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -66,17 +66,17 @@ add more indentation errors to ``test_indentation_error.py``
 
 .. code-block:: python
 
-   'a'
-   'b'
-       'c'
-               'd'
+  'a'
+  'b'
+    'c'
+       'd'
 
 The terminal updates to show
 
 .. code-block:: python
 
-   E       'c'
-   E   IndentationError: unexpected indent
+  E    'c'
+  E  IndentationError: unexpected indent
 
 fix the offending lines until all tests are green.
 
@@ -94,17 +94,17 @@ RED: make it fail
 
   .. code-block:: python
 
-       def function():
-       pass
+    def function():
+    pass
 
-           def function():
-           pass
+      def function():
+      pass
 
-        def function():
-           pass
+    def function():
+      pass
 
-         def function():
-           pass
+    def function():
+      pass
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -115,19 +115,19 @@ GREEN: make it pass
 
   .. code-block:: python
 
-       def function():
-           pass
+    def function():
+      pass
 
-       def function():
-           pass
+    def function():
+      pass
 
-       def function():
-           pass
+    def function():
+      pass
 
-       def function():
-           pass
+    def function():
+      pass
 
-    all the tests pass
+  all the tests pass
 
 Solve the IndentationError in Classes
 -------------------------------------
@@ -143,20 +143,20 @@ RED: make it fail
 
   .. code-block:: python
 
-       class Class():
-       pass
+    class Class():
+    pass
 
-       class Class():
-            pass
+    class Class():
+      pass
 
-           class Class():
-                   pass
+      class Class():
+         pass
 
-    the terminal shows an ``IndentationError`` and the offending line
+  the terminal shows an ``IndentationError`` and the offending line
 
   .. code-block:: python
 
-       E    IndentationError: expected an indented block after class definition on line 18
+    E  IndentationError: expected an indented block after class definition on line 18
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -167,14 +167,14 @@ GREEN: make it pass
 
   .. code-block:: python
 
-       class Class():
-           pass
+    class Class():
+      pass
 
-       class Class():
-           pass
+    class Class():
+      pass
 
-       class Class():
-           pass
+    class Class():
+      pass
 
 Solve the IndentationError in Classes with Methods
 --------------------------------------------------
@@ -188,23 +188,23 @@ RED: make it fail
 
   .. code-block:: python
 
-       class Class():
-            def method():
-           return
+    class Class():
+      def method():
+      return
 
-       class Class():
-            def method():
-                return
+    class Class():
+      def method():
+        return
 
-       class Class():
-        def method():
-            return
+    class Class():
+    def method():
+      return
 
-    the terminal displays an IndentationError and the line that caused the exception
+  the terminal displays an IndentationError and the line that caused the exception
 
   .. code-block:: python
 
-       E    IndentationError: expected an indented block after function definition on line 28
+    E  IndentationError: expected an indented block after function definition on line 28
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -215,17 +215,17 @@ GREEN: make it pass
 
   .. code-block:: python
 
-       class Class():
-           def method():
-               return
+    class Class():
+      def method():
+       return
 
-       class Class():
-           def method():
-               return
+    class Class():
+      def method():
+       return
 
-       class Class():
-           def method():
-               return
+    class Class():
+      def method():
+       return
 
 Solve the IndentationError in Classes with Attributes
 -----------------------------------------------------
@@ -237,15 +237,15 @@ RED: make it fail
 * update ``test_indentation_error.py``
   .. code-block:: python
 
-       class Class():
-        attribute = None
-         attribute = None
-              attribute = None
-          attribute = None
-    the terminal shows an IndentationError and the offending line
+    class Class():
+    attribute = None
+    attribute = None
+       attribute = None
+     attribute = None
+  the terminal shows an IndentationError and the offending line
   .. code-block:: python
 
-       E    IndentationError: unexpected indent
+    E  IndentationError: unexpected indent
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -254,11 +254,11 @@ GREEN: make it pass
 * update ``test_indentation_error.py`` to make the spacing/indentation match
   .. code-block:: python
 
-       class Class():
-           attribute = None
-           attribute = None
-           attribute = None
-           attribute = None
+    class Class():
+      attribute = None
+      attribute = None
+      attribute = None
+      attribute = None
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^

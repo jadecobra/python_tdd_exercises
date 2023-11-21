@@ -21,11 +21,11 @@ add a test for converse nonimplication to ``TestBinaryOperations``
 
 .. code-block:: python
 
-       def test_converse_non_implication(self):
-           self.assertFalse(truth_table.converse_non_implication(True, True))
-           self.assertFalse(truth_table.converse_non_implication(True, False))
-           self.assertTrue(truth_table.converse_non_implication(False, True))
-           self.assertFalse(truth_table.converse_non_implication(False, False))
+    def test_converse_non_implication(self):
+      self.assertFalse(truth_table.converse_non_implication(True, True))
+      self.assertFalse(truth_table.converse_non_implication(True, False))
+      self.assertTrue(truth_table.converse_non_implication(False, True))
+      self.assertFalse(truth_table.converse_non_implication(False, False))
 
 the terminal shows an :doc:`AttributeError`
 
@@ -36,17 +36,17 @@ GREEN: make it pass
 * add a function definition to ``truth_table.py``
   .. code-block:: python
 
-       def converse_non_implication(p, q):
-           return False
-    since the first two cases pass, the terminal updates to show an :doc:`AssertionError` for the third case
+    def converse_non_implication(p, q):
+      return False
+  since the first two cases pass, the terminal updates to show an :doc:`AssertionError` for the third case
 * add a condition for it
   .. code-block:: python
 
-       def converse_non_implication(p, q):
-           if p == False and q == True:
-               return True
-           return False
-    all the tests pass
+    def converse_non_implication(p, q):
+      if p == False and q == True:
+       return True
+      return False
+  all the tests pass
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -55,26 +55,26 @@ REFACTOR: make it better
 * use implied conditional testing
   .. code-block:: python
 
-       def converse_non_implication(p, q):
-           if not p and q  == True:
-               return True
-           else:
-               return False
-    tests pass
+    def converse_non_implication(p, q):
+      if not p and q  == True:
+       return True
+      else:
+       return False
+  tests pass
   .. code-block:: python
 
-       def converse_non_implication(p, q):
-           if not p and q:
-               return True
-           else:
-               return False
+    def converse_non_implication(p, q):
+      if not p and q:
+       return True
+      else:
+       return False
 
 * rewrite with a ``return`` statement
   .. code-block:: python
 
-       def converse_non_implication(p, q):
-           return not p and q
-    Another success! All tests pass
+    def converse_non_implication(p, q):
+      return not p and q
+  Another success! All tests pass
 
 Our knowledge has increased. I know that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>`
 

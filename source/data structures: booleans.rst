@@ -24,15 +24,15 @@ I create a failing test in ``test_data_structures.py`` called ``test_what_is_fal
 .. code-block:: python
 
   def test_what_is_false(self):
-      self.assertTrue(None)
-      self.assertTrue(False)
-      self.assertTrue(0)
-      self.assertTrue("")
-      self.assertTrue(())
-      self.assertTrue([])
-      self.assertTrue({})
-      self.assertTrue(dict())
-      self.assertNotIsInstance(False, bool)
+   self.assertTrue(None)
+   self.assertTrue(False)
+   self.assertTrue(0)
+   self.assertTrue("")
+   self.assertTrue(())
+   self.assertTrue([])
+   self.assertTrue({})
+   self.assertTrue(dict())
+   self.assertNotIsInstance(False, bool)
 
 the ``assertTrue`` method checks if a given input is ``True``, the terminal updates to show an :doc:`AssertionError` indicating that the given input is not ``True``
 
@@ -43,16 +43,16 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    def test_what_is_false(self):
-        self.assertFalse(None)
-        self.assertFalse(False)
-        self.assertFalse(0)
-        self.assertFalse("")
-        self.assertFalse(())
-        self.assertFalse([])
-        self.assertFalse({})
-        self.assertFalse(dict())
-        self.assertNotIsInstance(False, bool)
+  def test_what_is_false(self):
+    self.assertFalse(None)
+    self.assertFalse(False)
+    self.assertFalse(0)
+    self.assertFalse("")
+    self.assertFalse(())
+    self.assertFalse([])
+    self.assertFalse({})
+    self.assertFalse(dict())
+    self.assertNotIsInstance(False, bool)
 
   the ``assertNotIsInstance`` method checks that the first input given is not an instance of the :doc:`class <classes>` given as the second input in other words, it is asking the question ``if False not an instance of bool``
 
@@ -60,16 +60,16 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    def test_what_is_false(self):
-        self.assertFalse(None)
-        self.assertFalse(False)
-        self.assertFalse(0)
-        self.assertFalse("")
-        self.assertFalse(())
-        self.assertFalse([])
-        self.assertFalse({})
-        self.assertFalse(dict())
-        self.assertIsInstance(False, bool)
+  def test_what_is_false(self):
+    self.assertFalse(None)
+    self.assertFalse(False)
+    self.assertFalse(0)
+    self.assertFalse("")
+    self.assertFalse(())
+    self.assertFalse([])
+    self.assertFalse({})
+    self.assertFalse(dict())
+    self.assertIsInstance(False, bool)
 
 I can say that in python
 
@@ -98,20 +98,20 @@ What if I try a similar series of failing tests for ``True`` by adding the follo
 .. code-block:: python
 
   def test_what_is_true(self):
-      self.assertFalse(True)
-      self.assertFalse(1)
-      self.assertFalse(-1)
-      self.assertFalse("text")
-      self.assertFalse((1, 2, 3, "n"))
-      self.assertFalse([1, 2, 3, 'n'])
-      self.assertFalse({1, 2, 3, "n"})
-      self.assertFalse({
-          "a": 1,
-          "b": 2,
-          "c":  3,
-          "n": "n"
-      })
-      self.assertNotIsInstance(True, bool)
+   self.assertFalse(True)
+   self.assertFalse(1)
+   self.assertFalse(-1)
+   self.assertFalse("text")
+   self.assertFalse((1, 2, 3, "n"))
+   self.assertFalse([1, 2, 3, 'n'])
+   self.assertFalse({1, 2, 3, "n"})
+   self.assertFalse({
+     "a": 1,
+     "b": 2,
+     "c":  3,
+     "n": "n"
+   })
+   self.assertNotIsInstance(True, bool)
 
 the terminal updates to show an :doc:`AssertionError`
 
@@ -123,41 +123,41 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    def test_what_is_true(self):
-        self.assertTrue(True)
-        self.assertTrue(1)
-        self.assertTrue(-1)
-        self.assertTrue("text")
-        self.assertTrue((1, 2, 3, "n"))
-        self.assertTrue([1, 2, 3, 'n'])
-        self.assertTrue({1, 2, 3, "n"})
-        self.assertTrue({
-            "a": 1,
-            "b": 2,
-            "c":  3,
-            "n": "n"
-        })
-        self.assertNotIsInstance(True, bool)
+  def test_what_is_true(self):
+    self.assertTrue(True)
+    self.assertTrue(1)
+    self.assertTrue(-1)
+    self.assertTrue("text")
+    self.assertTrue((1, 2, 3, "n"))
+    self.assertTrue([1, 2, 3, 'n'])
+    self.assertTrue({1, 2, 3, "n"})
+    self.assertTrue({
+      "a": 1,
+      "b": 2,
+      "c":  3,
+      "n": "n"
+    })
+    self.assertNotIsInstance(True, bool)
 
 * I update ``self.assertNotIsInstance`` to ``self.assertIsInstance`` and all the tests pass, confirming that ``True`` is an instance of the ``boolean`` object
 
   .. code-block:: python
 
-    def test_what_is_true(self):
-        self.assertTrue(True)
-        self.assertTrue(1)
-        self.assertTrue(-1)
-        self.assertTrue("text")
-        self.assertTrue((1, 2, 3, "n"))
-        self.assertTrue([1, 2, 3, 'n'])
-        self.assertTrue({1, 2, 3, "n"})
-        self.assertTrue({
-            "a": 1,
-            "b": 2,
-            "c":  3,
-            "n": "n"
-        })
-        self.assertIsInstance(True, bool)
+  def test_what_is_true(self):
+    self.assertTrue(True)
+    self.assertTrue(1)
+    self.assertTrue(-1)
+    self.assertTrue("text")
+    self.assertTrue((1, 2, 3, "n"))
+    self.assertTrue([1, 2, 3, 'n'])
+    self.assertTrue({1, 2, 3, "n"})
+    self.assertTrue({
+      "a": 1,
+      "b": 2,
+      "c":  3,
+      "n": "n"
+    })
+    self.assertIsInstance(True, bool)
 
 * I can sum up my current knowledge of python as
 

@@ -1,15 +1,16 @@
 Truth Table
 ===========
 
-Sometimes I want programs to make decisions based on inputs or conditions, and can make this happen with conditional statements. Let us explore writing conditional statements in python with Test Driven Development using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_ from mathematics
+Sometimes I want programs to make decisions based on inputs or conditions, and can make this happen with conditional statements.
+
+I am going to explore writing conditional statements in python with Test Driven Development using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_ from mathematics
 
 There are two boolean values
-
 
 * :doc:`True </data structures: booleans>`
 * :doc:`False </data structures: booleans>`
 
-The Truth Table gives the 16 outcomes of binary operations
+The Truth Table gives the 16 outcomes of binary operations on these two values
 
 Prerequisites
 -------------
@@ -27,9 +28,30 @@ Nullary operations do not take in inputs and always return the same value. They 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-create a file called ``test_truth_table.py`` in the ``tests`` folder and add the text below
+I create a file called ``test_truth_table.py`` in the ``tests`` folder and add the text below
 
 .. code-block:: python
+
+  import unittest
+  import truth_table
+
+the terminal updates to show a :doc:`ModuleNotFoundError`
+
+GREEN: make it pass
+^^^^^^^^^^^^^^^^^^^
+
+* I add :doc:`ModuleNotFoundError` to the list of exceptions encountered
+
+  .. code-block:: python
+
+   # Exceptions Encountered
+   # AssertionError
+   # ModuleNotFoundError
+
+* I then create a file called ``truth_table.py`` in the project folder and the test passes
+* I update the code in ``test_truth_table.py`` to include a failing test
+
+  .. code-block:: python
 
    import unittest
    import truth_table
@@ -37,36 +59,26 @@ create a file called ``test_truth_table.py`` in the ``tests`` folder and add the
 
    class TestNullaryOperations(unittest.TestCase):
 
-       def test_logical_true(self):
-           self.assertTrue(truth_table.logical_true())
+    def test_logical_true(self):
+      self.assertTrue(truth_table.logical_true())
 
-the terminal updates to show a :doc:`ModuleNotFoundError`
+  and the terminal displays an :doc:`AttributeError` which I add to the list of exceptions encountered
 
-GREEN: make it pass
-^^^^^^^^^^^^^^^^^^^
-
-
-* add :doc:`ModuleNotFoundError` to the list of exceptions encountered
   .. code-block:: python
 
-     # Exceptions Encountered
-     # AssertionError
-     # ModuleNotFoundError
+   # Exceptions Encountered
+   # AssertionError
+   # ModuleNotFoundError
+   # AttributeError
 
-* create a file called ``truth_table.py`` in the project folder and the terminal displays an :doc:`AttributeError` which I add to the list of exceptions encountered
+* I add a singleton function called ``logical_true`` to ``truth_table.py``
+
   .. code-block:: python
 
-     # Exceptions Encountered
-     # AssertionError
-     # ModuleNotFoundError
-     # AttributeError
+   def logical_true():
+    return True
 
-* add a singleton function called ``logical_true`` to ``truth_table.py``
-  .. code-block:: python
-
-     def logical_true():
-         return True
-  the terminal updates to show passing tests and I am reminded that :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`
+  and the terminal updates to show passing tests and I am reminded that :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -75,20 +87,24 @@ REFACTOR: make it better
 * add a test for ``logical_false`` to teh ``TestNullaryOperations`` class in ``test_truth_table.py``
   .. code-block:: python
 
-       def test_logical_false(self):
-           self.assertFalse(truth_table.logical_false())
+    def test_logical_false(self):
+      self.assertFalse(truth_table.logical_false())
+
   the terminal gives another :doc:`AttributeError` since there is no definition for ``logical_false`` in ``truth_table.py``
 * add a function definition for ``logical_false`` to ``truth_table.py``
+
   .. code-block:: python
 
-     def logical_false():
-         return True
+    def logical_false():
+      return True
+
   and the terminal shows an :doc:`AssertionError` since the ``logical_false`` function currently returns a different value from what is expected
 * update the return value to :doc:`False </data structures: booleans>` and the terminal shows passing tests
+
   .. code-block:: python
 
-     def logical_false():
-         return False
+    def logical_false():
+      return False
 
 * I am again reminded that :doc:`False </data structures: booleans>` is :doc:`False </data structures: booleans>` and :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`
 
@@ -117,11 +133,11 @@ Add a new ``TestCase`` to ``test_truth_table.py``
 
 
 
-   class TestUnaryOperations(unittest.TestCase):
+  class TestUnaryOperations(unittest.TestCase):
 
-       def test_logical_identity(self):
-           self.assertTrue(truth_table.logical_identity(True))
-           self.assertFalse(truth_table.logical_identity(False))
+    def test_logical_identity(self):
+      self.assertTrue(truth_table.logical_identity(True))
+      self.assertFalse(truth_table.logical_identity(False))
 
 the terminal updates to show an :doc:`AttributeError` because there is no definition for ``logical_identity`` in ``truth_table.py``
 
@@ -132,8 +148,8 @@ add a function definition for ``logical_identity`` to ``truth_table.py``
 
 .. code-block:: python
 
-   def logical_identity(value):
-       return value
+  def logical_identity(value):
+    return value
 
 the terminal updates to show passing tests
 
@@ -149,9 +165,9 @@ add a test for ``logical_negation`` to ``test_truth_table.py``
 
 .. code-block:: python
 
-       def test_logical_negation(self):
-           self.assertFalse(truth_table.logical_negation(True))
-           self.assertTrue(truth_table.logical_negation(False))
+    def test_logical_negation(self):
+      self.assertFalse(truth_table.logical_negation(True))
+      self.assertTrue(truth_table.logical_negation(False))
 
 the terminal updates to show an :doc:`AttributeError`\ , there is no definition for ``logical_negation`` in ``truth_table.py``
 
@@ -160,16 +176,20 @@ GREEN: make it pass
 
 
 * update ``truth_table.py`` with a definition for ``logical_negation`` using the solution I had for ``logical_identity``
+
   .. code-block:: python
 
-     def logical_negation(value):
-         return value
+    def logical_negation(value):
+      return value
+
   the terminal updates to show an :doc:`AssertionError`. The ``logical_negation`` function returns the value it receives as input but the test expects it to return the opposite
 * I use the ``not`` keyword to make the function return the opposite of what it receives. Update the return statement in ``logical_negation`` to return the opposite of the value it receives
+
   .. code-block:: python
 
-     def logical_negation(value):
-       return not value
+    def logical_negation(value):
+      return not value
+
   the terminal updates to show passing tests
 
 Reviewing what I know so far

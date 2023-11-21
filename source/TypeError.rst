@@ -31,58 +31,58 @@ RED: make it fail
 * Open a new file in the editor and save it as ``tests/test_type_error.py`` in the ``tests`` folder you created in :doc:`How to Setup a Test Driven Development Environment` and type the following in the file
 
 
-   .. code-block:: python
-      import unittest
-      import functions
+  .. code-block:: python
+   import unittest
+   import functions
 
 
-      class TestTypeErrors(unittest.TestCase):
+   class TestTypeErrors(unittest.TestCase):
 
-         def test_function_signatures_solve_type_errors(self):
-            self.assertIsNone(functions.function_a("a"))
+    def test_function_signatures_solve_type_errors(self):
+      self.assertIsNone(functions.function_a("a"))
 
-   the terminal updates to show
+  the terminal updates to show
 
-   .. code-block:: python
-         import functions
-      E   ModuleNotFoundError: No module called 'functions'
+  .. code-block:: python
+    import functions
+   E  ModuleNotFoundError: No module called 'functions'
 
 
 * Ah, a ``ModuleNotFoundError``, I have a lot of practice solving this error from :doc:`ModuleNotFoundError`. What if I create a file called ``functions.py`` and the terminal updates to show
 
   .. code-block:: python
 
-       >       self.assertIsNone(functions.function_a("a"))
-       E       AttributeError: module 'functions' has no attribute 'function_a'
+    >    self.assertIsNone(functions.function_a("a"))
+    E    AttributeError: module 'functions' has no attribute 'function_a'
 
 * I also have some practice with :doc:`AttributeError` from :doc:`AttributeError`. Add this line ``functions.py``
 
   .. code-block:: python
 
-       function_a = None
+    function_a = None
 
-   the terminal updates to show
+  the terminal updates to show
 
   .. code-block:: python
 
-      >       self.assertIsNone(functions.function_a("a"))
-      E       TypeError: 'NoneType' object is not callable
+   >    self.assertIsNone(functions.function_a("a"))
+   E    TypeError: 'NoneType' object is not callable
 
-   A reminder of the first encounter with ``TypeError`` from `How to solve the AttributeError by defining a Function <./AttributeError.rst>`_
+  A reminder of the first encounter with ``TypeError`` from `How to solve the AttributeError by defining a Function <./AttributeError.rst>`_
 
 * I solve this ``TypeError`` by definining a ``callable``, in this case a function. Update ``functions.py``
 
   .. code-block:: python
 
-       def function_a():
-           return None
+    def function_a():
+      return None
 
-   the terminal updates to show
+  the terminal updates to show
 
   .. code-block:: python
 
-       >       self.assertIsNone(functions.function_a("a"))
-       E       TypeError: function_a() takes 0 positional arguments but 1 was given
+    >    self.assertIsNone(functions.function_a("a"))
+    E    TypeError: function_a() takes 0 positional arguments but 1 was given
 
   Another ``TypeError`` but with a message I have not seen before. Reading the error from the bottom up
 
@@ -90,14 +90,14 @@ RED: make it fail
   * ``self.assertIsNone(functions.function_a("a"))`` the offending line. in this line I am checking if this call ``functions.function_a("a")`` is equal to :doc:`None </data structures: None>`
   * ``functions.function_a("a")`` is the call. I can think of it like an address
 
-    - ``functions`` refers to ``functions.py`` which is a python module
-    - ``function_a`` refers to ``function_a`` defined in ``functions.py``
-    - ``()`` is how a function is called after it is defined
-    - ``"a"`` is the data/parameter/argument/value that is passed into ``function_a``
-      Imagine you have a telephone, it has a call function but to make a call you must provide a number then hit dial.
-    - ``call`` is like ``function_a``
-    - the number you provide is like ``"a"`` and hitting dial is like ``()``
-      I will practice this some more in :doc:`TDD_FUNCTIONS`
+  - ``functions`` refers to ``functions.py`` which is a python module
+  - ``function_a`` refers to ``function_a`` defined in ``functions.py``
+  - ``()`` is how a function is called after it is defined
+  - ``"a"`` is the data/parameter/argument/value that is passed into ``function_a``
+   Imagine you have a telephone, it has a call function but to make a call you must provide a number then hit dial.
+  - ``call`` is like ``function_a``
+  - the number you provide is like ``"a"`` and hitting dial is like ``()``
+   I will practice this some more in :doc:`TDD_FUNCTIONS`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -106,8 +106,8 @@ Update ``function_a`` in ``functions.py``
 
 .. code-block:: python
 
-   def function_a(data):
-       return None
+  def function_a(data):
+    return None
 
 the terminal updates to show passing tests
 
@@ -120,65 +120,65 @@ There's not much to do here but add more tests for practice.
 * add a new test to ``test_function_signatures_solve_type_errors`` in ``test_type_error.py``
   .. code-block:: python
 
-       self.assertIsNone(functions.function_b("a", "b"))
+    self.assertIsNone(functions.function_b("a", "b"))
 
   the terminal updates to show
 
   .. code-block:: python
 
-      AttributeError: module 'functions' has no attribute 'function_b'
+   AttributeError: module 'functions' has no attribute 'function_b'
 
  update ``functions.py``
 
   .. code-block:: python
 
-      function_b = None
+   function_b = None
 
-   the terminal updates to show
-
-  .. code-block:: python
-
-      TypeError: 'NoneType' object is not callable
-
-   change ``function_b`` to a function, update ``function.py``
+  the terminal updates to show
 
   .. code-block:: python
 
-      def function_b():
-         return None
+   TypeError: 'NoneType' object is not callable
 
-   the terminal updates to show
+  change ``function_b`` to a function, update ``function.py``
 
   .. code-block:: python
 
-      >       self.assertIsNone(functions.function_b("a", "b"))
-      E       TypeError: function_b() takes 0 positional arguments but 2 were given
+   def function_b():
+    return None
 
-   the offending line ``functions.function_b("a", "b")`` called ``function_b`` with 2 parameters but the definition has the function taking no parameters.
+  the terminal updates to show
+
+  .. code-block:: python
+
+   >    self.assertIsNone(functions.function_b("a", "b"))
+   E    TypeError: function_b() takes 0 positional arguments but 2 were given
+
+  the offending line ``functions.function_b("a", "b")`` called ``function_b`` with 2 parameters but the definition has the function taking no parameters.
 
 * update ``function_b`` in ``functions.py``
 
   .. code-block:: python
 
-      def function_b(positional_argument_1):
-         return None
+   def function_b(positional_argument_1):
+    return None
 
-   the terminal updates to show
-
-  .. code-block:: python
-
-      TypeError: function_b() takes 1 positional argument but 2 were given
-
-   ah, the previous definition only allowed for 0 positional arguments, now it allows for 1 positional argument but I am still calling with 2 positional arguments.
-
-   update ``function_b`` in ``functions.py`` to take in 2 positional arguments
+  the terminal updates to show
 
   .. code-block:: python
 
-      def function_b(positional_argument_1, positional_argument_2):
-         return None
+   TypeError: function_b() takes 1 positional argument but 2 were given
 
-   the terminal updates to show all tests pass.
+  ah, the previous definition only allowed for 0 positional arguments, now it allows for 1 positional argument but I am still calling with 2 positional arguments.
+
+  update ``function_b`` in ``functions.py`` to take in 2 positional arguments
+
+  .. code-block:: python
+
+   def function_b(positional_argument_1, positional_argument_2):
+    return None
+
+  the terminal updates to show all tests pass.
 
 .. EXTRA::
 
@@ -195,13 +195,13 @@ update ``TestTypeErrors`` in ``test_type_error.py`` to add more tests
 
 .. code-block:: python
 
-   self.assertIsNone(functions.function_c("a", "b", "c"))
+  self.assertIsNone(functions.function_c("a", "b", "c"))
 
 the terminal updates to show
 
 .. code-block:: python
 
-   AttributeError: module 'functions' has no attribute 'function_c'
+  AttributeError: module 'functions' has no attribute 'function_c'
 
 GREEN: make it pass
 ~~~~~~~~~~~~~~~~~~~
@@ -210,59 +210,59 @@ update ``functions.py``
 
 .. code-block:: python
 
-   function_c = None
+  function_c = None
 
 the terminal updates to show
 
 .. code-block:: python
 
-   TypeError: 'NoneType' object is not callable
+  TypeError: 'NoneType' object is not callable
 
 update ``functions.py`` to make ``function_c`` a function
 
 .. code-block:: python
 
-   def function_c():
-       return None
+  def function_c():
+    return None
 
 the terminal updates to show
 
 .. code-block:: python
 
-   TypeError: function_c() takes 0 positional arguments but 3 were given
+  TypeError: function_c() takes 0 positional arguments but 3 were given
 
 update ``function_c`` in ``functions.py`` to take in an argument
 
 .. code-block:: python
 
-   def function_c(arg1):
-       return None
+  def function_c(arg1):
+    return None
 
 the terminal updates to show
 
 .. code-block:: python
 
-   TypeError: function_c() takes 1 positional argument but 3 were given
+  TypeError: function_c() takes 1 positional argument but 3 were given
 
 update ``function_c`` in ``functions.py`` to take in another argument
 
 .. code-block:: python
 
-   def function_c(arg1, arg2):
-       return None
+  def function_c(arg1, arg2):
+    return None
 
 the terminal updates to show
 
 .. code-block:: python
 
-   TypeError: function_c() takes 2 positional arguments but 3 were given
+  TypeError: function_c() takes 2 positional arguments but 3 were given
 
 update ``function_c`` in ``functions.py`` to take in one more argument
 
 .. code-block:: python
 
-   def function_c(arg1, arg2, arg3):
-       return None
+  def function_c(arg1, arg2, arg3):
+    return None
 
 and the terminal updates to show all tests pass
 
@@ -275,58 +275,58 @@ update ``TestTypeErrors`` in ``test_type_error.py``
 
 .. code-block:: python
 
-   self.assertIsNone(functions.function_d("a", "b", "c", "d"))
+  self.assertIsNone(functions.function_d("a", "b", "c", "d"))
 
 the terminal updates to show
 
 .. code-block:: python
 
-   AttributeError: module 'functions' has no attribute 'function_d'
+  AttributeError: module 'functions' has no attribute 'function_d'
 
 update ``functions.py``
 
 .. code-block:: python
 
-   function_d = None
+  function_d = None
 
 the terminal updates to show
 
 .. code-block:: python
 
-   TypeError: 'NoneType' object is not callable
+  TypeError: 'NoneType' object is not callable
 
 update ``function_d`` in ``functions.py``
 
 .. code-block:: python
 
-   def function_d():
-       return None
+  def function_d():
+    return None
 
 the terminal updates to show
 
 .. code-block::
 
-   TypeError: function_d() takes 0 positional arguments but 4 were given
+  TypeError: function_d() takes 0 positional arguments but 4 were given
 
 What if I try the solution for the previous test. update the signature of ``function_d`` in ``functions.py``
 
 .. code-block:: python
 
-   def function_d(arg1, arg2, arg3):
-       return None
+  def function_d(arg1, arg2, arg3):
+    return None
 
 the terminal updates to show
 
 .. code-block:: python
 
-   TypeError: function_d() takes 3 positional arguments but 4 were given
+  TypeError: function_d() takes 3 positional arguments but 4 were given
 
 update ``function_d`` in ``functions.py`` to take 4 arguments
 
 .. code-block:: python
 
-   def function_d(arg1, arg2, arg3, arg4):
-       return None
+  def function_d(arg1, arg2, arg3, arg4):
+    return None
 
 the terminal updates to show all tests pass...but wait! there's more. I can make this better. There's another solution to the above test. What if I can define a function that takes in any number of parameters, is there a signature that allows a function to take 1 argument, 4 arguments, or any number of arguments?
 
@@ -336,8 +336,8 @@ update ``function_d`` in ``functions.py`` with ``*args``
 
 .. code-block:: python
 
-   def function_d(*args):
-       return None
+  def function_d(*args):
+    return None
 
 the terminal shows all tests as still passing. FANTASTIC!!
 
