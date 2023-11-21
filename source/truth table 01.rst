@@ -53,8 +53,9 @@ GREEN: make it pass
 
    class TestNullaryOperations(unittest.TestCase):
 
-    def test_logical_true(self):
-      self.assertTrue(truth_table.logical_true())
+
+      def test_logical_true(self):
+          self.assertTrue(truth_table.logical_true())
 
   and the terminal displays an :doc:`AttributeError` which I add to the list of exceptions encountered
 
@@ -69,8 +70,8 @@ GREEN: make it pass
 
   .. code-block:: python
 
-   def logical_true():
-    return True
+    def logical_true():
+        return True
 
   and the terminal updates to show passing tests and I am reminded that :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`
 
@@ -78,14 +79,15 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* add a test for ``logical_false`` to teh ``TestNullaryOperations`` class in ``test_truth_table.py``
+* I add a test for ``logical_false`` to the ``TestNullaryOperations`` class in ``test_truth_table.py``
+
   .. code-block:: python
 
     def test_logical_false(self):
-      self.assertFalse(truth_table.logical_false())
+        self.assertFalse(truth_table.logical_false())
 
   the terminal gives another :doc:`AttributeError` since there is no definition for ``logical_false`` in ``truth_table.py``
-* add a function definition for ``logical_false`` to ``truth_table.py``
+* I add a function definition for ``logical_false`` to ``truth_table.py``
 
   .. code-block:: python
 
@@ -93,7 +95,7 @@ REFACTOR: make it better
       return True
 
   and the terminal shows an :doc:`AssertionError` since the ``logical_false`` function currently returns a different value from what is expected
-* update the return value to :doc:`False </data structures: booleans>` and the terminal shows passing tests
+* When I update the return value to :doc:`False </data structures: booleans>`, the terminal shows passing tests
 
   .. code-block:: python
 
@@ -116,12 +118,12 @@ There are two unary operations
 Logical Identity
 ^^^^^^^^^^^^^^^^
 
-A Logical Identity operation takes input and returns it as output, it is a passthrough :doc:`functions`
+A Logical Identity operation takes input and returns it as output, it is a passthrough :doc:`function <functions>`
 
 RED: make it fail
 ~~~~~~~~~~~~~~~~~
 
-Add a new ``TestCase`` to ``test_truth_table.py``
+I update ``test_truth_table.py`` with a new ``TestCase``
 
 .. code-block:: python
 
@@ -133,17 +135,17 @@ Add a new ``TestCase`` to ``test_truth_table.py``
       self.assertTrue(truth_table.logical_identity(True))
       self.assertFalse(truth_table.logical_identity(False))
 
-the terminal updates to show an :doc:`AttributeError` because there is no definition for ``logical_identity`` in ``truth_table.py``
+and the terminal shows an :doc:`AttributeError` because there is no definition for ``logical_identity`` in ``truth_table.py``
 
 GREEN: make it pass
 ~~~~~~~~~~~~~~~~~~~
 
-add a function definition for ``logical_identity`` to ``truth_table.py``
+I add a function definition for ``logical_identity`` to ``truth_table.py``
 
 .. code-block:: python
 
   def logical_identity(value):
-    return value
+      return value
 
 the terminal updates to show passing tests
 
@@ -155,29 +157,31 @@ A Logical Negation operation takes input and returns its opposite as output
 RED: make it fail
 ~~~~~~~~~~~~~~~~~
 
-add a test for ``logical_negation`` to ``test_truth_table.py``
+I add a test for ``logical_negation`` to ``test_truth_table.py``
 
 .. code-block:: python
 
     def test_logical_negation(self):
-      self.assertFalse(truth_table.logical_negation(True))
-      self.assertTrue(truth_table.logical_negation(False))
+        self.assertFalse(truth_table.logical_negation(True))
+        self.assertTrue(truth_table.logical_negation(False))
 
-the terminal updates to show an :doc:`AttributeError`\ , there is no definition for ``logical_negation`` in ``truth_table.py``
+the terminal updates to show an :doc:`AttributeError`\, there is no definition for ``logical_negation`` in ``truth_table.py``
 
 GREEN: make it pass
 ~~~~~~~~~~~~~~~~~~~
 
 
-* update ``truth_table.py`` with a definition for ``logical_negation`` using the solution I had for ``logical_identity``
+* I add a definition for ``logical_negation``  to ``truth_table.py`` using the solution I had for ``logical_identity``
 
   .. code-block:: python
 
     def logical_negation(value):
-      return value
+        return value
 
-  the terminal updates to show an :doc:`AssertionError`. The ``logical_negation`` function returns the value it receives as input but the test expects it to return the opposite
-* I use the ``not`` keyword to make the function return the opposite of what it receives. Update the return statement in ``logical_negation`` to return the opposite of the value it receives
+  the terminal updates to show an :doc:`AssertionError`.
+
+  The ``logical_negation`` function returns the value it receives as input but the test expects it to return the opposite
+* The ``not`` keyword can be used to make the function return the opposite of what it receives. I update the return statement in ``logical_negation`` to return the opposite of the value it receives
 
   .. code-block:: python
 
@@ -194,4 +198,4 @@ Reviewing what I know so far
 * :doc:`False </data structures: booleans>` is :doc:`False </data structures: booleans>`
 * :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`
 
-I have not written any conditional statements yet, only boolean values and their opposites. I will write some in `Logical Conjunction <./TRUTH_TABLE_02_LOGICAL_CONJUNCTION.rst>`_ next
+on to :doc:`/truth table 02: logical conjunction`
