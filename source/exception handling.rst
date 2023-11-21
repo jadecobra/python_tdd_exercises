@@ -12,13 +12,7 @@ It also a pain when it causes the program to exit prematurely. What if I want th
 Enter Exception Handling, In python there is a way to handling exceptions that allows a program to make a decision when an Exception is encountered. Enough words, time to write some code.
 
 
-Prerequisites
--------------
 
-
-:doc:`How to Setup a Test Driven Development Environment`
-
-----
 
 
 How to test that an Exception is raised

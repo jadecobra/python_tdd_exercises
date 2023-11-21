@@ -7,13 +7,7 @@ The ``ModuleNotFoundError`` is raised when you try to import a module that does 
 A Python Module is a file that ends in ``.py`` or a directory that contains an ``__init__.py``.
 Programming allows us to gain from the previous efforts as well as the efforts of others in the form of packages and modules that can be distributed for other people to use. To use these packages in python I have to import them.
 
-Prerequisites
--------------
 
-
-:doc:`How to Setup a Test Driven Development Environment`
-
-----
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^

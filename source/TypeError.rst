@@ -4,13 +4,7 @@ TypeError
 
 I will step through solving a ``TypeError`` in python using Test Driven Development
 
-Prerequisites
--------------
 
-
-:doc:`How to Setup a Test Driven Development Environment`
-
-----
 
 TypeError
 ---------

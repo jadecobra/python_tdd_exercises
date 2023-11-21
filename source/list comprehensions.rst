@@ -4,13 +4,7 @@ List Comprehensions
 
 I will cover ``list comprehensions`` in python using Test Driven Development
 
-Prerequisites
--------------
 
-
-:doc:`How to Setup a Test Driven Development Environment`
-
-----
 
 Creating a List with an Iterable
 --------------------------------

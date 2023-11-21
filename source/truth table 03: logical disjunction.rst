@@ -14,13 +14,7 @@ Reviewing what I know so far
 * :doc:`False </data structures: booleans>` is :doc:`False </data structures: booleans>`
 * :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`
 
-Prerequisites
--------------
 
-
-:doc:`How to Setup a Test Driven Development Environment`
-
-----
 
 Logical Disjunction
 -------------------

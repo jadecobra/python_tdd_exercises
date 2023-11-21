@@ -18,13 +18,7 @@ you could be familiar with this from mathematics
       program(input_data) -> output_data
 
 
-Prerequisites
--------------
 
-
-:doc:`How to Setup a Test Driven Development Environment`
-
-----
 
 
 What are the data structures in python?

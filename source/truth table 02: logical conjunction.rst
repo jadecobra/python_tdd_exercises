@@ -10,13 +10,7 @@ I know that there are two boolean values
 * :doc:`False </data structures: booleans>`
 
 
-Prerequisites
--------------
 
-
-:doc:`How to Setup a Test Driven Development Environment`
-
-----
 
 Logical Conjunction
 -------------------

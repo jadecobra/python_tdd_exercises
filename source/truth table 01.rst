@@ -5,20 +5,14 @@ Sometimes I want programs to make decisions based on inputs or conditions, and c
 
 I am going to explore writing conditional statements in python with Test Driven Development using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_ from mathematics
 
-There are two boolean values
+There are only two boolean values
 
 * :doc:`True </data structures: booleans>`
 * :doc:`False </data structures: booleans>`
 
 The Truth Table gives the 16 outcomes of binary operations on these two values
 
-Prerequisites
--------------
 
-
-:doc:`How to Setup a Test Driven Development Environment`
-
-----
 
 Nullary Operations
 ------------------

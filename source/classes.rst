@@ -15,13 +15,7 @@ I will cover the following in this chapter
 - How to view the attributes and methods of a class
 
 
-Prerequisites
--------------
 
-
-:doc:`How to Setup a Test Driven Development Environment`
-
-----
 
 
 How to define a Class with pass

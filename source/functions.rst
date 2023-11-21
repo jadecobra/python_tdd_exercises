@@ -14,13 +14,7 @@ In programming I process input data of some form and output data in some form. I
 
 I can think of the ``program`` in this illustration as the ``function`` that carries out the processing of ``input_data`` to return ``output_data``
 
-Prerequisites
--------------
 
-
-:doc:`How to Setup a Test Driven Development Environment`
-
-----
 
 How to Define functions
 -----------------------
