@@ -11,7 +11,7 @@ Converse NonImplication
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a test for converse nonimplication to ``TestBinaryOperations``
+add a test for converse nonimplication to ``TestBinaryOperations`` in ``test_truth_table.py``
 
 .. code-block:: python
 
@@ -77,6 +77,7 @@ Our knowledge has increased. I know that for any boolean operation involving 2 i
 * ``logical_nor`` is ``not(p or q)``
 * ``logical_nand`` is ``not(p and q)``
 * ``exclusive_disjunction`` is ``!=`` aka opposite of ``logical_equality``
+* ``logical_implication`` is ``not p or q``
 * ``logical_equality`` is ``==``
 * ``logical_disjunction`` is ``or``
 * ``logical_conjunction`` is ``and``

@@ -5,6 +5,7 @@ The journey through conditional statements in python using Test Driven Developme
 
 To review, for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>`
 
+* ``logical_implication`` is ``not p or q``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
 * ``logical_disjunction`` is ``or``
@@ -22,7 +23,7 @@ Logical Equality/Logical Bi-conditional
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add a test for logical equality to ``TestBinaryOperations``
+I add a test for logical equality to ``TestBinaryOperations`` in ``test_truth_table.py``
 
 .. code-block:: python
 
@@ -139,6 +140,7 @@ I can update what I know so far from the tests to say, For any boolean operation
 
 
 * ``logical_equality`` is ``==``
+* ``logical_implication`` is ``not p or q``
 * ``logical_disjunction`` is ``or``
 * ``logical_conjunction`` is ``and``
 * ``and`` is "not ``or``"

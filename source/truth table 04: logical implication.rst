@@ -25,7 +25,7 @@ Logical Implication/Material Implication
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add a test for logical implication to ``TestBinaryOperations``
+I add a test for logical implication to ``TestBinaryOperations`` in ``test_truth_table.py``
 
 .. code-block:: python
 
@@ -160,3 +160,19 @@ REFACTOR: make it better
         return not p or q
 
   fantastic! the tests pass
+
+----
+
+I know that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>`
+
+* ``logical_implication`` is ``not p or q``
+* ``and`` is "not ``or``"
+* ``or`` is "not ``and``"
+* ``logical_disjunction`` is ``or``
+* ``logical_conjunction`` is ``and``
+* :doc:`False </data structures: booleans>` is ``not True``
+* :doc:`True </data structures: booleans>` is ``not False``
+* :doc:`False </data structures: booleans>` is :doc:`False </data structures: booleans>`
+* :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`
+* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :doc:`True </data structures: booleans>`
+* when there are multiple outcomes I only need to write the condition for the special case and use ``else`` for the others

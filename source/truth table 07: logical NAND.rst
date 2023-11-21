@@ -1,7 +1,7 @@
 Truth Table: Logical NAND
 =========================
 
-I will continue to step through learning conditional statements in python using Test Driven Development with the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
+Here are more conditional statements in python using Test Driven Development with the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
 
 
@@ -11,15 +11,15 @@ Logical NAND
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a test for exclusive disjunction to ``TestBinaryOperations``
+I add a test for Logical NAND to ``TestBinaryOperations`` in ``test_truth_table.py``
 
 .. code-block:: python
 
     def test_logical_nand(self):
-      self.assertFalse(truth_table.logical_nand(True, True))
-      self.assertTrue(truth_table.logical_nand(True, False))
-      self.assertTrue(truth_table.logical_nand(False, True))
-      self.assertTrue(truth_table.logical_nand(False, False))
+        self.assertFalse(truth_table.logical_nand(True, True))
+        self.assertTrue(truth_table.logical_nand(True, False))
+        self.assertTrue(truth_table.logical_nand(False, True))
+        self.assertTrue(truth_table.logical_nand(False, False))
 
 the terminal shows an :doc:`AttributeError`
 
@@ -27,89 +27,102 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* add a definition for the function to ``truth_table.py`` returning :doc:`True </data structures: booleans>` since 3 out of the 4 cases return that value
+* I add a definition for the function to ``truth_table.py`` returning :doc:`True </data structures: booleans>` since 3 out of the 4 cases return that value
+
   .. code-block:: python
 
     def logical_nand(p, q):
       return True
+
   the terminal updates to show an :doc:`AssertionError` for the first case
-* add a condition for the one case that returns :doc:`False </data structures: booleans>`
+* and I add a condition for the one case that returns :doc:`False </data structures: booleans>`
+
   .. code-block:: python
 
     def logical_nand(p, q):
-      if p == True and q == True:
-       return False
-      return True
+        if p == True and q == True:
+            return False
+        return True
+
   I am green! All tests pass
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
+* I add an ``else`` to be explicit
 
-* add an ``else`` to be explicit
   .. code-block:: python
 
     def logical_nand(p, q):
-      if p == True and q == True:
-       return False
-      else:
-       return True
+        if p == True and q == True:
+            return False
+        else:
+            return True
 
-* change to an implied ``if`` statement
+* then change the first condition to an implied conditional test
+
   .. code-block:: python
 
     def logical_nand(p, q):
-      if p and q:
-       return False
-      else:
-       return True
+        if p and q:
+            return False
+        else:
+            return True
 
-* change it to the opposite of the ``if`` statement
+* I change the ``else`` to the opposite of the ``if`` statement
+
   .. code-block:: python
 
     def logical_nand(p, q):
-      if p and q:
-       return False
-      if not(p and q):
-       return True
+        if p and q:
+            return False
+        if not(p and q):
+            return True
 
-* reorder
+* then reorder the statements
+
   .. code-block:: python
 
     def logical_nand(p, q):
-      if not(p and q):
-       return True
-      if p and q:
-       return False
+        if not(p and q):
+            return True
+        if p and q:
+            return False
 
-* replace second statement with ``else``
+* I replace the second statement with ``else`` to simplify
+
   .. code-block:: python
 
     def logical_nand(p, q):
-      if not(p and q):
-       return True
-      else:
-       return False
+        if not(p and q):
+            return True
+        else:
+            return False
 
-* return on one line
+* then change it to a one line return statement
+
   .. code-block:: python
 
     def logical_nand(p, q):
-      return True if not(p and q) else False
+        return True if not(p and q) else False
 
-* simplify to
+* which I simplify to
+
   .. code-block:: python
 
     def logical_nand(p, q):
-      return not(p and q)
-  I don't think I can get simpler than this and all the tests are still passing
+        return not(p and q)
 
-REVIEW
-I know that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>`
+  Do you think it can get simpler than this?
+
+----
+
+To review, I know that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>`
 
 
 * ``logical_nand`` is ``not(p and q)``
 * ``exclusive_disjunction`` is ``!=`` aka opposite of ``logical_equality``
+* ``logical_implication`` is ``not p or q``
 * ``logical_equality`` is ``==``
 * ``logical_disjunction`` is ``or``
 * ``logical_conjunction`` is ``and``

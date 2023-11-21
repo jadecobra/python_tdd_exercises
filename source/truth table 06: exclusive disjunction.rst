@@ -11,7 +11,7 @@ Exclusive Disjunction
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add a test for exclusive disjunction to ``TestBinaryOperations``
+I add a test for exclusive disjunction to ``TestBinaryOperations`` in ``test_truth_table.py``
 
 .. code-block:: python
 
@@ -151,6 +151,7 @@ So far I know that For any boolean operation involving 2 inputs - ``p`` and ``q`
 
 
 * ``exclusive_disjunction`` is ``!=``
+* ``logical_implication`` is ``not p or q``
 * ``logical_equality`` is ``==``
 * ``logical_disjunction`` is ``or``
 * ``logical_conjunction`` is ``and``
