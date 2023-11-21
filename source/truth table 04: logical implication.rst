@@ -1,7 +1,7 @@
 Truth Table: Logical Implication
 ================================
 
-I will continue to step through learning conditional statements in python using Test Driven Development using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
+I will continue to step through learning conditional statements in python using Test Driven Development with the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
 Reviewing what I know so far, for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>`
 
@@ -42,6 +42,7 @@ GREEN: make it pass
 
 
 * I add a function definition with :doc:`True </data structures: booleans>` as the return value since that is what is expected in 3 out of the 4 cases
+
   .. code-block:: python
 
     def logical_implication(p, q):
@@ -49,6 +50,7 @@ GREEN: make it pass
 
   the terminal updates to show the second case failing
 * I add a condition for this case
+
   .. code-block:: python
 
     def logical_implication(p, q):

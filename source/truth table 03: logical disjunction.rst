@@ -1,7 +1,7 @@
 Truth Table: Logical Disjunction
 ================================
 
-This chapter continues the adventure with conditional statements in python using Test Driven Development using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
+This chapter continues the adventure with conditional statements in python using Test Driven Development with the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
 Reviewing the tests I have so far, I know that
 
