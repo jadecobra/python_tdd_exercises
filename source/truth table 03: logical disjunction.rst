@@ -1,10 +1,9 @@
 Truth Table: Logical Disjunction
 ================================
 
-I will continue to step through learning conditional statements in python using Test Driven Development using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
+This chapter continues the adventure with conditional statements in python using Test Driven Development using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
-Reviewing what I know so far
-
+Reviewing the tests I have so far, I know that
 
 * I can express ``conditional statements`` on one line with ``return``
 * when there are multiple outcomes I only need to write the condition for the special case and use ``else`` for the others
@@ -15,47 +14,46 @@ Reviewing what I know so far
 * :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`
 
 
-
 Logical Disjunction
 -------------------
 
 RED: make it fail
 ~~~~~~~~~~~~~~~~~
 
-add a test for logical disjunction to ``TestBinaryOperations`` in ``test_truth_table.py``
+I add a test for logical disjunction to ``TestBinaryOperations`` in ``test_truth_table.py``
 
 .. code-block:: python
 
     def test_logical_disjunction(self):
-      self.assertTrue(truth_table.logical_disjunction(True, True))
-      self.assertTrue(truth_table.logical_disjunction(True, False))
-      self.assertTrue(truth_table.logical_disjunction(False, True))
-      self.assertFalse(truth_table.logical_disjunction(False, False))
+        self.assertTrue(truth_table.logical_disjunction(True, True))
+        self.assertTrue(truth_table.logical_disjunction(True, False))
+        self.assertTrue(truth_table.logical_disjunction(False, True))
+        self.assertFalse(truth_table.logical_disjunction(False, False))
 
-the terminal updates to show an :doc:`AttributeError`
+and the terminal updates to show an :doc:`AttributeError`
 
 GREEN: make it pass
 ~~~~~~~~~~~~~~~~~~~
 
 
-* update ``truth_table.py`` with a function definition like I did for ``logical_conjunction``
+* Then I update ``truth_table.py`` with a function definition like I did for ``logical_conjunction``
 
   .. code-block:: python
 
     def logical_disjunction(p, q):
-      return True
+        return True
 
-  the terminal updates to show an :doc:`AssertionError`
+  and the terminal shows an :doc:`AssertionError`
 
-* 3 of the test cases are passing because ``logical_disjunction`` returns :doc:`True </data structures: booleans>` in 3 of the 4. I need a condition for the fourth case to pass. update the definition
+* 3 of the test cases are passing because ``logical_disjunction`` returns :doc:`True </data structures: booleans>` for each one of them. I need a condition for the fourth case to pass, so I update the definition
 
   .. code-block:: python
 
     def logical_disjunction(p, q):
-      if p == False:
-       if q == False:
-         return False
-      return True
+        if p == False:
+            if q == False:
+                return False
+        return True
 
   the terminal updates to show passing tests
 
@@ -63,14 +61,14 @@ REFACTOR: make it better
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-* I know from earlier that when I have a nested if statement it can be replaced with an ``and``, so I update the condition
+* I know from :doc:`/truth table 02: logical conjunction` that when I have a nested if statement it can be replaced with an ``and`` so I update the condition
 
   .. code-block:: python
 
     def logical_disjunction(p, q):
-      if p == False and q == False:
-       return False
-      return True
+        if p == False and q == False:
+            return False
+        return True
 
   the terminal shows the tests are still passing
 
@@ -79,133 +77,144 @@ REFACTOR: make it better
   .. code-block:: python
 
     def logical_disjunction(p, q):
-      if p != False and q != False:
-       return False
-      return True
+        if p != False and q != False:
+            return False
+        return True
 
-* how can I express the ``if`` statement using python's implied comparison evaluation? I can use the ``not`` keyword like I did with ``logical_negation``
-
-  .. code-block:: python
-
-    def logical_disjunction(p, q):
-      if not p and not q:
-       return False
-      return True
-
-* ``not`` happens twice in that statement. What if I see if I can "factor" it out using algebra
+* I can also express the ``if`` statement with the ``not`` keyword like I did with ``logical_negation`` to express the opposite of a :doc:`boolean </data structures: booleans>`
 
   .. code-block:: python
 
     def logical_disjunction(p, q):
-      if not(p and q):
-       return False
-      return True
+        if not p and not q:
+            return False
+        return True
 
-  the terminal shows a failing test. OOPS! We've introduced a regression. If I expand the statement using "multiplication" rules. What I have above is
-
-  .. code-block:: python
-
-    def logical_disjunction(p, q):
-      if not p not and not q:
-       return False
-      return True
-
-  I get a ``SyntaxError``, the result of the "multiplication" is different from what I started with so I need something different. It should be something that expands out to
+* ``not`` happens twice in that statement, which I can "factor" out like in algebra
 
   .. code-block:: python
 
     def logical_disjunction(p, q):
-      if not p not not and not q:
-       return False
-      return True
+        if not(p and q):
+            return False
+        return True
+
+  the terminal shows a failing test. OOPS! I have introduced a regression. If I expand the statement using "multiplication" rules. What I have above is
+
+  .. code-block:: python
+
+    def logical_disjunction(p, q):
+        if not p not and not q:
+            return False
+        return True
+
+  I get a ``SyntaxError`` which I add to the list of exceptions encountered
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AssertionError
+    # ModuleNotFoundError
+    # AttributeError
+    # TypeError
+    # SyntaxError
+
+* The result of the "multiplication" is different from what I started with so I need something different. It should be something that expands out to
+
+  .. code-block:: python
+
+      def logical_disjunction(p, q):
+          if not p not not and not q:
+              return False
+          return True
 
   this would "factor" out to be
 
   .. code-block:: python
 
     def logical_disjunction(p, q):
-      if not(p not and q):
-       return False
-      return True
+        if not(p not and q):
+            return False
+        return True
 
-  okay, this looks more like, if I "multiply" this out I get the original statement since the opposite of the opposite of something is something. What if I fix the syntax. The opposite of and is ``or``
+  okay, this looks more like what will get the original statement when "multiplied" since the opposite of the opposite of something is something. To fix the syntax I used the opposite of ``and`` which is ``or``
 
   .. code-block:: python
 
     def logical_disjunction(p, q):
-      if not(p or q):
-       return False
-      return True
+        if not(p or q):
+            return False
+        return True
 
   Hooray! tests are passing again
 
-* add an else statement
+* I add an else statement to be explicit
 
   .. code-block:: python
 
     def logical_disjunction(p, q):
-      if not(p or q):
-       return False
-      else:
-       return True
+        if not(p or q):
+            return False
+        else:
+            return True
 
 * the ``else`` statement that returns :doc:`True </data structures: booleans>` can be restated as the opposite of the ``if`` statement
 
   .. code-block:: python
 
     def logical_disjunction(p, q):
-      if not(p or q):
-       return False
-      if not(not(p or q)):
-       return True
+        if not(p or q):
+            return False
+        if not(not(p or q)):
+            return True
 
-  since the negation of a negation gives the original thing I can say
-
-  .. code-block:: python
-
-    def logical_disjunction(p, q):
-      if not(p or q):
-       return False
-      if p or q:
-       return True
-
-* reorder the statements
+  since the negation of a negation gives the original thing I could restate it by canceling out the ``not``
 
   .. code-block:: python
 
     def logical_disjunction(p, q):
-      if p or q:
-       return True
-      if not(p or q):
-       return False
+        if not(p or q):
+            return False
+        if p or q:
+            return True
+
+* I then reorder the statements
+
+  .. code-block:: python
+
+    def logical_disjunction(p, q):
+        if p or q:
+            return True
+        if not(p or q):
+            return False
 
 * restate using ``else``
 
   .. code-block:: python
 
     def logical_disjunction(p, q):
-      if p or q:
-       return True
-      else:
-       return False
+        if p or q:
+            return True
+        else:
+            return False
 
 * rewriting to one line with a ``return`` statement
 
   .. code-block:: python
 
     def logical_disjunction(p, q):
-      return True if p or q else return False
+        return True if p or q else return False
 
 * using python's implicit conditional evaluation I simplify to
 
   .. code-block:: python
 
     def logical_disjunction(p, q):
-      return p or q
+        return p or q
 
   *VOILA!* the tests still pass and I have a simple statement that makes all 4 states pass for ``logical_disjunction``
 
-Our knowledge is updated to show that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>`
+The tests so far show that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>`
 
 
 * ``and`` is "not ``or``"

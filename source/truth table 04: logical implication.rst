@@ -25,120 +25,136 @@ Logical Implication/Material Implication
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a test for logical implication to ``TestBinaryOperations``
+I add a test for logical implication to ``TestBinaryOperations``
 
 .. code-block:: python
 
     def test_logical_implication_aka_material_implication(self):
-      self.assertTrue(truth_table.logical_implication(True, True))
-      self.assertFalse(truth_table.logical_implication(True, False))
-      self.assertTrue(truth_table.logical_implication(False, True))
-      self.assertTrue(truth_table.logical_implication(False, False))
+        self.assertTrue(truth_table.logical_implication(True, True))
+        self.assertFalse(truth_table.logical_implication(True, False))
+        self.assertTrue(truth_table.logical_implication(False, True))
+        self.assertTrue(truth_table.logical_implication(False, False))
 
-the terminal updates to show an :doc:`AttributeError`
+the terminal displays an :doc:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* add a function definition with :doc:`True </data structures: booleans>` as the return value since that is what is expected in 3 out of the 4 cases
+* I add a function definition with :doc:`True </data structures: booleans>` as the return value since that is what is expected in 3 out of the 4 cases
   .. code-block:: python
 
     def logical_implication(p, q):
-      return True
+        return True
+
   the terminal updates to show the second case failing
-* add a condition for this case
+* I add a condition for this case
   .. code-block:: python
 
     def logical_implication(p, q):
-      if p == True:
-       if q == False:
-         return False
-      return True
+        if p == True:
+            if q == False:
+                return False
+        return True
+
   the tests pass!
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* How can I make this better? What if I make the nested condition one line
+* What if I make the nested condition one line?
+
   .. code-block:: python
 
     def logical_implication(p, q):
-      if p == True and q == False:
-       return False
-      return True
+        if p == True and q == False:
+            return False
+        return True
+
   the tests still pass
 * in the earlier examples I replaced the equality tests with implied condition statements
+
   .. code-block:: python
 
     def logical_implication(p, q):
-      if p and not q:
-       return False
-      return True
+        if p and not q:
+            return False
+        return True
+
   this looks simpler and the tests still pass.
-* What if I write out the second half with an ``else`` statement to be explicit
+* I write out the second half with an ``else`` statement to be explicit
+
   .. code-block:: python
 
     def logical_implication(p, q):
-      if p and not q:
-       return False
-      else:
-       return True
+        if p and not q:
+            return False
+        else:
+            return True
 
-* if I replace the ``else`` with the opposite of the ``if`` statement I get
+* then replace the ``else`` with the opposite of the ``if`` statement to get
+
   .. code-block:: python
 
     def logical_implication(p, q):
-      if p and not q:
-       return False
-      if not(p and not q):
-       return True
+        if p and not q:
+            return False
+        if not(p and not q):
+            return True
 
-* "multiplying" it out
+* when I "multiply" out the statement with ``not`` to
+
   .. code-block:: python
 
     def logical_implication(p, q):
-      if p and not q:
-       return False
-      if not p not and not not q:
-       return True
+        if p and not q:
+            return False
+        if not p not and not not q:
+            return True
+
   I get a ``SyntaxError`` and correct the syntax to get
+
   .. code-block:: python
 
     def logical_implication(p, q):
-      if p and not q:
-       return False
-      if not p or q:
-       return True
+        if p and not q:
+            return False
+        if not p or q:
+            return True
 
-* I reorder
+* I reorder the statements
+
   .. code-block:: python
 
     def logical_implication(p, q):
-      if not p or q:
-       return True
-      if p and not q:
-       return False
+        if not p or q:
+            return True
+        if p and not q:
+            return False
 
-* replace the second statement with an ``else``
+* then replace the second statement with an ``else``
+
   .. code-block:: python
 
     def logical_implication(p, q):
-      if not p or q:
-       return True
-      else:
-       return False
+        if not p or q:
+            return True
+        else:
+            return False
 
-* try to write it as one line?
+* and rewrite the statements as one line
+
   .. code-block:: python
 
     def logical_implication(p, q):
-      return True if not p or q else False
+        return True if not p or q else False
 
 * I simplify using python's implicit conditional testing
+
   .. code-block:: python
 
     def logical_implication(p, q):
-      return not p or q
+        return not p or q
+
   fantastic! the tests pass
