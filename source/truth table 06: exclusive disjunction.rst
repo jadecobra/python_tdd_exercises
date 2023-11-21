@@ -11,15 +11,15 @@ Exclusive Disjunction
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a test for exclusive disjunction to ``TestBinaryOperations``
+I add a test for exclusive disjunction to ``TestBinaryOperations``
 
 .. code-block:: python
 
     def test_exclusive_disjunction(self):
-      self.assertFalse(truth_table.exclusive_disjunction(True, True))
-      self.assertTrue(truth_table.exclusive_disjunction(True, False))
-      self.assertTrue(truth_table.exclusive_disjunction(False, True))
-      self.assertFalse(truth_table.exclusive_disjunction(False, False))
+        self.assertFalse(truth_table.exclusive_disjunction(True, True))
+        self.assertTrue(truth_table.exclusive_disjunction(True, False))
+        self.assertTrue(truth_table.exclusive_disjunction(False, True))
+        self.assertFalse(truth_table.exclusive_disjunction(False, False))
 
 the terminal shows an :doc:`AttributeError`
 
@@ -27,113 +27,127 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* add a definition that returns :doc:`True </data structures: booleans>`
+* and I add a definition that returns :doc:`True </data structures: booleans>`
+
   .. code-block:: python
 
     def exclusive_disjunction(p, q):
-      return True
+        return True
+
   I get an :doc:`AssertionError` for the second case
-* add a condition for it
+* then add a condition for it
+
   .. code-block:: python
 
     def exclusive_disjunction(p , q):
-      if p == True and q == True:
-       return False
-      return True
+        if p == True and q == True:
+            return False
+        return True
+
   the terminal shows an :doc:`AssertionError` for the fourth case
-* add a condition
+* I add a condition to resolve it
+
   .. code-block:: python
 
     def exclusive_disjunction(p, q):
-      if p == False and q == False:
-       return False
-      if p == True and q == True:
-       return False
-      return True
+        if p == False and q == False:
+            return False
+        if p == True and q == True:
+            return False
+        return True
+
   Wonderful! All the tests are passing
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-What if I try to refactor those statements to make them better
+* In the first case ``p`` and ``q`` have the same value, I can change the statement to reflect this like I did with ``logical_equality``
 
-
-* in the first case ``p`` and ``q`` have the same value, can I change the statement to reflect this like I did with ``logical_equality``?
   .. code-block:: python
 
     def exclusive_disjunction(p, q):
-      if p == q:
-       return False
-      if p == True and q == True:
-       return False
-      return True
+        if p == q:
+            return False
+        if p == True and q == True:
+            return False
+        return True
+
   tests still pass
 * the next statement looks similar, I can rewrite it as
+
   .. code-block:: python
 
     def exclusive_disjunction(p, q):
       if p == q:
-       return False
+          return False
       if p == q:
-       return False
-      return True
-  since it's exactly the same statement, I remove the repetition
-  .. code-block:: python
-
-    def exclusive_disjunction(p, q):
-      if p == q:
-       return False
+          return False
       return True
 
-* add ``else``
+  I remove the repetition since it's exactly the same statement as the first
+
   .. code-block:: python
 
     def exclusive_disjunction(p, q):
-      if p == q:
-       return False
-      else:
-       return True
+        if p == q:
+            return False
+        return True
 
-* add the opposite ``if`` statement
+* I add an ``else`` statement to be explicit
+
   .. code-block:: python
 
     def exclusive_disjunction(p, q):
-      if p == q:
-       return False
-      if p != q:
-       return True
+        if p == q:
+            return False
+        else:
+            return True
 
-* reorder
+* then rewrite it as the opposite ``if`` statement
+
   .. code-block:: python
 
     def exclusive_disjunction(p, q):
-      if p != q:
-       return True
-      if p == q:
-       return False
+        if p == q:
+            return False
+        if p != q:
+            return True
 
-* replace with ``else``
+* I reorder the statements
+
   .. code-block:: python
 
     def exclusive_disjunction(p, q):
-      if p != q:
-       return True
-      else:
-       return False
+        if p != q:
+            return True
+        if p == q:
+            return False
 
-* use one line return statement
+* then replace the second one with ``else``
+
   .. code-block:: python
 
     def exclusive_disjunction(p, q):
-      return True if p != q else False
+        if p != q:
+            return True
+        else:
+            return False
 
-* remove excess
+* time to use the one line return statement
+
   .. code-block:: python
 
     def exclusive_disjunction(p, q):
-      return p != q
+        return True if p != q else False
 
-What do I know so far? For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>`
+* then using implied conditional testing I can simplify it to
+
+  .. code-block:: python
+
+    def exclusive_disjunction(p, q):
+        return p != q
+
+So far I know that For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>`
 
 
 * ``exclusive_disjunction`` is ``!=``
