@@ -217,13 +217,11 @@ REFACTOR: make it better
 The tests so far show that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
 
 
+* ``logical disjunction`` is ``or``
+* ``logical conjunction`` is ``and``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
-* ``logical_disjunction`` is ``or``
-* ``logical_conjunction`` is ``and``
 * :doc:`False <data_structures_booleans>` is ``not True``
 * :doc:`True <data_structures_booleans>` is ``not False``
 * :doc:`False <data_structures_booleans>` is :doc:`False <data_structures_booleans>`
 * :doc:`True <data_structures_booleans>` is :doc:`True <data_structures_booleans>`
-* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :doc:`True <data_structures_booleans>`
-* when there are multiple outcomes I only need to write the condition for the special case and use ``else`` for the others

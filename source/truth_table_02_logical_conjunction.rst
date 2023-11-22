@@ -188,7 +188,9 @@ REFACTOR: make it better
 
 * ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :doc:`True <data_structures_booleans>`
 * when there are multiple outcomes I only need to write the condition for the special case and use ``else`` for the others
-* ``logical_conjunction`` is ``and``
+* ``logical conjunction`` is ``and``
+* ``and`` is "not ``or``"
+* ``or`` is "not ``and``"
 * :doc:`False <data_structures_booleans>` is ``not True``
 * :doc:`True <data_structures_booleans>` is ``not False``
 * :doc:`False <data_structures_booleans>` is :doc:`False <data_structures_booleans>`

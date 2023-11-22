@@ -73,15 +73,15 @@ REFACTOR: make it better
 Our knowledge is growing, I now know that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
 
 
-* ``material_non_implication`` is ``p and not q``
-* ``converse_non_implication`` is ``not p and q`` which is different from ``not(p and q)``
-* ``logical_nor`` is ``not(p or q)``
-* ``logical_nand`` is ``not(p and q)``
-* ``exclusive_disjunction`` is ``!=`` aka opposite of ``logical_equality``
-* ``logical_implication`` is ``not p or q``
-* ``logical_equality`` is ``==``
-* ``logical_disjunction`` is ``or``
-* ``logical_conjunction`` is ``and``
+* ``material non implication`` is ``p and not q``
+* ``converse non implication`` is ``not p and q`` which is different from ``not(p and q)``
+* ``logical NOR`` is ``not(p or q)``
+* ``logical NAND`` is ``not(p and q)``
+* ``exclusive disjunction`` is ``!=`` aka opposite of ``logical_equality``
+* ``logical equality`` is ``==``
+* ``logical implication`` is ``not p or q``
+* ``logical disjunction`` is ``or``
+* ``logical conjunction`` is ``and``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
 * :doc:`False <data_structures_booleans>` is ``not True``
