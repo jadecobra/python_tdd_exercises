@@ -20,7 +20,7 @@ How to use this book
 
 You choose how you go through the chapters, you can start with any one you like or one that looks like it could solve your current problem.
 
-The only recommendation is that you start with  :doc:`How to Setup a Test Driven Development Environment` which is required by every other chapter
+The only recommendation is that you start with  :doc:`How to Setup a Test Driven Development Environment <setup_tdd_environment>` which is required by every other chapter
 
 .. toctree::
   :maxdepth: 2

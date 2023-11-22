@@ -12,7 +12,7 @@ Programming allows us to gain from the previous efforts as well as the efforts o
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-Open a new file in your editor and save it as ``test_ModuleNotFoundError.py`` in the ``tests`` folder you created in :doc:`How to Setup a Test Driven Development Environment`
+Open a new file in your editor and save it as ``test_ModuleNotFoundError.py`` in the ``tests`` folder you created in :doc:`How to Setup a Test Driven Development Environment <setup_tdd_environment>`
 Type the following in the file
 
 .. code-block:: python
@@ -118,7 +118,7 @@ Type the following in the file
   import module_98
   import module_99
 
-If you left ``pytest-watch`` running from :doc:`How to Setup a Test Driven Development Environment` you should see something like the following in your terminal
+If you left ``pytest-watch`` running from :doc:`How to Setup a Test Driven Development Environment <setup_tdd_environment>` you should see something like the following in your terminal
 
 .. code-block:: python
 

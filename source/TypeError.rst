@@ -22,7 +22,7 @@ RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
 
-* Open a new file in the editor and save it as ``tests/test_type_error.py`` in the ``tests`` folder you created in :doc:`How to Setup a Test Driven Development Environment` and type the following in the file
+* Open a new file in the editor and save it as ``tests/test_type_error.py`` in the ``tests`` folder you created in :doc:`How to Setup a Test Driven Development Environment <setup_tdd_environment>` and type the following in the file
 
 
   .. code-block:: python

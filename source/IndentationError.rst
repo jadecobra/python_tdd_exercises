@@ -12,7 +12,7 @@ The exercises in this chapter are intended to get you familiar with proper Inden
 Prerequisites
 -------------
 
-:doc:`How to Setup a Test Driven Development Environment`
+:doc:`How to Setup a Test Driven Development Environment <setup_tdd_environment>`
 
 ----
 
@@ -24,7 +24,7 @@ RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
 
-* Open a new file in the editor and save it as ``tests/test_indentation_error.py`` in the ``tests`` folder you created in :doc:`How to Setup a Test Driven Development Environment`\ , then type the following lines in the file *paying attention to the spacing*
+* Open a new file in the editor and save it as ``tests/test_indentation_error.py`` in the ``tests`` folder you created in :doc:`How to Setup a Test Driven Development Environment <setup_tdd_environment>`\ , then type the following lines in the file *paying attention to the spacing*
 
   .. code-block:: python
 

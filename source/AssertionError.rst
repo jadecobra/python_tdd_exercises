@@ -8,7 +8,7 @@ Prerequisites
 -------------
 
 
-:doc:`How to Setup a Test Driven Development Environment`
+:doc:`How to Setup a Test Driven Development Environment <setup_tdd_environment>`
 
 
 What is an AssertionError?
@@ -16,7 +16,7 @@ What is an AssertionError?
 
 An `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ is an Exception that is raised when the result of an ``assert`` statement is :doc:`False </data structures: booleans>`
 
-It was introduced in :doc:`How to Setup a Test Driven Development Environment` with the first failing test
+It was introduced in :doc:`How to Setup a Test Driven Development Environment <setup_tdd_environment>` with the first failing test
 
 .. code-block:: python
 
@@ -272,7 +272,7 @@ the terminal updates to show a failure
 
   E    AssertionError: True is not false
 
-this is familiar, it was the first failing test I wrote in :doc:`How to Setup a Test Driven Development Environment`
+this is familiar, it was the first failing test I wrote in :doc:`How to Setup a Test Driven Development Environment <setup_tdd_environment>`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
