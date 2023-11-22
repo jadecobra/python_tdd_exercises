@@ -150,7 +150,7 @@ GREEN: make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Since there is no refactoring to do here, I update what I know so far. For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
+Since there is no refactoring to do here, I update what I know so far. For any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
 
 
 * ``project second`` always returns ``q``

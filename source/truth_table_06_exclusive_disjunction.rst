@@ -1,12 +1,9 @@
 Truth Table: Exclusive Disjunction
 ==================================
 
-I will continue to step through learning conditional statements in python using Test Driven Development with the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
+The following tests cover Exclusive Disjunction from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
 
-
-Exclusive Disjunction
----------------------
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -27,7 +24,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* and I add a definition that returns :doc:`True <data_structures_booleans>`
+* then add a definition that returns :doc:`True <data_structures_booleans>`
 
   .. code-block:: python
 
@@ -56,7 +53,7 @@ GREEN: make it pass
             return False
         return True
 
-  Wonderful! All the tests are passing
+  and all the tests pass. Wonderful!
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -73,7 +70,7 @@ REFACTOR: make it better
         return True
 
   tests still pass
-* the next statement looks similar, I can rewrite it as
+* the second statement looks similar, I can rewrite it as
 
   .. code-block:: python
 
@@ -84,7 +81,7 @@ REFACTOR: make it better
           return False
       return True
 
-  I remove the repetition since it's exactly the same statement as the first
+* I remove the repetition since it is exactly the same statement as the first
 
   .. code-block:: python
 
@@ -147,7 +144,7 @@ REFACTOR: make it better
     def exclusive_disjunction(p, q):
         return p != q
 
-So far I know that For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
+From the tests I see that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
 
 
 

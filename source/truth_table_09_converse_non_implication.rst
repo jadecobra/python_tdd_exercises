@@ -75,7 +75,7 @@ REFACTOR: make it better
 
   Another success! All tests pass
 
-From the tests I see that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
+From the tests I see that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
 
 * ``converse non implication`` is ``not p and q`` which is different from ``not(p and q)``
 * ``logical NOR`` is ``not(p or q)``

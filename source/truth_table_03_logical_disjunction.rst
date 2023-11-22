@@ -1,21 +1,18 @@
 Truth Table: Logical Disjunction
 ================================
 
-This chapter continues the adventure with conditional statements in python using Test Driven Development with the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
+This chapter continues the adventure with conditional statements for Logical Disjunction from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
 Reviewing the tests I have so far, I know that
 
 * I can express ``conditional statements`` on one line with ``return``
 * when there are multiple outcomes I only need to write the condition for the special case and use ``else`` for the others
-* ``logical_conjunction`` is ``and``
+* ``logical conjunction`` is ``and``
 * :doc:`False <data_structures_booleans>` is ``not True``
 * :doc:`True <data_structures_booleans>` is ``not False``
 * :doc:`False <data_structures_booleans>` is :doc:`False <data_structures_booleans>`
 * :doc:`True <data_structures_booleans>` is :doc:`True <data_structures_booleans>`
 
-
-Logical Disjunction
--------------------
 
 RED: make it fail
 ~~~~~~~~~~~~~~~~~
@@ -158,7 +155,7 @@ REFACTOR: make it better
         else:
             return True
 
-* the ``else`` statement that returns :doc:`True <data_structures_booleans>` can be restated as the opposite of the ``if`` statement
+* the ``else`` clause statement that returns :doc:`True <data_structures_booleans>` can be restated as the opposite of the ``if`` statement
 
   .. code-block:: python
 
@@ -214,7 +211,7 @@ REFACTOR: make it better
 
   *VOILA!* the tests still pass and I have a simple statement that makes all 4 states pass for ``logical_disjunction``
 
-The tests so far show that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
+The tests so far show that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
 
 
 * ``logical disjunction`` is ``or``

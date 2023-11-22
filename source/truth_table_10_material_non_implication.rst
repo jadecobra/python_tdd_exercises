@@ -77,7 +77,7 @@ REFACTOR: make it better
 
   and I am still green
 
-From the tests I can see that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
+From the tests I can see that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
 
 
 * ``material non implication`` is ``p and not q``

@@ -3,13 +3,13 @@ Truth Table: Logical Equality
 
 The journey through conditional statements in python using Test Driven Development with the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_ continues with Logical Equality
 
-To review, for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
+So far the tests have shown that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
 
-* ``logical_implication`` is ``not p or q``
+* ``logical implication`` is ``not p or q``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
-* ``logical_disjunction`` is ``or``
-* ``logical_conjunction`` is ``and``
+* ``logical disjunction`` is ``or``
+* ``logical conjunction`` is ``and``
 * :doc:`False <data_structures_booleans>` is ``not True``
 * :doc:`True <data_structures_booleans>` is ``not False``
 * :doc:`False <data_structures_booleans>` is :doc:`False <data_structures_booleans>`
@@ -17,8 +17,6 @@ To review, for any boolean operation involving 2 inputs - ``p`` and ``q`` which 
 * ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :doc:`True <data_structures_booleans>`
 * when there are multiple outcomes I only need to write the condition for the special case and use ``else`` for the others
 
-Logical Equality/Logical Bi-conditional
----------------------------------------
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -33,13 +31,13 @@ I add a test for logical equality to ``TestBinaryOperations`` in ``test_truth_ta
         self.assertFalse(truth_table.logical_equality(False, True))
         self.assertTrue(truth_table.logical_equality(False, False))
 
-the terminal shows an :doc:`AttributeError`
+and the terminal shows an :doc:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* I add a definition to ``truth_table.py`` with a return statement, I can pick :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>` since 2 out of the 4 cases are either :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
+* I then add a definition to ``truth_table.py`` with a return statement, I can pick :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>` since 2 out of the 4 cases are either :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
 
   .. code-block:: python
 
@@ -56,7 +54,7 @@ GREEN: make it pass
             return False
         return True
 
-  the terminal now shows a failure for the 3rd case
+  the terminal displays a failure for the 3rd case
 * I add a condition for it
 
   .. code-block:: python
@@ -68,7 +66,7 @@ GREEN: make it pass
             return False
         return True
 
-  I am green!
+  Green! All tests pass
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -76,12 +74,12 @@ REFACTOR: make it better
 What can I do to make this better?
 
 
-* looking at the test cases, I can summarize them as 2 states
+* looking at the test cases, I see that there are only 2 states
 
   * logical_equality returns True when ``p`` and ``q`` are the same
   * logical_equality returns False when ``p`` and ``q`` are not the same
 
-* I rewrite the condition statements to reflect the second observation
+* I rewrite the conditional statements to reflect the second observation
 
   .. code-block:: python
 
@@ -90,7 +88,7 @@ What can I do to make this better?
             return False
         return True
 
-* updating the function with the first observation I have
+* the update the function with the first observation
 
   .. code-block:: python
 
@@ -127,7 +125,7 @@ What can I do to make this better?
     def logical_equality(p, q):
         return True if p == q else False
 
-* I then use implicit conditional comparison
+* I can use implicit conditional comparison
 
   .. code-block:: python
 
@@ -136,7 +134,7 @@ What can I do to make this better?
 
   and the tests are still green
 
-I can update what I know so far from the tests to say, For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
+I can update what I know so far from the tests to say that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
 
 * ``logical equality`` is ``==``
 * ``logical implication`` is ``not p or q``

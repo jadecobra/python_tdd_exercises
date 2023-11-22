@@ -136,7 +136,7 @@ REFACTOR: make it better
         return False
 
   still green
-* I can rewrite the opposite of the ``if`` statement by using the ``else`` keyword
+* I can rewrite the opposite of the ``if`` statement by using the ``else`` clause keyword
 
   .. code-block:: python
 
@@ -183,7 +183,7 @@ REFACTOR: make it better
 
   tests are still green. I don't think I can get a simpler statement than this
 
-*FANTASTIC!* After testing ``logical_conjunction`` which is a conditional operation using ``and``, I know that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
+*FANTASTIC!* After testing ``logical_conjunction`` which is a conditional operation using ``and``, I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
 
 
 * ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :doc:`True <data_structures_booleans>`

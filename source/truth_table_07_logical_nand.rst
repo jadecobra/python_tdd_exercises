@@ -1,12 +1,8 @@
 Truth Table: Logical NAND
 =========================
 
-Here are more conditional statements in python using Test Driven Development with the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
+Let us take a look at Logical NAND from  the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
-
-
-Logical NAND
-------------
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -44,12 +40,12 @@ GREEN: make it pass
             return False
         return True
 
-  I am green! All tests pass
+  Green! All tests pass
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-* I add an ``else`` to be explicit
+* I add an ``else`` clause to be explicit
 
   .. code-block:: python
 
@@ -69,7 +65,7 @@ REFACTOR: make it better
         else:
             return True
 
-* I change the ``else`` to the opposite of the ``if`` statement
+* I change the ``else`` clause to the opposite of the ``if`` statement
 
   .. code-block:: python
 
@@ -117,7 +113,7 @@ REFACTOR: make it better
 
 ----
 
-To review, I know that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
+To review, I know that from the tests that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
 
 
 * ``logical NAND`` is ``not(p and q)``

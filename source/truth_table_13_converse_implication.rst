@@ -125,7 +125,7 @@ REFACTOR: make it better
 
   I win again! All tests pass
 
-My knowledge has increased, I know that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
+My knowledge has increased, I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
 
 * ``converse implication`` is ``not p and q`` which is different from ``not(p and q)``
 * ``project second`` always returns ``q``

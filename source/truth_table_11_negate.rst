@@ -141,7 +141,7 @@ REFACTOR: make it better
 
 I don't think I can make it better so I update what I know so far
 
-For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
+For any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
 
 
 * ``negate second`` always returns ``not q``
