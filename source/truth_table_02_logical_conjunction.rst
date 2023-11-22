@@ -10,9 +10,6 @@ I know that there are two boolean values
 * :doc:`False </data structures: booleans>`
 
 
-Logical Conjunction
--------------------
-
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
@@ -178,7 +175,7 @@ REFACTOR: make it better
         return True if p and q else False
 
 * since python implicitly tests conditionals I can rewrite the statement this way
-  
+
   .. code-block:: python
 
     def logical_conjunction(p, q):
