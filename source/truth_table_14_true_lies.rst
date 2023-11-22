@@ -11,15 +11,15 @@ Tautology
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a test for tautology to ``TestBinaryOperations`` in ``test_truth_table.py``
+I add a test for tautology to ``TestBinaryOperations`` in ``test_truth_table.py``
 
 .. code-block:: python
 
     def test_tautology(self):
-      self.assertTrue(truth_table.tautology(True, True))
-      self.assertTrue(truth_table.tautology(True, False))
-      self.assertTrue(truth_table.tautology(False, True))
-      self.assertTrue(truth_table.tautology(False, False))
+        self.assertTrue(truth_table.tautology(True, True))
+        self.assertTrue(truth_table.tautology(True, False))
+        self.assertTrue(truth_table.tautology(False, True))
+        self.assertTrue(truth_table.tautology(False, False))
 
 the terminal shows an :doc:`AttributeError`
 
@@ -27,23 +27,23 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* add a function definition to ``truth_table.py``
+* I add a function definition to ``truth_table.py``
+
   .. code-block:: python
 
     def tautology(p, q):
-      return False
-  the terminal updates to show an :doc:`AssertionError` for the first case
-* replace the return value
+        return False
+
+  the terminal displays an :doc:`AssertionError` for the first case
+* I replace the return value
+
   .. code-block:: python
 
     def tautology(p, q):
-      return True
-  all tests pass
+        return True
 
-REFACTOR: make it better
-^^^^^^^^^^^^^^^^^^^^^^^^
+  and the test passes
 
-Nothing to refactor here
 
 Contradiction
 -------------
@@ -51,53 +51,49 @@ Contradiction
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a test for contradiction to ``TestBinaryOperations``
+I add a test for contradiction to ``TestBinaryOperations``
 
 .. code-block:: python
 
     def test_contradiction(self):
-      self.assertFalse(truth_table.contradiction(True, True))
-      self.assertFalse(truth_table.contradiction(True, False))
-      self.assertFalse(truth_table.contradiction(False, True))
-      self.assertFalse(truth_table.contradiction(False, False))
+        self.assertFalse(truth_table.contradiction(True, True))
+        self.assertFalse(truth_table.contradiction(True, False))
+        self.assertFalse(truth_table.contradiction(False, True))
+        self.assertFalse(truth_table.contradiction(False, False))
 
 the terminal shows an :doc:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
+* I add a function definition to ``truth_table.py``
 
-* add a function definition to ``truth_table.py``
   .. code-block:: python
 
     def contradiction(p, q):
       return True
+
   the terminal updates to show an :doc:`AssertionError` for the first case
-* update the return value
+* When I update the return value, the test passes
   .. code-block:: python
 
     def contradiction(p, q):
-      return False
+        return False
 
-REFACTOR: make it better
-^^^^^^^^^^^^^^^^^^^^^^^^
 
-Nothing to do here either. update what I know so far
-
-*YOU DID IT!*
-For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
+*YOU DID IT!* You made it to the end of the ``Truth Table`` series. Summarizing what the tests have shown so far, I know that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
 
 
 * ``contradition`` always returns :doc:`False <data_structures_booleans>`
 * ``tautology`` always returns :doc:`True <data_structures_booleans>`
-* ``converse_implication`` is ``not p and q`` which is different from ``not(p and q)``
-* ``logical_nor`` is ``not(p or q)``
-* ``logical_nand`` is ``not(p and q)``
-* ``exclusive_disjunction`` is ``!=`` aka opposite of ``logical_equality``
-* ``logical_implication`` is ``not p or q``
-* ``logical_equality`` is ``==``
-* ``logical_disjunction`` is ``or``
-* ``logical_conjunction`` is ``and``
+* ``converse implication`` is ``not p and q`` which is different from ``not(p and q)``
+* ``logical NOR`` is ``not(p or q)``
+* ``logical NAND`` is ``not(p and q)``
+* ``exclusive disjunction`` is ``!=`` aka opposite of ``logical_equality``
+* ``logical implication`` is ``not p or q``
+* ``logical equality`` is ``==``
+* ``logical disjunction`` is ``or``
+* ``logical conjunction`` is ``and``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
 * :doc:`False <data_structures_booleans>` is ``not True``
