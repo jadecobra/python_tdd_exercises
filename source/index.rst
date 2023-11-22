@@ -40,20 +40,20 @@ The only recommendation is that you start with  :doc:`How to Setup a Test Driven
   data structures: lists
   list comprehensions
   data structures: dictionaries
-  truth table 01
-  truth table 02: logical conjunction
-  truth table 03: logical disjunction
-  truth table 04: logical implication
-  truth table 05: logical equality
-  truth table 06: exclusive disjunction
-  truth table 07: logical NAND
-  truth table 08: logical NOR
-  truth table 09: converse non implication
-  truth table 10: material non implication
-  truth table 11: negate
-  truth table 12: project
-  truth table 13: converse implication
-  truth table 14: true lies
+  truth_table_01
+  truth_table_02_logical_conjunction
+  truth_table_03_logical_disjunction
+  truth_table_04_logical implication
+  truth_table_05_logical_equality
+  truth_table_06_exclusive_disjunction
+  truth_table_07_logical_NAND
+  truth_table_08_logical_NOR
+  truth_table_09_converse_non_implication
+  truth_table_10_material_non_implication
+  truth_table_11_negate
+  truth_table_12_project
+  truth_table_13_converse_implication
+  truth_table_14_true_lies
   calculator
   passing values
   person factory
