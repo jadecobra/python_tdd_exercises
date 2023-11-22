@@ -75,7 +75,7 @@ update ``test_is_none_a_boolean`` to make the tests pass
       self.assertIsNotNone(True)
       self.assertIsNotNone(False)
 
-I now know that
+From the tests I can see that
 
 
 * :doc:`False <data_structures_booleans>` is not :doc:`None <data_structures_none>`
@@ -320,7 +320,7 @@ GREEN: make it pass
        self.assertIsNotNone((1, 2, 3, 'n'))
        self.assertNotIsInstance(None, tuple)
 
-* I now know that in python
+* From the tests I can see that in python
 
   * :doc:`None <data_structures_none>` is not a ``tuple``
   * :doc:`None <data_structures_none>` is not a ``string``

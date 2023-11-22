@@ -554,7 +554,7 @@ So far ``passthrough_with_keyword_arguments`` looks the same as ``passthrough_wi
       ),
       {'a': 1, 'b': 2, 'c': 3, 'd': 4}
     )
-   the terminal updates to show passing tests. I now know that keyword arguments are treated as :doc:`data structures: dictionaries` in python
+   the terminal updates to show passing tests. From the tests I can see that keyword arguments are treated as :doc:`data structures: dictionaries` in python
 
 *
   REFACTOR: make it better

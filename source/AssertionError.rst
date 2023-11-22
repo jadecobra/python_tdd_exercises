@@ -213,7 +213,7 @@ I can also make assertions with some :doc:`methods <functions>` from the `unitte
 
    self.assertIsNone(None)
 
-My knowledge of python has increased, I now know that
+My knowledge of python has increased, From the tests I can see that
 
 * :doc:`None <data_structures_none>` is :doc:`None <data_structures_none>`
 * :doc:`True <data_structures_booleans>` is not :doc:`None <data_structures_none>`
@@ -283,7 +283,7 @@ I update ``test_assertion_errors_with_false`` to make it pass
 
   self.assertFalse(False)
 
-I now know that in python
+From the tests I can see that in python
 
 * :doc:`False <data_structures_booleans>` is :doc:`False <data_structures_booleans>`
 * :doc:`False <data_structures_booleans>` is not :doc:`True <data_structures_booleans>`
@@ -347,7 +347,7 @@ I update ``test_assertion_errors_with_false`` to make it pass
 
   self.assertTrue(True)
 
-My knowledge of python has grown, I now know that
+My knowledge of python has grown, From the tests I can see that
 
 
 * :doc:`True <data_structures_booleans>` is :doc:`True <data_structures_booleans>`
