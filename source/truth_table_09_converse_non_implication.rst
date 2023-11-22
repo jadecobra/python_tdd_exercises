@@ -12,61 +12,70 @@ I add a test for converse nonimplication to ``TestBinaryOperations`` in ``test_t
 .. code-block:: python
 
     def test_converse_non_implication(self):
-      self.assertFalse(truth_table.converse_non_implication(True, True))
-      self.assertFalse(truth_table.converse_non_implication(True, False))
-      self.assertTrue(truth_table.converse_non_implication(False, True))
-      self.assertFalse(truth_table.converse_non_implication(False, False))
+        self.assertFalse(truth_table.converse_non_implication(True, True))
+        self.assertFalse(truth_table.converse_non_implication(True, False))
+        self.assertTrue(truth_table.converse_non_implication(False, True))
+        self.assertFalse(truth_table.converse_non_implication(False, False))
 
 the terminal shows an :doc:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
+* I add a function definition to ``truth_table.py``
 
-* add a function definition to ``truth_table.py``
   .. code-block:: python
 
     def converse_non_implication(p, q):
-      return False
+        return False
+
   since the first two cases pass, the terminal updates to show an :doc:`AssertionError` for the third case
-* add a condition for it
+* I add a condition for it
+
   .. code-block:: python
 
     def converse_non_implication(p, q):
-      if p == False and q == True:
-       return True
-      return False
+        if p == False and q == True:
+            return True
+        return False
+
   all the tests pass
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
+* I use implied conditional testing with ``not`` for the first part of the if statement
 
-* use implied conditional testing
   .. code-block:: python
 
     def converse_non_implication(p, q):
-      if not p and q  == True:
-       return True
-      else:
-       return False
-  tests pass
+        if not p and q  == True:
+            return True
+        else:
+            return False
+
+  and the test passes
+
+* I do the same for the second part of the statement
+
   .. code-block:: python
 
     def converse_non_implication(p, q):
-      if not p and q:
-       return True
-      else:
-       return False
+        if not p and q:
+            return True
+        else:
+            return False
 
-* rewrite with a ``return`` statement
+* I rewrite with a ``return`` statement
+
   .. code-block:: python
 
     def converse_non_implication(p, q):
-      return not p and q
+        return not p and q
+
   Another success! All tests pass
 
-Our knowledge has increased. I know that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
+From the tests I see that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
 
 * ``converse non implication`` is ``not p and q`` which is different from ``not(p and q)``
 * ``logical NOR`` is ``not(p or q)``
