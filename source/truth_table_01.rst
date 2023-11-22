@@ -7,8 +7,8 @@ I am going to explore writing conditional statements in python with Test Driven 
 
 There are only two boolean values
 
-* :doc:`True </data structures: booleans>`
-* :doc:`False </data structures: booleans>`
+* :doc:`True <data_structures_booleans>`
+* :doc:`False <data_structures_booleans>`
 
 The Truth Table gives the 16 outcomes of binary operations on these two values
 
@@ -73,7 +73,7 @@ GREEN: make it pass
     def logical_true():
         return True
 
-  and the terminal updates to show passing tests and I am reminded that :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`
+  and the terminal updates to show passing tests and I am reminded that :doc:`True <data_structures_booleans>` is :doc:`True <data_structures_booleans>`
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -95,14 +95,14 @@ REFACTOR: make it better
       return True
 
   and the terminal shows an :doc:`AssertionError` since the ``logical_false`` function currently returns a different value from what is expected
-* When I update the return value to :doc:`False </data structures: booleans>`, the terminal shows passing tests
+* When I update the return value to :doc:`False <data_structures_booleans>`, the terminal shows passing tests
 
   .. code-block:: python
 
     def logical_false():
       return False
 
-* I am again reminded that :doc:`False </data structures: booleans>` is :doc:`False </data structures: booleans>` and :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`
+* I am again reminded that :doc:`False <data_structures_booleans>` is :doc:`False <data_structures_booleans>` and :doc:`True <data_structures_booleans>` is :doc:`True <data_structures_booleans>`
 
 ----
 
@@ -193,9 +193,9 @@ GREEN: make it pass
 Reviewing what I know so far
 
 
-* :doc:`True </data structures: booleans>` is ``not False``
-* :doc:`False </data structures: booleans>` is ``not True``
-* :doc:`False </data structures: booleans>` is :doc:`False </data structures: booleans>`
-* :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`
+* :doc:`True <data_structures_booleans>` is ``not False``
+* :doc:`False <data_structures_booleans>` is ``not True``
+* :doc:`False <data_structures_booleans>` is :doc:`False <data_structures_booleans>`
+* :doc:`True <data_structures_booleans>` is :doc:`True <data_structures_booleans>`
 
 on to :doc:`/truth table 02: logical conjunction`

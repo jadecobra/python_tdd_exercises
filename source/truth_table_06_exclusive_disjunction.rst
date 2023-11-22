@@ -27,7 +27,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* and I add a definition that returns :doc:`True </data structures: booleans>`
+* and I add a definition that returns :doc:`True <data_structures_booleans>`
 
   .. code-block:: python
 
@@ -147,7 +147,7 @@ REFACTOR: make it better
     def exclusive_disjunction(p, q):
         return p != q
 
-So far I know that For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>`
+So far I know that For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
 
 
 * ``exclusive_disjunction`` is ``!=``
@@ -157,8 +157,8 @@ So far I know that For any boolean operation involving 2 inputs - ``p`` and ``q`
 * ``logical_conjunction`` is ``and``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
-* :doc:`False </data structures: booleans>` is ``not True``
-* :doc:`True </data structures: booleans>` is ``not False``
-* :doc:`False </data structures: booleans>` is :doc:`False </data structures: booleans>`
-* :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`
-* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :doc:`True </data structures: booleans>`
+* :doc:`False <data_structures_booleans>` is ``not True``
+* :doc:`True <data_structures_booleans>` is ``not False``
+* :doc:`False <data_structures_booleans>` is :doc:`False <data_structures_booleans>`
+* :doc:`True <data_structures_booleans>` is :doc:`True <data_structures_booleans>`
+* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :doc:`True <data_structures_booleans>`

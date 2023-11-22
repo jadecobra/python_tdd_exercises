@@ -70,7 +70,7 @@ REFACTOR: make it better
       return not p and q
   Another success! All tests pass
 
-Our knowledge has increased. I know that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>`
+Our knowledge has increased. I know that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
 
 
 * ``converse_non_implication`` is ``not p and q`` which is different from ``not(p and q)``
@@ -83,7 +83,7 @@ Our knowledge has increased. I know that for any boolean operation involving 2 i
 * ``logical_conjunction`` is ``and``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
-* :doc:`False </data structures: booleans>` is ``not True``
-* :doc:`True </data structures: booleans>` is ``not False``
-* :doc:`False </data structures: booleans>` is :doc:`False </data structures: booleans>`
-* :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`
+* :doc:`False <data_structures_booleans>` is ``not True``
+* :doc:`True <data_structures_booleans>` is ``not False``
+* :doc:`False <data_structures_booleans>` is :doc:`False <data_structures_booleans>`
+* :doc:`True <data_structures_booleans>` is :doc:`True <data_structures_booleans>`

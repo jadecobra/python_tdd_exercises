@@ -6,8 +6,8 @@ In this chapter I continue to step through learning conditional statements in py
 
 I know that there are two boolean values
 
-* :doc:`True </data structures: booleans>`
-* :doc:`False </data structures: booleans>`
+* :doc:`True <data_structures_booleans>`
+* :doc:`False <data_structures_booleans>`
 
 
 RED: make it fail
@@ -75,7 +75,7 @@ GREEN: make it pass
 
   which makes the first of the four tests pass, the terminal now shows a failure for the second line
 * I can make this function return different values based on the input it receives with `if statements <https://docs.python.org/3/tutorial/controlflow.html?highlight=statement#if-statements>`_
-* I add an `if statement <https://docs.python.org/3/reference/compound_stmts.html?highlight=return%20true#the-if-statement>`_ for the first case ``self.assertTrue(truth_table.logical_conjunction(True, True))`` where p is :doc:`True </data structures: booleans>` and q is :doc:`True </data structures: booleans>`
+* I add an `if statement <https://docs.python.org/3/reference/compound_stmts.html?highlight=return%20true#the-if-statement>`_ for the first case ``self.assertTrue(truth_table.logical_conjunction(True, True))`` where p is :doc:`True <data_structures_booleans>` and q is :doc:`True <data_structures_booleans>`
 
   .. code-block:: python
 
@@ -100,10 +100,10 @@ REFACTOR: make it better
 
 * Why does this work?
 
-  * I add a condition for when the value of ``p`` is equal to :doc:`True </data structures: booleans>` and inside that condition I have another for when the value of ``q`` is equal to :doc:`True </data structures: booleans>`
+  * I add a condition for when the value of ``p`` is equal to :doc:`True <data_structures_booleans>` and inside that condition I have another for when the value of ``q`` is equal to :doc:`True <data_structures_booleans>`
   * if both conditions are met, the ``logical_conjunction`` function returns True but what does it return when those two conditions are not met?
 
-* I know from :doc:`functions` a function returns :doc:`None </data structures: None>` by default so it must be returning :doc:`None </data structures: None>` for the other cases. This means :doc:`None </data structures: None>` is :doc:`False </data structures: booleans>` as seen in  :doc:`data structures </data structures: None>`
+* I know from :doc:`functions` a function returns :doc:`None </data structures: None>` by default so it must be returning :doc:`None </data structures: None>` for the other cases. This means :doc:`None </data structures: None>` is :doc:`False <data_structures_booleans>` as seen in  :doc:`data structures </data structures: None>`
 * I can add a test as a reminder
 
   .. code-block:: python
@@ -115,7 +115,7 @@ REFACTOR: make it better
           return None
 
   tests are still passing
-* Since :doc:`None </data structures: None>` is :doc:`False </data structures: booleans>`. I can be more explicit by using the boolean :doc:`False </data structures: booleans>`
+* Since :doc:`None </data structures: None>` is :doc:`False <data_structures_booleans>`. I can be more explicit by using the boolean :doc:`False <data_structures_booleans>`
 
   .. code-block:: python
 
@@ -183,13 +183,13 @@ REFACTOR: make it better
 
   tests are still green. I don't think I can get a simpler statement than this
 
-*FANTASTIC!* After testing ``logical_conjunction`` which is a conditional operation using ``and``, I know that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>`
+*FANTASTIC!* After testing ``logical_conjunction`` which is a conditional operation using ``and``, I know that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
 
 
-* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :doc:`True </data structures: booleans>`
+* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :doc:`True <data_structures_booleans>`
 * when there are multiple outcomes I only need to write the condition for the special case and use ``else`` for the others
 * ``logical_conjunction`` is ``and``
-* :doc:`False </data structures: booleans>` is ``not True``
-* :doc:`True </data structures: booleans>` is ``not False``
-* :doc:`False </data structures: booleans>` is :doc:`False </data structures: booleans>`
-* :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`
+* :doc:`False <data_structures_booleans>` is ``not True``
+* :doc:`True <data_structures_booleans>` is ``not False``
+* :doc:`False <data_structures_booleans>` is :doc:`False <data_structures_booleans>`
+* :doc:`True <data_structures_booleans>` is :doc:`True <data_structures_booleans>`

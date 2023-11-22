@@ -8,10 +8,10 @@ Reviewing the tests I have so far, I know that
 * I can express ``conditional statements`` on one line with ``return``
 * when there are multiple outcomes I only need to write the condition for the special case and use ``else`` for the others
 * ``logical_conjunction`` is ``and``
-* :doc:`False </data structures: booleans>` is ``not True``
-* :doc:`True </data structures: booleans>` is ``not False``
-* :doc:`False </data structures: booleans>` is :doc:`False </data structures: booleans>`
-* :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`
+* :doc:`False <data_structures_booleans>` is ``not True``
+* :doc:`True <data_structures_booleans>` is ``not False``
+* :doc:`False <data_structures_booleans>` is :doc:`False <data_structures_booleans>`
+* :doc:`True <data_structures_booleans>` is :doc:`True <data_structures_booleans>`
 
 
 Logical Disjunction
@@ -45,7 +45,7 @@ GREEN: make it pass
 
   and the terminal shows an :doc:`AssertionError`
 
-* 3 of the test cases are passing because ``logical_disjunction`` returns :doc:`True </data structures: booleans>` for each one of them. I need a condition for the fourth case to pass, so I update the definition
+* 3 of the test cases are passing because ``logical_disjunction`` returns :doc:`True <data_structures_booleans>` for each one of them. I need a condition for the fourth case to pass, so I update the definition
 
   .. code-block:: python
 
@@ -72,7 +72,7 @@ REFACTOR: make it better
 
   the terminal shows the tests are still passing
 
-* I can restate the equality comparison against :doc:`False </data structures: booleans>` in terms of :doc:`True </data structures: booleans>` by using the ``not equal`` comparison operator ``!=``
+* I can restate the equality comparison against :doc:`False <data_structures_booleans>` in terms of :doc:`True <data_structures_booleans>` by using the ``not equal`` comparison operator ``!=``
 
   .. code-block:: python
 
@@ -81,7 +81,7 @@ REFACTOR: make it better
             return False
         return True
 
-* I can also express the ``if`` statement with the ``not`` keyword like I did with ``logical_negation`` to express the opposite of a :doc:`boolean </data structures: booleans>`
+* I can also express the ``if`` statement with the ``not`` keyword like I did with ``logical_negation`` to express the opposite of a :doc:`boolean <data_structures_booleans>`
 
   .. code-block:: python
 
@@ -158,7 +158,7 @@ REFACTOR: make it better
         else:
             return True
 
-* the ``else`` statement that returns :doc:`True </data structures: booleans>` can be restated as the opposite of the ``if`` statement
+* the ``else`` statement that returns :doc:`True <data_structures_booleans>` can be restated as the opposite of the ``if`` statement
 
   .. code-block:: python
 
@@ -214,16 +214,16 @@ REFACTOR: make it better
 
   *VOILA!* the tests still pass and I have a simple statement that makes all 4 states pass for ``logical_disjunction``
 
-The tests so far show that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>`
+The tests so far show that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
 
 
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
 * ``logical_disjunction`` is ``or``
 * ``logical_conjunction`` is ``and``
-* :doc:`False </data structures: booleans>` is ``not True``
-* :doc:`True </data structures: booleans>` is ``not False``
-* :doc:`False </data structures: booleans>` is :doc:`False </data structures: booleans>`
-* :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`
-* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :doc:`True </data structures: booleans>`
+* :doc:`False <data_structures_booleans>` is ``not True``
+* :doc:`True <data_structures_booleans>` is ``not False``
+* :doc:`False <data_structures_booleans>` is :doc:`False <data_structures_booleans>`
+* :doc:`True <data_structures_booleans>` is :doc:`True <data_structures_booleans>`
+* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :doc:`True <data_structures_booleans>`
 * when there are multiple outcomes I only need to write the condition for the special case and use ``else`` for the others

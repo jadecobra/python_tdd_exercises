@@ -3,18 +3,18 @@ Truth Table: Logical Equality
 
 The journey through conditional statements in python using Test Driven Development with the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_ continues with Logical Equality
 
-To review, for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>`
+To review, for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
 
 * ``logical_implication`` is ``not p or q``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
 * ``logical_disjunction`` is ``or``
 * ``logical_conjunction`` is ``and``
-* :doc:`False </data structures: booleans>` is ``not True``
-* :doc:`True </data structures: booleans>` is ``not False``
-* :doc:`False </data structures: booleans>` is :doc:`False </data structures: booleans>`
-* :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`
-* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :doc:`True </data structures: booleans>`
+* :doc:`False <data_structures_booleans>` is ``not True``
+* :doc:`True <data_structures_booleans>` is ``not False``
+* :doc:`False <data_structures_booleans>` is :doc:`False <data_structures_booleans>`
+* :doc:`True <data_structures_booleans>` is :doc:`True <data_structures_booleans>`
+* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :doc:`True <data_structures_booleans>`
 * when there are multiple outcomes I only need to write the condition for the special case and use ``else`` for the others
 
 Logical Equality/Logical Bi-conditional
@@ -39,7 +39,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* I add a definition to ``truth_table.py`` with a return statement, I can pick :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>` since 2 out of the 4 cases are either :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>`
+* I add a definition to ``truth_table.py`` with a return statement, I can pick :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>` since 2 out of the 4 cases are either :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
 
   .. code-block:: python
 
@@ -136,7 +136,7 @@ What can I do to make this better?
 
   and the tests are still green
 
-I can update what I know so far from the tests to say, For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>`
+I can update what I know so far from the tests to say, For any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
 
 
 * ``logical_equality`` is ``==``
@@ -145,8 +145,8 @@ I can update what I know so far from the tests to say, For any boolean operation
 * ``logical_conjunction`` is ``and``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
-* :doc:`False </data structures: booleans>` is ``not True``
-* :doc:`True </data structures: booleans>` is ``not False``
-* :doc:`False </data structures: booleans>` is :doc:`False </data structures: booleans>`
-* :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`
-* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :doc:`True </data structures: booleans>`
+* :doc:`False <data_structures_booleans>` is ``not True``
+* :doc:`True <data_structures_booleans>` is ``not False``
+* :doc:`False <data_structures_booleans>` is :doc:`False <data_structures_booleans>`
+* :doc:`True <data_structures_booleans>` is :doc:`True <data_structures_booleans>`
+* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :doc:`True <data_structures_booleans>`

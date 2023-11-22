@@ -27,7 +27,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* I add a definition for the function to ``truth_table.py`` returning :doc:`True </data structures: booleans>` since 3 out of the 4 cases return that value
+* I add a definition for the function to ``truth_table.py`` returning :doc:`True <data_structures_booleans>` since 3 out of the 4 cases return that value
 
   .. code-block:: python
 
@@ -35,7 +35,7 @@ GREEN: make it pass
       return True
 
   the terminal updates to show an :doc:`AssertionError` for the first case
-* and I add a condition for the one case that returns :doc:`False </data structures: booleans>`
+* and I add a condition for the one case that returns :doc:`False <data_structures_booleans>`
 
   .. code-block:: python
 
@@ -117,7 +117,7 @@ REFACTOR: make it better
 
 ----
 
-To review, I know that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True </data structures: booleans>` or :doc:`False </data structures: booleans>`
+To review, I know that for any boolean operation involving 2 inputs - ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
 
 
 * ``logical_nand`` is ``not(p and q)``
@@ -128,8 +128,8 @@ To review, I know that for any boolean operation involving 2 inputs - ``p`` and 
 * ``logical_conjunction`` is ``and``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
-* :doc:`False </data structures: booleans>` is ``not True``
-* :doc:`True </data structures: booleans>` is ``not False``
-* :doc:`False </data structures: booleans>` is :doc:`False </data structures: booleans>`
-* :doc:`True </data structures: booleans>` is :doc:`True </data structures: booleans>`
-* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :doc:`True </data structures: booleans>`
+* :doc:`False <data_structures_booleans>` is ``not True``
+* :doc:`True <data_structures_booleans>` is ``not False``
+* :doc:`False <data_structures_booleans>` is :doc:`False <data_structures_booleans>`
+* :doc:`True <data_structures_booleans>` is :doc:`True <data_structures_booleans>`
+* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :doc:`True <data_structures_booleans>`

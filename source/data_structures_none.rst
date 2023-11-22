@@ -78,8 +78,8 @@ update ``test_is_none_a_boolean`` to make the tests pass
 I now know that
 
 
-* :doc:`False </data structures: booleans>` is not :doc:`None </data structures: None>`
-* :doc:`True </data structures: booleans>` is not :doc:`None </data structures: None>`
+* :doc:`False <data_structures_booleans>` is not :doc:`None </data structures: None>`
+* :doc:`True <data_structures_booleans>` is not :doc:`None </data structures: None>`
 * :doc:`None </data structures: None>` is :doc:`None </data structures: None>`
 
 REFACTOR: make it better

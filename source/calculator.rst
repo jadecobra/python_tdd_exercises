@@ -236,7 +236,7 @@ GREEN: make it pass
 
     E    AssertionError: None != 1
 
-  - An :doc:`AssertionError` is raised when an assertion is :doc:`False </data structures: booleans>`
+  - An :doc:`AssertionError` is raised when an assertion is :doc:`False <data_structures_booleans>`
   - Since I am using ``self.assertEqual`` it means the two inputs are not equal. In other words ``calculator.add(0, 1)`` is currently not equal to ``1``
 
 * I update the ``add`` function in ``calculator.py`` so it gives the expected value

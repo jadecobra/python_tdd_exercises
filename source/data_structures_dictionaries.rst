@@ -202,7 +202,7 @@ REFACTOR: make it better
 How to create a dictionary with booleans as keys
 -------------------------------------------------
 
-Is it possible to use :doc:`False </data structures: booleans>` or :doc:`True </data structures: booleans>` as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys?
+Is it possible to use :doc:`False <data_structures_booleans>` or :doc:`True <data_structures_booleans>` as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys?
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -230,13 +230,13 @@ when I update the values to make them match tests are green again. Sweet!
     {False: 'boom'}
   )
 
-I can use :doc:`False </data structures: booleans>` as a key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+I can use :doc:`False <data_structures_booleans>` as a key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* I add a test for using :doc:`True </data structures: booleans>` as a key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+* I add a test for using :doc:`True <data_structures_booleans>` as a key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
   .. code-block:: python
 
