@@ -1,17 +1,13 @@
 Truth Table: Converse NonImplication
 ====================================
 
-I will continue to step through learning conditional statements in python using Test Driven Development with the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
+The tests in this chapter cover Converse NonImplication from  the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
-
-
-Converse NonImplication
------------------------
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a test for converse nonimplication to ``TestBinaryOperations`` in ``test_truth_table.py``
+I add a test for converse nonimplication to ``TestBinaryOperations`` in ``test_truth_table.py``
 
 .. code-block:: python
 
@@ -75,7 +71,7 @@ Our knowledge has increased. I know that for any boolean operation involving 2 i
 * ``converse non implication`` is ``not p and q`` which is different from ``not(p and q)``
 * ``logical NOR`` is ``not(p or q)``
 * ``logical NAND`` is ``not(p and q)``
-* ``exclusive disjunction`` is ``!=`` aka opposite of ``logical_equality``
+* ``exclusive disjunction`` is ``!=`` or the opposite of ``logical_equality``
 * ``logical equality`` is ``==``
 * ``logical implication`` is ``not p or q``
 * ``logical disjunction`` is ``or``

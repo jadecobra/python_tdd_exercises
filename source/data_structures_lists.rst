@@ -253,7 +253,7 @@ GREEN: make it pass
       self.assertEqual(last_item, 3)
       self.assertEqual(a_list, [0, 1, 2])
 
-Get a specific item in a list aka Indexing
+Get a specific item in a list or the Indexing
 ------------------------------------------
 
 To view an item in a list I provide the position as an index in ``[]`` to the list. ``python`` uses zero-based indexing which means the position of elements starts at 0

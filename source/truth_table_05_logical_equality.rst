@@ -27,7 +27,7 @@ I add a test for logical equality to ``TestBinaryOperations`` in ``test_truth_ta
 
 .. code-block:: python
 
-    def test_logical_equality_aka_logical_biconditional(self):
+    def test_logical_equality_or the_logical_biconditional(self):
         self.assertTrue(truth_table.logical_equality(True, True))
         self.assertFalse(truth_table.logical_equality(True, False))
         self.assertFalse(truth_table.logical_equality(False, True))

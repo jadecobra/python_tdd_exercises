@@ -29,7 +29,7 @@ I add a test for logical implication to ``TestBinaryOperations`` in ``test_truth
 
 .. code-block:: python
 
-    def test_logical_implication_aka_material_implication(self):
+    def test_logical_implication_or the_material_implication(self):
         self.assertTrue(truth_table.logical_implication(True, True))
         self.assertFalse(truth_table.logical_implication(True, False))
         self.assertTrue(truth_table.logical_implication(False, True))

@@ -86,7 +86,7 @@ Knowledge update. For any boolean operation involving 2 inputs - ``p`` and ``q``
 
 * ``logical NOR`` is ``not(p or q)``
 * ``logical NAND`` is ``not(p and q)``
-* ``exclusive disjunction`` is ``!=`` aka opposite of ``logical_equality``
+* ``exclusive disjunction`` is ``!=`` or the opposite of ``logical_equality``
 * ``logical equality`` is ``==``
 * ``logical implication`` is ``not p or q``
 * ``logical disjunction`` is ``or``

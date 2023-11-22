@@ -4,10 +4,6 @@ Truth Table: Material NonImplication
 More conditional statements from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_, this time for Material NonImplication
 
 
-
-Material NonImplication
------------------------
-
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
@@ -88,7 +84,7 @@ From the tests I can see that for any boolean operation involving 2 inputs - ``p
 * ``converse non implication`` is ``not p and q`` which is different from ``not(p and q)``
 * ``logical NOR`` is ``not(p or q)``
 * ``logical NAND`` is ``not(p and q)``
-* ``exclusive disjunction`` is ``!=`` aka opposite of ``logical_equality``
+* ``exclusive disjunction`` is ``!=`` or the opposite of ``logical_equality``
 * ``logical equality`` is ``==``
 * ``logical implication`` is ``not p or q``
 * ``logical disjunction`` is ``or``
