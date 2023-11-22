@@ -376,7 +376,7 @@ add a failing test
 
 
 * the terminal updates to show an :doc:`AssertionError`
-* ``maxDiff`` is an attribute of the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class that sets the maximum amount of characters to show in the comparison between the two objects that is displayed in the terminal. When it is set to :doc:`None </data structures: None>` there is no limit to the number of characters
+* ``maxDiff`` is an attribute of the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class that sets the maximum amount of characters to show in the comparison between the two objects that is displayed in the terminal. When it is set to :doc:`None <data_structures_none>` there is no limit to the number of characters
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

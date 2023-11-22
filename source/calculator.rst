@@ -187,7 +187,7 @@ GREEN: make it pass
     # AssertionError
     # NameError
 
-* then assign the name ``add`` to the null value :doc:`None </data structures: None>`
+* then assign the name ``add`` to the null value :doc:`None <data_structures_none>`
 
   .. code-block:: python
 
@@ -199,9 +199,9 @@ GREEN: make it pass
 
     E    TypeError: 'NoneType' object is not callable
 
-  The :doc:`AttributeError` was fixed by declaring a variable ``add`` in the ``calculator`` module, even though it is currently assigned to the null value :doc:`None </data structures: None>`
+  The :doc:`AttributeError` was fixed by declaring a variable ``add`` in the ``calculator`` module, even though it is currently assigned to the null value :doc:`None <data_structures_none>`
 
-* The new error isa :doc:`TypeError` which can occur when an `object <https://docs.python.org/3/glossary.html#term-object>`_ is used in a way that it is not supposed to be used. In this case the ``add`` variable is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_ because it refers to :doc:`None </data structures: None>` which is not a `callable <https://docs.python.org/3/glossary.html#term-callable>`_ object. I update the list of exceptions encountered
+* The new error isa :doc:`TypeError` which can occur when an `object <https://docs.python.org/3/glossary.html#term-object>`_ is used in a way that it is not supposed to be used. In this case the ``add`` variable is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_ because it refers to :doc:`None <data_structures_none>` which is not a `callable <https://docs.python.org/3/glossary.html#term-callable>`_ object. I update the list of exceptions encountered
 
   .. code-block:: python
 

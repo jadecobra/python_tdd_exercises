@@ -139,7 +139,7 @@ GREEN: make it pass
 
    variable_0 = None
 
-  this explicity defines ``variable_0`` with a value of :doc:`None </data structures: None>` and the terminal updates to show a passing test. YES!
+  this explicity defines ``variable_0`` with a value of :doc:`None <data_structures_none>` and the terminal updates to show a passing test. YES!
 
   .. code-block:: python
 

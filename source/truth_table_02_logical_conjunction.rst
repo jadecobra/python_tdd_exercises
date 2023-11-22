@@ -103,7 +103,7 @@ REFACTOR: make it better
   * I add a condition for when the value of ``p`` is equal to :doc:`True <data_structures_booleans>` and inside that condition I have another for when the value of ``q`` is equal to :doc:`True <data_structures_booleans>`
   * if both conditions are met, the ``logical_conjunction`` function returns True but what does it return when those two conditions are not met?
 
-* I know from :doc:`functions` a function returns :doc:`None </data structures: None>` by default so it must be returning :doc:`None </data structures: None>` for the other cases. This means :doc:`None </data structures: None>` is :doc:`False <data_structures_booleans>` as seen in  :doc:`data structures </data structures: None>`
+* I know from :doc:`functions` a function returns :doc:`None <data_structures_none>` by default so it must be returning :doc:`None <data_structures_none>` for the other cases. This means :doc:`None <data_structures_none>` is :doc:`False <data_structures_booleans>` as seen in  :doc:`data structures <data_structures_none>`
 * I can add a test as a reminder
 
   .. code-block:: python
@@ -115,7 +115,7 @@ REFACTOR: make it better
           return None
 
   tests are still passing
-* Since :doc:`None </data structures: None>` is :doc:`False <data_structures_booleans>`. I can be more explicit by using the boolean :doc:`False <data_structures_booleans>`
+* Since :doc:`None <data_structures_none>` is :doc:`False <data_structures_booleans>`. I can be more explicit by using the boolean :doc:`False <data_structures_booleans>`
 
   .. code-block:: python
 

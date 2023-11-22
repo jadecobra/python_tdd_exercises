@@ -74,9 +74,9 @@ GREEN: make it pass
 I can say that in python
 
 * ``False`` is a ``boolean``
-* ``dict()`` is ``False`` which means an empty :doc:`dictionary </data structures: dictionaries>` is ``False``
+* ``dict()`` is ``False`` which means an empty :doc:`dictionary <data_structures_dictionaries>` is ``False``
 * ``{}`` is ``False`` which means an empty ``set``/\ ``dictionary`` is ``False``
-* ``[]`` is ``False`` which means an empty :doc:`list </data structures: lists>` is ``False``
+* ``[]`` is ``False`` which means an empty :doc:`list <data_structures_lists>` is ``False``
 * ``()`` is ``False`` which means an empty ``tuple`` is ``False``
 * ``""`` is ``False`` which means an empty ``string`` is ``False``
 * ``0`` is ``False``
@@ -85,7 +85,7 @@ I can sum this up as
 
 
 * ``False`` is a ``boolean``
-* empty `objects <https://docs.python.org/3/glossary.html#term-object>`_ including ``0`` and :doc:`None </data structures: None>` are ``False``
+* empty `objects <https://docs.python.org/3/glossary.html#term-object>`_ including ``0`` and :doc:`None <data_structures_none>` are ``False``
 
 What is True?
 -------------
@@ -161,8 +161,8 @@ GREEN: make it pass
 
 * I can sum up my current knowledge of python as
 
-  - any value except ``0``, empty objects and :doc:`None </data structures: None>` are ``True``
-  - empty `objects <https://docs.python.org/3/glossary.html#term-object>`_ including ``0`` and :doc:`None </data structures: None>` are ``False``
+  - any value except ``0``, empty objects and :doc:`None <data_structures_none>` are ``True``
+  - empty `objects <https://docs.python.org/3/glossary.html#term-object>`_ including ``0`` and :doc:`None <data_structures_none>` are ``False``
   - ``True`` is a ``boolean``
   - ``False`` is a ``boolean``
-  - :doc:`None </data structures: None>` is :doc:`None </data structures: None>`
+  - :doc:`None <data_structures_none>` is :doc:`None <data_structures_none>`

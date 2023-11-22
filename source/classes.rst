@@ -82,7 +82,7 @@ GREEN: make it pass
   # AttributeError
   # NameError
 
-* I update the name as an assignment to the null value :doc:`None </data structures: None>`
+* I update the name as an assignment to the null value :doc:`None <data_structures_none>`
 
   .. code-block:: python
 
@@ -291,7 +291,7 @@ GREEN: make it pass
   and the terminal updates to show a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
 
-* after I update the name with an assignment to :doc:`None </data structures: None>`
+* after I update the name with an assignment to :doc:`None <data_structures_none>`
 
   .. code-block:: python
 
@@ -408,7 +408,7 @@ GREEN: make it pass
   the terminal updates to show a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ because there is no definition for ``method_a``
 
 
-* I define ``method_a`` as an attribute by assigning the name to the null value :doc:`None </data structures: None>`
+* I define ``method_a`` as an attribute by assigning the name to the null value :doc:`None <data_structures_none>`
 
   .. code-block:: python
 
@@ -418,7 +418,7 @@ GREEN: make it pass
 
     method_a = None
 
-  the terminal now revealsa :doc:`TypeError` since ``method_a`` refers to :doc:`None </data structures: None>` which is not callable
+  the terminal now revealsa :doc:`TypeError` since ``method_a`` refers to :doc:`None <data_structures_none>` which is not callable
 
 * I update the definition of ``method_a`` to make ita :doc:`function <functions>` which makes it callable
 
@@ -779,7 +779,7 @@ How to View the attributes and methods of a Class
 
 To view what ``attributes`` and ``methods`` are defined for any `object <https://docs.python.org/3/glossary.html#term-object>`_ I can call ``dir`` on the `object <https://docs.python.org/3/glossary.html#term-object>`_.
 
-The ``dir`` :doc:`method <functions>` returnsa :doc:`list </data structures: lists>` of all attributes and :doc:`methods <functions>` or its given input
+The ``dir`` :doc:`method <functions>` returnsa :doc:`list <data_structures_lists>` of all attributes and :doc:`methods <functions>` or its given input
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^

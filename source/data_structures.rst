@@ -1,7 +1,7 @@
 Data Structures
 ===============
 
-Let us take a look at Data Structures in python using Test Driven Development. This chapter covers the null object :doc:`None </data structures: None>`
+Let us take a look at Data Structures in python using Test Driven Development. This chapter covers the null object :doc:`None <data_structures_none>`
 
 In programming I process input data of some form and output data in some form.
 I can think of it as

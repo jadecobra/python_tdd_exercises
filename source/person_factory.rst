@@ -131,7 +131,7 @@ REFACTOR: make it better
 
   the terminal updates to show a :doc:`TypeError` for the next keyword argument
 
-* I update the ``factory`` function definition for each keyword until I geta :doc:`TypeError` for the line where I subtract ``this_year() - this_year()`` because I cannot perform a subtraction operation on :doc:`None </data structures: None>` and the ``this_year`` function currently returns :doc:`None </data structures: None>`
+* I update the ``factory`` function definition for each keyword until I geta :doc:`TypeError` for the line where I subtract ``this_year() - this_year()`` because I cannot perform a subtraction operation on :doc:`None <data_structures_none>` and the ``this_year`` function currently returns :doc:`None <data_structures_none>`
 * update the definition for ``this_year`` using a function from the `datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#module-datetime>`_ library that returns the current year I am in
 
   .. code-block:: python
@@ -148,7 +148,7 @@ REFACTOR: make it better
   - I return the ``year`` attribute of the object returned by the ``now`` :doc:`method <functions>` of the ``datetime.datetime`` class, which is a representation of the current local date and time, I could also use ``today`` or ``utcnow`` to achieve the same result
   - I get the ``year`` attribute of the object returned since that is all I am interested in
 
-* the terminal updates to show an :doc:`AssertionError` since the ``person.factory`` function returns :doc:`None </data structures: None>` but the test expectsa :doc:`data structures: dictionaries`. I should update the function to return an empty dictionary
+* the terminal updates to show an :doc:`AssertionError` since the ``person.factory`` function returns :doc:`None <data_structures_none>` but the test expectsa :doc:`data structures: dictionaries`. I should update the function to return an empty dictionary
 
   .. code-block:: python
 

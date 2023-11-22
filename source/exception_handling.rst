@@ -420,7 +420,7 @@ Let us add exception handling to the program so it does not end when it encounte
   def exception_handler(argument):
     return None
 
-  the terminal updates to show an :doc:`AssertionError` because the result of calling ``exceptions.exception_handler`` with ``exceptions.raises_exception_error`` as the input is currently :doc:`None </data structures: None>` which is not equal to ``failed``
+  the terminal updates to show an :doc:`AssertionError` because the result of calling ``exceptions.exception_handler`` with ``exceptions.raises_exception_error`` as the input is currently :doc:`None <data_structures_none>` which is not equal to ``failed``
 
   .. code-block:: python
 
@@ -490,7 +490,7 @@ Let us add exception handling to the program so it does not end when it encounte
   AssertionError: None != 'succeeded'
 
   - The ``exception_handler`` function returns the result of calling the function it receives as input
-  - When I call ``exceptions.exception_handler(exceptions.does_not_raise_exception_error)`` it in turn calls ``does_not_raise_exception_error`` and returns the result of the call which is currently defined as :doc:`None </data structures: None>`
+  - When I call ``exceptions.exception_handler(exceptions.does_not_raise_exception_error)`` it in turn calls ``does_not_raise_exception_error`` and returns the result of the call which is currently defined as :doc:`None <data_structures_none>`
   - Since the result is not equal to ``succeeded``, the expectation is not met.
 
   I use a ``try...except...else`` statement to catch or handle exceptions in python. This allows the program to make a decision when it encounters an Exception.
@@ -574,7 +574,7 @@ GREEN: make it pass
 
   AssertionError: None != 'always_returns_this'
 
-  because ``exceptions.always_returns`` returns the value of ``does_not_raise_exception_error`` which is :doc:`None </data structures: None>` and is not equal to the expectation in the test which is ``always_returns_this``
+  because ``exceptions.always_returns`` returns the value of ``does_not_raise_exception_error`` which is :doc:`None <data_structures_none>` and is not equal to the expectation in the test which is ``always_returns_this``
 
 * add exception handling with using ``try...except...else``
 

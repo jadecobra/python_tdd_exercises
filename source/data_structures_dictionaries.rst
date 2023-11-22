@@ -71,7 +71,7 @@ REFACTOR: make it better
     def a_dict():
       return None
 
-  and the terminal updates to show an :doc:`AssertionError` since the function I defined returns :doc:`None </data structures: None>` instead of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+  and the terminal updates to show an :doc:`AssertionError` since the function I defined returns :doc:`None <data_structures_none>` instead of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 * I then update the return statement to return an empty `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
   .. code-block:: python
@@ -305,7 +305,7 @@ Can I create a Dictionary with lists as keys?
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add a test to ``TestDictionaries`` using a :doc:`list </data structures: lists>` as a key
+I add a test to ``TestDictionaries`` using a :doc:`list <data_structures_lists>` as a key
 
 .. code-block:: python
 
@@ -330,7 +330,7 @@ I also update the list of exceptions encountered to include :doc:`TypeError`
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I can use ``self.assertRaises`` to confirm that an error is raised by some code without having it crash the tests. I will use it here to confirm that when I try to create a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a :doc:`list </data structures: lists>` as the key, python raises a :doc:`TypeError`
+I can use ``self.assertRaises`` to confirm that an error is raised by some code without having it crash the tests. I will use it here to confirm that when I try to create a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a :doc:`list <data_structures_lists>` as the key, python raises a :doc:`TypeError`
 
 .. code-block:: python
 
@@ -406,7 +406,7 @@ all tests pass and I know that I can create `dictionaries <https://docs.python.o
 
 I CANNOT create `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with the with the following :doc:`/data structures` as keys
 
-* :doc:`lists </data structures: lists>`
+* :doc:`lists <data_structures_lists>`
 * `sets <https://docs.python.org/3/tutorial/datastructures.html#sets>`_
 * `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
@@ -447,7 +447,7 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* I can also display the values of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ as a :doc:`list </data structures: lists>` without the keys
+* I can also display the values of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ as a :doc:`list <data_structures_lists>` without the keys
 
   .. code-block:: python
 
@@ -484,7 +484,7 @@ REFACTOR: make it better
       ]
     )
 
-* I can also display the keys of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ as a :doc:`list </data structures: lists>`
+* I can also display the keys of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ as a :doc:`list <data_structures_lists>`
 
   .. code-block:: python
 
@@ -622,7 +622,7 @@ What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datas
     }
     self.assertIsNone(a_dictionary.get('non_existent_key'))
 
-  the terminal updates to show a passing test. This means that when I use the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :doc:`method <functions>` and the ``key`` does not exist, I get :doc:`None </data structures: None>` as the result.
+  the terminal updates to show a passing test. This means that when I use the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :doc:`method <functions>` and the ``key`` does not exist, I get :doc:`None <data_structures_none>` as the result.
 * I can state the above explicitly because ``Explicit is better than implicit`` see `Zen of Python <https://peps.python.org/pep-0020/>`_
 
   .. code-block:: python
@@ -658,7 +658,7 @@ What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datas
     self.assertIsNone(a_dictionary.get('non_existent_key', None))
     self.assertEqual(a_dictionary.get('key1', None), None)
 
-  the terminal updates to show an `Assertion Error <./AssertionError.rst>`_ because ``value1`` is not equal to :doc:`None </data structures: None>`
+  the terminal updates to show an `Assertion Error <./AssertionError.rst>`_ because ``value1`` is not equal to :doc:`None <data_structures_none>`
 * I update the test to make it pass.
 
 When I use the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :doc:`method <functions>` to get a value from a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
@@ -759,14 +759,14 @@ I see some of the :doc:`methods <functions>` I have covered so far and others I 
 * clear
 * copy
 * fromkeys
-* get - gets the ``value`` for a ``key`` and returns a default value or :doc:`None </data structures: None>` if the key does not exist
+* get - gets the ``value`` for a ``key`` and returns a default value or :doc:`None <data_structures_none>` if the key does not exist
 * items
-* keys - returns the :doc:`list </data structures: lists>` of ``keys`` in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+* keys - returns the :doc:`list <data_structures_lists>` of ``keys`` in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 * `pop <https://docs.python.org/3/library/stdtypes.html#dict.pop>`_
 * popitem
 * `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_
 * `update <https://docs.python.org/3/library/stdtypes.html#dict.update>`_
-* values - returns the :doc:`list </data structures: lists>` of ``values`` in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+* values - returns the :doc:`list <data_structures_lists>` of ``values`` in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
 How to set a default value for a given key
 ------------------------------------------
@@ -857,7 +857,7 @@ REFACTOR: make it better
     )
     self.assertIsNone(a_dictionary['another_key'])
 
-* I will now add a test for setting the default value to something other than :doc:`None </data structures: None>`
+* I will now add a test for setting the default value to something other than :doc:`None <data_structures_none>`
 
   .. code-block:: python
 
