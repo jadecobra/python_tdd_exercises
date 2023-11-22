@@ -3,7 +3,7 @@ Truth Table
 
 Sometimes I want programs to make decisions based on inputs or conditions, and can make this happen with conditional statements.
 
-I am going to explore writing conditional statements in python with Test Driven Development with the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_ from mathematics
+I am going to explore writing conditional statements in python with the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_ from mathematics
 
 There are only two boolean values
 
