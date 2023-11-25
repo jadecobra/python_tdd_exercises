@@ -318,7 +318,7 @@ the terminal shows a :doc:`TypeError` because only `hashable <https://docs.pytho
 
   E    TypeError: unhashable type: 'list'
 
-I also change the list of exceptions encountered to include :doc:`TypeError`
+I also add the error to the list of exceptions encountered to include :doc:`TypeError`
 
 .. code-block:: python
 

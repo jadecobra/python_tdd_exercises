@@ -72,7 +72,7 @@ GREEN: make it pass
 
   and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ because ``ClassWithPass`` is not defined anywhere
 
-* I change the list of exceptions encountered
+* I add the error to the list of exceptions encountered
 
   .. code-block:: python
 

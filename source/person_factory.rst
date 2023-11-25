@@ -102,7 +102,7 @@ REFACTOR: make it better
 
   the terminal shows a :doc:`TypeError` since the ``person.factory`` function signature does not allow arguments to be passed to it.
 
-* I change the list of exceptions encountered
+* I add the error to the list of exceptions encountered
 
   .. code-block:: python
 

@@ -54,7 +54,7 @@ GREEN: make it pass
   the terminal shows an :doc:`AttributeError` since I do not have a definition for ``duration`` in `sleep_duration.py`
 
 
-* I change the list of exceptions encountered
+* I add the error to the list of exceptions encountered
 
   .. code-block:: python
 
