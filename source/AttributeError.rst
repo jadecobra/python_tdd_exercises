@@ -10,7 +10,7 @@ An `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=
 
 ----
 
-Solve AttributeError by defining variables
+Solve an AttributeError by defining variables
 ----------------------------------------------
 
 RED: make it fail
@@ -339,7 +339,7 @@ If you have been typing along *WELL DONE!* You now know
 ----
 
 
-Solve AttributeError by defining functions
+Solve an AttributeError by defining functions
 ----------------------------------------------
 
 RED: make it fail
@@ -438,7 +438,7 @@ REFACTOR: make it better
 ----
 
 
-Solve AttributeError by defining classes
+Solve an AttributeError by defining classes
 --------------------------------------------
 
 A :doc:`class <classes>` is a blueprint that represents an `object <https://docs.python.org/3/glossary.html#term-object>`_. I think of it is a collection of :doc:`methods (functions) <functions>` and attributes
@@ -528,7 +528,7 @@ REFACTOR: make it better
 ----
 
 
-Solve AttributeError by defining class attributes
+Solve an AttributeError by defining class attributes
 -----------------------------------------------------
 
 RED: make it fail
@@ -679,7 +679,7 @@ REFACTOR: make it better
 ----
 
 
-Solve AttributeError by defining class methods
+Solve an AttributeError by defining class methods
 --------------------------------------------------
 
 RED: make it fail
