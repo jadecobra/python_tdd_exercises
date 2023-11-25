@@ -13,14 +13,19 @@ If you are just starting your journey, congratulations! You made a decision from
 
 If you are new to Test Driven Development in python this book is also for you.
 
-The exercises are written to help you test and explore ideas.
-
 How to use this book
 --------------------
 
-You choose how you go through the chapters, you can start with any one you like or one that looks like it could solve your current problem.
+You can choose how you go through the chapters by starting with any one you like or one that looks like it could solve your current problem.
 
-The only recommendation is that you start with  :doc:`How to Setup a Test Driven Development Environment <setup_tdd_environment>` which is required by every other chapter
+Here is how I recommend you use the book
+
+* start with  :doc:`How to Setup a Test Driven Development Environment <setup_tdd_environment>` because it is required by every other chapter
+* type out the code portions as you go through each chapter - do not copy and paste
+* repeat a chapter you like until you can do it from memory
+* try recreating the tests from memory or write new tests for a concept you are learning
+* in chapters like the ``How tos`` try writing the solutions from the tests only
+
 
 .. toctree::
   :maxdepth: 2
