@@ -1,5 +1,6 @@
-Am I learning?
-==============
+
+How to measure learning
+=======================
 
 What follows is an exercise in measuring learning. It is somewhat philosophical in its meaning but arithmetic in its representation. I am curious to know what you think and what solutions you come up with
 

@@ -34,7 +34,7 @@ I create a failing test in ``test_data_structures.py`` called ``test_what_is_fal
    self.assertTrue(dict())
    self.assertNotIsInstance(False, bool)
 
-the ``assertTrue`` method checks if a given input is ``True``, the terminal updates to show an :doc:`AssertionError` indicating that the given input is not ``True``
+the ``assertTrue`` method checks if a given input is ``True``, the terminal shows an :doc:`AssertionError` indicating that the given input is not ``True``
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -56,7 +56,7 @@ GREEN: make it pass
 
   the ``assertNotIsInstance`` method checks that the first input given is not an instance of the :doc:`class <classes>` given as the second input in other words, it is asking the question ``if False not an instance of bool``
 
-* When I update ``self.assertNotIsInstance`` to ``self.assertIsInstance`` the final test passes
+* When I change ``self.assertNotIsInstance`` to ``self.assertIsInstance`` the final test passes
 
   .. code-block:: python
 
@@ -113,7 +113,7 @@ What if I try a similar series of failing tests for ``True`` by adding the follo
    })
    self.assertNotIsInstance(True, bool)
 
-the terminal updates to show an :doc:`AssertionError`
+the terminal shows an :doc:`AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -139,7 +139,7 @@ GREEN: make it pass
     })
     self.assertNotIsInstance(True, bool)
 
-* I update ``self.assertNotIsInstance`` to ``self.assertIsInstance`` and all the tests pass, confirming that ``True`` is an instance of the ``boolean`` object
+* I change ``self.assertNotIsInstance`` to ``self.assertIsInstance`` and all the tests pass, confirming that ``True`` is an instance of the ``boolean`` object
 
   .. code-block:: python
 

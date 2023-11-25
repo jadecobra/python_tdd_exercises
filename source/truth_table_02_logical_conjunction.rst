@@ -27,7 +27,7 @@ After creating a ``TestCase`` for binary operations in ``test_truth_table.py``
         self.assertFalse(truth_table.logical_conjunction(False, True))
         self.assertFalse(truth_table.logical_conjunction(False, False))
 
-the terminal updates to show an :doc:`AttributeError`
+the terminal shows an :doc:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -39,7 +39,7 @@ GREEN: make it pass
     def logical_conjunction():
         return None
 
-  the terminal updates to show a :doc:`TypeError`
+  the terminal shows a :doc:`TypeError`
 * I add the new error to the list of exceptions encountered
 
   .. code-block:: python
@@ -50,7 +50,7 @@ GREEN: make it pass
     # AttributeError
     # TypeError
 
-* I update the function signature with a positional argument
+* I change the function signature with a positional argument
 
   .. code-block:: python
 
@@ -65,8 +65,8 @@ GREEN: make it pass
     def logical_conjunction(p, q):
         return None
 
-  and the terminal updates to show an :doc:`AssertionError`
-* I update ``logical_conjunction`` in ``truth_table.py``
+  and the terminal shows an :doc:`AssertionError`
+* I change ``logical_conjunction`` in ``truth_table.py``
 
   .. code-block:: python
 
@@ -93,7 +93,7 @@ GREEN: make it pass
             if q == True:
                 return True
 
-  the test updates to show passing tests. Lovely!
+  the test shows passing tests. Lovely!
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^

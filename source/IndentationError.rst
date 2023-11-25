@@ -31,7 +31,7 @@ RED: make it fail
     'a'
     'b'
 
-  the terminal updates to show
+  the terminal shows
 
   .. code-block:: python
 
@@ -52,12 +52,12 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* update ``test_indentation_error.py`` by making the lines match up in spacing
+* change ``test_indentation_error.py`` by making the lines match up in spacing
   .. code-block:: python
 
     'a'
     'b'
-  the terminal updates to show passing tests
+  the terminal shows passing tests
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -71,7 +71,7 @@ add more indentation errors to ``test_indentation_error.py``
     'c'
        'd'
 
-The terminal updates to show
+The terminal shows
 
 .. code-block:: python
 
@@ -111,7 +111,7 @@ GREEN: make it pass
 
 
 *
-  update ``test_indentation_error.py`` to make the spacing/indentation match for each function
+  change ``test_indentation_error.py`` to make the spacing/indentation match for each function
 
   .. code-block:: python
 
@@ -139,7 +139,7 @@ RED: make it fail
 
 
 *
-  update ``test_indentation_error.py``
+  change ``test_indentation_error.py``
 
   .. code-block:: python
 
@@ -163,7 +163,7 @@ GREEN: make it pass
 
 
 *
-  update ``test_indentation_error.py`` to make the spacing/indentation match
+  change ``test_indentation_error.py`` to make the spacing/indentation match
 
   .. code-block:: python
 
@@ -184,7 +184,7 @@ RED: make it fail
 
 
 *
-  building on what I have done so far, I will add failing tests for :doc:`methods`\ , update ``test_indentation_error.py``
+  building on what I have done so far, I will add failing tests for :doc:`methods`\ , change ``test_indentation_error.py``
 
   .. code-block:: python
 
@@ -211,7 +211,7 @@ GREEN: make it pass
 
 
 *
-  update ``test_indentation_error.py`` to make the spacing/indentation match
+  change ``test_indentation_error.py`` to make the spacing/indentation match
 
   .. code-block:: python
 
@@ -234,7 +234,7 @@ RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
 
-* update ``test_indentation_error.py``
+* change ``test_indentation_error.py``
   .. code-block:: python
 
     class Class():
@@ -251,7 +251,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* update ``test_indentation_error.py`` to make the spacing/indentation match
+* change ``test_indentation_error.py`` to make the spacing/indentation match
   .. code-block:: python
 
     class Class():

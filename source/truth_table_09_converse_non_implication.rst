@@ -29,7 +29,7 @@ GREEN: make it pass
     def converse_non_implication(p, q):
         return False
 
-  since the first two cases pass, the terminal updates to show an :doc:`AssertionError` for the third case
+  since the first two cases pass, the terminal shows an :doc:`AssertionError` for the third case
 * I add a condition for it
 
   .. code-block:: python

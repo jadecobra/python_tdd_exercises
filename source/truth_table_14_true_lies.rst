@@ -73,8 +73,8 @@ GREEN: make it pass
     def contradiction(p, q):
       return True
 
-  the terminal updates to show an :doc:`AssertionError` for the first case
-* When I update the return value, the test passes
+  the terminal shows an :doc:`AssertionError` for the first case
+* When I change the return value, the test passes
   .. code-block:: python
 
     def contradiction(p, q):

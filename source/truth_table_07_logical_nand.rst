@@ -30,7 +30,7 @@ GREEN: make it pass
     def logical_nand(p, q):
       return True
 
-  the terminal updates to show an :doc:`AssertionError` for the first case
+  the terminal shows an :doc:`AssertionError` for the first case
 * and I add a condition for the one case that returns :doc:`False <data_structures_booleans>`
 
   .. code-block:: python

@@ -1,5 +1,5 @@
-Measure Sleep Duration
-======================
+How to measure Sleep Duration
+=============================
 
 Let us take a look at building a program which gives us the amount of time I have been asleep based on a given sleep, wake time and dates to give an accurate result.
 
@@ -51,10 +51,10 @@ GREEN: make it pass
   class TestSleepDuration(unittest.TestCase):
 
 
-  the terminal updates to show an :doc:`AttributeError` since I do not have a definition for ``duration`` in `sleep_duration.py`
+  the terminal shows an :doc:`AttributeError` since I do not have a definition for ``duration`` in `sleep_duration.py`
 
 
-* I update the list of exceptions encountered
+* I change the list of exceptions encountered
 
   .. code-block:: python
 
@@ -104,7 +104,7 @@ GREEN: make it pass
 
   the terminal outputs a similar message as before, this time for the second keyword argument
 
-* I update the definition the same way
+* I change the definition the same way
 
   .. code-block:: python
 
@@ -113,7 +113,7 @@ GREEN: make it pass
 
   the terminal now shows an :doc:`AssertionError` since the duration function returns :doc:`None <data_structures_none>` and the test expects ``1`` as the duration when a sleep time of ``07:00`` and a wake time of ``08:00`` is given
 
-* modify the return value for the duration function to the expectation
+* change the return value for the duration function to the expectation
 
   .. code-block:: python
 
@@ -173,7 +173,7 @@ What if I write a test that uses a random variable for the sleep and wake times?
      )
 
   now I have an :doc:`AssertionError` because ``sleep_duration.duration`` still returns ``1`` but from the test I expect the difference between ``wake_time`` and ``sleep_time``
-* update the ``duration`` function in ``sleep_duration.py`` to return a difference between the ``wake_time`` and ``sleep_time``?
+* change the ``duration`` function in ``sleep_duration.py`` to return a difference between the ``wake_time`` and ``sleep_time``?
 
   .. code-block:: python
 
@@ -334,7 +334,7 @@ What if I write a test that uses a random variable for the sleep and wake times?
          ]
        )
 
-* the terminal displaysa :doc:`TypeError` because python does not support subtracting one string from another
+* the terminal displays a :doc:`TypeError` because python does not support subtracting one string from another
 
   .. code-block:: python
 
@@ -393,7 +393,7 @@ What if I write a test that uses a random variable for the sleep and wake times?
 
    E    TypeError: unsupported operand type(s) for -: 'str' and 'str'
 
-* but what I want is to split the string on a ``delimiter`` so I get the separate parts, something like ``["00", "00"]``, using ``:`` as the delimeter. Update the test to reflect the desires
+* but what I want is to split the string on a ``delimiter`` so I get the separate parts, something like ``["00", "00"]``, using ``:`` as the delimeter. change the test to reflect the desires
 
   .. code-block:: python
 
@@ -448,7 +448,7 @@ What if I write a test that uses a random variable for the sleep and wake times?
          0
        )
 
-  the terminal updates to show us an :doc:`AssertionError` because the first item (item zero) from splitting ``"12:34"`` on the delimiter ``:`` is ``"12"``, good, I am closer to what I want
+  the terminal shows us an :doc:`AssertionError` because the first item (item zero) from splitting ``"12:34"`` on the delimiter ``:`` is ``"12"``, good, I am closer to what I want
 * change the expected value in the test to match the value in the terminal
 
   .. code-block:: python
@@ -467,8 +467,8 @@ What if I write a test that uses a random variable for the sleep and wake times?
          0
        )
 
-  the terminal shows another :doc:`AssertionError`\ , this time to confirm that the second item (item one) from splitting ``"12:34"`` on the delimiter ``:`` is ``"34"``, I am not dealing with this part yet but I can assume I would use it soon, update the expected value in the same way and the test passes bringing us back to the unsolved :doc:`TypeError`
-* using what I know, how to ``split`` a string on a delimiter :doc:`method <functions>` and how to index a list, update the duration function to only return the subtraction of the first parts of ``wake_time`` and ``sleep_time``
+  the terminal shows another :doc:`AssertionError`\ , this time to confirm that the second item (item one) from splitting ``"12:34"`` on the delimiter ``:`` is ``"34"``, I am not dealing with this part yet but I can assume I would use it soon, change the expected value in the same way and the test passes bringing us back to the unsolved :doc:`TypeError`
+* using what I know, how to ``split`` a string on a delimiter :doc:`method <functions>` and how to index a list, change the duration function to only return the subtraction of the first parts of ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
 
@@ -476,7 +476,7 @@ What if I write a test that uses a random variable for the sleep and wake times?
       return wake_time.split(':')[0] - sleep_time.split(':')[0]
 
   the terminal still outputs to show a :doc:`TypeError` for an unsupported operation of trying to subtract a string from another, and though it is not obvious here, the strings being subtracted are the values to the left of the delimiter ``:`` not the entire string value of ``wake_time`` and ``sleep_time`` i.e. for a given wake_time of "02:00" and a given sleep_time of "01:00" the program is currently trying to subtract "01" from "02"
-* I now have the task of converting the string to a number so I can do the subtraction, for this I use the ``int`` keyword which returns an integer for a given value. I should add a test to see how it works, update ``test_sleep_duration.py`` and comment out the current failing test
+* I now have the task of converting the string to a number so I can do the subtraction, for this I use the ``int`` keyword which returns an integer for a given value. I should add a test to see how it works, change ``test_sleep_duration.py`` and comment out the current failing test
 
   .. code-block:: python
 
@@ -494,7 +494,7 @@ What if I write a test that uses a random variable for the sleep and wake times?
       def test_converting_a_string_to_an_integer(self):
        self.assertEqual(int("12"), 0)
 
-  the terminal shows an :doc:`AssertionError` since ``12 != 0``, I update the test and it shows passing tests
+  the terminal shows an :doc:`AssertionError` since ``12 != 0``, I change the test and it shows passing tests
 
   .. code-block:: python
 
@@ -503,7 +503,7 @@ What if I write a test that uses a random variable for the sleep and wake times?
 
   I now have another tool to use to solve the problem
 
-* after uncommenting the commented test, I am back to the :doc:`TypeError` I have been trying to solve. I update the duration function with the knowledge to see if it makes the test pass
+* after uncommenting the commented test, I am back to the :doc:`TypeError` I have been trying to solve. I change the duration function with the knowledge to see if it makes the test pass
 
   .. code-block:: python
 
@@ -602,15 +602,15 @@ the terminal shows an :doc:`AssertionError` the expected value is now a string t
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-* update the output of the ``duration`` function in ``sleep_duration.py`` to match the format of the expected value
+* change the output of the ``duration`` function in ``sleep_duration.py`` to match the format of the expected value
 
   .. code-block:: python
 
     def duration(wake_time, sleep_time):
       return f'{get_hour(wake_time)-get_hour(sleep_time)}:{wake_time-sleep_time}'
 
-  I geta :doc:`TypeError` because I just tried to subtract one string from another
-* I modify the second part of the timestamp to use the ``get_hour`` function
+  I get a :doc:`TypeError` because I just tried to subtract one string from another
+* I change the second part of the timestamp to use the ``get_hour`` function
 
   .. code-block:: python
 
@@ -666,7 +666,7 @@ GREEN: make it pass
 
   I get an :doc:`AssertionError` in the terminal because I have two zeros ``:00`` in the expected return value but the duration function returns ``0`` for the minute side of the timestamp after doing a subtraction, which means ``00`` minus ``00`` is ``0`` not ``00``.
 
-  I could update the right side of the expected value to ``0`` to make it pass, but that would not be necessary because ``test_duration_when_given_hours_and_minutes`` already covers the cases where the minutes are zero since the test uses a random number from ``0`` to ``23`` for hours and a random number from ``0`` to ``59`` for minutes.
+  I could change the right side of the expected value to ``0`` to make it pass, but that would not be necessary because ``test_duration_when_given_hours_and_minutes`` already covers the cases where the minutes are zero since the test uses a random number from ``0`` to ``23`` for hours and a random number from ``0`` to ``59`` for minutes.
 
 * delete ``test_duration_when_given_hours_only`` since I no longer need it and the terminal shows passing tests
 
@@ -716,7 +716,7 @@ This means that even though the tests are passing, once again the ``duration`` f
   * `Examples of usage datetime objects <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_
   * `Examples of usage timedelta objects <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-timedelta>`_
 
-* update ``test_sleep_duration.py`` with a test for a ``datetime`` object
+* change ``test_sleep_duration.py`` with a test for a ``datetime`` object
 
   .. code-block:: python
 
@@ -811,7 +811,7 @@ This means that even though the tests are passing, once again the ``duration`` f
 
   E    AssertionError: '1:00:00' != ''
 
-* modify the expected value in the test to match the expected value in the terminal output
+* change the expected value in the test to match the expected value in the terminal output
 
   .. code-block:: python
 
@@ -853,7 +853,7 @@ Putting it all together
 
   I encountered this earlier when testing the ``datetime`` library
 
-* update ``sleep_duration.py`` with an import statement at the beginning of the filoe
+* change ``sleep_duration.py`` with an import statement at the beginning of the filoe
 
   .. code-block:: python
     import datetime
@@ -896,7 +896,7 @@ Putting it all together
 
     E    AssertionError: '14:21:00' != '14:21'
 
-* modify ``test_duration_when_given_hours_and_minutes`` to include seconds
+* change ``test_duration_when_given_hours_and_minutes`` to include seconds
 
   .. code-block:: python
 
@@ -913,7 +913,7 @@ Putting it all together
          f'{wake_hour-sleep_hour}:{wake_minute-sleep_minute}:00'
        )
 
-  I get another :doc:`AssertionError` in the terminal since I have not yet updated ``test_duration_calculation`` with the new format
+  I get another :doc:`AssertionError` in the terminal since I have not yet changed ``test_duration_calculation`` with the new format
 * I will randomly get an :doc:`AssertionError` for ``test_duration_when_given_hours_and_minutes``. Since I am using random integers for hours and minutes, there will be instances where the ``wake_hour`` is earlier than the ``sleep_hour`` leading to a negative number for example
 
   .. code-block:: python
@@ -921,7 +921,7 @@ Putting it all together
     E    AssertionError: '-1 day, 14:01:00' != '-9:-59:00'
 
   here, the expected values are still based on the how I calculated the duration earlier, subtracting the hour from hour and minute from minute independently.
-* update the calculation to be more accurate by using the ``get_datetime_object`` function from ``sleep_duration.py``
+* change the calculation to be more accurate by using the ``get_datetime_object`` function from ``sleep_duration.py``
 
   .. code-block:: python
 
@@ -976,7 +976,7 @@ Taking another look at the failing test I notice that the ``duration`` function 
 Our ``duration`` function now accounts for a time traveling sleep scenario where you can go to sleep and wake up in the past.
 
 
-* Let us add a test for it and see if I can update the function to only process durations where the wake time happens after the sleep time
+* Let us add a test for it and see if I can change the function to only process durations where the wake time happens after the sleep time
 
   .. code-block:: python
 
@@ -994,7 +994,7 @@ Our ``duration`` function now accounts for a time traveling sleep scenario where
 
     E    AssertionError: '-1 day, 23:00:00' != '-01:00:00'
 
-* update the test to make it pass
+* change the test to make it pass
 
   .. code-block:: python
 
@@ -1007,7 +1007,7 @@ Our ``duration`` function now accounts for a time traveling sleep scenario where
        )
 
   I am green again
-* I want the ``duration`` function to make a decision based on a comparison of ``wake_time`` and ``sleep_time``. If ``wake_time`` is earlier than ``sleep_time`` it should raise an :doc:`exception handling`
+* I want the ``duration`` function to make a decision based on a comparison of ``wake_time`` and ``sleep_time``. If ``wake_time`` is earlier than ``sleep_time`` it should raise an :doc:`exception_handling`
 
   .. code-block:: python
 
@@ -1031,7 +1031,7 @@ Our ``duration`` function now accounts for a time traveling sleep scenario where
 
     E      ValueError: wake_time: 2006-11-21 01:00:00 is earlier than sleep_time: 2006-11-21 02:00:00
 
-* to catch the error I need to add an `Exception Handler <./EXCEPTION_HANDLING.rst>`_ using a ``try...except`` statement and a ``self.assertRaises`` :doc:`method <functions>` call to confirm that the error is raised, update ``test_duration_when_given_hours_and_minutes``
+* to catch the error I need to add an `Exception Handler <./EXCEPTION_HANDLING.rst>`_ using a ``try...except`` statement and a ``self.assertRaises`` :doc:`method <functions>` call to confirm that the error is raised, change ``test_duration_when_given_hours_and_minutes``
 
   .. code-block:: python
 
@@ -1052,7 +1052,7 @@ Our ``duration`` function now accounts for a time traveling sleep scenario where
            sleep_duration.duration(wake_time, sleep_time)
 
   I am left with the ``ValueError`` for ``test_duration_when_given_earlier_wake_time_than_sleep_time``
-* update ``test_duration_when_given_earlier_wake_time_than_sleep_time`` with a ``self.assertRaises`` to catch the ``ValueError``
+* change ``test_duration_when_given_earlier_wake_time_than_sleep_time`` with a ``self.assertRaises`` to catch the ``ValueError``
 
   .. code-block:: python
 
@@ -1063,7 +1063,7 @@ Our ``duration`` function now accounts for a time traveling sleep scenario where
          sleep_duration.duration(wake_time, sleep_time),
 
   all tests are passing, I can clean up things I no longer need
-* remove ``get_hour`` and ``get_minute`` from ``sleep_duration.py``. Congratulations! You've built a function that takes in a ``wake_time`` and ``sleep_time`` as inputs and returns the difference between the two as long as the ``wake_time`` is later than the ``sleep_time``. Though the solution works I cheated by making it always use the same date. I will now proceed to modify the function to accept different days
+* remove ``get_hour`` and ``get_minute`` from ``sleep_duration.py``. Congratulations! You've built a function that takes in a ``wake_time`` and ``sleep_time`` as inputs and returns the difference between the two as long as the ``wake_time`` is later than the ``sleep_time``. Though the solution works I cheated by making it always use the same date. I will now proceed to change the function to accept different days
 
 Duration when given day, hours and minutes
 ------------------------------------------
@@ -1088,7 +1088,7 @@ add a failing test to ``test_sleep_duration.py`` called ``test_duration_when_giv
        str(sleep_duration.get_datetime_object(wake_time)-sleep_duration.get_datetime_object(sleep_time))
       )
 
-the terminal updates to show a ``ValueError`` similar to this
+the terminal shows a ``ValueError`` similar to this
 
 .. code-block:: python
 
@@ -1107,7 +1107,7 @@ GREEN: make it pass
     def get_datetime_object(timestamp):
       return datetime.datetime.strptime(timestamp, "%d/%m/%y %H:%M")
 
-  the terminal updates to show a ``ValueError`` for ``test_duration_calculation`` because it no longer matches the expected timestamp format, it is missing the date portion
+  the terminal shows a ``ValueError`` for ``test_duration_calculation`` because it no longer matches the expected timestamp format, it is missing the date portion
 * add a date to ``wake_time`` and ``sleep_time`` in ``test_duration_calculation`` to make it match the expected inputs for ``get_datetime_object``
 
   .. code-block:: python
@@ -1126,7 +1126,7 @@ GREEN: make it pass
        )
 
   all the tests pass, though I have a few cases that are not raising errors because I am catching any ``ValueError`` with the ``try...except`` block in ``test_duration_when_given_hours_and_minutes`` and the ``self.assertRaises`` in ``test_duration_when_given_earlier_wake_time_than_sleep_time``
-* I update the ``self.assertRaises`` from ``test_duration_when_given_earlier_wake_time_than_sleep_time`` to catch the specific failure I expect using ``self.assertRaisesRegex`` which takes in as input an expected exception and the message it returns
+* I change the ``self.assertRaises`` from ``test_duration_when_given_earlier_wake_time_than_sleep_time`` to catch the specific failure I expect using ``self.assertRaisesRegex`` which takes in as input an expected exception and the message it returns
 
   .. code-block:: python
 
@@ -1161,7 +1161,7 @@ GREEN: make it pass
 
   the timestamp provided to the ``duration`` function does not match the expected format of ``day/month/year hour:minute``
 
-* modify the ``wake_time`` and ``sleep_time`` variables to include a year
+* change the ``wake_time`` and ``sleep_time`` variables to include a year
 
   .. code-block:: python
 
@@ -1171,8 +1171,8 @@ GREEN: make it pass
       with self.assertRaisesRegex(ValueError, f'wake_time: {wake_time} is earlier than sleep_time: {sleep_time}'):
        sleep_duration.duration(wake_time, sleep_time)
 
-  the terminal still shows an :doc:`AssertionError` this time with an updated message showing the returned values from the ``get_datetime_object`` function
-* I update the test using the ``get_datetime_object`` function to display the correct timestamps in the ``ValueError`` message
+  the terminal still shows an :doc:`AssertionError` this time with an changed message showing the returned values from the ``get_datetime_object`` function
+* I change the test using the ``get_datetime_object`` function to display the correct timestamps in the ``ValueError`` message
 
   .. code-block:: python
 

@@ -35,14 +35,14 @@ RED: make it fail
     def test_function_signatures_solve_type_errors(self):
       self.assertIsNone(functions.function_a("a"))
 
-  the terminal updates to show
+  the terminal shows
 
   .. code-block:: python
     import functions
    E  ModuleNotFoundError: No module called 'functions'
 
 
-* Ah, a ``ModuleNotFoundError``, I have a lot of practice solving this error from :doc:`ModuleNotFoundError`. What if I create a file called ``functions.py`` and the terminal updates to show
+* Ah, a ``ModuleNotFoundError``, I have a lot of practice solving this error from :doc:`ModuleNotFoundError`. What if I create a file called ``functions.py`` and the terminal shows
 
   .. code-block:: python
 
@@ -55,7 +55,7 @@ RED: make it fail
 
     function_a = None
 
-  the terminal updates to show
+  the terminal shows
 
   .. code-block:: python
 
@@ -64,14 +64,14 @@ RED: make it fail
 
   A reminder of the first encounter with ``TypeError`` from `How to solve the AttributeError by defining a Function <./AttributeError.rst>`_
 
-* I solve this ``TypeError`` by definining a ``callable``, in this case a function. Update ``functions.py``
+* I solve this ``TypeError`` by definining a ``callable``, in this case a function. change ``functions.py``
 
   .. code-block:: python
 
     def function_a():
       return None
 
-  the terminal updates to show
+  the terminal shows
 
   .. code-block:: python
 
@@ -96,14 +96,14 @@ RED: make it fail
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-Update ``function_a`` in ``functions.py``
+change ``function_a`` in ``functions.py``
 
 .. code-block:: python
 
   def function_a(data):
     return None
 
-the terminal updates to show passing tests
+the terminal shows passing tests
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -116,32 +116,32 @@ There's not much to do here but add more tests for practice.
 
     self.assertIsNone(functions.function_b("a", "b"))
 
-  the terminal updates to show
+  the terminal shows
 
   .. code-block:: python
 
    AttributeError: module 'functions' has no attribute 'function_b'
 
- update ``functions.py``
+ change ``functions.py``
 
   .. code-block:: python
 
    function_b = None
 
-  the terminal updates to show
+  the terminal shows
 
   .. code-block:: python
 
    TypeError: 'NoneType' object is not callable
 
-  change ``function_b`` to a function, update ``function.py``
+  change ``function_b`` to a function, change ``function.py``
 
   .. code-block:: python
 
    def function_b():
     return None
 
-  the terminal updates to show
+  the terminal shows
 
   .. code-block:: python
 
@@ -150,14 +150,14 @@ There's not much to do here but add more tests for practice.
 
   the offending line ``functions.function_b("a", "b")`` called ``function_b`` with 2 parameters but the definition has the function taking no parameters.
 
-* update ``function_b`` in ``functions.py``
+* change ``function_b`` in ``functions.py``
 
   .. code-block:: python
 
    def function_b(positional_argument_1):
     return None
 
-  the terminal updates to show
+  the terminal shows
 
   .. code-block:: python
 
@@ -165,14 +165,14 @@ There's not much to do here but add more tests for practice.
 
   ah, the previous definition only allowed for 0 positional arguments, now it allows for 1 positional argument but I am still calling with 2 positional arguments.
 
-  update ``function_b`` in ``functions.py`` to take in 2 positional arguments
+  change ``function_b`` in ``functions.py`` to take in 2 positional arguments
 
   .. code-block:: python
 
    def function_b(positional_argument_1, positional_argument_2):
     return None
 
-  the terminal updates to show all tests pass.
+  the terminal shows all tests pass.
 
 .. EXTRA::
 
@@ -185,13 +185,13 @@ add more tests
 RED: make it fail
 ~~~~~~~~~~~~~~~~~
 
-update ``TestTypeErrors`` in ``test_type_error.py`` to add more tests
+change ``TestTypeErrors`` in ``test_type_error.py`` to add more tests
 
 .. code-block:: python
 
   self.assertIsNone(functions.function_c("a", "b", "c"))
 
-the terminal updates to show
+the terminal shows
 
 .. code-block:: python
 
@@ -200,133 +200,133 @@ the terminal updates to show
 GREEN: make it pass
 ~~~~~~~~~~~~~~~~~~~
 
-update ``functions.py``
+change ``functions.py``
 
 .. code-block:: python
 
   function_c = None
 
-the terminal updates to show
+the terminal shows
 
 .. code-block:: python
 
   TypeError: 'NoneType' object is not callable
 
-update ``functions.py`` to make ``function_c`` a function
+change ``functions.py`` to make ``function_c`` a function
 
 .. code-block:: python
 
   def function_c():
     return None
 
-the terminal updates to show
+the terminal shows
 
 .. code-block:: python
 
   TypeError: function_c() takes 0 positional arguments but 3 were given
 
-update ``function_c`` in ``functions.py`` to take in an argument
+change ``function_c`` in ``functions.py`` to take in an argument
 
 .. code-block:: python
 
   def function_c(arg1):
     return None
 
-the terminal updates to show
+the terminal shows
 
 .. code-block:: python
 
   TypeError: function_c() takes 1 positional argument but 3 were given
 
-update ``function_c`` in ``functions.py`` to take in another argument
+change ``function_c`` in ``functions.py`` to take in another argument
 
 .. code-block:: python
 
   def function_c(arg1, arg2):
     return None
 
-the terminal updates to show
+the terminal shows
 
 .. code-block:: python
 
   TypeError: function_c() takes 2 positional arguments but 3 were given
 
-update ``function_c`` in ``functions.py`` to take in one more argument
+change ``function_c`` in ``functions.py`` to take in one more argument
 
 .. code-block:: python
 
   def function_c(arg1, arg2, arg3):
     return None
 
-and the terminal updates to show all tests pass
+and the terminal shows all tests pass
 
 REFACTOR: make it better
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 are you bored yet? add one more test
 
-update ``TestTypeErrors`` in ``test_type_error.py``
+change ``TestTypeErrors`` in ``test_type_error.py``
 
 .. code-block:: python
 
   self.assertIsNone(functions.function_d("a", "b", "c", "d"))
 
-the terminal updates to show
+the terminal shows
 
 .. code-block:: python
 
   AttributeError: module 'functions' has no attribute 'function_d'
 
-update ``functions.py``
+change ``functions.py``
 
 .. code-block:: python
 
   function_d = None
 
-the terminal updates to show
+the terminal shows
 
 .. code-block:: python
 
   TypeError: 'NoneType' object is not callable
 
-update ``function_d`` in ``functions.py``
+change ``function_d`` in ``functions.py``
 
 .. code-block:: python
 
   def function_d():
     return None
 
-the terminal updates to show
+the terminal shows
 
 .. code-block::
 
   TypeError: function_d() takes 0 positional arguments but 4 were given
 
-What if I try the solution for the previous test. update the signature of ``function_d`` in ``functions.py``
+What if I try the solution for the previous test. change the signature of ``function_d`` in ``functions.py``
 
 .. code-block:: python
 
   def function_d(arg1, arg2, arg3):
     return None
 
-the terminal updates to show
+the terminal shows
 
 .. code-block:: python
 
   TypeError: function_d() takes 3 positional arguments but 4 were given
 
-update ``function_d`` in ``functions.py`` to take 4 arguments
+change ``function_d`` in ``functions.py`` to take 4 arguments
 
 .. code-block:: python
 
   def function_d(arg1, arg2, arg3, arg4):
     return None
 
-the terminal updates to show all tests pass...but wait! there's more. I can make this better. There's another solution to the above test. What if I can define a function that takes in any number of parameters, is there a signature that allows a function to take 1 argument, 4 arguments, or any number of arguments?
+the terminal shows all tests pass...but wait! there's more. I can make this better. There's another solution to the above test. What if I can define a function that takes in any number of parameters, is there a signature that allows a function to take 1 argument, 4 arguments, or any number of arguments?
 
 YES! There is I can use the ``*args`` keyword to pass in any number of positional arguments to a function
 
-update ``function_d`` in ``functions.py`` with ``*args``
+change ``function_d`` in ``functions.py`` with ``*args``
 
 .. code-block:: python
 
@@ -335,7 +335,7 @@ update ``function_d`` in ``functions.py`` with ``*args``
 
 the terminal shows all tests as still passing. FANTASTIC!!
 
-What if I test this with ``function_a``. update ``function_a`` in ``functions.py`` with ``*args`` and the terminal shows all tests as still passing.
+What if I test this with ``function_a``. change ``function_a`` in ``functions.py`` with ``*args`` and the terminal shows all tests as still passing.
 
 Try this with both ``function_c`` and ``function_d``, all tests still pass.
 

@@ -44,7 +44,7 @@ GREEN: make it pass
     def logical_implication(p, q):
         return True
 
-  the terminal updates to show the second case failing
+  the terminal shows the second case failing
 * I add a condition for this case
 
   .. code-block:: python

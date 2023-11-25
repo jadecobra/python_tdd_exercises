@@ -31,18 +31,18 @@ The only recommendation is that you start with  :doc:`How to Setup a Test Driven
   IndentationError
   ModuleNotFoundError
   TypeError
-  calculator
-  classes
-  conventions
-  data_structures
-  data_structures_booleans
-  data_structures_dictionaries
-  data_structures_lists
-  data_structures_none
   exception_handling
+  conventions
+  classes
   functions
-  learning_models
+  data_structures
+  data_structures_none
+  data_structures_booleans
+  data_structures_lists
   list_comprehensions
+  data_structures_dictionaries
+  calculator
+  learning_models
   passing_values
   person_factory
   setup_tdd_environment

@@ -1,247 +1,268 @@
 
-Passing Values
-==============
+How to pass values
+==================
 
-When testing or using a program, I provide data as inputs to the program with an expectation of a return value.
+When testing or using a program, :doc:`data <data_structures>` is provided as input to the program with an expectation of an output, I think of it this way
 
 .. code-block:: python
+
   input_data -> process -> output
-```
 
-It is similar to functions in mathematics where I represent a function as ``f`` with inputs ``x`` and a return value of ``y``
+
+Which is similar to functions in mathematics where a function is represented as ``f`` with inputs ``x`` and an output of ``y``
 
 
 .. code-block:: python
+
   f(x) -> y
-```
+  process(input_data) -> output
 
-In testing I am asking the question is `f(x)` equal to ``y`` for the given input ``x`` for example  I could use an assert statement
+
+When testing code I am asking the question is ``f(x)`` equal to ``y`` for the given input ``x``. For example  I could use an assert statement
 
 .. code-block:: python
+
   assert f(x) == y
-```
+  assert process(input_data) == output
+
 
 or use the `self.assertEqual` :doc:`method <functions>` from `unittest.TestCase`
 
 .. code-block:: python
+
   self.assertEqual(f(x), y)
-```
+  self.assertEqual(process(input_data), output)
 
-I am going to look at how to pass values from tests to programs using `string interpolation` with Test Driven Development
 
-Prerequisites
--------------
-[Setup a Test Driven Development Environment](./Setup a Test Driven Development Environment.rst)
+This chapter explores how to pass values from tests to programs using `Formatted string literals <https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals>`_ for placing values inside a string
 
----
 
-## How to Pass Values
+RED: make it fail
+-----------------
 
-### RED: make it fail
-
-create a file called `test_passing_values.py` in the ``tests`` folder with the following text
+I create a file called `test_passing_values.py` in the ``tests`` folder with the following text
 
 
 .. code-block:: python
-import unittest
-import telephone
+
+  import unittest
+  import telephone
 
 
-class TestPassingValues(unittest.TestCase):
+  class TestPassingValues(unittest.TestCase):
 
-  def test_text_messages(self):
-    self.assertEqual(
-      telephone.Telephone.text('hello'),
-      'I received this message: hello'
-    )
-```
-the terminal updates to show a [ModuleNotFoundError](./ModuleNotFoundError.rst) and I add it to the list of exceptions encountered
+    def test_text_messages(self):
+        self.assertEqual(
+            telephone.Telephone.text('hello'),
+            'I received this message: hello'
+        )
 
-.. code-block:: python
-# Exceptions Encountered
-# AssertionError
-# ModuleNotFoundError
-```
-
-### GREEN: make it pass
-
-- create a file called `telephone.py` in the project folder and the terminal updates to show an :doc:`AttributeError` which I add to the list of exceptions
+the terminal shows a :doc:`ModuleNotFoundError` and I add it to the list of exceptions encountered
 
 .. code-block:: python
+
   # Exceptions Encountered
   # AssertionError
   # ModuleNotFoundError
-  # AttributeError
-  ```
-- update `telephone.py` with a class definition
 
-.. code-block:: python
-  class Telephone(object):
 
-    pass
-  ```
+GREEN: make it pass
+---------------------
+
+- I create a file called ``telephone.py`` in the project folder and the terminal shows an :doc:`AttributeError` which I add to the list of exceptions
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AssertionError
+    # ModuleNotFoundError
+    # AttributeError
+
+- I add a class definition to ``telephone.py``
+
+  .. code-block:: python
+
+    class Telephone(object):
+
+        pass
+
   the terminal still displays an :doc:`AttributeError` but with a different message
 - I add a definition for an attribute called ``text`` to the ``Telephone`` class
 
-.. code-block:: python
-  class Telephone(object):
+  .. code-block:: python
 
-    text = None
-  ```
-  the terminal updates to show a :doc:`TypeError` because ``text`` is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_ and I add the new exception to the list of exceptions encountered
+    class Telephone(object):
 
-.. code-block:: python
-  # Exceptions Encountered
-  # AssertionError
-  # ModuleNotFoundError
-  # AttributeError
-  # TypeError
-  ```
-- change ``text`` to a :doc:`method <functions>` to make it callable
+        text = None
 
-.. code-block:: python
-  class Telephone(object):
+  the terminal shows a :doc:`TypeError` because ``text`` is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_ and I add the new exception to the list of exceptions encountered
 
-    def text():
-      return None
-  ```
-  the terminal displaysa :doc:`TypeError` this time because when I called `telephone.Telephone.text('hello')` in the test I provided a positional argument as input with the value ``hello``, but the signature of the :doc:`method <functions>` I defined does not take in any arguments
-- modify the definition for ``text`` to take in a value
+  .. code-block:: python
 
-.. code-block:: python
-  class Telephone(object):
+    # Exceptions Encountered
+    # AssertionError
+    # ModuleNotFoundError
+    # AttributeError
+    # TypeError
+
+- I change ``text`` to a :doc:`method <functions>` to make it callable
+
+  .. code-block:: python
+
+    class Telephone(object):
+
+        def text():
+            return None
+
+  and the terminal displays another :doc:`TypeError` because when I called ``telephone.Telephone.text('hello')`` in the test I provided a positional argument as input with the value ``hello``, but the signature of the ``text`` :doc:`method <functions>` does not take in any arguments
+- I change the definition for ``text`` to make it accept a value as input
+
+  .. code-block:: python
+
+    class Telephone(object):
 
 
-    def text(value):
-      return None
-  ```
+        def text(value):
+            return None
+
   I now see an :doc:`AssertionError` in the terminal
-- update the return statement with the expected value to make the test pass
+- and change the return statement with the expected value to make the test pass
 
-.. code-block:: python
-    def text(value):
-      return 'I received this message: hello'
-  ```
-  the test passes
+  .. code-block:: python
 
-### REFACTOR: make it better
+      def text(value):
+          return 'I received this message: hello'
+
+
+REFACTOR: make it better
+-------------------------
 
 The problem with this solution is that no matter what value I send to the `Telephone.text` :doc:`method <functions>` it will always return `'I received this message: hello'`. I need to make it more generic so it returns a value that is dependent on the input
 
-- RED: make it fail
+RED: make it fail
+^^^^^^^^^^^^^^^^^
 
-  add a new failing test to ``test_text_messages``
-
-
-.. code-block:: python
-    def test_text_messages(self):
-      self.assertEqual(
-        telephone.Telephone.text('hello'),
-        'I received this message: hello'
-      )
-      self.assertEqual(
-        telephone.Telephone.text('yes'),
-        'I received this message: yes'
-      )
-  ```
-
-  the terminal updates to show an :doc:`AssertionError`
-
-- GREEN: make it pass
-
-  I can add variable values to strings by using [string interpolation](https://peps.python.org/pep-0498/). Let us try this out by changing the ``text`` :doc:`method <functions>` in `telephone.py`
+I add a new failing test to ``test_text_messages``
 
 .. code-block:: python
-  def text(value):
-    return f'I received this message: {value}'
-  ```
-  the terminal updates to show passing tests
 
-## Passing Data Structures
-
-I can try this with other python [data structures](./DATA_STRUCTURES.rst) to see what happens
-
-### RED: make it fail
-
-update ``test_text_messages`` with a new test
-
-.. code-block:: python
   def test_text_messages(self):
-    self.assertEqual(
-      telephone.Telephone.text('hello'),
-      'I received this message: hello'
-    )
-    self.assertEqual(
-      telephone.Telephone.text('yes'),
-      'I received this message: yes'
-    )
-    self.assertEqual(
-      telephone.Telephone.text(None),
-      "I received this message: 'None'"
-    )
-```
+      self.assertEqual(
+          telephone.Telephone.text('hello'),
+          'I received this message: hello'
+      )
+      self.assertEqual(
+          telephone.Telephone.text('yes'),
+          'I received this message: yes'
+      )
 
-the terminal updates to show an :doc:`AssertionError`
 
-### GREEN: make it pass
+the terminal shows an :doc:`AssertionError`
 
-update the test to match the expected value
+GREEN: make it pass
+^^^^^^^^^^^^^^^^^^^
 
+I can add variable values to strings by using `string interpolation <https://peps.python.org/pep-0498/>`, I will change the ``text`` :doc:`method <functions>` in ``telephone.py``
 
 .. code-block:: python
-  self.assertEqual(
-    telephone.Telephone.text(None),
-    "I received this message: None"
-  )
-```
+
+  def text(value):
+      return f'I received this message: {value}'
 
 the terminal shows passing tests
 
-### REFACTOR: make it better
+Passing Data Structures
+-----------------------
 
-- as an exercise add the following tests to ``test_text_messages``
+I can try this with other python :doc:`data structures <data_structures>` to see what happens
+
+RED: make it fail
+^^^^^^^^^^^^^^^^^
+
+I add a new failing test to ``test_text_messages``
 
 .. code-block:: python
-    self.assertEqual(
-      telephone.Telephone.text(bool),
-      "I received this message: 'bool'"
-    )
-    self.assertEqual(
-      telephone.Telephone.text(int),
-      "I received this message: 'int'"
-    )
-    self.assertEqual(
-      telephone.Telephone.text(float),
-      "I received this message: 'float'"
-    )
-    self.assertEqual(
-      telephone.Telephone.text(tuple),
-      "I received this message: 'tuple'"
-    )
-    self.assertEqual(
-      telephone.Telephone.text(list),
-      "I received this message: 'list'"
-    )
-    self.assertEqual(
-      telephone.Telephone.text(set),
-      "I received this message: 'set'"
-    )
-    self.assertEqual(
-      telephone.Telephone.text(dict),
-      "I received this message: 'dict'"
-    )
-  ```
+
+  def test_text_messages(self):
+      self.assertEqual(
+          telephone.Telephone.text('hello'),
+          'I received this message: hello'
+      )
+      self.assertEqual(
+          telephone.Telephone.text('yes'),
+          'I received this message: yes'
+      )
+      self.assertEqual(
+          telephone.Telephone.text(None),
+          "I received this message: 'None'"
+      )
+
+the terminal shows an :doc:`AssertionError`
+
+GREEN: make it pass
+^^^^^^^^^^^^^^^^^^^
+
+I change the test to match the expected value
+
+
+.. code-block:: python
+
+  self.assertEqual(
+      telephone.Telephone.text(None),
+      "I received this message: None"
+  )
+
+
+the terminal shows passing tests
+
+REFACTOR: make it better
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+* as an exercise I can add the following tests to ``test_text_messages``
+
+  .. code-block:: python
+
+      self.assertEqual(
+          telephone.Telephone.text(bool),
+          "I received this message: 'bool'"
+      )
+      self.assertEqual(
+          telephone.Telephone.text(int),
+          "I received this message: 'int'"
+      )
+      self.assertEqual(
+          telephone.Telephone.text(float),
+          "I received this message: 'float'"
+      )
+      self.assertEqual(
+          telephone.Telephone.text(tuple),
+          "I received this message: 'tuple'"
+      )
+      self.assertEqual(
+          telephone.Telephone.text(list),
+          "I received this message: 'list'"
+      )
+      self.assertEqual(
+          telephone.Telephone.text(set),
+          "I received this message: 'set'"
+      )
+      self.assertEqual(
+          telephone.Telephone.text(dict),
+          "I received this message: 'dict'"
+      )
+
   an :doc:`AssertionError` is displayed in the terminal
-- update the test to match the expected output
+* I change the test to match the expected output
 
-.. code-block:: python
-    self.assertEqual(
-      telephone.Telephone.text(bool),
-      "I received this message: <class 'bool'>"
-    )
-  ```
-  the terminal updates with an :doc:`AssertionError` for the next test.
-- repeat the solution for each data type until all tests pass
+  .. code-block:: python
 
-VOILA
+      self.assertEqual(
+          telephone.Telephone.text(bool),
+          "I received this message: <class 'bool'>"
+      )
+
+  the terminal displays an :doc:`AssertionError` for the next test.
+- I repeat the solution for each data type until all tests pass
+
+VOILA!
 You now know how to pass values and represent values as strings using interpolation

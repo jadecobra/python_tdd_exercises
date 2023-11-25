@@ -50,7 +50,7 @@ A :doc:`ModuleNotFoundError` is raised when a name is provided to an ``import`` 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-* I update the running list of exceptions encountered
+* I change the running list of exceptions encountered
 
   .. code-block:: python
 
@@ -77,7 +77,7 @@ GREEN: make it pass
   - ``def test_defining_variables_to_solve_attribute_errors(self):`` is the definition of the first test function to find out if defining variables can solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
   - ``module.variable_0`` - the actual test, I think of this as making a phone call ``variable_0`` in ``module.py``
 
-* the terminal updates to show an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+* the terminal shows an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
@@ -94,7 +94,7 @@ GREEN: make it pass
   - ``def test_defining_variables_to_solve_attribute_errors(self):`` the function definition where the error occurs
   - ``self = <tests.test_attribute_error.TestAttributeError testMethod=test_defining_variables_to_solve_attribute_errors>`` - A reference to the class and method (function) where the failure occurred
 
-* I update the list of exceptions encountered
+* I change the list of exceptions encountered
 
   .. code-block:: python
 
@@ -133,13 +133,13 @@ GREEN: make it pass
   # AttributeError
   # NameError
 
-* then update the failing line in ``module.py`` to fix it
+* then change the failing line in ``module.py`` to fix it
 
   .. code-block:: python
 
    variable_0 = None
 
-  this explicity defines ``variable_0`` with a value of :doc:`None <data_structures_none>` and the terminal updates to show a passing test. YES!
+  this explicity defines ``variable_0`` with a value of :doc:`None <data_structures_none>` and the terminal shows a passing test. YES!
 
   .. code-block:: python
 
@@ -229,7 +229,7 @@ RED: make it fail
     module.variable_1
     module.variable_2
 
-  the terminal updates with an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  the terminal changes with an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
@@ -353,7 +353,7 @@ Solve the AttributeError by defining functions
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I update the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` with a new test
+I change the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` with a new test
 
 .. code-block:: python
 
@@ -370,7 +370,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* I try the solution I know for solving `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ with variables and update ``module.py``
+* I try the solution I know for solving `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ with variables and change ``module.py``
 
   .. code-block:: python
 
@@ -382,7 +382,7 @@ GREEN: make it pass
 
    E    TypeError: 'NoneType' object is not callable
 
-* this is new so I update the list of exceptions encountered
+* this is new so I change the list of exceptions encountered
 
   .. code-block:: python
 
@@ -399,21 +399,21 @@ GREEN: make it pass
 
   Parentheses are used at the end of the name of an object when calling it, for example  ``module.function_0()`` will call ``function_0`` from ``module.py``
 
-* What if I change ``function_0`` in ``module.py`` to a function by modifying its definition using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword?
+* What if I change ``function_0`` in ``module.py`` to a function by changeing its definition using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword?
 
   .. code-block:: python
 
   def function_0():
     return None
 
-  the terminal updates to show tests pass
+  the terminal shows tests pass
 
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* Time to make a drill. You can update ``test_defining_functions_to_solve_attribute_errors`` in the ``TestAttributeError`` class in\ ``tests/test_attribute_error.py`` to include calls to functions in ``module.py`` until you have one for ``module.function_99()``
+* Time to make a drill. You can change ``test_defining_functions_to_solve_attribute_errors`` in the ``TestAttributeError`` class in\ ``tests/test_attribute_error.py`` to include calls to functions in ``module.py`` until you have one for ``module.function_99()``
 
   .. code-block:: python
 
@@ -425,13 +425,13 @@ REFACTOR: make it better
      ...
      module.function_99()
 
-  the terminal updates to show an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  the terminal shows an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
    E    AttributeError: module 'module' has no attribute 'function_1'
 
-  update ``module.py`` with the solution until all tests pass
+  change ``module.py`` with the solution until all tests pass
 
 *YOU DID IT AGAIN!* You now know
 
@@ -478,13 +478,13 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* I update ``module.py``
+* I change ``module.py``
 
   .. code-block:: python
 
    Class0 = None
 
-  and the terminal updates to show a :doc:`TypeError`
+  and the terminal shows a :doc:`TypeError`
 
   .. code-block:: python
 
@@ -517,13 +517,13 @@ REFACTOR: make it better
      ...
      module.Class99()
 
-  the terminal updates to show an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  the terminal shows an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
    E    AttributeError: module 'module' has no attribute 'Class1'
 
-  update ``module.py`` with each solution until all tests pass
+  change ``module.py`` with each solution until all tests pass
 
 *WELL DONE!* You now know
 
@@ -551,7 +551,7 @@ RED: make it fail
     def test_defining_attributes_in_classes_to_solve_attribute_errors(self):
       module.Class.attribute_0
 
-  the terminal updates to show an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  the terminal shows an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
@@ -562,7 +562,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* I update ``module.py`` with a variable
+* I change ``module.py`` with a variable
 
   .. code-block:: python
 
@@ -581,13 +581,13 @@ GREEN: make it pass
    def Class():
      return None
 
-  the terminal updates to show an an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ but with a slightly different message
+  the terminal shows an an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ but with a slightly different message
 
   .. code-block:: python
 
    E    AttributeError: 'function' object has no attribute 'attribute_0'
 
-* I wonder if it is possible to define an attribute in a function and access it from outside. I update ``module.py``
+* I wonder if it is possible to define an attribute in a function and access it from outside. I change ``module.py``
 
   .. code-block:: python
 
@@ -641,7 +641,7 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* The current solution for ``test_defining_classes_to_solve_attribute_errors`` was done by defining functions but the test name contains ``definining_classes``, time to go back and update ``module.py`` using the `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword instead of `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
+* The current solution for ``test_defining_classes_to_solve_attribute_errors`` was done by defining functions but the test name contains ``definining_classes``, time to go back and change ``module.py`` using the `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword instead of `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
 
   .. code-block:: python
 
@@ -665,13 +665,13 @@ REFACTOR: make it better
      ...
      module.Class.attribute_99
 
-  the terminal updates to show
+  the terminal shows
 
   .. code-block:: python
 
    E    AttributeError: type object 'Class' has no attribute 'attribute_1'
 
-  update ``module.py`` with the solutions until all tests pass
+  change ``module.py`` with the solutions until all tests pass
 
 *WELL DONE!* You now know You now know
 
@@ -702,7 +702,7 @@ RED: make it fail
    def test_defining_functions_in_classes_to_solve_attribute_errors(self):
      module.Class.method_0()
 
-  the terminal updates to show an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  the terminal shows an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
@@ -713,7 +713,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* I update ``Class`` in ``module.py``
+* I change ``Class`` in ``module.py``
 
   .. code-block:: python
 
@@ -742,7 +742,7 @@ GREEN: make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-You know the "drill", update ``test_defining_functions_in_classes_to_solve_attribute_errors`` in ``TestAttributeError`` in ``test_attribute_error.py`` with more lines until there are 100 tests ending with one for ``module.Class.method_99()``
+You know the "drill", change ``test_defining_functions_in_classes_to_solve_attribute_errors`` in ``TestAttributeError`` in ``test_attribute_error.py`` with more lines until there are 100 tests ending with one for ``module.Class.method_99()``
 
 .. code-block:: python
 

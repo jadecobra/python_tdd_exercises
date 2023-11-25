@@ -42,7 +42,7 @@ I create a new file called ``test_classes.py`` in the ``tests`` directory
    def test_class_definitions_with_pass(self):
     self.assertIsInstance(classes.ClassWithPass(), object)
 
-the terminal displaysa :doc:`ModuleNotFoundError` because I have an import statement for a module called ``classes``
+the terminal displays a :doc:`ModuleNotFoundError` because I have an import statement for a module called ``classes``
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -55,7 +55,7 @@ GREEN: make it pass
   # AssertionError
   # ModuleNotFoundError
 
-* I create a python module called ``classes.py`` and the terminal updates to show an :doc:`AttributeError` which I add to the list of exceptions encountered
+* I create a python module called ``classes.py`` and the terminal shows an :doc:`AttributeError` which I add to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -70,9 +70,9 @@ GREEN: make it pass
 
   ClassWithPass
 
-  and the terminal updates to show a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ because ``ClassWithPass`` is not defined anywhere
+  and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ because ``ClassWithPass`` is not defined anywhere
 
-* I update the list of exceptions encountered
+* I change the list of exceptions encountered
 
   .. code-block:: python
 
@@ -82,7 +82,7 @@ GREEN: make it pass
   # AttributeError
   # NameError
 
-* I update the name as an assignment to the null value :doc:`None <data_structures_none>`
+* I change the name as an assignment to the null value :doc:`None <data_structures_none>`
 
   .. code-block:: python
 
@@ -94,7 +94,7 @@ GREEN: make it pass
 
    class ClassWithPass:
 
-  the terminal updates to show an :doc:`IndentationError` because I declared a class without adding any indented text
+  the terminal shows an :doc:`IndentationError` because I declared a class without adding any indented text
 * I add the new error to the list of exceptions encountered
 
   .. code-block:: python
@@ -114,7 +114,7 @@ GREEN: make it pass
 
     pass
 
-  and the terminal updates to show passing tests
+  and the terminal shows passing tests
 
 
 REFACTOR: make it better
@@ -140,13 +140,13 @@ I add another test to ``TestClasses`` in ``test_classes.py`` to show another way
   def test_classes_definitions_with_parentheses(self):
     self.assertIsInstance(classes.ClassWithParentheses(), object)
 
-the terminal updates to show an :doc:`AttributeError`
+the terminal shows an :doc:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* I update ``classes.py`` with a class definition like ``ClassWithPass``
+* I change ``classes.py`` with a class definition like ``ClassWithPass``
 
   .. code-block:: python
 
@@ -155,9 +155,9 @@ GREEN: make it pass
 
     pass
 
-  the terminal updates to show passing tests
+  the terminal shows passing tests
 
-* When I update the definition to include parentheses
+* When I change the definition to include parentheses
 
   .. code-block:: python
 
@@ -180,7 +180,7 @@ REFACTOR: make it better
 
 In object oriented programming there is a concept called `Inheritance <https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming>`_\ ). With Inheritance I can define new `objects <https://docs.python.org/3/glossary.html#term-object>`_ that inherit from existing `objects <https://docs.python.org/3/glossary.html#term-object>`_.
 
-This makes creating new objects easier because I do not have to reinvent or rewrite things that already exist, I can inherit them instead and modify the new objects for my specific use case
+This makes creating new objects easier because I do not have to reinvent or rewrite things that already exist, I can inherit them instead and change the new objects for my specific use case
 
 How to define a Class with inheritance
 --------------------------------------
@@ -214,7 +214,7 @@ GREEN: make it pass
 
   the terminal shows all tests passed
 
-* then I update the definition to explicitly state the parent `object <https://docs.python.org/3/glossary.html#term-object>`_
+* then I change the definition to explicitly state the parent `object <https://docs.python.org/3/glossary.html#term-object>`_
 
   .. code-block:: python
 
@@ -288,10 +288,10 @@ GREEN: make it pass
 
     a_boolean
 
-  and the terminal updates to show a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+  and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
 
-* after I update the name with an assignment to :doc:`None <data_structures_none>`
+* after I change the name with an assignment to :doc:`None <data_structures_none>`
 
   .. code-block:: python
 
@@ -300,7 +300,7 @@ GREEN: make it pass
 
     a_boolean = None
 
-  the terminal updates to show an :doc:`AssertionError`
+  the terminal shows an :doc:`AssertionError`
 
 
 * I redefine the attribute to make the test pass
@@ -323,7 +323,7 @@ What if I repeat this with other python :doc:`/data structures`?
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-update ``test_classes_with_attributes`` with more tests
+change ``test_classes_with_attributes`` with more tests
 
 .. code-block:: python
 
@@ -337,7 +337,7 @@ update ``test_classes_with_attributes`` with more tests
    self.assertEqual(classes.ClassWithAttributes.a_set, set)
    self.assertEqual(classes.ClassWithAttributes.a_dictionary, dict)
 
-the terminal updates to show an :doc:`AttributeError`
+the terminal shows an :doc:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -358,7 +358,7 @@ I add matching attributes to ``ClassWithAttributes`` to make the tests pass
    a_set = set
    a_dictionary = dict
 
-and the terminal updates to show all tests passed
+and the terminal shows all tests passed
 
 How to define a Class with methods
 ----------------------------------
@@ -378,7 +378,7 @@ I add some tests for class methods to ``TestClasses`` in ``classes.py``
       'You called MethodA'
     )
 
-and the terminal updates to show :doc:`AttributeError`
+and the terminal shows :doc:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -405,7 +405,7 @@ GREEN: make it pass
 
     method_a
 
-  the terminal updates to show a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ because there is no definition for ``method_a``
+  the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ because there is no definition for ``method_a``
 
 
 * I define ``method_a`` as an attribute by assigning the name to the null value :doc:`None <data_structures_none>`
@@ -420,7 +420,7 @@ GREEN: make it pass
 
   the terminal now revealsa :doc:`TypeError` since ``method_a`` refers to :doc:`None <data_structures_none>` which is not callable
 
-* I update the definition of ``method_a`` to make ita :doc:`function <functions>` which makes it callable
+* I change the definition of ``method_a`` to make ita :doc:`function <functions>` which makes it callable
 
   .. code-block:: python
 
@@ -457,9 +457,9 @@ REFACTOR: make it better
     self.assertEqual(classes.ClassWithMethods.method_c(), 'You called MethodC')
     self.assertEqual(classes.ClassWithMethods.method_d(), 'You called MethodD')
 
-  the terminal updates to show an :doc:`AttributeError`
+  the terminal shows an :doc:`AttributeError`
 
-* and I update ``ClassWithmethods`` in ``classes.py`` until all tests pass
+* and I change ``ClassWithmethods`` in ``classes.py`` until all tests pass
 
 ----
 
@@ -490,7 +490,7 @@ the terminal responds with an :doc:`AttributeError`
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I update ``classes.py`` to make the tests pass by defining the class, attribute and methods
+I change ``classes.py`` to make the tests pass by defining the class, attribute and methods
 
 .. code-block:: python
 
@@ -521,7 +521,7 @@ I will add a failing test to ``test_classes.py``
   def test_classes_with_initializers(self):
    self.assertEqual(classes.Boy().sex, 'M')
 
-the terminal updates to show an :doc:`AttributeError`
+the terminal shows an :doc:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -536,9 +536,9 @@ GREEN: make it pass
 
     pass
 
-  the terminal updates to show another :doc:`AttributeError`
+  the terminal shows another :doc:`AttributeError`
 
-* I update the ``Boy`` class with an attribute called ``sex``
+* I change the ``Boy`` class with an attribute called ``sex``
 
   .. code-block:: python
 
@@ -559,7 +559,7 @@ GREEN: make it pass
 
     sex = 'M'
 
-  the terminal updates to show passing tests
+  the terminal shows passing tests
 
 
 REFACTOR: make it better
@@ -585,7 +585,7 @@ REFACTOR: make it better
 
     sex = 'M'
 
-  and the terminal displaysa :doc:`TypeError`
+  and the terminal displays a :doc:`TypeError`
 
   .. code-block:: python
 
@@ -615,14 +615,14 @@ REFACTOR: make it better
 
    TypeError: __init__() got an unexpected keyword argument 'sex'
 
-* I update the signature of the ``__init__`` :doc:`method <functions>` to accept a keyword argument
+* I change the signature of the ``__init__`` :doc:`method <functions>` to accept a keyword argument
 
   .. code-block:: python
 
   def __init__(self, sex=None):
     pass
 
-  and the terminal updates to show passing tests
+  and the terminal shows passing tests
 
 * I add another test for a class initializer to ``test_classes_with_initializers``
 
@@ -690,7 +690,7 @@ REFACTOR: make it better
   the terminal still shows passing tests
 
 
-* I update the definitions for ``Boy`` to inherit from the ``Human`` class and all tests are still passing
+* I change the definitions for ``Boy`` to inherit from the ``Human`` class and all tests are still passing
 
   .. code-block:: python
 
@@ -709,7 +709,7 @@ REFACTOR: make it better
     pass
 
 
-* What if I try the same thing with the ``Girl`` class and update its definition to inherit from the ``Human`` class?
+* What if I try the same thing with the ``Girl`` class and change its definition to inherit from the ``Human`` class?
 
   .. code-block:: python
 
@@ -718,7 +718,7 @@ REFACTOR: make it better
       ...
 
 * I remove the ``sex`` attribute and the terminal outputs an :doc:`AssertionError`
-* I update the ``Human`` class to set the ``sex`` attribute in the initializer instead of at the class level
+* I change the ``Human`` class to set the ``sex`` attribute in the initializer instead of at the class level
 
   .. code-block:: python
 
@@ -741,9 +741,9 @@ REFACTOR: make it better
 
      pass
 
-  the terminal updates to show passing tests. Lovely
+  the terminal shows passing tests. Lovely
 
-* I wonder if I can do the same with the ``Other`` class? I update the definition to inherit from the ``Human`` class
+* I wonder if I can do the same with the ``Other`` class? I change the definition to inherit from the ``Human`` class
 
   .. code-block:: python
 
@@ -752,7 +752,7 @@ REFACTOR: make it better
 
     pass
 
-  the terminal updates to show passing tests
+  the terminal shows passing tests
 
 * one last change, I remove the ``sex`` attribute from the ``Human`` class
 
@@ -796,12 +796,12 @@ I add a test to ``test_classes.py``
      ]
    )
 
-the terminal updates to show an :doc:`AssertionError` as the expected and real values do not match
+the terminal shows an :doc:`AssertionError` as the expected and real values do not match
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I copy the values from the terminal to update the test
+I copy the values from the terminal to change the test
 
 .. code-block:: python
 

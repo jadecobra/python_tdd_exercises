@@ -44,7 +44,7 @@ GREEN: make it pass
     def logical_equality(p, q):
         return True
 
-  the terminal updates to show a failure for the second case
+  the terminal shows a failure for the second case
 * I add a condition for it
 
   .. code-block:: python
@@ -88,7 +88,7 @@ What can I do to make this better?
             return False
         return True
 
-* the update the function with the first observation
+* the change the function with the first observation
 
   .. code-block:: python
 
@@ -134,7 +134,7 @@ What can I do to make this better?
 
   and the tests are still green
 
-I can update what I know so far from the tests to say that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
+I can change what I know so far from the tests to say that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
 
 * ``logical equality`` is ``==``
 * ``logical implication`` is ``not p or q``

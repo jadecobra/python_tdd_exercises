@@ -38,7 +38,7 @@ GREEN: make it pass
     def converse_implication(p, q):
         return True
 
-  the terminal updates to show an :doc:`AssertionError` for the third case
+  the terminal shows an :doc:`AssertionError` for the third case
 * I add a condition for it
 
   .. code-block:: python

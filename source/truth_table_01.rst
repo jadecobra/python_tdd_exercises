@@ -29,7 +29,7 @@ I create a file called ``test_truth_table.py`` in the ``tests`` folder and add t
   import unittest
   import truth_table
 
-the terminal updates to show a :doc:`ModuleNotFoundError`
+the terminal shows a :doc:`ModuleNotFoundError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -43,7 +43,7 @@ GREEN: make it pass
    # ModuleNotFoundError
 
 * I then create a file called ``truth_table.py`` in the project folder and the test passes
-* I update the code in ``test_truth_table.py`` to include a failing test
+* I change the code in ``test_truth_table.py`` to include a failing test
 
   .. code-block:: python
 
@@ -73,7 +73,7 @@ GREEN: make it pass
     def logical_true():
         return True
 
-  and the terminal updates to show passing tests and I am reminded that :doc:`True <data_structures_booleans>` is :doc:`True <data_structures_booleans>`
+  and the terminal shows passing tests and I am reminded that :doc:`True <data_structures_booleans>` is :doc:`True <data_structures_booleans>`
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -95,7 +95,7 @@ REFACTOR: make it better
       return True
 
   and the terminal shows an :doc:`AssertionError` since the ``logical_false`` function currently returns a different value from what is expected
-* When I update the return value to :doc:`False <data_structures_booleans>`, the terminal shows passing tests
+* When I change the return value to :doc:`False <data_structures_booleans>`, the terminal shows passing tests
 
   .. code-block:: python
 
@@ -123,7 +123,7 @@ A Logical Identity operation takes input and returns it as output, it is a passt
 RED: make it fail
 ~~~~~~~~~~~~~~~~~
 
-I update ``test_truth_table.py`` with a new ``TestCase``
+I change ``test_truth_table.py`` with a new ``TestCase``
 
 .. code-block:: python
 
@@ -147,7 +147,7 @@ I add a function definition for ``logical_identity`` to ``truth_table.py``
   def logical_identity(value):
       return value
 
-the terminal updates to show passing tests
+the terminal shows passing tests
 
 Logical Negation
 ^^^^^^^^^^^^^^^^
@@ -165,7 +165,7 @@ I add a test for ``logical_negation`` to ``test_truth_table.py``
         self.assertFalse(truth_table.logical_negation(True))
         self.assertTrue(truth_table.logical_negation(False))
 
-the terminal updates to show an :doc:`AttributeError`\, there is no definition for ``logical_negation`` in ``truth_table.py``
+the terminal shows an :doc:`AttributeError`\, there is no definition for ``logical_negation`` in ``truth_table.py``
 
 GREEN: make it pass
 ~~~~~~~~~~~~~~~~~~~
@@ -178,17 +178,17 @@ GREEN: make it pass
     def logical_negation(value):
         return value
 
-  the terminal updates to show an :doc:`AssertionError`.
+  the terminal shows an :doc:`AssertionError`.
 
   The ``logical_negation`` function returns the value it receives as input but the test expects it to return the opposite
-* The ``not`` keyword can be used to make the function return the opposite of what it receives. I update the return statement in ``logical_negation`` to return the opposite of the value it receives
+* The ``not`` keyword can be used to make the function return the opposite of what it receives. I change the return statement in ``logical_negation`` to return the opposite of the value it receives
 
   .. code-block:: python
 
     def logical_negation(value):
       return not value
 
-  the terminal updates to show passing tests
+  the terminal shows passing tests
 
 Reviewing what I know so far
 

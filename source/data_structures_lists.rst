@@ -51,12 +51,12 @@ GREEN: make it pass
 
 * Looking at the error I see that the ``list`` keyword expects one argument but I gave it four, so I am violating the signature for creating lists. How can I pass in values correctly to this object?
 * I check out the `documentation <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ and see that list takes in an ``iterable``. An iterable is an object that I can loop over
-* update the left input of the ``self.assertEqual`` by putting the values in an iterable, I will use a tuple for this example by placing parentheses around the values
+* change the left input of the ``self.assertEqual`` by putting the values in an iterable, I will use a tuple for this example by placing parentheses around the values
   .. code-block:: python
 
       def test_creating_a_list_with_the_list_keyword(self):
        self.assertEqual(list((0, 1, 2, 3)), [])
-  the terminal updates to show an :doc:`AssertionError`
+  the terminal shows an :doc:`AssertionError`
   .. code-block:: python
 
     >    self.assertEqual(list((0, 1, 2, 3)), [])
@@ -102,7 +102,7 @@ add a test to ``TestLists`` in ``test_lists.py`` to learn about updating an exis
       a_list.append(4)
       self.assertEqual(a_list, [0, 1, 2, 3])
 
-the terminal updates to show an :doc:`AssertionError` because after I call ``a_list.append(5)``, the values in ``a_list`` change
+the terminal shows an :doc:`AssertionError` because after I call ``a_list.append(5)``, the values in ``a_list`` change
 
 .. code-block:: python
 
@@ -121,7 +121,7 @@ the terminal updates to show an :doc:`AssertionError` because after I call ``a_l
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-update the values on the right side of the `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ statement to make it match the expectation
+change the values on the right side of the `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ statement to make it match the expectation
 
 .. code-block:: python
 
@@ -131,7 +131,7 @@ update the values on the right side of the `assertEqual <https://docs.python.org
       a_list.append(4)
       self.assertEqual(a_list, [0, 1, 2, 3, 4])
 
-the terminal updates to show passing tests, I started with a list that contained 4 elements then added an element using the ``append`` method, and confirmed that the element I added is now part of the list
+the terminal shows passing tests, I started with a list that contained 4 elements then added an element using the ``append`` method, and confirmed that the element I added is now part of the list
 
 Remove an item from a list
 --------------------------
@@ -149,7 +149,7 @@ since I know how to add an item to a ``list`` add a test for removing an item fr
       a_list.remove(2)
       self.assertEqual(a_list, [0, 1, 2, 3])
 
-the terminal updates to show a difference after I call ``a_list.remove(2)``, because the operation removes an element from ``a_list``
+the terminal shows a difference after I call ``a_list.remove(2)``, because the operation removes an element from ``a_list``
 
 .. code-block:: python
 
@@ -171,7 +171,7 @@ the terminal updates to show a difference after I call ``a_list.remove(2)``, bec
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-update the test to make the values on the right to match the expected values and I am green again with passing tests
+change the test to make the values on the right to match the expected values and I am green again with passing tests
 
 .. code-block:: python
 
@@ -195,8 +195,8 @@ What if there was more than one element, how does python decide which to remove 
        self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
        a_list.remove(2)
        self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
-  the terminal updates to show an :doc:`AssertionError`
-* update the values on the right to match the expectation
+  the terminal shows an :doc:`AssertionError`
+* change the values on the right to match the expectation
   .. code-block:: python
 
     def test_remove_an_item_from_a_list_when_multiple_exist(self):
@@ -227,13 +227,13 @@ add a test to ``TestLists`` in ``test_lists.py``
 * I define ``a list`` with 4 elements and confirm the values, then call the ``pop`` method
 * I check the value that gets popped and check the list to see what values remain after calling ``pop``
 
-the terminal updates to show an :doc:`AssertionError` for the test that checks the value of the item that is popped
+the terminal shows an :doc:`AssertionError` for the test that checks the value of the item that is popped
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* update the value to match the actual value popped
+* change the value to match the actual value popped
   .. code-block:: python
 
     def test_removing_the_last_item_of_a_list(self):
@@ -242,8 +242,8 @@ GREEN: make it pass
       last_item = a_list.pop()
       self.assertEqual(last_item, 3)
       self.assertEqual(a_list, [0, 1, 2, 3])
-  the terminal updates to show an :doc:`AssertionError` for the values of ``a_list`` after the last item is popped
-* update the values in the ``self.assertEqual`` to make the tests pass
+  the terminal shows an :doc:`AssertionError` for the values of ``a_list`` after the last item is popped
+* change the values in the ``self.assertEqual`` to make the tests pass
   .. code-block:: python
 
     def test_removing_the_last_item_of_a_list(self):
@@ -284,7 +284,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* update the value on the right for the failing test
+* change the value on the right for the failing test
   .. code-block:: python
 
     def test_getting_items_in_a_list(self):
@@ -299,8 +299,8 @@ GREEN: make it pass
       self.assertEqual(a_list[-3], '')
       self.assertEqual(a_list[-2], '')
       self.assertEqual(a_list[-4], '')
-  the terminal updates to show an :doc:`AssertionError` for the next test
-* update the value
+  the terminal shows an :doc:`AssertionError` for the next test
+* change the value
   .. code-block:: python
 
     def test_getting_items_in_a_list(self):
@@ -315,7 +315,7 @@ GREEN: make it pass
       self.assertEqual(a_list[-2], '')
       self.assertEqual(a_list[-4], '')
   the terminal shows a failure for the next test
-* modify each failing line till all the tests pass
+* change each failing line till all the tests pass
 
 IndexError
 ----------
@@ -333,7 +333,7 @@ add a failing test to illustrate this
       a_list = ['a', 'b', 'c', 'd']
       self.assertEqual(a_list[5], 'd')
 
-the terminal updates to show an `IndexError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#IndexError>`_
+the terminal shows an `IndexError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#IndexError>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -375,13 +375,13 @@ add a failing test
       )
 
 
-* the terminal updates to show an :doc:`AssertionError`
+* the terminal shows an :doc:`AssertionError`
 * ``maxDiff`` is an attribute of the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class that sets the maximum amount of characters to show in the comparison between the two objects that is displayed in the terminal. When it is set to :doc:`None <data_structures_none>` there is no limit to the number of characters
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-update the test with the expected values
+change the test with the expected values
 
 .. code-block:: python
 

@@ -64,7 +64,7 @@ RED: make it fail
      def test_assertion_errors_with_none(self):
        assert False is None
 
-  the terminal updates to show an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
+  the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
   .. code-block:: python
 
@@ -79,7 +79,7 @@ RED: make it fail
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I modify the failing line of ``test_assertion_errors_with_none`` in ``test_assertion_error.py`` to make the test pass
+I change the failing line of ``test_assertion_errors_with_none`` in ``test_assertion_error.py`` to make the test pass
 
 .. code-block:: python
 
@@ -101,7 +101,7 @@ I can also make assertions with some :doc:`methods <functions>` from the `unitte
 
   self.assertIsNone(False)
 
-  the terminal updates to show a more descriptive `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ since ``False is not None``
+  the terminal shows a more descriptive `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ since ``False is not None``
 
   .. code-block:: python
 
@@ -111,7 +111,7 @@ I can also make assertions with some :doc:`methods <functions>` from the `unitte
 
 * GREEN: make it pass
 
-  when I update the assert statement to
+  when I change the assert statement to
 
   .. code-block:: python
 
@@ -135,7 +135,7 @@ I can also make assertions with some :doc:`methods <functions>` from the `unitte
 
 * GREEN: make it pass
 
-  I update the failing line in ``test_assertion_errors_with_none`` to make the test pass
+  I change the failing line in ``test_assertion_errors_with_none`` to make the test pass
 
   .. code-block:: python
 
@@ -157,7 +157,7 @@ I can also make assertions with some :doc:`methods <functions>` from the `unitte
 
 * GREEN: make it pass
 
-  I update the failing line in ``test_assertion_errors_with_none`` to make it pass
+  I change the failing line in ``test_assertion_errors_with_none`` to make it pass
 
   .. code-block:: python
 
@@ -198,7 +198,7 @@ I can also make assertions with some :doc:`methods <functions>` from the `unitte
 
    self.assertIsNotNone(None)
 
-  and the terminal updates to show an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
+  and the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
   .. code-block:: python
 
@@ -207,7 +207,7 @@ I can also make assertions with some :doc:`methods <functions>` from the `unitte
 
 * GREEN: make it pass
 
-  I update ``test_assertion_errors_with_none`` to make it pass
+  I change ``test_assertion_errors_with_none`` to make it pass
 
   .. code-block:: python
 
@@ -234,14 +234,14 @@ Can I raise an `AssertionError <https://docs.python.org/3/library/exceptions.htm
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I update ``TestAssertionError`` in ``test_assertion_error.py`` with the following test to find out
+I change ``TestAssertionError`` in ``test_assertion_error.py`` with the following test to find out
 
 .. code-block:: python
 
   def test_assertion_errors_with_false(self):
     assert True is False
 
-the terminal updates to show a failure
+the terminal shows a failure
 
 .. code-block:: python
 
@@ -250,7 +250,7 @@ the terminal updates to show a failure
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I update ``test_assertion_errors_with_false`` to make the test pass
+I change ``test_assertion_errors_with_false`` to make the test pass
 
 .. code-block:: python
 
@@ -266,7 +266,7 @@ What if I try the same test using the `unittest.TestCase.assertFalse <https://do
 
   self.assertFalse(True)
 
-the terminal updates to show a failure
+the terminal shows a failure
 
 .. code-block:: python
 
@@ -277,7 +277,7 @@ this is familiar, it was the first failing test I wrote in :doc:`How to Setup a 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I update ``test_assertion_errors_with_false`` to make it pass
+I change ``test_assertion_errors_with_false`` to make it pass
 
 .. code-block:: python
 
@@ -301,14 +301,14 @@ Can I raise an `AssertionError <https://docs.python.org/3/library/exceptions.htm
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I update ``TestAssertionError`` in ``test_assertion_error.py`` with the following test
+I change ``TestAssertionError`` in ``test_assertion_error.py`` with the following test
 
 .. code-block:: python
 
   def test_assertion_errors_with_true(self):
     assert False is True
 
-the terminal updates to show a failure
+the terminal shows a failure
 
 .. code-block:: python
 
@@ -317,7 +317,7 @@ the terminal updates to show a failure
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I update ``test_assertion_errors_with_true`` to make it pass
+I change ``test_assertion_errors_with_true`` to make it pass
 
 .. code-block:: python
 
@@ -341,7 +341,7 @@ the terminal shows an `AssertionError <https://docs.python.org/3/library/excepti
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I update ``test_assertion_errors_with_false`` to make it pass
+I change ``test_assertion_errors_with_false`` to make it pass
 
 .. code-block:: python
 
@@ -401,7 +401,7 @@ REFACTOR: make it better
 
 * RED: make it fail
 
-  I update ``test_assertion_errors_with_equality`` with the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ method for equality testing
+  I change ``test_assertion_errors_with_equality`` with the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ method for equality testing
 
   .. code-block:: python
 
@@ -449,7 +449,7 @@ REFACTOR: make it better
 
 * GREEN: make it pass
 
-  I update the line in ``test_assertion_errors_with_equality`` to make it pass
+  I change the line in ``test_assertion_errors_with_equality`` to make it pass
 
   .. code-block:: python
 
@@ -471,13 +471,13 @@ REFACTOR: make it better
 
 * GREEN: make it pass
 
-  I update ``test_assertion_errors_with_equality`` to make it pass
+  I change ``test_assertion_errors_with_equality`` to make it pass
 
   .. code-block:: python
 
    self.assertNotEqual(True, None)
 
-  the terminal updates to show passing tests. I can now say that in python
+  the terminal shows passing tests. I can now say that in python
 
   * :doc:`True <data_structures_booleans>` is :doc:`True <data_structures_booleans>`
   * :doc:`True <data_structures_booleans>` is not :doc:`False <data_structures_booleans>`
@@ -489,7 +489,7 @@ REFACTOR: make it better
 
 * RED: make it fail
 
-  There is a pattern here, I update ``test_assertion_errors_with_equality`` with the other cases from my statement above
+  There is a pattern here, I change ``test_assertion_errors_with_equality`` with the other cases from my statement above
 
   .. code-block:: python
 
@@ -510,7 +510,7 @@ REFACTOR: make it better
 
 * GREEN: make it pass
 
-  I update ``test_assertion_errors_with_equality`` to make each test pass
+  I change ``test_assertion_errors_with_equality`` to make each test pass
 
   .. code-block:: python
 

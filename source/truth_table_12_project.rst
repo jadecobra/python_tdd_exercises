@@ -33,7 +33,7 @@ GREEN: make it pass
     def project_first(p, q):
         return False
 
-  and the terminal updates to show an :doc:`AssertionError` for the first case
+  and the terminal shows an :doc:`AssertionError` for the first case
 * I change the return statement
 
   .. code-block:: python
@@ -117,7 +117,7 @@ GREEN: make it pass
     def project_second(p, q):
         return False
 
-  the terminal updates to show an :doc:`AssertionError` for the first case
+  the terminal shows an :doc:`AssertionError` for the first case
 * I change the return value to make it pass
 
   .. code-block:: python
@@ -150,7 +150,7 @@ GREEN: make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Since there is no refactoring to do here, I update what I know so far. For any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
+Since there is no refactoring to do here, I change what I know so far. For any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
 
 
 * ``project second`` always returns ``q``

@@ -33,7 +33,7 @@ GREEN: make it pass
     def negate_first(p, q):
         return False
 
-  the terminal updates to show an :doc:`AssertionError` for the third case
+  the terminal shows an :doc:`AssertionError` for the third case
 * before I add a condition for it, this looks similar to ``logical_equality`` and ``exclusive_disjunction`` because 2 out of the 4 cases have the same return value. I see that
 
   * if ``p == True`` the result is :doc:`False <data_structures_booleans>`
@@ -113,7 +113,7 @@ GREEN: make it pass
     def negate_second(p, q):
         return False
 
-  and the terminal updates to show an :doc:`AssertionError` for the third case
+  and the terminal shows an :doc:`AssertionError` for the third case
 * before I add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction`` and ``negate_first`` because 2 out of the 4 cases have the same return value. I see that
 
   * if ``q == True`` the result is :doc:`False <data_structures_booleans>`
@@ -139,7 +139,7 @@ GREEN: make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-I don't think I can make it better so I update what I know so far
+I don't think I can make it better so I change what I know so far
 
 For any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
 

@@ -55,7 +55,7 @@ Add a ``self.assertRaises`` to ``test_catching_module_not_found_error_in_tests``
     with self.assertRaises(ModuleNotFoundError):
       import non_existent_module
 
-the terminal updates to show passing tests. How does all this work?
+the terminal shows passing tests. How does all this work?
 
 
 * I use the ``self.assertRaises`` :doc:`method <functions>` from the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class which takes a given exception as its input, in this case ``ModuleNotFoundError`` and checks if that error is raised by the statements given in the context below (the indented block after the ``with`` statement)
@@ -80,7 +80,7 @@ With what I have learned about catching or handling exceptions I can test that a
    def test_catching_attribute_errors_in_tests(self):
      module.non_existent_attribute
 
-  the terminal updates to show an :doc:`AttributeError` because the called attribute ``non_existent_attribute`` does not exist in ``module.py``
+  the terminal shows an :doc:`AttributeError` because the called attribute ``non_existent_attribute`` does not exist in ``module.py``
 
   .. code-block:: python
 
@@ -97,7 +97,7 @@ With what I have learned about catching or handling exceptions I can test that a
 
 * GREEN: make it pass
 
-  update ``test_catching_attribute_errors_in_tests`` with ``self.assertRaises``
+  change ``test_catching_attribute_errors_in_tests`` with ``self.assertRaises``
 
   .. code-block:: python
 
@@ -105,7 +105,7 @@ With what I have learned about catching or handling exceptions I can test that a
     with self.assertRaises(AttributeError):
       module.non_existent_attribute
 
-  the terminal updates to show passing tests. Let's do it again with ``methods`` for good measure
+  the terminal shows passing tests. Let's do it again with ``methods`` for good measure
 
 * RED: make it fail
 
@@ -118,7 +118,7 @@ With what I have learned about catching or handling exceptions I can test that a
       module.non_existent_attribute
     module.non_existent_function()
 
-  the terminal updates to show :doc:`AttributeError` because ``non_existent_function`` does not exist in ``module.py``
+  the terminal shows :doc:`AttributeError` because ``non_existent_function`` does not exist in ``module.py``
 
   .. code-block:: python
 
@@ -136,7 +136,7 @@ With what I have learned about catching or handling exceptions I can test that a
     with self.assertRaises(AttributeError):
       module.non_existent_function()
 
-  the terminal updates to show passing tests
+  the terminal shows passing tests
 
 * RED: make it fail
 
@@ -151,7 +151,7 @@ With what I have learned about catching or handling exceptions I can test that a
       module.non_existent_function()
     module.NonExistentClass()
 
-  the terminal updates to show an :doc:`AttributeError`
+  the terminal shows an :doc:`AttributeError`
 
   .. code-block:: python
 
@@ -175,7 +175,7 @@ With what I have learned about catching or handling exceptions I can test that a
 
 * RED: make it fail
 
-  update ``test_catching_attribute_errors_in_tests`` with a new failing line
+  change ``test_catching_attribute_errors_in_tests`` with a new failing line
 
   .. code-block:: python
 
@@ -210,7 +210,7 @@ With what I have learned about catching or handling exceptions I can test that a
     with self.assertRaises(AttributeError):
       module.Class.non_existent_attribute
 
-  the terminal updates to show passing tests
+  the terminal shows passing tests
 
 * RED: make it fail
 
@@ -229,7 +229,7 @@ With what I have learned about catching or handling exceptions I can test that a
       module.Class.non_existent_attribute
     module.Class.non_existent_method()
 
-  the terminal updates to show another :doc:`AttributeError`
+  the terminal shows another :doc:`AttributeError`
 
   .. code-block:: python
 
@@ -253,7 +253,7 @@ With what I have learned about catching or handling exceptions I can test that a
     with self.assertRaises(AttributeError):
       module.Class.non_existent_method()
 
-  the terminal updates to show passing tests
+  the terminal shows passing tests
 
 * REFACTOR: make it better
 
@@ -288,7 +288,7 @@ Let us deliberately trigger an exception in the code and then handle it. Add a f
   def test_catching_exceptions(self):{
     exceptions.raises_exception_error()}
 
-the terminal displays a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ and I update the running list of exceptions encountered
+the terminal displays a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ and I change the running list of exceptions encountered
 
 .. code-block:: python
 
@@ -304,7 +304,7 @@ GREEN: make it pass
 
 * A `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ is raised when a name is used within a module and there with no definition for the name. In the code above I call ``exceptions.raises_exception_error`` and there is no definition for ``exceptions``
 
-  update the ``import`` section with a new line
+  change the ``import`` section with a new line
 
   .. code-block:: python
 
@@ -314,14 +314,14 @@ GREEN: make it pass
 
   the terminal now gives us a :doc:`ModuleNotFoundError`
 
-* create a file called ``exceptions.py`` in the ``{PROJECT_NAME}`` folder, and the terminal updates to show an :doc:`AttributeError`
-* update ``exceptions.py`` with the name of the attribute called in the test, and the terminal updates to show a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ since I have not defined ``raises_exception_error`` in ``exceptions.py``
+* create a file called ``exceptions.py`` in the ``{PROJECT_NAME}`` folder, and the terminal shows an :doc:`AttributeError`
+* change ``exceptions.py`` with the name of the attribute called in the test, and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ since I have not defined ``raises_exception_error`` in ``exceptions.py``
 
   .. code-block:: python
 
    raises_exception_error
 
-* define ``raises_exception_error`` and the terminal updates to show a :doc:`TypeError`
+* define ``raises_exception_error`` and the terminal shows a :doc:`TypeError`
 
   .. code-block:: python
 
@@ -338,21 +338,21 @@ GREEN: make it pass
    # NameError
    # TypeError
 
-* redefine ``raises_exception_error`` as a function and the terminal updates to show passing tests
+* redefine ``raises_exception_error`` as a function and the terminal shows passing tests
 
   .. code-block:: python
 
   def raises_exception_error():
     return None
 
-* update the function to trigger an ``Exception`` by using the ``raise`` keyword
+* change the function to trigger an ``Exception`` by using the ``raise`` keyword
 
   .. code-block:: python
 
   def raises_exception_error():
     raise Exception
 
-  the terminal updates to show
+  the terminal shows
 
   .. code-block:: python
 
@@ -390,43 +390,43 @@ Let us add exception handling to the program so it does not end when it encounte
       'failed'
     )
 
-  the terminal updates to show an `AttributeError <./AttributeError>`_
+  the terminal shows an `AttributeError <./AttributeError>`_
 
 * GREEN: make it pass
 
-  add a name to ``exceptions.py`` and the terminal updates to show `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+  add a name to ``exceptions.py`` and the terminal shows `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
   .. code-block:: python
 
   exception_handler
 
-  define ``exception_handler`` and the terminal displaysa :doc:`TypeError`
+  define ``exception_handler`` and the terminal displays a :doc:`TypeError`
 
   .. code-block:: python
 
   exception_handler = None
 
-  changing ``exception_handler`` to a function updates the :doc:`TypeError` with a new message
+  changing ``exception_handler`` to a function changes the :doc:`TypeError` with a new message
 
   .. code-block:: python
 
   def exception_handler():
     return None
 
-  update the signature for ``exception_handler`` to accept a positional argument
+  change the signature for ``exception_handler`` to accept a positional argument
 
   .. code-block:: python
 
   def exception_handler(argument):
     return None
 
-  the terminal updates to show an :doc:`AssertionError` because the result of calling ``exceptions.exception_handler`` with ``exceptions.raises_exception_error`` as the input is currently :doc:`None <data_structures_none>` which is not equal to ``failed``
+  the terminal shows an :doc:`AssertionError` because the result of calling ``exceptions.exception_handler`` with ``exceptions.raises_exception_error`` as the input is currently :doc:`None <data_structures_none>` which is not equal to ``failed``
 
   .. code-block:: python
 
   E    AssertionError: None != 'failed'
 
-  change ``exception_handler`` to return ``failed`` and the terminal updates to show passing tests
+  change ``exception_handler`` to return ``failed`` and the terminal shows passing tests
 
   .. code-block:: python
 
@@ -445,11 +445,11 @@ Let us add exception handling to the program so it does not end when it encounte
       'succeeded'
     )
 
-  the terminal updates to show an :doc:`AttributeError`
+  the terminal shows an :doc:`AttributeError`
 
 * GREEN: make it pass
 
-  add ``does_not_raise_exception_error`` to ``exceptions.py`` and the terminal updates to show a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+  add ``does_not_raise_exception_error`` to ``exceptions.py`` and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
   .. code-block:: python
 
@@ -461,7 +461,7 @@ Let us add exception handling to the program so it does not end when it encounte
 
    does_not_raise_exception_error = None
 
-  and the terminal updates to show an :doc:`AssertionError` because the value returned by ``exceptions.exception_handler`` when given ``exceptions.does_not_raise_exception_error`` as input is ``failed`` which is not equal to ``succeeded``
+  and the terminal shows an :doc:`AssertionError` because the value returned by ``exceptions.exception_handler`` when given ``exceptions.does_not_raise_exception_error`` as input is ``failed`` which is not equal to ``succeeded``
 
   .. code-block::
 
@@ -469,21 +469,21 @@ Let us add exception handling to the program so it does not end when it encounte
 
   I want the ``exception_handler`` function to return a different input based on the exceptions that occur within the function to help us learn how to handle exceptions.
 
-  Let us update ``exception_handler`` in ``exceptions.py`` to call a function it receives as input
+  Let us change ``exception_handler`` in ``exceptions.py`` to call a function it receives as input
 
   .. code-block:: python
 
   def exception_handler(function):
     return function()
 
-  the terminal updates to show a :doc:`TypeError` because ``does_not_raise_exception_error`` is not a function, I will redefine ``does_not_raise_exception_error`` to make it callable
+  the terminal shows a :doc:`TypeError` because ``does_not_raise_exception_error`` is not a function, I will redefine ``does_not_raise_exception_error`` to make it callable
 
   .. code-block:: python
 
   def does_not_raise_exception_error():
     return None
 
-  the terminal updates to show
+  the terminal shows
 
   .. code-block:: python
 
@@ -495,7 +495,7 @@ Let us add exception handling to the program so it does not end when it encounte
 
   I use a ``try...except...else`` statement to catch or handle exceptions in python. This allows the program to make a decision when it encounters an Exception.
 
-  Update ``exception_handler`` in ``exceptions.py`` to handle exceptions
+  change ``exception_handler`` in ``exceptions.py`` to handle exceptions
 
   .. code-block:: python
 
@@ -507,7 +507,7 @@ Let us add exception handling to the program so it does not end when it encounte
     else:
       return 'succeeded'
 
-  the terminal updates to show passing tests
+  the terminal shows passing tests
 
 I can think of the  ``try...except...else`` statement as
 * ``try`` something, if it raises an ``Exception`` do this
@@ -542,7 +542,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* add a name to ``exceptions.py`` and the terminal updates to show a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+* add a name to ``exceptions.py`` and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
   .. code-block:: python
 
@@ -554,21 +554,21 @@ GREEN: make it pass
 
   always_returns = None
 
-* redefine ``always_returns`` as a function and the terminal displaysa :doc:`TypeError`
+* redefine ``always_returns`` as a function and the terminal displays a :doc:`TypeError`
 
   .. code-block:: python
 
   def always_returns():
     return None
 
-* update the signature of ``always_returns`` to accept a function that I call and return its value
+* change the signature of ``always_returns`` to accept a function that I call and return its value
 
   .. code-block:: python
 
   def always_returns(function):
     return function()
 
-  the terminal updates to show
+  the terminal shows
 
   .. code-block:: python
 
@@ -623,9 +623,9 @@ GREEN: make it pass
     finally:
       return 'always_returns_this'
 
-  the terminal updates to show passing tests. the ``finally`` clause is always executed regardless of what happens in the ``try..except..else`` parts
+  the terminal shows passing tests. the ``finally`` clause is always executed regardless of what happens in the ``try..except..else`` parts
 
-* add one more test to verify that the code in the ``finally`` block will always execute, update ``test_finally_always_returns``
+* add one more test to verify that the code in the ``finally`` block will always execute, change ``test_finally_always_returns``
 
   .. code-block:: python
 

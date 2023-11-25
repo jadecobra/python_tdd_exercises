@@ -62,12 +62,12 @@ add a new test to compare :doc:`None <data_structures_none>` with booleans
       self.assertIsNone(True)
       self.assertIsNone(False)
 
-the terminal updates to show an :doc:`AssertionError`
+the terminal shows an :doc:`AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-update ``test_is_none_a_boolean`` to make the tests pass
+change ``test_is_none_a_boolean`` to make the tests pass
 
 .. code-block:: python
 
@@ -89,9 +89,10 @@ booleans are represented by the keyword ``bool`` in python so I can do an instan
 
 
 *
-  ### RED: make it fail
+  RED: make it fail
+----------------
 
-  update ``test_is_none_a_boolean`` with ``self.assertIsInstance``
+  change ``test_is_none_a_boolean`` with ``self.assertIsInstance``
 
   .. code-block:: python
 
@@ -107,9 +108,10 @@ booleans are represented by the keyword ``bool`` in python so I can do an instan
     AssertionError: None is not an instance of <class 'bool'>
 
 *
-  ### GREEN: make it pass
+  GREEN: make it pass
+---------------------
 
-  update ``test_is_none_a_boolean`` to make the test pass
+  change ``test_is_none_a_boolean`` to make the test pass
 
   .. code-block:: python
 
@@ -140,12 +142,12 @@ add a new test to compare :doc:`None <data_structures_none>` with ``int``
       self.assertIsNone(0)
       self.assertIsNone(1)
 
-the terminal updates to show an :doc:`AssertionError`
+the terminal shows an :doc:`AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I update ``test_is_none_an_integer`` to make it pass
+I change ``test_is_none_an_integer`` to make it pass
 
 .. code-block:: python
 
@@ -160,7 +162,8 @@ integers are represented by the keyword ``int`` in python so I can do an instanc
 
 
 *
-  ### RED: make it fail
+  RED: make it fail
+----------------
 
   add a new line to ``test_is_none_an_integer`` with ``self.assertIsInstance``
 
@@ -179,9 +182,10 @@ integers are represented by the keyword ``int`` in python so I can do an instanc
     AssertionError: None is not an instance of <class 'int'>
 
 *
-  ### GREEN: make it pass
+  GREEN: make it pass
+---------------------
 
-  I update ``test_is_none_an_integer`` to make the test pass
+  I change ``test_is_none_an_integer`` to make the test pass
 
   .. code-block:: python
 
@@ -218,7 +222,7 @@ and the terminal gives us an :doc:`AssertionError`
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-update ``test_is_none_a_string`` to make it pass
+change ``test_is_none_a_string`` to make it pass
 
 .. code-block:: python
 
@@ -233,9 +237,10 @@ REFACTOR: make it better
 
 
 *
-  ### RED: make it fail
+  RED: make it fail
+----------------
 
-  update ``test_is_none_a_string`` and the terminal updates to show a failing test
+  change ``test_is_none_a_string`` and the terminal shows a failing test
 
   .. code-block:: python
 
@@ -245,7 +250,8 @@ REFACTOR: make it better
        self.assertIsInstance(None, str)
 
 *
-  ### GREEN: make it pass
+  GREEN: make it pass
+---------------------
   change the failing line in the test to make it pass
 
   .. code-block:: python
@@ -277,7 +283,7 @@ add a new test to ``test_data_structures.py``
       self.assertIsNone((1, 2, 3, 'n'))
       self.assertIsInstance(None, tuple)
 
-the terminal updates to show an :doc:`AssertionError`
+the terminal shows an :doc:`AssertionError`
 
 .. code-block:: python
 
@@ -291,7 +297,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* modify the first line in\ ``test_is_none_a_tuple`` to make it pass
+* change the first line in\ ``test_is_none_a_tuple`` to make it pass
   .. code-block:: python
 
       def test_is_none_a_tuple(self):
@@ -301,7 +307,7 @@ GREEN: make it pass
 
     AssertionError: (1, 2, 3, 'n') is not None
   because the ``tuple`` that contains the four elements ``1, 2, 3, 'n'`` is not :doc:`None <data_structures_none>`
-* update the failing line in ``test_is_none_a_tuple``
+* change the failing line in ``test_is_none_a_tuple``
   .. code-block:: python
 
       def test_is_none_a_tuple(self):
@@ -362,7 +368,7 @@ the terminal shows an :doc:`AssertionError`
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-We've done this dance a few times now so I can update ``test_is_none_a_list`` to make it pass. With the passing tests the knowledge of :doc:`None <data_structures_none>` is updated to
+We've done this dance a few times now so I can change ``test_is_none_a_list`` to make it pass. With the passing tests the knowledge of :doc:`None <data_structures_none>` is changed to
 
 
 * :doc:`None <data_structures_none>` is not a ``list``
@@ -387,7 +393,7 @@ following the same pattern from earlier, I add a new failing test, this time for
       self.assertIsNone({1, 2, 3, "n"})
       self.assertIsInstance(None, set)
 
-the terminal updates to show an :doc:`AssertionError`
+the terminal shows an :doc:`AssertionError`
 
 .. code-block:: python
 
@@ -400,7 +406,7 @@ the terminal updates to show an :doc:`AssertionError`
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-update the tests to make them pass and I can update the knowledge of :doc:`None <data_structures_none>` to state that
+change the tests to make them pass and I can change the knowledge of :doc:`None <data_structures_none>` to state that
 
 
 * :doc:`None <data_structures_none>` is not a ``set``
@@ -439,13 +445,13 @@ the terminal displays an :doc:`AssertionError`
 
 
 * ``dict()`` is how I create an empty ``dictionary``
-* ``{}`` is how :doc:`data structures: dictionaries` are represented in python. Wait a minute, sets are also represented with ``{}``, the difference is that dictionaries contain key/value pairs
+* ``{}`` is how :doc:`data_structures_dictionaries` are represented in python. Wait a minute, sets are also represented with ``{}``, the difference is that dictionaries contain key/value pairs
 * Do you want to `read more about dictionaries <https://docs.python.org/3/tutorial/datastructures.html?highlight=sets#dictionaries>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-update the tests to make them pass and I can update the knowledge of :doc:`None <data_structures_none>` to state that
+change the tests to make them pass and I can change the knowledge of :doc:`None <data_structures_none>` to state that
 
 
 * :doc:`None <data_structures_none>` is not a ``dictionary``

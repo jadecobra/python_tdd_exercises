@@ -65,4 +65,4 @@ The following chapters go into more detail about some of these data structures
 * :doc:`None`
 * :doc:`Booleans`
 * :doc:`Lists`
-* :doc:`data structures: dictionaries`
+* :doc:`data_structures_dictionaries`

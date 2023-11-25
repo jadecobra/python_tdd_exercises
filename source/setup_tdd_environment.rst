@@ -133,7 +133,7 @@ RED: make it fail
 
   python3 -m unittest
 
-  the terminal updates to show a failure as expected
+  the terminal shows a failure as expected
 
   .. code-block:: python
 
@@ -218,7 +218,7 @@ GREEN: make it pass
 
   python3 -m unittest
 
-  and the terminal updates to show a passing test
+  and the terminal shows a passing test
 
   .. code-block:: python
 
@@ -334,7 +334,7 @@ How to create a Virtual Environment
 
   =============== 1 passed in 0.00s =======================
 
-* to verify that the terminal now responds to changes, I modify the input on line 7 in ``test_{PROJECT_NAME}.py`` to :doc:`True <data_structures_booleans>` to see it fail and back to :doc:`False <data_structures_booleans>` to see it pass
+* to verify that the terminal now responds to changes, I change the input on line 7 in ``test_{PROJECT_NAME}.py`` to :doc:`True <data_structures_booleans>` to see it fail and back to :doc:`False <data_structures_booleans>` to see it pass
 * I can press ``ctrl`` + ``c`` on the keyboard in the terminal to stop the tests at anytime
 
 How to Deactivate a Virtual Environment
@@ -391,7 +391,7 @@ You made it this far and have become the greatest programmer in the world. Follo
   python3 -m pip install --requirement requirements.txt
   pytest-watch
 
-* There is a problem with the program, it will always create a project called ``{PROJECT_NAME}`` so I need to add a variable to make it create any project name I pass to the program as input. I update the program with a variable called ``PROJECT_NAME`` which is referenced with ``$PROJECT_NAME``
+* There is a problem with the program, it will always create a project called ``{PROJECT_NAME}`` so I need to add a variable to make it create any project name I pass to the program as input. I change the program with a variable called ``PROJECT_NAME`` which is referenced with ``$PROJECT_NAME``
 
   .. code-block:: shell
   :linenos:

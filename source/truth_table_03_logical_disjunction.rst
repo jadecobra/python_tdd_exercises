@@ -27,13 +27,13 @@ I add a test for logical disjunction to ``TestBinaryOperations`` in ``test_truth
         self.assertTrue(truth_table.logical_disjunction(False, True))
         self.assertFalse(truth_table.logical_disjunction(False, False))
 
-and the terminal updates to show an :doc:`AttributeError`
+and the terminal shows an :doc:`AttributeError`
 
 GREEN: make it pass
 ~~~~~~~~~~~~~~~~~~~
 
 
-* Then I update ``truth_table.py`` with a function definition like I did for ``logical_conjunction``
+* Then I change ``truth_table.py`` with a function definition like I did for ``logical_conjunction``
 
   .. code-block:: python
 
@@ -42,7 +42,7 @@ GREEN: make it pass
 
   and the terminal shows an :doc:`AssertionError`
 
-* 3 of the test cases are passing because ``logical_disjunction`` returns :doc:`True <data_structures_booleans>` for each one of them. I need a condition for the fourth case to pass, so I update the definition
+* 3 of the test cases are passing because ``logical_disjunction`` returns :doc:`True <data_structures_booleans>` for each one of them. I need a condition for the fourth case to pass, so I change the definition
 
   .. code-block:: python
 
@@ -52,13 +52,13 @@ GREEN: make it pass
                 return False
         return True
 
-  the terminal updates to show passing tests
+  the terminal shows passing tests
 
 REFACTOR: make it better
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-* I know from :doc:`/truth table 02: logical conjunction` that when I have a nested if statement it can be replaced with an ``and`` so I update the condition
+* I know from :doc:`/truth table 02: logical conjunction` that when I have a nested if statement it can be replaced with an ``and`` so I change the condition
 
   .. code-block:: python
 

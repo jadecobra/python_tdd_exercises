@@ -1,6 +1,6 @@
 
-Create a Calculator using Test Driven Development
-==================================================
+How to create a simple Calculator
+=================================
 
 In this chapter I will use Test Driven Development to create a calculator in python that can perform addition, subtraction, division and multiplication
 
@@ -130,7 +130,7 @@ RED: make it fail
   * my expectation is that ``calculator.add(0, 1)`` is equal to ``1``
 
 
-* the terminal updates to show an :doc:`AttributeError`
+* the terminal shows an :doc:`AttributeError`
 
   .. code-block:: python
 
@@ -179,7 +179,7 @@ GREEN: make it pass
 
     E  NameError: name 'add' is not defined
 
-* I update the list of exceptions encountered with `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+* I change the list of exceptions encountered with `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
   .. code-block:: python
 
@@ -193,7 +193,7 @@ GREEN: make it pass
 
     add = None
 
-  the terminal displaysa :doc:`TypeError`
+  the terminal displays a :doc:`TypeError`
 
   .. code-block:: python
 
@@ -201,7 +201,7 @@ GREEN: make it pass
 
   The :doc:`AttributeError` was fixed by declaring a variable ``add`` in the ``calculator`` module, even though it is currently assigned to the null value :doc:`None <data_structures_none>`
 
-* The new error isa :doc:`TypeError` which can occur when an `object <https://docs.python.org/3/glossary.html#term-object>`_ is used in a way that it is not supposed to be used. In this case the ``add`` variable is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_ because it refers to :doc:`None <data_structures_none>` which is not a `callable <https://docs.python.org/3/glossary.html#term-callable>`_ object. I update the list of exceptions encountered
+* The new error isa :doc:`TypeError` which can occur when an `object <https://docs.python.org/3/glossary.html#term-object>`_ is used in a way that it is not supposed to be used. In this case the ``add`` variable is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_ because it refers to :doc:`None <data_structures_none>` which is not a `callable <https://docs.python.org/3/glossary.html#term-callable>`_ object. I change the list of exceptions encountered
 
   .. code-block:: python
 
@@ -223,7 +223,7 @@ GREEN: make it pass
 
     E    TypeError: add() takes 0 positional arguments but 2 were given
 
-* This :doc:`TypeError` indicates that the current definition of the ``add`` function takes in no arguments but I provided 2 in the call in the test ``calculator.add(0, 1)``. Since part of the requirement is that the ``add`` function should take in two numbers, I will update it in ``calculator.py`` to match
+* This :doc:`TypeError` indicates that the current definition of the ``add`` function takes in no arguments but I provided 2 in the call in the test ``calculator.add(0, 1)``. Since part of the requirement is that the ``add`` function should take in two numbers, I will change it in ``calculator.py`` to match
 
   .. code-block:: python
 
@@ -239,7 +239,7 @@ GREEN: make it pass
   - An :doc:`AssertionError` is raised when an assertion is :doc:`False <data_structures_booleans>`
   - Since I am using ``self.assertEqual`` it means the two inputs are not equal. In other words ``calculator.add(0, 1)`` is currently not equal to ``1``
 
-* I update the ``add`` function in ``calculator.py`` so it gives the expected value
+* I change the ``add`` function in ``calculator.py`` so it gives the expected value
 
   .. code-block:: python
 
@@ -323,7 +323,7 @@ Even though the add function currently passes the existing test it does not meet
 
 * REFACTOR: make it better
 
-  I can use random inputs to test that the function behaves the way I expect for any given numbers. I will update ``test_calculator.py`` to use python's `random <https://docs.python.org/3/library/random.html?highlight=random#module-random>`_ library to generate random integers between -1 and 1 to represent negative numbers, zero and positive numbers
+  I can use random inputs to test that the function behaves the way I expect for any given numbers. I will change ``test_calculator.py`` to use python's `random <https://docs.python.org/3/library/random.html?highlight=random#module-random>`_ library to generate random integers between -1 and 1 to represent negative numbers, zero and positive numbers
 
   .. code-block:: python
 
@@ -382,7 +382,7 @@ RED : make it fail
 ^^^^^^^^^^^^^^^^^^
 
 
-* I update ``test_calculator.py`` with a :doc:`method <functions>` called ``test_subtraction``
+* I change ``test_calculator.py`` with a :doc:`method <functions>` called ``test_subtraction``
 
   .. code-block:: python
 
@@ -443,7 +443,7 @@ GREEN : make it pass
   def subtract():
     return None
 
-  and the terminal displaysa :doc:`TypeError` with a different error message. Progress!
+  and the terminal displays a :doc:`TypeError` with a different error message. Progress!
 
   .. code-block:: python
 
@@ -469,7 +469,7 @@ GREEN : make it pass
        )
     E    AssertionError: None != 0
 
-* I update the ``subtract`` function in ``calculator.py`` to perform a subtraction operation on its inputs
+* I change the ``subtract`` function in ``calculator.py`` to perform a subtraction operation on its inputs
 
   .. code-block:: python
 
@@ -505,7 +505,7 @@ REFACTOR: make it better
   - ``x = random.randint(-1, 1)`` happens twice
   - ``y = random.randint(-1, 1)`` happens twice
 
-* I could update the ``TestCalculator`` :doc:`class <classes>` in ``test_calculator.py`` to create the random variables only once by using :doc:`class <classes>` attributes (variables) and reference them in the tests
+* I could change the ``TestCalculator`` :doc:`class <classes>` in ``test_calculator.py`` to create the random variables only once by using :doc:`class <classes>` attributes (variables) and reference them in the tests
 
   .. code-block:: python
 
@@ -582,7 +582,7 @@ the terminal responds with an :doc:`AttributeError`
 GREEN : make it pass
 ^^^^^^^^^^^^^^^^^^^^
 
-using what I know so far I update ``calculator.py`` with a definition for multiplication
+using what I know so far I change ``calculator.py`` with a definition for multiplication
 
 .. code-block:: python
 
@@ -615,7 +615,7 @@ Test Division
 RED : make it fail
 ^^^^^^^^^^^^^^^^^^
 
-I update ``test_calculator.py`` with ``test_division``
+I change ``test_calculator.py`` with ``test_division``
 
 .. code-block:: python
 
@@ -660,7 +660,7 @@ GREEN : make it pass
 ^^^^^^^^^^^^^^^^^^^^
 
 
-* I update ``calculator.py`` with a ``divide`` function
+* I change ``calculator.py`` with a ``divide`` function
 
   .. code-block:: python
 
@@ -746,7 +746,7 @@ the terminal displays passing tests, and I now have a way to ``catch`` :doc:`Exc
 REFACTOR: make it better
 ------------------------
 
-I update ``test_division`` to test other division cases when the divisor is not 0 by making sure the value of ``y`` that is passed to ``calculator.divide`` is never 0
+I change ``test_division`` to test other division cases when the divisor is not 0 by making sure the value of ``y`` that is passed to ``calculator.divide`` is never 0
 
 .. code-block:: python
 
