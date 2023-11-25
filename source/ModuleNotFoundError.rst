@@ -1,18 +1,19 @@
 ModuleNotFoundError
 ===================
 
-Let us step through solving a ``ModuleNotFoundError`` in python using Test Driven Development
+This chapter is a drill to help remember solving a ``ModuleNotFoundError`` in python using Test Driven Development
 
-The ``ModuleNotFoundError`` is raised when you try to import a module that does not exist.
+``ModuleNotFoundError`` is raised when python attempts to import a module that does not exist or it cannot find a given module name for an ``import`` statement.
 A Python Module is a file that ends in ``.py`` or a directory that contains an ``__init__.py``.
+
 Programming allows us to gain from the previous efforts as well as the efforts of others in the form of packages and modules that can be distributed for other people to use. To use these packages in python I have to import them.
 
 
-
 RED: make it fail
-^^^^^^^^^^^^^^^^^
+-----------------
 
-Open a new file in your editor and save it as ``test_ModuleNotFoundError.py`` in the ``tests`` folder you created in :doc:`How to Setup a Test Driven Development Environment <setup_tdd_environment>`
+Open a new file in the Interactivate Development Environment editor and save it as ``test_module_not_found_error.py`` in the ``tests`` folder created from :doc:`How to Setup a Test Driven Development Environment <setup_tdd_environment>`
+
 Type the following in the file
 
 .. code-block:: python
@@ -130,39 +131,42 @@ Looking at the traceback starting from the bottom
 
 * ``ModuleNotFoundError`` - this error is raised when an import statement fails because python cannot find a module/package with the given name, in this case ``module_0`` does not exist
 * ``import module_0`` - the line of code that caused the failure
-* Add the errors to the running list of Exceptions encountered
+* Add the error to the running list of Exceptions encountered
   .. code-block:: python
 
     # Exceptions Encountered
     # AssertionError
     # ImportError
     # ModuleNotFoundError
-  For more information about imports you can read `The Import Statement <https://docs.python.org/3/reference/simple_stmts.html#import>`_
+
+  If you want more information about imports you can read `The Import Statement <https://docs.python.org/3/reference/simple_stmts.html#import>`_
 
 GREEN: make it pass
-^^^^^^^^^^^^^^^^^^^
+--------------------
 
 
 * create ``module_0.py`` in the ``{PROJECT_NAME}`` folder and the terminal shows
+
   .. code-block:: python
 
       import module_1
     E  ModuleNotFoundError: No module called 'module_1'
 
 * create ``module_1.py`` in the ``{PROJECT_NAME}`` folder, the terminal shows the same error for a new line
+
   .. code-block:: python
 
       import module_2
     E  ModuleNotFoundError: No module called 'module_2'
 
 * create ``module_2.py`` in the ``{PROJECT_NAME}`` folder, the terminal shows the following
+
   .. code-block:: python
 
       import module_3
     E  ModuleNotFoundError: No module called 'module_3'
 
-*
-  this is the pattern, repeat it until you have created ``module_99.py`` and the terminal shows a passing test
+* this is the pattern, repeat it until you have created ``module_99.py`` and the terminal shows a passing test
 
   .. code-block:: python
 
