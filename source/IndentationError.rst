@@ -3,18 +3,7 @@ IndentationError
 
 Spacing/Indentation matters in python. Where code is placed and how it is spaced has an effect on how the code is interpreted as well as how a human being comprehends the intention behind the code. Some people indent with 2 spaces, others indent with 4. This exercises uses 4 spaces to indent as it is the `recommended convention <https://peps.python.org/pep-0008/#indentation>`_
 
-An `<https://docs.python.org/3/library/exceptions.html?highlight=exceptions#IndentationError>`_ is raised when indentation is not correct
-
-The exercises in this chapter are intended to get you familiar with proper Inden
-
-
-
-Prerequisites
--------------
-
-:doc:`How to Setup a Test Driven Development Environment <setup_tdd_environment>`
-
-----
+An `IndentationError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#IndentationError>`_ is raised when indentation is not correct. The exercises in this chapter are intended to get you familiar with proper Indentation
 
 
 Solve the IndentationError
@@ -29,7 +18,7 @@ RED: make it fail
   .. code-block:: python
 
     'a'
-    'b'
+     'b'
 
   the terminal shows
 
@@ -53,10 +42,12 @@ GREEN: make it pass
 
 
 * change ``test_indentation_error.py`` by making the lines match up in spacing
+
   .. code-block:: python
 
     'a'
     'b'
+
   the terminal shows passing tests
 
 REFACTOR: make it better
@@ -89,8 +80,7 @@ RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
 
-*
-  add the :doc:`functions` below to ``test_indentation_error.py``
+* add the :doc:`functions` below to ``test_indentation_error.py``
 
   .. code-block:: python
 
@@ -100,32 +90,31 @@ RED: make it fail
       def function():
       pass
 
-    def function():
-      pass
+     def function():
+       pass
 
     def function():
-      pass
+     pass
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-*
-  change ``test_indentation_error.py`` to make the spacing/indentation match for each function
+* change ``test_indentation_error.py`` to make the spacing/indentation match for each function
 
   .. code-block:: python
 
     def function():
-      pass
+        pass
 
     def function():
-      pass
+        pass
 
     def function():
-      pass
+        pass
 
     def function():
-      pass
+        pass
 
   all the tests pass
 
@@ -147,7 +136,7 @@ RED: make it fail
     pass
 
     class Class():
-      pass
+       pass
 
       class Class():
          pass
@@ -162,19 +151,18 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-*
-  change ``test_indentation_error.py`` to make the spacing/indentation match
+* change ``test_indentation_error.py`` to make the spacing/indentation match
 
   .. code-block:: python
 
     class Class():
-      pass
+        pass
 
     class Class():
-      pass
+        pass
 
     class Class():
-      pass
+        pass
 
 Solve the IndentationError in Classes with Methods
 --------------------------------------------------
@@ -183,22 +171,21 @@ RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
 
-*
-  building on what I have done so far, I will add failing tests for :doc:`methods`\ , change ``test_indentation_error.py``
+* building on the previous tests, add failing tests for :doc:`methods`\ , to ``test_indentation_error.py``
 
   .. code-block:: python
 
     class Class():
-      def method():
+       def method():
       return
 
     class Class():
       def method():
-        return
+         return
 
     class Class():
     def method():
-      return
+    return
 
   the terminal displays an IndentationError and the line that caused the exception
 
@@ -210,22 +197,21 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-*
-  change ``test_indentation_error.py`` to make the spacing/indentation match
+* change ``test_indentation_error.py`` to make the spacing/indentation match
 
   .. code-block:: python
 
     class Class():
-      def method():
-       return
+        def method():
+            return
 
     class Class():
-      def method():
-       return
+        def method():
+            return
 
     class Class():
-      def method():
-       return
+        def method():
+            return
 
 Solve the IndentationError in Classes with Attributes
 -----------------------------------------------------
@@ -235,14 +221,17 @@ RED: make it fail
 
 
 * change ``test_indentation_error.py``
+
   .. code-block:: python
 
     class Class():
     attribute = None
-    attribute = None
-       attribute = None
      attribute = None
+       attribute = None
+      attribute = None
+
   the terminal shows an IndentationError and the offending line
+
   .. code-block:: python
 
     E  IndentationError: unexpected indent
@@ -252,19 +241,20 @@ GREEN: make it pass
 
 
 * change ``test_indentation_error.py`` to make the spacing/indentation match
+
   .. code-block:: python
 
     class Class():
-      attribute = None
-      attribute = None
-      attribute = None
-      attribute = None
+        attribute = None
+        attribute = None
+        attribute = None
+        attribute = None
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-The point of this exercise was to get familiar with python spacing convention to help understand the ``IndentationError`` and its solution.
+Indentation matters in python because it is how blocks of code are segmented. When a :doc:`function <functions>` is defined, all the statements that belong to it are indented, same with a :doc:`class <classes>`, all the :doc:`methods <functions>` and attributes that belong to it are indented underneath the definition
 
-Indentation matters in python because it is how blocks of code are segmented. Whena :doc:`functions` is defined, all the statements that belong to the it are indented, same with a :doc:`class`\ , all the statements that belong to the it, its :doc:`methods <functions>` and attributes are indented underneath it.
+This helps with reading the code so I can tell what belongs to a namespace the same way curly braces do for languages that use them for that purpose.
 
-This helps with reading the code so I can tell what belongs to a namespace the same way curly braces do for languages that use them for that purpose. Interactive Development Environments have gotten a lot better and automatically indent code for you using the convention of the language you are writing, which saves time spent counting the number of spaces to indent.
+Interactive Development Environments have gotten a lot better and automatically indent code for you using the convention of the language you are writing, which saves time spent counting the number of spaces to indent

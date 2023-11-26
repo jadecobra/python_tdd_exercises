@@ -2,12 +2,12 @@
 ModuleNotFoundError
 ===================
 
-This chapter is a drill to help remember solving a ``ModuleNotFoundError`` in python using Test Driven Development
+The drill below will help you help remember how to solve a ``ModuleNotFoundError`` in python using Test Driven Development
 
 ``ModuleNotFoundError`` is raised when python attempts to import a module that does not exist or it cannot find a given module name for an ``import`` statement.
 A Python Module is a file that ends in ``.py`` or a directory that contains an ``__init__.py``.
 
-Programming allows us to gain from the previous efforts as well as the efforts of others in the form of packages and modules that can be distributed for other people to use. To use these packages in python I have to import them.
+Programming allows us to gain from the previous efforts as well as the efforts of others in the form of packages and modules that can be distributed for other people to use. To use these packages in python they have to be imported.
 
 
 RED: make it fail
@@ -130,9 +130,10 @@ If you left ``pytest-watch`` running from :doc:`How to Setup a Test Driven Devel
 Looking at the traceback starting from the bottom
 
 
-* ``ModuleNotFoundError`` - this error is raised when an import statement fails because python cannot find a module/package with the given name, in this case ``module_0`` does not exist
-* ``import module_0`` - the line of code that caused the failure
+* ``ModuleNotFoundError`` is raised when an import statement fails because python cannot find a module/package with the given name, in this case ``module_0`` does not exist
+* ``import module_0`` is the line of code that caused the failure
 * Add the error to the running list of Exceptions encountered
+
   .. code-block:: python
 
     # Exceptions Encountered

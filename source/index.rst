@@ -42,10 +42,10 @@ Table of Contents
   :titlesonly:
 
   AssertionError
-  AttributeError
-  IndentationError
   ModuleNotFoundError
+  AttributeError
   TypeError
+  IndentationError
   exception_handling
   conventions
   classes

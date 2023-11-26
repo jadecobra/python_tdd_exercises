@@ -47,7 +47,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
   .. code-block:: shell
 
-  cd {PROJECT_NAME}
+      cd {PROJECT_NAME}
 
   this is where all the code for the project will reside to keep things in a separate dedicated workspace
 
@@ -57,20 +57,20 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
   .. code-block:: shell
 
-   touch {PROJECT_NAME}.py
+      touch {PROJECT_NAME}.py
 
   - tests will be stored in the ``tests`` folder to separate them from the source code (the actual program)
   - I create an empty file called ``__init__.py`` in the ``tests`` folder to tell python that the ``tests`` folder is a python `package <https://docs.python.org/3/glossary.html#term-regular-package>`_, so it can find the tests later
 
   .. code-block:: shell
 
-   touch tests/__init__.py
+      touch tests/__init__.py
 
   - and another empty file called ``test_{PROJECT_NAME}.py`` in the ``tests`` folder to hold the testing code
 
   .. code-block:: shell
 
-   touch tests/test_{PROJECT_NAME}.py
+      touch tests/test_{PROJECT_NAME}.py
 
 * Here is what the folder structure looks like
 
@@ -100,56 +100,56 @@ RED: make it fail
 * I open up ``{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py`` in the Interactive Development Environment (IDE) and type the following
 
   .. code-block:: python
-  :linenos:
+    :linenos:
 
-  import unittest
+    import unittest
 
 
-  class Test{PROJECT_NAME}(unittest.TestCase):
+    class Test{PROJECT_NAME}(unittest.TestCase):
 
-    def test_failure(self):
-      self.assertFalse(True)
+      def test_failure(self):
+        self.assertFalse(True)
 
   Here is an explanation of the code above
 
-  - ``import unittest`` imports the `unittest <https://docs.python.org/3/library/unittest.html>`_ module
-  - `unittest <https://docs.python.org/3/library/unittest.html>`_ is a module from the python standard library used for testing
-  - ``Test{PROJECT_NAME}`` isa :doc:`class <classes>` that will hold the tests I write
-  - `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ isa :doc:`class <classes>` defined in the `unittest <https://docs.python.org/3/library/unittest.html>`_ module which contains :doc:`methods (functions) <functions>` for testing and ``Test{PROJECT_NAME}`` inherits from it. A simple way to think of inheritance is that ``Test{PROJECT_NAME}`` is a child of `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ and can do the same things it can
-  - ``def test_failure`` is the definition of a test :doc:`method <functions>` to test the program I am creating
+    - ``import unittest`` imports the `unittest <https://docs.python.org/3/library/unittest.html>`_ module
+    - `unittest <https://docs.python.org/3/library/unittest.html>`_ is a module from the python standard library used for testing
+    - ``Test{PROJECT_NAME}`` isa :doc:`class <classes>` that will hold the tests I write
+    - `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ isa :doc:`class <classes>` defined in the `unittest <https://docs.python.org/3/library/unittest.html>`_ module which contains :doc:`methods (functions) <functions>` for testing and ``Test{PROJECT_NAME}`` inherits from it. A simple way to think of inheritance is that ``Test{PROJECT_NAME}`` is a child of `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ and can do the same things it can
+    - ``def test_failure`` is the definition of a test :doc:`method <functions>` to test the program I am creating
 
   * `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is the python keyword for creating :doc:`functions`
   * ``test_failure`` is the name of the :doc:`function <functions>`
   * ``self`` is the ``Test{PROJECT_NAME}`` class. I can use ``self`` to access ``methods`` and ``attributes`` within the ``Test{PROJECT_NAME}`` class, this avoids having to type ``Test{PROJECT_NAME}().assertFalse(True)`` to access the ``assertFalse`` :doc:`method <functions>` for instance
   * ``self.assertFalse(True)`` the actual test I expect this line to fail because :doc:`True <data_structures_booleans>` is not :doc:`False <data_structures_booleans>`
 
-   - ``assertFalse`` isa :doc:`method <functions>` in the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class which checks if its input is :doc:`False <data_structures_booleans>`
-   - :doc:`True <data_structures_booleans>` is given as input to ``assertFalse``
+    - ``assertFalse`` isa :doc:`method <functions>` in the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class which checks if its input is :doc:`False <data_structures_booleans>`
+    - :doc:`True <data_structures_booleans>` is given as input to ``assertFalse``
 
 * I save the file and turn on the ``Auto Save`` feature in the Interactive Development Environment (IDE) to avoid manually saving a file each time a change is made
 * I type this in the terminal to test the code
 
   .. code-block:: python
 
-  python3 -m unittest
+    python3 -m unittest
 
   the terminal shows a failure as expected
 
   .. code-block:: python
 
-  F
-  ======================================================
-  FAIL: test_failure (tests.Test{PROJECT_NAME}.test_failure)
-  ------------------------------------------------------
-  Traceback (most recent call last):
-  File "/<PATH_TO_PROJECT>/{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py", line 7, in test_failure
-    self.assertFalse(True)
-  AssertionError: True is not false
+    F
+    ======================================================
+    FAIL: test_failure (tests.Test{PROJECT_NAME}.test_failure)
+    ------------------------------------------------------
+    Traceback (most recent call last):
+    File "/<PATH_TO_PROJECT>/{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py", line 7, in test_failure
+      self.assertFalse(True)
+    AssertionError: True is not false
 
-  ------------------------------------------------------
-  Ran 1 test in 0.000s
+    ------------------------------------------------------
+    Ran 1 test in 0.000s
 
-  FAILED (failures=1)
+    FAILED (failures=1)
 
 If you are typing along, *CONGRATULATIONS!* You have written your first test.
 
@@ -168,7 +168,7 @@ This is the ``RED`` part of the Test Driven Development cycle. The error in the 
 
   .. tip::
 
-  Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on this line with the mouse to place the cursor at the position in the file where the error occurred
+    Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on this line with the mouse to place the cursor at the position in the file where the error occurred
 
 * ``Traceback (most recent call last):`` all the information returned by python after this line is the ``traceback`` showing the most recent call python made last
 * ``FAIL: test_failure (tests.Test{PROJECT_NAME}.test_failure)`` is a header with information about the test
@@ -193,30 +193,30 @@ GREEN: make it pass
 * I write down Exceptions I encounter to help become more familiar with errors in python. I add :doc:`AssertionError` to the list
 
   .. code-block:: python
-  :linenos:
+    :linenos:
 
-  import unittest
+    import unittest
 
 
-  class Test{PROJECT_NAME}(unittest.TestCase):
+    class Test{PROJECT_NAME}(unittest.TestCase):
 
-    def test_failure(self):
-      self.assertFalse(True)
+      def test_failure(self):
+        self.assertFalse(True)
 
-  # Exceptions Encountered
-  # AssertionError
+    # Exceptions Encountered
+    # AssertionError
 
 * I change the input on line 7 to make the test pass
 
   .. code-block:: python
 
-  self.assertFalse(False)
+    self.assertFalse(False)
 
 * I run the test again from the terminal
 
   .. code-block:: python
 
-  python3 -m unittest
+    python3 -m unittest
 
   and the terminal shows a passing test
 
@@ -260,7 +260,7 @@ How to create a Virtual Environment
 
   .. code-block:: shell
 
-  echo "pytest-watch" > requirements.txt
+      echo "pytest-watch" > requirements.txt
 
   - ``pytest-watch`` is a python program that automatically uses the `pytest <https://docs.pytest.org/>`_ python package to run tests when a python file in the project changes
   - `pytest <https://docs.pytest.org/>`_ is a python package like `unittest <https://docs.python.org/3/library/unittest.html>`_ for running tests in python
@@ -270,7 +270,7 @@ How to create a Virtual Environment
 
   .. code-block:: python
 
-   python3 -m venv .venv
+      python3 -m venv .venv
 
   - ``python3`` is the major version of python being used
   - ``-m`` is an option passed to python to call the module given after the option
@@ -282,7 +282,7 @@ How to create a Virtual Environment
 
   .. code-block:: python
 
-   source .venv/bin/activate
+      source .venv/bin/activate
 
   the ``(.venv)`` on the far left of the command line in the terminal indicates the virtual environment is activated
 
@@ -290,7 +290,7 @@ How to create a Virtual Environment
 
   .. code-block:: python
 
-   python3 -m pip install --upgrade pip
+      python3 -m pip install --upgrade pip
 
   - ``python3`` is the major version of python being used
   - ``-m`` is an option passed to python to call the module given after the option
@@ -303,7 +303,7 @@ How to create a Virtual Environment
 
   .. code-block:: python
 
-   pip install --requirement requirements.txt
+      pip install --requirement requirements.txt
 
   - ``--requirement`` is another option that can be passed to the ``install`` argument to install python packages from a given file name
   - ``requirements.txt`` is the file that contains a list of libraries for `pip <https://pypi.org/project/pip/>`_ to install
@@ -324,15 +324,15 @@ How to create a Virtual Environment
 
   .. code-block:: ruby
 
-  [TODAYS_DATE] Running: py.test
-  ================== test session starts===================
-  platform <YOUR_OPERATING_SYSTEM> -- python <YOUR_python_VERSION >, pytest-<VERSION>, pluggy-<VERSION>
-  rootdir: <YOUR_PATH>/project_name
-  collected 1 item
+    [TODAYS_DATE] Running: py.test
+    ================== test session starts===================
+    platform <YOUR_OPERATING_SYSTEM> -- python <YOUR_python_VERSION >, pytest-<VERSION>, pluggy-<VERSION>
+    rootdir: <YOUR_PATH>/project_name
+    collected 1 item
 
-  tests/test_<PROJECT_NAME>.py .          [100%]
+    tests/test_<PROJECT_NAME>.py .          [100%]
 
-  =============== 1 passed in 0.00s =======================
+    =============== 1 passed in 0.00s =======================
 
 * to verify that the terminal now responds to changes, I change the input on line 7 in ``test_{PROJECT_NAME}.py`` to :doc:`True <data_structures_booleans>` to see it fail and back to :doc:`False <data_structures_booleans>` to see it pass
 * I can press ``ctrl`` + ``c`` on the keyboard in the terminal to stop the tests at anytime
@@ -360,85 +360,85 @@ You made it this far and have become the greatest programmer in the world. Follo
 
   .. code-block:: shell
 
-   cd ..
+    cd ..
 
 * I type ``history`` in the terminal to list the commands typed in this session so far as a reference for the program
 
   .. code-block:: shell
 
-  history
+    history
 
 * I create an empty file with a name that describes what the program does so it is easy to remember later, for example ``setupPythonTdd.sh``
 
   .. code-block:: shell
 
-   touch setupPythonTdd.sh
+    touch setupPythonTdd.sh
 
 * I open ``setupPythonTdd.sh`` in the Interactive Development Environment (IDE) and copy each command displayed in the terminal from ``history``
 
   .. code-block:: ruby
-  :linenos:
+    :linenos:
 
-  mkdir -p {PROJECT_NAME}/tests
-  cd {PROJECT_NAME}
-  touch {PROJECT_NAME}.py
-  touch tests/__init__.py
-  touch tests/test_{PROJECT_NAME}.py
-  echo "pytest-watch" > requirements.txt
-  python3 -m venv .venv
-  source .venv/bin/activate
-  python3 -m pip install --upgrade pip
-  python3 -m pip install --requirement requirements.txt
-  pytest-watch
+    mkdir -p {PROJECT_NAME}/tests
+    cd {PROJECT_NAME}
+    touch {PROJECT_NAME}.py
+    touch tests/__init__.py
+    touch tests/test_{PROJECT_NAME}.py
+    echo "pytest-watch" > requirements.txt
+    python3 -m venv .venv
+    source .venv/bin/activate
+    python3 -m pip install --upgrade pip
+    python3 -m pip install --requirement requirements.txt
+    pytest-watch
 
 * There is a problem with the program, it will always create a project called ``{PROJECT_NAME}`` so I need to add a variable to make it create any project name I pass to the program as input. I change the program with a variable called ``PROJECT_NAME`` which is referenced with ``$PROJECT_NAME``
 
   .. code-block:: shell
-  :linenos:
+    :linenos:
 
-  PROJECT_NAME=$1
-  mkdir -p $PROJECT_NAME/tests
-  cd $PROJECT_NAME
-  touch $PROJECT_NAME.py
-  touch tests/__init__.py
-  touch tests/test_$PROJECT_NAME.py
+    PROJECT_NAME=$1
+    mkdir -p $PROJECT_NAME/tests
+    cd $PROJECT_NAME
+    touch $PROJECT_NAME.py
+    touch tests/__init__.py
+    touch tests/test_$PROJECT_NAME.py
 
-  echo "pytest-watch" > requirements.txt
+    echo "pytest-watch" > requirements.txt
 
-  python3 -m venv .venv
-  source .venv/bin/activate
-  python3 -m pip install --upgrade pip
-  python3 -m pip install --requirement requirements.txt
-  pytest-watch
+    python3 -m venv .venv
+    source .venv/bin/activate
+    python3 -m pip install --upgrade pip
+    python3 -m pip install --requirement requirements.txt
+    pytest-watch
 
 * I use the ``concatenate`` program to add the text for the failure test in ``test_$PROJECT_NAME.py``
 
   .. code-block:: shell
-  :linenos:
+    :linenos:
 
-  PROJECT_NAME=$1
-  mkdir -p $PROJECT_NAME/tests
-  cd $PROJECT_NAME
-  touch $PROJECT_NAME.py
-  touch tests/__init__.py
+    PROJECT_NAME=$1
+    mkdir -p $PROJECT_NAME/tests
+    cd $PROJECT_NAME
+    touch $PROJECT_NAME.py
+    touch tests/__init__.py
 
-  cat << DELIMITER > tests/test_$PROJECT_NAME.py
-  import unittest
+    cat << DELIMITER > tests/test_$PROJECT_NAME.py
+    import unittest
 
 
-  class Test$PROJECT_NAME(unittest.TestCase):
+    class Test$PROJECT_NAME(unittest.TestCase):
 
-    def test_failure(self):
-      self.assertFalse(True)
-  DELIMITER
+      def test_failure(self):
+          self.assertFalse(True)
+    DELIMITER
 
-  echo "pytest-watch" > requirements.txt
+    echo "pytest-watch" > requirements.txt
 
-  python3 -m venv .venv
-  source .venv/bin/activate
-  python3 -m pip install --upgrade pip
-  python3 -m pip install --requirement requirements.txt
-  pytest-watch
+    python3 -m venv .venv
+    source .venv/bin/activate
+    python3 -m pip install --upgrade pip
+    python3 -m pip install --requirement requirements.txt
+    pytest-watch
 
   all the text between the two ``DELIMITER`` words will be written to ``tests/test_$PROJECT_NAME.py``
 
@@ -446,13 +446,13 @@ You made it this far and have become the greatest programmer in the world. Follo
 
   .. code-block:: python
 
-  chmod +x setupPythonTdd.sh
+    chmod +x setupPythonTdd.sh
 
 * I can now create a Test Driven Development environment on demand by giving a name for the ``{PROJECT_NAME}`` variable when the program is called. for example typing this command in the terminal in the folder where ``setupPythonTdd.sh`` is saved will setup a Test Driven Development environment for a project called ``calculator``
 
   .. code-block:: shell
 
-  ./setupPythonTdd.sh calculator
+    ./setupPythonTdd.sh calculator
 
 One of the advantages of programming is that I can take a series of steps and make them a one line command which the computer does on my behalf
 
