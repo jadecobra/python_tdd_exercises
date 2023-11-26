@@ -1,5 +1,5 @@
 
-How to create a Person
+How to create a person
 ======================
 
 This is an exercise in creating :doc:`data_structures_dictionaries` with :doc:`functions`. It assumes you are familiar with :doc:`functions` and :doc:`data_structures_dictionaries` though you can still try it if you are not

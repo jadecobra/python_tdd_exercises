@@ -2,12 +2,6 @@
 AssertionError
 ==============
 
-I will go over python's `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ in this chapter
-
-
-What is an AssertionError?
---------------------------
-
 An `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ is an Exception that is raised when the result of an ``assert`` statement is :doc:`False <data_structures_booleans>`
 
 It was introduced in :doc:`How to Setup a Test Driven Development Environment <setup_tdd_environment>` with the first failing test
@@ -35,7 +29,7 @@ These assertions help catch bugs that break previous tested behavior when introd
 * What is similar?
 * What is different?
 
-A difference between my expectations and reality (the output or behavior of the program) gives me a clue about what changes are needed to make them match
+A difference between my expectations and reality (what happens when I run the program) gives me a clue about what changes are needed to make them match
 
 ----
 

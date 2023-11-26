@@ -9,9 +9,18 @@ This book is a collection of exercises to get you writing python code immediatel
 
 It is a culmination of what has worked for me over the past 10 years learning the language and observing other people use it.
 
-If you are just starting your journey, congratulations! You made a decision from the many choices of programming languages available. Celebrate it.
+Who is this book for?
+---------------------
+* If you are just starting your journey, congratulations! You made a decision from the many choices of programming languages available. Celebrate it. This book is for you
+* If you are new to Test Driven Development in python this book is for you
+* If you already use python but are unfamiliar with any of the errors below, this book is for you
 
-If you are new to Test Driven Development in python this book is also for you.
+  - :doc:`ModuleNotFoundError`
+  - :doc:`AssertionError`
+  - :doc:`AttributeError`
+  - :doc:`TypeError`
+
+It will help you understand the language better by showing you how to trigger the errors yourself and how to resolve them, there are also a few drills that will get you used to certain python conventions
 
 How to use this book
 --------------------
@@ -24,9 +33,10 @@ Here is how I recommend you use the book
 * type out the code portions as you go through each chapter - do not copy and paste
 * repeat a chapter you like until you can do it from memory
 * try recreating the tests from memory or write new tests for a concept you are learning
-* in chapters like the ``How tos`` try writing the solutions from the tests only
+* try writing the solutions for the tests in chapters like the ``HOW TOs``
 
-
+Table of Contents
+-----------------
 .. toctree::
   :maxdepth: 2
   :titlesonly:
@@ -46,12 +56,6 @@ Here is how I recommend you use the book
   data_structures_lists
   list_comprehensions
   data_structures_dictionaries
-  calculator
-  learning_models
-  passing_values
-  person_factory
-  setup_tdd_environment
-  sleep_duration
   truth_table_01
   truth_table_02_logical_conjunction
   truth_table_03_logical_disjunction
@@ -66,5 +70,29 @@ Here is how I recommend you use the book
   truth_table_12_project
   truth_table_13_converse_implication
   truth_table_14_true_lies
+
+HOW TOs
+--------
+.. toctree::
+  :maxdepth: 2
+  :titlesonly:
+
+  setup_tdd_environment
+  setup_my_ide
+  calculator
+  passing_values
+  person_factory
+  sleep_duration
+  exception_handling
+  learning_models
+
+.. * :doc:`setup_tdd_environment`
+.. * :doc:`calculator`
+.. * :doc:`passing_values`
+.. * :doc:`person_factory`
+.. * :doc:`sleep_duration`
+.. * :doc:`exception_handling`
+.. * :doc:`learning_models`
+
 
 :ref:`search`
