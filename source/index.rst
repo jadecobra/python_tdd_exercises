@@ -12,7 +12,7 @@ It is a culmination of what has worked for me over the past 10 years learning th
 Who is this book for?
 ---------------------
 * If you are just starting your journey, congratulations! You made a decision from the many choices of programming languages available. Celebrate it. This book is for you
-* If you are new to Test Driven Development in python this book is for you
+* If you are new to Test Driven Development in python, this book is for you
 * If you already use python but are unfamiliar with any of the errors below, this book is for you
 
   - :doc:`ModuleNotFoundError`
@@ -20,12 +20,12 @@ Who is this book for?
   - :doc:`AttributeError`
   - :doc:`TypeError`
 
-It will help you understand the language better by showing you how to trigger the errors yourself and how to resolve them, there are also a few drills that will get you used to certain python conventions
+It will show you how to trigger errors and resolve them, there are also a few drills that will get you used to certain concepts
 
 How to use this book
 --------------------
 
-You can choose how you go through the chapters by starting with any one you like or one that looks like it could solve your current problem.
+You can choose how you go through the chapters by starting with any you like or that looks like it could solve your current problem.
 
 Here is how I recommend you use the book
 
@@ -34,6 +34,7 @@ Here is how I recommend you use the book
 * repeat a chapter you like until you can do it from memory
 * try recreating the tests from memory or write new tests for a concept you are learning
 * try writing the solutions for the tests in chapters like the ``HOW TOs``
+* try adding tests for any ideas you get as you go through a chapter
 
 Table of Contents
 -----------------

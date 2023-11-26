@@ -2,7 +2,7 @@
 TypeError
 =========
 
-A `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ can be raised when a function is called with the wrong number of inputs. This means the defined signature of the function was not used when the function was called.
+A `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ can be raised when a function is called with the wrong number of inputs. This means the function call does not match the function signature.
 
 * A function signature is the definition of the function which determines what inputs it accepts, for example
 
@@ -18,7 +18,7 @@ A `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=except
 
     function(1, 2, 3, 4)
 
-  is a call to ``function`` with ``1, 2, 3, 4`` as the four inputs
+  is a call to ``function`` with ``1, 2, 3, 4`` as four inputs
 
 
 RED: make it fail
@@ -87,6 +87,15 @@ GREEN: make it pass
    E    TypeError: 'NoneType' object is not callable
 
   A reminder of the first encounter with ``TypeError`` from `How to solve the AttributeError by defining a Function <./AttributeError.rst>`_
+* I add it to the list of exceptions encountered
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AssertionError
+    # ModuleNotFoundError
+    # AttributeError
+    # TypeError
 
 * I solve this ``TypeError`` by definining a ``callable``, in this case a function.
 
@@ -113,9 +122,11 @@ GREEN: make it pass
     - ``()`` is how a function is called after it is defined
     - ``"a"`` is the value passed to ``function_a`` as input
 
-  Imagine you have a telephone, it has a call function but to make a call you must provide a number then hit dial.
+  Imagine you have a telephone, it has a call function but to make a call you must provide a number then hit dial
+
   - ``call`` is like ``function_a``
-  - the number you provide is like ``"a"`` and hitting dial is like ``()``
+  - the number you provide is like ``"a"``
+  - hitting dial is like ``()``
 
   This is covered in more depth in :doc:`functions`
 
@@ -173,7 +184,7 @@ There's not much to do here but add more tests for practice.
    >    self.assertIsNone(functions.function_b("a", "b"))
    E    TypeError: function_b() takes 0 positional arguments but 2 were given
 
-  the offending line ``functions.function_b("a", "b")`` called ``function_b`` with 2 parameters but the definition has the function taking no parameters.
+  the offending line ``functions.function_b("a", "b")`` called ``function_b`` with 2 parameters but the definition has the function taking no inputs
 
 * I change ``function_b`` in ``functions.py``
 
@@ -182,13 +193,13 @@ There's not much to do here but add more tests for practice.
     def function_b(positional_argument_1):
         return None
 
-  the terminal shows
+  and the terminal shows
 
   .. code-block:: python
 
     TypeError: function_b() takes 1 positional argument but 2 were given
 
-  ah, the previous definition accepted for no positional arguments, and now allows 1 positional argument but I called it with 2 positional arguments.
+  ah, the previous definition accepted no positional arguments, and now allows 1 positional argument but I called it with 2 positional arguments.
 
 * I change ``function_b`` in ``functions.py`` to take in 2 positional arguments
 
@@ -250,7 +261,7 @@ GREEN: make it pass
 
     TypeError: function_c() takes 0 positional arguments but 3 were given
 
-* I change the function signature of ``function_c`` so it can accept input
+* I change the function signature of ``function_c`` to accept one input argument
 
   .. code-block:: python
 
@@ -358,9 +369,12 @@ REFACTOR: make it better
     def function_d(*args):
       return None
 
-  the terminal shows all tests as still passing. FANTASTIC!!
+  the terminal shows all tests still pass. FANTASTIC!!
 
-What happens when you do this with ``function_a``, ``function_b``, ``function_c`` and ``function_d``.
+What happens when you do this with ``function_a``, ``function_b``, ``function_c`` and ``function_d``?
 
-*LOVELY!*
-You now know how to solve a `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#TypeError>`_ by matching function signatures and their calls
+You now know
+* How to solve a :doc:`ModuleNotFoundError`
+* How to solve an :doc:`AssertionError`
+* How to solve an :doc:`AttributeError`
+* How to solve a `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#TypeError>`_ by matching function signatures and their calls

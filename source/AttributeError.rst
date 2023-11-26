@@ -118,11 +118,11 @@ GREEN: make it pass
 
   .. code-block::
 
-  # Exceptions Encountered
-  # AssertionError
-  # ModuleNotFoundError
-  # AttributeError
-  # NameError
+    # Exceptions Encountered
+    # AssertionError
+    # ModuleNotFoundError
+    # AttributeError
+    # NameError
 
 * then change the failing line in ``module.py`` to fix it
 
@@ -139,13 +139,13 @@ GREEN: make it pass
     tests/test_attribute_error.py .                    [ 50%]
     tests/test_{PROJECT_NAME}.py .                     [100%]
 
-    ============================== 2 passed in 0.03s==================================
+    ================== 2 passed in 0.03s======================
 
 I solved the `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a variable
 
 .. NOTE::
 
-  - In python ``=`` is used to assign names to objects, for example ``five = 5``, means I can later refer to the number ``5`` with the name ``five``
+  - In python ``=`` is used to assign names to objects, for example ``five = 5`` means I can refer to the number ``5`` with the name ``five``
   - the equality sign ``==`` is used to check if two things are equal  example  ``5 == 4`` means "is ``5`` is equal to ``4``?"
 
 AttributeError vs NameError
@@ -159,7 +159,7 @@ A `NameError <https://docs.python.org/3/library/exceptions.html?highlight=except
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-I could repeat the above as a drill to help remember the solution
+I could repeat the above tests as a drill to help remember the solution
 
 RED: make it fail
 ~~~~~~~~~~~~~~~~~
@@ -198,6 +198,7 @@ GREEN: make it pass
     E  NameError: name 'variable_1' is not defined
 
 * GREEN: make it pass
+
   I add a definition for ``variable_1``
 
   .. code-block:: python
@@ -231,7 +232,9 @@ GREEN: make it pass
 ~~~~~~~~~~~~~~~~~~~
 
 
-* RED: make it fail - I add the name to ``module.py``
+* RED: make it fail
+
+  I add the name to ``module.py``
 
   .. code-block:: python
 
@@ -245,7 +248,9 @@ GREEN: make it pass
 
     E  NameError: name 'variable_2' is not defined
 
-* GREEN: make it pass - I define ``variable_2`` in ``module.py``
+* GREEN: make it pass
+
+  I define ``variable_2`` in ``module.py``
 
   .. code-block:: python
 
@@ -314,17 +319,17 @@ I have a pattern for the drill. When I test an attribute in a module, I get
 * a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ when I add the name to the module
 * a passing test when I define the name as a variable
 
-If you are feeling adventurous you can add more tests to ``test_defining_variables_to_solve_attribute_errors`` until you get to ``module.variable_99``
+If you are feeling adventurous you can add more tests to ``test_defining_variables_to_solve_attribute_errors`` until you get to ``module.variable_99``, you will have 100 lines
 
 .. code-block:: python
 
   def test_defining_variables_to_solve_attribute_errors(self):
-    module.variable_0
-    module.variable_1
-    module.variable_2
-    module.variable_3
-    ...
-    module.variable_99
+      module.variable_0
+      module.variable_1
+      module.variable_2
+      module.variable_3
+      ...
+      module.variable_99
 
 Repeat the pattern until all tests pass.
 
@@ -344,14 +349,14 @@ Solve an AttributeError by defining functions
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I change the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` with a new test
+I add a new test to ``TestAttributeError`` class in ``tests/test_attribute_error.py``
 
 .. code-block:: python
 
   def test_defining_functions_to_solve_attribute_errors(self):
       module.function_0()
 
-the terminal responds with an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ as expected
+the terminal responds with an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
 .. code-block:: python
 
@@ -384,13 +389,13 @@ GREEN: make it pass
    # NameError
    # TypeError
 
-* a :doc:`TypeError` is raised in this case because I called an object that was not `callable <https://docs.python.org/3/glossary.html#term-callable>`_.
+* a :doc:`TypeError` is raised in this case because I called an object that was not `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 
   A `callable <https://docs.python.org/3/glossary.html#term-callable>`_ object is an object that may be able to handle inputs. I can make an `object <https://docs.python.org/3/glossary.html#term-object>`_ `callable <https://docs.python.org/3/glossary.html#term-callable>`_ by defining it as a :doc:`class <classes>` or a :doc:`function <functions>`
 
   Parentheses are used at the end of the name of an object when calling it, for example  ``module.function_0()`` will call ``function_0`` from ``module.py``
 
-* What if I change ``function_0`` in ``module.py`` to a function by changing its definition using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword?
+* What if I change ``function_0`` in ``module.py`` to a function by  using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword?
 
   .. code-block:: python
 
@@ -440,12 +445,12 @@ REFACTOR: make it better
 Solve an AttributeError by defining classes
 --------------------------------------------
 
-A :doc:`class <classes>` is a blueprint that represents an `object <https://docs.python.org/3/glossary.html#term-object>`_. I think of it is a collection of :doc:`methods (functions) <functions>` and attributes
+I think of a :doc:`class <classes>` as a collection of :doc:`methods (functions) <functions>` and attributes that represents an `object <https://docs.python.org/3/glossary.html#term-object>`_
 
 - attributes are names which represent a value
-- :doc:`methods <functions>` are :doc:`functions` that may be able to accept inputs and return a value, they are `callable <https://docs.python.org/3/glossary.html#term-callable>`_
+- :doc:`methods <functions>` are :doc:`functions` that may be able to accept inputs and may return a value - they are `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 
-For example I could define a ``Human`` class with attributes like eye color, date of birth, height and weight, and :doc:`methods <functions>` like age which returns a value based on the current year and date of birth attribute, you can see an example of this in :doc:`classes` for more
+For example I could define a ``Human`` class with attributes like eye color, date of birth, height and weight, and :doc:`methods <functions>` like age which returns a value based on the current year and date of birth attribute, you can see an example of this in :doc:`classes`
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -495,7 +500,7 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* This could also be a drill, add lines to ``test_defining_classes_to_solve_attribute_errors`` in the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` until you have one for ``module.Class99()``
+* This could also be a drill, add lines to ``test_defining_classes_to_solve_attribute_errors`` in the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` until you have one for ``module.Class99()``, you will have 100 lines
 
   .. code-block:: python
 
@@ -625,7 +630,7 @@ GREEN: make it pass
     class Class():
         attribute_0 = None
 
-  and the test passes. WOO HOO!
+  the test passes. WOO HOO!
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -636,10 +641,10 @@ REFACTOR: make it better
   .. code-block:: python
 
     class Class0():
-     pass
+        pass
    ...
     class Class99():
-     pass
+        pass
 
   `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is a keyword used as a placeholder
 
@@ -661,7 +666,7 @@ REFACTOR: make it better
 
     E    AttributeError: type object 'Class' has no attribute 'attribute_1'
 
-  change ``module.py`` with the solutions until all tests pass
+  add the solutions to ``module.py`` until all tests pass
 
 *WELL DONE!* You now know You now know
 
@@ -732,7 +737,7 @@ GREEN: make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-You know the "drill", change ``test_defining_functions_in_classes_to_solve_attribute_errors`` in ``TestAttributeError`` in ``test_attribute_error.py`` with more lines until there are 100 tests ending with one for ``module.Class.method_99()``
+You know the "drill", add more lines until there are 100 tests ending with one for ``module.Class.method_99()`` to ``test_defining_functions_in_classes_to_solve_attribute_errors`` in ``TestAttributeError`` in ``test_attribute_error.py``
 
 .. code-block:: python
 

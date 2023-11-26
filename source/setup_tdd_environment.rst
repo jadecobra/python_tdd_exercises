@@ -41,7 +41,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
   .. code-block:: shell
 
-  mkdir -p {PROJECT_NAME}/tests
+    mkdir -p {PROJECT_NAME}/tests
 
 * and change directory to ``{PROJECT_NAME}``
 
@@ -76,11 +76,11 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
   .. code-block:: ruby
 
-  {PROJECT_NAME}
-    ╰──tests
-    |  ╰──__init__.py
-    |  ╰──test_{PROJECT_NAME}.py
-    ╰──{PROJECT_NAME}.py
+    {PROJECT_NAME}
+      ╰──tests
+      |  ╰──__init__.py
+      |  ╰──test_{PROJECT_NAME}.py
+      ╰──{PROJECT_NAME}.py
 
 
 ----
@@ -107,24 +107,24 @@ RED: make it fail
 
     class Test{PROJECT_NAME}(unittest.TestCase):
 
-      def test_failure(self):
-        self.assertFalse(True)
+        def test_failure(self):
+            self.assertFalse(True)
 
   Here is an explanation of the code above
 
-    - ``import unittest`` imports the `unittest <https://docs.python.org/3/library/unittest.html>`_ module
-    - `unittest <https://docs.python.org/3/library/unittest.html>`_ is a module from the python standard library used for testing
-    - ``Test{PROJECT_NAME}`` isa :doc:`class <classes>` that will hold the tests I write
-    - `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ isa :doc:`class <classes>` defined in the `unittest <https://docs.python.org/3/library/unittest.html>`_ module which contains :doc:`methods (functions) <functions>` for testing and ``Test{PROJECT_NAME}`` inherits from it. A simple way to think of inheritance is that ``Test{PROJECT_NAME}`` is a child of `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ and can do the same things it can
-    - ``def test_failure`` is the definition of a test :doc:`method <functions>` to test the program I am creating
+  - ``import unittest`` imports the `unittest <https://docs.python.org/3/library/unittest.html>`_ module
+  - `unittest <https://docs.python.org/3/library/unittest.html>`_ is a module from the python standard library used for testing
+  - ``Test{PROJECT_NAME}`` isa :doc:`class <classes>` that will hold the tests I write
+  - `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ isa :doc:`class <classes>` defined in the `unittest <https://docs.python.org/3/library/unittest.html>`_ module which contains :doc:`methods (functions) <functions>` for testing and ``Test{PROJECT_NAME}`` inherits from it. A simple way to think of inheritance is that ``Test{PROJECT_NAME}`` is a child of `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ and can do the same things it can
+  - ``def test_failure`` is the definition of a test :doc:`method <functions>` to test the program I am creating
 
-  * `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is the python keyword for creating :doc:`functions`
-  * ``test_failure`` is the name of the :doc:`function <functions>`
-  * ``self`` is the ``Test{PROJECT_NAME}`` class. I can use ``self`` to access ``methods`` and ``attributes`` within the ``Test{PROJECT_NAME}`` class, this avoids having to type ``Test{PROJECT_NAME}().assertFalse(True)`` to access the ``assertFalse`` :doc:`method <functions>` for instance
-  * ``self.assertFalse(True)`` the actual test I expect this line to fail because :doc:`True <data_structures_booleans>` is not :doc:`False <data_structures_booleans>`
+    * `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is the python keyword for creating :doc:`functions`
+    * ``test_failure`` is the name of the :doc:`function <functions>`
+    * ``self`` is the ``Test{PROJECT_NAME}`` class. I can use ``self`` to access ``methods`` and ``attributes`` within the ``Test{PROJECT_NAME}`` class, this avoids having to type ``Test{PROJECT_NAME}().assertFalse(True)`` to access the ``assertFalse`` :doc:`method <functions>` for instance
+    * ``self.assertFalse(True)`` the actual test I expect this line to fail because :doc:`True <data_structures_booleans>` is not :doc:`False <data_structures_booleans>`
 
-    - ``assertFalse`` isa :doc:`method <functions>` in the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class which checks if its input is :doc:`False <data_structures_booleans>`
-    - :doc:`True <data_structures_booleans>` is given as input to ``assertFalse``
+      - ``assertFalse`` isa :doc:`method <functions>` in the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class which checks if its input is :doc:`False <data_structures_booleans>`
+      - :doc:`True <data_structures_booleans>` is given as input to ``assertFalse``
 
 * I save the file and turn on the ``Auto Save`` feature in the Interactive Development Environment (IDE) to avoid manually saving a file each time a change is made
 * I type this in the terminal to test the code
@@ -200,8 +200,8 @@ GREEN: make it pass
 
     class Test{PROJECT_NAME}(unittest.TestCase):
 
-      def test_failure(self):
-        self.assertFalse(True)
+        def test_failure(self):
+            self.assertFalse(True)
 
     # Exceptions Encountered
     # AssertionError
@@ -222,11 +222,11 @@ GREEN: make it pass
 
   .. code-block:: python
 
-  .
-  ------------------------------------------------------
-  Ran 1 test in 0.000s
+    .
+    ------------------------------------------------------
+    Ran 1 test in 0.000s
 
-  OK
+    OK
 
   *cue CELEBRATION MUSIC AND DANCE!* I am GREEN.
 
@@ -459,3 +459,4 @@ One of the advantages of programming is that I can take a series of steps and ma
 You now know one way to Setup a Test Driven Development Environment for Python projects, and have a program to do it for you anytime you want
 
 Happy Trails!
+
