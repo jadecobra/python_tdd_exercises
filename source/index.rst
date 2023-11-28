@@ -50,7 +50,8 @@ Table of Contents
   exception_handling
   conventions
   classes
-  classes_definition
+  classes_attributes_methods
+  classes_initializer
   functions
   functions_passthrough
   functions_positional
