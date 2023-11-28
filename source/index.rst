@@ -51,6 +51,11 @@ Table of Contents
   conventions
   classes
   functions
+  functions_passthrough
+  functions_positional
+  functions_keyword
+  functions_positional_and_keyword
+  functions_singleton
   data_structures
   data_structures_none
   data_structures_booleans
