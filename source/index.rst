@@ -50,6 +50,7 @@ Table of Contents
   exception_handling
   conventions
   classes
+  classes_definition
   functions
   functions_passthrough
   functions_positional

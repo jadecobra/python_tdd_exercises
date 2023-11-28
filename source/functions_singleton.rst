@@ -1,5 +1,5 @@
 
-functions: Singleton
+functions: singleton
 ====================
 
 A singleton function is a function that returns the same output every time it is called.

@@ -1,5 +1,5 @@
 
-functions: Positional and Keyword Arguments
+functions: positional and keyword arguments
 -------------------------------------------
 
 I can also define functions to take both positional arguments and keyword arguments as inputs

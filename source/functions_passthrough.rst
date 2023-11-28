@@ -1,5 +1,5 @@
 
-functions: Passthrough
+functions: passthrough
 ======================
 
 A passthrough :doc:`function <functions>` is one that returns the input it receives as output
