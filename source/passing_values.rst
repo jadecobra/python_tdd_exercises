@@ -15,6 +15,11 @@ Which is similar to functions in mathematics where a function is represented as 
 .. code-block:: python
 
   f(x) -> y
+
+or in other words
+
+.. code-block:: python
+
   process(input_data) -> output
 
 
