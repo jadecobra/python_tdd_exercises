@@ -111,7 +111,7 @@ GREEN: make it pass
    def duration(wake_time, sleep_time):
     return None
 
-  the terminal now shows an :doc:`AssertionError` since the duration function returns :doc:`None <data_structures_none>` and the test expects ``1`` as the duration when a sleep time of ``07:00`` and a wake time of ``08:00`` is given
+  the terminal now shows an :doc:`/AssertionError` since the duration function returns :doc:`None <data_structures_none>` and the test expects ``1`` as the duration when a sleep time of ``07:00`` and a wake time of ``08:00`` is given
 
 * change the return value for the duration function to the expectation
 
@@ -172,7 +172,7 @@ What if I write a test that uses a random variable for the sleep and wake times?
        wake_hour-sleep_hour
      )
 
-  now I have an :doc:`AssertionError` because ``sleep_duration.duration`` still returns ``1`` but from the test I expect the difference between ``wake_time`` and ``sleep_time``
+  now I have an :doc:`/AssertionError` because ``sleep_duration.duration`` still returns ``1`` but from the test I expect the difference between ``wake_time`` and ``sleep_time``
 * change the ``duration`` function in ``sleep_duration.py`` to return a difference between the ``wake_time`` and ``sleep_time``?
 
   .. code-block:: python
@@ -191,7 +191,7 @@ What if I write a test that uses a random variable for the sleep and wake times?
         None
       )
 
-  an :doc:`AssertionError` is raised
+  an :doc:`/AssertionError` is raised
 
   .. code-block:: python
 
@@ -225,7 +225,7 @@ What if I write a test that uses a random variable for the sleep and wake times?
       ['__add__', '__class__', '__contains__', '[918 chars]ill']
     )
 
-  I still have an :doc:`AssertionError` but with a different message and a suggestion
+  I still have an :doc:`/AssertionError` but with a different message and a suggestion
 
   .. code-block:: python
 
@@ -346,7 +346,7 @@ What if I write a test that uses a random variable for the sleep and wake times?
 
   I am now at a point where I get the two random values passed in and are trying to do a calculation, but because both values are strings, the calculation does not work. I need to find a way to convert the strings to numbers
 
-* What if I try one of the :doc:`methods <functions>` listed from ``test_string_methods_and_attributes`` to see if one of them might get us closer to a solution? Going with just the names of :doc:`methods <functions>` and attributes might not be enough since I do not know what they do, let us take a look at the documentation for extra details. Add a failing test with the ``help`` keyword to see documentation about ``strings``
+* What if I try one of the :doc:`methods <functions>` listed from ``test_string_methods_and_attributes`` to see if one of them might get us closer to a solution? Going with just the names of :doc:`methods <functions>` and attributes might not be enough since I do not know what they do, let us take a look at the documentation for extra details. Add a failing test with the ``help`` keyword to see documentation about `strings <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
 
   .. code-block:: python
 
@@ -403,7 +403,7 @@ What if I write a test that uses a random variable for the sleep and wake times?
       ['00', '00']
     )
 
-  the terminal shows an :doc:`AssertionError`\ , the use of the ``split`` :doc:`method <functions>` has not yet given us what I want. Looking back at the documentation, the definition for ``split`` takes in ``self, /, sep=None, maxsplit=-1`` and ``sep`` is the delimiter
+  the terminal shows an :doc:`/AssertionError`\ , the use of the ``split`` :doc:`method <functions>` has not yet given us what I want. Looking back at the documentation, the definition for ``split`` takes in ``self, /, sep=None, maxsplit=-1`` and ``sep`` is the delimiter
 * change the test by passing in ``:`` as the delimiter
 
   .. code-block:: python
@@ -448,7 +448,7 @@ What if I write a test that uses a random variable for the sleep and wake times?
          0
        )
 
-  the terminal shows us an :doc:`AssertionError` because the first item (item zero) from splitting ``"12:34"`` on the delimiter ``:`` is ``"12"``, good, I am closer to what I want
+  the terminal shows us an :doc:`/AssertionError` because the first item (item zero) from splitting ``"12:34"`` on the delimiter ``:`` is ``"12"``, good, I am closer to what I want
 * change the expected value in the test to match the value in the terminal
 
   .. code-block:: python
@@ -467,7 +467,7 @@ What if I write a test that uses a random variable for the sleep and wake times?
          0
        )
 
-  the terminal shows another :doc:`AssertionError`\ , this time to confirm that the second item (item one) from splitting ``"12:34"`` on the delimiter ``:`` is ``"34"``, I am not dealing with this part yet but I can assume I would use it soon, change the expected value in the same way and the test passes bringing us back to the unsolved :doc:`TypeError`
+  the terminal shows another :doc:`/AssertionError`\ , this time to confirm that the second item (item one) from splitting ``"12:34"`` on the delimiter ``:`` is ``"34"``, I am not dealing with this part yet but I can assume I would use it soon, change the expected value in the same way and the test passes bringing us back to the unsolved :doc:`TypeError`
 * using what I know, how to ``split`` a string on a delimiter :doc:`method <functions>` and how to index a list, change the duration function to only return the subtraction of the first parts of ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
@@ -494,7 +494,7 @@ What if I write a test that uses a random variable for the sleep and wake times?
       def test_converting_a_string_to_an_integer(self):
        self.assertEqual(int("12"), 0)
 
-  the terminal shows an :doc:`AssertionError` since ``12 != 0``, I change the test and it shows passing tests
+  the terminal shows an :doc:`/AssertionError` since ``12 != 0``, I change the test and it shows passing tests
 
   .. code-block:: python
 
@@ -597,7 +597,7 @@ I am going to add a failing test for that scenario to ``test_sleep_duration.py``
        f'{wake_hour-sleep_hour}:{wake_minute-sleep_minute}'
       )
 
-the terminal shows an :doc:`AssertionError` the expected value is now a string that contains the subtraction of the sleep hour from the wake hour, separated by a delimiter ``:`` and the subtraction of the sleep minute from the wake minute, so if I have a wake_time of ``08:30`` and a sleep_time of ``07:11`` I should have ``1:19`` as the output
+the terminal shows an :doc:`/AssertionError` the expected value is now a string that contains the subtraction of the sleep hour from the wake hour, separated by a delimiter ``:`` and the subtraction of the sleep minute from the wake minute, so if I have a wake_time of ``08:30`` and a sleep_time of ``07:11`` I should have ``1:19`` as the output
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -617,7 +617,7 @@ GREEN: make it pass
     def duration(wake_time, sleep_time):
       return f'{get_hour(wake_time)-get_hour(sleep_time)}:{get_hour(wake_time)-get_hour(sleep_time)}'
 
-  the terminal now shows an :doc:`AssertionError` because the difference in minutes is not yet calculated
+  the terminal now shows an :doc:`/AssertionError` because the difference in minutes is not yet calculated
 
 * let us use the ``get_hour`` function to create a similar function which gets the minutes from a given timestamp
 
@@ -632,7 +632,7 @@ GREEN: make it pass
     def duration(wake_time, sleep_time):
       return f'{get_hour(wake_time)-get_hour(sleep_time)}:{get_hour(wake_time)-get_hour(sleep_time)}'
 
-  the terminal still shows an :doc:`AssertionError`
+  the terminal still shows an :doc:`/AssertionError`
 
 * after updating the ``duration`` function with a call to the new ``get_minute`` function, the test passes
 
@@ -664,7 +664,7 @@ GREEN: make it pass
        f'{wake_hour-sleep_hour}:00'
      )
 
-  I get an :doc:`AssertionError` in the terminal because I have two zeros ``:00`` in the expected return value but the duration function returns ``0`` for the minute side of the timestamp after doing a subtraction, which means ``00`` minus ``00`` is ``0`` not ``00``.
+  I get an :doc:`/AssertionError` in the terminal because I have two zeros ``:00`` in the expected return value but the duration function returns ``0`` for the minute side of the timestamp after doing a subtraction, which means ``00`` minus ``00`` is ``0`` not ``00``.
 
   I could change the right side of the expected value to ``0`` to make it pass, but that would not be necessary because ``test_duration_when_given_hours_and_minutes`` already covers the cases where the minutes are zero since the test uses a random number from ``0`` to ``23`` for hours and a random number from ``0`` to ``59`` for minutes.
 
@@ -695,7 +695,7 @@ This means that even though the tests are passing, once again the ``duration`` f
       '0:31'
     )
 
-  the terminal shows an :doc:`AssertionError` since ``1:-29`` is not equal to ``0:31``
+  the terminal shows an :doc:`/AssertionError` since ``1:-29`` is not equal to ``0:31``
 
 * after doing a search in the python documentation for `time difference <https://docs.python.org/3/search.html?q=time+difference>`_ on https://docs.python.org/3/search.html, select the `datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#module-datetime>`_ library since it looks like it has a solution for the problem. Reading through the available types in the module I come upon
 
@@ -737,7 +737,7 @@ This means that even though the tests are passing, once again the ``duration`` f
   import sleep_duration
   import unittest
 
-  the terminal displays an :doc:`AssertionError`
+  the terminal displays an :doc:`/AssertionError`
 
   .. code-block:: python
 
@@ -756,7 +756,7 @@ This means that even though the tests are passing, once again the ``duration`` f
   from the results I can make the following conclusions about ``datetime`` objects from the ``datetime`` library.
 
   * ``datetime.datetime`` takes ``year``, ``month``, ``date``, ``hours`` and ``minutes`` as inputs
-  * ``datetime.datetime.strptime`` takes a ``string`` and ``pattern`` as inputs
+  * ``datetime.datetime.strptime`` takes a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ and ``pattern`` as inputs
   * when I use ``strptime`` it returns a ``datetime.datetime`` object
   * I also notice from the pattern provided that
 
@@ -795,7 +795,7 @@ This means that even though the tests are passing, once again the ``duration`` f
 
   I have passing tests and now have a way to convert a string to a datetime object that I can perform subtraction operations on.
 
-* So far the ``timedelta`` object I get shows seconds, but I wanted the result as a string. Let us try changing it to a string using the ``str`` keyword by adding a new test
+* So far the ``timedelta`` object I get shows seconds, but I wanted the result as a string. Let us try changing it to a string using the `str <https://docs.python.org/3/library/stdtypes.html#str>`_ keyword by adding a new test
 
   .. code-block:: python
 
@@ -805,7 +805,7 @@ This means that even though the tests are passing, once again the ``duration`` f
       ''
     )
 
-  and I get an :doc:`AssertionError` that looks more like what I am expecting
+  and I get an :doc:`/AssertionError` that looks more like what I am expecting
 
   .. code-block:: python
 
@@ -821,13 +821,13 @@ This means that even though the tests are passing, once again the ``duration`` f
       '1:00:00'
     )
 
-  it looks like calling ``str`` on a ``timedelta`` object gives us the string in the format ``Hours:Minutes:Seconds``
+  it looks like calling `str <https://docs.python.org/3/library/stdtypes.html#str>`_ on a ``timedelta`` object gives us the string in the format ``Hours:Minutes:Seconds``
 
 Putting it all together
 -----------------------
 
 
-* uncomment ``test_duration_calculation`` and I get the :doc:`AssertionError` I had before
+* uncomment ``test_duration_calculation`` and I get the :doc:`/AssertionError` I had before
 * add a function called ``get_datetime_object`` to use for converting timestamps in the format I want in ``sleep_duration.py``
 
   .. code-block:: python
@@ -880,7 +880,7 @@ Putting it all together
     def get_datetime_object(timestamp):
       return datetime.datetime.strptime(f'21/11/06 {timestamp}', "%d/%m/%y %H:%M")
 
-  the terminal now shows an :doc:`AssertionError` because the function is currently returning a ``datetime`` object not a string
+  the terminal now shows an :doc:`/AssertionError` because the function is currently returning a ``datetime`` object not a string
 * change the return in the ``duration`` function to return a string
 
   .. code-block:: python
@@ -890,7 +890,7 @@ Putting it all together
       return str(difference)
       return f'{get_hour(wake_time)-get_hour(sleep_time)}:{get_minute(wake_time)-get_minute(sleep_time)}'
 
-  the terminal shows an :doc:`AssertionError`\ , this time the values are the same except I am missing the part for seconds
+  the terminal shows an :doc:`/AssertionError`\ , this time the values are the same except I am missing the part for seconds
 
   .. code-block:: python
 
@@ -913,8 +913,8 @@ Putting it all together
          f'{wake_hour-sleep_hour}:{wake_minute-sleep_minute}:00'
        )
 
-  I get another :doc:`AssertionError` in the terminal since I have not yet changed ``test_duration_calculation`` with the new format
-* I will randomly get an :doc:`AssertionError` for ``test_duration_when_given_hours_and_minutes``. Since I am using random integers for hours and minutes, there will be instances where the ``wake_hour`` is earlier than the ``sleep_hour`` leading to a negative number for example
+  I get another :doc:`/AssertionError` in the terminal since I have not yet changed ``test_duration_calculation`` with the new format
+* I will randomly get an :doc:`/AssertionError` for ``test_duration_when_given_hours_and_minutes``. Since I am using random integers for hours and minutes, there will be instances where the ``wake_hour`` is earlier than the ``sleep_hour`` leading to a negative number for example
 
   .. code-block:: python
 
@@ -988,7 +988,7 @@ Our ``duration`` function now accounts for a time traveling sleep scenario where
          "-01:00:00"
        )
 
-  the terminal shows an :doc:`AssertionError`
+  the terminal shows an :doc:`/AssertionError`
 
   .. code-block:: python
 
@@ -1021,7 +1021,7 @@ Our ``duration`` function now accounts for a time traveling sleep scenario where
 
   * it creates the ``datetime`` objects from the timestamp for ``wake_time`` and ``sleep_time``
   * I added a condition that checks if the ``wake_time`` is earlier than ``sleep_time``
-  * it returns a ``string`` conversion of the difference between ``wake_time`` and ``sleep_time`` if ``wake_time`` is later than ``sleep_time``
+  * it returns a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ conversion of the difference between ``wake_time`` and ``sleep_time`` if ``wake_time`` is later than ``sleep_time``
   *
   it raises a ``ValueError`` if ``wake_time`` is earlier than ``sleep_time``
 
@@ -1136,7 +1136,7 @@ GREEN: make it pass
        with self.assertRaisesRegex(ValueError, f'wake_time: {wake_time} is earlier than sleep_time: {sleep_time}'):
          sleep_duration.duration(wake_time, sleep_time)
 
-  the terminal responds with an :doc:`AssertionError` because the message raised by the ``ValueError`` is different from what I expect
+  the terminal responds with an :doc:`/AssertionError` because the message raised by the ``ValueError`` is different from what I expect
 
   .. code-block:: python
 
@@ -1171,7 +1171,7 @@ GREEN: make it pass
       with self.assertRaisesRegex(ValueError, f'wake_time: {wake_time} is earlier than sleep_time: {sleep_time}'):
        sleep_duration.duration(wake_time, sleep_time)
 
-  the terminal still shows an :doc:`AssertionError` this time with an changed message showing the returned values from the ``get_datetime_object`` function
+  the terminal still shows an :doc:`/AssertionError` this time with an changed message showing the returned values from the ``get_datetime_object`` function
 * I change the test using the ``get_datetime_object`` function to display the correct timestamps in the ``ValueError`` message
 
   .. code-block:: python
@@ -1250,15 +1250,15 @@ Review
 Our challenge was to create a function that calculates the difference between two given timestamps and to make it happen I learned
 
 
-* how to convert a ``string`` to an ``integer``
-* how to split a ``string`` into a ``list`` using a given delimiter/separator
-* how to index a ``list`` to get specific elements
-* how to convert a ``string`` to a ``datetime`` object using the ``datetime.datetime.strptime`` method
-* how to convert a ``datetime`` object to a ``string``
+* how to convert a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ to an `integer <https://docs.python.org/3/library/functions.html#int>`_
+* how to split a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ into a :doc:`list </data_structures_lists>` using a given delimiter/separator
+* how to index a :doc:`list </data_structures_lists>` to get specific elements
+* how to convert a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ to a ``datetime`` object using the ``datetime.datetime.strptime`` method
+* how to convert a ``datetime`` object to a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
 * how to subtract two ``datetime`` objects
-* how to convert a ``timedelta`` to a ``string``
+* how to convert a ``timedelta`` to a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
 * how to use ``assertRaisesRegex`` to catch a specific exception and message
-* how to view the ``methods`` and ``attributes`` of a ``string`` object
+* how to view the ``methods`` and ``attributes`` of a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ object
 * how to generate a random integer between two given integers using ``random.randint``
 * how to use the ``help`` keyword to view documentation
 

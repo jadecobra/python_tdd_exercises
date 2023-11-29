@@ -9,7 +9,7 @@ Prerequisites
 
 
 * :doc:`How to Setup a Test Driven Development Environment <setup_tdd_environment>`
-* :doc:`Data Structures </data structures>`
+
 
 ----
 
@@ -34,7 +34,7 @@ I create a failing test in ``test_data_structures.py`` called ``test_what_is_fal
    self.assertTrue(dict())
    self.assertNotIsInstance(False, bool)
 
-the ``assertTrue`` method checks if a given input is ``True``, the terminal shows an :doc:`AssertionError` indicating that the given input is not ``True``
+the ``assertTrue`` method checks if a given input is ``True``, the terminal shows an :doc:`/AssertionError` indicating that the given input is not ``True``
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -75,10 +75,10 @@ I can say that in python
 
 * ``False`` is a ``boolean``
 * ``dict()`` is ``False`` which means an empty :doc:`dictionary <data_structures_dictionaries>` is ``False``
-* ``{}`` is ``False`` which means an empty ``set``/\ ``dictionary`` is ``False``
+* ``{}`` is ``False`` which means an empty `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_/\ :doc:`dictionary </data_structures_dictionaries>`   is ``False``
 * ``[]`` is ``False`` which means an empty :doc:`list <data_structures_lists>` is ``False``
-* ``()`` is ``False`` which means an empty ``tuple`` is ``False``
-* ``""`` is ``False`` which means an empty ``string`` is ``False``
+* ``()`` is ``False`` which means an empty `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ is ``False``
+* ``""`` is ``False`` which means an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is ``False``
 * ``0`` is ``False``
 
 I can sum this up as
@@ -113,7 +113,7 @@ What if I try a similar series of failing tests for ``True`` by adding the follo
    })
    self.assertNotIsInstance(True, bool)
 
-the terminal shows an :doc:`AssertionError`
+the terminal shows an :doc:`/AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

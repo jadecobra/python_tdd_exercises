@@ -37,7 +37,7 @@ add a file called ``test_list_comprehension.py`` to the ``tests`` folder
 * the ``range`` object creates an ``iterable`` of numbers from 0 to the number I give minus 1. `read more <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_
 * I create a list called ``list_a`` that has no elements and confirm it is empty with a ``self.assertEqual(list_a, [])``
 * I then create a loop using the ``for`` keyword, that goes over every element of ``collection_a`` and adds it to ``list_a`` using the ``append`` :doc:`method <functions>` see :doc:`Lists`
-* the terminal shows an :doc:`AssertionError` for the test that checks the elements of ``list_a`` after the loop ran, because the list is no longer empty, it now contains 10 elements
+* the terminal shows an :doc:`/AssertionError` for the test that checks the elements of ``list_a`` after the loop ran, because the list is no longer empty, it now contains 10 elements
   .. code-block:: python
 
     E    AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
@@ -71,11 +71,11 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* add another test to check what happens when I call the ``list`` keyword on the ``collection_a`` iterable
+* add another test to check what happens when I call the :doc:`list </data_structures_lists>` keyword on the ``collection_a`` iterable
   .. code-block:: python
 
       self.assertEqual(list(collection_a), list_a)
-  the tests pass because calling ``list`` on an ``iterable`` createsa :doc:`data_structures_lists`
+  the tests pass because calling :doc:`list </data_structures_lists>` on an ``iterable`` createsa :doc:`data_structures_lists`
 * add another test
   .. code-block:: python
 
@@ -129,7 +129,7 @@ REFACTOR: make it better
 
     def make_a_list(argument):
       return None
-  the terminal shows an :doc:`AssertionError`
+  the terminal shows an :doc:`/AssertionError`
 * change the function to return a list of whatever argument it gets
   .. code-block:: python
 
@@ -160,7 +160,7 @@ add a test to ``TestListComprehensions``
       self.assertEqual(a_list, [])
       self.assertEqual(list_comprehensions.for_loop(collection), a_list)
 
-the terminal shows an :doc:`AssertionError` for the values of ``a_list`` after I loop through ``collection`` and add elements because it is no longer empty
+the terminal shows an :doc:`/AssertionError` for the values of ``a_list`` after I loop through ``collection`` and add elements because it is no longer empty
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -195,7 +195,7 @@ GREEN: make it pass
 
     def for_loop(argument):
       return None
-  the terminal shows an :doc:`AssertionError`
+  the terminal shows an :doc:`/AssertionError`
 *
   I change the behavior of the function by adding a ``for`` loop
 
@@ -221,7 +221,7 @@ GREEN: make it pass
 List Comprehension
 ------------------
 
-Now that I know how to create a ``list`` using ``[]``, ``list`` and ``for``, What if I try creatinga :doc:`data_structures_lists` using a ``list comprehension``. It looks similar to a ``for`` loop but allows us to achieve the same thing with less words
+Now that I know how to create a :doc:`list </data_structures_lists>` using ``[]``, :doc:`list </data_structures_lists>` and ``for``, What if I try creatinga :doc:`data_structures_lists` using a ``list comprehension``. It looks similar to a ``for`` loop but allows us to achieve the same thing with less words
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -245,7 +245,7 @@ add a failing test to ``TestListComprehensions``
        a_list
       )
 
-the terminal shows an :doc:`AssertionError`
+the terminal shows an :doc:`/AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -271,7 +271,7 @@ GREEN: make it pass
          a_list
        )
 
-  the terminal shows another :doc:`AssertionError` for the next line
+  the terminal shows another :doc:`/AssertionError` for the next line
 
 *
   this time I add a ``list comprehension`` to the left side to practice writing it
@@ -349,7 +349,7 @@ Let us explore what else I can do with a ``list comprehension``
          even_numbers
        )
 
-  the terminal shows an :doc:`AssertionError`
+  the terminal shows an :doc:`/AssertionError`
 
 
   * In this loop I change the empty list after the condition ``if element % 2 == 0`` is met.
@@ -381,7 +381,7 @@ Let us explore what else I can do with a ``list comprehension``
          even_numbers
        )
 
-  the terminal shows an :doc:`AssertionError`
+  the terminal shows an :doc:`/AssertionError`
 
 *
   try using a ``list comprehension`` like I did in the last example
@@ -408,7 +408,7 @@ Let us explore what else I can do with a ``list comprehension``
          even_numbers
        )
 
-  the terminal displays an :doc:`AssertionError` because the lists are not the same, I have too many values
+  the terminal displays an :doc:`/AssertionError` because the lists are not the same, I have too many values
 
   .. code-block:: python
 
@@ -449,7 +449,7 @@ Let us explore what else I can do with a ``list comprehension``
        self.assertEqual([], odd_numbers)
        self.assertEqual(list_comprehensions.get_odd_numbers(collection), odd_numbers)
 
-  the terminal shows an :doc:`AssertionError`
+  the terminal shows an :doc:`/AssertionError`
 
 *
   when I change the values to match
@@ -469,7 +469,7 @@ Let us explore what else I can do with a ``list comprehension``
        self.assertEqual([], odd_numbers)
        self.assertEqual(list_comprehensions.get_odd_numbers(collection), odd_numbers)
 
-  the terminal shows an :doc:`AssertionError` for the next test
+  the terminal shows an :doc:`/AssertionError` for the next test
 
 *
   after updating the value on the left with a ``list comprehension`` that uses the same condition I used to create ``odd_numbers``

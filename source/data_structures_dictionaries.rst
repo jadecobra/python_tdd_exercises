@@ -9,7 +9,7 @@ Prerequisites
 
 
 * :doc:`How to Setup a Test Driven Development Environment <setup_tdd_environment>`
-* :doc:`Data Structures </data structures>`
+
 
 ----
 
@@ -71,7 +71,7 @@ REFACTOR: make it better
     def a_dict():
       return None
 
-  and the terminal shows an :doc:`AssertionError` since the function I defined returns :doc:`None <data_structures_none>` instead of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+  and the terminal shows an :doc:`/AssertionError` since the function I defined returns :doc:`None <data_structures_none>` instead of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 * I then change the return statement to return an empty `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
   .. code-block:: python
@@ -79,7 +79,7 @@ REFACTOR: make it better
     def a_dict():
       return {}
 
-  the terminal still shows an :doc:`AssertionError` but now the return value looks more like what is expected
+  the terminal still shows an :doc:`/AssertionError` but now the return value looks more like what is expected
 
   .. code-block:: python
 
@@ -148,7 +148,7 @@ I add a failing test to ``TestDictionaries``
     {'one': 'boom'}
    )
 
-the terminal shows an :doc:`AssertionError` since the two values are different
+the terminal shows an :doc:`/AssertionError` since the two values are different
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -182,7 +182,7 @@ REFACTOR: make it better
       {2.5: 'fails'}
     )
 
-  the terminal shows an :doc:`AssertionError` since the values are different
+  the terminal shows an :doc:`/AssertionError` since the values are different
 * I change the value on the right to make it pass
 
   .. code-block:: python
@@ -202,7 +202,7 @@ REFACTOR: make it better
 How to create a dictionary with booleans as keys
 -------------------------------------------------
 
-Is it possible to use :doc:`False <data_structures_booleans>` or :doc:`True <data_structures_booleans>` as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys?
+Is it possible to use :doc:`False </data_structures_booleans>` or :doc:`True </data_structures_booleans>` as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys?
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -215,7 +215,7 @@ RED: make it fail
       {False: 'bap'}
     )
 
-the terminal outputs an :doc:`AssertionError`
+the terminal outputs an :doc:`/AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -230,13 +230,13 @@ when I change the values to make them match tests are green again. Sweet!
     {False: 'boom'}
   )
 
-I can use :doc:`False <data_structures_booleans>` as a key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+I can use :doc:`False </data_structures_booleans>` as a key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* I add a test for using :doc:`True <data_structures_booleans>` as a key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+* I add a test for using :doc:`True </data_structures_booleans>` as a key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
   .. code-block:: python
 
@@ -250,7 +250,7 @@ REFACTOR: make it better
       {True: 'boom'}
     )
 
-  the terminal shows an :doc:`AssertionError`
+  the terminal shows an :doc:`/AssertionError`
 * I then change the values to make the tests pass
 
   .. code-block:: python
@@ -283,7 +283,7 @@ I add a test to ``TestDictionaries``
     {(1, 2): "key"}
   )
 
-the terminal outputs an :doc:`AssertionError`
+the terminal outputs an :doc:`/AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -430,7 +430,7 @@ I add a test to ``TestDictionaries`` in ``test_dictionaries.py``
     a_dictionary = {"key": "value"}
     self.assertEqual(a_dictionary["key"], "bob")
 
-the terminal displays an :doc:`AssertionError` because ``bob`` is not equal to ``value``. I can get a value for a key by providing the key in square brackets to the dictionary
+the terminal displays an :doc:`/AssertionError` because ``bob`` is not equal to ``value``. I can get a value for a key by providing the key in square brackets to the dictionary
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -462,7 +462,7 @@ REFACTOR: make it better
       list(a_dictionary.values()), []
     )
 
-  the terminal outputs an :doc:`AssertionError`
+  the terminal outputs an :doc:`/AssertionError`
 * I change the values to make the test pass
 
   .. code-block:: python
@@ -500,7 +500,7 @@ REFACTOR: make it better
       []
     )
 
-  the terminal shows an :doc:`AssertionError`
+  the terminal shows an :doc:`/AssertionError`
 * I change the test to make it pass
 
   .. code-block:: python
@@ -666,7 +666,7 @@ When I use the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_
 How to view the attributes and methods of a dictionary
 ------------------------------------------------------
 
-:doc:`classes` covers how to view the ``attributes`` and ``methods`` of an object. Let us look at the attributes and :doc:`methods <functions>` of  `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ to help understand them better
+:doc:`class </classes>` covers how to view the ``attributes`` and ``methods`` of an object. Let us look at the attributes and :doc:`methods <functions>` of  `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ to help understand them better
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -682,7 +682,7 @@ I add a new test to ``TestDictionaries``
       []
     )
 
-the terminal shows an :doc:`AssertionError`
+the terminal shows an :doc:`/AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -816,7 +816,7 @@ REFACTOR: make it better
       {'bippity': 'boppity'}
     )
 
-  the terminal shows that ``a_dictionary`` has changed, by giving us an :doc:`AssertionError`. It has a new key which was not there before
+  the terminal shows that ``a_dictionary`` has changed, by giving us an :doc:`/AssertionError`. It has a new key which was not there before
 
 * I change the test to make it pass
 
@@ -870,7 +870,7 @@ REFACTOR: make it better
     }
   )
 
-  the terminal shows an :doc:`AssertionError` since ``a_dictionary`` now has a new ``key`` and ``value``
+  the terminal shows an :doc:`/AssertionError` since ``a_dictionary`` now has a new ``key`` and ``value``
 * I change the test to make it pass
 
   .. code-block:: python
@@ -916,7 +916,7 @@ I add another test to ``TestDictionaries``
      }
    )
 
-the terminal displays an :doc:`AssertionError` because the values of ``a_dictionary`` were changed when I called the `change <https://docs.python.org/3/library/stdtypes.html#dict.change>`_ :doc:`method <functions>` on it
+the terminal displays an :doc:`/AssertionError` because the values of ``a_dictionary`` were changed when I called the `change <https://docs.python.org/3/library/stdtypes.html#dict.change>`_ :doc:`method <functions>` on it
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -968,7 +968,7 @@ I add a failing test to ``TestDictionaries``
     }
     self.assertEqual(a_dictionary.pop("basic"), None)
 
-the terminal shows an :doc:`AssertionError`
+the terminal shows an :doc:`/AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

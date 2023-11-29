@@ -8,7 +8,7 @@ Prerequisites
 
 
 * :doc:`How to Setup a Test Driven Development Environment <setup_tdd_environment>`
-* :doc:`Data Structures </data structures>`
+
 
 ----
 
@@ -56,7 +56,7 @@ GREEN: make it pass
 
       def test_creating_a_list_with_the_list_keyword(self):
        self.assertEqual(list((0, 1, 2, 3)), [])
-  the terminal shows an :doc:`AssertionError`
+  the terminal shows an :doc:`/AssertionError`
   .. code-block:: python
 
     >    self.assertEqual(list((0, 1, 2, 3)), [])
@@ -102,7 +102,7 @@ add a test to ``TestLists`` in ``test_lists.py`` to learn about updating an exis
       a_list.append(4)
       self.assertEqual(a_list, [0, 1, 2, 3])
 
-the terminal shows an :doc:`AssertionError` because after I call ``a_list.append(5)``, the values in ``a_list`` change
+the terminal shows an :doc:`/AssertionError` because after I call ``a_list.append(5)``, the values in ``a_list`` change
 
 .. code-block:: python
 
@@ -195,7 +195,7 @@ What if there was more than one element, how does python decide which to remove 
        self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
        a_list.remove(2)
        self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
-  the terminal shows an :doc:`AssertionError`
+  the terminal shows an :doc:`/AssertionError`
 * change the values on the right to match the expectation
   .. code-block:: python
 
@@ -227,7 +227,7 @@ add a test to ``TestLists`` in ``test_lists.py``
 * I define ``a list`` with 4 elements and confirm the values, then call the ``pop`` method
 * I check the value that gets popped and check the list to see what values remain after calling ``pop``
 
-the terminal shows an :doc:`AssertionError` for the test that checks the value of the item that is popped
+the terminal shows an :doc:`/AssertionError` for the test that checks the value of the item that is popped
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -242,7 +242,7 @@ GREEN: make it pass
       last_item = a_list.pop()
       self.assertEqual(last_item, 3)
       self.assertEqual(a_list, [0, 1, 2, 3])
-  the terminal shows an :doc:`AssertionError` for the values of ``a_list`` after the last item is popped
+  the terminal shows an :doc:`/AssertionError` for the values of ``a_list`` after the last item is popped
 * change the values in the ``self.assertEqual`` to make the tests pass
   .. code-block:: python
 
@@ -278,7 +278,7 @@ add a failing test
       self.assertEqual(a_list[-2], '')
       self.assertEqual(a_list[-4], '')
 
-the terminal output an :doc:`AssertionError`
+the terminal output an :doc:`/AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -299,7 +299,7 @@ GREEN: make it pass
       self.assertEqual(a_list[-3], '')
       self.assertEqual(a_list[-2], '')
       self.assertEqual(a_list[-4], '')
-  the terminal shows an :doc:`AssertionError` for the next test
+  the terminal shows an :doc:`/AssertionError` for the next test
 * change the value
   .. code-block:: python
 
@@ -358,7 +358,7 @@ GREEN: make it pass
 View the attributes and :doc:`methods <functions>` of a list
 -----------------------------------------
 
-In :doc:`classes` I cover how to view the ``attributes`` and ``methods`` of an object. What if I do the same for ``lists``
+In :doc:`class </classes>` I cover how to view the ``attributes`` and ``methods`` of an object. What if I do the same for ``lists``
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -375,7 +375,7 @@ add a failing test
       )
 
 
-* the terminal shows an :doc:`AssertionError`
+* the terminal shows an :doc:`/AssertionError`
 * ``maxDiff`` is an attribute of the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class that sets the maximum amount of characters to show in the comparison between the two objects that is displayed in the terminal. When it is set to :doc:`None <data_structures_none>` there is no limit to the number of characters
 
 GREEN: make it pass

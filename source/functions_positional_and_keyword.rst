@@ -88,7 +88,7 @@ GREEN: make it pass
     def accepts_positional_and_keyword_arguments(first_name, last_name):
         return None
 
-  the terminal shows an :doc:`AssertionError`
+  the terminal shows an :doc:`/AssertionError`
 * I edit the return statement to make the test pass
 
   .. code-block:: python
@@ -96,7 +96,7 @@ GREEN: make it pass
     def accepts_positional_and_keyword_arguments(first_name, last_name):
         return first_name, last_name
 
-  the terminal changes the :doc:`AssertionError` with the values I just added
+  the terminal changes the :doc:`/AssertionError` with the values I just added
 * I change ``test_functions_with_positional_and_keyword_arguments`` to make the results match the expectation
 
   .. code-block:: python
@@ -289,7 +289,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_with_po
           (None, None)
       )
 
-  the terminal shows an :doc:`AssertionError`
+  the terminal shows an :doc:`/AssertionError`
 
   .. code-block:: python
 
@@ -304,7 +304,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_with_po
         ((), {})
     )
 
-* I uncomment the last test to see it fail and the terminal shows an :doc:`AssertionError`
+* I uncomment the last test to see it fail and the terminal shows an :doc:`/AssertionError`
 
   .. code-block::
 
@@ -340,7 +340,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_with_po
 * From the tests I know that
 
   * positional arguments are represented as `tuples <https://docs.python.org/3/library/stdtypes.html#tuple>`_ with parentheses - ``()``
-  * keyword arguments are represented as :doc:`data_structures_dictionaries` with curly braces - ``{}``
+  * keyword arguments are represented as :doc:`dictionaries </data_structures_dictionaries>`  with curly braces - ``{}``
   * I can use ``*name`` to represent any number of positional arguments
   * I can use ``**name`` to represent any number of keyword arguments
   * I can define default values for arguments

@@ -230,13 +230,13 @@ GREEN: make it pass
     def add(x, y):
       return None
 
-  the terminal now displays an :doc:`AssertionError`
+  the terminal now displays an :doc:`/AssertionError`
 
   .. code-block:: python
 
     E    AssertionError: None != 1
 
-  - An :doc:`AssertionError` is raised when an assertion is :doc:`False <data_structures_booleans>`
+  - An :doc:`/AssertionError` is raised when an assertion is :doc:`False </data_structures_booleans>`
   - Since I am using ``self.assertEqual`` it means the two inputs are not equal. In other words ``calculator.add(0, 1)`` is currently not equal to ``1``
 
 * I change the ``add`` function in ``calculator.py`` so it gives the expected value
@@ -298,7 +298,7 @@ Even though the add function currently passes the existing test it does not meet
       0
     )
 
-  the terminal responds with an :doc:`AssertionError`, proof that the ``add`` function always returns ``1`` no matter what inputs are given
+  the terminal responds with an :doc:`/AssertionError`, proof that the ``add`` function always returns ``1`` no matter what inputs are given
 
   .. code-block:: python
 
@@ -459,7 +459,7 @@ GREEN : make it pass
     def subtract(x, y):
       return None
 
-  and the terminal responds with an :doc:`AssertionError`
+  and the terminal responds with an :doc:`/AssertionError`
 
   .. code-block:: python
 

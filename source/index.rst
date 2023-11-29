@@ -16,7 +16,7 @@ Who is this book for?
 * If you already use python but are unfamiliar with any of the errors below, this book is for you
 
   - :doc:`ModuleNotFoundError`
-  - :doc:`AssertionError`
+  - :doc:`/AssertionError`
   - :doc:`AttributeError`
   - :doc:`TypeError`
 
@@ -58,7 +58,6 @@ Table of Contents
   functions_keyword
   functions_positional_and_keyword
   functions_singleton
-  data_structures
   data_structures_none
   data_structures_booleans
   data_structures_lists

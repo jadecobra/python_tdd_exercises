@@ -130,7 +130,7 @@ GREEN: make it pass
         def text(value):
             return None
 
-  I now see an :doc:`AssertionError` in the terminal
+  I now see an :doc:`/AssertionError` in the terminal
 - and change the return statement with the expected value to make the test pass
 
   .. code-block:: python
@@ -162,7 +162,7 @@ I add a new failing test to ``test_text_messages``
       )
 
 
-the terminal shows an :doc:`AssertionError`
+the terminal shows an :doc:`/AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -202,7 +202,7 @@ I add a new failing test to ``test_text_messages``
           "I received this message: 'None'"
       )
 
-the terminal shows an :doc:`AssertionError`
+the terminal shows an :doc:`/AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -256,7 +256,7 @@ REFACTOR: make it better
           "I received this message: 'dict'"
       )
 
-  an :doc:`AssertionError` is displayed in the terminal
+  an :doc:`/AssertionError` is displayed in the terminal
 * I change the test to match the expected output
 
   .. code-block:: python
@@ -266,7 +266,7 @@ REFACTOR: make it better
           "I received this message: <class 'bool'>"
       )
 
-  the terminal displays an :doc:`AssertionError` for the next test.
+  the terminal displays an :doc:`/AssertionError` for the next test.
 - I repeat the solution for each data type until all tests pass
 
 VOILA!

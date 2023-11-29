@@ -419,7 +419,7 @@ Let us add exception handling to the program so it does not end when it encounte
     def exception_handler(argument):
         return None
 
-  the terminal shows an :doc:`AssertionError` because the result of calling ``exceptions.exception_handler`` with ``exceptions.raises_exception_error`` as the input is currently :doc:`None <data_structures_none>` which is not equal to ``failed``
+  the terminal shows an :doc:`/AssertionError` because the result of calling ``exceptions.exception_handler`` with ``exceptions.raises_exception_error`` as the input is currently :doc:`None <data_structures_none>` which is not equal to ``failed``
 
   .. code-block:: python
 
@@ -464,7 +464,7 @@ Let us add exception handling to the program so it does not end when it encounte
 
       does_not_raise_exception_error = None
 
-    and the terminal shows an :doc:`AssertionError` because the value returned by ``exceptions.exception_handler`` when given ``exceptions.does_not_raise_exception_error`` as input is ``failed`` which is not equal to ``succeeded``
+    and the terminal shows an :doc:`/AssertionError` because the value returned by ``exceptions.exception_handler`` when given ``exceptions.does_not_raise_exception_error`` as input is ``failed`` which is not equal to ``succeeded``
 
     .. code-block::
 
@@ -597,7 +597,7 @@ GREEN: make it pass
         else:
             return 'succeeded'
 
-  the terminal displays an :doc:`AssertionError` since no exception is raised when ``does_not_raise_exception_error`` is called by ``always_returns_this``, it returns ``succeeded`` which is not equal to ``always_returns_this``
+  the terminal displays an :doc:`/AssertionError` since no exception is raised when ``does_not_raise_exception_error`` is called by ``always_returns_this``, it returns ``succeeded`` which is not equal to ``always_returns_this``
 
 * I can try adding another return statement to the function to see if that would work
 

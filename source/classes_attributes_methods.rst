@@ -55,7 +55,7 @@ GREEN: make it pass
 
         a_boolean = None
 
-  the terminal shows an :doc:`AssertionError`
+  the terminal shows an :doc:`/AssertionError`
 
 * I redefine the attribute to make the test pass
 
@@ -177,7 +177,7 @@ GREEN: make it pass
         def method_a():
             return None
 
-  and the terminal shows an :doc:`AssertionError`. Progress!
+  and the terminal shows an :doc:`/AssertionError`. Progress!
 
 
 * I then change the value that ``method_a`` returns to match the expectation of the test
@@ -282,7 +282,7 @@ I add a test to ``test_classes.py``
         []
     )
 
-the terminal shows an :doc:`AssertionError` as the expected and real values do not match
+the terminal shows an :doc:`/AssertionError` as the expected and real values do not match
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

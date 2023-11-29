@@ -7,8 +7,8 @@ I am going to explore writing conditional statements in python with the `Truth T
 
 There are only two boolean values
 
-* :doc:`True <data_structures_booleans>`
-* :doc:`False <data_structures_booleans>`
+* :doc:`True </data_structures_booleans>`
+* :doc:`False </data_structures_booleans>`
 
 The Truth Table gives the 16 outcomes of binary operations on these two values
 
@@ -73,7 +73,7 @@ GREEN: make it pass
     def logical_true():
         return True
 
-  and the terminal shows passing tests and I am reminded that :doc:`True <data_structures_booleans>` is :doc:`True <data_structures_booleans>`
+  and the terminal shows passing tests and I am reminded that :doc:`True </data_structures_booleans>` is :doc:`True </data_structures_booleans>`
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -94,15 +94,15 @@ REFACTOR: make it better
     def logical_false():
       return True
 
-  and the terminal shows an :doc:`AssertionError` since the ``logical_false`` function currently returns a different value from what is expected
-* When I change the return value to :doc:`False <data_structures_booleans>`, the terminal shows passing tests
+  and the terminal shows an :doc:`/AssertionError` since the ``logical_false`` function currently returns a different value from what is expected
+* When I change the return value to :doc:`False </data_structures_booleans>`, the terminal shows passing tests
 
   .. code-block:: python
 
     def logical_false():
       return False
 
-* I am again reminded that :doc:`False <data_structures_booleans>` is :doc:`False <data_structures_booleans>` and :doc:`True <data_structures_booleans>` is :doc:`True <data_structures_booleans>`
+* I am again reminded that :doc:`False </data_structures_booleans>` is :doc:`False </data_structures_booleans>` and :doc:`True </data_structures_booleans>` is :doc:`True </data_structures_booleans>`
 
 ----
 
@@ -178,7 +178,7 @@ GREEN: make it pass
     def logical_negation(value):
         return value
 
-  the terminal shows an :doc:`AssertionError`.
+  the terminal shows an :doc:`/AssertionError`.
 
   The ``logical_negation`` function returns the value it receives as input but the test expects it to return the opposite
 * The ``not`` keyword can be used to make the function return the opposite of what it receives. I change the return statement in ``logical_negation`` to return the opposite of the value it receives
@@ -193,9 +193,9 @@ GREEN: make it pass
 Reviewing what I know so far
 
 
-* :doc:`True <data_structures_booleans>` is ``not False``
-* :doc:`False <data_structures_booleans>` is ``not True``
-* :doc:`False <data_structures_booleans>` is :doc:`False <data_structures_booleans>`
-* :doc:`True <data_structures_booleans>` is :doc:`True <data_structures_booleans>`
+* :doc:`True </data_structures_booleans>` is ``not False``
+* :doc:`False </data_structures_booleans>` is ``not True``
+* :doc:`False </data_structures_booleans>` is :doc:`False </data_structures_booleans>`
+* :doc:`True </data_structures_booleans>` is :doc:`True </data_structures_booleans>`
 
 on to :doc:`/truth table 02: logical conjunction`

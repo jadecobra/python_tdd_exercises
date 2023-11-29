@@ -215,7 +215,7 @@ REFACTOR: make it better
         def __init__(self):
             pass
 
-* I remove the ``sex`` attribute and the terminal outputs an :doc:`AssertionError`
+* I remove the ``sex`` attribute and the terminal outputs an :doc:`/AssertionError`
 * I change the ``Human`` class to set the ``sex`` attribute in the parent initializer instead of at the child level
 
   .. code-block:: python
@@ -228,7 +228,7 @@ REFACTOR: make it better
         def __init__(self, sex='M'):
             self.sex = sex
 
-  the terminal still shows an :doc:`AssertionError`
+  the terminal still shows an :doc:`/AssertionError`
 
 * when I remove the ``__init__`` :doc:`method <functions>` from the ``Girl`` class
 

@@ -41,7 +41,7 @@ GREEN: make it pass
     ):
         return input_data
 
-  the terminal shows an :doc:`AssertionError`
+  the terminal shows an :doc:`/AssertionError`
 * I change ``passthrough_with_positional_arguments`` to return the two arguments it receives
 
   .. code-block:: python
@@ -88,7 +88,7 @@ How can I make this better?
               ('my_first_name', 'my_last_name')
           )
 
-  the terminal shows an :doc:`AssertionError`
+  the terminal shows an :doc:`/AssertionError`
 * I change the test so it has the correct output
 
   .. code-block:: python

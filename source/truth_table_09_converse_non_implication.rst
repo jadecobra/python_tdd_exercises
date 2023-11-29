@@ -29,7 +29,7 @@ GREEN: make it pass
     def converse_non_implication(p, q):
         return False
 
-  since the first two cases pass, the terminal shows an :doc:`AssertionError` for the third case
+  since the first two cases pass, the terminal shows an :doc:`/AssertionError` for the third case
 * I add a condition for it
 
   .. code-block:: python
@@ -75,7 +75,7 @@ REFACTOR: make it better
 
   Another success! All tests pass
 
-From the tests I see that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True <data_structures_booleans>` or :doc:`False <data_structures_booleans>`
+From the tests I see that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures_booleans>` or :doc:`False </data_structures_booleans>`
 
 * ``converse non implication`` is ``not p and q`` which is different from ``not(p and q)``
 * ``logical NOR`` is ``not(p or q)``
@@ -87,7 +87,7 @@ From the tests I see that for any boolean operation involving 2 inputs: ``p`` an
 * ``logical conjunction`` is ``and``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
-* :doc:`False <data_structures_booleans>` is ``not True``
-* :doc:`True <data_structures_booleans>` is ``not False``
-* :doc:`False <data_structures_booleans>` is :doc:`False <data_structures_booleans>`
-* :doc:`True <data_structures_booleans>` is :doc:`True <data_structures_booleans>`
+* :doc:`False </data_structures_booleans>` is ``not True``
+* :doc:`True </data_structures_booleans>` is ``not False``
+* :doc:`False </data_structures_booleans>` is :doc:`False </data_structures_booleans>`
+* :doc:`True </data_structures_booleans>` is :doc:`True </data_structures_booleans>`
