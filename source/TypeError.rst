@@ -209,11 +209,7 @@ There's not much to do here but add more tests for practice.
         return None
 
   the terminal shows all tests pass.
-
-.. EXTRA::
-
-* Is there another solution to the above test?
-* Can I define a function that takes in any number of parameters? see :doc:`functions`
+* Is there another solution to the above test? Can I define a function that takes in any number of parameters? see :doc:`functions`
 
 More Tests
 ----------
@@ -266,7 +262,7 @@ GREEN: make it pass
   .. code-block:: python
 
     def function_c(arg1):
-      return None
+        return None
 
   the terminal shows
 
@@ -341,7 +337,7 @@ REFACTOR: make it better
   .. code-block:: python
 
     def function_d(arg1, arg2, arg3):
-      return None
+        return None
 
   the terminal shows
 
@@ -354,26 +350,23 @@ REFACTOR: make it better
   .. code-block:: python
 
     def function_d(arg1, arg2, arg3, arg4):
-      return None
+        return None
 
   the terminal shows all tests pass...but wait! there's more. I can make this better.
 
-  There's another solution to the above test. What if I can define a function that takes in any number of parameters, is there a signature in python that allows a function to take 1 argument, 4 arguments, or any number of arguments?
-
-  YES! I can use the ``*args`` keyword to pass in any number of positional arguments to a function
-
-* I change ``function_d`` in ``functions.py`` with ``*args``
+* There's another solution to the above test. What if I can define a function that takes in any number of parameters, is there a signature in python that allows a function to take 1 argument, 4 arguments, or any number of arguments? YES! I can use the starred expression ``*args`` to pass in any number of positional arguments to to ``function_d`` in ``functions.py``
 
   .. code-block:: python
 
     def function_d(*args):
-      return None
+        return None
 
   the terminal shows all tests still pass. FANTASTIC!!
 
 What happens when you do this with ``function_a``, ``function_b``, ``function_c`` and ``function_d``?
 
 You now know
+
 * How to solve a :doc:`ModuleNotFoundError`
 * How to solve an :doc:`/AssertionError`
 * How to solve an :doc:`AttributeError`

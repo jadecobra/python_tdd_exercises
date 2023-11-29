@@ -61,8 +61,8 @@ GREEN: make it pass
 
     class TestAttributeErrors(unittest.TestCase):
 
-      def test_defining_variables_to_solve_attribute_errors(self):
-          module.variable_0
+        def test_defining_variables_to_solve_attribute_errors(self):
+            module.variable_0
 
   - ``class TestAttributeErrors(unittest.TestCase):`` is a class definition that inherits from `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ and will hold the tests
   - ``def test_defining_variables_to_solve_attribute_errors(self):`` is the definition of the first test function to find out if defining variables can solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
@@ -527,7 +527,7 @@ REFACTOR: make it better
 * How to solve a :doc:`TypeError` by defining a callable
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`functions`
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`class </classes>`? do I know how to define :doc:`class </classes>` if I define them the same way I do :doc:`functions`?
+* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :doc:`class </classes>`? do I know how to define :doc:`class </classes>` if I define them the same way I do :doc:`functions`?
 
 ----
 
@@ -582,7 +582,7 @@ GREEN: make it pass
 
     E    AttributeError: 'function' object has no attribute 'attribute_0'
 
-* I wonder if it is possible to define an attribute in a function and access it from outside the function. I change ``module.py``
+* I wonder if it is possible to define an attribute in a function and access it from outside the function. I add an attribute to ``Class`` in ``module.py``
 
   .. code-block:: python
 
@@ -642,7 +642,7 @@ REFACTOR: make it better
 
     class Class0():
         pass
-   ...
+    ...
     class Class99():
         pass
 
@@ -676,8 +676,8 @@ REFACTOR: make it better
 * How to solve a :doc:`TypeError` by defining a callable
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`functions`
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`class </classes>`
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining attributes (variables) in :doc:`class </classes>`
+* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :doc:`class </classes>`
+* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining attributes (variables) in a :doc:`class </classes>`
 
 
 ----
@@ -759,14 +759,14 @@ repeat the solution until all tests pass
 * How to solve a :doc:`TypeError` by defining a callable
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`functions`
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`class </classes>`
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining attributes (variables) in :doc:`class </classes>`
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`methods (functions) <functions>` in :doc:`class </classes>`
+* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :doc:`class </classes>`
+* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining attributes (variables) in a :doc:`class </classes>`
+* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`methods (functions) <functions>` in a :doc:`class </classes>`
 
-:doc:`class </classes>` vs :doc:`functions` in python
---------------------------------------------
+:doc:`classes </classes>` vs :doc:`functions` in python
+-------------------------------------------------------
 
-* I can access attributes (variables) or methods of a class from outside the class
-* I cannot access variables or functions defined in a function from outside the function
+* attributes and :doc:`methods <functions>` in a :doc:`class </classes>` can be accessible from outside the :doc:`class </classes>`
+* attributes and :doc:`functions <functions>` in a :doc:`function <functions>` are not accessible from outside the :doc:`function <functions>`
 * keywords used to define them - `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ vs `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
 * naming conventions - ``CamelCase`` vs ``snake_case``
