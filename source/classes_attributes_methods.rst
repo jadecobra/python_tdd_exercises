@@ -71,7 +71,7 @@ GREEN: make it pass
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-Let us add more tests with the other python :doc:`/data_structures` to ``test_classes_with_attributes``
+Let us add more tests with the other python data structures to ``test_classes_with_attributes``
 
 .. code-block:: python
 

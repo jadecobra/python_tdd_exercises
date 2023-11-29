@@ -2,31 +2,21 @@
 Data Structures: Lists
 ======================
 
-Let us explore ``lists/arrays`` in python using Test Driven Development
-
-Prerequisites
--------------
-
-
-* :doc:`How to Setup a Test Driven Development Environment <setup_tdd_environment>`
-
-
-----
-
-A ``list`` is an object that holds elements. It is a container like `tuples <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_ and ``sets``.
+A `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ is an object that holds elements. It is a container like `tuples <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_ and `sets <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_.
 
 
 * Lists are represented with ``[]``
-* They can also be created with the ``list`` keyword
+* They can also be created with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor
+* They can contain any `object <https://docs.python.org/3/glossary.html#term-object>`_
 * They are mutable which means they can be changed after creation by calling some operation on them
 
-Create a list
--------------
+How create a list
+-----------------
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-create a file called ``test_lists.py`` in the ``tests`` folder with the following code
+I create a file called ``test_lists.py`` in the ``tests`` folder with the following code
 
 .. code-block:: python
 
@@ -35,8 +25,8 @@ create a file called ``test_lists.py`` in the ``tests`` folder with the followin
 
   class TestLists(unittest.TestCase):
 
-    def test_creating_a_list_with_the_list_keyword(self):
-      self.assertEqual(list(0, 1, 2, 3), [])
+      def test_creating_a_list_with_the_list_keyword(self):
+          self.assertEqual(list(0, 1, 2, 3), [])
 
 the terminal shows a :doc:`TypeError` and I add it to the list of exceptions encountered
 
@@ -49,15 +39,17 @@ the terminal shows a :doc:`TypeError` and I add it to the list of exceptions enc
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
+* Looking at the error I see that the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor expects one argument but I gave it four, so I am violating the signature for creating lists. How can I pass in values correctly to this object?
+* I check out the `documentation <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ and see that `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ takes in an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_. An `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ is an object that I can loop over
+* I change the left input of the ``self.assertEqual`` by putting the values in an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_, I will use a `tuple <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_ for this example by placing parentheses around the values
 
-* Looking at the error I see that the ``list`` keyword expects one argument but I gave it four, so I am violating the signature for creating lists. How can I pass in values correctly to this object?
-* I check out the `documentation <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ and see that list takes in an ``iterable``. An iterable is an object that I can loop over
-* change the left input of the ``self.assertEqual`` by putting the values in an iterable, I will use a tuple for this example by placing parentheses around the values
   .. code-block:: python
 
-      def test_creating_a_list_with_the_list_keyword(self):
-       self.assertEqual(list((0, 1, 2, 3)), [])
+    def test_creating_a_list_with_the_list_keyword(self):
+        self.assertEqual(list((0, 1, 2, 3)), [])
+
   the terminal shows an :doc:`/AssertionError`
+
   .. code-block:: python
 
     >    self.assertEqual(list((0, 1, 2, 3)), [])
@@ -70,25 +62,28 @@ GREEN: make it pass
     E    - [0, 1, 2, 3]
     E    + []
 
-* change the right side to match the values on the left from the terminal
+* I change the right side to match the values on the left from the terminal
+
   .. code-block:: python
 
-      def test_creating_a_list_with_the_list_keyword(self):
-       self.assertEqual(list((0, 1, 2, 3)), [0, 1, 2, 3])
+    def test_creating_a_list_with_the_list_keyword(self):
+        self.assertEqual(list((0, 1, 2, 3)), [0, 1, 2, 3])
+
   the test passes
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* I now know I can create a list with the ``list`` keyword but the passing test also shows I can create a list with ``[]`` which uses less characters, What if I test this out
+* I now know I can create a list with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor but the passing test also shows I can create a list with ``[]`` which uses less characters, I add a test for it
+
   .. code-block:: python
 
-      def test_creating_a_list_with_square_brackets(self):
-       self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 3)))
+    def test_creating_a_list_with_square_brackets(self):
+        self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 3)))
 
-How to add items to a list
---------------------------
+How to add an item to a list
+-----------------------------
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -134,13 +129,13 @@ change the values on the right side of the `assertEqual <https://docs.python.org
 
 the terminal shows passing tests, I started with a list that contained 4 elements then added an element using the ``append`` method, and confirmed that the element I added is now part of the list
 
-Remove an item from a list
---------------------------
+How to remove an item from a list
+---------------------------------
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-since I know how to add an item to a ``list`` add a test for removing an item from a list using the ``remove`` method
+since I know how to add an item to a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ add a test for removing an item from a list using the ``remove`` method
 
 .. code-block:: python
 
@@ -207,8 +202,8 @@ What if there was more than one element, how does python decide which to remove 
       self.assertEqual(a_list, [0, 1, 2, 3, 2])
   the tests pass, show us from the experiment that the ``remove`` function removes the first occurrence of an item from a list
 
-Remove the last item in a list
-------------------------------
+How to remove the last item in a list
+--------------------------------------
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -254,8 +249,8 @@ GREEN: make it pass
       self.assertEqual(last_item, 3)
       self.assertEqual(a_list, [0, 1, 2])
 
-Get a specific item in a list or the Indexing
-------------------------------------------
+How to get a specific item from a list
+--------------------------------------
 
 To view an item in a list I provide the position as an index in ``[]`` to the list. ``python`` uses zero-based indexing which means the position of elements starts at 0
 
@@ -356,8 +351,8 @@ GREEN: make it pass
        a_list[5]
   the test passes
 
-View the attributes and :doc:`methods <functions>` of a list
------------------------------------------
+How to view attributes and :doc:`methods <functions>` of a list
+----------------------------------------------------------------
 
 In :doc:`class </classes>` I cover how to view the ``attributes`` and ``methods`` of an object. What if I do the same for ``lists``
 

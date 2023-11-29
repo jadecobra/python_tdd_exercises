@@ -1,20 +1,16 @@
 
-Data Structures: Lists: List Comprehensions
+Data Structures: Lists: List Comprehension
 ===========================================
 
-I will cover ``list comprehensions`` in python using Test Driven Development
-
-
+list comprehension is a way to create lists from another iterable. It is a nice way to loop over elements and perform some operation usually in one line
 
 Creating a List with an Iterable
 --------------------------------
 
-List comprehensions are a way to create lists from another iterable. It is a nice way to loop over elements and perform some operation
-
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-add a file called ``test_list_comprehension.py`` to the ``tests`` folder
+I add a file called ``test_list_comprehension.py`` to the ``tests`` folder
 
 .. code-block:: python
 
@@ -502,4 +498,4 @@ Let us explore what else I can do with a ``list comprehension``
 
 *WOW!*
 
-You now know a couple of ways to loop through ``iterables`` and have your program make decisions by using ``conditions``. You also know how to do it with less words using ``list comprehensions``. Well done!
+You now know a couple of ways to loop through ``iterables`` and have your program make decisions by using ``conditions``. You also know how to do it with less words using ``list comprehension``. Well done!
