@@ -1,3 +1,4 @@
+
 Truth Table: Exclusive Disjunction
 ==================================
 

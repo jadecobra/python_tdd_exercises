@@ -1,3 +1,4 @@
+
 Truth Table: Negate
 ===================
 
