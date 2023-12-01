@@ -635,7 +635,7 @@ GREEN: make it pass
 
   the terminal still shows an :doc:`/AssertionError`
 
-* after updating the ``duration`` function with a call to the new ``get_minute`` function, the test passes
+* after I change the ``duration`` function with a call to the new ``get_minute`` function, the test passes
 
   .. code-block:: python
 

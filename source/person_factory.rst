@@ -212,7 +212,7 @@ REFACTOR: make it better
 
   the terminal shows an :doc:`/AssertionError` but no longer shows a difference for ``first_name``. Good, I will repeat the same move step by step for every other input until the only error left is for the ``age``
 
-* For the age to be accurate it has to be a calculation based on the current year. I have a function that returns the current year and I have the ``year_of_birth`` as input, I also have this line in the test ``this_year() - 1983``. Since ``1983`` is the ``year_of_birth`` in this case. I can try updating the ``factory`` function to use that calculation
+* For the age to be accurate it has to be a calculation based on the current year. I have a function that returns the current year and I have the ``year_of_birth`` as input, I also have this line in the test ``this_year() - 1983``. Since ``1983`` is the ``year_of_birth`` in this case. I can try changing the ``factory`` function to use that calculation
 
   .. code-block:: python
 

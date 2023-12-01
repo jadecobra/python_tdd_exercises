@@ -93,7 +93,7 @@ RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
 
-* I adda :doc:`method <functions>` called ``test_addition`` to the ``TestCalculator`` :doc:`class <classes>`
+* I add a :doc:`method <functions>` called ``test_addition`` to the ``TestCalculator`` :doc:`class <classes>`
 
   .. code-block:: python
 

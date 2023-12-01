@@ -91,7 +91,7 @@ How to add an item to a list
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add a test to ``TestLists`` in ``test_lists.py`` to test updating an existing list using the ``append`` method
+I add a test to ``TestLists`` in ``test_lists.py`` to test adding items to an existing list with the ``append`` method
 
 .. code-block:: python
 

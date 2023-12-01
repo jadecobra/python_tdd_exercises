@@ -51,7 +51,7 @@ GREEN: make it pass
     # ModuleNotFoundError
 
 * then create ``module.py`` in the ``{PROJECT_NAME}`` folder and the terminal all tests are passing
-* I continue updating ``test_attribute_error.py`` to add the tests
+* I continue adding tests to ``test_attribute_error.py``
 
   .. code-block:: python
 
