@@ -462,15 +462,15 @@ REFACTOR: make it better
 There are more :doc:`methods <functions>` listed than what I have reviewed. Based on their names, I can make a guess as to what they do, and I know some from the tests above
 
 * append - adds an item to the list
-* clear - clears the list?
-* copy - creates a copy of the list?
-* count - counts the number of items in the list?
+* clear - does this clear the items in the list?
+* copy - does this create a copy of the list?
+* count - does this count the number of items in the list?
 * extend - extends the list?
 * index
-* insert - places an item in the list?
+* insert - does this place an item in the list?
 * pop - removes the last item in the list
 * remove - removes the first occurrence of a given item in the list
-* reverse - reverses the list?
-* sort - sorts the elements in the list?
+* reverse - does this reverse the list?
+* sort - does this sort the elements in the list?
 
 You can add tests for these :doc:`methods <functions>` to find out what they do or `read more about lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list%20remove#more-on-lists>`_
