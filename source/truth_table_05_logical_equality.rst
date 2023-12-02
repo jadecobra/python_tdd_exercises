@@ -2,7 +2,7 @@
 Truth Table: Logical Equality
 =============================
 
-The journey through conditional statements in python using Test Driven Development with the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_ continues with Logical Equality
+The journey of conditional statements using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_ continues with Logical Equality
 
 So far the tests have shown that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures_booleans>` or :doc:`False </data_structures_booleans>`
 
@@ -26,7 +26,7 @@ I add a test for logical equality to ``TestBinaryOperations`` in ``test_truth_ta
 
 .. code-block:: python
 
-    def test_logical_equality_or the_logical_biconditional(self):
+    def test_logical_equality_or_logical_biconditional(self):
         self.assertTrue(truth_table.logical_equality(True, True))
         self.assertFalse(truth_table.logical_equality(True, False))
         self.assertFalse(truth_table.logical_equality(False, True))
@@ -89,7 +89,7 @@ What can I do to make this better?
             return False
         return True
 
-* the change the function with the first observation
+* then add the first observation
 
   .. code-block:: python
 
@@ -135,7 +135,7 @@ What can I do to make this better?
 
   and the tests are still green
 
-I can change what I know so far from the tests to say that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures_booleans>` or :doc:`False </data_structures_booleans>`
+what I know so far from the tests is that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures_booleans>` or :doc:`False </data_structures_booleans>`
 
 * ``logical equality`` is ``==``
 * ``logical implication`` is ``not p or q``
