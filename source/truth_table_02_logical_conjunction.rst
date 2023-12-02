@@ -91,15 +91,16 @@ GREEN: make it pass
             if q == True:
                 return True
 
-  the test shows passing tests. Lovely!
+  the terminal shows passing tests. Lovely!
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Why does this work?
 
-  - I add a condition for when the value of ``p`` is equal to :doc:`True </data_structures_booleans>` and inside that condition I have another for when the value of ``q`` is equal to :doc:`True </data_structures_booleans>`
-  - when both conditions are met, the ``logical_conjunction`` function returns :doc:`True </data_structures_booleans>` but what does it return when those two conditions are not met?
+  - I add a condition for when the value of ``p`` is equal to :doc:`True </data_structures_booleans>`
+  - Inside the first condition I add another condition for when the value of ``q`` is equal to :doc:`True </data_structures_booleans>`
+  - when both conditions are met, the ``logical_conjunction`` function returns :doc:`True </data_structures_booleans>`. What does it return when those two conditions are not met?
 
 * I know from :doc:`functions` that a function returns :doc:`None <data_structures_none>` by default so it must be returning :doc:`None <data_structures_none>` for the other cases. This means :doc:`None <data_structures_none>` is :doc:`False </data_structures_booleans>` as seen in :doc:`/data_structures_booleans`
 * I can add a test as a reminder
@@ -192,5 +193,3 @@ After testing ``logical_conjunction`` which is a conditional operation using ``a
 * :doc:`True </data_structures_booleans>` is ``not False``
 * :doc:`False </data_structures_booleans>` is :doc:`False </data_structures_booleans>`
 * :doc:`True </data_structures_booleans>` is :doc:`True </data_structures_booleans>`
-
-on to :doc:`/truth_table_02_logical_conjunction`
