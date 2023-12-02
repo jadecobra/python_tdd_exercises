@@ -75,7 +75,7 @@ REFACTOR: make it better
   .. code-block:: python
 
     def logical_disjunction(p, q):
-        if p != False and q != False:
+        if p != True and q != True:
             return False
         return True
 
@@ -156,7 +156,7 @@ REFACTOR: make it better
         else:
             return True
 
-* the ``else`` clause statement that returns :doc:`True </data_structures_booleans>` can be restated as the opposite of the ``if`` statement
+* the ``else`` clause that returns :doc:`True </data_structures_booleans>` can be restated as the opposite of the ``if`` statement
 
   .. code-block:: python
 

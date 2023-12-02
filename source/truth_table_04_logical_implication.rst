@@ -82,7 +82,7 @@ REFACTOR: make it better
         return True
 
   this looks simpler and the tests still pass
-* I write out the second half with an ``else`` statement to be explicit
+* I write out the second part with an ``else`` clause to be explicit
 
   .. code-block:: python
 
@@ -156,11 +156,8 @@ REFACTOR: make it better
     def logical_implication(p, q):
         return not p or q
 
-  fantastic! the tests pass
 
-----
-
-From the tests I can see that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures_booleans>` or :doc:`False </data_structures_booleans>`
+fantastic! the tests pass. I can see that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures_booleans>` or :doc:`False </data_structures_booleans>`
 
 * ``logical implication`` is ``not p or q``
 * ``logical disjunction`` is ``or``

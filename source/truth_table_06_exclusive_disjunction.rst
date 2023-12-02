@@ -91,7 +91,7 @@ REFACTOR: make it better
             return False
         return True
 
-* I add an ``else`` statement to be explicit
+* I add an ``else`` clause to be explicit
 
   .. code-block:: python
 
