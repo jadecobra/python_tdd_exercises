@@ -59,7 +59,7 @@ REFACTOR: make it better
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-* I know from :doc:`/truth table 02: logical conjunction` that when I have a nested if statement it can be replaced with an ``and`` so I change the condition
+* I know from :doc:`/truth_table_02_logical_conjunction` that when I have a nested if statement it can be replaced with an ``and`` so I change the condition
 
   .. code-block:: python
 
@@ -135,7 +135,7 @@ REFACTOR: make it better
             return False
         return True
 
-  okay, this looks more like what will get the original statement when "multiplied" since the opposite of the opposite of something is something. To fix the syntax I used the opposite of ``and`` which is ``or``
+  okay, this looks more like what will get the original statement when "multiplied" since ``the opposite of the opposite of something is something``. To fix the syntax I use the opposite of ``and`` which is ``or``
 
   .. code-block:: python
 
@@ -166,7 +166,7 @@ REFACTOR: make it better
         if not(not(p or q)):
             return True
 
-  since the negation of a negation gives the original thing I could restate it by canceling out the ``not``
+  since the ``the opposite of the opposite of something is something`` I could restate it by canceling out the ``nots``
 
   .. code-block:: python
 
@@ -186,7 +186,7 @@ REFACTOR: make it better
         if not(p or q):
             return False
 
-* restate using ``else``
+* I restate using ``else``
 
   .. code-block:: python
 
@@ -196,7 +196,7 @@ REFACTOR: make it better
         else:
             return False
 
-* rewriting to one line with a ``return`` statement
+* then rewrite to one line with a ``return`` statement
 
   .. code-block:: python
 
@@ -216,9 +216,9 @@ The tests so far show that for any boolean operation involving 2 inputs: ``p`` a
 
 
 * ``logical disjunction`` is ``or``
-* ``logical conjunction`` is ``and``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
+* ``logical conjunction`` is ``and``
 * :doc:`False </data_structures_booleans>` is ``not True``
 * :doc:`True </data_structures_booleans>` is ``not False``
 * :doc:`False </data_structures_booleans>` is :doc:`False </data_structures_booleans>`
