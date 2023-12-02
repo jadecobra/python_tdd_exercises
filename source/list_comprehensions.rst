@@ -30,7 +30,7 @@ I add a file called ``test_list_comprehension.py`` to the ``tests`` folder
 
 
 * I create ``collection_a`` which uses the ``range`` object
-* the ``range`` object creates an ``iterable`` of numbers from 0 to the number I give minus 1. `read more <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_
+* the `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ object creates an ``iterable`` of numbers from 0 to the number I give minus 1
 * I create a list called ``list_a`` that has no elements and confirm it is empty with a ``self.assertEqual(list_a, [])``
 * then I create a loop using the ``for`` keyword, that goes over every element of ``collection_a`` and adds it to ``list_a`` using the ``append`` :doc:`method <functions>`, you can read :doc:`/data_structures_lists` if you want to know more
 * the terminal shows an :doc:`/AssertionError` for the test that checks the elements of ``list_a`` after the loop ran, because the list is no longer empty, it now contains 10 elements

@@ -17,15 +17,13 @@ After creating a ``TestCase`` for binary operations in ``test_truth_table.py``
 
 .. code-block:: python
 
-
-
   class TestBinaryOperations(unittest.TestCase):
 
-    def test_logical_conjunction(self):
-        self.assertTrue(truth_table.logical_conjunction(True, True))
-        self.assertFalse(truth_table.logical_conjunction(True, False))
-        self.assertFalse(truth_table.logical_conjunction(False, True))
-        self.assertFalse(truth_table.logical_conjunction(False, False))
+      def test_logical_conjunction(self):
+          self.assertTrue(truth_table.logical_conjunction(True, True))
+          self.assertFalse(truth_table.logical_conjunction(True, False))
+          self.assertFalse(truth_table.logical_conjunction(False, True))
+          self.assertFalse(truth_table.logical_conjunction(False, False))
 
 the terminal shows an :doc:`AttributeError`
 
@@ -66,7 +64,7 @@ GREEN: make it pass
         return None
 
   and the terminal shows an :doc:`/AssertionError`
-* I change ``logical_conjunction`` in ``truth_table.py``
+* I change ``logical_conjunction`` in ``truth_table.py`` to return :doc:`True </data_structures_booleans>`
 
   .. code-block:: python
 
@@ -100,10 +98,10 @@ REFACTOR: make it better
 
 * Why does this work?
 
-  * I add a condition for when the value of ``p`` is equal to :doc:`True </data_structures_booleans>` and inside that condition I have another for when the value of ``q`` is equal to :doc:`True </data_structures_booleans>`
-  * if both conditions are met, the ``logical_conjunction`` function returns True but what does it return when those two conditions are not met?
+  - I add a condition for when the value of ``p`` is equal to :doc:`True </data_structures_booleans>` and inside that condition I have another for when the value of ``q`` is equal to :doc:`True </data_structures_booleans>`
+  - when both conditions are met, the ``logical_conjunction`` function returns :doc:`True </data_structures_booleans>` but what does it return when those two conditions are not met?
 
-* I know from :doc:`functions` a function returns :doc:`None <data_structures_none>` by default so it must be returning :doc:`None <data_structures_none>` for the other cases. This means :doc:`None <data_structures_none>` is :doc:`False </data_structures_booleans>` as seen in  :doc:`data structures <data_structures_none>`
+* I know from :doc:`functions` that a function returns :doc:`None <data_structures_none>` by default so it must be returning :doc:`None <data_structures_none>` for the other cases. This means :doc:`None <data_structures_none>` is :doc:`False </data_structures_booleans>` as seen in :doc:`/data_structures_booleans`
 * I can add a test as a reminder
 
   .. code-block:: python
@@ -115,7 +113,7 @@ REFACTOR: make it better
           return None
 
   tests are still passing
-* Since :doc:`None <data_structures_none>` is :doc:`False </data_structures_booleans>`. I can be more explicit by using the boolean :doc:`False </data_structures_booleans>`
+* Since :doc:`None <data_structures_none>` is :doc:`False </data_structures_booleans>`, I can be more explicit by using the boolean :doc:`False </data_structures_booleans>`
 
   .. code-block:: python
 
@@ -124,6 +122,7 @@ REFACTOR: make it better
             if q == True:
                 return True
         return False
+
   tests still pass
 
 * These are nested conditionals and I can express them on one line by using the ``and`` keyword
@@ -136,7 +135,7 @@ REFACTOR: make it better
         return False
 
   still green
-* I can rewrite the opposite of the ``if`` statement by using the ``else`` clause keyword
+* I rewrite the opposite of the ``if`` statement by adding an ``else`` clause
 
   .. code-block:: python
 
@@ -148,9 +147,9 @@ REFACTOR: make it better
 
   tests are still green because this expresses all four cases from ``test_logical_conjunction``
 
-  * in 1 case where ``p is True`` and ``q is True`` it returns True
-  * in the 3 remaining cases it returns False
-  * does this mean that in a binary operation with 2 outcomes I only need to write a condition for one and write an else for the other? This could save me having to write out a condition for every case
+  - in 1 case where ``p is True`` and ``q is True`` it returns True:doc:`True </data_structures_booleans>`
+  - in the 3 remaining cases it returns False
+  - does this mean that in a binary operation with 2 outcomes I only need to write a condition for one and write an else for the other? This could save me having to write out a condition for every case
 
   .. note::
 
@@ -183,15 +182,15 @@ REFACTOR: make it better
 
   tests are still green. I don't think I can get a simpler statement than this
 
-*FANTASTIC!* After testing ``logical_conjunction`` which is a conditional operation using ``and``, I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures_booleans>` or :doc:`False </data_structures_booleans>`
+After testing ``logical_conjunction`` which is a conditional operation using ``and``, I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures_booleans>` or :doc:`False </data_structures_booleans>`
 
 
 * ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :doc:`True </data_structures_booleans>`
 * when there are multiple outcomes I only need to write the condition for the special case and use ``else`` for the others
 * ``logical conjunction`` is ``and``
-* ``and`` is "not ``or``"
-* ``or`` is "not ``and``"
 * :doc:`False </data_structures_booleans>` is ``not True``
 * :doc:`True </data_structures_booleans>` is ``not False``
 * :doc:`False </data_structures_booleans>` is :doc:`False </data_structures_booleans>`
 * :doc:`True </data_structures_booleans>` is :doc:`True </data_structures_booleans>`
+
+on to :doc:`/truth_table_02_logical_conjunction`
