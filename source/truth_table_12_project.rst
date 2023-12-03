@@ -45,8 +45,8 @@ GREEN: make it pass
   and the :doc:`/AssertionError` is now for the third case
 * before I add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction``, ``negate_first`` and ``negate_second`` because 2 out of the 4 cases have the same return value. I see that
 
-  * if ``p == True`` the result is :doc:`True </data_structures_booleans>`
-  * if ``p == False`` the result is :doc:`False </data_structures_booleans>`
+  * when ``p == True`` the result is :doc:`True </data_structures_booleans>`
+  * when ``p == False`` the result is :doc:`False </data_structures_booleans>`
 
 * I add conditions to represent this
 
@@ -73,14 +73,14 @@ REFACTOR: make it better
         if not p:
             return False
 
-* I simplify some more
+* I simplify again
 
   .. code-block:: python
 
     def project_first(p, q):
         return True if p else False
 
-* I simplify again
+* then simplify some more
 
   .. code-block:: python
 
@@ -119,7 +119,7 @@ GREEN: make it pass
         return False
 
   the terminal shows an :doc:`/AssertionError` for the first case
-* I change the return value to make it pass
+* and I change the return value to make it pass
 
   .. code-block:: python
 
@@ -129,8 +129,8 @@ GREEN: make it pass
   the terminal displays an :doc:`/AssertionError` for the second case
 * before I add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction``, ``negate_first``, ``negate_second`` and ``project_first`` because 2 out of the 4 cases have the same return value. I see that
 
-  * if ``q == True`` the result is :doc:`True </data_structures_booleans>`
-  * if ``q == False`` the result is :doc:`False </data_structures_booleans>`
+  * when ``q == True`` the result is :doc:`True </data_structures_booleans>`
+  * when ``q == False`` the result is :doc:`False </data_structures_booleans>`
 
 * What if I try using the conclusion from ``project_first``?
 
@@ -148,10 +148,9 @@ GREEN: make it pass
 
   All tests pass and it is a simple line
 
-REFACTOR: make it better
-^^^^^^^^^^^^^^^^^^^^^^^^
+-----
 
-Since there is no refactoring to do here, I change what I know so far. For any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures_booleans>` or :doc:`False </data_structures_booleans>`
+From the tests I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures_booleans>` or :doc:`False </data_structures_booleans>`
 
 
 * ``project second`` always returns ``q``

@@ -56,11 +56,11 @@ REFACTOR: make it better
   .. code-block:: python
 
     def logical_nor(p, q):
-        if not p not or not q:
+        if (not p) (not or) (not q):
             return True
         return False
 
-  the terminal shows a ``SyntaxError`` and I rewrite the statement with proper syntax
+  the terminal shows a ``SyntaxError`` and I rewrite the statement with proper syntax, "factoring" out the ``not``
 
   .. code-block:: python
 
@@ -83,13 +83,12 @@ REFACTOR: make it better
     def logical_nor(p, q):
         return not(p or q)
 
-  BOOM! all the tests pass. Am I getting better at this?
 
 From the tests I can see that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures_booleans>` or :doc:`False </data_structures_booleans>`
 
 
-* ``logical NOR`` is ``not(p or q)``
-* ``logical NAND`` is ``not(p and q)``
+* ``logical NOR`` is ``not (p or q)``
+* ``logical NAND`` is ``not (p and q)``
 * ``exclusive disjunction`` is ``!=`` or the opposite of ``logical_equality``
 * ``logical equality`` is ``==``
 * ``logical implication`` is ``not p or q``

@@ -2,7 +2,7 @@
 Truth Table: Negate
 ===================
 
-I will continue to step through learning conditional statements using Binary Operations from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
+I will continue to step through conditional statements using Binary Operations from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
 
 
@@ -37,8 +37,8 @@ GREEN: make it pass
   the terminal shows an :doc:`/AssertionError` for the third case
 * before I add a condition for it, this looks similar to ``logical_equality`` and ``exclusive_disjunction`` because 2 out of the 4 cases have the same return value. I see that
 
-  * if ``p == True`` the result is :doc:`False </data_structures_booleans>`
-  * if ``p == False`` the result is :doc:`True </data_structures_booleans>`
+  * when ``p == True`` the result is :doc:`False </data_structures_booleans>`
+  * when ``p == False`` the result is :doc:`True </data_structures_booleans>`
 
 * I add conditions to match
 
@@ -83,7 +83,7 @@ REFACTOR: make it better
     def negate_first(p, q):
         return not p
 
-  ah, just like the name and all tests pass
+  ah, just like the name
 
 Negate Second
 -------------
@@ -117,8 +117,8 @@ GREEN: make it pass
   and the terminal shows an :doc:`/AssertionError` for the third case
 * before I add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction`` and ``negate_first`` because 2 out of the 4 cases have the same return value. I see that
 
-  * if ``q == True`` the result is :doc:`False </data_structures_booleans>`
-  * if ``q == False`` the result is :doc:`True </data_structures_booleans>`
+  - when ``q == True`` the result is :doc:`False </data_structures_booleans>`
+  - when ``q == False`` the result is :doc:`True </data_structures_booleans>`
 
 * What if I try using the conclusion from ``negate_first``?
 
@@ -137,12 +137,8 @@ GREEN: make it pass
 
   All tests pass. Fantastic!
 
-REFACTOR: make it better
-^^^^^^^^^^^^^^^^^^^^^^^^
 
-I don't think I can make it better so I change what I know so far
-
-For any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures_booleans>` or :doc:`False </data_structures_booleans>`
+From the tests so far, I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures_booleans>` or :doc:`False </data_structures_booleans>`
 
 
 * ``negate second`` always returns ``not q``

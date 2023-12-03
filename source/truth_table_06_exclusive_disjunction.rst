@@ -19,11 +19,10 @@ I add a test for exclusive disjunction to ``TestBinaryOperations`` in ``test_tru
         self.assertTrue(truth_table.exclusive_disjunction(False, True))
         self.assertFalse(truth_table.exclusive_disjunction(False, False))
 
-the terminal shows an :doc:`AttributeError`
+and the terminal shows an :doc:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
-
 
 * then add a definition that returns :doc:`True </data_structures_booleans>`
 
@@ -32,8 +31,8 @@ GREEN: make it pass
     def exclusive_disjunction(p, q):
         return True
 
-  I get an :doc:`/AssertionError` for the second case
-* then add a condition for it
+  the terminal shows an :doc:`/AssertionError` for the second case
+* I add a condition for it
 
   .. code-block:: python
 
@@ -42,15 +41,15 @@ GREEN: make it pass
             return False
         return True
 
-  the terminal shows an :doc:`/AssertionError` for the fourth case
+  and the terminal shows an :doc:`/AssertionError` for the fourth case
 * I add a condition to resolve it
 
   .. code-block:: python
 
     def exclusive_disjunction(p, q):
-        if p == False and q == False:
-            return False
         if p == True and q == True:
+            return False
+        if p == False and q == False:
             return False
         return True
 
@@ -66,7 +65,7 @@ REFACTOR: make it better
     def exclusive_disjunction(p, q):
         if p == q:
             return False
-        if p == True and q == True:
+        if p == False and q == False:
             return False
         return True
 

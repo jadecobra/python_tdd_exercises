@@ -24,7 +24,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* I add a definition for the function to ``truth_table.py`` returning :doc:`True </data_structures_booleans>` since 3 out of the 4 cases return that value
+* I add a definition for the function to ``truth_table.py`` returning :doc:`True </data_structures_booleans>` since 3 out of the 4 cases return it
 
   .. code-block:: python
 
@@ -73,7 +73,7 @@ REFACTOR: make it better
     def logical_nand(p, q):
         if p and q:
             return False
-        if not(p and q):
+        if not (p and q):
             return True
 
 * then reorder the statements
@@ -110,14 +110,12 @@ REFACTOR: make it better
     def logical_nand(p, q):
         return not(p and q)
 
-  Do you think it can get simpler than this?
-
 ----
 
-To review, I know that from the tests that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures_booleans>` or :doc:`False </data_structures_booleans>`
+To review, I know from the tests that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures_booleans>` or :doc:`False </data_structures_booleans>`
 
 
-* ``logical NAND`` is ``not(p and q)``
+* ``logical NAND`` is ``not (p and q)``
 * ``exclusive disjunction`` is ``!=`` or the opposite of ``logical_equality``
 * ``logical equality`` is ``==``
 * ``logical implication`` is ``not p or q``

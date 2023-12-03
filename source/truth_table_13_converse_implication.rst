@@ -39,7 +39,7 @@ GREEN: make it pass
         return True
 
   the terminal shows an :doc:`/AssertionError` for the third case
-* I add a condition for it
+* I add a condition for it and an explicit ``else`` clause
 
   .. code-block:: python
 
@@ -72,21 +72,21 @@ REFACTOR: make it better
     def converse_implication(p, q):
         if not p and q:
             return False
-        if not(not p and q):
+        if not (not p and q):
             return True
 
-* When I "multiply" out the values in the second condition
+* When I "multiply" out the values in the second condition I get
 
   .. code-block:: python
 
     def converse_implication(p, q):
         if not p and q:
             return False
-        if not not p not and not q:
+        if (not not p) (not and) (not q):
             return True
 
   the terminal shows a ``SyntaxError``
-* I fix the syntax
+* which I fix by canceling out ``not not`` and replacing ``not and`` with ``or``
 
   .. code-block:: python
 
@@ -125,9 +125,9 @@ REFACTOR: make it better
 
   I win again! All tests pass
 
-My knowledge has increased, I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures_booleans>` or :doc:`False </data_structures_booleans>`
+My knowledge has increased, from the tests I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures_booleans>` or :doc:`False </data_structures_booleans>`
 
-* ``converse implication`` is ``not p and q`` which is different from ``not(p and q)``
+* ``converse implication`` is ``not p and q`` which is different from ``not (p and q)``
 * ``project second`` always returns ``q``
 * ``project first`` always returns ``p``
 * ``negate second`` always returns ``not q``

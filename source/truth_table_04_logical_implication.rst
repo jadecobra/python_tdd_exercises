@@ -11,7 +11,7 @@ Reviewing what I know so far, for any boolean operation involving 2 inputs: ``p`
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
 * ``logical conjunction`` is ``and``
-* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :doc:`True </data_structures_booleans>`
+* ``return True if x else y`` can be rewritten as ``return x``, if ``x`` evaluates to :doc:`True </data_structures_booleans>`
 * when there are multiple outcomes I only need to write the condition for the special case and use ``else`` for the others
 * :doc:`False </data_structures_booleans>` is ``not True``
 * :doc:`True </data_structures_booleans>` is ``not False``

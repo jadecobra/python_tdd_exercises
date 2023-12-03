@@ -2,7 +2,7 @@
 Truth Table: True Lies
 ======================
 
-I will continue to step through learning conditional statements in python using Test Driven Development with the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
+More tests for the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
 
 
@@ -43,7 +43,7 @@ GREEN: make it pass
     def tautology(p, q):
         return True
 
-  and the test passes
+  and the test passes. Easy
 
 
 Contradiction
@@ -72,23 +72,25 @@ GREEN: make it pass
   .. code-block:: python
 
     def contradiction(p, q):
-      return True
+        return True
 
   the terminal shows an :doc:`/AssertionError` for the first case
 * When I change the return value, the test passes
+
   .. code-block:: python
 
     def contradiction(p, q):
         return False
 
+----
 
 *YOU DID IT!* You made it to the end of the ``Truth Table`` series. Summarizing what the tests have shown so far, I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures_booleans>` or :doc:`False </data_structures_booleans>`
 
 
-* ``contradition`` always returns :doc:`False </data_structures_booleans>`
-* ``tautology`` always returns :doc:`True </data_structures_booleans>`
+* ``contradition`` always returns :doc:`False </data_structures_booleans>` it is a :doc:`singleton function </functions_singleton>`
+* ``tautology`` always returns :doc:`True </data_structures_booleans>` it is a :doc:`singleton function </functions_singleton>`
 * ``converse implication`` is ``not p and q`` which is different from ``not(p and q)``
-* ``project second`` always returns ``q``
+* ``project second`` always returns ``q`` 
 * ``project first`` always returns ``p``
 * ``negate second`` always returns ``not q``
 * ``negate first`` always return ``not p``

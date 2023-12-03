@@ -52,8 +52,7 @@ REFACTOR: make it better
     def converse_non_implication(p, q):
         if not p and q  == True:
             return True
-        else:
-            return False
+        return False
 
   and the test passes
 
@@ -64,10 +63,19 @@ REFACTOR: make it better
     def converse_non_implication(p, q):
         if not p and q:
             return True
-        else:
-            return False
+        return False
 
-* I rewrite with a ``return`` statement
+* I add an else clause
+
+  .. code-block:: python
+
+    def converse_non_implication(p, q):
+        if not p and q:
+            return True
+        else:
+          return False
+
+* then I rewrite as a ``return`` statement
 
   .. code-block:: python
 
@@ -78,9 +86,9 @@ REFACTOR: make it better
 
 From the tests I see that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures_booleans>` or :doc:`False </data_structures_booleans>`
 
-* ``converse non implication`` is ``not p and q`` which is different from ``not(p and q)``
-* ``logical NOR`` is ``not(p or q)``
-* ``logical NAND`` is ``not(p and q)``
+* ``converse non implication`` is ``not p and q`` which is different from ``not (p and q)``
+* ``logical NOR`` is ``not (p or q)``
+* ``logical NAND`` is ``not (p and q)``
 * ``exclusive disjunction`` is ``!=`` or the opposite of ``logical_equality``
 * ``logical equality`` is ``==``
 * ``logical implication`` is ``not p or q``
