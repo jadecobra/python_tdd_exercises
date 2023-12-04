@@ -1,6 +1,6 @@
 
-AssertionError: : Tests
-================================
+AssertionError: Tests
+=====================
 
 
 tests

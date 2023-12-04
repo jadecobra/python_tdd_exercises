@@ -8,8 +8,8 @@ I am going to explore writing conditional statements in python with the `Truth T
 
 There are only two boolean values
 
-* :doc:`True </data_structures_booleans>`
-* :doc:`False </data_structures_booleans>`
+* :doc:`True </data_structures/data_structures_booleans>`
+* :doc:`False </data_structures/data_structures_booleans>`
 
 The Truth Table gives the 16 outcomes of binary operations on these two values
 
@@ -58,7 +58,7 @@ GREEN: make it pass
       def test_logical_true(self):
           self.assertTrue(truth_table.logical_true())
 
-  and the terminal displays an :doc:`AttributeError` which I add to the list of exceptions encountered
+  and the terminal displays an :doc:`/exceptions/AttributeError` which I add to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -74,7 +74,7 @@ GREEN: make it pass
     def logical_true():
         return True
 
-  and the terminal shows passing tests which remind me that :doc:`True </data_structures_booleans>` is :doc:`True </data_structures_booleans>`
+  and the terminal shows passing tests which remind me that :doc:`True </data_structures/data_structures_booleans>` is :doc:`True </data_structures/data_structures_booleans>`
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -87,7 +87,7 @@ REFACTOR: make it better
     def test_logical_false(self):
         self.assertFalse(truth_table.logical_false())
 
-  the terminal shows another :doc:`AttributeError` since there is no definition for ``logical_false`` in ``truth_table.py``
+  the terminal shows another :doc:`/exceptions/AttributeError` since there is no definition for ``logical_false`` in ``truth_table.py``
 * I add a function definition for ``logical_false`` to ``truth_table.py``
 
   .. code-block:: python
@@ -95,15 +95,15 @@ REFACTOR: make it better
     def logical_false():
         return True
 
-  and the terminal shows an :doc:`/AssertionError` since the ``logical_false`` function currently returns a different value from what is expected
-* When I change the return value to :doc:`False </data_structures_booleans>`, the terminal shows passing tests
+  and the terminal shows an :doc:`/exceptions/AssertionError` since the ``logical_false`` function currently returns a different value from what is expected
+* When I change the return value to :doc:`False </data_structures/data_structures_booleans>`, the terminal shows passing tests
 
   .. code-block:: python
 
     def logical_false():
         return False
 
-* I am again reminded that :doc:`False </data_structures_booleans>` is :doc:`False </data_structures_booleans>` and :doc:`True </data_structures_booleans>` is :doc:`True </data_structures_booleans>`
+* I am again reminded that :doc:`False </data_structures/data_structures_booleans>` is :doc:`False </data_structures/data_structures_booleans>` and :doc:`True </data_structures/data_structures_booleans>` is :doc:`True </data_structures/data_structures_booleans>`
 
 ----
 
@@ -133,7 +133,7 @@ I add a new ``TestCase`` to ``test_truth_table.py``
           self.assertTrue(truth_table.logical_identity(True))
           self.assertFalse(truth_table.logical_identity(False))
 
-and the terminal shows an :doc:`AttributeError` because there is no definition for ``logical_identity`` in ``truth_table.py``
+and the terminal shows an :doc:`/exceptions/AttributeError` because there is no definition for ``logical_identity`` in ``truth_table.py``
 
 GREEN: make it pass
 ~~~~~~~~~~~~~~~~~~~
@@ -163,7 +163,7 @@ I add a test for ``logical_negation`` to ``test_truth_table.py``
         self.assertFalse(truth_table.logical_negation(True))
         self.assertTrue(truth_table.logical_negation(False))
 
-the terminal shows an :doc:`/AttributeError`, there is no definition for ``logical_negation`` in ``truth_table.py``
+the terminal shows an :doc:`/exceptions/AttributeError`, there is no definition for ``logical_negation`` in ``truth_table.py``
 
 GREEN: make it pass
 ~~~~~~~~~~~~~~~~~~~
@@ -176,10 +176,10 @@ GREEN: make it pass
     def logical_negation(value):
         return value
 
-  the terminal shows an :doc:`/AssertionError`.
+  the terminal shows an :doc:`/exceptions/AssertionError`.
 
   The ``logical_negation`` function returns the value it receives as input but the test expects it to return the opposite
-* I use the ``not`` keyword to return the opposite of the :doc:`boolean </data_structures_booleans>` value ``logical_negation`` receives
+* I use the ``not`` keyword to return the opposite of the :doc:`boolean </data_structures/data_structures_booleans>` value ``logical_negation`` receives
 
   .. code-block:: python
 
@@ -191,7 +191,7 @@ GREEN: make it pass
 Reviewing what I know so far
 
 
-* :doc:`True </data_structures_booleans>` is ``not False``
-* :doc:`False </data_structures_booleans>` is ``not True``
-* :doc:`False </data_structures_booleans>` is :doc:`False </data_structures_booleans>`
-* :doc:`True </data_structures_booleans>` is :doc:`True </data_structures_booleans>`
+* :doc:`True </data_structures/data_structures_booleans>` is ``not False``
+* :doc:`False </data_structures/data_structures_booleans>` is ``not True``
+* :doc:`False </data_structures/data_structures_booleans>` is :doc:`False </data_structures/data_structures_booleans>`
+* :doc:`True </data_structures/data_structures_booleans>` is :doc:`True </data_structures/data_structures_booleans>`

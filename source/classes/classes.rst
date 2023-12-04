@@ -2,7 +2,7 @@
 classes
 =======
 
-``classes`` are a template or blueprint that represents an object. I think of ``classes`` as a a collection of :doc:`methods (functions) <functions>` and ``attributes(variables)`` that belong together
+``classes`` are a template or blueprint that represents an object. I think of ``classes`` as a a collection of :doc:`methods (functions) </functions/functions>` and ``attributes(variables)`` that belong together
 
 I will cover the following in this chapter
 
@@ -19,7 +19,7 @@ How to create a class in python
 
 * use the `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword
 * use ``TitleCase`` for the name
-* use a descriptive name that describes the collection of :doc:`methods (functions) <functions>` and ``attributes(variables)`` - this is hard to do and is something I am still learning
+* use a descriptive name that describes the collection of :doc:`methods (functions) </functions/functions>` and ``attributes(variables)`` - this is hard to do and is something I am still learning
 
 How to define a class with pass
 -------------------------------
@@ -53,7 +53,7 @@ GREEN: make it pass
     # AssertionError
     # ModuleNotFoundError
 
-* I create a python module called ``classes.py`` and the terminal shows an :doc:`AttributeError` which I add to the list of exceptions encountered
+* I create a python module called ``classes.py`` and the terminal shows an :doc:`/exceptions/AttributeError` which I add to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -121,7 +121,7 @@ REFACTOR: make it better
 Here is a quick review of what has happened so far
 
 * `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is a placeholder
-* ``self.assertIsInstance`` is a `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`method <functions>` that checks if the first input to the :doc:`method <functions>` is an instance of the second input
+* ``self.assertIsInstance`` is a `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`method </functions/functions>` that checks if the first input to the :doc:`method </functions/functions>` is an instance of the second input
 * the test ``self.assertIsInstance(classes.ClassWithPass(), object)`` checks if ``ClassWithPass`` is an `object <https://docs.python.org/3/glossary.html#term-object>`_
 * in python everything is an `object <https://docs.python.org/3/glossary.html#term-object>`_ , which means if it exists in python there is a class definition for it somewhere or it inherits from a class
 
@@ -138,7 +138,7 @@ I add another test to ``TestClasses`` in ``test_classes.py`` to show another way
   def test_classes_definitions_with_parentheses(self):
       self.assertIsInstance(classes.ClassWithParentheses(), object)
 
-the terminal shows an :doc:`AttributeError`
+the terminal shows an :doc:`/exceptions/AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -191,7 +191,7 @@ I will add another test to ``TestClasses`` in ``test_classes.py``
   def test_class_definition_with_object(self):
       self.assertIsInstance(classes.ClassWithObject(), object)
 
-and the terminal displays an :doc:`AttributeError`
+and the terminal displays an :doc:`/exceptions/AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

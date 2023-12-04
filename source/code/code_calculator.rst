@@ -1,6 +1,7 @@
 
-AssertionError: : Tests
-================================
+
+How to create a simple Calculator: Tests and Solutions
+======================================================
 
 
 tests
@@ -10,47 +11,67 @@ Here is the code in ``tests/test_assertion_error.py``
 
 .. code-block:: python
 
+    import calculator
+    import random
     import unittest
 
+    class TestCalculator(unittest.TestCase):
 
-    class TestAssertionErrors(unittest.TestCase):
+        x = random.randint(-1, 1)
+        y = random.randint(-1, 1)
 
-        def test_assertion_errors_with_none(self):
-            assert False is not None
-            self.assertIsNotNone(False)
+        def test_addition(self):
+            self.assertEqual(
+                calculator.add(self.x, self.y),
+                self.x+self.y
+            )
 
-            assert True is not None
-            self.assertIsNotNone(True)
+        def test_subtraction(self):
+            self.assertEqual(
+                calculator.subtract(self.x, self.y),
+                self.x-self.y
+            )
 
-            assert None is None
-            self.assertIsNone(None)
+        def test_multiplication(self):
+            self.assertEqual(
+                calculator.multiply(self.x, self.y),
+                self.x*self.y
+            )
 
-        def test_assertion_errors_with_false(self):
-            assert False is False
-            self.assertFalse(False)
+        def test_division(self):
+            with self.assertRaises(ZeroDivisionError):
+                calculator.divide(self.x, 0)
+            while self.y == 0:
+                self.y = random.randint(-1, 1)
+            self.assertEqual(
+                calculator.divide(self.x, self.y),
+                self.x/self.y
+            )
 
-        def test_assertion_errors_with_true(self):
-            assert True is True
-            self.assertTrue(True)
+    # TODO
+    # test division
 
-        def test_assertion_errors_with_equality(self):
-            assert False != None
-            self.assertNotEqual(False, None)
+    # Exceptions Encountered
+    # AssertionError
+    # NameError
+    # TypeError
+    # ZeroDivisionError
 
-            assert True != None
-            self.assertNotEqual(True, None)
+solutions
+---------
 
-            assert True == True
-            self.assertEqual(True, True)
+Here are the solutions in ``calculator.py``
 
-            assert True != False
-            self.assertNotEqual(True, False)
+.. code-block:: python
 
-            assert False == False
-            self.assertEqual(False, False)
+    def add(x, y):
+        return x + y
 
-            assert False != True
-            self.assertNotEqual(False, True)
+    def subtract(x, y):
+        return x - y
 
-            assert None == None
-            self.assertEqual(None, None)
+    def multiply(x, y):
+        return x * y
+
+    def divide(x, y):
+        return x / y

@@ -2,7 +2,7 @@
 How to create a person
 ======================
 
-This is an exercise in creating :doc:`dictionaries </data_structures_dictionaries>`  with :doc:`functions`. It assumes you are familiar with :doc:`functions` and :doc:`dictionaries </data_structures_dictionaries>`  though you can still try it if you are not
+This is an exercise in creating :doc:`dictionaries </data_structures/data_structures_dictionaries>`  with :doc:`functions`. It assumes you are familiar with :doc:`functions` and :doc:`dictionaries </data_structures/data_structures_dictionaries>`  though you can still try it if you are not
 
 
 
@@ -37,7 +37,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* I create a file called ``person.py`` in the project folder and the terminal shows an :doc:`AttributeError` which I add to the list of exceptions
+* I create a file called ``person.py`` in the project folder and the terminal shows an :doc:`/exceptions/AttributeError` which I add to the list of exceptions
 
   .. code-block:: python
 
@@ -100,7 +100,7 @@ REFACTOR: make it better
         return None
     ...
 
-  the terminal shows a :doc:`TypeError` since the ``person.factory`` function signature does not allow arguments to be passed to it.
+  the terminal shows a :doc:`/exceptions/TypeError` since the ``person.factory`` function signature does not allow arguments to be passed to it.
 
 * I add the error to the list of exceptions encountered
 
@@ -120,7 +120,7 @@ REFACTOR: make it better
     def factory(first_name=None):
         return None
 
-  the terminal shows a :doc:`TypeError` for the next keyword argument
+  the terminal shows a :doc:`/exceptions/TypeError` for the next keyword argument
 
 * after adding a keyword argument for ``last_name``  to the ``factory`` function
 
@@ -129,9 +129,9 @@ REFACTOR: make it better
    def factory(first_name=None, last_name=None):
       return None
 
-  the terminal shows another :doc:`TypeError` for the next keyword argument
+  the terminal shows another :doc:`/exceptions/TypeError` for the next keyword argument
 
-* I change the ``factory`` function definition for each keyword until I get a :doc:`TypeError` for the line where I subtract ``this_year() - this_year()`` because I cannot perform a subtraction operation on :doc:`None <data_structures_none>` and the ``this_year`` function currently returns :doc:`None <data_structures_none>`
+* I change the ``factory`` function definition for each keyword until I get a :doc:`/exceptions/TypeError` for the line where I subtract ``this_year() - this_year()`` because I cannot perform a subtraction operation on :doc:`None <data_structures_none>` and the ``this_year`` function currently returns :doc:`None <data_structures_none>`
 
     .. code-block:: python
 
@@ -151,10 +151,10 @@ REFACTOR: make it better
 
 
   - I import the ``datetime`` library so I can use its :doc:`functions` and :doc:`class </classes>`
-  - I return the ``year`` attribute of the object returned by the ``now`` :doc:`method <functions>` of the ``datetime.datetime`` class, which is a representation of the current local date and time. I could also use ``today`` or ``utcnow`` to achieve the same result
+  - I return the ``year`` attribute of the object returned by the ``now`` :doc:`method </functions/functions>` of the ``datetime.datetime`` class, which is a representation of the current local date and time. I could also use ``today`` or ``utcnow`` to achieve the same result
   - I get the ``year`` attribute of the object returned since that is all I am interested in
 
-* the terminal shows an :doc:`/AssertionError` since the ``person.factory`` function returns :doc:`None <data_structures_none>` but the test expects a :doc:`dictionary <data_structures_dictionaries>`. I should change the function to return an empty dictionary
+* the terminal shows an :doc:`/exceptions/AssertionError` since the ``person.factory`` function returns :doc:`None <data_structures_none>` but the test expects a :doc:`dictionary <data_structures_dictionaries>`. I should change the function to return an empty dictionary
 
   .. code-block:: python
 
@@ -163,7 +163,7 @@ REFACTOR: make it better
 
   the terminal shows the differences between the :doc:`dictionary <data_structures_dictionaries>` returned by the ``factory`` function and the one expected in the test
 
-* I change the empty :doc:`dictionary </data_structures_dictionaries>`   in the ``factory`` function to match the expected results
+* I change the empty :doc:`dictionary </data_structures/data_structures_dictionaries>`   in the ``factory`` function to match the expected results
 
   .. code-block:: python
 
@@ -196,7 +196,7 @@ REFACTOR: make it better
         }
       )
 
-  the terminal displays an :doc:`/AssertionError` because the expected and returned dictionaries are different
+  the terminal displays an :doc:`/exceptions/AssertionError` because the expected and returned dictionaries are different
 
 * I change the ``factory`` function to use the input provided for ``first_name``
 
@@ -210,7 +210,7 @@ REFACTOR: make it better
             'sex': 'F',
         }
 
-  the terminal shows an :doc:`/AssertionError` but no longer shows a difference for ``first_name``. Good, I will repeat the same move step by step for every other input until the only error left is for the ``age``
+  the terminal shows an :doc:`/exceptions/AssertionError` but no longer shows a difference for ``first_name``. Good, I will repeat the same move step by step for every other input until the only error left is for the ``age``
 
 * For the age to be accurate it has to be a calculation based on the current year. I have a function that returns the current year and I have the ``year_of_birth`` as input, I also have this line in the test ``this_year() - 1983``. Since ``1983`` is the ``year_of_birth`` in this case. I can try changing the ``factory`` function to use that calculation
 
@@ -261,7 +261,7 @@ REFACTOR: make it better
             }
         )
 
-  the terminal shows an :doc:`/AssertionError` because the value for ``last_name`` does not match the expected value
+  the terminal shows an :doc:`/exceptions/AssertionError` because the value for ``last_name`` does not match the expected value
 
 * Since I now have 3 tests with the same value for ``last_name`` I could use it as the default value in the absence of any other examples. I change the default value for ``last_name`` in the ``person.factory`` definition
 
@@ -288,7 +288,7 @@ REFACTOR: make it better
         }
     )
 
-  the terminal shows an :doc:`/AssertionError`
+  the terminal shows an :doc:`/exceptions/AssertionError`
 
 * 3 out of the 4 persons created have ``M`` as their sex and 1 has ``F`` as their sex, I could set the majority as the default value to reduce the number of repetitions. I change the default value for the parameter in ``person.factory``
 
@@ -298,7 +298,7 @@ REFACTOR: make it better
 
   and the terminal shows passing tests.
 
-We have successfully created a :doc:`function <functions>` that
+We have successfully created a :doc:`function </functions/functions>` that
 
 * returns a dictionary as its output
 * takes in keyword argument inputs

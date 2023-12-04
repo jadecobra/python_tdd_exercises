@@ -54,7 +54,7 @@ I add a ``self.assertRaises`` to ``test_catching_module_not_found_error_in_tests
 and the terminal shows passing tests. How does all this work?
 
 
-* I use the ``self.assertRaises`` :doc:`method <functions>` from the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class which takes a given exception as its input, in this case ``ModuleNotFoundError`` and checks if that error is raised by the statements given in the context below (the indented block after the ``with`` statement)
+* I use the ``self.assertRaises`` :doc:`method </functions/functions>` from the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class which takes a given exception as its input, in this case ``ModuleNotFoundError`` and checks if that error is raised by the statements given in the context below (the indented block after the ``with`` statement)
 * ``with`` - creates the context where I test that the exception is raised
 
   - `read more about the with statement <https://docs.python.org/3/reference/compound_stmts.html?highlight=statement#the-with-statement>`_
@@ -76,7 +76,7 @@ I can use this information to test that a particular exception is raised
     def test_catching_attribute_errors_in_tests(self):
         module.non_existent_attribute
 
-  the terminal shows an :doc:`AttributeError` because the called attribute ``non_existent_attribute`` does not exist in ``module.py``
+  the terminal shows an :doc:`/exceptions/AttributeError` because the called attribute ``non_existent_attribute`` does not exist in ``module.py``
 
   .. code-block:: python
 
@@ -114,7 +114,7 @@ I can use this information to test that a particular exception is raised
           module.non_existent_attribute
       module.non_existent_function()
 
-  the terminal shows :doc:`AttributeError` because ``non_existent_function`` does not exist in ``module.py``
+  the terminal shows :doc:`/exceptions/AttributeError` because ``non_existent_function`` does not exist in ``module.py``
 
   .. code-block:: python
 
@@ -147,7 +147,7 @@ I can use this information to test that a particular exception is raised
             module.non_existent_function()
         module.NonExistentClass()
 
-  the terminal shows an :doc:`AttributeError`
+  the terminal shows an :doc:`/exceptions/AttributeError`
 
   .. code-block:: python
 
@@ -184,7 +184,7 @@ I can use this information to test that a particular exception is raised
             module.NonExistentClass()
         module.Class.non_existent_attribute
 
-  the terminal shows an :doc:`AttributeError`
+  the terminal shows an :doc:`/exceptions/AttributeError`
 
   .. code-block:: python
 
@@ -225,7 +225,7 @@ I can use this information to test that a particular exception is raised
             module.Class.non_existent_attribute
         module.Class.non_existent_method()
 
-  the terminal shows another :doc:`AttributeError`
+  the terminal shows another :doc:`/exceptions/AttributeError`
 
   .. code-block:: python
 
@@ -253,7 +253,7 @@ I can use this information to test that a particular exception is raised
 
 * REFACTOR: make it better
 
-  I just created the same context 5 times, this is a good candidate for a rewrite. The ``self.assertRaises`` catches an :doc:`AttributeError` in each case, I only need to state it once and place all the lines that raise the error underneath it.
+  I just created the same context 5 times, this is a good candidate for a rewrite. The ``self.assertRaises`` catches an :doc:`/exceptions/AttributeError` in each case, I only need to state it once and place all the lines that raise the error underneath it.
 
   .. code-block:: python
 
@@ -311,14 +311,14 @@ GREEN: make it pass
 
   the terminal shows a :doc:`ModuleNotFoundError`
 
-* I create a file called ``exceptions.py`` in the ``{PROJECT_NAME}`` folder, and the terminal shows an :doc:`AttributeError`
+* I create a file called ``exceptions.py`` in the ``{PROJECT_NAME}`` folder, and the terminal shows an :doc:`/exceptions/AttributeError`
 * I add a name for the attribute called in the test to ``exceptions.py`` and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ since I have not defined ``raises_exception_error`` in ``exceptions.py``
 
   .. code-block:: python
 
     raises_exception_error
 
-* I assign ``raises_exception_error`` a value and the terminal shows a :doc:`TypeError`
+* I assign ``raises_exception_error`` a value and the terminal shows a :doc:`/exceptions/TypeError`
 
   .. code-block:: python
 
@@ -389,7 +389,7 @@ Let us add exception handling to the program so it does not end when it encounte
             'failed'
         )
 
-  the terminal shows an :doc:`AttributeError`
+  the terminal shows an :doc:`/exceptions/AttributeError`
 
 * GREEN: make it pass
 
@@ -399,13 +399,13 @@ Let us add exception handling to the program so it does not end when it encounte
 
     exception_handler
 
-  I define ``exception_handler`` and the terminal displays a :doc:`TypeError`
+  I define ``exception_handler`` and the terminal displays a :doc:`/exceptions/TypeError`
 
   .. code-block:: python
 
     exception_handler = None
 
-  when I change ``exception_handler`` to a function the terminal displays a :doc:`TypeError` with a different message
+  when I change ``exception_handler`` to a function the terminal displays a :doc:`/exceptions/TypeError` with a different message
 
   .. code-block:: python
 
@@ -419,7 +419,7 @@ Let us add exception handling to the program so it does not end when it encounte
     def exception_handler(argument):
         return None
 
-  the terminal shows an :doc:`/AssertionError` because the result of calling ``exceptions.exception_handler`` with ``exceptions.raises_exception_error`` as the input is currently :doc:`None <data_structures_none>` which is not equal to ``failed``
+  the terminal shows an :doc:`/exceptions/AssertionError` because the result of calling ``exceptions.exception_handler`` with ``exceptions.raises_exception_error`` as the input is currently :doc:`None <data_structures_none>` which is not equal to ``failed``
 
   .. code-block:: python
 
@@ -448,7 +448,7 @@ Let us add exception handling to the program so it does not end when it encounte
             'succeeded'
         )
 
-  the terminal shows an :doc:`AttributeError`
+  the terminal shows an :doc:`/exceptions/AttributeError`
 
 * GREEN: make it pass
 
@@ -464,7 +464,7 @@ Let us add exception handling to the program so it does not end when it encounte
 
       does_not_raise_exception_error = None
 
-    and the terminal shows an :doc:`/AssertionError` because the value returned by ``exceptions.exception_handler`` when given ``exceptions.does_not_raise_exception_error`` as input is ``failed`` which is not equal to ``succeeded``
+    and the terminal shows an :doc:`/exceptions/AssertionError` because the value returned by ``exceptions.exception_handler`` when given ``exceptions.does_not_raise_exception_error`` as input is ``failed`` which is not equal to ``succeeded``
 
     .. code-block::
 
@@ -479,7 +479,7 @@ Let us add exception handling to the program so it does not end when it encounte
       def exception_handler(function):
           return function()
 
-    the terminal shows a :doc:`TypeError` because ``does_not_raise_exception_error`` is not a function
+    the terminal shows a :doc:`/exceptions/TypeError` because ``does_not_raise_exception_error`` is not a function
 
   - I change ``does_not_raise_exception_error`` to make it callable
 
@@ -546,7 +546,7 @@ I add a failing test to ``test_exception_handling.py``
           "always_returns_this"
       )
 
-the terminal shows an :doc:`AttributeError`
+the terminal shows an :doc:`/exceptions/AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -557,13 +557,13 @@ GREEN: make it pass
 
     always_returns
 
-* I assign the name to :doc:`None </data_structures_none>` and get an :doc:`AttributeError`
+* I assign the name to :doc:`None </data_structures/data_structures_none>` and get an :doc:`/exceptions/AttributeError`
 
   .. code-block:: python
 
     always_returns = None
 
-* I redefine ``always_returns`` as a function and the terminal displays a :doc:`TypeError`
+* I redefine ``always_returns`` as a function and the terminal displays a :doc:`/exceptions/TypeError`
 
   .. code-block:: python
 
@@ -597,7 +597,7 @@ GREEN: make it pass
         else:
             return 'succeeded'
 
-  the terminal displays an :doc:`/AssertionError` since no exception is raised when ``does_not_raise_exception_error`` is called by ``always_returns_this``, it returns ``succeeded`` which is not equal to ``always_returns_this``
+  the terminal displays an :doc:`/exceptions/AssertionError` since no exception is raised when ``does_not_raise_exception_error`` is called by ``always_returns_this``, it returns ``succeeded`` which is not equal to ``always_returns_this``
 
 * I can try adding another return statement to the function to see if that would work
 
@@ -651,7 +651,7 @@ GREEN: make it pass
         )
 
 
-* ``always_returns`` could have been defined as a ``singleton`` :doc:`function <functions>` and the tests would still pass, but that would not illustrate how to use ``try...except...else...finally``
+* ``always_returns`` could have been defined as a ``singleton`` :doc:`function </functions/functions>` and the tests would still pass, but that would not illustrate how to use ``try...except...else...finally``
 
   .. code-block:: python
 

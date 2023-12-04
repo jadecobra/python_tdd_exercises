@@ -18,7 +18,7 @@ I add a test for material non-implication to ``TestBinaryOperations`` in ``test_
         self.assertFalse(truth_table.material_non_implication(False, True))
         self.assertFalse(truth_table.material_non_implication(False, False))
 
-the terminal shows an :doc:`AttributeError`
+the terminal shows an :doc:`/exceptions/AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -31,7 +31,7 @@ GREEN: make it pass
     def material_non_implication(p, q):
         return False
 
-  the terminal shows an :doc:`/AssertionError` for the second case
+  the terminal shows an :doc:`/exceptions/AssertionError` for the second case
 * I add a condition for it
 
   .. code-block:: python
@@ -78,7 +78,7 @@ REFACTOR: make it better
 
   and I am still green
 
-From the tests I can see that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures_booleans>` or :doc:`False </data_structures_booleans>`
+From the tests I can see that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures/data_structures_booleans>` or :doc:`False </data_structures/data_structures_booleans>`
 
 
 * ``material non implication`` is ``p and not q``
@@ -92,7 +92,7 @@ From the tests I can see that for any boolean operation involving 2 inputs: ``p`
 * ``logical conjunction`` is ``and``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
-* :doc:`False </data_structures_booleans>` is ``not True``
-* :doc:`True </data_structures_booleans>` is ``not False``
-* :doc:`False </data_structures_booleans>` is :doc:`False </data_structures_booleans>`
-* :doc:`True </data_structures_booleans>` is :doc:`True </data_structures_booleans>`
+* :doc:`False </data_structures/data_structures_booleans>` is ``not True``
+* :doc:`True </data_structures/data_structures_booleans>` is ``not False``
+* :doc:`False </data_structures/data_structures_booleans>` is :doc:`False </data_structures/data_structures_booleans>`
+* :doc:`True </data_structures/data_structures_booleans>` is :doc:`True </data_structures/data_structures_booleans>`

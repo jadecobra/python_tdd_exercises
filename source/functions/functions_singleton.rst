@@ -14,7 +14,7 @@ I add a test to ``test_functions.py``
     def test_singleton_function(self):
         self.assertEqual(functions.singleton(), 'my_first_name')
 
-the terminal shows an :doc:`AttributeError`
+the terminal shows an :doc:`/exceptions/AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -46,7 +46,7 @@ I add a new test that checks if a singleton that accepts inputs returns the same
               'joe'
           )
 
-  the terminal shows an :doc:`AttributeError`
+  the terminal shows an :doc:`/exceptions/AttributeError`
 * and I add a function for ``singleton_with_inputs`` to ``functions.py`` to make the test pass
 
   .. code-block:: python
@@ -58,7 +58,7 @@ From the tests I know
 
 * that singleton functions return the same thing every time they are called
 * that positional arguments are represented as `tuples <https://docs.python.org/3/library/stdtypes.html#tuple>`_ with parentheses - ``()``
-* that keyword arguments are represented as :doc:`dictionaries </data_structures_dictionaries>`  with curly braces - ``{}``
+* that keyword arguments are represented as :doc:`dictionaries </data_structures/data_structures_dictionaries>`  with curly braces - ``{}``
 * how to write functions in python that can take in any number of positional or keyword arguments as inputs
 * I can use ``*name`` to represent any number of positional arguments
 * I can use ``**name`` to represent any number of keyword arguments

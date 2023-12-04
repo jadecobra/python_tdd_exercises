@@ -29,7 +29,7 @@ I create a file called ``test_lists.py`` in the ``tests`` folder with the follow
       def test_creating_a_list_with_the_list_keyword(self):
           self.assertEqual(list(0, 1, 2, 3), [])
 
-the terminal shows a :doc:`TypeError` and I add it to the list of exceptions encountered
+the terminal shows a :doc:`/exceptions/TypeError` and I add it to the list of exceptions encountered
 
 .. code-block:: python
 
@@ -49,7 +49,7 @@ GREEN: make it pass
     def test_creating_a_list_with_the_list_keyword(self):
         self.assertEqual(list((0, 1, 2, 3)), [])
 
-  the terminal shows an :doc:`/AssertionError`
+  the terminal shows an :doc:`/exceptions/AssertionError`
 
   .. code-block:: python
 
@@ -101,7 +101,7 @@ I add a test to ``TestLists`` in ``test_lists.py`` to test adding items to an ex
         a_list.append(4)
         self.assertEqual(a_list, [0, 1, 2, 3])
 
-the terminal shows an :doc:`/AssertionError` because after I call ``a_list.append(5)``, the values in ``a_list`` change
+the terminal shows an :doc:`/exceptions/AssertionError` because after I call ``a_list.append(5)``, the values in ``a_list`` change
 
   .. code-block:: python
 
@@ -197,7 +197,7 @@ What if there was more than one of the same element in the list? how does python
           a_list.remove(2)
           self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
 
-  the terminal shows an :doc:`/AssertionError`
+  the terminal shows an :doc:`/exceptions/AssertionError`
 * and I change the values on the right to match the expectation
 
   .. code-block:: python
@@ -233,7 +233,7 @@ I add a test to ``TestLists`` in ``test_lists.py`` to test removing the last ite
 * I define ``a list`` with 4 elements and confirm the values, then call the ``pop`` method
 * I check the value that gets popped and check the list to see what values remain after calling ``pop``
 
-the terminal shows an :doc:`/AssertionError` for the test that checks the value of the popped item
+the terminal shows an :doc:`/exceptions/AssertionError` for the test that checks the value of the popped item
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -249,7 +249,7 @@ GREEN: make it pass
         self.assertEqual(last_item, 3)
         self.assertEqual(a_list, [0, 1, 2, 3])
 
-  the terminal shows an :doc:`/AssertionError` for the values of ``a_list`` after the last item is popped
+  the terminal shows an :doc:`/exceptions/AssertionError` for the values of ``a_list`` after the last item is popped
 * and I change the values in the ``self.assertEqual`` to make the tests pass
 
   .. code-block:: python
@@ -288,7 +288,7 @@ I add a failing test for indexing a list
         self.assertEqual(a_list[-2], '')
         self.assertEqual(a_list[-4], '')
 
-the terminal shows an :doc:`/AssertionError`
+the terminal shows an :doc:`/exceptions/AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -310,7 +310,7 @@ GREEN: make it pass
         self.assertEqual(a_list[-2], '')
         self.assertEqual(a_list[-4], '')
 
-  the terminal shows an :doc:`/AssertionError` for the next test
+  the terminal shows an :doc:`/exceptions/AssertionError` for the next test
 * and I change the value to match the expectation
 
   .. code-block:: python
@@ -370,7 +370,7 @@ GREEN: make it pass
 
 ----
 
-How to view attributes and :doc:`methods <functions>` of a list
+How to view attributes and :doc:`methods </functions/functions>` of a list
 ----------------------------------------------------------------
 
 In :doc:`class </classes>` I cover how to view the ``attributes`` and ``methods`` of an object. Let us look at the same for ``lists``
@@ -389,7 +389,7 @@ I add a failing test
             []
         )
 
-* the terminal shows an :doc:`/AssertionError`
+* the terminal shows an :doc:`/exceptions/AssertionError`
 * ``maxDiff`` is an attribute of the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`class </classes>` that sets the maximum amount of characters to show in the comparison between the two objects that is displayed in the terminal. When it is set to :doc:`None <data_structures_none>` there is no limit to the number of characters
 
 GREEN: make it pass
@@ -459,7 +459,7 @@ all the tests are passing again
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-There are more :doc:`methods <functions>` listed than what I have reviewed. Based on their names, I can make a guess as to what they do, and I know some from the tests above
+There are more :doc:`methods </functions/functions>` listed than what I have reviewed. Based on their names, I can make a guess as to what they do, and I know some from the tests above
 
 * append - adds an item to the list
 * clear - does this clear the items in the list?
@@ -473,4 +473,4 @@ There are more :doc:`methods <functions>` listed than what I have reviewed. Base
 * reverse - does this reverse the list?
 * sort - does this sort the elements in the list?
 
-You can add tests for these :doc:`methods <functions>` to find out what they do or `read more about lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list%20remove#more-on-lists>`_
+You can add tests for these :doc:`methods </functions/functions>` to find out what they do or `read more about lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list%20remove#more-on-lists>`_

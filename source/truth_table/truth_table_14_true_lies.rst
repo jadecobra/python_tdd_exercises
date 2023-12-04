@@ -22,7 +22,7 @@ I add a test for tautology to ``TestBinaryOperations`` in ``test_truth_table.py`
         self.assertTrue(truth_table.tautology(False, True))
         self.assertTrue(truth_table.tautology(False, False))
 
-the terminal shows an :doc:`AttributeError`
+the terminal shows an :doc:`/exceptions/AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -35,7 +35,7 @@ GREEN: make it pass
     def tautology(p, q):
         return False
 
-  the terminal displays an :doc:`/AssertionError` for the first case
+  the terminal displays an :doc:`/exceptions/AssertionError` for the first case
 * I replace the return value
 
   .. code-block:: python
@@ -62,7 +62,7 @@ I add a test for contradiction to ``TestBinaryOperations``
         self.assertFalse(truth_table.contradiction(False, True))
         self.assertFalse(truth_table.contradiction(False, False))
 
-the terminal shows an :doc:`AttributeError`
+the terminal shows an :doc:`/exceptions/AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -74,7 +74,7 @@ GREEN: make it pass
     def contradiction(p, q):
         return True
 
-  the terminal shows an :doc:`/AssertionError` for the first case
+  the terminal shows an :doc:`/exceptions/AssertionError` for the first case
 * When I change the return value, the test passes
 
   .. code-block:: python
@@ -84,13 +84,13 @@ GREEN: make it pass
 
 ----
 
-*YOU DID IT!* You made it to the end of the ``Truth Table`` series. Summarizing what the tests have shown so far, I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures_booleans>` or :doc:`False </data_structures_booleans>`
+*YOU DID IT!* You made it to the end of the ``Truth Table`` series. Summarizing what the tests have shown so far, I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures/data_structures_booleans>` or :doc:`False </data_structures/data_structures_booleans>`
 
 
-* ``contradition`` always returns :doc:`False </data_structures_booleans>` it is a :doc:`singleton function </functions_singleton>`
-* ``tautology`` always returns :doc:`True </data_structures_booleans>` it is a :doc:`singleton function </functions_singleton>`
+* ``contradition`` always returns :doc:`False </data_structures/data_structures_booleans>` it is a :doc:`singleton function </functions_singleton>`
+* ``tautology`` always returns :doc:`True </data_structures/data_structures_booleans>` it is a :doc:`singleton function </functions_singleton>`
 * ``converse implication`` is ``not p and q`` which is different from ``not(p and q)``
-* ``project second`` always returns ``q`` 
+* ``project second`` always returns ``q``
 * ``project first`` always returns ``p``
 * ``negate second`` always returns ``not q``
 * ``negate first`` always return ``not p``
@@ -105,7 +105,7 @@ GREEN: make it pass
 * ``logical conjunction`` is ``and``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
-* :doc:`False </data_structures_booleans>` is ``not True``
-* :doc:`True </data_structures_booleans>` is ``not False``
-* :doc:`False </data_structures_booleans>` is :doc:`False </data_structures_booleans>`
-* :doc:`True </data_structures_booleans>` is :doc:`True </data_structures_booleans>`
+* :doc:`False </data_structures/data_structures_booleans>` is ``not True``
+* :doc:`True </data_structures/data_structures_booleans>` is ``not False``
+* :doc:`False </data_structures/data_structures_booleans>` is :doc:`False </data_structures/data_structures_booleans>`
+* :doc:`True </data_structures/data_structures_booleans>` is :doc:`True </data_structures/data_structures_booleans>`

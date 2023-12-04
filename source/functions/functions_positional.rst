@@ -19,7 +19,7 @@ I add a new test to ``test_functions.py``
             ('my_first_name', 'my_last_name')
         )
 
-the terminal shows an :doc:`AttributeError`
+the terminal shows an :doc:`/exceptions/AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -31,7 +31,7 @@ GREEN: make it pass
     def passthrough_with_positional_arguments(input_data):
         return input_data
 
-  the terminal shows a :doc:`TypeError`
+  the terminal shows a :doc:`/exceptions/TypeError`
 * I change the signature of ``passthrough_with_positional_arguments`` to take in more than one argument
 
   .. code-block:: python
@@ -41,7 +41,7 @@ GREEN: make it pass
     ):
         return input_data
 
-  the terminal shows an :doc:`/AssertionError`
+  the terminal shows an :doc:`/exceptions/AssertionError`
 * I change ``passthrough_with_positional_arguments`` to return the two arguments it receives
 
   .. code-block:: python
@@ -88,7 +88,7 @@ How can I make this better?
               ('my_first_name', 'my_last_name')
           )
 
-  the terminal shows an :doc:`/AssertionError`
+  the terminal shows an :doc:`/exceptions/AssertionError`
 * I change the test so it has the correct output
 
   .. code-block:: python
@@ -139,7 +139,7 @@ How can I make this better?
               (bool, int, float, str, tuple, list, set, dict)
           )
 
-  the terminal shows a :doc:`TypeError` because 2 positional arguments were expected by the function but 4 were given
+  the terminal shows a :doc:`/exceptions/TypeError` because 2 positional arguments were expected by the function but 4 were given
 * In python I can represent multiple arguments using a starred expression `see arbitrary argument lists <https://docs.python.org/3/tutorial/controlflow.html#arbitrary-argument-lists>`_, so I change the signature of ``functions_with_positional_arguments`` with a starred expression to alow it take in any number of arguments
 
   .. code-block:: python

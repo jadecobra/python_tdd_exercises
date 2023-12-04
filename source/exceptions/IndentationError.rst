@@ -254,7 +254,7 @@ GREEN: make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Indentation matters in python because it is how blocks of code are segmented. When a :doc:`function <functions>` is defined, all the statements that belong to it are indented, same with a :doc:`class <classes>`, all the :doc:`methods <functions>` and attributes that belong to it are indented underneath the definition
+Indentation matters in python because it is how blocks of code are segmented. When a :doc:`function </functions/functions>` is defined, all the statements that belong to it are indented, same with a :doc:`class </classes/classes>`, all the :doc:`methods </functions/functions>` and attributes that belong to it are indented underneath the definition
 
 This helps with reading the code so I can tell what belongs to a namespace the same way curly braces do for languages that use them for that purpose.
 

@@ -18,7 +18,7 @@ RED: make it fail
     def test_classes_with_attributes(self):
         self.assertEqual(classes.ClassWithAttributes.a_boolean, bool)
 
-  the terminal responds with an :doc:`AttributeError`
+  the terminal responds with an :doc:`/exceptions/AttributeError`
 
 * I add a class definition to ``classes.py``
 
@@ -29,7 +29,7 @@ RED: make it fail
 
         pass
 
-  the terminal shows an :doc:`AttributeError` for a missing attribute in the newly defined class
+  the terminal shows an :doc:`/exceptions/AttributeError` for a missing attribute in the newly defined class
 
 
 GREEN: make it pass
@@ -55,7 +55,7 @@ GREEN: make it pass
 
         a_boolean = None
 
-  the terminal shows an :doc:`/AssertionError`
+  the terminal shows an :doc:`/exceptions/AssertionError`
 
 * I redefine the attribute to make the test pass
 
@@ -85,7 +85,7 @@ Let us add more tests with the other python data structures to ``test_classes_wi
       self.assertEqual(classes.ClassWithAttributes.a_set, set)
       self.assertEqual(classes.ClassWithAttributes.a_dictionary, dict)
 
-the terminal shows an :doc:`AttributeError`
+the terminal shows an :doc:`/exceptions/AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -111,7 +111,7 @@ and the terminal shows all tests pass
 How to define a class with methods
 ----------------------------------
 
-I can also define classes with :doc:`methods <functions>` which are function definitions that belong to the class
+I can also define classes with :doc:`methods </functions/functions>` which are function definitions that belong to the class
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -126,7 +126,7 @@ I add some tests for class methods to ``TestClasses`` in ``classes.py``
           'You called MethodA'
       )
 
-and the terminal shows :doc:`AttributeError`
+and the terminal shows :doc:`/exceptions/AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -141,7 +141,7 @@ GREEN: make it pass
 
         pass
 
-  the terminal now gives an :doc:`AttributeError` with a different error
+  the terminal now gives an :doc:`/exceptions/AttributeError` with a different error
 
 
 * When I add the missing attribute to the ``ClassWithMethods`` class
@@ -165,9 +165,9 @@ GREEN: make it pass
 
         method_a = None
 
-  the terminal shows a :doc:`TypeError` since ``method_a`` refers to :doc:`None <data_structures_none>` which is not callable
+  the terminal shows a :doc:`/exceptions/TypeError` since ``method_a`` refers to :doc:`None <data_structures_none>` which is not callable
 
-* I change the definition of ``method_a`` to make it a :doc:`function <functions>` which makes it callable
+* I change the definition of ``method_a`` to make it a :doc:`function </functions/functions>` which makes it callable
 
   .. code-block:: python
 
@@ -177,7 +177,7 @@ GREEN: make it pass
         def method_a():
             return None
 
-  and the terminal shows an :doc:`/AssertionError`. Progress!
+  and the terminal shows an :doc:`/exceptions/AssertionError`. Progress!
 
 
 * I then change the value that ``method_a`` returns to match the expectation of the test
@@ -215,7 +215,7 @@ REFACTOR: make it better
             'You called MethodD'
         )
 
-  the terminal shows an :doc:`AttributeError`
+  the terminal shows an :doc:`/exceptions/AttributeError`
 
 * and I change ``ClassWithMethods`` in ``classes.py`` until all tests pass
 
@@ -243,7 +243,7 @@ I add another test for a class that has both attributes and methods
           'you called a method'
       )
 
-the terminal responds with an :doc:`AttributeError`
+the terminal responds with an :doc:`/exceptions/AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -267,7 +267,7 @@ How to View the attributes and methods of a class
 
 To view what ``attributes`` and ``methods`` are defined for any `object <https://docs.python.org/3/glossary.html#term-object>`_ I can call ``dir`` on the `object <https://docs.python.org/3/glossary.html#term-object>`_.
 
-The ``dir`` :doc:`method <functions>` returns a :doc:`list <data_structures_lists>` of all attributes and :doc:`methods <functions>` of the object provided to it as input
+The ``dir`` :doc:`method </functions/functions>` returns a :doc:`list <data_structures_lists>` of all attributes and :doc:`methods </functions/functions>` of the object provided to it as input
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -282,7 +282,7 @@ I add a test to ``test_classes.py``
         []
     )
 
-the terminal shows an :doc:`/AssertionError` as the expected and real values do not match
+the terminal shows an :doc:`/exceptions/AssertionError` as the expected and real values do not match
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -331,8 +331,8 @@ and it passes, the last two values in the list are ``attribute`` and ``method`` 
 CONGRATULATIONS! If you made it this far and typed along with me, You know
 
 * how to define a class with an attribute
-* how to define a class with a :doc:`method <functions>`
+* how to define a class with a :doc:`method </functions/functions>`
 * how to define a class with an initializer
-* how to view the attributes and :doc:`methods <functions>` of a class
+* how to view the attributes and :doc:`methods </functions/functions>` of a class
 
 Do you want to `read more about classes? <https://docs.python.org/3/tutorial/classes.html#tut-firstclasses>`_

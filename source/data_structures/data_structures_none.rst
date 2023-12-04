@@ -22,7 +22,7 @@ I create a file called ``test_data_structures.py`` in the ``tests`` folder
       def test_none_is_none(self):
           self.assertIsNotNone(None)
 
-the terminal shows an :doc:`/AssertionError`
+the terminal shows an :doc:`/exceptions/AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -47,7 +47,7 @@ Is None a boolean?
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add a new test to compare `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ with :doc:`booleans </data_structures_booleans>`
+I add a new test to compare `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ with :doc:`booleans </data_structures/data_structures_booleans>`
 
 .. code-block:: python
 
@@ -55,7 +55,7 @@ I add a new test to compare `None <https://docs.python.org/3/library/constants.h
         self.assertIsNone(True)
         self.assertIsNone(False)
 
-the terminal shows an :doc:`/AssertionError`
+the terminal shows an :doc:`/exceptions/AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -70,14 +70,14 @@ I change ``test_is_none_a_boolean`` to make the tests pass
 
 From the tests I can see that
 
-* :doc:`False </data_structures_booleans>` is not `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
-* :doc:`True </data_structures_booleans>` is not `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
+* :doc:`False </data_structures/data_structures_booleans>` is not `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
+* :doc:`True </data_structures/data_structures_booleans>` is not `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-:doc:`booleans </data_structures_booleans>` are instances of the `bool <https://docs.python.org/3/library/functions.html#bool>`_ :doc:`class </classes?>` in python so I can do an instance test using another `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`method <functions>` to check if an `object <https://docs.python.org/3/glossary.html#term-object>`_ is an instance of the `bool <https://docs.python.org/3/library/functions.html#bool>`_ :doc:`class </classes>`
+:doc:`booleans </data_structures/data_structures_booleans>` are instances of the `bool <https://docs.python.org/3/library/functions.html#bool>`_ :doc:`class </classes?>` in python so I can do an instance test using another `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`method </functions/functions>` to check if an `object <https://docs.python.org/3/glossary.html#term-object>`_ is an instance of the `bool <https://docs.python.org/3/library/functions.html#bool>`_ :doc:`class </classes>`
 
 
 * RED: make it fail
@@ -91,7 +91,7 @@ REFACTOR: make it better
           self.assertIsNotNone(False)
           self.assertIsInstance(None, bool)
 
-  I now see an :doc:`/AssertionError` in the terminal because `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an instance of a :doc:`boolean </data_structures_booleans>`
+  I now see an :doc:`/exceptions/AssertionError` in the terminal because `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an instance of a :doc:`boolean </data_structures/data_structures_booleans>`
 
   .. code-block:: python
 
@@ -108,12 +108,12 @@ REFACTOR: make it better
           self.assertIsNotNone(False)
           self.assertNotIsInstance(None, bool)
 
-* I can summarize what I know about `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ from the tests as - it is not a :doc:`boolean </data_structures_booleans>` and it is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
+* I can summarize what I know about `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ from the tests as - it is not a :doc:`boolean </data_structures/data_structures_booleans>` and it is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-I want to know if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is equal to any of the other data types in python, i.e. `int <https://docs.python.org/3/library/functions.html#int>`_, `float <https://docs.python.org/3/library/functions.html#float>`_, `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_, `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_, :doc:`list </data_structures_lists>`, `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ or :doc:`dict </data_structures_dictionaries>`
+I want to know if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is equal to any of the other data types in python, i.e. `int <https://docs.python.org/3/library/functions.html#int>`_, `float <https://docs.python.org/3/library/functions.html#float>`_, `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_, `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_, :doc:`list </data_structures/data_structures_lists>`, `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ or :doc:`dict </data_structures/data_structures_dictionaries>`
 
 Is None an integer?
 -------------------
@@ -130,7 +130,7 @@ I add a new test to compare `None <https://docs.python.org/3/library/constants.h
       self.assertIsNone(0)
       self.assertIsNone(1)
 
-the terminal shows an :doc:`/AssertionError`
+the terminal shows an :doc:`/exceptions/AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -147,7 +147,7 @@ I change ``test_is_none_an_integer`` to make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-`integers <https://docs.python.org/3/library/functions.html#int>`_ are represented by the class `int <https://docs.python.org/3/library/functions.html#int>`_ in python so I can do an instance test like I did with :doc:`booleans </data_structures_booleans>`
+`integers <https://docs.python.org/3/library/functions.html#int>`_ are represented by the class `int <https://docs.python.org/3/library/functions.html#int>`_ in python so I can do an instance test like I did with :doc:`booleans </data_structures/data_structures_booleans>`
 
 
 * RED: make it fail
@@ -162,7 +162,7 @@ REFACTOR: make it better
         self.assertIsNotNone(1)
         self.assertIsInstance(None, int)
 
-  an :doc:`/AssertionError` is displayed in the terminal because `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an instance of `int <https://docs.python.org/3/library/functions.html#int>`_
+  an :doc:`/exceptions/AssertionError` is displayed in the terminal because `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an instance of `int <https://docs.python.org/3/library/functions.html#int>`_
 
   .. code-block:: python
 
@@ -183,7 +183,7 @@ REFACTOR: make it better
 * summarizing what I know about `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ so far from the tests
 
   * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an integer
-  * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures_booleans>`
+  * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures/data_structures_booleans>`
   * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
 Is None a string?
@@ -209,7 +209,7 @@ I add a new failing test to ``test_data_structures.py`` to compare `None <https:
       self.assertIsNone('')
       self.assertIsNone("text")
 
-and the terminal shows an :doc:`/AssertionError`
+and the terminal shows an :doc:`/exceptions/AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -254,7 +254,7 @@ REFACTOR: make it better
 
   * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a string
   * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an integer
-  * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures_booleans>`
+  * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures/data_structures_booleans>`
   * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
 Is None a tuple?
@@ -272,7 +272,7 @@ I add a new test to ``test_data_structures.py``
         self.assertIsNone((1, 2, 3, 'n'))
         self.assertIsInstance(None, tuple)
 
-the terminal shows an :doc:`/AssertionError`
+the terminal shows an :doc:`/exceptions/AssertionError`
 
 .. code-block:: python
 
@@ -291,7 +291,7 @@ GREEN: make it pass
     def test_is_none_a_tuple(self):
         self.assertIsNotNone(())
 
-  and the terminal displays an :doc:`/AssertionError` for the second line
+  and the terminal displays an :doc:`/exceptions/AssertionError` for the second line
 
   .. code-block:: python
 
@@ -306,7 +306,7 @@ GREEN: make it pass
         self.assertIsNotNone(())
         self.assertIsNotNone((1, 2, 3, 'n'))
 
-  the terminal now shows another :doc:`/AssertionError` for the next line in the test but with a different message
+  the terminal now shows another :doc:`/exceptions/AssertionError` for the next line in the test but with a different message
 
   .. code-block:: python
 
@@ -326,7 +326,7 @@ GREEN: make it pass
   * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_
   * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
   * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an `integer <https://docs.python.org/3/library/functions.html#int>`_
-  * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures_booleans>`
+  * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures/data_structures_booleans>`
   * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
 REFACTOR: make it better
@@ -349,7 +349,7 @@ I add a new test to the series of tests
       self.assertIsNone([1, 2, 3, "n"])
       self.assertIsInstance(None, list)
 
-the terminal shows an :doc:`/AssertionError`
+the terminal shows an :doc:`/exceptions/AssertionError`
 
 .. code-block:: python
 
@@ -365,11 +365,11 @@ GREEN: make it pass
 I have done this dance a few times now so I can change ``test_is_none_a_list`` to make it pass. With the passing tests the knowledge of `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is changed to
 
 
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`list </data_structures_lists>`
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`list </data_structures/data_structures_lists>`
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an `integer <https://docs.python.org/3/library/functions.html#int>`_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures_booleans>`
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures/data_structures_booleans>`
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
 Is None a set?
@@ -387,7 +387,7 @@ following the same pattern from earlier, I add a new failing test, this time for
       self.assertIsNone({1, 2, 3, "n"})
       self.assertIsInstance(None, set)
 
-the terminal shows an :doc:`/AssertionError`
+the terminal shows an :doc:`/exceptions/AssertionError`
 
 .. code-block:: python
 
@@ -403,11 +403,11 @@ I change the tests to make them pass and I can change the knowledge of `None <ht
 
 
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`list </data_structures_lists>`
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`list </data_structures/data_structures_lists>`
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an `integer <https://docs.python.org/3/library/functions.html#int>`_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures_booleans>`
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures/data_structures_booleans>`
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
 Is None a dictionary?
@@ -430,16 +430,16 @@ I add a new test
       })
       self.assertIsInstance(None, dict)
 
-the terminal displays an :doc:`/AssertionError`
+the terminal displays an :doc:`/exceptions/AssertionError`
 
 .. code-block:: python
 
   AssertionError: {} is not None
 
 
-* ``dict()`` is one way to create an empty :doc:`dictionary </data_structures_dictionaries>` in python
-* ``{}`` is how :doc:`dictionaries </data_structures_dictionaries>`  are represented in python. Wait a minute! sets are also represented with ``{}``, the difference is that dictionaries contain key/value pairs
-* Do you want to :doc:`read more about dictionaries </data_structures_dictionaries>`
+* ``dict()`` is one way to create an empty :doc:`dictionary </data_structures/data_structures_dictionaries>` in python
+* ``{}`` is how :doc:`dictionaries </data_structures/data_structures_dictionaries>`  are represented in python. Wait a minute! sets are also represented with ``{}``, the difference is that dictionaries contain key/value pairs
+* Do you want to :doc:`read more about dictionaries </data_structures/data_structures_dictionaries>`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -447,11 +447,11 @@ GREEN: make it pass
 I change the tests to make them pass and can state from the tests that
 
 
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`dictionary </data_structures_dictionaries>`
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`dictionary </data_structures/data_structures_dictionaries>`
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`list </data_structures_lists>`
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`list </data_structures/data_structures_lists>`
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an `integer <https://docs.python.org/3/library/functions.html#int>`_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures_booleans>`
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures/data_structures_booleans>`
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_

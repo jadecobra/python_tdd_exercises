@@ -4,18 +4,18 @@ Truth Table: Logical Equality
 
 The journey of conditional statements using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_ continues with Logical Equality
 
-So far the tests have shown that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures_booleans>` or :doc:`False </data_structures_booleans>`
+So far the tests have shown that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures/data_structures_booleans>` or :doc:`False </data_structures/data_structures_booleans>`
 
 * ``logical implication`` is ``not p or q``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
 * ``logical disjunction`` is ``or``
 * ``logical conjunction`` is ``and``
-* :doc:`False </data_structures_booleans>` is ``not True``
-* :doc:`True </data_structures_booleans>` is ``not False``
-* :doc:`False </data_structures_booleans>` is :doc:`False </data_structures_booleans>`
-* :doc:`True </data_structures_booleans>` is :doc:`True </data_structures_booleans>`
-* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :doc:`True </data_structures_booleans>`
+* :doc:`False </data_structures/data_structures_booleans>` is ``not True``
+* :doc:`True </data_structures/data_structures_booleans>` is ``not False``
+* :doc:`False </data_structures/data_structures_booleans>` is :doc:`False </data_structures/data_structures_booleans>`
+* :doc:`True </data_structures/data_structures_booleans>` is :doc:`True </data_structures/data_structures_booleans>`
+* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :doc:`True </data_structures/data_structures_booleans>`
 * when there are multiple outcomes I only need to write the condition for the special case and use ``else`` for the others
 
 
@@ -32,13 +32,13 @@ I add a test for logical equality to ``TestBinaryOperations`` in ``test_truth_ta
         self.assertFalse(truth_table.logical_equality(False, True))
         self.assertTrue(truth_table.logical_equality(False, False))
 
-and the terminal shows an :doc:`AttributeError`
+and the terminal shows an :doc:`/exceptions/AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* I then add a definition to ``truth_table.py`` with a return statement, I can pick :doc:`True </data_structures_booleans>` or :doc:`False </data_structures_booleans>` since 2 out of the 4 cases are either :doc:`True </data_structures_booleans>` or :doc:`False </data_structures_booleans>`
+* I then add a definition to ``truth_table.py`` with a return statement, I can pick :doc:`True </data_structures/data_structures_booleans>` or :doc:`False </data_structures/data_structures_booleans>` since 2 out of the 4 cases are either :doc:`True </data_structures/data_structures_booleans>` or :doc:`False </data_structures/data_structures_booleans>`
 
   .. code-block:: python
 
@@ -135,7 +135,7 @@ What can I do to make this better?
 
   and the tests are still green
 
-what I know so far from the tests is that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures_booleans>` or :doc:`False </data_structures_booleans>`
+what I know so far from the tests is that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures/data_structures_booleans>` or :doc:`False </data_structures/data_structures_booleans>`
 
 * ``logical equality`` is ``==``
 * ``logical implication`` is ``not p or q``
@@ -143,7 +143,7 @@ what I know so far from the tests is that for any boolean operation involving 2 
 * ``logical conjunction`` is ``and``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
-* :doc:`False </data_structures_booleans>` is ``not True``
-* :doc:`True </data_structures_booleans>` is ``not False``
-* :doc:`False </data_structures_booleans>` is :doc:`False </data_structures_booleans>`
-* :doc:`True </data_structures_booleans>` is :doc:`True </data_structures_booleans>`
+* :doc:`False </data_structures/data_structures_booleans>` is ``not True``
+* :doc:`True </data_structures/data_structures_booleans>` is ``not False``
+* :doc:`False </data_structures/data_structures_booleans>` is :doc:`False </data_structures/data_structures_booleans>`
+* :doc:`True </data_structures/data_structures_booleans>` is :doc:`True </data_structures/data_structures_booleans>`

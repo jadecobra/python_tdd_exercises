@@ -21,7 +21,7 @@ I add a test for project first to ``TestBinaryOperations`` in ``test_truth_table
         self.assertFalse(truth_table.project_first(False, True))
         self.assertFalse(truth_table.project_first(False, False))
 
-the terminal shows an :doc:`AttributeError`
+the terminal shows an :doc:`/exceptions/AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -34,7 +34,7 @@ GREEN: make it pass
     def project_first(p, q):
         return False
 
-  and the terminal shows an :doc:`/AssertionError` for the first case
+  and the terminal shows an :doc:`/exceptions/AssertionError` for the first case
 * I change the return statement
 
   .. code-block:: python
@@ -42,11 +42,11 @@ GREEN: make it pass
     def project_first(p, q):
         return True
 
-  and the :doc:`/AssertionError` is now for the third case
+  and the :doc:`/exceptions/AssertionError` is now for the third case
 * before I add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction``, ``negate_first`` and ``negate_second`` because 2 out of the 4 cases have the same return value. I see that
 
-  * when ``p == True`` the result is :doc:`True </data_structures_booleans>`
-  * when ``p == False`` the result is :doc:`False </data_structures_booleans>`
+  * when ``p == True`` the result is :doc:`True </data_structures/data_structures_booleans>`
+  * when ``p == False`` the result is :doc:`False </data_structures/data_structures_booleans>`
 
 * I add conditions to represent this
 
@@ -105,7 +105,7 @@ I add a test for project second to ``TestBinaryOperations``
         self.assertTrue(truth_table.project_second(False, True))
         self.assertFalse(truth_table.project_second(False, False))
 
-the terminal shows an :doc:`AttributeError`
+the terminal shows an :doc:`/exceptions/AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -118,7 +118,7 @@ GREEN: make it pass
     def project_second(p, q):
         return False
 
-  the terminal shows an :doc:`/AssertionError` for the first case
+  the terminal shows an :doc:`/exceptions/AssertionError` for the first case
 * and I change the return value to make it pass
 
   .. code-block:: python
@@ -126,11 +126,11 @@ GREEN: make it pass
     def project_second(p, q):
         return True
 
-  the terminal displays an :doc:`/AssertionError` for the second case
+  the terminal displays an :doc:`/exceptions/AssertionError` for the second case
 * before I add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction``, ``negate_first``, ``negate_second`` and ``project_first`` because 2 out of the 4 cases have the same return value. I see that
 
-  * when ``q == True`` the result is :doc:`True </data_structures_booleans>`
-  * when ``q == False`` the result is :doc:`False </data_structures_booleans>`
+  * when ``q == True`` the result is :doc:`True </data_structures/data_structures_booleans>`
+  * when ``q == False`` the result is :doc:`False </data_structures/data_structures_booleans>`
 
 * What if I try using the conclusion from ``project_first``?
 
@@ -139,7 +139,7 @@ GREEN: make it pass
     def project_second(p, q):
         return p
 
-  the terminal still shows an :doc:`/AssertionError`
+  the terminal still shows an :doc:`/exceptions/AssertionError`
 * What if I return ``q`` instead?
   .. code-block:: python
 
@@ -150,7 +150,7 @@ GREEN: make it pass
 
 -----
 
-From the tests I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures_booleans>` or :doc:`False </data_structures_booleans>`
+From the tests I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures/data_structures_booleans>` or :doc:`False </data_structures/data_structures_booleans>`
 
 
 * ``project second`` always returns ``q``
@@ -168,7 +168,7 @@ From the tests I know that for any boolean operation involving 2 inputs: ``p`` a
 * ``logical conjunction`` is ``and``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
-* :doc:`False </data_structures_booleans>` is ``not True``
-* :doc:`True </data_structures_booleans>` is ``not False``
-* :doc:`False </data_structures_booleans>` is :doc:`False </data_structures_booleans>`
-* :doc:`True </data_structures_booleans>` is :doc:`True </data_structures_booleans>`
+* :doc:`False </data_structures/data_structures_booleans>` is ``not True``
+* :doc:`True </data_structures/data_structures_booleans>` is ``not False``
+* :doc:`False </data_structures/data_structures_booleans>` is :doc:`False </data_structures/data_structures_booleans>`
+* :doc:`True </data_structures/data_structures_booleans>` is :doc:`True </data_structures/data_structures_booleans>`

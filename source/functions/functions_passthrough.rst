@@ -2,7 +2,7 @@
 functions: passthrough
 ======================
 
-A passthrough :doc:`function <functions>` is one that returns the input it receives as output
+A passthrough :doc:`function </functions/functions>` is one that returns the input it receives as output
 
 
 RED: make it fail
@@ -15,7 +15,7 @@ I add a failing test to the ``TestFunctions`` class in ``test_functions.py``
     def test_passthrough_function(self):
         self.assertEqual(functions.passthrough(False), False)
 
-the terminal shows an :doc:`AttributeError`
+the terminal shows an :doc:`/exceptions/AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -28,7 +28,7 @@ GREEN: make it pass
     def passthrough():
         return None
 
-  the terminal shows a :doc:`TypeError` because the definition for ``passthrough`` does not allow ``inputs`` but the test sends :doc:`False </data_structures_booleans>` as input
+  the terminal shows a :doc:`/exceptions/TypeError` because the definition for ``passthrough`` does not allow ``inputs`` but the test sends :doc:`False </data_structures/data_structures_booleans>` as input
 
   .. code-block:: python
 
@@ -51,13 +51,13 @@ GREEN: make it pass
     def passthrough(input_data):
         return None
 
-  and the terminal shows an :doc:`/AssertionError`
+  and the terminal shows an :doc:`/exceptions/AssertionError`
 
   .. code-block:: python
 
     AssertionError: None != False
 
-  because the result of calling ``functions.passthrough`` with :doc:`False </data_structures_booleans>` as input is :doc:`None <data_structures_none>` which is not equal to the expected result (:doc:`False </data_structures_booleans>`)
+  because the result of calling ``functions.passthrough`` with :doc:`False </data_structures/data_structures_booleans>` as input is :doc:`None <data_structures_none>` which is not equal to the expected result (:doc:`False </data_structures/data_structures_booleans>`)
 
 * I change the definition of ``passthrough`` to make the test pass
 
@@ -71,7 +71,7 @@ GREEN: make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Wait a minute! Something is not quite right here. The definition for a ``passthrough`` function was that it returned the same thing it was given, the test passes when :doc:`False </data_structures_booleans>` is given as input, will it still pass when another value is given or will it always return :doc:`False </data_structures_booleans>`? Time to write a test
+Wait a minute! Something is not quite right here. The definition for a ``passthrough`` function was that it returned the same thing it was given, the test passes when :doc:`False </data_structures/data_structures_booleans>` is given as input, will it still pass when another value is given or will it always return :doc:`False </data_structures/data_structures_booleans>`? Time to write a test
 
 
 * RED: make it fail
@@ -84,13 +84,13 @@ Wait a minute! Something is not quite right here. The definition for a ``passthr
           self.assertEqual(functions.passthrough(False), False)
           self.assertEqual(functions.passthrough(True), True)
 
-  the terminal shows an :doc:`/AssertionError`
+  the terminal shows an :doc:`/exceptions/AssertionError`
 
   .. code-block:: python
 
     AssertionError: False != True
 
-  the function returns :doc:`False </data_structures_booleans>` instead of :doc:`True </data_structures_booleans>` in the second case, confirming my suspicions, I am not all the way genius, yet
+  the function returns :doc:`False </data_structures/data_structures_booleans>` instead of :doc:`True </data_structures/data_structures_booleans>` in the second case, confirming my suspicions, I am not all the way genius, yet
 
 * GREEN: make it pass
 
@@ -120,4 +120,4 @@ Wait a minute! Something is not quite right here. The definition for a ``passthr
           self.assertEqual(functions.passthrough(set), False)
           self.assertEqual(functions.passthrough(dict), False)
 
-  the terminal shows an :doc:`/AssertionError` for each line until I make the input match the output, proving that the passthrough function I have defined returns the input it is given. Hooray! I am genius again
+  the terminal shows an :doc:`/exceptions/AssertionError` for each line until I make the input match the output, proving that the passthrough function I have defined returns the input it is given. Hooray! I am genius again

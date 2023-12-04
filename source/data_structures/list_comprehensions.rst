@@ -32,8 +32,8 @@ I add a file called ``test_list_comprehension.py`` to the ``tests`` folder
 * I create ``collection_a`` which uses the ``range`` object
 * the `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ object creates an ``iterable`` of numbers from 0 to the number I give minus 1
 * I create a list called ``list_a`` that has no elements and confirm it is empty with a ``self.assertEqual(list_a, [])``
-* then I create a loop using the ``for`` keyword, that goes over every element of ``collection_a`` and adds it to ``list_a`` using the ``append`` :doc:`method <functions>`, you can read :doc:`/data_structures_lists` if you want to know more
-* the terminal shows an :doc:`/AssertionError` for the test that checks the elements of ``list_a`` after the loop ran, because the list is no longer empty, it now contains 10 elements
+* then I create a loop using the ``for`` keyword, that goes over every element of ``collection_a`` and adds it to ``list_a`` using the ``append`` :doc:`method </functions/functions>`, you can read :doc:`/data_structures_lists` if you want to know more
+* the terminal shows an :doc:`/exceptions/AssertionError` for the test that checks the elements of ``list_a`` after the loop ran, because the list is no longer empty, it now contains 10 elements
 
   .. code-block:: python
 
@@ -68,13 +68,13 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* I add another test to check what happens when I use the :doc:`list </data_structures_lists>` constructor on the ``collection_a`` iterable
+* I add another test to check what happens when I use the :doc:`list </data_structures/data_structures_lists>` constructor on the ``collection_a`` iterable
 
   .. code-block:: python
 
       self.assertEqual(list(collection_a), list_a)
 
-  the tests pass because calling :doc:`list </data_structures_lists>` on an ``iterable`` creates a :doc:`data_structures_lists`
+  the tests pass because calling :doc:`list </data_structures/data_structures_lists>` on an ``iterable`` creates a :doc:`data_structures_lists`
 * I add another test
 
   .. code-block:: python
@@ -108,7 +108,7 @@ REFACTOR: make it better
     # NameError
     # ModuleNotFoundError
 
-* I create a file called ``list_comprehensions.py`` in the project folder and the terminal shows an :doc:`AttributeError`\ , which I add to the expanding list of exceptions encountered
+* I create a file called ``list_comprehensions.py`` in the project folder and the terminal shows an :doc:`/exceptions/AttributeError`\ , which I add to the expanding list of exceptions encountered
 
   .. code-block:: python
 
@@ -125,7 +125,7 @@ REFACTOR: make it better
     def make_a_list():
         return None
 
-  and the terminal shows a :doc:`TypeError`\ which I add to the list of exceptions encountered to
+  and the terminal shows a :doc:`/exceptions/TypeError`\ which I add to the list of exceptions encountered to
 
   .. code-block:: python
 
@@ -143,7 +143,7 @@ REFACTOR: make it better
     def make_a_list(argument):
         return None
 
-  the terminal shows an :doc:`/AssertionError`
+  the terminal shows an :doc:`/exceptions/AssertionError`
 * then I change the function to return a list of whatever argument it gets
 
   .. code-block:: python
@@ -179,7 +179,7 @@ I add a test to ``TestListComprehensions``
             a_list
         )
 
-the terminal shows an :doc:`/AssertionError` for the values of ``a_list`` after I loop through ``collection`` and add elements because it is no longer empty
+the terminal shows an :doc:`/exceptions/AssertionError` for the values of ``a_list`` after I loop through ``collection`` and add elements because it is no longer empty
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -203,7 +203,7 @@ GREEN: make it pass
             a_list
         )
 
-  the terminal shows an :doc:`AttributeError` since ``list_comprehensions.py`` does not have a definition for ``for_loop``
+  the terminal shows an :doc:`/exceptions/AttributeError` since ``list_comprehensions.py`` does not have a definition for ``for_loop``
 
 * I add a function definition for ``for_loop`` to ``list_comprehensions.py``
 
@@ -212,7 +212,7 @@ GREEN: make it pass
     def for_loop():
         return None
 
-  and the terminal shows a :doc:`TypeError`
+  and the terminal shows a :doc:`/exceptions/TypeError`
 * then I change the signature of the function to take in an input argument
 
   .. code-block:: python
@@ -220,7 +220,7 @@ GREEN: make it pass
     def for_loop(argument):
         return None
 
-  the terminal shows an :doc:`/AssertionError`
+  the terminal shows an :doc:`/exceptions/AssertionError`
 * I change the behavior of the function to use a ``for`` loop
 
   .. code-block:: python
@@ -241,7 +241,7 @@ GREEN: make it pass
 List Comprehension
 ------------------
 
-Now that I know how to create a :doc:`list </data_structures_lists>` using ``[]``, :doc:`list </data_structures_lists>` and ``for``, I can try creating a :doc:`data_structures_lists` using a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_. It looks similar to a ``for`` loop but achieves the same thing with less words
+Now that I know how to create a :doc:`list </data_structures/data_structures_lists>` using ``[]``, :doc:`list </data_structures/data_structures_lists>` and ``for``, I can try creating a :doc:`data_structures_lists` using a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_. It looks similar to a ``for`` loop but achieves the same thing with less words
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -265,7 +265,7 @@ I add a failing test to ``TestListComprehensions``
             a_list
         )
 
-the terminal shows an :doc:`/AssertionError`
+the terminal shows an :doc:`/exceptions/AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -290,7 +290,7 @@ GREEN: make it pass
               a_list
           )
 
-  the terminal shows another :doc:`/AssertionError` for the next line
+  the terminal shows another :doc:`/exceptions/AssertionError` for the next line
 
 * this time I add a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ to the left side to practice writing it
 
@@ -311,7 +311,7 @@ GREEN: make it pass
               a_list
           )
 
-  the terminal now shows an :doc:`AttributeError` for the last line
+  the terminal now shows an :doc:`/exceptions/AttributeError` for the last line
 
 * I add a function that uses a list comprehension to ``list_comprehensions.py``
 
@@ -374,7 +374,7 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
               even_numbers
           )
 
-  the terminal shows an :doc:`/AssertionError`
+  the terminal shows an :doc:`/exceptions/AssertionError`
 
 
   - In this loop I change the empty list after the condition ``if element % 2 == 0`` is met
@@ -405,7 +405,7 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
               even_numbers
           )
 
-  the terminal shows an :doc:`/AssertionError`
+  the terminal shows an :doc:`/exceptions/AssertionError`
 
 * I try using a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ like I did in the last example
 
@@ -431,7 +431,7 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
               even_numbers
           )
 
-  the terminal shows an :doc:`/AssertionError` because the lists are not the same, I have too many values
+  the terminal shows an :doc:`/exceptions/AssertionError` because the lists are not the same, I have too many values
 
   .. code-block:: python
 
@@ -446,7 +446,7 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
         even_numbers
     )
 
-  the terminal shows an :doc:`AttributeError` for the next test
+  the terminal shows an :doc:`/exceptions/AttributeError` for the next test
 
 * I add a function definition to ``list_comprehensions.py`` using the `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ I just wrote
 
@@ -476,7 +476,7 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
               odd_numbers
           )
 
-  the terminal shows an :doc:`/AssertionError`
+  the terminal shows an :doc:`/exceptions/AssertionError`
 
 * when I change the values to match
 
@@ -498,7 +498,7 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
               odd_numbers
           )
 
-  the terminal shows an :doc:`/AssertionError` for the next test
+  the terminal shows an :doc:`/exceptions/AssertionError` for the next test
 
 * I change the value on the left with a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ that uses the same condition I used to create ``odd_numbers``
 
@@ -523,7 +523,7 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
               odd_numbers
           )
 
-  the terminal shows an :doc:`AttributeError`
+  the terminal shows an :doc:`/exceptions/AttributeError`
 
 * I define a function that returns a list comprehension in ``list_comprehensions.py`` to make the test pass
 

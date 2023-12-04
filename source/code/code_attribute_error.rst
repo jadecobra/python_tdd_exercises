@@ -1,6 +1,6 @@
 
-AttributeError: : Tests and Solutions
-=====================================
+AttributeError: Tests and Solutions
+===================================
 
 
 tests

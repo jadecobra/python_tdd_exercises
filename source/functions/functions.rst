@@ -53,7 +53,7 @@ the terminal displays a :doc:`ModuleNotFoundError`\ , and I add it to the list o
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-* I create a file called ``functions.py`` in the project folder and the terminal shows an :doc:`AttributeError`\ , which I add to the running list of exceptions encountered
+* I create a file called ``functions.py`` in the project folder and the terminal shows an :doc:`/exceptions/AttributeError`\ , which I add to the running list of exceptions encountered
 
   .. code-block:: python
 
@@ -81,14 +81,14 @@ REFACTOR: make it better
 
 * RED: make it fail
 
-  I add a new failing test to ``TestFunctions`` in ``test_functions.py`` to check that functions always return :doc:`None </data_structures_none>`
+  I add a new failing test to ``TestFunctions`` in ``test_functions.py`` to check that functions always return :doc:`None </data_structures/data_structures_none>`
 
   .. code-block:: python
 
       def test_functions_with_return(self):
           self.assertIsNone(functions.function_with_return())
 
-  the terminal shows an :doc:`AttributeError`
+  the terminal shows an :doc:`/exceptions/AttributeError`
 
 * GREEN: make it pass
 
@@ -114,7 +114,7 @@ REFACTOR: make it better
               functions.function_with_return_none()
           )
 
-  the terminal shows an :doc:`AttributeError`
+  the terminal shows an :doc:`/exceptions/AttributeError`
 * GREEN: make it pass
 
   from the `Zen of Python <https://peps.python.org/pep-0020/>`_ - ``Explicit is better than implicit.`` I add a function definition to ``functions.py`` this time with an explicit ``return`` statement showing the value returned

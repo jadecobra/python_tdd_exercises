@@ -4,7 +4,7 @@ classes: initializer
 
 So far I have gone over how to define classes, attributes and methods. I will now expand on this to show how to use classes.
 
-When creating a new class, we can define an initializer which is a :doc:`method <functions>` that can receive inputs to be used to customize instances/copies of the class
+When creating a new class, we can define an initializer which is a :doc:`method </functions/functions>` that can receive inputs to be used to customize instances/copies of the class
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -16,7 +16,7 @@ I add a failing test to ``test_classes.py``
   def test_classes_with_initializers(self):
       self.assertEqual(classes.Boy().sex, 'M')
 
-the terminal shows an :doc:`AttributeError`
+the terminal shows an :doc:`/exceptions/AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -31,7 +31,7 @@ GREEN: make it pass
 
         pass
 
-  the terminal shows another :doc:`AttributeError`
+  the terminal shows another :doc:`/exceptions/AttributeError`
 
 * I change the ``Boy`` class with an attribute called ``sex``
 
@@ -69,7 +69,7 @@ REFACTOR: make it better
         self.assertEqual(classes.Boy().sex, 'M')
         self.assertEqual(classes.Girl(sex='F').sex, 'F')
 
-  the terminal displays an :doc:`AttributeError`
+  the terminal displays an :doc:`/exceptions/AttributeError`
 
 * I try the same solution I used for the ``Boy`` class and add a definition for the ``Girl`` class to ``classes.py``
 
@@ -80,18 +80,18 @@ REFACTOR: make it better
 
         sex = 'M'
 
-  and the terminal displays a :doc:`TypeError`
+  and the terminal displays a :doc:`/exceptions/TypeError`
 
   .. code-block:: python
 
     TypeError: Girl() takes no arguments
 
-  - ``classes.Girl(sex='F')`` looks like a call to a :doc:`function <functions>`
+  - ``classes.Girl(sex='F')`` looks like a call to a :doc:`function </functions/functions>`
   - I can define classes that accept values by using an initializer
-  - An initializer is a class :doc:`method <functions>` that allows customization of instances/copies of a `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
+  - An initializer is a class :doc:`method </functions/functions>` that allows customization of instances/copies of a `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
 
 
-* I add the initializer :doc:`method <functions>` called ``__init__`` to the ``Girl`` class
+* I add the initializer :doc:`method </functions/functions>` called ``__init__`` to the ``Girl`` class
 
   .. code-block:: python
 
@@ -103,13 +103,13 @@ REFACTOR: make it better
         def __init__(self):
             pass
 
-  and the terminal responds with a :doc:`TypeError`
+  and the terminal responds with a :doc:`/exceptions/TypeError`
 
   .. code-block:: python
 
    TypeError: __init__() got an unexpected keyword argument 'sex'
 
-* I change the signature of the ``__init__`` :doc:`method <functions>` to accept a keyword argument
+* I change the signature of the ``__init__`` :doc:`method </functions/functions>` to accept a keyword argument
 
   .. code-block:: python
 
@@ -127,7 +127,7 @@ REFACTOR: make it better
         self.assertEqual(classes.Girl(sex='F').sex, 'F')
         self.assertEqual(classes.Other(sex='?').sex, '?')
 
-  and the terminal displays an :doc:`AttributeError`
+  and the terminal displays an :doc:`/exceptions/AttributeError`
 
 * I add a class definition to ``classes.py``
 
@@ -148,7 +148,7 @@ REFACTOR: make it better
 
   - I defined a `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ with a name
   - I defined an attribute called ``sex``
-  - I defined an ``__init__`` :doc:`method <functions>` which takes in a ``sex`` keyword argument
+  - I defined an ``__init__`` :doc:`method </functions/functions>` which takes in a ``sex`` keyword argument
 
 * I am going to make it a third repetition by redefining the ``Boy`` class to match the ``Girl`` and ``Other`` class, and because it is fun to do bad things
 
@@ -165,7 +165,7 @@ REFACTOR: make it better
   the terminal responds with all tests still passing and I have now written the same thing 3 times. Earlier on I mentioned inheritance, and will now try to use it to remove this duplication so `I Do Not Repeat Myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
 
-* I add a new class called ``Human`` to ``classes.py`` before the definition for ``Boy`` with the same attribute and :doc:`method <functions>` of the classes I am trying to abstract
+* I add a new class called ``Human`` to ``classes.py`` before the definition for ``Boy`` with the same attribute and :doc:`method </functions/functions>` of the classes I am trying to abstract
 
   .. code-block:: python
 
@@ -215,7 +215,7 @@ REFACTOR: make it better
         def __init__(self):
             pass
 
-* I remove the ``sex`` attribute and the terminal shows an :doc:`/AssertionError`
+* I remove the ``sex`` attribute and the terminal shows an :doc:`/exceptions/AssertionError`
 * I change the ``Human`` class to set the ``sex`` attribute in the parent initializer instead of at the child level
 
   .. code-block:: python
@@ -228,9 +228,9 @@ REFACTOR: make it better
         def __init__(self, sex='M'):
             self.sex = sex
 
-  the terminal still shows an :doc:`/AssertionError`
+  the terminal still shows an :doc:`/exceptions/AssertionError`
 
-* when I remove the ``__init__`` :doc:`method <functions>` from the ``Girl`` class
+* when I remove the ``__init__`` :doc:`method </functions/functions>` from the ``Girl`` class
 
   .. code-block:: python
 
@@ -266,6 +266,6 @@ REFACTOR: make it better
 Why did that work?
 
 
-* the ``Boy``, ``Girl`` and ``Other`` class now inherit from the ``Human`` class which means they all get the same :doc:`methods <functions>` and attributes that the ``Human`` class has, including the ``__init__`` method
+* the ``Boy``, ``Girl`` and ``Other`` class now inherit from the ``Human`` class which means they all get the same :doc:`methods </functions/functions>` and attributes that the ``Human`` class has, including the ``__init__`` method
 * ``self.sex`` within each class refers to the ``sex`` attribute in the class, allowing its definition from within the ``__init__`` method
 * since ``self.sex`` is defined as a class attribute, it is accessible from outside the class as I do in the tests i.e ``classes.Girl(sex='F').sex`` and ``classes.Other(sex='?').sex``

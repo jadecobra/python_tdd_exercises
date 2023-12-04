@@ -25,7 +25,7 @@ I create a failing test in ``test_data_structures.py`` called ``test_what_is_fal
       self.assertTrue(dict())
       self.assertNotIsInstance(False, bool)
 
-the `unittest.TestCase.assertTrue <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertTrue>`_ :doc:`method </functions>` checks if a given input is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_, the terminal shows an :doc:`/AssertionError` indicating that the given input is not `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
+the `unittest.TestCase.assertTrue <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertTrue>`_ :doc:`method </functions>` checks if a given input is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_, the terminal shows an :doc:`/exceptions/AssertionError` indicating that the given input is not `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -45,7 +45,7 @@ GREEN: make it pass
         self.assertFalse(dict())
         self.assertNotIsInstance(False, bool)
 
-  the `unittest.TestCase.assertNotIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance>`_ :doc:`method </functions>` checks that the first input given is not an instance of the :doc:`class <classes>` given as the second input in other words, it is asking the question ``is False not an instance of bool?``
+  the `unittest.TestCase.assertNotIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance>`_ :doc:`method </functions>` checks that the first input given is not an instance of the :doc:`class </classes/classes>` given as the second input in other words, it is asking the question ``is False not an instance of bool?``
 
 * When I change ``self.assertNotIsInstance`` to ``self.assertIsInstance`` the last test passes
 
@@ -66,7 +66,7 @@ From the tests I can say that in python
 
 * `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
 * ``dict()`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ which means an empty :doc:`dictionary <data_structures_dictionaries>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* ``{}`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ which means an empty `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_/\ :doc:`dictionary </data_structures_dictionaries>`   is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* ``{}`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ which means an empty `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_/\ :doc:`dictionary </data_structures/data_structures_dictionaries>`   is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * ``[]`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ which means an empty :doc:`list <data_structures_lists>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * ``()`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ which means an empty `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * ``""`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ which means an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
@@ -104,7 +104,7 @@ I add a similar series of failing tests for `True <https://docs.python.org/3/lib
       })
       self.assertNotIsInstance(True, bool)
 
-the terminal shows an :doc:`/AssertionError`
+the terminal shows an :doc:`/exceptions/AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

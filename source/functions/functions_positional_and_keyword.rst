@@ -46,7 +46,7 @@ GREEN: make it pass
             {}
         )
 
-  the terminal shows an :doc:`AttributeError`
+  the terminal shows an :doc:`/exceptions/AttributeError`
 * I add a definition for the function to ``functions.py``
 
   .. code-block:: python
@@ -54,7 +54,7 @@ GREEN: make it pass
     def accepts_positional_and_keyword_arguments():
         return None
 
-  the terminal shows a :doc:`TypeError`
+  the terminal shows a :doc:`/exceptions/TypeError`
 
   .. code-block:: python
 
@@ -67,7 +67,7 @@ GREEN: make it pass
     def accepts_positional_and_keyword_arguments(last_name):
         return None
 
-  the terminal shows another :doc:`TypeError`
+  the terminal shows another :doc:`/exceptions/TypeError`
 
   .. code-block:: python
 
@@ -88,7 +88,7 @@ GREEN: make it pass
     def accepts_positional_and_keyword_arguments(first_name, last_name):
         return None
 
-  the terminal shows an :doc:`/AssertionError`
+  the terminal shows an :doc:`/exceptions/AssertionError`
 * I edit the return statement to make the test pass
 
   .. code-block:: python
@@ -96,7 +96,7 @@ GREEN: make it pass
     def accepts_positional_and_keyword_arguments(first_name, last_name):
         return first_name, last_name
 
-  the terminal changes the :doc:`/AssertionError` with the values I just added
+  the terminal changes the :doc:`/exceptions/AssertionError` with the values I just added
 * I change ``test_functions_with_positional_and_keyword_arguments`` to make the results match the expectation
 
   .. code-block:: python
@@ -183,7 +183,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_with_po
             ()
         )
 
-  the terminal shows a :doc:`TypeError` because the function signature only has two keyword arguments which are not provided in the call
+  the terminal shows a :doc:`/exceptions/TypeError` because the function signature only has two keyword arguments which are not provided in the call
 * using what I know from previous tests I can alter the function to use starred expressions
 
   .. code-block:: python
@@ -256,7 +256,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_with_po
         (('my_first_name', 'last_name'), {})
     )
 
-  the terminal shows an :doc:`/AssertionError`
+  the terminal shows an :doc:`/exceptions/AssertionError`
 
   .. code-block:: python
 
@@ -289,7 +289,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_with_po
           (None, None)
       )
 
-  the terminal shows an :doc:`/AssertionError`
+  the terminal shows an :doc:`/exceptions/AssertionError`
 
   .. code-block:: python
 
@@ -304,7 +304,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_with_po
         ((), {})
     )
 
-* I uncomment the last test to see it fail and the terminal shows an :doc:`/AssertionError`
+* I uncomment the last test to see it fail and the terminal shows an :doc:`/exceptions/AssertionError`
 
   .. code-block::
 
@@ -340,7 +340,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_with_po
 * From the tests I know that
 
   * positional arguments are represented as `tuples <https://docs.python.org/3/library/stdtypes.html#tuple>`_ with parentheses - ``()``
-  * keyword arguments are represented as :doc:`dictionaries </data_structures_dictionaries>`  with curly braces - ``{}``
+  * keyword arguments are represented as :doc:`dictionaries </data_structures/data_structures_dictionaries>`  with curly braces - ``{}``
   * I can use ``*name`` to represent any number of positional arguments
   * I can use ``**name`` to represent any number of keyword arguments
   * I can define default values for arguments

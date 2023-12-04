@@ -48,7 +48,7 @@ REFACTOR: make it better
               {"key": "value"}
           )
 
-  the terminal shows an :doc:`AttributeError` which I add to the list of exceptions encountered
+  the terminal shows an :doc:`/exceptions/AttributeError` which I add to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -63,7 +63,7 @@ REFACTOR: make it better
     def a_dict():
         return None
 
-  and the terminal shows an :doc:`/AssertionError` since the function I defined returns :doc:`None <data_structures_none>` instead of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+  and the terminal shows an :doc:`/exceptions/AssertionError` since the function I defined returns :doc:`None <data_structures_none>` instead of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 * I then change the return statement to return an empty `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
   .. code-block:: python
@@ -71,7 +71,7 @@ REFACTOR: make it better
     def a_dict():
         return {}
 
-  the terminal still shows an :doc:`/AssertionError` but now the return value looks more like what is expected
+  the terminal still shows an :doc:`/exceptions/AssertionError` but now the return value looks more like what is expected
 
   .. code-block:: python
 
@@ -140,7 +140,7 @@ I add a failing test to ``TestDictionaries``
           {'one': 'boom'}
       )
 
-the terminal shows an :doc:`/AssertionError` since the two values are different
+the terminal shows an :doc:`/exceptions/AssertionError` since the two values are different
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -174,7 +174,7 @@ REFACTOR: make it better
             {2.5: 'fails'}
         )
 
-  the terminal shows an :doc:`/AssertionError` since the values are different
+  the terminal shows an :doc:`/exceptions/AssertionError` since the values are different
 * I change the value on the right to make it pass
 
   .. code-block:: python
@@ -194,12 +194,12 @@ REFACTOR: make it better
 How to create a dictionary with booleans as keys
 -------------------------------------------------
 
-I wonder if it is possible to use :doc:`False </data_structures_booleans>` or :doc:`True </data_structures_booleans>` as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys?
+I wonder if it is possible to use :doc:`False </data_structures/data_structures_booleans>` or :doc:`True </data_structures/data_structures_booleans>` as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys?
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add a test to find out if it is possible to use :doc:`False </data_structures_booleans>` as a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ key
+I add a test to find out if it is possible to use :doc:`False </data_structures/data_structures_booleans>` as a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ key
 
 .. code-block:: python
 
@@ -209,7 +209,7 @@ I add a test to find out if it is possible to use :doc:`False </data_structures_
           {False: 'bap'}
       )
 
-the terminal shows an :doc:`/AssertionError`
+the terminal shows an :doc:`/exceptions/AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -224,12 +224,12 @@ when I change the values to make them match tests are green again. Sweet!
           {False: 'boom'}
       )
 
-I can use :doc:`False </data_structures_booleans>` as a key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+I can use :doc:`False </data_structures/data_structures_booleans>` as a key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-* I add a test to find out if it is possible to use :doc:`True </data_structures_booleans>` as a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ key
+* I add a test to find out if it is possible to use :doc:`True </data_structures/data_structures_booleans>` as a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ key
 
   .. code-block:: python
 
@@ -243,7 +243,7 @@ REFACTOR: make it better
             {True: 'boom'}
         )
 
-  the terminal shows an :doc:`/AssertionError`
+  the terminal shows an :doc:`/exceptions/AssertionError`
 * and I change the values to make the tests pass
 
   .. code-block:: python
@@ -276,7 +276,7 @@ I add a test to ``TestDictionaries`` to see if I can use tuples as `dictionary <
           {(1, 2): "key"}
       )
 
-the terminal shows an :doc:`/AssertionError`
+the terminal shows an :doc:`/exceptions/AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -305,13 +305,13 @@ I add a test to ``TestDictionaries`` using a :doc:`list <data_structures_lists>`
   def test_creating_dictionaries_with_lists_as_keys(self):
       {[1, 2]: "BOOM"}
 
-the terminal shows a :doc:`/TypeError` because only `hashable <https://docs.python.org/3/glossary.html#term-hashable>`_ types can be used as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys and :doc:`lists </data_structures_lists>` are not `hashable <https://docs.python.org/3/glossary.html#term-hashable>`_
+the terminal shows a :doc:`/exceptions/TypeError` because only `hashable <https://docs.python.org/3/glossary.html#term-hashable>`_ types can be used as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys and :doc:`lists </data_structures/data_structures_lists>` are not `hashable <https://docs.python.org/3/glossary.html#term-hashable>`_
 
 .. code-block::
 
   E    TypeError: unhashable type: 'list'
 
-I also add the error to the list of exceptions encountered to include :doc:`/TypeError`
+I also add the error to the list of exceptions encountered to include :doc:`/exceptions/TypeError`
 
 .. code-block:: python
 
@@ -323,7 +323,7 @@ I also add the error to the list of exceptions encountered to include :doc:`/Typ
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I can use ``self.assertRaises`` to confirm that an error is raised by some code without having it crash the tests. I will use it here to confirm that when I try to create a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a :doc:`list <data_structures_lists>` as the key, python raises a :doc:`TypeError`
+I can use ``self.assertRaises`` to confirm that an error is raised by some code without having it crash the tests. I will use it here to confirm that when I try to create a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a :doc:`list <data_structures_lists>` as the key, python raises a :doc:`/exceptions/TypeError`
 
 .. code-block:: python
 
@@ -346,7 +346,7 @@ RED: make it fail
   def test_creating_dictionaries_with_sets_as_keys(self):
       {{1, 2}: "BOOM"}
 
-the terminal responds with a :doc:`TypeError`
+the terminal responds with a :doc:`/exceptions/TypeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -375,7 +375,7 @@ I add a new test
       a_dictionary = {"key": "value"}
       {a_dictionary: "BOOM"}
 
-and the terminal shows a :doc:`/TypeError`
+and the terminal shows a :doc:`/exceptions/TypeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -423,7 +423,7 @@ I add a test to ``TestDictionaries`` in ``test_dictionaries.py``
       a_dictionary = {"key": "value"}
       self.assertEqual(a_dictionary["key"], "bob")
 
-the terminal displays an :doc:`/AssertionError` because ``bob`` is not equal to ``value``. I can get a value for a key by providing the key in square brackets to the dictionary
+the terminal displays an :doc:`/exceptions/AssertionError` because ``bob`` is not equal to ``value``. I can get a value for a key by providing the key in square brackets to the dictionary
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -455,7 +455,7 @@ REFACTOR: make it better
             list(a_dictionary.values()), []
         )
 
-  the terminal shows an :doc:`/AssertionError`
+  the terminal shows an :doc:`/exceptions/AssertionError`
 * and I change the values in the test to make them match the expectation
 
   .. code-block:: python
@@ -493,7 +493,7 @@ REFACTOR: make it better
             []
         )
 
-  the terminal shows an :doc:`/AssertionError`
+  the terminal shows an :doc:`/exceptions/AssertionError`
 * I change the test to make it pass
 
   .. code-block:: python
@@ -603,7 +603,7 @@ What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datas
         self.assertIsNone(a_dictionary['non_existent_key'])
 
   as expected the terminal shows a `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ because the ``non_existent_key`` does not exist in ``a_dictionary``
-* I can use the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :doc:`method <functions>` when I do not want python to raise a `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ for a key that does not exist
+* I can use the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :doc:`method </functions/functions>` when I do not want python to raise a `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ for a key that does not exist
 
   .. code-block:: python
 
@@ -616,7 +616,7 @@ What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datas
         }
         self.assertIsNone(a_dictionary.get('non_existent_key'))
 
-  the terminal shows a passing test. This means that when I use the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :doc:`method <functions>` and the ``key`` does not exist, I get :doc:`None <data_structures_none>` as the result.
+  the terminal shows a passing test. This means that when I use the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :doc:`method </functions/functions>` and the ``key`` does not exist, I get :doc:`None <data_structures_none>` as the result.
 * I can state the above explicitly because ``Explicit is better than implicit`` see `Zen of Python <https://peps.python.org/pep-0020/>`_
 
   .. code-block:: python
@@ -632,12 +632,12 @@ What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datas
         self.assertIsNone(a_dictionary.get('non_existent_key', None))
 
   the terminal shows passing tests.
-* The `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :doc:`method <functions>` takes in 2 inputs
+* The `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :doc:`method </functions/functions>` takes in 2 inputs
 
   - the ``key``
   - the ``default value`` wanted when the ``key`` does not exist
 
-* I can also use the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :doc:`method <functions>` to get the value for an existing key
+* I can also use the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :doc:`method </functions/functions>` to get the value for an existing key
 
   .. code-block:: python
 
@@ -673,7 +673,7 @@ Do you think you could write an implementation for the ``get`` method after read
 How to view the attributes and methods of a dictionary
 ------------------------------------------------------
 
-:doc:`class </classes>` covers how to view the ``attributes`` and ``methods`` of an object. Let us look at the attributes and :doc:`methods <functions>` of  `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ to help understand them better
+:doc:`class </classes>` covers how to view the ``attributes`` and ``methods`` of an object. Let us look at the attributes and :doc:`methods </functions/functions>` of  `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ to help understand them better
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -689,7 +689,7 @@ I add a new test to ``TestDictionaries``
           []
       )
 
-the terminal shows an :doc:`/AssertionError`
+the terminal shows an :doc:`/exceptions/AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -760,7 +760,7 @@ I copy the expected values shown in the terminal to make the test pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-I see some of the :doc:`methods <functions>` I have covered so far and others I did not. I  could write tests for the others to discover what they do and/or `read more about dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_.
+I see some of the :doc:`methods </functions/functions>` I have covered so far and others I did not. I  could write tests for the others to discover what they do and/or `read more about dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_.
 
 * clear
 * copy
@@ -822,7 +822,7 @@ REFACTOR: make it better
             {'bippity': 'boppity'}
         )
 
-  the terminal shows that ``a_dictionary`` has changed, by giving us an :doc:`/AssertionError`. It has a new key which was not there before
+  the terminal shows that ``a_dictionary`` has changed, by giving us an :doc:`/exceptions/AssertionError`. It has a new key which was not there before
 
 * I change the test to make it pass
 
@@ -878,7 +878,7 @@ REFACTOR: make it better
         }
     )
 
-  the terminal shows an :doc:`/AssertionError` since ``a_dictionary`` now has a new ``key`` and ``value``
+  the terminal shows an :doc:`/exceptions/AssertionError` since ``a_dictionary`` now has a new ``key`` and ``value``
 * I change the test to make it pass
 
   .. code-block:: python
@@ -892,7 +892,7 @@ REFACTOR: make it better
         }
     )
 
-  all tests pass, and I add what I know about `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_ to the list of attributes and :doc:`methods <functions>` of `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+  all tests pass, and I add what I know about `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_ to the list of attributes and :doc:`methods </functions/functions>` of `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
 How to update a dictionary with another dictionary
 --------------------------------------------------
@@ -924,7 +924,7 @@ I add another test to ``TestDictionaries``
           }
       )
 
-the terminal displays an :doc:`/AssertionError` because the values of ``a_dictionary`` were changed when I called the `update <https://docs.python.org/3/library/stdtypes.html#dict.update>`_ :doc:`method <functions>` on it
+the terminal displays an :doc:`/exceptions/AssertionError` because the values of ``a_dictionary`` were changed when I called the `update <https://docs.python.org/3/library/stdtypes.html#dict.update>`_ :doc:`method </functions/functions>` on it
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -976,7 +976,7 @@ I add a failing test to ``TestDictionaries``
       }
       self.assertEqual(a_dictionary.pop("basic"), None)
 
-the terminal shows an :doc:`/AssertionError`
+the terminal shows an :doc:`/exceptions/AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -1019,7 +1019,7 @@ GREEN: make it pass
             }
         )
 
-  the terminal responds with an :doc:`/AssertionError` confirming that ``a_dictionary`` is different
+  the terminal responds with an :doc:`/exceptions/AssertionError` confirming that ``a_dictionary`` is different
 
 * The test passes when I remove the key-value pairs of ``basic`` and ``toothpaste``
 
@@ -1053,7 +1053,7 @@ WOW! You made it to the end of the chapter on `dictionaries <https://docs.python
 * What objects cannot be used as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
 * How to view `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
 * How to view `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ values
-* How to view the attributes and :doc:`methods <functions>` of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+* How to view the attributes and :doc:`methods </functions/functions>` of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 * How to set a default value for a key
 * How to change a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with another `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 * How to remove an item from a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
