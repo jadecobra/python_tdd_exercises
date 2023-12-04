@@ -63,20 +63,20 @@ Table of Contents
   data_structures_lists
   list_comprehensions
   data_structures_dictionaries
-  truth_table_01
-  truth_table_02_logical_conjunction
-  truth_table_03_logical_disjunction
-  truth_table_04_logical_implication
-  truth_table_05_logical_equality
-  truth_table_06_exclusive_disjunction
-  truth_table_07_logical_nand
-  truth_table_08_logical_nor
-  truth_table_09_converse_non_implication
-  truth_table_10_material_non_implication
-  truth_table_11_negate
-  truth_table_12_project
-  truth_table_13_converse_implication
-  truth_table_14_true_lies
+  truth_table/truth_table_01
+  truth_table/truth_table_02_logical_conjunction
+  truth_table/truth_table_03_logical_disjunction
+  truth_table/truth_table_04_logical_implication
+  truth_table/truth_table_05_logical_equality
+  truth_table/truth_table_06_exclusive_disjunction
+  truth_table/truth_table_07_logical_nand
+  truth_table/truth_table_08_logical_nor
+  truth_table/truth_table_09_converse_non_implication
+  truth_table/truth_table_10_material_non_implication
+  truth_table/truth_table_11_negate
+  truth_table/truth_table_12_project
+  truth_table/truth_table_13_converse_implication
+  truth_table/truth_table_14_true_lies
 
 HOW TOs
 --------
@@ -100,6 +100,25 @@ HOW TOs
 .. * :doc:`sleep_duration`
 .. * :doc:`exception_handling`
 .. * :doc:`learning_models`
+
+code
+----
+.. toctree::
+  :maxdepth: 2
+  :titlesonly:
+
+  code/code_setup_tdd_environment
+  code/code_assertion_error
+  code/code_attribute_error
+  code/code_calculator
+  code/code_classes
+  code/code_dictionaries
+  code/code_exception_handling
+  code/code_functions
+  code/code_passing_values
+  code/code_person_factory
+  code/code_sleep_duration
+  code/code_truth_table
 
 
 :ref:`search`

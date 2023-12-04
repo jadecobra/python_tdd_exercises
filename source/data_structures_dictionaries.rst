@@ -276,7 +276,7 @@ I add a test to ``TestDictionaries`` to see if I can use tuples as `dictionary <
           {(1, 2): "key"}
       )
 
-the terminal outputs an :doc:`/AssertionError`
+the terminal shows an :doc:`/AssertionError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -375,7 +375,7 @@ I add a new test
       a_dictionary = {"key": "value"}
       {a_dictionary: "BOOM"}
 
-and the terminal outputs a :doc:`/TypeError`
+and the terminal shows a :doc:`/TypeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

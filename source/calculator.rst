@@ -24,8 +24,8 @@ I add a TODO list to ``test_calculator.py`` to keep track of requirements for th
 
   class TestCalculator(unittest.TestCase):
 
-    def test_failure(self):
-      self.assertTrue(True)
+      def test_failure(self):
+          self.assertTrue(True)
 
   # TODO
   # test importing
@@ -97,32 +97,32 @@ RED: make it fail
 
   .. code-block:: python
 
-  import unittest
-  import calculator
+    import unittest
+    import calculator
 
 
-  class TestCalculator(unittest.TestCase):
+    class TestCalculator(unittest.TestCase):
 
-    def test_failure(self):
-      self.assertTrue(True)
+        def test_failure(self):
+            self.assertTrue(True)
 
-    def test_addition(self):
-      self.assertEqual(
-        calculator.add(0, 1),
-        1
-      )
+        def test_addition(self):
+            self.assertEqual(
+                calculator.add(0, 1),
+                1
+            )
 
-  # TODO
-  # test addition
-  # test subtraction
-  # test multiplication
-  # test division
+    # TODO
+    # test addition
+    # test subtraction
+    # test multiplication
+    # test division
 
-  # Exceptions Encountered
-  # AssertionError
+    # Exceptions Encountered
+    # AssertionError
 
 
-  - I call a new testing :doc:`method <functions>` from the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`class <classes>` called `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ which checks if its 2 inputs are equal. It is similar to the statement ``assert x == y`` or asking ``is x equal to y?``
+  - I use the `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ :doc:`method <functions>` from the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`class <classes>` which checks if its 2 inputs are equal. It is similar to the statement ``assert x == y`` or asking ``is x equal to y?``
   - there are two things passed to `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ for evaluation in this case
 
   * first - ``calculator.add(0, 1)`` - where I give the values ``0`` and ``1`` as inputs to the addition function
@@ -653,7 +653,7 @@ I change ``test_calculator.py`` with ``test_division``
         self.x/self.y
       )
 
-once again the terminal outputs an :doc:`AttributeError`
+once again the terminal shows an :doc:`AttributeError`
 
 
 GREEN : make it pass

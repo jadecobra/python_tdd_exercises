@@ -75,8 +75,8 @@ GREEN: make it pass
     self = <tests.test_attribute_error.TestAttributeError testMethod=test_defining_variables_to_solve_attribute_errors>
 
       def test_defining_variables_to_solve_attribute_errors(self):
-    >    module.variable_0
-    E    AttributeError: module 'module' has no attribute 'variable_0'
+    >     module.variable_0
+    E     AttributeError: module 'module' has no attribute 'variable_0'
 
 
   - ``tests/test_attribute_error.py:7: AttributeError`` the filename, line number and name of the Exception that is raised by the code at that location
@@ -116,7 +116,7 @@ GREEN: make it pass
 
 * I add `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ to my running list of errors encountered
 
-  .. code-block::
+  .. code-block:: python
 
     # Exceptions Encountered
     # AssertionError
@@ -124,7 +124,7 @@ GREEN: make it pass
     # AttributeError
     # NameError
 
-* then change the failing line in ``module.py`` to fix it
+* then change the failing line in ``module.py`` to fix it by assigning the name ``variable_0`` to the :doc:`null value </data_structures_none>`
 
   .. code-block:: python
 
@@ -382,12 +382,12 @@ GREEN: make it pass
 
   .. code-block:: python
 
-   # Exceptions Encountered
-   # AssertionError
-   # ModuleNotFoundError
-   # AttributeError
-   # NameError
-   # TypeError
+    # Exceptions Encountered
+    # AssertionError
+    # ModuleNotFoundError
+    # AttributeError
+    # NameError
+    # TypeError
 
 * a :doc:`TypeError` is raised in this case because I called an object that was not `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 
@@ -450,7 +450,7 @@ I think of a :doc:`class <classes>` as a collection of :doc:`methods (functions)
 - attributes are names which represent a value
 - :doc:`methods <functions>` are :doc:`functions` that may be able to accept inputs and may return a value - they are `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 
-For example I could define a ``Human`` class with attributes like eye color, date of birth, height and weight, and :doc:`methods <functions>` like age which returns a value based on the current year and date of birth attribute, you can see an example of this in :doc:`class </classes>`
+For example I could define a ``Human`` class with attributes like eye color, date of birth, height and weight, and :doc:`methods <functions>` like age which returns a value based on the current year and date of birth attribute, you can see an example of this in :doc:`/classes`
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -489,7 +489,7 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    def Class():
+    def Class0():
         return None
 
   The test passes! Something is odd here, what is the difference between :doc:`class </classes>` and :doc:`functions`? Why am I writing a different set of tests for :doc:`class </classes>` if the solutions are the same for :doc:`functions`?
@@ -713,6 +713,10 @@ GREEN: make it pass
   .. code-block:: python
 
     class Class():
+        attribute_0 = None
+        attribute_1 = None
+        attribute_2 = None
+        attribute_3 = None
         ...
         method_0 = None
 
@@ -730,7 +734,7 @@ GREEN: make it pass
     class Class():
         ...
         def method_0():
-          return None
+            return None
 
   and all tests pass. Fantastic!
 

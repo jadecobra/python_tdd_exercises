@@ -215,7 +215,7 @@ REFACTOR: make it better
         def __init__(self):
             pass
 
-* I remove the ``sex`` attribute and the terminal outputs an :doc:`/AssertionError`
+* I remove the ``sex`` attribute and the terminal shows an :doc:`/AssertionError`
 * I change the ``Human`` class to set the ``sex`` attribute in the parent initializer instead of at the child level
 
   .. code-block:: python

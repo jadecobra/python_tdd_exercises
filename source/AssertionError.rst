@@ -19,7 +19,7 @@ which is similar to
 Why are asserts important?
 --------------------------
 
-When building a program I can add ``assert`` statements to the program to ensure that certain things are true for it to proceed past the statements.
+When building a program I can add ``assert`` statements to the program to ensure that certain things are :doc:`True </data_structures_booleans>` for it to proceed past the statements.
 
 I can also test how the program behaves when it is given inputs using ``assert`` statements.
 
@@ -49,8 +49,8 @@ RED: make it fail
 
     class TestAssertionErrors(unittest.TestCase):
 
-      def test_assertion_errors_with_none(self):
-          assert False is None
+        def test_assertion_errors_with_none(self):
+            assert False is None
 
   the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
@@ -71,7 +71,8 @@ When I change the failing line of ``test_assertion_errors_with_none`` in ``test_
 
 .. code-block:: python
 
-  assert False is not None
+  def test_assertion_errors_with_none(self):
+      assert False is not None
 
 the test passes because the assert statement is now true since :doc:`False </data_structures_booleans>` is not :doc:`None <data_structures_none>`
 
@@ -87,7 +88,9 @@ I can also make assertions with some :doc:`methods <functions>` from the `unitte
 
   .. code-block:: python
 
-    self.assertIsNone(False)
+    def test_assertion_errors_with_none(self):
+        assert False is not None
+        self.assertIsNone(False)
 
   the terminal shows a more descriptive `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ since ``False is not None``
 
@@ -103,7 +106,9 @@ I can also make assertions with some :doc:`methods <functions>` from the `unitte
 
   .. code-block:: python
 
-    self.assertIsNotNone(False)
+    def test_assertion_errors_with_none(self):
+        assert False is not None
+        self.assertIsNotNone(False)
 
   the terminal displays passing tests because the statement is :doc:`True </data_structures_booleans>`. I can now say that in python :doc:`False </data_structures_booleans>` is not :doc:`None <data_structures_none>`
 
@@ -113,7 +118,11 @@ I can also make assertions with some :doc:`methods <functions>` from the `unitte
 
   .. code-block:: python
 
-    assert True is None
+    def test_assertion_errors_with_none(self):
+        assert False is not None
+        self.assertIsNotNone(False)
+
+        assert True is None
 
   the terminal shows another `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
@@ -127,7 +136,11 @@ I can also make assertions with some :doc:`methods <functions>` from the `unitte
 
   .. code-block:: python
 
-    assert True is not None
+    def test_assertion_errors_with_none(self):
+        assert False is not None
+        self.assertIsNotNone(False)
+
+        assert True is not None
 
 * RED: make it fail
 
@@ -135,7 +148,12 @@ I can also make assertions with some :doc:`methods <functions>` from the `unitte
 
   .. code-block:: python
 
-    self.assertIsNone(True)
+    def test_assertion_errors_with_none(self):
+        assert False is not None
+        self.assertIsNotNone(False)
+
+        assert True is not None
+        self.assertIsNone(True)
 
   and the terminal displays an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
@@ -149,7 +167,12 @@ I can also make assertions with some :doc:`methods <functions>` from the `unitte
 
   .. code-block:: python
 
-    self.assertIsNotNone(True)
+    def test_assertion_errors_with_none(self):
+        assert False is not None
+        self.assertIsNotNone(False)
+
+        assert True is not None
+        self.assertIsNotNone(True)
 
   since all my tests are passing I can say that in python
 
@@ -162,7 +185,14 @@ I can also make assertions with some :doc:`methods <functions>` from the `unitte
 
   .. code-block:: python
 
-    assert None is not None
+    def test_assertion_errors_with_none(self):
+        assert False is not None
+        self.assertIsNotNone(False)
+
+        assert True is not None
+        self.assertIsNotNone(True)
+
+        assert None is not None
 
   and the terminal displays a failure
 
@@ -176,7 +206,14 @@ I can also make assertions with some :doc:`methods <functions>` from the `unitte
 
   .. code-block:: python
 
-    assert None is None
+    def test_assertion_errors_with_none(self):
+        assert False is not None
+        self.assertIsNotNone(False)
+
+        assert True is not None
+        self.assertIsNotNone(True)
+
+        assert None is None
 
 * RED: make it fail
 
@@ -184,7 +221,15 @@ I can also make assertions with some :doc:`methods <functions>` from the `unitte
 
   .. code-block:: python
 
-    self.assertIsNotNone(None)
+    def test_assertion_errors_with_none(self):
+        assert False is not None
+        self.assertIsNotNone(False)
+
+        assert True is not None
+        self.assertIsNotNone(True)
+
+        assert None is None
+        self.assertIsNotNone(None)
 
   and the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
@@ -199,7 +244,15 @@ I can also make assertions with some :doc:`methods <functions>` from the `unitte
 
   .. code-block:: python
 
-    self.assertIsNone(None)
+    def test_assertion_errors_with_none(self):
+        assert False is not None
+        self.assertIsNotNone(False)
+
+        assert True is not None
+        self.assertIsNotNone(True)
+
+        assert None is None
+        self.assertIsNone(None)
 
 From the tests I can see that
 
@@ -242,7 +295,8 @@ I change ``test_assertion_errors_with_false`` to make the test pass
 
 .. code-block:: python
 
-  assert False is False
+  def test_assertion_errors_with_false(self):
+      assert False is False
 
 
 RED: make it fail
@@ -252,7 +306,9 @@ What if I try the same test using the `unittest.TestCase.assertFalse <https://do
 
 .. code-block:: python
 
-  self.assertFalse(True)
+  def test_assertion_errors_with_false(self):
+      assert False is False
+      self.assertFalse(True)
 
 the terminal shows a failure
 
@@ -269,7 +325,9 @@ I change ``test_assertion_errors_with_false`` to make it pass
 
 .. code-block:: python
 
-    self.assertFalse(False)
+  def test_assertion_errors_with_false(self):
+      assert False is False
+      self.assertFalse(False)
 
 From the tests I can see that in python
 
@@ -309,7 +367,8 @@ I change ``test_assertion_errors_with_true`` to make it pass
 
 .. code-block:: python
 
-  assert True is True
+  def test_assertion_errors_with_true(self):
+      assert True is True
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -318,7 +377,9 @@ What if I try the above test using the `unittest.TestCase.assertTrue <https://do
 
 .. code-block:: python
 
-  self.assertTrue(False)
+  def test_assertion_errors_with_true(self):
+      assert True is True
+      self.assertTrue(False)
 
 the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
@@ -329,11 +390,13 @@ the terminal shows an `AssertionError <https://docs.python.org/3/library/excepti
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I change ``test_assertion_errors_with_false`` to make it pass
+I change ``test_assertion_errors_with_true`` to make it pass
 
 .. code-block:: python
 
-  self.assertTrue(True)
+  def test_assertion_errors_with_true(self):
+      assert True is True
+      self.assertTrue(True)
 
 From the tests I can see that
 
@@ -353,7 +416,7 @@ I could sum up the above statements this way - in python :doc:`True </data_struc
 AssertionError with Equality
 ----------------------------
 
-I can also make assertions of equality, where I compare if two things are the same
+I can also make assertions where I compare if two things are the same
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -379,7 +442,8 @@ I change ``test_assertion_errors_with_equality`` to make it pass
 
 .. code-block:: python
 
-  assert False != None
+  def test_assertion_errors_with_equality(self):
+      assert False != None
 
 the test passes because :doc:`False </data_structures_booleans>` is not equal to :doc:`None <data_structures_none>`
 
@@ -389,13 +453,15 @@ REFACTOR: make it better
 
 * RED: make it fail
 
-  I change ``test_assertion_errors_with_equality`` with the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ method for equality testing
+  I add a line with the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ method for equality testing
 
   .. code-block:: python
 
-    self.assertEqual(False, None)
+    def test_assertion_errors_with_equality(self):
+        assert False != None
+        self.assertEqual(False, None)
 
-  the terminal outputs an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
+  and the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
   .. code-block:: python
 
@@ -409,7 +475,9 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-    self.assertNotEqual(False, None)
+    def test_assertion_errors_with_equality(self):
+        assert False != None
+        self.assertNotEqual(False, None)
 
   I have learned that in python
 
@@ -427,7 +495,11 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-    assert True == None
+    def test_assertion_errors_with_equality(self):
+        assert False != None
+        self.assertNotEqual(False, None)
+
+        assert True == None
 
   and the terminal responds with an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
@@ -437,11 +509,15 @@ REFACTOR: make it better
 
 * GREEN: make it pass
 
-  I change the line in ``test_assertion_errors_with_equality`` to make it pass
+  I change the failing line in ``test_assertion_errors_with_equality`` to make it pass
 
   .. code-block:: python
 
-    assert True != None
+    def test_assertion_errors_with_equality(self):
+        assert False != None
+        self.assertNotEqual(False, None)
+
+        assert True != None
 
 * RED: make it fail
 
@@ -449,9 +525,14 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-    self.assertEqual(True, None)
+    def test_assertion_errors_with_equality(self):
+        assert False != None
+        self.assertNotEqual(False, None)
 
-  the terminal outputs an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
+        assert True != None
+        self.assertEqual(True, None)
+
+  the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
   .. code-block:: python
 
@@ -463,9 +544,14 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-    self.assertNotEqual(True, None)
+    def test_assertion_errors_with_equality(self):
+        assert False != None
+        self.assertNotEqual(False, None)
 
-  the terminal shows passing tests. I can now say that in python
+        assert True != None
+        self.assertNotEqual(True, None)
+
+  and the terminal shows passing tests. I can now say that in python
 
   * :doc:`True </data_structures_booleans>` is :doc:`True </data_structures_booleans>`
   * :doc:`True </data_structures_booleans>` is not :doc:`False </data_structures_booleans>`
@@ -481,43 +567,57 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-    assert True != True
-    self.assertNotEqual(True, True)
+    def test_assertion_errors_with_equality(self):
+        assert False != None
+        self.assertNotEqual(False, None)
 
-    assert True == False
-    self.assertEqual(True, False)
+        assert True != None
+        self.assertNotEqual(True, None)
 
-    assert False != False
-    self.assertNotEqual(False, False)
+        assert True != True
+        self.assertNotEqual(True, True)
 
-    assert False == True
-    self.assertEqual(False, True)
+        assert True == False
+        self.assertEqual(True, False)
 
-    assert None != None
-    self.assertNotEqual(None, None)
+        assert False != False
+        self.assertNotEqual(False, False)
+
+        assert False == True
+        self.assertEqual(False, True)
+
+        assert None != None
+        self.assertNotEqual(None, None)
 
 * GREEN: make it pass
 
-  I then change ``test_assertion_errors_with_equality`` to make each test pass
+  then I change each failing line until they all pass
 
   .. code-block:: python
 
-    assert True == True
-    self.assertEqual(True, True)
+    def test_assertion_errors_with_equality(self):
+        assert False != None
+        self.assertNotEqual(False, None)
 
-    assert True != False
-    self.assertNotEqual(True, False)
+        assert True != None
+        self.assertNotEqual(True, None)
 
-    assert False == False
-    self.assertEqual(False, False)
+        assert True == True
+        self.assertEqual(True, True)
 
-    assert False != True
-    self.assertNotEqual(False, True)
+        assert True != False
+        self.assertNotEqual(True, False)
 
-    assert None == None
-    self.assertEqual(None, None)
+        assert False == False
+        self.assertEqual(False, False)
 
-  and from the test I can say that in python
+        assert False != True
+        self.assertNotEqual(False, True)
+
+        assert None == None
+        self.assertEqual(None, None)
+
+  and from the tests I can say that in python
 
   * :doc:`True </data_structures_booleans>` is :doc:`True </data_structures_booleans>` and :doc:`True </data_structures_booleans>` is equal to :doc:`True </data_structures_booleans>`
   * :doc:`True </data_structures_booleans>` is not :doc:`False </data_structures_booleans>` and :doc:`True </data_structures_booleans>` is not equal to :doc:`False </data_structures_booleans>`

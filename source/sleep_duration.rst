@@ -76,7 +76,7 @@ GREEN: make it pass
 
   duration = None
 
-  the terminal outputs a :doc:`TypeError` because :doc:`None <data_structures_none>` is not callable
+  the terminal shows a :doc:`TypeError` because :doc:`None <data_structures_none>` is not callable
 * I add the exception to the running list
 
   .. code-block:: python
@@ -103,7 +103,7 @@ GREEN: make it pass
    def duration(wake_time):
      return None
 
-  the terminal outputs a similar message as before, this time for the second keyword argument
+  the terminal shows a similar message as before, this time for the second keyword argument
 
 * I change the definition the same way
 
@@ -181,7 +181,7 @@ What if I write a test that uses a random variable for the sleep and wake times?
     def duration(wake_time, sleep_time):
       return wake_time - sleep_time
 
-  the terminal outputs a :doc:`TypeError`\ , I passed in two strings and python does not have an operation defined for subtracting one string from another. I need to find a way to convert the timestamp from a string to a number. I know that the two inputs are currently in the format ``XX:00``, if I can parse the string to get the first two characters and convert those digits to a number I should be able to get the calculation
+  the terminal shows a :doc:`TypeError`\ , I passed in two strings and python does not have an operation defined for subtracting one string from another. I need to find a way to convert the timestamp from a string to a number. I know that the two inputs are currently in the format ``XX:00``, if I can parse the string to get the first two characters and convert those digits to a number I should be able to get the calculation
 * to find out what options are available to us, look at the ``methods`` and ``attributes`` of strings by adding a failing test to ``test_sleep_duration.py``, this time using the ``dir`` function
 
   .. code-block:: python
@@ -243,7 +243,7 @@ What if I write a test that uses a random variable for the sleep and wake times?
       ['__add__', '__class__', '__contains__', '[918 chars]ill']
     )
 
-  ``maxDiff`` sets a limit on the number of characters the terminal outputs for a difference between two objects, there is no limit when it is set to None. I now see a full list of all the attributes of a string ``"00:00"``
+  ``maxDiff`` sets a limit on the number of characters the terminal shows for a difference between two objects, there is no limit when it is set to None. I now see a full list of all the attributes of a string ``"00:00"``
 
   .. code-block:: python
 
@@ -355,7 +355,7 @@ What if I write a test that uses a random variable for the sleep and wake times?
     help("00:00"),
    )
 
-  the terminal outputs documentation for the string, I scroll through reading through the descriptions for each :doc:`method <functions>` until I see one that looks like it can solve the problem
+  the terminal shows documentation for the string, I scroll through reading through the descriptions for each :doc:`method <functions>` until I see one that looks like it can solve the problem
 
   .. code-block:: python
 

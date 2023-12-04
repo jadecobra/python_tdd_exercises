@@ -446,7 +446,7 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
         even_numbers
     )
 
-  the terminal outputs an :doc:`AttributeError` for the next test
+  the terminal shows an :doc:`AttributeError` for the next test
 
 * I add a function definition to ``list_comprehensions.py`` using the `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ I just wrote
 
