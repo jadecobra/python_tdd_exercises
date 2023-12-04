@@ -15,10 +15,10 @@ Who is this book for?
 * If you are new to Test Driven Development in python, this book is for you
 * If you already use python but are unfamiliar with any of the errors below, this book is for you
 
-  - :doc:`ModuleNotFoundError`
-  - :doc:`/AssertionError`
-  - :doc:`AttributeError`
-  - :doc:`TypeError`
+  - :doc:`/exceptions/ModuleNotFoundError`
+  - :doc:`/exceptions/AssertionError`
+  - :doc:`/exceptions/AttributeError`
+  - :doc:`/exceptions/TypeError`
 
 It will show you how to trigger errors and resolve them, there are also a few drills that will get you used to certain concepts
 
@@ -29,7 +29,7 @@ You can choose how you go through the chapters by starting with any you like or 
 
 Here is how I recommend you use the book
 
-* start with  :doc:`How to Setup a Test Driven Development Environment <setup_tdd_environment>` because it is required by every other chapter
+* start with  :doc:`How to Setup a Test Driven Development Environment </how_to/setup_tdd_environment>` because it is required by every other chapter
 * type out the code portions as you go through each chapter - do not copy and paste
 * repeat a chapter you like until you can do it from memory
 * try recreating the tests from memory or write new tests for a concept you are learning
@@ -42,27 +42,27 @@ Table of Contents
   :maxdepth: 2
   :titlesonly:
 
-  AssertionError
-  ModuleNotFoundError
-  AttributeError
-  TypeError
-  IndentationError
-  exception_handling
+  exceptions/AssertionError
+  exceptions/ModuleNotFoundError
+  exceptions/AttributeError
+  exceptions/TypeError
+  exceptions/IndentationError
+  how_to/exception_handling
   conventions
-  classes
-  classes_attributes_methods
-  classes_initializer
-  functions
-  functions_passthrough
-  functions_positional
-  functions_keyword
-  functions_positional_and_keyword
-  functions_singleton
-  data_structures_none
-  data_structures_booleans
-  data_structures_lists
-  list_comprehensions
-  data_structures_dictionaries
+  classes/classes
+  classes/classes_attributes_methods
+  classes/classes_initializer
+  functions/functions
+  functions/functions_passthrough
+  functions/functions_positional
+  functions/functions_keyword
+  functions/functions_positional_and_keyword
+  functions/functions_singleton
+  data_structures/data_structures_none
+  data_structures/data_structures_booleans
+  data_structures/data_structures_lists
+  data_structures/list_comprehensions
+  data_structures/data_structures_dictionaries
   truth_table/truth_table_01
   truth_table/truth_table_02_logical_conjunction
   truth_table/truth_table_03_logical_disjunction
@@ -84,13 +84,13 @@ HOW TOs
   :maxdepth: 2
   :titlesonly:
 
-  setup_tdd_environment
-  setup_my_ide
-  calculator
-  passing_values
-  person_factory
-  sleep_duration
-  exception_handling
+  how_to/setup_tdd_environment
+  how_to/setup_my_ide
+  how_to/calculator
+  how_to/passing_values
+  how_to/person_factory
+  how_to/sleep_duration
+  how_to/exception_handling
   learning_models
 
 .. * :doc:`setup_tdd_environment`
