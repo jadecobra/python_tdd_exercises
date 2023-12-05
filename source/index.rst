@@ -47,7 +47,8 @@ Table of Contents
   exceptions/AttributeError
   exceptions/TypeError
   exceptions/IndentationError
-  how_to/exception_handling
+  how_to/exception_handling_tests
+  how_to/exception_handling_programs
   conventions
   classes/classes
   classes/classes_attributes_methods
@@ -90,16 +91,9 @@ HOW TOs
   how_to/passing_values
   how_to/person_factory
   how_to/sleep_duration
-  how_to/exception_handling
+  how_to/exception_handling_tests
+  how_to/exception_handling_programs
   learning_models
-
-.. * :doc:`setup_tdd_environment`
-.. * :doc:`calculator`
-.. * :doc:`passing_values`
-.. * :doc:`person_factory`
-.. * :doc:`sleep_duration`
-.. * :doc:`exception_handling`
-.. * :doc:`learning_models`
 
 code
 ----

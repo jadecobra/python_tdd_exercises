@@ -1,56 +1,102 @@
 
-How to create a simple Calculator: Tests and Solutions
-======================================================
+How to handle Exceptions: Tests and Solutions
+==============================================
 
 
 tests
 -----
 
-Here is the code in ``tests/test_assertion_error.py``
+Here is the code in ``tests/test_exception_handling.py``
 
 .. code-block:: python
 
     import unittest
+    import module
+    import exceptions
 
 
-    class TestAssertionErrors(unittest.TestCase):
+    class TestExceptionHandling(unittest.TestCase):
 
-        def test_assertion_errors_with_none(self):
-            assert False is not None
-            self.assertIsNotNone(False)
+        def test_catching_module_not_found_error_in_tests(self):
+            with self.assertRaises(ModuleNotFoundError):
+                import non_existent_module
 
-            assert True is not None
-            self.assertIsNotNone(True)
+        def test_catching_attribute_errors_in_tests(self):
+            with self.assertRaises(AttributeError):
+                module.non_existent_attribute
+                module.non_existent_function()
+                module.NonExistentClass()
+                module.Class.non_existent_attribute
+                module.Class.non_existent_method()
 
-            assert None is None
-            self.assertIsNone(None)
+        def test_catching_exceptions(self):
+            with self.assertRaises(Exception):
+                exceptions.raises_exception_error()
 
-        def test_assertion_errors_with_false(self):
-            assert False is False
-            self.assertFalse(False)
+        def test_catching_things_that_fail(self):
+            self.assertEqual(
+                exceptions.exception_handler(
+                    exceptions.raises_exception_error
+                ),
+                'failed'
+            )
 
-        def test_assertion_errors_with_true(self):
-            assert True is True
-            self.assertTrue(True)
+        def test_catching_things_that_succeed(self):
+            self.assertEqual(
+                exceptions.exception_handler(
+                    exceptions.does_not_raise_exception_error
+                ),
+                'succeeded'
+            )
 
-        def test_assertion_errors_with_equality(self):
-            assert False != None
-            self.assertNotEqual(False, None)
+        def test_finally_always_returns(self):
+            self.assertEqual(
+                exceptions.always_returns(
+                    exceptions.does_not_raise_exception_error
+                ),
+                "always_returns_this"
+            )
+            self.assertEqual(
+                exceptions.always_returns(
+                    exceptions.raises_exception_error
+                ),
+                "always_returns_this"
+            )
 
-            assert True != None
-            self.assertNotEqual(True, None)
+    # Exceptions Encountered
+    # AssertionError
+    # ModuleNotFoundError
+    # AttributeError
+    # NameError
+    # TypeError
 
-            assert True == True
-            self.assertEqual(True, True)
+solutions
+---------
 
-            assert True != False
-            self.assertNotEqual(True, False)
+Here are the solutions in ``exceptions.py``
 
-            assert False == False
-            self.assertEqual(False, False)
+.. code-block:: python
 
-            assert False != True
-            self.assertNotEqual(False, True)
+    def raises_exception_error():
+        raise Exception
 
-            assert None == None
-            self.assertEqual(None, None)
+    def does_not_raise_exception_error():
+        return None
+
+    def exception_handler(function):
+        try:
+            function()
+        except Exception:
+            return 'failed'
+        else:
+            return 'succeeded'
+
+    def always_returns(function):
+        try:
+            function()
+        except Exception:
+            return 'failed'
+        else:
+            return 'succeeded'
+        finally:
+            return 'always_returns_this'
