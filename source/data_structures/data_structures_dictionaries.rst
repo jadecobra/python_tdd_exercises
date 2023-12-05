@@ -21,7 +21,7 @@ I add a file called ``test_dictionaries.py`` to the ``tests`` folder with the fo
   import unittest
   import dictionaries
 
-the terminal displays a :doc:`ModuleNotFoundError`\  which I add to the list of exceptions encountered
+the terminal displays a :doc:`/exceptions/ModuleNotFoundError`\  which I add to the list of exceptions encountered
 
 .. code-block:: python
 

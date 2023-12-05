@@ -2,14 +2,14 @@
 How to pass values
 ==================
 
-When testing or using a program, :doc:`data <data_structures>` is provided as input to the program with an expectation of an output, I think of it this way
+When testing or using a program, data can be provided as input to the program with an expectation of an output, I think of it this way
 
 .. code-block:: python
 
   input_data -> process -> output
 
 
-Which is similar to functions in mathematics where a function is represented as ``f`` with inputs ``x`` and an output of ``y``
+Which is similar to functions in mathematics where a function is represented as ``f`` with input ``x`` and output ``y``
 
 
 .. code-block:: python
@@ -23,7 +23,7 @@ or in other words
   process(input_data) -> output
 
 
-When testing code I am asking the question is ``f(x)`` equal to ``y`` for the given input ``x``. For example  I could use an assert statement
+When testing code I am asking the question is the result of calling ``f`` with a given input ``x`` equal to ``y``? or is the result of running ``process`` with a given ``input_data`` equal to ``output``? For example  I could use an assert statement
 
 .. code-block:: python
 
@@ -56,13 +56,13 @@ I create a file called `test_passing_values.py` in the ``tests`` folder with the
 
   class TestPassingValues(unittest.TestCase):
 
-    def test_text_messages(self):
-        self.assertEqual(
-            telephone.Telephone.text('hello'),
-            'I received this message: hello'
-        )
+      def test_text_messages(self):
+          self.assertEqual(
+              telephone.Telephone.text('hello'),
+              'I received this message: hello'
+          )
 
-the terminal shows a :doc:`ModuleNotFoundError` and I add it to the list of exceptions encountered
+the terminal shows a :doc:`/exceptions/ModuleNotFoundError` and I add it to the list of exceptions encountered
 
 .. code-block:: python
 
@@ -83,7 +83,7 @@ GREEN: make it pass
     # ModuleNotFoundError
     # AttributeError
 
-- I add a class definition to ``telephone.py``
+- I add a :doc:`class </classes/classes>` definition to ``telephone.py``
 
   .. code-block:: python
 
@@ -92,7 +92,25 @@ GREEN: make it pass
         pass
 
   the terminal still displays an :doc:`/exceptions/AttributeError` but with a different message
-- I add a definition for an attribute called ``text`` to the ``Telephone`` class
+- I add a name called ``text`` to the ``Telephone`` class
+
+  .. code-block:: python
+
+    class Telephone(object):
+
+        text
+
+  the terminal displays a ``NameError`` and I add it to the list of exceptions encountered
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AssertionError
+    # ModuleNotFoundError
+    # AttributeError
+    # NameError
+
+- I assign ``text`` to the null value :doc:`None </data_structures/data_structures_none>`
 
   .. code-block:: python
 
@@ -100,7 +118,8 @@ GREEN: make it pass
 
         text = None
 
-  the terminal shows a :doc:`/exceptions/TypeError` because ``text`` is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_ and I add the new exception to the list of exceptions encountered
+  and the terminal shows a :doc:`/exceptions/TypeError` because ``text`` is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_
+- I add the exception to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -179,7 +198,7 @@ the terminal shows passing tests
 Passing Data Structures
 -----------------------
 
-I can try this with other python :doc:`data structures <data_structures>` to see what happens
+I want to try this with other python data structures to see what happens
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -223,38 +242,51 @@ the terminal shows passing tests
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-* as an exercise I can add the following tests to ``test_text_messages``
+* as an exercise I add more tests to ``test_text_messages``
 
   .. code-block:: python
 
-      self.assertEqual(
-          telephone.Telephone.text(bool),
-          "I received this message: 'bool'"
-      )
-      self.assertEqual(
-          telephone.Telephone.text(int),
-          "I received this message: 'int'"
-      )
-      self.assertEqual(
-          telephone.Telephone.text(float),
-          "I received this message: 'float'"
-      )
-      self.assertEqual(
-          telephone.Telephone.text(tuple),
-          "I received this message: 'tuple'"
-      )
-      self.assertEqual(
-          telephone.Telephone.text(list),
-          "I received this message: 'list'"
-      )
-      self.assertEqual(
-          telephone.Telephone.text(set),
-          "I received this message: 'set'"
-      )
-      self.assertEqual(
-          telephone.Telephone.text(dict),
-          "I received this message: 'dict'"
-      )
+    def test_text_messages(self):
+        self.assertEqual(
+            telephone.Telephone.text('hello'),
+            'I received this message: hello'
+        )
+        self.assertEqual(
+            telephone.Telephone.text('yes'),
+            'I received this message: yes'
+        )
+        self.assertEqual(
+            telephone.Telephone.text(None),
+            "I received this message: None"
+        )
+        self.assertEqual(
+            telephone.Telephone.text(bool),
+            "I received this message: 'bool'"
+        )
+        self.assertEqual(
+            telephone.Telephone.text(int),
+            "I received this message: 'int'"
+        )
+        self.assertEqual(
+            telephone.Telephone.text(float),
+            "I received this message: 'float'"
+        )
+        self.assertEqual(
+            telephone.Telephone.text(tuple),
+            "I received this message: 'tuple'"
+        )
+        self.assertEqual(
+            telephone.Telephone.text(list),
+            "I received this message: 'list'"
+        )
+        self.assertEqual(
+            telephone.Telephone.text(set),
+            "I received this message: 'set'"
+        )
+        self.assertEqual(
+            telephone.Telephone.text(dict),
+            "I received this message: 'dict'"
+        )
 
   an :doc:`/exceptions/AssertionError` is displayed in the terminal
 * I change the test to match the expected output
@@ -267,7 +299,50 @@ REFACTOR: make it better
       )
 
   the terminal displays an :doc:`/exceptions/AssertionError` for the next test.
-- I repeat the solution for each data type until all tests pass
+* I repeat the solution for each data type until all tests pass
 
-VOILA!
-You now know how to pass values and represent values as strings using interpolation
+  .. code-block:: python
+
+    def test_text_messages(self):
+        self.assertEqual(
+            telephone.Telephone.text('hello'),
+            'I received this message: hello'
+        )
+        self.assertEqual(
+            telephone.Telephone.text('yes'),
+            'I received this message: yes'
+        )
+        self.assertEqual(
+            telephone.Telephone.text(None),
+            "I received this message: None"
+        )
+        self.assertEqual(
+            telephone.Telephone.text(bool),
+            "I received this message: <class 'bool'>"
+        )
+        self.assertEqual(
+            telephone.Telephone.text(int),
+            "I received this message: <class 'int'>"
+        )
+        self.assertEqual(
+            telephone.Telephone.text(float),
+            "I received this message: <class 'float'>"
+        )
+        self.assertEqual(
+            telephone.Telephone.text(tuple),
+            "I received this message: <class 'tuple'>"
+        )
+        self.assertEqual(
+            telephone.Telephone.text(list),
+            "I received this message: <class 'list'>"
+        )
+        self.assertEqual(
+            telephone.Telephone.text(set),
+            "I received this message: <class 'set'>"
+        )
+        self.assertEqual(
+            telephone.Telephone.text(dict),
+            "I received this message: <class 'dict'>"
+        )
+
+VOILA! You now know how to pass values and represent values as strings using interpolation

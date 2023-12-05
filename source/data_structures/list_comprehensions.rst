@@ -99,7 +99,7 @@ REFACTOR: make it better
     import list_comprehensions
     import unittest
 
-  the terminal shows a :doc:`ModuleNotFoundError` which I add to the running list of exceptions
+  the terminal shows a :doc:`/exceptions/ModuleNotFoundError` which I add to the running list of exceptions
 
   .. code-block:: python
 

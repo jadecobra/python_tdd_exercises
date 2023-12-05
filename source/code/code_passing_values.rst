@@ -1,56 +1,77 @@
 
-How to create a simple Calculator: Tests and Solutions
-======================================================
+How to pass values: Tests and Solution
+=======================================
 
 
 tests
 -----
 
-Here is the code in ``tests/test_assertion_error.py``
+Here is the code in ``tests/test_passing_values.py``
 
 .. code-block:: python
 
     import unittest
+    import telephone
 
 
-    class TestAssertionErrors(unittest.TestCase):
+    class TestPassingValues(unittest.TestCase):
 
-        def test_assertion_errors_with_none(self):
-            assert False is not None
-            self.assertIsNotNone(False)
+        def test_text_messages(self):
+            self.assertEqual(
+                telephone.Telephone.text('hello'),
+                'I received this message: hello'
+            )
+            self.assertEqual(
+                telephone.Telephone.text('yes'),
+                'I received this message: yes'
+            )
+            self.assertEqual(
+                telephone.Telephone.text(None),
+                "I received this message: None"
+            )
+            self.assertEqual(
+                telephone.Telephone.text(bool),
+                "I received this message: <class 'bool'>"
+            )
+            self.assertEqual(
+                telephone.Telephone.text(int),
+                "I received this message: <class 'int'>"
+            )
+            self.assertEqual(
+                telephone.Telephone.text(float),
+                "I received this message: <class 'float'>"
+            )
+            self.assertEqual(
+                telephone.Telephone.text(tuple),
+                "I received this message: <class 'tuple'>"
+            )
+            self.assertEqual(
+                telephone.Telephone.text(list),
+                "I received this message: <class 'list'>"
+            )
+            self.assertEqual(
+                telephone.Telephone.text(set),
+                "I received this message: <class 'set'>"
+            )
+            self.assertEqual(
+                telephone.Telephone.text(dict),
+                "I received this message: <class 'dict'>"
+            )
 
-            assert True is not None
-            self.assertIsNotNone(True)
+    # Exceptions Encountered
+    # AssertionError
+    # ModuleNotFoundError
+    # AttributeError
+    # TypeError
 
-            assert None is None
-            self.assertIsNone(None)
+solution
+---------
 
-        def test_assertion_errors_with_false(self):
-            assert False is False
-            self.assertFalse(False)
+Here is the solution in ``telephone.py``
 
-        def test_assertion_errors_with_true(self):
-            assert True is True
-            self.assertTrue(True)
+.. code-block:: python
 
-        def test_assertion_errors_with_equality(self):
-            assert False != None
-            self.assertNotEqual(False, None)
+    class Telephone(object):
 
-            assert True != None
-            self.assertNotEqual(True, None)
-
-            assert True == True
-            self.assertEqual(True, True)
-
-            assert True != False
-            self.assertNotEqual(True, False)
-
-            assert False == False
-            self.assertEqual(False, False)
-
-            assert False != True
-            self.assertNotEqual(False, True)
-
-            assert None == None
-            self.assertEqual(None, None)
+    def text(value):
+        return f'I received this message: {value}'

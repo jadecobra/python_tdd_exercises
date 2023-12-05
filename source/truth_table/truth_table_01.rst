@@ -30,12 +30,12 @@ I create a file called ``test_truth_table.py`` in the ``tests`` folder and add t
   import unittest
   import truth_table
 
-the terminal shows a :doc:`ModuleNotFoundError`
+the terminal shows a :doc:`/exceptions/ModuleNotFoundError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-* I add :doc:`ModuleNotFoundError` to the list of exceptions encountered
+* I add :doc:`/exceptions/ModuleNotFoundError` to the list of exceptions encountered
 
   .. code-block:: python
 

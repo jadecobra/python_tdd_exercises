@@ -39,7 +39,7 @@ RED: make it fail
         def test_function_signatures_solve_type_errors(self):
             self.assertIsNone(functions.function_a("a"))
 
-  the terminal shows a :doc:`ModuleNotFoundError`
+  the terminal shows a :doc:`/exceptions/ModuleNotFoundError`
 
   .. code-block:: python
 
@@ -57,7 +57,7 @@ RED: make it fail
 GREEN: make it pass
 -------------------
 
-* I have a lot of practice solving this error from :doc:`ModuleNotFoundError`. I create a file called ``functions.py`` and the terminal shows
+* I have a lot of practice solving this error from :doc:`/exceptions/ModuleNotFoundError`. I create a file called ``functions.py`` and the terminal shows
 
   .. code-block:: python
 
@@ -367,7 +367,7 @@ What happens when you do this with ``function_a``, ``function_b``, ``function_c`
 
 You now know
 
-* How to solve a :doc:`ModuleNotFoundError`
+* How to solve a :doc:`/exceptions/ModuleNotFoundError`
 * How to solve an :doc:`/exceptions/AssertionError`
 * How to solve an :doc:`/exceptions/AttributeError`
 * How to solve a `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#TypeError>`_ by matching function signatures and their calls

@@ -25,7 +25,7 @@ I open a new file, save it as ``test_attribute_error.py`` in the ``tests`` folde
 * ``import unittest`` imports the `unittest <https://docs.python.org/3/library/unittest.html>`_ module from the python standard library
 * ``import module`` imports the ``module`` module - which will hold the code I am testing
 
-The terminal responds with a :doc:`ModuleNotFoundError`
+The terminal responds with a :doc:`/exceptions/ModuleNotFoundError`
 
 .. code-block:: python
 
@@ -37,7 +37,7 @@ The terminal responds with a :doc:`ModuleNotFoundError`
     import module
   E  ModuleNotFoundError: No module called 'module'
 
-A :doc:`ModuleNotFoundError` is raised when a name is provided to an ``import`` statement and python cannot find the name. Since there is currently no file called ``module.py`` the ``import module`` line causes a failure
+A :doc:`/exceptions/ModuleNotFoundError` is raised when a name is provided to an ``import`` statement and python cannot find the name. Since there is currently no file called ``module.py`` the ``import module`` line causes a failure
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -336,7 +336,7 @@ Repeat the pattern until all tests pass.
 If you have been typing along *WELL DONE!* You now know
 
 
-* How to solve a :doc:`ModuleNotFoundError`
+* How to solve a :doc:`/exceptions/ModuleNotFoundError`
 * How to solve a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ using variables
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 
@@ -432,7 +432,7 @@ REFACTOR: make it better
 *YOU DID IT AGAIN!* You now know
 
 
-* How to solve a :doc:`ModuleNotFoundError`
+* How to solve a :doc:`/exceptions/ModuleNotFoundError`
 * How to solve a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 * How to solve a :doc:`/exceptions/TypeError` by defining a callable
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
@@ -522,7 +522,7 @@ REFACTOR: make it better
 
 *WELL DONE!* You now know
 
-* How to solve a :doc:`ModuleNotFoundError`
+* How to solve a :doc:`/exceptions/ModuleNotFoundError`
 * How to solve a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 * How to solve a :doc:`/exceptions/TypeError` by defining a callable
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
@@ -671,7 +671,7 @@ REFACTOR: make it better
 *WELL DONE!* You now know You now know
 
 
-* How to solve a :doc:`ModuleNotFoundError`
+* How to solve a :doc:`/exceptions/ModuleNotFoundError`
 * How to solve a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 * How to solve a :doc:`/exceptions/TypeError` by defining a callable
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
@@ -758,7 +758,7 @@ repeat the solution until all tests pass
 *CONGRATULATIONS!* You now know
 
 
-* How to solve a :doc:`ModuleNotFoundError`
+* How to solve a :doc:`/exceptions/ModuleNotFoundError`
 * How to solve a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 * How to solve a :doc:`/exceptions/TypeError` by defining a callable
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
