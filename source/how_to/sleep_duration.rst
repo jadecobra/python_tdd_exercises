@@ -1264,3 +1264,5 @@ Our challenge was to create a function that calculates the difference between tw
 * how to use the ``help`` keyword to view documentation
 
 If you want to do more, try playing with the timestamp format and pattern in ``get_datetime_object``. What would you change in ``"%d/%m/%y %H:%M"`` to make it accept dates in a different format for example  ``2006/11/21`` or ``11/21/2006``?
+
+:doc:`/code/code_sleep_duration`

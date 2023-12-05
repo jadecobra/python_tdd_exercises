@@ -768,3 +768,5 @@ I change ``test_division`` to test other division cases when the divisor is not 
 ----
 
 CONGRATULATIONS! You made it through writing a program that can perform the 4 basic arithmetic operations using Test Driven Development. What would you like to do next?
+
+:doc:`/code/code_calculator`

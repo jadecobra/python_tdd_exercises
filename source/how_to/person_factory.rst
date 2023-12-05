@@ -304,3 +304,6 @@ We have successfully created a :doc:`function </functions/functions>` that
 * takes in keyword argument inputs
 * has default values for when a value is not given for a certain input
 * performs a calculation based on a given input to return an output based on an input
+
+
+:doc:`/code/code_person_factory`
