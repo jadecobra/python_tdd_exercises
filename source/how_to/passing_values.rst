@@ -186,7 +186,7 @@ the terminal shows an :doc:`/exceptions/AssertionError`
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I can add variable values to strings by using `string interpolation <https://peps.python.org/pep-0498/>`, I will change the ``text`` :doc:`method </functions/functions>` in ``telephone.py``
+I can add variable values to strings by using `string interpolation <https://peps.python.org/pep-0498/>`_, I will change the ``text`` :doc:`method </functions/functions>` in ``telephone.py``
 
 .. code-block:: python
 
