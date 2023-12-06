@@ -29,7 +29,7 @@ You can choose how you go through the chapters by starting with any you like or 
 
 Here is how I recommend you use the book
 
-* start with  :doc:`How to Setup a Test Driven Development Environment </how_to/setup_tdd_environment>` because it is required by every other chapter
+* start with  :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` because it is required by every other chapter
 * type out the code portions as you go through each chapter - do not copy and paste
 * repeat a chapter you like until you can do it from memory
 * try recreating the tests from memory or write new tests for a concept you are learning
@@ -85,7 +85,7 @@ HOW TOs
   :maxdepth: 2
   :titlesonly:
 
-  how_to/setup_tdd_environment
+  how_to/create_tdd_environment
   how_to/setup_my_ide
   how_to/calculator
   how_to/passing_values
@@ -101,7 +101,7 @@ code
   :maxdepth: 2
   :titlesonly:
 
-  code/code_setup_tdd_environment
+  code/code_create_tdd_environment
   code/code_assertion_error
   code/code_attribute_error
   code/code_calculator

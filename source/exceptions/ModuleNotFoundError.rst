@@ -13,7 +13,7 @@ Programming allows us to gain from the previous efforts as well as the efforts o
 RED: make it fail
 -----------------
 
-Open a new file in the Interactivate Development Environment editor and save it as ``test_module_not_found_error.py`` in the ``tests`` folder created from :doc:`How to Setup a Test Driven Development Environment <setup_tdd_environment>`
+Open a new file in the Interactivate Development Environment editor and save it as ``test_module_not_found_error.py`` in the ``tests`` folder created from :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>`
 
 Type the following in the file
 
@@ -120,7 +120,7 @@ Type the following in the file
   import module_98
   import module_99
 
-If you left ``pytest-watch`` running from :doc:`How to Setup a Test Driven Development Environment <setup_tdd_environment>` you should see something like the following in your terminal
+If you left ``pytest-watch`` running from :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` you should see something like the following in your terminal
 
 .. code-block:: python
 

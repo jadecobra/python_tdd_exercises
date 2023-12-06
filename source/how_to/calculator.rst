@@ -8,7 +8,7 @@ Prerequisites
 -------------
 
 
-:doc:`How to Setup a Test Driven Development Environment <setup_tdd_environment>` with ``calculator`` as the project name
+:doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` with ``calculator`` as the project name
 
 ----
 
@@ -37,7 +37,7 @@ I add a TODO list to ``test_calculator.py`` to keep track of requirements for th
   # Exceptions Encountered
   # AssertionError
 
-the terminal responds to the change, the test from :doc:`How to Setup a Test Driven Development Environment <setup_tdd_environment>` is still passing
+the terminal responds to the change, the test from :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` is still passing
 
 .. code-block:: python
 

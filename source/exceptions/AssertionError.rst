@@ -4,7 +4,7 @@ AssertionError
 
 An `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ is an Exception that is raised when the result of an ``assert`` statement is :doc:`False </data_structures/data_structures_booleans>`
 
-It was introduced in :doc:`How to Setup a Test Driven Development Environment <setup_tdd_environment>` with the first failing test
+It was introduced in :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` with the first failing test
 
 .. code-block:: python
 
@@ -316,7 +316,7 @@ the terminal shows a failure
 
   E    AssertionError: True is not false
 
-this is familiar, it was the first failing test from :doc:`How to Setup a Test Driven Development Environment <setup_tdd_environment>`
+this is familiar, it was the first failing test from :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

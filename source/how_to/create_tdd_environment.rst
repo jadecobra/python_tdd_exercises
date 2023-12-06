@@ -1,8 +1,8 @@
 
-How to Setup a Test Driven Development Environment
-==================================================
+How to create a Test Driven Development Environment
+====================================================
 
-`Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ is a way of developing software with a focus on tests. I come up with ideas to reach a goal and test those ideas, the results of these tests tell me if I am closer or further away from the goal and I repeat the process until I reach the goal.
+`Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ is a way of developing software with a focus on tests. I come up with ideas to reach a goal or meet a requirement, and test those ideas, the results of these tests tell me if I am closer or further away from the goal and I repeat the process until I reach the goal.
 
 I recommend reading `Kent Beck’s <https://en.wikipedia.org/wiki/Kent_Beck>`_ `Test Driven Development by Example <https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk>`_ and `Martin Fowler’s <https://en.wikipedia.org/wiki/Martin_Fowler_(software_engineer)>`_ `Refactoring <https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk>`_, they both influenced the way I write programs.
 
@@ -49,32 +49,32 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
       cd {PROJECT_NAME}
 
-  this is where all the code for the project will reside to keep things in a separate dedicated workspace
+  this is where all the code for the project will reside to keep things in a separate dedicated and isolated workspace
 
 * ``touch`` is a program which creates an empty file with the name it is given
 
-  - I create an empty file called ``{PROJECT_NAME}.py`` to hold the source code for the program
+  - I use it to create an empty file called ``{PROJECT_NAME}.py`` to hold the source code for the program
 
-  .. code-block:: shell
+    .. code-block:: shell
 
-      touch {PROJECT_NAME}.py
+        touch {PROJECT_NAME}.py
 
   - tests will be stored in the ``tests`` folder to separate them from the source code (the actual program)
   - I create an empty file called ``__init__.py`` in the ``tests`` folder to tell python that the ``tests`` folder is a python `package <https://docs.python.org/3/glossary.html#term-regular-package>`_, so it can find the tests later
 
-  .. code-block:: shell
+    .. code-block:: shell
 
-      touch tests/__init__.py
+        touch tests/__init__.py
 
   - and another empty file called ``test_{PROJECT_NAME}.py`` in the ``tests`` folder to hold the testing code
 
-  .. code-block:: shell
+    .. code-block:: shell
 
-      touch tests/test_{PROJECT_NAME}.py
+        touch tests/test_{PROJECT_NAME}.py
 
 * Here is what the folder structure looks like
 
-  .. code-block:: ruby
+  .. code-block:: python
 
     {PROJECT_NAME}
       ╰──tests
@@ -161,14 +161,14 @@ This is the ``RED`` part of the Test Driven Development cycle. The error in the 
 * ``AssertionError: True is not false`` The error is an :doc:`/exceptions/AssertionError` which is raised by python when an assert statement is :doc:`False </data_structures/data_structures_booleans>`. In this case the error is raised because ``True is not false``
 * ``self.assertFalse(True)`` is the line of code that caused the failure
 
-  - ``assertFalse`` is a :doc:`method </functions/functions>` in the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class which checks if its input is :doc:`False </data_structures/data_structures_booleans>`
+  - ``assertFalse`` is a :doc:`method </functions/functions>` in the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`class </classes/classes>` which checks if its input is :doc:`False </data_structures/data_structures_booleans>`
   - :doc:`True </data_structures/data_structures_booleans>` is given as input to ``assertFalse`` and the statement raises an error because :doc:`True </data_structures/data_structures_booleans>` is not :doc:`False </data_structures/data_structures_booleans>`
 
 * ``File "/<PATH_TO_PROJECT>/{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py", line 7, in test_failure`` is the line number and location of the file where the error occurred.
 
   .. tip::
 
-    Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on this line with the mouse to place the cursor at the position in the file where the error occurred
+    Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``File "/<PATH_TO_PROJECT>/{PROJECT_NAME}/tests/test_{PROJECT_NAME}.py", line 7, in test_failure`` in the terminal with the mouse to place the cursor at the position in the file where the error occurred
 
 * ``Traceback (most recent call last):`` all the information returned by python after this line is the ``traceback`` showing the most recent call python made last
 * ``FAIL: test_failure (tests.Test{PROJECT_NAME}.test_failure)`` is a header with information about the test
@@ -242,7 +242,7 @@ I can make code better by using
 
 Both of these can be summed up as ``remove duplication``
 
-So far there is not much to improve on what has been written but there has been duplication.
+So far there is not much to improve on what has been written but there has been repetition
 
 * ``python3 -m unittest`` was run to see the test fail
 * ``python3 -m unittest`` was run to see the test pass
@@ -262,6 +262,8 @@ How to create a Virtual Environment
 
       echo "pytest-watch" > requirements.txt
 
+  - the command above creates a file named ``requirements.txt`` with ``pytest-watch`` as the text inside it
+  - ``echo`` is a program that writes arguments to the standard output
   - ``pytest-watch`` is a python program that automatically uses the `pytest <https://docs.pytest.org/>`_ python package to run tests when a python file in the project changes
   - `pytest <https://docs.pytest.org/>`_ is a python package like `unittest <https://docs.python.org/3/library/unittest.html>`_ for running tests in python
   - ``requirements.txt`` is a file where I can list required python packages for `pip <https://pypi.org/project/pip/>`_ the `python package manager <https://pypi.org/project/pip/>`_ to install later, you can use any name you like
@@ -296,16 +298,16 @@ How to create a Virtual Environment
   - ``-m`` is an option passed to python to call the module given after the option
   - `pip <https://pypi.org/project/pip/>`_ is a module from the python standard library for installing python packages
   - ``install`` is an argument given to `pip <https://pypi.org/project/pip/>`_ to install a given package name
-  - ``pip`` is the given package name for `pip <https://pypi.org/project/pip/>`_ to install, in this case  ``pip`` installs ``pip``
+  - ``pip`` is package name given for `pip <https://pypi.org/project/pip/>`_ to install, in this case  ``pip`` installs ``pip``
   - ``--upgrade`` is an option given to the ``install`` argument for `pip <https://pypi.org/project/pip/>`_ to install the latest version of the name given
 
-* I can now use `pip <https://pypi.org/project/pip/>`_ to install any python packages listed in ``requirements.txt`` in the virtual environment. In this case `pip <https://pypi.org/project/pip/>`_ will install ``pytest-watch``
+* After upgrading it, I use `pip <https://pypi.org/project/pip/>`_ to install any python packages listed in ``requirements.txt`` in the virtual environment. In this case `pip <https://pypi.org/project/pip/>`_ will install ``pytest-watch``
 
   .. code-block:: python
 
       pip install --requirement requirements.txt
 
-  - ``--requirement`` is another option that can be passed to the ``install`` argument to install python packages from a given file name
+  - ``--requirement`` is another option that can be passed to the ``install`` argument to install python packages from a given file
   - ``requirements.txt`` is the file that contains a list of libraries for `pip <https://pypi.org/project/pip/>`_ to install
 
 * The folder structure now looks like this
@@ -368,13 +370,13 @@ You made it this far and have become the greatest programmer in the world. Follo
 
     history
 
-* I create an empty file with a name that describes what the program does so it is easy to remember later, for example ``setupPythonTdd.sh``
+* I create an empty file with a name that describes what the program does so it is easy to remember later, for example ``createPythonTdd.sh``
 
   .. code-block:: shell
 
-    touch setupPythonTdd.sh
+    touch createPythonTdd.sh
 
-* I open ``setupPythonTdd.sh`` in the Interactive Development Environment (IDE) and copy each command displayed in the terminal from ``history``
+* I open ``createPythonTdd.sh`` in the Interactive Development Environment (IDE) and copy each command displayed in the terminal from ``history``
 
   .. code-block:: ruby
     :linenos:
@@ -446,16 +448,18 @@ You made it this far and have become the greatest programmer in the world. Follo
 
   .. code-block:: python
 
-    chmod +x setupPythonTdd.sh
+    chmod +x createPythonTdd.sh
 
-* I can now create a Test Driven Development environment on demand by giving a name for the ``{PROJECT_NAME}`` variable when the program is called. for example typing this command in the terminal in the folder where ``setupPythonTdd.sh`` is saved will setup a Test Driven Development environment for a project called ``calculator``
+* I can now create a Test Driven Development environment on demand by giving a name for the ``{PROJECT_NAME}`` variable when the program is called. for example typing this command in the terminal in the folder where ``createPythonTdd.sh`` is saved will setup a Test Driven Development environment for a project called ``calculator``
 
   .. code-block:: shell
 
-    ./setupPythonTdd.sh calculator
+    ./createPythonTdd.sh calculator
 
 One of the advantages of programming is that I can take a series of steps and make them a one line command which the computer does on my behalf
 
 You now know one way to Setup a Test Driven Development Environment for Python projects, and have a program to do it for you anytime you want
 
 Happy Trails!
+
+:doc:`/code/code_create_tdd_environment`

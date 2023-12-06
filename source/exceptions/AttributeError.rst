@@ -15,7 +15,7 @@ Solve an AttributeError by defining variables
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I open a new file, save it as ``test_attribute_error.py`` in the ``tests`` folder created in :doc:`How to Setup a Test Driven Development Environment <setup_tdd_environment>` and type the following
+I open a new file, save it as ``test_attribute_error.py`` in the ``tests`` folder created in :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` and type the following
 
 .. code-block:: python
 
