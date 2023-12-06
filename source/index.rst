@@ -96,8 +96,8 @@ HOW TOs
   how_to/exception_handling_programs
   learning_models
 
-code
-----
+tests and solutions
+-------------------
 .. toctree::
   :maxdepth: 2
   :titlesonly:
