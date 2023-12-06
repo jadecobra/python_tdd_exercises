@@ -3,8 +3,9 @@
   You can adapt this file completely to your liking, but it should at least
   contain the root ``toctree`` directive.
 
-Welcome to pumping python: How to Flex Your Code Muscles for Fun!
+Pumping Python: How to Flex Your Code Muscles for Fun!
 ======================================================================
+
 This book is a collection of exercises to get you writing python code immediately using Test Driven Development.
 
 It is a culmination of what has worked for me over the past 10 years learning the language and observing other people use it.
