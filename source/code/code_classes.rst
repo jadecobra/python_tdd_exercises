@@ -1,5 +1,5 @@
 
-Classes: Tests and Solutions
+classes: Tests and Solutions
 ============================
 
 

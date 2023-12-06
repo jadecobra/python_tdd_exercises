@@ -1,5 +1,5 @@
 
-How to create a person: Tests and Solutions
+How to create a person: Tests and Solution
 ============================================
 
 

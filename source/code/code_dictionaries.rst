@@ -1,5 +1,5 @@
 
-Dictionaries: Tests and Solutions
+dictionaries: Tests and Solutions
 ==================================
 
 

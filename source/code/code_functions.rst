@@ -1,5 +1,5 @@
 
-Functions: Tests and Solutions
+functions: Tests and Solutions
 ==================================
 
 

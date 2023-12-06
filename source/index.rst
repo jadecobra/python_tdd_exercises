@@ -105,15 +105,15 @@ tests and solutions
   code/code_create_tdd_environment
   code/code_assertion_error
   code/code_attribute_error
-  code/code_calculator
-  code/code_classes
   code/code_dictionaries
-  code/code_exception_handling
   code/code_functions
+  code/code_classes
+  code/code_truth_table
+  code/code_exception_handling
+  code/code_calculator
   code/code_passing_values
   code/code_person_factory
   code/code_sleep_duration
-  code/code_truth_table
 
 
 :ref:`search`
