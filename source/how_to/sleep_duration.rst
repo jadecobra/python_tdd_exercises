@@ -70,13 +70,13 @@ GREEN: make it pass
 
   duration
 
-* make ``duration`` a variable by assigning it to the null value :doc:`None <data_structures_none>`
+* make ``duration`` a variable by assigning it to the null value :doc:`None </data_structures/data_structures_none>`
 
   .. code-block:: python
 
   duration = None
 
-  the terminal shows a :doc:`/exceptions/TypeError` because :doc:`None <data_structures_none>` is not callable
+  the terminal shows a :doc:`/exceptions/TypeError` because :doc:`None </data_structures/data_structures_none>` is not callable
 * I add the exception to the running list
 
   .. code-block:: python
@@ -112,7 +112,7 @@ GREEN: make it pass
    def duration(wake_time, sleep_time):
     return None
 
-  the terminal now shows an :doc:`/exceptions/AssertionError` since the duration function returns :doc:`None <data_structures_none>` and the test expects ``1`` as the duration when a sleep time of ``07:00`` and a wake time of ``08:00`` is given
+  the terminal now shows an :doc:`/exceptions/AssertionError` since the duration function returns :doc:`None </data_structures/data_structures_none>` and the test expects ``1`` as the duration when a sleep time of ``07:00`` and a wake time of ``08:00`` is given
 
 * change the return value for the duration function to the expectation
 
@@ -198,7 +198,7 @@ What if I write a test that uses a random variable for the sleep and wake times?
 
   E    AssertionError: ['__add__', '__class__', '__contains__', [918 chars]ill'] != None
 
-* copy the value on the left side of the comparison and replace :doc:`None <data_structures_none>` as the expected value in the test
+* copy the value on the left side of the comparison and replace :doc:`None </data_structures/data_structures_none>` as the expected value in the test
 
   .. code-block:: python
 
@@ -388,7 +388,7 @@ What if I write a test that uses a random variable for the sleep and wake times?
 
     E    AssertionError: ['00:00'] != None
 
-  I change the expectation from :doc:`None <data_structures_none>` and the test passes with the terminal showing us the :doc:`/exceptions/TypeError` that took us down this path
+  I change the expectation from :doc:`None </data_structures/data_structures_none>` and the test passes with the terminal showing us the :doc:`/exceptions/TypeError` that took us down this path
 
   .. code-block:: python
 

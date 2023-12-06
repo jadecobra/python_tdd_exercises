@@ -118,7 +118,7 @@ REFACTOR: make it better
     # ModuleNotFoundError
     # AttributeError
 
-* then I add a :doc:`functions` definition to ``list_comprehensions.py``
+* then I add a :doc:`/functions/functions` definition to ``list_comprehensions.py``
 
   .. code-block:: python
 

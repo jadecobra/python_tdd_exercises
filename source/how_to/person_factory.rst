@@ -2,7 +2,7 @@
 How to create a person
 ======================
 
-This is an exercise in creating :doc:`dictionaries </data_structures/data_structures_dictionaries>`  with :doc:`functions`. It assumes you are familiar with :doc:`functions` and :doc:`dictionaries </data_structures/data_structures_dictionaries>`  though you can still try it if you are not
+This is an exercise in creating :doc:`dictionaries </data_structures/data_structures_dictionaries>`  with :doc:`/functions/functions`. It assumes you are familiar with :doc:`/functions/functions` and :doc:`dictionaries </data_structures/data_structures_dictionaries>` though you can still try out the chapter if you are not
 
 
 
@@ -22,8 +22,8 @@ I create a file called ``test_person_factory.py`` in the ``tests`` folder and ad
 
   class TestPersonFactory(unittest.TestCase):
 
-    def test_person_factory(self):
-      self.assertEqual(person.factory(), None)
+      def test_person_factory(self):
+          self.assertEqual(person.factory(), None)
 
 the terminal shows a ``ModuleNotFoundError`` and I add it to the list of exceptions encountered
 
@@ -51,13 +51,13 @@ GREEN: make it pass
   .. code-block:: python
 
     def factory():
-      return None
+        return None
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* I can add more details to ``test_person_factory``
+* I then add more details to ``test_person_factory``
 
   .. code-block:: python
 
@@ -79,15 +79,15 @@ REFACTOR: make it better
 
   the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ for the call to ``this_year``
 
-* I add the new exception to the running list
+* I add the exception to the running list of exceptions encountered
 
   .. code-block:: python
 
-   # Exceptions Encountered
-   # AssertionError
-   # ModuleNotFoundError
-   # AttributeError
-   # NameError
+    # Exceptions Encountered
+    # AssertionError
+    # ModuleNotFoundError
+    # AttributeError
+    # NameError
 
 * then add a definition for ``this_year`` to the top of ``test_person_factory.py``
 
@@ -98,9 +98,12 @@ REFACTOR: make it better
 
     def this_year():
         return None
+
+
+    class TestPersonFactory(unittest.TestCase):
     ...
 
-  the terminal shows a :doc:`/exceptions/TypeError` since the ``person.factory`` function signature does not allow arguments to be passed to it.
+  the terminal shows a :doc:`/exceptions/TypeError` since the ``person.factory`` function signature does not allow arguments to be passed to it and the test passes four arguments
 
 * I add the error to the list of exceptions encountered
 
@@ -113,30 +116,35 @@ REFACTOR: make it better
     # NameError
     # TypeError
 
-* then add a keyword argument for ``first_name`` to the ``factory`` function
+* then add a keyword argument for the ``first_name`` argument to the ``factory`` function
 
   .. code-block:: python
 
     def factory(first_name=None):
         return None
 
-  the terminal shows a :doc:`/exceptions/TypeError` for the next keyword argument
+  the terminal shows a :doc:`/exceptions/TypeError` for the next argument
 
 * after adding a keyword argument for ``last_name``  to the ``factory`` function
 
   .. code-block:: python
 
-   def factory(first_name=None, last_name=None):
-      return None
+    def factory(first_name=None, last_name=None):
+        return None
 
   the terminal shows another :doc:`/exceptions/TypeError` for the next keyword argument
 
-* I change the ``factory`` function definition for each keyword until I get a :doc:`/exceptions/TypeError` for the line where I subtract ``this_year() - this_year()`` because I cannot perform a subtraction operation on :doc:`None <data_structures_none>` and the ``this_year`` function currently returns :doc:`None <data_structures_none>`
+* I change the ``factory`` function definition for each keyword until I get a :doc:`/exceptions/TypeError` for the line where I subtract ``this_year() - this_year()``
 
-    .. code-block:: python
+  .. code-block:: python
 
-      def factory(first_name=None, last_name=None, year_of_birth=None, sex=None):
+      def factory(
+          first_name=None, last_name=None,
+          year_of_birth=None, sex=None
+      ):
           return None
+
+  a :doc:`/exceptions/TypeError` is raised because I cannot perform a subtraction operation on :doc:`None </data_structures/data_structures_none>` and the ``this_year`` function currently returns :doc:`None </data_structures/data_structures_none>`
 
 * I change the definition for ``this_year`` in ``test_person_factory.py`` using a function from the `datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#module-datetime>`_ library that returns the current year
 
@@ -148,53 +156,60 @@ REFACTOR: make it better
 
     def this_year():
         return datetime.datetime.now().year
+    ...
 
 
-  - I import the ``datetime`` library so I can use its :doc:`functions` and :doc:`class </classes>`
-  - I return the ``year`` attribute of the object returned by the ``now`` :doc:`method </functions/functions>` of the ``datetime.datetime`` class, which is a representation of the current local date and time. I could also use ``today`` or ``utcnow`` to achieve the same result
+  - I import the ``datetime`` library so I can use its :doc:`/functions/functions` and :doc:`class </classes/classes>`
+  - I return the ``year`` attribute of the object returned by the ``now`` :doc:`method </functions/functions>` of the ``datetime.datetime`` :doc:`class </classes/classes>`, which is a representation of the current local date and time. I could also use ``today`` or ``utcnow`` to achieve the same result
   - I get the ``year`` attribute of the object returned since that is all I am interested in
 
-* the terminal shows an :doc:`/exceptions/AssertionError` since the ``person.factory`` function returns :doc:`None <data_structures_none>` but the test expects a :doc:`dictionary <data_structures_dictionaries>`. I should change the function to return an empty dictionary
+* the terminal shows an :doc:`/exceptions/AssertionError` since the ``person.factory`` function returns :doc:`None </data_structures/data_structures_none>` but the test expects a :doc:`dictionary </data_structures/data_structures_dictionaries>` containing a bunch of values. I should change the function to return an empty dictionary for a better comparison
 
   .. code-block:: python
 
-    def factory(first_name=None, last_name=None, year_of_birth=None, sex=None):
+    def factory(
+        first_name=None, last_name=None,
+        year_of_birth=None, sex=None
+    ):
         return {}
 
-  the terminal shows the differences between the :doc:`dictionary <data_structures_dictionaries>` returned by the ``factory`` function and the one expected in the test
+  the terminal shows the differences between the :doc:`dictionary </data_structures/data_structures_dictionaries>` returned by the ``factory`` function and the one expected in the test
 
 * I change the empty :doc:`dictionary </data_structures/data_structures_dictionaries>`   in the ``factory`` function to match the expected results
 
   .. code-block:: python
 
-    def factory(first_name=None, last_name=None, year_of_birth=None, sex=None):
-      return {
-          "age": 0,
-          "first_name": "sibling",
-          "last_name": "last_name",
-          "sex": "F",
-      }
+    def factory(
+        first_name=None, last_name=None,
+        year_of_birth=None, sex=None
+    ):
+        return {
+            "age": 0,
+            "first_name": "sibling",
+            "last_name": "last_name",
+            "sex": "F",
+        }
 
   *LOVELY!* the tests pass!
-* Even though the tests pass, the factory function currently returns the exact same dictionary every time, regardless of what information is given to it. To make it more useful I need it to be able to use the inputs given. I add another test to ``test_person_factory.py`` with a different set of inputs
+* Even though the tests pass, the factory function currently returns the exact same dictionary every time, regardless of what information is given to it. It is currently a :doc:`singleton function </functions/functions_singleton>`. To make it more useful I need it to be able to use the inputs given. I add another test to ``test_person_factory.py`` with a different set of inputs
 
   .. code-block:: python
 
     def test_person_factory_takes_in_variable_inputs(self):
-      self.assertEqual(
-        person.factory(
-            first_name="me",
-            last_name="last_name",
-            year_of_birth=1983,
-            sex="M",
-        ),
-        {
-            "first_name": "me",
-            "last_name": "last_name",
-            "sex": "M",
-            "age": this_year() - 1983
-        }
-      )
+        self.assertEqual(
+            person.factory(
+                first_name="me",
+                last_name="my_last_name",
+                year_of_birth=1983,
+                sex="M",
+            ),
+            {
+                "first_name": "me",
+                "last_name": "my_last_name",
+                "sex": "M",
+                "age": this_year() - 1983
+            }
+        )
 
   the terminal displays an :doc:`/exceptions/AssertionError` because the expected and returned dictionaries are different
 
@@ -202,106 +217,228 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-    def factory(first_name=None, last_name=None, year_of_birth=None, sex=None):
+    def factory(
+        first_name=None, last_name=None,
+        year_of_birth=None, sex=None
+    ):
         return {
-            'age': 0,
-            'first_name': first_name,
-            'last_name': 'last_name',
-            'sex': 'F',
+            "age": 0,
+            "first_name": first_name,
+            "last_name": "last_name",
+            "sex": "F",
         }
 
-  the terminal shows an :doc:`/exceptions/AssertionError` but no longer shows a difference for ``first_name``. Good, I will repeat the same move step by step for every other input until the only error left is for the ``age``
+  the terminal shows an :doc:`/exceptions/AssertionError` with no difference for the values of ``first_name``. Good.
 
-* For the age to be accurate it has to be a calculation based on the current year. I have a function that returns the current year and I have the ``year_of_birth`` as input, I also have this line in the test ``this_year() - 1983``. Since ``1983`` is the ``year_of_birth`` in this case. I can try changing the ``factory`` function to use that calculation
+* I repeat the same move step by step for every other input until the only error left is for the ``age``
 
   .. code-block:: python
 
-   def factory(first_name=None, last_name=None, year_of_birth=None, sex=None):
-      return {
-          'age': this_year() - year_of_birth,
-          'first_name': first_name,
-          'last_name': last_name,
-          'sex': sex,
-      }
+    def factory(
+        first_name=None, last_name=None,
+        year_of_birth=None, sex=None
+    ):
+        return {
+        "age": 0,
+        "first_name": first_name,
+        "last_name": last_name,
+        "sex": sex,
+    }
+
+* For the age to be accurate it has to be a calculation based on the current year. I have a function that returns the current year and I have the ``year_of_birth`` as input, I also have this line in the test ``this_year() - 1983``. I can try changing the ``factory`` function to use that calculation
+
+  .. code-block:: python
+
+    def factory(
+        first_name=None, last_name=None,
+        year_of_birth=None, sex=None
+    ):
+        return {
+            'age': this_year() - year_of_birth,
+            'first_name': first_name,
+            'last_name': last_name,
+            'sex': sex,
+        }
 
   the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ since I am calling a function that does not exist in ``person.py``
 
-* I replace ``this_year()`` with the return value from ``test_person_factory.this_year`` and add an import statement for the new error
+* I replace ``this_year()`` with the return value from ``test_person_factory.this_year``
+
+  .. code-block:: python
+
+    def factory(
+        first_name=None, last_name=None,
+        year_of_birth=None, sex=None
+    ):
+        return {
+            'age': datetime.datetime.now().year  - year_of_birth,
+            'first_name': first_name,
+            'last_name': last_name,
+            'sex': sex,
+        }
+
+  the terminal changes to show another `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ for ``datetime``
+* I add an import statement at the beginning of ``person.py``
 
   .. code-block:: python
 
     import datetime
 
-    def factory(first_name=None, last_name=None, year_of_birth=None, sex=None):
-      return {
-          'age': datetime.datetime.now().year - year_of_birth,
-          'first_name': first_name,
-          'last_name': last_name,
-          'sex': sex,
-      }
+    def factory(
+        first_name=None, last_name=None,
+        year_of_birth=None, sex=None
+    ):
+        return {
+            'age': datetime.datetime.now().year  - year_of_birth,
+            'first_name': first_name,
+            'last_name': last_name,
+            'sex': sex,
+        }
 
-  *HOORAY!* the terminal shows passing tests
+  *HOORAY!* the terminal shows passing tests, time for a victory dance. I can call the ``factory`` function passing in values for ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` and I get a :doc:`dictionary </data_structures/data_structures_dictionaries>` that contains the ``first_name``, ``last_name``, ``sex`` and ``age`` of the person
 
-* I will now add another test to ``test_person.py``, this time for default values
+* I noticed that there is some repetition in the test. If I want to test with a different value for any of the arguments passed to ``person.factory``, I would have to make the change in 2 places - once in the argument passed to the :doc:`function </functions/functions>` and then again in the resulting :doc:`dictionary </data_structures/data_structures_dictionaries>`. I can refactor this to make it easier to make changes to the test when I want especially since the programming gods told me `Do Not Repeat Yourself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
+
+  .. code-block:: python
+
+    def test_person_factory_takes_in_variable_inputs(self):
+        first_name = "me"
+        last_name = "my_last_name"
+        sex = "M"
+        year_of_birth = 1983
+        self.assertEqual(
+            person.factory(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+                sex=sex,
+            ),
+            {
+                "first_name": first_name,
+                "last_name": last_name,
+                "sex": sex,
+                "age": this_year() - year_of_birth,
+            }
+        )
+
+  I remove the duplication by creating a variable for each of the inputs that is passed to the ``factory`` :doc:`function </functions/functions>` and reference the variables in the :doc:`function </functions/functions>` call. I now only need to make a change in one place when I want, for example
+
+  .. code-block:: python
+
+      def test_person_factory_takes_in_variable_inputs(self):
+          first_name = "john"
+          last_name = "doe"
+          sex = "M"
+          year_of_birth = 1942
+          self.assertEqual(
+              person.factory(
+                  first_name=first_name,
+                  last_name=last_name,
+                  year_of_birth=year_of_birth,
+                  sex=sex,
+              ),
+              {
+                  "first_name": first_name,
+                  "last_name": last_name,
+                  "sex": sex,
+                  "age": this_year() - year_of_birth,
+              }
+          )
+
+
+How to use default keyword arguments in functions
+--------------------------------------------------
+
+RED: make it fail
+^^^^^^^^^^^^^^^^^
+
+* I add a failing test to ``test_person.py``, this time for default values
 
   .. code-block:: python
 
     def test_person_factory_with_default_keyword_arguments(self):
+        first_name = "child_a"
+        sex = "M"
+        year_of_birth = 2014
         self.assertEqual(
             person.factory(
-                first_name="child_a",
-                year_of_birth=2014,
-                sex="M",
+                first_name=first_name,
+                year_of_birth=year_of_birth,
+                sex=sex,
             ),
             {
-                "first_name": "child_a",
+                "first_name": first_name,
                 "last_name": "last_name",
-                "sex": "M",
-                "age": this_year() - 2014
+                "sex": sex,
+                "age": this_year() - year_of_birth
             }
         )
 
   the terminal shows an :doc:`/exceptions/AssertionError` because the value for ``last_name`` does not match the expected value
 
-* Since I now have 3 tests with the same value for ``last_name`` I could use it as the default value in the absence of any other examples. I change the default value for ``last_name`` in the ``person.factory`` definition
+* The test expects a value of ``last_name`` but ``person.factory`` currently returns :doc:`None </data_structures/data_structures_none>`. I change the default value for ``last_name`` in the ``person.factory`` definition to match the expectation
 
   .. code-block:: python
 
-    def factory(first_name=None, last_name="last_name", year_of_birth=None, sex=None):
-
-  the terminal shows passing tests
-
-* what if I try another default value, this time for sex. I add a test to ``test_person_factory_with_default_keyword_arguments``
-
-  .. code-block:: python
-
-    self.assertEqual(
-        person.factory(
-            first_name="person",
-            year_of_birth=1900,
-        ),
-        {
-            "first_name": "person",
-            "last_name": "last_name",
-            "age": this_year() - 1900,
-            "sex": "M"
+    def factory(
+        first_name=None, last_name="last_name",
+        year_of_birth=None, sex=None
+    ):
+        return {
+            'age': datetime.datetime.now().year  - year_of_birth,
+            'first_name': first_name,
+            'last_name': last_name,
+            'sex': sex,
         }
-    )
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+  the terminal shows passing tests. When no value is given for the ``last_name`` argument to ``person.factory`` it uses ``last_name`` because that is the defined default value in the :doc:`function signature </functions/functions>`
+
+* what if I try another default value, this time for sex? I add a test called ``test_person_factory_with_sex_default_keyword_arguments``
+
+  .. code-block:: python
+
+
+    def test_person_factory_with_sex_default_keyword_arguments(self):
+        first_name = "person"
+        year_of_birth = 1900
+        self.assertEqual(
+            person.factory(
+                first_name=first_name,
+                year_of_birth=year_of_birth,
+            ),
+            {
+                "first_name": first_name,
+                "last_name": "last_name",
+                "age": this_year() - year_of_birth,
+                "sex": "M"
+            }
+        )
+
+  the terminal shows an :doc:`/exceptions/AssertionError`, there is a difference in the values for ``sex``
 
 * 3 out of the 4 persons created have ``M`` as their sex and 1 has ``F`` as their sex, I could set the majority as the default value to reduce the number of repetitions. I change the default value for the parameter in ``person.factory``
 
   .. code-block:: python
 
-    def factory(first_name=None, last_name="last_name", year_of_birth=None, sex='M'):
+    def factory(
+        first_name=None, last_name="last_name",
+        year_of_birth=None, sex="M"
+    ):
+        return {
+            'age': datetime.datetime.now().year  - year_of_birth,
+            'first_name': first_name,
+            'last_name': last_name,
+            'sex': sex,
+        }
 
   and the terminal shows passing tests.
 
+----
+
 We have successfully created a :doc:`function </functions/functions>` that
 
-* returns a dictionary as its output
-* takes in keyword argument inputs
+* returns a dictionary as output
+* takes in keyword arguments as inputs
 * has default values for when a value is not given for a certain input
 * performs a calculation based on a given input to return an output based on an input
 

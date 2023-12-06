@@ -81,7 +81,7 @@ RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
 
-* add the :doc:`functions` below to ``test_indentation_error.py``
+* add the :doc:`/functions/functions` below to ``test_indentation_error.py``
 
   .. code-block:: python
 

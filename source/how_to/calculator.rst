@@ -187,7 +187,7 @@ GREEN: make it pass
     # AssertionError
     # NameError
 
-* then assign the name ``add`` to the null value :doc:`None <data_structures_none>`
+* then assign the name ``add`` to the null value :doc:`None </data_structures/data_structures_none>`
 
   .. code-block:: python
 
@@ -199,9 +199,9 @@ GREEN: make it pass
 
     E    TypeError: 'NoneType' object is not callable
 
-  The :doc:`/exceptions/AttributeError` was fixed by declaring a variable ``add`` in the ``calculator`` module, even though it is currently assigned to the null value :doc:`None <data_structures_none>`
+  The :doc:`/exceptions/AttributeError` was fixed by declaring a variable ``add`` in the ``calculator`` module, even though it is currently assigned to the null value :doc:`None </data_structures/data_structures_none>`
 
-* The new error is a :doc:`/exceptions/TypeError` which can occur when an `object <https://docs.python.org/3/glossary.html#term-object>`_ is used in a way that it is not supposed to be used. In this case the ``add`` variable is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_ because it refers to :doc:`None <data_structures_none>` which is not a `callable <https://docs.python.org/3/glossary.html#term-callable>`_ object. I add the error to the list of exceptions encountered
+* The new error is a :doc:`/exceptions/TypeError` which can occur when an `object <https://docs.python.org/3/glossary.html#term-object>`_ is used in a way that it is not supposed to be used. In this case the ``add`` variable is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_ because it refers to :doc:`None </data_structures/data_structures_none>` which is not a `callable <https://docs.python.org/3/glossary.html#term-callable>`_ object. I add the error to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -210,7 +210,7 @@ GREEN: make it pass
     # NameError
     # TypeError
 
-* I have to define ``add`` as a :doc:`function </functions/functions>` or a :doc:`class </classes/classes>` to make it callable. I know the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword is used for creating :doc:`functions` and will test changing the ``add`` variable to a :doc:`function </functions/functions>` in ``calculator.py``
+* I have to define ``add`` as a :doc:`function </functions/functions>` or a :doc:`class </classes/classes>` to make it callable. I know the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword is used for creating :doc:`/functions/functions` and will test changing the ``add`` variable to a :doc:`function </functions/functions>` in ``calculator.py``
 
   .. code-block:: python
 

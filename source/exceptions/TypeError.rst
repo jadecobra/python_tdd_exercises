@@ -114,7 +114,7 @@ GREEN: make it pass
   Another ``TypeError`` but with a new message. Reading the error from the bottom up
 
   * ``function_a() takes 0 positional arguments but 1 was given`` there was an expectation which was not met in how the function is called, it violates the defined signature
-  * ``self.assertIsNone(functions.function_a("a"))`` I am checking if the call ``functions.function_a("a")`` is equal to :doc:`None <data_structures_none>`
+  * ``self.assertIsNone(functions.function_a("a"))`` I am checking if the call ``functions.function_a("a")`` is equal to :doc:`None </data_structures/data_structures_none>`
   * ``functions.function_a("a")`` is the call. I think of it like an address
 
     - ``functions`` refers to ``functions.py`` which is a python module
@@ -128,7 +128,7 @@ GREEN: make it pass
   - the number you provide is like ``"a"``
   - hitting dial is like ``()``
 
-  This is covered in more depth in :doc:`functions`
+  This is covered in more depth in :doc:`/functions/functions`
 
 
 * I change ``function_a`` in ``functions.py``
@@ -209,7 +209,7 @@ There's not much to do here but add more tests for practice.
         return None
 
   the terminal shows all tests pass.
-* Is there another solution to the above test? Can I define a function that takes in any number of parameters? see :doc:`functions`
+* Is there another solution to the above test? Can I define a function that takes in any number of parameters? see :doc:`/functions/functions`
 
 More Tests
 ----------

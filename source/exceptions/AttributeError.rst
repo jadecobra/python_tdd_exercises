@@ -130,7 +130,7 @@ GREEN: make it pass
 
     variable_0 = None
 
-  this assigns the name ``variable_0`` to :doc:`None <data_structures_none>` and the terminal shows a passing test. YES!
+  this assigns the name ``variable_0`` to :doc:`None </data_structures/data_structures_none>` and the terminal shows a passing test. YES!
 
   .. code-block:: python
 
@@ -436,7 +436,7 @@ REFACTOR: make it better
 * How to solve a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 * How to solve a :doc:`/exceptions/TypeError` by defining a callable
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`functions`
+* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
 
 
 ----
@@ -448,7 +448,7 @@ Solve an AttributeError by defining classes
 I think of a :doc:`class </classes/classes>` as a collection of :doc:`methods (functions) </functions/functions>` and attributes that represents an `object <https://docs.python.org/3/glossary.html#term-object>`_
 
 - attributes are names which represent a value
-- :doc:`methods </functions/functions>` are :doc:`functions` that may be able to accept inputs and may return a value - they are `callable <https://docs.python.org/3/glossary.html#term-callable>`_
+- :doc:`methods </functions/functions>` are :doc:`/functions/functions` that may be able to accept inputs and may return a value - they are `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 
 For example I could define a ``Human`` class with attributes like eye color, date of birth, height and weight, and :doc:`methods </functions/functions>` like age which returns a value based on the current year and date of birth attribute, you can see an example of this in :doc:`/classes`
 
@@ -492,7 +492,7 @@ GREEN: make it pass
     def Class0():
         return None
 
-  The test passes! Something is odd here, what is the difference between :doc:`class </classes>` and :doc:`functions`? Why am I writing a different set of tests for :doc:`class </classes>` if the solutions are the same for :doc:`functions`?
+  The test passes! Something is odd here, what is the difference between :doc:`class </classes>` and :doc:`/functions/functions`? Why am I writing a different set of tests for :doc:`class </classes>` if the solutions are the same for :doc:`/functions/functions`?
 
   For now, I will move on with these questions unanswered until they become obvious
 
@@ -526,8 +526,8 @@ REFACTOR: make it better
 * How to solve a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 * How to solve a :doc:`/exceptions/TypeError` by defining a callable
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`functions`
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :doc:`class </classes>`? do I know how to define :doc:`class </classes>` if I define them the same way I do :doc:`functions`?
+* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
+* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :doc:`class </classes>`? do I know how to define :doc:`class </classes>` if I define them the same way I do :doc:`/functions/functions`?
 
 ----
 
@@ -675,7 +675,7 @@ REFACTOR: make it better
 * How to solve a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 * How to solve a :doc:`/exceptions/TypeError` by defining a callable
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`functions`
+* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :doc:`class </classes>`
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining attributes (variables) in a :doc:`class </classes>`
 
@@ -762,12 +762,12 @@ repeat the solution until all tests pass
 * How to solve a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 * How to solve a :doc:`/exceptions/TypeError` by defining a callable
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`functions`
+* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :doc:`class </classes>`
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining attributes (variables) in a :doc:`class </classes>`
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`methods (functions) </functions/functions>` in a :doc:`class </classes>`
 
-:doc:`classes </classes>` vs :doc:`functions` in python
+:doc:`classes </classes>` vs :doc:`/functions/functions` in python
 -------------------------------------------------------
 
 * attributes and :doc:`methods </functions/functions>` in a :doc:`class </classes>` can be accessible from outside the :doc:`class </classes>`

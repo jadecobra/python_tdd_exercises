@@ -1,56 +1,118 @@
 
-How to create a simple Calculator: Tests and Solutions
-======================================================
+How to create a person: Tests and Solutions
+============================================
 
 
 tests
 -----
 
-Here is the code in ``tests/test_assertion_error.py``
+Here is the code in ``tests/test_person_factory.py``
 
 .. code-block:: python
 
     import unittest
+    import person
+    import datetime
+
+    def this_year():
+        return datetime.datetime.now().year
 
 
-    class TestAssertionErrors(unittest.TestCase):
+    class TestPersonFactory(unittest.TestCase):
 
-        def test_assertion_errors_with_none(self):
-            assert False is not None
-            self.assertIsNotNone(False)
+        def test_person_factory(self):
+            self.assertEqual(
+                person.factory(
+                    first_name="sibling",
+                    last_name="last_name",
+                    year_of_birth=this_year(),
+                    sex="F"
+                ),
+                {
+                    "first_name": "sibling",
+                    "last_name": "last_name",
+                    "sex": "F",
+                    "age": this_year() - this_year()
+                }
+            )
 
-            assert True is not None
-            self.assertIsNotNone(True)
+        def test_person_factory_takes_in_variable_inputs(self):
+            first_name = "me"
+            last_name = "my_last_name"
+            sex = "M"
+            year_of_birth = 1983
+            self.assertEqual(
+                person.factory(
+                    first_name=first_name,
+                    last_name=last_name,
+                    year_of_birth=year_of_birth,
+                    sex=sex,
+                ),
+                {
+                    "first_name": first_name,
+                    "last_name": last_name,
+                    "sex": sex,
+                    "age": this_year() - year_of_birth,
+                }
+            )
 
-            assert None is None
-            self.assertIsNone(None)
+        def test_person_factory_with_default_keyword_arguments(self):
+            first_name = "child_a"
+            sex = "M"
+            year_of_birth = 2014
+            self.assertEqual(
+                person.factory(
+                    first_name=first_name,
+                    year_of_birth=year_of_birth,
+                    sex=sex,
+                ),
+                {
+                    "first_name": first_name,
+                    "last_name": "last_name",
+                    "sex": sex,
+                    "age": this_year() - year_of_birth
+                }
+            )
 
-        def test_assertion_errors_with_false(self):
-            assert False is False
-            self.assertFalse(False)
+        def test_person_factory_with_sex_default_keyword_arguments(self):
+            first_name = "person"
+            year_of_birth = 1900
+            self.assertEqual(
+                person.factory(
+                    first_name=first_name,
+                    year_of_birth=year_of_birth,
+                ),
+                {
+                    "first_name": first_name,
+                    "last_name": "last_name",
+                    "age": this_year() - year_of_birth,
+                    "sex": "M"
+                }
+            )
 
-        def test_assertion_errors_with_true(self):
-            assert True is True
-            self.assertTrue(True)
+    # Exceptions Encountered
+    # AssertionError
+    # ModuleNotFoundError
+    # AttributeError
+    # NameError
+    # TypeError
 
-        def test_assertion_errors_with_equality(self):
-            assert False != None
-            self.assertNotEqual(False, None)
+solution
+---------
 
-            assert True != None
-            self.assertNotEqual(True, None)
+Here is the solution in ``person.py``
 
-            assert True == True
-            self.assertEqual(True, True)
+.. code-block:: python
 
-            assert True != False
-            self.assertNotEqual(True, False)
+    import datetime
 
-            assert False == False
-            self.assertEqual(False, False)
-
-            assert False != True
-            self.assertNotEqual(False, True)
-
-            assert None == None
-            self.assertEqual(None, None)
+    def factory(
+        first_name=None, last_name="last_name",
+        year_of_birth=None, sex="M"
+    ):
+        return {
+            'age': datetime.datetime.now().year  - year_of_birth,
+            'first_name': first_name,
+            'last_name': last_name,
+            'sex': sex,
+        }

@@ -118,7 +118,7 @@ RED: make it fail
   - `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ is a :doc:`class </classes/classes>` defined in the `unittest <https://docs.python.org/3/library/unittest.html>`_ module which contains :doc:`methods (functions) </functions/functions>` for testing and ``Test{PROJECT_NAME}`` inherits from it. A simple way to think of inheritance is that ``Test{PROJECT_NAME}`` is a child of `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ and can do the same things it can
   - ``def test_failure`` is the definition of a test :doc:`method </functions/functions>` to test the program I am creating
 
-    * `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is the python keyword for creating :doc:`functions`
+    * `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is the python keyword for creating :doc:`/functions/functions`
     * ``test_failure`` is the name of the :doc:`function </functions/functions>`
     * ``self`` is the ``Test{PROJECT_NAME}`` class. I can use ``self`` to access ``methods`` and ``attributes`` within the ``Test{PROJECT_NAME}`` class, this avoids having to type ``Test{PROJECT_NAME}().assertFalse(True)`` to access the ``assertFalse`` :doc:`method </functions/functions>` for instance
     * ``self.assertFalse(True)`` the actual test I expect this line to fail because :doc:`True </data_structures/data_structures_booleans>` is not :doc:`False </data_structures/data_structures_booleans>`

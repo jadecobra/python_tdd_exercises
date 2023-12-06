@@ -65,7 +65,7 @@ GREEN: make it pass
 From the tests I can say that in python
 
 * `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
-* ``dict()`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ which means an empty :doc:`dictionary <data_structures_dictionaries>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* ``dict()`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ which means an empty :doc:`dictionary </data_structures/data_structures_dictionaries>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * ``{}`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ which means an empty `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_/\ :doc:`dictionary </data_structures/data_structures_dictionaries>`   is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * ``[]`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ which means an empty :doc:`list <data_structures_lists>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * ``()`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ which means an empty `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
@@ -76,7 +76,7 @@ I can sum this up as
 
 
 * `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
-* empty `objects <https://docs.python.org/3/glossary.html#term-object>`_ including ``0`` and :doc:`None <data_structures_none>` are `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* empty `objects <https://docs.python.org/3/glossary.html#term-object>`_ including ``0`` and :doc:`None </data_structures/data_structures_none>` are `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 
 What is True?
 -------------
@@ -151,8 +151,8 @@ GREEN: make it pass
 
 * I can sum up my current knowledge of python from the tests so far as
 
-  - any value except ``0``, empty objects and :doc:`None <data_structures_none>` are `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-  - empty `objects <https://docs.python.org/3/glossary.html#term-object>`_ including ``0`` and :doc:`None <data_structures_none>` are `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+  - any value except ``0``, empty objects and :doc:`None </data_structures/data_structures_none>` are `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
+  - empty `objects <https://docs.python.org/3/glossary.html#term-object>`_ including ``0`` and :doc:`None </data_structures/data_structures_none>` are `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
   - `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
   - `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
-  - :doc:`None <data_structures_none>` is :doc:`None <data_structures_none>`
+  - :doc:`None </data_structures/data_structures_none>` is :doc:`None </data_structures/data_structures_none>`
