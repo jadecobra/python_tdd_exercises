@@ -57,7 +57,7 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* I then add more details to ``test_person_factory``
+* I add more details to ``test_person_factory``. I want to pass in values for ``first_name``, ``last_name``, ``year_of_birth``, and ``sex`` and have the function return a :doc:`dictionary </data_structures/data_structures_dictionaries>` with the ``first_name``, ``last_name``, ``sex`` and ``age`` calculated from the ``year_of_birth``
 
   .. code-block:: python
 
@@ -103,7 +103,7 @@ REFACTOR: make it better
     class TestPersonFactory(unittest.TestCase):
     ...
 
-  the terminal shows a :doc:`/exceptions/TypeError` since the ``person.factory`` function signature does not allow arguments to be passed to it and the test passes four arguments
+  the terminal shows a :doc:`/exceptions/TypeError` since the ``person.factory`` function signature does not allow arguments to be passed to it and the test sends four arguments
 
 * I add the error to the list of exceptions encountered
 
@@ -116,7 +116,7 @@ REFACTOR: make it better
     # NameError
     # TypeError
 
-* then add a keyword argument for the ``first_name`` argument to the ``factory`` function
+* then add a keyword argument for ``first_name`` to the ``factory`` function
 
   .. code-block:: python
 
@@ -159,11 +159,11 @@ REFACTOR: make it better
     ...
 
 
-  - I import the ``datetime`` library so I can use its :doc:`/functions/functions` and :doc:`class </classes/classes>`
+  - I import the ``datetime`` library so I can use its :doc:`/functions/functions` and :doc:`classes </classes/classes>`
   - I return the ``year`` attribute of the object returned by the ``now`` :doc:`method </functions/functions>` of the ``datetime.datetime`` :doc:`class </classes/classes>`, which is a representation of the current local date and time. I could also use ``today`` or ``utcnow`` to achieve the same result
-  - I get the ``year`` attribute of the object returned since that is all I am interested in
+  - I get the ``year`` attribute of the object returned since that is "all I need to get by" cue `Method Man and Mary J. Blige <https://www.youtube.com/watch?v=XW1HNWqdVbk>`_
 
-* the terminal shows an :doc:`/exceptions/AssertionError` since the ``person.factory`` function returns :doc:`None </data_structures/data_structures_none>` but the test expects a :doc:`dictionary </data_structures/data_structures_dictionaries>` containing a bunch of values. I should change the function to return an empty dictionary for a better comparison
+* the terminal shows an :doc:`/exceptions/AssertionError` since the ``person.factory`` function returns :doc:`None </data_structures/data_structures_none>` and the test expects a :doc:`dictionary </data_structures/data_structures_dictionaries>` with keys and values. I should change the function to return an empty dictionary so I am at least comparing 2 :doc:`dictionaries </data_structures/data_structures_dictionaries>`
 
   .. code-block:: python
 
@@ -173,7 +173,7 @@ REFACTOR: make it better
     ):
         return {}
 
-  the terminal shows the differences between the :doc:`dictionary </data_structures/data_structures_dictionaries>` returned by the ``factory`` function and the one expected in the test
+  the terminal shows the differences between the :doc:`dictionaries </data_structures/data_structures_dictionaries>` returned by the ``factory`` function and the one expected in the test
 
 * I change the empty :doc:`dictionary </data_structures/data_structures_dictionaries>`   in the ``factory`` function to match the expected results
 
@@ -191,7 +191,7 @@ REFACTOR: make it better
         }
 
   *LOVELY!* the tests pass!
-* Even though the tests pass, the factory function currently returns the exact same dictionary every time, regardless of what information is given to it. It is currently a :doc:`singleton function </functions/functions_singleton>`. To make it more useful I need it to be able to use the inputs given. I add another test to ``test_person_factory.py`` with a different set of inputs
+* The factory function currently returns the exact same dictionary every time, regardless of what inputs it gets. It is a :doc:`singleton function </functions/functions_singleton>`. To be more useful it has to use the inputs it is given. I add another test to ``test_person_factory.py`` with a different set of inputs
 
   .. code-block:: python
 
@@ -230,7 +230,7 @@ REFACTOR: make it better
 
   the terminal shows an :doc:`/exceptions/AssertionError` with no difference for the values of ``first_name``. Good.
 
-* I repeat the same move step by step for every other input until the only error left is for the ``age``
+* I repeat the same move step by step for every other input until the only error left is for ``age``
 
   .. code-block:: python
 
@@ -245,7 +245,7 @@ REFACTOR: make it better
         "sex": sex,
     }
 
-* For the age to be accurate it has to be a calculation based on the current year. I have a function that returns the current year and I have the ``year_of_birth`` as input, I also have this line in the test ``this_year() - 1983``. I can try changing the ``factory`` function to use that calculation
+* For ``age`` to be accurate it has to be a calculation based on the current year. I have a function that returns the current year and I have the ``year_of_birth`` as input, I also have this line in the test ``this_year() - 1983``. I can try changing the ``factory`` function to use that calculation
 
   .. code-block:: python
 
@@ -271,7 +271,7 @@ REFACTOR: make it better
         year_of_birth=None, sex=None
     ):
         return {
-            'age': datetime.datetime.now().year  - year_of_birth,
+            'age': datetime.datetime.now().year - year_of_birth,
             'first_name': first_name,
             'last_name': last_name,
             'sex': sex,
