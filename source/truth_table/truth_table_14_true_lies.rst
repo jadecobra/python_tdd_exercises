@@ -87,8 +87,8 @@ GREEN: make it pass
 *YOU DID IT!* You made it to the end of the ``Truth Table`` series. Summarizing what the tests have shown so far, I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures/data_structures_booleans>` or :doc:`False </data_structures/data_structures_booleans>`
 
 
-* ``contradition`` always returns :doc:`False </data_structures/data_structures_booleans>` it is a :doc:`singleton function </functions_singleton>`
-* ``tautology`` always returns :doc:`True </data_structures/data_structures_booleans>` it is a :doc:`singleton function </functions_singleton>`
+* ``contradition`` always returns :doc:`False </data_structures/data_structures_booleans>` it is a :doc:`singleton function </functions/functions_singleton>`
+* ``tautology`` always returns :doc:`True </data_structures/data_structures_booleans>` it is a :doc:`singleton function </functions/functions_singleton>`
 * ``converse implication`` is ``not p and q`` which is different from ``not(p and q)``
 * ``project second`` always returns ``q``
 * ``project first`` always returns ``p``

@@ -4,7 +4,12 @@ How to create a person
 
 This is an exercise in creating :doc:`dictionaries </data_structures/data_structures_dictionaries>`  with :doc:`/functions/functions`. It assumes you are familiar with :doc:`/functions/functions` and :doc:`dictionaries </data_structures/data_structures_dictionaries>` though you can still try out the chapter if you are not
 
+Prerequisites
+-----------------------------------------------
 
+:doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>`
+
+----
 
 How to use dictionaries as factories in python
 -----------------------------------------------
@@ -245,7 +250,7 @@ REFACTOR: make it better
         "sex": sex,
     }
 
-* For ``age`` to be accurate it has to be a calculation based on the current year. I have a function that returns the current year and I have the ``year_of_birth`` as input, I also have this line in the test ``this_year() - 1983``. I can try changing the ``factory`` function to use that calculation
+* For ``age`` to be accurate it has to be a calculation based on the current year. I have a function that returns the current year and I have the ``year_of_birth`` as input, I also have this line in the test ``this_year() - 1983``. I can try making the ``factory`` function use that calculation
 
   .. code-block:: python
 
@@ -295,9 +300,9 @@ REFACTOR: make it better
             'sex': sex,
         }
 
-  *HOORAY!* the terminal shows passing tests, time for a victory dance. I can call the ``factory`` function passing in values for ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` and I get a :doc:`dictionary </data_structures/data_structures_dictionaries>` that contains the ``first_name``, ``last_name``, ``sex`` and ``age`` of the person
+  *HOORAY!* the terminal shows passing tests, time for a victory dance. I can call the ``factory`` :doc:`function </functions/functions>` passing in values for ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` and I get a :doc:`dictionary </data_structures/data_structures_dictionaries>` that contains the ``first_name``, ``last_name``, ``sex`` and ``age`` of the person
 
-* I noticed that there is some repetition in the test. If I want to test with a different value for any of the arguments passed to ``person.factory``, I would have to make the change in 2 places - once in the argument passed to the :doc:`function </functions/functions>` and then again in the resulting :doc:`dictionary </data_structures/data_structures_dictionaries>`. I can refactor this to make it easier to make changes to the test when I want especially since the programming gods told me `Do Not Repeat Yourself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
+* I noticed that there is some repetition in the test. If I want to test with a different value for any of the arguments passed to ``person.factory``, I would have to make the change in 2 places - once in the argument passed to the :doc:`function </functions/functions>` and then again in the resulting :doc:`dictionary </data_structures/data_structures_dictionaries>`. I can refactor this to make it easier to make changes to the test when I want,  especially since the programming gods told me `Do Not Repeat Yourself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
   .. code-block:: python
 

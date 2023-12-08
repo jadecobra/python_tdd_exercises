@@ -10,6 +10,12 @@ It is also a pain when it causes the program to exit prematurely. What if I want
 
 Enter Exception Handling, a way to deal with exceptions, allowing programs to make decisions when an Exception is encountered. Enough words, time to write some code.
 
+Prerequisites
+^^^^^^^^^^^^^
+
+:doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>`
+
+----
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^

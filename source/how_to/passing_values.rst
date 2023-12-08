@@ -41,6 +41,12 @@ or use the `self.assertEqual` :doc:`method </functions/functions>` from `unittes
 
 This chapter explores how to pass values from tests to programs using `Formatted string literals <https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals>`_ for placing values inside a string
 
+Prerequisites
+^^^^^^^^^^^^^
+
+:doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>`
+
+----
 
 RED: make it fail
 -----------------

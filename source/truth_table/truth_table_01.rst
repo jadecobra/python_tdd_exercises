@@ -13,12 +13,18 @@ There are only two boolean values
 
 The Truth Table gives the 16 outcomes of binary operations on these two values
 
+Prerequisites
+-------------
+
+:doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` with ``truth_table`` as the project name
+
+----
 
 
 Nullary Operations
 ------------------
 
-Nullary operations do not take in inputs and always return the same value. They are :doc:`singleton functions </functions_singleton>`
+Nullary operations do not take in inputs and always return the same value. They are :doc:`singleton functions </functions/functions_singleton>`
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -67,7 +73,7 @@ GREEN: make it pass
    # ModuleNotFoundError
    # AttributeError
 
-* I add a :doc:`singleton function </functions_singleton>` called ``logical_true`` to ``truth_table.py``
+* I add a :doc:`singleton function </functions/functions_singleton>` called ``logical_true`` to ``truth_table.py``
 
   .. code-block:: python
 
@@ -118,7 +124,7 @@ There are two unary operations
 Logical Identity
 ^^^^^^^^^^^^^^^^
 
-A Logical Identity operation takes input and returns it as output, it is a :doc:`passthrough function </functions_passthrough>`
+A Logical Identity operation takes input and returns it as output, it is a :doc:`passthrough function </functions/functions_passthrough>`
 
 RED: make it fail
 ~~~~~~~~~~~~~~~~~
