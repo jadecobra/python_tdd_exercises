@@ -1,0 +1,21 @@
+express truth table boolean functions with NAND
+express truth table boolean functions with NOR
+NAND logic
+NOR logic
+
+processors can be created using NAND gates alone
+
+remove duplication
+NAND completeness
+not A = A NAND A
+A and B = not (A NAND B) = (A NAND B) NAND (A NAND B)
+A or B = (A NAND A) NAND (B NAND B)
+
+NOR completeness
+not A = A NOR A
+A and B = (A NOR A) NOR (B NOR B)
+A or B = not (A NOR B) = (A NOR B) NOR (A NOR B)
+
+NOT A = A NAND A = A NOR A
+A AND B = (A NAND B) NAND (A NAND B) = (A NOR A) NOR (B NOR B)
+A OR B = (A NAND A) NAND (B NAND B) = (A NOR B) NOR (A NOR B)
