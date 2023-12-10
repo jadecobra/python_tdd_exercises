@@ -76,13 +76,13 @@ GREEN: make it pass
 
     duration
 
-* I make ``duration`` a variable by assigning it to the null value :doc:`None </data_structures/data_structures_none>`
+* I make ``duration`` a variable by assigning it to the null value :doc:`None </data_structures/none>`
 
   .. code-block:: python
 
     duration = None
 
-  the terminal shows a :doc:`/exceptions/TypeError` because :doc:`None </data_structures/data_structures_none>` is not callable
+  the terminal shows a :doc:`/exceptions/TypeError` because :doc:`None </data_structures/none>` is not callable
 * I add the exception to the running list
 
   .. code-block:: python
@@ -118,7 +118,7 @@ GREEN: make it pass
     def duration(wake_time, sleep_time):
         return None
 
-  the terminal now shows an :doc:`/exceptions/AssertionError` since the duration function returns :doc:`None </data_structures/data_structures_none>` and the test expects ``1`` as the duration when a sleep time of ``07:00`` and a wake time of ``08:00`` is given
+  the terminal now shows an :doc:`/exceptions/AssertionError` since the duration function returns :doc:`None </data_structures/none>` and the test expects ``1`` as the duration when a sleep time of ``07:00`` and a wake time of ``08:00`` is given
 
 * I change the return value for the duration function to the expectation
 
@@ -206,7 +206,7 @@ I could write a test that uses a random variable for the sleep and wake times, l
 
     E    AssertionError: ['__add__', '__class__', '__contains__', [918 chars]ill'] != None
 
-* I copy the value on the left side of the comparison and replace :doc:`None </data_structures/data_structures_none>` as the expected value in the test
+* I copy the value on the left side of the comparison and replace :doc:`None </data_structures/none>` as the expected value in the test
 
   .. code-block:: python
 
@@ -396,7 +396,7 @@ I could write a test that uses a random variable for the sleep and wake times, l
 
     E    AssertionError: ['00:00'] != None
 
-  I change the expectation from :doc:`None </data_structures/data_structures_none>`
+  I change the expectation from :doc:`None </data_structures/none>`
 
   .. code-block:: python
 
@@ -442,14 +442,14 @@ I could write a test that uses a random variable for the sleep and wake times, l
     def duration(wake_time, sleep_time):
         return wake_time.split(':') - sleep_time.split(':')
 
-  the terminal still shows a :doc:`/exceptions/TypeError`, this time for trying to subtract a :doc:`list </data_structures/data_structures_lists>` from a :doc:`list </data_structures/data_structures_lists>`
+  the terminal still shows a :doc:`/exceptions/TypeError`, this time for trying to subtract a :doc:`list </data_structures/lists>` from a :doc:`list </data_structures/lists>`
 
   .. code-block:: python
 
     E    TypeError: unsupported operand type(s) for -: 'list' and 'list'
 
   Since I only need the first part of the list, I can get the specific item by using its index. Python uses zero-based indexing so the first item is at index ``0`` and the second item at ``1``
-* I add a failing test to ``test_string_split_method`` to test getting specific parts of the :doc:`list </data_structures/data_structures_lists>` created from splitting a `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_
+* I add a failing test to ``test_string_split_method`` to test getting specific parts of the :doc:`list </data_structures/lists>` created from splitting a `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_
 
   .. code-block:: python
 
@@ -1405,8 +1405,8 @@ To make it happen I learned
 
 
 * how to convert a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ to an `integer <https://docs.python.org/3/library/functions.html#int>`_
-* how to split a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ into a :doc:`list </data_structures/data_structures_lists>` using a given delimiter/separator
-* how to index a :doc:`list </data_structures/data_structures_lists>` to get specific elements
+* how to split a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ into a :doc:`list </data_structures/lists>` using a given delimiter/separator
+* how to index a :doc:`list </data_structures/lists>` to get specific elements
 * how to convert a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ to a `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ object using the `datetime.datetime.strptime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime.datetime.strptime>`_ method
 * how to convert a `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ object to a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
 * how to subtract two `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ objects

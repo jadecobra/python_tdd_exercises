@@ -194,6 +194,9 @@ Here is the solution in ``sleep_duration.py``
         wake_time = get_datetime_object(wake_time)
         sleep_time = get_datetime_object(sleep_time)
         if wake_time < sleep_time:
-            raise ValueError(f'wake_time: {wake_time} is earlier than sleep_time: {sleep_time}')
+            raise ValueError(
+                f'wake_time: {wake_time} is earlier '
+                f' than sleep_time: {sleep_time}'
+            )
         else:
             return str(wake_time - sleep_time)

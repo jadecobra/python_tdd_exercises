@@ -187,7 +187,7 @@ GREEN: make it pass
     # AssertionError
     # NameError
 
-* then assign the name ``add`` to the null value :doc:`None </data_structures/data_structures_none>`
+* then assign the name ``add`` to the null value :doc:`None </data_structures/none>`
 
   .. code-block:: python
 
@@ -199,9 +199,9 @@ GREEN: make it pass
 
     E    TypeError: 'NoneType' object is not callable
 
-  The :doc:`/exceptions/AttributeError` was fixed by declaring a variable ``add`` in the ``calculator`` module, even though it is currently assigned to the null value :doc:`None </data_structures/data_structures_none>`
+  The :doc:`/exceptions/AttributeError` was fixed by declaring a variable ``add`` in the ``calculator`` module, even though it is currently assigned to the null value :doc:`None </data_structures/none>`
 
-* The new error is a :doc:`/exceptions/TypeError` which can occur when an `object <https://docs.python.org/3/glossary.html#term-object>`_ is used in a way that it is not supposed to be used. In this case the ``add`` variable is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_ because it refers to :doc:`None </data_structures/data_structures_none>` which is not a `callable <https://docs.python.org/3/glossary.html#term-callable>`_ object. I add the error to the list of exceptions encountered
+* The new error is a :doc:`/exceptions/TypeError` which can occur when an `object <https://docs.python.org/3/glossary.html#term-object>`_ is used in a way that it is not supposed to be used. In this case the ``add`` variable is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_ because it refers to :doc:`None </data_structures/none>` which is not a `callable <https://docs.python.org/3/glossary.html#term-callable>`_ object. I add the error to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -236,7 +236,7 @@ GREEN: make it pass
 
     E    AssertionError: None != 1
 
-  - An :doc:`/exceptions/AssertionError` is raised when an assertion is :doc:`False </data_structures/data_structures_booleans>`
+  - An :doc:`/exceptions/AssertionError` is raised when an assertion is :doc:`False </data_structures/booleans>`
   - Since I am using ``self.assertEqual`` it means the two inputs are not equal. In other words the result of calling ``calculator.add(0, 1)`` is currently not equal to ``1``
 
 * I change the ``add`` function in ``calculator.py`` so it returns the expected value

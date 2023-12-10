@@ -124,13 +124,13 @@ GREEN: make it pass
     # AttributeError
     # NameError
 
-* then change the failing line in ``module.py`` to fix it by assigning the name ``variable_0`` to the :doc:`null value </data_structures/data_structures_none>`
+* then change the failing line in ``module.py`` to fix it by assigning the name ``variable_0`` to the :doc:`null value </data_structures/none>`
 
   .. code-block:: python
 
     variable_0 = None
 
-  this assigns the name ``variable_0`` to :doc:`None </data_structures/data_structures_none>` and the terminal shows a passing test. YES!
+  this assigns the name ``variable_0`` to :doc:`None </data_structures/none>` and the terminal shows a passing test. YES!
 
   .. code-block:: python
 

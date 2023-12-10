@@ -116,7 +116,7 @@ GREEN: make it pass
     # AttributeError
     # NameError
 
-- I assign ``text`` to the null value :doc:`None </data_structures/data_structures_none>`
+- I assign ``text`` to the null value :doc:`None </data_structures/none>`
 
   .. code-block:: python
 

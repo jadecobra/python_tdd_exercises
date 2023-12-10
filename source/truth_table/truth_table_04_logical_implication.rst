@@ -4,19 +4,19 @@ Truth Table: Logical Implication
 
 This chapter contains tests for Logical Implication from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
-Reviewing what I know so far, for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures/data_structures_booleans>` or :doc:`False </data_structures/data_structures_booleans>`
+Reviewing what I know so far, for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures/booleans>` or :doc:`False </data_structures/booleans>`
 
 
 * ``logical disjunction`` is ``or``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
 * ``logical conjunction`` is ``and``
-* ``return True if x else y`` can be rewritten as ``return x``, if ``x`` evaluates to :doc:`True </data_structures/data_structures_booleans>`
+* ``return True if x else y`` can be rewritten as ``return x``, if ``x`` evaluates to :doc:`True </data_structures/booleans>`
 * when there are multiple outcomes I only need to write the condition for the special case and use ``else`` for the others
-* :doc:`False </data_structures/data_structures_booleans>` is ``not True``
-* :doc:`True </data_structures/data_structures_booleans>` is ``not False``
-* :doc:`False </data_structures/data_structures_booleans>` is :doc:`False </data_structures/data_structures_booleans>`
-* :doc:`True </data_structures/data_structures_booleans>` is :doc:`True </data_structures/data_structures_booleans>`
+* :doc:`False </data_structures/booleans>` is ``not True``
+* :doc:`True </data_structures/booleans>` is ``not False``
+* :doc:`False </data_structures/booleans>` is :doc:`False </data_structures/booleans>`
+* :doc:`True </data_structures/booleans>` is :doc:`True </data_structures/booleans>`
 
 
 RED: make it fail
@@ -38,7 +38,7 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* I add a function definition with :doc:`True </data_structures/data_structures_booleans>` as the return value since it is expected in 3 out of the 4 cases
+* I add a function definition with :doc:`True </data_structures/booleans>` as the return value since it is expected in 3 out of the 4 cases
 
   .. code-block:: python
 
@@ -157,14 +157,14 @@ REFACTOR: make it better
         return not p or q
 
 
-fantastic! the tests pass. I can see that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures/data_structures_booleans>` or :doc:`False </data_structures/data_structures_booleans>`
+fantastic! the tests pass. I can see that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures/booleans>` or :doc:`False </data_structures/booleans>`
 
 * ``logical implication`` is ``not p or q``
 * ``logical disjunction`` is ``or``
 * ``logical conjunction`` is ``and``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
-* :doc:`False </data_structures/data_structures_booleans>` is ``not True``
-* :doc:`True </data_structures/data_structures_booleans>` is ``not False``
-* :doc:`False </data_structures/data_structures_booleans>` is :doc:`False </data_structures/data_structures_booleans>`
-* :doc:`True </data_structures/data_structures_booleans>` is :doc:`True </data_structures/data_structures_booleans>`
+* :doc:`False </data_structures/booleans>` is ``not True``
+* :doc:`True </data_structures/booleans>` is ``not False``
+* :doc:`False </data_structures/booleans>` is :doc:`False </data_structures/booleans>`
+* :doc:`True </data_structures/booleans>` is :doc:`True </data_structures/booleans>`

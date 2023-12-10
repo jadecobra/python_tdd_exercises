@@ -2,7 +2,7 @@
 How to create a person
 ======================
 
-This is an exercise in creating :doc:`dictionaries </data_structures/data_structures_dictionaries>`  with :doc:`/functions/functions`. It assumes you are familiar with :doc:`/functions/functions` and :doc:`dictionaries </data_structures/data_structures_dictionaries>` though you can still try out the chapter if you are not
+This is an exercise in creating :doc:`dictionaries </data_structures/dictionaries>`  with :doc:`/functions/functions`. It assumes you are familiar with :doc:`/functions/functions` and :doc:`dictionaries </data_structures/dictionaries>` though you can still try out the chapter if you are not
 
 Prerequisites
 -----------------------------------------------
@@ -62,7 +62,7 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* I add more details to ``test_person_factory``. I want to pass in values for ``first_name``, ``last_name``, ``year_of_birth``, and ``sex`` and have the function return a :doc:`dictionary </data_structures/data_structures_dictionaries>` with the ``first_name``, ``last_name``, ``sex`` and ``age`` calculated from the ``year_of_birth``
+* I add more details to ``test_person_factory``. I want to pass in values for ``first_name``, ``last_name``, ``year_of_birth``, and ``sex`` and have the function return a :doc:`dictionary </data_structures/dictionaries>` with the ``first_name``, ``last_name``, ``sex`` and ``age`` calculated from the ``year_of_birth``
 
   .. code-block:: python
 
@@ -149,7 +149,7 @@ REFACTOR: make it better
       ):
           return None
 
-  a :doc:`/exceptions/TypeError` is raised because I cannot perform a subtraction operation on :doc:`None </data_structures/data_structures_none>` and the ``this_year`` function currently returns :doc:`None </data_structures/data_structures_none>`
+  a :doc:`/exceptions/TypeError` is raised because I cannot perform a subtraction operation on :doc:`None </data_structures/none>` and the ``this_year`` function currently returns :doc:`None </data_structures/none>`
 
 * I change the definition for ``this_year`` in ``test_person_factory.py`` using a function from the `datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#module-datetime>`_ library that returns the current year
 
@@ -168,7 +168,7 @@ REFACTOR: make it better
   - I return the ``year`` attribute of the object returned by the ``now`` :doc:`method </functions/functions>` of the ``datetime.datetime`` :doc:`class </classes/classes>`, which is a representation of the current local date and time. I could also use ``today`` or ``utcnow`` to achieve the same result
   - I get the ``year`` attribute of the object returned since that is "all I need to get by" cue `Method Man and Mary J. Blige <https://www.youtube.com/watch?v=XW1HNWqdVbk>`_
 
-* the terminal shows an :doc:`/exceptions/AssertionError` since the ``person.factory`` function returns :doc:`None </data_structures/data_structures_none>` and the test expects a :doc:`dictionary </data_structures/data_structures_dictionaries>` with keys and values. I should change the function to return an empty dictionary so I am at least comparing 2 :doc:`dictionaries </data_structures/data_structures_dictionaries>`
+* the terminal shows an :doc:`/exceptions/AssertionError` since the ``person.factory`` function returns :doc:`None </data_structures/none>` and the test expects a :doc:`dictionary </data_structures/dictionaries>` with keys and values. I should change the function to return an empty dictionary so I am at least comparing 2 :doc:`dictionaries </data_structures/dictionaries>`
 
   .. code-block:: python
 
@@ -178,9 +178,9 @@ REFACTOR: make it better
     ):
         return {}
 
-  the terminal shows the differences between the :doc:`dictionaries </data_structures/data_structures_dictionaries>` returned by the ``factory`` function and the one expected in the test
+  the terminal shows the differences between the :doc:`dictionaries </data_structures/dictionaries>` returned by the ``factory`` function and the one expected in the test
 
-* I change the empty :doc:`dictionary </data_structures/data_structures_dictionaries>`   in the ``factory`` function to match the expected results
+* I change the empty :doc:`dictionary </data_structures/dictionaries>`   in the ``factory`` function to match the expected results
 
   .. code-block:: python
 
@@ -300,9 +300,9 @@ REFACTOR: make it better
             'sex': sex,
         }
 
-  *HOORAY!* the terminal shows passing tests, time for a victory dance. I can call the ``factory`` :doc:`function </functions/functions>` passing in values for ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` and I get a :doc:`dictionary </data_structures/data_structures_dictionaries>` that contains the ``first_name``, ``last_name``, ``sex`` and ``age`` of the person
+  *HOORAY!* the terminal shows passing tests, time for a victory dance. I can call the ``factory`` :doc:`function </functions/functions>` passing in values for ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` and I get a :doc:`dictionary </data_structures/dictionaries>` that contains the ``first_name``, ``last_name``, ``sex`` and ``age`` of the person
 
-* I noticed that there is some repetition in the test. If I want to test with a different value for any of the arguments passed to ``person.factory``, I would have to make the change in 2 places - once in the argument passed to the :doc:`function </functions/functions>` and then again in the resulting :doc:`dictionary </data_structures/data_structures_dictionaries>`. I can refactor this to make it easier to make changes to the test when I want,  especially since the programming gods told me `Do Not Repeat Yourself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
+* I noticed that there is some repetition in the test. If I want to test with a different value for any of the arguments passed to ``person.factory``, I would have to make the change in 2 places - once in the argument passed to the :doc:`function </functions/functions>` and then again in the resulting :doc:`dictionary </data_structures/dictionaries>`. I can refactor this to make it easier to make changes to the test when I want,  especially since the programming gods told me `Do Not Repeat Yourself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
   .. code-block:: python
 
@@ -381,7 +381,7 @@ RED: make it fail
 
   the terminal shows an :doc:`/exceptions/AssertionError` because the value for ``last_name`` does not match the expected value
 
-* The test expects a value of ``last_name`` but ``person.factory`` currently returns :doc:`None </data_structures/data_structures_none>`. I change the default value for ``last_name`` in the ``person.factory`` definition to match the expectation
+* The test expects a value of ``last_name`` but ``person.factory`` currently returns :doc:`None </data_structures/none>`. I change the default value for ``last_name`` in the ``person.factory`` definition to match the expectation
 
   .. code-block:: python
 

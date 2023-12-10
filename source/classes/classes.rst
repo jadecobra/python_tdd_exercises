@@ -80,7 +80,7 @@ GREEN: make it pass
     # AttributeError
     # NameError
 
-* I change the name to an assignment to the null value :doc:`None </data_structures/data_structures_none>`
+* I change the name to an assignment to the null value :doc:`None </data_structures/none>`
 
   .. code-block:: python
 

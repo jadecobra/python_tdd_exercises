@@ -60,11 +60,11 @@ Table of Contents
   functions/functions_keyword
   functions/functions_positional_and_keyword
   functions/functions_singleton
-  data_structures/data_structures_none
-  data_structures/data_structures_booleans
-  data_structures/data_structures_lists
+  data_structures/none
+  data_structures/booleans
+  data_structures/lists
   data_structures/list_comprehensions
-  data_structures/data_structures_dictionaries
+  data_structures/dictionaries
   truth_table/truth_table_01
   truth_table/truth_table_02_logical_conjunction
   truth_table/truth_table_03_logical_disjunction

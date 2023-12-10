@@ -32,7 +32,7 @@ I add a file called ``test_list_comprehension.py`` to the ``tests`` folder
 * I create ``collection_a`` which uses the ``range`` object
 * the `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ object creates an ``iterable`` of numbers from 0 to the number I give minus 1
 * I create a list called ``list_a`` that has no elements and confirm it is empty with a ``self.assertEqual(list_a, [])``
-* then I create a loop using the ``for`` keyword, that goes over every element of ``collection_a`` and adds it to ``list_a`` using the ``append`` :doc:`method </functions/functions>`, you can read :doc:`/data_structures_lists` if you want to know more
+* then I create a loop using the ``for`` keyword, that goes over every element of ``collection_a`` and adds it to ``list_a`` using the ``append`` :doc:`method </functions/functions>`, you can read :doc:`/lists` if you want to know more
 * the terminal shows an :doc:`/exceptions/AssertionError` for the test that checks the elements of ``list_a`` after the loop ran, because the list is no longer empty, it now contains 10 elements
 
   .. code-block:: python
@@ -68,13 +68,13 @@ REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* I add another test to check what happens when I use the :doc:`list </data_structures/data_structures_lists>` constructor on the ``collection_a`` iterable
+* I add another test to check what happens when I use the :doc:`list </data_structures/lists>` constructor on the ``collection_a`` iterable
 
   .. code-block:: python
 
       self.assertEqual(list(collection_a), list_a)
 
-  the tests pass because calling :doc:`list </data_structures/data_structures_lists>` on an ``iterable`` creates a :doc:`data_structures_lists`
+  the tests pass because calling :doc:`list </data_structures/lists>` on an ``iterable`` creates a :doc:`lists`
 * I add another test
 
   .. code-block:: python
@@ -241,7 +241,7 @@ GREEN: make it pass
 List Comprehension
 ------------------
 
-Now that I know how to create a :doc:`list </data_structures/data_structures_lists>` using ``[]``, :doc:`list </data_structures/data_structures_lists>` and ``for``, I can try creating a :doc:`data_structures_lists` using a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_. It looks similar to a ``for`` loop but achieves the same thing with less words
+Now that I know how to create a :doc:`list </data_structures/lists>` using ``[]``, :doc:`list </data_structures/lists>` and ``for``, I can try creating a :doc:`lists` using a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_. It looks similar to a ``for`` loop but achieves the same thing with less words
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^

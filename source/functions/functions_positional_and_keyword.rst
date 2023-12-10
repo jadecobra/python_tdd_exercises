@@ -340,7 +340,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_with_po
 * From the tests I know that
 
   * positional arguments are represented as `tuples <https://docs.python.org/3/library/stdtypes.html#tuple>`_ with parentheses - ``()``
-  * keyword arguments are represented as :doc:`dictionaries </data_structures/data_structures_dictionaries>`  with curly braces - ``{}``
+  * keyword arguments are represented as :doc:`dictionaries </data_structures/dictionaries>`  with curly braces - ``{}``
   * I can use ``*name`` to represent any number of positional arguments
   * I can use ``**name`` to represent any number of keyword arguments
   * I can define default values for arguments

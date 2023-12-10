@@ -24,7 +24,7 @@ and the terminal shows an :doc:`/exceptions/AttributeError`
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-* then add a definition that returns :doc:`True </data_structures/data_structures_booleans>`
+* then add a definition that returns :doc:`True </data_structures/booleans>`
 
   .. code-block:: python
 
@@ -144,7 +144,7 @@ REFACTOR: make it better
     def exclusive_disjunction(p, q):
         return p != q
 
-From the tests I see that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures/data_structures_booleans>` or :doc:`False </data_structures/data_structures_booleans>`
+From the tests I see that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures/booleans>` or :doc:`False </data_structures/booleans>`
 
 
 
@@ -155,7 +155,7 @@ From the tests I see that for any boolean operation involving 2 inputs: ``p`` an
 * ``logical conjunction`` is ``and``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
-* :doc:`False </data_structures/data_structures_booleans>` is ``not True``
-* :doc:`True </data_structures/data_structures_booleans>` is ``not False``
-* :doc:`False </data_structures/data_structures_booleans>` is :doc:`False </data_structures/data_structures_booleans>`
-* :doc:`True </data_structures/data_structures_booleans>` is :doc:`True </data_structures/data_structures_booleans>`
+* :doc:`False </data_structures/booleans>` is ``not True``
+* :doc:`True </data_structures/booleans>` is ``not False``
+* :doc:`False </data_structures/booleans>` is :doc:`False </data_structures/booleans>`
+* :doc:`True </data_structures/booleans>` is :doc:`True </data_structures/booleans>`

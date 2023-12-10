@@ -125,7 +125,7 @@ REFACTOR: make it better
 
   I win again! All tests pass
 
-My knowledge has increased, from the tests I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures/data_structures_booleans>` or :doc:`False </data_structures/data_structures_booleans>`
+My knowledge has increased, from the tests I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures/booleans>` or :doc:`False </data_structures/booleans>`
 
 * ``converse implication`` is ``not p and q`` which is different from ``not (p and q)``
 * ``project second`` always returns ``q``
@@ -143,7 +143,7 @@ My knowledge has increased, from the tests I know that for any boolean operation
 * ``logical conjunction`` is ``and``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
-* :doc:`False </data_structures/data_structures_booleans>` is ``not True``
-* :doc:`True </data_structures/data_structures_booleans>` is ``not False``
-* :doc:`False </data_structures/data_structures_booleans>` is :doc:`False </data_structures/data_structures_booleans>`
-* :doc:`True </data_structures/data_structures_booleans>` is :doc:`True </data_structures/data_structures_booleans>`
+* :doc:`False </data_structures/booleans>` is ``not True``
+* :doc:`True </data_structures/booleans>` is ``not False``
+* :doc:`False </data_structures/booleans>` is :doc:`False </data_structures/booleans>`
+* :doc:`True </data_structures/booleans>` is :doc:`True </data_structures/booleans>`

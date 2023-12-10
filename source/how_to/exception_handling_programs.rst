@@ -55,7 +55,7 @@ GREEN: make it pass
 
     raises_exception_error
 
-* I assign ``raises_exception_error`` to the null value :doc:`None </data_structures/data_structures_none>` and the terminal shows a :doc:`/exceptions/TypeError`
+* I assign ``raises_exception_error`` to the null value :doc:`None </data_structures/none>` and the terminal shows a :doc:`/exceptions/TypeError`
 
   .. code-block:: python
 
@@ -136,7 +136,7 @@ I will now add exception handling to the program so it gives a message when it e
 
     exception_handler
 
-  I assign ``exception_handler`` to the null value :doc:`None </data_structures/data_structures_none>` and the terminal displays a :doc:`/exceptions/TypeError`
+  I assign ``exception_handler`` to the null value :doc:`None </data_structures/none>` and the terminal displays a :doc:`/exceptions/TypeError`
 
   .. code-block:: python
 
@@ -156,7 +156,7 @@ I will now add exception handling to the program so it gives a message when it e
     def exception_handler(argument):
         return None
 
-  the terminal shows an :doc:`/exceptions/AssertionError` because the result of calling ``exceptions.exception_handler`` with ``exceptions.raises_exception_error`` as the input is currently :doc:`None </data_structures/data_structures_none>` which is not equal to ``failed``
+  the terminal shows an :doc:`/exceptions/AssertionError` because the result of calling ``exceptions.exception_handler`` with ``exceptions.raises_exception_error`` as the input is currently :doc:`None </data_structures/none>` which is not equal to ``failed``
 
   .. code-block:: python
 
@@ -195,7 +195,7 @@ I will now add exception handling to the program so it gives a message when it e
 
       does_not_raise_exception_error
 
-  - I assign ``does_not_raise_exception_error`` to the null value :doc:`None </data_structures/data_structures_none>`
+  - I assign ``does_not_raise_exception_error`` to the null value :doc:`None </data_structures/none>`
 
     .. code-block:: python
 
@@ -239,7 +239,7 @@ I will now add exception handling to the program so it gives a message when it e
 
     - The ``exception_handler`` function returns the result of calling the function it receives as input
     - When I call ``exceptions.exception_handler`` with ``exceptions.does_not_raise_exception_error`` as input, it calls ``does_not_raise_exception_error`` and returns the result
-    - the result of calling ``does_not_raise_exception_error`` is currently :doc:`None </data_structures/data_structures_none>` which is not equal to ``succeeded`` so the expectation of the test is not met
+    - the result of calling ``does_not_raise_exception_error`` is currently :doc:`None </data_structures/none>` which is not equal to ``succeeded`` so the expectation of the test is not met
 
   - `try...except...else <https://docs.python.org/3/reference/compound_stmts.html#the-try-statement>`_ statements are used to catch/handle exceptions in python. This allows the program to make a decision when it encounters an Exception.
 
@@ -300,7 +300,7 @@ GREEN: make it pass
 
     always_returns
 
-* I assign the name to :doc:`None </data_structures/data_structures_none>` and get an :doc:`/exceptions/AttributeError`
+* I assign the name to :doc:`None </data_structures/none>` and get an :doc:`/exceptions/AttributeError`
 
   .. code-block:: python
 
@@ -326,7 +326,7 @@ GREEN: make it pass
 
   AssertionError: None != 'always_returns_this'
 
-  because ``exceptions.always_returns`` returns the value of ``does_not_raise_exception_error`` which is :doc:`None </data_structures/data_structures_none>` and is not equal to the expectation in the test which is ``always_returns_this``
+  because ``exceptions.always_returns`` returns the value of ``does_not_raise_exception_error`` which is :doc:`None </data_structures/none>` and is not equal to the expectation in the test which is ``always_returns_this``
 
 * I add exception handling using ``try...except...else``
 

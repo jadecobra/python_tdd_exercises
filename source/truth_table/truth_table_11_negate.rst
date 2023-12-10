@@ -37,8 +37,8 @@ GREEN: make it pass
   the terminal shows an :doc:`/exceptions/AssertionError` for the third case
 * before I add a condition for it, this looks similar to ``logical_equality`` and ``exclusive_disjunction`` because 2 out of the 4 cases have the same return value. I see that
 
-  * when ``p == True`` the result is :doc:`False </data_structures/data_structures_booleans>`
-  * when ``p == False`` the result is :doc:`True </data_structures/data_structures_booleans>`
+  * when ``p == True`` the result is :doc:`False </data_structures/booleans>`
+  * when ``p == False`` the result is :doc:`True </data_structures/booleans>`
 
 * I add conditions to match
 
@@ -117,8 +117,8 @@ GREEN: make it pass
   and the terminal shows an :doc:`/exceptions/AssertionError` for the third case
 * before I add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction`` and ``negate_first`` because 2 out of the 4 cases have the same return value. I see that
 
-  - when ``q == True`` the result is :doc:`False </data_structures/data_structures_booleans>`
-  - when ``q == False`` the result is :doc:`True </data_structures/data_structures_booleans>`
+  - when ``q == True`` the result is :doc:`False </data_structures/booleans>`
+  - when ``q == False`` the result is :doc:`True </data_structures/booleans>`
 
 * What if I try using the conclusion from ``negate_first``?
 
@@ -138,7 +138,7 @@ GREEN: make it pass
   All tests pass. Fantastic!
 
 
-From the tests so far, I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures/data_structures_booleans>` or :doc:`False </data_structures/data_structures_booleans>`
+From the tests so far, I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures/booleans>` or :doc:`False </data_structures/booleans>`
 
 
 * ``negate second`` always returns ``not q``
@@ -154,7 +154,7 @@ From the tests so far, I know that for any boolean operation involving 2 inputs:
 * ``logical conjunction`` is ``and``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
-* :doc:`False </data_structures/data_structures_booleans>` is ``not True``
-* :doc:`True </data_structures/data_structures_booleans>` is ``not False``
-* :doc:`False </data_structures/data_structures_booleans>` is :doc:`False </data_structures/data_structures_booleans>`
-* :doc:`True </data_structures/data_structures_booleans>` is :doc:`True </data_structures/data_structures_booleans>`
+* :doc:`False </data_structures/booleans>` is ``not True``
+* :doc:`True </data_structures/booleans>` is ``not False``
+* :doc:`False </data_structures/booleans>` is :doc:`False </data_structures/booleans>`
+* :doc:`True </data_structures/booleans>` is :doc:`True </data_structures/booleans>`

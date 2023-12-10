@@ -46,7 +46,7 @@ GREEN: make it pass
 
   and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
-* after I change the name with an assignment to :doc:`None </data_structures/data_structures_none>`
+* after I change the name with an assignment to :doc:`None </data_structures/none>`
 
   .. code-block:: python
 
@@ -156,7 +156,7 @@ GREEN: make it pass
   the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ because there is no definition for ``method_a``
 
 
-* I define ``method_a`` as an attribute by assigning the name to the null value :doc:`None </data_structures/data_structures_none>`
+* I define ``method_a`` as an attribute by assigning the name to the null value :doc:`None </data_structures/none>`
 
   .. code-block:: python
 
@@ -165,7 +165,7 @@ GREEN: make it pass
 
         method_a = None
 
-  the terminal shows a :doc:`/exceptions/TypeError` since ``method_a`` refers to :doc:`None </data_structures/data_structures_none>` which is not callable
+  the terminal shows a :doc:`/exceptions/TypeError` since ``method_a`` refers to :doc:`None </data_structures/none>` which is not callable
 
 * I change the definition of ``method_a`` to make it a :doc:`function </functions/functions>` which makes it callable
 
@@ -267,7 +267,7 @@ How to View the attributes and methods of a class
 
 To view what ``attributes`` and ``methods`` are defined for any `object <https://docs.python.org/3/glossary.html#term-object>`_ I can call ``dir`` on the `object <https://docs.python.org/3/glossary.html#term-object>`_.
 
-The ``dir`` :doc:`method </functions/functions>` returns a :doc:`list <data_structures_lists>` of all attributes and :doc:`methods </functions/functions>` of the object provided to it as input
+The ``dir`` :doc:`method </functions/functions>` returns a :doc:`list <lists>` of all attributes and :doc:`methods </functions/functions>` of the object provided to it as input
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^

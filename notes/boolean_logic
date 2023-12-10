@@ -19,3 +19,13 @@ A or B = not (A NOR B) = (A NOR B) NOR (A NOR B)
 NOT A = A NAND A = A NOR A
 A AND B = (A NAND B) NAND (A NAND B) = (A NOR A) NOR (B NOR B)
 A OR B = (A NAND A) NAND (B NAND B) = (A NOR B) NOR (A NOR B)
+
+the silly thing about rewriting booleans with NAND and NOR is you have to use `not`, `and` and `or` unless you write a function
+
+this quickly gets confusing to write. try it out
+e.g.
+not A = not ( A and A ) = not ( A or A )
+A and B = not ((not (A and B)) and (not (A and B )))
+A and B = not ((not (A or A)) or (not (B or B)))
+A or B = not ((not (A and A)) and (not (B and B)))
+A or B = not ((not (A or B)) and (not (A or B)))

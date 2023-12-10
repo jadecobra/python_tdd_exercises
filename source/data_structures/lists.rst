@@ -2,17 +2,18 @@
 Data Structures: Lists
 ======================
 
-A `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ is an object that holds elements. It is a container like `tuples <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_ and `sets <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_.
+A `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ is an `object <https://docs.python.org/3/glossary.html#term-object>`_ that holds other `objects <https://docs.python.org/3/glossary.html#term-object>`_. It is a container like `tuples <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_ and `sets <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_, and is `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_.
 
 
 * Lists are represented with ``[]``
-* They can also be created with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor
-* They can contain any `object <https://docs.python.org/3/glossary.html#term-object>`_
-* They are mutable which means they can be changed after creation by calling some operation on them
+* Lists can be created with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor
+* Lists can contain any `object <https://docs.python.org/3/glossary.html#term-object>`_
+* Lists can be changed after creation by performing an operation, they are mutable
+* Lists can be looped over
 
 
-How create a list
------------------
+How to create a list
+----------------------
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -29,19 +30,26 @@ I create a file called ``test_lists.py`` in the ``tests`` folder with the follow
       def test_creating_a_list_with_the_list_keyword(self):
           self.assertEqual(list(0, 1, 2, 3), [])
 
-the terminal shows a :doc:`/exceptions/TypeError` and I add it to the list of exceptions encountered
+the terminal shows a :doc:`/exceptions/TypeError`
 
 .. code-block:: python
 
-  # Exceptions Encountered
-  # AssertionError
-  # TypeError
+  E       TypeError: list expected at most 1 argument, got 4
+
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
+* I add the error to the list of exceptions encountered
 
-* Looking at the error I see that the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor expects one argument but four are given in the test, so I am violating the signature for creating lists. How can I pass in values correctly to this object?
-* I check out the `documentation <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ and see that `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ takes in an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_. An `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ is an object that I can loop over
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AssertionError
+    # TypeError
+
+* Looking at the error I see that the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor expects one argument but four are given in the test, so I am not following the signature for creating lists
+* I check out the `documentation <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ and see that the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor takes in an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_
+* An `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ is an object that I can loop over. `tuples <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_, `lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_, `sets <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ and :doc:`dictionaries </data_structures/dictionaries>` are iterable.
 * I change the left input of the ``self.assertEqual`` by putting the values in an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_, I will use a `tuple <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_ for this example by placing parentheses around the values
 
   .. code-block:: python
@@ -390,7 +398,7 @@ I add a failing test
         )
 
 * the terminal shows an :doc:`/exceptions/AssertionError`
-* ``maxDiff`` is an attribute of the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`class </classes>` that sets the maximum amount of characters to show in the comparison between the two objects that is displayed in the terminal. When it is set to :doc:`None </data_structures/data_structures_none>` there is no limit to the number of characters
+* ``maxDiff`` is an attribute of the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`class </classes>` that sets the maximum amount of characters to show in the comparison between the two objects that is displayed in the terminal. When it is set to :doc:`None </data_structures/none>` there is no limit to the number of characters
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
