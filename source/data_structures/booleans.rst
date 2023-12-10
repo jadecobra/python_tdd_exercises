@@ -12,7 +12,7 @@ What is False?
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I create a failing test in ``test_data_structures.py`` called ``test_what_is_false`` to find out what is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+I create a failing test in ``test_booleans.py`` called ``test_what_is_false`` to find out what is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 
 .. code-block:: python
 
@@ -94,7 +94,7 @@ What is True?
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add a similar series of failing tests for `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ to ``test_data_structures.py``
+I add a similar series of failing tests for `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ to ``test_booleans.py``
 
 .. code-block:: python
 
@@ -168,3 +168,5 @@ I can sum up my current knowledge of python from the tests so far as
 - `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
 - `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
 - :doc:`None </data_structures/none>` is :doc:`None </data_structures/none>`
+
+:doc:`code/booleans`
