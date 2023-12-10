@@ -2,9 +2,6 @@
 Booleans: Tests
 ================
 
-tests
------
-
 Here is the code in ``tests/test_booleans.py``
 
 .. code-block:: python

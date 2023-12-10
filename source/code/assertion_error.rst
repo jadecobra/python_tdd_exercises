@@ -2,10 +2,6 @@
 AssertionError: Tests
 =====================
 
-
-tests
------
-
 Here is the code in ``tests/test_assertion_error.py``
 
 .. code-block:: python

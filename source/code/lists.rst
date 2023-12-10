@@ -2,9 +2,6 @@
 Lists: Tests
 =============
 
-tests
------
-
 Here is the code in ``tests/test_lists.py``
 
 .. code-block:: python
