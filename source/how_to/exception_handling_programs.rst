@@ -415,7 +415,7 @@ GREEN: make it pass
 
   and the test passes
 
-* though ``always_returns`` could have been defined as a ``singleton`` :doc:`function </functions/functions>` and the tests would still pass, it  would not illustrate how to use ``try...except...else...finally``
+* though ``always_returns`` could have been defined as a ``singleton`` :doc:`function </functions/functions>` and the tests would still pass, it  would not show how to use ``try...except...else...finally``
 
   .. code-block:: python
 
@@ -436,4 +436,4 @@ Your python powers are growing, you now know
   * `read more about the try statement <https://docs.python.org/3/reference/compound_stmts.html#the-try-statement>`_
   *  `read more about exception handling <https://docs.python.org/3/tutorial/errors.html?highlight=try%20except#handling-exceptions>`_
 
-:doc:`/code/code_exception_handling`
+:doc:`/code/exception_handling`

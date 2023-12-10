@@ -270,4 +270,4 @@ I can use this information to test that a particular exception is raised
 
   Fantastic! all the tests still pass
 
-:doc:`/code/code_exception_handling`
+:doc:`/code/exception_handling`

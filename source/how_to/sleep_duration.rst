@@ -251,7 +251,7 @@ I could write a test that uses a random variable for the sleep and wake times, l
           ['__add__', '__class__', '__contains__', '[918 chars]ill']
         )
 
-  ``maxDiff`` sets a limit on the number of characters the terminal shows for a difference between two objects, there is no limit when it is set to None. I now see a full list of all the attributes of a `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_
+  `maxDiff <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff>`_ sets a limit on the number of characters the terminal shows for a difference between two objects, there is no limit when it is set to None. I now see a full list of all the attributes of a `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_
 
 * I copy the values from the terminal into the test
 
@@ -1428,4 +1428,4 @@ Since this chapter has not been long enough, if you want to do more
 * Can you randomize the values for the days in a month?
 * Can you randomize the values for the months in a year?
 
-:doc:`/code/code_sleep_duration`
+:doc:`/code/sleep_duration`

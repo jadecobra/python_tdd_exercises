@@ -1,8 +1,8 @@
 
-Data Structures: Lists: List Comprehension
-===========================================
+Data Structures: Lists: List Comprehensions
+============================================
 
-list comprehension is a way to create lists from another iterable. It is a nice way to loop over elements and perform some operation usually in one line
+`List Comprehensions <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#list-comprehensions>`_ are a way to create lists from another iterable. It is a nice way to loop over elements and perform some operation usually in one line
 
 Creating a List with an Iterable
 --------------------------------

@@ -448,4 +448,4 @@ We have successfully created a :doc:`function </functions/functions>` that
 * performs a calculation based on a given input to return an output based on an input
 
 
-:doc:`/code/code_person_factory`
+:doc:`/code/person_factory`
