@@ -105,6 +105,7 @@ tests and solutions
   code/create_tdd_environment
   code/assertion_error
   code/attribute_error
+  code/lists
   code/dictionaries
   code/functions
   code/classes

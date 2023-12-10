@@ -312,7 +312,7 @@ How to create a Virtual Environment
 
 * The folder structure now looks like this
 
-  .. code-block:: ruby
+  .. code-block:: python
 
    {PROJECT_NAME}
      ╰──.venv
