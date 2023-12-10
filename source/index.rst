@@ -65,20 +65,20 @@ Table of Contents
   data_structures/lists
   data_structures/list_comprehensions
   data_structures/dictionaries
-  truth_table/truth_table_01
-  truth_table/truth_table_02_logical_conjunction
-  truth_table/truth_table_03_logical_disjunction
-  truth_table/truth_table_04_logical_implication
-  truth_table/truth_table_05_logical_equality
-  truth_table/truth_table_06_exclusive_disjunction
-  truth_table/truth_table_07_logical_nand
-  truth_table/truth_table_08_logical_nor
-  truth_table/truth_table_09_converse_non_implication
-  truth_table/truth_table_10_material_non_implication
-  truth_table/truth_table_11_negate
-  truth_table/truth_table_12_project
-  truth_table/truth_table_13_converse_implication
-  truth_table/truth_table_14_true_lies
+  truth_table/01
+  truth_table/02_logical_conjunction
+  truth_table/03_logical_disjunction
+  truth_table/04_logical_implication
+  truth_table/05_logical_equality
+  truth_table/06_exclusive_disjunction
+  truth_table/07_logical_nand
+  truth_table/08_logical_nor
+  truth_table/09_converse_non_implication
+  truth_table/10_material_non_implication
+  truth_table/11_negate
+  truth_table/12_project
+  truth_table/13_converse_implication
+  truth_table/14_true_lies
 
 HOW TOs
 --------

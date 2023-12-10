@@ -59,7 +59,7 @@ REFACTOR: make it better
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-* I know from :doc:`/truth_table_02_logical_conjunction` that when I have a nested if statement it can be replaced with an ``and`` so I change the condition
+* I know from :doc:`/02_logical_conjunction` that when I have a nested if statement it can be replaced with an ``and`` so I change the condition
 
   .. code-block:: python
 
