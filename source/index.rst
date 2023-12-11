@@ -107,6 +107,7 @@ tests and solutions
   code/attribute_error
   code/booleans
   code/lists
+  code/list_comprehensions
   code/dictionaries
   code/functions
   code/classes

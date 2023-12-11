@@ -1,5 +1,5 @@
 
-dictionaries: Tests and Solutions
+dictionaries: Tests and Solution
 ==================================
 
 
@@ -256,10 +256,10 @@ Here is the code in ``tests/test_dictionaries.py``
     # TypeError
     # KeyError
 
-solutions
+solution
 ----------
 
-Here are the solutions in ``dictionaries.py``
+Here is the solution in ``dictionaries.py``
 
 .. code-block:: python
 
