@@ -2,7 +2,7 @@
 Truth Table: Exclusive Disjunction
 ==================================
 
-The following tests cover Exclusive Disjunction from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
+The following tests show Exclusive Disjunction from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
 
 

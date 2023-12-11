@@ -1,5 +1,5 @@
 
-Booleans: Tests
+booleans: Tests
 ================
 
 Here is the code in ``tests/test_booleans.py``

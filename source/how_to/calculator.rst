@@ -351,7 +351,7 @@ Even though the add function currently passes the existing test it does not meet
 
     ============= 2 passed in 0.01s ===============
 
-  - I no longer need the previous tests because this new test covers the scenarios for zero, negative and positive numbers
+  - I no longer need the previous tests because this new test shows the scenarios for zero, negative and positive numbers
   - I can remove ``test addition`` from the TODO list since it passed, marking the task as completed
 
   .. code-block:: python

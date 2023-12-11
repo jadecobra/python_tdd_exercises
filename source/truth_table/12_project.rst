@@ -2,7 +2,7 @@
 Truth Table: Project
 ====================
 
-This chapter covers the projection Binary Operations from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_ using tests
+This chapter shows the projection Binary Operations from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_ using tests
 
 
 Project First

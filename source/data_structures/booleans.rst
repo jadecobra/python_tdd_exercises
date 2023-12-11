@@ -2,7 +2,7 @@
 Data Structures: Booleans
 ==========================
 
-The tests in this chapter cover `booleans <https://docs.python.org/3/library/functions.html#bool>`_ by comparing them with other data structures in python to learn what they are and what they are not.
+The tests in this chapter show `booleans <https://docs.python.org/3/library/functions.html#bool>`_ by comparing them with other data structures in python to learn what they are and what they are not.
 
 There are two `boolean <https://docs.python.org/3/library/functions.html#bool>`_ values - `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ and `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 
@@ -92,7 +92,7 @@ From the tests I can say that in python
 * `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
 * ``dict()`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ which means an empty :doc:`dictionary </data_structures/dictionaries>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * ``{}`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ which means an empty `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_/\ :doc:`dictionary </data_structures/dictionaries>`  is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* ``[]`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ which means an empty :doc:`list <lists>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* ``[]`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ which means an empty :doc:`list </data_structures/lists>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * ``()`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ which means an empty `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * ``""`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ which means an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_

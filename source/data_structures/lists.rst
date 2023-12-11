@@ -461,7 +461,7 @@ GREEN: make it pass
 How to view attributes and :doc:`methods </functions/functions>` of a list
 -----------------------------------------------------------------------------
 
-:doc:`/classes/classes` covers how to view the ``attributes`` and :doc:`methods </functions/functions>` of an object. Let us take a look at the  look at the ``attributes`` and :doc:`methods </functions/functions>` of `lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
+:doc:`/classes/classes` shows how to view the ``attributes`` and :doc:`methods </functions/functions>` of an object. Let us take a look at the  look at the ``attributes`` and :doc:`methods </functions/functions>` of `lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -484,6 +484,10 @@ GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 I change the test with the expected values
+
+.. note::
+
+  Your results may vary based on your python version
 
 .. code-block:: python
 

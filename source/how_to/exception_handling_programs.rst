@@ -2,7 +2,7 @@
 How to handle Exceptions in programs
 ====================================
 
-:doc:`/how_to/exception_handling_tests` showed how to verify that an exception is raised when testing. This chapter covers how to handle exceptions when they are raised in programs
+:doc:`/how_to/exception_handling_tests` showed how to verify that an exception is raised when testing. This chapter shows how to handle exceptions when they are raised in programs
 
 Prerequisites
 ^^^^^^^^^^^^^

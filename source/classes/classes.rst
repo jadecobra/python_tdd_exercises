@@ -4,7 +4,7 @@ classes
 
 ``classes`` are a template or blueprint that represents an object. I think of ``classes`` as a a collection of :doc:`methods (functions) </functions/functions>` and ``attributes(variables)`` that belong together
 
-I will cover the following in this chapter
+I will show the following in this chapter
 
 - How to define a class with pass
 - How to define a class with parentheses

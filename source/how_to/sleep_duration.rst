@@ -255,6 +255,10 @@ I could write a test that uses a random variable for the sleep and wake times, l
 
 * I copy the values from the terminal into the test
 
+  .. note::
+
+    Your results may vary based on your python version
+
   .. code-block:: python
 
       def test_string_methods_and_attributes(self):
@@ -718,7 +722,7 @@ GREEN: make it pass
 
   I get an :doc:`/exceptions/AssertionError` in the terminal because I have two zeros ``:00`` in the expected return value but the duration function returns ``0`` for the minute side of the timestamp after doing a subtraction, which means ``00`` minus ``00`` is ``0`` not ``00``.
 
-* I could change the right side of the expected value to ``0`` to make it pass, but that would not be necessary because ``test_duration_when_given_hours_and_minutes`` already covers the cases where the minutes are zero since the test uses a random number from ``0`` to ``23`` for hours and a random number from ``0`` to ``59`` for minutes.
+* I could change the right side of the expected value to ``0`` to make it pass, but that would not be necessary because ``test_duration_when_given_hours_and_minutes`` already shows the cases where the minutes are zero since the test uses a random number from ``0`` to ``23`` for hours and a random number from ``0`` to ``59`` for minutes.
 
   I remove ``test_duration_when_given_hours_only`` since I no longer need it and the terminal shows passing tests
 
@@ -1390,7 +1394,7 @@ Clean up
 
 * ``test_duration_when_given_date_and_time`` looks like a duplicate of ``test_duration_when_given_hours_and_minutes``, it has the exact same variable assignment setup with the exact same test, it is only missing the ``try...except`` block, which means I can remove ``test_duration_when_given_date_and_time``
 
-* ``test_duration_calculation`` gives specific timestamps of ``3:30`` for ``wake_time`` and ``2:59`` for ``sleep_time``, while ``test_duration_when_given_hours_and_minutes`` uses random timestamps from ``0:00`` to ``23:59`` for those variables. Since the random variables cover every timestamp in a given day I can remove ``test_duration_calculation``
+* ``test_duration_calculation`` gives specific timestamps of ``3:30`` for ``wake_time`` and ``2:59`` for ``sleep_time``, while ``test_duration_when_given_hours_and_minutes`` uses random timestamps from ``0:00`` to ``23:59`` for those variables. Since the random variables show every timestamp in a given day I can remove ``test_duration_calculation``
 
 * The same argument could be made for ``test_duration_when_given_earlier_wake_time_than_sleep_time`` since I have a ``try...except`` block with a ``assertRaisesRegex`` that catches the random timestamps where ``wake_time`` is earlier than ``sleep_time`` I can remove ``test_duration_when_given_earlier_wake_time_than_sleep_time``
 
