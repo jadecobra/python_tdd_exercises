@@ -2,7 +2,7 @@
 Data Structures: Lists: List Comprehensions
 ============================================
 
-`List Comprehensions <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#list-comprehensions>`_ are a way to create lists from another `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_. It is a nice way to loop over elements and perform some operation usually in one line
+`List Comprehensions <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#list-comprehensions>`_ are a way to create lists from an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_. It is a nice way to loop over elements and perform some operation usually in one line
 
 How to create a List with an Iterable
 --------------------------------------
@@ -19,36 +19,28 @@ I add a file called ``test_list_comprehension.py`` to the ``tests`` folder with 
 
   class TestListComprehensions(unittest.TestCase):
 
-    def test_creating_a_list_from_an_iterable(self):
-        collection = range(10)
-        a_list = []
-        self.assertEqual(a_list, [])
+      def test_creating_a_list_from_an_iterable(self):
+          collection = range(10)
+          a_list = []
+          self.assertEqual(a_list, [])
 
-        for element in collection:
-            a_list.append(element)
-        self.assertEqual(a_list, [])
+          for element in collection:
+              a_list.append(element)
+          self.assertEqual(a_list, [])
 
-
-* I create ``collection`` which uses the `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ object
-* the `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ object creates an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ of numbers from 0 to the given number minus 1
-* ``collection = range(10)`` creates an iterable of numbers from 0 to 9 called ``collection``
+* ``collection = range(10)`` creates an iterable of numbers from 0 to 9 with the `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ object called ``collection``
+* `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ creates an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ of numbers from 0 to the given number minus 1
 * ``a_list = []`` creates an empty list called ``a_list``
-* ``self.assertEqual(a_list, [])`` confirms that ``a_list`` is empty
-* ``for element in collection:`` creates a loop using that goes over every element of ``collection``
-* ``a_list.append(element)`` adds each element in ``collection`` to ``a_list`` on each cycle of the loop, using the ``append`` :doc:`method </functions/functions>`, see :doc:`/data_structures/lists` for more details
+* ``self.assertEqual(a_list, [])`` confirms that ``a_list`` is empty since it is equal to ``[]``
+* ``for element in collection:`` uses a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ statement to create a loop that goes over every element of ``collection``
+* ``a_list.append(element)`` adds the element from ``collection`` to ``a_list`` on each cycle of the loop, using the ``append`` :doc:`method </functions/functions>`, see :doc:`/data_structures/lists` for more details
 
 the terminal shows an :doc:`/exceptions/AssertionError` because ``a_list`` is no longer empty, it contains 10 elements after the loop runs
 
-  .. code-block:: python
+.. code-block:: python
 
-    E    AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
-    E
-    E    First list contains 10 additional elements.
-    E    First extra element 0:
-    E    0
-    E
-    E    - [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    E    + []
+  E    AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
+
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -147,14 +139,14 @@ REFACTOR: make it better
         return None
 
   and the terminal shows an :doc:`/exceptions/AssertionError`
-* I change the function to return a list of whatever argument it gets
+* When I change the function to return the result of calling ``list`` with ``argument`` as input
 
   .. code-block:: python
 
     def make_a_list(argument):
         return list(argument)
 
-  and the tests pass!
+  the tests pass!
 
 ----
 
@@ -187,13 +179,6 @@ the terminal shows an :doc:`/exceptions/AssertionError` for the values of ``a_li
 .. code-block:: python
 
   E       AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
-  E
-  E       First list contains 10 additional elements.
-  E       First extra element 0:
-  E       0
-  E
-  E       - [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-  E       + []
 
 
 GREEN: make it pass
@@ -261,16 +246,13 @@ GREEN: make it pass
 
   - ``result = []`` creates an empty list called ``result``
   - ``for element in argument:`` creates a loop over the elements of ``argument`` which is an ``iterable`` passed into the function
-  - ``result.append(element)`` adds each element from ``argument`` to the ``result`` list
+  - ``result.append(element)`` adds each element from ``argument`` to the list called ``result``
   - ``return result`` returns ``result`` after the loop completes
 
   the terminal shows all tests are passing
 
 How to create a List with List Comprehensions
 ----------------------------------------------
-
-Now that I know how to create a :doc:`list </data_structures/lists>` using ``[]``, :doc:`list </data_structures/lists>` and `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_, I can try creating one with a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_.
-
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -299,13 +281,6 @@ the terminal shows an :doc:`/exceptions/AssertionError`
 .. code-block:: python
 
   E       AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
-  E
-  E       First list contains 10 additional elements.
-  E       First extra element 0:
-  E       0
-  E
-  E       - [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-  E       + []
 
 
 GREEN: make it pass
@@ -335,13 +310,6 @@ GREEN: make it pass
   .. code-block:: python
 
     E       AssertionError: Lists differ: [] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    E
-    E       Second list contains 10 additional elements.
-    E       First extra element 0:
-    E       0
-    E
-    E       - []
-    E       + [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 * this time I add a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ to the left side to practice writing it
 
@@ -436,17 +404,9 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
   .. code-block:: python
 
     E       AssertionError: Lists differ: [0, 2, 4, 6, 8] != []
-    E
-    E       First list contains 5 additional elements.
-    E       First extra element 0:
-    E       0
-    E
-    E       - [0, 2, 4, 6, 8]
-    E       + []
-
 
   - ``if element % 2 == 0:`` checks if the element in ``collection`` leaves a remainder of ``0`` when divided by ``2``
-  - ``%`` is a modulo operator for modulo division which divides the number on the left by the number on the right and gives the remainder
+  - ``%`` is a `modulo <https://en.wikipedia.org/wiki/Modulo>`_ operator which divides the number on the left by the number on the right and gives a remainder
   - ``even_numbers.append(element)`` adds ``element`` to ``even_numbers`` if ``element`` divided by ``2`` leaves a remainder of ``0``
 
 * I add the values of the result to the test to make it pass
@@ -478,14 +438,6 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
   .. code-block:: python
 
     E       AssertionError: Lists differ: [] != [0, 2, 4, 6, 8]
-    E
-    E       Second list contains 5 additional elements.
-    E       First extra element 0:
-    E       0
-    E
-    E       - []
-    E       + [0, 2, 4, 6, 8]
-
 
 * I try using a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ like I did in the last example
 
@@ -612,7 +564,7 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
   .. code-block:: python
 
     self.assertEqual(
-        [element for element in collection if element % 2 == 0],
+        [element for element in collection if element % 2 != 0],
         odd_numbers
     )
 
@@ -622,17 +574,19 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
 
     E       AttributeError: module 'list_comprehensions' has no attribute 'get_odd_numbers'
 
-* I define a function that returns a list comprehension in ``list_comprehensions.py``
+* When I define a function that returns a list comprehension in ``list_comprehensions.py``
 
   .. code-block:: python
 
     def get_odd_numbers(argument):
         return [element for element in argument if element % 2 != 0]
 
-  and the terminal shows all tests passed
+  the terminal shows all tests passed
 
----
+----
 
-If you typed along you now know a couple of ways to loop through ``iterables`` and have your program make decisions by using ``conditions``. You also know how to do it with less words using `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_. Congratulations! Your magic powers are growing.
+If you typed along you now know a couple of ways to loop through ``iterables`` and have your program make decisions by using ``conditions``.
+
+You also know how to do it with less words using `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_. Congratulations! Your magic powers are growing.
 
 :doc:`code/list_comprehensions`

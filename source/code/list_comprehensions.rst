@@ -90,7 +90,7 @@ Here is the code in ``tests/test_list_comprehensions.py``
 
             self.assertEqual(odd_numbers, [1, 3, 5, 7, 9])
             self.assertEqual(
-                [element for element in collection if element % 2 == 0],
+                [element for element in collection if element % 2 != 0],
                 odd_numbers
             )
             self.assertEqual(
