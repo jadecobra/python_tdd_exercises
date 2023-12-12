@@ -32,7 +32,7 @@ the terminal shows an :doc:`/exceptions/AssertionError`
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-When I change the ``assert`` statement in ``test_none_is_none`` to ``self.assertIsNone`` which compares the given input with `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
+When I change the ``self.assertIsNotNone`` statement in ``test_none_is_none`` to ``self.assertIsNone`` which compares the given input with `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
 .. code-block:: python
 
@@ -117,7 +117,7 @@ REFACTOR: make it better
           self.assertIsNotNone(False)
           self.assertNotIsInstance(None, bool)
 
-From the tests I can summarize what I know as `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures/booleans>` and it is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
+From the tests I can summarize that `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures/booleans>` and it is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -196,14 +196,87 @@ REFACTOR: make it better
 
 * summarizing what I know about `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ so far from the tests
 
-  * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an integer
+  * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an `integer <https://docs.python.org/3/library/functions.html#int>`_
   * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures/booleans>`
   * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
+
+Is None a float?
+-------------------
+
+RED: make it fail
+^^^^^^^^^^^^^^^^^
+
+I add a new test to compare `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ with `floats <https://docs.python.org/3/library/functions.html#float>`_
+
+.. code-block:: python
+
+  def test_is_none_a_float(self):
+      self.assertIsNone(-1.1)
+      self.assertIsNone(0.2)
+
+the terminal shows an :doc:`/exceptions/AssertionError`
+
+.. code-block::
+
+  E       AssertionError: -1.1 is not None
+
+
+GREEN: make it pass
+^^^^^^^^^^^^^^^^^^^
+
+I change ``test_is_none_an_float`` using ``self.assertIsNotNone`` to make it pass
+
+.. code-block:: python
+
+  def test_is_none_a_float(self):
+      self.assertIsNotNone(-1.1)
+      self.assertIsNotNone(0.2)
+
+REFACTOR: make it better
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+`floats <https://docs.python.org/3/library/functions.html#float>`_ are represented by the class `float <https://docs.python.org/3/library/functions.html#float>`_ in python so I can do an instance test
+
+
+* RED: make it fail
+
+  I add a new line to ``test_is_none_a_float`` with ``self.assertIsInstance``
+
+  .. code-block:: python
+
+    def test_is_none_a_float(self):
+        self.assertIsNotNone(-1.1)
+        self.assertIsNotNone(0.2)
+        self.assertIsInstance(None, float)
+
+  the terminal shows an :doc:`/exceptions/AssertionError` is because `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an instance of `float <https://docs.python.org/3/library/functions.html#float>`_
+
+  .. code-block:: python
+
+    E       AssertionError: None is not an instance of <class 'float'>
+
+* GREEN: make it pass
+
+  I change ``test_is_none_a_float`` using ``self.assertNotIsInstance`` to make the test pass
+
+  .. code-block:: python
+
+    def test_is_none_a_float(self):
+        self.assertIsNotNone(-1.1)
+        self.assertIsNotNone(0.2)
+        self.assertNotIsInstance(None, float)
+
+* summarizing what I know about `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ so far from the tests
+
+  - `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `float <https://docs.python.org/3/library/functions.html#float>`_
+  - `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an `integer <https://docs.python.org/3/library/functions.html#int>`_
+  - `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures/booleans>`
+  - `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
 Is None a string?
 -----------------
 
-I add a test for `strings <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_. A string is any character(s) surrounded by single, double or triple quotes for example
+I add a test for `strings <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_. A string is any character(s) inside single, double or triple quotes for example
 
 * ``'single quotes'``
 * ``"double quotes"``
@@ -275,12 +348,13 @@ REFACTOR: make it better
           self.assertIsNotNone("text")
           self.assertNotIsInstance(None, str)
 
-* from the tests I know that
+* from the tests I see that
 
-  * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a string
-  * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an integer
-  * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures/booleans>`
-  * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
+  - `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
+  - `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `float <https://docs.python.org/3/library/functions.html#float>`_
+  - `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an `integer <https://docs.python.org/3/library/functions.html#int>`_
+  - `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures/booleans>`
+  - `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
 Is None a tuple?
 ----------------
@@ -333,10 +407,11 @@ GREEN: make it pass
         self.assertIsNotNone((1, 2, 3, 'n'))
         self.assertNotIsInstance(None, tuple)
 
-* From the tests I can see that in python
+* From the tests I see that in python
 
   - `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_
   - `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
+  - `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `float <https://docs.python.org/3/library/functions.html#float>`_
   - `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an `integer <https://docs.python.org/3/library/functions.html#int>`_
   - `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures/booleans>`
   - `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
@@ -376,11 +451,12 @@ GREEN: make it pass
 
 I have done this dance a few times now so I can change ``test_is_none_a_list`` with ``self.assertIsNotNone`` and ``self.assertNotIsInstance`` to make it pass.
 
-With the passing tests I know that
+With the passing tests I see that
 
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`list </data_structures/lists>`
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `float <https://docs.python.org/3/library/functions.html#float>`_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an `integer <https://docs.python.org/3/library/functions.html#int>`_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures/booleans>`
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
@@ -418,6 +494,7 @@ I change the tests to make them pass using ``self.assertIsNotNone`` and ``self.a
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`list </data_structures/lists>`
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `float <https://docs.python.org/3/library/functions.html#float>`_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an `integer <https://docs.python.org/3/library/functions.html#int>`_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures/booleans>`
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
@@ -463,6 +540,7 @@ I change the tests to make them pass and can see from the tests that
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`list </data_structures/lists>`
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `float <https://docs.python.org/3/library/functions.html#float>`_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an `integer <https://docs.python.org/3/library/functions.html#int>`_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures/booleans>`
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
@@ -471,4 +549,4 @@ I change the tests to make them pass and can see from the tests that
 You now know what `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is and what it is not
 
 
-:doc:`code/none`
+:doc:`/code/none`
