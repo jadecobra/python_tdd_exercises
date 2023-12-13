@@ -23,7 +23,7 @@ Here is the code in ``tests/test_lists.py``
             a_list.append(4)
             self.assertEqual(a_list, [0, 1, 2, 3, 4])
 
-        def test_removing_any_item_from_a_list(self):
+        def test_removing_an_item_from_a_list(self):
             a_list = [0, 1, 2, 3]
             self.assertEqual(a_list, [0, 1, 2, 3])
             a_list.remove(2)

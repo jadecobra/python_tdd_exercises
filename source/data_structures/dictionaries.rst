@@ -2,7 +2,7 @@
 Data Structures: Dictionaries
 ==============================
 
-This chapter shows `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ in Python. Dictionaries (also called Mappings) are key-value pairs that represent data, values can be any Python `object <https://docs.python.org/3/glossary.html#term-object>`_.
+This chapter goes over `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ in Python. Dictionaries, also called Mappings, are key-value pairs that represent data, values can be any Python `object <https://docs.python.org/3/glossary.html#term-object>`_.
 
 I think this is the most important data structure to know as it can contain all the other data structures and in your programming journey you will come across `JSON <https://en.wikipedia.org/wiki/JSON>`_ which you can read and write as `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
@@ -36,7 +36,7 @@ adding a file called ``dictionaries.py`` to the project folder makes the test pa
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-* I add a failing test to explore how to create a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+* I add a failing test to show how to create a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
   .. code-block:: python
 
@@ -67,7 +67,7 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-    E       AssertionError: None != {'key': 'value'}
+    AssertionError: None != {'key': 'value'}
 
 * I change the return statement to return an empty `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
@@ -81,10 +81,8 @@ REFACTOR: make it better
   .. code-block:: python
 
       E    AssertionError: {} != {'key': 'value'}
-      E    - {}
-      E    + {'key': 'value'}
 
-  - ``AssertionError:`` shows that two values are not equal
+  - ``AssertionError: {} != {'key': 'value'}`` shows that two values are not equal
   - the value on the left ``{}`` is what the function returns, in other words the result of calling ``dictionaries.a_dict()`` from the test
   - the value on the right ``{'key': 'value'}`` is what is expected
   - ``!=`` means ``not equal to``
@@ -114,12 +112,8 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-      E       AssertionError: {'key': 'value'} != {'key': 'key'}
-      E       - {'key': 'value'}
-      E       ?          ^^^^
-      E
-      E       + {'key': 'key'}
-      E       ?          ^ +
+      AssertionError: {'key': 'value'} != {'key': 'key'}
+
 
   so I change the test to make it pass
 
@@ -153,12 +147,7 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-    E       AssertionError: {'key': 'value'} != {'key': 'key'}
-    E       - {'key': 'value'}
-    E       ?          ^^^^
-    E
-    E       + {'key': 'key'}
-    E       ?          ^ +
+    AssertionError: {'key': 'value'} != {'key': 'key'}
 
 * I change the test to make it pass
 
@@ -191,12 +180,7 @@ the terminal shows an :doc:`/exceptions/AssertionError` since the two values are
 
 .. code-block:: python
 
-  E       AssertionError: {1: 'boom'} != {'one': 'boom'}
-  E       - {1: 'boom'}
-  E       ?  ^
-  E
-  E       + {'one': 'boom'}
-  E       ?
+  AssertionError: {1: 'boom'} != {'one': 'boom'}
 
 
 GREEN: make it pass
@@ -235,9 +219,9 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-    E       AssertionError: {2.5: 'works'} != {2.5: 'fails'}
-    E       - {2.5: 'works'}
-    E       + {2.5: 'fails'}
+    AssertionError: {2.5: 'works'} != {2.5: 'fails'}
+    - {2.5: 'works'}
+    + {2.5: 'fails'}
 
 * I change the values in the test to make it pass
 
@@ -279,12 +263,12 @@ the terminal shows an :doc:`/exceptions/AssertionError`
 
 .. code-block:: python
 
-  E       AssertionError: {False: 'boom'} != {False: 'bap'}
-  E       - {False: 'boom'}
-  E       ?           ^^^
-  E
-  E       + {False: 'bap'}
-  E       ?           ^^
+  AssertionError: {False: 'boom'} != {False: 'bap'}
+  - {False: 'boom'}
+  ?           ^^^
+
+  + {False: 'bap'}
+  ?           ^^
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -322,12 +306,12 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-    E       AssertionError: {True: 'bap'} != {True: 'boom'}
-    E       - {True: 'bap'}
-    E       ?          ^^
-    E
-    E       + {True: 'boom'}
-    E       ?
+    AssertionError: {True: 'bap'} != {True: 'boom'}
+    - {True: 'bap'}
+    ?          ^^
+
+    + {True: 'boom'}
+    ?
 
 * and I change the values to make the tests pass
 
@@ -367,12 +351,12 @@ the terminal shows an :doc:`/exceptions/AssertionError`
 
 .. code-block:: python
 
-  E       AssertionError: {(1, 2): 'value'} != {(1, 2): 'key'}
-  E       - {(1, 2): 'value'}
-  E       ?           ^^^^
-  E
-  E       + {(1, 2): 'key'}
-  E       ?           ^ +
+  AssertionError: {(1, 2): 'value'} != {(1, 2): 'key'}
+  - {(1, 2): 'value'}
+  ?           ^^^^
+
+  + {(1, 2): 'key'}
+  ?           ^ +
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -390,8 +374,8 @@ the tests so far show that I can use `tuples <https://docs.python.org/3/library/
 
 ----
 
-Can I create a Dictionary with lists as keys?
-----------------------------------------------
+Can I create a Dictionary with a list as a key?
+-------------------------------------------------
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -421,7 +405,7 @@ I add :doc:`/exceptions/TypeError` to the list of exceptions encountered
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I can use ``self.assertRaises`` to confirm that an error is raised by some code without having it crash the tests. I will use it here to confirm that when I try to create a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a :doc:`list </data_structures/lists>` as the key, python raises a :doc:`/exceptions/TypeError`
+I can use ``self.assertRaises`` to confirm that an error is raised by some code without having it crash the tests. I will use it here to confirm that Python raises a :doc:`/exceptions/TypeError` when I try to create a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a :doc:`list </data_structures/lists>` as the key
 
 .. code-block:: python
 
@@ -435,8 +419,8 @@ From the test I see that I cannot create a `dictionary <https://docs.python.org/
 
 ----
 
-Can I create a Dictionary with sets as keys?
----------------------------------------------
+Can I create a Dictionary with a set as a key?
+------------------------------------------------
 
 I try a similar test using a set as a key
 
@@ -452,7 +436,7 @@ the terminal responds with a :doc:`/exceptions/TypeError`
 
 .. code-block:: python
 
-  E       TypeError: unhashable type: 'set'
+  TypeError: unhashable type: 'set'
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -465,12 +449,12 @@ I use ``self.assertRaises`` to handle the exception
       with self.assertRaises(TypeError):
           {{1, 2}: "BOOM"}
 
-Tests are green again. I cannot use a `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ as a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ key
+Tests are green again. I cannot use a `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ or a :doc:`list </data_structures/lists>` as a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ key
 
 ----
 
-Can I create a Dictionary with dictionaries as keys?
------------------------------------------------------
+Can I create a Dictionary with a dictionary as a key?
+-------------------------------------------------------
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -502,7 +486,7 @@ I add an exception handler to the test to confirm the findings
         with self.assertRaises(TypeError):
             {a_dictionary: "BOOM"}
 
-and the terminal shows passing tests. I cannot use a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ as a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ key
+and the terminal shows passing tests. I cannot use a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_, `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ or a :doc:`list </data_structures/lists>` as a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ key
 
 ----
 
@@ -542,10 +526,7 @@ the terminal displays an :doc:`/exceptions/AssertionError` because ``bob`` is no
 
 .. code-block:: python
 
-  E       AssertionError: 'value' != 'bob'
-  E       - value
-  E       + bob
-
+  AssertionError: 'value' != 'bob'
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -580,16 +561,9 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-    E       AssertionError: Lists differ: ['value1', 'value2', 'value3', 'valueN'] != []
-    E
-    E       First list contains 4 additional elements.
-    E       First extra element 0:
-    E       'value1'
-    E
-    E       - ['value1', 'value2', 'value3', 'valueN']
-    E       + []
+    AssertionError: Lists differ: ['value1', 'value2', 'value3', 'valueN'] != []
 
-* the tests pass when I change the values in the test to make them match the expectation
+* the tests pass when I change the values in the test to make them match the result
 
   .. code-block:: python
 
@@ -630,14 +604,7 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-    E       AssertionError: Lists differ: ['key1', 'key2', 'key3', 'keyN'] != []
-    E
-    E       First list contains 4 additional elements.
-    E       First extra element 0:
-    E       'key1'
-    E
-    E       - ['key1', 'key2', 'key3', 'keyN']
-    E       + []
+    AssertionError: Lists differ: ['key1', 'key2', 'key3', 'keyN'] != []
 
 * I add the values to the empty list in the test to make it pass
 
@@ -831,7 +798,7 @@ What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datas
         self.assertIsNone(a_dictionary.get('non_existent_key', None))
         self.assertEqual(a_dictionary.get('key1', None), None)
 
-  the terminal shows an `Assertion Error <./AssertionError.rst>`_ because ``value1`` which is the value for ``key1`` in ``a_dictionary`` is not equal to :doc:`None </data_structures/none>`
+  the terminal shows an :doc:`/exceptions/AssertionError` because ``value1`` which is the value for ``key1`` in ``a_dictionary`` is not equal to :doc:`None </data_structures/none>`
 
   .. code-block:: python
 
@@ -858,7 +825,7 @@ Do you think you could write an implementation for the ``get`` method after read
 How to view the attributes and methods of a dictionary
 -------------------------------------------------------
 
-:doc:`/classes/classes` shows how to view the ``attributes`` and :doc:`methods </functions/functions>` of an object. Let us look at the attributes and :doc:`methods </functions/functions>` of `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+The chapter on :doc:`/classes/classes` shows how to view the ``attributes`` and :doc:`methods </functions/functions>` of an object. Let us look at the attributes and :doc:`methods </functions/functions>` of `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -878,7 +845,7 @@ the terminal shows an :doc:`/exceptions/AssertionError`
 
 .. code-block:: python
 
-  E       AssertionError: Lists differ: ['__class__', '__class_getitem__', '__cont[530 chars]ues'] != []
+  AssertionError: Lists differ: ['__class__', '__class_getitem__', '__cont[530 chars]ues'] != []
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -887,7 +854,7 @@ I copy the expected values shown in the terminal to make the test pass
 
 .. note::
 
-  Your results may vary based on your python version
+  Your results may vary based on your version of Python
 
 
 .. code-block:: python
@@ -1018,9 +985,9 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-    E       AssertionError: {'bippity': 'boppity', 'another_key': None} != {'bippity': 'boppity'}
-    E       - {'another_key': None, 'bippity': 'boppity'}
-    E       + {'bippity': 'boppity'}
+    AssertionError: {'bippity': 'boppity', 'another_key': None} != {'bippity': 'boppity'}
+    - {'another_key': None, 'bippity': 'boppity'}
+    + {'bippity': 'boppity'}
 
 
 * I change the test to make it pass
@@ -1080,9 +1047,9 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-    E       AssertionError: {'bippity': 'boppity', 'another_key': None, 'a_new_key': 'a_default_value'} != {'bippity': 'boppity', 'another_key': None}
-    E       - {'a_new_key': 'a_default_value', 'another_key': None, 'bippity': 'boppity'}
-    E       + {'another_key': None, 'bippity': 'boppity'}
+    AssertionError: {'bippity': 'boppity', 'another_key': None, 'a_new_key': 'a_default_value'} != {'bippity': 'boppity', 'another_key': None}
+    - {'a_new_key': 'a_default_value', 'another_key': None, 'bippity': 'boppity'}
+    + {'another_key': None, 'bippity': 'boppity'}
 
 * I add the new values to the test to make it pass
 
@@ -1133,13 +1100,13 @@ the terminal displays an :doc:`/exceptions/AssertionError` because the values of
 
 .. code-block:: python
 
-  E       AssertionError: {'bas[37 chars]xide', 'traditional': 'chewing stick', 'browni[31 chars]gar'} != {'bas[37 chars]xide'}
-  E       + {'basic': 'toothpaste', 'whitening': 'peroxide'}
-  E       - {'basic': 'toothpaste',
-  E       -  'browning': 'tobacco',
-  E       -  'decaying': 'sugar',
-  E       -  'traditional': 'chewing stick',
-  E       -  'whitening': 'peroxide'}
+  AssertionError: {'bas[37 chars]xide', 'traditional': 'chewing stick', 'browni[31 chars]gar'} != {'bas[37 chars]xide'}
+  + {'basic': 'toothpaste', 'whitening': 'peroxide'}
+  - {'basic': 'toothpaste',
+  -  'browning': 'tobacco',
+  -  'decaying': 'sugar',
+  -  'traditional': 'chewing stick',
+  -  'whitening': 'peroxide'}
 
 
 GREEN: make it pass
@@ -1244,17 +1211,17 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    E       AssertionError: {'whitening': 'peroxide', 'traditional': 'c[53 chars]gar'} != {'basic': 'toothpaste', 'whitening': 'perox[76 chars]gar'}
-    E       + {'basic': 'toothpaste',
-    E       - {'browning': 'tobacco',
-    E       ? ^
-    E
-    E       +  'browning': 'tobacco',
-    E       ? ^
-    E
-    E          'decaying': 'sugar',
-    E          'traditional': 'chewing stick',
-    E          'whitening': 'peroxide'}
+    AssertionError: {'whitening': 'peroxide', 'traditional': 'c[53 chars]gar'} != {'basic': 'toothpaste', 'whitening': 'perox[76 chars]gar'}
+    + {'basic': 'toothpaste',
+    - {'browning': 'tobacco',
+    ? ^
+
+    +  'browning': 'tobacco',
+    ? ^
+
+       'decaying': 'sugar',
+       'traditional': 'chewing stick',
+       'whitening': 'peroxide'}
 
 * The test passes when I remove the key-value pairs of ``basic`` and ``toothpaste``
 
@@ -1281,7 +1248,7 @@ GREEN: make it pass
 
 ----
 
-WOW! You made it to the end of the chapter on `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_, and now know
+You now know
 
 * How to create a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 * What objects can be used as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys

@@ -220,9 +220,9 @@ I could write a test that uses a random variable for the sleep and wake times, l
 
   .. code-block:: python
 
-    E    ['__add__', '__class__', '__contains__', [918 chars]ill']
-    E                        ^
-    E  SyntaxError: invalid syntax
+    ['__add__', '__class__', '__contains__', [918 chars]ill']
+                         ^
+    SyntaxError: invalid syntax
 
   ah, there is a closing quote, with no open quote, I add an opening quote
 
@@ -257,7 +257,7 @@ I could write a test that uses a random variable for the sleep and wake times, l
 
   .. note::
 
-    Your results may vary based on your python version
+    Your results may vary based on your version of Python
 
   .. code-block:: python
 

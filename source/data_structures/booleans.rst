@@ -2,7 +2,7 @@
 Data Structures: Booleans
 ==========================
 
-The tests in this chapter show `booleans <https://docs.python.org/3/library/functions.html#bool>`_ by comparing them with other data structures in Python to learn what they are and what they are not.
+The tests in this chapter go over `booleans <https://docs.python.org/3/library/functions.html#bool>`_ by comparing them with other data structures in Python to learn what they are and what they are not.
 
 There are two `boolean <https://docs.python.org/3/library/functions.html#bool>`_ values - `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ and `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 
@@ -125,7 +125,7 @@ I add a similar series of failing tests for `True <https://docs.python.org/3/lib
       self.assertFalse({
           "a": 1,
           "b": 2,
-          "c":  3,
+          "c": 3,
           "n": "n"
       })
       self.assertNotIsInstance(True, bool)
@@ -155,12 +155,12 @@ GREEN: make it pass
         self.assertTrue({
             "a": 1,
             "b": 2,
-            "c":  3,
+            "c": 3,
             "n": "n"
         })
         self.assertNotIsInstance(True, bool)
 
-  I am left with a failing test for the `self.assertNotIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance>`_ statement
+  and left with a failing test for the `self.assertNotIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance>`_ statement
 
   .. code-block:: python
 

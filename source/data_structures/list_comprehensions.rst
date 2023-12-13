@@ -28,7 +28,7 @@ I add a file called ``test_list_comprehension.py`` to the ``tests`` folder with 
               a_list.append(element)
           self.assertEqual(a_list, [])
 
-* ``collection = range(10)`` creates an iterable of numbers from 0 to 9 with the `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ object called ``collection``
+* ``collection = range(10)`` creates an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ of numbers from 0 to 9 with the `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ object and calls it ``collection``
 * `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ creates an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ of numbers from 0 to the given number minus 1
 * ``a_list = []`` creates an empty list called ``a_list``
 * ``self.assertEqual(a_list, [])`` confirms that ``a_list`` is empty since it is equal to ``[]``
@@ -178,7 +178,7 @@ the terminal shows an :doc:`/exceptions/AssertionError` for the values of ``a_li
 
 .. code-block:: python
 
-  E       AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
+  AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
 
 
 GREEN: make it pass
@@ -206,7 +206,7 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    E       AttributeError: module 'list_comprehensions' has no attribute 'for_loop'
+    AttributeError: module 'list_comprehensions' has no attribute 'for_loop'
 
 * I add a function definition for ``for_loop`` to ``list_comprehensions.py``
 
@@ -219,7 +219,7 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    E       TypeError: for_loop() takes 0 positional arguments but 1 was given
+    TypeError: for_loop() takes 0 positional arguments but 1 was given
 
 * I change the signature of the function to take in an input argument
 
@@ -232,7 +232,7 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    E       AssertionError: None != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    AssertionError: None != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 * I change the behavior of the function to use a ``for`` loop
 
@@ -245,7 +245,7 @@ GREEN: make it pass
         return result
 
   - ``result = []`` creates an empty list called ``result``
-  - ``for element in argument:`` creates a loop over the elements of ``argument`` which is an ``iterable`` passed into the function
+  - ``for element in argument:`` creates a loop over the elements of ``argument`` which is an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ passed into the function
   - ``result.append(element)`` adds each element from ``argument`` to the list called ``result``
   - ``return result`` returns ``result`` after the loop completes
 
@@ -280,7 +280,7 @@ the terminal shows an :doc:`/exceptions/AssertionError`
 
 .. code-block:: python
 
-  E       AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
+  AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
 
 
 GREEN: make it pass
@@ -309,7 +309,7 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    E       AssertionError: Lists differ: [] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    AssertionError: Lists differ: [] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 * this time I add a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ to the left side to practice writing it
 
@@ -334,7 +334,7 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    E       AttributeError: module 'list_comprehensions' has no attribute 'list_comprehension'
+    AttributeError: module 'list_comprehensions' has no attribute 'list_comprehension'
 
 * I add a function that uses a list comprehension to ``list_comprehensions.py``
 
@@ -403,7 +403,7 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
 
   .. code-block:: python
 
-    E       AssertionError: Lists differ: [0, 2, 4, 6, 8] != []
+    AssertionError: Lists differ: [0, 2, 4, 6, 8] != []
 
   - ``if element % 2 == 0:`` checks if the element in ``collection`` leaves a remainder of ``0`` when divided by ``2``
   - ``%`` is a `modulo <https://en.wikipedia.org/wiki/Modulo>`_ operator which divides the number on the left by the number on the right and gives a remainder
@@ -437,7 +437,7 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
 
   .. code-block:: python
 
-    E       AssertionError: Lists differ: [] != [0, 2, 4, 6, 8]
+    AssertionError: Lists differ: [] != [0, 2, 4, 6, 8]
 
 * I try using a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ like I did in the last example
 
@@ -482,7 +482,7 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
 
   .. code-block:: python
 
-    E       AttributeError: module 'list_comprehensions' has no attribute 'get_even_numbers'
+    AttributeError: module 'list_comprehensions' has no attribute 'get_even_numbers'
 
 * I add a function definition to ``list_comprehensions.py`` using the `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ I just wrote
 
@@ -516,7 +516,7 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
 
   .. code-block:: python
 
-    E       AssertionError: Lists differ: [1, 3, 5, 7, 9] != []
+    AssertionError: Lists differ: [1, 3, 5, 7, 9] != []
 
 * when I change the values to match
 
@@ -542,7 +542,7 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
 
   .. code-block:: python
 
-    E       AssertionError: Lists differ: [] != [1, 3, 5, 7, 9]
+    AssertionError: Lists differ: [] != [1, 3, 5, 7, 9]
 
 * I change the value on the left with a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ that uses the same condition I used to create even numbers
 
@@ -553,13 +553,13 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
         odd_numbers
     )
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+  and the terminal shows an :doc:`/exceptions/AssertionError`
 
   .. code-block:: python
 
-    E       AssertionError: Lists differ: [0, 2, 4, 6, 8] != [1, 3, 5, 7, 9]
+    AssertionError: Lists differ: [0, 2, 4, 6, 8] != [1, 3, 5, 7, 9]
 
-* I change the logic in the condition so it uses not equal to ``0`` instead
+* When I change the logic in the condition so it uses not equal to ``0`` instead
 
   .. code-block:: python
 
@@ -568,20 +568,20 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
         odd_numbers
     )
 
-  and the terminal shows an :doc:`/exceptions/AttributeError` for the next line
+  the terminal shows an :doc:`/exceptions/AttributeError` for the next line
 
   .. code-block:: python
 
-    E       AttributeError: module 'list_comprehensions' has no attribute 'get_odd_numbers'
+    AttributeError: module 'list_comprehensions' has no attribute 'get_odd_numbers'
 
-* When I define a function that returns a list comprehension in ``list_comprehensions.py``
+* Then I define a function that returns a list comprehension in ``list_comprehensions.py``
 
   .. code-block:: python
 
     def get_odd_numbers(argument):
         return [element for element in argument if element % 2 != 0]
 
-  the terminal shows all tests passed
+  and the terminal shows all tests passed
 
 ----
 
@@ -589,4 +589,4 @@ If you typed along you now know a couple of ways to loop through ``iterables`` a
 
 You also know how to do it with less words using `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_. Congratulations! Your magic powers are growing.
 
-:doc:`code/list_comprehensions`
+:doc:`/code/list_comprehensions`

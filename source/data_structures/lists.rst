@@ -34,7 +34,7 @@ the terminal shows a :doc:`/exceptions/TypeError`
 
 .. code-block:: python
 
-  E       TypeError: list expected at most 1 argument, got 4
+  TypeError: list expected at most 1 argument, got 4
 
 
 GREEN: make it pass
@@ -51,7 +51,7 @@ GREEN: make it pass
   - I read `python's documentation for lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ and see that the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor takes in an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_
   - An `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ is an object that I can loop over - `tuples <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_, `lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_, `sets <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ and :doc:`dictionaries </data_structures/dictionaries>` are iterable
 
-* I change the left input of the ``self.assertEqual`` statement by placing the values in parentheses to make them a `tuple <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_ which is `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_
+* I change the left input of the ``self.assertEqual`` statement by placing the values in parentheses to make them a `tuple <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_, which is `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_
 
   .. code-block:: python
 
@@ -109,11 +109,11 @@ I add a test to ``TestLists`` in ``test_lists.py`` to test adding items to an ex
         a_list.append(4)
         self.assertEqual(a_list, [0, 1, 2, 3])
 
-the terminal shows an :doc:`/exceptions/AssertionError` because after the call ``a_list.append(5)``, the values in ``a_list`` change
+the terminal shows an :doc:`/exceptions/AssertionError` because the values in ``a_list`` change after the call ``a_list.append(5)``
 
 .. code-block:: python
 
-  E       AssertionError: Lists differ: [0, 1, 2, 3, 4] != [0, 1, 2, 3]
+  AssertionError: Lists differ: [0, 1, 2, 3, 4] != [0, 1, 2, 3]
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -144,17 +144,17 @@ Since I know how to add an item to a `list <https://docs.python.org/3/library/st
 
 .. code-block:: python
 
-    def test_removing_any_item_from_a_list(self):
+    def test_removing_an_item_from_a_list(self):
         a_list = [0, 1, 2, 3]
         self.assertEqual(a_list, [0, 1, 2, 3])
         a_list.remove(2)
         self.assertEqual(a_list, [0, 1, 2, 3])
 
-the :doc:`/exceptions/AssertionError` in the terminal shows ``a_list`` is different after I call ``a_list.remove(2)``, because the operation removes ``2`` from it
+the terminal shows an :doc:`/exceptions/AssertionError` because the values in ``a_list`` no longer contain ``2`` after the call ``a_list.remove(2)``
 
 .. code-block:: python
 
-  E       AssertionError: Lists differ: [0, 1, 3] != [0, 1, 2, 3]
+  AssertionError: Lists differ: [0, 1, 3] != [0, 1, 2, 3]
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -163,7 +163,7 @@ I change the test to make the values on the right match the result and the test 
 
 .. code-block:: python
 
-    def test_removing_any_item_from_a_list(self):
+    def test_removing_an_item_from_a_list(self):
         a_list = [0, 1, 2, 3]
         self.assertEqual(a_list, [0, 1, 2, 3])
         a_list.remove(2)
@@ -188,7 +188,7 @@ What if there was more than one of the same element in the list? How does Python
 
   .. code-block :: python
 
-    E       AssertionError: Lists differ: [0, 1, 2, 3, 2] != [0, 2, 1, 2, 3, 2]
+    AssertionError: Lists differ: [0, 1, 2, 3, 2] != [0, 2, 1, 2, 3, 2]
 
 * and I change the values on the right to match the result
 
@@ -227,7 +227,7 @@ I add a test to ``TestLists`` in ``test_lists.py`` to test removing the last ite
 * ``self.assertEqual(last_item, 0)`` checks that ``last_item`` is equal to ``0``
 * ``self.assertEqual(a_list, [0, 1, 2, 3])`` checks the values that remain in ``a_list`` after calling `pop <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
 
-the terminal shows an :doc:`/exceptions/AssertionError` for the test that checks the value of the popped item
+the terminal shows an :doc:`/exceptions/AssertionError` for the test that checks the value of the popped item called ``last_item``
 
 .. code-block:: python
 
@@ -252,7 +252,7 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    E       AssertionError: Lists differ: [0, 1, 2] != [0, 1, 2, 3]
+    AssertionError: Lists differ: [0, 1, 2] != [0, 1, 2, 3]
 
 
 * I change the values in the ``self.assertEqual`` call to make the tests pass
@@ -296,8 +296,8 @@ the terminal shows an :doc:`/exceptions/AssertionError`
 
 .. code-block:: python
 
-  E       AssertionError: 'first' != ''
-  E       - first
+  AssertionError: 'first' != ''
+  - first
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -322,8 +322,8 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    E       AssertionError: 'third' != ''
-    E       - third
+    AssertionError: 'third' != ''
+    - third
 
 * I change the value to match the result
 
@@ -345,8 +345,8 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    E       AssertionError: 'second' != ''
-    E       - second
+    AssertionError: 'second' != ''
+    - second
 
 * I change each failing line until all the tests pass
 
@@ -382,7 +382,7 @@ I add a failing test to show this
 
 the terminal shows an `IndexError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#IndexError>`_
 
-.. code-block:: language
+.. code-block:: python
 
   >       self.assertEqual(a_list[5], 'BOOM')
   E       IndexError: list index out of range
@@ -400,7 +400,7 @@ GREEN: make it pass
     # TypeError
     # IndexError
 
-* then add a ``self.assertRaises`` to confirm that the ``IndexError`` gets raised to make the test pass. You can read more about ``self.assertRaises`` in :doc:`/how_to/exception_handling_tests`
+* then add a ``self.assertRaises`` to confirm that the ``IndexError`` gets raised to make the test pass.
 
   .. code-block:: python
 
@@ -409,12 +409,14 @@ GREEN: make it pass
         with self.assertRaises(IndexError):
             a_list[5]
 
+  You can read more about ``self.assertRaises`` in :doc:`/how_to/exception_handling_tests`
+
 ----
 
 How to view attributes and :doc:`methods </functions/functions>` of a list
 -----------------------------------------------------------------------------
 
-The chapter on :doc:`/classes/classes` shows how to view the ``attributes`` and :doc:`methods </functions/functions>` of an object. Let us take a look at the  look at the ``attributes`` and :doc:`methods </functions/functions>` of `lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
+The chapter on :doc:`/classes/classes` shows how to view the ``attributes`` and :doc:`methods </functions/functions>` of an object. Let us take a look at the ``attributes`` and :doc:`methods </functions/functions>` of `lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -440,7 +442,7 @@ I change the test with the expected values
 
 .. note::
 
-  Your results may vary based on your python version
+  Your results may vary based on your version of Python
 
 .. code-block:: python
 
@@ -511,7 +513,7 @@ There are more :doc:`methods </functions/functions>` listed than what I have rev
 * clear - does this clear the items in the list?
 * copy - does this create a copy of the list?
 * count - does this count the number of items in the list?
-* extend - extends the list?
+* extend - does this extend the list?
 * index
 * insert - does this place an item in the list?
 * pop - removes the last item in the list

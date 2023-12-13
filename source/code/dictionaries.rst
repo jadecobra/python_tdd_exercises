@@ -201,7 +201,7 @@ Here is the code in ``tests/test_dictionaries.py``
 
             a_dictionary.setdefault('a_new_key', 'a_default_value')
             self.assertEqual(
-            a_dictionary,
+                a_dictionary,
                 {
                     'bippity': 'boppity',
                     'another_key': None,

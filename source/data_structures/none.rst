@@ -5,7 +5,7 @@ Data Structures: None
 What is None?
 -------------
 
-The tests in this chapter explore `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_, which is an object used to represent the absence of a value
+The tests in this chapter go over `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_, which is an object used to represent the absence of a value
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -26,7 +26,7 @@ the terminal shows an :doc:`/exceptions/AssertionError`
 
 .. code-block:: python
 
-  E       AssertionError: unexpectedly None
+  AssertionError: unexpectedly None
 
 
 GREEN: make it pass
@@ -143,7 +143,7 @@ the terminal shows an :doc:`/exceptions/AssertionError`
 
 .. code-block::
 
-  E       AssertionError: -1 is not None
+  AssertionError: -1 is not None
 
 
 GREEN: make it pass
@@ -218,7 +218,7 @@ the terminal shows an :doc:`/exceptions/AssertionError`
 
 .. code-block::
 
-  E       AssertionError: -1.1 is not None
+  AssertionError: -1.1 is not None
 
 
 GREEN: make it pass
@@ -253,7 +253,7 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-    E       AssertionError: None is not an instance of <class 'float'>
+    AssertionError: None is not an instance of <class 'float'>
 
 * GREEN: make it pass
 
@@ -300,7 +300,7 @@ and the terminal shows an :doc:`/exceptions/AssertionError`
 
 .. code-block:: python
 
-  E       AssertionError: '' is not None
+  AssertionError: '' is not None
 
 
 GREEN: make it pass
@@ -335,7 +335,7 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-    E       AssertionError: None is not an instance of <class 'str'>
+    AssertionError: None is not an instance of <class 'str'>
 
 * GREEN: make it pass
 

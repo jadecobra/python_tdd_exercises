@@ -2,7 +2,7 @@
 Truth Table: Converse NonImplication
 ====================================
 
-The tests in this chapter show Converse NonImplication from  the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
+The tests in this chapter cover Converse NonImplication from  the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
 
 RED: make it fail
