@@ -13,7 +13,7 @@ It is a culmination of what has worked for me over the past 10 years learning th
 Who is this book for?
 ---------------------
 * If you are just starting your journey, congratulations! You made a decision from the many choices of programming languages available. Celebrate it. This book is for you
-* If you are new to Test Driven Development in python, this book is for you
+* If you are new to Test Driven Development in Python, this book is for you
 * If you already use python but are unfamiliar with any of the errors below, this book is for you
 
   - :doc:`/exceptions/ModuleNotFoundError`

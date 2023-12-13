@@ -140,7 +140,7 @@ How can I make this better?
           )
 
   the terminal shows a :doc:`/exceptions/TypeError` because 2 positional arguments were expected by the function but 4 were given
-* In python I can represent multiple arguments using a starred expression `see arbitrary argument lists <https://docs.python.org/3/tutorial/controlflow.html#arbitrary-argument-lists>`_, so I change the signature of ``functions_with_positional_arguments`` with a starred expression to alow it take in any number of arguments
+* in Python I can represent multiple arguments using a starred expression `see arbitrary argument lists <https://docs.python.org/3/tutorial/controlflow.html#arbitrary-argument-lists>`_, so I change the signature of ``functions_with_positional_arguments`` with a starred expression to alow it take in any number of arguments
 
   .. code-block:: python
 

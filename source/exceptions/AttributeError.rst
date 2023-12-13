@@ -145,7 +145,7 @@ I solved the `AttributeError <https://docs.python.org/3/library/exceptions.html?
 
 .. NOTE::
 
-  - In python ``=`` is used to assign names to objects, for example ``five = 5`` means I can refer to the number ``5`` with the name ``five``
+  - in Python ``=`` is used to assign names to objects, for example ``five = 5`` means I can refer to the number ``5`` with the name ``five``
   - the equality sign ``==`` is used to check if two things are equal  example  ``5 == 4`` means "is ``5`` is equal to ``4``?"
 
 AttributeError vs NameError
@@ -767,7 +767,7 @@ repeat the solution until all tests pass
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining attributes (variables) in a :doc:`class </classes>`
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`methods (functions) </functions/functions>` in a :doc:`class </classes>`
 
-:doc:`classes </classes>` vs :doc:`/functions/functions` in python
+:doc:`classes </classes>` vs :doc:`/functions/functions` in Python
 -------------------------------------------------------
 
 * attributes and :doc:`methods </functions/functions>` in a :doc:`class </classes>` can be accessible from outside the :doc:`class </classes>`

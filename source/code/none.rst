@@ -25,6 +25,11 @@ Here is the code in ``tests/test_none.py``
             self.assertIsNotNone(1)
             self.assertNotIsInstance(None, int)
 
+        def test_is_none_a_float(self):
+            self.assertIsNotNone(-1.1)
+            self.assertIsNotNone(0.2)
+            self.assertNotIsInstance(None, float)
+
         def test_is_none_a_string(self):
             self.assertIsNotNone('')
             self.assertIsNotNone("text")

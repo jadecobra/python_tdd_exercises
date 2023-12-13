@@ -219,7 +219,7 @@ The function currently only takes in 2 keyword arguments. What if I want a funct
               {'a': 1, 'b': 2, 'c': 3, 'd': 4}
           )
 
-    the terminal shows passing tests. From the tests I can see that keyword arguments are treated as :doc:`dictionaries </data_structures/dictionaries>`  in python
+    the terminal shows passing tests. From the tests I can see that keyword arguments are treated as :doc:`dictionaries </data_structures/dictionaries>`  in Python
 
 * REFACTOR: make it better
 

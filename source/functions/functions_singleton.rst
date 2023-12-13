@@ -59,7 +59,7 @@ From the tests I know
 * that singleton functions return the same thing every time they are called
 * that positional arguments are represented as `tuples <https://docs.python.org/3/library/stdtypes.html#tuple>`_ with parentheses - ``()``
 * that keyword arguments are represented as :doc:`dictionaries </data_structures/dictionaries>`  with curly braces - ``{}``
-* how to write functions in python that can take in any number of positional or keyword arguments as inputs
+* how to write functions in Python that can take in any number of positional or keyword arguments as inputs
 * I can use ``*name`` to represent any number of positional arguments
 * I can use ``**name`` to represent any number of keyword arguments
 * I can define default values for arguments

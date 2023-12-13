@@ -354,7 +354,7 @@ REFACTOR: make it better
 
   the terminal shows all tests pass...but wait! there's more. I can make this better.
 
-* There's another solution to the above test. What if I can define a function that takes in any number of parameters, is there a signature in python that allows a function to take 1 argument, 4 arguments, or any number of arguments? YES! I can use the starred expression ``*args`` to pass in any number of positional arguments to to ``function_d`` in ``functions.py``
+* There's another solution to the above test. What if I can define a function that takes in any number of parameters, is there a signature in Python that allows a function to take 1 argument, 4 arguments, or any number of arguments? YES! I can use the starred expression ``*args`` to pass in any number of positional arguments to to ``function_d`` in ``functions.py``
 
   .. code-block:: python
 

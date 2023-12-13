@@ -2,7 +2,7 @@
 IndentationError
 ================
 
-Spacing/Indentation matters in python. Where code is placed and how it is spaced has an effect on how the code is interpreted as well as how a human being comprehends the intention behind the code. Some people indent with 2 spaces, others indent with 4. This exercises uses 4 spaces to indent as it is the `recommended convention <https://peps.python.org/pep-0008/#indentation>`_
+Spacing/Indentation matters in Python. Where code is placed and how it is spaced has an effect on how the code is interpreted as well as how a human being comprehends the intention behind the code. Some people indent with 2 spaces, others indent with 4. This exercises uses 4 spaces to indent as it is the `recommended convention <https://peps.python.org/pep-0008/#indentation>`_
 
 An `IndentationError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#IndentationError>`_ is raised when indentation is not correct. The exercises in this chapter are intended to get you familiar with proper Indentation
 
@@ -36,7 +36,7 @@ RED: make it fail
     # AssertionError
     # IndentationError
 
-  python raises an ``IndentationError`` for line 2 because it was not expecting the indentation there. Indentation has meaning in python and in this case it does not meet the predefined rules for indentation
+  python raises an ``IndentationError`` for line 2 because it was not expecting the indentation there. Indentation has meaning in Python and in this case it does not meet the predefined rules for indentation
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -254,7 +254,7 @@ GREEN: make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Indentation matters in python because it is how blocks of code are segmented. When a :doc:`function </functions/functions>` is defined, all the statements that belong to it are indented, same with a :doc:`class </classes/classes>`, all the :doc:`methods </functions/functions>` and attributes that belong to it are indented underneath the definition
+Indentation matters in Python because it is how blocks of code are segmented. When a :doc:`function </functions/functions>` is defined, all the statements that belong to it are indented, same with a :doc:`class </classes/classes>`, all the :doc:`methods </functions/functions>` and attributes that belong to it are indented underneath the definition
 
 This helps with reading the code so I can tell what belongs to a namespace the same way curly braces do for languages that use them for that purpose.
 

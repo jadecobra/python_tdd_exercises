@@ -2,7 +2,7 @@
 Conventions
 ===========
 
-The following are a few conventions to know in python
+The following are a few conventions to know in Python
 
 
 * Comments are represented by the hashtag or pound before the thing that is commented for example

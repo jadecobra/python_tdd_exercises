@@ -47,10 +47,11 @@ GREEN: make it pass
     # AssertionError
     # TypeError
 
-* Looking at the error I see that the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor expects one argument but four are given in the test, so I am not following the signature for creating lists
-* I read `python's documentation for lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ and see that the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor takes in an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_
-* An `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ is an object that I can loop over - `tuples <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_, `lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_, `sets <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ and :doc:`dictionaries </data_structures/dictionaries>` are iterable.
-* I change the left input of the ``self.assertEqual`` by putting the values in an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_, I will use a `tuple <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_ for this example by placing parentheses around the values
+  - Looking at the error I see that the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor expects one argument but four are given in the test, so I am not following the signature for creating lists
+  - I read `python's documentation for lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ and see that the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor takes in an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_
+  - An `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ is an object that I can loop over - `tuples <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_, `lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_, `sets <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ and :doc:`dictionaries </data_structures/dictionaries>` are iterable
+
+* I change the left input of the ``self.assertEqual`` statement by placing the values in parentheses to make them a `tuple <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_ which is `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_
 
   .. code-block:: python
 
@@ -61,15 +62,7 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    >    self.assertEqual(list((0, 1, 2, 3)), [])
     E    AssertionError: Lists differ: [0, 1, 2, 3] != []
-    E
-    E    First list contains 4 additional elements.
-    E    First extra element 0:
-    E    1
-    E
-    E    - [0, 1, 2, 3]
-    E    + []
 
 * When I change the right side to match the values on the left from the terminal
 
@@ -116,26 +109,16 @@ I add a test to ``TestLists`` in ``test_lists.py`` to test adding items to an ex
         a_list.append(4)
         self.assertEqual(a_list, [0, 1, 2, 3])
 
-the terminal shows an :doc:`/exceptions/AssertionError` because after I call ``a_list.append(5)``, the values in ``a_list`` change
+the terminal shows an :doc:`/exceptions/AssertionError` because after the call ``a_list.append(5)``, the values in ``a_list`` change
 
 .. code-block:: python
 
-  >       self.assertEqual(a_list, [0, 1, 2, 3])
   E       AssertionError: Lists differ: [0, 1, 2, 3, 4] != [0, 1, 2, 3]
-  E
-  E       First list contains 1 additional elements.
-  E       First extra element 4:
-  E       4
-  E
-  E       - [0, 1, 2, 3, 4]
-  E       ?            ---
-  E
-  E       + [0, 1, 2, 3]
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I change the values on the right side of the `self.assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ statement to make it match the expectation
+I change the values on the right side of the `self.assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ statement to make it match the result
 
 .. code-block:: python
 
@@ -167,28 +150,16 @@ Since I know how to add an item to a `list <https://docs.python.org/3/library/st
         a_list.remove(2)
         self.assertEqual(a_list, [0, 1, 2, 3])
 
-the :doc:`/exceptions/AssertionError` in the terminal shows `a_list` is different after I call ``a_list.remove(2)``, because the operation removes ``2`` from it
+the :doc:`/exceptions/AssertionError` in the terminal shows ``a_list`` is different after I call ``a_list.remove(2)``, because the operation removes ``2`` from it
 
 .. code-block:: python
 
   E       AssertionError: Lists differ: [0, 1, 3] != [0, 1, 2, 3]
-  E
-  E       First differing element 2:
-  E       3
-  E       2
-  E
-  E       Second list contains 1 additional elements.
-  E       First extra element 3:
-  E       3
-  E
-  E       - [0, 1, 3]
-  E       + [0, 1, 2, 3]
-  E       ?        +++
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I change the test to make the values on the right match the expected values and the test passes
+I change the test to make the values on the right match the result and the test passes
 
 .. code-block:: python
 
@@ -201,7 +172,7 @@ I change the test to make the values on the right match the expected values and 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-What if there was more than one of the same element in the list? how does python decide the elemnet to remove when I call ``.remove(element)`` on a list?
+What if there was more than one of the same element in the list? How does Python decide the element to remove when I call ``.remove(element)`` on a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_?
 
 * I add a failing test to find out
 
@@ -218,20 +189,8 @@ What if there was more than one of the same element in the list? how does python
   .. code-block :: python
 
     E       AssertionError: Lists differ: [0, 1, 2, 3, 2] != [0, 2, 1, 2, 3, 2]
-    E
-    E       First differing element 1:
-    E       1
-    E       2
-    E
-    E       Second list contains 1 additional elements.
-    E       First extra element 5:
-    E       2
-    E
-    E       - [0, 1, 2, 3, 2]
-    E       + [0, 2, 1, 2, 3, 2]
-    E       ?     +++
 
-* and I change the values on the right to match the expectation
+* and I change the values on the right to match the result
 
   .. code-block:: python
 
@@ -241,7 +200,7 @@ What if there was more than one of the same element in the list? how does python
         a_list.remove(2)
         self.assertEqual(a_list, [0, 1, 2, 3, 2])
 
-  the tests pass, showing from the experiment that the ``remove`` function removes the first occurrence of an item in a list
+  the tests pass, showing from the experiment that the ``remove`` function removes the first occurrence of an item in a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
 ----
 
@@ -251,7 +210,7 @@ How to remove the last item in a list
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add a test to ``TestLists`` in ``test_lists.py`` to test removing the last item in a list
+I add a test to ``TestLists`` in ``test_lists.py`` to test removing the last item in a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
 .. code-block:: python
 
@@ -263,9 +222,10 @@ I add a test to ``TestLists`` in ``test_lists.py`` to test removing the last ite
         self.assertEqual(a_list, [0, 1, 2, 3])
 
 
-* I define ``a list`` with 4 elements and confirm the values, then call the `pop <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ method
-* I check the value that gets popped
-* I check the list to see what values remain after calling ``pop``
+* ``a_list = [0, 1, 2, 3]`` defines a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ with 4 elements called ``a_list``
+* ``last_item = a_list.pop()`` calls the `pop <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ method of ``a_list`` and uses ``last_item`` as a name to represent the value that is returned
+* ``self.assertEqual(last_item, 0)`` checks that ``last_item`` is equal to ``0``
+* ``self.assertEqual(a_list, [0, 1, 2, 3])`` checks the values that remain in ``a_list`` after calling `pop <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
 
 the terminal shows an :doc:`/exceptions/AssertionError` for the test that checks the value of the popped item
 
@@ -293,14 +253,7 @@ GREEN: make it pass
   .. code-block:: python
 
     E       AssertionError: Lists differ: [0, 1, 2] != [0, 1, 2, 3]
-    E
-    E       Second list contains 1 additional elements.
-    E       First extra element 3:
-    E       3
-    E
-    E       - [0, 1, 2]
-    E       + [0, 1, 2, 3]
-    E       ?         +++
+
 
 * I change the values in the ``self.assertEqual`` call to make the tests pass
 
@@ -318,12 +271,12 @@ GREEN: make it pass
 How to get a specific item from a list
 --------------------------------------
 
-To view an item in a list I provide the position as an index in ``[]`` to the list. Python uses zero-based indexing which means the positions of elements starts at 0. I can also view items from the right by using negative numbers
+To view an item in a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ I provide the position as an index in ``[]`` to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. Python uses zero-based indexing which means the positions of elements starts at 0. I can also view items from the right by using negative numbers
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add a failing test for indexing a list
+I add a failing test for indexing a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
 .. code-block:: python
 
@@ -372,7 +325,7 @@ GREEN: make it pass
     E       AssertionError: 'third' != ''
     E       - third
 
-* I change the value to match the expectation
+* I change the value to match the result
 
   .. code-block:: python
 
@@ -414,7 +367,7 @@ GREEN: make it pass
 IndexError
 ----------
 
-An `IndexError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#IndexError>`_ is raised when I try to get an item from a list but use a number that is greater than the number of items in the list.
+An `IndexError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#IndexError>`_ is raised when I try to get an item from a list but use a number that is greater than the number of items in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_.
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -461,12 +414,12 @@ GREEN: make it pass
 How to view attributes and :doc:`methods </functions/functions>` of a list
 -----------------------------------------------------------------------------
 
-:doc:`/classes/classes` shows how to view the ``attributes`` and :doc:`methods </functions/functions>` of an object. Let us take a look at the  look at the ``attributes`` and :doc:`methods </functions/functions>` of `lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
+The chapter on :doc:`/classes/classes` shows how to view the ``attributes`` and :doc:`methods </functions/functions>` of an object. Let us take a look at the  look at the ``attributes`` and :doc:`methods </functions/functions>` of `lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add a failing test with the `dir <https://docs.python.org/3/library/functions.html?highlight=dir#dir>`_ :doc:`function </functions/functions>`
+I add a failing test using the `dir <https://docs.python.org/3/library/functions.html?highlight=dir#dir>`_ :doc:`function </functions/functions>`
 
 .. code-block:: python
 
@@ -478,7 +431,7 @@ I add a failing test with the `dir <https://docs.python.org/3/library/functions.
         )
 
 * the terminal shows an :doc:`/exceptions/AssertionError`
-* `maxDiff <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff>`_ is an attribute of the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`class </classes>` that sets the maximum amount of characters to show in the comparison between the two objects that is displayed in the terminal. When it is set to :doc:`None </data_structures/none>` there is no limit to the number of characters
+* `maxDiff <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff>`_ is an attribute of the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`class </classes/classes>` that sets the maximum amount of characters to show in the comparison between the two objects displayed in the terminal. When it is set to :doc:`None </data_structures/none>` there is no limit to the number of characters
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

@@ -74,7 +74,7 @@ GREEN: make it pass
   * the test checks if the value of the call to ``functions.function_with_pass`` is :doc:`None </data_structures/none>`
   * the function definition simply says `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ yet the test passes
   * `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is a placeholder keyword which allows the function definition to follow python syntax rules
-  * the test passes because in python all functions return :doc:`None </data_structures/none>` by default, like the function has an invisible line that says ``return None``
+  * the test passes because in Python all functions return :doc:`None </data_structures/none>` by default, like the function has an invisible line that says ``return None``
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -101,7 +101,7 @@ REFACTOR: make it better
 
   the terminal shows this test also passes
 
-  I defined 2 functions with different statements in their body but they both return the same result, because "in python all functions return :doc:`None </data_structures/none>` by default, like the function has an invisible line that says ``return None``"
+  I defined 2 functions with different statements in their body but they both return the same result, because "in Python all functions return :doc:`None </data_structures/none>` by default, like the function has an invisible line that says ``return None``"
 
 * RED: make it fail
 

@@ -241,7 +241,7 @@ I will now add exception handling to the program so it gives a message when it e
     - When I call ``exceptions.exception_handler`` with ``exceptions.does_not_raise_exception_error`` as input, it calls ``does_not_raise_exception_error`` and returns the result
     - the result of calling ``does_not_raise_exception_error`` is currently :doc:`None </data_structures/none>` which is not equal to ``succeeded`` so the expectation of the test is not met
 
-  - `try...except...else <https://docs.python.org/3/reference/compound_stmts.html#the-try-statement>`_ statements are used to catch/handle exceptions in python. This allows the program to make a decision when it encounters an Exception.
+  - `try...except...else <https://docs.python.org/3/reference/compound_stmts.html#the-try-statement>`_ statements are used to catch/handle exceptions in Python. This allows the program to make a decision when it encounters an Exception.
 
     I add it to ``exception_handler`` in ``exceptions.py`` to handle exceptions
 
@@ -355,7 +355,7 @@ GREEN: make it pass
             return 'succeeded'
         return 'always_returns_this'
 
-  no change, the terminal still has the same error. In python the ``return`` statement is the last thing run in the function, anything written after a ``return`` statement is ignored
+  no change, the terminal still has the same error. in Python the ``return`` statement is the last thing run in the function, anything written after a ``return`` statement is ignored
 
   Since the function returns ``succeeded`` it ignores the return statement below it.
 

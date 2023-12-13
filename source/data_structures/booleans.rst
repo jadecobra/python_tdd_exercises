@@ -2,7 +2,7 @@
 Data Structures: Booleans
 ==========================
 
-The tests in this chapter show `booleans <https://docs.python.org/3/library/functions.html#bool>`_ by comparing them with other data structures in python to learn what they are and what they are not.
+The tests in this chapter show `booleans <https://docs.python.org/3/library/functions.html#bool>`_ by comparing them with other data structures in Python to learn what they are and what they are not.
 
 There are two `boolean <https://docs.python.org/3/library/functions.html#bool>`_ values - `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ and `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 
@@ -63,7 +63,7 @@ GREEN: make it pass
   - the `unittest.TestCase.assertNotIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance>`_ :doc:`method </functions/functions>` checks that the first input given is not an instance of the :doc:`class </classes/classes>` given as the second input.
   - it is like asking the question ``is False not an instance of bool?``
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+* the terminal shows an :doc:`/exceptions/AssertionError`
 
   .. code-block:: python
 
@@ -87,7 +87,7 @@ GREEN: make it pass
 
 ----
 
-From the tests I can say that in python
+From the tests I can see that in Python
 
 * `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
 * ``dict()`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ which means an empty :doc:`dictionary </data_structures/dictionaries>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
@@ -197,4 +197,4 @@ I can sum up my current knowledge of python from the tests so far as
 - `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
 - :doc:`None </data_structures/none>` is :doc:`None </data_structures/none>`
 
-:doc:`code/booleans`
+:doc:`/code/booleans`

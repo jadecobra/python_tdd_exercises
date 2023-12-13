@@ -190,7 +190,7 @@ GREEN: make it pass
 -------------------
 
 
-* I write down Exceptions I encounter to help become more familiar with errors in python. I add :doc:`/exceptions/AssertionError` to the list
+* I write down Exceptions I encounter to help become more familiar with errors in Python. I add :doc:`/exceptions/AssertionError` to the list
 
   .. code-block:: python
     :linenos:
@@ -265,7 +265,7 @@ How to create a Virtual Environment
   - the command above creates a file named ``requirements.txt`` with ``pytest-watch`` as the text inside it
   - ``echo`` is a program that writes arguments to the standard output
   - ``pytest-watch`` is a python program that automatically uses the `pytest <https://docs.pytest.org/>`_ python package to run tests when a python file in the project changes
-  - `pytest <https://docs.pytest.org/>`_ is a python package like `unittest <https://docs.python.org/3/library/unittest.html>`_ for running tests in python
+  - `pytest <https://docs.pytest.org/>`_ is a python package like `unittest <https://docs.python.org/3/library/unittest.html>`_ for running tests in Python
   - ``requirements.txt`` is a file where I can list required python packages for `pip <https://pypi.org/project/pip/>`_ the `python package manager <https://pypi.org/project/pip/>`_ to install later, you can use any name you like
 
 * I create a virtual environment using the `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ module from the python standard library
@@ -278,7 +278,7 @@ How to create a Virtual Environment
   - ``-m`` is an option passed to python to call the module given after the option
   - `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ is a module from the python standard library for creating virtual environments when given a name
   - a virtual environment is an isolated folder that holds dependencies, it keeps the dependencies for a specific project separate
-  - ``.venv`` is the standard name for virtual environments in python, you can use any name you like
+  - ``.venv`` is the standard name for virtual environments in Python, you can use any name you like
 
 * I activate the virtual environment to use it
 

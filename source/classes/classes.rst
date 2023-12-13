@@ -14,7 +14,7 @@ I will show the following in this chapter
 - How to define a class with an initializer
 - How to view the attributes and methods of a class
 
-How to create a class in python
+How to create a class in Python
 -------------------------------
 
 * use the `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword
@@ -123,7 +123,7 @@ Here is a quick review of what has happened so far
 * `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is a placeholder
 * ``self.assertIsInstance`` is a `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`method </functions/functions>` that checks if the first input to the :doc:`method </functions/functions>` is an instance of the second input
 * the test ``self.assertIsInstance(classes.ClassWithPass(), object)`` checks if ``ClassWithPass`` is an `object <https://docs.python.org/3/glossary.html#term-object>`_
-* in python everything is an `object <https://docs.python.org/3/glossary.html#term-object>`_ , which means if it exists in python there is a class definition for it somewhere or it inherits from a class
+* in Python everything is an `object <https://docs.python.org/3/glossary.html#term-object>`_ , which means if it exists in Python there is a class definition for it somewhere or it inherits from a class
 
 How to define a class with parentheses
 --------------------------------------
@@ -166,7 +166,7 @@ GREEN: make it pass
 
   the terminal shows all tests are still passing.
 
-* I can confidently say that in python
+* I can confidently say that in Python
 
   - I can define ``classes`` with parentheses
   - I can define ``classes`` without parentheses

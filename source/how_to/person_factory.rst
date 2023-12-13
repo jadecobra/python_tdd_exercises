@@ -11,7 +11,7 @@ Prerequisites
 
 ----
 
-How to use dictionaries as factories in python
+How to use dictionaries as factories in Python
 -----------------------------------------------
 
 RED: make it fail

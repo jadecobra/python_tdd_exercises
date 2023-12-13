@@ -110,7 +110,7 @@ I can also make assertions with some :doc:`methods </functions/functions>` from 
         assert False is not None
         self.assertIsNotNone(False)
 
-  the terminal displays passing tests because the statement is :doc:`True </data_structures/booleans>`. I can now say that in python :doc:`False </data_structures/booleans>` is not :doc:`None </data_structures/none>`
+  the terminal displays passing tests because the statement is :doc:`True </data_structures/booleans>`. I can now say that in Python :doc:`False </data_structures/booleans>` is not :doc:`None </data_structures/none>`
 
 * RED: make it fail
 
@@ -174,7 +174,7 @@ I can also make assertions with some :doc:`methods </functions/functions>` from 
         assert True is not None
         self.assertIsNotNone(True)
 
-  since all my tests are passing I can say that in python
+  since all my tests are passing I can say that in Python
 
   - :doc:`True </data_structures/booleans>` is not :doc:`None </data_structures/none>`
   - :doc:`False </data_structures/booleans>` is not :doc:`None </data_structures/none>`
@@ -329,7 +329,7 @@ I change ``test_assertion_errors_with_false`` to make it pass
       assert False is False
       self.assertFalse(False)
 
-From the tests I can see that in python
+From the tests I can see that in Python
 
 * :doc:`False </data_structures/booleans>` is :doc:`False </data_structures/booleans>`
 * :doc:`False </data_structures/booleans>` is not :doc:`True </data_structures/booleans>`
@@ -409,7 +409,7 @@ From the tests I can see that
 * :doc:`True </data_structures/booleans>` is not :doc:`None </data_structures/none>`
 * :doc:`False </data_structures/booleans>` is not :doc:`None </data_structures/none>`
 
-I could sum up the above statements this way - in python :doc:`True </data_structures/booleans>`, :doc:`False </data_structures/booleans>` and :doc:`None </data_structures/none>` are different. My understanding of these differences helps me know how python behaves and gives a foundation of predictable expectations of the language.
+I could sum up the above statements this way - in Python :doc:`True </data_structures/booleans>`, :doc:`False </data_structures/booleans>` and :doc:`None </data_structures/none>` are different. My understanding of these differences helps me know how python behaves and gives a foundation of predictable expectations of the language.
 
 ----
 
@@ -479,7 +479,7 @@ REFACTOR: make it better
         assert False != None
         self.assertNotEqual(False, None)
 
-  I have learned that in python
+  I have learned that in Python
 
   * :doc:`True </data_structures/booleans>` is :doc:`True </data_structures/booleans>`
   * :doc:`True </data_structures/booleans>` is not :doc:`False </data_structures/booleans>`
@@ -551,7 +551,7 @@ REFACTOR: make it better
         assert True != None
         self.assertNotEqual(True, None)
 
-  and the terminal shows passing tests. I can now say that in python
+  and the terminal shows passing tests. I can now say that in Python
 
   * :doc:`True </data_structures/booleans>` is :doc:`True </data_structures/booleans>`
   * :doc:`True </data_structures/booleans>` is not :doc:`False </data_structures/booleans>`
@@ -617,7 +617,7 @@ REFACTOR: make it better
         assert None == None
         self.assertEqual(None, None)
 
-  and from the tests I can say that in python
+  and from the tests I can say that in Python
 
   * :doc:`True </data_structures/booleans>` is :doc:`True </data_structures/booleans>` and :doc:`True </data_structures/booleans>` is equal to :doc:`True </data_structures/booleans>`
   * :doc:`True </data_structures/booleans>` is not :doc:`False </data_structures/booleans>` and :doc:`True </data_structures/booleans>` is not equal to :doc:`False </data_structures/booleans>`
