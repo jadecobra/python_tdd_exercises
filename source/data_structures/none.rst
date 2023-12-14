@@ -572,4 +572,4 @@ You now know what `None <https://docs.python.org/3/library/constants.html?highli
 
 .. image:: https://img.youtube.com/vi/JgNLK9U0UEU/maxresdefault.jpg
     :alt: Data Structures: None
-    :target: https://www.youtube.com/JgNLK9U0UEU
+    :target: https://youtu.be/JgNLK9U0UEU
