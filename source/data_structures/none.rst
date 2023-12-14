@@ -570,6 +570,6 @@ You now know what `None <https://docs.python.org/3/library/constants.html?highli
 
 :doc:`/code/none`
 
-.. image:: https://img.youtube.com/vi/JgNLK9U0UEU/maxresdefault.jpg
-    :alt: Data Structures: None
-    :target: https://youtu.be/JgNLK9U0UEU
+.. raw:: html
+
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/JgNLK9U0UEU?si=VYYzCQxCncykX5xp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
