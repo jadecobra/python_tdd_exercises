@@ -18,7 +18,7 @@ Here is the code in ``tests/test_booleans.py``
             self.assertFalse("")
             self.assertFalse(())
             self.assertFalse([])
-            self.assertFalse({})
+            self.assertFalse(set())
             self.assertFalse(dict())
             self.assertIsInstance(False, bool)
 

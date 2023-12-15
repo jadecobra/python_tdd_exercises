@@ -253,7 +253,7 @@ I change ``assertIsNone`` to ``assertIsNotNone`` in ``test_is_none_a_float`` to 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-`floats <https://docs.python.org/3/library/functions.html#float>`_ are represented by the `float <https://docs.python.org/3/library/functions.html#float>`_ :doc:`class </classes/classes>` in Python so I can do an instance test
+`floats <https://docs.python.org/3/library/functions.html#float>`_ are represented by the `float <https://docs.python.org/3/library/functions.html#float>`_ :doc:`class </classes/classes>` in Python, I can do an instance test
 
 
 * RED: make it fail
@@ -335,7 +335,7 @@ I change ``assertIsNone`` to ``assertIsNotNone`` in ``test_is_none_a_string`` to
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-`strings <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ are represented by the `str <https://docs.python.org/3/library/stdtypes.html#str>`_ class in Python, I will add an instance test
+`strings <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ are represented by the `str <https://docs.python.org/3/library/stdtypes.html#str>`_ class in Python, I add an instance test
 
 
 * RED: make it fail
@@ -357,7 +357,7 @@ REFACTOR: make it better
 
 * GREEN: make it pass
 
-  To make it pass I change ``self.assertIsInstance`` to ``self.assertNotIsInstance``
+  To make it pass I change ``assertIsInstance`` to ``assertNotIsInstance``
 
   .. code-block:: python
 
@@ -498,9 +498,7 @@ the terminal shows an :doc:`/exceptions/AssertionError`
 
 .. code-block:: python
 
-  AssertionError: {} is not None
-
-``{}`` is how ``sets`` are represented in Python
+  AssertionError: set() is not None
 
 
 GREEN: make it pass
@@ -534,7 +532,7 @@ I add a new test to compare `None <https://docs.python.org/3/library/constants.h
       self.assertIsNone({
           "a": 1,
           "b": 2,
-          "c":  3,
+          "c": 3,
           "n": "n"
       })
       self.assertIsInstance(None, dict)
@@ -572,4 +570,4 @@ You now know what `None <https://docs.python.org/3/library/constants.html?highli
 
 .. raw:: html
 
-  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/JgNLK9U0UEU?si=VYYzCQxCncykX5xp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/81afQTs6JH0?si=LAtEPEdDKutSOGw9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
