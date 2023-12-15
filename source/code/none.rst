@@ -9,7 +9,7 @@ Here is the code in ``tests/test_none.py``
     import unittest
 
 
-    class TestDataStructures(unittest.TestCase):
+    class TestNone(unittest.TestCase):
 
         def test_none_is_none(self):
             self.assertIsNone(None)
@@ -46,7 +46,7 @@ Here is the code in ``tests/test_none.py``
             self.assertNotIsInstance(None, list)
 
         def test_is_none_a_set(self):
-            self.assertIsNotNone({})
+            self.assertIsNotNone(set())
             self.assertIsNotNone({1, 2, 3, "n"})
             self.assertNotIsInstance(None, set)
 

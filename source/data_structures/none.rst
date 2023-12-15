@@ -17,7 +17,7 @@ I create a file called ``test_none.py`` in the ``tests`` folder with the followi
   import unittest
 
 
-  class TestDataStructures(unittest.TestCase):
+  class TestNone(unittest.TestCase):
 
       def test_none_is_none(self):
           self.assertIsNotNone(None)
@@ -37,7 +37,7 @@ When I change the ``assertIsNotNone`` to ``assertIsNone`` in ``test_none_is_none
 
 .. code-block:: python
 
-  class TestDataStructures(unittest.TestCase):
+  class TestNone(unittest.TestCase):
 
       def test_none_is_none(self):
           self.assertIsNone(None)
@@ -490,7 +490,7 @@ following the same pattern from earlier, I add a new failing test for `sets <htt
 .. code-block:: python
 
   def test_is_none_a_set(self):
-      self.assertIsNone({})
+      self.assertIsNone(set())
       self.assertIsNone({1, 2, 3, "n"})
       self.assertIsInstance(None, set)
 
