@@ -58,9 +58,9 @@ I want to know if any of the other Python data types are `False <https://docs.py
 * is a `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_?
 * is a :doc:`dictionary </data_structures/dictionaries>` `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_?
 
-
+****************
 is None False?
----------------
+****************
 
 * I add a failing line to ``test_what_is_false``
 
@@ -89,10 +89,29 @@ From the tests I see that
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 
-
+**********************
 is an integer False?
-----------------------
+**********************
 
+**********************
+is a string False?
+**********************
+
+**********************
+is a tuple False?
+**********************
+
+**********************
+is a list False?
+**********************
+
+**********************
+is a set False?
+**********************
+
+**********************
+is a dictionary False?
+**********************
 
     self.assertTrue(False)
     self.assertTrue(0)
@@ -172,101 +191,5 @@ I can sum this up as
 
 * `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
 * empty `objects <https://docs.python.org/3/glossary.html#term-object>`_ including ``0`` and :doc:`None </data_structures/none>` are `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-
-----
-
-****************
-What is True?
-****************
-
-RED: make it fail
-^^^^^^^^^^^^^^^^^
-
-I add a similar series of failing tests for `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ to ``test_booleans.py``
-
-.. code-block:: python
-
-  def test_what_is_true(self):
-      self.assertFalse(True)
-      self.assertFalse(1)
-      self.assertFalse(-1)
-      self.assertFalse("text")
-      self.assertFalse((1, 2, 3, "n"))
-      self.assertFalse([1, 2, 3, 'n'])
-      self.assertFalse({1, 2, 3, "n"})
-      self.assertFalse({
-          "a": 1,
-          "b": 2,
-          "c": 3,
-          "n": "n"
-      })
-      self.assertNotIsInstance(True, bool)
-
-the terminal shows an :doc:`/exceptions/AssertionError`
-
-.. code-block:: python
-
-  >       self.assertFalse(True)
-  E       AssertionError: True is not false
-
-GREEN: make it pass
-^^^^^^^^^^^^^^^^^^^
-
-* I change all the ``self.assertFalse`` statements to ``self.assertTrue`` in ``test_what_is_true``
-
-  .. code-block:: python
-
-    def test_what_is_true(self):
-        self.assertTrue(True)
-        self.assertTrue(1)
-        self.assertTrue(-1)
-        self.assertTrue("text")
-        self.assertTrue((1, 2, 3, "n"))
-        self.assertTrue([1, 2, 3, 'n'])
-        self.assertTrue({1, 2, 3, "n"})
-        self.assertTrue({
-            "a": 1,
-            "b": 2,
-            "c": 3,
-            "n": "n"
-        })
-        self.assertNotIsInstance(True, bool)
-
-  and left with a failing test for the `self.assertNotIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance>`_ statement
-
-  .. code-block:: python
-
-    >       self.assertNotIsInstance(True, bool)
-    E       AssertionError: True is an instance of <class 'bool'>
-
-* I change ``self.assertNotIsInstance`` to ``self.assertIsInstance`` and all the tests pass, confirming that `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is an instance of the `boolean <https://docs.python.org/3/library/functions.html#bool>`_ object
-
-  .. code-block:: python
-
-    def test_what_is_true(self):
-        self.assertTrue(True)
-        self.assertTrue(1)
-        self.assertTrue(-1)
-        self.assertTrue("text")
-        self.assertTrue((1, 2, 3, "n"))
-        self.assertTrue([1, 2, 3, 'n'])
-        self.assertTrue({1, 2, 3, "n"})
-        self.assertTrue({
-            "a": 1,
-            "b": 2,
-            "c":  3,
-            "n": "n"
-        })
-        self.assertIsInstance(True, bool)
-
-----
-
-I can sum up my current knowledge of python from the tests so far as
-
-- any value except empty objects, ``0`` and :doc:`None </data_structures/none>` are `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-- empty `objects <https://docs.python.org/3/glossary.html#term-object>`_ including ``0`` and :doc:`None </data_structures/none>` are `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-- `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
-- `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
-- :doc:`None </data_structures/none>` is :doc:`None </data_structures/none>`
 
 :doc:`/code/booleans`
