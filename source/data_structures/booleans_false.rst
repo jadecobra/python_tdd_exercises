@@ -182,7 +182,7 @@ and the terminal shows passing tests.
 REFACTOR: make it better
 =========================
 
-I add 2 more lines to test if positive and negative `integers <https://docs.python.org/3/library/functions.html#int>` are also `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+I add 2 more lines to test if positive and negative `integers <https://docs.python.org/3/library/functions.html#int>`_ are also `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 
 .. code-block:: python
 
@@ -194,7 +194,7 @@ I add 2 more lines to test if positive and negative `integers <https://docs.pyth
         self.assertFalse(-1)
         self.assertFalse(1)
 
-the terminal shows an :doc:`/exceptions/AssertionError` for both, showing that negative and positive `integers <https://docs.python.org/3/library/functions.html#int>` are not `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_. I remove the lines to return to passing tests
+the terminal shows an :doc:`/exceptions/AssertionError` for both, showing that negative and positive `integers <https://docs.python.org/3/library/functions.html#int>`_ are not `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_. I remove the lines to return to passing tests
 
 .. code-block:: python
 
@@ -202,7 +202,7 @@ the terminal shows an :doc:`/exceptions/AssertionError` for both, showing that n
 
 From the tests I see that
 
-* ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ other `integers <https://docs.python.org/3/library/functions.html#int>`_ are not
+* ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ and other `integers <https://docs.python.org/3/library/functions.html#int>`_ are not
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
@@ -269,8 +269,8 @@ the terminal shows an :doc:`/exceptions/AssertionError` for both, showing that n
 
 From the tests I see that
 
-* ``0.0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ other `floats <https://docs.python.org/3/library/functions.html#float>`_ are not
-* ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ other `integers <https://docs.python.org/3/library/functions.html#int>`_ are not
+* ``0.0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ and other `floats <https://docs.python.org/3/library/functions.html#float>`_ are not
+* ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ and other `integers <https://docs.python.org/3/library/functions.html#int>`_ are not
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
@@ -332,8 +332,8 @@ the terminal shows an :doc:`/exceptions/AssertionError` and I remove the line to
 From the tests I see that
 
 * an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* ``0.0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ other `floats <https://docs.python.org/3/library/functions.html#float>`_ are not
-* ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ other `integers <https://docs.python.org/3/library/functions.html#int>`_ are not
+* ``0.0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ and other `floats <https://docs.python.org/3/library/functions.html#float>`_ are not
+* ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ and other `integers <https://docs.python.org/3/library/functions.html#int>`_ are not
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
@@ -397,8 +397,8 @@ From the tests I see that
 
 * an empty `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* ``0.0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ other `floats <https://docs.python.org/3/library/functions.html#float>`_ are not
-* ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ other `integers <https://docs.python.org/3/library/functions.html#int>`_ are not
+* ``0.0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ and other `floats <https://docs.python.org/3/library/functions.html#float>`_ are not
+* ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ and other `integers <https://docs.python.org/3/library/functions.html#int>`_ are not
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
@@ -463,8 +463,8 @@ From the tests I see that
 * an empty :doc:`list </data_structures/lists>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * an empty `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* ``0.0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ other `floats <https://docs.python.org/3/library/functions.html#float>`_ are not
-* ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ other `integers <https://docs.python.org/3/library/functions.html#int>`_ are not
+* ``0.0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ and other `floats <https://docs.python.org/3/library/functions.html#float>`_ are not
+* ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ and other `integers <https://docs.python.org/3/library/functions.html#int>`_ are not
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
@@ -531,8 +531,8 @@ From the tests I see that
 * an empty :doc:`list </data_structures/lists>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * an empty `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* ``0.0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ other `floats <https://docs.python.org/3/library/functions.html#float>`_ are not
-* ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ other `integers <https://docs.python.org/3/library/functions.html#int>`_ are not
+* ``0.0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ and other `floats <https://docs.python.org/3/library/functions.html#float>`_ are not
+* ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ and other `integers <https://docs.python.org/3/library/functions.html#int>`_ are not
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
@@ -602,8 +602,8 @@ From the tests I see that
 * an empty :doc:`list </data_structures/lists>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * an empty `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* ``0.0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ other `floats <https://docs.python.org/3/library/functions.html#float>`_ are not
-* ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ other `integers <https://docs.python.org/3/library/functions.html#int>`_ are not
+* ``0.0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ and other `floats <https://docs.python.org/3/library/functions.html#float>`_ are not
+* ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ and other `integers <https://docs.python.org/3/library/functions.html#int>`_ are not
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
