@@ -12,7 +12,6 @@ Here is a way to create a Test Driven Development environment for Python project
 Requirements
 ------------
 
-
 * `download and install Python <https://www.python.org/downloads/>`_
 * download and install an Interactive Development Environment (IDE). Here are a few options
 
@@ -49,7 +48,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
       cd {PROJECT_NAME}
 
-  this is where all the code for the project will reside to keep things in a separate dedicated and isolated workspace
+  this is where we will keep all the code for the project, away from other things
 
 * ``touch`` is a program which creates an empty file with the name it is given
 
