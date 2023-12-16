@@ -1,6 +1,7 @@
 
-booleans: Tests
-================
+##################################
+booleans: True: Tests
+##################################
 
 Here is the code in ``tests/test_true.py``
 

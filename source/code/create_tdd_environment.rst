@@ -5,7 +5,6 @@ Automatically Create a Test Driven Development Environment
 * Here is the ``./createPythonTdd.sh`` script from :doc:`/how_to/create_tdd_environment`
 
   .. code-block:: shell
-    :linenos:
 
     PROJECT_NAME=$1
     mkdir -p $PROJECT_NAME/tests

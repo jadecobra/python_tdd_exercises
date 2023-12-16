@@ -48,9 +48,6 @@ Here is the code in ``tests/test_assertion_error.py``
                 self.x/self.y
             )
 
-    # TODO
-    # test division
-
     # Exceptions Encountered
     # AssertionError
     # NameError

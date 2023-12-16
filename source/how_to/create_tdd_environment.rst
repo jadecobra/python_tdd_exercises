@@ -6,7 +6,7 @@ How to create a Test Driven Development Environment
 
 I recommend reading `Kent Beck’s <https://en.wikipedia.org/wiki/Kent_Beck>`_ `Test Driven Development by Example <https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk>`_ and `Martin Fowler’s <https://en.wikipedia.org/wiki/Martin_Fowler_(software_engineer)>`_ `Refactoring <https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk>`_, they both influenced the way I write programs.
 
-Here is a way to setup a Test Driven Development environment for Python projects.
+Here is a way to create a Test Driven Development environment for Python projects.
 
 
 Requirements
@@ -31,11 +31,11 @@ Requirements
 Setup
 -----
 
-I open a terminal in the Interactive Development Environment (IDE) and type the following commands to setup the project
+I open a terminal in the Interactive Development Environment (IDE) and type the following commands to create the project
 
 .. note::
 
-  ``{PROJECT_NAME}`` is a placeholder for the name of the project. For example to setup a project called ``calculator`` I would replace ``{PROJECT_NAME}`` with ``calculator``
+  ``{PROJECT_NAME}`` is a placeholder for the name of the project. For example to create a project called ``calculator`` I would replace ``{PROJECT_NAME}`` with ``calculator``
 
 * then create a directory for the project with a folder called ``tests`` inside it
 
@@ -354,7 +354,7 @@ Make sure you are in the directory that contains the virtual environment for exa
 BONUS: Automatically create a Python Test Driven Development Environment
 -------------------------------------------------------------------------
 
-You made it this far and have become the greatest programmer in the world. Following the `The Do Not Repeat Yourself (DRY) Principle <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_, I would write a program that contains all the steps above. I can then use it to setup a Test Driven Development Environment any time I want without having to remember each step of the process
+You made it this far and have become the greatest programmer in the world. Following the `The Do Not Repeat Yourself (DRY) Principle <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_, I would write a program that contains all the steps above. I can then use it to create a Test Driven Development Environment any time I want without having to remember each step of the process
 
 * I exit the tests in the terminal by pressing ``ctrl`` + ``c`` on the keyboard
 * I type ``deactivate`` to deactivate the virtual environment
@@ -450,7 +450,7 @@ You made it this far and have become the greatest programmer in the world. Follo
 
     chmod +x createPythonTdd.sh
 
-* I can now create a Test Driven Development environment on demand by giving a name for the ``{PROJECT_NAME}`` variable when the program is called. for example typing this command in the terminal in the folder where ``createPythonTdd.sh`` is saved will setup a Test Driven Development environment for a project called ``calculator``
+* I can now create a Test Driven Development environment on demand by giving a name for the ``{PROJECT_NAME}`` variable when the program is called. for example typing this command in the terminal in the folder where ``createPythonTdd.sh`` is saved will create a Test Driven Development environment for a project called ``calculator``
 
   .. code-block:: shell
 
@@ -458,7 +458,7 @@ You made it this far and have become the greatest programmer in the world. Follo
 
 One of the advantages of programming is that I can take a series of steps and make them a one line command which the computer does on my behalf
 
-You now know one way to Setup a Test Driven Development Environment for Python projects, and have a program to do it for you anytime you want
+You now know one way to create a Test Driven Development Environment for Python projects, and have a program to do it for you anytime you want
 
 Happy Trails!
 
