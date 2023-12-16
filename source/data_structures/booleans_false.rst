@@ -14,14 +14,14 @@ What is False?
 RED: make it fail
 ==================
 
-I create a failing test in ``test_booleans.py`` called ``test_what_is_false`` to find out what is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+I create a failing test in ``test_false.py`` called ``test_what_is_false`` to find out what is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 
 .. code-block:: python
 
   import unittest
 
 
-  class TestBooleans(unittest.TestCase):
+  class TestFalse(unittest.TestCase):
 
       def test_what_is_false(self):
           self.assertTrue(False)
