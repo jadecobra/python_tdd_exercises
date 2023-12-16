@@ -61,8 +61,8 @@ Table of Contents
   functions/functions_positional_and_keyword
   functions/functions_singleton
   data_structures/none
-  data_structures/booleans_false
-  data_structures/booleans_true
+  data_structures/false
+  data_structures/true
   data_structures/lists
   data_structures/list_comprehensions
   data_structures/dictionaries
@@ -107,7 +107,8 @@ tests and solutions
   code/assertion_error
   code/attribute_error
   code/none
-  code/booleans
+  code/false
+  code/true
   code/lists
   code/list_comprehensions
   code/dictionaries
