@@ -12,15 +12,16 @@ Here is the code in ``tests/test_booleans.py``
     class TestBooleans(unittest.TestCase):
 
         def test_what_is_false(self):
-            self.assertFalse(None)
+            self.assertIsInstance(False, bool)
             self.assertFalse(False)
+            self.assertFalse(None)
             self.assertFalse(0)
+            self.assertFalse(0.0)
             self.assertFalse("")
             self.assertFalse(())
             self.assertFalse([])
             self.assertFalse(set())
-            self.assertFalse(dict())
-            self.assertIsInstance(False, bool)
+            self.assertFalse({})
 
         def test_what_is_true(self):
             self.assertTrue(True)

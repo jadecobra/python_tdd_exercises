@@ -1,7 +1,7 @@
 
-##########################
-Data Structures: Booleans
-##########################
+#################################
+Data Structures: Booleans: True
+#################################
 
 The tests in this chapter go over `booleans <https://docs.python.org/3/library/functions.html#bool>`_ by comparing them with other data structures in Python to learn what they are and what they are not.
 

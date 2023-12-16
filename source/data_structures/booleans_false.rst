@@ -1,7 +1,7 @@
 
-##########################
-Data Structures: Booleans
-##########################
+##################################
+Data Structures: Booleans: False
+##################################
 
 The tests in this chapter go over `booleans <https://docs.python.org/3/library/functions.html#bool>`_ by comparing them with other data structures in Python to learn what they are and what they are not.
 
@@ -41,6 +41,8 @@ When I change ``assertTrue`` to ``assertFalse`` to test if `False <https://docs.
 
   self.assertFalse(False)
 
+The `unittest.TestCase.assertFalse <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse>`_ :doc:`method </functions/functions>` checks if a given input is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+
 From this test I see that `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 
 
@@ -58,138 +60,557 @@ I want to know if any of the other Python data types are `False <https://docs.py
 * is a `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_?
 * is a :doc:`dictionary </data_structures/dictionaries>` `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_?
 
+----
+
+********************
+is False a Boolean?
+********************
+
+RED: make it fail
+==================
+
+I add a line to confirm that `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is an instance of the `boolean <https://docs.python.org/3/library/functions.html#bool>`_ :doc:`class </classes/classes>`
+
+.. code-block:: python
+
+    def test_what_is_false(self):
+        self.assertNotIsInstance(False, bool)
+        self.assertFalse(False)
+
+the terminal shows an :doc:`/exceptions/AssertionError`
+
+.. code-block:: python
+
+  AssertionError: False is an instance of <class 'bool'>
+
+The `unittest.TestCase.assertNotIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance>`_ :doc:`method </functions/functions>` checks that the first input given is NOT an instance of the :doc:`class </classes/classes>` given as the second input. It is like asking the question ``is False not an instance of bool?``
+
+
+GREEN: make it pass
+====================
+
+I change ``assertNotIsInstance`` to ``assertIsInstance`` to make the test pass
+
+.. code-block:: python
+
+  self.assertIsInstance(False, bool)
+
+The `unittest.TestCase.assertIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsInstance>`_ :doc:`method </functions/functions>` checks that the first input given is an instance of the :doc:`class </classes/classes>` given as the second input. It is like asking the question ``is False an instance of bool?``
+
+From the tests I see that
+
+* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
+
+----
+
 ****************
 is None False?
 ****************
 
-* I add a failing line to ``test_what_is_false``
+RED: make it fail
+==================
 
-  .. code-block:: python
+I add a line to test if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 
-      def test_what_is_false(self):
-          self.assertFalse(False)
-          self.assertTrue(None)
+.. code-block:: python
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+    def test_what_is_false(self):
+        self.assertIsInstance(False, bool)
+        self.assertFalse(False)
+        self.assertTrue(None)
 
-  .. code-block:: python
+the terminal shows an :doc:`/exceptions/AssertionError`
 
-    AssertionError: None is not true
+.. code-block:: python
 
-* I change ``assertTrue`` to ``assertFalse``
+  AssertionError: None is not true
 
-  .. code-block:: python
+GREEN: make it pass
+====================
 
-    self.assertTrue(None)
+I change ``assertTrue`` to ``assertFalse``
 
-  and the terminal shows passing tests.
+.. code-block:: python
+
+  self.assertFalse(None)
+
+and the terminal shows passing tests.
 
 From the tests I see that
 
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
+
+----
 
 **********************
 is an integer False?
 **********************
 
+RED: make it fail
+==================
+
+I add a line to test if an `integer <https://docs.python.org/3/library/functions.html#int>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+
+.. code-block:: python
+
+    def test_what_is_false(self):
+        self.assertIsInstance(False, bool)
+        self.assertFalse(False)
+        self.assertFalse(None)
+        self.assertTrue(0)
+
+the terminal shows an :doc:`/exceptions/AssertionError`
+
+.. code-block:: python
+
+  AssertionError: 0 is not true
+
+GREEN: make it pass
+====================
+
+I change ``assertTrue`` to ``assertFalse``
+
+.. code-block:: python
+
+  self.assertFalse(0)
+
+and the terminal shows passing tests.
+
+REFACTOR: make it better
+=========================
+
+I add 2 more lines to test if positive and negative `integers <https://docs.python.org/3/library/functions.html#int>` are also `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+
+.. code-block:: python
+
+    def test_what_is_false(self):
+        self.assertIsInstance(False, bool)
+        self.assertFalse(False)
+        self.assertFalse(None)
+        self.assertFalse(0)
+        self.assertFalse(-1)
+        self.assertFalse(1)
+
+the terminal shows an :doc:`/exceptions/AssertionError` for both, showing that negative and positive `integers <https://docs.python.org/3/library/functions.html#int>` are not `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_. I remove the lines to return to passing tests
+
+.. code-block:: python
+
+  AssertionError: 1 is not false
+
+From the tests I see that
+
+* ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ other `integers <https://docs.python.org/3/library/functions.html#int>`_ are not
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
+
+-----
+
+**********************
+is a float False?
+**********************
+
+RED: make it fail
+==================
+
+I add a line to test if a `float <https://docs.python.org/3/library/functions.html#float>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+
+.. code-block:: python
+
+    def test_what_is_false(self):
+        self.assertIsInstance(False, bool)
+        self.assertFalse(False)
+        self.assertFalse(None)
+        self.assertFalse(0)
+        self.assertTrue(0.0)
+
+
+the terminal shows an :doc:`/exceptions/AssertionError`
+
+.. code-block:: python
+
+  AssertionError: 0.0 is not true
+
+GREEN: make it pass
+====================
+
+I change ``assertTrue`` to ``assertFalse``
+
+.. code-block:: python
+
+  self.assertFalse(0.0)
+
+and the terminal shows passing tests.
+
+REFACTOR: make it better
+=========================
+
+I add 2 more lines to test if positive and negative `floats <https://docs.python.org/3/library/functions.html#float>`_ are also `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+
+.. code-block:: python
+
+    def test_what_is_false(self):
+        self.assertIsInstance(False, bool)
+        self.assertFalse(False)
+        self.assertFalse(None)
+        self.assertFalse(0)
+        self.assertFalse(0.0)
+        self.assertFalse(-1.2)
+        self.assertFalse(2.3)
+
+the terminal shows an :doc:`/exceptions/AssertionError` for both, showing that negative and positive `floats <https://docs.python.org/3/library/functions.html#float>`_ are not `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_. I delete the lines to return to passing tests
+
+.. code-block:: python
+
+  AssertionError: -1.2 is not false
+
+From the tests I see that
+
+* ``0.0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ other `floats <https://docs.python.org/3/library/functions.html#float>`_ are not
+* ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ other `integers <https://docs.python.org/3/library/functions.html#int>`_ are not
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
+
+-----
+
 **********************
 is a string False?
 **********************
+
+RED: make it fail
+==================
+
+I add a line to test if an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+
+.. code-block:: python
+
+    def test_what_is_false(self):
+        self.assertIsInstance(False, bool)
+        self.assertFalse(False)
+        self.assertFalse(None)
+        self.assertFalse(0)
+        self.assertFalse(0.0)
+        self.assertTrue("")
+
+the terminal shows an :doc:`/exceptions/AssertionError`
+
+.. code-block:: python
+
+  AssertionError: '' is not true
+
+GREEN: make it pass
+====================
+
+I change ``assertTrue`` to ``assertFalse``
+
+.. code-block:: python
+
+  self.assertFalse("")
+
+and the terminal shows passing tests.
+
+REFACTOR: make it better
+=========================
+
+I add a line to test if a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ with characters is also `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+
+.. code-block:: python
+
+  self.assertFalse('text')
+
+the terminal shows an :doc:`/exceptions/AssertionError` and I remove the line to return to passing tests
+
+.. code-block:: python
+
+  AssertionError: 'text' is not false
+
+
+From the tests I see that
+
+* an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* ``0.0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ other `floats <https://docs.python.org/3/library/functions.html#float>`_ are not
+* ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ other `integers <https://docs.python.org/3/library/functions.html#int>`_ are not
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
+
+----
 
 **********************
 is a tuple False?
 **********************
 
+RED: make it fail
+==================
+
+I add a line to test if an empty `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+
+.. code-block:: python
+
+    def test_what_is_false(self):
+        self.assertIsInstance(False, bool)
+        self.assertFalse(False)
+        self.assertFalse(None)
+        self.assertFalse(0)
+        self.assertFalse(0.0)
+        self.assertFalse("")
+        self.assertTrue(())
+
+the terminal shows an :doc:`/exceptions/AssertionError`
+
+.. code-block:: python
+
+  AssertionError: () is not true
+
+GREEN: make it pass
+====================
+
+I change ``assertTrue`` to ``assertFalse``
+
+.. code-block:: python
+
+  self.assertFalse(())
+
+and the terminal shows passing tests.
+
+REFACTOR: make it better
+=========================
+
+I add a line to test if a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ with objects is also `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+
+.. code-block:: python
+
+  self.assertFalse((1, 2, 3, "n"))
+
+the terminal shows an :doc:`/exceptions/AssertionError` and I remove the line to return to passing tests
+
+.. code-block:: python
+
+  AssertionError: (1, 2, 3, 'n') is not false
+
+
+From the tests I see that
+
+* an empty `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* ``0.0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ other `floats <https://docs.python.org/3/library/functions.html#float>`_ are not
+* ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ other `integers <https://docs.python.org/3/library/functions.html#int>`_ are not
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
+
+----
+
 **********************
 is a list False?
 **********************
+
+RED: make it fail
+==================
+
+I add a line to test if an empty :doc:`list </data_structures/lists>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+
+.. code-block:: python
+
+    def test_what_is_false(self):
+        self.assertIsInstance(False, bool)
+        self.assertFalse(False)
+        self.assertFalse(None)
+        self.assertFalse(0)
+        self.assertFalse(0.0)
+        self.assertFalse("")
+        self.assertFalse(())
+        self.assertTrue([])
+
+the terminal shows an :doc:`/exceptions/AssertionError`
+
+.. code-block:: python
+
+  AssertionError: [] is not true
+
+GREEN: make it pass
+====================
+
+I change ``assertTrue`` to ``assertFalse``
+
+.. code-block:: python
+
+  self.assertFalse([])
+
+and the terminal shows passing tests.
+
+REFACTOR: make it better
+=========================
+
+I add a line to test if a :doc:`list </data_structures/lists>`  with objects is also `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+
+.. code-block:: python
+
+  self.assertFalse([1, 2, 3, "n"])
+
+the terminal shows an :doc:`/exceptions/AssertionError` and I remove the line to return to passing tests
+
+.. code-block:: python
+
+  AssertionError: [1, 2, 3, 'n'] is not false
+
+From the tests I see that
+
+* an empty :doc:`list </data_structures/lists>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* an empty `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* ``0.0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ other `floats <https://docs.python.org/3/library/functions.html#float>`_ are not
+* ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ other `integers <https://docs.python.org/3/library/functions.html#int>`_ are not
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
+
+-----
 
 **********************
 is a set False?
 **********************
 
+RED: make it fail
+==================
+
+I add a line to test if an empty `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+
+.. code-block:: python
+
+    def test_what_is_false(self):
+        self.assertIsInstance(False, bool)
+        self.assertFalse(False)
+        self.assertFalse(None)
+        self.assertFalse(0)
+        self.assertFalse(0.0)
+        self.assertFalse("")
+        self.assertFalse(())
+        self.assertFalse([])
+        self.assertTrue(set())
+
+the terminal shows an :doc:`/exceptions/AssertionError`
+
+.. code-block:: python
+
+  AssertionError: set() is not true
+
+GREEN: make it pass
+====================
+
+I change ``assertTrue`` to ``assertFalse``
+
+.. code-block:: python
+
+  self.assertFalse(set())
+
+and the terminal shows passing tests.
+
+REFACTOR: make it better
+=========================
+
+I add a line to test if a `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_  with objects is also `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+
+.. code-block:: python
+
+  self.assertFalse({1, 2, 3, "n"})
+
+the terminal shows an :doc:`/exceptions/AssertionError` and I remove the line to return to passing tests
+
+.. code-block:: python
+
+  AssertionError: {1, 2, 3, 'n'} is not false
+
+From the tests I see that
+
+* an empty `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* an empty :doc:`list </data_structures/lists>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* an empty `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* ``0.0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ other `floats <https://docs.python.org/3/library/functions.html#float>`_ are not
+* ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ other `integers <https://docs.python.org/3/library/functions.html#int>`_ are not
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
+
+----
+
 **********************
 is a dictionary False?
 **********************
 
-    self.assertTrue(False)
-    self.assertTrue(0)
-    self.assertTrue("")
-    self.assertTrue(())
-    self.assertTrue([])
-    self.assertTrue(set())
-    self.assertTrue(dict())
-    self.assertNotIsInstance(False, bool)
+RED: make it fail
+==================
 
-The `unittest.TestCase.assertTrue <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertTrue>`_ :doc:`method </functions/functions>` checks if a given input is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-
-The terminal shows an :doc:`/exceptions/AssertionError` indicating that the given input is not `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
+I add a line to test if an empty :doc:`dictionary </data_structures/dictionaries>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 
 .. code-block:: python
 
-  >       self.assertTrue(None)
-  E       AssertionError: None is not true
+    def test_what_is_false(self):
+        self.assertIsInstance(False, bool)
+        self.assertFalse(False)
+        self.assertFalse(None)
+        self.assertFalse(0)
+        self.assertFalse(0.0)
+        self.assertFalse("")
+        self.assertFalse(())
+        self.assertFalse([])
+        self.assertFalse(set())
+        self.assertTrue({})
 
+the terminal shows an :doc:`/exceptions/AssertionError`
+
+.. code-block:: python
+
+  AssertionError: {} is not true
 
 GREEN: make it pass
-^^^^^^^^^^^^^^^^^^^
+====================
 
-* I change the ``self.assertTrue`` statements in ``test_what_is_false`` to ``self.assertFalse`` and there is one failing test left
+I change ``assertTrue`` to ``assertFalse``
 
-  .. code-block:: python
+.. code-block:: python
 
-    def test_what_is_false(self):
-        self.assertFalse(None)
-        self.assertFalse(False)
-        self.assertFalse(0)
-        self.assertFalse("")
-        self.assertFalse(())
-        self.assertFalse([])
-        self.assertFalse(set())
-        self.assertFalse(dict())
-        self.assertNotIsInstance(False, bool)
+  self.assertFalse({})
 
-  - the `unittest.TestCase.assertNotIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance>`_ :doc:`method </functions/functions>` checks that the first input given is not an instance of the :doc:`class </classes/classes>` given as the second input.
-  - it is like asking the question ``is False not an instance of bool?``
+and the terminal shows passing tests.
 
-* the terminal shows an :doc:`/exceptions/AssertionError`
+REFACTOR: make it better
+=========================
 
-  .. code-block:: python
+I add a line to test if a :doc:`dictionary </data_structures/dictionaries>` with objects is also `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 
-    >       self.assertNotIsInstance(False, bool)
-    E       AssertionError: False is an instance of <class 'bool'>
+.. code-block:: python
 
-* When I change ``self.assertNotIsInstance`` to ``self.assertIsInstance`` the last test passes
+  self.assertFalse({'key': 'value'})
 
-  .. code-block:: python
+the terminal shows an :doc:`/exceptions/AssertionError` and I remove the line to return to passing tests
 
-    def test_what_is_false(self):
-        self.assertFalse(None)
-        self.assertFalse(False)
-        self.assertFalse(0)
-        self.assertFalse("")
-        self.assertFalse(())
-        self.assertFalse([])
-        self.assertFalse(set())
-        self.assertFalse(dict())
-        self.assertIsInstance(False, bool)
+.. code-block:: python
 
-----
+  AssertionError: {'key': 'value'} is not false
 
-From the tests I can see that in Python
+From the tests I see that
 
+
+* an empty :doc:`dictionary </data_structures/dictionaries>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* an empty `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* an empty :doc:`list </data_structures/lists>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* an empty `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* ``0.0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ other `floats <https://docs.python.org/3/library/functions.html#float>`_ are not
+* ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ other `integers <https://docs.python.org/3/library/functions.html#int>`_ are not
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
-* ``dict()`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ which means an empty :doc:`dictionary </data_structures/dictionaries>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* ``set()`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ which means an empty `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_/\ :doc:`dictionary </data_structures/dictionaries>`  is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* ``[]`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ which means an empty :doc:`list </data_structures/lists>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* ``()`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ which means an empty `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* ``""`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ which means an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 
 I can sum this up as
 
-* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
 * empty `objects <https://docs.python.org/3/glossary.html#term-object>`_ including ``0`` and :doc:`None </data_structures/none>` are `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
 
 :doc:`/code/booleans`
