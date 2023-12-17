@@ -1260,4 +1260,4 @@ You now know
 * How to change a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with another `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 * How to remove an item from a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
-:doc:`/code/dictionaries`
+:doc:`/code/code_dictionaries`

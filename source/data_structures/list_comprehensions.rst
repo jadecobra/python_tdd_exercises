@@ -589,4 +589,4 @@ If you typed along you now know a couple of ways to loop through ``iterables`` a
 
 You also know how to do it with less words using `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_. Congratulations! Your magic powers are growing.
 
-:doc:`/code/list_comprehensions`
+:doc:`/code/code_list_comprehensions`

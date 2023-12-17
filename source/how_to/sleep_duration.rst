@@ -1432,4 +1432,4 @@ Since this chapter has not been long enough, if you want to do more
 * Can you randomize the values for the days in a month?
 * Can you randomize the values for the months in a year?
 
-:doc:`/code/sleep_duration`
+:doc:`/code/code_sleep_duration`

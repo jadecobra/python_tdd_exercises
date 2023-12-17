@@ -353,4 +353,4 @@ REFACTOR: make it better
 
 VOILA! You now know how to pass values and represent values as strings using interpolation
 
-:doc:`/code/passing_values`
+:doc:`/code/code_passing_values`

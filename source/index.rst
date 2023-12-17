@@ -61,8 +61,7 @@ Table of Contents
   functions/functions_positional_and_keyword
   functions/functions_singleton
   data_structures/none
-  data_structures/false
-  data_structures/true
+  data_structures/booleans
   data_structures/lists
   data_structures/list_comprehensions
   data_structures/dictionaries

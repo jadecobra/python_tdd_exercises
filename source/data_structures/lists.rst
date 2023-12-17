@@ -523,4 +523,4 @@ There are more :doc:`methods </functions/functions>` listed than what I have rev
 
 You can add tests for these :doc:`methods </functions/functions>` to find out what they do or `read more about lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list%20remove#more-on-lists>`_
 
-:doc:`/code/lists`
+:doc:`/code/code_lists`
