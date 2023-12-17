@@ -2,6 +2,10 @@
 Data Structures: None
 =====================
 
+.. raw:: html
+
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/81afQTs6JH0?si=LAtEPEdDKutSOGw9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 What is None?
 -------------
 
@@ -567,7 +571,3 @@ I change the tests to make them pass and can see from the tests that
 You now know what `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is and what it is not
 
 :doc:`/code/none`
-
-.. raw:: html
-
-  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/81afQTs6JH0?si=LAtEPEdDKutSOGw9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
