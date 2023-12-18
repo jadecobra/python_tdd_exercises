@@ -11,11 +11,17 @@ Here is the code in ``tests/test_lists.py``
 
     class TestLists(unittest.TestCase):
 
-        def test_creating_a_list_with_the_list_keyword(self):
-            self.assertEqual(list((0, 1, 2, 3)), [0, 1, 2, 3])
+        def test_creating_a_list_with_the_list_constructor(self):
+            self.assertEqual(
+                list((0, 1, 2, 3)),
+                [0, 1, 2, 3]
+            )
 
         def test_creating_a_list_with_square_brackets(self):
-            self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 3)))
+            self.assertEqual(
+                [0, 1, 2, 3],
+                list((0, 1, 2, 3))
+            )
 
         def test_adding_an_item_to_a_list(self):
             a_list = [0, 1, 2, 3]
@@ -35,7 +41,7 @@ Here is the code in ``tests/test_lists.py``
             a_list.remove(2)
             self.assertEqual(a_list, [0, 1, 2, 3, 2])
 
-        def test_removing_the_last_item_of_a_list(self):
+        def test_removing_the_last_item_from_a_list(self):
             a_list = [0, 1, 2, 3]
             self.assertEqual(a_list, [0, 1, 2, 3])
             last_item = a_list.pop()
@@ -44,7 +50,10 @@ Here is the code in ``tests/test_lists.py``
 
         def test_getting_items_in_a_list(self):
             a_list = ['first', 'second', 'third', 'fourth']
-            self.assertEqual(a_list, ['first', 'second', 'third', 'fourth'])
+            self.assertEqual(
+                a_list,
+                ['first', 'second', 'third', 'fourth']
+            )
             self.assertEqual(a_list[0], 'first')
             self.assertEqual(a_list[2], 'third')
             self.assertEqual(a_list[1], 'second')
@@ -54,10 +63,11 @@ Here is the code in ``tests/test_lists.py``
             self.assertEqual(a_list[-2], 'third')
             self.assertEqual(a_list[-4], 'first')
 
-        def test_indexing_with_a_number_greater_than_the_length_of_the_list(self):
-            a_list = ['a', 'b', 'c', 'd']
+        def test_indexing_with_number_greater_than_length_of_list(self):
+            a_list = ['first', 'second', 'third', 'fourth']
             with self.assertRaises(IndexError):
                 a_list[5]
+                a_list[-5]
 
         def test_attributes_and_methods_of_a_list(self):
             self.maxDiff = None

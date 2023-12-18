@@ -3,6 +3,10 @@
 Data Structures: Lists
 ##################################
 
+.. raw:: html
+
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/lTL9hLjzXWc?si=0vaap7TiDXdLkTk7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 A `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ is an `object <https://docs.python.org/3/glossary.html#term-object>`_ that can hold other `objects <https://docs.python.org/3/glossary.html#term-object>`_
 
 
