@@ -36,3 +36,6 @@ Here is the code in ``tests/test_booleans.py``
             self.assertTrue([1, 2, 3, 'n'])
             self.assertTrue({1, 2, 3, 'n'})
             self.assertTrue({'key': 'value'})
+
+    # Exceptions Encountered
+    # AssertionError
