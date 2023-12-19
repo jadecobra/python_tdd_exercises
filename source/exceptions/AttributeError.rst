@@ -445,7 +445,7 @@ REFACTOR: make it better
 Solve an AttributeError by defining classes
 --------------------------------------------
 
-I think of a :doc:`class </classes/classes>` as a collection of :doc:`methods (functions) </functions/functions>` and attributes that represents an `object <https://docs.python.org/3/glossary.html#term-object>`_
+I think of a :doc:`class </classes/classes>` as a container of :doc:`methods (functions) </functions/functions>` and attributes that represents an `object <https://docs.python.org/3/glossary.html#term-object>`_
 
 - attributes are names which represent a value
 - :doc:`methods </functions/functions>` are :doc:`/functions/functions` that may be able to accept inputs and may return a value - they are `callable <https://docs.python.org/3/glossary.html#term-callable>`_

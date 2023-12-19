@@ -22,20 +22,20 @@ I add a file called ``test_list_comprehension.py`` to the ``tests`` folder with 
   class TestListComprehensions(unittest.TestCase):
 
       def test_creating_a_list_from_an_iterable(self):
-          collection = range(10)
+          container = range(10)
           a_list = []
           self.assertEqual(a_list, [])
 
-          for item in collection:
+          for item in container:
               a_list.append(item)
           self.assertEqual(a_list, [])
 
-* ``collection = range(10)`` creates an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ of numbers from 0 to 9 with the `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ object and calls it ``collection``
+* ``container = range(10)`` creates an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ of numbers from 0 to 9 with the `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ constructor and names it ``container``
 * `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ creates an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ of numbers from 0 to the given number minus 1
 * ``a_list = []`` creates an empty list called ``a_list``
 * ``self.assertEqual(a_list, [])`` confirms that ``a_list`` is empty since it is equal to ``[]``
-* ``for item in collection:`` uses a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ statement to create a loop that goes over every item of ``collection``
-* ``a_list.append(item)`` adds the item from ``collection`` to ``a_list`` on each cycle of the loop, using the ``append`` :doc:`method </functions/functions>`, see :doc:`/data_structures/lists` for more details
+* ``for item in container:`` uses a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ statement to create a loop that goes over every item of ``container``
+* ``a_list.append(item)`` adds the item from ``container`` to ``a_list`` on each cycle of the loop, using the ``append`` :doc:`method </functions/functions>`, see :doc:`/data_structures/lists` for more details
 
 the terminal shows an :doc:`/exceptions/AssertionError` because ``a_list`` is no longer empty, it contains 10 items after the loop runs
 
@@ -52,11 +52,11 @@ I change the values in the test to match the result
 .. code-block:: python
 
   def test_creating_a_list_from_an_iterable(self):
-      collection = range(10)
+      container = range(10)
       a_list = []
       self.assertEqual(a_list, [])
 
-      for item in collection:
+      for item in container:
           a_list.append(item)
       self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
@@ -65,11 +65,11 @@ and the tests pass
 REFACTOR: make it better
 =========================
 
-* I add another test to check what happens when I use the :doc:`list </data_structures/lists>` constructor on ``collection``
+* I add another test to check what happens when I use the :doc:`list </data_structures/lists>` constructor on ``container``
 
   .. code-block:: python
 
-      self.assertEqual(list(collection), a_list)
+      self.assertEqual(list(container), a_list)
 
   the tests pass because calling ``list`` on an ``iterable`` creates a :doc:`list </data_structures/lists>`
 * I add another test
@@ -77,7 +77,7 @@ REFACTOR: make it better
   .. code-block:: python
 
       self.assertEqual(
-          list_comprehensions.make_a_list(collection),
+          list_comprehensions.make_a_list(container),
           a_list
       )
 
@@ -164,20 +164,20 @@ I add a test to ``TestListComprehensions``
 .. code-block:: python
 
     def test_creating_a_list_with_a_for_loop(self):
-        collection = range(10)
+        container = range(10)
         a_list = []
         self.assertEqual(a_list, [])
 
-        for item in collection:
+        for item in container:
             a_list.append(item)
 
         self.assertEqual(a_list, [])
         self.assertEqual(
-            list_comprehensions.for_loop(collection),
+            list_comprehensions.for_loop(container),
             a_list
         )
 
-the terminal shows an :doc:`/exceptions/AssertionError` for the values of ``a_list`` after I loop through ``collection`` and add items because it is no longer empty
+the terminal shows an :doc:`/exceptions/AssertionError` for the values of ``a_list`` after I loop through ``container`` and add items because it is no longer empty
 
 .. code-block:: python
 
@@ -192,16 +192,16 @@ GREEN: make it pass
   .. code-block:: python
 
     def test_creating_a_list_with_a_for_loop(self):
-        collection = range(10)
+        container = range(10)
         a_list = []
         self.assertEqual(a_list, [])
 
-        for item in collection:
+        for item in container:
             a_list.append(item)
 
         self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
         self.assertEqual(
-            list_comprehensions.for_loop(collection),
+            list_comprehensions.for_loop(container),
             a_list
         )
 
@@ -266,17 +266,17 @@ I add a failing test to ``TestListComprehensions``
 .. code-block:: python
 
     def test_creating_lists_with_list_comprehensions(self):
-        collection = range(10)
+        container = range(10)
         a_list = []
         self.assertEqual(a_list, [])
 
-        for item in collection:
+        for item in container:
             a_list.append(item)
 
         self.assertEqual(a_list, [])
         self.assertEqual([], a_list)
         self.assertEqual(
-            list_comprehensions.list_comprehension(collection),
+            list_comprehensions.list_comprehension(container),
             a_list
         )
 
@@ -295,17 +295,17 @@ GREEN: make it pass
   .. code-block:: python
 
     def test_creating_lists_with_list_comprehensions(self):
-        collection = range(10)
+        container = range(10)
         a_list = []
         self.assertEqual(a_list, [])
 
-        for item in collection:
+        for item in container:
             a_list.append(item)
 
         self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
         self.assertEqual([], a_list)
         self.assertEqual(
-            list_comprehensions.list_comprehension(collection),
+            list_comprehensions.list_comprehension(container),
             a_list
         )
 
@@ -320,17 +320,17 @@ GREEN: make it pass
   .. code-block:: python
 
     def test_creating_lists_with_list_comprehensions(self):
-        collection = range(10)
+        container = range(10)
         a_list = []
         self.assertEqual(a_list, [])
 
-        for item in collection:
+        for item in container:
             a_list.append(item)
 
         self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-        self.assertEqual([item for item in collection], a_list)
+        self.assertEqual([item for item in container], a_list)
         self.assertEqual(
-            list_comprehensions.list_comprehension(collection),
+            list_comprehensions.list_comprehension(container),
             a_list
         )
 
@@ -356,14 +356,14 @@ I just created two functions, one that uses a traditional `for <https://docs.pyt
 .. code-block:: python
 
     a_list = []
-    for item in collection:
+    for item in container:
         a_list.append()
 
 and
 
 .. code-block:: python
 
-    [item for item in collection]
+    [item for item in container]
 
 Is that in the first case I have to
 
@@ -384,12 +384,12 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
   .. code-block:: python
 
     def test_list_comprehensions_with_conditions_i(self):
-        collection = range(10)
+        container = range(10)
 
         even_numbers = []
         self.assertEqual(even_numbers, [])
 
-        for item in collection:
+        for item in container:
             if item % 2 == 0:
                 even_numbers.append(item)
 
@@ -399,7 +399,7 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
             even_numbers
         )
         self.assertEqual(
-            list_comprehensions.get_even_numbers(collection),
+            list_comprehensions.get_even_numbers(container),
             even_numbers
         )
 
@@ -409,7 +409,7 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
 
     AssertionError: Lists differ: [0, 2, 4, 6, 8] != []
 
-  - ``if item % 2 == 0:`` checks if the item in ``collection`` leaves a remainder of ``0`` when divided by ``2``
+  - ``if item % 2 == 0:`` checks if the item in ``container`` leaves a remainder of ``0`` when divided by ``2``
   - ``%`` is a `modulo <https://en.wikipedia.org/wiki/Modulo>`_ operator which divides the number on the left by the number on the right and gives a remainder
   - ``even_numbers.append(item)`` adds ``item`` to ``even_numbers`` if ``item`` divided by ``2`` leaves a remainder of ``0``
 
@@ -418,12 +418,12 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
   .. code-block:: python
 
       def test_list_comprehensions_with_conditions_i(self):
-          collection = range(10)
+          container = range(10)
 
           even_numbers = []
           self.assertEqual(even_numbers, [])
 
-          for item in collection:
+          for item in container:
               if item % 2 == 0:
                   even_numbers.append(item)
 
@@ -433,7 +433,7 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
               even_numbers
           )
           self.assertEqual(
-              list_comprehensions.get_even_numbers(collection),
+              list_comprehensions.get_even_numbers(container),
               even_numbers
           )
 
@@ -448,22 +448,22 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
   .. code-block:: python
 
       def test_list_comprehensions_with_conditions_i(self):
-          collection = range(10)
+          container = range(10)
 
           even_numbers = []
           self.assertEqual(even_numbers, [])
 
-          for item in collection:
+          for item in container:
               if item % 2 == 0:
                   even_numbers.append(item)
 
           self.assertEqual(even_numbers, [0, 2, 4, 6, 8])
           self.assertEqual(
-              [item for item in collection],
+              [item for item in container],
               even_numbers
           )
           self.assertEqual(
-              list_comprehensions.get_even_numbers(collection),
+              list_comprehensions.get_even_numbers(container),
               even_numbers
           )
 
@@ -478,7 +478,7 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
   .. code-block:: python
 
     self.assertEqual(
-        [item for item in collection if item % 2 == 0],
+        [item for item in container if item % 2 == 0],
         even_numbers
     )
 
@@ -501,18 +501,18 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
   .. code-block:: python
 
     def test_list_comprehensions_with_conditions_ii(self):
-        collection = range(10)
+        container = range(10)
         odd_numbers = []
         self.assertEqual(odd_numbers, [])
 
-        for item in collection:
+        for item in container:
             if item % 2 != 0:
                 odd_numbers.append(item)
 
         self.assertEqual(odd_numbers, [])
         self.assertEqual([], odd_numbers)
         self.assertEqual(
-            list_comprehensions.get_odd_numbers(collection),
+            list_comprehensions.get_odd_numbers(container),
             odd_numbers
         )
 
@@ -527,18 +527,18 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
   .. code-block:: python
 
     def test_list_comprehensions_with_conditions_ii(self):
-        collection = range(10)
+        container = range(10)
         odd_numbers = []
         self.assertEqual(odd_numbers, [])
 
-        for item in collection:
+        for item in container:
             if item % 2 != 0:
                 odd_numbers.append(item)
 
         self.assertEqual(odd_numbers, [1, 3, 5, 7, 9])
         self.assertEqual([], odd_numbers)
         self.assertEqual(
-            list_comprehensions.get_odd_numbers(collection),
+            list_comprehensions.get_odd_numbers(container),
             odd_numbers
         )
 
@@ -553,7 +553,7 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
   .. code-block:: python
 
     self.assertEqual(
-        [item for item in collection if item % 2 == 0],
+        [item for item in container if item % 2 == 0],
         odd_numbers
     )
 
@@ -568,7 +568,7 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
   .. code-block:: python
 
     self.assertEqual(
-        [item for item in collection if item % 2 != 0],
+        [item for item in container if item % 2 != 0],
         odd_numbers
     )
 

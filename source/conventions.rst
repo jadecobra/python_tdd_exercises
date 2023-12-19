@@ -43,13 +43,13 @@ The following are a few conventions to know in Python
     triple single quotes
     '''
 
-* A tuple is a sequence or collection of data that cannot be changed later, it is immutable and represented with parentheses/brackets for example
+* A tuple is a sequence or container of data that cannot be changed later, it is immutable and represented with parentheses/brackets for example
 
   .. code-block:: python
 
     (1, 2.5, "three", [4, 'five'])
 
-* A list/array is a sequence or collection of data that can be changed after it is defined, it is mutable and represented with square brackets for example
+* A list/array is a sequence or container of data that can be changed after it is defined, it is mutable and represented with square brackets for example
 
   .. code-block:: python
 

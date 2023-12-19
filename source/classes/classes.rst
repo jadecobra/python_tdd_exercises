@@ -2,7 +2,7 @@
 classes
 =======
 
-``classes`` are a template or blueprint that represents an object. I think of ``classes`` as a a collection of :doc:`methods (functions) </functions/functions>` and ``attributes(variables)`` that belong together
+``classes`` are a template or blueprint that represents an object. I think of ``classes`` as a a container of :doc:`methods (functions) </functions/functions>` and ``attributes(variables)`` that belong together
 
 I will show the following in this chapter
 
