@@ -3,7 +3,7 @@
 Data Structures: Lists: List Comprehensions
 ##############################################
 
-`List Comprehensions <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#list-comprehensions>`_ are a way to create a list from an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_. It is a nice way to go over every item in the list and perform an operation usually in one line
+`List Comprehensions <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#list-comprehensions>`_ are a way to create a :doc:`list </data_structures/lists>` from an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_. It is a nice way to go over every item in the :doc:`list </data_structures/lists>` and perform an operation usually in one line
 
 ***************************************
 How to create a List with an Iterable
@@ -36,6 +36,7 @@ I add a file called ``test_list_comprehension.py`` to the ``tests`` folder with 
 * ``self.assertEqual(a_list, [])`` confirms that ``a_list`` is empty since it is equal to ``[]``
 * ``for item in container:`` uses a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ statement to create a loop that goes over every item of ``container``
 * ``a_list.append(item)`` adds the item from ``container`` to ``a_list`` on each cycle of the loop, using the ``append`` :doc:`method </functions/functions>`, see :doc:`/data_structures/lists` for more details
+* the second ``self.assertEqual(a_list, [])`` checks to see if ``a_list`` is still empty after the operation
 
 the terminal shows an :doc:`/exceptions/AssertionError` because ``a_list`` is no longer empty, it contains 10 items after the loop runs
 
@@ -58,7 +59,10 @@ I change the values in the test to match the result
 
       for item in container:
           a_list.append(item)
-      self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+      self.assertEqual(
+          a_list,
+          [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+      )
 
 and the tests pass
 
@@ -81,7 +85,13 @@ REFACTOR: make it better
           a_list
       )
 
-  the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ and I add it to the list of exceptions encountered
+  the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+
+  .. code-block:: python
+
+    NameError: name 'list_comprehensions' is not defined
+
+* I add it to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -89,14 +99,20 @@ REFACTOR: make it better
     # AssertionError
     # NameError
 
-* I add an import statement for ``list_comprehensions`` at the beginning of ``test_list_comprehension.py`` to define the name in the tests
+  then add an import statement for ``list_comprehensions`` at the beginning of ``test_list_comprehension.py`` to define the name in the tests
 
   .. code-block:: python
 
     import list_comprehensions
     import unittest
 
-  the terminal shows a :doc:`/exceptions/ModuleNotFoundError` which I add to the running list of exceptions
+  the terminal shows a :doc:`/exceptions/ModuleNotFoundError`
+
+  .. code-block:: python
+
+    ModuleNotFoundError: No module named 'list_comprehensions'
+
+* I add it to the list of exceptions
 
   .. code-block:: python
 
@@ -105,7 +121,13 @@ REFACTOR: make it better
     # NameError
     # ModuleNotFoundError
 
-* I create a file called ``list_comprehensions.py`` in the project folder and the terminal shows an :doc:`/exceptions/AttributeError`\ , which I add to the expanding list of exceptions encountered
+  then create a file called ``list_comprehensions.py`` in the project folder and the terminal shows an :doc:`/exceptions/AttributeError`
+
+  .. code-block:: python
+
+    AttributeError: module 'list_comprehensions' has no attribute 'make_a_list'
+
+* I add the error to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -115,14 +137,20 @@ REFACTOR: make it better
     # ModuleNotFoundError
     # AttributeError
 
-* then I add a :doc:`function </functions/functions>` definition to ``list_comprehensions.py``
+  then add a :doc:`function </functions/functions>` definition to ``list_comprehensions.py``
 
   .. code-block:: python
 
     def make_a_list():
         return None
 
-  and the terminal shows a :doc:`/exceptions/TypeError`, which I add to the list of exceptions encountered
+  and the terminal shows a :doc:`/exceptions/TypeError`
+
+  .. code-block:: python
+
+    TypeError: make_a_list() takes 0 positional arguments but 1 was given
+
+* I add it to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -133,7 +161,7 @@ REFACTOR: make it better
     # AttributeError
     # TypeError
 
-* I change the signature of the function to take in an argument
+  then change the signature of the function to take in an argument
 
   .. code-block:: python
 
@@ -141,14 +169,19 @@ REFACTOR: make it better
         return None
 
   and the terminal shows an :doc:`/exceptions/AssertionError`
-* When I change the function to return the result of calling ``list`` with ``argument`` as input
+
+  .. code-block:: python
+
+    AssertionError: None != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+* When I change the function to return the result of calling the :doc:`list </data_structures/lists>` constructor with ``argument`` as input
 
   .. code-block:: python
 
     def make_a_list(argument):
         return list(argument)
 
-  the tests pass!
+  the test passes. I can use the :doc:`list </data_structures/lists>` constructor to create a list from any iterable.
 
 ----
 
@@ -159,7 +192,7 @@ How to create a List with a For Loop
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add a test to ``TestListComprehensions``
+I add a test for creating a list with a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ loop
 
 .. code-block:: python
 
