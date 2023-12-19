@@ -1,14 +1,16 @@
 
+##############################################
 Data Structures: Lists: List Comprehensions
-============================================
+##############################################
 
-`List Comprehensions <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#list-comprehensions>`_ are a way to create lists from an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_. It is a nice way to loop over elements and perform some operation usually in one line
+`List Comprehensions <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#list-comprehensions>`_ are a way to create a list from an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_. It is a nice way to go over every item in the list and perform an operation usually in one line
 
+***************************************
 How to create a List with an Iterable
---------------------------------------
+***************************************
 
 RED: make it fail
-^^^^^^^^^^^^^^^^^
+==================
 
 I add a file called ``test_list_comprehension.py`` to the ``tests`` folder with the following code
 
@@ -24,18 +26,18 @@ I add a file called ``test_list_comprehension.py`` to the ``tests`` folder with 
           a_list = []
           self.assertEqual(a_list, [])
 
-          for element in collection:
-              a_list.append(element)
+          for item in collection:
+              a_list.append(item)
           self.assertEqual(a_list, [])
 
 * ``collection = range(10)`` creates an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ of numbers from 0 to 9 with the `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ object and calls it ``collection``
 * `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ creates an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ of numbers from 0 to the given number minus 1
 * ``a_list = []`` creates an empty list called ``a_list``
 * ``self.assertEqual(a_list, [])`` confirms that ``a_list`` is empty since it is equal to ``[]``
-* ``for element in collection:`` uses a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ statement to create a loop that goes over every element of ``collection``
-* ``a_list.append(element)`` adds the element from ``collection`` to ``a_list`` on each cycle of the loop, using the ``append`` :doc:`method </functions/functions>`, see :doc:`/data_structures/lists` for more details
+* ``for item in collection:`` uses a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ statement to create a loop that goes over every item of ``collection``
+* ``a_list.append(item)`` adds the item from ``collection`` to ``a_list`` on each cycle of the loop, using the ``append`` :doc:`method </functions/functions>`, see :doc:`/data_structures/lists` for more details
 
-the terminal shows an :doc:`/exceptions/AssertionError` because ``a_list`` is no longer empty, it contains 10 elements after the loop runs
+the terminal shows an :doc:`/exceptions/AssertionError` because ``a_list`` is no longer empty, it contains 10 items after the loop runs
 
 .. code-block:: python
 
@@ -43,7 +45,7 @@ the terminal shows an :doc:`/exceptions/AssertionError` because ``a_list`` is no
 
 
 GREEN: make it pass
-^^^^^^^^^^^^^^^^^^^
+====================
 
 I change the values in the test to match the result
 
@@ -54,14 +56,14 @@ I change the values in the test to match the result
       a_list = []
       self.assertEqual(a_list, [])
 
-      for element in collection:
-          a_list.append(element)
+      for item in collection:
+          a_list.append(item)
       self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
 and the tests pass
 
 REFACTOR: make it better
-^^^^^^^^^^^^^^^^^^^^^^^^
+=========================
 
 * I add another test to check what happens when I use the :doc:`list </data_structures/lists>` constructor on ``collection``
 
@@ -150,8 +152,9 @@ REFACTOR: make it better
 
 ----
 
+======================================
 How to create a List with a For Loop
--------------------------------------
+======================================
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -165,8 +168,8 @@ I add a test to ``TestListComprehensions``
         a_list = []
         self.assertEqual(a_list, [])
 
-        for element in collection:
-            a_list.append(element)
+        for item in collection:
+            a_list.append(item)
 
         self.assertEqual(a_list, [])
         self.assertEqual(
@@ -174,7 +177,7 @@ I add a test to ``TestListComprehensions``
             a_list
         )
 
-the terminal shows an :doc:`/exceptions/AssertionError` for the values of ``a_list`` after I loop through ``collection`` and add elements because it is no longer empty
+the terminal shows an :doc:`/exceptions/AssertionError` for the values of ``a_list`` after I loop through ``collection`` and add items because it is no longer empty
 
 .. code-block:: python
 
@@ -182,7 +185,7 @@ the terminal shows an :doc:`/exceptions/AssertionError` for the values of ``a_li
 
 
 GREEN: make it pass
-^^^^^^^^^^^^^^^^^^^
+====================
 
 * I change the values of the test to match the result
 
@@ -193,8 +196,8 @@ GREEN: make it pass
         a_list = []
         self.assertEqual(a_list, [])
 
-        for element in collection:
-            a_list.append(element)
+        for item in collection:
+            a_list.append(item)
 
         self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
         self.assertEqual(
@@ -240,22 +243,23 @@ GREEN: make it pass
 
     def for_loop(argument):
         result = []
-        for element in argument:
-            result.append(element)
+        for item in argument:
+            result.append(item)
         return result
 
   - ``result = []`` creates an empty list called ``result``
-  - ``for element in argument:`` creates a loop over the elements of ``argument`` which is an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ passed into the function
-  - ``result.append(element)`` adds each element from ``argument`` to the list called ``result``
+  - ``for item in argument:`` creates a loop over the items of ``argument`` which is an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ passed into the function
+  - ``result.append(item)`` adds each item from ``argument`` to the list called ``result``
   - ``return result`` returns ``result`` after the loop completes
 
   the terminal shows all tests are passing
 
+**********************************************
 How to create a List with List Comprehensions
-----------------------------------------------
+**********************************************
 
 RED: make it fail
-^^^^^^^^^^^^^^^^^
+==================
 
 I add a failing test to ``TestListComprehensions``
 
@@ -266,8 +270,8 @@ I add a failing test to ``TestListComprehensions``
         a_list = []
         self.assertEqual(a_list, [])
 
-        for element in collection:
-            a_list.append(element)
+        for item in collection:
+            a_list.append(item)
 
         self.assertEqual(a_list, [])
         self.assertEqual([], a_list)
@@ -284,7 +288,7 @@ the terminal shows an :doc:`/exceptions/AssertionError`
 
 
 GREEN: make it pass
-^^^^^^^^^^^^^^^^^^^
+=====================
 
 * I change the values to make it match the result
 
@@ -295,8 +299,8 @@ GREEN: make it pass
         a_list = []
         self.assertEqual(a_list, [])
 
-        for element in collection:
-            a_list.append(element)
+        for item in collection:
+            a_list.append(item)
 
         self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
         self.assertEqual([], a_list)
@@ -320,11 +324,11 @@ GREEN: make it pass
         a_list = []
         self.assertEqual(a_list, [])
 
-        for element in collection:
-            a_list.append(element)
+        for item in collection:
+            a_list.append(item)
 
         self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-        self.assertEqual([element for element in collection], a_list)
+        self.assertEqual([item for item in collection], a_list)
         self.assertEqual(
             list_comprehensions.list_comprehension(collection),
             a_list
@@ -341,7 +345,7 @@ GREEN: make it pass
   .. code-block:: python
 
     def list_comprehension(argument):
-        return [element for element in argument]
+        return [item for item in argument]
 
   and all tests pass
 
@@ -352,14 +356,14 @@ I just created two functions, one that uses a traditional `for <https://docs.pyt
 .. code-block:: python
 
     a_list = []
-    for element in collection:
+    for item in collection:
         a_list.append()
 
 and
 
 .. code-block:: python
 
-    [element for element in collection]
+    [item for item in collection]
 
 Is that in the first case I have to
 
@@ -370,7 +374,7 @@ Is that in the first case I have to
 With the list comprehension I can get the same result with less words, lines and steps
 
 REFACTOR: make it better
-^^^^^^^^^^^^^^^^^^^^^^^^
+=========================
 
 There is more I can do with a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_
 
@@ -385,9 +389,9 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
         even_numbers = []
         self.assertEqual(even_numbers, [])
 
-        for element in collection:
-            if element % 2 == 0:
-                even_numbers.append(element)
+        for item in collection:
+            if item % 2 == 0:
+                even_numbers.append(item)
 
         self.assertEqual(even_numbers, [])
         self.assertEqual(
@@ -405,9 +409,9 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
 
     AssertionError: Lists differ: [0, 2, 4, 6, 8] != []
 
-  - ``if element % 2 == 0:`` checks if the element in ``collection`` leaves a remainder of ``0`` when divided by ``2``
+  - ``if item % 2 == 0:`` checks if the item in ``collection`` leaves a remainder of ``0`` when divided by ``2``
   - ``%`` is a `modulo <https://en.wikipedia.org/wiki/Modulo>`_ operator which divides the number on the left by the number on the right and gives a remainder
-  - ``even_numbers.append(element)`` adds ``element`` to ``even_numbers`` if ``element`` divided by ``2`` leaves a remainder of ``0``
+  - ``even_numbers.append(item)`` adds ``item`` to ``even_numbers`` if ``item`` divided by ``2`` leaves a remainder of ``0``
 
 * I add the values of the result to the test to make it pass
 
@@ -419,9 +423,9 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
           even_numbers = []
           self.assertEqual(even_numbers, [])
 
-          for element in collection:
-              if element % 2 == 0:
-                  even_numbers.append(element)
+          for item in collection:
+              if item % 2 == 0:
+                  even_numbers.append(item)
 
           self.assertEqual(even_numbers, [0, 2, 4, 6, 8])
           self.assertEqual(
@@ -449,13 +453,13 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
           even_numbers = []
           self.assertEqual(even_numbers, [])
 
-          for element in collection:
-              if element % 2 == 0:
-                  even_numbers.append(element)
+          for item in collection:
+              if item % 2 == 0:
+                  even_numbers.append(item)
 
           self.assertEqual(even_numbers, [0, 2, 4, 6, 8])
           self.assertEqual(
-              [element for element in collection],
+              [item for item in collection],
               even_numbers
           )
           self.assertEqual(
@@ -474,7 +478,7 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
   .. code-block:: python
 
     self.assertEqual(
-        [element for element in collection if element % 2 == 0],
+        [item for item in collection if item % 2 == 0],
         even_numbers
     )
 
@@ -489,7 +493,7 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
   .. code-block:: python
 
     def get_even_numbers(argument):
-        return [element for element in argument if element % 2 == 0]
+        return [item for item in argument if item % 2 == 0]
 
   and the terminal shows passing tests, Hooray!
 * I want to try another `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ with a different condition so I add a test to ``TestListComprehensions``
@@ -501,9 +505,9 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
         odd_numbers = []
         self.assertEqual(odd_numbers, [])
 
-        for element in collection:
-            if element % 2 != 0:
-                odd_numbers.append(element)
+        for item in collection:
+            if item % 2 != 0:
+                odd_numbers.append(item)
 
         self.assertEqual(odd_numbers, [])
         self.assertEqual([], odd_numbers)
@@ -527,9 +531,9 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
         odd_numbers = []
         self.assertEqual(odd_numbers, [])
 
-        for element in collection:
-            if element % 2 != 0:
-                odd_numbers.append(element)
+        for item in collection:
+            if item % 2 != 0:
+                odd_numbers.append(item)
 
         self.assertEqual(odd_numbers, [1, 3, 5, 7, 9])
         self.assertEqual([], odd_numbers)
@@ -549,7 +553,7 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
   .. code-block:: python
 
     self.assertEqual(
-        [element for element in collection if element % 2 == 0],
+        [item for item in collection if item % 2 == 0],
         odd_numbers
     )
 
@@ -564,7 +568,7 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
   .. code-block:: python
 
     self.assertEqual(
-        [element for element in collection if element % 2 != 0],
+        [item for item in collection if item % 2 != 0],
         odd_numbers
     )
 
@@ -579,7 +583,7 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
   .. code-block:: python
 
     def get_odd_numbers(argument):
-        return [element for element in argument if element % 2 != 0]
+        return [item for item in argument if item % 2 != 0]
 
   and the terminal shows all tests passed
 

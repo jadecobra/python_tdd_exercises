@@ -285,7 +285,7 @@ GREEN: make it pass
 How to get a specific item from a list
 ****************************************
 
-To view an item in a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ I can provide the position as an index in ``[]`` to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. Python uses zero-based indexing which means the positions of elements starts at 0. I can also view items from the right side of the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ by using negative numbers
+To view an item in a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ I can provide the position as an index in ``[]`` to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. Python uses zero-based indexing which means the positions of items starts at 0. I can also view items from the right side of the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ by using negative numbers
 
 RED: make it fail
 ===================
@@ -580,7 +580,7 @@ There are more :doc:`methods </functions/functions>` listed than what I have rev
 * pop - removes the last item in the list
 * remove - removes the first occurrence of a given item in the list
 * reverse - does this reverse the list?
-* sort - does this sort the elements in the list?
+* sort - does this sort the items in the list?
 
 You can add tests for these :doc:`methods </functions/functions>` to find out what they do or `read more about lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list%20remove#more-on-lists>`_
 

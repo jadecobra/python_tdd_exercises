@@ -21,8 +21,8 @@ Here is the code in ``tests/test_list_comprehensions.py``
             a_list = []
             self.assertEqual(a_list, [])
 
-            for element in collection:
-                a_list.append(element)
+            for item in collection:
+                a_list.append(item)
             self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
             self.assertEqual(list(collection), a_list)
             self.assertEqual(
@@ -35,8 +35,8 @@ Here is the code in ``tests/test_list_comprehensions.py``
             a_list = []
             self.assertEqual(a_list, [])
 
-            for element in collection:
-                a_list.append(element)
+            for item in collection:
+                a_list.append(item)
 
             self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
             self.assertEqual(
@@ -49,11 +49,11 @@ Here is the code in ``tests/test_list_comprehensions.py``
             a_list = []
             self.assertEqual(a_list, [])
 
-            for element in collection:
-                a_list.append(element)
+            for item in collection:
+                a_list.append(item)
 
             self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-            self.assertEqual([element for element in collection], a_list)
+            self.assertEqual([item for item in collection], a_list)
             self.assertEqual(
                 list_comprehensions.list_comprehension(collection),
                 a_list
@@ -65,13 +65,13 @@ Here is the code in ``tests/test_list_comprehensions.py``
             even_numbers = []
             self.assertEqual(even_numbers, [])
 
-            for element in collection:
-                if element % 2 == 0:
-                    even_numbers.append(element)
+            for item in collection:
+                if item % 2 == 0:
+                    even_numbers.append(item)
 
             self.assertEqual(even_numbers, [0, 2, 4, 6, 8])
             self.assertEqual(
-                [element for element in collection if element % 2 == 0],
+                [item for item in collection if item % 2 == 0],
                 even_numbers
             )
             self.assertEqual(
@@ -84,13 +84,13 @@ Here is the code in ``tests/test_list_comprehensions.py``
             odd_numbers = []
             self.assertEqual(odd_numbers, [])
 
-            for element in collection:
-                if element % 2 != 0:
-                    odd_numbers.append(element)
+            for item in collection:
+                if item % 2 != 0:
+                    odd_numbers.append(item)
 
             self.assertEqual(odd_numbers, [1, 3, 5, 7, 9])
             self.assertEqual(
-                [element for element in collection if element % 2 != 0],
+                [item for item in collection if item % 2 != 0],
                 odd_numbers
             )
             self.assertEqual(
@@ -118,15 +118,15 @@ Here are the solutions in ``list_comprehensions.py``
 
     def for_loop(argument):
         result = []
-        for element in argument:
-            result.append(element)
+        for item in argument:
+            result.append(item)
         return result
 
     def list_comprehension(argument):
-        return [element for element in argument]
+        return [item for item in argument]
 
     def get_even_numbers(argument):
-        return [element for element in argument if element % 2 == 0]
+        return [item for item in argument if item % 2 == 0]
 
     def get_odd_numbers(argument):
-        return [element for element in argument if element % 2 != 0]
+        return [item for item in argument if item % 2 != 0]
