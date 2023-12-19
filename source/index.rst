@@ -20,6 +20,8 @@ Who is this book for?
   - :doc:`/exceptions/AssertionError`
   - :doc:`/exceptions/AttributeError`
   - :doc:`/exceptions/TypeError`
+  - `IndexError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#IndexError>`_
+  - `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_
 
 It will show you how to trigger errors and resolve them, there are also a few drills that will get you used to certain concepts
 
