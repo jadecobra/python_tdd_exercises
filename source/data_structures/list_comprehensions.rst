@@ -3,6 +3,10 @@
 Data Structures: Lists: List Comprehensions
 ##############################################
 
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8v6fF6gHmE4?si=e2-lry14UZDgU6Qo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 `List Comprehensions <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#list-comprehensions>`_ are a way to create a :doc:`list </data_structures/lists>` from an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_. It is a simple way to go over every item in the :doc:`list </data_structures/lists>` and perform an operation usually in one line
 
 ***************************************
