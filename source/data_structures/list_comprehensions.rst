@@ -26,18 +26,18 @@ I add a file called ``test_list_comprehensions.py`` to the ``tests`` folder with
   class TestListComprehensions(unittest.TestCase):
 
       def test_creating_a_list_from_an_iterable(self):
-          container = range(10)
           a_list = []
           self.assertEqual(a_list, [])
 
+          container = range(10)
           for item in container:
               a_list.append(item)
           self.assertEqual(a_list, [])
 
-* ``container = range(10)`` creates an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ of numbers from 0 to 9 with the `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ constructor and calls it ``container``
-* `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ creates an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ of numbers from 0 to the given number minus 1
 * ``a_list = []`` creates an empty list called ``a_list``
 * ``self.assertEqual(a_list, [])`` confirms that ``a_list`` is empty since it is equal to ``[]``
+* ``container = range(10)`` creates an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ of numbers from 0 to 9 with the `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ constructor and calls it ``container``
+* `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ creates an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ of numbers from 0 to the given number minus 1
 * ``for item in container:`` uses a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ statement to create a loop that goes over every item of ``container``
 * ``a_list.append(item)`` adds the item from ``container`` to ``a_list`` on each cycle of the loop, using the ``append`` :doc:`method </functions/functions>`, see :doc:`/data_structures/lists` for more details
 * the second ``self.assertEqual(a_list, [])`` checks to see if ``a_list`` is still empty after the operation
@@ -57,10 +57,10 @@ I change the values in the test to match the result
 .. code-block:: python
 
   def test_creating_a_list_from_an_iterable(self):
-      container = range(10)
       a_list = []
       self.assertEqual(a_list, [])
 
+      container = range(10)
       for item in container:
           a_list.append(item)
       self.assertEqual(
@@ -221,10 +221,10 @@ I add a test for creating a list with a `for <https://docs.python.org/3/tutorial
 .. code-block:: python
 
     def test_creating_a_list_with_a_for_loop(self):
-        container = range(10)
         a_list = []
         self.assertEqual(a_list, [])
 
+        container = range(10)
         for item in container:
             a_list.append(item)
 
@@ -249,10 +249,10 @@ GREEN: make it pass
   .. code-block:: python
 
     def test_creating_a_list_with_a_for_loop(self):
-        container = range(10)
         a_list = []
         self.assertEqual(a_list, [])
 
+        container = range(10)
         for item in container:
             a_list.append(item)
 
@@ -342,10 +342,10 @@ I add a failing test to ``TestListComprehensions``
 .. code-block:: python
 
     def test_creating_lists_with_list_comprehensions(self):
-        container = range(10)
         a_list = []
         self.assertEqual(a_list, [])
 
+        container = range(10)
         for item in container:
             a_list.append(item)
 
@@ -371,10 +371,10 @@ GREEN: make it pass
   .. code-block:: python
 
     def test_creating_lists_with_list_comprehensions(self):
-        container = range(10)
         a_list = []
         self.assertEqual(a_list, [])
 
+        container = range(10)
         for item in container:
             a_list.append(item)
 
@@ -399,10 +399,10 @@ GREEN: make it pass
   .. code-block:: python
 
     def test_creating_lists_with_list_comprehensions(self):
-        container = range(10)
         a_list = []
         self.assertEqual(a_list, [])
 
+        container = range(10)
         for item in container:
             a_list.append(item)
 
@@ -475,11 +475,10 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
   .. code-block:: python
 
     def test_list_comprehensions_with_conditions_i(self):
-        container = range(10)
-
         even_numbers = []
         self.assertEqual(even_numbers, [])
 
+        container = range(10)
         for item in container:
             if item % 2 == 0:
                 even_numbers.append(item)
@@ -509,10 +508,10 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
   .. code-block:: python
 
       def test_list_comprehensions_with_conditions_i(self):
-          container = range(10)
           even_numbers = []
           self.assertEqual(even_numbers, [])
 
+          container = range(10)
           for item in container:
               if item % 2 == 0:
                   even_numbers.append(item)
@@ -538,10 +537,10 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
   .. code-block:: python
 
       def test_list_comprehensions_with_conditions_i(self):
-          container = range(10)
           even_numbers = []
           self.assertEqual(even_numbers, [])
 
+          container = range(10)
           for item in container:
               if item % 2 == 0:
                   even_numbers.append(item)
@@ -590,10 +589,10 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
   .. code-block:: python
 
     def test_list_comprehensions_with_conditions_ii(self):
-        container = range(10)
         odd_numbers = []
         self.assertEqual(odd_numbers, [])
 
+        container = range(10)
         for item in container:
             if item % 2 != 0:
                 odd_numbers.append(item)
@@ -616,10 +615,10 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
   .. code-block:: python
 
     def test_list_comprehensions_with_conditions_ii(self):
-        container = range(10)
         odd_numbers = []
         self.assertEqual(odd_numbers, [])
 
+        container = range(10)
         for item in container:
             if item % 2 != 0:
                 odd_numbers.append(item)
