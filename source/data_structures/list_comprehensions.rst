@@ -3,16 +3,16 @@
 Data Structures: Lists: List Comprehensions
 ##############################################
 
-`List Comprehensions <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#list-comprehensions>`_ are a way to create a :doc:`list </data_structures/lists>` from an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_. It is a nice way to go over every item in the :doc:`list </data_structures/lists>` and perform an operation usually in one line
+`List Comprehensions <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#list-comprehensions>`_ are a way to create a :doc:`list </data_structures/lists>` from an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_. It is a simple way to go over every item in the :doc:`list </data_structures/lists>` and perform an operation usually in one line
 
 ***************************************
-How to create a List with an Iterable
+How to create a List from an Iterable
 ***************************************
 
 RED: make it fail
 ==================
 
-I add a file called ``test_list_comprehension.py`` to the ``tests`` folder with the following code
+I add a file called ``test_list_comprehensions.py`` to the ``tests`` folder with the following code
 
 .. code-block:: python
 
@@ -30,7 +30,7 @@ I add a file called ``test_list_comprehension.py`` to the ``tests`` folder with 
               a_list.append(item)
           self.assertEqual(a_list, [])
 
-* ``container = range(10)`` creates an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ of numbers from 0 to 9 with the `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ constructor and names it ``container``
+* ``container = range(10)`` creates an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ of numbers from 0 to 9 with the `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ constructor and calls it ``container``
 * `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ creates an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ of numbers from 0 to the given number minus 1
 * ``a_list = []`` creates an empty list called ``a_list``
 * ``self.assertEqual(a_list, [])`` confirms that ``a_list`` is empty since it is equal to ``[]``
@@ -64,7 +64,7 @@ I change the values in the test to match the result
           [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
       )
 
-and the tests pass
+and the test passes
 
 REFACTOR: make it better
 =========================
@@ -73,9 +73,21 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-      self.assertEqual(list(container), a_list)
+      self.assertEqual(list(container), [])
 
-  the tests pass because calling ``list`` on an ``iterable`` creates a :doc:`list </data_structures/lists>`
+  the terminal shows an :doc:`/exceptions/AssertionError`
+
+  .. code-block:: python
+
+      AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
+
+* I change the empty list ``[]`` to ``a_list``
+
+  .. code-block:: python
+
+    self.assertEqual(list(container), a_list)
+
+  and the test passes because calling ``list`` on an ``iterable`` creates a :doc:`list </data_structures/lists>`
 * I add another test
 
   .. code-block:: python
@@ -99,7 +111,7 @@ REFACTOR: make it better
     # AssertionError
     # NameError
 
-  then add an import statement for ``list_comprehensions`` at the beginning of ``test_list_comprehension.py`` to define the name in the tests
+  then add an import statement for ``list_comprehensions`` at the beginning of ``test_list_comprehensions.py`` to define the name in the tests
 
   .. code-block:: python
 
@@ -181,13 +193,21 @@ REFACTOR: make it better
     def make_a_list(argument):
         return list(argument)
 
-  the test passes. I can use the :doc:`list </data_structures/lists>` constructor to create a list from any iterable.
+  the test passes
+* I change the name of the :doc:`function's </functions/functions>` input from ``argument`` to ``iterable`` to make it more explicit
+
+  .. code-block:: python
+
+    def make_a_list(iterable):
+        return list(iterable)
+
+From the tests I see that I can make a :doc:`list </data_structures/lists>` from any iterable by using the :doc:`list </data_structures/lists>` constructor
 
 ----
 
-======================================
+***************************************
 How to create a List with a For Loop
-======================================
+***************************************
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -210,7 +230,7 @@ I add a test for creating a list with a `for <https://docs.python.org/3/tutorial
             a_list
         )
 
-the terminal shows an :doc:`/exceptions/AssertionError` for the values of ``a_list`` after I loop through ``container`` and add items because it is no longer empty
+the terminal shows an :doc:`/exceptions/AssertionError` for the values of ``a_list`` because it is no longer empty after I loop through ``container`` and add items
 
 .. code-block:: python
 
@@ -232,7 +252,10 @@ GREEN: make it pass
         for item in container:
             a_list.append(item)
 
-        self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+        self.assertEqual(
+            a_list,
+            [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        )
         self.assertEqual(
             list_comprehensions.for_loop(container),
             a_list
@@ -244,7 +267,7 @@ GREEN: make it pass
 
     AttributeError: module 'list_comprehensions' has no attribute 'for_loop'
 
-* I add a function definition for ``for_loop`` to ``list_comprehensions.py``
+* I add a function definition called ``for_loop`` to ``list_comprehensions.py``
 
   .. code-block:: python
 
@@ -257,7 +280,7 @@ GREEN: make it pass
 
     TypeError: for_loop() takes 0 positional arguments but 1 was given
 
-* I change the signature of the function to take in an input argument
+* I change the signature of the function to take input
 
   .. code-block:: python
 
@@ -286,6 +309,22 @@ GREEN: make it pass
   - ``return result`` returns ``result`` after the loop completes
 
   the terminal shows all tests are passing
+* I rename the input from ``argument`` to ``iterable`` to be more explicit
+
+  .. code-block:: python
+
+    def for_loop(iterable):
+        result = []
+        for item in iterable:
+            result.append(item)
+        return result
+
+  all tests are still passing
+
+From the tests I see that I can make a :doc:`list </data_structures/lists>` from any iterable by using
+
+* a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ loop
+* the :doc:`list </data_structures/lists>` constructor
 
 **********************************************
 How to create a List with List Comprehensions
@@ -335,7 +374,10 @@ GREEN: make it pass
         for item in container:
             a_list.append(item)
 
-        self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+        self.assertEqual(
+            a_list,
+            [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        )
         self.assertEqual([], a_list)
         self.assertEqual(
             list_comprehensions.list_comprehension(container),
@@ -348,7 +390,7 @@ GREEN: make it pass
 
     AssertionError: Lists differ: [] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-* this time I add a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ to the left side to practice writing it
+* this time I add a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ to show how it is written
 
   .. code-block:: python
 
@@ -360,8 +402,14 @@ GREEN: make it pass
         for item in container:
             a_list.append(item)
 
-        self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-        self.assertEqual([item for item in container], a_list)
+        self.assertEqual(
+            a_list,
+            [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        )
+        self.assertEqual(
+            [item for item in container],
+            a_list
+        )
         self.assertEqual(
             list_comprehensions.list_comprehension(container),
             a_list
@@ -381,10 +429,16 @@ GREEN: make it pass
         return [item for item in argument]
 
   and all tests pass
+* I rename ``argument`` to ``iterable`` to be more explicit
+
+  .. code-block:: python
+
+    def list_comprehension(iterable):
+        return [item for item in iterable]
 
 ----
 
-I just created two functions, one that uses a traditional `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ loop and another that uses a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ to do the same thing. The difference between
+I created two :doc:`functions </functions/functions>`, one that uses a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ loop and another that uses a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ to do the same thing. The difference between
 
 .. code-block:: python
 
@@ -409,7 +463,7 @@ With the list comprehension I can get the same result with less words, lines and
 REFACTOR: make it better
 =========================
 
-There is more I can do with a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_
+There is more I can do with `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_, I can add conditions to the operations performed
 
 
 * I add a failing test to ``TestListComprehensions``
@@ -452,7 +506,6 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
 
       def test_list_comprehensions_with_conditions_i(self):
           container = range(10)
-
           even_numbers = []
           self.assertEqual(even_numbers, [])
 
@@ -482,7 +535,6 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
 
       def test_list_comprehensions_with_conditions_i(self):
           container = range(10)
-
           even_numbers = []
           self.assertEqual(even_numbers, [])
 
@@ -525,8 +577,8 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
 
   .. code-block:: python
 
-    def get_even_numbers(argument):
-        return [item for item in argument if item % 2 == 0]
+    def get_even_numbers(iterable):
+        return [item for item in iterable if item % 2 == 0]
 
   and the terminal shows passing tests, Hooray!
 * I want to try another `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ with a different condition so I add a test to ``TestListComprehensions``
@@ -611,19 +663,25 @@ There is more I can do with a `list comprehension <https://docs.python.org/3/glo
 
     AttributeError: module 'list_comprehensions' has no attribute 'get_odd_numbers'
 
-* Then I define a function that returns a list comprehension in ``list_comprehensions.py``
+* I define a function that returns a list comprehension in ``list_comprehensions.py``
 
   .. code-block:: python
 
-    def get_odd_numbers(argument):
-        return [item for item in argument if item % 2 != 0]
+    def get_odd_numbers(iterable):
+        return [item for item in iterable if item % 2 != 0]
 
   and the terminal shows all tests passed
 
 ----
 
+I see from the tests that I can make a :doc:`list </data_structures/lists>` from any iterable by using
+
+* a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ loop
+* the :doc:`list </data_structures/lists>` constructor
+* `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_
+
 If you typed along you now know a couple of ways to loop through ``iterables`` and have your program make decisions by using ``conditions``.
 
-You also know how to do it with less words using `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_. Congratulations! Your magic powers are growing.
+You also know how to do it with less words using `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_. Your magic powers are growing.
 
 :doc:`/code/code_list_comprehensions`

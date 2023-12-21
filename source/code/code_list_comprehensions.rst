@@ -1,6 +1,7 @@
 
-List Comprehensions: Tests and Solutions
-==========================================
+###########################################################
+Data Structures: List Comprehensions: Tests and Solutions
+###########################################################
 
 
 tests
@@ -23,7 +24,10 @@ Here is the code in ``tests/test_list_comprehensions.py``
 
             for item in container:
                 a_list.append(item)
-            self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+            self.assertEqual(
+                a_list,
+                [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+            )
             self.assertEqual(list(container), a_list)
             self.assertEqual(
                 list_comprehensions.make_a_list(container),
@@ -38,7 +42,10 @@ Here is the code in ``tests/test_list_comprehensions.py``
             for item in container:
                 a_list.append(item)
 
-            self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+            self.assertEqual(
+                a_list,
+                [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+            )
             self.assertEqual(
                 list_comprehensions.for_loop(container),
                 a_list
@@ -52,8 +59,14 @@ Here is the code in ``tests/test_list_comprehensions.py``
             for item in container:
                 a_list.append(item)
 
-            self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-            self.assertEqual([item for item in container], a_list)
+            self.assertEqual(
+                a_list,
+                [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+            )
+            self.assertEqual(
+                [item for item in container],
+                a_list
+            )
             self.assertEqual(
                 list_comprehensions.list_comprehension(container),
                 a_list
@@ -61,7 +74,6 @@ Here is the code in ``tests/test_list_comprehensions.py``
 
         def test_list_comprehensions_with_conditions_i(self):
             container = range(10)
-
             even_numbers = []
             self.assertEqual(even_numbers, [])
 
@@ -82,7 +94,6 @@ Here is the code in ``tests/test_list_comprehensions.py``
         def test_list_comprehensions_with_conditions_ii(self):
             container = range(10)
             odd_numbers = []
-            self.assertEqual(odd_numbers, [])
 
             for item in container:
                 if item % 2 != 0:
@@ -103,7 +114,6 @@ Here is the code in ``tests/test_list_comprehensions.py``
     # NameError
     # ModuleNotFoundError
     # AttributeError
-    # TypeError
 
 
 solutions
@@ -113,20 +123,20 @@ Here are the solutions in ``list_comprehensions.py``
 
 .. code-block:: python
 
-    def make_a_list(argument):
-        return list(argument)
+    def make_a_list(iterable):
+        return list(iterable)
 
-    def for_loop(argument):
+    def for_loop(iterable):
         result = []
-        for item in argument:
+        for item in iterable:
             result.append(item)
         return result
 
-    def list_comprehension(argument):
-        return [item for item in argument]
+    def list_comprehension(iterable):
+        return [item for item in iterable]
 
-    def get_even_numbers(argument):
-        return [item for item in argument if item % 2 == 0]
+    def get_even_numbers(iterable):
+        return [item for item in iterable if item % 2 == 0]
 
-    def get_odd_numbers(argument):
-        return [item for item in argument if item % 2 != 0]
+    def get_odd_numbers(iterable):
+        return [item for item in iterable if item % 2 != 0]

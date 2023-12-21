@@ -39,6 +39,22 @@ Here is how I recommend you use the book
 * try writing the solutions for the tests in chapters like the ``HOW TOs``
 * try adding tests for any ideas you get as you go through a chapter
 
+HOW TOs
+--------
+.. toctree::
+  :maxdepth: 2
+  :titlesonly:
+
+  how_to/setup_my_ide
+  how_to/create_tdd_environment
+  how_to/calculator
+  how_to/passing_values
+  how_to/person_factory
+  how_to/exception_handling_tests
+  how_to/exception_handling_programs
+  how_to/sleep_duration
+  learning_models
+
 Table of Contents
 -----------------
 .. toctree::
@@ -81,22 +97,6 @@ Table of Contents
   truth_table/12_project
   truth_table/13_converse_implication
   truth_table/14_true_lies
-
-HOW TOs
---------
-.. toctree::
-  :maxdepth: 2
-  :titlesonly:
-
-  how_to/create_tdd_environment
-  how_to/setup_my_ide
-  how_to/calculator
-  how_to/passing_values
-  how_to/person_factory
-  how_to/sleep_duration
-  how_to/exception_handling_tests
-  how_to/exception_handling_programs
-  learning_models
 
 tests and solutions
 -------------------
