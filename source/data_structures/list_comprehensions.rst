@@ -1,6 +1,6 @@
 
 ##############################################
-Data Structures: Lists: List Comprehensions
+Data Structures: List Comprehensions
 ##############################################
 
 .. raw:: html

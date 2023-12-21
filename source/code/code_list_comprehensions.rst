@@ -17,10 +17,10 @@ Here is the code in ``tests/test_list_comprehensions.py``
     class TestListComprehensions(unittest.TestCase):
 
         def test_creating_a_list_from_an_iterable(self):
-            container = range(10)
             a_list = []
             self.assertEqual(a_list, [])
 
+            container = range(10)
             for item in container:
                 a_list.append(item)
             self.assertEqual(
@@ -34,10 +34,10 @@ Here is the code in ``tests/test_list_comprehensions.py``
             )
 
         def test_creating_a_list_with_a_for_loop(self):
-            container = range(10)
             a_list = []
             self.assertEqual(a_list, [])
 
+            container = range(10)
             for item in container:
                 a_list.append(item)
 
@@ -51,10 +51,10 @@ Here is the code in ``tests/test_list_comprehensions.py``
             )
 
         def test_creating_lists_with_list_comprehensions(self):
-            container = range(10)
             a_list = []
             self.assertEqual(a_list, [])
 
+            container = range(10)
             for item in container:
                 a_list.append(item)
 
@@ -72,10 +72,10 @@ Here is the code in ``tests/test_list_comprehensions.py``
             )
 
         def test_list_comprehensions_with_conditions_i(self):
-            container = range(10)
             even_numbers = []
             self.assertEqual(even_numbers, [])
 
+            container = range(10)
             for item in container:
                 if item % 2 == 0:
                     even_numbers.append(item)
@@ -91,9 +91,10 @@ Here is the code in ``tests/test_list_comprehensions.py``
             )
 
         def test_list_comprehensions_with_conditions_ii(self):
-            container = range(10)
             odd_numbers = []
+            self.assertEqual(odd_numbers, [])
 
+            container = range(10)
             for item in container:
                 if item % 2 != 0:
                     odd_numbers.append(item)
@@ -108,11 +109,11 @@ Here is the code in ``tests/test_list_comprehensions.py``
                 odd_numbers
             )
 
+
     # Exceptions Encountered
     # AssertionError
     # NameError
     # ModuleNotFoundError
-    # AttributeError
 
 
 solutions
