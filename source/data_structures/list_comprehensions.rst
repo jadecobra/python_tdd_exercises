@@ -674,6 +674,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
         return [item for item in iterable if item % 2 != 0]
 
   and the terminal shows all tests passed
+* Since all tests are passing I can remove repetition to make the code better. 
 
 ----
 

@@ -60,7 +60,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
       cd project_name
 
-  this is where all the code for the project will be kept
+  this is where all the code for the project will stay
 
 * `touch <https://man7.org/linux/man-pages/man1/touch.1.html>`_ is a program which creates an empty file with the name it is given
 
@@ -164,7 +164,7 @@ RED: make it fail
 
 If you are typing along, *CONGRATULATIONS!* You have written your first test.
 
-This is the ``RED`` part of the Test Driven Development cycle. The error in the terminal has important information for me. I like to read it from the bottom to the top
+This is the ``RED`` part of the Test Driven Development cycle. The error in the terminal has important information. I read it from the bottom to the top
 
 
 * ``FAILED (failures=1)`` there is one failure
@@ -175,11 +175,11 @@ This is the ``RED`` part of the Test Driven Development cycle. The error in the 
   - ``assertFalse`` is a :doc:`method </functions/functions>` in the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`class </classes/classes>` which checks if its input is :doc:`False </data_structures/booleans>`
   - :doc:`True </data_structures/booleans>` is given as input to ``assertFalse`` and the statement raises an :doc:`/exceptions/AssertionError` because :doc:`True </data_structures/booleans>` is not :doc:`False </data_structures/booleans>`
 
-* ``File "/<PATH_TO_PROJECT>/project_name/tests/test_project_name.py", line 7, in test_failure`` is the line number and location of the file where the :doc:`/exceptions/AssertionError` occurred.
+* ``File ".../project_name/tests/test_project_name.py", line 7, in test_failure`` is the line number and location of the file where the :doc:`/exceptions/AssertionError` occurred.
 
   .. tip::
 
-    Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``File "/<PATH_TO_PROJECT>/project_name/tests/test_project_name.py", line 7, in test_failure`` with your mouse in the terminal and the Interactive Development Environment (IDE) will place the cursor at the position in the file where the error occurred
+    Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``File ".../project_name/tests/test_project_name.py", line 7, in test_failure`` with your mouse in the terminal and the Interactive Development Environment (IDE) will place the cursor at the position in the file where the error occurred
 
 * ``Traceback (most recent call last):`` all the information shown indented after this line is the ``traceback`` showing the most recent call python made last
 * ``FAIL: test_failure (tests.TestProjectName.test_failure)`` is a header with information about the test
@@ -250,9 +250,7 @@ I can make code better by using
 * `The Abstraction Principle <https://en.wikipedia.org/wiki/Abstraction_principle_(computer_programming)>`_ or
 * `The Do Not Repeat Yourself (DRY) Principle <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
-Both of these can be summed up as ``remove duplication``
-
-So far there is not much to improve on what has been written but there has been duplication
+So far there is not much to improve on what has been written but there has been repetition
 
 * ``python3 -m unittest`` was run to see the test fail
 * ``python3 -m unittest`` was run to see the test pass
@@ -292,13 +290,13 @@ How to create a Virtual Environment
   - a virtual environment is a separate folder for dependencies of the project
   - ``.venv`` is the standard name for virtual environments in Python, you can use any name you like
 
-* I activate the virtual environment to use it
-
-  .. code-block:: python
+* I activate the virtual environment to use it ::
 
       source .venv/bin/activate
 
-  the ``(.venv)`` on the far left of the command line in the terminal indicates the virtual environment is activated
+  the ``(.venv)`` on the far left of the command line in the terminal indicates the virtual environment is activated ::
+
+    (.venv) vscode ➜ .../project_name $
 
 * I upgrade `pip <https://pypi.org/project/pip/>`_ the `python package manager <https://pypi.org/project/pip/>`_ to the latest version
 
@@ -349,7 +347,7 @@ How to create a Virtual Environment
 
     =============== 1 passed in 0.00s =======================
 
-* to verify that the terminal now responds to changes, I change the input on line 7 in ``test_project_name.py`` to :doc:`True </data_structures/booleans>` to make it fail and back to :doc:`False </data_structures/booleans>` to make it pass
+* I change the input on line 7 in ``test_project_name.py`` to :doc:`True </data_structures/booleans>` to make it fail and back to :doc:`False </data_structures/booleans>` to make it pass and the terminal responds to each change
 * I can press ``ctrl`` + ``c`` on the keyboard in the terminal to stop the tests at anytime
 
 How to Deactivate a Virtual Environment
@@ -383,7 +381,7 @@ You made it this far and have become the greatest programmer in the world. Follo
 
     touch createPythonTdd.sh
 
-* I open ``createPythonTdd.sh`` in the Interactive Development Environment (IDE) and copy each command displayed in the terminal from ``history``
+* I open ``createPythonTdd.sh`` in the Interactive Development Environment (IDE) and copy each command displayed in the terminal from ``history`` except ``python3 -m unittest -f`` since I want the tests to run automatically
 
   .. code-block:: ruby
     :linenos:
@@ -400,7 +398,7 @@ You made it this far and have become the greatest programmer in the world. Follo
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-* There is a problem with the program, it will always create a project called ``project_name`` so I need to add a variable to make it create any project name I pass to the program as input. I change the program with a variable called ``PROJECT_NAME`` which is referenced with ``$PROJECT_NAME``
+* There is a problem with the program, it will always create a project called ``project_name`` so I need to add a variable to make it create any project name I pass to the program as input. I add a variable called ``PROJECT_NAME`` which is referenced with ``$PROJECT_NAME``
 
   .. code-block:: shell
     :linenos:
@@ -455,7 +453,7 @@ You made it this far and have become the greatest programmer in the world. Follo
 
     chmod +x createPythonTdd.sh
 
-* I can now create a Test Driven Development environment on demand by giving a name for the ``PROJECT_NAME`` variable when the program is called. For example typing this command in the terminal in the folder where ``createPythonTdd.sh`` is saved will create a Test Driven Development environment for a project called ``calculator`` ::
+* I can now create a Test Driven Development environment on demand by giving a name for the ``PROJECT_NAME`` variable when the program is called. For example typing this command in the terminal in the folder where ``createPythonTdd.sh`` is saved will create a Test Driven Development environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator` ::
 
     ./createPythonTdd.sh calculator
 
