@@ -674,7 +674,6 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
         return [item for item in iterable if item % 2 != 0]
 
   and the terminal shows all tests passed
-* Since all tests are passing I can remove repetition to make the code better. 
 
 ----
 
@@ -687,5 +686,205 @@ I see from the tests that I can make a :doc:`list </data_structures/lists>` from
 If you typed along you now know a couple of ways to loop through ``iterables`` and have your program make decisions by using ``conditions``.
 
 You also know how to do it with less words using `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_. Your magic powers are growing.
+
+
+***************************************
+BONUS: REFACTOR: make it better
+***************************************
+I have written the same thing multiple times in these tests and since the programming gods told me `Do Not Repeat Yourself! <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_ It is time to remove the repetition in the code.
+
+* In each test I create an empty list, verify it is empty and then perform operations on it. Since that part is the same for every test I can add it to the `unittest.TestCase.setUp <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.setUp>`_ :doc:`method </functions/functions>` which is called before a test method. Anything I place in this :doc:`method </functions/functions>` will run before the tests, I place my empty list creation and verification in here ::
+
+    def setUp(self):
+        self.a_list = []
+        self.assertEqual(self.a_list, [])
+
+* I create a reference to ``self.a_list`` in ``test_creating_a_list_from_an_iterable`` ::
+
+    def test_creating_a_list_from_an_iterable(self):
+        a_list = []
+        self.assertEqual(a_list, [])
+
+        container = range(10)
+        for item in container:
+            self.a_list.append(item)
+        self.assertEqual(
+            self.a_list,
+            [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        )
+        self.assertEqual(list(container), self.a_list)
+        self.assertEqual(
+            list_comprehensions.make_a_list(container),
+            self.a_list
+        )
+
+  the terminal still shows passing tests
+* I remove the creation of the empty list and verification from ``test_creating_a_list_from_an_iterable`` ::
+
+    def test_creating_a_list_from_an_iterable(self):
+        container = range(10)
+        for item in container:
+            self.a_list.append(item)
+        self.assertEqual(
+            self.a_list,
+            [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        )
+        self.assertEqual(list(container), self.a_list)
+        self.assertEqual(
+            list_comprehensions.make_a_list(container),
+            self.a_list
+        )
+
+  the terminal still shows passing tests
+* I make the same change in the other tests ::
+
+    def test_creating_a_list_with_a_for_loop(self):
+        container = range(10)
+        for item in container:
+            self.a_list.append(item)
+
+        self.assertEqual(
+            self.a_list,
+            [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        )
+        self.assertEqual(
+            list_comprehensions.for_loop(container),
+            self.a_list
+        )
+
+    def test_creating_lists_with_list_comprehensions(self):
+        container = range(10)
+        for item in container:
+            self.a_list.append(item)
+
+        self.assertEqual(
+            self.a_list,
+            [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        )
+        self.assertEqual(
+            [item for item in container],
+            self.a_list
+        )
+        self.assertEqual(
+            list_comprehensions.list_comprehension(container),
+            self.a_list
+        )
+
+    def test_list_comprehensions_with_conditions_i(self):
+        container = range(10)
+        for item in container:
+            if item % 2 == 0:
+                self.a_list.append(item)
+
+        self.assertEqual(self.a_list, [0, 2, 4, 6, 8])
+        self.assertEqual(
+            [item for item in container if item % 2 == 0],
+            self.a_list
+        )
+        self.assertEqual(
+            list_comprehensions.get_even_numbers(container),
+            self.a_list
+        )
+
+    def test_list_comprehensions_with_conditions_ii(self):
+        container = range(10)
+        for item in container:
+            if item % 2 != 0:
+                self.a_list.append(item)
+
+        self.assertEqual(self.a_list, [1, 3, 5, 7, 9])
+        self.assertEqual(
+            [item for item in container if item % 2 != 0],
+            self.a_list
+        )
+        self.assertEqual(
+            list_comprehensions.get_odd_numbers(container),
+            self.a_list
+        )
+
+  the terminal still shows passing test
+* In each test I create a `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ object named ``container``, I can add this to the ``setUp`` :doc:`method </functions/functions>` and reference it in the tests ::
+
+    def setUp(self):
+        self.a_list = []
+        self.assertEqual(self.a_list, [])
+        self.container = range(10)
+
+    def test_creating_a_list_from_an_iterable(self):
+        for item in self.container:
+            self.a_list.append(item)
+
+        self.assertEqual(
+            self.a_list,
+            [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        )
+        self.assertEqual(list(self.container), self.a_list)
+        self.assertEqual(
+            list_comprehensions.make_a_list(self.container),
+            self.a_list
+        )
+
+    def test_creating_a_list_with_a_for_loop(self):
+        for item in self.container:
+            self.a_list.append(item)
+
+        self.assertEqual(
+            self.a_list,
+            [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        )
+        self.assertEqual(
+            list_comprehensions.for_loop(self.container),
+            self.a_list
+        )
+
+    def test_creating_lists_with_list_comprehensions(self):
+        for item in self.container:
+            self.a_list.append(item)
+
+        self.assertEqual(
+            self.a_list,
+            [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        )
+        self.assertEqual(
+            [item for item in self.container],
+            self.a_list
+        )
+        self.assertEqual(
+            list_comprehensions.list_comprehension(self.container),
+            self.a_list
+        )
+
+    def test_list_comprehensions_with_conditions_i(self):
+        for item in self.container:
+            if item % 2 == 0:
+                self.a_list.append(item)
+
+        self.assertEqual(self.a_list, [0, 2, 4, 6, 8])
+        self.assertEqual(
+            [item for item in self.container if item % 2 == 0],
+            self.a_list
+        )
+        self.assertEqual(
+            list_comprehensions.get_even_numbers(self.container),
+            self.a_list
+        )
+
+    def test_list_comprehensions_with_conditions_ii(self):
+        for item in self.container:
+            if item % 2 != 0:
+                self.a_list.append(item)
+
+        self.assertEqual(self.a_list, [1, 3, 5, 7, 9])
+        self.assertEqual(
+            [item for item in self.container if item % 2 != 0],
+            self.a_list
+        )
+        self.assertEqual(
+            list_comprehensions.get_odd_numbers(self.container),
+            self.a_list
+        )
+
+  the terminal shows all tests are still passing
+
 
 :doc:`/code/code_list_comprehensions`
