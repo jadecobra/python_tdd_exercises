@@ -1,6 +1,7 @@
 
+#################################
 Truth Table: Logical Conjunction
-================================
+#################################
 
 In this chapter I continue to step through learning conditional statements in Python with the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 

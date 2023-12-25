@@ -1,6 +1,7 @@
 
+#####################
 classes: initializer
-====================
+#####################
 
 So far I have gone over how to define classes, attributes and methods. I will now expand on this to show how to use classes.
 

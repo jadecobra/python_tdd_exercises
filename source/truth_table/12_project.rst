@@ -1,6 +1,7 @@
 
+#####################
 Truth Table: Project
-====================
+#####################
 
 This chapter shows the projection Binary Operations from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_ using tests
 

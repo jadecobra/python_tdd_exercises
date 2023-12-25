@@ -1,6 +1,7 @@
 
+########
 classes
-=======
+########
 
 ``classes`` are a template or blueprint that represents an object. I think of ``classes`` as a a container of :doc:`methods (functions) </functions/functions>` and ``attributes(variables)`` that belong together
 

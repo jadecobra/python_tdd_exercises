@@ -1,6 +1,7 @@
 
+##########################################################
 How I setup my Interactive Development Environment (IDE)
-========================================================
+##########################################################
 
 As of the writing of this book I use `Visual Studio Code <https://code.visualstudio.com/download>_`
 

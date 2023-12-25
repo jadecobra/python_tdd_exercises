@@ -1,6 +1,7 @@
 
+#################################
 Truth Table: Logical Equality
-=============================
+#################################
 
 The journey of conditional statements using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_ continues with Logical Equality
 

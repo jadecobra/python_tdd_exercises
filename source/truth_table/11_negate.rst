@@ -1,6 +1,7 @@
 
+####################
 Truth Table: Negate
-===================
+####################
 
 I will continue to step through conditional statements using Binary Operations from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 

@@ -11,13 +11,13 @@ How to create a Test Driven Development Environment
 
 I recommend reading `Kent Beck’s <https://en.wikipedia.org/wiki/Kent_Beck>`_ `Test Driven Development by Example <https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk>`_ and `Martin Fowler’s <https://en.wikipedia.org/wiki/Martin_Fowler_(software_engineer)>`_ `Refactoring <https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk>`_, they both influenced the way I write programs.
 
-Here is a way to create a Test Driven Development environment for Python projects.
+This chapter covers one way to create a Python Test Driven Development environment
 
 ***************
 Requirements
 ***************
 
-* `Python <https://www.python.org/downloads/>`_
+* download and install `Python <https://www.python.org/downloads/>`_
 * An Interactive Development Environment (IDE). Here are a few options
 
   - `Visual Studio Code in a Browser <http://vscode.dev>`_
@@ -44,10 +44,6 @@ Setup
 
 I open a terminal in the Interactive Development Environment (IDE) and type the following commands to create the project
 
-.. note::
-
-  ``project_name`` is a placeholder for the name of the project. For example to create a project called ``calculator`` I would replace ``project_name`` with ``calculator``
-
 * I use `mkdir <https://man7.org/linux/man-pages/man1/mkdir.1.html>`_ with the ``--parents`` option to create a directory for the project with a child directory called ``tests`` inside it
 
   .. code-block:: shell
@@ -71,13 +67,13 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
         touch project_name.py
 
   - tests will be stored in the ``tests`` folder to separate them from the source code (the actual program)
-  - I create an empty file called ``__init__.py`` in the ``tests`` folder to tell python that the ``tests`` folder is a python `package <https://docs.python.org/3/glossary.html#term-regular-package>`_, so it can find the tests later
+  - I create an empty file called ``__init__.py`` in the ``tests`` folder to tell python that the ``tests`` folder is a python `package <https://docs.python.org/3/glossary.html#term-regular-package>`_
 
     .. code-block:: shell
 
         touch tests/__init__.py
 
-  - and another empty file called ``test_project_name.py`` in the ``tests`` folder to hold the tests
+  - I create another empty file called ``test_project_name.py`` in the ``tests`` folder to hold the tests
 
     .. code-block:: shell
 
@@ -93,6 +89,9 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
       |  ╰──test_project_name.py
       ╰──project_name.py
 
+.. note::
+
+  ``project_name`` is a placeholder for the name of the project. For example to create a project called ``calculator`` I would replace ``project_name`` with ``calculator``
 
 ----
 
@@ -100,7 +99,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 The Test Driven Development cycle is ``RED GREEN REFACTOR``
 
 * **RED**: make it fail - write a failing test to make sure the test works
-* **GREEN**: make it pass - write only the code necessary to make the test pass
+* **GREEN**: make it pass - write only what is needed to make the test pass
 * **REFACTOR**: make it better
 
 ******************
@@ -179,7 +178,7 @@ This is the ``RED`` part of the Test Driven Development cycle. The error in the 
 
   .. tip::
 
-    Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``File ".../project_name/tests/test_project_name.py", line 7, in test_failure`` with your mouse in the terminal and the Interactive Development Environment (IDE) will place the cursor at the position in the file where the error occurred
+    Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click with your mouse on ``File ".../project_name/tests/test_project_name.py", line 7, in test_failure`` in the terminal and the Interactive Development Environment (IDE) will place the cursor at the position in the file where the error occurred
 
 * ``Traceback (most recent call last):`` all the information shown indented after this line is the ``traceback`` showing the most recent call python made last
 * ``FAIL: test_failure (tests.TestProjectName.test_failure)`` is a header with information about the test
@@ -373,7 +372,7 @@ You made it this far and have become the greatest programmer in the world. Follo
 
     cd ..
 
-* I use the `history <https://man7.org/linux/man-pages/man3/history.3.html>`_ program in the terminal to list the commands typed in this session so far as a reference ::
+* I use the `history <https://man7.org/linux/man-pages/man3/history.3.html>`_ program to list the commands I typed earlier in the terminal as a reference for the program::
 
     history
 
@@ -453,7 +452,7 @@ You made it this far and have become the greatest programmer in the world. Follo
 
     chmod +x createPythonTdd.sh
 
-* I can now create a Test Driven Development environment on demand by giving a name for the ``PROJECT_NAME`` variable when the program is called. For example typing this command in the terminal in the folder where ``createPythonTdd.sh`` is saved will create a Test Driven Development environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator` ::
+* I can now create a Test Driven Development environment on demand by giving a name for the ``PROJECT_NAME`` variable when the program is called. For example, typing this command in the terminal in the folder where ``createPythonTdd.sh`` is saved will create a Test Driven Development environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator` ::
 
     ./createPythonTdd.sh calculator
 

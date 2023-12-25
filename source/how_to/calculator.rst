@@ -1,8 +1,9 @@
 
+##################################
 How to create a simple Calculator
-=================================
+##################################
 
-In this chapter I will use Test Driven Development to create a calculator in Python that can perform addition, subtraction, division and multiplication
+In this chapter I will create a calculator in Python that can perform addition, subtraction, division and multiplication
 
 Prerequisites
 -------------

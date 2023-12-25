@@ -1,6 +1,7 @@
 
+#####################################
 Truth Table: Material NonImplication
-====================================
+#####################################
 
 More conditional statements from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_, this time for Material NonImplication
 

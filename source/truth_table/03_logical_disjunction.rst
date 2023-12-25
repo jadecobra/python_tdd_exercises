@@ -1,6 +1,7 @@
 
+#################################
 Truth Table: Logical Disjunction
-================================
+#################################
 
 This chapter continues the adventure with conditional statements for Logical Disjunction from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 

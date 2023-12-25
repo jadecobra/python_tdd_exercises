@@ -1,6 +1,7 @@
 
+#######################
 Truth Table: True Lies
-======================
+#######################
 
 More tests for the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 

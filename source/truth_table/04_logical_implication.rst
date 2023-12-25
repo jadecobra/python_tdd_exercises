@@ -1,6 +1,7 @@
 
+#################################
 Truth Table: Logical Implication
-================================
+#################################
 
 This chapter contains tests for Logical Implication from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 

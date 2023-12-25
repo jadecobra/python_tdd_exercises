@@ -1,6 +1,7 @@
 
+########################################
 How to test that an Exception is raised
-========================================
+########################################
 
 `Exceptions <https://docs.python.org/3/library/exceptions.html?highlight=exception#Exception>`_ are raised in Python when an error occurs and break execution of the program. When an exception is encountered no further instructions in the program will run.
 

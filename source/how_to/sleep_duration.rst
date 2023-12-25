@@ -1,6 +1,7 @@
 
+##############################
 How to measure sleep duration
-==============================
+##############################
 
 In this chapter I take a look at building a program that returns the amount of time slept based on a given sleep and wake time.
 
