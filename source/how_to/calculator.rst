@@ -51,8 +51,8 @@ the terminal responds to the change, the test from :doc:`How to create a Test Dr
 
   [TODAYS_DATE] Running: py.test
   ===================== test session starts ===================
-  platform <YOUR_OPERATING_SYSTEM> -- python <YOUR_python_VERSION>, pytest-<VERSION>, pluggy-<VERSION>
-  rootdir: <YOUR_PATH>/calculator
+  ...
+  rootdir: .../calculator
   collected 1 item
 
   tests/test_calculator.py .                                             [100%]
@@ -63,7 +63,7 @@ the terminal responds to the change, the test from :doc:`How to create a Test Dr
 Test Imports
 ****************
 
-I add an import statement for the ``calculator`` module that will contain the source code for the program I am testing
+I add an import statement for the ``calculator`` module that will contain the source code for the program
 
 .. code-block:: python
 
@@ -73,8 +73,8 @@ I add an import statement for the ``calculator`` module that will contain the so
 
   class TestCalculator(unittest.TestCase):
 
-    def test_failure(self):
-      self.assertTrue(True)
+      def test_failure(self):
+          self.assertTrue(True)
 
   # TODO
   # test importing
@@ -128,12 +128,12 @@ RED: make it fail
     # AssertionError
 
 
-  - I use the `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ :doc:`method </functions/functions>` from the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`class </classes/classes>` which checks if its 2 inputs are equal. It is similar to the statement ``assert x == y`` or asking ``is x equal to y?``
+  - I use the `unittest.TestCase.assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ :doc:`method </functions/functions>` which checks if its 2 inputs are equal. It is similar to the statement ``assert x == y`` or asking ``is x equal to y?``
   - there are two things passed to `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ for evaluation in this case
 
-  * first - ``calculator.add(0, 1)`` - where I give the values ``0`` and ``1`` as inputs to the addition function
-  * second - ``1`` - the expected result from calling ``calculator.add`` when it is given ``0`` and ``1`` as inputs
-  * my expectation is that ``calculator.add(0, 1)`` is equal to ``1``
+    * first - ``calculator.add(0, 1)`` - where I give the values ``0`` and ``1`` as inputs to the addition function
+    * second - ``1`` - the expected result from calling ``calculator.add`` when it is given ``0`` and ``1`` as inputs
+    * my expectation is that ``calculator.add(0, 1)`` is equal to ``1``
 
 
 * the terminal shows an :doc:`/exceptions/AttributeError`
