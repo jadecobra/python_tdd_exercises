@@ -1,20 +1,23 @@
 
-##################################
-How to create a simple Calculator
-##################################
+###########################
+How to create a Calculator
+###########################
 
-In this chapter I will create a calculator in Python that can perform addition, subtraction, division and multiplication
+In this chapter I will create a basic calculator that performs addition, subtraction, division and multiplication
 
+****************
 Prerequisites
--------------
+****************
 
 
 :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` with ``calculator`` as the project name
 
 ----
 
+
+****************
 Add Tests
----------
+****************
 
 I add a TODO list to ``test_calculator.py`` to keep track of requirements for the calculator
 
@@ -56,8 +59,9 @@ the terminal responds to the change, the test from :doc:`How to create a Test Dr
 
   ==================== 1 passed in 0.00s ======================
 
+****************
 Test Imports
-------------
+****************
 
 I add an import statement for the ``calculator`` module that will contain the source code for the program I am testing
 
@@ -86,12 +90,13 @@ since there is no failure I can remove ``test importing`` from the TODO list
 
 ----
 
+****************
 Test Addition
--------------
+****************
 
 
 RED: make it fail
-^^^^^^^^^^^^^^^^^
+==================
 
 
 * I add a :doc:`method </functions/functions>` called ``test_addition`` to the ``TestCalculator`` :doc:`class </classes/classes>`
@@ -166,7 +171,7 @@ RED: make it fail
 
 
 GREEN: make it pass
-^^^^^^^^^^^^^^^^^^^
+====================
 
 * I open ``calculator.py`` in the Interactive Development Environment (IDE) and type the name ``add``
 
@@ -257,7 +262,7 @@ GREEN: make it pass
 
 
 REFACTOR: Make it Better
-^^^^^^^^^^^^^^^^^^^^^^^^
+=========================
 
 Wait a minute. Is it that easy? Do I just provide the expectation of the test to make it pass? In the green phase, yes. I do whatever it takes to make the test pass even if I have to cheat.
 
@@ -374,13 +379,14 @@ I repeat this process until I have a working program that has been tested which 
 
 ----
 
+*****************
 Test Subtraction
-----------------
+*****************
 
 Since addition works and the next item from the TODO list is test subtraction, I will add a failing test for it
 
 RED : make it fail
-^^^^^^^^^^^^^^^^^^
+===================
 
 
 * I add a :doc:`method </functions/functions>` called ``test_subtraction`` to ``test_calculator.py``
@@ -416,7 +422,7 @@ RED : make it fail
    E    AttributeError: module 'calculator' has no attribute 'subtract'
 
 GREEN : make it pass
-^^^^^^^^^^^^^^^^^^^^
+=====================
 
 
 * I add a variable assignment in ``calculator.py``
@@ -498,7 +504,7 @@ GREEN : make it pass
 
 
 REFACTOR: make it better
-^^^^^^^^^^^^^^^^^^^^^^^^
+=========================
 
 * There is some duplication to remove so `I Do Not Repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
@@ -537,13 +543,14 @@ REFACTOR: make it better
 
 ----
 
+********************
 Test Multiplication
--------------------
+********************
 
 Moving on to test multiplication, the next item on the TODO list
 
 RED : make it fail
-^^^^^^^^^^^^^^^^^^
+===================
 
 I add a failing test called ``test_multiplication`` to ``test_calculator.py``
 
@@ -580,7 +587,7 @@ I add a failing test called ``test_multiplication`` to ``test_calculator.py``
 the terminal responds with an :doc:`/exceptions/AttributeError`
 
 GREEN : make it pass
-^^^^^^^^^^^^^^^^^^^^
+=====================
 
 using what I know so far I add a definition for ``multiplication`` to ``calculator.py``
 
@@ -603,17 +610,18 @@ SUCCESS! The terminal shows passing tests and I remove ``test_multiplication`` f
   # test division
 
 REFACTOR: make it better
-^^^^^^^^^^^^^^^^^^^^^^^^
+=========================
 
 I cannot think of a way to make the code better so I move on to the final test from the TODO list - test division
 
 ----
 
+********************
 Test Division
--------------
+********************
 
 RED : make it fail
-^^^^^^^^^^^^^^^^^^
+===================
 
 I add ``test_division`` to ``test_calculator.py``
 
@@ -657,7 +665,7 @@ once again the terminal shows an :doc:`/exceptions/AttributeError`
 
 
 GREEN : make it pass
-^^^^^^^^^^^^^^^^^^^^
+=====================
 
 
 * I add a ``divide`` :doc:`function </functions/functions>` to ``calculator.py``
@@ -696,11 +704,12 @@ GREEN : make it pass
     # TypeError
     # ZeroDivisionError
 
+************************
 How to Test for Errors
-----------------------
+************************
 
 RED : make it fail
-^^^^^^^^^^^^^^^^^^
+===================
 
 I add a failing test to ``test_calculator.py`` to make  a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ happen, then comment out the previous test that sometimes fails, to remove the variability of the test while I figure out the error
 
@@ -727,7 +736,7 @@ the terminal confirms my expectations with a failure for any value of ``x`` when
   E    ZeroDivisionError: division by zero
 
 GREEN : make it pass
---------------------
+=====================
 
 I can use the `unittest.TestCase.assertRaises <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises>`_ :doc:`method </functions/functions>` in ``test_division`` to confirm that a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ is raised when I try to divide a number by ``0``
 
@@ -744,7 +753,7 @@ I can use the `unittest.TestCase.assertRaises <https://docs.python.org/3/library
 the terminal displays passing tests, and I now have a way to ``catch`` :doc:`Exceptions </how_to/exception_handling>` when testing, which helps to confirm that the code raises an error, and other tests can continue to run
 
 REFACTOR: make it better
-------------------------
+=========================
 
 I change ``test_division`` to test other division cases when the divisor is not 0 by making sure the value of ``y`` that is passed to ``calculator.divide`` is never 0
 
