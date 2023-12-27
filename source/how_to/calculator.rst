@@ -185,7 +185,7 @@ GREEN: make it pass
 
     E  NameError: name 'add' is not defined
 
-* I add the error to the list of exceptions encountered with `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+* I add `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -207,7 +207,7 @@ GREEN: make it pass
 
   The :doc:`/exceptions/AttributeError` was fixed by declaring a variable ``add`` in the ``calculator`` module, even though it is currently assigned to the null value :doc:`None </data_structures/none>`
 
-* The new error is a :doc:`/exceptions/TypeError` which can occur when an `object <https://docs.python.org/3/glossary.html#term-object>`_ is used in a way that it is not supposed to be used. In this case the ``add`` variable is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_ because it refers to :doc:`None </data_structures/none>` which is not a `callable <https://docs.python.org/3/glossary.html#term-callable>`_ object. I add the error to the list of exceptions encountered
+* The new error is a :doc:`/exceptions/TypeError` which can occur when an `object <https://docs.python.org/3/glossary.html#term-object>`_ is called in a way that disagrees with the object's definition. In this case the ``add`` variable is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_ because it refers to :doc:`None </data_structures/none>` which is not a `callable <https://docs.python.org/3/glossary.html#term-callable>`_ object. I add the error to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -229,7 +229,7 @@ GREEN: make it pass
 
     E    TypeError: add() takes 0 positional arguments but 2 were given
 
-* This :doc:`/exceptions/TypeError` shows that the current definition of the ``add`` function takes in no inputs but I provided 2 in the call in the test ``calculator.add(0, 1)``. Since part of the requirement is that the ``add`` function should take in two numbers, I will change it in ``calculator.py`` to match
+* This :doc:`/exceptions/TypeError` shows that the current definition of the ``add`` function takes in 0 inputs even though I provided 2 in ``calculator.add(0, 1)``. Part of the requirement is that the ``add`` function should take in two numbers so I change the definition in ``calculator.py`` to make it match
 
   .. code-block:: python
 
@@ -243,7 +243,7 @@ GREEN: make it pass
     E    AssertionError: None != 1
 
   - An :doc:`/exceptions/AssertionError` is raised when an assertion is :doc:`False </data_structures/booleans>`
-  - Since I am using ``self.assertEqual`` it means the two inputs are not equal. In other words the result of calling ``calculator.add(0, 1)`` is currently not equal to ``1``
+  - ``self.assertEqual`` raises an :doc:`/exceptions/AssertionError` when the  two inputs it is given are not equal. In other words the result of calling ``calculator.add(0, 1)`` is currently not equal to ``1``
 
 * I change the ``add`` function in ``calculator.py`` so it returns the expected value
 
@@ -270,11 +270,11 @@ Solving the problem this way reveals a problem with the test, which means I need
 
 There are a few scenarios to consider from a user's perspective
 
-* If a user tries to add other numbers that are not 0 and 1, the calculator will return 1
-* If they also try to add negative numbers, it will still return 1
-* The function always returns 1 no matter what inputs the user gives
+* If a user tries to add other numbers that are not ``0`` and ``1``, the function will return ``1``
+* If a user trues to add negative numbers, the function wil return ``1``
+* The function will returns ``1`` no matter what inputs the user gives. It is a :doc:`singleton function </functions/functions_singleton>`
 
-Even though the add function currently passes the existing test it does not meet the actual requirement.
+Even though the ``add`` function currently passes the existing test it does not meet the actual requirement.
 
 * I remove ``test_failure`` from ``test_calculator.py`` since it is no longer needed
 
@@ -329,7 +329,7 @@ Even though the add function currently passes the existing test it does not meet
 
 * REFACTOR: make it better
 
-  I can use random inputs to test that the function behaves the way I expect for any given numbers. I will change ``test_calculator.py`` to use python's `random <https://docs.python.org/3/library/random.html?highlight=random#module-random>`_ library to generate random integers between -1 and 1 to represent negative numbers, zero and positive numbers
+  I can use random inputs to test that the function behaves the way I expect for any given numbers. I can use python's `random <https://docs.python.org/3/library/random.html?highlight=random#module-random>`_ library to generate random integers between -1 and 1 to represent negative numbers, zero and positive numbers
 
   .. code-block:: python
 
@@ -347,9 +347,10 @@ Even though the add function currently passes the existing test it does not meet
                 x+y
             )
 
-  - I assign a variable called ``x`` to a random integer between -1 and 1 to represent the case of negative numbers, zero and positive numbers
-  - I assign a variable called ``y`` to a random integer between -1 and 1 to represent the case of negative numbers, zero and positive numbers
-  - I test that when these two random numbers are given to the ``add`` function as inputs it returns their sum  as output and the terminal still displays passing tests
+  - ``x = random.randint(-1, 1)`` assigns a variable called ``x`` to the result of calling ``random.randint(-1, 1)``
+  - ``random.randint(-1, 1)`` returns a random digit between -1, 0 and 1 to represent the case of negative numbers, zero and positive numbers
+  - the ``assertEqual`` tests that when these two random numbers are given to the ``add`` function as inputs it returns the result of adding them together as output
+  - the terminal still shows passing tests
 
   .. code-block:: python
 
@@ -357,8 +358,8 @@ Even though the add function currently passes the existing test it does not meet
 
     ============= 2 passed in 0.01s ===============
 
-  - I no longer need the previous tests because this new test shows the scenarios for zero, negative and positive numbers
-  - I can remove ``test addition`` from the TODO list since it passed, marking the task as completed
+  - I no longer need the previous tests because this new test shows the scenarios for negative numbers, zero and positive numbers
+  - I remove ``test addition`` from the TODO list since it passed, marking the task as completed
 
   .. code-block:: python
 
@@ -372,10 +373,10 @@ Even though the add function currently passes the existing test it does not meet
 This is the Test Driven Development cycle in practice
 
 * **RED**: I write a failing test
-* **GREEN**: I make the test pass by any means necessary
+* **GREEN**: I make the test pass (by any means necessary)
 * **REFACTOR**: I make it better
 
-I repeat this process until I have a working program that has been tested which gives me confidence it will behave in an expected way that meets the requirements of the program.
+I repeat this process until I have a working program that has been tested which gives me confidence it will behave in a way that meets the requirements.
 
 ----
 
@@ -383,7 +384,7 @@ I repeat this process until I have a working program that has been tested which 
 Test Subtraction
 *****************
 
-Since addition works and the next item from the TODO list is test subtraction, I will add a failing test for it
+Since addition works and the next item from the TODO list is ``test subtraction``, I will add a failing test for it
 
 RED : make it fail
 ===================
@@ -417,7 +418,7 @@ RED : make it fail
 
       self.assertEqual(
    >      calculator.subtract(x, y),
-        x-y
+          x-y
       )
    E    AttributeError: module 'calculator' has no attribute 'subtract'
 
