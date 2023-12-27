@@ -183,9 +183,9 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    E    TypeError: 'NoneType' object is not callable
+    TypeError: 'NoneType' object is not callable
 
-  The :doc:`/exceptions/AttributeError` was fixed by declaring a variable called ``add`` in the ``calculator`` module, even though it is currently assigned to the null value :doc:`None </data_structures/none>`
+  The :doc:`/exceptions/AttributeError` was fixed by declaring a variable called ``add`` in the ``calculator`` module
 
 * The new error is a :doc:`/exceptions/TypeError` which can occur when an `object <https://docs.python.org/3/glossary.html#term-object>`_ is called in a way that disagrees with the object's definition. In this case the ``add`` variable is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_ because it refers to :doc:`None </data_structures/none>` which is not a `callable <https://docs.python.org/3/glossary.html#term-callable>`_ object. I add the error to the list of exceptions encountered
 
@@ -209,7 +209,7 @@ GREEN: make it pass
 
     TypeError: add() takes 0 positional arguments but 2 were given
 
-* This :doc:`/exceptions/TypeError` shows that the current definition of the ``add`` function takes in 0 inputs even though I provided 2 - ``calculator.add(0, 1)``. Part of the requirement is that the ``add`` function should take in two numbers so I change the definition in ``calculator.py`` to make it match
+* This :doc:`/exceptions/TypeError` shows that the current definition of the ``add`` function takes in 0 inputs. I provided 2 - ``calculator.add(0, 1)`` in the call. Part of the requirement is that the ``add`` function should take in two numbers so I change the definition in ``calculator.py`` to make it match
 
   .. code-block:: python
 
@@ -232,7 +232,7 @@ GREEN: make it pass
     def add(x, y):
         return 1
 
-  Eureka! The test passed. Time for a victory lap.
+  The test passed. Time for a victory lap.
 
   .. code-block:: python
 
@@ -246,17 +246,17 @@ REFACTOR: Make it Better
 
 Wait a minute. Is it that easy? Do I just provide the expectation of the test to make it pass? In the green phase, yes. I do whatever it takes to make the test pass even if I have to cheat.
 
-Solving the problem this way reveals a problem with the test, which means I need to "Make it Better"
+Solving the problem this way shows a problem with the test, which means I need to "Make it Better"
 
 There are a few scenarios to consider from a user's perspective
 
 * If a user tries to add other numbers that are not ``0`` and ``1``, the function will return ``1``
-* If a user trues to add negative numbers, the function wil return ``1``
-* The function will returns ``1`` no matter what inputs the user gives. It is a :doc:`singleton function </functions/functions_singleton>`
+* If a user tries to add negative numbers, the function wil return ``1``
+* The function will return ``1`` no matter what inputs the user gives. It is a :doc:`singleton function </functions/functions_singleton>`
 
 Even though the ``add`` function currently passes the existing test it does not meet the actual requirement.
 
-* I remove ``test_failure`` from ``test_calculator.py`` since it is no longer needed
+* I qremove ``test_failure`` from ``test_calculator.py`` since it is no longer needed
 
   .. code-block:: python
 
@@ -299,7 +299,7 @@ Even though the ``add`` function currently passes the existing test it does not 
     def add(x, y):
         return x + y
 
-  and the terminal displays passing tests, increasing my confidence in the ``add`` function
+  and the terminal shows passing tests, increasing my confidence in the ``add`` function
 
   .. code-block:: python
 
@@ -329,7 +329,7 @@ Even though the ``add`` function currently passes the existing test it does not 
 
   - ``x = random.randint(-1, 1)`` assigns a variable called ``x`` to the result of calling ``random.randint(-1, 1)``
   - ``random.randint(-1, 1)`` returns a random digit between -1, 0 and 1 to represent the case of negative numbers, zero and positive numbers
-  - the ``assertEqual`` tests that when these two random numbers are given to the ``add`` function as inputs it returns the result of adding them together as output
+  - the ``assertEqual`` tests that when these two random numbers are given to the ``add`` function as inputs, the output returned is the result of adding them together
   - the terminal still shows passing tests
 
   .. code-block:: python
@@ -339,7 +339,7 @@ Even though the ``add`` function currently passes the existing test it does not 
     ============= 2 passed in 0.01s ===============
 
   - I no longer need the previous tests because this new test shows the scenarios for negative numbers, zero and positive numbers
-  - I remove ``test addition`` from the TODO list since it passed, marking the task as completed
+  - I remove ``test addition`` from the TODO list since it passed
 
   .. code-block:: python
 
@@ -353,7 +353,7 @@ Even though the ``add`` function currently passes the existing test it does not 
 This is the Test Driven Development cycle in practice
 
 * **RED**: I write a failing test
-* **GREEN**: I make the test pass (by any means necessary)
+* **GREEN**: I make the test pass (by any means necessary?)
 * **REFACTOR**: I make it better
 
 I repeat this process until I have a working program that has been tested which gives me confidence it will behave in a way that meets the requirements.
@@ -364,7 +364,7 @@ I repeat this process until I have a working program that has been tested which 
 Test Subtraction
 *****************
 
-Since addition works and the next item from the TODO list is ``test subtraction``, I will add a failing test for it
+Since addition works and the next item from the TODO list is ``test subtraction`` it is time to add a failing test
 
 RED : make it fail
 ===================
@@ -396,11 +396,7 @@ RED : make it fail
 
   .. code-block:: python
 
-      self.assertEqual(
-   >      calculator.subtract(x, y),
-          x-y
-      )
-   E    AttributeError: module 'calculator' has no attribute 'subtract'
+    AttributeError: module 'calculator' has no attribute 'subtract'
 
 GREEN : make it pass
 =====================
@@ -419,7 +415,7 @@ GREEN : make it pass
 
   .. code-block:: python
 
-    E    TypeError: 'NoneType' object is not callable
+    TypeError: 'NoneType' object is not callable
 
 * I change the definition of the ``subtract`` variable to make it callable
 
@@ -435,7 +431,7 @@ GREEN : make it pass
 
   .. code-block:: python
 
-    E    TypeError: subtract() takes 0 positional arguments but 2 were given
+    TypeError: subtract() takes 0 positional arguments but 2 were given
 
 * I change the definition of the ``subtract`` :doc:`function </functions/functions>` to match the expectation
 
@@ -451,11 +447,7 @@ GREEN : make it pass
 
   .. code-block:: python
 
-    >    self.assertEqual(
-         calculator.subtract(x, y),
-         x-y
-       )
-    E    AssertionError: None != 0
+    AssertionError: None != 0
 
 * I change the ``subtract`` function in ``calculator.py`` to perform a subtraction operation on its inputs
 
@@ -659,7 +651,10 @@ GREEN : make it pass
     def divide(x, y):
         return x / y
 
-  the terminal response varies since I am using random variables, When ``y`` is ``0`` I get a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ and when ``y`` is ``-1`` or ``1`` it passes
+  the test result changes depending on the variables of ``y``
+
+  - when it is ``0`` I get a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_
+  - when it is ``-1`` or ``1`` the test passes
 
   .. code-block:: python
 
@@ -725,7 +720,7 @@ I can use the `unittest.TestCase.assertRaises <https://docs.python.org/3/library
       #     self.x/self.y
       # )
 
-the terminal shows passing tests, and I now have a way to ``catch`` :doc:`Exceptions </how_to/exception_handling_programs>` when testing, which helps to confirm that the code raises an error, and other tests can continue to run
+the terminal shows passing tests, and I now have a way to ``catch`` :doc:`Exceptions </how_to/exception_handling_programs>` when testing, which helps to confirm that the code raises an error and other tests can continue to run
 
 REFACTOR: make it better
 =========================
@@ -746,8 +741,11 @@ I add other cases when the divisor is not ``0`` by making sure the value of ``y`
 
 
 * ``while self.y == 0:`` creates a loop that repeats as long as ``self.y`` is equal to ``0``
-* ``self.y = random.randint(-1, 1)`` assigns a new random variable to ``self.y`` that could be -1, 0 or 1
-* the loop tells python to assign a new random variable to ``self.y`` as long as it is equal to ``0``. The loop stops when ``self.y`` is not equal to ``0``
+
+  -  ``self.y = random.randint(-1, 1)`` assigns a new random variable to ``self.y`` that could be -1, 0 or 1
+  -  the loop tells python to assign a new random variable to ``self.y`` as long as it is equal to ``0``
+  - The loop stops when ``self.y`` is not equal to ``0``
+
 * I remove ``test_division`` from the TODO list since all the tests pass
 
 ----
