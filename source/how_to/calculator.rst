@@ -131,8 +131,8 @@ RED: make it fail
   - I use the `unittest.TestCase.assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ :doc:`method </functions/functions>` which checks if its 2 inputs are equal. It is similar to the statement ``assert x == y`` or asking ``is x equal to y?``
   - there are two things passed to `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ for evaluation in this case
 
-    * first - ``calculator.add(0, 1)`` - where I give the values ``0`` and ``1`` as inputs to the addition function
-    * second - ``1`` - the expected result from calling ``calculator.add`` when it is given ``0`` and ``1`` as inputs
+    * first: ``calculator.add(0, 1)`` calls the ``add`` function in ``calculator.py`` with ``0`` and ``1`` as inputs
+    * second: ``1`` is the expected result from calling the ``add`` function in ``calculator.py`` with ``0`` and ``1`` as inputs
     * my expectation is that ``calculator.add(0, 1)`` is equal to ``1``
 
 
@@ -140,27 +140,7 @@ RED: make it fail
 
   .. code-block:: python
 
-    ...
-    collected 2 items
-
-    tests/test_calculator.py F.                 [100%]
-
-    =========================== FAILURES =================================
-    __________________ TestCalculator.test_addition ______________________
-
-    self = <tests.test_calculator.TestCalculator testMethod=test_addition>
-
-      def test_addition(self):
-        self.assertEqual(
-    >      calculator.add(0, 1),
-          1
-        )
-    E    AttributeError: module 'calculator' has no attribute 'add'
-
-    tests/test_calculator.py:12: AttributeError
-    ==================== short test summary info =========================
-    FAILED tests/test_calculator.py::TestCalculator::test_addition - AttributeError: module 'calculator' has no attribute 'add'
-    ================== 1 failed, 1 passed in 0.02s =======================
+    AttributeError: module 'calculator' has no attribute 'add'
 
   - The :doc:`/exceptions/AttributeError` is at line 12 in ``test_calculator.py``
   - An :doc:`/exceptions/AttributeError` is raised when accessing or calling an attribute that python cannot find
@@ -183,7 +163,7 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    E  NameError: name 'add' is not defined
+    NameError: name 'add' is not defined
 
 * I add `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ to the list of exceptions encountered
 
@@ -205,7 +185,7 @@ GREEN: make it pass
 
     E    TypeError: 'NoneType' object is not callable
 
-  The :doc:`/exceptions/AttributeError` was fixed by declaring a variable ``add`` in the ``calculator`` module, even though it is currently assigned to the null value :doc:`None </data_structures/none>`
+  The :doc:`/exceptions/AttributeError` was fixed by declaring a variable called ``add`` in the ``calculator`` module, even though it is currently assigned to the null value :doc:`None </data_structures/none>`
 
 * The new error is a :doc:`/exceptions/TypeError` which can occur when an `object <https://docs.python.org/3/glossary.html#term-object>`_ is called in a way that disagrees with the object's definition. In this case the ``add`` variable is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_ because it refers to :doc:`None </data_structures/none>` which is not a `callable <https://docs.python.org/3/glossary.html#term-callable>`_ object. I add the error to the list of exceptions encountered
 
@@ -227,9 +207,9 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    E    TypeError: add() takes 0 positional arguments but 2 were given
+    TypeError: add() takes 0 positional arguments but 2 were given
 
-* This :doc:`/exceptions/TypeError` shows that the current definition of the ``add`` function takes in 0 inputs even though I provided 2 in ``calculator.add(0, 1)``. Part of the requirement is that the ``add`` function should take in two numbers so I change the definition in ``calculator.py`` to make it match
+* This :doc:`/exceptions/TypeError` shows that the current definition of the ``add`` function takes in 0 inputs even though I provided 2 - ``calculator.add(0, 1)``. Part of the requirement is that the ``add`` function should take in two numbers so I change the definition in ``calculator.py`` to make it match
 
   .. code-block:: python
 
@@ -240,12 +220,12 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    E    AssertionError: None != 1
+    AssertionError: None != 1
 
   - An :doc:`/exceptions/AssertionError` is raised when an assertion is :doc:`False </data_structures/booleans>`
   - ``self.assertEqual`` raises an :doc:`/exceptions/AssertionError` when the  two inputs it is given are not equal. In other words the result of calling ``calculator.add(0, 1)`` is currently not equal to ``1``
 
-* I change the ``add`` function in ``calculator.py`` so it returns the expected value
+* I change the function to make it return the expected value
 
   .. code-block:: python
 
@@ -489,12 +469,6 @@ GREEN : make it pass
 
   and all the tests pass - SUCCESS!
 
-  .. code-block:: python
-
-  tests/test_calculator.py ...            [100%]
-
-  ======================= 3 passed in 0.01s ==================
-
 * ``test subtraction`` can now be removed from the TODO list
 
   .. code-block:: python
@@ -512,7 +486,7 @@ REFACTOR: make it better
   - ``x = random.randint(-1, 1)`` happens twice
   - ``y = random.randint(-1, 1)`` happens twice
 
-* I could change the ``TestCalculator`` :doc:`class </classes/classes>` in ``test_calculator.py`` to create the random variables only once by using :doc:`class </classes/classes>` attributes (variables) and reference them in the tests
+* I could change the ``TestCalculator`` :doc:`class </classes/classes>` in ``test_calculator.py`` to create the random variables only once by using :doc:`class </classes/classes>` attributes (variables) and reference these variables later in the tests
 
   .. code-block:: python
 
@@ -685,7 +659,7 @@ GREEN : make it pass
     def divide(x, y):
         return x / y
 
-  the terminal response varies since I am using random variables, When ``y`` is 0 I get a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ and when ``y`` is -1 or 1 it passes
+  the terminal response varies since I am using random variables, When ``y`` is ``0`` I get a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ and when ``y`` is ``-1`` or ``1`` it passes
 
   .. code-block:: python
 
@@ -712,7 +686,7 @@ How to Test for Errors
 RED : make it fail
 ===================
 
-I add a failing test to ``test_calculator.py`` to make  a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ happen, then comment out the previous test that sometimes fails, to remove the variability of the test while I figure out the error
+I add a failing test to ``test_calculator.py`` that makes  a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ happen, then comment out the previous test that sometimes fails, to remove the variability of the test while I figure out the error
 
 .. code-block:: python
 
@@ -726,7 +700,7 @@ I add a failing test to ``test_calculator.py`` to make  a `ZeroDivisionError <ht
       #     self.x/self.y
       # )
 
-the terminal confirms my expectations with a failure for any value of ``x`` when ``y`` is 0. :doc:`Exceptions </how_to/exception_handling>` like `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ break execution of a program. No further code is run when an :doc:`Exception </how_to/exception_handling>` is raised which means that no other tests will run until I take care of this error
+the terminal confirms my expectations with a failure for any value of ``x`` when ``y`` is ``0``. :doc:`Exceptions </how_to/exception_handling_programs>` like `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ break execution of a program. No further code is run when an :doc:`Exception </how_to/exception_handling_programs>` is raised which means that no other tests will run until I take care of this error
 
 .. code-block:: python
 
@@ -751,12 +725,12 @@ I can use the `unittest.TestCase.assertRaises <https://docs.python.org/3/library
       #     self.x/self.y
       # )
 
-the terminal displays passing tests, and I now have a way to ``catch`` :doc:`Exceptions </how_to/exception_handling>` when testing, which helps to confirm that the code raises an error, and other tests can continue to run
+the terminal shows passing tests, and I now have a way to ``catch`` :doc:`Exceptions </how_to/exception_handling_programs>` when testing, which helps to confirm that the code raises an error, and other tests can continue to run
 
 REFACTOR: make it better
 =========================
 
-I change ``test_division`` to test other division cases when the divisor is not 0 by making sure the value of ``y`` that is passed to ``calculator.divide`` is never 0
+I add other cases when the divisor is not ``0`` by making sure the value of ``y`` that is passed to ``calculator.divide`` is never ``0``
 
 .. code-block:: python
 
@@ -771,9 +745,9 @@ I change ``test_division`` to test other division cases when the divisor is not 
       )
 
 
-* ``while self.y == 0:`` creates a loop that repeats whatever indented code follows as long as ``self.y`` is equal to ``0``
+* ``while self.y == 0:`` creates a loop that repeats as long as ``self.y`` is equal to ``0``
 * ``self.y = random.randint(-1, 1)`` assigns a new random variable to ``self.y`` that could be -1, 0 or 1
-* the loop tells python to assign a new random variable to ``self.y`` as long as it is equal to 0. The loop stops when ``self.y`` is not equal to 0
+* the loop tells python to assign a new random variable to ``self.y`` as long as it is equal to ``0``. The loop stops when ``self.y`` is not equal to ``0``
 * I remove ``test_division`` from the TODO list since all the tests pass
 
 ----
