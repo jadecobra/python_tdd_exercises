@@ -62,7 +62,7 @@ GREEN: make it pass
         return None
 
 REFACTOR: make it better
-==================^^^^^
+=========================
 
 * I add more details to ``test_person_factory``. I want to pass in values for ``first_name``, ``last_name``, ``year_of_birth``, and ``sex`` and have the function return a :doc:`dictionary </data_structures/dictionaries>` with the ``first_name``, ``last_name``, ``sex`` and ``age`` calculated from the ``year_of_birth``
 
@@ -166,9 +166,9 @@ REFACTOR: make it better
     ...
 
 
-  - I import the ``datetime`` library so I can use its :doc:`/functions/functions` and :doc:`classes </classes/classes>`
-  - I return the ``year`` attribute of the object returned by the ``now`` :doc:`method </functions/functions>` of the ``datetime.datetime`` :doc:`class </classes/classes>`, which is a representation of the current local date and time. I could also use ``today`` or ``utcnow`` to achieve the same result
-  - I get the ``year`` attribute of the object returned since that is "all I need to get by" cue `Method Man and Mary J. Blige <https://www.youtube.com/watch?v=XW1HNWqdVbk>`_
+  - ``import datetime`` imports the ``datetime`` library so I can use its :doc:`/functions/functions` and :doc:`classes </classes/classes>`
+  - ``return datetime.datetime.now().year`` returns the ``year`` attribute of the object returned by the ``now`` :doc:`method </functions/functions>` of the ``datetime.datetime`` :doc:`class </classes/classes>`, which is a representation of the current local date and time. I could also use ``today`` or ``utcnow`` to achieve the same result
+  - I get the ``year`` attribute of the object returned since that is `all I need to get by <https://www.youtube.com/watch?v=XW1HNWqdVbk>`_
 
 * the terminal shows an :doc:`/exceptions/AssertionError` since the ``person.factory`` function returns :doc:`None </data_structures/none>` and the test expects a :doc:`dictionary </data_structures/dictionaries>` with keys and values. I should change the function to return an empty dictionary so I am at least comparing 2 :doc:`dictionaries </data_structures/dictionaries>`
 
@@ -235,7 +235,7 @@ REFACTOR: make it better
             "sex": "F",
         }
 
-  the terminal shows an :doc:`/exceptions/AssertionError` with no difference for the values of ``first_name``. Good.
+  the terminal shows an :doc:`/exceptions/AssertionError` with no difference for the values of ``first_name``
 
 * I repeat the same move step by step for every other input until the only error left is for ``age``
 
@@ -302,9 +302,11 @@ REFACTOR: make it better
             'sex': sex,
         }
 
-  *HOORAY!* the terminal shows passing tests, time for a victory dance. I can call the ``factory`` :doc:`function </functions/functions>` passing in values for ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` and I get a :doc:`dictionary </data_structures/dictionaries>` that contains the ``first_name``, ``last_name``, ``sex`` and ``age`` of the person
+  *HOORAY!* the terminal shows passing tests, time for a victory dance.
 
-* I noticed that there is some repetition in the test. If I want to test with a different value for any of the arguments passed to ``person.factory``, I would have to make the change in 2 places - once in the argument passed to the :doc:`function </functions/functions>` and then again in the resulting :doc:`dictionary </data_structures/dictionaries>`. I can refactor this to make it easier to make changes to the test when I want,  especially since the programming gods told me `Do Not Repeat Yourself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
+* When I call the ``factory`` :doc:`function </functions/functions>` passing in values for ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``, I will get a :doc:`dictionary </data_structures/dictionaries>` that contains the ``first_name``, ``last_name``, ``sex`` and ``age`` of the person
+
+* I noticed that there is some repetition in the test. If I want to test with a different value for any of the arguments passed to ``person.factory``, I would have to make the change in 2 places - once in the argument passed to the :doc:`function </functions/functions>` and then again in the resulting :doc:`dictionary </data_structures/dictionaries>`. I can refactor this to make it easier to make changes to the test when I want,  especially since the programming gods told me `to Not Repeat Myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
   .. code-block:: python
 
@@ -359,7 +361,7 @@ How to use default keyword arguments in functions
 RED: make it fail
 ==================
 
-* I add a failing test to ``test_person.py``, this time for default values
+* I add a failing test for default values to ``test_person.py``
 
   .. code-block:: python
 
