@@ -738,8 +738,8 @@ I add other cases when the divisor is not ``0`` by making sure the value of ``y`
 * ``while self.y == 0:`` creates a loop that repeats as long as ``self.y`` is equal to ``0``
 
   -  ``self.y = random.randint(-1, 1)`` assigns a new random variable to ``self.y`` that could be -1, 0 or 1
-  -  the loop tells python to assign a new random variable to ``self.y`` as long as it is equal to ``0``
-  - The loop stops when ``self.y`` is not equal to ``0``
+  - the loop tells python to assign a new random variable to ``self.y`` as long as the current value of ``self.y`` is equal to ``0``
+  - the loop stops when ``self.y`` is not equal to ``0``
 
 * I remove ``test_division`` from the TODO list since all the tests pass
 
