@@ -170,7 +170,9 @@ GREEN: make it pass
 REFACTOR: make it better
 **************************
 
-The problem with this solution is that no matter what value I send to the `Telephone.text` :doc:`method </functions/functions>` it will always return `'I received this message: hello'`. I need to make it more generic so it returns a value that is dependent on the input
+The problem with this solution is that no matter what value I send to the ``Telephone.text`` :doc:`method </functions/functions>` it will always return ``'I received this message: hello'``. It is a :doc:`singleton </functions/functions_singleton>`.
+
+I need to make it more generic so it returns a value that is dependent on the input
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -195,7 +197,7 @@ the terminal shows an :doc:`/exceptions/AssertionError`
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I can add variable values to strings by using `string interpolation <https://peps.python.org/pep-0498/>`_, I will change the ``text`` :doc:`method </functions/functions>` in ``telephone.py`` by using an ``f`` string
+I can add variable values to strings by using `string interpolation <https://peps.python.org/pep-0498/>`_, I will change the ``text`` :doc:`method </functions/functions>` in ``telephone.py`` to use an ``f`` string to pass values
 
 .. code-block:: python
 
@@ -298,7 +300,7 @@ REFACTOR: make it better
             "I received this message: 'dict'"
         )
 
-  an :doc:`/exceptions/AssertionError` is displayed in the terminal
+  the terminal shows an :doc:`/exceptions/AssertionError`
 * I change the test to match the expected output
 
   .. code-block:: python
@@ -308,7 +310,7 @@ REFACTOR: make it better
           "I received this message: <class 'bool'>"
       )
 
-  the terminal shows an :doc:`/exceptions/AssertionError` for the next test.
+  the terminal shows an :doc:`/exceptions/AssertionError` for the next test
 * I repeat the solution for each data type until all tests pass
 
   .. code-block:: python
