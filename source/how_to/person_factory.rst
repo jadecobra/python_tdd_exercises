@@ -3,7 +3,7 @@
 How to create a person
 #######################
 
-This is an exercise in creating :doc:`dictionaries </data_structures/dictionaries>`  with :doc:`/functions/functions`. Though it assumes you are familiar with both :doc:`dictionaries </data_structures/dictionaries>`  with :doc:`/functions/functions`, you can still try out the chapter if you are not familiar with those concepts.
+This is an exercise in creating :doc:`dictionaries </data_structures/dictionaries>`  with :doc:`/functions/functions`. Though it assumes you are familiar with :doc:`dictionaries </data_structures/dictionaries>`  and :doc:`/functions/functions`, you can still try out the chapter if you are not familiar with those concepts.
 
 ****************
 Prerequisites
@@ -64,7 +64,7 @@ GREEN: make it pass
 REFACTOR: make it better
 =========================
 
-* I add more details to ``test_person_factory``. I want to pass in values for ``first_name``, ``last_name``, ``year_of_birth``, and ``sex`` and have the function return a :doc:`dictionary </data_structures/dictionaries>` with the ``first_name``, ``last_name``, ``sex`` and ``age`` calculated from the ``year_of_birth``
+* I add more details to ``test_person_factory``. I want to pass in values for ``first_name``, ``last_name``, ``year_of_birth``, ``sex`` and have the function return a :doc:`dictionary </data_structures/dictionaries>` with the ``first_name``, ``last_name``, ``sex`` and ``age`` calculated from the ``year_of_birth``
 
   .. code-block:: python
 
@@ -84,7 +84,7 @@ REFACTOR: make it better
             }
         )
 
-  the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ for the call to ``this_year``
+  the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ for the call to the ``this_year`` :doc:`function </functions/functions>`
 
 * I add the exception to the running list of exceptions encountered
 
@@ -110,7 +110,7 @@ REFACTOR: make it better
     class TestPersonFactory(unittest.TestCase):
     ...
 
-  the terminal shows a :doc:`/exceptions/TypeError` since the ``person.factory`` function signature does not allow arguments to be passed to it and the test sends four arguments
+  the terminal shows a :doc:`/exceptions/TypeError` since the ``person.factory`` :doc:`function signature </functions/functions>` does not allow it to accept inputs and the test sends four arguments when it calls the :doc:`function </functions/functions>`
 
 * I add the error to the list of exceptions encountered
 
@@ -167,7 +167,7 @@ REFACTOR: make it better
 
 
   - ``import datetime`` imports the ``datetime`` library so I can use its :doc:`/functions/functions` and :doc:`classes </classes/classes>`
-  - ``return datetime.datetime.now().year`` returns the ``year`` attribute of the object returned by the ``now`` :doc:`method </functions/functions>` of the ``datetime.datetime`` :doc:`class </classes/classes>`, which is a representation of the current local date and time. I could also use ``today`` or ``utcnow`` to achieve the same result
+  - ``return datetime.datetime.now().year`` returns the ``year`` attribute of the object returned by the ``now`` :doc:`method </functions/functions>` of the ``datetime.datetime`` :doc:`class </classes/classes>`, which is a representation of the current local date and time. I could also use ``today`` or ``utcnow`` instead of ``now`` to achieve the same result
   - I get the ``year`` attribute of the object returned since that is `all I need to get by <https://www.youtube.com/watch?v=XW1HNWqdVbk>`_
 
 * the terminal shows an :doc:`/exceptions/AssertionError` since the ``person.factory`` function returns :doc:`None </data_structures/none>` and the test expects a :doc:`dictionary </data_structures/dictionaries>` with keys and values. I should change the function to return an empty dictionary so I am at least comparing 2 :doc:`dictionaries </data_structures/dictionaries>`
@@ -182,7 +182,7 @@ REFACTOR: make it better
 
   the terminal shows the differences between the :doc:`dictionaries </data_structures/dictionaries>` returned by the ``factory`` function and the one expected in the test
 
-* I change the empty :doc:`dictionary </data_structures/dictionaries>`   in the ``factory`` function to match the expected results
+* When I change the empty :doc:`dictionary </data_structures/dictionaries>`   in the ``factory`` function to match the expected results, the test passes
 
   .. code-block:: python
 
@@ -196,8 +196,6 @@ REFACTOR: make it better
             "last_name": "last_name",
             "sex": "F",
         }
-
-  *LOVELY!* the tests pass!
 * The factory function currently returns the exact same dictionary every time, regardless of what inputs it gets. It is a :doc:`singleton function </functions/functions_singleton>`. To be more useful it has to use the inputs it is given. I add another test to ``test_person_factory.py`` with a different set of inputs
 
   .. code-block:: python
@@ -237,7 +235,7 @@ REFACTOR: make it better
 
   the terminal shows an :doc:`/exceptions/AssertionError` with no difference for the values of ``first_name``
 
-* I repeat the same move step by step for every other input until the only error left is for ``age``
+* I repeat the same move for every other input until the only error left is for ``age``
 
   .. code-block:: python
 
@@ -304,9 +302,9 @@ REFACTOR: make it better
 
   *HOORAY!* the terminal shows passing tests, time for a victory dance.
 
-* When I call the ``factory`` :doc:`function </functions/functions>` passing in values for ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``, I will get a :doc:`dictionary </data_structures/dictionaries>` that contains the ``first_name``, ``last_name``, ``sex`` and ``age`` of the person
+* When I call the ``factory`` :doc:`function </functions/functions>` passing in values for ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``, I get a :doc:`dictionary </data_structures/dictionaries>` that contains the ``first_name``, ``last_name``, ``sex`` and ``age`` of the person
 
-* I noticed that there is some repetition in the test. If I want to test with a different value for any of the arguments passed to ``person.factory``, I would have to make the change in 2 places - once in the argument passed to the :doc:`function </functions/functions>` and then again in the resulting :doc:`dictionary </data_structures/dictionaries>`. I can refactor this to make it easier to make changes to the test when I want,  especially since the programming gods told me `to Not Repeat Myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
+* I noticed that there is some repetition in the test. If I want to test with a different value for any of the arguments passed to ``person.factory``, I would have to make the change in 2 places - once in the argument passed to the :doc:`function </functions/functions>` and then again in the resulting :doc:`dictionary </data_structures/dictionaries>`. I can refactor this to make it easier to make changes to the test when I want,  especially since the programming gods told me `not to repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
   .. code-block:: python
 
@@ -444,9 +442,9 @@ RED: make it fail
 
 ----
 
-We have successfully created a :doc:`function </functions/functions>` that
+That's it, from the tests above you can create a :doc:`function </functions/functions>` that
 
-* returns a dictionary as output
+* returns a :doc:`dictionary </data_structures/dictionaries>` as output
 * takes in keyword arguments as inputs
 * has default values for when a value is not given for a certain input
 * performs a calculation based on a given input to return an output based on an input

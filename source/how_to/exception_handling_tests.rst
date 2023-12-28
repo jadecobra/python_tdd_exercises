@@ -5,21 +5,23 @@ How to test that an Exception is raised
 
 `Exceptions <https://docs.python.org/3/library/exceptions.html?highlight=exception#Exception>`_ are raised in Python when an error occurs and break execution of the program. When an exception is encountered no further instructions in the program will run.
 
-This is useful because it means there is some violation that should be taken care of for the program to continue as expected.
+This is useful because it means there is a problem that should be taken care of for the program to continue as expected.
 
 It is also a pain when it causes the program to exit prematurely. What if I want the program to run regardless of errors? I might want it to give messages to the user who may not care or understand the details that come with Exceptions
 
 Enter Exception Handling, a way to deal with exceptions, allowing programs to make decisions when an Exception is encountered. Enough words, time to write some code.
 
+*************************
 Prerequisites
-^^^^^^^^^^^^^
+*************************
 
 :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>`
 
 ----
 
+*************************
 RED: make it fail
-^^^^^^^^^^^^^^^^^
+*************************
 
 I create a file called ``test_exception_handling.py`` in the ``tests`` folder and add the following
 
@@ -42,8 +44,9 @@ the terminal shows a :doc:`/exceptions/ModuleNotFoundError` and I add it to the 
   # AssertionError
   # ModuleNotFoundError
 
+*************************
 GREEN: make it pass
-^^^^^^^^^^^^^^^^^^^
+*************************
 
 I could take care of this error by creating the module, but in this case I want to catch or handle the exception in the test as a way to prove that a ``ModuleNotFoundError`` was raised when I refer to ``non_existent_module``
 
@@ -58,16 +61,16 @@ I add a ``self.assertRaises`` to ``test_catching_module_not_found_error_in_tests
 and the terminal shows passing tests. How does all this work?
 
 
-* I use the `self.assertRaises <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises>`_ :doc:`method </functions/functions>` from the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class which takes a given `Exception <https://docs.python.org/3/library/exceptions.html?highlight=exception#Exception>`_ as its input, in this case :doc:`/exceptions/ModuleNotFoundError` and checks if that error is raised by the statements given in the context below (the indented block after the ``with`` statement)
+* I use the `unittest.TestCase.assertRaises <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises>`_ :doc:`method </functions/functions>` which takes a given `Exception <https://docs.python.org/3/library/exceptions.html?highlight=exception#Exception>`_ as its input, in this case :doc:`/exceptions/ModuleNotFoundError` and checks if that error is raised by the statements given in the context below (the indented block after the ``with`` statement)
 * ``with`` - creates the context where I test that the exception is raised
 
   - `read more about the with statement <https://docs.python.org/3/reference/compound_stmts.html?highlight=statement#the-with-statement>`_
   - `read more about with statement context managers <https://docs.python.org/3/reference/datamodel.html#with-statement-context-managers>`_
   - `read PEP 343 - The "with" Statement <https://peps.python.org/pep-0343/>`_
 
-
+*************************
 REFACTOR: make it better
-^^^^^^^^^^^^^^^^^^^^^^^^
+*************************
 
 I can use this information to test that a particular exception is raised
 
@@ -84,9 +87,9 @@ I can use this information to test that a particular exception is raised
 
   .. code-block:: python
 
-    E    AttributeError: module 'module' has no attribute 'non_existent_attribute'
+    AttributeError: module 'module' has no attribute 'non_existent_attribute'
 
-  I add the exception to the running list or exceptions encountered
+  I add the exception to the running list of exceptions encountered
 
   .. code-block:: python
 
@@ -122,7 +125,7 @@ I can use this information to test that a particular exception is raised
 
   .. code-block:: python
 
-    E    AttributeError: module 'module' has no attribute 'non_existent_function'
+    AttributeError: module 'module' has no attribute 'non_existent_function'
 
 * GREEN: make it pass
 
@@ -140,7 +143,7 @@ I can use this information to test that a particular exception is raised
 
 * RED: make it fail
 
-  I add another failing line to ``test_catching_attribute_errors_in_tests``, this time for :doc:`classes </classes/classes>`
+  I add a failing line for :doc:`classes </classes/classes>` to ``test_catching_attribute_errors_in_tests``
 
   .. code-block:: python
 
@@ -155,7 +158,7 @@ I can use this information to test that a particular exception is raised
 
   .. code-block:: python
 
-    E    AttributeError: module 'module' has no attribute 'NonExistentClass'
+    AttributeError: module 'module' has no attribute 'NonExistentClass'
 
 * GREEN: make it pass
 
@@ -192,7 +195,7 @@ I can use this information to test that a particular exception is raised
 
   .. code-block:: python
 
-    E    AttributeError: type object 'Class' has no attribute 'non_existent_attribute'
+    AttributeError: type object 'Class' has no attribute 'non_existent_attribute'
 
 * GREEN: make it pass
 
@@ -233,7 +236,7 @@ I can use this information to test that a particular exception is raised
 
   .. code-block:: python
 
-    E    AttributeError: type object 'Class' has no attribute 'non_existent_method'
+    AttributeError: type object 'Class' has no attribute 'non_existent_method'
 
 * GREEN: make it pass
 

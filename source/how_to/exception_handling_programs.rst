@@ -5,15 +5,17 @@ How to handle Exceptions in programs
 
 :doc:`/how_to/exception_handling_tests` showed how to verify that an exception is raised when testing. This chapter shows how to handle exceptions when they are raised in programs
 
+*************************
 Prerequisites
-^^^^^^^^^^^^^
+*************************
 
 :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>`
 
 ----
 
+*************************
 RED: make it fail
-^^^^^^^^^^^^^^^^^
+*************************
 
 I will deliberately trigger an exception in the code and then handle it. I add a failing test to ``test_exception_handling.py``
 
@@ -24,8 +26,9 @@ I will deliberately trigger an exception in the code and then handle it. I add a
 
 the terminal displays a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
+*************************
 GREEN: make it pass
-^^^^^^^^^^^^^^^^^^^
+*************************
 
 * I add it to the running list of exceptions encountered
 
@@ -106,9 +109,9 @@ GREEN: make it pass
 *CONGRATULATIONS!*
 You now know how to deliberately create an exception which means you have absolute power to reshape the universe to your will
 
-
+*************************
 REFACTOR: make it better
-^^^^^^^^^^^^^^^^^^^^^^^^
+*************************
 
 I will now add exception handling to the program so it gives a message when it encounters an exception instead of stopping
 
@@ -270,8 +273,9 @@ In this case
 * ``else`` - when ``function()`` does not raise an ``Exception`` return ``succeeded``
 
 
+*****************************************
 How to use try...except...else...finally
-----------------------------------------
+*****************************************
 
 there is an extra clause in the `try <https://docs.python.org/3/reference/compound_stmts.html#the-try-statement>`_ statement called ``finally`` that is run no matter what happens in the `try...except...else` blocks
 
