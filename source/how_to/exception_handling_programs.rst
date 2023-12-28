@@ -52,7 +52,7 @@ GREEN: make it pass
 
   the terminal shows a :doc:`/exceptions/ModuleNotFoundError`
 
-* I create a file called ``exceptions.py`` in the ``{PROJECT_NAME}`` folder, and the terminal shows an :doc:`/exceptions/AttributeError`
+* I create a file called ``exceptions.py`` in the ``project_name`` folder, and the terminal shows an :doc:`/exceptions/AttributeError`
 * I add a name for the attribute to ``exceptions.py`` and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ since I have not defined ``raises_exception_error`` in ``exceptions.py``
 
   .. code-block:: python
@@ -113,7 +113,7 @@ You now know how to deliberately create an exception which means you have absolu
 REFACTOR: make it better
 *************************
 
-I will now add exception handling to the program so it gives a message when it encounters an exception instead of stopping
+Time to add exception handling to the program so it gives a message when it encounters an exception instead of stopping
 
 
 * RED: make it fail

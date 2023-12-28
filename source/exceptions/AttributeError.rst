@@ -29,7 +29,7 @@ The terminal responds with a :doc:`/exceptions/ModuleNotFoundError`
 
 .. code-block:: python
 
-  ImportError while importing test module '/<PATH_TO_PROJECT_NAME>/{PROJECT_NAME}/tests/test_attribute_error.py'.
+  ImportError while importing test module '/<PATH_TO_PROJECT_NAME>/project_name/tests/test_attribute_error.py'.
   Hint: make sure your test modules/packages have valid python names.
   Traceback:
   ...
@@ -50,7 +50,7 @@ GREEN: make it pass
     # AssertionError
     # ModuleNotFoundError
 
-* then create ``module.py`` in the ``{PROJECT_NAME}`` folder and the terminal all tests are passing
+* then create ``module.py`` in the ``project_name`` folder and the terminal all tests are passing
 * I continue adding tests to ``test_attribute_error.py``
 
   .. code-block:: python
@@ -137,7 +137,7 @@ GREEN: make it pass
     collected 2 items
 
     tests/test_attribute_error.py .                    [ 50%]
-    tests/test_{PROJECT_NAME}.py .                     [100%]
+    tests/test_project_name.py .                     [100%]
 
     ================== 2 passed in 0.03s======================
 

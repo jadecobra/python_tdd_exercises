@@ -147,21 +147,21 @@ GREEN: make it pass
 --------------------
 
 
-* create ``module_0.py`` in the ``{PROJECT_NAME}`` folder and the terminal shows
+* create ``module_0.py`` in the ``project_name`` folder and the terminal shows
 
   .. code-block:: python
 
       import module_1
     E  ModuleNotFoundError: No module called 'module_1'
 
-* create ``module_1.py`` in the ``{PROJECT_NAME}`` folder, the terminal shows the same error for a new line
+* create ``module_1.py`` in the ``project_name`` folder, the terminal shows the same error for a new line
 
   .. code-block:: python
 
       import module_2
     E  ModuleNotFoundError: No module called 'module_2'
 
-* create ``module_2.py`` in the ``{PROJECT_NAME}`` folder, the terminal shows the following
+* create ``module_2.py`` in the ``project_name`` folder, the terminal shows the following
 
   .. code-block:: python
 
@@ -172,7 +172,7 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    tests/test_{PROJECT_NAME}.py .            [100%]
+    tests/test_project_name.py .            [100%]
 
     ================= 1 passed in 0.06s =========================
 
