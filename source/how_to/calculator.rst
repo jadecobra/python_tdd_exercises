@@ -256,7 +256,7 @@ There are a few scenarios to consider from a user's perspective
 
 Even though the ``add`` function currently passes the existing test it does not meet the actual requirement.
 
-* I qremove ``test_failure`` from ``test_calculator.py`` since it is no longer needed
+* I remove ``test_failure`` from ``test_calculator.py`` since it is no longer needed
 
   .. code-block:: python
 
@@ -284,7 +284,7 @@ Even though the ``add`` function currently passes the existing test it does not 
             0
         )
 
-  the terminal responds with an :doc:`/exceptions/AssertionError`, proof that the ``add`` function always returns ``1`` no matter what inputs are given
+  the terminal responds with an :doc:`/exceptions/AssertionError`, showing that the ``add`` function always returns ``1`` no matter what inputs are given
 
   .. code-block:: python
 
@@ -299,7 +299,7 @@ Even though the ``add`` function currently passes the existing test it does not 
     def add(x, y):
         return x + y
 
-  and the terminal shows passing tests, increasing my confidence in the ``add`` function
+  and the terminal shows passing tests which increases my confidence in the ``add`` function
 
   .. code-block:: python
 
@@ -309,44 +309,44 @@ Even though the ``add`` function currently passes the existing test it does not 
 
 * REFACTOR: make it better
 
-  I can use random inputs to test that the function behaves the way I expect for any given numbers. I can use python's `random <https://docs.python.org/3/library/random.html?highlight=random#module-random>`_ library to generate random integers between -1 and 1 to represent negative numbers, zero and positive numbers
+  - I can use random inputs to test that the function behaves the way I expect for any given numbers. I can use python's `random <https://docs.python.org/3/library/random.html?highlight=random#module-random>`_ library to generate random integers between -1 and 1 to represent negative numbers, zero and positive numbers
 
-  .. code-block:: python
+    .. code-block:: python
 
-    import calculator
-    import random
-    import unittest
+      import calculator
+      import random
+      import unittest
 
-    class TestCalculator(unittest.TestCase):
+      class TestCalculator(unittest.TestCase):
 
-        def test_addition(self):
-            x = random.randint(-1, 1)
-            y = random.randint(-1, 1)
-            self.assertEqual(
-                calculator.add(x, y),
-                x+y
-            )
+          def test_addition(self):
+              x = random.randint(-1, 1)
+              y = random.randint(-1, 1)
+              self.assertEqual(
+                  calculator.add(x, y),
+                  x+y
+              )
 
-  - ``x = random.randint(-1, 1)`` assigns a variable called ``x`` to the result of calling ``random.randint(-1, 1)``
-  - ``random.randint(-1, 1)`` returns a random digit between -1, 0 and 1 to represent the case of negative numbers, zero and positive numbers
-  - the ``assertEqual`` tests that when these two random numbers are given to the ``add`` function as inputs, the output returned is the result of adding them together
-  - the terminal still shows passing tests
+    * ``x = random.randint(-1, 1)`` assigns a variable called ``x`` to the result of calling ``random.randint(-1, 1)``
+    * ``random.randint(-1, 1)`` returns a random digit between -1, 0 and 1 to represent the case of negative numbers, zero and positive numbers
+    * the ``assertEqual`` tests that when these two random numbers are given to the ``add`` function as inputs, the output returned is the result of adding them together
+    * the terminal still shows passing tests
 
-  .. code-block:: python
+      .. code-block:: python
 
-    tests/test_calculator.py ..              [100%]
+        tests/test_calculator.py ..              [100%]
 
-    ============= 2 passed in 0.01s ===============
+        ============= 2 passed in 0.01s ===============
 
   - I no longer need the previous tests because this new test shows the scenarios for negative numbers, zero and positive numbers
   - I remove ``test addition`` from the TODO list since it passed
 
-  .. code-block:: python
+    .. code-block:: python
 
-    # TODO
-    # test subtraction
-    # test multiplication
-    # test division
+      # TODO
+      # test subtraction
+      # test multiplication
+      # test division
 
 ----
 
@@ -356,7 +356,7 @@ This is the Test Driven Development cycle in practice
 * **GREEN**: I make the test pass (by any means necessary?)
 * **REFACTOR**: I make it better
 
-I repeat this process until I have a working program that has been tested which gives me confidence it will behave in a way that meets the requirements.
+I repeat this process until I have a working program that has been tested which gives me confidence it works in a way that meets the requirements.
 
 ----
 
@@ -366,7 +366,7 @@ Test Subtraction
 
 Since addition works and the next item from the TODO list is ``test subtraction`` it is time to add a failing test
 
-RED : make it fail
+RED: make it fail
 ===================
 
 
@@ -516,7 +516,7 @@ Test Multiplication
 
 Moving on to test multiplication, the next item on the TODO list
 
-RED : make it fail
+RED: make it fail
 ===================
 
 I add a failing test called ``test_multiplication`` to ``test_calculator.py``
@@ -587,7 +587,7 @@ I cannot think of a way to make the code better so I move on to the final test f
 Test Division
 ********************
 
-RED : make it fail
+RED: make it fail
 ===================
 
 I add ``test_division`` to ``test_calculator.py``
@@ -678,7 +678,7 @@ GREEN : make it pass
 How to Test for Errors
 ************************
 
-RED : make it fail
+RED: make it fail
 ===================
 
 I add a failing test to ``test_calculator.py`` that makes  a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ happen, then comment out the previous test that sometimes fails, to remove the variability of the test while I figure out the error
