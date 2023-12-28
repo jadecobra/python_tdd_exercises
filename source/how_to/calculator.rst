@@ -459,7 +459,7 @@ GREEN : make it pass
     def subtract(x, y):
         return x - y
 
-  and all the tests pass - SUCCESS!
+  SUCCESS! All the tests pass
 
 * ``test subtraction`` can now be removed from the TODO list
 
@@ -505,7 +505,7 @@ REFACTOR: make it better
             )
 
   - all tests are still passing, so my change did not break anything. Fantastic!
-  - The ``x`` and ``y`` variables are now initialized once as :doc:`class </classes/classes>` attributes (variables) and can be accessed later in every test using ``self.x`` and ``self.y`` the same way I can call `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`methods </functions/functions>` like `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ by typing ``self.assertEqual``
+  - The ``x`` and ``y`` variables are initialized once as :doc:`class </classes/classes>` attributes (variables) and accessed later in every test using ``self.x`` and ``self.y`` the same way I can call `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`methods </functions/functions>` like `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ by using ``self.assertEqual``
 
 
 ----
@@ -575,11 +575,6 @@ SUCCESS! The terminal shows passing tests and I remove ``test_multiplication`` f
 
   # TODO
   # test division
-
-REFACTOR: make it better
-=========================
-
-I cannot think of a way to make the code better so I move on to the final test from the TODO list - test division
 
 ----
 
@@ -653,8 +648,8 @@ GREEN : make it pass
 
   the test result changes depending on the variables of ``y``
 
-  - when it is ``0`` I get a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_
-  - when it is ``-1`` or ``1`` the test passes
+  - when ``y`` is ``0`` it raises a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_
+  - when ``y`` is ``-1`` or ``1`` the test passes
 
   .. code-block:: python
 
@@ -681,7 +676,7 @@ How to Test for Errors
 RED: make it fail
 ===================
 
-I add a failing test to ``test_calculator.py`` that makes  a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ happen, then comment out the previous test that sometimes fails, to remove the variability of the test while I figure out the error
+I add a failing test to ``test_calculator.py`` that makes  a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ happen. I also comment out the previous test that sometimes fails to remove the variability of the test while I figure out the error
 
 .. code-block:: python
 
