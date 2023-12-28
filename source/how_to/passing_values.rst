@@ -10,7 +10,7 @@ When testing or using a program, data can be provided as input to the program wi
   input_data -> process -> output
 
 
-Which is similar to functions in mathematics where a function is represented as ``f`` with input ``x`` and output ``y``
+Which is similar to functions in mathematics where a function is represented as ``f`` with ``x`` as input and ``y`` as output
 
 
 .. code-block:: python
@@ -24,36 +24,38 @@ or in other words
   process(input_data) -> output
 
 
-When testing code I am asking the question is the result of calling ``f`` with a given input ``x`` equal to ``y``? or is the result of running ``process`` with a given ``input_data`` equal to ``output``? For example  I could use an assert statement
+When testing code I want to know if the result of calling ``f`` with a given input ``x`` is equal to ``y`` or if the result of running ``process`` with ``input_data`` is equal to ``output``
 
-.. code-block:: python
+* Here is an example with an assert statement
 
-  assert f(x) == y
-  assert process(input_data) == output
+  .. code-block:: python
+
+    assert f(x) == y
+    assert process(input_data) == output
+
+* Here is an example with the `unittest.TestCase.assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ :doc:`method </functions/functions>`
+
+  .. code-block:: python
+
+    self.assertEqual(f(x), y)
+    self.assertEqual(process(input_data), output)
 
 
-or use the `self.assertEqual` :doc:`method </functions/functions>` from `unittest.TestCase`
+this chapter goes over how to pass values from tests to programs using `Formatted string literals <https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals>`_ to place values inside a string
 
-.. code-block:: python
-
-  self.assertEqual(f(x), y)
-  self.assertEqual(process(input_data), output)
-
-
-this chapter goes over how to pass values from tests to programs using `Formatted string literals <https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals>`_ for placing values inside a string
-
+****************
 Prerequisites
-^^^^^^^^^^^^^
+****************
 
 :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>`
 
 ----
 
+*******************
 RED: make it fail
------------------
+*******************
 
-I create a file called `test_passing_values.py` in the ``tests`` folder with the following text
-
+I create a file called ``test_passing_values.py`` in the ``tests`` folder with the following text
 
 .. code-block:: python
 
@@ -77,9 +79,9 @@ the terminal shows a :doc:`/exceptions/ModuleNotFoundError` and I add it to the 
   # AssertionError
   # ModuleNotFoundError
 
-
+**********************
 GREEN: make it pass
----------------------
+**********************
 
 - I create a file called ``telephone.py`` in the project folder and the terminal shows an :doc:`/exceptions/AttributeError` which I add to the list of exceptions
 
@@ -98,7 +100,7 @@ GREEN: make it pass
 
         pass
 
-  the terminal still displays an :doc:`/exceptions/AttributeError` but with a different message
+  the terminal still shows an :doc:`/exceptions/AttributeError` but with a different message
 - I add a name called ``text`` to the ``Telephone`` class
 
   .. code-block:: python
@@ -107,7 +109,7 @@ GREEN: make it pass
 
         text
 
-  the terminal displays a ``NameError`` and I add it to the list of exceptions encountered
+  the terminal shows a ``NameError`` and I add it to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -145,7 +147,7 @@ GREEN: make it pass
         def text():
             return None
 
-  and the terminal displays another :doc:`/exceptions/TypeError` because when I called ``telephone.Telephone.text('hello')`` in the test I provided a positional argument as input with the value ``hello``, but the signature of the ``text`` :doc:`method </functions/functions>` does not take in any arguments
+  and the terminal shows another :doc:`/exceptions/TypeError`. I I provided a positional argument as input with the value ``hello`` when I called ``telephone.Telephone.text`` in the test , but the signature of the ``text`` :doc:`method </functions/functions>` does not take in any arguments
 - I change the definition for ``text`` to make it accept a value as input
 
   .. code-block:: python
@@ -156,17 +158,17 @@ GREEN: make it pass
         def text(value):
             return None
 
-  I now see an :doc:`/exceptions/AssertionError` in the terminal
-- and change the return statement with the expected value to make the test pass
+  the terminal shows an :doc:`/exceptions/AssertionError`
+- I change the return statement with the expected value to make the test pass
 
   .. code-block:: python
 
       def text(value):
           return 'I received this message: hello'
 
-
+**************************
 REFACTOR: make it better
--------------------------
+**************************
 
 The problem with this solution is that no matter what value I send to the `Telephone.text` :doc:`method </functions/functions>` it will always return `'I received this message: hello'`. I need to make it more generic so it returns a value that is dependent on the input
 
@@ -202,8 +204,9 @@ I can add variable values to strings by using `string interpolation <https://pep
 
 the terminal shows passing tests
 
+**************************
 Passing Data Structures
------------------------
+**************************
 
 I want to try this with other python data structures to see what happens
 
@@ -305,7 +308,7 @@ REFACTOR: make it better
           "I received this message: <class 'bool'>"
       )
 
-  the terminal displays an :doc:`/exceptions/AssertionError` for the next test.
+  the terminal shows an :doc:`/exceptions/AssertionError` for the next test.
 * I repeat the solution for each data type until all tests pass
 
   .. code-block:: python
@@ -316,7 +319,7 @@ REFACTOR: make it better
             'I received this message: hello'
         )
         self.assertEqual(
-            telephone.Telephone.text('yes'),
+            telephone.Telewphone.text('yes'),
             'I received this message: yes'
         )
         self.assertEqual(
