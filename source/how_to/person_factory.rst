@@ -3,20 +3,22 @@
 How to create a person
 #######################
 
-This is an exercise in creating :doc:`dictionaries </data_structures/dictionaries>`  with :doc:`/functions/functions`. It assumes you are familiar with :doc:`/functions/functions` and :doc:`dictionaries </data_structures/dictionaries>` though you can still try out the chapter if you are not
+This is an exercise in creating :doc:`dictionaries </data_structures/dictionaries>`  with :doc:`/functions/functions`. Though it assumes you are familiar with both :doc:`dictionaries </data_structures/dictionaries>`  with :doc:`/functions/functions`, you can still try out the chapter if you are not familiar with those concepts.
 
+****************
 Prerequisites
------------------------------------------------
+****************
 
 :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>`
 
 ----
 
+***********************************************
 How to use dictionaries as factories in Python
------------------------------------------------
+***********************************************
 
 RED: make it fail
-^^^^^^^^^^^^^^^^^
+==================
 
 I create a file called ``test_person_factory.py`` in the ``tests`` folder and add the following
 
@@ -40,7 +42,7 @@ the terminal shows a ``ModuleNotFoundError`` and I add it to the list of excepti
   # ModuleNotFoundError
 
 GREEN: make it pass
-^^^^^^^^^^^^^^^^^^^
+====================
 
 
 * I create a file called ``person.py`` in the project folder and the terminal shows an :doc:`/exceptions/AttributeError` which I add to the list of exceptions
@@ -60,8 +62,7 @@ GREEN: make it pass
         return None
 
 REFACTOR: make it better
-^^^^^^^^^^^^^^^^^^^^^^^^
-
+==================^^^^^
 
 * I add more details to ``test_person_factory``. I want to pass in values for ``first_name``, ``last_name``, ``year_of_birth``, and ``sex`` and have the function return a :doc:`dictionary </data_structures/dictionaries>` with the ``first_name``, ``last_name``, ``sex`` and ``age`` calculated from the ``year_of_birth``
 
@@ -351,12 +352,12 @@ REFACTOR: make it better
               }
           )
 
-
+***************************************************
 How to use default keyword arguments in functions
---------------------------------------------------
+***************************************************
 
 RED: make it fail
-^^^^^^^^^^^^^^^^^
+==================
 
 * I add a failing test to ``test_person.py``, this time for default values
 

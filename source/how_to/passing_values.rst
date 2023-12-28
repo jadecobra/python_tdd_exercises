@@ -170,12 +170,12 @@ GREEN: make it pass
 REFACTOR: make it better
 **************************
 
-The problem with this solution is that no matter what value I send to the ``Telephone.text`` :doc:`method </functions/functions>` it will always return ``'I received this message: hello'``. It is a :doc:`singleton </functions/functions_singleton>`.
+The problem with this solution is that no matter what value I send to the ``Telephone.text`` :doc:`method </functions/functions>` it will always return ``'I received this message: hello'``
 
-I need to make it more generic so it returns a value that is dependent on the input
+I need to make it more generic to return a value based on the input it receives
 
 RED: make it fail
-^^^^^^^^^^^^^^^^^
+=========================
 
 I add a new failing test to ``test_text_messages``
 
@@ -195,7 +195,7 @@ I add a new failing test to ``test_text_messages``
 the terminal shows an :doc:`/exceptions/AssertionError`
 
 GREEN: make it pass
-^^^^^^^^^^^^^^^^^^^
+=========================
 
 I can add variable values to strings by using `string interpolation <https://peps.python.org/pep-0498/>`_, I will change the ``text`` :doc:`method </functions/functions>` in ``telephone.py`` to use an ``f`` string to pass values
 
@@ -213,7 +213,7 @@ Passing Data Structures
 I want to try this with other python data structures to see what happens
 
 RED: make it fail
-^^^^^^^^^^^^^^^^^
+=========================
 
 I add a new failing test to ``test_text_messages``
 
@@ -236,7 +236,7 @@ I add a new failing test to ``test_text_messages``
 the terminal shows an :doc:`/exceptions/AssertionError`
 
 GREEN: make it pass
-^^^^^^^^^^^^^^^^^^^
+=========================
 
 I change the test to match the expected value
 
@@ -252,7 +252,7 @@ I change the test to match the expected value
 the terminal shows passing tests
 
 REFACTOR: make it better
-^^^^^^^^^^^^^^^^^^^^^^^^
+=========================
 
 * as an exercise I add more tests to ``test_text_messages``
 
@@ -321,7 +321,7 @@ REFACTOR: make it better
             'I received this message: hello'
         )
         self.assertEqual(
-            telephone.Telewphone.text('yes'),
+            telephone.Telephone.text('yes'),
             'I received this message: yes'
         )
         self.assertEqual(
