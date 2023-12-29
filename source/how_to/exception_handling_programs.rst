@@ -27,7 +27,7 @@ RED: make it fail
 
   the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
-* I add the error to the running list of exceptions encountered
+* I add the error to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -66,7 +66,7 @@ GREEN: make it pass
 
     raises_exception_error = None
 
-  which I add to the running list of exceptions encountered
+  which I add to the list of exceptions encountered
 
   .. code-block:: python
 

@@ -132,7 +132,7 @@ Looking at the traceback starting from the bottom
 
 * ``ModuleNotFoundError`` is raised when an import statement fails because python cannot find a module/package with the given name, in this case ``module_0`` does not exist
 * ``import module_0`` is the line of code that caused the failure
-* Add the error to the running list of Exceptions encountered
+* Add the error to the list of Exceptions encountered
 
   .. code-block:: python
 

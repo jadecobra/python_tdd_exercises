@@ -84,7 +84,7 @@ GREEN: make it pass
     duration = None
 
   the terminal shows a :doc:`/exceptions/TypeError` because :doc:`None </data_structures/none>` is not callable
-* I add the exception to the running list
+* I add the exception to the list
 
   .. code-block:: python
 

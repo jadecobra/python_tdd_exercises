@@ -86,7 +86,7 @@ REFACTOR: make it better
 
   the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ for the call to the ``this_year`` :doc:`function </functions/functions>`
 
-* I add the exception to the running list of exceptions encountered
+* I add the exception to the list of exceptions encountered
 
   .. code-block:: python
 

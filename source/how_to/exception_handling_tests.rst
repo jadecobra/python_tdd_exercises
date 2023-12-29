@@ -47,7 +47,7 @@ the terminal shows a :doc:`/exceptions/ModuleNotFoundError` and I add it to the 
 GREEN: make it pass
 *************************
 
-I could take care of this error by creating the module, but in this case I want to catch or handle the exception in the test as a way to show that a ``ModuleNotFoundError`` was raised when I refer to ``non_existent_module``
+I can take care of this error by creating the module, but I want to catch or handle the exception in the test as a way to show that a ``ModuleNotFoundError`` was raised when I try to import ``non_existent_module``
 
 I add a ``self.assertRaises`` to ``test_catching_module_not_found_error_in_tests``
 
@@ -75,12 +75,21 @@ I can use this information to test that a particular exception is raised
 
 * RED: make it fail
 
-  I add a new test to ``TestExceptionHandling`` in ``test_exception_handling.py``
+  I add a new test
 
   .. code-block:: python
 
     def test_catching_attribute_errors_in_tests(self):
         module.non_existent_attribute
+
+  the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ ::
+
+    NameError: name 'module' is not defined
+* I add it to the list of exceptions encountered
+* I add an import statement for ``module`` at the top of ``test_exception_handling.py`` ::
+
+    import module
+    import unittest
 
   the terminal shows an :doc:`/exceptions/AttributeError` because the called attribute ``non_existent_attribute`` does not exist in ``module.py``
 
@@ -88,7 +97,7 @@ I can use this information to test that a particular exception is raised
 
     AttributeError: module 'module' has no attribute 'non_existent_attribute'
 
-  I add the exception to the running list of exceptions encountered
+  I add the exception to the list of exceptions encountered
 
   .. code-block:: python
 

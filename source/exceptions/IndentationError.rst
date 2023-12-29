@@ -28,7 +28,7 @@ RED: make it fail
     E    'b'
     E  IndentationError: unexpected indent
 
-  add ``IndentationError`` to the running list of Exceptions encountered
+  add ``IndentationError`` to the list of Exceptions encountered
 
   .. code-block:: python
 

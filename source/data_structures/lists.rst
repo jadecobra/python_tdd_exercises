@@ -407,7 +407,7 @@ the terminal shows an `IndexError <https://docs.python.org/3/library/exceptions.
 GREEN: make it pass
 ===================
 
-* I add `IndexError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#IndexError>`_ to the running list of exceptions encountered
+* I add `IndexError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#IndexError>`_ to the list of exceptions encountered
 
   .. code-block:: python
 

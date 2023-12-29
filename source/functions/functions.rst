@@ -53,7 +53,7 @@ the terminal shows a :doc:`/exceptions/ModuleNotFoundError`\ , and I add it to t
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-* I create a file called ``functions.py`` in the project folder and the terminal shows an :doc:`/exceptions/AttributeError`\ , which I add to the running list of exceptions encountered
+* I create a file called ``functions.py`` in the project folder and the terminal shows an :doc:`/exceptions/AttributeError`\ , which I add to the list of exceptions encountered
 
   .. code-block:: python
 

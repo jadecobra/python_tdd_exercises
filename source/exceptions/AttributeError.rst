@@ -42,7 +42,7 @@ A :doc:`/exceptions/ModuleNotFoundError` is raised when a name is provided to an
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-* I change the running list of exceptions encountered
+* I change the list of exceptions encountered
 
   .. code-block:: python
 
@@ -114,7 +114,7 @@ GREEN: make it pass
   - ``variable_0`` the offending line
   - ``module.py:1: in <module>`` the location of the offending line
 
-* I add `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ to my running list of errors encountered
+* I add `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ to my list of errors encountered
 
   .. code-block:: python
 
@@ -611,7 +611,7 @@ GREEN: make it pass
   the error is caused by the ``return`` statement being outside a :doc:`function </functions/functions>`
 
 
-* I add `SyntaxError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#SyntaxError>`_ to the running list of exceptions
+* I add `SyntaxError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#SyntaxError>`_ to the list of exceptions
 
   .. code-block:: python
 

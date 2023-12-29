@@ -46,7 +46,7 @@ the terminal shows a :doc:`/exceptions/ModuleNotFoundError` because I have an im
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-* I add :doc:`/exceptions/ModuleNotFoundError` to the running list of exceptions encountered
+* I add :doc:`/exceptions/ModuleNotFoundError` to the list of exceptions encountered
 
   .. code-block:: python
 
