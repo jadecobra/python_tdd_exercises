@@ -267,27 +267,28 @@ I add a `try...except...else <https://docs.python.org/3/reference/compound_stmts
 the terminal shows passing tests
 
 I think of the  `try...except...else <https://docs.python.org/3/reference/compound_stmts.html#the-try-statement>`_ statement as
-* ``try`` this
-* when this raises an ``Exception`` do something
-* when this does not raise an ``Exception`` do something else
+
+* ``try`` **this**
+* ``except Exception`` - when **this** raises an ``Exception`` do something
+* ``else`` - when **this** does not raise an ``Exception`` do something else
 
 In this case
 
-* ``try`` calling ``function()``
-* ``except Exception`` - when ``function()`` raises an ``Exception`` return ``failed``
-* ``else`` - when ``function()`` does not raise an ``Exception`` return ``succeeded``
+* ``try`` **calling** ``function()``
+* ``except Exception`` - when **calling** ``function()`` raises an ``Exception`` return ``failed``
+* ``else`` - when **calling** ``function()`` does not raise an ``Exception`` return ``succeeded``
 
 
 *****************************************
 How to use try...except...else...finally
 *****************************************
 
-there is an extra clause in the `try <https://docs.python.org/3/reference/compound_stmts.html#the-try-statement>`_ statement called ``finally`` that is run no matter what happens in the `try...except...else` blocks
+there is an extra clause in the `try <https://docs.python.org/3/reference/compound_stmts.html#the-try-statement>`_ statement called ``finally`` that is run no matter what happens in the ``try...except...else`` blocks
 
 RED: make it fail
-^^^^^^^^^^^^^^^^^
+=========================
 
-I add a failing test for it to ``test_exception_handling.py``
+I add a failing test to ``test_exception_handling.py``
 
 .. code-block:: python
 
@@ -302,7 +303,7 @@ I add a failing test for it to ``test_exception_handling.py``
 the terminal shows an :doc:`/exceptions/AttributeError`
 
 GREEN: make it pass
-^^^^^^^^^^^^^^^^^^^
+=========================
 
 * I add a name to ``exceptions.py`` and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
@@ -330,13 +331,11 @@ GREEN: make it pass
     def always_returns(function):
         return function()
 
-  the terminal shows
+  the terminal shows an :doc:`/exceptions/AssertionError` because ``exceptions.always_returns`` returns the value of ``does_not_raise_exception_error`` which is :doc:`None </data_structures/none>` and is not equal to the expectation in the test which is ``'always_returns_this'``
 
   .. code-block:: python
 
-  AssertionError: None != 'always_returns_this'
-
-  because ``exceptions.always_returns`` returns the value of ``does_not_raise_exception_error`` which is :doc:`None </data_structures/none>` and is not equal to the expectation in the test which is ``always_returns_this``
+    AssertionError: None != 'always_returns_this'
 
 * I add exception handling using ``try...except...else``
 
@@ -350,7 +349,7 @@ GREEN: make it pass
         else:
             return 'succeeded'
 
-  the terminal shows an :doc:`/exceptions/AssertionError`. No exception is raised when ``does_not_raise_exception_error`` is called by ``always_returns_this``, it returns ``succeeded`` which is not equal to ``always_returns_this``
+  the terminal shows an :doc:`/exceptions/AssertionError`. No exception is raised when ``does_not_raise_exception_error`` is called by ``always_returns_this``, it returns ``'succeeded'`` which is not equal to ``'always_returns_this'``
 
 * I can try adding another return statement to the function to see if that would work
 
@@ -367,9 +366,9 @@ GREEN: make it pass
 
   no change, the terminal still has the same error. in Python the ``return`` statement is the last thing run in the function, anything written after a ``return`` statement is ignored
 
-  Since the function returns ``succeeded`` it ignores the return statement below it.
+  The function returns ``succeeded`` from the ``else`` block and ignores the return statement below it
 
-* I can add a clause to force it to ignore the other return statements and only return what I want. I add a ``finally`` clause to the ``try...except...else`` block
+* I add a ``finally`` clause to force it to ignore the other return statements and only return what I want
 
   .. code-block:: python
 
@@ -385,7 +384,7 @@ GREEN: make it pass
 
   the terminal shows passing tests. the ``finally`` clause is always run regardless of what happens in the ``try..except..else`` parts
 
-* I will add one more test to verify that the code in the ``finally`` block will always run
+* I will add one more test to show that the code in the ``finally`` block will always run
 
   .. code-block:: python
 
@@ -425,12 +424,12 @@ GREEN: make it pass
 
   and the test passes
 
-* though ``always_returns`` could have been defined as a ``singleton`` :doc:`function </functions/functions>` and the tests would still pass, it  would not show how to use ``try...except...else...finally``
+.. NOTE::
 
-  .. code-block:: python
+  ``always_returns`` could have been defined as a ``singleton`` :doc:`function </functions/functions>` and the tests would still pass, it  just would not show how to use ``try...except...else...finally`` ::
 
-    def always_returns(function):
-        return 'always_returns_this`
+      def always_returns(function):
+          return 'always_returns_this`
 
 ----
 
