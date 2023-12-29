@@ -35,7 +35,7 @@ GREEN: make it pass
     def passthrough_with_keyword_arguments():
         return None
 
-  the terminal displays a :doc:`/exceptions/TypeError`
+  the terminal shows a :doc:`/exceptions/TypeError`
 
   .. code-block:: python
 

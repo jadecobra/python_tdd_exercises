@@ -51,7 +51,7 @@ GREEN: make it pass
     ):
         return input_data, second_argument
 
-  the terminal displays passing tests
+  the terminal shows passing tests
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^

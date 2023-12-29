@@ -9,7 +9,8 @@ How to handle Exceptions in programs
 Prerequisites
 *************************
 
-:doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>`
+* :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>`
+* :doc:`/how_to/exception_handling_tests`
 
 ----
 
@@ -17,20 +18,16 @@ Prerequisites
 RED: make it fail
 *************************
 
-I will deliberately trigger an exception in the code and then handle it. I add a failing test to ``test_exception_handling.py``
+* I add a failing test to ``test_exception_handling.py`` and will cause an exception, then handle it.
 
-.. code-block:: python
+  .. code-block:: python
 
-  def test_catching_exceptions(self):
-      exceptions.raises_exception_error()
+    def test_catching_exceptions(self):
+        exceptions.raises_exception_error()
 
-the terminal displays a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+  the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
-*************************
-GREEN: make it pass
-*************************
-
-* I add it to the running list of exceptions encountered
+* I add the error to the running list of exceptions encountered
 
   .. code-block:: python
 
@@ -39,6 +36,10 @@ GREEN: make it pass
     # ModuleNotFoundError
     # AttributeError
     # NameError
+
+*************************
+GREEN: make it pass
+*************************
 
 * A `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ is raised when a name is used within a module with no definition for the name. In the test I call ``exceptions.raises_exception_error`` but there is no definition for ``exceptions``
 
@@ -113,7 +114,7 @@ You now know how to deliberately create an exception which means you have absolu
 REFACTOR: make it better
 *************************
 
-Time to add exception handling to the program so it gives a message when it encounters an exception instead of stopping
+Time to add exception handling to the program so it returns a message when it encounters an exception instead of stopping
 
 
 * RED: make it fail
@@ -140,20 +141,20 @@ Time to add exception handling to the program so it gives a message when it enco
 
     exception_handler
 
-  I assign ``exception_handler`` to the null value :doc:`None </data_structures/none>` and the terminal displays a :doc:`/exceptions/TypeError`
+  I assign ``exception_handler`` to the null value :doc:`None </data_structures/none>` and the terminal shows a :doc:`/exceptions/TypeError`
 
   .. code-block:: python
 
     exception_handler = None
 
-  when I change ``exception_handler`` to a function the terminal displays a :doc:`/exceptions/TypeError` with a different message
+  when I change ``exception_handler`` to a function the terminal shows a :doc:`/exceptions/TypeError` with a different message
 
   .. code-block:: python
 
     def exception_handler():
         return None
 
-  I change the signature for ``exception_handler`` to accept a positional argument
+  I change the :doc:`function signature </functions/functions>` for ``exception_handler`` to accept a positional argument
 
   .. code-block:: python
 
@@ -311,7 +312,7 @@ GREEN: make it pass
 
     always_returns = None
 
-* I redefine ``always_returns`` as a function and the terminal displays a :doc:`/exceptions/TypeError`
+* I redefine ``always_returns`` as a function and the terminal shows a :doc:`/exceptions/TypeError`
 
   .. code-block:: python
 
@@ -345,7 +346,7 @@ GREEN: make it pass
         else:
             return 'succeeded'
 
-  the terminal displays an :doc:`/exceptions/AssertionError`. No exception is raised when ``does_not_raise_exception_error`` is called by ``always_returns_this``, it returns ``succeeded`` which is not equal to ``always_returns_this``
+  the terminal shows an :doc:`/exceptions/AssertionError`. No exception is raised when ``does_not_raise_exception_error`` is called by ``always_returns_this``, it returns ``succeeded`` which is not equal to ``always_returns_this``
 
 * I can try adding another return statement to the function to see if that would work
 

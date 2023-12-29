@@ -33,7 +33,7 @@ I add a test for logical implication to ``TestBinaryOperations`` in ``test_truth
         self.assertTrue(truth_table.logical_implication(False, True))
         self.assertTrue(truth_table.logical_implication(False, False))
 
-the terminal displays an :doc:`/exceptions/AttributeError`
+the terminal shows an :doc:`/exceptions/AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

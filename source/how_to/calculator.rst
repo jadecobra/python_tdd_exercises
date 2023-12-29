@@ -179,7 +179,7 @@ GREEN: make it pass
 
     add = None
 
-  the terminal displays a :doc:`/exceptions/TypeError`
+  the terminal shows a :doc:`/exceptions/TypeError`
 
   .. code-block:: python
 
@@ -427,7 +427,7 @@ GREEN : make it pass
     def subtract():
         return None
 
-  and the terminal displays a :doc:`/exceptions/TypeError` with a different error message. Progress!
+  and the terminal shows a :doc:`/exceptions/TypeError` with a different error message. Progress!
 
   .. code-block:: python
 

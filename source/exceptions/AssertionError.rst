@@ -110,7 +110,7 @@ I can also make assertions with some :doc:`methods </functions/functions>` from 
         assert False is not None
         self.assertIsNotNone(False)
 
-  the terminal displays passing tests because the statement is :doc:`True </data_structures/booleans>`. I can now say that in Python :doc:`False </data_structures/booleans>` is not :doc:`None </data_structures/none>`
+  the terminal shows passing tests because the statement is :doc:`True </data_structures/booleans>`. I can now say that in Python :doc:`False </data_structures/booleans>` is not :doc:`None </data_structures/none>`
 
 * RED: make it fail
 
@@ -155,7 +155,7 @@ I can also make assertions with some :doc:`methods </functions/functions>` from 
         assert True is not None
         self.assertIsNone(True)
 
-  and the terminal displays an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
+  and the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
   .. code-block:: python
 
@@ -194,7 +194,7 @@ I can also make assertions with some :doc:`methods </functions/functions>` from 
 
         assert None is not None
 
-  and the terminal displays a failure
+  and the terminal shows a failure
 
   .. code-block:: python
 
@@ -428,7 +428,7 @@ I add a new test to ``TestAssertionError`` in ``test_assertion_error.py``
   def test_assertion_errors_with_equality(self):
       assert False == None
 
-the terminal displays an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
+the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
 .. code-block:: python
 

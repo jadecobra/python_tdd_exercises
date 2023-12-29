@@ -65,7 +65,7 @@ GREEN: make it pass
       def test_logical_true(self):
           self.assertTrue(truth_table.logical_true())
 
-  and the terminal displays an :doc:`/exceptions/AttributeError` which I add to the list of exceptions encountered
+  and the terminal shows an :doc:`/exceptions/AttributeError` which I add to the list of exceptions encountered
 
   .. code-block:: python
 

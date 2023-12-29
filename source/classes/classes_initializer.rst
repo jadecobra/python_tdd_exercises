@@ -70,7 +70,7 @@ REFACTOR: make it better
         self.assertEqual(classes.Boy().sex, 'M')
         self.assertEqual(classes.Girl(sex='F').sex, 'F')
 
-  the terminal displays an :doc:`/exceptions/AttributeError`
+  the terminal shows an :doc:`/exceptions/AttributeError`
 
 * I try the same solution I used for the ``Boy`` class and add a definition for the ``Girl`` class to ``classes.py``
 
@@ -81,7 +81,7 @@ REFACTOR: make it better
 
         sex = 'M'
 
-  and the terminal displays a :doc:`/exceptions/TypeError`
+  and the terminal shows a :doc:`/exceptions/TypeError`
 
   .. code-block:: python
 
@@ -128,7 +128,7 @@ REFACTOR: make it better
         self.assertEqual(classes.Girl(sex='F').sex, 'F')
         self.assertEqual(classes.Other(sex='?').sex, '?')
 
-  and the terminal displays an :doc:`/exceptions/AttributeError`
+  and the terminal shows an :doc:`/exceptions/AttributeError`
 
 * I add a class definition to ``classes.py``
 
@@ -142,7 +142,7 @@ REFACTOR: make it better
         def __init__(self, sex=None):
             pass
 
-  the terminal displays passing tests
+  the terminal shows passing tests
 
 
 * Wait a minute, I just repeated the same thing twice.

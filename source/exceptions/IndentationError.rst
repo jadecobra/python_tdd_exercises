@@ -188,7 +188,7 @@ RED: make it fail
     def method():
     return
 
-  the terminal displays an IndentationError and the line that caused the exception
+  the terminal shows an IndentationError and the line that caused the exception
 
   .. code-block:: python
 

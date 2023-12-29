@@ -71,7 +71,7 @@ GREEN: make it pass
     # NameError
     # AttributeError
 
-* I add a name to ``sleep_duration.py`` and the terminal displays a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ since the name is not defined
+* I add a name to ``sleep_duration.py`` and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ since the name is not defined
 
   .. code-block:: python
 
@@ -350,7 +350,7 @@ I could write a test that uses a random variable for the sleep and wake times, l
               ]
           )
 
-* the terminal displays a :doc:`/exceptions/TypeError` because python still does not support subtracting one string from another
+* the terminal shows a :doc:`/exceptions/TypeError` because python still does not support subtracting one string from another
 
   .. code-block:: python
 
@@ -796,7 +796,7 @@ This means that even though the tests are passing, once again the ``duration`` f
     import sleep_duration
     import unittest
 
-  the terminal displays an :doc:`/exceptions/AssertionError`
+  the terminal shows an :doc:`/exceptions/AssertionError`
 
   .. code-block:: python
 
@@ -925,7 +925,7 @@ Putting it Together
             f'{get_minute(wake_time)-get_minute(sleep_time)}'
         )
 
-  the terminal displays a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+  the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
   .. code-block:: python
 
@@ -1337,7 +1337,7 @@ GREEN: make it pass
             ):
                 sleep_duration.duration(wake_time, sleep_time)
 
-  the terminal displays a `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ about the timestamp not matching the expected format for `datetime.datetime.strptime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime.datetime.strptime>`_
+  the terminal shows a `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ about the timestamp not matching the expected format for `datetime.datetime.strptime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime.datetime.strptime>`_
 
   .. code-block:: python
 

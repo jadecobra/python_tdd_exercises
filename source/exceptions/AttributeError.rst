@@ -191,7 +191,7 @@ GREEN: make it pass
     variable_0 = None
     variable_1
 
-  the terminal displays a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+  the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
   .. code-block:: python
 
@@ -206,7 +206,7 @@ GREEN: make it pass
     variable_0 = None
     variable_1 = None
 
-  the terminal displays passing tests
+  the terminal shows passing tests
 
 RED: make it fail
 ~~~~~~~~~~~~~~~~~
@@ -295,7 +295,7 @@ GREEN: make it pass
     variable_2 = None
     variable_3
 
-  the terminal displays a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+  the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
   .. code-block:: python
 

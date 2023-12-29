@@ -56,7 +56,7 @@ GREEN: make it pass
             return False
         return True
 
-  the terminal displays a failure for the 3rd case
+  the terminal shows a failure for the 3rd case
 * I add a condition for it
 
   .. code-block:: python

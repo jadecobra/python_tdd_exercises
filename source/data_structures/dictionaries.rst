@@ -21,7 +21,7 @@ I add a file called ``test_dictionaries.py`` to the ``tests`` folder with the fo
   import unittest
   import dictionaries
 
-the terminal displays a :doc:`/exceptions/ModuleNotFoundError`\  which I add to the list of exceptions encountered
+the terminal shows a :doc:`/exceptions/ModuleNotFoundError`\  which I add to the list of exceptions encountered
 
 .. code-block:: python
 
@@ -237,7 +237,7 @@ REFACTOR: make it better
           {2.5: 'works'}
       )
 
-  the terminal displays passing tests confirming that I can use `integers <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ and `floats <https://docs.python.org/3/library/functions.html?highlight=float#float>`_ as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
+  the terminal shows passing tests confirming that I can use `integers <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ and `floats <https://docs.python.org/3/library/functions.html?highlight=float#float>`_ as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
 
 ----
 
@@ -522,7 +522,7 @@ I add a test to ``TestDictionaries`` in ``test_dictionaries.py``
       a_dictionary = {"key": "value"}
       self.assertEqual(a_dictionary["key"], "bob")
 
-the terminal displays an :doc:`/exceptions/AssertionError` because ``bob`` is not equal to ``value``. I can get a value for a key by providing the key in square brackets to the dictionary
+the terminal shows an :doc:`/exceptions/AssertionError` because ``bob`` is not equal to ``value``. I can get a value for a key by providing the key in square brackets to the dictionary
 
 .. code-block:: python
 
@@ -1096,7 +1096,7 @@ I add another test to ``TestDictionaries``
           }
       )
 
-the terminal displays an :doc:`/exceptions/AssertionError` because the values of ``a_dictionary`` were changed when I called the `update <https://docs.python.org/3/library/stdtypes.html#dict.update>`_ :doc:`method </functions/functions>` on it
+the terminal shows an :doc:`/exceptions/AssertionError` because the values of ``a_dictionary`` were changed when I called the `update <https://docs.python.org/3/library/stdtypes.html#dict.update>`_ :doc:`method </functions/functions>` on it
 
 .. code-block:: python
 

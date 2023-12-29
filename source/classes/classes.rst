@@ -41,7 +41,7 @@ I create a new file called ``test_classes.py`` in the ``tests`` directory
       def test_class_definitions_with_pass(self):
           self.assertIsInstance(classes.ClassWithPass(), object)
 
-the terminal displays a :doc:`/exceptions/ModuleNotFoundError` because I have an import statement for a module called ``classes``
+the terminal shows a :doc:`/exceptions/ModuleNotFoundError` because I have an import statement for a module called ``classes``
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -192,7 +192,7 @@ I will add another test to ``TestClasses`` in ``test_classes.py``
   def test_class_definition_with_object(self):
       self.assertIsInstance(classes.ClassWithObject(), object)
 
-and the terminal displays an :doc:`/exceptions/AttributeError`
+and the terminal shows an :doc:`/exceptions/AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

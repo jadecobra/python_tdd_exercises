@@ -3,7 +3,7 @@
   You can adapt this file completely to your liking, but it should at least
   contain the root ``toctree`` directive.
 
-Pumping Python: How to Flex Your Code Muscles for Fun!
+Pumping Python: How to use Test Driven Development to solve problems
 ======================================================================
 
 This book is a collection of exercises to get you writing python code immediately using Test Driven Development.

@@ -174,7 +174,7 @@ I can use this information to test that a particular exception is raised
         with self.assertRaises(AttributeError):
             module.NonExistentClass()
 
-  the terminal displays passing tests
+  the terminal shows passing tests
 
 * RED: make it fail
 

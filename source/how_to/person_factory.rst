@@ -216,7 +216,7 @@ REFACTOR: make it better
             }
         )
 
-  the terminal displays an :doc:`/exceptions/AssertionError` because the expected and returned dictionaries are different
+  the terminal shows an :doc:`/exceptions/AssertionError` because the expected and returned dictionaries are different
 
 * I change the ``factory`` function to use the input provided for ``first_name``
 

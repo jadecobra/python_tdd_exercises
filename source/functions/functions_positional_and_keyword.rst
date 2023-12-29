@@ -109,7 +109,7 @@ GREEN: make it pass
               ('my_first_name', 'my_last_name')
           )
 
-  the terminal displays passing tests
+  the terminal shows passing tests
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^

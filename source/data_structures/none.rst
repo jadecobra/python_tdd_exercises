@@ -414,7 +414,7 @@ GREEN: make it pass
         self.assertIsNotNone((1, 2, 3, 'n'))
         self.assertIsInstance(None, tuple)
 
-  and the terminal displays an :doc:`/exceptions/AssertionError` for the instance test
+  and the terminal shows an :doc:`/exceptions/AssertionError` for the instance test
 
   .. code-block:: python
 
@@ -541,7 +541,7 @@ I add a new test to compare `None <https://docs.python.org/3/library/constants.h
       })
       self.assertIsInstance(None, dict)
 
-the terminal displays an :doc:`/exceptions/AssertionError`
+the terminal shows an :doc:`/exceptions/AssertionError`
 
 .. code-block:: python
 

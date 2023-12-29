@@ -127,7 +127,7 @@ GREEN: make it pass
     def project_second(p, q):
         return True
 
-  the terminal displays an :doc:`/exceptions/AssertionError` for the second case
+  the terminal shows an :doc:`/exceptions/AssertionError` for the second case
 * before I add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction``, ``negate_first``, ``negate_second`` and ``project_first`` because 2 out of the 4 cases have the same return value. I see that
 
   * when ``q == True`` the result is :doc:`True </data_structures/booleans>`
