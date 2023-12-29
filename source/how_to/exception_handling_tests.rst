@@ -28,7 +28,6 @@ I create a file called ``test_exception_handling.py`` in the ``tests`` folder an
 .. code-block:: python
 
   import unittest
-  import module
 
 
   class TestExceptionHandling(unittest.TestCase):
@@ -48,7 +47,7 @@ the terminal shows a :doc:`/exceptions/ModuleNotFoundError` and I add it to the 
 GREEN: make it pass
 *************************
 
-I could take care of this error by creating the module, but in this case I want to catch or handle the exception in the test as a way to prove that a ``ModuleNotFoundError`` was raised when I refer to ``non_existent_module``
+I could take care of this error by creating the module, but in this case I want to catch or handle the exception in the test as a way to show that a ``ModuleNotFoundError`` was raised when I refer to ``non_existent_module``
 
 I add a ``self.assertRaises`` to ``test_catching_module_not_found_error_in_tests``
 
