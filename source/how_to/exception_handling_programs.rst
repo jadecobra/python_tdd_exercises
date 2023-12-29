@@ -130,29 +130,35 @@ REFACTOR: make it better
 Time to add exception handling to the program so it returns a message when it encounters an exception instead of stopping
 
 
-* RED: make it fail
+******************************
+How to catch things that fail
+******************************
 
-  I add a new failing test to ``test_exception_handling.py``
+RED: make it fail
+==================
 
-  .. code-block:: python
+I add a new failing test to ``test_exception_handling.py``
 
-    def test_catching_things_that_fail(self):
-        self.assertEqual(
-            exceptions.exception_handler(
-                exceptions.raises_exception_error
-            ),
-            'failed'
-        )
+.. code-block:: python
 
-  the terminal shows an :doc:`/exceptions/AttributeError`
+  def test_catching_things_that_fail(self):
+      self.assertEqual(
+          exceptions.exception_handler(
+              exceptions.raises_exception_error
+          ),
+          'failed'
+      )
 
-  .. code-block::
+the terminal shows an :doc:`/exceptions/AttributeError`
 
-    AttributeError: module 'exceptions' has no attribute 'exception_handler'
+.. code-block::
 
-* GREEN: make it pass
+  AttributeError: module 'exceptions' has no attribute 'exception_handler'
 
-  I add a name to ``exceptions.py``
+GREEN: make it pass
+====================
+
+* I add a name to ``exceptions.py``
 
   .. code-block:: python
 
@@ -164,7 +170,7 @@ Time to add exception handling to the program so it returns a message when it en
 
     NameError: name 'exception_handler' is not defined
 
-  I assign ``exception_handler`` to the null value :doc:`None </data_structures/none>`
+* I assign ``exception_handler`` to the null value :doc:`None </data_structures/none>`
 
   .. code-block:: python
 
@@ -176,7 +182,7 @@ Time to add exception handling to the program so it returns a message when it en
 
     TypeError: 'NoneType' object is not callable
 
-  when I change ``exception_handler`` to a function
+* When I change ``exception_handler`` to a function
 
   .. code-block:: python
 
@@ -187,99 +193,117 @@ Time to add exception handling to the program so it returns a message when it en
 
   .. code-block:: python
 
-    
+    TypeError: exception_handler() takes 0 positional arguments but 1 was given
 
-  I change the :doc:`function signature </functions/functions>` for ``exception_handler`` to accept a positional argument
+* I change the :doc:`function signature </functions/functions>` for ``exception_handler`` to accept a positional argument
 
   .. code-block:: python
 
     def exception_handler(argument):
         return None
 
-  the terminal shows an :doc:`/exceptions/AssertionError` because the result of calling ``exceptions.exception_handler`` with ``exceptions.raises_exception_error`` as the input is currently :doc:`None </data_structures/none>` which is not equal to ``failed``
+  and the terminal shows an :doc:`/exceptions/AssertionError` because the result of calling ``exceptions.exception_handler`` with ``exceptions.raises_exception_error`` as the input is currently :doc:`None </data_structures/none>` which is not equal to ``'failed'``
 
   .. code-block:: python
 
     AssertionError: None != 'failed'
 
-  I change ``exception_handler`` to return ``failed`` and the terminal shows passing tests
+* I change ``exception_handler`` to return ``'failed''`` and the test passes
 
   .. code-block:: python
 
     def exception_handler(argument):
         return 'failed'
 
-* RED: make it fail
+*********************************
+How to catch things that succeed
+*********************************
 
-  the solution has a problem, the ``exception_handler`` always returns ``failed`` regardless of what I provide as an argument. It is a :doc:`singleton function </functions/functions_singleton>`.
+RED: make it fail
+==================
 
-  I should add a new test to ``test_exception_handling`` that provides a different input with an expectation of a different result
+the solution has a problem, the ``exception_handler`` always returns ``'failed'`` regardless of what I provide as an argument. It is a :doc:`singleton function </functions/functions_singleton>`.
+
+I add a new test that provides a different input with an expectation of a different result
+
+.. code-block:: python
+
+  def test_catching_things_that_succeed(self):
+      self.assertEqual(
+          exceptions.exception_handler(
+              exceptions.does_not_raise_exception_error
+          ),
+          'succeeded'
+      )
+
+the terminal shows an :doc:`/exceptions/AttributeError`
+
+.. code-block:: python
+
+  AttributeError: module 'exceptions' has no attribute 'does_not_raise_exception_error'
+
+GREEN: make it pass
+====================
+
+* I add ``does_not_raise_exception_error`` to ``exceptions.py``
 
   .. code-block:: python
 
-    def test_catching_things_that_succeed(self):
-        self.assertEqual(
-            exceptions.exception_handler(
-                exceptions.does_not_raise_exception_error
-            ),
-            'succeeded'
-        )
+    does_not_raise_exception_error
 
-  the terminal shows an :doc:`/exceptions/AttributeError`
+  and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
-* GREEN: make it pass
+  .. code-block:: python
 
-  - I add ``does_not_raise_exception_error`` to ``exceptions.py`` and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+    NameError: name 'does_not_raise_exception_error' is not defined
 
-    .. code-block:: python
+* I assign ``does_not_raise_exception_error`` to the null value :doc:`None </data_structures/none>`
 
-      does_not_raise_exception_error
+  .. code-block:: python
 
-  - I assign ``does_not_raise_exception_error`` to the null value :doc:`None </data_structures/none>`
+    does_not_raise_exception_error = None
 
-    .. code-block:: python
+  and the terminal shows an :doc:`/exceptions/AssertionError` because the value returned by ``exceptions.exception_handler`` when given ``exceptions.does_not_raise_exception_error`` as input is ``'failed'`` which is not equal to ``'succeeded'``
 
-      does_not_raise_exception_error = None
+  .. code-block::
 
-    and the terminal shows an :doc:`/exceptions/AssertionError` because the value returned by ``exceptions.exception_handler`` when given ``exceptions.does_not_raise_exception_error`` as input is ``failed`` which is not equal to ``succeeded``
+    AssertionError: 'failed' != 'succeeded'
 
-    .. code-block::
+  To practice handling exceptions, I want the ``exception_handler`` function to return a different result based on the exceptions that occur within it
 
-      AssertionError: 'failed' != 'succeeded'
+* I make ``exception_handler`` in ``exceptions.py`` call a function it receives as input
 
-    To practice handling exceptions, I want the ``exception_handler`` function to return a different result based on the exceptions that occur within it
+  .. code-block:: python
 
-  - I change ``exception_handler`` in ``exceptions.py`` to call a function it receives as input
+    def exception_handler(function):
+        return function()
 
-    .. code-block:: python
+  the terminal shows a :doc:`/exceptions/TypeError` because ``does_not_raise_exception_error`` is not a function
 
-      def exception_handler(function):
-          return function()
+  .. code-block:: python
 
-    the terminal shows a :doc:`/exceptions/TypeError` because ``does_not_raise_exception_error`` is not a function
+    function = None
 
-    .. code-block:: python
+        def exception_handler(function):
+    >       return function()
+    E       TypeError: 'NoneType' object is not callable
 
-          def exception_handler(function):
-      >       return function()
-      E    TypeError: 'NoneType' object is not callable
+* I change ``does_not_raise_exception_error`` to make it callable
 
-  - I change ``does_not_raise_exception_error`` to make it callable
+  .. code-block:: python
 
-    .. code-block:: python
+    def does_not_raise_exception_error():
+        return None
 
-      def does_not_raise_exception_error():
-          return None
+  the terminal shows an :doc:`/exceptions/AssertionError`
 
-    the terminal shows
+  .. code-block:: python
 
-    .. code-block:: python
+    AssertionError: None != 'succeeded'
 
-      AssertionError: None != 'succeeded'
-
-    - The ``exception_handler`` :doc:`function </functions/functions>` returns the result of calling the :doc:`function </functions/functions>` it receives as input
-    - When I call ``exceptions.exception_handler`` with ``exceptions.does_not_raise_exception_error`` as input, it calls the :doc:`function </functions/functions>` and returns the result
-    - the result of calling ``exceptions.does_not_raise_exception_error`` is currently :doc:`None </data_structures/none>` which is not equal to ``succeeded`` so the expectation of the test is not met
+  - The ``exception_handler`` :doc:`function </functions/functions>` returns the result of calling the :doc:`function </functions/functions>` it receives as input
+  - When I call ``exceptions.exception_handler`` with ``exceptions.does_not_raise_exception_error`` as input, it calls the :doc:`function </functions/functions>` and returns the result
+  - the result of calling ``exceptions.does_not_raise_exception_error`` is currently :doc:`None </data_structures/none>` which is not equal to ``'succeeded'`` so the expectation of the test is not met
 
 *****************************************
 How to use try...except...else
@@ -318,7 +342,7 @@ In this case
 How to use try...except...else...finally
 *****************************************
 
-there is an extra clause in the `try <https://docs.python.org/3/reference/compound_stmts.html#the-try-statement>`_ statement called ``finally`` that is run no matter what happens in the ``try...except...else`` blocks
+There is an extra clause in the `try <https://docs.python.org/3/reference/compound_stmts.html#the-try-statement>`_ statement called ``finally``. Anything in the ``finally`` clause is always run, regardless of what happens in the ``try...except...else`` blocks
 
 RED: make it fail
 =========================
@@ -337,29 +361,51 @@ I add a failing test to ``test_exception_handling.py``
 
 the terminal shows an :doc:`/exceptions/AttributeError`
 
+.. code-block:: python
+
+  AttributeError: module 'exceptions' has no attribute 'always_returns'
+
 GREEN: make it pass
 =========================
 
-* I add a name to ``exceptions.py`` and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+* I add a name to ``exceptions.py``
 
   .. code-block:: python
 
     always_returns
 
-* I assign the name to :doc:`None </data_structures/none>` and get an :doc:`/exceptions/AttributeError`
+  and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+
+  .. code-block:: python
+
+    NameError: name 'always_returns' is not defined
+
+* I assign the name to :doc:`None </data_structures/none>`
 
   .. code-block:: python
 
     always_returns = None
 
-* I redefine ``always_returns`` as a function and the terminal shows a :doc:`/exceptions/TypeError`
+  and the terminal shows a :doc:`/exceptions/TypeError`
+
+  .. code-block:: python
+
+    TypeError: 'NoneType' object is not callable
+
+* I redefine ``always_returns`` as a function
 
   .. code-block:: python
 
     def always_returns():
         return None
 
-* I change the signature of ``always_returns`` to accept a function that it calls and returns its value
+  and the terminal shows another :doc:`/exceptions/TypeError` but with a different message
+
+  .. code-block:: python
+
+    TypeError: always_returns() takes 0 positional arguments but 1 was given
+
+* I change the signature of ``always_returns`` to accept a function, then make it call the function and return the result of the call
 
   .. code-block:: python
 
@@ -384,7 +430,11 @@ GREEN: make it pass
         else:
             return 'succeeded'
 
-  the terminal shows an :doc:`/exceptions/AssertionError`. No exception is raised when ``does_not_raise_exception_error`` is called by ``always_returns_this``, it returns ``'succeeded'`` which is not equal to ``'always_returns_this'``
+  the terminal shows an :doc:`/exceptions/AssertionError` with a different message. ``always_returns_this`` returns ``'succeeded'`` since no exception is raised when it calls ``does_not_raise_exception_error`` and ``'succeeded'`` is not equal to ``'always_returns_this'``
+
+  .. code-block::
+
+    AssertionError: 'succeeded' != 'always_returns_this'
 
 * I can try adding another return statement to the function to see if that would work
 
@@ -399,7 +449,7 @@ GREEN: make it pass
             return 'succeeded'
         return 'always_returns_this'
 
-  no change, the terminal still has the same error. in Python the ``return`` statement is the last thing run in the function, anything written after a ``return`` statement is ignored
+  no change, the terminal still has the same error. In Python the ``return`` statement is the last thing run in the function, anything written after a ``return`` statement is ignored
 
   The function returns ``succeeded`` from the ``else`` block and ignores the return statement below it
 
@@ -417,7 +467,7 @@ GREEN: make it pass
         finally:
             return 'always_returns_this'
 
-  the terminal shows passing tests. the ``finally`` clause is always run regardless of what happens in the ``try..except..else`` parts
+  the terminal shows passing tests. The ``finally`` clause is always run regardless of what happens in the ``try..except..else`` blocks
 
 * I will add one more test to show that the code in the ``finally`` block will always run
 
@@ -439,7 +489,11 @@ GREEN: make it pass
 
   the terminal shows an :doc:`/exceptions/AssertionError`
 
-* I change the ``succeeded`` to match the expected value
+  .. code-block:: python
+
+    AssertionError: 'always_returns_this' != 'succeeded'
+
+* I change the ``'succeeded'`` to match the expected value
 
   .. code-block:: python
 
@@ -461,10 +515,10 @@ GREEN: make it pass
 
 .. NOTE::
 
-  ``always_returns`` could have been defined as a ``singleton`` :doc:`function </functions/functions>` and the tests would still pass, it  just would not show how to use ``try...except...else...finally`` ::
+  ``always_returns`` could have been defined as a ``singleton`` :doc:`function </functions/functions>` and the tests would still pass, but would not show how to use ``try...except...else...finally`` ::
 
       def always_returns(function):
-          return 'always_returns_this`
+          return 'always_returns_this'
 
 ----
 

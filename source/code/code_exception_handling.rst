@@ -59,7 +59,7 @@ Here is the code in ``tests/test_exception_handling.py``
                 exceptions.always_returns(
                     exceptions.raises_exception_error
                 ),
-                "always_returns_this"
+                'always_returns_this'
             )
 
     # Exceptions Encountered
