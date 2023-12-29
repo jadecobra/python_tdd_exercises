@@ -95,7 +95,7 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    E    Exception
+    Exception
 
 * I add a ``self.assertRaises`` to ``test_catching_exceptions`` in ``test_exception_handling.py`` to confirm that this exception is raised and allow the tests to continue
 
@@ -165,7 +165,7 @@ Time to add exception handling to the program so it returns a message when it en
 
   .. code-block:: python
 
-    E    AssertionError: None != 'failed'
+    AssertionError: None != 'failed'
 
   I change ``exception_handler`` to return ``failed`` and the terminal shows passing tests
 
@@ -176,7 +176,7 @@ Time to add exception handling to the program so it returns a message when it en
 
 * RED: make it fail
 
-  the solution has a problem, the ``exception_handler`` always returns ``failed`` regardless of what I provide as an argument
+  the solution has a problem, the ``exception_handler`` always returns ``failed`` regardless of what I provide as an argument. It is a :doc:`singleton function </functions/functions_singleton>`.
 
   I should add a new test to ``test_exception_handling`` that provides a different input with an expectation of a different result
 
@@ -210,9 +210,9 @@ Time to add exception handling to the program so it returns a message when it en
 
     .. code-block::
 
-      E    AssertionError: 'failed' != 'succeeded'
+      AssertionError: 'failed' != 'succeeded'
 
-    I want the ``exception_handler`` function to return a different input based on the exceptions that occur within the function to practice handling exceptions.
+    To practice handling exceptions, I want the ``exception_handler`` function to return a different result based on the exceptions that occur within it
 
   - I change ``exception_handler`` in ``exceptions.py`` to call a function it receives as input
 
@@ -227,7 +227,7 @@ Time to add exception handling to the program so it returns a message when it en
 
           def exception_handler(function):
       >       return function()
-      E       TypeError: 'NoneType' object is not callable
+      E    TypeError: 'NoneType' object is not callable
 
   - I change ``does_not_raise_exception_error`` to make it callable
 
@@ -242,30 +242,34 @@ Time to add exception handling to the program so it returns a message when it en
 
       AssertionError: None != 'succeeded'
 
-    - The ``exception_handler`` function returns the result of calling the function it receives as input
-    - When I call ``exceptions.exception_handler`` with ``exceptions.does_not_raise_exception_error`` as input, it calls ``does_not_raise_exception_error`` and returns the result
-    - the result of calling ``does_not_raise_exception_error`` is currently :doc:`None </data_structures/none>` which is not equal to ``succeeded`` so the expectation of the test is not met
+    - The ``exception_handler`` :doc:`function </functions/functions>` returns the result of calling the :doc:`function </functions/functions>` it receives as input
+    - When I call ``exceptions.exception_handler`` with ``exceptions.does_not_raise_exception_error`` as input, it calls the :doc:`function </functions/functions>` and returns the result
+    - the result of calling ``exceptions.does_not_raise_exception_error`` is currently :doc:`None </data_structures/none>` which is not equal to ``succeeded`` so the expectation of the test is not met
 
-  - `try...except...else <https://docs.python.org/3/reference/compound_stmts.html#the-try-statement>`_ statements are used to catch/handle exceptions in Python. This allows the program to make a decision when it encounters an Exception.
+*****************************************
+How to use try...except...else
+*****************************************
 
-    I add it to ``exception_handler`` in ``exceptions.py`` to handle exceptions
+`try...except...else <https://docs.python.org/3/reference/compound_stmts.html#the-try-statement>`_ statements are used to catch/handle exceptions in Python. This allows the program to make a decision when it encounters an Exception.
 
-    .. code-block:: python
+I add a `try...except...else <https://docs.python.org/3/reference/compound_stmts.html#the-try-statement>`_ statement to ``exception_handler`` in ``exceptions.py`` to handle exceptions
 
-      def exception_handler(function):
-          try:
-              function()
-          except Exception:
-              return 'failed'
-          else:
-              return 'succeeded'
+.. code-block:: python
 
-    the terminal shows passing tests
+  def exception_handler(function):
+      try:
+          function()
+      except Exception:
+          return 'failed'
+      else:
+          return 'succeeded'
+
+the terminal shows passing tests
 
 I think of the  `try...except...else <https://docs.python.org/3/reference/compound_stmts.html#the-try-statement>`_ statement as
 * ``try`` this
 * when this raises an ``Exception`` do something
-* when this does not raise an ``Exception`` do some other thing
+* when this does not raise an ``Exception`` do something else
 
 In this case
 
