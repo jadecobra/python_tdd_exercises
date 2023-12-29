@@ -19,9 +19,12 @@ Prerequisites
 
 ----
 
-*************************
+************************************
+How to handle a ModuleNotFoundError
+************************************
+
 RED: make it fail
-*************************
+==================
 
 I create a file called ``test_exception_handling.py`` in the ``tests`` folder and add the following
 
@@ -43,9 +46,8 @@ the terminal shows a :doc:`/exceptions/ModuleNotFoundError` and I add it to the 
   # AssertionError
   # ModuleNotFoundError
 
-*************************
 GREEN: make it pass
-*************************
+=====================
 
 I can take care of this error by creating the module, but I want to catch or handle the exception in the test as a way to show that a ``ModuleNotFoundError`` was raised when I try to import ``non_existent_module``
 
@@ -59,7 +61,6 @@ I add a ``self.assertRaises`` to ``test_catching_module_not_found_error_in_tests
 
 and the terminal shows passing tests. How does all this work?
 
-
 * I use the `unittest.TestCase.assertRaises <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises>`_ :doc:`method </functions/functions>` which takes a given `Exception <https://docs.python.org/3/library/exceptions.html?highlight=exception#Exception>`_ as its input, in this case :doc:`/exceptions/ModuleNotFoundError` and checks if that error is raised by the statements given in the context below (the indented block after the ``with`` statement)
 * ``with`` - creates the context where I test that the exception is raised
 
@@ -67,15 +68,19 @@ and the terminal shows passing tests. How does all this work?
   - `read more about with statement context managers <https://docs.python.org/3/reference/datamodel.html#with-statement-context-managers>`_
   - `read PEP 343 - The "with" Statement <https://peps.python.org/pep-0343/>`_
 
-*************************
 REFACTOR: make it better
-*************************
+=========================
 
 I can use this information to test that a particular exception is raised
 
-* RED: make it fail
+************************************
+How to handle an AttributeError
+************************************
 
-  I add a new test
+RED: make it fail
+==================
+
+* I add a new failing test
 
   .. code-block:: python
 
@@ -85,201 +90,122 @@ I can use this information to test that a particular exception is raised
   the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ ::
 
     NameError: name 'module' is not defined
-* I add it to the list of exceptions encountered
+* I add it to the list of exceptions encountered ::
+
+    # Exceptions Encountered
+    # AssertionError
+    # ModuleNotFoundError
+    # NameError
+
 * I add an import statement for ``module`` at the top of ``test_exception_handling.py`` ::
 
     import module
     import unittest
 
-  the terminal shows an :doc:`/exceptions/AttributeError` because the called attribute ``non_existent_attribute`` does not exist in ``module.py``
-
-  .. code-block:: python
+  the terminal shows an :doc:`/exceptions/AttributeError` because the called attribute ``non_existent_attribute`` does not exist in ``module.py`` ::
 
     AttributeError: module 'module' has no attribute 'non_existent_attribute'
 
-  I add the exception to the list of exceptions encountered
-
-  .. code-block:: python
+* I add the exception to the list of exceptions encountered ::
 
     # Exceptions Encountered
     # AssertionError
     # ModuleNotFoundError
+    # NameError
     # AttributeError
 
-* GREEN: make it pass
+GREEN: make it pass
+=====================
 
-  I add a ``self.assertRaises`` to ``test_catching_attribute_errors_in_tests``
+I add a ``with self.assertRaises`` context to ``test_catching_attribute_errors_in_tests``
 
-  .. code-block:: python
+.. code-block:: python
 
-    def test_catching_attribute_errors_in_tests(self):
-        with self.assertRaises(AttributeError):
-            module.non_existent_attribute
+  def test_catching_attribute_errors_in_tests(self):
+      with self.assertRaises(AttributeError):
+          module.non_existent_attribute
 
-  the terminal shows passing tests. I will do it again with :doc:`methods </functions/functions>` for good measure
+the terminal shows passing tests. I will do it again with :doc:`methods </functions/functions>` for fun
 
-* RED: make it fail
+RED: make it fail
+==================
 
-  I add a failing line to ``test_catching_attribute_errors_in_tests``
+I add a failing line that raises an :doc:`/exceptions/AttributeError` to ``test_catching_attribute_errors_in_tests``
 
-  .. code-block:: python
+.. code-block:: python
 
-    def test_catching_attribute_errors_in_tests(self):
-        with self.assertRaises(AttributeError):
-            module.non_existent_attribute
-        module.non_existent_function()
+  def test_catching_attribute_errors_in_tests(self):
+      with self.assertRaises(AttributeError):
+          module.non_existent_attribute
+      module.non_existent_function()
 
-  the terminal shows :doc:`/exceptions/AttributeError` because ``non_existent_function`` does not exist in ``module.py``
+the terminal shows an :doc:`/exceptions/AttributeError` because ``non_existent_function`` does not exist in ``module.py``
 
-  .. code-block:: python
+.. code-block:: python
 
-    AttributeError: module 'module' has no attribute 'non_existent_function'
+  AttributeError: module 'module' has no attribute 'non_existent_function'
 
-* GREEN: make it pass
+GREEN: make it pass
+====================
 
-  I add ``self.assertRaises`` and indent the failing line to place it within the context
+I add a ``with self.assertRaises`` context and indent the failing line to place it within the context to make the test pass
 
-  .. code-block:: python
+.. code-block:: python
 
-    def test_catching_attribute_errors_in_tests(self):
-        with self.assertRaises(AttributeError):
-            module.non_existent_attribute
-        with self.assertRaises(AttributeError):
-            module.non_existent_function()
+  def test_catching_attribute_errors_in_tests(self):
+      with self.assertRaises(AttributeError):
+          module.non_existent_attribute
+      with self.assertRaises(AttributeError):
+          module.non_existent_function()
 
-  the terminal shows passing tests
+RED: make it fail
+==================
 
-* RED: make it fail
+I add a failing line that raises an :doc:`/exceptions/AttributeError` for :doc:`classes </classes/classes>` to ``test_catching_attribute_errors_in_tests``
 
-  I add a failing line for :doc:`classes </classes/classes>` to ``test_catching_attribute_errors_in_tests``
+.. code-block:: python
 
-  .. code-block:: python
+  def test_catching_attribute_errors_in_tests(self):
+      with self.assertRaises(AttributeError):
+          module.non_existent_attribute
+      with self.assertRaises(AttributeError):
+          module.non_existent_function()
+      module.NonExistentClass()
 
-    def test_catching_attribute_errors_in_tests(self):
-        with self.assertRaises(AttributeError):
-            module.non_existent_attribute
-        with self.assertRaises(AttributeError):
-            module.non_existent_function()
-        module.NonExistentClass()
+the terminal shows an :doc:`/exceptions/AttributeError`
 
-  the terminal shows an :doc:`/exceptions/AttributeError`
+.. code-block:: python
 
-  .. code-block:: python
+  AttributeError: module 'module' has no attribute 'NonExistentClass'
 
-    AttributeError: module 'module' has no attribute 'NonExistentClass'
+GREEN: make it pass
+====================
 
-* GREEN: make it pass
+I add a ``with self.assertRaises`` context to make it pass
 
-  I add ``self.assertRaises`` to make it pass
+.. code-block:: python
 
-  .. code-block:: python
+  def test_catching_attribute_errors_in_tests(self):
+      with self.assertRaises(AttributeError):
+          module.non_existent_attribute
+      with self.assertRaises(AttributeError):
+          module.non_existent_function()
+      with self.assertRaises(AttributeError):
+          module.NonExistentClass()
 
-    def test_catching_attribute_errors_in_tests(self):
-        with self.assertRaises(AttributeError):
-            module.non_existent_attribute
-        with self.assertRaises(AttributeError):
-            module.non_existent_function()
-        with self.assertRaises(AttributeError):
-            module.NonExistentClass()
+REFACTOR: make it better
+==========================
 
-  the terminal shows passing tests
+I just created the same context 3 times. The ``self.assertRaises`` catches an :doc:`/exceptions/AttributeError` in each case. I only need to state it once and place all the lines that can raise the same error underneath it to remove the repetition
 
-* RED: make it fail
+.. code-block:: python
 
-  I add a new failing line to test for a class attribute in ``test_catching_attribute_errors_in_tests``
+  def test_catching_attribute_errors_in_tests(self):
+      with self.assertRaises(AttributeError):
+          module.non_existent_attribute
+          module.non_existent_function()
+          module.NonExistentClass()
 
-  .. code-block:: python
-
-    def test_catching_attribute_errors_in_tests(self):
-        with self.assertRaises(AttributeError):
-            module.non_existent_attribute
-        with self.assertRaises(AttributeError):
-            module.non_existent_function()
-        with self.assertRaises(AttributeError):
-            module.NonExistentClass()
-        module.Class.non_existent_attribute
-
-  the terminal shows an :doc:`/exceptions/AttributeError`
-
-  .. code-block:: python
-
-    AttributeError: type object 'Class' has no attribute 'non_existent_attribute'
-
-* GREEN: make it pass
-
-  I add ``self.assertRaises`` to catch the error
-
-  .. code-block:: python
-
-    def test_catching_attribute_errors_in_tests(self):
-        with self.assertRaises(AttributeError):
-            module.non_existent_attribute
-        with self.assertRaises(AttributeError):
-            module.non_existent_function()
-        with self.assertRaises(AttributeError):
-            module.NonExistentClass()
-        with self.assertRaises(AttributeError):
-            module.Class.non_existent_attribute
-
-  the terminal shows passing tests
-
-* RED: make it fail
-
-  I trigger another attribute error, by adding a line to ``test_catching_attribute_errors_in_tests``
-
-  .. code-block:: python
-
-    def test_catching_attribute_errors_in_tests(self):
-        with self.assertRaises(AttributeError):
-            module.non_existent_attribute
-        with self.assertRaises(AttributeError):
-            module.non_existent_function()
-        with self.assertRaises(AttributeError):
-            module.NonExistentClass()
-        with self.assertRaises(AttributeError):
-            module.Class.non_existent_attribute
-        module.Class.non_existent_method()
-
-  the terminal shows another :doc:`/exceptions/AttributeError`
-
-  .. code-block:: python
-
-    AttributeError: type object 'Class' has no attribute 'non_existent_method'
-
-* GREEN: make it pass
-
-  I add ``self.assertRaises`` to make it pass
-
-  .. code-block:: python
-
-    def test_catching_attribute_errors_in_tests(self):
-        with self.assertRaises(AttributeError):
-            module.non_existent_attribute
-        with self.assertRaises(AttributeError):
-            module.non_existent_function()
-        with self.assertRaises(AttributeError):
-            module.NonExistentClass()
-        with self.assertRaises(AttributeError):
-            module.Class.non_existent_attribute
-        with self.assertRaises(AttributeError):
-            module.Class.non_existent_method()
-
-  the terminal shows passing tests
-
-* REFACTOR: make it better
-
-  I just created the same context 5 times, this is a good candidate for a rewrite. The ``self.assertRaises`` catches an :doc:`/exceptions/AttributeError` in each case, I only need to state it once and place all the lines that can raise the same error underneath it.
-
-  .. code-block:: python
-
-    def test_catching_attribute_errors_in_tests(self):
-        with self.assertRaises(AttributeError):
-            module.non_existent_attribute
-            module.non_existent_function()
-            module.NonExistentClass()
-            module.Class.non_existent_attribute
-            module.Class.non_existent_method()
-
-  Fantastic! all the tests still pass
+Fantastic! all the tests still pass and I have a way to catch exceptions that are raised in programs I am testing
 
 :doc:`/code/code_exception_handling`

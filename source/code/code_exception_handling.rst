@@ -11,9 +11,9 @@ Here is the code in ``tests/test_exception_handling.py``
 
 .. code-block:: python
 
-    import unittest
-    import module
     import exceptions
+    import module
+    import unittest
 
 
     class TestExceptionHandling(unittest.TestCase):
@@ -27,8 +27,6 @@ Here is the code in ``tests/test_exception_handling.py``
                 module.non_existent_attribute
                 module.non_existent_function()
                 module.NonExistentClass()
-                module.Class.non_existent_attribute
-                module.Class.non_existent_method()
 
         def test_catching_exceptions(self):
             with self.assertRaises(Exception):
@@ -67,8 +65,8 @@ Here is the code in ``tests/test_exception_handling.py``
     # Exceptions Encountered
     # AssertionError
     # ModuleNotFoundError
-    # AttributeError
     # NameError
+    # AttributeError
     # TypeError
 
 solutions
