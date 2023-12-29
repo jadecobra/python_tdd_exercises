@@ -39,34 +39,55 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    import unittest
-    import module
     import exceptions
+    import module
+    import unittest
 
   the terminal shows a :doc:`/exceptions/ModuleNotFoundError`
 
-* I create a file called ``exceptions.py`` in the ``project_name`` folder, and the terminal shows an :doc:`/exceptions/AttributeError`
-* I add a name for the attribute to ``exceptions.py`` and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ since I have not defined ``raises_exception_error`` in ``exceptions.py``
+  .. code-block:: python
+
+    ModuleNotFoundError: No module named 'exceptions'
+
+* I create a file called ``exceptions.py`` in the ``project_name`` folder and the terminal shows an :doc:`/exceptions/AttributeError`
+
+  .. code-block:: python
+
+    AttributeError: module 'exceptions' has no attribute 'raises_exception_error'
+
+* I add a name for the attribute to ``exceptions.py``
 
   .. code-block:: python
 
     raises_exception_error
 
-* I assign ``raises_exception_error`` to the null value :doc:`None </data_structures/none>` and the terminal shows a :doc:`/exceptions/TypeError`
+  and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ since I have not defined ``raises_exception_error`` in ``exceptions.py``
+
+  .. code-block:: python
+
+    NameError: name 'raises_exception_error' is not defined
+
+* I assign ``raises_exception_error`` to the null value :doc:`None </data_structures/none>`
 
   .. code-block:: python
 
     raises_exception_error = None
 
-  which I add to the list of exceptions encountered
+  and the terminal shows a :doc:`/exceptions/TypeError`
+
+  .. code-block:: python
+
+    TypeError: 'NoneType' object is not callable
+
+* I add it to the list of exceptions encountered
 
   .. code-block:: python
 
     # Exceptions Encountered
     # AssertionError
     # ModuleNotFoundError
-    # AttributeError
     # NameError
+    # AttributeError
     # TypeError
 
 * When I define ``raises_exception_error`` as a function, the terminal shows passing tests
@@ -76,7 +97,7 @@ GREEN: make it pass
     def raises_exception_error():
         return None
 
-* I use the `raise <https://docs.python.org/3/reference/simple_stmts.html#the-raise-statement>`_ keyword to cause an exception when ``raises_exception_error`` is called
+* I can use the `raise <https://docs.python.org/3/reference/simple_stmts.html#the-raise-statement>`_ keyword to cause an exception when ``raises_exception_error`` is called
 
   .. code-block:: python
 
@@ -89,7 +110,7 @@ GREEN: make it pass
 
     Exception
 
-* I add a ``self.assertRaises`` to ``test_catching_exceptions`` in ``test_exception_handling.py`` to confirm that this exception is raised and allow the tests to continue
+* I add a ``with self.assertRaises`` context to ``test_catching_exceptions`` in ``test_exception_handling.py`` to confirm that the exception is raised and allow the tests to continue
 
   .. code-block:: python
 
@@ -111,7 +132,7 @@ Time to add exception handling to the program so it returns a message when it en
 
 * RED: make it fail
 
-  I add a new failing test to ``test_exception_handling``
+  I add a new failing test to ``test_exception_handling.py``
 
   .. code-block:: python
 
@@ -125,26 +146,48 @@ Time to add exception handling to the program so it returns a message when it en
 
   the terminal shows an :doc:`/exceptions/AttributeError`
 
+  .. code-block::
+
+    AttributeError: module 'exceptions' has no attribute 'exception_handler'
+
 * GREEN: make it pass
 
-  I add a name to ``exceptions.py`` and the terminal shows `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+  I add a name to ``exceptions.py``
 
   .. code-block:: python
 
     exception_handler
 
-  I assign ``exception_handler`` to the null value :doc:`None </data_structures/none>` and the terminal shows a :doc:`/exceptions/TypeError`
+  and the terminal shows `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+
+  .. code-block:: python
+
+    NameError: name 'exception_handler' is not defined
+
+  I assign ``exception_handler`` to the null value :doc:`None </data_structures/none>`
 
   .. code-block:: python
 
     exception_handler = None
 
-  when I change ``exception_handler`` to a function the terminal shows a :doc:`/exceptions/TypeError` with a different message
+  and the terminal shows a :doc:`/exceptions/TypeError`
+
+  .. code-block:: python
+
+    TypeError: 'NoneType' object is not callable
+
+  when I change ``exception_handler`` to a function
 
   .. code-block:: python
 
     def exception_handler():
         return None
+
+  the terminal shows a :doc:`/exceptions/TypeError` with a different message
+
+  .. code-block:: python
+
+    
 
   I change the :doc:`function signature </functions/functions>` for ``exception_handler`` to accept a positional argument
 
