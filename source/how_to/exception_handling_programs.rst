@@ -18,7 +18,7 @@ Prerequisites
 RED: make it fail
 *************************
 
-* I add a failing test to ``test_exception_handling.py`` and will cause an exception, then handle it.
+* I add a failing test to ``test_exception_handling.py``
 
   .. code-block:: python
 
@@ -27,21 +27,13 @@ RED: make it fail
 
   the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
-* I add the error to the list of exceptions encountered
-
   .. code-block:: python
 
-    # Exceptions Encountered
-    # AssertionError
-    # ModuleNotFoundError
-    # AttributeError
-    # NameError
+    NameError: name 'exceptions' is not defined
 
 *************************
 GREEN: make it pass
 *************************
-
-* A `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ is raised when a name is used within a module with no definition for the name. In the test I call ``exceptions.raises_exception_error`` but there is no definition for ``exceptions``
 
 * I add a new ``import`` statement
 

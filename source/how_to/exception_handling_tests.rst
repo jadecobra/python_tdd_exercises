@@ -90,6 +90,8 @@ RED: make it fail
   the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ ::
 
     NameError: name 'module' is not defined
+
+  A `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ is raised when a name is used within a module with no definition for the name. In the test I call ``module.non_existent_attribute`` but there is no definition for ``module``
 * I add it to the list of exceptions encountered ::
 
     # Exceptions Encountered
