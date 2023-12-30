@@ -5,18 +5,20 @@ How to measure sleep duration
 
 In this chapter I take a look at building a program that returns the amount of time slept based on a given sleep and wake time.
 
+****************
 Prerequisites
--------------
+****************
 
 :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` with ``sleep_duration`` as the project name
 
 ----
 
+********************************
 Duration when given Hours
-------------------------------
+********************************
 
 RED: make it fail
-^^^^^^^^^^^^^^^^^
+====================
 
 I add a failing test to ``test_sleep_duration.py`` and remove ``test_failure`` since I no longer need it
 
@@ -36,7 +38,13 @@ I add a failing test to ``test_sleep_duration.py`` and remove ``test_failure`` s
               1
           )
 
-the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ which I add to the list of exceptions encountered
+the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+
+.. code-block:: python
+
+  NameError: name 'sleep_duration' is not defined
+
+which I add to the list of exceptions encountered
 
 .. code-block:: python
 
@@ -45,8 +53,7 @@ the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.ht
   # NameError
 
 GREEN: make it pass
-^^^^^^^^^^^^^^^^^^^
-
+====================
 
 * I add an import statement for the missing name
 
@@ -59,7 +66,11 @@ GREEN: make it pass
     class TestSleepDuration(unittest.TestCase):
     ...
 
-  and the terminal shows an :doc:`/exceptions/AttributeError` since I do not have a definition for ``duration`` in `sleep_duration.py`
+  and the terminal shows an :doc:`/exceptions/AttributeError`, I do not have a definition for ``duration`` in ``sleep_duration.py``
+
+  .. code-block:: python
+
+    AttributeError: module 'sleep_duration' has no attribute 'duration'
 
 
 * I add the error to the list of exceptions encountered
@@ -71,20 +82,23 @@ GREEN: make it pass
     # NameError
     # AttributeError
 
-* I add a name to ``sleep_duration.py`` and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ since the name is not defined
-
-  .. code-block:: python
+* I add a name to ``sleep_duration.py`` ::
 
     duration
 
-* I make ``duration`` a variable by assigning it to the null value :doc:`None </data_structures/none>`
+  and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ since the name is not defined ::
 
-  .. code-block:: python
+      NameError: name 'duration' is not defined
+
+* I make ``duration`` a variable by assigning it to the null value :doc:`None </data_structures/none>` ::
 
     duration = None
 
-  the terminal shows a :doc:`/exceptions/TypeError` because :doc:`None </data_structures/none>` is not callable
-* I add the exception to the list
+  the terminal shows a :doc:`/exceptions/TypeError` because :doc:`None </data_structures/none>` is not callable ::
+
+    TypeError: 'NoneType' object is not callable
+
+* I add the exception to the list of exceptions encountered in ``test_sleep_duration.py``
 
   .. code-block:: python
 
@@ -94,32 +108,40 @@ GREEN: make it pass
     # AttributeError
     # TypeError
 
-* then define ``duration`` as a function
-
-  .. code-block:: python
+* then I define ``duration`` as a function in ``sleep_duration.py`` ::
 
     def duration():
         return None
 
-  the :doc:`/exceptions/TypeError` remains but with a different message about the first argument passed in from the test
+  the :doc:`/exceptions/TypeError` remains but with a different message about the first argument passed in from the test ::
 
-* I change the definition of ``duration`` to accept the required keyword argument
+    TypeError: duration() got an unexpected keyword argument 'wake_time'
+
+* I change the definition of ``duration`` to accept the required argument
 
   .. code-block:: python
 
     def duration(wake_time):
         return None
 
-  the terminal shows a similar message as before, this time for the second keyword argument
+  the terminal shows a similar :doc:`/exceptions/TypeError` message for the second argument
 
-* I change the definition the same way
+  .. code-block:: python
+
+    TypeError: duration() got an unexpected keyword argument 'sleep_time'
+
+* I add the second argument to the definition of the ``duration`` :doc:`function </functions/functions>`
 
   .. code-block:: python
 
     def duration(wake_time, sleep_time):
         return None
 
-  the terminal now shows an :doc:`/exceptions/AssertionError` since the duration function returns :doc:`None </data_structures/none>` and the test expects ``1`` as the duration when a sleep time of ``07:00`` and a wake time of ``08:00`` is given
+  the terminal shows an :doc:`/exceptions/AssertionError` since the duration function returns :doc:`None </data_structures/none>` and the test expects ``1`` as the duration when a sleep time of ``07:00`` and a wake time of ``08:00`` is given
+
+  .. code-block:: python
+
+    AssertionError: None != 1
 
 * I change the return value for the duration function to the expectation
 
@@ -128,14 +150,15 @@ GREEN: make it pass
     def duration(wake_time, sleep_time):
         return 1
 
-GREEN! all tests are passing
+  and the test passes. We are green.
+
 
 REFACTOR: make it better
-^^^^^^^^^^^^^^^^^^^^^^^^
+=========================
 
-The function currently returns ``1`` regardless of the inputs given but for it to be useful it has to calculate the difference between the wake time and the sleep time. It would be a large effort to write a test case for every permutation of sleep and wake times.
+The function currently returns ``1`` regardless of the inputs given but for it to be useful it has to calculate the difference between the wake time and the sleep time.
 
-I could write a test that uses a random variable for the sleep and wake times, like in the :doc:`/how_to/calculator`
+I could write a test case for every permutation of sleep and wake times, or  write one test that uses random variables for the sleep and wake times, like I did in :doc:`/how_to/calculator`
 
 
 * I add an import statement for the `random <https://docs.python.org/3/library/random.html?highlight=random#module-random>`_ module to ``test_sleep_duration.py``
@@ -163,9 +186,9 @@ I could write a test that uses a random variable for the sleep and wake times, l
                 1
             )
 
-  I use a random integer from ``0`` to ``23`` as the hours for sleep and wake time and interpolate them in the strings I use as inputs, this means the wake and sleep time will randomly vary from ``00:00`` to ``23:00``
+  I use a random integer from ``0`` to ``23`` as the hours for sleep and wake time and :doc:`interpolate </how_to/passing_values>` them in the strings I use as inputs, this means the wake and sleep time will randomly vary from ``00:00`` to ``23:00`` covering all the possible hours
 
-* the terminal still shows the test is passing because the expected value is ``1``, I need to change it to match the true expectation, which is that it should be the duration between ``wake_time`` and ``sleep_time``.
+* the terminal still shows the test is passing because the expected value is ``1``, I need to change it to match the true expectation, which is that it should be the difference between ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
 
@@ -364,9 +387,7 @@ I could write a test that uses a random variable for the sleep and wake times, l
 
   .. code-block:: python
 
-    self.assertEqual(
-        help(str),
-    )
+        help(str)
 
   the terminal shows documentation for the `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ module, I scroll through reading through the descriptions for each :doc:`method </functions/functions>` until I see one that looks like it can solve my problem
 
@@ -617,13 +638,14 @@ I could write a test that uses a random variable for the sleep and wake times, l
 
 ----
 
+****************************************
 Duration when given Hours and Minutes
---------------------------------------
+****************************************
 
 I found a solution that provides the right duration when given sleep time and wake time in a given day. the solution does not take minutes into account when doing the calculation
 
 RED: make it fail
-^^^^^^^^^^^^^^^^^
+====================
 
 I am going to add a failing test for that scenario to ``test_sleep_duration.py``
 
@@ -645,7 +667,7 @@ I am going to add a failing test for that scenario to ``test_sleep_duration.py``
 the terminal shows an :doc:`/exceptions/AssertionError`, the expected value is now a string that contains the subtraction of the sleep hour from the wake hour, separated by a delimiter ``:`` and the subtraction of the sleep minute from the wake minute, so if for example I have a wake_time of ``08:30`` and a sleep_time of ``07:11`` I should have ``1:19`` as the output
 
 GREEN: make it pass
-^^^^^^^^^^^^^^^^^^^
+====================
 
 * I change the output of the ``duration`` function in ``sleep_duration.py`` to match the format of the expected value
 
@@ -728,7 +750,7 @@ GREEN: make it pass
   I remove ``test_duration_when_given_hours_only`` since I no longer need it and the terminal shows passing tests
 
 REFACTOR: make it better
-^^^^^^^^^^^^^^^^^^^^^^^^
+=========================
 
 The ``duration`` function currently returns a subtraction of hours and a subtraction of minutes but is not accurate for calculating real differences in time. For instance when it is given a wake time of ``3:30`` and a sleep time of ``2:59`` it will return ``1:-29`` which is not a real duration instead of ``0:31``.
 
@@ -1067,12 +1089,14 @@ Putting it Together
 
 ----
 
-Duration when given Earlier Wake Time Than Sleep Time
-------------------------------------------------------
+********************************************************
+Duration when given Earlier Wake Time than Sleep Time
+********************************************************
 What happens when the ``duration`` function is given a ``wake_time`` that is earlier than a ``sleep_time``? Since the values for ``wake_time`` and ``sleep_time`` are currently random, ``test_duration_when_given_hours_and_minutes`` will randomly fail when the ``duration`` function gets a ``wake_time`` that is earlier than the ``sleep_time``
 
 RED: make it fail
-^^^^^^^^^^^^^^^^^
+=========================
+
 I add a new failing test to ``test_sleep_duration.py`` to show this
 
 .. code-block:: python
@@ -1093,7 +1117,7 @@ the terminal shows an :doc:`/exceptions/AssertionError`
 
 
 GREEN: make it pass
-^^^^^^^^^^^^^^^^^^^^^^^^
+=========================
 
 * The ``duration`` function currently returns negative numbers when given a ``wake_time`` that is earlier than a ``sleep_time`` for example  ``'-1 day, 14:01:00'``, it accounts for a time traveling sleep scenario where you can go to sleep and wake up in the past. I wonder what mischief we could get up to, oh wait we have to watch out for Butterflies. I want to change the function to only process durations where the wake time happens after the sleep time
 
@@ -1174,11 +1198,12 @@ GREEN: make it pass
 
 ----
 
+********************************************************
 Duration when given Date and Time
--------------------------------------------
+********************************************************
 
 RED: make it fail
-^^^^^^^^^^^^^^^^^
+=========================
 
 I add a failing test to ``test_sleep_duration.py`` called ``test_duration_when_given_date_and_time`` to test the ``duration`` function with different days
 
@@ -1211,7 +1236,7 @@ the timestamps I provide to the ``duration`` function as inputs do not match the
 I get a repetition of the date portion because I added a date to the timestamp in the ``get_datetime_object`` to make it match the pattern
 
 GREEN: make it pass
-^^^^^^^^^^^^^^^^^^^
+=========================
 
 * I remove ``21/11/06`` from the string in ``get_datetime_object`` in ``sleep_duration.py``
 
