@@ -186,7 +186,7 @@ I could write a test case for every permutation of sleep and wake times, or  wri
                 1
             )
 
-  I use a random integer from ``0`` to ``23`` as the hours for sleep and wake time and :doc:`interpolate </how_to/passing_values>` them in the strings I use as inputs, this means the wake and sleep time will randomly vary from ``00:00`` to ``23:00`` covering all the possible hours
+  I use a random integer from ``0`` to ``23`` as the hours for sleep and wake time and :doc:`interpolate </how_to/passing_values>` them in the strings I use as inputs, this means the sleep and wake times will vary randomly from ``00:00`` to ``23:00`` to cover all the possible hours in a day
 
 * the terminal still shows the test is passing because the expected value is ``1``, I need to change it to match the true expectation, which is that it should be the difference between ``wake_time`` and ``sleep_time``
 
@@ -204,6 +204,11 @@ I could write a test case for every permutation of sleep and wake times, or  wri
         )
 
   I get an :doc:`/exceptions/AssertionError` because ``sleep_duration.duration`` still returns ``1`` but from the test I expect the difference between ``wake_time`` and ``sleep_time``
+
+  .. code-block:: python
+
+    AssertionError: 1 != -2
+
 * I change the ``duration`` function in ``sleep_duration.py`` to return a difference between the ``wake_time`` and ``sleep_time``?
 
   .. code-block:: python
@@ -211,10 +216,16 @@ I could write a test case for every permutation of sleep and wake times, or  wri
     def duration(wake_time, sleep_time):
         return wake_time - sleep_time
 
-  the terminal shows a :doc:`/exceptions/TypeError`. I passed in two strings and python does not have an operation defined for subtracting one string from another.
+  the terminal shows a :doc:`/exceptions/TypeError`. I passed in two strings but python does not have an operation defined for subtracting one string from another
 
-  I need to find a way to convert the timestamp from a string to a number. I know that the two inputs are currently in the format ``XX:00``, if I can parse the string to get the first two characters and convert those digits to a number I should be able to get the calculation
-* to find out what options are available, I look at the :doc:`methods </functions/functions>` and ``attributes`` of `strings <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ by adding a failing test to ``test_sleep_duration.py``, this time using the `dir <https://docs.python.org/3/library/functions.html?highlight=dir#dir>`_ :doc:`function </functions/functions>`
+  .. code-block:: python
+
+    TypeError: unsupported operand type(s) for -: 'str' and 'str'
+
+  I need to find a way to convert the timestamp from a string to a number.
+
+  I know that the two inputs are currently in the format ``XX:00``, if I can parse the string to get the first two characters and convert those digits to a number I should be able to calculate the difference
+* to find out what options are available to me, I look at the :doc:`methods </functions/functions>` and ``attributes`` of `strings <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ by using the `dir <https://docs.python.org/3/library/functions.html?highlight=dir#dir>`_ :doc:`function </functions/functions>`
 
   .. code-block:: python
 
@@ -262,9 +273,9 @@ I could write a test case for every permutation of sleep and wake times, or  wri
 
   .. code-block:: python
 
-    E      Diff is 1265 characters long. Set self.maxDiff to None to see it.
+    E      Diff is 1284 characters long. Set self.maxDiff to None to see it.
 
-* I try the suggestion
+* I try the suggestion by adding ``self.maxDiff = None``
 
   .. code-block:: python
 
@@ -373,7 +384,7 @@ I could write a test case for every permutation of sleep and wake times, or  wri
               ]
           )
 
-* the terminal shows a :doc:`/exceptions/TypeError` because python still does not support subtracting one string from another
+* the test passes and the the terminal shows the :doc:`/exceptions/TypeError` from earlier because python still does not support subtracting one string from another
 
   .. code-block:: python
 
@@ -387,26 +398,27 @@ I could write a test case for every permutation of sleep and wake times, or  wri
 
   .. code-block:: python
 
+    def test_duration_when_given_hours_only(self):
         help(str)
+        ...
 
   the terminal shows documentation for the `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ module, I scroll through reading through the descriptions for each :doc:`method </functions/functions>` until I see one that looks like it can solve my problem
 
   .. code-block:: python
 
-    |  split(self, /, sep=None, maxsplit=-1)
-    |   Return a list of the words in the string, using sep as the delimiter string.
+    ...
     |
-    |   sep
-    |    The delimiter according which to split the string.
-    |    None (the default value) means split according to any whitespace,
-    |    and discard empty strings from the result.
-    |   maxsplit
-    |    Maximum number of splits to do.
-    |    -1 (the default value) means no limit.
+    |  split(self, /, sep=None, maxsplit=-1)
+    |      Return a list of the substrings in the string, using sep as the separator string.
+    |
+    |        sep
+    |          The separator used to split the string.
+    |
+    ...
 
-  the `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ :doc:`method </functions/functions>` looks like a good solution since it splits up a word when given a ``delimeter``
+  the `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ :doc:`method </functions/functions>` looks like a good solution since it splits up a word when given a separator
 
-* I remove the failing test and replace it with one for the `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ :doc:`method </functions/functions>`
+* I remove the call to the help system ``help(str)`` and add a failing test for the `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ :doc:`method </functions/functions>` to help me understand it better
 
   .. code-block:: python
 
@@ -416,13 +428,13 @@ I could write a test case for every permutation of sleep and wake times, or  wri
               None
           )
 
-  the terminal shows that `split <https://docs.python.org/3/library/stdtypes.html#str.split>` creates a list when given a string
+  the terminal shows an :doc:`/exceptions/AssertionError` and I see that `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ creates a list when called
 
   .. code-block:: python
 
-    E    AssertionError: ['00:00'] != None
+    AssertionError: ['00:00'] != None
 
-  I change the expectation from :doc:`None </data_structures/none>`
+  I change the expectation to make the test pass
 
   .. code-block:: python
 
@@ -438,7 +450,7 @@ I could write a test case for every permutation of sleep and wake times, or  wri
 
     E    TypeError: unsupported operand type(s) for -: 'str' and 'str'
 
-* what I want is to split the string on a ``delimiter`` so I get the separate parts, something like ``["00", "00"]``, using ``:`` as the ``delimeter``. I change the test to reflect this desire
+* I want is to split the string on a ``separator`` so I get the separate parts, something like ``["00", "00"]``, using ``:`` as the separator. I change the test to reflect this desire
 
   .. code-block:: python
 
@@ -448,8 +460,14 @@ I could write a test case for every permutation of sleep and wake times, or  wri
             ['00', '00']
         )
 
-  the terminal shows an :doc:`/exceptions/AssertionError`, the use of the `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ :doc:`method </functions/functions>` has not yet given me what I want. Looking back at the documentation, I see that `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ takes in ``self, /, sep=None, maxsplit=-1`` as inputs and ``sep`` is the ``delimiter``
-* I change the test by passing in ``:`` to the `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ :doc:`method </functions/functions>` as the ``delimiter``
+  the terminal shows an :doc:`/exceptions/AssertionError`, the use of the `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ :doc:`method </functions/functions>` has not yet given me what I want
+
+  .. code-block:: python
+
+    AssertionError: Lists differ: ['00:00'] != ['00', '00']
+
+  Looking back at the documentation, I see that `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ takes in ``self, /, sep=None, maxsplit=-1`` as inputs and ``sep`` is the ``separator``
+* I pass in ``:`` to the `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ :doc:`method </functions/functions>` as the ``separator``
 
   .. code-block:: python
 
@@ -459,7 +477,7 @@ I could write a test case for every permutation of sleep and wake times, or  wri
             ['00', '00']
         )
 
-  the test passes and I now know how to get the first part of the ``wake_time`` and ``sleep_time``
+  and the test passes. I now know how to get the first parts of ``wake_time`` and ``sleep_time``
 
 * I change the definition of the ``duration`` function in ``sleep_duration.py`` using what I have learned so far
 
@@ -474,7 +492,7 @@ I could write a test case for every permutation of sleep and wake times, or  wri
 
     E    TypeError: unsupported operand type(s) for -: 'list' and 'list'
 
-  Since I only need the first part of the list, I can get the specific item by using its index. Python uses zero-based indexing so the first item is at index ``0`` and the second item at ``1``
+  Since I only need the first part of the list, I can get the specific item by using its index. Python uses zero-based indexing so the first item is at index ``0`` and the second item at ``1`` see :doc:`/data_structures/lists`
 * I add a failing test to ``test_string_split_method`` to test getting specific parts of the :doc:`list </data_structures/lists>` created from splitting a `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_
 
   .. code-block:: python
@@ -493,7 +511,7 @@ I could write a test case for every permutation of sleep and wake times, or  wri
             0
         )
 
-  the terminal shows an :doc:`/exceptions/AssertionError` because the first item (item zero) from splitting ``"12:34"`` on the delimiter ``:`` is ``"12"``, good, I am closer to what I want
+  the terminal shows an :doc:`/exceptions/AssertionError` because the first item (item zero) from splitting ``"12:34"`` on the separator ``:`` is ``"12"``, good, I am closer to what I want
 * I change the expected value in the test to match the value in the terminal
 
   .. code-block:: python
@@ -512,7 +530,7 @@ I could write a test case for every permutation of sleep and wake times, or  wri
             0
         )
 
-  the terminal shows another :doc:`/exceptions/AssertionError` , this time to confirm that the second item (item one) from splitting ``"12:34"`` on the delimiter ``:`` is ``"34"``, I am not dealing with this part yet but I can assume I would use it soon, so I change the expected value in the same way and the test passes bringing me back to the unsolved :doc:`/exceptions/TypeError`
+  the terminal shows another :doc:`/exceptions/AssertionError` , this time to confirm that the second item (item one) from splitting ``"12:34"`` on the separator ``:`` is ``"34"``, I am not dealing with this part yet but I can assume I would use it soon, so I change the expected value in the same way and the test passes bringing me back to the unsolved :doc:`/exceptions/TypeError`
 * I change the ``duration`` function using what I have learned to only return the subtraction of the first parts of ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
@@ -520,7 +538,7 @@ I could write a test case for every permutation of sleep and wake times, or  wri
     def duration(wake_time, sleep_time):
         return wake_time.split(':')[0] - sleep_time.split(':')[0]
 
-  the terminal still shows a :doc:`/exceptions/TypeError` for an unsupported operation of trying to subtract one `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ from another, and though it is not obvious here, from ``test_string_split_method`` I know that the strings being subtracted are the values to the left of the delimiter ``:`` not the entire string value of ``wake_time`` and ``sleep_time``. For example,  if the given ``wake_time`` is ``"02:00"`` and the given ``sleep_time`` is ``"01:00"``  the program is currently trying to subtract ``"01""`` from ``"02"`` which is different from trying to subtract ``1`` from ``2``
+  the terminal still shows a :doc:`/exceptions/TypeError` for an unsupported operation of trying to subtract one `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ from another, and though it is not obvious here, from ``test_string_split_method`` I know that the strings being subtracted are the values to the left of the separator ``:`` not the entire string value of ``wake_time`` and ``sleep_time``. For example,  if the given ``wake_time`` is ``"02:00"`` and the given ``sleep_time`` is ``"01:00"``  the program is currently trying to subtract ``"01""`` from ``"02"`` which is different from trying to subtract ``1`` from ``2``
 * I now have the task of converting the string to a number so I can do the subtraction, for this I use the `int <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ constructor which returns an integer for a given value. I comment out the current failing test and add a test to ``test_sleep_duration.py`` showing what `int <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ does
 
   .. code-block:: python
@@ -586,7 +604,7 @@ I could write a test case for every permutation of sleep and wake times, or  wri
 
 * There is some repetition in the function, for each string given it
 
-  - splits the string on the delimiter ``:``
+  - splits the string on the separator ``:``
   - gets the first (0th) value from the split
   - converts the first value from the split to an integer
 
@@ -664,7 +682,7 @@ I am going to add a failing test for that scenario to ``test_sleep_duration.py``
             f'{wake_hour-sleep_hour}:{wake_minute-sleep_minute}'
         )
 
-the terminal shows an :doc:`/exceptions/AssertionError`, the expected value is now a string that contains the subtraction of the sleep hour from the wake hour, separated by a delimiter ``:`` and the subtraction of the sleep minute from the wake minute, so if for example I have a wake_time of ``08:30`` and a sleep_time of ``07:11`` I should have ``1:19`` as the output
+the terminal shows an :doc:`/exceptions/AssertionError`, the expected value is now a string that contains the subtraction of the sleep hour from the wake hour, separated by a separator ``:`` and the subtraction of the sleep minute from the wake minute, so if for example I have a wake_time of ``08:30`` and a sleep_time of ``07:11`` I should have ``1:19`` as the output
 
 GREEN: make it pass
 ====================
@@ -1435,7 +1453,7 @@ To make it happen I learned
 
 
 * how to convert a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ to an `integer <https://docs.python.org/3/library/functions.html#int>`_
-* how to split a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ into a :doc:`list </data_structures/lists>` using a given delimiter/separator
+* how to split a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ into a :doc:`list </data_structures/lists>` using a given separator
 * how to index a :doc:`list </data_structures/lists>` to get specific items
 * how to convert a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ to a `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ object using the `datetime.datetime.strptime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime.datetime.strptime>`_ method
 * how to convert a `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ object to a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
