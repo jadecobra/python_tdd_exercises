@@ -492,8 +492,8 @@ I could write a test case for every permutation of sleep and wake times, or  wri
 
     E    TypeError: unsupported operand type(s) for -: 'list' and 'list'
 
-  Since I only need the first part of the list, I can get the specific item by using its index. Python uses zero-based indexing so the first item is at index ``0`` and the second item at ``1`` see :doc:`/data_structures/lists`
-* I add a failing test to ``test_string_split_method`` to test getting specific parts of the :doc:`list </data_structures/lists>` created from splitting a `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_
+  Since I only need the first part of the list, I can get the specific item by using its index. Python uses zero-based indexing so the first item is at index ``0`` and the second item at ``1``. See :doc:`/data_structures/lists` for more
+* I add tests to ``test_string_split_method`` to test getting specific parts of the :doc:`list </data_structures/lists>` created from splitting a `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_
 
   .. code-block:: python
 
@@ -511,62 +511,74 @@ I could write a test case for every permutation of sleep and wake times, or  wri
             0
         )
 
-  the terminal shows an :doc:`/exceptions/AssertionError` because the first item (item zero) from splitting ``"12:34"`` on the separator ``:`` is ``"12"``, good, I am closer to what I want
+  the terminal shows an :doc:`/exceptions/AssertionError` because the first item (item zero) from splitting ``"12:34"`` on the separator ``:`` is ``"12"`` ::
+
+    AssertionError: '12' != 0
+
+  this is closer to what I want
 * I change the expected value in the test to match the value in the terminal
 
   .. code-block:: python
 
-    def test_string_split_method(self):
-        self.assertEqual(
-            "00:00".split(':'),
-            ['00', '00']
-        )
         self.assertEqual(
             "12:34".split(':')[0],
             "12"
         )
-        self.assertEqual(
-            "12:34".split(':')[1],
-            0
-        )
 
-  the terminal shows another :doc:`/exceptions/AssertionError` , this time to confirm that the second item (item one) from splitting ``"12:34"`` on the separator ``:`` is ``"34"``, I am not dealing with this part yet but I can assume I would use it soon, so I change the expected value in the same way and the test passes bringing me back to the unsolved :doc:`/exceptions/TypeError`
-* I change the ``duration`` function using what I have learned to only return the subtraction of the first parts of ``wake_time`` and ``sleep_time``
+  the terminal shows another :doc:`/exceptions/AssertionError` ::
+
+    AssertionError: '34' != 0
+
+  this shows that the second item (item one) from splitting ``"12:34"`` on the separator ``':'`` is ``"34"``
+* I change the expected value in the same way and the test passes bringing me back to the unsolved :doc:`/exceptions/TypeError`
+
+  .. code-block:: python
+
+    self.assertEqual(
+        "12:34".split(':')[1],
+        "34"
+    )
+
+* I change the ``duration`` function using what I have learned to return the subtraction of the first parts of ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
 
     def duration(wake_time, sleep_time):
         return wake_time.split(':')[0] - sleep_time.split(':')[0]
 
-  the terminal still shows a :doc:`/exceptions/TypeError` for an unsupported operation of trying to subtract one `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ from another, and though it is not obvious here, from ``test_string_split_method`` I know that the strings being subtracted are the values to the left of the separator ``:`` not the entire string value of ``wake_time`` and ``sleep_time``. For example,  if the given ``wake_time`` is ``"02:00"`` and the given ``sleep_time`` is ``"01:00"``  the program is currently trying to subtract ``"01""`` from ``"02"`` which is different from trying to subtract ``1`` from ``2``
+  the terminal still shows a :doc:`/exceptions/TypeError` for an unsupported operation of trying to subtract one `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ from another, and though it is not obvious here, from ``test_string_split_method`` I know that the strings being subtracted are the values to the left of the separator ``:`` not the entire string value of ``wake_time`` and ``sleep_time``. For example,  if the given ``wake_time`` is ``"02:00"`` and the given ``sleep_time`` is ``"01:00"``  the program is currently trying to subtract ``"01"`` from ``"02"`` which is different from trying to subtract ``1`` from ``2``
 * I now have the task of converting the string to a number so I can do the subtraction, for this I use the `int <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ constructor which returns an integer for a given value. I comment out the current failing test and add a test to ``test_sleep_duration.py`` showing what `int <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ does
 
   .. code-block:: python
 
     # def test_duration_when_given_hours_only(self):
-    #   wake_hour = random.randint(0, 23)
-    #   sleep_hour = random.randint(0, 23)
-    #   self.assertEqual(
-    #    sleep_duration.duration(
-    #      wake_time=f'{wake_hour}:00',
-    #      sleep_time=f'{sleep_hour}:00'
-    #    ),
-    #    wake_hour-sleep_hour
-    #   )
+    #     wake_hour = random.randint(0, 23)
+    #     sleep_hour = random.randint(0, 23)
+    #     self.assertEqual(
+    #         sleep_duration.duration(
+    #             wake_time=f'{wake_hour}:00',
+    #             sleep_time=f'{sleep_hour}:00'
+    #         ),
+    #         wake_hour-sleep_hour
+    #     )
 
     def test_converting_a_string_to_an_integer(self):
         self.assertEqual(int("12"), 0)
 
-  the terminal shows an :doc:`/exceptions/AssertionError` since ``12 != 0`` and I change the test to match the expectation
+  the terminal shows an :doc:`/exceptions/AssertionError` since ``12 != 0`` ::
+
+    AssertionError: 12 != 0
+
+* I change the test to match the expectation
 
   .. code-block:: python
 
     def test_converting_a_string_to_an_integer(self):
         self.assertEqual(int("12"), 12)
 
-  I now have another tool to use to solve the problem
+  Great! I now have another tool to use to solve the problem
 
-* after uncommenting the test, I am back to the :doc:`/exceptions/TypeError` I have been trying to solve. I change the ``duration`` function with what I have learned to see if it makes the test pass
+* I uncomment the test to show the :doc:`/exceptions/TypeError` I have been trying to solve, then change the ``duration`` function with what I have learned to see if it makes the test pass
 
   .. code-block:: python
 
@@ -602,13 +614,13 @@ I could write a test case for every permutation of sleep and wake times, or  wri
 
         return wake_time_hour_integer - sleep_time_hour_integer
 
-* There is some repetition in the function, for each string given it
+* Rewriting the code this way shows there is repetition in the function. For each string given it
 
   - splits the string on the separator ``:``
   - gets the first (0th) value from the split
   - converts the first value from the split to an integer
 
-  I could abstract this repetition to a function and call the function for each value, the programming ancestors are singing a familiar tune - `Do Not Repeat Yourself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
+  I could abstract this repetition to a function and call that function for each value, the programming ancestors are singing a familiar tune - `Do Not Repeat Yourself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
   .. code-block:: python
 
@@ -634,6 +646,8 @@ I could write a test case for every permutation of sleep and wake times, or  wri
     def duration(wake_time, sleep_time):
         return get_hour(wake_time) - get_hour(sleep_time)
 
+  all tests are still passing. I have not broken anything yet
+
 * I could rewrite the ``get_hour`` function to use the same variable name in the operation for example
 
   .. code-block:: python
@@ -645,7 +659,7 @@ I could write a test case for every permutation of sleep and wake times, or  wri
         return value
 
   the terminal still shows passing tests. This is called `Extract Method <https://refactoring.com/catalog/extractFunction.html>`_ from the `Refactoring Catalog <https://refactoring.com/catalog/>`_
-* I could also rewrite it to use one line though it will no longer be as explicit
+* I could also rewrite the ``get_hour`` function to use one line though it will no longer be as explicit
 
   .. code-block:: python
 
@@ -660,12 +674,12 @@ I could write a test case for every permutation of sleep and wake times, or  wri
 Duration when given Hours and Minutes
 ****************************************
 
-I found a solution that provides the right duration when given sleep time and wake time in a given day. the solution does not take minutes into account when doing the calculation
+I found a solution that provides the right duration when given sleep time and wake time hours, it does not take minutes into account when doing the calculation.
 
 RED: make it fail
 ====================
 
-I am going to add a failing test for that scenario to ``test_sleep_duration.py``
+I add a failing test in ``test_sleep_duration.py`` that takes minutes into account
 
 .. code-block:: python
 
@@ -682,7 +696,13 @@ I am going to add a failing test for that scenario to ``test_sleep_duration.py``
             f'{wake_hour-sleep_hour}:{wake_minute-sleep_minute}'
         )
 
-the terminal shows an :doc:`/exceptions/AssertionError`, the expected value is now a string that contains the subtraction of the sleep hour from the wake hour, separated by a separator ``:`` and the subtraction of the sleep minute from the wake minute, so if for example I have a wake_time of ``08:30`` and a sleep_time of ``07:11`` I should have ``1:19`` as the output
+the terminal shows an :doc:`/exceptions/AssertionError` similar to this
+
+.. code-block:: python
+
+  AssertionError: 4 != '4:-20'
+
+the expected value is now a string that contains the subtraction of the sleep hour from the wake hour, separated by a separator ``:`` and the subtraction of the sleep minute from the wake minute. For example, when I have a wake_time of ``08:30`` and a sleep_time of ``07:11``, I should have ``1:19`` as the output
 
 GREEN: make it pass
 ====================
@@ -697,7 +717,12 @@ GREEN: make it pass
             f'{wake_time-sleep_time}'
         )
 
-  I get a :doc:`/exceptions/TypeError` because I just tried to subtract one string from another, at this point I have a long standing relationship with :doc:`/exceptions/TypeError`
+  I get a :doc:`/exceptions/TypeError` because I just tried to subtract one string from another, at this point I have a long standing relationship with this error
+
+  .. code-block:: python
+
+    TypeError: unsupported operand type(s) for -: 'str' and 'str'
+
 * I change the second part of the timestamp to use the ``get_hour`` function
 
   .. code-block:: python
@@ -708,17 +733,21 @@ GREEN: make it pass
             f'{get_hour(wake_time)-get_hour(sleep_time)}'
         )
 
-  the terminal now shows an :doc:`/exceptions/AssertionError` because the difference in minutes is not yet calculated
-
-* I will use the ``get_hour`` function to create a similar function which gets the minutes from a given timestamp
+  the terminal shows an :doc:`/exceptions/AssertionError` because the difference in minutes is not yet calculated
 
   .. code-block:: python
 
-    def get_hour(value):
-        return int(value.split(':')[0])
+    AssertionError: '-4:-4' != -4
+
+* I will use the ``get_hour`` function as a reference to create a similar function which gets the minutes from a given timestamp
+
+  .. code-block:: python
 
     def get_minute(value):
         return int(value.split(':')[1])
+
+    def get_hour(value):
+        return int(value.split(':')[0])
 
     def duration(wake_time, sleep_time):
         return (
@@ -728,15 +757,15 @@ GREEN: make it pass
 
   the terminal still shows an :doc:`/exceptions/AssertionError`
 
-* after I change the ``duration`` function with a call to the new ``get_minute`` function, the test passes
+* after I add a call to the new ``get_minute`` function in the ``duration`` function, the test passes
 
   .. code-block:: python
 
-    def get_hour(value):
-        return int(value.split(':')[0])
-
     def get_minute(value):
         return int(value.split(':')[1])
+
+    def get_hour(value):
+        return int(value.split(':')[0])
 
     def duration(wake_time, sleep_time):
         return (
@@ -744,26 +773,9 @@ GREEN: make it pass
             f'{get_minute(wake_time)-get_minute(sleep_time)}'
         )
 
-  the terminal now reveals a failure for ``test_duration_when_given_hours_only`` which passed earlier, I introduced a regression when I changed the format of the output of ``duration`` function from a number to a string
+  the terminal shows a failure for ``test_duration_when_given_hours_only`` which passed earlier, I introduced a regression when I changed the format of the output of ``duration`` function from a number to a string
 
-* I change ``test_duration_when_given_hours_only`` where I supplied only hours to expect a string instead of a number, making it match the current form of the ``duration`` :doc:`function </functions/functions>`
-
-  .. code-block:: python
-
-    def test_duration_when_given_hours_only(self):
-        wake_hour = random.randint(0, 23)
-        sleep_hour = random.randint(0, 23)
-        self.assertEqual(
-            sleep_duration.duration(
-                wake_time=f'{wake_hour}:00',
-                sleep_time=f'{sleep_hour}:00'
-            ),
-            f'{wake_hour-sleep_hour}:00'
-        )
-
-  I get an :doc:`/exceptions/AssertionError` in the terminal because I have two zeros ``:00`` in the expected return value but the duration function returns ``0`` for the minute side of the timestamp after doing a subtraction, which means ``00`` minus ``00`` is ``0`` not ``00``.
-
-* I could change the right side of the expected value to ``0`` to make it pass, but that would not be necessary because ``test_duration_when_given_hours_and_minutes`` already shows the cases where the minutes are zero since the test uses a random number from ``0`` to ``23`` for hours and a random number from ``0`` to ``59`` for minutes.
+* I could update the test to make it pass, but that would not be necessary because ``test_duration_when_given_hours_and_minutes`` already shows the cases where the minutes are zero since the test uses a random number from ``0`` to ``23`` for hours and a random number from ``0`` to ``59`` for minutes.
 
   I remove ``test_duration_when_given_hours_only`` since I no longer need it and the terminal shows passing tests
 
