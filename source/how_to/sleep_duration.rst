@@ -44,16 +44,18 @@ the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.ht
 
   NameError: name 'sleep_duration' is not defined
 
-which I add to the list of exceptions encountered
-
-.. code-block:: python
-
-  # Exceptions Encountered
-  # AssertionError
-  # NameError
+This test checks that when the ``duration`` function is given a ``sleep_time`` of ``7:00`` and a ``wake_time`` of ``8:00`` it should return ``1`` as the duration, which is the difference between the two timestamps.
 
 GREEN: make it pass
 ====================
+
+* I add the error to the list of exceptions encountered
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AssertionError
+    # NameError
 
 * I add an import statement for the missing name
 
@@ -66,7 +68,7 @@ GREEN: make it pass
     class TestSleepDuration(unittest.TestCase):
     ...
 
-  and the terminal shows an :doc:`/exceptions/AttributeError`, I do not have a definition for ``duration`` in ``sleep_duration.py``
+  and the terminal shows an :doc:`/exceptions/AttributeError`. I do not have a definition for ``duration`` in ``sleep_duration.py``
 
   .. code-block:: python
 
@@ -94,7 +96,7 @@ GREEN: make it pass
 
     duration = None
 
-  the terminal shows a :doc:`/exceptions/TypeError` because :doc:`None </data_structures/none>` is not callable ::
+  and the terminal shows a :doc:`/exceptions/TypeError` because :doc:`None </data_structures/none>` is not callable ::
 
     TypeError: 'NoneType' object is not callable
 
@@ -117,11 +119,11 @@ GREEN: make it pass
 
     TypeError: duration() got an unexpected keyword argument 'wake_time'
 
-* I change the definition of ``duration`` to accept the required argument
+* I change the definition of ``duration`` to accept the required keyword argument, setting its default value to :doc:`None </data_structures/none>`
 
   .. code-block:: python
 
-    def duration(wake_time):
+    def duration(wake_time=None):
         return None
 
   the terminal shows a similar :doc:`/exceptions/TypeError` message for the second argument
@@ -130,24 +132,24 @@ GREEN: make it pass
 
     TypeError: duration() got an unexpected keyword argument 'sleep_time'
 
-* I add the second argument to the definition of the ``duration`` :doc:`function </functions/functions>`
+* I add the second keyword argument to the definition of the ``duration`` :doc:`function </functions/functions>`
 
   .. code-block:: python
 
-    def duration(wake_time, sleep_time):
+    def duration(wake_time=None, sleep_time=None):
         return None
 
-  the terminal shows an :doc:`/exceptions/AssertionError` since the duration function returns :doc:`None </data_structures/none>` and the test expects ``1`` as the duration when a sleep time of ``07:00`` and a wake time of ``08:00`` is given
+  the terminal shows an :doc:`/exceptions/AssertionError`. The duration function returns :doc:`None </data_structures/none>` but the test expects ``1`` as the duration when a sleep time of ``07:00`` and a wake time of ``08:00`` is given
 
   .. code-block:: python
 
     AssertionError: None != 1
 
-* I change the return value for the duration function to the expectation
+* I change the return value for the ``duration`` function to make it match the expectation
 
   .. code-block:: python
 
-    def duration(wake_time, sleep_time):
+    def duration(wake_time=None, sleep_time=None):
         return 1
 
   and the test passes. We are green.
@@ -158,7 +160,7 @@ REFACTOR: make it better
 
 The function currently returns ``1`` regardless of the inputs given but for it to be useful it has to calculate the difference between the wake time and the sleep time.
 
-I could write a test case for every permutation of sleep and wake times, or  write one test that uses random variables for the sleep and wake times, like I did in :doc:`/how_to/calculator`
+I could write a test case for every possible sleep and wake time, or  write one test that uses random variables which will cover ``00:00`` to ``23:59``. I also do this in :doc:`/how_to/calculator`
 
 
 * I add an import statement for the `random <https://docs.python.org/3/library/random.html?highlight=random#module-random>`_ module to ``test_sleep_duration.py``
@@ -169,7 +171,7 @@ I could write a test case for every permutation of sleep and wake times, or  wri
     import sleep_duration
     import unittest
 
-* then add a new test with random values
+* then add a new test with random values for the hours part of the timestamps
 
   .. code-block:: python
 
@@ -186,9 +188,9 @@ I could write a test case for every permutation of sleep and wake times, or  wri
                 1
             )
 
-  I use a random integer from ``0`` to ``23`` as the hours for sleep and wake time and :doc:`interpolate </how_to/passing_values>` them in the strings I use as inputs, this means the sleep and wake times will vary randomly from ``00:00`` to ``23:00`` to cover all the possible hours in a day
+  I use a random integer from ``0`` to ``23`` as the hours for sleep and wake time and :doc:`interpolate </how_to/passing_values>` them in the input strings. This means the sleep and wake times will vary randomly from ``00:00`` to ``23:00`` to cover all the possible hours in a day
 
-* the terminal still shows the test is passing because the expected value is ``1``, I need to change it to match the true expectation, which is that it should be the difference between ``wake_time`` and ``sleep_time``
+* the terminal still shows the test is passing because the expected value is ``1``. I change the test to match the requirement of the difference between ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
 
@@ -213,7 +215,7 @@ I could write a test case for every permutation of sleep and wake times, or  wri
 
   .. code-block:: python
 
-    def duration(wake_time, sleep_time):
+    def duration(wake_time=None, sleep_time=None):
         return wake_time - sleep_time
 
   the terminal shows a :doc:`/exceptions/TypeError`. I passed in two strings but python does not have an operation defined for subtracting one string from another
@@ -224,8 +226,7 @@ I could write a test case for every permutation of sleep and wake times, or  wri
 
   I need to find a way to convert the timestamp from a string to a number.
 
-  I know that the two inputs are currently in the format ``XX:00``, if I can parse the string to get the first two characters and convert those digits to a number I should be able to calculate the difference
-* to find out what options are available to me, I look at the :doc:`methods </functions/functions>` and ``attributes`` of `strings <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ by using the `dir <https://docs.python.org/3/library/functions.html?highlight=dir#dir>`_ :doc:`function </functions/functions>`
+* I know that the two inputs are currently in the format ``XX:00``. If I can get the first two characters and convert them to a number I know I can calculate the difference since python has arithmetic definitions defined. To give me a clue about how to break the string apart or get the characters I want, I use the `dir <https://docs.python.org/3/library/functions.html?highlight=dir#dir>`_ :doc:`function </functions/functions>` to see what :doc:`methods </functions/functions>` and ``attributes`` of `strings <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ are available
 
   .. code-block:: python
 
@@ -235,7 +236,7 @@ I could write a test case for every permutation of sleep and wake times, or  wri
             None
         )
 
-  an :doc:`/exceptions/AssertionError` is raised
+  the terminal shows an :doc:`/exceptions/AssertionError`
 
   .. code-block:: python
 
@@ -286,7 +287,7 @@ I could write a test case for every permutation of sleep and wake times, or  wri
           ['__add__', '__class__', '__contains__', '[918 chars]ill']
         )
 
-  `maxDiff <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff>`_ sets a limit on the number of characters the terminal shows for a difference between two objects, there is no limit when it is set to None. I now see a full list of all the attributes of a `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_
+  `unittest.TestCase.maxDiff <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff>`_ sets a limit on the number of characters the terminal shows for a difference between two objects, there is no limit when it is set to :doc:`None </data_structures/none>`. The terminal shows a full list of all the attributes of a `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_
 
 * I copy the values from the terminal into the test
 
@@ -392,7 +393,7 @@ I could write a test case for every permutation of sleep and wake times, or  wri
 
   I still need a way to convert a `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ to a number.
 
-* I try one of the :doc:`methods </functions/functions>` listed from ``test_string_methods_and_attributes`` to see if it will get me closer to a solution. Going with just the names listed might not be enough since I do not know what they do. I can check the `python documentation <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ for extra details by using the `help <https://docs.python.org/3/library/functions.html?highlight=dir#help>`_ system
+* I want to try one of the :doc:`methods </functions/functions>` listed from ``test_string_methods_and_attributes`` to see if it will get me closer to a solution, but it seems looking at the names listed might not be enough since I do not know what they do. I check the `python documentation <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ for extra details by using the `help <https://docs.python.org/3/library/functions.html?highlight=dir#help>`_ system
 
   .. code-block:: python
 
@@ -426,7 +427,7 @@ I could write a test case for every permutation of sleep and wake times, or  wri
               None
           )
 
-  the terminal shows an :doc:`/exceptions/AssertionError` and I see that `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ creates a list when called
+  the terminal shows an :doc:`/exceptions/AssertionError` and I see that `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ creates a :doc:`list </data_structures/lists>` when called
 
   .. code-block:: python
 
@@ -442,13 +443,13 @@ I could write a test case for every permutation of sleep and wake times, or  wri
             ["00:00"]
         )
 
-  and the test passes with the terminal showing the :doc:`/exceptions/TypeError` that took me down this path
+  and the terminal shows the :doc:`/exceptions/TypeError` that took me down this path
 
   .. code-block:: python
 
     TypeError: unsupported operand type(s) for -: 'str' and 'str'
 
-* I want is to split the string on a ``separator`` so I get the separate parts, something like ``["00", "00"]``, using ``:`` as the separator. I change the test to reflect this desire
+* I want to `split <https://docs.python.org/3/library/stdtypes.html#str.split>` the string on a ``separator`` so I get the separate parts, something like ``["00", "00"]``, using ``:`` as the separator. I change the expectation of the test to match this idea
 
   .. code-block:: python
 
@@ -458,7 +459,7 @@ I could write a test case for every permutation of sleep and wake times, or  wri
             ['00', '00']
         )
 
-  the terminal shows an :doc:`/exceptions/AssertionError`, the use of the `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ :doc:`method </functions/functions>` has not yet given me what I want
+  the terminal shows an :doc:`/exceptions/AssertionError`, the use of the `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ :doc:`method </functions/functions>` has not yet given me what I want but I am closer, the shapes at least look the same
 
   .. code-block:: python
 
@@ -481,16 +482,16 @@ I could write a test case for every permutation of sleep and wake times, or  wri
 
   .. code-block:: python
 
-    def duration(wake_time, sleep_time):
+    def duration(wake_time=None, sleep_time=None):
         return wake_time.split(':') - sleep_time.split(':')
 
-  the terminal still shows a :doc:`/exceptions/TypeError`, this time for trying to subtract a :doc:`list </data_structures/lists>` from a :doc:`list </data_structures/lists>`
+  the terminal shows a :doc:`/exceptions/TypeError`, this time for trying to subtract a :doc:`list </data_structures/lists>` from a :doc:`list </data_structures/lists>`
 
   .. code-block:: python
 
     TypeError: unsupported operand type(s) for -: 'list' and 'list'
 
-  Since I only need the first part of the list, I can get the specific item by using its index. Python uses zero-based indexing so the first item is at index ``0`` and the second item at ``1``. See :doc:`/data_structures/lists` for more
+  Since I only need the first part of the list, I can get the specific item by using its index. Python uses zero-based indexing so the first item is at index ``0`` and the second item at index ``1``. See :doc:`/data_structures/lists` for more
 * I add tests to ``test_string_split_method`` to test getting specific parts of the :doc:`list </data_structures/lists>` created from splitting a `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_
 
   .. code-block:: python
@@ -528,7 +529,7 @@ I could write a test case for every permutation of sleep and wake times, or  wri
     AssertionError: '34' != 0
 
   this shows that the second item (item one) from splitting ``"12:34"`` on the separator ``':'`` is ``"34"``
-* I change the expected value in the same way and the test passes bringing me back to the unsolved :doc:`/exceptions/TypeError`
+* I change the expected value in the same way
 
   .. code-block:: python
 
@@ -537,14 +538,16 @@ I could write a test case for every permutation of sleep and wake times, or  wri
         "34"
     )
 
-* I change the ``duration`` function using what I have learned to return the subtraction of the first parts of ``wake_time`` and ``sleep_time``
+  the test passes bringing me back to the unsolved :doc:`/exceptions/TypeError`
+
+* using what I have learned, I make the ``duration`` function return the subtraction of the first parts of ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
 
-    def duration(wake_time, sleep_time):
+    def duration(wake_time=None, sleep_time=None):
         return wake_time.split(':')[0] - sleep_time.split(':')[0]
 
-  the terminal still shows a :doc:`/exceptions/TypeError` for an unsupported operation of trying to subtract one `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ from another, and though it is not obvious here, from ``test_string_split_method`` I know that the strings being subtracted are the values to the left of the separator ``:`` not the entire string value of ``wake_time`` and ``sleep_time``. For example,  if the given ``wake_time`` is ``"02:00"`` and the given ``sleep_time`` is ``"01:00"``  the program is currently trying to subtract ``"01"`` from ``"02"`` which is different from trying to subtract ``1`` from ``2``
+  the terminal shows a :doc:`/exceptions/TypeError` for an unsupported operation of trying to subtract one `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ from another, and though it is not explicit here, from ``test_string_split_method`` I know that the strings being subtracted are the values to the left of the separator ``:`` not the entire string value of ``wake_time`` and ``sleep_time``. For example,  if the given ``wake_time`` is ``"02:00"`` and the given ``sleep_time`` is ``"01:00"``  the program is currently trying to subtract ``"01"`` from ``"02"`` which is different from trying to subtract ``1`` from ``2``. ``"01"`` is a string and ``1`` is a number.
 * The next task is to convert the string to a number so I can do the subtraction. I use the `int <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ constructor which returns an integer for a given value. I comment out the current failing test and add a test to ``test_sleep_duration.py`` to show what `int <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ does
 
   .. code-block:: python
@@ -574,24 +577,29 @@ I could write a test case for every permutation of sleep and wake times, or  wri
     def test_converting_a_string_to_an_integer(self):
         self.assertEqual(int("12"), 12)
 
-  Great! I now have another tool to use to solve the problem. I can convert strings to numbers.b
+  Great! I now have another tool to use to solve the problem. From the tests so far I can
+
+  - split a string on a separator
+  - index a list
+  - convert strings to numbers
+  - subtract one number from another
 
 * I uncomment the test to show the :doc:`/exceptions/TypeError` I have been trying to solve, then change the ``duration`` function with what I have learned to see if it makes the test pass
 
   .. code-block:: python
 
-    def duration(wake_time, sleep_time):
+    def duration(wake_time=None, sleep_time=None):
         return (
             int(wake_time.split(':')[0])
           - int(sleep_time.split(':')[0])
         )
 
-  YES! I am green, with a way to randomly test if the duration function can calculate the sleep duration given any random ``sleep`` and ``wake`` time. What a beautiful life!
+  YES! I am green, with a way to randomly test if the duration function can calculate the sleep duration given any random ``sleep`` and ``wake`` hour. What a beautiful life!
 * I could rewrite the solution I have in a way that tries to explain what is happening to someone who does not know how to index a list or use `int <https://docs.python.org/3/library/functions.html?highlight=int#int>`_  or `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_. What do you think?
 
   .. code-block:: python
 
-    def duration(wake_time, sleep_time):
+    def duration(wake_time=None, sleep_time=None):
         wake_time_split = wake_time.split(':')
         wake_time_hour = wake_time_split[0]
         wake_time_hour_integer = int(wake_time_hour)
@@ -601,7 +609,7 @@ I could write a test case for every permutation of sleep and wake times, or  wri
 
   .. code-block:: python
 
-    def duration(wake_time, sleep_time):
+    def duration(wake_time=None, sleep_time=None):
         wake_time_split = wake_time.split(':')
         wake_time_hour = wake_time_split[0]
         wake_time_hour_integer = int(wake_time_hour)
@@ -612,13 +620,13 @@ I could write a test case for every permutation of sleep and wake times, or  wri
 
         return wake_time_hour_integer - sleep_time_hour_integer
 
-* Rewriting the code this way shows there is repetition in the function. For each string given it
+* Rewriting the code this way shows there is repetition in the function. For each string given, the ``duration`` function
 
   - splits the string on the separator ``:``
-  - gets the first (0th) value from the split
-  - converts the first value from the split to an integer
+  - gets the first item from the split
+  - converts the first item from the split to an integer
 
-  I could abstract this repetition to a function and call that function for each value, the programming ancestors are singing a familiar tune - `Do Not Repeat Yourself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
+  I can make the repeating parts a function and call it for each value, the programming ancestors are singing a familiar tune - `Do Not Repeat Yourself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
   .. code-block:: python
 
@@ -628,7 +636,7 @@ I could write a test case for every permutation of sleep and wake times, or  wri
         value_hour_integer = int(value_hour)
         return value_hour_integer
 
-    def duration(wake_time, sleep_time):
+    def duration(wake_time=None, sleep_time=None):
         return function(wake_time) - function(sleep_time)
 
   since the tests are passing, I can rename the abstracted ``function`` to something more descriptive like ``get_hour``
@@ -641,7 +649,7 @@ I could write a test case for every permutation of sleep and wake times, or  wri
         value_hour_integer = int(value_hour)
         return value_hour_integer
 
-    def duration(wake_time, sleep_time):
+    def duration(wake_time=None, sleep_time=None):
         return get_hour(wake_time) - get_hour(sleep_time)
 
   all tests are still passing. I have not broken anything yet
@@ -709,7 +717,7 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    def duration(wake_time, sleep_time):
+    def duration(wake_time=None, sleep_time=None):
         return (
             f'{get_hour(wake_time)-get_hour(sleep_time)}:'
             f'{wake_time-sleep_time}'
@@ -725,7 +733,7 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    def duration(wake_time, sleep_time):
+    def duration(wake_time=None, sleep_time=None):
         return (
             f'{get_hour(wake_time)-get_hour(sleep_time)}:'
             f'{get_hour(wake_time)-get_hour(sleep_time)}'
@@ -747,7 +755,7 @@ GREEN: make it pass
     def get_hour(value):
         return int(value.split(':')[0])
 
-    def duration(wake_time, sleep_time):
+    def duration(wake_time=None, sleep_time=None):
         return (
             f'{get_hour(wake_time)-get_hour(sleep_time)}:'
             f'{get_hour(wake_time)-get_hour(sleep_time)}'
@@ -765,7 +773,7 @@ GREEN: make it pass
     def get_hour(value):
         return int(value.split(':')[0])
 
-    def duration(wake_time, sleep_time):
+    def duration(wake_time=None, sleep_time=None):
         return (
             f'{get_hour(wake_time)-get_hour(sleep_time)}:'
             f'{get_minute(wake_time)-get_minute(sleep_time)}'
@@ -986,7 +994,7 @@ Putting it Together
 
   .. code-block:: python
 
-    def duration(wake_time, sleep_time):
+    def duration(wake_time=None, sleep_time=None):
         return (
             get_datetime_object(wake_time)
           - get_datetime_object(sleep_time)
@@ -1042,7 +1050,7 @@ Putting it Together
 
   .. code-block:: python
 
-    def duration(wake_time, sleep_time):
+    def duration(wake_time=None, sleep_time=None):
         difference = (
             get_datetime_object(wake_time)
           - get_datetime_object(sleep_time)
@@ -1125,7 +1133,7 @@ Putting it Together
 
   .. code-block:: python
 
-    def duration(wake_time, sleep_time):
+    def duration(wake_time=None, sleep_time=None):
         difference = (
             get_datetime_object(wake_time)
           - get_datetime_object(sleep_time)
@@ -1187,7 +1195,7 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    def duration(wake_time, sleep_time):
+    def duration(wake_time=None, sleep_time=None):
         wake_time = get_datetime_object(wake_time)
         sleep_time = get_datetime_object(sleep_time)
         if wake_time < sleep_time:
