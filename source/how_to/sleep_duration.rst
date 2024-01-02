@@ -1107,7 +1107,7 @@ putting the pieces together
             f'{wake_hour-sleep_hour}:{wake_minute-sleep_minute}:00'
         )
 
-* I also have an :doc:`/exceptions/AssertionError` for ``test_duration_calculation`` to match the new format and update it to make the test pass
+* I also have an :doc:`/exceptions/AssertionError` for ``test_duration_calculation``. I add seconds to the expected values to make it match the current format
 
   .. code-block:: python
 
@@ -1120,51 +1120,34 @@ putting the pieces together
             '0:31:00'
         )
 
-* I will randomly get an :doc:`/exceptions/AssertionError` for ``test_duration_when_given_hours_and_minutes``. Since I am using random integers for hours and minutes, there will be instances where the ``wake_hour`` is earlier than the ``sleep_hour`` leading to a negative number. For example
+* I randomly get an :doc:`/exceptions/AssertionError` for ``test_duration_when_given_hours_and_minutes``. Since I am using random integers for hours and minutes, there will be instances where the ``wake_hour`` is earlier than the ``sleep_hour`` leading to a negative number. For example
 
   .. code-block:: python
 
     AssertionError: '-1 day, 14:01:00' != '-9:-59:00'
 
-  here, the expected values are still based on how I calculated the duration earlier, subtracting the hour from hour and minute from minute independently
+  here, the expected values are still based on how I calculated the duration earlier, subtracting the sleep hour from wake hour and sleep minute from wake minute independently
 * I make the calculation more accurate by using the ``get_datetime_object`` function from ``sleep_duration.py``
 
   .. code-block:: python
 
-      def test_duration_when_given_hours_and_minutes(self):
-          wake_hour = random.randint(0, 23)
-          sleep_hour = random.randint(0, 23)
-          wake_minute = random.randint(0, 59)
-          sleep_minute = random.randint(0, 59)
-          wake_time = f'{wake_hour}:{wake_minute}'
-          sleep_time = f'{sleep_hour}:{sleep_minute}'
-          self.assertEqual(
-              sleep_duration.duration(wake_time, sleep_time),
-              str(
-                  sleep_duration.get_datetime_object(wake_time)
-                - sleep_duration.get_datetime_object(sleep_time)
-              )
-          )
-
-* I add seconds to the expected values in ``test_duration_calculation`` so it matches the current format
-
-  .. code-block:: python
-
-    def test_duration_calculation(self):
-        wake_hour = 3
-        sleep_hour = 2
-        wake_minute = 30
-        sleep_minute = 59
+    def test_duration_when_given_hours_and_minutes(self):
+        wake_hour = random.randint(0, 23)
+        sleep_hour = random.randint(0, 23)
+        wake_minute = random.randint(0, 59)
+        sleep_minute = random.randint(0, 59)
+        wake_time = f'{wake_hour}:{wake_minute}'
+        sleep_time = f'{sleep_hour}:{sleep_minute}'
         self.assertEqual(
-            sleep_duration.duration(
-                wake_time=f'{wake_hour}:{wake_minute}',
-                sleep_time=f'{sleep_hour}:{sleep_minute}'
-            ),
-            '0:31:00'
+            sleep_duration.duration(wake_time, sleep_time),
+            str(
+                sleep_duration.get_datetime_object(wake_time)
+              - sleep_duration.get_datetime_object(sleep_time)
+            )
         )
 
   and I am green again! Lovely
-* I can now remove the second return statement in the ``duration`` function in ``sleep_duration.py`` that I left to save what worked until I had a better solution
+* I remove the second return statement in the ``duration`` function in ``sleep_duration.py`` since I have a better solution that works
 
   .. code-block:: python
 
@@ -1177,7 +1160,26 @@ putting the pieces together
 
   all tests are still passing
 
-* I remove the ``get_hour`` and ``get_minute`` :doc:`functions </functions/functions>` since they are no longer needed and all tests are still passing. It is indeed a beautiful life
+* I remove the ``get_hour`` and ``get_minute`` :doc:`functions </functions/functions>` since they are no longer needed
+
+  .. code-block:: python
+
+    import datetime
+
+    def get_datetime_object(timestamp):
+        return datetime.datetime.strptime(
+            f'21/11/06 {timestamp}',
+            '%d/%m/%y %H:%M'
+        )
+
+    def duration(wake_time=None, sleep_time=None):
+        difference = (
+            get_datetime_object(wake_time)
+          - get_datetime_object(sleep_time)
+        )
+        return str(difference)
+
+  all tests are still passing. It is indeed a beautiful life
 
 ----
 
@@ -1211,7 +1213,7 @@ the terminal shows an :doc:`/exceptions/AssertionError`
 GREEN: make it pass
 =========================
 
-* The ``duration`` function currently returns negative numbers when given a ``wake_time`` that is earlier than a ``sleep_time`` for example  ``'-1 day, 14:01:00'``, it accounts for a time traveling sleep scenario where you can go to sleep and wake up in the past. I wonder what mischief we could get up to, oh wait we have to watch out for Butterflies. I want to change the function to only process durations where the wake time happens after the sleep time
+* The ``duration`` function currently returns negative numbers when given a ``wake_time`` that is earlier than a ``sleep_time`` for example  ``'-1 day, 23:00:00'``. It makes it possible to measure a time traveling sleep scenario where you can go to sleep and wake up in the past. I wonder what mischief we could get up to, but wait we have to watch out for those Butterflies. I want to change the function to only process durations where the wake time happens after the sleep time, time travelling is too complicated
 
 * I change the expected value in the test to make it pass
 
@@ -1226,7 +1228,7 @@ GREEN: make it pass
         )
 
   I am green again
-* I want the ``duration`` function to make a decision based on a comparison of ``wake_time`` and ``sleep_time``. When ``wake_time`` is earlier than ``sleep_time`` it should raise an :doc:`Exception </how_to/exception_handling_programs>`
+* I change the ``duration`` function to make a decision where it compares  ``wake_time`` and ``sleep_time``. When ``wake_time`` is earlier than ``sleep_time`` it should raise an :doc:`Exception </how_to/exception_handling_programs>`
 
   .. code-block:: python
 
@@ -1241,20 +1243,31 @@ GREEN: make it pass
         else:
             return str(wake_time - sleep_time)
 
-  the ``duration`` :doc:`function </functions/functions>` now
+  the ``duration`` :doc:`function </functions/functions>`
 
-  - creates the ``datetime`` objects from the timestamp for ``wake_time`` and ``sleep_time``
-  - checks if the ``wake_time`` is earlier than ``sleep_time``
-  - returns a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ conversion of the difference between ``wake_time`` and ``sleep_time`` when ``wake_time`` is later than ``sleep_time``
-  - raises a `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ when ``wake_time`` is earlier than ``sleep_time`` - no more sleep time traveling
+  - creates `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ objects from the timestamp for ``wake_time`` and ``sleep_time``
+  - checks if the ``wake_time`` is earlier (greater) than ``sleep_time``
+
+    * returns a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ conversion of the difference between ``wake_time`` and ``sleep_time`` when ``wake_time`` is later (less) than ``sleep_time``
+    * raises a `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ when ``wake_time`` is earlier (greater) than ``sleep_time`` - no more sleep time traveling
 
   the terminal shows a `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ for ``test_duration_when_given_earlier_wake_time_than_sleep_time`` and ``test_duration_when_given_hours_and_minutes`` for the random values where ``wake_time`` is earlier than ``sleep_time`` which matches the expectation
 
   .. code-block:: python
 
     ValueError: wake_time: 2006-11-21 01:00:00 is earlier than sleep_time: 2006-11-21 02:00:00
+* I use `unittest.TestCase.assertRaises <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises>`_ to catch the :doc:`exception </how_to/exception_handling_tests>`
 
-* I add an :doc:`exception handler </how_to/exception_handling_programs>` using a ``try...except`` statement and a `unittest.TestCase.assertRaises <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises>`_ :doc:`method </functions/functions>` to catch and confirm that the error is raised in ``test_duration_when_given_hours_and_minutes``
+  .. code-block:: python
+
+    def test_duration_when_given_earlier_wake_time_than_sleep_time(self):
+        wake_time = "01:00"
+        sleep_time = "02:00"
+        with self.assertRaises(ValueError):
+            sleep_duration.duration(wake_time, sleep_time)
+
+  the test passes and I am left with the `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ for ``test_duration_when_given_hours_and_minutes``
+* I add an :doc:`exception handler </how_to/exception_handling_programs>` using a ``try...except`` statement and a `unittest.TestCase.assertRaises <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises>`_ :doc:`method </functions/functions>` to catch and confirm the `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ when it is raised in ``test_duration_when_given_hours_and_minutes``
 
   .. code-block:: python
 
@@ -1274,19 +1287,14 @@ GREEN: make it pass
               with self.assertRaises(ValueError):
                   sleep_duration.duration(wake_time, sleep_time)
 
-  I am left with the `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ for ``test_duration_when_given_earlier_wake_time_than_sleep_time``
-* I use `unittest.TestCase.assertRaises <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises>`_ to catch the :doc:`exception </how_to/exception_handling_tests>`
-
-  .. code-block:: python
-
-      def test_duration_when_given_earlier_wake_time_than_sleep_time(self):
-          wake_time = "01:00"
-          sleep_time = "02:00"
-          with self.assertRaises(ValueError):
-              sleep_duration.duration(wake_time, sleep_time)
-
   all tests are passing. Green is a beautiful color
-* Congratulations! You made it this far and built a function that takes in a ``wake_time`` and ``sleep_time`` as inputs, returns the difference between the two as long as the ``wake_time`` is later than the ``sleep_time``. Though the solution works, I cheated by making it always use the same date. Time to take a break.
+* Congratulations! You made it this far and built a function that
+
+  - takes in a ``wake_time`` and ``sleep_time`` as inputs
+  - returns the difference between the two when the ``wake_time`` is later (greater) than the ``sleep_time``
+  - raises a `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ when the ``wake_time`` is earlier (less) than the ``sleep_time``
+
+Though the solution works, I cheated by making it always use the same date. It is time to take a break.
 
 ----
 
@@ -1297,7 +1305,7 @@ Duration when given Date and Time
 RED: make it fail
 =========================
 
-I add a failing test to ``test_sleep_duration.py`` called ``test_duration_when_given_date_and_time`` to test the ``duration`` function with different days
+I add a failing test to ``test_sleep_duration.py`` called ``test_duration_when_given_date_and_time`` to test the ``duration`` function with different days. I could fall asleep on a monday and wake up on a tuesday.
 
 .. code-block:: python
 
