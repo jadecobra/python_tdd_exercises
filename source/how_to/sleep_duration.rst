@@ -1333,7 +1333,7 @@ the terminal shows a `ValueError <https://docs.python.org/3/library/exceptions.h
 
 the timestamps I provide to the ``duration`` function as inputs do not match the expected format of ``%d/%m/%y %H:%M``
 
-I get a repetition of the date portion because I added a date to the timestamp in the ``get_datetime_object`` to make it match the pattern
+I get a repetition of the date portion because I added a date to the timestamp in the ``get_datetime_object`` to make it match the pattern earlier
 
 GREEN: make it pass
 =========================
@@ -1384,7 +1384,7 @@ GREEN: make it pass
 
     AssertionError: "wake_time: 01:00 is earlier than sleep_time: 02:00" does not match "time data '01:00' does not match format '%d/%m/%y %H:%M'"
 
-  at the top of the error I see the failure details and the actual message returned by the `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_
+  the actual message returned by the `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ is about the format
 
   .. code-block:: python
 
