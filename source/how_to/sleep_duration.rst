@@ -239,7 +239,7 @@ I could write a test case for every permutation of sleep and wake times, or  wri
 
   .. code-block:: python
 
-    E    AssertionError: ['__add__', '__class__', '__contains__', [918 chars]ill'] != None
+    AssertionError: ['__add__', '__class__', '__contains__', [918 chars]ill'] != None
 
 * I copy the value on the left side of the comparison and replace :doc:`None </data_structures/none>` as the expected value in the test
 
@@ -388,9 +388,7 @@ I could write a test case for every permutation of sleep and wake times, or  wri
 
   .. code-block:: python
 
-      def duration(wake_time, sleep_time):
-    >    return wake_time - sleep_time
-    E    TypeError: unsupported operand type(s) for -: 'str' and 'str'
+    TypeError: unsupported operand type(s) for -: 'str' and 'str'
 
   I still need a way to convert a `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ to a number.
 
@@ -448,7 +446,7 @@ I could write a test case for every permutation of sleep and wake times, or  wri
 
   .. code-block:: python
 
-    E    TypeError: unsupported operand type(s) for -: 'str' and 'str'
+    TypeError: unsupported operand type(s) for -: 'str' and 'str'
 
 * I want is to split the string on a ``separator`` so I get the separate parts, something like ``["00", "00"]``, using ``:`` as the separator. I change the test to reflect this desire
 
@@ -479,7 +477,7 @@ I could write a test case for every permutation of sleep and wake times, or  wri
 
   and the test passes. I now know how to get the first parts of ``wake_time`` and ``sleep_time``
 
-* I change the definition of the ``duration`` function in ``sleep_duration.py`` using what I have learned so far
+* Using what I have learned so far I change the definition of the ``duration`` function in ``sleep_duration.py``
 
   .. code-block:: python
 
@@ -490,7 +488,7 @@ I could write a test case for every permutation of sleep and wake times, or  wri
 
   .. code-block:: python
 
-    E    TypeError: unsupported operand type(s) for -: 'list' and 'list'
+    TypeError: unsupported operand type(s) for -: 'list' and 'list'
 
   Since I only need the first part of the list, I can get the specific item by using its index. Python uses zero-based indexing so the first item is at index ``0`` and the second item at ``1``. See :doc:`/data_structures/lists` for more
 * I add tests to ``test_string_split_method`` to test getting specific parts of the :doc:`list </data_structures/lists>` created from splitting a `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_
@@ -547,7 +545,7 @@ I could write a test case for every permutation of sleep and wake times, or  wri
         return wake_time.split(':')[0] - sleep_time.split(':')[0]
 
   the terminal still shows a :doc:`/exceptions/TypeError` for an unsupported operation of trying to subtract one `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ from another, and though it is not obvious here, from ``test_string_split_method`` I know that the strings being subtracted are the values to the left of the separator ``:`` not the entire string value of ``wake_time`` and ``sleep_time``. For example,  if the given ``wake_time`` is ``"02:00"`` and the given ``sleep_time`` is ``"01:00"``  the program is currently trying to subtract ``"01"`` from ``"02"`` which is different from trying to subtract ``1`` from ``2``
-* I now have the task of converting the string to a number so I can do the subtraction, for this I use the `int <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ constructor which returns an integer for a given value. I comment out the current failing test and add a test to ``test_sleep_duration.py`` showing what `int <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ does
+* The next task is to convert the string to a number so I can do the subtraction. I use the `int <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ constructor which returns an integer for a given value. I comment out the current failing test and add a test to ``test_sleep_duration.py`` to show what `int <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ does
 
   .. code-block:: python
 
@@ -576,7 +574,7 @@ I could write a test case for every permutation of sleep and wake times, or  wri
     def test_converting_a_string_to_an_integer(self):
         self.assertEqual(int("12"), 12)
 
-  Great! I now have another tool to use to solve the problem
+  Great! I now have another tool to use to solve the problem. I can convert strings to numbers.b
 
 * I uncomment the test to show the :doc:`/exceptions/TypeError` I have been trying to solve, then change the ``duration`` function with what I have learned to see if it makes the test pass
 
@@ -901,7 +899,7 @@ This means that even though the tests are passing, once again the ``duration`` f
     * ``%H`` is for hours
     * ``%M`` is for minutes
 
-* I add a test for `datetime.timedelta <https://docs.python.org/3/library/datetime.html?highlight=datetime#timedelta-objects>`_ to test subtracting two `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ objects
+* I add a test for subtracting two `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ objects
 
   .. code-block:: python
 
@@ -920,7 +918,7 @@ This means that even though the tests are passing, once again the ``duration`` f
 
   .. code-block:: python
 
-    E    AssertionError: datetime.timedelta(seconds=3600) != 1
+    AssertionError: datetime.timedelta(seconds=3600) != 1
 
 * I copy the value on the left of the :doc:`/exceptions/AssertionError` and replace the expected value in the test
 
