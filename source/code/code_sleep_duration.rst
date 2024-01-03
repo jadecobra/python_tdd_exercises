@@ -115,11 +115,11 @@ Here is the code in ``tests/test_sleep_duration.py``
             )
             self.assertEqual(
                 "12:34".split(':')[0],
-                '12'
+                "12"
             )
             self.assertEqual(
                 "12:34".split(':')[1],
-                '34'
+                "34"
             )
             self.assertEqual(
                 "21/11/06 16:40".split(':')[0],
@@ -185,7 +185,6 @@ Here is the code in ``tests/test_sleep_duration.py``
     # AttributeError
     # TypeError
     # SyntaxError
-    # ValueError
 
 solution
 ----------

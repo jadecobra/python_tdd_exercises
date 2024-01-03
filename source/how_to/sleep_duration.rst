@@ -113,7 +113,7 @@ GREEN: make it pass
     def duration():
         return None
 
-  the :doc:`/exceptions/TypeError` remains but with a different message about the first argument passed in from the test ::
+  the terminal shows a :doc:`/exceptions/TypeError` with a different message about the first argument passed in from the test ::
 
     TypeError: duration() got an unexpected keyword argument 'wake_time'
 
@@ -405,7 +405,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
   I need a way to convert a `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ to a number.
 
-* I want to try one of the :doc:`methods </functions/functions>` listed from ``test_string_methods_and_attributes`` to see if it will get me closer to a solution, but looking at the names listed does not give me enough information since I do not know what they do. I check the `python documentation <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ for extra details by using the `help <https://docs.python.org/3/library/functions.html?highlight=dir#help>`_ system
+* I want to try one of the :doc:`methods </functions/functions>` listed from ``test_string_methods_and_attributes`` to see if it will get me closer to a solution, but looking at the names listed does not give me enough information since I do not know what they do. I check the `python documentation <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ for extra details by using the `help system <https://docs.python.org/3/library/functions.html?highlight=dir#help>`_
 
   .. code-block:: python
 
@@ -493,7 +493,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
   and the test passes. I now know how to get the first parts of ``wake_time`` and ``sleep_time``
 
-* Using what I have learned so far I change the definition of the ``duration`` function in ``sleep_duration.py``
+* Using what I have learned so far, I change the definition of the ``duration`` function in ``sleep_duration.py``
 
   .. code-block:: python
 
@@ -565,7 +565,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
     def duration(wake_time=None, sleep_time=None):
         return wake_time.split(':')[0] - sleep_time.split(':')[0]
 
-  the terminal shows a :doc:`/exceptions/TypeError` for an unsupported operation of trying to subtract one `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ from another, and though it is not explicit here, from ``test_splitting_a_string`` I know that the strings being subtracted are the values to the left of the separator ``:`` not the entire string value of ``wake_time`` and ``sleep_time``. For example,  if the given ``wake_time`` is ``"02:00"`` and the given ``sleep_time`` is ``"01:00"``  the program is currently trying to subtract ``"01"`` from ``"02"`` which is different from trying to subtract ``1`` from ``2``. ``"01"`` is a string and ``1`` is a number.
+  the terminal shows a :doc:`/exceptions/TypeError` for an unsupported operation of trying to subtract one `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ from another, and though it is not explicit here, from ``test_splitting_a_string`` I know that the strings being subtracted are the values to the left of the separator ``:``, not the entire string value of ``wake_time`` and ``sleep_time``. For example,  if the given ``wake_time`` is ``"02:00"`` and the given ``sleep_time`` is ``"01:00"``  the program is currently trying to subtract ``"01"`` from ``"02"`` which is different from trying to subtract ``1`` from ``2``. ``"01"`` is a string and ``1`` is a number.
 * The next task is to convert the string to a number so I can do the subtraction. I use the `int <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ constructor which returns an integer for a given value. I comment out the current failing test and add a test to ``test_sleep_duration.py`` to show what `int <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ does
 
   .. code-block:: python
@@ -787,7 +787,7 @@ GREEN: make it pass
 
     AssertionError: '17:17' != '17:00'
 
-  the ``duration`` function is current using ``get_hour`` for hours and minutes. I need to create a function that calculates the difference between the minutes
+  the ``duration`` function currently uses ``get_hour`` for hours and minutes. I need to create a function that calculates the difference between the minutes
 
 * I use the ``get_hour`` function as a reference to create a similar function which gets the minutes from a given timestamp
 
@@ -831,8 +831,6 @@ GREEN: make it pass
             ),
             f'{wake_hour-sleep_hour}:0'
         )
-
-  and the terminal shows passing tests
 
 REFACTOR: make it better
 =========================
@@ -1044,6 +1042,17 @@ GREEN: make it pass
   .. code-block:: python
 
     ValueError: wake_time: 20:26 is earlier than sleep_time: 23:50
+* I add the error to the list of exceptions encountered
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AssertionError
+    # NameError
+    # AttributeError
+    # TypeError
+    # SyntaxError
+    # ValueError
 
 * I use `unittest.TestCase.assertRaises <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises>`_ to catch the :doc:`exception </how_to/exception_handling_tests>` in ``test_duration_when_given_earlier_wake_time_than_sleep_time``
 
@@ -1133,18 +1142,6 @@ the terminal shows a `ValueError <https://docs.python.org/3/library/exceptions.h
 
 GREEN: make it pass
 =========================
-
-* I add `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ to the list of exceptions encountered
-
-  .. code-block:: python
-
-    # Exceptions Encountered
-    # AssertionError
-    # NameError
-    # AttributeError
-    # TypeError
-    # SyntaxError
-    # ValueError
 
 * The ``split`` function was given a separator of ``:`` when we only used hours and minutes, but behaves differently when I use a date. I add a test to ``test_splitting_a_string`` to show this
 
@@ -1488,7 +1485,7 @@ GREEN: make it pass
 
     ValueError: wake_time: 2006-11-21 04:22:00 is earlier than sleep_time: 2006-11-21 16:30:00
 
-  this message looks more like it - ``04:22:00`` is definitely earlier than ``04:22:00``
+  this message looks more like it - ``04:22:00`` is definitely earlier than ``16:30:00``
 
 * I remove the statements after the return statement in the ``duration`` function since things are working the way I expect
 
@@ -1559,22 +1556,22 @@ Review
 
 The challenge was to create a function that calculates the difference between two given timestamps.
 
-To make it happen I learned
+To make it happen I had to
 
-* how to convert a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ to an `integer <https://docs.python.org/3/library/functions.html#int>`_
-* how to split a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ into a :doc:`list </data_structures/lists>` using a given separator
-* how to index a :doc:`list </data_structures/lists>` to get specific items
-* how to convert a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ to a `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ object using the `datetime.datetime.strptime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime.datetime.strptime>`_ method
-* how to convert a `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ object to a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
-* how to subtract two `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ objects
-* how to convert a `datetime.timedelta <https://docs.python.org/3/library/datetime.html?highlight=datetime#timedelta-objects>`_ object to a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
-* how to view the :doc:`methods </functions/functions>` and ``attributes`` of a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ object
-* how to generate a random integer between two given integers using `random.randint <https://docs.python.org/3/library/random.html?highlight=random#random.randint>`_
-* how to use the `help <https://docs.python.org/3/library/functions.html?highlight=dir#help>`_ system to view documentation
+* convert a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ to an `integer <https://docs.python.org/3/library/functions.html#int>`_
+* split a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ into a :doc:`list </data_structures/lists>` using a given separator
+* index a :doc:`list </data_structures/lists>` to get specific items
+* convert a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ to a `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ object using the `datetime.datetime.strptime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime.datetime.strptime>`_ method
+* convert a `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ object to a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
+* subtract two `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ objects
+* convert a `datetime.timedelta <https://docs.python.org/3/library/datetime.html?highlight=datetime#timedelta-objects>`_ object to a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
+* view the :doc:`methods </functions/functions>` and ``attributes`` of a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ object
+* generate a random integer between two given integers using `random.randint <https://docs.python.org/3/library/random.html?highlight=random#random.randint>`_
+* use the `help system <https://docs.python.org/3/library/functions.html?highlight=dir#help>`_ to view documentation
 
-
+************
 Homework
-----------
+************
 
 Since this chapter has not been long enough, if you want to do more
 
