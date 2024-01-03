@@ -20,7 +20,7 @@ Duration when given Hours
 RED: make it fail
 ====================
 
-I add a failing test to ``test_sleep_duration.py`` and remove ``test_failure`` since I no longer need it
+I remove ``test_failure`` since I no longer need it then add a failing test to ``test_sleep_duration.py`` to check that when the ``duration`` :doc:`function </functions/functions>` is given a ``sleep_time`` of ``7:00`` and a ``wake_time`` of ``8:00`` it should return ``1`` as the duration, which is the difference between the two timestamps.
 
 .. code-block:: python
 
@@ -44,8 +44,6 @@ the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.ht
 
   NameError: name 'sleep_duration' is not defined
 
-This test checks that when the ``duration`` function is given a ``sleep_time`` of ``7:00`` and a ``wake_time`` of ``8:00`` it should return ``1`` as the duration, which is the difference between the two timestamps.
-
 GREEN: make it pass
 ====================
 
@@ -57,7 +55,7 @@ GREEN: make it pass
     # AssertionError
     # NameError
 
-* I add an import statement for the missing name
+* and add an import statement for the missing name
 
   .. code-block:: python
 
@@ -68,7 +66,7 @@ GREEN: make it pass
     class TestSleepDuration(unittest.TestCase):
     ...
 
-  and the terminal shows an :doc:`/exceptions/AttributeError`. I do not have a definition for ``duration`` in ``sleep_duration.py``
+  the terminal shows an :doc:`/exceptions/AttributeError`. I do not have a definition for ``duration`` in ``sleep_duration.py``
 
   .. code-block:: python
 
@@ -158,10 +156,9 @@ GREEN: make it pass
 REFACTOR: make it better
 =========================
 
-The function currently returns ``1`` regardless of the inputs given but for it to be useful it has to calculate the difference between the wake time and the sleep time.
+The function currently returns ``1`` regardless of the inputs given but for it to be useful it has to calculate the difference between ``wake_time`` and ``sleep_time``
 
-I could write a test case for every possible sleep and wake time, or  write one test that uses random variables which will cover ``00:00`` to ``23:59``. I also do this in :doc:`/how_to/calculator`
-
+I could write a test case for every possible sleep and wake time, or  write one test that uses random variables which will cover ``00:00`` to ``23:59``
 
 * I add an import statement for the `random <https://docs.python.org/3/library/random.html?highlight=random#module-random>`_ module to ``test_sleep_duration.py``
 
@@ -205,13 +202,13 @@ I could write a test case for every possible sleep and wake time, or  write one 
             wake_hour-sleep_hour
         )
 
-  I get an :doc:`/exceptions/AssertionError` because ``sleep_duration.duration`` still returns ``1`` but from the test I expect the difference between ``wake_time`` and ``sleep_time``
+  since ``sleep_duration.duration`` still returns ``1`` but the test expects the difference between ``wake_time`` and ``sleep_time``, the terminal shows an :doc:`/exceptions/AssertionError` similar to this
 
   .. code-block:: python
 
     AssertionError: 1 != -2
 
-* I change the ``duration`` function in ``sleep_duration.py`` to return a difference between the ``wake_time`` and ``sleep_time``?
+* I change the ``duration`` function in ``sleep_duration.py`` to return a difference between ``wake_time`` and ``sleep_time``?
 
   .. code-block:: python
 
@@ -226,7 +223,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
   I need to find a way to convert the timestamp from a string to a number.
 
-* I know that the two inputs are currently in the format ``XX:00``. If I can get the first two characters and convert them to a number I know I can calculate the difference since python has arithmetic definitions defined. To give me a clue about how to break the string apart or get the characters I want, I use the `dir <https://docs.python.org/3/library/functions.html?highlight=dir#dir>`_ :doc:`function </functions/functions>` to see what :doc:`methods </functions/functions>` and ``attributes`` of `strings <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ are available
+* I know that the two inputs are currently in this format - ``XX:00``. If I can get the first two characters and convert them to a number I know I can calculate the difference since python has arithmetic definitions defined. To give me a clue about how to break the string apart or get the characters I want, I use the `dir <https://docs.python.org/3/library/functions.html?highlight=dir#dir>`_ :doc:`function </functions/functions>` to see what :doc:`methods </functions/functions>` and ``attributes`` of `strings <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ are available
 
   .. code-block:: python
 
@@ -235,6 +232,9 @@ I could write a test case for every possible sleep and wake time, or  write one 
             dir("00:00"),
             None
         )
+
+    def test_duration_when_given_hours_only(self):
+        ...
 
   the terminal shows an :doc:`/exceptions/AssertionError`
 
@@ -256,11 +256,22 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
   .. code-block:: python
 
-    ['__add__', '__class__', '__contains__', [918 chars]ill']
-                         ^
-    SyntaxError: invalid syntax
+    E       ['__add__', '__class__', '__contains__', [918 chars]ill']
+    E                                                              ^
+    E   SyntaxError: unterminated string literal (detected at line 11)
 
-  ah, there is a closing quote, with no open quote, I add an opening quote
+* I add the error to the list of exceptions encountered
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AssertionError
+    # NameError
+    # AttributeError
+    # TypeError
+    # SyntaxError
+
+* ah, there is a closing quote, with no open quote. I add an opening quote
 
   .. code-block:: python
 
@@ -270,7 +281,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
             ['__add__', '__class__', '__contains__', '[918 chars]ill']
         )
 
-  I still have an :doc:`/exceptions/AssertionError` but with a different message and a suggestion
+  and the terminal shows an :doc:`/exceptions/AssertionError` with a different message and a suggestion
 
   .. code-block:: python
 
@@ -314,6 +325,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
                   '__getattribute__',
                   '__getitem__',
                   '__getnewargs__',
+                  '__getstate__',
                   '__gt__',
                   '__hash__',
                   '__init__',
@@ -391,9 +403,9 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
     TypeError: unsupported operand type(s) for -: 'str' and 'str'
 
-  I still need a way to convert a `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ to a number.
+  I need a way to convert a `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ to a number.
 
-* I want to try one of the :doc:`methods </functions/functions>` listed from ``test_string_methods_and_attributes`` to see if it will get me closer to a solution, but it seems looking at the names listed might not be enough since I do not know what they do. I check the `python documentation <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ for extra details by using the `help <https://docs.python.org/3/library/functions.html?highlight=dir#help>`_ system
+* I want to try one of the :doc:`methods </functions/functions>` listed from ``test_string_methods_and_attributes`` to see if it will get me closer to a solution, but looking at the names listed does not give me enough information since I do not know what they do. I check the `python documentation <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ for extra details by using the `help <https://docs.python.org/3/library/functions.html?highlight=dir#help>`_ system
 
   .. code-block:: python
 
@@ -401,7 +413,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
         help(str)
         ...
 
-  the terminal shows documentation for the `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ module, I scroll through reading through the descriptions for each :doc:`method </functions/functions>` until I see one that looks like it can solve my problem
+  the terminal shows documentation for the `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ module. I scroll through reading through the descriptions for each :doc:`method </functions/functions>` until I see one that looks like it can solve my problem
 
   .. code-block:: python
 
@@ -427,6 +439,10 @@ I could write a test case for every possible sleep and wake time, or  write one 
               None
           )
 
+      def test_duration_when_given_hours_only(self):
+      ...
+
+
   the terminal shows an :doc:`/exceptions/AssertionError` and I see that `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ creates a :doc:`list </data_structures/lists>` when called
 
   .. code-block:: python
@@ -449,7 +465,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
     TypeError: unsupported operand type(s) for -: 'str' and 'str'
 
-* I want to `split <https://docs.python.org/3/library/stdtypes.html#str.split>` the string on a ``separator`` so I get the separate parts, something like ``["00", "00"]``, using ``:`` as the separator. I change the expectation of the test to match this idea
+* I want to `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ the string on a ``separator`` so I get the separate parts, something like ``["00", "00"]``, using ``:`` as the separator. I change the expectation of the test to match this idea
 
   .. code-block:: python
 
@@ -459,14 +475,13 @@ I could write a test case for every possible sleep and wake time, or  write one 
             ['00', '00']
         )
 
-  the terminal shows an :doc:`/exceptions/AssertionError`, the use of the `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ :doc:`method </functions/functions>` has not yet given me what I want but I am closer, the shapes at least look the same
+  and the terminal shows an :doc:`/exceptions/AssertionError`, the use of the `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ :doc:`method </functions/functions>` has not yet given me what I want. I am closer, the shapes at least look the same
 
   .. code-block:: python
 
     AssertionError: Lists differ: ['00:00'] != ['00', '00']
 
-  Looking back at the documentation, I see that `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ takes in ``self, /, sep=None, maxsplit=-1`` as inputs and ``sep`` is the ``separator``
-* I pass in ``:`` to the `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ :doc:`method </functions/functions>` as the ``separator``
+* Looking back at the documentation, I see that `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ takes in ``self, /, sep=None, maxsplit=-1`` as inputs and ``sep`` is the ``separator``. I pass in ``:`` to the `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ :doc:`method </functions/functions>` as the ``separator``
 
   .. code-block:: python
 
@@ -491,8 +506,8 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
     TypeError: unsupported operand type(s) for -: 'list' and 'list'
 
-  Since I only need the first part of the list, I can get the specific item by using its index. Python uses zero-based indexing so the first item is at index ``0`` and the second item at index ``1``. See :doc:`/data_structures/lists` for more
-* I add tests to ``test_string_split_method`` to test getting specific parts of the :doc:`list </data_structures/lists>` created from splitting a `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_
+* I only need the first part of the list, I can get the specific item by using its index. Python uses zero-based indexing so the first item is at index ``0`` and the second item at index ``1``. See :doc:`/data_structures/lists` for more.
+  I add tests to ``test_splitting_a_string`` for getting specific parts of the :doc:`list </data_structures/lists>` created from splitting a `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_
 
   .. code-block:: python
 
@@ -509,6 +524,9 @@ I could write a test case for every possible sleep and wake time, or  write one 
             "12:34".split(':')[1],
             0
         )
+
+    def test_duration_when_given_hours_only(self):
+    ...
 
   the terminal shows an :doc:`/exceptions/AssertionError` because the first item (item zero) from splitting ``"12:34"`` on the separator ``:`` is ``"12"`` ::
 
@@ -552,6 +570,9 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
   .. code-block:: python
 
+    def test_converting_a_string_to_an_integer(self):
+        self.assertEqual(int("12"), 0)
+
     # def test_duration_when_given_hours_only(self):
     #     wake_hour = random.randint(0, 23)
     #     sleep_hour = random.randint(0, 23)
@@ -562,9 +583,6 @@ I could write a test case for every possible sleep and wake time, or  write one 
     #         ),
     #         wake_hour-sleep_hour
     #     )
-
-    def test_converting_a_string_to_an_integer(self):
-        self.assertEqual(int("12"), 0)
 
   the terminal shows an :doc:`/exceptions/AssertionError` since ``12 != 0`` ::
 
@@ -584,7 +602,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
   - convert strings to numbers
   - subtract one number from another
 
-* I uncomment the test to show the :doc:`/exceptions/TypeError` I have been trying to solve, then change the ``duration`` function with what I have learned to see if it makes the test pass
+* I uncomment the test to show the :doc:`/exceptions/TypeError` I have been trying to solve, then add the conversion using `int <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ constructor to the ``duration`` function to see if it makes the test pass
 
   .. code-block:: python
 
@@ -595,7 +613,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
         )
 
   YES! I am green, with a way to randomly test if the duration function can calculate the sleep duration given any random ``sleep`` and ``wake`` hour. What a beautiful life!
-* I could rewrite the solution I have in a way that tries to explain what is happening to someone who does not know how to index a list or use `int <https://docs.python.org/3/library/functions.html?highlight=int#int>`_  or `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_. What do you think?
+* I could rewrite the solution I have in a way that tries to explain what is happening to someone who does not know how to index a list or use `int <https://docs.python.org/3/library/functions.html?highlight=int#int>`_  or `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_
 
   .. code-block:: python
 
@@ -674,7 +692,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
   the terminal still shows passing tests.
 
-Since the test is green you can try any ideas you have until you understand what has been written so far. It is time for a nap.
+Since the test is green you can try any ideas you want until you understand what has been written so far. Time for a nap.
 
 ----
 
@@ -682,7 +700,9 @@ Since the test is green you can try any ideas you have until you understand what
 Duration when given Hours and Minutes
 ****************************************
 
-I found a solution that provides the right duration when given sleep time and wake time hours, it does not take minutes into account when doing the calculation. For the ``duration`` function to meet the requirements, it has to accept timestamps with hours and minutes for the sleep and wake times.
+I found a solution that provides the right duration when given sleep time and wake time hours, it does not take minutes into account when doing the calculation.
+
+For the ``duration`` function to meet the requirements, it has to accept timestamps with hours and minutes for the sleep and wake times.
 
 RED: make it fail
 ====================
@@ -751,11 +771,11 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    def get_minute(value):
-        return int(value.split(':')[1])
-
     def get_hour(value):
         return int(value.split(':')[0])
+
+    def get_minute(value):
+        return int(value.split(':')[1])
 
     def duration(wake_time=None, sleep_time=None):
         return (
@@ -768,12 +788,6 @@ GREEN: make it pass
 * after I add a call to the new ``get_minute`` function in the ``duration`` function, the test passes
 
   .. code-block:: python
-
-    def get_minute(value):
-        return int(value.split(':')[1])
-
-    def get_hour(value):
-        return int(value.split(':')[0])
 
     def duration(wake_time=None, sleep_time=None):
         return (
@@ -1031,7 +1045,7 @@ putting the pieces together
     import datetime
 
     def get_minute(value):
-      ...
+    ...
 
   the terminal now shows a `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ since the ``timestamp`` I give the `datetime.datetime.strptime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime.datetime.strptime>`_ function does not match the pattern I provided as the second option
 
