@@ -20,7 +20,7 @@ Duration when given Hours
 RED: make it fail
 ====================
 
-I remove ``test_failure`` since I no longer need it then add a failing test to ``test_sleep_duration.py`` to check that when the ``duration`` :doc:`function </functions/functions>` is given a ``sleep_time`` of ``7:00`` and a ``wake_time`` of ``8:00`` it should return ``1`` as the duration, which is the difference between the two timestamps.
+I remove ``test_failure`` since I no longer need it, and add a failing test to ``test_sleep_duration.py`` to check that when the ``duration`` :doc:`function </functions/functions>` is given a ``sleep_time`` of ``7:00`` and a ``wake_time`` of ``8:00`` it should return ``1`` as the duration, which is the difference between the two timestamps
 
 .. code-block:: python
 
@@ -55,7 +55,7 @@ GREEN: make it pass
     # AssertionError
     # NameError
 
-* and add an import statement for the missing name
+* then add an import statement for the missing name
 
   .. code-block:: python
 
@@ -66,7 +66,7 @@ GREEN: make it pass
     class TestSleepDuration(unittest.TestCase):
     ...
 
-  the terminal shows an :doc:`/exceptions/AttributeError`. I do not have a definition for ``duration`` in ``sleep_duration.py``
+  and the terminal shows an :doc:`/exceptions/AttributeError`. I do not have a definition for ``duration`` in ``sleep_duration.py``
 
   .. code-block:: python
 
