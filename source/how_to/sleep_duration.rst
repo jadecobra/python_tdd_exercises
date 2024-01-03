@@ -1134,6 +1134,18 @@ the terminal shows a `ValueError <https://docs.python.org/3/library/exceptions.h
 GREEN: make it pass
 =========================
 
+* I add `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ to the list of exceptions encountered
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AssertionError
+    # NameError
+    # AttributeError
+    # TypeError
+    # SyntaxError
+    # ValueError
+
 * The ``split`` function was given a separator of ``:`` when we only used hours and minutes, but behaves differently when I use a date. I add a test to ``test_splitting_a_string`` to show this
 
   .. code-block:: python
