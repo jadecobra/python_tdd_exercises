@@ -475,7 +475,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
             ['00', '00']
         )
 
-  and the terminal shows an :doc:`/exceptions/AssertionError`, the use of the `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ :doc:`method </functions/functions>` has not yet given me what I want. I am closer, the shapes at least look the same
+  and the terminal shows an :doc:`/exceptions/AssertionError`, the use of the `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ :doc:`method </functions/functions>` has not yet given me what I want but has brought me closer, the shapes at least look the same
 
   .. code-block:: python
 
@@ -506,7 +506,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
     TypeError: unsupported operand type(s) for -: 'list' and 'list'
 
-* I only need the first part of the list, I can get the specific item by using its index. Python uses zero-based indexing so the first item is at index ``0`` and the second item at index ``1``. See :doc:`/data_structures/lists` for more.
+* I only need the first part of the list and can get the specific item by using its index. Python uses zero-based indexing so the first item is at index ``0`` and the second item at index ``1``. See :doc:`/data_structures/lists` for more.
   I add tests to ``test_splitting_a_string`` for getting specific parts of the :doc:`list </data_structures/lists>` created from splitting a `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_
 
   .. code-block:: python
@@ -643,15 +643,15 @@ I could write a test case for every possible sleep and wake time, or  write one 
   - gets the first item from the split
   - converts the first item from the split to an integer
 
-  I can make these steps a separate function and call it for each value
+  I can make these steps a separate function and call it for ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
 
-    def function(value):
-        value_split = value.split(':')
-        value_hour = value_split[0]
-        value_hour_integer = int(value_hour)
-        return value_hour_integer
+    def function(timestamp):
+        timestamp_split = timestamp.split(':')
+        timestamp_hour = timestamp_split[0]
+        timestamp_hour_integer = int(timestamp_hour)
+        return timestamp_hour_integer
 
     def duration(wake_time=None, sleep_time=None):
         return function(wake_time) - function(sleep_time)
@@ -660,18 +660,18 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
   .. code-block:: python
 
-    def get_hour(value):
-        value_split = value.split(':')
-        value_hour = value_split[0]
-        value_hour_integer = int(value_hour)
-        return value_hour_integer
+    def get_hour(timestamp):
+        timestamp_split = timestamp.split(':')
+        timestamp_hour = timestamp_split[0]
+        timestamp_hour_integer = int(timestamp_hour)
+        return timestamp_hour_integer
 
     def duration(wake_time=None, sleep_time=None):
         return get_hour(wake_time) - get_hour(sleep_time)
 
   all tests are still passing. I have not broken anything yet
 
-* I could rewrite the ``get_hour`` function to use the same variable name instead of a new name for each step in the process, for example
+* I can rewrite the ``get_hour`` function to use the same variable name instead of a new name for each step in the process, for example
 
   .. code-block:: python
 
@@ -682,7 +682,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
         return value
 
   the terminal still shows passing tests
-* I could also rewrite the ``get_hour`` function to use one line though it will no longer be as explicit as above
+* I can also rewrite the ``get_hour`` function to use one line though it will no longer be as explicit as above
 
   .. code-block:: python
 
@@ -699,7 +699,7 @@ Since the test is green you can try any ideas you want until you understand what
 Duration when given Hours and Minutes
 ****************************************
 
-I found a solution that provides the right duration when given sleep time and wake time hours, though it does not take minutes into account when doing the calculation.
+I have a solution that provides the right duration when given sleep time and wake time hours, though it does not take minutes into account when doing the calculation.
 
 For the ``duration`` function to meet the requirements, it has to accept timestamps with hours and minutes for the sleep and wake times.
 
@@ -729,7 +729,7 @@ the terminal shows an :doc:`/exceptions/AssertionError` similar to this
 
   AssertionError: 4 != '4:-20'
 
-the expected value is now a string that contains the subtraction of the sleep hour from the wake hour, separated by a separator ``:`` and the subtraction of the sleep minute from the wake minute. For example, when I have a ``wake_time`` of ``08:30`` and a ``sleep_time`` of ``07:11``, I should have ``1:19`` as the output
+the expected duration is now a string that contains the subtraction of the sleep hour from the wake hour, separated by a separator ``:`` and the subtraction of the sleep minute from the wake minute. For example, when I have a ``wake_time`` of ``08:30`` and a ``sleep_time`` of ``07:11``, I should have ``1:19`` as the output
 
 GREEN: make it pass
 ====================
@@ -760,7 +760,7 @@ GREEN: make it pass
             f'{get_hour(wake_time)-get_hour(sleep_time)}'
         )
 
-  the terminal shows an :doc:`/exceptions/AssertionError`, changing the format causes an error in ``test_duration_when_given_hours_only`` which still expects a number
+  the terminal shows an :doc:`/exceptions/AssertionError` because changing the format causes an error in ``test_duration_when_given_hours_only`` which still expects a number
 
   .. code-block:: python
 
@@ -801,7 +801,7 @@ GREEN: make it pass
 
   the terminal still shows an :doc:`/exceptions/AssertionError`
 
-* after I add a call to the new ``get_minute`` function in the ``duration`` function, the test passes
+* after I add a call to the new ``get_minute`` function in the ``duration`` function
 
   .. code-block:: python
 
@@ -811,11 +811,12 @@ GREEN: make it pass
             f'{get_minute(wake_time)-get_minute(sleep_time)}'
         )
 
-  the terminal shows an :doc:`/exceptions/AssertionError` for ``test_duration_when_given_hours_only``
+  the test passes and I am left with an :doc:`/exceptions/AssertionError` for ``test_duration_when_given_hours_only``
 
   .. code-block:: python
 
     AssertionError: '-8:0' != '-8:00'
+
 * I update ``test_duration_when_given_hours_only`` to make the test pass
 
   .. code-block:: python
@@ -856,18 +857,18 @@ REFACTOR: make it better
   .. code-block:: python
 
     AssertionError: '1:-29' != '0:31'
-* To calculate a difference between hours and minutes I need to follow these steps
+* To calculate a difference between hours and minutes I need to do the following
 
   - convert timestamp to total minutes for each timestamp given by multiplying the hour by 60 and adding the minutes
-  - subtract ``wake_time`` minutes from ``sleep_time`` total minutes
+  - subtract total ``wake_time`` minutes from total ``sleep_time`` minutes
   - return the difference between total ``wake_time`` minutes and total ``sleep_time`` minutes as hours and minutes
 * I add these steps to the ``duration`` function keeping the original solution that has worked so far until all the tests pass
 
   .. code-block:: python
 
     def duration(wake_time=None, sleep_time=None):
-        wake_time_minutes = get_hour(wake_time) * 60 + get_minute(wake_time)
-        sleep_time_minutes = get_hour(sleep_time) * 60 + get_minute(sleep_time)
+        wake_time_minutes = (get_hour(wake_time) * 60) + get_minute(wake_time)
+        sleep_time_minutes = (get_hour(sleep_time) * 60) + get_minute(sleep_time)
         difference = wake_time_minutes - sleep_time_minutes
         difference_hours = difference // 60
         difference_minutes = difference % 60
@@ -877,7 +878,7 @@ REFACTOR: make it better
             f'{get_minute(wake_time)-get_minute(sleep_time)}'
         )
 
-  the terminal shows passing tests but since ``test_duration_when_given_hours_and_minutes`` it will randomly show an :doc:`/exceptions/AssertionError` similar to this
+  the terminal shows passing tests but since ``test_duration_when_given_hours_and_minutes`` uses the wrong calculation it will randomly show an :doc:`/exceptions/AssertionError` similar to this
 
   .. code-block:: python
 
@@ -942,7 +943,7 @@ REFACTOR: make it better
 
   the terminal still shows passing tests
 
-* I can also do the conversion of ``difference`` as part of the return statement
+* I can also do the same with ``difference_hours`` and ``difference_minutes``
 
   .. code-block:: python
 
@@ -953,7 +954,7 @@ REFACTOR: make it better
         )
         return f'{difference // 60}:{difference % 60}'
 
-  We are still green
+  We are still green. Take a look at the last two blocks of code. Which do you like better?
 * I can also create a function that replaces the ``get_hour`` and ``get_minute`` functions
 
   .. code-block:: python
@@ -970,12 +971,13 @@ REFACTOR: make it better
 ********************************************************
 Duration when given Earlier Wake Time than Sleep Time
 ********************************************************
-What happens when the ``duration`` function is given a ``wake_time`` that is earlier than a ``sleep_time``? Since the values for ``wake_time`` and ``sleep_time`` are currently random, ``test_duration_when_given_hours_and_minutes`` will randomly fail when the ``duration`` function gets a ``wake_time`` that is earlier than the ``sleep_time``
+
+What happens when the ``duration`` function is given a ``wake_time`` that is earlier than a ``sleep_time``?
 
 RED: make it fail
 =========================
 
-I add a new failing test to ``test_sleep_duration.py`` to show this
+I add a new failing test to ``test_sleep_duration.py`` to find out
 
 .. code-block:: python
 
@@ -991,13 +993,13 @@ the terminal shows an :doc:`/exceptions/AssertionError`
 
 .. code-block:: python
 
-  AssertionError: '-1 day, 23:00:00' != '-01:00:00'
+  AssertionError: '-1:0' != '-01:00:00'
 
 
 GREEN: make it pass
 =========================
 
-* The ``duration`` function currently returns negative numbers when given a ``wake_time`` that is earlier than a ``sleep_time`` for example  ``'-1 day, 23:00:00'``. It makes it possible to measure a time traveling sleep scenario where you can go to sleep and wake up in the past. I wonder what mischief we could get up to, but wait we have to watch out for those Butterflies. I want to change the function to only process durations where the wake time happens after the sleep time, time travelling is too complicated
+* The ``duration`` function currently returns negative numbers when given a ``wake_time`` that is earlier than a ``sleep_time``. It makes it possible to measure a time traveling sleep scenario where the traveler can go to sleep in the present and wake up in the past. I wonder what mischief we could get up to, but wait we have to watch out for those Butterflies. I want to change the function to only process durations where the wake time happens after the sleep time, time traveling is too complicated
 
 * I change the expected value in the test to make it pass
 
@@ -1008,39 +1010,42 @@ GREEN: make it pass
         sleep_time = "02:00"
         self.assertEqual(
             sleep_duration.duration(wake_time, sleep_time),
-            '-1 day, 23:00:00'
+            '-1:0'
         )
 
   I am green again
-* I change the ``duration`` function to make a decision where it compares  ``wake_time`` and ``sleep_time``. When ``wake_time`` is earlier than ``sleep_time`` it should raise an :doc:`Exception </how_to/exception_handling_programs>`
+* I change the ``duration`` function to make a decision based on the difference between ``wake_time`` and ``sleep_time``. When the difference is less than ``0``, it is a negative number which means the ``wake_time`` is earlier (less) than the ``sleep_time`` and the function should raise an :doc:`Exception </how_to/exception_handling_programs>` otherwise it should return the difference between them converted to hours and minutes
 
   .. code-block:: python
 
     def duration(wake_time=None, sleep_time=None):
-        wake_time = get_datetime_object(wake_time)
-        sleep_time = get_datetime_object(sleep_time)
-        if wake_time < sleep_time:
+        difference = (
+            get_total_minutes(wake_time)
+          - get_total_minutes(sleep_time)
+        )
+        if difference < 0:
             raise ValueError(
                 f'wake_time: {wake_time} is earlier '
-                f' than sleep_time: {sleep_time}'
+                f'than sleep_time: {sleep_time}'
             )
         else:
-            return str(wake_time - sleep_time)
+            return f'{difference // 60}:{difference % 60}'
 
   the ``duration`` :doc:`function </functions/functions>`
 
-  - creates `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ objects from the timestamp for ``wake_time`` and ``sleep_time``
-  - checks if the ``wake_time`` is earlier (greater) than ``sleep_time``
+  - calculates the difference between ``wake_time`` and ``sleep_time``
+  - checks if the difference between ``wake_time`` and ``sleep_time`` is less than 0
 
-    * returns a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ conversion of the difference between ``wake_time`` and ``sleep_time`` when ``wake_time`` is later (less) than ``sleep_time``
     * raises a `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ when ``wake_time`` is earlier (greater) than ``sleep_time`` - no more sleep time traveling
+    * returns a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ conversion of the difference between ``wake_time`` and ``sleep_time`` when ``wake_time`` is later (less) than ``sleep_time``
 
-  the terminal shows a `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ for ``test_duration_when_given_earlier_wake_time_than_sleep_time`` and ``test_duration_when_given_hours_and_minutes`` for the random values where ``wake_time`` is earlier than ``sleep_time`` which matches the expectation
+  the terminal shows a `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ for ``test_duration_when_given_earlier_wake_time_than_sleep_time`` and ``test_duration_when_given_hours_and_minutes`` for the random values where ``wake_time`` is earlier than ``sleep_time``
 
   .. code-block:: python
 
-    ValueError: wake_time: 2006-11-21 01:00:00 is earlier than sleep_time: 2006-11-21 02:00:00
-* I use `unittest.TestCase.assertRaises <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises>`_ to catch the :doc:`exception </how_to/exception_handling_tests>`
+    ValueError: wake_time: 20:26 is earlier than sleep_time: 23:50
+
+* I use `unittest.TestCase.assertRaises <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises>`_ to catch the :doc:`exception </how_to/exception_handling_tests>` in ``test_duration_when_given_earlier_wake_time_than_sleep_time``
 
   .. code-block:: python
 
@@ -1055,30 +1060,36 @@ GREEN: make it pass
 
   .. code-block:: python
 
-      def test_duration_when_given_hours_and_minutes(self):
-          wake_hour = random.randint(0, 23)
-          sleep_hour = random.randint(0, 23)
-          wake_minute = random.randint(0, 59)
-          sleep_minute = random.randint(0, 59)
-          wake_time = f'{wake_hour}:{wake_minute}'
-          sleep_time = f'{sleep_hour}:{sleep_minute}'
-          try:
-              self.assertEqual(
-                  sleep_duration.duration(wake_time, sleep_time),
-                  str(sleep_duration.get_datetime_object(wake_time)-sleep_duration.get_datetime_object(sleep_time))
-              )
-          except ValueError:
-              with self.assertRaises(ValueError):
-                  sleep_duration.duration(wake_time, sleep_time)
+    def test_duration_when_given_hours_and_minutes(self):
+        wake_hour = random.randint(0, 23)
+        sleep_hour = random.randint(0, 23)
+        wake_minute = random.randint(0, 59)
+        sleep_minute = random.randint(0, 59)
+        wake_time_minutes = wake_hour * 60 + wake_minute
+        sleep_time_minutes = sleep_hour * 60 + sleep_minute
+        difference = wake_time_minutes - sleep_time_minutes
+        difference_hours = difference // 60
+        difference_minutes = difference % 60
+        wake_time = f'{wake_hour}:{wake_minute}'
+        sleep_time = f'{sleep_hour}:{sleep_minute}'
+        try:
+            self.assertEqual(
+                sleep_duration.duration(wake_time, sleep_time),
+                f'{difference_hours}:{difference_minutes}'
+            )
+        except ValueError:
+            with self.assertRaises(ValueError):
+                sleep_duration.duration(wake_time, sleep_time)
 
   all tests are passing. Green is a beautiful color
+* I no longer need ``test_duration_when_given_earlier_wake_time_than_sleep_time`` since it is covered by ``test_duration_when_given_hours_and_minutes`` so I remove it
 * Congratulations! You made it this far and built a function that
 
   - takes in a ``wake_time`` and ``sleep_time`` as inputs
   - returns the difference between the two when the ``wake_time`` is later (greater) than the ``sleep_time``
   - raises a `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ when the ``wake_time`` is earlier (less) than the ``sleep_time``
 
-Though the solution works, I cheated by making it always use the same date. It is time to take a break.
+It is time to take a break.
 
 ----
 
@@ -1086,10 +1097,12 @@ Though the solution works, I cheated by making it always use the same date. It i
 Duration when given Date and Time
 ********************************************************
 
+So far we have dealt with timestamps that are based on hours and minutes only. The assumption has been that the timestamps occur on the same day, but I could fall asleep on a Monday and wake up on a Tuesday. How would the ``duration`` function behave when it is given different dates?
+
 RED: make it fail
 =========================
 
-I add a failing test to ``test_sleep_duration.py`` called ``test_duration_when_given_date_and_time`` to test the ``duration`` function with different days. I could fall asleep on a monday and wake up on a tuesday.
+I add a failing test to ``test_sleep_duration.py`` called ``test_duration_when_given_date_and_time`` to test the ``duration`` function with different days
 
 .. code-block:: python
 
@@ -1098,28 +1111,416 @@ I add a failing test to ``test_sleep_duration.py`` called ``test_duration_when_g
         sleep_hour = random.randint(0, 23)
         wake_minute = random.randint(0, 59)
         sleep_minute = random.randint(0, 59)
+        wake_time_minutes = wake_hour * 60 + wake_minute
+        sleep_time_minutes = sleep_hour * 60 + sleep_minute
+        difference = wake_time_minutes - sleep_time_minutes
+        difference_hours = difference // 60
+        difference_minutes = difference % 60
         wake_time = f'21/11/06 {wake_hour}:{wake_minute}'
         sleep_time = f'21/11/06 {sleep_hour}:{sleep_minute}'
 
         self.assertEqual(
             sleep_duration.duration(wake_time, sleep_time),
-            str(
-                sleep_duration.get_datetime_object(wake_time)
-               -sleep_duration.get_datetime_object(sleep_time)
-            )
+            f'{difference_hours}:{difference_minutes}'
         )
 
-the terminal shows a `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ similar to this
+the terminal shows a `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ because the ``parse_timestamp`` function tries to convert the string to an integer but the string is currently in the wrong format
 
 .. code-block:: python
 
-  ValueError: time data '21/11/06 21/11/06 XX:XX' does not match format '%d/%m/%y %H:%M'
+  ValueError: invalid literal for int() with base 10: '21/11/06 16'
 
-the timestamps I provide to the ``duration`` function as inputs do not match the expected format of ``%d/%m/%y %H:%M``
-
-I get a repetition of the date portion because I added a date to the timestamp in the ``get_datetime_object`` to make it match the pattern earlier
 
 GREEN: make it pass
+=========================
+
+* The ``split`` function was given a separator of ``:`` when we only used hours and minutes, but behaves differently when I use a date. I add a test to ``test_splitting_a_string`` to show this
+
+  .. code-block:: python
+
+    self.assertEqual(
+        "21/11/06 16:40".split(':')[0],
+        ''
+    )
+
+  the terminal shows an :doc:`/exceptions/AssertionError`
+* I update the test with the correct values to make it pass
+
+  .. code-block:: python
+
+    self.assertEqual(
+        "21/11/06 16:40".split(':')[0],
+        '21/11/06 16'
+    )
+
+  I cannot convert a string in the format ``'21/11/06 16'`` to an integer
+
+* I need a solution that is capable of reading the date and time. Writing one myself would require a lot of work as I would have to account for the variance in months, February has 28 days except in leap years when it has 29 days and some months have 30 days while others have 31 days
+
+* I do a search in the `python online documentation <https://docs.python.org/3/search.html>`_ for `time difference <https://docs.python.org/3/search.html?q=time+difference>`_, and select the `datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#module-datetime>`_ module since it looks like it has a solution for this problem. Reading through the available types in the module, I see I can create `datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#module-datetime>`_ instances
+
+  .. code-block:: python
+
+    class datetime.datetime
+      A combination of a date and a time.
+      Attributes: year, month, day, hour,
+      minute, second, microsecond, and tzinfo.
+
+  I also see
+
+  .. code-block:: python
+
+    class datetime.timedelta
+      A duration expressing the difference between
+      two date, time, or datetime instances to
+      microsecond resolution.
+
+* I add tests using the examples in the documentation to help me understand how to use the `datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#module-datetime>`_ module
+
+  * `Examples of usage datetime objects <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_
+  * `Examples of usage timedelta objects <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-timedelta>`_
+
+* I add a test for `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ objects to ``test_sleep_duration.py``
+
+  .. code-block:: python
+
+    def test_datetime_datetime_objects(self):
+        self.assertEqual(
+            datetime.datetime.strptime(
+                "21/11/06 16:30",
+                "%d/%m/%y %H:%M"
+            ),
+            ""
+        )
+
+    def test_duration_when_given_hours_and_minutes(self):
+    ...
+
+* then comment out ``test_duration_when_given_date_and_time`` to see the results of the test I just added
+
+  .. code-block:: python
+
+    # def test_duration_when_given_date_and_time(self):
+    #     wake_hour = random.randint(0, 23)
+    #     sleep_hour = random.randint(0, 23)
+    #     wake_minute = random.randint(0, 59)
+    #     sleep_minute = random.randint(0, 59)
+    #     wake_time_minutes = wake_hour * 60 + wake_minute
+    #     sleep_time_minutes = sleep_hour * 60 + sleep_minute
+    #     difference = wake_time_minutes - sleep_time_minutes
+    #     difference_hours = difference // 60
+    #     difference_minutes = difference % 60
+    #     wake_time = f'21/11/06 {wake_hour}:{wake_minute}'
+    #     sleep_time = f'21/11/06 {sleep_hour}:{sleep_minute}'
+
+    #     self.assertEqual(
+    #         sleep_duration.duration(wake_time, sleep_time),
+    #         f'{difference_hours}:{difference_minutes}'
+    #     )
+
+* the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ because ``datetime`` is not defined in ``test_sleep_duration.py``. I need to import it
+
+  .. code-block:: python
+
+    NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
+
+* I add an ``import`` statement for the `datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#module-datetime>`_ module to ``test_sleep_duration.py``
+
+  .. code-block:: python
+
+    import datetime
+    import random
+    import sleep_duration
+    import unittest
+
+  the terminal shows an :doc:`/exceptions/AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: datetime.datetime(2006, 11, 21, 16, 30) != ''
+
+* I copy the value on the left side of the :doc:`/exceptions/AssertionError` to replace the expected value in the test
+
+  .. code-block:: python
+
+    def test_datetime_datetime_objects(self):
+        self.assertEqual(
+            datetime.datetime.strptime(
+                "21/11/06 16:30",
+                "%d/%m/%y %H:%M"
+            ),
+            datetime.datetime(2006, 11, 21, 16, 30)
+        )
+
+  and the terminal shows passing tests. From the test I see that
+
+  - `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ takes ``year``, ``month``, ``date``, ``hours`` and ``minutes`` as inputs
+  - the `datetime.datetime.strptime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime.datetime.strptime>`_ :doc:`method </functions/functions>`
+
+    * takes 2 `strings <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ as inputs - timestamp and a pattern
+    * returns a `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ object
+  - from the pattern provided as input, it also looks like
+
+    * ``%d`` is for days
+    * ``%m`` is for months
+    * ``%y`` is for 2 digit years
+    * ``%H`` is for hours
+    * ``%M`` is for minutes
+
+* I add a test for subtracting two `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ objects
+
+  .. code-block:: python
+
+    def test_subtracting_datetime_datetime_objects(self):
+        sleep_time = datetime.datetime.strptime(
+            "21/11/06 16:30",
+            "%d/%m/%y %H:%M"
+        )
+        wake_time = datetime.datetime.strptime(
+            "21/11/06 17:30",
+            "%d/%m/%y %H:%M"
+        )
+        self.assertEqual(wake_time-sleep_time, 1)
+
+    def test_duration_when_given_hours_and_minutes(self):
+    ...
+
+  the terminal shows an :doc:`/exceptions/AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: datetime.timedelta(seconds=3600) != 1
+
+* I copy the value on the left of the :doc:`/exceptions/AssertionError` and replace the expected value in the test
+
+  .. code-block:: python
+
+    def test_subtracting_datetime_datetime_objects(self):
+        sleep_time = datetime.datetime.strptime(
+            "21/11/06 16:30",
+            "%d/%m/%y %H:%M"
+        )
+        wake_time = datetime.datetime.strptime(
+            "21/11/06 17:30",
+            "%d/%m/%y %H:%M"
+        )
+        self.assertEqual(
+            wake_time-sleep_time,
+            datetime.timedelta(seconds=3600)
+        )
+
+  With these passing tests. I see that I can
+
+  - convert a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ to a `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ object
+  - subtract one `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ object from another to get a `datetime.timedelta <https://docs.python.org/3/library/datetime.html?highlight=datetime#timedelta-objects>`_ object
+
+* So far the `datetime.timedelta <https://docs.python.org/3/library/datetime.html?highlight=datetime#timedelta-objects>`_ object I get shows seconds, but I want the result as a string. I add a test to see if I can change it to a string using the `str <https://docs.python.org/3/library/stdtypes.html#str>`_ constructor
+
+  .. code-block:: python
+
+    def test_converting_timedelta_to_string(self):
+        self.assertEqual(
+            str(datetime.timedelta(seconds=3600)),
+            ''
+        )
+
+    def test_duration_when_given_hours_and_minutes(self):
+    ...
+
+  and I get an :doc:`/exceptions/AssertionError` with a message that looks more like what I want
+
+  .. code-block:: python
+
+    AssertionError: '1:00:00' != ''
+
+* I change the expected value in the test to match the value from the terminal
+
+  .. code-block:: python
+
+    def test_converting_timedelta_to_string(self):
+        self.assertEqual(
+            str(datetime.timedelta(seconds=3600)),
+            '1:00:00'
+        )
+
+  it looks like calling `str <https://docs.python.org/3/library/stdtypes.html#str>`_ on a `datetime.timedelta <https://docs.python.org/3/library/datetime.html?highlight=datetime#timedelta-objects>`_ object returns a string in the format ``Hours:Minutes:Seconds``
+
+  From the tests so far I know that I can
+
+  - convert a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ to a `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ object
+  - subtract one `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ object from another to get a `datetime.timedelta <https://docs.python.org/3/library/datetime.html?highlight=datetime#timedelta-objects>`_ object
+  - convert a `datetime.timedelta <https://docs.python.org/3/library/datetime.html?highlight=datetime#timedelta-objects>`_ object to a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
+
+* I uncomment ``test_duration_when_given_date_and_time`` to return to the `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ that sent me down this path
+* I add a function for converting timestamps to ``sleep_duration.py`` and call it ``get_datetime_object``
+
+  .. code-block:: python
+
+    def get_datetime_object(timestamp):
+        return datetime.datetime.strptime(
+            timestamp, "%d/%m/%y %H:%M"
+        )
+
+  the error remains the same since I have not called the new function yet
+
+* I add a new return statement to the ``duration`` function with a call to the ``get_datetime_object`` above the existing return statement because I do not want to remove what has worked so far until I have a new working solution. Python does not execute anything in a function after a ``return`` statement so the second return statement is never run
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        difference = (
+            get_datetime_object(wake_time)
+          - get_datetime_object(sleep_time)
+        )
+        return str(difference)
+        difference = (
+            get_total_minutes(wake_time)
+          - get_total_minutes(sleep_time)
+        )
+        if difference < 0:
+            raise ValueError(
+                f'wake_time: {wake_time} is earlier '
+                f'than sleep_time: {sleep_time}'
+            )
+        else:
+            return f'{difference // 60}:{difference % 60}'
+
+  the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+
+  .. code-block:: python
+
+    NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
+
+  I encountered this earlier when testing the `datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#module-datetime>`_ module
+
+* I add an import statement to the top of ``sleep_duration.py``
+
+  .. code-block:: python
+
+    import datetime
+
+    def parse_timestamp(timestamp=None, index=0):
+    ...
+
+  the terminal shows an :doc:`/exceptions/AssertionError` similar to this
+
+  .. code-block:: python
+
+    AssertionError: datetime.timedelta(days=-1, seconds=84420) != '-1:27'
+
+* I update ``test_duration_when_given_date_and_time`` to use the right format and remove unused variables
+
+  .. code-block:: python
+
+    def test_duration_when_given_date_and_time(self):
+        wake_hour = random.randint(0, 23)
+        sleep_hour = random.randint(0, 23)
+        wake_minute = random.randint(0, 59)
+        sleep_minute = random.randint(0, 59)
+        wake_time = f'21/11/06 {wake_hour}:{wake_minute}'
+        sleep_time = f'21/11/06 {sleep_hour}:{sleep_minute}'
+        pattern = "%d/%m/%y %H:%M"
+        difference = (
+            datetime.datetime.strptime(wake_time, pattern)
+          - datetime.datetime.strptime(sleep_time, pattern)
+        )
+        self.assertEqual(
+            sleep_duration.duration(wake_time, sleep_time),
+            str(difference)
+        )
+
+  the terminal shows passing tests
+* Before I remove the second return statement in the ``duration`` function, I update the new statement to do a comparison of ``wake_time`` and ``sleep_time`` so it raises a `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ when the ``wake_time`` is earlier than the ``sleep_time``
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        wake_time = get_datetime_object(wake_time)
+        sleep_time = get_datetime_object(sleep_time)
+        if wake_time < sleep_time:
+            difference = wake_time - sleep_time
+            return str(difference)
+        else:
+            raise ValueError(
+                f'wake_time: {wake_time} is earlier '
+                f'than sleep_time: {sleep_time}'
+            )
+        difference = (
+            get_total_minutes(wake_time)
+          - get_total_minutes(sleep_time)
+        )
+        if difference < 0:
+            raise ValueError(
+                f'wake_time: {wake_time} is earlier '
+                f'than sleep_time: {sleep_time}'
+            )
+        else:
+            return f'{difference // 60}:{difference % 60}'
+
+  the terminal shows a `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ similar to this for values where ``wake_time`` is earlier (less) than ``sleep_time``
+
+  .. code-block:: python
+
+    ValueError: wake_time: 2006-11-21 14:50:00 is earlier than sleep_time: 2006-11-21 01:58:00
+
+  the error looks wrong. ``14:50:00`` is not earlier than ``01:58:00`` on the same day.
+* I update the condition to use a greater than sign instead
+
+  .. code-block:: python
+
+    if wake_time > sleep_time:
+
+  the terminal shows a `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_
+
+  .. code-block:: python
+
+    ValueError: wake_time: 2006-11-21 04:22:00 is earlier than sleep_time: 2006-11-21 16:30:00
+
+  this message looks more like it - ``04:22:00`` is definitely earlier than ``04:22:00``
+
+* I remove the statements after the return statement in the ``duration`` function since things are working the way I expect
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        wake_time = get_datetime_object(wake_time)
+        sleep_time = get_datetime_object(sleep_time)
+        if wake_time > sleep_time:
+            difference = wake_time - sleep_time
+            return str(difference)
+        else:
+            raise ValueError(
+                f'wake_time: {wake_time} is earlier '
+                f'than sleep_time: {sleep_time}'
+            )
+* I add the ``try...except`` block from ``test_duration_when_given_hours_and_minutes`` to ``test_duration_when_given_date_and_time``
+
+  .. code-block:: python
+
+    def test_duration_when_given_date_and_time(self):
+        wake_hour = random.randint(0, 23)
+        sleep_hour = random.randint(0, 23)
+        wake_minute = random.randint(0, 59)
+        sleep_minute = random.randint(0, 59)
+        wake_time = f'21/11/06 {wake_hour}:{wake_minute}'
+        sleep_time = f'21/11/06 {sleep_hour}:{sleep_minute}'
+        pattern = "%d/%m/%y %H:%M"
+        difference = (
+            datetime.datetime.strptime(wake_time, pattern)
+          - datetime.datetime.strptime(sleep_time, pattern)
+        )
+        try:
+            self.assertEqual(
+                sleep_duration.duration(wake_time, sleep_time),
+                str(difference)
+            )
+        except ValueError:
+            with self.assertRaises(ValueError):
+                sleep_duration.duration(wake_time, sleep_time)
+
+  All tests are passing. I am green
+
+REFACTOR: make it better
 =========================
 
 * I remove ``21/11/06`` from the string in ``get_datetime_object`` in ``sleep_duration.py``
