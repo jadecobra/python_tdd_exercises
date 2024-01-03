@@ -433,7 +433,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
   .. code-block:: python
 
-      def test_string_split_method(self):
+      def test_splitting_a_string(self):
           self.assertEqual(
               "00:00".split(),
               None
@@ -453,7 +453,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
   .. code-block:: python
 
-    def test_string_split_method(self):
+    def test_splitting_a_string(self):
         self.assertEqual(
             "00:00".split(),
             ["00:00"]
@@ -469,7 +469,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
   .. code-block:: python
 
-    def test_string_split_method(self):
+    def test_splitting_a_string(self):
         self.assertEqual(
             "00:00".split(),
             ['00', '00']
@@ -485,7 +485,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
   .. code-block:: python
 
-    def test_string_split_method(self):
+    def test_splitting_a_string(self):
         self.assertEqual(
             "00:00".split(':'),
             ['00', '00']
@@ -511,7 +511,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
   .. code-block:: python
 
-    def test_string_split_method(self):
+    def test_splitting_a_string(self):
         self.assertEqual(
             "00:00".split(':'),
             ['00', '00']
@@ -565,7 +565,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
     def duration(wake_time=None, sleep_time=None):
         return wake_time.split(':')[0] - sleep_time.split(':')[0]
 
-  the terminal shows a :doc:`/exceptions/TypeError` for an unsupported operation of trying to subtract one `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ from another, and though it is not explicit here, from ``test_string_split_method`` I know that the strings being subtracted are the values to the left of the separator ``:`` not the entire string value of ``wake_time`` and ``sleep_time``. For example,  if the given ``wake_time`` is ``"02:00"`` and the given ``sleep_time`` is ``"01:00"``  the program is currently trying to subtract ``"01"`` from ``"02"`` which is different from trying to subtract ``1`` from ``2``. ``"01"`` is a string and ``1`` is a number.
+  the terminal shows a :doc:`/exceptions/TypeError` for an unsupported operation of trying to subtract one `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ from another, and though it is not explicit here, from ``test_splitting_a_string`` I know that the strings being subtracted are the values to the left of the separator ``:`` not the entire string value of ``wake_time`` and ``sleep_time``. For example,  if the given ``wake_time`` is ``"02:00"`` and the given ``sleep_time`` is ``"01:00"``  the program is currently trying to subtract ``"01"`` from ``"02"`` which is different from trying to subtract ``1`` from ``2``. ``"01"`` is a string and ``1`` is a number.
 * The next task is to convert the string to a number so I can do the subtraction. I use the `int <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ constructor which returns an integer for a given value. I comment out the current failing test and add a test to ``test_sleep_duration.py`` to show what `int <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ does
 
   .. code-block:: python
