@@ -62,22 +62,13 @@ I create a file called ``test_passing_values.py`` in the ``tests`` folder with t
   import unittest
   import telephone
 
-
-  class TestPassingValues(unittest.TestCase):
-
-      def test_text_messages(self):
-          self.assertEqual(
-              telephone.Telephone.text('hello'),
-              'I received this message: hello'
-          )
-
 the terminal shows a :doc:`/exceptions/ModuleNotFoundError`
 
 .. code-block:: python
 
   ModuleNotFoundError: No module named 'telephone'
 
-and I add it to the list of exceptions encountered
+I add it to the list of exceptions encountered
 
 .. code-block:: python
 
@@ -89,11 +80,23 @@ and I add it to the list of exceptions encountered
 GREEN: make it pass
 **********************
 
-- I create a file called ``telephone.py`` in the project folder and the terminal shows an :doc:`/exceptions/AttributeError`
+- I create a file called ``telephone.py`` in the project folder then add a test to ``test_passing_values.py``
 
   .. code-block:: python
 
-    AttributeError: module 'telephone' has no attribute 'Telephone'
+    class TestPassingValues(unittest.TestCase):
+
+        def test_text_messages(self):
+            self.assertEqual(
+                telephone.text('hello'),
+                'I received this message: hello'
+            )
+
+  and the terminal shows an :doc:`/exceptions/AttributeError`
+
+  .. code-block:: python
+
+    AttributeError: module 'telephone' has no attribute 'text'
 
 - which I add to the list of exceptions
 
@@ -104,29 +107,13 @@ GREEN: make it pass
     # ModuleNotFoundError
     # AttributeError
 
-- I add a :doc:`class </classes/classes>` definition to ``telephone.py``
+- I add a name to ``telephone.py``
 
   .. code-block:: python
 
-    class Telephone(object):
+    text
 
-        pass
-
-  the terminal still shows an :doc:`/exceptions/AttributeError` but with a different message
-
-  .. code-block:: python
-
-    AttributeError: type object 'Telephone' has no attribute 'text'
-
-- I add a name called ``text`` to the ``Telephone`` class
-
-  .. code-block:: python
-
-    class Telephone(object):
-
-        text
-
-  the terminal shows a ``NameError``
+  and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
   .. code-block:: python
 
@@ -146,8 +133,6 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    class Telephone(object):
-
         text = None
 
   and the terminal shows a :doc:`/exceptions/TypeError` because ``text`` is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_
@@ -164,33 +149,29 @@ GREEN: make it pass
     # AssertionError
     # ModuleNotFoundError
     # AttributeError
+    # NameError
     # TypeError
 
-- then change ``text`` to a :doc:`method </functions/functions>` to make it `callable <https://docs.python.org/3/glossary.html#term-callable>`_
+- I change ``text`` to a :doc:`function </functions/functions>` to make it `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 
   .. code-block:: python
 
-    class Telephone(object):
-
-        def text():
-            return None
+      def text():
+          return None
 
   and the terminal shows another :doc:`/exceptions/TypeError`
 
   .. code-block:: python
 
-    TypeError: Telephone.text() takes 0 positional arguments but 1 was given
+    TypeError: text() takes 0 positional arguments but 1 was given
 
-  I provided a positional argument as input with the value ``hello`` when I called ``telephone.Telephone.text`` in the test , but the signature of the ``text`` :doc:`method </functions/functions>` does not take in any arguments
+  I provided a positional argument as input with the value ``hello`` when I called ``telephone.text`` in the test , but the signature of the ``text`` :doc:`method </functions/functions>` does not take in any arguments
 - I change the definition for ``text`` to make it accept a value as input
 
   .. code-block:: python
 
-    class Telephone(object):
-
-
-        def text(value):
-            return None
+    def text(value):
+        return None
 
   the terminal shows an :doc:`/exceptions/AssertionError`
 
@@ -222,11 +203,11 @@ I add a new failing test to ``test_text_messages``
 
   def test_text_messages(self):
       self.assertEqual(
-          telephone.Telephone.text('hello'),
+          telephone.text('hello'),
           'I received this message: hello'
       )
       self.assertEqual(
-          telephone.Telephone.text('yes'),
+          telephone.text('yes'),
           'I received this message: yes'
       )
 
@@ -264,19 +245,23 @@ I add a new failing test to ``test_text_messages``
 
   def test_text_messages(self):
       self.assertEqual(
-          telephone.Telephone.text('hello'),
+          telephone.text('hello'),
           'I received this message: hello'
       )
       self.assertEqual(
-          telephone.Telephone.text('yes'),
+          telephone.text('yes'),
           'I received this message: yes'
       )
       self.assertEqual(
-          telephone.Telephone.text(None),
+          telephone.text(None),
           "I received this message: 'None'"
       )
 
 the terminal shows an :doc:`/exceptions/AssertionError`
+
+.. code-block:: python
+
+  AssertionError: 'I received this message: None' != "I received this message: 'None'"
 
 GREEN: make it pass
 =========================
@@ -287,7 +272,7 @@ I change the test to match the expected value
 .. code-block:: python
 
   self.assertEqual(
-      telephone.Telephone.text(None),
+      telephone.text(None),
       "I received this message: None"
   )
 
@@ -303,110 +288,121 @@ REFACTOR: make it better
 
     def test_text_messages(self):
         self.assertEqual(
-            telephone.Telephone.text('hello'),
+            telephone.text('hello'),
             'I received this message: hello'
         )
         self.assertEqual(
-            telephone.Telephone.text('yes'),
+            telephone.text('yes'),
             'I received this message: yes'
         )
         self.assertEqual(
-            telephone.Telephone.text(None),
+            telephone.text(None),
             "I received this message: None"
         )
         self.assertEqual(
-            telephone.Telephone.text(bool),
+            telephone.text(bool),
             "I received this message: 'bool'"
         )
         self.assertEqual(
-            telephone.Telephone.text(int),
+            telephone.text(int),
             "I received this message: 'int'"
         )
         self.assertEqual(
-            telephone.Telephone.text(float),
+            telephone.text(float),
             "I received this message: 'float'"
         )
         self.assertEqual(
-            telephone.Telephone.text(tuple),
+            telephone.text(tuple),
             "I received this message: 'tuple'"
         )
         self.assertEqual(
-            telephone.Telephone.text(list),
+            telephone.text(list),
             "I received this message: 'list'"
         )
         self.assertEqual(
-            telephone.Telephone.text(set),
+            telephone.text(set),
             "I received this message: 'set'"
         )
         self.assertEqual(
-            telephone.Telephone.text(dict),
+            telephone.text(dict),
             "I received this message: 'dict'"
         )
 
   the terminal shows an :doc:`/exceptions/AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: "I received this message: <class 'bool'>" != "I received this message: 'bool'"
+
 * I change the test to match the expected output
 
   .. code-block:: python
 
       self.assertEqual(
-          telephone.Telephone.text(bool),
+          telephone.text(bool),
           "I received this message: <class 'bool'>"
       )
 
   the terminal shows an :doc:`/exceptions/AssertionError` for the next test
+
+  .. code-block:: python
+
+    AssertionError: "I received this message: <class 'int'>" != "I received this message: 'int'"
+
 * I repeat the solution for each data type until all tests pass
 
   .. code-block:: python
 
     def test_text_messages(self):
         self.assertEqual(
-            telephone.Telephone.text('hello'),
+            telephone.text('hello'),
             'I received this message: hello'
         )
         self.assertEqual(
-            telephone.Telephone.text('yes'),
+            telephone.text('yes'),
             'I received this message: yes'
         )
         self.assertEqual(
-            telephone.Telephone.text(None),
+            telephone.text(None),
             "I received this message: None"
         )
         self.assertEqual(
-            telephone.Telephone.text(bool),
+            telephone.text(bool),
             "I received this message: <class 'bool'>"
         )
         self.assertEqual(
-            telephone.Telephone.text(int),
+            telephone.text(int),
             "I received this message: <class 'int'>"
         )
         self.assertEqual(
-            telephone.Telephone.text(float),
+            telephone.text(float),
             "I received this message: <class 'float'>"
         )
         self.assertEqual(
-            telephone.Telephone.text(tuple),
+            telephone.text(tuple),
             "I received this message: <class 'tuple'>"
         )
         self.assertEqual(
-            telephone.Telephone.text(list),
+            telephone.text(list),
             "I received this message: <class 'list'>"
         )
         self.assertEqual(
-            telephone.Telephone.text(set),
+            telephone.text(set),
             "I received this message: <class 'set'>"
         )
         self.assertEqual(
-            telephone.Telephone.text(dict),
+            telephone.text(dict),
             "I received this message: <class 'dict'>"
         )
 
-VOILA! You now know how to pass values and represent values as strings using interpolation.
+VOILA! You now know how to pass values from a test to a program and can represent values as strings using interpolation. What the tests demonstrates is not only applicable to strings you can pass and return any data type you choose.
 
-you also encountered the following exceptions
+You also encountered the following exceptions
 
 * :doc:`/exceptions/AssertionError`
 * :doc:`/exceptions/ModuleNotFoundError`
 * :doc:`/exceptions/AttributeError`
+* `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 * :doc:`/exceptions/TypeError`
 
 ----
