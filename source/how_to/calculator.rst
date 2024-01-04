@@ -3,7 +3,7 @@
 How to create a Calculator
 ###########################
 
-In this chapter I will create a basic calculator that performs addition, subtraction, division and multiplication
+In this chapter I create a basic calculator that performs addition, subtraction, division and multiplication
 
 ****************
 Prerequisites
@@ -284,7 +284,7 @@ Even though the ``add`` function currently passes the existing test it does not 
             0
         )
 
-  the terminal responds with an :doc:`/exceptions/AssertionError`, showing that the ``add`` function always returns ``1`` no matter what inputs are given
+  the terminal shows an :doc:`/exceptions/AssertionError`, showing that the ``add`` function always returns ``1`` no matter what inputs are given
 
   .. code-block:: python
 
@@ -309,7 +309,7 @@ Even though the ``add`` function currently passes the existing test it does not 
 
 * REFACTOR: make it better
 
-  - I can use random inputs to test that the function behaves the way I expect for any given numbers. I can use python's `random <https://docs.python.org/3/library/random.html?highlight=random#module-random>`_ library to generate random integers between -1 and 1 to represent negative numbers, zero and positive numbers
+  - I can use random inputs to test that the function behaves the way I expect for any given numbers. I can use python's `random <https://docs.python.org/3/library/random.html?highlight=random#module-random>`_ library to generate random integers from -1 and 1 to represent negative numbers, zero and positive numbers
 
     .. code-block:: python
 
@@ -328,7 +328,7 @@ Even though the ``add`` function currently passes the existing test it does not 
               )
 
     * ``x = random.randint(-1, 1)`` assigns a variable called ``x`` to the result of calling ``random.randint(-1, 1)``
-    * ``random.randint(-1, 1)`` returns a random digit between -1, 0 and 1 to represent the case of negative numbers, zero and positive numbers
+    * ``random.randint(-1, 1)`` returns a random digit from -1, 0 and 1 to represent the case of negative numbers, zero and positive numbers
     * the ``assertEqual`` tests that when these two random numbers are given to the ``add`` function as inputs, the output returned is the result of adding them together
     * the terminal still shows passing tests
 
@@ -392,7 +392,7 @@ RED: make it fail
                 x-y
             )
 
-  the terminal responds with an :doc:`/exceptions/AttributeError`
+  the terminal shows an :doc:`/exceptions/AttributeError`
 
   .. code-block:: python
 
@@ -443,7 +443,7 @@ GREEN : make it pass
     def subtract(x, y):
         return None
 
-  and the terminal responds with an :doc:`/exceptions/AssertionError`
+  and the terminal shows an :doc:`/exceptions/AssertionError`
 
   .. code-block:: python
 
@@ -551,7 +551,9 @@ I add a failing test called ``test_multiplication`` to ``test_calculator.py``
               self.x*self.y
           )
 
-the terminal responds with an :doc:`/exceptions/AttributeError`
+the terminal shows an :doc:`/exceptions/AttributeError` ::
+
+  AttributeError: module 'calculator' has no attribute 'subtract'
 
 GREEN : make it pass
 =====================
@@ -623,7 +625,9 @@ I add ``test_division`` to ``test_calculator.py``
               self.x/self.y
           )
 
-once again the terminal shows an :doc:`/exceptions/AttributeError`
+the terminal shows an :doc:`/exceptions/AttributeError` ::
+
+  AttributeError: module 'calculator' has no attribute 'multiply'
 
 
 GREEN : make it pass
@@ -690,7 +694,7 @@ I add a failing test to ``test_calculator.py`` that makes  a `ZeroDivisionError 
       #     self.x/self.y
       # )
 
-the terminal confirms my expectations with a failure for any value of ``x`` when ``y`` is ``0``. :doc:`Exceptions </how_to/exception_handling_programs>` like `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ break execution of a program. No further code is run when an :doc:`Exception </how_to/exception_handling_programs>` is raised which means that no other tests will run until I take care of this error
+the terminal shows my expectations with a failure for any value of ``x`` when ``y`` is ``0``. :doc:`Exceptions </how_to/exception_handling_programs>` like `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ break execution of a program. No further code is run when an :doc:`Exception </how_to/exception_handling_programs>` is raised which means that no other tests will run until I take care of this error
 
 .. code-block:: python
 
@@ -720,7 +724,7 @@ the terminal shows passing tests, and I now have a way to ``catch`` :doc:`Except
 REFACTOR: make it better
 =========================
 
-I add other cases when the divisor is not ``0`` by making sure the value of ``y`` that is passed to ``calculator.divide`` is never ``0``
+I add other cases when the divisor is not ``0`` by making sure the value of ``y`` that is passed from the test to ``calculator.divide`` is never ``0``
 
 .. code-block:: python
 
@@ -745,6 +749,6 @@ I add other cases when the divisor is not ``0`` by making sure the value of ``y`
 
 ----
 
-CONGRATULATIONS! You made it through writing a program that can perform the 4 basic arithmetic operations using Test Driven Development. What would you like to do next?
+CONGRATULATIONS! You made it through writing a program that can perform the 4 basic arithmetic operations of addition, subtraction, division and multiplication using Test Driven Development. What would you like to do next?
 
 :doc:`/code/code_calculator`

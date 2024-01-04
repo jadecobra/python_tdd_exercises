@@ -352,13 +352,18 @@ How to create a Virtual Environment
 How to Deactivate a Virtual Environment
 ========================================
 
-type ``deactivate`` in the terminal
+type the following in a terminal with an active virtual environment ::
+
+  deactivate
 
 How to Activate a Virtual Environment
 ========================================
 
-Make sure you are in the directory that contains the virtual environment for example ``project_name`` and type ``source .venv/bin/activate`` in the terminal
+Make sure you are in the directory that contains the virtual environment for example ``project_name`` and type the following in the terminal::
 
+  source .venv/bin/activate
+
+-----
 
 ******************************************************************************
 BONUS: Automatically create a Python Test Driven Development Environment
@@ -372,7 +377,7 @@ You made it this far and have become the greatest programmer in the world. Follo
 
     cd ..
 
-* I use the `history <https://man7.org/linux/man-pages/man3/history.3.html>`_ program to list the commands I typed earlier in the terminal as a reference for the program::
+* I use the `history <https://man7.org/linux/man-pages/man3/history.3.html>`_ program to list the commands I typed earlier in the terminal as a reference for the program ::
 
     history
 
@@ -397,7 +402,7 @@ You made it this far and have become the greatest programmer in the world. Follo
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-* There is a problem with the program, it will always create a project called ``project_name`` so I need to add a variable to make it create any project name I pass to the program as input. I add a variable called ``PROJECT_NAME`` which is referenced with ``$PROJECT_NAME``
+* This program will always create a project called ``project_name`` so I need to add a variable to make it create any project name I pass to the program as input. I add a variable called ``PROJECT_NAME`` which is referenced with ``$PROJECT_NAME``
 
   .. code-block:: shell
     :linenos:
