@@ -357,6 +357,15 @@ REFACTOR: make it better
             "I received this message: <class 'dict'>"
         )
 
-VOILA! You now know how to pass values and represent values as strings using interpolation
+VOILA! You now know how to pass values and represent values as strings using interpolation.
+
+you also encountered the following exceptions
+
+* :doc:`/exceptions/AssertionError`
+* :doc:`/exceptions/ModuleNotFoundError`
+* :doc:`/exceptions/AttributeError`
+* :doc:`/exceptions/TypeError`
+
+----
 
 :doc:`/code/code_passing_values`

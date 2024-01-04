@@ -110,3 +110,4 @@ GREEN: make it pass
 * :doc:`True </data_structures/booleans>` is ``not False``
 * :doc:`False </data_structures/booleans>` is :doc:`False </data_structures/booleans>`
 * :doc:`True </data_structures/booleans>` is :doc:`True </data_structures/booleans>`
+

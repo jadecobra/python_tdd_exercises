@@ -449,5 +449,14 @@ That's it, from the tests above you can create a :doc:`function </functions/func
 * has default values for when a value is not given for a certain input
 * performs a calculation based on a given input to return an output based on an input
 
+you also encountered the following exceptions
+
+* :doc:`/exceptions/AssertionError`
+* :doc:`/exceptions/ModuleNotFoundError`
+* :doc:`/exceptions/AttributeError`
+* `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+* :doc:`/exceptions/TypeError`
+
+----
 
 :doc:`/code/code_person_factory`

@@ -210,4 +210,14 @@ I just created the same context 3 times. The ``self.assertRaises`` catches an :d
 
 Fantastic! all the tests still pass and I have a way to catch exceptions that are raised in programs I am testing
 
+you also encountered the following exceptions
+
+* :doc:`/exceptions/AssertionError`
+* :doc:`/exceptions/ModuleNotFoundError`
+* `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+* :doc:`/exceptions/AttributeError`
+* :doc:`/exceptions/TypeError`
+
+----
+
 :doc:`/code/code_exception_handling`

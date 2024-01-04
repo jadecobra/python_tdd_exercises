@@ -758,6 +758,18 @@ I add other cases when the divisor is not ``0`` by making sure the value of ``y`
 
 ----
 
-CONGRATULATIONS! You made it through writing a program that can perform the 4 basic arithmetic operations of addition, subtraction, division and multiplication using Test Driven Development. What would you like to do next?
+CONGRATULATIONS! You made it through writing a program that can perform the 4 basic arithmetic operations of addition, subtraction, division and multiplication using Test Driven Development.
+
+you also encountered the following exceptions
+
+* :doc:`/exceptions/AssertionError`
+* :doc:`/exceptions/AttributeError`
+* `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+* :doc:`/exceptions/TypeError`
+* `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_
+
+What would you like to do next?
+
+----
 
 :doc:`/code/code_calculator`

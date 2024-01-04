@@ -529,9 +529,19 @@ Your python powers are growing, you now know
 * how to verify that exceptions are raised
 * how to handle exceptions when they occur
 
+you also encountered the following exceptions
+
+* :doc:`/exceptions/AssertionError`
+* :doc:`/exceptions/ModuleNotFoundError`
+* `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+* :doc:`/exceptions/AttributeError`
+* :doc:`/exceptions/TypeError`
+
 .. admonition:: do you want to
 
   * `read more about the try statement <https://docs.python.org/3/reference/compound_stmts.html#the-try-statement>`_
   *  `read more about exception handling <https://docs.python.org/3/tutorial/errors.html?highlight=try%20except#handling-exceptions>`_
+
+----
 
 :doc:`/code/code_exception_handling`

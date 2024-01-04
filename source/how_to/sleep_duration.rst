@@ -1569,6 +1569,15 @@ To make it happen I had to
 * generate a random integer between two given integers using `random.randint <https://docs.python.org/3/library/random.html?highlight=random#random.randint>`_
 * use the `help system <https://docs.python.org/3/library/functions.html?highlight=dir#help>`_ to view documentation
 
+you also encountered the following exceptions
+
+* :doc:`/exceptions/AssertionError`
+* `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+* :doc:`/exceptions/AttributeError`
+* :doc:`/exceptions/TypeError`
+* SyntaxError
+* `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_
+
 ************
 Homework
 ************
@@ -1580,5 +1589,7 @@ Since this chapter has not been long enough, if you want to do more
   What would you change in ``"%d/%m/%y %H:%M"`` to make it accept dates in a different format? for example  ``2006/11/21`` or ``11/21/2006``
 * Can you randomize the values for the days in a month?
 * Can you randomize the values for the months in a year?
+
+----
 
 :doc:`/code/code_sleep_duration`
