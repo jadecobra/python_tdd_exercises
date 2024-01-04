@@ -470,7 +470,7 @@ That's it, from the tests above you can create a :doc:`function </functions/func
 * has default values for when a value is not given for a certain input
 * performs a calculation based on a given input to return an output based on an input
 
-I also encountered the following exceptions
+and encountered the following exceptions
 
 * :doc:`/exceptions/AssertionError`
 * :doc:`/exceptions/AttributeError`

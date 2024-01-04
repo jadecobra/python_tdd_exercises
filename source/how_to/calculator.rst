@@ -760,7 +760,7 @@ I add other cases when the divisor is not ``0`` by making sure the value of ``y`
 
 CONGRATULATIONS! You made it through writing a program that can perform the 4 basic arithmetic operations of addition, subtraction, division and multiplication using Test Driven Development.
 
-I also encountered the following exceptions
+and encountered the following exceptions
 
 * :doc:`/exceptions/AssertionError`
 * :doc:`/exceptions/AttributeError`

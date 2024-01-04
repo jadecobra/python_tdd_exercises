@@ -208,7 +208,7 @@ GREEN: make it pass
 
     AssertionError: None != 'failed'
 
-* I change ``exception_handler`` to return ``'failed''`` and the test passes
+* I change ``exception_handler`` to return ``'failed'`` and the test passes
 
   .. code-block:: python
 
@@ -278,7 +278,7 @@ GREEN: make it pass
     def exception_handler(function):
         return function()
 
-  the terminal shows a :doc:`/exceptions/TypeError` because ``does_not_raise_exception_error`` is not a function
+  the terminal shows a :doc:`/exceptions/TypeError` because ``does_not_raise_exception_error`` is not  `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 
   .. code-block:: python
 
@@ -288,7 +288,7 @@ GREEN: make it pass
     >       return function()
     E       TypeError: 'NoneType' object is not callable
 
-* I change ``does_not_raise_exception_error`` to make it callable
+* I change ``does_not_raise_exception_error`` to a function to make it `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 
   .. code-block:: python
 
@@ -309,7 +309,7 @@ GREEN: make it pass
 How to use try...except...else
 *****************************************
 
-`try...except...else <https://docs.python.org/3/reference/compound_stmts.html#the-try-statement>`_ statements are used to catch/handle exceptions in Python. This allows the program to make a decision when it encounters an Exception.
+`try...except...else <https://docs.python.org/3/reference/compound_stmts.html#the-try-statement>`_ statements are used to catch/handle exceptions in Python. This allows the program to make a decision when it encounters an Exception instead of ending execution.
 
 I add a `try...except...else <https://docs.python.org/3/reference/compound_stmts.html#the-try-statement>`_ statement to ``exception_handler`` in ``exceptions.py`` to handle exceptions
 
@@ -334,8 +334,8 @@ I think of the  `try...except...else <https://docs.python.org/3/reference/compou
 In this case
 
 * ``try`` **calling** ``function()``
-* ``except Exception`` - when **calling** ``function()`` raises an ``Exception`` return ``failed``
-* ``else`` - when **calling** ``function()`` does not raise an ``Exception`` return ``succeeded``
+* ``except Exception`` - when **calling** ``function()`` raises an ``Exception`` return ``'failed'``
+* ``else`` - when **calling** ``function()`` does not raise an ``Exception`` return ``'succeeded'``
 
 
 *****************************************
@@ -453,7 +453,7 @@ GREEN: make it pass
 
   The function returns ``succeeded`` from the ``else`` block and ignores the return statement below it
 
-* I add a ``finally`` clause to force it to ignore the other return statements and only return what I want
+* I have to add a ``finally`` clause to force it to ignore the other return statements and only return what I want
 
   .. code-block:: python
 
@@ -469,7 +469,7 @@ GREEN: make it pass
 
   the terminal shows passing tests. The ``finally`` clause is always run regardless of what happens in the ``try..except..else`` blocks
 
-* I will add one more test to show that the code in the ``finally`` block will always run
+* I add one more test to show that the code in the ``finally`` block will always run
 
   .. code-block:: python
 
@@ -523,13 +523,13 @@ GREEN: make it pass
 ----
 
 CONGRATULATIONS
-Your python powers are growing, you now know
+Your python powers are growing, you have seen
 
 * how to deliberately raise exceptions
 * how to verify that exceptions are raised
 * how to handle exceptions when they occur
 
-I also encountered the following exceptions
+and encountered the following exceptions
 
 * :doc:`/exceptions/AssertionError`
 * :doc:`/exceptions/ModuleNotFoundError`
