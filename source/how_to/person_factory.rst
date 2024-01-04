@@ -27,6 +27,7 @@ I add an import statement and a failing test to ``test_person.py``
   import person
   import unittest
 
+
   class TestPersonFactory(unittest.TestCase):
 
       def test_person_factory(self):
@@ -130,7 +131,7 @@ REFACTOR: make it better
   .. code-block:: python
 
     def factory(first_name=None):
-        return None
+        ...
 
   the terminal shows a :doc:`/exceptions/TypeError` for the next argument
 
@@ -143,7 +144,7 @@ REFACTOR: make it better
   .. code-block:: python
 
     def factory(first_name=None, last_name=None):
-        return None
+        ...
 
   the terminal shows another :doc:`/exceptions/TypeError` for the next keyword argument
 
@@ -159,7 +160,7 @@ REFACTOR: make it better
           first_name=None, last_name=None,
           year_of_birth=None, sex=None
       ):
-          return None
+          ...
 
   a :doc:`/exceptions/TypeError` is raised because I cannot perform a subtraction operation on :doc:`None </data_structures/none>` and the ``this_year`` function currently returns :doc:`None </data_structures/none>`
 

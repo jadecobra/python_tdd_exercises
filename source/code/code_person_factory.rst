@@ -7,13 +7,13 @@ How to create a person: Tests and Solution
 tests
 -----
 
-Here is the code in ``tests/test_person_factory.py``
+Here is the code in ``tests/test_person.py``
 
 .. code-block:: python
 
-    import unittest
-    import person
     import datetime
+    import person
+    import unittest
 
     def this_year():
         return datetime.datetime.now().year
@@ -38,10 +38,10 @@ Here is the code in ``tests/test_person_factory.py``
             )
 
         def test_person_factory_takes_in_variable_inputs(self):
-            first_name = "me"
-            last_name = "my_last_name"
+            first_name = "john"
+            last_name = "doe"
             sex = "M"
-            year_of_birth = 1983
+            year_of_birth = 1942
             self.assertEqual(
                 person.factory(
                     first_name=first_name,
@@ -93,7 +93,6 @@ Here is the code in ``tests/test_person_factory.py``
 
     # Exceptions Encountered
     # AssertionError
-    # ModuleNotFoundError
     # AttributeError
     # NameError
     # TypeError
@@ -112,8 +111,8 @@ Here is the solution in ``person.py``
         year_of_birth=None, sex="M"
     ):
         return {
-            'age': datetime.datetime.now().year  - year_of_birth,
             'first_name': first_name,
             'last_name': last_name,
             'sex': sex,
+            'age': datetime.datetime.now().year - year_of_birth,
         }
