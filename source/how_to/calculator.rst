@@ -153,6 +153,12 @@ RED: make it fail
 GREEN: make it pass
 ====================
 
+* I add the error to the list of exceptions encountered ::
+
+    # Exceptions Encountered
+    # AssertionError
+    # AttributeError
+
 * I open ``calculator.py`` in the Interactive Development Environment (IDE) and type the name ``add``
 
   .. code-block:: python
@@ -171,6 +177,7 @@ GREEN: make it pass
 
     # Exceptions Encountered
     # AssertionError
+    # AttributeError
     # NameError
 
 * then assign the name ``add`` to the null value :doc:`None </data_structures/none>`
@@ -193,6 +200,7 @@ GREEN: make it pass
 
     # Exceptions Encountered
     # AssertionError
+    # AttributeError
     # NameError
     # TypeError
 
@@ -669,6 +677,7 @@ GREEN : make it pass
 
     # Exceptions Encountered
     # AssertionError
+    # AttributeError
     # NameError
     # TypeError
     # ZeroDivisionError
