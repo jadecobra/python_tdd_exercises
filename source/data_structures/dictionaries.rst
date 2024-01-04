@@ -1248,7 +1248,20 @@ GREEN: make it pass
 
 ----
 
-You now know
+you encountered the following exceptions
+
+* :doc:`/exceptions/AssertionError`
+* :doc:`/exceptions/ModuleNotFoundError`
+* :doc:`/exceptions/AttributeError`
+* :doc:`/exceptions/TypeError`
+* `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+
+# ModuleNotFoundError
+    # AttributeError
+    # TypeError
+    # KeyError
+
+You also know
 
 * How to create a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 * What objects can be used as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
