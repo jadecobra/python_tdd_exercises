@@ -584,4 +584,12 @@ There are more :doc:`methods </functions/functions>` listed than what I have rev
 
 You can add tests for these :doc:`methods </functions/functions>` to find out what they do or `read more about lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list%20remove#more-on-lists>`_
 
+you encountered the following exceptions
+
+* :doc:`/exceptions/AssertionError`
+* :doc:`/exceptions/TypeError`
+* `IndexError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#IndexError>`_
+
+----
+
 :doc:`/code/code_lists`

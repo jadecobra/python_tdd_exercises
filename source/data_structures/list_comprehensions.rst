@@ -886,5 +886,6 @@ I have written the same thing multiple times in these tests and since the progra
 
   the terminal shows all tests are still passing
 
+----
 
 :doc:`/code/code_list_comprehensions`

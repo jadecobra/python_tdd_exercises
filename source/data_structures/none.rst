@@ -570,4 +570,6 @@ I change the tests to make them pass and can see from the tests that
 
 You now know what `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is and what it is not
 
+----
+
 :doc:`/code/code_none`

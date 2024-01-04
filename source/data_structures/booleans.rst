@@ -902,7 +902,6 @@ REFACTOR: make it better
 
 From the tests I see that
 
-
 * a :doc:`dictionary </data_structures/dictionaries>` with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
 * a `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
 * a :doc:`list </data_structures/lists>` with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
@@ -927,5 +926,7 @@ I can sum this up as
 * all `objects <https://docs.python.org/3/glossary.html#term-object>`_ that contain things are `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
 * empty `objects <https://docs.python.org/3/glossary.html#term-object>`_ including ``0`` and :doc:`None </data_structures/none>` are `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
+
+----
 
 :doc:`/code/code_booleans`
