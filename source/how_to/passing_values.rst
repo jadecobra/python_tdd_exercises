@@ -166,7 +166,7 @@ GREEN: make it pass
     # AttributeError
     # TypeError
 
-- then change ``text`` to a :doc:`method </functions/functions>` to make it callable
+- then change ``text`` to a :doc:`method </functions/functions>` to make it `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 
   .. code-block:: python
 
@@ -175,7 +175,13 @@ GREEN: make it pass
         def text():
             return None
 
-  and the terminal shows another :doc:`/exceptions/TypeError`. I provided a positional argument as input with the value ``hello`` when I called ``telephone.Telephone.text`` in the test , but the signature of the ``text`` :doc:`method </functions/functions>` does not take in any arguments
+  and the terminal shows another :doc:`/exceptions/TypeError`
+
+  .. code-block:: python
+
+    TypeError: Telephone.text() takes 0 positional arguments but 1 was given
+
+  I provided a positional argument as input with the value ``hello`` when I called ``telephone.Telephone.text`` in the test , but the signature of the ``text`` :doc:`method </functions/functions>` does not take in any arguments
 - I change the definition for ``text`` to make it accept a value as input
 
   .. code-block:: python
@@ -187,6 +193,11 @@ GREEN: make it pass
             return None
 
   the terminal shows an :doc:`/exceptions/AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: None != 'I received this message: hello'
+
 - I change the return statement with the expected value to make the test pass
 
   .. code-block:: python
