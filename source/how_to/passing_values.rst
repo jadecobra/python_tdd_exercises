@@ -71,7 +71,13 @@ I create a file called ``test_passing_values.py`` in the ``tests`` folder with t
               'I received this message: hello'
           )
 
-the terminal shows a :doc:`/exceptions/ModuleNotFoundError` and I add it to the list of exceptions encountered
+the terminal shows a :doc:`/exceptions/ModuleNotFoundError`
+
+.. code-block:: python
+
+  ModuleNotFoundError: No module named 'telephone'
+
+and I add it to the list of exceptions encountered
 
 .. code-block:: python
 
@@ -83,7 +89,13 @@ the terminal shows a :doc:`/exceptions/ModuleNotFoundError` and I add it to the 
 GREEN: make it pass
 **********************
 
-- I create a file called ``telephone.py`` in the project folder and the terminal shows an :doc:`/exceptions/AttributeError` which I add to the list of exceptions
+- I create a file called ``telephone.py`` in the project folder and the terminal shows an :doc:`/exceptions/AttributeError`
+
+  .. code-block:: python
+
+    AttributeError: module 'telephone' has no attribute 'Telephone'
+
+- which I add to the list of exceptions
 
   .. code-block:: python
 
@@ -101,6 +113,11 @@ GREEN: make it pass
         pass
 
   the terminal still shows an :doc:`/exceptions/AttributeError` but with a different message
+
+  .. code-block:: python
+
+    AttributeError: type object 'Telephone' has no attribute 'text'
+
 - I add a name called ``text`` to the ``Telephone`` class
 
   .. code-block:: python
@@ -109,7 +126,13 @@ GREEN: make it pass
 
         text
 
-  the terminal shows a ``NameError`` and I add it to the list of exceptions encountered
+  the terminal shows a ``NameError``
+
+  .. code-block:: python
+
+    NameError: name 'text' is not defined
+
+* I add the error to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -128,6 +151,11 @@ GREEN: make it pass
         text = None
 
   and the terminal shows a :doc:`/exceptions/TypeError` because ``text`` is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_
+
+  .. code-block:: python
+
+    TypeError: 'NoneType' object is not callable
+
 - I add the exception to the list of exceptions encountered
 
   .. code-block:: python
@@ -138,7 +166,7 @@ GREEN: make it pass
     # AttributeError
     # TypeError
 
-- I change ``text`` to a :doc:`method </functions/functions>` to make it callable
+- then change ``text`` to a :doc:`method </functions/functions>` to make it callable
 
   .. code-block:: python
 
@@ -147,7 +175,7 @@ GREEN: make it pass
         def text():
             return None
 
-  and the terminal shows another :doc:`/exceptions/TypeError`. I I provided a positional argument as input with the value ``hello`` when I called ``telephone.Telephone.text`` in the test , but the signature of the ``text`` :doc:`method </functions/functions>` does not take in any arguments
+  and the terminal shows another :doc:`/exceptions/TypeError`. I provided a positional argument as input with the value ``hello`` when I called ``telephone.Telephone.text`` in the test , but the signature of the ``text`` :doc:`method </functions/functions>` does not take in any arguments
 - I change the definition for ``text`` to make it accept a value as input
 
   .. code-block:: python
@@ -193,6 +221,10 @@ I add a new failing test to ``test_text_messages``
 
 
 the terminal shows an :doc:`/exceptions/AssertionError`
+
+.. code-block:: python
+
+  AssertionError: 'I received this message: hello' != 'I received this message: yes'
 
 GREEN: make it pass
 =========================
