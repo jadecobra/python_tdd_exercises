@@ -432,7 +432,7 @@ RED: make it fail
   def test_creating_dictionaries_with_sets_as_keys(self):
       {{1, 2}: "BOOM"}
 
-the terminal responds with a :doc:`/exceptions/TypeError`
+the terminal shows a :doc:`/exceptions/TypeError`
 
 .. code-block:: python
 

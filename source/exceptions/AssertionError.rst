@@ -501,7 +501,7 @@ REFACTOR: make it better
 
         assert True == None
 
-  and the terminal responds with an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
+  and the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
   .. code-block:: python
 

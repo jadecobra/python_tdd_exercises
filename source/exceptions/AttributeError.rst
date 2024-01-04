@@ -25,7 +25,7 @@ I open a new file, save it as ``test_attribute_error.py`` in the ``tests`` folde
 * ``import unittest`` imports the `unittest <https://docs.python.org/3/library/unittest.html>`_ module from the python standard library
 * ``import module`` imports the ``module`` module - which will hold the code I am testing
 
-The terminal responds with a :doc:`/exceptions/ModuleNotFoundError`
+The terminal shows a :doc:`/exceptions/ModuleNotFoundError`
 
 .. code-block:: python
 
@@ -356,7 +356,7 @@ I add a new test to ``TestAttributeError`` class in ``tests/test_attribute_error
   def test_defining_functions_to_solve_attribute_errors(self):
       module.function_0()
 
-the terminal responds with an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+the terminal shows an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
 .. code-block:: python
 

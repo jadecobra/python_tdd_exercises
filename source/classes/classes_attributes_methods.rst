@@ -19,7 +19,7 @@ RED: make it fail
     def test_classes_with_attributes(self):
         self.assertEqual(classes.ClassWithAttributes.a_boolean, bool)
 
-  the terminal responds with an :doc:`/exceptions/AttributeError`
+  the terminal shows an :doc:`/exceptions/AttributeError`
 
 * I add a class definition to ``classes.py``
 
@@ -244,7 +244,7 @@ I add another test for a class that has both attributes and methods
           'you called a method'
       )
 
-the terminal responds with an :doc:`/exceptions/AttributeError`
+the terminal shows an :doc:`/exceptions/AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
