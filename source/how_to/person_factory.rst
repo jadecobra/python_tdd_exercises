@@ -3,13 +3,13 @@
 How to create a person
 #######################
 
-This is an exercise in creating :doc:`dictionaries </data_structures/dictionaries>`  with :doc:`/functions/functions`. Though it assumes you are familiar with :doc:`dictionaries </data_structures/dictionaries>`  and :doc:`/functions/functions`, you can still try out the chapter if you are not familiar with those concepts.
+This is an exercise in creating :doc:`dictionaries </data_structures/dictionaries>`  with :doc:`/functions/functions`. It assumes familiarity with those concepts, though you can still try out the chapter even if you are not.
 
 ****************
 Prerequisites
 ****************
 
-:doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>`
+:doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` with ``person`` as the project name
 
 ----
 
@@ -20,39 +20,35 @@ How to use dictionaries as factories in Python
 RED: make it fail
 ==================
 
-I create a file called ``test_person_factory.py`` in the ``tests`` folder and add the following
+I add an import statement and a failing test to ``test_person.py``
 
 .. code-block:: python
 
-  import unittest
   import person
-
+  import unittest
 
   class TestPersonFactory(unittest.TestCase):
 
       def test_person_factory(self):
           self.assertEqual(person.factory(), None)
 
-the terminal shows a ``ModuleNotFoundError`` and I add it to the list of exceptions encountered
+the terminal shows an :doc:`/exceptions/AttributeError`
+
+.. code-block:: python
+
+  AttributeError: module 'person' has no attribute 'factory'
+
+which I add to the list of exceptions
 
 .. code-block:: python
 
   # Exceptions Encountered
   # AssertionError
-  # ModuleNotFoundError
+  # AttributeError
+
 
 GREEN: make it pass
 ====================
-
-
-* I create a file called ``person.py`` in the project folder and the terminal shows an :doc:`/exceptions/AttributeError` which I add to the list of exceptions
-
-  .. code-block:: python
-
-    # Exceptions Encountered
-    # AssertionError
-    # ModuleNotFoundError
-    # AttributeError
 
 * I create a function called ``factory`` in ``person.py`` and the terminal shows passing tests
 
@@ -64,7 +60,7 @@ GREEN: make it pass
 REFACTOR: make it better
 =========================
 
-* I add more details to ``test_person_factory``. I want to pass in values for ``first_name``, ``last_name``, ``year_of_birth``, ``sex`` and have the function return a :doc:`dictionary </data_structures/dictionaries>` with the ``first_name``, ``last_name``, ``sex`` and ``age`` calculated from the ``year_of_birth``
+* I add more details to ``test_person_factory``. I want to pass in values for ``first_name``, ``last_name``, ``year_of_birth``, ``sex`` and have the :doc:`function </functions/functions>` return a :doc:`dictionary </data_structures/dictionaries>` with the ``first_name``, ``last_name``, ``sex`` and ``age`` calculated from the ``year_of_birth``
 
   .. code-block:: python
 
@@ -86,17 +82,20 @@ REFACTOR: make it better
 
   the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ for the call to the ``this_year`` :doc:`function </functions/functions>`
 
-* I add the exception to the list of exceptions encountered
+  .. code-block:: python
+
+    NameError: name 'this_year' is not defined
+
+* I add it to the list of exceptions encountered
 
   .. code-block:: python
 
     # Exceptions Encountered
     # AssertionError
-    # ModuleNotFoundError
     # AttributeError
     # NameError
 
-* then add a definition for ``this_year`` to the top of ``test_person_factory.py``
+* then add a definition for ``this_year`` to the top of ``test_person.py``
 
   .. code-block:: python
 
@@ -112,13 +111,16 @@ REFACTOR: make it better
 
   the terminal shows a :doc:`/exceptions/TypeError` since the ``person.factory`` :doc:`function signature </functions/functions>` does not allow it to accept inputs and the test sends four arguments when it calls the :doc:`function </functions/functions>`
 
+  .. code-block:: python
+
+    TypeError: factory() got an unexpected keyword argument 'first_name'
+
 * I add the error to the list of exceptions encountered
 
   .. code-block:: python
 
     # Exceptions Encountered
     # AssertionError
-    # ModuleNotFoundError
     # AttributeError
     # NameError
     # TypeError
@@ -132,6 +134,10 @@ REFACTOR: make it better
 
   the terminal shows a :doc:`/exceptions/TypeError` for the next argument
 
+  .. code-block:: python
+
+    TypeError: factory() got an unexpected keyword argument 'last_name'
+
 * after adding a keyword argument for ``last_name``  to the ``factory`` function
 
   .. code-block:: python
@@ -141,7 +147,11 @@ REFACTOR: make it better
 
   the terminal shows another :doc:`/exceptions/TypeError` for the next keyword argument
 
-* I change the ``factory`` function definition for each keyword until I get a :doc:`/exceptions/TypeError` for the line where I subtract ``this_year() - this_year()``
+  .. code-block:: python
+
+    TypeError: factory() got an unexpected keyword argument 'year_of_birth'
+
+* I add each keyword to the ``factory`` function until I get a :doc:`/exceptions/TypeError` for the line where I subtract ``this_year() - this_year()``
 
   .. code-block:: python
 
@@ -153,13 +163,17 @@ REFACTOR: make it better
 
   a :doc:`/exceptions/TypeError` is raised because I cannot perform a subtraction operation on :doc:`None </data_structures/none>` and the ``this_year`` function currently returns :doc:`None </data_structures/none>`
 
-* I change the definition for ``this_year`` in ``test_person_factory.py`` using a function from the `datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#module-datetime>`_ library that returns the current year
+  .. code-block:: python
+
+    TypeError: unsupported operand type(s) for -: 'NoneType' and 'NoneType'
+
+* I change the definition for ``this_year`` in ``test_person.py`` using a function from the `datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#module-datetime>`_ library that returns the current year
 
   .. code-block:: python
 
-    import unittest
-    import person
     import datetime
+    import person
+    import unittest
 
     def this_year():
         return datetime.datetime.now().year
@@ -170,7 +184,13 @@ REFACTOR: make it better
   - ``return datetime.datetime.now().year`` returns the ``year`` attribute of the object returned by the ``now`` :doc:`method </functions/functions>` of the ``datetime.datetime`` :doc:`class </classes/classes>`, which is a representation of the current local date and time. I could also use ``today`` or ``utcnow`` instead of ``now`` to achieve the same result
   - I get the ``year`` attribute of the object returned since that is `all I need to get by <https://www.youtube.com/watch?v=XW1HNWqdVbk>`_
 
-* the terminal shows an :doc:`/exceptions/AssertionError` since the ``person.factory`` function returns :doc:`None </data_structures/none>` and the test expects a :doc:`dictionary </data_structures/dictionaries>` with keys and values. I should change the function to return an empty dictionary so I am at least comparing 2 :doc:`dictionaries </data_structures/dictionaries>`
+* the terminal shows an :doc:`/exceptions/AssertionError` since the ``person.factory`` function returns :doc:`None </data_structures/none>` and the test expects a :doc:`dictionary </data_structures/dictionaries>` with keys and values.
+
+  .. code-block:: python
+
+    AssertionError: None != {'first_name': 'sibling', 'last_name': 'last_name', 'sex': 'F', 'age': 0}
+
+* I change the function to return an empty dictionary so I am at least comparing 2 :doc:`dictionaries </data_structures/dictionaries>`
 
   .. code-block:: python
 
@@ -182,6 +202,10 @@ REFACTOR: make it better
 
   the terminal shows the differences between the :doc:`dictionaries </data_structures/dictionaries>` returned by the ``factory`` function and the one expected in the test
 
+  .. code-block:: python
+
+    AssertionError: {} != {'first_name': 'sibling', 'last_name': 'last_name', 'sex': 'F', 'age': 0}
+
 * When I change the empty :doc:`dictionary </data_structures/dictionaries>`   in the ``factory`` function to match the expected results, the test passes
 
   .. code-block:: python
@@ -191,12 +215,13 @@ REFACTOR: make it better
         year_of_birth=None, sex=None
     ):
         return {
-            "age": 0,
-            "first_name": "sibling",
-            "last_name": "last_name",
-            "sex": "F",
+            'first_name': 'sibling',
+            'last_name': 'last_name',
+            'sex': 'F',
+            'age': 0
         }
-* The factory function currently returns the exact same dictionary every time, regardless of what inputs it gets. It is a :doc:`singleton function </functions/functions_singleton>`. To be more useful it has to use the inputs it is given. I add another test to ``test_person_factory.py`` with a different set of inputs
+
+* The factory function currently returns the exact same dictionary every time, regardless of what inputs it gets. It is a :doc:`singleton function </functions/functions_singleton>`. To be more useful it has to use the inputs it is given. I add another test to ``test_person.py`` with a different set of inputs
 
   .. code-block:: python
 
@@ -217,6 +242,10 @@ REFACTOR: make it better
         )
 
   the terminal shows an :doc:`/exceptions/AssertionError` because the expected and returned dictionaries are different
+
+  .. code-block:: python
+
+    AssertionError: {'first_name': 'sibling', 'last_name': 'last_name', 'sex': 'F', 'age': 0} != {'first_name': 'me', 'last_name': 'my_last_name', 'sex': 'M', 'age': 41}
 
 * I change the ``factory`` function to use the input provided for ``first_name``
 
@@ -244,11 +273,11 @@ REFACTOR: make it better
         year_of_birth=None, sex=None
     ):
         return {
-        "age": 0,
-        "first_name": first_name,
-        "last_name": last_name,
-        "sex": sex,
-    }
+            'first_name': first_name,
+            'last_name': last_name,
+            'sex': sex,
+            'age': 0
+        }
 
 * For ``age`` to be accurate it has to be a calculation based on the current year. I have a function that returns the current year and I have the ``year_of_birth`` as input, I also have this line in the test ``this_year() - 1983``. I can try making the ``factory`` function use that calculation
 
@@ -259,13 +288,17 @@ REFACTOR: make it better
         year_of_birth=None, sex=None
     ):
         return {
-            'age': this_year() - year_of_birth,
             'first_name': first_name,
             'last_name': last_name,
             'sex': sex,
+            'age': this_year() - year_of_birth,
         }
 
   the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ since I am calling a function that does not exist in ``person.py``
+
+  .. code-block:: python
+
+    NameError: name 'this_year' is not defined
 
 * I replace ``this_year()`` with the return value from ``test_person_factory.this_year``
 
@@ -276,13 +309,18 @@ REFACTOR: make it better
         year_of_birth=None, sex=None
     ):
         return {
-            'age': datetime.datetime.now().year - year_of_birth,
             'first_name': first_name,
             'last_name': last_name,
             'sex': sex,
+            'age': datetime.datetime.now().year - year_of_birth,
         }
 
-  the terminal changes to show another `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ for ``datetime``
+  the terminal changes to show another `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ this time for the ``datetime`` module
+
+  .. code-block:: python
+
+    NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
+
 * I add an import statement at the beginning of ``person.py``
 
   .. code-block:: python
@@ -290,15 +328,7 @@ REFACTOR: make it better
     import datetime
 
     def factory(
-        first_name=None, last_name=None,
-        year_of_birth=None, sex=None
-    ):
-        return {
-            'age': datetime.datetime.now().year  - year_of_birth,
-            'first_name': first_name,
-            'last_name': last_name,
-            'sex': sex,
-        }
+    ...
 
   *HOORAY!* the terminal shows passing tests, time for a victory dance.
 
@@ -391,16 +421,11 @@ RED: make it fail
         first_name=None, last_name="last_name",
         year_of_birth=None, sex=None
     ):
-        return {
-            'age': datetime.datetime.now().year  - year_of_birth,
-            'first_name': first_name,
-            'last_name': last_name,
-            'sex': sex,
-        }
+        ...
 
-  the terminal shows passing tests. When no value is given for the ``last_name`` argument to ``person.factory`` it uses ``last_name`` because that is the defined default value in the :doc:`function signature </functions/functions>`
+  the terminal shows passing tests. When no value is given for the ``last_name`` argument to ``person.factory`` it uses ``"last_name"`` because that is the defined default value in the :doc:`function signature </functions/functions>`
 
-* what if I try another default value, this time for sex? I add a test called ``test_person_factory_with_sex_default_keyword_arguments``
+* I add a test called ``test_person_factory_with_sex_default_keyword_arguments`` to try another default value
 
   .. code-block:: python
 
@@ -423,7 +448,7 @@ RED: make it fail
 
   the terminal shows an :doc:`/exceptions/AssertionError`, there is a difference in the values for ``sex``
 
-* 3 out of the 4 persons created have ``M`` as their sex and 1 has ``F`` as their sex, I could set the majority as the default value to reduce the number of repetitions. I change the default value for the parameter in ``person.factory``
+* 3 out of the 4 persons created in the tests have ``M`` as their sex and 1 has ``F`` as their sex, I could set the majority as the default value to reduce the number of repetitions. I change the default value for the parameter in ``person.factory``
 
   .. code-block:: python
 
@@ -431,14 +456,9 @@ RED: make it fail
         first_name=None, last_name="last_name",
         year_of_birth=None, sex="M"
     ):
-        return {
-            'age': datetime.datetime.now().year  - year_of_birth,
-            'first_name': first_name,
-            'last_name': last_name,
-            'sex': sex,
-        }
+        ...
 
-  and the terminal shows passing tests.
+  and the terminal shows passing tests
 
 ----
 
@@ -452,7 +472,6 @@ That's it, from the tests above you can create a :doc:`function </functions/func
 you also encountered the following exceptions
 
 * :doc:`/exceptions/AssertionError`
-* :doc:`/exceptions/ModuleNotFoundError`
 * :doc:`/exceptions/AttributeError`
 * `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 * :doc:`/exceptions/TypeError`
