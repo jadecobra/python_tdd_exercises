@@ -886,6 +886,14 @@ I have written the same thing multiple times in these tests and since the progra
 
   the terminal shows all tests are still passing
 
+you also encountered the following exceptions
+
+* :doc:`/exceptions/AssertionError`
+* `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+* :doc:`/exceptions/ModuleNotFoundError`
+* :doc:`/exceptions/AttributeError`
+* :doc:`/exceptions/TypeError`
+
 ----
 
 :doc:`/code/code_list_comprehensions`
