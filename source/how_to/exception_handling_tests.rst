@@ -9,7 +9,7 @@ This is useful because it means there is a problem that should be taken care of 
 
 It is also a pain when it causes the program to exit prematurely. What if I want the program to run regardless of errors? I might want it to give messages to the user who may not care or understand the details that come with Exceptions
 
-Enter Exception Handling, a way to deal with exceptions, allowing programs to make decisions when an Exception is encountered. Enough words, time to write some code.
+Enter Exception Handling, a way to deal with exceptions, allowing programs to make decisions when an Exception is encountered.
 
 *************************
 Prerequisites
@@ -38,7 +38,13 @@ I create a file called ``test_exception_handling.py`` in the ``tests`` folder an
       def test_catching_module_not_found_error_in_tests(self):
           import non_existent_module
 
-the terminal shows a :doc:`/exceptions/ModuleNotFoundError` and I add it to the list of exceptions encountered
+the terminal shows a :doc:`/exceptions/ModuleNotFoundError`
+
+.. code-block:: python
+
+  ModuleNotFoundError: No module named 'non_existent_module'
+
+I add it to the list of exceptions encountered
 
 .. code-block:: python
 
@@ -104,7 +110,11 @@ RED: make it fail
     import module
     import unittest
 
-  the terminal shows an :doc:`/exceptions/AttributeError` because the called attribute ``non_existent_attribute`` does not exist in ``module.py`` ::
+  the terminal shows a :doc:`/exceptions/ModuleNotFoundError` ::
+
+    ModuleNotFoundError: No module named 'module'
+
+* I create a file named ``module.py`` in the project folder and the terminal shows an :doc:`/exceptions/AttributeError` because the called attribute ``non_existent_attribute`` does not exist in ``module.py`` ::
 
     AttributeError: module 'module' has no attribute 'non_existent_attribute'
 
@@ -127,7 +137,7 @@ I add a ``with self.assertRaises`` context to ``test_catching_attribute_errors_i
       with self.assertRaises(AttributeError):
           module.non_existent_attribute
 
-the terminal shows passing tests. I will do it again with :doc:`methods </functions/functions>` for fun
+the terminal shows passing tests. I will do it again with :doc:`functions </functions/functions>` for fun
 
 RED: make it fail
 ==================
@@ -210,7 +220,7 @@ I just created the same context 3 times. The ``self.assertRaises`` catches an :d
 
 Fantastic! all the tests still pass and I have a way to catch exceptions that are raised in programs I am testing
 
-you also encountered the following exceptions
+I also encountered the following exceptions
 
 * :doc:`/exceptions/AssertionError`
 * :doc:`/exceptions/ModuleNotFoundError`
