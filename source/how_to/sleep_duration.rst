@@ -1575,7 +1575,7 @@ you also encountered the following exceptions
 * `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 * :doc:`/exceptions/AttributeError`
 * :doc:`/exceptions/TypeError`
-* SyntaxError
+* `SyntaxError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#SyntaxError>`_
 * `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_
 
 ************

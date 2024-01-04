@@ -179,3 +179,11 @@ GREEN: make it pass
 *WELL DONE!*
 You are on your way to being a troubleshooting master.
 You now know how to solve ``ModuleNotFoundError``
+
+you encountered the following exceptions
+
+* :doc:`/exceptions/AssertionError`
+* ImportError
+* :doc:`/exceptions/ModuleNotFoundError`
+
+----

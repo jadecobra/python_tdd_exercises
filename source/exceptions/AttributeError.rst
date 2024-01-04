@@ -755,8 +755,16 @@ You know the "drill", add more lines until there are 100 tests ending with one f
 
 repeat the solution until all tests pass
 
-*CONGRATULATIONS!* You now know
+*CONGRATULATIONS!* you encountered the following exceptions
 
+* :doc:`/exceptions/AssertionError`
+* :doc:`/exceptions/ModuleNotFoundError`
+* :doc:`/exceptions/AttributeError`
+* `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+* :doc:`/exceptions/TypeError`
+* `SyntaxError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#SyntaxError>`_
+
+and learned
 
 * How to solve a :doc:`/exceptions/ModuleNotFoundError`
 * How to solve a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
@@ -768,6 +776,7 @@ repeat the solution until all tests pass
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`methods (functions) </functions/functions>` in a :doc:`class </classes>`
 
 :doc:`classes </classes>` vs :doc:`/functions/functions` in Python
+
 -------------------------------------------------------
 
 * attributes and :doc:`methods </functions/functions>` in a :doc:`class </classes>` can be accessible from outside the :doc:`class </classes>`

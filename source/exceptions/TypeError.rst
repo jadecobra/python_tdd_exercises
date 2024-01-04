@@ -365,6 +365,14 @@ REFACTOR: make it better
 
 What happens when you do this with ``function_a``, ``function_b``, ``function_c`` and ``function_d``?
 
+
+You encountered the following exceptions
+
+* :doc:`/exceptions/AssertionError`
+* :doc:`/exceptions/ModuleNotFoundError`
+* :doc:`/exceptions/AttributeError`
+* :doc:`/exceptions/TypeError`
+
 You now know
 
 * How to solve a :doc:`/exceptions/ModuleNotFoundError`
