@@ -58,7 +58,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
   this is where all the code for the project will stay
 
-* `touch <https://man7.org/linux/man-pages/man1/touch.1.html>`_ is a program which creates an empty file with the name it is given
+* `touch <https://man7.org/linux/man-pages/man1/touch.1.html>`_ is a program which creates an empty file when given a name
 
   - I use it to create an empty file called ``project_name.py`` to hold the source code for the program
 
@@ -134,7 +134,7 @@ RED: make it fail
 
     * `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is the python keyword for creating :doc:`/functions/functions`
     * ``test_failure`` is the name of the :doc:`function </functions/functions>`
-    * ``self`` is the ``TestProjectName`` class. I can use ``self`` to access ``methods`` and ``attributes`` within the ``TestProjectName`` class, this avoids having to type ``TestProjectName().assertFalse(True)`` to access the ``assertFalse`` :doc:`method </functions/functions>`
+    * ``self`` is the ``TestProjectName`` class. I can use ``self`` to access :doc:`methods (functions) </functions/functions>` and ``attributes`` within the ``TestProjectName`` class, this avoids having to type ``TestProjectName().assertFalse(True)`` to access the ``assertFalse`` :doc:`method </functions/functions>`
     * ``self.assertFalse(True)`` is the actual test. I expect this line to fail because :doc:`True </data_structures/booleans>` is not :doc:`False </data_structures/booleans>`
 
       - ``assertFalse`` is a :doc:`method </functions/functions>` in the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class which checks if its input is :doc:`False </data_structures/booleans>`
@@ -200,7 +200,7 @@ GREEN: make it pass
 ********************
 
 
-* I write down Exceptions I encounter to become more familiar with them. I add :doc:`/exceptions/AssertionError` to the list
+* I write down :doc:`Exceptions </how_to/exception_handling_programs>` I encounter to become more familiar with them. I add :doc:`/exceptions/AssertionError` to the list
 
   .. code-block:: python
     :linenos:
@@ -275,7 +275,7 @@ How to create a Virtual Environment
   - ``>`` is an operator that is used to send output from a program to the file given
   - `pytest-watch <https://pypi.org/project/pytest-watch/>`_ is a python program that automatically runs the `pytest <https://docs.pytest.org/>`_ python package when a python file in the project changes
   - `pytest <https://docs.pytest.org/>`_ is a python package like `unittest <https://docs.python.org/3/library/unittest.html>`_ for running tests in Python
-  - ``requirements.txt`` is a file where I can list required python packages for `pip <https://pypi.org/project/pip/>`_ the `python package manager <https://pypi.org/project/pip/>`_ to install later, you can use any name you like
+  - ``requirements.txt`` is the name of a file where I can list required python packages for `pip <https://pypi.org/project/pip/>`_ the `python package manager <https://pypi.org/project/pip/>`_ to install later, you can use any name you like
 
 * I create a virtual environment with the `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ module from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_
 
