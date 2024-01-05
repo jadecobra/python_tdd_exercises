@@ -67,7 +67,7 @@ RED: make it fail
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-When I change the failing line of ``test_assertion_errors_with_none`` in ``test_assertion_error.py`` to
+When I change the failing line to
 
 .. code-block:: python
 
@@ -84,7 +84,7 @@ I can also make assertions with some :doc:`methods </functions/functions>` from 
 
 * RED: make it fail
 
-  I add another line to ``test_assertion_errors_with_none`` using the `unittest.TestCase.assertIsNone <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNone>`_ :doc:`method </functions/functions>`
+  I add another failing line using the `unittest.TestCase.assertIsNone <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNone>`_ :doc:`method </functions/functions>`
 
   .. code-block:: python
 
@@ -96,9 +96,7 @@ I can also make assertions with some :doc:`methods </functions/functions>` from 
 
   .. code-block:: python
 
-    E    AssertionError: False is not None
-
-    tests/test_assertion_error.py:8: AssertionError
+    AssertionError: False is not None
 
 * GREEN: make it pass
 
@@ -114,7 +112,7 @@ I can also make assertions with some :doc:`methods </functions/functions>` from 
 
 * RED: make it fail
 
-  I add another test to ``test_assertion_errors_with_none`` to find out how :doc:`None </data_structures/none>` is related to :doc:`True </data_structures/booleans>`
+  I add another test to find out how :doc:`None </data_structures/none>` is related to :doc:`True </data_structures/booleans>`
 
   .. code-block:: python
 
@@ -124,7 +122,7 @@ I can also make assertions with some :doc:`methods </functions/functions>` from 
 
         assert True is None
 
-  the terminal shows another `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
+  the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
   .. code-block:: python
 
@@ -132,7 +130,7 @@ I can also make assertions with some :doc:`methods </functions/functions>` from 
 
 * GREEN: make it pass
 
-  I change the failing line in ``test_assertion_errors_with_none`` to make the test pass
+  I change the failing line to make the test pass
 
   .. code-block:: python
 
@@ -144,7 +142,7 @@ I can also make assertions with some :doc:`methods </functions/functions>` from 
 
 * RED: make it fail
 
-  I add a variation of the above statement using the `unittest.TestCase.assertIsNone <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNone>`_ :doc:`method </functions/functions>` to ``test_assertion_errors_with_none``
+  I add a line using the `unittest.TestCase.assertIsNone <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNone>`_ :doc:`method </functions/functions>`
 
   .. code-block:: python
 
@@ -155,15 +153,15 @@ I can also make assertions with some :doc:`methods </functions/functions>` from 
         assert True is not None
         self.assertIsNone(True)
 
-  and the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
+  the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
   .. code-block:: python
 
-    E    AssertionError: True is not None
+    AssertionError: True is not None
 
 * GREEN: make it pass
 
-  I change the failing line in ``test_assertion_errors_with_none`` to make it pass
+  I change the failing line to make the test pass
 
   .. code-block:: python
 
@@ -181,7 +179,7 @@ I can also make assertions with some :doc:`methods </functions/functions>` from 
 
 * RED: make it fail
 
-  I add another test to ``test_assertion_errors_with_none``
+  I add a failing line
 
   .. code-block:: python
 
@@ -194,7 +192,7 @@ I can also make assertions with some :doc:`methods </functions/functions>` from 
 
         assert None is not None
 
-  and the terminal shows a failure
+  the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
   .. code-block:: python
 
@@ -202,7 +200,7 @@ I can also make assertions with some :doc:`methods </functions/functions>` from 
 
 * GREEN: make it pass
 
-  I change the failing line in ``test_assertion_errors_with_none`` to make it pass
+  I change the failing line to make the test pass
 
   .. code-block:: python
 
@@ -217,7 +215,7 @@ I can also make assertions with some :doc:`methods </functions/functions>` from 
 
 * RED: make it fail
 
-  I add another test to ``test_assertion_errors_with_none`` using the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ method
+  I add a failing line using the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ method
 
   .. code-block:: python
 
@@ -235,8 +233,7 @@ I can also make assertions with some :doc:`methods </functions/functions>` from 
 
   .. code-block:: python
 
-    >    self.assertIsNotNone(None)
-    E    AssertionError: unexpectedly None
+    AssertionError: unexpectedly None
 
 * GREEN: make it pass
 
@@ -291,7 +288,7 @@ the terminal shows a failure
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I change ``test_assertion_errors_with_false`` to make the test pass
+I change the failing line to make the test pass
 
 .. code-block:: python
 
@@ -314,14 +311,14 @@ the terminal shows a failure
 
 .. code-block:: python
 
-  E    AssertionError: True is not false
+  AssertionError: True is not false
 
 this is familiar, it was the first failing test from :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I change ``test_assertion_errors_with_false`` to make it pass
+I change the failing line to make the test pass
 
 .. code-block:: python
 
@@ -363,7 +360,7 @@ the terminal shows a failure
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I change ``test_assertion_errors_with_true`` to make it pass
+I change the failing line to make the test pass
 
 .. code-block:: python
 
@@ -385,12 +382,12 @@ the terminal shows an `AssertionError <https://docs.python.org/3/library/excepti
 
 .. code-block:: python
 
-  E    AssertionError: False is not true
+  AssertionError: False is not true
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I change ``test_assertion_errors_with_true`` to make it pass
+I change the failing line to make the test pass
 
 .. code-block:: python
 
@@ -416,7 +413,7 @@ I could sum up the above statements this way - in Python :doc:`True </data_struc
 AssertionError with Equality
 ----------------------------
 
-I can also make assertions where I compare if two things are the same
+I can also make assertions where I compare if two things are the same or equal
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -438,7 +435,7 @@ the terminal shows an `AssertionError <https://docs.python.org/3/library/excepti
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I change ``test_assertion_errors_with_equality`` to make it pass
+I change the failing line to make the test pass
 
 .. code-block:: python
 
@@ -465,13 +462,13 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-    E    AssertionError: False != None
+    AssertionError: False != None
 
   The `unittest.TestCase.assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ :doc:`method </functions/functions>` checks if the two given inputs, :doc:`False </data_structures/booleans>` and :doc:`None </data_structures/none>` are equal
 
 * GREEN: make it pass
 
-  I change ``test_assertion_errors_with_equality`` to make it pass
+  I change the failing line to make the test pass
 
   .. code-block:: python
 
@@ -509,7 +506,7 @@ REFACTOR: make it better
 
 * GREEN: make it pass
 
-  I change the failing line in ``test_assertion_errors_with_equality`` to make it pass
+  I change the failing line to make the test pass
 
   .. code-block:: python
 
@@ -536,11 +533,11 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-    E    AssertionError: True != None
+    AssertionError: True != None
 
 * GREEN: make it pass
 
-  I change ``test_assertion_errors_with_equality`` to make it pass
+  I change the failing line to make the test pass
 
   .. code-block:: python
 

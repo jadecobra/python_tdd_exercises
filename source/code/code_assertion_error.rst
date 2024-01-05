@@ -51,3 +51,6 @@ Here is the code in ``tests/test_assertion_error.py``
 
             assert None == None
             self.assertEqual(None, None)
+
+    # Exceptions Encountered
+    # AssertionError
