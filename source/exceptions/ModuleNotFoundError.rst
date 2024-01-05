@@ -1,8 +1,9 @@
 
+######################
 ModuleNotFoundError
-===================
+######################
 
-This drill below will help you remember how to solve a ``ModuleNotFoundError`` in Python and what a python module is.
+The drill below will help you remember how to solve a ``ModuleNotFoundError`` in Python and what a python module is.
 
 ``ModuleNotFoundError`` is raised when python attempts to import a module that does not exist or it cannot find a given module name for an ``import`` statement.
 A Python Module is a file that ends in ``.py`` or a directory that contains an ``__init__.py``.
@@ -10,8 +11,9 @@ A Python Module is a file that ends in ``.py`` or a directory that contains an `
 Programming allows us to gain from our previous efforts as well as the efforts of others in the form of packages and modules that can be distributed for other people to use. To use these packages in Python they have to be imported.
 
 
+*********************
 RED: make it fail
------------------
+*********************
 
 Open a new file in the Interactive Development Environment editor and save it as ``test_module_not_found_error.py`` in the ``tests`` folder created from :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>`
 
@@ -143,9 +145,9 @@ Looking at the traceback starting from the bottom
 
   If you want more information about imports you can read `The Import Statement <https://docs.python.org/3/reference/simple_stmts.html#import>`_
 
+*********************
 GREEN: make it pass
---------------------
-
+*********************
 
 * create ``module_0.py`` in the ``project_name`` folder and the terminal shows
 
@@ -185,5 +187,3 @@ you encountered the following exceptions
 * :doc:`/exceptions/AssertionError`
 * ImportError
 * :doc:`/exceptions/ModuleNotFoundError`
-
-----
