@@ -1,6 +1,7 @@
 
+##################################
 AssertionError
-==============
+##################################
 
 An `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ is an Exception that is raised when the result of an ``assert`` statement is :doc:`False </data_structures/booleans>`
 
@@ -16,8 +17,9 @@ which is similar to
 
   assert True is False
 
+****************************
 Why are asserts important?
---------------------------
+****************************
 
 When building a program I can add ``assert`` statements to the program to ensure that certain things are :doc:`True </data_structures/booleans>` for it to proceed past the statements.
 
@@ -33,11 +35,12 @@ A difference between my expectations and reality (what happens when I run the pr
 
 ----
 
+****************************
 AssertionError with None
-------------------------
+****************************
 
 RED: make it fail
-^^^^^^^^^^^^^^^^^
+==================
 
 * I create a new file in the ``tests`` folder with the name ``test_assertion_error.py``
 * then add a test called ``test_assertion_errors_with_none`` using the python ``assert`` keyword to intentionally cause an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
@@ -65,7 +68,7 @@ RED: make it fail
   - Since :doc:`None </data_structures/none>` and :doc:`False </data_structures/booleans>` are not equal, the ``assert`` statement is :doc:`False </data_structures/booleans>` and python raises an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
 GREEN: make it pass
-^^^^^^^^^^^^^^^^^^^
+====================
 
 When I change the failing line to
 
@@ -77,7 +80,7 @@ When I change the failing line to
 the test passes because the assert statement is now true since :doc:`False </data_structures/booleans>` is not :doc:`None </data_structures/none>`
 
 REFACTOR: make it better
-^^^^^^^^^^^^^^^^^^^^^^^^
+=========================
 
 I can also make assertions with some :doc:`methods </functions/functions>` from the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class
 
@@ -264,13 +267,14 @@ Which of these ``assert`` statements do you prefer when testing :doc:`None </dat
 
 ----
 
+****************************
 AssertionError with False
--------------------------
+****************************
 
 Can I raise an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ for things that are :doc:`False </data_structures/booleans>`?
 
 RED: make it fail
-^^^^^^^^^^^^^^^^^
+==================
 
 I add a failing test to ``TestAssertionError`` in ``test_assertion_error.py`` to find out
 
@@ -286,7 +290,7 @@ the terminal shows a failure
   E    assert True is False
 
 GREEN: make it pass
-^^^^^^^^^^^^^^^^^^^
+====================
 
 I change the failing line to make the test pass
 
@@ -297,7 +301,7 @@ I change the failing line to make the test pass
 
 
 RED: make it fail
-^^^^^^^^^^^^^^^^^
+==================
 
 What if I try the same test using the `unittest.TestCase.assertFalse <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse>`_ :doc:`method </functions/functions>` by adding this line to ``test_assertion_errors_with_false``?
 
@@ -316,7 +320,7 @@ the terminal shows a failure
 this is familiar, it was the first failing test from :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>`
 
 GREEN: make it pass
-^^^^^^^^^^^^^^^^^^^
+====================
 
 I change the failing line to make the test pass
 
@@ -336,13 +340,14 @@ From the tests I can see that in Python
 
 ----
 
+****************************
 AssertionError with True
-------------------------
+****************************
 
 Can I raise an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ for things that are :doc:`True </data_structures/booleans>`?
 
 RED: make it fail
-^^^^^^^^^^^^^^^^^
+==================
 
 I add a failing test to ``TestAssertionError`` in ``test_assertion_error.py``
 
@@ -358,7 +363,7 @@ the terminal shows a failure
   E    assert False is True
 
 GREEN: make it pass
-^^^^^^^^^^^^^^^^^^^
+====================
 
 I change the failing line to make the test pass
 
@@ -368,7 +373,7 @@ I change the failing line to make the test pass
       assert True is True
 
 RED: make it fail
-^^^^^^^^^^^^^^^^^
+==================
 
 What if I try the above test using the `unittest.TestCase.assertTrue <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertTrue>`_ :doc:`method </functions/functions>` ?
 
@@ -385,7 +390,7 @@ the terminal shows an `AssertionError <https://docs.python.org/3/library/excepti
   AssertionError: False is not true
 
 GREEN: make it pass
-^^^^^^^^^^^^^^^^^^^
+====================
 
 I change the failing line to make the test pass
 
@@ -410,13 +415,14 @@ I could sum up the above statements this way - in Python :doc:`True </data_struc
 
 ----
 
+*****************************
 AssertionError with Equality
-----------------------------
+*****************************
 
 I can also make assertions where I compare if two things are the same or equal
 
 RED: make it fail
-^^^^^^^^^^^^^^^^^
+==================
 
 I add a new test to ``TestAssertionError`` in ``test_assertion_error.py``
 
@@ -431,9 +437,8 @@ the terminal shows an `AssertionError <https://docs.python.org/3/library/excepti
 
   E    assert False == None
 
-
 GREEN: make it pass
-^^^^^^^^^^^^^^^^^^^
+====================
 
 I change the failing line to make the test pass
 
@@ -445,8 +450,7 @@ I change the failing line to make the test pass
 the test passes because :doc:`False </data_structures/booleans>` is not equal to :doc:`None </data_structures/none>`
 
 REFACTOR: make it better
-^^^^^^^^^^^^^^^^^^^^^^^^
-
+=========================
 
 * RED: make it fail
 
@@ -626,9 +630,7 @@ REFACTOR: make it better
 
 ----
 
-
 If you have been typing along *WELL DONE!* Your magic powers are growing. From the experiments above you now know
-
 
 * how to test for equality
 * how to test if something is :doc:`None </data_structures/none>` or not
