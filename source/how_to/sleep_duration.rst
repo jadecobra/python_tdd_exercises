@@ -1569,7 +1569,7 @@ To make it happen I had to
 * generate a random integer between two given integers using `random.randint <https://docs.python.org/3/library/random.html?highlight=random#random.randint>`_
 * use the `help system <https://docs.python.org/3/library/functions.html?highlight=dir#help>`_ to view documentation
 
-and encountered the following exceptions
+I also encountered the following exceptions
 
 * :doc:`/exceptions/AssertionError`
 * `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_

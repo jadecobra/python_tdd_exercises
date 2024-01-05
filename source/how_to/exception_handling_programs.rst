@@ -529,7 +529,7 @@ Your python powers are growing, you have seen
 * how to verify that exceptions are raised
 * how to handle exceptions when they occur
 
-and encountered the following exceptions
+I also encountered the following exceptions
 
 * :doc:`/exceptions/AssertionError`
 * :doc:`/exceptions/ModuleNotFoundError`

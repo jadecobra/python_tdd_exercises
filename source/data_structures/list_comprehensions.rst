@@ -886,7 +886,7 @@ I have written the same thing multiple times in these tests and since the progra
 
   the terminal shows all tests are still passing
 
-and encountered the following exceptions
+I also encountered the following exceptions
 
 * :doc:`/exceptions/AssertionError`
 * `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_

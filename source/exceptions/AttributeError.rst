@@ -6,11 +6,18 @@ An Attribute is a property, variable, function or name that belongs to an `objec
 
 An `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name in an `object <https://docs.python.org/3/glossary.html#term-object>`_ that does not exist.
 
+****************
+Prerequisites
+****************
+
+
+:doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>`
 
 ----
 
+**********************************************
 Solve an AttributeError by defining variables
-----------------------------------------------
+**********************************************
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -25,17 +32,11 @@ I open a new file, save it as ``test_attribute_error.py`` in the ``tests`` folde
 * ``import unittest`` imports the `unittest <https://docs.python.org/3/library/unittest.html>`_ module from the python standard library
 * ``import module`` imports the ``module`` module - which will hold the code I am testing
 
-The terminal shows a :doc:`/exceptions/ModuleNotFoundError`
+the terminal shows a :doc:`/exceptions/ModuleNotFoundError` if you have not yet done the :doc:`/how_to/exception_handling_tests` chapter
 
 .. code-block:: python
 
-  ImportError while importing test module '/<PATH_TO_PROJECT_NAME>/project_name/tests/test_attribute_error.py'.
-  Hint: make sure your test modules/packages have valid python names.
-  Traceback:
-  ...
-  tests/test_attribute_error.py:2: in <module>
-    import module
-  E  ModuleNotFoundError: No module called 'module'
+  ModuleNotFoundError: No module called 'module'
 
 A :doc:`/exceptions/ModuleNotFoundError` is raised when a name is provided to an ``import`` statement and python cannot find the name. Since there is currently no file called ``module.py`` the ``import module`` line causes a failure
 
@@ -68,22 +69,11 @@ GREEN: make it pass
   - ``def test_defining_variables_to_solve_attribute_errors(self):`` is the definition of the first test function to find out if defining variables can solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
   - ``module.variable_0`` - the actual test, I think of this as making a phone call to ``variable_0`` in ``module.py``
 
-* the terminal shows an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  the terminal shows an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
-    self = <tests.test_attribute_error.TestAttributeError testMethod=test_defining_variables_to_solve_attribute_errors>
-
-      def test_defining_variables_to_solve_attribute_errors(self):
-    >     module.variable_0
-    E     AttributeError: module 'module' has no attribute 'variable_0'
-
-
-  - ``tests/test_attribute_error.py:7: AttributeError`` the filename, line number and name of the Exception that is raised by the code at that location
-  - ``E    AttributeError: module 'module' has no attribute 'variable_0'`` an explanation of the error raised. The module I imported has no definitions called ``variable_0``
-  - ``>    module.variable_0`` the line of code that caused the error. The file ``module.py`` has no definitions called ``variable_0``. This is like making a phone call to a number that is not in service or sending an e-mail to an address that does not exist
-  - ``def test_defining_variables_to_solve_attribute_errors(self):`` the function definition where the error occurs
-  - ``self = <tests.test_attribute_error.TestAttributeError testMethod=test_defining_variables_to_solve_attribute_errors>`` is a reference to the :doc:`class </classes/classes>` and :doc:`method (function) </functions/functions>` where the failure occurred
+    AttributeError: module 'module' has no attribute 'variable_0'
 
 * I add the error to the list of exceptions encountered
 
@@ -104,17 +94,11 @@ GREEN: make it pass
 
   .. code-block::
 
-    tests/test_attribute_error.py:2: in <module>
-      import module
-    module.py:1: in <module>
-      variable_0
-    E  NameError: name 'variable_0' is not defined
+    NameError: name 'variable_0' is not defined
 
-  - ``E  NameError: name 'variable_0' is not defined`` the `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ is raised because ``variable_0`` in ``module.py`` is viewed as a reference and there is currently no definition or assignment for that name
-  - ``variable_0`` the offending line
-  - ``module.py:1: in <module>`` the location of the offending line
+  ``NameError: name 'variable_0' is not defined`` the `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ is raised because ``variable_0`` in ``module.py`` is considered a reference and there is currently no definition or assignment for that name
 
-* I add `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ to my list of errors encountered
+* I add `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ to the list of errors encountered
 
   .. code-block:: python
 
@@ -132,15 +116,6 @@ GREEN: make it pass
 
   this assigns the name ``variable_0`` to :doc:`None </data_structures/none>` and the terminal shows a passing test. YES!
 
-  .. code-block:: python
-
-    collected 2 items
-
-    tests/test_attribute_error.py .                    [ 50%]
-    tests/test_project_name.py .                     [100%]
-
-    ================== 2 passed in 0.03s======================
-
 I solved the `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a variable
 
 .. NOTE::
@@ -153,7 +128,7 @@ AttributeError vs NameError
 
 An `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name in an `object <https://docs.python.org/3/glossary.html#term-object>`_ from outside the `object <https://docs.python.org/3/glossary.html#term-object>`_ and the name does not exist, for example ``humans.wings``
 
-A `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ is raised when there is a reference to a name within an object and there is no prior definition with the name
+A `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ is raised when there is a reference to a name within an `object <https://docs.python.org/3/glossary.html#term-object>`_ and there is no definition for the name
 
 
 REFACTOR: make it better
@@ -165,7 +140,7 @@ RED: make it fail
 ~~~~~~~~~~~~~~~~~
 
 
-* When I add a failing line to ``test_defining_variables_to_solve_attribute_errors``
+* I add a failing line
 
   .. code-block:: python
 
@@ -177,7 +152,7 @@ RED: make it fail
 
   .. code-block:: python
 
-    E    AttributeError: module 'module' has no attribute 'variable_1'
+    AttributeError: module 'module' has no attribute 'variable_1'
 
 GREEN: make it pass
 ~~~~~~~~~~~~~~~~~~~
@@ -195,7 +170,7 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    E  NameError: name 'variable_1' is not defined
+    NameError: name 'variable_1' is not defined
 
 * GREEN: make it pass
 
@@ -211,8 +186,7 @@ GREEN: make it pass
 RED: make it fail
 ~~~~~~~~~~~~~~~~~
 
-
-* I add another failing line to ``test_defining_variables_to_solve_attribute_errors``
+* I add a failing line
 
   .. code-block:: python
 
@@ -225,12 +199,10 @@ RED: make it fail
 
   .. code-block:: python
 
-    >    module.variable_2
-    E    AttributeError: module 'module' has no attribute 'variable_2'
+    AttributeError: module 'module' has no attribute 'variable_2'
 
 GREEN: make it pass
 ~~~~~~~~~~~~~~~~~~~
-
 
 * RED: make it fail
 
@@ -246,7 +218,7 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    E  NameError: name 'variable_2' is not defined
+    NameError: name 'variable_2' is not defined
 
 * GREEN: make it pass
 
@@ -263,8 +235,7 @@ GREEN: make it pass
 RED: make it fail
 ~~~~~~~~~~~~~~~~~
 
-
-* I add another failing line to ``test_defining_variables_to_solve_attribute_errors``
+* I add a failing line
 
   .. code-block:: python
 
@@ -278,11 +249,10 @@ RED: make it fail
 
   .. code-block:: python
 
-    E    AttributeError: module 'module' has no attribute 'variable_3'
+    AttributeError: module 'module' has no attribute 'variable_3'
 
 GREEN: make it pass
 ~~~~~~~~~~~~~~~~~~~
-
 
 * RED: make it fail
 
@@ -299,7 +269,7 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    E  NameError: name 'variable_3' is not defined
+    NameError: name 'variable_3' is not defined
 
 * GREEN: make it pass
 
@@ -313,7 +283,6 @@ GREEN: make it pass
     variable_3 = None
 
 I have a pattern for the drill. When I test an attribute in a module, I get
-
 
 * an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ when the attribute does not exist
 * a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ when I add the name to the module
@@ -342,9 +311,9 @@ If you have been typing along *WELL DONE!* You now know
 
 ----
 
-
+**********************************************
 Solve an AttributeError by defining functions
-----------------------------------------------
+**********************************************
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -360,11 +329,10 @@ the terminal shows an `AttributeError <https://docs.python.org/3/library/excepti
 
 .. code-block:: python
 
-  E    AttributeError: module 'module' has no attribute 'function_0'
+  AttributeError: module 'module' has no attribute 'function_0'
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
-
 
 * I try the solution I know for solving `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ with variables and change ``module.py`` to include a new variable
 
@@ -376,9 +344,9 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    E    TypeError: 'NoneType' object is not callable
+    TypeError: 'NoneType' object is not callable
 
-* this is new so I add it to the list of exceptions encountered
+* I add it to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -408,7 +376,6 @@ GREEN: make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-
 * Time to make a drill. You can change ``test_defining_functions_to_solve_attribute_errors`` in the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` to include calls to functions in ``module.py`` until you have one for ``module.function_99()``
 
   .. code-block:: python
@@ -425,12 +392,11 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-    E    AttributeError: module 'module' has no attribute 'function_1'
+    AttributeError: module 'module' has no attribute 'function_1'
 
-  change ``module.py`` with the solution until all tests pass
+  add the solutions to ``module.py`` until all tests pass
 
 *YOU DID IT AGAIN!* You now know
-
 
 * How to solve a :doc:`/exceptions/ModuleNotFoundError`
 * How to solve a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
@@ -438,19 +404,18 @@ REFACTOR: make it better
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
 
-
 ----
 
-
+**********************************************
 Solve an AttributeError by defining classes
---------------------------------------------
+**********************************************
 
 I think of a :doc:`class </classes/classes>` as a container of :doc:`methods (functions) </functions/functions>` and attributes that represents an `object <https://docs.python.org/3/glossary.html#term-object>`_
 
 - attributes are names which represent a value
 - :doc:`methods </functions/functions>` are :doc:`/functions/functions` that may be able to accept inputs and may return a value - they are `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 
-For example I could define a ``Human`` class with attributes like eye color, date of birth, height and weight, and :doc:`methods </functions/functions>` like age which returns a value based on the current year and date of birth attribute, you can see an example of this in :doc:`/classes`
+For example I could define a ``Human`` class with attributes like eye color, date of birth, height and weight. I could also define :doc:`methods </functions/functions>` like age which returns a value based on the current year and date of birth attribute
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -466,12 +431,11 @@ RED: make it fail
 
   .. code-block:: python
 
-    E    AttributeError: module 'module' has no attribute 'Class0'
+    AttributeError: module 'module' has no attribute 'Class0'
 
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
-
 
 * I add a name to ``module.py``
 
@@ -483,7 +447,7 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    E    TypeError: 'NoneType' object is not callable
+    TypeError: 'NoneType' object is not callable
 
   I had a similar issue earlier, what if I make ``Class0`` `callable <https://docs.python.org/3/glossary.html#term-callable>`_ by changing the variable to a function using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword in ``module.py``
 
@@ -498,7 +462,6 @@ GREEN: make it pass
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
-
 
 * This could also be a drill, add lines to ``test_defining_classes_to_solve_attribute_errors`` in the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` until you have one for ``module.Class99()``, you will have 100 lines
 
@@ -516,7 +479,7 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-    E    AttributeError: module 'module' has no attribute 'Class1'
+    AttributeError: module 'module' has no attribute 'Class1'
 
   change ``module.py`` with each solution until all tests pass
 
@@ -524,16 +487,16 @@ REFACTOR: make it better
 
 * How to solve a :doc:`/exceptions/ModuleNotFoundError`
 * How to solve a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
-* How to solve a :doc:`/exceptions/TypeError` by defining a callable
+* How to solve a :doc:`/exceptions/TypeError` by defining a `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :doc:`class </classes>`? do I know how to define :doc:`class </classes>` if I define them the same way I do :doc:`/functions/functions`?
 
 ----
 
-
+******************************************************
 Solve an AttributeError by defining class attributes
------------------------------------------------------
+******************************************************
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -550,12 +513,10 @@ RED: make it fail
 
   .. code-block:: python
 
-    >    module.Class.attribute_0
-    E    AttributeError: module 'module' has no attribute 'Class'
+    AttributeError: module 'module' has no attribute 'Class'
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
-
 
 * I add a variable to ``module.py``
 
@@ -567,7 +528,7 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    E    AttributeError: 'NoneType' object has no attribute 'attribute_0'
+    AttributeError: 'NoneType' object has no attribute 'attribute_0'
 
   when I change the variable to a function
 
@@ -580,7 +541,7 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    E    AttributeError: 'function' object has no attribute 'attribute_0'
+    AttributeError: 'function' object has no attribute 'attribute_0'
 
 * I wonder if it is possible to define an attribute in a function and access it from outside the function. I add an attribute to ``Class`` in ``module.py``
 
@@ -610,7 +571,6 @@ GREEN: make it pass
 
   the error is caused by the ``return`` statement being outside a :doc:`function </functions/functions>`
 
-
 * I add `SyntaxError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#SyntaxError>`_ to the list of exceptions
 
   .. code-block:: python
@@ -634,7 +594,6 @@ GREEN: make it pass
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
-
 
 * The current solution for ``test_defining_classes_to_solve_attribute_errors`` was done by defining functions but the test name contains ``definining_classes``, time to go back and change ``module.py`` using the `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword instead of `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
 
@@ -664,16 +623,15 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-    E    AttributeError: type object 'Class' has no attribute 'attribute_1'
+    AttributeError: type object 'Class' has no attribute 'attribute_1'
 
   add the solutions to ``module.py`` until all tests pass
 
 *WELL DONE!* You now know You now know
 
-
 * How to solve a :doc:`/exceptions/ModuleNotFoundError`
 * How to solve a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
-* How to solve a :doc:`/exceptions/TypeError` by defining a callable
+* How to solve a :doc:`/exceptions/TypeError` by defining a `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :doc:`class </classes>`
@@ -682,13 +640,12 @@ REFACTOR: make it better
 
 ----
 
-
+******************************************************
 Solve an AttributeError by defining class methods
---------------------------------------------------
+******************************************************
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
-
 
 * I add a new test to the ``TestAttributeError`` class in ``test_attribute_error.py``
 
@@ -701,12 +658,10 @@ RED: make it fail
 
   .. code-block:: python
 
-    >    module.Class.method_0()
-    E    AttributeError: type object 'Class' has no attribute 'method_0'
+    AttributeError: type object 'Class' has no attribute 'method_0'
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
-
 
 * I add a name to ``Class`` in ``module.py``
 
@@ -724,10 +679,9 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    >    module.Class.method_0()
-    E    TypeError: 'NoneType' object is not callable
+    TypeError: 'NoneType' object is not callable
 
-* then I change ``method_0`` from an attribute to a :doc:`method </functions/functions>` using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword to make it callable
+* then I change ``method_0`` from an attribute to a :doc:`method </functions/functions>` using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword to make it `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 
   .. code-block:: python
 
@@ -768,7 +722,7 @@ and learned
 
 * How to solve a :doc:`/exceptions/ModuleNotFoundError`
 * How to solve a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
-* How to solve a :doc:`/exceptions/TypeError` by defining a callable
+* How to solve a :doc:`/exceptions/TypeError` by defining a `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :doc:`class </classes>`

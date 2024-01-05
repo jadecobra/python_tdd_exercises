@@ -397,7 +397,7 @@ REFACTOR: make it better
 
 VOILA! You now know how to pass values from a test to a program and can represent values as strings using interpolation. What the tests demonstrates is not only applicable to strings you can pass and return any data type you choose.
 
-and encountered the following exceptions
+I also encountered the following exceptions
 
 * :doc:`/exceptions/AssertionError`
 * :doc:`/exceptions/ModuleNotFoundError`

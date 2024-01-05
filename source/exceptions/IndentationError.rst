@@ -6,6 +6,14 @@ Spacing/Indentation matters in Python. Where code is placed and how it is spaced
 
 An `IndentationError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#IndentationError>`_ is raised when indentation is not correct. The exercises in this chapter are intended to get you familiar with proper Indentation
 
+****************
+Prerequisites
+****************
+
+
+:doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>`
+
+----
 
 Solve the IndentationError
 --------------------------

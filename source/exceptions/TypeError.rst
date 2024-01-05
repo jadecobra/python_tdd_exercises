@@ -1,6 +1,7 @@
 
+######################
 TypeError
-=========
+######################
 
 A `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ can be raised when a function is called with the wrong number of inputs. This means the function call does not match the function signature.
 
@@ -21,8 +22,18 @@ A `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=except
   is a call to ``function`` with ``1, 2, 3, 4`` as four inputs
 
 
+****************
+Prerequisites
+****************
+
+
+:doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>`
+
+----
+
+******************
 RED: make it fail
------------------
+******************
 
 
 * I open a new file in the editor and save it as ``test_type_error.py`` in the ``tests`` folder created in :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` and type the following in the file
@@ -54,8 +65,9 @@ RED: make it fail
       # AssertionError
       # ModuleNotFoundError
 
+********************
 GREEN: make it pass
--------------------
+********************
 
 * I have a lot of practice solving this error from :doc:`/exceptions/ModuleNotFoundError`. I create a file called ``functions.py`` and the terminal shows
 
@@ -140,8 +152,9 @@ GREEN: make it pass
 
 the terminal shows passing tests. BOOM!
 
+*************************
 REFACTOR: make it better
-------------------------
+*************************
 
 There's not much to do here but add more tests for practice.
 
@@ -211,8 +224,9 @@ There's not much to do here but add more tests for practice.
   the terminal shows all tests pass.
 * Is there another solution to the above test? Can I define a function that takes in any number of parameters? see :doc:`/functions/functions`
 
+******************
 More Tests
-----------
+******************
 
 RED: make it fail
 ~~~~~~~~~~~~~~~~~

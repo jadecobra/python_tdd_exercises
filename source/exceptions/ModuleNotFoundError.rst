@@ -10,6 +10,14 @@ A Python Module is a file that ends in ``.py`` or a directory that contains an `
 
 Programming allows us to gain from our previous efforts as well as the efforts of others in the form of packages and modules that can be distributed for other people to use. To use these packages in Python they have to be imported.
 
+****************
+Prerequisites
+****************
+
+
+:doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>`
+
+----
 
 *********************
 RED: make it fail
@@ -126,8 +134,7 @@ If you left ``pytest-watch`` running from :doc:`How to create a Test Driven Deve
 
 .. code-block:: python
 
-    import module_0
-  E  ModuleNotFoundError: No module called 'module_0'
+  ModuleNotFoundError: No module called 'module_0'
 
 Looking at the traceback starting from the bottom
 
@@ -153,30 +160,21 @@ GREEN: make it pass
 
   .. code-block:: python
 
-      import module_1
-    E  ModuleNotFoundError: No module called 'module_1'
+    ModuleNotFoundError: No module called 'module_1'
 
 * create ``module_1.py`` in the ``project_name`` folder, the terminal shows the same error for a new line
 
   .. code-block:: python
 
-      import module_2
-    E  ModuleNotFoundError: No module called 'module_2'
+    ModuleNotFoundError: No module called 'module_2'
 
 * create ``module_2.py`` in the ``project_name`` folder, the terminal shows the following
 
   .. code-block:: python
 
-      import module_3
-    E  ModuleNotFoundError: No module called 'module_3'
+    ModuleNotFoundError: No module called 'module_3'
 
 * this is the pattern, repeat it until you have created ``module_99.py`` and the terminal shows a passing test
-
-  .. code-block:: python
-
-    tests/test_project_name.py .            [100%]
-
-    ================= 1 passed in 0.06s =========================
 
 *WELL DONE!*
 You are on your way to being a troubleshooting master.

@@ -17,6 +17,15 @@ which is similar to
 
   assert True is False
 
+****************
+Prerequisites
+****************
+
+
+:doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>`
+
+----
+
 ****************************
 Why are asserts important?
 ****************************
