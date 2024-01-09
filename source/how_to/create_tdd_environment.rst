@@ -73,6 +73,10 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
         touch tests/__init__.py
 
+    .. NOTE::
+
+      make sure you use two underscores instead of one when typing ``__init__.py``
+
   - I create another empty file called ``test_project_name.py`` in the ``tests`` folder to hold the tests
 
     .. code-block:: shell
