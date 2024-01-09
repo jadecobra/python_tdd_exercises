@@ -37,6 +37,7 @@ Requirements
       wsl --install
 
   * run subsequent commands in `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
+  * if you cannot use `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_, replace ``touch`` with ``New-Item``
 
 *******
 Setup
@@ -297,6 +298,12 @@ How to create a Virtual Environment
 
       source .venv/bin/activate
 
+  .. NOTE::
+
+    if you are on a windows machine and not using `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_, use ::
+
+      .venv/scripts/activate
+
   the ``(.venv)`` on the far left of the command line in the terminal indicates the virtual environment is activated ::
 
     (.venv) vscode ➜ .../project_name $
@@ -366,6 +373,10 @@ How to Activate a Virtual Environment
 Make sure you are in the directory that contains the virtual environment for example ``project_name`` and type the following in the terminal::
 
   source .venv/bin/activate
+
+on a windows computer that is not using `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_ ::
+
+  .venv/scripts/activate
 
 -----
 
@@ -465,6 +476,36 @@ You made it this far and have become the greatest programmer in the world. Follo
 
     ./createPythonTdd.sh calculator
 
+* For a windows computer that is not using ``WSL`` I would create a file named ``createPythonTdd.ps1`` instead and add the following code
+
+  .. code-block:: powershell
+
+    projectName=$args[0]
+    mkdir -p $projectName/tests
+    Set-Location $projectName
+
+    New-Item tests/__init__.py
+    $testSetup = @"
+    import unittest
+
+    class Test$($projectName)(unittest.TestCase):
+
+        def test_failure(self):
+            self.assertTrue(False)
+    "@
+    $testSetup |  Out-File $("tests/test_$($projectName).py") -Encoding UTF8
+
+    python -m venv .venv
+    .venv/scripts/activate
+    pip install --upgrade pip
+    pip install pytest-watch
+    pytest-watch
+
+* I can now create a Test Driven Development environment on demand by giving a name for the ``PROJECT_NAME`` variable when the program is called. For example, typing this command in the terminal in the folder where ``createPythonTdd.sh`` is saved will create a Test Driven Development environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator` ::
+
+    ./createPythonTdd.ps1 calculator
+
+
 One of the advantages of programming is that I can take a series of steps and make them a one line command which the computer does on my behalf.
 
 You now know one way to create a Test Driven Development Environment for Python projects, and have a program to do it for you anytime you want
@@ -472,3 +513,5 @@ You now know one way to create a Test Driven Development Environment for Python 
 Happy Trails!
 
 :doc:`/code/code_create_tdd_environment`
+
+To see a project where you actually create a program using Test Driven Development, checkout :doc:`how_to/calculator`
