@@ -476,7 +476,15 @@ You made it this far and have become the greatest programmer in the world. Follo
 
     ./createPythonTdd.sh calculator
 
-* For a windows computer that is not using ``WSL`` I would create a file named ``createPythonTdd.ps1`` instead and add the following code
+
+
+How to automatically create a Test Driven Development Environment on Windows without WSL
+==========================================================================================
+* I create a file named ``createPythonTdd.ps1`` by using the ``New-Item`` command in PowerShell ::
+
+    New-Item createPythonTdd.ps1
+
+* I open the file in the Interactive Development Editor and add the following code
 
   .. code-block:: powershell
 
@@ -505,6 +513,7 @@ You made it this far and have become the greatest programmer in the world. Follo
 
     ./createPythonTdd.ps1 calculator
 
+----
 
 One of the advantages of programming is that I can take a series of steps and make them a one line command which the computer does on my behalf.
 
