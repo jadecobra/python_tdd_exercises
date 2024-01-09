@@ -456,7 +456,7 @@ GREEN: make it pass
     def Class0():
         return None
 
-  The test passes! Something is odd here, what is the difference between :doc:`class </classes>` and :doc:`/functions/functions`? Why am I writing a different set of tests for :doc:`class </classes>` if the solutions are the same for :doc:`/functions/functions`?
+  The test passes! Something is odd here, what is the difference between :doc:`classes </classes/classes>` and :doc:`/functions/functions`? Why am I writing a different set of tests for :doc:`classes </classes/classes>` if the solutions are the same for :doc:`/functions/functions`?
 
   For now, I will move on with these questions unanswered until they become obvious
 
@@ -481,7 +481,7 @@ REFACTOR: make it better
 
     AttributeError: module 'module' has no attribute 'Class1'
 
-  change ``module.py`` with each solution until all tests pass
+  add each solution to ``module.py`` until all the tests pass
 
 *WELL DONE!* You now know
 
@@ -490,7 +490,7 @@ REFACTOR: make it better
 * How to solve a :doc:`/exceptions/TypeError` by defining a `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :doc:`class </classes>`? do I know how to define :doc:`class </classes>` if I define them the same way I do :doc:`/functions/functions`?
+* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :doc:`class </classes/classes>`? do I know how to define :doc:`class </classes/classes>` if I define them the same way I do :doc:`/functions/functions`?
 
 ----
 
@@ -537,7 +537,7 @@ GREEN: make it pass
     def Class():
         return None
 
-  the terminal shows an an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ but with a slightly different message
+  the terminal shows an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ but with a slightly different message
 
   .. code-block:: python
 
@@ -634,9 +634,8 @@ REFACTOR: make it better
 * How to solve a :doc:`/exceptions/TypeError` by defining a `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :doc:`class </classes>`
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining attributes (variables) in a :doc:`class </classes>`
-
+* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :doc:`class </classes/classes>`
+* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining attributes (variables) in a :doc:`class </classes/classes>`
 
 ----
 
@@ -725,15 +724,15 @@ and learned
 * How to solve a :doc:`/exceptions/TypeError` by defining a `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :doc:`class </classes>`
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining attributes (variables) in a :doc:`class </classes>`
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`methods (functions) </functions/functions>` in a :doc:`class </classes>`
+* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :doc:`class </classes/classes>`
+* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining attributes (variables) in a :doc:`class </classes/classes>`
+* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`methods (functions) </functions/functions>` in a :doc:`class </classes/classes>`
 
 :doc:`classes </classes>` vs :doc:`/functions/functions` in Python
 
 -------------------------------------------------------
 
-* attributes and :doc:`methods </functions/functions>` in a :doc:`class </classes>` can be accessible from outside the :doc:`class </classes>`
+* attributes and :doc:`methods </functions/functions>` in a :doc:`class </classes/classes>` can be accessible from outside the :doc:`class </classes/classes>`
 * attributes and :doc:`functions </functions/functions>` in a :doc:`function </functions/functions>` are not accessible from outside the :doc:`function </functions/functions>`
 * keywords used to define them - `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ vs `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
 * naming conventions - ``CamelCase`` vs ``snake_case``
