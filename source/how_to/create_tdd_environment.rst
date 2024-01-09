@@ -385,7 +385,7 @@ You made it this far and have become the greatest programmer in the world. Follo
 
     touch createPythonTdd.sh
 
-* I open ``createPythonTdd.sh`` in the Interactive Development Environment (IDE) and copy each command displayed in the terminal from ``history`` except ``python3 -m unittest -f`` since I want the tests to run automatically
+* I open ``createPythonTdd.sh`` in the Interactive Development Environment (IDE) and copy each command displayed in the terminal from ``history`` except ``python3 -m unittest`` since I want the tests to run automatically
 
   .. code-block:: ruby
     :linenos:
