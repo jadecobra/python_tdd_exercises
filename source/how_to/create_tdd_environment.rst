@@ -488,10 +488,11 @@ How to automatically create a Test Driven Development Environment on Windows wit
 
   .. code-block:: powershell
 
-    projectName=$args[0]
+    $projectName=$args[0]
     mkdir -p $projectName/tests
     Set-Location $projectName
 
+    new-Item "$projectName.py"
     New-Item tests/__init__.py
     $testSetup = @"
     import unittest
