@@ -312,7 +312,7 @@ Even though the ``add`` function currently passes the existing test it does not 
 
     tests/test_calculator.py ..          [100%]
 
-    ============== 2 passed in 0.01s ==============
+    ============== 1 passed in 0.01s ==============
 
 * REFACTOR: make it better
 
