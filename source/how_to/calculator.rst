@@ -343,7 +343,7 @@ Even though the ``add`` function currently passes the existing test it does not 
 
         tests/test_calculator.py ..              [100%]
 
-        ============= 2 passed in 0.01s ===============
+        ============= 1 passed in 0.01s ===============
 
   - I no longer need the previous tests because this new test shows the scenarios for negative numbers, zero and positive numbers
   - I remove ``test addition`` from the TODO list since it passed
