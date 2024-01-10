@@ -492,7 +492,7 @@ How to automatically create a Test Driven Development Environment on Windows wit
     mkdir -p $projectName/tests
     Set-Location $projectName
 
-    new-Item "$projectName.py"
+    New-Item "$projectName.py"
     New-Item tests/__init__.py
     $testSetup = @"
     import unittest
