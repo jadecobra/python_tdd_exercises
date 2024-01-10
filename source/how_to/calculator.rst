@@ -245,7 +245,7 @@ GREEN: make it pass
 
     tests/test_calculator.py ..              [100%]
 
-    ============== 2 passed in 0.01s ===============
+    ============== 1 passed in 0.01s ===============
 
 
 REFACTOR: Make it Better
