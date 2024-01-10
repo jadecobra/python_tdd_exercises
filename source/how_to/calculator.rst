@@ -560,7 +560,7 @@ I add a failing test called ``test_multiplication`` to ``test_calculator.py``
 
 the terminal shows an :doc:`/exceptions/AttributeError` ::
 
-  AttributeError: module 'calculator' has no attribute 'subtract'
+  AttributeError: module 'calculator' has no attribute 'multiply'
 
 GREEN : make it pass
 =====================
@@ -634,7 +634,7 @@ I add ``test_division`` to ``test_calculator.py``
 
 the terminal shows an :doc:`/exceptions/AttributeError` ::
 
-  AttributeError: module 'calculator' has no attribute 'multiply'
+  AttributeError: module 'calculator' has no attribute 'division'
 
 
 GREEN : make it pass
