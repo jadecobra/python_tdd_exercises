@@ -39,7 +39,7 @@ Here is how I recommend you use the book
 * try writing the solutions for the tests in chapters like the ``HOW TOs``
 * try adding tests for any ideas you get as you go through a chapter
 
-HOW TOs
+HOWTOs
 --------
 .. toctree::
   :maxdepth: 2
