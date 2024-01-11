@@ -27,6 +27,7 @@ I add an import statement and a failing test to ``test_person.py``
   import person
   import unittest
 
+the terminal shows a :doc:`ModuleNotFoundError` which I add to the list of exceptions encountered
 
   class TestPersonFactory(unittest.TestCase):
 
