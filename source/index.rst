@@ -36,7 +36,7 @@ Here is how I recommend you use the book
 * type out the code portions as you go through each chapter - do not copy and paste
 * repeat a chapter you like until you can do it from memory
 * try recreating the tests from memory or write new tests for a concept you are learning
-* try writing the solutions for the tests in chapters like the ``HOW TOs``
+* try writing the solutions for the tests in chapters like the ``HOWTOs``
 * try adding tests for any ideas you get as you go through a chapter
 
 HOWTOs
