@@ -26,18 +26,29 @@ Requirements
   - `Sublime <https://www.sublimetext.com>`_
   - `Other Interactive Development Environment (IDE) options <https://wiki.python.org/moin/IntegratedDevelopmentEnvironments>`_
 
-.. admonition:: *are you on a windows computer?*
+*********************
+Windows Requirements
+*********************
 
-  * click ``start``
-  * type ``PowerShell`` and click to open a terminal
-  * install `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_ by typing the following in the terminal
+If the operating system of your computer is Windows setup `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
 
-    .. code-block:: powershell
+* click ``start``
+* type ``PowerShell`` and click to open a terminal
+* install `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_ by typing the following in the terminal
 
-      wsl --install
+  .. code-block:: powershell
 
-  * run subsequent commands in `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
-  * if you cannot use `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_, replace ``touch`` with ``New-Item``
+    wsl --install --distribution debian
+
+* after installation run the following to install python
+
+  .. code-block:: shell
+
+    sudo apt update
+    sudo apt full-upgrade -y
+    sudo apt install -y python3 python3-venv
+
+* run subsequent commands in `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
 
 *******
 Setup
@@ -60,6 +71,8 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
   this is where all the code for the project will stay
 
 * `touch <https://man7.org/linux/man-pages/man1/touch.1.html>`_ is a program which creates an empty file when given a name
+
+  .. NOTE:: if you are on a Windows computer and could not install WSL replace ``touch`` with ``New-Item``
 
   - I use it to create an empty file called ``project_name.py`` to hold the source code for the program
 
@@ -420,7 +433,6 @@ You made it this far and have become the greatest programmer in the world. Follo
 * This program will always create a project called ``project_name`` so I need to add a variable to make it create any project name I pass to the program as input. I add a variable called ``PROJECT_NAME`` which is referenced with ``$PROJECT_NAME``
 
   .. code-block:: shell
-    :linenos:
 
     PROJECT_NAME=$1
     mkdir --parents $PROJECT_NAME/tests
@@ -440,7 +452,6 @@ You made it this far and have become the greatest programmer in the world. Follo
 * I use the `cat <https://www.man7.org/linux/man-pages/man1/cat.1.html>`_ program to add text for the failure test in ``test_$PROJECT_NAME.py``
 
   .. code-block:: shell
-    :linenos:
 
     PROJECT_NAME=$1
     mkdir --parents $PROJECT_NAME/tests
@@ -454,8 +465,8 @@ You made it this far and have become the greatest programmer in the world. Follo
 
     class Test$PROJECT_NAME(unittest.TestCase):
 
-      def test_failure(self):
-          self.assertFalse(True)
+        def test_failure(self):
+            self.assertFalse(True)
     DELIMITER
 
     echo "pytest-watch" > requirements.txt
