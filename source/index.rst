@@ -4,20 +4,20 @@
   contain the root ``toctree`` directive.
 
 #####################################################################
-Pumping Python: How to use Test Driven Development to solve problems
+Pumping Python: How to solve problems with Test Driven Development
 #####################################################################
 
-This book is a collection of exercises to get you writing programs with python using `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_.
-
-I have put together what has worked for me over the past 10 years of learning the language and watching how other people use it.
+The book has exercises using `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ with Python.
+I have put together what has worked for me over the past 10 years of learning the language and seeing other people use it.
 
 **********************
 Who is this book for?
 **********************
 
-* are you just starting your journey? congratulations! You made a decision from the many choices of programming languages available. Celebrate it. This book is for you
-* are you new to Test Driven Development in Python? This book is for you
-* do you use Python but are unfamiliar with any of the errors below? This book is for you
+* If you just started your journey, CONGRATULATIONS! You choose Python from the many `programming languages <https://en.wikipedia.org/wiki/Programming_language>`_ available, Celebrate it. This book is for you
+* If you are new to Test Driven Development in Python. This book is for you
+* If you are interested in Python. This book is for you
+* If you use Python but do not know any of the errors below, This book is for you
 
   - :doc:`/exceptions/AssertionError`
   - :doc:`/exceptions/AttributeError`
@@ -28,20 +28,21 @@ Who is this book for?
   - :doc:`/exceptions/TypeError`
   - `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_
 
-It will show you how to cause errors and use them, there are also a few drills
+It will show you how I can cause errors and use them, there are also a few drills
 
 **********************
 How to use this book
 **********************
 
-You can choose how you go through the chapters by starting with what like or looks interesting.
+You can choose how you go through the chapters by starting with what you like.
 
 Here is how I recommend you use the book
 
 * start with  :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` because it is required by every other chapter
 * type out the code portions as you go through each chapter - do not copy and paste
+* do you understand what that piece of code will do?
 * repeat a chapter you like until you can do it from memory
-* try recreating the tests from memory or write new tests for a concept you are learning
+* try recreating the tests from memory or write new tests for a concept you are working on
 * try writing the solutions for the tests in chapters like the ``HOWTOs``
 * try adding tests for any ideas you get as you go through a chapter
 
@@ -69,6 +70,7 @@ Table of Contents
   :maxdepth: 2
   :titlesonly:
 
+  conventions
   exceptions/ModuleNotFoundError
   exceptions/AssertionError
   exceptions/AttributeError
@@ -76,21 +78,17 @@ Table of Contents
   exceptions/IndentationError
   how_to/exception_handling_tests
   how_to/exception_handling_programs
-  conventions
-  classes/classes
-  classes/classes_attributes_methods
-  classes/classes_initializer
   functions/functions
   functions/functions_passthrough
   functions/functions_positional
   functions/functions_keyword
   functions/functions_positional_and_keyword
   functions/functions_singleton
+  classes/classes
+  classes/classes_attributes_methods
+  classes/classes_initializer
   data_structures/none
   data_structures/booleans
-  data_structures/lists
-  data_structures/list_comprehensions
-  data_structures/dictionaries
   truth_table/01
   truth_table/02_logical_conjunction
   truth_table/03_logical_disjunction
@@ -105,6 +103,9 @@ Table of Contents
   truth_table/12_project
   truth_table/13_converse_implication
   truth_table/14_true_lies
+  data_structures/lists
+  data_structures/list_comprehensions
+  data_structures/dictionaries
 
 *********************
 tests and solutions
@@ -113,21 +114,21 @@ tests and solutions
   :maxdepth: 2
   :titlesonly:
 
-  code/code_create_tdd_environment
   code/code_assertion_error
   code/code_attribute_error
-  code/code_none
   code/code_booleans
-  code/code_lists
-  code/code_list_comprehensions
-  code/code_dictionaries
-  code/code_functions
-  code/code_classes
-  code/code_truth_table
-  code/code_exception_handling
   code/code_calculator
+  code/code_classes
+  code/code_create_tdd_environment
+  code/code_dictionaries
+  code/code_exception_handling
+  code/code_functions
+  code/code_list_comprehensions
+  code/code_lists
+  code/code_none
   code/code_passing_values
   code/code_person_factory
   code/code_sleep_duration
+  code/code_truth_table
 
 :ref:`search`
