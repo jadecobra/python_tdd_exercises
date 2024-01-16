@@ -3,18 +3,21 @@
   You can adapt this file completely to your liking, but it should at least
   contain the root ``toctree`` directive.
 
+#####################################################################
 Pumping Python: How to use Test Driven Development to solve problems
-======================================================================
+#####################################################################
 
 This book is a collection of exercises to get you writing programs with python using `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_.
 
 I have put together what has worked for me over the past 10 years of learning the language and watching how other people use it.
 
+**********************
 Who is this book for?
----------------------
-* If you are just starting your journey, congratulations! You made a decision from the many choices of programming languages available. Celebrate it. This book is for you
-* If you are new to Test Driven Development in Python, this book is for you
-* If you already use Python but are unfamiliar with any of the errors below, this book is for you
+**********************
+
+* are you just starting your journey? congratulations! You made a decision from the many choices of programming languages available. Celebrate it. This book is for you
+* are you new to Test Driven Development in Python? This book is for you
+* do you use Python but are unfamiliar with any of the errors below? This book is for you
 
   - :doc:`/exceptions/AssertionError`
   - :doc:`/exceptions/AttributeError`
@@ -25,12 +28,13 @@ Who is this book for?
   - :doc:`/exceptions/TypeError`
   - `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_
 
-It will show you how to cause errors and resolve them, there are also a few drills that will get you used to some concepts
+It will show you how to cause errors and use them, there are also a few drills
 
+**********************
 How to use this book
---------------------
+**********************
 
-You can choose how you go through the chapters by starting with any you like or looks like it could solve your current problem.
+You can choose how you go through the chapters by starting with what like or looks interesting.
 
 Here is how I recommend you use the book
 
@@ -41,8 +45,9 @@ Here is how I recommend you use the book
 * try writing the solutions for the tests in chapters like the ``HOWTOs``
 * try adding tests for any ideas you get as you go through a chapter
 
+*******
 HOWTOs
---------
+*******
 .. toctree::
   :maxdepth: 2
   :titlesonly:
@@ -57,14 +62,15 @@ HOWTOs
   how_to/sleep_duration
   learning_models
 
+******************
 Table of Contents
------------------
+******************
 .. toctree::
   :maxdepth: 2
   :titlesonly:
 
-  exceptions/AssertionError
   exceptions/ModuleNotFoundError
+  exceptions/AssertionError
   exceptions/AttributeError
   exceptions/TypeError
   exceptions/IndentationError
@@ -100,8 +106,9 @@ Table of Contents
   truth_table/13_converse_implication
   truth_table/14_true_lies
 
+*********************
 tests and solutions
--------------------
+*********************
 .. toctree::
   :maxdepth: 2
   :titlesonly:
