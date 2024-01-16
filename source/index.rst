@@ -8,21 +8,21 @@ Pumping Python: How to use Test Driven Development to solve problems
 
 This book is a collection of exercises to get you writing programs with python using `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_.
 
-I have put together what has worked for me over the past 10 years learning the language and watching how other people use it.
+I have put together what has worked for me over the past 10 years of learning the language and watching how other people use it.
 
 Who is this book for?
 ---------------------
 * If you are just starting your journey, congratulations! You made a decision from the many choices of programming languages available. Celebrate it. This book is for you
 * If you are new to Test Driven Development in Python, this book is for you
-* If you already use python but are unfamiliar with any of the errors below, this book is for you
+* If you already use Python but are unfamiliar with any of the errors below, this book is for you
 
-  - :doc:`/exceptions/ModuleNotFoundError`
   - :doc:`/exceptions/AssertionError`
   - :doc:`/exceptions/AttributeError`
-  - :doc:`/exceptions/TypeError`
   - `IndexError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#IndexError>`_
   - `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_
+  - :doc:`/exceptions/ModuleNotFoundError`
   - `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+  - :doc:`/exceptions/TypeError`
   - `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_
 
 It will show you how to cause errors and resolve them, there are also a few drills that will get you used to some concepts
