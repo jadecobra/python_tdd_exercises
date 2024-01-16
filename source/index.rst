@@ -38,7 +38,7 @@ You can choose how you go through the chapters by starting with what you like.
 
 Here is how I recommend you use the book
 
-* start with  :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` because it is required by every other chapter
+* start with :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` because it is required by every chapter
 * type out the code portions as you go through each chapter - do not copy and paste
 * do you understand what that piece of code will do?
 * repeat a chapter you like until you can do it from memory
