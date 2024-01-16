@@ -88,7 +88,7 @@ Table of Contents
   classes/classes_attributes_methods
   classes/classes_initializer
   data_structures/none
-  data_structures/booleans
+  data_structures/booleans/booleans
   data_structures/booleans/truth_table/01
   data_structures/booleans/truth_table/02_logical_conjunction
   data_structures/booleans/truth_table/03_logical_disjunction
@@ -103,8 +103,8 @@ Table of Contents
   data_structures/booleans/truth_table/12_project
   data_structures/booleans/truth_table/13_converse_implication
   data_structures/booleans/truth_table/14_true_lies
-  data_structures/lists
-  data_structures/list_comprehensions
+  data_structures/lists/lists
+  data_structures/lists/list_comprehensions
   data_structures/dictionaries
 
 *********************
