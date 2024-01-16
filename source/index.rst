@@ -89,20 +89,20 @@ Table of Contents
   classes/classes_initializer
   data_structures/none
   data_structures/booleans
-  truth_table/01
-  truth_table/02_logical_conjunction
-  truth_table/03_logical_disjunction
-  truth_table/04_logical_implication
-  truth_table/05_logical_equality
-  truth_table/06_exclusive_disjunction
-  truth_table/07_logical_nand
-  truth_table/08_logical_nor
-  truth_table/09_converse_non_implication
-  truth_table/10_material_non_implication
-  truth_table/11_negate
-  truth_table/12_project
-  truth_table/13_converse_implication
-  truth_table/14_true_lies
+  data_structures/booleans/truth_table/01
+  data_structures/booleans/truth_table/02_logical_conjunction
+  data_structures/booleans/truth_table/03_logical_disjunction
+  data_structures/booleans/truth_table/04_logical_implication
+  data_structures/booleans/truth_table/05_logical_equality
+  data_structures/booleans/truth_table/06_exclusive_disjunction
+  data_structures/booleans/truth_table/07_logical_nand
+  data_structures/booleans/truth_table/08_logical_nor
+  data_structures/booleans/truth_table/09_converse_non_implication
+  data_structures/booleans/truth_table/10_material_non_implication
+  data_structures/booleans/truth_table/11_negate
+  data_structures/booleans/truth_table/12_project
+  data_structures/booleans/truth_table/13_converse_implication
+  data_structures/booleans/truth_table/14_true_lies
   data_structures/lists
   data_structures/list_comprehensions
   data_structures/dictionaries
