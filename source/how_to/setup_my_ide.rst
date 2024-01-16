@@ -9,7 +9,7 @@ Screen Layout
 
 I split my screen in the following ways depending on the use case
 
-- When using a reference I have the reference on the left and the Interactive Development Environment on the right, the reverse also works
+- When using a reference I like to have the reference on the left and the Interactive Development Environment on the right, test what works for you
 - When working only in the Interactive Development Environment I have the following windows open depending on what I want to see
 
   * explorer - to see files/folder structure
@@ -32,6 +32,5 @@ As of the writing of this book I use `Visual Studio Code <https://code.visualstu
 
 * `Dark Rainbow Theme <https://marketplace.visualstudio.com/items?itemName=DarkRainbow.darkrainbow>`_ - I like pretty colors
 * `indent-rainbow <https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow>`_ - did I mention my love for pretty colors?
-* `Pylance <https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance>`_
 * `Python <https://marketplace.visualstudio.com/items?itemName=ms-python.python>`_
-* `Black Formatter <https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter>`_
+* `Black Formatter <https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter>`_ - code formatter
