@@ -6,9 +6,9 @@
 Pumping Python: How to use Test Driven Development to solve problems
 ======================================================================
 
-This book is a collection of exercises to get you writing python code immediately using Test Driven Development.
+This book is a collection of exercises to get you writing programs with python using `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_.
 
-It is a culmination of what has worked for me over the past 10 years learning the language and observing other people use it.
+I have put together what has worked for me over the past 10 years learning the language and watching how other people use it.
 
 Who is this book for?
 ---------------------
@@ -22,13 +22,15 @@ Who is this book for?
   - :doc:`/exceptions/TypeError`
   - `IndexError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#IndexError>`_
   - `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_
+  - `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+  - `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_
 
-It will show you how to trigger errors and resolve them, there are also a few drills that will get you used to certain concepts
+It will show you how to cause errors and resolve them, there are also a few drills that will get you used to some concepts
 
 How to use this book
 --------------------
 
-You can choose how you go through the chapters by starting with any you like or that looks like it could solve your current problem.
+You can choose how you go through the chapters by starting with any you like or looks like it could solve your current problem.
 
 Here is how I recommend you use the book
 
@@ -120,6 +122,5 @@ tests and solutions
   code/code_passing_values
   code/code_person_factory
   code/code_sleep_duration
-
 
 :ref:`search`

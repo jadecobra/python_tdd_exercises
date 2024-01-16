@@ -1,4 +1,7 @@
 {
     "esbonio.sphinx.confDir": "${workspaceFolder}/source",
-    "esbonio.sphinx.buildDir" : "${workspaceFolder}/build/html",
+    "esbonio.sphinx.buildDir": "${workspaceFolder}/build/html",
+    "cSpell.words": [
+        "HOWTOs"
+    ],
 }

@@ -45,7 +45,7 @@ GREEN: make it pass
 
         a_boolean
 
-  and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+  and the terminal shows a ` <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
 * after I change the name with an assignment to :doc:`None </data_structures/none>`
 
