@@ -40,10 +40,10 @@ Here is how I recommend you use the book
 
 * start with :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` because it is required by every chapter
 * type out the code portions as you go through each chapter - do not copy and paste
-* do you understand what that piece of code will do?
+* what do you think the code portion you just typed will do?
 * repeat a chapter you like until you can do it from memory
 * try recreating the tests from memory or write new tests for a concept you are working on
-* try writing the solutions for the tests in chapters like the ``HOWTOs``
+* using only the tests for a chapter, try to write the solutions
 * try adding tests for any ideas you get as you go through a chapter
 
 *******
