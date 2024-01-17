@@ -48,7 +48,7 @@ If the operating system of your computer is Windows setup `Windows Subsystem for
     sudo apt full-upgrade --yes
     sudo apt install python3 python3-venv --yes
 
-* run subsequent commands in `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
+* run subsequent commands in `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_ terminal
 
 *******
 Setup
@@ -72,7 +72,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
 * `touch <https://man7.org/linux/man-pages/man1/touch.1.html>`_ is a program which creates an empty file when given a name
 
-  .. NOTE:: if you are on a Windows computer and could not install WSL replace ``touch`` with ``New-Item``
+  .. NOTE:: replace ``touch`` with ``New-Item`` if you are on a Windows computer and could NOT install `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
 
   - I use it to create an empty file called ``project_name.py`` to hold the source code for the program
 
@@ -87,9 +87,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
         touch tests/__init__.py
 
-    .. NOTE::
-
-      make sure you use two underscores for ``__init__.py``
+    .. WARNING:: make sure you use two underscores for ``__init__.py``
 
   - I create another empty file called ``test_project_name.py`` in the ``tests`` folder to hold the tests
 
@@ -107,9 +105,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
       |  ╰──test_project_name.py
       ╰──project_name.py
 
-.. note::
-
-  ``project_name`` is a placeholder for the name of the project. For example to create a project called ``calculator`` I would replace ``project_name`` with ``calculator``
+.. tip:: ``project_name`` is a placeholder for the name of the project. For example to create a project called ``calculator`` I would replace ``project_name`` with ``calculator``
 
 ----
 
@@ -171,7 +167,7 @@ RED: make it fail
     ------------------------------------------------------
     Traceback (most recent call last):
     File ".../project_name/tests/test_project_name.py", line 7, in test_failure
-      self.assertFalse(True)
+        self.assertFalse(True)
     AssertionError: True is not false
 
     ------------------------------------------------------
@@ -181,7 +177,7 @@ RED: make it fail
 
 If you are typing along, *CONGRATULATIONS!* You have written your first test.
 
-This is the ``RED`` part of the Test Driven Development cycle. The error in the terminal has important information. I read it from the bottom to the top
+This is the ``RED`` part of the Test Driven Development cycle. The error in the terminal has important information. I like to read it from the bottom to the top
 
 
 * ``FAILED (failures=1)`` there is one failure
@@ -198,7 +194,7 @@ This is the ``RED`` part of the Test Driven Development cycle. The error in the 
 
     Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click with your mouse on ``File ".../project_name/tests/test_project_name.py", line 7, in test_failure`` in the terminal and the Interactive Development Environment (IDE) will place the cursor at the position in the file where the error occurred
 
-* ``Traceback (most recent call last):`` all the information shown indented after this line is the ``traceback`` showing the most recent call python made last
+* ``Traceback (most recent call last):`` all the indented information shown after this line is the ``traceback`` showing the most recent call python made last
 * ``FAIL: test_failure (tests.TestProjectName.test_failure)`` is a header with information about the test
 
   - ``tests.TestProjectName.test_failure`` is the location of the failing test
@@ -218,7 +214,7 @@ GREEN: make it pass
 ********************
 
 
-* I write down :doc:`Exceptions </how_to/exception_handling_programs>` I encounter to become more familiar with them. I add :doc:`/exceptions/AssertionError` to the list
+* I write down :doc:`Exceptions </how_to/exception_handling_programs>` I encounter to become more familiar with them. Time to add :doc:`/exceptions/AssertionError` to the list
 
   .. code-block:: python
     :linenos:
@@ -234,7 +230,7 @@ GREEN: make it pass
     # Exceptions Encountered
     # AssertionError
 
-* I change the input on line 7 to make the test pass
+* When I change the input on line 7 to :doc:`False </data_structures/booleans/booleans>`
 
   .. code-block:: python
 
