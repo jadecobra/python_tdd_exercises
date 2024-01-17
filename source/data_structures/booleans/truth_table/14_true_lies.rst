@@ -85,11 +85,11 @@ GREEN: make it pass
 
 ----
 
-*YOU DID IT!* You made it to the end of the ``Truth Table`` series. Summarizing what the tests have shown so far, I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures/booleans>` or :doc:`False </data_structures/booleans>`
+*YOU DID IT!* You made it to the end of the ``Truth Table`` series. Summarizing what the tests have shown so far, I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures/booleans/booleans>` or :doc:`False </data_structures/booleans/booleans>`
 
 
-* ``contradition`` always returns :doc:`False </data_structures/booleans>` it is a :doc:`singleton function </functions/functions_singleton>`
-* ``tautology`` always returns :doc:`True </data_structures/booleans>` it is a :doc:`singleton function </functions/functions_singleton>`
+* ``contradition`` always returns :doc:`False </data_structures/booleans/booleans>` it is a :doc:`singleton function </functions/functions_singleton>`
+* ``tautology`` always returns :doc:`True </data_structures/booleans/booleans>` it is a :doc:`singleton function </functions/functions_singleton>`
 * ``converse implication`` is ``not p and q`` which is different from ``not(p and q)``
 * ``project second`` always returns ``q``
 * ``project first`` always returns ``p``
@@ -106,8 +106,7 @@ GREEN: make it pass
 * ``logical conjunction`` is ``and``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
-* :doc:`False </data_structures/booleans>` is ``not True``
-* :doc:`True </data_structures/booleans>` is ``not False``
-* :doc:`False </data_structures/booleans>` is :doc:`False </data_structures/booleans>`
-* :doc:`True </data_structures/booleans>` is :doc:`True </data_structures/booleans>`
-
+* :doc:`False </data_structures/booleans/booleans>` is ``not True``
+* :doc:`True </data_structures/booleans/booleans>` is ``not False``
+* :doc:`False </data_structures/booleans/booleans>` is :doc:`False </data_structures/booleans/booleans>`
+* :doc:`True </data_structures/booleans/booleans>` is :doc:`True </data_structures/booleans/booleans>`

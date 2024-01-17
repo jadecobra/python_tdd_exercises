@@ -28,7 +28,7 @@ GREEN: make it pass
     def passthrough():
         return None
 
-  the terminal shows a :doc:`/exceptions/TypeError` because the definition for ``passthrough`` does not allow ``inputs`` but the test sends :doc:`False </data_structures/booleans>` as input
+  the terminal shows a :doc:`/exceptions/TypeError` because the definition for ``passthrough`` does not allow ``inputs`` but the test sends :doc:`False </data_structures/booleans/booleans>` as input
 
   .. code-block:: python
 
@@ -57,7 +57,7 @@ GREEN: make it pass
 
     AssertionError: None != False
 
-  because the result of calling ``functions.passthrough`` with :doc:`False </data_structures/booleans>` as input is :doc:`None </data_structures/none>` which is not equal to the expected result (:doc:`False </data_structures/booleans>`)
+  because the result of calling ``functions.passthrough`` with :doc:`False </data_structures/booleans/booleans>` as input is :doc:`None </data_structures/none>` which is not equal to the expected result (:doc:`False </data_structures/booleans/booleans>`)
 
 * I change the definition of ``passthrough`` to make the test pass
 
@@ -71,7 +71,7 @@ GREEN: make it pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Wait a minute! Something is not quite right here. The definition for a ``passthrough`` function was that it returned the same thing it was given, the test passes when :doc:`False </data_structures/booleans>` is given as input, will it still pass when another value is given or will it always return :doc:`False </data_structures/booleans>`? Time to write a test
+Wait a minute! Something is not quite right here. The definition for a ``passthrough`` function was that it returned the same thing it was given, the test passes when :doc:`False </data_structures/booleans/booleans>` is given as input, will it still pass when another value is given or will it always return :doc:`False </data_structures/booleans/booleans>`? Time to write a test
 
 
 * RED: make it fail
@@ -90,7 +90,7 @@ Wait a minute! Something is not quite right here. The definition for a ``passthr
 
     AssertionError: False != True
 
-  the function returns :doc:`False </data_structures/booleans>` instead of :doc:`True </data_structures/booleans>` in the second case, confirming my suspicions, I am not all the way genius, yet
+  the function returns :doc:`False </data_structures/booleans/booleans>` instead of :doc:`True </data_structures/booleans/booleans>` in the second case, confirming my suspicions, I am not all the way genius, yet
 
 * GREEN: make it pass
 

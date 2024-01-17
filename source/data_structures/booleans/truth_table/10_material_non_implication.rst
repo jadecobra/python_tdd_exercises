@@ -79,7 +79,7 @@ REFACTOR: make it better
 
   and I am still green
 
-From the tests I can see that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures/booleans>` or :doc:`False </data_structures/booleans>`
+From the tests I can see that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures/booleans/booleans>` or :doc:`False </data_structures/booleans/booleans>`
 
 
 * ``material non implication`` is ``p and not q``
@@ -93,7 +93,7 @@ From the tests I can see that for any boolean operation involving 2 inputs: ``p`
 * ``logical conjunction`` is ``and``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
-* :doc:`False </data_structures/booleans>` is ``not True``
-* :doc:`True </data_structures/booleans>` is ``not False``
-* :doc:`False </data_structures/booleans>` is :doc:`False </data_structures/booleans>`
-* :doc:`True </data_structures/booleans>` is :doc:`True </data_structures/booleans>`
+* :doc:`False </data_structures/booleans/booleans>` is ``not True``
+* :doc:`True </data_structures/booleans/booleans>` is ``not False``
+* :doc:`False </data_structures/booleans/booleans>` is :doc:`False </data_structures/booleans/booleans>`
+* :doc:`True </data_structures/booleans/booleans>` is :doc:`True </data_structures/booleans/booleans>`

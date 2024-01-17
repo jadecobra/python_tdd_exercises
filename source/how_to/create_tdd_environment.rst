@@ -72,7 +72,9 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
 * `touch <https://man7.org/linux/man-pages/man1/touch.1.html>`_ is a program which creates an empty file when given a name
 
-  .. NOTE:: replace ``touch`` with ``New-Item`` if you are on a Windows computer and could NOT install `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
+  .. admonition:: If you using Windows without `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
+
+    replace ``touch`` with ``New-Item``
 
   - I use it to create an empty file called ``project_name.py`` to hold the source code for the program
 
@@ -109,7 +111,6 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
 ----
 
-
 The Test Driven Development cycle is ``RED GREEN REFACTOR``
 
 * **RED**: make it fail - write a failing test to make sure the test works
@@ -119,7 +120,6 @@ The Test Driven Development cycle is ``RED GREEN REFACTOR``
 ******************
 RED: make it fail
 ******************
-
 
 * I open up ``project_name/tests/test_project_name.py`` in the Interactive Development Environment (IDE) and type the following
 
@@ -149,9 +149,9 @@ RED: make it fail
     * `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is the python keyword for creating :doc:`/functions/functions`
     * ``test_failure`` is the name of the :doc:`function </functions/functions>`
     * ``self`` is the ``TestProjectName`` class. I can use ``self`` to access :doc:`methods (functions) </functions/functions>` and ``attributes`` within the ``TestProjectName`` class, this avoids having to type ``TestProjectName().assertFalse(True)`` to access the ``assertFalse`` :doc:`method </functions/functions>`
-    * ``self.assertFalse(True)`` is the actual test. I expect this line to fail because :doc:`True </data_structures/booleans>` is not :doc:`False </data_structures/booleans>`
+    * ``self.assertFalse(True)`` is the actual test. I expect this line to fail because :doc:`True </data_structures/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
 
-      - ``assertFalse`` is a :doc:`method </functions/functions>` in the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class which checks if its input is :doc:`False </data_structures/booleans>`
+      - ``assertFalse`` is a :doc:`method </functions/functions>` in the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class which checks if its input is :doc:`False </data_structures/booleans/booleans>`
       - :doc:`True </data_structures/booleans>` is given as input to ``assertFalse``
 
 * I save the file and turn on the ``Auto Save`` feature in the Interactive Development Environment (IDE) to automatically save a file when I make a change
@@ -179,14 +179,13 @@ If you are typing along, *CONGRATULATIONS!* You have written your first test.
 
 This is the ``RED`` part of the Test Driven Development cycle. The error in the terminal has important information. I like to read it from the bottom to the top
 
-
 * ``FAILED (failures=1)`` there is one failure
 * ``Ran 1 test in 0.000s`` how long it took the test to run
-* ``AssertionError: True is not false`` The error is an :doc:`/exceptions/AssertionError` which is raised by python when an assert statement is :doc:`False </data_structures/booleans>`. In this case the error is raised because ``True is not false``
+* ``AssertionError: True is not false`` The error is an :doc:`/exceptions/AssertionError` which is raised by python when an assert statement is :doc:`False </data_structures/booleans/booleans>`. In this case the error is raised because ``True is not false``
 * ``self.assertFalse(True)`` is the line of code that caused the failure
 
-  - ``assertFalse`` is a :doc:`method </functions/functions>` in the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`class </classes/classes>` which checks if its input is :doc:`False </data_structures/booleans>`
-  - :doc:`True </data_structures/booleans>` is given as input to ``assertFalse`` and the statement raises an :doc:`/exceptions/AssertionError` because :doc:`True </data_structures/booleans>` is not :doc:`False </data_structures/booleans>`
+  - ``assertFalse`` is a :doc:`method </functions/functions>` in the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`class </classes/classes>` which checks if its input is :doc:`False </data_structures/booleans/booleans>`
+  - :doc:`True </data_structures/booleans>` is given as input to ``assertFalse`` and the statement raises an :doc:`/exceptions/AssertionError` because :doc:`True </data_structures/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
 
 * ``File ".../project_name/tests/test_project_name.py", line 7, in test_failure`` is the line number and location of the file where the :doc:`/exceptions/AssertionError` occurred.
 
@@ -212,7 +211,6 @@ This is the ``RED`` part of the Test Driven Development cycle. The error in the 
 ********************
 GREEN: make it pass
 ********************
-
 
 * I write down :doc:`Exceptions </how_to/exception_handling_programs>` I encounter to become more familiar with them. Time to add :doc:`/exceptions/AssertionError` to the list
 
@@ -242,7 +240,7 @@ GREEN: make it pass
 
     python3 -m unittest
 
-  and the terminal shows a passing test
+  the terminal shows a passing test
 
   .. code-block:: python
 
@@ -267,7 +265,7 @@ So far there is not much to improve on what has been written but there has been 
 
 * ``python3 -m unittest`` was run to see the test fail
 * ``python3 -m unittest`` was run to see the test pass
-* ``python3 -m unittest`` will be run again to make sure changes do not break previous passing tests
+* ``python3 -m unittest`` will be run anytime I make a change to make sure it does not break previous passing tests
 
 This means ``python3 -m unittest`` is run for each part of the Test Driven Development cycle or each time there is a code change. I automate this so `I Do Not Repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_, it would be better for a program to automatically run the tests when there is a change to the code
 
@@ -291,7 +289,7 @@ How to create a Virtual Environment
   - `pytest <https://docs.pytest.org/>`_ is a python package like `unittest <https://docs.python.org/3/library/unittest.html>`_ for running tests in Python
   - ``requirements.txt`` is the name of a file where I can list required python packages for `pip <https://pypi.org/project/pip/>`_ the `python package manager <https://pypi.org/project/pip/>`_ to install later, you can use any name you like
 
-* I create a virtual environment with the `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ module from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_
+* I create a `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ with the `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ module from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_
 
   .. code-block:: python
 
@@ -299,21 +297,21 @@ How to create a Virtual Environment
 
   - ``python3`` is the major version of python being used
   - ``-m`` is an option passed to python to call the module given after the option
-  - `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ is a module from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_ for creating virtual environments when given a name
-  - a virtual environment is a separate folder for dependencies of the project
-  - ``.venv`` is the standard name for virtual environments in Python, you can use any name you like
+  - `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ is a module from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_ for creating `virtual environments <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ when given a name
+  - a `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ with the `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ is a separate folder for dependencies of the project
+  - ``.venv`` is the standard name for `virtual environments <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ with the `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ in Python, you can use any name you like
 
-* I activate the virtual environment to use it ::
+* I activate the `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ with the `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ to use it ::
 
       source .venv/bin/activate
 
-  .. NOTE::
+  .. admonition:: If you using Windows without `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
 
-    if you are on a windows machine and not using `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_, use ::
+    .. code-block::
 
       .venv/scripts/activate
 
-  the ``(.venv)`` on the far left of the command line in the terminal indicates the virtual environment is activated ::
+  the ``(.venv)`` on the far left of the command line in the terminal shows that the `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ is activated ::
 
     (.venv) vscode ➜ .../project_name $
 
@@ -330,11 +328,11 @@ How to create a Virtual Environment
   - ``pip`` is the package name given for `pip <https://pypi.org/project/pip/>`_ to install, in this case  ``pip`` installs ``pip``
   - ``--upgrade`` is an option given to the ``install`` argument for `pip <https://pypi.org/project/pip/>`_ to install the latest version of the name given
 
-* After upgrading, I use `pip <https://pypi.org/project/pip/>`_ to install any python packages listed in ``requirements.txt`` in the virtual environment. In this case `pip <https://pypi.org/project/pip/>`_ will install ``pytest-watch``
+* After upgrading, I use `pip <https://pypi.org/project/pip/>`_ to install any python packages listed in ``requirements.txt`` in the `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_. In this case `pip <https://pypi.org/project/pip/>`_ will install ``pytest-watch``
 
   .. code-block:: python
 
-      pip install --requirement requirements.txt
+      python3 -m pip install --requirement requirements.txt
 
   - ``--requirement`` is another option that can be passed to the ``install`` argument to install python packages from a given file
   - ``requirements.txt`` is the file that contains a list of libraries for `pip <https://pypi.org/project/pip/>`_ to install
@@ -352,7 +350,7 @@ How to create a Virtual Environment
       ╰──project_name.py
       ╰──requirements.txt
 
-* I type ``pytest-watch`` in the terminal to run the tests and it shows results without going back to the command line
+* When I type ``pytest-watch`` in the terminal, the test runs and it shows results without going back to the command line
 
   .. code-block:: ruby
 
@@ -366,26 +364,28 @@ How to create a Virtual Environment
 
     =============== 1 passed in 0.00s =======================
 
-* I change the input on line 7 in ``test_project_name.py`` to :doc:`True </data_structures/booleans>` to make it fail and back to :doc:`False </data_structures/booleans>` to make it pass and the terminal responds to each change
+* I change the input on line 7 in ``test_project_name.py`` to :doc:`True </data_structures/booleans/booleans>` to make it fail and back to :doc:`False </data_structures/booleans/booleans>` to make it pass and the terminal responds to each change
 * I can press ``ctrl`` + ``c`` on the keyboard in the terminal to stop the tests at anytime
 
 How to Deactivate a Virtual Environment
 ========================================
 
-type the following in a terminal with an active virtual environment ::
+type the following in a terminal with an active `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ ::
 
   deactivate
 
 How to Activate a Virtual Environment
 ========================================
 
-Make sure you are in the directory that contains the virtual environment for example ``project_name`` and type the following in the terminal::
+Make sure you are in the directory that contains the `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ for example ``project_name`` and type the following in the terminal::
 
   source .venv/bin/activate
 
-on a windows computer that is not using `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_ ::
+.. admonition:: If you using Windows without `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
 
-  .venv/scripts/activate
+  .. code-block::
+
+    .venv/scripts/activate
 
 -----
 
@@ -396,7 +396,7 @@ BONUS: Automatically create a Python Test Driven Development Environment
 You made it this far and have become the greatest programmer in the world. Following the `The Do Not Repeat Yourself (DRY) Principle <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_, I would write a program that contains all the steps above. I can then use it to create a Test Driven Development Environment any time I want without having to remember each step of the process
 
 * I exit the tests in the terminal by pressing ``ctrl`` + ``c`` on the keyboard
-* I type ``deactivate`` to deactivate the virtual environment
+* I type ``deactivate`` to deactivate the `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_
 * I change directory to the parent of ``project_name`` ::
 
     cd ..

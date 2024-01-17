@@ -10,10 +10,10 @@ Reviewing the tests I have so far, I know that
 * I can express ``conditional statements`` on one line with ``return``
 * when there are multiple outcomes I only need to write the condition for the special case and use ``else`` for the others
 * ``logical conjunction`` is ``and``
-* :doc:`False </data_structures/booleans>` is ``not True``
-* :doc:`True </data_structures/booleans>` is ``not False``
-* :doc:`False </data_structures/booleans>` is :doc:`False </data_structures/booleans>`
-* :doc:`True </data_structures/booleans>` is :doc:`True </data_structures/booleans>`
+* :doc:`False </data_structures/booleans/booleans>` is ``not True``
+* :doc:`True </data_structures/booleans/booleans>` is ``not False``
+* :doc:`False </data_structures/booleans/booleans>` is :doc:`False </data_structures/booleans/booleans>`
+* :doc:`True </data_structures/booleans/booleans>` is :doc:`True </data_structures/booleans/booleans>`
 
 
 RED: make it fail
@@ -44,7 +44,7 @@ GREEN: make it pass
 
   and the terminal shows an :doc:`/exceptions/AssertionError`
 
-* 3 of the test cases are passing because ``logical_disjunction`` returns :doc:`True </data_structures/booleans>` for each one of them. I need a condition for the fourth case to pass, so I change the definition
+* 3 of the test cases are passing because ``logical_disjunction`` returns :doc:`True </data_structures/booleans/booleans>` for each one of them. I need a condition for the fourth case to pass, so I change the definition
 
   .. code-block:: python
 
@@ -71,7 +71,7 @@ REFACTOR: make it better
 
   the terminal shows the tests are still passing
 
-* I can restate the equality comparison against :doc:`False </data_structures/booleans>` in terms of :doc:`True </data_structures/booleans>` by using the ``not equal`` comparison operator ``!=``
+* I can restate the equality comparison against :doc:`False </data_structures/booleans/booleans>` in terms of :doc:`True </data_structures/booleans/booleans>` by using the ``not equal`` comparison operator ``!=``
 
   .. code-block:: python
 
@@ -157,7 +157,7 @@ REFACTOR: make it better
         else:
             return True
 
-* the ``else`` clause that returns :doc:`True </data_structures/booleans>` can be restated as the opposite of the ``if`` statement
+* the ``else`` clause that returns :doc:`True </data_structures/booleans/booleans>` can be restated as the opposite of the ``if`` statement
 
   .. code-block:: python
 
@@ -213,14 +213,14 @@ REFACTOR: make it better
 
   *VOILA!* the tests still pass and I have a simple statement that makes all 4 states pass for ``logical_disjunction``
 
-The tests so far show that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures/booleans>` or :doc:`False </data_structures/booleans>`
+The tests so far show that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures/booleans/booleans>` or :doc:`False </data_structures/booleans/booleans>`
 
 
 * ``logical disjunction`` is ``or``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
 * ``logical conjunction`` is ``and``
-* :doc:`False </data_structures/booleans>` is ``not True``
-* :doc:`True </data_structures/booleans>` is ``not False``
-* :doc:`False </data_structures/booleans>` is :doc:`False </data_structures/booleans>`
-* :doc:`True </data_structures/booleans>` is :doc:`True </data_structures/booleans>`
+* :doc:`False </data_structures/booleans/booleans>` is ``not True``
+* :doc:`True </data_structures/booleans/booleans>` is ``not False``
+* :doc:`False </data_structures/booleans/booleans>` is :doc:`False </data_structures/booleans/booleans>`
+* :doc:`True </data_structures/booleans/booleans>` is :doc:`True </data_structures/booleans/booleans>`

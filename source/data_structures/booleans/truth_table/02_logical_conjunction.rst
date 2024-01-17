@@ -7,8 +7,8 @@ In this chapter I continue to step through learning conditional statements in Py
 
 I know that there are two boolean values
 
-* :doc:`True </data_structures/booleans>`
-* :doc:`False </data_structures/booleans>`
+* :doc:`True </data_structures/booleans/booleans>`
+* :doc:`False </data_structures/booleans/booleans>`
 
 
 RED: make it fail
@@ -65,7 +65,7 @@ GREEN: make it pass
         return None
 
   and the terminal shows an :doc:`/exceptions/AssertionError`
-* I change ``logical_conjunction`` in ``truth_table.py`` to return :doc:`True </data_structures/booleans>`
+* I change ``logical_conjunction`` in ``truth_table.py`` to return :doc:`True </data_structures/booleans/booleans>`
 
   .. code-block:: python
 
@@ -74,7 +74,7 @@ GREEN: make it pass
 
   which makes the first of the four tests pass, the terminal now shows a failure for the second line
 * I can make this function return different values based on the input it receives with `if statements <https://docs.python.org/3/tutorial/controlflow.html?highlight=statement#if-statements>`_
-* I add an `if statement <https://docs.python.org/3/reference/compound_stmts.html?highlight=return%20true#the-if-statement>`_ for the first case ``self.assertTrue(truth_table.logical_conjunction(True, True))`` where p is :doc:`True </data_structures/booleans>` and q is :doc:`True </data_structures/booleans>`
+* I add an `if statement <https://docs.python.org/3/reference/compound_stmts.html?highlight=return%20true#the-if-statement>`_ for the first case ``self.assertTrue(truth_table.logical_conjunction(True, True))`` where p is :doc:`True </data_structures/booleans/booleans>` and q is :doc:`True </data_structures/booleans/booleans>`
 
   .. code-block:: python
 
@@ -99,11 +99,11 @@ REFACTOR: make it better
 
 * Why does this work?
 
-  - I add a condition for when the value of ``p`` is equal to :doc:`True </data_structures/booleans>`
-  - Inside the first condition I add another condition for when the value of ``q`` is equal to :doc:`True </data_structures/booleans>`
-  - when both conditions are met, the ``logical_conjunction`` function returns :doc:`True </data_structures/booleans>`. What does it return when those two conditions are not met?
+  - I add a condition for when the value of ``p`` is equal to :doc:`True </data_structures/booleans/booleans>`
+  - Inside the first condition I add another condition for when the value of ``q`` is equal to :doc:`True </data_structures/booleans/booleans>`
+  - when both conditions are met, the ``logical_conjunction`` function returns :doc:`True </data_structures/booleans/booleans>`. What does it return when those two conditions are not met?
 
-* I know from :doc:`/functions/functions` that a function returns :doc:`None </data_structures/none>` by default so it must be returning :doc:`None </data_structures/none>` for the other cases. This means :doc:`None </data_structures/none>` is :doc:`False </data_structures/booleans>` as seen in :doc:`/booleans`
+* I know from :doc:`/functions/functions` that a function returns :doc:`None </data_structures/none>` by default so it must be returning :doc:`None </data_structures/none>` for the other cases. This means :doc:`None </data_structures/none>` is :doc:`False </data_structures/booleans/booleans>` as seen in :doc:`/booleans`
 * I can add a test as a reminder
 
   .. code-block:: python
@@ -115,7 +115,7 @@ REFACTOR: make it better
           return None
 
   tests are still passing
-* Since :doc:`None </data_structures/none>` is :doc:`False </data_structures/booleans>`, I can be more explicit by using the boolean :doc:`False </data_structures/booleans>`
+* Since :doc:`None </data_structures/none>` is :doc:`False </data_structures/booleans/booleans>`, I can be more explicit by using the boolean :doc:`False </data_structures/booleans/booleans>`
 
   .. code-block:: python
 
@@ -149,7 +149,7 @@ REFACTOR: make it better
 
   tests are still green because this expresses all four cases from ``test_logical_conjunction``
 
-  - in 1 case where ``p is True`` and ``q is True`` it returns True:doc:`True </data_structures/booleans>`
+  - in 1 case where ``p is True`` and ``q is True`` it returns True:doc:`True </data_structures/booleans/booleans>`
   - in the 3 remaining cases it returns False
   - does this mean that in a binary operation with 2 outcomes I only need to write a condition for one and write an else for the other? This could save me having to write out a condition for every case
 
@@ -184,13 +184,13 @@ REFACTOR: make it better
 
   tests are still green. I don't think I can get a simpler statement than this
 
-After testing ``logical_conjunction`` which is a conditional operation using ``and``, I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures/booleans>` or :doc:`False </data_structures/booleans>`
+After testing ``logical_conjunction`` which is a conditional operation using ``and``, I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures/booleans/booleans>` or :doc:`False </data_structures/booleans/booleans>`
 
 
-* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :doc:`True </data_structures/booleans>`
+* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :doc:`True </data_structures/booleans/booleans>`
 * when there are multiple outcomes I only need to write the condition for the special case and use ``else`` for the others
 * ``logical conjunction`` is ``and``
-* :doc:`False </data_structures/booleans>` is ``not True``
-* :doc:`True </data_structures/booleans>` is ``not False``
-* :doc:`False </data_structures/booleans>` is :doc:`False </data_structures/booleans>`
-* :doc:`True </data_structures/booleans>` is :doc:`True </data_structures/booleans>`
+* :doc:`False </data_structures/booleans/booleans>` is ``not True``
+* :doc:`True </data_structures/booleans/booleans>` is ``not False``
+* :doc:`False </data_structures/booleans/booleans>` is :doc:`False </data_structures/booleans/booleans>`
+* :doc:`True </data_structures/booleans/booleans>` is :doc:`True </data_structures/booleans/booleans>`

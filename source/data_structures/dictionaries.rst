@@ -244,12 +244,12 @@ REFACTOR: make it better
 How to create a dictionary with booleans as keys
 -------------------------------------------------
 
-I wonder if it is possible to use :doc:`False </data_structures/booleans>` or :doc:`True </data_structures/booleans>` as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
+I wonder if it is possible to use :doc:`False </data_structures/booleans/booleans>` or :doc:`True </data_structures/booleans/booleans>` as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add a test to find out if it is possible to use :doc:`False </data_structures/booleans>` as a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ key
+I add a test to find out if it is possible to use :doc:`False </data_structures/booleans/booleans>` as a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ key
 
 .. code-block:: python
 
@@ -283,12 +283,12 @@ I change the values to make them match and tests are green again. Sweet!
           {False: 'boom'}
       )
 
-I can use :doc:`False </data_structures/booleans>` as a key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+I can use :doc:`False </data_structures/booleans/booleans>` as a key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-* I add a test to find out if it is possible to use :doc:`True </data_structures/booleans>` as a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ key
+* I add a test to find out if it is possible to use :doc:`True </data_structures/booleans/booleans>` as a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ key
 
   .. code-block:: python
 
@@ -764,7 +764,7 @@ What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datas
         self.assertIsNone(a_dictionary.get('non_existent_key'))
         self.assertIsNone(a_dictionary.get('non_existent_key', False))
 
-  the terminal shows an :doc:`/exceptions/AssertionError` because :doc:`False </data_structures/booleans>` is not :doc:`None </data_structures/none>`
+  the terminal shows an :doc:`/exceptions/AssertionError` because :doc:`False </data_structures/booleans/booleans>` is not :doc:`None </data_structures/none>`
 
   .. code-block:: python
 

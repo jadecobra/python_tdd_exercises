@@ -88,8 +88,8 @@ I change ``assertIsNone`` to ``assertIsNotNone`` in ``test_is_none_a_boolean`` t
 
 From the tests I see that
 
-* :doc:`False </data_structures/booleans>` is not `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
-* :doc:`True </data_structures/booleans>` is not `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
+* :doc:`False </data_structures/booleans/booleans>` is not `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
+* :doc:`True </data_structures/booleans/booleans>` is not `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
 REFACTOR: make it better
