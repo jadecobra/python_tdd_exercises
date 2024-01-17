@@ -72,7 +72,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
 * `touch <https://man7.org/linux/man-pages/man1/touch.1.html>`_ is a program which creates an empty file when given a name
 
-  .. admonition:: If you using Windows without `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
+  .. admonition:: If you are using Windows without `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
 
     replace ``touch`` with ``New-Item``
 
@@ -122,6 +122,10 @@ RED: make it fail
 ******************
 
 * I open up ``project_name/tests/test_project_name.py`` in the Interactive Development Environment (IDE) and type the following
+
+    .. note::
+
+    the line numbers below are a guide, you do not need to copy them
 
   .. code-block:: python
     :linenos:
@@ -305,7 +309,7 @@ How to create a Virtual Environment
 
       source .venv/bin/activate
 
-  .. admonition:: If you using Windows without `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
+  .. admonition:: If you are using Windows without `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
 
     .. code-block::
 
@@ -381,7 +385,7 @@ Make sure you are in the directory that contains the `virtual environment <https
 
   source .venv/bin/activate
 
-.. admonition:: If you using Windows without `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
+.. admonition:: If you are using Windows without `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
 
   .. code-block::
 
@@ -412,7 +416,6 @@ You made it this far and have become the greatest programmer in the world. Follo
 * I open ``createPythonTdd.sh`` in the Interactive Development Environment (IDE) and copy each command displayed in the terminal from ``history`` except ``python3 -m unittest`` since I want the tests to run automatically
 
   .. code-block:: ruby
-    :linenos:
 
     mkdir --parents project_name/tests
     cd project_name
@@ -447,7 +450,12 @@ You made it this far and have become the greatest programmer in the world. Follo
 
 * I use the `cat <https://www.man7.org/linux/man-pages/man1/cat.1.html>`_ program to add text for the failure test in ``test_$PROJECT_NAME.py``
 
+    .. note::
+
+    the line numbers below are a guide, you do not need to copy them
+
   .. code-block:: shell
+    :linenos:
 
     PROJECT_NAME=$1
     mkdir --parents $PROJECT_NAME/tests
@@ -484,16 +492,25 @@ You made it this far and have become the greatest programmer in the world. Follo
     ./createPythonTdd.sh calculator
 
 
-
 How to automatically create a Test Driven Development Environment on Windows without WSL
 ==========================================================================================
+
+.. warning::
+
+  This section only applies if you are using Windows without `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
+
 * I create a file named ``createPythonTdd.ps1`` by using the ``New-Item`` command in PowerShell ::
 
     New-Item createPythonTdd.ps1
 
 * I open the file in the Interactive Development Editor and add the following code
 
+  .. note::
+
+    the line numbers below are a guide, you do not need to copy them
+
   .. code-block:: powershell
+    :linenos:
 
     $projectName=$args[0]
     mkdir -p $projectName/tests
