@@ -3,13 +3,15 @@
 How I setup my Interactive Development Environment (IDE)
 ##########################################################
 
+As of the writing of this book I use `Visual Studio Code <https://code.visualstudio.com/download>`_
+
 ***************************
 Screen Layout
 ***************************
 
 I split my screen in the following ways depending on the use case
 
-- When using a reference I like to have it on the left and the Interactive Development Environment on the right. What works for you?
+- When using a reference I like to have it on the left and the Interactive Development Environment on the right. Try different layouts to see what is best for you.
 
   .. image:: images/reference_on_left.png
     :width: 600
@@ -47,7 +49,7 @@ This setup allows me to make comparisons by asking myself
 Visual Studio Extensions
 ***************************
 
-As of the writing of this book I use `Visual Studio Code <https://code.visualstudio.com/download>`_. Here are extensions I use to customize it.
+Here are extensions I use to customize `Visual Studio Code <https://code.visualstudio.com/download>`_
 
 * `Dark Rainbow Theme <https://marketplace.visualstudio.com/items?itemName=DarkRainbow.darkrainbow>`_ - I like pretty colors
 * `indent-rainbow <https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow>`_ - did I mention I love for pretty colors?
