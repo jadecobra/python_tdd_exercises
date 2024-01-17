@@ -45,8 +45,8 @@ If the operating system of your computer is Windows setup `Windows Subsystem for
   .. code-block:: shell
 
     sudo apt update
-    sudo apt full-upgrade -y
-    sudo apt install -y python3 python3-venv
+    sudo apt full-upgrade --yes
+    sudo apt install python3 python3-venv --yes
 
 * run subsequent commands in `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
 
