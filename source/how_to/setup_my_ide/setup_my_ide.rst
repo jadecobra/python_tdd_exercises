@@ -12,7 +12,7 @@ I split my screen in the following ways depending on the use case
 - When using a reference I like to have it on the left and the Interactive Development Environment on the right. What works for you?
 
   .. image:: images/reference_on_left.png
-    :width: 400
+    :width: 600
     :alt: Reference on the left
 
 - When working only in the Interactive Development Environment I have the following windows open depending on what I want to see
@@ -21,7 +21,7 @@ I split my screen in the following ways depending on the use case
   * editors side by side - one for tests, one for source code
 
     .. image:: images/2_editors.png
-      :width: 400
+      :width: 600
       :alt: editors side by side
 
   * the terminal to show results of the tests
@@ -29,13 +29,13 @@ I split my screen in the following ways depending on the use case
     - at the bottom - for most cases
 
       .. image:: images/terminal_on_bottom.png
-        :width: 400
+        :width: 600
         :alt: Terminal Window at the bottom
 
     - to the right - when the results I am looking at in the terminal are too long to see at once, I move it to the right of the screen
 
-      .. image:: images/terminal_on_right.png
-        :width: 400
+      .. image:: ./images/terminal_on_right.png
+        :width: 600
         :alt: Terminal Window on the right
 
 This setup allows me to make comparisons by asking myself
