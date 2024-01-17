@@ -7,17 +7,17 @@
 Pumping Python: How to solve problems with Test Driven Development
 #####################################################################
 
-The book has exercises using `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ with Python.
-I have put together what has worked for me over the past 10 years of learning the language and seeing other people use it.
+This book has exercises using `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ with Python.
+I have put together what has worked for me over a decade of learning the language and seeing other people use it.
 
 **********************
 Who is this book for?
 **********************
 
-* If you just started your journey, CONGRATULATIONS! You choose Python from the many `programming languages <https://en.wikipedia.org/wiki/Programming_language>`_ available, Celebrate it. This book is for you
-* If you are new to Test Driven Development in Python. This book is for you
-* If you are interested in Python. This book is for you
-* If you use Python but do not know any of the errors below, This book is for you
+* If you just started your journey, CONGRATULATIONS! You chose Python from the many available `programming languages <https://en.wikipedia.org/wiki/Programming_language>`_, Celebrate it, this book is for you
+* If you are new to Test Driven Development in Python, this book is for you
+* If you are interested in Python, this book is for you
+* If you use Python but do not know any of the errors below, this book is for you
 
   - :doc:`/exceptions/AssertionError`
   - :doc:`/exceptions/AttributeError`
@@ -28,23 +28,21 @@ Who is this book for?
   - :doc:`/exceptions/TypeError`
   - `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_
 
-It will show you how I can cause errors and use them, there are also a few drills
-
 **********************
 How to use this book
 **********************
 
 You can choose how you go through the chapters by starting with what you like.
 
-Here is how I recommend you use the book
+My recommendation is to
 
 * start with :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` because it is required by every chapter
 * type out the code portions as you go through each chapter - do not copy and paste
-* what do you think the code portion you just typed will do?
 * repeat a chapter you like until you can do it from memory
 * try recreating the tests from memory or write new tests for a concept you are working on
-* using only the tests for a chapter, try to write the solutions
+* try to write the solutions using only the tests for a chapter from the :ref:`tests and solutions` sections
 * try adding tests for any ideas you get as you go through a chapter
+
 
 *******
 HOWTOs
@@ -107,6 +105,7 @@ Table of Contents
   data_structures/lists/list_comprehensions
   data_structures/dictionaries
 
+.. _tests and solutions
 *********************
 tests and solutions
 *********************

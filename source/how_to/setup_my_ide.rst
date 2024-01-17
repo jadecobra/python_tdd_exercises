@@ -10,10 +10,19 @@ Screen Layout
 I split my screen in the following ways depending on the use case
 
 - When using a reference I like to have it on the left and the Interactive Development Environment on the right. What works for you?
+
+  .. image:: path/filename.png
+  :width: 400
+  :alt: Alternative text
+
 - When working only in the Interactive Development Environment I have the following windows open depending on what I want to see
 
   * explorer - to see files/folder structure
   * 2 editors side by side - one for tests, one for source code
+
+    .. image:: path/filename.png
+  :width: 400
+  :alt: Alternative text
   * the terminal to show results of the tests
 
     - at the bottom - for most cases

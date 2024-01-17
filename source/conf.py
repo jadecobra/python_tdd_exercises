@@ -11,3 +11,4 @@ exclude_patterns = []
 # html_theme = "alabaster"
 html_theme = 'press'
 html_static_path = ["_static"]
+extensions = ["sphinx.ext.autosectionlabel"]
