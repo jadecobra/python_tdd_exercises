@@ -25,11 +25,16 @@ I split my screen in the following ways depending on the use case
 - When working only in the Interactive Development Environment I have the following windows open depending on what I want to see
 
   * explorer - to see files/folder structure
+
+  .. image:: images/explorer_w_editors.png
+    :width: 600
+    :alt: Explorer with Editors
+
   * editors side by side - one for tests, one for source code
 
     .. image:: images/2_editors.png
       :width: 600
-      :alt: editors side by side
+      :alt: Editors side by side
 
   * the terminal to show results of the tests
 
