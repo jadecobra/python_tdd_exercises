@@ -219,7 +219,6 @@ GREEN: make it pass
 * I write down :doc:`Exceptions </how_to/exception_handling_programs>` I encounter to become more familiar with them. Time to add :doc:`/exceptions/AssertionError` to the list
 
   .. code-block:: python
-    :linenos:
 
     import unittest
 

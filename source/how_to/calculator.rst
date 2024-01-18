@@ -85,7 +85,13 @@ I add an import statement for the ``calculator`` module that will contain the so
   # Exceptions Encountered
   # AssertionError
 
-since there is no failure I can remove ``test importing`` from the TODO list
+since there is no failure I can remove ``test importing`` from the TODO list ::
+
+  # TODO
+  # test addition
+  # test subtraction
+  # test multiplication
+  # test division
 
 ----
 
@@ -128,7 +134,7 @@ RED: make it fail
 
 
   - I use the `unittest.TestCase.assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ :doc:`method </functions/functions>` which checks if its 2 inputs are equal. It is similar to the statement ``assert x == y`` or asking ``is x equal to y?``
-  - there are two things passed to `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ for evaluation in this case
+  - I am sending two things to `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ for evaluation
 
     * first: ``calculator.add(0, 1)`` calls the ``add`` function in ``calculator.py`` with ``0`` and ``1`` as inputs
     * second: ``1`` is the expected result from calling the ``add`` function in ``calculator.py`` with ``0`` and ``1`` as inputs
@@ -158,7 +164,7 @@ GREEN: make it pass
     # AssertionError
     # AttributeError
 
-* I open ``calculator.py`` in the Interactive Development Environment (IDE) and type the name ``add``
+* then open ``calculator.py`` in the Interactive Development Environment (IDE) and type the name ``add``
 
   .. code-block:: python
 
@@ -216,14 +222,14 @@ GREEN: make it pass
 
     TypeError: add() takes 0 positional arguments but 2 were given
 
-* This :doc:`/exceptions/TypeError` shows that the current definition of the ``add`` function takes in 0 inputs. I provided 2 - ``calculator.add(0, 1)`` in the call. Part of the requirement is that the ``add`` function should take in two numbers so I change the definition in ``calculator.py`` to make it match
+* This :doc:`/exceptions/TypeError` shows that the current definition of the ``add`` function takes in 0 inputs, but I provided 2 - ``calculator.add(0, 1)`` in the call. Part of the requirement is that the ``add`` function should take in two numbers so I change the definition in ``calculator.py`` to make it match
 
   .. code-block:: python
 
     def add(x, y):
         return None
 
-  the terminal now displays an :doc:`/exceptions/AssertionError`
+  the terminal shows an :doc:`/exceptions/AssertionError`
 
   .. code-block:: python
 
@@ -245,7 +251,7 @@ GREEN: make it pass
 
     tests/test_calculator.py ..              [100%]
 
-    ============== 1 passed in 0.01s ===============
+    ============== 2 passed in 0.01s ===============
 
 
 REFACTOR: Make it Better
@@ -277,7 +283,7 @@ Even though the ``add`` function currently passes the existing test it does not 
 
 * RED: make it fail
 
-  I add a new test to ``test_addition`` in ``test_calculator.py``
+  then add a new test to ``test_addition`` in ``test_calculator.py``
 
   .. code-block:: python
 
@@ -316,13 +322,18 @@ Even though the ``add`` function currently passes the existing test it does not 
 
 * REFACTOR: make it better
 
-  - I can use random inputs to test that the function behaves the way I expect for any given numbers. I can use python's `random <https://docs.python.org/3/library/random.html?highlight=random#module-random>`_ library to generate random integers from -1 and 1 to represent negative numbers, zero and positive numbers
+  - I import python's `random <https://docs.python.org/3/library/random.html?highlight=random#module-random>`_ library to generate random integers from -1 and 1 to represent negative numbers, zero and positive numbers that I use to test that the function behaves the way I expect for any given numbers
 
     .. code-block:: python
 
       import calculator
       import random
       import unittest
+
+
+  - then I assign a random integer to the x and y variables and change the test to use these variables
+
+    .. code-block:: python
 
       class TestCalculator(unittest.TestCase):
 
@@ -335,7 +346,7 @@ Even though the ``add`` function currently passes the existing test it does not 
               )
 
     * ``x = random.randint(-1, 1)`` assigns a variable called ``x`` to the result of calling ``random.randint(-1, 1)``
-    * ``random.randint(-1, 1)`` returns a random digit from -1, 0 and 1 to represent the case of negative numbers, zero and positive numbers
+    * ``random.randint(-1, 1)`` returns a random digit that is -1, 0 or 1 to represent the case of negative numbers, zero and positive numbers
     * the ``assertEqual`` tests that when these two random numbers are given to the ``add`` function as inputs, the output returned is the result of adding them together
     * the terminal still shows passing tests
 
@@ -345,7 +356,7 @@ Even though the ``add`` function currently passes the existing test it does not 
 
         ============= 1 passed in 0.01s ===============
 
-  - I no longer need the previous tests because this new test shows the scenarios for negative numbers, zero and positive numbers
+    I no longer need the previous tests because this new test shows the scenarios for negative numbers, zero and positive numbers
   - I remove ``test addition`` from the TODO list since it passed
 
     .. code-block:: python
@@ -428,9 +439,6 @@ GREEN : make it pass
 
   .. code-block:: python
 
-    def add(x, y):
-        return x + y
-
     def subtract():
         return None
 
@@ -444,9 +452,6 @@ GREEN : make it pass
 
   .. code-block:: python
 
-    def add(x, y):
-        return x + y
-
     def subtract(x, y):
         return None
 
@@ -456,17 +461,14 @@ GREEN : make it pass
 
     AssertionError: None != 0
 
-* I change the ``subtract`` function in ``calculator.py`` to perform a subtraction operation on its inputs
+* When I change the ``subtract`` function in ``calculator.py`` to perform a subtraction operation on its inputs
 
   .. code-block:: python
-
-    def add(x, y):
-        return x + y
 
     def subtract(x, y):
         return x - y
 
-  SUCCESS! All the tests pass
+  All the tests pass. SUCCESS!
 
 * ``test subtraction`` can now be removed from the TODO list
 
@@ -485,14 +487,9 @@ REFACTOR: make it better
   - ``x = random.randint(-1, 1)`` happens twice
   - ``y = random.randint(-1, 1)`` happens twice
 
-* I could change the ``TestCalculator`` :doc:`class </classes/classes>` in ``test_calculator.py`` to create the random variables only once by using :doc:`class </classes/classes>` attributes (variables) and reference these variables later in the tests
+* I can use :doc:`class </classes/classes>` attributes (variables) in the ``TestCalculator`` :doc:`class </classes/classes>` in ``test_calculator.py`` to create the random variables only once and reference them later in the tests by using ``self``
 
   .. code-block:: python
-
-    import calculator
-    import random
-    import unittest
-
 
     class TestCalculator(unittest.TestCase):
 
@@ -530,11 +527,6 @@ I add a failing test called ``test_multiplication`` to ``test_calculator.py``
 
 .. code-block:: python
 
-  import unittest
-  import calculator
-  import random
-
-
   class TestCalculator(unittest.TestCase):
 
       x = random.randint(-1, 1)
@@ -569,12 +561,6 @@ using what I know so far I add a definition for ``multiplication`` to ``calculat
 
 .. code-block:: python
 
-  def add(x, y):
-      return x + y
-
-  def subtract(x, y):
-      return x - y
-
   def multiply(x, y):
       return x * y
 
@@ -597,11 +583,6 @@ RED: make it fail
 I add ``test_division`` to ``test_calculator.py``
 
 .. code-block:: python
-
-  import unittest
-  import calculator
-  import random
-
 
   class TestCalculator(unittest.TestCase):
 
@@ -645,30 +626,21 @@ GREEN : make it pass
 
   .. code-block:: python
 
-    def add(x, y):
-        return x + y
-
-    def subtract(x, y):
-        return x - y
-
-    def multiply(x, y):
-        return x * y
-
     def divide(x, y):
         return x / y
 
   the test result changes depending on the variables of ``y``
 
-  - when ``y`` is ``0`` it raises a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_
   - when ``y`` is ``-1`` or ``1`` the test passes
+  - when ``y`` is ``0`` it raises a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_, for example
 
-  .. code-block:: python
+    .. code-block:: python
 
-    x = 1, y = 0
+      x = 1, y = 0
 
-      def divide(x, y):
-    >    return x / y
-    E    ZeroDivisionError: division by zero
+        def divide(x, y):
+      >    return x / y
+      E    ZeroDivisionError: division by zero
 
 * I add `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ to the list of exceptions encountered
 
@@ -702,7 +674,7 @@ I add a failing test to ``test_calculator.py`` that makes  a `ZeroDivisionError 
       #     self.x/self.y
       # )
 
-the terminal shows my expectations with a failure for any value of ``x`` when ``y`` is ``0``. :doc:`Exceptions </how_to/exception_handling_programs>` like `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ break execution of a program. No further code is run when an :doc:`Exception </how_to/exception_handling_programs>` is raised which means that no other tests will run until I take care of this error
+the terminal shows my expectations with a failure for any value of ``x`` when ``y`` is ``0``.
 
 .. code-block:: python
 
@@ -711,6 +683,8 @@ the terminal shows my expectations with a failure for any value of ``x`` when ``
     def divide(x, y):
   >    return x / y
   E    ZeroDivisionError: division by zero
+
+:doc:`Exceptions </how_to/exception_handling_programs>` like `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ break execution of a program. No code will run past the line that causes an :doc:`Exception </how_to/exception_handling_programs>` when it is raised which means that no other tests will run until I take care of this error
 
 GREEN : make it pass
 =====================
@@ -753,13 +727,13 @@ I add other cases when the divisor is not ``0`` by making sure the value of ``y`
   - the loop tells python to assign a new random variable to ``self.y`` as long as the current value of ``self.y`` is equal to ``0``
   - the loop stops when ``self.y`` is not equal to ``0``
 
-* I remove ``test_division`` from the TODO list since all the tests pass
+* I can now remove the TODO list since all the tests pass
 
 ----
 
 CONGRATULATIONS! You made it through writing a program that can perform the 4 basic arithmetic operations of addition, subtraction, division and multiplication using Test Driven Development.
 
-I also encountered the following exceptions
+You also encountered the following exceptions
 
 * :doc:`/exceptions/AssertionError`
 * :doc:`/exceptions/AttributeError`
