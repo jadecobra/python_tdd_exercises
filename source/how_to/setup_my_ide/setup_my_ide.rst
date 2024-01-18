@@ -26,9 +26,9 @@ I split my screen in the following ways depending on the use case
 
   * explorer - to see files/folder structure
 
-  .. image:: images/explorer_w_editors.png
-    :width: 600
-    :alt: Explorer with Editors
+    .. image:: images/explorer_w_editors.png
+      :width: 600
+      :alt: Explorer with Editors
 
   * editors side by side - one for tests, one for source code
 
