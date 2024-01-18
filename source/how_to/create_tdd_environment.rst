@@ -547,4 +547,4 @@ Happy Trails!
 
 :doc:`/code/code_create_tdd_environment`
 
-To see a project where you actually create a program using Test Driven Development, checkout :doc:`how_to/calculator`
+To see a project where you actually create a program using Test Driven Development, checkout :doc:`/how_to/calculator`
