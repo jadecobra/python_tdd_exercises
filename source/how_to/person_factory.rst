@@ -437,7 +437,7 @@ RED: make it fail
 
   the terminal shows an :doc:`/exceptions/AssertionError`, there is a difference in the values for ``sex``
 
-* 3 out of the 4 persons created in the tests have ``M`` as their sex and 1 has ``F`` as their sex, I could set the majority as the default value to reduce the number of repetitions. I change the default value for the parameter in ``person.factory``
+* 3 out of the 4 persons created in the tests have ``M`` as their sex and 1 person has ``F`` as the value for sex. I set the default value for the parameter in ``person.factory`` to the majority to reduce the number of repetitions
 
   .. code-block:: python
 
