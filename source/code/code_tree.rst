@@ -3,9 +3,9 @@
 Tree: Tests and Solutions
 #################################
 
-
+**********
 tests
------
+**********
 
 Here is the code in ``tests/test_tree.py``
 
@@ -39,10 +39,9 @@ Here is the code in ``tests/test_tree.py``
                 ],
             )
 
-
-
+**********
 solutions
----------
+**********
 
 Here are the solutions in ``tree.py``
 

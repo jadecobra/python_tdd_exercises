@@ -3,9 +3,9 @@
 How to handle Exceptions: Tests and Solutions
 ################################################
 
-
+**********
 tests
------
+**********
 
 Here is the code in ``tests/test_exception_handling.py``
 
@@ -69,8 +69,9 @@ Here is the code in ``tests/test_exception_handling.py``
     # AttributeError
     # TypeError
 
+**********
 solutions
----------
+**********
 
 Here are the solutions in ``exceptions.py``
 

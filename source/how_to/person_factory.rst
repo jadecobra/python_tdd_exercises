@@ -245,10 +245,10 @@ REFACTOR: make it better
         year_of_birth=None, sex=None
     ):
         return {
-            "age": 0,
-            "first_name": first_name,
-            "last_name": "last_name",
-            "sex": "F",
+            'first_name': first_name,
+            'last_name': 'last_name',
+            'sex': 'F',
+            'age': 0
         }
 
   the terminal shows an :doc:`/exceptions/AssertionError` with no difference for the values of ``first_name``
@@ -262,10 +262,10 @@ REFACTOR: make it better
         year_of_birth=None, sex=None,
     ):
         return {
-            "first_name": first_name,
-            "last_name": last_name,
-            "sex": sex,
-            "age": 0
+            'first_name': first_name,
+            'last_name': last_name,
+            'sex': sex,
+            'age': 0
         }
 
 * For ``age`` to be accurate it has to be a calculation based on the current year. I have a function that returns the current year and I have the ``year_of_birth`` as input, I also have this line in the test ``this_year() - 1983``. I can try making the ``factory`` function use that calculation
@@ -277,10 +277,10 @@ REFACTOR: make it better
         year_of_birth=None, sex=None,
     ):
         return {
-            "first_name": first_name,
-            "last_name": last_name,
-            "sex": sex,
-            "age": this_year() - year_of_birth,
+            'first_name': first_name,
+            'last_name': last_name,
+            'sex': sex,
+            'age': this_year() - year_of_birth,
         }
 
   the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ since I am calling a function that does not exist in ``person.py``
@@ -298,10 +298,10 @@ REFACTOR: make it better
         year_of_birth=None, sex=None,
     ):
         return {
-            "first_name": first_name,
-            "last_name": last_name,
-            "sex": sex,
-            "age": datetime.datetime.now().year - year_of_birth,
+            'first_name': first_name,
+            'last_name': last_name,
+            'sex': sex,
+            'age': datetime.datetime.now().year - year_of_birth,
         }
 
   the terminal shows another `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ this time for the ``datetime`` module

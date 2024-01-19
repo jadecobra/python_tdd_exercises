@@ -3,9 +3,9 @@
 Truth Table: Tests and Solutions
 #################################
 
-
+**********
 tests
------
+**********
 
 Here is the code in ``tests/test_truth_table.py``
 
@@ -141,9 +141,9 @@ Here is the code in ``tests/test_truth_table.py``
     # TypeError
     # SyntaxError
 
-
+**********
 solutions
----------
+**********
 
 Here are the solutions in ``truth_table.py``
 

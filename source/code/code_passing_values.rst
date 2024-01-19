@@ -3,9 +3,9 @@
 How to pass values: Tests and Solution
 #######################################
 
-
+**********
 tests
------
+**********
 
 Here is the code in ``tests/test_passing_values.py``
 
@@ -65,8 +65,9 @@ Here is the code in ``tests/test_passing_values.py``
     # AttributeError
     # TypeError
 
+**********
 solution
----------
+**********
 
 Here is the solution in ``telephone.py``
 

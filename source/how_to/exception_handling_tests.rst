@@ -7,9 +7,9 @@ How to test that an Exception is raised
 
 This is useful because it means there is a problem that should be taken care of for the program to continue as expected.
 
-It is also a pain when it causes the program to exit prematurely. What if I want the program to run regardless of errors? I might want it to give messages to the user who may not care or understand the details that come with Exceptions
+It is also a pain when it causes the program to exit prematurely. What if I want the program to run regardless of errors? I might want it to give messages to the user who may not care or understand the details that come with Exceptions.
 
-Enter Exception Handling, a way to deal with exceptions, allowing programs to make decisions when an Exception is encountered.
+Exception Handling is a way to deal with exceptions, allowing programs to make decisions when an Exception is encountered.
 
 *************************
 Prerequisites

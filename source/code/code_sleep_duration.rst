@@ -3,9 +3,9 @@
 How to measure Sleep Duration: Tests and Solution
 ##################################################
 
-
+**********
 tests
------
+**********
 
 Here is the code in ``tests/test_sleep_duration.py``
 
@@ -186,8 +186,9 @@ Here is the code in ``tests/test_sleep_duration.py``
     # TypeError
     # SyntaxError
 
+**********
 solution
-----------
+**********
 
 Here is the solution in ``sleep_duration.py``
 

@@ -3,9 +3,9 @@
 AttributeError: Tests and Solutions
 #####################################
 
-
+**********
 tests
------
+**********
 
 Here is the code in ``tests/test_attribute_error.py``
 
@@ -55,8 +55,9 @@ Here is the code in ``tests/test_attribute_error.py``
     # TypeError
     # SyntaxError
 
+**********
 solutions
----------
+**********
 
 Here are the solutions in ``module.py``
 

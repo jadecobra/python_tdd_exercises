@@ -3,9 +3,9 @@
 Data Structures: dictionaries: Tests and Solution
 ###################################################
 
-
+**********
 tests
------
+**********
 
 Here is the code in ``tests/test_dictionaries.py``
 
@@ -257,8 +257,9 @@ Here is the code in ``tests/test_dictionaries.py``
     # TypeError
     # KeyError
 
+**********
 solution
-----------
+**********
 
 Here is the solution in ``dictionaries.py``
 

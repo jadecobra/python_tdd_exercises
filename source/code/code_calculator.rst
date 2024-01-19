@@ -3,9 +3,9 @@
 How to create a simple Calculator: Tests and Solutions
 #######################################################
 
-
+**********
 tests
------
+**********
 
 Here is the code in ``tests/test_assertion_error.py``
 
@@ -54,8 +54,9 @@ Here is the code in ``tests/test_assertion_error.py``
     # TypeError
     # ZeroDivisionError
 
+**********
 solutions
----------
+**********
 
 Here are the solutions in ``calculator.py``
 

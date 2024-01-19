@@ -3,9 +3,9 @@
 How to create a person: Tests and Solution
 ###########################################
 
-
+**********
 tests
------
+**********
 
 Here is the code in ``tests/test_person.py``
 
@@ -97,8 +97,9 @@ Here is the code in ``tests/test_person.py``
     # NameError
     # TypeError
 
+**********
 solution
----------
+**********
 
 Here is the solution in ``person.py``
 
