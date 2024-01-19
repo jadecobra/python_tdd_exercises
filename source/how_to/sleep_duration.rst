@@ -32,8 +32,8 @@ I remove ``test_failure`` since I no longer need it, and add a failing test to `
       def test_duration_when_given_hours_only(self):
           self.assertEqual(
               sleep_duration.duration(
-                wake_time='08:00',
-                sleep_time='07:00'
+                  wake_time='08:00',
+                  sleep_time='07:00'
               ),
               1
           )
