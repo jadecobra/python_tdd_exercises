@@ -53,13 +53,13 @@ Here is the code in ``tests/test_exception_handling.py``
                 exceptions.always_returns(
                     exceptions.does_not_raise_exception_error
                 ),
-                "always_returns_this"
+                'always returns this'
             )
             self.assertEqual(
                 exceptions.always_returns(
                     exceptions.raises_exception_error
                 ),
-                "always_returns_this"
+                'always returns this'
             )
 
     # Exceptions Encountered
@@ -78,7 +78,7 @@ Here are the solutions in ``exceptions.py``
 .. code-block:: python
 
     def raises_exception_error():
-        raise Exception
+        raise Exception('BOOM')
 
     def does_not_raise_exception_error():
         return None
@@ -99,4 +99,4 @@ Here are the solutions in ``exceptions.py``
         else:
             return 'succeeded'
         finally:
-            return 'always_returns_this'
+            return 'always returns this'

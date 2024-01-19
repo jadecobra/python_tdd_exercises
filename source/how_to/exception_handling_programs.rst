@@ -79,7 +79,7 @@ GREEN: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* I add it to the list of exceptions encountered
+* I add the error to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -102,13 +102,13 @@ GREEN: make it pass
   .. code-block:: python
 
     def raises_exception_error():
-        raise Exception
+        raise Exception('BOOM')
 
   the terminal shows the ``Exception`` is raised
 
   .. code-block:: python
 
-    Exception
+    Exception: BOOM
 
 * I add a ``with self.assertRaises`` context to ``test_catching_exceptions`` in ``test_exception_handling.py`` to confirm that the exception is raised and allow the tests to continue
 
@@ -251,6 +251,9 @@ GREEN: make it pass
 
     does_not_raise_exception_error
 
+    def exception_handler(function):
+        ...
+
   and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
   .. code-block:: python
@@ -356,7 +359,7 @@ I add a failing test to ``test_exception_handling.py``
           exceptions.always_returns(
               exceptions.does_not_raise_exception_error
           ),
-          "always_returns_this"
+          "always returns this"
       )
 
 the terminal shows an :doc:`/exceptions/AttributeError`
@@ -405,18 +408,18 @@ GREEN: make it pass
 
     TypeError: always_returns() takes 0 positional arguments but 1 was given
 
-* I change the signature of ``always_returns`` to accept a function, then make it call the function and return the result of the call
+* I change the signature of ``always_returns`` to accept a function, and return the result of calling it
 
   .. code-block:: python
 
     def always_returns(function):
         return function()
 
-  the terminal shows an :doc:`/exceptions/AssertionError` because ``exceptions.always_returns`` returns the value of ``does_not_raise_exception_error`` which is :doc:`None </data_structures/none>` and is not equal to the expectation in the test which is ``'always_returns_this'``
+  the terminal shows an :doc:`/exceptions/AssertionError` because ``exceptions.always_returns`` returns the value of calling ``does_not_raise_exception_error`` which is :doc:`None </data_structures/none>` and is not equal to the expectation in the test which is ``'always returns this'``
 
   .. code-block:: python
 
-    AssertionError: None != 'always_returns_this'
+    AssertionError: None != 'always returns this'
 
 * I add exception handling using ``try...except...else``
 
@@ -430,11 +433,11 @@ GREEN: make it pass
         else:
             return 'succeeded'
 
-  the terminal shows an :doc:`/exceptions/AssertionError` with a different message. ``always_returns_this`` returns ``'succeeded'`` since no exception is raised when it calls ``does_not_raise_exception_error`` and ``'succeeded'`` is not equal to ``'always_returns_this'``
+  the terminal shows an :doc:`/exceptions/AssertionError` with a different message. ``always returns this`` returns ``'succeeded'`` since no exception is raised when it calls ``does_not_raise_exception_error`` and ``'succeeded'`` is not equal to ``'always returns this'``
 
   .. code-block::
 
-    AssertionError: 'succeeded' != 'always_returns_this'
+    AssertionError: 'succeeded' != 'always returns this'
 
 * I can try adding another return statement to the function to see if that would work
 
@@ -447,11 +450,9 @@ GREEN: make it pass
             return 'failed'
         else:
             return 'succeeded'
-        return 'always_returns_this'
+        return 'always returns this'
 
-  no change, the terminal still has the same error. In Python the ``return`` statement is the last thing run in the function, anything written after a ``return`` statement is ignored
-
-  The function returns ``succeeded`` from the ``else`` block and ignores the return statement below it
+  no change, the terminal still has the same error. In Python the ``return`` statement is the last thing run in the function. Anything written after a ``return`` statement is ignored, ``always_returns`` currently returns ``succeeded`` from the ``else`` block and ignores the return statement below it
 
 * I have to add a ``finally`` clause to force it to ignore the other return statements and only return what I want
 
@@ -465,7 +466,7 @@ GREEN: make it pass
         else:
             return 'succeeded'
         finally:
-            return 'always_returns_this'
+            return 'always returns this'
 
   the terminal shows passing tests. The ``finally`` clause is always run regardless of what happens in the ``try..except..else`` blocks
 
@@ -478,7 +479,7 @@ GREEN: make it pass
             exceptions.always_returns(
                 exceptions.does_not_raise_exception_error
             ),
-            "always_returns_this"
+            "always returns this"
         )
         self.assertEqual(
             exceptions.always_returns(
@@ -491,9 +492,9 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    AssertionError: 'always_returns_this' != 'succeeded'
+    AssertionError: 'always returns this' != 'succeeded'
 
-* I change the ``'succeeded'`` to match the expected value
+* I change ``'succeeded'`` to match the expected value
 
   .. code-block:: python
 
@@ -502,13 +503,13 @@ GREEN: make it pass
             exceptions.always_returns(
                 exceptions.does_not_raise_exception_error
             ),
-            "always_returns_this"
+            "always returns this"
         )
         self.assertEqual(
             exceptions.always_returns(
                 exceptions.raises_exception_error
             ),
-            "always_returns_this"
+            "always returns this"
         )
 
   and the test passes
@@ -518,7 +519,7 @@ GREEN: make it pass
   ``always_returns`` could have been defined as a ``singleton`` :doc:`function </functions/functions>` and the tests would still pass, but would not show how to use ``try...except...else...finally`` ::
 
       def always_returns(function):
-          return 'always_returns_this'
+          return 'always returns this'
 
 ----
 

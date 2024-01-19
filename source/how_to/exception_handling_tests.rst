@@ -7,9 +7,9 @@ How to test that an Exception is raised
 
 This is useful because it means there is a problem that should be taken care of for the program to continue as expected.
 
-It is also a pain when it causes the program to exit prematurely. What if I want the program to run regardless of errors? I might want it to give messages to the user who may not care or understand the details that come with Exceptions.
+It is also a pain when it causes the program to exit early. What if I want the program to run regardless of errors? I might want it to give messages to the user who may not care or understand the details that come with Exceptions.
 
-Exception Handling is a way to deal with exceptions, allowing programs to make decisions when an Exception is encountered.
+Exception Handling is a way to deal with exceptions, it allows programs to make decisions when an Exception is encountered.
 
 *************************
 Prerequisites
@@ -218,9 +218,7 @@ I just created the same context 3 times. The ``self.assertRaises`` catches an :d
           module.non_existent_function()
           module.NonExistentClass()
 
-Fantastic! all the tests still pass and I have a way to catch exceptions that are raised in programs I am testing
-
-I also encountered the following exceptions
+Fantastic! all the tests still pass and I have a way to catch exceptions that are raised in programs I am testing. I also encountered the following exceptions
 
 * :doc:`/exceptions/AssertionError`
 * :doc:`/exceptions/ModuleNotFoundError`
