@@ -17,7 +17,7 @@ Which is similar to functions in mathematics where a function is represented as 
 
   f(x) -> y
 
-or in other words
+in other words
 
 .. code-block:: python
 
@@ -152,7 +152,7 @@ GREEN: make it pass
     # NameError
     # TypeError
 
-- I change ``text`` to a :doc:`function </functions/functions>` to make it `callable <https://docs.python.org/3/glossary.html#term-callable>`_
+- I change ``text`` in ``telephone.py`` to a :doc:`function </functions/functions>` to make it `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 
   .. code-block:: python
 
@@ -165,7 +165,7 @@ GREEN: make it pass
 
     TypeError: text() takes 0 positional arguments but 1 was given
 
-  I provided a positional argument as input with the value ``hello`` when I called ``telephone.text`` in the test , but the signature of the ``text`` :doc:`method </functions/functions>` does not take in any arguments
+  I provided a positional argument as input with the value ``'hello'`` when I called ``telephone.text`` in the test , but the current signature of the ``text`` :doc:`function </functions/functions>` does not allow it accept any inputs
 - I change the definition for ``text`` to make it accept a value as input
 
   .. code-block:: python
@@ -190,9 +190,7 @@ GREEN: make it pass
 REFACTOR: make it better
 **************************
 
-The problem with this solution is that no matter what value I send to the ``Telephone.text`` :doc:`method </functions/functions>` it will always return ``'I received this message: hello'``
-
-I need to make it more generic to return a value based on the input it receives
+The problem with this solution is that no matter what value I send to the ``text`` :doc:`function </functions/functions>` it will always return ``'I received this message: hello'``. I need to make it return a value based on the input it receives
 
 RED: make it fail
 =========================
@@ -395,9 +393,7 @@ REFACTOR: make it better
             "I received this message: <class 'dict'>"
         )
 
-VOILA! You now know how to pass values from a test to a program and can represent values as strings using interpolation. What the tests demonstrates is not only applicable to strings you can pass and return any data type you choose.
-
-You also encountered the following exceptions
+VOILA! You now know how to pass values from a test to a program and can represent values as strings using interpolation. You also encountered the following exceptions
 
 * :doc:`/exceptions/AssertionError`
 * :doc:`/exceptions/ModuleNotFoundError`

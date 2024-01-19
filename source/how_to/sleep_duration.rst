@@ -506,7 +506,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
     TypeError: unsupported operand type(s) for -: 'list' and 'list'
 
-* I only need the first part of the list and can get the specific item by using its index. Python uses zero-based indexing so the first item is at index ``0`` and the second item at index ``1``. See :doc:`/data_structures/lists` for more.
+* I only need the first part of the list and can get the specific item by using its index. Python uses zero-based indexing so the first item is at index ``0`` and the second item at index ``1``. See :doc:`/data_structures/lists/lists` for more.
   I add tests to ``test_splitting_a_string`` for getting specific parts of the :doc:`list </data_structures/lists>` created from splitting a `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_
 
   .. code-block:: python

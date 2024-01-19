@@ -49,7 +49,7 @@ GREEN: make it pass
     # AttributeError
     # TypeError
 
-* I change the function signature with a positional argument
+* I change the :doc:`function signature </functions/functions>` to include a positional argument
 
   .. code-block:: python
 

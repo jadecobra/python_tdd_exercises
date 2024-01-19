@@ -3,7 +3,7 @@
 TypeError
 ######################
 
-A `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ can be raised when a function is called with the wrong number of inputs. This means the function call does not match the function signature.
+A `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ can be raised when a function is called with the wrong number of inputs. This means the function call does not match the :doc:`function signature </functions/functions>`.
 
 * A function signature is the definition of the function which determines what inputs it accepts, for example
 
@@ -11,7 +11,7 @@ A `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=except
 
     def function(input_1, input_2, input_3, input_N):
 
-  This function signature shows that ``function`` can take in four inputs
+  This :doc:`function signature </functions/functions>` shows that ``function`` can take in four inputs
 
 * Calling a function is using the function after it has been defined, by referencing the name with parentheses at the end, for example
 
@@ -271,7 +271,7 @@ GREEN: make it pass
 
     TypeError: function_c() takes 0 positional arguments but 3 were given
 
-* I change the function signature of ``function_c`` to accept one input argument
+* I change the :doc:`signature </functions/functions>` of ``function_c`` to accept one input argument
 
   .. code-block:: python
 

@@ -20,7 +20,7 @@ How to use dictionaries as factories in Python
 RED: make it fail
 ==================
 
-I add an import statement and a failing test to ``test_person.py``
+I add an import statement and replace ``test_failure`` with a failing test in ``test_person.py``
 
 .. code-block:: python
 
@@ -51,7 +51,7 @@ which I add to the list of exceptions
 GREEN: make it pass
 ====================
 
-* I create a function called ``factory`` in ``person.py`` and the terminal shows passing tests
+* I create a function called ``factory`` in ``person.py`` and the terminal shows the test passed
 
   .. code-block:: python
 
@@ -61,20 +61,20 @@ GREEN: make it pass
 REFACTOR: make it better
 =========================
 
-* I add more details to ``test_person_factory``. I want to pass in values for ``first_name``, ``last_name``, ``year_of_birth``, ``sex`` and have the :doc:`function </functions/functions>` return a :doc:`dictionary </data_structures/dictionaries>` with the ``first_name``, ``last_name``, ``sex`` and ``age`` calculated from the ``year_of_birth``
+* I want to pass in values for ``first_name``, ``last_name``, ``year_of_birth``, ``sex`` and have the :doc:`function </functions/functions>` return a :doc:`dictionary </data_structures/dictionaries>` with the ``first_name``, ``last_name``, ``sex`` and ``age`` calculated from the ``year_of_birth``, so I add more details to ``test_person_factory``
 
   .. code-block:: python
 
     def test_person_factory(self):
         self.assertEqual(
             person.factory(
-                first_name="sibling",
+                first_name="baby",
                 last_name="last_name",
                 year_of_birth=this_year(),
                 sex="F"
             ),
             {
-                "first_name": "sibling",
+                "first_name": "baby",
                 "last_name": "last_name",
                 "sex": "F",
                 "age": this_year() - this_year()
@@ -168,7 +168,7 @@ REFACTOR: make it better
 
     TypeError: unsupported operand type(s) for -: 'NoneType' and 'NoneType'
 
-* I change the definition for ``this_year`` in ``test_person.py`` using a function from the `datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#module-datetime>`_ library that returns the current year
+* I import the `datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#module-datetime>`_ library in ``test_person.py`` to use it to return the current year
 
   .. code-block:: python
 
@@ -176,12 +176,14 @@ REFACTOR: make it better
     import person
     import unittest
 
+  ``import datetime`` imports the ``datetime`` library so I can use its :doc:`/functions/functions` and :doc:`classes </classes/classes>`
+* then I add a call in the ``this_year`` :doc:`function <functions/functions>` in ``test_person.py`` to return the current year
+
+  .. code-block:: python
+
     def this_year():
         return datetime.datetime.now().year
-    ...
 
-
-  - ``import datetime`` imports the ``datetime`` library so I can use its :doc:`/functions/functions` and :doc:`classes </classes/classes>`
   - ``return datetime.datetime.now().year`` returns the ``year`` attribute of the object returned by the ``now`` :doc:`method </functions/functions>` of the ``datetime.datetime`` :doc:`class </classes/classes>`, which is a representation of the current local date and time. I could also use ``today`` or ``utcnow`` instead of ``now`` to achieve the same result
   - I get the ``year`` attribute of the object returned since that is `all I need to get by <https://www.youtube.com/watch?v=XW1HNWqdVbk>`_
 
@@ -191,23 +193,7 @@ REFACTOR: make it better
 
     AssertionError: None != {'first_name': 'sibling', 'last_name': 'last_name', 'sex': 'F', 'age': 0}
 
-* I change the function to return an empty dictionary so I am at least comparing 2 :doc:`dictionaries </data_structures/dictionaries>`
-
-  .. code-block:: python
-
-    def factory(
-        first_name=None, last_name=None,
-        year_of_birth=None, sex=None
-    ):
-        return {}
-
-  the terminal shows the differences between the :doc:`dictionaries </data_structures/dictionaries>` returned by the ``factory`` function and the one expected in the test
-
-  .. code-block:: python
-
-    AssertionError: {} != {'first_name': 'sibling', 'last_name': 'last_name', 'sex': 'F', 'age': 0}
-
-* When I change the empty :doc:`dictionary </data_structures/dictionaries>`   in the ``factory`` function to match the expected results, the test passes
+* I copy the expected value from the terminal and paste it as the return value
 
   .. code-block:: python
 
@@ -221,6 +207,8 @@ REFACTOR: make it better
             'sex': 'F',
             'age': 0
         }
+
+  the terminal shows the test passed
 
 * The factory function currently returns the exact same dictionary every time, regardless of what inputs it gets. It is a :doc:`singleton function </functions/functions_singleton>`. To be more useful it has to use the inputs it is given. I add another test to ``test_person.py`` with a different set of inputs
 
@@ -271,13 +259,13 @@ REFACTOR: make it better
 
     def factory(
         first_name=None, last_name=None,
-        year_of_birth=None, sex=None
+        year_of_birth=None, sex=None,
     ):
         return {
-            'first_name': first_name,
-            'last_name': last_name,
-            'sex': sex,
-            'age': 0
+            "first_name": first_name,
+            "last_name": last_name,
+            "sex": sex,
+            "age": 0
         }
 
 * For ``age`` to be accurate it has to be a calculation based on the current year. I have a function that returns the current year and I have the ``year_of_birth`` as input, I also have this line in the test ``this_year() - 1983``. I can try making the ``factory`` function use that calculation
@@ -286,13 +274,13 @@ REFACTOR: make it better
 
     def factory(
         first_name=None, last_name=None,
-        year_of_birth=None, sex=None
+        year_of_birth=None, sex=None,
     ):
         return {
-            'first_name': first_name,
-            'last_name': last_name,
-            'sex': sex,
-            'age': this_year() - year_of_birth,
+            "first_name": first_name,
+            "last_name": last_name,
+            "sex": sex,
+            "age": this_year() - year_of_birth,
         }
 
   the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ since I am calling a function that does not exist in ``person.py``
@@ -307,16 +295,16 @@ REFACTOR: make it better
 
     def factory(
         first_name=None, last_name=None,
-        year_of_birth=None, sex=None
+        year_of_birth=None, sex=None,
     ):
         return {
-            'first_name': first_name,
-            'last_name': last_name,
-            'sex': sex,
-            'age': datetime.datetime.now().year - year_of_birth,
+            "first_name": first_name,
+            "last_name": last_name,
+            "sex": sex,
+            "age": datetime.datetime.now().year - year_of_birth,
         }
 
-  the terminal changes to show another `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ this time for the ``datetime`` module
+  the terminal shows another `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ this time for the ``datetime`` module
 
   .. code-block:: python
 
@@ -414,7 +402,7 @@ RED: make it fail
 
   the terminal shows an :doc:`/exceptions/AssertionError` because the value for ``last_name`` does not match the expected value
 
-* The test expects a value of ``last_name`` but ``person.factory`` currently returns :doc:`None </data_structures/none>`. I change the default value for ``last_name`` in the ``person.factory`` definition to match the expectation
+* The test expects a value of ``"last_name"`` but ``person.factory`` currently returns :doc:`None </data_structures/none>`. When I change the default value for ``last_name`` in the ``person.factory`` definition to match the expectation
 
   .. code-block:: python
 
