@@ -654,8 +654,8 @@ CONGRATULATIONS! You made it through writing a program that can perform the 4 ba
 You also encountered the following exceptions
 
 * :doc:`/exceptions/AssertionError`
-* :doc:`/exceptions/AttributeError`
 * `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+* :doc:`/exceptions/AttributeError`
 * :doc:`/exceptions/TypeError`
 * `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_
 
