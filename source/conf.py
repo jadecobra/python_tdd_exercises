@@ -27,7 +27,3 @@ latex_show_urls = 'inline'
 latex_them = 'howto' # 'manual'
 
 text_sectionchars = '#*=-~"+`'
-
-# pygments_style = "sphinx"
-# pygments_style = "monokai"
-pygments_style = "one-dark"
