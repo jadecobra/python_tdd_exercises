@@ -105,7 +105,6 @@ Table of Contents
   data_structures/dictionaries
 
 .. _tests and solutions
-
 *********************
 tests and solutions
 *********************
@@ -118,7 +117,7 @@ tests and solutions
   code/code_booleans
   code/code_calculator
   code/code_classes
-  code/code_create_tdd_environment
+  code/create_tdd/code_create_tdd_environment
   code/code_dictionaries
   code/code_exception_handling
   code/code_functions

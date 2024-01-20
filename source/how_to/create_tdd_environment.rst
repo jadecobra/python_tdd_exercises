@@ -454,6 +454,7 @@ You made it this far and have become the greatest programmer in the world. Follo
     the line numbers below are a guide, you do not need to copy them
 
   .. literalinclude:: /code/create_tdd/createPythonTdd.sh
+    :language: shell
     :linenos:
 
   all the text between the two ``DELIMITER`` words will be written to ``tests/test_$PROJECT_NAME.py``
