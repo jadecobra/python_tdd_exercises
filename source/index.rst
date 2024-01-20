@@ -37,7 +37,7 @@ You can choose how you go through the chapters by starting with what you like.
 My recommendation is to
 
 * start with :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` because it is required by every chapter
-* type out the code portions as you go through each chapter - do not copy and paste
+* type out the code portions as you go through any chapter - do not copy and paste
 * repeat a chapter you like until you can do it from memory
 * try recreating the tests from memory or write new tests for a concept you are working on
 * try to write the solutions using only the tests for a chapter from the :ref:`tests and solutions` sections
@@ -72,17 +72,6 @@ Table of Contents
   exceptions/AttributeError
   exceptions/TypeError
   exceptions/IndentationError
-  how_to/exception_handling_tests
-  how_to/exception_handling_programs
-  functions/functions
-  functions/functions_passthrough
-  functions/functions_positional
-  functions/functions_keyword
-  functions/functions_positional_and_keyword
-  functions/functions_singleton
-  classes/classes
-  classes/classes_attributes_methods
-  classes/classes_initializer
   data_structures/none
   data_structures/booleans/booleans
   data_structures/booleans/truth_table/01
@@ -102,6 +91,15 @@ Table of Contents
   data_structures/lists/lists
   data_structures/lists/list_comprehensions
   data_structures/dictionaries
+  functions/functions
+  functions/functions_passthrough
+  functions/functions_positional
+  functions/functions_keyword
+  functions/functions_positional_and_keyword
+  functions/functions_singleton
+  classes/classes
+  classes/classes_attributes_methods
+  classes/classes_initializer
 
 .. _tests-and-solutions:
 
@@ -112,21 +110,21 @@ tests and solutions
   :maxdepth: 2
   :titlesonly:
 
-  code/code_assertion_error
-  code/code_attribute_error
-  code/code_booleans
-  code/code_calculator
-  code/code_classes
   code/create_tdd/code_create_tdd_environment
-  code/code_dictionaries
-  code/code_exception_handling
-  code/code_functions
-  code/code_list_comprehensions
-  code/code_lists
-  code/code_none
+  code/code_calculator
   code/code_passing_values
   code/code_person_factory
   code/code_sleep_duration
+  code/code_exception_handling
+  code/code_assertion_error
+  code/code_attribute_error
+  code/code_none
+  code/code_booleans
   code/code_truth_table
+  code/code_lists
+  code/code_list_comprehensions
+  code/code_dictionaries
+  code/code_classes
+  code/code_functions
 
 :ref:`search`

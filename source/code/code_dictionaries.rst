@@ -1,6 +1,6 @@
 
 ###################################################
-Data Structures: dictionaries: Tests and Solution
+Data Structures: Dictionaries: Tests and Solution
 ###################################################
 
 **********
