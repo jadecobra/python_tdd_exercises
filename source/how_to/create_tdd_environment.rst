@@ -308,7 +308,7 @@ How to create a Virtual Environment
 
       source .venv/bin/activate
 
-  .. admonition:: If you are using Windows without `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
+  .. admonition:: If you are using Windows without `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_ type this instead
 
     .. code-block::
 
@@ -449,36 +449,12 @@ You made it this far and have become the greatest programmer in the world. Follo
 
 * I use the `cat <https://www.man7.org/linux/man-pages/man1/cat.1.html>`_ program to add text for the failure test in ``test_$PROJECT_NAME.py``
 
-    .. note::
+  .. note::
 
     the line numbers below are a guide, you do not need to copy them
 
-  .. code-block:: shell
+  .. literalinclude:: /code/create_tdd/createPythonTdd.sh
     :linenos:
-
-    PROJECT_NAME=$1
-    mkdir --parents $PROJECT_NAME/tests
-    cd $PROJECT_NAME
-    touch $PROJECT_NAME.py
-    touch tests/__init__.py
-
-    cat << DELIMITER > tests/test_$PROJECT_NAME.py
-    import unittest
-
-
-    class Test$PROJECT_NAME(unittest.TestCase):
-
-        def test_failure(self):
-            self.assertFalse(True)
-    DELIMITER
-
-    echo "pytest-watch" > requirements.txt
-
-    python3 -m venv .venv
-    source .venv/bin/activate
-    python3 -m pip install --upgrade pip
-    python3 -m pip install --requirement requirements.txt
-    pytest-watch
 
   all the text between the two ``DELIMITER`` words will be written to ``tests/test_$PROJECT_NAME.py``
 
@@ -486,7 +462,7 @@ You made it this far and have become the greatest programmer in the world. Follo
 
     chmod +x createPythonTdd.sh
 
-* I can now create a Test Driven Development environment on demand by giving a name for the ``PROJECT_NAME`` variable when the program is called. For example, typing this command in the terminal in the folder where ``createPythonTdd.sh`` is saved will create a Test Driven Development environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator` ::
+* I can create a Test Driven Development environment on demand by giving a name for the ``PROJECT_NAME`` variable when the program is called. For example, typing this command in the terminal in the folder where ``createPythonTdd.sh`` is saved will create a Test Driven Development environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator` ::
 
     ./createPythonTdd.sh calculator
 
@@ -508,30 +484,9 @@ How to automatically create a Test Driven Development Environment on Windows wit
 
     the line numbers below are a guide, you do not need to copy them
 
-  .. code-block:: powershell
+  .. literalinclude:: /code/create_tdd/createPythonTdd.ps1
     :linenos:
-
-    $projectName=$args[0]
-    mkdir -p $projectName/tests
-    Set-Location $projectName
-
-    New-Item "$projectName.py"
-    New-Item tests/__init__.py
-    $testSetup = @"
-    import unittest
-
-    class Test$($projectName)(unittest.TestCase):
-
-        def test_failure(self):
-            self.assertTrue(False)
-    "@
-    $testSetup |  Out-File $("tests/test_$($projectName).py") -Encoding UTF8
-
-    python -m venv .venv
-    .venv/scripts/activate
-    python -m pip install --upgrade pip
-    python -m pip install pytest-watch
-    pytest-watch
+    :language: PowerShell
 
 * I can now create a Test Driven Development environment on demand by giving a name for the ``PROJECT_NAME`` variable when the program is called. For example, typing this command in the terminal in the folder where ``createPythonTdd.sh`` is saved will create a Test Driven Development environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator` ::
 
