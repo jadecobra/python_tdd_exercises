@@ -50,7 +50,7 @@ HOWTOs
   :maxdepth: 2
   :titlesonly:
 
-  how_to/setup_my_ide/setup_my_ide
+  how_to/setup_my_ide
   how_to/create_tdd_environment
   how_to/calculator
   how_to/passing_values
@@ -103,7 +103,7 @@ Table of Contents
   data_structures/lists/list_comprehensions
   data_structures/dictionaries
 
-.. _tests_and_solutions:
+.. _tests-and-solutions:
 
 *********************
 tests and solutions
