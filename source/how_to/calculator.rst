@@ -31,7 +31,6 @@ I add a TODO list to ``test_calculator.py`` to keep track of requirements for th
           self.assertTrue(True)
 
   # TODO
-  # test importing
   # test addition
   # test subtraction
   # test multiplication
@@ -39,77 +38,19 @@ I add a TODO list to ``test_calculator.py`` to keep track of requirements for th
 
   # Exceptions Encountered
   # AssertionError
-
-the terminal responds to the change, the test from :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` is still passing
-
-.. code-block:: python
-
-  ==================== 1 passed in 0.01s ======================
-
-  Change detected: tests/test_calculator.py
-
-  [TODAYS_DATE] Running: py.test
-  ===================== test session starts ===================
-  ...
-  rootdir: .../calculator
-  collected 1 item
-
-  tests/test_calculator.py .                                             [100%]
-
-  ==================== 1 passed in 0.00s ======================
-
-****************
-Test Imports
-****************
-
-I add an import statement for the ``calculator`` module that will contain the source code for the program
-
-.. code-block:: python
-
-  import calculator
-  import unittest
-
-
-  class TestCalculator(unittest.TestCase):
-
-      def test_failure(self):
-          self.assertTrue(True)
-
-  # TODO
-  # test importing
-  # test addition
-  # test subtraction
-  # test multiplication
-  # test division
-
-  # Exceptions Encountered
-  # AssertionError
-
-since there is no failure I can remove ``test importing`` from the TODO list ::
-
-  # TODO
-  # test addition
-  # test subtraction
-  # test multiplication
-  # test division
-
-----
 
 ****************
 Test Addition
 ****************
 
-
 RED: make it fail
 ==================
-
 
 * I add a :doc:`method </functions/functions>` called ``test_addition`` to the ``TestCalculator`` :doc:`class </classes/classes>`
 
   .. code-block:: python
 
     import unittest
-    import calculator
 
 
     class TestCalculator(unittest.TestCase):
@@ -140,8 +81,29 @@ RED: make it fail
     * second: ``1`` is the expected result from calling the ``add`` function in ``calculator.py`` with ``0`` and ``1`` as inputs
     * my expectation is that ``calculator.add(0, 1)`` is equal to ``1``
 
+* the terminal shows a NameError because ``calculator`` is not defined anywhere in ``test_calculator.py`` ::
 
-* the terminal shows an :doc:`/exceptions/AttributeError`
+    NameError: name 'calculator' is not defined
+
+GREEN: make it pass
+====================
+
+* I add the error to the list of exceptions encountered ::
+
+    # Exceptions Encountered
+    # AssertionError
+    # NameError
+
+* then add an import statement for the ``calculator`` module ::
+
+    import calculator
+    import unittest
+
+
+    class TestCalculator(unittest.TestCase):
+        ...
+
+  and the terminal shows an :doc:`/exceptions/AttributeError`
 
   .. code-block:: python
 
@@ -154,14 +116,11 @@ RED: make it fail
   * ``calculator`` refers to ``calculator.py``
   * ``add`` refers to something (an attribute) within the ``calculator.py`` file
 
-
-GREEN: make it pass
-====================
-
 * I add the error to the list of exceptions encountered ::
 
     # Exceptions Encountered
     # AssertionError
+    # NameError
     # AttributeError
 
 * then open ``calculator.py`` in the Interactive Development Environment (IDE) and type the name ``add``
@@ -176,22 +135,13 @@ GREEN: make it pass
 
     NameError: name 'add' is not defined
 
-* I add `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ to the list of exceptions encountered
-
-  .. code-block:: python
-
-    # Exceptions Encountered
-    # AssertionError
-    # AttributeError
-    # NameError
-
-* then assign the name ``add`` to the null value :doc:`None </data_structures/none>`
+* I assign the name ``add`` to the null value :doc:`None </data_structures/none>`
 
   .. code-block:: python
 
     add = None
 
-  the terminal shows a :doc:`/exceptions/TypeError`
+  and the terminal shows a :doc:`/exceptions/TypeError`
 
   .. code-block:: python
 
@@ -199,14 +149,12 @@ GREEN: make it pass
 
   The :doc:`/exceptions/AttributeError` was fixed by declaring a variable called ``add`` in the ``calculator`` module
 
-* The new error is a :doc:`/exceptions/TypeError` which can occur when an `object <https://docs.python.org/3/glossary.html#term-object>`_ is called in a way that disagrees with the object's definition. In this case the ``add`` variable is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_ because it refers to :doc:`None </data_structures/none>` which is not a `callable <https://docs.python.org/3/glossary.html#term-callable>`_ object. I add the error to the list of exceptions encountered
-
-  .. code-block:: python
+* The new error is a :doc:`/exceptions/TypeError` which can occur when an `object <https://docs.python.org/3/glossary.html#term-object>`_ is called in a way that disagrees with the object's definition. In this case the ``add`` variable is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_ because it refers to :doc:`None </data_structures/none>` which is not a `callable <https://docs.python.org/3/glossary.html#term-callable>`_ object. I add the error to the list of exceptions encountered ::
 
     # Exceptions Encountered
     # AssertionError
-    # AttributeError
     # NameError
+    # AttributeError
     # TypeError
 
 * I have to define ``add`` as a :doc:`function </functions/functions>` or a :doc:`class </classes/classes>` to make it callable. I know the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword is used for creating :doc:`/functions/functions` and will test changing the ``add`` variable to a :doc:`function </functions/functions>` in ``calculator.py``
@@ -305,7 +253,7 @@ Even though the ``add`` function currently passes the existing test it does not 
 
 * GREEN: make it pass
 
-  I change the ``add`` function in ``calculator.py`` to add up the inputs
+  I change the ``add`` function in ``calculator.py`` to add up the inputs it receives
 
   .. code-block:: python
 
@@ -331,7 +279,7 @@ Even though the ``add`` function currently passes the existing test it does not 
       import unittest
 
 
-  - then I assign a random integer to the x and y variables and change the test to use these variables
+  - then assign a random integer to the x and y variables and change the test to use these variables
 
     .. code-block:: python
 
@@ -340,6 +288,7 @@ Even though the ``add`` function currently passes the existing test it does not 
           def test_addition(self):
               x = random.randint(-1, 1)
               y = random.randint(-1, 1)
+
               self.assertEqual(
                   calculator.add(x, y),
                   x+y
@@ -357,7 +306,7 @@ Even though the ``add`` function currently passes the existing test it does not 
         ============= 1 passed in 0.01s ===============
 
     I no longer need the previous tests because this new test shows the scenarios for negative numbers, zero and positive numbers
-  - I remove ``test addition`` from the TODO list since it passed
+  - I can remove ``test addition`` from the TODO list since it passed
 
     .. code-block:: python
 
@@ -392,23 +341,23 @@ RED: make it fail
 
   .. code-block:: python
 
-    class TestCalculator(unittest.TestCase):
+    def test_addition(self):
+        x = random.randint(-1, 1)
+        y = random.randint(-1, 1)
 
-        def test_addition(self):
-            x = random.randint(-1, 1)
-            y = random.randint(-1, 1)
-            self.assertEqual(
-                calculator.add(x, y),
-                x+y
-            )
+        self.assertEqual(
+            calculator.add(x, y),
+            x+y
+        )
 
-        def test_subtraction(self):
-            x = random.randint(-1, 1)
-            y = random.randint(-1, 1)
-            self.assertEqual(
-                calculator.subtract(x, y),
-                x-y
-            )
+    def test_subtraction(self):
+        x = random.randint(-1, 1)
+        y = random.randint(-1, 1)
+
+        self.assertEqual(
+            calculator.subtract(x, y),
+            x-y
+        )
 
   the terminal shows an :doc:`/exceptions/AttributeError`
 
@@ -418,7 +367,6 @@ RED: make it fail
 
 GREEN : make it pass
 =====================
-
 
 * I add a variable assignment in ``calculator.py``
 
@@ -527,28 +475,17 @@ I add a failing test called ``test_multiplication`` to ``test_calculator.py``
 
 .. code-block:: python
 
-  class TestCalculator(unittest.TestCase):
+  def test_subtraction(self):
+      self.assertEqual(
+          calculator.subtract(self.x, self.y),
+          self.x-self.y
+      )
 
-      x = random.randint(-1, 1)
-      y = random.randint(-1, 1)
-
-      def test_addition(self):
-          self.assertEqual(
-              calculator.add(self.x, self.y),
-              self.x+self.y
-          )
-
-      def test_subtraction(self):
-          self.assertEqual(
-              calculator.subtract(self.x, self.y),
-              self.x-self.y
-          )
-
-      def test_multiplication(self):
-          self.assertEqual(
-              calculator.multiply(self.x, self.y),
-              self.x*self.y
-          )
+  def test_multiplication(self):
+      self.assertEqual(
+          calculator.multiply(self.x, self.y),
+          self.x*self.y
+      )
 
 the terminal shows an :doc:`/exceptions/AttributeError` ::
 
@@ -584,39 +521,21 @@ I add ``test_division`` to ``test_calculator.py``
 
 .. code-block:: python
 
-  class TestCalculator(unittest.TestCase):
+  def test_multiplication(self):
+      self.assertEqual(
+          calculator.multiply(self.x, self.y),
+          self.x*self.y
+      )
 
-      x = random.randint(-1, 1)
-      y = random.randint(-1, 1)
-
-      def test_addition(self):
-          self.assertEqual(
-              calculator.add(self.x, self.y),
-              self.x+self.y
-          )
-
-      def test_subtraction(self):
-          self.assertEqual(
-              calculator.subtract(self.x, self.y),
-              self.x-self.y
-          )
-
-      def test_multiplication(self):
-          self.assertEqual(
-              calculator.multiply(self.x, self.y),
-              self.x*self.y
-          )
-
-      def test_division(self):
-          self.assertEqual(
-              calculator.divide(self.x, self.y),
-              self.x/self.y
-          )
+  def test_division(self):
+      self.assertEqual(
+          calculator.divide(self.x, self.y),
+          self.x/self.y
+      )
 
 the terminal shows an :doc:`/exceptions/AttributeError` ::
 
   AttributeError: module 'calculator' has no attribute 'division'
-
 
 GREEN : make it pass
 =====================
@@ -660,15 +579,12 @@ How to Test for Errors
 RED: make it fail
 ===================
 
-I add a failing test to ``test_calculator.py`` that makes  a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ happen. I also comment out the previous test that sometimes fails to remove the variability of the test while I figure out the error
+I add a failing line to ``test_calculator.py`` that causes a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ by explicitly dividing by 0. I also comment out the previous test that sometimes fails to remove the variability of the test while I figure out the error
 
 .. code-block:: python
 
   def test_division(self):
-      self.assertEqual(
-          calculator.divide(self.x, 0),
-          self.x/0
-      )
+      calculator.divide(self.x, 0)
       # self.assertEqual(
       #     calculator.divide(self.x, self.y),
       #     self.x/self.y
@@ -701,12 +617,12 @@ I can use the `unittest.TestCase.assertRaises <https://docs.python.org/3/library
       #     self.x/self.y
       # )
 
-the terminal shows passing tests, and I now have a way to ``catch`` :doc:`Exceptions </how_to/exception_handling_programs>` when testing, which helps to confirm that the code raises an error and other tests can continue to run
+the terminal shows passing tests, and I now have a way to ``catch`` :doc:`Exceptions </how_to/exception_handling_programs>` when testing, which helps to confirm that the code raises an error while allowing other tests to continue running
 
 REFACTOR: make it better
 =========================
 
-I add other cases when the divisor is not ``0`` by making sure the value of ``y`` that is passed from the test to ``calculator.divide`` is never ``0``
+I can use a while loop for the other cases when the divisor is not ``0`` by making sure the value of ``y`` that is passed from the test to ``calculator.divide`` is never ``0``
 
 .. code-block:: python
 
