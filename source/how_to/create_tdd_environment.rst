@@ -529,8 +529,8 @@ How to automatically create a Test Driven Development Environment on Windows wit
 
     python -m venv .venv
     .venv/scripts/activate
-    pip install --upgrade pip
-    pip install pytest-watch
+    python -m pip install --upgrade pip
+    python -m pip install pytest-watch
     pytest-watch
 
 * I can now create a Test Driven Development environment on demand by giving a name for the ``PROJECT_NAME`` variable when the program is called. For example, typing this command in the terminal in the folder where ``createPythonTdd.sh`` is saved will create a Test Driven Development environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator` ::

@@ -8,7 +8,7 @@ Automatically Create a Test Driven Development Environment
   .. code-block:: shell
 
     PROJECT_NAME=$1
-    mkdir -p $PROJECT_NAME/tests
+    mkdir --parents $PROJECT_NAME/tests
     cd $PROJECT_NAME
     touch $PROJECT_NAME.py
     touch tests/__init__.py
@@ -19,8 +19,8 @@ Automatically Create a Test Driven Development Environment
 
     class Test$PROJECT_NAME(unittest.TestCase):
 
-      def test_failure(self):
-          self.assertFalse(True)
+        def test_failure(self):
+            self.assertFalse(True)
     DELIMITER
 
     echo "pytest-watch" > requirements.txt
@@ -65,6 +65,6 @@ Automatically Create a Test Driven Development Environment
 
     python -m venv .venv
     .venv/scripts/activate
-    pip install --upgrade pip
-    pip install pytest-watch
+    python -m pip install --upgrade pip
+    python -m pip install pytest-watch
     pytest-watch
