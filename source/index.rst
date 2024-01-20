@@ -104,7 +104,8 @@ Table of Contents
   data_structures/lists/list_comprehensions
   data_structures/dictionaries
 
-.. _tests and solutions
+.. _tests_and_solutions:
+
 *********************
 tests and solutions
 *********************

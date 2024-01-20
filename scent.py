@@ -8,6 +8,11 @@ def rst_files(filename):
     return filename.endswith(".rst") and not os.path.basename(filename).startswith(".")
 
 
+@sniffer.api.file_validator
+def py_files(filename):
+    return filename.endswith(".py") and not os.path.basename(filename).startswith(".")
+
+
 @sniffer.api.runnable
 def run_tests(*args):
     if subprocess.run("make html", shell=True).returncode == 0:
