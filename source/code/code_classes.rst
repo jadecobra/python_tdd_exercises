@@ -9,7 +9,7 @@ tests
 
 Here is the code in ``tests/test_classes.py``
 
-.. code-block:: python
+.. literalinclude:: tests/test_classes.py
 
 **********
 solutions
