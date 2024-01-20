@@ -3,6 +3,10 @@
 How to create a Calculator
 ###########################
 
+.. raw:: html
+
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0gVgMoed3zI?si=FQR1fMtJzElXcQ5n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 In this chapter I create a basic calculator that performs addition, subtraction, division and multiplication
 
 ****************
