@@ -142,7 +142,7 @@ I want to know if `None <https://docs.python.org/3/library/constants.html?highli
 * is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ a `float <https://docs.python.org/3/library/functions.html#float>`_?
 * is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_?
 * is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_?
-* is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ a :doc:`list </data_structures/lists>`?
+* is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ a :doc:`list </data_structures/lists/lists>`?
 * is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ a `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_?
 * is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ a :doc:`dict </data_structures/dictionaries>`?
 
@@ -449,7 +449,7 @@ Is None a list?
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add a new test to the series of tests to check if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a :doc:`list </data_structures/lists>`
+I add a new test to the series of tests to check if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a :doc:`list </data_structures/lists/lists>`
 
 .. code-block:: python
 
@@ -465,7 +465,7 @@ the terminal shows an :doc:`/exceptions/AssertionError`
   AssertionError: [] is not None
 
 
-``[]`` is how :doc:`lists </data_structures/lists>` are represented in Python
+``[]`` is how :doc:`lists </data_structures/lists/lists>` are represented in Python
 
 
 GREEN: make it pass
@@ -475,7 +475,7 @@ I have done this dance a few times. I change ``assertIsNone`` to ``assertIsNotNo
 
 With the passing tests I see that
 
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`list </data_structures/lists>`
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`list </data_structures/lists/lists>`
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `float <https://docs.python.org/3/library/functions.html#float>`_
@@ -513,7 +513,7 @@ I change ``assertIsNone`` to ``assertIsNotNone`` and ``assertIsInstance`` to ``a
 From the tests I see that
 
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`list </data_structures/lists>`
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`list </data_structures/lists/lists>`
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `float <https://docs.python.org/3/library/functions.html#float>`_
@@ -559,7 +559,7 @@ I change the tests to make them pass and can see from the tests that
 
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`dictionary </data_structures/dictionaries>`
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`list </data_structures/lists>`
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`list </data_structures/lists/lists>`
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `float <https://docs.python.org/3/library/functions.html#float>`_

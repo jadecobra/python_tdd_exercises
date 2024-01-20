@@ -7,7 +7,7 @@ Data Structures: List Comprehensions
 
     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8v6fF6gHmE4?si=e2-lry14UZDgU6Qo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-`List Comprehensions <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#list-comprehensions>`_ are a way to create a :doc:`list </data_structures/lists>` from an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_. It is a simple way to go over every item in the :doc:`list </data_structures/lists>` and perform an operation usually in one line
+`List Comprehensions <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#list-comprehensions>`_ are a way to create a :doc:`list </data_structures/lists/lists>` from an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_. It is a simple way to go over every item in the :doc:`list </data_structures/lists/lists>` and perform an operation usually in one line
 
 ***************************************
 How to create a List from an Iterable
@@ -73,7 +73,7 @@ and the test passes
 REFACTOR: make it better
 =========================
 
-* I add another test to check what happens when I use the :doc:`list </data_structures/lists>` constructor on ``container``
+* I add another test to check what happens when I use the :doc:`list </data_structures/lists/lists>` constructor on ``container``
 
   .. code-block:: python
 
@@ -91,7 +91,7 @@ REFACTOR: make it better
 
     self.assertEqual(list(container), a_list)
 
-  and the test passes because calling ``list`` on an ``iterable`` creates a :doc:`list </data_structures/lists>`
+  and the test passes because calling ``list`` on an ``iterable`` creates a :doc:`list </data_structures/lists/lists>`
 * I add another test
 
   .. code-block:: python
@@ -190,7 +190,7 @@ REFACTOR: make it better
 
     AssertionError: None != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-* When I change the function to return the result of calling the :doc:`list </data_structures/lists>` constructor with ``argument`` as input
+* When I change the function to return the result of calling the :doc:`list </data_structures/lists/lists>` constructor with ``argument`` as input
 
   .. code-block:: python
 
@@ -205,7 +205,7 @@ REFACTOR: make it better
     def make_a_list(iterable):
         return list(iterable)
 
-From the tests I see that I can make a :doc:`list </data_structures/lists>` from any iterable by using the :doc:`list </data_structures/lists>` constructor
+From the tests I see that I can make a :doc:`list </data_structures/lists/lists>` from any iterable by using the :doc:`list </data_structures/lists/lists>` constructor
 
 ----
 
@@ -325,10 +325,10 @@ GREEN: make it pass
 
   all tests are still passing
 
-From the tests I see that I can make a :doc:`list </data_structures/lists>` from any iterable by using
+From the tests I see that I can make a :doc:`list </data_structures/lists/lists>` from any iterable by using
 
 * a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ loop
-* the :doc:`list </data_structures/lists>` constructor
+* the :doc:`list </data_structures/lists/lists>` constructor
 
 **********************************************
 How to create a List with List Comprehensions
@@ -677,10 +677,10 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
 
 ----
 
-I see from the tests that I can make a :doc:`list </data_structures/lists>` from any iterable by using
+I see from the tests that I can make a :doc:`list </data_structures/lists/lists>` from any iterable by using
 
 * a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ loop
-* the :doc:`list </data_structures/lists>` constructor
+* the :doc:`list </data_structures/lists/lists>` constructor
 * `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_
 
 If you typed along you now know a couple of ways to loop through ``iterables`` and have your program make decisions by using ``conditions``.

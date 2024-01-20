@@ -114,38 +114,38 @@ Here is the code in ``tests/test_sleep_duration.py``
                 ['00', '00']
             )
             self.assertEqual(
-                "12:34".split(':')[0],
-                "12"
+                '12:34'.split(':')[0],
+                '12'
             )
             self.assertEqual(
-                "12:34".split(':')[1],
-                "34"
+                '12:34'.split(':')[1],
+                '34'
             )
             self.assertEqual(
-                "21/11/06 16:40".split(':')[0],
+                '21/11/06 16:40'.split(':')[0],
                 '21/11/06 16'
             )
 
         def test_converting_a_string_to_an_integer(self):
-            self.assertEqual(int("12"), 12)
+            self.assertEqual(int('12'), 12)
 
         def test_datetime_datetime_objects(self):
             self.assertEqual(
                 datetime.datetime.strptime(
-                    "21/11/06 16:30",
-                    "%d/%m/%y %H:%M"
+                    '21/11/06 16:30',
+                    '%d/%m/%y %H:%M'
                 ),
                 datetime.datetime(2006, 11, 21, 16, 30)
             )
 
         def test_subtracting_datetime_datetime_objects(self):
             sleep_time = datetime.datetime.strptime(
-                "21/11/06 16:30",
-                "%d/%m/%y %H:%M"
+                '21/11/06 16:30',
+                '%d/%m/%y %H:%M'
             )
             wake_time = datetime.datetime.strptime(
-                "21/11/06 17:30",
-                "%d/%m/%y %H:%M"
+                '21/11/06 17:30',
+                '%d/%m/%y %H:%M'
             )
             self.assertEqual(
                 wake_time-sleep_time,
@@ -158,18 +158,22 @@ Here is the code in ``tests/test_sleep_duration.py``
                 '1:00:00'
             )
 
-        def test_duration(self):
+
+        def test_duration_when_given_date_and_time(self):
             wake_hour = random.randint(0, 23)
             sleep_hour = random.randint(0, 23)
             wake_minute = random.randint(0, 59)
             sleep_minute = random.randint(0, 59)
-            wake_time = f'21/11/06 {wake_hour}:{wake_minute}'
+
+            wake_time =f'21/11/06 {wake_hour}:{wake_minute}'
             sleep_time = f'21/11/06 {sleep_hour}:{sleep_minute}'
-            pattern = "%d/%m/%y %H:%M"
+            pattern = '%d/%m/%y %H:%M'
+
             difference = (
                 datetime.datetime.strptime(wake_time, pattern)
-            - datetime.datetime.strptime(sleep_time, pattern)
+              - datetime.datetime.strptime(sleep_time, pattern)
             )
+
             try:
                 self.assertEqual(
                     sleep_duration.duration(wake_time, sleep_time),
@@ -185,6 +189,7 @@ Here is the code in ``tests/test_sleep_duration.py``
     # AttributeError
     # TypeError
     # SyntaxError
+    # ValueError
 
 **********
 solution
@@ -198,7 +203,7 @@ Here is the solution in ``sleep_duration.py``
 
     def get_datetime_object(timestamp):
         return datetime.datetime.strptime(
-            timestamp, "%d/%m/%y %H:%M"
+            timestamp, '%d/%m/%y %H:%M'
         )
 
     def duration(wake_time=None, sleep_time=None):

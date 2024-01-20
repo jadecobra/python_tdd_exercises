@@ -380,14 +380,14 @@ Can I create a Dictionary with a list as a key?
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add a test to ``TestDictionaries`` using a :doc:`list </data_structures/lists>` as a key
+I add a test to ``TestDictionaries`` using a :doc:`list </data_structures/lists/lists>` as a key
 
 .. code-block:: python
 
   def test_creating_dictionaries_with_lists_as_keys(self):
       {[1, 2]: "BOOM"}
 
-the terminal shows a :doc:`/exceptions/TypeError` because only `hashable <https://docs.python.org/3/glossary.html#term-hashable>`_ types can be used as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys and :doc:`lists </data_structures/lists>` are not `hashable <https://docs.python.org/3/glossary.html#term-hashable>`_
+the terminal shows a :doc:`/exceptions/TypeError` because only `hashable <https://docs.python.org/3/glossary.html#term-hashable>`_ types can be used as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys and :doc:`lists </data_structures/lists/lists>` are not `hashable <https://docs.python.org/3/glossary.html#term-hashable>`_
 
 .. code-block::
 
@@ -405,7 +405,7 @@ I add :doc:`/exceptions/TypeError` to the list of exceptions encountered
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I can use ``self.assertRaises`` to confirm that an error is raised by some code without having it crash the tests. I will use it here to confirm that Python raises a :doc:`/exceptions/TypeError` when I try to create a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a :doc:`list </data_structures/lists>` as the key
+I can use ``self.assertRaises`` to confirm that an error is raised by some code without having it crash the tests. I will use it here to confirm that Python raises a :doc:`/exceptions/TypeError` when I try to create a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a :doc:`list </data_structures/lists/lists>` as the key
 
 .. code-block:: python
 
@@ -415,7 +415,7 @@ I can use ``self.assertRaises`` to confirm that an error is raised by some code 
 
 see :doc:`/how_to/exception_handling_tests` for more details on why that worked.
 
-From the test I see that I cannot create a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a :doc:`list </data_structures/lists>` as a key
+From the test I see that I cannot create a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a :doc:`list </data_structures/lists/lists>` as a key
 
 ----
 
@@ -449,7 +449,7 @@ I use ``self.assertRaises`` to handle the exception
       with self.assertRaises(TypeError):
           {{1, 2}: "BOOM"}
 
-Tests are green again. I cannot use a `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ or a :doc:`list </data_structures/lists>` as a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ key
+Tests are green again. I cannot use a `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ or a :doc:`list </data_structures/lists/lists>` as a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ key
 
 ----
 
@@ -486,7 +486,7 @@ I add an exception handler to the test to confirm the findings
         with self.assertRaises(TypeError):
             {a_dictionary: "BOOM"}
 
-and the terminal shows passing tests. I cannot use a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_, `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ or a :doc:`list </data_structures/lists>` as a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ key
+and the terminal shows passing tests. I cannot use a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_, `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ or a :doc:`list </data_structures/lists/lists>` as a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ key
 
 ----
 
@@ -542,7 +542,7 @@ I change the expected value to make the tests pass
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-* I can also display all the values of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ as a :doc:`list </data_structures/lists>` without the keys
+* I can also display all the values of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ as a :doc:`list </data_structures/lists/lists>` without the keys
 
   .. code-block:: python
 
@@ -584,7 +584,7 @@ REFACTOR: make it better
             ]
         )
 
-* I can also display the keys of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ as a :doc:`list </data_structures/lists>`
+* I can also display the keys of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ as a :doc:`list </data_structures/lists/lists>`
 
   .. code-block:: python
 

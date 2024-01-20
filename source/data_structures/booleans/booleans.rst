@@ -147,7 +147,7 @@ I want to know if any of the other Python data types are `False <https://docs.py
 * is a `float <https://docs.python.org/3/library/functions.html#float>`_ `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_?
 * is a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_?
 * is a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_?
-* is a :doc:`list </data_structures/lists>` `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_?
+* is a :doc:`list </data_structures/lists/lists>` `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_?
 * is a `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_?
 * is a :doc:`dictionary </data_structures/dictionaries>` `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_?
 
@@ -631,7 +631,7 @@ is a list False or True?
 RED: make it fail
 ==================
 
-I add a line to test if a :doc:`list </data_structures/lists>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
+I add a line to test if a :doc:`list </data_structures/lists/lists>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
 
 .. code-block:: python
 
@@ -652,7 +652,7 @@ the terminal shows an :doc:`/exceptions/AssertionError`
 
   AssertionError: [] is not true
 
-:doc:`lists </data_structures/lists>` are represented with ``[]`` in Python
+:doc:`lists </data_structures/lists/lists>` are represented with ``[]`` in Python
 
 GREEN: make it pass
 ====================
@@ -676,7 +676,7 @@ and the terminal shows passing tests
 REFACTOR: make it better
 =========================
 
-* I add a line to test if a :doc:`list </data_structures/lists>`  with things is also `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* I add a line to test if a :doc:`list </data_structures/lists/lists>`  with things is also `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 
   .. code-block:: python
 
@@ -706,14 +706,14 @@ REFACTOR: make it better
 
 From the tests I see that
 
-* a :doc:`list </data_structures/lists>` with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
+* a :doc:`list </data_structures/lists/lists>` with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
 * a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
 * a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
 * Positive and Negative `floats <https://docs.python.org/3/library/functions.html#float>`_ are `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
 * Positive and Negative `integers <https://docs.python.org/3/library/functions.html#int>`_ are `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
 * `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
 * `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
-* an empty :doc:`list </data_structures/lists>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* an empty :doc:`list </data_structures/lists/lists>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * ``0.0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
@@ -797,7 +797,7 @@ REFACTOR: make it better
 From the tests I see that
 
 * a `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* a :doc:`list </data_structures/lists>` with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
+* a :doc:`list </data_structures/lists/lists>` with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
 * a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
 * a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
 * Positive and Negative `floats <https://docs.python.org/3/library/functions.html#float>`_ are `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
@@ -805,7 +805,7 @@ From the tests I see that
 * `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
 * `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
 * an empty `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* an empty :doc:`list </data_structures/lists>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* an empty :doc:`list </data_structures/lists/lists>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * ``0.0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
@@ -904,7 +904,7 @@ From the tests I see that
 
 * a :doc:`dictionary </data_structures/dictionaries>` with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
 * a `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* a :doc:`list </data_structures/lists>` with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
+* a :doc:`list </data_structures/lists/lists>` with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
 * a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
 * a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
 * Positive and Negative `floats <https://docs.python.org/3/library/functions.html#float>`_ are `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
@@ -913,7 +913,7 @@ From the tests I see that
 * `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
 * an empty :doc:`dictionary </data_structures/dictionaries>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * an empty `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* an empty :doc:`list </data_structures/lists>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* an empty :doc:`list </data_structures/lists/lists>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * ``0.0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
