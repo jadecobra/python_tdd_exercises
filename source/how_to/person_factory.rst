@@ -177,7 +177,7 @@ REFACTOR: make it better
     import unittest
 
   ``import datetime`` imports the ``datetime`` library so I can use its :doc:`/functions/functions` and :doc:`classes </classes/classes>`
-* then I add a call in the ``this_year`` :doc:`function <functions/functions>` in ``test_person.py`` to return the current year
+* then I add a call in the ``this_year`` :doc:`function  </functions/functions>` in ``test_person.py`` to return the current year
 
   .. code-block:: python
 

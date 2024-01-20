@@ -43,7 +43,6 @@ My recommendation is to
 * try to write the solutions using only the tests for a chapter from the :ref:`tests and solutions` sections
 * try adding tests for any ideas you get as you go through a chapter
 
-
 *******
 HOWTOs
 *******

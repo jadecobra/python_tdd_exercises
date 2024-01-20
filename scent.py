@@ -5,13 +5,7 @@ import os
 
 @sniffer.api.file_validator
 def rst_files(filename):
-    return filename.endswith(".rst") and not os.path.basename(filename).startswith(".")
-
-
-@sniffer.api.file_validator
-def py_files(filename):
-    return filename.endswith(".py") and not os.path.basename(filename).startswith(".")
-
+    return (filename.endswith(".rst") or filename.endswith('.py')) # and not os.path.basename(filename).startswith(".")
 
 @sniffer.api.runnable
 def run_tests(*args):

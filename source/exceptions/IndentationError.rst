@@ -130,11 +130,10 @@ GREEN: make it pass
 Solve the IndentationError in Classes
 -------------------------------------
 
-add more tests, this time to raise indentation errors for :doc:`Class` definitions *noting the difference in spacing*
+add more tests, this time to raise indentation errors for :doc:`Classes </classes/classes>` definitions *noting the difference in spacing*
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
-
 
 *
   change ``test_indentation_error.py``
@@ -180,7 +179,7 @@ RED: make it fail
 ^^^^^^^^^^^^^^^^^
 
 
-* building on the previous tests, add failing tests for :doc:`methods`\ , to ``test_indentation_error.py``
+* building on the previous tests, add failing tests for :doc:`methods </functions/functions>` , to ``test_indentation_error.py``
 
   .. code-block:: python
 

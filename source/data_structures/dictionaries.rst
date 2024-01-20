@@ -500,7 +500,7 @@ from these tests I know that I can create `dictionaries <https://docs.python.org
 
 and I cannot create `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with the following data structures as keys
 
-* :doc:`lists <lists>`
+* :doc:`lists </data_structures/lists/lists>`
 * `sets <https://docs.python.org/3/tutorial/datastructures.html#sets>`_
 * `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 

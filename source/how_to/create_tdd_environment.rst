@@ -153,10 +153,10 @@ RED: make it fail
     * `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is the python keyword for creating :doc:`/functions/functions`
     * ``test_failure`` is the name of the :doc:`function </functions/functions>`
     * ``self`` is the ``TestProjectName`` class. I can use ``self`` to access :doc:`methods (functions) </functions/functions>` and ``attributes`` within the ``TestProjectName`` class, this avoids having to type ``TestProjectName().assertFalse(True)`` to access the ``assertFalse`` :doc:`method </functions/functions>`
-    * ``self.assertFalse(True)`` is the actual test. I expect this line to fail because :doc:`True </data_structures/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
+    * ``self.assertFalse(True)`` is the actual test. I expect this line to fail because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
 
       - ``assertFalse`` is a :doc:`method </functions/functions>` in the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class which checks if its input is :doc:`False </data_structures/booleans/booleans>`
-      - :doc:`True </data_structures/booleans>` is given as input to ``assertFalse``
+      - :doc:`True </data_structures/booleans/booleans>` is given as input to ``assertFalse``
 
 * I save the file and turn on the ``Auto Save`` feature in the Interactive Development Environment (IDE) to automatically save a file when I make a change
 * I type this in the terminal to test the code ::
@@ -189,7 +189,7 @@ This is the ``RED`` part of the Test Driven Development cycle. The error in the 
 * ``self.assertFalse(True)`` is the line of code that caused the failure
 
   - ``assertFalse`` is a :doc:`method </functions/functions>` in the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`class </classes/classes>` which checks if its input is :doc:`False </data_structures/booleans/booleans>`
-  - :doc:`True </data_structures/booleans>` is given as input to ``assertFalse`` and the statement raises an :doc:`/exceptions/AssertionError` because :doc:`True </data_structures/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
+  - :doc:`True </data_structures/booleans/booleans>` is given as input to ``assertFalse`` and the statement raises an :doc:`/exceptions/AssertionError` because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
 
 * ``File ".../project_name/tests/test_project_name.py", line 7, in test_failure`` is the line number and location of the file where the :doc:`/exceptions/AssertionError` occurred.
 
@@ -505,4 +505,4 @@ To see a project where you actually create a program using Test Driven Developme
 
 ----
 
-:doc:`/code/code_create_tdd_environment`
+:doc:`/code/create_tdd/code_create_tdd_environment`

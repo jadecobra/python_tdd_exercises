@@ -103,7 +103,7 @@ REFACTOR: make it better
   - Inside the first condition I add another condition for when the value of ``q`` is equal to :doc:`True </data_structures/booleans/booleans>`
   - when both conditions are met, the ``logical_conjunction`` function returns :doc:`True </data_structures/booleans/booleans>`. What does it return when those two conditions are not met?
 
-* I know from :doc:`/functions/functions` that a function returns :doc:`None </data_structures/none>` by default so it must be returning :doc:`None </data_structures/none>` for the other cases. This means :doc:`None </data_structures/none>` is :doc:`False </data_structures/booleans/booleans>` as seen in :doc:`/booleans`
+* I know from :doc:`/functions/functions` that a function returns :doc:`None </data_structures/none>` by default so it must be returning :doc:`None </data_structures/none>` for the other cases. This means :doc:`None </data_structures/none>` is :doc:`False </data_structures/booleans/booleans>` as seen in :doc:`/data_structures/booleans/booleans`
 * I can add a test as a reminder
 
   .. code-block:: python

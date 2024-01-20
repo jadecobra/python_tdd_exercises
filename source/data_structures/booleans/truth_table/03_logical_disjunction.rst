@@ -80,7 +80,7 @@ REFACTOR: make it better
             return False
         return True
 
-* I can also express the ``if`` statement with the ``not`` keyword like I did with ``logical_negation`` to express the opposite of a :doc:`boolean </data_structures/booleans>`
+* I can also express the ``if`` statement with the ``not`` keyword like I did with ``logical_negation`` to express the opposite of a :doc:`boolean </data_structures/booleans/booleans>`
 
   .. code-block:: python
 
