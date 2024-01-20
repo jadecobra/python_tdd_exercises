@@ -565,14 +565,12 @@ GREEN : make it pass
       >    return x / y
       E    ZeroDivisionError: division by zero
 
-* I add `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ to the list of exceptions encountered
-
-  .. code-block:: python
+* I add `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ to the list of exceptions encountered ::
 
     # Exceptions Encountered
     # AssertionError
-    # AttributeError
     # NameError
+    # AttributeError
     # TypeError
     # ZeroDivisionError
 
