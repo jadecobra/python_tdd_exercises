@@ -13,9 +13,9 @@ I recommend reading `Kent Beck’s <https://en.wikipedia.org/wiki/Kent_Beck>`_ `
 
 This chapter covers one way to create a Python Test Driven Development environment
 
-***************
-Requirements
-***************
+*********************
+General Requirements
+*********************
 
 * download and install `Python <https://www.python.org/downloads/>`_
 * An Interactive Development Environment (IDE). Here are a few options
@@ -30,7 +30,7 @@ Requirements
 Windows Requirements
 *********************
 
-If the operating system of your computer is Windows setup `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
+If the operating system of your computer is Windows, setup `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
 
 * click ``start``
 * type ``PowerShell`` and click to open a terminal
@@ -83,7 +83,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
         touch project_name.py
 
   - tests will be stored in the ``tests`` folder to separate them from the source code (the actual program)
-  - I create an empty file called ``__init__.py`` in the ``tests`` folder to tell python that the ``tests`` folder is a python `package <https://docs.python.org/3/glossary.html#term-regular-package>`_
+  - I create an empty file called ``__init__.py`` in the ``tests`` folder to tell Python that the ``tests`` folder is a python `package <https://docs.python.org/3/glossary.html#term-regular-package>`_
 
     .. code-block:: shell
 
@@ -107,7 +107,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
       |  ╰──test_project_name.py
       ╰──project_name.py
 
-.. tip:: ``project_name`` is a placeholder for the name of the project. For example to create a project called ``calculator`` I would replace ``project_name`` with ``calculator``
+.. tip:: ``project_name`` is a placeholder for the name of the project. For example to create a project called ``magic``, I would replace ``project_name`` with ``magic``
 
 ----
 
@@ -122,8 +122,6 @@ RED: make it fail
 ******************
 
 * I open up ``project_name/tests/test_project_name.py`` in the Interactive Development Environment (IDE) and type the following
-
-    .. note::
 
     the line numbers below are a guide, you do not need to copy them
 
@@ -449,8 +447,6 @@ You made it this far and have become the greatest programmer in the world. Follo
 
 * I use the `cat <https://www.man7.org/linux/man-pages/man1/cat.1.html>`_ program to add text for the failure test in ``test_$PROJECT_NAME.py``
 
-  .. note::
-
     the line numbers below are a guide, you do not need to copy them
 
   .. literalinclude:: /code/create_tdd/createPythonTdd.sh
@@ -481,15 +477,14 @@ How to automatically create a Test Driven Development Environment on Windows wit
 
 * I open the file in the Interactive Development Editor and add the following code
 
-  .. note::
-
     the line numbers below are a guide, you do not need to copy them
 
   .. literalinclude:: /code/create_tdd/createPythonTdd.ps1
     :linenos:
     :language: PowerShell
 
-* I can now create a Test Driven Development environment on demand by giving a name for the ``PROJECT_NAME`` variable when the program is called. For example, typing this command in the terminal in the folder where ``createPythonTdd.sh`` is saved will create a Test Driven Development environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator` ::
+
+* I can create a Test Driven Development environment on demand by giving a name for the ``PROJECT_NAME`` variable when the program is called. For example, typing this command in the terminal in the folder where ``createPythonTdd.ps1`` is saved will create a Test Driven Development environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator` ::
 
     ./createPythonTdd.ps1 calculator
 

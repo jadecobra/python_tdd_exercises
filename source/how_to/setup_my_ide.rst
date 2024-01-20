@@ -44,7 +44,7 @@ I split my screen in the following ways depending on the use case
         :width: 600
         :alt: Terminal Window at the bottom
 
-    - to the right - when the results I am looking at in the terminal are too long to see at once, I move it to the right of the screen
+    - to the right - when the results I am looking at in the terminal are too long to see at once in the bottom
 
       .. image:: /_static/setup_my_ide/terminal_on_right.png
         :width: 600
@@ -62,6 +62,6 @@ Visual Studio Extensions
 Here are extensions I use to customize `Visual Studio Code <https://code.visualstudio.com/download>`_
 
 * `Dark Rainbow Theme <https://marketplace.visualstudio.com/items?itemName=DarkRainbow.darkrainbow>`_ - I like pretty colors
-* `indent-rainbow <https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow>`_ - did I mention I love for pretty colors?
+* `indent-rainbow <https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow>`_ - did I mention I like pretty colors?
 * `Python <https://marketplace.visualstudio.com/items?itemName=ms-python.python>`_ - python helper
 * `Black Formatter <https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter>`_ - code formatter

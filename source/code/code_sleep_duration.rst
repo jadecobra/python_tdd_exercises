@@ -1,6 +1,6 @@
 
 ##################################################
-How to measure Sleep Duration: Tests and Solution
+How to measure sleep duration: Tests and Solution
 ##################################################
 
 **********
