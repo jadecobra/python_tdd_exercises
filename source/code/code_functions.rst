@@ -9,7 +9,7 @@ tests
 
 Here is the code in ``tests/test_functions.py``
 
-.. code-block:: python
+.. literalinclude:: tests/test_functions.py
 
 **********
 solutions
@@ -17,4 +17,4 @@ solutions
 
 Here are the solutions in ``functions.py``
 
-.. code-block:: python
+.. literalinclude:: solutions/functions.py

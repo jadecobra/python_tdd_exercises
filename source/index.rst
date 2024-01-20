@@ -105,6 +105,7 @@ Table of Contents
   data_structures/dictionaries
 
 .. _tests and solutions
+
 *********************
 tests and solutions
 *********************
