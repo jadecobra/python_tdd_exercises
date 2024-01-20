@@ -59,7 +59,6 @@ HOWTOs
   how_to/exception_handling_tests
   how_to/exception_handling_programs
   how_to/sleep_duration
-  learning_models
 
 ******************
 Table of Contents

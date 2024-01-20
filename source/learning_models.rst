@@ -17,8 +17,8 @@ add a file called ``test_learning_models.py`` to the ``tests`` folder with the f
 
 .. code-block:: python
 
-  import unittest
   import learning
+  import unittest
 
 
   class TestInfiniteLearningModel(unittest.TestCase):
