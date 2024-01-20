@@ -299,10 +299,10 @@ How to create a Virtual Environment
   - ``python3`` is the major version of python being used
   - ``-m`` is an option passed to python to call the module given after the option
   - `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ is a module from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_ for creating `virtual environments <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ when given a name
-  - a `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ with the `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ is a separate folder for dependencies of the project
-  - ``.venv`` is the standard name for `virtual environments <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ with the `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ in Python, you can use any name you like
+  - a `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ is a separate folder for dependencies of the project
+  - ``.venv`` is the standard name for `virtual environments <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ in Python, you can use any name you like
 
-* I activate the `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ with the `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ to use it ::
+* I activate the `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ to use it ::
 
       source .venv/bin/activate
 
