@@ -189,7 +189,7 @@ and the terminal shows passing tests
 REFACTOR: make it better
 =========================
 
-I move the line to the ``test_what_is_false`` :doc:`method`
+I move the line to the ``test_what_is_false`` :doc:`method </functions/functions>`
 
 .. code-block:: python
 

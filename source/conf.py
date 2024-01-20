@@ -19,7 +19,7 @@ extensions = ['sphinx.ext.autosectionlabel']
 
 epub_theme = 'epub'
 epub_description = 'Pumping Python: How to solve problems with Test Driven Development'
-epub_cover = ('_static/DRY.png')
+epub_cover = ('_static/DRY.png', '')
 
 latex_logo = '_static/DRY.png'
 latex_show_pagerefs = True
@@ -28,4 +28,6 @@ latex_them = 'howto' # 'manual'
 
 text_sectionchars = '#*=-~"+`'
 
-pygments_style = 'sphinx'
+# pygments_style = "sphinx"
+# pygments_style = "monokai"
+pygments_style = "one-dark"

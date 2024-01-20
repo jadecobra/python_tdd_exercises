@@ -18,7 +18,7 @@ I split my screen in the following ways depending on the use case
 
 - When using a reference I like to have it on the left and the Interactive Development Environment on the right. Try different layouts to see what is best for you.
 
-  .. image:: _static/setup_my_ide/reference_on_left.png
+  .. image:: /_static/setup_my_ide/reference_on_left.png
     :width: 600
     :alt: Reference on the left
 
@@ -26,13 +26,13 @@ I split my screen in the following ways depending on the use case
 
   * explorer - to see files/folder structure
 
-    .. image:: _static/setup_my_ide/explorer_w_editors.png
+    .. image:: /_static/setup_my_ide/explorer_w_editors.png
       :width: 600
       :alt: Explorer with Editors
 
   * editors side by side - one for tests, one for source code
 
-    .. image:: _static/setup_my_ide/2_editors.png
+    .. image:: /_static/setup_my_ide/2_editors.png
       :width: 600
       :alt: Editors side by side
 
@@ -40,13 +40,13 @@ I split my screen in the following ways depending on the use case
 
     - at the bottom - for most cases
 
-      .. image:: _static/setup_my_ide/terminal_on_bottom.png
+      .. image:: /_static/setup_my_ide/terminal_on_bottom.png
         :width: 600
         :alt: Terminal Window at the bottom
 
     - to the right - when the results I am looking at in the terminal are too long to see at once, I move it to the right of the screen
 
-      .. image:: _static/setup_my_ide/terminal_on_right.png
+      .. image:: /_static/setup_my_ide/terminal_on_right.png
         :width: 600
         :alt: Terminal Window on the right
 
