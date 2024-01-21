@@ -76,14 +76,14 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
     replace ``touch`` with ``New-Item``
 
-  - I use it to create an empty file called ``project_name.py`` to hold the source code for the program
+  - I create an empty file called ``project_name.py`` to hold the source code for the program
 
     .. code-block:: shell
 
         touch project_name.py
 
   - tests will be stored in the ``tests`` folder to separate them from the source code (the actual program)
-  - I create an empty file called ``__init__.py`` in the ``tests`` folder to tell Python that the ``tests`` folder is a python `package <https://docs.python.org/3/glossary.html#term-regular-package>`_
+  - I create another empty file called ``__init__.py`` in the ``tests`` folder to tell Python that the ``tests`` folder is a python `package <https://docs.python.org/3/glossary.html#term-regular-package>`_
 
     .. code-block:: shell
 
@@ -138,14 +138,10 @@ RED: make it fail
 
   Here is an explanation of the code above
 
-  - ``import unittest`` imports the `unittest <https://docs.python.org/3/library/unittest.html>`_ module
-  - `unittest <https://docs.python.org/3/library/unittest.html>`_ is a module from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_ used for testing
-  - ``TestProjectName`` is a :doc:`class </classes/classes>` that will hold tests
-
-    * `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is the python keyword for creating :doc:`/classes/classes`
-
-  - `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ is a :doc:`class </classes/classes>` defined in the `unittest <https://docs.python.org/3/library/unittest.html>`_ module which contains :doc:`methods (functions) </functions/functions>` for testing.
-  - ``TestProjectName`` inherits from `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_. A simple way to think of inheritance is that ``TestProjectName`` is a child of `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ and can do the same things it can
+  - ``import unittest`` imports the `unittest <https://docs.python.org/3/library/unittest.html>`_ module, which is a module from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_ used for testing
+  - ``TestProjectName`` is a :doc:`class </classes/classes>` that will hold tests. `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is the python keyword for creating :doc:`/classes/classes`
+  - `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ is a :doc:`class </classes/classes>` defined in the `unittest <https://docs.python.org/3/library/unittest.html>`_ module which contains :doc:`methods (functions) </functions/functions>` for testing
+  - ``TestProjectName`` inherits from `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_. A simple way to think of inheritance is that ``TestProjectName`` is a child of `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ and can do the same things `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ can
   - ``def test_failure`` is the definition of a test :doc:`method </functions/functions>` to test the program I am creating
 
     * `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is the python keyword for creating :doc:`/functions/functions`
@@ -153,10 +149,10 @@ RED: make it fail
     * ``self`` is the ``TestProjectName`` class. I can use ``self`` to access :doc:`methods (functions) </functions/functions>` and ``attributes`` within the ``TestProjectName`` class, this avoids having to type ``TestProjectName().assertFalse(True)`` to access the ``assertFalse`` :doc:`method </functions/functions>`
     * ``self.assertFalse(True)`` is the actual test. I expect this line to fail because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
 
-      - ``assertFalse`` is a :doc:`method </functions/functions>` in the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class which checks if its input is :doc:`False </data_structures/booleans/booleans>`
+      - `assertFalse <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse>`_ is a :doc:`method </functions/functions>` in the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class which checks if its input is :doc:`False </data_structures/booleans/booleans>` and raises an :doc:`/exceptions/AssertionError` when the input is not :doc:`False </data_structures/booleans/booleans>`
       - :doc:`True </data_structures/booleans/booleans>` is given as input to ``assertFalse``
 
-* I save the file and turn on the ``Auto Save`` feature in the Interactive Development Environment (IDE) to automatically save a file when I make a change
+* I save the file and turn on the ``Auto Save`` feature in the Interactive Development Environment (IDE) to automatically save when I make a change
 * I type this in the terminal to test the code ::
 
     python3 -m unittest
@@ -229,7 +225,7 @@ GREEN: make it pass
     # Exceptions Encountered
     # AssertionError
 
-* When I change the input on line 7 to :doc:`False </data_structures/booleans/booleans>`
+* I change the input on line 7 to :doc:`False </data_structures/booleans/booleans>`
 
   .. code-block:: python
 
@@ -241,7 +237,7 @@ GREEN: make it pass
 
     python3 -m unittest
 
-  the terminal shows a passing test
+  and the terminal shows a passing test
 
   .. code-block:: python
 
@@ -365,7 +361,7 @@ How to create a Virtual Environment
 
     =============== 1 passed in 0.00s =======================
 
-* I change the input on line 7 in ``test_project_name.py`` to :doc:`True </data_structures/booleans/booleans>` to make it fail and back to :doc:`False </data_structures/booleans/booleans>` to make it pass and the terminal responds to each change
+* I change the input on line 7 in ``test_project_name.py`` to :doc:`True </data_structures/booleans/booleans>` to make it fail and back to :doc:`False </data_structures/booleans/booleans>` to make it pass with the terminal responding to each change
 * I can press ``ctrl`` + ``c`` on the keyboard in the terminal to stop the tests at anytime
 
 How to Deactivate a Virtual Environment
@@ -445,7 +441,7 @@ You made it this far and have become the greatest programmer in the world. Follo
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-* I use the `cat <https://www.man7.org/linux/man-pages/man1/cat.1.html>`_ program to add text for the failure test in ``test_$PROJECT_NAME.py``
+* I use the `cat <https://www.man7.org/linux/man-pages/man1/cat.1.html>`_ program to add text for the first failing test in ``test_$PROJECT_NAME.py``
 
     the line numbers below are a guide, you do not need to copy them
 

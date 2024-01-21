@@ -15,7 +15,7 @@ Who is this book for?
 **********************
 
 * If you just started your journey, CONGRATULATIONS! You chose Python from the many available `programming languages <https://en.wikipedia.org/wiki/Programming_language>`_, Celebrate it, this book is for you
-* If you are new to Test Driven Development in Python, this book is for you
+* If you are new to `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ in Python, this book is for you
 * If you are interested in Python, this book is for you
 * If you use Python but do not know any of the errors below, this book is for you
 
@@ -40,7 +40,7 @@ My recommendation is to
 * type out the code portions as you go through any chapter - do not copy and paste
 * repeat a chapter you like until you can do it from memory
 * try recreating the tests from memory or write new tests for a concept you are working on
-* try to write the solutions using only the tests for a chapter from the :ref:`tests and solutions` sections
+* try to write solutions with only the tests from the :ref:`tests and solutions` sections
 * try adding tests for any ideas you get as you go through a chapter
 
 *******

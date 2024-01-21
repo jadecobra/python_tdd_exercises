@@ -4,6 +4,7 @@ Set-Location $projectName
 
 New-Item "$projectName.py"
 New-Item tests/__init__.py
+
 $testSetup = @"
 import unittest
 
