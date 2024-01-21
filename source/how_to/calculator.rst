@@ -7,7 +7,7 @@ How to create a Calculator
 
   <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0gVgMoed3zI?si=FQR1fMtJzElXcQ5n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-In this chapter I create a basic calculator that performs addition, subtraction, division and multiplication
+In this chapter I create a basic calculator that performs addition, subtraction, multiplication and division
 
 ****************
 Prerequisites
@@ -22,26 +22,26 @@ Prerequisites
 Add Tests
 ****************
 
-I add a TODO list to ``test_calculator.py`` to keep track of requirements for the calculator
-
-.. code-block:: python
-
-  import unittest
-
-
-  class TestCalculator(unittest.TestCase):
-
-      def test_failure(self):
-          self.assertTrue(True)
-
-  # TODO
-  # test addition
-  # test subtraction
-  # test multiplication
-  # test division
+* I add :doc:`/exceptions/AssertionError` to the list of exceptions encountered ::
 
   # Exceptions Encountered
   # AssertionError
+
+* then add a TODO list to ``test_calculator.py`` to keep track of requirements for the calculator
+
+  .. code-block:: python
+
+        def test_failure(self):
+            self.assertFalse(False)
+
+    # TODO
+    # test addition
+    # test subtraction
+    # test multiplication
+    # test division
+
+    # Exceptions Encountered
+    # AssertionError
 
 ****************
 Test Addition
@@ -67,15 +67,6 @@ RED: make it fail
                 calculator.add(0, 1),
                 1
             )
-
-    # TODO
-    # test addition
-    # test subtraction
-    # test multiplication
-    # test division
-
-    # Exceptions Encountered
-    # AssertionError
 
 
   - I use the `unittest.TestCase.assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ :doc:`method </functions/functions>` which checks if its 2 inputs are equal. It is similar to the statement ``assert x == y`` or asking ``is x equal to y?``
@@ -161,7 +152,7 @@ GREEN: make it pass
     # AttributeError
     # TypeError
 
-* I have to define ``add`` as a :doc:`function </functions/functions>` or a :doc:`class </classes/classes>` to make it callable. I know the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword is used for creating :doc:`/functions/functions` and will test changing the ``add`` variable to a :doc:`function </functions/functions>` in ``calculator.py``
+* I have to define ``add`` as a :doc:`function </functions/functions>` or :doc:`class </classes/classes>` to make it callable. I know the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword is used for creating :doc:`/functions/functions` and will test changing the ``add`` variable to a :doc:`function </functions/functions>` in ``calculator.py``
 
   .. code-block:: python
 
@@ -174,7 +165,7 @@ GREEN: make it pass
 
     TypeError: add() takes 0 positional arguments but 2 were given
 
-* This :doc:`/exceptions/TypeError` shows that the current definition of the ``add`` function takes in 0 inputs, but I provided 2 - ``calculator.add(0, 1)`` in the call. Part of the requirement is that the ``add`` function should take in two numbers so I change the definition in ``calculator.py`` to make it match
+* This :doc:`/exceptions/TypeError` shows that the current definition of the ``add`` function takes in 0 inputs, but I provided 2 - ``calculator.add(0, 1)`` in the call. I change the definition in ``calculator.py`` to make it match the requirement of the ``add`` function taking in two numbers
 
   .. code-block:: python
 
@@ -213,11 +204,9 @@ Wait a minute. Is it that easy? Do I just provide the expectation of the test to
 
 Solving the problem this way shows a problem with the test, which means I need to "Make it Better"
 
-There are a few scenarios to consider from a user's perspective
-
-* If a user tries to add other numbers that are not ``0`` and ``1``, the function will return ``1``
-* If a user tries to add negative numbers, the function wil return ``1``
-* The function will return ``1`` no matter what inputs the user gives. It is a :doc:`singleton function </functions/functions_singleton>`
+* If a user tries to add other numbers that are not ``0`` and ``1``, the ``add`` function will return ``1``
+* If a user tries to add negative numbers, the ``add`` function wil return ``1``
+* The ``add`` function will return ``1`` no matter what inputs the user gives. It is a :doc:`singleton function </functions/functions_singleton>`
 
 Even though the ``add`` function currently passes the existing test it does not meet the actual requirement.
 
@@ -274,7 +263,7 @@ Even though the ``add`` function currently passes the existing test it does not 
 
 * REFACTOR: make it better
 
-  - I import python's `random <https://docs.python.org/3/library/random.html?highlight=random#module-random>`_ library to generate random integers from -1 and 1 to represent negative numbers, zero and positive numbers that I use to test that the function behaves the way I expect for any given numbers
+  - I import python's `random <https://docs.python.org/3/library/random.html?highlight=random#module-random>`_ library to generate random integers to test that the function behaves the way I expect for any given numbers
 
     .. code-block:: python
 
@@ -283,7 +272,7 @@ Even though the ``add`` function currently passes the existing test it does not 
       import unittest
 
 
-  - then assign a random integer to the x and y variables and change the test to use these variables
+  - then I assign a random integer to the x and y variables and change the test to use these variables
 
     .. code-block:: python
 
@@ -461,7 +450,7 @@ REFACTOR: make it better
             )
 
   - all tests are still passing, so my change did not break anything. Fantastic!
-  - The ``x`` and ``y`` variables are initialized once as :doc:`class </classes/classes>` attributes (variables) and accessed later in every test using ``self.x`` and ``self.y`` the same way I can call `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`methods </functions/functions>` like `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ by using ``self.assertEqual``
+  - The ``x`` and ``y`` variables are initialized once as :doc:`class </classes/classes>` attributes (variables) and accessed later in every test using ``self.x`` and ``self.y``, the same way I can call `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`methods </functions/functions>` like `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ by using ``self.assertEqual``
 
 
 ----
@@ -581,7 +570,7 @@ How to Test for Errors
 RED: make it fail
 ===================
 
-I add a failing line to ``test_calculator.py`` that causes a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ by explicitly dividing by 0. I also comment out the previous test that sometimes fails to remove the variability of the test while I figure out the error
+I add a failing line to ``test_calculator.py`` that causes a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ by explicitly dividing by 0, and comment out test that sometimes fails to remove the variability of the test while I figure out the error
 
 .. code-block:: python
 
@@ -649,7 +638,7 @@ I can use a while loop for the other cases when the divisor is not ``0`` by maki
 
 ----
 
-CONGRATULATIONS! You made it through writing a program that can perform the 4 basic arithmetic operations of addition, subtraction, division and multiplication using Test Driven Development.
+CONGRATULATIONS! You made it through writing a program that can perform the 4 basic arithmetic operations of addition, subtraction, multiplication and division using Test Driven Development.
 
 You also encountered the following exceptions
 
@@ -659,7 +648,7 @@ You also encountered the following exceptions
 * :doc:`/exceptions/TypeError`
 * `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_
 
-What would you like to do next?
+Would you like to learn :doc:`/how_to/person_factory`?
 
 ----
 

@@ -8,10 +8,11 @@ New-Item tests/__init__.py
 $testSetup = @"
 import unittest
 
+
 class Test$($projectName)(unittest.TestCase):
 
     def test_failure(self):
-        self.assertTrue(False)
+        self.assertFalse(True)
 "@
 $testSetup |  Out-File $("tests/test_$($projectName).py") -Encoding UTF8
 
