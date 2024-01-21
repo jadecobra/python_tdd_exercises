@@ -648,7 +648,7 @@ You also encountered the following exceptions
 * :doc:`/exceptions/TypeError`
 * `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_
 
-Would you like to learn :doc:`/how_to/person_factory`?
+Would you like to learn :doc:`/how_to/pass_values`?
 
 ----
 

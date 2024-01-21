@@ -53,8 +53,8 @@ HOWTOs
   how_to/setup_my_ide
   how_to/create_tdd_environment
   how_to/calculator
-  how_to/passing_values
-  how_to/person_factory
+  how_to/pass_values
+  how_to/create_person
   how_to/exception_handling_tests
   how_to/exception_handling_programs
   how_to/sleep_duration
