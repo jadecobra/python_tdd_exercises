@@ -47,7 +47,7 @@ this chapter goes over how to pass values from tests to programs using `Formatte
 Prerequisites
 ****************
 
-:doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>`
+:doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` with ``telephone`` as the project name
 
 ----
 
@@ -55,69 +55,49 @@ Prerequisites
 RED: make it fail
 *******************
 
-I create a file called ``test_passing_values.py`` in the ``tests`` folder with the following text
+I add a test to ``test_telephone.py``
 
 .. code-block:: python
 
-  import unittest
-  import telephone
+  class TestTelephone(unittest.TestCase):
 
-the terminal shows a :doc:`/exceptions/ModuleNotFoundError`
+      def test_failure(self):
+          self.assertFalse(True)
+
+      def test_text_messages(self):
+          self.assertEqual(
+              telephone.text('hello'),
+              'I received this message: hello'
+          )
+
+and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
 .. code-block:: python
 
-  ModuleNotFoundError: No module named 'telephone'
+  NameError: name 'telephone' is not defined
 
-I add it to the list of exceptions encountered
+which I add to the list of exceptions
 
 .. code-block:: python
 
   # Exceptions Encountered
   # AssertionError
-  # ModuleNotFoundError
+  # NameError
 
 **********************
 GREEN: make it pass
 **********************
 
-- I create a file called ``telephone.py`` in the project folder then add a test to ``test_passing_values.py``
+* I remove ``test_failure`` then add an import statement for the ``telephone`` module
 
   .. code-block:: python
 
-    class TestPassingValues(unittest.TestCase):
+    import telephone
+    import unittest
 
-        def test_text_messages(self):
-            self.assertEqual(
-                telephone.text('hello'),
-                'I received this message: hello'
-            )
-
-  and the terminal shows an :doc:`/exceptions/AttributeError`
-
-  .. code-block:: python
+  the terminal shows an :doc:`/exceptions/AttributeError` ::
 
     AttributeError: module 'telephone' has no attribute 'text'
-
-- which I add to the list of exceptions
-
-  .. code-block:: python
-
-    # Exceptions Encountered
-    # AssertionError
-    # ModuleNotFoundError
-    # AttributeError
-
-- I add a name to ``telephone.py``
-
-  .. code-block:: python
-
-    text
-
-  and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
-
-  .. code-block:: python
-
-    NameError: name 'text' is not defined
 
 * I add the error to the list of exceptions encountered
 
@@ -125,15 +105,27 @@ GREEN: make it pass
 
     # Exceptions Encountered
     # AssertionError
-    # ModuleNotFoundError
-    # AttributeError
     # NameError
+    # AttributeError
+
+- then add a name to ``telephone.py``
+
+  .. code-block:: python
+
+    text
+
+  and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ ::
+
+  .. code-block:: python
+
+    NameError: name 'text' is not defined
+
 
 - I assign ``text`` to the null value :doc:`None </data_structures/none>`
 
   .. code-block:: python
 
-        text = None
+    text = None
 
   and the terminal shows a :doc:`/exceptions/TypeError` because ``text`` is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 
@@ -147,9 +139,8 @@ GREEN: make it pass
 
     # Exceptions Encountered
     # AssertionError
-    # ModuleNotFoundError
-    # AttributeError
     # NameError
+    # AttributeError
     # TypeError
 
 - I change ``text`` in ``telephone.py`` to a :doc:`function </functions/functions>` to make it `callable <https://docs.python.org/3/glossary.html#term-callable>`_
@@ -179,12 +170,12 @@ GREEN: make it pass
 
     AssertionError: None != 'I received this message: hello'
 
-- I change the return statement with the expected value to make the test pass
+- I change the return value to match the expectation and the test pass
 
   .. code-block:: python
 
-      def text(value):
-          return 'I received this message: hello'
+    def text(value):
+        return 'I received this message: hello'
 
 **************************
 REFACTOR: make it better
@@ -219,7 +210,7 @@ the terminal shows an :doc:`/exceptions/AssertionError`
 GREEN: make it pass
 =========================
 
-I can add variable values to strings by using `string interpolation <https://peps.python.org/pep-0498/>`_, I will change the ``text`` :doc:`method </functions/functions>` in ``telephone.py`` to use an ``f`` string to pass values
+I change the ``text`` :doc:`function </functions/functions>` in ``telephone.py`` to use an ``f`` string which allows passing variable values to strings. This is called `string interpolation <https://peps.python.org/pep-0498/>`_
 
 .. code-block:: python
 
@@ -252,14 +243,14 @@ I add a new failing test to ``test_text_messages``
       )
       self.assertEqual(
           telephone.text(None),
-          "I received this message: 'None'"
+          'I received this message: "None"'
       )
 
 the terminal shows an :doc:`/exceptions/AssertionError`
 
 .. code-block:: python
 
-  AssertionError: 'I received this message: None' != "I received this message: 'None'"
+  AssertionError: 'I received this message: None' != 'I received this message: "None"'
 
 GREEN: make it pass
 =========================
@@ -271,7 +262,7 @@ I change the test to match the expected value
 
   self.assertEqual(
       telephone.text(None),
-      "I received this message: None"
+      'I received this message: None'
   )
 
 
@@ -295,7 +286,7 @@ REFACTOR: make it better
         )
         self.assertEqual(
             telephone.text(None),
-            "I received this message: None"
+            'I received this message: None'
         )
         self.assertEqual(
             telephone.text(bool),
@@ -396,11 +387,12 @@ REFACTOR: make it better
 VOILA! You now know how to pass values from a test to a program and can represent values as strings using interpolation. You also encountered the following exceptions
 
 * :doc:`/exceptions/AssertionError`
-* :doc:`/exceptions/ModuleNotFoundError`
-* :doc:`/exceptions/AttributeError`
 * `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+* :doc:`/exceptions/AttributeError`
 * :doc:`/exceptions/TypeError`
+
+Would you like to know :doc:`/how_to/create_person`?
 
 ----
 
-:doc:`/code/code_passing_values`
+:doc:`/code/code_pass_values`

@@ -2,6 +2,7 @@ import calculator
 import random
 import unittest
 
+
 class TestCalculator(unittest.TestCase):
 
     x = random.randint(-1, 1)

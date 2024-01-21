@@ -1,53 +1,53 @@
-import unittest
 import telephone
+import unittest
 
 
-class TestPassingValues(unittest.TestCase):
+class TestTelephone(unittest.TestCase):
 
     def test_text_messages(self):
         self.assertEqual(
-            telephone.Telephone.text('hello'),
+            telephone.text('hello'),
             'I received this message: hello'
         )
         self.assertEqual(
-            telephone.Telephone.text('yes'),
+            telephone.text('yes'),
             'I received this message: yes'
         )
         self.assertEqual(
-            telephone.Telephone.text(None),
-            "I received this message: None"
+            telephone.text(None),
+            'I received this message: None'
         )
         self.assertEqual(
-            telephone.Telephone.text(bool),
+            telephone.text(bool),
             "I received this message: <class 'bool'>"
         )
         self.assertEqual(
-            telephone.Telephone.text(int),
+            telephone.text(int),
             "I received this message: <class 'int'>"
         )
         self.assertEqual(
-            telephone.Telephone.text(float),
+            telephone.text(float),
             "I received this message: <class 'float'>"
         )
         self.assertEqual(
-            telephone.Telephone.text(tuple),
+            telephone.text(tuple),
             "I received this message: <class 'tuple'>"
         )
         self.assertEqual(
-            telephone.Telephone.text(list),
+            telephone.text(list),
             "I received this message: <class 'list'>"
         )
         self.assertEqual(
-            telephone.Telephone.text(set),
+            telephone.text(set),
             "I received this message: <class 'set'>"
         )
         self.assertEqual(
-            telephone.Telephone.text(dict),
+            telephone.text(dict),
             "I received this message: <class 'dict'>"
         )
 
 # Exceptions Encountered
 # AssertionError
-# ModuleNotFoundError
+# NameError
 # AttributeError
 # TypeError

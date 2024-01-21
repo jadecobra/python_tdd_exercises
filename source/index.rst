@@ -112,7 +112,7 @@ tests and solutions
 
   code/create_tdd/code_create_tdd_environment
   code/code_calculator
-  code/code_passing_values
+  code/code_pass_values
   code/code_person_factory
   code/code_sleep_duration
   code/code_exception_handling
