@@ -332,6 +332,7 @@ REFACTOR: make it better
         last_name = "my_last_name"
         sex = "M"
         year_of_birth = 1983
+
         self.assertEqual(
             person.factory(
                 first_name=first_name,
@@ -356,6 +357,7 @@ REFACTOR: make it better
           last_name = "doe"
           sex = "M"
           year_of_birth = 1942
+
           self.assertEqual(
               person.factory(
                   first_name=first_name,
@@ -379,6 +381,7 @@ REFACTOR: make it better
         last_name = "last_name"
         sex = "F"
         year_of_birth = this_year()
+
         self.assertEqual(
             person.factory(
                 first_name=first_name,
@@ -409,6 +412,7 @@ RED: make it fail
         first_name = "child_a"
         sex = "M"
         year_of_birth = 2014
+
         self.assertEqual(
             person.factory(
                 first_name=first_name,
@@ -449,6 +453,7 @@ RED: make it fail
     def test_person_factory_with_sex_default_keyword_argument(self):
         first_name = "person"
         year_of_birth = 1900
+
         self.assertEqual(
             person.factory(
                 first_name=first_name,
