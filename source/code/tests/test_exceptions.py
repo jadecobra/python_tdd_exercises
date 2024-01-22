@@ -40,13 +40,13 @@ class TestExceptionHandling(unittest.TestCase):
             exceptions.always_returns(
                 exceptions.does_not_raise_exception_error
             ),
-            'always returns this'
+            "always returns this"
         )
         self.assertEqual(
             exceptions.always_returns(
                 exceptions.raises_exception_error
             ),
-            'always returns this'
+            "always returns this"
         )
 
 # Exceptions Encountered

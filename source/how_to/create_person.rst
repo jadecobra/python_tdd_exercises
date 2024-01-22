@@ -501,7 +501,7 @@ You also encountered the following exceptions
 * `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 * :doc:`/exceptions/TypeError`
 
-Do you want to learn :doc:`/how_to/exception_handling_tests`?
+Do you know :doc:`/how_to/exception_handling_tests`?
 
 ----
 

@@ -43,13 +43,7 @@ GREEN: make it pass
     import module
     import unittest
 
-  the terminal shows a :doc:`/exceptions/ModuleNotFoundError`
-
-  .. code-block:: python
-
-    ModuleNotFoundError: No module named 'exceptions'
-
-* I create a file called ``exceptions.py`` in the ``project_name`` folder and the terminal shows an :doc:`/exceptions/AttributeError`
+  the terminal shows an :doc:`/exceptions/AttributeError`
 
   .. code-block:: python
 
@@ -306,7 +300,7 @@ GREEN: make it pass
 
   - The ``exception_handler`` :doc:`function </functions/functions>` returns the result of calling the :doc:`function </functions/functions>` it receives as input
   - When I call ``exceptions.exception_handler`` with ``exceptions.does_not_raise_exception_error`` as input, it calls the :doc:`function </functions/functions>` and returns the result
-  - the result of calling ``exceptions.does_not_raise_exception_error`` is currently :doc:`None </data_structures/none>` which is not equal to ``'succeeded'`` so the expectation of the test is not met
+  - the result of calling ``exceptions.does_not_raise_exception_error`` is currently :doc:`None </data_structures/none>` which is not equal to ``'succeeded'`` and the result of calling ``exceptions.raises_exception_error`` is currently an Exception which is not equal to ``'failed'``
 
 *****************************************
 How to use try...except...else
@@ -326,7 +320,7 @@ I add a `try...except...else <https://docs.python.org/3/reference/compound_stmts
       else:
           return 'succeeded'
 
-the terminal shows passing tests
+and the terminal shows passing tests
 
 I think of the  `try...except...else <https://docs.python.org/3/reference/compound_stmts.html#the-try-statement>`_ statement as
 
@@ -338,7 +332,7 @@ In this case
 
 * ``try`` **calling** ``function()``
 * ``except Exception`` - when **calling** ``function()`` raises an ``Exception`` return ``'failed'``
-* ``else`` - when **calling** ``function()`` does not raise an ``Exception`` return ``'succeeded'``
+* ``else`` - when **calling** ``function()`` does NOT raise an ``Exception`` return ``'succeeded'``
 
 
 *****************************************
@@ -433,7 +427,7 @@ GREEN: make it pass
         else:
             return 'succeeded'
 
-  the terminal shows an :doc:`/exceptions/AssertionError` with a different message. ``always returns this`` returns ``'succeeded'`` since no exception is raised when it calls ``does_not_raise_exception_error`` and ``'succeeded'`` is not equal to ``'always returns this'``
+  the terminal shows an :doc:`/exceptions/AssertionError` with a different message. ``always_returns`` returns ``'succeeded'`` since no exception is raised when it calls ``does_not_raise_exception_error`` and ``'succeeded'`` is not equal to ``'always returns this'``
 
   .. code-block::
 
@@ -516,7 +510,7 @@ GREEN: make it pass
 
 .. NOTE::
 
-  ``always_returns`` could have been defined as a ``singleton`` :doc:`function </functions/functions>` and the tests would still pass, but would not show how to use ``try...except...else...finally`` ::
+  ``always_returns`` could have been defined as a :doc:`singleton function </functions/functions_singleton>` and the tests would still pass, but it would not show how to use ``try...except...else...finally`` ::
 
       def always_returns(function):
           return 'always returns this'
@@ -540,8 +534,7 @@ You also encountered the following exceptions
 
 .. admonition:: do you want to
 
-  * `read more about the try statement <https://docs.python.org/3/reference/compound_stmts.html#the-try-statement>`_
-  *  `read more about exception handling <https://docs.python.org/3/tutorial/errors.html?highlight=try%20except#handling-exceptions>`_
+Do you think you are ready to take on :doc:`/how_to/sleep_duration`?
 
 ----
 
