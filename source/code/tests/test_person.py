@@ -55,7 +55,11 @@ class TestPersonFactory(unittest.TestCase):
         year_of_birth = 2014
 
         self.assertEqual(
-            person.factory(first_name=first_name, year_of_birth=year_of_birth, sex=sex),
+            person.factory(
+                first_name=first_name,
+                year_of_birth=year_of_birth,
+                sex=sex
+            ),
             {
                 "first_name": first_name,
                 "last_name": "last_name",
