@@ -3,45 +3,8 @@
 How to pass values
 ###################
 
-When testing or using a program, data can be provided as input to the program with an expectation of an output, I think of it this way
 
-.. code-block:: python
-
-  input_data -> process -> output
-
-
-Which is similar to functions in mathematics where a function is represented as ``f`` with ``x`` as input and ``y`` as output
-
-
-.. code-block:: python
-
-  f(x) -> y
-
-in other words
-
-.. code-block:: python
-
-  process(input_data) -> output
-
-
-When testing code I want to know if the result of calling ``f`` with a given input ``x`` is equal to ``y`` or if the result of running ``process`` with ``input_data`` is equal to ``output``
-
-* Here is an example with an assert statement
-
-  .. code-block:: python
-
-    assert f(x) == y
-    assert process(input_data) == output
-
-* Here is an example with the `unittest.TestCase.assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ :doc:`method </functions/functions>`
-
-  .. code-block:: python
-
-    self.assertEqual(f(x), y)
-    self.assertEqual(process(input_data), output)
-
-
-this chapter goes over how to pass values from tests to programs using `Formatted string literals <https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals>`_ to place values inside a string
+this chapter shows how to pass values from tests to programs using `Formatted string literals <https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals>`_ to place values inside a string
 
 ****************
 Prerequisites
@@ -271,50 +234,60 @@ the terminal shows passing tests
 REFACTOR: make it better
 =========================
 
-* as an exercise I add more tests to ``test_text_messages``
+As an exercise I add more tests to ``test_text_messages`` to see what happens when I pass different data structures to the ``text`` function
+
+* What happens when I pass in a :doc:`class </classes/classes>` constructor to the ``text`` function
 
   .. code-block:: python
 
-    def test_text_messages(self):
-        self.assertEqual(
-            telephone.text('hello'),
-            'I received this message: hello'
+    ...
+    self.assertEqual(
+        telephone.text(None),
+        'I received this message: None'
+    )
+    self.assertEqual(
+        telephone.text(bool),
+        "I received this message: bool"
+    )
+
+  the terminal shows an :doc:`/exceptions/AssertionError` ::
+
+    AssertionError: "I received this message: <class 'bool'>" != 'I received this message: bool'
+
+* I change the test to match the expectation and the test passes ::
+
+    self.assertEqual(
+        telephone.text(bool),
+        "I received this message: <class 'bool'>"
+    )
+
+* I add a test for integers and floats to see how numbers get formatted ::
+
+    self.assertEqual(
+        telephone.text(123),
+        "I received this message: '123'"
+    )
+    self.assertEqual(
+        telephone.text(1.23),
+        "I received this message: '1.23'"
+    )
+
+  
+      self.assertEqual(
+            telephone.text((1, 2, 3, 'n')),
+            "I received this message: '(1, 2, 3, n)'"
         )
         self.assertEqual(
-            telephone.text('yes'),
-            'I received this message: yes'
+            telephone.text([1, 2, 3, 'n']),
+            "I received this message: '[1, 2, 3, n]'"
         )
         self.assertEqual(
-            telephone.text(None),
-            'I received this message: None'
+            telephone.text({1, 2, 3, 'n'}),
+            "I received this message: '{1, 2, 3, n}'"
         )
         self.assertEqual(
-            telephone.text(bool),
-            "I received this message: 'bool'"
-        )
-        self.assertEqual(
-            telephone.text(int),
-            "I received this message: 'int'"
-        )
-        self.assertEqual(
-            telephone.text(float),
-            "I received this message: 'float'"
-        )
-        self.assertEqual(
-            telephone.text(tuple),
-            "I received this message: 'tuple'"
-        )
-        self.assertEqual(
-            telephone.text(list),
-            "I received this message: 'list'"
-        )
-        self.assertEqual(
-            telephone.text(set),
-            "I received this message: 'set'"
-        )
-        self.assertEqual(
-            telephone.text(dict),
-            "I received this message: 'dict'"
+            telephone.text({"key1": "value1", "keyN": "valueN"}),
+            "I received this message: '{key1: value1, keyN: valueN}'"
         )
 
   the terminal shows an :doc:`/exceptions/AssertionError`
