@@ -15,7 +15,7 @@ Exception Handling is a way to deal with exceptions, it allows programs to make 
 Prerequisites
 *************************
 
-:doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>`
+:doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` with ``exceptions`` as the project name
 
 ----
 
@@ -160,7 +160,7 @@ the terminal shows an :doc:`/exceptions/AttributeError` because ``non_existent_f
 GREEN: make it pass
 ====================
 
-I add a ``with self.assertRaises`` context and indent the failing line to place it within the context to make the test pass
+I add an ``assertRaises`` context and indent the failing line to place it within the context to make the test pass
 
 .. code-block:: python
 
@@ -193,7 +193,7 @@ the terminal shows an :doc:`/exceptions/AttributeError`
 GREEN: make it pass
 ====================
 
-I add a ``with self.assertRaises`` context to make it pass
+I put the failing line in an ``assertRaises`` context to make the test pass
 
 .. code-block:: python
 
@@ -224,7 +224,8 @@ Fantastic! all the tests still pass and I have a way to catch exceptions that ar
 * :doc:`/exceptions/ModuleNotFoundError`
 * `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 * :doc:`/exceptions/AttributeError`
-* :doc:`/exceptions/TypeError`
+
+Time to look at :doc:`/how_to/exception_handling_programs`
 
 ----
 
