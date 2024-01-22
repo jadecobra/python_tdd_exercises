@@ -251,7 +251,7 @@ REFACTOR: make it better
             'age': 0
         }
 
-  the terminal shows an :doc:`/exceptions/AssertionError` with no difference for the values of ``first_name``
+  and the terminal shows an :doc:`/exceptions/AssertionError` with no difference for the values of ``first_name``
 
 * I repeat the same move for every other input until the only error left is for ``age``
 
@@ -319,9 +319,9 @@ REFACTOR: make it better
     def factory(
     ...
 
-  *HOORAY!* the terminal shows passing tests, time for a victory dance.
+  and the terminal shows passing tests, time for a victory dance
 
-* When I call the ``factory`` :doc:`function </functions/functions>` passing in values for ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``, I get a :doc:`dictionary </data_structures/dictionaries>` that contains the ``first_name``, ``last_name``, ``sex`` and ``age`` of the person
+* When I call the ``factory`` :doc:`function </functions/functions>` passing in values for ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``, it returns a :doc:`dictionary </data_structures/dictionaries>` that contains the ``first_name``, ``last_name``, ``sex`` and ``age`` of the person
 
 * I noticed that there is some repetition in the test. If I want to test with a different value for any of the arguments passed to ``person.factory``, I would have to make the change in 2 places - once in the argument passed to the :doc:`function </functions/functions>` and then again in the resulting :doc:`dictionary </data_structures/dictionaries>`. I can refactor this to make it easier to make changes to the test when I want,  especially since the programming gods told me `not to repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
@@ -370,6 +370,29 @@ REFACTOR: make it better
                   "age": this_year() - year_of_birth,
               }
           )
+* I make the same change to ``test_person_factory``
+
+  .. code-block:: python
+
+    def test_person_factory(self):
+        first_name = "baby"
+        last_name = "last_name"
+        sex = "F"
+        year_of_birth = this_year()
+        self.assertEqual(
+            person.factory(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+                sex=sex
+            ),
+            {
+                "first_name": first_name,
+                "last_name": last_name,
+                "sex": sex,
+                "age": this_year() - year_of_birth
+            }
+        )
 
 ***************************************************
 How to use default keyword arguments in functions
@@ -402,6 +425,10 @@ RED: make it fail
 
   the terminal shows an :doc:`/exceptions/AssertionError` because the value for ``last_name`` does not match the expected value
 
+  .. code-block:: python
+
+    AssertionError: {'first_name': 'child_a', 'last_name': None, 'sex': 'M', 'age': 10} != {'first_name': 'child_a', 'last_name': 'last_name', 'sex': 'M', 'age': 10}
+
 * The test expects a value of ``"last_name"`` but ``person.factory`` currently returns :doc:`None </data_structures/none>`. When I change the default value for ``last_name`` in the ``person.factory`` definition to match the expectation
 
   .. code-block:: python
@@ -414,12 +441,12 @@ RED: make it fail
 
   the terminal shows passing tests. When no value is given for the ``last_name`` argument to ``person.factory`` it uses ``"last_name"`` because that is the defined default value in the :doc:`function signature </functions/functions>`
 
-* I add a test called ``test_person_factory_with_sex_default_keyword_arguments`` to try another default value
+* I add a test called ``test_person_factory_with_sex_default_keyword_argument`` to try another default value
 
   .. code-block:: python
 
 
-    def test_person_factory_with_sex_default_keyword_arguments(self):
+    def test_person_factory_with_sex_default_keyword_argument(self):
         first_name = "person"
         year_of_birth = 1900
         self.assertEqual(
@@ -437,6 +464,10 @@ RED: make it fail
 
   the terminal shows an :doc:`/exceptions/AssertionError`, there is a difference in the values for ``sex``
 
+  .. code-block:: python
+
+    AssertionError: {'first_name': 'person', 'last_name': 'last_name', 'sex': None, 'age': 124} != {'first_name': 'person', 'last_name': 'last_name', 'age': 124, 'sex': 'M'}
+
 * 3 out of the 4 persons created in the tests have ``M`` as their sex and 1 person has ``F`` as the value for sex. I set the default value for the parameter in ``person.factory`` to the majority to reduce the number of repetitions
 
   .. code-block:: python
@@ -451,12 +482,12 @@ RED: make it fail
 
 ----
 
-That's it, from the tests above you can create a :doc:`function </functions/functions>` that
+From the tests above you can create a :doc:`function </functions/functions>` that
 
 * returns a :doc:`dictionary </data_structures/dictionaries>` as output
 * takes in keyword arguments as inputs
 * has default values for when a value is not given for a certain input
-* performs a calculation based on a given input to return an output based on an input
+* performs a calculation based on a given input
 
 You also encountered the following exceptions
 
@@ -464,6 +495,8 @@ You also encountered the following exceptions
 * :doc:`/exceptions/AttributeError`
 * `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 * :doc:`/exceptions/TypeError`
+
+Do you want to learn :doc:`/how_to/exception_handling_tests`?
 
 ----
 
