@@ -14,7 +14,7 @@ Prerequisites
 ****************
 
 
-:doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` with ``calculator`` as the project name
+:doc:`Create a Test Driven Development Environment </how_to/create_tdd_environment>` with ``calculator`` as the project name
 
 ----
 

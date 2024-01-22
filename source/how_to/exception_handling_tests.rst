@@ -15,7 +15,7 @@ Exception Handling is a way to deal with exceptions, it allows programs to make 
 Prerequisites
 *************************
 
-:doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` with ``exceptions`` as the project name
+:doc:`Create a Test Driven Development Environment </how_to/create_tdd_environment>` with ``exceptions`` as the project name
 
 ----
 

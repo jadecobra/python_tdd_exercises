@@ -47,7 +47,7 @@ this chapter goes over how to pass values from tests to programs using `Formatte
 Prerequisites
 ****************
 
-:doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` with ``telephone`` as the project name
+:doc:`Create a Test Driven Development Environment </how_to/create_tdd_environment>` with ``telephone`` as the project name
 
 ----
 

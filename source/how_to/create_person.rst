@@ -9,7 +9,7 @@ This is an exercise in creating :doc:`dictionaries </data_structures/dictionarie
 Prerequisites
 ****************
 
-:doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` with ``person`` as the project name
+:doc:`Create a Test Driven Development Environment </how_to/create_tdd_environment>` with ``person`` as the project name
 
 ----
 

@@ -9,8 +9,7 @@ How to handle Exceptions in programs
 Prerequisites
 *************************
 
-* :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>`
-* :doc:`/how_to/exception_handling_tests`
+:doc:`/how_to/exception_handling_tests`
 
 ----
 
