@@ -18,7 +18,7 @@ Prerequisites
 RED: make it fail
 *************************
 
-* I add a failing test to ``test_exception_handling.py``
+* I add a failing test to ``test_exceptions.py``
 
   .. code-block:: python
 
@@ -110,7 +110,7 @@ GREEN: make it pass
 
     Exception: BOOM
 
-* I add a ``with self.assertRaises`` context to ``test_catching_exceptions`` in ``test_exception_handling.py`` to confirm that the exception is raised and allow the tests to continue
+* I add a ``with self.assertRaises`` context to ``test_catching_exceptions`` in ``test_exceptions.py`` to confirm that the exception is raised and allow the tests to continue
 
   .. code-block:: python
 
@@ -137,7 +137,7 @@ How to catch things that fail
 RED: make it fail
 ==================
 
-I add a new failing test to ``test_exception_handling.py``
+I add a new failing test to ``test_exceptions.py``
 
 .. code-block:: python
 
@@ -350,7 +350,7 @@ There is an extra clause in the `try <https://docs.python.org/3/reference/compou
 RED: make it fail
 =========================
 
-I add a failing test to ``test_exception_handling.py``
+I add a failing test to ``test_exceptions.py``
 
 .. code-block:: python
 

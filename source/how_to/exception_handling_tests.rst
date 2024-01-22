@@ -26,7 +26,7 @@ How to handle a ModuleNotFoundError
 RED: make it fail
 ==================
 
-I create a file called ``test_exception_handling.py`` in the ``tests`` folder and add the following
+I create a file called ``test_exceptions.py`` in the ``tests`` folder and add the following
 
 .. code-block:: python
 
@@ -105,7 +105,7 @@ RED: make it fail
     # ModuleNotFoundError
     # NameError
 
-* I add an import statement for ``module`` at the top of ``test_exception_handling.py`` ::
+* I add an import statement for ``module`` at the top of ``test_exceptions.py`` ::
 
     import module
     import unittest
