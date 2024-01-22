@@ -114,7 +114,7 @@ GREEN: make it pass
 
     text
 
-  and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ ::
+  and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
   .. code-block:: python
 
