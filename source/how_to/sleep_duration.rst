@@ -1027,6 +1027,8 @@ REFACTOR: make it better
            + parse_timestamp(timestamp, 1)
         )
 
+  the terminal shows all tests are still passing, so I remove the ``get_hour`` and ``get_minutes`` functions
+
 ********************************************************
 Duration when given Earlier Wake Time than Sleep Time
 ********************************************************
@@ -1225,16 +1227,21 @@ the terminal shows a `ValueError <https://docs.python.org/3/library/exceptions.h
 GREEN: make it pass
 =========================
 
-* The ``split`` function was given a separator of ``:`` when we only used hours and minutes, but behaves differently when I use a date. I add a test to ``test_splitting_a_string`` to show this
+* The ``split`` function was given a separator of ``:`` when we only used hours and minutes, but behaves differently when I add a date. I add a test to ``test_splitting_a_string`` to show this
 
   .. code-block:: python
 
     self.assertEqual(
-        "21/11/06 16:40".split(':')[0],
-        ''
+        "21/11/06 16:40".split(":")[0],
+        ""
     )
 
   the terminal shows an :doc:`/exceptions/AssertionError`
+
+  .. codeblock:: python
+
+    AssertionError: '21/11/06 16' != ''
+
 * I update the test with the correct values to make it pass
 
   .. code-block:: python
@@ -1246,7 +1253,7 @@ GREEN: make it pass
 
   I cannot convert a string in the format ``'21/11/06 16'`` to an integer
 
-* I need a solution that is capable of reading the date and time. Writing one myself would require a lot of work as I would have to account for the variance in months, February has 28 days except in leap years when it has 29 days and some months have 30 days while others have 31 days. I do a search in the `python online documentation <https://docs.python.org/3/search.html>`_ for `time difference <https://docs.python.org/3/search.html?q=time+difference>`_, and select the `datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#module-datetime>`_ module since it looks like it has a solution for this problem. Reading through the available types in the module, I see I can create `datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#module-datetime>`_ instances
+* I need a solution that is capable of reading the date and time. Writing one myself would require a lot of work as I would have to account for the number of days in months, February has 28 days except in leap years when it has 29 days and some months have 30 days while others have 31 days. I do a search in the `python online documentation <https://docs.python.org/3/search.html>`_ for `time difference <https://docs.python.org/3/search.html?q=time+difference>`_, and select the `datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#module-datetime>`_ module since it looks like it has a solution for this problem. Reading through the available types in the module, I see I can create `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ objects which handle date and time
 
   .. code-block:: python
 
@@ -1255,7 +1262,7 @@ GREEN: make it pass
       Attributes: year, month, day, hour,
       minute, second, microsecond, and tzinfo.
 
-  I also see timedelta objects
+  I also see `datetime.timedelta <https://docs.python.org/3/library/datetime.html?highlight=datetime#timedelta-objects>`_ objects which are the difference between two datetime instances
 
   .. code-block:: python
 
@@ -1266,7 +1273,7 @@ GREEN: make it pass
 
 * I add tests using the examples in the documentation to help me understand how to use the `datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#module-datetime>`_ module
 
-  - I add a test for `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ objects to ``test_sleep_duration.py`` based on `Examples of usage datetime objects <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_
+  - I add a test for `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ objects to ``test_sleep_duration.py`` based on `Examples of usage: datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_
 
     .. code-block:: python
 
@@ -1346,8 +1353,8 @@ GREEN: make it pass
     - `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ takes ``year``, ``month``, ``date``, ``hours`` and ``minutes`` as inputs
     - the `datetime.datetime.strptime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime.datetime.strptime>`_ :doc:`method </functions/functions>`
 
-      * takes 2 `strings <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ as inputs - timestamp and a pattern
-      * returns a `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ object
+      * takes 2 `strings <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ as inputs - a timestamp and a pattern
+      * and returns a `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ object
     - from the pattern provided as input, it also looks like
 
       * ``%d`` is for days
@@ -1356,7 +1363,7 @@ GREEN: make it pass
       * ``%H`` is for hours
       * ``%M`` is for minutes
 
-  - I add a test based on `Examples of usage timedelta objects <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-timedelta>`_ for subtracting two `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ objects
+  - I add a test based on `Examples of usage: timedelta <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-timedelta>`_ for subtracting two `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ objects
 
     .. code-block:: python
 
@@ -1409,8 +1416,8 @@ GREEN: make it pass
 
       def test_converting_timedelta_to_string(self):
           self.assertEqual(
-              str(datetime.timedelta(seconds=3600)),
-              ''
+              str(datetime.timedelta(seconds=7200)),
+              ""
           )
 
       def test_duration_when_given_hours_and_minutes(self):
@@ -1420,7 +1427,7 @@ GREEN: make it pass
 
     .. code-block:: python
 
-      AssertionError: '1:00:00' != ''
+      AssertionError: '2:00:00' != ''
 
   * I change the expected value in the test to match the value from the terminal
 
@@ -1428,8 +1435,8 @@ GREEN: make it pass
 
       def test_converting_timedelta_to_string(self):
           self.assertEqual(
-              str(datetime.timedelta(seconds=3600)),
-              '1:00:00'
+              str(datetime.timedelta(seconds=7200)),
+              "2:00:00"
           )
 
     it looks like calling `str <https://docs.python.org/3/library/stdtypes.html#str>`_ on a `datetime.timedelta <https://docs.python.org/3/library/datetime.html?highlight=datetime#timedelta-objects>`_ object returns a string in the format ``Hours:Minutes:Seconds``
@@ -1448,8 +1455,11 @@ GREEN: make it pass
 
     def get_datetime_object(timestamp):
         return datetime.datetime.strptime(
-            timestamp, "%d/%m/%y %H:%M"
+            timestamp, '%d/%m/%y %H:%M'
         )
+
+    def duration(wake_time=None, sleep_time=None):
+    ...
 
   the error remains the same since I have not called the new function yet
 
@@ -1518,7 +1528,10 @@ GREEN: make it pass
         )
 
         self.assertEqual(
-            sleep_duration.duration(wake_time, sleep_time),
+            sleep_duration.duration(
+                wake_time=wake_time,
+                sleep_time=sleep_time
+            ),
             str(difference)
         )
 
@@ -1530,6 +1543,7 @@ GREEN: make it pass
     def duration(wake_time=None, sleep_time=None):
         wake_time = get_datetime_object(wake_time)
         sleep_time = get_datetime_object(sleep_time)
+
         if wake_time < sleep_time:
             difference = wake_time - sleep_time
             return str(difference)
@@ -1551,24 +1565,25 @@ GREEN: make it pass
             return f'{difference // 60}:{difference % 60}'
 
   the terminal shows a `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ similar to this
+
   .. code-block:: python
 
     ValueError: wake_time: 2006-11-21 14:50:00 is earlier than sleep_time: 2006-11-21 01:58:00
 
-  the error looks wrong. For example, ``14:50:00`` is not earlier than ``01:58:00`` on the same day.
+  the error message is wrong, ``14:50:00`` is not earlier than ``01:58:00`` on the same day.
 * I update the condition to use a greater than sign instead
 
   .. code-block:: python
 
     if wake_time > sleep_time:
 
-  the terminal shows a `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_
+  the terminal shows a `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ similar to this
 
   .. code-block:: python
 
     ValueError: wake_time: 2006-11-21 04:22:00 is earlier than sleep_time: 2006-11-21 16:30:00
 
-  this message looks more like it - ``04:22:00`` is definitely earlier than ``16:30:00``
+  this message looks more like it, ``04:22:00`` is definitely earlier than ``16:30:00``
 
 * I remove the old statements in the ``duration`` function since things are working the way I want
 
@@ -1577,6 +1592,7 @@ GREEN: make it pass
     def duration(wake_time=None, sleep_time=None):
         wake_time = get_datetime_object(wake_time)
         sleep_time = get_datetime_object(sleep_time)
+
         if wake_time > sleep_time:
             difference = wake_time - sleep_time
             return str(difference)
@@ -1585,6 +1601,7 @@ GREEN: make it pass
                 f'wake_time: {wake_time} is earlier '
                 f'than sleep_time: {sleep_time}'
             )
+
 * I add the ``try...except`` block from ``test_duration_when_given_hours_and_minutes`` to ``test_duration_when_given_date_and_time``
 
   .. code-block:: python
@@ -1606,12 +1623,14 @@ GREEN: make it pass
 
         try:
             self.assertEqual(
-                sleep_duration.duration(wake_time, sleep_time),
+                sleep_duration.duration(
+                    wake_time=wake_time,
+                    sleep_time=sleep_time
+                ),
                 str(difference)
             )
         except ValueError:
-            with self.assertRaises(ValueError):
-                sleep_duration.duration(wake_time, sleep_time)
+            pass
 
   All tests are passing. I am green
 
@@ -1626,6 +1645,7 @@ REFACTOR: make it better
     def duration(wake_time=None, sleep_time=None):
         wake_time = get_datetime_object(wake_time)
         sleep_time = get_datetime_object(sleep_time)
+
         if wake_time > sleep_time:
             return str(wake_time - sleep_time)
         else:
@@ -1642,9 +1662,9 @@ Review
 
 The challenge was to create a function that calculates the difference between two given timestamps.
 
-To make it happen I had to
+To make it happen I
 
-* convert a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ to an `integer <https://docs.python.org/3/library/functions.html#int>`_
+* converted a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ to an `integer <https://docs.python.org/3/library/functions.html#int>`_
 * split a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ into a :doc:`list </data_structures/lists/lists>` using a given separator
 * index a :doc:`list </data_structures/lists/lists>` to get specific items
 * convert a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ to a `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ object using the `datetime.datetime.strptime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime.datetime.strptime>`_ method
@@ -1664,6 +1684,7 @@ I also encountered the following exceptions
 * `SyntaxError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#SyntaxError>`_
 * `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_
 
+This is the last of the `HOWTOs`, what would you like to test next?
 
 ----
 
