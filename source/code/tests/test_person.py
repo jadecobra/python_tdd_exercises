@@ -2,7 +2,6 @@ import datetime
 import person
 import unittest
 
-
 def this_year():
     return datetime.datetime.now().year
 
