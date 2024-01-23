@@ -261,18 +261,34 @@ As an exercise I add more tests to ``test_text_messages`` to see what happens wh
         "I received this message: <class 'bool'>"
     )
 
-* I add a test for integers and floats to see how numbers get formatted ::
+* I add a test for integers ::
 
     self.assertEqual(
         telephone.text(123),
         "I received this message: '123'"
     )
+
+  and the terminal shows an :doc:`AssertionError` ::
+
+    AssertionError: 'I received this message: 123' != "I received this message: '123'"
+
+  I remove the quotes from the test to make it pass ::
+
+    self.assertEqual(
+        telephone.text(123),
+        "I received this message: 123"
+    )
+
+
+* I add a test for floats ::
+
     self.assertEqual(
         telephone.text(1.23),
         "I received this message: '1.23'"
     )
 
-  
+  and the terminal shows
+
       self.assertEqual(
             telephone.text((1, 2, 3, 'n')),
             "I received this message: '(1, 2, 3, n)'"
