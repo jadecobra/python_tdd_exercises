@@ -261,14 +261,14 @@ As an exercise I add more tests to ``test_text_messages`` to see what happens wh
         "I received this message: <class 'bool'>"
     )
 
-* I add a test for integers ::
+* I also add a test for `integers <https://docs.python.org/3/library/functions.html#int>`_ ::
 
     self.assertEqual(
         telephone.text(123),
         "I received this message: '123'"
     )
 
-  and the terminal shows an :doc:`AssertionError` ::
+  and the terminal shows an :doc:`/exceptions/AssertionError` ::
 
     AssertionError: 'I received this message: 123' != "I received this message: '123'"
 
@@ -280,100 +280,90 @@ As an exercise I add more tests to ``test_text_messages`` to see what happens wh
     )
 
 
-* I add a test for floats ::
+* then add a test for `floats <https://docs.python.org/3/library/functions.html#float>`_ ::
 
     self.assertEqual(
         telephone.text(1.23),
         "I received this message: '1.23'"
     )
 
-  and the terminal shows
+  and the terminal shows an :doc:`/exceptions/AssertionError` ::
 
-      self.assertEqual(
-            telephone.text((1, 2, 3, 'n')),
-            "I received this message: '(1, 2, 3, n)'"
-        )
-        self.assertEqual(
-            telephone.text([1, 2, 3, 'n']),
-            "I received this message: '[1, 2, 3, n]'"
-        )
-        self.assertEqual(
-            telephone.text({1, 2, 3, 'n'}),
-            "I received this message: '{1, 2, 3, n}'"
-        )
-        self.assertEqual(
-            telephone.text({"key1": "value1", "keyN": "valueN"}),
-            "I received this message: '{key1: value1, keyN: valueN}'"
-        )
+    AssertionError: 'I received this message: 1.23' != "I received this message: '1.23'"
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+  I remove the quotes to make the test pass ::
 
-  .. code-block:: python
+    self.assertEqual(
+        telephone.text(1.23),
+        "I received this message: 1.23"
+    )
 
-    AssertionError: "I received this message: <class 'bool'>" != "I received this message: 'bool'"
+* and add a test for `tuples <https://docs.python.org/3/library/stdtypes.html#tuples>`_ ::
 
-* I change the test to match the expected output
+    self.assertEqual(
+        telephone.text((1, 2, 3, 'n')),
+        "I received this message: '(1, 2, 3, n)'"
+    )
 
-  .. code-block:: python
+  the terminal shows an :doc:`/exceptions/AssertionError` ::
 
-      self.assertEqual(
-          telephone.text(bool),
-          "I received this message: <class 'bool'>"
-      )
+* and add a test for :doc:`lists </data_structures/lists/lists>` ::
 
-  the terminal shows an :doc:`/exceptions/AssertionError` for the next test
+    self.assertEqual(
+        telephone.text([1, 2, 3, 'n']),
+        "I received this message: '[1, 2, 3, n]'"
+    )
 
-  .. code-block:: python
+  the terminal shows an :doc:`/exceptions/AssertionError` ::
 
-    AssertionError: "I received this message: <class 'int'>" != "I received this message: 'int'"
+    AssertionError: "I received this message: (1, 2, 3, 'n')" != "I received this message: '(1, 2, 3, n)'"
 
-* I repeat the solution for each data type until all tests pass
+  I change the test to match the expectation ::
 
-  .. code-block:: python
+    self.assertEqual(
+        telephone.text((1, 2, 3, 'n')),
+        "I received this message: (1, 2, 3, 'n')"
+    )
 
-    def test_text_messages(self):
-        self.assertEqual(
-            telephone.text('hello'),
-            'I received this message: hello'
-        )
-        self.assertEqual(
-            telephone.text('yes'),
-            'I received this message: yes'
-        )
-        self.assertEqual(
-            telephone.text(None),
-            "I received this message: None"
-        )
-        self.assertEqual(
-            telephone.text(bool),
-            "I received this message: <class 'bool'>"
-        )
-        self.assertEqual(
-            telephone.text(int),
-            "I received this message: <class 'int'>"
-        )
-        self.assertEqual(
-            telephone.text(float),
-            "I received this message: <class 'float'>"
-        )
-        self.assertEqual(
-            telephone.text(tuple),
-            "I received this message: <class 'tuple'>"
-        )
-        self.assertEqual(
-            telephone.text(list),
-            "I received this message: <class 'list'>"
-        )
-        self.assertEqual(
-            telephone.text(set),
-            "I received this message: <class 'set'>"
-        )
-        self.assertEqual(
-            telephone.text(dict),
-            "I received this message: <class 'dict'>"
-        )
+* and add a test for `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ ::
 
-VOILA! You now know how to pass values from a test to a program and can represent values as strings using interpolation. You also encountered the following exceptions
+    self.assertEqual(
+        telephone.text({1, 2, 3, 'n'}),
+        "I received this message: '{1, 2, 3, n}'"
+    )
+
+  the terminal shows an :doc:`/exceptions/AssertionError` ::
+
+    AssertionError: "I received this message: {1, 2, 3, 'n'}" != "I received this message: {1, 2, 3, n}'"
+
+  I change the test to match the expectation ::
+
+    self.assertEqual(
+        telephone.text({1, 2, 3, 'n'}),
+        "I received this message: {1, 2, 3, 'n'}"
+    )
+
+* finally, I add a test for :doc:`dictionaries </data_structures/dictionaries>` ::
+
+    self.assertEqual(
+        telephone.text({"key1": "value1", "keyN": "valueN"}),
+        "I received this message: '{key1: value1, keyN: valueN}'"
+    )
+
+  the terminal shows an :doc:`/exceptions/AssertionError` ::
+
+    AssertionError: "I received this message: {'key1': 'value1', 'keyN': 'valueN'}" != "I received this message: '{key1: value1, keyN: valueN}'"
+
+  I change the test to match the expected output ::
+
+    self.assertEqual(
+        telephone.text({"key1": "value1", "keyN": "valueN"}),
+        "I received this message: {'key1': 'value1', 'keyN': 'valueN'}"
+    )
+
+  and all tests are passing
+
+VOILA! You now know how to pass values from a test to a program and can represent any values as strings using interpolation. You also encountered the following exceptions
 
 * :doc:`/exceptions/AssertionError`
 * `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
