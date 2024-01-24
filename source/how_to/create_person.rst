@@ -20,13 +20,16 @@ How to use dictionaries as factories in Python
 RED: make it fail
 ==================
 
-I add an import statement and replace ``test_failure`` with a failing test in ``test_person.py``
+I add an import statement to ``test_person.py``
 
 .. code-block:: python
 
   import person
   import unittest
 
+then add a failing test to replace ``test_failure``
+
+.. code-block:: python
 
   class TestPersonFactory(unittest.TestCase):
 

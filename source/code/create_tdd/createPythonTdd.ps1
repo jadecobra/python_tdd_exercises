@@ -13,6 +13,10 @@ class Test$($projectName)(unittest.TestCase):
 
     def test_failure(self):
         self.assertFalse(True)
+
+
+# Exceptions Encountered
+# AssertionError
 "@
 $testSetup |  Out-File $("tests/test_$($projectName).py") -Encoding UTF8
 

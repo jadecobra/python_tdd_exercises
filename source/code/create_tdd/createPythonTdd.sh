@@ -12,6 +12,10 @@ class Test$PROJECT_NAME(unittest.TestCase):
 
     def test_failure(self):
         self.assertFalse(True)
+
+
+# Exceptions Encountered
+# AssertionError
 DELIMITER
 
 echo "pytest-watch" > requirements.txt
