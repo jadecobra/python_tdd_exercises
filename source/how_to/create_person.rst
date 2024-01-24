@@ -3,6 +3,10 @@
 How to create a person
 #######################
 
+.. raw:: html
+
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/A7bCTJhr14g?si=QRx1U5esOaK7khD8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 This is an exercise in creating :doc:`dictionaries </data_structures/dictionaries>`  with :doc:`/functions/functions`. It assumes familiarity with those concepts, though you can still try out the chapter even if you are not.
 
 ****************
@@ -217,7 +221,7 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-    def test_person_factory_takes_in_variable_inputs(self):
+    def test_person_factory_with_variable_inputs(self):
         self.assertEqual(
             person.factory(
                 first_name="me",
@@ -330,7 +334,7 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-    def test_person_factory_takes_in_variable_inputs(self):
+    def test_person_factory_with_variable_inputs(self):
         first_name = "me"
         last_name = "my_last_name"
         sex = "M"
@@ -355,7 +359,7 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-      def test_person_factory_takes_in_variable_inputs(self):
+      def test_person_factory_with_variable_inputs(self):
           first_name = "john"
           last_name = "doe"
           sex = "M"

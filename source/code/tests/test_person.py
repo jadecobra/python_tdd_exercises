@@ -28,7 +28,7 @@ class TestPersonFactory(unittest.TestCase):
             },
         )
 
-    def test_person_factory_takes_in_variable_inputs(self):
+    def test_person_factory_with_variable_inputs(self):
         first_name = "john"
         last_name = "doe"
         sex = "M"
