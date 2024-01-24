@@ -22,28 +22,31 @@ class TestTelephone(unittest.TestCase):
             "I received this message: <class 'bool'>"
         )
         self.assertEqual(
-            telephone.text(int),
-            "I received this message: <class 'int'>"
+            telephone.text(1234),
+            "I received this message: 1234"
         )
         self.assertEqual(
-            telephone.text(float),
-            "I received this message: <class 'float'>"
+            telephone.text(1.234),
+            "I received this message: 1.234"
         )
         self.assertEqual(
-            telephone.text(tuple),
-            "I received this message: <class 'tuple'>"
+            telephone.text((1, 2, 3, 'n')),
+            "I received this message: (1, 2, 3, 'n')"
         )
         self.assertEqual(
-            telephone.text(list),
-            "I received this message: <class 'list'>"
+            telephone.text([1, 2, 3, 'n']),
+            "I received this message: [1, 2, 3, 'n']"
         )
         self.assertEqual(
-            telephone.text(set),
-            "I received this message: <class 'set'>"
+            telephone.text({1, 2, 3, 'n'}),
+            "I received this message: {1, 2, 3, 'n'}"
         )
         self.assertEqual(
-            telephone.text(dict),
-            "I received this message: <class 'dict'>"
+            telephone.text({
+                'key1': 'value1',
+                'keyN': 'valueN'
+            }),
+            "I received this message: {'key1': 'value1', 'keyN': 'valueN'}"
         )
 
 # Exceptions Encountered
