@@ -1,7 +1,7 @@
-def raises_exception_error():
+def raises_exception():
     raise Exception('BOOM')
 
-def does_not_raise_exception_error():
+def does_not_raise_exception():
     return None
 
 def exception_handler(function):
