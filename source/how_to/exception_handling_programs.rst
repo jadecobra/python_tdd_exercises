@@ -26,7 +26,7 @@ RED: make it fail
   .. code-block:: python
 
     def test_catching_exceptions(self):
-        exceptions.raises_exception_error()
+        exceptions.raises_exception()
 
   the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
@@ -50,25 +50,25 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    AttributeError: module 'exceptions' has no attribute 'raises_exception_error'
+    AttributeError: module 'exceptions' has no attribute 'raises_exception'
 
 * I add a name for the attribute to ``exceptions.py``
 
   .. code-block:: python
 
-    raises_exception_error
+    raises_exception
 
-  and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ since I have not defined ``raises_exception_error`` in ``exceptions.py``
-
-  .. code-block:: python
-
-    NameError: name 'raises_exception_error' is not defined
-
-* I assign ``raises_exception_error`` to the null value :doc:`None </data_structures/none>`
+  and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ since I have not defined ``raises_exception`` in ``exceptions.py``
 
   .. code-block:: python
 
-    raises_exception_error = None
+    NameError: name 'raises_exception' is not defined
+
+* I assign ``raises_exception`` to the null value :doc:`None </data_structures/none>`
+
+  .. code-block:: python
+
+    raises_exception = None
 
   and the terminal shows a :doc:`/exceptions/TypeError`
 
@@ -87,18 +87,18 @@ GREEN: make it pass
     # AttributeError
     # TypeError
 
-* When I define ``raises_exception_error`` as a function, the terminal shows passing tests
+* When I define ``raises_exception`` as a function, the terminal shows passing tests
 
   .. code-block:: python
 
-    def raises_exception_error():
+    def raises_exception():
         return None
 
-* I can use the `raise <https://docs.python.org/3/reference/simple_stmts.html#the-raise-statement>`_ keyword to cause an exception when ``raises_exception_error`` is called
+* I can use the `raise <https://docs.python.org/3/reference/simple_stmts.html#the-raise-statement>`_ keyword to cause an exception when ``raises_exception`` is called
 
   .. code-block:: python
 
-    def raises_exception_error():
+    def raises_exception():
         raise Exception('BOOM')
 
   the terminal shows the ``Exception`` is raised
@@ -113,7 +113,7 @@ GREEN: make it pass
 
     def test_catching_exceptions(self):
         with self.assertRaises(Exception):
-            exceptions.raises_exception_error()
+            exceptions.raises_exception()
 
   the terminal shows passing tests
 
@@ -138,10 +138,10 @@ I add a new failing test to ``test_exceptions.py``
 
 .. code-block:: python
 
-  def test_catching_things_that_fail(self):
+  def test_catching_failures(self):
       self.assertEqual(
           exceptions.exception_handler(
-              exceptions.raises_exception_error
+              exceptions.raises_exception
           ),
           'failed'
       )
@@ -199,7 +199,7 @@ GREEN: make it pass
     def exception_handler(argument):
         return None
 
-  and the terminal shows an :doc:`/exceptions/AssertionError` because the result of calling ``exceptions.exception_handler`` with ``exceptions.raises_exception_error`` as the input is currently :doc:`None </data_structures/none>` which is not equal to ``'failed'``
+  and the terminal shows an :doc:`/exceptions/AssertionError` because the result of calling ``exceptions.exception_handler`` with ``exceptions.raises_exception`` as the input is currently :doc:`None </data_structures/none>` which is not equal to ``'failed'``
 
   .. code-block:: python
 
@@ -225,10 +225,10 @@ I add a new test that provides a different input with an expectation of a differ
 
 .. code-block:: python
 
-  def test_catching_things_that_succeed(self):
+  def test_catching_successes(self):
       self.assertEqual(
           exceptions.exception_handler(
-              exceptions.does_not_raise_exception_error
+              exceptions.does_not_raise_exception
           ),
           'succeeded'
       )
@@ -237,16 +237,16 @@ the terminal shows an :doc:`/exceptions/AttributeError`
 
 .. code-block:: python
 
-  AttributeError: module 'exceptions' has no attribute 'does_not_raise_exception_error'
+  AttributeError: module 'exceptions' has no attribute 'does_not_raise_exception'
 
 GREEN: make it pass
 ====================
 
-* I add ``does_not_raise_exception_error`` to ``exceptions.py``
+* I add ``does_not_raise_exception`` to ``exceptions.py``
 
   .. code-block:: python
 
-    does_not_raise_exception_error
+    does_not_raise_exception
 
     def exception_handler(function):
         ...
@@ -255,15 +255,15 @@ GREEN: make it pass
 
   .. code-block:: python
 
-    NameError: name 'does_not_raise_exception_error' is not defined
+    NameError: name 'does_not_raise_exception' is not defined
 
-* I assign ``does_not_raise_exception_error`` to the null value :doc:`None </data_structures/none>`
+* I assign ``does_not_raise_exception`` to the null value :doc:`None </data_structures/none>`
 
   .. code-block:: python
 
-    does_not_raise_exception_error = None
+    does_not_raise_exception = None
 
-  and the terminal shows an :doc:`/exceptions/AssertionError` because the value returned by ``exceptions.exception_handler`` when given ``exceptions.does_not_raise_exception_error`` as input is ``'failed'`` which is not equal to ``'succeeded'``
+  and the terminal shows an :doc:`/exceptions/AssertionError` because the value returned by ``exceptions.exception_handler`` when given ``exceptions.does_not_raise_exception`` as input is ``'failed'`` which is not equal to ``'succeeded'``
 
   .. code-block::
 
@@ -278,7 +278,7 @@ GREEN: make it pass
     def exception_handler(function):
         return function()
 
-  the terminal shows a :doc:`/exceptions/TypeError` because ``does_not_raise_exception_error`` is not  `callable <https://docs.python.org/3/glossary.html#term-callable>`_
+  the terminal shows a :doc:`/exceptions/TypeError` because ``does_not_raise_exception`` is not  `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 
   .. code-block:: python
 
@@ -288,11 +288,11 @@ GREEN: make it pass
     >       return function()
     E       TypeError: 'NoneType' object is not callable
 
-* I change ``does_not_raise_exception_error`` to a function to make it `callable <https://docs.python.org/3/glossary.html#term-callable>`_
+* I change ``does_not_raise_exception`` to a function to make it `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 
   .. code-block:: python
 
-    def does_not_raise_exception_error():
+    def does_not_raise_exception():
         return None
 
   the terminal shows an :doc:`/exceptions/AssertionError`
@@ -302,8 +302,8 @@ GREEN: make it pass
     AssertionError: None != 'succeeded'
 
   - The ``exception_handler`` :doc:`function </functions/functions>` returns the result of calling the :doc:`function </functions/functions>` it receives as input
-  - When I call ``exceptions.exception_handler`` with ``exceptions.does_not_raise_exception_error`` as input, it calls the :doc:`function </functions/functions>` and returns the result
-  - the result of calling ``exceptions.does_not_raise_exception_error`` is currently :doc:`None </data_structures/none>` which is not equal to ``'succeeded'`` and the result of calling ``exceptions.raises_exception_error`` is currently an Exception which is not equal to ``'failed'``
+  - When I call ``exceptions.exception_handler`` with ``exceptions.does_not_raise_exception`` as input, it calls the :doc:`function </functions/functions>` and returns the result
+  - the result of calling ``exceptions.does_not_raise_exception`` is currently :doc:`None </data_structures/none>` which is not equal to ``'succeeded'`` and the result of calling ``exceptions.raises_exception`` is currently an Exception which is not equal to ``'failed'``
 
 *****************************************
 How to use try...except...else
@@ -354,7 +354,7 @@ I add a failing test to ``test_exceptions.py``
   def test_finally_always_returns(self):
       self.assertEqual(
           exceptions.always_returns(
-              exceptions.does_not_raise_exception_error
+              exceptions.does_not_raise_exception
           ),
           "always returns this"
       )
@@ -412,7 +412,7 @@ GREEN: make it pass
     def always_returns(function):
         return function()
 
-  the terminal shows an :doc:`/exceptions/AssertionError` because ``exceptions.always_returns`` returns the value of calling ``does_not_raise_exception_error`` which is :doc:`None </data_structures/none>` and is not equal to the expectation in the test which is ``'always returns this'``
+  the terminal shows an :doc:`/exceptions/AssertionError` because ``exceptions.always_returns`` returns the value of calling ``does_not_raise_exception`` which is :doc:`None </data_structures/none>` and is not equal to the expectation in the test which is ``'always returns this'``
 
   .. code-block:: python
 
@@ -430,7 +430,7 @@ GREEN: make it pass
         else:
             return 'succeeded'
 
-  the terminal shows an :doc:`/exceptions/AssertionError` with a different message. ``always_returns`` returns ``'succeeded'`` since no exception is raised when it calls ``does_not_raise_exception_error`` and ``'succeeded'`` is not equal to ``'always returns this'``
+  the terminal shows an :doc:`/exceptions/AssertionError` with a different message. ``always_returns`` returns ``'succeeded'`` since no exception is raised when it calls ``does_not_raise_exception`` and ``'succeeded'`` is not equal to ``'always returns this'``
 
   .. code-block::
 
@@ -474,13 +474,13 @@ GREEN: make it pass
     def test_finally_always_returns(self):
         self.assertEqual(
             exceptions.always_returns(
-                exceptions.does_not_raise_exception_error
+                exceptions.does_not_raise_exception
             ),
             "always returns this"
         )
         self.assertEqual(
             exceptions.always_returns(
-                exceptions.raises_exception_error
+                exceptions.raises_exception
             ),
             'succeeded'
         )
@@ -498,13 +498,13 @@ GREEN: make it pass
     def test_finally_always_returns(self):
         self.assertEqual(
             exceptions.always_returns(
-                exceptions.does_not_raise_exception_error
+                exceptions.does_not_raise_exception
             ),
             "always returns this"
         )
         self.assertEqual(
             exceptions.always_returns(
-                exceptions.raises_exception_error
+                exceptions.raises_exception
             ),
             "always returns this"
         )
