@@ -7,6 +7,7 @@ How I setup my Interactive Development Environment (IDE)
 
   <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/frgpHxNVqzo?si=Mzzvmg0ac_jf4jia" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+----
 
 As of the writing of this book I use `Visual Studio Code <https://code.visualstudio.com/download>`_
 

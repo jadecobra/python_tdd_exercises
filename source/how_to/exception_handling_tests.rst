@@ -3,6 +3,12 @@
 How to test that an Exception is raised
 ########################################
 
+.. raw:: html
+
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/xAgoCiCZIt0?si=CKmBIYAZU71gk45I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+----
+
 `Exceptions <https://docs.python.org/3/library/exceptions.html?highlight=exception#Exception>`_ are raised in Python when an error occurs and break execution of the program. When an exception is encountered no further instructions in the program will run.
 
 This is useful because it means there is a problem that should be taken care of for the program to continue as expected.
@@ -26,14 +32,11 @@ How to handle a ModuleNotFoundError
 RED: make it fail
 ==================
 
-I create a file called ``test_exceptions.py`` in the ``tests`` folder and add the following
+I replace ``test_failure`` in ``test_exceptions.py``
 
 .. code-block:: python
 
-  import unittest
-
-
-  class TestExceptionHandling(unittest.TestCase):
+  class TestException(unittest.TestCase):
 
       def test_catching_module_not_found_error_in_tests(self):
           import non_existent_module

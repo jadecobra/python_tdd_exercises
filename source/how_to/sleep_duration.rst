@@ -3,6 +3,10 @@
 How to measure sleep duration
 ##############################
 
+.. raw:: html
+
+----
+
 In this chapter I take a look at building a program that returns the amount of time slept between a given sleep and wake time.
 
 ****************
