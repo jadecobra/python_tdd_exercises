@@ -5,6 +5,8 @@ How to handle Exceptions in programs
 
 .. raw:: html
 
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/tqMRKfPwDAc?si=UMy_NkJvL4Aql8Dq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ----
 
 :doc:`/how_to/exception_handling_tests` showed how to verify that an exception is raised when testing. This chapter shows how to handle exceptions when they are raised in programs
