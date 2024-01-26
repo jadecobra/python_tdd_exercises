@@ -6,6 +6,7 @@ Automatically Create a Test Driven Development Environment
 * Here is the ``./createPythonTdd.sh`` script from :doc:`/how_to/create_tdd_environment`
 
   .. literalinclude:: createPythonTdd.sh
+    :language: shell
 
 * use ``chmod`` to make the program executable
 
@@ -22,3 +23,4 @@ Automatically Create a Test Driven Development Environment
 * Here is the ``./createPythonTdd.ps1`` script from :doc:`/how_to/create_tdd_environment`
 
   .. literalinclude:: createPythonTdd.ps1
+    :language: PowerShell
