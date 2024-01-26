@@ -445,7 +445,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
       def test_splitting_a_string(self):
           self.assertEqual(
-              "00:00".split(),
+              "01:23".split(),
               None
           )
 
@@ -457,7 +457,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
   .. code-block:: python
 
-    AssertionError: ['00:00'] != None
+    AssertionError: ['01:23'] != None
 
   I change the expectation to make the test pass
 
@@ -465,8 +465,8 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
     def test_splitting_a_string(self):
         self.assertEqual(
-            "00:00".split(),
-            ["00:00"]
+            "01:23".split(),
+            ["01:23"]
         )
 
   and the terminal shows the :doc:`/exceptions/TypeError` that took me down this path
@@ -475,21 +475,21 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
     TypeError: unsupported operand type(s) for -: 'str' and 'str'
 
-* I want to `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ the string on a ``separator`` so I get the separate parts, something like ``["00", "00"]``, using ``:`` as the separator. I change the expectation of the test to match this idea
+* I want to `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ the string on a ``separator`` so I get the separate parts, something like ``["01", "23"]``, using ``:`` as the separator. I change the expectation of the test to match this idea
 
   .. code-block:: python
 
     def test_splitting_a_string(self):
         self.assertEqual(
-            "00:00".split(),
-            ['00', '00']
+            "01:23".split(),
+            ['01', '23']
         )
 
   and the terminal shows an :doc:`/exceptions/AssertionError`, the use of the `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ :doc:`method </functions/functions>` has not yet given me what I want but has brought me closer, the shapes at least look the same
 
   .. code-block:: python
 
-    AssertionError: Lists differ: ['00:00'] != ['00', '00']
+    AssertionError: Lists differ: ['01:23'] != ['01', '23']
 
 * Looking back at the documentation, I see that `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ takes in ``self, /, sep=None, maxsplit=-1`` as inputs and ``sep`` is the ``separator``. I pass in ``:`` to the `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ :doc:`method </functions/functions>` as the ``separator``
 
@@ -497,8 +497,8 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
     def test_splitting_a_string(self):
         self.assertEqual(
-            "00:00".split(':'),
-            ['00', '00']
+            "01:23".split(':'),
+            ['01', '23']
         )
 
   and the test passes. I now know how to get the first parts of ``wake_time`` and ``sleep_time``
@@ -523,8 +523,8 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
     def test_splitting_a_string(self):
         self.assertEqual(
-            "00:00".split(':'),
-            ['00', '00']
+            "01:23".split(':'),
+            ['01', '23']
         )
         self.assertEqual(
             "12:34".split(':')[0],
@@ -1047,22 +1047,19 @@ I add a new failing test to ``test_sleep_duration.py`` to find out
 .. code-block:: python
 
   def test_duration_when_given_earlier_wake_time_than_sleep_time(self):
-      wake_time ="01:00"
-      sleep_time = "02:00"
-
       self.assertEqual(
           sleep_duration.duration(
-              wake_time=wake_time,
-              sleep_time=sleep_time
+              wake_time='01:00',
+              sleep_time='02:00'
           ),
-          "-01:00:00"
+          ""
       )
 
 the terminal shows an :doc:`/exceptions/AssertionError`
 
 .. code-block:: python
 
-  AssertionError: '-1:0' != '-01:00:00'
+  AssertionError: '-1:0' != ''
 
 
 GREEN: make it pass
@@ -1075,13 +1072,10 @@ GREEN: make it pass
   .. code-block:: python
 
     def test_duration_when_given_earlier_wake_time_than_sleep_time(self):
-        wake_time = "01:00"
-        sleep_time = "02:00"
-
         self.assertEqual(
             sleep_duration.duration(
-                wake_time=wake_time,
-                sleep_time=sleep_time
+                wake_time='01:00',
+                sleep_time='02:00'
             ),
             '-1:0'
         )
@@ -1134,13 +1128,10 @@ GREEN: make it pass
   .. code-block:: python
 
     def test_duration_when_given_earlier_wake_time_than_sleep_time(self):
-        wake_time = "01:00"
-        sleep_time = "02:00"
-
         with self.assertRaises(ValueError):
             sleep_duration.duration(
-                wake_time=wake_time,
-                sleep_time=sleep_time
+                wake_time='01:00',
+                sleep_time='02:00'
             )
 
 
@@ -1217,7 +1208,10 @@ I add a failing test to ``test_sleep_duration.py`` called ``test_duration_when_g
         sleep_time = f'21/11/06 {sleep_hour}:{sleep_minute}'
 
         self.assertEqual(
-            sleep_duration.duration(wake_time, sleep_time),
+            sleep_duration.duration(
+                wake_time=wake_time,
+                sleep_time=sleep_time
+            ),
             f'{difference_hours}:{difference_minutes}'
         )
 

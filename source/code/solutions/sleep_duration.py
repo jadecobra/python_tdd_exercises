@@ -10,7 +10,7 @@ def duration(wake_time=None, sleep_time=None):
     sleep_time = get_datetime_object(sleep_time)
 
     if wake_time > sleep_time:
-        return str(wake_time - sleep_time)
+        return str(wake_time-sleep_time)
     else:
         raise ValueError(
             f'wake_time: {wake_time} is earlier '

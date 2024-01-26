@@ -97,30 +97,30 @@ class TestSleepDuration(unittest.TestCase):
 
     def test_splitting_a_string(self):
         self.assertEqual(
-            "00:00".split(':'),
-            ['00', '00']
+            "01:23".split(':'),
+            ['01', '23']
         )
         self.assertEqual(
             "12:34".split(':')[0],
-            "12"
+            '12'
         )
         self.assertEqual(
             "12:34".split(':')[1],
-            "34"
+            '34'
         )
         self.assertEqual(
-            "21/11/06 16:40".split(":")[0],
-            "21/11/06 16"
+            "21/11/06 16:40".split(':')[0],
+            '21/11/06 16'
         )
-
-    def test_converting_a_string_to_an_integer(self):
-        self.assertEqual(int("12"), 12)
 
     def test_floor_division(self):
         self.assertEqual(5//2, 2)
 
     def test_modulo_division(self):
         self.assertEqual(5%2, 1)
+
+    def test_converting_a_string_to_an_integer(self):
+        self.assertEqual(int("12"), 12)
 
     def test_datetime_datetime_objects(self):
         self.assertEqual(
@@ -131,7 +131,7 @@ class TestSleepDuration(unittest.TestCase):
             datetime.datetime(2006, 11, 21, 16, 30)
         )
 
-    def test_subtraction_datetime_datetime_objects(self):
+    def test_subtracting_datetime_datetime_objects(self):
         sleep_time = datetime.datetime.strptime(
             "21/11/06 16:30",
             "%d/%m/%y %H:%M"
@@ -151,40 +151,14 @@ class TestSleepDuration(unittest.TestCase):
             "2:00:00"
         )
 
-    def test_duration_when_given_hours_and_minutes(self):
-        wake_hour = random.randint(0, 23)
-        sleep_hour = random.randint(0, 23)
-        wake_minute = random.randint(0, 59)
-        sleep_minute = random.randint(0, 59)
-
-        wake_time_minutes = (wake_hour * 60) + wake_minute
-        sleep_time_minutes = (sleep_hour * 60) + sleep_minute
-        difference = wake_time_minutes - sleep_time_minutes
-        difference_hours = difference // 60
-        difference_minutes = difference % 60
-
-        wake_time=f'{wake_hour}:{wake_minute}'
-        sleep_time=f'{sleep_hour}:{sleep_minute}'
-
-        try:
-            self.assertEqual(
-                sleep_duration.duration(
-                    wake_time=wake_time,
-                    sleep_time=sleep_time
-                ),
-                f'{difference_hours}:{difference_minutes}'
-            )
-        except ValueError:
-            pass
-
     def test_duration_when_given_date_and_time(self):
         wake_hour = random.randint(0, 23)
         sleep_hour = random.randint(0, 23)
-        wake_minute = random.randint(0, 59)
-        sleep_minute = random.randint(0, 59)
+        wake_minutes = random.randint(0, 59)
+        sleep_minutes = random.randint(0, 59)
 
-        wake_time = f'21/11/06 {wake_hour}:{wake_minute}'
-        sleep_time = f'21/11/06 {sleep_hour}:{sleep_minute}'
+        wake_time = f'21/11/06 {wake_hour}:{wake_minutes}'
+        sleep_time = f'21/11/06 {sleep_hour}:{sleep_minutes}'
         pattern = '%d/%m/%y %H:%M'
 
         difference = (
