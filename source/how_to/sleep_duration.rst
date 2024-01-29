@@ -573,7 +573,10 @@ I could write a test case for every possible sleep and wake time, or  write one 
   .. code-block:: python
 
     def duration(wake_time=None, sleep_time=None):
-        return wake_time.split(':')[0] - sleep_time.split(':')[0]
+        return (
+            wake_time.split(':')[0]
+          - sleep_time.split(':')[0]
+        )
 
   the terminal shows a :doc:`/exceptions/TypeError` for an unsupported operation of trying to subtract one `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ from another, and though it is not explicit here, from ``test_splitting_a_string`` I know that the strings being subtracted are the values to the left of the separator ``:``, not the entire string value of ``wake_time`` and ``sleep_time``. For example,  if the given ``wake_time`` is ``"02:00"`` and the given ``sleep_time`` is ``"01:00"``  the program is currently trying to subtract ``"01"`` from ``"02"`` which is different from trying to subtract ``1`` from ``2``. ``"01"`` is a string and ``1`` is a number.
 * The next task is to convert the string to a number so I can do the subtraction. I use the `int <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ constructor which returns an integer for a given value
@@ -597,7 +600,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
   .. code-block:: python
 
-    def test_converting_a_string_to_an_integer(self):
+    def test_converting_string_to_integer(self):
         self.assertEqual(int("12"), 0)
 
     # def test_duration_when_given_hours_only(self):
@@ -611,7 +614,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
   .. code-block:: python
 
-    def test_converting_a_string_to_an_integer(self):
+    def test_converting_string_to_integer(self):
         self.assertEqual(int("12"), 12)
 
   Great! I have another tool to help solve the problem. From the tests so far I can
@@ -639,7 +642,11 @@ I could write a test case for every possible sleep and wake time, or  write one 
         wake_time_split = wake_time.split(':')
         wake_time_hour = wake_time_split[0]
         wake_time_hour_integer = int(wake_time_hour)
-        return wake_time_hour_integer - int(sleep_time.split(':')[0])
+
+        return (
+            wake_time_hour_integer
+          - int(sleep_time.split(':')[0])
+        )
 
   the terminal shows all tests are still passing, so I try the same thing for ``sleep_time``
 
@@ -654,11 +661,14 @@ I could write a test case for every possible sleep and wake time, or  write one 
         sleep_time_hour = sleep_time_split[0]
         sleep_time_hour_integer = int(sleep_time_hour)
 
-        return wake_time_hour_integer - sleep_time_hour_integer
+        return (
+            wake_time_hour_integer
+          - sleep_time_hour_integer
+        )
 
-* For each string given, the ``duration`` function
+* The ``duration`` function does the following for each given timestamp,
 
-  - splits the string on the separator ``:``
+  - splits the timestamp string on the separator ``:``
   - gets the first item from the split
   - converts the first item from the split to an integer
 
@@ -732,15 +742,15 @@ I add a failing test in ``test_sleep_duration.py`` that takes minutes into accou
     def test_duration_when_given_hours_and_minutes(self):
         wake_hour = random.randint(0, 23)
         sleep_hour = random.randint(0, 23)
-        wake_minute = random.randint(0, 59)
-        sleep_minute = random.randint(0, 59)
+        wake_minutes = random.randint(0, 59)
+        sleep_minutes = random.randint(0, 59)
 
         self.assertEqual(
             sleep_duration.duration(
-                wake_time=f'{wake_hour}:{wake_minute}',
-                sleep_time=f'{sleep_hour}:{sleep_minute}'
+                wake_time=f'{wake_hour}:{wake_minutes}',
+                sleep_time=f'{sleep_hour}:{sleep_minutes}'
             ),
-            f'{wake_hour-sleep_hour}:{wake_minute-sleep_minute}'
+            f'{wake_hour-sleep_hour}:{wake_minutes-sleep_minutes}'
         )
 
 the terminal shows an :doc:`/exceptions/AssertionError` similar to this
@@ -761,26 +771,15 @@ GREEN: make it pass
   .. code-block:: python
 
     def duration(wake_time=None, sleep_time=None):
-        return (
-            f'{get_hour(wake_time)-get_hour(sleep_time)}:'
-            f'{wake_time-sleep_time}'
+        difference_hours = (
+            get_hour(wake_time)
+          - get_hour(sleep_time)
         )
-
-  I get a :doc:`/exceptions/TypeError` because I just tried to subtract one string from another. At this point I have a long standing relationship with this error
-
-  .. code-block:: python
-
-    TypeError: unsupported operand type(s) for -: 'str' and 'str'
-
-* I change the second part of the returned duration to use the ``get_hour`` function
-
-  .. code-block:: python
-
-    def duration(wake_time=None, sleep_time=None):
-        return (
-            f'{get_hour(wake_time)-get_hour(sleep_time)}:'
-            f'{get_hour(wake_time)-get_hour(sleep_time)}'
+        difference_minutes = (
+            get_hour(wake_time)
+          - get_hour(sleep_time)
         )
+        return f'{difference_hour}:{difference_minutes}'
 
   the terminal shows an :doc:`/exceptions/AssertionError` because changing the format causes an error in ``test_duration_when_given_hours_only`` which still expects a number
 
@@ -829,10 +828,15 @@ GREEN: make it pass
   .. code-block:: python
 
     def duration(wake_time=None, sleep_time=None):
-        return (
-            f'{get_hour(wake_time)-get_hour(sleep_time)}:'
-            f'{get_minutes(wake_time)-get_minutes(sleep_time)}'
+        difference_hours = (
+            get_hour(wake_time)
+          - get_hour(sleep_time)
         )
+        difference_minutes = (
+            get_minutes(wake_time)
+          - get_minutes(sleep_time)
+        )
+        return f'{difference_hour}:{difference_minutes}'
 
   the test passes and I am left with an :doc:`/exceptions/AssertionError` for ``test_duration_when_given_hours_only``
 
@@ -915,19 +919,19 @@ REFACTOR: make it better
     def test_duration_when_given_hours_and_minutes(self):
         wake_hour = random.randint(0, 23)
         sleep_hour = random.randint(0, 23)
-        wake_minute = random.randint(0, 59)
-        sleep_minute = random.randint(0, 59)
+        wake_minutes = random.randint(0, 59)
+        sleep_minutes = random.randint(0, 59)
 
-        wake_time_minutes = (wake_hour * 60) + wake_minute
-        sleep_time_minutes = (sleep_hour * 60) + sleep_minute
+        wake_time_minutes = (wake_hour * 60) + wake_minutes
+        sleep_time_minutes = (sleep_hour * 60) + sleep_minutes
         difference = wake_time_minutes - sleep_time_minutes
         difference_hours = difference // 60
         difference_minutes = difference % 60
 
         self.assertEqual(
             sleep_duration.duration(
-                wake_time=f'{wake_hour}:{wake_minute}',
-                sleep_time=f'{sleep_hour}:{sleep_minute}'
+                wake_time=f'{wake_hour}:{wake_minutes}',
+                sleep_time=f'{sleep_hour}:{sleep_minutes}'
             ),
             f'{difference_hours}:{difference_minutes}'
         )
@@ -1143,17 +1147,17 @@ GREEN: make it pass
     def test_duration_when_given_hours_and_minutes(self):
         wake_hour = random.randint(0, 23)
         sleep_hour = random.randint(0, 23)
-        wake_minute = random.randint(0, 59)
-        sleep_minute = random.randint(0, 59)
+        wake_minutes = random.randint(0, 59)
+        sleep_minutes = random.randint(0, 59)
 
-        wake_time_minutes = (wake_hour * 60) + wake_minute
-        sleep_time_minutes = (sleep_hour * 60) + sleep_minute
+        wake_time_minutes = (wake_hour * 60) + wake_minutes
+        sleep_time_minutes = (sleep_hour * 60) + sleep_minutes
         difference = wake_time_minutes - sleep_time_minutes
         difference_hours = difference // 60
         difference_minutes = difference % 60
 
-        wake_time=f'{wake_hour}:{wake_minute}'
-        sleep_time=f'{sleep_hour}:{sleep_minute}'
+        wake_time=f'{wake_hour}:{wake_minutes}'
+        sleep_time=f'{sleep_hour}:{sleep_minutes}'
 
         try:
             self.assertEqual(
@@ -1195,17 +1199,17 @@ I add a failing test to ``test_sleep_duration.py`` called ``test_duration_when_g
     def test_duration_when_given_date_and_time(self):
         wake_hour = random.randint(0, 23)
         sleep_hour = random.randint(0, 23)
-        wake_minute = random.randint(0, 59)
-        sleep_minute = random.randint(0, 59)
+        wake_minutes = random.randint(0, 59)
+        sleep_minutes = random.randint(0, 59)
 
-        wake_time_minutes = (wake_hour * 60) + wake_minute
-        sleep_time_minutes = (sleep_hour * 60) + sleep_minute
+        wake_time_minutes = (wake_hour * 60) + wake_minutes
+        sleep_time_minutes = (sleep_hour * 60) + sleep_minutes
         difference = wake_time_minutes - sleep_time_minutes
         difference_hours = difference // 60
         difference_minutes = difference % 60
 
-        wake_time = f'21/11/06 {wake_hour}:{wake_minute}'
-        sleep_time = f'21/11/06 {sleep_hour}:{sleep_minute}'
+        wake_time = f'21/11/06 {wake_hour}:{wake_minutes}'
+        sleep_time = f'21/11/06 {sleep_hour}:{sleep_minutes}'
 
         self.assertEqual(
             sleep_duration.duration(
@@ -1294,17 +1298,17 @@ GREEN: make it pass
       # def test_duration_when_given_date_and_time(self):
       #     wake_hour = random.randint(0, 23)
       #     sleep_hour = random.randint(0, 23)
-      #     wake_minute = random.randint(0, 59)
-      #     sleep_minute = random.randint(0, 59)
+      #     wake_minutes = random.randint(0, 59)
+      #     sleep_minutes = random.randint(0, 59)
 
-      #     wake_time_minutes = (wake_hour * 60) + wake_minute
-      #     sleep_time_minutes = (sleep_hour * 60) + sleep_minute
+      #     wake_time_minutes = (wake_hour * 60) + wake_minutes
+      #     sleep_time_minutes = (sleep_hour * 60) + sleep_minutes
       #     difference = wake_time_minutes - sleep_time_minutes
       #     difference_hours = difference // 60
       #     difference_minutes = difference % 60
 
-      #     wake_time =f'21/11/06 {wake_hour}:{wake_minute}'
-      #     sleep_time = f'21/11/06 {sleep_hour}:{sleep_minute}'
+      #     wake_time =f'21/11/06 {wake_hour}:{wake_minutes}'
+      #     sleep_time = f'21/11/06 {sleep_hour}:{sleep_minutes}'
 
       #     self.assertEqual(
       #         sleep_duration.duration(wake_time, sleep_time),
@@ -1366,13 +1370,12 @@ GREEN: make it pass
     .. code-block:: python
 
       def test_subtracting_datetime_datetime_objects(self):
+          pattern = "%d/%m/%y %H:%M"
           sleep_time = datetime.datetime.strptime(
-              "21/11/06 16:30",
-              "%d/%m/%y %H:%M"
+              "21/11/06 16:30", pattern
           )
           wake_time = datetime.datetime.strptime(
-              "21/11/06 17:30",
-              "%d/%m/%y %H:%M"
+              "21/11/06 17:30", pattern
           )
           self.assertEqual(wake_time-sleep_time, 1)
 
@@ -1390,13 +1393,12 @@ GREEN: make it pass
     .. code-block:: python
 
       def test_subtracting_datetime_datetime_objects(self):
+          pattern = "%d/%m/%y %H:%M"
           sleep_time = datetime.datetime.strptime(
-              "21/11/06 16:30",
-              "%d/%m/%y %H:%M"
+              "21/11/06 16:30", pattern
           )
           wake_time = datetime.datetime.strptime(
-              "21/11/06 17:30",
-              "%d/%m/%y %H:%M"
+              "21/11/06 17:30", pattern
           )
           self.assertEqual(
               wake_time-sleep_time,
@@ -1513,11 +1515,11 @@ GREEN: make it pass
     def test_duration_when_given_date_and_time(self):
         wake_hour = random.randint(0, 23)
         sleep_hour = random.randint(0, 23)
-        wake_minute = random.randint(0, 59)
-        sleep_minute = random.randint(0, 59)
+        wake_minutes = random.randint(0, 59)
+        sleep_minutes = random.randint(0, 59)
 
-        wake_time = f'21/11/06 {wake_hour}:{wake_minute}'
-        sleep_time = f'21/11/06 {sleep_hour}:{sleep_minute}'
+        wake_time = f'21/11/06 {wake_hour}:{wake_minutes}'
+        sleep_time = f'21/11/06 {sleep_hour}:{sleep_minutes}'
         pattern = "%d/%m/%y %H:%M"
 
         difference = (
@@ -1607,11 +1609,11 @@ GREEN: make it pass
     def test_duration_when_given_date_and_time(self):
         wake_hour = random.randint(0, 23)
         sleep_hour = random.randint(0, 23)
-        wake_minute = random.randint(0, 59)
-        sleep_minute = random.randint(0, 59)
+        wake_minutes = random.randint(0, 59)
+        sleep_minutes = random.randint(0, 59)
 
-        wake_time = f'21/11/06 {wake_hour}:{wake_minute}'
-        sleep_time = f'21/11/06 {sleep_hour}:{sleep_minute}'
+        wake_time = f'21/11/06 {wake_hour}:{wake_minutes}'
+        sleep_time = f'21/11/06 {sleep_hour}:{sleep_minutes}'
         pattern = "%d/%m/%y %H:%M"
 
         difference = (
