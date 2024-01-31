@@ -585,21 +585,13 @@ I could write a test case for every possible sleep and wake time, or  write one 
         )
 
   the terminal shows a :doc:`/exceptions/TypeError` for an unsupported operation of trying to subtract one `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ from another, and though it is not explicit here, from ``test_splitting_a_string`` I know that the strings being subtracted are the values to the left of the separator ``:``, not the entire string value of ``wake_time`` and ``sleep_time``. For example,  if the given ``wake_time`` is ``"02:00"`` and the given ``sleep_time`` is ``"01:00"``  the program is currently trying to subtract ``"01"`` from ``"02"`` which is different from trying to subtract ``1`` from ``2``, ``"01"`` is a string and ``1`` is a number.
-* The next task is to convert the string to a number so I can do the subtraction. I comment out the current failing test
+* The next task is to convert the string to a number so I can do the subtraction. I disable the current failing test by using ``unittest.skip``
 
   .. code-block:: python
 
-    # def test_duration_when_given_hours_only(self):
-    #     wake_hour = random.randint(0, 23)
-    #     sleep_hour = random.randint(0, 23)
-    #
-    #     self.assertEqual(
-    #         sleep_duration.duration(
-    #             wake_time=f'{wake_hour:02}:00',
-    #             sleep_time=f'{sleep_hour:02}:00'
-    #         ),
-    #         wake_hour-sleep_hour
-    #     )
+    @unittest.skip
+    def test_duration_when_given_hours_only(self):
+    ...
 
 * then add a failing test to see if I can use the `int <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ constructor to convert a string to a number
 
@@ -609,7 +601,8 @@ I could write a test case for every possible sleep and wake time, or  write one 
         self.assertEqual(int('12'), 0)
         self.assertEqual(int('01'), 0)
 
-    # def test_duration_when_given_hours_only(self):
+    @unittest.skip
+    def test_duration_when_given_hours_only(self):
     ...
 
   the terminal shows an :doc:`/exceptions/AssertionError` since ``12 != 0`` ::
@@ -643,7 +636,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
   - index a list
   - convert a string to a number
 
-* I uncomment the test in ``test_sleep_duration.py`` to show the :doc:`/exceptions/TypeError` I have been trying to solve, then add the conversion using the `int <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ constructor to the ``duration`` function in ``sleep_duration.py`` to see if it makes the test pass
+* I remove ``@unittest.skip`` from the test in ``test_sleep_duration.py`` to show the :doc:`/exceptions/TypeError` I have been trying to solve, then add the conversion using the `int <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ constructor to the ``duration`` function in ``sleep_duration.py`` to see if it makes the test pass
 
   .. code-block:: python
 
@@ -1359,43 +1352,13 @@ GREEN: make it pass
 
   I cannot convert a string in the format ``'31/12/99 10'`` to an integer
 
-* I comment out ``test_duration_when_given_date_and_time``
+* I disable ``test_duration_when_given_date_and_time`` by adding `unittest.skip <https://docs.python.org/3/library/unittest.html#unittest.skip>`_
 
   .. code-block:: python
 
-    # def test_duration_when_given_date_and_time(self):
-    #     wake_hour = random.randint(0, 23)
-    #     sleep_hour = random.randint(0, 23)
-    #     wake_minutes = random.randint(0, 59)
-    #     sleep_minutes = random.randint(0, 59)
-
-    #     wake_time_minutes = (wake_hour * 60) + wake_minutes
-    #     sleep_time_minutes = (sleep_hour * 60) + sleep_minutes
-    #     difference = wake_time_minutes - sleep_time_minutes
-    #     difference_hours = difference // 60
-    #     difference_minutes = difference % 60
-
-    #     wake_time = f'31/12/99 {wake_hour:02}:{wake_minutes:02}'
-    #     sleep_time = f'31/12/99 {sleep_hour:02}:{sleep_minutes:02}'
-
-    #     try:
-    #         self.assertEqual(
-    #             sleep_duration.duration(
-    #                 wake_time=wake_time,
-    #                 sleep_time=sleep_time
-    #             ),
-    #             f'{difference_hours:02}:{difference_minutes:02}'
-    #         )
-    #     except ValueError:
-    #         with self.assertRaisesRegex(
-    #             ValueError,
-    #             f'wake_time: {wake_time} is earlier '
-    #             f'than sleep_time: {sleep_time}'
-    #         ):
-    #             sleep_duration.duration(
-    #                 wake_time=wake_time,
-    #                 sleep_time=sleep_time,
-    #             )
+    @unittest.skip
+    def test_duration_when_given_date_and_time(self):
+    ...
 
 * then add a test to ``test_converting_string_to_integer`` to confirm the cause of the `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_
 
@@ -1589,7 +1552,7 @@ GREEN: make it pass
   - subtract one `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ object from another to get a `datetime.timedelta <https://docs.python.org/3/library/datetime.html?highlight=datetime#timedelta-objects>`_ object
   - convert a `datetime.timedelta <https://docs.python.org/3/library/datetime.html?highlight=datetime#timedelta-objects>`_ object to a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
 
-* I uncomment ``test_duration_when_given_date_and_time`` to return to the `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ that sent me down this path
+* I remove ``@unittest.skip`` from ``test_duration_when_given_date_and_time`` to return to the `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ that sent me down this path
 * I add a function for converting timestamps to ``sleep_duration.py`` and call it ``get_datetime_object``
 
   .. code-block:: python

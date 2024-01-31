@@ -4,12 +4,12 @@ import sleep_duration
 import unittest
 
 
-class Testsleep_duration(unittest.TestCase):
+class TestSleepDuration(unittest.TestCase):
 
     def test_string_methods_and_attributes(self):
         self.maxDiff = None
         self.assertEqual(
-            dir("00:00"),
+            dir('00:00'),
             [
                 '__add__',
                 '__class__',
@@ -97,7 +97,7 @@ class Testsleep_duration(unittest.TestCase):
 
     def test_splitting_a_string(self):
         self.assertEqual(
-            "01:23".split(':'),
+            '01:23'.split(':'),
             ['01', '23']
         )
         self.assertEqual(
@@ -109,15 +109,16 @@ class Testsleep_duration(unittest.TestCase):
             '34'
         )
         self.assertEqual(
-            '21/11/06 21:22'.split(':')[0],
-            '21/11/06 21'
+            '31/12/99 13:46'.split(':')[0],
+            '31/12/99 13'
         )
 
     def test_converting_string_to_integer(self):
         self.assertEqual(int('12'), 12)
+        self.assertEqual(int('01'), 1)
 
         with self.assertRaises(ValueError):
-            int('21/11/06 21')
+            int('31/12/99 13')
 
     def test_floor_division(self):
         self.assertEqual(5//2, 2)
@@ -153,16 +154,16 @@ class Testsleep_duration(unittest.TestCase):
         wake_minutes = random.randint(0, 59)
         sleep_minutes = random.randint(0, 59)
 
-        wake_time = f'21/12/06 {wake_hour}:{wake_minutes}'
-        sleep_time = f'21/11/06 {sleep_hour}:{sleep_minutes}'
-        pattern = '%d/%m/%y %H:%M'
+        wake_time = f'31/12/99 {wake_hour:02}:{wake_minutes:02}'
+        sleep_time = f'01/01/00 {sleep_hour:02}:{sleep_minutes:02}'
+
+        pattern = "%d/%m/%y %H:%M"
+        wake_time_datetime_object = datetime.datetime.strptime(wake_time, pattern)
+        sleep_time_datetime_object = datetime.datetime.strptime(sleep_time, pattern)
+
         difference = (
-            datetime.datetime.strptime(
-                wake_time, pattern
-            )
-          - datetime.datetime.strptime(
-                sleep_time, pattern
-            )
+            wake_time_datetime_object
+          - sleep_time_datetime_object
         )
 
         try:
@@ -176,8 +177,8 @@ class Testsleep_duration(unittest.TestCase):
         except ValueError:
             with self.assertRaisesRegex(
                 ValueError,
-                f'wake_time: {datetime.datetime.strptime(wake_time, pattern)} is earlier '
-                f'than sleep_time: {datetime.datetime.strptime(sleep_time, pattern)}'
+                f'wake_time: {wake_time_datetime_object} is earlier '
+                f'than sleep_time: {sleep_time_datetime_object}'
             ):
                 sleep_duration.duration(
                     wake_time=wake_time,
