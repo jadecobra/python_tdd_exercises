@@ -310,7 +310,9 @@ How to create a Virtual Environment
 
       .venv/scripts/activate
 
-  the ``(.venv)`` on the far left of the command line in the terminal shows that the `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ is activated ::
+  the ``(.venv)`` on the far left of the command line in the terminal shows that the `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ is activated
+
+  .. code-block:: shell
 
     (.venv) vscode ➜ .../project_name $
 

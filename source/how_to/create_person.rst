@@ -140,7 +140,7 @@ REFACTOR: make it better
   .. code-block:: python
 
     def factory(first_name=None):
-        ...
+    ...
 
   the terminal shows a :doc:`/exceptions/TypeError` for the next argument
 
@@ -153,7 +153,7 @@ REFACTOR: make it better
   .. code-block:: python
 
     def factory(first_name=None, last_name=None):
-        ...
+    ...
 
   the terminal shows another :doc:`/exceptions/TypeError` for the next keyword argument
 
@@ -169,7 +169,7 @@ REFACTOR: make it better
           first_name=None, last_name=None,
           year_of_birth=None, sex=None
       ):
-          ...
+      ...
 
   a :doc:`/exceptions/TypeError` is raised because I cannot perform a subtraction operation on :doc:`None </data_structures/none>` and the ``this_year`` function currently returns :doc:`None </data_structures/none>`
 
@@ -450,7 +450,7 @@ RED: make it fail
         first_name=None, last_name="last_name",
         year_of_birth=None, sex=None
     ):
-        ...
+    ...
 
   the terminal shows passing tests. When no value is given for the ``last_name`` argument to ``person.factory`` it uses ``"last_name"`` because that is the defined default value in the :doc:`function signature </functions/functions>`
 
@@ -490,7 +490,7 @@ RED: make it fail
         first_name=None, last_name="last_name",
         year_of_birth=None, sex="M"
     ):
-        ...
+    ...
 
   and the terminal shows passing tests
 

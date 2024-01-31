@@ -251,7 +251,7 @@ GREEN: make it pass
     does_not_raise_exception
 
     def exception_handler(function):
-        ...
+    ...
 
   and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 

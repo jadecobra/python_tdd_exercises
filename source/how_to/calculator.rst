@@ -98,7 +98,7 @@ GREEN: make it pass
 
 
     class TestCalculator(unittest.TestCase):
-        ...
+    ...
 
   and the terminal shows an :doc:`/exceptions/AttributeError`
 
