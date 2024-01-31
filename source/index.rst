@@ -52,8 +52,8 @@ HOWTOs
   :maxdepth: 2
   :titlesonly:
 
-  how_to/setup_my_ide
   how_to/create_tdd_environment
+  how_to/setup_my_ide
   how_to/calculator
   how_to/pass_values
   how_to/create_person
