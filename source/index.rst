@@ -14,9 +14,9 @@ I have put together what has worked for me over a decade of learning the languag
 Who is this book for?
 **********************
 
+* If you are interested in Python, this book is for you
 * If you just started your journey, CONGRATULATIONS! You chose Python from the many available `programming languages <https://en.wikipedia.org/wiki/Programming_language>`_, Celebrate it, this book is for you
 * If you are new to `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ in Python, this book is for you
-* If you are interested in Python, this book is for you
 * If you use Python but do not know any of the errors below, this book is for you
 
   - :doc:`/exceptions/AssertionError`
