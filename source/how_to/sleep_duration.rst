@@ -140,7 +140,7 @@ GREEN: make it pass
     def duration(wake_time=None, sleep_time=None):
         return None
 
-  the terminal shows an :doc:`/exceptions/AssertionError`, the duration function returns :doc:`None </data_structures/none>` but the test expects ``1`` as the duration when a sleep time of ``07:00`` and a wake time of ``08:00`` is given
+  the terminal shows an :doc:`/exceptions/AssertionError`, the duration function returns :doc:`None </data_structures/none>` but the test expects ``1`` as the duration when a sleep time of ``'07:00'`` and a wake time of ``'08:00'`` is given
 
   .. code-block:: python
 
@@ -171,7 +171,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
     import sleep_duration
     import unittest
 
-* then add a new test with random values for the hours part of the timestamps
+* then change ``test_duration_when_given_hours_only`` to use random values for the hours part of the timestamps
 
   .. code-block:: python
 
@@ -190,8 +190,8 @@ I could write a test case for every possible sleep and wake time, or  write one 
             )
 
   - ``random.randint(0, 23)`` returns a random number from ``0`` to ``23`` including ``23``, as the hours for sleep and wake time
-  - ``f'{wake_hour:02}:00'`` :doc:`interpolates </how_to/pass_values>` the random number generated in the input strings
-  - The ``:02`` in ``wake_hour:02`` tells python to display the numbers as two digits for example, display ``01`` instead of ``1``
+  - ``f'{wake_hour:02}:00'`` and  ``f'{sleep_hour:02}:00'`` :doc:`interpolate </how_to/pass_values>` the random numbers in the input strings
+  - The ``:02`` in ``wake_hour:02`` and ``sleep_hour:02`` tell python to display the numbers as two digits. For example, display ``01`` instead of ``1``
   - The sleep and wake times will vary randomly from ``00:00`` to ``23:00`` to cover all the possible hours in a day
 
 * the terminal still shows the test is passing because the expected value is ``1``. I change the test to match the requirement of the difference between ``wake_time`` and ``sleep_time``
@@ -227,7 +227,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
     def duration(wake_time=None, sleep_time=None):
         return wake_time - sleep_time
 
-  the terminal shows a :doc:`/exceptions/TypeError`. I passed in two strings but python does not have an operation defined for subtracting one string from another
+  the terminal shows a :doc:`/exceptions/TypeError`. I passed in two strings and python does not have an operation defined for subtracting one string from another
 
   .. code-block:: python
 
@@ -312,7 +312,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
   `unittest.TestCase.maxDiff <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff>`_ sets a limit on the number of characters the terminal shows for a difference between two objects, there is no limit when it is set to :doc:`None </data_structures/none>`. The terminal shows a full list of all the attributes of a `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_
 
-* I copy the values from the terminal into the test and remove the unnecessary characters
+* I copy the values from the terminal into the test and remove the extra characters
 
   .. NOTE::
 
@@ -409,7 +409,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
               ]
           )
 
-* the test passes and the the terminal shows the :doc:`/exceptions/TypeError` from earlier because python still does not support subtracting one string from another
+* the test passes and the terminal shows the :doc:`/exceptions/TypeError` from earlier because python still does not support subtracting one string from another
 
   .. code-block:: python
 
@@ -425,7 +425,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
         help(str)
     ...
 
-  the terminal shows documentation for the `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ module. I scroll through reading through the descriptions for each :doc:`method </functions/functions>` until I see one that looks like it can solve my problem
+  the terminal shows documentation for the `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ module. I scroll through, reading the descriptions for each :doc:`method </functions/functions>` until I see one that looks like it can solve my problem
 
   .. code-block:: python
 
@@ -478,7 +478,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
     TypeError: unsupported operand type(s) for -: 'str' and 'str'
 
-* I want to `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ the string on a ``separator`` so I get the separate parts, something like ``['01', '23']``, using ``:`` as the separator. I change the expectation of the test to match this idea
+* I want to `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ the string on a ``separator`` so I get the separate parts, something like ``['01', '23']`` with ``:`` as the separator. I change the expectation of the test to match this idea
 
   .. code-block:: python
 
@@ -488,7 +488,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
             ['01', '23']
         )
 
-  and the terminal shows an :doc:`/exceptions/AssertionError`, the use of the `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ :doc:`method </functions/functions>` has not yet given me what I want but has brought me closer, the shapes look the same
+  and the terminal shows an :doc:`/exceptions/AssertionError`, the use of the `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ :doc:`method </functions/functions>` has not yet given me what I want
 
   .. code-block:: python
 
@@ -522,7 +522,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
     TypeError: unsupported operand type(s) for -: 'list' and 'list'
 
-* I only need the first part of the list and can get the specific item by using its index. Python uses zero-based indexing so the first item is at index ``0`` and the second item at index ``1``. See :doc:`/data_structures/lists/lists` for more.
+* I only need the first part of the list and can get the specific item by using its index. Python uses zero-based indexing so the first item is at index ``0`` and the second item is at index ``1``. See :doc:`/data_structures/lists/lists` for more.
   I add tests to ``test_splitting_a_string`` for getting specific parts of the :doc:`list </data_structures/lists/lists>` created from splitting a `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_
 
   .. code-block:: python
@@ -544,7 +544,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
     def test_duration_when_given_hours_only(self):
     ...
 
-  the terminal shows an :doc:`/exceptions/AssertionError` because the first item (item zero) from splitting ``'12:34'`` on the separator ``:`` is ``'12'`` ::
+  the terminal shows an :doc:`/exceptions/AssertionError` because the first item (index 0) from splitting ``'12:34'`` on the separator ``':'`` is ``'12'`` ::
 
     AssertionError: '12' != 0
 
@@ -562,7 +562,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
     AssertionError: '34' != 0
 
-  this shows that the second item (item one) from splitting ``'12:34'`` on the separator ``':'`` is ``'34'``
+  this shows that the second item (index 1) from splitting ``'12:34'`` on the separator ``':'`` is ``'34'``
 * I change the expected value in the same way
 
   .. code-block:: python
@@ -574,7 +574,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
   the tests pass, bringing me back to the unsolved :doc:`/exceptions/TypeError`
 
-* using what I have learned, I make the ``duration`` function return the subtraction of the first parts of splitting ``wake_time`` and ``sleep_time`` on the separator ``:``
+* using what I have learned, I make the ``duration`` function return the subtraction of the first parts of splitting ``wake_time`` and ``sleep_time`` on the separator ``':'``
 
   .. code-block:: python
 
@@ -585,7 +585,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
         )
 
   the terminal shows a :doc:`/exceptions/TypeError` for an unsupported operation of trying to subtract one `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ from another, and though it is not explicit here, from ``test_splitting_a_string`` I know that the strings being subtracted are the values to the left of the separator ``:``, not the entire string value of ``wake_time`` and ``sleep_time``. For example,  if the given ``wake_time`` is ``"02:00"`` and the given ``sleep_time`` is ``"01:00"``  the program is currently trying to subtract ``"01"`` from ``"02"`` which is different from trying to subtract ``1`` from ``2``, ``"01"`` is a string and ``1`` is a number.
-* The next task is to convert the string to a number so I can do the subtraction. I disable the current failing test by using ``unittest.skip``
+* The next task is to convert the string to a number so I can do the subtraction. I disable the current failing test by using the `unittest.skip <https://docs.python.org/3/library/unittest.html#unittest.skip>`_ decorator
 
   .. code-block:: python
 
@@ -622,7 +622,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
     AssertionError: 1 != 0
 
-* I change the test to match the expectation
+* I change the test to match the expectation and we are green again
 
   .. code-block:: python
 
@@ -657,6 +657,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
         wake_time_hour_integer = int(wake_time_hour)
 
         return (
+        # int(wake_time.split(':')[0])
             wake_time_hour_integer
           - int(sleep_time.split(':')[0])
         )
@@ -676,6 +677,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
         return (
             wake_time_hour_integer
+        #   - int(sleep_time.split(':')[0])
           - sleep_time_hour_integer
         )
 
@@ -700,8 +702,20 @@ I could write a test case for every possible sleep and wake time, or  write one 
             process(wake_time)
           - process(sleep_time)
         )
+        wake_time_split = wake_time.split(':')
+        wake_time_hour = wake_time_split[0]
+        wake_time_hour_integer = int(wake_time_hour)
 
-  since the tests are passing, I can rename ``process`` to something more descriptive like ``get_hour``
+        sleep_time_split = sleep_time.split(':')
+        sleep_time_hour = sleep_time_split[0]
+        sleep_time_hour_integer = int(sleep_time_hour)
+
+        return (
+            wake_time_hour_integer
+          - sleep_time_hour_integer
+        )
+
+  since the tests are passing, I can remove the parts of the function I no longer need and rename ``process`` to something more descriptive like ``get_hour``
 
   .. code-block:: python
 
@@ -730,7 +744,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
         return value
 
   the terminal still shows passing tests
-* I can also rewrite the ``get_hour`` function to use one line though it will no longer be as explicit as above
+* I can also rewrite the ``get_hour`` function to use one line, though it will no longer be as explicit as above
 
   .. code-block:: python
 
@@ -765,7 +779,7 @@ I add a failing test in ``test_sleep_duration.py`` that takes minutes into accou
         sleep_minutes = random.randint(0, 59)
 
         difference_hours = wake_hour - sleep_hour
-        difference_minutes = wake_minutes-sleep_minutes
+        difference_minutes = wake_minutes - sleep_minutes
 
         self.assertEqual(
             sleep_duration.duration(
@@ -1697,7 +1711,7 @@ GREEN: make it pass
 
             return f'{difference_hours:02}:{difference_minutes:02}'
 
-* I make a copy of the the test in the ``try...except`` block to confirm that a `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ is raised
+* I make a copy of the test in the ``try...except`` block to confirm that a `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ is raised
 
   .. code-block:: python
 

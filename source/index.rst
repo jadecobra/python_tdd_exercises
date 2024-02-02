@@ -7,8 +7,7 @@
 Pumping Python: How to solve problems with Test Driven Development
 #####################################################################
 
-This book has exercises using `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ with Python.
-I have put together what has worked for me over a decade of learning the language and seeing other people use it.
+I have put together what has worked for me over a decade of learning python and seeing other people use it into this book as exercises using `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_.
 
 **********************
 Who is this book for?
@@ -37,11 +36,14 @@ You can choose how you go through the chapters by starting with what you like.
 My recommendation is to
 
 * start with :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` because it is required by every chapter
-* type out the code portions as you go through any chapter - do not copy and paste
+* type out the code portions as you go through any chapter without copying and pasting the code
 * repeat a chapter you like until you can do it from memory
 * try recreating the tests from memory or write new tests for a concept you are working on
-* try to write solutions with only the tests from the :ref:`tests and solutions` sections
+* try to write solutions using only the tests from the :ref:`tests and solutions` sections as your guide
 * try adding tests for any ideas you get as you go through a chapter
+* you can also go through the :ref:`how-tos` section sequentially
+
+If you prefer videos, there is one for each chapter at `<https://www.youtube.com/@JacobItegboje>`_
 
 .. _how-tos:
 
