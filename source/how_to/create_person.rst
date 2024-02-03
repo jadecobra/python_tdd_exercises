@@ -12,7 +12,7 @@ How to create a person
 This is an exercise in creating :doc:`dictionaries </data_structures/dictionaries>`  with :doc:`/functions/functions`. It assumes familiarity with those concepts, though you can still try out the chapter even if you are not.
 
 ****************
-Prerequisites
+requirements
 ****************
 
 :doc:`Create a Test Driven Development Environment </how_to/create_tdd_environment>` with ``person`` as the project name

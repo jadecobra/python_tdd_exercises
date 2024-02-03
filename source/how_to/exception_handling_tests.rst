@@ -18,7 +18,7 @@ It is also a pain when it causes the program to exit early. What if I want the p
 Exception Handling is a way to deal with exceptions, it allows programs to make decisions when an Exception is encountered.
 
 *************************
-Prerequisites
+requirements
 *************************
 
 :doc:`Create a Test Driven Development Environment </how_to/create_tdd_environment>` with ``exceptions`` as the project name

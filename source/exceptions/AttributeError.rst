@@ -7,7 +7,7 @@ An Attribute is a property, variable, function or name that belongs to an `objec
 An `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name in an `object <https://docs.python.org/3/glossary.html#term-object>`_ that does not exist.
 
 ****************
-Prerequisites
+requirements
 ****************
 
 

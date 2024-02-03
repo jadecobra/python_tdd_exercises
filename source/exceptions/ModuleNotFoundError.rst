@@ -11,7 +11,7 @@ A Python Module is a file that ends in ``.py`` or a directory that contains an `
 Programming allows us to gain from our previous efforts as well as the efforts of others in the form of packages and modules that can be distributed for other people to use. To use these packages in Python they have to be imported.
 
 ****************
-Prerequisites
+requirements
 ****************
 
 

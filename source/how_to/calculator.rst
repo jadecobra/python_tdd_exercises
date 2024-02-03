@@ -12,7 +12,7 @@ How to create a Calculator
 In this chapter I create a basic calculator that performs addition, subtraction, multiplication and division
 
 ****************
-Prerequisites
+requirements
 ****************
 
 

@@ -14,7 +14,9 @@ There are only two boolean values
 
 The Truth Table gives the 16 outcomes of binary operations on these two values
 
-Prerequisites
+****************
+requirements
+****************
 -------------
 
 :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` with ``truth_table`` as the project name

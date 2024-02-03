@@ -23,7 +23,7 @@ A `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=except
 
 
 ****************
-Prerequisites
+requirements
 ****************
 
 

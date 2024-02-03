@@ -18,7 +18,7 @@ which is similar to
   assert True is False
 
 ****************
-Prerequisites
+requirements
 ****************
 
 

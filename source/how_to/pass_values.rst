@@ -12,7 +12,7 @@ How to pass values
 this chapter shows how to pass values from tests to programs using `Formatted string literals <https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals>`_ to place values inside a string
 
 ****************
-Prerequisites
+requirements
 ****************
 
 :doc:`Create a Test Driven Development Environment </how_to/create_tdd_environment>` with ``telephone`` as the project name
