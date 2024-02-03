@@ -584,7 +584,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
           - sleep_time.split(':')[0]
         )
 
-  the terminal shows a :doc:`/exceptions/TypeError` for an unsupported operation of trying to subtract one `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ from another, and though it is not explicit here, from ``test_splitting_a_string`` I know that the strings being subtracted are the values to the left of the separator ``:``, not the entire string value of ``wake_time`` and ``sleep_time``. For example,  if the given ``wake_time`` is ``"02:00"`` and the given ``sleep_time`` is ``"01:00"``  the program is currently trying to subtract ``"01"`` from ``"02"`` which is different from trying to subtract ``1`` from ``2``, ``"01"`` is a string and ``1`` is a number.
+  the terminal shows a :doc:`/exceptions/TypeError` for an unsupported operation of trying to subtract one `string <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ from another, and though it is not explicit here, from ``test_splitting_a_string`` I know that the strings being subtracted are the values to the left of the separator ``:``, not the entire string value of ``wake_time`` and ``sleep_time``. For example,  if the given ``wake_time`` is ``'02:00'`` and the given ``sleep_time`` is ``'01:00'``  the program is currently trying to subtract ``'01'`` from ``'02'`` which is different from trying to subtract ``1`` from ``2``, ``'01'`` is a string and ``1`` is a number.
 * The next task is to convert the string to a number so I can do the subtraction. I disable the current failing test by using the `unittest.skip <https://docs.python.org/3/library/unittest.html#unittest.skip>`_ decorator
 
   .. code-block:: python
@@ -1025,11 +1025,11 @@ REFACTOR: make it better
     def test_floor_division(self):
         self.assertEqual(5//2, 2)
 
-* the ``%`` operator returns the remainder result of diving one number by another, I add a test to show this
+* the ``%`` operator returns the remainder from diving one number by another, I add a test to show this
 
   .. code-block:: python
 
-    def test_modulo_division(self):
+    def test_modulo_operation(self):
         self.assertEqual(5%2, 2)
 
     def test_duration_when_given_hours_and_minutes(self):
@@ -1043,7 +1043,7 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-    def test_modulo_division(self):
+    def test_modulo_operation(self):
         self.assertEqual(5%2, 1)
 
 * I can remove the second return statement from the ``duration`` function because I have a working solution that is better than the previous one
@@ -1299,12 +1299,12 @@ Time to take a break.
 Duration when given Date and Time
 ********************************************************
 
-So far we have dealt with timestamps that are based on hours and minutes only. The assumption has been that the timestamps occur on the same day, but I could fall asleep on a Monday and wake up on a Tuesday. How would the ``duration`` function behave when it is given different dates?
+So far the ``duration`` function has only been tested with timestamps that are hours and minutes only. The assumption has been that they occur on the same day, but I could fall asleep on a Monday and wake up on a Tuesday. How would the ``duration`` function behave when it is given different dates?
 
 RED: make it fail
 =========================
 
-* I add a failing test to ``test_sleep_duration.py`` based on ``test_duration_when_given_hours_and_minutes`` and call it ``test_duration_when_given_date_and_time`` to test the ``duration`` function with different days
+* I add a failing test to ``test_sleep_duration.py`` based on ``test_duration_when_given_hours_and_minutes`` and call it ``test_duration_when_given_date_and_time`` to test the ``duration`` function with a date, hours and minutes
 
   .. code-block:: python
 
@@ -1365,7 +1365,7 @@ GREEN: make it pass
   .. code-block:: python
 
     self.assertEqual(
-        '31/12/99 10:07'.split(":")[0],
+        '31/12/99 10:07'.split(':')[0],
         ''
     )
 
@@ -1390,6 +1390,7 @@ GREEN: make it pass
 
   .. code-block:: python
 
+    ...
     @unittest.skip
     def test_duration_when_given_date_and_time(self):
     ...
@@ -1403,7 +1404,7 @@ GREEN: make it pass
         self.assertEqual(int('01'), 1)
         int('31/12/99 10')
 
-  the terminal shows a `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ ::
+  the terminal shows a `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_  which matches the error message from ``test_duration_when_given_date_and_time`` ::
 
     ValueError: invalid literal for int() with base 10: '31/12/99 10'
 
@@ -1418,7 +1419,7 @@ GREEN: make it pass
         with self.assertRaises(ValueError):
             int('31/12/99 10')
 
-* I need a solution that is capable of reading the date and time. Writing one myself would require a lot of work as I would have to account for the number of days in months, February has 28 days except in leap years when it has 29 days and some months have 30 days while others have 31 days. I do a search in the `python online documentation <https://docs.python.org/3/search.html>`_ for `time difference <https://docs.python.org/3/search.html?q=time+difference>`_, and select the `datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#module-datetime>`_ module since it looks like it has a solution for this problem. Reading through the available types in the module, I see I can create `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ objects which handle date and time
+* I need a solution that is capable of reading the date and time. Writing one myself requires accounting for the number of days in months, February has 28 days except in leap years when it has 29 days and some months have 30 days while others have 31 days. I do a search in the `python online documentation <https://docs.python.org/3/search.html>`_ for `time difference <https://docs.python.org/3/search.html?q=time+difference>`_, and select the `datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#module-datetime>`_ module since it looks like it has a solution for this problem. Reading through the available types in the module, I see I can create `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ objects which handle date and time
 
   .. code-block:: python
 
@@ -1508,6 +1509,19 @@ GREEN: make it pass
     .. code-block:: python
 
       def test_subtracting_datetime_datetime_objects(self):
+          sleep_time = datetime.datetime.strptime(
+              '21/11/06 16:30', '%d/%m/%y %H:%M'
+          )
+          wake_time = datetime.datetime.strptime(
+              '21/11/06 17:30', '%d/%m/%y %H:%M'
+          )
+          self.assertEqual(wake_time-sleep_time, 1)
+
+  - I can add a variable to remove the duplication of the timestamp pattern
+
+    .. code-block:: python
+
+      def test_subtracting_datetime_datetime_objects(self):
           pattern = '%d/%m/%y %H:%M'
           sleep_time = datetime.datetime.strptime(
               '21/11/06 16:30', pattern
@@ -1574,7 +1588,7 @@ GREEN: make it pass
       def test_converting_timedelta_to_string(self):
           self.assertEqual(
               str(datetime.timedelta(seconds=7200)),
-              "2:00:00"
+              '2:00:00'
           )
 
     it looks like calling `str <https://docs.python.org/3/library/stdtypes.html#str>`_ on a `datetime.timedelta <https://docs.python.org/3/library/datetime.html?highlight=datetime#timedelta-objects>`_ object returns a string in the format ``Hours:Minutes:Seconds``
@@ -1599,9 +1613,7 @@ GREEN: make it pass
     def duration(wake_time=None, sleep_time=None):
     ...
 
-  the error remains the same since I have not called the new function yet
-
-* I add a new return statement to the ``duration`` function with a call to the ``get_datetime_object`` above the existing return statement because I do not want to remove what has worked so far until I have a new working solution. Python does not execute anything in a function after a ``return`` statement so the second return statement is never run
+* then add a new return statement to the ``duration`` function with a call to the ``get_datetime_object`` above the existing return statement. I do not want to remove the working solution until I have something better. The second return statement will not run because Python does not execute any code that comes after a ``return`` statement in a :doc:`function </functions/functions>`.
 
   .. code-block:: python
 
@@ -1707,13 +1719,13 @@ GREEN: make it pass
         sleep_time = get_datetime_object(sleep_time)
 
         if wake_time < sleep_time:
-            difference = wake_time - sleep_time
-            return str(difference)
-        else:
             raise ValueError(
                 f'wake_time: {wake_time} is earlier '
                 f'than sleep_time: {sleep_time}'
             )
+        else:
+            difference = wake_time - sleep_time
+            return str(difference)
 
         difference = (
             get_total_minutes(wake_time)
@@ -1731,117 +1743,15 @@ GREEN: make it pass
 
             return f'{difference_hours:02}:{difference_minutes:02}'
 
-* I make a copy of the test in the ``try...except`` block to confirm that a `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ is raised
-
-  .. code-block:: python
-
-    def test_duration_when_given_date_and_time(self):
-        wake_hour = random.randint(0, 23)
-        sleep_hour = random.randint(0, 23)
-        wake_minutes = random.randint(0, 59)
-        sleep_minutes = random.randint(0, 59)
-
-        wake_time = f'31/12/99 {wake_hour:02}:{wake_minutes:02}'
-        sleep_time = f'31/12/99 {sleep_hour:02}:{sleep_minutes:02}'
-        pattern = '%d/%m/%y %H:%M'
-
-        difference = (
-            datetime.datetime.strptime(wake_time, pattern)
-          - datetime.datetime.strptime(sleep_time, pattern)
-        )
-
-        self.assertEqual(
-            sleep_duration.duration(
-                wake_time=wake_time,
-                sleep_time=sleep_time
-            ),
-            str(difference)
-        )
-
-  the terminal randomly shows a `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ similar to this
-  .. code-block:: python
-
-    ValueError: wake_time: 1999-12-31 09:55:00 is earlier than sleep_time: 1999-12-31 07:14:00
-
-  the error message is wrong, ``09:55:00`` is not earlier than ``07:14:00`` on ``1999-12-31``
-* I update the condition to use a greater than sign instead
-
-  .. code-block:: python
-
-    if wake_time > sleep_time:
-
-  and the terminal shows a `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ similar to this
-
-  .. code-block:: python
-
-    ValueError: wake_time: 1999-12-31 12:45:00 is earlier than sleep_time: 1999-12-31 16:12:00
-
-  this message looks more like it, ``12:45:00`` is definitely earlier than ``16:12:00``
-
-* I remove the old statements in the ``duration`` function since things are working the way I want
-
-  .. code-block:: python
-
-    def duration(wake_time=None, sleep_time=None):
-        wake_time = get_datetime_object(wake_time)
-        sleep_time = get_datetime_object(sleep_time)
-
-        if wake_time > sleep_time:
-            difference = wake_time - sleep_time
-            return str(difference)
-        else:
-            raise ValueError(
-                f'wake_time: {wake_time} is earlier '
-                f'than sleep_time: {sleep_time}'
-            )
-
-* I remove the ``self.assertEqual`` from outside the ``try...except`` block
-
-  .. code-block:: python
-
-    def test_duration_when_given_date_and_time(self):
-        wake_hour = random.randint(0, 23)
-        sleep_hour = random.randint(0, 23)
-        wake_minutes = random.randint(0, 59)
-        sleep_minutes = random.randint(0, 59)
-
-        wake_time = f'31/12/99 {wake_hour:02}:{wake_minutes:02}'
-        sleep_time = f'31/12/99 {sleep_hour:02}:{sleep_minutes:02}'
-        pattern = '%d/%m/%y %H:%M'
-
-        difference = (
-            datetime.datetime.strptime(wake_time, pattern)
-          - datetime.datetime.strptime(sleep_time, pattern)
-        )
-
-        try:
-            self.assertEqual(
-                sleep_duration.duration(
-                    wake_time=wake_time,
-                    sleep_time=sleep_time
-                ),
-                str(difference)
-            )
-        except ValueError:
-            with self.assertRaisesRegex(
-                ValueError,
-                f'wake_time: {wake_time} is earlier '
-                f'than sleep_time: {sleep_time}'
-            ):
-                sleep_duration.duration(
-                    wake_time=wake_time,
-                    sleep_time=sleep_time,
-                )
-
   the terminal shows an :doc:`/exceptions/AssertionError` similar to this
 
   .. code-block:: python
 
-    AssertionError: "wake_time: 31/12/99 02:53 is earlier than sleep_time: 31/12/99 05:50" does not match "wake_time: 1999-12-31 02:53:00 is earlier than sleep_time: 1999-12-31 05:50:00"
+    AssertionError: "wake_time: 31/12/99 17:23 is earlier than sleep_time: 31/12/99 19:07" does not match "wake_time: 1999-12-31 17:23:00 is earlier than sleep_time: 1999-12-31 19:07:00"
 
-  the ``duration`` function currently returns the timestamp in a different format than the test expects
+  there is a `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ with a different message than the one the ``self.assertRaisesRegex`` is expecting. The timestamp formats do not match because I the ``duration`` function uses the `datetime.datetime.strptime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime.datetime.strptime>`_ method in the message when it raises the exception and ``test_duration_when_given_date_and_time`` uses the ``wake_time`` and ``sleep_time`` inputs
 
-* I change ``test_duration_when_given_date_and_time`` so it uses the datetime objects in the `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ message
+* I change ``test_duration_when_given_date_and_time`` to use the right error message
 
   .. code-block:: python
 
@@ -1876,10 +1786,10 @@ GREEN: make it pass
             ):
                 sleep_duration.duration(
                     wake_time=wake_time,
-                    sleep_time=sleep_time,
+                    sleep_time=sleep_time
                 )
 
-  and all tests are passing. I am green
+  and all the tests are passing. Things are green all around
 
 REFACTOR: make it better
 =========================
@@ -1898,11 +1808,12 @@ REFACTOR: make it better
         sleep_time = f'31/12/99 {sleep_hour:02}:{sleep_minutes:02}'
         pattern = '%d/%m/%y %H:%M'
 
-        wake_time_datetime_object = datetime.datetime.strptime(
-            wake_time, pattern
-        )
-        sleep_time_datetime_object = datetime.datetime.strptime(
-            sleep_time, pattern
+        wake_time_datetime_object = datetime.datetime.strptime(wake_time, pattern)
+        sleep_time_datetime_object = datetime.datetime.strptime(sleep_time, pattern)
+
+        difference = (
+            wake_time_datetime_object
+          - sleep_time_datetime_object
         )
 
         try:
@@ -1911,10 +1822,7 @@ REFACTOR: make it better
                     wake_time=wake_time,
                     sleep_time=sleep_time
                 ),
-                str(
-                    wake_time_datetime_object
-                  - sleep_time_datetime_object
-                )
+                str(difference)
             )
         except ValueError:
             with self.assertRaisesRegex(
@@ -1924,10 +1832,11 @@ REFACTOR: make it better
             ):
                 sleep_duration.duration(
                     wake_time=wake_time,
-                    sleep_time=sleep_time,
+                    sleep_time=sleep_time
                 )
+
 * I remove ``parse_timestamp`` and ``get_total_minutes`` from ``sleep_duration.py`` since I no longer need them
-* I can remove the ``difference`` variable from the ``duration`` function since it is only called once
+* I remove the old working solution from the ``duration`` function and keep the new working solution
 
   .. code-block:: python
 
@@ -1935,13 +1844,30 @@ REFACTOR: make it better
         wake_time = get_datetime_object(wake_time)
         sleep_time = get_datetime_object(sleep_time)
 
-        if wake_time > sleep_time:
-            return str(wake_time-sleep_time)
-        else:
+        if wake_time < sleep_time:
             raise ValueError(
                 f'wake_time: {wake_time} is earlier '
                 f'than sleep_time: {sleep_time}'
             )
+        else:
+            difference = wake_time - sleep_time
+            return str(difference)
+
+* I can also remove the ``difference`` variable from the ``duration`` function since it is only called once
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        wake_time = get_datetime_object(wake_time)
+        sleep_time = get_datetime_object(sleep_time)
+
+        if wake_time < sleep_time:
+            raise ValueError(
+                f'wake_time: {wake_time} is earlier '
+                f'than sleep_time: {sleep_time}'
+            )
+        else:
+            return str(wake_time-sleep_time)
 
 *********
 Review
@@ -1954,11 +1880,11 @@ To make it happen I
 * viewed the :doc:`methods </functions/functions>` and ``attributes`` of a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ object
 * used the `help system <https://docs.python.org/3/library/functions.html?highlight=dir#help>`_ to view documentation
 * used the `python online documentation <https://docs.python.org/3/search.html>`_
-* split a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ into a :doc:`list </data_structures/lists/lists>` using a given separator
+* split a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ into a :doc:`list </data_structures/lists/lists>` using a separator
 * indexed a :doc:`list </data_structures/lists/lists>` to get specific items
 * converted a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ to an `integer <https://docs.python.org/3/library/functions.html#int>`_
-* used floor division
-* used modulo division
+* used `floor/integer division <https://en.wikipedia.org/wiki/Division_(mathematics)#Of_integers>`_
+* used `modulo operation <https://en.wikipedia.org/wiki/Modulo>`
 * converted a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ to a `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ object using the `datetime.datetime.strptime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime.datetime.strptime>`_ method
 * converted a `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ object to a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
 * subtracted two `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ objects
