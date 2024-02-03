@@ -191,7 +191,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
   - ``random.randint(0, 23)`` returns a random number from ``0`` to ``23`` including ``23``, as the hours for sleep and wake time
   - ``f'{wake_hour:02}:00'`` and  ``f'{sleep_hour:02}:00'`` :doc:`interpolate </how_to/pass_values>` the random numbers in the input strings
-  - The ``:02`` in ``wake_hour:02`` and ``sleep_hour:02`` tell python to display the numbers as two digits. For example, display ``01`` instead of ``1``
+  - The ``:02`` in ``{wake_hour:02}`` and ``{sleep_hour:02}`` tell Python to display the numbers as two digits. For example, display ``01`` instead of ``1``
   - The sleep and wake times will vary randomly from ``00:00`` to ``23:00`` to cover all the possible hours in a day
 
 * the terminal still shows the test is passing because the expected value is ``1``. I change the test to match the requirement of the difference between ``wake_time`` and ``sleep_time``
@@ -227,7 +227,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
     def duration(wake_time=None, sleep_time=None):
         return wake_time - sleep_time
 
-  the terminal shows a :doc:`/exceptions/TypeError`. I passed in two strings and python does not have an operation defined for subtracting one string from another
+  the terminal shows a :doc:`/exceptions/TypeError`. I passed in two strings and Python does not have an operation defined for subtracting one string from another
 
   .. code-block:: python
 
@@ -235,7 +235,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
   I need to find a way to convert the timestamp from a string to a number.
 
-* I know that the two inputs are currently in this format - ``XX:00``. If I can get the first two characters and convert them to a number, I can calculate the difference since python can do :doc:`arithmetic </how_to/calculator>`. I use the `dir <https://docs.python.org/3/library/functions.html?highlight=dir#dir>`_ :doc:`function </functions/functions>` to see what :doc:`methods </functions/functions>` and ``attributes`` of `strings <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ can help me break a string apart or get the characters I want from it
+* I know that the two inputs are currently in this format - ``XX:00``. If I can get the first two characters and convert them to a number, I can calculate the difference since Python can do :doc:`arithmetic </how_to/calculator>`. I use the `dir <https://docs.python.org/3/library/functions.html?highlight=dir#dir>`_ :doc:`function </functions/functions>` to see what :doc:`methods </functions/functions>` and ``attributes`` of `strings <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ can help me break a string apart or get the characters I want from it
 
   .. code-block:: python
 
@@ -409,7 +409,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
               ]
           )
 
-* the test passes and the terminal shows the :doc:`/exceptions/TypeError` from earlier because python still does not support subtracting one string from another
+* the test passes and the terminal shows the :doc:`/exceptions/TypeError` from earlier because Python still does not support subtracting one string from another
 
   .. code-block:: python
 
@@ -932,8 +932,8 @@ REFACTOR: make it better
     def test_duration_calculation(self):
         self.assertEqual(
             sleep_duration.duration(
-                wake_time='3:30',
-                sleep_time='2:59'
+                wake_time='03:30',
+                sleep_time='02:59'
             ),
             '00:31'
         )
