@@ -11,8 +11,6 @@ In this chapter I take a look at building a program that returns the amount of t
 
 ----
 
-.. _test_duration_w_hours_only:
-
 ********************************************************
 test_duration_w_hours_only
 ********************************************************
@@ -20,14 +18,22 @@ test_duration_w_hours_only
 RED: make it fail
 ====================
 
-* I open a terminal and call :doc:`createPythonTdd.sh </how_to/create_tdd_environment>` with ``sleep_duration`` as the project name
+* I open a terminal and call :ref:`createPythonTdd.sh` with ``sleep_duration`` as the project name
 
   .. code-block:: python
 
     ./createPythonTdd.sh sleep_duration
 
+  .. NOTE::
+
+    If you are using Windows without `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
+
+    .. code-block:: shell
+
+      ./createPythonTdd.ps1 sleep_duration
+
 * I remove ``test_failure``
-* I add a failing test to ``test_sleep_duration.py`` to check that when the ``duration`` :doc:`function </functions/functions>` is given a ``wake_time`` of ``'08:00'`` and a ``sleep_time`` of ``'07:00'`` and it should return ``1`` as the duration, which is the difference between the two timestamps
+* I add a failing test to ``test_sleep_duration.py`` to check that when the ``duration`` :doc:`function </functions/functions>` in the ``sleep_duration`` module is called with a ``wake_time`` of ``'08:00'`` and a ``sleep_time`` of ``'07:00'``, it should return ``1`` as the duration, which is the difference between the two timestamps
 
   .. code-block:: python
 
@@ -164,7 +170,6 @@ GREEN: make it pass
 
   and the test passes. We are green.
 
-
 REFACTOR: make it better
 =========================
 
@@ -243,8 +248,6 @@ I could write a test case for every possible sleep and wake time, or  write one 
     TypeError: unsupported operand type(s) for -: 'str' and 'str'
 
   I need to find a way to convert the timestamp from a string to a number.
-
-.. _test_string_methods_and_attributes:
 
 test_string_methods_and_attributes
 -----------------------------------
@@ -456,8 +459,6 @@ test_string_methods_and_attributes
 
   the `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ :doc:`method </functions/functions>` looks like a good solution since it splits up a word when given a separator
 
-.. _test_splitting_a_string:
-
 test_splitting_a_string
 ------------------------
 
@@ -473,7 +474,6 @@ test_splitting_a_string
 
       def test_duration_w_hours_only(self):
       ...
-
 
   the terminal shows an :doc:`/exceptions/AssertionError` and I see that `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ creates a :doc:`list </data_structures/lists/lists>` when called
 
@@ -611,8 +611,6 @@ test_splitting_a_string
     @unittest.skip
     def test_duration_w_hours_only(self):
     ...
-
-.. _test_converting_string_to_integer:
 
 test_converting_string_to_integer
 -----------------------------------
@@ -780,8 +778,6 @@ test_converting_string_to_integer
 Since the test is green you can try any ideas you want until you understand what has been written so far. Time for a nap.
 
 ----
-
-.. _test_duration_w_hours_and_minutes:
 
 ********************************************************
 test_duration_w_hours_and_minutes
@@ -952,8 +948,6 @@ REFACTOR: make it better
 
 * Since ``test_duration_w_hours_and_minutes`` uses a random number from ``0`` to ``23`` for hours and a random number from ``0`` to ``59`` for minutes, it covers all timestamps from ``00:00`` to ``23:59``. This means I do not need ``test_duration_w_hours_only``, so I remove it
 
-.. _test_duration_calculation:
-
 test_duration_calculation
 -----------------------------------
 * The ``duration`` function currently returns a subtraction of hours and a subtraction of minutes which is not accurate for calculating real differences between two timestamps. For instance when it is given a wake time of ``3:30`` and a sleep time of ``2:59`` it should return ``00:31`` but it returns ``01:-29`` which is not a real duration. This means that even though the tests are passing, once again the ``duration`` function does not meet the requirement of calculating the difference between two timestamps. I need a better way.
@@ -1039,8 +1033,6 @@ REFACTOR: make it better
 
   I have passing tests again
 
-.. _test_floor_aka_integer_division:
-
 test_floor_aka_integer_division
 -----------------------------------
 
@@ -1064,8 +1056,6 @@ test_floor_aka_integer_division
 
     def test_floor_aka_integer_division(self):
         self.assertEqual(5//2, 2)
-
-.. _test_modulo_operation:
 
 test_modulo_operation
 -----------------------------------
@@ -1144,9 +1134,6 @@ test_modulo_operation
   the terminal shows all tests are still passing
 * I remove the ``get_hour`` and ``get_minutes`` functions
 * I remove ``test_duration_calculation`` since it is now covered by ``test_duration_w_hours_and_minutes``
-
-
-.. _test_duration_w_earlier_wake_than_sleep_time:
 
 ********************************************************
 test_duration_w_earlier_wake_than_sleep_time
@@ -1351,8 +1338,6 @@ test_duration_w_given_date_and_time
 
 So far the ``duration`` function has only been tested with timestamps that are hours and minutes only. The assumption has been that they occur on the same day, but I could fall asleep on a Monday and wake up on a Tuesday. How would the ``duration`` function behave when it is given different dates?
 
-
-
 =========================
 
 RED: make it fail
@@ -1495,8 +1480,6 @@ GREEN: make it pass
 * I add tests using the examples in the documentation to help me understand how to use the `datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#module-datetime>`_ module
 
 
-.. _test_datetime_datetime_objects:
-
 test_datetime_datetime_objects
 -----------------------------------
 
@@ -1566,8 +1549,6 @@ RED: Make It Fail
       * ``%H`` is for hours
       * ``%M`` is for minutes
 
-.. _test_subtracting_datetime_datetime_objects:
-
 test_subtracting_datetime_datetime_objects
 --------------------------------------------------
 
@@ -1628,8 +1609,6 @@ test_subtracting_datetime_datetime_objects
 
     - convert a string_ to a `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ object
     - subtract one `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ object from another to get a `datetime.timedelta <https://docs.python.org/3/library/datetime.html?highlight=datetime#timedelta-objects>`_ object
-
-.. _test_converting_timedelta_to_string:
 
 test_converting_timedelta_to_string
 --------------------------------------------------
@@ -1950,32 +1929,29 @@ The challenge was to create a function that calculates the difference between tw
 To make it happen I
 
 * :ref:`test_string_methods_and_attributes`
-* :ref:`test_splitting_a_string`
+* `test_splitting_a_string`_
 
   - used the `help system <https://docs.python.org/3/library/functions.html?highlight=dir#help>`_ to view documentation
   - split a string_ into a :doc:`list </data_structures/lists/lists>` using a separator
   - indexed a :doc:`list </data_structures/lists/lists>` to get specific items
 
-* :ref:`test_converting_string_to_integer`
-* :ref:`test_floor_aka_integer_division`
-* :ref:`test_modulo_operation`
-* :ref:`test_datetime_datetime_objects`
+* `test_converting_string_to_integer`_
+* `test_floor_aka_integer_division`_
+* `test_modulo_operation`_
+* `test_datetime_datetime_objects`_
 
   - used the `python online documentation <https://docs.python.org/3/search.html>`_
   - converted a string_ to a `datetime.datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects>`_ object using the `datetime.datetime.strptime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime.datetime.strptime>`_ method
-* :ref:`test_subtracting_datetime_datetime_objects`
-* :ref:`test_converting_timedelta_to_string` to convert `datetime.timedelta <https://docs.python.org/3/library/datetime.html?highlight=datetime#timedelta-objects>`_ objects to a string_
-* :ref:`test_duration_w_given_date_and_time`
+* `test_subtracting_datetime_datetime_objects`_
+* `test_converting_timedelta_to_string`_ to convert `datetime.timedelta <https://docs.python.org/3/library/datetime.html?highlight=datetime#timedelta-objects>`_ objects to a string_
+* `test_duration_w_given_date_and_time`_
 
   - by generating a random integer between two given integers using `random.randint <https://docs.python.org/3/library/random.html?highlight=random#random.randint>`_
   - using a random timestamp ranging from 00:00 up to and including 23:59 as inputs for ``wake_time`` and ``sleep_time``
-  - :ref:`test_duration_w_hours_only`
-  - :ref:`test_duration_w_hours_and_minutes`
-  - :ref:`test_duration_calculation`
-  - :ref:`test_duration_w_earlier_wake_than_sleep_time`
-
-
-
+  - `test_duration_w_hours_only`_
+  - `test_duration_w_hours_and_minutes`_
+  - `test_duration_calculation`_
+  - `test_duration_w_earlier_wake_than_sleep_time`_
 
 I also encountered the following exceptions
 
@@ -1985,6 +1961,7 @@ I also encountered the following exceptions
 * :doc:`/exceptions/TypeError`
 * `SyntaxError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#SyntaxError>`_
 * `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_
+
 
 
 ----

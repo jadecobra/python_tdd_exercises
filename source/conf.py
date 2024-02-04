@@ -16,6 +16,7 @@ html_favicon = '_static/dry_favicon_16x16.png'
 html_theme = 'press'
 html_static_path = ['_static']
 extensions = ['sphinx.ext.autosectionlabel']
+# autosectionlabel_prefix_document = True
 
 epub_theme = 'epub'
 epub_description = 'Pumping Python: How to solve problems with Test Driven Development'
