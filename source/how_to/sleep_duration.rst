@@ -28,7 +28,7 @@ RED: make it fail
 
     If you are using Windows without `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
 
-    .. code-block:: shell
+    .. code-block:: python
 
       ./createPythonTdd.ps1 sleep_duration
 
