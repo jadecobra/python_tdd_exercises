@@ -9,12 +9,6 @@ How to measure sleep duration
 
 In this chapter I take a look at building a program that returns the amount of time slept between a given sleep and wake time.
 
-****************
-requirements
-****************
-
-:doc:`Create a Test Driven Development Environment </how_to/create_tdd_environment>` with ``sleep_duration`` as the project name
-
 ----
 
 .. _test_duration_w_hours_only:
@@ -26,29 +20,36 @@ test_duration_w_hours_only
 RED: make it fail
 ====================
 
-I remove ``test_failure`` since I no longer need it, and add a failing test to ``test_sleep_duration.py`` to check that when the ``duration`` :doc:`function </functions/functions>` is given a ``sleep_time`` of ``7:00`` and a ``wake_time`` of ``8:00`` it should return ``1`` as the duration, which is the difference between the two timestamps
+* I open a terminal and call :doc:`createPythonTdd.sh </how_to/create_tdd_environment>` with ``sleep_duration`` as the project name
 
-.. code-block:: python
+  .. code-block:: python
 
-  import unittest
+    ./createPythonTdd.sh sleep_duration
+
+* I remove ``test_failure``
+* I add a failing test to ``test_sleep_duration.py`` to check that when the ``duration`` :doc:`function </functions/functions>` is given a ``wake_time`` of ``'08:00'`` and a ``sleep_time`` of ``'07:00'`` and it should return ``1`` as the duration, which is the difference between the two timestamps
+
+  .. code-block:: python
+
+    import unittest
 
 
-  class TestSleepDuration(unittest.TestCase):
+    class TestSleepDuration(unittest.TestCase):
 
-      def test_duration_w_hours_only(self):
-          self.assertEqual(
-              sleep_duration.duration(
-                  wake_time='08:00',
-                  sleep_time='07:00'
-              ),
-              1
-          )
+        def test_duration_w_hours_only(self):
+            self.assertEqual(
+                sleep_duration.duration(
+                    wake_time='08:00',
+                    sleep_time='07:00'
+                ),
+                1
+            )
 
-the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+  the terminal shows a `NameError`_
 
-.. code-block:: python
+  .. code-block:: python
 
-  NameError: name 'sleep_duration' is not defined
+    NameError: name 'sleep_duration' is not defined
 
 GREEN: make it pass
 ====================
@@ -122,7 +123,9 @@ GREEN: make it pass
     def duration():
         return None
 
-  the terminal shows a :doc:`/exceptions/TypeError` with a different message about the first argument passed in from the test ::
+  the terminal shows a :doc:`/exceptions/TypeError` with a different message about the first argument passed in from the test
+
+  .. code-block:: python
 
     TypeError: duration() got an unexpected keyword argument 'wake_time'
 
@@ -146,7 +149,7 @@ GREEN: make it pass
     def duration(wake_time=None, sleep_time=None):
         return None
 
-  the terminal shows an :doc:`/exceptions/AssertionError`, the duration function returns :doc:`None </data_structures/none>` but the test expects ``1`` as the duration when a sleep time of ``'07:00'`` and a wake time of ``'08:00'`` is given
+  and the terminal shows an :doc:`/exceptions/AssertionError`, the duration function returns :doc:`None </data_structures/none>` but the test expects ``1`` as the duration when it is given a sleep time of ``'07:00'`` and a wake time of ``'08:00'``
 
   .. code-block:: python
 
@@ -167,7 +170,7 @@ REFACTOR: make it better
 
 The ``duration`` function currently returns ``1`` no matter what inputs are given. For it to meet the requirements it has to calculate the difference between ``wake_time`` and ``sleep_time``
 
-I could write a test case for every possible sleep and wake time, or  write one test that uses random variables to cover all the timestamps from ``00:00`` to ``23:59``
+I could write a test case for every possible sleep and wake time, or  write one test that uses random variables to cover all the timestamps from ``'00:00'`` to ``'23:59'``
 
 * I add an import statement for the `random <https://docs.python.org/3/library/random.html?highlight=random#module-random>`_ module to ``test_sleep_duration.py``
 
@@ -197,8 +200,8 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
   - ``random.randint(0, 23)`` returns a random number from ``0`` to ``23`` including ``23``, as the hours for sleep and wake time
   - ``f'{wake_hour:02}:00'`` and  ``f'{sleep_hour:02}:00'`` :doc:`interpolate </how_to/pass_values>` the random numbers in the input strings
-  - The ``:02`` in ``{wake_hour:02}`` and ``{sleep_hour:02}`` tell Python to display the numbers as two digits. For example, display ``01`` instead of ``1``
-  - The sleep and wake times will vary randomly from ``00:00`` to ``23:00`` to cover all the possible hours in a day
+  - the ``:02`` in ``{wake_hour:02}`` and ``{sleep_hour:02}`` tell Python to display the numbers as two digits. For example, display ``01`` instead of ``1``
+  - the sleep and wake times will vary randomly from ``00:00`` up to and including ``23:00`` to cover all 24 hours in a day
 
 * the terminal still shows the test is passing because the expected value is ``1``. I change the test to match the requirement of the difference between ``wake_time`` and ``sleep_time``
 
@@ -246,7 +249,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
 test_string_methods_and_attributes
 -----------------------------------
 
-* I know that the two inputs are currently in this format - ``XX:00``. If I can get the first two characters and convert them to a number, I can calculate the difference since Python can do :doc:`arithmetic </how_to/calculator>`. I use the `dir <https://docs.python.org/3/library/functions.html?highlight=dir#dir>`_ :doc:`function </functions/functions>` to see what :doc:`methods </functions/functions>` and ``attributes`` of `strings <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ can help me break a string apart or get the characters I want from it
+* I know that the two inputs are currently in this format - ``XX:00``. If I can get the first two characters and convert them to a number, I can calculate the difference since Python can do :doc:`arithmetic </how_to/calculator>`. I use the `dir <https://docs.python.org/3/library/functions.html?highlight=dir#dir>`_ :doc:`function </functions/functions>` to see what :doc:`methods </functions/functions>` and ``attributes`` of `strings`_ can help me break a string apart or get the characters I want from it
 
   .. code-block:: python
 
@@ -1992,3 +1995,4 @@ I also encountered the following exceptions
 
 .. _NameError https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError
 .. _string https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
+.. _strings https://docs.python.org/3/library/string.html?highlight=string#module-string

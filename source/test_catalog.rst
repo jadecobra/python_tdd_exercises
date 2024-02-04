@@ -1,0 +1,8 @@
+* :ref:`sleep_duration:test_string_methods_and_attributes`.
+* test_splitting_a_string
+* test_converting_string_to_integer
+* test_floor_aka_integer_division
+* test_modulo_operation
+* test_datetime_datetime_objects
+* test_subtracting_datetime_datetime_objects
+* test_converting_timedelta_to_string
