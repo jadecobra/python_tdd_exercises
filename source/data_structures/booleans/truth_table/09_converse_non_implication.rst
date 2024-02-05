@@ -19,7 +19,7 @@ I add a test for converse nonimplication to ``TestBinaryOperations`` in ``test_t
         self.assertTrue(truth_table.converse_non_implication(False, True))
         self.assertFalse(truth_table.converse_non_implication(False, False))
 
-the terminal shows an :doc:`/exceptions/AttributeError`
+the terminal shows an :ref:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

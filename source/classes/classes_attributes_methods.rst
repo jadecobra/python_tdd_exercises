@@ -19,7 +19,7 @@ RED: make it fail
     def test_classes_with_attributes(self):
         self.assertEqual(classes.ClassWithAttributes.a_boolean, bool)
 
-  the terminal shows an :doc:`/exceptions/AttributeError`
+  the terminal shows an :ref:`AttributeError`
 
 * I add a class definition to ``classes.py``
 
@@ -30,7 +30,7 @@ RED: make it fail
 
         pass
 
-  the terminal shows an :doc:`/exceptions/AttributeError` for a missing attribute in the newly defined class
+  the terminal shows an :ref:`AttributeError` for a missing attribute in the newly defined class
 
 
 GREEN: make it pass
@@ -86,7 +86,7 @@ Let us add more tests with the other python data structures to ``test_classes_wi
       self.assertEqual(classes.ClassWithAttributes.a_set, set)
       self.assertEqual(classes.ClassWithAttributes.a_dictionary, dict)
 
-the terminal shows an :doc:`/exceptions/AttributeError`
+the terminal shows an :ref:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -127,7 +127,7 @@ I add some tests for class methods to ``TestClasses`` in ``classes.py``
           'You called MethodA'
       )
 
-and the terminal shows :doc:`/exceptions/AttributeError`
+and the terminal shows :ref:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -142,7 +142,7 @@ GREEN: make it pass
 
         pass
 
-  the terminal now gives an :doc:`/exceptions/AttributeError` with a different error
+  the terminal now gives an :ref:`AttributeError` with a different error
 
 
 * When I add the missing attribute to the ``ClassWithMethods`` class
@@ -216,7 +216,7 @@ REFACTOR: make it better
             'You called MethodD'
         )
 
-  the terminal shows an :doc:`/exceptions/AttributeError`
+  the terminal shows an :ref:`AttributeError`
 
 * and I change ``ClassWithMethods`` in ``classes.py`` until all tests pass
 
@@ -244,7 +244,7 @@ I add another test for a class that has both attributes and methods
           'you called a method'
       )
 
-the terminal shows an :doc:`/exceptions/AttributeError`
+the terminal shows an :ref:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

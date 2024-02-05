@@ -14,7 +14,7 @@ I add a test to ``test_functions.py``
     def test_singleton_function(self):
         self.assertEqual(functions.singleton(), 'my_first_name')
 
-the terminal shows an :doc:`/exceptions/AttributeError`
+the terminal shows an :ref:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -46,7 +46,7 @@ I add a new test that checks if a singleton that accepts inputs returns the same
               'joe'
           )
 
-  the terminal shows an :doc:`/exceptions/AttributeError`
+  the terminal shows an :ref:`AttributeError`
 * and I add a function for ``singleton_with_inputs`` to ``functions.py`` to make the test pass
 
   .. code-block:: python

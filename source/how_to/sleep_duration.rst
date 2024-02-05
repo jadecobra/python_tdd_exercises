@@ -1,8 +1,4 @@
-.. _string: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
-.. _strings: https://docs.python.org/3/library/string.html?highlight=string#module-string
-.. _NameError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError
-.. _Windows Subsystem Linux: https://learn.microsoft.com/en-us/windows/wsl/install
-.. _wsl: https://learn.microsoft.com/en-us/windows/wsl/install
+.. include:: ../links.rst
 
 ********************************************************
 How to measure sleep duration
@@ -10,7 +6,7 @@ How to measure sleep duration
 
 ----
 
-I take a look at building a program that returns the amount of time slept between a given sleep and wake time in this chapter.
+In this chapter I take a look at building a program that returns the amount of time slept between a given sleep and wake time.
 
 ----
 
@@ -34,8 +30,8 @@ RED: make it fail
 
       ./createPythonTdd.ps1 sleep_duration
 
-* I remove ``test_failure``
-* I add a failing test to ``test_sleep_duration.py`` to check that when the ``duration`` :doc:`function </functions/functions>` in the ``sleep_duration`` module is called with a ``wake_time`` of ``'08:00'`` and a ``sleep_time`` of ``'07:00'``, it should return ``1`` - the difference between the two timestamps
+* I remove ``test_failure`` after making it pass
+* I add a failing test to ``test_sleep_duration.py`` to check that when the ``duration`` :doc:`function </functions/functions>` in the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>` is called with a ``wake_time`` of ``'08:00'`` and a ``sleep_time`` of ``'07:00'``, it should return ``1`` - the difference between the two timestamps
 
   .. code-block:: python
 
@@ -53,7 +49,7 @@ RED: make it fail
                 1
             )
 
-  the terminal shows a `NameError`_
+  the terminal shows a NameError_
 
   .. code-block:: python
 
@@ -81,7 +77,7 @@ GREEN: make it pass
     class TestSleepDuration(unittest.TestCase):
     ...
 
-  and the terminal shows an :doc:`/exceptions/AttributeError`. I do not have a definition for ``duration`` in ``sleep_duration.py``
+  and the terminal shows an :ref:`AttributeError`. I do not have a definition for ``duration`` in ``sleep_duration.py``
 
   .. code-block:: python
 
@@ -106,6 +102,7 @@ GREEN: make it pass
 
       NameError: name 'duration' is not defined
 
+* I make ``duration`` a variable by assigning it to the :ref:`null value (None) <none>`
 * I make ``duration`` a variable by assigning it to the :doc:`null value (None) </data_structures/none>`
 
   .. code-block:: python
@@ -1955,7 +1952,7 @@ I also encountered the following exceptions
 
 * :doc:`/exceptions/AssertionError`
 * NameError_
-* :doc:`/exceptions/AttributeError`
+* :ref:`AttributeError`
 * :doc:`/exceptions/TypeError`
 * `SyntaxError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#SyntaxError>`_
 * `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_

@@ -384,12 +384,12 @@ You encountered the following exceptions
 
 * :doc:`/exceptions/AssertionError`
 * :doc:`/exceptions/ModuleNotFoundError`
-* :doc:`/exceptions/AttributeError`
+* :ref:`AttributeError`
 * :doc:`/exceptions/TypeError`
 
 You now know
 
 * How to solve a :doc:`/exceptions/ModuleNotFoundError`
 * How to solve an :doc:`/exceptions/AssertionError`
-* How to solve an :doc:`/exceptions/AttributeError`
+* How to solve an :ref:`AttributeError`
 * How to solve a `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#TypeError>`_ by matching function signatures and their calls

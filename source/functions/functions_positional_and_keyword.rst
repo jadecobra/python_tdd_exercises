@@ -46,7 +46,7 @@ GREEN: make it pass
             {}
         )
 
-  the terminal shows an :doc:`/exceptions/AttributeError`
+  the terminal shows an :ref:`AttributeError`
 * I add a definition for the function to ``functions.py``
 
   .. code-block:: python

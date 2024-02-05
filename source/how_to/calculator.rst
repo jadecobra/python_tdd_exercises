@@ -100,14 +100,14 @@ GREEN: make it pass
     class TestCalculator(unittest.TestCase):
     ...
 
-  and the terminal shows an :doc:`/exceptions/AttributeError`
+  and the terminal shows an :ref:`AttributeError`
 
   .. code-block:: python
 
     AttributeError: module 'calculator' has no attribute 'add'
 
-  - The :doc:`/exceptions/AttributeError` is at line 12 in ``test_calculator.py``
-  - An :doc:`/exceptions/AttributeError` is raised when accessing or calling an attribute that python cannot find
+  - The :ref:`AttributeError` is at line 12 in ``test_calculator.py``
+  - An :ref:`AttributeError` is raised when accessing or calling an attribute that python cannot find
   - I think of ``calculator.add`` as an address
 
   * ``calculator`` refers to ``calculator.py``
@@ -144,7 +144,7 @@ GREEN: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-  The :doc:`/exceptions/AttributeError` was fixed by declaring a variable called ``add`` in the ``calculator`` module
+  The :ref:`AttributeError` was fixed by declaring a variable called ``add`` in the ``calculator`` module
 
 * The new error is a :doc:`/exceptions/TypeError` which can occur when an `object <https://docs.python.org/3/glossary.html#term-object>`_ is called in a way that disagrees with the object's definition. In this case the ``add`` variable is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_ because it refers to :doc:`None </data_structures/none>` which is not a `callable <https://docs.python.org/3/glossary.html#term-callable>`_ object. I add the error to the list of exceptions encountered ::
 
@@ -354,7 +354,7 @@ RED: make it fail
             x-y
         )
 
-  the terminal shows an :doc:`/exceptions/AttributeError`
+  the terminal shows an :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -482,7 +482,7 @@ I add a failing test called ``test_multiplication`` to ``test_calculator.py``
           self.x*self.y
       )
 
-the terminal shows an :doc:`/exceptions/AttributeError` ::
+the terminal shows an :ref:`AttributeError` ::
 
   AttributeError: module 'calculator' has no attribute 'multiply'
 
@@ -528,7 +528,7 @@ I add ``test_division`` to ``test_calculator.py``
           self.x/self.y
       )
 
-the terminal shows an :doc:`/exceptions/AttributeError` ::
+the terminal shows an :ref:`AttributeError` ::
 
   AttributeError: module 'calculator' has no attribute 'division'
 
@@ -646,7 +646,7 @@ You also encountered the following exceptions
 
 * :doc:`/exceptions/AssertionError`
 * `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
-* :doc:`/exceptions/AttributeError`
+* :ref:`AttributeError`
 * :doc:`/exceptions/TypeError`
 * `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_
 

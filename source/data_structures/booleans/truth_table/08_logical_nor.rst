@@ -19,7 +19,7 @@ I add a test for exclusive disjunction to ``TestBinaryOperations`` in ``test_tru
         self.assertFalse(truth_table.logical_nor(False, True))
         self.assertTrue(truth_table.logical_nor(False, False))
 
-and the terminal shows an :doc:`/exceptions/AttributeError`
+and the terminal shows an :ref:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

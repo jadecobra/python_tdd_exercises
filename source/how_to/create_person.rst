@@ -42,7 +42,7 @@ then add a failing test to replace ``test_failure``
       def test_person_factory(self):
           self.assertEqual(person.factory(), None)
 
-the terminal shows an :doc:`/exceptions/AttributeError`
+the terminal shows an :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -506,7 +506,7 @@ From the tests above you can create a :doc:`function </functions/functions>` tha
 You also encountered the following exceptions
 
 * :doc:`/exceptions/AssertionError`
-* :doc:`/exceptions/AttributeError`
+* :ref:`AttributeError`
 * `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 * :doc:`/exceptions/TypeError`
 

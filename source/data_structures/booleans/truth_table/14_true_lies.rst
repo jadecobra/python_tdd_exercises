@@ -23,7 +23,7 @@ I add a test for tautology to ``TestBinaryOperations`` in ``test_truth_table.py`
         self.assertTrue(truth_table.tautology(False, True))
         self.assertTrue(truth_table.tautology(False, False))
 
-the terminal shows an :doc:`/exceptions/AttributeError`
+the terminal shows an :ref:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -63,7 +63,7 @@ I add a test for contradiction to ``TestBinaryOperations``
         self.assertFalse(truth_table.contradiction(False, True))
         self.assertFalse(truth_table.contradiction(False, False))
 
-the terminal shows an :doc:`/exceptions/AttributeError`
+the terminal shows an :ref:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

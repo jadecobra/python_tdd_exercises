@@ -117,7 +117,7 @@ RED: make it fail
 
     ModuleNotFoundError: No module named 'module'
 
-* I create a file named ``module.py`` in the project folder and the terminal shows an :doc:`/exceptions/AttributeError` because the called attribute ``non_existent_attribute`` does not exist in ``module.py`` ::
+* I create a file named ``module.py`` in the project folder and the terminal shows an :ref:`AttributeError` because the called attribute ``non_existent_attribute`` does not exist in ``module.py`` ::
 
     AttributeError: module 'module' has no attribute 'non_existent_attribute'
 
@@ -145,7 +145,7 @@ the terminal shows passing tests. I will do it again with :doc:`functions </func
 RED: make it fail
 ==================
 
-I add a failing line that raises an :doc:`/exceptions/AttributeError` to ``test_catching_attribute_errors_in_tests``
+I add a failing line that raises an :ref:`AttributeError` to ``test_catching_attribute_errors_in_tests``
 
 .. code-block:: python
 
@@ -154,7 +154,7 @@ I add a failing line that raises an :doc:`/exceptions/AttributeError` to ``test_
           module.non_existent_attribute
       module.non_existent_function()
 
-the terminal shows an :doc:`/exceptions/AttributeError` because ``non_existent_function`` does not exist in ``module.py``
+the terminal shows an :ref:`AttributeError` because ``non_existent_function`` does not exist in ``module.py``
 
 .. code-block:: python
 
@@ -176,7 +176,7 @@ I add an ``assertRaises`` context and indent the failing line to place it within
 RED: make it fail
 ==================
 
-I add a failing line that raises an :doc:`/exceptions/AttributeError` for :doc:`classes </classes/classes>` to ``test_catching_attribute_errors_in_tests``
+I add a failing line that raises an :ref:`AttributeError` for :doc:`classes </classes/classes>` to ``test_catching_attribute_errors_in_tests``
 
 .. code-block:: python
 
@@ -187,7 +187,7 @@ I add a failing line that raises an :doc:`/exceptions/AttributeError` for :doc:`
           module.non_existent_function()
       module.NonExistentClass()
 
-the terminal shows an :doc:`/exceptions/AttributeError`
+the terminal shows an :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -211,7 +211,7 @@ I put the failing line in an ``assertRaises`` context to make the test pass
 REFACTOR: make it better
 ==========================
 
-I just created the same context 3 times. The ``self.assertRaises`` catches an :doc:`/exceptions/AttributeError` in each case. I only need to state it once and place all the lines that can raise the same error underneath it to remove the repetition
+I just created the same context 3 times. The ``self.assertRaises`` catches an :ref:`AttributeError` in each case. I only need to state it once and place all the lines that can raise the same error underneath it to remove the repetition
 
 .. code-block:: python
 
@@ -226,7 +226,7 @@ Fantastic! all the tests still pass and I have a way to catch exceptions that ar
 * :doc:`/exceptions/AssertionError`
 * :doc:`/exceptions/ModuleNotFoundError`
 * `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
-* :doc:`/exceptions/AttributeError`
+* :ref:`AttributeError`
 
 Time to look at :doc:`/how_to/exception_handling_programs`
 

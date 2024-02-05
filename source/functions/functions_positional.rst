@@ -19,7 +19,7 @@ I add a new test to ``test_functions.py``
             ('my_first_name', 'my_last_name')
         )
 
-the terminal shows an :doc:`/exceptions/AttributeError`
+the terminal shows an :ref:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

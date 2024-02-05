@@ -20,7 +20,7 @@ I add a test for exclusive disjunction to ``TestBinaryOperations`` in ``test_tru
         self.assertTrue(truth_table.exclusive_disjunction(False, True))
         self.assertFalse(truth_table.exclusive_disjunction(False, False))
 
-and the terminal shows an :doc:`/exceptions/AttributeError`
+and the terminal shows an :ref:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

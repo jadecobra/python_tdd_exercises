@@ -19,7 +19,7 @@ I add a test for material non-implication to ``TestBinaryOperations`` in ``test_
         self.assertFalse(truth_table.material_non_implication(False, True))
         self.assertFalse(truth_table.material_non_implication(False, False))
 
-the terminal shows an :doc:`/exceptions/AttributeError`
+the terminal shows an :ref:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

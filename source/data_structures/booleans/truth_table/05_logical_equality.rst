@@ -33,7 +33,7 @@ I add a test for logical equality to ``TestBinaryOperations`` in ``test_truth_ta
         self.assertFalse(truth_table.logical_equality(False, True))
         self.assertTrue(truth_table.logical_equality(False, False))
 
-and the terminal shows an :doc:`/exceptions/AttributeError`
+and the terminal shows an :ref:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

@@ -137,7 +137,7 @@ REFACTOR: make it better
     # NameError
     # ModuleNotFoundError
 
-  then create a file called ``list_comprehensions.py`` in the project folder and the terminal shows an :doc:`/exceptions/AttributeError`
+  then create a file called ``list_comprehensions.py`` in the project folder and the terminal shows an :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -265,7 +265,7 @@ GREEN: make it pass
             a_list
         )
 
-  the terminal shows an :doc:`/exceptions/AttributeError` since ``list_comprehensions.py`` does not have a definition for ``for_loop``
+  the terminal shows an :ref:`AttributeError` since ``list_comprehensions.py`` does not have a definition for ``for_loop``
 
   .. code-block:: python
 
@@ -419,7 +419,7 @@ GREEN: make it pass
             a_list
         )
 
-  the terminal now shows an :doc:`/exceptions/AttributeError` for the last line
+  the terminal now shows an :ref:`AttributeError` for the last line
 
   .. code-block:: python
 
@@ -570,7 +570,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
         even_numbers
     )
 
-  the terminal shows an :doc:`/exceptions/AttributeError` for the next line. Progress
+  the terminal shows an :ref:`AttributeError` for the next line. Progress
 
   .. code-block:: python
 
@@ -660,7 +660,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
         odd_numbers
     )
 
-  the terminal shows an :doc:`/exceptions/AttributeError` for the next line
+  the terminal shows an :ref:`AttributeError` for the next line
 
   .. code-block:: python
 
@@ -891,7 +891,7 @@ I also encountered the following exceptions
 * :doc:`/exceptions/AssertionError`
 * `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 * :doc:`/exceptions/ModuleNotFoundError`
-* :doc:`/exceptions/AttributeError`
+* :ref:`AttributeError`
 * :doc:`/exceptions/TypeError`
 
 ----

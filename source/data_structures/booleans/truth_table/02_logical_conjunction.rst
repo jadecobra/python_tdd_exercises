@@ -26,7 +26,7 @@ After creating a ``TestCase`` for binary operations in ``test_truth_table.py``
           self.assertFalse(truth_table.logical_conjunction(False, True))
           self.assertFalse(truth_table.logical_conjunction(False, False))
 
-the terminal shows an :doc:`/exceptions/AttributeError`
+the terminal shows an :ref:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

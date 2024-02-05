@@ -15,7 +15,7 @@ I add a failing test to the ``TestFunctions`` class in ``test_functions.py``
     def test_passthrough_function(self):
         self.assertEqual(functions.passthrough(False), False)
 
-the terminal shows an :doc:`/exceptions/AttributeError`
+the terminal shows an :ref:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

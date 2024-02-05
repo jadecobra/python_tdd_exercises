@@ -48,7 +48,7 @@ REFACTOR: make it better
               {"key": "value"}
           )
 
-  the terminal shows an :doc:`/exceptions/AttributeError` which I add to the list of exceptions encountered
+  the terminal shows an :ref:`AttributeError` which I add to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -1252,7 +1252,7 @@ you encountered the following exceptions
 
 * :doc:`/exceptions/AssertionError`
 * :doc:`/exceptions/ModuleNotFoundError`
-* :doc:`/exceptions/AttributeError`
+* :ref:`AttributeError`
 * :doc:`/exceptions/TypeError`
 * `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 

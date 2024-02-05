@@ -48,7 +48,7 @@ GREEN: make it pass
     import module
     import unittest
 
-  the terminal shows an :doc:`/exceptions/AttributeError`
+  the terminal shows an :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -148,7 +148,7 @@ I add a new failing test to ``test_exceptions.py``
           'failed'
       )
 
-the terminal shows an :doc:`/exceptions/AttributeError`
+the terminal shows an :ref:`AttributeError`
 
 .. code-block::
 
@@ -235,7 +235,7 @@ I add a new test that provides a different input with an expectation of a differ
           'succeeded'
       )
 
-the terminal shows an :doc:`/exceptions/AttributeError`
+the terminal shows an :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -361,7 +361,7 @@ I add a failing test to ``test_exceptions.py``
           "always returns this"
       )
 
-the terminal shows an :doc:`/exceptions/AttributeError`
+the terminal shows an :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -534,7 +534,7 @@ You also encountered the following exceptions
 * :doc:`/exceptions/AssertionError`
 * :doc:`/exceptions/ModuleNotFoundError`
 * `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
-* :doc:`/exceptions/AttributeError`
+* :ref:`AttributeError`
 * :doc:`/exceptions/TypeError`
 
 .. admonition:: do you want to

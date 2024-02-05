@@ -19,7 +19,7 @@ I add a test for Logical NAND to ``TestBinaryOperations`` in ``test_truth_table.
         self.assertTrue(truth_table.logical_nand(False, True))
         self.assertTrue(truth_table.logical_nand(False, False))
 
-the terminal shows an :doc:`/exceptions/AttributeError`
+the terminal shows an :ref:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

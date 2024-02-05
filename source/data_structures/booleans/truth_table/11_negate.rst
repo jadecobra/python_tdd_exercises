@@ -23,7 +23,7 @@ I add a test for negate first to ``TestBinaryOperations`` in ``test_truth_table.
         self.assertTrue(truth_table.negate_first(False, True))
         self.assertTrue(truth_table.negate_first(False, False))
 
-and the terminal shows an :doc:`/exceptions/AttributeError`
+and the terminal shows an :ref:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -102,7 +102,7 @@ I add a test for negate second to ``TestBinaryOperations``
         self.assertFalse(truth_table.negate_second(False, True))
         self.assertTrue(truth_table.negate_second(False, False))
 
-and the terminal shows an :doc:`/exceptions/AttributeError`
+and the terminal shows an :ref:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

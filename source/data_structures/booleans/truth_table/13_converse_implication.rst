@@ -19,7 +19,7 @@ I add a test for converse implication to ``TestBinaryOperations`` in ``test_trut
         self.assertFalse(truth_table.converse_implication(False, True))
         self.assertTrue(truth_table.converse_implication(False, False))
 
-the terminal shows an :doc:`/exceptions/AttributeError`
+the terminal shows an :ref:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

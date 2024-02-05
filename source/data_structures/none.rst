@@ -1,13 +1,14 @@
 
-Data Structures: None
-=====================
+********************************************************
+None
+********************************************************
 
 .. raw:: html
 
   <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/81afQTs6JH0?si=LAtEPEdDKutSOGw9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 What is None?
--------------
+========================================================
 
 `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is an object used to represent the absence of a value
 
@@ -55,8 +56,10 @@ REFACTOR: make it better
 
 There are other python `objects <https://docs.python.org/3/glossary.html#term-object>`_ I can compare with `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ to learn more about what it is or is not
 
+----
+
 Is None a boolean?
-------------------
+========================================================
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -146,8 +149,10 @@ I want to know if `None <https://docs.python.org/3/library/constants.html?highli
 * is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ a `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_?
 * is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ a :doc:`dict </data_structures/dictionaries>`?
 
+----
+
 Is None an integer?
--------------------
+========================================================
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -222,8 +227,10 @@ From the tests I see that
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures/booleans/booleans>`
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
+----
+
 Is None a float?
--------------------
+========================================================
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -295,8 +302,10 @@ From the tests I see that
 - `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures/booleans/booleans>`
 - `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
+----
+
 Is None a string?
------------------
+========================================================
 
 I add a test for `strings <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_. A string is any character(s) inside single, double or triple quotes for example
 
@@ -378,8 +387,10 @@ From the tests I see that
 - `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures/booleans/booleans>`
 - `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
+----
+
 Is None a tuple?
-----------------
+========================================================
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -443,8 +454,10 @@ REFACTOR: make it better
 
 Based on what I have seen so far, it is safe to assume that `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is only `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ and is not any other data structure
 
+----
+
 Is None a list?
-----------------------
+========================================================
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -467,7 +480,6 @@ the terminal shows an :doc:`/exceptions/AssertionError`
 
 ``[]`` is how :doc:`lists </data_structures/lists/lists>` are represented in Python
 
-
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
@@ -483,8 +495,10 @@ With the passing tests I see that
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures/booleans/booleans>`
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
+----
+
 Is None a set?
---------------
+========================================================
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -521,8 +535,10 @@ From the tests I see that
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures/booleans/booleans>`
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
+----
+
 Is None a dictionary?
----------------------
+========================================================
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -547,14 +563,12 @@ the terminal shows an :doc:`/exceptions/AssertionError`
 
   AssertionError: {} is not None
 
-
 * ``dict()`` is one way to create an empty :doc:`dictionary </data_structures/dictionaries>` in Python
 * ``{}`` is how :doc:`dictionaries </data_structures/dictionaries>`  are represented in Python. Wait a minute! `sets <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ are also represented with ``{}``. The difference is that :doc:`dictionaries </data_structures/dictionaries>` contain key-value pairs
 * Do you want to :doc:`read more about dictionaries </data_structures/dictionaries>`?
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
-
 I change the tests to make them pass and can see from the tests that
 
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`dictionary </data_structures/dictionaries>`
@@ -566,7 +580,6 @@ I change the tests to make them pass and can see from the tests that
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an `integer <https://docs.python.org/3/library/functions.html#int>`_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures/booleans/booleans>`
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
-
 
 You now know what `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is and what it is not
 

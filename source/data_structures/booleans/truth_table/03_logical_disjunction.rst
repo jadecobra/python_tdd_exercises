@@ -29,7 +29,7 @@ I add a test for logical disjunction to ``TestBinaryOperations`` in ``test_truth
         self.assertTrue(truth_table.logical_disjunction(False, True))
         self.assertFalse(truth_table.logical_disjunction(False, False))
 
-and the terminal shows an :doc:`/exceptions/AttributeError`
+and the terminal shows an :ref:`AttributeError`
 
 GREEN: make it pass
 ~~~~~~~~~~~~~~~~~~~

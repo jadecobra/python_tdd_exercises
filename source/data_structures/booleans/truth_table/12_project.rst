@@ -22,7 +22,7 @@ I add a test for project first to ``TestBinaryOperations`` in ``test_truth_table
         self.assertFalse(truth_table.project_first(False, True))
         self.assertFalse(truth_table.project_first(False, False))
 
-the terminal shows an :doc:`/exceptions/AttributeError`
+the terminal shows an :ref:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -106,7 +106,7 @@ I add a test for project second to ``TestBinaryOperations``
         self.assertTrue(truth_table.project_second(False, True))
         self.assertFalse(truth_table.project_second(False, False))
 
-the terminal shows an :doc:`/exceptions/AttributeError`
+the terminal shows an :ref:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

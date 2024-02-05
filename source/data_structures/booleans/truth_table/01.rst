@@ -67,7 +67,7 @@ GREEN: make it pass
       def test_logical_true(self):
           self.assertTrue(truth_table.logical_true())
 
-  and the terminal shows an :doc:`/exceptions/AttributeError` which I add to the list of exceptions encountered
+  and the terminal shows an :ref:`AttributeError` which I add to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -96,7 +96,7 @@ REFACTOR: make it better
     def test_logical_false(self):
         self.assertFalse(truth_table.logical_false())
 
-  the terminal shows another :doc:`/exceptions/AttributeError` since there is no definition for ``logical_false`` in ``truth_table.py``
+  the terminal shows another :ref:`AttributeError` since there is no definition for ``logical_false`` in ``truth_table.py``
 * I add a function definition for ``logical_false`` to ``truth_table.py``
 
   .. code-block:: python
@@ -142,7 +142,7 @@ I add a new ``TestCase`` to ``test_truth_table.py``
           self.assertTrue(truth_table.logical_identity(True))
           self.assertFalse(truth_table.logical_identity(False))
 
-and the terminal shows an :doc:`/exceptions/AttributeError` because there is no definition for ``logical_identity`` in ``truth_table.py``
+and the terminal shows an :ref:`AttributeError` because there is no definition for ``logical_identity`` in ``truth_table.py``
 
 GREEN: make it pass
 ~~~~~~~~~~~~~~~~~~~
@@ -172,7 +172,7 @@ I add a test for ``logical_negation`` to ``test_truth_table.py``
         self.assertFalse(truth_table.logical_negation(True))
         self.assertTrue(truth_table.logical_negation(False))
 
-the terminal shows an :doc:`/exceptions/AttributeError`, there is no definition for ``logical_negation`` in ``truth_table.py``
+the terminal shows an :ref:`AttributeError`, there is no definition for ``logical_negation`` in ``truth_table.py``
 
 GREEN: make it pass
 ~~~~~~~~~~~~~~~~~~~

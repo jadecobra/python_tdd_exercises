@@ -63,7 +63,7 @@ GREEN: make it pass
     import telephone
     import unittest
 
-  the terminal shows an :doc:`/exceptions/AttributeError` ::
+  the terminal shows an :ref:`AttributeError` ::
 
     AttributeError: module 'telephone' has no attribute 'text'
 
@@ -372,7 +372,7 @@ VOILA! You now know how to pass values from a test to a program and can represen
 
 * :doc:`/exceptions/AssertionError`
 * `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
-* :doc:`/exceptions/AttributeError`
+* :ref:`AttributeError`
 * :doc:`/exceptions/TypeError`
 
 Would you like to know :doc:`/how_to/create_person`?

@@ -54,7 +54,7 @@ GREEN: make it pass
     # AssertionError
     # ModuleNotFoundError
 
-* I create a python module called ``classes.py`` and the terminal shows an :doc:`/exceptions/AttributeError` which I add to the list of exceptions encountered
+* I create a python module called ``classes.py`` and the terminal shows an :ref:`AttributeError` which I add to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -139,7 +139,7 @@ I add another test to ``TestClasses`` in ``test_classes.py`` to show another way
   def test_classes_definitions_with_parentheses(self):
       self.assertIsInstance(classes.ClassWithParentheses(), object)
 
-the terminal shows an :doc:`/exceptions/AttributeError`
+the terminal shows an :ref:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -192,7 +192,7 @@ I will add another test to ``TestClasses`` in ``test_classes.py``
   def test_class_definition_with_object(self):
       self.assertIsInstance(classes.ClassWithObject(), object)
 
-and the terminal shows an :doc:`/exceptions/AttributeError`
+and the terminal shows an :ref:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

@@ -17,7 +17,7 @@ I add a failing test to ``test_classes.py``
   def test_classes_with_initializers(self):
       self.assertEqual(classes.Boy().sex, 'M')
 
-the terminal shows an :doc:`/exceptions/AttributeError`
+the terminal shows an :ref:`AttributeError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -32,7 +32,7 @@ GREEN: make it pass
 
         pass
 
-  the terminal shows another :doc:`/exceptions/AttributeError`
+  the terminal shows another :ref:`AttributeError`
 
 * I change the ``Boy`` class with an attribute called ``sex``
 
@@ -70,7 +70,7 @@ REFACTOR: make it better
         self.assertEqual(classes.Boy().sex, 'M')
         self.assertEqual(classes.Girl(sex='F').sex, 'F')
 
-  the terminal shows an :doc:`/exceptions/AttributeError`
+  the terminal shows an :ref:`AttributeError`
 
 * I try the same solution I used for the ``Boy`` class and add a definition for the ``Girl`` class to ``classes.py``
 
@@ -128,7 +128,7 @@ REFACTOR: make it better
         self.assertEqual(classes.Girl(sex='F').sex, 'F')
         self.assertEqual(classes.Other(sex='?').sex, '?')
 
-  and the terminal shows an :doc:`/exceptions/AttributeError`
+  and the terminal shows an :ref:`AttributeError`
 
 * I add a class definition to ``classes.py``
 

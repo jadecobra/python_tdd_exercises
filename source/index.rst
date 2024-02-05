@@ -19,7 +19,7 @@ Who is this book for?
 * If you use Python but do not know any of the errors below, this book is for you
 
   - :doc:`/exceptions/AssertionError`
-  - :doc:`/exceptions/AttributeError`
+  - :ref:`AttributeError`
   - `IndexError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#IndexError>`_
   - `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_
   - :doc:`/exceptions/ModuleNotFoundError`
