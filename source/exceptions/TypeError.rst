@@ -126,7 +126,7 @@ GREEN: make it pass
   Another ``TypeError`` but with a new message. Reading the error from the bottom up
 
   * ``function_a() takes 0 positional arguments but 1 was given`` there was an expectation which was not met in how the function is called, it violates the defined signature
-  * ``self.assertIsNone(functions.function_a("a"))`` I am checking if the call ``functions.function_a("a")`` is equal to :doc:`None </data_structures/none>`
+  * ``self.assertIsNone(functions.function_a("a"))`` I am checking if the call ``functions.function_a("a")`` is equal to :ref:`None`
   * ``functions.function_a("a")`` is the call. I think of it like an address
 
     - ``functions`` refers to ``functions.py`` which is a python module

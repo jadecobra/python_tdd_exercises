@@ -115,7 +115,7 @@ GREEN: make it pass
 
     variable_0 = None
 
-  this assigns the name ``variable_0`` to :doc:`None </data_structures/none>` and the terminal shows a passing test. YES!
+  this assigns the name ``variable_0`` to :ref:`None` and the terminal shows a passing test. YES!
 
 I solved the `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a variable
 

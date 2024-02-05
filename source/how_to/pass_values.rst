@@ -89,7 +89,7 @@ GREEN: make it pass
     NameError: name 'text' is not defined
 
 
-- I assign ``text`` to the null value :doc:`None </data_structures/none>`
+- I assign ``text`` to the null value :ref:`None`
 
   .. code-block:: python
 

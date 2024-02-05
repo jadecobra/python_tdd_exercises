@@ -81,7 +81,7 @@ GREEN: make it pass
     # AttributeError
     # NameError
 
-* I change the name to an assignment to the null value :doc:`None </data_structures/none>`
+* I change the name to an assignment to the null value :ref:`None`
 
   .. code-block:: python
 

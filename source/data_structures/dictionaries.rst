@@ -63,7 +63,7 @@ REFACTOR: make it better
     def a_dict():
         return None
 
-  and the terminal shows an :doc:`/exceptions/AssertionError` since the function I defined returns :doc:`None </data_structures/none>` instead of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+  and the terminal shows an :doc:`/exceptions/AssertionError` since the function I defined returns :ref:`None` instead of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
   .. code-block:: python
 
@@ -749,7 +749,7 @@ What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datas
         }
         self.assertIsNone(a_dictionary.get('non_existent_key'))
 
-  the terminal shows a passing test. This means that when I use the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :doc:`method </functions/functions>` and the ``key`` does not exist, I get :doc:`None </data_structures/none>` as the result.
+  the terminal shows a passing test. This means that when I use the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :doc:`method </functions/functions>` and the ``key`` does not exist, I get :ref:`None` as the result.
 * I can state the above explicitly because ``Explicit is better than implicit`` see `Zen of Python <https://peps.python.org/pep-0020/>`_
 
   .. code-block:: python
@@ -764,7 +764,7 @@ What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datas
         self.assertIsNone(a_dictionary.get('non_existent_key'))
         self.assertIsNone(a_dictionary.get('non_existent_key', False))
 
-  the terminal shows an :doc:`/exceptions/AssertionError` because :doc:`False </data_structures/booleans/booleans>` is not :doc:`None </data_structures/none>`
+  the terminal shows an :doc:`/exceptions/AssertionError` because :doc:`False </data_structures/booleans/booleans>` is not :ref:`None`
 
   .. code-block:: python
 
@@ -798,7 +798,7 @@ What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datas
         self.assertIsNone(a_dictionary.get('non_existent_key', None))
         self.assertEqual(a_dictionary.get('key1', None), None)
 
-  the terminal shows an :doc:`/exceptions/AssertionError` because ``value1`` which is the value for ``key1`` in ``a_dictionary`` is not equal to :doc:`None </data_structures/none>`
+  the terminal shows an :doc:`/exceptions/AssertionError` because ``value1`` which is the value for ``key1`` in ``a_dictionary`` is not equal to :ref:`None`
 
   .. code-block:: python
 
@@ -922,7 +922,7 @@ I see some of the :doc:`methods </functions/functions>` I have tested so far and
 * `clear <https://docs.python.org/3/library/stdtypes.html#dict.clear>`_
 * `copy <https://docs.python.org/3/library/stdtypes.html#dict.copy>`_
 * `fromkeys <https://docs.python.org/3/library/stdtypes.html#dict.fromkeys>`_
-* `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ - gets the ``value`` for a ``key`` and returns a default value or :doc:`None </data_structures/none>` when the key does not exist
+* `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ - gets the ``value`` for a ``key`` and returns a default value or :ref:`None` when the key does not exist
 * `items <https://docs.python.org/3/library/stdtypes.html#dict.items>`_
 * `keys <https://docs.python.org/3/library/stdtypes.html#dict.keys>`_ - returns a view of the ``keys`` in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 * `pop <https://docs.python.org/3/library/stdtypes.html#dict.pop>`_
@@ -1030,7 +1030,7 @@ REFACTOR: make it better
         )
         self.assertIsNone(a_dictionary['another_key'])
 
-* I will now add a test for setting the default value to something other than :doc:`None </data_structures/none>`
+* I will now add a test for setting the default value to something other than :ref:`None`
 
   .. code-block:: python
 

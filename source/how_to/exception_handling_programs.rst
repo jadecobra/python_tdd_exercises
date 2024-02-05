@@ -66,7 +66,7 @@ GREEN: make it pass
 
     NameError: name 'raises_exception' is not defined
 
-* I assign ``raises_exception`` to the null value :doc:`None </data_structures/none>`
+* I assign ``raises_exception`` to the null value :ref:`None`
 
   .. code-block:: python
 
@@ -169,7 +169,7 @@ GREEN: make it pass
 
     NameError: name 'exception_handler' is not defined
 
-* I assign ``exception_handler`` to the null value :doc:`None </data_structures/none>`
+* I assign ``exception_handler`` to the null value :ref:`None`
 
   .. code-block:: python
 
@@ -201,7 +201,7 @@ GREEN: make it pass
     def exception_handler(argument):
         return None
 
-  and the terminal shows an :doc:`/exceptions/AssertionError` because the result of calling ``exceptions.exception_handler`` with ``exceptions.raises_exception`` as the input is currently :doc:`None </data_structures/none>` which is not equal to ``'failed'``
+  and the terminal shows an :doc:`/exceptions/AssertionError` because the result of calling ``exceptions.exception_handler`` with ``exceptions.raises_exception`` as the input is currently :ref:`None` which is not equal to ``'failed'``
 
   .. code-block:: python
 
@@ -259,7 +259,7 @@ GREEN: make it pass
 
     NameError: name 'does_not_raise_exception' is not defined
 
-* I assign ``does_not_raise_exception`` to the null value :doc:`None </data_structures/none>`
+* I assign ``does_not_raise_exception`` to the null value :ref:`None`
 
   .. code-block:: python
 
@@ -305,7 +305,7 @@ GREEN: make it pass
 
   - The ``exception_handler`` :doc:`function </functions/functions>` returns the result of calling the :doc:`function </functions/functions>` it receives as input
   - When I call ``exceptions.exception_handler`` with ``exceptions.does_not_raise_exception`` as input, it calls the :doc:`function </functions/functions>` and returns the result
-  - the result of calling ``exceptions.does_not_raise_exception`` is currently :doc:`None </data_structures/none>` which is not equal to ``'succeeded'`` and the result of calling ``exceptions.raises_exception`` is currently an Exception which is not equal to ``'failed'``
+  - the result of calling ``exceptions.does_not_raise_exception`` is currently :ref:`None` which is not equal to ``'succeeded'`` and the result of calling ``exceptions.raises_exception`` is currently an Exception which is not equal to ``'failed'``
 
 *****************************************
 How to use try...except...else
@@ -382,7 +382,7 @@ GREEN: make it pass
 
     NameError: name 'always_returns' is not defined
 
-* I assign the name to :doc:`None </data_structures/none>`
+* I assign the name to :ref:`None`
 
   .. code-block:: python
 
@@ -414,7 +414,7 @@ GREEN: make it pass
     def always_returns(function):
         return function()
 
-  the terminal shows an :doc:`/exceptions/AssertionError` because ``exceptions.always_returns`` returns the value of calling ``does_not_raise_exception`` which is :doc:`None </data_structures/none>` and is not equal to the expectation in the test which is ``'always returns this'``
+  the terminal shows an :doc:`/exceptions/AssertionError` because ``exceptions.always_returns`` returns the value of calling ``does_not_raise_exception`` which is :ref:`None` and is not equal to the expectation in the test which is ``'always returns this'``
 
   .. code-block:: python
 

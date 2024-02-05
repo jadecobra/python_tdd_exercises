@@ -171,7 +171,7 @@ REFACTOR: make it better
       ):
       ...
 
-  a :doc:`/exceptions/TypeError` is raised because I cannot perform a subtraction operation on :doc:`None </data_structures/none>` and the ``this_year`` function currently returns :doc:`None </data_structures/none>`
+  a :doc:`/exceptions/TypeError` is raised because I cannot perform a subtraction operation on :ref:`None` and the ``this_year`` function currently returns :ref:`None`
 
   .. code-block:: python
 
@@ -196,7 +196,7 @@ REFACTOR: make it better
   - ``return datetime.datetime.now().year`` returns the ``year`` attribute of the object returned by the ``now`` :doc:`method </functions/functions>` of the ``datetime.datetime`` :doc:`class </classes/classes>`, which is a representation of the current local date and time. I could also use ``today`` or ``utcnow`` instead of ``now`` to achieve the same result
   - I get the ``year`` attribute of the object returned since that is `all I need to get by <https://www.youtube.com/watch?v=XW1HNWqdVbk>`_
 
-* the terminal shows an :doc:`/exceptions/AssertionError` since the ``person.factory`` function returns :doc:`None </data_structures/none>` and the test expects a :doc:`dictionary </data_structures/dictionaries>` with keys and values.
+* the terminal shows an :doc:`/exceptions/AssertionError` since the ``person.factory`` function returns :ref:`None` and the test expects a :doc:`dictionary </data_structures/dictionaries>` with keys and values.
 
   .. code-block:: python
 
@@ -442,7 +442,7 @@ RED: make it fail
 
     AssertionError: {'first_name': 'child_a', 'last_name': None, 'sex': 'M', 'age': 10} != {'first_name': 'child_a', 'last_name': 'last_name', 'sex': 'M', 'age': 10}
 
-* The test expects a value of ``"last_name"`` but ``person.factory`` currently returns :doc:`None </data_structures/none>`. When I change the default value for ``last_name`` in the ``person.factory`` definition to match the expectation
+* The test expects a value of ``"last_name"`` but ``person.factory`` currently returns :ref:`None`. When I change the default value for ``last_name`` in the ``person.factory`` definition to match the expectation
 
   .. code-block:: python
 

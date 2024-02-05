@@ -102,14 +102,13 @@ GREEN: make it pass
 
       NameError: name 'duration' is not defined
 
-* I make ``duration`` a variable by assigning it to the :ref:`null value (None) <none>`
-* I make ``duration`` a variable by assigning it to the :doc:`null value (None) </data_structures/none>`
+* I make ``duration`` a variable by assigning it to :ref:`None`
 
   .. code-block:: python
 
     duration = None
 
-  and the terminal shows a :doc:`/exceptions/TypeError` because :doc:`None </data_structures/none>` is not callable ::
+  and the terminal shows a :doc:`/exceptions/TypeError` because :ref:`None` is not callable ::
 
     TypeError: 'NoneType' object is not callable
 
@@ -134,7 +133,7 @@ GREEN: make it pass
 
     TypeError: duration() got an unexpected keyword argument 'wake_time'
 
-* I add the required keyword argument to the definition of ``duration``, setting its default value to :doc:`None </data_structures/none>`
+* I add the required keyword argument to the definition of ``duration``, setting its default value to :ref:`None`
 
   .. code-block:: python
 
@@ -154,7 +153,7 @@ GREEN: make it pass
     def duration(wake_time=None, sleep_time=None):
         return None
 
-  and the terminal shows an :doc:`/exceptions/AssertionError`, the duration function returns :doc:`None </data_structures/none>` but the test expects ``1`` as the duration when it is given a sleep time of ``'07:00'`` and a wake time of ``'08:00'``
+  and the terminal shows an :doc:`/exceptions/AssertionError`, the duration function returns :ref:`None` but the test expects ``1`` as the duration when it is given a sleep time of ``'07:00'`` and a wake time of ``'08:00'``
 
   .. code-block:: python
 
@@ -270,7 +269,7 @@ test_string_methods_and_attributes
 
     AssertionError: ['__add__', '__class__', '__contains__', [918 chars]ill'] != None
 
-* I copy the value on the left side of the comparison and replace :doc:`None </data_structures/none>` as the expected value in the test
+* I copy the value on the left side of the comparison and replace :ref:`None` as the expected value in the test
 
   .. code-block:: python
 
@@ -326,7 +325,7 @@ test_string_methods_and_attributes
             ['__add__', '__class__', '__contains__', '[918 chars]ill']
         )
 
-  `unittest.TestCase.maxDiff <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff>`_ sets a limit on the number of characters the terminal shows for a difference between two objects, there is no limit when it is set to :doc:`None </data_structures/none>`. The terminal shows a full list of all the attributes of a string_
+  `unittest.TestCase.maxDiff <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff>`_ sets a limit on the number of characters the terminal shows for a difference between two objects, there is no limit when it is set to :ref:`None`. The terminal shows a full list of all the attributes of a string_
 
 * I copy the values from the terminal into the test and remove the extra characters
 

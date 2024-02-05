@@ -71,17 +71,17 @@ GREEN: make it pass
 
   and we have a passing test
 
-  * the test checks if the value of the call to ``functions.function_with_pass`` is :doc:`None </data_structures/none>`
+  * the test checks if the value of the call to ``functions.function_with_pass`` is :ref:`None`
   * the function definition simply says `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ yet the test passes
   * `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is a placeholder keyword which allows the function definition to follow python syntax rules
-  * the test passes because in Python all functions return :doc:`None </data_structures/none>` by default, like the function has an invisible line that says ``return None``
+  * the test passes because in Python all functions return :ref:`None` by default, like the function has an invisible line that says ``return None``
 
 REFACTOR: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 * RED: make it fail
 
-  I add a new failing test to ``TestFunctions`` in ``test_functions.py`` to check that functions always return :doc:`None </data_structures/none>`
+  I add a new failing test to ``TestFunctions`` in ``test_functions.py`` to check that functions always return :ref:`None`
 
   .. code-block:: python
 
@@ -101,7 +101,7 @@ REFACTOR: make it better
 
   the terminal shows this test also passes
 
-  I defined 2 functions with different statements in their body but they both return the same result, because "in Python all functions return :doc:`None </data_structures/none>` by default, like the function has an invisible line that says ``return None``"
+  I defined 2 functions with different statements in their body but they both return the same result, because "in Python all functions return :ref:`None` by default, like the function has an invisible line that says ``return None``"
 
 * RED: make it fail
 
@@ -131,4 +131,4 @@ The 3 ways I have defined functions so far have the exact same outcome, they all
 Here is what I know so far from the tests
 
 * functions are defined using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword
-* functions return :doc:`None </data_structures/none>` by default
+* functions return :ref:`None` by default

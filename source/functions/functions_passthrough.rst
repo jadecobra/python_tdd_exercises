@@ -57,7 +57,7 @@ GREEN: make it pass
 
     AssertionError: None != False
 
-  because the result of calling ``functions.passthrough`` with :doc:`False </data_structures/booleans/booleans>` as input is :doc:`None </data_structures/none>` which is not equal to the expected result (:doc:`False </data_structures/booleans/booleans>`)
+  because the result of calling ``functions.passthrough`` with :doc:`False </data_structures/booleans/booleans>` as input is :ref:`None` which is not equal to the expected result (:doc:`False </data_structures/booleans/booleans>`)
 
 * I change the definition of ``passthrough`` to make the test pass
 
