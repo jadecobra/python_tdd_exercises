@@ -247,7 +247,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
   I need to find a way to convert the timestamp from a string_ to a number.
 
 test_string_methods_and_attributes
------------------------------------
+--------------------------------------------------------
 
 The two inputs are currently in this format - ``XX:00``. If I can get the first 2 characters and convert them to a number, I can calculate the difference since Python can do :doc:`arithmetic </how_to/calculator>`.
 
@@ -461,7 +461,7 @@ RED: make it fail
   the split_ :doc:`method </functions/functions>` looks like a good solution since it splits up a word on a given separator
 
 test_splitting_a_string
-------------------------
+--------------------------------------------------------
 
 * I remove the call to the help system ``help(str)`` and add a failing test for the split_ :doc:`method </functions/functions>` to help me understand it better
 
@@ -614,7 +614,7 @@ test_splitting_a_string
     ...
 
 test_converting_string_to_integer
------------------------------------
+--------------------------------------------------------
 
 * then add a failing test to see if I can use the `int <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ constructor to convert a string_ to a number
 
@@ -946,11 +946,11 @@ REFACTOR: make it better
 * Since ``test_duration_w_hours_and_minutes`` uses a random number from ``0`` to ``23`` for hours and a random number from ``0`` to ``59`` for minutes, it covers all timestamps from ``00:00`` to ``23:59``. This means I do not need ``test_duration_w_hours_only``, so I remove it
 
 test_duration_calculation
------------------------------------
+--------------------------------------------------------
 * The ``duration`` function currently returns a subtraction of hours and a subtraction of minutes which is not accurate for calculating real differences between two timestamps. For instance when it is given a wake time of ``3:30`` and a sleep time of ``2:59`` it should return ``00:31`` but it returns ``01:-29`` which is not a real duration. This means that even though the tests are passing, once again the ``duration`` function does not meet the requirement of calculating the difference between two timestamps. I need a better way.
 
 RED: Make It Fail
---------------------------------------------------------
+
 * I add a new failing test for the specific example to ``test_sleep_duration.py``
 
   .. code-block:: python
@@ -1031,7 +1031,7 @@ RED: Make It Fail
   I have passing tests again
 
 test_floor_aka_integer_division
------------------------------------
+--------------------------------------------------------
 
 * the ``//`` operator returns the whole number result of diving one number by another rounded down to the nearest integer, I add a test to show this
 
@@ -1055,7 +1055,7 @@ test_floor_aka_integer_division
         self.assertEqual(5//2, 2)
 
 test_modulo_operation
------------------------------------
+--------------------------------------------------------
 
 * the ``%`` operator returns the remainder from diving one number by another, I add a test to show this
 
@@ -1382,9 +1382,7 @@ RED: make it fail
 
     invalid literal for int() with base 10: '31/12/99 10'
 
-
 GREEN: make it pass
----------------------
 
 * The ``split`` function was given a separator of ``:`` when we only used hours and minutes, but behaves differently when I add a date. I add a test to ``test_splitting_a_string`` to show this
 
@@ -1467,10 +1465,9 @@ GREEN: make it pass
 * I add tests using the examples in the documentation to help me understand how to use the datetime_ module
 
 test_datetime_datetime_objects
------------------------------------
+--------------------------------------------------------
 
 RED: Make It Fail
-
 
 * I add a test for `datetime.datetime`_ objects to ``test_sleep_duration.py`` based on `Examples of usage: datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_
 
@@ -1538,106 +1535,114 @@ RED: Make It Fail
     * ``%M`` is for minutes
 
 test_subtracting_datetime_datetime_objects
---------------------------------------------------
+--------------------------------------------------------
 
-  - I add a test based on `Examples of usage: timedelta <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-timedelta>`_ for subtracting two `datetime.datetime`_ objects
+RED: make it fail
 
-    .. code-block:: python
+* I add a test based on `Examples of usage: timedelta <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-timedelta>`_ for subtracting two `datetime.datetime`_ objects
 
-      def test_subtracting_datetime_datetime_objects(self):
-          sleep_time = datetime.datetime.strptime(
-              '21/11/06 16:30', '%d/%m/%y %H:%M'
-          )
-          wake_time = datetime.datetime.strptime(
-              '21/11/06 17:30', '%d/%m/%y %H:%M'
-          )
-          self.assertEqual(wake_time-sleep_time, 1)
+  .. code-block:: python
 
-  - I can add a variable to remove the duplication of the timestamp pattern
+    def test_subtracting_datetime_datetime_objects(self):
+        sleep_time = datetime.datetime.strptime(
+            '21/11/06 16:30', '%d/%m/%y %H:%M'
+        )
+        wake_time = datetime.datetime.strptime(
+            '21/11/06 17:30', '%d/%m/%y %H:%M'
+        )
+        self.assertEqual(wake_time-sleep_time, 1)
 
-    .. code-block:: python
+* I can add a variable to remove the duplication of the timestamp pattern
 
-      def test_subtracting_datetime_datetime_objects(self):
-          pattern = '%d/%m/%y %H:%M'
-          sleep_time = datetime.datetime.strptime(
-              '21/11/06 16:30', pattern
-          )
-          wake_time = datetime.datetime.strptime(
-              '21/11/06 17:30', pattern
-          )
-          self.assertEqual(wake_time-sleep_time, 1)
+  .. code-block:: python
 
-      def test_duration_w_hours_and_minutes(self):
-      ...
+    def test_subtracting_datetime_datetime_objects(self):
+        pattern = '%d/%m/%y %H:%M'
+        sleep_time = datetime.datetime.strptime(
+            '21/11/06 16:30', pattern
+        )
+        wake_time = datetime.datetime.strptime(
+            '21/11/06 17:30', pattern
+        )
+        self.assertEqual(wake_time-sleep_time, 1)
 
-    the terminal shows an :ref:`AssertionError`
+    def test_duration_w_hours_and_minutes(self):
+    ...
 
-    .. code-block:: python
+  the terminal shows an :ref:`AssertionError`
 
-      AssertionError: datetime.timedelta(seconds=3600) != 1
+  .. code-block:: python
 
-  * I copy the value on the left of the :ref:`AssertionError` and replace the expected value in the test
+    AssertionError: datetime.timedelta(seconds=3600) != 1
 
-    .. code-block:: python
+GREEN: make it pass
 
-      def test_subtracting_datetime_datetime_objects(self):
-          pattern = '%d/%m/%y %H:%M'
-          sleep_time = datetime.datetime.strptime(
-              '21/11/06 16:30', pattern
-          )
-          wake_time = datetime.datetime.strptime(
-              '21/11/06 17:30', pattern
-          )
-          self.assertEqual(
-              wake_time-sleep_time,
-              datetime.timedelta(seconds=3600)
-          )
+* I copy the value on the left of the :ref:`AssertionError` and replace the expected value in the test
 
-    With these passing tests. I see that I can
+  .. code-block:: python
 
-    - convert a string_ to a `datetime.datetime`_ object
-    - subtract one `datetime.datetime`_ object from another to get a `datetime.timedelta`_ object
+    def test_subtracting_datetime_datetime_objects(self):
+        pattern = '%d/%m/%y %H:%M'
+        sleep_time = datetime.datetime.strptime(
+            '21/11/06 16:30', pattern
+        )
+        wake_time = datetime.datetime.strptime(
+            '21/11/06 17:30', pattern
+        )
+        self.assertEqual(
+            wake_time-sleep_time,
+            datetime.timedelta(seconds=3600)
+        )
+
+With these passing tests. I see that I can
+
+- convert a string_ to a `datetime.datetime`_ object
+- subtract one `datetime.datetime`_ object from another to get a `datetime.timedelta`_ object
 
 test_converting_timedelta_to_string
 --------------------------------------------------
 
-  * So far the `datetime.timedelta`_ object I get shows seconds, but I want the result as a string. I add a test to see if I can change it to a string_ using the `str <https://docs.python.org/3/library/stdtypes.html#str>`_ constructor
+RED: make it fail
 
-    .. code-block:: python
+* So far the `datetime.timedelta`_ object I get shows seconds, but I want the result as a string. I add a test to see if I can change it to a string_ using the `str <https://docs.python.org/3/library/stdtypes.html#str>`_ constructor
 
-      def test_converting_timedelta_to_string(self):
-          self.assertEqual(
-              str(datetime.timedelta(seconds=7200)),
-              ''
-          )
+  .. code-block:: python
 
-      def test_duration_w_hours_and_minutes(self):
-      ...
+    def test_converting_timedelta_to_string(self):
+        self.assertEqual(
+            str(datetime.timedelta(seconds=7200)),
+            ''
+        )
 
-    and I get an :ref:`AssertionError` with a message that looks more like what I want
+    def test_duration_w_hours_and_minutes(self):
+    ...
 
-    .. code-block:: python
+  and I get an :ref:`AssertionError` with a message that looks more like what I want
 
-      AssertionError: '2:00:00' != ''
+  .. code-block:: python
 
-  * I change the expected value in the test to match the value from the terminal
+    AssertionError: '2:00:00' != ''
 
-    .. code-block:: python
+GREEN: make it pass
 
-      def test_converting_timedelta_to_string(self):
-          self.assertEqual(
-              str(datetime.timedelta(seconds=7200)),
-              '2:00:00'
-          )
+* I change the expected value in the test to match the value from the terminal
 
-    it looks like calling `str <https://docs.python.org/3/library/stdtypes.html#str>`_ on a `datetime.timedelta`_ object returns a string_ in the format ``Hours:Minutes:Seconds``
+  .. code-block:: python
+
+    def test_converting_timedelta_to_string(self):
+        self.assertEqual(
+            str(datetime.timedelta(seconds=7200)),
+            '2:00:00'
+        )
+
+  it looks like calling `str <https://docs.python.org/3/library/stdtypes.html#str>`_ on a `datetime.timedelta`_ object returns a string_ in the format ``Hours:Minutes:Seconds``
 
 
-  From the tests so far I know that I can
+From the tests so far I know that I can
 
-  - convert a string_ to a `datetime.datetime`_ object
-  - subtract one `datetime.datetime`_ object from another to get a `datetime.timedelta`_ object
-  - convert a `datetime.timedelta`_ object to a string_
+- convert a string_ to a `datetime.datetime`_ object
+- subtract one `datetime.datetime`_ object from another to get a `datetime.timedelta`_ object
+- convert a `datetime.timedelta`_ object to a string_
 
 * I remove ``@unittest.skip`` from ``test_duration_w_given_date_and_time`` to return to the ValueError_ that sent me down this path
 * I add a function for converting timestamps to ``sleep_duration.py`` and call it ``get_datetime_object``
