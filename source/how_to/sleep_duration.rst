@@ -1917,7 +1917,7 @@ review
 
 The challenge was to create a function that calculates the difference between two given timestamps.
 
-To make it happen I wrote the following tests
+To make it happen I
 
 * :ref:`test_string_methods_and_attributes`
 * `test_splitting_a_string`_
