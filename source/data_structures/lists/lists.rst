@@ -1,3 +1,4 @@
+.. include:: ../../links.rst
 
 ##################################
 lists
@@ -384,7 +385,7 @@ GREEN: make it pass
 IndexError
 ************
 
-An `IndexError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#IndexError>`_ is raised when I try to get an item from a list but use a number that is greater than the number of items in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_.
+An IndexError_ is raised when I try to get an item from a list but use a number that is greater than the number of items in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_.
 
 RED: make it fail
 ===================
@@ -397,7 +398,7 @@ I add a failing test to show this
         a_list = ['first', 'second', 'third', 'fourth']
         a_list[5]
 
-the terminal shows an `IndexError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#IndexError>`_
+the terminal shows an IndexError_
 
 .. code-block:: python
 
@@ -407,7 +408,7 @@ the terminal shows an `IndexError <https://docs.python.org/3/library/exceptions.
 GREEN: make it pass
 ===================
 
-* I add `IndexError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#IndexError>`_ to the list of exceptions encountered
+* I add IndexError_ to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -440,7 +441,7 @@ REFACTOR: make it better
             a_list[5]
         a_list[-5]
 
-  the terminal shows an `IndexError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#IndexError>`_
+  the terminal shows an IndexError_
 * When I indent the line under the `self.assertRaises` context, the test passes
 
   .. code-block:: python
@@ -588,7 +589,7 @@ you encountered the following exceptions
 
 * :ref:`AssertionError`
 * :ref:`TypeError`
-* `IndexError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#IndexError>`_
+* IndexError_
 
 ----
 

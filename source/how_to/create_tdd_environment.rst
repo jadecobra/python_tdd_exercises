@@ -1,3 +1,4 @@
+.. include:: ../links.rst
 
 ####################################################
 how to create a Test Driven Development Environment

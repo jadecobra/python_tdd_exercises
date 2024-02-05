@@ -1,3 +1,4 @@
+.. include:: ../links.rst
 
 #######################
 how to create a person
@@ -90,7 +91,7 @@ REFACTOR: make it better
             }
         )
 
-  the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ for the call to the ``this_year`` :doc:`function </functions/functions>`
+  the terminal shows a NameError_ for the call to the ``this_year`` :doc:`function </functions/functions>`
 
   .. code-block:: python
 
@@ -292,7 +293,7 @@ REFACTOR: make it better
             'age': this_year() - year_of_birth,
         }
 
-  the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ since I am calling a function that does not exist in ``person.py``
+  the terminal shows a NameError_ since I am calling a function that does not exist in ``person.py``
 
   .. code-block:: python
 
@@ -313,7 +314,7 @@ REFACTOR: make it better
             'age': datetime.datetime.now().year - year_of_birth,
         }
 
-  the terminal shows another `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ this time for the ``datetime`` module
+  the terminal shows another NameError_ this time for the ``datetime`` module
 
   .. code-block:: python
 
@@ -507,7 +508,7 @@ You also encountered the following exceptions
 
 * :ref:`AssertionError`
 * :ref:`AttributeError`
-* `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+* NameError_
 * :ref:`TypeError`
 
 Do you know :doc:`/how_to/exception_handling_tests`?

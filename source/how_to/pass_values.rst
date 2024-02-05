@@ -1,3 +1,4 @@
+.. include:: ../links.rst
 
 ###################
 how to pass values
@@ -38,7 +39,7 @@ I add a test to ``test_telephone.py``
               'I received this message: hello'
           )
 
-and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+and the terminal shows a NameError_
 
 .. code-block:: python
 
@@ -82,7 +83,7 @@ GREEN: make it pass
 
     text
 
-  and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+  and the terminal shows a NameError_
 
   .. code-block:: python
 
@@ -371,7 +372,7 @@ As an exercise I add more tests to ``test_text_messages`` to see what happens wh
 VOILA! You now know how to pass values from a test to a program and can represent any values as strings using interpolation. You also encountered the following exceptions
 
 * :ref:`AssertionError`
-* `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+* NameError_
 * :ref:`AttributeError`
 * :ref:`TypeError`
 

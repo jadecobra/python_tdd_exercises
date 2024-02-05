@@ -22,10 +22,10 @@ Who is this book for?
 
   - :ref:`AssertionError`
   - :ref:`AttributeError`
-  - `IndexError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#IndexError>`_
-  - `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_
+  - IndexError_
+  - KeyError_
   - :ref:`ModuleNotFoundError`
-  - `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+  - NameError_
   - :ref:`TypeError`
   - ValueError_
 

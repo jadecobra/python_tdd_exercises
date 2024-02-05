@@ -1,3 +1,4 @@
+.. include:: ../links.rst
 
 ########################################
 how to test that an Exception is raised
@@ -96,11 +97,11 @@ RED: make it fail
     def test_catching_attribute_errors_in_tests(self):
         module.non_existent_attribute
 
-  the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ ::
+  the terminal shows a NameError_ ::
 
     NameError: name 'module' is not defined
 
-  A `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ is raised when a name is used within a module with no definition for the name. In the test I call ``module.non_existent_attribute`` but there is no definition for ``module``
+  A NameError_ is raised when a name is used within a module with no definition for the name. In the test I call ``module.non_existent_attribute`` but there is no definition for ``module``
 * I add it to the list of exceptions encountered ::
 
     # Exceptions Encountered
@@ -225,7 +226,7 @@ Fantastic! all the tests still pass and I have a way to catch exceptions that ar
 
 * :ref:`AssertionError`
 * :ref:`ModuleNotFoundError`
-* `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+* NameError_
 * :ref:`AttributeError`
 
 Time to look at :doc:`/how_to/exception_handling_programs`

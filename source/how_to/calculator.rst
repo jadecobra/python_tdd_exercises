@@ -1,3 +1,4 @@
+.. include:: ../links.rst
 
 ###########################
 how to create a calculator
@@ -126,7 +127,7 @@ GREEN: make it pass
 
     add
 
-  the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ because ``add`` is not defined (there is no assignment to the name)
+  the terminal shows a NameError_ because ``add`` is not defined (there is no assignment to the name)
 
   .. code-block:: python
 
@@ -645,7 +646,7 @@ CONGRATULATIONS! You made it through writing a program that can perform the 4 ba
 You also encountered the following exceptions
 
 * :ref:`AssertionError`
-* `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+* NameError_
 * :ref:`AttributeError`
 * :ref:`TypeError`
 * `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_

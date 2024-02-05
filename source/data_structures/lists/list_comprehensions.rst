@@ -1,3 +1,4 @@
+.. include:: ../../links.rst
 
 ##############################################
 lists: List Comprehensions
@@ -101,7 +102,7 @@ REFACTOR: make it better
           a_list
       )
 
-  the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+  the terminal shows a NameError_
 
   .. code-block:: python
 
@@ -889,7 +890,7 @@ I have written the same thing multiple times in these tests and since the progra
 I also encountered the following exceptions
 
 * :ref:`AssertionError`
-* `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+* NameError_
 * :ref:`ModuleNotFoundError`
 * :ref:`AttributeError`
 * :ref:`TypeError`

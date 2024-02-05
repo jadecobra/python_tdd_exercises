@@ -1,4 +1,4 @@
-.. _function:
+.. include:: ../links.rst
 
 functions
 =========

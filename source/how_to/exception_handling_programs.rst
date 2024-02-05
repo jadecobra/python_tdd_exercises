@@ -1,3 +1,4 @@
+.. include:: ../links.rst
 
 #####################################
 how to handle Exceptions in programs
@@ -30,7 +31,7 @@ RED: make it fail
     def test_catching_exceptions(self):
         exceptions.raises_exception()
 
-  the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+  the terminal shows a NameError_
 
   .. code-block:: python
 
@@ -60,7 +61,7 @@ GREEN: make it pass
 
     raises_exception
 
-  and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ since I have not defined ``raises_exception`` in ``exceptions.py``
+  and the terminal shows a NameError_ since I have not defined ``raises_exception`` in ``exceptions.py``
 
   .. code-block:: python
 
@@ -163,7 +164,7 @@ GREEN: make it pass
 
     exception_handler
 
-  and the terminal shows `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+  and the terminal shows NameError_
 
   .. code-block:: python
 
@@ -253,7 +254,7 @@ GREEN: make it pass
     def exception_handler(function):
     ...
 
-  and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+  and the terminal shows a NameError_
 
   .. code-block:: python
 
@@ -376,7 +377,7 @@ GREEN: make it pass
 
     always_returns
 
-  and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+  and the terminal shows a NameError_
 
   .. code-block:: python
 
@@ -533,7 +534,7 @@ You also encountered the following exceptions
 
 * :ref:`AssertionError`
 * :ref:`ModuleNotFoundError`
-* `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+* NameError_
 * :ref:`AttributeError`
 * :ref:`TypeError`
 

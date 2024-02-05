@@ -1,3 +1,4 @@
+.. include:: ../links.rst
 
 functions: positional and keyword arguments
 -------------------------------------------

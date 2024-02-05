@@ -1,3 +1,4 @@
+.. include:: ../links.rst
 
 #####################
 classes: initializer
@@ -43,7 +44,7 @@ GREEN: make it pass
 
         sex
 
-  the terminal produces a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+  the terminal produces a NameError_
 
 
 * I add a definition for the ``sex`` attribute

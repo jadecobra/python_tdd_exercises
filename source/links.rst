@@ -13,3 +13,5 @@
 .. _datetime.datetime: https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects
 .. _datetime.timedelta: https://docs.python.org/3/library/datetime.html?highlight=datetime#timedelta-objects
 .. _ValueError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError
+.. _IndexError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#IndexError
+.. _KeyError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError

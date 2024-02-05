@@ -1,3 +1,4 @@
+.. include:: ../links.rst
 
 ########
 classes
@@ -69,7 +70,7 @@ GREEN: make it pass
 
     ClassWithPass
 
-  and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ because ``ClassWithPass`` is not defined anywhere
+  and the terminal shows a NameError_ because ``ClassWithPass`` is not defined anywhere
 
 * I add the error to the list of exceptions encountered
 

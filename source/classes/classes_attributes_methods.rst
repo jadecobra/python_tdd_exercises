@@ -1,3 +1,4 @@
+.. include:: ../links.rst
 
 #################################
 classes: attributes and methods
@@ -154,7 +155,7 @@ GREEN: make it pass
 
         method_a
 
-  the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ because there is no definition for ``method_a``
+  the terminal shows a NameError_ because there is no definition for ``method_a``
 
 
 * I define ``method_a`` as an attribute by assigning the name to the null value :ref:`None`

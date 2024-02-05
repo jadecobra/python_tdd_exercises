@@ -1,3 +1,4 @@
+.. include:: ../links.rst
 
 ********************************************************
 AttributeError
@@ -91,15 +92,15 @@ GREEN: make it pass
 
     variable_0
 
-  and the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+  and the terminal shows a NameError_
 
   .. code-block::
 
     NameError: name 'variable_0' is not defined
 
-  ``NameError: name 'variable_0' is not defined`` the `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ is raised because ``variable_0`` in ``module.py`` is considered a reference and there is currently no definition or assignment for that name
+  ``NameError: name 'variable_0' is not defined`` the NameError_ is raised because ``variable_0`` in ``module.py`` is considered a reference and there is currently no definition or assignment for that name
 
-* I add `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ to the list of errors encountered
+* I add NameError_ to the list of errors encountered
 
   .. code-block:: python
 
@@ -129,7 +130,7 @@ AttributeError vs NameError
 
 An `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name in an `object <https://docs.python.org/3/glossary.html#term-object>`_ from outside the `object <https://docs.python.org/3/glossary.html#term-object>`_ and the name does not exist, for example ``humans.wings``
 
-A `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ is raised when there is a reference to a name within an `object <https://docs.python.org/3/glossary.html#term-object>`_ and there is no definition for the name
+A NameError_ is raised when there is a reference to a name within an `object <https://docs.python.org/3/glossary.html#term-object>`_ and there is no definition for the name
 
 
 REFACTOR: make it better
@@ -167,7 +168,7 @@ GREEN: make it pass
     variable_0 = None
     variable_1
 
-  the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+  the terminal shows a NameError_
 
   .. code-block:: python
 
@@ -215,7 +216,7 @@ GREEN: make it pass
     variable_1 = None
     variable_2
 
-  the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+  the terminal shows a NameError_
 
   .. code-block:: python
 
@@ -266,7 +267,7 @@ GREEN: make it pass
     variable_2 = None
     variable_3
 
-  the terminal shows a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+  the terminal shows a NameError_
 
   .. code-block:: python
 
@@ -286,7 +287,7 @@ GREEN: make it pass
 I have a pattern for the drill. When I test an attribute in a module, I get
 
 * an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ when the attribute does not exist
-* a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ when I add the name to the module
+* a NameError_ when I add the name to the module
 * a passing test when I define the name as a variable
 
 If you are feeling adventurous you can add more tests to ``test_defining_variables_to_solve_attribute_errors`` until you get to ``module.variable_99``, you will have 100 lines
@@ -307,7 +308,7 @@ If you have been typing along *WELL DONE!* You now know
 
 
 * How to solve a :ref:`ModuleNotFoundError`
-* How to solve a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ using variables
+* How to solve a NameError_ using variables
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 
 ----
@@ -400,7 +401,7 @@ REFACTOR: make it better
 *YOU DID IT AGAIN!* You now know
 
 * How to solve a :ref:`ModuleNotFoundError`
-* How to solve a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+* How to solve a NameError_
 * How to solve a :ref:`TypeError` by defining a callable
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
@@ -487,7 +488,7 @@ REFACTOR: make it better
 *WELL DONE!* You now know
 
 * How to solve a :ref:`ModuleNotFoundError`
-* How to solve a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+* How to solve a NameError_
 * How to solve a :ref:`TypeError` by defining a `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
@@ -631,7 +632,7 @@ REFACTOR: make it better
 *WELL DONE!* You now know You now know
 
 * How to solve a :ref:`ModuleNotFoundError`
-* How to solve a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+* How to solve a NameError_
 * How to solve a :ref:`TypeError` by defining a `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
@@ -714,14 +715,14 @@ repeat the solution until all tests pass
 * :ref:`AssertionError`
 * :ref:`ModuleNotFoundError`
 * :ref:`AttributeError`
-* `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+* NameError_
 * :ref:`TypeError`
 * SyntaxError_
 
 and learned
 
 * How to solve a :ref:`ModuleNotFoundError`
-* How to solve a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+* How to solve a NameError_
 * How to solve a :ref:`TypeError` by defining a `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`

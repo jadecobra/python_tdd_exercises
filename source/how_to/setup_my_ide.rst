@@ -1,3 +1,4 @@
+.. include:: ../links.rst
 
 ##########################################################
 how I setup my Interactive Development Environment (IDE)
