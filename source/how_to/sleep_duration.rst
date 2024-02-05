@@ -463,18 +463,18 @@ RED: make it fail
 test_splitting_a_string
 --------------------------------------------------------
 
-* I remove the call to the help system ``help(str)`` and add a failing test for the split_ :doc:`method </functions/functions>` to help me understand it better
+* I remove the call to the `help system`_ ``help(str)`` and add a failing test for the split_ :doc:`method </functions/functions>` to help me understand it better
 
   .. code-block:: python
 
-      def test_splitting_a_string(self):
-          self.assertEqual(
-              '01:23'.split(),
-              None
-          )
+    def test_splitting_a_string(self):
+        self.assertEqual(
+            '01:23'.split(),
+            None
+        )
 
-      def test_duration_w_hours_only(self):
-      ...
+    def test_duration_w_hours_only(self):
+    ...
 
   the terminal shows an :ref:`AssertionError` and I see that split_ creates a :doc:`list </data_structures/lists/lists>` when called
 

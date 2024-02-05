@@ -3,6 +3,8 @@
   You can adapt this file completely to your liking, but it should at least
   contain the root ``toctree`` directive.
 
+.. include:: /links.rst
+
 #####################################################################
 Pumping Python: How to solve problems with Test Driven Development
 #####################################################################
@@ -131,6 +133,6 @@ tests and solutions
   code/code_dictionaries
   code/code_classes
   code/code_functions
-  test_catalog
+  catalog_of_tests
 
 :ref:`search`
