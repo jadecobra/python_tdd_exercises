@@ -1920,7 +1920,7 @@ The challenge was to create a function that calculates the difference between tw
 To make it happen I
 
 * :ref:`test_string_methods_and_attributes`
-* `test_splitting_a_string`_
+* `test_splitting_a_string`_ where I
 
   - used the `help system`_ to view documentation
   - split a string_ into a :doc:`list </data_structures/lists/lists>` using a separator
@@ -1929,16 +1929,17 @@ To make it happen I
 * `test_converting_string_to_integer`_
 * `test_floor_aka_integer_division`_
 * `test_modulo_operation`_
-* `test_datetime_datetime_objects`_
+* `test_datetime_datetime_objects`_ where I
 
   - used the `python online documentation <https://docs.python.org/3/search.html>`_
   - converted a string_ to a `datetime.datetime`_ object using the `datetime.datetime.strptime <https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime.datetime.strptime>`_ method
 * :ref:`test_subtracting_datetime_datetime_objects`
-* `test_converting_timedelta_to_string`_ to convert `datetime.timedelta`_ objects to a string_
+* `test_converting_timedelta_to_string`_
 * `test_duration_w_given_date_and_time`_
 
   - by generating a random integer between two given integers using `random.randint <https://docs.python.org/3/library/random.html?highlight=random#random.randint>`_
   - using a random timestamp ranging from 00:00 up to and including 23:59 as inputs for ``wake_time`` and ``sleep_time``
+  - confirming a ValueError_ is raised when ``wake_time`` is earlier than ``sleep_time``
   - `test_duration_w_hours_only`_
   - `test_duration_w_hours_and_minutes`_
   - `test_duration_calculation`_
