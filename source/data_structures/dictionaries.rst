@@ -1,5 +1,5 @@
 
-Data Structures: Dictionaries
+dictionaries
 ==============================
 
 This chapter goes over `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ in Python. Dictionaries, also called Mappings, are key-value pairs that represent data, values can be any Python `object <https://docs.python.org/3/glossary.html#term-object>`_.

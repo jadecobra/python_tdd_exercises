@@ -1,6 +1,6 @@
 
 ###########################
-How to create a Calculator
+how to create a calculator
 ###########################
 
 .. raw:: html

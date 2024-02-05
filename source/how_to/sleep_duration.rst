@@ -1,7 +1,7 @@
 .. include:: ../links.rst
 
 ********************************************************
-How to measure sleep duration
+how to measure sleep duration
 ********************************************************
 
 ----

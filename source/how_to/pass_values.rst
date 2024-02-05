@@ -1,6 +1,6 @@
 
 ###################
-How to pass values
+how to pass values
 ###################
 
 .. raw:: html

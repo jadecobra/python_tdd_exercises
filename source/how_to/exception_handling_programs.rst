@@ -1,6 +1,6 @@
 
 #####################################
-How to handle Exceptions in programs
+how to handle Exceptions in programs
 #####################################
 
 .. raw:: html

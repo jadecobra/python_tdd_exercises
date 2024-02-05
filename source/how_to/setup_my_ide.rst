@@ -1,6 +1,6 @@
 
 ##########################################################
-How I setup my Interactive Development Environment (IDE)
+how I setup my Interactive Development Environment (IDE)
 ##########################################################
 
 .. raw:: html

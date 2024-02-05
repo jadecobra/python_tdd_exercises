@@ -1,6 +1,6 @@
 
 ####################################################
-How to create a Test Driven Development Environment
+how to create a Test Driven Development Environment
 ####################################################
 
 .. raw:: html

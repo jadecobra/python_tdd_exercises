@@ -1,6 +1,6 @@
 
 #######################
-How to create a person
+how to create a person
 #######################
 
 .. raw:: html
