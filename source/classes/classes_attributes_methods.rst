@@ -266,7 +266,7 @@ I change ``classes.py`` to make the tests pass by defining the class, attribute 
 How to View the attributes and methods of a class
 --------------------------------------------------
 
-To view what ``attributes`` and ``methods`` are defined for any `object <https://docs.python.org/3/glossary.html#term-object>`_ I can call ``dir`` on the `object <https://docs.python.org/3/glossary.html#term-object>`_.
+To view what :doc:`attributes </exceptions/AttributeError>` and ``methods`` are defined for any `object <https://docs.python.org/3/glossary.html#term-object>`_ I can call ``dir`` on the `object <https://docs.python.org/3/glossary.html#term-object>`_.
 
 The ``dir`` :doc:`method </functions/functions>` returns a :doc:`list </data_structures/lists/lists>` of all attributes and :doc:`methods </functions/functions>` of the object provided to it as input
 

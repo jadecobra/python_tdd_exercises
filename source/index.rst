@@ -25,7 +25,7 @@ Who is this book for?
   - :ref:`ModuleNotFoundError`
   - `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
   - :ref:`TypeError`
-  - `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_
+  - ValueError_
 
 **********************
 How to use this book

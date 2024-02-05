@@ -455,12 +455,12 @@ REFACTOR: make it better
 How to view the attributes and methods of a list
 **************************************************
 
-The chapter on :doc:`/classes/classes` shows how to view the ``attributes`` and :doc:`methods </functions/functions>` of an `object <https://docs.python.org/3/glossary.html#term-object>`_ by using the `dir <https://docs.python.org/3/library/functions.html?highlight=dir#dir>`_ :doc:`function </functions/functions>`. Let us try it for `lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
+The chapter on :doc:`/classes/classes` shows how to view the :doc:`attributes </exceptions/AttributeError>` and :doc:`methods </functions/functions>` of an `object <https://docs.python.org/3/glossary.html#term-object>`_ by using the dir_ :doc:`function </functions/functions>`. Let us try it for `lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
 
 RED: make it fail
 ===================
 
-I add a failing test using the `dir <https://docs.python.org/3/library/functions.html?highlight=dir#dir>`_ :doc:`function </functions/functions>`
+I add a failing test using the dir_ :doc:`function </functions/functions>`
 
 .. code-block:: python
 

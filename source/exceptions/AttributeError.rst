@@ -562,7 +562,7 @@ GREEN: make it pass
         attribute_0 = None
         return None
 
-  the terminal now shows a `SyntaxError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#SyntaxError>`_
+  the terminal now shows a SyntaxError_
 
   .. code-block:: python
 
@@ -572,7 +572,7 @@ GREEN: make it pass
 
   the error is caused by the ``return`` statement being outside a :doc:`function </functions/functions>`
 
-* I add `SyntaxError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#SyntaxError>`_ to the list of exceptions
+* I add SyntaxError_ to the list of exceptions
 
   .. code-block:: python
 
@@ -716,7 +716,7 @@ repeat the solution until all tests pass
 * :ref:`AttributeError`
 * `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 * :ref:`TypeError`
-* `SyntaxError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#SyntaxError>`_
+* SyntaxError_
 
 and learned
 

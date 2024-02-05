@@ -177,7 +177,7 @@ REFACTOR: make it better
 
     TypeError: unsupported operand type(s) for -: 'NoneType' and 'NoneType'
 
-* I import the `datetime <https://docs.python.org/3/library/datetime.html?highlight=datetime#module-datetime>`_ library in ``test_person.py`` to use it to return the current year
+* I import the datetime_ library in ``test_person.py`` to use it to return the current year
 
   .. code-block:: python
 

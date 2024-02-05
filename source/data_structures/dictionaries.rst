@@ -825,7 +825,7 @@ Do you think you could write an implementation for the ``get`` method after read
 How to view the attributes and methods of a dictionary
 -------------------------------------------------------
 
-The chapter on :doc:`/classes/classes` shows how to view the ``attributes`` and :doc:`methods </functions/functions>` of an object. Let us look at the attributes and :doc:`methods </functions/functions>` of `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+The chapter on :doc:`/classes/classes` shows how to view the :doc:`attributes </exceptions/AttributeError>` and :doc:`methods </functions/functions>` of an object. Let us look at the attributes and :doc:`methods </functions/functions>` of `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
 RED: make it fail
 ^^^^^^^^^^^^^^^^^

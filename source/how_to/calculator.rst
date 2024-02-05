@@ -265,7 +265,7 @@ Even though the ``add`` function currently passes the existing test it does not 
 
 * REFACTOR: make it better
 
-  - I import python's `random <https://docs.python.org/3/library/random.html?highlight=random#module-random>`_ library to generate random integers to test that the function behaves the way I expect for any given numbers
+  - I import python's random_ library to generate random integers to test that the function behaves the way I expect for any given numbers
 
     .. code-block:: python
 
