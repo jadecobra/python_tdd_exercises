@@ -108,7 +108,7 @@ GREEN: make it pass
 
     duration = None
 
-  and the terminal shows a :doc:`/exceptions/TypeError` because :ref:`None` is not callable ::
+  and the terminal shows a :ref:`TypeError` because :ref:`None` is not callable ::
 
     TypeError: 'NoneType' object is not callable
 
@@ -127,7 +127,7 @@ GREEN: make it pass
     def duration():
         return None
 
-  the terminal shows a :doc:`/exceptions/TypeError` with a different message about the first argument passed in from the test
+  the terminal shows a :ref:`TypeError` with a different message about the first argument passed in from the test
 
   .. code-block:: python
 
@@ -140,7 +140,7 @@ GREEN: make it pass
     def duration(wake_time=None):
         return None
 
-  the terminal shows a similar :doc:`/exceptions/TypeError` message for the second argument
+  the terminal shows a similar :ref:`TypeError` message for the second argument
 
   .. code-block:: python
 
@@ -153,7 +153,7 @@ GREEN: make it pass
     def duration(wake_time=None, sleep_time=None):
         return None
 
-  and the terminal shows an :doc:`/exceptions/AssertionError`, the duration function returns :ref:`None` but the test expects ``1`` as the duration when it is given a sleep time of ``'07:00'`` and a wake time of ``'08:00'``
+  and the terminal shows an :ref:`AssertionError`, the duration function returns :ref:`None` but the test expects ``1`` as the duration when it is given a sleep time of ``'07:00'`` and a wake time of ``'08:00'``
 
   .. code-block:: python
 
@@ -222,7 +222,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
             wake_hour-sleep_hour
         )
 
-  since ``sleep_duration.duration`` still returns ``1`` but the test expects the difference between ``wake_time`` and ``sleep_time``, the terminal shows an :doc:`/exceptions/AssertionError` similar to this
+  since ``sleep_duration.duration`` still returns ``1`` but the test expects the difference between ``wake_time`` and ``sleep_time``, the terminal shows an :ref:`AssertionError` similar to this
 
   .. code-block:: python
 
@@ -239,7 +239,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
     def duration(wake_time=None, sleep_time=None):
         return wake_time - sleep_time
 
-  the terminal shows a :doc:`/exceptions/TypeError`. I passed in two strings_ and Python does not have an operation defined for subtracting one string_ from another
+  the terminal shows a :ref:`TypeError`. I passed in two strings_ and Python does not have an operation defined for subtracting one string_ from another
 
   .. code-block:: python
 
@@ -263,7 +263,7 @@ test_string_methods_and_attributes
     def test_duration_w_hours_only(self):
     ...
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -308,7 +308,7 @@ test_string_methods_and_attributes
             ['__add__', '__class__', '__contains__', '[918 chars]ill']
         )
 
-  and the terminal shows an :doc:`/exceptions/AssertionError` with a different message and a suggestion
+  and the terminal shows an :ref:`AssertionError` with a different message and a suggestion
 
   .. code-block:: python
 
@@ -424,7 +424,7 @@ test_string_methods_and_attributes
               ]
           )
 
-* the test passes and the terminal shows the :doc:`/exceptions/TypeError` from earlier because Python still does not support subtracting one string_ from another
+* the test passes and the terminal shows the :ref:`TypeError` from earlier because Python still does not support subtracting one string_ from another
 
   .. code-block:: python
 
@@ -473,7 +473,7 @@ test_splitting_a_string
       def test_duration_w_hours_only(self):
       ...
 
-  the terminal shows an :doc:`/exceptions/AssertionError` and I see that `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ creates a :doc:`list </data_structures/lists/lists>` when called
+  the terminal shows an :ref:`AssertionError` and I see that `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ creates a :doc:`list </data_structures/lists/lists>` when called
 
   .. code-block:: python
 
@@ -489,7 +489,7 @@ test_splitting_a_string
             ['01:23']
         )
 
-  and the terminal shows the :doc:`/exceptions/TypeError` that took me down this path
+  and the terminal shows the :ref:`TypeError` that took me down this path
 
   .. code-block:: python
 
@@ -505,7 +505,7 @@ test_splitting_a_string
             ['01', '23']
         )
 
-  and the terminal shows an :doc:`/exceptions/AssertionError`, the use of the `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ :doc:`method </functions/functions>` has not yet given me what I want
+  and the terminal shows an :ref:`AssertionError`, the use of the `split <https://docs.python.org/3/library/stdtypes.html#str.split>`_ :doc:`method </functions/functions>` has not yet given me what I want
 
   .. code-block:: python
 
@@ -533,7 +533,7 @@ test_splitting_a_string
           - sleep_time.split(':')
         )
 
-  the terminal shows a :doc:`/exceptions/TypeError`, this time for trying to subtract a :doc:`list </data_structures/lists/lists>` from a :doc:`list </data_structures/lists/lists>`
+  the terminal shows a :ref:`TypeError`, this time for trying to subtract a :doc:`list </data_structures/lists/lists>` from a :doc:`list </data_structures/lists/lists>`
 
   .. code-block:: python
 
@@ -561,7 +561,7 @@ test_splitting_a_string
     def test_duration_w_hours_only(self):
     ...
 
-  the terminal shows an :doc:`/exceptions/AssertionError` because the first item (index 0) from splitting ``'12:34'`` on the separator ``':'`` is ``'12'`` ::
+  the terminal shows an :ref:`AssertionError` because the first item (index 0) from splitting ``'12:34'`` on the separator ``':'`` is ``'12'`` ::
 
     AssertionError: '12' != 0
 
@@ -575,7 +575,7 @@ test_splitting_a_string
             '12'
         )
 
-  the terminal shows another :doc:`/exceptions/AssertionError` ::
+  the terminal shows another :ref:`AssertionError` ::
 
     AssertionError: '34' != 0
 
@@ -589,7 +589,7 @@ test_splitting_a_string
         '34'
     )
 
-  the tests pass, bringing me back to the unsolved :doc:`/exceptions/TypeError`
+  the tests pass, bringing me back to the unsolved :ref:`TypeError`
 
 * using what I have learned, I make the ``duration`` function return the subtraction of the first parts of splitting ``wake_time`` and ``sleep_time`` on the separator ``':'``
 
@@ -601,7 +601,7 @@ test_splitting_a_string
           - sleep_time.split(':')[0]
         )
 
-  the terminal shows a :doc:`/exceptions/TypeError` for an unsupported operation of trying to subtract one string_ from another, and though it is not explicit here, from ``test_splitting_a_string`` I know that the strings being subtracted are the values to the left of the separator ``:``, not the entire string_ value of ``wake_time`` and ``sleep_time``. For example,  if the given ``wake_time`` is ``'02:00'`` and the given ``sleep_time`` is ``'01:00'``  the program is currently trying to subtract ``'01'`` from ``'02'`` which is different from trying to subtract ``1`` from ``2``, ``'01'`` is a string_ and ``1`` is a number.
+  the terminal shows a :ref:`TypeError` for an unsupported operation of trying to subtract one string_ from another, and though it is not explicit here, from ``test_splitting_a_string`` I know that the strings being subtracted are the values to the left of the separator ``:``, not the entire string_ value of ``wake_time`` and ``sleep_time``. For example,  if the given ``wake_time`` is ``'02:00'`` and the given ``sleep_time`` is ``'01:00'``  the program is currently trying to subtract ``'01'`` from ``'02'`` which is different from trying to subtract ``1`` from ``2``, ``'01'`` is a string_ and ``1`` is a number.
 * The next task is to convert the string_ to a number so I can do the subtraction. I disable the current failing test by using the `unittest.skip <https://docs.python.org/3/library/unittest.html#unittest.skip>`_ decorator
 
   .. code-block:: python
@@ -625,7 +625,7 @@ test_converting_string_to_integer
     def test_duration_w_hours_only(self):
     ...
 
-  the terminal shows an :doc:`/exceptions/AssertionError` since ``12 != 0`` ::
+  the terminal shows an :ref:`AssertionError` since ``12 != 0`` ::
 
     AssertionError: 12 != 0
 
@@ -636,7 +636,7 @@ test_converting_string_to_integer
     def test_converting_string_to_integer(self):
         self.assertEqual(int('12'), 12)
 
-  and get an :doc:`/exceptions/AssertionError` for the next line
+  and get an :ref:`AssertionError` for the next line
 
   .. code-block:: python
 
@@ -656,7 +656,7 @@ test_converting_string_to_integer
   - index a list
   - convert a string_ to a number
 
-* I remove ``@unittest.skip`` from the test in ``test_sleep_duration.py`` to show the :doc:`/exceptions/TypeError` I have been trying to solve, then add the conversion using the `int <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ constructor to the ``duration`` function in ``sleep_duration.py`` to see if it makes the test pass
+* I remove ``@unittest.skip`` from the test in ``test_sleep_duration.py`` to show the :ref:`TypeError` I have been trying to solve, then add the conversion using the `int <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ constructor to the ``duration`` function in ``sleep_duration.py`` to see if it makes the test pass
 
   .. code-block:: python
 
@@ -809,7 +809,7 @@ I add a failing test in ``test_sleep_duration.py`` that takes minutes into accou
             f'{difference_hours:02}:{difference_minutes:02}'
         )
 
-the terminal shows an :doc:`/exceptions/AssertionError` similar to this
+the terminal shows an :ref:`AssertionError` similar to this
 
 
 .. code-block:: python
@@ -840,7 +840,7 @@ GREEN: make it pass
         )
         return f'{difference_hour}:{difference_minutes}'
 
-  and the terminal shows an :doc:`/exceptions/AssertionError` because changing the format causes an error in ``test_duration_w_hours_only`` which still expects a number
+  and the terminal shows an :ref:`AssertionError` because changing the format causes an error in ``test_duration_w_hours_only`` which still expects a number
 
   .. code-block:: python
 
@@ -866,7 +866,7 @@ GREEN: make it pass
             f'{wake_hour-sleep_hour}:00'
         )
 
-  the terminal shows an :doc:`/exceptions/AssertionError` similar to this
+  the terminal shows an :ref:`AssertionError` similar to this
 
   .. code-block:: python
 
@@ -884,7 +884,7 @@ GREEN: make it pass
     def get_minutes(timestamp):
         return int(timestamp.split(':')[1])
 
-  the terminal still shows an :doc:`/exceptions/AssertionError`
+  the terminal still shows an :ref:`AssertionError`
 
 * I change ``difference_minutes`` with a call to the new ``get_minutes`` function in the ``duration`` function
 
@@ -901,7 +901,7 @@ GREEN: make it pass
         )
         return f'{difference_hour}:{difference_minutes}'
 
-  and the ``test_duration_w_hours_and_minutes`` passes leaving the :doc:`/exceptions/AssertionError` for ``test_duration_w_hours_only``
+  and the ``test_duration_w_hours_and_minutes`` passes leaving the :ref:`AssertionError` for ``test_duration_w_hours_only``
 
   .. code-block:: python
 
@@ -964,7 +964,7 @@ RED: Make It Fail
             '00:31'
         )
 
-  the terminal shows an :doc:`/exceptions/AssertionError` since ``01:-29`` is not equal to ``00:31``
+  the terminal shows an :ref:`AssertionError` since ``01:-29`` is not equal to ``00:31``
 
   .. code-block:: python
 
@@ -998,7 +998,7 @@ RED: Make It Fail
         )
         return f'{difference_hours:02}:{difference_minutes:02}'
 
-  since ``test_duration_w_hours_and_minutes`` uses the wrong calculation, the terminal will show random successes and randomly show an :doc:`/exceptions/AssertionError` similar to this
+  since ``test_duration_w_hours_and_minutes`` uses the wrong calculation, the terminal will show random successes and randomly show an :ref:`AssertionError` similar to this
 
   .. code-block:: python
 
@@ -1043,7 +1043,7 @@ test_floor_aka_integer_division
     def test_duration_w_hours_and_minutes(self):
     ...
 
-  and the terminal shows an :doc:`/exceptions/AssertionError` ::
+  and the terminal shows an :ref:`AssertionError` ::
 
     AssertionError: 2 != 0
 
@@ -1067,7 +1067,7 @@ test_modulo_operation
     def test_duration_w_hours_and_minutes(self):
     ...
 
-  and the terminal shows an :doc:`/exceptions/AssertionError` ::
+  and the terminal shows an :ref:`AssertionError` ::
 
     AssertionError: 1 != 2
 
@@ -1153,7 +1153,7 @@ I add a new failing test to ``test_sleep_duration.py`` to find out
           ''
       )
 
-the terminal shows an :doc:`/exceptions/AssertionError`
+the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -1373,7 +1373,7 @@ RED: make it fail
                       sleep_time=sleep_time,
                   )
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1400,7 +1400,7 @@ GREEN: make it pass
         ''
     )
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1510,13 +1510,13 @@ RED: Make It Fail
     import sleep_duration
     import unittest
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: datetime.datetime(2006, 11, 21, 16, 30) != ''
 
-* I copy the value on the left side of the :doc:`/exceptions/AssertionError` to replace the expected value in the test
+* I copy the value on the left side of the :ref:`AssertionError` to replace the expected value in the test
 
   .. code-block:: python
 
@@ -1577,13 +1577,13 @@ test_subtracting_datetime_datetime_objects
       def test_duration_w_hours_and_minutes(self):
       ...
 
-    the terminal shows an :doc:`/exceptions/AssertionError`
+    the terminal shows an :ref:`AssertionError`
 
     .. code-block:: python
 
       AssertionError: datetime.timedelta(seconds=3600) != 1
 
-  * I copy the value on the left of the :doc:`/exceptions/AssertionError` and replace the expected value in the test
+  * I copy the value on the left of the :ref:`AssertionError` and replace the expected value in the test
 
     .. code-block:: python
 
@@ -1621,7 +1621,7 @@ test_converting_timedelta_to_string
       def test_duration_w_hours_and_minutes(self):
       ...
 
-    and I get an :doc:`/exceptions/AssertionError` with a message that looks more like what I want
+    and I get an :ref:`AssertionError` with a message that looks more like what I want
 
     .. code-block:: python
 
@@ -1702,7 +1702,7 @@ test_converting_timedelta_to_string
     def parse_timestamp(timestamp=None, index=0):
     ...
 
-  the terminal shows an :doc:`/exceptions/AssertionError` for ``test_duration_w_hours_and_minutes`` similar to this
+  the terminal shows an :ref:`AssertionError` for ``test_duration_w_hours_and_minutes`` similar to this
 
   .. code-block:: python
 
@@ -1711,7 +1711,7 @@ test_converting_timedelta_to_string
   I have another `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_ this time for a timestamp that does not match the expected pattern of ``'%d%m%y %H:%M'``
 * ``test_duration_w_hours_and_minutes`` currently sends the timestamps in without a date, so I remove it since all the cases it represents are covered by ``test_duration_w_given_date_and_time``
 
-  the terminal shows an :doc:`/exceptions/AssertionError` similar to this
+  the terminal shows an :ref:`AssertionError` similar to this
 
   .. code-block:: python
 
@@ -1789,7 +1789,7 @@ test_converting_timedelta_to_string
 
             return f'{difference_hours:02}:{difference_minutes:02}'
 
-  the terminal shows an :doc:`/exceptions/AssertionError` similar to this
+  the terminal shows an :ref:`AssertionError` similar to this
 
   .. code-block:: python
 
@@ -1949,10 +1949,10 @@ To make it happen I
 
 I also encountered the following exceptions
 
-* :doc:`/exceptions/AssertionError`
+* :ref:`AssertionError`
 * NameError_
 * :ref:`AttributeError`
-* :doc:`/exceptions/TypeError`
+* :ref:`TypeError`
 * `SyntaxError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#SyntaxError>`_
 * `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_
 

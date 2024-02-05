@@ -24,7 +24,7 @@ requirements
 Add Tests
 ****************
 
-* I add :doc:`/exceptions/AssertionError` to the list of exceptions encountered ::
+* I add :ref:`AssertionError` to the list of exceptions encountered ::
 
   # Exceptions Encountered
   # AssertionError
@@ -138,7 +138,7 @@ GREEN: make it pass
 
     add = None
 
-  and the terminal shows a :doc:`/exceptions/TypeError`
+  and the terminal shows a :ref:`TypeError`
 
   .. code-block:: python
 
@@ -146,7 +146,7 @@ GREEN: make it pass
 
   The :ref:`AttributeError` was fixed by declaring a variable called ``add`` in the ``calculator`` module
 
-* The new error is a :doc:`/exceptions/TypeError` which can occur when an `object <https://docs.python.org/3/glossary.html#term-object>`_ is called in a way that disagrees with the object's definition. In this case the ``add`` variable is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_ because it refers to :ref:`None` which is not a `callable <https://docs.python.org/3/glossary.html#term-callable>`_ object. I add the error to the list of exceptions encountered ::
+* The new error is a :ref:`TypeError` which can occur when an `object <https://docs.python.org/3/glossary.html#term-object>`_ is called in a way that disagrees with the object's definition. In this case the ``add`` variable is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_ because it refers to :ref:`None` which is not a `callable <https://docs.python.org/3/glossary.html#term-callable>`_ object. I add the error to the list of exceptions encountered ::
 
     # Exceptions Encountered
     # AssertionError
@@ -161,27 +161,27 @@ GREEN: make it pass
     def add():
         return None
 
-  the terminal still shows a :doc:`/exceptions/TypeError` but with a different message. Progress!
+  the terminal still shows a :ref:`TypeError` but with a different message. Progress!
 
   .. code-block:: python
 
     TypeError: add() takes 0 positional arguments but 2 were given
 
-* This :doc:`/exceptions/TypeError` shows that the current definition of the ``add`` function takes in 0 inputs, but I provided 2 - ``calculator.add(0, 1)`` in the call. I change the definition in ``calculator.py`` to make it match the requirement of the ``add`` function taking in two numbers
+* This :ref:`TypeError` shows that the current definition of the ``add`` function takes in 0 inputs, but I provided 2 - ``calculator.add(0, 1)`` in the call. I change the definition in ``calculator.py`` to make it match the requirement of the ``add`` function taking in two numbers
 
   .. code-block:: python
 
     def add(x, y):
         return None
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: None != 1
 
-  - An :doc:`/exceptions/AssertionError` is raised when an assertion is :doc:`False </data_structures/booleans/booleans>`
-  - ``self.assertEqual`` raises an :doc:`/exceptions/AssertionError` when the  two inputs it is given are not equal. In other words the result of calling ``calculator.add(0, 1)`` is currently not equal to ``1``
+  - An :ref:`AssertionError` is raised when an assertion is :doc:`False </data_structures/booleans/booleans>`
+  - ``self.assertEqual`` raises an :ref:`AssertionError` when the  two inputs it is given are not equal. In other words the result of calling ``calculator.add(0, 1)`` is currently not equal to ``1``
 
 * I change the function to make it return the expected value
 
@@ -240,7 +240,7 @@ Even though the ``add`` function currently passes the existing test it does not 
             0
         )
 
-  the terminal shows an :doc:`/exceptions/AssertionError`, showing that the ``add`` function always returns ``1`` no matter what inputs are given
+  the terminal shows an :ref:`AssertionError`, showing that the ``add`` function always returns ``1`` no matter what inputs are given
 
   .. code-block:: python
 
@@ -372,7 +372,7 @@ GREEN : make it pass
 
     subtract = None
 
-  and the terminal shows a :doc:`/exceptions/TypeError`
+  and the terminal shows a :ref:`TypeError`
 
   .. code-block:: python
 
@@ -385,7 +385,7 @@ GREEN : make it pass
     def subtract():
         return None
 
-  and the terminal shows a :doc:`/exceptions/TypeError` with a different error message. Progress!
+  and the terminal shows a :ref:`TypeError` with a different error message. Progress!
 
   .. code-block:: python
 
@@ -398,7 +398,7 @@ GREEN : make it pass
     def subtract(x, y):
         return None
 
-  and the terminal shows an :doc:`/exceptions/AssertionError`
+  and the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -644,10 +644,10 @@ CONGRATULATIONS! You made it through writing a program that can perform the 4 ba
 
 You also encountered the following exceptions
 
-* :doc:`/exceptions/AssertionError`
+* :ref:`AssertionError`
 * `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 * :ref:`AttributeError`
-* :doc:`/exceptions/TypeError`
+* :ref:`TypeError`
 * `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_
 
 Would you like to learn :doc:`/how_to/pass_values`?

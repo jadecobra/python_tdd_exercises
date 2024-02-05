@@ -38,7 +38,7 @@ GREEN: make it pass
     def logical_conjunction():
         return None
 
-  the terminal shows a :doc:`/exceptions/TypeError`
+  the terminal shows a :ref:`TypeError`
 * I add the new error to the list of exceptions encountered
 
   .. code-block:: python
@@ -56,7 +56,7 @@ GREEN: make it pass
     def logical_conjunction(p):
         return None
 
-  the terminal shows another :doc:`/exceptions/TypeError` but with a different message
+  the terminal shows another :ref:`TypeError` but with a different message
 * I add another positional argument to match the expected signature
 
   .. code-block:: python
@@ -64,7 +64,7 @@ GREEN: make it pass
     def logical_conjunction(p, q):
         return None
 
-  and the terminal shows an :doc:`/exceptions/AssertionError`
+  and the terminal shows an :ref:`AssertionError`
 * I change ``logical_conjunction`` in ``truth_table.py`` to return :doc:`True </data_structures/booleans/booleans>`
 
   .. code-block:: python
@@ -82,7 +82,7 @@ GREEN: make it pass
         if p == True:
             return True
 
-  the terminal still shows an :doc:`/exceptions/AssertionError`
+  the terminal still shows an :ref:`AssertionError`
 * I then add a condition for the second input value
 
   .. code-block:: python

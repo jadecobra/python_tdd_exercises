@@ -41,12 +41,12 @@ I create a new file called ``test_classes.py`` in the ``tests`` directory
       def test_class_definitions_with_pass(self):
           self.assertIsInstance(classes.ClassWithPass(), object)
 
-the terminal shows a :doc:`/exceptions/ModuleNotFoundError` because I have an import statement for a module called ``classes``
+the terminal shows a :ref:`ModuleNotFoundError` because I have an import statement for a module called ``classes``
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-* I add :doc:`/exceptions/ModuleNotFoundError` to the list of exceptions encountered
+* I add :ref:`ModuleNotFoundError` to the list of exceptions encountered
 
   .. code-block:: python
 

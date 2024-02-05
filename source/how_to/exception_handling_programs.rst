@@ -72,7 +72,7 @@ GREEN: make it pass
 
     raises_exception = None
 
-  and the terminal shows a :doc:`/exceptions/TypeError`
+  and the terminal shows a :ref:`TypeError`
 
   .. code-block:: python
 
@@ -175,7 +175,7 @@ GREEN: make it pass
 
     exception_handler = None
 
-  and the terminal shows a :doc:`/exceptions/TypeError`
+  and the terminal shows a :ref:`TypeError`
 
   .. code-block:: python
 
@@ -188,7 +188,7 @@ GREEN: make it pass
     def exception_handler():
         return None
 
-  the terminal shows a :doc:`/exceptions/TypeError` with a different message
+  the terminal shows a :ref:`TypeError` with a different message
 
   .. code-block:: python
 
@@ -201,7 +201,7 @@ GREEN: make it pass
     def exception_handler(argument):
         return None
 
-  and the terminal shows an :doc:`/exceptions/AssertionError` because the result of calling ``exceptions.exception_handler`` with ``exceptions.raises_exception`` as the input is currently :ref:`None` which is not equal to ``'failed'``
+  and the terminal shows an :ref:`AssertionError` because the result of calling ``exceptions.exception_handler`` with ``exceptions.raises_exception`` as the input is currently :ref:`None` which is not equal to ``'failed'``
 
   .. code-block:: python
 
@@ -265,7 +265,7 @@ GREEN: make it pass
 
     does_not_raise_exception = None
 
-  and the terminal shows an :doc:`/exceptions/AssertionError` because the value returned by ``exceptions.exception_handler`` when given ``exceptions.does_not_raise_exception`` as input is ``'failed'`` which is not equal to ``'succeeded'``
+  and the terminal shows an :ref:`AssertionError` because the value returned by ``exceptions.exception_handler`` when given ``exceptions.does_not_raise_exception`` as input is ``'failed'`` which is not equal to ``'succeeded'``
 
   .. code-block::
 
@@ -280,7 +280,7 @@ GREEN: make it pass
     def exception_handler(function):
         return function()
 
-  the terminal shows a :doc:`/exceptions/TypeError` because ``does_not_raise_exception`` is not  `callable <https://docs.python.org/3/glossary.html#term-callable>`_
+  the terminal shows a :ref:`TypeError` because ``does_not_raise_exception`` is not  `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 
   .. code-block:: python
 
@@ -297,7 +297,7 @@ GREEN: make it pass
     def does_not_raise_exception():
         return None
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -388,7 +388,7 @@ GREEN: make it pass
 
     always_returns = None
 
-  and the terminal shows a :doc:`/exceptions/TypeError`
+  and the terminal shows a :ref:`TypeError`
 
   .. code-block:: python
 
@@ -401,7 +401,7 @@ GREEN: make it pass
     def always_returns():
         return None
 
-  and the terminal shows another :doc:`/exceptions/TypeError` but with a different message
+  and the terminal shows another :ref:`TypeError` but with a different message
 
   .. code-block:: python
 
@@ -414,7 +414,7 @@ GREEN: make it pass
     def always_returns(function):
         return function()
 
-  the terminal shows an :doc:`/exceptions/AssertionError` because ``exceptions.always_returns`` returns the value of calling ``does_not_raise_exception`` which is :ref:`None` and is not equal to the expectation in the test which is ``'always returns this'``
+  the terminal shows an :ref:`AssertionError` because ``exceptions.always_returns`` returns the value of calling ``does_not_raise_exception`` which is :ref:`None` and is not equal to the expectation in the test which is ``'always returns this'``
 
   .. code-block:: python
 
@@ -432,7 +432,7 @@ GREEN: make it pass
         else:
             return 'succeeded'
 
-  the terminal shows an :doc:`/exceptions/AssertionError` with a different message. ``always_returns`` returns ``'succeeded'`` since no exception is raised when it calls ``does_not_raise_exception`` and ``'succeeded'`` is not equal to ``'always returns this'``
+  the terminal shows an :ref:`AssertionError` with a different message. ``always_returns`` returns ``'succeeded'`` since no exception is raised when it calls ``does_not_raise_exception`` and ``'succeeded'`` is not equal to ``'always returns this'``
 
   .. code-block::
 
@@ -487,7 +487,7 @@ GREEN: make it pass
             'succeeded'
         )
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -531,11 +531,11 @@ Your python powers are growing, you have seen
 
 You also encountered the following exceptions
 
-* :doc:`/exceptions/AssertionError`
-* :doc:`/exceptions/ModuleNotFoundError`
+* :ref:`AssertionError`
+* :ref:`ModuleNotFoundError`
 * `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 * :ref:`AttributeError`
-* :doc:`/exceptions/TypeError`
+* :ref:`TypeError`
 
 .. admonition:: do you want to
 

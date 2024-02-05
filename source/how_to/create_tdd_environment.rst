@@ -151,7 +151,7 @@ RED: make it fail
     * ``self`` is the ``TestProjectName`` class. I can use ``self`` to access :doc:`methods (functions) </functions/functions>` and ``attributes`` within the ``TestProjectName`` class, this avoids having to type ``TestProjectName().assertFalse(True)`` to access the ``assertFalse`` :doc:`method </functions/functions>`
     * ``self.assertFalse(True)`` is the actual test. I expect this line to fail because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
 
-      - `assertFalse <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse>`_ is a :doc:`method </functions/functions>` in the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class which checks if its input is :doc:`False </data_structures/booleans/booleans>` and raises an :doc:`/exceptions/AssertionError` when the input is not :doc:`False </data_structures/booleans/booleans>`
+      - `assertFalse <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse>`_ is a :doc:`method </functions/functions>` in the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class which checks if its input is :doc:`False </data_structures/booleans/booleans>` and raises an :ref:`AssertionError` when the input is not :doc:`False </data_structures/booleans/booleans>`
       - :doc:`True </data_structures/booleans/booleans>` is given as input to ``assertFalse``
 
 * I save the file and turn on the ``Auto Save`` feature in the Interactive Development Environment (IDE) to automatically save when I make a change
@@ -181,13 +181,13 @@ This is the ``RED`` part of the Test Driven Development cycle. The error in the 
 
 * ``FAILED (failures=1)`` there is one failure
 * ``Ran 1 test in 0.000s`` how long it took the test to run
-* ``AssertionError: True is not false`` The error is an :doc:`/exceptions/AssertionError` which is raised by python when an assert statement is :doc:`False </data_structures/booleans/booleans>`. In this case the error is raised because ``True is not false``
+* ``AssertionError: True is not false`` The error is an :ref:`AssertionError` which is raised by python when an assert statement is :doc:`False </data_structures/booleans/booleans>`. In this case the error is raised because ``True is not false``
 * ``self.assertFalse(True)`` is the line of code that caused the failure
 
   - ``assertFalse`` is a :doc:`method </functions/functions>` in the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`class </classes/classes>` which checks if its input is :doc:`False </data_structures/booleans/booleans>`
-  - :doc:`True </data_structures/booleans/booleans>` is given as input to ``assertFalse`` and the statement raises an :doc:`/exceptions/AssertionError` because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
+  - :doc:`True </data_structures/booleans/booleans>` is given as input to ``assertFalse`` and the statement raises an :ref:`AssertionError` because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
 
-* ``File ".../project_name/tests/test_project_name.py", line 7, in test_failure`` is the line number and location of the file where the :doc:`/exceptions/AssertionError` occurred.
+* ``File ".../project_name/tests/test_project_name.py", line 7, in test_failure`` is the line number and location of the file where the :ref:`AssertionError` occurred.
 
   .. tip::
 
@@ -212,7 +212,7 @@ This is the ``RED`` part of the Test Driven Development cycle. The error in the 
 GREEN: make it pass
 ********************
 
-* I write down :doc:`Exceptions </how_to/exception_handling_programs>` I encounter to become more familiar with them. Time to add :doc:`/exceptions/AssertionError` to the list
+* I write down :doc:`Exceptions </how_to/exception_handling_programs>` I encounter to become more familiar with them. Time to add :ref:`AssertionError` to the list
 
   .. code-block:: python
 

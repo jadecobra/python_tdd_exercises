@@ -39,12 +39,12 @@ I create a file called ``test_truth_table.py`` in the ``tests`` folder and add t
   import unittest
   import truth_table
 
-the terminal shows a :doc:`/exceptions/ModuleNotFoundError`
+the terminal shows a :ref:`ModuleNotFoundError`
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-* I add :doc:`/exceptions/ModuleNotFoundError` to the list of exceptions encountered
+* I add :ref:`ModuleNotFoundError` to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -104,7 +104,7 @@ REFACTOR: make it better
     def logical_false():
         return True
 
-  and the terminal shows an :doc:`/exceptions/AssertionError` since the ``logical_false`` function currently returns a different value from what is expected
+  and the terminal shows an :ref:`AssertionError` since the ``logical_false`` function currently returns a different value from what is expected
 * When I change the return value to :doc:`False </data_structures/booleans/booleans>`, the terminal shows passing tests
 
   .. code-block:: python
@@ -185,7 +185,7 @@ GREEN: make it pass
     def logical_negation(value):
         return value
 
-  the terminal shows an :doc:`/exceptions/AssertionError`.
+  the terminal shows an :ref:`AssertionError`.
 
   The ``logical_negation`` function returns the value it receives as input but the test expects it to return the opposite
 * I use the ``not`` keyword to return the opposite of the :doc:`boolean </data_structures/booleans/booleans>` value ``logical_negation`` receives

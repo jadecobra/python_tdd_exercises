@@ -119,7 +119,7 @@ REFACTOR: make it better
     class TestPersonFactory(unittest.TestCase):
     ...
 
-  the terminal shows a :doc:`/exceptions/TypeError` since the ``person.factory`` :doc:`function signature </functions/functions>` does not allow it to accept inputs and the test sends four arguments when it calls the :doc:`function </functions/functions>`
+  the terminal shows a :ref:`TypeError` since the ``person.factory`` :doc:`function signature </functions/functions>` does not allow it to accept inputs and the test sends four arguments when it calls the :doc:`function </functions/functions>`
 
   .. code-block:: python
 
@@ -142,7 +142,7 @@ REFACTOR: make it better
     def factory(first_name=None):
     ...
 
-  the terminal shows a :doc:`/exceptions/TypeError` for the next argument
+  the terminal shows a :ref:`TypeError` for the next argument
 
   .. code-block:: python
 
@@ -155,13 +155,13 @@ REFACTOR: make it better
     def factory(first_name=None, last_name=None):
     ...
 
-  the terminal shows another :doc:`/exceptions/TypeError` for the next keyword argument
+  the terminal shows another :ref:`TypeError` for the next keyword argument
 
   .. code-block:: python
 
     TypeError: factory() got an unexpected keyword argument 'year_of_birth'
 
-* I add each keyword to the ``factory`` function until I get a :doc:`/exceptions/TypeError` for the line where I subtract ``this_year() - this_year()``
+* I add each keyword to the ``factory`` function until I get a :ref:`TypeError` for the line where I subtract ``this_year() - this_year()``
 
   .. code-block:: python
 
@@ -171,7 +171,7 @@ REFACTOR: make it better
       ):
       ...
 
-  a :doc:`/exceptions/TypeError` is raised because I cannot perform a subtraction operation on :ref:`None` and the ``this_year`` function currently returns :ref:`None`
+  a :ref:`TypeError` is raised because I cannot perform a subtraction operation on :ref:`None` and the ``this_year`` function currently returns :ref:`None`
 
   .. code-block:: python
 
@@ -196,7 +196,7 @@ REFACTOR: make it better
   - ``return datetime.datetime.now().year`` returns the ``year`` attribute of the object returned by the ``now`` :doc:`method </functions/functions>` of the ``datetime.datetime`` :doc:`class </classes/classes>`, which is a representation of the current local date and time. I could also use ``today`` or ``utcnow`` instead of ``now`` to achieve the same result
   - I get the ``year`` attribute of the object returned since that is `all I need to get by <https://www.youtube.com/watch?v=XW1HNWqdVbk>`_
 
-* the terminal shows an :doc:`/exceptions/AssertionError` since the ``person.factory`` function returns :ref:`None` and the test expects a :doc:`dictionary </data_structures/dictionaries>` with keys and values.
+* the terminal shows an :ref:`AssertionError` since the ``person.factory`` function returns :ref:`None` and the test expects a :doc:`dictionary </data_structures/dictionaries>` with keys and values.
 
   .. code-block:: python
 
@@ -239,7 +239,7 @@ REFACTOR: make it better
             }
         )
 
-  the terminal shows an :doc:`/exceptions/AssertionError` because the expected and returned dictionaries are different
+  the terminal shows an :ref:`AssertionError` because the expected and returned dictionaries are different
 
   .. code-block:: python
 
@@ -260,7 +260,7 @@ REFACTOR: make it better
             'age': 0
         }
 
-  and the terminal shows an :doc:`/exceptions/AssertionError` with no difference for the values of ``first_name``
+  and the terminal shows an :ref:`AssertionError` with no difference for the values of ``first_name``
 
 * I repeat the same move for every other input until the only error left is for ``age``
 
@@ -436,7 +436,7 @@ RED: make it fail
             }
         )
 
-  the terminal shows an :doc:`/exceptions/AssertionError` because the value for ``last_name`` does not match the expected value
+  the terminal shows an :ref:`AssertionError` because the value for ``last_name`` does not match the expected value
 
   .. code-block:: python
 
@@ -476,7 +476,7 @@ RED: make it fail
             }
         )
 
-  the terminal shows an :doc:`/exceptions/AssertionError`, there is a difference in the values for ``sex``
+  the terminal shows an :ref:`AssertionError`, there is a difference in the values for ``sex``
 
   .. code-block:: python
 
@@ -505,10 +505,10 @@ From the tests above you can create a :doc:`function </functions/functions>` tha
 
 You also encountered the following exceptions
 
-* :doc:`/exceptions/AssertionError`
+* :ref:`AssertionError`
 * :ref:`AttributeError`
 * `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
-* :doc:`/exceptions/TypeError`
+* :ref:`TypeError`
 
 Do you know :doc:`/how_to/exception_handling_tests`?
 

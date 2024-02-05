@@ -32,7 +32,7 @@ GREEN: make it pass
     def material_non_implication(p, q):
         return False
 
-  the terminal shows an :doc:`/exceptions/AssertionError` for the second case
+  the terminal shows an :ref:`AssertionError` for the second case
 * I add a condition for it
 
   .. code-block:: python

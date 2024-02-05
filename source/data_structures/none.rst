@@ -27,7 +27,7 @@ I create a file called ``test_none.py`` in the ``tests`` folder with the followi
       def test_none_is_none(self):
           self.assertIsNotNone(None)
 
-the terminal shows an :doc:`/exceptions/AssertionError`
+the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -72,7 +72,7 @@ I add a new test to compare `None <https://docs.python.org/3/library/constants.h
         self.assertIsNone(True)
         self.assertIsNone(False)
 
-the terminal shows an :doc:`/exceptions/AssertionError`
+the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -112,7 +112,7 @@ REFACTOR: make it better
           self.assertIsNotNone(False)
           self.assertIsInstance(None, bool)
 
-  the terminal shows an :doc:`/exceptions/AssertionError` because `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an instance of a :doc:`boolean </data_structures/booleans/booleans>`
+  the terminal shows an :ref:`AssertionError` because `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an instance of a :doc:`boolean </data_structures/booleans/booleans>`
 
   .. code-block:: python
 
@@ -166,7 +166,7 @@ I add a new test to compare `None <https://docs.python.org/3/library/constants.h
       self.assertIsNone(0)
       self.assertIsNone(1)
 
-the terminal shows an :doc:`/exceptions/AssertionError`
+the terminal shows an :ref:`AssertionError`
 
 .. code-block::
 
@@ -203,7 +203,7 @@ REFACTOR: make it better
         self.assertIsNotNone(1)
         self.assertIsInstance(None, int)
 
-  the terminal shows an :doc:`/exceptions/AssertionError` because `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an instance of `int <https://docs.python.org/3/library/functions.html#int>`_
+  the terminal shows an :ref:`AssertionError` because `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an instance of `int <https://docs.python.org/3/library/functions.html#int>`_
 
   .. code-block:: python
 
@@ -243,7 +243,7 @@ I add a new test to compare `None <https://docs.python.org/3/library/constants.h
       self.assertIsNone(-1.1)
       self.assertIsNone(0.2)
 
-the terminal shows an :doc:`/exceptions/AssertionError`
+the terminal shows an :ref:`AssertionError`
 
 .. code-block::
 
@@ -278,7 +278,7 @@ REFACTOR: make it better
         self.assertIsNotNone(0.2)
         self.assertIsInstance(None, float)
 
-  the terminal shows an :doc:`/exceptions/AssertionError` because `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an instance of `float <https://docs.python.org/3/library/functions.html#float>`_
+  the terminal shows an :ref:`AssertionError` because `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an instance of `float <https://docs.python.org/3/library/functions.html#float>`_
 
   .. code-block:: python
 
@@ -327,7 +327,7 @@ I add a new failing test to ``test_none.py`` to compare `None <https://docs.pyth
       self.assertIsNone('')
       self.assertIsNone("text")
 
-and the terminal shows an :doc:`/exceptions/AssertionError`
+and the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -362,7 +362,7 @@ REFACTOR: make it better
         self.assertIsNotNone("text")
         self.assertIsInstance(None, str)
 
-  and the terminal shows an :doc:`/exceptions/AssertionError`
+  and the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -404,7 +404,7 @@ I add a new test to ``test_none.py`` to find out if `None <https://docs.python.o
         self.assertIsNone((1, 2, 3, 'n'))
         self.assertIsInstance(None, tuple)
 
-the terminal shows an :doc:`/exceptions/AssertionError`
+the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -425,7 +425,7 @@ GREEN: make it pass
         self.assertIsNotNone((1, 2, 3, 'n'))
         self.assertIsInstance(None, tuple)
 
-  and the terminal shows an :doc:`/exceptions/AssertionError` for the instance test
+  and the terminal shows an :ref:`AssertionError` for the instance test
 
   .. code-block:: python
 
@@ -471,7 +471,7 @@ I add a new test to the series of tests to check if `None <https://docs.python.o
       self.assertIsNone([1, 2, 3, "n"])
       self.assertIsInstance(None, list)
 
-the terminal shows an :doc:`/exceptions/AssertionError`
+the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -512,7 +512,7 @@ following the same pattern from earlier, I add a new failing test for `sets <htt
       self.assertIsNone({1, 2, 3, "n"})
       self.assertIsInstance(None, set)
 
-the terminal shows an :doc:`/exceptions/AssertionError`
+the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -557,7 +557,7 @@ I add a new test to compare `None <https://docs.python.org/3/library/constants.h
       })
       self.assertIsInstance(None, dict)
 
-the terminal shows an :doc:`/exceptions/AssertionError`
+the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 

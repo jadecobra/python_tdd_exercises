@@ -95,7 +95,7 @@ GREEN: make it pass
 
     text = None
 
-  and the terminal shows a :doc:`/exceptions/TypeError` because ``text`` is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_
+  and the terminal shows a :ref:`TypeError` because ``text`` is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 
   .. code-block:: python
 
@@ -118,7 +118,7 @@ GREEN: make it pass
       def text():
           return None
 
-  and the terminal shows another :doc:`/exceptions/TypeError`
+  and the terminal shows another :ref:`TypeError`
 
   .. code-block:: python
 
@@ -132,7 +132,7 @@ GREEN: make it pass
     def text(value):
         return None
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -169,7 +169,7 @@ I add a new failing test to ``test_text_messages``
       )
 
 
-the terminal shows an :doc:`/exceptions/AssertionError`
+the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -214,7 +214,7 @@ I add a new failing test to ``test_text_messages``
           'I received this message: "None"'
       )
 
-the terminal shows an :doc:`/exceptions/AssertionError`
+the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -255,7 +255,7 @@ As an exercise I add more tests to ``test_text_messages`` to see what happens wh
         "I received this message: bool"
     )
 
-  the terminal shows an :doc:`/exceptions/AssertionError` ::
+  the terminal shows an :ref:`AssertionError` ::
 
     AssertionError: "I received this message: <class 'bool'>" != 'I received this message: bool'
 
@@ -273,7 +273,7 @@ As an exercise I add more tests to ``test_text_messages`` to see what happens wh
         "I received this message: '123'"
     )
 
-  and the terminal shows an :doc:`/exceptions/AssertionError` ::
+  and the terminal shows an :ref:`AssertionError` ::
 
     AssertionError: 'I received this message: 123' != "I received this message: '123'"
 
@@ -292,7 +292,7 @@ As an exercise I add more tests to ``test_text_messages`` to see what happens wh
         "I received this message: '1.23'"
     )
 
-  and the terminal shows an :doc:`/exceptions/AssertionError` ::
+  and the terminal shows an :ref:`AssertionError` ::
 
     AssertionError: 'I received this message: 1.23' != "I received this message: '1.23'"
 
@@ -310,7 +310,7 @@ As an exercise I add more tests to ``test_text_messages`` to see what happens wh
         "I received this message: '(1, 2, 3, n)'"
     )
 
-  the terminal shows an :doc:`/exceptions/AssertionError` ::
+  the terminal shows an :ref:`AssertionError` ::
 
 * and add a test for :doc:`lists </data_structures/lists/lists>` ::
 
@@ -319,7 +319,7 @@ As an exercise I add more tests to ``test_text_messages`` to see what happens wh
         "I received this message: '[1, 2, 3, n]'"
     )
 
-  the terminal shows an :doc:`/exceptions/AssertionError` ::
+  the terminal shows an :ref:`AssertionError` ::
 
     AssertionError: "I received this message: (1, 2, 3, 'n')" != "I received this message: '(1, 2, 3, n)'"
 
@@ -337,7 +337,7 @@ As an exercise I add more tests to ``test_text_messages`` to see what happens wh
         "I received this message: '{1, 2, 3, n}'"
     )
 
-  the terminal shows an :doc:`/exceptions/AssertionError` ::
+  the terminal shows an :ref:`AssertionError` ::
 
     AssertionError: "I received this message: {1, 2, 3, 'n'}" != "I received this message: {1, 2, 3, n}'"
 
@@ -355,7 +355,7 @@ As an exercise I add more tests to ``test_text_messages`` to see what happens wh
         "I received this message: '{key1: value1, keyN: valueN}'"
     )
 
-  the terminal shows an :doc:`/exceptions/AssertionError` ::
+  the terminal shows an :ref:`AssertionError` ::
 
     AssertionError: "I received this message: {'key1': 'value1', 'keyN': 'valueN'}" != "I received this message: '{key1: value1, keyN: valueN}'"
 
@@ -370,10 +370,10 @@ As an exercise I add more tests to ``test_text_messages`` to see what happens wh
 
 VOILA! You now know how to pass values from a test to a program and can represent any values as strings using interpolation. You also encountered the following exceptions
 
-* :doc:`/exceptions/AssertionError`
+* :ref:`AssertionError`
 * `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 * :ref:`AttributeError`
-* :doc:`/exceptions/TypeError`
+* :ref:`TypeError`
 
 Would you like to know :doc:`/how_to/create_person`?
 

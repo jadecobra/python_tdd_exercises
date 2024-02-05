@@ -30,7 +30,7 @@ I create a file called ``test_booleans.py`` and add a failing test in ``test_wha
       def test_what_is_false(self):
           self.assertNotIsInstance(False, bool)
 
-the terminal shows an :doc:`/exceptions/AssertionError` because `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is an instance of the `boolean <https://docs.python.org/3/library/functions.html#bool>`_ :doc:`class </classes/classes>`
+the terminal shows an :ref:`AssertionError` because `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is an instance of the `boolean <https://docs.python.org/3/library/functions.html#bool>`_ :doc:`class </classes/classes>`
 
 .. code-block:: python
 
@@ -60,7 +60,7 @@ REFACTOR: make it better
 
     self.assertTrue(False)
 
-  the terminal shows an :doc:`/exceptions/AssertionError` because `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is not `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
+  the terminal shows an :ref:`AssertionError` because `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is not `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
 
   .. code-block:: python
 
@@ -97,7 +97,7 @@ I add a :doc:`method </functions/functions>` called ``test_what_is_true`` with a
     def test_what_is_true(self):
         self.assertNotIsInstance(True, bool)
 
-the terminal shows an :doc:`/exceptions/AssertionError` because `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is an instance of the `boolean <https://docs.python.org/3/library/functions.html#bool>`_ :doc:`class </classes/classes>`
+the terminal shows an :ref:`AssertionError` because `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is an instance of the `boolean <https://docs.python.org/3/library/functions.html#bool>`_ :doc:`class </classes/classes>`
 
 .. code-block:: python
 
@@ -121,7 +121,7 @@ REFACTOR: make it better
 
     self.assertFalse(True)
 
-  the terminal shows an :doc:`/exceptions/AssertionError` because `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is not `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+  the terminal shows an :ref:`AssertionError` because `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is not `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 
   .. code-block:: python
 
@@ -169,7 +169,7 @@ I add a line to ``test_what_is_true`` to test if `None <https://docs.python.org/
         self.assertTrue(True)
         self.assertTrue(None)
 
-the terminal shows an :doc:`/exceptions/AssertionError`
+the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -227,7 +227,7 @@ I add a line to test if an `integer <https://docs.python.org/3/library/functions
         self.assertFalse(None)
         self.assertFalse(-1)
 
-the terminal shows an :doc:`/exceptions/AssertionError`
+the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -267,7 +267,7 @@ REFACTOR: make it better
         self.assertTrue(-1)
         self.assertTrue(0)
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -299,7 +299,7 @@ REFACTOR: make it better
         self.assertFalse(0)
         self.assertFalse(1)
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -353,7 +353,7 @@ I add a line to test if a `float <https://docs.python.org/3/library/functions.ht
         self.assertTrue(1)
         self.assertTrue(0.0)
 
-the terminal shows an :doc:`/exceptions/AssertionError`
+the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -397,7 +397,7 @@ REFACTOR: make it better
           self.assertFalse(-1.2)
           self.assertFalse(2.3)
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -456,7 +456,7 @@ I add a line to test if a `string <https://docs.python.org/3/library/stdtypes.ht
         self.assertTrue(2.3)
         self.assertTrue('')
 
-the terminal shows an :doc:`/exceptions/AssertionError`
+the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -493,7 +493,7 @@ REFACTOR: make it better
 
     self.assertFalse('text')
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -551,7 +551,7 @@ I add a line to test if a `tuple <https://docs.python.org/3/library/stdtypes.htm
         self.assertTrue('text')
         self.assertTrue(())
 
-The terminal shows an :doc:`/exceptions/AssertionError`
+The terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -586,7 +586,7 @@ REFACTOR: make it better
 
     self.assertFalse((1, 2, 3, 'n'))
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -646,7 +646,7 @@ I add a line to test if a :doc:`list </data_structures/lists/lists>` is `False <
         self.assertTrue((1, 2, 3, 'n'))
         self.assertTrue([])
 
-the terminal shows an :doc:`/exceptions/AssertionError`
+the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -682,7 +682,7 @@ REFACTOR: make it better
 
     self.assertFalse([1, 2, 3, 'n'])
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -746,7 +746,7 @@ I add a line to test if a `set <https://docs.python.org/3/library/stdtypes.html#
         self.assertTrue([1, 2, 3, 'n'])
         self.assertTrue(set())
 
-the terminal shows an :doc:`/exceptions/AssertionError`
+the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -772,7 +772,7 @@ REFACTOR: make it better
 
     self.assertFalse({1, 2, 3, 'n'})
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -839,7 +839,7 @@ I add a line to test if a :doc:`dictionary </data_structures/dictionaries>` is `
         self.assertTrue({1, 2, 3, 'n'})
         self.assertTrue({})
 
-the terminal shows an :doc:`/exceptions/AssertionError`
+the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -875,7 +875,7 @@ REFACTOR: make it better
 
     self.assertFalse({'key': 'value'})
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 

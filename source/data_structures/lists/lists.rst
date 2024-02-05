@@ -35,7 +35,7 @@ I create a file called ``test_lists.py`` in the ``tests`` folder with the follow
       def test_creating_a_list_with_the_list_constructor(self):
           self.assertEqual(list(0, 1, 2, 3), None)
 
-the terminal shows a :doc:`/exceptions/TypeError`
+the terminal shows a :ref:`TypeError`
 
 .. code-block:: python
 
@@ -64,7 +64,7 @@ GREEN: make it pass
     def test_creating_a_list_with_the_list_constructor(self):
         self.assertEqual(list((0, 1, 2, 3)), [])
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -89,7 +89,7 @@ REFACTOR: make it better
     def test_creating_a_list_with_square_brackets(self):
         self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 4)))
 
-  the terminal shows an :doc:`/exceptions/AssertionError` for the last value
+  the terminal shows an :ref:`AssertionError` for the last value
 
   .. code-block:: python
 
@@ -126,7 +126,7 @@ I add a test to for adding items to an existing list with the `append <https://d
 - ``a_list.append(4)`` calls the `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :doc:`method </functions/functions>` of the list
 - ``self.assertEqual(a_list, [0, 1, 2, 3])`` checks what ``a_list`` contains after `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ is called
 
-the terminal shows an :doc:`/exceptions/AssertionError` because the values in ``a_list`` change after ``a_list.append(4)``
+the terminal shows an :ref:`AssertionError` because the values in ``a_list`` change after ``a_list.append(4)``
 
 .. code-block:: python
 
@@ -168,7 +168,7 @@ Since I know how to add an item to a `list <https://docs.python.org/3/library/st
         a_list.remove(2)
         self.assertEqual(a_list, [0, 1, 2, 3])
 
-the terminal shows an :doc:`/exceptions/AssertionError` because the values in ``a_list`` no longer contain ``2`` after the call ``a_list.remove(2)``
+the terminal shows an :ref:`AssertionError` because the values in ``a_list`` no longer contain ``2`` after the call ``a_list.remove(2)``
 
 .. code-block:: python
 
@@ -202,7 +202,7 @@ What happens when there is more than one of the same item in a list? How does Py
         a_list.remove(2)
         self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -244,7 +244,7 @@ I add a test for removing the last item from a `list <https://docs.python.org/3/
 * ``self.assertEqual(last_item, 0)`` checks that ``last_item`` is equal to ``0``
 * ``self.assertEqual(a_list, [0, 1, 2, 3])`` checks the values that remain in ``a_list`` after calling `pop <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
 
-the terminal shows an :doc:`/exceptions/AssertionError` for the test that checks the value of the popped item called ``last_item``
+the terminal shows an :ref:`AssertionError` for the test that checks the value of the popped item called ``last_item``
 
 .. code-block:: python
 
@@ -260,7 +260,7 @@ GREEN: make it pass
 
     self.assertEqual(last_item, 3)
 
-  and the terminal shows an :doc:`/exceptions/AssertionError` for the values of ``a_list`` after the last item is popped
+  and the terminal shows an :ref:`AssertionError` for the values of ``a_list`` after the last item is popped
 
   .. code-block:: python
 
@@ -306,7 +306,7 @@ I add a failing test for indexing a `list <https://docs.python.org/3/library/std
         self.assertEqual(a_list[-2], '')
         self.assertEqual(a_list[-4], '')
 
-the terminal shows an :doc:`/exceptions/AssertionError`
+the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -332,7 +332,7 @@ GREEN: make it pass
         self.assertEqual(a_list[-2], '')
         self.assertEqual(a_list[-4], '')
 
-  the terminal shows an :doc:`/exceptions/AssertionError` for the next test
+  the terminal shows an :ref:`AssertionError` for the next test
 
   .. code-block:: python
 
@@ -470,7 +470,7 @@ I add a failing test using the `dir <https://docs.python.org/3/library/functions
             []
         )
 
-the terminal shows an :doc:`/exceptions/AssertionError`
+the terminal shows an :ref:`AssertionError`
 
   .. code-block::python
 
@@ -586,8 +586,8 @@ You can add tests for these :doc:`methods </functions/functions>` to find out wh
 
 you encountered the following exceptions
 
-* :doc:`/exceptions/AssertionError`
-* :doc:`/exceptions/TypeError`
+* :ref:`AssertionError`
+* :ref:`TypeError`
 * `IndexError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#IndexError>`_
 
 ----

@@ -36,7 +36,7 @@ GREEN: make it pass
     def tautology(p, q):
         return False
 
-  the terminal shows an :doc:`/exceptions/AssertionError` for the first case
+  the terminal shows an :ref:`AssertionError` for the first case
 * I replace the return value
 
   .. code-block:: python
@@ -75,7 +75,7 @@ GREEN: make it pass
     def contradiction(p, q):
         return True
 
-  the terminal shows an :doc:`/exceptions/AssertionError` for the first case
+  the terminal shows an :ref:`AssertionError` for the first case
 * When I change the return value, the test passes
 
   .. code-block:: python

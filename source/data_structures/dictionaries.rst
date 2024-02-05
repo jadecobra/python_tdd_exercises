@@ -21,7 +21,7 @@ I add a file called ``test_dictionaries.py`` to the ``tests`` folder with the fo
   import unittest
   import dictionaries
 
-the terminal shows a :doc:`/exceptions/ModuleNotFoundError`\  which I add to the list of exceptions encountered
+the terminal shows a :ref:`ModuleNotFoundError`\  which I add to the list of exceptions encountered
 
 .. code-block:: python
 
@@ -63,7 +63,7 @@ REFACTOR: make it better
     def a_dict():
         return None
 
-  and the terminal shows an :doc:`/exceptions/AssertionError` since the function I defined returns :ref:`None` instead of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+  and the terminal shows an :ref:`AssertionError` since the function I defined returns :ref:`None` instead of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
   .. code-block:: python
 
@@ -76,7 +76,7 @@ REFACTOR: make it better
     def a_dict():
         return {}
 
-  the terminal still shows an :doc:`/exceptions/AssertionError` but with a return value that looks more like what is expected
+  the terminal still shows an :ref:`AssertionError` but with a return value that looks more like what is expected
 
   .. code-block:: python
 
@@ -108,7 +108,7 @@ REFACTOR: make it better
             dict(key='key')
         )
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -143,7 +143,7 @@ REFACTOR: make it better
             dict(key='key')
         )
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -176,7 +176,7 @@ I add a failing test to ``TestDictionaries``
           {'one': 'boom'}
       )
 
-the terminal shows an :doc:`/exceptions/AssertionError` since the two values are different
+the terminal shows an :ref:`AssertionError` since the two values are different
 
 .. code-block:: python
 
@@ -215,7 +215,7 @@ REFACTOR: make it better
             {2.5: 'fails'}
         )
 
-  the terminal shows an :doc:`/exceptions/AssertionError` since the values are different
+  the terminal shows an :ref:`AssertionError` since the values are different
 
   .. code-block:: python
 
@@ -259,7 +259,7 @@ I add a test to find out if it is possible to use :doc:`False </data_structures/
           {False: 'bap'}
       )
 
-the terminal shows an :doc:`/exceptions/AssertionError`
+the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -302,7 +302,7 @@ REFACTOR: make it better
             {True: 'boom'}
         )
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -347,7 +347,7 @@ I add a test to ``TestDictionaries`` to see if I can use tuples as `dictionary <
           {(1, 2): "key"}
       )
 
-the terminal shows an :doc:`/exceptions/AssertionError`
+the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -387,13 +387,13 @@ I add a test to ``TestDictionaries`` using a :doc:`list </data_structures/lists/
   def test_creating_dictionaries_with_lists_as_keys(self):
       {[1, 2]: "BOOM"}
 
-the terminal shows a :doc:`/exceptions/TypeError` because only `hashable <https://docs.python.org/3/glossary.html#term-hashable>`_ types can be used as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys and :doc:`lists </data_structures/lists/lists>` are not `hashable <https://docs.python.org/3/glossary.html#term-hashable>`_
+the terminal shows a :ref:`TypeError` because only `hashable <https://docs.python.org/3/glossary.html#term-hashable>`_ types can be used as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys and :doc:`lists </data_structures/lists/lists>` are not `hashable <https://docs.python.org/3/glossary.html#term-hashable>`_
 
 .. code-block::
 
   E    TypeError: unhashable type: 'list'
 
-I add :doc:`/exceptions/TypeError` to the list of exceptions encountered
+I add :ref:`TypeError` to the list of exceptions encountered
 
 .. code-block:: python
 
@@ -405,7 +405,7 @@ I add :doc:`/exceptions/TypeError` to the list of exceptions encountered
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I can use ``self.assertRaises`` to confirm that an error is raised by some code without having it crash the tests. I will use it here to confirm that Python raises a :doc:`/exceptions/TypeError` when I try to create a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a :doc:`list </data_structures/lists/lists>` as the key
+I can use ``self.assertRaises`` to confirm that an error is raised by some code without having it crash the tests. I will use it here to confirm that Python raises a :ref:`TypeError` when I try to create a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a :doc:`list </data_structures/lists/lists>` as the key
 
 .. code-block:: python
 
@@ -432,7 +432,7 @@ RED: make it fail
   def test_creating_dictionaries_with_sets_as_keys(self):
       {{1, 2}: "BOOM"}
 
-the terminal shows a :doc:`/exceptions/TypeError`
+the terminal shows a :ref:`TypeError`
 
 .. code-block:: python
 
@@ -467,7 +467,7 @@ I add a new test
       a_dictionary = {"key": "value"}
       {a_dictionary: "BOOM"}
 
-and the terminal shows a :doc:`/exceptions/TypeError`
+and the terminal shows a :ref:`TypeError`
 
 .. code-block:: python
 
@@ -522,7 +522,7 @@ I add a test to ``TestDictionaries`` in ``test_dictionaries.py``
       a_dictionary = {"key": "value"}
       self.assertEqual(a_dictionary["key"], "bob")
 
-the terminal shows an :doc:`/exceptions/AssertionError` because ``bob`` is not equal to ``value``. I can get a value for a key by providing the key in square brackets to the dictionary
+the terminal shows an :ref:`AssertionError` because ``bob`` is not equal to ``value``. I can get a value for a key by providing the key in square brackets to the dictionary
 
 .. code-block:: python
 
@@ -557,7 +557,7 @@ REFACTOR: make it better
             list(a_dictionary.values()), []
         )
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -600,7 +600,7 @@ REFACTOR: make it better
             []
         )
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -764,7 +764,7 @@ What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datas
         self.assertIsNone(a_dictionary.get('non_existent_key'))
         self.assertIsNone(a_dictionary.get('non_existent_key', False))
 
-  the terminal shows an :doc:`/exceptions/AssertionError` because :doc:`False </data_structures/booleans/booleans>` is not :ref:`None`
+  the terminal shows an :ref:`AssertionError` because :doc:`False </data_structures/booleans/booleans>` is not :ref:`None`
 
   .. code-block:: python
 
@@ -798,7 +798,7 @@ What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datas
         self.assertIsNone(a_dictionary.get('non_existent_key', None))
         self.assertEqual(a_dictionary.get('key1', None), None)
 
-  the terminal shows an :doc:`/exceptions/AssertionError` because ``value1`` which is the value for ``key1`` in ``a_dictionary`` is not equal to :ref:`None`
+  the terminal shows an :ref:`AssertionError` because ``value1`` which is the value for ``key1`` in ``a_dictionary`` is not equal to :ref:`None`
 
   .. code-block:: python
 
@@ -841,7 +841,7 @@ I add a new test to ``TestDictionaries``
           []
       )
 
-the terminal shows an :doc:`/exceptions/AssertionError`
+the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -981,7 +981,7 @@ REFACTOR: make it better
             {'bippity': 'boppity'}
         )
 
-  the terminal shows an :doc:`/exceptions/AssertionError` because ``a_dictionary`` has changed, it has a new key which was not there before
+  the terminal shows an :ref:`AssertionError` because ``a_dictionary`` has changed, it has a new key which was not there before
 
   .. code-block:: python
 
@@ -1043,7 +1043,7 @@ REFACTOR: make it better
         }
     )
 
-  the terminal shows an :doc:`/exceptions/AssertionError` since ``a_dictionary`` now has a new ``key`` and ``value``
+  the terminal shows an :ref:`AssertionError` since ``a_dictionary`` now has a new ``key`` and ``value``
 
   .. code-block:: python
 
@@ -1096,7 +1096,7 @@ I add another test to ``TestDictionaries``
           }
       )
 
-the terminal shows an :doc:`/exceptions/AssertionError` because the values of ``a_dictionary`` were changed when I called the `update <https://docs.python.org/3/library/stdtypes.html#dict.update>`_ :doc:`method </functions/functions>` on it
+the terminal shows an :ref:`AssertionError` because the values of ``a_dictionary`` were changed when I called the `update <https://docs.python.org/3/library/stdtypes.html#dict.update>`_ :doc:`method </functions/functions>` on it
 
 .. code-block:: python
 
@@ -1159,7 +1159,7 @@ I add a failing test to ``TestDictionaries``
       }
       self.assertEqual(a_dictionary.pop("basic"), None)
 
-the terminal shows an :doc:`/exceptions/AssertionError`
+the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -1207,7 +1207,7 @@ GREEN: make it pass
             }
         )
 
-  the terminal shows an :doc:`/exceptions/AssertionError` confirming that ``a_dictionary`` is different
+  the terminal shows an :ref:`AssertionError` confirming that ``a_dictionary`` is different
 
   .. code-block:: python
 
@@ -1250,10 +1250,10 @@ GREEN: make it pass
 
 you encountered the following exceptions
 
-* :doc:`/exceptions/AssertionError`
-* :doc:`/exceptions/ModuleNotFoundError`
+* :ref:`AssertionError`
+* :ref:`ModuleNotFoundError`
 * :ref:`AttributeError`
-* :doc:`/exceptions/TypeError`
+* :ref:`TypeError`
 * `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
 # ModuleNotFoundError

@@ -56,7 +56,7 @@ GREEN: make it pass
 
         a_boolean = None
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
 * I redefine the attribute to make the test pass
 
@@ -166,7 +166,7 @@ GREEN: make it pass
 
         method_a = None
 
-  the terminal shows a :doc:`/exceptions/TypeError` since ``method_a`` refers to :ref:`None` which is not callable
+  the terminal shows a :ref:`TypeError` since ``method_a`` refers to :ref:`None` which is not callable
 
 * I change the definition of ``method_a`` to make it a :doc:`function </functions/functions>` which makes it callable
 
@@ -178,7 +178,7 @@ GREEN: make it pass
         def method_a():
             return None
 
-  and the terminal shows an :doc:`/exceptions/AssertionError`. Progress!
+  and the terminal shows an :ref:`AssertionError`. Progress!
 
 
 * I then change the value that ``method_a`` returns to match the expectation of the test
@@ -283,7 +283,7 @@ I add a test to ``test_classes.py``
         []
     )
 
-the terminal shows an :doc:`/exceptions/AssertionError` as the expected and real values do not match
+the terminal shows an :ref:`AssertionError` as the expected and real values do not match
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^

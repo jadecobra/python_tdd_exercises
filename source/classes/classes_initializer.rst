@@ -81,7 +81,7 @@ REFACTOR: make it better
 
         sex = 'M'
 
-  and the terminal shows a :doc:`/exceptions/TypeError`
+  and the terminal shows a :ref:`TypeError`
 
   .. code-block:: python
 
@@ -104,7 +104,7 @@ REFACTOR: make it better
         def __init__(self):
             pass
 
-  and the terminal shows a :doc:`/exceptions/TypeError`
+  and the terminal shows a :ref:`TypeError`
 
   .. code-block:: python
 
@@ -216,7 +216,7 @@ REFACTOR: make it better
         def __init__(self):
             pass
 
-* I remove the ``sex`` attribute and the terminal shows an :doc:`/exceptions/AssertionError`
+* I remove the ``sex`` attribute and the terminal shows an :ref:`AssertionError`
 * I change the ``Human`` class to set the ``sex`` attribute in the parent initializer instead of at the child level
 
   .. code-block:: python
@@ -229,7 +229,7 @@ REFACTOR: make it better
         def __init__(self, sex='M'):
             self.sex = sex
 
-  the terminal still shows an :doc:`/exceptions/AssertionError`
+  the terminal still shows an :ref:`AssertionError`
 
 * when I remove the ``__init__`` :doc:`method </functions/functions>` from the ``Girl`` class
 

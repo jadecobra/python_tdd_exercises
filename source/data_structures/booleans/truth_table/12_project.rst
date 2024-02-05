@@ -35,7 +35,7 @@ GREEN: make it pass
     def project_first(p, q):
         return False
 
-  and the terminal shows an :doc:`/exceptions/AssertionError` for the first case
+  and the terminal shows an :ref:`AssertionError` for the first case
 * I change the return statement
 
   .. code-block:: python
@@ -43,7 +43,7 @@ GREEN: make it pass
     def project_first(p, q):
         return True
 
-  and the :doc:`/exceptions/AssertionError` is now for the third case
+  and the :ref:`AssertionError` is now for the third case
 * before I add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction``, ``negate_first`` and ``negate_second`` because 2 out of the 4 cases have the same return value. I see that
 
   * when ``p == True`` the result is :doc:`True </data_structures/booleans/booleans>`
@@ -119,7 +119,7 @@ GREEN: make it pass
     def project_second(p, q):
         return False
 
-  the terminal shows an :doc:`/exceptions/AssertionError` for the first case
+  the terminal shows an :ref:`AssertionError` for the first case
 * and I change the return value to make it pass
 
   .. code-block:: python
@@ -127,7 +127,7 @@ GREEN: make it pass
     def project_second(p, q):
         return True
 
-  the terminal shows an :doc:`/exceptions/AssertionError` for the second case
+  the terminal shows an :ref:`AssertionError` for the second case
 * before I add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction``, ``negate_first``, ``negate_second`` and ``project_first`` because 2 out of the 4 cases have the same return value. I see that
 
   * when ``q == True`` the result is :doc:`True </data_structures/booleans/booleans>`
@@ -140,7 +140,7 @@ GREEN: make it pass
     def project_second(p, q):
         return p
 
-  the terminal still shows an :doc:`/exceptions/AssertionError`
+  the terminal still shows an :ref:`AssertionError`
 * What if I return ``q`` instead?
   .. code-block:: python
 

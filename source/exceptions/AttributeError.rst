@@ -33,13 +33,13 @@ I open a new file, save it as ``test_attribute_error.py`` in the ``tests`` folde
 * ``import unittest`` imports the `unittest <https://docs.python.org/3/library/unittest.html>`_ module from the python standard library
 * ``import module`` imports the ``module`` module - which will hold the code I am testing
 
-the terminal shows a :doc:`/exceptions/ModuleNotFoundError` if you have not yet done the :doc:`/how_to/exception_handling_tests` chapter
+the terminal shows a :ref:`ModuleNotFoundError` if you have not yet done the :doc:`/how_to/exception_handling_tests` chapter
 
 .. code-block:: python
 
   ModuleNotFoundError: No module called 'module'
 
-A :doc:`/exceptions/ModuleNotFoundError` is raised when a name is provided to an ``import`` statement and python cannot find the name. Since there is currently no file called ``module.py`` the ``import module`` line causes a failure
+A :ref:`ModuleNotFoundError` is raised when a name is provided to an ``import`` statement and python cannot find the name. Since there is currently no file called ``module.py`` the ``import module`` line causes a failure
 
 GREEN: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -306,7 +306,7 @@ Repeat the pattern until all tests pass.
 If you have been typing along *WELL DONE!* You now know
 
 
-* How to solve a :doc:`/exceptions/ModuleNotFoundError`
+* How to solve a :ref:`ModuleNotFoundError`
 * How to solve a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_ using variables
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 
@@ -341,7 +341,7 @@ GREEN: make it pass
 
     function_0 = None
 
-  I see a :doc:`/exceptions/TypeError` in the terminal
+  I see a :ref:`TypeError` in the terminal
 
   .. code-block:: python
 
@@ -358,7 +358,7 @@ GREEN: make it pass
     # NameError
     # TypeError
 
-* a :doc:`/exceptions/TypeError` is raised in this case because I called an object that was not `callable <https://docs.python.org/3/glossary.html#term-callable>`_
+* a :ref:`TypeError` is raised in this case because I called an object that was not `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 
   A `callable <https://docs.python.org/3/glossary.html#term-callable>`_ object is an object that may be able to handle inputs. I can make an `object <https://docs.python.org/3/glossary.html#term-object>`_ `callable <https://docs.python.org/3/glossary.html#term-callable>`_ by defining it as a :doc:`class </classes/classes>` or a :doc:`function </functions/functions>`
 
@@ -399,9 +399,9 @@ REFACTOR: make it better
 
 *YOU DID IT AGAIN!* You now know
 
-* How to solve a :doc:`/exceptions/ModuleNotFoundError`
+* How to solve a :ref:`ModuleNotFoundError`
 * How to solve a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
-* How to solve a :doc:`/exceptions/TypeError` by defining a callable
+* How to solve a :ref:`TypeError` by defining a callable
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
 
@@ -444,7 +444,7 @@ GREEN: make it pass
 
     Class0 = None
 
-  and the terminal shows a :doc:`/exceptions/TypeError`
+  and the terminal shows a :ref:`TypeError`
 
   .. code-block:: python
 
@@ -486,9 +486,9 @@ REFACTOR: make it better
 
 *WELL DONE!* You now know
 
-* How to solve a :doc:`/exceptions/ModuleNotFoundError`
+* How to solve a :ref:`ModuleNotFoundError`
 * How to solve a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
-* How to solve a :doc:`/exceptions/TypeError` by defining a `callable <https://docs.python.org/3/glossary.html#term-callable>`_
+* How to solve a :ref:`TypeError` by defining a `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :doc:`class </classes/classes>`? do I know how to define :doc:`class </classes/classes>` if I define them the same way I do :doc:`/functions/functions`?
@@ -630,9 +630,9 @@ REFACTOR: make it better
 
 *WELL DONE!* You now know You now know
 
-* How to solve a :doc:`/exceptions/ModuleNotFoundError`
+* How to solve a :ref:`ModuleNotFoundError`
 * How to solve a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
-* How to solve a :doc:`/exceptions/TypeError` by defining a `callable <https://docs.python.org/3/glossary.html#term-callable>`_
+* How to solve a :ref:`TypeError` by defining a `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :doc:`class </classes/classes>`
@@ -675,7 +675,7 @@ GREEN: make it pass
         ...
         method_0 = None
 
-  and the terminal shows a :doc:`/exceptions/TypeError`
+  and the terminal shows a :ref:`TypeError`
 
   .. code-block:: python
 
@@ -711,18 +711,18 @@ repeat the solution until all tests pass
 
 *CONGRATULATIONS!* you encountered the following exceptions
 
-* :doc:`/exceptions/AssertionError`
-* :doc:`/exceptions/ModuleNotFoundError`
+* :ref:`AssertionError`
+* :ref:`ModuleNotFoundError`
 * :ref:`AttributeError`
 * `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
-* :doc:`/exceptions/TypeError`
+* :ref:`TypeError`
 * `SyntaxError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#SyntaxError>`_
 
 and learned
 
-* How to solve a :doc:`/exceptions/ModuleNotFoundError`
+* How to solve a :ref:`ModuleNotFoundError`
 * How to solve a `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
-* How to solve a :doc:`/exceptions/TypeError` by defining a `callable <https://docs.python.org/3/glossary.html#term-callable>`_
+* How to solve a :ref:`TypeError` by defining a `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :doc:`class </classes/classes>`

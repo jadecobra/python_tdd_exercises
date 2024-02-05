@@ -182,6 +182,6 @@ You now know how to solve ``ModuleNotFoundError``
 
 you encountered the following exceptions
 
-* :doc:`/exceptions/AssertionError`
+* :ref:`AssertionError`
 * ImportError
-* :doc:`/exceptions/ModuleNotFoundError`
+* :ref:`ModuleNotFoundError`

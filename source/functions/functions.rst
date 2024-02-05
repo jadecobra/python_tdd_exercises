@@ -42,7 +42,7 @@ I create a file called ``test_functions.py`` in the ``tests`` folder and add the
       def test_functions_with_pass(self):
           self.assertIsNone(functions.function_with_pass())
 
-the terminal shows a :doc:`/exceptions/ModuleNotFoundError`\ , and I add it to the list of exceptions encountered
+the terminal shows a :ref:`ModuleNotFoundError`\ , and I add it to the list of exceptions encountered
 
 .. code-block:: python
 

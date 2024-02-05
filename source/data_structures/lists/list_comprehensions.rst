@@ -42,7 +42,7 @@ I add a file called ``test_list_comprehensions.py`` to the ``tests`` folder with
 * ``a_list.append(item)`` adds the item from ``container`` to ``a_list`` on each cycle of the loop, using the ``append`` :doc:`method </functions/functions>`, see :doc:`/data_structures/lists/lists` for more details
 * the second ``self.assertEqual(a_list, [])`` checks to see if ``a_list`` is still empty after the operation
 
-the terminal shows an :doc:`/exceptions/AssertionError` because ``a_list`` is no longer empty, it contains 10 items after the loop runs
+the terminal shows an :ref:`AssertionError` because ``a_list`` is no longer empty, it contains 10 items after the loop runs
 
 .. code-block:: python
 
@@ -79,7 +79,7 @@ REFACTOR: make it better
 
       self.assertEqual(list(container), [])
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -122,7 +122,7 @@ REFACTOR: make it better
     import list_comprehensions
     import unittest
 
-  the terminal shows a :doc:`/exceptions/ModuleNotFoundError`
+  the terminal shows a :ref:`ModuleNotFoundError`
 
   .. code-block:: python
 
@@ -160,7 +160,7 @@ REFACTOR: make it better
     def make_a_list():
         return None
 
-  and the terminal shows a :doc:`/exceptions/TypeError`
+  and the terminal shows a :ref:`TypeError`
 
   .. code-block:: python
 
@@ -184,7 +184,7 @@ REFACTOR: make it better
     def make_a_list(argument):
         return None
 
-  and the terminal shows an :doc:`/exceptions/AssertionError`
+  and the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -234,7 +234,7 @@ I add a test for creating a list with a `for <https://docs.python.org/3/tutorial
             a_list
         )
 
-the terminal shows an :doc:`/exceptions/AssertionError` for the values of ``a_list`` because it is no longer empty after I loop through ``container`` and add items
+the terminal shows an :ref:`AssertionError` for the values of ``a_list`` because it is no longer empty after I loop through ``container`` and add items
 
 .. code-block:: python
 
@@ -278,7 +278,7 @@ GREEN: make it pass
     def for_loop():
         return None
 
-  and the terminal shows a :doc:`/exceptions/TypeError` because the :doc:`function signature </functions/functions>` does not match the call in the test
+  and the terminal shows a :ref:`TypeError` because the :doc:`function signature </functions/functions>` does not match the call in the test
 
   .. code-block:: python
 
@@ -291,7 +291,7 @@ GREEN: make it pass
     def for_loop(argument):
         return None
 
-  and the terminal shows an :doc:`/exceptions/AssertionError`
+  and the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -356,7 +356,7 @@ I add a failing test to ``TestListComprehensions``
             a_list
         )
 
-the terminal shows an :doc:`/exceptions/AssertionError`
+the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -388,7 +388,7 @@ GREEN: make it pass
             a_list
         )
 
-  and the terminal shows another :doc:`/exceptions/AssertionError` for the next line
+  and the terminal shows another :ref:`AssertionError` for the next line
 
   .. code-block:: python
 
@@ -493,7 +493,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
             even_numbers
         )
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -526,7 +526,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
               even_numbers
           )
 
-  and the terminal shows an :doc:`/exceptions/AssertionError` for the next line
+  and the terminal shows an :ref:`AssertionError` for the next line
 
   .. code-block:: python
 
@@ -555,7 +555,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
               even_numbers
           )
 
-  and get an :doc:`/exceptions/AssertionError` because the lists are not the same, I have too many values
+  and get an :ref:`AssertionError` because the lists are not the same, I have too many values
 
   .. code-block:: python
 
@@ -604,7 +604,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
             odd_numbers
         )
 
-  the terminal shows an :doc:`/exceptions/AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -630,7 +630,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
             odd_numbers
         )
 
-  the terminal shows an :doc:`/exceptions/AssertionError` for the next test
+  the terminal shows an :ref:`AssertionError` for the next test
 
   .. code-block:: python
 
@@ -645,7 +645,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
         odd_numbers
     )
 
-  and the terminal shows an :doc:`/exceptions/AssertionError`
+  and the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -888,11 +888,11 @@ I have written the same thing multiple times in these tests and since the progra
 
 I also encountered the following exceptions
 
-* :doc:`/exceptions/AssertionError`
+* :ref:`AssertionError`
 * `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
-* :doc:`/exceptions/ModuleNotFoundError`
+* :ref:`ModuleNotFoundError`
 * :ref:`AttributeError`
-* :doc:`/exceptions/TypeError`
+* :ref:`TypeError`
 
 ----
 

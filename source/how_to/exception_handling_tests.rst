@@ -41,7 +41,7 @@ I replace ``test_failure`` in ``test_exceptions.py``
       def test_catching_module_not_found_error_in_tests(self):
           import non_existent_module
 
-the terminal shows a :doc:`/exceptions/ModuleNotFoundError`
+the terminal shows a :ref:`ModuleNotFoundError`
 
 .. code-block:: python
 
@@ -70,7 +70,7 @@ I add a ``self.assertRaises`` to ``test_catching_module_not_found_error_in_tests
 
 and the terminal shows passing tests. How does all this work?
 
-* I use the `unittest.TestCase.assertRaises <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises>`_ :doc:`method </functions/functions>` which takes a given `Exception <https://docs.python.org/3/library/exceptions.html?highlight=exception#Exception>`_ as its input, in this case :doc:`/exceptions/ModuleNotFoundError` and checks if that error is raised by the statements given in the context below (the indented block after the ``with`` statement)
+* I use the `unittest.TestCase.assertRaises <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises>`_ :doc:`method </functions/functions>` which takes a given `Exception <https://docs.python.org/3/library/exceptions.html?highlight=exception#Exception>`_ as its input, in this case :ref:`ModuleNotFoundError` and checks if that error is raised by the statements given in the context below (the indented block after the ``with`` statement)
 * ``with`` - creates the context where I test that the exception is raised
 
   - `read more about the with statement <https://docs.python.org/3/reference/compound_stmts.html?highlight=statement#the-with-statement>`_
@@ -113,7 +113,7 @@ RED: make it fail
     import module
     import unittest
 
-  the terminal shows a :doc:`/exceptions/ModuleNotFoundError` ::
+  the terminal shows a :ref:`ModuleNotFoundError` ::
 
     ModuleNotFoundError: No module named 'module'
 
@@ -223,8 +223,8 @@ I just created the same context 3 times. The ``self.assertRaises`` catches an :r
 
 Fantastic! all the tests still pass and I have a way to catch exceptions that are raised in programs I am testing. I also encountered the following exceptions
 
-* :doc:`/exceptions/AssertionError`
-* :doc:`/exceptions/ModuleNotFoundError`
+* :ref:`AssertionError`
+* :ref:`ModuleNotFoundError`
 * `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 * :ref:`AttributeError`
 

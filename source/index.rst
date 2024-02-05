@@ -18,13 +18,13 @@ Who is this book for?
 * If you are new to `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ in Python, this book is for you
 * If you use Python but do not know any of the errors below, this book is for you
 
-  - :doc:`/exceptions/AssertionError`
+  - :ref:`AssertionError`
   - :ref:`AttributeError`
   - `IndexError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#IndexError>`_
   - `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_
-  - :doc:`/exceptions/ModuleNotFoundError`
+  - :ref:`ModuleNotFoundError`
   - `NameError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
-  - :doc:`/exceptions/TypeError`
+  - :ref:`TypeError`
   - `ValueError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError>`_
 
 **********************
