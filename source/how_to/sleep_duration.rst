@@ -220,7 +220,7 @@ I could write a test case for every possible sleep and wake time, or write one t
             wake_hour-sleep_hour
         )
 
-  the terminal shows an :ref:`AssertionError` similar to this
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -617,8 +617,16 @@ GREEN: make it pass
           - sleep_time.split(':')[0]
         )
 
-  the terminal shows a :ref:`TypeError` for an unsupported operation of trying to subtract one string_ from another. Though it is not explicit here, from ``test_splitting_a_string`` I know that the strings being subtracted are the values to the left of the separator ``:``, not the entire string_ value of ``wake_time`` and ``sleep_time``. For example,  if the given ``wake_time`` is ``'02:00'`` and the given ``sleep_time`` is ``'01:00'``  the program is currently trying to subtract ``'01'`` from ``'02'`` which is different from trying to subtract ``1`` from ``2``, ``'01'`` is a string_ and ``1`` is a number.
-* The next task is to convert the string_ to a number so I can do the subtraction. I disable the current failing test by using the `unittest.skip <https://docs.python.org/3/library/unittest.html#unittest.skip>`_ decorator
+  the terminal shows a :ref:`TypeError` for an unsupported operation of trying to subtract one string_ from another. I know from ``test_splitting_a_string`` that the strings being subtracted are the values to the left of the separator ``:``, not the entire values of ``wake_time`` and ``sleep_time``. For example, if the given ``wake_time`` is ``'02:00'`` and the given ``sleep_time`` is ``'01:00'``, the program tries to subtract ``'01'`` from ``'02'`` which is different from trying to subtract ``1`` from ``2``, ``'01'`` is a string_ and ``1`` is a number
+
+test_converting_string_to_integer
+--------------------------------------------------------
+
+The next task is to convert the string_ to a number so I can do the subtraction.
+
+RED: make it fail
+
+* I disable the current failing test by using the `unittest.skip decorator`_
 
   .. code-block:: python
 
@@ -626,10 +634,7 @@ GREEN: make it pass
     def test_duration_w_hours_only(self):
     ...
 
-test_converting_string_to_integer
---------------------------------------------------------
-
-* then add a failing test to see if I can use the `int <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ constructor to convert a string_ to a number
+* then add a new failing test to see if I can use the int_ constructor to convert a string_ to a number
 
   .. code-block:: python
 
@@ -641,9 +646,13 @@ test_converting_string_to_integer
     def test_duration_w_hours_only(self):
     ...
 
-  the terminal shows an :ref:`AssertionError` since ``12 != 0`` ::
+  the terminal shows an :ref:`AssertionError` since ``12 != 0``
+
+  .. code-block:: python
 
     AssertionError: 12 != 0
+
+GREEN: make it pass
 
 * I change the test to match the expectation
 
@@ -666,13 +675,14 @@ test_converting_string_to_integer
         self.assertEqual(int('12'), 12)
         self.assertEqual(int('01'), 1)
 
-  I now have another tool to help solve the problem, I can
+I have another tool to help solve the problem, I can
 
-  - split a string_ on a separator
-  - index a list
-  - convert a string_ to a number
+- split a string_ on a separator
+- index a :doc:`list </data_structures/lists/lists>`
+- convert a string_ to a number
 
-* I remove ``@unittest.skip`` from the test in ``test_sleep_duration.py`` to show the :ref:`TypeError` I have been trying to solve, then add the conversion using the `int <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ constructor to the ``duration`` function in ``sleep_duration.py`` to see if it makes the test pass
+* I remove ``@unittest.skip`` from ``test_duration_w_hours_only`` to show the :ref:`TypeError` I have been trying to solve
+* I add the conversion using the int_ constructor to the ``duration`` :doc:`function </functions/functions>` to see if it makes the test pass
 
   .. code-block:: python
 
@@ -682,8 +692,9 @@ test_converting_string_to_integer
           - int(sleep_time.split(':')[0])
         )
 
-  YES! I am green! The ``duration`` function can calculate the sleep duration given any random ``sleep`` and ``wake`` hour. What a beautiful life!
-* I can rewrite the solution I have in a way that tries to explain what is happening to someone who does not know how to :doc:`index a list </data_structures/lists/lists>`, use `int <https://docs.python.org/3/library/functions.html?highlight=int#int>`_  or split_
+  YES! I am green! The ``duration`` function can calculate the sleep duration given any random ``sleep`` and ``wake`` hours. What a beautiful life!
+
+* I can rewrite the solution I have in a way that tries to explain what is happening to someone who does not know how to :doc:`index a list </data_structures/lists/lists>`, use int_ or split_
 
   .. code-block:: python
 
@@ -698,7 +709,9 @@ test_converting_string_to_integer
           - int(sleep_time.split(':')[0])
         )
 
-  the terminal shows all tests are still passing, so I try the same thing for ``sleep_time``
+  the terminal shows all tests are still passing
+
+* I try the same thing for ``sleep_time``
 
   .. code-block:: python
 
@@ -713,13 +726,13 @@ test_converting_string_to_integer
 
         return (
             wake_time_hour_integer
-        #   - int(sleep_time.split(':')[0])
+        # - int(sleep_time.split(':')[0])
           - sleep_time_hour_integer
         )
 
-* The ``duration`` function does the following for each given timestamp,
+* The ``duration`` :doc:`function </functions/functions>` does the following for each given timestamp
 
-  - splits the timestamp string_ on the separator ``:``
+  - splits the timestamp string_ on the separator ``':'``
   - gets the first item from the split
   - converts the first item from the split to an integer
 
@@ -751,7 +764,9 @@ test_converting_string_to_integer
           - sleep_time_hour_integer
         )
 
-  since the tests are passing, I can remove the parts of the function I no longer need and rename ``process`` to something more descriptive like ``get_hour``
+  all tests are still green
+
+* I remove the parts of ``duration`` that I no longer need and rename ``process`` to something more descriptive like ``get_hour``
 
   .. code-block:: python
 
@@ -767,9 +782,9 @@ test_converting_string_to_integer
           - get_hour(sleep_time)
         )
 
-  all tests are still passing. I have not broken anything yet
+  all tests are still passing. I have not broken anything, yet
 
-* I can rewrite the ``get_hour`` function to use the same variable name instead of a new name for each step in the process, for example
+* I can rewrite ``get_hour`` to use the same variable name instead of a new name for each step in the process
 
   .. code-block:: python
 
@@ -779,27 +794,25 @@ test_converting_string_to_integer
         value = int(value)
         return value
 
-  the terminal still shows passing tests
-* I can also rewrite the ``get_hour`` function to use one line, though it will no longer be as explicit as above
+  the terminal still shows passing test
+
+* I can also rewrite ``get_hour`` to use one line, though it will no longer be as explicit as above
 
   .. code-block:: python
 
     def get_hour(timestamp):
         return int(timestamp.split(':')[0])
 
-  the terminal still shows passing tests.
+  the terminal still shows passing tests
 
-Since the test is green you can try any ideas you want until you understand what has been written so far. Time for a nap.
+You can try any ideas you want until you understand what has been written so far since all the tests are green. Time for a nap.
 
 ----
 
 test_duration_w_hours_and_minutes
 ========================================================
 
-
-I have a solution that provides the right duration when given sleep time and wake time hours, though it does not take minutes into account when doing the calculation.
-
-For the ``duration`` function to meet the requirements, it has to accept timestamps with hours and minutes for the sleep and wake times.
+For the ``duration`` :doc:`function </functions/functions>` to meet the requirements, it has to accept timestamps with hours and minutes but it currently returns the right duration when given sleep time and wake wake time hours, without taking minutes into account in the calculation.
 
 RED: make it fail
 
@@ -807,39 +820,38 @@ I add a failing test in ``test_sleep_duration.py`` that takes minutes into accou
 
 .. code-block:: python
 
-    def test_duration_w_hours_and_minutes(self):
-        wake_hour = random.randint(0, 23)
-        sleep_hour = random.randint(0, 23)
-        wake_minutes = random.randint(0, 59)
-        sleep_minutes = random.randint(0, 59)
+  def test_duration_w_hours_and_minutes(self):
+      wake_hour = random.randint(0, 23)
+      sleep_hour = random.randint(0, 23)
+      wake_minutes = random.randint(0, 59)
+      sleep_minutes = random.randint(0, 59)
 
-        difference_hours = wake_hour - sleep_hour
-        difference_minutes = wake_minutes - sleep_minutes
+      difference_hours = wake_hour - sleep_hour
+      difference_minutes = wake_minutes - sleep_minutes
 
-        self.assertEqual(
-            sleep_duration.duration(
-                wake_time=f'{wake_hour:02}:{wake_minutes:02}',
-                sleep_time=f'{sleep_hour:02}:{sleep_minutes:02}'
-            ),
-            f'{difference_hours:02}:{difference_minutes:02}'
-        )
+      self.assertEqual(
+          sleep_duration.duration(
+              wake_time=f'{wake_hour:02}:{wake_minutes:02}',
+              sleep_time=f'{sleep_hour:02}:{sleep_minutes:02}'
+          ),
+          f'{difference_hours:02}:{difference_minutes:02}'
+      )
 
-the terminal shows an :ref:`AssertionError` similar to this
-
+the terminal shows an :ref:`AssertionError` that looks like this
 
 .. code-block:: python
 
   AssertionError: 4 != '4:-20'
 
-.. note::
+.. NOTE::
 
-    Your results may be different because the timestamps are random numbers
+  Your results may be different because the timestamps are random numbers
 
-the expected duration is now a string_ that contains the subtraction of the sleep hour from the wake hour, separated by a separator ``:`` and the subtraction of the sleep minute from the wake minute. For example, when I have a ``wake_time`` of ``08:30`` and a ``sleep_time`` of ``07:11``, I should have ``01:19`` as the output
+the expected duration is now a string_ that contains the subtraction of the sleep hour from the wake hour, and the subtraction of the sleep minutes from the wake minutes, separated by ``:``. For example, when I have a ``wake_time`` of ``'08:30'`` and a ``sleep_time`` of ``'07:11'``, I should have ``'01:19''`` as the output
 
 GREEN: make it pass
 
-* I change the output of the ``duration`` function in ``sleep_duration.py`` to match the format of the expected value in the test
+* I change the output of the ``duration`` :doc:`function </functions/functions>` to match the format of the expected value in the test
 
   .. code-block:: python
 
@@ -854,7 +866,7 @@ GREEN: make it pass
         )
         return f'{difference_hour}:{difference_minutes}'
 
-  and the terminal shows an :ref:`AssertionError` because changing the format causes an error in ``test_duration_w_hours_only`` which still expects a number
+  and the terminal shows an :ref:`AssertionError` because changing the format causes an error in ``test_duration_w_hours_only`` which still expects a number instead of a string_
 
   .. code-block:: python
 
@@ -880,13 +892,13 @@ GREEN: make it pass
             f'{wake_hour-sleep_hour}:00'
         )
 
-  the terminal shows an :ref:`AssertionError` similar to this
+  the terminal shows an :ref:`AssertionError` that looks like this
 
   .. code-block:: python
 
     AssertionError: '17:17' != '17:00'
 
-  the ``duration`` function currently uses ``get_hour`` for hours and minutes. I need to create a function that calculates the difference between the minutes
+  the ``duration`` :doc:`function </functions/functions>` currently uses ``get_hour`` for hours and minutes. I need to create a function to use in the calculation for the minutes
 
 * I use the ``get_hour`` function as a reference to create a similar function which gets the minutes from a given timestamp
 
@@ -900,7 +912,7 @@ GREEN: make it pass
 
   the terminal still shows an :ref:`AssertionError`
 
-* I change ``difference_minutes`` with a call to the new ``get_minutes`` function in the ``duration`` function
+* I change ``difference_minutes`` with a call to the new ``get_minutes`` :doc:`function </functions/functions>`
 
   .. code-block:: python
 
@@ -915,13 +927,13 @@ GREEN: make it pass
         )
         return f'{difference_hour}:{difference_minutes}'
 
-  and the ``test_duration_w_hours_and_minutes`` passes leaving the :ref:`AssertionError` for ``test_duration_w_hours_only``
+  and ``test_duration_w_hours_and_minutes`` passes leaving an :ref:`AssertionError` for ``test_duration_w_hours_only`` that looks like this
 
   .. code-block:: python
 
     AssertionError: '-8:0' != '-8:00'
 
-* I update the ``duration`` function to display two digits for hours and minutes
+* I make ``duration`` display two digits for hours and minutes in the result
 
   .. code-block:: python
 
@@ -936,7 +948,7 @@ GREEN: make it pass
         )
         return f'{difference_hours:02}:{difference_minutes:02}'
 
-  and update ``test_duration_w_hours_only`` to do the same thing for the hours and the test passes
+  and update ``test_duration_w_hours_only`` to do the same thing for the hours
 
   .. code-block:: python
 
@@ -944,7 +956,7 @@ GREEN: make it pass
         wake_hour = random.randint(0, 23)
         sleep_hour = random.randint(0, 23)
 
-        difference_hours = wake_hour-sleep_hour
+        difference_hours = wake_hour - sleep_hour
 
         self.assertEqual(
             sleep_duration.duration(
@@ -956,7 +968,7 @@ GREEN: make it pass
 
 REFACTOR: make it better
 
-* Since ``test_duration_w_hours_and_minutes`` uses a random number from ``0`` to ``23`` for hours and a random number from ``0`` to ``59`` for minutes, it covers all timestamps from ``00:00`` to ``23:59``. This means I do not need ``test_duration_w_hours_only``, so I remove it
+* ``test_duration_w_hours_and_minutes`` uses a random number from ``0`` up to and including ``23`` for hours, and a random number from ``0`` up to and including ``59`` for minutes. This means it covers all timestamps from ``00:00`` up to and including ``23:59``, which is all the hours and minutes in a day. I remove ``test_duration_w_hours_only`` since the timestamps it tests are already included in ``test_duration_w_hours_and_minutes``
 
 test_duration_calculation
 --------------------------------------------------------
@@ -1011,7 +1023,7 @@ RED: Make It Fail
         )
         return f'{difference_hours:02}:{difference_minutes:02}'
 
-  since ``test_duration_w_hours_and_minutes`` uses the wrong calculation, the terminal will show random successes and randomly show an :ref:`AssertionError` similar to this
+  since ``test_duration_w_hours_and_minutes`` uses the wrong calculation, the terminal will show random successes and randomly show an :ref:`AssertionError` that looks like this
 
   .. code-block:: python
 
@@ -1713,7 +1725,7 @@ From the tests so far I know that I can
     def parse_timestamp(timestamp=None, index=0):
     ...
 
-  the terminal shows an :ref:`AssertionError` for ``test_duration_w_hours_and_minutes`` similar to this
+  the terminal shows an :ref:`AssertionError` for ``test_duration_w_hours_and_minutes`` that looks like this
 
   .. code-block:: python
 
@@ -1722,7 +1734,7 @@ From the tests so far I know that I can
   I have another ValueError_ this time for a timestamp that does not match the expected pattern of ``'%d%m%y %H:%M'``
 * ``test_duration_w_hours_and_minutes`` currently sends the timestamps in without a date, so I remove it since all the cases it represents are covered by ``test_duration_w_given_date_and_time``
 
-  the terminal shows an :ref:`AssertionError` similar to this
+  the terminal shows an :ref:`AssertionError` that looks like this
 
   .. code-block:: python
 
@@ -1800,7 +1812,7 @@ From the tests so far I know that I can
 
             return f'{difference_hours:02}:{difference_minutes:02}'
 
-  the terminal shows an :ref:`AssertionError` similar to this
+  the terminal shows an :ref:`AssertionError` that looks like this
 
   .. code-block:: python
 

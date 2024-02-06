@@ -17,3 +17,5 @@
 .. _KeyError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError
 .. _unittest.TestCase.maxDiff: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff
 .. _zero-based indexing: https://en.wikipedia.org/wiki/Zero-based_numbering
+.. _unittest.skip decorator: https://docs.python.org/3/library/unittest.html#unittest.skip
+.. _int: https://docs.python.org/3/library/functions.html?highlight=int#int
