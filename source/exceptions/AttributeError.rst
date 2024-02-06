@@ -21,7 +21,7 @@ requirements
 Solve an AttributeError by defining variables
 **********************************************
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I open a new file, save it as ``test_attribute_error.py`` in the ``tests`` folder created in :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` and type the following
@@ -42,7 +42,7 @@ the terminal shows a :ref:`ModuleNotFoundError` if you have not yet done the :do
 
 A :ref:`ModuleNotFoundError` is raised when a name is provided to an ``import`` statement and python cannot find the name. Since there is currently no file called ``module.py`` the ``import module`` line causes a failure
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 * I change the list of exceptions encountered
@@ -133,12 +133,12 @@ An `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=
 A NameError_ is raised when there is a reference to a name within an `object <https://docs.python.org/3/glossary.html#term-object>`_ and there is no definition for the name
 
 
-REFACTOR: make it better
+refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 I could repeat the above tests as a drill to help remember the solution
 
-RED: make it fail
+red: make it fail
 ~~~~~~~~~~~~~~~~~
 
 
@@ -156,10 +156,10 @@ RED: make it fail
 
     AttributeError: module 'module' has no attribute 'variable_1'
 
-GREEN: make it pass
+green: make it pass
 ~~~~~~~~~~~~~~~~~~~
 
-* RED: make it fail
+* red: make it fail
 
   I add the name to ``module.py``
 
@@ -174,7 +174,7 @@ GREEN: make it pass
 
     NameError: name 'variable_1' is not defined
 
-* GREEN: make it pass
+* green: make it pass
 
   I add a definition for ``variable_1``
 
@@ -185,7 +185,7 @@ GREEN: make it pass
 
   the terminal shows passing tests
 
-RED: make it fail
+red: make it fail
 ~~~~~~~~~~~~~~~~~
 
 * I add a failing line
@@ -203,10 +203,10 @@ RED: make it fail
 
     AttributeError: module 'module' has no attribute 'variable_2'
 
-GREEN: make it pass
+green: make it pass
 ~~~~~~~~~~~~~~~~~~~
 
-* RED: make it fail
+* red: make it fail
 
   I add the name to ``module.py``
 
@@ -222,7 +222,7 @@ GREEN: make it pass
 
     NameError: name 'variable_2' is not defined
 
-* GREEN: make it pass
+* green: make it pass
 
   I define ``variable_2`` in ``module.py``
 
@@ -234,7 +234,7 @@ GREEN: make it pass
 
   The tests pass
 
-RED: make it fail
+red: make it fail
 ~~~~~~~~~~~~~~~~~
 
 * I add a failing line
@@ -253,10 +253,10 @@ RED: make it fail
 
     AttributeError: module 'module' has no attribute 'variable_3'
 
-GREEN: make it pass
+green: make it pass
 ~~~~~~~~~~~~~~~~~~~
 
-* RED: make it fail
+* red: make it fail
 
   I add the name
 
@@ -273,7 +273,7 @@ GREEN: make it pass
 
     NameError: name 'variable_3' is not defined
 
-* GREEN: make it pass
+* green: make it pass
 
   I define the name
 
@@ -317,7 +317,7 @@ If you have been typing along *WELL DONE!* You now know
 Solve an AttributeError by defining functions
 **********************************************
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I add a new test to ``TestAttributeError`` class in ``tests/test_attribute_error.py``
@@ -333,7 +333,7 @@ the terminal shows an `AttributeError <https://docs.python.org/3/library/excepti
 
   AttributeError: module 'module' has no attribute 'function_0'
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 * I try the solution I know for solving `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ with variables and change ``module.py`` to include a new variable
@@ -375,7 +375,7 @@ GREEN: make it pass
   the terminal shows passing tests
 
 
-REFACTOR: make it better
+refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Time to make a drill. You can change ``test_defining_functions_to_solve_attribute_errors`` in the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` to include calls to functions in ``module.py`` until you have one for ``module.function_99()``
@@ -419,7 +419,7 @@ I think of a :doc:`class </classes/classes>` as a container of :doc:`methods (fu
 
 For example I could define a ``Human`` class with attributes like eye color, date of birth, height and weight. I could also define :doc:`methods </functions/functions>` like age which returns a value based on the current year and date of birth attribute
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 * I add a test function to the ``TestAttributeError`` class in ``tests/test_attribute_error.py``
@@ -436,7 +436,7 @@ RED: make it fail
     AttributeError: module 'module' has no attribute 'Class0'
 
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 * I add a name to ``module.py``
@@ -462,7 +462,7 @@ GREEN: make it pass
 
   For now, I will move on with these questions unanswered until they become obvious
 
-REFACTOR: make it better
+refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 * This could also be a drill, add lines to ``test_defining_classes_to_solve_attribute_errors`` in the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` until you have one for ``module.Class99()``, you will have 100 lines
@@ -500,7 +500,7 @@ REFACTOR: make it better
 Solve an AttributeError by defining class attributes
 ******************************************************
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 
@@ -517,7 +517,7 @@ RED: make it fail
 
     AttributeError: module 'module' has no attribute 'Class'
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 * I add a variable to ``module.py``
@@ -594,7 +594,7 @@ GREEN: make it pass
 
   the test passes. WOO HOO!
 
-REFACTOR: make it better
+refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 * The current solution for ``test_defining_classes_to_solve_attribute_errors`` was done by defining functions but the test name contains ``definining_classes``, time to go back and change ``module.py`` using the `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword instead of `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
@@ -645,7 +645,7 @@ REFACTOR: make it better
 Solve an AttributeError by defining class methods
 ******************************************************
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 * I add a new test to the ``TestAttributeError`` class in ``test_attribute_error.py``
@@ -661,7 +661,7 @@ RED: make it fail
 
     AttributeError: type object 'Class' has no attribute 'method_0'
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 * I add a name to ``Class`` in ``module.py``
@@ -693,7 +693,7 @@ GREEN: make it pass
 
   and all tests pass. Fantastic!
 
-REFACTOR: make it better
+refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 You know the "drill", add more lines until there are 100 tests ending with one for ``module.Class.method_99()`` to ``test_defining_functions_in_classes_to_solve_attribute_errors`` in ``TestAttributeError`` in ``test_attribute_error.py``

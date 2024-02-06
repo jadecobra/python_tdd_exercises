@@ -30,7 +30,7 @@ Nullary Operations
 
 Nullary operations do not take in inputs and always return the same value. They are :doc:`singleton functions </functions/functions_singleton>`
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I create a file called ``test_truth_table.py`` in the ``tests`` folder and add the text below
@@ -42,7 +42,7 @@ I create a file called ``test_truth_table.py`` in the ``tests`` folder and add t
 
 the terminal shows a :ref:`ModuleNotFoundError`
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 * I add :ref:`ModuleNotFoundError` to the list of exceptions encountered
@@ -86,7 +86,7 @@ GREEN: make it pass
 
   and the terminal shows passing tests which remind me that :doc:`True </data_structures/booleans/booleans>` is :doc:`True </data_structures/booleans/booleans>`
 
-REFACTOR: make it better
+refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
@@ -130,7 +130,7 @@ Logical Identity
 
 A Logical Identity operation takes input and returns it as output, it is a :doc:`passthrough function </functions/functions_passthrough>`
 
-RED: make it fail
+red: make it fail
 ~~~~~~~~~~~~~~~~~
 
 I add a new ``TestCase`` to ``test_truth_table.py``
@@ -145,7 +145,7 @@ I add a new ``TestCase`` to ``test_truth_table.py``
 
 and the terminal shows an :ref:`AttributeError` because there is no definition for ``logical_identity`` in ``truth_table.py``
 
-GREEN: make it pass
+green: make it pass
 ~~~~~~~~~~~~~~~~~~~
 
 I add a function definition for ``logical_identity`` to ``truth_table.py``
@@ -162,7 +162,7 @@ Logical Negation
 
 A Logical Negation operation takes input and returns its opposite as output
 
-RED: make it fail
+red: make it fail
 ~~~~~~~~~~~~~~~~~
 
 I add a test for ``logical_negation`` to ``test_truth_table.py``
@@ -175,7 +175,7 @@ I add a test for ``logical_negation`` to ``test_truth_table.py``
 
 the terminal shows an :ref:`AttributeError`, there is no definition for ``logical_negation`` in ``truth_table.py``
 
-GREEN: make it pass
+green: make it pass
 ~~~~~~~~~~~~~~~~~~~
 
 

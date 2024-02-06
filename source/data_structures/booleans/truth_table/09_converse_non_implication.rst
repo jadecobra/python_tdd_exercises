@@ -7,7 +7,7 @@ Truth Table: Converse NonImplication
 The tests in this chapter cover Converse NonImplication from  the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I add a test for converse nonimplication to ``TestBinaryOperations`` in ``test_truth_table.py``
@@ -22,7 +22,7 @@ I add a test for converse nonimplication to ``TestBinaryOperations`` in ``test_t
 
 the terminal shows an :ref:`AttributeError`
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 * I add a function definition to ``truth_table.py``
@@ -44,7 +44,7 @@ GREEN: make it pass
 
   all the tests pass
 
-REFACTOR: make it better
+refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 * I use implied conditional testing with ``not`` for the first part of the if statement

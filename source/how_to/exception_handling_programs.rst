@@ -21,7 +21,7 @@ requirements
 ----
 
 *************************
-RED: make it fail
+red: make it fail
 *************************
 
 * I add a failing test to ``test_exceptions.py``
@@ -38,7 +38,7 @@ RED: make it fail
     NameError: name 'exceptions' is not defined
 
 *************************
-GREEN: make it pass
+green: make it pass
 *************************
 
 * I add a new ``import`` statement
@@ -124,7 +124,7 @@ GREEN: make it pass
 You now know how to deliberately create an exception which means you have absolute power to reshape the universe to your will
 
 *************************
-REFACTOR: make it better
+refactor: make it better
 *************************
 
 Time to add exception handling to the program so it returns a message when it encounters an exception instead of stopping
@@ -134,7 +134,7 @@ Time to add exception handling to the program so it returns a message when it en
 How to catch things that fail
 ******************************
 
-RED: make it fail
+red: make it fail
 ==================
 
 I add a new failing test to ``test_exceptions.py``
@@ -155,7 +155,7 @@ the terminal shows an :ref:`AttributeError`
 
   AttributeError: module 'exceptions' has no attribute 'exception_handler'
 
-GREEN: make it pass
+green: make it pass
 ====================
 
 * I add a name to ``exceptions.py``
@@ -219,7 +219,7 @@ GREEN: make it pass
 How to catch things that succeed
 *********************************
 
-RED: make it fail
+red: make it fail
 ==================
 
 the solution has a problem, the ``exception_handler`` always returns ``'failed'`` regardless of what I provide as an argument. It is a :doc:`singleton function </functions/functions_singleton>`.
@@ -242,7 +242,7 @@ the terminal shows an :ref:`AttributeError`
 
   AttributeError: module 'exceptions' has no attribute 'does_not_raise_exception'
 
-GREEN: make it pass
+green: make it pass
 ====================
 
 * I add ``does_not_raise_exception`` to ``exceptions.py``
@@ -347,7 +347,7 @@ How to use try...except...else...finally
 
 There is an extra clause in the `try <https://docs.python.org/3/reference/compound_stmts.html#the-try-statement>`_ statement called ``finally``. Anything in the ``finally`` clause is always run, regardless of what happens in the ``try...except...else`` blocks
 
-RED: make it fail
+red: make it fail
 =========================
 
 I add a failing test to ``test_exceptions.py``
@@ -368,7 +368,7 @@ the terminal shows an :ref:`AttributeError`
 
   AttributeError: module 'exceptions' has no attribute 'always_returns'
 
-GREEN: make it pass
+green: make it pass
 =========================
 
 * I add a name to ``exceptions.py``

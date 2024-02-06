@@ -11,7 +11,7 @@ I will continue to step through conditional statements using Binary Operations f
 Negate First
 ------------
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I add a test for negate first to ``TestBinaryOperations`` in ``test_truth_table.py``
@@ -26,7 +26,7 @@ I add a test for negate first to ``TestBinaryOperations`` in ``test_truth_table.
 
 and the terminal shows an :ref:`AttributeError`
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 * then I add a function definition to ``truth_table.py``
@@ -54,7 +54,7 @@ GREEN: make it pass
 
   and the test passes
 
-REFACTOR: make it better
+refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
@@ -90,7 +90,7 @@ REFACTOR: make it better
 Negate Second
 -------------
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I add a test for negate second to ``TestBinaryOperations``
@@ -105,7 +105,7 @@ I add a test for negate second to ``TestBinaryOperations``
 
 and the terminal shows an :ref:`AttributeError`
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 

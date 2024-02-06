@@ -8,14 +8,14 @@ What follows is an exercise in measuring learning. It is somewhat philosophical 
 An Infinite Learning Model
 ========================================================
 
-RED: make it fail
+red: make it fail
 
 add a file called ``test_learning_models.py`` to the ``tests`` folder with the following contents
 
 .. literalinclude:: /code/tests/test_learning_models.py
 
 
-GREEN: make it pass
+green: make it pass
 
 If you've gone through any of the other exercises in this book, then you have what you need to solve these problems
 

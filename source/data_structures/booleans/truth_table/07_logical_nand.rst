@@ -7,7 +7,7 @@ Truth Table: Logical NAND
 Let us take a look at Logical NAND from  the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I add a test for Logical NAND to ``TestBinaryOperations`` in ``test_truth_table.py``
@@ -22,7 +22,7 @@ I add a test for Logical NAND to ``TestBinaryOperations`` in ``test_truth_table.
 
 the terminal shows an :ref:`AttributeError`
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
@@ -45,7 +45,7 @@ GREEN: make it pass
 
   Green! All tests pass
 
-REFACTOR: make it better
+refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 * I add an ``else`` clause to be explicit

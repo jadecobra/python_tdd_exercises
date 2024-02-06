@@ -50,7 +50,7 @@ Add Tests
 Test Addition
 ****************
 
-RED: make it fail
+red: make it fail
 ==================
 
 * I add a :doc:`method </functions/functions>` called ``test_addition`` to the ``TestCalculator`` :doc:`class </classes/classes>`
@@ -83,7 +83,7 @@ RED: make it fail
 
     NameError: name 'calculator' is not defined
 
-GREEN: make it pass
+green: make it pass
 ====================
 
 * I add the error to the list of exceptions encountered ::
@@ -225,7 +225,7 @@ Even though the ``add`` function currently passes the existing test it does not 
                 1
             )
 
-* RED: make it fail
+* red: make it fail
 
   then add a new test to ``test_addition`` in ``test_calculator.py``
 
@@ -247,7 +247,7 @@ Even though the ``add`` function currently passes the existing test it does not 
 
     E    AssertionError: 1 != 0
 
-* GREEN: make it pass
+* green: make it pass
 
   I change the ``add`` function in ``calculator.py`` to add up the inputs it receives
 
@@ -264,7 +264,7 @@ Even though the ``add`` function currently passes the existing test it does not 
 
     ============== 1 passed in 0.01s ==============
 
-* REFACTOR: make it better
+* refactor: make it better
 
   - I import python's random_ library to generate random integers to test that the function behaves the way I expect for any given numbers
 
@@ -329,7 +329,7 @@ Test Subtraction
 
 Since addition works and the next item from the TODO list is ``test subtraction`` it is time to add a failing test
 
-RED: make it fail
+red: make it fail
 ===================
 
 
@@ -423,7 +423,7 @@ GREEN : make it pass
     # test division
 
 
-REFACTOR: make it better
+refactor: make it better
 =========================
 
 * There is some duplication to remove so `I Do Not Repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
@@ -464,7 +464,7 @@ Test Multiplication
 
 Moving on to test multiplication, the next item on the TODO list
 
-RED: make it fail
+red: make it fail
 ===================
 
 I add a failing test called ``test_multiplication`` to ``test_calculator.py``
@@ -510,7 +510,7 @@ SUCCESS! The terminal shows passing tests and I remove ``test_multiplication`` f
 Test Division
 ********************
 
-RED: make it fail
+red: make it fail
 ===================
 
 I add ``test_division`` to ``test_calculator.py``
@@ -570,7 +570,7 @@ GREEN : make it pass
 How to Test for Errors
 ************************
 
-RED: make it fail
+red: make it fail
 ===================
 
 I add a failing line to ``test_calculator.py`` that causes a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ by explicitly dividing by 0, and comment out test that sometimes fails to remove the variability of the test while I figure out the error
@@ -613,7 +613,7 @@ I can use the `unittest.TestCase.assertRaises <https://docs.python.org/3/library
 
 the terminal shows passing tests, and I now have a way to ``catch`` :doc:`Exceptions </how_to/exception_handling_programs>` when testing, which helps to confirm that the code raises an error while allowing other tests to continue running
 
-REFACTOR: make it better
+refactor: make it better
 =========================
 
 I can use a while loop for the other cases when the divisor is not ``0`` by making sure the value of ``y`` that is passed from the test to ``calculator.divide`` is never ``0``

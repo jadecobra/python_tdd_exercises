@@ -8,7 +8,7 @@ So far I have gone over how to define classes, attributes and methods. I will no
 
 When creating a new class, we can define an initializer which is a :doc:`method </functions/functions>` that can receive inputs to be used to customize instances/copies of the class
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I add a failing test to ``test_classes.py``
@@ -20,7 +20,7 @@ I add a failing test to ``test_classes.py``
 
 the terminal shows an :ref:`AttributeError`
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
@@ -59,7 +59,7 @@ GREEN: make it pass
   the terminal shows passing tests
 
 
-REFACTOR: make it better
+refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 

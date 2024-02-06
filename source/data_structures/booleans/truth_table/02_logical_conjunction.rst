@@ -12,7 +12,7 @@ I know that there are two boolean values
 * :doc:`False </data_structures/booleans/booleans>`
 
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 After creating a ``TestCase`` for binary operations in ``test_truth_table.py``
@@ -29,7 +29,7 @@ After creating a ``TestCase`` for binary operations in ``test_truth_table.py``
 
 the terminal shows an :ref:`AttributeError`
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 * I add a definition for ``logical_conjunction`` to ``truth_table.py``
@@ -95,7 +95,7 @@ GREEN: make it pass
 
   the terminal shows passing tests. Lovely!
 
-REFACTOR: make it better
+refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Why does this work?

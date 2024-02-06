@@ -13,7 +13,7 @@ What is None?
 
 `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is an object used to represent the absence of a value
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I create a file called ``test_none.py`` in the ``tests`` folder with the following text
@@ -36,7 +36,7 @@ the terminal shows an :ref:`AssertionError`
 
 `unittest.TestCase.assertIsNotNone <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNotNone>`_ checks that the input given is not `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 When I change the ``assertIsNotNone`` to ``assertIsNone`` in ``test_none_is_none``
@@ -52,7 +52,7 @@ the test passes
 
 `unittest.TestCase.assertIsNone <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNone>`_ checks that the given input is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
-REFACTOR: make it better
+refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 There are other python `objects <https://docs.python.org/3/glossary.html#term-object>`_ I can compare with `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ to learn more about what it is or is not
@@ -62,7 +62,7 @@ There are other python `objects <https://docs.python.org/3/glossary.html#term-ob
 Is None a boolean?
 ========================================================
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I add a new test to compare `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ with :doc:`booleans </data_structures/booleans/booleans>`
@@ -79,7 +79,7 @@ the terminal shows an :ref:`AssertionError`
 
   AssertionError: True is not None
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 I change ``assertIsNone`` to ``assertIsNotNone`` in ``test_is_none_a_boolean`` to make the tests pass
@@ -96,13 +96,13 @@ From the tests I see that
 * :doc:`True </data_structures/booleans/booleans>` is not `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
-REFACTOR: make it better
+refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 :doc:`booleans </data_structures/booleans/booleans>` are represented by the `bool <https://docs.python.org/3/library/functions.html#bool>`_ :doc:`class </classes/classes>` in Python. I can add a test with `unittest.TestCase.assertIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsInstance>`_ to check if an `object <https://docs.python.org/3/glossary.html#term-object>`_ is an instance of a :doc:`class </classes/classes>`
 
 
-* RED: make it fail
+* red: make it fail
 
   I add a test with ``self.assertIsInstance`` to ``test_is_none_a_boolean``
 
@@ -119,7 +119,7 @@ REFACTOR: make it better
 
     AssertionError: None is not an instance of <class 'bool'>
 
-* GREEN: make it pass
+* green: make it pass
 
   I change ``assertIsInstance`` to ``assertNotIsInstance`` in ``test_is_none_a_boolean`` to make the test pass
 
@@ -137,7 +137,7 @@ From the tests I see that
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures/booleans/booleans>`
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
-REFACTOR: make it better
+refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 I want to know if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is equal to any of the other data types in Python
@@ -155,7 +155,7 @@ I want to know if `None <https://docs.python.org/3/library/constants.html?highli
 Is None an integer?
 ========================================================
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I add a new test to compare `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ with `integers <https://docs.python.org/3/library/functions.html#int>`_
@@ -174,7 +174,7 @@ the terminal shows an :ref:`AssertionError`
   AssertionError: -1 is not None
 
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 I change ``assertIsNone`` to ``assertIsNotNone`` in ``test_is_none_an_integer`` to make it pass
@@ -186,13 +186,13 @@ I change ``assertIsNone`` to ``assertIsNotNone`` in ``test_is_none_an_integer`` 
       self.assertIsNotNone(0)
       self.assertIsNotNone(1)
 
-REFACTOR: make it better
+refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 `integers <https://docs.python.org/3/library/functions.html#int>`_ are represented by the `int <https://docs.python.org/3/library/functions.html#int>`_ :doc:`class </classes/classes>` in Python, I can add an instance test like I did with :doc:`booleans </data_structures/booleans/booleans>`
 
 
-* RED: make it fail
+* red: make it fail
 
   I add a ``self.assertIsInstance`` test to ``test_is_none_an_integer``
 
@@ -210,7 +210,7 @@ REFACTOR: make it better
 
     AssertionError: None is not an instance of <class 'int'>
 
-* GREEN: make it pass
+* green: make it pass
 
   I change ``assertIsInstance`` to ``assertNotIsInstance`` in ``test_is_none_an_integer`` to make the test pass
 
@@ -233,7 +233,7 @@ From the tests I see that
 Is None a float?
 ========================================================
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I add a new test to compare `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ with `floats <https://docs.python.org/3/library/functions.html#float>`_
@@ -251,7 +251,7 @@ the terminal shows an :ref:`AssertionError`
   AssertionError: -1.1 is not None
 
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 I change ``assertIsNone`` to ``assertIsNotNone`` in ``test_is_none_a_float`` to make the test pass
@@ -262,13 +262,13 @@ I change ``assertIsNone`` to ``assertIsNotNone`` in ``test_is_none_a_float`` to 
       self.assertIsNotNone(-1.1)
       self.assertIsNotNone(0.2)
 
-REFACTOR: make it better
+refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 `floats <https://docs.python.org/3/library/functions.html#float>`_ are represented by the `float <https://docs.python.org/3/library/functions.html#float>`_ :doc:`class </classes/classes>` in Python, I can do an instance test
 
 
-* RED: make it fail
+* red: make it fail
 
   I add a ``self.assertIsInstance`` line to ``test_is_none_a_float``
 
@@ -285,7 +285,7 @@ REFACTOR: make it better
 
     AssertionError: None is not an instance of <class 'float'>
 
-* GREEN: make it pass
+* green: make it pass
 
   I change ``assertIsInstance`` to ``assertNotIsInstance`` in ``test_is_none_a_float`` to make the test pass
 
@@ -317,7 +317,7 @@ I add a test for `strings <https://docs.python.org/3/library/stdtypes.html#text-
 
 see :doc:`/conventions` for a little more detail
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I add a new failing test to ``test_none.py`` to compare `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ with a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
@@ -335,7 +335,7 @@ and the terminal shows an :ref:`AssertionError`
   AssertionError: '' is not None
 
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 I change ``assertIsNone`` to ``assertIsNotNone`` in ``test_is_none_a_string`` to make it pass
@@ -346,13 +346,13 @@ I change ``assertIsNone`` to ``assertIsNotNone`` in ``test_is_none_a_string`` to
       self.assertIsNotNone('')
       self.assertIsNotNone("text")
 
-REFACTOR: make it better
+refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 `strings <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ are represented by the `str <https://docs.python.org/3/library/stdtypes.html#str>`_ class in Python, I add an instance test
 
 
-* RED: make it fail
+* red: make it fail
 
   I add a failing test to ``test_is_none_a_string`` with a ``self.assertIsInstance`` statement
 
@@ -369,7 +369,7 @@ REFACTOR: make it better
 
     AssertionError: None is not an instance of <class 'str'>
 
-* GREEN: make it pass
+* green: make it pass
 
   To make it pass I change ``assertIsInstance`` to ``assertNotIsInstance``
 
@@ -393,7 +393,7 @@ From the tests I see that
 Is None a tuple?
 ========================================================
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I add a new test to ``test_none.py`` to find out if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a `tuple <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_
@@ -414,7 +414,7 @@ the terminal shows an :ref:`AssertionError`
 
 ``()`` is how `tuples <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_ are represented in Python
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^^
 
 * I change ``assertIsNone`` to ``assertIsNotNone`` in ``test_is_none_a_tuple`` to make the first two lines pass
@@ -450,7 +450,7 @@ From the tests I see that
 - `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures/booleans/booleans>`
 - `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
-REFACTOR: make it better
+refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Based on what I have seen so far, it is safe to assume that `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is only `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ and is not any other data structure
@@ -460,7 +460,7 @@ Based on what I have seen so far, it is safe to assume that `None <https://docs.
 Is None a list?
 ========================================================
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I add a new test to the series of tests to check if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a :doc:`list </data_structures/lists/lists>`
@@ -481,7 +481,7 @@ the terminal shows an :ref:`AssertionError`
 
 ``[]`` is how :doc:`lists </data_structures/lists/lists>` are represented in Python
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 I have done this dance a few times. I change ``assertIsNone`` to ``assertIsNotNone`` and ``assertIsInstance`` to ``assertNotIsInstance`` in ``test_is_none_a_list`` to make it pass.
@@ -501,7 +501,7 @@ With the passing tests I see that
 Is None a set?
 ========================================================
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 following the same pattern from earlier, I add a new failing test for `sets <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_
@@ -520,7 +520,7 @@ the terminal shows an :ref:`AssertionError`
   AssertionError: set() is not None
 
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 I change ``assertIsNone`` to ``assertIsNotNone`` and ``assertIsInstance`` to ``assertNotIsInstance`` in ``test_is_none_a_set`` to make it pass.
@@ -541,7 +541,7 @@ From the tests I see that
 Is None a dictionary?
 ========================================================
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I add a new test to compare `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ with :doc:`dictionaries </data_structures/dictionaries>`
@@ -568,7 +568,7 @@ the terminal shows an :ref:`AssertionError`
 * ``{}`` is how :doc:`dictionaries </data_structures/dictionaries>`  are represented in Python. Wait a minute! `sets <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ are also represented with ``{}``. The difference is that :doc:`dictionaries </data_structures/dictionaries>` contain key-value pairs
 * Do you want to :doc:`read more about dictionaries </data_structures/dictionaries>`?
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 I change the tests to make them pass and can see from the tests that
 

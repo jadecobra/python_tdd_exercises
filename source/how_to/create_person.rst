@@ -24,7 +24,7 @@ requirements
 How to use dictionaries as factories in Python
 ***********************************************
 
-RED: make it fail
+red: make it fail
 ==================
 
 I add an import statement to ``test_person.py``
@@ -58,7 +58,7 @@ which I add to the list of exceptions
   # AttributeError
 
 
-GREEN: make it pass
+green: make it pass
 ====================
 
 * I create a function called ``factory`` in ``person.py`` and the terminal shows the test passed
@@ -68,7 +68,7 @@ GREEN: make it pass
     def factory():
         return None
 
-REFACTOR: make it better
+refactor: make it better
 =========================
 
 * I want to pass in values for ``first_name``, ``last_name``, ``year_of_birth``, ``sex`` and have the :doc:`function </functions/functions>` return a :doc:`dictionary </data_structures/dictionaries>` with the ``first_name``, ``last_name``, ``sex`` and ``age`` calculated from the ``year_of_birth``, so I add more details to ``test_person_factory``
@@ -411,7 +411,7 @@ REFACTOR: make it better
 How to use default keyword arguments in functions
 ***************************************************
 
-RED: make it fail
+red: make it fail
 ==================
 
 * I add a failing test for default values to ``test_person.py``

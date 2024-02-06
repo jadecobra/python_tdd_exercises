@@ -121,7 +121,7 @@ The Test Driven Development cycle is ``RED GREEN REFACTOR``
 * **REFACTOR**: make it better
 
 ******************
-RED: make it fail
+red: make it fail
 ******************
 
 * I open up ``project_name/tests/test_project_name.py`` in the Interactive Development Environment (IDE) and type the following
@@ -210,7 +210,7 @@ This is the ``RED`` part of the Test Driven Development cycle. The error in the 
   - `unittest <https://docs.python.org/3/library/unittest.html>`_ is a module from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_ used for testing
 
 ********************
-GREEN: make it pass
+green: make it pass
 ********************
 
 * I write down :doc:`Exceptions </how_to/exception_handling_programs>` I encounter to become more familiar with them. Time to add :ref:`AssertionError` to the list
@@ -253,7 +253,7 @@ GREEN: make it pass
   *cue CELEBRATION MUSIC AND DANCE!* I am GREEN.
 
 *************************
-REFACTOR: make it better
+refactor: make it better
 *************************
 
 I can make code better by using

@@ -49,7 +49,7 @@ A difference between my expectations and reality (what happens when I run the pr
 AssertionError with None
 ****************************
 
-RED: make it fail
+red: make it fail
 ==================
 
 * I create a new file in the ``tests`` folder with the name ``test_assertion_error.py``
@@ -77,7 +77,7 @@ RED: make it fail
   - The difference is that the ``assert`` at the beginning of the line makes the statement more like "DO NOT PROCEED UNLESS :doc:`False </data_structures/booleans/booleans>` is :ref:`None`"
   - Since :ref:`None` and :doc:`False </data_structures/booleans/booleans>` are not equal, the ``assert`` statement is :doc:`False </data_structures/booleans/booleans>` and python raises an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
-GREEN: make it pass
+green: make it pass
 ====================
 
 When I change the failing line to
@@ -89,13 +89,13 @@ When I change the failing line to
 
 the test passes because the assert statement is now true since :doc:`False </data_structures/booleans/booleans>` is not :ref:`None`
 
-REFACTOR: make it better
+refactor: make it better
 =========================
 
 I can also make assertions with some :doc:`methods </functions/functions>` from the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class
 
 
-* RED: make it fail
+* red: make it fail
 
   I add another failing line using the `unittest.TestCase.assertIsNone <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNone>`_ :doc:`method </functions/functions>`
 
@@ -111,7 +111,7 @@ I can also make assertions with some :doc:`methods </functions/functions>` from 
 
     AssertionError: False is not None
 
-* GREEN: make it pass
+* green: make it pass
 
   when I change the assert statement to
 
@@ -123,7 +123,7 @@ I can also make assertions with some :doc:`methods </functions/functions>` from 
 
   the terminal shows passing tests because the statement is :doc:`True </data_structures/booleans/booleans>`. I can now say that in Python :doc:`False </data_structures/booleans/booleans>` is not :ref:`None`
 
-* RED: make it fail
+* red: make it fail
 
   I add another test to find out how :ref:`None` is related to :doc:`True </data_structures/booleans/booleans>`
 
@@ -141,7 +141,7 @@ I can also make assertions with some :doc:`methods </functions/functions>` from 
 
     E    assert True is None
 
-* GREEN: make it pass
+* green: make it pass
 
   I change the failing line to make the test pass
 
@@ -153,7 +153,7 @@ I can also make assertions with some :doc:`methods </functions/functions>` from 
 
         assert True is not None
 
-* RED: make it fail
+* red: make it fail
 
   I add a line using the `unittest.TestCase.assertIsNone <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNone>`_ :doc:`method </functions/functions>`
 
@@ -172,7 +172,7 @@ I can also make assertions with some :doc:`methods </functions/functions>` from 
 
     AssertionError: True is not None
 
-* GREEN: make it pass
+* green: make it pass
 
   I change the failing line to make the test pass
 
@@ -190,7 +190,7 @@ I can also make assertions with some :doc:`methods </functions/functions>` from 
   - :doc:`True </data_structures/booleans/booleans>` is not :ref:`None`
   - :doc:`False </data_structures/booleans/booleans>` is not :ref:`None`
 
-* RED: make it fail
+* red: make it fail
 
   I add a failing line
 
@@ -211,7 +211,7 @@ I can also make assertions with some :doc:`methods </functions/functions>` from 
 
     E    assert None is not None
 
-* GREEN: make it pass
+* green: make it pass
 
   I change the failing line to make the test pass
 
@@ -226,7 +226,7 @@ I can also make assertions with some :doc:`methods </functions/functions>` from 
 
         assert None is None
 
-* RED: make it fail
+* red: make it fail
 
   I add a failing line using the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ method
 
@@ -248,7 +248,7 @@ I can also make assertions with some :doc:`methods </functions/functions>` from 
 
     AssertionError: unexpectedly None
 
-* GREEN: make it pass
+* green: make it pass
 
   I change ``test_assertion_errors_with_none`` to make it pass
 
@@ -283,7 +283,7 @@ AssertionError with False
 
 Can I raise an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ for things that are :doc:`False </data_structures/booleans/booleans>`?
 
-RED: make it fail
+red: make it fail
 ==================
 
 I add a failing test to ``TestAssertionError`` in ``test_assertion_error.py`` to find out
@@ -299,7 +299,7 @@ the terminal shows a failure
 
   E    assert True is False
 
-GREEN: make it pass
+green: make it pass
 ====================
 
 I change the failing line to make the test pass
@@ -310,7 +310,7 @@ I change the failing line to make the test pass
       assert False is False
 
 
-RED: make it fail
+red: make it fail
 ==================
 
 What if I try the same test using the `unittest.TestCase.assertFalse <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse>`_ :doc:`method </functions/functions>` by adding this line to ``test_assertion_errors_with_false``?
@@ -329,7 +329,7 @@ the terminal shows a failure
 
 this is familiar, it was the first failing test from :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>`
 
-GREEN: make it pass
+green: make it pass
 ====================
 
 I change the failing line to make the test pass
@@ -356,7 +356,7 @@ AssertionError with True
 
 Can I raise an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ for things that are :doc:`True </data_structures/booleans/booleans>`?
 
-RED: make it fail
+red: make it fail
 ==================
 
 I add a failing test to ``TestAssertionError`` in ``test_assertion_error.py``
@@ -372,7 +372,7 @@ the terminal shows a failure
 
   E    assert False is True
 
-GREEN: make it pass
+green: make it pass
 ====================
 
 I change the failing line to make the test pass
@@ -382,7 +382,7 @@ I change the failing line to make the test pass
   def test_assertion_errors_with_true(self):
       assert True is True
 
-RED: make it fail
+red: make it fail
 ==================
 
 What if I try the above test using the `unittest.TestCase.assertTrue <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertTrue>`_ :doc:`method </functions/functions>` ?
@@ -399,7 +399,7 @@ the terminal shows an `AssertionError <https://docs.python.org/3/library/excepti
 
   AssertionError: False is not true
 
-GREEN: make it pass
+green: make it pass
 ====================
 
 I change the failing line to make the test pass
@@ -431,7 +431,7 @@ AssertionError with Equality
 
 I can also make assertions where I compare if two things are the same or equal
 
-RED: make it fail
+red: make it fail
 ==================
 
 I add a new test to ``TestAssertionError`` in ``test_assertion_error.py``
@@ -447,7 +447,7 @@ the terminal shows an `AssertionError <https://docs.python.org/3/library/excepti
 
   E    assert False == None
 
-GREEN: make it pass
+green: make it pass
 ====================
 
 I change the failing line to make the test pass
@@ -459,10 +459,10 @@ I change the failing line to make the test pass
 
 the test passes because :doc:`False </data_structures/booleans/booleans>` is not equal to :ref:`None`
 
-REFACTOR: make it better
+refactor: make it better
 =========================
 
-* RED: make it fail
+* red: make it fail
 
   I add a line with the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ method for equality testing
 
@@ -480,7 +480,7 @@ REFACTOR: make it better
 
   The `unittest.TestCase.assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ :doc:`method </functions/functions>` checks if the two given inputs, :doc:`False </data_structures/booleans/booleans>` and :ref:`None` are equal
 
-* GREEN: make it pass
+* green: make it pass
 
   I change the failing line to make the test pass
 
@@ -500,7 +500,7 @@ REFACTOR: make it better
   * :doc:`True </data_structures/booleans/booleans>` is not :ref:`None`
   * :doc:`False </data_structures/booleans/booleans>` is not :ref:`None` and :doc:`False </data_structures/booleans/booleans>` is not equal to :ref:`None`
 
-* RED: make it fail
+* red: make it fail
 
   I add a new line to ``test_assertion_errors_with_equality``
 
@@ -518,7 +518,7 @@ REFACTOR: make it better
 
     E    assert True == None
 
-* GREEN: make it pass
+* green: make it pass
 
   I change the failing line to make the test pass
 
@@ -530,7 +530,7 @@ REFACTOR: make it better
 
         assert True != None
 
-* RED: make it fail
+* red: make it fail
 
   I add the `unittest.TestCase.assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ :doc:`method </functions/functions>` to ``test_assertion_errors_with_equality``
 
@@ -549,7 +549,7 @@ REFACTOR: make it better
 
     AssertionError: True != None
 
-* GREEN: make it pass
+* green: make it pass
 
   I change the failing line to make the test pass
 
@@ -572,7 +572,7 @@ REFACTOR: make it better
   * :doc:`True </data_structures/booleans/booleans>` is not :ref:`None` and :doc:`True </data_structures/booleans/booleans>` is not equal to :ref:`None`
   * :doc:`False </data_structures/booleans/booleans>` is not :ref:`None` and :doc:`False </data_structures/booleans/booleans>` is not equal to :ref:`None`
 
-* RED: make it fail
+* red: make it fail
 
   There is a pattern here, so I add the other cases from the statements above to  ``test_assertion_errors_with_equality``
 
@@ -600,7 +600,7 @@ REFACTOR: make it better
         assert None != None
         self.assertNotEqual(None, None)
 
-* GREEN: make it pass
+* green: make it pass
 
   then I change each failing line until they all pass
 

@@ -7,7 +7,7 @@ Truth Table: Converse Implication
 This chapter continues the journey of writing conditional statements using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I add a test for converse implication to ``TestBinaryOperations`` in ``test_truth_table.py``
@@ -22,7 +22,7 @@ I add a test for converse implication to ``TestBinaryOperations`` in ``test_trut
 
 the terminal shows an :ref:`AttributeError`
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 * I add a function definition to ``truth_table.py``
@@ -53,7 +53,7 @@ GREEN: make it pass
 
   all the tests pass
 
-REFACTOR: make it better
+refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 * I replace the ``if`` condition using python's implied conditional testing

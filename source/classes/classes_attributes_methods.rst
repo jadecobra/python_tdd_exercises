@@ -9,7 +9,7 @@ How to define a class with attributes
 
 I will now add some tests for attributes since I know how to define a class for attributes
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 
@@ -34,7 +34,7 @@ RED: make it fail
   the terminal shows an :ref:`AttributeError` for a missing attribute in the newly defined class
 
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 * I add an attribute to ``ClassWithAttributes``
@@ -70,7 +70,7 @@ GREEN: make it pass
 
   and the terminal shows all tests passed
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 Let us add more tests with the other python data structures to ``test_classes_with_attributes``
@@ -89,7 +89,7 @@ Let us add more tests with the other python data structures to ``test_classes_wi
 
 the terminal shows an :ref:`AttributeError`
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 I add matching attributes to ``ClassWithAttributes`` to make the tests pass
@@ -115,7 +115,7 @@ How to define a class with methods
 
 I can also define classes with :doc:`methods </functions/functions>` which are function definitions that belong to the class
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I add some tests for class methods to ``TestClasses`` in ``classes.py``
@@ -130,7 +130,7 @@ I add some tests for class methods to ``TestClasses`` in ``classes.py``
 
 and the terminal shows :ref:`AttributeError`
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
@@ -192,7 +192,7 @@ GREEN: make it pass
   and the test passes
 
 
-REFACTOR: make it better
+refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 * I can "make this better" by adding a few more tests to ``test_classes_with_methods`` for fun
@@ -228,7 +228,7 @@ How to define a class with attributes and methods
 
 Since I know how to define classes with methods and how to define classes with attributes, what happens when I define a class with both?
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I add another test for a class that has both attributes and methods
@@ -247,7 +247,7 @@ I add another test for a class that has both attributes and methods
 
 the terminal shows an :ref:`AttributeError`
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 I change ``classes.py`` to make the tests pass by defining the class, attribute and methods
@@ -271,7 +271,7 @@ To view what :doc:`attributes </exceptions/AttributeError>` and ``methods`` are 
 
 The ``dir`` :doc:`method </functions/functions>` returns a :doc:`list </data_structures/lists/lists>` of all attributes and :doc:`methods </functions/functions>` of the object provided to it as input
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I add a test to ``test_classes.py``
@@ -286,7 +286,7 @@ I add a test to ``test_classes.py``
 
 the terminal shows an :ref:`AssertionError` as the expected and real values do not match
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 I copy the values from the terminal to update the expectation of the test

@@ -26,7 +26,7 @@ How to create a class in Python
 How to define a class with pass
 -------------------------------
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I create a new file called ``test_classes.py`` in the ``tests`` directory
@@ -44,7 +44,7 @@ I create a new file called ``test_classes.py`` in the ``tests`` directory
 
 the terminal shows a :ref:`ModuleNotFoundError` because I have an import statement for a module called ``classes``
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 * I add :ref:`ModuleNotFoundError` to the list of exceptions encountered
@@ -117,7 +117,7 @@ GREEN: make it pass
   and the terminal shows passing tests
 
 
-REFACTOR: make it better
+refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Here is a quick review of what has happened so far
@@ -130,7 +130,7 @@ Here is a quick review of what has happened so far
 How to define a class with parentheses
 --------------------------------------
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I add another test to ``TestClasses`` in ``test_classes.py`` to show another way to create a class
@@ -142,7 +142,7 @@ I add another test to ``TestClasses`` in ``test_classes.py`` to show another way
 
 the terminal shows an :ref:`AttributeError`
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
@@ -183,7 +183,7 @@ This makes creating new objects easier because I do not have to reinvent or rewr
 
 To use inheritance I specify the "parent" in parentheses when I define the new object (the child) to establish the relationship
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I will add another test to ``TestClasses`` in ``test_classes.py``
@@ -195,7 +195,7 @@ I will add another test to ``TestClasses`` in ``test_classes.py``
 
 and the terminal shows an :ref:`AttributeError`
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 

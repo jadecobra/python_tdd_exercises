@@ -14,7 +14,7 @@ lists: List Comprehensions
 How to create a List from an Iterable
 ***************************************
 
-RED: make it fail
+red: make it fail
 ==================
 
 I add a file called ``test_list_comprehensions.py`` to the ``tests`` folder with the following code
@@ -50,7 +50,7 @@ the terminal shows an :ref:`AssertionError` because ``a_list`` is no longer empt
   E    AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
 
 
-GREEN: make it pass
+green: make it pass
 ====================
 
 I change the values in the test to match the result
@@ -71,7 +71,7 @@ I change the values in the test to match the result
 
 and the test passes
 
-REFACTOR: make it better
+refactor: make it better
 =========================
 
 * I add another test to check what happens when I use the :doc:`list </data_structures/lists/lists>` constructor on ``container``
@@ -214,7 +214,7 @@ From the tests I see that I can make a :doc:`list </data_structures/lists/lists>
 How to create a List with a For Loop
 ***************************************
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I add a test for creating a list with a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ loop
@@ -242,7 +242,7 @@ the terminal shows an :ref:`AssertionError` for the values of ``a_list`` because
   AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
 
 
-GREEN: make it pass
+green: make it pass
 ====================
 
 * I change the values of the test to match the result
@@ -335,7 +335,7 @@ From the tests I see that I can make a :doc:`list </data_structures/lists/lists>
 How to create a List with List Comprehensions
 **********************************************
 
-RED: make it fail
+red: make it fail
 ==================
 
 I add a failing test to ``TestListComprehensions``
@@ -364,7 +364,7 @@ the terminal shows an :ref:`AssertionError`
   AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
 
 
-GREEN: make it pass
+green: make it pass
 =====================
 
 * I change the values to make it match the result
@@ -465,7 +465,7 @@ Is that in the first case I have to
 
 With the list comprehension I can get the same result with less words, lines and steps
 
-REFACTOR: make it better
+refactor: make it better
 =========================
 
 There is more I can do with `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_, I can add conditions to the operations performed
@@ -690,7 +690,7 @@ You also know how to do it with less words using `list comprehensions <https://d
 
 
 ***************************************
-BONUS: REFACTOR: make it better
+BONUS: refactor: make it better
 ***************************************
 I have written the same thing multiple times in these tests and since the programming gods told me `Do Not Repeat Yourself! <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_ It is time to remove the repetition in the code.
 

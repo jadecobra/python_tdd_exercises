@@ -17,7 +17,7 @@ Reviewing the tests I have so far, I know that
 * :doc:`True </data_structures/booleans/booleans>` is :doc:`True </data_structures/booleans/booleans>`
 
 
-RED: make it fail
+red: make it fail
 ~~~~~~~~~~~~~~~~~
 
 I add a test for logical disjunction to ``TestBinaryOperations`` in ``test_truth_table.py``
@@ -32,7 +32,7 @@ I add a test for logical disjunction to ``TestBinaryOperations`` in ``test_truth
 
 and the terminal shows an :ref:`AttributeError`
 
-GREEN: make it pass
+green: make it pass
 ~~~~~~~~~~~~~~~~~~~
 
 
@@ -57,7 +57,7 @@ GREEN: make it pass
 
   the terminal shows passing tests
 
-REFACTOR: make it better
+refactor: make it better
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 

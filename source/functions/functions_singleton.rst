@@ -5,7 +5,7 @@ functions: singleton
 
 A singleton function is a function that returns the same output every time it is called.
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I add a test to ``test_functions.py``
@@ -17,7 +17,7 @@ I add a test to ``test_functions.py``
 
 the terminal shows an :ref:`AttributeError`
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 I change ``functions.py`` to make it pass
@@ -27,7 +27,7 @@ I change ``functions.py`` to make it pass
   def singleton():
       return 'my_first_name'
 
-REFACTOR: make it better
+refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 I add a new test that checks if a singleton that accepts inputs returns the same value regardless of the inputs

@@ -27,7 +27,7 @@ in other words
 
 ``functions`` are defined using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword, a name, parentheses and a colon at the end
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I create a file called ``test_functions.py`` in the ``tests`` folder and add the following failing test
@@ -51,7 +51,7 @@ the terminal shows a :ref:`ModuleNotFoundError`\ , and I add it to the list of e
   # AssertionError
   # ModuleNotFoundError
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 * I create a file called ``functions.py`` in the project folder and the terminal shows an :ref:`AttributeError`\ , which I add to the list of exceptions encountered
@@ -77,10 +77,10 @@ GREEN: make it pass
   * `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is a placeholder keyword which allows the function definition to follow python syntax rules
   * the test passes because in Python all functions return :ref:`None` by default, like the function has an invisible line that says ``return None``
 
-REFACTOR: make it better
+refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-* RED: make it fail
+* red: make it fail
 
   I add a new failing test to ``TestFunctions`` in ``test_functions.py`` to check that functions always return :ref:`None`
 
@@ -91,7 +91,7 @@ REFACTOR: make it better
 
   the terminal shows an :ref:`AttributeError`
 
-* GREEN: make it pass
+* green: make it pass
 
   I add a new function to ``functions.py`` to make the test pass, this time with a ``return`` statement instead of `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
 
@@ -104,7 +104,7 @@ REFACTOR: make it better
 
   I defined 2 functions with different statements in their body but they both return the same result, because "in Python all functions return :ref:`None` by default, like the function has an invisible line that says ``return None``"
 
-* RED: make it fail
+* red: make it fail
 
   I add one more test to the ``TestFunctions`` class in ``test_functions.py`` to help drive home the point
 
@@ -116,7 +116,7 @@ REFACTOR: make it better
           )
 
   the terminal shows an :ref:`AttributeError`
-* GREEN: make it pass
+* green: make it pass
 
   from the `Zen of Python <https://peps.python.org/pep-0020/>`_ - ``Explicit is better than implicit.`` I add a function definition to ``functions.py`` this time with an explicit ``return`` statement showing the value returned
 

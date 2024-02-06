@@ -30,7 +30,7 @@ requirements
 How to handle a ModuleNotFoundError
 ************************************
 
-RED: make it fail
+red: make it fail
 ==================
 
 I replace ``test_failure`` in ``test_exceptions.py``
@@ -56,7 +56,7 @@ I add it to the list of exceptions encountered
   # AssertionError
   # ModuleNotFoundError
 
-GREEN: make it pass
+green: make it pass
 =====================
 
 I can take care of this error by creating the module, but I want to catch or handle the exception in the test as a way to show that a ``ModuleNotFoundError`` was raised when I try to import ``non_existent_module``
@@ -78,7 +78,7 @@ and the terminal shows passing tests. How does all this work?
   - `read more about with statement context managers <https://docs.python.org/3/reference/datamodel.html#with-statement-context-managers>`_
   - `read PEP 343 - The "with" Statement <https://peps.python.org/pep-0343/>`_
 
-REFACTOR: make it better
+refactor: make it better
 =========================
 
 I can use this information to test that a particular exception is raised
@@ -87,7 +87,7 @@ I can use this information to test that a particular exception is raised
 How to handle an AttributeError
 ************************************
 
-RED: make it fail
+red: make it fail
 ==================
 
 * I add a new failing test
@@ -130,7 +130,7 @@ RED: make it fail
     # NameError
     # AttributeError
 
-GREEN: make it pass
+green: make it pass
 =====================
 
 I add a ``with self.assertRaises`` context to ``test_catching_attribute_errors_in_tests``
@@ -143,7 +143,7 @@ I add a ``with self.assertRaises`` context to ``test_catching_attribute_errors_i
 
 the terminal shows passing tests. I will do it again with :doc:`functions </functions/functions>` for fun
 
-RED: make it fail
+red: make it fail
 ==================
 
 I add a failing line that raises an :ref:`AttributeError` to ``test_catching_attribute_errors_in_tests``
@@ -161,7 +161,7 @@ the terminal shows an :ref:`AttributeError` because ``non_existent_function`` do
 
   AttributeError: module 'module' has no attribute 'non_existent_function'
 
-GREEN: make it pass
+green: make it pass
 ====================
 
 I add an ``assertRaises`` context and indent the failing line to place it within the context to make the test pass
@@ -174,7 +174,7 @@ I add an ``assertRaises`` context and indent the failing line to place it within
       with self.assertRaises(AttributeError):
           module.non_existent_function()
 
-RED: make it fail
+red: make it fail
 ==================
 
 I add a failing line that raises an :ref:`AttributeError` for :doc:`classes </classes/classes>` to ``test_catching_attribute_errors_in_tests``
@@ -194,7 +194,7 @@ the terminal shows an :ref:`AttributeError`
 
   AttributeError: module 'module' has no attribute 'NonExistentClass'
 
-GREEN: make it pass
+green: make it pass
 ====================
 
 I put the failing line in an ``assertRaises`` context to make the test pass
@@ -209,7 +209,7 @@ I put the failing line in an ``assertRaises`` context to make the test pass
       with self.assertRaises(AttributeError):
           module.NonExistentClass()
 
-REFACTOR: make it better
+refactor: make it better
 ==========================
 
 I just created the same context 3 times. The ``self.assertRaises`` catches an :ref:`AttributeError` in each case. I only need to state it once and place all the lines that can raise the same error underneath it to remove the repetition

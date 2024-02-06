@@ -6,7 +6,7 @@ functions: passthrough
 A passthrough :doc:`function </functions/functions>` is one that returns the input it receives as output
 
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I add a failing test to the ``TestFunctions`` class in ``test_functions.py``
@@ -18,7 +18,7 @@ I add a failing test to the ``TestFunctions`` class in ``test_functions.py``
 
 the terminal shows an :ref:`AttributeError`
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
@@ -69,13 +69,13 @@ GREEN: make it pass
 
   the terminal shows passing tests. I am genius!
 
-REFACTOR: make it better
+refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Wait a minute! Something is not quite right here. The definition for a ``passthrough`` function was that it returned the same thing it was given, the test passes when :doc:`False </data_structures/booleans/booleans>` is given as input, will it still pass when another value is given or will it always return :doc:`False </data_structures/booleans/booleans>`? Time to write a test
 
 
-* RED: make it fail
+* red: make it fail
 
   I add a new test to ``test_passthrough_function`` in ``TestFunctions`` in ``test_functions.py``
 
@@ -93,7 +93,7 @@ Wait a minute! Something is not quite right here. The definition for a ``passthr
 
   the function returns :doc:`False </data_structures/booleans/booleans>` instead of :doc:`True </data_structures/booleans/booleans>` in the second case, confirming my suspicions, I am not all the way genius, yet
 
-* GREEN: make it pass
+* green: make it pass
 
   I  change the definition of ``passthrough`` in ``functions.py``
 
@@ -104,7 +104,7 @@ Wait a minute! Something is not quite right here. The definition for a ``passthr
 
   the terminal shows passing tests. I have more confidence that the passthrough function will likely return the input data it is given. I will add more tests for good measure using the other python data structures
 
-* REFACTOR: make it better
+* refactor: make it better
 
   I add more tests to ``test_passthrough_function``
 

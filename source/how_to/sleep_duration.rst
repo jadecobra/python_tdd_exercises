@@ -11,7 +11,8 @@ In this chapter I take a look at building a program that returns the amount of t
 test_duration_w_hours_only
 ========================================================
 
-RED: make it fail
+red: make it fail
+--------------------------------------------------------
 
 * I open a terminal and call :ref:`createPythonTdd.sh` with ``sleep_duration`` as the project name
 
@@ -52,7 +53,8 @@ RED: make it fail
 
     NameError: name 'sleep_duration' is not defined
 
-GREEN: make it pass
+green: make it pass
+--------------------------------------------------------
 
 * I add the error to the list of exceptions encountered
 
@@ -168,7 +170,8 @@ GREEN: make it pass
 
   and the test passes. We are green.
 
-REFACTOR: make it better
+refactor: make it better
+--------------------------------------------------------
 
 The ``duration`` :doc:`function </functions/functions>` currently returns ``1`` no matter what inputs are given. It has to calculate the difference between ``wake_time`` and ``sleep_time`` to meet the requirements.
 
@@ -246,11 +249,12 @@ I could write a test case for every possible sleep and wake time, or write one t
   I need to find a way to convert the timestamp from a string_ to a number.
 
 test_string_methods_and_attributes
---------------------------------------------------------
+========================================================
 
 The two inputs are currently in this format - ``XX:00``. If I can get the first 2 characters and convert them to a number, I can calculate the difference since Python can do :doc:`arithmetic </how_to/calculator>`.
 
-RED: make it fail
+red: make it fail
+--------------------------------------------------------
 
 * I use the dir_ :doc:`function </functions/functions>` to see what :doc:`methods </functions/functions>` and :doc:`attributes </exceptions/AttributeError>` of strings_ can help me break a string_ apart or get the characters I want from it
 
@@ -460,9 +464,10 @@ RED: make it fail
   the split_ :doc:`method </functions/functions>` looks like a good solution since it splits up a word on a given separator
 
 test_splitting_a_string
---------------------------------------------------------
+========================================================
 
-RED: make it fail
+red: make it fail
+--------------------------------------------------------
 
 * I remove ``help(str)`` and add a failing test for the split_ :doc:`method </functions/functions>` to help me understand it
 
@@ -483,7 +488,8 @@ RED: make it fail
 
     AssertionError: ['01:23'] != None
 
-GREEN: make it pass
+green: make it pass
+--------------------------------------------------------
 
 * I change the expectation to make the test pass
 
@@ -501,7 +507,8 @@ GREEN: make it pass
 
     TypeError: unsupported operand type(s) for -: 'str' and 'str'
 
-REFACTOR: make it better
+refactor: make it better
+--------------------------------------------------------
 
 * I want to split_ the string_ on a ``separator`` so I get the separate parts, something like ``['01', '23']`` with ``:`` as the separator. I change the expectation of the test to match this idea
 
@@ -547,7 +554,8 @@ REFACTOR: make it better
 
     TypeError: unsupported operand type(s) for -: 'list' and 'list'
 
-RED: make it fail
+red: make it fail
+--------------------------------------------------------
 
 * I only need the first part of the list and can get the specific item by using its index. Python uses `zero-based indexing`_ so the first item is at index ``0`` and the second item is at index ``1``. See :doc:`/data_structures/lists/lists` for more. I add tests for getting specific parts of the :doc:`list </data_structures/lists/lists>` created from splitting a string_ to ``test_splitting_a_string``
 
@@ -578,7 +586,8 @@ RED: make it fail
 
   this is closer to what I want
 
-GREEN: make it pass
+green: make it pass
+--------------------------------------------------------
 
 * I change the expected value in the test to match the value in the terminal
 
@@ -620,11 +629,12 @@ GREEN: make it pass
   the terminal shows a :ref:`TypeError` for an unsupported operation of trying to subtract one string_ from another. I know from ``test_splitting_a_string`` that the strings being subtracted are the values to the left of the separator ``:``, not the entire values of ``wake_time`` and ``sleep_time``. For example, if the given ``wake_time`` is ``'02:00'`` and the given ``sleep_time`` is ``'01:00'``, the program tries to subtract ``'01'`` from ``'02'`` which is different from trying to subtract ``1`` from ``2``, ``'01'`` is a string_ and ``1`` is a number
 
 test_converting_string_to_integer
+========================================================
+
+The next task is to convert the string_ to a number so I can do the subtraction
+
+red: make it fail
 --------------------------------------------------------
-
-The next task is to convert the string_ to a number so I can do the subtraction.
-
-RED: make it fail
 
 * I disable the current failing test by using the `unittest.skip decorator`_
 
@@ -652,7 +662,8 @@ RED: make it fail
 
     AssertionError: 12 != 0
 
-GREEN: make it pass
+green: make it pass
+--------------------------------------------------------
 
 * I change the test to match the expectation
 
@@ -814,7 +825,8 @@ test_duration_w_hours_and_minutes
 
 For the ``duration`` :doc:`function </functions/functions>` to meet the requirements, it has to accept timestamps with hours and minutes but it currently returns the right duration when given sleep time and wake wake time hours, without taking minutes into account in the calculation.
 
-RED: make it fail
+red: make it fail
+--------------------------------------------------------
 
 I add a failing test in ``test_sleep_duration.py`` that takes minutes into account
 
@@ -849,7 +861,8 @@ the terminal shows an :ref:`AssertionError` that looks like this
 
 the expected duration is now a string_ that contains the subtraction of the sleep hour from the wake hour, and the subtraction of the sleep minutes from the wake minutes, separated by ``:``. For example, when I have a ``wake_time`` of ``'08:30'`` and a ``sleep_time`` of ``'07:11'``, I should have ``'01:19''`` as the output
 
-GREEN: make it pass
+green: make it pass
+--------------------------------------------------------
 
 * I change the output of the ``duration`` :doc:`function </functions/functions>` to match the format of the expected value in the test
 
@@ -966,15 +979,17 @@ GREEN: make it pass
             f'{difference_hours:02}:00'
         )
 
-REFACTOR: make it better
+refactor: make it better
+--------------------------------------------------------
 
-* ``test_duration_w_hours_and_minutes`` uses a random number from ``0`` up to and including ``23`` for hours, and a random number from ``0`` up to and including ``59`` for minutes. This means it covers all timestamps from ``00:00`` up to and including ``23:59``, which is all the hours and minutes in a day. I remove ``test_duration_w_hours_only`` since the timestamps it tests are already included in ``test_duration_w_hours_and_minutes``
+``test_duration_w_hours_and_minutes`` uses a random number from ``0`` up to and including ``23`` for hours, and a random number from ``0`` up to and including ``59`` for minutes. This means it covers all timestamps from ``00:00`` up to and including ``23:59``, which is all the hours and minutes in a day. I remove ``test_duration_w_hours_only`` since the timestamps it tests are already included in ``test_duration_w_hours_and_minutes``
 
 test_duration_calculation
---------------------------------------------------------
+========================================================
 * The ``duration`` function currently returns a subtraction of hours and a subtraction of minutes which is not accurate for calculating real differences between two timestamps. For instance when it is given a wake time of ``3:30`` and a sleep time of ``2:59`` it should return ``00:31`` but it returns ``01:-29`` which is not a real duration. This means that even though the tests are passing, once again the ``duration`` function does not meet the requirement of calculating the difference between two timestamps. I need a better way.
 
-RED: Make It Fail
+red: make it fail
+--------------------------------------------------------
 
 * I add a new failing test for the specific example to ``test_sleep_duration.py``
 
@@ -1056,55 +1071,69 @@ RED: Make It Fail
   I have passing tests again
 
 test_floor_aka_integer_division
+========================================================
+
+red: make it fail
 --------------------------------------------------------
 
-* the ``//`` operator returns the whole number result of diving one number by another rounded down to the nearest integer, I add a test to show this
+the ``//`` operator returns the whole number result of diving one number by another rounded down to the nearest integer, I add a test to show this
 
-  .. code-block:: python
+.. code-block:: python
 
-    def test_floor_aka_integer_division(self):
-        self.assertEqual(5//2, 0)
+  def test_floor_aka_integer_division(self):
+      self.assertEqual(5//2, 0)
 
-    def test_duration_w_hours_and_minutes(self):
-    ...
+  def test_duration_w_hours_and_minutes(self):
+  ...
 
-  and the terminal shows an :ref:`AssertionError` ::
+and the terminal shows an :ref:`AssertionError` ::
 
-    AssertionError: 2 != 0
+  AssertionError: 2 != 0
 
-  I change the test to use the correct value, the result of dividing `5` by `2` is `2` with a remainder of `1`
+green: make it pass
+--------------------------------------------------------
 
-  .. code-block:: python
+I change the test to use the correct value, the result of dividing `5` by `2` is `2` with a remainder of `1`
 
-    def test_floor_aka_integer_division(self):
-        self.assertEqual(5//2, 2)
+.. code-block:: python
+
+  def test_floor_aka_integer_division(self):
+      self.assertEqual(5//2, 2)
 
 test_modulo_operation
+========================================================
+
+red: make it fail
 --------------------------------------------------------
 
-* the ``%`` operator returns the remainder from diving one number by another, I add a test to show this
+the ``%`` operator returns the remainder from diving one number by another, I add a test to show this
 
-  .. code-block:: python
+.. code-block:: python
 
-    def test_modulo_operation(self):
-        self.assertEqual(5%2, 2)
+  def test_modulo_operation(self):
+      self.assertEqual(5%2, 2)
 
-    def test_duration_w_hours_and_minutes(self):
-    ...
+  def test_duration_w_hours_and_minutes(self):
+  ...
 
-  and the terminal shows an :ref:`AssertionError` ::
+and the terminal shows an :ref:`AssertionError` ::
 
-    AssertionError: 1 != 2
+  AssertionError: 1 != 2
 
-  I change the test to use the correct value, the result of dividing `5` by `2` leaves a remainder of `1`
+green: make it pass
+--------------------------------------------------------
 
-  .. code-block:: python
+I change the test to use the correct value, the result of dividing `5` by `2` leaves a remainder of `1`
 
-    def test_modulo_operation(self):
-        self.assertEqual(5%2, 1)
+.. code-block:: python
 
-* I can remove the second return statement from the ``duration`` function because I have a working solution that is better than the previous one
-* I can also write a function to get the total minutes from a timestamp and call it in the ``duration`` function
+  def test_modulo_operation(self):
+      self.assertEqual(5%2, 1)
+
+----
+
+* I remove the second return statement from the ``duration`` function because I have a working solution that is better than the previous one
+* I write a function to get the total minutes from a timestamp and call it in the ``duration`` function
 
   .. code-block:: python
 
@@ -1162,7 +1191,8 @@ test_duration_w_earlier_wake_than_sleep_time
 
 What happens when the ``duration`` function is given a ``wake_time`` that is earlier than a ``sleep_time``?
 
-RED: make it fail
+red: make it fail
+--------------------------------------------------------
 
 I add a new failing test to ``test_sleep_duration.py`` to find out
 
@@ -1183,7 +1213,8 @@ the terminal shows an :ref:`AssertionError`
 
   AssertionError: '-1:00' != ''
 
-GREEN: make it pass
+green: make it pass
+--------------------------------------------------------
 
 * The ``duration`` function currently returns negative numbers when given a ``wake_time`` that is earlier than a ``sleep_time``. It makes it possible to measure a time traveling sleep scenario where the traveler can go to sleep in the present and wake up in the past. I want to change the function to only process durations where the wake time happens after the sleep time, time traveling is too complicated
 
@@ -1353,7 +1384,8 @@ test_duration_w_given_date_and_time
 
 So far the ``duration`` function has only been tested with timestamps that are hours and minutes only. The assumption has been that they occur on the same day, but I could fall asleep on a Monday and wake up on a Tuesday. How would the ``duration`` function behave when it is given different dates?
 
-RED: make it fail
+red: make it fail
+--------------------------------------------------------
 
 * I add a failing test to ``test_sleep_duration.py`` based on ``test_duration_w_hours_and_minutes`` and call it ``test_duration_w_given_date_and_time`` to test the ``duration`` function with a date, hours and minutes
 
@@ -1407,7 +1439,8 @@ RED: make it fail
 
     invalid literal for int() with base 10: '31/12/99 10'
 
-GREEN: make it pass
+green: make it pass
+--------------------------------------------------------
 
 * The ``split`` function was given a separator of ``:`` when we only used hours and minutes, but behaves differently when I add a date. I add a test to ``test_splitting_a_string`` to show this
 
@@ -1490,9 +1523,10 @@ GREEN: make it pass
 * I add tests using the examples in the documentation to help me understand how to use the datetime_ module
 
 test_datetime_datetime_objects
---------------------------------------------------------
+========================================================
 
-RED: Make It Fail
+red: make it fail
+--------------------------------------------------------
 
 * I add a test for `datetime.datetime`_ objects to ``test_sleep_duration.py`` based on `Examples of usage: datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_
 
@@ -1560,9 +1594,10 @@ RED: Make It Fail
     * ``%M`` is for minutes
 
 test_subtracting_datetime_datetime_objects
---------------------------------------------------------
+========================================================
 
-RED: make it fail
+red: make it fail
+--------------------------------------------------------
 
 * I add a test based on `Examples of usage: timedelta <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-timedelta>`_ for subtracting two `datetime.datetime`_ objects
 
@@ -1600,7 +1635,8 @@ RED: make it fail
 
     AssertionError: datetime.timedelta(seconds=3600) != 1
 
-GREEN: make it pass
+green: make it pass
+--------------------------------------------------------
 
 * I copy the value on the left of the :ref:`AssertionError` and replace the expected value in the test
 
@@ -1625,9 +1661,10 @@ With these passing tests. I see that I can
 - subtract one `datetime.datetime`_ object from another to get a `datetime.timedelta`_ object
 
 test_converting_timedelta_to_string
---------------------------------------------------
+========================================================
 
-RED: make it fail
+red: make it fail
+--------------------------------------------------------
 
 * So far the `datetime.timedelta`_ object I get shows seconds, but I want the result as a string. I add a test to see if I can change it to a string_ using the `str <https://docs.python.org/3/library/stdtypes.html#str>`_ constructor
 
@@ -1648,7 +1685,8 @@ RED: make it fail
 
     AssertionError: '2:00:00' != ''
 
-GREEN: make it pass
+green: make it pass
+--------------------------------------------------------
 
 * I change the expected value in the test to match the value from the terminal
 
@@ -1860,7 +1898,8 @@ From the tests so far I know that I can
 
   and all the tests are passing. Things are green all around
 
-REFACTOR: make it better
+refactor: make it better
+--------------------------------------------------------
 
 * I remove some repetition from ``test_duration_w_given_date_and_time`` by using variables for the datetime objects
 

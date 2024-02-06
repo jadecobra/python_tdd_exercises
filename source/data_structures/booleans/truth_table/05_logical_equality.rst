@@ -21,7 +21,7 @@ So far the tests have shown that for any boolean operation involving 2 inputs: `
 * when there are multiple outcomes I only need to write the condition for the special case and use ``else`` for the others
 
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I add a test for logical equality to ``TestBinaryOperations`` in ``test_truth_table.py``
@@ -36,7 +36,7 @@ I add a test for logical equality to ``TestBinaryOperations`` in ``test_truth_ta
 
 and the terminal shows an :ref:`AttributeError`
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
@@ -71,7 +71,7 @@ GREEN: make it pass
 
   Green! All tests pass
 
-REFACTOR: make it better
+refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 What can I do to make this better?

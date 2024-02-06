@@ -19,7 +19,7 @@ requirements
 Solve the IndentationError
 --------------------------
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 
@@ -47,7 +47,7 @@ RED: make it fail
 
   python raises an ``IndentationError`` for line 2 because it was not expecting the indentation there. Indentation has meaning in Python and in this case it does not meet the predefined rules for indentation
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
@@ -60,7 +60,7 @@ GREEN: make it pass
 
   the terminal shows passing tests
 
-REFACTOR: make it better
+refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 add more indentation errors to ``test_indentation_error.py``
@@ -86,7 +86,7 @@ Solve the IndentationError for functions
 
 add more tests, this time indentation errors with functions *noting the difference in spacing*
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 
@@ -106,7 +106,7 @@ RED: make it fail
     def function():
      pass
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
@@ -133,7 +133,7 @@ Solve the IndentationError in Classes
 
 add more tests, this time to raise indentation errors for :doc:`Classes </classes/classes>` definitions *noting the difference in spacing*
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 *
@@ -156,7 +156,7 @@ RED: make it fail
 
     E  IndentationError: expected an indented block after class definition on line 18
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
@@ -176,7 +176,7 @@ GREEN: make it pass
 Solve the IndentationError in Classes with Methods
 --------------------------------------------------
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 
@@ -202,7 +202,7 @@ RED: make it fail
 
     E  IndentationError: expected an indented block after function definition on line 28
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
@@ -225,7 +225,7 @@ GREEN: make it pass
 Solve the IndentationError in Classes with Attributes
 -----------------------------------------------------
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 
@@ -245,7 +245,7 @@ RED: make it fail
 
     E  IndentationError: unexpected indent
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
@@ -259,7 +259,7 @@ GREEN: make it pass
         attribute = None
         attribute = None
 
-REFACTOR: make it better
+refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Indentation matters in Python because it is how blocks of code are segmented. When a :doc:`function </functions/functions>` is defined, all the statements that belong to it are indented, same with a :doc:`class </classes/classes>`, all the :doc:`methods </functions/functions>` and attributes that belong to it are indented underneath the definition

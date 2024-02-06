@@ -21,7 +21,7 @@ requirements
 ----
 
 *******************
-RED: make it fail
+red: make it fail
 *******************
 
 I add a test to ``test_telephone.py``
@@ -54,7 +54,7 @@ which I add to the list of exceptions
   # NameError
 
 **********************
-GREEN: make it pass
+green: make it pass
 **********************
 
 * I remove ``test_failure`` then add an import statement for the ``telephone`` module
@@ -147,12 +147,12 @@ GREEN: make it pass
         return 'I received this message: hello'
 
 **************************
-REFACTOR: make it better
+refactor: make it better
 **************************
 
 The problem with this solution is that no matter what value I send to the ``text`` :doc:`function </functions/functions>` it will always return ``'I received this message: hello'``. I need to make it return a value based on the input it receives
 
-RED: make it fail
+red: make it fail
 =========================
 
 I add a new failing test to ``test_text_messages``
@@ -176,7 +176,7 @@ the terminal shows an :ref:`AssertionError`
 
   AssertionError: 'I received this message: hello' != 'I received this message: yes'
 
-GREEN: make it pass
+green: make it pass
 =========================
 
 I change the ``text`` :doc:`function </functions/functions>` in ``telephone.py`` to use an ``f`` string which allows passing variable values to strings. This is called `string interpolation <https://peps.python.org/pep-0498/>`_
@@ -194,7 +194,7 @@ Passing Data Structures
 
 I want to try this with other python data structures to see what happens
 
-RED: make it fail
+red: make it fail
 =========================
 
 I add a new failing test to ``test_text_messages``
@@ -221,7 +221,7 @@ the terminal shows an :ref:`AssertionError`
 
   AssertionError: 'I received this message: None' != 'I received this message: "None"'
 
-GREEN: make it pass
+green: make it pass
 =========================
 
 I change the test to match the expected value
@@ -237,7 +237,7 @@ I change the test to match the expected value
 
 the terminal shows passing tests
 
-REFACTOR: make it better
+refactor: make it better
 =========================
 
 As an exercise I add more tests to ``test_text_messages`` to see what happens when I pass different data structures to the ``text`` function

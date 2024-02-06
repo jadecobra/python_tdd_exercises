@@ -21,7 +21,7 @@ A `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ 
 How to create a list
 **********************
 
-RED: make it fail
+red: make it fail
 ==================
 
 I create a file called ``test_lists.py`` in the ``tests`` folder with the following code
@@ -43,7 +43,7 @@ the terminal shows a :ref:`TypeError`
   TypeError: list expected at most 1 argument, got 4
 
 
-GREEN: make it pass
+green: make it pass
 ===================
 * I add the error to the list of exceptions encountered
 
@@ -80,7 +80,7 @@ GREEN: make it pass
 
   the test passes
 
-REFACTOR: make it better
+refactor: make it better
 =========================
 
 * I can create a list with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor but the passing test also shows I can create a list with ``[]`` which uses less characters. I add a test for it
@@ -109,7 +109,7 @@ REFACTOR: make it better
 How to add an item to a list
 *******************************
 
-RED: make it fail
+red: make it fail
 ===================
 
 I add a test to for adding items to an existing list with the `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :doc:`method </functions/functions>`
@@ -133,7 +133,7 @@ the terminal shows an :ref:`AssertionError` because the values in ``a_list`` cha
 
   AssertionError: Lists differ: [0, 1, 2, 3, 4] != [0, 1, 2, 3]
 
-GREEN: make it pass
+green: make it pass
 ===================
 
 I change the values in the test to make it match the result
@@ -156,7 +156,7 @@ I started with a list that contained 4 things, added something using the `append
 How to remove an item from a list
 ***********************************
 
-RED: make it fail
+red: make it fail
 ===================
 
 Since I know how to add an item to a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ I want to add a test for removing an item from a list using the `remove <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ method
@@ -175,7 +175,7 @@ the terminal shows an :ref:`AssertionError` because the values in ``a_list`` no 
 
   AssertionError: Lists differ: [0, 1, 3] != [0, 1, 2, 3]
 
-GREEN: make it pass
+green: make it pass
 ===================
 
 I change the test to make the values on the right match the result and the test passes
@@ -188,7 +188,7 @@ I change the test to make the values on the right match the result and the test 
         a_list.remove(2)
         self.assertEqual(a_list, [0, 1, 3])
 
-REFACTOR: make it better
+refactor: make it better
 =========================
 
 What happens when there is more than one of the same item in a list? How does Python decide which of them to remove when I call ``.remove(item)`` on a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_?
@@ -227,7 +227,7 @@ What happens when there is more than one of the same item in a list? How does Py
 How to remove the last item from a list
 ****************************************
 
-RED: make it fail
+red: make it fail
 ===================
 
 I add a test for removing the last item from a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
@@ -252,7 +252,7 @@ the terminal shows an :ref:`AssertionError` for the test that checks the value o
   >       self.assertEqual(last_item, 0)
   E       AssertionError: 3 != 0
 
-GREEN: make it pass
+green: make it pass
 ===================
 
 * I change the value in the test to match the actual value popped
@@ -288,7 +288,7 @@ How to get a specific item from a list
 
 To view an item in a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ I can provide the position as an index in ``[]`` to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. Python uses zero-based indexing which means the positions of items starts at 0. I can also view items from the right side of the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ by using negative numbers
 
-RED: make it fail
+red: make it fail
 ===================
 
 I add a failing test for indexing a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
@@ -314,7 +314,7 @@ the terminal shows an :ref:`AssertionError`
   AssertionError: 'first' != ''
   - first
 
-GREEN: make it pass
+green: make it pass
 ===================
 
 * I change the value in the test to make the failing line pass
@@ -387,7 +387,7 @@ IndexError
 
 An IndexError_ is raised when I try to get an item from a list but use a number that is greater than the number of items in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_.
 
-RED: make it fail
+red: make it fail
 ===================
 
 I add a failing test to show this
@@ -405,7 +405,7 @@ the terminal shows an IndexError_
   >       a_list[5]
   E       IndexError: list index out of range
 
-GREEN: make it pass
+green: make it pass
 ===================
 
 * I add IndexError_ to the list of exceptions encountered
@@ -428,7 +428,7 @@ GREEN: make it pass
 
   `unittest.TestCase.assertRaises <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises>`_ takes an `Exception <https://docs.python.org/3/library/exceptions.html?highlight=exception#Exception>`_ as input and confirms that it is raised. You can read more about ``self.assertRaises`` in :doc:`/how_to/exception_handling_tests`
 
-REFACTOR: make it better
+refactor: make it better
 =========================
 
 * I add one more line to test indexing with a negative number that is greater than the length of the list
@@ -458,7 +458,7 @@ How to view the attributes and methods of a list
 
 The chapter on :doc:`/classes/classes` shows how to view the :doc:`attributes </exceptions/AttributeError>` and :doc:`methods </functions/functions>` of an `object <https://docs.python.org/3/glossary.html#term-object>`_ by using the dir_ :doc:`function </functions/functions>`. Let us try it for `lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
 
-RED: make it fail
+red: make it fail
 ===================
 
 I add a failing test using the dir_ :doc:`function </functions/functions>`
@@ -477,7 +477,7 @@ the terminal shows an :ref:`AssertionError`
 
     AssertionError: Lists differ: ['__add__', '__class__', '__class_getitem_[552 chars]ort'] != []
 
-GREEN: make it pass
+green: make it pass
 ===================
 
 * The terminal also shows a recommendation on how to see the difference between ``dir(list)`` and ``[]``
@@ -566,7 +566,7 @@ I copy the items from the terminal and remove the extra characters
 
 the terminal shows passing tests
 
-REFACTOR: make it better
+refactor: make it better
 =========================
 
 There are more :doc:`methods </functions/functions>` listed than what I have reviewed. Based on their names, I can make a guess as to what they do, and I know some from the tests above

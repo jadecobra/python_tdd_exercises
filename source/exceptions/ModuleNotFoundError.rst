@@ -21,7 +21,7 @@ requirements
 ----
 
 *********************
-RED: make it fail
+red: make it fail
 *********************
 
 Open a new file in the Interactive Development Environment editor and save it as ``test_module_not_found_error.py`` in the ``tests`` folder created from :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>`
@@ -154,7 +154,7 @@ Looking at the traceback starting from the bottom
   If you want more information about imports you can read `The Import Statement <https://docs.python.org/3/reference/simple_stmts.html#import>`_
 
 *********************
-GREEN: make it pass
+green: make it pass
 *********************
 
 * create ``module_0.py`` in the ``project_name`` folder and the terminal shows

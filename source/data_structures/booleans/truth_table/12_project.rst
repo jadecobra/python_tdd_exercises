@@ -10,7 +10,7 @@ This chapter shows the projection Binary Operations from the `Truth Table <https
 Project First
 -------------
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I add a test for project first to ``TestBinaryOperations`` in ``test_truth_table.py``
@@ -25,7 +25,7 @@ I add a test for project first to ``TestBinaryOperations`` in ``test_truth_table
 
 the terminal shows an :ref:`AttributeError`
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
@@ -62,7 +62,7 @@ GREEN: make it pass
 
   and the tests pass
 
-REFACTOR: make it better
+refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 * I use implied conditional testing to simplify the statements
@@ -94,7 +94,7 @@ REFACTOR: make it better
 Project Second
 --------------
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I add a test for project second to ``TestBinaryOperations``
@@ -109,7 +109,7 @@ I add a test for project second to ``TestBinaryOperations``
 
 the terminal shows an :ref:`AttributeError`
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 

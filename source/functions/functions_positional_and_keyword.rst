@@ -5,7 +5,7 @@ functions: positional and keyword arguments
 
 I can also define functions to take both positional arguments and keyword arguments as inputs
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I add a new failing test to ``test_functions.py``
@@ -31,7 +31,7 @@ the terminal shows a ``SyntaxError`` because I put a positional argument after a
   # TypeError
   # SyntaxError
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
@@ -112,7 +112,7 @@ GREEN: make it pass
 
   the terminal shows passing tests
 
-REFACTOR: make it better
+refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Hold on a second. This looks exactly like what I did in ``test_functions_with_positional_arguments``. I cannot tell from the :doc:`function signature </functions/functions>` which argument is positional and which is a keyword argument and do not want to wait for the function to fail when I send in values to find out

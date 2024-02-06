@@ -21,7 +21,7 @@ Reviewing what I know so far, for any boolean operation involving 2 inputs: ``p`
 * :doc:`True </data_structures/booleans/booleans>` is :doc:`True </data_structures/booleans/booleans>`
 
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I add a test for logical implication to ``TestBinaryOperations`` in ``test_truth_table.py``
@@ -36,7 +36,7 @@ I add a test for logical implication to ``TestBinaryOperations`` in ``test_truth
 
 the terminal shows an :ref:`AttributeError`
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
@@ -60,7 +60,7 @@ GREEN: make it pass
 
   the tests pass!
 
-REFACTOR: make it better
+refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 

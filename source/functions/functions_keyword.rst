@@ -7,7 +7,7 @@ There is an inherent problem with using positional arguments in functions. It re
 
 To ensure the function behaves correctly regardless of what order the user provides the input I can use Keyword Arguments
 
-RED: make it fail
+red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 I add a new test to ``test_functions.py``
@@ -25,7 +25,7 @@ I add a new test to ``test_functions.py``
 
 the terminal shows an :ref:`AttributeError`
 
-GREEN: make it pass
+green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
@@ -72,7 +72,7 @@ GREEN: make it pass
 
   Eureka! the terminal shows passing tests
 
-REFACTOR: make it better
+refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 So far ``passthrough_with_keyword_arguments`` looks the same as ``passthrough_with_positional_arguments`` did when it took in 2 positional arguments, I have not yet seen a difference between a ``positional argument`` and a ``keyword argument``
@@ -102,7 +102,7 @@ So far ``passthrough_with_keyword_arguments`` looks the same as ``passthrough_wi
 
 The function currently only takes in 2 keyword arguments. What if I want a function that can take in any number of keyword arguments? There is a starred expression for keyword arguments - ``**``.
 
-* RED: make it fail
+* red: make it fail
 
   I add a test to ``test_functions_with_keyword_arguments``
 
@@ -132,7 +132,7 @@ The function currently only takes in 2 keyword arguments. What if I want a funct
 
   the terminal shows a :ref:`TypeError`
 
-* GREEN: make it pass
+* green: make it pass
 
 
   - I change the signature of ``passthrough_with_keyword_arguments`` to accept any number of keyword arguments
@@ -222,7 +222,7 @@ The function currently only takes in 2 keyword arguments. What if I want a funct
 
     the terminal shows passing tests. From the tests I can see that keyword arguments are treated as :doc:`dictionaries </data_structures/dictionaries>`  in Python
 
-* REFACTOR: make it better
+* refactor: make it better
 
   I add one more test to ``test_functions_with_keyword_arguments`` to drill the lesson
 

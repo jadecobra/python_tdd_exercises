@@ -30,7 +30,7 @@ requirements
 
 ----
 
-RED: make it fail
+red: make it fail
 ========================================================
 
 
@@ -63,7 +63,7 @@ RED: make it fail
       # AssertionError
       # ModuleNotFoundError
 
-GREEN: make it pass
+green: make it pass
 ========================================================
 
 * I have a lot of practice solving this error from :ref:`ModuleNotFoundError`. I create a file called ``functions.py`` and the terminal shows
@@ -149,7 +149,7 @@ GREEN: make it pass
 
 the terminal shows passing tests. BOOM!
 
-REFACTOR: make it better
+refactor: make it better
 ========================================================
 
 There's not much to do here but add more tests for practice.
@@ -223,7 +223,7 @@ There's not much to do here but add more tests for practice.
 More Tests
 ========================================================
 
-RED: make it fail
+red: make it fail
 ~~~~~~~~~~~~~~~~~
 
 I add a failing test to ``TestTypeErrors`` in ``test_type_error.py``
@@ -238,7 +238,7 @@ the terminal shows
 
   AttributeError: module 'functions' has no attribute 'function_c'
 
-GREEN: make it pass
+green: make it pass
 ~~~~~~~~~~~~~~~~~~~
 
 * I add a name to ``functions.py``
@@ -301,7 +301,7 @@ GREEN: make it pass
 
   and the terminal shows all tests pass
 
-REFACTOR: make it better
+refactor: make it better
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 * If you are not bored yet, I add a failing test to ``TestTypeErrors`` in ``test_type_error.py``
