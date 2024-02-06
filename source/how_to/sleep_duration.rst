@@ -986,12 +986,13 @@ refactor: make it better
 
 test_duration_calculation
 ========================================================
-* The ``duration`` function currently returns a subtraction of hours and a subtraction of minutes which is not accurate for calculating real differences between two timestamps. For instance when it is given a wake time of ``3:30`` and a sleep time of ``2:59`` it should return ``00:31`` but it returns ``01:-29`` which is not a real duration. This means that even though the tests are passing, once again the ``duration`` function does not meet the requirement of calculating the difference between two timestamps. I need a better way.
+
+The ``duration`` :doc:`function </functions/functions>` currently returns a subtraction of hours and a subtraction of minutes which is not correct for calculating the difference between two timestamps.
 
 red: make it fail
 --------------------------------------------------------
 
-* I add a new failing test for the specific example to ``test_sleep_duration.py``
+* If the function is given a ``wake_time`` of ``'03:30'`` and a ``sleep_time`` of ``'02:59'``, it should return ``'00:31'`` as the difference between the timestamps. I add a test for it
 
   .. code-block:: python
 
@@ -1004,16 +1005,18 @@ red: make it fail
             '00:31'
         )
 
-  the terminal shows an :ref:`AssertionError` since ``01:-29`` is not equal to ``00:31``
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: '01:-29' != '00:31'
 
-* To calculate a difference between hours and minutes I need to do the following
+  the ``duration`` :doc:`function </functions/functions>` returns ``'01:-29'`` which is not a real duration.
 
-  - convert each timestamp given to total minutes by multiplying the hour by 60 and adding the minutes
-  - subtract total ``wake_time`` minutes from total ``sleep_time`` minutes
+  I need to do the following to calculate a difference between hours and minutes
+
+  - convert each timestamp to its total minutes by multiplying the hour by 60 and adding the minutes
+  - subtract total ``sleep_time`` minutes from total ``wake_time`` minutes
   - return the difference between total ``wake_time`` and ``sleep_time`` as hours and minutes
 
 * I add these steps to the ``duration`` function keeping the original solution that has worked so far until all the tests pass
