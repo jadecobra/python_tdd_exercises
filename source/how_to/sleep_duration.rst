@@ -1013,24 +1013,14 @@ red: make it fail
 
   the ``duration`` :doc:`function </functions/functions>` returns ``'01:-29'`` which is not a real duration.
 
-  I need to do the following to calculate a difference between hours and minutes
+green: make it pass
+--------------------------------------------------------
 
-  - convert each timestamp to its total minutes by multiplying the hour by 60 and adding the minutes
-  - subtract total ``sleep_time`` minutes from total ``wake_time`` minutes
-  - return the difference between total ``wake_time`` and ``sleep_time`` as hours and minutes
-
-* I add these steps to the ``duration`` function keeping the original solution that has worked so far until all the tests pass
+* I rename ``duration`` to keep a copy of my current working solution
 
   .. code-block:: python
 
-    def duration(wake_time=None, sleep_time=None):
-        wake_time_minutes = (get_hour(wake_time) * 60) + get_minutes(wake_time)
-        sleep_time_minutes = (get_hour(sleep_time) * 60) + get_minutes(sleep_time)
-        difference = wake_time_minutes - sleep_time_minutes
-        difference_hours = difference // 60
-        difference_minutes = difference % 60
-
-        return f'{difference_hours:02}:{difference_minutes:02}'
+    def duration_a(wake_time=None, sleep_time=None):
         difference_hours = (
             get_hour(wake_time)
           - get_hour(sleep_time)
@@ -1039,6 +1029,32 @@ red: make it fail
             get_minutes(wake_time)
           - get_minutes(sleep_time)
         )
+        return f'{difference_hours:02}:{difference_minutes:02}'
+
+* I add a new ``duration`` :doc:`function </functions/functions>` with the following steps to calculate a real difference between two timestamps
+
+  - convert each timestamp to its total minutes by multiplying the hour by 60 and adding the minutes
+  - subtract total ``sleep_time`` minutes from total ``wake_time`` minutes
+  - return the difference between total ``wake_time`` and ``sleep_time`` as hours and minutes
+
+    * get the hours by using `floor (integer) division`_ to get the whole number value of dividing the difference by 60
+    * get the minutes by using the modulo_ operator to get the remainder of dividing the difference by 60
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        wake_time_minutes = (
+            (get_hour(wake_time) * 60)
+           + get_minutes(wake_time)
+        )
+        sleep_time_minutes = (
+            (get_hour(sleep_time) * 60)
+           + get_minutes(sleep_time)
+        )
+        difference = wake_time_minutes - sleep_time_minutes
+        difference_hours = difference // 60
+        difference_minutes = difference % 60
+
         return f'{difference_hours:02}:{difference_minutes:02}'
 
   since ``test_duration_w_hours_and_minutes`` uses the wrong calculation, the terminal will show random successes and randomly show an :ref:`AssertionError` that looks like this
@@ -1076,66 +1092,110 @@ red: make it fail
 test_floor_aka_integer_division
 ========================================================
 
+The ``//`` operator returns the whole number result of diving one number by another rounded down to the nearest integer
+
 red: make it fail
 --------------------------------------------------------
 
-the ``//`` operator returns the whole number result of diving one number by another rounded down to the nearest integer, I add a test to show this
+I add a test to show this
 
 .. code-block:: python
 
   def test_floor_aka_integer_division(self):
-      self.assertEqual(5//2, 0)
+      self.assertEqual(120//60, 0)
+      self.assertEqual(128//60, 0)
 
   def test_duration_w_hours_and_minutes(self):
   ...
 
-and the terminal shows an :ref:`AssertionError` ::
+and the terminal shows an :ref:`AssertionError`
+
+.. code-block:: python
 
   AssertionError: 2 != 0
 
 green: make it pass
 --------------------------------------------------------
 
-I change the test to use the correct value, the result of dividing `5` by `2` is `2` with a remainder of `1`
+* I change the first expected value in the test to the correct value, the whole number result of dividing ``120`` by ``60`` is ``2`` with a remainder of ``0``
 
-.. code-block:: python
+  .. code-block:: python
 
-  def test_floor_aka_integer_division(self):
-      self.assertEqual(5//2, 2)
+    def test_floor_aka_integer_division(self):
+        self.assertEqual(120//60, 2)
+        self.assertEqual(150//60, 0)
+
+  the terminal shows an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 2 != 0
+
+* I change the second expected value in the test to the correct value, the whole number result of dividing ``150`` by ``60`` is ``2`` with a remainder of ``30``
+
+  .. code-block:: python
+
+    def test_floor_aka_integer_division(self):
+        self.assertEqual(120//60, 2)
+        self.assertEqual(150//60, 2)
+
+  the terminal shows all tests are passing
 
 test_modulo_operation
 ========================================================
 
+The ``%`` operator returns the remainder from diving one number by another
+
 red: make it fail
 --------------------------------------------------------
 
-the ``%`` operator returns the remainder from diving one number by another, I add a test to show this
+I add a test for it
 
 .. code-block:: python
 
   def test_modulo_operation(self):
-      self.assertEqual(5%2, 2)
+      self.assertEqual(120%60, 2)
+      self.assertEqual(150%60, 2)
 
   def test_duration_w_hours_and_minutes(self):
   ...
 
-and the terminal shows an :ref:`AssertionError` ::
+and the terminal shows an :ref:`AssertionError`
+
+.. code-block:: python
 
   AssertionError: 1 != 2
 
 green: make it pass
 --------------------------------------------------------
 
-I change the test to use the correct value, the result of dividing `5` by `2` leaves a remainder of `1`
+* I change the first expected value in the test to the correct value, the remainder from dividing ``120`` by ``60`` is ``0``
 
-.. code-block:: python
+  .. code-block:: python
 
-  def test_modulo_operation(self):
-      self.assertEqual(5%2, 1)
+    def test_modulo_operation(self):
+        self.assertEqual(120%60, 0)
+        self.assertEqual(150%60, 2)
+
+  and the terminal shows an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 30 != 2
+
+* I change the second expected value in the test to the correct value, the remainder from dividing ``150`` by ``60`` is ``30``
+
+  .. code-block:: python
+
+    def test_modulo_operation(self):
+        self.assertEqual(120%60, 0)
+        self.assertEqual(150%60, 30)
+
+  the terminal shows passing tests
 
 ----
 
-* I remove the second return statement from the ``duration`` function because I have a working solution that is better than the previous one
+* I remove ``duration_a`` since the working solution in ``duration`` is better
 * I write a function to get the total minutes from a timestamp and call it in the ``duration`` function
 
   .. code-block:: python
@@ -1153,11 +1213,11 @@ I change the test to use the correct value, the result of dividing `5` by `2` le
         difference_hours = difference // 60
         difference_minutes = difference % 60
 
-        return f'{difference_hours}:{difference_minutes}'
+        return f'{difference_hours:02}:{difference_minutes:02}'
 
   the terminal shows passing tests. We are still green.
 
-* since I only use ``wake_time_minutes`` and ``sleep_time_minutes`` when I calculate the difference, I do not need the variables, I can do the calculation directly
+* I only use ``wake_time_minutes`` and ``sleep_time_minutes`` when I calculate the difference. I can remove those variables and do the calculation directly
 
   .. code-block:: python
 
@@ -1171,7 +1231,8 @@ I change the test to use the correct value, the result of dividing `5` by `2` le
 
         return f'{difference_hours:02}:{difference_minutes:02}'
 
-  We are still green. Take a look at the last two blocks of code. Which one do you like?
+  the terminal shows all tests are still passing. Take a look at the last two blocks of code. Which one do you like?
+
 * I can also create a function that replaces the ``get_hour`` and ``get_minutes`` functions
 
   .. code-block:: python
@@ -1186,6 +1247,7 @@ I change the test to use the correct value, the result of dividing `5` by `2` le
         )
 
   the terminal shows all tests are still passing
+
 * I remove the ``get_hour`` and ``get_minutes`` functions
 * I remove ``test_duration_calculation`` since it is now covered by ``test_duration_w_hours_and_minutes``
 

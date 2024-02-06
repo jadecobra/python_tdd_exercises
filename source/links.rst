@@ -19,3 +19,5 @@
 .. _zero-based indexing: https://en.wikipedia.org/wiki/Zero-based_numbering
 .. _unittest.skip decorator: https://docs.python.org/3/library/unittest.html#unittest.skip
 .. _int: https://docs.python.org/3/library/functions.html?highlight=int#int
+.. _modulo: https://en.wikipedia.org/wiki/Modulo
+.. _floor (integer) division: https://en.wikipedia.org/wiki/Division_(mathematics)#Division_in_different_contexts
