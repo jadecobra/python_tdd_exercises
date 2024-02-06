@@ -4,7 +4,7 @@
 classes
 ########
 
-``classes`` are a template or blueprint that represents an object. I think of ``classes`` as a a container of :doc:`methods (functions) </functions/functions>` and ``attributes(variables)`` that belong together
+``classes`` are a template or blueprint that represents an object. I think of ``classes`` as a a container of :doc:`methods (functions) </functions/functions>` and ``attributes (variables)`` that belong together
 
 I will show the following in this chapter
 
@@ -21,7 +21,7 @@ How to create a class in Python
 
 * use the `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword
 * use ``TitleCase`` for the name
-* use a descriptive name that describes the collection of :doc:`methods (functions) </functions/functions>` and ``attributes(variables)`` - this is hard to do and is something I am still learning
+* use a descriptive name that describes the collection of :doc:`methods (functions) </functions/functions>` and ``attributes (variables)`` - this is hard to do and is something I am still learning
 
 How to define a class with pass
 -------------------------------

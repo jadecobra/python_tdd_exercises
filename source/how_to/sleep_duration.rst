@@ -21,14 +21,14 @@ RED: make it fail
 
   .. NOTE::
 
-    If you are using Windows without `Windows Subsystem Linux`_ use :ref:`createPythonTdd.ps1` instead
+    If you are using Windows without `Windows Subsystem Linux`_ use :ref:`createPythonTdd.ps1`
 
     .. code-block:: python
 
       ./createPythonTdd.ps1 sleep_duration
 
 * I remove ``test_failure`` after making it pass
-* I add a failing test to ``test_sleep_duration.py`` to check that when the ``duration`` :doc:`function </functions/functions>` in the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>` is called with a ``wake_time`` of ``'08:00'`` and a ``sleep_time`` of ``'07:00'``, it should return ``1`` - the difference between the two timestamps
+* I add a failing test to ``test_sleep_duration.py`` to check that when the ``duration`` :doc:`function </functions/functions>` in the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>` is called with a ``wake_time`` of ``'08:00'`` and a ``sleep_time`` of ``'07:00'``, it should the difference between the two timestamps which in this case is ``1``
 
   .. code-block:: python
 
@@ -96,7 +96,7 @@ GREEN: make it pass
 
   .. code-block::  python
 
-      NameError: name 'duration' is not defined
+    NameError: name 'duration' is not defined
 
 * I make ``duration`` a variable by assigning it to :ref:`None`
 
@@ -127,7 +127,7 @@ GREEN: make it pass
     def duration():
         return None
 
-  the terminal shows a :ref:`TypeError` with a different message about the first keyword argument passed in from the test
+  the terminal shows a :ref:`TypeError` with a different message about the first keyword argument given in the test
 
   .. code-block:: python
 
@@ -153,7 +153,7 @@ GREEN: make it pass
     def duration(wake_time=None, sleep_time=None):
         return None
 
-  and the terminal shows an :ref:`AssertionError`, the ``duration`` :doc:`function </functions/functions>` returns :ref:`None` but the test expects ``1`` as the result when it passes a sleep time of ``'07:00'`` and a wake time of ``'08:00'``
+  and the terminal shows an :ref:`AssertionError`. The ``duration`` :doc:`function </functions/functions>` returns :ref:`None` but the test expects ``1`` as the result when it passes a sleep time of ``'07:00'`` and a wake time of ``'08:00'``
 
   .. code-block:: python
 
@@ -172,7 +172,7 @@ REFACTOR: make it better
 
 The ``duration`` :doc:`function </functions/functions>` currently returns ``1`` no matter what inputs are given. It has to calculate the difference between ``wake_time`` and ``sleep_time`` to meet the requirements.
 
-I could write a test case for every possible sleep and wake time, or  write one test that uses random variables to cover all the timestamps from ``'00:00'`` to ``'23:59'``
+I could write a test case for every possible sleep and wake time, or write one test that uses random variables to cover all the timestamps from ``'00:00'`` to ``'23:59'``
 
 * I add an import statement for the random_ module to ``test_sleep_duration.py``
 
@@ -200,10 +200,9 @@ I could write a test case for every possible sleep and wake time, or  write one 
                 1
             )
 
-  - ``random.randint(0, 23)`` returns a random number from ``0`` to and including ``23``
+  - ``random.randint(0, 23)`` returns a random number from ``0`` up to and including ``23``
   - ``f'{wake_hour:02}:00'`` and  ``f'{sleep_hour:02}:00'`` :doc:`interpolate </how_to/pass_values>` the random numbers in the input strings_
   - the ``:02`` in ``{wake_hour:02}`` and ``{sleep_hour:02}`` tell Python to display the numbers as two digits. For example, display ``01`` instead of ``1``
-  - the sleep and wake times will vary randomly from ``'00:00''`` up to and including ``'23:00'`` to cover all 24 hours in a day
 
 * the terminal still shows the test is passing because the expected value is ``1``. I change the test to match the requirement of the difference between ``wake_time`` and ``sleep_time``
 
@@ -231,7 +230,7 @@ I could write a test case for every possible sleep and wake time, or  write one 
 
     Your results may be different because the timestamps are random numbers
 
-* I change the ``duration`` :doc:`function </functions/functions>` to return a difference between ``wake_time`` and ``sleep_time``
+* I change the ``duration`` :doc:`function </functions/functions>` to return the subtraction of ``sleep_time`` from ``wake_time``
 
   .. code-block:: python
 
@@ -328,7 +327,7 @@ RED: make it fail
             ['__add__', '__class__', '__contains__', '[918 chars]ill']
         )
 
-  the terminal shows a list of :doc:`methods </functions/functions>` and :doc:`attributes </exceptions/AttributeError>` of a string_. `unittest.TestCase.maxDiff <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff>`_ sets a limit on the number of characters the terminal shows for a difference between two objects. There is no limit when it is set to :ref:`None`
+  the terminal shows a list of :doc:`methods </functions/functions>` and :doc:`attributes </exceptions/AttributeError>` of a string_. `unittest.TestCase.maxDiff`_ sets a limit on the number of characters the terminal shows for a difference between two objects. There is no limit when it is set to :ref:`None`
 
 * I copy and paste the values from the terminal into the test and remove extra characters
 
@@ -435,7 +434,7 @@ RED: make it fail
 
   I need a way to convert a string_ to a number
 
-* I want to try one of the :doc:`methods </functions/functions>` listed from ``test_string_methods_and_attributes`` to see if it will get me closer to a solution. The names in the list do not give me enough information since I do not know what they do, so I use the the `help system`_ to check the `python documentation on strings`_ for extra details
+* I want to try one of the :doc:`methods </functions/functions>` listed in ``test_string_methods_and_attributes`` to see if it will get me closer to a solution. The names in the list do not give me enough information since I do not know what they do. I then use the `help system`_ to check the `python documentation on strings`_ for extra details
 
   .. code-block:: python
 
@@ -443,7 +442,7 @@ RED: make it fail
         help(str)
     ...
 
-  the terminal shows documentation for the string_ module and I scroll through, reading the descriptions for each :doc:`method </functions/functions>` until I see one that looks like it can solve my problem
+  the terminal shows documentation for the string_ module and I read through the descriptions for each :doc:`method </functions/functions>` until I see one that looks like a solution to my problem
 
   .. code-block:: python
 
@@ -463,7 +462,9 @@ RED: make it fail
 test_splitting_a_string
 --------------------------------------------------------
 
-* I remove the call to the `help system`_ ``help(str)`` and add a failing test for the split_ :doc:`method </functions/functions>` to help me understand it better
+RED: make it fail
+
+* I remove ``help(str)`` and add a failing test for the split_ :doc:`method </functions/functions>` to help me understand it
 
   .. code-block:: python
 
@@ -482,7 +483,9 @@ test_splitting_a_string
 
     AssertionError: ['01:23'] != None
 
-  I change the expectation to make the test pass
+GREEN: make it pass
+
+* I change the expectation to make the test pass
 
   .. code-block:: python
 
@@ -497,6 +500,8 @@ test_splitting_a_string
   .. code-block:: python
 
     TypeError: unsupported operand type(s) for -: 'str' and 'str'
+
+REFACTOR: make it better
 
 * I want to split_ the string_ on a ``separator`` so I get the separate parts, something like ``['01', '23']`` with ``:`` as the separator. I change the expectation of the test to match this idea
 
@@ -514,7 +519,7 @@ test_splitting_a_string
 
     AssertionError: Lists differ: ['01:23'] != ['01', '23']
 
-* Looking back at the documentation, I see that split_ takes in ``self, /, sep=None, maxsplit=-1`` as inputs and ``sep`` is the ``separator``. I pass in ``:`` to the split_ :doc:`method </functions/functions>` as the ``separator``
+* Looking back at the documentation, I see that split_ takes in ``sep=None, maxsplit=-1`` as inputs and ``sep`` is the separator. I pass in ``:`` to the split_ :doc:`method </functions/functions>` as the separator
 
   .. code-block:: python
 
@@ -526,7 +531,7 @@ test_splitting_a_string
 
   and the test passes. I now know how to get the first parts of ``wake_time`` and ``sleep_time``
 
-* Using what I have learned so far, I change the definition of the ``duration`` function in ``sleep_duration.py``
+* I change the ``duration`` :doc:`function </functions/functions>` in ``sleep_duration.py`` to use the split_ :doc:`method </functions/functions>`
 
   .. code-block:: python
 
@@ -536,14 +541,15 @@ test_splitting_a_string
           - sleep_time.split(':')
         )
 
-  the terminal shows a :ref:`TypeError`, this time for trying to subtract a :doc:`list </data_structures/lists/lists>` from a :doc:`list </data_structures/lists/lists>`
+  the terminal shows a :ref:`TypeError`, this time for trying to subtract one :doc:`list </data_structures/lists/lists>` from another
 
   .. code-block:: python
 
     TypeError: unsupported operand type(s) for -: 'list' and 'list'
 
-* I only need the first part of the list and can get the specific item by using its index. Python uses zero-based indexing so the first item is at index ``0`` and the second item is at index ``1``. See :doc:`/data_structures/lists/lists` for more.
-  I add tests to ``test_splitting_a_string`` for getting specific parts of the :doc:`list </data_structures/lists/lists>` created from splitting a string_
+RED: make it fail
+
+* I only need the first part of the list and can get the specific item by using its index. Python uses `zero-based indexing`_ so the first item is at index ``0`` and the second item is at index ``1``. See :doc:`/data_structures/lists/lists` for more. I add tests for getting specific parts of the :doc:`list </data_structures/lists/lists>` created from splitting a string_ to ``test_splitting_a_string``
 
   .. code-block:: python
 
@@ -564,21 +570,28 @@ test_splitting_a_string
     def test_duration_w_hours_only(self):
     ...
 
-  the terminal shows an :ref:`AssertionError` because the first item (index 0) from splitting ``'12:34'`` on the separator ``':'`` is ``'12'`` ::
+  the terminal shows an :ref:`AssertionError` because the first item (index 0) from splitting ``'12:34'`` on the separator ``':'`` is ``'12'``
+
+  .. code-block:: python
 
     AssertionError: '12' != 0
 
   this is closer to what I want
+
+GREEN: make it pass
+
 * I change the expected value in the test to match the value in the terminal
 
   .. code-block:: python
 
-        self.assertEqual(
-            '12:34'.split(':')[0],
-            '12'
-        )
+    self.assertEqual(
+        '12:34'.split(':')[0],
+        '12'
+    )
 
-  the terminal shows another :ref:`AssertionError` ::
+  the terminal shows another :ref:`AssertionError`
+
+  .. code-block:: python
 
     AssertionError: '34' != 0
 
@@ -594,7 +607,7 @@ test_splitting_a_string
 
   the tests pass, bringing me back to the unsolved :ref:`TypeError`
 
-* using what I have learned, I make the ``duration`` function return the subtraction of the first parts of splitting ``wake_time`` and ``sleep_time`` on the separator ``':'``
+* using what I have learned, I make the ``duration`` :doc:`function </functions/functions>` return the subtraction of the first parts of splitting ``wake_time`` and ``sleep_time`` on the separator ``':'``
 
   .. code-block:: python
 
@@ -604,7 +617,7 @@ test_splitting_a_string
           - sleep_time.split(':')[0]
         )
 
-  the terminal shows a :ref:`TypeError` for an unsupported operation of trying to subtract one string_ from another, and though it is not explicit here, from ``test_splitting_a_string`` I know that the strings being subtracted are the values to the left of the separator ``:``, not the entire string_ value of ``wake_time`` and ``sleep_time``. For example,  if the given ``wake_time`` is ``'02:00'`` and the given ``sleep_time`` is ``'01:00'``  the program is currently trying to subtract ``'01'`` from ``'02'`` which is different from trying to subtract ``1`` from ``2``, ``'01'`` is a string_ and ``1`` is a number.
+  the terminal shows a :ref:`TypeError` for an unsupported operation of trying to subtract one string_ from another. Though it is not explicit here, from ``test_splitting_a_string`` I know that the strings being subtracted are the values to the left of the separator ``:``, not the entire string_ value of ``wake_time`` and ``sleep_time``. For example,  if the given ``wake_time`` is ``'02:00'`` and the given ``sleep_time`` is ``'01:00'``  the program is currently trying to subtract ``'01'`` from ``'02'`` which is different from trying to subtract ``1`` from ``2``, ``'01'`` is a string_ and ``1`` is a number.
 * The next task is to convert the string_ to a number so I can do the subtraction. I disable the current failing test by using the `unittest.skip <https://docs.python.org/3/library/unittest.html#unittest.skip>`_ decorator
 
   .. code-block:: python

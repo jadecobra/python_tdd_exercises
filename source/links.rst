@@ -15,3 +15,5 @@
 .. _ValueError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError
 .. _IndexError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#IndexError
 .. _KeyError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError
+.. _unittest.TestCase.maxDiff: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff
+.. _zero-based indexing: https://en.wikipedia.org/wiki/Zero-based_numbering
