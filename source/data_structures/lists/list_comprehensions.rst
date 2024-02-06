@@ -690,8 +690,9 @@ You also know how to do it with less words using `list comprehensions <https://d
 
 
 ***************************************
-BONUS: refactor: make it better
+refactor: make it better
 ***************************************
+
 I have written the same thing multiple times in these tests and since the programming gods told me `Do Not Repeat Yourself! <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_ It is time to remove the repetition in the code.
 
 * In each test I create an empty list, verify it is empty and then perform operations on it. Since that part is the same for every test I can add it to the `unittest.TestCase.setUp <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.setUp>`_ :doc:`method </functions/functions>` which is called before a test method. Anything I place in this :doc:`method </functions/functions>` will run before the tests, I place my empty list creation and verification in here ::
