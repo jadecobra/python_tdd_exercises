@@ -467,8 +467,10 @@ red: make it fail
 
   the `str.split`_ :doc:`method </functions/functions>` looks like a good solution since it splits up a word on a given separator
 
-test_splitting_a_string
+test_string_splitting
 ========================================================
+
+.. _test_string_splitting_red:
 
 red: make it fail
 --------------------------------------------------------
@@ -477,7 +479,7 @@ red: make it fail
 
   .. code-block:: python
 
-    def test_splitting_a_string(self):
+    def test_string_splitting(self):
         self.assertEqual(
             '01:23'.split(),
             None
@@ -499,7 +501,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_splitting_a_string(self):
+    def test_string_splitting(self):
         self.assertEqual(
             '01:23'.split(),
             ['01:23']
@@ -518,7 +520,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_splitting_a_string(self):
+    def test_string_splitting(self):
         self.assertEqual(
             '01:23'.split(),
             ['01', '23']
@@ -534,7 +536,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_splitting_a_string(self):
+    def test_string_splitting(self):
         self.assertEqual(
             '01:23'.split(':'),
             ['01', '23']
@@ -561,11 +563,11 @@ refactor: make it better
 red: make it fail
 --------------------------------------------------------
 
-* I only need the first part of the list and can get the specific item by using its index. Python uses `zero-based indexing`_ so the first item is at index ``0`` and the second item is at index ``1``. See :doc:`/data_structures/lists/lists` for more. I add tests for getting specific parts of the :doc:`list </data_structures/lists/lists>` created from splitting a string_ to ``test_splitting_a_string``
+* I only need the first part of the list and can get the specific item by using its index. Python uses `zero-based indexing`_ so the first item is at index ``0`` and the second item is at index ``1``. See :doc:`/data_structures/lists/lists` for more. I add tests for getting specific parts of the :doc:`list </data_structures/lists/lists>` created from splitting a string_ to ``test_string_splitting``
 
   .. code-block:: python
 
-    def test_splitting_a_string(self):
+    def test_string_splitting(self):
         self.assertEqual(
             '01:23'.split(':'),
             ['01', '23']
@@ -630,7 +632,7 @@ green: make it pass
           - sleep_time.split(':')[0]
         )
 
-  the terminal shows a :ref:`TypeError` for an unsupported operation of trying to subtract one string_ from another. I know from ``test_splitting_a_string`` that the strings being subtracted are the values to the left of the separator ``':'``, not the entire values of ``wake_time`` and ``sleep_time``. For example, if the given ``wake_time`` is ``'02:00'`` and the given ``sleep_time`` is ``'01:00'``, the program tries to subtract ``'01'`` from ``'02'`` which is different from trying to subtract ``1`` from ``2``, ``'01'`` is a string_ and ``1`` is a number
+  the terminal shows a :ref:`TypeError` for an unsupported operation of trying to subtract one string_ from another. I know from ``test_string_splitting`` that the strings being subtracted are the values to the left of the separator ``':'``, not the entire values of ``wake_time`` and ``sleep_time``. For example, if the given ``wake_time`` is ``'02:00'`` and the given ``sleep_time`` is ``'01:00'``, the program tries to subtract ``'01'`` from ``'02'`` which is different from trying to subtract ``1`` from ``2``, ``'01'`` is a string_ and ``1`` is a number
 
 test_converting_string_to_integer
 ========================================================
@@ -1512,7 +1514,7 @@ green: make it pass
 
     invalid literal for int() with base 10: '31/12/99 10'
 
-* The `str.split`_ :doc:`method </functions/functions>` was given a separator of ``':'`` when the timestamp contained only hours and minutes, but it behaves differently when I add a date. I add a test for it to ``test_splitting_a_string``
+* The `str.split`_ :doc:`method </functions/functions>` was given a separator of ``':'`` when the timestamp contained only hours and minutes, but it behaves differently when I add a date. I add a test for it to ``test_string_splitting``
 
   .. code-block:: python
 
@@ -2044,7 +2046,7 @@ The challenge was to create a function that calculates the difference between tw
 To make it happen I
 
 * :ref:`test_string_attributes_and_methods`
-* `test_splitting_a_string`_ where I
+* `test_string_splitting`_ where I
 
   - used the `help system`_ to view documentation
   - split a string_ into a :doc:`list </data_structures/lists/lists>` using a separator

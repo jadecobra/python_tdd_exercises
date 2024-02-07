@@ -34,5 +34,5 @@ test_sleep_duration
 #. :ref:`test_duration_w_hours_only`
 #. :ref:`test_floor_aka_integer_division`
 #. :ref:`test_modulo_operation`
-#. :ref:`test_splitting_a_string`
+#. :ref:`test_string_splitting`
 #. :ref:`test_string_attributes_and_methods`
