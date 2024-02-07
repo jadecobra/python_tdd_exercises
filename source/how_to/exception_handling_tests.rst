@@ -109,7 +109,7 @@ red: make it fail
     # ModuleNotFoundError
     # NameError
 
-* I add an import statement for ``module`` at the top of ``test_exceptions.py`` ::
+* I add an `import statement`_ for ``module`` at the top of ``test_exceptions.py`` ::
 
     import module
     import unittest

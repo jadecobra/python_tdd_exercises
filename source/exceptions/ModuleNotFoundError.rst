@@ -6,7 +6,7 @@ ModuleNotFoundError
 
 The drill below will help you remember how to solve a ``ModuleNotFoundError`` in Python and what a python module is.
 
-``ModuleNotFoundError`` is raised when python attempts to import a module that does not exist or it cannot find a given module name for an ``import`` statement.
+``ModuleNotFoundError`` is raised when python attempts to import a module that does not exist or it cannot find a given module name for an `import`` statement.
 A Python Module is a file that ends in ``.py`` or a directory that contains an ``__init__.py``.
 
 Programming allows us to gain from our previous efforts as well as the efforts of others in the form of packages and modules that can be distributed for other people to use. To use these packages in Python they have to be imported.
@@ -140,7 +140,7 @@ If you left ``pytest-watch`` running from :doc:`How to create a Test Driven Deve
 Looking at the traceback starting from the bottom
 
 
-* ``ModuleNotFoundError`` is raised when an import statement fails because python cannot find a module/package with the given name, in this case ``module_0`` does not exist
+* ``ModuleNotFoundError`` is raised when an `import statement`_ fails because python cannot find a module/package with the given name, in this case ``module_0`` does not exist
 * ``import module_0`` is the line of code that caused the failure
 * Add the error to the list of Exceptions encountered
 

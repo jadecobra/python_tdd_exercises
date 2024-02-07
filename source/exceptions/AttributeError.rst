@@ -40,7 +40,7 @@ the terminal shows a :ref:`ModuleNotFoundError` if you have not yet done the :do
 
   ModuleNotFoundError: No module called 'module'
 
-A :ref:`ModuleNotFoundError` is raised when a name is provided to an ``import`` statement and python cannot find the name. Since there is currently no file called ``module.py`` the ``import module`` line causes a failure
+A :ref:`ModuleNotFoundError` is raised when a name is provided to an `import statement`_ and python cannot find the name. Since there is currently no file called ``module.py`` the ``import module`` line causes a failure
 
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^

@@ -116,7 +116,7 @@ refactor: make it better
     # AssertionError
     # NameError
 
-  then add an import statement for ``list_comprehensions`` at the beginning of ``test_list_comprehensions.py`` to define the name in the tests
+  then add an `import statement`_ for ``list_comprehensions`` at the beginning of ``test_list_comprehensions.py`` to define the name in the tests
 
   .. code-block:: python
 

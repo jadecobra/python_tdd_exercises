@@ -57,7 +57,7 @@ which I add to the list of exceptions
 green: make it pass
 **********************
 
-* I remove ``test_failure`` then add an import statement for the ``telephone`` module
+* I remove ``test_failure`` then add an `import statement`_ for the ``telephone`` module
 
   .. code-block:: python
 

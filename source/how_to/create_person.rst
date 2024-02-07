@@ -27,7 +27,7 @@ How to use dictionaries as factories in Python
 red: make it fail
 ==================
 
-I add an import statement to ``test_person.py``
+I add an `import statement`_ to ``test_person.py``
 
 .. code-block:: python
 
@@ -320,7 +320,7 @@ refactor: make it better
 
     NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
 
-* I add an import statement at the beginning of ``person.py``
+* I add an `import statement`_ at the beginning of ``person.py``
 
   .. code-block:: python
 

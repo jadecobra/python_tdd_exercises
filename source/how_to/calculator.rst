@@ -92,7 +92,7 @@ green: make it pass
     # AssertionError
     # NameError
 
-* then add an import statement for the ``calculator`` module ::
+* then add an `import statement`_ for the ``calculator`` module ::
 
     import calculator
     import unittest

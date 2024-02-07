@@ -349,7 +349,7 @@ I change ``assertIsNone`` to ``assertIsNotNone`` in ``test_is_none_a_string`` to
 refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-`strings <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ are represented by the `str <https://docs.python.org/3/library/stdtypes.html#str>`_ class in Python, I add an instance test
+`strings <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ are represented by the str_ class in Python, I add an instance test
 
 
 * red: make it fail
