@@ -3,7 +3,7 @@ copyright = '2023, JadeCobra LLC'
 author = 'Jacob Itegboje'
 
 templates_path = ['_templates']
-exclude_patterns = ['build', 'notes', '.venv', 'code/code_tree.rst',]
+exclude_patterns = ['build', 'notes', '.venv', 'code/code_tree.rst', 'rehearsals/*']
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output

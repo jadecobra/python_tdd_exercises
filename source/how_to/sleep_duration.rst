@@ -11,6 +11,8 @@ In this chapter I take a look at building a program that returns the amount of t
 test_duration_w_hours_only
 ========================================================
 
+.. _test_duration_w_hours_only_red:
+
 red: make it fail
 --------------------------------------------------------
 
@@ -29,7 +31,7 @@ red: make it fail
       ./createPythonTdd.ps1 sleep_duration
 
 * I remove ``test_failure`` after making it pass
-* I add a failing test to ``test_sleep_duration.py`` to check that when the ``duration`` :doc:`function </functions/functions>` in the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>` is called with a ``wake_time`` of ``'08:00'`` and a ``sleep_time`` of ``'07:00'``, it should return the difference between the two timestamps which in this case is ``1``
+* I add a failing test to ``test_sleep_duration.py`` to check that when the ``duration`` :doc:`function </functions/functions>` in the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>` is called with a ``wake_time`` of ``'08:00'`` and a ``sleep_time`` of ``'07:00'``, it should return the difference between the two, which in this case is ``1``
 
   .. code-block:: python
 
@@ -52,6 +54,8 @@ red: make it fail
   .. code-block:: python
 
     NameError: name 'sleep_duration' is not defined
+
+.. _test_duration_w_hours_only_green:
 
 green: make it pass
 --------------------------------------------------------
@@ -94,7 +98,7 @@ green: make it pass
 
     duration
 
-  and the terminal shows a NameError_ since the name is not defined
+  and the terminal shows a NameError_
 
   .. code-block:: python
 
@@ -106,7 +110,7 @@ green: make it pass
 
     duration = None
 
-  and the terminal shows a :ref:`TypeError` because :ref:`None` is not callable_
+  and the terminal shows a :ref:`TypeError`
 
   .. code-block:: python
 
@@ -134,6 +138,8 @@ green: make it pass
   .. code-block:: python
 
     TypeError: duration() got an unexpected keyword argument 'wake_time'
+
+  The ``duration`` :doc:`function </functions/functions>` is called in ``test_duration_w_hours_only`` with keyword arguments that have not been provided in the function signature when it is defined
 
 * I add the required keyword argument to the definition of ``duration``, setting its default value to :ref:`None`
 
@@ -168,12 +174,14 @@ green: make it pass
     def duration(wake_time=None, sleep_time=None):
         return 1
 
-  and the test passes. We are green.
+  and the test passes. We are green
+
+.. _test_duration_w_hours_only_refactor:
 
 refactor: make it better
 --------------------------------------------------------
 
-The ``duration`` :doc:`function </functions/functions>` currently returns ``1`` no matter what inputs are given. It has to calculate the difference between ``wake_time`` and ``sleep_time`` to meet the requirements.
+The ``duration`` :doc:`function </functions/functions>` currently returns ``1`` no matter what inputs are given. It should calculate the difference between ``wake_time`` and ``sleep_time`` to meet the requirements.
 
 I could write a test case for every possible sleep and wake time, or write one test that uses random variables to cover all the timestamps from ``'00:00'`` to ``'23:59'``
 
@@ -240,27 +248,29 @@ I could write a test case for every possible sleep and wake time, or write one t
     def duration(wake_time=None, sleep_time=None):
         return wake_time - sleep_time
 
-  the terminal shows a :ref:`TypeError`. Python does not have an operation defined for subtracting one string_ from another
+  the terminal shows a :ref:`TypeError`
 
   .. code-block:: python
 
     TypeError: unsupported operand type(s) for -: 'str' and 'str'
 
-  I need to find a way to convert the timestamp from a string_ to a number.
+  Python does not have an operation defined for subtracting one string_ from another. I need to find a way to convert the timestamp from a string_ to a number.
 
-test_string_methods_and_attributes
+test_string_attributes_and_methods
 ========================================================
 
-The two inputs are currently in this format - ``XX:00``. If I can get the first 2 characters and convert them to a number, I can calculate the difference since Python can do :doc:`arithmetic </how_to/calculator>`.
+The ``wake_time`` and ``sleep_time`` are currently in this format - ``XX:00``. If I can get the first 2 characters and convert them to a number, I can calculate the difference since Python can do :doc:`arithmetic </how_to/calculator>`.
+
+.. _test_string_attributes_and_methods_red:
 
 red: make it fail
 --------------------------------------------------------
 
-* I use the dir_ :doc:`function </functions/functions>` to see what :doc:`methods </functions/functions>` and :doc:`attributes </exceptions/AttributeError>` of strings_ can help me break a string_ apart or get the characters I want from it
+* I use the dir_ :doc:`function </functions/functions>` to see what :doc:`attributes </exceptions/AttributeError>` and :doc:`methods </functions/functions>` and  of strings_ can help me break a string_ apart or get the characters I want from it
 
   .. code-block:: python
 
-    def test_string_methods_and_attributes(self):
+    def test_string_attributes_and_methods(self):
         self.assertEqual(
             dir('00:00'),
             None
@@ -279,7 +289,7 @@ red: make it fail
 
   .. code-block:: python
 
-    def test_string_methods_and_attributes(self):
+    def test_string_attributes_and_methods(self):
         self.assertEqual(
             dir('00:00'),
             ['__add__', '__class__', '__contains__', [918 chars]ill']
@@ -304,11 +314,11 @@ red: make it fail
     # TypeError
     # SyntaxError
 
-* I add an opening quote, there is a closing quote with no open quote
+* there is a closing quote with no open quote, so I add one
 
   .. code-block:: python
 
-    def test_string_methods_and_attributes(self):
+    def test_string_attributes_and_methods(self):
         self.assertEqual(
             dir('00:00'),
             ['__add__', '__class__', '__contains__', '[918 chars]ill']
@@ -324,14 +334,14 @@ red: make it fail
 
   .. code-block:: python
 
-    def test_string_methods_and_attributes(self):
+    def test_string_attributes_and_methods(self):
         self.maxDiff = None
         self.assertEqual(
             dir('00:00'),
             ['__add__', '__class__', '__contains__', '[918 chars]ill']
         )
 
-  - the terminal shows a list of :doc:`methods </functions/functions>` and :doc:`attributes </exceptions/AttributeError>` of a string_
+  - the terminal shows a list of :doc:`attributes </exceptions/AttributeError>` and :doc:`methods </functions/functions>` of a string_
   - `unittest.TestCase.maxDiff`_ sets a limit on the number of characters the terminal shows for a difference between two objects. There is no limit when it is set to :ref:`None`
 
 * I copy and paste the values from the terminal into the test and remove extra characters
@@ -342,104 +352,97 @@ red: make it fail
 
   .. code-block:: python
 
-      def test_string_methods_and_attributes(self):
-          self.maxDiff = None
-          self.assertEqual(
-              dir('00:00'),
-              [
-                  '__add__',
-                  '__class__',
-                  '__contains__',
-                  '__delattr__',
-                  '__dir__',
-                  '__doc__',
-                  '__eq__',
-                  '__format__',
-                  '__ge__',
-                  '__getattribute__',
-                  '__getitem__',
-                  '__getnewargs__',
-                  '__getstate__',
-                  '__gt__',
-                  '__hash__',
-                  '__init__',
-                  '__init_subclass__',
-                  '__iter__',
-                  '__le__',
-                  '__len__',
-                  '__lt__',
-                  '__mod__',
-                  '__mul__',
-                  '__ne__',
-                  '__new__',
-                  '__reduce__',
-                  '__reduce_ex__',
-                  '__repr__',
-                  '__rmod__',
-                  '__rmul__',
-                  '__setattr__',
-                  '__sizeof__',
-                  '__str__',
-                  '__subclasshook__',
-                  'capitalize',
-                  'casefold',
-                  'center',
-                  'count',
-                  'encode',
-                  'endswith',
-                  'expandtabs',
-                  'find',
-                  'format',
-                  'format_map',
-                  'index',
-                  'isalnum',
-                  'isalpha',
-                  'isascii',
-                  'isdecimal',
-                  'isdigit',
-                  'isidentifier',
-                  'islower',
-                  'isnumeric',
-                  'isprintable',
-                  'isspace',
-                  'istitle',
-                  'isupper',
-                  'join',
-                  'ljust',
-                  'lower',
-                  'lstrip',
-                  'maketrans',
-                  'partition',
-                  'removeprefix',
-                  'removesuffix',
-                  'replace',
-                  'rfind',
-                  'rindex',
-                  'rjust',
-                  'rpartition',
-                  'rsplit',
-                  'rstrip',
-                  'split',
-                  'splitlines',
-                  'startswith',
-                  'strip',
-                  'swapcase',
-                  'title',
-                  'translate',
-                  'upper',
-                  'zfill'
-              ]
-          )
+    def test_string_attributes_and_methods(self):
+        self.maxDiff = None
+        self.assertEqual(
+            dir('00:00'),
+            [
+                '__add__',
+                '__class__',
+                '__contains__',
+                '__delattr__',
+                '__dir__',
+                '__doc__',
+                '__eq__',
+                '__format__',
+                '__ge__',
+                '__getattribute__',
+                '__getitem__',
+                '__getnewargs__',
+                '__getstate__',
+                '__gt__',
+                '__hash__',
+                '__init__',
+                '__init_subclass__',
+                '__iter__',
+                '__le__',
+                '__len__',
+                '__lt__',
+                '__mod__',
+                '__mul__',
+                '__ne__',
+                '__new__',
+                '__reduce__',
+                '__reduce_ex__',
+                '__repr__',
+                '__rmod__',
+                '__rmul__',
+                '__setattr__',
+                '__sizeof__',
+                '__str__',
+                '__subclasshook__',
+                'capitalize',
+                'casefold',
+                'center',
+                'count',
+                'encode',
+                'endswith',
+                'expandtabs',
+                'find',
+                'format',
+                'format_map',
+                'index',
+                'isalnum',
+                'isalpha',
+                'isascii',
+                'isdecimal',
+                'isdigit',
+                'isidentifier',
+                'islower',
+                'isnumeric',
+                'isprintable',
+                'isspace',
+                'istitle',
+                'isupper',
+                'join',
+                'ljust',
+                'lower',
+                'lstrip',
+                'maketrans',
+                'partition',
+                'removeprefix',
+                'removesuffix',
+                'replace',
+                'rfind',
+                'rindex',
+                'rjust',
+                'rpartition',
+                'rsplit',
+                'rstrip',
+                'split',
+                'splitlines',
+                'startswith',
+                'strip',
+                'swapcase',
+                'title',
+                'translate',
+                'upper',
+                'zfill'
+            ]
+        )
 
 * the test passes and the terminal shows the :ref:`TypeError` from earlier because Python still does not support subtracting one string_ from another
-
-  .. code-block:: python
-
-    TypeError: unsupported operand type(s) for -: 'str' and 'str'
-
-  I need a way to convert a string_ to a number
-
-* I want to try one of the :doc:`methods </functions/functions>` listed in ``test_string_methods_and_attributes`` to see if it will get me closer to a solution but the names in the list do not give me enough information since I do not know what they do, so I use the `help system`_ to check the `python documentation on strings`_ for extra details
+* I want to try one of the :doc:`methods </functions/functions>` listed in ``test_string_attributes_and_methods`` to see if it will get me closer to a solution but I cannot tell what they do from the names, so I use the `help system`_ to check the `python documentation on strings`_ for extra details
 
   .. code-block:: python
 
@@ -447,7 +450,7 @@ red: make it fail
         help(str)
     ...
 
-  the terminal shows documentation for the string_ module and I read through the descriptions for each :doc:`method </functions/functions>` until I see one that looks like a solution to my problem
+  the terminal shows documentation for the string_ module and I read through the descriptions for each :doc:`method </functions/functions>` until I see one that looks like it could solve the problem
 
   .. code-block:: python
 
@@ -462,7 +465,7 @@ red: make it fail
     |
     ...
 
-  the split_ :doc:`method </functions/functions>` looks like a good solution since it splits up a word on a given separator
+  the `str.split`_ :doc:`method </functions/functions>` looks like a good solution since it splits up a word on a given separator
 
 test_splitting_a_string
 ========================================================
@@ -470,7 +473,7 @@ test_splitting_a_string
 red: make it fail
 --------------------------------------------------------
 
-* I remove ``help(str)`` and add a failing test for the split_ :doc:`method </functions/functions>` to help me understand it
+* I remove ``help(str)`` and add a failing test for the `str.split`_ :doc:`method </functions/functions>` to help me understand it
 
   .. code-block:: python
 
@@ -483,7 +486,7 @@ red: make it fail
     def test_duration_w_hours_only(self):
     ...
 
-  the terminal shows an :ref:`AssertionError` and I see that split_ returns a :doc:`list </data_structures/lists/lists>` when called
+  the terminal shows an :ref:`AssertionError` and I see that `str.split`_ returns a :doc:`list </data_structures/lists/lists>` when called
 
   .. code-block:: python
 
@@ -511,7 +514,7 @@ green: make it pass
 refactor: make it better
 --------------------------------------------------------
 
-* I want to split_ the string_ on a ``separator`` so I get the separate parts, something like ``['01', '23']`` with ``:`` as the separator. I change the expectation of the test to match this idea
+* I want to `str.split`_ the string_ on a ``separator`` so I get the separate parts, something like ``['01', '23']`` with ``:`` as the separator. I change the expectation of the test to match this idea
 
   .. code-block:: python
 
@@ -521,13 +524,13 @@ refactor: make it better
             ['01', '23']
         )
 
-  and the terminal shows an :ref:`AssertionError`, the use of the split_ :doc:`method </functions/functions>` has not given me what I want yet
+  and the terminal shows an :ref:`AssertionError`, the use of the `str.split`_ :doc:`method </functions/functions>` has not given me what I want yet
 
   .. code-block:: python
 
     AssertionError: Lists differ: ['01:23'] != ['01', '23']
 
-* Looking back at the documentation, I see that split_ takes in ``sep=None, maxsplit=-1`` as inputs and ``sep`` is the separator. I pass in ``:`` to the split_ :doc:`method </functions/functions>` as the separator
+* Looking back at the documentation, I see that `str.split`_ takes in ``sep=None, maxsplit=-1`` as inputs and ``sep`` is the separator. I pass in ``:`` to the `str.split`_ :doc:`method </functions/functions>` as the separator
 
   .. code-block:: python
 
@@ -539,7 +542,7 @@ refactor: make it better
 
   and the test passes. I now know how to get the first parts of ``wake_time`` and ``sleep_time``
 
-* I change the ``duration`` :doc:`function </functions/functions>` in ``sleep_duration.py`` to use the split_ :doc:`method </functions/functions>`
+* I change the ``duration`` :doc:`function </functions/functions>` in ``sleep_duration.py`` to use the `str.split`_ :doc:`method </functions/functions>`
 
   .. code-block:: python
 
@@ -706,7 +709,7 @@ I have another tool to help solve the problem. I can
 
   YES! I am green! The ``duration`` function can calculate the sleep duration given any random ``sleep`` and ``wake`` hours. What a beautiful life!
 
-* I can rewrite the solution I have in a way that tries to explain what is happening to someone who does not know how to :doc:`index a list </data_structures/lists/lists>`, use int_ or split_
+* I can rewrite the solution I have in a way that tries to explain what is happening to someone who does not know how to :doc:`index a list </data_structures/lists/lists>`, use int_ or `str.split`_
 
   .. code-block:: python
 
@@ -1445,7 +1448,7 @@ Time to take a break.
 
 ----
 
-test_duration_given_date_and_time
+test_duration_w_date_and_time
 ========================================================
 
 The ``duration`` :doc:`function </functions/functions>` has been tested with timestamps that contain only hours and minutes, but I could fall asleep on a Monday and wake up on a Tuesday. What would happen if I added dates to the timestamps?
@@ -1453,11 +1456,11 @@ The ``duration`` :doc:`function </functions/functions>` has been tested with tim
 red: make it fail
 --------------------------------------------------------
 
-* I add a failing test to ``test_sleep_duration.py`` based on ``test_duration_w_hours_and_minutes`` and call it ``test_duration_given_date_and_time`` to test the ``duration`` function with a date, hours and minutes
+* I add a failing test to ``test_sleep_duration.py`` based on ``test_duration_w_hours_and_minutes`` and call it ``test_duration_w_date_and_time`` to test the ``duration`` function with a date, hours and minutes
 
   .. code-block:: python
 
-    def test_duration_given_date_and_time(self):
+    def test_duration_w_date_and_time(self):
         wake_hour = random.randint(0, 23)
         sleep_hour = random.randint(0, 23)
         wake_minutes = random.randint(0, 59)
@@ -1509,7 +1512,7 @@ green: make it pass
 
     invalid literal for int() with base 10: '31/12/99 10'
 
-* The split_ :doc:`method </functions/functions>` was given a separator of ``':'`` when the timestamp contained only hours and minutes, but it behaves differently when I add a date. I add a test for it to ``test_splitting_a_string``
+* The `str.split`_ :doc:`method </functions/functions>` was given a separator of ``':'`` when the timestamp contained only hours and minutes, but it behaves differently when I add a date. I add a test for it to ``test_splitting_a_string``
 
   .. code-block:: python
 
@@ -1535,13 +1538,13 @@ green: make it pass
 
   I cannot convert a string_ in the format ``'31/12/99 10'`` to an integer
 
-* I disable ``test_duration_given_date_and_time`` by adding the `unittest.skip decorator`_
+* I disable ``test_duration_w_date_and_time`` by adding the `unittest.skip decorator`_
 
   .. code-block:: python
 
     ...
     @unittest.skip
-    def test_duration_given_date_and_time(self):
+    def test_duration_w_date_and_time(self):
     ...
 
 * then add a test to ``test_converting_string_to_integer`` to confirm the cause of the ValueError_
@@ -1553,7 +1556,7 @@ green: make it pass
         self.assertEqual(int('01'), 1)
         int('31/12/99 10')
 
-  the terminal shows a ValueError_ with the same message from ``test_duration_given_date_and_time``
+  the terminal shows a ValueError_ with the same message from ``test_duration_w_date_and_time``
 
   .. code-block:: python
 
@@ -1785,7 +1788,7 @@ From the tests, I know I can
 
 ----
 
-* I remove ``@unittest.skip`` from ``test_duration_given_date_and_time`` to return to the ValueError_ that sent me down this path
+* I remove ``@unittest.skip`` from ``test_duration_w_date_and_time`` to return to the ValueError_ that sent me down this path
 * I add a function for converting timestamps to ``sleep_duration.py`` and call it ``get_datetime_object``
 
   .. code-block:: python
@@ -1854,7 +1857,7 @@ From the tests, I know I can
 
   I have another ValueError_ this time for a timestamp that does not match the expected pattern of ``'%d/%m/%y %H:%M'``
 
-* ``test_duration_w_hours_and_minutes`` currently sends the timestamps in without a date, so I remove it since it is covered by ``test_duration_given_date_and_time``
+* ``test_duration_w_hours_and_minutes`` currently sends the timestamps in without a date, so I remove it since it is covered by ``test_duration_w_date_and_time``
 
   the terminal shows an :ref:`AssertionError` that looks like this
 
@@ -1862,11 +1865,11 @@ From the tests, I know I can
 
     AssertionError: '8:50:00' != '08:50'
 
-* I update ``test_duration_given_date_and_time`` to use the right format and remove unused variables
+* I update ``test_duration_w_date_and_time`` to use the right format and remove unused variables
 
   .. code-block:: python
 
-    def test_duration_given_date_and_time(self):
+    def test_duration_w_date_and_time(self):
         wake_hour = random.randint(0, 23)
         sleep_hour = random.randint(0, 23)
         wake_minutes = random.randint(0, 59)
@@ -1925,13 +1928,13 @@ From the tests, I know I can
 
     AssertionError: "wake_time: 31/12/99 17:23 is earlier than sleep_time: 31/12/99 19:07" does not match "wake_time: 1999-12-31 17:23:00 is earlier than sleep_time: 1999-12-31 19:07:00"
 
-  there is a ValueError_ with a different message than the one the `unittest.TestCase.assertRaisesRegex`_ is expecting. The timestamp formats do not match because the ``duration`` :doc:`function </functions/functions>` uses the `datetime.datetime.strptime`_ objects in the message when it raises the exception and ``test_duration_given_date_and_time`` does not
+  there is a ValueError_ with a different message than the one the `unittest.TestCase.assertRaisesRegex`_ is expecting. The timestamp formats do not match because the ``duration`` :doc:`function </functions/functions>` uses the `datetime.datetime.strptime`_ objects in the message when it raises the exception and ``test_duration_w_date_and_time`` does not
 
-* I change ``test_duration_given_date_and_time`` to use the right error message
+* I change ``test_duration_w_date_and_time`` to use the right error message
 
   .. code-block:: python
 
-    def test_duration_given_date_and_time(self):
+    def test_duration_w_date_and_time(self):
         wake_hour = random.randint(0, 23)
         sleep_hour = random.randint(0, 23)
         wake_minutes = random.randint(0, 59)
@@ -1970,11 +1973,11 @@ From the tests, I know I can
 refactor: make it better
 --------------------------------------------------------
 
-* I remove some repetition from ``test_duration_given_date_and_time`` by using variables for the datetime objects
+* I remove some repetition from ``test_duration_w_date_and_time`` by using variables for the datetime objects
 
   .. code-block:: python
 
-    def test_duration_given_date_and_time(self):
+    def test_duration_w_date_and_time(self):
         wake_hour = random.randint(0, 23)
         sleep_hour = random.randint(0, 23)
         wake_minutes = random.randint(0, 59)
@@ -2040,7 +2043,7 @@ The challenge was to create a function that calculates the difference between tw
 
 To make it happen I
 
-* :ref:`test_string_methods_and_attributes`
+* :ref:`test_string_attributes_and_methods`
 * `test_splitting_a_string`_ where I
 
   - used the `help system`_ to view documentation
@@ -2057,7 +2060,7 @@ To make it happen I
 
 * :ref:`test_subtracting_datetime_datetime_objects`
 * `test_converting_timedelta_to_string`_
-* `test_duration_given_date_and_time`_
+* `test_duration_w_date_and_time`_
 
   - using `random.randint`_ to generate a random integer
   - using a random timestamp ranging from ``'00:00'`` up to and including ``'23:59'`` as inputs for ``wake_time`` and ``sleep_time``

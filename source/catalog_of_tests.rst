@@ -35,4 +35,4 @@ test_sleep_duration
 #. :ref:`test_floor_aka_integer_division`
 #. :ref:`test_modulo_operation`
 #. :ref:`test_splitting_a_string`
-#. :ref:`test_string_methods_and_attributes`
+#. :ref:`test_string_attributes_and_methods`
