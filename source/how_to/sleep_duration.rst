@@ -494,6 +494,8 @@ red: make it fail
 
     AssertionError: ['01:23'] != None
 
+.. _test_string_splitting_green:
+
 green: make it pass
 --------------------------------------------------------
 
