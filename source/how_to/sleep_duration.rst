@@ -475,7 +475,7 @@ test_string_splitting
 red: make it fail
 --------------------------------------------------------
 
-* I remove ``help(str)`` and add a failing test for the `str.split`_ :doc:`method </functions/functions>` to help me understand it
+* I remove ``help(str)`` and add a failing test for the `str.split`_ :doc:`method </functions/functions>` to see what it does
 
   .. code-block:: python
 
