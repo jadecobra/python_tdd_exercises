@@ -29,7 +29,7 @@ test_sleep_duration
 #. :ref:`test_converting_string_to_integer`
 #. :ref:`test_duration_calculation`
 #. :ref:`test_duration_w_earlier_wake_than_sleep_time`
-#. :ref:`test_duration_w_given_date_and_time`
+#. :ref:`test_duration_given_date_and_time`
 #. :ref:`test_duration_w_hours_and_minutes`
 #. :ref:`test_duration_w_hours_only`
 #. :ref:`test_floor_aka_integer_division`
