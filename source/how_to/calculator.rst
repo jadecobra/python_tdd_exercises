@@ -599,7 +599,7 @@ the terminal shows my expectations with a failure for any value of ``x`` when ``
 GREEN : make it pass
 =====================
 
-I can use the `unittest.TestCase.assertRaises <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises>`_ :doc:`method </functions/functions>` in ``test_division`` to confirm that a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ is raised when I try to divide a number by ``0``
+I can use the `unittest.TestCase.assertRaises`_ :doc:`method </functions/functions>` in ``test_division`` to confirm that a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ is raised when I try to divide a number by ``0``
 
 .. code-block:: python
 

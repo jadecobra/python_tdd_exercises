@@ -426,7 +426,7 @@ green: make it pass
         with self.assertRaises(IndexError):
             a_list[5]
 
-  `unittest.TestCase.assertRaises <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises>`_ takes an `Exception <https://docs.python.org/3/library/exceptions.html?highlight=exception#Exception>`_ as input and confirms that it is raised. You can read more about ``self.assertRaises`` in :doc:`/how_to/exception_handling_tests`
+  `unittest.TestCase.assertRaises`_ takes an `Exception <https://docs.python.org/3/library/exceptions.html?highlight=exception#Exception>`_ as input and confirms that it is raised. You can read more about ``self.assertRaises`` in :doc:`/how_to/exception_handling_tests`
 
 refactor: make it better
 =========================

@@ -1196,7 +1196,7 @@ green: make it pass
 ----
 
 * I remove ``duration_a`` since the working solution in ``duration`` is better
-* I write a function to get the total minutes from a timestamp and call it in the ``duration`` function
+* I write a function to get the total minutes from a timestamp and call it in the ``duration`` :doc:`function </functions/functions>`
 
   .. code-block:: python
 
@@ -1217,7 +1217,7 @@ green: make it pass
 
   the terminal shows passing tests. We are still green.
 
-* I only use ``wake_time_minutes`` and ``sleep_time_minutes`` when I calculate the difference. I can remove those variables and do the calculation directly
+* I remove ``wake_time_minutes`` and ``sleep_time_minutes`` and do the calculation directly since I only use them when I calculate the difference
 
   .. code-block:: python
 
@@ -1233,7 +1233,7 @@ green: make it pass
 
   the terminal shows all tests are still passing. Take a look at the last two blocks of code. Which one do you like?
 
-* I can also create a function that replaces the ``get_hour`` and ``get_minutes`` functions
+* I create a :doc:`function </functions/functions>` to replace the ``get_hour`` and ``get_minutes`` functions
 
   .. code-block:: python
 
@@ -1251,10 +1251,12 @@ green: make it pass
 * I remove the ``get_hour`` and ``get_minutes`` functions
 * I remove ``test_duration_calculation`` since it is now covered by ``test_duration_w_hours_and_minutes``
 
+----
+
 test_duration_w_earlier_wake_than_sleep_time
 ========================================================
 
-What happens when the ``duration`` function is given a ``wake_time`` that is earlier than a ``sleep_time``?
+What happens when the ``duration`` function is given an earlier ``wake_time`` than ``sleep_time``?
 
 red: make it fail
 --------------------------------------------------------
@@ -1281,26 +1283,25 @@ the terminal shows an :ref:`AssertionError`
 green: make it pass
 --------------------------------------------------------
 
-* The ``duration`` function currently returns negative numbers when given a ``wake_time`` that is earlier than a ``sleep_time``. It makes it possible to measure a time traveling sleep scenario where the traveler can go to sleep in the present and wake up in the past. I want to change the function to only process durations where the wake time happens after the sleep time, time traveling is too complicated
+I change the expected value in the test to make it pass
 
-* I change the expected value in the test to make it pass
+.. code-block:: python
 
-  .. code-block:: python
+  def test_duration_w_earlier_wake_than_sleep_time(self):
+      self.assertEqual(
+          sleep_duration.duration(
+              wake_time='01:00',
+              sleep_time='02:00'
+          ),
+          '-1:00'
+      )
 
-    def test_duration_w_earlier_wake_than_sleep_time(self):
-        self.assertEqual(
-            sleep_duration.duration(
-                wake_time='01:00',
-                sleep_time='02:00'
-            ),
-            '-1:00'
-        )
+I am green again
 
-  I am green again
-* I change the ``duration`` function to make a decision based on the difference between ``wake_time`` and ``sleep_time``
+refactor: make it better
+--------------------------------------------------------
 
-  - When the difference is less than ``0``, it is a negative number which means the ``wake_time`` is earlier than the ``sleep_time`` and the function should raise an :doc:`Exception </how_to/exception_handling_programs>`
-  - When the difference is greater than or equal to ``0``, it is a positive number which means the ``wake_time`` is later than the ``sleep_time`` and the function should return the difference between them
+* The ``duration`` function currently returns negative numbers when given an earlier ``wake_time`` than ``sleep_time``. It measures a time traveling scenario where the traveler can go to sleep in the present and wake up in the past. I change it to make sure it only returns durations when ``wake_time`` is not earlier than ``sleep_time``, time traveling is too hard
 
   .. code-block:: python
 
@@ -1321,19 +1322,15 @@ green: make it pass
 
             return f'{difference_hours:02}:{difference_minutes:02}'
 
-  the ``duration`` :doc:`function </functions/functions>` now
-
-  - calculates the difference between ``wake_time`` and ``sleep_time``
-  - checks if the difference between ``wake_time`` and ``sleep_time`` is less than 0
-
-    * raises a ValueError_ when ``wake_time`` is earlier than ``sleep_time`` - no more sleep time traveling
-    * returns a string_ conversion of the difference when ``wake_time`` is later than ``sleep_time``
+  - When the difference between ``wake_time`` and ``sleep_time`` is less than ``0``, it means ``wake_time`` is earlier than ``sleep_time`` and the ``duration`` :doc:`function </functions/functions>` will raise an :doc:`Exception </how_to/exception_handling_programs>`
+  - When the difference between ``wake_time`` and ``sleep_time`` is greater than or equal to ``0``, it means ``wake_time`` is later than or the same as ``sleep_time`` and the ``duration`` :doc:`function </functions/functions>` returns the difference
 
   the terminal shows a ValueError_ for ``test_duration_w_earlier_wake_than_sleep_time`` and ``test_duration_w_hours_and_minutes`` for the random values where ``wake_time`` is earlier than ``sleep_time``, for example
 
   .. code-block:: python
 
     ValueError: wake_time: 20:26 is earlier than sleep_time: 23:50
+
 * I add the error to the list of exceptions encountered
 
   .. code-block:: python
@@ -1346,7 +1343,7 @@ green: make it pass
     # SyntaxError
     # ValueError
 
-* I use `unittest.TestCase.assertRaises <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises>`_ to catch the :doc:`exception </how_to/exception_handling_tests>` in ``test_duration_w_earlier_wake_than_sleep_time``
+* I use `unittest.TestCase.assertRaises`_ to catch the :doc:`Exception </how_to/exception_handling_tests>` in ``test_duration_w_earlier_wake_than_sleep_time``
 
   .. code-block:: python
 
@@ -1359,7 +1356,7 @@ green: make it pass
 
 
   the test passes and I am left with the ValueError_ for ``test_duration_w_hours_and_minutes``
-* I add an :doc:`exception handler </how_to/exception_handling_programs>` using a ``try...except`` statement and `unittest.TestCase.assertRaises <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises>`_ to confirm the ValueError_ is raised in ``test_duration_w_hours_and_minutes`` when the ``wake_time`` is randomly earlier than the ``sleep_time``
+* I add an :doc:`exception handler </how_to/exception_handling_programs>` using a ``try...except`` statement and `unittest.TestCase.assertRaises`_ to confirm the ValueError_ is raised in ``test_duration_w_hours_and_minutes`` when the ``wake_time`` is randomly earlier than the ``sleep_time``
 
   .. code-block:: python
 
@@ -1555,7 +1552,7 @@ green: make it pass
 
     ValueError: invalid literal for int() with base 10: '31/12/99 10'
 
-* I use `unittest.TestCase.assertRaises <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises>`_ to catch the ValueError_ and I am green again
+* I use `unittest.TestCase.assertRaises`_ to catch the ValueError_ and I am green again
 
   .. code-block:: python
 
