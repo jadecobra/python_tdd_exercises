@@ -312,9 +312,7 @@ green: make it pass
 How to use try...except...else
 *****************************************
 
-`try...except...else <https://docs.python.org/3/reference/compound_stmts.html#the-try-statement>`_ statements are used to catch/handle exceptions in Python. This allows the program to make a decision when it encounters an Exception instead of ending execution.
-
-I add a `try...except...else <https://docs.python.org/3/reference/compound_stmts.html#the-try-statement>`_ statement to ``exception_handler`` in ``exceptions.py`` to handle exceptions
+I add a `try statement`_statement to ``exception_handler`` in ``exceptions.py`` to handle exceptions
 
 .. code-block:: python
 
@@ -326,9 +324,9 @@ I add a `try...except...else <https://docs.python.org/3/reference/compound_stmts
       else:
           return 'succeeded'
 
-and the terminal shows passing tests
+and the terminal shows passing tests. The `try statement`_ is used to catch/handle exceptions in Python. It allows the program to make a decision when it encounters an Exception instead of ending execution
 
-I think of the  `try...except...else <https://docs.python.org/3/reference/compound_stmts.html#the-try-statement>`_ statement as
+I think of the  `try statement`_statement as
 
 * ``try`` **this**
 * ``except Exception`` - when **this** raises an ``Exception`` do something

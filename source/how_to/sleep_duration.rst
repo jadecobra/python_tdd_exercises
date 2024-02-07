@@ -1319,7 +1319,6 @@ refactor: make it better
         else:
             difference_hours = difference // 60
             difference_minutes = difference % 60
-
             return f'{difference_hours:02}:{difference_minutes:02}'
 
   - When the difference between ``wake_time`` and ``sleep_time`` is less than ``0``, it means ``wake_time`` is earlier than ``sleep_time`` and the ``duration`` :doc:`function </functions/functions>` will raise an :doc:`Exception </how_to/exception_handling_programs>`
@@ -1354,9 +1353,9 @@ refactor: make it better
                 sleep_time='02:00'
             )
 
+  the test passes, leaving the ValueError_ for ``test_duration_w_hours_and_minutes``
 
-  the test passes and I am left with the ValueError_ for ``test_duration_w_hours_and_minutes``
-* I add an :doc:`exception handler </how_to/exception_handling_programs>` using a ``try...except`` statement and `unittest.TestCase.assertRaises`_ to confirm the ValueError_ is raised in ``test_duration_w_hours_and_minutes`` when the ``wake_time`` is randomly earlier than the ``sleep_time``
+* I add an :doc:`exception handler </how_to/exception_handling_programs>` using a `try statement`_ and `unittest.TestCase.assertRaises`_ to confirm the ValueError_ is raised when ``wake_time`` is  earlier than ``sleep_time``
 
   .. code-block:: python
 

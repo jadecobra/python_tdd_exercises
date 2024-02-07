@@ -12,6 +12,7 @@
 .. _split: https://docs.python.org/3/library/stdtypes.html#str.split
 .. _string: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
 .. _strings: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
+.. _try statement: https://docs.python.org/3/reference/compound_stmts.html#the-try-statement
 .. _unittest.TestCase.maxDiff: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff
 .. _unittest.skip decorator: https://docs.python.org/3/library/unittest.html#unittest.skip
 .. _unittest.TestCase.assertRaises: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises
