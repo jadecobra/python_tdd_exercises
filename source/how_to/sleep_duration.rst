@@ -835,6 +835,8 @@ test_duration_w_hours_and_minutes
 
 For the ``duration`` :doc:`function </functions/functions>` to meet the requirements, it has to accept timestamps with hours and minutes, but it currently returns the duration when given sleep and wake time hours without taking minutes into account in the calculation.
 
+.. _test_duration_w_hours_and_minutes_red:
+
 red: make it fail
 --------------------------------------------------------
 
@@ -869,7 +871,9 @@ the terminal shows an :ref:`AssertionError` that looks like this
 
   Your results may be different because the timestamps are random numbers
 
-the expected duration is now a string_ that contains the subtraction of the sleep hour from the wake hour, and the subtraction of the sleep minutes from the wake minutes, separated by ``:``. For example, when given a ``wake_time`` of ``'08:30'`` and a ``sleep_time`` of ``'07:11'``, the duration should be ``'01:19'``
+the expected duration is now a string_ that contains the subtraction of the sleep hour from the wake hour, and the subtraction of the sleep minutes from the wake minutes, separated by ``:``.
+
+.. _test_duration_w_hours_and_minutes_green:
 
 green: make it pass
 --------------------------------------------------------
@@ -921,7 +925,7 @@ green: make it pass
 
     AssertionError: '17:17' != '17:00'
 
-  the ``duration`` :doc:`function </functions/functions>` currently uses ``get_hour`` for hours and minutes. I need to create a function to use in the calculation for the minutes
+  the ``duration`` :doc:`function </functions/functions>` currently uses ``get_hour`` for hours and minutes. I need to create a function to use in the calculation for minutes
 
 * I use the ``get_hour`` function as a reference to create a similar function which gets the minutes from a given timestamp
 
@@ -950,7 +954,7 @@ green: make it pass
         )
         return f'{difference_hour}:{difference_minutes}'
 
-  and ``test_duration_w_hours_and_minutes`` passes leaving an :ref:`AssertionError` for ``test_duration_w_hours_only`` that looks like this
+  and ``test_duration_w_hours_and_minutes`` passes, leaving an :ref:`AssertionError` for ``test_duration_w_hours_only`` that looks like this
 
   .. code-block:: python
 
