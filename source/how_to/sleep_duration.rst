@@ -266,7 +266,7 @@ The ``wake_time`` and ``sleep_time`` are currently in this format - ``XX:00``. I
 red: make it fail
 --------------------------------------------------------
 
-* I use the dir_ :doc:`function </functions/functions>` to see what :doc:`attributes </exceptions/AttributeError>` and :doc:`methods </functions/functions>` and  of strings_ can help me break a string_ apart or get the characters I want from it
+* I use the dir_ :doc:`function </functions/functions>` to see what :doc:`attributes </exceptions/AttributeError>` and :doc:`methods </functions/functions>` of strings_ can help me break one apart or get the characters I want from it
 
   .. code-block:: python
 
@@ -511,14 +511,12 @@ green: make it pass
 
   and the terminal shows the :ref:`TypeError` that took me down this path
 
-  .. code-block:: python
-
-    TypeError: unsupported operand type(s) for -: 'str' and 'str'
+.. _test_string_splitting_refactor:
 
 refactor: make it better
 --------------------------------------------------------
 
-* I want to `str.split`_ the string_ on a ``separator`` so I get the separate parts, something like ``['01', '23']`` with ``:`` as the separator. I change the expectation of the test to match this idea
+* I want to split the string_ on a separator so I get the separate parts, something like ``['01', '23']`` with ``:`` as the separator. I change the expectation of the test to match this
 
   .. code-block:: python
 
@@ -528,13 +526,13 @@ refactor: make it better
             ['01', '23']
         )
 
-  and the terminal shows an :ref:`AssertionError`, the use of the `str.split`_ :doc:`method </functions/functions>` has not given me what I want yet
+  and the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: Lists differ: ['01:23'] != ['01', '23']
 
-* Looking back at the documentation, I see that `str.split`_ takes in ``sep=None, maxsplit=-1`` as inputs and ``sep`` is the separator. I pass in ``:`` to the `str.split`_ :doc:`method </functions/functions>` as the separator
+* From the documentation `str.split`_ takes in ``sep=None, maxsplit=-1`` as inputs and ``sep`` is the separator. I pass in ``':'`` as the separator
 
   .. code-block:: python
 
@@ -546,7 +544,7 @@ refactor: make it better
 
   and the test passes. I now know how to get the first parts of ``wake_time`` and ``sleep_time``
 
-* I change the ``duration`` :doc:`function </functions/functions>` in ``sleep_duration.py`` to use the `str.split`_ :doc:`method </functions/functions>`
+* I add the `str.split`_ :doc:`method </functions/functions>` to the ``duration`` :doc:`function </functions/functions>` in ``sleep_duration.py``
 
   .. code-block:: python
 
@@ -565,7 +563,7 @@ refactor: make it better
 red: make it fail
 --------------------------------------------------------
 
-* I only need the first part of the list and can get the specific item by using its index. Python uses `zero-based indexing`_ so the first item is at index ``0`` and the second item is at index ``1``. See :doc:`/data_structures/lists/lists` for more. I add tests for getting specific parts of the :doc:`list </data_structures/lists/lists>` created from splitting a string_ to ``test_string_splitting``
+* I only need the first part of the list, which I can get by using its index. Python uses `zero-based indexing`_ so the first item is at index ``0`` and the second item is at index ``1``. See :doc:`/data_structures/lists/lists` for more. I add tests for getting specific parts of the :doc:`list </data_structures/lists/lists>` created from splitting a string_ to ``test_string_splitting``
 
   .. code-block:: python
 
@@ -613,6 +611,7 @@ green: make it pass
     AssertionError: '34' != 0
 
   this shows that the second item (index 1) from splitting ``'12:34'`` on the separator ``':'`` is ``'34'``
+
 * I change the expected value in the same way
 
   .. code-block:: python
@@ -624,7 +623,7 @@ green: make it pass
 
   the tests pass, bringing me back to the unsolved :ref:`TypeError`
 
-* using what I have learned, I make the ``duration`` :doc:`function </functions/functions>` return the subtraction of the first parts of splitting ``wake_time`` and ``sleep_time`` on the separator ``':'``
+* using what I have learned, I make the ``duration`` :doc:`function </functions/functions>` return the subtraction of the first parts from splitting ``wake_time`` and ``sleep_time`` on the separator ``':'``
 
   .. code-block:: python
 
@@ -634,12 +633,14 @@ green: make it pass
           - sleep_time.split(':')[0]
         )
 
-  the terminal shows a :ref:`TypeError` for an unsupported operation of trying to subtract one string_ from another. I know from ``test_string_splitting`` that the strings being subtracted are the values to the left of the separator ``':'``, not the entire values of ``wake_time`` and ``sleep_time``. For example, if the given ``wake_time`` is ``'02:00'`` and the given ``sleep_time`` is ``'01:00'``, the program tries to subtract ``'01'`` from ``'02'`` which is different from trying to subtract ``1`` from ``2``, ``'01'`` is a string_ and ``1`` is a number
+  the terminal shows a :ref:`TypeError` for an unsupported operation of trying to subtract one string_ from another. I know from ``test_string_splitting`` that the strings being subtracted are the values to the left of the separator ``':'``, not the entire values of ``wake_time`` and ``sleep_time``. For example, if the given ``wake_time`` is ``'02:00'`` and the given ``sleep_time`` is ``'01:00'``, the program tries to subtract ``'01'`` from ``'02'`` which is different than trying to subtract ``1`` from ``2`` - ``'01'`` is a string_ and ``1`` is a number
 
 test_converting_string_to_integer
 ========================================================
 
 The next task is to convert the string_ to a number so I can do the subtraction
+
+.. _test_converting_string_to_integer_red:
 
 red: make it fail
 --------------------------------------------------------
@@ -664,11 +665,13 @@ red: make it fail
     def test_duration_w_hours_only(self):
     ...
 
-  the terminal shows an :ref:`AssertionError` since ``12 != 0``
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: 12 != 0
+
+.. _test_converting_string_to_integer_green:
 
 green: make it pass
 --------------------------------------------------------
@@ -677,8 +680,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_converting_string_to_integer(self):
-        self.assertEqual(int('12'), 12)
+    self.assertEqual(int('12'), 12)
 
   and get an :ref:`AssertionError` for the next line
 
@@ -686,22 +688,22 @@ green: make it pass
 
     AssertionError: 1 != 0
 
-* I change the test to match the expectation and we are green again
+* I change the test to match the expectation and things are green again
 
   .. code-block:: python
 
-    def test_converting_string_to_integer(self):
-        self.assertEqual(int('12'), 12)
-        self.assertEqual(int('01'), 1)
+    self.assertEqual(int('01'), 1)
 
-I have another tool to help solve the problem. I can
+I have another tool to help solve the problem. So far, I can
 
-- split a string_ on a separator
+- split a string_ on a separator using `str.split`_
 - index a :doc:`list </data_structures/lists/lists>`
-- convert a string_ to a number
+- convert a string_ to a number using the int_ constructor
 
-* I remove ``@unittest.skip`` from ``test_duration_w_hours_only`` to show the :ref:`TypeError` I have been trying to solve
-* I add the conversion using the int_ constructor to the ``duration`` :doc:`function </functions/functions>` to see if it makes the test pass
+----
+
+* I remove the `unittest.skip decorator`_ from ``test_duration_w_hours_only`` to show the :ref:`TypeError` I have been trying to solve
+* I add the conversion using the int_ constructor to the ``duration`` :doc:`function </functions/functions>` to see if it will make the test pass
 
   .. code-block:: python
 
@@ -711,9 +713,9 @@ I have another tool to help solve the problem. I can
           - int(sleep_time.split(':')[0])
         )
 
-  YES! I am green! The ``duration`` function can calculate the sleep duration given any random ``sleep`` and ``wake`` hours. What a beautiful life!
+  YES! I am green! The ``duration`` function can calculate the sleep duration given any random ``sleep`` and ``wake`` hours in a day. What a beautiful life!
 
-* I can rewrite the solution I have in a way that tries to explain what is happening to someone who does not know how to :doc:`index a list </data_structures/lists/lists>`, use int_ or `str.split`_
+* I can rewrite the solution I have in a way that tries to explain the process to someone who does not know how to :doc:`index a list </data_structures/lists/lists>`, use int_ or `str.split`_
 
   .. code-block:: python
 
@@ -785,7 +787,7 @@ I have another tool to help solve the problem. I can
 
   all tests are still green
 
-* I remove the parts of ``duration`` that I no longer need and rename ``process`` to something more descriptive like ``get_hour``
+* I remove the parts of ``duration`` I no longer need and rename ``process`` to something more descriptive like ``get_hour``
 
   .. code-block:: python
 
@@ -815,7 +817,7 @@ I have another tool to help solve the problem. I can
 
   the terminal still shows passing tests
 
-* I can also change ``get_hour`` to use one line, though it will no longer be as explicit as above
+* I can also change ``get_hour`` to use one line, though it might no longer be as easy to understand
 
   .. code-block:: python
 
@@ -831,7 +833,7 @@ You can try any ideas you want until you understand what has been written so far
 test_duration_w_hours_and_minutes
 ========================================================
 
-For the ``duration`` :doc:`function </functions/functions>` to meet the requirements, it has to accept timestamps with hours and minutes but it currently returns the right duration when given sleep time and wake wake time hours, without taking minutes into account in the calculation.
+For the ``duration`` :doc:`function </functions/functions>` to meet the requirements, it has to accept timestamps with hours and minutes, but it currently returns the duration when given sleep and wake time hours without taking minutes into account in the calculation.
 
 red: make it fail
 --------------------------------------------------------
