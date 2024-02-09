@@ -169,12 +169,12 @@ class TestSleepDuration(unittest.TestCase):
         wake_time_datetime_object = datetime.datetime.strptime(
                 wake_time, pattern
             )
-        sleep_time_datetime_object = datetime.datetime.strptime(
+        sleep_datetime_object = datetime.datetime.strptime(
                 sleep_time, pattern
             )
         difference = (
             wake_time_datetime_object
-          - sleep_time_datetime_object
+          - sleep_datetime_object
         )
 
         try:
@@ -189,7 +189,7 @@ class TestSleepDuration(unittest.TestCase):
             with self.assertRaisesRegex(
                 ValueError,
                 f'wake_time: {wake_time_datetime_object} is earlier '
-                f'than sleep_time: {sleep_time_datetime_object}'
+                f'than sleep_time: {sleep_datetime_object}'
             ):
                 sleep_duration.duration(
                     wake_time=wake_time,
