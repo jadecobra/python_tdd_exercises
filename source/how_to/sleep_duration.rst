@@ -850,15 +850,15 @@ I add a failing test in ``test_sleep_duration.py`` that takes minutes into accou
       wake_minutes = random.randint(0, 59)
       sleep_minutes = random.randint(0, 59)
 
-      difference_hours = wake_hour - sleep_hour
-      difference_minutes = wake_minutes - sleep_minutes
+      hours_difference = wake_hour - sleep_hour
+      minutes_difference = wake_minutes - sleep_minutes
 
       self.assertEqual(
           sleep_duration.duration(
               wake_time=f'{wake_hour:02}:{wake_minutes:02}',
               sleep_time=f'{sleep_hour:02}:{sleep_minutes:02}'
           ),
-          f'{difference_hours:02}:{difference_minutes:02}'
+          f'{hours_difference:02}:{minutes_difference:02}'
       )
 
 the terminal shows an :ref:`AssertionError` that looks like this
@@ -883,15 +883,15 @@ green: make it pass
   .. code-block:: python
 
     def duration(wake_time=None, sleep_time=None):
-        difference_hours = (
+        hours_difference = (
             get_hour(wake_time)
           - get_hour(sleep_time)
         )
-        difference_minutes = (
+        minutes_difference = (
             get_hour(wake_time)
           - get_hour(sleep_time)
         )
-        return f'{difference_hour}:{difference_minutes}'
+        return f'{hours_difference}:{minutes_difference}'
 
   and the terminal shows an :ref:`AssertionError` because changing the format causes an error in ``test_duration_w_hours_only`` which still expects a number instead of a string_
 
@@ -939,20 +939,20 @@ green: make it pass
 
   the terminal still shows an :ref:`AssertionError`
 
-* I change ``duration`` to use ``get_minutes`` in the calculation for ``difference_minutes``
+* I change ``duration`` to use ``get_minutes`` in the calculation for ``minutes_difference``
 
   .. code-block:: python
 
     def duration(wake_time=None, sleep_time=None):
-        difference_hours = (
+        hours_difference = (
             get_hour(wake_time)
           - get_hour(sleep_time)
         )
-        difference_minutes = (
+        minutes_difference = (
             get_minutes(wake_time)
           - get_minutes(sleep_time)
         )
-        return f'{difference_hour}:{difference_minutes}'
+        return f'{hours_difference}:{minutes_difference}'
 
   and ``test_duration_w_hours_and_minutes`` passes, leaving an :ref:`AssertionError` for ``test_duration_w_hours_only`` that looks like this
 
@@ -965,15 +965,15 @@ green: make it pass
   .. code-block:: python
 
     def duration(wake_time=None, sleep_time=None):
-        difference_hours = (
+        hours_difference = (
             get_hour(wake_time)
           - get_hour(sleep_time)
         )
-        difference_minutes = (
+        minutes_difference = (
             get_minutes(wake_time)
           - get_minutes(sleep_time)
         )
-        return f'{difference_hours:02}:{difference_minutes:02}'
+        return f'{hours_difference:02}:{minutes_difference:02}'
 
   and update ``test_duration_w_hours_only`` to do the same thing for the hours
 
@@ -983,15 +983,17 @@ green: make it pass
         wake_hour = random.randint(0, 23)
         sleep_hour = random.randint(0, 23)
 
-        difference_hours = wake_hour - sleep_hour
+        hours_difference = wake_hour - sleep_hour
 
         self.assertEqual(
             sleep_duration.duration(
                 wake_time=f'{wake_hour:02}:00',
                 sleep_time=f'{sleep_hour:02}:00'
             ),
-            f'{difference_hours:02}:00'
+            f'{hours_difference:02}:00'
         )
+
+.. _test_duration_w_hours_and_minutes_refactor:
 
 refactor: make it better
 --------------------------------------------------------
@@ -1002,6 +1004,8 @@ test_duration_calculation
 ========================================================
 
 The ``duration`` :doc:`function </functions/functions>` currently returns a subtraction of hours and a subtraction of minutes which is not correct for calculating the difference between two timestamps.
+
+.. _test_duration_calculation_red:
 
 red: make it fail
 --------------------------------------------------------
@@ -1027,6 +1031,8 @@ red: make it fail
 
   the ``duration`` :doc:`function </functions/functions>` returns ``'01:-29'`` which is not a real duration
 
+.. _test_duration_calculation_green:
+
 green: make it pass
 --------------------------------------------------------
 
@@ -1035,24 +1041,24 @@ green: make it pass
   .. code-block:: python
 
     def duration_a(wake_time=None, sleep_time=None):
-        difference_hours = (
+        hours_difference = (
             get_hour(wake_time)
           - get_hour(sleep_time)
         )
-        difference_minutes = (
+        minutes_difference = (
             get_minutes(wake_time)
           - get_minutes(sleep_time)
         )
-        return f'{difference_hours:02}:{difference_minutes:02}'
+        return f'{hours_difference:02}:{minutes_difference:02}'
 
 * I add a new ``duration`` :doc:`function </functions/functions>` with the following steps to calculate a real difference between two timestamps
 
   - convert each timestamp to its total minutes by multiplying the hour by 60 and adding the minutes
   - subtract total ``sleep_time`` minutes from total ``wake_time`` minutes
-  - return the difference between total ``wake_time`` and ``sleep_time`` as hours and minutes
+  - return the difference between total ``wake_time`` and ``sleep_time`` as hours and minutes by
 
-    * get the hours by using `floor (integer) division`_ to get the whole number value of dividing the difference by 60
-    * get the minutes by using the modulo_ operator to get the remainder from dividing the difference by 60
+    * getting the hours by using `floor (integer) division`_ to get the whole number value of dividing the difference by 60
+    * getting the minutes by using the modulo_ operator to get the remainder from dividing the difference by 60
 
   .. code-block:: python
 
@@ -1066,10 +1072,10 @@ green: make it pass
            + get_minutes(sleep_time)
         )
         difference = wake_time_minutes - sleep_time_minutes
-        difference_hours = difference // 60
-        difference_minutes = difference % 60
+        hours_difference = difference // 60
+        minutes_difference = difference % 60
 
-        return f'{difference_hours:02}:{difference_minutes:02}'
+        return f'{hours_difference:02}:{minutes_difference:02}'
 
   since ``test_duration_w_hours_and_minutes`` uses the wrong calculation, the terminal will show random successes and randomly show an :ref:`AssertionError` that looks like this
 
@@ -1090,15 +1096,15 @@ green: make it pass
         wake_time_minutes = (wake_hour * 60) + wake_minutes
         sleep_time_minutes = (sleep_hour * 60) + sleep_minutes
         difference = wake_time_minutes - sleep_time_minutes
-        difference_hours = difference // 60
-        difference_minutes = difference % 60
+        hours_difference = difference // 60
+        minutes_difference = difference % 60
 
         self.assertEqual(
             sleep_duration.duration(
                 wake_time=f'{wake_hour:02}:{wake_minutes:02}',
                 sleep_time=f'{sleep_hour:02}:{sleep_minutes:02}'
             ),
-            f'{difference_hours:02}:{difference_minutes:02}'
+            f'{hours_difference:02}:{minutes_difference:02}'
         )
 
   I have passing tests again
@@ -1107,6 +1113,8 @@ test_floor_aka_integer_division
 ========================================================
 
 The ``//`` operator returns a whole number that tells how many times the denominator can be multiplied to get a whole number that is equal to or less than the numerator
+
+.. _test_floor_aka_integer_division_red:
 
 red: make it fail
 --------------------------------------------------------
@@ -1128,6 +1136,8 @@ and the terminal shows an :ref:`AssertionError`
 
   AssertionError: 2 != 0
 
+.. _test_floor_aka_integer_division_green:
+
 green: make it pass
 --------------------------------------------------------
 
@@ -1135,9 +1145,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_floor_aka_integer_division(self):
-        self.assertEqual(120//60, 2)
-        self.assertEqual(150//60, 0)
+    self.assertEqual(120//60, 2)
 
   the terminal shows an :ref:`AssertionError`
 
@@ -1149,9 +1157,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_floor_aka_integer_division(self):
-        self.assertEqual(120//60, 2)
-        self.assertEqual(150//60, 2)
+    self.assertEqual(150//60, 2)
 
   the terminal shows all tests are passing
 
@@ -1159,6 +1165,8 @@ test_modulo_operation
 ========================================================
 
 The ``%`` operator returns the remainder from dividing one number by another
+
+.. _test_modulo_operation_red:
 
 red: make it fail
 --------------------------------------------------------
@@ -1180,6 +1188,8 @@ and the terminal shows an :ref:`AssertionError`
 
   AssertionError: 0 != 2
 
+.. _test_modulo_operation_green:
+
 green: make it pass
 --------------------------------------------------------
 
@@ -1187,9 +1197,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_modulo_operation(self):
-        self.assertEqual(120%60, 0)
-        self.assertEqual(150%60, 2)
+    self.assertEqual(120%60, 0)
 
   and the terminal shows an :ref:`AssertionError`
 
@@ -1201,16 +1209,14 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_modulo_operation(self):
-        self.assertEqual(120%60, 0)
-        self.assertEqual(150%60, 30)
+    self.assertEqual(150%60, 30)
 
   the terminal shows passing tests
 
 ----
 
 * I remove ``duration_a`` since the working solution in ``duration`` is better
-* I write a function to get the total minutes from a timestamp and call it in the ``duration`` :doc:`function </functions/functions>`
+* I write a function to get the total minutes from a timestamp and call it in ``duration``
 
   .. code-block:: python
 
@@ -1224,14 +1230,14 @@ green: make it pass
         wake_time_minutes = get_total_minutes(wake_time)
         sleep_time_minutes = get_total_minutes(sleep_time)
         difference = wake_time_minutes - sleep_time_minutes
-        difference_hours = difference // 60
-        difference_minutes = difference % 60
+        hours_difference = difference // 60
+        minutes_difference = difference % 60
 
-        return f'{difference_hours:02}:{difference_minutes:02}'
+        return f'{hours_difference:02}:{minutes_difference:02}'
 
-  the terminal shows passing tests. We are still green.
+  the terminal still shows passing tests
 
-* I remove ``wake_time_minutes`` and ``sleep_time_minutes`` and do the calculation directly since I only use them when I calculate the difference
+* I remove the ``wake_time_minutes`` and ``sleep_time_minutes`` variables from ``duration`` since I only use them when I calculate the difference
 
   .. code-block:: python
 
@@ -1240,14 +1246,14 @@ green: make it pass
             get_total_minutes(wake_time)
           - get_total_minutes(sleep_time)
         )
-        difference_hours = difference // 60
-        difference_minutes = difference % 60
+        hours_difference = difference // 60
+        minutes_difference = difference % 60
 
-        return f'{difference_hours:02}:{difference_minutes:02}'
+        return f'{hours_difference:02}:{minutes_difference:02}'
 
-  the terminal shows all tests are still passing. Take a look at the last two blocks of code. Which one do you like?
+  the terminal shows all tests are still passing. Which of the last two blocks of code do you like?
 
-* I create a :doc:`function </functions/functions>` to replace the ``get_hour`` and ``get_minutes`` functions
+* I create a :doc:`function </functions/functions>` to replace ``get_hour`` and ``get_minutes``
 
   .. code-block:: python
 
@@ -1262,7 +1268,7 @@ green: make it pass
 
   the terminal shows all tests are still passing
 
-* I remove the ``get_hour`` and ``get_minutes`` functions
+* I remove ``get_hour`` and ``get_minutes``
 * I remove ``test_duration_calculation`` since it is now covered by ``test_duration_w_hours_and_minutes``
 
 ----
@@ -1271,6 +1277,8 @@ test_duration_w_earlier_wake_than_sleep_time
 ========================================================
 
 What happens when the ``duration`` :doc:`function </functions/functions>` is given an earlier ``wake_time`` than ``sleep_time``?
+
+.. _test_duration_w_earlier_wake_than_sleep_time_red:
 
 red: make it fail
 --------------------------------------------------------
@@ -1294,6 +1302,8 @@ the terminal shows an :ref:`AssertionError`
 
   AssertionError: '-1:00' != ''
 
+.. _test_duration_w_earlier_wake_than_sleep_time_green:
+
 green: make it pass
 --------------------------------------------------------
 
@@ -1310,7 +1320,9 @@ I change the expected value in the test to make it pass
           '-1:00'
       )
 
-I am green again
+green again
+
+.. _test_duration_w_earlier_wake_than_sleep_time_refactor:
 
 refactor: make it better
 --------------------------------------------------------
@@ -1331,9 +1343,9 @@ refactor: make it better
                 f'than sleep_time: {sleep_time}'
             )
         else:
-            difference_hours = difference // 60
-            difference_minutes = difference % 60
-            return f'{difference_hours:02}:{difference_minutes:02}'
+            hours_difference = difference // 60
+            minutes_difference = difference % 60
+            return f'{hours_difference:02}:{minutes_difference:02}'
 
   - When the difference between ``wake_time`` and ``sleep_time`` is less than ``0``, it means ``wake_time`` is earlier than ``sleep_time`` and the ``duration`` :doc:`function </functions/functions>` will raise an :doc:`Exception </how_to/exception_handling_programs>`
   - When the difference between ``wake_time`` and ``sleep_time`` is greater than or equal to ``0``, it means ``wake_time`` is later than or the same as ``sleep_time`` and the ``duration`` :doc:`function </functions/functions>` returns the difference
@@ -1367,7 +1379,7 @@ refactor: make it better
                 sleep_time='02:00'
             )
 
-  the test passes, leaving the ValueError_ for ``test_duration_w_hours_and_minutes``
+  and the test passes, leaving the ValueError_ for ``test_duration_w_hours_and_minutes``
 
 * I add an :doc:`exception handler </how_to/exception_handling_programs>` using a `try statement`_ and `unittest.TestCase.assertRaises`_ to confirm the ValueError_ is raised when ``wake_time`` is earlier than ``sleep_time``
 
@@ -1382,8 +1394,8 @@ refactor: make it better
         wake_time_minutes = (wake_hour * 60) + wake_minutes
         sleep_time_minutes = (sleep_hour * 60) + sleep_minutes
         difference = wake_time_minutes - sleep_time_minutes
-        difference_hours = difference // 60
-        difference_minutes = difference % 60
+        hours_difference = difference // 60
+        minutes_difference = difference % 60
 
         wake_time = f'{wake_hour:02}:{wake_minutes:02}'
         sleep_time = f'{sleep_hour:02}:{sleep_minutes:02}'
@@ -1394,7 +1406,7 @@ refactor: make it better
                     wake_time=wake_time,
                     sleep_time=sleep_time
                 ),
-                f'{difference_hours:02}:{difference_minutes:02}'
+                f'{hours_difference:02}:{minutes_difference:02}'
             )
         except ValueError:
             with self.assertRaises(ValueError):
@@ -1405,8 +1417,8 @@ refactor: make it better
 
   all tests are passing. Green is a beautiful color
 
-* I no longer need ``test_duration_w_earlier_wake_than_sleep_time`` since it is covered by ``test_duration_w_hours_and_minutes`` so I remove it
-* I use `unittest.TestCase.assertRaisesRegex`_ to make sure ``test_duration_w_hours_and_minutes`` catches only the ValueError_ raised by the ``duration`` :doc:`function </functions/functions>` with a specific message
+* I remove ``test_duration_w_earlier_wake_than_sleep_time`` since it is covered by ``test_duration_w_hours_and_minutes``
+* I use `unittest.TestCase.assertRaisesRegex`_ to make sure ``test_duration_w_hours_and_minutes`` catches only the ValueError_ raised by the ``duration`` :doc:`function </functions/functions>` with its specific message
 
   .. code-block:: python
 
@@ -1420,8 +1432,8 @@ refactor: make it better
         sleep_time_minutes = (sleep_hour * 60) + sleep_minutes
 
         difference = wake_time_minutes - sleep_time_minutes
-        difference_hours = difference // 60
-        difference_minutes = difference % 60
+        hours_difference = difference // 60
+        minutes_difference = difference % 60
 
         wake_time = f'{wake_hour:02}:{wake_minutes:02}'
         sleep_time = f'{sleep_hour:02}:{sleep_minutes:02}'
@@ -1432,7 +1444,7 @@ refactor: make it better
                     wake_time=wake_time,
                     sleep_time=sleep_time
                 ),
-                f'{difference_hours:02}:{difference_minutes:02}'
+                f'{hours_difference:02}:{minutes_difference:02}'
             )
         except ValueError:
             with self.assertRaisesRegex(
@@ -1445,14 +1457,13 @@ refactor: make it better
                     sleep_time=sleep_time
                 )
 
-  - the terminal shows passing tests
-  - `unittest.TestCase.assertRaisesRegex`_ confirms that a specific :doc:`Exception </how_to/exception_handling_tests>` with a specific message is raised.
+  the terminal shows passing tests
 
 I have a function that
 
 * takes in a ``wake_time`` and ``sleep_time`` as inputs
 * raises a ValueError_ with a message when ``wake_time`` is earlier than ``sleep_time``
-* returns the difference between the two when ``wake_time`` is later than or equal to ``sleep_time``
+* returns the difference between the two when ``wake_time`` is later than or the same as ``sleep_time``
 
 Time to take a break.
 
@@ -1461,12 +1472,14 @@ Time to take a break.
 test_duration_w_date_and_time
 ========================================================
 
-The ``duration`` :doc:`function </functions/functions>` has been tested with timestamps that contain only hours and minutes, but I could fall asleep on a Monday and wake up on a Tuesday. What would happen if I added dates to the timestamps?
+So far, the ``duration`` :doc:`function </functions/functions>` has been tested with timestamps that contain only hours and minutes, but I could fall asleep on a Monday and wake up on a Tuesday. What would happen if I added dates to the timestamps?
+
+.. _test_duration_w_date_and_time_red:
 
 red: make it fail
 --------------------------------------------------------
 
-* I add a failing test to ``test_sleep_duration.py`` based on ``test_duration_w_hours_and_minutes`` and call it ``test_duration_w_date_and_time`` to test the ``duration`` function with a date, hours and minutes
+* I add a failing test to ``test_sleep_duration.py`` based on ``test_duration_w_hours_and_minutes`` and call it ``test_duration_w_date_and_time`` to test the ``duration`` with a date, hours and minutes
 
   .. code-block:: python
 
@@ -1480,8 +1493,8 @@ red: make it fail
         sleep_time_minutes = (sleep_hour * 60) + sleep_minutes
 
         difference = wake_time_minutes - sleep_time_minutes
-        difference_hours = difference // 60
-        difference_minutes = difference % 60
+        hours_difference = difference // 60
+        minutes_difference = difference % 60
 
         wake_time = f'31/12/99 {wake_hour:02}:{wake_minutes:02}'
         sleep_time = f'31/12/99 {sleep_hour:02}:{sleep_minutes:02}'
@@ -1492,7 +1505,7 @@ red: make it fail
                     wake_time=wake_time,
                     sleep_time=sleep_time
                 ),
-                f'{difference_hours:02}:{difference_minutes:02}'
+                f'{hours_difference:02}:{minutes_difference:02}'
             )
         except ValueError:
             with self.assertRaisesRegex(
@@ -1511,12 +1524,14 @@ red: make it fail
 
     AssertionError: "wake_time: 31/12/99 10:07 is earlier than sleep_time: 31/12/99 05:25" does not match "invalid literal for int() with base 10: '31/12/99 10'"
 
-  it looks like the ``duration`` :doc:`function </functions/functions>` encountered a ValueError_ with a different message than the one the test expects. The `unittest.TestCase.assertRaisesRegex`_ works. If I did not specify the error message to catch, the test would have missed this
+  it looks like the ``duration`` :doc:`function </functions/functions>` encountered a ValueError_ with a different message than the one expected in the test. The `unittest.TestCase.assertRaisesRegex`_ test works. The test would have missed this if I did not specify what error message to catch
+
+.. _test_duration_w_date_and_time_green:
 
 green: make it pass
 --------------------------------------------------------
 
-* The ``parse_timestamp`` function tried to convert the given string_ to an integer but it is in the wrong format
+* The ``parse_timestamp`` :doc:`function </functions/functions>` tried to convert the given string_ to an integer but it was in the wrong format
 
   .. code-block:: python
 
@@ -1827,9 +1842,9 @@ From the tests, I know I can
                 f'than sleep_time: {sleep_time}'
             )
         else:
-            difference_hours = difference // 60
-            difference_minutes = difference % 60
-            return f'{difference_hours:02}:{difference_minutes:02}'
+            hours_difference = difference // 60
+            minutes_difference = difference % 60
+            return f'{hours_difference:02}:{minutes_difference:02}'
 
 * then add a new ``duration`` :doc:`function </functions/functions>` with a call to the ``get_datetime_object``
 
