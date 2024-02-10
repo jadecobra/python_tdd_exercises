@@ -328,7 +328,7 @@ refactor: make it better
 
     TypeError: 'NoneType' object is not callable
 
-* I change ``function_d`` in ``functions.py`` to a :doc:`function </functions/functions>`
+* I change ``function_d`` in ``functions.py`` to a :ref:`function<functions>`
 
   .. code-block:: python
 

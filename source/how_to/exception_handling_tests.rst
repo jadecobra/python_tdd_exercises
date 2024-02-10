@@ -71,7 +71,7 @@ I add a ``self.assertRaises`` to ``test_catching_module_not_found_error_in_tests
 
 and the terminal shows passing tests. How does all this work?
 
-* I use the `unittest.TestCase.assertRaises`_ :doc:`method </functions/functions>` which takes a given `Exception <https://docs.python.org/3/library/exceptions.html?highlight=exception#Exception>`_ as its input, in this case :ref:`ModuleNotFoundError` and checks if that error is raised by the statements given in the context below (the indented block after the ``with`` statement)
+* I use the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` which takes a given `Exception <https://docs.python.org/3/library/exceptions.html?highlight=exception#Exception>`_ as its input, in this case :ref:`ModuleNotFoundError` and checks if that error is raised by the statements given in the context below (the indented block after the ``with`` statement)
 * ``with`` - creates the context where I test that the exception is raised
 
   - `read more about the with statement <https://docs.python.org/3/reference/compound_stmts.html?highlight=statement#the-with-statement>`_
@@ -141,7 +141,7 @@ I add a ``with self.assertRaises`` context to ``test_catching_attribute_errors_i
       with self.assertRaises(AttributeError):
           module.non_existent_attribute
 
-the terminal shows passing tests. I will do it again with :doc:`functions </functions/functions>` for fun
+the terminal shows passing tests. I will do it again with :ref:`functions<functions>` for fun
 
 red: make it fail
 ==================

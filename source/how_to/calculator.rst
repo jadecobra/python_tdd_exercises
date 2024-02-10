@@ -53,7 +53,7 @@ Test Addition
 red: make it fail
 ==================
 
-* I add a :doc:`method </functions/functions>` called ``test_addition`` to the ``TestCalculator`` :doc:`class </classes/classes>`
+* I add a :ref:`method<functions>` called ``test_addition`` to the ``TestCalculator`` :doc:`class </classes/classes>`
 
   .. code-block:: python
 
@@ -72,7 +72,7 @@ red: make it fail
             )
 
 
-  - I use the `unittest.TestCase.assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ :doc:`method </functions/functions>` which checks if its 2 inputs are equal. It is similar to the statement ``assert x == y`` or asking ``is x equal to y?``
+  - I use the `unittest.TestCase.assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ :ref:`method<functions>` which checks if its 2 inputs are equal. It is similar to the statement ``assert x == y`` or asking ``is x equal to y?``
   - I am sending two things to `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ for evaluation
 
     * first: ``calculator.add(0, 1)`` calls the ``add`` function in ``calculator.py`` with ``0`` and ``1`` as inputs
@@ -155,7 +155,7 @@ green: make it pass
     # AttributeError
     # TypeError
 
-* I have to define ``add`` as a :doc:`function </functions/functions>` or :doc:`class </classes/classes>` to make it callable. I know the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword is used for creating :doc:`/functions/functions` and will test changing the ``add`` variable to a :doc:`function </functions/functions>` in ``calculator.py``
+* I have to define ``add`` as a :ref:`function<functions>` or :doc:`class </classes/classes>` to make it callable. I know the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword is used for creating :doc:`/functions/functions` and will test changing the ``add`` variable to a :ref:`function<functions>` in ``calculator.py``
 
   .. code-block:: python
 
@@ -333,7 +333,7 @@ red: make it fail
 ===================
 
 
-* I add a :doc:`method </functions/functions>` called ``test_subtraction`` to ``test_calculator.py``
+* I add a :ref:`method<functions>` called ``test_subtraction`` to ``test_calculator.py``
 
   .. code-block:: python
 
@@ -392,7 +392,7 @@ GREEN : make it pass
 
     TypeError: subtract() takes 0 positional arguments but 2 were given
 
-* I change the definition of the ``subtract`` :doc:`function </functions/functions>` to match the expectation
+* I change the definition of the ``subtract`` :ref:`function<functions>` to match the expectation
 
   .. code-block:: python
 
@@ -453,7 +453,7 @@ refactor: make it better
             )
 
   - all tests are still passing, so my change did not break anything. Fantastic!
-  - The ``x`` and ``y`` variables are initialized once as :doc:`class </classes/classes>` attributes (variables) and accessed later in every test using ``self.x`` and ``self.y``, the same way I can call `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`methods </functions/functions>` like `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ by using ``self.assertEqual``
+  - The ``x`` and ``y`` variables are initialized once as :doc:`class </classes/classes>` attributes (variables) and accessed later in every test using ``self.x`` and ``self.y``, the same way I can call `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :ref:`methods<functions>` like `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ by using ``self.assertEqual``
 
 
 ----
@@ -537,7 +537,7 @@ GREEN : make it pass
 =====================
 
 
-* I add a ``divide`` :doc:`function </functions/functions>` to ``calculator.py``
+* I add a ``divide`` :ref:`function<functions>` to ``calculator.py``
 
   .. code-block:: python
 
@@ -599,7 +599,7 @@ the terminal shows my expectations with a failure for any value of ``x`` when ``
 GREEN : make it pass
 =====================
 
-I can use the `unittest.TestCase.assertRaises`_ :doc:`method </functions/functions>` in ``test_division`` to confirm that a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ is raised when I try to divide a number by ``0``
+I can use the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` in ``test_division`` to confirm that a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ is raised when I try to divide a number by ``0``
 
 .. code-block:: python
 

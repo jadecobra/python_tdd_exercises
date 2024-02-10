@@ -113,7 +113,7 @@ and the terminal shows all tests pass
 How to define a class with methods
 ----------------------------------
 
-I can also define classes with :doc:`methods </functions/functions>` which are function definitions that belong to the class
+I can also define classes with :ref:`methods<functions>` which are function definitions that belong to the class
 
 red: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -169,7 +169,7 @@ green: make it pass
 
   the terminal shows a :ref:`TypeError` since ``method_a`` refers to :ref:`None` which is not callable
 
-* I change the definition of ``method_a`` to make it a :doc:`function </functions/functions>` which makes it callable
+* I change the definition of ``method_a`` to make it a :ref:`function<functions>` which makes it callable
 
   .. code-block:: python
 
@@ -269,7 +269,7 @@ How to View the attributes and methods of a class
 
 To view what :doc:`attributes </exceptions/AttributeError>` and ``methods`` are defined for any `object <https://docs.python.org/3/glossary.html#term-object>`_ I can call ``dir`` on the `object <https://docs.python.org/3/glossary.html#term-object>`_.
 
-The ``dir`` :doc:`method </functions/functions>` returns a :doc:`list </data_structures/lists/lists>` of all attributes and :doc:`methods </functions/functions>` of the object provided to it as input
+The ``dir`` :ref:`method<functions>` returns a :doc:`list </data_structures/lists/lists>` of all attributes and :ref:`methods<functions>` of the object provided to it as input
 
 red: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -333,8 +333,8 @@ and it passes, the last two values in the list are ``attribute`` and ``method`` 
 CONGRATULATIONS! If you made it this far and typed along with me, You know
 
 * how to define a class with an attribute
-* how to define a class with a :doc:`method </functions/functions>`
+* how to define a class with a :ref:`method<functions>`
 * how to define a class with an initializer
-* how to view the attributes and :doc:`methods </functions/functions>` of a class
+* how to view the attributes and :ref:`methods<functions>` of a class
 
 Do you want to `read more about classes? <https://docs.python.org/3/tutorial/classes.html#tut-firstclasses>`_

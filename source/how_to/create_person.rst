@@ -71,7 +71,7 @@ green: make it pass
 refactor: make it better
 =========================
 
-* I want to pass in values for ``first_name``, ``last_name``, ``year_of_birth``, ``sex`` and have the :doc:`function </functions/functions>` return a :doc:`dictionary </data_structures/dictionaries>` with the ``first_name``, ``last_name``, ``sex`` and ``age`` calculated from the ``year_of_birth``, so I add more details to ``test_person_factory``
+* I want to pass in values for ``first_name``, ``last_name``, ``year_of_birth``, ``sex`` and have the :ref:`function<functions>` return a :doc:`dictionary </data_structures/dictionaries>` with the ``first_name``, ``last_name``, ``sex`` and ``age`` calculated from the ``year_of_birth``, so I add more details to ``test_person_factory``
 
   .. code-block:: python
 
@@ -91,7 +91,7 @@ refactor: make it better
             }
         )
 
-  the terminal shows a NameError_ for the call to the ``this_year`` :doc:`function </functions/functions>`
+  the terminal shows a NameError_ for the call to the ``this_year`` :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -120,7 +120,7 @@ refactor: make it better
     class TestPersonFactory(unittest.TestCase):
     ...
 
-  the terminal shows a :ref:`TypeError` since the ``person.factory`` :doc:`function signature </functions/functions>` does not allow it to accept inputs and the test sends four arguments when it calls the :doc:`function </functions/functions>`
+  the terminal shows a :ref:`TypeError` since the ``person.factory`` :doc:`function signature </functions/functions>` does not allow it to accept inputs and the test sends four arguments when it calls the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -194,7 +194,7 @@ refactor: make it better
     def this_year():
         return datetime.datetime.now().year
 
-  - ``return datetime.datetime.now().year`` returns the ``year`` attribute of the object returned by the ``now`` :doc:`method </functions/functions>` of the ``datetime.datetime`` :doc:`class </classes/classes>`, which is a representation of the current local date and time. I could also use ``today`` or ``utcnow`` instead of ``now`` to achieve the same result
+  - ``return datetime.datetime.now().year`` returns the ``year`` attribute of the object returned by the ``now`` :ref:`method<functions>` of the ``datetime.datetime`` :doc:`class </classes/classes>`, which is a representation of the current local date and time. I could also use ``today`` or ``utcnow`` instead of ``now`` to achieve the same result
   - I get the ``year`` attribute of the object returned since that is `all I need to get by <https://www.youtube.com/watch?v=XW1HNWqdVbk>`_
 
 * the terminal shows an :ref:`AssertionError` since the ``person.factory`` function returns :ref:`None` and the test expects a :doc:`dictionary </data_structures/dictionaries>` with keys and values.
@@ -331,9 +331,9 @@ refactor: make it better
 
   and the terminal shows passing tests, time for a victory dance
 
-* When I call the ``factory`` :doc:`function </functions/functions>` passing in values for ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``, it returns a :doc:`dictionary </data_structures/dictionaries>` that contains the ``first_name``, ``last_name``, ``sex`` and ``age`` of the person
+* When I call the ``factory`` :ref:`function<functions>` passing in values for ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``, it returns a :doc:`dictionary </data_structures/dictionaries>` that contains the ``first_name``, ``last_name``, ``sex`` and ``age`` of the person
 
-* I noticed that there is some repetition in the test. If I want to test with a different value for any of the arguments passed to ``person.factory``, I would have to make the change in 2 places - once in the argument passed to the :doc:`function </functions/functions>` and then again in the resulting :doc:`dictionary </data_structures/dictionaries>`. I can refactor this to make it easier to make changes to the test when I want,  especially since the programming gods told me `not to repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
+* I noticed that there is some repetition in the test. If I want to test with a different value for any of the arguments passed to ``person.factory``, I would have to make the change in 2 places - once in the argument passed to the :ref:`function<functions>` and then again in the resulting :doc:`dictionary </data_structures/dictionaries>`. I can refactor this to make it easier to make changes to the test when I want,  especially since the programming gods told me `not to repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
   .. code-block:: python
 
@@ -358,7 +358,7 @@ refactor: make it better
             }
         )
 
-  I remove the duplication by creating a variable for each of the inputs that is passed to the ``factory`` :doc:`function </functions/functions>` and reference the variables in the :doc:`function </functions/functions>` call. I now only need to make a change in one place when I want, for example
+  I remove the duplication by creating a variable for each of the inputs that is passed to the ``factory`` :ref:`function<functions>` and reference the variables in the :ref:`function<functions>` call. I now only need to make a change in one place when I want, for example
 
   .. code-block:: python
 
@@ -497,7 +497,7 @@ red: make it fail
 
 ----
 
-From the tests above you can create a :doc:`function </functions/functions>` that
+From the tests above you can create a :ref:`function<functions>` that
 
 * returns a :doc:`dictionary </data_structures/dictionaries>` as output
 * takes in keyword arguments as inputs

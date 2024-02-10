@@ -737,7 +737,7 @@ What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datas
     >       self.assertIsNone(a_dictionary['non_existent_key'])
     E       KeyError: 'non_existent_key'
 
-* I can use the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :doc:`method </functions/functions>` when I do not want python to raise a KeyError_ for a key that does not exist
+* I can use the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :ref:`method<functions>` when I do not want python to raise a KeyError_ for a key that does not exist
 
   .. code-block:: python
 
@@ -750,7 +750,7 @@ What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datas
         }
         self.assertIsNone(a_dictionary.get('non_existent_key'))
 
-  the terminal shows a passing test. This means that when I use the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :doc:`method </functions/functions>` and the ``key`` does not exist, I get :ref:`None` as the result.
+  the terminal shows a passing test. This means that when I use the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :ref:`method<functions>` and the ``key`` does not exist, I get :ref:`None` as the result.
 * I can state the above explicitly because ``Explicit is better than implicit`` see `Zen of Python <https://peps.python.org/pep-0020/>`_
 
   .. code-block:: python
@@ -779,12 +779,12 @@ What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datas
     self.assertIsNone(a_dictionary.get('non_existent_key', None))
 
   the terminal shows passing tests.
-* The `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :doc:`method </functions/functions>` takes in 2 inputs
+* The `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :ref:`method<functions>` takes in 2 inputs
 
   - the ``key``
   - the ``default value`` wanted when the ``key`` does not exist
 
-* I can also use the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :doc:`method </functions/functions>` to get the value for an existing key
+* I can also use the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :ref:`method<functions>` to get the value for an existing key
 
   .. code-block:: python
 
@@ -826,7 +826,7 @@ Do you think you could write an implementation for the ``get`` method after read
 How to view the attributes and methods of a dictionary
 -------------------------------------------------------
 
-The chapter on :doc:`/classes/classes` shows how to view the :doc:`attributes </exceptions/AttributeError>` and :doc:`methods </functions/functions>` of an object. Let us look at the attributes and :doc:`methods </functions/functions>` of `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+The chapter on :doc:`/classes/classes` shows how to view the :doc:`attributes </exceptions/AttributeError>` and :ref:`methods<functions>` of an object. Let us look at the attributes and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
 red: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -918,7 +918,7 @@ I copy the expected values shown in the terminal to make the test pass
 refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-I see some of the :doc:`methods </functions/functions>` I have tested so far and others I did not. You can write tests for the others to show what they do and/or `read more about dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_.
+I see some of the :ref:`methods<functions>` I have tested so far and others I did not. You can write tests for the others to show what they do and/or `read more about dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_.
 
 * `clear <https://docs.python.org/3/library/stdtypes.html#dict.clear>`_
 * `copy <https://docs.python.org/3/library/stdtypes.html#dict.copy>`_
@@ -1065,7 +1065,7 @@ refactor: make it better
         }
     )
 
-  all tests pass, and I add what I know about `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_ to the list of attributes and :doc:`methods </functions/functions>` of `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+  all tests pass, and I add what I know about `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_ to the list of attributes and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
 How to update a dictionary with another dictionary
 ---------------------------------------------------
@@ -1097,7 +1097,7 @@ I add another test to ``TestDictionaries``
           }
       )
 
-the terminal shows an :ref:`AssertionError` because the values of ``a_dictionary`` were changed when I called the `update <https://docs.python.org/3/library/stdtypes.html#dict.update>`_ :doc:`method </functions/functions>` on it
+the terminal shows an :ref:`AssertionError` because the values of ``a_dictionary`` were changed when I called the `update <https://docs.python.org/3/library/stdtypes.html#dict.update>`_ :ref:`method<functions>` on it
 
 .. code-block:: python
 
@@ -1269,7 +1269,7 @@ You also know
 * What objects cannot be used as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
 * How to view `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
 * How to view `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ values
-* How to view the attributes and :doc:`methods </functions/functions>` of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+* How to view the attributes and :ref:`methods<functions>` of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 * How to set a default value for a key
 * How to change a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with another `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 * How to remove an item from a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_

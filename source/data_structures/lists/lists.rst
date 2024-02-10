@@ -54,7 +54,7 @@ green: make it pass
     # TypeError
 
   - Looking at the error I see that the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor expects one argument but four are given in the test, so I am not following the signature for creating lists
-  - a `constructor <https://en.wikipedia.org/wiki/Constructor_(object-oriented_programming)>`_ is a :doc:`function </functions/functions>` that is used to create an instance of a :doc:`class </classes/classes>`
+  - a `constructor <https://en.wikipedia.org/wiki/Constructor_(object-oriented_programming)>`_ is a :ref:`function<functions>` that is used to create an instance of a :doc:`class </classes/classes>`
   - I read `python's documentation for lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ and see that the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor takes an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ as input
   - An `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ is an object I can go over its items one by one in a loop - `tuples <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_, `lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_, `sets <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ and :doc:`dictionaries </data_structures/dictionaries>` are iterable
 
@@ -112,7 +112,7 @@ How to add an item to a list
 red: make it fail
 ===================
 
-I add a test to for adding items to an existing list with the `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :doc:`method </functions/functions>`
+I add a test to for adding items to an existing list with the `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>`
 
 .. code-block:: python
 
@@ -124,7 +124,7 @@ I add a test to for adding items to an existing list with the `append <https://d
 
 - ``a_list = [0, 1, 2, 3]`` creates a list of 4 items and calls it ``a_list``
 - the first ``self.assertEqual(a_list, [0, 1, 2, 3])`` checks that ``a_list`` contains the four items
-- ``a_list.append(4)`` calls the `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :doc:`method </functions/functions>` of the list
+- ``a_list.append(4)`` calls the `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` of the list
 - ``self.assertEqual(a_list, [0, 1, 2, 3])`` checks what ``a_list`` contains after `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ is called
 
 the terminal shows an :ref:`AssertionError` because the values in ``a_list`` change after ``a_list.append(4)``
@@ -219,7 +219,7 @@ What happens when there is more than one of the same item in a list? How does Py
         a_list.remove(2)
         self.assertEqual(a_list, [0, 1, 2, 3, 2])
 
-  From the test I see that teh `remove <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :doc:`function </functions/functions>` removes the first item when there is more than one of the same item in a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+  From the test I see that teh `remove <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`function<functions>` removes the first item when there is more than one of the same item in a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
 ----
 
@@ -456,12 +456,12 @@ refactor: make it better
 How to view the attributes and methods of a list
 **************************************************
 
-The chapter on :doc:`/classes/classes` shows how to view the :doc:`attributes </exceptions/AttributeError>` and :doc:`methods </functions/functions>` of an `object <https://docs.python.org/3/glossary.html#term-object>`_ by using the dir_ :doc:`function </functions/functions>`. Let us try it for `lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
+The chapter on :doc:`/classes/classes` shows how to view the :doc:`attributes </exceptions/AttributeError>` and :ref:`methods<functions>` of an `object <https://docs.python.org/3/glossary.html#term-object>`_ by using the dir_ :ref:`function<functions>`. Let us try it for `lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
 
 red: make it fail
 ===================
 
-I add a failing test using the dir_ :doc:`function </functions/functions>`
+I add a failing test using the dir_ :ref:`function<functions>`
 
 .. code-block:: python
 
@@ -569,7 +569,7 @@ the terminal shows passing tests
 refactor: make it better
 =========================
 
-There are more :doc:`methods </functions/functions>` listed than what I have reviewed. Based on their names, I can make a guess as to what they do, and I know some from the tests above
+There are more :ref:`methods<functions>` listed than what I have reviewed. Based on their names, I can make a guess as to what they do, and I know some from the tests above
 
 * append - adds an item to the list
 * clear - does this clear the items in the list?
@@ -583,7 +583,7 @@ There are more :doc:`methods </functions/functions>` listed than what I have rev
 * reverse - does this reverse the list?
 * sort - does this sort the items in the list?
 
-You can add tests for these :doc:`methods </functions/functions>` to find out what they do or `read more about lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list%20remove#more-on-lists>`_
+You can add tests for these :ref:`methods<functions>` to find out what they do or `read more about lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list%20remove#more-on-lists>`_
 
 you encountered the following exceptions
 

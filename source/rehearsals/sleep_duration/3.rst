@@ -31,7 +31,7 @@ red: make it fail
       ./createPythonTdd.ps1 sleep_duration
 
 * I remove ``test_failure`` after making it pass
-* I add a failing test to check that when the ``duration`` :doc:`function </functions/functions>` in the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>` is called with a ``wake_time`` of ``'08:00'`` and a ``sleep_time`` of ``'07:00'``, it should return the difference between the two, which in this case is ``1``
+* I add a failing test to check that when the ``duration`` :ref:`function<functions>` in the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>` is called with a ``wake_time`` of ``'08:00'`` and a ``sleep_time`` of ``'07:00'``, it should return the difference between the two, which in this case is ``1``
 
   .. code-block:: python
 
@@ -126,7 +126,7 @@ green: make it pass
     # AttributeError
     # TypeError
 
-* then define ``duration`` as a :doc:`function </functions/functions>` to make it callable_
+* then define ``duration`` as a :ref:`function<functions>` to make it callable_
 
   .. code-block:: python
 
@@ -139,7 +139,7 @@ green: make it pass
 
     TypeError: duration() got an unexpected keyword argument 'wake_time'
 
-  The ``duration`` :doc:`function </functions/functions>` is called in ``test_duration_w_hours`` with keyword arguments that were not provided in the function signature when it was defined
+  The ``duration`` :ref:`function<functions>` is called in ``test_duration_w_hours`` with keyword arguments that were not provided in the function signature when it was defined
 
 * I add the required keyword argument to the definition of ``duration``, setting its default value to :ref:`None`
 
@@ -154,14 +154,14 @@ green: make it pass
 
     TypeError: duration() got an unexpected keyword argument 'sleep_time'
 
-* I add the second keyword argument to the definition of the ``duration`` :doc:`function </functions/functions>`
+* I add the second keyword argument to the definition of the ``duration`` :ref:`function<functions>`
 
   .. code-block:: python
 
     def duration(wake_time=None, sleep_time=None):
         return None
 
-  and the terminal shows an :ref:`AssertionError`. The ``duration`` :doc:`function </functions/functions>` returns :ref:`None` but the test expects ``1`` as the result when it passes a sleep time of ``'07:00'`` and a wake time of ``'08:00'``
+  and the terminal shows an :ref:`AssertionError`. The ``duration`` :ref:`function<functions>` returns :ref:`None` but the test expects ``1`` as the result when it passes a sleep time of ``'07:00'`` and a wake time of ``'08:00'``
 
   .. code-block:: python
 
@@ -181,7 +181,7 @@ green: make it pass
 refactor: make it better
 --------------------------------------------------------
 
-The ``duration`` :doc:`function </functions/functions>` currently returns ``1`` no matter what inputs it is given. It should calculate the difference between ``wake_time`` and ``sleep_time`` to meet the requirements.
+The ``duration`` :ref:`function<functions>` currently returns ``1`` no matter what inputs it is given. It should calculate the difference between ``wake_time`` and ``sleep_time`` to meet the requirements.
 
 I could write a test for every possible sleep and wake time, or write one test that uses random variables to cover all timestamps from ``'00:00'`` to ``'23:59'``
 
@@ -239,7 +239,7 @@ I could write a test for every possible sleep and wake time, or write one test t
 
     Your results may be different because the timestamps are random numbers
 
-* I change the ``duration`` :doc:`function </functions/functions>` to return the subtraction of ``sleep_time`` from ``wake_time``
+* I change the ``duration`` :ref:`function<functions>` to return the subtraction of ``sleep_time`` from ``wake_time``
 
   .. code-block:: python
 
@@ -264,7 +264,7 @@ The ``wake_time`` and ``sleep_time`` are currently in this format - ``XX:00``. I
 red: make it fail
 --------------------------------------------------------
 
-* I use the dir_ :doc:`function </functions/functions>` to see what :doc:`attributes </exceptions/AttributeError>` and :doc:`methods </functions/functions>` of strings_ can help me break them apart or get the characters I want
+* I use the dir_ :ref:`function<functions>` to see what :doc:`attributes </exceptions/AttributeError>` and :ref:`methods<functions>` of strings_ can help me break them apart or get the characters I want
 
   .. code-block:: python
 
@@ -339,7 +339,7 @@ red: make it fail
             ['__add__', '__class__', '__contains__', '[918 chars]ill']
         )
 
-  - the terminal shows a list of :doc:`attributes </exceptions/AttributeError>` and :doc:`methods </functions/functions>` of a string_
+  - the terminal shows a list of :doc:`attributes </exceptions/AttributeError>` and :ref:`methods<functions>` of a string_
   - `unittest.TestCase.maxDiff`_ sets a limit on the number of characters the terminal shows for a difference between two objects. There is no limit when it is set to :ref:`None`
 
 * I copy and paste the values from the terminal into the test and remove extra characters
@@ -440,7 +440,7 @@ red: make it fail
         )
 
 * the test passes and the terminal shows the :ref:`TypeError` from earlier because Python still does not support subtracting one string_ from another
-* I want to try one of the :doc:`methods </functions/functions>` listed in ``test_string_attributes_and_methods`` to see if it will get me closer to a solution but I cannot tell what they do from the names. I use the `help system`_ to check the `python documentation on strings`_ for more details
+* I want to try one of the :ref:`methods<functions>` listed in ``test_string_attributes_and_methods`` to see if it will get me closer to a solution but I cannot tell what they do from the names. I use the `help system`_ to check the `python documentation on strings`_ for more details
 
   .. code-block:: python
 
@@ -448,7 +448,7 @@ red: make it fail
         help(str)
     ...
 
-  the terminal shows documentation for the string_ module and I read through the descriptions for each :doc:`method </functions/functions>` until I see one that looks like it could solve the problem
+  the terminal shows documentation for the string_ module and I read through the descriptions for each :ref:`method<functions>` until I see one that looks like it could solve the problem
 
   .. code-block:: python
 
@@ -463,7 +463,7 @@ red: make it fail
     |
     ...
 
-  the `str.split`_ :doc:`method </functions/functions>` looks like a good solution since it splits up a word on a given separator
+  the `str.split`_ :ref:`method<functions>` looks like a good solution since it splits up a word on a given separator
 
 test_string_splitting
 ========================================================
@@ -473,7 +473,7 @@ test_string_splitting
 red: make it fail
 --------------------------------------------------------
 
-* I remove ``help(str)`` and add a failing test for the `str.split`_ :doc:`method </functions/functions>` to see what it does
+* I remove ``help(str)`` and add a failing test for the `str.split`_ :ref:`method<functions>` to see what it does
 
   .. code-block:: python
 
@@ -542,7 +542,7 @@ refactor: make it better
 
   and the test passes. I now know how to get the different parts of ``wake_time`` and ``sleep_time``
 
-* I add a call to the `str.split`_ :doc:`method </functions/functions>` in the ``duration`` :doc:`function </functions/functions>` in ``sleep_duration.py``
+* I add a call to the `str.split`_ :ref:`method<functions>` in the ``duration`` :ref:`function<functions>` in ``sleep_duration.py``
 
   .. code-block:: python
 
@@ -625,7 +625,7 @@ green: make it pass
 
   the tests pass, bringing me back to the unsolved :ref:`TypeError`
 
-* using what I have learned, I make the ``duration`` :doc:`function </functions/functions>` return the subtraction of the first parts from splitting ``wake_time`` and ``sleep_time`` on the separator ``':'``
+* using what I have learned, I make the ``duration`` :ref:`function<functions>` return the subtraction of the first parts from splitting ``wake_time`` and ``sleep_time`` on the separator ``':'``
 
   .. code-block:: python
 
@@ -705,7 +705,7 @@ I have another tool to help solve the problem. So far, I can
 ----
 
 * I remove the `unittest.skip decorator`_ from ``test_duration_w_hours`` to show the :ref:`TypeError` I have been trying to solve
-* I add the conversion using the int_ constructor to the ``duration`` :doc:`function </functions/functions>` to see if it will make the test pass
+* I add the conversion using the int_ constructor to the ``duration`` :ref:`function<functions>` to see if it will make the test pass
 
   .. code-block:: python
 
@@ -753,13 +753,13 @@ I have another tool to help solve the problem. So far, I can
           - sleep_time_hour_integer
         )
 
-* The ``duration`` :doc:`function </functions/functions>` does the following for each given timestamp
+* The ``duration`` :ref:`function<functions>` does the following for each given timestamp
 
   - splits the timestamp string_ on the separator ``':'``
   - gets the first item from the split
   - converts the first item from the split to an integer
 
-  I can make these steps a separate :doc:`function </functions/functions>` and call it for ``wake_time`` and ``sleep_time``
+  I can make these steps a separate :ref:`function<functions>` and call it for ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
 
@@ -834,3 +834,50 @@ Since all the tests are still passing, you can try any ideas you want until you 
 
 test_duration_w_hours_and_minutes
 ========================================================
+
+For the ``duration`` :ref:`function<functions>` to meet the requirements, it has to accept timestamps with hours and minutes, but it currently returns the duration when given sleep and wake time hours without taking minutes into account.
+
+.. _test_duration_w_hours_and_minutes_red:
+
+red: make it fail
+--------------------------------------------------------
+
+I add a failing test in ``test_sleep_duration.py`` that has hours and minutes
+
+.. code-block:: python
+
+  def test_duration_w_hours_and_minutes(self)L
+      wake_hour = random.randint(0, 23)
+      sleep_hour = random.randint(0, 23)
+      wake_minutes = random.randint(0, 59)
+      sleep_minutes = random.randint(0, 59)
+
+      hours_difference = wake_hour - sleep_hour
+      minutes_difference = wake_minutes = sleep_minutes
+
+      self.assertEqual(
+          sleep_duration.duration(
+              wake_time=f'{wake_hour:02}:{wake_minutes:02}',
+              sleep_time=f'{sleep_hour:02}:{sleep_minutes:02}'
+          ),
+          f'{hours_difference:02}:{minutes_difference:02}'
+      )
+
+the terminal shows an :ref:`AssertionError` that looks like this
+
+.. code-block:: python
+
+  AssertionError: 4 != '4:-20'
+
+.. NOTE::
+
+  Your results may be different because the timestamps are random numbers
+
+the expected duration is now a string_ that contains the subtraction of the sleep hour from the wake hour, and the subtraction of the sleep minutes from the wake minutes, separated by ``:``
+
+.. _test_duration_w_hours_and_minutes_green:
+
+green: make it pass
+--------------------------------------------------------
+
+* I change the output of the ``duration`` :doc:`function `

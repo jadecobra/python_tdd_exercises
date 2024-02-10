@@ -304,8 +304,8 @@ green: make it pass
 
     AssertionError: None != 'succeeded'
 
-  - The ``exception_handler`` :doc:`function </functions/functions>` returns the result of calling the :doc:`function </functions/functions>` it receives as input
-  - When I call ``exceptions.exception_handler`` with ``exceptions.does_not_raise_exception`` as input, it calls the :doc:`function </functions/functions>` and returns the result
+  - The ``exception_handler`` :ref:`function<functions>` returns the result of calling the :ref:`function<functions>` it receives as input
+  - When I call ``exceptions.exception_handler`` with ``exceptions.does_not_raise_exception`` as input, it calls the :ref:`function<functions>` and returns the result
   - the result of calling ``exceptions.does_not_raise_exception`` is currently :ref:`None` which is not equal to ``'succeeded'`` and the result of calling ``exceptions.raises_exception`` is currently an Exception which is not equal to ``'failed'``
 
 *****************************************

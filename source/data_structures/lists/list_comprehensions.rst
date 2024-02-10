@@ -40,7 +40,7 @@ I add a file called ``test_list_comprehensions.py`` to the ``tests`` folder with
 * ``container = range(10)`` creates an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ of numbers from 0 to 9 with the `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ constructor and calls it ``container``
 * `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ creates an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ of numbers from 0 to the given number minus 1
 * ``for item in container:`` uses a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ statement to create a loop that goes over every item of ``container``
-* ``a_list.append(item)`` adds the item from ``container`` to ``a_list`` on each cycle of the loop, using the ``append`` :doc:`method </functions/functions>`, see :doc:`/data_structures/lists/lists` for more details
+* ``a_list.append(item)`` adds the item from ``container`` to ``a_list`` on each cycle of the loop, using the ``append`` :ref:`method<functions>`, see :doc:`/data_structures/lists/lists` for more details
 * the second ``self.assertEqual(a_list, [])`` checks to see if ``a_list`` is still empty after the operation
 
 the terminal shows an :ref:`AssertionError` because ``a_list`` is no longer empty, it contains 10 items after the loop runs
@@ -154,7 +154,7 @@ refactor: make it better
     # ModuleNotFoundError
     # AttributeError
 
-  then add a :doc:`function </functions/functions>` definition to ``list_comprehensions.py``
+  then add a :ref:`function<functions>` definition to ``list_comprehensions.py``
 
   .. code-block:: python
 
@@ -443,7 +443,7 @@ green: make it pass
 
 ----
 
-I created two :doc:`functions </functions/functions>`, one that uses a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ loop and another that uses a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ to do the same thing. The difference between
+I created two :ref:`functions<functions>`, one that uses a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ loop and another that uses a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ to do the same thing. The difference between
 
 .. code-block:: python
 
@@ -695,7 +695,7 @@ refactor: make it better
 
 I have written the same thing multiple times in these tests and since the programming gods told me `Do Not Repeat Yourself! <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_ It is time to remove the repetition in the code.
 
-* In each test I create an empty list, verify it is empty and then perform operations on it. Since that part is the same for every test I can add it to the `unittest.TestCase.setUp <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.setUp>`_ :doc:`method </functions/functions>` which is called before a test method. Anything I place in this :doc:`method </functions/functions>` will run before the tests, I place my empty list creation and verification in here ::
+* In each test I create an empty list, verify it is empty and then perform operations on it. Since that part is the same for every test I can add it to the `unittest.TestCase.setUp <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.setUp>`_ :ref:`method<functions>` which is called before a test method. Anything I place in this :ref:`method<functions>` will run before the tests, I place my empty list creation and verification in here ::
 
     def setUp(self):
         self.a_list = []
@@ -805,7 +805,7 @@ I have written the same thing multiple times in these tests and since the progra
         )
 
   the terminal still shows passing test
-* In each test I create a `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ object named ``container``, I can add this to the ``setUp`` :doc:`method </functions/functions>` and reference it in the tests ::
+* In each test I create a `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ object named ``container``, I can add this to the ``setUp`` :ref:`method<functions>` and reference it in the tests ::
 
     def setUp(self):
         self.a_list = []

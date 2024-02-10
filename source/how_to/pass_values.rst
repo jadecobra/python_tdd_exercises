@@ -112,7 +112,7 @@ green: make it pass
     # AttributeError
     # TypeError
 
-- I change ``text`` in ``telephone.py`` to a :doc:`function </functions/functions>` to make it `callable <https://docs.python.org/3/glossary.html#term-callable>`_
+- I change ``text`` in ``telephone.py`` to a :ref:`function<functions>` to make it `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 
   .. code-block:: python
 
@@ -125,7 +125,7 @@ green: make it pass
 
     TypeError: text() takes 0 positional arguments but 1 was given
 
-  I provided a positional argument as input with the value ``'hello'`` when I called ``telephone.text`` in the test , but the current signature of the ``text`` :doc:`function </functions/functions>` does not allow it accept any inputs
+  I provided a positional argument as input with the value ``'hello'`` when I called ``telephone.text`` in the test , but the current signature of the ``text`` :ref:`function<functions>` does not allow it accept any inputs
 - I change the definition for ``text`` to make it accept a value as input
 
   .. code-block:: python
@@ -150,7 +150,7 @@ green: make it pass
 refactor: make it better
 **************************
 
-The problem with this solution is that no matter what value I send to the ``text`` :doc:`function </functions/functions>` it will always return ``'I received this message: hello'``. I need to make it return a value based on the input it receives
+The problem with this solution is that no matter what value I send to the ``text`` :ref:`function<functions>` it will always return ``'I received this message: hello'``. I need to make it return a value based on the input it receives
 
 red: make it fail
 =========================
@@ -179,7 +179,7 @@ the terminal shows an :ref:`AssertionError`
 green: make it pass
 =========================
 
-I change the ``text`` :doc:`function </functions/functions>` in ``telephone.py`` to use an ``f`` string which allows passing variable values to strings. This is called `string interpolation <https://peps.python.org/pep-0498/>`_
+I change the ``text`` :ref:`function<functions>` in ``telephone.py`` to use an ``f`` string which allows passing variable values to strings. This is called `string interpolation <https://peps.python.org/pep-0498/>`_
 
 .. code-block:: python
 

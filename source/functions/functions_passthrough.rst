@@ -3,7 +3,7 @@
 functions: passthrough
 ======================
 
-A passthrough :doc:`function </functions/functions>` is one that returns the input it receives as output
+A passthrough :ref:`function<functions>` is one that returns the input it receives as output
 
 
 red: make it fail

@@ -92,12 +92,12 @@ the test passes because the assert statement is now true since :doc:`False </dat
 refactor: make it better
 =========================
 
-I can also make assertions with some :doc:`methods </functions/functions>` from the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class
+I can also make assertions with some :ref:`methods<functions>` from the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class
 
 
 * red: make it fail
 
-  I add another failing line using the `unittest.TestCase.assertIsNone <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNone>`_ :doc:`method </functions/functions>`
+  I add another failing line using the `unittest.TestCase.assertIsNone <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNone>`_ :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -155,7 +155,7 @@ I can also make assertions with some :doc:`methods </functions/functions>` from 
 
 * red: make it fail
 
-  I add a line using the `unittest.TestCase.assertIsNone <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNone>`_ :doc:`method </functions/functions>`
+  I add a line using the `unittest.TestCase.assertIsNone <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNone>`_ :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -313,7 +313,7 @@ I change the failing line to make the test pass
 red: make it fail
 ==================
 
-What if I try the same test using the `unittest.TestCase.assertFalse <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse>`_ :doc:`method </functions/functions>` by adding this line to ``test_assertion_errors_with_false``?
+What if I try the same test using the `unittest.TestCase.assertFalse <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse>`_ :ref:`method<functions>` by adding this line to ``test_assertion_errors_with_false``?
 
 .. code-block:: python
 
@@ -385,7 +385,7 @@ I change the failing line to make the test pass
 red: make it fail
 ==================
 
-What if I try the above test using the `unittest.TestCase.assertTrue <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertTrue>`_ :doc:`method </functions/functions>` ?
+What if I try the above test using the `unittest.TestCase.assertTrue <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertTrue>`_ :ref:`method<functions>` ?
 
 .. code-block:: python
 
@@ -478,7 +478,7 @@ refactor: make it better
 
     AssertionError: False != None
 
-  The `unittest.TestCase.assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ :doc:`method </functions/functions>` checks if the two given inputs, :doc:`False </data_structures/booleans/booleans>` and :ref:`None` are equal
+  The `unittest.TestCase.assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ :ref:`method<functions>` checks if the two given inputs, :doc:`False </data_structures/booleans/booleans>` and :ref:`None` are equal
 
 * green: make it pass
 
@@ -532,7 +532,7 @@ refactor: make it better
 
 * red: make it fail
 
-  I add the `unittest.TestCase.assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ :doc:`method </functions/functions>` to ``test_assertion_errors_with_equality``
+  I add the `unittest.TestCase.assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ :ref:`method<functions>` to ``test_assertion_errors_with_equality``
 
   .. code-block:: python
 

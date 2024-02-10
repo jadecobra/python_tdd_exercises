@@ -361,7 +361,7 @@ green: make it pass
 
 * a :ref:`TypeError` is raised in this case because I called an object that was not `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 
-  A `callable <https://docs.python.org/3/glossary.html#term-callable>`_ object is an object that may be able to handle inputs. I can make an `object <https://docs.python.org/3/glossary.html#term-object>`_ `callable <https://docs.python.org/3/glossary.html#term-callable>`_ by defining it as a :doc:`class </classes/classes>` or a :doc:`function </functions/functions>`
+  A `callable <https://docs.python.org/3/glossary.html#term-callable>`_ object is an object that may be able to handle inputs. I can make an `object <https://docs.python.org/3/glossary.html#term-object>`_ `callable <https://docs.python.org/3/glossary.html#term-callable>`_ by defining it as a :doc:`class </classes/classes>` or a :ref:`function<functions>`
 
   Parentheses are used at the end of the name of an object when calling it, for example  ``module.function_0()`` will call ``function_0`` from ``module.py``
 
@@ -415,9 +415,9 @@ Solve an AttributeError by defining classes
 I think of a :doc:`class </classes/classes>` as a container of :doc:`methods (functions) </functions/functions>` and attributes that represents an `object <https://docs.python.org/3/glossary.html#term-object>`_
 
 - attributes are names which represent a value
-- :doc:`methods </functions/functions>` are :doc:`/functions/functions` that may be able to accept inputs and may return a value - they are `callable <https://docs.python.org/3/glossary.html#term-callable>`_
+- :ref:`methods<functions>` are :doc:`/functions/functions` that may be able to accept inputs and may return a value - they are `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 
-For example I could define a ``Human`` class with attributes like eye color, date of birth, height and weight. I could also define :doc:`methods </functions/functions>` like age which returns a value based on the current year and date of birth attribute
+For example I could define a ``Human`` class with attributes like eye color, date of birth, height and weight. I could also define :ref:`methods<functions>` like age which returns a value based on the current year and date of birth attribute
 
 red: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -571,7 +571,7 @@ green: make it pass
     E    ^^^^^^^^^^^
     E  SyntaxError: 'return' outside function
 
-  the error is caused by the ``return`` statement being outside a :doc:`function </functions/functions>`
+  the error is caused by the ``return`` statement being outside a :ref:`function<functions>`
 
 * I add SyntaxError_ to the list of exceptions
 
@@ -682,7 +682,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* then I change ``method_0`` from an attribute to a :doc:`method </functions/functions>` using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword to make it `callable <https://docs.python.org/3/glossary.html#term-callable>`_
+* then I change ``method_0`` from an attribute to a :ref:`method<functions>` using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword to make it `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 
   .. code-block:: python
 
@@ -734,7 +734,7 @@ and learned
 
 -------------------------------------------------------
 
-* attributes and :doc:`methods </functions/functions>` in a :doc:`class </classes/classes>` can be accessible from outside the :doc:`class </classes/classes>`
-* attributes and :doc:`functions </functions/functions>` in a :doc:`function </functions/functions>` are not accessible from outside the :doc:`function </functions/functions>`
+* attributes and :ref:`methods<functions>` in a :doc:`class </classes/classes>` can be accessible from outside the :doc:`class </classes/classes>`
+* attributes and :ref:`functions<functions>` in a :ref:`function<functions>` are not accessible from outside the :ref:`function<functions>`
 * keywords used to define them - `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ vs `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
 * naming conventions - ``CamelCase`` vs ``snake_case``

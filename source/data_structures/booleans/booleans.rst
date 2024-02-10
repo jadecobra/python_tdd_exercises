@@ -37,7 +37,7 @@ the terminal shows an :ref:`AssertionError` because `False <https://docs.python.
 
   AssertionError: False is an instance of <class 'bool'>
 
-The `unittest.TestCase.assertNotIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance>`_ :doc:`method </functions/functions>` checks that the first input given is NOT an instance of the :doc:`class </classes/classes>` given as the second input. It is like asking the question ``is False not an instance of bool?``
+The `unittest.TestCase.assertNotIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance>`_ :ref:`method<functions>` checks that the first input given is NOT an instance of the :doc:`class </classes/classes>` given as the second input. It is like asking the question ``is False not an instance of bool?``
 
 green: make it pass
 ====================
@@ -48,7 +48,7 @@ I change ``assertNotIsInstance`` to ``assertIsInstance`` to make the test pass
 
   self.assertIsInstance(False, bool)
 
-The `unittest.TestCase.assertIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsInstance>`_ :doc:`method </functions/functions>` checks that the first input given is an instance of the :doc:`class </classes/classes>` given as the second input. It is like asking the question ``is False an instance of bool?``
+The `unittest.TestCase.assertIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsInstance>`_ :ref:`method<functions>` checks that the first input given is an instance of the :doc:`class </classes/classes>` given as the second input. It is like asking the question ``is False an instance of bool?``
 
 From the tests I see that `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
 
@@ -67,7 +67,7 @@ refactor: make it better
 
     AssertionError: False is not true
 
-  The `unittest.TestCase.assertTrue <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertTrue>`_ :doc:`method </functions/functions>` checks if a given input is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
+  The `unittest.TestCase.assertTrue <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertTrue>`_ :ref:`method<functions>` checks if a given input is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
 
 * When I change ``assertTrue`` to ``assertFalse`` to test if `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ the test passes
 
@@ -75,7 +75,7 @@ refactor: make it better
 
     self.assertFalse(False)
 
-  The `unittest.TestCase.assertFalse <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse>`_ :doc:`method </functions/functions>` checks if a given input is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+  The `unittest.TestCase.assertFalse <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse>`_ :ref:`method<functions>` checks if a given input is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 
 From these tests I see that
 
@@ -91,7 +91,7 @@ What is True?
 red: make it fail
 ==================
 
-I add a :doc:`method </functions/functions>` called ``test_what_is_true`` with a failing line to to check if `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is an instance of the `boolean <https://docs.python.org/3/library/functions.html#bool>`_ :doc:`class </classes/classes>`
+I add a :ref:`method<functions>` called ``test_what_is_true`` with a failing line to to check if `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is an instance of the `boolean <https://docs.python.org/3/library/functions.html#bool>`_ :doc:`class </classes/classes>`
 
 .. code-block:: python
 
@@ -190,7 +190,7 @@ and the terminal shows passing tests
 refactor: make it better
 =========================
 
-I move the line to the ``test_what_is_false`` :doc:`method </functions/functions>`
+I move the line to the ``test_what_is_false`` :ref:`method<functions>`
 
 .. code-block:: python
 
@@ -248,7 +248,7 @@ and the terminal shows passing tests
 refactor: make it better
 =========================
 
-* I move the line to the ``test_what_is_true`` :doc:`method </functions/functions>`
+* I move the line to the ``test_what_is_true`` :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -279,7 +279,7 @@ refactor: make it better
   .. code-block:: python
 
     self.assertFalse(0)
-* I move the line to the ``test_what_is_false`` :doc:`method </functions/functions>`
+* I move the line to the ``test_what_is_false`` :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -312,7 +312,7 @@ refactor: make it better
 
     self.assertTrue(1)
 
-* I move the line to the ``test_what_is_false`` :doc:`method </functions/functions>`
+* I move the line to the ``test_what_is_false`` :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -374,7 +374,7 @@ and the terminal shows passing tests
 refactor: make it better
 =========================
 
-* I move the line to the ``test_what_is_false`` :doc:`method </functions/functions>`
+* I move the line to the ``test_what_is_false`` :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -411,7 +411,7 @@ refactor: make it better
     self.assertTrue(-1.2)
     self.assertTrue(2.3)
 
-* I move the lines to the ``test_what_is_true`` :doc:`method </functions/functions>`
+* I move the lines to the ``test_what_is_true`` :ref:`method<functions>`
 
   .. code-block::python
 
@@ -477,7 +477,7 @@ and the terminal shows passing tests
 refactor: make it better
 =========================
 
-* I move the line to the ``test_what_is_false`` :doc:`method </functions/functions>`
+* I move the line to the ``test_what_is_false`` :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -500,7 +500,7 @@ refactor: make it better
 
     AssertionError: 'text' is not false
 
-* I change ``assertFalse`` to ``assertTrue`` and move the line to the ``test_what_is_true`` :doc:`method </functions/functions>`
+* I change ``assertFalse`` to ``assertTrue`` and move the line to the ``test_what_is_true`` :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -563,7 +563,7 @@ The terminal shows an :ref:`AssertionError`
 green: make it pass
 ====================
 
-I change ``assertTrue`` to ``assertFalse`` and move the line to the ``test_what_is_false`` :doc:`method </functions/functions>`
+I change ``assertTrue`` to ``assertFalse`` and move the line to the ``test_what_is_false`` :ref:`method<functions>`
 
 .. code-block:: python
 
@@ -593,7 +593,7 @@ refactor: make it better
 
     AssertionError: (1, 2, 3, 'n') is not false
 
-* I change ``assertFalse`` to ``assertTrue`` and move the line to the ``test_what_is_true`` :doc:`method </functions/functions>`
+* I change ``assertFalse`` to ``assertTrue`` and move the line to the ``test_what_is_true`` :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -658,7 +658,7 @@ the terminal shows an :ref:`AssertionError`
 green: make it pass
 ====================
 
-I change ``assertTrue`` to ``assertFalse`` and move the line to the ``test_what_is_false`` :doc:`method </functions/functions>`
+I change ``assertTrue`` to ``assertFalse`` and move the line to the ``test_what_is_false`` :ref:`method<functions>`
 
 .. code-block:: python
 
@@ -688,7 +688,7 @@ refactor: make it better
   .. code-block:: python
 
     AssertionError: [1, 2, 3, 'n'] is not false
-* I change ``assertFalse`` to ``assertTrue`` and move the line to the ``test_what_is_true`` :doc:`method </functions/functions>`
+* I change ``assertFalse`` to ``assertTrue`` and move the line to the ``test_what_is_true`` :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -756,7 +756,7 @@ the terminal shows an :ref:`AssertionError`
 green: make it pass
 ====================
 
-I change ``assertTrue`` to ``assertFalse`` and move the line to the ``test_what_is_false`` :doc:`method </functions/functions>`
+I change ``assertTrue`` to ``assertFalse`` and move the line to the ``test_what_is_false`` :ref:`method<functions>`
 
 .. code-block:: python
 
@@ -779,7 +779,7 @@ refactor: make it better
 
     AssertionError: {1, 2, 3, 'n'} is not false
 
-* I change ``assertFalse`` to ``assertTrue`` and move the line to the ``test_what_is_true`` :doc:`method </functions/functions>`
+* I change ``assertFalse`` to ``assertTrue`` and move the line to the ``test_what_is_true`` :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -849,7 +849,7 @@ the terminal shows an :ref:`AssertionError`
 green: make it pass
 ====================
 
-I change ``assertTrue`` to ``assertFalse`` and move the line to the ``test_what_is_false`` :doc:`method </functions/functions>`
+I change ``assertTrue`` to ``assertFalse`` and move the line to the ``test_what_is_false`` :ref:`method<functions>`
 
 .. code-block:: python
 
@@ -882,7 +882,7 @@ refactor: make it better
 
     AssertionError: {'key': 'value'} is not false
 
-* I change ``assertFalse`` to ``assertTrue`` and move the line to the ``test_what_is_true`` :doc:`method </functions/functions>`
+* I change ``assertFalse`` to ``assertTrue`` and move the line to the ``test_what_is_true`` :ref:`method<functions>`
 
   .. code-block:: python
 
