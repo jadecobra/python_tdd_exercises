@@ -880,7 +880,6 @@ the expected duration is now a string_ that contains the subtraction of the slee
 green: make it pass
 --------------------------------------------------------
 
-
 * I change the output of the ``duration`` :ref:`function<functions>` to match the format of the expected value in the test
 
   .. code-block:: python
@@ -928,9 +927,9 @@ green: make it pass
 
     AssertionError: '17:17' != '17:00'
 
-  the ``duration`` :ref:`function<functions>` currently uses ``get_hour`` for hours and minutes. I need to create a function to use in the calculation for minutes
+  ``duration`` currently uses ``get_hour`` for both hours and minutes. I need to create a :ref:`function<functions>` to use in the calculation for minutes
 
-* I use the ``get_hour`` function as a reference to create a similar function which gets the minutes from a given timestamp
+* I use ``get_hour`` as a reference to create a similar :ref:`function<functions>` that gets the minutes from a given timestamp
 
   .. code-block:: python
 
@@ -942,7 +941,7 @@ green: make it pass
 
   the terminal still shows an :ref:`AssertionError`
 
-* I change ``duration`` to use ``get_minutes`` in the calculation for ``minutes_difference``
+* I add calls to ``get_minutes`` in the calculation for ``minutes_difference``
 
   .. code-block:: python
 
@@ -963,7 +962,7 @@ green: make it pass
 
     AssertionError: '-8:0' != '-8:00'
 
-* I make ``duration`` display two digits for hours and minutes in the result
+* I make ``duration`` show two digits for hours and minutes in the result
 
   .. code-block:: python
 
@@ -1013,7 +1012,7 @@ The ``duration`` :ref:`function<functions>` currently returns a subtraction of h
 red: make it fail
 --------------------------------------------------------
 
-* If the function is given a ``wake_time`` of ``'03:30'`` and a ``sleep_time`` of ``'02:59'``, it should return ``'00:31'`` as the difference between the timestamps. I add a test for it
+* If ``duration`` is given a ``wake_time`` of ``'03:30'`` and a ``sleep_time`` of ``'02:59'``, it should return ``'00:31'`` as the difference between the timestamps. I add a test for it
 
   .. code-block:: python
 
@@ -1054,14 +1053,14 @@ green: make it pass
         )
         return f'{hours_difference:02}:{minutes_difference:02}'
 
-* I add a new ``duration`` :ref:`function<functions>` with the following steps to calculate a real difference between two timestamps
+* then add a new ``duration`` :ref:`function<functions>` with the following steps to calculate a real difference between two timestamps
 
   - convert each timestamp to its total minutes by multiplying the hour by 60 and adding the minutes
   - subtract total ``sleep_time`` minutes from total ``wake_time`` minutes
   - return the difference between total ``wake_time`` and ``sleep_time`` as hours and minutes by
 
-    * getting the hours by using `floor (integer) division`_ to get the whole number value of dividing the difference by 60
-    * getting the minutes by using the modulo_ operator to get the remainder from dividing the difference by 60
+    * using `floor (integer) division`_ to get the whole number value of dividing the difference by 60 to get the hours
+    * using the modulo_ operator to get the remainder from dividing the difference by 60 to get the minutes
 
   .. code-block:: python
 
@@ -1080,7 +1079,7 @@ green: make it pass
 
         return f'{hours_difference:02}:{minutes_difference:02}'
 
-  since ``test_duration_w_hours_and_minutes`` uses the wrong calculation, the terminal will show random successes and randomly show an :ref:`AssertionError` that looks like this
+  since ``test_duration_w_hours_and_minutes`` uses the wrong calculation, the terminal will show random successes and :ref:`AssertionErrors<AssertionError>` that look like this
 
   .. code-block:: python
 
@@ -1110,7 +1109,7 @@ green: make it pass
             f'{hours_difference:02}:{minutes_difference:02}'
         )
 
-  I have passing tests again
+  I have passing tests again. Green is a beautiful color
 
 test_floor_aka_integer_division
 ========================================================

@@ -846,14 +846,14 @@ I add a failing test in ``test_sleep_duration.py`` that has hours and minutes
 
 .. code-block:: python
 
-  def test_duration_w_hours_and_minutes(self)L
+  def test_duration_w_hours_and_minutes(self):
       wake_hour = random.randint(0, 23)
       sleep_hour = random.randint(0, 23)
       wake_minutes = random.randint(0, 59)
       sleep_minutes = random.randint(0, 59)
 
       hours_difference = wake_hour - sleep_hour
-      minutes_difference = wake_minutes = sleep_minutes
+      minutes_difference = wake_minutes - sleep_minutes
 
       self.assertEqual(
           sleep_duration.duration(
@@ -880,4 +880,242 @@ the expected duration is now a string_ that contains the subtraction of the slee
 green: make it pass
 --------------------------------------------------------
 
-* I change the output of the ``duration`` :doc:`function `
+* I change the output of the ``duration`` :ref:`function<functions>` to match the format of the expected value in the test
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        hours_difference = (
+            get_hour(wake_time)
+          - get_hour(sleep_time)
+        )
+        minutes_difference = (
+            get_hour(wake_time)
+          - get_hour(sleep_time)
+        )
+        return f'{hours_difference}:{minutes_difference}'
+
+  and the terminal shows an :ref:`AssertionError` because changing the format causes an error in ``test_duration_w_hours`` which still expects a number instead of a string_
+
+  .. code-block:: python
+
+    AssertionError: '-4:-4' != -4
+
+  .. NOTE::
+
+    Your results may be different because the timestamps are random numbers
+
+* I change ``test_duration_w_hours`` to use the new format
+
+  .. code-block:: python
+
+    def test_duration_w_hours(self):
+        wake_hour = random.randint(0, 23)
+        sleep_hour = random.randint(0, 23)
+
+        self.assertEqual(
+            sleep_duration.duration(
+                wake_time=f'{wake_hour:02}:00',
+                sleep_time=f'{sleep_hour:02}:00'
+            ),
+            f'{wake_hour-sleep_hour}:00'
+        )
+
+  the terminal shows an :ref:`AssertionError` that looks like this
+
+  .. code-block:: python
+
+    AssertionError: '17:17' != '17:00'
+
+  ``duration`` currently uses ``get_hour`` for both hours and minutes. I need to create a :ref:`function<functions>` to use in the calculation for minutes
+
+* I use ``get_hour`` as a reference to create a similar :ref:`function<functions>` that gets the minutes from a given timestamp
+
+  .. code-block:: python
+
+    def get_hour(timestamp):
+        return int(timestamp.split(':')[0])
+
+    def get_minutes(timestamp):
+        return int(timestamp.split(':')[1])
+
+  the terminal still shows an :ref:`AssertionError`
+
+* I add calls to ``get_minutes`` in the calculation for ``minutes_difference``
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        hours_difference = (
+            get_hour(wake_time)
+          - get_hour(sleep_time)
+        )
+        minutes_difference = (
+            get_minutes(wake_time)
+          - get_minutes(sleep_time)
+        )
+        return f'{hours_difference}:{minutes_difference}'
+
+  and ``test_duration_w_hours_and_minutes`` passes, leaving an :ref:`AssertionError` for ``test_duration_w_hours`` that looks like this
+
+  .. code-block:: python
+
+    AssertionError: '-8:0' != '-8:00'
+
+* I make ``duration`` show two digits for hours and minutes in the result
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        hours_difference = (
+            get_hour(wake_time)
+          - get_hour(sleep_time)
+        )
+        minutes_difference = (
+            get_minutes(wake_time)
+          - get_minutes(sleep_time)
+        )
+        return f'{hours_difference:02}:{minutes_difference:02}'
+
+  and update ``test_duration_w_hours`` to do the same thing for the hours
+
+  .. code-block:: python
+
+    def test_duration_w_hours(self):
+        wake_hour = random.randint(0, 23)
+        sleep_hour = random.randint(0, 23)
+
+        hours_difference = wake_hour - sleep_hour
+
+        self.assertEqual(
+            sleep_duration.duration(
+                wake_time=f'{wake_hour:02}:00',
+                sleep_time=f'{sleep_hour:02}:00'
+            ),
+            f'{hours_difference:02}:00'
+        )
+
+.. _test_duration_w_hours_and_minutes_refactor:
+
+refactor: make it better
+--------------------------------------------------------
+
+``test_duration_w_hours_and_minutes`` uses a random number from ``0`` up to and including ``23`` for hours, and a random number from ``0`` up to and including ``59`` for minutes. This means it covers all timestamps from ``00:00`` up to and including ``23:59``, which is all the hours and minutes in a day. I remove ``test_duration_w_hours`` since the timestamps it tests are included in what is provided by ``test_duration_w_hours_and_minutes``
+
+test_duration_calculation
+========================================================
+
+The ``duration`` :ref:`function<functions>` currently returns a subtraction of hours and a subtraction of minutes which is not correct for calculating the difference between two timestamps.
+
+.. _test_duration_calculation_red:
+
+red: make it fail
+--------------------------------------------------------
+
+* If ``duration`` is given a ``wake_time`` of ``'03:30'`` and a ``sleep_time`` of ``'02:59'``, it should return ``'00:31'`` as the difference between the timestamps. I add a test for it
+
+  .. code-block:: python
+
+    def test_duration_calculation(self):
+        self.assertEqual(
+            sleep_duration.duration(
+                wake_time='03:30',
+                sleep_time='02:59'
+            ),
+            '00:31'
+        )
+
+  the terminal shows an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: '01:-29' != '00:31'
+
+  the ``duration`` :ref:`function<functions>` returns ``'01:-29'`` which is not a real duration
+
+.. _test_duration_calculation_green:
+
+green: make it pass
+--------------------------------------------------------
+
+* I rename ``duration`` to keep a copy of my current working solution
+
+  .. code-block:: python
+
+    def duration_a(wake_time=None, sleep_time=None):
+        hours_difference = (
+            get_hour(wake_time)
+          - get_hour(sleep_time)
+        )
+        minutes_difference = (
+            get_minutes(wake_time)
+          - get_minutes(sleep_time)
+        )
+        return f'{hours_difference:02}:{minutes_difference:02}'
+
+* then add a new ``duration`` :ref:`function<functions>` with the following steps to calculate a real difference between two timestamps
+
+  - convert each timestamp to its total minutes by multiplying the hour by 60 and adding the minutes
+  - subtract total ``sleep_time`` minutes from total ``wake_time`` minutes
+  - return the difference between total ``wake_time`` and ``sleep_time`` as hours and minutes by
+
+    * using `floor (integer) division`_ to get the whole number value of dividing the difference by 60 to get the hours
+    * using the modulo_ operator to get the remainder from dividing the difference by 60 to get the minutes
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        wake_time_minutes = (
+            (get_hour(wake_time) * 60)
+           + get_minutes(wake_time)
+        )
+        sleep_time_minutes = (
+            (get_hour(sleep_time) * 60)
+           + get_minutes(sleep_time)
+        )
+        difference = wake_time_minutes - sleep_time_minutes
+        hours_difference = difference // 60
+        minutes_difference = difference % 60
+
+        return f'{hours_difference:02}:{minutes_difference:02}'
+
+  since ``test_duration_w_hours_and_minutes`` uses the wrong calculation, the terminal will show random successes and :ref:`AssertionErrors<AssertionError>` that look like this
+
+  .. code-block:: python
+
+    AssertionError: '10:53' != '11:-7'
+
+* I add the correct calculation to ``test_duration_w_hours_and_minutes``
+
+  .. code-block:: python
+
+    def test_duration_w_hours_and_minutes(self):
+        wake_hour = random.randint(0, 23)
+        sleep_hour = random.randint(0, 23)
+        wake_minutes = random.randint(0, 59)
+        sleep_minutes = random.randint(0, 59)
+
+        wake_time_minutes = (wake_hour * 60) + wake_minutes
+        sleep_time_minutes = (sleep_hour * 60) + sleep_minutes
+        difference = wake_time_minutes - sleep_time_minutes
+        hours_difference = difference // 60
+        minutes_difference = difference % 60
+
+        self.assertEqual(
+            sleep_duration.duration(
+                wake_time=f'{wake_hour:02}:{wake_minutes:02}',
+                sleep_time=f'{sleep_hour:02}:{sleep_minutes:02}'
+            ),
+            f'{hours_difference:02}:{minutes_difference:02}'
+        )
+
+  I have passing tests again. Green is a beautiful color
+
+test_floor_aka_integer_division
+========================================================
+
+The ``//`` operator returns a whole number that tells how many times the denominator can be multiplied to get a whole number that is equal to or less than the numerator
+
+.. _test_floor_aka_integer_division_red:
+
+red: make it fail
