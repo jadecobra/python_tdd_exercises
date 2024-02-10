@@ -8,10 +8,10 @@ In this chapter I take a look at building a program that returns the amount of t
 
 ----
 
-test_duration_w_hours_only
+test_duration_w_hours
 ========================================================
 
-.. _test_duration_w_hours_only_red:
+.. _test_duration_w_hours_red:
 
 red: make it fail
 --------------------------------------------------------
@@ -40,7 +40,7 @@ red: make it fail
 
     class TestSleepDuration(unittest.TestCase):
 
-        def test_duration_w_hours_only(self):
+        def test_duration_w_hours(self):
             self.assertEqual(
                 sleep_duration.duration(
                     wake_time='08:00',
@@ -55,7 +55,7 @@ red: make it fail
 
     NameError: name 'sleep_duration' is not defined
 
-.. _test_duration_w_hours_only_green:
+.. _test_duration_w_hours_green:
 
 green: make it pass
 --------------------------------------------------------
@@ -139,7 +139,7 @@ green: make it pass
 
     TypeError: duration() got an unexpected keyword argument 'wake_time'
 
-  The ``duration`` :doc:`function </functions/functions>` is called in ``test_duration_w_hours_only`` with keyword arguments that have not been provided in the function signature when it is defined
+  The ``duration`` :doc:`function </functions/functions>` is called in ``test_duration_w_hours`` with keyword arguments that have not been provided in the function signature when it is defined
 
 * I add the required keyword argument to the definition of ``duration``, setting its default value to :ref:`None`
 
@@ -176,7 +176,7 @@ green: make it pass
 
   and the test passes. We are green
 
-.. _test_duration_w_hours_only_refactor:
+.. _test_duration_w_hours_refactor:
 
 refactor: make it better
 --------------------------------------------------------
@@ -193,13 +193,13 @@ I could write a test case for every possible sleep and wake time, or write one t
     import sleep_duration
     import unittest
 
-* then add random values for the hours part of the timestamps in ``test_duration_w_hours_only``
+* then add random values for the hours part of the timestamps in ``test_duration_w_hours``
 
   .. code-block:: python
 
     class TestSleepDuration(unittest.TestCase):
 
-        def test_duration_w_hours_only(self):
+        def test_duration_w_hours(self):
             wake_hour = random.randint(0, 23)
             sleep_hour = random.randint(0, 23)
 
@@ -219,7 +219,7 @@ I could write a test case for every possible sleep and wake time, or write one t
 
   .. code-block:: python
 
-    def test_duration_w_hours_only(self):
+    def test_duration_w_hours(self):
         wake_hour = random.randint(0, 23)
         sleep_hour = random.randint(0, 23)
 
@@ -276,7 +276,7 @@ red: make it fail
             None
         )
 
-    def test_duration_w_hours_only(self):
+    def test_duration_w_hours(self):
     ...
 
   the terminal shows an :ref:`AssertionError`
@@ -446,7 +446,7 @@ red: make it fail
 
   .. code-block:: python
 
-    def test_duration_w_hours_only(self):
+    def test_duration_w_hours(self):
         help(str)
     ...
 
@@ -485,7 +485,7 @@ red: make it fail
             None
         )
 
-    def test_duration_w_hours_only(self):
+    def test_duration_w_hours(self):
     ...
 
   the terminal shows an :ref:`AssertionError` and I see that `str.split`_ returns a :doc:`list </data_structures/lists/lists>` when called
@@ -581,7 +581,7 @@ red: make it fail
             0
         )
 
-    def test_duration_w_hours_only(self):
+    def test_duration_w_hours(self):
     ...
 
   the terminal shows an :ref:`AssertionError` because the first item (index 0) from splitting ``'12:34'`` on the separator ``':'`` is ``'12'``
@@ -650,7 +650,7 @@ red: make it fail
   .. code-block:: python
 
     @unittest.skip
-    def test_duration_w_hours_only(self):
+    def test_duration_w_hours(self):
     ...
 
 * then add a new failing test to see if I can use the int_ constructor to convert a string_ to a number
@@ -662,7 +662,7 @@ red: make it fail
         self.assertEqual(int('01'), 0)
 
     @unittest.skip
-    def test_duration_w_hours_only(self):
+    def test_duration_w_hours(self):
     ...
 
   the terminal shows an :ref:`AssertionError`
@@ -702,7 +702,7 @@ I have another tool to help solve the problem. So far, I can
 
 ----
 
-* I remove the `unittest.skip decorator`_ from ``test_duration_w_hours_only`` to show the :ref:`TypeError` I have been trying to solve
+* I remove the `unittest.skip decorator`_ from ``test_duration_w_hours`` to show the :ref:`TypeError` I have been trying to solve
 * I add the conversion using the int_ constructor to the ``duration`` :doc:`function </functions/functions>` to see if it will make the test pass
 
   .. code-block:: python
@@ -893,7 +893,7 @@ green: make it pass
         )
         return f'{hours_difference}:{minutes_difference}'
 
-  and the terminal shows an :ref:`AssertionError` because changing the format causes an error in ``test_duration_w_hours_only`` which still expects a number instead of a string_
+  and the terminal shows an :ref:`AssertionError` because changing the format causes an error in ``test_duration_w_hours`` which still expects a number instead of a string_
 
   .. code-block:: python
 
@@ -903,11 +903,11 @@ green: make it pass
 
     Your results may be different because the timestamps are random numbers
 
-* I change ``test_duration_w_hours_only`` to use the new format
+* I change ``test_duration_w_hours`` to use the new format
 
   .. code-block:: python
 
-    def test_duration_w_hours_only(self):
+    def test_duration_w_hours(self):
         wake_hour = random.randint(0, 23)
         sleep_hour = random.randint(0, 23)
 
@@ -954,7 +954,7 @@ green: make it pass
         )
         return f'{hours_difference}:{minutes_difference}'
 
-  and ``test_duration_w_hours_and_minutes`` passes, leaving an :ref:`AssertionError` for ``test_duration_w_hours_only`` that looks like this
+  and ``test_duration_w_hours_and_minutes`` passes, leaving an :ref:`AssertionError` for ``test_duration_w_hours`` that looks like this
 
   .. code-block:: python
 
@@ -975,11 +975,11 @@ green: make it pass
         )
         return f'{hours_difference:02}:{minutes_difference:02}'
 
-  and update ``test_duration_w_hours_only`` to do the same thing for the hours
+  and update ``test_duration_w_hours`` to do the same thing for the hours
 
   .. code-block:: python
 
-    def test_duration_w_hours_only(self):
+    def test_duration_w_hours(self):
         wake_hour = random.randint(0, 23)
         sleep_hour = random.randint(0, 23)
 
@@ -998,7 +998,7 @@ green: make it pass
 refactor: make it better
 --------------------------------------------------------
 
-``test_duration_w_hours_and_minutes`` uses a random number from ``0`` up to and including ``23`` for hours, and a random number from ``0`` up to and including ``59`` for minutes. This means it covers all timestamps from ``00:00`` up to and including ``23:59``, which is all the hours and minutes in a day. I remove ``test_duration_w_hours_only`` since the timestamps it tests are included in what is provided by ``test_duration_w_hours_and_minutes``
+``test_duration_w_hours_and_minutes`` uses a random number from ``0`` up to and including ``23`` for hours, and a random number from ``0`` up to and including ``59`` for minutes. This means it covers all timestamps from ``00:00`` up to and including ``23:59``, which is all the hours and minutes in a day. I remove ``test_duration_w_hours`` since the timestamps it tests are included in what is provided by ``test_duration_w_hours_and_minutes``
 
 test_duration_calculation
 ========================================================
@@ -2105,7 +2105,7 @@ The challenge was to create a function that calculates the difference between 2 
   - using `random.randint`_ to generate a random integer
   - using a random timestamp ranging from ``'00:00'`` up to and including ``'23:59'`` as inputs for ``wake_time`` and ``sleep_time``
   - confirming a ValueError_ is raised when ``wake_time`` is earlier than ``sleep_time``
-  - `test_duration_w_hours_only`_
+  - `test_duration_w_hours`_
   - `test_duration_w_hours_and_minutes`_
   - `test_duration_calculation`_
   - `test_duration_w_earlier_wake_than_sleep_time`_
