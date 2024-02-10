@@ -1,0 +1,836 @@
+.. include:: ../../links.rst
+
+********************************************************
+how to measure sleep duration
+********************************************************
+
+I take a look at building a program that returns the amount of time slept between a given sleep and wake time.
+
+----
+
+test_duration_w_hours
+========================================================
+
+.. _test_duration_w_hours_red:
+
+red: make it fail
+--------------------------------------------------------
+
+* I open a terminal and call :ref:`createPythonTdd.sh` with ``sleep_duration`` as the project name
+
+  .. code-block:: python
+
+    ./createPythonTdd.sh sleep_duration
+
+  .. NOTE::
+
+    If you are using Windows without `Windows Subsystem Linux`_ use :ref:`createPythonTdd.ps1`
+
+    .. code-block:: python
+
+      ./createPythonTdd.ps1 sleep_duration
+
+* I remove ``test_failure`` after making it pass
+* I add a failing test to check that when the ``duration`` :doc:`function </functions/functions>` in the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>` is called with a ``wake_time`` of ``'08:00'`` and a ``sleep_time`` of ``'07:00'``, it should return the difference between the two, which in this case is ``1``
+
+  .. code-block:: python
+
+    import unittest
+
+
+    class TestSleepDuration(unittest.TestCase):
+
+        def test_duration_w_hours(self):
+            self.assertEqual(
+                sleep_duration.duration(
+                    wake_time='08:00',
+                    sleep_time='07:00'
+                ),
+                1
+            )
+
+  the terminal shows a NameError_
+
+  .. code-block:: python
+
+    NameError: name 'sleep_duration' is not defined
+
+.. _test_duration_w_hours_green:
+
+green: make it pass
+--------------------------------------------------------
+
+* I add the error to the list of exceptions encountered
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AssertionError
+    # NameError
+
+* then add an `import statement`_ for the missing name
+
+  .. code-block:: python
+
+    import sleep_duration
+    import unittest
+
+
+    class TestSleepDuration(unittest.TestCase):
+    ...
+
+  and the terminal shows an :ref:`AttributeError`. I do not have a definition for ``duration`` in ``sleep_duration.py``
+
+  .. code-block:: python
+
+    AttributeError: module 'sleep_duration' has no attribute 'duration'
+
+* I add the error to the list of exceptions encountered
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AssertionError
+    # NameError
+    # AttributeError
+
+* then add a name to ``sleep_duration.py`` ::
+
+    duration
+
+  and the terminal shows a NameError_
+
+  .. code-block:: python
+
+    NameError: name 'duration' is not defined
+
+* I make ``duration`` a variable by assigning it to :ref:`None`
+
+  .. code-block:: python
+
+    duration = None
+
+  and the terminal shows a :ref:`TypeError`
+
+  .. code-block:: python
+
+    TypeError: 'NoneType' object is not callable
+
+* I add the exception to the list of exceptions encountered
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AssertionError
+    # NameError
+    # AttributeError
+    # TypeError
+
+* then define ``duration`` as a :doc:`function </functions/functions>` to make it callable_
+
+  .. code-block:: python
+
+    def duration():
+        return None
+
+  the terminal shows a :ref:`TypeError` with a different message about the first keyword argument given in the test
+
+  .. code-block:: python
+
+    TypeError: duration() got an unexpected keyword argument 'wake_time'
+
+  The ``duration`` :doc:`function </functions/functions>` is called in ``test_duration_w_hours`` with keyword arguments that were not provided in the function signature when it was defined
+
+* I add the required keyword argument to the definition of ``duration``, setting its default value to :ref:`None`
+
+  .. code-block:: python
+
+    def duration(wake_time=None):
+        return None
+
+  the terminal shows a similar :ref:`TypeError` message for the second keyword argument
+
+  .. code-block:: python
+
+    TypeError: duration() got an unexpected keyword argument 'sleep_time'
+
+* I add the second keyword argument to the definition of the ``duration`` :doc:`function </functions/functions>`
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        return None
+
+  and the terminal shows an :ref:`AssertionError`. The ``duration`` :doc:`function </functions/functions>` returns :ref:`None` but the test expects ``1`` as the result when it passes a sleep time of ``'07:00'`` and a wake time of ``'08:00'``
+
+  .. code-block:: python
+
+    AssertionError: None != 1
+
+* I change the return value to make it match the expectation
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        return 1
+
+  and the test passes. We are green
+
+.. _test_duration_w_hours_refactor:
+
+refactor: make it better
+--------------------------------------------------------
+
+The ``duration`` :doc:`function </functions/functions>` currently returns ``1`` no matter what inputs it is given. It should calculate the difference between ``wake_time`` and ``sleep_time`` to meet the requirements.
+
+I could write a test for every possible sleep and wake time, or write one test that uses random variables to cover all timestamps from ``'00:00'`` to ``'23:59'``
+
+* I add an `import statement`_ for the random_ module to ``test_sleep_duration.py``
+
+  .. code-block:: python
+
+    import random
+    import sleep_duration
+    import unittest
+
+* then add random values for the hours part of the timestamps in ``test_duration_w_hours``
+
+  .. code-block:: python
+
+    def test_duration_w_hours(self):
+        wake_hour = random.randint(0, 23)
+        sleep_hour = random.randint(0, 23)
+
+        self.assertEqual(
+            sleep_duration.duration(
+                wake_time=f'{wake_hour:02}:00',
+                sleep_time=f'{sleep_hour:02}:00'
+            ),
+            1
+        )
+
+  - ``random.randint(0, 23)`` returns a random number from ``0`` up to and including ``23``
+  - ``f'{wake_hour:02}:00'`` and ``f'{sleep_hour:02}:00'`` :doc:`interpolate </how_to/pass_values>` the random numbers in the input strings_
+  - the ``:02`` in ``{wake_hour:02}`` and ``{sleep_hour:02}`` tell Python to display the numbers as two digits. For example, display ``01`` instead of ``1``
+
+* I change the test to match the requirement of the difference between ``wake_time`` and ``sleep_time``
+
+  .. code-block:: python
+
+    def test_duration_w_hours(self):
+        wake_hour = random.randint(0, 23)
+        sleep_hour = random.randint(0, 23)
+
+        self.assertEqual(
+            sleep_duration.duration(
+                wake_time=f'{wake_hour:02}:00',
+                sleep_time=f'{sleep_hour:02}:00'
+            ),
+            wake_hour-sleep_hour
+        )
+
+  the terminal shows an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 1 != -2
+
+  .. NOTE::
+
+    Your results may be different because the timestamps are random numbers
+
+* I change the ``duration`` :doc:`function </functions/functions>` to return the subtraction of ``sleep_time`` from ``wake_time``
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        return wake_time - sleep_time
+
+  the terminal shows a :ref:`TypeError`
+
+  .. code-block:: python
+
+    TypeError: unsupported operand type(s) for -: 'str' and 'str'
+
+  Python does not have an operation defined for subtracting one string_ from another. I need to find a way to convert a timestamp from a string_ to a number.
+
+test_string_attributes_and_methods
+========================================================
+
+The ``wake_time`` and ``sleep_time`` are currently in this format - ``XX:00``. If I can get the first 2 characters and convert them to a number, I can calculate the difference since Python can do :doc:`arithmetic </how_to/calculator>`.
+
+.. _test_string_attributes_and_methods_red:
+
+red: make it fail
+--------------------------------------------------------
+
+* I use the dir_ :doc:`function </functions/functions>` to see what :doc:`attributes </exceptions/AttributeError>` and :doc:`methods </functions/functions>` of strings_ can help me break them apart or get the characters I want
+
+  .. code-block:: python
+
+    def test_string_attributes_and_methods(self):
+        self.assertEqual(
+            dir('00:00'),
+            None
+        )
+
+    def test_duration_w_hours(self):
+    ...
+
+  the terminal shows an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: ['__add__', '__class__', '__contains__', [918 chars]ill'] != None
+
+* I copy and paste the value on the left side of the comparison to replace :ref:`None` in the test
+
+  .. code-block:: python
+
+    def test_string_attributes_and_methods(self):
+        self.assertEqual(
+            dir('00:00'),
+            ['__add__', '__class__', '__contains__', [918 chars]ill']
+        )
+
+  the terminal shows a SyntaxError_
+
+  .. code-block:: python
+
+    E       ['__add__', '__class__', '__contains__', [918 chars]ill']
+    E                                                              ^
+    E   SyntaxError: unterminated string literal (detected at line 11)
+
+  which I add to the list of exceptions encountered
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AssertionError
+    # NameError
+    # AttributeError
+    # TypeError
+    # SyntaxError
+
+* there is a closing quote with no open quote, so I add one
+
+  .. code-block:: python
+
+    def test_string_attributes_and_methods(self):
+        self.assertEqual(
+            dir('00:00'),
+            ['__add__', '__class__', '__contains__', '[918 chars]ill']
+        )
+
+  and the terminal shows an :ref:`AssertionError` with a different message and a suggestion
+
+  .. code-block:: python
+
+    Diff is 1284 characters long. Set self.maxDiff to None to see it.
+
+* I add the suggestion
+
+  .. code-block:: python
+
+    def test_string_attributes_and_methods(self):
+        self.maxDiff = None
+        self.assertEqual(
+            dir('00:00'),
+            ['__add__', '__class__', '__contains__', '[918 chars]ill']
+        )
+
+  - the terminal shows a list of :doc:`attributes </exceptions/AttributeError>` and :doc:`methods </functions/functions>` of a string_
+  - `unittest.TestCase.maxDiff`_ sets a limit on the number of characters the terminal shows for a difference between two objects. There is no limit when it is set to :ref:`None`
+
+* I copy and paste the values from the terminal into the test and remove extra characters
+
+  .. NOTE::
+
+    Some attributes may be missing because of your Python version
+
+  .. code-block:: python
+
+    def test_string_attributes_and_methods(self):
+        self.maxDiff = None
+        self.assertEqual(
+            dir('00:00'),
+            [
+                '__add__',
+                '__class__',
+                '__contains__',
+                '__delattr__',
+                '__dir__',
+                '__doc__',
+                '__eq__',
+                '__format__',
+                '__ge__',
+                '__getattribute__',
+                '__getitem__',
+                '__getnewargs__',
+                '__getstate__',
+                '__gt__',
+                '__hash__',
+                '__init__',
+                '__init_subclass__',
+                '__iter__',
+                '__le__',
+                '__len__',
+                '__lt__',
+                '__mod__',
+                '__mul__',
+                '__ne__',
+                '__new__',
+                '__reduce__',
+                '__reduce_ex__',
+                '__repr__',
+                '__rmod__',
+                '__rmul__',
+                '__setattr__',
+                '__sizeof__',
+                '__str__',
+                '__subclasshook__',
+                'capitalize',
+                'casefold',
+                'center',
+                'count',
+                'encode',
+                'endswith',
+                'expandtabs',
+                'find',
+                'format',
+                'format_map',
+                'index',
+                'isalnum',
+                'isalpha',
+                'isascii',
+                'isdecimal',
+                'isdigit',
+                'isidentifier',
+                'islower',
+                'isnumeric',
+                'isprintable',
+                'isspace',
+                'istitle',
+                'isupper',
+                'join',
+                'ljust',
+                'lower',
+                'lstrip',
+                'maketrans',
+                'partition',
+                'removeprefix',
+                'removesuffix',
+                'replace',
+                'rfind',
+                'rindex',
+                'rjust',
+                'rpartition',
+                'rsplit',
+                'rstrip',
+                'split',
+                'splitlines',
+                'startswith',
+                'strip',
+                'swapcase',
+                'title',
+                'translate',
+                'upper',
+                'zfill'
+            ]
+        )
+
+* the test passes and the terminal shows the :ref:`TypeError` from earlier because Python still does not support subtracting one string_ from another
+* I want to try one of the :doc:`methods </functions/functions>` listed in ``test_string_attributes_and_methods`` to see if it will get me closer to a solution but I cannot tell what they do from the names. I use the `help system`_ to check the `python documentation on strings`_ for more details
+
+  .. code-block:: python
+
+    def test_duration_w_hours(self):
+        help(str)
+    ...
+
+  the terminal shows documentation for the string_ module and I read through the descriptions for each :doc:`method </functions/functions>` until I see one that looks like it could solve the problem
+
+  .. code-block:: python
+
+    ...
+    |
+    |  split(self, /, sep=None, maxsplit=-1)
+    |      Return a list of the substrings in the string,
+    |      using sep as the separator string.
+    |
+    |        sep
+    |          The separator used to split the string.
+    |
+    ...
+
+  the `str.split`_ :doc:`method </functions/functions>` looks like a good solution since it splits up a word on a given separator
+
+test_string_splitting
+========================================================
+
+.. _test_string_splitting_red:
+
+red: make it fail
+--------------------------------------------------------
+
+* I remove ``help(str)`` and add a failing test for the `str.split`_ :doc:`method </functions/functions>` to see what it does
+
+  .. code-block:: python
+
+    def test_string_splitting(self):
+        self.assertEqual(
+            '01:23'.split(),
+            None
+        )
+
+    def test_duration_w_hours(self):
+    ...
+
+  the terminal shows an :ref:`AssertionError` and I see that `str.split`_ returns a :doc:`list </data_structures/lists/lists>` when called
+
+  .. code-block:: python
+
+    AssertionError: ['01:23'] != None
+
+.. _test_string_splitting_green:
+
+green: make it pass
+--------------------------------------------------------
+
+I change the expectation to make the test pass
+
+.. code-block:: python
+
+  def test_string_splitting(self):
+      self.assertEqual(
+          '01:23'.split(),
+          ['01:23']
+      )
+
+and the terminal shows the :ref:`TypeError` that took me down this path
+
+.. _test_string_splitting_refactor:
+
+refactor: make it better
+--------------------------------------------------------
+
+* I want to split the string_ on a separator to get the different parts, something like ``['01', '23']`` with ``:`` as the separator. I change the expectation of the test to what I want
+
+  .. code-block:: python
+
+    def test_string_splitting(self):
+        self.assertEqual(
+            '01:23'.split(),
+            ['01', '23']
+        )
+
+  and the terminal shows an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: Lists differ: ['01:23'] != ['01', '23']
+
+* From the documentation, `str.split`_ takes in ``sep=None, maxsplit=-1`` as inputs and ``sep`` is the separator. I pass in ``':'`` as the separator
+
+  .. code-block:: python
+
+    def test_string_splitting(self):
+      self.assertEqual(
+          '01:23'.split(':'),
+          ['01', '23']
+      )
+
+  and the test passes. I now know how to get the different parts of ``wake_time`` and ``sleep_time``
+
+* I add a call to the `str.split`_ :doc:`method </functions/functions>` in the ``duration`` :doc:`function </functions/functions>` in ``sleep_duration.py``
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        return (
+            wake_time.split(':')
+          - sleep_time.split(':')
+        )
+
+  the terminal shows a :ref:`TypeError`, this time for trying to subtract one :doc:`list </data_structures/lists/lists>` from another
+
+  .. code-block:: python
+
+    TypeError: unsupported operand type(s) for -: 'list' and 'list'
+
+.. _test_string_splitting_red_2:
+
+red: make it fail
+--------------------------------------------------------
+
+* I only need the first item in the list, which I can get by using its index. Python uses `zero-based indexing`_ so the first item is at index ``0`` and the second item is at index ``1``. See :doc:`/data_structures/lists/lists` for more. I add tests for getting specific parts of a :doc:`list </data_structures/lists/lists>` created from calling `str.split`_ to ``test_string_splitting``
+
+  .. code-block:: python
+
+    def test_string_splitting(self):
+        self.assertEqual(
+            '01:23'.split(':'),
+            ['01', '23']
+        )
+        self.assertEqual(
+            '12:34'.split(':')[0],
+            0
+        )
+        self.assertEqual(
+            '12:34'.split(':')[1],
+            0
+        )
+
+    def test_duration_w_hours(self):
+    ...
+
+  the terminal shows an :ref:`AssertionError` because the first item (index 0) from splitting ``'12:34'`` on the separator ``':'`` is ``'12'``
+
+  .. code-block:: python
+
+    AssertionError: '12' != 0
+
+  this is closer to what I want
+
+.. test_string_splitting_green_2:
+
+green: make it pass
+--------------------------------------------------------
+
+* I change the expected value in the test to match the value in the terminal
+
+  .. code-block:: python
+
+    self.assertEqual(
+        '12:34'.split(':')[0],
+        '12'
+    )
+
+  the terminal shows another :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: '34' != 0
+
+  this shows that the second item (index 1) from splitting ``'12:34'`` on the separator ``':'`` is ``'34'``
+
+* I change the expected value in the same way
+
+  .. code-block:: python
+
+    self.assertEqual(
+        '12:34'.split(':')[1],
+        '34'
+    )
+
+  the tests pass, bringing me back to the unsolved :ref:`TypeError`
+
+* using what I have learned, I make the ``duration`` :doc:`function </functions/functions>` return the subtraction of the first parts from splitting ``wake_time`` and ``sleep_time`` on the separator ``':'``
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        return (
+            wake_time.split(':')[0]
+          - sleep_time.split(':')[0]
+        )
+
+  the terminal shows a :ref:`TypeError` for an unsupported operation of trying to subtract one string_ from another. I know from ``test_string_splitting`` that the strings being subtracted are the values to the left of the separator ``':'``, not the entire values of ``wake_time`` and ``sleep_time``. For example, if the given ``wake_time`` is ``'02:00'`` and the given ``sleep_time`` is ``'01:00'``, the program tries to subtract ``'01'`` from ``'02'`` which is different than trying to subtract ``1`` from ``2`` - ``'01'`` is a string_ and ``1`` is a number
+
+test_converting_string_to_integer
+========================================================
+
+The next task is to convert the string_ to a number so I can do the subtraction
+
+.. _test_converting_string_to_integer_red:
+
+red: make it fail
+--------------------------------------------------------
+
+* I disable the current failing test by using the `unittest.skip decorator`_
+
+  .. code-block:: python
+
+    @unittest.skip
+    def test_duration_w_hours(self):
+    ...
+
+* then add a new failing test to see if I can use the int_ constructor to convert a string_ to a number
+
+  .. code-block:: python
+
+    def test_converting_string_to_integer(self):
+        self.assertEqual(int('12'), 0)
+        self.assertEqual(int('01'), 0)
+
+    @unittest.skip
+    def test_duration_w_hours(self):
+    ...
+
+  the terminal shows an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 12 != 0
+
+.. _test_converting_string_to_integer_green:
+
+green: make it pass
+--------------------------------------------------------
+
+* I change the test to match the expectation
+
+  .. code-block:: python
+
+    self.assertEqual(int('12'), 12)
+
+  and get an :ref:`AssertionError` for the next line
+
+  .. code-block:: python
+
+    AssertionError: 1 != 0
+
+* I change the test to match the expectation and things are green again
+
+  .. code-block:: python
+
+    self.assertEqual(int('01'), 1)
+
+I have another tool to help solve the problem. So far, I can
+
+- split a string_ on a separator using `str.split`_
+- index a :doc:`list </data_structures/lists/lists>`
+- convert a string_ to a number using the int_ constructor
+
+----
+
+* I remove the `unittest.skip decorator`_ from ``test_duration_w_hours`` to show the :ref:`TypeError` I have been trying to solve
+* I add the conversion using the int_ constructor to the ``duration`` :doc:`function </functions/functions>` to see if it will make the test pass
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        return (
+            int(wake_time.split(':')[0])
+          - int(sleep_time.split(':')[0])
+        )
+
+  YES! I am green! The ``duration`` function can calculate the sleep duration given any random ``sleep`` and ``wake`` hours in a day. What a beautiful life!
+
+* I can rewrite the solution I have in a way that tries to explain the process to someone who does not know how to :doc:`index a list </data_structures/lists/lists>`, use int_ or `str.split`_
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        wake_time_split = wake_time.split(':')
+        wake_time_hour = wake_time_split[0]
+        wake_time_hour_integer = int(wake_time_hour)
+
+        return (
+        # int(wake_time.split(':')[0])
+            wake_time_hour_integer
+          - int(sleep_time.split(':')[0])
+        )
+
+  the terminal shows all tests are still passing
+
+* I try the same thing for ``sleep_time``
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        wake_time_split = wake_time.split(':')
+        wake_time_hour = wake_time_split[0]
+        wake_time_hour_integer = int(wake_time_hour)
+
+        sleep_time_split = sleep_time.split(':')
+        sleep_time_hour = sleep_time_split[0]
+        sleep_time_hour_integer = int(sleep_time_hour)
+
+        return (
+            wake_time_hour_integer
+        # - int(sleep_time.split(':')[0])
+          - sleep_time_hour_integer
+        )
+
+* The ``duration`` :doc:`function </functions/functions>` does the following for each given timestamp
+
+  - splits the timestamp string_ on the separator ``':'``
+  - gets the first item from the split
+  - converts the first item from the split to an integer
+
+  I can make these steps a separate :doc:`function </functions/functions>` and call it for ``wake_time`` and ``sleep_time``
+
+  .. code-block:: python
+
+    def process(timestamp):
+        timestamp_split = timestamp.split(':')
+        timestamp_hour = timestamp_split[0]
+        timestamp_hour_integer = int(timestamp_hour)
+        return timestamp_hour_integer
+
+    def duration(wake_time=None, sleep_time=None):
+        return (
+            process(wake_time)
+          - process(sleep_time)
+        )
+        wake_time_split = wake_time.split(':')
+        wake_time_hour = wake_time_split[0]
+        wake_time_hour_integer = int(wake_time_hour)
+
+        sleep_time_split = sleep_time.split(':')
+        sleep_time_hour = sleep_time_split[0]
+        sleep_time_hour_integer = int(sleep_time_hour)
+
+        return (
+            wake_time_hour_integer
+          - sleep_time_hour_integer
+        )
+
+  all tests are still green
+
+* I remove the parts of ``duration`` I no longer need and rename ``process`` to something more descriptive like ``get_hour``
+
+  .. code-block:: python
+
+    def get_hour(timestamp):
+        timestamp_split = timestamp.split(':')
+        timestamp_hour = timestamp_split[0]
+        timestamp_hour_integer = int(timestamp_hour)
+        return timestamp_hour_integer
+
+    def duration(wake_time=None, sleep_time=None):
+        return (
+            get_hour(wake_time)
+          - get_hour(sleep_time)
+        )
+
+  all tests are still passing. I have not broken anything yet
+
+* I can make ``get_hour`` use the same variable name instead of a new name for each step in the process
+
+  .. code-block:: python
+
+    def get_hour(value):
+        value = value.split(':')
+        value = value[0]
+        value = int(value)
+        return value
+
+  the terminal still shows passing tests
+
+* I can also change ``get_hour`` to use one line, though it might not be as easy to understand
+
+  .. code-block:: python
+
+    def get_hour(timestamp):
+        return int(timestamp.split(':')[0])
+
+  the terminal still shows passing tests
+
+Since all the tests are still passing, you can try any ideas you want until you understand what has been written so far. Time for a nap.
+
+----
+
+test_duration_w_hours_and_minutes
+========================================================
