@@ -852,15 +852,15 @@ I add a failing test in ``test_sleep_duration.py`` that has hours and minutes
       wake_minutes = random.randint(0, 59)
       sleep_minutes = random.randint(0, 59)
 
-      hours_difference = wake_hour - sleep_hour
-      minutes_difference = wake_minutes - sleep_minutes
+      difference_hours = wake_hour - sleep_hour
+      difference_minutes = wake_minutes - sleep_minutes
 
       self.assertEqual(
           sleep_duration.duration(
               wake_time=f'{wake_hour:02}:{wake_minutes:02}',
               sleep_time=f'{sleep_hour:02}:{sleep_minutes:02}'
           ),
-          f'{hours_difference:02}:{minutes_difference:02}'
+          f'{difference_hours:02}:{difference_minutes:02}'
       )
 
 the terminal shows an :ref:`AssertionError` that looks like this
@@ -885,15 +885,15 @@ green: make it pass
   .. code-block:: python
 
     def duration(wake_time=None, sleep_time=None):
-        hours_difference = (
+        difference_hours = (
             get_hour(wake_time)
           - get_hour(sleep_time)
         )
-        minutes_difference = (
+        difference_minutes = (
             get_hour(wake_time)
           - get_hour(sleep_time)
         )
-        return f'{hours_difference}:{minutes_difference}'
+        return f'{difference_hours}:{difference_minutes}'
 
   and the terminal shows an :ref:`AssertionError` because changing the format causes an error in ``test_duration_w_hours`` which still expects a number instead of a string_
 
@@ -941,20 +941,20 @@ green: make it pass
 
   the terminal still shows an :ref:`AssertionError`
 
-* I add calls to ``get_minutes`` in the calculation for ``minutes_difference``
+* I add calls to ``get_minutes`` in the calculation for ``difference_minutes``
 
   .. code-block:: python
 
     def duration(wake_time=None, sleep_time=None):
-        hours_difference = (
+        difference_hours = (
             get_hour(wake_time)
           - get_hour(sleep_time)
         )
-        minutes_difference = (
+        difference_minutes = (
             get_minutes(wake_time)
           - get_minutes(sleep_time)
         )
-        return f'{hours_difference}:{minutes_difference}'
+        return f'{difference_hours}:{difference_minutes}'
 
   and ``test_duration_w_hours_and_minutes`` passes, leaving an :ref:`AssertionError` for ``test_duration_w_hours`` that looks like this
 
@@ -967,15 +967,15 @@ green: make it pass
   .. code-block:: python
 
     def duration(wake_time=None, sleep_time=None):
-        hours_difference = (
+        difference_hours = (
             get_hour(wake_time)
           - get_hour(sleep_time)
         )
-        minutes_difference = (
+        difference_minutes = (
             get_minutes(wake_time)
           - get_minutes(sleep_time)
         )
-        return f'{hours_difference:02}:{minutes_difference:02}'
+        return f'{difference_hours:02}:{difference_minutes:02}'
 
   and update ``test_duration_w_hours`` to do the same thing for the hours
 
@@ -985,14 +985,14 @@ green: make it pass
         wake_hour = random.randint(0, 23)
         sleep_hour = random.randint(0, 23)
 
-        hours_difference = wake_hour - sleep_hour
+        difference_hours = wake_hour - sleep_hour
 
         self.assertEqual(
             sleep_duration.duration(
                 wake_time=f'{wake_hour:02}:00',
                 sleep_time=f'{sleep_hour:02}:00'
             ),
-            f'{hours_difference:02}:00'
+            f'{difference_hours:02}:00'
         )
 
 .. _test_duration_w_hours_and_minutes_refactor:
@@ -1043,15 +1043,15 @@ green: make it pass
   .. code-block:: python
 
     def duration_a(wake_time=None, sleep_time=None):
-        hours_difference = (
+        difference_hours = (
             get_hour(wake_time)
           - get_hour(sleep_time)
         )
-        minutes_difference = (
+        difference_minutes = (
             get_minutes(wake_time)
           - get_minutes(sleep_time)
         )
-        return f'{hours_difference:02}:{minutes_difference:02}'
+        return f'{difference_hours:02}:{difference_minutes:02}'
 
 * then add a new ``duration`` :ref:`function<functions>` with the following steps to calculate a real difference between two timestamps
 
@@ -1074,10 +1074,10 @@ green: make it pass
            + get_minutes(sleep_time)
         )
         difference = wake_time_minutes - sleep_time_minutes
-        hours_difference = difference // 60
-        minutes_difference = difference % 60
+        difference_hours = difference // 60
+        difference_minutes = difference % 60
 
-        return f'{hours_difference:02}:{minutes_difference:02}'
+        return f'{difference_hours:02}:{difference_minutes:02}'
 
   since ``test_duration_w_hours_and_minutes`` uses the wrong calculation, the terminal will show random successes and :ref:`AssertionErrors<AssertionError>` that look like this
 
@@ -1098,15 +1098,15 @@ green: make it pass
         wake_time_minutes = (wake_hour * 60) + wake_minutes
         sleep_time_minutes = (sleep_hour * 60) + sleep_minutes
         difference = wake_time_minutes - sleep_time_minutes
-        hours_difference = difference // 60
-        minutes_difference = difference % 60
+        difference_hours = difference // 60
+        difference_minutes = difference % 60
 
         self.assertEqual(
             sleep_duration.duration(
                 wake_time=f'{wake_hour:02}:{wake_minutes:02}',
                 sleep_time=f'{sleep_hour:02}:{sleep_minutes:02}'
             ),
-            f'{hours_difference:02}:{minutes_difference:02}'
+            f'{difference_hours:02}:{difference_minutes:02}'
         )
 
   I have passing tests again. Green is a beautiful color
@@ -1232,10 +1232,10 @@ green: make it pass
         wake_time_minutes = get_total_minutes(wake_time)
         sleep_time_minutes = get_total_minutes(sleep_time)
         difference = wake_time_minutes - sleep_time_minutes
-        hours_difference = difference // 60
-        minutes_difference = difference % 60
+        difference_hours = difference // 60
+        difference_minutes = difference % 60
 
-        return f'{hours_difference:02}:{minutes_difference:02}'
+        return f'{difference_hours:02}:{difference_minutes:02}'
 
   the terminal still shows passing tests
 
@@ -1248,10 +1248,10 @@ green: make it pass
             get_total_minutes(wake_time)
           - get_total_minutes(sleep_time)
         )
-        hours_difference = difference // 60
-        minutes_difference = difference % 60
+        difference_hours = difference // 60
+        difference_minutes = difference % 60
 
-        return f'{hours_difference:02}:{minutes_difference:02}'
+        return f'{difference_hours:02}:{difference_minutes:02}'
 
   the terminal shows all tests are still passing. Which of the last two blocks of code do you like?
 
@@ -1329,7 +1329,7 @@ green again
 refactor: make it better
 --------------------------------------------------------
 
-* The ``duration`` :ref:`function<functions>` currently returns negative numbers when given an earlier ``wake_time`` than ``sleep_time``. It measures a time traveling scenario where the traveler can go to sleep in the present and wake up in the past. I change it to make sure it only returns durations when ``wake_time`` is not earlier than ``sleep_time``, time traveling is too hard
+* The ``duration`` :ref:`function<functions>` currently returns negative numbers when given an earlier ``wake_time`` than ``sleep_time``. It measures a time traveling scenario where the traveler can go to sleep in the present and wake up in the past. I want it to only return durations when ``wake_time`` is not earlier than ``sleep_time``, time traveling is too hard
 
   .. code-block:: python
 
@@ -1345,20 +1345,20 @@ refactor: make it better
                 f'than sleep_time: {sleep_time}'
             )
         else:
-            hours_difference = difference // 60
-            minutes_difference = difference % 60
-            return f'{hours_difference:02}:{minutes_difference:02}'
+            difference_hours = difference // 60
+            difference_minutes = difference % 60
+            return f'{difference_hours:02}:{difference_minutes:02}'
 
-  - When the difference between ``wake_time`` and ``sleep_time`` is less than ``0``, it means ``wake_time`` is earlier than ``sleep_time`` and the ``duration`` :ref:`function<functions>` will raise an :doc:`Exception </how_to/exception_handling_programs>`
-  - When the difference between ``wake_time`` and ``sleep_time`` is greater than or equal to ``0``, it means ``wake_time`` is later than or the same as ``sleep_time`` and the ``duration`` :ref:`function<functions>` returns the difference
+  - When ``difference`` is less than ``0``, ``wake_time`` is earlier than ``sleep_time`` and the ``duration`` :ref:`function<functions>` will raise an :doc:`Exception </how_to/exception_handling_programs>`
+  - When ``difference`` is greater than or equal to ``0``, ``wake_time`` is later than or the same as ``sleep_time`` and the ``duration`` :ref:`function<functions>` returns the difference between the two timestamps
 
-  the terminal shows a ValueError_ for ``test_duration_w_earlier_wake_than_sleep_time`` and ``test_duration_w_hours_and_minutes`` for the random values where ``wake_time`` is earlier than ``sleep_time``
+  the terminal shows a ValueError_ for ``test_duration_w_earlier_wake_than_sleep_time`` and ``test_duration_w_hours_and_minutes`` for the random values where ``wake_time`` is earlier than ``sleep_time``. For example,
 
   .. code-block:: python
 
     ValueError: wake_time: 20:26 is earlier than sleep_time: 23:50
 
-* I add the error to the list of exceptions encountered
+* I add the error to the list of exceptions encountered even though I made this one happen
 
   .. code-block:: python
 
@@ -1381,7 +1381,7 @@ refactor: make it better
                 sleep_time='02:00'
             )
 
-  and the test passes, leaving the ValueError_ for ``test_duration_w_hours_and_minutes``
+  and the test passes, leaving the random ValueError_ for ``test_duration_w_hours_and_minutes``
 
 * I add an :doc:`exception handler </how_to/exception_handling_programs>` using a `try statement`_ and `unittest.TestCase.assertRaises`_ to confirm the ValueError_ is raised when ``wake_time`` is earlier than ``sleep_time``
 
@@ -1396,8 +1396,8 @@ refactor: make it better
         wake_time_minutes = (wake_hour * 60) + wake_minutes
         sleep_time_minutes = (sleep_hour * 60) + sleep_minutes
         difference = wake_time_minutes - sleep_time_minutes
-        hours_difference = difference // 60
-        minutes_difference = difference % 60
+        difference_hours = difference // 60
+        difference_minutes = difference % 60
 
         wake_time = f'{wake_hour:02}:{wake_minutes:02}'
         sleep_time = f'{sleep_hour:02}:{sleep_minutes:02}'
@@ -1408,7 +1408,7 @@ refactor: make it better
                     wake_time=wake_time,
                     sleep_time=sleep_time
                 ),
-                f'{hours_difference:02}:{minutes_difference:02}'
+                f'{difference_hours:02}:{difference_minutes:02}'
             )
         except ValueError:
             with self.assertRaises(ValueError):
@@ -1426,19 +1426,18 @@ refactor: make it better
 
     def test_duration_w_hours_and_minutes(self):
         wake_hour = random.randint(0, 23)
-        sleep_hour = random.randint(0, 23)
         wake_minutes = random.randint(0, 59)
-        sleep_minutes = random.randint(0, 59)
-
+        wake_time = f'{wake_hour:02}:{wake_minutes:02}'
         wake_time_minutes = (wake_hour * 60) + wake_minutes
+
+        sleep_hour = random.randint(0, 23)
+        sleep_minutes = random.randint(0, 59)
+        sleep_time = f'{sleep_hour:02}:{sleep_minutes:02}'
         sleep_time_minutes = (sleep_hour * 60) + sleep_minutes
 
         difference = wake_time_minutes - sleep_time_minutes
-        hours_difference = difference // 60
-        minutes_difference = difference % 60
-
-        wake_time = f'{wake_hour:02}:{wake_minutes:02}'
-        sleep_time = f'{sleep_hour:02}:{sleep_minutes:02}'
+        difference_hours = difference // 60
+        difference_minutes = difference % 60
 
         try:
             self.assertEqual(
@@ -1446,7 +1445,7 @@ refactor: make it better
                     wake_time=wake_time,
                     sleep_time=sleep_time
                 ),
-                f'{hours_difference:02}:{minutes_difference:02}'
+                f'{difference_hours:02}:{difference_minutes:02}'
             )
         except ValueError:
             with self.assertRaisesRegex(
@@ -1461,7 +1460,7 @@ refactor: make it better
 
   the terminal shows passing tests
 
-I have a function that
+I have a :ref:`function<functions>` that
 
 * takes in a ``wake_time`` and ``sleep_time`` as inputs
 * raises a ValueError_ with a message when ``wake_time`` is earlier than ``sleep_time``
@@ -1474,7 +1473,7 @@ Time to take a break.
 test_duration_w_date_and_time
 ========================================================
 
-So far, the ``duration`` :ref:`function<functions>` has been tested with timestamps that contain only hours and minutes, but I could fall asleep on a Monday and wake up on a Tuesday. What would happen if I added dates to the timestamps?
+So far, the ``duration`` :ref:`function<functions>` has been tested with timestamps that only contain hours and minutes, but I could fall asleep on a Monday and wake up on a Tuesday. What would happen if I added dates to the timestamps?
 
 .. _test_duration_w_date_and_time_red:
 
@@ -1487,19 +1486,18 @@ red: make it fail
 
     def test_duration_w_date_and_time(self):
         wake_hour = random.randint(0, 23)
-        sleep_hour = random.randint(0, 23)
         wake_minutes = random.randint(0, 59)
-        sleep_minutes = random.randint(0, 59)
-
         wake_time_minutes = (wake_hour * 60) + wake_minutes
+        wake_time = f'31/12/99 {wake_hour:02}:{wake_minutes:02}'
+
+        sleep_hour = random.randint(0, 23)
+        sleep_minutes = random.randint(0, 59)
         sleep_time_minutes = (sleep_hour * 60) + sleep_minutes
+        sleep_time = f'31/12/99 {sleep_hour:02}:{sleep_minutes:02}'
 
         difference = wake_time_minutes - sleep_time_minutes
-        hours_difference = difference // 60
-        minutes_difference = difference % 60
-
-        wake_time = f'31/12/99 {wake_hour:02}:{wake_minutes:02}'
-        sleep_time = f'31/12/99 {sleep_hour:02}:{sleep_minutes:02}'
+        difference_hours = difference // 60
+        difference_minutes = difference % 60
 
         try:
             self.assertEqual(
@@ -1507,9 +1505,9 @@ red: make it fail
                     wake_time=wake_time,
                     sleep_time=sleep_time
                 ),
-                f'{hours_difference:02}:{minutes_difference:02}'
+                f'{difference_hours:02}:{difference_minutes:02}'
             )
-        except ValueError:
+        except Exception:
             with self.assertRaisesRegex(
                 ValueError,
                 f'wake_time: {wake_time} is earlier '
@@ -1539,7 +1537,7 @@ green: make it pass
 
     invalid literal for int() with base 10: '31/12/99 10'
 
-* The `str.split`_ :ref:`method<functions>` was given a separator of ``':'`` when the timestamp contained only hours and minutes, but it behaves differently when I add a date. I add a test for it to ``test_string_splitting``
+* The `str.split`_ :ref:`method<functions>` was given a separator of ``':'`` when the timestamp contained only hours and minutes, but behaves differently when given a date. I add a test for this to ``test_string_splitting``
 
   .. code-block:: python
 
@@ -1600,15 +1598,15 @@ green: make it pass
         with self.assertRaises(ValueError):
             int('31/12/99 10')
 
-* I need a solution that can read the date and time. Writing one myself requires knowing the number of days in months for a specific year, the following comes to mind
+* I need a solution that can read the date and time. Writing one myself requires knowing the number of days in months for a specific year, in other words, a program that knows `Thirty Days Hath September <https://en.wikipedia.org/wiki/Thirty_Days_Hath_September>`_
 
-    Thirty days has September
+    Thirty days has September,
     April, June and November,
     All the rest have thirty-one,
     Except February, twenty-eight days clear
     and twenty-nine in each leap year
 
-  I instead do a search for `time difference <https://docs.python.org/3/search.html?q=time+difference>`_ in the `python online documentation`_ to see if there is an existing solution, and select the datetime_ module since it looks like the solution to this problem. Reading through the available types in the module, I see I can create `datetime.datetime`_ objects which handle date and time
+  I instead do a search for `time difference <https://docs.python.org/3/search.html?q=time+difference>`_ in the `python online documentation`_ to see if there is an existing solution, and select the datetime_ module since it looks like the solution to this problem. Reading through the available types in the module, I see
 
   .. code-block:: python
 
@@ -1859,9 +1857,9 @@ From the tests, I know I can
                 f'than sleep_time: {sleep_time}'
             )
         else:
-            hours_difference = difference // 60
-            minutes_difference = difference % 60
-            return f'{hours_difference:02}:{minutes_difference:02}'
+            difference_hours = difference // 60
+            difference_minutes = difference % 60
+            return f'{difference_hours:02}:{difference_minutes:02}'
 
 * then I add a new ``duration`` :ref:`function<functions>` with a call to ``get_datetime_object``
 
