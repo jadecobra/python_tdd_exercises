@@ -5,7 +5,7 @@
 .. _datetime.timedelta: https://docs.python.org/3/library/datetime.html?highlight=datetime#timedelta-objects
 .. _dir: https://docs.python.org/3/library/functions.html?highlight=dir#dir
 .. _floor (integer) division: https://en.wikipedia.org/wiki/Division_(mathematics)#Division_in_different_contexts
-.. _help system: //docs.python.org/3/library/functions.html?highlight=dir#help
+.. _help system: https://docs.python.org/3/library/functions.html?highlight=dir#help
 .. _import statement: https://docs.python.org/3/reference/simple_stmts.html#the-import-statement
 .. _int: https://docs.python.org/3/library/functions.html?highlight=int#int
 .. _modulo: https://en.wikipedia.org/wiki/Modulo
