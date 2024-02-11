@@ -1408,7 +1408,7 @@ refactor: make it better
                 ),
                 f'{difference_hours:02}:{difference_minutes:02}'
             )
-        except ValueError:
+        except Exception:
             with self.assertRaises(ValueError):
                 sleep_duration.duration(
                     wake_time=wake_time,
@@ -1446,7 +1446,7 @@ refactor: make it better
                 ),
                 f'{difference_hours:02}:{difference_minutes:02}'
             )
-        except ValueError:
+        except Exception:
             with self.assertRaisesRegex(
                 ValueError,
                 f'wake_time: {wake_time} is earlier '
@@ -1507,7 +1507,7 @@ red: make it fail
                 ),
                 f'{difference_hours:02}:{difference_minutes:02}'
             )
-        except ValueError:
+        except Exception:
             with self.assertRaisesRegex(
                 ValueError,
                 f'wake_time: {wake_time} is earlier '
@@ -1930,7 +1930,7 @@ From the tests, I know I can
                 ),
                 str(difference)
             )
-        except ValueError:
+        except Exception:
             with self.assertRaisesRegex(
                 ValueError,
                 f'wake_time: {wake_time} is earlier '
@@ -1995,7 +1995,7 @@ From the tests, I know I can
                 ),
                 str(difference)
             )
-        except ValueError:
+        except Exception:
             with self.assertRaisesRegex(
                 ValueError,
                 f'wake_time: {datetime.datetime.strptime(wake_time, pattern)} is earlier '
@@ -2047,7 +2047,7 @@ refactor: make it better
                 ),
                 str(difference)
             )
-        except ValueError:
+        except Exception:
             with self.assertRaisesRegex(
                 ValueError,
                 f'wake_time: {wake_datetime_object} is earlier '

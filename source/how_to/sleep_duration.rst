@@ -848,8 +848,9 @@ I add a failing test in ``test_sleep_duration.py`` that has hours and minutes
 
   def test_duration_w_hours_and_minutes(self):
       wake_hour = random.randint(0, 23)
-      sleep_hour = random.randint(0, 23)
       wake_minutes = random.randint(0, 59)
+
+      sleep_hour = random.randint(0, 23)
       sleep_minutes = random.randint(0, 59)
 
       difference_hours = wake_hour - sleep_hour
@@ -1091,12 +1092,13 @@ green: make it pass
 
     def test_duration_w_hours_and_minutes(self):
         wake_hour = random.randint(0, 23)
-        sleep_hour = random.randint(0, 23)
         wake_minutes = random.randint(0, 59)
-        sleep_minutes = random.randint(0, 59)
-
         wake_time_minutes = (wake_hour * 60) + wake_minutes
+
+        sleep_hour = random.randint(0, 23)
+        sleep_minutes = random.randint(0, 59)
         sleep_time_minutes = (sleep_hour * 60) + sleep_minutes
+
         difference = wake_time_minutes - sleep_time_minutes
         difference_hours = difference // 60
         difference_minutes = difference % 60
@@ -1389,12 +1391,13 @@ refactor: make it better
 
     def test_duration_w_hours_and_minutes(self):
         wake_hour = random.randint(0, 23)
-        sleep_hour = random.randint(0, 23)
         wake_minutes = random.randint(0, 59)
-        sleep_minutes = random.randint(0, 59)
-
         wake_time_minutes = (wake_hour * 60) + wake_minutes
+
+        sleep_hour = random.randint(0, 23)
+        sleep_minutes = random.randint(0, 59)
         sleep_time_minutes = (sleep_hour * 60) + sleep_minutes
+
         difference = wake_time_minutes - sleep_time_minutes
         difference_hours = difference // 60
         difference_minutes = difference % 60
@@ -1410,7 +1413,7 @@ refactor: make it better
                 ),
                 f'{difference_hours:02}:{difference_minutes:02}'
             )
-        except ValueError:
+        except Exception:
             with self.assertRaises(ValueError):
                 sleep_duration.duration(
                     wake_time=wake_time,
@@ -1447,7 +1450,7 @@ refactor: make it better
                 ),
                 f'{difference_hours:02}:{difference_minutes:02}'
             )
-        except ValueError:
+        except Exception:
             with self.assertRaisesRegex(
                 ValueError,
                 f'wake_time: {wake_time} is earlier '
@@ -1692,7 +1695,7 @@ green: make it pass
 
   and the terminal shows passing tests
 
-From the test I see that
+From this test I see that
 
 * `datetime.datetime`_ takes ``year``, ``month``, ``date``, ``hours`` and ``minutes`` as inputs
 * the `datetime.datetime.strptime`_ :ref:`method<functions>` returns a `datetime.datetime`_ object when given 2 strings_ as inputs - a timestamp and a pattern
@@ -1704,7 +1707,7 @@ From the test I see that
   - ``%H`` is for hours
   - ``%M`` is for minutes
 
-  you can see more in `strftime() and strftime() behavior <https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior>`_
+  you can see more in `strftime() and strptime() behavior <https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior>`_
 
 test_subtracting_datetime_datetime_objects
 ========================================================
@@ -1755,22 +1758,14 @@ red: make it fail
 green: make it pass
 --------------------------------------------------------
 
-* I copy the value on the left of the :ref:`AssertionError` and replace the expected value in the test
+I copy the value on the left of the :ref:`AssertionError` and replace the expected value in the test
 
-  .. code-block:: python
+.. code-block:: python
 
-    def test_subtracting_datetime_datetime_objects(self):
-        pattern = '%d/%m/%y %H:%M'
-        sleep_time = datetime.datetime.strptime(
-            '21/11/06 16:30', pattern
-        )
-        wake_time = datetime.datetime.strptime(
-            '21/11/06 17:30', pattern
-        )
-        self.assertEqual(
-            wake_time-sleep_time,
-            datetime.timedelta(seconds=3600)
-        )
+  self.assertEqual(
+      wake_time-sleep_time,
+      datetime.timedelta(seconds=3600)
+  )
 
 With these passing tests. I see that I can
 
@@ -1818,7 +1813,7 @@ green: make it pass
         '2:07:34'
     )
 
-  it looks like calling str_ on a `datetime.timedelta`_ object returns a string_ in the format ``Hours:Minutes:Seconds``
+  calling str_ on a `datetime.timedelta`_ object returns a string_ in the format ``Hours:Minutes:Seconds``
 
 From the tests, I know I can
 
@@ -1829,7 +1824,7 @@ From the tests, I know I can
 ----
 
 * I remove the `unittest.skip decorator`_ from ``test_duration_w_date_and_time`` to return to the ValueError_ that sent me down this path
-* I add a function for converting timestamps called ``get_datetime_object`` to ``sleep_duration.py``
+* I add a :ref:`function<functions>` for converting timestamps called ``get_datetime_object`` to ``sleep_duration.py``
 
   .. code-block:: python
 
@@ -1909,12 +1904,13 @@ From the tests, I know I can
 
     def test_duration_w_date_and_time(self):
         wake_hour = random.randint(0, 23)
-        sleep_hour = random.randint(0, 23)
         wake_minutes = random.randint(0, 59)
-        sleep_minutes = random.randint(0, 59)
-
         wake_time = f'31/12/99 {wake_hour:02}:{wake_minutes:02}'
+
+        sleep_hour = random.randint(0, 23)
+        sleep_minutes = random.randint(0, 59)
         sleep_time = f'31/12/99 {sleep_hour:02}:{sleep_minutes:02}'
+
         pattern = '%d/%m/%y %H:%M'
 
         difference = (
@@ -1930,7 +1926,7 @@ From the tests, I know I can
                 ),
                 str(difference)
             )
-        except ValueError:
+        except Exception:
             with self.assertRaisesRegex(
                 ValueError,
                 f'wake_time: {wake_time} is earlier '
@@ -1943,7 +1939,7 @@ From the tests, I know I can
 
   the terminal shows passing tests
 
-* I update ``duration`` to raise a ValueError_ when ``wake_time`` is earlier than ``sleep_time``
+* I make ``duration`` raise a ValueError_ when ``wake_time`` is earlier than ``sleep_time``
 
   .. code-block:: python
 
@@ -1966,21 +1962,22 @@ From the tests, I know I can
 
     AssertionError: "wake_time: 31/12/99 17:23 is earlier than sleep_time: 31/12/99 19:07" does not match "wake_time: 1999-12-31 17:23:00 is earlier than sleep_time: 1999-12-31 19:07:00"
 
-  there is a ValueError_ with a different message than the one the `unittest.TestCase.assertRaisesRegex`_ expects. The timestamp formats do not match because the ``duration`` :ref:`function<functions>` uses `datetime.datetime.strptime`_ objects in the message when it raises the exception and ``test_duration_w_date_and_time`` does not
+  there is a ValueError_ with a different message than the one `unittest.TestCase.assertRaisesRegex`_ expects. The timestamp formats do not match because the ``duration`` :ref:`function<functions>` uses `datetime.datetime.strptime`_ objects in the message when it raises the :doc:`Exception </how_to/exception_handling_programs>` and ``test_duration_w_date_and_time`` does not
 
-* I change ``test_duration_w_date_and_time`` to use the right error message
+* I change the error message in ``test_duration_w_date_and_time`` to use `datetime.datetime`_ objects
 
   .. code-block:: python
 
     def test_duration_w_date_and_time(self):
-        wake_hour = random.randint(0, 23)
-        sleep_hour = random.randint(0, 23)
-        wake_minutes = random.randint(0, 59)
-        sleep_minutes = random.randint(0, 59)
-
-        wake_time = f'31/12/99 {wake_hour:02}:{wake_minutes:02}'
-        sleep_time = f'31/12/99 {sleep_hour:02}:{sleep_minutes:02}'
         pattern = '%d/%m/%y %H:%M'
+
+        wake_hour = random.randint(0, 23)
+        wake_minutes = random.randint(0, 59)
+        wake_time = f'31/12/99 {wake_hour:02}:{wake_minutes:02}'
+
+        sleep_hour = random.randint(0, 23)
+        sleep_minutes = random.randint(0, 59)
+        sleep_time = f'31/12/99 {sleep_hour:02}:{sleep_minutes:02}'
 
         difference = (
             datetime.datetime.strptime(wake_time, pattern)
@@ -1995,7 +1992,7 @@ From the tests, I know I can
                 ),
                 str(difference)
             )
-        except ValueError:
+        except Exception:
             with self.assertRaisesRegex(
                 ValueError,
                 f'wake_time: {datetime.datetime.strptime(wake_time, pattern)} is earlier '
@@ -2018,18 +2015,18 @@ refactor: make it better
   .. code-block:: python
 
     def test_duration_w_date_and_time(self):
-        wake_hour = random.randint(0, 23)
-        sleep_hour = random.randint(0, 23)
-        wake_minutes = random.randint(0, 59)
-        sleep_minutes = random.randint(0, 59)
-
-        wake_time = f'31/12/99 {wake_hour:02}:{wake_minutes:02}'
-        sleep_time = f'31/12/99 {sleep_hour:02}:{sleep_minutes:02}'
         pattern = '%d/%m/%y %H:%M'
 
+        wake_hour = random.randint(0, 23)
+        wake_minutes = random.randint(0, 59)
+        wake_time = f'31/12/99 {wake_hour:02}:{wake_minutes:02}'
         wake_datetime_object = datetime.datetime.strptime(
             wake_time, pattern
         )
+
+        sleep_hour = random.randint(0, 23)
+        sleep_minutes = random.randint(0, 59)
+        sleep_time = f'31/12/99 {sleep_hour:02}:{sleep_minutes:02}'
         sleep_datetime_object = datetime.datetime.strptime(
             sleep_time, pattern
         )
@@ -2047,7 +2044,7 @@ refactor: make it better
                 ),
                 str(difference)
             )
-        except ValueError:
+        except Exception:
             with self.assertRaisesRegex(
                 ValueError,
                 f'wake_time: {wake_datetime_object} is earlier '
@@ -2060,7 +2057,7 @@ refactor: make it better
 
 * I remove ``duration_a`` from ``sleep_duration.py`` since I have a better solution in ``duration``
 * I remove ``parse_timestamp`` and ``get_total_minutes`` since they are no longer used
-* I remove the ``difference`` variable from ``duration`` since it is only called once
+* I remove the ``difference`` variable from ``duration`` since it is only used once
 
   .. code-block:: python
 
@@ -2081,7 +2078,7 @@ refactor: make it better
 review
 ========================================================
 
-The challenge was to create a function that calculates the difference between 2 given timestamps. To make it happen I ran the following tests
+The challenge was to create a function that calculates the difference between 2 given timestamps. I ran the following tests to help me create it
 
 * `test_string_attributes_and_methods`_
 * `test_string_splitting`_ where I
