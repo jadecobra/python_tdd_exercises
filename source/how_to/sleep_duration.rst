@@ -1121,7 +1121,7 @@ The ``//`` operator returns a whole number that tells how many times the denomin
 red: make it fail
 --------------------------------------------------------
 
-I add a test for it
+I add a failing test
 
 .. code-block:: python
 
@@ -1143,7 +1143,7 @@ and the terminal shows an :ref:`AssertionError`
 green: make it pass
 --------------------------------------------------------
 
-* I change the first expected value in the test to the correct value, the whole number result of dividing ``120`` by ``60`` is ``2`` with a remainder of ``0``
+* I change the first expected value in the test to the correct value. The result of dividing ``120`` by ``60`` is ``2`` with a remainder of ``0``
 
   .. code-block:: python
 
@@ -1155,7 +1155,7 @@ green: make it pass
 
     AssertionError: 2 != 0
 
-* I change the second expected value in the test to the correct value, the whole number result of dividing ``150`` by ``60`` is ``2`` with a remainder of ``30``
+* I change the second expected value in the test to the correct value. The result of dividing ``150`` by ``60`` is ``2`` with a remainder of ``30``
 
   .. code-block:: python
 
@@ -1195,7 +1195,7 @@ and the terminal shows an :ref:`AssertionError`
 green: make it pass
 --------------------------------------------------------
 
-* I change the first expected value in the test to the correct value, the remainder from dividing ``120`` by ``60`` is ``0``
+* I change the first expected value in the test to the correct value. The remainder from dividing ``120`` by ``60`` is ``0``
 
   .. code-block:: python
 
@@ -1207,7 +1207,7 @@ green: make it pass
 
     AssertionError: 30 != 2
 
-* I change the second expected value in the test to the correct value, the remainder from dividing ``150`` by ``60`` is ``30``
+* I change the second expected value in the test to the correct value. The remainder from dividing ``150`` by ``60`` is ``30``
 
   .. code-block:: python
 
@@ -1218,7 +1218,7 @@ green: make it pass
 ----
 
 * I remove ``duration_a`` since the working solution in ``duration`` is better
-* I write a function to get the total minutes from a timestamp and call it in ``duration``
+* I write a :ref:`function<functions>` to get the total minutes from a timestamp and call it in ``duration``
 
   .. code-block:: python
 
@@ -1268,7 +1268,7 @@ green: make it pass
            + parse_timestamp(timestamp, 1)
         )
 
-  the terminal shows all tests are still passing
+  all tests are still passing
 
 * I remove ``get_hour`` and ``get_minutes``
 * I remove ``test_duration_calculation`` since it is now covered by ``test_duration_w_hours_and_minutes``
