@@ -723,7 +723,7 @@ I have another tool to help solve the problem. So far, I can
           - int(sleep_time.split(':')[0])
         )
 
-  YES! I am green! The ``duration`` function can calculate the sleep duration given any random sleep and wake hours in a day. What a beautiful life!
+  YES! I am green! The ``duration`` function can calculate the duration between any given random sleep and wake hours in a day. What a beautiful life!
 
 * I can rewrite the solution I have in a way that tries to explain the process to someone who does not know how to :doc:`index a list </data_structures/lists/lists>`, use int_ or `str.split`_
 
@@ -735,7 +735,7 @@ I have another tool to help solve the problem. So far, I can
         wake_time_hour_integer = int(wake_time_hour)
 
         return (
-        # int(wake_time.split(':')[0])
+            # int(wake_time.split(':')[0])
             wake_time_hour_integer
           - int(sleep_time.split(':')[0])
         )
@@ -782,6 +782,7 @@ I have another tool to help solve the problem. So far, I can
             process(wake_time)
           - process(sleep_time)
         )
+
         wake_time_split = wake_time.split(':')
         wake_time_hour = wake_time_split[0]
         wake_time_hour_integer = int(wake_time_hour)
@@ -813,9 +814,9 @@ I have another tool to help solve the problem. So far, I can
           - get_hour(sleep_time)
         )
 
-  all tests are still passing. I have not broken anything yet
+  all tests are still passing
 
-* I can make ``get_hour`` use the same variable name instead of a new name for each step in the process
+* I can make ``get_hour`` use the same variable name instead of a new one for each step in the process
 
   .. code-block:: python
 
@@ -836,7 +837,7 @@ I have another tool to help solve the problem. So far, I can
 
   the terminal still shows passing tests
 
-Since all the tests are passing, you can try any ideas you want until you understand what has been written so far. Time for a break.
+Since all the tests are passing, you can try any ideas you want. Time for a break.
 
 ----
 
