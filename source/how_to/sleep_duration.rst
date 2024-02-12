@@ -851,44 +851,45 @@ Welcome back. For the ``duration`` :ref:`function<functions>` to meet the requir
 red: make it fail
 --------------------------------------------------------
 
-I add a failing test in ``test_sleep_duration.py`` that has hours and minutes using ``test_duration_w_hours`` as a reference
+* I copy and paste ``test_duration_w_hours`` in ``test_sleep_duration.py`` to make a copy of it
+* I rename the copy ``test_duration_w_hours_and_minutes`` and add variables for minutes
 
-.. code-block:: python
+  .. code-block:: python
 
-  def test_duration_w_hours_and_minutes(self):
-      wake_hour = random.randint(0, 23)
-      wake_minutes = random.randint(0, 59)
+    def test_duration_w_hours_and_minutes(self):
+        wake_hour = random.randint(0, 23)
+        wake_minutes = random.randint(0, 59)
 
-      sleep_hour = random.randint(0, 23)
-      sleep_minutes = random.randint(0, 59)
+        sleep_hour = random.randint(0, 23)
+        sleep_minutes = random.randint(0, 59)
 
-      difference_hours = wake_hour - sleep_hour
-      difference_minutes = wake_minutes - sleep_minutes
+        difference_hours = wake_hour - sleep_hour
+        difference_minutes = wake_minutes - sleep_minutes
 
-      self.assertEqual(
-          sleep_duration.duration(
-              wake_time=f'{wake_hour:02}:{wake_minutes:02}',
-              sleep_time=f'{sleep_hour:02}:{sleep_minutes:02}'
-          ),
-          f'{difference_hours:02}:{difference_minutes:02}'
-      )
+        self.assertEqual(
+            sleep_duration.duration(
+                wake_time=f'{wake_hour:02}:{wake_minutes:02}',
+                sleep_time=f'{sleep_hour:02}:{sleep_minutes:02}'
+            ),
+            f'{difference_hours:02}:{difference_minutes:02}'
+        )
 
-the terminal shows an :ref:`AssertionError` that looks like this
+  the terminal shows an :ref:`AssertionError` that looks like this
 
-.. code-block:: python
+  .. code-block:: python
 
-  AssertionError: 4 != '4:-20'
+    AssertionError: 4 != '4:-20'
 
-.. NOTE::
+  .. NOTE::
 
-  Your results may be different because the timestamps are random numbers
-
-the expected duration is now a string_ that contains the subtraction of the sleep hour from the wake hour, and the subtraction of the sleep minutes from the wake minutes, separated by ``:``
+    Your results may be different because the timestamps are random numbers
 
 .. _test_duration_w_hours_and_minutes_green:
 
 green: make it pass
 --------------------------------------------------------
+
+the expected duration is now a string_ that contains the subtraction of the sleep hour from the wake hour, and the subtraction of the sleep minutes from the wake minutes, separated by ``:``
 
 * I make the output of the ``duration`` :ref:`function<functions>` match the format of the expected value in the test
 
