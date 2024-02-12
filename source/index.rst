@@ -133,6 +133,5 @@ tests and solutions
   code/code_dictionaries
   code/code_classes
   code/code_functions
-  catalog_of_tests
 
 :ref:`search`

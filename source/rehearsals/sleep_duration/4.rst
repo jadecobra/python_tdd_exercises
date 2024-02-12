@@ -889,4 +889,130 @@ red: make it fail
 green: make it pass
 --------------------------------------------------------
 
-the expected duration
+the expected duration is now a string_ that contains the subtraction of ``sleep_hour`` from ``wake_hour``, and the subtraction of ``sleep_minutes`` from ``wake_minutes``, separated by ``:``
+
+* I make the output of the ``duration`` :ref:`function<functions>` match the format of the expected value in the test
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        difference_hours = (
+            get_hour(wake_time)
+          - get_hour(sleep_time)
+        )
+        difference_minutes = (
+            get_hour(wake_time)
+          - get_hour(sleep_time)
+        )
+        return f'{difference_hours}:{difference_minutes}'
+
+  the terminal shows an :ref:`AssertionError` because changing the format causes an error in ``test_duration_w_hours`` which still expects a number instead of a string_
+
+  .. code-block:: python
+
+    AssertionError: '-4:-4' != -4
+
+  .. NOTE::
+
+    Your results may be different because the timestamps are random numbers
+
+* I make ``test_duration_w_hours`` use the new format
+
+  .. code-block:: python
+
+    def test_duration_w_hours(self):
+        wake_hour = random.randint(0, 23)
+        sleep_hour = random.randint(0, 23)
+
+        self.assertEqual(
+            sleep_duration.duration(
+                wake_time=f'{wake_hour:02}:00',
+                sleep_time=f'{sleep_hour:02}:00'
+            ),
+            f'{wake_hour-sleep_hour}:00'
+        )
+
+  the terminal shows an :ref:`AssertionError` that looks like this
+
+  .. code-block:: python
+
+    AssertionError: '17:17' != '17:00'
+
+  ``duration`` currently uses ``get_hour`` for both hours and minutes. I need to make a :ref:`function<functions>` to use in the calculation for minutes
+
+* I copy and paste ``get_hour`` and rename it ``get_minutes`` then change the index to ``1`` to get the second part from splitting the timestamp
+
+  .. code-block:: python
+
+    def get_hour(timestamp):
+        return int(timestamp.split(':')[0])
+
+    def get_minutes(timestamp):
+        return int(timestamp.split(':')[1])
+
+  the terminal still shows an :ref:`AssertionError`
+
+* and I add calls to ``get_minutes`` in the calculation for ``difference_minutes``
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        difference_hours = (
+            get_hour(wake_time)
+          - get_hour(sleep_time)
+        )
+        difference_minutes = (
+            get_minutes(wake_time)
+          - get_minutes(sleep_time)
+        )
+        return f'{difference_hours}:{difference_minutes}'
+
+  ``test_duration_w_hours_and_minutes`` passes, leaving an :ref:`AssertionError` for ``test_duration_w_hours`` that looks like this
+
+  .. code-block:: python
+
+    AssertionError: '-8:0' != '-8:00'
+
+* I make ``duration`` show two digits for hours and minutes in the result
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        difference_hours = (
+            get_hour(wake_time)
+          - get_hour(sleep_time)
+        )
+        difference_minutes = (
+            get_minutes(wake_time)
+          - get_minutes(sleep_time)
+        )
+        return f'{difference_hours:02}:{difference_minutes:02}'
+
+  and update ``test_duration_w_hours`` to show two digits for the hours
+
+  .. code-block:: python
+
+    def test_duration_w_hours(self):
+        wake_hour = random.randint(0, 23)
+        sleep_hour = random.randint(0, 23)
+
+        difference_hours = wake_hour - sleep_hour
+
+        self.assertEqual(
+            sleep_duration.duration(
+                wake_time=f'{wake_hour:02}:00',
+                sleep_time=f'{sleep_hour:02}:00'
+            ),
+            f'{difference_hours:02}:00'
+        )
+
+.. _test_duration_w_hours_and_minutes_refactor:
+
+refactor: make it better
+--------------------------------------------------------
+
+``test_duration_w_hours_and_minutes`` uses a random number from ``0`` up to and including ``23`` for hours, and a random number from ``0`` up to and including ``59`` for minutes. This means it covers all timestamps from ``00:00`` up to and including ``23:59``, which is all the hours and minutes in a day. I remove ``test_duration_w_hours`` since the timestamps it tests are included in what was provided by ``test_duration_w_hours_and_minutes``
+
+test_duration_calculation
+========================================================
+

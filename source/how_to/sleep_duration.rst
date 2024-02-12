@@ -889,7 +889,7 @@ red: make it fail
 green: make it pass
 --------------------------------------------------------
 
-the expected duration is now a string_ that contains the subtraction of the sleep hour from the wake hour, and the subtraction of the sleep minutes from the wake minutes, separated by ``:``
+the expected duration is now a string_ that contains the subtraction of ``sleep_hour`` from ``wake_hour``, and the subtraction of ``sleep_minutes`` from ``wake_minutes``, separated by ``:``
 
 * I make the output of the ``duration`` :ref:`function<functions>` match the format of the expected value in the test
 
@@ -938,9 +938,9 @@ the expected duration is now a string_ that contains the subtraction of the slee
 
     AssertionError: '17:17' != '17:00'
 
-  ``duration`` currently uses ``get_hour`` for both hours and minutes. I need to create a :ref:`function<functions>` to use in the calculation for minutes
+  ``duration`` currently uses ``get_hour`` for both hours and minutes. I need to make a :ref:`function<functions>` to use in the calculation for minutes
 
-* I use ``get_hour`` as a reference to create a similar :ref:`function<functions>` that gets the minutes from a given timestamp
+* I copy and paste ``get_hour`` and rename it ``get_minutes`` then change the index to ``1`` to get the second part from splitting the timestamp
 
   .. code-block:: python
 
@@ -952,7 +952,7 @@ the expected duration is now a string_ that contains the subtraction of the slee
 
   the terminal still shows an :ref:`AssertionError`
 
-* I add calls to ``get_minutes`` in the calculation for ``difference_minutes``
+* and I add calls to ``get_minutes`` in the calculation for ``difference_minutes``
 
   .. code-block:: python
 
@@ -967,7 +967,7 @@ the expected duration is now a string_ that contains the subtraction of the slee
         )
         return f'{difference_hours}:{difference_minutes}'
 
-  and ``test_duration_w_hours_and_minutes`` passes, leaving an :ref:`AssertionError` for ``test_duration_w_hours`` that looks like this
+  ``test_duration_w_hours_and_minutes`` passes, leaving an :ref:`AssertionError` for ``test_duration_w_hours`` that looks like this
 
   .. code-block:: python
 
@@ -988,7 +988,7 @@ the expected duration is now a string_ that contains the subtraction of the slee
         )
         return f'{difference_hours:02}:{difference_minutes:02}'
 
-  and update ``test_duration_w_hours`` to do the same thing for the hours
+  and update ``test_duration_w_hours`` to show two digits for the hours
 
   .. code-block:: python
 
