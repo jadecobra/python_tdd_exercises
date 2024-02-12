@@ -65,7 +65,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
     mkdir --parents project_name/tests
 
-* I change directory to ``project_name`` with the `cd <https://man7.org/linux/man-pages/man1/cd.1p.html>`_ program
+* I will make directory to ``project_name`` with the `cd <https://man7.org/linux/man-pages/man1/cd.1p.html>`_ program
 
   .. code-block:: shell
 
@@ -79,14 +79,14 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
     replace ``touch`` with ``New-Item``
 
-  - I create an empty file called ``project_name.py`` to hold the source code for the program
+  - I make an empty file called ``project_name.py`` to hold the source code for the program
 
     .. code-block:: shell
 
         touch project_name.py
 
   - tests will be stored in the ``tests`` folder to separate them from the source code (the actual program)
-  - I create another empty file called ``__init__.py`` in the ``tests`` folder to tell Python that the ``tests`` folder is a python `package <https://docs.python.org/3/glossary.html#term-regular-package>`_
+  - I make another empty file called ``__init__.py`` in the ``tests`` folder to tell Python that the ``tests`` folder is a python `package <https://docs.python.org/3/glossary.html#term-regular-package>`_
 
     .. code-block:: shell
 
@@ -94,7 +94,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
     .. WARNING:: make sure you use two underscores for ``__init__.py``
 
-  - I create another empty file called ``test_project_name.py`` in the ``tests`` folder to hold the tests
+  - I make another empty file called ``test_project_name.py`` in the ``tests`` folder to hold the tests
 
     .. code-block:: shell
 
@@ -228,7 +228,7 @@ green: make it pass
     # Exceptions Encountered
     # AssertionError
 
-* I change the input on line 7 to :doc:`False </data_structures/booleans/booleans>`
+* I will make the input on line 7 to :doc:`False </data_structures/booleans/booleans>`
 
   .. code-block:: python
 
@@ -276,7 +276,7 @@ How to Automatically Run Tests
 How to create a Virtual Environment
 ====================================
 
-* With the `echo <https://man7.org/linux/man-pages/man1/echo.1.html>`_ program I create a file called ``requirements.txt`` in the ``project_name`` folder with `pytest-watch <https://pypi.org/project/pytest-watch/>`_ as the text
+* With the `echo <https://man7.org/linux/man-pages/man1/echo.1.html>`_ program I make a file called ``requirements.txt`` in the ``project_name`` folder with `pytest-watch <https://pypi.org/project/pytest-watch/>`_ as the text
 
   .. code-block:: shell
 
@@ -289,7 +289,7 @@ How to create a Virtual Environment
   - `pytest <https://docs.pytest.org/>`_ is a python package like `unittest <https://docs.python.org/3/library/unittest.html>`_ for running tests in Python
   - ``requirements.txt`` is the name of a file where I can list required python packages for `pip <https://pypi.org/project/pip/>`_ the `python package manager <https://pypi.org/project/pip/>`_ to install later, you can use any name you like
 
-* I create a `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ with the `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ module from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_
+* I make a `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ with the `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ module from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_
 
   .. code-block:: python
 
@@ -366,7 +366,7 @@ How to create a Virtual Environment
 
     =============== 1 passed in 0.00s =======================
 
-* I change the input on line 7 in ``test_project_name.py`` to :doc:`True </data_structures/booleans/booleans>` to make it fail and back to :doc:`False </data_structures/booleans/booleans>` to make it pass with the terminal responding to each change
+* I will make the input on line 7 in ``test_project_name.py`` to :doc:`True </data_structures/booleans/booleans>` to make it fail and back to :doc:`False </data_structures/booleans/booleans>` to make it pass with the terminal responding to each change
 * I can press ``ctrl`` + ``c`` on the keyboard in the terminal to stop the tests at anytime
 
 How to Deactivate a Virtual Environment
@@ -399,7 +399,7 @@ You made it this far and have become the greatest programmer in the world. Follo
 
 * I exit the tests in the terminal by pressing ``ctrl`` + ``c`` on the keyboard
 * I type ``deactivate`` to deactivate the `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_
-* I change directory to the parent of ``project_name`` ::
+* I will make directory to the parent of ``project_name`` ::
 
     cd ..
 
@@ -407,7 +407,7 @@ You made it this far and have become the greatest programmer in the world. Follo
 
     history
 
-* I create an empty file with a name that describes what the program does so it is easy to remember later, for example ``createPythonTdd.sh`` ::
+* I make an empty file with a name that describes what the program does so it is easy to remember later, for example ``createPythonTdd.sh`` ::
 
     touch createPythonTdd.sh
 
@@ -427,7 +427,7 @@ You made it this far and have become the greatest programmer in the world. Follo
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-* This program will always create a project called ``project_name`` so I need to add a variable to make it create any project name I pass to the program as input. I add a variable called ``PROJECT_NAME`` which is referenced with ``$PROJECT_NAME``
+* This program will always create a project called ``project_name`` so I need to add a variable to make it create any project name I pass to the program as input. I will add a variable called ``PROJECT_NAME`` which is referenced with ``$PROJECT_NAME``
 
   .. code-block:: shell
 
@@ -472,7 +472,7 @@ How to automatically create a Test Driven Development Environment on Windows wit
 
   This section only applies if you are using Windows without `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
 
-* I create a file named ``createPythonTdd.ps1`` by using the ``New-Item`` command in PowerShell ::
+* I make a file named ``createPythonTdd.ps1`` by using the ``New-Item`` command in PowerShell ::
 
     New-Item createPythonTdd.ps1
 

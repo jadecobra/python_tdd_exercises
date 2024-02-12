@@ -10,7 +10,7 @@ The tests in this chapter cover Converse NonImplication from  the `Truth Table <
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add a test for converse nonimplication to ``TestBinaryOperations`` in ``test_truth_table.py``
+I will add a test for converse nonimplication to ``TestBinaryOperations`` in ``test_truth_table.py``
 
 .. code-block:: python
 
@@ -25,7 +25,7 @@ the terminal shows an :ref:`AttributeError`
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-* I add a function definition to ``truth_table.py``
+* I will add a function definition to ``truth_table.py``
 
   .. code-block:: python
 
@@ -33,7 +33,7 @@ green: make it pass
         return False
 
   since the first two cases pass, the terminal shows an :ref:`AssertionError` for the third case
-* I add a condition for it
+* I will add a condition for it
 
   .. code-block:: python
 
@@ -67,7 +67,7 @@ refactor: make it better
             return True
         return False
 
-* I add an else clause
+* I will add an else clause
 
   .. code-block:: python
 

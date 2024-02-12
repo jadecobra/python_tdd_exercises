@@ -10,7 +10,7 @@ These tests show Logical NOR from  the `Truth Table <https://en.wikipedia.org/wi
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add a test for exclusive disjunction to ``TestBinaryOperations`` in ``test_truth_table.py``
+I will add a test for exclusive disjunction to ``TestBinaryOperations`` in ``test_truth_table.py``
 
 .. code-block:: python
 
@@ -25,14 +25,14 @@ and the terminal shows an :ref:`AttributeError`
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-* I add a function definition to ``truth_table.py``
+* I will add a function definition to ``truth_table.py``
 
   .. code-block:: python
 
     def logical_nor(p, q):
         return False
 
-* and the first 3 pass, there is a failure for the 4th case, so I add a condition for it
+* and the first 3 pass, there is a failure for the 4th case, so I will add a condition for it
 
   .. code-block:: python
 

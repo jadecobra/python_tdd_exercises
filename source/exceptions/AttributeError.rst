@@ -45,7 +45,7 @@ A :ref:`ModuleNotFoundError` is raised when a name is provided to an `import sta
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-* I change the list of exceptions encountered
+* I will make the list of exceptions encountered
 
   .. code-block:: python
 
@@ -77,7 +77,7 @@ green: make it pass
 
     AttributeError: module 'module' has no attribute 'variable_0'
 
-* I add the error to the list of exceptions encountered
+* I will add the error to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -100,7 +100,7 @@ green: make it pass
 
   ``NameError: name 'variable_0' is not defined`` the NameError_ is raised because ``variable_0`` in ``module.py`` is considered a reference and there is currently no definition or assignment for that name
 
-* I add NameError_ to the list of errors encountered
+* I will add NameError_ to the list of errors encountered
 
   .. code-block:: python
 
@@ -142,7 +142,7 @@ red: make it fail
 ~~~~~~~~~~~~~~~~~
 
 
-* I add a failing line
+* I will add a failing line
 
   .. code-block:: python
 
@@ -161,7 +161,7 @@ green: make it pass
 
 * red: make it fail
 
-  I add the name to ``module.py``
+  I will add the name to ``module.py``
 
   .. code-block:: python
 
@@ -176,7 +176,7 @@ green: make it pass
 
 * green: make it pass
 
-  I add a definition for ``variable_1``
+  I will add a definition for ``variable_1``
 
   .. code-block:: python
 
@@ -188,7 +188,7 @@ green: make it pass
 red: make it fail
 ~~~~~~~~~~~~~~~~~
 
-* I add a failing line
+* I will add a failing line
 
   .. code-block:: python
 
@@ -208,7 +208,7 @@ green: make it pass
 
 * red: make it fail
 
-  I add the name to ``module.py``
+  I will add the name to ``module.py``
 
   .. code-block:: python
 
@@ -237,7 +237,7 @@ green: make it pass
 red: make it fail
 ~~~~~~~~~~~~~~~~~
 
-* I add a failing line
+* I will add a failing line
 
   .. code-block:: python
 
@@ -258,7 +258,7 @@ green: make it pass
 
 * red: make it fail
 
-  I add the name
+  I will add the name
 
   .. code-block:: python
 
@@ -287,7 +287,7 @@ green: make it pass
 I have a pattern for the drill. When I test an attribute in a module, I get
 
 * an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ when the attribute does not exist
-* a NameError_ when I add the name to the module
+* a NameError_ when I will add the name to the module
 * a passing test when I define the name as a variable
 
 If you are feeling adventurous you can add more tests to ``test_defining_variables_to_solve_attribute_errors`` until you get to ``module.variable_99``, you will have 100 lines
@@ -320,7 +320,7 @@ Solve an AttributeError by defining functions
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add a new test to ``TestAttributeError`` class in ``tests/test_attribute_error.py``
+I will add a new test to ``TestAttributeError`` class in ``tests/test_attribute_error.py``
 
 .. code-block:: python
 
@@ -348,7 +348,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* I add it to the list of exceptions encountered
+* I will add it to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -365,7 +365,7 @@ green: make it pass
 
   Parentheses are used at the end of the name of an object when calling it, for example  ``module.function_0()`` will call ``function_0`` from ``module.py``
 
-* What if I change ``function_0`` in ``module.py`` to a function by  using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword?
+* What if I will make ``function_0`` in ``module.py`` to a function by  using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword?
 
   .. code-block:: python
 
@@ -422,7 +422,7 @@ For example I could define a ``Human`` class with attributes like eye color, dat
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-* I add a test function to the ``TestAttributeError`` class in ``tests/test_attribute_error.py``
+* I will add a test function to the ``TestAttributeError`` class in ``tests/test_attribute_error.py``
 
   .. code-block:: python
 
@@ -439,7 +439,7 @@ red: make it fail
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-* I add a name to ``module.py``
+* I will add a name to ``module.py``
 
   .. code-block:: python
 
@@ -504,7 +504,7 @@ red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 
-* I add a new test to the ``TestAttributeError`` class in ``test_attribute_error.py``
+* I will add a new test to the ``TestAttributeError`` class in ``test_attribute_error.py``
 
   .. code-block:: python
 
@@ -520,7 +520,7 @@ red: make it fail
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-* I add a variable to ``module.py``
+* I will add a variable to ``module.py``
 
   .. code-block:: python
 
@@ -532,7 +532,7 @@ green: make it pass
 
     AttributeError: 'NoneType' object has no attribute 'attribute_0'
 
-  when I change the variable to a function
+  when I will make the variable to a function
 
   .. code-block:: python
 
@@ -545,7 +545,7 @@ green: make it pass
 
     AttributeError: 'function' object has no attribute 'attribute_0'
 
-* I wonder if it is possible to define an attribute in a function and access it from outside the function. I add an attribute to ``Class`` in ``module.py``
+* I wonder if it is possible to define an attribute in a function and access it from outside the function. I will add an attribute to ``Class`` in ``module.py``
 
   .. code-block:: python
 
@@ -573,7 +573,7 @@ green: make it pass
 
   the error is caused by the ``return`` statement being outside a :ref:`function<functions>`
 
-* I add SyntaxError_ to the list of exceptions
+* I will add SyntaxError_ to the list of exceptions
 
   .. code-block:: python
 
@@ -648,7 +648,7 @@ Solve an AttributeError by defining class methods
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-* I add a new test to the ``TestAttributeError`` class in ``test_attribute_error.py``
+* I will add a new test to the ``TestAttributeError`` class in ``test_attribute_error.py``
 
   .. code-block:: python
 
@@ -664,7 +664,7 @@ red: make it fail
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-* I add a name to ``Class`` in ``module.py``
+* I will add a name to ``Class`` in ``module.py``
 
   .. code-block:: python
 
@@ -682,7 +682,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* then I change ``method_0`` from an attribute to a :ref:`method<functions>` using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword to make it `callable <https://docs.python.org/3/glossary.html#term-callable>`_
+* then I will make ``method_0`` from an attribute to a :ref:`method<functions>` using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword to make it `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 
   .. code-block:: python
 

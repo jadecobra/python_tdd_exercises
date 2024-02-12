@@ -10,7 +10,7 @@ Let us take a look at Logical NAND from  the `Truth Table <https://en.wikipedia.
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add a test for Logical NAND to ``TestBinaryOperations`` in ``test_truth_table.py``
+I will add a test for Logical NAND to ``TestBinaryOperations`` in ``test_truth_table.py``
 
 .. code-block:: python
 
@@ -26,7 +26,7 @@ green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* I add a definition for the function to ``truth_table.py`` returning :doc:`True </data_structures/booleans/booleans>` since 3 out of the 4 cases return it
+* I will add a definition for the function to ``truth_table.py`` returning :doc:`True </data_structures/booleans/booleans>` since 3 out of the 4 cases return it
 
   .. code-block:: python
 
@@ -34,7 +34,7 @@ green: make it pass
       return True
 
   the terminal shows an :ref:`AssertionError` for the first case
-* and I add a condition for the one case that returns :doc:`False </data_structures/booleans/booleans>`
+* and I will add a condition for the one case that returns :doc:`False </data_structures/booleans/booleans>`
 
   .. code-block:: python
 
@@ -48,7 +48,7 @@ green: make it pass
 refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-* I add an ``else`` clause to be explicit
+* I will add an ``else`` clause to be explicit
 
   .. code-block:: python
 
@@ -68,7 +68,7 @@ refactor: make it better
         else:
             return True
 
-* I change the ``else`` clause to the opposite of the ``if`` statement
+* I will make the ``else`` clause to the opposite of the ``if`` statement
 
   .. code-block:: python
 

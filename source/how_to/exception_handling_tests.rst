@@ -48,7 +48,7 @@ the terminal shows a :ref:`ModuleNotFoundError`
 
   ModuleNotFoundError: No module named 'non_existent_module'
 
-I add it to the list of exceptions encountered
+I will add it to the list of exceptions encountered
 
 .. code-block:: python
 
@@ -61,7 +61,7 @@ green: make it pass
 
 I can take care of this error by creating the module, but I want to catch or handle the exception in the test as a way to show that a ``ModuleNotFoundError`` was raised when I try to import ``non_existent_module``
 
-I add a ``self.assertRaises`` to ``test_catching_module_not_found_error_in_tests``
+I will add a ``self.assertRaises`` to ``test_catching_module_not_found_error_in_tests``
 
 .. code-block:: python
 
@@ -90,7 +90,7 @@ How to handle an AttributeError
 red: make it fail
 ==================
 
-* I add a new failing test
+* I will add a new failing test
 
   .. code-block:: python
 
@@ -102,14 +102,14 @@ red: make it fail
     NameError: name 'module' is not defined
 
   A NameError_ is raised when a name is used within a module with no definition for the name. In the test I call ``module.non_existent_attribute`` but there is no definition for ``module``
-* I add it to the list of exceptions encountered ::
+* I will add it to the list of exceptions encountered ::
 
     # Exceptions Encountered
     # AssertionError
     # ModuleNotFoundError
     # NameError
 
-* I add an `import statement`_ for ``module`` at the top of ``test_exceptions.py`` ::
+* I will add an `import statement`_ for ``module`` at the top of ``test_exceptions.py`` ::
 
     import module
     import unittest
@@ -118,11 +118,11 @@ red: make it fail
 
     ModuleNotFoundError: No module named 'module'
 
-* I create a file named ``module.py`` in the project folder and the terminal shows an :ref:`AttributeError` because the called attribute ``non_existent_attribute`` does not exist in ``module.py`` ::
+* I make a file named ``module.py`` in the project folder and the terminal shows an :ref:`AttributeError` because the called attribute ``non_existent_attribute`` does not exist in ``module.py`` ::
 
     AttributeError: module 'module' has no attribute 'non_existent_attribute'
 
-* I add the exception to the list of exceptions encountered ::
+* I will add the exception to the list of exceptions encountered ::
 
     # Exceptions Encountered
     # AssertionError
@@ -133,7 +133,7 @@ red: make it fail
 green: make it pass
 =====================
 
-I add a ``with self.assertRaises`` context to ``test_catching_attribute_errors_in_tests``
+I will add a ``with self.assertRaises`` context to ``test_catching_attribute_errors_in_tests``
 
 .. code-block:: python
 
@@ -146,7 +146,7 @@ the terminal shows passing tests. I will do it again with :ref:`functions<functi
 red: make it fail
 ==================
 
-I add a failing line that raises an :ref:`AttributeError` to ``test_catching_attribute_errors_in_tests``
+I will add a failing line that raises an :ref:`AttributeError` to ``test_catching_attribute_errors_in_tests``
 
 .. code-block:: python
 
@@ -164,7 +164,7 @@ the terminal shows an :ref:`AttributeError` because ``non_existent_function`` do
 green: make it pass
 ====================
 
-I add an ``assertRaises`` context and indent the failing line to place it within the context to make the test pass
+I will add an ``assertRaises`` context and indent the failing line to place it within the context to make the test pass
 
 .. code-block:: python
 
@@ -177,7 +177,7 @@ I add an ``assertRaises`` context and indent the failing line to place it within
 red: make it fail
 ==================
 
-I add a failing line that raises an :ref:`AttributeError` for :doc:`classes </classes/classes>` to ``test_catching_attribute_errors_in_tests``
+I will add a failing line that raises an :ref:`AttributeError` for :doc:`classes </classes/classes>` to ``test_catching_attribute_errors_in_tests``
 
 .. code-block:: python
 

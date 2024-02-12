@@ -52,7 +52,7 @@ AssertionError with None
 red: make it fail
 ==================
 
-* I create a new file in the ``tests`` folder with the name ``test_assertion_error.py``
+* I make a new file in the ``tests`` folder with the name ``test_assertion_error.py``
 * then add a test called ``test_assertion_errors_with_none`` using the python ``assert`` keyword to intentionally cause an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
   .. code-block:: python
@@ -80,7 +80,7 @@ red: make it fail
 green: make it pass
 ====================
 
-When I change the failing line to
+When I will make the failing line to
 
 .. code-block:: python
 
@@ -97,7 +97,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
 * red: make it fail
 
-  I add another failing line using the `unittest.TestCase.assertIsNone <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNone>`_ :ref:`method<functions>`
+  I will add another failing line using the `unittest.TestCase.assertIsNone <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNone>`_ :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -113,7 +113,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
 * green: make it pass
 
-  when I change the assert statement to
+  when I will make the assert statement to
 
   .. code-block:: python
 
@@ -125,7 +125,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
 * red: make it fail
 
-  I add another test to find out how :ref:`None` is related to :doc:`True </data_structures/booleans/booleans>`
+  I will add another test to find out how :ref:`None` is related to :doc:`True </data_structures/booleans/booleans>`
 
   .. code-block:: python
 
@@ -143,7 +143,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
 * green: make it pass
 
-  I change the failing line to make the test pass
+  I will make the failing line to make the test pass
 
   .. code-block:: python
 
@@ -155,7 +155,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
 * red: make it fail
 
-  I add a line using the `unittest.TestCase.assertIsNone <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNone>`_ :ref:`method<functions>`
+  I will add a line using the `unittest.TestCase.assertIsNone <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNone>`_ :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -174,7 +174,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
 * green: make it pass
 
-  I change the failing line to make the test pass
+  I will make the failing line to make the test pass
 
   .. code-block:: python
 
@@ -192,7 +192,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
 * red: make it fail
 
-  I add a failing line
+  I will add a failing line
 
   .. code-block:: python
 
@@ -213,7 +213,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
 * green: make it pass
 
-  I change the failing line to make the test pass
+  I will make the failing line to make the test pass
 
   .. code-block:: python
 
@@ -228,7 +228,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
 * red: make it fail
 
-  I add a failing line using the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ method
+  I will add a failing line using the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ method
 
   .. code-block:: python
 
@@ -250,7 +250,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
 * green: make it pass
 
-  I change ``test_assertion_errors_with_none`` to make it pass
+  I will make ``test_assertion_errors_with_none`` to make it pass
 
   .. code-block:: python
 
@@ -286,7 +286,7 @@ Can I raise an `AssertionError <https://docs.python.org/3/library/exceptions.htm
 red: make it fail
 ==================
 
-I add a failing test to ``TestAssertionError`` in ``test_assertion_error.py`` to find out
+I will add a failing test to ``TestAssertionError`` in ``test_assertion_error.py`` to find out
 
 .. code-block:: python
 
@@ -302,7 +302,7 @@ the terminal shows a failure
 green: make it pass
 ====================
 
-I change the failing line to make the test pass
+I will make the failing line to make the test pass
 
 .. code-block:: python
 
@@ -332,7 +332,7 @@ this is familiar, it was the first failing test from :doc:`How to create a Test 
 green: make it pass
 ====================
 
-I change the failing line to make the test pass
+I will make the failing line to make the test pass
 
 .. code-block:: python
 
@@ -359,7 +359,7 @@ Can I raise an `AssertionError <https://docs.python.org/3/library/exceptions.htm
 red: make it fail
 ==================
 
-I add a failing test to ``TestAssertionError`` in ``test_assertion_error.py``
+I will add a failing test to ``TestAssertionError`` in ``test_assertion_error.py``
 
 .. code-block:: python
 
@@ -375,7 +375,7 @@ the terminal shows a failure
 green: make it pass
 ====================
 
-I change the failing line to make the test pass
+I will make the failing line to make the test pass
 
 .. code-block:: python
 
@@ -402,7 +402,7 @@ the terminal shows an `AssertionError <https://docs.python.org/3/library/excepti
 green: make it pass
 ====================
 
-I change the failing line to make the test pass
+I will make the failing line to make the test pass
 
 .. code-block:: python
 
@@ -434,7 +434,7 @@ I can also make assertions where I compare if two things are the same or equal
 red: make it fail
 ==================
 
-I add a new test to ``TestAssertionError`` in ``test_assertion_error.py``
+I will add a new test to ``TestAssertionError`` in ``test_assertion_error.py``
 
 .. code-block:: python
 
@@ -450,7 +450,7 @@ the terminal shows an `AssertionError <https://docs.python.org/3/library/excepti
 green: make it pass
 ====================
 
-I change the failing line to make the test pass
+I will make the failing line to make the test pass
 
 .. code-block:: python
 
@@ -464,7 +464,7 @@ refactor: make it better
 
 * red: make it fail
 
-  I add a line with the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ method for equality testing
+  I will add a line with the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ method for equality testing
 
   .. code-block:: python
 
@@ -482,7 +482,7 @@ refactor: make it better
 
 * green: make it pass
 
-  I change the failing line to make the test pass
+  I will make the failing line to make the test pass
 
   .. code-block:: python
 
@@ -502,7 +502,7 @@ refactor: make it better
 
 * red: make it fail
 
-  I add a new line to ``test_assertion_errors_with_equality``
+  I will add a new line to ``test_assertion_errors_with_equality``
 
   .. code-block:: python
 
@@ -520,7 +520,7 @@ refactor: make it better
 
 * green: make it pass
 
-  I change the failing line to make the test pass
+  I will make the failing line to make the test pass
 
   .. code-block:: python
 
@@ -532,7 +532,7 @@ refactor: make it better
 
 * red: make it fail
 
-  I add the `unittest.TestCase.assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ :ref:`method<functions>` to ``test_assertion_errors_with_equality``
+  I will add the `unittest.TestCase.assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ :ref:`method<functions>` to ``test_assertion_errors_with_equality``
 
   .. code-block:: python
 
@@ -551,7 +551,7 @@ refactor: make it better
 
 * green: make it pass
 
-  I change the failing line to make the test pass
+  I will make the failing line to make the test pass
 
   .. code-block:: python
 
@@ -574,7 +574,7 @@ refactor: make it better
 
 * red: make it fail
 
-  There is a pattern here, so I add the other cases from the statements above to  ``test_assertion_errors_with_equality``
+  There is a pattern here, so I will add the other cases from the statements above to  ``test_assertion_errors_with_equality``
 
   .. code-block:: python
 
@@ -602,7 +602,7 @@ refactor: make it better
 
 * green: make it pass
 
-  then I change each failing line until they all pass
+  then I will make each failing line until they all pass
 
   .. code-block:: python
 

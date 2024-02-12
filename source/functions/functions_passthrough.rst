@@ -9,7 +9,7 @@ A passthrough :ref:`function<functions>` is one that returns the input it receiv
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add a failing test to the ``TestFunctions`` class in ``test_functions.py``
+I will add a failing test to the ``TestFunctions`` class in ``test_functions.py``
 
 .. code-block:: python
 
@@ -22,7 +22,7 @@ green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* I add a function definition to ``functions.py``
+* I will add a function definition to ``functions.py``
 
   .. code-block:: python
 
@@ -35,7 +35,7 @@ green: make it pass
 
     TypeError: passthrough() takes 0 positional arguments but 1 was given
 
-* I add the new exception to the list of exceptions encountered
+* I will add the new exception to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -60,7 +60,7 @@ green: make it pass
 
   because the result of calling ``functions.passthrough`` with :doc:`False </data_structures/booleans/booleans>` as input is :ref:`None` which is not equal to the expected result (:doc:`False </data_structures/booleans/booleans>`)
 
-* I change the definition of ``passthrough`` to make the test pass
+* I will make the definition of ``passthrough`` to make the test pass
 
   .. code-block:: python
 
@@ -77,7 +77,7 @@ Wait a minute! Something is not quite right here. The definition for a ``passthr
 
 * red: make it fail
 
-  I add a new test to ``test_passthrough_function`` in ``TestFunctions`` in ``test_functions.py``
+  I will add a new test to ``test_passthrough_function`` in ``TestFunctions`` in ``test_functions.py``
 
   .. code-block:: python
 
@@ -106,7 +106,7 @@ Wait a minute! Something is not quite right here. The definition for a ``passthr
 
 * refactor: make it better
 
-  I add more tests to ``test_passthrough_function``
+  I will add more tests to ``test_passthrough_function``
 
   .. code-block:: python
 

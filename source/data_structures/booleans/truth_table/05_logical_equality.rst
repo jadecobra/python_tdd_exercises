@@ -24,7 +24,7 @@ So far the tests have shown that for any boolean operation involving 2 inputs: `
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add a test for logical equality to ``TestBinaryOperations`` in ``test_truth_table.py``
+I will add a test for logical equality to ``TestBinaryOperations`` in ``test_truth_table.py``
 
 .. code-block:: python
 
@@ -48,7 +48,7 @@ green: make it pass
         return True
 
   the terminal shows a failure for the second case
-* I add a condition for it
+* I will add a condition for it
 
   .. code-block:: python
 
@@ -58,7 +58,7 @@ green: make it pass
         return True
 
   the terminal shows a failure for the 3rd case
-* I add a condition for it
+* I will add a condition for it
 
   .. code-block:: python
 

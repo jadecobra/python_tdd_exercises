@@ -14,7 +14,7 @@ Tautology
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add a test for tautology to ``TestBinaryOperations`` in ``test_truth_table.py``
+I will add a test for tautology to ``TestBinaryOperations`` in ``test_truth_table.py``
 
 .. code-block:: python
 
@@ -30,7 +30,7 @@ green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* I add a function definition to ``truth_table.py``
+* I will add a function definition to ``truth_table.py``
 
   .. code-block:: python
 
@@ -54,7 +54,7 @@ Contradiction
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add a test for contradiction to ``TestBinaryOperations``
+I will add a test for contradiction to ``TestBinaryOperations``
 
 .. code-block:: python
 
@@ -69,7 +69,7 @@ the terminal shows an :ref:`AttributeError`
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-* I add a function definition to ``truth_table.py``
+* I will add a function definition to ``truth_table.py``
 
   .. code-block:: python
 
@@ -77,7 +77,7 @@ green: make it pass
         return True
 
   the terminal shows an :ref:`AssertionError` for the first case
-* When I change the return value, the test passes
+* When I will make the return value, the test passes
 
   .. code-block:: python
 

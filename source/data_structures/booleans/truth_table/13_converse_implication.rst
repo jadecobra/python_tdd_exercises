@@ -10,7 +10,7 @@ This chapter continues the journey of writing conditional statements using the `
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add a test for converse implication to ``TestBinaryOperations`` in ``test_truth_table.py``
+I will add a test for converse implication to ``TestBinaryOperations`` in ``test_truth_table.py``
 
 .. code-block:: python
 
@@ -25,7 +25,7 @@ the terminal shows an :ref:`AttributeError`
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-* I add a function definition to ``truth_table.py``
+* I will add a function definition to ``truth_table.py``
 
   .. code-block:: python
 
@@ -33,7 +33,7 @@ green: make it pass
         return False
 
   and the terminal shows an :ref:`AssertionError` for the first case
-* I change the return value
+* I will make the return value
 
   .. code-block:: python
 
@@ -41,7 +41,7 @@ green: make it pass
         return True
 
   the terminal shows an :ref:`AssertionError` for the third case
-* I add a condition for it and an explicit ``else`` clause
+* I will add a condition for it and an explicit ``else`` clause
 
   .. code-block:: python
 
@@ -67,7 +67,7 @@ refactor: make it better
             return True
 
   the tests are still passing
-* I change ``else`` to the opposite of the ``if`` statement
+* I will make ``else`` to the opposite of the ``if`` statement
 
   .. code-block:: python
 

@@ -24,7 +24,7 @@ How to create a list
 red: make it fail
 ==================
 
-I create a file called ``test_lists.py`` in the ``tests`` folder with the following code
+I make a file called ``test_lists.py`` in the ``tests`` folder with the following code
 
 .. code-block:: python
 
@@ -45,7 +45,7 @@ the terminal shows a :ref:`TypeError`
 
 green: make it pass
 ===================
-* I add the error to the list of exceptions encountered
+* I will add the error to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -58,7 +58,7 @@ green: make it pass
   - I read `python's documentation for lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ and see that the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor takes an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ as input
   - An `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ is an object I can go over its items one by one in a loop - `tuples <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_, `lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_, `sets <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ and :doc:`dictionaries </data_structures/dictionaries>` are iterable
 
-* I change the values provided to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor by placing them in parentheses to make them a `tuple <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_
+* I will make the values provided to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor by placing them in parentheses to make them a `tuple <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_
 
   .. code-block:: python
 
@@ -71,7 +71,7 @@ green: make it pass
 
     AssertionError: [0, 1, 2, 3] != None
 
-* When I change the right side to match the values on the left from the terminal
+* When I will make the right side to match the values on the left from the terminal
 
   .. code-block:: python
 
@@ -83,7 +83,7 @@ green: make it pass
 refactor: make it better
 =========================
 
-* I can create a list with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor but the passing test also shows I can create a list with ``[]`` which uses less characters. I add a test for it
+* I can create a list with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor but the passing test also shows I can create a list with ``[]`` which uses less characters. I will add a test for it
 
   .. code-block:: python
 
@@ -112,7 +112,7 @@ How to add an item to a list
 red: make it fail
 ===================
 
-I add a test to for adding items to an existing list with the `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>`
+I will add a test to for adding items to an existing list with the `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>`
 
 .. code-block:: python
 
@@ -136,7 +136,7 @@ the terminal shows an :ref:`AssertionError` because the values in ``a_list`` cha
 green: make it pass
 ===================
 
-I change the values in the test to make it match the result
+I will make the values in the test to make it match the result
 
 .. code-block:: python
 
@@ -148,7 +148,7 @@ I change the values in the test to make it match the result
 
 the terminal shows passing tests.
 
-I started with a list that contained 4 things, added something using the `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ method, then confirmed what I added is now part of the list
+I started with a list that contained 4 things, added something using the `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ method, then confirmed what I will added is now part of the list
 
 ----
 
@@ -178,7 +178,7 @@ the terminal shows an :ref:`AssertionError` because the values in ``a_list`` no 
 green: make it pass
 ===================
 
-I change the test to make the values on the right match the result and the test passes
+I will make the test to make the values on the right match the result and the test passes
 
 .. code-block:: python
 
@@ -193,7 +193,7 @@ refactor: make it better
 
 What happens when there is more than one of the same item in a list? How does Python decide which of them to remove when I call ``.remove(item)`` on a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_?
 
-* I add a failing test to find out
+* I will add a failing test to find out
 
   .. code-block:: python
 
@@ -209,7 +209,7 @@ What happens when there is more than one of the same item in a list? How does Py
 
     AssertionError: Lists differ: [0, 1, 2, 3, 2] != [0, 2, 1, 2, 3, 2]
 
-* and I change the values on the right to match the result
+* and I will make the values on the right to match the result
 
   .. code-block:: python
 
@@ -230,7 +230,7 @@ How to remove the last item from a list
 red: make it fail
 ===================
 
-I add a test for removing the last item from a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+I will add a test for removing the last item from a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
 .. code-block:: python
 
@@ -255,7 +255,7 @@ the terminal shows an :ref:`AssertionError` for the test that checks the value o
 green: make it pass
 ===================
 
-* I change the value in the test to match the actual value popped
+* I will make the value in the test to match the actual value popped
 
   .. code-block:: python
 
@@ -267,7 +267,7 @@ green: make it pass
 
     AssertionError: Lists differ: [0, 1, 2] != [0, 1, 2, 3]
 
-* I change the values in the test that checks the values of ``a_list`` after calling `pop <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
+* I will make the values in the test that checks the values of ``a_list`` after calling `pop <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
 
   .. code-block:: python
 
@@ -291,7 +291,7 @@ To view an item in a `list <https://docs.python.org/3/library/stdtypes.html?high
 red: make it fail
 ===================
 
-I add a failing test for indexing a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+I will add a failing test for indexing a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
 .. code-block:: python
 
@@ -317,7 +317,7 @@ the terminal shows an :ref:`AssertionError`
 green: make it pass
 ===================
 
-* I change the value in the test to make the failing line pass
+* I will make the value in the test to make the failing line pass
 
   .. code-block:: python
 
@@ -340,7 +340,7 @@ green: make it pass
     AssertionError: 'third' != ''
     - third
 
-* I change the value to match the result
+* I will make the value to match the result
 
   .. code-block:: python
 
@@ -363,7 +363,7 @@ green: make it pass
     AssertionError: 'second' != ''
     - second
 
-* I change each failing line until all the tests pass
+* I will make each failing line until all the tests pass
 
   .. code-block:: python
 
@@ -390,7 +390,7 @@ An IndexError_ is raised when I try to get an item from a list but use a number 
 red: make it fail
 ===================
 
-I add a failing test to show this
+I will add a failing test to show this
 
 .. code-block:: python
 
@@ -408,7 +408,7 @@ the terminal shows an IndexError_
 green: make it pass
 ===================
 
-* I add IndexError_ to the list of exceptions encountered
+* I will add IndexError_ to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -431,7 +431,7 @@ green: make it pass
 refactor: make it better
 =========================
 
-* I add one more line to test indexing with a negative number that is greater than the length of the list
+* I will add one more line to test indexing with a negative number that is greater than the length of the list
 
   .. code-block:: python
 
@@ -461,7 +461,7 @@ The chapter on :doc:`/classes/classes` shows how to view the :doc:`attributes </
 red: make it fail
 ===================
 
-I add a failing test using the dir_ :ref:`function<functions>`
+I will add a failing test using the dir_ :ref:`function<functions>`
 
 .. code-block:: python
 
@@ -487,7 +487,7 @@ green: make it pass
     Diff is 748 characters long. Set self.maxDiff to None to see it
 
   `maxDiff <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff>`_ is an attribute of the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`class </classes/classes>` that sets the maximum amount of characters to show in the comparison between the two objects displayed in the terminal. When it is set to :ref:`None` there is no limit to the number of characters
-* I add ``self.maxDiff`` to the test
+* I will add ``self.maxDiff`` to the test
 
   .. code-block:: python
 

@@ -30,8 +30,16 @@ red: make it fail
 
       ./createPythonTdd.ps1 sleep_duration
 
-* I remove ``test_failure`` after making it pass
-* I add a failing test to check that when the ``duration`` :ref:`function<functions>` in the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>` is called with a ``wake_time`` of ``'08:00'`` and a ``sleep_time`` of ``'07:00'``, it should return the difference between the two, which in this case is ``1``
+  the terminal shows
+
+  .. code-block:: python
+
+    E       AssertionError: True is not false
+
+    tests/test_sleep_duration.py:7: AssertionError
+
+* I click on ``tests/test_sleep_duration.py:7`` to open the file in the editor and remove ``test_failure`` after making it pass
+* I will add a failing test to check that when the ``duration`` :ref:`function<functions>` in the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>` is called with a ``wake_time`` of ``'08:00'`` and ``sleep_time`` of ``'07:00'``, it should return the difference between the two, which in this case is ``1``
 
   .. code-block:: python
 
@@ -60,7 +68,7 @@ red: make it fail
 green: make it pass
 --------------------------------------------------------
 
-* I add the error to the list of exceptions encountered
+* I will add the error to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -85,7 +93,7 @@ green: make it pass
 
     AttributeError: module 'sleep_duration' has no attribute 'duration'
 
-* I add the error to the list of exceptions encountered
+* I will add the error to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -94,7 +102,7 @@ green: make it pass
     # NameError
     # AttributeError
 
-* then add a name to ``sleep_duration.py`` ::
+* I open ``sleep_duration.py`` then add a name to ::
 
     duration
 
@@ -116,7 +124,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* I add the exception to the list of exceptions encountered
+* I will add the exception to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -141,7 +149,7 @@ green: make it pass
 
   The ``duration`` :ref:`function<functions>` is called in ``test_duration_w_hours`` with keyword arguments that were not provided in the function signature when it was defined
 
-* I add the required keyword argument to the definition of ``duration``, setting its default value to :ref:`None`
+* I will add the required keyword argument to the definition of ``duration``, setting its default value to :ref:`None`
 
   .. code-block:: python
 
@@ -154,7 +162,7 @@ green: make it pass
 
     TypeError: duration() got an unexpected keyword argument 'sleep_time'
 
-* I add the second keyword argument to the definition of the ``duration`` :ref:`function<functions>`
+* I will add the second keyword argument to the definition of the ``duration`` :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -167,7 +175,7 @@ green: make it pass
 
     AssertionError: None != 1
 
-* I change the return value to make it match the expectation
+* I will make the return value to make it match the expectation
 
   .. code-block:: python
 
@@ -185,7 +193,7 @@ The ``duration`` :ref:`function<functions>` currently returns ``1`` no matter wh
 
 I could write a test for every possible sleep and wake time, or write one test that uses random variables to cover all timestamps from ``'00:00'`` to ``'23:59'``
 
-* I add an `import statement`_ for the random_ module to ``test_sleep_duration.py``
+* I will add an `import statement`_ for the random_ module to ``test_sleep_duration.py``
 
   .. code-block:: python
 
@@ -213,7 +221,7 @@ I could write a test for every possible sleep and wake time, or write one test t
   - ``f'{wake_hour:02}:00'`` and ``f'{sleep_hour:02}:00'`` :doc:`interpolate </how_to/pass_values>` the random numbers in the input strings_
   - the ``:02`` in ``{wake_hour:02}`` and ``{sleep_hour:02}`` tell Python to display the numbers as two digits. For example, display ``01`` instead of ``1``
 
-* I change the test to match the requirement of the difference between ``wake_time`` and ``sleep_time``
+* I will make the test to match the requirement of the difference between ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
 
@@ -239,7 +247,7 @@ I could write a test for every possible sleep and wake time, or write one test t
 
     Your results may be different because the timestamps are random numbers
 
-* I change the ``duration`` :ref:`function<functions>` to return the subtraction of ``sleep_time`` from ``wake_time``
+* I will make the ``duration`` :ref:`function<functions>` to return the subtraction of ``sleep_time`` from ``wake_time``
 
   .. code-block:: python
 
@@ -301,7 +309,7 @@ red: make it fail
     E                                                              ^
     E   SyntaxError: unterminated string literal (detected at line 11)
 
-  which I add to the list of exceptions encountered
+  which I will add to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -312,7 +320,7 @@ red: make it fail
     # TypeError
     # SyntaxError
 
-* there is a closing quote with no open quote, so I add one
+* there is a closing quote with no open quote, so I will add one
 
   .. code-block:: python
 
@@ -328,7 +336,7 @@ red: make it fail
 
     Diff is 1284 characters long. Set self.maxDiff to None to see it.
 
-* I add the suggestion
+* I will add the suggestion
 
   .. code-block:: python
 
@@ -497,7 +505,7 @@ red: make it fail
 green: make it pass
 --------------------------------------------------------
 
-I change the expectation to make the test pass
+I will make the expectation to make the test pass
 
 .. code-block:: python
 
@@ -514,7 +522,7 @@ and the terminal shows the :ref:`TypeError` that took me down this path
 refactor: make it better
 --------------------------------------------------------
 
-* I want to split the string_ on a separator to get the different parts, something like ``['01', '23']`` with ``:`` as the separator. I change the expectation of the test to what I want
+* I want to split the string_ on a separator to get the different parts, something like ``['01', '23']`` with ``:`` as the separator. I will make the expectation of the test to what I want
 
   .. code-block:: python
 
@@ -542,7 +550,7 @@ refactor: make it better
 
   and the test passes. I now know how to get the different parts of ``wake_time`` and ``sleep_time``
 
-* I add a call to the `str.split`_ :ref:`method<functions>` in the ``duration`` :ref:`function<functions>` in ``sleep_duration.py``
+* I will add a call to the `str.split`_ :ref:`method<functions>` in the ``duration`` :ref:`function<functions>` in ``sleep_duration.py``
 
   .. code-block:: python
 
@@ -563,7 +571,7 @@ refactor: make it better
 red: make it fail
 --------------------------------------------------------
 
-* I only need the first item in the list, which I can get by using its index. Python uses `zero-based indexing`_ so the first item is at index ``0`` and the second item is at index ``1``. See :doc:`/data_structures/lists/lists` for more. I add tests for getting specific parts of a :doc:`list </data_structures/lists/lists>` created from calling `str.split`_ to ``test_string_splitting``
+* I only need the first item in the list, which I can get by using its index. Python uses `zero-based indexing`_ so the first item is at index ``0`` and the second item is at index ``1``. See :doc:`/data_structures/lists/lists` for more. I will add tests for getting specific parts of a :doc:`list </data_structures/lists/lists>` created from calling `str.split`_ to ``test_string_splitting``
 
   .. code-block:: python
 
@@ -597,7 +605,7 @@ red: make it fail
 green: make it pass
 --------------------------------------------------------
 
-* I change the expected value in the test to match the value in the terminal
+* I will make the expected value in the test to match the value in the terminal
 
   .. code-block:: python
 
@@ -614,7 +622,7 @@ green: make it pass
 
   this shows that the second item (index 1) from splitting ``'12:34'`` on the separator ``':'`` is ``'34'``
 
-* I change the expected value in the same way
+* I will make the expected value in the same way
 
   .. code-block:: python
 
@@ -678,7 +686,7 @@ red: make it fail
 green: make it pass
 --------------------------------------------------------
 
-* I change the test to match the expectation
+* I will make the test to match the expectation
 
   .. code-block:: python
 
@@ -690,7 +698,7 @@ green: make it pass
 
     AssertionError: 1 != 0
 
-* I change the test to match the expectation and things are green again
+* I will make the test to match the expectation and things are green again
 
   .. code-block:: python
 
@@ -705,7 +713,7 @@ I have another tool to help solve the problem. So far, I can
 ----
 
 * I remove the `unittest.skip decorator`_ from ``test_duration_w_hours`` to show the :ref:`TypeError` I have been trying to solve
-* I add the conversion using the int_ constructor to the ``duration`` :ref:`function<functions>` to see if it will make the test pass
+* I will add the conversion using the int_ constructor to the ``duration`` :ref:`function<functions>` to see if it will make the test pass
 
   .. code-block:: python
 
@@ -715,7 +723,7 @@ I have another tool to help solve the problem. So far, I can
           - int(sleep_time.split(':')[0])
         )
 
-  YES! I am green! The ``duration`` function can calculate the sleep duration given any random ``sleep`` and ``wake`` hours in a day. What a beautiful life!
+  YES! I am green! The ``duration`` function can calculate the sleep duration given any random sleep and wake hours in a day. What a beautiful life!
 
 * I can rewrite the solution I have in a way that tries to explain the process to someone who does not know how to :doc:`index a list </data_structures/lists/lists>`, use int_ or `str.split`_
 
@@ -828,21 +836,21 @@ I have another tool to help solve the problem. So far, I can
 
   the terminal still shows passing tests
 
-Since all the tests are still passing, you can try any ideas you want until you understand what has been written so far. Time for a nap.
+Since all the tests are passing, you can try any ideas you want until you understand what has been written so far. Time for a break.
 
 ----
 
 test_duration_w_hours_and_minutes
 ========================================================
 
-For the ``duration`` :ref:`function<functions>` to meet the requirements, it has to accept timestamps with hours and minutes, but it currently returns the duration when given sleep and wake time hours without taking minutes into account.
+Welcome back. For the ``duration`` :ref:`function<functions>` to meet the requirements, it has to accept timestamps with hours and minutes, but it currently returns the duration when given sleep and wake time hours without taking minutes into account.
 
 .. _test_duration_w_hours_and_minutes_red:
 
 red: make it fail
 --------------------------------------------------------
 
-I add a failing test in ``test_sleep_duration.py`` that has hours and minutes
+I will add a failing test in ``test_sleep_duration.py`` that has hours and minutes using ``test_duration_w_hours`` as a reference
 
 .. code-block:: python
 
@@ -881,7 +889,7 @@ the expected duration is now a string_ that contains the subtraction of the slee
 green: make it pass
 --------------------------------------------------------
 
-* I change the output of the ``duration`` :ref:`function<functions>` to match the format of the expected value in the test
+* I will make the output of the ``duration`` :ref:`function<functions>` match the format of the expected value in the test
 
   .. code-block:: python
 
@@ -896,7 +904,7 @@ green: make it pass
         )
         return f'{difference_hours}:{difference_minutes}'
 
-  and the terminal shows an :ref:`AssertionError` because changing the format causes an error in ``test_duration_w_hours`` which still expects a number instead of a string_
+  the terminal shows an :ref:`AssertionError` because changing the format causes an error in ``test_duration_w_hours`` which still expects a number instead of a string_
 
   .. code-block:: python
 
@@ -906,7 +914,7 @@ green: make it pass
 
     Your results may be different because the timestamps are random numbers
 
-* I change ``test_duration_w_hours`` to use the new format
+* I will make ``test_duration_w_hours`` use the new format
 
   .. code-block:: python
 
@@ -942,7 +950,7 @@ green: make it pass
 
   the terminal still shows an :ref:`AssertionError`
 
-* I add calls to ``get_minutes`` in the calculation for ``difference_minutes``
+* I will add calls to ``get_minutes`` in the calculation for ``difference_minutes``
 
   .. code-block:: python
 
@@ -1013,7 +1021,7 @@ The ``duration`` :ref:`function<functions>` currently returns a subtraction of h
 red: make it fail
 --------------------------------------------------------
 
-* If ``duration`` is given a ``wake_time`` of ``'03:30'`` and a ``sleep_time`` of ``'02:59'``, it should return ``'00:31'`` as the difference between the timestamps. I add a test for it
+* If ``duration`` is given a ``wake_time`` of ``'03:30'`` and a ``sleep_time`` of ``'02:59'``, it should return ``'00:31'`` as the difference between the timestamps. I will add a test for it
 
   .. code-block:: python
 
@@ -1086,7 +1094,7 @@ green: make it pass
 
     AssertionError: '10:53' != '11:-7'
 
-* I add the correct calculation to ``test_duration_w_hours_and_minutes``
+* I will add the correct calculation to ``test_duration_w_hours_and_minutes``
 
   .. code-block:: python
 
@@ -1123,7 +1131,7 @@ The ``//`` operator returns a whole number that tells how many times the denomin
 red: make it fail
 --------------------------------------------------------
 
-I add a failing test
+I will add a failing test
 
 .. code-block:: python
 
@@ -1145,7 +1153,7 @@ and the terminal shows an :ref:`AssertionError`
 green: make it pass
 --------------------------------------------------------
 
-* I change the first expected value in the test to the correct value. The result of dividing ``120`` by ``60`` is ``2`` with a remainder of ``0``
+* I will make the first expected value in the test to the correct value. The result of dividing ``120`` by ``60`` is ``2`` with a remainder of ``0``
 
   .. code-block:: python
 
@@ -1157,7 +1165,7 @@ green: make it pass
 
     AssertionError: 2 != 0
 
-* I change the second expected value in the test to the correct value. The result of dividing ``150`` by ``60`` is ``2`` with a remainder of ``30``
+* I will make the second expected value in the test to the correct value. The result of dividing ``150`` by ``60`` is ``2`` with a remainder of ``30``
 
   .. code-block:: python
 
@@ -1175,7 +1183,7 @@ The ``%`` operator returns the remainder from dividing one number by another
 red: make it fail
 --------------------------------------------------------
 
-I add a test for it
+I will add a test for it
 
 .. code-block:: python
 
@@ -1197,7 +1205,7 @@ and the terminal shows an :ref:`AssertionError`
 green: make it pass
 --------------------------------------------------------
 
-* I change the first expected value in the test to the correct value. The remainder from dividing ``120`` by ``60`` is ``0``
+* I will make the first expected value in the test to the correct value. The remainder from dividing ``120`` by ``60`` is ``0``
 
   .. code-block:: python
 
@@ -1209,7 +1217,7 @@ green: make it pass
 
     AssertionError: 30 != 2
 
-* I change the second expected value in the test to the correct value. The remainder from dividing ``150`` by ``60`` is ``30``
+* I will make the second expected value in the test to the correct value. The remainder from dividing ``150`` by ``60`` is ``30``
 
   .. code-block:: python
 
@@ -1220,7 +1228,7 @@ green: make it pass
 ----
 
 * I remove ``duration_a`` since the working solution in ``duration`` is better
-* I write a :ref:`function<functions>` to get the total minutes from a timestamp and call it in ``duration``
+* and then I write a :ref:`function<functions>` to get the total minutes from a timestamp and call it in ``duration``
 
   .. code-block:: python
 
@@ -1257,7 +1265,7 @@ green: make it pass
 
   the terminal shows all tests are still passing. Which of the last two blocks of code do you like?
 
-* I create a :ref:`function<functions>` to replace ``get_hour`` and ``get_minutes``
+* I make a :ref:`function<functions>` to replace ``get_hour`` and ``get_minutes``
 
   .. code-block:: python
 
@@ -1287,7 +1295,7 @@ What happens when the ``duration`` :ref:`function<functions>` is given an earlie
 red: make it fail
 --------------------------------------------------------
 
-I add a new failing test to ``test_sleep_duration.py`` to find out
+I will add a new failing test to ``test_sleep_duration.py`` to find out
 
 .. code-block:: python
 
@@ -1311,7 +1319,7 @@ the terminal shows an :ref:`AssertionError`
 green: make it pass
 --------------------------------------------------------
 
-I change the expected value in the test to make it pass
+I will make the expected value in the test to make it pass
 
 .. code-block:: python
 
@@ -1360,7 +1368,7 @@ refactor: make it better
 
     ValueError: wake_time: 20:26 is earlier than sleep_time: 23:50
 
-* I add the error to the list of exceptions encountered even though I made this one happen
+* I will add the error to the list of exceptions encountered even though I made this one happen
 
   .. code-block:: python
 
@@ -1385,7 +1393,7 @@ refactor: make it better
 
   and the test passes, leaving the random ValueError_ for ``test_duration_w_hours_and_minutes``
 
-* I add an :doc:`exception handler </how_to/exception_handling_programs>` using a `try statement`_ and `unittest.TestCase.assertRaises`_ to confirm the ValueError_ is raised when ``wake_time`` is earlier than ``sleep_time``
+* I will add an :doc:`exception handler </how_to/exception_handling_programs>` using a `try statement`_ and `unittest.TestCase.assertRaises`_ to confirm the ValueError_ is raised when ``wake_time`` is earlier than ``sleep_time``
 
   .. code-block:: python
 
@@ -1393,17 +1401,16 @@ refactor: make it better
         wake_hour = random.randint(0, 23)
         wake_minutes = random.randint(0, 59)
         wake_time_minutes = (wake_hour * 60) + wake_minutes
+        wake_time = f'{wake_hour:02}:{wake_minutes:02}'
 
         sleep_hour = random.randint(0, 23)
         sleep_minutes = random.randint(0, 59)
         sleep_time_minutes = (sleep_hour * 60) + sleep_minutes
+        sleep_time = f'{sleep_hour:02}:{sleep_minutes:02}'
 
         difference = wake_time_minutes - sleep_time_minutes
         difference_hours = difference // 60
         difference_minutes = difference % 60
-
-        wake_time = f'{wake_hour:02}:{wake_minutes:02}'
-        sleep_time = f'{sleep_hour:02}:{sleep_minutes:02}'
 
         try:
             self.assertEqual(
@@ -1476,14 +1483,14 @@ Time to take a break.
 test_duration_w_date_and_time
 ========================================================
 
-So far, the ``duration`` :ref:`function<functions>` has been tested with timestamps that only contain hours and minutes, but I could fall asleep on a Monday and wake up on a Tuesday. What would happen if I added dates to the timestamps?
+So far, the ``duration`` :ref:`function<functions>` has been tested with timestamps that only contain hours and minutes, but I could fall asleep on a Monday and wake up on a Tuesday. What would happen if I will added dates to the timestamps?
 
 .. _test_duration_w_date_and_time_red:
 
 red: make it fail
 --------------------------------------------------------
 
-* I add a failing test to ``test_sleep_duration.py`` based on ``test_duration_w_hours_and_minutes`` and call it ``test_duration_w_date_and_time`` to test ``duration`` with a date, hours and minutes
+* I will add a failing test to ``test_sleep_duration.py`` based on ``test_duration_w_hours_and_minutes`` and call it ``test_duration_w_date_and_time`` to test ``duration`` with a date, hours and minutes
 
   .. code-block:: python
 
@@ -1540,7 +1547,7 @@ green: make it pass
 
     invalid literal for int() with base 10: '31/12/99 10'
 
-* The `str.split`_ :ref:`method<functions>` was given a separator of ``':'`` when the timestamp contained only hours and minutes, but behaves differently when given a date. I add a test for this to ``test_string_splitting``
+* The `str.split`_ :ref:`method<functions>` was given a separator of ``':'`` when the timestamp contained only hours and minutes, but behaves differently when given a date. I will add a test for this to ``test_string_splitting``
 
   .. code-block:: python
 
@@ -1627,8 +1634,6 @@ green: make it pass
         two date, time, or datetime instances to
         microsecond resolution.
 
-* I add tests using the examples in the documentation to learn how to use the datetime_ module
-
 test_datetime_datetime_objects
 ========================================================
 
@@ -1637,7 +1642,7 @@ test_datetime_datetime_objects
 red: make it fail
 --------------------------------------------------------
 
-* I add a test to ``test_sleep_duration.py`` based on `Examples of usage: datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_ for `datetime.datetime`_ objects
+* I will add a test to ``test_sleep_duration.py`` based on `Examples of usage: datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_ for `datetime.datetime`_ objects
 
   .. code-block:: python
 
@@ -1664,7 +1669,7 @@ red: make it fail
 green: make it pass
 --------------------------------------------------------
 
-* I add an `import statement`_ for the datetime_ module
+* I will add an `import statement`_ for the datetime_ module
 
   .. code-block:: python
 
@@ -1717,7 +1722,7 @@ test_subtracting_datetime_datetime_objects
 red: make it fail
 --------------------------------------------------------
 
-* I add a test based on `Examples of usage: timedelta <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-timedelta>`_ for subtracting two `datetime.datetime`_ objects
+* I will add a test based on `Examples of usage: timedelta <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-timedelta>`_ for subtracting two `datetime.datetime`_ objects
 
   .. code-block:: python
 
@@ -1780,7 +1785,7 @@ test_converting_timedelta_to_string
 red: make it fail
 --------------------------------------------------------
 
-* So far the `datetime.timedelta`_ object I get shows seconds, but I want the result as a string_. I add a test to see what happens when I pass it to the str_ constructor
+* So far the `datetime.timedelta`_ object I get shows seconds, but I want the result as a string_. I will add a test to see what happens when I pass it to the str_ constructor
 
   .. code-block:: python
 
@@ -1804,7 +1809,7 @@ red: make it fail
 green: make it pass
 --------------------------------------------------------
 
-* I change the expected value in the test to match the value from the terminal
+* I will make the expected value in the test to match the value from the terminal
 
   .. code-block:: python
 
@@ -1824,7 +1829,7 @@ From the tests, I know I can
 ----
 
 * I remove the `unittest.skip decorator`_ from ``test_duration_w_date_and_time`` to return to the ValueError_ that sent me down this path
-* I add a :ref:`function<functions>` for converting timestamps called ``get_datetime_object`` to ``sleep_duration.py``
+* I will add a :ref:`function<functions>` for converting timestamps called ``get_datetime_object`` to ``sleep_duration.py``
 
   .. code-block:: python
 
@@ -1856,7 +1861,7 @@ From the tests, I know I can
             difference_minutes = difference % 60
             return f'{difference_hours:02}:{difference_minutes:02}'
 
-* then I add a new ``duration`` :ref:`function<functions>` with a call to ``get_datetime_object``
+* then I will add a new ``duration`` :ref:`function<functions>` with a call to ``get_datetime_object``
 
   .. code-block:: python
 
@@ -1875,7 +1880,7 @@ From the tests, I know I can
 
   Yes I did. I encountered this earlier when testing the datetime_ module
 
-* I add an `import statement`_ to the top of ``sleep_duration.py``
+* I will add an `import statement`_ to the top of ``sleep_duration.py``
 
   .. code-block:: python
 
@@ -1897,6 +1902,37 @@ From the tests, I know I can
   .. code-block:: python
 
     AssertionError: '8:50:00' != '08:50'
+
+  the terminal shows another :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: ValueError not raised
+
+* the ``duration`` function is missing the check for when ``wake_time`` is earlier than ``sleep_time`` so I add it
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        wake_time = get_datetime_object(wake_time)
+        sleep_time = get_datetime_object(sleep_time)
+
+        if wake_time < sleep_time:
+            raise ValueError(
+                f'wake_time: {wake_time} is earlier '
+                f'than sleep_time: {sleep_time}'
+            )
+        else:
+            difference = wake_time - sleep_time
+            return str(difference)
+
+  and the terminal shows an :ref:`AssertionError` that looks like this
+
+  .. code-block:: python
+
+    AssertionError: "wake_time: 31/12/99 12:47 is earlier than sleep_time: 31/12/99 20:11" does not match "wake_time: 1999-12-31 12:47:00 is earlier than sleep_time: 1999-12-31 20:11:00"
+
+  there is a ValueError_ with a different message than the one `unittest.TestCase.assertRaisesRegex`_ expects. The timestamp formats do not match because the ``duration`` :ref:`function<functions>` uses `datetime.datetime.strptime`_ objects in the message when it raises the :doc:`Exception </how_to/exception_handling_programs>` and ``test_duration_w_date_and_time`` does not
 
 * I update ``test_duration_w_date_and_time`` to use the right format and remove unused variables
 
@@ -1937,34 +1973,13 @@ From the tests, I know I can
                     sleep_time=sleep_time
                 )
 
-  the terminal shows passing tests
-
-* I make ``duration`` raise a ValueError_ when ``wake_time`` is earlier than ``sleep_time``
+  the terminal randomly shows an :ref:`AssertionError` that looks like this when ``wake_time`` is earlier than ``sleep_time``
 
   .. code-block:: python
 
-    def duration(wake_time=None, sleep_time=None):
-        wake_time = get_datetime_object(wake_time)
-        sleep_time = get_datetime_object(sleep_time)
+    AssertionError: "wake_time: 31/12/99 05:07 is earlier than sleep_time: 31/12/99 05:36" does not match "wake_time: 1999-12-31 05:07:00 is earlier than sleep_time: 1999-12-31 05:36:00"
 
-        if wake_time < sleep_time:
-            raise ValueError(
-                f'wake_time: {wake_time} is earlier '
-                f'than sleep_time: {sleep_time}'
-            )
-        else:
-            difference = wake_time - sleep_time
-            return str(difference)
-
-  the terminal shows an :ref:`AssertionError` that looks like this
-
-  .. code-block:: python
-
-    AssertionError: "wake_time: 31/12/99 17:23 is earlier than sleep_time: 31/12/99 19:07" does not match "wake_time: 1999-12-31 17:23:00 is earlier than sleep_time: 1999-12-31 19:07:00"
-
-  there is a ValueError_ with a different message than the one `unittest.TestCase.assertRaisesRegex`_ expects. The timestamp formats do not match because the ``duration`` :ref:`function<functions>` uses `datetime.datetime.strptime`_ objects in the message when it raises the :doc:`Exception </how_to/exception_handling_programs>` and ``test_duration_w_date_and_time`` does not
-
-* I change the error message in ``test_duration_w_date_and_time`` to use `datetime.datetime`_ objects
+* I need to make the error message in ``test_duration_w_date_and_time`` use `datetime.datetime`_ objects
 
   .. code-block:: python
 

@@ -20,7 +20,7 @@ Reviewing the tests I have so far, I know that
 red: make it fail
 ~~~~~~~~~~~~~~~~~
 
-I add a test for logical disjunction to ``TestBinaryOperations`` in ``test_truth_table.py``
+I will add a test for logical disjunction to ``TestBinaryOperations`` in ``test_truth_table.py``
 
 .. code-block:: python
 
@@ -36,7 +36,7 @@ green: make it pass
 ~~~~~~~~~~~~~~~~~~~
 
 
-* Then I change ``truth_table.py`` with a function definition like I did for ``logical_conjunction``
+* Then I will make ``truth_table.py`` with a function definition like I did for ``logical_conjunction``
 
   .. code-block:: python
 
@@ -45,7 +45,7 @@ green: make it pass
 
   and the terminal shows an :ref:`AssertionError`
 
-* 3 of the test cases are passing because ``logical_disjunction`` returns :doc:`True </data_structures/booleans/booleans>` for each one of them. I need a condition for the fourth case to pass, so I change the definition
+* 3 of the test cases are passing because ``logical_disjunction`` returns :doc:`True </data_structures/booleans/booleans>` for each one of them. I need a condition for the fourth case to pass, so I will make the definition
 
   .. code-block:: python
 
@@ -61,7 +61,7 @@ refactor: make it better
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-* I know from :doc:`/data_structures/booleans/truth_table/02_logical_conjunction` that when I have a nested if statement it can be replaced with an ``and`` so I change the condition
+* I know from :doc:`/data_structures/booleans/truth_table/02_logical_conjunction` that when I have a nested if statement it can be replaced with an ``and`` so I will make the condition
 
   .. code-block:: python
 
@@ -108,7 +108,7 @@ refactor: make it better
             return False
         return True
 
-  I get a ``SyntaxError`` which I add to the list of exceptions encountered
+  I get a ``SyntaxError`` which I will add to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -148,7 +148,7 @@ refactor: make it better
 
   Hooray! tests are passing again
 
-* I add an else statement to be explicit
+* I will add an else statement to be explicit
 
   .. code-block:: python
 

@@ -24,7 +24,7 @@ Reviewing what I know so far, for any boolean operation involving 2 inputs: ``p`
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add a test for logical implication to ``TestBinaryOperations`` in ``test_truth_table.py``
+I will add a test for logical implication to ``TestBinaryOperations`` in ``test_truth_table.py``
 
 .. code-block:: python
 
@@ -40,7 +40,7 @@ green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* I add a function definition with :doc:`True </data_structures/booleans/booleans>` as the return value since it is expected in 3 out of the 4 cases
+* I will add a function definition with :doc:`True </data_structures/booleans/booleans>` as the return value since it is expected in 3 out of the 4 cases
 
   .. code-block:: python
 
@@ -48,7 +48,7 @@ green: make it pass
         return True
 
   the terminal shows the second case failing
-* I add a condition for this case
+* I will add a condition for this case
 
   .. code-block:: python
 

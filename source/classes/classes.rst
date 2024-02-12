@@ -4,7 +4,7 @@
 classes
 ########
 
-``classes`` are a template or blueprint that represents an object. I think of ``classes`` as a a container of :doc:`methods (functions) </functions/functions>` and ``attributes (variables)`` that belong together
+``classes`` are things that represents an object. I think of ``classes`` as a a container of :doc:`methods (functions) </functions/functions>` and ``attributes (variables)`` that belong together
 
 I will show the following in this chapter
 
@@ -29,7 +29,7 @@ How to define a class with pass
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I create a new file called ``test_classes.py`` in the ``tests`` directory
+I make a new file called ``test_classes.py`` in the ``tests`` directory
 
 .. code-block:: python
 
@@ -47,7 +47,7 @@ the terminal shows a :ref:`ModuleNotFoundError` because I have an import stateme
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-* I add :ref:`ModuleNotFoundError` to the list of exceptions encountered
+* I will add :ref:`ModuleNotFoundError` to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -55,7 +55,7 @@ green: make it pass
     # AssertionError
     # ModuleNotFoundError
 
-* I create a python module called ``classes.py`` and the terminal shows an :ref:`AttributeError` which I add to the list of exceptions encountered
+* I make a python module called ``classes.py`` and the terminal shows an :ref:`AttributeError` which I will add to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -72,7 +72,7 @@ green: make it pass
 
   and the terminal shows a NameError_ because ``ClassWithPass`` is not defined anywhere
 
-* I add the error to the list of exceptions encountered
+* I will add the error to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -82,7 +82,7 @@ green: make it pass
     # AttributeError
     # NameError
 
-* I change the name to an assignment to the null value :ref:`None`
+* I will make the name to an assignment to the null value :ref:`None`
 
   .. code-block:: python
 
@@ -95,7 +95,7 @@ green: make it pass
     class ClassWithPass:
 
   the terminal shows an :doc:`IndentationError <https://docs.python.org/3/library/exceptions.html?highlight=indentationerror#IndentationError>`_ because I declared a class without adding any indented text
-* I add the new error to the list of exceptions encountered
+* I will add the new error to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -133,7 +133,7 @@ How to define a class with parentheses
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add another test to ``TestClasses`` in ``test_classes.py`` to show another way to create a class
+I will add another test to ``TestClasses`` in ``test_classes.py`` to show another way to create a class
 
 .. code-block:: python
 
@@ -146,7 +146,7 @@ green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* I add a class definition like ``ClassWithPass`` to ``classes.py``
+* I will add a class definition like ``ClassWithPass`` to ``classes.py``
 
   .. code-block:: python
 
@@ -157,7 +157,7 @@ green: make it pass
 
   the terminal shows passing tests
 
-* When I change the definition to include parentheses
+* When I will make the definition to include parentheses
 
   .. code-block:: python
 
@@ -199,7 +199,7 @@ green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* I add a class definition to ``classes.py``
+* I will add a class definition to ``classes.py``
 
   .. code-block:: python
 
@@ -210,7 +210,7 @@ green: make it pass
 
   the terminal shows all tests passed
 
-* then I change the definition to explicitly state the parent `object <https://docs.python.org/3/glossary.html#term-object>`_
+* then I will make the definition to explicitly state the parent `object <https://docs.python.org/3/glossary.html#term-object>`_
 
   .. code-block:: python
 

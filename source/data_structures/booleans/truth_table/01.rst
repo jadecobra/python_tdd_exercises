@@ -33,7 +33,7 @@ Nullary operations do not take in inputs and always return the same value. They 
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I create a file called ``test_truth_table.py`` in the ``tests`` folder and add the text below
+I make a file called ``test_truth_table.py`` in the ``tests`` folder and add the text below
 
 .. code-block:: python
 
@@ -45,7 +45,7 @@ the terminal shows a :ref:`ModuleNotFoundError`
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-* I add :ref:`ModuleNotFoundError` to the list of exceptions encountered
+* I will add :ref:`ModuleNotFoundError` to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -53,8 +53,8 @@ green: make it pass
    # AssertionError
    # ModuleNotFoundError
 
-* then I create a file called ``truth_table.py`` in the project folder and the test passes
-* I add a failing test to ``test_truth_table.py``
+* then I make a file called ``truth_table.py`` in the project folder and the test passes
+* I will add a failing test to ``test_truth_table.py``
 
   .. code-block:: python
 
@@ -68,7 +68,7 @@ green: make it pass
       def test_logical_true(self):
           self.assertTrue(truth_table.logical_true())
 
-  and the terminal shows an :ref:`AttributeError` which I add to the list of exceptions encountered
+  and the terminal shows an :ref:`AttributeError` which I will add to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -77,7 +77,7 @@ green: make it pass
    # ModuleNotFoundError
    # AttributeError
 
-* I add a :doc:`singleton function </functions/functions_singleton>` called ``logical_true`` to ``truth_table.py``
+* I will add a :doc:`singleton function </functions/functions_singleton>` called ``logical_true`` to ``truth_table.py``
 
   .. code-block:: python
 
@@ -90,7 +90,7 @@ refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* I add a test for ``logical_false`` to ``TestNullaryOperations`` class in ``test_truth_table.py``
+* I will add a test for ``logical_false`` to ``TestNullaryOperations`` class in ``test_truth_table.py``
 
   .. code-block:: python
 
@@ -98,7 +98,7 @@ refactor: make it better
         self.assertFalse(truth_table.logical_false())
 
   the terminal shows another :ref:`AttributeError` since there is no definition for ``logical_false`` in ``truth_table.py``
-* I add a function definition for ``logical_false`` to ``truth_table.py``
+* I will add a function definition for ``logical_false`` to ``truth_table.py``
 
   .. code-block:: python
 
@@ -106,7 +106,7 @@ refactor: make it better
         return True
 
   and the terminal shows an :ref:`AssertionError` since the ``logical_false`` function currently returns a different value from what is expected
-* When I change the return value to :doc:`False </data_structures/booleans/booleans>`, the terminal shows passing tests
+* When I will make the return value to :doc:`False </data_structures/booleans/booleans>`, the terminal shows passing tests
 
   .. code-block:: python
 
@@ -133,7 +133,7 @@ A Logical Identity operation takes input and returns it as output, it is a :doc:
 red: make it fail
 ~~~~~~~~~~~~~~~~~
 
-I add a new ``TestCase`` to ``test_truth_table.py``
+I will add a new ``TestCase`` to ``test_truth_table.py``
 
 .. code-block:: python
 
@@ -148,7 +148,7 @@ and the terminal shows an :ref:`AttributeError` because there is no definition f
 green: make it pass
 ~~~~~~~~~~~~~~~~~~~
 
-I add a function definition for ``logical_identity`` to ``truth_table.py``
+I will add a function definition for ``logical_identity`` to ``truth_table.py``
 
 .. code-block:: python
 
@@ -165,7 +165,7 @@ A Logical Negation operation takes input and returns its opposite as output
 red: make it fail
 ~~~~~~~~~~~~~~~~~
 
-I add a test for ``logical_negation`` to ``test_truth_table.py``
+I will add a test for ``logical_negation`` to ``test_truth_table.py``
 
 .. code-block:: python
 
@@ -179,7 +179,7 @@ green: make it pass
 ~~~~~~~~~~~~~~~~~~~
 
 
-* I add a definition for ``logical_negation``  to ``truth_table.py`` using the solution I had for ``logical_identity``
+* I will add a definition for ``logical_negation``  to ``truth_table.py`` using the solution I had for ``logical_identity``
 
   .. code-block:: python
 

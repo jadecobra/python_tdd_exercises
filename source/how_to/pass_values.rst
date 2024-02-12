@@ -24,7 +24,7 @@ requirements
 red: make it fail
 *******************
 
-I add a test to ``test_telephone.py``
+I will add a test to ``test_telephone.py``
 
 .. code-block:: python
 
@@ -45,7 +45,7 @@ and the terminal shows a NameError_
 
   NameError: name 'telephone' is not defined
 
-which I add to the list of exceptions
+which I will add to the list of exceptions
 
 .. code-block:: python
 
@@ -68,7 +68,7 @@ green: make it pass
 
     AttributeError: module 'telephone' has no attribute 'text'
 
-* I add the error to the list of exceptions encountered
+* I will add the error to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -102,7 +102,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-- I add the exception to the list of exceptions encountered
+- I will add the exception to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -112,7 +112,7 @@ green: make it pass
     # AttributeError
     # TypeError
 
-- I change ``text`` in ``telephone.py`` to a :ref:`function<functions>` to make it `callable <https://docs.python.org/3/glossary.html#term-callable>`_
+- I will make ``text`` in ``telephone.py`` to a :ref:`function<functions>` to make it `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 
   .. code-block:: python
 
@@ -126,7 +126,7 @@ green: make it pass
     TypeError: text() takes 0 positional arguments but 1 was given
 
   I provided a positional argument as input with the value ``'hello'`` when I called ``telephone.text`` in the test , but the current signature of the ``text`` :ref:`function<functions>` does not allow it accept any inputs
-- I change the definition for ``text`` to make it accept a value as input
+- I will make the definition for ``text`` to make it accept a value as input
 
   .. code-block:: python
 
@@ -139,7 +139,7 @@ green: make it pass
 
     AssertionError: None != 'I received this message: hello'
 
-- I change the return value to match the expectation and the test pass
+- I will make the return value to match the expectation and the test pass
 
   .. code-block:: python
 
@@ -155,7 +155,7 @@ The problem with this solution is that no matter what value I send to the ``text
 red: make it fail
 =========================
 
-I add a new failing test to ``test_text_messages``
+I will add a new failing test to ``test_text_messages``
 
 .. code-block:: python
 
@@ -179,7 +179,7 @@ the terminal shows an :ref:`AssertionError`
 green: make it pass
 =========================
 
-I change the ``text`` :ref:`function<functions>` in ``telephone.py`` to use an ``f`` string which allows passing variable values to strings. This is called `string interpolation <https://peps.python.org/pep-0498/>`_
+I will make the ``text`` :ref:`function<functions>` in ``telephone.py`` to use an ``f`` string which allows passing variable values to strings. This is called `string interpolation <https://peps.python.org/pep-0498/>`_
 
 .. code-block:: python
 
@@ -197,7 +197,7 @@ I want to try this with other python data structures to see what happens
 red: make it fail
 =========================
 
-I add a new failing test to ``test_text_messages``
+I will add a new failing test to ``test_text_messages``
 
 .. code-block:: python
 
@@ -224,7 +224,7 @@ the terminal shows an :ref:`AssertionError`
 green: make it pass
 =========================
 
-I change the test to match the expected value
+I will make the test to match the expected value
 
 
 .. code-block:: python
@@ -240,7 +240,7 @@ the terminal shows passing tests
 refactor: make it better
 =========================
 
-As an exercise I add more tests to ``test_text_messages`` to see what happens when I pass different data structures to the ``text`` function
+As an exercise I will add more tests to ``test_text_messages`` to see what happens when I pass different data structures to the ``text`` function
 
 * What happens when I pass in a :doc:`class </classes/classes>` constructor to the ``text`` function
 
@@ -260,7 +260,7 @@ As an exercise I add more tests to ``test_text_messages`` to see what happens wh
 
     AssertionError: "I received this message: <class 'bool'>" != 'I received this message: bool'
 
-* I change the test to match the expectation and the test passes ::
+* I will make the test to match the expectation and the test passes ::
 
     self.assertEqual(
         telephone.text(bool),
@@ -324,7 +324,7 @@ As an exercise I add more tests to ``test_text_messages`` to see what happens wh
 
     AssertionError: "I received this message: (1, 2, 3, 'n')" != "I received this message: '(1, 2, 3, n)'"
 
-  I change the test to match the expectation ::
+  I will make the test to match the expectation ::
 
     self.assertEqual(
         telephone.text((1, 2, 3, 'n')),
@@ -342,14 +342,14 @@ As an exercise I add more tests to ``test_text_messages`` to see what happens wh
 
     AssertionError: "I received this message: {1, 2, 3, 'n'}" != "I received this message: {1, 2, 3, n}'"
 
-  I change the test to match the expectation ::
+  I will make the test to match the expectation ::
 
     self.assertEqual(
         telephone.text({1, 2, 3, 'n'}),
         "I received this message: {1, 2, 3, 'n'}"
     )
 
-* finally, I add a test for :doc:`dictionaries </data_structures/dictionaries>` ::
+* finally, I will add a test for :doc:`dictionaries </data_structures/dictionaries>` ::
 
     self.assertEqual(
         telephone.text({"key1": "value1", "keyN": "valueN"}),
@@ -360,7 +360,7 @@ As an exercise I add more tests to ``test_text_messages`` to see what happens wh
 
     AssertionError: "I received this message: {'key1': 'value1', 'keyN': 'valueN'}" != "I received this message: '{key1: value1, keyN: valueN}'"
 
-  I change the test to match the expected output ::
+  I will make the test to match the expected output ::
 
     self.assertEqual(
         telephone.text({"key1": "value1", "keyN": "valueN"}),

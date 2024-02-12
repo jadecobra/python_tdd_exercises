@@ -8,7 +8,7 @@ I can also define functions to take both positional arguments and keyword argume
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add a new failing test to ``test_functions.py``
+I will add a new failing test to ``test_functions.py``
 
 .. code-block:: python
 
@@ -20,7 +20,7 @@ I add a new failing test to ``test_functions.py``
         {}
       )
 
-the terminal shows a ``SyntaxError`` because I put a positional argument after a keyword argument. I add the error to the list of exceptions encountered
+the terminal shows a ``SyntaxError`` because I put a positional argument after a keyword argument. I will add the error to the list of exceptions encountered
 
 .. code-block:: python
 
@@ -48,7 +48,7 @@ green: make it pass
         )
 
   the terminal shows an :ref:`AttributeError`
-* I add a definition for the function to ``functions.py``
+* I will add a definition for the function to ``functions.py``
 
   .. code-block:: python
 
@@ -61,7 +61,7 @@ green: make it pass
 
     TypeError: accepts_positional_and_keyword_arguments() got an unexpected keyword argument 'last_name'
 
-* I change the :doc:`function signature </functions/functions>` to take in an argument
+* I will make the :doc:`function signature </functions/functions>` to take in an argument
 
   .. code-block:: python
 
@@ -74,7 +74,7 @@ green: make it pass
 
     TypeError: accepts_positional_and_keyword_arguments() got multiple values for argument 'last_name'
 
-* I add another argument to the :doc:`function signature </functions/functions>`
+* I will add another argument to the :doc:`function signature </functions/functions>`
 
   .. code-block:: python
 
@@ -98,7 +98,7 @@ green: make it pass
         return first_name, last_name
 
   the terminal changes the :ref:`AssertionError` with the values I just added
-* I change ``test_functions_with_positional_and_keyword_arguments`` to make the results match the expectation
+* I will make ``test_functions_with_positional_and_keyword_arguments`` to make the results match the expectation
 
   .. code-block:: python
 
@@ -118,7 +118,7 @@ refactor: make it better
 Hold on a second. This looks exactly like what I did in ``test_functions_with_positional_arguments``. I cannot tell from the :doc:`function signature </functions/functions>` which argument is positional and which is a keyword argument and do not want to wait for the function to fail when I send in values to find out
 
 
-* I change the :doc:`signature </functions/functions>` of ``accepts_positional_and_keyword_arguments`` to have a default value for the keyword argument
+* I will make the :doc:`signature </functions/functions>` of ``accepts_positional_and_keyword_arguments`` to have a default value for the keyword argument
 
   .. code-block:: python
 
@@ -134,7 +134,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_with_po
         return first_name, last_name
 
   I still have passing tests. It looks like python lets us use default arguments with no issues, and I can provide keyword arguments positionally without using the name.
-* I add another test to ``test_functions_with_positional_and_keyword_arguments`` to show this
+* I will add another test to ``test_functions_with_positional_and_keyword_arguments`` to show this
 
   .. code-block:: python
 
@@ -153,7 +153,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_with_po
           )
 
   all the tests are still passing. The problem here is without the names the program is going to take the input data in the order I provide it so it is better to be explicit with the names because from the `Zen of Python <https://peps.python.org/pep-0020/>`_ ``Explicit is better than implicit.``
-* I add 2 tests, this time for an unknown number of positional and keyword arguments
+* I will add 2 tests, this time for an unknown number of positional and keyword arguments
 
   .. code-block:: python
 
@@ -234,7 +234,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_with_po
           #    ()
           # )
 
-* I change the expected values in the test to make it pass
+* I will make the expected values in the test to make it pass
 
   .. code-block:: python
 
@@ -269,7 +269,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_with_po
          )
     E    AssertionError: Tuples differ: (('my_first_name', 'my_last_name'), {}) != (('my_first_name', 'last_name'), {})
 
-* I change the test to make it pass with both positional arguments in parentheses and empty curly braces since there are no keyword arguments
+* I will make the test to make it pass with both positional arguments in parentheses and empty curly braces since there are no keyword arguments
 
   .. code-block:: python
 
@@ -296,7 +296,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_with_po
 
     AssertionError: Tuples differ: ((), {}) != (None, None)
 
-* I change the test to make it pass with empty parentheses and curly braces as the expectation since no positional or keyword arguments were provided as inputs
+* I will make the test to make it pass with empty parentheses and curly braces as the expectation since no positional or keyword arguments were provided as inputs
 
   .. code-block:: python
 
@@ -311,7 +311,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_with_po
 
     AssertionError: Tuples differ: ((<class 'bool'>, <class 'int'>, <class 'f[307 chars]t'>}) != ()
 
-* I change the test to make it pass
+* I will make the test to make it pass
 
   .. code-block:: python
 

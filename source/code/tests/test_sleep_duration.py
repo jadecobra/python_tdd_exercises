@@ -6,7 +6,7 @@ import unittest
 
 class TestSleepDuration(unittest.TestCase):
 
-    def test_string_methods_and_attributes(self):
+    def test_string_attributes_and_methods(self):
         self.maxDiff = None
         self.assertEqual(
             dir('00:00'),
@@ -95,7 +95,7 @@ class TestSleepDuration(unittest.TestCase):
             ]
         )
 
-    def test_splitting_a_string(self):
+    def test_string_splitting(self):
         self.assertEqual(
             '01:23'.split(':'),
             ['01', '23']
@@ -109,8 +109,8 @@ class TestSleepDuration(unittest.TestCase):
             '34'
         )
         self.assertEqual(
-            '31/12/99 08:22'.split(':')[0],
-            '31/12/99 08'
+            '31/12/99 11:37'.split(':')[0],
+            '31/12/99 11'
         )
 
     def test_converting_string_to_integer(self):
@@ -118,13 +118,15 @@ class TestSleepDuration(unittest.TestCase):
         self.assertEqual(int('01'), 1)
 
         with self.assertRaises(ValueError):
-            int('31/12/99 08')
+            int('31/12/99 11')
 
-    def test_floor_division(self):
-        self.assertEqual(5//2, 2)
+    def test_floor_aka_integer_division(self):
+        self.assertEqual(120//60, 2)
+        self.assertEqual(150//60, 2)
 
     def test_modulo_operation(self):
-        self.assertEqual(5%2, 1)
+        self.assertEqual(120%60, 0)
+        self.assertEqual(150%60, 30)
 
     def test_datetime_datetime_objects(self):
         self.assertEqual(
@@ -138,12 +140,10 @@ class TestSleepDuration(unittest.TestCase):
     def test_subtracting_datetime_datetime_objects(self):
         pattern = '%d/%m/%y %H:%M'
         sleep_time = datetime.datetime.strptime(
-            '21/11/06 16:30',
-            pattern
+            '21/11/06 16:30', pattern
         )
         wake_time = datetime.datetime.strptime(
-            '21/11/06 17:30',
-            pattern
+            '21/11/06 17:30', pattern
         )
         self.assertEqual(
             wake_time-sleep_time,
@@ -152,28 +152,29 @@ class TestSleepDuration(unittest.TestCase):
 
     def test_converting_timedelta_to_string(self):
         self.assertEqual(
-            str(datetime.timedelta(seconds=7200)),
-            '2:00:00'
+            str(datetime.timedelta(seconds=7654)),
+            '2:07:34'
         )
 
-    def test_duration_when_given_date_and_time(self):
-        wake_hour = random.randint(0, 23)
-        sleep_hour = random.randint(0, 23)
-        wake_minutes = random.randint(0, 59)
-        sleep_minutes = random.randint(0, 59)
-
-        wake_time = f'31/12/99 {wake_hour:02}:{wake_minutes:02}'
-        sleep_time = f'31/12/99 {sleep_hour:02}:{sleep_minutes:02}'
-
+    def test_duration_w_date_and_time(self):
         pattern = '%d/%m/%y %H:%M'
-        wake_time_datetime_object = datetime.datetime.strptime(
+
+        wake_hour = random.randint(0, 23)
+        wake_minutes = random.randint(0, 59)
+        wake_time = f'31/12/99 {wake_hour:02}:{wake_minutes:02}'
+        wake_datetime_object = datetime.datetime.strptime(
                 wake_time, pattern
             )
+
+        sleep_hour = random.randint(0, 23)
+        sleep_minutes = random.randint(0, 59)
+        sleep_time = f'31/12/99 {sleep_hour:02}:{sleep_minutes:02}'
         sleep_datetime_object = datetime.datetime.strptime(
-                sleep_time, pattern
-            )
+            sleep_time, pattern
+        )
+
         difference = (
-            wake_time_datetime_object
+            wake_datetime_object
           - sleep_datetime_object
         )
 
@@ -188,14 +189,13 @@ class TestSleepDuration(unittest.TestCase):
         except Exception:
             with self.assertRaisesRegex(
                 ValueError,
-                f'wake_time: {wake_time_datetime_object} is earlier '
+                f'wake_time: {wake_datetime_object} is earlier '
                 f'than sleep_time: {sleep_datetime_object}'
             ):
                 sleep_duration.duration(
                     wake_time=wake_time,
                     sleep_time=sleep_time
                 )
-
 
 # Exceptions Encountered
 # AssertionError

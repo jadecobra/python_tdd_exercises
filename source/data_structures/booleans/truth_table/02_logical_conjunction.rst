@@ -32,7 +32,7 @@ the terminal shows an :ref:`AttributeError`
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-* I add a definition for ``logical_conjunction`` to ``truth_table.py``
+* I will add a definition for ``logical_conjunction`` to ``truth_table.py``
 
   .. code-block:: python
 
@@ -40,7 +40,7 @@ green: make it pass
         return None
 
   the terminal shows a :ref:`TypeError`
-* I add the new error to the list of exceptions encountered
+* I will add the new error to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -50,7 +50,7 @@ green: make it pass
     # AttributeError
     # TypeError
 
-* I change the :doc:`function signature </functions/functions>` to include a positional argument
+* I will make the :doc:`function signature </functions/functions>` to include a positional argument
 
   .. code-block:: python
 
@@ -58,7 +58,7 @@ green: make it pass
         return None
 
   the terminal shows another :ref:`TypeError` but with a different message
-* I add another positional argument to match the expected signature
+* I will add another positional argument to match the expected signature
 
   .. code-block:: python
 
@@ -66,7 +66,7 @@ green: make it pass
         return None
 
   and the terminal shows an :ref:`AssertionError`
-* I change ``logical_conjunction`` in ``truth_table.py`` to return :doc:`True </data_structures/booleans/booleans>`
+* I will make ``logical_conjunction`` in ``truth_table.py`` to return :doc:`True </data_structures/booleans/booleans>`
 
   .. code-block:: python
 
@@ -75,7 +75,7 @@ green: make it pass
 
   which makes the first of the four tests pass, the terminal now shows a failure for the second line
 * I can make this function return different values based on the input it receives with `if statements <https://docs.python.org/3/tutorial/controlflow.html?highlight=statement#if-statements>`_
-* I add an `if statement <https://docs.python.org/3/reference/compound_stmts.html?highlight=return%20true#the-if-statement>`_ for the first case ``self.assertTrue(truth_table.logical_conjunction(True, True))`` where p is :doc:`True </data_structures/booleans/booleans>` and q is :doc:`True </data_structures/booleans/booleans>`
+* I will add an `if statement <https://docs.python.org/3/reference/compound_stmts.html?highlight=return%20true#the-if-statement>`_ for the first case ``self.assertTrue(truth_table.logical_conjunction(True, True))`` where p is :doc:`True </data_structures/booleans/booleans>` and q is :doc:`True </data_structures/booleans/booleans>`
 
   .. code-block:: python
 
@@ -100,8 +100,8 @@ refactor: make it better
 
 * Why does this work?
 
-  - I add a condition for when the value of ``p`` is equal to :doc:`True </data_structures/booleans/booleans>`
-  - Inside the first condition I add another condition for when the value of ``q`` is equal to :doc:`True </data_structures/booleans/booleans>`
+  - I will add a condition for when the value of ``p`` is equal to :doc:`True </data_structures/booleans/booleans>`
+  - Inside the first condition I will add another condition for when the value of ``q`` is equal to :doc:`True </data_structures/booleans/booleans>`
   - when both conditions are met, the ``logical_conjunction`` function returns :doc:`True </data_structures/booleans/booleans>`. What does it return when those two conditions are not met?
 
 * I know from :doc:`/functions/functions` that a function returns :ref:`None` by default so it must be returning :ref:`None` for the other cases. This means :ref:`None` is :doc:`False </data_structures/booleans/booleans>` as seen in :doc:`/data_structures/booleans/booleans`

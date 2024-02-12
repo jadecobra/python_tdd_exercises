@@ -10,7 +10,7 @@ To ensure the function behaves correctly regardless of what order the user provi
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add a new test to ``test_functions.py``
+I will add a new test to ``test_functions.py``
 
 .. code-block:: python
 
@@ -29,7 +29,7 @@ green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* I add a function definition to ``functions.py``
+* I will add a function definition to ``functions.py``
 
   .. code-block:: python
 
@@ -42,7 +42,7 @@ green: make it pass
 
     TypeError: passthrough_with_keyword_arguments() got an unexpected keyword argument 'first_name'
 
-* I change the :doc:`function signature </functions/functions>` to make it accept a positional argument
+* I will make the :doc:`function signature </functions/functions>` to make it accept a positional argument
 
   .. code-block:: python
 
@@ -55,7 +55,7 @@ green: make it pass
 
     TypeError: passthrough_with_keyword_arguments() got an unexpected keyword argument 'last_name'
 
-* I change the :doc:`function signature </functions/functions>` to take in another positional argument
+* I will make the :doc:`function signature </functions/functions>` to take in another positional argument
 
   .. code-block:: python
 
@@ -78,7 +78,7 @@ refactor: make it better
 So far ``passthrough_with_keyword_arguments`` looks the same as ``passthrough_with_positional_arguments`` did when it took in 2 positional arguments, I have not yet seen a difference between a ``positional argument`` and a ``keyword argument``
 
 
-* I add a test that puts the input data out of order to see if there is a difference
+* I will add a test that puts the input data out of order to see if there is a difference
 
   .. code-block:: python
 
@@ -104,7 +104,7 @@ The function currently only takes in 2 keyword arguments. What if I want a funct
 
 * red: make it fail
 
-  I add a test to ``test_functions_with_keyword_arguments``
+  I will add a test to ``test_functions_with_keyword_arguments``
 
   .. code-block:: python
 
@@ -135,7 +135,7 @@ The function currently only takes in 2 keyword arguments. What if I want a funct
 * green: make it pass
 
 
-  - I change the signature of ``passthrough_with_keyword_arguments`` to accept any number of keyword arguments
+  - I will make the signature of ``passthrough_with_keyword_arguments`` to accept any number of keyword arguments
 
     .. code-block:: python
 
@@ -143,7 +143,7 @@ The function currently only takes in 2 keyword arguments. What if I want a funct
           return keyword_arguments
 
     the terminal shows an :ref:`AssertionError` for the previous test that was passing. I have introduced a regression - the new code has caused an old passing test to fail.
-  - I change the expected result of ``test_functions_with_keyword_arguments`` from the terminal's output
+  - I will make the expected result of ``test_functions_with_keyword_arguments`` from the terminal's output
 
     .. code-block:: python
 
@@ -161,7 +161,7 @@ The function currently only takes in 2 keyword arguments. What if I want a funct
 
     the terminal shows an :ref:`AssertionError` for the next test that was passing. I have another regression
 
-  * I change the next test to make the output match the expectation
+  * I will make the next test to make the output match the expectation
 
     .. code-block:: python
 
@@ -187,7 +187,7 @@ The function currently only takes in 2 keyword arguments. What if I want a funct
               }
           )
 
-    the terminal shows an :ref:`AssertionError` for the last test I added
+    the terminal shows an :ref:`AssertionError` for the last test I will added
   * time to match the last test to the expected value in the comparison
 
     .. code-block:: python
@@ -224,7 +224,7 @@ The function currently only takes in 2 keyword arguments. What if I want a funct
 
 * refactor: make it better
 
-  I add one more test to ``test_functions_with_keyword_arguments`` to drill the lesson
+  I will add one more test to ``test_functions_with_keyword_arguments`` to drill the lesson
 
   .. code-block:: python
 
@@ -269,7 +269,7 @@ The function currently only takes in 2 keyword arguments. What if I want a funct
             {}
         )
 
-  the terminal shows an :ref:`AssertionError` and I change the expected values in the test to match the values from the function
+  the terminal shows an :ref:`AssertionError` and I will make the expected values in the test to match the values from the function
 
   .. code-block:: python
 
