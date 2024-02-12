@@ -43,7 +43,7 @@ I make a file called ``test_functions.py`` in the ``tests`` folder and add the f
       def test_functions_with_pass(self):
           self.assertIsNone(functions.function_with_pass())
 
-the terminal shows a :ref:`ModuleNotFoundError`\ , and I will add it to the list of exceptions encountered
+the terminal shows a :ref:`ModuleNotFoundError`\ , and I add it to the list of exceptions encountered
 
 .. code-block:: python
 
@@ -54,7 +54,7 @@ the terminal shows a :ref:`ModuleNotFoundError`\ , and I will add it to the list
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-* I make a file called ``functions.py`` in the project folder and the terminal shows an :ref:`AttributeError`\ , which I will add to the list of exceptions encountered
+* I make a file called ``functions.py`` in the project folder and the terminal shows an :ref:`AttributeError`\ , which I add to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -63,7 +63,7 @@ green: make it pass
     # ModuleNotFoundError
     # AttributeError
 
-* I will add a function definition to ``functions.py``
+* I add a function definition to ``functions.py``
 
   .. code-block:: python
 
@@ -82,7 +82,7 @@ refactor: make it better
 
 * red: make it fail
 
-  I will add a new failing test to ``TestFunctions`` in ``test_functions.py`` to check that functions always return :ref:`None`
+  I add a new failing test to ``TestFunctions`` in ``test_functions.py`` to check that functions always return :ref:`None`
 
   .. code-block:: python
 
@@ -93,7 +93,7 @@ refactor: make it better
 
 * green: make it pass
 
-  I will add a new function to ``functions.py`` to make the test pass, this time with a ``return`` statement instead of `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
+  I add a new function to ``functions.py`` to make the test pass, this time with a ``return`` statement instead of `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
 
   .. code-block:: python
 
@@ -106,7 +106,7 @@ refactor: make it better
 
 * red: make it fail
 
-  I will add one more test to the ``TestFunctions`` class in ``test_functions.py`` to help drive home the point
+  I add one more test to the ``TestFunctions`` class in ``test_functions.py`` to help drive home the point
 
   .. code-block:: python
 
@@ -118,7 +118,7 @@ refactor: make it better
   the terminal shows an :ref:`AttributeError`
 * green: make it pass
 
-  from the `Zen of Python <https://peps.python.org/pep-0020/>`_ - ``Explicit is better than implicit.`` I will add a function definition to ``functions.py`` this time with an explicit ``return`` statement showing the value returned
+  from the `Zen of Python <https://peps.python.org/pep-0020/>`_ - ``Explicit is better than implicit.`` I add a function definition to ``functions.py`` this time with an explicit ``return`` statement showing the value returned
 
   .. code-block:: python
 

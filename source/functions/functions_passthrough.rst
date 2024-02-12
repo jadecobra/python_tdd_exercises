@@ -9,7 +9,7 @@ A passthrough :ref:`function<functions>` is one that returns the input it receiv
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add a failing test to the ``TestFunctions`` class in ``test_functions.py``
+I add a failing test to the ``TestFunctions`` class in ``test_functions.py``
 
 .. code-block:: python
 
@@ -22,7 +22,7 @@ green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* I will add a function definition to ``functions.py``
+* I add a function definition to ``functions.py``
 
   .. code-block:: python
 
@@ -35,7 +35,7 @@ green: make it pass
 
     TypeError: passthrough() takes 0 positional arguments but 1 was given
 
-* I will add the new exception to the list of exceptions encountered
+* I add the new exception to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -60,7 +60,7 @@ green: make it pass
 
   because the result of calling ``functions.passthrough`` with :doc:`False </data_structures/booleans/booleans>` as input is :ref:`None` which is not equal to the expected result (:doc:`False </data_structures/booleans/booleans>`)
 
-* I will make the definition of ``passthrough`` to make the test pass
+* I make the definition of ``passthrough`` to make the test pass
 
   .. code-block:: python
 
@@ -77,7 +77,7 @@ Wait a minute! Something is not quite right here. The definition for a ``passthr
 
 * red: make it fail
 
-  I will add a new test to ``test_passthrough_function`` in ``TestFunctions`` in ``test_functions.py``
+  I add a new test to ``test_passthrough_function`` in ``TestFunctions`` in ``test_functions.py``
 
   .. code-block:: python
 
@@ -102,11 +102,11 @@ Wait a minute! Something is not quite right here. The definition for a ``passthr
     def passthrough(input_data):
         return input_data
 
-  the terminal shows passing tests. I have more confidence that the passthrough function will likely return the input data it is given. I will add more tests for good measure using the other python data structures
+  the terminal shows passing tests. I have more confidence that the passthrough function will likely return the input data it is given. I add more tests for good measure using the other python data structures
 
 * refactor: make it better
 
-  I will add more tests to ``test_passthrough_function``
+  I add more tests to ``test_passthrough_function``
 
   .. code-block:: python
 

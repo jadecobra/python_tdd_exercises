@@ -17,7 +17,7 @@ How to create a List from an Iterable
 red: make it fail
 ==================
 
-I will add a file called ``test_list_comprehensions.py`` to the ``tests`` folder with the following code
+I add a file called ``test_list_comprehensions.py`` to the ``tests`` folder with the following code
 
 .. code-block:: python
 
@@ -53,7 +53,7 @@ the terminal shows an :ref:`AssertionError` because ``a_list`` is no longer empt
 green: make it pass
 ====================
 
-I will make the values in the test to match the result
+I make the values in the test to match the result
 
 .. code-block:: python
 
@@ -74,7 +74,7 @@ and the test passes
 refactor: make it better
 =========================
 
-* I will add another test to check what happens when I use the :doc:`list </data_structures/lists/lists>` constructor on ``container``
+* I add another test to check what happens when I use the :doc:`list </data_structures/lists/lists>` constructor on ``container``
 
   .. code-block:: python
 
@@ -86,14 +86,14 @@ refactor: make it better
 
       AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
 
-* I will make the empty list ``[]`` to ``a_list``
+* I make the empty list ``[]`` to ``a_list``
 
   .. code-block:: python
 
     self.assertEqual(list(container), a_list)
 
   and the test passes because calling ``list`` on an ``iterable`` creates a :doc:`list </data_structures/lists/lists>`
-* I will add another test
+* I add another test
 
   .. code-block:: python
 
@@ -108,7 +108,7 @@ refactor: make it better
 
     NameError: name 'list_comprehensions' is not defined
 
-* I will add it to the list of exceptions encountered
+* I add it to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -129,7 +129,7 @@ refactor: make it better
 
     ModuleNotFoundError: No module named 'list_comprehensions'
 
-* I will add it to the list of exceptions
+* I add it to the list of exceptions
 
   .. code-block:: python
 
@@ -144,7 +144,7 @@ refactor: make it better
 
     AttributeError: module 'list_comprehensions' has no attribute 'make_a_list'
 
-* I will add the error to the list of exceptions encountered
+* I add the error to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -167,7 +167,7 @@ refactor: make it better
 
     TypeError: make_a_list() takes 0 positional arguments but 1 was given
 
-* I will add it to the list of exceptions encountered
+* I add it to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -191,7 +191,7 @@ refactor: make it better
 
     AssertionError: None != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-* When I will make the function to return the result of calling the :doc:`list </data_structures/lists/lists>` constructor with ``argument`` as input
+* When I make the function to return the result of calling the :doc:`list </data_structures/lists/lists>` constructor with ``argument`` as input
 
   .. code-block:: python
 
@@ -199,7 +199,7 @@ refactor: make it better
         return list(argument)
 
   the test passes
-* I will make the name of the :doc:`function's </functions/functions>` input from ``argument`` to ``iterable`` to make it more explicit
+* I make the name of the :doc:`function's </functions/functions>` input from ``argument`` to ``iterable`` to make it more explicit
 
   .. code-block:: python
 
@@ -217,7 +217,7 @@ How to create a List with a For Loop
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add a test for creating a list with a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ loop
+I add a test for creating a list with a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ loop
 
 .. code-block:: python
 
@@ -245,7 +245,7 @@ the terminal shows an :ref:`AssertionError` for the values of ``a_list`` because
 green: make it pass
 ====================
 
-* I will make the values of the test to match the result
+* I make the values of the test to match the result
 
   .. code-block:: python
 
@@ -272,7 +272,7 @@ green: make it pass
 
     AttributeError: module 'list_comprehensions' has no attribute 'for_loop'
 
-* I will add a function definition called ``for_loop`` to ``list_comprehensions.py``
+* I add a function definition called ``for_loop`` to ``list_comprehensions.py``
 
   .. code-block:: python
 
@@ -285,7 +285,7 @@ green: make it pass
 
     TypeError: for_loop() takes 0 positional arguments but 1 was given
 
-* I will make the signature of the function to take input
+* I make the signature of the function to take input
 
   .. code-block:: python
 
@@ -298,7 +298,7 @@ green: make it pass
 
     AssertionError: None != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-* I will make the behavior of the function to use a ``for`` loop
+* I make the behavior of the function to use a ``for`` loop
 
   .. code-block:: python
 
@@ -338,7 +338,7 @@ How to create a List with List Comprehensions
 red: make it fail
 ==================
 
-I will add a failing test to ``TestListComprehensions``
+I add a failing test to ``TestListComprehensions``
 
 .. code-block:: python
 
@@ -367,7 +367,7 @@ the terminal shows an :ref:`AssertionError`
 green: make it pass
 =====================
 
-* I will make the values to make it match the result
+* I make the values to make it match the result
 
   .. code-block:: python
 
@@ -395,7 +395,7 @@ green: make it pass
 
     AssertionError: Lists differ: [] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-* this time I will add a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ to show how it is written
+* this time I add a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ to show how it is written
 
   .. code-block:: python
 
@@ -426,7 +426,7 @@ green: make it pass
 
     AttributeError: module 'list_comprehensions' has no attribute 'list_comprehension'
 
-* I will add a function that uses a list comprehension to ``list_comprehensions.py``
+* I add a function that uses a list comprehension to ``list_comprehensions.py``
 
   .. code-block:: python
 
@@ -471,7 +471,7 @@ refactor: make it better
 There is more I can do with `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_, I can add conditions to the operations performed
 
 
-* I will add a failing test to ``TestListComprehensions``
+* I add a failing test to ``TestListComprehensions``
 
   .. code-block:: python
 
@@ -504,7 +504,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
   - ``%`` is a `modulo <https://en.wikipedia.org/wiki/Modulo>`_ operator which divides the number on the left by the number on the right and gives a remainder
   - ``even_numbers.append(item)`` adds ``item`` to ``even_numbers`` if ``item`` divided by ``2`` leaves a remainder of ``0``
 
-* I will add the values of the result to the test to make it pass
+* I add the values of the result to the test to make it pass
 
   .. code-block:: python
 
@@ -562,7 +562,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
 
     AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != [0, 2, 4, 6, 8]
 
-* When I will add the ``if`` condition to the `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_
+* When I add the ``if`` condition to the `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_
 
   .. code-block:: python
 
@@ -577,7 +577,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
 
     AttributeError: module 'list_comprehensions' has no attribute 'get_even_numbers'
 
-* I will add a function definition to ``list_comprehensions.py`` using the `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ I just wrote
+* I add a function definition to ``list_comprehensions.py`` using the `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ I just wrote
 
   .. code-block:: python
 
@@ -585,7 +585,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
         return [item for item in iterable if item % 2 == 0]
 
   and the terminal shows passing tests, Hooray!
-* I want to try another `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ with a different condition so I will add a test to ``TestListComprehensions``
+* I want to try another `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ with a different condition so I add a test to ``TestListComprehensions``
 
   .. code-block:: python
 
@@ -611,7 +611,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
 
     AssertionError: Lists differ: [1, 3, 5, 7, 9] != []
 
-* when I will make the values to match
+* when I make the values to match
 
   .. code-block:: python
 
@@ -637,7 +637,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
 
     AssertionError: Lists differ: [] != [1, 3, 5, 7, 9]
 
-* I will make the value on the left with a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ that uses the same condition I used to create even numbers
+* I make the value on the left with a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ that uses the same condition I used to create even numbers
 
   .. code-block:: python
 
@@ -652,7 +652,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
 
     AssertionError: Lists differ: [0, 2, 4, 6, 8] != [1, 3, 5, 7, 9]
 
-* When I will make the logic in the condition so it uses not equal to ``0`` instead
+* When I make the logic in the condition so it uses not equal to ``0`` instead
 
   .. code-block:: python
 

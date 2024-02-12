@@ -27,7 +27,7 @@ How to use dictionaries as factories in Python
 red: make it fail
 ==================
 
-I will add an `import statement`_ to ``test_person.py``
+I add an `import statement`_ to ``test_person.py``
 
 .. code-block:: python
 
@@ -49,7 +49,7 @@ the terminal shows an :ref:`AttributeError`
 
   AttributeError: module 'person' has no attribute 'factory'
 
-which I will add to the list of exceptions
+which I add to the list of exceptions
 
 .. code-block:: python
 
@@ -71,7 +71,7 @@ green: make it pass
 refactor: make it better
 =========================
 
-* I want to pass in values for ``first_name``, ``last_name``, ``year_of_birth``, ``sex`` and have the :ref:`function<functions>` return a :doc:`dictionary </data_structures/dictionaries>` with the ``first_name``, ``last_name``, ``sex`` and ``age`` calculated from the ``year_of_birth``, so I will add more details to ``test_person_factory``
+* I want to pass in values for ``first_name``, ``last_name``, ``year_of_birth``, ``sex`` and have the :ref:`function<functions>` return a :doc:`dictionary </data_structures/dictionaries>` with the ``first_name``, ``last_name``, ``sex`` and ``age`` calculated from the ``year_of_birth``, so I add more details to ``test_person_factory``
 
   .. code-block:: python
 
@@ -97,7 +97,7 @@ refactor: make it better
 
     NameError: name 'this_year' is not defined
 
-* I will add it to the list of exceptions encountered
+* I add it to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -126,7 +126,7 @@ refactor: make it better
 
     TypeError: factory() got an unexpected keyword argument 'first_name'
 
-* I will add the error to the list of exceptions encountered
+* I add the error to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -162,7 +162,7 @@ refactor: make it better
 
     TypeError: factory() got an unexpected keyword argument 'year_of_birth'
 
-* I will add each keyword to the ``factory`` function until I get a :ref:`TypeError` for the line where I subtract ``this_year() - this_year()``
+* I add each keyword to the ``factory`` function until I get a :ref:`TypeError` for the line where I subtract ``this_year() - this_year()``
 
   .. code-block:: python
 
@@ -187,7 +187,7 @@ refactor: make it better
     import unittest
 
   ``import datetime`` imports the ``datetime`` library so I can use its :doc:`/functions/functions` and :doc:`classes </classes/classes>`
-* then I will add a call in the ``this_year`` :doc:`function  </functions/functions>` in ``test_person.py`` to return the current year
+* then I add a call in the ``this_year`` :doc:`function  </functions/functions>` in ``test_person.py`` to return the current year
 
   .. code-block:: python
 
@@ -220,7 +220,7 @@ refactor: make it better
 
   the terminal shows the test passed
 
-* The factory function currently returns the exact same dictionary every time, regardless of what inputs it gets. It is a :doc:`singleton function </functions/functions_singleton>`. To be more useful it has to use the inputs it is given. I will add another test to ``test_person.py`` with a different set of inputs
+* The factory function currently returns the exact same dictionary every time, regardless of what inputs it gets. It is a :doc:`singleton function </functions/functions_singleton>`. To be more useful it has to use the inputs it is given. I add another test to ``test_person.py`` with a different set of inputs
 
   .. code-block:: python
 
@@ -246,7 +246,7 @@ refactor: make it better
 
     AssertionError: {'first_name': 'sibling', 'last_name': 'last_name', 'sex': 'F', 'age': 0} != {'first_name': 'me', 'last_name': 'my_last_name', 'sex': 'M', 'age': 41}
 
-* I will make the ``factory`` function to use the input provided for ``first_name``
+* I make the ``factory`` function to use the input provided for ``first_name``
 
   .. code-block:: python
 
@@ -320,7 +320,7 @@ refactor: make it better
 
     NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
 
-* I will add an `import statement`_ at the beginning of ``person.py``
+* I add an `import statement`_ at the beginning of ``person.py``
 
   .. code-block:: python
 
@@ -414,7 +414,7 @@ How to use default keyword arguments in functions
 red: make it fail
 ==================
 
-* I will add a failing test for default values to ``test_person.py``
+* I add a failing test for default values to ``test_person.py``
 
   .. code-block:: python
 
@@ -443,7 +443,7 @@ red: make it fail
 
     AssertionError: {'first_name': 'child_a', 'last_name': None, 'sex': 'M', 'age': 10} != {'first_name': 'child_a', 'last_name': 'last_name', 'sex': 'M', 'age': 10}
 
-* The test expects a value of ``"last_name"`` but ``person.factory`` currently returns :ref:`None`. When I will make the default value for ``last_name`` in the ``person.factory`` definition to match the expectation
+* The test expects a value of ``"last_name"`` but ``person.factory`` currently returns :ref:`None`. When I make the default value for ``last_name`` in the ``person.factory`` definition to match the expectation
 
   .. code-block:: python
 
@@ -455,7 +455,7 @@ red: make it fail
 
   the terminal shows passing tests. When no value is given for the ``last_name`` argument to ``person.factory`` it uses ``"last_name"`` because that is the defined default value in the :doc:`function signature </functions/functions>`
 
-* I will add a test called ``test_person_factory_with_sex_default_keyword_argument`` to try another default value
+* I add a test called ``test_person_factory_with_sex_default_keyword_argument`` to try another default value
 
   .. code-block:: python
 

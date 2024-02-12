@@ -4,7 +4,7 @@
 Truth Table: Negate
 ####################
 
-I will continue to step through conditional statements using Binary Operations from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
+I continue to step through conditional statements using Binary Operations from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
 
 
@@ -14,7 +14,7 @@ Negate First
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add a test for negate first to ``TestBinaryOperations`` in ``test_truth_table.py``
+I add a test for negate first to ``TestBinaryOperations`` in ``test_truth_table.py``
 
 .. code-block:: python
 
@@ -29,7 +29,7 @@ and the terminal shows an :ref:`AttributeError`
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-* then I will add a function definition to ``truth_table.py``
+* then I add a function definition to ``truth_table.py``
 
   .. code-block:: python
 
@@ -37,12 +37,12 @@ green: make it pass
         return False
 
   the terminal shows an :ref:`AssertionError` for the third case
-* before I will add a condition for it, this looks similar to ``logical_equality`` and ``exclusive_disjunction`` because 2 out of the 4 cases have the same return value. I see that
+* before I add a condition for it, this looks similar to ``logical_equality`` and ``exclusive_disjunction`` because 2 out of the 4 cases have the same return value. I see that
 
   * when ``p == True`` the result is :doc:`False </data_structures/booleans/booleans>`
   * when ``p == False`` the result is :doc:`True </data_structures/booleans/booleans>`
 
-* I will add conditions to match
+* I add conditions to match
 
   .. code-block:: python
 
@@ -93,7 +93,7 @@ Negate Second
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add a test for negate second to ``TestBinaryOperations``
+I add a test for negate second to ``TestBinaryOperations``
 
 .. code-block:: python
 
@@ -109,7 +109,7 @@ green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* I will add a function definition to ``truth_table.py``
+* I add a function definition to ``truth_table.py``
 
   .. code-block:: python
 
@@ -117,7 +117,7 @@ green: make it pass
         return False
 
   and the terminal shows an :ref:`AssertionError` for the third case
-* before I will add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction`` and ``negate_first`` because 2 out of the 4 cases have the same return value. I see that
+* before I add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction`` and ``negate_first`` because 2 out of the 4 cases have the same return value. I see that
 
   - when ``q == True`` the result is :doc:`False </data_structures/booleans/booleans>`
   - when ``q == False`` the result is :doc:`True </data_structures/booleans/booleans>`

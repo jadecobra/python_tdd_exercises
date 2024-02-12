@@ -7,13 +7,13 @@ classes: attributes and methods
 How to define a class with attributes
 --------------------------------------
 
-I will now add some tests for attributes since I know how to define a class for attributes
+I now add some tests for attributes since I know how to define a class for attributes
 
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 
-* I will add a failing test to ``TestClasses`` in ``classes.py``
+* I add a failing test to ``TestClasses`` in ``classes.py``
 
   .. code-block:: python
 
@@ -22,7 +22,7 @@ red: make it fail
 
   the terminal shows an :ref:`AttributeError`
 
-* I will add a class definition to ``classes.py``
+* I add a class definition to ``classes.py``
 
   .. code-block:: python
 
@@ -37,7 +37,7 @@ red: make it fail
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-* I will add an attribute to ``ClassWithAttributes``
+* I add an attribute to ``ClassWithAttributes``
 
   .. code-block:: python
 
@@ -48,7 +48,7 @@ green: make it pass
 
   and the terminal shows a ` <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
-* after I will make the name with an assignment to :ref:`None`
+* after I make the name with an assignment to :ref:`None`
 
   .. code-block:: python
 
@@ -92,7 +92,7 @@ the terminal shows an :ref:`AttributeError`
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I will add matching attributes to ``ClassWithAttributes`` to make the tests pass
+I add matching attributes to ``ClassWithAttributes`` to make the tests pass
 
 .. code-block:: python
 
@@ -118,7 +118,7 @@ I can also define classes with :ref:`methods<functions>` which are function defi
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add some tests for class methods to ``TestClasses`` in ``classes.py``
+I add some tests for class methods to ``TestClasses`` in ``classes.py``
 
 .. code-block:: python
 
@@ -134,7 +134,7 @@ green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* I will add a class definition to ``classes.py``
+* I add a class definition to ``classes.py``
 
   .. code-block:: python
 
@@ -146,7 +146,7 @@ green: make it pass
   the terminal now gives an :ref:`AttributeError` with a different error
 
 
-* When I will add the missing attribute to the ``ClassWithMethods`` class
+* When I add the missing attribute to the ``ClassWithMethods`` class
 
   .. code-block:: python
 
@@ -169,7 +169,7 @@ green: make it pass
 
   the terminal shows a :ref:`TypeError` since ``method_a`` refers to :ref:`None` which is not callable
 
-* I will make the definition of ``method_a`` to make it a :ref:`function<functions>` which makes it callable
+* I make the definition of ``method_a`` to make it a :ref:`function<functions>` which makes it callable
 
   .. code-block:: python
 
@@ -219,7 +219,7 @@ refactor: make it better
 
   the terminal shows an :ref:`AttributeError`
 
-* and I will make ``ClassWithMethods`` in ``classes.py`` until all tests pass
+* and I make ``ClassWithMethods`` in ``classes.py`` until all tests pass
 
 ----
 
@@ -231,7 +231,7 @@ Since I know how to define classes with methods and how to define classes with a
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add another test for a class that has both attributes and methods
+I add another test for a class that has both attributes and methods
 
 .. code-block:: python
 
@@ -250,7 +250,7 @@ the terminal shows an :ref:`AttributeError`
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I will make ``classes.py`` to make the tests pass by defining the class, attribute and methods
+I make ``classes.py`` to make the tests pass by defining the class, attribute and methods
 
 .. code-block:: python
 
@@ -267,14 +267,14 @@ I will make ``classes.py`` to make the tests pass by defining the class, attribu
 How to View the attributes and methods of a class
 --------------------------------------------------
 
-To view what :doc:`attributes </exceptions/AttributeError>` and ``methods`` are defined for any `object <https://docs.python.org/3/glossary.html#term-object>`_ I can call ``dir`` on the `object <https://docs.python.org/3/glossary.html#term-object>`_.
+To view what :ref:`attributes<AttributeError>` and ``methods`` are defined for any `object <https://docs.python.org/3/glossary.html#term-object>`_ I can call ``dir`` on the `object <https://docs.python.org/3/glossary.html#term-object>`_.
 
 The ``dir`` :ref:`method<functions>` returns a :doc:`list </data_structures/lists/lists>` of all attributes and :ref:`methods<functions>` of the object provided to it as input
 
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add a test to ``test_classes.py``
+I add a test to ``test_classes.py``
 
 .. code-block:: python
 

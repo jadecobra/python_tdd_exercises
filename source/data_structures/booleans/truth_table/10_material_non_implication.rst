@@ -10,7 +10,7 @@ More conditional statements from the `Truth Table <https://en.wikipedia.org/wiki
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add a test for material non-implication to ``TestBinaryOperations`` in ``test_truth_table.py``
+I add a test for material non-implication to ``TestBinaryOperations`` in ``test_truth_table.py``
 
 .. code-block:: python
 
@@ -26,7 +26,7 @@ green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* I will add a function definition to ``truth_table.py``
+* I add a function definition to ``truth_table.py``
 
   .. code-block:: python
 
@@ -34,7 +34,7 @@ green: make it pass
         return False
 
   the terminal shows an :ref:`AssertionError` for the second case
-* I will add a condition for it
+* I add a condition for it
 
   .. code-block:: python
 

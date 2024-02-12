@@ -65,7 +65,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
     mkdir --parents project_name/tests
 
-* I will make directory to ``project_name`` with the `cd <https://man7.org/linux/man-pages/man1/cd.1p.html>`_ program
+* I make directory to ``project_name`` with the `cd <https://man7.org/linux/man-pages/man1/cd.1p.html>`_ program
 
   .. code-block:: shell
 
@@ -149,7 +149,7 @@ red: make it fail
 
     * `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is the python keyword for creating :doc:`/functions/functions`
     * ``test_failure`` is the name of the :ref:`function<functions>`
-    * ``self`` is the ``TestProjectName`` class. I can use ``self`` to access :doc:`methods (functions) </functions/functions>` and :doc:`attributes </exceptions/AttributeError>` within the ``TestProjectName`` class, this avoids having to type ``TestProjectName().assertFalse(True)`` to access the ``assertFalse`` :ref:`method<functions>`
+    * ``self`` is the ``TestProjectName`` class. I can use ``self`` to access :doc:`methods (functions) </functions/functions>` and :ref:`attributes<AttributeError>` within the ``TestProjectName`` class, this avoids having to type ``TestProjectName().assertFalse(True)`` to access the ``assertFalse`` :ref:`method<functions>`
     * ``self.assertFalse(True)`` is the actual test. I expect this line to fail because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
 
       - `assertFalse <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse>`_ is a :ref:`method<functions>` in the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class which checks if its input is :doc:`False </data_structures/booleans/booleans>` and raises an :ref:`AssertionError` when the input is not :doc:`False </data_structures/booleans/booleans>`
@@ -228,7 +228,7 @@ green: make it pass
     # Exceptions Encountered
     # AssertionError
 
-* I will make the input on line 7 to :doc:`False </data_structures/booleans/booleans>`
+* I make the input on line 7 to :doc:`False </data_structures/booleans/booleans>`
 
   .. code-block:: python
 
@@ -366,7 +366,7 @@ How to create a Virtual Environment
 
     =============== 1 passed in 0.00s =======================
 
-* I will make the input on line 7 in ``test_project_name.py`` to :doc:`True </data_structures/booleans/booleans>` to make it fail and back to :doc:`False </data_structures/booleans/booleans>` to make it pass with the terminal responding to each change
+* I make the input on line 7 in ``test_project_name.py`` to :doc:`True </data_structures/booleans/booleans>` to make it fail and back to :doc:`False </data_structures/booleans/booleans>` to make it pass with the terminal responding to each change
 * I can press ``ctrl`` + ``c`` on the keyboard in the terminal to stop the tests at anytime
 
 How to Deactivate a Virtual Environment
@@ -399,7 +399,7 @@ You made it this far and have become the greatest programmer in the world. Follo
 
 * I exit the tests in the terminal by pressing ``ctrl`` + ``c`` on the keyboard
 * I type ``deactivate`` to deactivate the `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_
-* I will make directory to the parent of ``project_name`` ::
+* I make directory to the parent of ``project_name`` ::
 
     cd ..
 
@@ -427,7 +427,7 @@ You made it this far and have become the greatest programmer in the world. Follo
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-* This program will always create a project called ``project_name`` so I need to add a variable to make it create any project name I pass to the program as input. I will add a variable called ``PROJECT_NAME`` which is referenced with ``$PROJECT_NAME``
+* This program will always create a project called ``project_name`` so I need to add a variable to make it create any project name I pass to the program as input. I add a variable called ``PROJECT_NAME`` which is referenced with ``$PROJECT_NAME``
 
   .. code-block:: shell
 

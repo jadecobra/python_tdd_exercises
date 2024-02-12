@@ -186,7 +186,7 @@ class TestSleepDuration(unittest.TestCase):
                 ),
                 str(difference)
             )
-        except Exception:
+        except ValueError:
             with self.assertRaisesRegex(
                 ValueError,
                 f'wake_time: {wake_datetime_object} is earlier '

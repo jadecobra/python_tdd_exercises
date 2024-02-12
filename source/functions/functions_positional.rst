@@ -8,7 +8,7 @@ I can define a function to take in more than one input, For instance if I am wri
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add a new test to ``test_functions.py``
+I add a new test to ``test_functions.py``
 
 .. code-block:: python
 
@@ -25,7 +25,7 @@ the terminal shows an :ref:`AttributeError`
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-* I will add the solution I know works from ``test_passthrough_function`` ``functions.py``
+* I add the solution I know works from ``test_passthrough_function`` ``functions.py``
 
   .. code-block:: python
 
@@ -33,7 +33,7 @@ green: make it pass
         return input_data
 
   the terminal shows a :ref:`TypeError`
-* I will make the signature of ``passthrough_with_positional_arguments`` to take in more than one argument
+* I make the signature of ``passthrough_with_positional_arguments`` to take in more than one argument
 
   .. code-block:: python
 
@@ -43,7 +43,7 @@ green: make it pass
         return input_data
 
   the terminal shows an :ref:`AssertionError`
-* I will make ``passthrough_with_positional_arguments`` to return the two arguments it receives
+* I make ``passthrough_with_positional_arguments`` to return the two arguments it receives
 
   .. code-block:: python
 
@@ -61,7 +61,7 @@ How can I make this better?
 
 
 * I called the first argument ``input_data`` and the second argument ``second_argument``. Technically, both arguments are input data, so I need a better name that is more descriptive
-* I will make the signature of ``passthrough_with_positional_arguments`` to use more descriptive names
+* I make the signature of ``passthrough_with_positional_arguments`` to use more descriptive names
 
   .. code-block:: python
 
@@ -71,7 +71,7 @@ How can I make this better?
         return first_argument, second_argument
 
   I still have passing tests
-* I will add another test to ensure that ``passthrough_with_positional_arguments`` outputs data in the order given
+* I add another test to ensure that ``passthrough_with_positional_arguments`` outputs data in the order given
 
   .. code-block:: python
 
@@ -90,7 +90,7 @@ How can I make this better?
           )
 
   the terminal shows an :ref:`AssertionError`
-* I will make the test so it has the correct output
+* I make the test so it has the correct output
 
   .. code-block:: python
 
@@ -110,7 +110,7 @@ How can I make this better?
 
   the terminal shows passing tests
 * the function currently takes in 2 positional arguments. There are scenarios where a function needs to take in more arguments, like when I do not know the number of positional arguments that will be passed to the function
-* I will add tests for cases where the number of positional arguments received is not known ``test_functions_with_positional_arguments``
+* I add tests for cases where the number of positional arguments received is not known ``test_functions_with_positional_arguments``
 
   .. code-block:: python
 
@@ -141,7 +141,7 @@ How can I make this better?
           )
 
   the terminal shows a :ref:`TypeError` because 2 positional arguments were expected by the function but 4 were given
-* in Python I can represent multiple arguments using a starred expression `see arbitrary argument lists <https://docs.python.org/3/tutorial/controlflow.html#arbitrary-argument-lists>`_, so I will make the signature of ``functions_with_positional_arguments`` with a starred expression to alow it take in any number of arguments
+* in Python I can represent multiple arguments using a starred expression `see arbitrary argument lists <https://docs.python.org/3/tutorial/controlflow.html#arbitrary-argument-lists>`_, so I make the signature of ``functions_with_positional_arguments`` with a starred expression to alow it take in any number of arguments
 
   .. code-block:: python
 

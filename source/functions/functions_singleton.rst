@@ -8,7 +8,7 @@ A singleton function is a function that returns the same output every time it is
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add a test to ``test_functions.py``
+I add a test to ``test_functions.py``
 
 .. code-block:: python
 
@@ -20,7 +20,7 @@ the terminal shows an :ref:`AttributeError`
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I will make ``functions.py`` to make it pass
+I make ``functions.py`` to make it pass
 
 .. code-block:: python
 
@@ -30,7 +30,7 @@ I will make ``functions.py`` to make it pass
 refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-I will add a new test that checks if a singleton that accepts inputs returns the same value regardless of the inputs
+I add a new test that checks if a singleton that accepts inputs returns the same value regardless of the inputs
 
 
 * change ``test_functions.py``
@@ -48,7 +48,7 @@ I will add a new test that checks if a singleton that accepts inputs returns the
           )
 
   the terminal shows an :ref:`AttributeError`
-* and I will add a function for ``singleton_with_inputs`` to ``functions.py`` to make the test pass
+* and I add a function for ``singleton_with_inputs`` to ``functions.py`` to make the test pass
 
   .. code-block:: python
 

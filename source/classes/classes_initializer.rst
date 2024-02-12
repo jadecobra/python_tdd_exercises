@@ -4,14 +4,14 @@
 classes: initializer
 #####################
 
-So far I have gone over how to define classes, attributes and methods. I will now expand on this to show how to use classes.
+So far I have gone over how to define classes, attributes and methods. I now expand on this to show how to use classes.
 
 When creating a new class, we can define an initializer which is a :ref:`method<functions>` that can receive inputs to be used to customize instances/copies of the class
 
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add a failing test to ``test_classes.py``
+I add a failing test to ``test_classes.py``
 
 .. code-block:: python
 
@@ -24,7 +24,7 @@ green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* I will add a definition for the ``Boy`` class
+* I add a definition for the ``Boy`` class
 
   .. code-block:: python
 
@@ -35,7 +35,7 @@ green: make it pass
 
   the terminal shows another :ref:`AttributeError`
 
-* I will make the ``Boy`` class with an attribute called ``sex``
+* I make the ``Boy`` class with an attribute called ``sex``
 
   .. code-block:: python
 
@@ -47,7 +47,7 @@ green: make it pass
   the terminal produces a NameError_
 
 
-* I will add a definition for the ``sex`` attribute
+* I add a definition for the ``sex`` attribute
 
   .. code-block:: python
 
@@ -63,7 +63,7 @@ refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* I will add another test to ``test_classes_with_initializers`` this time for a ``Girl`` class but with a difference, I provide the value for the ``sex`` attribute when I call the class
+* I add another test to ``test_classes_with_initializers`` this time for a ``Girl`` class but with a difference, I provide the value for the ``sex`` attribute when I call the class
 
   .. code-block:: python
 
@@ -93,7 +93,7 @@ refactor: make it better
   - An initializer is a class :ref:`method<functions>` that allows customization of instances/copies of a `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
 
 
-* I will add the initializer :ref:`method<functions>` called ``__init__`` to the ``Girl`` class
+* I add the initializer :ref:`method<functions>` called ``__init__`` to the ``Girl`` class
 
   .. code-block:: python
 
@@ -111,7 +111,7 @@ refactor: make it better
 
    TypeError: __init__() got an unexpected keyword argument 'sex'
 
-* I will make the signature of the ``__init__`` :ref:`method<functions>` to accept a keyword argument
+* I make the signature of the ``__init__`` :ref:`method<functions>` to accept a keyword argument
 
   .. code-block:: python
 
@@ -120,7 +120,7 @@ refactor: make it better
 
   and the terminal shows passing tests
 
-* I will add another test for a class initializer to ``test_classes_with_initializers``
+* I add another test for a class initializer to ``test_classes_with_initializers``
 
   .. code-block:: python
 
@@ -131,7 +131,7 @@ refactor: make it better
 
   and the terminal shows an :ref:`AttributeError`
 
-* I will add a class definition to ``classes.py``
+* I add a class definition to ``classes.py``
 
   .. code-block:: python
 
@@ -167,7 +167,7 @@ refactor: make it better
   the terminal shows all tests still passing and I have now written the same thing 3 times. Earlier on I mentioned inheritance, and will now try to use it to remove this duplication so `I Do Not Repeat Myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
 
-* I will add a new class called ``Human`` to ``classes.py`` before the definition for ``Boy`` with the same attribute and :ref:`method<functions>` of the classes I am trying to abstract
+* I add a new class called ``Human`` to ``classes.py`` before the definition for ``Boy`` with the same attribute and :ref:`method<functions>` of the classes I am trying to abstract
 
   .. code-block:: python
 
@@ -182,7 +182,7 @@ refactor: make it better
   the terminal still shows passing tests
 
 
-* I will make the definitions for ``Boy`` to inherit from the ``Human`` class and all tests are still passing
+* I make the definitions for ``Boy`` to inherit from the ``Human`` class and all tests are still passing
 
   .. code-block:: python
 
@@ -218,7 +218,7 @@ refactor: make it better
             pass
 
 * I remove the ``sex`` attribute and the terminal shows an :ref:`AssertionError`
-* I will make the ``Human`` class to set the ``sex`` attribute in the parent initializer instead of at the child level
+* I make the ``Human`` class to set the ``sex`` attribute in the parent initializer instead of at the child level
 
   .. code-block:: python
 
@@ -243,7 +243,7 @@ refactor: make it better
 
   the terminal shows passing tests. Lovely
 
-* I wonder if I can do the same with the ``Other`` class? I will make the definition to inherit from the ``Human`` class
+* I wonder if I can do the same with the ``Other`` class? I make the definition to inherit from the ``Human`` class
 
   .. code-block:: python
 

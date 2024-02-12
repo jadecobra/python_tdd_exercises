@@ -13,7 +13,7 @@ Project First
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add a test for project first to ``TestBinaryOperations`` in ``test_truth_table.py``
+I add a test for project first to ``TestBinaryOperations`` in ``test_truth_table.py``
 
 .. code-block:: python
 
@@ -29,7 +29,7 @@ green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* then I will add a function definition to ``truth_table.py``
+* then I add a function definition to ``truth_table.py``
 
   .. code-block:: python
 
@@ -37,7 +37,7 @@ green: make it pass
         return False
 
   and the terminal shows an :ref:`AssertionError` for the first case
-* I will make the return statement
+* I make the return statement
 
   .. code-block:: python
 
@@ -45,12 +45,12 @@ green: make it pass
         return True
 
   and the :ref:`AssertionError` is now for the third case
-* before I will add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction``, ``negate_first`` and ``negate_second`` because 2 out of the 4 cases have the same return value. I see that
+* before I add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction``, ``negate_first`` and ``negate_second`` because 2 out of the 4 cases have the same return value. I see that
 
   * when ``p == True`` the result is :doc:`True </data_structures/booleans/booleans>`
   * when ``p == False`` the result is :doc:`False </data_structures/booleans/booleans>`
 
-* I will add conditions to represent this
+* I add conditions to represent this
 
   .. code-block:: python
 
@@ -97,7 +97,7 @@ Project Second
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add a test for project second to ``TestBinaryOperations``
+I add a test for project second to ``TestBinaryOperations``
 
 .. code-block:: python
 
@@ -113,7 +113,7 @@ green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* When I will add a function definition to ``truth_table.py``
+* When I add a function definition to ``truth_table.py``
 
   .. code-block:: python
 
@@ -121,7 +121,7 @@ green: make it pass
         return False
 
   the terminal shows an :ref:`AssertionError` for the first case
-* and I will make the return value to make it pass
+* and I make the return value to make it pass
 
   .. code-block:: python
 
@@ -129,7 +129,7 @@ green: make it pass
         return True
 
   the terminal shows an :ref:`AssertionError` for the second case
-* before I will add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction``, ``negate_first``, ``negate_second`` and ``project_first`` because 2 out of the 4 cases have the same return value. I see that
+* before I add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction``, ``negate_first``, ``negate_second`` and ``project_first`` because 2 out of the 4 cases have the same return value. I see that
 
   * when ``q == True`` the result is :doc:`True </data_structures/booleans/booleans>`
   * when ``q == False`` the result is :doc:`False </data_structures/booleans/booleans>`

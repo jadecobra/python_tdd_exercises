@@ -6,7 +6,7 @@ classes
 
 ``classes`` are things that represents an object. I think of ``classes`` as a a container of :doc:`methods (functions) </functions/functions>` and ``attributes (variables)`` that belong together
 
-I will show the following in this chapter
+I show the following in this chapter
 
 - How to define a class with pass
 - How to define a class with parentheses
@@ -47,7 +47,7 @@ the terminal shows a :ref:`ModuleNotFoundError` because I have an import stateme
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-* I will add :ref:`ModuleNotFoundError` to the list of exceptions encountered
+* I add :ref:`ModuleNotFoundError` to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -55,7 +55,7 @@ green: make it pass
     # AssertionError
     # ModuleNotFoundError
 
-* I make a python module called ``classes.py`` and the terminal shows an :ref:`AttributeError` which I will add to the list of exceptions encountered
+* I make a python module called ``classes.py`` and the terminal shows an :ref:`AttributeError` which I add to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -72,7 +72,7 @@ green: make it pass
 
   and the terminal shows a NameError_ because ``ClassWithPass`` is not defined anywhere
 
-* I will add the error to the list of exceptions encountered
+* I add the error to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -82,7 +82,7 @@ green: make it pass
     # AttributeError
     # NameError
 
-* I will make the name to an assignment to the null value :ref:`None`
+* I make the name to an assignment to the null value :ref:`None`
 
   .. code-block:: python
 
@@ -95,7 +95,7 @@ green: make it pass
     class ClassWithPass:
 
   the terminal shows an :doc:`IndentationError <https://docs.python.org/3/library/exceptions.html?highlight=indentationerror#IndentationError>`_ because I declared a class without adding any indented text
-* I will add the new error to the list of exceptions encountered
+* I add the new error to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -133,7 +133,7 @@ How to define a class with parentheses
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add another test to ``TestClasses`` in ``test_classes.py`` to show another way to create a class
+I add another test to ``TestClasses`` in ``test_classes.py`` to show another way to create a class
 
 .. code-block:: python
 
@@ -146,7 +146,7 @@ green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* I will add a class definition like ``ClassWithPass`` to ``classes.py``
+* I add a class definition like ``ClassWithPass`` to ``classes.py``
 
   .. code-block:: python
 
@@ -157,7 +157,7 @@ green: make it pass
 
   the terminal shows passing tests
 
-* When I will make the definition to include parentheses
+* When I make the definition to include parentheses
 
   .. code-block:: python
 
@@ -186,7 +186,7 @@ To use inheritance I specify the "parent" in parentheses when I define the new o
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add another test to ``TestClasses`` in ``test_classes.py``
+I add another test to ``TestClasses`` in ``test_classes.py``
 
 .. code-block:: python
 
@@ -199,7 +199,7 @@ green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
 
-* I will add a class definition to ``classes.py``
+* I add a class definition to ``classes.py``
 
   .. code-block:: python
 
@@ -210,7 +210,7 @@ green: make it pass
 
   the terminal shows all tests passed
 
-* then I will make the definition to explicitly state the parent `object <https://docs.python.org/3/glossary.html#term-object>`_
+* then I make the definition to explicitly state the parent `object <https://docs.python.org/3/glossary.html#term-object>`_
 
   .. code-block:: python
 

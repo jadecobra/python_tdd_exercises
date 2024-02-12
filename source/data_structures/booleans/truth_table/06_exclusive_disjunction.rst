@@ -11,7 +11,7 @@ The following tests show Exclusive Disjunction from the `Truth Table <https://en
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add a test for exclusive disjunction to ``TestBinaryOperations`` in ``test_truth_table.py``
+I add a test for exclusive disjunction to ``TestBinaryOperations`` in ``test_truth_table.py``
 
 .. code-block:: python
 
@@ -34,7 +34,7 @@ green: make it pass
         return True
 
   the terminal shows an :ref:`AssertionError` for the second case
-* I will add a condition for it
+* I add a condition for it
 
   .. code-block:: python
 
@@ -44,7 +44,7 @@ green: make it pass
         return True
 
   and the terminal shows an :ref:`AssertionError` for the fourth case
-* I will add a condition to resolve it
+* I add a condition to resolve it
 
   .. code-block:: python
 
@@ -92,7 +92,7 @@ refactor: make it better
             return False
         return True
 
-* I will add an ``else`` clause to be explicit
+* I add an ``else`` clause to be explicit
 
   .. code-block:: python
 

@@ -55,7 +55,7 @@ red: make it fail
     import functions
     E  ModuleNotFoundError: No module called 'functions'
 
-* I will add it to the list of Exceptions encountered
+* I add it to the list of Exceptions encountered
 
   .. code-block:: python
 
@@ -73,7 +73,7 @@ green: make it pass
     >    self.assertIsNone(functions.function_a("a"))
     E    AttributeError: module 'functions' has no attribute 'function_a'
 
-  which I will add to the list of Exceptions encountered
+  which I add to the list of Exceptions encountered
 
   .. code-block:: python
 
@@ -82,7 +82,7 @@ green: make it pass
       # ModuleNotFoundError
       # AttributeError
 
-* I will add a name to ``functions.py``
+* I add a name to ``functions.py``
 
   .. code-block:: python
 
@@ -96,7 +96,7 @@ green: make it pass
    E    TypeError: 'NoneType' object is not callable
 
   A reminder of the first encounter with ``TypeError`` from `How to solve the AttributeError by defining a Function <./AttributeError.rst>`_
-* I will add it to the list of exceptions encountered
+* I add it to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -140,7 +140,7 @@ green: make it pass
   This is covered in more depth in :doc:`/functions/functions`
 
 
-* I will make ``function_a`` in ``functions.py``
+* I make ``function_a`` in ``functions.py``
 
   .. code-block:: python
 
@@ -155,7 +155,7 @@ refactor: make it better
 There's not much to do here but add more tests for practice.
 
 
-* I will add a new test to ``test_function_signatures_solve_type_errors`` in ``test_type_error.py``
+* I add a new test to ``test_function_signatures_solve_type_errors`` in ``test_type_error.py``
 
   .. code-block:: python
 
@@ -167,7 +167,7 @@ There's not much to do here but add more tests for practice.
 
     AttributeError: module 'functions' has no attribute 'function_b'
 
-* I will add a name to ``functions.py``
+* I add a name to ``functions.py``
 
   .. code-block:: python
 
@@ -179,7 +179,7 @@ There's not much to do here but add more tests for practice.
 
     TypeError: 'NoneType' object is not callable
 
-* I will make ``function_b`` to a function
+* I make ``function_b`` to a function
 
   .. code-block:: python
 
@@ -195,7 +195,7 @@ There's not much to do here but add more tests for practice.
 
   the offending line ``functions.function_b("a", "b")`` called ``function_b`` with 2 parameters but the definition has the function taking no inputs
 
-* I will make ``function_b`` in ``functions.py``
+* I make ``function_b`` in ``functions.py``
 
   .. code-block:: python
 
@@ -210,7 +210,7 @@ There's not much to do here but add more tests for practice.
 
   ah, the previous definition accepted no positional arguments, and now allows 1 positional argument but I called it with 2 positional arguments.
 
-* I will make ``function_b`` in ``functions.py`` to take in 2 positional arguments
+* I make ``function_b`` in ``functions.py`` to take in 2 positional arguments
 
   .. code-block:: python
 
@@ -226,7 +226,7 @@ More Tests
 red: make it fail
 ~~~~~~~~~~~~~~~~~
 
-I will add a failing test to ``TestTypeErrors`` in ``test_type_error.py``
+I add a failing test to ``TestTypeErrors`` in ``test_type_error.py``
 
 .. code-block:: python
 
@@ -241,7 +241,7 @@ the terminal shows
 green: make it pass
 ~~~~~~~~~~~~~~~~~~~
 
-* I will add a name to ``functions.py``
+* I add a name to ``functions.py``
 
   .. code-block:: python
 
@@ -253,7 +253,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* I will make ``function_c`` a function
+* I make ``function_c`` a function
 
   .. code-block:: python
 
@@ -266,7 +266,7 @@ green: make it pass
 
     TypeError: function_c() takes 0 positional arguments but 3 were given
 
-* I will make the :doc:`signature </functions/functions>` of ``function_c`` to accept one input argument
+* I make the :doc:`signature </functions/functions>` of ``function_c`` to accept one input argument
 
   .. code-block:: python
 
@@ -279,7 +279,7 @@ green: make it pass
 
     TypeError: function_c() takes 1 positional argument but 3 were given
 
-* I will make ``function_c`` in ``functions.py`` to take in another argument
+* I make ``function_c`` in ``functions.py`` to take in another argument
 
   .. code-block:: python
 
@@ -292,7 +292,7 @@ green: make it pass
 
     TypeError: function_c() takes 2 positional arguments but 3 were given
 
-* I will make ``function_c`` in ``functions.py`` to take in one more argument
+* I make ``function_c`` in ``functions.py`` to take in one more argument
 
   .. code-block:: python
 
@@ -304,7 +304,7 @@ green: make it pass
 refactor: make it better
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-* If you are not bored yet, I will add a failing test to ``TestTypeErrors`` in ``test_type_error.py``
+* If you are not bored yet, I add a failing test to ``TestTypeErrors`` in ``test_type_error.py``
 
   .. code-block:: python
 
@@ -316,7 +316,7 @@ refactor: make it better
 
     AttributeError: module 'functions' has no attribute 'function_d'
 
-* I will add a name to ``functions.py``
+* I add a name to ``functions.py``
 
   .. code-block:: python
 
@@ -328,7 +328,7 @@ refactor: make it better
 
     TypeError: 'NoneType' object is not callable
 
-* I will make ``function_d`` in ``functions.py`` to a :ref:`function<functions>`
+* I make ``function_d`` in ``functions.py`` to a :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -341,7 +341,7 @@ refactor: make it better
 
     TypeError: function_d() takes 0 positional arguments but 4 were given
 
-* What if I try the solution for the previous test? I will make the signature of ``function_d`` in ``functions.py``
+* What if I try the solution for the previous test? I make the signature of ``function_d`` in ``functions.py``
 
   .. code-block:: python
 
@@ -354,7 +354,7 @@ refactor: make it better
 
     TypeError: function_d() takes 3 positional arguments but 4 were given
 
-* I will make ``function_d`` in ``functions.py`` to take 4 arguments
+* I make ``function_d`` in ``functions.py`` to take 4 arguments
 
   .. code-block:: python
 

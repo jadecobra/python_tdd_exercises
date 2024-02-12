@@ -25,7 +25,7 @@ requirements
 Add Tests
 ****************
 
-* I will add :ref:`AssertionError` to the list of exceptions encountered ::
+* I add :ref:`AssertionError` to the list of exceptions encountered ::
 
   # Exceptions Encountered
   # AssertionError
@@ -53,7 +53,7 @@ Test Addition
 red: make it fail
 ==================
 
-* I will add a :ref:`method<functions>` called ``test_addition`` to the ``TestCalculator`` :doc:`class </classes/classes>`
+* I add a :ref:`method<functions>` called ``test_addition`` to the ``TestCalculator`` :doc:`class </classes/classes>`
 
   .. code-block:: python
 
@@ -86,7 +86,7 @@ red: make it fail
 green: make it pass
 ====================
 
-* I will add the error to the list of exceptions encountered ::
+* I add the error to the list of exceptions encountered ::
 
     # Exceptions Encountered
     # AssertionError
@@ -114,7 +114,7 @@ green: make it pass
   * ``calculator`` refers to ``calculator.py``
   * ``add`` refers to something (an attribute) within the ``calculator.py`` file
 
-* I will add the error to the list of exceptions encountered ::
+* I add the error to the list of exceptions encountered ::
 
     # Exceptions Encountered
     # AssertionError
@@ -147,7 +147,7 @@ green: make it pass
 
   The :ref:`AttributeError` was fixed by declaring a variable called ``add`` in the ``calculator`` module
 
-* The new error is a :ref:`TypeError` which can occur when an `object <https://docs.python.org/3/glossary.html#term-object>`_ is called in a way that disagrees with the object's definition. In this case the ``add`` variable is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_ because it refers to :ref:`None` which is not a `callable <https://docs.python.org/3/glossary.html#term-callable>`_ object. I will add the error to the list of exceptions encountered ::
+* The new error is a :ref:`TypeError` which can occur when an `object <https://docs.python.org/3/glossary.html#term-object>`_ is called in a way that disagrees with the object's definition. In this case the ``add`` variable is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_ because it refers to :ref:`None` which is not a `callable <https://docs.python.org/3/glossary.html#term-callable>`_ object. I add the error to the list of exceptions encountered ::
 
     # Exceptions Encountered
     # AssertionError
@@ -168,7 +168,7 @@ green: make it pass
 
     TypeError: add() takes 0 positional arguments but 2 were given
 
-* This :ref:`TypeError` shows that the current definition of the ``add`` function takes in 0 inputs, but I provided 2 - ``calculator.add(0, 1)`` in the call. I will make the definition in ``calculator.py`` to make it match the requirement of the ``add`` function taking in two numbers
+* This :ref:`TypeError` shows that the current definition of the ``add`` function takes in 0 inputs, but I provided 2 - ``calculator.add(0, 1)`` in the call. I make the definition in ``calculator.py`` to make it match the requirement of the ``add`` function taking in two numbers
 
   .. code-block:: python
 
@@ -184,7 +184,7 @@ green: make it pass
   - An :ref:`AssertionError` is raised when an assertion is :doc:`False </data_structures/booleans/booleans>`
   - ``self.assertEqual`` raises an :ref:`AssertionError` when the  two inputs it is given are not equal. In other words the result of calling ``calculator.add(0, 1)`` is currently not equal to ``1``
 
-* I will make the function to make it return the expected value
+* I make the function to make it return the expected value
 
   .. code-block:: python
 
@@ -249,7 +249,7 @@ Even though the ``add`` function currently passes the existing test it does not 
 
 * green: make it pass
 
-  I will make the ``add`` function in ``calculator.py`` to add up the inputs it receives
+  I make the ``add`` function in ``calculator.py`` to add up the inputs it receives
 
   .. code-block:: python
 
@@ -333,7 +333,7 @@ red: make it fail
 ===================
 
 
-* I will add a :ref:`method<functions>` called ``test_subtraction`` to ``test_calculator.py``
+* I add a :ref:`method<functions>` called ``test_subtraction`` to ``test_calculator.py``
 
   .. code-block:: python
 
@@ -364,7 +364,7 @@ red: make it fail
 GREEN : make it pass
 =====================
 
-* I will add a variable assignment in ``calculator.py``
+* I add a variable assignment in ``calculator.py``
 
   .. code-block:: python
 
@@ -379,7 +379,7 @@ GREEN : make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* I will make the definition of the ``subtract`` variable to make it callable
+* I make the definition of the ``subtract`` variable to make it callable
 
   .. code-block:: python
 
@@ -392,7 +392,7 @@ GREEN : make it pass
 
     TypeError: subtract() takes 0 positional arguments but 2 were given
 
-* I will make the definition of the ``subtract`` :ref:`function<functions>` to match the expectation
+* I make the definition of the ``subtract`` :ref:`function<functions>` to match the expectation
 
   .. code-block:: python
 
@@ -405,7 +405,7 @@ GREEN : make it pass
 
     AssertionError: None != 0
 
-* When I will make the ``subtract`` function in ``calculator.py`` to perform a subtraction operation on its inputs
+* When I make the ``subtract`` function in ``calculator.py`` to perform a subtraction operation on its inputs
 
   .. code-block:: python
 
@@ -467,7 +467,7 @@ Moving on to test multiplication, the next item on the TODO list
 red: make it fail
 ===================
 
-I will add a failing test called ``test_multiplication`` to ``test_calculator.py``
+I add a failing test called ``test_multiplication`` to ``test_calculator.py``
 
 .. code-block:: python
 
@@ -490,7 +490,7 @@ the terminal shows an :ref:`AttributeError` ::
 GREEN : make it pass
 =====================
 
-using what I know so far I will add a definition for ``multiplication`` to ``calculator.py``
+using what I know so far I add a definition for ``multiplication`` to ``calculator.py``
 
 .. code-block:: python
 
@@ -513,7 +513,7 @@ Test Division
 red: make it fail
 ===================
 
-I will add ``test_division`` to ``test_calculator.py``
+I add ``test_division`` to ``test_calculator.py``
 
 .. code-block:: python
 
@@ -537,7 +537,7 @@ GREEN : make it pass
 =====================
 
 
-* I will add a ``divide`` :ref:`function<functions>` to ``calculator.py``
+* I add a ``divide`` :ref:`function<functions>` to ``calculator.py``
 
   .. code-block:: python
 
@@ -557,7 +557,7 @@ GREEN : make it pass
       >    return x / y
       E    ZeroDivisionError: division by zero
 
-* I will add `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ to the list of exceptions encountered ::
+* I add `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ to the list of exceptions encountered ::
 
     # Exceptions Encountered
     # AssertionError
@@ -573,7 +573,7 @@ How to Test for Errors
 red: make it fail
 ===================
 
-I will add a failing line to ``test_calculator.py`` that causes a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ by explicitly dividing by 0, and comment out test that sometimes fails to remove the variability of the test while I figure out the error
+I add a failing line to ``test_calculator.py`` that causes a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ by explicitly dividing by 0, and comment out test that sometimes fails to remove the variability of the test while I figure out the error
 
 .. code-block:: python
 

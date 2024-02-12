@@ -24,7 +24,7 @@ requirements
 red: make it fail
 *************************
 
-* I will add a failing test to ``test_exceptions.py``
+* I add a failing test to ``test_exceptions.py``
 
   .. code-block:: python
 
@@ -41,7 +41,7 @@ red: make it fail
 green: make it pass
 *************************
 
-* I will add a new `import`` statement
+* I add a new `import`` statement
 
   .. code-block:: python
 
@@ -55,7 +55,7 @@ green: make it pass
 
     AttributeError: module 'exceptions' has no attribute 'raises_exception'
 
-* I will add a name for the attribute to ``exceptions.py``
+* I add a name for the attribute to ``exceptions.py``
 
   .. code-block:: python
 
@@ -79,7 +79,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* I will add the error to the list of exceptions encountered
+* I add the error to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -110,7 +110,7 @@ green: make it pass
 
     Exception: BOOM
 
-* I will add a ``with self.assertRaises`` context to ``test_catching_exceptions`` in ``test_exceptions.py`` to confirm that the exception is raised and allow the tests to continue
+* I add a ``with self.assertRaises`` context to ``test_catching_exceptions`` in ``test_exceptions.py`` to confirm that the exception is raised and allow the tests to continue
 
   .. code-block:: python
 
@@ -137,7 +137,7 @@ How to catch things that fail
 red: make it fail
 ==================
 
-I will add a new failing test to ``test_exceptions.py``
+I add a new failing test to ``test_exceptions.py``
 
 .. code-block:: python
 
@@ -158,7 +158,7 @@ the terminal shows an :ref:`AttributeError`
 green: make it pass
 ====================
 
-* I will add a name to ``exceptions.py``
+* I add a name to ``exceptions.py``
 
   .. code-block:: python
 
@@ -182,7 +182,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* When I will make ``exception_handler`` to a function
+* When I make ``exception_handler`` to a function
 
   .. code-block:: python
 
@@ -195,7 +195,7 @@ green: make it pass
 
     TypeError: exception_handler() takes 0 positional arguments but 1 was given
 
-* I will make the :doc:`function signature </functions/functions>` for ``exception_handler`` to accept a positional argument
+* I make the :doc:`function signature </functions/functions>` for ``exception_handler`` to accept a positional argument
 
   .. code-block:: python
 
@@ -208,7 +208,7 @@ green: make it pass
 
     AssertionError: None != 'failed'
 
-* I will make ``exception_handler`` to return ``'failed'`` and the test passes
+* I make ``exception_handler`` to return ``'failed'`` and the test passes
 
   .. code-block:: python
 
@@ -224,7 +224,7 @@ red: make it fail
 
 the solution has a problem, the ``exception_handler`` always returns ``'failed'`` regardless of what I provide as an argument. It is a :doc:`singleton function </functions/functions_singleton>`.
 
-I will add a new test that provides a different input with an expectation of a different result
+I add a new test that provides a different input with an expectation of a different result
 
 .. code-block:: python
 
@@ -245,7 +245,7 @@ the terminal shows an :ref:`AttributeError`
 green: make it pass
 ====================
 
-* I will add ``does_not_raise_exception`` to ``exceptions.py``
+* I add ``does_not_raise_exception`` to ``exceptions.py``
 
   .. code-block:: python
 
@@ -291,7 +291,7 @@ green: make it pass
     >       return function()
     E       TypeError: 'NoneType' object is not callable
 
-* I will make ``does_not_raise_exception`` to a function to make it `callable <https://docs.python.org/3/glossary.html#term-callable>`_
+* I make ``does_not_raise_exception`` to a function to make it `callable <https://docs.python.org/3/glossary.html#term-callable>`_
 
   .. code-block:: python
 
@@ -312,14 +312,14 @@ green: make it pass
 How to use try...except...else
 *****************************************
 
-I will add a `try statement`_statement to ``exception_handler`` in ``exceptions.py`` to handle exceptions
+I add a `try statement`_statement to ``exception_handler`` in ``exceptions.py`` to handle exceptions
 
 .. code-block:: python
 
   def exception_handler(function):
       try:
           function()
-      except Exception:
+      except ValueError:
           return 'failed'
       else:
           return 'succeeded'
@@ -329,13 +329,13 @@ and the terminal shows passing tests. The `try statement`_ is used to catch/hand
 I think of the  `try statement`_statement as
 
 * ``try`` **this**
-* ``except Exception`` - when **this** raises an ``Exception`` do something
+* ``except ValueError`` - when **this** raises an ``Exception`` do something
 * ``else`` - when **this** does not raise an ``Exception`` do something else
 
 In this case
 
 * ``try`` **calling** ``function()``
-* ``except Exception`` - when **calling** ``function()`` raises an ``Exception`` return ``'failed'``
+* ``except ValueError`` - when **calling** ``function()`` raises an ``Exception`` return ``'failed'``
 * ``else`` - when **calling** ``function()`` does NOT raise an ``Exception`` return ``'succeeded'``
 
 
@@ -348,7 +348,7 @@ There is an extra clause in the `try <https://docs.python.org/3/reference/compou
 red: make it fail
 =========================
 
-I will add a failing test to ``test_exceptions.py``
+I add a failing test to ``test_exceptions.py``
 
 .. code-block:: python
 
@@ -369,7 +369,7 @@ the terminal shows an :ref:`AttributeError`
 green: make it pass
 =========================
 
-* I will add a name to ``exceptions.py``
+* I add a name to ``exceptions.py``
 
   .. code-block:: python
 
@@ -406,7 +406,7 @@ green: make it pass
 
     TypeError: always_returns() takes 0 positional arguments but 1 was given
 
-* I will make the signature of ``always_returns`` to accept a function, and return the result of calling it
+* I make the signature of ``always_returns`` to accept a function, and return the result of calling it
 
   .. code-block:: python
 
@@ -419,14 +419,14 @@ green: make it pass
 
     AssertionError: None != 'always returns this'
 
-* I will add exception handling using ``try...except...else``
+* I add exception handling using ``try...except...else``
 
   .. code-block:: python
 
     def always_returns(function):
         try:
             function()
-        except Exception:
+        except ValueError:
             return 'failed'
         else:
             return 'succeeded'
@@ -468,7 +468,7 @@ green: make it pass
 
   the terminal shows passing tests. The ``finally`` clause is always run regardless of what happens in the ``try..except..else`` blocks
 
-* I will add one more test to show that the code in the ``finally`` block will always run
+* I add one more test to show that the code in the ``finally`` block will always run
 
   .. code-block:: python
 
@@ -492,7 +492,7 @@ green: make it pass
 
     AssertionError: 'always returns this' != 'succeeded'
 
-* I will make ``'succeeded'`` to match the expected value
+* I make ``'succeeded'`` to match the expected value
 
   .. code-block:: python
 

@@ -39,7 +39,7 @@ the terminal shows an :ref:`AssertionError`
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-When I will make the ``assertIsNotNone`` to ``assertIsNone`` in ``test_none_is_none``
+When I make the ``assertIsNotNone`` to ``assertIsNone`` in ``test_none_is_none``
 
 .. code-block:: python
 
@@ -65,7 +65,7 @@ Is None a boolean?
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add a new test to compare `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ with :doc:`booleans </data_structures/booleans/booleans>`
+I add a new test to compare `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ with :doc:`booleans </data_structures/booleans/booleans>`
 
 .. code-block:: python
 
@@ -82,7 +82,7 @@ the terminal shows an :ref:`AssertionError`
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I will make ``assertIsNone`` to ``assertIsNotNone`` in ``test_is_none_a_boolean`` to make the tests pass
+I make ``assertIsNone`` to ``assertIsNotNone`` in ``test_is_none_a_boolean`` to make the tests pass
 
 .. code-block:: python
 
@@ -104,7 +104,7 @@ refactor: make it better
 
 * red: make it fail
 
-  I will add a test with ``self.assertIsInstance`` to ``test_is_none_a_boolean``
+  I add a test with ``self.assertIsInstance`` to ``test_is_none_a_boolean``
 
   .. code-block:: python
 
@@ -121,7 +121,7 @@ refactor: make it better
 
 * green: make it pass
 
-  I will make ``assertIsInstance`` to ``assertNotIsInstance`` in ``test_is_none_a_boolean`` to make the test pass
+  I make ``assertIsInstance`` to ``assertNotIsInstance`` in ``test_is_none_a_boolean`` to make the test pass
 
   .. code-block:: python
 
@@ -158,7 +158,7 @@ Is None an integer?
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add a new test to compare `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ with `integers <https://docs.python.org/3/library/functions.html#int>`_
+I add a new test to compare `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ with `integers <https://docs.python.org/3/library/functions.html#int>`_
 
 .. code-block:: python
 
@@ -177,7 +177,7 @@ the terminal shows an :ref:`AssertionError`
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I will make ``assertIsNone`` to ``assertIsNotNone`` in ``test_is_none_an_integer`` to make it pass
+I make ``assertIsNone`` to ``assertIsNotNone`` in ``test_is_none_an_integer`` to make it pass
 
 .. code-block:: python
 
@@ -194,7 +194,7 @@ refactor: make it better
 
 * red: make it fail
 
-  I will add a ``self.assertIsInstance`` test to ``test_is_none_an_integer``
+  I add a ``self.assertIsInstance`` test to ``test_is_none_an_integer``
 
   .. code-block:: python
 
@@ -212,7 +212,7 @@ refactor: make it better
 
 * green: make it pass
 
-  I will make ``assertIsInstance`` to ``assertNotIsInstance`` in ``test_is_none_an_integer`` to make the test pass
+  I make ``assertIsInstance`` to ``assertNotIsInstance`` in ``test_is_none_an_integer`` to make the test pass
 
   .. code-block:: python
 
@@ -236,7 +236,7 @@ Is None a float?
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add a new test to compare `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ with `floats <https://docs.python.org/3/library/functions.html#float>`_
+I add a new test to compare `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ with `floats <https://docs.python.org/3/library/functions.html#float>`_
 
 .. code-block:: python
 
@@ -254,7 +254,7 @@ the terminal shows an :ref:`AssertionError`
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I will make ``assertIsNone`` to ``assertIsNotNone`` in ``test_is_none_a_float`` to make the test pass
+I make ``assertIsNone`` to ``assertIsNotNone`` in ``test_is_none_a_float`` to make the test pass
 
 .. code-block:: python
 
@@ -270,7 +270,7 @@ refactor: make it better
 
 * red: make it fail
 
-  I will add a ``self.assertIsInstance`` line to ``test_is_none_a_float``
+  I add a ``self.assertIsInstance`` line to ``test_is_none_a_float``
 
   .. code-block:: python
 
@@ -287,7 +287,7 @@ refactor: make it better
 
 * green: make it pass
 
-  I will make ``assertIsInstance`` to ``assertNotIsInstance`` in ``test_is_none_a_float`` to make the test pass
+  I make ``assertIsInstance`` to ``assertNotIsInstance`` in ``test_is_none_a_float`` to make the test pass
 
   .. code-block:: python
 
@@ -308,7 +308,7 @@ From the tests I see that
 Is None a string?
 ========================================================
 
-I will add a test for `strings <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_. A string is any character(s) inside single, double or triple quotes for example
+I add a test for `strings <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_. A string is any character(s) inside single, double or triple quotes for example
 
 * ``'single quotes'``
 * ``"double quotes"``
@@ -320,7 +320,7 @@ see :doc:`/conventions` for a little more detail
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add a new failing test to ``test_none.py`` to compare `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ with a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
+I add a new failing test to ``test_none.py`` to compare `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ with a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
 
 .. code-block:: python
 
@@ -338,7 +338,7 @@ and the terminal shows an :ref:`AssertionError`
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I will make ``assertIsNone`` to ``assertIsNotNone`` in ``test_is_none_a_string`` to make it pass
+I make ``assertIsNone`` to ``assertIsNotNone`` in ``test_is_none_a_string`` to make it pass
 
 .. code-block:: python
 
@@ -349,12 +349,12 @@ I will make ``assertIsNone`` to ``assertIsNotNone`` in ``test_is_none_a_string``
 refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-`strings <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ are represented by the str_ class in Python, I will add an instance test
+`strings <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ are represented by the str_ class in Python, I add an instance test
 
 
 * red: make it fail
 
-  I will add a failing test to ``test_is_none_a_string`` with a ``self.assertIsInstance`` statement
+  I add a failing test to ``test_is_none_a_string`` with a ``self.assertIsInstance`` statement
 
   .. code-block:: python
 
@@ -371,7 +371,7 @@ refactor: make it better
 
 * green: make it pass
 
-  To make it pass I will make ``assertIsInstance`` to ``assertNotIsInstance``
+  To make it pass I make ``assertIsInstance`` to ``assertNotIsInstance``
 
   .. code-block:: python
 
@@ -396,7 +396,7 @@ Is None a tuple?
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add a new test to ``test_none.py`` to find out if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a `tuple <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_
+I add a new test to ``test_none.py`` to find out if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a `tuple <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_
 
 .. code-block:: python
 
@@ -417,7 +417,7 @@ the terminal shows an :ref:`AssertionError`
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^^
 
-* I will make ``assertIsNone`` to ``assertIsNotNone`` in ``test_is_none_a_tuple`` to make the first two lines pass
+* I make ``assertIsNone`` to ``assertIsNotNone`` in ``test_is_none_a_tuple`` to make the first two lines pass
 
   .. code-block:: python
 
@@ -432,7 +432,7 @@ green: make it pass
 
     AssertionError: None is not an instance of <class 'tuple'>
 
-* I will make ``assertIsInstance`` to ``assertNotIsInstance`` to make it pass
+* I make ``assertIsInstance`` to ``assertNotIsInstance`` to make it pass
 
   .. code-block:: python
 
@@ -463,7 +463,7 @@ Is None a list?
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add a new test to the series of tests to check if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a :doc:`list </data_structures/lists/lists>`
+I add a new test to the series of tests to check if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a :doc:`list </data_structures/lists/lists>`
 
 .. code-block:: python
 
@@ -484,7 +484,7 @@ the terminal shows an :ref:`AssertionError`
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I have done this dance a few times. I will make ``assertIsNone`` to ``assertIsNotNone`` and ``assertIsInstance`` to ``assertNotIsInstance`` in ``test_is_none_a_list`` to make it pass.
+I have done this dance a few times. I make ``assertIsNone`` to ``assertIsNotNone`` and ``assertIsInstance`` to ``assertNotIsInstance`` in ``test_is_none_a_list`` to make it pass.
 
 With the passing tests I see that
 
@@ -504,7 +504,7 @@ Is None a set?
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-following the same pattern from earlier, I will add a new failing test for `sets <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_
+following the same pattern from earlier, I add a new failing test for `sets <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_
 
 .. code-block:: python
 
@@ -523,7 +523,7 @@ the terminal shows an :ref:`AssertionError`
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I will make ``assertIsNone`` to ``assertIsNotNone`` and ``assertIsInstance`` to ``assertNotIsInstance`` in ``test_is_none_a_set`` to make it pass.
+I make ``assertIsNone`` to ``assertIsNotNone`` and ``assertIsInstance`` to ``assertNotIsInstance`` in ``test_is_none_a_set`` to make it pass.
 
 From the tests I see that
 
@@ -544,7 +544,7 @@ Is None a dictionary?
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add a new test to compare `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ with :doc:`dictionaries </data_structures/dictionaries>`
+I add a new test to compare `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ with :doc:`dictionaries </data_structures/dictionaries>`
 
 .. code-block:: python
 
@@ -570,7 +570,7 @@ the terminal shows an :ref:`AssertionError`
 
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
-I will make the tests to make them pass and can see from the tests that
+I make the tests to make them pass and can see from the tests that
 
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`dictionary </data_structures/dictionaries>`
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_

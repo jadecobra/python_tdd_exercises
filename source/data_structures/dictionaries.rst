@@ -15,14 +15,14 @@ How to create a dictionary with strings as keys
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add a file called ``test_dictionaries.py`` to the ``tests`` folder with the following import statements
+I add a file called ``test_dictionaries.py`` to the ``tests`` folder with the following import statements
 
 .. code-block:: python
 
   import unittest
   import dictionaries
 
-the terminal shows a :ref:`ModuleNotFoundError`\  which I will add to the list of exceptions encountered
+the terminal shows a :ref:`ModuleNotFoundError`\  which I add to the list of exceptions encountered
 
 .. code-block:: python
 
@@ -37,7 +37,7 @@ adding a file called ``dictionaries.py`` to the project folder makes the test pa
 refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-* I will add a failing test to show how to create a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+* I add a failing test to show how to create a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
   .. code-block:: python
 
@@ -49,7 +49,7 @@ refactor: make it better
               {"key": "value"}
           )
 
-  the terminal shows an :ref:`AttributeError` which I will add to the list of exceptions encountered
+  the terminal shows an :ref:`AttributeError` which I add to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -57,7 +57,7 @@ refactor: make it better
     # ModuleNotFoundError
     # AttributeError
 
-* I will add a function definition to ``dictionaries.py``
+* I add a function definition to ``dictionaries.py``
 
   .. code-block:: python
 
@@ -70,7 +70,7 @@ refactor: make it better
 
     AssertionError: None != {'key': 'value'}
 
-* I will make the return statement to return an empty `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+* I make the return statement to return an empty `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
   .. code-block:: python
 
@@ -88,14 +88,14 @@ refactor: make it better
   - the value on the right ``{'key': 'value'}`` is what is expected
   - ``!=`` means ``not equal to``
 
-* I will make the return statement with the expected values and I get a passing test. YES! We are off to a good start
+* I make the return statement with the expected values and I get a passing test. YES! We are off to a good start
 
   .. code-block:: python
 
     def a_dict():
         return {'key': 'value'}
 
-* it is also possible to create a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ using the `dict <https://docs.python.org/3/library/stdtypes.html#dict>`_ constructor. I will add another test to ``test_creating_dictionaries_with_strings_as_keys``
+* it is also possible to create a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ using the `dict <https://docs.python.org/3/library/stdtypes.html#dict>`_ constructor. I add another test to ``test_creating_dictionaries_with_strings_as_keys``
 
   .. code-block:: python
 
@@ -116,7 +116,7 @@ refactor: make it better
       AssertionError: {'key': 'value'} != {'key': 'key'}
 
 
-  so I will make the test to make it pass
+  so I change the test to make it pass
 
   .. code-block:: python
 
@@ -150,7 +150,7 @@ refactor: make it better
 
     AssertionError: {'key': 'value'} != {'key': 'key'}
 
-* I will make the test to make it pass
+* I change the test to make it pass
 
   .. code-block:: python
 
@@ -167,7 +167,7 @@ How to create a dictionary with numbers as keys
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add a failing test to ``TestDictionaries``
+I add a failing test to ``TestDictionaries``
 
 .. code-block:: python
 
@@ -187,7 +187,7 @@ the terminal shows an :ref:`AssertionError` since the two values are different
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I will make the values in the test to make it pass
+I make the values in the test to make it pass
 
 .. code-block:: python
 
@@ -224,7 +224,7 @@ refactor: make it better
     - {2.5: 'works'}
     + {2.5: 'fails'}
 
-* I will make the values in the test to make it pass
+* I make the values in the test to make it pass
 
   .. code-block:: python
 
@@ -250,7 +250,7 @@ I wonder if it is possible to use :doc:`False </data_structures/booleans/boolean
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add a test to find out if it is possible to use :doc:`False </data_structures/booleans/booleans>` as a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ key
+I add a test to find out if it is possible to use :doc:`False </data_structures/booleans/booleans>` as a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ key
 
 .. code-block:: python
 
@@ -274,7 +274,7 @@ the terminal shows an :ref:`AssertionError`
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I will make the values to make them match and tests are green again. Sweet!
+I make the values to make them match and tests are green again. Sweet!
 
 .. code-block:: python
 
@@ -289,7 +289,7 @@ I can use :doc:`False </data_structures/booleans/booleans>` as a key in a `dicti
 refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-* I will add a test to find out if it is possible to use :doc:`True </data_structures/booleans/booleans>` as a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ key
+* I add a test to find out if it is possible to use :doc:`True </data_structures/booleans/booleans>` as a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ key
 
   .. code-block:: python
 
@@ -314,7 +314,7 @@ refactor: make it better
     + {True: 'boom'}
     ?
 
-* and I will make the values to make the tests pass
+* and I make the values to make the tests pass
 
   .. code-block:: python
 
@@ -338,7 +338,7 @@ How to create a dictionary with tuples as keys
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add a test to ``TestDictionaries`` to see if I can use tuples as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
+I add a test to ``TestDictionaries`` to see if I can use tuples as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
 
 .. code-block:: python
 
@@ -362,7 +362,7 @@ the terminal shows an :ref:`AssertionError`
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I will make the values to make the test pass
+I make the values to make the test pass
 
 .. code-block:: python
 
@@ -381,7 +381,7 @@ Can I make a Dictionary with a list as a key?
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add a test to ``TestDictionaries`` using a :doc:`list </data_structures/lists/lists>` as a key
+I add a test to ``TestDictionaries`` using a :doc:`list </data_structures/lists/lists>` as a key
 
 .. code-block:: python
 
@@ -394,7 +394,7 @@ the terminal shows a :ref:`TypeError` because only `hashable <https://docs.pytho
 
   E    TypeError: unhashable type: 'list'
 
-I will add :ref:`TypeError` to the list of exceptions encountered
+I add :ref:`TypeError` to the list of exceptions encountered
 
 .. code-block:: python
 
@@ -406,7 +406,7 @@ I will add :ref:`TypeError` to the list of exceptions encountered
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I can use ``self.assertRaises`` to confirm that an error is raised by some code without having it crash the tests. I will use it here to confirm that Python raises a :ref:`TypeError` when I try to create a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a :doc:`list </data_structures/lists/lists>` as the key
+I can use ``self.assertRaises`` to confirm that an error is raised by some code without having it crash the tests. I use it here to confirm that Python raises a :ref:`TypeError` when I try to create a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a :doc:`list </data_structures/lists/lists>` as the key
 
 .. code-block:: python
 
@@ -460,7 +460,7 @@ Can I make a Dictionary with a dictionary as a key?
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add a new test
+I add a new test
 
 .. code-block:: python
 
@@ -478,7 +478,7 @@ and the terminal shows a :ref:`TypeError`
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I will add an exception handler to the test to confirm the findings
+I add an exception handler to the test to confirm the findings
 
 .. code-block:: python
 
@@ -515,7 +515,7 @@ The tests so far show how to create `dictionaries <https://docs.python.org/3/lib
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add a test to ``TestDictionaries`` in ``test_dictionaries.py``
+I add a test to ``TestDictionaries`` in ``test_dictionaries.py``
 
 .. code-block:: python
 
@@ -532,7 +532,7 @@ the terminal shows an :ref:`AssertionError` because ``bob`` is not equal to ``va
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I will make the expected value to make the tests pass
+I make the expected value to make the tests pass
 
 .. code-block:: python
 
@@ -564,7 +564,7 @@ refactor: make it better
 
     AssertionError: Lists differ: ['value1', 'value2', 'value3', 'valueN'] != []
 
-* the tests pass when I will make the values in the test to make them match the result
+* the tests pass when I make the values in the test to make them match the result
 
   .. code-block:: python
 
@@ -607,7 +607,7 @@ refactor: make it better
 
     AssertionError: Lists differ: ['key1', 'key2', 'key3', 'keyN'] != []
 
-* I will add the values to the empty list in the test to make it pass
+* I add the values to the empty list in the test to make it pass
 
   .. code-block:: python
 
@@ -638,7 +638,7 @@ Sometimes when I try to access values in a `dictionary <https://docs.python.org/
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add a test for both cases
+I add a test for both cases
 
 .. code-block:: python
 
@@ -664,7 +664,7 @@ A KeyError_ is raised when a `dictionary <https://docs.python.org/3/library/stdt
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-* I will add KeyError_ to the list of exceptions encountered
+* I add KeyError_ to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -696,7 +696,7 @@ green: make it pass
     >       a_dictionary['ky1']
     E       KeyError: 'ky1'
 
-  and I will add it to the exception handler to make the test pass
+  and I add it to the exception handler to make the test pass
 
   .. code-block:: python
 
@@ -717,7 +717,7 @@ refactor: make it better
 What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a key that does not exist and not have Python raise an error when it does not find the key?
 
 
-* I will add a test called ``test_how_to_get_a_value_when_a_key_does_not_exist`` to ``TestDictionaries``
+* I add a test called ``test_how_to_get_a_value_when_a_key_does_not_exist`` to ``TestDictionaries``
 
   .. code-block:: python
 
@@ -772,7 +772,7 @@ What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datas
     >       self.assertIsNone(a_dictionary.get('non_existent_key', False))
     E       AssertionError: False is not None
 
-  so I will make the value to make the test pass
+  so I make the value to make the test pass
 
   .. code-block:: python
 
@@ -806,7 +806,7 @@ What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datas
     >       self.assertEqual(a_dictionary.get('key1', None), None)
     E       AssertionError: 'value1' != None
 
-* I will make the test to make it pass.
+* I change the test to make it pass.
 
   .. code-block:: python
 
@@ -826,12 +826,12 @@ Do you think you could write an implementation for the ``get`` method after read
 How to view the attributes and methods of a dictionary
 -------------------------------------------------------
 
-The chapter on :doc:`/classes/classes` shows how to view the :doc:`attributes </exceptions/AttributeError>` and :ref:`methods<functions>` of an object. Let us look at the attributes and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+The chapter on :doc:`/classes/classes` shows how to view the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of an object. Let us look at the attributes and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add a new test to ``TestDictionaries``
+I add a new test to ``TestDictionaries``
 
 .. code-block:: python
 
@@ -940,7 +940,7 @@ Let us say I want to find out more about the `setdefault <https://docs.python.or
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add a failing test
+I add a failing test
 
 .. code-block:: python
 
@@ -953,7 +953,7 @@ and the terminal shows a KeyError_
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I will add ``self.assertRaises`` to confirm that a KeyError_ gets raised for the test to pass
+I add ``self.assertRaises`` to confirm that a KeyError_ gets raised for the test to pass
 
 .. code-block:: python
 
@@ -966,7 +966,7 @@ I will add ``self.assertRaises`` to confirm that a KeyError_ gets raised for the
 refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Then I will add a test for `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_
+* Then I add a test for `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_
 
   .. code-block:: python
 
@@ -991,7 +991,7 @@ refactor: make it better
     + {'bippity': 'boppity'}
 
 
-* I will make the test to make it pass
+* I change the test to make it pass
 
   .. code-block:: python
 
@@ -1031,7 +1031,7 @@ refactor: make it better
         )
         self.assertIsNone(a_dictionary['another_key'])
 
-* I will now add a test for setting the default value to something other than :ref:`None`
+* I now add a test for setting the default value to something other than :ref:`None`
 
   .. code-block:: python
 
@@ -1052,7 +1052,7 @@ refactor: make it better
     - {'a_new_key': 'a_default_value', 'another_key': None, 'bippity': 'boppity'}
     + {'another_key': None, 'bippity': 'boppity'}
 
-* I will add the new values to the test to make it pass
+* I add the new values to the test to make it pass
 
   .. code-block:: python
 
@@ -1065,7 +1065,7 @@ refactor: make it better
         }
     )
 
-  all tests pass, and I will add what I know about `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_ to the list of attributes and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+  all tests pass, and I add what I know about `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_ to the list of attributes and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
 How to update a dictionary with another dictionary
 ---------------------------------------------------
@@ -1075,7 +1075,7 @@ What if I want to add the ``keys`` and ``values`` of one `dictionary <https://do
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add another test to ``TestDictionaries``
+I add another test to ``TestDictionaries``
 
 .. code-block:: python
 
@@ -1113,7 +1113,7 @@ the terminal shows an :ref:`AssertionError` because the values of ``a_dictionary
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I will make the values to make the test pass
+I make the values to make the test pass
 
 .. code-block:: python
 
@@ -1146,7 +1146,7 @@ I can remove an item from a `dictionary <https://docs.python.org/3/tutorial/data
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I will add a failing test to ``TestDictionaries``
+I add a failing test to ``TestDictionaries``
 
 .. code-block:: python
 
@@ -1170,7 +1170,7 @@ the terminal shows an :ref:`AssertionError`
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-* I will add the correct value to the test to make it pass
+* I add the correct value to the test to make it pass
 
   .. code-block:: python
 
