@@ -1016,7 +1016,7 @@ refactor: make it better
 test_duration_calculation
 ========================================================
 
-The ``duration`` :ref:`function<functions>` currently returns a subtraction of hours and a subtraction of minutes which is not correct for calculating the difference between two timestamps.
+The ``duration`` :ref:`function<functions>` currently returns a subtraction of hours and a subtraction of minutes which is not correct for calculating the difference between two timestamps
 
 .. _test_duration_calculation_red:
 
@@ -1066,9 +1066,9 @@ green: make it pass
 
 * then add a new ``duration`` :ref:`function<functions>` with the following steps to calculate a real difference between two timestamps
 
-  - convert each timestamp to its total minutes by multiplying the hour by 60 and adding the minutes
-  - subtract total ``sleep_time`` minutes from total ``wake_time`` minutes
-  - return the difference between total ``wake_time`` and ``sleep_time`` as hours and minutes by
+  - get total minutes for each timestamp by multiplying the hour by 60 and adding the minutes
+  - get the difference by subtracting total ``sleep_time`` minutes from total ``wake_time`` minutes
+  - return the difference between total ``wake_time`` and ``sleep_time`` minutes as hours and minutes by
 
     * using `floor (integer) division`_ to get the whole number value of dividing the difference by 60 to get the hours
     * using the modulo_ operator to get the remainder from dividing the difference by 60 to get the minutes
@@ -1121,12 +1121,12 @@ green: make it pass
             f'{difference_hours:02}:{difference_minutes:02}'
         )
 
-  I have passing tests again. Green is a beautiful color
+  and I have passing tests again! Green is a beautiful color.
 
 test_floor_aka_integer_division
 ========================================================
 
-The ``//`` operator returns a whole number that tells how many times the denominator can be multiplied to get a whole number that is equal to or less than the numerator
+The ``//`` operator returns a whole number that tells how many times the bottom number can be multiplied to get a whole number that is equal to or less than the top number
 
 .. _test_floor_aka_integer_division_red:
 
@@ -1155,25 +1155,25 @@ and the terminal shows an :ref:`AssertionError`
 green: make it pass
 --------------------------------------------------------
 
-* I make the first expected value in the test to the correct value. The result of dividing ``120`` by ``60`` is ``2`` with a remainder of ``0``
+* I change the first expected value in the test to the correct value. The result of dividing ``120`` by ``60`` is ``2`` with a remainder of ``0``
 
   .. code-block:: python
 
     self.assertEqual(120//60, 2)
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows an :ref:`AssertionError` for the next line
 
   .. code-block:: python
 
     AssertionError: 2 != 0
 
-* I make the second expected value in the test to the correct value. The result of dividing ``150`` by ``60`` is ``2`` with a remainder of ``30``
+* I change the second expected value in the test to the correct value. The result of dividing ``150`` by ``60`` is also ``2`` but with a remainder of ``30``
 
   .. code-block:: python
 
     self.assertEqual(150//60, 2)
 
-  the terminal shows all tests are passing
+  and the terminal shows all tests are passing
 
 test_modulo_operation
 ========================================================
