@@ -1284,3 +1284,26 @@ green: make it pass
 
 * I remove ``get_hour`` and ``get_minutes`` since they have been replaced by ``parse_timestamp``
 * I remove ``test_duration_calculation`` from ``test_sleep_duration.py`` since it is now covered by ``test_duration_w_hours_and_minutes``
+
+----
+
+test_duration_w_earlier_wake_than_sleep_time
+========================================================
+
+What happens when the ``duration`` :ref:`function<functions>` is given an earlier ``wake_time`` than ``sleep_time``?
+
+.. _test_duration_w_earlier_wake_than_sleep_time_red:
+
+red: make it fail
+--------------------------------------------------------
+I add a new failing test to ``test_sleep_duration.py`` to find out
+
+.. code-block:: python
+
+  def test_duration_w_earlier_wake_than_sleep_time(self):
+      self.assertEqual(
+          sleep_duration.duration(
+              wake_time='01:00',
+              sleep_time='02:00'
+          )
+      )

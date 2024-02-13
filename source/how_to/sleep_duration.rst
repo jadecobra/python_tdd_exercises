@@ -1297,7 +1297,7 @@ What happens when the ``duration`` :ref:`function<functions>` is given an earlie
 red: make it fail
 --------------------------------------------------------
 
-I add a new failing test to ``test_sleep_duration.py`` to find out
+I will add a new failing test to ``test_sleep_duration.py`` to find out
 
 .. code-block:: python
 
