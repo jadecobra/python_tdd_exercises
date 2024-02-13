@@ -1207,7 +1207,7 @@ and the terminal shows an :ref:`AssertionError`
 green: make it pass
 --------------------------------------------------------
 
-* I make the first expected value in the test to the correct value. The remainder from dividing ``120`` by ``60`` is ``0``
+* I change the first expected value in the test to the correct value. The remainder from dividing ``120`` by ``60`` is ``0``
 
   .. code-block:: python
 
@@ -1219,7 +1219,7 @@ green: make it pass
 
     AssertionError: 30 != 2
 
-* I make the second expected value in the test to the correct value. The remainder from dividing ``150`` by ``60`` is ``30``
+* I change the second expected value in the test to the correct value. The remainder from dividing ``150`` by ``60`` is ``30``
 
   .. code-block:: python
 
@@ -1265,9 +1265,9 @@ green: make it pass
 
         return f'{difference_hours:02}:{difference_minutes:02}'
 
-  the terminal shows all tests are still passing. Which of the last two blocks of code do you like?
+  the terminal shows all tests are still passing
 
-* I can make a :ref:`function<functions>` to replace ``get_hour`` and ``get_minutes``
+* I can also write a :ref:`function<functions>` to replace ``get_hour`` and ``get_minutes`` and call it in ``get_total_minutes``
 
   .. code-block:: python
 
@@ -1282,8 +1282,8 @@ green: make it pass
 
   all tests are still passing
 
-* I remove ``get_hour`` and ``get_minutes``
-* I remove ``test_duration_calculation`` since it is now covered by ``test_duration_w_hours_and_minutes``
+* I remove ``get_hour`` and ``get_minutes`` since they have been replaced by ``parse_timestamp``
+* I remove ``test_duration_calculation`` from ``test_sleep_duration.py`` since it is now covered by ``test_duration_w_hours_and_minutes``
 
 ----
 

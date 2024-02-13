@@ -1150,7 +1150,7 @@ and the terminal shows an :ref:`AssertionError`
 
   AssertionError: 2 != 0
 
-.. test_floor_aka_integer_division_green:
+.. _test_floor_aka_integer_division_green:
 
 green: make it pass
 --------------------------------------------------------
@@ -1162,6 +1162,8 @@ green: make it pass
     self.assertEqual(120//60, 2)
 
   the terminal shows an :ref:`AssertionError` for the next line
+
+  .. code-block:: python
 
     AssertionError: 2 != 0
 
@@ -1176,3 +1178,109 @@ green: make it pass
 test_modulo_operation
 ========================================================
 
+The ``%`` operator returns the remainder from dividing one number by another
+
+.. _test_modulo_operation_red:
+
+red: make it fail
+--------------------------------------------------------
+
+I add a test for it
+
+.. code-block:: python
+
+  def test_modulo_operation(self):
+      self.assertEqual(120%60, 2)
+      self.assertEqual(150%60, 2)
+
+  def test_duration_w_hours_and_minutes(self):
+  ...
+
+and the terminal shows an :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: 0 != 2
+
+.. _test_modulo_operation_green:
+
+green: make it pass
+--------------------------------------------------------
+
+* I change the first expected value in the test to the correct value. The remainder from dividing ``120`` by ``60`` is ``0``
+
+  .. code-block:: python
+
+    self.assertEqual(120%60, 0)
+
+  and the terminal shows an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 30 != 2
+
+* I change the second expected value in the test to the correct value. The remainder from dividing ``150`` by ``60`` is ``30``
+
+  .. code-block:: python
+
+    self.assertEqual(150%60, 30)
+
+  the terminal shows passing tests
+
+----
+
+* I remove ``duration_a`` since the working solution in ``duration`` is better
+* and then I write a :ref:`function<functions>` to get the total minutes from a timestamp and call it in ``duration``
+
+  .. code-block:: python
+
+    def get_total_minutes(timestamp):
+        return (
+            (get_hour(timestamp) * 60)
+           + get_minutes(timestamp)
+        )
+
+    def duration(wake_time=None, sleep_time=None):
+        wake_time_minutes = get_total_minutes(wake_time)
+        sleep_time_minutes = get_total_minutes(sleep_time)
+        difference = wake_time_minutes - sleep_time_minutes
+        difference_hours = difference // 60
+        difference_minutes = difference % 60
+
+        return f'{difference_hours:02}:{difference_minutes:02}'
+
+  the terminal still shows passing tests
+
+* I remove the ``wake_time_minutes`` and ``sleep_time_minutes`` variables from ``duration`` since I only use them when I calculate the difference
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        difference = (
+            get_total_minutes(wake_time)
+          - get_total_minutes(sleep_time)
+        )
+        difference_hours = difference // 60
+        difference_minutes = difference % 60
+
+        return f'{difference_hours:02}:{difference_minutes:02}'
+
+  the terminal shows all tests are still passing
+
+* I can also write a :ref:`function<functions>` to replace ``get_hour`` and ``get_minutes`` and call it in ``get_total_minutes``
+
+  .. code-block:: python
+
+    def parse_timestamp(timestamp=None, index=0):
+        return int(timestamp.split(':')[index])
+
+    def get_total_minutes(timestamp):
+        return (
+            (parse_timestamp(timestamp, 0) * 60)
+           + parse_timestamp(timestamp, 1)
+        )
+
+  all tests are still passing
+
+* I remove ``get_hour`` and ``get_minutes`` since they have been replaced by ``parse_timestamp``
+* I remove ``test_duration_calculation`` from ``test_sleep_duration.py`` since it is now covered by ``test_duration_w_hours_and_minutes``
