@@ -1941,4 +1941,28 @@ From the tests, I know I can
 
         sleep_hour = random.randint(0, 23)
         sleep_minutes = random.randint(0, 59)
-        sleep_time = f'31/12/99 {sleep_hour:02}:{s'
+        sleep_time = f'31/12/99 {sleep_hour:02}:{sleep_minutes:02}'
+
+        pattern = '%d/%m/%y %H:%M'
+        difference = (
+            datetime.datetime.strptime(wake_time, pattern)
+          - datetime.datetime.strptime(sleep_time, pattern)
+        )
+
+        try:
+            self.assertEqual(
+                sleep_duration.duration(
+                    wake_time=wake_time,
+                    sleep_time=sleep_time
+                ),
+                str(difference)
+            )
+        except ValueError:
+            with self.assertRaisesRegex(
+                ValueError,
+                f'wake_time: {wake_time} is earlier '
+                f'than sleep_time: {sleep_time}'
+            ):
+                sleep_duration.duration(
+                    wake_time=
+                )

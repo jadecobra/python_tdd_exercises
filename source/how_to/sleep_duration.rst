@@ -1944,7 +1944,6 @@ From the tests, I know I can
         sleep_time = f'31/12/99 {sleep_hour:02}:{sleep_minutes:02}'
 
         pattern = '%d/%m/%y %H:%M'
-
         difference = (
             datetime.datetime.strptime(wake_time, pattern)
           - datetime.datetime.strptime(sleep_time, pattern)
