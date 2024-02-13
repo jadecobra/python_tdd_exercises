@@ -1863,7 +1863,7 @@ From the tests, I know I can
             difference_minutes = difference % 60
             return f'{difference_hours:02}:{difference_minutes:02}'
 
-* then I add a new ``duration`` :ref:`function<fucntions>` with a call to ``get_datetime_object``
+* then I add a new ``duration`` :ref:`function<functions>` with a call to ``get_datetime_object``
 
   .. code-block:: python
 
@@ -1895,7 +1895,7 @@ From the tests, I know I can
 
   .. code-block:: python
 
-    AssertionError: "wake_time: 10:52 is earlier than sleep_time: 04:00" does not match "time data: '10:52' does not match format '%d/%m/%y %H:%M'"
+    AssertionError: "wake_time: 10:52 is earlier than sleep_time: 04:00" does not match "time data '10:52' does not match format '%d/%m/%y %H:%M'"
 
   I have another ValueError_, this time for a timestamp that does not match the expected pattern of ``'%d/%m/%y %H:%M'``
 
@@ -1928,7 +1928,7 @@ From the tests, I know I can
 
     AssertionError: "wake_time: 31/12/99 12:47 is earlier than sleep_time: 31/12/99 20:11" does not match "wake_time: 1999-12-31 12:47:00 is earlier than sleep_time: 1999-12-31 20:11:00"
 
-  there is a ValueError_ with a different message than the one `unittest.TestCase.assertRaisesRegex`_ expects. The timestamp formats do not match because the ``duration`` :ref:`function<functions>` uses `datetime.datetime` objects in the message when it raises the :doc:`Exception </how_to/exceptions_handling_programs>` and ``test_duration_w_date_and_time`` does not
+  there is a ValueError_ with a different message than the one `unittest.TestCase.assertRaisesRegex`_ expects. The timestamp formats do not match because the ``duration`` :ref:`function<functions>` uses `datetime.datetime`_ objects in the message when it raises the :doc:`Exception </how_to/exception_handling_programs>` and ``test_duration_w_date_and_time`` does not
 
 * I make ``test_duration_w_date_and_time`` use the right format and remove unused variables
 
@@ -1967,3 +1967,19 @@ From the tests, I know I can
                     wake_time=wake_time,
                     sleep_time=sleep_time
                 )
+
+  the terminal randomly shows an :ref:`AssertionError` that looks like this when ``wake_time`` is earlier than ``sleep_time``
+
+  .. code-block:: python
+
+    AssertionError: "wake_time: 31/12/99 05:07 is earlier than sleep_time: 31/12/99 05:36" does not match "wake_time: 1999-12-31 05:07:00 is earlier than sleep_time: 1999-12-31 05:36:00"
+
+* I need to make the error message in ``test_duration_w_date_and_time`` use `datetime.datetime`_ objects
+
+  .. code-block:: python
+
+    def test_duration_w_date_and_time(self):
+        pattern = '%d/%m/%y %H:%M'
+
+        wake_hour = random.randint(0, 23)
+        wake_minutes = random.r

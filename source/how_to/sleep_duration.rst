@@ -1831,7 +1831,7 @@ From the tests, I know I can
 ----
 
 * I remove the `unittest.skip decorator`_ from ``test_duration_w_date_and_time`` to return to the ValueError_ that sent me down this path
-* I add a :ref:`function<functions>` for converting timestamps called ``get_datetime_object`` to ``sleep_duration.py``
+* then I add a :ref:`function<functions>` for converting timestamps called ``get_datetime_object`` to ``sleep_duration.py``
 
   .. code-block:: python
 
@@ -1880,7 +1880,7 @@ From the tests, I know I can
 
     NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
 
-  Yes I did. I encountered this earlier when testing the datetime_ module
+  You know I did. I encountered this earlier when testing the datetime_ module
 
 * I add an `import statement`_ to the top of ``sleep_duration.py``
 
