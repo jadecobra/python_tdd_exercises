@@ -1618,7 +1618,7 @@ green: make it pass
     Except February, twenty-eight days clear
     and twenty-nine in each leap year
 
-  I instead do a search for `time difference <https://docs.python.org/3/search.html?q=time+difference>`_ in the `python online documentation`_ to see if there is an existing solution, and select the datetime_ module since it looks like the solution to this problem. Reading through the available types in the module, I see
+  I do a search for `time difference <https://docs.python.org/3/search.html?q=time+difference>`_ in the `python online documentation`_ instead, to see if there is an existing solution. I select the datetime_ module since it looks like the solution for this problem. Reading through the available types in the module, I see
 
   .. code-block:: python
 
@@ -1897,19 +1897,13 @@ From the tests, I know I can
 
     AssertionError: "wake_time: 10:52 is earlier than sleep_time: 04:00" does not match "time data '10:52' does not match format '%d/%m/%y %H:%M'"
 
-  I have another ValueError_ this time for a timestamp that does not match the expected pattern of ``'%d/%m/%y %H:%M'``
+  I have another ValueError_, this time for a timestamp that does not match the expected pattern of ``'%d/%m/%y %H:%M'``
 
 * I remove ``test_duration_w_hours_and_minutes`` since it is now covered by ``test_duration_w_date_and_time`` and the terminal shows an :ref:`AssertionError` that looks like this
 
   .. code-block:: python
 
     AssertionError: '8:50:00' != '08:50'
-
-  the terminal shows another :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: ValueError not raised
 
 * the ``duration`` function is missing the check for when ``wake_time`` is earlier than ``sleep_time`` so I add it
 
