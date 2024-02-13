@@ -1911,4 +1911,34 @@ From the tests, I know I can
 
     def duration(wake_time=None, sleep_time=None):
         wake_time = get_datetime_object(wake_time)
-        sleep_time = get_datetime_object()
+        sleep_time = get_datetime_object(sleep_time)
+
+        if wake_time < sleep_time:
+            raise ValueError(
+                f'wake_time: {wake_time} is earlier '
+                f'than sleep_time: {sleep_time}'
+            )
+        else:
+            difference = wake_time - sleep_time
+            return str(difference)
+
+  and the terminal shows an :ref:`AssertionError` that looks like this
+
+  .. code-block:: python
+
+    AssertionError: "wake_time: 31/12/99 12:47 is earlier than sleep_time: 31/12/99 20:11" does not match "wake_time: 1999-12-31 12:47:00 is earlier than sleep_time: 1999-12-31 20:11:00"
+
+  there is a ValueError_ with a different message than the one `unittest.TestCase.assertRaisesRegex`_ expects. The timestamp formats do not match because the ``duration`` :ref:`function<functions>` uses `datetime.datetime` objects in the message when it raises the :doc:`Exception </how_to/exceptions_handling_programs>` and ``test_duration_w_date_and_time`` does not
+
+* I make ``test_duration_w_date_and_time`` use the right format and remove unused variables
+
+  .. code-block:: python
+
+    def test_duration_w_date_and_time(self):
+        wake_hour = random.randint(0, 23)
+        wake_minutes = random.randint(0, 59)
+        wake_time = f'31/12/99 {wake_hour:02}:{wake_minutes:02}'
+
+        sleep_hour = random.randint(0, 23)
+        sleep_minutes = random.randint(0, 59)
+        sleep_time = f'31/12/99 {sleep_hour:02}:{s'
