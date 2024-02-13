@@ -1296,7 +1296,8 @@ What happens when the ``duration`` :ref:`function<functions>` is given an earlie
 
 red: make it fail
 --------------------------------------------------------
-I add a new failing test to ``test_sleep_duration.py`` to find out
+
+I will add a new failing test to ``test_sleep_duration.py`` to find out
 
 .. code-block:: python
 
@@ -1305,5 +1306,93 @@ I add a new failing test to ``test_sleep_duration.py`` to find out
           sleep_duration.duration(
               wake_time='01:00',
               sleep_time='02:00'
-          )
+          ),
+          ''
       )
+
+the terminal shows an :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: '-1:00' != ''
+
+.. _test_duration_w_earlier_wake_than_sleep_time_green:
+
+green: make it pass
+--------------------------------------------------------
+
+I change the expected value in the test to make it pass
+
+.. code-block:: python
+
+  def test_duration_w_earlier_wake_than_sleep_time(self):
+      self.assertEqual(
+          sleep_duration.duration(
+              wake_time='01:00',
+              sleep_time='02:00'
+          ),
+          '-1:00'
+      )
+
+and the terminal shows green again
+
+.. _test_duration_w_earlier_wake_than_sleep_time_refactor:
+
+refactor: make it better
+--------------------------------------------------------
+
+* The ``duration`` :ref:`function<functions>` currently returns negative numbers when given an earlier ``wake_time`` than ``sleep_time``. It measures a time traveling scenario where the traveler can go to sleep in the present and wake up in the past. I want it to only return durations when ``wake_time`` is not earlier than ``sleep_time``, time traveling is too hard
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        difference = (
+            get_total_minutes(wake_time)
+          - get_total_minutes(sleep_time)
+        )
+
+        if difference < 0:
+            raise ValueError(
+                f'wake_time: {wake_time} is earlier '
+                f'than sleep_time: {sleep_time}'
+            )
+        else:
+            difference_hours = difference // 60
+            difference_minutes = difference % 60
+            return f'{difference_hours:02}:{difference_minutes:02}'
+
+  - When ``difference`` is less than ``0``, ``wake_time`` is earlier than ``sleep_time`` and the ``duration`` :ref:`function<functions>` will raise an :doc:`Exception </how_to/exception_handling_programs>`
+  - When ``difference`` is greater than or equal to ``0``, ``wake_time`` is later than or the same as ``sleep_time`` and the ``duration`` :ref:`function<functions>` returns the difference between the two timestamps
+
+  In the random cases where ``wake_time`` is earlier than ``sleep_time`` in ``test_duration_w_earlier_wake_than_sleep_time`` and ``test_duration_w_hours_and_minutes`` the terminal shows a ValueError_ that looks like this
+
+  .. code-block:: python
+
+    ValueError: wake_time: 20:26 is earlier than sleep_time: 23:50
+
+* I add the error to the list of exceptions encountered even though I made this one happen
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AssertionError
+    # NameError
+    # AttributeError
+    # TypeError
+    # SyntaxError
+    # ValueError
+
+* I use `unittest.TestCase.assertRaises`_ to catch the :doc:`Exception </how_to/exception_handling_tests>`in ``test_duration_w_earlier_wake_than_sleep_time``
+
+  .. code-block:: python
+
+    def test_duration_w_earlier_wake_than_sleep_time(self):
+        with self.assertRaises(ValueError):
+            sleep_duration.duration(
+                wake_time='01:00',
+                sleep_time='02:00'
+            )
+
+  and the test passes, leaving the random ValueError_ for ``test_duration_w_hours_and_minutes``
+
+* I add an :doc:`exception handler </how_to/exception_handling_programs>` using a `try statement`

@@ -1321,7 +1321,7 @@ the terminal shows an :ref:`AssertionError`
 green: make it pass
 --------------------------------------------------------
 
-I make the expected value in the test to make it pass
+I change the expected value in the test to make it pass
 
 .. code-block:: python
 
@@ -1334,7 +1334,7 @@ I make the expected value in the test to make it pass
           '-1:00'
       )
 
-green again
+and the terminal shows green again
 
 .. _test_duration_w_earlier_wake_than_sleep_time_refactor:
 
@@ -1364,7 +1364,7 @@ refactor: make it better
   - When ``difference`` is less than ``0``, ``wake_time`` is earlier than ``sleep_time`` and the ``duration`` :ref:`function<functions>` will raise an :doc:`Exception </how_to/exception_handling_programs>`
   - When ``difference`` is greater than or equal to ``0``, ``wake_time`` is later than or the same as ``sleep_time`` and the ``duration`` :ref:`function<functions>` returns the difference between the two timestamps
 
-  the terminal shows a ValueError_ for ``test_duration_w_earlier_wake_than_sleep_time`` and ``test_duration_w_hours_and_minutes`` for the random values where ``wake_time`` is earlier than ``sleep_time``. For example,
+  In the random cases where ``wake_time`` is earlier than ``sleep_time`` in ``test_duration_w_earlier_wake_than_sleep_time`` and ``test_duration_w_hours_and_minutes``, the terminal shows a ValueError_ that looks like this
 
   .. code-block:: python
 
