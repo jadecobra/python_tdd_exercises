@@ -842,7 +842,7 @@ I can try out any ideas since all the tests are passing. Time for a break.
 test_duration_w_hours_and_minutes
 ========================================================
 
-So far the ``duration`` :ref:`function<functions>` only returns the duration when given sleep and wake time hours without taking minutes into account. For it to meet the requirements, it has to accept timestamps with hours and minutes
+The ``duration`` :ref:`function<functions>` has only been tested with timestamps that contain random hours and ``00`` as the minutes. For it to meet the requirements, it has to accept timestamps with random hours and random minutes.
 
 .. _test_duration_w_hours_and_minutes_red:
 
@@ -850,7 +850,7 @@ red: make it fail
 --------------------------------------------------------
 
 * I copy ``test_duration_w_hours`` in ``test_sleep_duration.py`` and paste it below the original
-* then rename the copy to ``test_duration_w_hours_and_minutes`` and add variables for minutes
+* then rename the copy to ``test_duration_w_hours_and_minutes`` adding variables for handling the random minutes
 
   .. code-block:: python
 
@@ -877,19 +877,18 @@ red: make it fail
   .. code-block:: python
 
     AssertionError: 4 != '4:-20'
+    AssertionError: 6 != '-7:00'
+    AssertionError: -5 != '-15:-37'
+    AssertionError: -8 != '-40:-40'
 
-  .. NOTE::
-
-    Your results may be different because the timestamps are random numbers
+  the ``duration`` :ref:`function<functions>` returned the numbers on the left and ``test_duration_w_hours_and_minutes`` expected the strings_ on the right. I changed the expected duration to a string_ that contains the subtraction of ``sleep_hour`` from ``wake_hour`` and the subtraction of ``sleep_minutes`` from ``wake_minutes`` separated by a ``:``
 
 .. _test_duration_w_hours_and_minutes_green:
 
 green: make it pass
 --------------------------------------------------------
 
-I changed the expected duration to a string_ that contains the subtraction of ``sleep_hour`` from ``wake_hour``, and the subtraction of ``sleep_minutes`` from ``wake_minutes``, separated by ``:``
-
-* When I make the output of the ``duration`` :ref:`function<functions>` match the format of the expected value in the test
+* I make the output of the ``duration`` :ref:`function<functions>` match the format of the expected value in the test
 
   .. code-block:: python
 
@@ -904,17 +903,33 @@ I changed the expected duration to a string_ that contains the subtraction of ``
         )
         return f'{difference_hours}:{difference_minutes}'
 
-  the terminal shows an :ref:`AssertionError` because ``test_duration_w_hours`` expects an integer_ not a string_
+  and the terminal shows an :ref:`AssertionError` for ``test_duration_w_hours`` because it expects an integer_ not a string_
 
   .. code-block:: python
 
-    AssertionError: '-4:-4' != -4
+    AssertionError: '5:5' != 5
+    AssertionError: '-8:-8' != -8
+    AssertionError: '1:1' != 1
+    AssertionError: '-3:-3' != -3
 
-  .. NOTE::
+  and an :ref:`AssertionError` for ``test_duration_w_hours_and_minutes`` because ``duration`` returns the same value for ``difference_hours`` and ``difference_minutes``
 
-    Your results may be different because the timestamps are random numbers
+  .. code-block:: python
 
-* I make ``test_duration_w_hours`` use the new format
+    AssertionError: '7:7' != '07:-13'
+    AssertionError: '-16:-16' != '-16:-22'
+    AssertionError: '14:14' != '14:36'
+    AssertionError: '-2:-2' != '-2:-49'
+
+* The change for the new test has made ``test_duration_w_hours`` fail so I disable ``test_duration_w_hours_and_minutes`` with the `unittest.skip decorator`_ while I fix the failure
+
+  .. code-block:: python
+
+    @unittest.skip
+    def test_duration_w_hours_and_minutes(self):
+    ...
+
+* then I make ``test_duration_w_hours`` use the new format
 
   .. code-block:: python
 
@@ -930,15 +945,18 @@ I changed the expected duration to a string_ that contains the subtraction of ``
             f'{wake_hour-sleep_hour}:00'
         )
 
-  the terminal shows an :ref:`AssertionError` that looks like this
+  and the terminal shows an :ref:`AssertionError` that looks like this
 
   .. code-block:: python
 
-    AssertionError: '9:9' != '09:-7'
+    AssertionError: '1:1' != '1:00'
+    AssertionError: '-19:-19' != '-19:00'
+    AssertionError: '17:17' != '17:00'
+    AssertionError: '-8:-8' != '-8:00'
 
-  ``duration`` currently uses ``get_hour`` for both hours and minutes. I need to make a :ref:`function<functions>` to use in the calculation for minutes
+  the ``duration`` :ref:`function<functions>` returned the strings_ on the left which uses ``get_hour`` for the hours and minutes and ``test_duration_w_hours`` expected the strings_ on the right which always have ``00`` as minutes. I need to update the calculation for ``difference_minutes``
 
-* I copy and paste ``get_hour`` and rename it ``get_minutes`` then change the index to ``1`` to get the second part from splitting the timestamp
+* I copy and paste ``get_hour`` in ``sleep_duration.py`` then change the name to ``get_minutes`` and change the index to ``1`` to get the minutes part from splitting the timestamp
 
   .. code-block:: python
 
@@ -948,9 +966,7 @@ I changed the expected duration to a string_ that contains the subtraction of ``
     def get_minutes(timestamp):
         return int(timestamp.split(':')[1])
 
-  the terminal still shows an :ref:`AssertionError`
-
-* and I add calls to ``get_minutes`` in the calculation for ``difference_minutes``
+* then I add calls to ``get_minutes`` in the calculation for ``difference_minutes``
 
   .. code-block:: python
 
@@ -965,11 +981,16 @@ I changed the expected duration to a string_ that contains the subtraction of ``
         )
         return f'{difference_hours}:{difference_minutes}'
 
-  ``test_duration_w_hours_and_minutes`` passes, leaving an :ref:`AssertionError` for ``test_duration_w_hours`` that looks like this
+  and the terminal shows an :ref:`AssertionError` that looks like this
 
   .. code-block:: python
 
-    AssertionError: '-8:0' != '-8:00'
+    AssertionError: '4:0' != '4:00'
+    AssertionError: '-4:0' != '-4:00'
+    AssertionError: '21:0' != '21:00'
+    AssertionError: '-10:0' != '-10:00'
+
+  the ``duration`` :ref:`function<functions>` returned the the right value for hours and minutes, but displays 1 digit for minutes while ``test_duration_w_hours`` expected 2 digits for minutes
 
 * I make ``duration`` show two digits for hours and minutes in the result
 
@@ -986,7 +1007,15 @@ I changed the expected duration to a string_ that contains the subtraction of ``
         )
         return f'{difference_hours:02}:{difference_minutes:02}'
 
-  and update ``test_duration_w_hours`` to show two digits for the hours
+  and the terminal shows random successes and :ref:`AssertionErrors<AssertionError>` like
+
+  .. code-block:: python
+
+    AssertionError: '06:00' != '6:00'
+
+  the ``duration`` :ref:`function<functions>` returned the the hours as 2 digits for hours while ``test_duration_w_hours`` expected 1 digits for hours
+
+* I add ``difference_hours`` to ``test_duration_w_hours`` so it can show 2 digits for hours
 
   .. code-block:: python
 
@@ -1003,6 +1032,10 @@ I changed the expected duration to a string_ that contains the subtraction of ``
             ),
             f'{difference_hours:02}:00'
         )
+
+  and all tests are passing, we are green again
+
+* I remove the `unittest.skip decorator`_ from ``test_duration_w_hours_and_minutes`` and the terminal still shows passing tests. Making sure ``test_duration_w_hours`` passed, also made ``test_duration_w_hours_and_minutes`` pass
 
 .. _test_duration_w_hours_and_minutes_refactor:
 
@@ -1483,7 +1516,7 @@ Time to take a break.
 test_duration_w_date_and_time
 ========================================================
 
-So far, the ``duration`` :ref:`function<functions>` has been tested with timestamps that only contain hours and minutes, but I could fall asleep on a Monday and wake up on a Tuesday. What would happen if I added dates to the timestamps?
+The ``duration`` :ref:`function<functions>` has been tested with timestamps that only contain hours and minutes but no date. I could fall asleep on a Monday and wake up on a Tuesday. What would happen if I added dates to the timestamps?
 
 .. _test_duration_w_date_and_time_red:
 
@@ -1785,7 +1818,7 @@ test_converting_timedelta_to_string
 red: make it fail
 --------------------------------------------------------
 
-* So far the `datetime.timedelta`_ object I get shows seconds, but I want the result as a string_. I add a test to see what happens when I pass it to the str_ constructor
+* The `datetime.timedelta`_ object I get shows seconds, but I want the result as a string_. What happens when I pass it to the str_ constructor?
 
   .. code-block:: python
 
