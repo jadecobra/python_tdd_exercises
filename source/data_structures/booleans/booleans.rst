@@ -924,7 +924,7 @@ From the tests I see that
 
 I can sum this up as
 
-* all `objects <https://docs.python.org/3/glossary.html#term-object>`_ that contain things are `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
+* all `objects <https://docs.python.org/3/glossary.html#term-object>`_ that have things are `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
 * empty `objects <https://docs.python.org/3/glossary.html#term-object>`_ including ``0`` and :ref:`None` are `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
 

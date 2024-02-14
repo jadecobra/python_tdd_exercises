@@ -842,7 +842,7 @@ I can try out any ideas since all the tests are passing. Time for a break.
 test_duration_w_hours_and_minutes
 ========================================================
 
-The ``duration`` :ref:`function<functions>` has only been tested with timestamps that contain random hours and ``00`` as the minutes. For it to meet the requirements, it has to accept timestamps with random hours and random minutes.
+The ``duration`` :ref:`function<functions>` has only been tested with timestamps that have random hours and ``00`` as the minutes. For it to meet the requirements, it has to accept timestamps with random hours and random minutes.
 
 .. _test_duration_w_hours_and_minutes_red:
 
@@ -1516,14 +1516,15 @@ Time to take a break.
 test_duration_w_date_and_time
 ========================================================
 
-The ``duration`` :ref:`function<functions>` has been tested with timestamps that only contain hours and minutes but no date. I could fall asleep on a Monday and wake up on a Tuesday. What would happen if I added dates to the timestamps?
+The ``duration`` :ref:`function<functions>` has been tested with timestamps that only have hours and minutes but no date. I could fall asleep on a Monday and wake up on a Tuesday. What would happen if I added dates to the timestamps?
 
 .. _test_duration_w_date_and_time_red:
 
 red: make it fail
 --------------------------------------------------------
 
-* I add a failing test to ``test_sleep_duration.py`` based on ``test_duration_w_hours_and_minutes`` and call it ``test_duration_w_date_and_time`` to test ``duration`` with a date, hours and minutes
+* I copy ``test_duration_w_hours_and_minutes`` and paste it below the original
+* then call the copy ``test_duration_w_date_and_time`` to test ``duration`` with timestamps that have a date, hours and minutes
 
   .. code-block:: python
 
@@ -1567,7 +1568,7 @@ red: make it fail
 
     AssertionError: "wake_time: 31/12/99 10:07 is earlier than sleep_time: 31/12/99 05:25" does not match "invalid literal for int() with base 10: '31/12/99 10'"
 
-  it looks like the ``duration`` :ref:`function<functions>` encountered a ValueError_ with a different message than the one expected in the test. The `unittest.TestCase.assertRaisesRegex`_ test works. The test would have missed this if I did not specify what error message to catch
+  it looks like ``test_duration_w_date_and_time`` encountered a ValueError_ with a different message than the one expected in the test. The `unittest.TestCase.assertRaisesRegex`_ test works, the test would have missed this if I did not specify what error message to catch
 
 .. _test_duration_w_date_and_time_green:
 
@@ -1580,29 +1581,33 @@ green: make it pass
 
     invalid literal for int() with base 10: '31/12/99 10'
 
-* The `str.split`_ :ref:`method<functions>` was given a separator of ``':'`` when the timestamp contained only hours and minutes, but behaves differently when given a date. I add a test for this to ``test_string_splitting``
+* The `str.split`_ :ref:`method<functions>` was given a separator of  a ``':'`` when the timestamp contained only hours and minutes, but behaves differently when the timestamp has a date. I add a test for this to ``test_string_splitting``
 
   .. code-block:: python
 
-    self.assertEqual(
-        '31/12/99 10:07'.split(':')[0],
-        ''
-    )
+    def test_string_splitting(self):
+        self.assertEqual(
+            '01:23'.split(':'),
+            ['01', '23']
+        )
+        self.assertEqual(
+            '12:34'.split(':')[0],
+            '12'
+        )
+        self.assertEqual(
+            '12:34'.split(':')[1],
+            '34'
+        )
+        self.assertEqual(
+            '31/12/99 10:07'.split(':')[0],
+            ''
+        )
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows the :ref:`AssertionError` for ``test_duration_w_date_and_time`` and another for ``test_string_splitting``
 
   .. code-block:: python
 
     AssertionError: '31/12/99 10' != ''
-
-* I update the test with the correct values to make it pass
-
-  .. code-block:: python
-
-    self.assertEqual(
-        '31/12/99 10:07'.split(':')[0],
-        '31/12/99 10'
-    )
 
 * I disable ``test_duration_w_date_and_time`` by adding the `unittest.skip decorator`_
 
@@ -1612,6 +1617,17 @@ green: make it pass
     @unittest.skip
     def test_duration_w_date_and_time(self):
     ...
+
+* then update ``test_string_splitting`` with the correct values to make it pass
+
+  .. code-block:: python
+
+    self.assertEqual(
+        '31/12/99 10:07'.split(':')[0],
+        '31/12/99 10'
+    )
+
+
 
 * then add a test to ``test_converting_string_to_integer`` to confirm the cause of the ValueError_
 

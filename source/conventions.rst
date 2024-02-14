@@ -61,7 +61,7 @@ The following are a few conventions to know in Python
 
     {1, 2.5, 'three', (4, 'five')}
 
-* Dictionaries/Mappings are also represented with curly braces/brackets but contain key/value pairs
+* Dictionaries/Mappings are also represented with curly braces/brackets but have key/value pairs
 
   .. code-block:: python
 

@@ -13,7 +13,7 @@ A `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ 
 
 * Lists are represented with ``[]``
 * Lists can be created with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor
-* Lists can contain any `object <https://docs.python.org/3/glossary.html#term-object>`_
+* Lists can hold any `object <https://docs.python.org/3/glossary.html#term-object>`_
 * Lists can be changed after creation by performing an operation, they are mutable
 * Lists can be looped over
 
@@ -169,7 +169,7 @@ Since I know how to add an item to a `list <https://docs.python.org/3/library/st
         a_list.remove(2)
         self.assertEqual(a_list, [0, 1, 2, 3])
 
-the terminal shows an :ref:`AssertionError` because the values in ``a_list`` no longer contain ``2`` after the call ``a_list.remove(2)``
+the terminal shows an :ref:`AssertionError` because the values in ``a_list`` no longer hold ``2`` after the call ``a_list.remove(2)``
 
 .. code-block:: python
 

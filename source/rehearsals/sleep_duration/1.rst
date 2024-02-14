@@ -1448,7 +1448,7 @@ Time to take a break.
 test_duration_given_date_and_time
 ===========================================
 
-The ``duration`` :ref:`function<functions>` has been tested with timestamps that contain only hours and minutes, but I could fall asleep on a Monday and wake up on a Tuesday. What would happen if I added dates to the timestamps?
+The ``duration`` :ref:`function<functions>` has been tested with timestamps that have only hours and minutes, but I could fall asleep on a Monday and wake up on a Tuesday. What would happen if I added dates to the timestamps?
 
 red: make it fail
 --------------------------------------------
