@@ -327,8 +327,8 @@ As an exercise I add more tests to ``test_text_messages`` to see what happens wh
   I make the test match the expectation ::
 
     self.assertEqual(
-        telephone.text((1, 2, 3, 'n')),
-        "I received this message: (1, 2, 3, 'n')"
+        telephone.text([1, 2, 3, 'n']),
+        "I received this message: [1, 2, 3, 'n']"
     )
 
 * and add a test for `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ ::

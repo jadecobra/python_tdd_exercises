@@ -874,11 +874,17 @@ red: make it fail
             f'{difference_hours:02}:{difference_minutes:02}'
         )
 
-  the terminal shows an :ref:`AssertionError` that looks like this
+  the terminal shows an :ref:`AssertionError` for ``test_duration_w_hours_and_minutes`` that looks like this
 
   .. code-block:: python
 
     AssertionError: 4 != '4:-20'
+
+  and one for ``test_duration_w_hours`` that looks like this
+
+  .. code-block:: python
+
+    AssertionError: '9:9' != '09:-7'
 
   .. NOTE::
 
