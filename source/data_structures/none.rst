@@ -147,7 +147,7 @@ I want to know if `None <https://docs.python.org/3/library/constants.html?highli
 * is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_?
 * is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_?
 * is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ a :doc:`list </data_structures/lists/lists>`?
-* is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ a `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_?
+* is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ a set_?
 * is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ a :doc:`dict </data_structures/dictionaries>`?
 
 ----
@@ -158,7 +158,7 @@ Is None an integer?
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add a new test to compare `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ with `integers <https://docs.python.org/3/library/functions.html#int>`_
+I add a new test to compare `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ with an :ref:`integer<int>`_
 
 .. code-block:: python
 
@@ -189,7 +189,7 @@ I make ``assertIsNone`` to ``assertIsNotNone`` in ``test_is_none_an_integer`` to
 refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-`integers <https://docs.python.org/3/library/functions.html#int>`_ are represented by the `int <https://docs.python.org/3/library/functions.html#int>`_ :doc:`class </classes/classes>` in Python, I can add an instance test like I did with :doc:`booleans </data_structures/booleans/booleans>`
+:ref:`integers<int>`_ are represented by the `int <https://docs.python.org/3/library/functions.html#int>`_ :doc:`class </classes/classes>` in Python, I can add an instance test like I did with :doc:`booleans </data_structures/booleans/booleans>`
 
 
 * red: make it fail
@@ -236,7 +236,7 @@ Is None a float?
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add a new test to compare `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ with `floats <https://docs.python.org/3/library/functions.html#float>`_
+I add a new test to compare `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ with floats_
 
 .. code-block:: python
 
@@ -265,7 +265,7 @@ I make ``assertIsNone`` to ``assertIsNotNone`` in ``test_is_none_a_float`` to ma
 refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-`floats <https://docs.python.org/3/library/functions.html#float>`_ are represented by the `float <https://docs.python.org/3/library/functions.html#float>`_ :doc:`class </classes/classes>` in Python, I can do an instance test
+floats_ are represented by the `float <https://docs.python.org/3/library/functions.html#float>`_ :doc:`class </classes/classes>` in Python, I can do an instance test
 
 
 * red: make it fail
@@ -527,7 +527,7 @@ I make ``assertIsNone`` to ``assertIsNotNone`` and ``assertIsInstance`` to ``ass
 
 From the tests I see that
 
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a set_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`list </data_structures/lists/lists>`
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
@@ -573,7 +573,7 @@ green: make it pass
 I make the tests to make them pass and can see from the tests that
 
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`dictionary </data_structures/dictionaries>`
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a set_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`list </data_structures/lists/lists>`
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_

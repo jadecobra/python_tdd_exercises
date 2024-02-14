@@ -281,7 +281,7 @@ green: make it pass
     def exception_handler(function):
         return function()
 
-  the terminal shows a :ref:`TypeError` because ``does_not_raise_exception`` is not  `callable <https://docs.python.org/3/glossary.html#term-callable>`_
+  the terminal shows a :ref:`TypeError` because ``does_not_raise_exception`` is not  callable_
 
   .. code-block:: python
 
@@ -291,7 +291,7 @@ green: make it pass
     >       return function()
     E       TypeError: 'NoneType' object is not callable
 
-* I make ``does_not_raise_exception`` to a function to make it `callable <https://docs.python.org/3/glossary.html#term-callable>`_
+* I make ``does_not_raise_exception`` to a function to make it callable_
 
   .. code-block:: python
 

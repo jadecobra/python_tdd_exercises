@@ -96,7 +96,7 @@ green: make it pass
 
     text = None
 
-  and the terminal shows a :ref:`TypeError` because ``text`` is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_
+  and the terminal shows a :ref:`TypeError` because ``text`` is not callable_
 
   .. code-block:: python
 
@@ -112,7 +112,7 @@ green: make it pass
     # AttributeError
     # TypeError
 
-- I make ``text`` in ``telephone.py`` to a :ref:`function<functions>` to make it `callable <https://docs.python.org/3/glossary.html#term-callable>`_
+- I make ``text`` in ``telephone.py`` to a :ref:`function<functions>` to make it callable_
 
   .. code-block:: python
 
@@ -267,7 +267,7 @@ As an exercise I add more tests to ``test_text_messages`` to see what happens wh
         "I received this message: <class 'bool'>"
     )
 
-* I also add a test for `integers <https://docs.python.org/3/library/functions.html#int>`_ ::
+* I also add a test for an :ref:`integer<int>`_ ::
 
     self.assertEqual(
         telephone.text(123),
@@ -286,7 +286,7 @@ As an exercise I add more tests to ``test_text_messages`` to see what happens wh
     )
 
 
-* then add a test for `floats <https://docs.python.org/3/library/functions.html#float>`_ ::
+* then add a test for a :ref:`float<floats>`_ ::
 
     self.assertEqual(
         telephone.text(1.23),
@@ -304,7 +304,7 @@ As an exercise I add more tests to ``test_text_messages`` to see what happens wh
         "I received this message: 1.23"
     )
 
-* and add a test for `tuples <https://docs.python.org/3/library/stdtypes.html#tuples>`_ ::
+* and add a test for a :ref:`tuple<tuples>`_ ::
 
     self.assertEqual(
         telephone.text((1, 2, 3, 'n')),
@@ -313,7 +313,7 @@ As an exercise I add more tests to ``test_text_messages`` to see what happens wh
 
   the terminal shows an :ref:`AssertionError` ::
 
-* and add a test for :doc:`lists </data_structures/lists/lists>` ::
+* and add a test for a :doc:`list </data_structures/lists/lists>` ::
 
     self.assertEqual(
         telephone.text([1, 2, 3, 'n']),
@@ -331,7 +331,7 @@ As an exercise I add more tests to ``test_text_messages`` to see what happens wh
         "I received this message: [1, 2, 3, 'n']"
     )
 
-* and add a test for `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ ::
+* and add a test for a set_ ::
 
     self.assertEqual(
         telephone.text({1, 2, 3, 'n'}),
@@ -349,7 +349,7 @@ As an exercise I add more tests to ``test_text_messages`` to see what happens wh
         "I received this message: {1, 2, 3, 'n'}"
     )
 
-* finally, I add a test for :doc:`dictionaries </data_structures/dictionaries>` ::
+* finally, I add a test for a :doc:`dictionary </data_structures/dictionaries>` ::
 
     self.assertEqual(
         telephone.text({"key1": "value1", "keyN": "valueN"}),

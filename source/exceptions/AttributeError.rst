@@ -357,9 +357,9 @@ green: make it pass
     # NameError
     # TypeError
 
-* a :ref:`TypeError` is raised in this case because I called an object that was not `callable <https://docs.python.org/3/glossary.html#term-callable>`_
+* a :ref:`TypeError` is raised in this case because I called an object that was not callable_
 
-  A `callable <https://docs.python.org/3/glossary.html#term-callable>`_ object is an object that may be able to handle inputs. I can make an `object <https://docs.python.org/3/glossary.html#term-object>`_ `callable <https://docs.python.org/3/glossary.html#term-callable>`_ by defining it as a :doc:`class </classes/classes>` or a :ref:`function<functions>`
+  A callable_ object is an object that may be able to handle inputs. I can make an `object <https://docs.python.org/3/glossary.html#term-object>`_ callable_ by defining it as a :doc:`class </classes/classes>` or a :ref:`function<functions>`
 
   Parentheses are used at the end of the name of an object when calling it, for example  ``module.function_0()`` will call ``function_0`` from ``module.py``
 
@@ -412,7 +412,7 @@ Solve an AttributeError by defining classes
 I think of a :doc:`class </classes/classes>` as a container of :doc:`methods (functions) </functions/functions>` and attributes that represents an `object <https://docs.python.org/3/glossary.html#term-object>`_
 
 - attributes are names which represent a value
-- :ref:`methods<functions>` are :doc:`/functions/functions` that may be able to accept inputs and may return a value - they are `callable <https://docs.python.org/3/glossary.html#term-callable>`_
+- :ref:`methods<functions>` are :doc:`/functions/functions` that may be able to accept inputs and may return a value - they are callable_
 
 For example I could define a ``Human`` class with attributes like eye color, date of birth, height and weight. I could also define :ref:`methods<functions>` like age which returns a value based on the current year and date of birth attribute
 
@@ -448,7 +448,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-  I had a similar issue earlier, what if I make ``Class0`` `callable <https://docs.python.org/3/glossary.html#term-callable>`_ by changing the variable to a function using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword in ``module.py``
+  I had a similar issue earlier, what if I make ``Class0`` callable_ by changing the variable to a function using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword in ``module.py``
 
   .. code-block:: python
 
@@ -486,7 +486,7 @@ refactor: make it better
 
 * How to solve a :ref:`ModuleNotFoundError`
 * How to solve a NameError_
-* How to solve a :ref:`TypeError` by defining a `callable <https://docs.python.org/3/glossary.html#term-callable>`_
+* How to solve a :ref:`TypeError` by defining a callable_
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :doc:`class </classes/classes>`? do I know how to define :doc:`class </classes/classes>` if I define them the same way I do :doc:`/functions/functions`?
@@ -629,7 +629,7 @@ refactor: make it better
 
 * How to solve a :ref:`ModuleNotFoundError`
 * How to solve a NameError_
-* How to solve a :ref:`TypeError` by defining a `callable <https://docs.python.org/3/glossary.html#term-callable>`_
+* How to solve a :ref:`TypeError` by defining a callable_
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :doc:`class </classes/classes>`
@@ -677,7 +677,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* then I make ``method_0`` from an attribute to a :ref:`method<functions>` using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword to make it `callable <https://docs.python.org/3/glossary.html#term-callable>`_
+* then I make ``method_0`` from an attribute to a :ref:`method<functions>` using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword to make it callable_
 
   .. code-block:: python
 
@@ -718,7 +718,7 @@ and learned
 
 * How to solve a :ref:`ModuleNotFoundError`
 * How to solve a NameError_
-* How to solve a :ref:`TypeError` by defining a `callable <https://docs.python.org/3/glossary.html#term-callable>`_
+* How to solve a :ref:`TypeError` by defining a callable_
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
 * How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :doc:`class </classes/classes>`

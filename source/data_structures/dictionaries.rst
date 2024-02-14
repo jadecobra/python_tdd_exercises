@@ -450,7 +450,7 @@ I use ``self.assertRaises`` to handle the exception
       with self.assertRaises(TypeError):
           {{1, 2}: "BOOM"}
 
-Tests are green again. I cannot use a `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ or a :doc:`list </data_structures/lists/lists>` as a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ key
+Tests are green again. I cannot use a set_ or a :doc:`list </data_structures/lists/lists>` as a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ key
 
 ----
 
@@ -487,7 +487,7 @@ I add an exception handler to the test to confirm the findings
         with self.assertRaises(TypeError):
             {a_dictionary: "BOOM"}
 
-and the terminal shows passing tests. I cannot use a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_, `set <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ or a :doc:`list </data_structures/lists/lists>` as a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ key
+and the terminal shows passing tests. I cannot use a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_, set_ or a :doc:`list </data_structures/lists/lists>` as a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ key
 
 ----
 

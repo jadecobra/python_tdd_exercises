@@ -147,7 +147,7 @@ green: make it pass
 
   The :ref:`AttributeError` was fixed by declaring a variable called ``add`` in the ``calculator`` module
 
-* The new error is a :ref:`TypeError` which can occur when an `object <https://docs.python.org/3/glossary.html#term-object>`_ is called in a way that disagrees with the object's definition. In this case the ``add`` variable is not `callable <https://docs.python.org/3/glossary.html#term-callable>`_ because it refers to :ref:`None` which is not a `callable <https://docs.python.org/3/glossary.html#term-callable>`_ object. I add the error to the list of exceptions encountered ::
+* The new error is a :ref:`TypeError` which can occur when an `object <https://docs.python.org/3/glossary.html#term-object>`_ is called in a way that disagrees with the object's definition. In this case the ``add`` variable is not callable_ because it refers to :ref:`None` which is not a callable_ object. I add the error to the list of exceptions encountered ::
 
     # Exceptions Encountered
     # AssertionError
