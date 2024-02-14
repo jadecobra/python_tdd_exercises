@@ -2065,8 +2065,8 @@ refactor: make it better
                     sleep_time=sleep_time
                 )
 
-* I remove ``duration_a`` from ``sleep_duration.py`` since I have a better solution in ``duration``
-* I remove ``parse_timestamp`` and ``get_total_minutes`` since they are no longer used
+* I remove ``duration_a`` from ``sleep_duration.py`` because ``duration`` is a better solution
+* I remove ``parse_timestamp`` and ``get_total_minutes`` because they are no longer used
 * I remove the ``difference`` variable from ``duration`` since it is only used once
 
   .. code-block:: python
@@ -2109,7 +2109,7 @@ The challenge was to create a function that calculates the difference between 2 
 * `test_converting_timedelta_to_string`_
 * `test_duration_w_date_and_time`_
 
-  - using `random.randint`_ to generate a random integer
+  - using `random.randint`_ to generate random integers
   - using a random timestamp ranging from ``'00:00'`` up to and including ``'23:59'`` as inputs for ``wake_time`` and ``sleep_time``
   - confirming a ValueError_ is raised when ``wake_time`` is earlier than ``sleep_time``
   - `test_duration_w_hours`_
