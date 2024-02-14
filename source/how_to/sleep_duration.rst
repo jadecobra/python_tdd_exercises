@@ -2067,7 +2067,7 @@ refactor: make it better
 
 * I remove ``duration_a`` from ``sleep_duration.py`` because ``duration`` is a better solution
 * I remove ``parse_timestamp`` and ``get_total_minutes`` because they are no longer used
-* I remove the ``difference`` variable from ``duration`` since it is only used once
+* I remove the ``difference`` variable from ``duration`` since it is only used once, I can do the calculation directly
 
   .. code-block:: python
 
