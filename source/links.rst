@@ -5,20 +5,25 @@
 .. _datetime.timedelta: https://docs.python.org/3/library/datetime.html?highlight=datetime#timedelta-objects
 .. _dir: https://docs.python.org/3/library/functions.html?highlight=dir#dir
 .. _float: https://docs.python.org/3/library/functions.html#float
+.. _floats: https://docs.python.org/3/library/functions.html#float
 .. _floor (integer) division: https://en.wikipedia.org/wiki/Division_(mathematics)#Division_in_different_contexts
 .. _help system: https://docs.python.org/3/library/functions.html?highlight=dir#help
 .. _import statement: https://docs.python.org/3/reference/simple_stmts.html#the-import-statement
 .. _int: https://docs.python.org/3/library/functions.html?highlight=int#int
+.. _integer: https://docs.python.org/3/library/functions.html?highlight=int#int
+.. _integers: https://docs.python.org/3/library/functions.html?highlight=int#int
 .. _modulo: https://en.wikipedia.org/wiki/Modulo
 .. _python documentation on strings: https://docs.python.org/3/library/string.html?highlight=string#module-string
 .. _python online documentation: https://docs.python.org/3/search.html
 .. _random: https://docs.python.org/3/library/random.html?highlight=random#module-random
 .. _random.randint: https://docs.python.org/3/library/random.html?highlight=random#random.randint
 .. _set: https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
+.. _sets: https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
 .. _str.split: https://docs.python.org/3/library/stdtypes.html#str.split
 .. _str: https://docs.python.org/3/library/stdtypes.html#str
 .. _string: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
 .. _strings: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
+.. _tuple: https://docs.python.org/3/library/stdtypes.html#tuples
 .. _tuples: https://docs.python.org/3/library/stdtypes.html#tuples
 .. _try statement: https://docs.python.org/3/reference/compound_stmts.html#the-try-statement
 .. _unittest.TestCase.maxDiff: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff

@@ -158,7 +158,7 @@ Is None an integer?
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add a new test to compare `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ with an :ref:`integer<int>`_
+I add a new test to compare `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ with an integer_
 
 .. code-block:: python
 

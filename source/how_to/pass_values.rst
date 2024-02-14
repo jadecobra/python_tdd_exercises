@@ -267,7 +267,7 @@ As an exercise I add more tests to ``test_text_messages`` to see what happens wh
         "I received this message: <class 'bool'>"
     )
 
-* I also add a test for an :ref:`integer<int>`_ ::
+* I also add a test for an integer_ ::
 
     self.assertEqual(
         telephone.text(123),
@@ -285,8 +285,7 @@ As an exercise I add more tests to ``test_text_messages`` to see what happens wh
         "I received this message: 123"
     )
 
-
-* then add a test for a :ref:`float<floats>`_ ::
+* then add a test for a float_ ::
 
     self.assertEqual(
         telephone.text(1.23),
@@ -304,7 +303,7 @@ As an exercise I add more tests to ``test_text_messages`` to see what happens wh
         "I received this message: 1.23"
     )
 
-* and add a test for a :ref:`tuple<tuples>`_ ::
+* and add a test for a tuple_ ::
 
     self.assertEqual(
         telephone.text((1, 2, 3, 'n')),
