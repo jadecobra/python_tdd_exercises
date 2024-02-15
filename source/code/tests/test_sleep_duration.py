@@ -3,6 +3,9 @@ import random
 import sleep_duration
 import unittest
 
+def get_random_timestamp(date):
+    return f'{date} {random.randint(0, 23)}:{random.randint(0, 59):02}'
+
 
 class TestSleepDuration(unittest.TestCase):
 
@@ -109,16 +112,16 @@ class TestSleepDuration(unittest.TestCase):
             '34'
         )
         self.assertEqual(
-            '31/12/99 11:37'.split(':')[0],
-            '31/12/99 11'
+            '31/12/99 04:30'.split(':')[0],
+            '31/12/99 04'
         )
 
-    def test_converting_string_to_integer(self):
+    def test_converting_strings_to_integers(self):
         self.assertEqual(int('12'), 12)
         self.assertEqual(int('01'), 1)
 
         with self.assertRaises(ValueError):
-            int('31/12/99 11')
+            int('31/12/99 04')
 
     def test_floor_aka_integer_division(self):
         self.assertEqual(120//60, 2)
@@ -128,22 +131,21 @@ class TestSleepDuration(unittest.TestCase):
         self.assertEqual(120%60, 0)
         self.assertEqual(150%60, 30)
 
-    def test_datetime_datetime_objects(self):
+    def test_datetime_objects(self):
         self.assertEqual(
             datetime.datetime.strptime(
-                '21/11/06 16:30',
-                '%d/%m/%y %H:%M'
+                "21/11/06 16:30", "%d/%m/%y %H:%M"
             ),
             datetime.datetime(2006, 11, 21, 16, 30)
         )
 
-    def test_subtracting_datetime_datetime_objects(self):
-        pattern = '%d/%m/%y %H:%M'
+    def test_subtracting_datetime_objects(self):
+        pattern = "%d/%m/%y %H:%M"
         sleep_time = datetime.datetime.strptime(
-            '21/11/06 16:30', pattern
+            "21/11/06 16:30", pattern
         )
         wake_time = datetime.datetime.strptime(
-            '21/11/06 17:30', pattern
+            "21/11/06 17:30", pattern
         )
         self.assertEqual(
             wake_time-sleep_time,
@@ -159,16 +161,12 @@ class TestSleepDuration(unittest.TestCase):
     def test_duration_w_date_and_time(self):
         pattern = '%d/%m/%y %H:%M'
 
-        wake_hour = random.randint(0, 23)
-        wake_minutes = random.randint(0, 59)
-        wake_time = f'31/12/99 {wake_hour:02}:{wake_minutes:02}'
+        wake_time = get_random_timestamp('31/12/99')
         wake_datetime_object = datetime.datetime.strptime(
-                wake_time, pattern
-            )
+            wake_time, pattern
+        )
 
-        sleep_hour = random.randint(0, 23)
-        sleep_minutes = random.randint(0, 59)
-        sleep_time = f'31/12/99 {sleep_hour:02}:{sleep_minutes:02}'
+        sleep_time = get_random_timestamp('31/12/99')
         sleep_datetime_object = datetime.datetime.strptime(
             sleep_time, pattern
         )
@@ -200,6 +198,6 @@ class TestSleepDuration(unittest.TestCase):
 # Exceptions Encountered
 # AssertionError
 # NameError
-# TypeError
+# AttributeError
 # SyntaxError
 # ValueError
