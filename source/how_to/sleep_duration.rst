@@ -147,7 +147,7 @@ green: make it pass
 
     TypeError: duration() got an unexpected keyword argument 'wake_time'
 
-  The ``duration`` :ref:`function<functions>` is called in ``test_duration_w_hours`` with keyword arguments that were not provided in the function signature when it was defined
+  The ``duration`` :ref:`function<functions>` is called in ``test_duration_w_hours`` with keyword arguments named ``wake_time`` and ``sleep_time`` that were not provided in the function signature when it was defined
 
 * I add the required keyword argument to the definition of ``duration``, setting its default value to :ref:`None`
 
@@ -156,7 +156,7 @@ green: make it pass
     def duration(wake_time=None):
         return None
 
-  the terminal shows a similar :ref:`TypeError` message for the second keyword argument
+  and the terminal shows a similar :ref:`TypeError` message for the second keyword argument
 
   .. code-block:: python
 
@@ -1103,10 +1103,10 @@ refactor: make it better
 
     def test_duration_w_hours_and_minutes(self):
         wake_hour = random_hour()
-        wake_minutes = random.randint(0, 59)
+        wake_minutes = random_minutes()
 
         sleep_hour = random_hour()
-        sleep_minutes = random.randint(0, 59)
+        sleep_minutes = random_minutes()
 
         difference_hours = wake_hour - sleep_hour
         difference_minutes = wake_minutes - sleep_minutes
@@ -1457,7 +1457,7 @@ and the terminal shows green again
 refactor: make it better
 --------------------------------------------------------
 
-* The ``duration`` :ref:`function<functions>` currently returns negative numbers when given an earlier ``wake_time`` than ``sleep_time``. It measures a time traveling scenario where the traveler can go to sleep in the present and wake up in the past. I want it to only return durations when ``wake_time`` is not earlier than ``sleep_time``, time traveling is  so I will add a condition
+* The ``duration`` :ref:`function<functions>` currently returns negative numbers when given an earlier ``wake_time`` than ``sleep_time``. It measures a time traveling scenario where the traveler can go to sleep in the present and wake up in the past. I want it to only return durations when ``wake_time`` is not earlier than ``sleep_time``, time traveling is too hard so I will add a condition
 
   .. code-block:: python
 
@@ -1678,7 +1678,7 @@ red: make it fail
 
   .. code-block:: python
 
-    AssertionError: "wake_time: 31/12/99 10:07 is earlier than sleep_time: 31/12/99 05:25" does not match "invalid literal for int() with base 10: '31/12/99 10'"
+    AssertionError: "wake_time: 31/12/99 13:04 is earlier than sleep_time: 31/12/99 15:25" does not match "invalid literal for int() with base 10: '31/12/99 13'"
 
   it looks like ``test_duration_w_date_and_time`` encountered a ValueError_ with a different message than the one expected in the test. The `assertRaisesRegex`_ statement works, the test would have missed this if I did not specify what error message to catch
 
@@ -1691,7 +1691,7 @@ green: make it pass
 
   .. code-block:: python
 
-    invalid literal for int() with base 10: '31/12/99 10'
+    invalid literal for int() with base 10: '31/12/99 13'
 
 * The `str.split`_ :ref:`method<functions>` was given a separator of  a ``':'`` when the timestamp contained only hours and minutes, but behaves differently when the timestamp has a date. I add a test for this to ``test_string_splitting``
 
@@ -1711,7 +1711,7 @@ green: make it pass
             '34'
         )
         self.assertEqual(
-            '31/12/99 10:07'.split(':')[0],
+            '31/12/99 13:04'.split(':')[0],
             ''
         )
 
@@ -1719,7 +1719,7 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: '31/12/99 10' != ''
+    AssertionError: '31/12/99 13' != ''
 
 * so I disable ``test_duration_w_date_and_time`` by adding the `unittest.skip decorator`_
 
@@ -1735,8 +1735,8 @@ green: make it pass
   .. code-block:: python
 
     self.assertEqual(
-        '31/12/99 10:07'.split(':')[0],
-        '31/12/99 10'
+        '31/12/99 13:04'.split(':')[0],
+        '31/12/99 13'
     )
 
 * and I add a test to ``test_converting_strings_to_integers`` to confirm that the ValueError_ is raised by trying to call the int_ constructor on the result of the split
@@ -1746,15 +1746,15 @@ green: make it pass
     def test_converting_strings_to_integers(self):
         self.assertEqual(int('12'), 12)
         self.assertEqual(int('01'), 1)
-        int('31/12/99 10')
+        int('31/12/99 13')
 
   the terminal shows a ValueError_ with the same message from ``test_duration_w_date_and_time``
 
   .. code-block:: python
 
-    ValueError: invalid literal for int() with base 10: '31/12/99 10'
+    ValueError: invalid literal for int() with base 10: '31/12/99 13'
 
-  I cannot convert a string_ in the format ``'31/12/99 10'`` to an integer
+  I cannot convert a string_ in the format ``'31/12/99 13'`` to an integer
 
 * I handle the ValueError_ by using `unittest.TestCase.assertRaises`_
 
@@ -1765,7 +1765,7 @@ green: make it pass
         self.assertEqual(int('01'), 1)
 
         with self.assertRaises(ValueError):
-            int('31/12/99 10')
+            int('31/12/99 13')
 
   and tests are green again
 
@@ -1891,10 +1891,12 @@ red: make it fail
 
     def test_subtracting_datetime_objects(self):
         sleep_time = datetime.datetime.strptime(
-            '21/11/06 16:30', '%d/%m/%y %H:%M'
+            '21/11/06 16:30',
+            '%d/%m/%y %H:%M'
         )
         wake_time = datetime.datetime.strptime(
-            '21/11/06 17:30', '%d/%m/%y %H:%M'
+            '21/11/06 17:30',
+            '%d/%m/%y %H:%M'
         )
         self.assertEqual(wake_time-sleep_time, 1)
 
@@ -2079,7 +2081,6 @@ From the tests, I know I can
 
     def test_duration_w_date_and_time(self):
         wake_time = f'31/12/99 {random_hour():02}:{random_minutes():02}'
-
         sleep_time=f'31/12/99 {random_hour():02}:{random_minutes():02}'
 
         pattern = '%d/%m/%y %H:%M'
@@ -2144,7 +2145,6 @@ From the tests, I know I can
         pattern = '%d/%m/%y %H:%M'
 
         wake_time = f'31/12/99 {random_hour():02}:{random_minutes():02}'
-
         sleep_time = f'31/12/99 {random_hour():02}:{random_minutes():02}'
 
         difference = (
@@ -2218,6 +2218,69 @@ refactor: make it better
                     wake_time=wake_time,
                     sleep_time=sleep_time
                 )
+
+* I can also create a helper function to create random timestamps for a given date
+
+  .. code-block:: python
+
+    def random_hour():
+    ...
+
+    def random_minutes():
+    ...
+
+    def random_timestamp(date):
+        return f'date {random_hour():02}:{random_minutes:02}'
+
+  and call it in ``test_duration_w_date_and_time``
+
+  .. code-block:: python
+
+    def test_duration_w_date_and_time(self):
+        pattern = '%d/%m/%y %H:%M'
+
+        wake_time = random_timestamp('31/12/99')
+        wake_datetime_object = datetime.datetime.strptime(
+            wake_time, pattern
+        )
+
+        sleep_time = random_timestamp('31/12/99')
+        sleep_datetime_object = datetime.datetime.strptime(
+            sleep_time, pattern
+        )
+
+        difference = (
+            wake_datetime_object
+          - sleep_datetime_object
+        )
+
+        try:
+            self.assertEqual(
+                sleep_duration.duration(
+                    wake_time=wake_time,
+                    sleep_time=sleep_time
+                ),
+                str(difference)
+            )
+        except ValueError:
+            with self.assertRaisesRegex(
+                ValueError,
+                f'wake_time: {wake_datetime_object} is earlier '
+                f'than sleep_time: {sleep_datetime_object}'
+            ):
+                sleep_duration.duration(
+                    wake_time=wake_time,
+                    sleep_time=sleep_time
+                )
+
+* I can call ``random.randint`` directly in ``random_timestamp``
+
+  .. code-block:: python
+
+    def random_timestamp(date):
+        return f'{date} {random.randint(0, 23)}:{random.randint(0, 59)}'
+
+  which allows me to remove ``random_hour`` and ``random_minutes``
 
 * I remove ``duration_a`` from ``sleep_duration.py`` because ``duration`` is a better solution
 * I remove ``parse_timestamp`` and ``get_total_minutes`` because they are no longer used

@@ -3,8 +3,8 @@ import random
 import sleep_duration
 import unittest
 
-def get_random_timestamp(date):
-    return f'{date} {random.randint(0, 23)}:{random.randint(0, 59):02}'
+def random_timestamp(date):
+    return f'{date} {random.randint(0, 23):02}:{random.randint(0, 59):02}'
 
 
 class TestSleepDuration(unittest.TestCase):
@@ -112,8 +112,8 @@ class TestSleepDuration(unittest.TestCase):
             '34'
         )
         self.assertEqual(
-            '31/12/99 04:30'.split(':')[0],
-            '31/12/99 04'
+            '31/12/99 13:04'.split(':')[0],
+            '31/12/99 13'
         )
 
     def test_converting_strings_to_integers(self):
@@ -121,7 +121,7 @@ class TestSleepDuration(unittest.TestCase):
         self.assertEqual(int('01'), 1)
 
         with self.assertRaises(ValueError):
-            int('31/12/99 04')
+            int('31/12/99 13')
 
     def test_floor_aka_integer_division(self):
         self.assertEqual(120//60, 2)
@@ -134,7 +134,8 @@ class TestSleepDuration(unittest.TestCase):
     def test_datetime_objects(self):
         self.assertEqual(
             datetime.datetime.strptime(
-                "21/11/06 16:30", "%d/%m/%y %H:%M"
+                "21/11/06 16:30",
+                "%d/%m/%y %H:%M"
             ),
             datetime.datetime(2006, 11, 21, 16, 30)
         )
@@ -161,12 +162,12 @@ class TestSleepDuration(unittest.TestCase):
     def test_duration_w_date_and_time(self):
         pattern = '%d/%m/%y %H:%M'
 
-        wake_time = get_random_timestamp('31/12/99')
+        wake_time = random_timestamp('31/12/99')
         wake_datetime_object = datetime.datetime.strptime(
             wake_time, pattern
         )
 
-        sleep_time = get_random_timestamp('31/12/99')
+        sleep_time = random_timestamp('30/12/99')
         sleep_datetime_object = datetime.datetime.strptime(
             sleep_time, pattern
         )
@@ -195,9 +196,10 @@ class TestSleepDuration(unittest.TestCase):
                     sleep_time=sleep_time
                 )
 
+
 # Exceptions Encountered
 # AssertionError
 # NameError
 # AttributeError
+# TypeError
 # SyntaxError
-# ValueError
