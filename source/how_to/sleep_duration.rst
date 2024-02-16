@@ -999,7 +999,8 @@ green: make it pass
 
   the ``duration`` :ref:`function<functions>` returned the strings_ on the left which uses ``get_hour`` for the hours and minutes and ``test_duration_w_hours`` expected the strings_ on the right which always have ``00`` as minutes. I need to update the calculation for ``difference_minutes``
 
-* I copy and paste ``get_hour`` in ``sleep_duration.py`` then change the name to ``get_minutes`` and change the index to ``1`` to get the minutes part from splitting the timestamp
+* I copy ``get_hour`` in ``sleep_duration.py`` and paste it below the original
+* then change the name of the copy to ``get_minutes`` and change the index to ``1`` to get the minutes part from splitting the timestamp
 
   .. code-block:: python
 
@@ -1078,15 +1079,15 @@ green: make it pass
 
   and all tests are passing, we are green again
 
-* I remove the `unittest.skip decorator`_ from ``test_duration_w_hours_and_minutes`` and the terminal still shows passing tests. Making sure ``test_duration_w_hours`` passed, also made ``test_duration_w_hours_and_minutes`` pass
+* I remove the `unittest.skip decorator`_ from ``test_duration_w_hours_and_minutes`` and the terminal shows passing tests. It looks like making sure ``test_duration_w_hours`` passed, also made ``test_duration_w_hours_and_minutes`` pass
 
-.. _test_duration_w_hours_and_minutes_refactor:
+.. _test_duration_w_hours_and_minutes_refactor_0:
 
 refactor: make it better
 --------------------------------------------------------
 
 * ``test_duration_w_hours_and_minutes`` uses a random integer_ from ``0`` up to and including ``23`` for hours, and a random integer_ from ``0`` up to and including ``59`` for minutes. This means it covers all timestamps from ``00:00`` up to and including ``23:59``, which is all the hours and minutes in a day. I remove ``test_duration_w_hours`` since the timestamps it tests are included in what is provided by ``test_duration_w_hours_and_minutes``
-* I also add a helper :ref:`function<functions>` for minutes
+* I also add a helper :ref:`function<functions>` for random minutes
 
   .. code-block:: python
 
@@ -1134,7 +1135,7 @@ The ``duration`` :ref:`function<functions>` currently returns a subtraction of h
 red: make it fail
 --------------------------------------------------------
 
-* If ``duration`` is given a ``wake_time`` of ``'03:30'`` and a ``sleep_time`` of ``'02:59'``, it should return ``'00:31'`` as the difference between the timestamps. I add a test for it
+* If ``duration`` is given a ``wake_time`` of ``'03:30'`` and a ``sleep_time`` of ``'02:59'``, it should return ``'00:31'`` as the difference between the timestamps
 
   .. code-block:: python
 
@@ -1201,7 +1202,7 @@ green: make it pass
 
         return f'{difference_hours:02}:{difference_minutes:02}'
 
-  since ``test_duration_w_hours_and_minutes`` uses the wrong calculation, the terminal will show random successes and :ref:`AssertionErrors<AssertionError>` that look like this
+  ``test_duration_calculation`` passes and since ``test_duration_w_hours_and_minutes`` uses the wrong calculation, the terminal shows random successes and :ref:`AssertionErrors<AssertionError>` that look like this
 
   .. code-block:: python
 
@@ -1253,7 +1254,7 @@ The ``//`` operator returns a whole number that tells how many times the bottom 
 red: make it fail
 --------------------------------------------------------
 
-I add a failing test
+I add a failing test to show it in action
 
 .. code-block:: python
 
@@ -1339,15 +1340,16 @@ green: make it pass
 
     AssertionError: 30 != 2
 
-* I change the second expected value in the test to the correct value. The remainder from dividing ``150`` by ``60`` is ``30``
+* then I change the second expected value in the test to the correct value. The remainder from dividing ``150`` by ``60`` is ``30``
 
   .. code-block:: python
 
     self.assertEqual(150%60, 30)
 
-  the terminal shows passing tests
+  and the terminal shows passing tests
 
 ----
+.. _test_duration_w_hours_and_minutes_refactor_0:
 
 * I remove ``duration_a`` since the working solution in ``duration`` is better
 * and then I write a :ref:`function<functions>` to get the total minutes from a timestamp and call it in ``duration``
@@ -1429,6 +1431,9 @@ I will add a new failing test to ``test_sleep_duration.py`` to find out
           ''
       )
 
+  def test_duration_w_hours_and_minutes(self):
+  ...
+
 the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
@@ -1483,7 +1488,7 @@ refactor: make it better
   - When ``difference`` is less than ``0``, ``wake_time`` is earlier than ``sleep_time`` and the ``duration`` :ref:`function<functions>` will raise an :doc:`Exception </how_to/exception_handling_programs>`
   - When ``difference`` is greater than or equal to ``0``, ``wake_time`` is later than or the same as ``sleep_time`` and the ``duration`` :ref:`function<functions>` returns the difference between the two timestamps
 
-  In the random cases where ``wake_time`` is earlier than ``sleep_time`` in ``test_duration_w_earlier_wake_than_sleep_time`` and ``test_duration_w_hours_and_minutes``, the terminal shows a ValueError_ that looks like this
+  the terminal now shows a ValueError_ for ``test_duration_w_earlier_wake_than_sleep_time`` and the random cases where ``wake_time`` is earlier than ``sleep_time`` in ``test_duration_w_hours_and_minutes`` that looks like this
 
   .. code-block:: python
 
@@ -1501,20 +1506,27 @@ refactor: make it better
     # SyntaxError
     # ValueError
 
-* I use `assertRaises`_ to catch the :doc:`Exception </how_to/exception_handling_tests>` in ``test_duration_w_earlier_wake_than_sleep_time``
+* then use `assertRaisesRegex`_ to catch the :doc:`Exception </how_to/exception_handling_tests>` with the specific message raised in ``test_duration_w_earlier_wake_than_sleep_time``
 
   .. code-block:: python
 
     def test_duration_w_earlier_wake_than_sleep_time(self):
-        with self.assertRaises(ValueError):
+        wake_time = '01:00'
+        sleep_time = '02:00'
+
+        with self.assertRaisesRegex(
+            ValueError,
+            f'wake_time: {wake_time} is earlier '
+            f'than sleep_time: {sleep_time}'
+        ):
             sleep_duration.duration(
-                wake_time='01:00',
-                sleep_time='02:00'
+                wake_time=wake_time,
+                sleep_time=sleep_time
             )
 
   and the test passes, leaving the random ValueError_ for ``test_duration_w_hours_and_minutes``
 
-* I add an :doc:`exception handler </how_to/exception_handling_programs>` using a `try statement`_ and `assertRaises`_ to confirm the ValueError_ is raised when ``wake_time`` is earlier than ``sleep_time``
+* I add an :doc:`exception handler </how_to/exception_handling_programs>` using a `try statement`_ and `assertRaisesRegex`_ to confirm the ValueError_ is raised when ``wake_time`` is earlier than ``sleep_time`` with the specific message from ``duration``
 
   .. code-block:: python
 
@@ -1530,56 +1542,10 @@ refactor: make it better
         sleep_hour = random_hour()
         sleep_minutes = random_minutes()
         sleep_time_minutes = (
-            (sleep_hour * 60)
-          + sleep_minutes
+            (sleep_hour) * 60
+           + sleep_minutes
         )
-        sleep_time=f'{sleep_hour:02}:{sleep_minutes:02}'
-
-        difference = (
-            wake_time_minutes
-          - sleep_time_minutes
-        )
-        difference_hours = difference // 60
-        difference_minutes = difference % 60
-
-        try:
-            self.assertEqual(
-                sleep_duration.duration(
-                    wake_time=wake_time,
-                    sleep_time=sleep_time
-                ),
-                f'{difference_hours:02}:{difference_minutes:02}'
-            )
-        except ValueError:
-            with self.assertRaises(ValueError):
-                sleep_duration.duration(
-                    wake_time=wake_time,
-                    sleep_time=sleep_time
-                )
-
-  all tests are passing. Green is a beautiful color
-
-* I remove ``test_duration_w_earlier_wake_than_sleep_time`` since it is covered by ``test_duration_w_hours_and_minutes``
-* I use `assertRaisesRegex`_ to make sure ``test_duration_w_hours_and_minutes`` catches only the ValueError_ raised by the ``duration`` :ref:`function<functions>` with its specific message
-
-  .. code-block:: python
-
-    def test_duration_w_hours_and_minutes(self):
-        wake_hour = random_hour()
-        wake_minutes = random_minutes()
-        wake_time_minutes = (
-            (wake_hour * 60)
-           + wake_minutes
-        )
-        wake_time = f'{wake_hour:02}:{wake_minutes:02}'
-
-        sleep_hour = random_hour()
-        sleep_minutes = random_minutes()
-        sleep_time_minutes = (
-            (sleep_hour * 60)
-          + sleep_minutes
-        )
-        sleep_time=f'{sleep_hour:02}:{sleep_minutes:02}'
+        sleep_time = f'{sleep_hour:02}:{sleep_minutes:02}'
 
         difference = (
             wake_time_minutes
@@ -1607,7 +1573,7 @@ refactor: make it better
                     sleep_time=sleep_time
                 )
 
-  the terminal shows passing tests all the way
+  all tests are passing. Green is a beautiful color
 
 I have a :ref:`function<functions>` that
 
@@ -1630,7 +1596,7 @@ red: make it fail
 --------------------------------------------------------
 
 * I copy ``test_duration_w_hours_and_minutes`` and paste it below the original
-* then call the copy ``test_duration_w_date_and_time`` to test ``duration`` with timestamps that have a date, hours and minutes
+* then rename the copy to ``test_duration_w_date_and_time`` to test ``duration`` with timestamps that have a date, hours and minutes
 
   .. code-block:: python
 
@@ -1759,7 +1725,7 @@ green: make it pass
 
   I cannot convert a string_ in the format ``'31/12/99 13'`` to an integer
 
-* I handle the ValueError_ by using `unittest.TestCase.assertRaises`_
+* I handle the ValueError_ by using `assertRaises`_
 
   .. code-block:: python
 
@@ -1869,7 +1835,7 @@ green: make it pass
 From this test I see that
 
 * `datetime.datetime`_ takes ``year``, ``month``, ``date``, ``hours`` and ``minutes`` as inputs
-* the `datetime.datetime.strptime`_ :ref:`method<functions>` returns a `datetime.datetime`_ object when given 2 strings_ as inputs - a timestamp and a pattern
+* when the `datetime.datetime.strptime`_ :ref:`method<functions>` is given 2 strings_ as inputs - a timestamp and a pattern, it returns a `datetime.datetime`_ object
 * It also looks like the pattern provided represents the following
 
   - ``%d`` is for days
@@ -1999,18 +1965,6 @@ From the tests, I know I can
 .. _test_duration_w_date_and_time_green_1:
 
 * I remove the `unittest.skip decorator`_ from ``test_duration_w_date_and_time`` to return to the ValueError_ that sent me down this path
-* then I add a :ref:`function<functions>` to ``sleep_duration.py`` called ``get_datetime_object`` that uses `datetime.datetime.strptime`_ to read timestamps
-
-  .. code-block:: python
-
-    def get_datetime_object(timestamp):
-        return datetime.datetime.strptime(
-            timestamp, '%d/%m/%y %H:%M'
-        )
-
-    def duration(wake_time=None, sleep_time=None):
-    ...
-
 * I rename ``duration`` to ``duration_a`` to keep the existing working solution while I try a new one
 
   .. code-block:: python
@@ -2030,6 +1984,18 @@ From the tests, I know I can
             difference_hours = difference // 60
             difference_minutes = difference % 60
             return f'{difference_hours:02}:{difference_minutes:02}'
+
+* then I add a :ref:`function<functions>` to ``sleep_duration.py`` called ``get_datetime_object`` that uses `datetime.datetime.strptime`_ to read timestamps
+
+  .. code-block:: python
+
+    def duration_a(wake_time=None, sleep_time=None):
+    ...
+
+    def get_datetime_object(timestamp):
+        return datetime.datetime.strptime(
+            timestamp, '%d/%m/%y %H:%M'
+        )
 
 * then I add a new ``duration`` :ref:`function<functions>` with calls to ``get_datetime_object`` when calculating the difference between ``wake_time`` and ``sleep_time``
 
@@ -2059,7 +2025,7 @@ From the tests, I know I can
     def parse_timestamp(timestamp=None, index=0):
     ...
 
-  the terminal shows an :ref:`AssertionError` for ``test_duration_w_hours_and_minutes`` that looks like this
+  the terminal shows an :ref:`AssertionError` for ``test_duration_w_hours_and_minutes`` and ``test_duration_w_earlier_wake_than_sleep_time`` that looks like this
 
   .. code-block:: python
 
@@ -2067,7 +2033,83 @@ From the tests, I know I can
 
   I have another ValueError_, this time for a timestamp that does not match the expected pattern of ``'%d/%m/%y %H:%M'``
 
-* I change ``test_duration_w_hours_and_minutes`` to match the new timestamp format and notice that it is the same exact same test as ``test_duration_w_date_and_time`` so I remove it and the terminal shows an :ref:`AssertionError` that looks like this
+* I change ``test_duration_w_hours_and_minutes`` to match the new timestamp format and notice that it is the same exact same test as ``test_duration_w_date_and_time`` so I remove it
+* I add dates to ``test_duration_w_earlier_wake_than_sleep_time``
+
+  .. code-block:: python
+
+    def test_duration_w_earlier_wake_than_sleep_time(self):
+        wake_time = '21/12/12 01:00'
+        sleep_time = '21/12/12 02:00'
+
+        with self.assertRaisesRegex(
+            ValueError,
+            f'wake_time: {wake_time} is earlier '
+            f'than sleep_time: {sleep_time}'
+        ):
+            sleep_duration.duration(
+                wake_time=wake_time,
+                sleep_time=sleep_time
+            )
+
+  and the terminal shows an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: ValueError not raised
+
+* the new ``duration`` function is missing the condition for when ``wake_time`` is earlier than ``sleep_time`` so I add it
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        wake_time = get_datetime_object(wake_time)
+        sleep_time = get_datetime_object(sleep_time)
+
+        if wake_time < sleep_time:
+            raise ValueError(
+                f'wake_time: {wake_time} is earlier '
+                f'than sleep_time: {sleep_time}'
+            )
+        else:
+            difference = wake_time - sleep_time
+            return str(difference)
+
+  and the terminal shows an :ref:`AssertionError` for ``test_duration_w_earlier_wake_than_sleep_time`` and randomly for ``test_duration_w_date_and_time`` when ``wake_time`` is earlier than ``sleep_time`` that looks like this
+
+  .. code-block:: python
+
+    AssertionError: "wake_time: 31/12/99 12:47 is earlier than sleep_time: 31/12/99 20:11" does not match "wake_time: 1999-12-31 12:47:00 is earlier than sleep_time: 1999-12-31 20:11:00"
+
+  there is a ValueError_ with a different message than the one `assertRaisesRegex`_ expects. The timestamp formats do not match because the ``duration`` :ref:`function<functions>` uses `datetime.datetime`_ objects in the message when it raises the :doc:`Exception </how_to/exception_handling_programs>` and the tests do not
+
+* When I make ``test_duration_w_earlier_wake_than_sleep_time`` use `datetime.datetime`_ objects when checking the error message
+
+  .. code-block:: python
+
+    def test_duration_w_earlier_wake_than_sleep_time(self):
+        wake_time = '21/12/12 01:00'
+        sleep_time = '21/12/12 02:00'
+
+        pattern = '%d/%m/%y %H:%M'
+
+        with self.assertRaisesRegex(
+            ValueError,
+            f'wake_time: {datetime.datetime.strptime(wake_time, pattern)} is earlier '
+            f'than sleep_time: {datetime.datetime.strptime(sleep_time, pattern)}'
+        ):
+            sleep_duration.duration(
+                wake_time=wake_time,
+                sleep_time=sleep_time
+            )
+
+  I am left with a random :ref:`AssertionError` for ``test_duration_w_date_and_time`` that looks like this
+
+  .. code-block:: python
+
+    AssertionError: "wake_time: 31/12/99 19:46 is earlier than sleep_time: 31/12/99 23:37" does not match "wake_time: 1999-12-31 19:46:00 is earlier than sleep_time: 1999-12-31 23:37:00"
+
+  or one that looks like this
 
   .. code-block:: python
 
@@ -2076,9 +2118,9 @@ From the tests, I know I can
     AssertionError: '-1 day, 20:36:00' != '-1:52'
     AssertionError: '9:42:00' != '19:34'
 
-  the format of the expected timestamp for ``test_duration_w_date_and_time`` needs to be updated to use `datetime.datetime`_ objects
+  the test needs to use `datetime.datetime`_ objects for the calculations and the error message
 
-* so I change it and remove unused variables
+* so I make the change to use `datetime.datetime`_ objects for the calculations and remove unused variables
 
   .. code-block:: python
 
@@ -2115,30 +2157,7 @@ From the tests, I know I can
                     sleep_time=sleep_time
                 )
 
-* the new ``duration`` function is missing the check for when ``wake_time`` is earlier than ``sleep_time`` so I add it
-
-  .. code-block:: python
-
-    def duration(wake_time=None, sleep_time=None):
-        wake_time = get_datetime_object(wake_time)
-        sleep_time = get_datetime_object(sleep_time)
-
-        if wake_time < sleep_time:
-            raise ValueError(
-                f'wake_time: {wake_time} is earlier '
-                f'than sleep_time: {sleep_time}'
-            )
-        else:
-            difference = wake_time - sleep_time
-            return str(difference)
-
-  and the terminal randomly shows an :ref:`AssertionError` when ``wake_time`` is earlier than ``sleep_time`` that looks like this
-
-  .. code-block:: python
-
-    AssertionError: "wake_time: 31/12/99 12:47 is earlier than sleep_time: 31/12/99 20:11" does not match "wake_time: 1999-12-31 12:47:00 is earlier than sleep_time: 1999-12-31 20:11:00"
-
-  there is a ValueError_ with a different message than the one `assertRaisesRegex`_ expects. The timestamp formats do not match because the ``duration`` :ref:`function<functions>` uses `datetime.datetime`_ objects in the message when it raises the :doc:`Exception </how_to/exception_handling_programs>` and ``test_duration_w_date_and_time`` does not
+  and the terminal shows the random :ref:`AssertionError` for the error message not matching the expectation and random successes
 
 * When I make ``test_duration_w_date_and_time`` use `datetime.datetime`_ objects when checking the error message
 
@@ -2148,11 +2167,18 @@ From the tests, I know I can
         pattern = '%d/%m/%y %H:%M'
 
         wake_time = f'31/12/99 {random_hour():02}:{random_minutes():02}'
+        wake_datetime_object = datetime.datetime.strptime(
+            wake_time, pattern
+        )
+
         sleep_time = f'31/12/99 {random_hour():02}:{random_minutes():02}'
+        sleep_datetime_object = datetime.datetime.strptime(
+            sleep_time, pattern
+        )
 
         difference = (
-            datetime.datetime.strptime(wake_time, pattern)
-          - datetime.datetime.strptime(sleep_time, pattern)
+            wake_datetime_object
+          - sleep_datetime_object
         )
 
         try:
@@ -2166,8 +2192,8 @@ From the tests, I know I can
         except ValueError:
             with self.assertRaisesRegex(
                 ValueError,
-                f'wake_time: {datetime.datetime.strptime(wake_time, pattern)} is earlier '
-                f'than sleep_time: {datetime.datetime.strptime(sleep_time, pattern)}'
+                f'wake_time: {wake_datetime_object} is earlier '
+                f'than sleep_time: {sleep_datetime_object}'
             ):
                 sleep_duration.duration(
                     wake_time=wake_time,
@@ -2181,48 +2207,7 @@ From the tests, I know I can
 refactor: make it better
 --------------------------------------------------------
 
-* I remove some repetition from ``test_duration_w_date_and_time`` by using variables for the `datetime.datetime`_ objects
-
-  .. code-block:: python
-
-    def test_duration_w_date_and_time(self):
-        pattern = '%d/%m/%y %H:%M'
-
-        wake_time = f'31/12/99 {random_hour():02}:{random_minutes():02}'
-        wake_datetime_object = datetime.datetime.strptime(
-            wake_time, pattern
-        )
-
-        sleep_time=f'31/12/99 {random_hour():02}:{random_minutes():02}'
-        sleep_datetime_object = datetime.datetime.strptime(
-            sleep_time, pattern
-        )
-
-        difference = (
-            wake_datetime_object
-          - sleep_datetime_object
-        )
-
-        try:
-            self.assertEqual(
-                sleep_duration.duration(
-                    wake_time=wake_time,
-                    sleep_time=sleep_time
-                ),
-                str(difference)
-            )
-        except ValueError:
-            with self.assertRaisesRegex(
-                ValueError,
-                f'wake_time: {wake_datetime_object} is earlier '
-                f'than sleep_time: {sleep_datetime_object}'
-            ):
-                sleep_duration.duration(
-                    wake_time=wake_time,
-                    sleep_time=sleep_time
-                )
-
-* I can also create a helper function to create random timestamps for a given date
+* I can create a helper function to create random timestamps for a given date
 
   .. code-block:: python
 
@@ -2232,8 +2217,8 @@ refactor: make it better
     def random_minutes():
     ...
 
-    def random_timestamp(date):
-        return f'date {random_hour():02}:{random_minutes:02}'
+    def get_random_timestamp(date):
+        return f'{date} {random_hour():02}:{random_minutes():02}'
 
   and call it in ``test_duration_w_date_and_time``
 
@@ -2242,12 +2227,12 @@ refactor: make it better
     def test_duration_w_date_and_time(self):
         pattern = '%d/%m/%y %H:%M'
 
-        wake_time = random_timestamp('31/12/99')
+        wake_time = get_random_timestamp('31/12/99')
         wake_datetime_object = datetime.datetime.strptime(
             wake_time, pattern
         )
 
-        sleep_time = random_timestamp('31/12/99')
+        sleep_time = get_random_timestamp('31/12/99')
         sleep_datetime_object = datetime.datetime.strptime(
             sleep_time, pattern
         )
@@ -2276,7 +2261,7 @@ refactor: make it better
                     sleep_time=sleep_time
                 )
 
-* I can call ``random.randint`` directly in ``random_timestamp``
+* I can also call ``random.randint`` directly in ``random_timestamp``
 
   .. code-block:: python
 
