@@ -448,7 +448,7 @@ red: make it fail
         )
 
 * the test passes and the terminal shows the :ref:`TypeError` from earlier
-* I want to try one of the :ref:`methods<functions>` listed in ``test_string_attributes_and_methods`` to see if it will get me closer to a solution, but I cannot tell what they do from the names. I use the `help system`_ to check the `python documentation on strings`_ for more details
+* I want to try one of the :ref:`methods<functions>` listed in ``test_string_attributes_and_methods`` to see if it will get me closer to a solution, but I cannot tell what they do from the names. I use the `help system`_ to check the `python documentation for strings`_ for more details
 
   .. code-block:: python
 

@@ -337,7 +337,7 @@ From the tests I see that
 -----
 
 ******************************
-is a float False  or True?
+is a float False or True?
 ******************************
 
 red: make it fail
@@ -767,7 +767,7 @@ the terminal shows passing tests
 refactor: make it better
 =========================
 
-* I add a line to test if a set_  with things is also `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* I add a line to test if a set_ with things is also `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 
   .. code-block:: python
 

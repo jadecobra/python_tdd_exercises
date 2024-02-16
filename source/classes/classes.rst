@@ -231,7 +231,7 @@ Here is a little summary
   - without parentheses
   - `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is a placeholder
 
-* classes by default inherit from the `object <https://docs.python.org/3/glossary.html#term-object>`_  class, because in each of the tests, whether the parent is stated or not, each class I defined is an ``instance`` of an `object <https://docs.python.org/3/glossary.html#term-object>`_
+* classes by default inherit from the `object <https://docs.python.org/3/glossary.html#term-object>`_ class, because in each of the tests, whether the parent is stated or not, each class I defined is an ``instance`` of an `object <https://docs.python.org/3/glossary.html#term-object>`_
 
 .. admonition:: Zen of Python
 

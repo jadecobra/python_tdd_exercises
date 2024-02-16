@@ -95,7 +95,7 @@ Wait a minute! Something is not quite right here. The definition for a ``passthr
 
 * green: make it pass
 
-  I  change the definition of ``passthrough`` in ``functions.py``
+  I change the definition of ``passthrough`` in ``functions.py``
 
   .. code-block:: python
 

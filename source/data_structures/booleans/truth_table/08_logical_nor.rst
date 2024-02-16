@@ -4,7 +4,7 @@
 Truth Table: Logical NOR
 ##########################
 
-These tests show Logical NOR from  the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
+These tests show Logical NOR from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
 
 red: make it fail

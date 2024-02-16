@@ -281,7 +281,7 @@ green: make it pass
     def exception_handler(function):
         return function()
 
-  the terminal shows a :ref:`TypeError` because ``does_not_raise_exception`` is not  callable_
+  the terminal shows a :ref:`TypeError` because ``does_not_raise_exception`` is not callable_
 
   .. code-block:: python
 

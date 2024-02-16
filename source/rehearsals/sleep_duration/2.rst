@@ -442,7 +442,7 @@ red: make it fail
         )
 
 * the test passes and the terminal shows the :ref:`TypeError` from earlier because Python still does not support subtracting one string_ from another
-* I want to try one of the :ref:`methods<functions>` listed in ``test_string_attributes_and_methods`` to see if it will get me closer to a solution but I cannot tell what they do from the names, so I use the `help system`_ to check the `python documentation on strings`_ for extra details
+* I want to try one of the :ref:`methods<functions>` listed in ``test_string_attributes_and_methods`` to see if it will get me closer to a solution but I cannot tell what they do from the names, so I use the `help system`_ to check the `python documentation for strings`_ for extra details
 
   .. code-block:: python
 

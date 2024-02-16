@@ -122,7 +122,7 @@ I solved the `AttributeError <https://docs.python.org/3/library/exceptions.html?
 .. NOTE::
 
   - in Python ``=`` is used to assign names to objects, for example ``five = 5`` means I can refer to the number ``5`` with the name ``five``
-  - the equality sign ``==`` is used to check if two things are equal  example  ``5 == 4`` means "is ``5`` is equal to ``4``?"
+  - the equality sign ``==`` is used to check if two things are equal example  ``5 == 4`` means "is ``5`` is equal to ``4``?"
 
 AttributeError vs NameError
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -363,7 +363,7 @@ green: make it pass
 
   Parentheses are used at the end of the name of an object when calling it, for example  ``module.function_0()`` will call ``function_0`` from ``module.py``
 
-* What if I make ``function_0`` in ``module.py`` to a function by  using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword?
+* What if I make ``function_0`` in ``module.py`` to a function by using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword?
 
   .. code-block:: python
 

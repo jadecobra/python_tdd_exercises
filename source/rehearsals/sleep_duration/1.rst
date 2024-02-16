@@ -439,7 +439,7 @@ red: make it fail
 
   I need a way to convert a string_ to a number
 
-* I want to try one of the :ref:`methods<functions>` listed in ``test_string_attributes_and_methods`` to see if it will get me closer to a solution but the names in the list do not give me enough information since I do not know what they do, so I use the `help system`_ to check the `python documentation on strings`_ for extra details
+* I want to try one of the :ref:`methods<functions>` listed in ``test_string_attributes_and_methods`` to see if it will get me closer to a solution but the names in the list do not give me enough information since I do not know what they do, so I use the `help system`_ to check the `python documentation for strings`_ for extra details
 
   .. code-block:: python
 

@@ -182,7 +182,7 @@ green: make it pass
     AssertionError: None != 1
 
   - An :ref:`AssertionError` is raised when an assertion is :doc:`False </data_structures/booleans/booleans>`
-  - ``self.assertEqual`` raises an :ref:`AssertionError` when the  two inputs it is given are not equal. In other words the result of calling ``calculator.add(0, 1)`` is currently not equal to ``1``
+  - ``self.assertEqual`` raises an :ref:`AssertionError` when the two inputs it is given are not equal. In other words the result of calling ``calculator.add(0, 1)`` is currently not equal to ``1``
 
 * I make the function to make it return the expected value
 
