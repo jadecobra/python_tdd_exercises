@@ -170,7 +170,7 @@ green: make it pass
     def duration(wake_time=None, sleep_time=None):
         return None
 
-  and the terminal shows an :ref:`AssertionError`. The ``duration`` :ref:`function<functions>` returned :ref:`None` but ``test_duration_w_hours`` expected ``1`` as the result
+  and the terminal shows an :ref:`AssertionError`. The ``duration`` :ref:`function<functions>` returned :ref:`None` but ``test_duration_w_hours`` expects ``1`` as the result
 
   .. code-block:: python
 
@@ -897,7 +897,7 @@ The ``duration`` :ref:`function<functions>` has only been tested with timestamps
 red: make it fail
 --------------------------------------------------------
 
-* I copy ``test_duration_w_hours`` in ``test_sleep_duration.py`` and paste it below the original
+* I copy ``test_duration_w_hours`` in ``test_sleep_duration.py``, paste it below the original
 * then rename the copy to ``test_duration_w_hours_and_minutes`` adding variables for random minutes
 
   .. code-block:: python
@@ -929,7 +929,7 @@ red: make it fail
     AssertionError: -5 != '-15:-37'
     AssertionError: -8 != '-40:-40'
 
-  the ``duration`` :ref:`function<functions>` returned the numbers on the left but ``test_duration_w_hours_and_minutes`` expected the strings_ on the right because I changed the expected duration to a string_ that contains the subtraction of ``sleep_hour`` from ``wake_hour`` and the subtraction of ``sleep_minutes`` from ``wake_minutes`` separated by a ``:``
+  the ``duration`` :ref:`function<functions>` returns the numbers on the left but ``test_duration_w_hours_and_minutes`` expects the strings_ on the right because I changed the expected duration to a string_ that contains the subtraction of ``sleep_hour`` from ``wake_hour`` and the subtraction of ``sleep_minutes`` from ``wake_minutes`` separated by a ``:``
 
 .. _test_duration_w_hours_and_minutes_green:
 
@@ -1002,10 +1002,10 @@ green: make it pass
     AssertionError: '17:17' != '17:00'
     AssertionError: '-8:-8' != '-8:00'
 
-  the ``duration`` :ref:`function<functions>` returned the strings_ on the left which uses ``get_hour`` for the hours and minutes and ``test_duration_w_hours`` expected the strings_ on the right which always have ``00`` as minutes. I need to update the calculation for ``difference_minutes``
+  the ``duration`` :ref:`function<functions>` returns the strings_ on the left which uses ``get_hour`` for the hours and minutes and ``test_duration_w_hours`` expects the strings_ on the right which always have ``00`` as minutes. I need to update the calculation for ``difference_minutes``
 
-* I copy ``get_hour`` in ``sleep_duration.py`` and paste it below the original
-* then change the name of the copy to ``get_minutes`` and change the index to ``1`` to get the minutes part from splitting the timestamp
+* I copy ``get_hour`` in ``sleep_duration.py``, paste it below the original
+* then change the name of the copy to ``get_minutes`` and the index to ``1`` to get the minutes part from splitting the timestamp
 
   .. code-block:: python
 
@@ -1015,7 +1015,7 @@ green: make it pass
     def get_minutes(timestamp):
         return int(timestamp.split(':')[1])
 
-* then I add calls to ``get_minutes`` in the calculation for ``difference_minutes``
+* I also add calls to ``get_minutes`` in the calculation for ``difference_minutes`` in the ``duration`` :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -1039,7 +1039,7 @@ green: make it pass
     AssertionError: '21:0' != '21:00'
     AssertionError: '-10:0' != '-10:00'
 
-  the ``duration`` :ref:`function<functions>` returned the right value for hours and minutes, but displayed 1 digit for minutes while ``test_duration_w_hours`` expected 2 digits for minutes
+  the ``duration`` :ref:`function<functions>` returns the right value for hours and minutes, but displays 1 digit for minutes while ``test_duration_w_hours`` expects 2 digits for minutes
 
 * I make ``duration`` show two digits for hours and minutes in the result
 
@@ -1056,13 +1056,13 @@ green: make it pass
         )
         return f'{difference_hours:02}:{difference_minutes:02}'
 
-  and the terminal shows random successes and :ref:`AssertionErrors<AssertionError>` like
+  and the terminal shows random successes or :ref:`AssertionErrors<AssertionError>` like
 
   .. code-block:: python
 
     AssertionError: '06:00' != '6:00'
 
-  the ``duration`` :ref:`function<functions>` returned the hours as 2 digits while ``test_duration_w_hours`` expected 1 digit for hours
+  the ``duration`` :ref:`function<functions>` returns the hours as 2 digits while ``test_duration_w_hours`` expects 1 digit for hours
 
 * I add ``difference_hours`` to ``test_duration_w_hours`` so it can show 2 digits for hours
 
@@ -1082,7 +1082,7 @@ green: make it pass
             f'{difference_hours:02}:00'
         )
 
-  and all tests are passing, we are green again
+  and all tests pass, we are green again
 
 * When I remove the `unittest.skip decorator`_ from ``test_duration_w_hours_and_minutes``, the terminal shows passing tests. It looks like making sure ``test_duration_w_hours`` passed, also made ``test_duration_w_hours_and_minutes`` pass
 
@@ -1142,26 +1142,26 @@ The ``duration`` :ref:`function<functions>` currently returns a subtraction of h
 red: make it fail
 --------------------------------------------------------
 
-* If ``duration`` is given a ``wake_time`` of ``'03:30'`` and a ``sleep_time`` of ``'02:59'``, it should return ``'00:31'`` as the difference between the timestamps
+If ``duration`` is given a ``wake_time`` of ``'03:30'`` and a ``sleep_time`` of ``'02:59'``, it should return ``'00:31'`` as the difference between the timestamps
 
-  .. code-block:: python
+.. code-block:: python
 
-    def test_duration_calculation(self):
-        self.assertEqual(
-            sleep_duration.duration(
-                wake_time='03:30',
-                sleep_time='02:59'
-            ),
-            '00:31'
-        )
+  def test_duration_calculation(self):
+      self.assertEqual(
+          sleep_duration.duration(
+              wake_time='03:30',
+              sleep_time='02:59'
+          ),
+          '00:31'
+      )
 
-  but the terminal shows this :ref:`AssertionError` when I add ``test_duration_calculation``
+but the terminal shows this :ref:`AssertionError` when I add ``test_duration_calculation``
 
-  .. code-block:: python
+.. code-block:: python
 
-    AssertionError: '01:-29' != '00:31'
+  AssertionError: '01:-29' != '00:31'
 
-  the ``duration`` :ref:`function<functions>` returns ``'01:-29'`` which is not a real duration
+the ``duration`` :ref:`function<functions>` returns ``'01:-29'`` which is not a real duration
 
 .. _test_duration_calculation_green:
 
@@ -1203,13 +1203,16 @@ green: make it pass
             (get_hour(sleep_time) * 60)
            + get_minutes(sleep_time)
         )
-        difference = wake_time_minutes - sleep_time_minutes
+        difference = (
+            wake_time_minutes
+          - sleep_time_minutes
+        )
         difference_hours = difference // 60
         difference_minutes = difference % 60
 
         return f'{difference_hours:02}:{difference_minutes:02}'
 
-  ``test_duration_calculation`` passes and since ``test_duration_w_hours_and_minutes`` uses the wrong calculation, the terminal shows random successes and :ref:`AssertionErrors<AssertionError>` that look like this
+  ``test_duration_calculation`` passes and since ``test_duration_w_hours_and_minutes`` uses the wrong calculation, the terminal shows random successes or :ref:`AssertionErrors<AssertionError>` that look like this
 
   .. code-block:: python
 
@@ -1254,7 +1257,7 @@ green: make it pass
 test_floor_aka_integer_division
 ========================================================
 
-The ``//`` operator returns a whole number that tells how many times the bottom number can be multiplied to get a whole number that is equal to or less than the top number
+The ``//`` operator returns a whole number that tells how many times the bottom number can be multiplied to get a whole number that is equal to or as close to the top number as possible
 
 .. _test_floor_aka_integer_division_red:
 
@@ -1289,13 +1292,13 @@ green: make it pass
 
     self.assertEqual(120//60, 2)
 
-  the terminal shows an :ref:`AssertionError` for the next line
+  and the terminal shows an :ref:`AssertionError` for the next line
 
   .. code-block:: python
 
     AssertionError: 2 != 0
 
-* and I change the expected value in the test to the correct value. The result of dividing ``150`` by ``60`` is also ``2`` but with a remainder of ``30``
+* then I change the expected value for it to the correct value. The result of dividing ``150`` by ``60`` is also ``2`` but with a remainder of ``30``
 
   .. code-block:: python
 
@@ -1359,7 +1362,8 @@ green: make it pass
 
 .. _test_duration_w_hours_and_minutes_refactor_0:
 
-* I remove ``duration_a`` since the working solution in ``duration`` is better
+* I remove ``test_duration_calculation`` from ``test_sleep_duration.py`` because it is now covered by ``test_duration_w_hours_and_minutes``
+* I remove ``duration_a`` from ``sleep_duration.py`` since the working solution in ``duration`` is better
 * and then I write a :ref:`function<functions>` to get the total minutes from a timestamp and call it in ``duration``
 
   .. code-block:: python
@@ -1412,7 +1416,6 @@ green: make it pass
   all tests are still passing
 
 * I remove ``get_hour`` and ``get_minutes`` since they have been replaced by ``parse_timestamp``
-* I remove ``test_duration_calculation`` from ``test_sleep_duration.py`` because it is now covered by ``test_duration_w_hours_and_minutes``
 
 ----
 
@@ -2083,7 +2086,7 @@ From the tests, I know I can
 
     AssertionError: "wake_time: 31/12/99 12:47 is earlier than sleep_time: 31/12/99 20:11" does not match "wake_time: 1999-12-31 12:47:00 is earlier than sleep_time: 1999-12-31 20:11:00"
 
-  there is a ValueError_ with a different message than the one `assertRaisesRegex`_ expects. The timestamp formats do not match because the ``duration`` :ref:`function<functions>` uses `datetime.datetime`_ objects in the message when it raises the :doc:`Exception </how_to/exception_handling_programs>` and the tests do not
+  there is a ValueError_ with a different message than the one `assertRaisesRegex`_ expected. The timestamp formats do not match because the ``duration`` :ref:`function<functions>` uses `datetime.datetime`_ objects in the message when it raises the :doc:`Exception </how_to/exception_handling_programs>` and the tests do not
 
 * I make ``test_duration_w_earlier_wake_than_sleep_time`` use `datetime.datetime`_ objects when checking the error message
 
