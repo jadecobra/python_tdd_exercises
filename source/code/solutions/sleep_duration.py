@@ -6,13 +6,13 @@ def get_datetime_object(timestamp):
     )
 
 def duration(wake_time=None, sleep_time=None):
-    wake_time = get_datetime_object(wake_time)
-    sleep_time = get_datetime_object(sleep_time)
+    wake_datetime = get_datetime_object(wake_time)
+    sleep_datetime = get_datetime_object(sleep_time)
 
-    if wake_time < sleep_time:
+    if wake_datetime < sleep_datetime:
         raise ValueError(
             f'wake_time: {wake_time} is earlier '
             f'than sleep_time: {sleep_time}'
         )
     else:
-        return str(wake_time-sleep_time)
+        return str(wake_datetime-sleep_datetime)
