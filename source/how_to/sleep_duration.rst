@@ -170,7 +170,7 @@ green: make it pass
     def duration(wake_time=None, sleep_time=None):
         return None
 
-  and the terminal shows an :ref:`AssertionError`. The ``duration`` :ref:`function<functions>` returned :ref:`None` but ``test_duration_w_hours`` expects ``1`` as the result
+  and the terminal shows an :ref:`AssertionError`. The ``duration`` :ref:`function<functions>` returns :ref:`None` but ``test_duration_w_hours`` expects ``1`` as the result
 
   .. code-block:: python
 
@@ -738,7 +738,7 @@ the terminal shows passings tests. Things are green again and I have another too
           - int(sleep_time.split(':')[0])
         )
 
-  and it does, the terminal shows green! YES! The ``duration`` :ref:`function<functions>` calculates the duration between any given random sleep and wake hours in a day. What a beautiful life!
+  YES! it does, the terminal shows passing tests! The ``duration`` :ref:`function<functions>` calculates the duration between any given random sleep and wake hours in a day. What a beautiful life!
 
 * Since all the tests are passing I can rewrite the solution as a series of steps for someone who does not know how to use `str.split`_, index a :doc:`list </data_structures/lists/lists>` or use the int_ constructor
 
@@ -813,7 +813,7 @@ the terminal shows passings tests. Things are green again and I have another too
           - sleep_time_hour_integer
         )
 
-  and the terminal shows all tests are still green
+  and the test still passes
 
 * I remove the parts of ``duration`` that are no longer used and rename ``process`` to something more descriptive
 
@@ -843,7 +843,7 @@ the terminal shows passings tests. Things are green again and I have another too
         value = int(value)
         return value
 
-* or change ``get_hour`` to use one line, though it might not be as easy to understand
+  or change it to use one line, though it might not be as easy to understand
 
   .. code-block:: python
 
@@ -882,8 +882,6 @@ the terminal shows passings tests. Things are green again and I have another too
         )
 
   and the terminal still shows passing tests
-
-I think it is time for a break ...
 
 ----
 
@@ -1291,25 +1289,25 @@ and the terminal shows an :ref:`AssertionError`
 green: make it pass
 --------------------------------------------------------
 
-* I change the first expected value in the test to the correct value. The result of dividing ``120`` by ``60`` is ``2`` with a remainder of ``0``
+I change the first expected value in the test to the correct value. The result of dividing ``120`` by ``60`` is ``2`` with a remainder of ``0``
 
-  .. code-block:: python
+.. code-block:: python
 
-    self.assertEqual(120//60, 2)
+  self.assertEqual(120//60, 2)
 
-  and the terminal shows an :ref:`AssertionError` for the next line
+and the terminal shows an :ref:`AssertionError` for the next line
 
-  .. code-block:: python
+.. code-block:: python
 
-    AssertionError: 2 != 0
+  AssertionError: 2 != 0
 
-* then I change the expected value for it to the correct value. The result of dividing ``150`` by ``60`` is also ``2`` but with a remainder of ``30``
+then I change the expected value for it to the correct value. The result of dividing ``150`` by ``60`` is also ``2`` but with a remainder of ``30``
 
-  .. code-block:: python
+.. code-block:: python
 
-    self.assertEqual(150//60, 2)
+  self.assertEqual(150//60, 2)
 
-  and the terminal shows passing tests
+and the terminal shows passing tests
 
 test_modulo_operation
 ========================================================
@@ -1343,25 +1341,25 @@ and the terminal shows an :ref:`AssertionError`
 green: make it pass
 --------------------------------------------------------
 
-* I change the first expected value in the test to the correct value. The remainder from dividing ``120`` by ``60`` is ``0``
+I change the first expected value in the test to the correct value. The remainder from dividing ``120`` by ``60`` is ``0``
 
-  .. code-block:: python
+.. code-block:: python
 
-    self.assertEqual(120%60, 0)
+  self.assertEqual(120%60, 0)
 
-  and the terminal shows an :ref:`AssertionError`
+and the terminal shows an :ref:`AssertionError`
 
-  .. code-block:: python
+.. code-block:: python
 
-    AssertionError: 30 != 2
+  AssertionError: 30 != 2
 
-* then I change the second expected value in the test to the correct value. The remainder from dividing ``150`` by ``60`` is ``30``
+then I change the second expected value in the test to the correct value. The remainder from dividing ``150`` by ``60`` is ``30``
 
-  .. code-block:: python
+.. code-block:: python
 
-    self.assertEqual(150%60, 30)
+  self.assertEqual(150%60, 30)
 
-  and the terminal shows passing tests
+and the terminal shows passing tests
 
 ----
 
@@ -1470,7 +1468,7 @@ and the terminal shows passing tests
 refactor: make it better
 --------------------------------------------------------
 
-* The ``duration`` :ref:`function<functions>` currently returns negative numbers when given an earlier ``wake_time`` than ``sleep_time``. It measures a time traveling scenario where the traveler can go to sleep in the present and wake up in the past. I want it to return durations only when ``wake_time`` is later than or equal to ``sleep_time``, time traveling is hard. I will add a condition so it makes a decision
+* The ``duration`` :ref:`function<functions>` currently returns negative numbers when given an earlier ``wake_time`` than ``sleep_time``. It measures a time traveling scenario where the traveler can go to sleep in the present and wake up in the past. I want it to return durations only when ``wake_time`` is later than or equal to ``sleep_time``, time traveling is hard. I will add a condition so it makes this decision
 
   .. code-block:: python
 
@@ -1589,7 +1587,7 @@ I have a :ref:`function<functions>` that
 * raises a ValueError_ with a message when ``wake_time`` is earlier than ``sleep_time``
 * returns the difference between the two when ``wake_time`` is later than or the same as ``sleep_time``
 
-Time for another break.
+Time for a break.
 
 ----
 
@@ -1917,7 +1915,11 @@ I add a variable to remove the duplication of the timestamp pattern
       wake_time = datetime.datetime.strptime(
           '21/11/06 17:30', pattern
       )
-      self.assertEqual(wake_time-sleep_time, 1)
+
+      self.assertEqual(
+      wake_time-sleep_time,
+      datetime.timedelta(seconds=3600)
+  )
 
 test_converting_timedelta_to_string
 ========================================================
@@ -2112,42 +2114,42 @@ From the tests, I know I can
   .. code-block:: python
 
         def test_duration_w_date_and_time(self):
-        wake_hour = random_hour()
-        wake_minutes = random_minutes()
-        wake_time = f'31/12/99 {wake_hour}:{wake_minutes:02}'
+            wake_hour = random_hour()
+            wake_minutes = random_minutes()
+            wake_time = f'31/12/99 {wake_hour}:{wake_minutes:02}'
 
-        sleep_hour = random_hour()
-        sleep_minutes = random_minutes()
-        sleep_time = f'31/12/99 {sleep_hour}:{sleep_minutes:02}'
+            sleep_hour = random_hour()
+            sleep_minutes = random_minutes()
+            sleep_time = f'31/12/99 {sleep_hour}:{sleep_minutes:02}'
 
-        pattern = '%d/%m/%y %H:%M'
-        difference = (
-            datetime.datetime.strptime(
-                wake_time, pattern
-            )
-          - datetime.datetime.strptime(
-                sleep_time, pattern
-            )
-        )
-
-        try:
-            self.assertEqual(
-                sleep_duration.duration(
-                    wake_time=wake_time,
-                    sleep_time=sleep_time
-                ),
-                str(difference)
-            )
-        except ValueError:
-            with self.assertRaisesRegex(
-                ValueError,
-                f'wake_time: {wake_time} is earlier '
-                f'than sleep_time: {sleep_time}'
-            ):
-                sleep_duration.duration(
-                    wake_time=wake_time,
-                    sleep_time=sleep_time
+            pattern = '%d/%m/%y %H:%M'
+            difference = (
+                datetime.datetime.strptime(
+                    wake_time, pattern
                 )
+              - datetime.datetime.strptime(
+                    sleep_time, pattern
+                )
+            )
+
+            try:
+                self.assertEqual(
+                    sleep_duration.duration(
+                        wake_time=wake_time,
+                        sleep_time=sleep_time
+                    ),
+                    str(difference)
+                )
+            except ValueError:
+                with self.assertRaisesRegex(
+                    ValueError,
+                    f'wake_time: {wake_time} is earlier '
+                    f'than sleep_time: {sleep_time}'
+                ):
+                    sleep_duration.duration(
+                        wake_time=wake_time,
+                        sleep_time=sleep_time
+                    )
 
   the terminal shows passing tests and I no longer have random failures, things are green all the way
 
