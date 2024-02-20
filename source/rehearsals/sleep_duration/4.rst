@@ -1618,7 +1618,7 @@ green: make it pass
     Except February, twenty-eight days clear
     and twenty-nine in each leap year
 
-  I do a search for `time difference <https://docs.python.org/3/search.html?q=time+difference>`_ in the `python online documentation`_ instead, to see if there is an existing solution. I select the datetime_ module since it looks like the solution for this problem. Reading through the available types in the module, I see
+  I do a search for `time difference <https://docs.python.org/3/search.html?q=time+difference>`_ in `python's online documentation`_ instead, to see if there is an existing solution. I select the datetime_ module since it looks like the solution for this problem. Reading through the available types in the module, I see
 
   .. code-block:: python
 
@@ -2102,7 +2102,7 @@ The challenge was to create a function that calculates the difference between 2 
 * `test_modulo_operation`_
 * `test_datetime_datetime_objects`_ where I
 
-  - used the `python online documentation`_
+  - used `python's online documentation`_
   - converted a string_ to a `datetime.datetime`_ object using the `datetime.datetime.strptime`_ :ref:`method<functions>`
 
 * `test_subtracting_datetime_datetime_objects`_

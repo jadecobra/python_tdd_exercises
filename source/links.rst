@@ -16,7 +16,7 @@
 .. _integers: https://docs.python.org/3/library/functions.html?highlight=int#int
 .. _modulo: https://en.wikipedia.org/wiki/Modulo
 .. _python documentation for strings: https://docs.python.org/3/library/string.html?highlight=string#module-string
-.. _python online documentation: https://docs.python.org/3/search.html
+.. _python's online documentation: https://docs.python.org/3/search.html
 .. _random: https://docs.python.org/3/library/random.html?highlight=random#module-random
 .. _random.randint: https://docs.python.org/3/library/random.html?highlight=random#random.randint
 .. _set: https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset

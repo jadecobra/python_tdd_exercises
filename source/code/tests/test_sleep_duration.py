@@ -105,6 +105,7 @@ class TestSleepDuration(unittest.TestCase):
         )
 
         timestamp_split = '12:34'.split(':')
+
         self.assertEqual(
             timestamp_split[0],
             '12'
@@ -137,19 +138,19 @@ class TestSleepDuration(unittest.TestCase):
     def test_datetime_objects(self):
         self.assertEqual(
             datetime.datetime.strptime(
-                '21/11/06 16:30',
-                '%d/%m/%y %H:%M'
+                "21/11/06 16:30",
+                "%d/%m/%y %H:%M"
             ),
             datetime.datetime(2006, 11, 21, 16, 30)
         )
 
     def test_subtracting_datetime_objects(self):
-        pattern = '%d/%m/%y %H:%M'
+        pattern = "%d/%m/%y %H:%M"
         sleep_time = datetime.datetime.strptime(
-            '21/11/06 16:30', pattern
+            "21/11/06 16:30", pattern
         )
         wake_time = datetime.datetime.strptime(
-            '21/11/06 17:30', pattern
+            "21/11/06 17:30", pattern
         )
 
         self.assertEqual(
