@@ -6,20 +6,22 @@ pause after typing code to show it, give the consumer a chance to catch up
 imagine this is a conversation and they respond to what you say/type
 
 intro
-- Welcome to PUMPING PYTHON - do it with a smile - make it interesting - the intention is the viewer feels warm and welcome
+do it with a smile - make it interesting - the intention is the viewer feels warm and welcome
+- Welcome to PUMPING PYTHON
 - My name is Jacob Itegboje
 - In this video, I will show ...
 
 body
 - read the symbols out loud - underscores, parentheses, square brackets, curly braces, quotes - what if the consumer cannot see?
-- type out instead of copying and pasting to give the consumer time to digest what is happening
-- slow down
+- type out instead of copying and pasting to give the consumer time to digest what is happening, wait after typing code
+- slow down, imagine the viewer asked a question
 
 outro
 - close terminal
 - review tests
 - review solution
-- say "Thank you for sticking with me to the end. What would you like to do next?" - same energy as the beginning
+- say "Thank you for sticking with me to the end. What would you like to do next? See you in the next one" - same energy as the beginning
+- count down from 5 to 1
 
 book - I add
 video - I will add

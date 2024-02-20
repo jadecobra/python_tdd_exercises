@@ -744,7 +744,7 @@ the terminal shows passings tests. I have another tool to help solve the problem
           - int(sleep_time.split(':')[0])
         )
 
-  YES! it does, the terminal shows passing tests! The ``duration`` :ref:`function<functions>` calculates the duration between any given random sleep and wake hours in a day.
+  YES! it does, the terminal shows passing tests! The ``duration`` :ref:`function<functions>` calculates the duration between any given random sleep and wake hours in a day
 
 * Since all the tests are passing I can rewrite the solution as a series of steps for someone who does not know how to use `str.split`_, index a :doc:`list </data_structures/lists/lists>` or use the int_ constructor
 
