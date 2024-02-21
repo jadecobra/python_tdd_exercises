@@ -6,9 +6,6 @@ how to measure sleep duration
 
 In this chapter, I take a look at building a program that returns the duration between a given sleep and wake time.
 
-.. toctree::
-
-  how_to/sleep_duration/test_duration_w_hours
 ----
 
 test_duration_w_hours
@@ -1345,7 +1342,7 @@ things are green again
 
 ----
 
-.. _test_duration_w_hours_and_minutes_refactor_0:
+.. _test_duration_w_hours_and_minutes_refactor_1:
 
 * I remove ``test_duration_calculation`` from ``test_sleep_duration.py`` because it is now covered by ``test_duration_w_hours_and_minutes``
 * I remove ``duration_a`` from ``sleep_duration.py`` since the working solution in ``duration`` is better

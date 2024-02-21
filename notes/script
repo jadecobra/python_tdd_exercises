@@ -15,12 +15,15 @@ body
 - read the symbols out loud - underscores, parentheses, square brackets, curly braces, quotes - what if the consumer cannot see?
 - type out instead of copying and pasting to give the consumer time to digest what is happening, wait after typing code
 - slow down, imagine the viewer asked a question
+- pause for 1 second after code lines
+- pause for 2 seconds at section change - i.e. new test
+- remove terminal when you have a passing test to create space for reading
 
 outro
 - close terminal
 - review tests
 - review solution
-- say "Thank you for sticking with me to the end. What would you like to do next? See you in the next one" - same energy as the beginning
+- say "Thank you for sticking with me to the end. What would you like to do next?" - same energy as the beginning
 - count down from 5 to 1
 
 book - I add
