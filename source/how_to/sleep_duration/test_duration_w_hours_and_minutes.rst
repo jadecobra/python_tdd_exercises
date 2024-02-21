@@ -1,22 +1,19 @@
 .. include:: ../links.rst
 
-*****************************************************************************
-how to measure sleep duration: test_duration_w_hours_and_minutes
-*****************************************************************************
+########################################################
+test_duration_w_hours_and_minutes
+########################################################
 
 In this chapter, I take a look at building a program that returns the duration between a given sleep and wake time.
 
 ----
-
-test_duration_w_hours_and_minutes
-========================================================
 
 The ``duration`` :ref:`function<functions>` has only been tested with timestamps that have random hours and ``00`` as minutes. For it to meet the requirements, it should accept timestamps with random hours and random minutes.
 
 .. _test_duration_w_hours_and_minutes_red:
 
 red: make it fail
---------------------------------------------------------
+========================================================
 
 * I copy ``test_duration_w_hours`` in ``test_sleep_duration.py``, paste it below the original
 * then rename the copy to ``test_duration_w_hours_and_minutes`` adding variables for random minutes
@@ -55,7 +52,7 @@ red: make it fail
 .. _test_duration_w_hours_and_minutes_green:
 
 green: make it pass
---------------------------------------------------------
+========================================================
 
 * I make the output of the ``duration`` :ref:`function<functions>` match the format of the expected value in the test by adding the same variables and calculations
 
@@ -192,7 +189,7 @@ green: make it pass
 .. _test_duration_w_hours_and_minutes_refactor:
 
 refactor: make it better
---------------------------------------------------------
+========================================================
 
 * I remove ``test_duration_w_hours`` because the timestamps it tests are included in what is provided by ``test_duration_w_hours_and_minutes`` which uses a random integer_ from ``0`` up to and including ``23`` for hours, and a random integer_ from ``0`` up to and including ``59`` for minutes. This means it covers all timestamps from ``00:00`` up to and including ``23:59``, which is all the hours and minutes in a day
 * and then add a :ref:`function<functions>` for making random minutes
@@ -229,3 +226,7 @@ refactor: make it better
         )
 
   the terminal shows all tests are still passing
+
+----
+
+:doc:`/code/code_sleep_duration`

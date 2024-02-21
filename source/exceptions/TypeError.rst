@@ -1,8 +1,8 @@
 .. include:: ../links.rst
 
-********************************************************
+########################################################
 TypeError
-********************************************************
+########################################################
 
 A `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ can be raised when a function is called with the wrong number of inputs. This means the function call does not match the :doc:`function signature </functions/functions>`.
 

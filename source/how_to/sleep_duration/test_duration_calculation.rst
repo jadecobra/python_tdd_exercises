@@ -1,22 +1,19 @@
 .. include:: ../links.rst
 
-*****************************************************************************
-how to measure sleep duration: test_duration_calculation
-*****************************************************************************
+########################################################
+test_duration_calculation
+########################################################
 
 In this chapter, I take a look at building a program that returns the duration between a given sleep and wake time.
 
 ----
-
-test_duration_calculation
-========================================================
 
 The ``duration`` :ref:`function<functions>` currently returns a subtraction of hours and a subtraction of minutes which is not correct for calculating the difference between two timestamps
 
 .. _test_duration_calculation_red:
 
 red: make it fail
---------------------------------------------------------
+========================================================
 
 If ``duration`` is given a ``wake_time`` of ``'03:30'`` and a ``sleep_time`` of ``'02:59'``, it should return ``'00:31'`` as the difference between the timestamps
 
@@ -42,7 +39,7 @@ the ``duration`` :ref:`function<functions>` returns ``'01:-29'`` which is not a 
 .. _test_duration_calculation_green:
 
 green: make it pass
---------------------------------------------------------
+========================================================
 
 * I rename ``duration`` to keep a copy of my current working solution
 
@@ -135,7 +132,7 @@ green: make it pass
 .. _test_duration_calculation_refactor:
 
 refactor: make it better
---------------------------------------------------------
+========================================================
 
 * I remove ``test_duration_calculation`` from ``test_sleep_duration.py`` because it is now covered by ``test_duration_w_hours_and_minutes``
 * I remove ``duration_a`` from ``sleep_duration.py`` since the working solution in ``duration`` is better
@@ -189,7 +186,7 @@ I just added two things so I add tests for them. The ``//`` operator returns a w
 .. _test_floor_aka_integer_division_red:
 
 red: make it fail
---------------------------------------------------------
+========================================================
 
 I add a failing test for it
 
@@ -211,7 +208,7 @@ and the terminal shows an :ref:`AssertionError`
 .. _test_floor_aka_integer_division_green:
 
 green: make it pass
---------------------------------------------------------
+========================================================
 
 I change the first expected value in the test to the correct value. The result of dividing ``120`` by ``60`` is ``2`` with a remainder of ``0``
 
@@ -241,7 +238,7 @@ The ``%`` operator returns the remainder from dividing one number by another
 .. _test_modulo_operation_red:
 
 red: make it fail
---------------------------------------------------------
+========================================================
 
 I add a failing test for it
 
@@ -263,7 +260,7 @@ and the terminal shows an :ref:`AssertionError`
 .. _test_modulo_operation_green:
 
 green: make it pass
---------------------------------------------------------
+========================================================
 
 I change the first expected value in the test to the correct value. The remainder from dividing ``120`` by ``60`` is ``0``
 
@@ -286,3 +283,5 @@ then I change the second expected value in the test to the correct value. The re
 things are green again
 
 ----
+
+:doc:`/code/code_sleep_duration`

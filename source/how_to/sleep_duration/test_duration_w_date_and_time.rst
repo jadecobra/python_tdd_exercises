@@ -1,22 +1,19 @@
 .. include:: ../links.rst
 
-*****************************************************************************
-how to measure sleep duration: test_duration_w_date_and_time
-*****************************************************************************
+########################################################
+test_duration_w_date_and_time
+########################################################
 
 In this chapter, I take a look at building a program that returns the duration between a given sleep and wake time.
 
 ----
-
-test_duration_w_date_and_time
-========================================================
 
 The ``duration`` :ref:`function<functions>` has been tested with timestamps that have hours and minutes with no date, but I could fall asleep on a Monday and wake up on a Tuesday. What would happen if I added dates to the timestamps?
 
 .. _test_duration_w_date_and_time_red:
 
 red: make it fail
---------------------------------------------------------
+========================================================
 
 * I copy ``test_duration_w_hours_and_minutes`` and paste it below the original
 * then rename the copy to ``test_duration_w_date_and_time`` to test ``duration`` with timestamps that have a date, hours and minutes
@@ -77,7 +74,7 @@ red: make it fail
 .. _test_duration_w_date_and_time_green_0:
 
 green: make it pass
---------------------------------------------------------
+========================================================
 
 * The ``parse_timestamp`` :ref:`function<functions>` tries to convert the given string_ to an integer but it is in the wrong format
 
@@ -188,7 +185,7 @@ test_datetime_objects
 .. _test_datetime_objects_red:
 
 red: make it fail
---------------------------------------------------------
+========================================================
 
 I add a test to ``test_sleep_duration.py`` based on `Examples of usage: datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_ for `datetime.datetime`_ objects
 
@@ -215,7 +212,7 @@ and the terminal shows a NameError_ because ``datetime`` is not defined in ``tes
 .. _test_datetime_objects_green:
 
 green: make it pass
---------------------------------------------------------
+========================================================
 
 I add an `import statement`_ for the datetime_ module,
 
@@ -265,7 +262,7 @@ test_subtracting_datetime_objects
 .. _test_subtracting_datetime_objects_red:
 
 red: make it fail
---------------------------------------------------------
+========================================================
 
 I add a test for subtracting two `datetime.datetime`_ objects
 
@@ -299,7 +296,7 @@ the terminal shows an :ref:`AssertionError`
 .. _test_subtracting_datetime_objects_green:
 
 green: make it pass
---------------------------------------------------------
+========================================================
 
 I copy the value on the left of the :ref:`AssertionError` and replace the expected value in the test to make it pass
 
@@ -313,7 +310,7 @@ I copy the value on the left of the :ref:`AssertionError` and replace the expect
 .. _test_subtracting_datetime_objects_refactor:
 
 refactor: make it better
---------------------------------------------------------
+========================================================
 
 I add a variable to remove the duplication of the timestamp pattern
 
@@ -344,7 +341,7 @@ test_converting_timedelta_to_string
 .. _test_converting_timedelta_to_string_red:
 
 red: make it fail
---------------------------------------------------------
+========================================================
 
 * The `datetime.timedelta`_ object I get shows seconds, but I want the result as a string_. What happens when I pass it to the str_ constructor?
 
@@ -368,7 +365,7 @@ red: make it fail
 .. _test_converting_timedelta_to_string_green:
 
 green: make it pass
---------------------------------------------------------
+========================================================
 
 I make the expected value in the test match the value from the terminal
 
@@ -581,7 +578,7 @@ From the tests, I know I can
 .. _test_duration_w_date_and_time_refactor:
 
 refactor: make it better
---------------------------------------------------------
+========================================================
 
 * I remove ``wake_time_minutes`` and ``sleep_time_minutes`` because they are no longer used
 * as well as ``wake_hour``, ``wake_minutes``, ``sleep_hour`` and ``sleep_minutes``, and replacing them with direct calls to ``random_hour`` and ``random_minutes`` since they are only used once after assignment
