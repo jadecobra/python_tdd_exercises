@@ -23,7 +23,7 @@ A `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=except
   is a call to ``function`` with ``1, 2, 3, 4`` as four inputs
 
 requirements
-========================================================
+********************************************************
 
 
 :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>`
@@ -31,7 +31,7 @@ requirements
 ----
 
 red: make it fail
-========================================================
+********************************************************
 
 
 * I open a new file in the editor and save it as ``test_type_error.py`` in the ``tests`` folder created in :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` and type the following in the file
@@ -64,7 +64,7 @@ red: make it fail
       # ModuleNotFoundError
 
 green: make it pass
-========================================================
+********************************************************
 
 * I have a lot of practice solving this error from :ref:`ModuleNotFoundError`. I make a file called ``functions.py`` and the terminal shows
 
@@ -150,7 +150,7 @@ green: make it pass
 the terminal shows passing tests. BOOM!
 
 refactor: make it better
-========================================================
+********************************************************
 
 There's not much to do here but add more tests for practice.
 
@@ -221,7 +221,7 @@ There's not much to do here but add more tests for practice.
 * Is there another solution to the above test? Can I define a function that takes in any number of parameters? see :doc:`/functions/functions`
 
 More Tests
-========================================================
+********************************************************
 
 red: make it fail
 ~~~~~~~~~~~~~~~~~

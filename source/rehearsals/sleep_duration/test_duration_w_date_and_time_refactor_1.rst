@@ -67,7 +67,7 @@ refactor: make it better
 .. _sleep_duration_review:
 
 review
-========================================================
+********************************************************
 
 The challenge was to create a :ref:`function<functions>` that calculates the difference between 2 given timestamps. I ran the following tests to help me create it
 

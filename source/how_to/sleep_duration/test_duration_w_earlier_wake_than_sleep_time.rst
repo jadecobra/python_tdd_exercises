@@ -13,7 +13,7 @@ What happens when the ``duration`` :ref:`function<functions>` is given an earlie
 .. _test_duration_w_earlier_wake_than_sleep_time_red:
 
 red: make it fail
-========================================================
+********************************************************
 
 I will add a failing test to ``test_sleep_duration.py`` to find out
 
@@ -40,7 +40,7 @@ the terminal shows an :ref:`AssertionError`
 .. _test_duration_w_earlier_wake_than_sleep_time_green:
 
 green: make it pass
-========================================================
+********************************************************
 
 I change the expected value in the test to make it pass
 
@@ -60,7 +60,7 @@ and the terminal shows passing tests
 .. _test_duration_w_earlier_wake_than_sleep_time_refactor:
 
 refactor: make it better
-========================================================
+********************************************************
 
 * The ``duration`` :ref:`function<functions>` currently returns negative numbers when given an earlier ``wake_time`` than ``sleep_time``. I want it to return durations only when ``wake_time`` is later than or equal to ``sleep_time``. I will add a condition so it makes this decision
 

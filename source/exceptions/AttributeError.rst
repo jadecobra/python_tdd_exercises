@@ -9,7 +9,7 @@ An Attribute is a property, variable, function or name that belongs to an `objec
 An `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name in an `object <https://docs.python.org/3/glossary.html#term-object>`_ that does not exist.
 
 requirements
-========================================================
+********************************************************
 
 
 :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>`
@@ -18,7 +18,7 @@ requirements
 
 
 Solve an AttributeError by defining variables
-========================================================
+********************************************************
 
 red: make it fail
 --------------------------------------------------------
@@ -313,7 +313,7 @@ If you have been typing along *WELL DONE!* You now know
 ----
 
 Solve an AttributeError by defining functions
-========================================================
+********************************************************
 
 red: make it fail
 --------------------------------------------------------
@@ -407,7 +407,7 @@ refactor: make it better
 ----
 
 Solve an AttributeError by defining classes
-========================================================
+********************************************************
 
 I think of a :doc:`class </classes/classes>` as a container of :doc:`methods (functions) </functions/functions>` and attributes that represents an `object <https://docs.python.org/3/glossary.html#term-object>`_
 
@@ -494,7 +494,7 @@ refactor: make it better
 ----
 
 Solve an AttributeError by defining class attributes
-========================================================
+********************************************************
 
 red: make it fail
 --------------------------------------------------------
@@ -638,7 +638,7 @@ refactor: make it better
 ----
 
 Solve an AttributeError by defining class methods
-========================================================
+********************************************************
 
 red: make it fail
 --------------------------------------------------------

@@ -9,7 +9,7 @@ In this chapter I take a look at building a program that returns the amount of t
 ----
 
 test_duration_w_hours
-========================================================
+********************************************************
 
 .. _test_duration_w_hours_red:
 
@@ -257,7 +257,7 @@ I could write a test case for every possible sleep and wake time, or write one t
   Python does not have an operation defined for subtracting one string_ from another. I need to find a way to convert the timestamp from a string_ to a number.
 
 test_string_attributes_and_methods
-========================================================
+********************************************************
 
 The ``wake_time`` and ``sleep_time`` are currently in this format - ``XX:00``. If I can get the first 2 characters and convert them to a number, I can calculate the difference since Python can do :doc:`arithmetic </how_to/calculator>`.
 
@@ -468,7 +468,7 @@ red: make it fail
   the `str.split`_ :ref:`method<functions>` looks like a good solution since it splits up a word on a given separator
 
 test_string_splitting
-========================================================
+********************************************************
 
 .. _test_string_splitting_red:
 
@@ -636,7 +636,7 @@ green: make it pass
   the terminal shows a :ref:`TypeError` for an unsupported operation of trying to subtract one string_ from another. I know from ``test_string_splitting`` that the strings being subtracted are the values to the left of the separator ``':'``, not the entire values of ``wake_time`` and ``sleep_time``. For example, if the given ``wake_time`` is ``'02:00'`` and the given ``sleep_time`` is ``'01:00'``, the program tries to subtract ``'01'`` from ``'02'`` which is different than trying to subtract ``1`` from ``2`` - ``'01'`` is a string_ and ``1`` is a number
 
 test_converting_string_to_integer
-========================================================
+********************************************************
 
 The next task is to convert the string_ to a number so I can do the subtraction
 
@@ -831,7 +831,7 @@ You can try any ideas you want until you understand what has been written so far
 ----
 
 test_duration_w_hours_and_minutes
-========================================================
+********************************************************
 
 For the ``duration`` :ref:`function<functions>` to meet the requirements, it has to accept timestamps with hours and minutes, but it currently returns the duration when given sleep and wake time hours without taking minutes into account in the calculation.
 
@@ -1001,7 +1001,7 @@ refactor: make it better
 ``test_duration_w_hours_and_minutes`` uses a random number from ``0`` up to and including ``23`` for hours, and a random number from ``0`` up to and including ``59`` for minutes. This means it covers all timestamps from ``00:00`` up to and including ``23:59``, which is all the hours and minutes in a day. I remove ``test_duration_w_hours`` since the timestamps it tests are included in what is provided by ``test_duration_w_hours_and_minutes``
 
 test_duration_calculation
-========================================================
+********************************************************
 
 The ``duration`` :ref:`function<functions>` currently returns a subtraction of hours and a subtraction of minutes which is not correct for calculating the difference between two timestamps.
 
@@ -1110,7 +1110,7 @@ green: make it pass
   I have passing tests again
 
 test_floor_aka_integer_division
-========================================================
+********************************************************
 
 The ``//`` operator returns a whole number that tells how many times the denominator can be multiplied to get a whole number that is equal to or less than the numerator
 
@@ -1162,7 +1162,7 @@ green: make it pass
   the terminal shows all tests are passing
 
 test_modulo_operation
-========================================================
+********************************************************
 
 The ``%`` operator returns the remainder from dividing one number by another
 
@@ -1274,7 +1274,7 @@ green: make it pass
 ----
 
 test_duration_w_earlier_wake_than_sleep_time
-========================================================
+********************************************************
 
 What happens when the ``duration`` :ref:`function<functions>` is given an earlier ``wake_time`` than ``sleep_time``?
 
@@ -1470,7 +1470,7 @@ Time to take a break.
 ----
 
 test_duration_w_date_and_time
-========================================================
+********************************************************
 
 So far, the ``duration`` :ref:`function<functions>` has been tested with timestamps that have only hours and minutes, but I could fall asleep on a Monday and wake up on a Tuesday. What would happen if I added dates to the timestamps?
 
@@ -1627,7 +1627,7 @@ green: make it pass
 * I add tests using the examples in the documentation to learn how to use the datetime_ module
 
 test_datetime_datetime_objects
-========================================================
+********************************************************
 
 .. _test_datetime_datetime_objects_red:
 
@@ -1707,7 +1707,7 @@ From the test I see that
   you can see more in `strftime() and strftime() behavior <https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior>`_
 
 test_subtracting_datetime_datetime_objects
-========================================================
+********************************************************
 
 .. _test_subtracting_datetime_datetime_objects_red:
 
@@ -1778,7 +1778,7 @@ With these passing tests. I see that I can
 - subtract one `datetime.datetime`_ object from another to get a `datetime.timedelta`_ object
 
 test_converting_timedelta_to_string
-========================================================
+********************************************************
 
 .. _test_converting_timedelta_to_string_red:
 
@@ -2079,7 +2079,7 @@ refactor: make it better
 .. _sleep_duration_review:
 
 review
-========================================================
+********************************************************
 
 The challenge was to create a function that calculates the difference between 2 given timestamps. To make it happen I ran the following tests
 

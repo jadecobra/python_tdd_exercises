@@ -4,7 +4,7 @@ Automatically Create a Test Driven Development Environment
 ########################################################****
 
 createPythonTdd.sh
-========================================================
+********************************************************
 
 * Here is the ``./createPythonTdd.sh`` script from :doc:`/how_to/create_tdd_environment`
 
@@ -25,7 +25,7 @@ createPythonTdd.sh
 
 
 createPythonTdd.ps1
-========================================================
+********************************************************
 
 * Here is the ``./createPythonTdd.ps1`` script from :doc:`/how_to/create_tdd_environment`
 
