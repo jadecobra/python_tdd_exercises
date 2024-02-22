@@ -5,9 +5,9 @@
 
 .. include:: /links.rst
 
-#####################################################################
+##########################################################################################
 Pumping Python: How to solve problems with Test Driven Development
-#####################################################################
+##########################################################################################
 
 I have put together what has worked for me over a decade of learning python and seeing other people use it into this book as exercises using `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_.
 
@@ -64,6 +64,11 @@ HOWTOs
   how_to/exception_handling_tests
   how_to/exception_handling_programs
   how_to/sleep_duration
+  test_duration_w_hours <sleep_duration/test_duration_w_hours>
+  test_duration_w_hours_and_minutes <sleep_duration/test_duration_w_hours_and_minutes>
+  test_duration_calculation <sleep_duration/test_duration_calculation>
+  test_duration_w_earlier_wake_than_sleep_time <sleep_duration/test_duration_w_earlier_wake_than_sleep_time>
+  test_duration_w_date_and_time <sleep_duration/test_duration_w_date_and_time>
   .. learning_models
 
 ******************

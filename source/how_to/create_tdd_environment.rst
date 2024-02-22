@@ -391,9 +391,9 @@ Make sure you are in the directory that contains the `virtual environment <https
 
 -----
 
-########################################################**********************
+#############################################################################**********************
 BONUS: Automatically create a Python Test Driven Development Environment
-########################################################**********************
+#############################################################################**********************
 
 You made it this far and have become the greatest programmer in the world. Following the `The Do Not Repeat Yourself (DRY) Principle <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_, I would write a program that contains all the steps above. I can then use it to create a Test Driven Development Environment any time I want without having to remember each step of the process
 
@@ -466,7 +466,7 @@ You made it this far and have become the greatest programmer in the world. Follo
 
 
 How to automatically create a Test Driven Development Environment on Windows without WSL
-********************************************************==================================
+*****************************************************************************==================================
 
 .. warning::
 

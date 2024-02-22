@@ -1,18 +1,20 @@
-.. include:: ../links.rst
+.. include:: ../../links.rst
 
-########################################################
-test_duration_w_hours
-########################################################
+.. _test_duration_w_hours:
 
-In this chapter, I take a look at building a program that returns the duration between a given sleep and wake time.
+#############################################################################
+how to measure sleep duration: test_duration_w_hours
+#############################################################################
+
+The challenge is to create a :ref:`function<functions>` that calculates the difference between 2 given timestamps
 
 ----
 
 .. _test_duration_w_hours_red:
 
-********************************************************
+*****************************************************************************
 red: make it fail
-********************************************************
+*****************************************************************************
 
 * I open a terminal and call :ref:`createPythonTdd.sh` with ``sleep_duration`` as the project name
 
@@ -64,9 +66,9 @@ red: make it fail
 
 .. _test_duration_w_hours_green:
 
-********************************************************
+*****************************************************************************
 green: make it pass
-********************************************************
+*****************************************************************************
 
 * which I add to the list of exceptions encountered
 
@@ -188,9 +190,9 @@ green: make it pass
 
 .. _test_duration_w_hours_refactor_0:
 
-********************************************************
+*****************************************************************************
 refactor: make it better
-********************************************************
+*****************************************************************************
 
 The ``duration`` :ref:`function<functions>` currently returns ``1`` even when its inputs change. For it to meet the requirements it has to calculate the difference between ``wake_time`` and ``sleep_time``. I will add variables with random integers_ to cover all timestamps from ``'00:00'`` to ``'23:59'``
 
@@ -247,7 +249,7 @@ The ``duration`` :ref:`function<functions>` currently returns ``1`` even when it
     AssertionError: 1 != -8
     AssertionError: 1 != 4
 
-  the ``duration`` :ref:`function<function>` returns ``1`` but the test expects the subtraction of ``sleep_hour`` from ``wake_hour``
+  the ``duration`` :ref:`function<functions>` returns ``1`` but the test expects the subtraction of ``sleep_hour`` from ``wake_hour``
 
 * I make the ``duration`` :ref:`function<functions>` return the subtraction of ``sleep_time`` from ``wake_time``
 
@@ -265,14 +267,14 @@ The ``duration`` :ref:`function<functions>` currently returns ``1`` even when it
   because Python does not have an operation defined for subtracting one string_ from another. I need a way to convert a timestamp from a string_ to an integer_.
 
 test_string_attributes_and_methods
-########################################################
+#############################################################################
 
 The ``wake_time`` and ``sleep_time`` are currently in this format - ``XX:00`` where ``XX`` is the hours. I can calculate the difference if I can get the first 2 characters and convert them to numbers since Python can do :doc:`arithmetic </how_to/calculator>`.
 
 .. _test_string_attributes_and_methods_red:
 
 red: make it fail
---------------------------------------------------------
+-----------------------------------------------------------------------------
 
 * I disable ``test_duration_w_hours`` by adding the `unittest.skip decorator`_
 
@@ -305,7 +307,7 @@ red: make it fail
 .. _test_string_attributes_and_methods_green:
 
 green: make it pass
---------------------------------------------------------
+-----------------------------------------------------------------------------
 
 * I copy and paste the values on the left side of the comparison to replace :ref:`None` in the test
 
@@ -490,12 +492,12 @@ green: make it pass
   the `str.split`_ :ref:`method<functions>` looks like a good solution since it splits up a word on a given separator
 
 test_string_splitting
-########################################################
+#############################################################################
 
 .. _test_string_splitting_red_0:
 
 red: make it fail
---------------------------------------------------------
+-----------------------------------------------------------------------------
 
 I remove ``self.assertEqual(help(str))``, add a failing test for the `str.split`_ :ref:`method<functions>` to see what it does
 
@@ -522,7 +524,7 @@ the terminal shows an :ref:`AssertionError`
 .. _test_string_splitting_green_0:
 
 green: make it pass
---------------------------------------------------------
+-----------------------------------------------------------------------------
 
 I copy the :doc:`list </data_structures/lists/lists>` in the terminal and paste it in the test to make it pass
 
@@ -539,7 +541,7 @@ and we are green again
 .. _test_string_splitting_refactor:
 
 refactor: make it better
---------------------------------------------------------
+-----------------------------------------------------------------------------
 
 * I want to get the different parts of the timestamp, the hours and minutes, something like ``['01', '23']`` with a ``:`` as the separator
 
@@ -558,7 +560,7 @@ refactor: make it better
 
     AssertionError: Lists differ: ['01:23'] != ['01', '23']
 
-* and the :ref:`documentation<python documentation for strings>` said `str.split`_ takes in ``sep=None, maxsplit=-1`` as inputs and ``sep`` is the separator. When I pass in ``':'`` as the separator
+* and the `documentation <python documentation for strings>`_ said `str.split`_ takes in ``sep=None, maxsplit=-1`` as inputs and ``sep`` is the separator. When I pass in ``':'`` as the separator
 
   .. code-block:: python
 
@@ -591,7 +593,7 @@ refactor: make it better
 .. _test_string_splitting_red_1:
 
 red: make it fail
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * I want to get the first item of the list created from splitting the timestamp string_, which I can get by using its index. Python uses `zero-based indexing`_ which means the first item is at index ``0`` and the second item is at index ``1``. See :doc:`/data_structures/lists/lists` for more. I add tests to ``test_string_splitting`` for getting specific parts of a :doc:`list </data_structures/lists/lists>` created from calling `str.split`_
 
@@ -626,7 +628,7 @@ red: make it fail
 .. test_string_splitting_green_1:
 
 green: make it pass
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * I change the value in the test to ``12``
 
@@ -671,14 +673,14 @@ green: make it pass
   For example, if the given ``wake_time`` is ``'02:00'`` and the given ``sleep_time`` is ``'01:00'``, the ``duration`` :ref:`function<functions>` tries to subtract ``'01'`` from ``'02'`` which is different than trying to subtract ``1`` from ``2`` - ``'01'`` is a string_ and ``1`` is an integer_
 
 test_converting_strings_to_integers
-########################################################
+#############################################################################
 
 I want to see if I can use the int_ constructor to convert a string_ to an integer_
 
 .. _test_converting_strings_to_integers_red:
 
 red: make it fail
---------------------------------------------------------
+-----------------------------------------------------------------------------
 
 I disable the current failing test by using the `unittest.skip decorator`_
 
@@ -709,7 +711,7 @@ and the terminal shows an :ref:`AssertionError`
 .. _test_converting_strings_to_integers_green:
 
 green: make it pass
---------------------------------------------------------
+-----------------------------------------------------------------------------
 
 so I change the number from ``0`` to ``12``
 
@@ -892,6 +894,35 @@ the terminal shows passings tests. I have another tool to help solve the problem
         )
 
   the terminal still shows passing tests
+
+----
+
+.. _test_duration_w_hours_review:
+
+review
+*****************************************************************************
+
+The challenge is to create a :ref:`function<functions>` that calculates the difference between 2 given timestamps. I have run the following tests so far to create it
+
+* `test_duration_w_hours`_
+* `test_string_attributes_and_methods`_ where  I used the dir_ :ref:`function<functions>`
+* `test_string_splitting`_ where I
+
+  - used the `help system`_ to view documentation
+  - used the `str.split`_ :ref:`method<functions>` to split a string_ on a separator
+  - indexed the :doc:`list </data_structures/lists/lists>` from the split to get specific items
+
+* `test_converting_strings_to_integers`_
+
+I also encountered the following exceptions
+
+* :ref:`AssertionError`
+* NameError_
+* :ref:`AttributeError`
+* :ref:`TypeError`
+* SyntaxError_
+
+In the next chapter I :ref:`test_duration_w_hours_and_minutes`
 
 ----
 

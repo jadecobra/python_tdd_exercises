@@ -1,15 +1,15 @@
 .. include:: ../links.rst
 
-########################################################
+#############################################################################
 None
-########################################################
+#############################################################################
 
 .. raw:: html
 
   <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/81afQTs6JH0?si=LAtEPEdDKutSOGw9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 What is None?
-********************************************************
+*****************************************************************************
 
 `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is an object used to represent the absence of a value
 
@@ -60,7 +60,7 @@ There are other python `objects <https://docs.python.org/3/glossary.html#term-ob
 ----
 
 Is None a boolean?
-********************************************************
+*****************************************************************************
 
 red: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -153,7 +153,7 @@ I want to know if `None <https://docs.python.org/3/library/constants.html?highli
 ----
 
 Is None an integer?
-********************************************************
+*****************************************************************************
 
 red: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -231,7 +231,7 @@ From the tests I see that
 ----
 
 Is None a float?
-********************************************************
+*****************************************************************************
 
 red: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -306,7 +306,7 @@ From the tests I see that
 ----
 
 Is None a string?
-********************************************************
+*****************************************************************************
 
 I add a test for `strings <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_. A string is any character(s) inside single, double or triple quotes for example
 
@@ -391,7 +391,7 @@ From the tests I see that
 ----
 
 Is None a tuple?
-********************************************************
+*****************************************************************************
 
 red: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -458,7 +458,7 @@ Based on what I have seen so far, it is safe to assume that `None <https://docs.
 ----
 
 Is None a list?
-********************************************************
+*****************************************************************************
 
 red: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -499,7 +499,7 @@ With the passing tests I see that
 ----
 
 Is None a set?
-********************************************************
+*****************************************************************************
 
 red: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -539,7 +539,7 @@ From the tests I see that
 ----
 
 Is None a dictionary?
-********************************************************
+*****************************************************************************
 
 red: make it fail
 ^^^^^^^^^^^^^^^^^

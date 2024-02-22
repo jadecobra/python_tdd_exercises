@@ -1,7 +1,7 @@
 .. _test_duration_w_date_and_time_refactor:
 
 refactor: make it better
---------------------------------------------------------
+-----------------------------------------------------------------------------
 
 * I remove some repetition from ``test_duration_w_date_and_time`` by using variables for the `datetime.datetime`_ objects
 
@@ -67,7 +67,7 @@ refactor: make it better
 .. _sleep_duration_review:
 
 review
-********************************************************
+*****************************************************************************
 
 The challenge was to create a :ref:`function<functions>` that calculates the difference between 2 given timestamps. I ran the following tests to help me create it
 
