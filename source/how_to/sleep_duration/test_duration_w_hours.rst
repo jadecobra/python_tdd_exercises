@@ -904,7 +904,6 @@ review
 
 The challenge is to create a :ref:`function<functions>` that calculates the difference between 2 given timestamps. I have run the following tests so far to create it
 
-* `test_duration_w_hours`_
 * `test_string_attributes_and_methods`_ where  I used the dir_ :ref:`function<functions>`
 * `test_string_splitting`_ where I
 
@@ -913,6 +912,10 @@ The challenge is to create a :ref:`function<functions>` that calculates the diff
   - indexed the :doc:`list </data_structures/lists/lists>` from the split to get specific items
 
 * `test_converting_strings_to_integers`_
+* `test_duration_w_hours`_ where I
+
+  - used `random.randint`_ to generate random integers for hours
+  - used :doc:`interpolation </how_to/pass_values>` to test the functions with random hours
 
 I also encountered the following exceptions
 
@@ -922,7 +925,7 @@ I also encountered the following exceptions
 * :ref:`TypeError`
 * SyntaxError_
 
-In the next chapter I :ref:`test_duration_w_hours_and_minutes`
+In the next chapter I :ref:`test duration with hours and minutes<test_duration_w_hours_and_minutes>`
 
 ----
 
