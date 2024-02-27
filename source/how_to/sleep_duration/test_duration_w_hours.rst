@@ -104,7 +104,7 @@ green: make it pass
     # NameError
     # AttributeError
 
-* and then open ``sleep_duration.py`` to add a name ::
+* then open ``sleep_duration.py`` to add a name ::
 
     duration
 
@@ -120,7 +120,7 @@ green: make it pass
 
     duration = None
 
-  the terminal shows a :ref:`TypeError`
+  now I get a :ref:`TypeError`
 
   .. code-block:: python
 
@@ -194,7 +194,7 @@ green: make it pass
 refactor: make it better
 *****************************************************************************
 
-The ``duration`` :ref:`function<functions>` currently returns ``1`` even when its inputs change. To meet the requirements it has to calculate the difference between ``wake_time`` and ``sleep_time``. I will add variables with random integers_ to cover all timestamps from ``'00:00'`` to ``'23:59'``
+The ``duration`` :ref:`function<functions>` currently returns ``1`` even when I change the values for ``wake_time`` and ``sleep_time``. To meet the requirements it has to calculate the difference between ``wake_time`` and ``sleep_time``. I will add variables for random integers_ to cover all timestamps from ``'00:00'`` to ``'23:00'`` for a better test
 
 * I add an `import statement`_ for the random_ module to ``test_sleep_duration.py``
 
@@ -222,7 +222,7 @@ The ``duration`` :ref:`function<functions>` currently returns ``1`` even when it
 
   - ``random.randint(0, 23)`` will give me a random integer_ from ``0`` up to and including ``23``
   - ``f'{wake_hour:02}:00'`` and ``f'{sleep_hour:02}:00'`` :doc:`interpolate </how_to/pass_values>` the random integers_ in the input strings_
-  - the ``:02`` in ``{wake_hour:02}`` and ``{sleep_hour:02}`` tells Python to display the numbers as two digits. For example, display ``01`` instead of ``1``
+  - the ``:02`` in ``{wake_hour:02}`` and ``{sleep_hour:02}`` tells Python to always display the numbers as two characters. For example, display ``01`` instead of ``1``
 
 * When I make the test expect the difference between ``wake_hour`` and ``sleep_hour``
 
@@ -251,7 +251,7 @@ The ``duration`` :ref:`function<functions>` currently returns ``1`` even when it
 
   the ``duration`` :ref:`function<functions>` returns ``1`` but the test expects the subtraction of ``sleep_hour`` from ``wake_hour``
 
-* I make the ``duration`` :ref:`function<functions>` return the subtraction of ``sleep_time`` from ``wake_time``
+* I make the ``duration`` :ref:`function<functions>` return ``wake_time`` minus ``sleep_time``
 
   .. code-block:: python
 
@@ -354,7 +354,7 @@ green: make it pass
 
     Diff is 1284 characters long. Set self.maxDiff to None to see it.
 
-* I add the suggestion
+* I add the suggestion, thank you Python
 
   .. code-block:: python
 
@@ -641,7 +641,7 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: '34' != 0
+    AssertionError: '34' != 1
 
   showing that the second item (index 1) from splitting ``'12:34'`` on the separator ``':'`` is ``'34'``
 
@@ -805,11 +805,6 @@ I get passings tests and have another tool to help solve the problem
         return timestamp_hour_integer
 
     def duration(wake_time=None, sleep_time=None):
-        return (
-            process(wake_time)
-          - process(sleep_time)
-        )
-
         wake_time_split = wake_time.split(':')
         wake_time_hour = wake_time_split[0]
         wake_time_hour_integer = int(wake_time_hour)
@@ -819,8 +814,8 @@ I get passings tests and have another tool to help solve the problem
         sleep_time_hour_integer = int(sleep_time_hour)
 
         return (
-            wake_time_hour_integer
-          - sleep_time_hour_integer
+            process(wake_time)
+          - process(sleep_time)
         )
 
   we are still green
@@ -843,7 +838,7 @@ I get passings tests and have another tool to help solve the problem
 
   the terminal still shows passing tests
 
-* I can also make ``get_hour`` use the same variable name instead of a new one for each step of the process
+* which means I can play around and do things like make ``get_hour`` use the same variable name instead of a new one for each step of the process
 
   .. code-block:: python
 
@@ -900,12 +895,15 @@ I get passings tests and have another tool to help solve the problem
 review
 *****************************************************************************
 
-The challenge is to create a :ref:`function<functions>` that calculates the difference between 2 given timestamps. I have run the following tests so far to create it
+The challenge is to create a :ref:`function<functions>` that calculates the difference between 2 given timestamps. I ran the following tests so far to make something that comes close to doing it
 
-* `test_string_attributes_and_methods`_ where  I used the dir_ :ref:`function<functions>`
+* `test_string_attributes_and_methods`_ where
+
+  - I used the dir_ :ref:`function<functions>`
+  - used the `help system`_ to view the `python documentation for strings`_
+
 * `test_string_splitting`_ where I
 
-  - used the `help system`_ to view documentation
   - used the `str.split`_ :ref:`method<functions>` to split a string_ on a separator
   - indexed the :doc:`list </data_structures/lists/lists>` from the split to get specific items
 
