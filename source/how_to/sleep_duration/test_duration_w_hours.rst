@@ -40,7 +40,7 @@ red: make it fail
 
 * and I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_sleep_duration.py:7`` with the mouse to open it
 * then I make ``test_failure`` pass
-* and replace it pass with a failing test that expects ``1`` when the ``duration`` :ref:`function<functions>` in the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>` is called with a ``wake_time`` of ``'08:00'`` and ``sleep_time`` of ``'07:00'`` which in this case is the difference between the two
+* and replace it with a failing test that expects ``1`` when the ``duration`` :ref:`function<functions>` in the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>` is called with a ``wake_time`` of ``'08:00'`` and ``sleep_time`` of ``'07:00'`` which in this case is the difference between the two
 
   .. code-block:: python
 
@@ -70,7 +70,7 @@ red: make it fail
 green: make it pass
 *****************************************************************************
 
-* which I add to the list of exceptions encountered
+* so I add it to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -120,13 +120,13 @@ green: make it pass
 
     duration = None
 
-  and the terminal shows a :ref:`TypeError`
+  the terminal shows a :ref:`TypeError`
 
   .. code-block:: python
 
     TypeError: 'NoneType' object is not callable
 
-* I add that to the list of exceptions encountered
+* which I add to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -136,20 +136,20 @@ green: make it pass
     # AttributeError
     # TypeError
 
-* then make ``duration`` a :ref:`function<functions>` to make it callable_
+* then I make ``duration`` a :ref:`function<functions>` to make it callable_
 
   .. code-block:: python
 
     def duration():
         return None
 
-  the terminal shows a :ref:`TypeError` with a different message about the first keyword argument given in the test
+  the terminal shows another :ref:`TypeError` with a message about the first keyword argument given in the test
 
   .. code-block:: python
 
     TypeError: duration() got an unexpected keyword argument 'wake_time'
 
-  ``test_duration_w_hours`` passes values with keyword arguments for ``wake_time`` and ``sleep_time`` when it calls the ``duration`` :ref:`function<functions>` which does not yet have these keyword arguments in its signature
+  ``test_duration_w_hours`` passes values as keyword arguments for ``wake_time`` and ``sleep_time`` when it calls the ``duration`` :ref:`function<functions>` which does not yet have these keyword arguments in its signature
 
 * When I add the required keyword argument and set its default value to :ref:`None`
 
@@ -164,14 +164,14 @@ green: make it pass
 
     TypeError: duration() got an unexpected keyword argument 'sleep_time'
 
-* I add the keyword argument, setting the default value to :ref:`None`
+* I add the second keyword argument, setting the default value to :ref:`None`
 
   .. code-block:: python
 
     def duration(wake_time=None, sleep_time=None):
         return None
 
-  and the terminal shows an :ref:`AssertionError`
+  and get an :ref:`AssertionError` in the terminal
 
   .. code-block:: python
 
@@ -179,7 +179,7 @@ green: make it pass
 
   the ``duration`` :ref:`function<functions>` returns :ref:`None` but ``test_duration_w_hours`` expects ``1`` as the result
 
-* I make the return value for ``duration`` match the expectation
+* so I make the return value for ``duration`` match the expectation
 
   .. code-block:: python
 
@@ -194,7 +194,7 @@ green: make it pass
 refactor: make it better
 *****************************************************************************
 
-The ``duration`` :ref:`function<functions>` currently returns ``1`` even when its inputs change. For it to meet the requirements it has to calculate the difference between ``wake_time`` and ``sleep_time``. I will add variables with random integers_ to cover all timestamps from ``'00:00'`` to ``'23:59'``
+The ``duration`` :ref:`function<functions>` currently returns ``1`` even when its inputs change. To meet the requirements it has to calculate the difference between ``wake_time`` and ``sleep_time``. I will add variables with random integers_ to cover all timestamps from ``'00:00'`` to ``'23:59'``
 
 * I add an `import statement`_ for the random_ module to ``test_sleep_duration.py``
 
@@ -204,7 +204,7 @@ The ``duration`` :ref:`function<functions>` currently returns ``1`` even when it
     import sleep_duration
     import unittest
 
-* then add random values for the hours part of the timestamps in ``test_duration_w_hours``
+* then add variables for random values as the hours part of the ``wake_time`` and ``sleep_time`` timestamps in ``test_duration_w_hours``
 
   .. code-block:: python
 
@@ -608,12 +608,10 @@ red: make it fail
         timestamp_split = '12:34'.split(':')
 
         self.assertEqual(
-            timestamp_split[0],
-            0
+            timestamp_split[0], 0
         )
         self.assertEqual(
-            timestamp_split[1],
-            0
+            timestamp_split[1], 1
         )
 
     def test_duration_w_hours(self):
@@ -695,8 +693,8 @@ then add a new failing test called ``test_converting_strings_to_integers``
 .. code-block:: python
 
   def test_converting_strings_to_integers(self):
-      self.assertEqual(int('12'), 0)
       self.assertEqual(int('01'), 0)
+      self.assertEqual(int('12'), 1)
 
   @unittest.skip
   def test_duration_w_hours(self):
@@ -706,24 +704,12 @@ and the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: 12 != 0
+  AssertionError: 1 != 0
 
 .. _test_converting_strings_to_integers_green:
 
 green: make it pass
 -----------------------------------------------------------------------------
-
-so I change the number from ``0`` to ``12``
-
-.. code-block:: python
-
-  self.assertEqual(int('12'), 12)
-
-the terminal shows an :ref:`AssertionError` for the next one
-
-.. code-block:: python
-
-  AssertionError: 1 != 0
 
 and I change the expectation to ``1``
 
@@ -731,7 +717,19 @@ and I change the expectation to ``1``
 
   self.assertEqual(int('01'), 1)
 
-the terminal shows passings tests. I have another tool to help solve the problem
+the terminal shows an :ref:`AssertionError` for the next one
+
+.. code-block:: python
+
+  AssertionError: 12 != 1
+
+so I change the number from ``1`` to ``12``
+
+.. code-block:: python
+
+self.assertEqual(int('12'), 12)
+
+I get passings tests and have another tool to help solve the problem
 
 - I can split a string_ on a separator using `str.split`_ to get a :doc:`list </data_structures/lists/lists>` of its parts
 - I can index the :doc:`list </data_structures/lists/lists>`  from splitting the string_ to get a specific item from it
