@@ -3,7 +3,7 @@ import unittest
 
 class TestLists(unittest.TestCase):
 
-    def test_creating_a_list_with_the_list_constructor(self):
+    def test_creating_a_list(self):
         self.assertEqual(
             list((0, 1, 2, 3)),
             [0, 1, 2, 3]
@@ -40,7 +40,7 @@ class TestLists(unittest.TestCase):
         self.assertEqual(last_item, 3)
         self.assertEqual(a_list, [0, 1, 2])
 
-    def test_getting_items_in_a_list(self):
+    def test_getting_items_from_a_list(self):
         a_list = ['first', 'second', 'third', 'fourth']
         self.assertEqual(
             a_list,
@@ -55,13 +55,13 @@ class TestLists(unittest.TestCase):
         self.assertEqual(a_list[-2], 'third')
         self.assertEqual(a_list[-4], 'first')
 
-    def test_indexing_with_number_greater_than_length_of_list(self):
+    def test_index_error(self):
         a_list = ['first', 'second', 'third', 'fourth']
         with self.assertRaises(IndexError):
             a_list[5]
             a_list[-5]
 
-    def test_attributes_and_methods_of_a_list(self):
+    def test_list_attributes_and_methods(self):
         self.maxDiff = None
         self.assertEqual(
             dir(list),

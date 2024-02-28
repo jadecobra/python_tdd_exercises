@@ -1,8 +1,8 @@
 .. include:: ../../links.rst
 
-##################################
+#############################################################################
 lists
-##################################
+#############################################################################
 
 .. raw:: html
 
@@ -14,12 +14,14 @@ A `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ 
 * Lists are represented with ``[]``
 * Lists can be created with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor
 * Lists can hold any `object <https://docs.python.org/3/glossary.html#term-object>`_
-* Lists can be changed after creation by performing an operation, they are mutable
+* Lists can be changed after creation by performing an operation, this means they are mutable
 * Lists can be looped over
 
-**********************
-How to create a list
-**********************
+.. _test_creating_a_list:
+
+*****************************************************************************
+test_creating_a_list
+*****************************************************************************
 
 red: make it fail
 ==================
@@ -33,7 +35,7 @@ I make a file called ``test_lists.py`` in the ``tests`` folder with the followin
 
   class TestLists(unittest.TestCase):
 
-      def test_creating_a_list_with_the_list_constructor(self):
+      def test_creating_a_list(self):
           self.assertEqual(list(0, 1, 2, 3), None)
 
 the terminal shows a :ref:`TypeError`
@@ -58,24 +60,24 @@ green: make it pass
   - I read `python's documentation for lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ and see that the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor takes an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ as input
   - An `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ is an object I can go over its items one by one in a loop - `tuples <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_, `lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_, `sets <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ and :doc:`dictionaries </data_structures/dictionaries>` are iterable
 
-* I make the values provided to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor by placing them in parentheses to make them a `tuple <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_
+* I make the values provided to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor a `tuple <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_ by placing them in parentheses
 
   .. code-block:: python
 
-    def test_creating_a_list_with_the_list_constructor(self):
+    def test_creating_a_list(self):
         self.assertEqual(list((0, 1, 2, 3)), [])
 
-  the terminal shows an :ref:`AssertionError`
+  and get an :ref:`AssertionError` in the terminal
 
   .. code-block:: python
 
     AssertionError: [0, 1, 2, 3] != None
 
-* When I make the right side to match the values on the left from the terminal
+* When I make the right side match the values on the left from the terminal
 
   .. code-block:: python
 
-    def test_creating_a_list_with_the_list_constructor(self):
+    def test_creating_a_list(self):
         self.assertEqual(list((0, 1, 2, 3)), [0, 1, 2, 3])
 
   the test passes
@@ -96,7 +98,7 @@ refactor: make it better
 
     AssertionError: Lists differ: [0, 1, 2, 3] != [0, 1, 2, 4]
 
-* I update the test to make it pass
+* and I change the value in the test to make it pass
 
   .. code-block:: python
 
@@ -105,14 +107,14 @@ refactor: make it better
 
 ----
 
-*******************************
-How to add an item to a list
-*******************************
+*****************************************************************************
+test_adding_an_item_to_a_list
+*****************************************************************************
 
 red: make it fail
 ===================
 
-I add a test to for adding items to an existing list with the `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>`
+I add a test for adding items to an existing list with the `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>`
 
 .. code-block:: python
 
@@ -127,7 +129,7 @@ I add a test to for adding items to an existing list with the `append <https://d
 - ``a_list.append(4)`` calls the `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` of the list
 - ``self.assertEqual(a_list, [0, 1, 2, 3])`` checks what ``a_list`` contains after `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ is called
 
-the terminal shows an :ref:`AssertionError` because the values in ``a_list`` change after ``a_list.append(4)``
+the terminal shows an :ref:`AssertionError` because the values in ``a_list`` change after ``a_list.append(4)`` is called
 
 .. code-block:: python
 
@@ -136,7 +138,7 @@ the terminal shows an :ref:`AssertionError` because the values in ``a_list`` cha
 green: make it pass
 ===================
 
-I make the values in the test to make it match the result
+I make the values in the test match the values in the terminal
 
 .. code-block:: python
 
@@ -146,20 +148,20 @@ I make the values in the test to make it match the result
         a_list.append(4)
         self.assertEqual(a_list, [0, 1, 2, 3, 4])
 
-the terminal shows passing tests.
+and it shows passing tests.
 
 I started with a list that contained 4 things, added something using the `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ method, then confirmed what I added is now part of the list
 
 ----
 
-***********************************
-How to remove an item from a list
-***********************************
+*****************************************************************************
+test_removing_an_item_from_a_list
+*****************************************************************************
 
 red: make it fail
 ===================
 
-Since I know how to add an item to a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ I want to add a test for removing an item from a list using the `remove <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ method
+Since I know how to add an item to a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ I want to add a test for taking away an item from a list using the `remove <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ method
 
 .. code-block:: python
 
@@ -169,7 +171,7 @@ Since I know how to add an item to a `list <https://docs.python.org/3/library/st
         a_list.remove(2)
         self.assertEqual(a_list, [0, 1, 2, 3])
 
-the terminal shows an :ref:`AssertionError` because the values in ``a_list`` no longer hold ``2`` after the call ``a_list.remove(2)``
+the terminal shows an :ref:`AssertionError` because ``2`` is no longer in ``a_list`` after ``a_list.remove(2)`` is called
 
 .. code-block:: python
 
@@ -178,7 +180,7 @@ the terminal shows an :ref:`AssertionError` because the values in ``a_list`` no 
 green: make it pass
 ===================
 
-I change the test to make the values on the right match the result and the test passes
+I make the values match the values in the terminal and the test passes
 
 .. code-block:: python
 
@@ -203,13 +205,13 @@ What happens when there is more than one of the same item in a list? How does Py
         a_list.remove(2)
         self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
 
-  the terminal shows an :ref:`AssertionError`
+  and get an :ref:`AssertionError` in the terminal
 
   .. code-block:: python
 
     AssertionError: Lists differ: [0, 1, 2, 3, 2] != [0, 2, 1, 2, 3, 2]
 
-* and I make the values on the right to match the result
+* then I make the values on the right match the values from the terminal to make it pass
 
   .. code-block:: python
 
@@ -223,14 +225,14 @@ What happens when there is more than one of the same item in a list? How does Py
 
 ----
 
-****************************************
-How to remove the last item from a list
-****************************************
+*****************************************************************************
+test_removing_the_last_item_from_a_list
+*****************************************************************************
 
 red: make it fail
 ===================
 
-I add a test for removing the last item from a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+I add a test for taking away the last item from a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
 .. code-block:: python
 
@@ -255,7 +257,7 @@ the terminal shows an :ref:`AssertionError` for the test that checks the value o
 green: make it pass
 ===================
 
-* I make the value in the test to match the actual value popped
+* I make the value in the test match the actual value popped
 
   .. code-block:: python
 
@@ -267,7 +269,7 @@ green: make it pass
 
     AssertionError: Lists differ: [0, 1, 2] != [0, 1, 2, 3]
 
-* I make the values in the test that checks the values of ``a_list`` after calling `pop <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
+* I change the values in the test that checks the values of ``a_list`` after calling `pop <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
 
   .. code-block:: python
 
@@ -278,13 +280,15 @@ green: make it pass
         self.assertEqual(last_item, 3)
         self.assertEqual(a_list, [0, 1, 2])
 
-  the terminal shows passing tests
+  and get passing tests
 
 ----
 
-****************************************
-How to get a specific item from a list
-****************************************
+.. _test_getting_items_from_a_list:
+
+*****************************************************************************
+test_getting_items_from_a_list
+*****************************************************************************
 
 To view an item in a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ I can provide the position as an index in ``[]`` to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. Python uses zero-based indexing which means the positions of items starts at 0. I can also view items from the right side of the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ by using negative numbers
 
@@ -295,7 +299,7 @@ I add a failing test for indexing a `list <https://docs.python.org/3/library/std
 
 .. code-block:: python
 
-    def test_getting_items_in_a_list(self):
+    def test_getting_items_from_a_list(self):
         a_list = ['first', 'second', 'third', 'fourth']
         self.assertEqual(a_list, ['first', 'second', 'third', 'fourth'])
         self.assertEqual(a_list[0], '')
@@ -317,11 +321,11 @@ the terminal shows an :ref:`AssertionError`
 green: make it pass
 ===================
 
-* I make the value in the test to make the failing line pass
+* I change the value in the test to make the failing line pass
 
   .. code-block:: python
 
-    def test_getting_items_in_a_list(self):
+    def test_getting_items_from_a_list(self):
         a_list = ['first', 'second', 'third', 'fourth']
         self.assertEqual(a_list, ['first', 'second', 'third', 'fourth'])
         self.assertEqual(a_list[0], 'first')
@@ -338,13 +342,12 @@ green: make it pass
   .. code-block:: python
 
     AssertionError: 'third' != ''
-    - third
 
-* I make the value to match the result
+* I make the value match what is in the terminal
 
   .. code-block:: python
 
-    def test_getting_items_in_a_list(self):
+    def test_getting_items_from_a_list(self):
         a_list = ['first', 'second', 'third', 'fourth']
         self.assertEqual(a_list, ['first', 'second', 'third', 'fourth'])
         self.assertEqual(a_list[0], 'first')
@@ -356,18 +359,17 @@ green: make it pass
         self.assertEqual(a_list[-2], '')
         self.assertEqual(a_list[-4], '')
 
-  the terminal shows a failure for the next test
+  and get a failure for the next test
 
   .. code-block:: python
 
     AssertionError: 'second' != ''
-    - second
 
-* I make each failing line until all the tests pass
+* I change each failing line until all the tests pass
 
   .. code-block:: python
 
-    def test_getting_items_in_a_list(self):
+    def test_getting_items_from_a_list(self):
         a_list = ['first', 'second', 'third', 'fourth']
         self.assertEqual(a_list, ['first', 'second', 'third', 'fourth'])
         self.assertEqual(a_list[0], 'first')
@@ -381,9 +383,11 @@ green: make it pass
 
 ----
 
-************
-IndexError
-************
+.. _test_index_error:
+
+*****************************************************************************
+test_index_error
+*****************************************************************************
 
 An IndexError_ is raised when I try to get an item from a list but use a number that is greater than the number of items in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_.
 
@@ -394,7 +398,7 @@ I add a failing test to show this
 
 .. code-block:: python
 
-    def test_indexing_with_number_greater_than_length_of_list(self):
+    def test_index_error(self):
         a_list = ['first', 'second', 'third', 'fourth']
         a_list[5]
 
@@ -421,7 +425,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_indexing_with_number_greater_than_length_of_list(self):
+    def test_index_error(self):
         a_list = ['a', 'b', 'c', 'd']
         with self.assertRaises(IndexError):
             a_list[5]
@@ -435,7 +439,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_indexing_with_number_greater_than_length_of_list(self):
+    def test_index_error(self):
         a_list = ['a', 'b', 'c', 'd']
         with self.assertRaises(IndexError):
             a_list[5]
@@ -452,9 +456,11 @@ refactor: make it better
 
 ----
 
-**************************************************
-How to view the attributes and methods of a list
-**************************************************
+.. _test_list_attributes_and_methods:
+
+*****************************************************************************
+test_list_attributes_and_methods
+*****************************************************************************
 
 The chapter on :doc:`/classes/classes` shows how to view the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of an `object <https://docs.python.org/3/glossary.html#term-object>`_ by using the dir_ :ref:`function<functions>`. Let us try it for `lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
 
@@ -465,7 +471,7 @@ I add a failing test using the dir_ :ref:`function<functions>`
 
 .. code-block:: python
 
-    def test_attributes_and_methods_of_a_list(self):
+    def test_list_attributes_and_methods(self):
         self.assertEqual(
             dir(list),
             []
@@ -491,85 +497,85 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_attributes_and_methods_of_a_list(self):
+    def test_list_attributes_and_methods(self):
         self.maxDiff = None
         self.assertEqual(
             dir(list),
             []
         )
 
-  the terminal shows a long list of items
+  and the terminal shows a long list of items
 
-I copy the items from the terminal and remove the extra characters
+* I copy and paste the items from the terminal and remove the extra characters
 
-.. note::
+  .. note::
 
-  Your results may vary based on your version of Python
+    Your results may vary based on your version of Python
 
-.. code-block:: python
+  .. code-block:: python
 
-    def test_attributes_and_methods_of_a_list(self):
-        self.maxDiff = None
-        self.assertEqual(
-            dir(list),
-            [
-                '__add__',
-                '__class__',
-                '__class_getitem__',
-                '__contains__',
-                '__delattr__',
-                '__delitem__',
-                '__dir__',
-                '__doc__',
-                '__eq__',
-                '__format__',
-                '__ge__',
-                '__getattribute__',
-                '__getitem__',
-                '__getstate__',
-                '__gt__',
-                '__hash__',
-                '__iadd__',
-                '__imul__',
-                '__init__',
-                '__init_subclass__',
-                '__iter__',
-                '__le__',
-                '__len__',
-                '__lt__',
-                '__mul__',
-                '__ne__',
-                '__new__',
-                '__reduce__',
-                '__reduce_ex__',
-                '__repr__',
-                '__reversed__',
-                '__rmul__',
-                '__setattr__',
-                '__setitem__',
-                '__sizeof__',
-                '__str__',
-                '__subclasshook__',
-                'append',
-                'clear',
-                'copy',
-                'count',
-                'extend',
-                'index',
-                'insert',
-                'pop',
-                'remove',
-                'reverse',
-                'sort'
-            ]
-        )
+      def test_list_attributes_and_methods(self):
+          self.maxDiff = None
+          self.assertEqual(
+              dir(list),
+              [
+                  '__add__',
+                  '__class__',
+                  '__class_getitem__',
+                  '__contains__',
+                  '__delattr__',
+                  '__delitem__',
+                  '__dir__',
+                  '__doc__',
+                  '__eq__',
+                  '__format__',
+                  '__ge__',
+                  '__getattribute__',
+                  '__getitem__',
+                  '__getstate__',
+                  '__gt__',
+                  '__hash__',
+                  '__iadd__',
+                  '__imul__',
+                  '__init__',
+                  '__init_subclass__',
+                  '__iter__',
+                  '__le__',
+                  '__len__',
+                  '__lt__',
+                  '__mul__',
+                  '__ne__',
+                  '__new__',
+                  '__reduce__',
+                  '__reduce_ex__',
+                  '__repr__',
+                  '__reversed__',
+                  '__rmul__',
+                  '__setattr__',
+                  '__setitem__',
+                  '__sizeof__',
+                  '__str__',
+                  '__subclasshook__',
+                  'append',
+                  'clear',
+                  'copy',
+                  'count',
+                  'extend',
+                  'index',
+                  'insert',
+                  'pop',
+                  'remove',
+                  'reverse',
+                  'sort'
+              ]
+          )
 
-the terminal shows passing tests
+  and the terminal shows passing tests
 
 refactor: make it better
 =========================
 
-There are more :ref:`methods<functions>` listed than what I have reviewed. Based on their names, I can make a guess as to what they do, and I know some from the tests above
+There are more :ref:`methods<functions>` listed than what I have reviewed. Based on their names, I can make a guess at what they do, and I know some from the tests above
 
 * append - adds an item to the list
 * clear - does this clear the items in the list?
@@ -585,7 +591,31 @@ There are more :ref:`methods<functions>` listed than what I have reviewed. Based
 
 You can add tests for these :ref:`methods<functions>` to find out what they do or `read more about lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list%20remove#more-on-lists>`_
 
-you encountered the following exceptions
+.. _lists_review:
+
+*****************************************************************************
+review
+*****************************************************************************
+
+* Lists are represented with ``[]``
+* Lists can be created with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor
+* Lists can hold any `object <https://docs.python.org/3/glossary.html#term-object>`_
+* Lists can be changed after creation by performing an operation, this means they are mutable
+* Lists can be looped over
+
+I ran the following tests to show things I can do with lists in Python
+
+* `test_creating_a_list`_
+* `test_adding_an_item_to_a_list`_
+* `test_removing_an_item_from_a_list`_
+* `test_removing_the_last_item_from_a_list`_
+* `test_getting_items_from_a_list`_
+* `test_index_error`_
+* `test_list_attributes_and_methods`_
+
+
+
+You encountered the following exceptions in this chapter
 
 * :ref:`AssertionError`
 * :ref:`TypeError`

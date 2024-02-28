@@ -266,6 +266,8 @@ The ``duration`` :ref:`function<functions>` currently returns ``1`` even when I 
 
   because Python does not have an operation defined for subtracting one string_ from another. I need a way to convert a timestamp from a string_ to an integer_.
 
+.. _test_string_attributes_and_methods:
+
 test_string_attributes_and_methods
 #############################################################################
 
