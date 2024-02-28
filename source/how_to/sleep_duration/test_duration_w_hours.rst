@@ -472,7 +472,7 @@ green: make it pass
 
     def test_string_attributes_and_methods(self):
         ...
-        self.assertEqual(help('12:34'))
+        self.assertEqual(help(str))
 
   the terminal shows documentation for the string_ module and I read the descriptions for each :ref:`method<functions>` until I see one that looks like it could solve the problem
 
@@ -499,7 +499,7 @@ test_string_splitting
 red: make it fail
 -----------------------------------------------------------------------------
 
-I remove ``self.assertEqual(help('12:34'))``, add a failing test for the `str.split`_ :ref:`method<functions>` to see what it does
+I remove ``self.assertEqual(help(str))``, add a failing test for the `str.split`_ :ref:`method<functions>` to see what it does
 
 .. code-block:: python
 
@@ -750,7 +750,7 @@ I get passings tests and have another tool to help solve the problem
           - int(sleep_time.split(':')[0])
         )
 
-  YES! it does, the terminal shows passing tests! The ``duration`` :ref:`function<functions>` calculates the duration between any given random sleep and wake hours in a day
+  YES! it does, the terminal shows passing tests!
 
 * Since all the tests are passing I can rewrite the solution as a series of steps for someone who does not know how to use `str.split`_, index a :doc:`list </data_structures/lists/lists>` or use the int_ constructor
 
@@ -758,12 +758,12 @@ I get passings tests and have another tool to help solve the problem
 
     def duration(wake_time=None, sleep_time=None):
         wake_time_split = wake_time.split(':')
-        wake_time_hour = wake_time_split[0]
-        wake_time_hour_integer = int(wake_time_hour)
+        wake_hour = wake_time_split[0]
+        wake_hour_integer = int(wake_hour)
 
         return (
             # int(wake_time.split(':')[0])
-            wake_time_hour_integer
+            wake_hour_integer
           - int(sleep_time.split(':')[0])
         )
 
@@ -773,28 +773,22 @@ I get passings tests and have another tool to help solve the problem
 
     def duration(wake_time=None, sleep_time=None):
         wake_time_split = wake_time.split(':')
-        wake_time_hour = wake_time_split[0]
-        wake_time_hour_integer = int(wake_time_hour)
+        wake_hour = wake_time_split[0]
+        wake_hour_integer = int(wake_hour)
 
         sleep_time_split = sleep_time.split(':')
-        sleep_time_hour = sleep_time_split[0]
-        sleep_time_hour_integer = int(sleep_time_hour)
+        sleep_hour = sleep_time_split[0]
+        sleep_hour_integer = int(sleep_hour)
 
         return (
-            wake_time_hour_integer
+            wake_hour_integer
         # - int(sleep_time.split(':')[0])
-          - sleep_time_hour_integer
+          - sleep_hour_integer
         )
 
   and the terminal still shows passing tests
 
-* the ``duration`` :ref:`function<functions>` does the following for each given timestamp
-
-  - it splits the timestamp string_ on the separator ``':'``
-  - it gets the first item from the split
-  - then it converts the first item from the split to an integer_
-
-  I can make these steps a separate :ref:`function<functions>` that is called for ``wake_time`` and ``sleep_time``
+* I can make these steps a separate :ref:`function<functions>` that is called for ``wake_time`` and ``sleep_time`` to remove the repetition since the only thing that is different are the timestamps
 
   .. code-block:: python
 
@@ -806,12 +800,12 @@ I get passings tests and have another tool to help solve the problem
 
     def duration(wake_time=None, sleep_time=None):
         wake_time_split = wake_time.split(':')
-        wake_time_hour = wake_time_split[0]
-        wake_time_hour_integer = int(wake_time_hour)
+        wake_hour = wake_time_split[0]
+        wake_hour_integer = int(wake_hour)
 
         sleep_time_split = sleep_time.split(':')
-        sleep_time_hour = sleep_time_split[0]
-        sleep_time_hour_integer = int(sleep_time_hour)
+        sleep_hour = sleep_time_split[0]
+        sleep_hour_integer = int(sleep_hour)
 
         return (
             process(wake_time)
