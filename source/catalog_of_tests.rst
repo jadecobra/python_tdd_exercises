@@ -44,10 +44,10 @@ test_sleep_duration
 test_lists
 *****************************************************************************
 
-#. `test_creating_a_list`_
-#. `test_adding_an_item_to_a_list`_
-#. `test_removing_an_item_from_a_list`_
-#. `test_removing_the_last_item_from_a_list`_
-#. `test_getting_items_from_a_list`_
-#. `test_index_error`_
-#. `test_list_attributes_and_methods`_
+#. :ref:`test_creating_a_list`
+#. :ref:`test_adding_an_item_to_a_list`
+#. :ref:`test_removing_an_item_from_a_list`
+#. :ref:`test_removing_the_last_item_from_a_list`
+#. :ref:`test_getting_items_from_a_list`
+#. :ref:`test_index_error`
+#. :ref:`test_list_attributes_and_methods`
