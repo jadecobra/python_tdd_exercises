@@ -219,7 +219,7 @@ What happens when there is more than one of the same item in a list? How does Py
         a_list.remove(2)
         self.assertEqual(a_list, [0, 1, 2, 3, 2])
 
-  From the test I see that teh `remove <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`function<functions>` removes the first item when there is more than one of the same item in a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+  From the test I see that the `remove <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` takes away the first item when there is more than one of the same item in a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
 ----
 
@@ -578,8 +578,8 @@ There are more :ref:`methods<functions>` listed than what I have reviewed. Based
 * extend - does this extend the list?
 * index
 * insert - does this place an item in the list? what's the difference between this and append?
-* pop - removes the last item in the list
-* remove - removes the first occurrence of a given item in the list
+* pop - takes away the last item in the list
+* remove - takes away the first occurrence of a given item in the list
 * reverse - does this reverse the list?
 * sort - does this sort the items in the list?
 
