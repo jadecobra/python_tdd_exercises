@@ -472,7 +472,7 @@ green: make it pass
 
     def test_string_attributes_and_methods(self):
         ...
-        self.assertEqual(help(str))
+        self.assertEqual(help('12:34'))
 
   the terminal shows documentation for the string_ module and I read the descriptions for each :ref:`method<functions>` until I see one that looks like it could solve the problem
 
@@ -499,7 +499,7 @@ test_string_splitting
 red: make it fail
 -----------------------------------------------------------------------------
 
-I remove ``self.assertEqual(help(str))``, add a failing test for the `str.split`_ :ref:`method<functions>` to see what it does
+I remove ``self.assertEqual(help('12:34'))``, add a failing test for the `str.split`_ :ref:`method<functions>` to see what it does
 
 .. code-block:: python
 
@@ -727,7 +727,7 @@ so I change the number from ``1`` to ``12``
 
 .. code-block:: python
 
-self.assertEqual(int('12'), 12)
+  self.assertEqual(int('12'), 12)
 
 I get passings tests and have another tool to help solve the problem
 
