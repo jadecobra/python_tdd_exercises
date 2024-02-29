@@ -105,15 +105,8 @@ class TestSleepDuration(unittest.TestCase):
         )
 
         split = '12:34'.split(':')
-
-        self.assertEqual(
-            split[0],
-            '12'
-        )
-        self.assertEqual(
-            split[1],
-            '34'
-        )
+        self.assertEqual(split[0], '12')
+        self.assertEqual(split[1], '34')
 
         self.assertEqual(
             '31/12/99 13:04'.split(':')[0],

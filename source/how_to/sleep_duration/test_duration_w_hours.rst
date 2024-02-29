@@ -271,7 +271,7 @@ The ``duration`` :ref:`function<functions>` currently returns ``1`` even when I 
 test_string_attributes_and_methods
 #############################################################################
 
-The ``wake_time`` and ``sleep_time`` are currently in this format - ``XX:00`` where ``XX`` is the hours. I can calculate the difference if I can get the first 2 characters and convert them to numbers since Python can do :doc:`arithmetic </how_to/calculator>`.
+The ``wake_time`` and ``sleep_time`` are currently in this format - ``XX:00`` where ``XX`` is the hours. I can calculate the difference if I can get the first 2 characters and convert them to numbers since I can do :doc:`arithmetic </how_to/calculator>` with Python
 
 .. _test_string_attributes_and_methods_red:
 
@@ -574,7 +574,15 @@ refactor: make it better
 
   the test passes. I now know how to get the different parts of ``wake_time`` and ``sleep_time``
 
-* I remove the `unittest.skip decorator`_ from ``test_duration_w_hours`` and then add calls to the `str.split`_ :ref:`method<functions>` in the ``duration`` :ref:`function<functions>` in ``sleep_duration.py``
+* I comment out the `unittest.skip decorator`_ from ``test_duration_w_hours``
+
+  .. code-block:: python
+
+    # @unittest.skip
+    def test_duration_w_hours(self):
+    ...
+
+* and then add calls to the `str.split`_ :ref:`method<functions>` in the ``duration`` :ref:`function<functions>` in ``sleep_duration.py``
 
   .. code-block:: python
 
@@ -608,13 +616,8 @@ red: make it fail
         )
 
         split = '12:34'.split(':')
-
-        self.assertEqual(
-            split[0], 0
-        )
-        self.assertEqual(
-            split[1], 1
-        )
+        self.assertEqual(split[0], 0)
+        self.assertEqual(split[1], 1)
 
     def test_duration_w_hours(self):
     ...
@@ -682,7 +685,7 @@ I want to see if I can use the int_ constructor to convert a string_ to an integ
 red: make it fail
 -----------------------------------------------------------------------------
 
-I disable the current failing test by using the `unittest.skip decorator`_
+I uncomment the `unittest.skip decorator`_ to disable the current failing test
 
 .. code-block:: python
 
@@ -752,7 +755,7 @@ I get passings tests and have another tool to help solve the problem
           - int(sleep_time.split(':')[0])
         )
 
-  and it does, the terminal shows passing tests!
+  and it does, the terminal shows passing tests! Celebration Time
 
 * Since all the tests are passing I can rewrite the solution as a series of steps for someone who does not know how to use `str.split`_, index a :doc:`list </data_structures/lists/lists>` or use the int_ constructor
 
