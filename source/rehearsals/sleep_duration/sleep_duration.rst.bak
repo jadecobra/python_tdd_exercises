@@ -598,14 +598,14 @@ red: make it fail
             ['01', '23']
         )
 
-        timestamp_split = '12:34'.split(':')
+        split = '12:34'.split(':')
 
         self.assertEqual(
-            timestamp_split[0],
+            split[0],
             0
         )
         self.assertEqual(
-            timestamp_split[1],
+            split[1],
             0
         )
 
@@ -794,10 +794,10 @@ the terminal shows passings tests. I have another tool to help solve the problem
   .. code-block:: python
 
     def process(timestamp):
-        timestamp_split = timestamp.split(':')
-        timestamp_hour = timestamp_split[0]
-        timestamp_hour_integer = int(timestamp_hour)
-        return timestamp_hour_integer
+        split = timestamp.split(':')
+        hour = split[0]
+        hour_integer = int(hour)
+        return hour_integer
 
     def duration(wake_time=None, sleep_time=None):
         return (
@@ -825,10 +825,10 @@ the terminal shows passings tests. I have another tool to help solve the problem
   .. code-block:: python
 
     def get_hour(timestamp):
-        timestamp_split = timestamp.split(':')
-        timestamp_hour = timestamp_split[0]
-        timestamp_hour_integer = int(timestamp_hour)
-        return timestamp_hour_integer
+        split = timestamp.split(':')
+        hour = split[0]
+        hour_integer = int(hour)
+        return hour_integer
 
     def duration(wake_time=None, sleep_time=None):
         return (
@@ -1657,13 +1657,13 @@ green: make it pass
             ['01', '23']
         )
 
-        timestamp_split = '12:34'.split(':')
+        split = '12:34'.split(':')
         self.assertEqual(
-            timestamp_split[0],
+            split[0],
             '12'
         )
         self.assertEqual(
-            timestamp_split[1],
+            split[1],
             '34'
         )
 

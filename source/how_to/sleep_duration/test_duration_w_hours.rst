@@ -6,7 +6,7 @@
 how to measure sleep duration: test_duration_w_hours
 #############################################################################
 
-This is chapter 1 of 5 where the challenge is to create a :ref:`function<functions>` that calculates the difference between 2 given timestamps
+This is part 1 of 5 where the challenge is to create a :ref:`function<functions>` that calculates the difference between 2 given timestamps
 
 ----
 
@@ -607,13 +607,13 @@ red: make it fail
             ['01', '23']
         )
 
-        timestamp_split = '12:34'.split(':')
+        split = '12:34'.split(':')
 
         self.assertEqual(
-            timestamp_split[0], 0
+            split[0], 0
         )
         self.assertEqual(
-            timestamp_split[1], 1
+            split[1], 1
         )
 
     def test_duration_w_hours(self):
@@ -795,10 +795,10 @@ I get passings tests and have another tool to help solve the problem
   .. code-block:: python
 
     def process(timestamp):
-        timestamp_split = timestamp.split(':')
-        timestamp_hour = timestamp_split[0]
-        timestamp_hour_integer = int(timestamp_hour)
-        return timestamp_hour_integer
+        split = timestamp.split(':')
+        hour = split[0]
+        hour_integer = int(hour)
+        return hour_integer
 
     def duration(wake_time=None, sleep_time=None):
         wake_time_split = wake_time.split(':')
@@ -821,10 +821,10 @@ I get passings tests and have another tool to help solve the problem
   .. code-block:: python
 
     def get_hour(timestamp):
-        timestamp_split = timestamp.split(':')
-        timestamp_hour = timestamp_split[0]
-        timestamp_hour_integer = int(timestamp_hour)
-        return timestamp_hour_integer
+        split = timestamp.split(':')
+        hour = split[0]
+        hour_integer = int(hour)
+        return hour_integer
 
     def duration(wake_time=None, sleep_time=None):
         return (

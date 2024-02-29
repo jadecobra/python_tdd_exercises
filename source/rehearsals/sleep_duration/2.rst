@@ -762,10 +762,10 @@ I have another tool to help solve the problem. So far, I can
   .. code-block:: python
 
     def process(timestamp):
-        timestamp_split = timestamp.split(':')
-        timestamp_hour = timestamp_split[0]
-        timestamp_hour_integer = int(timestamp_hour)
-        return timestamp_hour_integer
+        split = timestamp.split(':')
+        hour = split[0]
+        hour_integer = int(hour)
+        return hour_integer
 
     def duration(wake_time=None, sleep_time=None):
         return (
@@ -792,10 +792,10 @@ I have another tool to help solve the problem. So far, I can
   .. code-block:: python
 
     def get_hour(timestamp):
-        timestamp_split = timestamp.split(':')
-        timestamp_hour = timestamp_split[0]
-        timestamp_hour_integer = int(timestamp_hour)
-        return timestamp_hour_integer
+        split = timestamp.split(':')
+        hour = split[0]
+        hour_integer = int(hour)
+        return hour_integer
 
     def duration(wake_time=None, sleep_time=None):
         return (

@@ -6,7 +6,7 @@
 how to measure sleep duration: test_duration_w_earlier_wake_than_sleep_time
 #############################################################################
 
-In this chapter, I take a look at building a program that returns the duration between a given sleep and wake time.
+This is part 4 of 5 where the challenge is to create a :ref:`function<functions>` that calculates the difference between 2 given timestamps
 
 ----
 

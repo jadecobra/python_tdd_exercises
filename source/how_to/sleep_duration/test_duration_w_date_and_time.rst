@@ -6,7 +6,7 @@
 how to measure sleep duration: test_duration_w_date_and_time
 #############################################################################
 
-In this chapter, I take a look at building a program that returns the duration between a given sleep and wake time.
+This is part 5 of 5 where the challenge is to create a :ref:`function<functions>` that calculates the difference between 2 given timestamps
 
 ----
 
@@ -94,13 +94,13 @@ green: make it pass
             ['01', '23']
         )
 
-        timestamp_split = '12:34'.split(':')
+        split = '12:34'.split(':')
         self.assertEqual(
-            timestamp_split[0],
+            split[0],
             '12'
         )
         self.assertEqual(
-            timestamp_split[1],
+            split[1],
             '34'
         )
 
