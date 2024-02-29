@@ -1,8 +1,8 @@
 .. include:: ../../links.rst
 
-##############################################
+#############################################################################
 lists: List Comprehensions
-##############################################
+#############################################################################
 
 .. raw:: html
 
@@ -10,12 +10,14 @@ lists: List Comprehensions
 
 `List Comprehensions <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#list-comprehensions>`_ are a way to create a :doc:`list </data_structures/lists/lists>` from an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_. It is a simple way to go over every item in the :doc:`list </data_structures/lists/lists>` and perform an operation usually in one line
 
-***************************************
-How to create a List from an Iterable
-***************************************
+.. _test_creating_a_list_from_an_iterable:
+
+*****************************************************************************
+test_creating_a_list_from_an_iterable
+*****************************************************************************
 
 red: make it fail
-==================
+#############################################################################
 
 I add a file called ``test_list_comprehensions.py`` to the ``tests`` folder with the following code
 
@@ -51,9 +53,9 @@ the terminal shows an :ref:`AssertionError` because ``a_list`` is no longer empt
 
 
 green: make it pass
-====================
+#############################################################################
 
-I make the values in the test to match the result
+I make the values in the test match the result
 
 .. code-block:: python
 
@@ -72,7 +74,7 @@ I make the values in the test to match the result
 and the test passes
 
 refactor: make it better
-=========================
+#############################################################################
 
 * I add another test to check what happens when I use the :doc:`list </data_structures/lists/lists>` constructor on ``container``
 
@@ -210,9 +212,11 @@ From the tests I see that I can make a :doc:`list </data_structures/lists/lists>
 
 ----
 
-***************************************
-How to create a List with a For Loop
-***************************************
+.. _test_creating_a_list_with_a_for_loop:
+
+*****************************************************************************
+test_creating_a_list_with_a_for_loop
+*****************************************************************************
 
 red: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -243,9 +247,9 @@ the terminal shows an :ref:`AssertionError` for the values of ``a_list`` because
 
 
 green: make it pass
-====================
+#############################################################################
 
-* I make the values of the test to match the result
+* I make the values of the test match the result
 
   .. code-block:: python
 
@@ -331,12 +335,16 @@ From the tests I see that I can make a :doc:`list </data_structures/lists/lists>
 * a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ loop
 * the :doc:`list </data_structures/lists/lists>` constructor
 
-**********************************************
-How to create a List with List Comprehensions
-**********************************************
+----
+
+.. _test_creating_lists_with_list_comprehensions:
+
+************************************************************************************
+test_creating_lists_with_list_comprehensions
+************************************************************************************
 
 red: make it fail
-==================
+#############################################################################
 
 I add a failing test to ``TestListComprehensions``
 
@@ -365,9 +373,9 @@ the terminal shows an :ref:`AssertionError`
 
 
 green: make it pass
-=====================
+#############################################################################
 
-* I make the values to make it match the result
+* I make the values in the test match the terminal
 
   .. code-block:: python
 
@@ -466,7 +474,7 @@ Is that in the first case I have to
 With the list comprehension I can get the same result with less words, lines and steps
 
 refactor: make it better
-=========================
+#############################################################################
 
 There is more I can do with `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_, I can add conditions to the operations performed
 
@@ -689,9 +697,9 @@ If you typed along you now know a couple of ways to loop through ``iterables`` a
 You also know how to do it with less words using `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_. Your magic powers are growing.
 
 
-***************************************
+*****************************************************************************
 refactor: make it better
-***************************************
+*****************************************************************************
 
 I have written the same thing multiple times in these tests and since the programming gods told me `Do Not Repeat Yourself! <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_ It is time to remove the repetition in the code.
 
@@ -701,7 +709,9 @@ I have written the same thing multiple times in these tests and since the progra
         self.a_list = []
         self.assertEqual(self.a_list, [])
 
-* I make a reference to ``self.a_list`` in ``test_creating_a_list_from_an_iterable`` ::
+* I make a reference to ``self.a_list`` in ``test_creating_a_list_from_an_iterable``
+
+  .. code-block:: python
 
     def test_creating_a_list_from_an_iterable(self):
         a_list = []
@@ -721,7 +731,9 @@ I have written the same thing multiple times in these tests and since the progra
         )
 
   the terminal still shows passing tests
-* I remove the creation of the empty list and verification from ``test_creating_a_list_from_an_iterable`` ::
+* I remove the creation of the empty list and verification from ``test_creating_a_list_from_an_iterable``
+
+  .. code-block:: python
 
     def test_creating_a_list_from_an_iterable(self):
         container = range(10)
@@ -738,7 +750,9 @@ I have written the same thing multiple times in these tests and since the progra
         )
 
   the terminal still shows passing tests
-* I make the same change in the other tests ::
+* I make the same change in the other tests
+
+  .. code-block:: python
 
     def test_creating_a_list_with_a_for_loop(self):
         container = range(10)
@@ -805,7 +819,9 @@ I have written the same thing multiple times in these tests and since the progra
         )
 
   the terminal still shows passing test
-* In each test I make a `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ object named ``container``, I can add this to the ``setUp`` :ref:`method<functions>` and reference it in the tests ::
+* In each test I make a `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ object named ``container``, I can add this to the ``setUp`` :ref:`method<functions>` and reference it in the tests
+
+  .. code-block:: python
 
     def setUp(self):
         self.a_list = []
