@@ -6,7 +6,7 @@
 how to measure sleep duration: test_duration_w_hours
 #############################################################################
 
-The challenge is to create a :ref:`function<functions>` that calculates the difference between 2 given timestamps
+This is chapter 1 of 5 where the challenge is to create a :ref:`function<functions>` that calculates the difference between 2 given timestamps
 
 ----
 
@@ -40,7 +40,7 @@ red: make it fail
 
 * and I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_sleep_duration.py:7`` with the mouse to open it
 * then I make ``test_failure`` pass
-* and replace it with a failing test that expects ``1`` when the ``duration`` :ref:`function<functions>` in the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>` is called with a ``wake_time`` of ``'08:00'`` and ``sleep_time`` of ``'07:00'`` which in this case is the difference between the two
+* and replace it with a new failing test that expects ``1`` when the ``duration`` :ref:`function<functions>` in the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>` is called with a ``wake_time`` of ``'08:00'`` and ``sleep_time`` of ``'07:00'`` which in this case is the difference between the two
 
   .. code-block:: python
 
@@ -149,7 +149,7 @@ green: make it pass
 
     TypeError: duration() got an unexpected keyword argument 'wake_time'
 
-  ``test_duration_w_hours`` passes values as keyword arguments for ``wake_time`` and ``sleep_time`` when it calls the ``duration`` :ref:`function<functions>` which does not yet have these keyword arguments in its signature
+  the test calls the ``duration`` :ref:`function<functions>` with ``wake_time`` and ``sleep_time`` but these names are not in the signature
 
 * When I add the required keyword argument and set its default value to :ref:`None`
 
@@ -194,9 +194,9 @@ green: make it pass
 refactor: make it better
 *****************************************************************************
 
-The ``duration`` :ref:`function<functions>` currently returns ``1`` even when I change the values for ``wake_time`` and ``sleep_time``. To meet the requirements it has to calculate the difference between ``wake_time`` and ``sleep_time``. I will add variables for random integers_ to cover all timestamps from ``'00:00'`` to ``'23:00'`` for a better test
+The ``duration`` :ref:`function<functions>` currently returns ``1`` even when I change the values for ``wake_time`` and ``sleep_time`` which would not be correct. I will add variables for random integers_ to cover all timestamps from ``'00:00'`` to ``'23:00'`` for a better test
 
-* I add an `import statement`_ for the random_ module to ``test_sleep_duration.py``
+* First, I add an `import statement`_ for the random_ module to ``test_sleep_duration.py``
 
   .. code-block:: python
 
@@ -249,7 +249,7 @@ The ``duration`` :ref:`function<functions>` currently returns ``1`` even when I 
     AssertionError: 1 != -8
     AssertionError: 1 != 4
 
-  the ``duration`` :ref:`function<functions>` returns ``1`` but the test expects the subtraction of ``sleep_hour`` from ``wake_hour``
+  the ``duration`` :ref:`function<functions>` returns ``1`` but the test expects the difference between ``sleep_hour`` and ``wake_hour``
 
 * I make the ``duration`` :ref:`function<functions>` return ``wake_time`` minus ``sleep_time``
 
@@ -340,7 +340,7 @@ green: make it pass
     # TypeError
     # SyntaxError
 
-* it looks like there is a closing quote without an opening one, so I add it, quotes come in pairs
+* there is a closing quote without an opening one, so I add it since quotes come in pairs
 
   .. code-block:: python
 
@@ -658,7 +658,7 @@ green: make it pass
 
   the test passes, bringing me back to the unsolved :ref:`TypeError` for the ``test_duration_w_hours``
 
-* I take what I have learned and make the ``duration`` :ref:`function<functions>` return the result of subtracting the first items of the list got from splitting ``wake_time`` and ``sleep_time`` on the separator ``':'``
+* I take what I know and make the ``duration`` :ref:`function<functions>` return the result of subtracting the first items of the list got from splitting ``wake_time`` and ``sleep_time`` on the separator ``':'``
 
   .. code-block:: python
 
@@ -752,7 +752,7 @@ I get passings tests and have another tool to help solve the problem
           - int(sleep_time.split(':')[0])
         )
 
-  YES! it does, the terminal shows passing tests!
+  and it does, the terminal shows passing tests!
 
 * Since all the tests are passing I can rewrite the solution as a series of steps for someone who does not know how to use `str.split`_, index a :doc:`list </data_structures/lists/lists>` or use the int_ constructor
 
@@ -888,6 +888,7 @@ I get passings tests and have another tool to help solve the problem
 
 .. _test_duration_w_hours_review:
 
+*****************************************************************************
 review
 *****************************************************************************
 
