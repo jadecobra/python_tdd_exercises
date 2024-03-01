@@ -332,7 +332,7 @@ red: make it fail
     def test_duration_w_hours(self):
     ...
 
-* then I add ``test_string_attributes_and_methods`` where I use the dir_ :ref:`function<functions>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of strings_, maybe that will help me find a way to break them apart or get the characters I want
+* then add ``test_string_attributes_and_methods`` where I use the dir_ :ref:`function<functions>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of strings_, maybe it will help me find a way to break them apart or get the characters I want
 
   .. code-block:: python
 
