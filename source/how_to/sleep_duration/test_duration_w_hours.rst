@@ -16,7 +16,7 @@ This is part 1 of 5 where the challenge is to create a :ref:`function<functions>
 red: make it fail
 *****************************************************************************
 
-* I open a terminal and call :ref:`createPythonTdd.sh` with ``sleep_duration`` as the project name
+* I open a terminal and run :ref:`createPythonTdd.sh` with ``sleep_duration`` as the project name
 
   .. code-block:: python
 
@@ -30,7 +30,7 @@ red: make it fail
 
       ./createPythonTdd.ps1 sleep_duration
 
-  the terminal shows
+  and it terminal shows an :ref:`AssertionError` after making the files I need
 
   .. code-block:: python
 
@@ -38,27 +38,18 @@ red: make it fail
 
     tests/test_sleep_duration.py:7: AssertionError
 
-* and I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_sleep_duration.py:7`` with the mouse to open it
-* then I make ``test_failure`` pass
-* and replace it with a new failing test that expects ``1`` when the ``duration`` :ref:`function<functions>` in the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>` is called with a ``wake_time`` of ``'08:00'`` and ``sleep_time`` of ``'07:00'`` which in this case is the difference between the two
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_sleep_duration.py:7`` with the mouse to open it
+* change ``True`` to ``False`` to make ``test_failure`` pass
+* then replace the test with a new failing test that calls the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>`
 
   .. code-block:: python
 
-    import unittest
+    def test_duration_w_hours(self):
+        self.assertEqual(
+            sleep_duration
+        )
 
-
-    class TestSleepDuration(unittest.TestCase):
-
-        def test_duration_w_hours(self):
-            self.assertEqual(
-                sleep_duration.duration(
-                    wake_time='08:00',
-                    sleep_time='07:00'
-                ),
-                1
-            )
-
-  the terminal shows a NameError_
+  and I get a NameError_ in the terminal
 
   .. code-block:: python
 
@@ -70,7 +61,7 @@ red: make it fail
 green: make it pass
 *****************************************************************************
 
-* so I add it to the list of exceptions encountered
+* I add the error to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -78,7 +69,7 @@ green: make it pass
     # AssertionError
     # NameError
 
-* then I add an `import statement`_ at the top of the file
+* then add an `import statement`_ at the top of the file for the :doc:`module </exceptions/ModuleNotFoundError>`
 
   .. code-block:: python
 
@@ -89,13 +80,24 @@ green: make it pass
     class TestSleepDuration(unittest.TestCase):
     ...
 
-  and the terminal shows an :ref:`AttributeError` because ``sleep_duration.py`` has no definition for ``duration``
+* and a reference to ``duration`` in the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>`
+
+  .. code-block:: python
+
+    def test_duration_w_hours(self):
+        self.assertEqual(
+            sleep_duration.duration
+        )
+
+  the terminal shows an :ref:`AttributeError`
 
   .. code-block:: python
 
     AttributeError: module 'sleep_duration' has no attribute 'duration'
 
-* I add it to the list of exceptions encountered
+  because there is no definition for it in the file
+
+* I add the error to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -104,11 +106,11 @@ green: make it pass
     # NameError
     # AttributeError
 
-* then open ``sleep_duration.py`` to add a name ::
+* then open ``sleep_duration.py`` to add the name ::
 
     duration
 
-  the terminal shows a NameError_
+  and get a NameError_ in the terminal
 
   .. code-block:: python
 
@@ -120,7 +122,16 @@ green: make it pass
 
     duration = None
 
-  now I get a :ref:`TypeError`
+* then I add a call to ``duration`` in the test
+
+  .. code-block:: python
+
+    def test_duration_w_hours(self):
+        self.assertEqual(
+            sleep_duration.duration()
+        )
+
+  and get a :ref:`TypeError`
 
   .. code-block:: python
 
@@ -143,15 +154,51 @@ green: make it pass
     def duration():
         return None
 
+* the test needs an expectation so I set it to :ref:`None`
+
+  .. code-block:: python
+
+    def test_duration_w_hours(self):
+        self.assertEqual(
+            sleep_duration.duration(),
+            None
+        )
+
+  and it passes. we are green.
+
+.. _test_duration_w_hours_refactor_0:
+
+*****************************************************************************
+refactor: make it better
+*****************************************************************************
+
+* I want to test that when the ``duration`` :ref:`function<functions>` in the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>` is called with a  ``wake_time`` of ``'08:00'`` and ``sleep_time`` of ``'07:00'`` it returns ``1`` which is the difference between the two timestamps
+
+  .. code-block:: python
+
+    import unittest
+
+
+    class TestSleepDuration(unittest.TestCase):
+
+        def test_duration_w_hours(self):
+            self.assertEqual(
+                sleep_duration.duration(
+                    wake_time='08:00',
+                    sleep_time='07:00'
+                ),
+                1
+            )
+
   the terminal shows another :ref:`TypeError` with a message about the first keyword argument given in the test
 
   .. code-block:: python
 
     TypeError: duration() got an unexpected keyword argument 'wake_time'
 
-  the test calls the ``duration`` :ref:`function<functions>` with ``wake_time`` and ``sleep_time`` but these names are not in the signature
+  because the test calls the ``duration`` :ref:`function<functions>` with ``wake_time`` and ``sleep_time`` but these names are not in its signature
 
-* When I add the required keyword argument and set its default value to :ref:`None`
+* When I add the required keyword argument to the signature and set its default value to :ref:`None`
 
   .. code-block:: python
 
@@ -186,17 +233,11 @@ green: make it pass
     def duration(wake_time=None, sleep_time=None):
         return 1
 
-  and the test passes. We are green.
+  and the test passes, green again
 
-.. _test_duration_w_hours_refactor_0:
+  The ``duration`` :ref:`function<functions>` currently returns ``1`` even when I change the values for ``wake_time`` and ``sleep_time`` which would not be correct. To avoid writing a series of tests for changing timestamps, I will add variables for random integers_ to cover all timestamps from ``'00:00'`` to ``'23:00'``
 
-*****************************************************************************
-refactor: make it better
-*****************************************************************************
-
-The ``duration`` :ref:`function<functions>` currently returns ``1`` even when I change the values for ``wake_time`` and ``sleep_time`` which would not be correct. I will add variables for random integers_ to cover all timestamps from ``'00:00'`` to ``'23:00'`` for a better test
-
-* First, I add an `import statement`_ for the random_ module to ``test_sleep_duration.py``
+* First, I add an `import statement`_ for the random_ :doc:`module </exceptions/ModuleNotFoundError>` to ``test_sleep_duration.py``
 
   .. code-block:: python
 
@@ -205,6 +246,17 @@ The ``duration`` :ref:`function<functions>` currently returns ``1`` even when I 
     import unittest
 
 * then add variables for random values as the hours part of the ``wake_time`` and ``sleep_time`` timestamps in ``test_duration_w_hours``
+
+  .. code-block:: python
+
+    def test_duration_w_hours(self):
+        wake_hour = random.randint(0, 23)
+        sleep_hour = random.randint(0, 23)
+    ...
+
+  ``random.randint(0, 23)`` will give me a random integer_ from ``0`` up to and including ``23``
+
+* I :doc:`interpolate </how_to/pass_values>` the random integers_ in the input strings_
 
   .. code-block:: python
 
@@ -220,25 +272,19 @@ The ``duration`` :ref:`function<functions>` currently returns ``1`` even when I 
             1
         )
 
-  - ``random.randint(0, 23)`` will give me a random integer_ from ``0`` up to and including ``23``
-  - ``f'{wake_hour:02}:00'`` and ``f'{sleep_hour:02}:00'`` :doc:`interpolate </how_to/pass_values>` the random integers_ in the input strings_
-  - the ``:02`` in ``{wake_hour:02}`` and ``{sleep_hour:02}`` tells Python to always display the numbers as two characters. For example, display ``01`` instead of ``1``
+  the ``:02`` in ``{wake_hour:02}`` and ``{sleep_hour:02}`` tells Python to always display two characters for the numbers, with a leading zero when it is one digit. For example, display ``01`` instead of ``1``
 
 * When I make the test expect the difference between ``wake_hour`` and ``sleep_hour``
 
   .. code-block:: python
 
-    def test_duration_w_hours(self):
-        wake_hour = random.randint(0, 23)
-        sleep_hour = random.randint(0, 23)
-
-        self.assertEqual(
-            sleep_duration.duration(
-                wake_time=f'{wake_hour:02}:00',
-                sleep_time=f'{sleep_hour:02}:00'
-            ),
-            wake_hour-sleep_hour
-        )
+    self.assertEqual(
+        sleep_duration.duration(
+            wake_time=f'{wake_hour:02}:00',
+            sleep_time=f'{sleep_hour:02}:00'
+        ),
+        wake_hour-sleep_hour
+    )
 
   I get an :ref:`AssertionError` that looks like this
 
@@ -476,7 +522,7 @@ green: make it pass
         ...
         self.assertEqual(help(str))
 
-  the terminal shows documentation for the string_ module and I read the descriptions for each :ref:`method<functions>` until I see one that looks like it could solve the problem
+  the terminal shows documentation for the string_ :doc:`module </exceptions/ModuleNotFoundError>` and I read the descriptions for each :ref:`method<functions>` until I see one that looks like it could solve the problem
 
   .. code-block:: python
 
@@ -734,11 +780,7 @@ so I change the number from ``1`` to ``12``
 
   self.assertEqual(int('12'), 12)
 
-I get passings tests and have another tool to help solve the problem
-
-- I can split a string_ on a separator using `str.split`_ to get a :doc:`list </data_structures/lists/lists>` of its parts
-- I can index the :doc:`list </data_structures/lists/lists>`  from splitting the string_ to get a specific item from it
-- I can convert a string_ to an integer_ using the int_ constructor
+and we are green again
 
 ----
 
@@ -921,7 +963,7 @@ I also encountered the following exceptions
 * :ref:`TypeError`
 * SyntaxError_
 
-In the next chapter I :ref:`test duration with hours and minutes<test_duration_w_hours_and_minutes>`
+Would you like to :ref:`test duration with hours and minutes<test_duration_w_hours_and_minutes>`?
 
 ----
 
