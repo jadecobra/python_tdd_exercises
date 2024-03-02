@@ -277,7 +277,7 @@ refactor: make it better
 
   and the test passes, green again
 
-* This :ref:`function<functions>` will always return ``1`` even when I change the values for ``wake_time`` and ``sleep_time`` which would not be correct. I add variables for random integers_ to cover all timestamps from ``'00:00'`` to ``'23:00'`` To avoid writing a series of tests for changing timestamps. First, I add an `import statement`_ for the random_ :doc:`module </exceptions/ModuleNotFoundError>` to ``test_sleep_duration.py``
+* This :ref:`function<functions>` will always return ``1`` even when I change the values for ``wake_time`` and ``sleep_time`` which would not be correct. I add variables for random integers_ to cover all timestamps from ``'00:00'`` to ``'23:00'`` to avoid writing a series of tests for changing timestamps. First, I add an `import statement`_ for the random_ :doc:`module </exceptions/ModuleNotFoundError>` to ``test_sleep_duration.py``
 
   .. code-block:: python
 
@@ -350,14 +350,14 @@ refactor: make it better
 
     TypeError: unsupported operand type(s) for -: 'str' and 'str'
 
-  because Python does not have an operation defined for subtracting one string_ from another. I need a way to convert a timestamp from a string_ to an integer_.
+  because Python does not have an operation defined for subtracting one string_ from another
 
 .. _test_string_attributes_and_methods:
 
 test_string_attributes_and_methods
 #############################################################################
 
-The ``wake_time`` and ``sleep_time`` are currently in this format - ``XX:00`` where ``XX`` is the hours. I can calculate the difference if I can get the first 2 characters and convert them to numbers since I can do :doc:`arithmetic </how_to/calculator>` with Python
+The ``wake_time`` and ``sleep_time`` are currently in this format - ``XX:00`` where ``XX`` is the hours. I want to get the first two characters which is the ``hours``
 
 .. _test_string_attributes_and_methods_red:
 
@@ -848,7 +848,7 @@ green: make it pass
 
   and it does, the terminal shows passing tests! Celebration Time
 
-* Since all the tests are passing I can rewrite the solution as a series of steps for someone who does not know how to use `str.split`_, index a :doc:`list </data_structures/lists/lists>` or use the int_ constructor
+* Since all the tests are passing I can rewrite the solution as steps for someone who does not know how to use `str.split`_, index a :doc:`list </data_structures/lists/lists>` or use the int_ constructor
 
   .. code-block:: python
 
