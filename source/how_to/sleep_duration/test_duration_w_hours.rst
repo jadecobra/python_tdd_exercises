@@ -80,16 +80,48 @@ green: make it pass
     class TestSleepDuration(unittest.TestCase):
     ...
 
-* and a reference to ``duration`` in the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>`
+  the terminal shows a :ref:`TypeError`
+
+  .. code-block:: python
+
+    TypeError: TestCase.assertEqual() missing 1 required positional argument: 'second'
+
+* I add the error to the list of exceptions as well
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AssertionError
+    # NameError
+    # TypeError
+
+* then set the expectation for the test to :ref:`None`
 
   .. code-block:: python
 
     def test_duration_w_hours(self):
         self.assertEqual(
-            sleep_duration.duration
+            sleep_duration,
+            None
         )
 
-  the terminal shows an :ref:`AttributeError`
+  and the terminal shows an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: <module 'sleep_duration' from '/workspace[46 chars].py'> != None
+
+* so I add a reference to something in the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>`
+
+  .. code-block:: python
+
+    def test_duration_w_hours(self):
+        self.assertEqual(
+            sleep_duration.duration,
+            None
+        )
+
+  and get an :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -104,6 +136,7 @@ green: make it pass
     # Exceptions Encountered
     # AssertionError
     # NameError
+    # TypeError
     # AttributeError
 
 * then open ``sleep_duration.py`` to add the name ::
@@ -122,39 +155,15 @@ green: make it pass
 
     duration = None
 
-* then I add a call to ``duration`` in the test
+  and the test passes
 
-  .. code-block:: python
+.. _test_duration_w_hours_refactor_0:
 
-    def test_duration_w_hours(self):
-        self.assertEqual(
-            sleep_duration.duration()
-        )
+*****************************************************************************
+refactor: make it better
+*****************************************************************************
 
-  and get a :ref:`TypeError`
-
-  .. code-block:: python
-
-    TypeError: 'NoneType' object is not callable
-
-* which I add to the list of exceptions encountered
-
-  .. code-block:: python
-
-    # Exceptions Encountered
-    # AssertionError
-    # NameError
-    # AttributeError
-    # TypeError
-
-* then I make ``duration`` a :ref:`function<functions>` to make it callable_
-
-  .. code-block:: python
-
-    def duration():
-        return None
-
-* the test needs an expectation so I set it to :ref:`None`
+* I add a call to ``duration`` in the test because I want it to accepts inputs
 
   .. code-block:: python
 
@@ -164,13 +173,20 @@ green: make it pass
             None
         )
 
-  and it passes. we are green.
+  and get a :ref:`TypeError`
 
-.. _test_duration_w_hours_refactor_0:
+  .. code-block:: python
 
-*****************************************************************************
-refactor: make it better
-*****************************************************************************
+    TypeError: 'NoneType' object is not callable
+
+* then I make ``duration`` a :ref:`function<functions>` to make it callable_
+
+  .. code-block:: python
+
+    def duration():
+        return None
+
+  and the test passes. green again
 
 * I want the ``duration`` :ref:`function<functions>` in the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>` to take in a ``wake_time`` of ``08:00`` and add it to the test
 
@@ -218,7 +234,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    TypeError: duration() got an unexpected keyword argument 'wake_time'
+    TypeError: duration() got an unexpected keyword argument 'sleep_time'
 
   because the test calls the ``duration`` :ref:`function<functions>` with ``sleep_time`` but the name is not in its signature
 
@@ -406,8 +422,8 @@ green: make it pass
     # Exceptions Encountered
     # AssertionError
     # NameError
-    # AttributeError
     # TypeError
+    # AttributeError
     # SyntaxError
 
 * there is a closing quote without an opening one, so I add it since quotes come in pairs
@@ -988,8 +1004,8 @@ I also encountered the following exceptions
 
 * :ref:`AssertionError`
 * NameError_
-* :ref:`AttributeError`
 * :ref:`TypeError`
+* :ref:`AttributeError`
 * SyntaxError_
 
 Would you like to :ref:`test duration with hours and minutes<test_duration_w_hours_and_minutes>`?
