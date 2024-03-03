@@ -104,7 +104,7 @@ std:label
     functions: tests and solutions           functions: Tests and Solutions          : code/code_functions.html#functions-tests-and-solutions
     general requirements                     General Requirements                    : how_to/make_tdd_environment.html#general-requirements
     genindex                                 Index                                   : genindex.html
-    green : make it pass                     GREEN : make it pass                    : how_to/calculator.html#id14
+    green: make it pass                     green: make it pass                    : how_to/calculator.html#id14
     green: make it pass                      GREEN: make it pass                     : how_to/sleep_duration.html#id19
     how i setup my interactive development environment (ide) How I setup my Interactive Development Environment (IDE): how_to/setup_my_ide.html#how-i-setup-my-interactive-development-environment-ide
     how to access dictionary values          How to access dictionary values         : data_structures/dictionaries.html#how-to-access-dictionary-values

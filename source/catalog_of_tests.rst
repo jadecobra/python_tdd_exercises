@@ -4,18 +4,31 @@ Catalog of Tests
 
 Here are all the tests written in this book
 
+:ref:`test_failure`
+
 *****************************************************************************
 test_calculator
 *****************************************************************************
+
+#. :ref:`test_addition`
+#. :ref:`test_subtraction`
+#. :ref:`test_multiplication`
+#. :ref:`test_division`
 
 
 *****************************************************************************
 test_telephone
 *****************************************************************************
 
+:ref:`test_text_messages`
+
 *****************************************************************************
 test_person_factory
 *****************************************************************************
+
+:ref:`test_person_factory`
+:ref:`test_factory_w_default_keyword_arguments`
+:ref:`test_factory_w_sex_default_keyword_arguments`
 
 *****************************************************************************
 test_exceptions

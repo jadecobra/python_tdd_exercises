@@ -28,7 +28,7 @@ class TestPersonFactory(unittest.TestCase):
             },
         )
 
-    def test_person_factory_w_variable_inputs(self):
+    def test_factory_w_variable_inputs(self):
         first_name = "john"
         last_name = "doe"
         sex = "M"
@@ -49,7 +49,7 @@ class TestPersonFactory(unittest.TestCase):
             },
         )
 
-    def test_person_factory_w_default_keyword_arguments(self):
+    def test_factory_w_default_keyword_arguments(self):
         first_name = "child_a"
         sex = "M"
         year_of_birth = 2014
@@ -68,7 +68,7 @@ class TestPersonFactory(unittest.TestCase):
             },
         )
 
-    def test_person_factory_w_sex_default_keyword_argument(self):
+    def test_factory_w_sex_default_keyword_argument(self):
         first_name = "person"
         year_of_birth = 1900
 

@@ -14,9 +14,14 @@ In this chapter I make a basic calculator that performs addition, subtraction, m
 
 ----
 
+.. _test_addition:
+
 *****************************************************************************
+test_addition
+*****************************************************************************
+
 red: make it fail
-*****************************************************************************
+#############################################################################
 
 * I open a terminal and run :ref:`makePythonTdd.sh` with ``calculator`` as the project name
 
@@ -58,14 +63,7 @@ red: make it fail
     # Exceptions Encountered
     # AssertionError
 
-****************
-Test Addition
-****************
-
-red: make it fail
-==================
-
-* I add a :ref:`method<functions>` called ``test_addition`` to the ``TestCalculator`` :doc:`class </classes/classes>`
+* I replace ``test_failure`` with ``test_addition``
 
   .. code-block:: python
 
@@ -74,15 +72,11 @@ red: make it fail
 
     class TestCalculator(unittest.TestCase):
 
-        def test_failure(self):
-            self.assertTrue(True)
-
         def test_addition(self):
             self.assertEqual(
                 calculator.add(0, 1),
                 1
             )
-
 
   - I use the `unittest.TestCase.assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ :ref:`method<functions>` which checks if its 2 inputs are equal. It is similar to the statement ``assert x == y`` or asking ``is x equal to y?``
   - I am sending two things to `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ for evaluation
@@ -91,12 +85,14 @@ red: make it fail
     * second: ``1`` is the expected result from calling the ``add`` function in ``calculator.py`` with ``0`` and ``1`` as inputs
     * my expectation is that ``calculator.add(0, 1)`` is equal to ``1``
 
-* the terminal shows a NameError because ``calculator`` is not defined anywhere in ``test_calculator.py`` ::
+  the terminal shows a NameError because ``calculator`` is not defined anywhere in ``test_calculator.py``
+
+  .. code-block:: python
 
     NameError: name 'calculator' is not defined
 
 green: make it pass
-====================
+#############################################################################
 
 * I add the error to the list of exceptions encountered ::
 
@@ -104,7 +100,9 @@ green: make it pass
     # AssertionError
     # NameError
 
-* then add an `import statement`_ for the ``calculator`` module ::
+* then add an `import statement`_ for the ``calculator`` module
+
+  .. code-block:: python
 
     import calculator
     import unittest
@@ -126,7 +124,9 @@ green: make it pass
   * ``calculator`` refers to ``calculator.py``
   * ``add`` refers to something (an attribute) within the ``calculator.py`` file
 
-* I add the error to the list of exceptions encountered ::
+* I add the error to the list of exceptions encountered
+
+  .. code-block:: python
 
     # Exceptions Encountered
     # AssertionError
@@ -159,7 +159,9 @@ green: make it pass
 
   The :ref:`AttributeError` was fixed by declaring a variable called ``add`` in the ``calculator`` module
 
-* The new error is a :ref:`TypeError` which can occur when an `object <https://docs.python.org/3/glossary.html#term-object>`_ is called in a way that disagrees with the object's definition. In this case the ``add`` variable is not callable_ because it refers to :ref:`None` which is not a callable_ object. I add the error to the list of exceptions encountered ::
+* The new error is a :ref:`TypeError` which can occur when an `object <https://docs.python.org/3/glossary.html#term-object>`_ is called in a way that disagrees with the object's definition. In this case the ``add`` variable is not callable_ because it refers to :ref:`None` which is not a callable_ object. I add the error to the list of exceptions encountered
+
+  .. code-block:: python
 
     # Exceptions Encountered
     # AssertionError
@@ -196,14 +198,14 @@ green: make it pass
   - An :ref:`AssertionError` is raised when an assertion is :doc:`False </data_structures/booleans/booleans>`
   - ``self.assertEqual`` raises an :ref:`AssertionError` when the two inputs it is given are not equal. In other words the result of calling ``calculator.add(0, 1)`` is currently not equal to ``1``
 
-* I make the function to make it return the expected value
+* I make the function return the expected value
 
   .. code-block:: python
 
     def add(x, y):
         return 1
 
-  The test passed. Time for a victory lap.
+  and the test passes. Time for a victory lap.
 
   .. code-block:: python
 
@@ -212,8 +214,8 @@ green: make it pass
     ============== 2 passed in 0.01s ===============
 
 
-REFACTOR: Make it Better
-=========================
+refactor: make it better
+#############################################################################
 
 Wait a minute. Is it that easy? Do I just provide the expectation of the test to make it pass? In the green phase, yes. I do whatever it takes to make the test pass even if I have to cheat.
 
@@ -225,96 +227,86 @@ Solving the problem this way shows a problem with the test, which means I need t
 
 Even though the ``add`` function currently passes the existing test it does not meet the actual requirement.
 
-* I remove ``test_failure`` from ``test_calculator.py`` since it is no longer needed
+red: make it fail
+-----------------------------------------------------------------------------
+
+I add a new test to ``test_addition`` in ``test_calculator.py``
+
+.. code-block:: python
+
+  def test_addition(self):
+      self.assertEqual(
+          calculator.add(0, 1),
+          1
+      )
+      self.assertEqual(
+          calculator.add(-1, 1),
+          0
+      )
+
+the terminal shows an :ref:`AssertionError`, showing that the ``add`` function always returns ``1`` no matter what inputs are given
+
+.. code-block:: python
+
+  E    AssertionError: 1 != 0
+
+green: make it pass
+-----------------------------------------------------------------------------
+
+I make the ``add`` function in ``calculator.py`` to add up the inputs it receives
+
+.. code-block:: python
+
+  def add(x, y):
+      return x + y
+
+and the terminal shows passing tests which increases my confidence in the ``add`` function
+
+.. code-block:: python
+
+  tests/test_calculator.py ..          [100%]
+
+  ============== 1 passed in 0.01s ==============
+
+refactor: make it better
+-----------------------------------------------------------------------------
+
+* I import python's random_ library to generate random integers to test that the function behaves the way I expect for any given numbers
+
+  .. code-block:: python
+
+    import calculator
+    import random
+    import unittest
+
+* then assign a random integer to the x and y variables and change the test to use these variables
 
   .. code-block:: python
 
     class TestCalculator(unittest.TestCase):
 
         def test_addition(self):
+            x = random.randint(-1, 1)
+            y = random.randint(-1, 1)
+
             self.assertEqual(
-                calculator.add(0, 1),
-                1
+                calculator.add(x, y),
+                x+y
             )
 
-* red: make it fail
-
-  then add a new test to ``test_addition`` in ``test_calculator.py``
-
-  .. code-block:: python
-
-    def test_addition(self):
-        self.assertEqual(
-            calculator.add(0, 1),
-            1
-        )
-        self.assertEqual(
-            calculator.add(-1, 1),
-            0
-        )
-
-  the terminal shows an :ref:`AssertionError`, showing that the ``add`` function always returns ``1`` no matter what inputs are given
-
-  .. code-block:: python
-
-    E    AssertionError: 1 != 0
-
-* green: make it pass
-
-  I make the ``add`` function in ``calculator.py`` to add up the inputs it receives
-
-  .. code-block:: python
-
-    def add(x, y):
-        return x + y
-
-  and the terminal shows passing tests which increases my confidence in the ``add`` function
-
-  .. code-block:: python
-
-    tests/test_calculator.py ..          [100%]
-
-    ============== 1 passed in 0.01s ==============
-
-* refactor: make it better
-
-  - I import python's random_ library to generate random integers to test that the function behaves the way I expect for any given numbers
+  - ``x = random.randint(-1, 1)`` assigns a variable called ``x`` to the result of calling ``random.randint(-1, 1)``
+  - ``random.randint(-1, 1)`` returns a random digit that is -1, 0 or 1 to represent the case of negative numbers, zero and positive numbers
+  - the ``assertEqual`` tests that when these two random numbers are given to the ``add`` function as inputs, the output returned is the result of adding them together
+  - the terminal still shows passing tests
 
     .. code-block:: python
 
-      import calculator
-      import random
-      import unittest
+      tests/test_calculator.py ..              [100%]
 
+      ============= 1 passed in 0.01s ===============
 
-  - then I assign a random integer to the x and y variables and change the test to use these variables
-
-    .. code-block:: python
-
-      class TestCalculator(unittest.TestCase):
-
-          def test_addition(self):
-              x = random.randint(-1, 1)
-              y = random.randint(-1, 1)
-
-              self.assertEqual(
-                  calculator.add(x, y),
-                  x+y
-              )
-
-    * ``x = random.randint(-1, 1)`` assigns a variable called ``x`` to the result of calling ``random.randint(-1, 1)``
-    * ``random.randint(-1, 1)`` returns a random digit that is -1, 0 or 1 to represent the case of negative numbers, zero and positive numbers
-    * the ``assertEqual`` tests that when these two random numbers are given to the ``add`` function as inputs, the output returned is the result of adding them together
-    * the terminal still shows passing tests
-
-      .. code-block:: python
-
-        tests/test_calculator.py ..              [100%]
-
-        ============= 1 passed in 0.01s ===============
-
-    I no longer need the previous tests because this new test shows the scenarios for negative numbers, zero and positive numbers
-  - I can remove ``test addition`` from the TODO list since it passed
+* I no longer need the previous tests because this new test shows the scenarios for negative numbers, zero and positive numbers
+* I remove ``test addition`` from the TODO list since it passes
 
     .. code-block:: python
 
@@ -335,15 +327,14 @@ I repeat this process until I have a working program that has been tested which 
 
 ----
 
-*****************
-Test Subtraction
-*****************
+*****************************************************************************
+test_subtraction
+*****************************************************************************
 
 Since addition works and the next item from the TODO list is ``test subtraction`` it is time to add a failing test
 
 red: make it fail
-===================
-
+#############################################################################
 
 * I add a :ref:`method<functions>` called ``test_subtraction`` to ``test_calculator.py``
 
@@ -373,8 +364,8 @@ red: make it fail
 
     AttributeError: module 'calculator' has no attribute 'subtract'
 
-GREEN : make it pass
-=====================
+green: make it pass
+#############################################################################
 
 * I add a variable assignment in ``calculator.py``
 
@@ -434,9 +425,8 @@ GREEN : make it pass
     # test multiplication
     # test division
 
-
 refactor: make it better
-=========================
+#############################################################################
 
 * There is some duplication to remove so `I Do Not Repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
@@ -470,14 +460,16 @@ refactor: make it better
 
 ----
 
-********************
-Test Multiplication
-********************
+.. _test_multiplication:
+
+*****************************************************************************
+test_multiplication
+*****************************************************************************
 
 Moving on to test multiplication, the next item on the TODO list
 
 red: make it fail
-===================
+#############################################################################
 
 I add a failing test called ``test_multiplication`` to ``test_calculator.py``
 
@@ -499,8 +491,8 @@ the terminal shows an :ref:`AttributeError` ::
 
   AttributeError: module 'calculator' has no attribute 'multiply'
 
-GREEN : make it pass
-=====================
+green: make it pass
+#############################################################################
 
 using what I know so far I add a definition for ``multiplication`` to ``calculator.py``
 
@@ -518,12 +510,14 @@ SUCCESS! The terminal shows passing tests and I remove ``test_multiplication`` f
 
 ----
 
-********************
-Test Division
-********************
+.. _test_division:
+
+*****************************************************************************
+test_division
+*****************************************************************************
 
 red: make it fail
-===================
+#############################################################################
 
 I add ``test_division`` to ``test_calculator.py``
 
@@ -545,9 +539,8 @@ the terminal shows an :ref:`AttributeError` ::
 
   AttributeError: module 'calculator' has no attribute 'division'
 
-GREEN : make it pass
-=====================
-
+green: make it pass
+#############################################################################
 
 * I add a ``divide`` :ref:`function<functions>` to ``calculator.py``
 
@@ -569,7 +562,9 @@ GREEN : make it pass
       >    return x / y
       E    ZeroDivisionError: division by zero
 
-* I add `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ to the list of exceptions encountered ::
+* I add `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ to the list of exceptions encountered
+
+  .. code-block:: python
 
     # Exceptions Encountered
     # AssertionError
@@ -578,12 +573,12 @@ GREEN : make it pass
     # TypeError
     # ZeroDivisionError
 
-************************
+
 How to Test for Errors
-************************
+-----------------------------------------------------------------------------
 
 red: make it fail
-===================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 I add a failing line to ``test_calculator.py`` that causes a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ by explicitly dividing by 0, and comment out test that sometimes fails to remove the variability of the test while I figure out the error
 
@@ -608,8 +603,8 @@ the terminal shows my expectations with a failure for any value of ``x`` when ``
 
 :doc:`Exceptions </how_to/exception_handling_programs>` like `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ break execution of a program. No code will run past the line that causes an :doc:`Exception </how_to/exception_handling_programs>` when it is raised which means that no other tests will run until I take care of this error
 
-GREEN : make it pass
-=====================
+green: make it pass
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 I can use the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` in ``test_division`` to confirm that a `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ is raised when I try to divide a number by ``0``
 
@@ -626,7 +621,7 @@ I can use the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` in ``te
 the terminal shows passing tests, and I now have a way to ``catch`` :doc:`Exceptions </how_to/exception_handling_programs>` when testing, which helps to confirm that the code raises an error while allowing other tests to continue running
 
 refactor: make it better
-=========================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 I can use a while loop for the other cases when the divisor is not ``0`` by making sure the value of ``y`` that is passed from the test to ``calculator.divide`` is never ``0``
 
@@ -642,16 +637,19 @@ I can use a while loop for the other cases when the divisor is not ``0`` by maki
           self.x/self.y
       )
 
-
 * ``while self.y == 0:`` makes a loop that repeats as long as ``self.y`` is equal to ``0``
 
   -  ``self.y = random.randint(-1, 1)`` assigns a new random variable to ``self.y`` that could be -1, 0 or 1
   - the loop tells python to assign a new random variable to ``self.y`` as long as the current value of ``self.y`` is equal to ``0``
   - the loop stops when ``self.y`` is not equal to ``0``
 
-* I can now remove the TODO list since all the tests pass
+* I can remove the TODO list since all the tests are passing
 
 ----
+
+*****************************************************************************
+review
+*****************************************************************************
 
 CONGRATULATIONS! You made it through writing a program that can perform the 4 basic arithmetic operations of addition, subtraction, multiplication and division using Test Driven Development.
 

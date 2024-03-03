@@ -230,9 +230,9 @@ refactor: make it better
 
   the terminal shows the test passed
 
-.. _test_person_factory_w_variable_inputs:
+.. _test_factory_w_variable_inputs:
 
-test_person_factory_w_variable_inputs
+test_factory_w_variable_inputs
 -----------------------------------------------------------------------------
 
 red: make it fail
@@ -241,7 +241,7 @@ red: make it fail
 
   .. code-block:: python
 
-    def test_person_factory_w_variable_inputs(self):
+    def test_factory_w_variable_inputs(self):
         self.assertEqual(
             person.factory(
                 first_name="me",
@@ -360,7 +360,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_person_factory_w_variable_inputs(self):
+    def test_factory_w_variable_inputs(self):
         first_name = "me"
         last_name = "my_last_name"
         sex = "M"
@@ -385,7 +385,7 @@ refactor: make it better
 
   .. code-block:: python
 
-      def test_person_factory_w_variable_inputs(self):
+      def test_factory_w_variable_inputs(self):
           first_name = "john"
           last_name = "doe"
           sex = "M"
@@ -434,7 +434,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_person_factory_w_default_keyword_arguments
+test_factory_w_default_keyword_arguments
 *********************************************************************************
 
 red: make it fail
@@ -444,7 +444,7 @@ red: make it fail
 
   .. code-block:: python
 
-    def test_person_factory_w_default_keyword_arguments(self):
+    def test_factory_w_default_keyword_arguments(self):
         first_name = "child_a"
         sex = "M"
         year_of_birth = 2014
@@ -481,19 +481,21 @@ red: make it fail
 
   the terminal shows passing tests. When no value is given for the ``last_name`` argument to ``person.factory`` it uses ``"last_name"`` because that is the defined default value in the :doc:`function signature </functions/functions>`
 
+.. _test_factory_w_sex_default_keyword_argument:
+
 *********************************************************************************
-test_person_factory_w_default_keyword_arguments
+test_factory_w_sex_default_keyword_argument
 *********************************************************************************
 
 red: make it fail
 #############################################################################
 
-* I add a test called ``test_person_factory_w_sex_default_keyword_argument`` to try another default value
+* I add a test called ``test_factory_w_sex_default_keyword_argument`` to try another default value
 
   .. code-block:: python
 
 
-    def test_person_factory_w_sex_default_keyword_argument(self):
+    def test_factory_w_sex_default_keyword_argument(self):
         first_name = "person"
         year_of_birth = 1900
 
