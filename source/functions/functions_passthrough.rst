@@ -1,10 +1,10 @@
 .. include:: ../links.rst
 
 #############################################################################
-functions: test_passthrough_function
+functions: test_passthrough_functions
 #############################################################################
 
-A passthrough :ref:`function<functions>` is one that returns the input it receives as output
+Passthrough :ref:`functions` return their input as output
 
 *****************************************************************************
 red: make it fail
@@ -14,7 +14,7 @@ I add a failing test to the ``TestFunctions`` class in ``test_functions.py``
 
 .. code-block:: python
 
-    def test_passthrough_function(self):
+    def test_passthrough_functions(self):
         self.assertEqual(functions.passthrough(False), False)
 
 the terminal shows an :ref:`AttributeError`
@@ -80,11 +80,11 @@ Wait a minute! Something is not quite right here. The definition for a ``passthr
 red: make it fail
 #############################################################################
 
-I add a new test to ``test_passthrough_function`` in ``TestFunctions`` in ``test_functions.py``
+I add a new test to ``test_passthrough_functions`` in ``TestFunctions`` in ``test_functions.py``
 
 .. code-block:: python
 
-  def test_passthrough_function(self):
+  def test_passthrough_functions(self):
       self.assertEqual(functions.passthrough(False), False)
       self.assertEqual(functions.passthrough(True), True)
 
@@ -111,11 +111,11 @@ the terminal shows passing tests. I have more confidence that the passthrough fu
 refactor: make it better
 #############################################################################
 
-I add more tests to ``test_passthrough_function``
+I add more tests to ``test_passthrough_functions``
 
 .. code-block:: python
 
-  def test_passthrough_function(self):
+  def test_passthrough_functions(self):
       self.assertEqual(functions.passthrough(False), False)
       self.assertEqual(functions.passthrough(True), True)
       self.assertEqual(functions.passthrough(None), False)

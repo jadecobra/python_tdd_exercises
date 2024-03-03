@@ -1,9 +1,9 @@
 .. include:: ../links.rst
 
-functions: test_singleton_function
+functions: test_singleton_functions
 ====================
 
-A singleton function is a function that returns the same output every time it is called.
+Singleton :ref:`functions` always return the same thing when called
 
 *****************************************************************************
 red: make it fail
@@ -13,7 +13,7 @@ I add a test to ``test_functions.py``
 
 .. code-block:: python
 
-    def test_singleton_function(self):
+    def test_singleton_functions(self):
         self.assertEqual(functions.singleton(), 'my_first_name')
 
 the terminal shows an :ref:`AttributeError`
@@ -39,7 +39,7 @@ I add a new test that checks if a singleton that accepts inputs returns the same
 
   .. code-block:: python
 
-      def test_singleton_function_w_input(self):
+      def test_singleton_functions_w_input(self):
           self.assertEqual(
               functions.singleton_w_input('Bob', 'James', 'Frank'),
               'joe'

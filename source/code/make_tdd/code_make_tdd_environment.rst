@@ -1,8 +1,9 @@
 
-#############################################################################****
+#############################################################################
 How to Automatically Make a Test Driven Development Environment
-#############################################################################****
+#############################################################################
 
+*****************************************************************************
 makePythonTdd.sh
 *****************************************************************************
 
@@ -17,13 +18,13 @@ makePythonTdd.sh
 
     chmod +x makePythonTdd.sh
 
-* give a name for the ``$PROJECT_NAME`` variable when the program is called to setup a Test Driven Development on demand. for example typing this command in the terminal in the folder where ``makePythonTdd.sh`` is saved will setup a Test Driven Development environment for a project called ``calculator``
+* give a name for the ``$PROJECT_NAME`` variable when the program is called to make a Test Driven Development on demand. for example typing this command in the terminal in the folder where ``makePythonTdd.sh`` is saved will make a Test Driven Development environment for a project called ``calculator``
 
   .. code-block:: shell
 
     ./makePythonTdd.sh calculator
 
-
+*****************************************************************************
 makePythonTdd.ps1
 *****************************************************************************
 
@@ -32,7 +33,7 @@ makePythonTdd.ps1
   .. literalinclude:: makePythonTdd.ps1
     :language: PowerShell
 
-* give a name for the ``$PROJECT_NAME`` variable when the program is called to setup a Test Driven Development on demand. for example typing this command in the terminal in the folder where ``makePythonTdd.ps1`` is saved will setup a Test Driven Development environment for a project called ``calculator``
+* give a name for the ``$PROJECT_NAME`` variable when the program is called to make a Test Driven Development on demand. for example typing this command in the terminal in the folder where ``makePythonTdd.ps1`` is saved will make a Test Driven Development environment for a project called ``calculator``
 
   .. code-block:: shell
 

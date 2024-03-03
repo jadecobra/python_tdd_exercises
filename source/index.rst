@@ -5,15 +5,15 @@
 
 .. include:: /links.rst
 
-##########################################################################################
+#############################################################################
 Pumping Python: How to solve problems with Test Driven Development
-##########################################################################################
+#############################################################################
 
 I have put together what has worked for me over a decade of learning python and seeing other people use it into this book as exercises using `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_.
 
-**********************
+*****************************************************************************
 Who is this book for?
-**********************
+*****************************************************************************
 
 * If you are interested in Python, this book is for you
 * If you just started your journey, CONGRATULATIONS! You chose Python from the many available `programming languages <https://en.wikipedia.org/wiki/Programming_language>`_, Celebrate it, this book is for you
@@ -29,9 +29,9 @@ Who is this book for?
   - :ref:`TypeError`
   - ValueError_
 
-**********************
-How to use this book
-**********************
+*****************************************************************************
+How can I use this book?
+*****************************************************************************
 
 You can choose how you go through the chapters by starting with what you like.
 
@@ -49,9 +49,9 @@ If you prefer videos, there is one for each chapter at `<https://www.youtube.com
 
 .. _how-tos:
 
-*******
+*****************************************************************************
 HOWTOs
-*******
+*****************************************************************************
 .. toctree::
   :maxdepth: 2
   :titlesonly:
@@ -64,16 +64,11 @@ HOWTOs
   how_to/exception_handling_tests
   how_to/exception_handling_programs
   how_to/sleep_duration
-  test_duration_w_hours <sleep_duration/test_duration_w_hours>
-  test_duration_w_hours_and_minutes <sleep_duration/test_duration_w_hours_and_minutes>
-  test_duration_calculation <sleep_duration/test_duration_calculation>
-  test_duration_w_earlier_wake_than_sleep_time <sleep_duration/test_duration_w_earlier_wake_than_sleep_time>
-  test_duration_w_date_and_time <sleep_duration/test_duration_w_date_and_time>
   .. learning_models
 
-******************
+*****************************************************************************
 Table of Contents
-******************
+*****************************************************************************
 .. toctree::
   :maxdepth: 2
   :titlesonly:
@@ -86,20 +81,7 @@ Table of Contents
   exceptions/IndentationError
   data_structures/none
   data_structures/booleans/booleans
-  data_structures/booleans/truth_table/01_nullary_unary
-  data_structures/booleans/truth_table/02_logical_conjunction
-  data_structures/booleans/truth_table/03_logical_disjunction
-  data_structures/booleans/truth_table/04_logical_implication
-  data_structures/booleans/truth_table/05_logical_equality
-  data_structures/booleans/truth_table/06_exclusive_disjunction
-  data_structures/booleans/truth_table/07_logical_nand
-  data_structures/booleans/truth_table/08_logical_nor
-  data_structures/booleans/truth_table/09_converse_non_implication
-  data_structures/booleans/truth_table/10_material_non_implication
-  data_structures/booleans/truth_table/11_negate
-  data_structures/booleans/truth_table/12_project
-  data_structures/booleans/truth_table/13_converse_implication
-  data_structures/booleans/truth_table/14_true_lies
+  data_structures/booleans/truth_table
   data_structures/lists/lists
   data_structures/lists/list_comprehensions
   data_structures/dictionaries
@@ -115,9 +97,9 @@ Table of Contents
 
 .. _tests-and-solutions:
 
-*********************
+*****************************************************************************
 tests and solutions
-*********************
+*****************************************************************************
 .. toctree::
   :maxdepth: 2
   :titlesonly:
@@ -139,5 +121,7 @@ tests and solutions
   code/code_functions
   code/code_dictionaries
   catalog_of_tests
+
+----
 
 :ref:`search`

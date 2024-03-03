@@ -28,7 +28,7 @@ the terminal shows an :ref:`AttributeError`
 green: make it pass
 *****************************************************************************
 
-* I add the solution I know works from ``test_passthrough_function`` ``functions.py``
+* I add the solution I know works from ``test_passthrough_functions`` ``functions.py``
 
   .. code-block:: python
 

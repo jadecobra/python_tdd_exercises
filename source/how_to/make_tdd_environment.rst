@@ -33,7 +33,7 @@ General Requirements
 Windows Requirements
 *********************
 
-If the operating system of your computer is Windows, setup `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
+If the operating system of your computer is Windows, use `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
 
 * click ``start``
 * type ``PowerShell`` and click to open a terminal
