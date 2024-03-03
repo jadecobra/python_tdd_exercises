@@ -1,12 +1,14 @@
 .. include:: ../links.rst
 
-functions: positional arguments
-===============================
+#############################################################################
+functions: test_functions_with_positional_arguments
+#############################################################################
 
 I can define a function to take in more than one input, For instance if I am writing a function to perform operations on 2 numbers as I do in :doc:`/how_to/calculator` , the function has to be able to accept the 2 numbers it performs operations on
 
+*****************************************************************************
 red: make it fail
-^^^^^^^^^^^^^^^^^
+*****************************************************************************
 
 I add a new test to ``test_functions.py``
 
@@ -22,8 +24,9 @@ I add a new test to ``test_functions.py``
 
 the terminal shows an :ref:`AttributeError`
 
+*****************************************************************************
 green: make it pass
-^^^^^^^^^^^^^^^^^^^
+*****************************************************************************
 
 * I add the solution I know works from ``test_passthrough_function`` ``functions.py``
 
@@ -54,11 +57,11 @@ green: make it pass
 
   the terminal shows passing tests
 
+*****************************************************************************
 refactor: make it better
-^^^^^^^^^^^^^^^^^^^^^^^^
+*****************************************************************************
 
 How can I make this better?
-
 
 * I called the first argument ``input_data`` and the second argument ``second_argument``. Technically, both arguments are input data, so I need a better name that is more descriptive
 * I make the signature of ``passthrough_with_positional_arguments`` to use more descriptive names
