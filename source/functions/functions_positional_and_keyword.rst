@@ -1,12 +1,14 @@
 .. include:: ../links.rst
 
-functions: positional and keyword arguments
--------------------------------------------
+#############################################################################
+functions: test_functions_with_positional_and_keyword_arguments
+#############################################################################
 
 I can also define functions to take both positional arguments and keyword arguments as inputs
 
+*****************************************************************************
 red: make it fail
-^^^^^^^^^^^^^^^^^
+*****************************************************************************
 
 I add a new failing test to ``test_functions.py``
 
@@ -31,9 +33,9 @@ the terminal shows a ``SyntaxError`` because I put a positional argument after a
   # TypeError
   # SyntaxError
 
+*****************************************************************************
 green: make it pass
-^^^^^^^^^^^^^^^^^^^
-
+*****************************************************************************
 
 * I fix the order of arguments in ``test_functions_with_positional_and_keyword_arguments`` since keyword arguments come after positional arguments
 
@@ -112,8 +114,9 @@ green: make it pass
 
   the terminal shows passing tests
 
+*****************************************************************************
 refactor: make it better
-^^^^^^^^^^^^^^^^^^^^^^^^
+*****************************************************************************
 
 Hold on a second. This looks exactly like what I did in ``test_functions_with_positional_arguments``. I cannot tell from the :doc:`function signature </functions/functions>` which argument is positional and which is a keyword argument and do not want to wait for the function to fail when I send in values to find out
 
@@ -338,11 +341,16 @@ Hold on a second. This looks exactly like what I did in ``test_functions_with_po
       )
 
   the terminal shows passing tests
-* From the tests I know that
 
-  * positional arguments are represented as `tuples <https://docs.python.org/3/library/stdtypes.html#tuple>`_ with parentheses - ``()``
-  * keyword arguments are represented as :doc:`dictionaries </data_structures/dictionaries>`  with curly braces - ``{}``
-  * I can use ``*name`` to represent any number of positional arguments
-  * I can use ``**name`` to represent any number of keyword arguments
-  * I can define default values for arguments
-  * positional arguments must come before keyword arguments
+*****************************************************************************
+review
+*****************************************************************************
+
+From the tests I know that
+
+* positional arguments are represented as `tuples <https://docs.python.org/3/library/stdtypes.html#tuple>`_ with parentheses - ``()``
+* keyword arguments are represented as :doc:`dictionaries </data_structures/dictionaries>`  with curly braces - ``{}``
+* I can use ``*name`` to represent any number of positional arguments
+* I can use ``**name`` to represent any number of keyword arguments
+* I can define default values for arguments
+* positional arguments must come before keyword arguments
