@@ -1,7 +1,8 @@
 .. include:: ../links.rst
 
+#############################################################################
 functions: passthrough
-======================
+#############################################################################
 
 A passthrough :ref:`function<functions>` is one that returns the input it receives as output
 
