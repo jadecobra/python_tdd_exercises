@@ -127,3 +127,5 @@ I add more tests to ``test_passthrough_function``
       self.assertEqual(functions.passthrough(dict), False)
 
 the terminal shows an :ref:`AssertionError` for each line until I make the input match the output, proving that the passthrough function I have defined returns the input it is given. Hooray! I am genius again
+
+----

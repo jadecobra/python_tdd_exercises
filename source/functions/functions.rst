@@ -1,7 +1,8 @@
 .. include:: ../links.rst
 
+#############################################################################
 functions
-=========
+#############################################################################
 
 A ``function`` is a callable_ unit/block of code. It is a way to write statements that can be used to accomplish a task at a different time from when they are written. Using functions makes the code modular which makes it easier to read, test, reuse, maintain and improve.
 
@@ -27,8 +28,9 @@ in other words
 
 ``functions`` are defined using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword, a name, parentheses and a colon at the end
 
+*****************************************************************************
 red: make it fail
-^^^^^^^^^^^^^^^^^
+*****************************************************************************
 
 I make a file called ``test_functions.py`` in the ``tests`` folder and add the following failing test
 
@@ -51,8 +53,9 @@ the terminal shows a :ref:`ModuleNotFoundError`\ , and I add it to the list of e
   # AssertionError
   # ModuleNotFoundError
 
+*****************************************************************************
 green: make it pass
-^^^^^^^^^^^^^^^^^^^
+*****************************************************************************
 
 * I make a file called ``functions.py`` in the project folder and the terminal shows an :ref:`AttributeError`\ , which I add to the list of exceptions encountered
 
@@ -77,12 +80,11 @@ green: make it pass
   * `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is a placeholder keyword which allows the function definition to follow python syntax rules
   * the test passes because in Python all functions return :ref:`None` by default, like the function has an invisible line that says ``return None``
 
+*****************************************************************************
 refactor: make it better
-^^^^^^^^^^^^^^^^^^^^^^^^
+*****************************************************************************
 
-* red: make it fail
-
-  I add a new failing test to ``TestFunctions`` in ``test_functions.py`` to check that functions always return :ref:`None`
+* I add a new failing test to ``TestFunctions`` in ``test_functions.py`` to check that functions always return :ref:`None`
 
   .. code-block:: python
 
@@ -91,9 +93,7 @@ refactor: make it better
 
   the terminal shows an :ref:`AttributeError`
 
-* green: make it pass
-
-  I add a new function to ``functions.py`` to make the test pass, this time with a ``return`` statement instead of `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
+*  I add a new function to ``functions.py`` to make the test pass, this time with a ``return`` statement instead of `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
 
   .. code-block:: python
 
@@ -102,11 +102,9 @@ refactor: make it better
 
   the terminal shows this test also passes
 
-  I defined 2 functions with different statements in their body but they both return the same result, because "in Python all functions return :ref:`None` by default, like the function has an invisible line that says ``return None``"
+* I defined 2 functions with different statements in their body but they both return the same result, because "in Python all functions return :ref:`None` by default, like the function has an invisible line that says ``return None``"
 
-* red: make it fail
-
-  I add one more test to the ``TestFunctions`` class in ``test_functions.py`` to help drive home the point
+*  I add one more test to the ``TestFunctions`` class in ``test_functions.py`` to help drive home the point
 
   .. code-block:: python
 
@@ -128,6 +126,10 @@ refactor: make it better
   and the terminal shows passing tests.
 
 The 3 ways I have defined functions so far have the exact same outcome, they all ``return None``. If ``Explicit is better than implicit.`` then I prefer to use ``return None`` telling anyone who reads the code exactly what the function returns.
+
+*****************************************************************************
+review
+*****************************************************************************
 
 Here is what I know so far from the tests
 

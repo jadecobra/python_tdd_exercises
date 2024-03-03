@@ -1,12 +1,13 @@
 .. include:: ../links.rst
 
-functions: singleton
+functions: test_singleton_function
 ====================
 
 A singleton function is a function that returns the same output every time it is called.
 
+*****************************************************************************
 red: make it fail
-^^^^^^^^^^^^^^^^^
+*****************************************************************************
 
 I add a test to ``test_functions.py``
 
@@ -17,8 +18,9 @@ I add a test to ``test_functions.py``
 
 the terminal shows an :ref:`AttributeError`
 
+*****************************************************************************
 green: make it pass
-^^^^^^^^^^^^^^^^^^^
+*****************************************************************************
 
 I make ``functions.py`` to make it pass
 
@@ -27,11 +29,11 @@ I make ``functions.py`` to make it pass
   def singleton():
       return 'my_first_name'
 
+*****************************************************************************
 refactor: make it better
-^^^^^^^^^^^^^^^^^^^^^^^^
+*****************************************************************************
 
 I add a new test that checks if a singleton that accepts inputs returns the same value regardless of the inputs
-
 
 * change ``test_functions.py``
 
@@ -55,6 +57,10 @@ I add a new test that checks if a singleton that accepts inputs returns the same
     def singleton_with_inputs(*args):
         return 'joe'
 
+*****************************************************************************
+review
+*****************************************************************************
+
 From the tests I know
 
 * that singleton functions return the same thing every time they are called
@@ -67,7 +73,6 @@ From the tests I know
 * positional arguments must come before keyword arguments
 
 Do you want to read more about functions?
-
 
 * `functions <https://docs.python.org/3/glossary.html#term-function>`_
 * `methods <https://docs.python.org/3/glossary.html#term-method>`_
