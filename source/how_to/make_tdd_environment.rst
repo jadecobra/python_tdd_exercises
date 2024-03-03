@@ -1,8 +1,8 @@
 .. include:: ../links.rst
 
-####################################################
+#############################################################################
 how to make a Test Driven Development Environment
-####################################################
+#############################################################################
 
 .. raw:: html
 
@@ -16,9 +16,9 @@ I recommend reading `Kent Beck’s <https://en.wikipedia.org/wiki/Kent_Beck>`_ `
 
 This chapter covers one way to make a Python Test Driven Development environment
 
-*********************
+*****************************************************************************
 General Requirements
-*********************
+*****************************************************************************
 
 * download and install `Python <https://www.python.org/downloads/>`_
 * An Interactive Development Environment (IDE). Here are a few options
@@ -29,9 +29,9 @@ General Requirements
   - `Sublime <https://www.sublimetext.com>`_
   - `Other Interactive Development Environment (IDE) options <https://wiki.python.org/moin/IntegratedDevelopmentEnvironments>`_
 
-*********************
+*****************************************************************************
 Windows Requirements
-*********************
+*****************************************************************************
 
 If the operating system of your computer is Windows, use `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
 
@@ -53,9 +53,9 @@ If the operating system of your computer is Windows, use `Windows Subsystem for 
 
 * run subsequent commands in `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_ terminal
 
-*******
-Setup
-*******
+*****************************************************************************
+Make a Test Driven Development Environment
+*****************************************************************************
 
 I open a terminal in the Interactive Development Environment (IDE) and type the following commands to make the project
 
@@ -114,15 +114,20 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
 ----
 
+.. _test_failure:
+
+*****************************************************************************
+test_failure
+*****************************************************************************
+
 The Test Driven Development cycle is ``RED GREEN REFACTOR``
 
 * **RED**: make it fail - write a failing test to make sure the test works
 * **GREEN**: make it pass - write only what is needed to make the test pass
 * **REFACTOR**: make it better
 
-******************
 red: make it fail
-******************
+#############################################################################
 
 * I open up ``project_name/tests/test_project_name.py`` in the Interactive Development Environment (IDE) and type the following
 
@@ -160,7 +165,9 @@ red: make it fail
 
     python3 -m unittest
 
-  the terminal shows a failure ::
+  the terminal shows a failure
+
+  .. code-block:: python
 
     F
     ======================================================
@@ -209,9 +216,8 @@ This is the ``RED`` part of the Test Driven Development cycle. The error in the 
   - ``-m`` is an option passed to python to call a module given after the option
   - `unittest <https://docs.python.org/3/library/unittest.html>`_ is a module from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_ used for testing
 
-********************
 green: make it pass
-********************
+#############################################################################
 
 * I write down :doc:`Exceptions </how_to/exception_handling_programs>` I encounter to become more familiar with them. Time to add :ref:`AssertionError` to the list
 
@@ -252,9 +258,8 @@ green: make it pass
 
   *cue CELEBRATION MUSIC AND DANCE!* I am GREEN.
 
-*************************
 refactor: make it better
-*************************
+#############################################################################
 
 I can make code better by using
 
@@ -269,11 +274,11 @@ So far there is not much to improve on what has been written but there has been 
 
 This means ``python3 -m unittest`` is run for each part of the Test Driven Development cycle or each time there is a code change. I automate this so `I Do Not Repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_, it would be better for a program to automatically run the tests when there is a change to the code
 
-*********************************
-How to Automatically Run Tests
-*********************************
+*****************************************************************************
+how to automatically Run Tests
+*****************************************************************************
 
-How to make a Virtual Environment
+how to make a Virtual Environment
 ====================================
 
 * With the `echo <https://man7.org/linux/man-pages/man1/echo.1.html>`_ program I make a file called ``requirements.txt`` in the ``project_name`` folder with `pytest-watch <https://pypi.org/project/pytest-watch/>`_ as the text
@@ -369,14 +374,14 @@ How to make a Virtual Environment
 * I make the input on line 7 in ``test_project_name.py`` to :doc:`True </data_structures/booleans/booleans>` to make it fail and back to :doc:`False </data_structures/booleans/booleans>` to make it pass with the terminal responding to each change
 * I can press ``ctrl`` + ``c`` on the keyboard in the terminal to stop the tests at anytime
 
-How to Deactivate a Virtual Environment
+how to Deactivate a Virtual Environment
 ========================================
 
 type the following in a terminal with an active `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ ::
 
   deactivate
 
-How to Activate a Virtual Environment
+how to Activate a Virtual Environment
 ========================================
 
 Make sure you are in the directory that contains the `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ for example ``project_name`` and type the following in the terminal::
@@ -391,9 +396,9 @@ Make sure you are in the directory that contains the `virtual environment <https
 
 -----
 
-#############################################################################**********************
-BONUS: Automatically make a Python Test Driven Development Environment
-#############################################################################**********************
+*****************************************************************************
+how to automatically make a Python Test Driven Development Environment
+*****************************************************************************
 
 You made it this far and have become the greatest programmer in the world. Following the `The Do Not Repeat Yourself (DRY) Principle <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_, I would write a program that contains all the steps above. I can then use it to make a Test Driven Development Environment any time I want without having to remember each step of the process
 
@@ -465,8 +470,9 @@ You made it this far and have become the greatest programmer in the world. Follo
     ./makePythonTdd.sh calculator
 
 
-How to Automatically Make a Test Driven Development Environment on Windows without WSL
-*****************************************************************************==================================
+*****************************************************************************
+how to automatically Make a Test Driven Development Environment on Windows without WSL
+*****************************************************************************
 
 .. warning::
 
@@ -491,11 +497,13 @@ How to Automatically Make a Test Driven Development Environment on Windows witho
 
 ----
 
+*****************************************************************************
+review
+*****************************************************************************
+
 One of the advantages of programming is that I can take a series of steps and make them a one line command which the computer does on my behalf.
 
-You now know one way to make a Test Driven Development Environment for Python projects, and have a program to do it for you anytime you want
-
-Happy Trails!
+You now know one way to make a Test Driven Development Environment for Python projects, and have a program to do it for you anytime you want. Happy Trails!
 
 Would you like to test :doc:`/how_to/calculator`?
 

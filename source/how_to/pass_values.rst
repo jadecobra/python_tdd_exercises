@@ -1,8 +1,8 @@
 .. include:: ../links.rst
 
-###################
+#############################################################################
 how to pass values
-###################
+#############################################################################
 
 .. raw:: html
 
@@ -12,63 +12,84 @@ how to pass values
 
 this chapter shows how to pass values from tests to programs using `Formatted string literals <https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals>`_ to place values inside a string
 
-****************
-requirements
-****************
-
-:doc:`make a Test Driven Development Environment </how_to/make_tdd_environment>` with ``telephone`` as the project name
-
 ----
 
-*******************
+.. _test_text_messages:
+
+*****************************************************************************
+test_text_messages
+*****************************************************************************
+
 red: make it fail
-*******************
+#############################################################################
 
-I add a test to ``test_telephone.py``
+* I open a terminal and run :ref:`makePythonTdd.sh` with ``telephone`` as the project name
 
-.. code-block:: python
+  .. code-block:: python
 
-  class TestTelephone(unittest.TestCase):
+    ./makePythonTdd.sh telephone
 
-      def test_failure(self):
-          self.assertFalse(True)
+  .. NOTE::
 
-      def test_text_messages(self):
-          self.assertEqual(
-              telephone.text('hello'),
-              'I received this message: hello'
-          )
+    If you are using Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
 
-and the terminal shows a NameError_
+    .. code-block:: python
 
-.. code-block:: python
+      ./makePythonTdd.ps1 telephone
 
-  NameError: name 'telephone' is not defined
+  and it shows an :ref:`AssertionError` after making the files I need
 
-which I add to the list of exceptions
+  .. code-block:: python
 
-.. code-block:: python
+    E       AssertionError: True is not false
 
-  # Exceptions Encountered
-  # AssertionError
-  # NameError
+    tests/test_telephone.py:7: AssertionError
 
-**********************
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_telephone.py:7`` with the mouse to open it
+* and change ``True`` to ``False`` to make ``test_failure`` pass
+* then replace ``test_failure`` with ``test_text_messages``
+
+  .. code-block:: python
+
+    class TestTelephone(unittest.TestCase):
+
+        def test_text_messages(self):
+            self.assertEqual(
+                telephone.text('hello'),
+                'I received this message: hello'
+            )
+
+  and the terminal shows a NameError_
+
+  .. code-block:: python
+
+    NameError: name 'telephone' is not defined
+
 green: make it pass
-**********************
+#############################################################################
 
-* I remove ``test_failure`` then add an `import statement`_ for the ``telephone`` module
+* which I add to the list of telephone
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AssertionError
+    # NameError
+
+* then add an `import statement`_ for the ``telephone`` module
 
   .. code-block:: python
 
     import telephone
     import unittest
 
-  the terminal shows an :ref:`AttributeError` ::
+  the terminal shows an :ref:`AttributeError`
+
+  .. code-block:: python
 
     AttributeError: module 'telephone' has no attribute 'text'
 
-* I add the error to the list of exceptions encountered
+* I add the error to the list of Exceptions Encountered
 
   .. code-block:: python
 
@@ -102,7 +123,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-- I add the exception to the list of exceptions encountered
+- I add the exception to the list of Exceptions Encountered
 
   .. code-block:: python
 
@@ -146,14 +167,13 @@ green: make it pass
     def text(value):
         return 'I received this message: hello'
 
-**************************
 refactor: make it better
-**************************
+#############################################################################
 
 The problem with this solution is that no matter what value I send to the ``text`` :ref:`function<functions>` it will always return ``'I received this message: hello'``. I need to make it return a value based on the input it receives
 
 red: make it fail
-=========================
+-----------------------------------------------------------------------------
 
 I add a new failing test to ``test_text_messages``
 
@@ -177,9 +197,9 @@ the terminal shows an :ref:`AssertionError`
   AssertionError: 'I received this message: hello' != 'I received this message: yes'
 
 green: make it pass
-=========================
+-----------------------------------------------------------------------------
 
-I make the ``text`` :ref:`function<functions>` in ``telephone.py`` to use an ``f`` string which allows passing variable values to strings. This is called `string interpolation <https://peps.python.org/pep-0498/>`_
+I make the ``text`` :ref:`function<functions>` in ``telephone.py`` to use an ``f`` string which allows passing variable values to strings. This is called `string interpolation`_
 
 .. code-block:: python
 
@@ -188,14 +208,13 @@ I make the ``text`` :ref:`function<functions>` in ``telephone.py`` to use an ``f
 
 the terminal shows passing tests
 
-**************************
 Passing Data Structures
-**************************
+-----------------------------------------------------------------------------
 
 I want to try this with other python data structures to see what happens
 
 red: make it fail
-=========================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 I add a new failing test to ``test_text_messages``
 
@@ -222,7 +241,7 @@ the terminal shows an :ref:`AssertionError`
   AssertionError: 'I received this message: None' != 'I received this message: "None"'
 
 green: make it pass
-=========================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 I make the test match the expected value
 
@@ -238,7 +257,7 @@ I make the test match the expected value
 the terminal shows passing tests
 
 refactor: make it better
-=========================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 As an exercise I add more tests to ``test_text_messages`` to see what happens when I pass different data structures to the ``text`` function
 
@@ -368,7 +387,9 @@ As an exercise I add more tests to ``test_text_messages`` to see what happens wh
 
   and all tests are passing
 
-VOILA! You now know how to pass values from a test to a program and can represent any values as strings using interpolation. You also encountered the following exceptions
+----
+
+VOILA! You now know how to pass values from a test to a program and can represent any values as strings using `string interpolation`_. You also encountered the following exceptions
 
 * :ref:`AssertionError`
 * NameError_

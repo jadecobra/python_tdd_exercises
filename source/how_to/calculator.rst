@@ -1,8 +1,8 @@
 .. include:: ../links.rst
 
-###########################
+#############################################################################
 how to make a calculator
-###########################
+#############################################################################
 
 .. raw:: html
 
@@ -12,25 +12,37 @@ how to make a calculator
 
 In this chapter I make a basic calculator that performs addition, subtraction, multiplication and division
 
-****************
-requirements
-****************
-
-
-:doc:`make a Test Driven Development Environment </how_to/make_tdd_environment>` with ``calculator`` as the project name
-
 ----
 
-****************
-Add Tests
-****************
+*****************************************************************************
+red: make it fail
+*****************************************************************************
 
-* I add :ref:`AssertionError` to the list of exceptions encountered ::
+* I open a terminal and run :ref:`makePythonTdd.sh` with ``calculator`` as the project name
 
-  # Exceptions Encountered
-  # AssertionError
+  .. code-block:: python
 
-* then add a TODO list to ``test_calculator.py`` to keep track of requirements for the calculator
+    ./makePythonTdd.sh calculator
+
+  .. NOTE::
+
+    If you are using Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+
+    .. code-block:: python
+
+      ./makePythonTdd.ps1 calculator
+
+  and it shows an :ref:`AssertionError` after making the files I need
+
+  .. code-block:: python
+
+    E       AssertionError: True is not false
+
+    tests/test_calculator.py:7: AssertionError
+
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_calculator.py:7`` with the mouse to open it
+* and change ``True`` to ``False`` to make ``test_failure`` pass
+* then add a TODO list to keep track of requirements for the calculator
 
   .. code-block:: python
 

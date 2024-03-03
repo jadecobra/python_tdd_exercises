@@ -1,4 +1,4 @@
-.. pumping python documentation master file, maked by
+.. pumping python documentation master file, made by
   sphinx-quickstart on Sun Oct 22 20:52:14 2023.
   You can adapt this file completely to your liking, but it should at least
   contain the root ``toctree`` directive.

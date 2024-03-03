@@ -12,7 +12,7 @@ A `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ 
 
 
 * Lists are represented with ``[]``
-* Lists can be maked with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor
+* Lists can be made with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor
 * Lists can hold any `object <https://docs.python.org/3/glossary.html#term-object>`_
 * Lists can be changed after creation by performing an operation, this means they are mutable
 * Lists can be looped over
@@ -598,7 +598,7 @@ review
 *****************************************************************************
 
 * Lists are represented with ``[]``
-* Lists can be maked with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor
+* Lists can be made with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor
 * Lists can hold any `object <https://docs.python.org/3/glossary.html#term-object>`_
 * Lists can be changed after creation by performing an operation, this means they are mutable
 * Lists can be looped over

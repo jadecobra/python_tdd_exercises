@@ -24,6 +24,7 @@
 .. _str.split: https://docs.python.org/3/library/stdtypes.html#str.split
 .. _str: https://docs.python.org/3/library/stdtypes.html#str
 .. _string: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
+.. _string interpolation: https://peps.python.org/pep-0498/
 .. _strings: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
 .. _tuple: https://docs.python.org/3/library/stdtypes.html#tuples
 .. _tuples: https://docs.python.org/3/library/stdtypes.html#tuples

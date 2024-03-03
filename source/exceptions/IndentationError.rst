@@ -23,7 +23,7 @@ red: make it fail
 ^^^^^^^^^^^^^^^^^
 
 
-* Open a new file in the editor and save it as ``tests/test_indentation_error.py`` in the ``tests`` folder you maked in :doc:`How to make a Test Driven Development Environment </how_to/make_tdd_environment>`\ , then type the following lines in the file *paying attention to the spacing*
+* Open a new file in the editor and save it as ``tests/test_indentation_error.py`` in the ``tests`` folder you made in :doc:`How to make a Test Driven Development Environment </how_to/make_tdd_environment>`\ , then type the following lines in the file *paying attention to the spacing*
 
   .. code-block:: python
 

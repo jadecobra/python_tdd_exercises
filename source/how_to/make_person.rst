@@ -13,55 +13,65 @@ how to make a person
 This is an exercise in making :doc:`dictionaries </data_structures/dictionaries>`  with :doc:`/functions/functions`. It assumes familiarity with those concepts, though you can still try out the chapter even if you are not.
 
 *****************************************************************************
-requirements
-*****************************************************************************
-
-:doc:`make a Test Driven Development Environment </how_to/make_tdd_environment>` with ``person`` as the project name
-
-----
-
-*****************************************************************************
 test_person_factory
 *****************************************************************************
 
 red: make it fail
-==================
+#############################################################################
 
-I add an `import statement`_ to ``test_person.py``
+* I open a terminal and run :ref:`makePythonTdd.sh` with ``person`` as the project name
 
-.. code-block:: python
+  .. code-block:: python
 
-  import person
-  import unittest
+    ./makePythonTdd.sh person
 
-then add a failing test to replace ``test_failure``
+  .. NOTE::
 
-.. code-block:: python
+    If you are using Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
 
-  class TestPersonFactory(unittest.TestCase):
+    .. code-block:: python
 
-      def test_person_factory(self):
-          self.assertEqual(person.factory(), None)
+      ./makePythonTdd.ps1 person
 
-the terminal shows an :ref:`AttributeError`
+  and it shows an :ref:`AssertionError` after making the files I need
 
-.. code-block:: python
+  .. code-block:: python
 
-  AttributeError: module 'person' has no attribute 'factory'
+    E       AssertionError: True is not false
 
-which I add to the list of exceptions
+    tests/test_person.py:7: AssertionError
 
-.. code-block:: python
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_person.py:7`` with the mouse to open it
+* and change ``True`` to ``False`` to make ``test_failure`` pass
+* then add a failing test to replace ``test_failure``
 
-  # Exceptions Encountered
-  # AssertionError
-  # AttributeError
+  .. code-block:: python
+
+    class TestPersonFactory(unittest.TestCase):
+
+        def test_person_factory(self):
+            self.assertEqual(person.factory(), None)
+
+  the terminal shows an :ref:`AttributeError`
+
+  .. code-block:: python
+
+    AttributeError: module 'person' has no attribute 'factory'
+
 
 
 green: make it pass
-====================
+#############################################################################
 
-* I make a function called ``factory`` in ``person.py`` and the terminal shows the test passed
+* which I add to the list of exceptions
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AssertionError
+    # AttributeError
+
+* then make a function called ``factory`` in ``person.py`` and the test passes
 
   .. code-block:: python
 
@@ -69,7 +79,7 @@ green: make it pass
         return None
 
 refactor: make it better
-=========================
+#############################################################################
 
 * I want to pass in values for ``first_name``, ``last_name``, ``year_of_birth``, ``sex`` and have the :ref:`function<functions>` return a :doc:`dictionary </data_structures/dictionaries>` with the ``first_name``, ``last_name``, ``sex`` and ``age`` calculated from the ``year_of_birth``, so I add more details to ``test_person_factory``
 
@@ -97,7 +107,7 @@ refactor: make it better
 
     NameError: name 'this_year' is not defined
 
-* I add it to the list of exceptions encountered
+* I add it to the list of Exceptions Encountered
 
   .. code-block:: python
 
@@ -126,7 +136,7 @@ refactor: make it better
 
     TypeError: factory() got an unexpected keyword argument 'first_name'
 
-* I add the error to the list of exceptions encountered
+* I add the error to the list of Exceptions Encountered
 
   .. code-block:: python
 
@@ -222,10 +232,11 @@ refactor: make it better
 
 .. _test_person_factory_w_variable_inputs:
 
-*****************************************************************************
 test_person_factory_w_variable_inputs
-*****************************************************************************
+-----------------------------------------------------------------------------
 
+red: make it fail
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * The factory function currently returns the exact same dictionary every time, regardless of what inputs it gets. It is a :doc:`singleton function </functions/functions_singleton>`. To be more useful it has to use the inputs it is given. I add another test to ``test_person.py`` with a different set of inputs
 
   .. code-block:: python
@@ -252,7 +263,10 @@ test_person_factory_w_variable_inputs
 
     AssertionError: {'first_name': 'sibling', 'last_name': 'last_name', 'sex': 'F', 'age': 0} != {'first_name': 'me', 'last_name': 'my_last_name', 'sex': 'M', 'age': 41}
 
-* I make the ``factory`` function to use the input provided for ``first_name``
+green: make it pass
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* I make the ``factory`` function use the input provided for ``first_name``
 
   .. code-block:: python
 
@@ -337,6 +351,9 @@ test_person_factory_w_variable_inputs
 
   and the terminal shows passing tests, time for a victory dance
 
+refactor: make it better
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 * When I call the ``factory`` :ref:`function<functions>` passing in values for ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``, it returns a :doc:`dictionary </data_structures/dictionaries>` that contains the ``first_name``, ``last_name``, ``sex`` and ``age`` of the person
 
 * I noticed that there is some repetition in the test. If I want to test with a different value for any of the arguments passed to ``person.factory``, I would have to make the change in 2 places - once in the argument passed to the :ref:`function<functions>` and then again in the resulting :doc:`dictionary </data_structures/dictionaries>`. I can refactor this to make it easier to make changes to the test when I want,  especially since the programming gods told me `not to repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
@@ -388,6 +405,7 @@ test_person_factory_w_variable_inputs
                   "age": this_year() - year_of_birth,
               }
           )
+
 * I make the same change to ``test_person_factory``
 
   .. code-block:: python
@@ -412,6 +430,8 @@ test_person_factory_w_variable_inputs
                 "age": this_year() - year_of_birth
             }
         )
+
+----
 
 *********************************************************************************
 test_person_factory_w_default_keyword_arguments
@@ -465,6 +485,9 @@ red: make it fail
 test_person_factory_w_default_keyword_arguments
 *********************************************************************************
 
+red: make it fail
+#############################################################################
+
 * I add a test called ``test_person_factory_w_sex_default_keyword_argument`` to try another default value
 
   .. code-block:: python
@@ -493,7 +516,10 @@ test_person_factory_w_default_keyword_arguments
 
     AssertionError: {'first_name': 'person', 'last_name': 'last_name', 'sex': None, 'age': 124} != {'first_name': 'person', 'last_name': 'last_name', 'age': 124, 'sex': 'M'}
 
-* 3 out of the 4 persons maked in the tests have ``M`` as their sex and 1 person has ``F`` as the value for sex. I set the default value for the parameter in ``person.factory`` to the majority to reduce the number of repetitions
+green: make it pass
+#############################################################################
+
+* 3 out of the 4 persons made in the tests have ``M`` as their sex and 1 person has ``F`` as the value for sex. I set the default value for the parameter in ``person.factory`` to the majority to reduce the number of repetitions
 
   .. code-block:: python
 
@@ -511,14 +537,14 @@ test_person_factory_w_default_keyword_arguments
 review
 *********************************************************************************
 
-From the tests above you can make a :ref:`function<functions>` that
+From the tests above I can make a :ref:`function<functions>` that
 
-* returns a :doc:`dictionary </data_structures/dictionaries>` as output
-* takes in keyword arguments as inputs
-* has default values for when a value is not given for a certain input
-* performs a calculation based on a given input
+* return a :doc:`dictionary </data_structures/dictionaries>` as output
+* take in keyword arguments as input
+* have default values for when a value is not given for a certain input
+* perform an action based on a given input
 
-You also encountered the following exceptions
+I also encountered the following exceptions
 
 * :ref:`AssertionError`
 * :ref:`AttributeError`

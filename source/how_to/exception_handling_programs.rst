@@ -1,8 +1,8 @@
 .. include:: ../links.rst
 
-#####################################
+#############################################################################
 how to handle Exceptions in programs
-#####################################
+#############################################################################
 
 .. raw:: html
 
@@ -10,19 +10,13 @@ how to handle Exceptions in programs
 
 ----
 
-:doc:`/how_to/exception_handling_tests` showed how to verify that an exception is raised when testing. This chapter shows how to handle exceptions when they are raised in programs
+This is a continuation of :doc:`exception_handling_tests` which showed how to confirm that an exception is raised when testing. It will show how to handle exceptions when they are raised in programs
 
-*************************
-requirements
-*************************
+.. _test_catching_exceptions:
 
-:doc:`/how_to/exception_handling_tests`
-
-----
-
-*************************
-red: make it fail
-*************************
+*****************************************************************************
+test_catching_exceptions
+*****************************************************************************
 
 * I add a failing test to ``test_exceptions.py``
 
@@ -37,9 +31,8 @@ red: make it fail
 
     NameError: name 'exceptions' is not defined
 
-*************************
 green: make it pass
-*************************
+#############################################################################
 
 * I add a new `import statement`_
 
@@ -123,19 +116,21 @@ green: make it pass
 *CONGRATULATIONS!*
 You now know how to deliberately make an exception which means you have absolute power to reshape the universe to your will
 
-*************************
 refactor: make it better
-*************************
+#############################################################################
 
 Time to add exception handling to the program so it returns a message when it encounters an exception instead of stopping
 
+----
 
-******************************
-How to catch things that fail
-******************************
+.. _test_catching_failures:
+
+*****************************************************************************
+test_catching_failures
+*****************************************************************************
 
 red: make it fail
-==================
+#############################################################################
 
 I add a new failing test to ``test_exceptions.py``
 
@@ -156,7 +151,7 @@ the terminal shows an :ref:`AttributeError`
   AttributeError: module 'exceptions' has no attribute 'exception_handler'
 
 green: make it pass
-====================
+#############################################################################
 
 * I add a name to ``exceptions.py``
 
@@ -215,12 +210,16 @@ green: make it pass
     def exception_handler(argument):
         return 'failed'
 
-*********************************
-How to catch things that succeed
-*********************************
+----
+
+.. _test_catching_successes:
+
+*****************************************************************************
+test_catching_successes
+*****************************************************************************
 
 red: make it fail
-==================
+#############################################################################
 
 the solution has a problem, the ``exception_handler`` always returns ``'failed'`` regardless of what I provide as an argument. It is a :doc:`singleton function </functions/functions_singleton>`.
 
@@ -243,7 +242,7 @@ the terminal shows an :ref:`AttributeError`
   AttributeError: module 'exceptions' has no attribute 'does_not_raise_exception'
 
 green: make it pass
-====================
+#############################################################################
 
 * I add ``does_not_raise_exception`` to ``exceptions.py``
 
@@ -308,9 +307,8 @@ green: make it pass
   - When I call ``exceptions.exception_handler`` with ``exceptions.does_not_raise_exception`` as input, it calls the :ref:`function<functions>` and returns the result
   - the result of calling ``exceptions.does_not_raise_exception`` is currently :ref:`None` which is not equal to ``'succeeded'`` and the result of calling ``exceptions.raises_exception`` is currently an Exception which is not equal to ``'failed'``
 
-*****************************************
 How to use try...except...else
-*****************************************
+-----------------------------------------------------------------------------
 
 I add a `try statement`_statement to ``exception_handler`` in ``exceptions.py`` to handle exceptions
 
@@ -338,15 +336,18 @@ In this case
 * ``except ValueError`` - when **calling** ``function()`` raises an ``Exception`` return ``'failed'``
 * ``else`` - when **calling** ``function()`` does NOT raise an ``Exception`` return ``'succeeded'``
 
+----
 
-*****************************************
-How to use try...except...else...finally
-*****************************************
+.. _test_finally_always_returns:
+
+*****************************************************************************
+test_finally_always_returns
+*****************************************************************************
 
 There is an extra clause in the `try <https://docs.python.org/3/reference/compound_stmts.html#the-try-statement>`_ statement called ``finally``. Anything in the ``finally`` clause is always run, regardless of what happens in the ``try...except...else`` blocks
 
 red: make it fail
-=========================
+#############################################################################
 
 I add a failing test to ``test_exceptions.py``
 
@@ -367,7 +368,7 @@ the terminal shows an :ref:`AttributeError`
   AttributeError: module 'exceptions' has no attribute 'always_returns'
 
 green: make it pass
-=========================
+#############################################################################
 
 * I add a name to ``exceptions.py``
 
@@ -521,6 +522,10 @@ green: make it pass
 
 ----
 
+*****************************************************************************
+review
+*****************************************************************************
+
 CONGRATULATIONS
 Your python powers are growing, you have seen
 
@@ -535,8 +540,6 @@ You also encountered the following exceptions
 * NameError_
 * :ref:`AttributeError`
 * :ref:`TypeError`
-
-.. admonition:: do you want to
 
 Would you like to test :doc:`/how_to/sleep_duration`?
 

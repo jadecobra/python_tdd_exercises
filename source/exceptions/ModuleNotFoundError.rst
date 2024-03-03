@@ -24,7 +24,7 @@ requirements
 red: make it fail
 *********************
 
-Open a new file in the Interactive Development Environment editor and save it as ``test_module_not_found_error.py`` in the ``tests`` folder maked from :doc:`How to make a Test Driven Development Environment </how_to/make_tdd_environment>`
+Open a new file in the Interactive Development Environment editor and save it as ``test_module_not_found_error.py`` in the ``tests`` folder made from :doc:`How to make a Test Driven Development Environment </how_to/make_tdd_environment>`
 
 Type the following in the file
 
@@ -175,7 +175,7 @@ green: make it pass
 
     ModuleNotFoundError: No module called 'module_3'
 
-* this is the pattern, repeat it until you have maked ``module_99.py`` and the terminal shows a passing test
+* this is the pattern, repeat it until you have made ``module_99.py`` and the terminal shows a passing test
 
 *WELL DONE!*
 You are on your way to being a troubleshooting master.
