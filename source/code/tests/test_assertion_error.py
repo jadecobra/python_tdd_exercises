@@ -3,7 +3,7 @@ import unittest
 
 class TestAssertionErrors(unittest.TestCase):
 
-    def test_assertion_errors_with_none(self):
+    def test_assertion_errors_w_none(self):
         assert False is not None
         self.assertIsNotNone(False)
 
@@ -13,15 +13,15 @@ class TestAssertionErrors(unittest.TestCase):
         assert None is None
         self.assertIsNone(None)
 
-    def test_assertion_errors_with_false(self):
+    def test_assertion_errors_w_false(self):
         assert False is False
         self.assertFalse(False)
 
-    def test_assertion_errors_with_true(self):
+    def test_assertion_errors_w_true(self):
         assert True is True
         self.assertTrue(True)
 
-    def test_assertion_errors_with_equality(self):
+    def test_assertion_errors_w_equality(self):
         assert False != None
         self.assertNotEqual(False, None)
 

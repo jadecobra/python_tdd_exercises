@@ -41,7 +41,7 @@ red: make it fail
 green: make it pass
 *************************
 
-* I add a new `import`` statement
+* I add a new `import statement`_
 
   .. code-block:: python
 

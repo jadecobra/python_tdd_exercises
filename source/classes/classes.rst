@@ -39,7 +39,7 @@ I make a new file called ``test_classes.py`` in the ``tests`` directory
 
   class TestClasses(unittest.TestCase):
 
-      def test_class_definitions_with_pass(self):
+      def test_class_definitions_w_pass(self):
           self.assertIsInstance(classes.ClassWithPass(), object)
 
 the terminal shows a :ref:`ModuleNotFoundError` because I have an import statement for a module called ``classes``
@@ -137,7 +137,7 @@ I add another test to ``TestClasses`` in ``test_classes.py`` to show another way
 
 .. code-block:: python
 
-  def test_classes_definitions_with_parentheses(self):
+  def test_classes_definitions_w_parentheses(self):
       self.assertIsInstance(classes.ClassWithParentheses(), object)
 
 the terminal shows an :ref:`AttributeError`
@@ -190,7 +190,7 @@ I add another test to ``TestClasses`` in ``test_classes.py``
 
 .. code-block:: python
 
-  def test_class_definition_with_object(self):
+  def test_class_definition_w_object(self):
       self.assertIsInstance(classes.ClassWithObject(), object)
 
 and the terminal shows an :ref:`AttributeError`

@@ -42,8 +42,8 @@ I make a file called ``test_functions.py`` in the ``tests`` folder and add the f
 
   class TestFunctions(unittest.TestCase):
 
-      def test_functions_with_pass(self):
-          self.assertIsNone(functions.function_with_pass())
+      def test_functions_w_pass(self):
+          self.assertIsNone(functions.function_w_pass())
 
 the terminal shows a :ref:`ModuleNotFoundError`\ , and I add it to the list of exceptions encountered
 
@@ -70,12 +70,12 @@ green: make it pass
 
   .. code-block:: python
 
-    def function_with_pass():
+    def function_w_pass():
         pass
 
   and we have a passing test
 
-  * the test checks if the value of the call to ``functions.function_with_pass`` is :ref:`None`
+  * the test checks if the value of the call to ``functions.function_w_pass`` is :ref:`None`
   * the function definition simply says `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ yet the test passes
   * `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is a placeholder keyword which allows the function definition to follow python syntax rules
   * the test passes because in Python all functions return :ref:`None` by default, like the function has an invisible line that says ``return None``
@@ -88,8 +88,8 @@ refactor: make it better
 
   .. code-block:: python
 
-      def test_functions_with_return(self):
-          self.assertIsNone(functions.function_with_return())
+      def test_functions_w_return(self):
+          self.assertIsNone(functions.function_w_return())
 
   the terminal shows an :ref:`AttributeError`
 
@@ -97,7 +97,7 @@ refactor: make it better
 
   .. code-block:: python
 
-      def function_with_return(self):
+      def function_w_return(self):
           return
 
   the terminal shows this test also passes
@@ -108,9 +108,9 @@ refactor: make it better
 
   .. code-block:: python
 
-      def test_functions_with_return_none(self):
+      def test_functions_w_return_none(self):
           self.assertIsNone(
-              functions.function_with_return_none()
+              functions.function_w_return_none()
           )
 
   the terminal shows an :ref:`AttributeError`
@@ -120,7 +120,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def function_with_return_none():
+    def function_w_return_none():
         return None
 
   and the terminal shows passing tests.

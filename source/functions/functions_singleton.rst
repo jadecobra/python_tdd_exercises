@@ -39,22 +39,22 @@ I add a new test that checks if a singleton that accepts inputs returns the same
 
   .. code-block:: python
 
-      def test_singleton_function_with_input(self):
+      def test_singleton_function_w_input(self):
           self.assertEqual(
-              functions.singleton_with_input('Bob', 'James', 'Frank'),
+              functions.singleton_w_input('Bob', 'James', 'Frank'),
               'joe'
           )
           self.assertEqual(
-              functions.singleton_with_input('a', 2, 'c', 3),
+              functions.singleton_w_input('a', 2, 'c', 3),
               'joe'
           )
 
   the terminal shows an :ref:`AttributeError`
-* and I add a function for ``singleton_with_inputs`` to ``functions.py`` to make the test pass
+* and I add a function for ``singleton_w_inputs`` to ``functions.py`` to make the test pass
 
   .. code-block:: python
 
-    def singleton_with_inputs(*args):
+    def singleton_w_inputs(*args):
         return 'joe'
 
 *****************************************************************************

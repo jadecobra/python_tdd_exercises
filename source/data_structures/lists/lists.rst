@@ -89,7 +89,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_making_a_list_with_square_brackets(self):
+    def test_making_a_list_w_square_brackets(self):
         self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 4)))
 
   the terminal shows an :ref:`AssertionError` for the last value
@@ -102,7 +102,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_making_a_list_with_square_brackets(self):
+    def test_making_a_list_w_square_brackets(self):
         self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 3)))
 
 ----

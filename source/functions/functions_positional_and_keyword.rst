@@ -1,7 +1,7 @@
 .. include:: ../links.rst
 
 #############################################################################
-functions: test_functions_with_positional_and_keyword_arguments
+functions: test_functions_w_positional_and_keyword_arguments
 #############################################################################
 
 I can also define functions to take both positional arguments and keyword arguments as inputs
@@ -14,7 +14,7 @@ I add a new failing test to ``test_functions.py``
 
 .. code-block:: python
 
-    def test_functions_with_positional_and_keyword_arguments(self):
+    def test_functions_w_positional_and_keyword_arguments(self):
         self.assertEqual(
         functions.accepts_positional_and_keyword_arguments(
             last_name='my_last_name', 'my_first_name'
@@ -37,11 +37,11 @@ the terminal shows a ``SyntaxError`` because I put a positional argument after a
 green: make it pass
 *****************************************************************************
 
-* I fix the order of arguments in ``test_functions_with_positional_and_keyword_arguments`` since keyword arguments come after positional arguments
+* I fix the order of arguments in ``test_functions_w_positional_and_keyword_arguments`` since keyword arguments come after positional arguments
 
   .. code-block:: python
 
-    def test_functions_with_positional_and_keyword_arguments(self):
+    def test_functions_w_positional_and_keyword_arguments(self):
         self.assertEqual(
             functions.accepts_positional_and_keyword_arguments(
                 'my_first_name', last_name='my_last_name'
@@ -100,11 +100,11 @@ green: make it pass
         return first_name, last_name
 
   the terminal changes the :ref:`AssertionError` with the values I just added
-* I make ``test_functions_with_positional_and_keyword_arguments`` to make the results match the expectation
+* I make ``test_functions_w_positional_and_keyword_arguments`` to make the results match the expectation
 
   .. code-block:: python
 
-      def test_functions_with_positional_and_keyword_arguments(self):
+      def test_functions_w_positional_and_keyword_arguments(self):
           self.assertEqual(
           functions.accepts_positional_and_keyword_arguments(
                   'my_first_name', last_name='my_last_name'
@@ -118,7 +118,7 @@ green: make it pass
 refactor: make it better
 *****************************************************************************
 
-Hold on a second. This looks exactly like what I did in ``test_functions_with_positional_arguments``. I cannot tell from the :doc:`function signature </functions/functions>` which argument is positional and which is a keyword argument and do not want to wait for the function to fail when I send in values to find out
+Hold on a second. This looks exactly like what I did in ``test_functions_w_positional_arguments``. I cannot tell from the :doc:`function signature </functions/functions>` which argument is positional and which is a keyword argument and do not want to wait for the function to fail when I send in values to find out
 
 
 * I make the :doc:`signature </functions/functions>` of ``accepts_positional_and_keyword_arguments`` to have a default value for the keyword argument
@@ -137,11 +137,11 @@ Hold on a second. This looks exactly like what I did in ``test_functions_with_po
         return first_name, last_name
 
   I still have passing tests. It looks like python lets us use default arguments with no issues, and I can provide keyword arguments positionally without using the name.
-* I add another test to ``test_functions_with_positional_and_keyword_arguments`` to show this
+* I add another test to ``test_functions_w_positional_and_keyword_arguments`` to show this
 
   .. code-block:: python
 
-      def test_functions_with_positional_and_keyword_arguments(self):
+      def test_functions_w_positional_and_keyword_arguments(self):
           self.assertEqual(
               functions.accepts_positional_and_keyword_arguments(
                   'my_first_name', last_name='my_last_name'
@@ -160,7 +160,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_with_po
 
   .. code-block:: python
 
-    def test_functions_with_positional_and_keyword_arguments(self):
+    def test_functions_w_positional_and_keyword_arguments(self):
         self.assertEqual(
             functions.accepts_positional_and_keyword_arguments(
                 'my_first_name', last_name='my_last_name'
@@ -199,7 +199,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_with_po
 
   .. code-block:: python
 
-      def test_functions_with_positional_and_keyword_arguments(self):
+      def test_functions_w_positional_and_keyword_arguments(self):
     >   self.assertEqual(
             functions.accepts_positional_and_keyword_arguments('my_first_name', last_name='my_last_name'),
             ('my_first_name', 'my_last_name')
@@ -210,7 +210,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_with_po
 
   .. code-block:: python
 
-      def test_functions_with_positional_and_keyword_arguments(self):
+      def test_functions_w_positional_and_keyword_arguments(self):
           self.assertEqual(
             functions.accepts_positional_and_keyword_arguments(
               'my_first_name', last_name='my_last_name'

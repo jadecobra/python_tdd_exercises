@@ -17,7 +17,7 @@ red: make it fail
 
   .. code-block:: python
 
-    def test_classes_with_attributes(self):
+    def test_classes_w_attributes(self):
         self.assertEqual(classes.ClassWithAttributes.a_boolean, bool)
 
   the terminal shows an :ref:`AttributeError`
@@ -73,11 +73,11 @@ green: make it pass
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-Let us add more tests with the other python data structures to ``test_classes_with_attributes``
+Let us add more tests with the other python data structures to ``test_classes_w_attributes``
 
 .. code-block:: python
 
-  def test_classes_with_attributes(self):
+  def test_classes_w_attributes(self):
       self.assertEqual(classes.ClassWithAttributes.a_boolean, bool)
       self.assertEqual(classes.ClassWithAttributes.an_integer, int)
       self.assertEqual(classes.ClassWithAttributes.a_float, float)
@@ -122,7 +122,7 @@ I add some tests for class methods to ``TestClasses`` in ``classes.py``
 
 .. code-block:: python
 
-  def test_classes_with_methods(self):
+  def test_classes_w_methods(self):
       self.assertEqual(
           classes.ClassWithMethods.method_a(),
           'You called MethodA'
@@ -195,11 +195,11 @@ green: make it pass
 refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-* I can "make this better" by adding a few more tests to ``test_classes_with_methods`` for fun
+* I can "make this better" by adding a few more tests to ``test_classes_w_methods`` for fun
 
   .. code-block:: python
 
-    def test_classes_with_methods(self):
+    def test_classes_w_methods(self):
         self.assertEqual(
             classes.ClassWithMethods.method_a(),
             'You called MethodA'
@@ -235,7 +235,7 @@ I add another test for a class that has both attributes and methods
 
 .. code-block:: python
 
-  def test_classes_with_attributes_and_methods(self):
+  def test_classes_w_attributes_and_methods(self):
       self.assertEqual(
           classes.ClassWithAttributesAndMethods.attribute,
           'attribute'

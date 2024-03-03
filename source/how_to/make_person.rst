@@ -220,17 +220,17 @@ refactor: make it better
 
   the terminal shows the test passed
 
-.. _test_person_factory_with_variable_inputs:
+.. _test_person_factory_w_variable_inputs:
 
 *****************************************************************************
-test_person_factory_with_variable_inputs
+test_person_factory_w_variable_inputs
 *****************************************************************************
 
 * The factory function currently returns the exact same dictionary every time, regardless of what inputs it gets. It is a :doc:`singleton function </functions/functions_singleton>`. To be more useful it has to use the inputs it is given. I add another test to ``test_person.py`` with a different set of inputs
 
   .. code-block:: python
 
-    def test_person_factory_with_variable_inputs(self):
+    def test_person_factory_w_variable_inputs(self):
         self.assertEqual(
             person.factory(
                 first_name="me",
@@ -343,7 +343,7 @@ test_person_factory_with_variable_inputs
 
   .. code-block:: python
 
-    def test_person_factory_with_variable_inputs(self):
+    def test_person_factory_w_variable_inputs(self):
         first_name = "me"
         last_name = "my_last_name"
         sex = "M"
@@ -368,7 +368,7 @@ test_person_factory_with_variable_inputs
 
   .. code-block:: python
 
-      def test_person_factory_with_variable_inputs(self):
+      def test_person_factory_w_variable_inputs(self):
           first_name = "john"
           last_name = "doe"
           sex = "M"
@@ -414,7 +414,7 @@ test_person_factory_with_variable_inputs
         )
 
 *********************************************************************************
-test_person_factory_with_default_keyword_arguments
+test_person_factory_w_default_keyword_arguments
 *********************************************************************************
 
 red: make it fail
@@ -424,7 +424,7 @@ red: make it fail
 
   .. code-block:: python
 
-    def test_person_factory_with_default_keyword_arguments(self):
+    def test_person_factory_w_default_keyword_arguments(self):
         first_name = "child_a"
         sex = "M"
         year_of_birth = 2014
@@ -462,15 +462,15 @@ red: make it fail
   the terminal shows passing tests. When no value is given for the ``last_name`` argument to ``person.factory`` it uses ``"last_name"`` because that is the defined default value in the :doc:`function signature </functions/functions>`
 
 *********************************************************************************
-test_person_factory_with_default_keyword_arguments
+test_person_factory_w_default_keyword_arguments
 *********************************************************************************
 
-* I add a test called ``test_person_factory_with_sex_default_keyword_argument`` to try another default value
+* I add a test called ``test_person_factory_w_sex_default_keyword_argument`` to try another default value
 
   .. code-block:: python
 
 
-    def test_person_factory_with_sex_default_keyword_argument(self):
+    def test_person_factory_w_sex_default_keyword_argument(self):
         first_name = "person"
         year_of_birth = 1900
 

@@ -43,7 +43,7 @@ refactor: make it better
 
     class TestDictionaries(unittest.TestCase):
 
-      def test_making_dictionaries_with_strings_as_keys(self):
+      def test_making_dictionaries_w_strings_as_keys(self):
           self.assertEqual(
               dictionaries.a_dict(),
               {"key": "value"}
@@ -95,11 +95,11 @@ refactor: make it better
     def a_dict():
         return {'key': 'value'}
 
-* it is also possible to make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ using the `dict <https://docs.python.org/3/library/stdtypes.html#dict>`_ constructor. I add another test to ``test_making_dictionaries_with_strings_as_keys``
+* it is also possible to make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ using the `dict <https://docs.python.org/3/library/stdtypes.html#dict>`_ constructor. I add another test to ``test_making_dictionaries_w_strings_as_keys``
 
   .. code-block:: python
 
-    def test_making_dictionaries_with_strings_as_keys(self):
+    def test_making_dictionaries_w_strings_as_keys(self):
         self.assertEqual(
             dictionaries.a_dict(),
             {'key': 'value'}
@@ -130,7 +130,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_making_dictionaries_with_strings_as_keys(self):
+    def test_making_dictionaries_w_strings_as_keys(self):
         self.assertEqual(
             dictionaries.a_dict(),
             {"key": "value"}
@@ -171,7 +171,7 @@ I add a failing test to ``TestDictionaries``
 
 .. code-block:: python
 
-  def test_making_dictionaries_with_numbers_as_keys(self):
+  def test_making_dictionaries_w_numbers_as_keys(self):
       self.assertEqual(
           {1: 'boom'},
           {'one': 'boom'}
@@ -191,7 +191,7 @@ I make the values in the test to make it pass
 
 .. code-block:: python
 
-  def test_making_dictionaries_with_numbers_as_keys(self):
+  def test_making_dictionaries_w_numbers_as_keys(self):
       self.assertEqual(
           {1: 'boom'},
           {1: 'boom'}
@@ -206,7 +206,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_making_dictionaries_with_numbers_as_keys(self):
+    def test_making_dictionaries_w_numbers_as_keys(self):
         self.assertEqual(
             {1: 'boom'},
             {1: 'boom'}
@@ -228,7 +228,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_making_dictionaries_with_numbers_as_keys(self):
+    def test_making_dictionaries_w_numbers_as_keys(self):
       self.assertEqual(
           {1: 'boom'},
           {1: 'boom'}
@@ -254,7 +254,7 @@ I add a test to find out if it is possible to use :doc:`False </data_structures/
 
 .. code-block:: python
 
-  def test_making_dictionaries_with_booleans_as_keys(self):
+  def test_making_dictionaries_w_booleans_as_keys(self):
       self.assertEqual(
           {False: 'boom'},
           {False: 'bap'}
@@ -278,7 +278,7 @@ I make the values to make them match and tests are green again. Sweet!
 
 .. code-block:: python
 
-  def test_making_dictionaries_with_booleans_as_keys(self):
+  def test_making_dictionaries_w_booleans_as_keys(self):
       self.assertEqual(
           {False: 'boom'},
           {False: 'boom'}
@@ -293,7 +293,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_making_dictionaries_with_booleans_as_keys(self):
+    def test_making_dictionaries_w_booleans_as_keys(self):
         self.assertEqual(
             {False: 'boom'},
             {False: 'boom'}
@@ -318,7 +318,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_making_dictionaries_with_booleans_as_keys(self):
+    def test_making_dictionaries_w_booleans_as_keys(self):
         self.assertEqual(
             {False: 'boom'},
             {False: 'boom'}
@@ -342,7 +342,7 @@ I add a test to ``TestDictionaries`` to see if I can use tuples as `dictionary <
 
 .. code-block:: python
 
-  def test_making_dictionaries_with_tuples_as_keys(self):
+  def test_making_dictionaries_w_tuples_as_keys(self):
       self.assertEqual(
           {(1, 2): "value"},
           {(1, 2): "key"}
@@ -385,7 +385,7 @@ I add a test to ``TestDictionaries`` using a :doc:`list </data_structures/lists/
 
 .. code-block:: python
 
-  def test_making_dictionaries_with_lists_as_keys(self):
+  def test_making_dictionaries_w_lists_as_keys(self):
       {[1, 2]: "BOOM"}
 
 the terminal shows a :ref:`TypeError` because only `hashable <https://docs.python.org/3/glossary.html#term-hashable>`_ types can be used as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys and :doc:`lists </data_structures/lists/lists>` are not `hashable <https://docs.python.org/3/glossary.html#term-hashable>`_
@@ -410,7 +410,7 @@ I can use ``self.assertRaises`` to confirm that an error is raised by some code 
 
 .. code-block:: python
 
-  def test_making_dictionaries_with_lists_as_keys(self):
+  def test_making_dictionaries_w_lists_as_keys(self):
       with self.assertRaises(TypeError):
           {[1, 2]: "BOOM"}
 
@@ -430,7 +430,7 @@ red: make it fail
 
 .. code-block:: python
 
-  def test_making_dictionaries_with_sets_as_keys(self):
+  def test_making_dictionaries_w_sets_as_keys(self):
       {{1, 2}: "BOOM"}
 
 the terminal shows a :ref:`TypeError`
@@ -446,7 +446,7 @@ I use ``self.assertRaises`` to handle the exception
 
 .. code-block:: python
 
-  def test_making_dictionaries_with_sets_as_keys(self):
+  def test_making_dictionaries_w_sets_as_keys(self):
       with self.assertRaises(TypeError):
           {{1, 2}: "BOOM"}
 
@@ -464,7 +464,7 @@ I add a new test
 
 .. code-block:: python
 
-  def test_making_dictionaries_with_dictionaries_as_keys(self):
+  def test_making_dictionaries_w_dictionaries_as_keys(self):
       a_dictionary = {"key": "value"}
       {a_dictionary: "BOOM"}
 
@@ -482,7 +482,7 @@ I add an exception handler to the test to confirm the findings
 
 .. code-block:: python
 
-    def test_making_dictionaries_with_dictionaries_as_keys(self):
+    def test_making_dictionaries_w_dictionaries_as_keys(self):
         a_dictionary = {"key": "value"}
         with self.assertRaises(TypeError):
             {a_dictionary: "BOOM"}

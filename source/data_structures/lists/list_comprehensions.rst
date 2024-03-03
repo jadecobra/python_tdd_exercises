@@ -212,10 +212,10 @@ From the tests I see that I can make a :doc:`list </data_structures/lists/lists>
 
 ----
 
-.. _test_making_a_list_with_a_for_loop:
+.. _test_making_a_list_w_a_for_loop:
 
 *****************************************************************************
-test_making_a_list_with_a_for_loop
+test_making_a_list_w_a_for_loop
 *****************************************************************************
 
 red: make it fail
@@ -225,7 +225,7 @@ I add a test for making a list with a `for <https://docs.python.org/3/tutorial/c
 
 .. code-block:: python
 
-    def test_making_a_list_with_a_for_loop(self):
+    def test_making_a_list_w_a_for_loop(self):
         a_list = []
         self.assertEqual(a_list, [])
 
@@ -253,7 +253,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_making_a_list_with_a_for_loop(self):
+    def test_making_a_list_w_a_for_loop(self):
         a_list = []
         self.assertEqual(a_list, [])
 
@@ -337,10 +337,10 @@ From the tests I see that I can make a :doc:`list </data_structures/lists/lists>
 
 ----
 
-.. _test_making_lists_with_list_comprehensions:
+.. _test_making_lists_w_list_comprehensions:
 
 ************************************************************************************
-test_making_lists_with_list_comprehensions
+test_making_lists_w_list_comprehensions
 ************************************************************************************
 
 red: make it fail
@@ -350,7 +350,7 @@ I add a failing test to ``TestListComprehensions``
 
 .. code-block:: python
 
-    def test_making_lists_with_list_comprehensions(self):
+    def test_making_lists_w_list_comprehensions(self):
         a_list = []
         self.assertEqual(a_list, [])
 
@@ -379,7 +379,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_making_lists_with_list_comprehensions(self):
+    def test_making_lists_w_list_comprehensions(self):
         a_list = []
         self.assertEqual(a_list, [])
 
@@ -407,7 +407,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_making_lists_with_list_comprehensions(self):
+    def test_making_lists_w_list_comprehensions(self):
         a_list = []
         self.assertEqual(a_list, [])
 
@@ -483,7 +483,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
 
   .. code-block:: python
 
-    def test_list_comprehensions_with_conditions_i(self):
+    def test_list_comprehensions_w_conditions_i(self):
         even_numbers = []
         self.assertEqual(even_numbers, [])
 
@@ -516,7 +516,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
 
   .. code-block:: python
 
-      def test_list_comprehensions_with_conditions_i(self):
+      def test_list_comprehensions_w_conditions_i(self):
           even_numbers = []
           self.assertEqual(even_numbers, [])
 
@@ -545,7 +545,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
 
   .. code-block:: python
 
-      def test_list_comprehensions_with_conditions_i(self):
+      def test_list_comprehensions_w_conditions_i(self):
           even_numbers = []
           self.assertEqual(even_numbers, [])
 
@@ -597,7 +597,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
 
   .. code-block:: python
 
-    def test_list_comprehensions_with_conditions_ii(self):
+    def test_list_comprehensions_w_conditions_ii(self):
         odd_numbers = []
         self.assertEqual(odd_numbers, [])
 
@@ -623,7 +623,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
 
   .. code-block:: python
 
-    def test_list_comprehensions_with_conditions_ii(self):
+    def test_list_comprehensions_w_conditions_ii(self):
         odd_numbers = []
         self.assertEqual(odd_numbers, [])
 
@@ -754,7 +754,7 @@ I have written the same thing multiple times in these tests and since the progra
 
   .. code-block:: python
 
-    def test_making_a_list_with_a_for_loop(self):
+    def test_making_a_list_w_a_for_loop(self):
         container = range(10)
         for item in container:
             self.a_list.append(item)
@@ -768,7 +768,7 @@ I have written the same thing multiple times in these tests and since the progra
             self.a_list
         )
 
-    def test_making_lists_with_list_comprehensions(self):
+    def test_making_lists_w_list_comprehensions(self):
         container = range(10)
         for item in container:
             self.a_list.append(item)
@@ -786,7 +786,7 @@ I have written the same thing multiple times in these tests and since the progra
             self.a_list
         )
 
-    def test_list_comprehensions_with_conditions_i(self):
+    def test_list_comprehensions_w_conditions_i(self):
         container = range(10)
         for item in container:
             if item % 2 == 0:
@@ -802,7 +802,7 @@ I have written the same thing multiple times in these tests and since the progra
             self.a_list
         )
 
-    def test_list_comprehensions_with_conditions_ii(self):
+    def test_list_comprehensions_w_conditions_ii(self):
         container = range(10)
         for item in container:
             if item % 2 != 0:
@@ -842,7 +842,7 @@ I have written the same thing multiple times in these tests and since the progra
             self.a_list
         )
 
-    def test_making_a_list_with_a_for_loop(self):
+    def test_making_a_list_w_a_for_loop(self):
         for item in self.container:
             self.a_list.append(item)
 
@@ -855,7 +855,7 @@ I have written the same thing multiple times in these tests and since the progra
             self.a_list
         )
 
-    def test_making_lists_with_list_comprehensions(self):
+    def test_making_lists_w_list_comprehensions(self):
         for item in self.container:
             self.a_list.append(item)
 
@@ -872,7 +872,7 @@ I have written the same thing multiple times in these tests and since the progra
             self.a_list
         )
 
-    def test_list_comprehensions_with_conditions_i(self):
+    def test_list_comprehensions_w_conditions_i(self):
         for item in self.container:
             if item % 2 == 0:
                 self.a_list.append(item)
@@ -887,7 +887,7 @@ I have written the same thing multiple times in these tests and since the progra
             self.a_list
         )
 
-    def test_list_comprehensions_with_conditions_ii(self):
+    def test_list_comprehensions_w_conditions_ii(self):
         for item in self.container:
             if item % 2 != 0:
                 self.a_list.append(item)

@@ -22,7 +22,7 @@ class TestListComprehensions(unittest.TestCase):
             self.a_list
         )
 
-    def test_making_a_list_with_a_for_loop(self):
+    def test_making_a_list_w_a_for_loop(self):
         for item in self.container:
             self.a_list.append(item)
 
@@ -35,7 +35,7 @@ class TestListComprehensions(unittest.TestCase):
             self.a_list
         )
 
-    def test_making_lists_with_list_comprehensions(self):
+    def test_making_lists_w_list_comprehensions(self):
         for item in self.container:
             self.a_list.append(item)
 
@@ -52,7 +52,7 @@ class TestListComprehensions(unittest.TestCase):
             self.a_list
         )
 
-    def test_list_comprehensions_with_conditions_i(self):
+    def test_list_comprehensions_w_conditions_i(self):
         for item in self.container:
             if item % 2 == 0:
                 self.a_list.append(item)
@@ -67,7 +67,7 @@ class TestListComprehensions(unittest.TestCase):
             self.a_list
         )
 
-    def test_list_comprehensions_with_conditions_ii(self):
+    def test_list_comprehensions_w_conditions_ii(self):
         for item in self.container:
             if item % 2 != 0:
                 self.a_list.append(item)

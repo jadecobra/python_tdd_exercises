@@ -15,7 +15,7 @@ I add a failing test to ``test_classes.py``
 
 .. code-block:: python
 
-  def test_classes_with_initializers(self):
+  def test_classes_w_initializers(self):
       self.assertEqual(classes.Boy().sex, 'M')
 
 the terminal shows an :ref:`AttributeError`
@@ -63,11 +63,11 @@ refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-* I add another test to ``test_classes_with_initializers`` this time for a ``Girl`` class but with a difference, I provide the value for the ``sex`` attribute when I call the class
+* I add another test to ``test_classes_w_initializers`` this time for a ``Girl`` class but with a difference, I provide the value for the ``sex`` attribute when I call the class
 
   .. code-block:: python
 
-    def test_classes_with_initializers(self):
+    def test_classes_w_initializers(self):
         self.assertEqual(classes.Boy().sex, 'M')
         self.assertEqual(classes.Girl(sex='F').sex, 'F')
 
@@ -120,11 +120,11 @@ refactor: make it better
 
   and the terminal shows passing tests
 
-* I add another test for a class initializer to ``test_classes_with_initializers``
+* I add another test for a class initializer to ``test_classes_w_initializers``
 
   .. code-block:: python
 
-    def test_classes_with_initializers(self):
+    def test_classes_w_initializers(self):
         self.assertEqual(classes.Boy().sex, 'M')
         self.assertEqual(classes.Girl(sex='F').sex, 'F')
         self.assertEqual(classes.Other(sex='?').sex, '?')

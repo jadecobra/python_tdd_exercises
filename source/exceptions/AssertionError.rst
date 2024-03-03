@@ -53,7 +53,7 @@ red: make it fail
 ==================
 
 * I make a new file in the ``tests`` folder with the name ``test_assertion_error.py``
-* then add a test called ``test_assertion_errors_with_none`` using the python ``assert`` keyword to intentionally cause an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
+* then add a test called ``test_assertion_errors_w_none`` using the python ``assert`` keyword to intentionally cause an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
   .. code-block:: python
 
@@ -62,7 +62,7 @@ red: make it fail
 
     class TestAssertionErrors(unittest.TestCase):
 
-        def test_assertion_errors_with_none(self):
+        def test_assertion_errors_w_none(self):
             assert False is None
 
   the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
@@ -84,7 +84,7 @@ When I make the failing line to
 
 .. code-block:: python
 
-  def test_assertion_errors_with_none(self):
+  def test_assertion_errors_w_none(self):
       assert False is not None
 
 the test passes because the assert statement is now true since :doc:`False </data_structures/booleans/booleans>` is not :ref:`None`
@@ -101,7 +101,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
   .. code-block:: python
 
-    def test_assertion_errors_with_none(self):
+    def test_assertion_errors_w_none(self):
         assert False is not None
         self.assertIsNone(False)
 
@@ -117,7 +117,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
   .. code-block:: python
 
-    def test_assertion_errors_with_none(self):
+    def test_assertion_errors_w_none(self):
         assert False is not None
         self.assertIsNotNone(False)
 
@@ -129,7 +129,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
   .. code-block:: python
 
-    def test_assertion_errors_with_none(self):
+    def test_assertion_errors_w_none(self):
         assert False is not None
         self.assertIsNotNone(False)
 
@@ -147,7 +147,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
   .. code-block:: python
 
-    def test_assertion_errors_with_none(self):
+    def test_assertion_errors_w_none(self):
         assert False is not None
         self.assertIsNotNone(False)
 
@@ -159,7 +159,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
   .. code-block:: python
 
-    def test_assertion_errors_with_none(self):
+    def test_assertion_errors_w_none(self):
         assert False is not None
         self.assertIsNotNone(False)
 
@@ -178,7 +178,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
   .. code-block:: python
 
-    def test_assertion_errors_with_none(self):
+    def test_assertion_errors_w_none(self):
         assert False is not None
         self.assertIsNotNone(False)
 
@@ -196,7 +196,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
   .. code-block:: python
 
-    def test_assertion_errors_with_none(self):
+    def test_assertion_errors_w_none(self):
         assert False is not None
         self.assertIsNotNone(False)
 
@@ -217,7 +217,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
   .. code-block:: python
 
-    def test_assertion_errors_with_none(self):
+    def test_assertion_errors_w_none(self):
         assert False is not None
         self.assertIsNotNone(False)
 
@@ -232,7 +232,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
   .. code-block:: python
 
-    def test_assertion_errors_with_none(self):
+    def test_assertion_errors_w_none(self):
         assert False is not None
         self.assertIsNotNone(False)
 
@@ -250,11 +250,11 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
 * green: make it pass
 
-  I make ``test_assertion_errors_with_none`` to make it pass
+  I make ``test_assertion_errors_w_none`` to make it pass
 
   .. code-block:: python
 
-    def test_assertion_errors_with_none(self):
+    def test_assertion_errors_w_none(self):
         assert False is not None
         self.assertIsNotNone(False)
 
@@ -290,7 +290,7 @@ I add a failing test to ``TestAssertionError`` in ``test_assertion_error.py`` to
 
 .. code-block:: python
 
-  def test_assertion_errors_with_false(self):
+  def test_assertion_errors_w_false(self):
       assert True is False
 
 the terminal shows a failure
@@ -306,18 +306,18 @@ I make the failing line to make the test pass
 
 .. code-block:: python
 
-  def test_assertion_errors_with_false(self):
+  def test_assertion_errors_w_false(self):
       assert False is False
 
 
 red: make it fail
 ==================
 
-What if I try the same test using the `unittest.TestCase.assertFalse <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse>`_ :ref:`method<functions>` by adding this line to ``test_assertion_errors_with_false``?
+What if I try the same test using the `unittest.TestCase.assertFalse <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse>`_ :ref:`method<functions>` by adding this line to ``test_assertion_errors_w_false``?
 
 .. code-block:: python
 
-  def test_assertion_errors_with_false(self):
+  def test_assertion_errors_w_false(self):
       assert False is False
       self.assertFalse(True)
 
@@ -336,7 +336,7 @@ I make the failing line to make the test pass
 
 .. code-block:: python
 
-  def test_assertion_errors_with_false(self):
+  def test_assertion_errors_w_false(self):
       assert False is False
       self.assertFalse(False)
 
@@ -363,7 +363,7 @@ I add a failing test to ``TestAssertionError`` in ``test_assertion_error.py``
 
 .. code-block:: python
 
-  def test_assertion_errors_with_true(self):
+  def test_assertion_errors_w_true(self):
       assert False is True
 
 the terminal shows a failure
@@ -379,7 +379,7 @@ I make the failing line to make the test pass
 
 .. code-block:: python
 
-  def test_assertion_errors_with_true(self):
+  def test_assertion_errors_w_true(self):
       assert True is True
 
 red: make it fail
@@ -389,7 +389,7 @@ What if I try the above test using the `unittest.TestCase.assertTrue <https://do
 
 .. code-block:: python
 
-  def test_assertion_errors_with_true(self):
+  def test_assertion_errors_w_true(self):
       assert True is True
       self.assertTrue(False)
 
@@ -406,7 +406,7 @@ I make the failing line to make the test pass
 
 .. code-block:: python
 
-  def test_assertion_errors_with_true(self):
+  def test_assertion_errors_w_true(self):
       assert True is True
       self.assertTrue(True)
 
@@ -438,7 +438,7 @@ I add a new test to ``TestAssertionError`` in ``test_assertion_error.py``
 
 .. code-block:: python
 
-  def test_assertion_errors_with_equality(self):
+  def test_assertion_errors_w_equality(self):
       assert False == None
 
 the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
@@ -454,7 +454,7 @@ I make the failing line to make the test pass
 
 .. code-block:: python
 
-  def test_assertion_errors_with_equality(self):
+  def test_assertion_errors_w_equality(self):
       assert False != None
 
 the test passes because :doc:`False </data_structures/booleans/booleans>` is not equal to :ref:`None`
@@ -468,7 +468,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_assertion_errors_with_equality(self):
+    def test_assertion_errors_w_equality(self):
         assert False != None
         self.assertEqual(False, None)
 
@@ -486,7 +486,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_assertion_errors_with_equality(self):
+    def test_assertion_errors_w_equality(self):
         assert False != None
         self.assertNotEqual(False, None)
 
@@ -502,11 +502,11 @@ refactor: make it better
 
 * red: make it fail
 
-  I add a new line to ``test_assertion_errors_with_equality``
+  I add a new line to ``test_assertion_errors_w_equality``
 
   .. code-block:: python
 
-    def test_assertion_errors_with_equality(self):
+    def test_assertion_errors_w_equality(self):
         assert False != None
         self.assertNotEqual(False, None)
 
@@ -524,7 +524,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_assertion_errors_with_equality(self):
+    def test_assertion_errors_w_equality(self):
         assert False != None
         self.assertNotEqual(False, None)
 
@@ -532,11 +532,11 @@ refactor: make it better
 
 * red: make it fail
 
-  I add the `unittest.TestCase.assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ :ref:`method<functions>` to ``test_assertion_errors_with_equality``
+  I add the `unittest.TestCase.assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ :ref:`method<functions>` to ``test_assertion_errors_w_equality``
 
   .. code-block:: python
 
-    def test_assertion_errors_with_equality(self):
+    def test_assertion_errors_w_equality(self):
         assert False != None
         self.assertNotEqual(False, None)
 
@@ -555,7 +555,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_assertion_errors_with_equality(self):
+    def test_assertion_errors_w_equality(self):
         assert False != None
         self.assertNotEqual(False, None)
 
@@ -574,11 +574,11 @@ refactor: make it better
 
 * red: make it fail
 
-  There is a pattern here, so I add the other cases from the statements above to  ``test_assertion_errors_with_equality``
+  There is a pattern here, so I add the other cases from the statements above to  ``test_assertion_errors_w_equality``
 
   .. code-block:: python
 
-    def test_assertion_errors_with_equality(self):
+    def test_assertion_errors_w_equality(self):
         assert False != None
         self.assertNotEqual(False, None)
 
@@ -606,7 +606,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_assertion_errors_with_equality(self):
+    def test_assertion_errors_w_equality(self):
         assert False != None
         self.assertNotEqual(False, None)
 
