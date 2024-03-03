@@ -208,7 +208,7 @@ refactor: make it better
 
   because the test calls the ``duration`` :ref:`function<functions>` with ``wake_time`` but the name is not in its signature
 
-* When I add the required keyword argument to the signature and set its default value to :ref:`None`
+* When I add the keyword argument to the signature and set its default value to :ref:`None`
 
   .. code-block:: python
 
