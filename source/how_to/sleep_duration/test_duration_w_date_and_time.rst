@@ -6,7 +6,7 @@
 how to measure sleep duration: test_duration_w_date_and_time
 #############################################################################
 
-This is part 5 of 5 where the challenge is to create a :ref:`function<functions>` that calculates the difference between 2 given timestamps
+This is part 5 of 5 where the challenge is to make a :ref:`function<functions>` that calculates the difference between 2 given timestamps
 
 ----
 
@@ -620,7 +620,7 @@ refactor: make it better
                     sleep_time=sleep_time
                 )
 
-* then I create a :ref:`function<functions>` to create random timestamps for a given date
+* then I make a :ref:`function<functions>` to make random timestamps for a given date
 
   .. code-block:: python
 
@@ -707,7 +707,7 @@ refactor: make it better
 review
 *****************************************************************************
 
-The challenge was to create a :ref:`function<functions>` that calculates the difference between 2 given timestamps. I ran the following tests to help me create it
+The challenge was to make a :ref:`function<functions>` that calculates the difference between 2 given timestamps. I ran the following tests to help me make it
 
 * `test_string_attributes_and_methods`_ where  I used the dir_ :ref:`function<functions>`
 * `test_string_splitting`_ where I

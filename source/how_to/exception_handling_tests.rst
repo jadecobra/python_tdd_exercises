@@ -22,7 +22,7 @@ Exception Handling is a way to deal with exceptions, it allows programs to make 
 requirements
 *************************
 
-:doc:`Create a Test Driven Development Environment </how_to/create_tdd_environment>` with ``exceptions`` as the project name
+:doc:`make a Test Driven Development Environment </how_to/make_tdd_environment>` with ``exceptions`` as the project name
 
 ----
 
@@ -59,7 +59,7 @@ I add it to the list of exceptions encountered
 green: make it pass
 =====================
 
-I can take care of this error by creating the module, but I want to catch or handle the exception in the test as a way to show that a ``ModuleNotFoundError`` was raised when I try to import ``non_existent_module``
+I can take care of this error by making the module, but I want to catch or handle the exception in the test as a way to show that a ``ModuleNotFoundError`` was raised when I try to import ``non_existent_module``
 
 I add a ``self.assertRaises`` to ``test_catching_module_not_found_error_in_tests``
 
@@ -72,7 +72,7 @@ I add a ``self.assertRaises`` to ``test_catching_module_not_found_error_in_tests
 and the terminal shows passing tests. How does all this work?
 
 * I use the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` which takes a given `Exception <https://docs.python.org/3/library/exceptions.html?highlight=exception#Exception>`_ as its input, in this case :ref:`ModuleNotFoundError` and checks if that error is raised by the statements given in the context below (the indented block after the ``with`` statement)
-* ``with`` - creates the context where I test that the exception is raised
+* ``with`` - makes the context where I test that the exception is raised
 
   - `read more about the with statement <https://docs.python.org/3/reference/compound_stmts.html?highlight=statement#the-with-statement>`_
   - `read more about with statement context managers <https://docs.python.org/3/reference/datamodel.html#with-statement-context-managers>`_
@@ -212,7 +212,7 @@ I put the failing line in an ``assertRaises`` context to make the test pass
 refactor: make it better
 ==========================
 
-I just created the same context 3 times. The ``self.assertRaises`` catches an :ref:`AttributeError` in each case. I only need to state it once and place all the lines that can raise the same error underneath it to remove the repetition
+I just maked the same context 3 times. The ``self.assertRaises`` catches an :ref:`AttributeError` in each case. I only need to state it once and place all the lines that can raise the same error underneath it to remove the repetition
 
 .. code-block:: python
 

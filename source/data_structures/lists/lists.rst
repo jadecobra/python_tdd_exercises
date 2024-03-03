@@ -12,15 +12,15 @@ A `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ 
 
 
 * Lists are represented with ``[]``
-* Lists can be created with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor
+* Lists can be maked with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor
 * Lists can hold any `object <https://docs.python.org/3/glossary.html#term-object>`_
 * Lists can be changed after creation by performing an operation, this means they are mutable
 * Lists can be looped over
 
-.. _test_creating_a_list:
+.. _test_making_a_list:
 
 *****************************************************************************
-test_creating_a_list
+test_making_a_list
 *****************************************************************************
 
 red: make it fail
@@ -35,7 +35,7 @@ I make a file called ``test_lists.py`` in the ``tests`` folder with the followin
 
   class TestLists(unittest.TestCase):
 
-      def test_creating_a_list(self):
+      def test_making_a_list(self):
           self.assertEqual(list(0, 1, 2, 3), None)
 
 the terminal shows a :ref:`TypeError`
@@ -55,8 +55,8 @@ green: make it pass
     # AssertionError
     # TypeError
 
-  - Looking at the error I see that the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor expects one argument but four are given in the test, so I am not following the signature for creating lists
-  - a `constructor <https://en.wikipedia.org/wiki/Constructor_(object-oriented_programming)>`_ is a :ref:`function<functions>` that is used to create an instance of a :doc:`class </classes/classes>`
+  - Looking at the error I see that the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor expects one argument but four are given in the test, so I am not following the signature for making lists
+  - a `constructor <https://en.wikipedia.org/wiki/Constructor_(object-oriented_programming)>`_ is a :ref:`function<functions>` that is used to make an instance of a :doc:`class </classes/classes>`
   - I read `python's documentation for lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ and see that the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor takes an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ as input
   - An `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ is an object I can go over its items one by one in a loop - `tuples <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_, `lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_, `sets <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ and :doc:`dictionaries </data_structures/dictionaries>` are iterable
 
@@ -64,7 +64,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_creating_a_list(self):
+    def test_making_a_list(self):
         self.assertEqual(list((0, 1, 2, 3)), [])
 
   and get an :ref:`AssertionError` in the terminal
@@ -77,7 +77,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_creating_a_list(self):
+    def test_making_a_list(self):
         self.assertEqual(list((0, 1, 2, 3)), [0, 1, 2, 3])
 
   the test passes
@@ -85,11 +85,11 @@ green: make it pass
 refactor: make it better
 =========================
 
-* I can create a list with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor but the passing test also shows I can create a list with ``[]`` which uses less characters. I add a test for it
+* I can make a list with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor but the passing test also shows I can make a list with ``[]`` which uses less characters. I add a test for it
 
   .. code-block:: python
 
-    def test_creating_a_list_with_square_brackets(self):
+    def test_making_a_list_with_square_brackets(self):
         self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 4)))
 
   the terminal shows an :ref:`AssertionError` for the last value
@@ -102,7 +102,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_creating_a_list_with_square_brackets(self):
+    def test_making_a_list_with_square_brackets(self):
         self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 3)))
 
 ----
@@ -124,7 +124,7 @@ I add a test for adding items to an existing list with the `append <https://docs
         a_list.append(4)
         self.assertEqual(a_list, [0, 1, 2, 3])
 
-- ``a_list = [0, 1, 2, 3]`` creates a list of 4 items and calls it ``a_list``
+- ``a_list = [0, 1, 2, 3]`` makes a list of 4 items and calls it ``a_list``
 - the first ``self.assertEqual(a_list, [0, 1, 2, 3])`` checks that ``a_list`` contains the four items
 - ``a_list.append(4)`` calls the `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` of the list
 - ``self.assertEqual(a_list, [0, 1, 2, 3])`` checks what ``a_list`` contains after `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ is called
@@ -579,7 +579,7 @@ There are more :ref:`methods<functions>` listed than what I have reviewed. Based
 
 * append - adds an item to the list
 * clear - does this clear the items in the list?
-* copy - does this create a copy of the list?
+* copy - does this make a copy of the list?
 * count - does this count the number of items in the list?
 * extend - does this extend the list?
 * index
@@ -598,14 +598,14 @@ review
 *****************************************************************************
 
 * Lists are represented with ``[]``
-* Lists can be created with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor
+* Lists can be maked with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor
 * Lists can hold any `object <https://docs.python.org/3/glossary.html#term-object>`_
 * Lists can be changed after creation by performing an operation, this means they are mutable
 * Lists can be looped over
 
 I ran the following tests to show things I can do with lists in Python
 
-* `test_creating_a_list`_
+* `test_making_a_list`_
 * `test_adding_an_item_to_a_list`_
 * `test_removing_an_item_from_a_list`_
 * `test_removing_the_last_item_from_a_list`_

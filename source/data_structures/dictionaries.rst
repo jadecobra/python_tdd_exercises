@@ -9,7 +9,7 @@ I think this is the most important data structure to know as it can hold all the
 
 ----
 
-How to create a dictionary with strings as keys
+How to make a dictionary with strings as keys
 ------------------------------------------------
 
 red: make it fail
@@ -37,13 +37,13 @@ adding a file called ``dictionaries.py`` to the project folder makes the test pa
 refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-* I add a failing test to show how to create a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+* I add a failing test to show how to make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
   .. code-block:: python
 
     class TestDictionaries(unittest.TestCase):
 
-      def test_creating_dictionaries_with_strings_as_keys(self):
+      def test_making_dictionaries_with_strings_as_keys(self):
           self.assertEqual(
               dictionaries.a_dict(),
               {"key": "value"}
@@ -95,11 +95,11 @@ refactor: make it better
     def a_dict():
         return {'key': 'value'}
 
-* it is also possible to create a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ using the `dict <https://docs.python.org/3/library/stdtypes.html#dict>`_ constructor. I add another test to ``test_creating_dictionaries_with_strings_as_keys``
+* it is also possible to make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ using the `dict <https://docs.python.org/3/library/stdtypes.html#dict>`_ constructor. I add another test to ``test_making_dictionaries_with_strings_as_keys``
 
   .. code-block:: python
 
-    def test_creating_dictionaries_with_strings_as_keys(self):
+    def test_making_dictionaries_with_strings_as_keys(self):
         self.assertEqual(
             dictionaries.a_dict(),
             {'key': 'value'}
@@ -130,7 +130,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_creating_dictionaries_with_strings_as_keys(self):
+    def test_making_dictionaries_with_strings_as_keys(self):
         self.assertEqual(
             dictionaries.a_dict(),
             {"key": "value"}
@@ -161,7 +161,7 @@ refactor: make it better
 
 ----
 
-How to create a dictionary with numbers as keys
+How to make a dictionary with numbers as keys
 ------------------------------------------------
 
 red: make it fail
@@ -171,7 +171,7 @@ I add a failing test to ``TestDictionaries``
 
 .. code-block:: python
 
-  def test_creating_dictionaries_with_numbers_as_keys(self):
+  def test_making_dictionaries_with_numbers_as_keys(self):
       self.assertEqual(
           {1: 'boom'},
           {'one': 'boom'}
@@ -191,7 +191,7 @@ I make the values in the test to make it pass
 
 .. code-block:: python
 
-  def test_creating_dictionaries_with_numbers_as_keys(self):
+  def test_making_dictionaries_with_numbers_as_keys(self):
       self.assertEqual(
           {1: 'boom'},
           {1: 'boom'}
@@ -206,7 +206,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_creating_dictionaries_with_numbers_as_keys(self):
+    def test_making_dictionaries_with_numbers_as_keys(self):
         self.assertEqual(
             {1: 'boom'},
             {1: 'boom'}
@@ -228,7 +228,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_creating_dictionaries_with_numbers_as_keys(self):
+    def test_making_dictionaries_with_numbers_as_keys(self):
       self.assertEqual(
           {1: 'boom'},
           {1: 'boom'}
@@ -242,7 +242,7 @@ refactor: make it better
 
 ----
 
-How to create a dictionary with booleans as keys
+How to make a dictionary with booleans as keys
 -------------------------------------------------
 
 I wonder if it is possible to use :doc:`False </data_structures/booleans/booleans>` or :doc:`True </data_structures/booleans/booleans>` as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
@@ -254,7 +254,7 @@ I add a test to find out if it is possible to use :doc:`False </data_structures/
 
 .. code-block:: python
 
-  def test_creating_dictionaries_with_booleans_as_keys(self):
+  def test_making_dictionaries_with_booleans_as_keys(self):
       self.assertEqual(
           {False: 'boom'},
           {False: 'bap'}
@@ -278,7 +278,7 @@ I make the values to make them match and tests are green again. Sweet!
 
 .. code-block:: python
 
-  def test_creating_dictionaries_with_booleans_as_keys(self):
+  def test_making_dictionaries_with_booleans_as_keys(self):
       self.assertEqual(
           {False: 'boom'},
           {False: 'boom'}
@@ -293,7 +293,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_creating_dictionaries_with_booleans_as_keys(self):
+    def test_making_dictionaries_with_booleans_as_keys(self):
         self.assertEqual(
             {False: 'boom'},
             {False: 'boom'}
@@ -318,7 +318,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_creating_dictionaries_with_booleans_as_keys(self):
+    def test_making_dictionaries_with_booleans_as_keys(self):
         self.assertEqual(
             {False: 'boom'},
             {False: 'boom'}
@@ -332,7 +332,7 @@ So far from the tests, I see that I can use `booleans <https://docs.python.org/3
 
 ----
 
-How to create a dictionary with tuples as keys
+How to make a dictionary with tuples as keys
 ----------------------------------------------
 
 red: make it fail
@@ -342,7 +342,7 @@ I add a test to ``TestDictionaries`` to see if I can use tuples as `dictionary <
 
 .. code-block:: python
 
-  def test_creating_dictionaries_with_tuples_as_keys(self):
+  def test_making_dictionaries_with_tuples_as_keys(self):
       self.assertEqual(
           {(1, 2): "value"},
           {(1, 2): "key"}
@@ -385,7 +385,7 @@ I add a test to ``TestDictionaries`` using a :doc:`list </data_structures/lists/
 
 .. code-block:: python
 
-  def test_creating_dictionaries_with_lists_as_keys(self):
+  def test_making_dictionaries_with_lists_as_keys(self):
       {[1, 2]: "BOOM"}
 
 the terminal shows a :ref:`TypeError` because only `hashable <https://docs.python.org/3/glossary.html#term-hashable>`_ types can be used as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys and :doc:`lists </data_structures/lists/lists>` are not `hashable <https://docs.python.org/3/glossary.html#term-hashable>`_
@@ -406,17 +406,17 @@ I add :ref:`TypeError` to the list of exceptions encountered
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
-I can use ``self.assertRaises`` to confirm that an error is raised by some code without having it crash the tests. I use it here to confirm that Python raises a :ref:`TypeError` when I try to create a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a :doc:`list </data_structures/lists/lists>` as the key
+I can use ``self.assertRaises`` to confirm that an error is raised by some code without having it crash the tests. I use it here to confirm that Python raises a :ref:`TypeError` when I try to make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a :doc:`list </data_structures/lists/lists>` as the key
 
 .. code-block:: python
 
-  def test_creating_dictionaries_with_lists_as_keys(self):
+  def test_making_dictionaries_with_lists_as_keys(self):
       with self.assertRaises(TypeError):
           {[1, 2]: "BOOM"}
 
 see :doc:`/how_to/exception_handling_tests` for more details on why that worked.
 
-From the test I see that I cannot create a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a :doc:`list </data_structures/lists/lists>` as a key
+From the test I see that I cannot make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a :doc:`list </data_structures/lists/lists>` as a key
 
 ----
 
@@ -430,7 +430,7 @@ red: make it fail
 
 .. code-block:: python
 
-  def test_creating_dictionaries_with_sets_as_keys(self):
+  def test_making_dictionaries_with_sets_as_keys(self):
       {{1, 2}: "BOOM"}
 
 the terminal shows a :ref:`TypeError`
@@ -446,7 +446,7 @@ I use ``self.assertRaises`` to handle the exception
 
 .. code-block:: python
 
-  def test_creating_dictionaries_with_sets_as_keys(self):
+  def test_making_dictionaries_with_sets_as_keys(self):
       with self.assertRaises(TypeError):
           {{1, 2}: "BOOM"}
 
@@ -464,7 +464,7 @@ I add a new test
 
 .. code-block:: python
 
-  def test_creating_dictionaries_with_dictionaries_as_keys(self):
+  def test_making_dictionaries_with_dictionaries_as_keys(self):
       a_dictionary = {"key": "value"}
       {a_dictionary: "BOOM"}
 
@@ -482,7 +482,7 @@ I add an exception handler to the test to confirm the findings
 
 .. code-block:: python
 
-    def test_creating_dictionaries_with_dictionaries_as_keys(self):
+    def test_making_dictionaries_with_dictionaries_as_keys(self):
         a_dictionary = {"key": "value"}
         with self.assertRaises(TypeError):
             {a_dictionary: "BOOM"}
@@ -491,7 +491,7 @@ and the terminal shows passing tests. I cannot use a `dictionary <https://docs.p
 
 ----
 
-from these tests I know that I can create `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with the following data structures as keys
+from these tests I know that I can make `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with the following data structures as keys
 
 * `strings <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_
 * `booleans <https://docs.python.org/3/library/stdtypes.html#boolean-type-bool>`_
@@ -499,7 +499,7 @@ from these tests I know that I can create `dictionaries <https://docs.python.org
 * `floats <https://docs.python.org/3/library/functions.html?highlight=float#float>`_
 * `tuples <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_
 
-and I cannot create `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with the following data structures as keys
+and I cannot make `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with the following data structures as keys
 
 * :doc:`lists </data_structures/lists/lists>`
 * `sets <https://docs.python.org/3/tutorial/datastructures.html#sets>`_
@@ -510,7 +510,7 @@ and I cannot create `dictionaries <https://docs.python.org/3/tutorial/datastruct
 How to access dictionary values
 -------------------------------
 
-The tests so far show how to create `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ and what objects can be used as ``keys``. The following tests show how to access the values of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+The tests so far show how to make `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ and what objects can be used as ``keys``. The following tests show how to access the values of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
 red: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -1264,7 +1264,7 @@ you encountered the following exceptions
 
 You also know
 
-* How to create a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+* How to make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 * What objects can be used as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
 * What objects cannot be used as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
 * How to view `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys

@@ -564,7 +564,7 @@ the terminal shows an :ref:`AssertionError`
 
   AssertionError: {} is not None
 
-* ``dict()`` is one way to create an empty :doc:`dictionary </data_structures/dictionaries>` in Python
+* ``dict()`` is one way to make an empty :doc:`dictionary </data_structures/dictionaries>` in Python
 * ``{}`` is how :doc:`dictionaries </data_structures/dictionaries>`  are represented in Python. Wait a minute! `sets <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ are also represented with ``{}``. The difference is that :doc:`dictionaries </data_structures/dictionaries>` hold key-value pairs
 * Do you want to :doc:`read more about dictionaries </data_structures/dictionaries>`?
 

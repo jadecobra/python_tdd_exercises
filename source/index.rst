@@ -1,4 +1,4 @@
-.. pumping python documentation master file, created by
+.. pumping python documentation master file, maked by
   sphinx-quickstart on Sun Oct 22 20:52:14 2023.
   You can adapt this file completely to your liking, but it should at least
   contain the root ``toctree`` directive.
@@ -37,10 +37,10 @@ You can choose how you go through the chapters by starting with what you like.
 
 My recommendation is to
 
-* start with :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` because it is required by every chapter
+* start with :doc:`How to make a Test Driven Development Environment </how_to/make_tdd_environment>` because it is required by every chapter
 * type out the code portions as you go through any chapter without copying and pasting the code
 * repeat a chapter you like until you can do it from memory
-* try recreating the tests from memory or write new tests for a concept you are working on
+* try remaking the tests from memory or write new tests for a concept you are working on
 * try to write solutions using only the tests from the :ref:`tests and solutions` sections as your guide
 * try adding tests for any ideas you get as you go through a chapter
 * you can also go through the :ref:`how-tos` section sequentially
@@ -56,11 +56,11 @@ HOWTOs
   :maxdepth: 2
   :titlesonly:
 
-  how_to/create_tdd_environment
+  how_to/make_tdd_environment
   how_to/setup_my_ide
   how_to/calculator
   how_to/pass_values
-  how_to/create_person
+  how_to/make_person
   how_to/exception_handling_tests
   how_to/exception_handling_programs
   how_to/sleep_duration
@@ -122,7 +122,7 @@ tests and solutions
   :maxdepth: 2
   :titlesonly:
 
-  code/create_tdd/code_create_tdd_environment
+  code/make_tdd/code_make_tdd_environment
   code/code_calculator
   code/code_pass_values
   code/code_person_factory

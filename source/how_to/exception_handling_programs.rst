@@ -121,7 +121,7 @@ green: make it pass
   the terminal shows passing tests
 
 *CONGRATULATIONS!*
-You now know how to deliberately create an exception which means you have absolute power to reshape the universe to your will
+You now know how to deliberately make an exception which means you have absolute power to reshape the universe to your will
 
 *************************
 refactor: make it better

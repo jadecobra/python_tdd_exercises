@@ -20,7 +20,7 @@ requirements
 ****************
 -------------
 
-:doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` with ``truth_table`` as the project name
+:doc:`How to make a Test Driven Development Environment </how_to/make_tdd_environment>` with ``truth_table`` as the project name
 
 ----
 

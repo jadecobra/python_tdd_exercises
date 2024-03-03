@@ -8,12 +8,12 @@ lists: List Comprehensions
 
     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8v6fF6gHmE4?si=e2-lry14UZDgU6Qo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-`List Comprehensions <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#list-comprehensions>`_ are a way to create a :doc:`list </data_structures/lists/lists>` from an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_. It is a simple way to go over every item in the :doc:`list </data_structures/lists/lists>` and perform an operation usually in one line
+`List Comprehensions <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#list-comprehensions>`_ are a way to make a :doc:`list </data_structures/lists/lists>` from an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_. It is a simple way to go over every item in the :doc:`list </data_structures/lists/lists>` and perform an operation usually in one line
 
-.. _test_creating_a_list_from_an_iterable:
+.. _test_making_a_list_from_an_iterable:
 
 *****************************************************************************
-test_creating_a_list_from_an_iterable
+test_making_a_list_from_an_iterable
 *****************************************************************************
 
 red: make it fail
@@ -28,7 +28,7 @@ I add a file called ``test_list_comprehensions.py`` to the ``tests`` folder with
 
   class TestListComprehensions(unittest.TestCase):
 
-      def test_creating_a_list_from_an_iterable(self):
+      def test_making_a_list_from_an_iterable(self):
           a_list = []
           self.assertEqual(a_list, [])
 
@@ -37,11 +37,11 @@ I add a file called ``test_list_comprehensions.py`` to the ``tests`` folder with
               a_list.append(item)
           self.assertEqual(a_list, [])
 
-* ``a_list = []`` creates an empty list called ``a_list``
+* ``a_list = []`` makes an empty list called ``a_list``
 * ``self.assertEqual(a_list, [])`` confirms that ``a_list`` is empty since it is equal to ``[]``
-* ``container = range(10)`` creates an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ of numbers from 0 to 9 with the `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ constructor and calls it ``container``
-* `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ creates an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ of numbers from 0 to the given number minus 1
-* ``for item in container:`` uses a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ statement to create a loop that goes over every item of ``container``
+* ``container = range(10)`` makes an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ of numbers from 0 to 9 with the `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ constructor and calls it ``container``
+* `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ makes an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ of numbers from 0 to the given number minus 1
+* ``for item in container:`` uses a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ statement to make a loop that goes over every item of ``container``
 * ``a_list.append(item)`` adds the item from ``container`` to ``a_list`` on each cycle of the loop, using the ``append`` :ref:`method<functions>`, see :doc:`/data_structures/lists/lists` for more details
 * the second ``self.assertEqual(a_list, [])`` checks to see if ``a_list`` is still empty after the operation
 
@@ -59,7 +59,7 @@ I make the values in the test match the result
 
 .. code-block:: python
 
-  def test_creating_a_list_from_an_iterable(self):
+  def test_making_a_list_from_an_iterable(self):
       a_list = []
       self.assertEqual(a_list, [])
 
@@ -94,7 +94,7 @@ refactor: make it better
 
     self.assertEqual(list(container), a_list)
 
-  and the test passes because calling ``list`` on an ``iterable`` creates a :doc:`list </data_structures/lists/lists>`
+  and the test passes because calling ``list`` on an ``iterable`` makes a :doc:`list </data_structures/lists/lists>`
 * I add another test
 
   .. code-block:: python
@@ -140,7 +140,7 @@ refactor: make it better
     # NameError
     # ModuleNotFoundError
 
-  then create a file called ``list_comprehensions.py`` in the project folder and the terminal shows an :ref:`AttributeError`
+  then make a file called ``list_comprehensions.py`` in the project folder and the terminal shows an :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -212,20 +212,20 @@ From the tests I see that I can make a :doc:`list </data_structures/lists/lists>
 
 ----
 
-.. _test_creating_a_list_with_a_for_loop:
+.. _test_making_a_list_with_a_for_loop:
 
 *****************************************************************************
-test_creating_a_list_with_a_for_loop
+test_making_a_list_with_a_for_loop
 *****************************************************************************
 
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add a test for creating a list with a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ loop
+I add a test for making a list with a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ loop
 
 .. code-block:: python
 
-    def test_creating_a_list_with_a_for_loop(self):
+    def test_making_a_list_with_a_for_loop(self):
         a_list = []
         self.assertEqual(a_list, [])
 
@@ -253,7 +253,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_creating_a_list_with_a_for_loop(self):
+    def test_making_a_list_with_a_for_loop(self):
         a_list = []
         self.assertEqual(a_list, [])
 
@@ -312,8 +312,8 @@ green: make it pass
             result.append(item)
         return result
 
-  - ``result = []`` creates an empty list called ``result``
-  - ``for item in argument:`` creates a loop over the items of ``argument`` which is an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ passed into the function
+  - ``result = []`` makes an empty list called ``result``
+  - ``for item in argument:`` makes a loop over the items of ``argument`` which is an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ passed into the function
   - ``result.append(item)`` adds each item from ``argument`` to the list called ``result``
   - ``return result`` returns ``result`` after the loop completes
 
@@ -337,10 +337,10 @@ From the tests I see that I can make a :doc:`list </data_structures/lists/lists>
 
 ----
 
-.. _test_creating_lists_with_list_comprehensions:
+.. _test_making_lists_with_list_comprehensions:
 
 ************************************************************************************
-test_creating_lists_with_list_comprehensions
+test_making_lists_with_list_comprehensions
 ************************************************************************************
 
 red: make it fail
@@ -350,7 +350,7 @@ I add a failing test to ``TestListComprehensions``
 
 .. code-block:: python
 
-    def test_creating_lists_with_list_comprehensions(self):
+    def test_making_lists_with_list_comprehensions(self):
         a_list = []
         self.assertEqual(a_list, [])
 
@@ -379,7 +379,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_creating_lists_with_list_comprehensions(self):
+    def test_making_lists_with_list_comprehensions(self):
         a_list = []
         self.assertEqual(a_list, [])
 
@@ -407,7 +407,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_creating_lists_with_list_comprehensions(self):
+    def test_making_lists_with_list_comprehensions(self):
         a_list = []
         self.assertEqual(a_list, [])
 
@@ -467,7 +467,7 @@ and
 
 Is that in the first case I have to
 
-* create a list
+* make a list
 * loop through the iterable
 * add the items I want from the iterable to the list
 
@@ -645,7 +645,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
 
     AssertionError: Lists differ: [] != [1, 3, 5, 7, 9]
 
-* I make the value on the left with a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ that uses the same condition I used to create even numbers
+* I make the value on the left with a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ that uses the same condition I used to make even numbers
 
   .. code-block:: python
 
@@ -709,11 +709,11 @@ I have written the same thing multiple times in these tests and since the progra
         self.a_list = []
         self.assertEqual(self.a_list, [])
 
-* I make a reference to ``self.a_list`` in ``test_creating_a_list_from_an_iterable``
+* I make a reference to ``self.a_list`` in ``test_making_a_list_from_an_iterable``
 
   .. code-block:: python
 
-    def test_creating_a_list_from_an_iterable(self):
+    def test_making_a_list_from_an_iterable(self):
         a_list = []
         self.assertEqual(a_list, [])
 
@@ -731,11 +731,11 @@ I have written the same thing multiple times in these tests and since the progra
         )
 
   the terminal still shows passing tests
-* I remove the creation of the empty list and verification from ``test_creating_a_list_from_an_iterable``
+* I remove the creation of the empty list and verification from ``test_making_a_list_from_an_iterable``
 
   .. code-block:: python
 
-    def test_creating_a_list_from_an_iterable(self):
+    def test_making_a_list_from_an_iterable(self):
         container = range(10)
         for item in container:
             self.a_list.append(item)
@@ -754,7 +754,7 @@ I have written the same thing multiple times in these tests and since the progra
 
   .. code-block:: python
 
-    def test_creating_a_list_with_a_for_loop(self):
+    def test_making_a_list_with_a_for_loop(self):
         container = range(10)
         for item in container:
             self.a_list.append(item)
@@ -768,7 +768,7 @@ I have written the same thing multiple times in these tests and since the progra
             self.a_list
         )
 
-    def test_creating_lists_with_list_comprehensions(self):
+    def test_making_lists_with_list_comprehensions(self):
         container = range(10)
         for item in container:
             self.a_list.append(item)
@@ -828,7 +828,7 @@ I have written the same thing multiple times in these tests and since the progra
         self.assertEqual(self.a_list, [])
         self.container = range(10)
 
-    def test_creating_a_list_from_an_iterable(self):
+    def test_making_a_list_from_an_iterable(self):
         for item in self.container:
             self.a_list.append(item)
 
@@ -842,7 +842,7 @@ I have written the same thing multiple times in these tests and since the progra
             self.a_list
         )
 
-    def test_creating_a_list_with_a_for_loop(self):
+    def test_making_a_list_with_a_for_loop(self):
         for item in self.container:
             self.a_list.append(item)
 
@@ -855,7 +855,7 @@ I have written the same thing multiple times in these tests and since the progra
             self.a_list
         )
 
-    def test_creating_lists_with_list_comprehensions(self):
+    def test_making_lists_with_list_comprehensions(self):
         for item in self.container:
             self.a_list.append(item)
 

@@ -16,19 +16,19 @@ This is part 1 of 5 where the challenge is to make a :ref:`function<functions>` 
 red: make it fail
 *****************************************************************************
 
-* I open a terminal and run :ref:`createPythonTdd.sh` with ``sleep_duration`` as the project name
+* I open a terminal and run :ref:`makePythonTdd.sh` with ``sleep_duration`` as the project name
 
   .. code-block:: python
 
-    ./createPythonTdd.sh sleep_duration
+    ./makePythonTdd.sh sleep_duration
 
   .. NOTE::
 
-    If you are using Windows without `Windows Subsystem Linux`_ use :ref:`createPythonTdd.ps1`
+    If you are using Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
 
     .. code-block:: python
 
-      ./createPythonTdd.ps1 sleep_duration
+      ./makePythonTdd.ps1 sleep_duration
 
   and it shows an :ref:`AssertionError` after making the files I need
 
@@ -40,20 +40,22 @@ red: make it fail
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_sleep_duration.py:7`` with the mouse to open it
 * change ``True`` to ``False`` to make ``test_failure`` pass
-* then replace the test with a new failing test that calls the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>`
+* then replace the test with a new failing test
 
   .. code-block:: python
 
     def test_duration_w_hours(self):
         self.assertEqual(
-            sleep_duration
+
         )
 
-  and I get a NameError_ in the terminal
+  and I get a :ref:`TypeError` in the terminal
 
   .. code-block:: python
 
-    NameError: name 'sleep_duration' is not defined
+    TypeError: TestCase.assertEqual() missing 2 required positional arguments: 'first' and 'second'
+
+  ``assertEqual`` takes in two values to make a comparison
 
 .. _test_duration_w_hours_green:
 
@@ -67,9 +69,32 @@ green: make it pass
 
     # Exceptions Encountered
     # AssertionError
+    # TypeError
+
+* then add a reference to the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>` as my first argument
+
+  .. code-block:: python
+
+    self.assertEqual(
+        sleep_duration
+    )
+
+  which gives me a NameError_ in the terminal
+
+  .. code-block:: python
+
+    NameError: name 'sleep_duration' is not defined
+
+* so I add it to the list of exceptions as well
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AssertionError
+    # TypeError
     # NameError
 
-* then add an `import statement`_ at the top of the file for the :doc:`module </exceptions/ModuleNotFoundError>`
+* when I add an `import statement`_ at the top of the file for the :doc:`module </exceptions/ModuleNotFoundError>`
 
   .. code-block:: python
 
@@ -85,15 +110,6 @@ green: make it pass
   .. code-block:: python
 
     TypeError: TestCase.assertEqual() missing 1 required positional argument: 'second'
-
-* I add the error to the list of exceptions as well
-
-  .. code-block:: python
-
-    # Exceptions Encountered
-    # AssertionError
-    # NameError
-    # TypeError
 
 * then set the expectation for the test to :ref:`None`
 
@@ -135,8 +151,8 @@ green: make it pass
 
     # Exceptions Encountered
     # AssertionError
-    # NameError
     # TypeError
+    # NameError
     # AttributeError
 
 * then open ``sleep_duration.py`` to add the name ::
@@ -421,8 +437,8 @@ green: make it pass
 
     # Exceptions Encountered
     # AssertionError
-    # NameError
     # TypeError
+    # NameError
     # AttributeError
     # SyntaxError
 
@@ -1003,8 +1019,8 @@ The challenge is to make a :ref:`function<functions>` that calculates the differ
 I also encountered the following exceptions
 
 * :ref:`AssertionError`
-* NameError_
 * :ref:`TypeError`
+* NameError_
 * :ref:`AttributeError`
 * SyntaxError_
 

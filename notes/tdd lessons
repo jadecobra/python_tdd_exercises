@@ -3,11 +3,11 @@ what do you believe about programming?
 what would you like to do?
 what problems do you want to solve?
 
-- create a TDD environment - automated unit testing
-- create a calculator
+- make a TDD environment - automated unit testing
+- make a calculator
 - functions - passing values?
 - classes - family trees
-- dictionaries - how to create a person
+- dictionaries - how to make a person
 
 - truth table - logic? refactoring
 - exception handling - decision making?
@@ -19,6 +19,6 @@ what would you like to add to it?
 
 package all the tests and run them
 list the names of all tests written
-create a page for it and number it
+make a page for it and number it
 
 catalog_of_tests

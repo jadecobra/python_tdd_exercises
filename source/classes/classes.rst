@@ -16,7 +16,7 @@ I show the following in this chapter
 - How to define a class with an initializer
 - How to view the attributes and methods of a class
 
-How to create a class in Python
+How to make a class in Python
 -------------------------------
 
 * use the `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword
@@ -133,7 +133,7 @@ How to define a class with parentheses
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-I add another test to ``TestClasses`` in ``test_classes.py`` to show another way to create a class
+I add another test to ``TestClasses`` in ``test_classes.py`` to show another way to make a class
 
 .. code-block:: python
 
@@ -179,7 +179,7 @@ How to define a class with inheritance
 
 In object oriented programming there is a concept called `Inheritance <https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming>`_\ ). With Inheritance I can define new `objects <https://docs.python.org/3/glossary.html#term-object>`_ that inherit from existing `objects <https://docs.python.org/3/glossary.html#term-object>`_.
 
-This makes creating new objects easier because I do not have to reinvent or rewrite things that already exist, I can inherit them instead and change the new objects for my specific use case
+Making new objects is easier because I do not have to reinvent or rewrite things that already exist, I can inherit them instead and change the new objects for my specific use case
 
 To use inheritance I specify the "parent" in parentheses when I define the new object (the child) to establish the relationship
 

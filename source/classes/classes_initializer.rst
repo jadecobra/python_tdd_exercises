@@ -6,7 +6,7 @@ classes: initializer
 
 So far I have gone over how to define classes, attributes and methods. I now expand on this to show how to use classes.
 
-When creating a new class, we can define an initializer which is a :ref:`method<functions>` that can receive inputs to be used to customize instances/copies of the class
+When making a new class, we can define an initializer which is a :ref:`method<functions>` that can receive inputs to be used to customize instances/copies of the class
 
 red: make it fail
 ^^^^^^^^^^^^^^^^^

@@ -1,7 +1,7 @@
 .. include:: ../links.rst
 
 ###########################
-how to create a calculator
+how to make a calculator
 ###########################
 
 .. raw:: html
@@ -17,7 +17,7 @@ requirements
 ****************
 
 
-:doc:`Create a Test Driven Development Environment </how_to/create_tdd_environment>` with ``calculator`` as the project name
+:doc:`make a Test Driven Development Environment </how_to/make_tdd_environment>` with ``calculator`` as the project name
 
 ----
 
@@ -155,7 +155,7 @@ green: make it pass
     # AttributeError
     # TypeError
 
-* I have to define ``add`` as a :ref:`function<functions>` or :doc:`class </classes/classes>` to make it callable. I know the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword is used for creating :doc:`/functions/functions` and will test changing the ``add`` variable to a :ref:`function<functions>` in ``calculator.py``
+* I have to define ``add`` as a :ref:`function<functions>` or :doc:`class </classes/classes>` to make it callable. I know the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword is used for making :doc:`/functions/functions` and will test changing the ``add`` variable to a :ref:`function<functions>` in ``calculator.py``
 
   .. code-block:: python
 
@@ -431,7 +431,7 @@ refactor: make it better
   - ``x = random.randint(-1, 1)`` happens twice
   - ``y = random.randint(-1, 1)`` happens twice
 
-* I can use :doc:`class </classes/classes>` attributes (variables) in the ``TestCalculator`` :doc:`class </classes/classes>` in ``test_calculator.py`` to create the random variables only once and reference them later in the tests by using ``self``
+* I can use :doc:`class </classes/classes>` attributes (variables) in the ``TestCalculator`` :doc:`class </classes/classes>` in ``test_calculator.py`` to make the random variables only once and reference them later in the tests by using ``self``
 
   .. code-block:: python
 
@@ -631,7 +631,7 @@ I can use a while loop for the other cases when the divisor is not ``0`` by maki
       )
 
 
-* ``while self.y == 0:`` creates a loop that repeats as long as ``self.y`` is equal to ``0``
+* ``while self.y == 0:`` makes a loop that repeats as long as ``self.y`` is equal to ``0``
 
   -  ``self.y = random.randint(-1, 1)`` assigns a new random variable to ``self.y`` that could be -1, 0 or 1
   - the loop tells python to assign a new random variable to ``self.y`` as long as the current value of ``self.y`` is equal to ``0``

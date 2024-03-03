@@ -44,7 +44,7 @@ test_sleep_duration
 test_lists
 *****************************************************************************
 
-#. :ref:`test_creating_a_list`
+#. :ref:`test_making_a_list`
 #. :ref:`test_adding_an_item_to_a_list`
 #. :ref:`test_removing_an_item_from_a_list`
 #. :ref:`test_removing_the_last_item_from_a_list`

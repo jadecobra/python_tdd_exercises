@@ -16,7 +16,7 @@ this chapter shows how to pass values from tests to programs using `Formatted st
 requirements
 ****************
 
-:doc:`Create a Test Driven Development Environment </how_to/create_tdd_environment>` with ``telephone`` as the project name
+:doc:`make a Test Driven Development Environment </how_to/make_tdd_environment>` with ``telephone`` as the project name
 
 ----
 
@@ -375,7 +375,7 @@ VOILA! You now know how to pass values from a test to a program and can represen
 * :ref:`AttributeError`
 * :ref:`TypeError`
 
-Would you like to know :doc:`/how_to/create_person`?
+Would you like to know :doc:`/how_to/make_person`?
 
 ----
 

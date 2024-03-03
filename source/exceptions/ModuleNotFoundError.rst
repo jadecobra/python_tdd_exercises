@@ -16,7 +16,7 @@ requirements
 ****************
 
 
-:doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>`
+:doc:`How to make a Test Driven Development Environment </how_to/make_tdd_environment>`
 
 ----
 
@@ -24,7 +24,7 @@ requirements
 red: make it fail
 *********************
 
-Open a new file in the Interactive Development Environment editor and save it as ``test_module_not_found_error.py`` in the ``tests`` folder created from :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>`
+Open a new file in the Interactive Development Environment editor and save it as ``test_module_not_found_error.py`` in the ``tests`` folder maked from :doc:`How to make a Test Driven Development Environment </how_to/make_tdd_environment>`
 
 Type the following in the file
 
@@ -131,7 +131,7 @@ Type the following in the file
   import module_98
   import module_99
 
-If you left ``pytest-watch`` running from :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` you should see something like the following in your terminal
+If you left ``pytest-watch`` running from :doc:`How to make a Test Driven Development Environment </how_to/make_tdd_environment>` you should see something like the following in your terminal
 
 .. code-block:: python
 
@@ -157,25 +157,25 @@ Looking at the traceback starting from the bottom
 green: make it pass
 *********************
 
-* create ``module_0.py`` in the ``project_name`` folder and the terminal shows
+* make ``module_0.py`` in the ``project_name`` folder and the terminal shows
 
   .. code-block:: python
 
     ModuleNotFoundError: No module called 'module_1'
 
-* create ``module_1.py`` in the ``project_name`` folder, the terminal shows the same error for a new line
+* make ``module_1.py`` in the ``project_name`` folder, the terminal shows the same error for a new line
 
   .. code-block:: python
 
     ModuleNotFoundError: No module called 'module_2'
 
-* create ``module_2.py`` in the ``project_name`` folder, the terminal shows the following
+* make ``module_2.py`` in the ``project_name`` folder, the terminal shows the following
 
   .. code-block:: python
 
     ModuleNotFoundError: No module called 'module_3'
 
-* this is the pattern, repeat it until you have created ``module_99.py`` and the terminal shows a passing test
+* this is the pattern, repeat it until you have maked ``module_99.py`` and the terminal shows a passing test
 
 *WELL DONE!*
 You are on your way to being a troubleshooting master.

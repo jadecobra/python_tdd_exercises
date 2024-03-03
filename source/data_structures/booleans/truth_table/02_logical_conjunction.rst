@@ -15,7 +15,7 @@ I know that there are two boolean values
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
-After creating a ``TestCase`` for binary operations in ``test_truth_table.py``
+After making a ``TestCase`` for binary operations in ``test_truth_table.py``
 
 .. code-block:: python
 

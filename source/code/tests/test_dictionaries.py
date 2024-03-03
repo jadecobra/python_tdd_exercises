@@ -4,7 +4,7 @@ import unittest
 
 class TestDictionaries(unittest.TestCase):
 
-    def test_creating_dictionaries_with_strings_as_keys(self):
+    def test_making_dictionaries_with_strings_as_keys(self):
         self.assertEqual(
             dictionaries.a_dict(),
             {"key": "value"}
@@ -18,7 +18,7 @@ class TestDictionaries(unittest.TestCase):
             dict(key='value')
         )
 
-    def test_creating_dictionaries_with_numbers_as_keys(self):
+    def test_making_dictionaries_with_numbers_as_keys(self):
         self.assertEqual(
             {1: 'boom'},
             {1: 'boom'}
@@ -28,7 +28,7 @@ class TestDictionaries(unittest.TestCase):
             {2.5: 'works'}
         )
 
-    def test_creating_dictionaries_with_booleans_as_keys(self):
+    def test_making_dictionaries_with_booleans_as_keys(self):
         self.assertEqual(
             {False: 'boom'},
             {False: 'boom'}
@@ -38,21 +38,21 @@ class TestDictionaries(unittest.TestCase):
             {True: 'bap'}
         )
 
-    def test_creating_dictionaries_with_tuples_as_keys(self):
+    def test_making_dictionaries_with_tuples_as_keys(self):
         self.assertEqual(
             {(1, 2): "value"},
             {(1, 2): "value"}
         )
 
-    def test_creating_dictionaries_with_lists_as_keys(self):
+    def test_making_dictionaries_with_lists_as_keys(self):
         with self.assertRaises(TypeError):
             {[1, 2]: "BOOM"}
 
-    def test_creating_dictionaries_with_sets_as_keys(self):
+    def test_making_dictionaries_with_sets_as_keys(self):
         with self.assertRaises(TypeError):
             {{1, 2}: "BOOM"}
 
-    def test_creating_dictionaries_with_dictionaries_as_keys(self):
+    def test_making_dictionaries_with_dictionaries_as_keys(self):
         a_dictionary = {"key": "value"}
         with self.assertRaises(TypeError):
             {a_dictionary: "BOOM"}

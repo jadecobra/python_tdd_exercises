@@ -12,7 +12,7 @@ requirements
 *****************************************************************************
 
 
-:doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>`
+:doc:`How to make a Test Driven Development Environment </how_to/make_tdd_environment>`
 
 ----
 
@@ -23,7 +23,7 @@ Solve an AttributeError by defining variables
 red: make it fail
 -----------------------------------------------------------------------------
 
-I open a new file, save it as ``test_attribute_error.py`` in the ``tests`` folder created in :doc:`How to create a Test Driven Development Environment </how_to/create_tdd_environment>` and type the following
+I open a new file, save it as ``test_attribute_error.py`` in the ``tests`` folder maked in :doc:`How to make a Test Driven Development Environment </how_to/make_tdd_environment>` and type the following
 
 .. code-block:: python
 
@@ -52,7 +52,7 @@ green: make it pass
     # AssertionError
     # ModuleNotFoundError
 
-* then create ``module.py`` in the ``project_name`` folder and the terminal all tests are passing
+* then make ``module.py`` in the ``project_name`` folder and the terminal all tests are passing
 * I continue adding tests to ``test_attribute_error.py``
 
   .. code-block:: python

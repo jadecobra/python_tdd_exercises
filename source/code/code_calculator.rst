@@ -1,6 +1,6 @@
 
 #######################################################
-How to create a Calculator: Tests and Solutions
+How to make a Calculator: Tests and Solutions
 #######################################################
 
 **********
