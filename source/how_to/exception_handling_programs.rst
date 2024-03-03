@@ -538,7 +538,7 @@ You also encountered the following exceptions
 
 .. admonition:: do you want to
 
-Do you think you are ready to take on :doc:`/how_to/sleep_duration`?
+Would you like to test :doc:`/how_to/sleep_duration`?
 
 ----
 

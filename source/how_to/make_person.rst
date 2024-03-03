@@ -21,7 +21,7 @@ requirements
 ----
 
 *****************************************************************************
-How to use dictionaries as factories in Python
+test_person_factory
 *****************************************************************************
 
 red: make it fail
@@ -220,6 +220,12 @@ refactor: make it better
 
   the terminal shows the test passed
 
+.. _test_person_factory_with_variable_inputs:
+
+*****************************************************************************
+test_person_factory_with_variable_inputs
+*****************************************************************************
+
 * The factory function currently returns the exact same dictionary every time, regardless of what inputs it gets. It is a :doc:`singleton function </functions/functions_singleton>`. To be more useful it has to use the inputs it is given. I add another test to ``test_person.py`` with a different set of inputs
 
   .. code-block:: python
@@ -408,7 +414,7 @@ refactor: make it better
         )
 
 *********************************************************************************
-How to use default keyword arguments in functions
+test_person_factory_with_default_keyword_arguments
 *********************************************************************************
 
 red: make it fail
@@ -455,6 +461,10 @@ red: make it fail
 
   the terminal shows passing tests. When no value is given for the ``last_name`` argument to ``person.factory`` it uses ``"last_name"`` because that is the defined default value in the :doc:`function signature </functions/functions>`
 
+*********************************************************************************
+test_person_factory_with_default_keyword_arguments
+*********************************************************************************
+
 * I add a test called ``test_person_factory_with_sex_default_keyword_argument`` to try another default value
 
   .. code-block:: python
@@ -497,6 +507,10 @@ red: make it fail
 
 ----
 
+*********************************************************************************
+review
+*********************************************************************************
+
 From the tests above you can make a :ref:`function<functions>` that
 
 * returns a :doc:`dictionary </data_structures/dictionaries>` as output
@@ -511,7 +525,7 @@ You also encountered the following exceptions
 * NameError_
 * :ref:`TypeError`
 
-Do you know :doc:`/how_to/exception_handling_tests`?
+Would you like to know :doc:`/how_to/exception_handling_tests`?
 
 ----
 

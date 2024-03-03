@@ -497,7 +497,7 @@ You now know one way to make a Test Driven Development Environment for Python pr
 
 Happy Trails!
 
-To see a project where you actually make a program using Test Driven Development, checkout :doc:`/how_to/calculator`
+Would you like to test :doc:`/how_to/calculator`?
 
 ----
 

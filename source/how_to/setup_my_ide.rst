@@ -67,3 +67,5 @@ Here are extensions I use to customize `Visual Studio Code <https://code.visuals
 * `indent-rainbow <https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow>`_ - did I mention I like pretty colors?
 * `Python <https://marketplace.visualstudio.com/items?itemName=ms-python.python>`_ - python helper
 * `Black Formatter <https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter>`_ - code formatter
+
+----

@@ -229,7 +229,7 @@ Fantastic! all the tests still pass and I have a way to catch exceptions that ar
 * NameError_
 * :ref:`AttributeError`
 
-Time to look at :doc:`/how_to/exception_handling_programs`
+Would you like to look at :doc:`/how_to/exception_handling_programs`?
 
 ----
 
