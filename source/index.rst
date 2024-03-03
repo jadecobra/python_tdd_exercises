@@ -86,7 +86,7 @@ Table of Contents
   exceptions/IndentationError
   data_structures/none
   data_structures/booleans/booleans
-  data_structures/booleans/truth_table/01
+  data_structures/booleans/truth_table/01_nullary_unary
   data_structures/booleans/truth_table/02_logical_conjunction
   data_structures/booleans/truth_table/03_logical_disjunction
   data_structures/booleans/truth_table/04_logical_implication

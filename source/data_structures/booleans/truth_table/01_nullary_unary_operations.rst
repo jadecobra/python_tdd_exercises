@@ -1,12 +1,8 @@
 .. include:: ../../../links.rst
 
-############
-Truth Table
-############
-
-Sometimes I want programs to make decisions based on inputs or conditions, and can make this happen with conditional statements.
-
-I am going to go over writing conditional statements in Python with the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_ from mathematics
+#############################################################################
+Truth Table: Nullary and Unary Operations
+#############################################################################
 
 There are only two boolean values
 
