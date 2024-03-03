@@ -6,7 +6,7 @@
 how to measure sleep duration: test_duration_w_hours
 #############################################################################
 
-This is part 1 of 5 where the challenge is to create a :ref:`function<functions>` that calculates the difference between 2 given timestamps
+This is part 1 of 5 where the challenge is to make a :ref:`function<functions>` that calculates the difference between 2 given timestamps
 
 ----
 
@@ -691,7 +691,7 @@ refactor: make it better
 red: make it fail
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* I want to get the first item of the list created from splitting the timestamp string_, which I can get by using its index. Python uses `zero-based indexing`_ which means the first item is at index ``0`` and the second item is at index ``1``. See :doc:`/data_structures/lists/lists` for more. I add tests to ``test_string_splitting`` for getting specific parts of a :doc:`list </data_structures/lists/lists>` created from calling `str.split`_
+* I want the first item of the list from splitting the timestamp string_, which I can get by using its index. Python uses `zero-based indexing`_ which means the first item is at index ``0`` and the second item is at index ``1``. See :doc:`/data_structures/lists/lists` for more. I add tests to ``test_string_splitting`` for getting specific parts of the :doc:`list </data_structures/lists/lists>` got from calling `str.split`_
 
   .. code-block:: python
 
@@ -982,7 +982,7 @@ green: make it pass
 review
 *****************************************************************************
 
-The challenge is to create a :ref:`function<functions>` that calculates the difference between 2 given timestamps. I ran the following tests so far to make something that comes close to doing it
+The challenge is to make a :ref:`function<functions>` that calculates the difference between 2 given timestamps. I ran the following tests so far to get something that comes close to doing it
 
 * `test_string_attributes_and_methods`_ where
 
