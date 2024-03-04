@@ -998,7 +998,7 @@ green: make it pass
 review
 *****************************************************************************
 
-The challenge is to to write a program that calculates the difference between a given sleep and wake time.. I ran the following tests so far to get something that comes close to doing it
+The challenge is to write a program that calculates the difference between a given sleep and wake time. I ran the following tests to get something that comes close to doing it
 
 * `test_string_attributes_and_methods`_ where
 
