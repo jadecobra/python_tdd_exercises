@@ -111,7 +111,7 @@ green: make it pass
 
     TypeError: TestCase.assertEqual() missing 1 required positional argument: 'second'
 
-* then set the expectation for the test to :ref:`None`
+* I set the expectation for the test to :ref:`None`
 
   .. code-block:: python
 
@@ -179,7 +179,7 @@ green: make it pass
 refactor: make it better
 *****************************************************************************
 
-* I add a call to ``duration`` in the test because I want it to accepts inputs
+* I add a call to ``duration`` in the test because I want it to accept inputs
 
   .. code-block:: python
 
@@ -293,7 +293,7 @@ refactor: make it better
 
   and the test passes, green again
 
-* This :ref:`function<functions>` will always return ``1`` even when I change the values for ``wake_time`` and ``sleep_time`` which would not be correct. I add variables for random integers_ to cover all timestamps from ``'00:00'`` to ``'23:00'`` to avoid writing a series of tests for changing timestamps. First, I add an `import statement`_ for the random_ :doc:`module </exceptions/ModuleNotFoundError>` to ``test_sleep_duration.py``
+* This :ref:`function<functions>` will always return ``1`` even when I change the values for ``wake_time`` and ``sleep_time`` which would not be correct. I want to add variables for random integers_ to cover all timestamps from ``'00:00'`` to ``'23:00'`` to avoid writing a series of tests for changing timestamps, which I do by first adding an `import statement`_ for the random_ :doc:`module </exceptions/ModuleNotFoundError>` to ``test_sleep_duration.py``
 
   .. code-block:: python
 
@@ -301,7 +301,7 @@ refactor: make it better
     import sleep_duration
     import unittest
 
-* then add variables for random values as the hours part of the ``wake_time`` and ``sleep_time`` timestamps in the test
+* then add variables for random hours in a day
 
   .. code-block:: python
 
@@ -312,7 +312,7 @@ refactor: make it better
 
   ``random.randint(0, 23)`` will give me a random integer_ from ``0`` up to and including ``23`` to represent the 24 hours in a day
 
-* I :doc:`interpolate </how_to/pass_values>` these random integers_ in the input strings_
+* I :doc:`interpolate </how_to/pass_values>` these random integers_ in the input strings_ for ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
 
@@ -328,7 +328,7 @@ refactor: make it better
             1
         )
 
-  the ``:02`` in ``{wake_hour:02}`` and ``{sleep_hour:02}`` tells Python to always display two characters for the numbers, with a leading zero when it is one digit. For example, display ``01`` instead of ``1``
+  the ``:02`` in ``{wake_hour:02}`` and ``{sleep_hour:02}`` tell Python to always display two characters for the numbers, with a leading zero when it is one digit. For example, display ``01`` instead of ``1``
 
 * When I make the test expect the difference between ``wake_hour`` and ``sleep_hour``
 

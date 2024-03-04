@@ -1,7 +1,7 @@
 .. include:: ../links.rst
 
 #############################################################################
-how to make a Test Driven Development Environment
+how to make a test driven development environment
 #############################################################################
 
 .. raw:: html
@@ -17,7 +17,7 @@ I recommend reading `Kent Beck’s <https://en.wikipedia.org/wiki/Kent_Beck>`_ `
 This chapter covers one way to make a Python Test Driven Development environment
 
 *****************************************************************************
-General Requirements
+requirements
 *****************************************************************************
 
 * download and install `Python <https://www.python.org/downloads/>`_
@@ -29,9 +29,8 @@ General Requirements
   - `Sublime <https://www.sublimetext.com>`_
   - `Other Interactive Development Environment (IDE) options <https://wiki.python.org/moin/IntegratedDevelopmentEnvironments>`_
 
-*****************************************************************************
-Windows Requirements
-*****************************************************************************
+windows requirements
+#############################################################################
 
 If the operating system of your computer is Windows, use `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
 
@@ -54,7 +53,7 @@ If the operating system of your computer is Windows, use `Windows Subsystem for 
 * run subsequent commands in `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_ terminal
 
 *****************************************************************************
-make a test Driven Development Environment
+make a test driven development environment
 ****************************************************************************************
 
 I open a terminal in the Interactive Development Environment (IDE) and type the following commands to make the project
@@ -397,7 +396,7 @@ Make sure you are in the directory that contains the `virtual environment <https
 -----
 
 ****************************************************************************************
-how to automatically make a Python Test Driven Development Environment
+how to automatically make a python test driven development environment
 ****************************************************************************************
 
 You made it this far and have become the greatest programmer in the world. Following the `The Do Not Repeat Yourself (DRY) Principle <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_, I would write a program that contains all the steps above. I can then use it to make a Test Driven Development Environment any time I want without having to remember each step of the process
@@ -469,10 +468,10 @@ You made it this far and have become the greatest programmer in the world. Follo
 
     ./makePythonTdd.sh calculator
 
+----
 
-****************************************************************************************
-how to automatically make a Test Driven Development Environment on Windows without WSL
-****************************************************************************************
+how to automatically make a python test driven development environment on windows without WSL
+#############################################################################
 
 .. warning::
 
