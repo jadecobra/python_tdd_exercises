@@ -54,8 +54,8 @@ If the operating system of your computer is Windows, use `Windows Subsystem for 
 * run subsequent commands in `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_ terminal
 
 *****************************************************************************
-Make a Test Driven Development Environment
-*****************************************************************************
+make a test Driven Development Environment
+****************************************************************************************
 
 I open a terminal in the Interactive Development Environment (IDE) and type the following commands to make the project
 
@@ -116,9 +116,9 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
 .. _test_failure:
 
-*****************************************************************************
+****************************************************************************************
 test_failure
-*****************************************************************************
+****************************************************************************************
 
 The Test Driven Development cycle is ``RED GREEN REFACTOR``
 
@@ -274,12 +274,12 @@ So far there is not much to improve on what has been written but there has been 
 
 This means ``python3 -m unittest`` is run for each part of the Test Driven Development cycle or each time there is a code change. I automate this so `I Do Not Repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_, it would be better for a program to automatically run the tests when there is a change to the code
 
-*****************************************************************************
-how to automatically Run Tests
-*****************************************************************************
+****************************************************************************************
+how to automatically run tests
+****************************************************************************************
 
 how to make a Virtual Environment
-====================================
+-----------------------------------------------------------------------------
 
 * With the `echo <https://man7.org/linux/man-pages/man1/echo.1.html>`_ program I make a file called ``requirements.txt`` in the ``project_name`` folder with `pytest-watch <https://pypi.org/project/pytest-watch/>`_ as the text
 
@@ -374,15 +374,15 @@ how to make a Virtual Environment
 * I make the input on line 7 in ``test_project_name.py`` to :doc:`True </data_structures/booleans/booleans>` to make it fail and back to :doc:`False </data_structures/booleans/booleans>` to make it pass with the terminal responding to each change
 * I can press ``ctrl`` + ``c`` on the keyboard in the terminal to stop the tests at anytime
 
-how to Deactivate a Virtual Environment
-========================================
+how to deactivate a virtual environment
+-----------------------------------------------------------------------------
 
 type the following in a terminal with an active `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ ::
 
   deactivate
 
-how to Activate a Virtual Environment
-========================================
+how to activate a virtual environment
+-----------------------------------------------------------------------------
 
 Make sure you are in the directory that contains the `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ for example ``project_name`` and type the following in the terminal::
 
@@ -396,9 +396,9 @@ Make sure you are in the directory that contains the `virtual environment <https
 
 -----
 
-*****************************************************************************
+****************************************************************************************
 how to automatically make a Python Test Driven Development Environment
-*****************************************************************************
+****************************************************************************************
 
 You made it this far and have become the greatest programmer in the world. Following the `The Do Not Repeat Yourself (DRY) Principle <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_, I would write a program that contains all the steps above. I can then use it to make a Test Driven Development Environment any time I want without having to remember each step of the process
 
@@ -412,11 +412,11 @@ You made it this far and have become the greatest programmer in the world. Follo
 
     history
 
-* I make an empty file with a name that describes what the program does so it is easy to remember later, for example ``makePythonTdd.sh`` ::
+* I make an empty file with a name that describes what the program does so it is easy to remember later, for example :ref:`makePythonTdd.sh` ::
 
     touch makePythonTdd.sh
 
-* I open ``makePythonTdd.sh`` in the Interactive Development Environment (IDE) and copy each command displayed in the terminal from ``history`` except ``python3 -m unittest`` since I want the tests to run automatically
+* I open the file in the Interactive Development Environment (IDE) and copy each command displayed in the terminal from ``history`` except ``python3 -m unittest`` since I want the tests to run automatically
 
   .. code-block:: ruby
 
@@ -470,15 +470,15 @@ You made it this far and have become the greatest programmer in the world. Follo
     ./makePythonTdd.sh calculator
 
 
-*****************************************************************************
-how to automatically Make a Test Driven Development Environment on Windows without WSL
-*****************************************************************************
+****************************************************************************************
+how to automatically make a Test Driven Development Environment on Windows without WSL
+****************************************************************************************
 
 .. warning::
 
   This section only applies if you are using Windows without `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
 
-* I make a file named ``makePythonTdd.ps1`` by using the ``New-Item`` command in PowerShell ::
+* I make a file named :ref:`makePythonTdd.ps1` by using the ``New-Item`` command in PowerShell ::
 
     New-Item makePythonTdd.ps1
 
@@ -497,9 +497,9 @@ how to automatically Make a Test Driven Development Environment on Windows witho
 
 ----
 
-*****************************************************************************
+****************************************************************************************
 review
-*****************************************************************************
+****************************************************************************************
 
 One of the advantages of programming is that I can take a series of steps and make them a one line command which the computer does on my behalf.
 
