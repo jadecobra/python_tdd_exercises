@@ -110,7 +110,7 @@ std:label
     how to access dictionary values          How to access dictionary values         : data_structures/dictionaries.html#how-to-access-dictionary-values
     how to activate a virtual environment    How to Activate a Virtual Environment   : how_to/make_tdd_environment.html#how-to-activate-a-virtual-environment
     how to add an item to a list             How to add an item to a list            : data_structures/lists/lists.html#how-to-add-an-item-to-a-list
-    how to automatically make a test driven development environment on windows without wsl How to automatically make a Test Driven Development Environment on Windows without WSL: how_to/make_tdd_environment.html#how-to-automatically-make-a-test-driven-development-environment-on-windows-without-wsl
+    how to automatically make a python test driven development environment on windows without wsl how to automatically make a python test driven development environment on Windows without WSL: how_to/make_tdd_environment.html#how-to-automatically-make-a-test-driven-development-environment-on-windows-without-wsl
     how to automatically run tests           How to Automatically Run Tests          : how_to/make_tdd_environment.html#how-to-automatically-run-tests
     how to catch things that fail            How to catch things that fail           : how_to/exception_handling_programs.html#how-to-catch-things-that-fail
     how to catch things that succeed         How to catch things that succeed        : how_to/exception_handling_programs.html#how-to-catch-things-that-succeed

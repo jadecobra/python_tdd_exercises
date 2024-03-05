@@ -106,7 +106,8 @@ tests and solutions
   :maxdepth: 2
   :titlesonly:
 
-  code/make_tdd/code_make_tdd_environment
+  code/make_tdd/code_make_python_tdd_sh
+  code/make_tdd/code_make_python_tdd_ps1
   code/code_calculator
   code/code_pass_values
   code/code_person_factory
