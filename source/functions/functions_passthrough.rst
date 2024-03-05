@@ -4,6 +4,14 @@
 functions: test_passthrough_functions
 #############################################################################
 
+----
+
+.. contents:: table of contents
+  :local:
+  :depth: 1
+
+----
+
 Passthrough :ref:`functions` return their input as output
 
 *****************************************************************************

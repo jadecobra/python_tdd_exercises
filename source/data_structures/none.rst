@@ -8,7 +8,17 @@ None
 
   <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/81afQTs6JH0?si=LAtEPEdDKutSOGw9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-What is None?
+----
+
+.. contents:: table of contents
+  :local:
+  :depth: 1
+
+----
+
+.. _test_none_is_none:
+
+test_none_is_none
 *****************************************************************************
 
 `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is an object used to represent the absence of a value
@@ -59,7 +69,9 @@ There are other python `objects <https://docs.python.org/3/glossary.html#term-ob
 
 ----
 
-Is None a boolean?
+.. _test_is_none_a_boolean:
+
+test_is_none_a_boolean
 *****************************************************************************
 
 red: make it fail
@@ -152,7 +164,9 @@ I want to know if `None <https://docs.python.org/3/library/constants.html?highli
 
 ----
 
-Is None an integer?
+.. _test_is_none_an_integer:
+
+test_is_none_an_integer
 *****************************************************************************
 
 red: make it fail
@@ -230,7 +244,9 @@ From the tests I see that
 
 ----
 
-Is None a float?
+.. _test_is_none_a_float:
+
+test_is_none_a_float
 *****************************************************************************
 
 red: make it fail
@@ -305,14 +321,16 @@ From the tests I see that
 
 ----
 
-Is None a string?
+.. _test_is_none_a_string:
+
+test_is_none_a_string
 *****************************************************************************
 
 I add a test for `strings <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_. A string is any character(s) inside single, double or triple quotes for example
 
 * ``'single quotes'``
-* ``"double quotes"``
 * ``'''triple single quotes'''``
+* ``"double quotes"``
 * ``"""triple double quotes"""``
 
 see :doc:`/conventions` for a little more detail
@@ -390,7 +408,9 @@ From the tests I see that
 
 ----
 
-Is None a tuple?
+.. _test_is_none_a_tuple:
+
+test_is_none_a_tuple
 *****************************************************************************
 
 red: make it fail
@@ -457,7 +477,9 @@ Based on what I have seen so far, it is safe to assume that `None <https://docs.
 
 ----
 
-Is None a list?
+.. _test_is_none_a_list:
+
+test_is_none_a_list
 *****************************************************************************
 
 red: make it fail
@@ -498,7 +520,9 @@ With the passing tests I see that
 
 ----
 
-Is None a set?
+.. _test_is_none_a_set:
+
+test_is_none_a_set
 *****************************************************************************
 
 red: make it fail
@@ -538,7 +562,9 @@ From the tests I see that
 
 ----
 
-Is None a dictionary?
+.. _test_is_none_a_dictionary:
+
+test_is_none_a_dictionary
 *****************************************************************************
 
 red: make it fail

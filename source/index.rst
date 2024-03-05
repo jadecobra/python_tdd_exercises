@@ -52,8 +52,9 @@ If you prefer videos, there is one for each chapter at `<https://www.youtube.com
 *****************************************************************************
 howtos
 *****************************************************************************
+
 .. toctree::
-  :maxdepth: 2
+  :maxdepth: 1
   :titlesonly:
 
   how_to/make_tdd_environment
@@ -69,8 +70,9 @@ howtos
 *****************************************************************************
 table of contents
 *****************************************************************************
+
 .. toctree::
-  :maxdepth: 2
+  :maxdepth: 1
   :titlesonly:
 
   conventions

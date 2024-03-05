@@ -1,8 +1,14 @@
 .. include:: ../../../links.rst
 
 #################################
-Truth Table: Logical Implication
+truth table: Logical Implication
 #################################
+
+.. contents:: table of contents
+  :local:
+  :depth: 1
+
+----
 
 This chapter contains tests for Logical Implication from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
@@ -19,6 +25,7 @@ Reviewing what I know so far, for any boolean operation involving 2 inputs: ``p`
 * :doc:`True </data_structures/booleans/booleans>` is ``not False``
 * :doc:`False </data_structures/booleans/booleans>` is :doc:`False </data_structures/booleans/booleans>`
 * :doc:`True </data_structures/booleans/booleans>` is :doc:`True </data_structures/booleans/booleans>`
+
 
 
 red: make it fail

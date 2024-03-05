@@ -1,8 +1,14 @@
 .. include:: ../../../links.rst
 
 #####################################
-Truth Table: Converse NonImplication
+truth table: Converse NonImplication
 #####################################
+
+.. contents:: table of contents
+  :local:
+  :depth: 1
+
+----
 
 The tests in this chapter cover Converse NonImplication from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 

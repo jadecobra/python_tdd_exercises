@@ -1,11 +1,16 @@
 .. include:: ../../../links.rst
 
 ####################
-Truth Table: Negate
+truth table: Negate
 ####################
 
-I continue to step through conditional statements using Binary Operations from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
+.. contents:: table of contents
+  :local:
+  :depth: 1
 
+----
+
+I continue to step through conditional statements using Binary Operations from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
 
 Negate First

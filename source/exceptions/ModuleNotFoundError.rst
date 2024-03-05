@@ -4,25 +4,33 @@
 ModuleNotFoundError
 ######################
 
+----
+
+.. contents:: table of contents
+  :local:
+  :depth: 1
+
+----
+
 The drill below will help you remember how to solve a ``ModuleNotFoundError`` in Python and what a python module is.
 
-``ModuleNotFoundError`` is raised when python attempts to import a module that does not exist or it cannot find a given module name for an `import`` statement.
+``ModuleNotFoundError`` is raised when python attempts to import a module that does not exist or it cannot find a given module name for an `import statement`_.
 A Python Module is a file that ends in ``.py`` or a directory that contains an ``__init__.py``.
 
 Programming allows us to gain from our previous efforts as well as the efforts of others in the form of packages and modules that can be distributed for other people to use. To use these packages in Python they have to be imported.
 
-****************
+*****************************************************************************
 requirements
-****************
+*****************************************************************************
 
 
 :doc:`How to make a Test Driven Development Environment </how_to/make_tdd_environment>`
 
 ----
 
-*********************
+*****************************************************************************
 red: make it fail
-*********************
+*****************************************************************************
 
 Open a new file in the Interactive Development Environment editor and save it as ``test_module_not_found_error.py`` in the ``tests`` folder made from :doc:`How to make a Test Driven Development Environment </how_to/make_tdd_environment>`
 
@@ -139,7 +147,6 @@ If you left ``pytest-watch`` running from :doc:`How to make a Test Driven Develo
 
 Looking at the traceback starting from the bottom
 
-
 * ``ModuleNotFoundError`` is raised when an `import statement`_ fails because python cannot find a module/package with the given name, in this case ``module_0`` does not exist
 * ``import module_0`` is the line of code that caused the failure
 * Add the error to the list of Exceptions encountered
@@ -153,9 +160,9 @@ Looking at the traceback starting from the bottom
 
   If you want more information about imports you can read `The Import Statement <https://docs.python.org/3/reference/simple_stmts.html#import>`_
 
-*********************
+*****************************************************************************
 green: make it pass
-*********************
+*****************************************************************************
 
 * make ``module_0.py`` in the ``project_name`` folder and the terminal shows
 
@@ -177,6 +184,12 @@ green: make it pass
 
 * this is the pattern, repeat it until you have made ``module_99.py`` and the terminal shows a passing test
 
+----
+
+*****************************************************************************
+review
+*****************************************************************************
+
 *WELL DONE!*
 You are on your way to being a troubleshooting master.
 You now know how to solve ``ModuleNotFoundError``
@@ -186,3 +199,5 @@ you encountered the following exceptions
 * :ref:`AssertionError`
 * ImportError
 * :ref:`ModuleNotFoundError`
+
+Would you like to test :ref:`AssertionErrors<AssertionError>`?

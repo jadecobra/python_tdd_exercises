@@ -1,11 +1,16 @@
 .. include:: ../../../links.rst
 
 ##########################
-Truth Table: Logical NAND
+truth table: Logical NAND
 ##########################
 
 Let us take a look at Logical NAND from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
+.. contents:: table of contents
+  :local:
+  :depth: 1
+
+----
 
 red: make it fail
 ^^^^^^^^^^^^^^^^^

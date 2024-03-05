@@ -1,8 +1,14 @@
 .. include:: ../../../links.rst
 
 ###################################
-Truth Table: Converse Implication
+truth table: Converse Implication
 ###################################
+
+.. contents:: table of contents
+  :local:
+  :depth: 1
+
+----
 
 This chapter continues the journey of writing conditional statements using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 

@@ -1,8 +1,14 @@
 .. include:: ../../../links.rst
 
 #################################
-Truth Table: Logical Equality
+truth table: Logical Equality
 #################################
+
+.. contents:: table of contents
+  :local:
+  :depth: 1
+
+----
 
 The journey of conditional statements using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_ continues with Logical Equality
 

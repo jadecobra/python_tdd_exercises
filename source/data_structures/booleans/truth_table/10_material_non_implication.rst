@@ -1,11 +1,16 @@
 .. include:: ../../../links.rst
 
 #####################################
-Truth Table: Material NonImplication
+truth table: Material NonImplication
 #####################################
 
-More conditional statements from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_, this time for Material NonImplication
+.. contents:: table of contents
+  :local:
+  :depth: 1
 
+----
+
+More conditional statements from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_, this time for Material NonImplication
 
 red: make it fail
 ^^^^^^^^^^^^^^^^^

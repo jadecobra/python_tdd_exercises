@@ -1,8 +1,16 @@
 .. include:: ../links.rst
 
-##################################
+#############################################################################
 AssertionError
-##################################
+#############################################################################
+
+----
+
+.. contents:: table of contents
+  :local:
+  :depth: 1
+
+----
 
 An `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ is an Exception that is raised when the result of an ``assert`` statement is :doc:`False </data_structures/booleans/booleans>`
 
@@ -18,17 +26,8 @@ which is similar to
 
   assert True is False
 
-****************
-requirements
-****************
-
-
-:doc:`How to make a Test Driven Development Environment </how_to/make_tdd_environment>`
-
-----
-
 ****************************
-Why are asserts important?
+why are asserts important?
 ****************************
 
 When building a program I can add ``assert`` statements to the program to ensure that certain things are :doc:`True </data_structures/booleans/booleans>` for it to proceed past the statements.
@@ -37,7 +36,6 @@ I can also test how the program behaves when it is given inputs using ``assert``
 
 These assertions help catch bugs that break previous tested behavior when introduced, as well as answer the following questions
 
-
 * What is similar?
 * What is different?
 
@@ -45,15 +43,40 @@ A difference between my expectations and reality (what happens when I run the pr
 
 ----
 
-****************************
-AssertionError with None
-****************************
+.. _test_assertion_errors_w_none:
+
+*****************************************************************************
+test_assertion_errors_w_none
+*****************************************************************************
 
 red: make it fail
-==================
+#############################################################################
 
-* I make a new file in the ``tests`` folder with the name ``test_assertion_error.py``
-* then add a test called ``test_assertion_errors_w_none`` using the python ``assert`` keyword to intentionally cause an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
+* I open a terminal and run :ref:`makePythonTdd.sh` with ``assertion_error`` as the project name
+
+  .. code-block:: python
+
+    ./makePythonTdd.sh assertion_error
+
+  .. NOTE::
+
+    If you are using Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+
+    .. code-block:: python
+
+      ./makePythonTdd.ps1 assertion_error
+
+  and it shows an :ref:`AssertionError` after making the files I need
+
+  .. code-block:: python
+
+    E       AssertionError: True is not false
+
+    tests/test_assertion_error.py:7: AssertionError
+
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_assertion_error.py:7`` with the mouse to open it
+* and change ``True`` to ``False`` to make ``test_failure`` pass
+* then replace the test with a new failing test
 
   .. code-block:: python
 
@@ -78,7 +101,7 @@ red: make it fail
   - Since :ref:`None` and :doc:`False </data_structures/booleans/booleans>` are not equal, the ``assert`` statement is :doc:`False </data_structures/booleans/booleans>` and python raises an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
 green: make it pass
-====================
+#############################################################################
 
 When I make the failing line to
 
@@ -90,7 +113,7 @@ When I make the failing line to
 the test passes because the assert statement is now true since :doc:`False </data_structures/booleans/booleans>` is not :ref:`None`
 
 refactor: make it better
-=========================
+#############################################################################
 
 I can also make assertions with some :ref:`methods<functions>` from the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class
 
@@ -277,14 +300,16 @@ Which of these ``assert`` statements do you prefer when testing :ref:`None`?
 
 ----
 
-****************************
-AssertionError with False
-****************************
+.. _test_assertion_errors_w_false:
+
+*****************************************************************************
+test_assertion_errors_w_false
+*****************************************************************************
 
 Can I raise an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ for things that are :doc:`False </data_structures/booleans/booleans>`?
 
 red: make it fail
-==================
+#############################################################################
 
 I add a failing test to ``TestAssertionError`` in ``test_assertion_error.py`` to find out
 
@@ -300,7 +325,7 @@ the terminal shows a failure
   E    assert True is False
 
 green: make it pass
-====================
+#############################################################################
 
 I make the failing line to make the test pass
 
@@ -309,9 +334,8 @@ I make the failing line to make the test pass
   def test_assertion_errors_w_false(self):
       assert False is False
 
-
 red: make it fail
-==================
+#############################################################################
 
 What if I try the same test using the `unittest.TestCase.assertFalse <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse>`_ :ref:`method<functions>` by adding this line to ``test_assertion_errors_w_false``?
 
@@ -330,7 +354,7 @@ the terminal shows a failure
 this is familiar, it was the first failing test from :doc:`How to make a Test Driven Development Environment </how_to/make_tdd_environment>`
 
 green: make it pass
-====================
+#############################################################################
 
 I make the failing line to make the test pass
 
@@ -350,14 +374,16 @@ From the tests I can see that in Python
 
 ----
 
-****************************
-AssertionError with True
-****************************
+.. _test_assertion_errors_w_true:
+
+*****************************************************************************
+test_assertion_errors_w_true
+*****************************************************************************
 
 Can I raise an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ for things that are :doc:`True </data_structures/booleans/booleans>`?
 
 red: make it fail
-==================
+#############################################################################
 
 I add a failing test to ``TestAssertionError`` in ``test_assertion_error.py``
 
@@ -373,7 +399,7 @@ the terminal shows a failure
   E    assert False is True
 
 green: make it pass
-====================
+#############################################################################
 
 I make the failing line to make the test pass
 
@@ -383,7 +409,7 @@ I make the failing line to make the test pass
       assert True is True
 
 red: make it fail
-==================
+#############################################################################
 
 What if I try the above test using the `unittest.TestCase.assertTrue <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertTrue>`_ :ref:`method<functions>` ?
 
@@ -400,7 +426,7 @@ the terminal shows an `AssertionError <https://docs.python.org/3/library/excepti
   AssertionError: False is not true
 
 green: make it pass
-====================
+#############################################################################
 
 I make the failing line to make the test pass
 
@@ -425,14 +451,16 @@ I could sum up the above statements this way - in Python :doc:`True </data_struc
 
 ----
 
-*****************************
-AssertionError with Equality
-*****************************
+.. _test_assertion_errors_w_equality:
+
+*****************************************************************************
+test_assertion_errors_w_equaliy
+*****************************************************************************
 
 I can also make assertions where I compare if two things are the same or equal
 
 red: make it fail
-==================
+#############################################################################
 
 I add a new test to ``TestAssertionError`` in ``test_assertion_error.py``
 
@@ -448,7 +476,7 @@ the terminal shows an `AssertionError <https://docs.python.org/3/library/excepti
   E    assert False == None
 
 green: make it pass
-====================
+#############################################################################
 
 I make the failing line to make the test pass
 
@@ -460,7 +488,7 @@ I make the failing line to make the test pass
 the test passes because :doc:`False </data_structures/booleans/booleans>` is not equal to :ref:`None`
 
 refactor: make it better
-=========================
+#############################################################################
 
 * red: make it fail
 
@@ -640,7 +668,13 @@ refactor: make it better
 
 ----
 
-If you have been typing along *WELL DONE!* Your magic powers are growing. From the experiments above you now know
+.. _test_assertion_errors_review:
+
+*****************************************************************************
+review
+*****************************************************************************
+
+If you have been typing along *WELL DONE!* Your magic powers are growing. From the tests above you now know
 
 * how to test for equality
 * how to test if something is :ref:`None` or not
@@ -655,6 +689,8 @@ If you have been typing along *WELL DONE!* Your magic powers are growing. From t
   - `assertTrue <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertTrue>`_ - is this thing :doc:`True </data_structures/booleans/booleans>`?
   - `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ - are these two things equal?
   - `assertNotEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotEqual>`_ - are these two things not equal?
+
+Would you like to test :ref:`AttributeErrors<AttributeError>`?
 
 ----
 

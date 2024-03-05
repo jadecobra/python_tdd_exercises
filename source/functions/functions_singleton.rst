@@ -3,6 +3,14 @@
 functions: test_singleton_functions
 ====================
 
+----
+
+.. contents:: table of contents
+  :local:
+  :depth: 1
+
+----
+
 Singleton :ref:`functions` always return the same thing when called
 
 *****************************************************************************

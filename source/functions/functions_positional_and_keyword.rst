@@ -4,6 +4,14 @@
 functions: test_functions_w_positional_and_keyword_arguments
 #############################################################################
 
+----
+
+.. contents:: table of contents
+  :local:
+  :depth: 1
+
+----
+
 I can also define functions to take both positional arguments and keyword arguments as inputs
 
 *****************************************************************************

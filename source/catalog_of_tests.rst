@@ -24,6 +24,7 @@ test_telephone
 *****************************************************************************
 
 :ref:`test_text_messages`
+:ref:`test_passing_data_structures`
 
 *****************************************************************************
 test_person_factory
@@ -36,6 +37,13 @@ test_person_factory
 *****************************************************************************
 test_exceptions
 *****************************************************************************
+
+:ref:`test_catching_module_not_found_error_in_tests`
+:ref:`test_catching_attribute_errors_in_tests`
+:ref:`test_catching_exceptions`
+:ref:`test_catching_failures`
+:ref:`test_catching_successes`
+:ref:`test_finally_always_returns`
 
 
 *****************************************************************************
@@ -67,3 +75,12 @@ test_lists
 #. :ref:`test_getting_items_from_a_list`
 #. :ref:`test_index_error`
 #. :ref:`test_list_attributes_and_methods`
+
+*****************************************************************************
+test_assertion_error
+*****************************************************************************
+
+#. :ref:`test_assertion_errors_w_none`
+#. :ref:`test_assertion_errors_w_false`
+#. :ref:`test_assertion_errors_w_true`
+#. :ref:`test_assertion_errors_w_equality`

@@ -1,8 +1,14 @@
 .. include:: ../../../links.rst
 
 #################################
-Truth Table: Logical Conjunction
+truth table: Logical Conjunction
 #################################
+
+.. contents:: table of contents
+  :local:
+  :depth: 1
+
+----
 
 In this chapter I continue to step through learning conditional statements in Python with the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
@@ -10,6 +16,7 @@ I know that there are two boolean values
 
 * :doc:`True </data_structures/booleans/booleans>`
 * :doc:`False </data_structures/booleans/booleans>`
+
 
 
 red: make it fail

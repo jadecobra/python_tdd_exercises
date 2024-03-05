@@ -1,12 +1,16 @@
 .. include:: ../../../links.rst
 
 #######################
-Truth Table: True Lies
+truth table: True Lies
 #######################
 
+.. contents:: table of contents
+  :local:
+  :depth: 1
+
+----
+
 More tests for the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
-
-
 
 Tautology
 ---------

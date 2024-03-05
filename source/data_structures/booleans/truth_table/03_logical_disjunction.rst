@@ -1,8 +1,14 @@
 .. include:: ../../../links.rst
 
 #################################
-Truth Table: Logical Disjunction
+truth table: Logical Disjunction
 #################################
+
+.. contents:: table of contents
+  :local:
+  :depth: 1
+
+----
 
 This chapter continues the adventure with conditional statements for Logical Disjunction from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 

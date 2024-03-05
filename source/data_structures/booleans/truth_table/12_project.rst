@@ -1,8 +1,14 @@
 .. include:: ../../../links.rst
 
 #####################
-Truth Table: Project
+truth table: Project
 #####################
+
+.. contents:: table of contents
+  :local:
+  :depth: 1
+
+----
 
 This chapter shows the projection Binary Operations from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_ using tests
 

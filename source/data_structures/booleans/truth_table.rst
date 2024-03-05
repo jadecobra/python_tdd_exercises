@@ -1,7 +1,7 @@
 .. include:: ../links.rst
 
 #############################################################################
-Truth Table
+truth table
 #############################################################################
 
 Sometimes I want programs to make decisions based on inputs or conditions, and can make this happen with conditional statements.

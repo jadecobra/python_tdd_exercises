@@ -15,24 +15,24 @@ classes/classes                          classes                                
     code/code_pass_values                    How to pass values: Tests and Solution  : code/code_pass_values.html
     code/code_person_factory                 How to make a person: Tests and Solution: code/code_person_factory.html
     code/code_sleep_duration                 How to measure sleep duration: Tests and Solution: code/code_sleep_duration.html
-    code/code_truth_table                    Truth Table: Tests and Solutions        : code/code_truth_table.html
+    code/code_truth_table                    truth table: Tests and Solutions        : code/code_truth_table.html
     code/make_tdd/code_make_tdd_environment Automatically make a Test Driven Development Environment: code/make_tdd/code_make_tdd_environment.html
     conventions                              Conventions                             : conventions.html
     data_structures/booleans/booleans        Data Structures: Booleans               : data_structures/booleans/booleans.html
     data_structures/booleans/truth_table/01  Truth Table                             : data_structures/booleans/truth_table/01.html
-    data_structures/booleans/truth_table/02_logical_conjunction Truth Table: Logical Conjunction        : data_structures/booleans/truth_table/02_logical_conjunction.html
-    data_structures/booleans/truth_table/03_logical_disjunction Truth Table: Logical Disjunction        : data_structures/booleans/truth_table/03_logical_disjunction.html
-    data_structures/booleans/truth_table/04_logical_implication Truth Table: Logical Implication        : data_structures/booleans/truth_table/04_logical_implication.html
-    data_structures/booleans/truth_table/05_logical_equality Truth Table: Logical Equality           : data_structures/booleans/truth_table/05_logical_equality.html
-    data_structures/booleans/truth_table/06_exclusive_disjunction Truth Table: Exclusive Disjunction      : data_structures/booleans/truth_table/06_exclusive_disjunction.html
-    data_structures/booleans/truth_table/07_logical_nand Truth Table: Logical NAND               : data_structures/booleans/truth_table/07_logical_nand.html
-    data_structures/booleans/truth_table/08_logical_nor Truth Table: Logical NOR                : data_structures/booleans/truth_table/08_logical_nor.html
-    data_structures/booleans/truth_table/09_converse_non_implication Truth Table: Converse NonImplication    : data_structures/booleans/truth_table/09_converse_non_implication.html
-    data_structures/booleans/truth_table/10_material_non_implication Truth Table: Material NonImplication    : data_structures/booleans/truth_table/10_material_non_implication.html
-    data_structures/booleans/truth_table/11_negate Truth Table: Negate                     : data_structures/booleans/truth_table/11_negate.html
-    data_structures/booleans/truth_table/12_project Truth Table: Project                    : data_structures/booleans/truth_table/12_project.html
-    data_structures/booleans/truth_table/13_converse_implication Truth Table: Converse Implication       : data_structures/booleans/truth_table/13_converse_implication.html
-    data_structures/booleans/truth_table/14_true_lies Truth Table: True Lies                  : data_structures/booleans/truth_table/14_true_lies.html
+    data_structures/booleans/truth_table/02_logical_conjunction truth table: Logical Conjunction        : data_structures/booleans/truth_table/02_logical_conjunction.html
+    data_structures/booleans/truth_table/03_logical_disjunction truth table: Logical Disjunction        : data_structures/booleans/truth_table/03_logical_disjunction.html
+    data_structures/booleans/truth_table/04_logical_implication truth table: Logical Implication        : data_structures/booleans/truth_table/04_logical_implication.html
+    data_structures/booleans/truth_table/05_logical_equality truth table: Logical Equality           : data_structures/booleans/truth_table/05_logical_equality.html
+    data_structures/booleans/truth_table/06_exclusive_disjunction truth table: Exclusive Disjunction      : data_structures/booleans/truth_table/06_exclusive_disjunction.html
+    data_structures/booleans/truth_table/07_logical_nand truth table: Logical NAND               : data_structures/booleans/truth_table/07_logical_nand.html
+    data_structures/booleans/truth_table/08_logical_nor truth table: Logical NOR                : data_structures/booleans/truth_table/08_logical_nor.html
+    data_structures/booleans/truth_table/09_converse_non_implication truth table: Converse NonImplication    : data_structures/booleans/truth_table/09_converse_non_implication.html
+    data_structures/booleans/truth_table/10_material_non_implication truth table: Material NonImplication    : data_structures/booleans/truth_table/10_material_non_implication.html
+    data_structures/booleans/truth_table/11_negate truth table: Negate                     : data_structures/booleans/truth_table/11_negate.html
+    data_structures/booleans/truth_table/12_project truth table: Project                    : data_structures/booleans/truth_table/12_project.html
+    data_structures/booleans/truth_table/13_converse_implication truth table: Converse Implication       : data_structures/booleans/truth_table/13_converse_implication.html
+    data_structures/booleans/truth_table/14_true_lies truth table: True Lies                  : data_structures/booleans/truth_table/14_true_lies.html
     data_structures/dictionaries             Data Structures: Dictionaries           : data_structures/dictionaries.html
     data_structures/lists/list_comprehensions Data Structures: List Comprehensions    : data_structures/lists/list_comprehensions.html
     data_structures/lists/lists              Data Structures: Lists                  : data_structures/lists/lists.html
@@ -241,20 +241,20 @@ std:label
     tests and solutions                                                              : index.html#tests-and-solutions
     tests-and-solutions                      tests and solutions                     : index.html#tests-and-solutions
     truth table                              Truth Table                             : data_structures/booleans/truth_table/01.html#truth-table
-    truth table: converse implication        Truth Table: Converse Implication       : data_structures/booleans/truth_table/13_converse_implication.html#truth-table-converse-implication
-    truth table: converse nonimplication     Truth Table: Converse NonImplication    : data_structures/booleans/truth_table/09_converse_non_implication.html#truth-table-converse-nonimplication
-    truth table: exclusive disjunction       Truth Table: Exclusive Disjunction      : data_structures/booleans/truth_table/06_exclusive_disjunction.html#truth-table-exclusive-disjunction
-    truth table: logical conjunction         Truth Table: Logical Conjunction        : data_structures/booleans/truth_table/02_logical_conjunction.html#truth-table-logical-conjunction
-    truth table: logical disjunction         Truth Table: Logical Disjunction        : data_structures/booleans/truth_table/03_logical_disjunction.html#truth-table-logical-disjunction
-    truth table: logical equality            Truth Table: Logical Equality           : data_structures/booleans/truth_table/05_logical_equality.html#truth-table-logical-equality
-    truth table: logical implication         Truth Table: Logical Implication        : data_structures/booleans/truth_table/04_logical_implication.html#truth-table-logical-implication
-    truth table: logical nand                Truth Table: Logical NAND               : data_structures/booleans/truth_table/07_logical_nand.html#truth-table-logical-nand
-    truth table: logical nor                 Truth Table: Logical NOR                : data_structures/booleans/truth_table/08_logical_nor.html#truth-table-logical-nor
-    truth table: material nonimplication     Truth Table: Material NonImplication    : data_structures/booleans/truth_table/10_material_non_implication.html#truth-table-material-nonimplication
-    truth table: negate                      Truth Table: Negate                     : data_structures/booleans/truth_table/11_negate.html#truth-table-negate
-    truth table: project                     Truth Table: Project                    : data_structures/booleans/truth_table/12_project.html#truth-table-project
-    truth table: tests and solutions         Truth Table: Tests and Solutions        : code/code_truth_table.html#truth-table-tests-and-solutions
-    truth table: true lies                   Truth Table: True Lies                  : data_structures/booleans/truth_table/14_true_lies.html#truth-table-true-lies
+    truth table: converse implication        truth table: Converse Implication       : data_structures/booleans/truth_table/13_converse_implication.html#truth-table-converse-implication
+    truth table: converse nonimplication     truth table: Converse NonImplication    : data_structures/booleans/truth_table/09_converse_non_implication.html#truth-table-converse-nonimplication
+    truth table: exclusive disjunction       truth table: Exclusive Disjunction      : data_structures/booleans/truth_table/06_exclusive_disjunction.html#truth-table-exclusive-disjunction
+    truth table: logical conjunction         truth table: Logical Conjunction        : data_structures/booleans/truth_table/02_logical_conjunction.html#truth-table-logical-conjunction
+    truth table: logical disjunction         truth table: Logical Disjunction        : data_structures/booleans/truth_table/03_logical_disjunction.html#truth-table-logical-disjunction
+    truth table: logical equality            truth table: Logical Equality           : data_structures/booleans/truth_table/05_logical_equality.html#truth-table-logical-equality
+    truth table: logical implication         truth table: Logical Implication        : data_structures/booleans/truth_table/04_logical_implication.html#truth-table-logical-implication
+    truth table: logical nand                truth table: Logical NAND               : data_structures/booleans/truth_table/07_logical_nand.html#truth-table-logical-nand
+    truth table: logical nor                 truth table: Logical NOR                : data_structures/booleans/truth_table/08_logical_nor.html#truth-table-logical-nor
+    truth table: material nonimplication     truth table: Material NonImplication    : data_structures/booleans/truth_table/10_material_non_implication.html#truth-table-material-nonimplication
+    truth table: negate                      truth table: Negate                     : data_structures/booleans/truth_table/11_negate.html#truth-table-negate
+    truth table: project                     truth table: Project                    : data_structures/booleans/truth_table/12_project.html#truth-table-project
+    truth table: tests and solutions         truth table: Tests and Solutions        : code/code_truth_table.html#truth-table-tests-and-solutions
+    truth table: true lies                   truth table: True Lies                  : data_structures/booleans/truth_table/14_true_lies.html#truth-table-true-lies
     typeerror                                TypeError                               : exceptions/TypeError.html#typeerror
     unary operations                         Unary Operations                        : data_structures/booleans/truth_table/01.html#unary-operations
     visual studio extensions                 Visual Studio Extensions                : how_to/setup_my_ide.html#visual-studio-extensions

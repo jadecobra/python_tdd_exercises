@@ -1,8 +1,14 @@
 .. include:: ../../../links.rst
 
 #############################################################################
-Truth Table: Nullary and Unary Operations
+truth table: Nullary and Unary Operations
 #############################################################################
+
+.. contents:: table of contents
+  :local:
+  :depth: 1
+
+----
 
 There are only two boolean values
 
@@ -14,12 +20,14 @@ The Truth Table gives the 16 outcomes of binary operations on these two values
 ****************
 requirements
 ****************
--------------
 
 :doc:`How to make a Test Driven Development Environment </how_to/make_tdd_environment>` with ``truth_table`` as the project name
 
-----
+.. contents:: table of contents
+  :local:
+  :depth: 1
 
+----
 
 Nullary Operations
 ------------------

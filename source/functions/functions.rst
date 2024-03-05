@@ -4,6 +4,14 @@
 functions
 #############################################################################
 
+----
+
+.. contents:: table of contents
+  :local:
+  :depth: 1
+
+----
+
 A ``function`` is a callable_ unit/block of code. It is a way to write statements that can be used to accomplish a task at a different time from when they are written. Using functions makes the code modular which makes it easier to read, test, reuse, maintain and improve.
 
 Programming involves providing a process with input data and the process returning output data
