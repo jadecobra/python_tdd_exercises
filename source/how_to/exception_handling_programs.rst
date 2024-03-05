@@ -14,7 +14,7 @@ This is a continuation of :doc:`exception_handling_tests` which showed how to co
 
 .. contents:: table of contents
   :local:
-  :depth: 2
+  :depth: 1
 
 ----
 

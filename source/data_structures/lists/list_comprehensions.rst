@@ -709,7 +709,7 @@ You also know how to do it with less words using `list comprehensions <https://d
 refactor: make it better
 *****************************************************************************
 
-I have written the same thing multiple times in these tests and since the programming gods told me `Do Not Repeat Yourself! <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_ It is time to remove the repetition in the code.
+I have written the same thing multiple times in these tests and since the programming gods told me `to not repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_, It is time to remove the repetition in the code.
 
 * In each test I make an empty list, verify it is empty and then perform operations on it. Since that part is the same for every test I can add it to the `unittest.TestCase.setUp <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.setUp>`_ :ref:`method<functions>` which is called before a test method. Anything I place in this :ref:`method<functions>` will run before the tests, I place my empty list creation and verification in here ::
 
@@ -919,6 +919,8 @@ I also encountered the following exceptions
 * :ref:`ModuleNotFoundError`
 * :ref:`AttributeError`
 * :ref:`TypeError`
+
+Would you like to test :doc:`/data_structures/dictionaries`
 
 ----
 

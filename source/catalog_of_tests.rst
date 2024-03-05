@@ -77,6 +77,24 @@ test_lists
 #. :ref:`test_list_attributes_and_methods`
 
 *****************************************************************************
+test_list_comprehensions
+*****************************************************************************
+
+:ref:`test_making_a_list_from_an_iterable`
+:ref:`test_making_a_list_w_a_for_loop`
+:ref:`test_making_lists_w_list_comprehensions`
+
+*****************************************************************************
+test_functions
+*****************************************************************************
+
+:ref:`test_singleton_functions`
+:ref:`test_passthrough_functions`
+:ref:`test_functions_w_positional_arguments`
+:ref:`test_functions_w_keyword_arguments`
+:ref:`test_functions_w_positional_and_keyword_arguments`
+
+*****************************************************************************
 test_assertion_error
 *****************************************************************************
 
@@ -84,3 +102,17 @@ test_assertion_error
 #. :ref:`test_assertion_errors_w_false`
 #. :ref:`test_assertion_errors_w_true`
 #. :ref:`test_assertion_errors_w_equality`
+
+*****************************************************************************
+test_none
+*****************************************************************************
+
+#. :ref:`test_none_is_none`
+#. :ref:`test_is_none_a_boolean`
+#. :ref:`test_is_none_an_integer`
+#. :ref:`test_is_none_a_float`
+#. :ref:`test_is_none_a_string`
+#. :ref:`test_is_none_a_tuple`
+#. :ref:`test_is_none_a_list`
+#. :ref:`test_is_none_a_set`
+#. :ref:`test_is_none_a_dictionary`

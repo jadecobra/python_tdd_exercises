@@ -20,7 +20,7 @@ requirements
 *****************************************************************************
 
 
-:doc:`How to make a Test Driven Development Environment </how_to/make_tdd_environment>`
+:doc:`How to make a python test driven development environment </how_to/make_tdd_environment>`
 
 ----
 
@@ -31,7 +31,7 @@ Solve an AttributeError by defining variables
 red: make it fail
 -----------------------------------------------------------------------------
 
-I open a new file, save it as ``test_attribute_error.py`` in the ``tests`` folder made in :doc:`How to make a Test Driven Development Environment </how_to/make_tdd_environment>` and type the following
+I open a new file, save it as ``test_attribute_error.py`` in the ``tests`` folder made in :doc:`How to make a python test driven development environment </how_to/make_tdd_environment>` and type the following
 
 .. code-block:: python
 

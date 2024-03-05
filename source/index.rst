@@ -37,7 +37,7 @@ You can choose how you go through the chapters by starting with what you like.
 
 My recommendation is to
 
-* start with :doc:`How to make a Test Driven Development Environment </how_to/make_tdd_environment>` because it is required by every chapter
+* start with :doc:`How to make a python test driven development environment </how_to/make_tdd_environment>` because it is required by every chapter
 * type out the code portions as you go through any chapter without copying and pasting the code
 * repeat a chapter you like until you can do it from memory
 * try remaking the tests from memory or write new tests for a concept you are working on
@@ -88,11 +88,11 @@ table of contents
   data_structures/lists/list_comprehensions
   data_structures/dictionaries
   functions/functions
+  functions/functions_singleton
   functions/functions_passthrough
   functions/functions_positional
   functions/functions_keyword
   functions/functions_positional_and_keyword
-  functions/functions_singleton
   classes/classes
   classes/classes_attributes_methods
   classes/classes_initializer

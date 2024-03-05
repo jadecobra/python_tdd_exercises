@@ -24,7 +24,7 @@ requirements
 *****************************************************************************
 
 
-:doc:`How to make a Test Driven Development Environment </how_to/make_tdd_environment>`
+:doc:`How to make a python test driven development environment </how_to/make_tdd_environment>`
 
 ----
 
@@ -32,7 +32,7 @@ requirements
 red: make it fail
 *****************************************************************************
 
-Open a new file in the Interactive Development Environment editor and save it as ``test_module_not_found_error.py`` in the ``tests`` folder made from :doc:`How to make a Test Driven Development Environment </how_to/make_tdd_environment>`
+Open a new file in the Interactive Development Environment editor and save it as ``test_module_not_found_error.py`` in the ``tests`` folder made from :doc:`How to make a python test driven development environment </how_to/make_tdd_environment>`
 
 Type the following in the file
 
@@ -139,7 +139,7 @@ Type the following in the file
   import module_98
   import module_99
 
-If you left ``pytest-watch`` running from :doc:`How to make a Test Driven Development Environment </how_to/make_tdd_environment>` you should see something like the following in your terminal
+If you left ``pytest-watch`` running from :doc:`How to make a python test driven development environment </how_to/make_tdd_environment>` you should see something like the following in your terminal
 
 .. code-block:: python
 

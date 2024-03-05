@@ -1,7 +1,7 @@
 .. include:: ../links.rst
 
 #############################################################################
-how to make a test driven development environment
+how to make a python test driven development environment
 #############################################################################
 
 .. raw:: html
@@ -59,7 +59,7 @@ If the operating system of your computer is Windows, use `Windows Subsystem for 
 * run subsequent commands in `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_ terminal
 
 ****************************************************************************************
-make a test driven development environment
+how to make a python test driven development environment
 ****************************************************************************************
 
 I open a terminal in the Interactive Development Environment (IDE) and type the following commands to make the project
