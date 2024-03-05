@@ -14,7 +14,7 @@ In this chapter I make a basic calculator that performs addition, subtraction, m
 
 .. contents:: table of contents
   :local:
-  :depth: 2
+  :depth: 1
 
 ----
 

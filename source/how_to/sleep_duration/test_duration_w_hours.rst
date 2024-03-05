@@ -722,7 +722,7 @@ green: make it pass
 
   and the test passes
 
-* I comment out the `unittest.skip decorator`_ for ``test_duration_w_hours``  to bring me back to the unsolved :ref:`TypeError` for ``test_duration_w_hours`` and update the expectation to the result of subtracting the first items of the list from splitting ``wake_time`` and ``sleep_time`` on the separator ``':'``
+* I comment out the `unittest.skip decorator`_ for ``test_duration_w_hours``  to bring me back to the unsolved :ref:`TypeError` and update the expectation to the result of subtracting the first items of the list from splitting ``wake_time`` and ``sleep_time`` on the separator ``':'``
 
   .. code-block:: python
 
@@ -816,11 +816,50 @@ green: make it pass
 
 ----
 
+.. _test_duration_w_hours_refactor_1:
 
+* I comment out the `unittest.skip decorator`_ for ``test_duration_w_hours``  to bring me back to the unsolved :ref:`TypeError`
 
+  .. code-block:: python
 
+    # @unittest.skip
+    def test_duration_w_hours(self):
+    ...
 
-* This :ref:`function<functions>` will always return ``1`` even when I change the values for ``wake_time`` and ``sleep_time`` which would not be correct. I want to add variables for random integers_ to cover all timestamps from ``'00:00'`` to ``'23:00'`` to avoid writing a series of tests for changing timestamps, which I do by first adding an `import statement`_ for the random_ :doc:`module </exceptions/ModuleNotFoundError>` to ``test_sleep_duration.py``
+* and update the expectation to include calls to the int_ constructor
+
+  .. code-block:: python
+
+    self.assertEqual(
+        sleep_duration.duration(
+            wake_time=wake_time,
+            sleep_time=sleep_time
+        ),
+        (
+            int(wake_time.split(':')[0])
+           -int(sleep_time.split(':')[0])
+        )
+    )
+
+  and get an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: ('08:00', '07:00') != 1
+
+* I use what I have learned from the tests to make the ``duration`` :ref:`function<functions>` return the difference between the hours parts of ``wake_time`` and ``sleep_time``
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        return (
+            int(wake_time.split(':')[0])
+          - int(sleep_time.split(':')[0])
+        )
+
+  and the terminal shows passing tests! Celebration Time!!
+
+* I want to make sure that the function is tested with random numbers, so I adding an `import statement`_ for the random_ :doc:`module </exceptions/ModuleNotFoundError>` to ``test_sleep_duration.py``
 
   .. code-block:: python
 
@@ -832,9 +871,13 @@ green: make it pass
 
   .. code-block:: python
 
+    # @unittest.skip
     def test_duration_w_hours(self):
         wake_hour = random.randint(0, 23)
         sleep_hour = random.randint(0, 23)
+
+        wake_time='08:00'
+        sleep_time='07:00'
     ...
 
   ``random.randint(0, 23)`` will give me a random integer_ from ``0`` up to and including ``23`` to represent the 24 hours in a day
@@ -847,15 +890,11 @@ green: make it pass
         wake_hour = random.randint(0, 23)
         sleep_hour = random.randint(0, 23)
 
-        self.assertEqual(
-            sleep_duration.duration(
-                wake_time=f'{wake_hour:02}:00',
-                sleep_time=f'{sleep_hour:02}:00'
-            ),
-            1
-        )
+        wake_time=f'{wake_hour:02}:00'
+        sleep_time=f'{sleep_hour:02}:00'
+    ...
 
-  the ``:02`` in ``{wake_hour:02}`` and ``{sleep_hour:02}`` tell Python to always display two characters for the numbers, with a leading zero when it is one digit. For example, display ``01`` instead of ``1``
+  the terminal still shows passing tests. The ``:02`` in ``{wake_hour:02}`` and ``{sleep_hour:02}`` tell Python to always display two characters for the numbers, with a leading zero when it is one digit. For example, display ``01`` instead of ``1``
 
 * When I make the test expect the difference between ``wake_hour`` and ``sleep_hour``
 
@@ -895,22 +934,8 @@ green: make it pass
 
   because Python does not have an operation defined for subtracting one string_ from another
 
-----
 
-.. _test_duration_w_hours_refactor_1:
 
-* I remove the `unittest.skip decorator`_ from ``test_duration_w_hours`` to show the :ref:`TypeError` I have been trying to solve
-* and add the conversion of a string_ to an integer_ using the int_ constructor to the ``duration`` :ref:`function<functions>` to see if it will make the test pass
-
-  .. code-block:: python
-
-    def duration(wake_time=None, sleep_time=None):
-        return (
-            int(wake_time.split(':')[0])
-          - int(sleep_time.split(':')[0])
-        )
-
-  and it does, the terminal shows passing tests! Celebration Time
 
 * Since all the tests are passing I can rewrite the solution as steps for someone who does not know how to use `str.split`_, index a :doc:`list </data_structures/lists/lists>` or use the int_ constructor
 

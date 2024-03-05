@@ -13,6 +13,8 @@ class TestTelephone(unittest.TestCase):
             telephone.text('yes'),
             'I received this message: yes'
         )
+
+    def test_passing_data_structures(self):
         self.assertEqual(
             telephone.text(None),
             'I received this message: None'

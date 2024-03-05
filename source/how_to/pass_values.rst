@@ -14,7 +14,7 @@ this chapter shows how to pass values from tests to programs using `Formatted st
 
 .. contents:: table of contents
   :local:
-  :depth: 2
+  :depth: 3
 
 ----
 
@@ -212,27 +212,22 @@ I make the ``text`` :ref:`function<functions>` in ``telephone.py`` to use an ``f
 
 the terminal shows passing tests
 
-Passing Data Structures
------------------------------------------------------------------------------
+.. _test_passing_data_structures:
+
+*****************************************************************************
+test_passing_data_structures
+*****************************************************************************
 
 I want to try this with other python data structures to see what happens
 
 red: make it fail
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#############################################################################
 
-I add a new failing test to ``test_text_messages``
+I add a new failing test
 
 .. code-block:: python
 
-  def test_text_messages(self):
-      self.assertEqual(
-          telephone.text('hello'),
-          'I received this message: hello'
-      )
-      self.assertEqual(
-          telephone.text('yes'),
-          'I received this message: yes'
-      )
+  def test_passing_data_structures(self):
       self.assertEqual(
           telephone.text(None),
           'I received this message: "None"'
@@ -245,10 +240,9 @@ the terminal shows an :ref:`AssertionError`
   AssertionError: 'I received this message: None' != 'I received this message: "None"'
 
 green: make it pass
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#############################################################################
 
 I make the test match the expected value
-
 
 .. code-block:: python
 
@@ -261,9 +255,9 @@ I make the test match the expected value
 the terminal shows passing tests
 
 refactor: make it better
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#############################################################################
 
-As an exercise I add more tests to ``test_text_messages`` to see what happens when I pass different data structures to the ``text`` function
+As an exercise I add more tests to ``test_passing_data_structures`` to see what happens when I pass different data structures to the ``text`` function
 
 * What happens when I pass in a :doc:`class </classes/classes>` constructor to the ``text`` function
 
@@ -283,50 +277,66 @@ As an exercise I add more tests to ``test_text_messages`` to see what happens wh
 
     AssertionError: "I received this message: <class 'bool'>" != 'I received this message: bool'
 
-* I make the test match the expectation and the test passes ::
+* I make the test match the expectation and the test passes
+
+  .. code-block:: python
 
     self.assertEqual(
         telephone.text(bool),
         "I received this message: <class 'bool'>"
     )
 
-* I also add a test for an integer_ ::
+* I also add a test for an integer_
+
+  .. code-block:: python
 
     self.assertEqual(
         telephone.text(123),
         "I received this message: '123'"
     )
 
-  and the terminal shows an :ref:`AssertionError` ::
+  and the terminal shows an :ref:`AssertionError`
+
+  .. code-block:: python
 
     AssertionError: 'I received this message: 123' != "I received this message: '123'"
 
-  I remove the quotes from the test to make it pass ::
+  I remove the quotes from the test to make it pass
+
+  .. code-block:: python
 
     self.assertEqual(
         telephone.text(123),
         "I received this message: 123"
     )
 
-* then add a test for a float_ ::
+* then add a test for a float_
+
+  .. code-block:: python
 
     self.assertEqual(
         telephone.text(1.23),
         "I received this message: '1.23'"
     )
 
-  and the terminal shows an :ref:`AssertionError` ::
+  and the terminal shows an :ref:`AssertionError`
+
+  .. code-block:: python
 
     AssertionError: 'I received this message: 1.23' != "I received this message: '1.23'"
 
-  I remove the quotes to make the test pass ::
+  I remove the quotes to make the test pass
+
+  .. code-block:: python
 
     self.assertEqual(
         telephone.text(1.23),
         "I received this message: 1.23"
     )
 
-* and add a test for a tuple_ ::
+* and add a test for a tuple_
+
+  .. code-block:: python
 
     self.assertEqual(
         telephone.text((1, 2, 3, 'n')),
@@ -335,7 +345,9 @@ As an exercise I add more tests to ``test_text_messages`` to see what happens wh
 
   the terminal shows an :ref:`AssertionError` ::
 
-* and add a test for a :doc:`list </data_structures/lists/lists>` ::
+* I add a test for a :doc:`list </data_structures/lists/lists>`
+
+  .. code-block:: python
 
     self.assertEqual(
         telephone.text([1, 2, 3, 'n']),
@@ -346,43 +358,57 @@ As an exercise I add more tests to ``test_text_messages`` to see what happens wh
 
     AssertionError: "I received this message: (1, 2, 3, 'n')" != "I received this message: '(1, 2, 3, n)'"
 
-  I make the test match the expectation ::
+  and I make the test match the expectation
+
+  .. code-block:: python
 
     self.assertEqual(
         telephone.text([1, 2, 3, 'n']),
         "I received this message: [1, 2, 3, 'n']"
     )
 
-* and add a test for a set_ ::
+* then add a test for a set_
+
+  .. code-block:: python
 
     self.assertEqual(
         telephone.text({1, 2, 3, 'n'}),
         "I received this message: '{1, 2, 3, n}'"
     )
 
-  the terminal shows an :ref:`AssertionError` ::
+  the terminal shows an :ref:`AssertionError`
+
+  .. code-block:: python
 
     AssertionError: "I received this message: {1, 2, 3, 'n'}" != "I received this message: {1, 2, 3, n}'"
 
-  I make the test match the expectation ::
+  I make the test match the expectation
+
+  .. code-block:: python
 
     self.assertEqual(
         telephone.text({1, 2, 3, 'n'}),
         "I received this message: {1, 2, 3, 'n'}"
     )
 
-* finally, I add a test for a :doc:`dictionary </data_structures/dictionaries>` ::
+* finally, I add a test for a :doc:`dictionary </data_structures/dictionaries>`
+
+  .. code-block:: python
 
     self.assertEqual(
         telephone.text({"key1": "value1", "keyN": "valueN"}),
         "I received this message: '{key1: value1, keyN: valueN}'"
     )
 
-  the terminal shows an :ref:`AssertionError` ::
+  the terminal shows an :ref:`AssertionError`
+
+  .. code-block:: python
 
     AssertionError: "I received this message: {'key1': 'value1', 'keyN': 'valueN'}" != "I received this message: '{key1: value1, keyN: valueN}'"
 
-  I make the test match the expected output ::
+  I make the test match the expected output
+
+  .. code-block:: python
 
     self.assertEqual(
         telephone.text({"key1": "value1", "keyN": "valueN"}),
@@ -392,6 +418,10 @@ As an exercise I add more tests to ``test_text_messages`` to see what happens wh
   and all tests are passing
 
 ----
+
+*****************************************************************************
+review
+*****************************************************************************
 
 VOILA! You now know how to pass values from a test to a program and can represent any values as strings using `string interpolation`_. You also encountered the following exceptions
 
