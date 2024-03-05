@@ -1,6 +1,6 @@
 
 ################################################
-How to handle Exceptions: Tests and Solutions
+how to handle Exceptions: tests and solutions
 ################################################
 
 **********

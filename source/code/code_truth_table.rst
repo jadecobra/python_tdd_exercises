@@ -1,6 +1,6 @@
 
 #################################
-truth table: Tests and Solutions
+truth table: tests and solutions
 #################################
 
 **********

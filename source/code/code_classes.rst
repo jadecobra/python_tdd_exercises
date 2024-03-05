@@ -1,6 +1,6 @@
 
 #############################
-classes: Tests and Solutions
+classes: tests and solutions
 #############################
 
 **********

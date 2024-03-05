@@ -8,22 +8,22 @@ classes
 
 I show the following in this chapter
 
-- How to define a class with pass
-- How to define a class with parentheses
-- How to define a class with methods
-- How to define a class with attributes
-- How to define a class with attributes and methods
-- How to define a class with an initializer
-- How to view the attributes and methods of a class
+- how to define a class with pass
+- how to define a class with parentheses
+- how to define a class with methods
+- how to define a class with attributes
+- how to define a class with attributes and methods
+- how to define a class with an initializer
+- how to view the attributes and methods of a class
 
-How to make a class in Python
+how to make a class in Python
 -------------------------------
 
 * use the `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword
 * use ``TitleCase`` for the name
 * use a descriptive name that describes the collection of :doc:`methods (functions) </functions/functions>` and ``attributes (variables)`` - this is hard to do and is something I am still learning
 
-How to define a class with pass
+how to define a class with pass
 -------------------------------
 
 red: make it fail
@@ -127,7 +127,7 @@ Here is a quick review of what has happened so far
 * the test ``self.assertIsInstance(classes.ClassWithPass(), object)`` checks if ``ClassWithPass`` is an `object <https://docs.python.org/3/glossary.html#term-object>`_
 * in Python everything is an `object <https://docs.python.org/3/glossary.html#term-object>`_ , which means if it exists in Python there is a class definition for it somewhere or it inherits from a class
 
-How to define a class with parentheses
+how to define a class with parentheses
 --------------------------------------
 
 red: make it fail
@@ -174,7 +174,7 @@ green: make it pass
   - I can define ``classes`` without parentheses
   - `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is a placeholder
 
-How to define a class with inheritance
+how to define a class with inheritance
 --------------------------------------
 
 In object oriented programming there is a concept called `Inheritance <https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming>`_\ ). With Inheritance I can define new `objects <https://docs.python.org/3/glossary.html#term-object>`_ that inherit from existing `objects <https://docs.python.org/3/glossary.html#term-object>`_.

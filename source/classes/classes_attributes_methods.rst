@@ -4,7 +4,7 @@
 classes: attributes and methods
 #################################
 
-How to define a class with attributes
+how to define a class with attributes
 --------------------------------------
 
 I now add some tests for attributes since I know how to define a class for attributes
@@ -110,7 +110,7 @@ I add matching attributes to ``ClassWithAttributes`` to make the tests pass
 
 and the terminal shows all tests pass
 
-How to define a class with methods
+how to define a class with methods
 ----------------------------------
 
 I can also define classes with :ref:`methods<functions>` which are function definitions that belong to the class
@@ -223,7 +223,7 @@ refactor: make it better
 
 ----
 
-How to define a class with attributes and methods
+how to define a class with attributes and methods
 -------------------------------------------------
 
 Since I know how to define classes with methods and how to define classes with attributes, what happens when I define a class with both?
@@ -264,7 +264,7 @@ I make ``classes.py`` to make the tests pass by defining the class, attribute an
 
 ----
 
-How to View the attributes and methods of a class
+how to View the attributes and methods of a class
 --------------------------------------------------
 
 To view what :ref:`attributes<AttributeError>` and ``methods`` are defined for any `object <https://docs.python.org/3/glossary.html#term-object>`_ I can call ``dir`` on the `object <https://docs.python.org/3/glossary.html#term-object>`_.

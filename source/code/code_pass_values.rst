@@ -1,6 +1,6 @@
 
 #######################################
-How to pass values: Tests and Solution
+how to pass values: tests and solution
 #######################################
 
 **********

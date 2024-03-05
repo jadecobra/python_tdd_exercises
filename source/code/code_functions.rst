@@ -1,6 +1,6 @@
 
 ################################
-functions: Tests and Solutions
+functions: tests and solutions
 ################################
 
 **********

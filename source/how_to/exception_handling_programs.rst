@@ -313,7 +313,7 @@ green: make it pass
   - When I call ``exceptions.exception_handler`` with ``exceptions.does_not_raise_exception`` as input, it calls the :ref:`function<functions>` and returns the result
   - the result of calling ``exceptions.does_not_raise_exception`` is currently :ref:`None` which is not equal to ``'succeeded'`` and the result of calling ``exceptions.raises_exception`` is currently an Exception which is not equal to ``'failed'``
 
-How to use try...except...else
+how to use try...except...else
 -----------------------------------------------------------------------------
 
 I add a `try statement`_statement to ``exception_handler`` in ``exceptions.py`` to handle exceptions

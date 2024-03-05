@@ -1,6 +1,6 @@
 
 ##################################
-AssertionError: Tests
+AssertionError: tests
 ##################################
 
 Here is the code in ``tests/test_assertion_error.py``

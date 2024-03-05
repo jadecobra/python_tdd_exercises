@@ -37,7 +37,7 @@ You can choose how you go through the chapters by starting with what you like.
 
 My recommendation is to
 
-* start with :doc:`How to make a python test driven development environment </how_to/make_tdd_environment>` because it is required by every chapter
+* start with :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` because it is required by every chapter
 * type out the code portions as you go through any chapter without copying and pasting the code
 * repeat a chapter you like until you can do it from memory
 * try remaking the tests from memory or write new tests for a concept you are working on
@@ -111,18 +111,18 @@ tests and solutions
   code/code_calculator
   code/code_pass_values
   code/code_person_factory
-  code/code_sleep_duration
   code/code_exception_handling
+  code/code_sleep_duration
   code/code_none
   code/code_booleans
   code/code_truth_table
   code/code_lists
   code/code_list_comprehensions
+  code/code_dictionaries
   code/code_assertion_error
   code/code_attribute_error
-  code/code_classes
   code/code_functions
-  code/code_dictionaries
+  code/code_classes
   catalog_of_tests
 
 ----

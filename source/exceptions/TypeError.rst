@@ -34,7 +34,7 @@ requirements
 *****************************************************************************
 
 
-:doc:`How to make a python test driven development environment </how_to/make_tdd_environment>`
+:doc:`how to make a python test driven development environment </how_to/make_tdd_environment>`
 
 ----
 
@@ -42,7 +42,7 @@ red: make it fail
 *****************************************************************************
 
 
-* I open a new file in the editor and save it as ``test_type_error.py`` in the ``tests`` folder made in :doc:`How to make a python test driven development environment </how_to/make_tdd_environment>` and type the following in the file
+* I open a new file in the editor and save it as ``test_type_error.py`` in the ``tests`` folder made in :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` and type the following in the file
 
 
   .. code-block:: python
@@ -103,7 +103,7 @@ green: make it pass
    >    self.assertIsNone(functions.function_a("a"))
    E    TypeError: 'NoneType' object is not callable
 
-  A reminder of the first encounter with ``TypeError`` from `How to solve the AttributeError by defining a Function <./AttributeError.rst>`_
+  A reminder of the first encounter with ``TypeError`` from `how to solve the AttributeError by defining a Function <./AttributeError.rst>`_
 * I add it to the list of exceptions encountered
 
   .. code-block:: python
@@ -392,7 +392,7 @@ You encountered the following exceptions
 
 You now know
 
-* How to solve a :ref:`ModuleNotFoundError`
-* How to solve an :ref:`AssertionError`
-* How to solve an :ref:`AttributeError`
-* How to solve a `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#TypeError>`_ by matching function signatures and their calls
+* how to solve a :ref:`ModuleNotFoundError`
+* how to solve an :ref:`AssertionError`
+* how to solve an :ref:`AttributeError`
+* how to solve a `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#TypeError>`_ by matching function signatures and their calls

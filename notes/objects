@@ -1,21 +1,21 @@
 classes/classes                          classes                                 : classes/classes.html
     classes/classes_attributes_methods       classes: attributes and methods         : classes/classes_attributes_methods.html
     classes/classes_initializer              classes: initializer                    : classes/classes_initializer.html
-    code/code_assertion_error                AssertionError: Tests                   : code/code_assertion_error.html
-    code/code_attribute_error                AttributeError: Tests and Solutions     : code/code_attribute_error.html
-    code/code_booleans                       Data Structures: Booleans: Tests        : code/code_booleans.html
-    code/code_calculator                     How to make a Calculator: Tests and Solutions: code/code_calculator.html
-    code/code_classes                        classes: Tests and Solutions            : code/code_classes.html
-    code/code_dictionaries                   Data Structures: Dictionaries: Tests and Solution: code/code_dictionaries.html
-    code/code_exception_handling             How to handle Exceptions: Tests and Solutions: code/code_exception_handling.html
-    code/code_functions                      functions: Tests and Solutions          : code/code_functions.html
-    code/code_list_comprehensions            Data Structures: List Comprehensions: Tests and Solutions: code/code_list_comprehensions.html
-    code/code_lists                          Data Structures: Lists: Tests           : code/code_lists.html
-    code/code_none                           Data Structures: None: Tests            : code/code_none.html
-    code/code_pass_values                    How to pass values: Tests and Solution  : code/code_pass_values.html
-    code/code_person_factory                 How to make a person: Tests and Solution: code/code_person_factory.html
-    code/code_sleep_duration                 How to measure sleep duration: Tests and Solution: code/code_sleep_duration.html
-    code/code_truth_table                    truth table: Tests and Solutions        : code/code_truth_table.html
+    code/code_assertion_error                AssertionError: tests                   : code/code_assertion_error.html
+    code/code_attribute_error                AttributeError: tests and solutions     : code/code_attribute_error.html
+    code/code_booleans                       Data Structures: Booleans: tests        : code/code_booleans.html
+    code/code_calculator                     how to make a calculator: tests and solutions: code/code_calculator.html
+    code/code_classes                        classes: tests and solutions            : code/code_classes.html
+    code/code_dictionaries                   Data Structures: Dictionaries: tests and solution: code/code_dictionaries.html
+    code/code_exception_handling             how to handle Exceptions: tests and solutions: code/code_exception_handling.html
+    code/code_functions                      functions: tests and solutions          : code/code_functions.html
+    code/code_list_comprehensions            Data Structures: List Comprehensions: tests and solutions: code/code_list_comprehensions.html
+    code/code_lists                          Data Structures: Lists: tests           : code/code_lists.html
+    code/code_none                           Data Structures: None: tests            : code/code_none.html
+    code/code_pass_values                    how to pass values: tests and solution  : code/code_pass_values.html
+    code/code_person_factory                 how to make a person: tests and solution: code/code_person_factory.html
+    code/code_sleep_duration                 how to measure sleep duration: tests and solution: code/code_sleep_duration.html
+    code/code_truth_table                    truth table: tests and solutions        : code/code_truth_table.html
     code/make_tdd/code_make_tdd_environment Automatically make a Test Driven Development Environment: code/make_tdd/code_make_tdd_environment.html
     conventions                              Conventions                             : conventions.html
     data_structures/booleans/booleans        Data Structures: Booleans               : data_structures/booleans/booleans.html
@@ -48,17 +48,17 @@ classes/classes                          classes                                
     functions/functions_positional           functions: positional arguments         : functions/functions_positional.html
     functions/functions_positional_and_keyword functions: positional and keyword arguments: functions/functions_positional_and_keyword.html
     functions/functions_singleton            functions: singleton                    : functions/functions_singleton.html
-    how_to/calculator                        How to make a Calculator              : how_to/calculator.html
-    how_to/make_person                     How to make a person                  : how_to/make_person.html
-    how_to/make_tdd_environment            How to make a Test Driven Development Environment: how_to/make_tdd_environment.html
-    how_to/exception_handling_programs       How to handle Exceptions in programs    : how_to/exception_handling_programs.html
-    how_to/exception_handling_tests          How to test that an Exception is raised : how_to/exception_handling_tests.html
-    how_to/pass_values                       How to pass values                      : how_to/pass_values.html
+    how_to/calculator                        how to make a calculator              : how_to/calculator.html
+    how_to/make_person                     how to make a person                  : how_to/make_person.html
+    how_to/make_tdd_environment            how to make a Test Driven Development Environment: how_to/make_tdd_environment.html
+    how_to/exception_handling_programs       how to handle Exceptions in programs    : how_to/exception_handling_programs.html
+    how_to/exception_handling_tests          how to test that an Exception is raised : how_to/exception_handling_tests.html
+    how_to/pass_values                       how to pass values                      : how_to/pass_values.html
     how_to/setup_my_ide                      How I setup my Interactive Development Environment (IDE): how_to/setup_my_ide.html
-    how_to/sleep_duration                    How to measure sleep duration           : how_to/sleep_duration.html
-    index                                    Pumping Python: How to solve problems with Test Driven Development: index.html
-    learning_models                          How to measure learning                 : learning_models.html
-    rehearsals/sleep_duration/1              How to measure sleep duration           : rehearsals/sleep_duration/1.html
+    how_to/sleep_duration                    how to measure sleep duration           : how_to/sleep_duration.html
+    index                                    Pumping Python: how to solve problems with Test Driven Development: index.html
+    learning_models                          how to measure learning                 : learning_models.html
+    rehearsals/sleep_duration/1              how to measure sleep duration           : rehearsals/sleep_duration/1.html
     test_catalog                             Test Catalog                            : test_catalog.html
 std:label
     add tests                                Add Tests                               : how_to/calculator.html#add-tests
@@ -68,10 +68,10 @@ std:label
     assertionerror with false                AssertionError with False               : exceptions/AssertionError.html#assertionerror-with-false
     assertionerror with none                 AssertionError with None                : exceptions/AssertionError.html#assertionerror-with-none
     assertionerror with true                 AssertionError with True                : exceptions/AssertionError.html#assertionerror-with-true
-    assertionerror: tests                    AssertionError: Tests                   : code/code_assertion_error.html#assertionerror-tests
+    assertionerror: tests                    AssertionError: tests                   : code/code_assertion_error.html#assertionerror-tests
     attributeerror                           AttributeError                          : exceptions/AttributeError.html#attributeerror
     attributeerror vs nameerror              AttributeError vs NameError             : exceptions/AttributeError.html#attributeerror-vs-nameerror
-    attributeerror: tests and solutions      AttributeError: Tests and Solutions     : code/code_attribute_error.html#attributeerror-tests-and-solutions
+    attributeerror: tests and solutions      AttributeError: tests and solutions     : code/code_attribute_error.html#attributeerror-tests-and-solutions
     automatically make a test driven development environment Automatically make a Test Driven Development Environment: code/make_tdd/code_make_tdd_environment.html#automatically-make-a-test-driven-development-environment
     bonus: automatically make a python test driven development environment BONUS: Automatically make a Python Test Driven Development Environment: how_to/make_tdd_environment.html#bonus-automatically-make-a-python-test-driven-development-environment
     bonus: refactor: make it better          BONUS: REFACTOR: make it better         : data_structures/lists/list_comprehensions.html#bonus-refactor-make-it-better
@@ -81,19 +81,19 @@ std:label
     classes                                                                          : classes/classes.html#classes
     classes: attributes and methods                                                  : classes/classes_attributes_methods.html#classes-attributes-and-methods
     classes: initializer                                                             : classes/classes_initializer.html#classes-initializer
-    classes: tests and solutions             classes: Tests and Solutions            : code/code_classes.html#classes-tests-and-solutions
+    classes: tests and solutions             classes: tests and solutions            : code/code_classes.html#classes-tests-and-solutions
     contradiction                            Contradiction                           : data_structures/booleans/truth_table/14_true_lies.html#contradiction
     conventions                              Conventions                             : conventions.html#conventions
     data structures: booleans                Data Structures: Booleans               : data_structures/booleans/booleans.html#data-structures-booleans
-    data structures: booleans: tests         Data Structures: Booleans: Tests        : code/code_booleans.html#data-structures-booleans-tests
+    data structures: booleans: tests         Data Structures: Booleans: tests        : code/code_booleans.html#data-structures-booleans-tests
     data structures: dictionaries            Data Structures: Dictionaries           : data_structures/dictionaries.html#data-structures-dictionaries
-    data structures: dictionaries: tests and solution Data Structures: Dictionaries: Tests and Solution: code/code_dictionaries.html#data-structures-dictionaries-tests-and-solution
+    data structures: dictionaries: tests and solution Data Structures: Dictionaries: tests and solution: code/code_dictionaries.html#data-structures-dictionaries-tests-and-solution
     data structures: list comprehensions     Data Structures: List Comprehensions    : data_structures/lists/list_comprehensions.html#data-structures-list-comprehensions
-    data structures: list comprehensions: tests and solutions Data Structures: List Comprehensions: Tests and Solutions: code/code_list_comprehensions.html#data-structures-list-comprehensions-tests-and-solutions
+    data structures: list comprehensions: tests and solutions Data Structures: List Comprehensions: tests and solutions: code/code_list_comprehensions.html#data-structures-list-comprehensions-tests-and-solutions
     data structures: lists                   Data Structures: Lists                  : data_structures/lists/lists.html#data-structures-lists
-    data structures: lists: tests            Data Structures: Lists: Tests           : code/code_lists.html#data-structures-lists-tests
+    data structures: lists: tests            Data Structures: Lists: tests           : code/code_lists.html#data-structures-lists-tests
     data structures: none                    Data Structures: None                   : data_structures/none.html#data-structures-none
-    data structures: none: tests             Data Structures: None: Tests            : code/code_none.html#data-structures-none-tests
+    data structures: none: tests             Data Structures: None: tests            : code/code_none.html#data-structures-none-tests
     explicit targets                         Explicit targets                        : test_catalog.html#explicit-targets
     functions                                                                        : functions/functions.html#functions
     functions: keyword arguments                                                     : functions/functions_keyword.html#functions-keyword-arguments
@@ -101,67 +101,67 @@ std:label
     functions: positional and keyword arguments                                         : functions/functions_positional_and_keyword.html#functions-positional-and-keyword-arguments
     functions: positional arguments                                                  : functions/functions_positional.html#functions-positional-arguments
     functions: singleton                                                             : functions/functions_singleton.html#functions-singleton
-    functions: tests and solutions           functions: Tests and Solutions          : code/code_functions.html#functions-tests-and-solutions
+    functions: tests and solutions           functions: tests and solutions          : code/code_functions.html#functions-tests-and-solutions
     general requirements                     General Requirements                    : how_to/make_tdd_environment.html#general-requirements
     genindex                                 Index                                   : genindex.html
     green: make it pass                     green: make it pass                    : how_to/calculator.html#id14
     green: make it pass                      GREEN: make it pass                     : how_to/sleep_duration.html#id19
     how i setup my interactive development environment (ide) How I setup my Interactive Development Environment (IDE): how_to/setup_my_ide.html#how-i-setup-my-interactive-development-environment-ide
-    how to access dictionary values          How to access dictionary values         : data_structures/dictionaries.html#how-to-access-dictionary-values
-    how to activate a virtual environment    How to Activate a Virtual Environment   : how_to/make_tdd_environment.html#how-to-activate-a-virtual-environment
-    how to add an item to a list             How to add an item to a list            : data_structures/lists/lists.html#how-to-add-an-item-to-a-list
+    how to access dictionary values          how to access dictionary values         : data_structures/dictionaries.html#how-to-access-dictionary-values
+    how to activate a virtual environment    how to Activate a Virtual Environment   : how_to/make_tdd_environment.html#how-to-activate-a-virtual-environment
+    how to add an item to a list             how to add an item to a list            : data_structures/lists/lists.html#how-to-add-an-item-to-a-list
     how to automatically make a python test driven development environment on windows without wsl how to automatically make a python test driven development environment on Windows without WSL: how_to/make_tdd_environment.html#how-to-automatically-make-a-test-driven-development-environment-on-windows-without-wsl
-    how to automatically run tests           How to Automatically Run Tests          : how_to/make_tdd_environment.html#how-to-automatically-run-tests
-    how to catch things that fail            How to catch things that fail           : how_to/exception_handling_programs.html#how-to-catch-things-that-fail
-    how to catch things that succeed         How to catch things that succeed        : how_to/exception_handling_programs.html#how-to-catch-things-that-succeed
-    how to make a calculator               How to make a Calculator              : how_to/calculator.html#how-to-make-a-calculator
-    how to make a calculator: tests and solutions How to make a Calculator: Tests and Solutions: code/code_calculator.html#how-to-make-a-calculator-tests-and-solutions
-    how to make a class in python          How to make a class in Python         : classes/classes.html#how-to-make-a-class-in-python
-    how to make a dictionary with booleans as keys How to make a dictionary with booleans as keys: data_structures/dictionaries.html#how-to-make-a-dictionary-with-booleans-as-keys
-    how to make a dictionary with numbers as keys How to make a dictionary with numbers as keys: data_structures/dictionaries.html#how-to-make-a-dictionary-with-numbers-as-keys
-    how to make a dictionary with strings as keys How to make a dictionary with strings as keys: data_structures/dictionaries.html#how-to-make-a-dictionary-with-strings-as-keys
-    how to make a dictionary with tuples as keys How to make a dictionary with tuples as keys: data_structures/dictionaries.html#how-to-make-a-dictionary-with-tuples-as-keys
-    how to make a list                     How to make a list                    : data_structures/lists/lists.html#how-to-make-a-list
-    how to make a list from an iterable    How to make a List from an Iterable   : data_structures/lists/list_comprehensions.html#how-to-make-a-list-from-an-iterable
-    how to make a list with a for loop     How to make a List with a For Loop    : data_structures/lists/list_comprehensions.html#how-to-make-a-list-with-a-for-loop
-    how to make a list with list comprehensions How to make a List with List Comprehensions: data_structures/lists/list_comprehensions.html#how-to-make-a-list-with-list-comprehensions
-    how to make a person                   How to make a person                  : how_to/make_person.html#how-to-make-a-person
-    how to make a person: tests and solution How to make a person: Tests and Solution: code/code_person_factory.html#how-to-make-a-person-tests-and-solution
-    how to make a test driven development environment How to make a Test Driven Development Environment: how_to/make_tdd_environment.html#how-to-make-a-test-driven-development-environment
-    how to make a virtual environment      How to make a Virtual Environment     : how_to/make_tdd_environment.html#how-to-make-a-virtual-environment
-    how to deactivate a virtual environment  How to Deactivate a Virtual Environment : how_to/make_tdd_environment.html#how-to-deactivate-a-virtual-environment
-    how to define a class with attributes    How to define a class with attributes   : classes/classes_attributes_methods.html#how-to-define-a-class-with-attributes
-    how to define a class with attributes and methods How to define a class with attributes and methods: classes/classes_attributes_methods.html#how-to-define-a-class-with-attributes-and-methods
-    how to define a class with inheritance   How to define a class with inheritance  : classes/classes.html#how-to-define-a-class-with-inheritance
-    how to define a class with methods       How to define a class with methods      : classes/classes_attributes_methods.html#how-to-define-a-class-with-methods
-    how to define a class with parentheses   How to define a class with parentheses  : classes/classes.html#how-to-define-a-class-with-parentheses
-    how to define a class with pass          How to define a class with pass         : classes/classes.html#how-to-define-a-class-with-pass
-    how to get a specific item from a list   How to get a specific item from a list  : data_structures/lists/lists.html#how-to-get-a-specific-item-from-a-list
-    how to get a value when the key does not exist How to get a value when the key does not exist: data_structures/dictionaries.html#how-to-get-a-value-when-the-key-does-not-exist
-    how to handle a modulenotfounderror      How to handle a ModuleNotFoundError     : how_to/exception_handling_tests.html#how-to-handle-a-modulenotfounderror
-    how to handle an attributeerror          How to handle an AttributeError         : how_to/exception_handling_tests.html#how-to-handle-an-attributeerror
-    how to handle exceptions in programs     How to handle Exceptions in programs    : how_to/exception_handling_programs.html#how-to-handle-exceptions-in-programs
-    how to handle exceptions: tests and solutions How to handle Exceptions: Tests and Solutions: code/code_exception_handling.html#how-to-handle-exceptions-tests-and-solutions
-    how to measure learning                  How to measure learning                 : learning_models.html#how-to-measure-learning
-    how to measure sleep duration            How to measure sleep duration           : how_to/sleep_duration.html#how-to-measure-sleep-duration
-    how to measure sleep duration: tests and solution How to measure sleep duration: Tests and Solution: code/code_sleep_duration.html#how-to-measure-sleep-duration-tests-and-solution
-    how to pass values                       How to pass values                      : how_to/pass_values.html#how-to-pass-values
-    how to pass values: tests and solution   How to pass values: Tests and Solution  : code/code_pass_values.html#how-to-pass-values-tests-and-solution
-    how to remove an item from a dictionary  How to remove an item from a dictionary : data_structures/dictionaries.html#how-to-remove-an-item-from-a-dictionary
-    how to remove an item from a list        How to remove an item from a list       : data_structures/lists/lists.html#how-to-remove-an-item-from-a-list
-    how to remove the last item from a list  How to remove the last item from a list : data_structures/lists/lists.html#how-to-remove-the-last-item-from-a-list
-    how to set a default value for a given key How to set a default value for a given key: data_structures/dictionaries.html#how-to-set-a-default-value-for-a-given-key
-    how to test for errors                   How to Test for Errors                  : how_to/calculator.html#how-to-test-for-errors
-    how to test that an exception is raised  How to test that an Exception is raised : how_to/exception_handling_tests.html#how-to-test-that-an-exception-is-raised
-    how to update a dictionary with another dictionary How to update a dictionary with another dictionary: data_structures/dictionaries.html#how-to-update-a-dictionary-with-another-dictionary
-    how to use default keyword arguments in functions How to use default keyword arguments in functions: how_to/make_person.html#how-to-use-default-keyword-arguments-in-functions
-    how to use dictionaries as factories in python How to use dictionaries as factories in Python: how_to/make_person.html#how-to-use-dictionaries-as-factories-in-python
-    how to use this book                     How to use this book                    : index.html#how-to-use-this-book
-    how to use try...except...else           How to use try…except…else              : how_to/exception_handling_programs.html#how-to-use-try-except-else
-    how to use try...except...else...finally How to use try…except…else…finally      : how_to/exception_handling_programs.html#how-to-use-try-except-else-finally
-    how to view the attributes and methods of a class How to View the attributes and methods of a class: classes/classes_attributes_methods.html#how-to-view-the-attributes-and-methods-of-a-class
-    how to view the attributes and methods of a dictionary How to view the attributes and methods of a dictionary: data_structures/dictionaries.html#how-to-view-the-attributes-and-methods-of-a-dictionary
-    how to view the attributes and methods of a list How to view the attributes and methods of a list: data_structures/lists/lists.html#how-to-view-the-attributes-and-methods-of-a-list
+    how to automatically run tests           how to Automatically Run Tests          : how_to/make_tdd_environment.html#how-to-automatically-run-tests
+    how to catch things that fail            how to catch things that fail           : how_to/exception_handling_programs.html#how-to-catch-things-that-fail
+    how to catch things that succeed         how to catch things that succeed        : how_to/exception_handling_programs.html#how-to-catch-things-that-succeed
+    how to make a calculator               how to make a calculator              : how_to/calculator.html#how-to-make-a-calculator
+    how to make a calculator: tests and solutions how to make a calculator: tests and solutions: code/code_calculator.html#how-to-make-a-calculator-tests-and-solutions
+    how to make a class in python          how to make a class in Python         : classes/classes.html#how-to-make-a-class-in-python
+    how to make a dictionary with booleans as keys how to make a dictionary with booleans as keys: data_structures/dictionaries.html#how-to-make-a-dictionary-with-booleans-as-keys
+    how to make a dictionary with numbers as keys how to make a dictionary with numbers as keys: data_structures/dictionaries.html#how-to-make-a-dictionary-with-numbers-as-keys
+    how to make a dictionary with strings as keys how to make a dictionary with strings as keys: data_structures/dictionaries.html#how-to-make-a-dictionary-with-strings-as-keys
+    how to make a dictionary with tuples as keys how to make a dictionary with tuples as keys: data_structures/dictionaries.html#how-to-make-a-dictionary-with-tuples-as-keys
+    how to make a list                     how to make a list                    : data_structures/lists/lists.html#how-to-make-a-list
+    how to make a list from an iterable    how to make a List from an Iterable   : data_structures/lists/list_comprehensions.html#how-to-make-a-list-from-an-iterable
+    how to make a list with a for loop     how to make a List with a For Loop    : data_structures/lists/list_comprehensions.html#how-to-make-a-list-with-a-for-loop
+    how to make a list with list comprehensions how to make a List with List Comprehensions: data_structures/lists/list_comprehensions.html#how-to-make-a-list-with-list-comprehensions
+    how to make a person                   how to make a person                  : how_to/make_person.html#how-to-make-a-person
+    how to make a person: tests and solution how to make a person: tests and solution: code/code_person_factory.html#how-to-make-a-person-tests-and-solution
+    how to make a test driven development environment how to make a Test Driven Development Environment: how_to/make_tdd_environment.html#how-to-make-a-test-driven-development-environment
+    how to make a virtual environment      how to make a Virtual Environment     : how_to/make_tdd_environment.html#how-to-make-a-virtual-environment
+    how to deactivate a virtual environment  how to Deactivate a Virtual Environment : how_to/make_tdd_environment.html#how-to-deactivate-a-virtual-environment
+    how to define a class with attributes    how to define a class with attributes   : classes/classes_attributes_methods.html#how-to-define-a-class-with-attributes
+    how to define a class with attributes and methods how to define a class with attributes and methods: classes/classes_attributes_methods.html#how-to-define-a-class-with-attributes-and-methods
+    how to define a class with inheritance   how to define a class with inheritance  : classes/classes.html#how-to-define-a-class-with-inheritance
+    how to define a class with methods       how to define a class with methods      : classes/classes_attributes_methods.html#how-to-define-a-class-with-methods
+    how to define a class with parentheses   how to define a class with parentheses  : classes/classes.html#how-to-define-a-class-with-parentheses
+    how to define a class with pass          how to define a class with pass         : classes/classes.html#how-to-define-a-class-with-pass
+    how to get a specific item from a list   how to get a specific item from a list  : data_structures/lists/lists.html#how-to-get-a-specific-item-from-a-list
+    how to get a value when the key does not exist how to get a value when the key does not exist: data_structures/dictionaries.html#how-to-get-a-value-when-the-key-does-not-exist
+    how to handle a modulenotfounderror      how to handle a ModuleNotFoundError     : how_to/exception_handling_tests.html#how-to-handle-a-modulenotfounderror
+    how to handle an attributeerror          how to handle an AttributeError         : how_to/exception_handling_tests.html#how-to-handle-an-attributeerror
+    how to handle exceptions in programs     how to handle Exceptions in programs    : how_to/exception_handling_programs.html#how-to-handle-exceptions-in-programs
+    how to handle exceptions: tests and solutions how to handle Exceptions: tests and solutions: code/code_exception_handling.html#how-to-handle-exceptions-tests-and-solutions
+    how to measure learning                  how to measure learning                 : learning_models.html#how-to-measure-learning
+    how to measure sleep duration            how to measure sleep duration           : how_to/sleep_duration.html#how-to-measure-sleep-duration
+    how to measure sleep duration: tests and solution how to measure sleep duration: tests and solution: code/code_sleep_duration.html#how-to-measure-sleep-duration-tests-and-solution
+    how to pass values                       how to pass values                      : how_to/pass_values.html#how-to-pass-values
+    how to pass values: tests and solution   how to pass values: tests and solution  : code/code_pass_values.html#how-to-pass-values-tests-and-solution
+    how to remove an item from a dictionary  how to remove an item from a dictionary : data_structures/dictionaries.html#how-to-remove-an-item-from-a-dictionary
+    how to remove an item from a list        how to remove an item from a list       : data_structures/lists/lists.html#how-to-remove-an-item-from-a-list
+    how to remove the last item from a list  how to remove the last item from a list : data_structures/lists/lists.html#how-to-remove-the-last-item-from-a-list
+    how to set a default value for a given key how to set a default value for a given key: data_structures/dictionaries.html#how-to-set-a-default-value-for-a-given-key
+    how to test for errors                   how to Test for Errors                  : how_to/calculator.html#how-to-test-for-errors
+    how to test that an exception is raised  how to test that an Exception is raised : how_to/exception_handling_tests.html#how-to-test-that-an-exception-is-raised
+    how to update a dictionary with another dictionary how to update a dictionary with another dictionary: data_structures/dictionaries.html#how-to-update-a-dictionary-with-another-dictionary
+    how to use default keyword arguments in functions how to use default keyword arguments in functions: how_to/make_person.html#how-to-use-default-keyword-arguments-in-functions
+    how to use dictionaries as factories in python how to use dictionaries as factories in Python: how_to/make_person.html#how-to-use-dictionaries-as-factories-in-python
+    how to use this book                     how to use this book                    : index.html#how-to-use-this-book
+    how to use try...except...else           how to use try…except…else              : how_to/exception_handling_programs.html#how-to-use-try-except-else
+    how to use try...except...else...finally how to use try…except…else…finally      : how_to/exception_handling_programs.html#how-to-use-try-except-else-finally
+    how to view the attributes and methods of a class how to View the attributes and methods of a class: classes/classes_attributes_methods.html#how-to-view-the-attributes-and-methods-of-a-class
+    how to view the attributes and methods of a dictionary how to view the attributes and methods of a dictionary: data_structures/dictionaries.html#how-to-view-the-attributes-and-methods-of-a-dictionary
+    how to view the attributes and methods of a list how to view the attributes and methods of a list: data_structures/lists/lists.html#how-to-view-the-attributes-and-methods-of-a-list
     how-tos                                  HOWTOs                                  : index.html#how-tos
     howtos                                   HOWTOs                                  : index.html#howtos
     in-line targets                                                                  : test_catalog.html#in-line-targets
@@ -195,7 +195,7 @@ std:label
     passing data structures                  Passing Data Structures                 : how_to/pass_values.html#passing-data-structures
     project first                            Project First                           : data_structures/booleans/truth_table/12_project.html#project-first
     project second                           Project Second                          : data_structures/booleans/truth_table/12_project.html#project-second
-    pumping python: how to solve problems with test driven development Pumping Python: How to solve problems with Test Driven Development: index.html#pumping-python-how-to-solve-problems-with-test-driven-development
+    pumping python: how to solve problems with test driven development Pumping Python: how to solve problems with Test Driven Development: index.html#pumping-python-how-to-solve-problems-with-test-driven-development
     py-modindex                              Python Module Index                     : py-modindex.html
     red: make it fail                        RED: make it fail                       : how_to/sleep_duration.html#id18
     refactor: make it better                 REFACTOR: make it better                : how_to/sleep_duration.html#id56
@@ -253,7 +253,7 @@ std:label
     truth table: material nonimplication     truth table: Material NonImplication    : data_structures/booleans/truth_table/10_material_non_implication.html#truth-table-material-nonimplication
     truth table: negate                      truth table: Negate                     : data_structures/booleans/truth_table/11_negate.html#truth-table-negate
     truth table: project                     truth table: Project                    : data_structures/booleans/truth_table/12_project.html#truth-table-project
-    truth table: tests and solutions         truth table: Tests and Solutions        : code/code_truth_table.html#truth-table-tests-and-solutions
+    truth table: tests and solutions         truth table: tests and solutions        : code/code_truth_table.html#truth-table-tests-and-solutions
     truth table: true lies                   truth table: True Lies                  : data_structures/booleans/truth_table/14_true_lies.html#truth-table-true-lies
     typeerror                                TypeError                               : exceptions/TypeError.html#typeerror
     unary operations                         Unary Operations                        : data_structures/booleans/truth_table/01.html#unary-operations

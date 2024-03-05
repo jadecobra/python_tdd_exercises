@@ -578,7 +578,7 @@ green: make it pass
     # ZeroDivisionError
 
 
-How to Test for Errors
+how to Test for Errors
 -----------------------------------------------------------------------------
 
 red: make it fail

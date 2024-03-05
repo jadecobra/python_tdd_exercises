@@ -1,6 +1,6 @@
 
 ###############################
-Data Structures: Lists: Tests
+Data Structures: Lists: tests
 ###############################
 
 Here is the code in ``tests/test_lists.py``

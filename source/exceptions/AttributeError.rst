@@ -20,7 +20,7 @@ requirements
 *****************************************************************************
 
 
-:doc:`How to make a python test driven development environment </how_to/make_tdd_environment>`
+:doc:`how to make a python test driven development environment </how_to/make_tdd_environment>`
 
 ----
 
@@ -31,7 +31,7 @@ Solve an AttributeError by defining variables
 red: make it fail
 -----------------------------------------------------------------------------
 
-I open a new file, save it as ``test_attribute_error.py`` in the ``tests`` folder made in :doc:`How to make a python test driven development environment </how_to/make_tdd_environment>` and type the following
+I open a new file, save it as ``test_attribute_error.py`` in the ``tests`` folder made in :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` and type the following
 
 .. code-block:: python
 
@@ -314,9 +314,9 @@ Repeat the pattern until all tests pass.
 If you have been typing along *WELL DONE!* You now know
 
 
-* How to solve a :ref:`ModuleNotFoundError`
-* How to solve a NameError_ using variables
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
+* how to solve a :ref:`ModuleNotFoundError`
+* how to solve a NameError_ using variables
+* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 
 ----
 
@@ -406,11 +406,11 @@ refactor: make it better
 
 *YOU DID IT AGAIN!* You now know
 
-* How to solve a :ref:`ModuleNotFoundError`
-* How to solve a NameError_
-* How to solve a :ref:`TypeError` by defining a callable
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
+* how to solve a :ref:`ModuleNotFoundError`
+* how to solve a NameError_
+* how to solve a :ref:`TypeError` by defining a callable
+* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
+* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
 
 ----
 
@@ -492,12 +492,12 @@ refactor: make it better
 
 *WELL DONE!* You now know
 
-* How to solve a :ref:`ModuleNotFoundError`
-* How to solve a NameError_
-* How to solve a :ref:`TypeError` by defining a callable_
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :doc:`class </classes/classes>`? do I know how to define :doc:`class </classes/classes>` if I define them the same way I do :doc:`/functions/functions`?
+* how to solve a :ref:`ModuleNotFoundError`
+* how to solve a NameError_
+* how to solve a :ref:`TypeError` by defining a callable_
+* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
+* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
+* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :doc:`class </classes/classes>`? do I know how to define :doc:`class </classes/classes>` if I define them the same way I do :doc:`/functions/functions`?
 
 ----
 
@@ -635,13 +635,13 @@ refactor: make it better
 
 *WELL DONE!* You now know You now know
 
-* How to solve a :ref:`ModuleNotFoundError`
-* How to solve a NameError_
-* How to solve a :ref:`TypeError` by defining a callable_
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :doc:`class </classes/classes>`
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining attributes (variables) in a :doc:`class </classes/classes>`
+* how to solve a :ref:`ModuleNotFoundError`
+* how to solve a NameError_
+* how to solve a :ref:`TypeError` by defining a callable_
+* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
+* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
+* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :doc:`class </classes/classes>`
+* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining attributes (variables) in a :doc:`class </classes/classes>`
 
 ----
 
@@ -724,14 +724,14 @@ repeat the solution until all tests pass
 
 and learned
 
-* How to solve a :ref:`ModuleNotFoundError`
-* How to solve a NameError_
-* How to solve a :ref:`TypeError` by defining a callable_
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :doc:`class </classes/classes>`
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining attributes (variables) in a :doc:`class </classes/classes>`
-* How to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`methods (functions) </functions/functions>` in a :doc:`class </classes/classes>`
+* how to solve a :ref:`ModuleNotFoundError`
+* how to solve a NameError_
+* how to solve a :ref:`TypeError` by defining a callable_
+* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
+* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
+* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :doc:`class </classes/classes>`
+* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining attributes (variables) in a :doc:`class </classes/classes>`
+* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`methods (functions) </functions/functions>` in a :doc:`class </classes/classes>`
 
 :doc:`classes </classes>` vs :doc:`/functions/functions` in Python
 

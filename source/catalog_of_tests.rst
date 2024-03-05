@@ -1,5 +1,5 @@
 #############################################################################
-Catalog of Tests
+test catalog
 #############################################################################
 
 .. contents:: table of contents
@@ -23,28 +23,27 @@ test_calculator
 test_telephone
 *****************************************************************************
 
-:ref:`test_text_messages`
-:ref:`test_passing_data_structures`
+#. :ref:`test_text_messages`
+#. :ref:`test_passing_data_structures`
 
 *****************************************************************************
 test_person_factory
 *****************************************************************************
 
-:ref:`test_person_factory`
-:ref:`test_factory_w_default_keyword_arguments`
-:ref:`test_factory_w_sex_default_keyword_arguments`
+#. :ref:`test_person_factory`
+#. :ref:`test_factory_w_default_keyword_arguments`
+#. :ref:`test_factory_w_sex_default_keyword_argument`
 
 *****************************************************************************
 test_exceptions
 *****************************************************************************
 
-:ref:`test_catching_module_not_found_error_in_tests`
-:ref:`test_catching_attribute_errors_in_tests`
-:ref:`test_catching_exceptions`
-:ref:`test_catching_failures`
-:ref:`test_catching_successes`
-:ref:`test_finally_always_returns`
-
+#. :ref:`test_catching_module_not_found_error_in_tests`
+#. :ref:`test_catching_attribute_errors_in_tests`
+#. :ref:`test_catching_exceptions`
+#. :ref:`test_catching_failures`
+#. :ref:`test_catching_successes`
+#. :ref:`test_finally_always_returns`
 
 *****************************************************************************
 test_sleep_duration
@@ -80,19 +79,19 @@ test_lists
 test_list_comprehensions
 *****************************************************************************
 
-:ref:`test_making_a_list_from_an_iterable`
-:ref:`test_making_a_list_w_a_for_loop`
-:ref:`test_making_lists_w_list_comprehensions`
+#. :ref:`test_making_a_list_from_an_iterable`
+#. :ref:`test_making_a_list_w_a_for_loop`
+#. :ref:`test_making_lists_w_list_comprehensions`
 
 *****************************************************************************
 test_functions
 *****************************************************************************
 
-:ref:`test_singleton_functions`
-:ref:`test_passthrough_functions`
-:ref:`test_functions_w_positional_arguments`
-:ref:`test_functions_w_keyword_arguments`
-:ref:`test_functions_w_positional_and_keyword_arguments`
+#. :ref:`test_singleton_functions`
+#. :ref:`test_passthrough_functions`
+#. :ref:`test_functions_w_positional_arguments`
+#. :ref:`test_functions_w_keyword_arguments`
+#. :ref:`test_functions_w_positional_and_keyword_arguments`
 
 *****************************************************************************
 test_assertion_error

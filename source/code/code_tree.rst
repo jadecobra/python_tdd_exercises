@@ -1,6 +1,6 @@
 
 #################################
-Tree: Tests and Solutions
+Tree: tests and solutions
 #################################
 
 **********

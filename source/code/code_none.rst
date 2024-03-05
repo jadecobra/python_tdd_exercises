@@ -1,6 +1,6 @@
 
 ##############################
-Data Structures: None: Tests
+Data Structures: None: tests
 ##############################
 
 Here is the code in ``tests/test_none.py``

@@ -1,6 +1,6 @@
 
 #####################################
-AttributeError: Tests and Solutions
+AttributeError: tests and solutions
 #####################################
 
 **********

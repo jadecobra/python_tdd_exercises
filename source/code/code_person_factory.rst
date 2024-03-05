@@ -1,6 +1,6 @@
 
 ###########################################
-How to make a person: Tests and Solution
+how to make a person: tests and solution
 ###########################################
 
 **********

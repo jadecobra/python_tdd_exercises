@@ -15,7 +15,7 @@ I think this is the most important data structure to know as it can hold all the
 
 ----
 
-How to make a dictionary with strings as keys
+how to make a dictionary with strings as keys
 ------------------------------------------------
 
 red: make it fail
@@ -167,7 +167,7 @@ refactor: make it better
 
 ----
 
-How to make a dictionary with numbers as keys
+how to make a dictionary with numbers as keys
 ------------------------------------------------
 
 red: make it fail
@@ -248,7 +248,7 @@ refactor: make it better
 
 ----
 
-How to make a dictionary with booleans as keys
+how to make a dictionary with booleans as keys
 -------------------------------------------------
 
 I wonder if it is possible to use :doc:`False </data_structures/booleans/booleans>` or :doc:`True </data_structures/booleans/booleans>` as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
@@ -338,7 +338,7 @@ So far from the tests, I see that I can use `booleans <https://docs.python.org/3
 
 ----
 
-How to make a dictionary with tuples as keys
+how to make a dictionary with tuples as keys
 ----------------------------------------------
 
 red: make it fail
@@ -513,7 +513,7 @@ and I cannot make `dictionaries <https://docs.python.org/3/tutorial/datastructur
 
 ----
 
-How to access dictionary values
+how to access dictionary values
 -------------------------------
 
 The tests so far show how to make `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ and what objects can be used as ``keys``. The following tests show how to access the values of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
@@ -636,7 +636,7 @@ refactor: make it better
 
 ----
 
-How to get a value when the key does not exist
+how to get a value when the key does not exist
 -----------------------------------------------
 
 Sometimes when I try to access values in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_, I use a key that does not exist or misspell a key that does exist
@@ -829,7 +829,7 @@ What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datas
 
 Do you think you could write an implementation for the ``get`` method after reading :doc:`/how_to/exception_handling_programs`?
 
-How to view the attributes and methods of a dictionary
+how to view the attributes and methods of a dictionary
 -------------------------------------------------------
 
 The chapter on :doc:`/classes/classes` shows how to view the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of an object. Let us look at the attributes and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
@@ -938,7 +938,7 @@ I see some of the :ref:`methods<functions>` I have tested so far and others I di
 * `change <https://docs.python.org/3/library/stdtypes.html#dict.change>`_
 * `values <https://docs.python.org/3/library/stdtypes.html#dict.values>`_ - returns a view of the ``values`` in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
-How to set a default value for a given key
+how to set a default value for a given key
 -------------------------------------------
 
 Let us say I want to find out more about the `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_ method
@@ -1073,7 +1073,7 @@ refactor: make it better
 
   all tests pass, and I add what I know about `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_ to the list of attributes and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
-How to update a dictionary with another dictionary
+how to update a dictionary with another dictionary
 ---------------------------------------------------
 
 What if I want to add the ``keys`` and ``values`` of one `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ to another?
@@ -1144,7 +1144,7 @@ I make the values to make the test pass
           }
       )
 
-How to remove an item from a dictionary
+how to remove an item from a dictionary
 ----------------------------------------
 
 I can remove an item from a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with the `pop <https://docs.python.org/3/library/stdtypes.html#dict.pop>`_ method. It deletes the ``key`` and ``value`` from the `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ and returns the ``value``
@@ -1270,15 +1270,15 @@ you encountered the following exceptions
 
 You also know
 
-* How to make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+* how to make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 * What objects can be used as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
 * What objects cannot be used as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
-* How to view `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
-* How to view `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ values
-* How to view the attributes and :ref:`methods<functions>` of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
-* How to set a default value for a key
-* How to change a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with another `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
-* How to remove an item from a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+* how to view `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
+* how to view `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ values
+* how to view the attributes and :ref:`methods<functions>` of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+* how to set a default value for a key
+* how to change a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with another `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+* how to remove an item from a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
 ----
 
