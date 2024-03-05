@@ -895,49 +895,33 @@ green: make it pass
     ...
 
   the terminal still shows passing tests. The ``:02`` in ``{wake_hour:02}`` and ``{sleep_hour:02}`` tell Python to always display two characters for the numbers, with a leading zero when it is one digit. For example, display ``01`` instead of ``1``
-
-* When I make the test expect the difference between ``wake_hour`` and ``sleep_hour``
-
-  .. code-block:: python
-
-    self.assertEqual(
-        sleep_duration.duration(
-            wake_time=f'{wake_hour:02}:00',
-            sleep_time=f'{sleep_hour:02}:00'
-        ),
-        wake_hour-sleep_hour
-    )
-
-  I get an :ref:`AssertionError` that looks like this
+* I remove the `unittest.skip decorator`_
+* then add a :ref:`function<functions>` that makes random hours
 
   .. code-block:: python
 
-    AssertionError: 1 != -2
-    AssertionError: 1 != 3
-    AssertionError: 1 != -8
-    AssertionError: 1 != 4
+    import random
+    import sleep_duration
+    import unittest
 
-  the ``duration`` :ref:`function<functions>` returns ``1`` but the test expects the difference between ``sleep_hour`` and ``wake_hour``
+    def random_hour():
+        return random.randint(0, 23)
 
-* I make the ``duration`` :ref:`function<functions>` return ``wake_time`` minus ``sleep_time``
 
-  .. code-block:: python
+    class TestSleepDuration(unittest.TestCase):
+    ...
 
-    def duration(wake_time=None, sleep_time=None):
-        return wake_time - sleep_time
-
-  and the terminal shows a :ref:`TypeError`
+  and call it in ``test_duration_w_hours``
 
   .. code-block:: python
 
-    TypeError: unsupported operand type(s) for -: 'str' and 'str'
+    def test_duration_w_hours(self):
+        wake_hour = random_hour()
+        sleep_hour = random_hour()
+    ...
 
-  because Python does not have an operation defined for subtracting one string_ from another
-
-
-
-
-* Since all the tests are passing I can rewrite the solution as steps for someone who does not know how to use `str.split`_, index a :doc:`list </data_structures/lists/lists>` or use the int_ constructor
+  the terminal still shows passing tests
+* Since all the tests are passing I can rewrite the solution in ``sleep_duration.py`` as steps for someone who does not know how to use `str.split`_, index a :doc:`list </data_structures/lists/lists>` or use the int_ constructor
 
   .. code-block:: python
 
@@ -969,7 +953,7 @@ green: make it pass
 
   and the terminal still shows passing tests
 
-* I can make these steps a separate :ref:`function<functions>` that is called for ``wake_time`` and ``sleep_time`` to remove the repetition since the only thing that is different are the timestamps
+* I can also make these steps a separate :ref:`function<functions>` that is called for ``wake_time`` and ``sleep_time`` to remove the repetition since the only thing that is different are the timestamps
 
   .. code-block:: python
 
@@ -993,7 +977,7 @@ green: make it pass
           - process(sleep_time)
         )
 
-  we are still green
+  still green
 
 * so I remove the parts of ``duration`` that are no longer used and rename ``process`` to something more descriptive like ``get_hour``
 
@@ -1013,7 +997,7 @@ green: make it pass
 
   the terminal still shows passing tests
 
-* which means I can play around and do things like make ``get_hour`` use the same variable name instead of a new one for each step of the process
+* which means I can play around and do things like make ``get_hour`` use the same variable instead of a new one for each step of the process
 
   .. code-block:: python
 
@@ -1030,38 +1014,7 @@ green: make it pass
     def get_hour(timestamp):
         return int(timestamp.split(':')[0])
 
-* I can also make a :ref:`function<functions>` that makes random hours in ``test_sleep_duration.py``
-
-  .. code-block:: python
-
-    import random
-    import sleep_duration
-    import unittest
-
-    def random_hour():
-        return random.randint(0, 23)
-
-
-    class TestSleepDuration(unittest.TestCase):
-    ...
-
-  and then call it in ``test_duration_w_hours``
-
-  .. code-block:: python
-
-    def test_duration_w_hours(self):
-        wake_hour = random_hour()
-        sleep_hour = random_hour()
-
-        self.assertEqual(
-            sleep_duration.duration(
-                wake_time=f'{wake_hour:02}:00',
-                sleep_time=f'{sleep_hour:02}:00'
-            ),
-            wake_hour-sleep_hour
-        )
-
-  the terminal still shows passing tests
+  and the terminal still shows passing tests
 
 ----
 
@@ -1076,15 +1029,15 @@ The challenge is to write a program that calculates the difference between a giv
 * `test_string_attributes_and_methods`_ where
 
   - I used the dir_ :ref:`function<functions>`
-  - used the `help system`_ to view the `python documentation for strings`_
+  - and `help system`_ to find the `str.split`_ :ref:`method<functions>`
 
 * `test_string_splitting`_ where I
 
   - used the `str.split`_ :ref:`method<functions>` to split a string_ on a separator
   - indexed the :doc:`list </data_structures/lists/lists>` from the split to get specific items
 
-* `test_converting_strings_to_integers`_
-* `test_duration_w_hours`_ where I
+* `test_converting_strings_to_integers`_ where I used the int_ constructor
+* and `test_duration_w_hours`_ where I
 
   - used `random.randint`_ to generate random integers for hours
   - used :doc:`interpolation </how_to/pass_values>` to test the functions with random hours
