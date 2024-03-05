@@ -8,6 +8,10 @@ how to measure sleep duration: test_duration_w_date_and_time
 
 This is part 5 of 5 where I show an approach to writing a program that calculates the difference between a given sleep and wake time.
 
+.. contents:: table of contents
+  :local:
+  :depth: 2
+
 ----
 
 The ``duration`` :ref:`function<functions>` has been tested with timestamps that have hours and minutes with no date, but I could fall asleep on a Monday and wake up on a Tuesday. What would happen if I added dates to the timestamps?

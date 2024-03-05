@@ -18,6 +18,10 @@ It is also a pain when it causes the program to exit early. What if I want the p
 
 Exception Handling is a way to deal with exceptions, it allows programs to make decisions when an Exception is encountered.
 
+.. contents:: table of contents
+  :local:
+  :depth: 2
+
 ----
 
 .. _test_catching_module_not_found_error_in_tests:

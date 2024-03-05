@@ -8,6 +8,10 @@ how to measure sleep duration: test_duration_calculation
 
 This is part 3 of 5 where I show an approach to writing a program that calculates the difference between a given sleep and wake time.
 
+.. contents:: table of contents
+  :local:
+  :depth: 2
+
 ----
 
 The ``duration`` :ref:`function<functions>` currently returns a subtraction of hours and a subtraction of minutes which is not correct for calculating the difference between two timestamps

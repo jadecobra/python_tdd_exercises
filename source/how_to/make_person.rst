@@ -12,6 +12,12 @@ how to make a person
 
 This is an exercise in making :doc:`dictionaries </data_structures/dictionaries>`  with :doc:`/functions/functions`. It assumes familiarity with those concepts, though you can still try out the chapter even if you are not.
 
+.. contents:: table of contents
+  :local:
+  :depth: 2
+
+---
+
 *****************************************************************************
 test_person_factory
 *****************************************************************************

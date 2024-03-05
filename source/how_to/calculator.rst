@@ -12,6 +12,10 @@ how to make a calculator
 
 In this chapter I make a basic calculator that performs addition, subtraction, multiplication and division
 
+.. contents:: table of contents
+  :local:
+  :depth: 2
+
 ----
 
 .. _test_addition:

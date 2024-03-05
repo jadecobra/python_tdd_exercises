@@ -12,6 +12,10 @@ how to pass values
 
 this chapter shows how to pass values from tests to programs using `Formatted string literals <https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals>`_ to place values inside a string
 
+.. contents:: table of contents
+  :local:
+  :depth: 2
+
 ----
 
 .. _test_text_messages:

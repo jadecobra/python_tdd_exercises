@@ -16,6 +16,12 @@ I recommend reading `Kent Beck’s <https://en.wikipedia.org/wiki/Kent_Beck>`_ `
 
 This chapter covers one way to make a Python Test Driven Development environment
 
+.. contents:: table of contents
+  :local:
+  :depth: 2
+
+----
+
 *****************************************************************************
 requirements
 *****************************************************************************
@@ -52,7 +58,7 @@ If the operating system of your computer is Windows, use `Windows Subsystem for 
 
 * run subsequent commands in `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_ terminal
 
-*****************************************************************************
+****************************************************************************************
 make a test driven development environment
 ****************************************************************************************
 
@@ -125,8 +131,10 @@ The Test Driven Development cycle is ``RED GREEN REFACTOR``
 * **GREEN**: make it pass - write only what is needed to make the test pass
 * **REFACTOR**: make it better
 
+.. _test_failure_red:
+
 red: make it fail
-#############################################################################
+########################################################################################
 
 * I open up ``project_name/tests/test_project_name.py`` in the Interactive Development Environment (IDE) and type the following
 
@@ -215,6 +223,8 @@ This is the ``RED`` part of the Test Driven Development cycle. The error in the 
   - ``-m`` is an option passed to python to call a module given after the option
   - `unittest <https://docs.python.org/3/library/unittest.html>`_ is a module from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_ used for testing
 
+.. _test_failure_green:
+
 green: make it pass
 #############################################################################
 
@@ -257,6 +267,8 @@ green: make it pass
 
   *cue CELEBRATION MUSIC AND DANCE!* I am GREEN.
 
+.. _test_failure_refactor:
+
 refactor: make it better
 #############################################################################
 
@@ -278,7 +290,7 @@ how to automatically run tests
 ****************************************************************************************
 
 how to make a Virtual Environment
------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
 
 * With the `echo <https://man7.org/linux/man-pages/man1/echo.1.html>`_ program I make a file called ``requirements.txt`` in the ``project_name`` folder with `pytest-watch <https://pypi.org/project/pytest-watch/>`_ as the text
 
@@ -471,7 +483,7 @@ You made it this far and have become the greatest programmer in the world. Follo
 ----
 
 how to automatically make a python test driven development environment on windows without WSL
-#############################################################################
+###############################################################################################
 
 .. warning::
 

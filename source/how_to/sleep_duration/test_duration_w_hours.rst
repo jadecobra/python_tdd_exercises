@@ -8,6 +8,10 @@ how to measure sleep duration: test_duration_w_hours
 
 This is part 1 of 5 where I show an approach to writing a program that calculates the difference between a given sleep and wake time.
 
+.. contents:: table of contents
+  :local:
+  :depth: 2
+
 ----
 
 .. _test_duration_w_hours_red:
@@ -71,15 +75,33 @@ green: make it pass
     # AssertionError
     # TypeError
 
-* then add a reference to the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>` as my first argument
+* then add :ref:`None` as the first and second arguments to the assertion
 
   .. code-block:: python
 
     self.assertEqual(
-        sleep_duration
+        None,
+        None
     )
 
-  which gives me a NameError_ in the terminal
+  and the test passes
+
+.. _test_duration_w_hours_refactor_0:
+
+*****************************************************************************
+refactor: make it better
+*****************************************************************************
+
+* I replace the first argument in the assertion with a reference to the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>`
+
+  .. code-block:: python
+
+    self.assertEqual(
+        sleep_duration,
+        None
+    )
+
+  which gives me a NameError_
 
   .. code-block:: python
 
@@ -105,23 +127,7 @@ green: make it pass
     class TestSleepDuration(unittest.TestCase):
     ...
 
-  the terminal shows a :ref:`TypeError`
-
-  .. code-block:: python
-
-    TypeError: TestCase.assertEqual() missing 1 required positional argument: 'second'
-
-* I set the expectation for the test to :ref:`None`
-
-  .. code-block:: python
-
-    def test_duration_w_hours(self):
-        self.assertEqual(
-            sleep_duration,
-            None
-        )
-
-  and the terminal shows an :ref:`AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -143,8 +149,6 @@ green: make it pass
 
     AttributeError: module 'sleep_duration' has no attribute 'duration'
 
-  because there is no definition for it in the file
-
 * I add the error to the list of exceptions encountered
 
   .. code-block:: python
@@ -155,7 +159,7 @@ green: make it pass
     # NameError
     # AttributeError
 
-* then open ``sleep_duration.py`` to add the name ::
+* there is no definition for ``duration`` in ``sleep_duration.py``, so I open it to add the name ::
 
     duration
 
@@ -165,19 +169,13 @@ green: make it pass
 
     NameError: name 'duration' is not defined
 
-* so I define it by assigning it to :ref:`None`
+* I define it by assigning it to :ref:`None`
 
   .. code-block:: python
 
     duration = None
 
   and the test passes
-
-.. _test_duration_w_hours_refactor_0:
-
-*****************************************************************************
-refactor: make it better
-*****************************************************************************
 
 * I add a call to ``duration`` in the test because I want it to accept inputs
 
@@ -202,9 +200,9 @@ refactor: make it better
     def duration():
         return None
 
-  and the test passes. green again
+  green again
 
-* I want the ``duration`` :ref:`function<functions>` in the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>` to take in a ``wake_time`` of ``08:00`` and add it to the test
+* I want the ``duration`` :ref:`function<functions>` to take in a ``wake_time`` of ``08:00`` and add it to the test
 
   .. code-block:: python
 
@@ -222,7 +220,7 @@ refactor: make it better
 
     TypeError: duration() got an unexpected keyword argument 'wake_time'
 
-  because the test calls the ``duration`` :ref:`function<functions>` with ``wake_time`` but the name is not in its signature
+  because the name is not the signature for ``duration``
 
 * When I add the keyword argument to the signature and set its default value to :ref:`None`
 
@@ -252,7 +250,7 @@ refactor: make it better
 
     TypeError: duration() got an unexpected keyword argument 'sleep_time'
 
-  because the test calls the ``duration`` :ref:`function<functions>` with ``sleep_time`` but the name is not in its signature
+  because ``sleep_time`` is not in its signature
 
 * I add the second keyword argument, setting the default value to :ref:`None`
 
@@ -263,102 +261,50 @@ refactor: make it better
 
   and the test passes
 
-* I set the expectation of the test to ``1`` which is the difference between these two timestamps
+* I set the expectation of the test to match the inputs given
 
   .. code-block:: python
 
     def test_duration_w_hours(self):
+        wake_time='08:00'
+        sleep_time='07:00'
+
         self.assertEqual(
             sleep_duration.duration(
-                wake_time='08:00',
-                sleep_time='07:00'
+                wake_time=wake_time,
+                sleep_time=sleep_time
             ),
-            1
+            (wake_time, sleep_time)
         )
 
-  and get an :ref:`AssertionError` in the terminal
+  and get an :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: None != 1
+    AssertionError: None != ('08:00', '07:00')
 
-  the ``duration`` :ref:`function<functions>` returns :ref:`None` but ``test_duration_w_hours`` expects ``1`` as the result
+  the ``duration`` :ref:`function<functions>` returns :ref:`None` but ``test_duration_w_hours`` expects the inputs as the result
 
-* so I make the return value for ``duration`` match the expectation
+* so I make ``duration`` match the expectation
 
   .. code-block:: python
 
     def duration(wake_time=None, sleep_time=None):
-        return 1
+        return (wake_time, sleep_time)
 
   and the test passes, green again
 
-* This :ref:`function<functions>` will always return ``1`` even when I change the values for ``wake_time`` and ``sleep_time`` which would not be correct. I want to add variables for random integers_ to cover all timestamps from ``'00:00'`` to ``'23:00'`` to avoid writing a series of tests for changing timestamps, which I do by first adding an `import statement`_ for the random_ :doc:`module </exceptions/ModuleNotFoundError>` to ``test_sleep_duration.py``
-
-  .. code-block:: python
-
-    import random
-    import sleep_duration
-    import unittest
-
-* then add variables for random hours in a day
-
-  .. code-block:: python
-
-    def test_duration_w_hours(self):
-        wake_hour = random.randint(0, 23)
-        sleep_hour = random.randint(0, 23)
-    ...
-
-  ``random.randint(0, 23)`` will give me a random integer_ from ``0`` up to and including ``23`` to represent the 24 hours in a day
-
-* I :doc:`interpolate </how_to/pass_values>` these random integers_ in the input strings_ for ``wake_time`` and ``sleep_time``
-
-  .. code-block:: python
-
-    def test_duration_w_hours(self):
-        wake_hour = random.randint(0, 23)
-        sleep_hour = random.randint(0, 23)
-
-        self.assertEqual(
-            sleep_duration.duration(
-                wake_time=f'{wake_hour:02}:00',
-                sleep_time=f'{sleep_hour:02}:00'
-            ),
-            1
-        )
-
-  the ``:02`` in ``{wake_hour:02}`` and ``{sleep_hour:02}`` tell Python to always display two characters for the numbers, with a leading zero when it is one digit. For example, display ``01`` instead of ``1``
-
-* When I make the test expect the difference between ``wake_hour`` and ``sleep_hour``
+* I change the expectation of the test to ``wake_time-sleep_time``
 
   .. code-block:: python
 
     self.assertEqual(
         sleep_duration.duration(
-            wake_time=f'{wake_hour:02}:00',
-            sleep_time=f'{sleep_hour:02}:00'
+            wake_time=wake_time,
+            sleep_time=sleep_time
         ),
-        wake_hour-sleep_hour
+        wake_time-sleep_time
     )
-
-  I get an :ref:`AssertionError` that looks like this
-
-  .. code-block:: python
-
-    AssertionError: 1 != -2
-    AssertionError: 1 != 3
-    AssertionError: 1 != -8
-    AssertionError: 1 != 4
-
-  the ``duration`` :ref:`function<functions>` returns ``1`` but the test expects the difference between ``sleep_hour`` and ``wake_hour``
-
-* I make the ``duration`` :ref:`function<functions>` return ``wake_time`` minus ``sleep_time``
-
-  .. code-block:: python
-
-    def duration(wake_time=None, sleep_time=None):
-        return wake_time - sleep_time
 
   and the terminal shows a :ref:`TypeError`
 
@@ -373,7 +319,7 @@ refactor: make it better
 test_string_attributes_and_methods
 #############################################################################
 
-The ``wake_time`` and ``sleep_time`` are currently in this format - ``XX:00`` where ``XX`` is the hours. I want to get the first two characters which is the ``hours``
+I want to get the hours portion of the ``wake_time`` and ``sleep_time`` which are the first two characters
 
 .. _test_string_attributes_and_methods_red:
 
@@ -472,7 +418,7 @@ green: make it pass
   - and the terminal shows the list of :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of a string_, thank you Python
   - `unittest.TestCase.maxDiff`_ sets a limit on the number of characters the terminal shows for a difference between two objects. There is no limit when it is set to :ref:`None`
 
-* I copy and paste the values from the terminal into the test, and remove the extra characters - ``'E       -  '`` using find and replace
+* I copy and paste the values from the terminal into the test, and remove the extra characters - ``'E       -  '`` using find and replace - ``ctrl+H`` (windows) ``command+option+F`` (mac)
 
   .. NOTE::
 
@@ -595,6 +541,10 @@ green: make it pass
 
   the `str.split`_ :ref:`method<functions>` looks like a good solution since it splits up a word on a given separator
 
+----
+
+.. _test_string_splitting:
+
 test_string_splitting
 #############################################################################
 
@@ -617,7 +567,7 @@ I remove ``self.assertEqual(help(str))``, add a failing test for the `str.split`
   def test_duration_w_hours(self):
   ...
 
-the terminal shows an :ref:`AssertionError`
+and the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -649,7 +599,6 @@ refactor: make it better
 
 * I want to get the different parts of the timestamp, the hours and minutes, something like ``['01', '23']`` with a ``:`` as the separator
 
-
   .. code-block:: python
 
     def test_string_splitting(self):
@@ -664,7 +613,7 @@ refactor: make it better
 
     AssertionError: Lists differ: ['01:23'] != ['01', '23']
 
-* and the `documentation <python documentation for strings>`_ said `str.split`_ takes in ``sep=None, maxsplit=-1`` as inputs and ``sep`` is the separator. When I pass in ``':'`` as the separator
+* and the `documentation <python documentation for strings>`_ said `str.split`_ takes in ``sep=None, maxsplit=-1`` as inputs and ``sep`` is the separator. I want to see what happens when I pass in ``':'`` as the separator
 
   .. code-block:: python
 
@@ -676,22 +625,24 @@ refactor: make it better
 
   the test passes. I now know how to get the different parts of ``wake_time`` and ``sleep_time``
 
-* I comment out the `unittest.skip decorator`_ from ``test_duration_w_hours``
+* I comment out the `unittest.skip decorator`_ for ``test_duration_w_hours`` then add calls to the `str.split`_ :ref:`method<functions>`
 
   .. code-block:: python
 
     # @unittest.skip
     def test_duration_w_hours(self):
-    ...
+        wake_time='08:00'
+        sleep_time='07:00'
 
-* and then add calls to the `str.split`_ :ref:`method<functions>` in the ``duration`` :ref:`function<functions>` in ``sleep_duration.py``
-
-  .. code-block:: python
-
-    def duration(wake_time=None, sleep_time=None):
-        return (
-            wake_time.split(':')
-          - sleep_time.split(':')
+        self.assertEqual(
+            sleep_duration.duration(
+                wake_time=wake_time,
+                sleep_time=sleep_time
+            ),
+            (
+                wake_time.split(':')
+               -sleep_time.split(':')
+            )
         )
 
   and the terminal shows a :ref:`TypeError`
@@ -707,7 +658,16 @@ refactor: make it better
 red: make it fail
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* I want the first item of the list from splitting the timestamp string_, which I can get by using its index. Python uses `zero-based indexing`_ which means the first item is at index ``0`` and the second item is at index ``1``. See :doc:`/data_structures/lists/lists` for more. I add tests to ``test_string_splitting`` for getting specific parts of the :doc:`list </data_structures/lists/lists>` got from calling `str.split`_
+* I want the first item of the list from splitting the timestamp string_, which I can get by using its index. Python uses `zero-based indexing`_ which means the first item is at index ``0`` and the second item is at index ``1``. See :doc:`/data_structures/lists/lists` for more.
+* I uncomment the `unittest.skip decorator`_ to disable ``test_duration_w_hours``
+
+  .. code-block:: python
+
+    @unittest.skip
+    def test_duration_w_hours(self):
+    ...
+
+* then add tests to ``test_string_splitting`` for getting specific parts of the :doc:`list </data_structures/lists/lists>` from calling `str.split`_
 
   .. code-block:: python
 
@@ -719,9 +679,6 @@ red: make it fail
 
         split = '12:34'.split(':')
         self.assertEqual(split[0], 0)
-
-    def test_duration_w_hours(self):
-    ...
 
   the terminal shows an :ref:`AssertionError` because the first item (index 0) from splitting ``'12:34'`` on the separator ``':'`` is ``'12'`` which is the hours part of the timestamp
 
@@ -763,21 +720,31 @@ green: make it pass
 
     self.assertEqual(split[1], '34')
 
-  and the test passes, bringing me back to the unsolved :ref:`TypeError` for the ``test_duration_w_hours``
+  and the test passes
 
-* I make the ``duration`` :ref:`function<functions>` return the result of subtracting the first items of the list from splitting ``wake_time`` and ``sleep_time`` on the separator ``':'``
+* I comment out the `unittest.skip decorator`_ for ``test_duration_w_hours``  to bring me back to the unsolved :ref:`TypeError` for ``test_duration_w_hours`` and update the expectation to the result of subtracting the first items of the list from splitting ``wake_time`` and ``sleep_time`` on the separator ``':'``
 
   .. code-block:: python
 
-    def duration(wake_time=None, sleep_time=None):
-        return (
-            wake_time.split(':')[0]
-          - sleep_time.split(':')[0]
+    # @unittest.skip
+    def test_duration_w_hours(self):
+        wake_time='08:00'
+        sleep_time='07:00'
+
+        self.assertEqual(
+            sleep_duration.duration(
+                wake_time=wake_time,
+                sleep_time=sleep_time
+            ),
+            (
+                wake_time.split(':')[0]
+               -sleep_time.split(':')[0]
+            )
         )
 
-  and get a :ref:`TypeError` for an unsupported operation of trying to subtract one string_ from another. I know from ``test_string_splitting`` that the strings being subtracted are the values to the left of the separator ``':'``, not the entire values of ``wake_time`` and ``sleep_time``.
+  and get a :ref:`TypeError` for an unsupported operation of trying to subtract one string_ from another. I know from ``test_string_splitting`` that the strings being subtracted are just the hours portion, not the entire values of ``wake_time`` and ``sleep_time`` but they are still strings not numbers
 
-  For example, if the given ``wake_time`` is ``'02:00'`` and the given ``sleep_time`` is ``'01:00'``, the ``duration`` :ref:`function<functions>` tries to subtract ``'01'`` from ``'02'`` which is different than trying to subtract ``1`` from ``2`` - ``'01'`` is a string_ and ``1`` is an integer_
+----
 
 test_converting_strings_to_integers
 #############################################################################
@@ -845,7 +812,88 @@ green: make it pass
 
     self.assertEqual(int('12'), 12)
 
-  and we are green again
+  we are green again
+
+----
+
+
+
+
+
+* This :ref:`function<functions>` will always return ``1`` even when I change the values for ``wake_time`` and ``sleep_time`` which would not be correct. I want to add variables for random integers_ to cover all timestamps from ``'00:00'`` to ``'23:00'`` to avoid writing a series of tests for changing timestamps, which I do by first adding an `import statement`_ for the random_ :doc:`module </exceptions/ModuleNotFoundError>` to ``test_sleep_duration.py``
+
+  .. code-block:: python
+
+    import random
+    import sleep_duration
+    import unittest
+
+* then add variables for random hours in a day
+
+  .. code-block:: python
+
+    def test_duration_w_hours(self):
+        wake_hour = random.randint(0, 23)
+        sleep_hour = random.randint(0, 23)
+    ...
+
+  ``random.randint(0, 23)`` will give me a random integer_ from ``0`` up to and including ``23`` to represent the 24 hours in a day
+
+* I :doc:`interpolate </how_to/pass_values>` these random integers_ in the input strings_ for ``wake_time`` and ``sleep_time``
+
+  .. code-block:: python
+
+    def test_duration_w_hours(self):
+        wake_hour = random.randint(0, 23)
+        sleep_hour = random.randint(0, 23)
+
+        self.assertEqual(
+            sleep_duration.duration(
+                wake_time=f'{wake_hour:02}:00',
+                sleep_time=f'{sleep_hour:02}:00'
+            ),
+            1
+        )
+
+  the ``:02`` in ``{wake_hour:02}`` and ``{sleep_hour:02}`` tell Python to always display two characters for the numbers, with a leading zero when it is one digit. For example, display ``01`` instead of ``1``
+
+* When I make the test expect the difference between ``wake_hour`` and ``sleep_hour``
+
+  .. code-block:: python
+
+    self.assertEqual(
+        sleep_duration.duration(
+            wake_time=f'{wake_hour:02}:00',
+            sleep_time=f'{sleep_hour:02}:00'
+        ),
+        wake_hour-sleep_hour
+    )
+
+  I get an :ref:`AssertionError` that looks like this
+
+  .. code-block:: python
+
+    AssertionError: 1 != -2
+    AssertionError: 1 != 3
+    AssertionError: 1 != -8
+    AssertionError: 1 != 4
+
+  the ``duration`` :ref:`function<functions>` returns ``1`` but the test expects the difference between ``sleep_hour`` and ``wake_hour``
+
+* I make the ``duration`` :ref:`function<functions>` return ``wake_time`` minus ``sleep_time``
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        return wake_time - sleep_time
+
+  and the terminal shows a :ref:`TypeError`
+
+  .. code-block:: python
+
+    TypeError: unsupported operand type(s) for -: 'str' and 'str'
+
+  because Python does not have an operation defined for subtracting one string_ from another
 
 ----
 

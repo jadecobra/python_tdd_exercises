@@ -12,6 +12,12 @@ how to handle Exceptions in programs
 
 This is a continuation of :doc:`exception_handling_tests` which showed how to confirm that an exception is raised when testing. It will show how to handle exceptions when they are raised in programs
 
+.. contents:: table of contents
+  :local:
+  :depth: 2
+
+----
+
 .. _test_catching_exceptions:
 
 *****************************************************************************

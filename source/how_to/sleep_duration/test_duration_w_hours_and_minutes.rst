@@ -8,6 +8,10 @@ how to measure sleep duration: test_duration_w_hours_and_minutes
 
 This is part 2 of 5 where I show an approach to writing a program that calculates the difference between a given sleep and wake time.
 
+.. contents:: table of contents
+  :local:
+  :depth: 2
+
 ----
 
 The ``duration`` :ref:`function<functions>` has only been tested with timestamps that have random hours and ``00`` as minutes. For it to meet the requirements, it should accept timestamps with random hours and random minutes.

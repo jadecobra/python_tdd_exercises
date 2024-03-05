@@ -6,13 +6,13 @@
 .. include:: /links.rst
 
 #############################################################################
-Pumping Python: How to solve problems with Test Driven Development
+pumping python: how to solve problems with test driven development
 #############################################################################
 
 I have put together what has worked for me over a decade of learning python and seeing other people use it into this book as exercises using `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_.
 
 *****************************************************************************
-Who is this book for?
+who is this book for?
 *****************************************************************************
 
 * If you are interested in Python, this book is for you
@@ -30,7 +30,7 @@ Who is this book for?
   - ValueError_
 
 *****************************************************************************
-How can I use this book?
+how can I use this book?
 *****************************************************************************
 
 You can choose how you go through the chapters by starting with what you like.
@@ -50,7 +50,7 @@ If you prefer videos, there is one for each chapter at `<https://www.youtube.com
 .. _how-tos:
 
 *****************************************************************************
-HOWTOs
+howtos
 *****************************************************************************
 .. toctree::
   :maxdepth: 2
@@ -67,7 +67,7 @@ HOWTOs
   .. learning_models
 
 *****************************************************************************
-Table of Contents
+table of contents
 *****************************************************************************
 .. toctree::
   :maxdepth: 2
