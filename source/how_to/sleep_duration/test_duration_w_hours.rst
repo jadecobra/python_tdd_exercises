@@ -137,11 +137,10 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_duration_w_hours(self):
-        self.assertEqual(
-            sleep_duration.duration,
-            None
-        )
+    self.assertEqual(
+        sleep_duration.duration,
+        None
+    )
 
   and get an :ref:`AttributeError`
 
@@ -181,11 +180,10 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_duration_w_hours(self):
-        self.assertEqual(
-            sleep_duration.duration(),
-            None
-        )
+    self.assertEqual(
+        sleep_duration.duration(),
+        None
+    )
 
   and get a :ref:`TypeError`
 
@@ -206,13 +204,12 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_duration_w_hours(self):
-        self.assertEqual(
-            sleep_duration.duration(
-                wake_time='08:00'
-            ),
-            None
-        )
+    self.assertEqual(
+        sleep_duration.duration(
+            wake_time='08:00'
+        ),
+        None
+    )
 
   the terminal shows a :ref:`TypeError`
 
@@ -235,14 +232,13 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_duration_w_hours(self):
-        self.assertEqual(
-            sleep_duration.duration(
-                wake_time='08:00',
-                sleep_time='07:00'
-            ),
-            None
-        )
+    self.assertEqual(
+        sleep_duration.duration(
+            wake_time='08:00',
+            sleep_time='07:00'
+        ),
+        None
+    )
 
   and get another :ref:`TypeError`
 
@@ -541,8 +537,6 @@ green: make it pass
 
   the `str.split`_ :ref:`method<functions>` looks like a good solution since it splits up a word on a given separator
 
-----
-
 .. _test_string_splitting:
 
 test_string_splitting
@@ -625,25 +619,28 @@ refactor: make it better
 
   the test passes. I now know how to get the different parts of ``wake_time`` and ``sleep_time``
 
-* I comment out the `unittest.skip decorator`_ for ``test_duration_w_hours`` then add calls to the `str.split`_ :ref:`method<functions>`
+* I comment out the `unittest.skip decorator`_ for ``test_duration_w_hours``
 
   .. code-block:: python
 
     # @unittest.skip
     def test_duration_w_hours(self):
-        wake_time='08:00'
-        sleep_time='07:00'
+    ...
 
-        self.assertEqual(
-            sleep_duration.duration(
-                wake_time=wake_time,
-                sleep_time=sleep_time
-            ),
-            (
-                wake_time.split(':')
-               -sleep_time.split(':')
-            )
+* then add calls to the `str.split`_ :ref:`method<functions>`
+
+  .. code-block:: python
+
+    self.assertEqual(
+        sleep_duration.duration(
+            wake_time=wake_time,
+            sleep_time=sleep_time
+        ),
+        (
+            wake_time.split(':')
+            -sleep_time.split(':')
         )
+    )
 
   and the terminal shows a :ref:`TypeError`
 
@@ -722,29 +719,32 @@ green: make it pass
 
   and the test passes
 
-* I comment out the `unittest.skip decorator`_ for ``test_duration_w_hours``  to bring me back to the unsolved :ref:`TypeError` and update the expectation to the result of subtracting the first items of the list from splitting ``wake_time`` and ``sleep_time`` on the separator ``':'``
+* I comment out the `unittest.skip decorator`_ for ``test_duration_w_hours``  to bring me back to the unsolved :ref:`TypeError`
 
   .. code-block:: python
 
     # @unittest.skip
     def test_duration_w_hours(self):
-        wake_time='08:00'
-        sleep_time='07:00'
+    ...
 
-        self.assertEqual(
-            sleep_duration.duration(
-                wake_time=wake_time,
-                sleep_time=sleep_time
-            ),
-            (
-                wake_time.split(':')[0]
-               -sleep_time.split(':')[0]
-            )
+* then update the expectation to the result of subtracting the first items of the list from splitting ``wake_time`` and ``sleep_time`` on the separator ``':'``
+
+  .. code-block:: python
+
+    self.assertEqual(
+        sleep_duration.duration(
+            wake_time=wake_time,
+            sleep_time=sleep_time
+        ),
+        (
+            wake_time.split(':')[0]
+            -sleep_time.split(':')[0]
         )
+    )
 
   and get a :ref:`TypeError` for an unsupported operation of trying to subtract one string_ from another. I know from ``test_string_splitting`` that the strings being subtracted are just the hours portion, not the entire values of ``wake_time`` and ``sleep_time`` but they are still strings not numbers
 
-----
+.. _test_converting_strings_to_integers:
 
 test_converting_strings_to_integers
 #############################################################################
@@ -756,37 +756,37 @@ I want to see if I can use the int_ constructor to convert a string_ to an integ
 red: make it fail
 -----------------------------------------------------------------------------
 
-I uncomment the `unittest.skip decorator`_ to disable the current failing test
+* I uncomment the `unittest.skip decorator`_ to disable the current failing test
 
-.. code-block:: python
+  .. code-block:: python
 
-  @unittest.skip
-  def test_duration_w_hours(self):
-  ...
+    @unittest.skip
+    def test_duration_w_hours(self):
+    ...
 
-then add a new failing test called ``test_converting_strings_to_integers``
+*  then add a new failing test
 
-.. code-block:: python
+  .. code-block:: python
 
-  def test_converting_strings_to_integers(self):
-      self.assertEqual(int('01'), 0)
+    def test_converting_strings_to_integers(self):
+        self.assertEqual(int('01'), 0)
 
-  @unittest.skip
-  def test_duration_w_hours(self):
-  ...
+    @unittest.skip
+    def test_duration_w_hours(self):
+    ...
 
-and the terminal shows an :ref:`AssertionError`
+  and the terminal shows an :ref:`AssertionError`
 
-.. code-block:: python
+  .. code-block:: python
 
-  AssertionError: 1 != 0
+    AssertionError: 1 != 0
 
 .. _test_converting_strings_to_integers_green:
 
 green: make it pass
 -----------------------------------------------------------------------------
 
-* so I change the expectation to ``1``
+* I change the expectation to ``1``
 
   .. code-block:: python
 
@@ -859,7 +859,7 @@ green: make it pass
 
   and the terminal shows passing tests! Celebration Time!!
 
-* I want to make sure that the function is tested with random numbers, so I adding an `import statement`_ for the random_ :doc:`module </exceptions/ModuleNotFoundError>` to ``test_sleep_duration.py``
+* I want to make sure that the function is tested with random numbers, so I add an `import statement`_ for the random_ :doc:`module </exceptions/ModuleNotFoundError>` to ``test_sleep_duration.py``
 
   .. code-block:: python
 
@@ -895,6 +895,7 @@ green: make it pass
     ...
 
   the terminal still shows passing tests. The ``:02`` in ``{wake_hour:02}`` and ``{sleep_hour:02}`` tell Python to always display two characters for the numbers, with a leading zero when it is one digit. For example, display ``01`` instead of ``1``
+
 * I remove the `unittest.skip decorator`_
 * then add a :ref:`function<functions>` that makes random hours
 
@@ -935,7 +936,7 @@ green: make it pass
           - int(sleep_time.split(':')[0])
         )
 
-* we are still green so I can try the same thing for ``sleep_time``
+* all tests are still passing so I can try the same thing for ``sleep_time``
 
   .. code-block:: python
 
@@ -1034,13 +1035,13 @@ The challenge is to write a program that calculates the difference between a giv
 * `test_string_splitting`_ where I
 
   - used the `str.split`_ :ref:`method<functions>` to split a string_ on a separator
-  - indexed the :doc:`list </data_structures/lists/lists>` from the split to get specific items
+  - and indexed the :doc:`list </data_structures/lists/lists>` from the split to get specific items
 
 * `test_converting_strings_to_integers`_ where I used the int_ constructor
-* and `test_duration_w_hours`_ where I
+* and `test_duration_w_hours`_ where I used
 
-  - used `random.randint`_ to generate random integers for hours
-  - used :doc:`interpolation </how_to/pass_values>` to test the functions with random hours
+  - `random.randint`_ to generate random integers for hours
+  - and :doc:`interpolation </how_to/pass_values>` to test the functions with random hours
 
 I also encountered the following exceptions
 
