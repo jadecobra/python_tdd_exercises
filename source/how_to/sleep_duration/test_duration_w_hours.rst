@@ -688,7 +688,7 @@ red: make it fail
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* I change the value in the test to ``12``
+* I change the value in the test to ``'12'``
 
   .. code-block:: python
 
@@ -711,7 +711,7 @@ green: make it pass
 
   showing that the second item (index 1) from splitting ``'12:34'`` on the separator ``':'`` is ``'34'`` which is the minutes part of the timestamp
 
-* I change that to ``34``
+* I change that to ``'34'``
 
   .. code-block:: python
 
