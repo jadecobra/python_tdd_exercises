@@ -414,7 +414,7 @@ green: make it pass
   - and the terminal shows the list of :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of a string_, thank you Python
   - `unittest.TestCase.maxDiff`_ sets a limit on the number of characters the terminal shows for a difference between two objects. There is no limit when it is set to :ref:`None`
 
-* I copy and paste the values from the terminal into the test, and remove the extra characters - ``'E       -  '`` using find and replace - ``ctrl+H`` (windows) ``command+option+F`` (mac)
+* I copy and paste the values from the terminal into the test, and remove the extra characters - ``'E       -  '`` using find and replace - ``ctrl+h`` (windows/linux) ``command+option+f`` (mac)
 
   .. NOTE::
 
@@ -619,7 +619,7 @@ refactor: make it better
 
   the test passes. I now know how to get the different parts of ``wake_time`` and ``sleep_time``
 
-* I comment out the `unittest.skip decorator`_ for ``test_duration_w_hours``
+* I comment out the `unittest.skip decorator`_ for ``test_duration_w_hours`` by hitting ``ctrl+/`` (windows/linux) or ``command+/`` (mac)
 
   .. code-block:: python
 
@@ -764,7 +764,7 @@ red: make it fail
     def test_duration_w_hours(self):
     ...
 
-*  then add a new failing test
+* then add a new failing test
 
   .. code-block:: python
 
@@ -922,7 +922,46 @@ green: make it pass
     ...
 
   the terminal still shows passing tests
-* Since all the tests are passing I can rewrite the solution in ``sleep_duration.py`` as steps for someone who does not know how to use `str.split`_, index a :doc:`list </data_structures/lists/lists>` or use the int_ constructor
+* Since all the tests are passing I can rewrite the solution in ``sleep_duration.py`` as steps by using variables
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        wake_hour_integer = int(wake_time.split(':')[0])
+
+        return (
+            wake_hour_integer,
+            int(sleep_time.split(':')[0])
+        )
+
+  still green so I will do the same for sleep_time
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        wake_hour_integer = int(wake_time.split(':')[0])
+        sleep_hour_integer = int(sleep_time.split(':')[0])
+
+        return (
+            wake_hour_integer
+          - sleep_hour_integer
+        )
+
+  all tests are still passing
+
+* I can break the variables down further
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        wake_hour = wake_time.split(':')[0]
+        wake_hour_integer = int(wake_hour)
+
+        sleep_hour = sleep_time.split(':')[0]
+        sleep_hour_integer = int(sleep_hour)
+    ...
+
+* one more time
 
   .. code-block:: python
 
@@ -931,26 +970,10 @@ green: make it pass
         wake_hour = wake_time_split[0]
         wake_hour_integer = int(wake_hour)
 
-        return (
-            wake_hour_integer
-          - int(sleep_time.split(':')[0])
-        )
-
-* all tests are still passing so I can try the same thing for ``sleep_time``
-
-  .. code-block:: python
-
-    def duration(wake_time=None, sleep_time=None):
-        ...
-
         sleep_time_split = sleep_time.split(':')
         sleep_hour = sleep_time_split[0]
         sleep_hour_integer = int(sleep_hour)
-
-        return (
-            wake_hour_integer
-          - sleep_hour_integer
-        )
+    ...
 
   and the terminal still shows passing tests
 
@@ -1002,8 +1025,8 @@ green: make it pass
 
   .. code-block:: python
 
-    def get_hour(value):
-        value = value.split(':')
+    def get_hour(timestamp):
+        value = timestamp.split(':')
         value = value[0]
         value = int(value)
         return value
