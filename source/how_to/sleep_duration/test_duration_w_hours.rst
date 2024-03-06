@@ -847,7 +847,9 @@ green: make it pass
 
     AssertionError: ('08:00', '07:00') != 1
 
-* I use what I have learned from the tests to make the ``duration`` :ref:`function<functions>` return the difference between the hours parts of ``wake_time`` and ``sleep_time``
+  the ``duration`` :ref:`function<functions>` returns the inputs but the test now expects the difference
+
+* I take what I have learned from the tests to make it match the expectation of returning the difference between the hours
 
   .. code-block:: python
 
