@@ -148,6 +148,8 @@ refactor: make it better
 
     AttributeError: module 'sleep_duration' has no attribute 'duration'
 
+  there is no definition for ``duration`` in ``sleep_duration.py``
+
 * I add the error to the list of exceptions encountered
 
   .. code-block:: python
@@ -158,7 +160,7 @@ refactor: make it better
     # NameError
     # AttributeError
 
-* there is no definition for ``duration`` in ``sleep_duration.py``, so I open it to add the name ::
+* then open ``sleep_duration.py`` to add the name ::
 
     duration
 
@@ -898,7 +900,6 @@ green: make it pass
 
   the terminal still shows passing tests. The ``:02`` in ``{wake_hour:02}`` and ``{sleep_hour:02}`` tell Python to always display two characters for the numbers, with a leading zero when it is one digit. For example, display ``01`` instead of ``1``
 
-* I remove the `unittest.skip decorator`_
 * then add a :ref:`function<functions>` that makes random hours
 
   .. code-block:: python
@@ -924,6 +925,7 @@ green: make it pass
     ...
 
   the terminal still shows passing tests
+* I remove the `unittest.skip decorator`_
 * Since all the tests are passing I can rewrite the solution in ``sleep_duration.py`` as steps by using variables
 
   .. code-block:: python
