@@ -217,7 +217,7 @@ refactor: make it better
 
     TypeError: duration() got an unexpected keyword argument 'wake_time'
 
-  because the name is not the signature for ``duration``
+  because the name is not in the signature for ``duration``
 
 * When I add the keyword argument to the signature and set its default value to :ref:`None`
 
@@ -257,7 +257,7 @@ refactor: make it better
 
   and the test passes
 
-  * I set the expectation of the test to the inputs given
+* I set the expectation of the test to the inputs given
 
   .. code-block:: python
 
@@ -275,9 +275,7 @@ refactor: make it better
 
     AssertionError: None != ('08:00', '07:00')
 
-  the ``duration`` :ref:`function<functions>` returns :ref:`None` but ``test_duration_w_hours`` expects the inputs as the result
-
-* so I make ``duration`` match the expectation
+* the ``duration`` :ref:`function<functions>` currently returns :ref:`None` so I make it the inputs
 
   .. code-block:: python
 
