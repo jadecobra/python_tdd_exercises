@@ -640,7 +640,7 @@ refactor: make it better
         ),
         (
             wake_time.split(':')
-            -sleep_time.split(':')
+           -sleep_time.split(':')
         )
     )
 
