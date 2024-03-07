@@ -385,12 +385,16 @@ how to make a Virtual Environment
 * I make the input on line 7 in ``test_project_name.py`` to :doc:`True </data_structures/booleans/booleans>` to make it fail and back to :doc:`False </data_structures/booleans/booleans>` to make it pass with the terminal responding to each change
 * I can press ``ctrl`` + ``c`` on the keyboard in the terminal to stop the tests at anytime
 
+----
+
 how to deactivate a virtual environment
 ########################################################################################
 
 type the following in a terminal with an active `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ ::
 
   deactivate
+
+----
 
 how to activate a virtual environment
 ########################################################################################
