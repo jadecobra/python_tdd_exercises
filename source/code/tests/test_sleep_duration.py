@@ -205,11 +205,10 @@ class TestSleepDuration(unittest.TestCase):
                 )
 
 
-
 # Exceptions Encountered
 # AssertionError
+# TypeError
 # NameError
 # AttributeError
-# TypeError
 # SyntaxError
 # ValueError

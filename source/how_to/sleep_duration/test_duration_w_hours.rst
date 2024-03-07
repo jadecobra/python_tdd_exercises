@@ -43,8 +43,8 @@ red: make it fail
     tests/test_sleep_duration.py:7: AssertionError
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_sleep_duration.py:7`` with the mouse to open it
-* and change ``True`` to ``False`` to make ``test_failure`` pass
-* then replace the test with a new failing test
+* then change ``True`` to ``False``
+* and replace the test with a new failing test
 
   .. code-block:: python
 
@@ -53,7 +53,7 @@ red: make it fail
 
         )
 
-  and I get a :ref:`TypeError` in the terminal
+  the terminal shows a :ref:`TypeError`
 
   .. code-block:: python
 
@@ -85,12 +85,6 @@ green: make it pass
     )
 
   and the test passes
-
-.. _test_duration_w_hours_refactor_0:
-
-*****************************************************************************
-refactor: make it better
-*****************************************************************************
 
 * I replace the first argument in the assertion with a reference to the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>`
 
@@ -158,11 +152,11 @@ refactor: make it better
     # NameError
     # AttributeError
 
-* then open ``sleep_duration.py`` to add the name ::
+* then open ``sleep_duration.py`` in the editor to add the name ::
 
     duration
 
-  and get a NameError_ in the terminal
+  which gives me a NameError_ in the terminal
 
   .. code-block:: python
 
@@ -173,8 +167,6 @@ refactor: make it better
   .. code-block:: python
 
     duration = None
-
-  and the test passes
 
 * I add a call to ``duration`` in the test because I want it to accept inputs
 
@@ -191,14 +183,12 @@ refactor: make it better
 
     TypeError: 'NoneType' object is not callable
 
-* then I make ``duration`` a :ref:`function<functions>` to make it callable_
+* then I make ``duration`` callable_ by defining it as a :ref:`function<functions>`
 
   .. code-block:: python
 
     def duration():
         return None
-
-  green again
 
 * I want the ``duration`` :ref:`function<functions>` to take in a ``wake_time`` of ``08:00`` and add it to the test
 
@@ -219,14 +209,12 @@ refactor: make it better
 
   because the name is not in the signature for ``duration``
 
-* When I add the keyword argument to the signature and set its default value to :ref:`None`
+* I add it to the signature and set its default value to :ref:`None`
 
   .. code-block:: python
 
     def duration(wake_time=None):
         return None
-
-  the test passes
 
 * I also want the ``duration`` :ref:`function<functions>` to take in a ``sleep_time`` of ``'07:00'``
 
@@ -240,7 +228,7 @@ refactor: make it better
         None
     )
 
-  and get another :ref:`TypeError`
+  and get a similar :ref:`TypeError`
 
   .. code-block:: python
 
@@ -248,16 +236,14 @@ refactor: make it better
 
   because ``sleep_time`` is not in its signature
 
-* I add the second keyword argument, setting the default value to :ref:`None`
+* I add it, setting the default value to :ref:`None`
 
   .. code-block:: python
 
     def duration(wake_time=None, sleep_time=None):
         return None
 
-  and the test passes
-
-* I set the expectation of the test to the inputs given
+* then I set the expectation of the test to the inputs given
 
   .. code-block:: python
 
@@ -275,14 +261,20 @@ refactor: make it better
 
     AssertionError: None != ('08:00', '07:00')
 
-* the ``duration`` :ref:`function<functions>` currently returns :ref:`None` so I make it the inputs
+* the ``duration`` :ref:`function<functions>` currently returns :ref:`None` so I make it return its inputs
 
   .. code-block:: python
 
     def duration(wake_time=None, sleep_time=None):
         return (wake_time, sleep_time)
 
-  and the test passes, green again
+  and the test passes, We are green
+
+.. _test_duration_w_hours_refactor_0:
+
+*****************************************************************************
+refactor: make it better
+*****************************************************************************
 
 * I add variables to the test to remove the repetition
 
@@ -354,7 +346,7 @@ red: make it fail
     def test_duration_w_hours(self):
     ...
 
-  the terminal shows an :ref:`AssertionError`
+  I get an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -365,7 +357,7 @@ red: make it fail
 green: make it pass
 -----------------------------------------------------------------------------
 
-* I copy and paste the values on the left side of the comparison to replace :ref:`None` in the test
+* and copy the values on the left side of the comparison then paste to replace :ref:`None` in the test
 
   .. code-block:: python
 
@@ -421,7 +413,7 @@ green: make it pass
             ['__add__', '__class__', '__contains__', '[934 chars]ill']
         )
 
-  - and the terminal shows the list of :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of a string_, thank you Python
+  - and the terminal shows the full list of :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of a string_, thank you Python
   - `unittest.TestCase.maxDiff`_ sets a limit on the number of characters the terminal shows for a difference between two objects. There is no limit when it is set to :ref:`None`
 
 * I copy and paste the values from the terminal into the test, and remove the extra characters - ``'E       -  '`` using find and replace - ``ctrl+h`` (windows/linux) ``command+option+f`` (mac)
@@ -601,7 +593,7 @@ and we are green again
 refactor: make it better
 -----------------------------------------------------------------------------
 
-* I want to get the different parts of the timestamp, the hours and minutes, something like ``['01', '23']`` with a ``:`` as the separator
+* I want to get the different parts of the timestamp - the hours and minutes, something like ``['01', '23']`` with a ``:`` as the separator
 
   .. code-block:: python
 
@@ -617,7 +609,7 @@ refactor: make it better
 
     AssertionError: Lists differ: ['01:23'] != ['01', '23']
 
-* and the `documentation <python documentation for strings>`_ said `str.split`_ takes in ``sep=None, maxsplit=-1`` as inputs and ``sep`` is the separator. I want to see what happens when I pass in ``':'`` as the separator
+* from the `documentation <python documentation for strings>`_, `str.split`_ takes in ``sep=None, maxsplit=-1`` as inputs and ``sep`` is the separator. I want to see what happens when I pass in ``':'`` as the separator
 
   .. code-block:: python
 
@@ -658,15 +650,15 @@ refactor: make it better
 
     TypeError: unsupported operand type(s) for -: 'list' and 'list'
 
-  this time for trying to subtract one :doc:`list </data_structures/lists/lists>` from another
+  I cannot subtract one :doc:`list </data_structures/lists/lists>` from another
 
 .. _test_string_splitting_red_1:
 
 red: make it fail
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* I want the first item of the list from splitting the timestamp string_, which I can get by using its index. Python uses `zero-based indexing`_ which means the first item is at index ``0`` and the second item is at index ``1``. See :doc:`/data_structures/lists/lists` for more.
-* I uncomment the `unittest.skip decorator`_ to disable ``test_duration_w_hours``
+* I want the first item of the list from splitting the timestamp string_ which is the hours, and I know I can get it by using its index as covered in :doc:`/data_structures/lists/lists`. Python uses `zero-based indexing`_ which means the first item is at index ``0`` and the second item is at index ``1``
+* I uncomment the `unittest.skip decorator`_ to disable ``test_duration_w_hours`` by hitting ``ctrl+/`` (windows/linux) or ``command+/`` (mac)
 
   .. code-block:: python
 
@@ -706,22 +698,25 @@ green: make it pass
 
   and the test passes
 
-* I add another test for getting the second item from the list
+refactor: make it better
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* I add another test for getting the minutes portion
 
   .. code-block:: python
 
     self.assertEqual(split[0], '12')
     self.assertEqual(split[1], 1)
 
-  and the terminal an :ref:`AssertionError`
+  and get an :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: '34' != 1
 
-  showing that the second item (index 1) from splitting ``'12:34'`` on the separator ``':'`` is ``'34'`` which is the minutes part of the timestamp
+  the second item (index 1) from splitting ``'12:34'`` on the separator ``':'`` is ``'34'`` which is the minutes part of the timestamp
 
-* I change that to ``'34'``
+* I change the ``1`` to ``'34'``
 
   .. code-block:: python
 
@@ -729,7 +724,11 @@ green: make it pass
 
   and the test passes
 
-* I comment out the `unittest.skip decorator`_ for ``test_duration_w_hours``  to bring me back to the unsolved :ref:`TypeError`
+----
+
+.. _test_duration_w_hours_refactor_1:
+
+* I comment out the `unittest.skip decorator`_ for ``test_duration_w_hours``  to bring me back to the unsolved :ref:`TypeError` by hitting ``ctrl+/`` (windows/linux) or ``command+/`` (mac)
 
   .. code-block:: python
 
@@ -766,7 +765,7 @@ I want to see if I can use the int_ constructor to convert a string_ to an integ
 red: make it fail
 -----------------------------------------------------------------------------
 
-* I uncomment the `unittest.skip decorator`_ to disable the current failing test
+* I uncomment the `unittest.skip decorator`_ to disable the current failing test by hitting ``ctrl+/`` (windows/linux) or ``command+/`` (mac)
 
   .. code-block:: python
 
@@ -804,6 +803,11 @@ green: make it pass
 
   and the test passes
 
+.. _test_converting_strings_to_integers_refactor:
+
+refactor: make it pass
+-----------------------------------------------------------------------------
+
 * I add another line to test numbers greater than ``9``
 
   .. code-block:: python
@@ -826,9 +830,9 @@ green: make it pass
 
 ----
 
-.. _test_duration_w_hours_refactor_1:
+.. _test_duration_w_hours_refactor_2:
 
-* I comment out the `unittest.skip decorator`_ for ``test_duration_w_hours``  to bring me back to the unsolved :ref:`TypeError`
+* I comment out the `unittest.skip decorator`_ for ``test_duration_w_hours``  to bring me back to the unsolved :ref:`TypeError` by hitting ``ctrl+/`` (windows/linux) or ``command+/`` (mac)
 
   .. code-block:: python
 
@@ -857,9 +861,9 @@ green: make it pass
 
     AssertionError: ('08:00', '07:00') != 1
 
-  the ``duration`` :ref:`function<functions>` returns the inputs but the test now expects the difference
+  the ``duration`` :ref:`function<functions>` returns its inputs but the test now expects the difference
 
-* I take what I have learned from the tests to make it match the expectation of returning the difference between the hours
+* I take what I learned from the tests to make it match the expectation
 
   .. code-block:: python
 
@@ -894,7 +898,7 @@ green: make it pass
 
   ``random.randint(0, 23)`` will give me a random integer_ from ``0`` up to and including ``23`` to represent the 24 hours in a day
 
-* I :doc:`interpolate </how_to/pass_values>` these random integers_ in the input strings_ for ``wake_time`` and ``sleep_time``
+* and :doc:`interpolate </how_to/pass_values>` the random integers_ as hours for ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
 
@@ -908,7 +912,7 @@ green: make it pass
 
   the terminal still shows passing tests. The ``:02`` in ``{wake_hour:02}`` and ``{sleep_hour:02}`` tell Python to always display two characters for the numbers, with a leading zero when it is one digit. For example, display ``01`` instead of ``1``
 
-* then add a :ref:`function<functions>` that makes random hours
+* then add a :ref:`function<functions>` to return random hours
 
   .. code-block:: python
 
@@ -1072,7 +1076,7 @@ The challenge is to write a program that calculates the difference between a giv
   - used the `str.split`_ :ref:`method<functions>` to split a string_ on a separator
   - and indexed the :doc:`list </data_structures/lists/lists>` from the split to get specific items
 
-* `test_converting_strings_to_integers`_ where I used the int_ constructor
+* `test_converting_strings_to_integers`_ with the int_ constructor
 * and `test_duration_w_hours`_ where I used
 
   - `random.randint`_ to generate random integers for hours
