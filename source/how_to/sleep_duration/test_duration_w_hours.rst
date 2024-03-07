@@ -107,7 +107,7 @@ refactor: make it better
 
     NameError: name 'sleep_duration' is not defined
 
-* so I add it to the list of exceptions as well
+* so I add it as an exception encountered
 
   .. code-block:: python
 
@@ -259,21 +259,17 @@ refactor: make it better
 
   and the test passes
 
-* I set the expectation of the test to match the inputs given
+  * I set the expectation of the test to the inputs given
 
   .. code-block:: python
 
-    def test_duration_w_hours(self):
-        wake_time='08:00'
-        sleep_time='07:00'
-
-        self.assertEqual(
-            sleep_duration.duration(
-                wake_time=wake_time,
-                sleep_time=sleep_time
-            ),
-            (wake_time, sleep_time)
-        )
+    self.assertEqual(
+        sleep_duration.duration(
+            wake_time='08:00',
+            sleep_time='07:00'
+        ),
+        ('08:00', '07:00')
+    )
 
   and get an :ref:`AssertionError`
 
@@ -292,7 +288,23 @@ refactor: make it better
 
   and the test passes, green again
 
-* I change the expectation of the test to ``wake_time-sleep_time``
+* I add variables to the test to remove the repetition
+
+  .. code-block:: python
+
+    def test_duration_w_hours(self):
+        wake_time='08:00'
+        sleep_time='07:00'
+
+        self.assertEqual(
+            sleep_duration.duration(
+                wake_time=wake_time,
+                sleep_time=sleep_time
+            ),
+            (wake_time, sleep_time)
+        )
+
+* then change the expectation of the test to ``wake_time-sleep_time``
 
   .. code-block:: python
 
