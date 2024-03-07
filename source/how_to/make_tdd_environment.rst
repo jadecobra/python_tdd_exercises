@@ -290,7 +290,7 @@ how to automatically run tests
 ****************************************************************************************
 
 how to make a Virtual Environment
-----------------------------------------------------------------------------------------
+########################################################################################
 
 * With the `echo <https://man7.org/linux/man-pages/man1/echo.1.html>`_ program I make a file called ``requirements.txt`` in the ``project_name`` folder with `pytest-watch <https://pypi.org/project/pytest-watch/>`_ as the text
 
@@ -386,14 +386,14 @@ how to make a Virtual Environment
 * I can press ``ctrl`` + ``c`` on the keyboard in the terminal to stop the tests at anytime
 
 how to deactivate a virtual environment
------------------------------------------------------------------------------
+########################################################################################
 
 type the following in a terminal with an active `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ ::
 
   deactivate
 
 how to activate a virtual environment
------------------------------------------------------------------------------
+########################################################################################
 
 Make sure you are in the directory that contains the `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ for example ``project_name`` and type the following in the terminal::
 

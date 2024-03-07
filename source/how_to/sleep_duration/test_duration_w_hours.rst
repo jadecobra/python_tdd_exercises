@@ -148,8 +148,6 @@ refactor: make it better
 
     AttributeError: module 'sleep_duration' has no attribute 'duration'
 
-  there is no definition for ``duration`` in ``sleep_duration.py``
-
 * I add the error to the list of exceptions encountered
 
   .. code-block:: python
@@ -322,7 +320,7 @@ refactor: make it better
 
     TypeError: unsupported operand type(s) for -: 'str' and 'str'
 
-  because Python does not have an operation defined for subtracting one string_ from another
+  I cannot subtract one string_ from another
 
 .. _test_string_attributes_and_methods:
 
