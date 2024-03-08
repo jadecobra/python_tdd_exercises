@@ -82,8 +82,6 @@ green: make it pass
         None
     )
 
-  and the test passes
-
 * I replace the first argument in the assertion with a reference to the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>`
 
   .. code-block:: python
@@ -315,7 +313,7 @@ refactor: make it better
 test_string_attributes_and_methods
 #############################################################################
 
-I want to get the hours portion of the ``wake_time`` and ``sleep_time`` which are the first two characters
+I will try to get the hours part of the ``wake_time`` and ``sleep_time`` which are the first two characters
 
 .. _test_string_attributes_and_methods_red:
 
@@ -699,7 +697,7 @@ green: make it pass
 refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* I add another test for getting the minutes portion
+* I add another test for getting the minutes
 
   .. code-block:: python
 
@@ -749,7 +747,7 @@ refactor: make it better
         )
     )
 
-  and get a :ref:`TypeError` for an unsupported operation of trying to subtract one string_ from another. I know from ``test_string_splitting`` that the strings being subtracted are just the hours portion, not the entire values of ``wake_time`` and ``sleep_time`` but they are still strings not numbers
+  and get a :ref:`TypeError` for once again trying to subtract one string_ from another
 
 .. _test_converting_strings_to_integers:
 
@@ -948,121 +946,35 @@ refactor: make it pass
   still green
 
 * I remove the `unittest.skip decorator`_
-* Since all the tests are passing I can rewrite the solution in ``sleep_duration.py`` as steps by using variables
-
-  .. code-block:: python
-
-    def duration(wake_time=None, sleep_time=None):
-        wake_hour_integer = int(wake_time.split(':')[0])
-
-        return (
-            wake_hour_integer,
-            int(sleep_time.split(':')[0])
-        )
-
-  still green so I will do the same for sleep_time
-
-  .. code-block:: python
-
-    def duration(wake_time=None, sleep_time=None):
-        wake_hour_integer = int(wake_time.split(':')[0])
-        sleep_hour_integer = int(sleep_time.split(':')[0])
-
-        return (
-            wake_hour_integer
-          - sleep_hour_integer
-        )
-
-  all tests are still passing
-
-* I can break the variables down further
-
-  .. code-block:: python
-
-    def duration(wake_time=None, sleep_time=None):
-        wake_hour = wake_time.split(':')[0]
-        wake_hour_integer = int(wake_hour)
-
-        sleep_hour = sleep_time.split(':')[0]
-        sleep_hour_integer = int(sleep_hour)
-    ...
-
-* one more time
-
-  .. code-block:: python
-
-    def duration(wake_time=None, sleep_time=None):
-        wake_time_split = wake_time.split(':')
-        wake_hour = wake_time_split[0]
-        wake_hour_integer = int(wake_hour)
-
-        sleep_time_split = sleep_time.split(':')
-        sleep_hour = sleep_time_split[0]
-        sleep_hour_integer = int(sleep_hour)
-    ...
-
-  and the terminal still shows passing tests
-
-* I can also make these steps a separate :ref:`function<functions>` that is called for ``wake_time`` and ``sleep_time`` to remove the repetition since the only thing that is different are the timestamps
+* since the only parts that change in the solution are the timestamps, I can write a function that gets called to get the hours parts
 
   .. code-block:: python
 
     def process(timestamp):
-        split = timestamp.split(':')
-        hour = split[0]
-        hour_integer = int(hour)
-        return hour_integer
+        return int(timestamp.split(':')[0])
 
-    def duration(wake_time=None, sleep_time=None):
-        wake_time_split = wake_time.split(':')
-        wake_hour = wake_time_split[0]
-        wake_hour_integer = int(wake_hour)
+  and call it in ``duration``
 
-        sleep_time_split = sleep_time.split(':')
-        sleep_hour = sleep_time_split[0]
-        sleep_hour_integer = int(sleep_hour)
+  .. code-block:: python
 
+    def duration(wake_time=None, sleep_time):
         return (
             process(wake_time)
           - process(sleep_time)
         )
 
-  still green
-
-* so I remove the parts of ``duration`` that are no longer used and rename ``process`` to something more descriptive like ``get_hour``
-
-  .. code-block:: python
-
-    def get_hour(timestamp):
-        split = timestamp.split(':')
-        hour = split[0]
-        hour_integer = int(hour)
-        return hour_integer
-
-    def duration(wake_time=None, sleep_time=None):
-        return (
-            get_hour(wake_time)
-          - get_hour(sleep_time)
-        )
-
-  the terminal still shows passing tests
-
-* which means I can play around and do things like make ``get_hour`` use the same variable instead of a new one for each step of the process
-
-  .. code-block:: python
-
-    def get_hour(timestamp):
-        value = timestamp.split(':')
-        value = value[0]
-        value = int(value)
-        return value
-
-  or change it to use one line, though it might not be as easy to understand
+* then rename ``process`` to something more descriptive
 
   .. code-block:: python
 
     def get_hour(timestamp):
         return int(timestamp.split(':')[0])
+
+    def duration(wake_time=None, sleep_time):
+        return (
+            get_hour(wake_time)
+          - get_hour(sleep_time)
+        )
 
   and the terminal still shows passing tests
 

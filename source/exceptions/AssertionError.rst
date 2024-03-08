@@ -454,7 +454,7 @@ I could sum up the above statements this way - in Python :doc:`True </data_struc
 .. _test_assertion_errors_w_equality:
 
 *****************************************************************************
-test_assertion_errors_w_equaliy
+test_assertion_errors_w_equality
 *****************************************************************************
 
 I can also make assertions where I compare if two things are the same or equal
