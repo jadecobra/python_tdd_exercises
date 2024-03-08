@@ -935,6 +935,7 @@ refactor: make it pass
     ...
 
   the terminal still shows passing tests
+
 * I can also call ``random_hour`` directly instead of using the variables
 
   .. code-block:: python
@@ -943,6 +944,7 @@ refactor: make it pass
         wake_time = f'{random_hour():02}:00'
         sleep_time = f'{random_hour():02}:00'
     ...
+
   still green
 
 * I remove the `unittest.skip decorator`_
