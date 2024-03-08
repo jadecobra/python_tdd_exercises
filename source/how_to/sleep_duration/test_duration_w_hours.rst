@@ -59,8 +59,6 @@ red: make it fail
 
     TypeError: TestCase.assertEqual() missing 2 required positional arguments: 'first' and 'second'
 
-  ``assertEqual`` takes in two values to make a comparison
-
 .. _test_duration_w_hours_green:
 
 *****************************************************************************
@@ -747,7 +745,7 @@ refactor: make it better
         ),
         (
             wake_time.split(':')[0]
-            -sleep_time.split(':')[0]
+           -sleep_time.split(':')[0]
         )
     )
 
@@ -937,6 +935,16 @@ refactor: make it pass
     ...
 
   the terminal still shows passing tests
+* I can also call ``random_hour`` directly instead of using the variables
+
+  .. code-block:: python
+
+    def test_duration_w_hours(self):
+        wake_time = f'{random_hour():02}:00'
+        sleep_time = f'{random_hour():02}:00'
+    ...
+  still green
+
 * I remove the `unittest.skip decorator`_
 * Since all the tests are passing I can rewrite the solution in ``sleep_duration.py`` as steps by using variables
 
