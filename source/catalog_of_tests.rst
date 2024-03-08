@@ -6,6 +6,8 @@ test catalog
   :local:
   :depth: 2
 
+----
+
 Here are all the tests written in this book
 
 :ref:`test_failure`

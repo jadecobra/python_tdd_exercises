@@ -945,6 +945,25 @@ refactor: make it pass
 
   still green
 
+* ``wake_time`` and ``sleep_time`` now look exactly the same so I will create a function that returns a random timestamp
+
+  .. code-block:: python
+
+    def random_hour():
+        return random.randint(0, 23)
+
+    def random_timestamp():
+        return f'{random_hour():02}:00'
+
+  and replace the timestamps with calls to ``random_timestamp``
+
+  .. code-block:: python
+
+    def test_duration_w_hours(self):
+        wake_time = random_timestamp()
+        sleep_time = random_timestamp()
+    ...
+
 * I remove the `unittest.skip decorator`_
 * since the only parts that change in the solution are the timestamps, I can write a function that gets called to get the hours parts
 
