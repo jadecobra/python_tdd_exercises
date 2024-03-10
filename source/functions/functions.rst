@@ -38,6 +38,5 @@ The following tests cover different ways to make a function
   test_functions_w_positional_arguments
   test_functions_w_keyword_arguments
   test_functions_w_positional_and_keyword_arguments
-  
 
 ----

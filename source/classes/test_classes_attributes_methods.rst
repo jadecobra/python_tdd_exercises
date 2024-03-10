@@ -1,13 +1,18 @@
 .. include:: ../links.rst
 
-#################################
+#############################################################################################################
 classes: attributes and methods
-#################################
+#############################################################################
 
-how to define a class with attributes
---------------------------------------
+.. _test_classes_w_attributes:
+
+*****************************************************************************
+test_classes_w_attributes
+*****************************************************************************
 
 I now add some tests for attributes since I know how to define a class for attributes
+
+.. _test_classes_w_attributes_red:
 
 red: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -33,6 +38,7 @@ red: make it fail
 
   the terminal shows an :ref:`AttributeError` for a missing attribute in the newly defined class
 
+.. _test_classes_w_attributes_green:
 
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -70,6 +76,13 @@ green: make it pass
 
   and the terminal shows all tests passed
 
+.. _test_classes_w_attributes_refactor:
+
+refactor: make it better
+#############################################################################
+
+.. _test_classes_w_attributes_refactor_red:
+
 red: make it fail
 ^^^^^^^^^^^^^^^^^
 
@@ -88,6 +101,8 @@ Let us add more tests with the other python data structures to ``test_classes_w_
       self.assertEqual(classes.ClassWithAttributes.a_dictionary, dict)
 
 the terminal shows an :ref:`AttributeError`
+
+.. _test_classes_w_attributes_refactor_green:
 
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -110,10 +125,15 @@ I add matching attributes to ``ClassWithAttributes`` to make the tests pass
 
 and the terminal shows all tests pass
 
-how to define a class with methods
-----------------------------------
+.. _test_classes_w_methods:
+
+*****************************************************************************
+test_classes_w_methods
+*****************************************************************************
 
 I can also define classes with :ref:`methods<functions>` which are function definitions that belong to the class
+
+.. _test_classes_w_methods_red:
 
 red: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -129,6 +149,8 @@ I add some tests for class methods to ``TestClasses`` in ``classes.py``
       )
 
 and the terminal shows :ref:`AttributeError`
+
+.. _test_classes_w_methods_green:
 
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -181,7 +203,6 @@ green: make it pass
 
   and the terminal shows an :ref:`AssertionError`. Progress!
 
-
 * I then change the value that ``method_a`` returns to match the expectation of the test
 
   .. code-block:: python
@@ -191,6 +212,7 @@ green: make it pass
 
   and the test passes
 
+.. _test_classes_w_methods_refactor:
 
 refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -219,14 +241,19 @@ refactor: make it better
 
   the terminal shows an :ref:`AttributeError`
 
-* and I make ``ClassWithMethods`` in ``classes.py`` until all tests pass
+* and I change each assertion with the correct value until they all pass
 
 ----
 
-how to define a class with attributes and methods
--------------------------------------------------
+.. _test_classes_w_attributes_and_methods:
+
+*****************************************************************************
+test_classes_w_attributes_and_methods
+*****************************************************************************
 
 Since I know how to define classes with methods and how to define classes with attributes, what happens when I define a class with both?
+
+.. _test_classes_w_attributes_and_methods_red:
 
 red: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -247,6 +274,8 @@ I add another test for a class that has both attributes and methods
 
 the terminal shows an :ref:`AttributeError`
 
+.. _test_classes_w_attributes_and_methods_green:
+
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
 
@@ -264,12 +293,17 @@ I make ``classes.py`` to make the tests pass by defining the class, attribute an
 
 ----
 
-how to View the attributes and methods of a class
---------------------------------------------------
+.. _test_object_attributes_and_methods:
+
+*****************************************************************************
+test_object_attributes_and_methods
+*****************************************************************************
 
 To view what :ref:`attributes<AttributeError>` and ``methods`` are defined for any `object <https://docs.python.org/3/glossary.html#term-object>`_ I can call ``dir`` on the `object <https://docs.python.org/3/glossary.html#term-object>`_.
 
 The ``dir`` :ref:`method<functions>` returns a :doc:`list </data_structures/lists/lists>` of all attributes and :ref:`methods<functions>` of the object provided to it as input
+
+.. _test_object_attributes_and_methods_red:
 
 red: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -278,13 +312,15 @@ I add a test to ``test_classes.py``
 
 .. code-block:: python
 
-  def test_view_attributes_and_methods_of_an_object(self):
+  def test_object_attributes_and_methods(self):
     self.assertEqual(
         dir(classes.ClassWithAttributesAndMethods),
         []
     )
 
 the terminal shows an :ref:`AssertionError` as the expected and real values do not match
+
+.. _test_object_attributes_and_methods_green:
 
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^
@@ -293,7 +329,7 @@ I copy the values from the terminal to update the expectation of the test
 
 .. code-block:: python
 
-  def test_view_attributes_and_methods_of_an_object(self):
+  def test_object_attributes_and_methods(self):
       self.assertEqual(
           dir(classes.ClassWithAttributesAndMethods),
           [
@@ -329,6 +365,12 @@ I copy the values from the terminal to update the expectation of the test
       )
 
 and it passes, the last two values in the list are ``attribute`` and ``method`` which I defined earlier
+
+----
+
+*****************************************************************************
+review
+*****************************************************************************
 
 CONGRATULATIONS! If you made it this far and typed along with me, You know
 
