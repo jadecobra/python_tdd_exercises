@@ -11,6 +11,7 @@ The tests in this chapter cover the following exceptions that have helped me gai
   :maxdepth: 1
 
   ModuleNotFoundError
+  IndentationError
   AssertionError
   AttributeError
   TypeError

@@ -1,8 +1,8 @@
 .. include:: ../../links.rst
 
-##################################
+#############################################################################
 booleans
-##################################
+#############################################################################
 
 .. raw:: html
 
@@ -12,7 +12,7 @@ booleans
 
 .. contents:: table of contents
   :local:
-  :depth: 1
+  :depth: 4
 
 ----
 
@@ -20,12 +20,15 @@ The tests in this chapter go over `booleans <https://docs.python.org/3/library/f
 
 There are two `boolean <https://docs.python.org/3/library/functions.html#bool>`_ values - `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ and `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 
-****************
-What is False?
-****************
+.. _test_what_is_false:
+
+*****************************************************************************
+test_what_is_false
+*****************************************************************************
 
 red: make it fail
-==================
+#############################################################################
+
 
 I make a file called ``test_booleans.py`` and add a failing test in ``test_what_is_false`` to check if `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is an instance of the `boolean <https://docs.python.org/3/library/functions.html#bool>`_ :doc:`class </classes/classes>`
 
@@ -48,7 +51,8 @@ the terminal shows an :ref:`AssertionError` because `False <https://docs.python.
 The `unittest.TestCase.assertNotIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance>`_ :ref:`method<functions>` checks that the first input given is NOT an instance of the :doc:`class </classes/classes>` given as the second input. It is like asking the question ``is False not an instance of bool?``
 
 green: make it pass
-====================
+#############################################################################
+==
 
 I make ``assertNotIsInstance`` to ``assertIsInstance`` to make the test pass
 
@@ -61,7 +65,8 @@ The `unittest.TestCase.assertIsInstance <https://docs.python.org/3/library/unitt
 From the tests I see that `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
 
 refactor: make it better
-=========================
+#############################################################################
+
 
 * I add a failing line to ``test_what_is_false``
 
@@ -92,12 +97,13 @@ From these tests I see that
 
 ----
 
-****************
+*****************************************************************************
 What is True?
-****************
+*****************************************************************************
 
 red: make it fail
-==================
+#############################################################################
+
 
 I add a :ref:`method<functions>` called ``test_what_is_true`` with a failing line to to check if `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is an instance of the `boolean <https://docs.python.org/3/library/functions.html#bool>`_ :doc:`class </classes/classes>`
 
@@ -113,7 +119,8 @@ the terminal shows an :ref:`AssertionError` because `True <https://docs.python.o
     AssertionError: True is an instance of <class 'bool'>
 
 green: make it pass
-====================
+#############################################################################
+==
 
 I make ``assertNotIsInstance`` to ``assertIsInstance`` to make the test pass
 
@@ -122,7 +129,8 @@ I make ``assertNotIsInstance`` to ``assertIsInstance`` to make the test pass
   self.assertIsInstance(True, bool)
 
 refactor: make it better
-=========================
+#############################################################################
+
 
 * I add a failing line to ``test_what_is_true``
 
@@ -162,12 +170,13 @@ I want to know if any of the other Python data types are `False <https://docs.py
 
 ----
 
-************************
+*************************************************************************************
 is None False or True?
-************************
+*************************************************************************************
 
 red: make it fail
-==================
+#############################################################################
+
 
 I add a line to ``test_what_is_true`` to test if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
 
@@ -185,7 +194,8 @@ the terminal shows an :ref:`AssertionError`
   AssertionError: None is not true
 
 green: make it pass
-====================
+#############################################################################
+==
 
 I make ``assertTrue`` to ``assertFalse``
 
@@ -196,7 +206,8 @@ I make ``assertTrue`` to ``assertFalse``
 and the terminal shows passing tests
 
 refactor: make it better
-=========================
+#############################################################################
+
 
 I move the line to the ``test_what_is_false`` :ref:`method<functions>`
 
@@ -219,12 +230,13 @@ From the tests I see that
 
 ----
 
-******************************
+*******************************************************************************************
 is an integer False or True?
-******************************
+*******************************************************************************************
 
 red: make it fail
-==================
+#############################################################################
+
 
 I add a line to test if an `integer <https://docs.python.org/3/library/functions.html#int>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
 
@@ -243,7 +255,8 @@ the terminal shows an :ref:`AssertionError`
   AssertionError: -1 is not false
 
 green: make it pass
-====================
+#############################################################################
+==
 
 I make ``assertFalse`` to ``assertTrue``
 
@@ -254,7 +267,8 @@ I make ``assertFalse`` to ``assertTrue``
 and the terminal shows passing tests
 
 refactor: make it better
-=========================
+#############################################################################
+
 
 * I move the line to the ``test_what_is_true`` :ref:`method<functions>`
 
@@ -344,12 +358,13 @@ From the tests I see that
 
 -----
 
-******************************
+*******************************************************************************************
 is a float False or True?
-******************************
+*******************************************************************************************
 
 red: make it fail
-==================
+#############################################################################
+
 
 I add a line to test if a `float <https://docs.python.org/3/library/functions.html#float>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
 
@@ -369,7 +384,8 @@ the terminal shows an :ref:`AssertionError`
   AssertionError: 0.0 is not true
 
 green: make it pass
-====================
+#############################################################################
+==
 
 I make ``assertTrue`` to ``assertFalse``
 
@@ -380,7 +396,8 @@ I make ``assertTrue`` to ``assertFalse``
 and the terminal shows passing tests
 
 refactor: make it better
-=========================
+#############################################################################
+
 
 * I move the line to the ``test_what_is_false`` :ref:`method<functions>`
 
@@ -445,12 +462,13 @@ From the tests I see that
 
 -----
 
-******************************
+*******************************************************************************************
 is a string False or True?
-******************************
+*******************************************************************************************
 
 red: make it fail
-==================
+#############################################################################
+
 
 I add a line to test if a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
 
@@ -472,7 +490,8 @@ the terminal shows an :ref:`AssertionError`
   AssertionError: '' is not true
 
 green: make it pass
-====================
+#############################################################################
+==
 
 I make ``assertTrue`` to ``assertFalse``
 
@@ -483,7 +502,8 @@ I make ``assertTrue`` to ``assertFalse``
 and the terminal shows passing tests
 
 refactor: make it better
-=========================
+#############################################################################
+
 
 * I move the line to the ``test_what_is_false`` :ref:`method<functions>`
 
@@ -539,12 +559,13 @@ From the tests I see that
 
 ----
 
-******************************
+*******************************************************************************************
 is a tuple False or True?
-******************************
+*******************************************************************************************
 
 red: make it fail
-==================
+#############################################################################
+
 
 I add a line to test if a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
 
@@ -569,7 +590,8 @@ The terminal shows an :ref:`AssertionError`
 tuples_ are represented with ``()`` in Python
 
 green: make it pass
-====================
+#############################################################################
+==
 
 I make ``assertTrue`` to ``assertFalse`` and move the line to the ``test_what_is_false`` :ref:`method<functions>`
 
@@ -587,7 +609,8 @@ I make ``assertTrue`` to ``assertFalse`` and move the line to the ``test_what_is
 the terminal shows passing tests
 
 refactor: make it better
-=========================
+#############################################################################
+
 
 * I add a line to test if a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ with things is also `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 
@@ -633,12 +656,13 @@ From the tests I see that
 
 ----
 
-******************************
+*******************************************************************************************
 is a list False or True?
-******************************
+*******************************************************************************************
 
 red: make it fail
-==================
+#############################################################################
+
 
 I add a line to test if a :doc:`list </data_structures/lists/lists>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
 
@@ -664,7 +688,8 @@ the terminal shows an :ref:`AssertionError`
 :doc:`lists </data_structures/lists/lists>` are represented with ``[]`` in Python
 
 green: make it pass
-====================
+#############################################################################
+==
 
 I make ``assertTrue`` to ``assertFalse`` and move the line to the ``test_what_is_false`` :ref:`method<functions>`
 
@@ -683,7 +708,8 @@ I make ``assertTrue`` to ``assertFalse`` and move the line to the ``test_what_is
 and the terminal shows passing tests
 
 refactor: make it better
-=========================
+#############################################################################
+
 
 * I add a line to test if a :doc:`list </data_structures/lists/lists>`  with things is also `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 
@@ -732,12 +758,13 @@ From the tests I see that
 
 -----
 
-******************************
+*******************************************************************************************
 is a set False or True?
-******************************
+*******************************************************************************************
 
 red: make it fail
-==================
+#############################################################################
+
 
 I add a line to test if a set_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
 
@@ -762,7 +789,8 @@ the terminal shows an :ref:`AssertionError`
   AssertionError: set() is not true
 
 green: make it pass
-====================
+#############################################################################
+==
 
 I make ``assertTrue`` to ``assertFalse`` and move the line to the ``test_what_is_false`` :ref:`method<functions>`
 
@@ -773,7 +801,8 @@ I make ``assertTrue`` to ``assertFalse`` and move the line to the ``test_what_is
 the terminal shows passing tests
 
 refactor: make it better
-=========================
+#############################################################################
+
 
 * I add a line to test if a set_ with things is also `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 
@@ -824,12 +853,13 @@ From the tests I see that
 
 ----
 
-********************************
+**********************************************************************************************************************************************************
 is a dictionary False or True?
-********************************
+**********************************************************************************************************************************************************
 
 red: make it fail
-==================
+#############################################################################
+
 
 I add a line to test if a :doc:`dictionary </data_structures/dictionaries>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
 
@@ -855,7 +885,8 @@ the terminal shows an :ref:`AssertionError`
   AssertionError: {} is not true
 
 green: make it pass
-====================
+#############################################################################
+==
 
 I make ``assertTrue`` to ``assertFalse`` and move the line to the ``test_what_is_false`` :ref:`method<functions>`
 
@@ -876,7 +907,8 @@ I make ``assertTrue`` to ``assertFalse`` and move the line to the ``test_what_is
 the terminal shows passing tests
 
 refactor: make it better
-=========================
+#############################################################################
+
 
 * I add a line to test if a :doc:`dictionary </data_structures/dictionaries>` with things is also `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 

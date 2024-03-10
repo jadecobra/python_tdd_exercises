@@ -140,7 +140,6 @@ green: make it pass
 
   .. code-block:: python
 
-    >    self.assertIsNone(functions.function_a("a"))
     E    TypeError: function_a() takes 0 positional arguments but 1 was given
 
   Another ``TypeError`` but with a new message. Reading the error from the bottom up

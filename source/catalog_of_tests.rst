@@ -13,6 +13,7 @@ catalog of tests
 Here are all the tests written in this book
 
 :ref:`test_failure`
+:ref:`test_type_error_w_function_signatures`
 
 *****************************************************************************
 test_calculator
@@ -115,6 +116,7 @@ test_attribute_error
 #. :ref:`test_attribute_error_w_classes`
 #. :ref:`test_attribute_error_w_class_attributes`
 #. :ref:`test_attribute_error_w_class_methods`
+
 
 *****************************************************************************
 test_none
