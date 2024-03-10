@@ -13,7 +13,7 @@ The following tests cover different ways to make classes
   :maxdepth: 1
 
   test_classes
-  test_classes_attributes_and_methods
+  test_classes_attributes_methods
   test_classes_w_initializers
 
 ----

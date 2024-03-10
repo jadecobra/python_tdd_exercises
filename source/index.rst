@@ -80,14 +80,7 @@ table of contents
   exceptions/exceptions
   data_structures/data_structures
   functions/functions
-  functions/functions_singleton
-  functions/functions_passthrough
-  functions/functions_positional
-  functions/functions_keyword
-  functions/functions_positional_and_keyword
   classes/classes
-  classes/classes_attributes_methods
-  classes/classes_initializer
 
 .. _tests-and-solutions:
 
