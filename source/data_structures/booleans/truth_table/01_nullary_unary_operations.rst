@@ -17,9 +17,9 @@ There are only two boolean values
 
 The Truth Table gives the 16 outcomes of binary operations on these two values
 
-****************
+*****************************************************************************
 requirements
-****************
+*****************************************************************************
 
 :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` with ``truth_table`` as the project name
 
@@ -29,8 +29,9 @@ requirements
 
 ----
 
+*****************************************************************************
 Nullary Operations
-------------------
+*****************************************************************************
 
 Nullary operations do not take in inputs and always return the same value. They are :doc:`singleton functions </functions/functions_singleton>`
 
@@ -121,21 +122,24 @@ refactor: make it better
 
 ----
 
+*****************************************************************************
 Unary Operations
-----------------
+*****************************************************************************
 
 There are two unary operations
 
 * Logical Identity
 * Logical Negation
 
-Logical Identity
-^^^^^^^^^^^^^^^^
+.. _test_logical_identity:
+
+test_logical_identity
+#############################################################################
 
 A Logical Identity operation takes input and returns it as output, it is a :doc:`passthrough function </functions/functions_passthrough>`
 
 red: make it fail
-~~~~~~~~~~~~~~~~~
+-----------------------------------------------------------------------------
 
 I add a new ``TestCase`` to ``test_truth_table.py``
 
@@ -150,7 +154,7 @@ I add a new ``TestCase`` to ``test_truth_table.py``
 and the terminal shows an :ref:`AttributeError` because there is no definition for ``logical_identity`` in ``truth_table.py``
 
 green: make it pass
-~~~~~~~~~~~~~~~~~~~
+-----------------------------------------------------------------------------
 
 I add a function definition for ``logical_identity`` to ``truth_table.py``
 
@@ -161,13 +165,15 @@ I add a function definition for ``logical_identity`` to ``truth_table.py``
 
 and the terminal shows passing tests
 
-Logical Negation
-^^^^^^^^^^^^^^^^
+.. _test_logical_negation:
+
+test_logical_negation
+#############################################################################
 
 A Logical Negation operation takes input and returns its opposite as output
 
 red: make it fail
-~~~~~~~~~~~~~~~~~
+-----------------------------------------------------------------------------
 
 I add a test for ``logical_negation`` to ``test_truth_table.py``
 
@@ -180,8 +186,7 @@ I add a test for ``logical_negation`` to ``test_truth_table.py``
 the terminal shows an :ref:`AttributeError`, there is no definition for ``logical_negation`` in ``truth_table.py``
 
 green: make it pass
-~~~~~~~~~~~~~~~~~~~
-
+-----------------------------------------------------------------------------
 
 * I add a definition for ``logical_negation``  to ``truth_table.py`` using the solution I had for ``logical_identity``
 
@@ -202,8 +207,12 @@ green: make it pass
 
   and the terminal shows passing tests
 
-Reviewing what I know so far
 
+*****************************************************************************
+review
+*****************************************************************************
+
+I know that
 
 * :doc:`True </data_structures/booleans/booleans>` is ``not False``
 * :doc:`False </data_structures/booleans/booleans>` is ``not True``
