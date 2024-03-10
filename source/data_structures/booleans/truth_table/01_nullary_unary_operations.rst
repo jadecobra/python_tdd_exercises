@@ -33,7 +33,7 @@ requirements
 Nullary Operations
 *****************************************************************************
 
-Nullary operations do not take in inputs and always return the same value. They are :doc:`singleton functions </functions/functions_singleton>`
+Nullary operations do not take in inputs and always return the same value. They are :ref:`singleton functions<test_singleton_functions>`
 
 red: make it fail
 #############################################################################
