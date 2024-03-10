@@ -1,3 +1,5 @@
+.. _catalog_of_tests:
+
 #############################################################################
 catalog of tests
 #############################################################################
@@ -103,6 +105,16 @@ test_assertion_error
 #. :ref:`test_assertion_errors_w_false`
 #. :ref:`test_assertion_errors_w_true`
 #. :ref:`test_assertion_errors_w_equality`
+
+*****************************************************************************
+test_attribute_error
+*****************************************************************************
+
+#. :ref:`test_attribute_error_w_variables`
+#. :ref:`test_attribute_error_w_functions`
+#. :ref:`test_attribute_error_w_classes`
+#. :ref:`test_attribute_error_w_class_attributes`
+#. :ref:`test_attribute_error_w_class_methods`
 
 *****************************************************************************
 test_none

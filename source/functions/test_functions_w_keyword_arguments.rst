@@ -59,7 +59,7 @@ green: make it pass
 
     TypeError: passthrough_w_keyword_arguments() got an unexpected keyword argument 'first_name'
 
-* I make the :doc:`function signature </functions/functions>` to make it accept a positional argument
+* I make the :doc:`function</functions/functions>` signature to make it accept a positional argument
 
   .. code-block:: python
 
@@ -72,7 +72,7 @@ green: make it pass
 
     TypeError: passthrough_w_keyword_arguments() got an unexpected keyword argument 'last_name'
 
-* I make the :doc:`function signature </functions/functions>` to take in another positional argument
+* I make the :doc:`function</functions/functions>` signature to take in another positional argument
 
   .. code-block:: python
 

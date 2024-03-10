@@ -12,7 +12,7 @@ TypeError
 
 ----
 
-A `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ can be raised when a function is called with the wrong number of inputs. This means the function call does not match the :doc:`function signature </functions/functions>`.
+A `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ can be raised when a function is called with the wrong number of inputs. This means the function call does not match the :doc:`function</functions/functions>` signature.
 
 * A function signature is the definition of the function which determines what inputs it accepts, for example
 
@@ -20,7 +20,7 @@ A `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=except
 
     def function(input_1, input_2, input_3, input_N):
 
-  This :doc:`function signature </functions/functions>` shows that ``function`` can take in four inputs
+  This :doc:`function</functions/functions>` signature shows that ``function`` can take in four inputs
 
 * Calling a function is using the function after it has been defined, by referencing the name with parentheses at the end, for example
 
@@ -30,19 +30,35 @@ A `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=except
 
   is a call to ``function`` with ``1, 2, 3, 4`` as four inputs
 
-requirements
 *****************************************************************************
-
-
-:doc:`how to make a python test driven development environment </how_to/make_tdd_environment>`
-
-----
-
 red: make it fail
 *****************************************************************************
 
+* I open a terminal and run :ref:`makePythonTdd.sh` with ``type_error`` as the project name
 
-* I open a new file in the editor and save it as ``test_type_error.py`` in the ``tests`` folder made in :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` and type the following in the file
+  .. code-block:: python
+
+    ./makePythonTdd.sh type_error
+
+  .. NOTE::
+
+    If you are using Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+
+    .. code-block:: python
+
+      ./makePythonTdd.ps1 type_error
+
+  and it shows an :ref:`AssertionError` after making the files I need
+
+  .. code-block:: python
+
+    E       AssertionError: True is not false
+
+    tests/test_type_error.py:7: AssertionError
+
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_type_error.py:7`` with the mouse to open it
+* then change ``True`` to ``False``
+* and replace the test with a new failing test
 
 
   .. code-block:: python
@@ -53,7 +69,7 @@ red: make it fail
 
     class TestTypeErrors(unittest.TestCase):
 
-        def test_function_signatures_solve_type_errors(self):
+        def test_type_error_w_function_signatures(self):
             self.assertIsNone(functions.function_a("a"))
 
   the terminal shows a :ref:`ModuleNotFoundError`
@@ -71,6 +87,7 @@ red: make it fail
       # AssertionError
       # ModuleNotFoundError
 
+*****************************************************************************
 green: make it pass
 *****************************************************************************
 
@@ -78,7 +95,6 @@ green: make it pass
 
   .. code-block:: python
 
-    >    self.assertIsNone(functions.function_a("a"))
     E    AttributeError: module 'functions' has no attribute 'function_a'
 
   which I add to the list of Exceptions encountered
@@ -100,7 +116,6 @@ green: make it pass
 
   .. code-block:: python
 
-   >    self.assertIsNone(functions.function_a("a"))
    E    TypeError: 'NoneType' object is not callable
 
   A reminder of the first encounter with ``TypeError`` from `how to solve the AttributeError by defining a Function <./AttributeError.rst>`_
@@ -114,7 +129,7 @@ green: make it pass
     # AttributeError
     # TypeError
 
-* I solve this ``TypeError`` by definining a ``callable``, in this case a function.
+* I solve this ``TypeError`` by defining a ``callable``, in this case a function.
 
   .. code-block:: python
 
@@ -157,13 +172,13 @@ green: make it pass
 
 the terminal shows passing tests. BOOM!
 
+*****************************************************************************
 refactor: make it better
 *****************************************************************************
 
-There's not much to do here but add more tests for practice.
+There's not much to do here but add assertions for practice.
 
-
-* I add a new test to ``test_function_signatures_solve_type_errors`` in ``test_type_error.py``
+* I add a new test to ``test_type_error_w_function_signatures`` in ``test_type_error.py``
 
   .. code-block:: python
 
@@ -198,7 +213,6 @@ There's not much to do here but add more tests for practice.
 
   .. code-block:: python
 
-   >    self.assertIsNone(functions.function_b("a", "b"))
    E    TypeError: function_b() takes 0 positional arguments but 2 were given
 
   the offending line ``functions.function_b("a", "b")`` called ``function_b`` with 2 parameters but the definition has the function taking no inputs
@@ -226,28 +240,19 @@ There's not much to do here but add more tests for practice.
         return None
 
   the terminal shows all tests pass.
-* Is there another solution to the above test? Can I define a function that takes in any number of parameters? see :doc:`/functions/functions`
+* Is there another solution to the above test? Can I define a function that takes in any number of parameters? see :ref:`test_functions_w_positional_arguments`
 
-More Tests
-*****************************************************************************
+* I add a failing test to ``TestTypeErrors`` in ``test_type_error.py``
 
-red: make it fail
-~~~~~~~~~~~~~~~~~
+  .. code-block:: python
 
-I add a failing test to ``TestTypeErrors`` in ``test_type_error.py``
+    self.assertIsNone(functions.function_c("a", "b", "c"))
 
-.. code-block:: python
+  the terminal shows
 
-  self.assertIsNone(functions.function_c("a", "b", "c"))
+  .. code-block:: python
 
-the terminal shows
-
-.. code-block:: python
-
-  AttributeError: module 'functions' has no attribute 'function_c'
-
-green: make it pass
-~~~~~~~~~~~~~~~~~~~
+    AttributeError: module 'functions' has no attribute 'function_c'
 
 * I add a name to ``functions.py``
 
@@ -274,7 +279,7 @@ green: make it pass
 
     TypeError: function_c() takes 0 positional arguments but 3 were given
 
-* I make the :doc:`signature </functions/functions>` of ``function_c`` to accept one input argument
+* I make the signature of ``function_c`` accept one input argument
 
   .. code-block:: python
 
@@ -308,9 +313,6 @@ green: make it pass
         return None
 
   and the terminal shows all tests pass
-
-refactor: make it better
-~~~~~~~~~~~~~~~~~~~~~~~~
 
 * If you are not bored yet, I add a failing test to ``TestTypeErrors`` in ``test_type_error.py``
 
@@ -383,6 +385,12 @@ refactor: make it better
 What happens when you do this with ``function_a``, ``function_b``, ``function_c`` and ``function_d``?
 
 
+*****************************************************************************
+review
+*****************************************************************************
+
+You now know how to solve a `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#TypeError>`_ by matching function signatures and their calls
+
 You encountered the following exceptions
 
 * :ref:`AssertionError`
@@ -390,9 +398,6 @@ You encountered the following exceptions
 * :ref:`AttributeError`
 * :ref:`TypeError`
 
-You now know
+----
 
-* how to solve a :ref:`ModuleNotFoundError`
-* how to solve an :ref:`AssertionError`
-* how to solve an :ref:`AttributeError`
-* how to solve a `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#TypeError>`_ by matching function signatures and their calls
+:doc:`code/code_type_error`

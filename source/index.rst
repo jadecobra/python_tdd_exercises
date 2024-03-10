@@ -41,10 +41,11 @@ My recommendation is to
 * type out the code portions as you go through any chapter without copying and pasting the code
 * repeat a chapter you like until you can do it from memory
 * try remaking the tests from memory or write new tests for a concept you are working on
-* try to write solutions using only the tests from the :ref:`tests and solutions` sections as your guide
+* try to write solutions using only the tests from the :ref:`catalog_of_tests` as your guide
 * try adding tests for any ideas you get as you go through a chapter
 * you can also go through the :ref:`how-tos` section sequentially
-* do not quit until you have gotten to the end, parts of the book will be challenging and confusing, it is part of the experience when solving problems or learning to solve problems, and there is a lot of failure but if you take it one small step at a time you eventually get there
+* work consistently at it, what can you sustainably do everyday for the next 10 years
+* not quit until you have gotten to the end, parts of the book will be challenging and confusing, it is part of the experience when solving problems or learning to solve problems, and there is a lot of failure but if you take it one small step at a time you eventually get there
 
 If you prefer videos, there is one for each chapter at `<https://www.youtube.com/@JacobItegboje>`_
 
@@ -81,35 +82,8 @@ table of contents
   data_structures/data_structures
   functions/functions
   classes/classes
-
-.. _tests-and-solutions:
-
-*****************************************************************************
-tests and solutions
-*****************************************************************************
-.. toctree::
-  :maxdepth: 2
-  :titlesonly:
-
-  code/make_tdd/code_make_python_tdd_sh
-  code/make_tdd/code_make_python_tdd_ps1
-  code/code_calculator
-  code/code_pass_values
-  code/code_person_factory
-  code/code_exception_handling
-  code/code_sleep_duration
-  code/code_none
-  code/code_booleans
-  code/code_truth_table
-  code/code_lists
-  code/code_list_comprehensions
-  code/code_dictionaries
-  code/code_assertion_error
-  code/code_attribute_error
-  code/code_functions
-  code/code_classes
-  catalog_of_solutions
   catalog_of_tests
+  catalog_of_solutions
 
 ----
 

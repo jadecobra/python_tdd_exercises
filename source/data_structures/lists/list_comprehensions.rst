@@ -291,7 +291,7 @@ green: make it pass
     def for_loop():
         return None
 
-  and the terminal shows a :ref:`TypeError` because the :doc:`function signature </functions/functions>` does not match the call in the test
+  and the terminal shows a :ref:`TypeError` because the :doc:`function</functions/functions>` signature does not match the call in the test
 
   .. code-block:: python
 

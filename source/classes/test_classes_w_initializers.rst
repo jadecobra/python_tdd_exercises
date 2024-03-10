@@ -134,7 +134,7 @@ refactor: make it better
 
    TypeError: __init__() got an unexpected keyword argument 'sex'
 
-* I make the signature of the ``__init__`` :ref:`method<functions>` to accept a keyword argument
+* I make the signature of the ``__init__`` :ref:`method<functions>` accept a keyword argument
 
   .. code-block:: python
 

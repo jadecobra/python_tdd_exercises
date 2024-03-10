@@ -164,7 +164,7 @@ green: make it pass
 
     duration = None
 
-* I add a call to ``duration`` in the test because I want it to accept inputs
+* I add a call to ``duration`` in the test because I want it accept inputs
 
   .. code-block:: python
 

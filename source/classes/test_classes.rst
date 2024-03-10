@@ -167,7 +167,7 @@ green: make it pass
 
   the terminal shows passing tests
 
-* When I make the definition to include parentheses
+* When I make the definition include parentheses
 
   .. code-block:: python
 

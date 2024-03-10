@@ -10,7 +10,7 @@ AttributeError
 
 .. contents:: table of contents
   :local:
-  :depth: 4
+  :depth: 1
 
 ----
 
@@ -589,7 +589,7 @@ green: make it pass
 refactor: make it better
 #############################################################################
 
-* The current solution for ``test_attribute_error_w_classes`` was done by defining functions but the test name contains ``definining_classes``, time to go back and change ``module.py`` using the `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword instead of `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
+* The current solution for ``test_attribute_error_w_classes`` was done by defining functions but the test name contains ``defining_classes``, time to go back and change ``module.py`` using the `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword instead of `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
 
   .. code-block:: python
 
