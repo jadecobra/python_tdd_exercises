@@ -10,6 +10,7 @@ The following tests cover a few data structures I think are important to know in
   :titlesonly:
   :maxdepth: 1
 
+  none
   booleans/booleans
   booleans/truth_table
   lists/lists
