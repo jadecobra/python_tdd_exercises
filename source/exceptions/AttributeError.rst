@@ -1,5 +1,7 @@
 .. include:: ../links.rst
 
+.. _AttributeError:
+
 #############################################################################
 AttributeError
 #############################################################################
@@ -8,7 +10,7 @@ AttributeError
 
 .. contents:: table of contents
   :local:
-  :depth: 1
+  :depth: 4
 
 ----
 
@@ -16,6 +18,7 @@ An Attribute is a property, variable, function or name that belongs to an `objec
 
 An `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name in an `object <https://docs.python.org/3/glossary.html#term-object>`_ that does not exist.
 
+*****************************************************************************
 requirements
 *****************************************************************************
 
@@ -24,12 +27,12 @@ requirements
 
 ----
 
-
-Solve an AttributeError by defining variables
+*****************************************************************************
+test_attribute_error_w_variables
 *****************************************************************************
 
 red: make it fail
------------------------------------------------------------------------------
+#############################################################################
 
 I open a new file, save it as ``test_attribute_error.py`` in the ``tests`` folder made in :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` and type the following
 
@@ -50,7 +53,7 @@ the terminal shows a :ref:`ModuleNotFoundError` if you have not yet done the :do
 A :ref:`ModuleNotFoundError` is raised when a name is provided to an `import statement`_ and python cannot find the name. Since there is currently no file called ``module.py`` the ``import module`` line causes a failure
 
 green: make it pass
------------------------------------------------------------------------------
+#############################################################################
 
 * I make the list of exceptions encountered
 
@@ -71,11 +74,11 @@ green: make it pass
 
     class TestAttributeErrors(unittest.TestCase):
 
-        def test_defining_variables_to_solve_attribute_errors(self):
+        def test_attribute_error_w_variables(self):
             module.variable_0
 
   - ``class TestAttributeErrors(unittest.TestCase):`` is a class definition that inherits from `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ and will hold the tests
-  - ``def test_defining_variables_to_solve_attribute_errors(self):`` is the definition of the first test function to find out if defining variables can solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  - ``def test_attribute_error_w_variables(self):`` is the definition of the first test function to find out if defining variables can solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
   - ``module.variable_0`` - the actual test, I think of this as making a phone call to ``variable_0`` in ``module.py``
 
   the terminal shows an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
@@ -133,7 +136,7 @@ I solved the `AttributeError <https://docs.python.org/3/library/exceptions.html?
   - the equality sign ``==`` is used to check if two things are equal example  ``5 == 4`` means "is ``5`` is equal to ``4``?"
 
 AttributeError vs NameError
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 An `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name in an `object <https://docs.python.org/3/glossary.html#term-object>`_ from outside the `object <https://docs.python.org/3/glossary.html#term-object>`_ and the name does not exist, for example ``humans.wings``
 
@@ -141,19 +144,15 @@ A NameError_ is raised when there is a reference to a name within an `object <ht
 
 
 refactor: make it better
------------------------------------------------------------------------------
+#############################################################################
 
 I could repeat the above tests as a drill to help remember the solution
-
-red: make it fail
-~~~~~~~~~~~~~~~~~
-
 
 * I add a failing line
 
   .. code-block:: python
 
-    def test_defining_variables_to_solve_attribute_errors(self):
+    def test_attribute_error_w_variables(self):
         module.variable_0
         module.variable_1
 
@@ -163,12 +162,7 @@ red: make it fail
 
     AttributeError: module 'module' has no attribute 'variable_1'
 
-green: make it pass
-~~~~~~~~~~~~~~~~~~~
-
-* red: make it fail
-
-  I add the name to ``module.py``
+* I add the name to ``module.py``
 
   .. code-block:: python
 
@@ -181,9 +175,7 @@ green: make it pass
 
     NameError: name 'variable_1' is not defined
 
-* green: make it pass
-
-  I add a definition for ``variable_1``
+* I add a definition for ``variable_1``
 
   .. code-block:: python
 
@@ -192,14 +184,11 @@ green: make it pass
 
   the terminal shows passing tests
 
-red: make it fail
-~~~~~~~~~~~~~~~~~
-
 * I add a failing line
 
   .. code-block:: python
 
-    def test_defining_variables_to_solve_attribute_errors(self):
+    def test_attribute_error_w_variables(self):
         module.variable_0
         module.variable_1
         module.variable_2
@@ -210,12 +199,7 @@ red: make it fail
 
     AttributeError: module 'module' has no attribute 'variable_2'
 
-green: make it pass
-~~~~~~~~~~~~~~~~~~~
-
-* red: make it fail
-
-  I add the name to ``module.py``
+* I add the name to ``module.py``
 
   .. code-block:: python
 
@@ -229,9 +213,7 @@ green: make it pass
 
     NameError: name 'variable_2' is not defined
 
-* green: make it pass
-
-  I define ``variable_2`` in ``module.py``
+* I define ``variable_2`` in ``module.py``
 
   .. code-block:: python
 
@@ -241,14 +223,11 @@ green: make it pass
 
   The tests pass
 
-red: make it fail
-~~~~~~~~~~~~~~~~~
-
 * I add a failing line
 
   .. code-block:: python
 
-    def test_defining_variables_to_solve_attribute_errors(self):
+    def test_attribute_error_w_variables(self):
         module.variable_0
         module.variable_1
         module.variable_2
@@ -260,12 +239,7 @@ red: make it fail
 
     AttributeError: module 'module' has no attribute 'variable_3'
 
-green: make it pass
-~~~~~~~~~~~~~~~~~~~
-
-* red: make it fail
-
-  I add the name
+* I add the name
 
   .. code-block:: python
 
@@ -280,9 +254,7 @@ green: make it pass
 
     NameError: name 'variable_3' is not defined
 
-* green: make it pass
-
-  I define the name
+* I define the name
 
   .. code-block:: python
 
@@ -297,11 +269,11 @@ I have a pattern for the drill. When I test an attribute in a module, I get
 * a NameError_ when I add the name to the module
 * a passing test when I define the name as a variable
 
-If you are feeling adventurous you can add more tests to ``test_defining_variables_to_solve_attribute_errors`` until you get to ``module.variable_99``, you will have 100 lines
+If you are feeling adventurous you can add more tests to ``test_attribute_error_w_variables`` until you get to ``module.variable_99``, you will have 100 lines
 
 .. code-block:: python
 
-  def test_defining_variables_to_solve_attribute_errors(self):
+  def test_attribute_error_w_variables(self):
       module.variable_0
       module.variable_1
       module.variable_2
@@ -313,24 +285,24 @@ Repeat the pattern until all tests pass.
 
 If you have been typing along *WELL DONE!* You now know
 
-
 * how to solve a :ref:`ModuleNotFoundError`
 * how to solve a NameError_ using variables
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 
 ----
 
-Solve an AttributeError by defining functions
+*****************************************************************************
+test_attribute_error_w_functions
 *****************************************************************************
 
 red: make it fail
------------------------------------------------------------------------------
+#############################################################################
 
 I add a new test to ``TestAttributeError`` class in ``tests/test_attribute_error.py``
 
 .. code-block:: python
 
-  def test_defining_functions_to_solve_attribute_errors(self):
+  def test_attribute_error_w_functions(self):
       module.function_0()
 
 the terminal shows an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
@@ -340,7 +312,7 @@ the terminal shows an `AttributeError <https://docs.python.org/3/library/excepti
   AttributeError: module 'module' has no attribute 'function_0'
 
 green: make it pass
------------------------------------------------------------------------------
+#############################################################################
 
 * I try the solution I know for solving `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ with variables and change ``module.py`` to include a new variable
 
@@ -380,15 +352,14 @@ green: make it pass
 
   the terminal shows passing tests
 
-
 refactor: make it better
------------------------------------------------------------------------------
+#############################################################################
 
-* Time to make a drill. You can change ``test_defining_functions_to_solve_attribute_errors`` in the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` to include calls to functions in ``module.py`` until you have one for ``module.function_99()``
+* Time to make a drill. You can change ``test_attribute_error_w_functions`` in the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` to include calls to functions in ``module.py`` until you have one for ``module.function_99()``
 
   .. code-block:: python
 
-    def test_defining_functions_to_solve_attribute_errors(self):
+    def test_attribute_error_w_functions(self):
         module.function_0()
         module.function_1()
         module.function_2()
@@ -414,7 +385,10 @@ refactor: make it better
 
 ----
 
-Solve an AttributeError by defining classes
+.. _test_attribute_error_w_classes:
+
+*****************************************************************************
+test_attribute_error_w_classes
 *****************************************************************************
 
 I think of a :doc:`class </classes/classes>` as a container of :doc:`methods (functions) </functions/functions>` and attributes that represents an `object <https://docs.python.org/3/glossary.html#term-object>`_
@@ -424,14 +398,16 @@ I think of a :doc:`class </classes/classes>` as a container of :doc:`methods (fu
 
 For example I could define a ``Human`` class with attributes like eye color, date of birth, height and weight. I could also define :ref:`methods<functions>` like age which returns a value based on the current year and date of birth attribute
 
+.. _test_attribute_error_w_classes_red:
+
 red: make it fail
------------------------------------------------------------------------------
+#############################################################################
 
 * I add a test function to the ``TestAttributeError`` class in ``tests/test_attribute_error.py``
 
   .. code-block:: python
 
-    def test_defining_classes_to_solve_attribute_errors(self):
+    def test_attribute_error_w_classes(self):
         module.Class0()
 
   the terminal shows
@@ -440,9 +416,10 @@ red: make it fail
 
     AttributeError: module 'module' has no attribute 'Class0'
 
+.. _test_attribute_error_w_classes_green:
 
 green: make it pass
------------------------------------------------------------------------------
+#############################################################################
 
 * I add a name to ``module.py``
 
@@ -467,14 +444,16 @@ green: make it pass
 
   For now, I move on with these questions unanswered until they become obvious
 
-refactor: make it better
------------------------------------------------------------------------------
+.. _test_attribute_error_w_classes_refactor:
 
-* This could also be a drill, add lines to ``test_defining_classes_to_solve_attribute_errors`` in the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` until you have one for ``module.Class99()``, you will have 100 lines
+refactor: make it better
+#############################################################################
+
+* This could also be a drill, add lines to ``test_attribute_error_w_classes`` in the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` until you have one for ``module.Class99()``, you will have 100 lines
 
   .. code-block:: python
 
-    def test_defining_classes_to_solve_attribute_errors(self):
+    def test_attribute_error_w_classes(self):
         module.Class0()
         module.Class1()
         module.Class2()
@@ -501,18 +480,23 @@ refactor: make it better
 
 ----
 
-Solve an AttributeError by defining class attributes
+.. _test_attribute_error_w_class_attributes:
+
+*****************************************************************************
+test_attribute_error_w_class_attributes
 *****************************************************************************
 
+.. _test_attribute_error_w_class_attributes_red:
+
 red: make it fail
------------------------------------------------------------------------------
+#############################################################################
 
 
 * I add a new test to the ``TestAttributeError`` class in ``test_attribute_error.py``
 
   .. code-block:: python
 
-    def test_defining_attributes_in_classes_to_solve_attribute_errors(self):
+    def test_attribute_error_w_class_attributes(self):
         module.Class.attribute_0
 
   the terminal shows an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
@@ -521,8 +505,10 @@ red: make it fail
 
     AttributeError: module 'module' has no attribute 'Class'
 
+.. _test_attribute_error_w_class_attributes_green:
+
 green: make it pass
------------------------------------------------------------------------------
+#############################################################################
 
 * I add a variable to ``module.py``
 
@@ -598,10 +584,12 @@ green: make it pass
 
   the test passes. WOO HOO!
 
-refactor: make it better
------------------------------------------------------------------------------
+.. _test_attribute_error_w_class_attributes_refactor:
 
-* The current solution for ``test_defining_classes_to_solve_attribute_errors`` was done by defining functions but the test name contains ``definining_classes``, time to go back and change ``module.py`` using the `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword instead of `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
+refactor: make it better
+#############################################################################
+
+* The current solution for ``test_attribute_error_w_classes`` was done by defining functions but the test name contains ``definining_classes``, time to go back and change ``module.py`` using the `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword instead of `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
 
   .. code-block:: python
 
@@ -613,11 +601,11 @@ refactor: make it better
 
   `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is a keyword used as a placeholder
 
-* I now know how to properly define a :doc:`class </classes/classes>` with an attribute. You can make a drill to practice by adding more lines to ``test_defining_attributes_in_classes_to_solve_attribute_errors`` until you have a total of 100 lines
+* I now know how to properly define a :doc:`class </classes/classes>` with an attribute. You can make a drill to practice by adding more lines to ``test_attribute_error_w_class_attributes`` until you have a total of 100 lines
 
   .. code-block:: python
 
-    def test_defining_attributes_in_classes_to_solve_attribute_errors(self):
+    def test_attribute_error_w_class_attributes(self):
         module.Class.attribute_0
         module.Class.attribute_1
         module.Class.attribute_2
@@ -645,17 +633,21 @@ refactor: make it better
 
 ----
 
-Solve an AttributeError by defining class methods
+.. _test_attribute_error_w_class_methods:
+
+*****************************************************************************
+test_attribute_error_w_class_methods
 *****************************************************************************
 
-red: make it fail
------------------------------------------------------------------------------
+.. _test_attribute_error_w_class_methods_red:
 
+red: make it fail
+#############################################################################
 * I add a new test to the ``TestAttributeError`` class in ``test_attribute_error.py``
 
   .. code-block:: python
 
-    def test_defining_functions_in_classes_to_solve_attribute_errors(self):
+    def test_attribute_error_w_class_methods(self):
         module.Class.method_0()
 
   the terminal shows an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
@@ -664,8 +656,10 @@ red: make it fail
 
     AttributeError: type object 'Class' has no attribute 'method_0'
 
+.. _test_attribute_error_w_class_methods_green:
+
 green: make it pass
------------------------------------------------------------------------------
+#############################################################################
 
 * I add a name to ``Class`` in ``module.py``
 
@@ -690,20 +684,22 @@ green: make it pass
   .. code-block:: python
 
     class Class():
-        ...
+    ...
         def method_0():
             return None
 
   and all tests pass. Fantastic!
 
-refactor: make it better
------------------------------------------------------------------------------
+.. _test_attribute_error_w_class_methods_refactor:
 
-You know the "drill", add more lines until there are 100 tests ending with one for ``module.Class.method_99()`` to ``test_defining_functions_in_classes_to_solve_attribute_errors`` in ``TestAttributeError`` in ``test_attribute_error.py``
+refactor: make it better
+#############################################################################
+
+You know the "drill", add more lines until there are 100 tests ending with one for ``module.Class.method_99()`` to ``test_attribute_error_w_class_methods`` in ``TestAttributeError`` in ``test_attribute_error.py``
 
 .. code-block:: python
 
-  def test_defining_functions_in_classes_to_solve_attribute_errors(self):
+  def test_attribute_error_w_class_methods(self):
       module.Class.method_0()
       module.Class.method_1()
       module.Class.method_2()
@@ -712,6 +708,14 @@ You know the "drill", add more lines until there are 100 tests ending with one f
       module.Class.method_99()
 
 repeat the solution until all tests pass
+
+----
+
+.. _AttributeError_review:
+
+*****************************************************************************
+review
+*****************************************************************************
 
 *CONGRATULATIONS!* you encountered the following exceptions
 

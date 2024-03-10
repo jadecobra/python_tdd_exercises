@@ -227,7 +227,7 @@ test_making_a_list_w_a_for_loop
 *****************************************************************************
 
 red: make it fail
-^^^^^^^^^^^^^^^^^
+#############################################################################
 
 I add a test for making a list with a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ loop
 

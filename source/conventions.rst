@@ -3,74 +3,111 @@
 conventions
 #############################################################################
 
+----
+
+.. contents:: table of contents
+  :local:
+  :depth: 1
+
+----
+
 The following are a few conventions to know in Python
 
+*****************************************************************************
+comments
+*****************************************************************************
 
-* Comments are represented by the hashtag or pound before the thing that is commented for example
+Comments are represented by the hashtag or pound before the thing that is commented for example
 
-  .. code-block::
+.. code-block::
 
-    # This is a comment
+  # This is a comment
 
-* Enclosures must be closed once open, which means they happen in pairs for example
+*****************************************************************************
+enclosures
+*****************************************************************************
 
-  .. code-block:: python
+Enclosures must be closed once open, which means they happen in pairs for example
 
-    ""
-    """"""
-    ''
-    ''''''
-    ()
-    []
-    {}
+.. code-block:: python
 
-  Your Interactive Development Environment (IDE) will take care of this for you
+  ""
+  """"""
+  ''
+  ''''''
+  ()
+  []
+  {}
 
-* Quotes represent strings and can be single, double, triple single or triple double for example
+Your Interactive Development Environment (IDE) will take care of this for you
 
-  .. code-block:: python
+*****************************************************************************
+quotes
+*****************************************************************************
 
-    "Double Quotes"
+Quotes represent strings_ and can be single, double, triple single or triple double for example
 
-    'Single Quotes'
+.. code-block:: python
 
-    """Multiline Text
-    with
-    triple double quotes
-    """
+  "Double Quotes"
 
-    '''Multiline Text
-    with
-    triple single quotes
-    '''
+  'Single Quotes'
 
-* A tuple is a sequence or container of data that cannot be changed later, it is immutable and represented with parentheses/brackets for example
+  """Multiline Text
+  with
+  triple double quotes
+  """
 
-  .. code-block:: python
+  '''Multiline Text
+  with
+  triple single quotes
+  '''
 
-    (1, 2.5, "three", [4, 'five'])
+*****************************************************************************
+tuples
+*****************************************************************************
 
-* A list/array is a sequence or container of data that can be changed after it is defined, it is mutable and represented with square brackets for example
+A tuple is a sequence or container of data that cannot be changed later, it is immutable and represented with parentheses/brackets for example
 
-  .. code-block:: python
+.. code-block:: python
 
-    [1, 2.5, 'three', (4, "five")]
+  (1, 2.5, "three", [4, 'five'])
 
-* Sets are represented with curly braces/brackets
+*****************************************************************************
+lists
+*****************************************************************************
 
-  .. code-block:: python
+A list/array is a sequence or container of data that can be changed after it is defined, it is mutable and represented with square brackets for example
 
-    {1, 2.5, 'three', (4, 'five')}
+.. code-block:: python
 
-* Dictionaries/Mappings are also represented with curly braces/brackets but have key/value pairs
+  [1, 2.5, 'three', (4, "five")]
 
-  .. code-block:: python
+*****************************************************************************
+sets
+*****************************************************************************
 
-    {
-        'integer': 1,
-        'floating_point': 2.5,
-        'string': 'three',
-        'tuple': (1, 2.5, "three", [4, 'five'])
-        'list': [1, 2.5, 'three', (4, "five")]
-        'set': {1, 2.5, 'three', (4, 'five')}
-    }
+Sets are represented with curly braces/brackets
+
+.. code-block:: python
+
+  {1, 2.5, 'three', (4, 'five')}
+
+*****************************************************************************
+dictionaries
+*****************************************************************************
+
+Dictionaries/Mappings are also represented with curly braces/brackets but have key/value pairs
+
+.. code-block:: python
+
+  {
+      'integer': 1,
+      'floating_point': 2.5,
+      'string': 'three',
+      'tuple': (1, 2.5, "three", [4, 'five'])
+      'list': [1, 2.5, 'three', (4, "five")]
+      'set': {1, 2.5, 'three', (4, 'five')}
+  }
+
+----

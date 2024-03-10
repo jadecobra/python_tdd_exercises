@@ -20,7 +20,7 @@ I know that there are two boolean values
 
 
 red: make it fail
-^^^^^^^^^^^^^^^^^
+#############################################################################
 
 After making a ``TestCase`` for binary operations in ``test_truth_table.py``
 
@@ -37,7 +37,7 @@ After making a ``TestCase`` for binary operations in ``test_truth_table.py``
 the terminal shows an :ref:`AttributeError`
 
 green: make it pass
-^^^^^^^^^^^^^^^^^^^
+#############################################################################
 
 * I add a definition for ``logical_conjunction`` to ``truth_table.py``
 
@@ -103,7 +103,7 @@ green: make it pass
   the terminal shows passing tests. Lovely!
 
 refactor: make it better
-^^^^^^^^^^^^^^^^^^^^^^^^
+#############################################################################
 
 * Why does this work?
 

@@ -12,8 +12,8 @@ The following tests cover different ways to make classes
   :titlesonly:
   :maxdepth: 1
 
-  test_classes
-  test_classes_attributes_methods
-  test_classes_w_initializers
+  test_classes<test_classes>
+  test_classes_w_attributes_and_methods<test_classes_attributes_methods>
+  test_classes_w_initializers<test_classes_w_initializers>
 
 ----

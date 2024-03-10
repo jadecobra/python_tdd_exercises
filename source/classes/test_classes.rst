@@ -1,5 +1,7 @@
 .. include:: ../links.rst
 
+.. _test_classes:
+
 #############################################################################
 classes: test_classes
 #############################################################################
@@ -30,7 +32,7 @@ test_defining_classes_w_pass
 *****************************************************************************
 
 red: make it fail
-^^^^^^^^^^^^^^^^^
+#############################################################################
 
 I make a new file called ``test_classes.py`` in the ``tests`` directory
 
@@ -48,7 +50,7 @@ I make a new file called ``test_classes.py`` in the ``tests`` directory
 the terminal shows a :ref:`ModuleNotFoundError` because I have an import statement for a module called ``classes``
 
 green: make it pass
-^^^^^^^^^^^^^^^^^^^
+#############################################################################
 
 * I add :ref:`ModuleNotFoundError` to the list of exceptions encountered
 
@@ -121,7 +123,7 @@ green: make it pass
 
 
 refactor: make it better
-^^^^^^^^^^^^^^^^^^^^^^^^
+#############################################################################
 
 Here is a quick review of what has happened so far
 
@@ -139,7 +141,7 @@ test_defining_classes_w_parentheses
 *****************************************************************************
 
 red: make it fail
-^^^^^^^^^^^^^^^^^
+#############################################################################
 
 I add another test to ``TestClasses`` in ``test_classes.py`` to show another way to make a class
 
@@ -151,7 +153,7 @@ I add another test to ``TestClasses`` in ``test_classes.py`` to show another way
 the terminal shows an :ref:`AttributeError`
 
 green: make it pass
-^^^^^^^^^^^^^^^^^^^
+#############################################################################
 
 
 * I add a class definition like ``ClassWithPass`` to ``classes.py``
@@ -197,7 +199,7 @@ Making new objects is easier because I do not have to reinvent or rewrite things
 To use inheritance I specify the "parent" in parentheses when I define the new object (the child) to establish the relationship
 
 red: make it fail
-^^^^^^^^^^^^^^^^^
+#############################################################################
 
 I add another test to ``TestClasses`` in ``test_classes.py``
 
@@ -209,7 +211,7 @@ I add another test to ``TestClasses`` in ``test_classes.py``
 and the terminal shows an :ref:`AttributeError`
 
 green: make it pass
-^^^^^^^^^^^^^^^^^^^
+#############################################################################
 
 
 * I add a class definition to ``classes.py``

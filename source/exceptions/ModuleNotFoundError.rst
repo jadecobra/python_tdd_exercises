@@ -1,8 +1,10 @@
 .. include:: ../links.rst
 
-######################
+.. _ModuleNotFoundError:
+
+#############################################################################
 ModuleNotFoundError
-######################
+#############################################################################
 
 ----
 
@@ -197,7 +199,7 @@ You now know how to solve ``ModuleNotFoundError``
 you encountered the following exceptions
 
 * :ref:`AssertionError`
-* ImportError
+* ImportError_
 * :ref:`ModuleNotFoundError`
 
 Would you like to test :ref:`AssertionErrors<AssertionError>`?

@@ -1,5 +1,7 @@
 .. include:: ../links.rst
 
+.. _AssertionError:
+
 #############################################################################
 AssertionError
 #############################################################################
@@ -26,9 +28,9 @@ which is similar to
 
   assert True is False
 
-****************************
+*****************************************************************************
 why are asserts important?
-****************************
+*****************************************************************************
 
 When building a program I can add ``assert`` statements to the program to ensure that certain things are :doc:`True </data_structures/booleans/booleans>` for it to proceed past the statements.
 

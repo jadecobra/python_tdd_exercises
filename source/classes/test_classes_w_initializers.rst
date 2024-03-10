@@ -14,6 +14,14 @@ classes: test_classes_w_initializers
 
 ----
 
+*****************************************************************************
+requirements
+*****************************************************************************
+
+:ref:`test_classes`
+
+----
+
 So far I have gone over how to define classes, attributes and methods. I now expand on this to show how to use classes.
 
 When making a new class, we can define an initializer which is a :ref:`method<functions>` that can receive inputs to be used to customize instances/copies of the class

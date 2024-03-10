@@ -13,7 +13,7 @@ Let us take a look at Logical NAND from the `Truth Table <https://en.wikipedia.o
 ----
 
 red: make it fail
-^^^^^^^^^^^^^^^^^
+#############################################################################
 
 I add a test for Logical NAND to ``TestBinaryOperations`` in ``test_truth_table.py``
 
@@ -28,7 +28,7 @@ I add a test for Logical NAND to ``TestBinaryOperations`` in ``test_truth_table.
 the terminal shows an :ref:`AttributeError`
 
 green: make it pass
-^^^^^^^^^^^^^^^^^^^
+#############################################################################
 
 
 * I add a definition for the function to ``truth_table.py`` returning :doc:`True </data_structures/booleans/booleans>` since 3 out of the 4 cases return it
@@ -51,7 +51,7 @@ green: make it pass
   Green! All tests pass
 
 refactor: make it better
-^^^^^^^^^^^^^^^^^^^^^^^^
+#############################################################################
 
 * I add an ``else`` clause to be explicit
 

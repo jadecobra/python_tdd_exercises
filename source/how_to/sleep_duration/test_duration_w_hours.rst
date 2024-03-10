@@ -651,7 +651,7 @@ refactor: make it better
 .. _test_string_splitting_red_1:
 
 red: make it fail
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#############################################################################
 
 * I want the first item of the list from splitting the timestamp string_ which is the hours, and I know I can get it by using its index as covered in :doc:`/data_structures/lists/lists`. Python uses `zero-based indexing`_ which means the first item is at index ``0`` and the second item is at index ``1``
 * I uncomment the `unittest.skip decorator`_ to disable ``test_duration_w_hours`` by hitting ``ctrl+/`` (windows/linux) or ``command+/`` (mac)
@@ -684,7 +684,7 @@ red: make it fail
 .. test_string_splitting_green_1:
 
 green: make it pass
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#############################################################################
 
 * I change the value in the test to ``'12'``
 
@@ -695,7 +695,7 @@ green: make it pass
   and the test passes
 
 refactor: make it better
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#############################################################################
 
 * I add another test for getting the minutes
 

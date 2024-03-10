@@ -16,7 +16,7 @@ Tautology
 ---------
 
 red: make it fail
-^^^^^^^^^^^^^^^^^
+#############################################################################
 
 I add a test for tautology to ``TestBinaryOperations`` in ``test_truth_table.py``
 
@@ -31,7 +31,7 @@ I add a test for tautology to ``TestBinaryOperations`` in ``test_truth_table.py`
 the terminal shows an :ref:`AttributeError`
 
 green: make it pass
-^^^^^^^^^^^^^^^^^^^
+#############################################################################
 
 
 * I add a function definition to ``truth_table.py``
@@ -56,7 +56,7 @@ Contradiction
 -------------
 
 red: make it fail
-^^^^^^^^^^^^^^^^^
+#############################################################################
 
 I add a test for contradiction to ``TestBinaryOperations``
 
@@ -71,7 +71,7 @@ I add a test for contradiction to ``TestBinaryOperations``
 the terminal shows an :ref:`AttributeError`
 
 green: make it pass
-^^^^^^^^^^^^^^^^^^^
+#############################################################################
 
 * I add a function definition to ``truth_table.py``
 

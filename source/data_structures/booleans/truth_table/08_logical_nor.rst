@@ -13,7 +13,7 @@ truth table: Logical NOR
 These tests show Logical NOR from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
 red: make it fail
-^^^^^^^^^^^^^^^^^
+#############################################################################
 
 I add a test for exclusive disjunction to ``TestBinaryOperations`` in ``test_truth_table.py``
 
@@ -28,7 +28,7 @@ I add a test for exclusive disjunction to ``TestBinaryOperations`` in ``test_tru
 and the terminal shows an :ref:`AttributeError`
 
 green: make it pass
-^^^^^^^^^^^^^^^^^^^
+#############################################################################
 
 * I add a function definition to ``truth_table.py``
 
@@ -47,7 +47,7 @@ green: make it pass
         return False
 
 refactor: make it better
-^^^^^^^^^^^^^^^^^^^^^^^^
+#############################################################################
 
 * I restate the ``if`` condition using implicit conditional testing
 

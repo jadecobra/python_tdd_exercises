@@ -35,7 +35,7 @@ Nullary Operations
 Nullary operations do not take in inputs and always return the same value. They are :doc:`singleton functions </functions/functions_singleton>`
 
 red: make it fail
-^^^^^^^^^^^^^^^^^
+#############################################################################
 
 I make a file called ``test_truth_table.py`` in the ``tests`` folder and add the text below
 
@@ -47,7 +47,7 @@ I make a file called ``test_truth_table.py`` in the ``tests`` folder and add the
 the terminal shows a :ref:`ModuleNotFoundError`
 
 green: make it pass
-^^^^^^^^^^^^^^^^^^^
+#############################################################################
 
 * I add :ref:`ModuleNotFoundError` to the list of exceptions encountered
 
@@ -91,7 +91,7 @@ green: make it pass
   and the terminal shows passing tests which remind me that :doc:`True </data_structures/booleans/booleans>` is :doc:`True </data_structures/booleans/booleans>`
 
 refactor: make it better
-^^^^^^^^^^^^^^^^^^^^^^^^
+#############################################################################
 
 
 * I add a test for ``logical_false`` to ``TestNullaryOperations`` class in ``test_truth_table.py``

@@ -35,6 +35,7 @@
 .. _unittest.TestCase.assertRaisesRegex: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertRaisesRegex
 .. _zero-based indexing: https://en.wikipedia.org/wiki/Zero-based_numbering
 
+.. _ImportError: https://docs.python.org/3/library/exceptions.html#ImportError
 .. _IndexError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#IndexError
 .. _KeyError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError
 .. _NameError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError
