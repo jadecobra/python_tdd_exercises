@@ -131,3 +131,10 @@ test_none
 #. :ref:`test_is_none_a_list`
 #. :ref:`test_is_none_a_set`
 #. :ref:`test_is_none_a_dictionary`
+
+*****************************************************************************
+test_booleans
+*****************************************************************************
+
+#. :ref:`test_what_is_false`
+#. :ref:`test_what_is_true`
