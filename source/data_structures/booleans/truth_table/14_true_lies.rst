@@ -90,11 +90,15 @@ green: make it pass
 
 ----
 
+*****************************************************************************
+review
+*****************************************************************************
+
 *YOU DID IT!* You made it to the end of the ``Truth Table`` series. Summarizing what the tests have shown so far, I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures/booleans/booleans>` or :doc:`False </data_structures/booleans/booleans>`
 
 
-* ``contradition`` always returns :doc:`False </data_structures/booleans/booleans>` it is a :doc:`singleton function </functions/functions_singleton>`
-* ``tautology`` always returns :doc:`True </data_structures/booleans/booleans>` it is a :doc:`singleton function </functions/functions_singleton>`
+* ``contradition`` always returns :doc:`False </data_structures/booleans/booleans>` it is a :doc:`singleton function </functions/test_singleton_functions>`
+* ``tautology`` always returns :doc:`True </data_structures/booleans/booleans>` it is a :doc:`singleton function </functions/test_singleton_functions>`
 * ``converse implication`` is ``not p and q`` which is different from ``not(p and q)``
 * ``project second`` always returns ``q``
 * ``project first`` always returns ``p``
@@ -115,3 +119,9 @@ green: make it pass
 * :doc:`True </data_structures/booleans/booleans>` is ``not False``
 * :doc:`False </data_structures/booleans/booleans>` is :doc:`False </data_structures/booleans/booleans>`
 * :doc:`True </data_structures/booleans/booleans>` is :doc:`True </data_structures/booleans/booleans>`
+
+Would you like to :doc:`test lists</data_structures/lists/lists>`?
+
+----
+
+:doc:`/code/code_truth_table`

@@ -737,7 +737,7 @@ and learned
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining attributes (variables) in a :doc:`class </classes/classes>`
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`methods (functions) </functions/functions>` in a :doc:`class </classes/classes>`
 
-:doc:`classes </classes>` vs :doc:`/functions/functions` in Python
+:ref:`classes` vs :doc:`/functions/functions` in Python
 
 -------------------------------------------------------
 

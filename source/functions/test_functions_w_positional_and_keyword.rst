@@ -369,7 +369,7 @@ From the tests I know that
 * functions are defined using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword
 * functions return :ref:`None` by default
 
-Would you like to :ref:`test_classes`?
+Would you like to :ref:`test classes?<test_classes>`
 
 ----
 

@@ -343,7 +343,7 @@ As an exercise I add more tests to ``test_passing_data_structures`` to see what 
         "I received this message: '(1, 2, 3, n)'"
     )
 
-  the terminal shows an :ref:`AssertionError` ::
+  the terminal shows an :ref:`AssertionError`
 
 * I add a test for a :doc:`list </data_structures/lists/lists>`
 

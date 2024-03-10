@@ -399,4 +399,4 @@ You encountered the following exceptions
 
 ----
 
-:doc:`code/code_type_error`
+:doc:`/code/code_type_error`

@@ -100,7 +100,7 @@ From the tests I know
 * functions are defined using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword
 * functions return :ref:`None` by default
 
-Would you like to :ref:`test_passthrough_functions`?
+Would you like to :ref:`test passthrough functions?<test_passthrough_functions>`
 
 ----
 

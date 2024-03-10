@@ -169,7 +169,7 @@ Here is what I know so far from the tests
 * functions are defined using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword
 * functions return :ref:`None` by default
 
-Would you like to :ref:`test_singleton_functions`?
+Would you like to :ref:`test singleton functions?<test_singleton_functions>`
 
 ----
 

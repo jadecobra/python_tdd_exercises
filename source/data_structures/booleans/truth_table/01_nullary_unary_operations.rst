@@ -82,7 +82,7 @@ green: make it pass
    # ModuleNotFoundError
    # AttributeError
 
-* I add a :doc:`singleton function </functions/functions_singleton>` called ``logical_true`` to ``truth_table.py``
+* I add a :doc:`singleton function </functions/test_singleton_functions>` called ``logical_true`` to ``truth_table.py``
 
   .. code-block:: python
 
@@ -218,3 +218,7 @@ I know that
 * :doc:`False </data_structures/booleans/booleans>` is ``not True``
 * :doc:`False </data_structures/booleans/booleans>` is :doc:`False </data_structures/booleans/booleans>`
 * :doc:`True </data_structures/booleans/booleans>` is :doc:`True </data_structures/booleans/booleans>`
+
+----
+
+:doc:`/code/code_truth_table`

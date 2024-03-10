@@ -627,6 +627,8 @@ and encountered the following exceptions
 * :ref:`TypeError`
 * IndexError_
 
+Would you like to :doc:`test list comprehensions?</data_structures/lists/list_comprehensions>`
+
 ----
 
 :doc:`/code/code_lists`

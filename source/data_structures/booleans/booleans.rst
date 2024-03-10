@@ -951,6 +951,8 @@ I can sum this up as
 * empty `objects <https://docs.python.org/3/glossary.html#term-object>`_ including ``0`` and :ref:`None` are `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
 * `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
 
+Would you like to :doc:`test the truth table<truth_table>`?
+
 ----
 
 :doc:`/code/code_booleans`

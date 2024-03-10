@@ -177,3 +177,7 @@ fantastic! the tests pass. I can see that for any boolean operation involving 2 
 * :doc:`True </data_structures/booleans/booleans>` is ``not False``
 * :doc:`False </data_structures/booleans/booleans>` is :doc:`False </data_structures/booleans/booleans>`
 * :doc:`True </data_structures/booleans/booleans>` is :doc:`True </data_structures/booleans/booleans>`
+
+----
+
+:doc:`/code/code_truth_table`

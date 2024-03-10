@@ -6,8 +6,6 @@
 classes: test_classes
 #############################################################################
 
-----
-
 .. contents:: table of contents
   :local:
   :depth: 1
@@ -99,7 +97,7 @@ green: make it pass
 
     class ClassWithPass:
 
-  the terminal shows an :doc:`IndentationError <https://docs.python.org/3/library/exceptions.html?highlight=indentationerror#IndentationError>`_ because I declared a class without adding any indented text
+  the terminal shows an :ref:`IndentationError` because I declared a class without adding any indented text
 * I add the new error to the list of exceptions encountered
 
   .. code-block:: python

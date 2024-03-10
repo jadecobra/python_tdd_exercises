@@ -37,6 +37,7 @@
 
 .. _ImportError: https://docs.python.org/3/library/exceptions.html#ImportError
 .. _IndexError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#IndexError
+.. _IndentationError: https://docs.python.org/3/library/exceptions.html#IndentationError
 .. _KeyError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError
 .. _NameError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError
 .. _SyntaxError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#SyntaxError

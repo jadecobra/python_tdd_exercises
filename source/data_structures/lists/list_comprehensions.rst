@@ -920,7 +920,7 @@ I also encountered the following exceptions
 * :ref:`AttributeError`
 * :ref:`TypeError`
 
-Would you like to test :doc:`/data_structures/dictionaries`
+Would you like to test :doc:`/data_structures/dictionaries`?
 
 ----
 

@@ -25,5 +25,6 @@ Here are the solutions I wrote in the book
   dictionaries<code/code_dictionaries>
   AssertionError<code/code_assertion_error>
   AttributeError<code/code_attribute_error>
+  TypeError<code/code_type_error>
   functions<code/code_functions>
   classes<code/code_classes>

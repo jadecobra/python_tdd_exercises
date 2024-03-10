@@ -227,7 +227,7 @@ test_catching_successes
 red: make it fail
 #############################################################################
 
-the solution has a problem, the ``exception_handler`` always returns ``'failed'`` regardless of what I provide as an argument. It is a :doc:`singleton function </functions/functions_singleton>`.
+the solution has a problem, the ``exception_handler`` always returns ``'failed'`` regardless of what I provide as an argument. It is a :doc:`singleton function </functions/test_singleton_functions>`.
 
 I add a new test that provides a different input with an expectation of a different result
 
@@ -521,7 +521,7 @@ green: make it pass
 
 .. NOTE::
 
-  ``always_returns`` could have been defined as a :doc:`singleton function </functions/functions_singleton>` and the tests would still pass, but it would not show how to use ``try...except...else...finally`` ::
+  ``always_returns`` could have been defined as a :doc:`singleton function </functions/test_singleton_functions>` and the tests would still pass, but it would not show how to use ``try...except...else...finally`` ::
 
       def always_returns(function):
           return 'always returns this'

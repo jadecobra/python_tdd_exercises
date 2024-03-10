@@ -227,7 +227,7 @@ Solving the problem this way shows a problem with the test, which means I need t
 
 * If a user tries to add other numbers that are not ``0`` and ``1``, the ``add`` function will return ``1``
 * If a user tries to add negative numbers, the ``add`` function wil return ``1``
-* The ``add`` function will return ``1`` no matter what inputs the user gives. It is a :doc:`singleton function </functions/functions_singleton>`
+* The ``add`` function will return ``1`` no matter what inputs the user gives. It is a :doc:`singleton function </functions/test_singleton_functions>`
 
 Even though the ``add`` function currently passes the existing test it does not meet the actual requirement.
 

@@ -1280,6 +1280,8 @@ You also know
 * how to change a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with another `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 * how to remove an item from a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
+Would you like to test :ref:`functions`?
+
 ----
 
 :doc:`/code/code_dictionaries`

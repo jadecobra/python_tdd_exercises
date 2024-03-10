@@ -524,5 +524,5 @@ Would you like to test :doc:`/how_to/calculator`?
 
 ----
 
-:doc:`/code/make_tdd/code_make_tdd_sh`
-:doc:`/code/make_tdd/code_make_tdd_ps1`
+:doc:`/code/make_tdd/code_make_python_tdd_sh`
+:doc:`/code/make_tdd/code_make_python_tdd_ps1`

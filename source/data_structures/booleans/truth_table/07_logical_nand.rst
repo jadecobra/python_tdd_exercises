@@ -134,3 +134,7 @@ To review, I know from the tests that for any boolean operation involving 2 inpu
 * :doc:`True </data_structures/booleans/booleans>` is ``not False``
 * :doc:`False </data_structures/booleans/booleans>` is :doc:`False </data_structures/booleans/booleans>`
 * :doc:`True </data_structures/booleans/booleans>` is :doc:`True </data_structures/booleans/booleans>`
+
+----
+
+:doc:`/code/code_truth_table`

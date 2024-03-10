@@ -243,7 +243,7 @@ test_factory_w_variable_inputs
 
 red: make it fail
 #############################################################################
-* The factory function currently returns the exact same dictionary every time, regardless of what inputs it gets. It is a :doc:`singleton function </functions/functions_singleton>`. To be more useful it has to use the inputs it is given. I add another test to ``test_person.py`` with a different set of inputs
+* The factory function currently returns the exact same dictionary every time, regardless of what inputs it gets. It is a :doc:`singleton function </functions/test_singleton_functions>`. To be more useful it has to use the inputs it is given. I add another test to ``test_person.py`` with a different set of inputs
 
   .. code-block:: python
 

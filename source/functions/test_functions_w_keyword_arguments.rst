@@ -344,7 +344,7 @@ From the tests I know
 * functions are defined using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword
 * functions return :ref:`None` by default
 
-Would you like to :ref:`test_functions_w_positional_and_keyword_arguments`?
+Would you like to :ref:`test functions with positional and keyword arguments?<test_functions_w_positional_and_keyword_arguments>`
 
 ----
 
