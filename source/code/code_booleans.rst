@@ -1,6 +1,6 @@
 
 ##################################
-Data Structures: Booleans: tests
+data structures: Booleans: tests
 ##################################
 
 Here is the code in ``tests/test_booleans.py``

@@ -44,6 +44,7 @@ My recommendation is to
 * try to write solutions using only the tests from the :ref:`tests and solutions` sections as your guide
 * try adding tests for any ideas you get as you go through a chapter
 * you can also go through the :ref:`how-tos` section sequentially
+* do not quit until you have gotten to the end, parts of the book will be challenging and confusing, it is part of the experience when solving problems or learning to solve problems, and there is a lot of failure but if you take it one small step at a time you eventually get there
 
 If you prefer videos, there is one for each chapter at `<https://www.youtube.com/@JacobItegboje>`_
 
@@ -76,17 +77,8 @@ table of contents
   :titlesonly:
 
   conventions
-  exceptions/ModuleNotFoundError
-  exceptions/AssertionError
-  exceptions/AttributeError
-  exceptions/TypeError
-  exceptions/IndentationError
-  data_structures/none
-  data_structures/booleans/booleans
-  data_structures/booleans/truth_table
-  data_structures/lists/lists
-  data_structures/lists/list_comprehensions
-  data_structures/dictionaries
+  exceptions/exceptions
+  data_structures/data_structures
   functions/functions
   functions/functions_singleton
   functions/functions_passthrough
@@ -123,6 +115,7 @@ tests and solutions
   code/code_attribute_error
   code/code_functions
   code/code_classes
+  catalog_of_solutions
   catalog_of_tests
 
 ----

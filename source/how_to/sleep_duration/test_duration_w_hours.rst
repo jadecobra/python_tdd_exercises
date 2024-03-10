@@ -138,7 +138,7 @@ green: make it pass
 
     AttributeError: module 'sleep_duration' has no attribute 'duration'
 
-* I add the error to the list of exceptions encountered
+* I add the error to the list of exceptions encountered as well
 
   .. code-block:: python
 

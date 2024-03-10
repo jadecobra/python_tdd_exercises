@@ -1,6 +1,6 @@
 
 ################################################################################
-Data Structures: List Comprehensions: tests and solutions
+data structures: List Comprehensions: tests and solutions
 ################################################################################
 
 **********

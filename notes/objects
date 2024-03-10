@@ -3,22 +3,22 @@ classes/classes                          classes                                
     classes/classes_initializer              classes: initializer                    : classes/classes_initializer.html
     code/code_assertion_error                AssertionError: tests                   : code/code_assertion_error.html
     code/code_attribute_error                AttributeError: tests and solutions     : code/code_attribute_error.html
-    code/code_booleans                       Data Structures: Booleans: tests        : code/code_booleans.html
+    code/code_booleans                       data structures: Booleans: tests        : code/code_booleans.html
     code/code_calculator                     how to make a calculator: tests and solutions: code/code_calculator.html
     code/code_classes                        classes: tests and solutions            : code/code_classes.html
-    code/code_dictionaries                   Data Structures: Dictionaries: tests and solution: code/code_dictionaries.html
+    code/code_dictionaries                   data structures: Dictionaries: tests and solution: code/code_dictionaries.html
     code/code_exception_handling             how to handle Exceptions: tests and solutions: code/code_exception_handling.html
     code/code_functions                      functions: tests and solutions          : code/code_functions.html
-    code/code_list_comprehensions            Data Structures: List Comprehensions: tests and solutions: code/code_list_comprehensions.html
-    code/code_lists                          Data Structures: Lists: tests           : code/code_lists.html
-    code/code_none                           Data Structures: None: tests            : code/code_none.html
+    code/code_list_comprehensions            data structures: List Comprehensions: tests and solutions: code/code_list_comprehensions.html
+    code/code_lists                          data structures: Lists: tests           : code/code_lists.html
+    code/code_none                           data structures: None: tests            : code/code_none.html
     code/code_pass_values                    how to pass values: tests and solution  : code/code_pass_values.html
     code/code_person_factory                 how to make a person: tests and solution: code/code_person_factory.html
     code/code_sleep_duration                 how to measure sleep duration: tests and solution: code/code_sleep_duration.html
     code/code_truth_table                    truth table: tests and solutions        : code/code_truth_table.html
     code/make_tdd/code_make_tdd_environment Automatically make a Test Driven Development Environment: code/make_tdd/code_make_tdd_environment.html
     conventions                              Conventions                             : conventions.html
-    data_structures/booleans/booleans        Data Structures: Booleans               : data_structures/booleans/booleans.html
+    data_structures/booleans/booleans        data structures: Booleans               : data_structures/booleans/booleans.html
     data_structures/booleans/truth_table/01  Truth Table                             : data_structures/booleans/truth_table/01.html
     data_structures/booleans/truth_table/02_logical_conjunction truth table: Logical Conjunction        : data_structures/booleans/truth_table/02_logical_conjunction.html
     data_structures/booleans/truth_table/03_logical_disjunction truth table: Logical Disjunction        : data_structures/booleans/truth_table/03_logical_disjunction.html
@@ -33,10 +33,10 @@ classes/classes                          classes                                
     data_structures/booleans/truth_table/12_project truth table: Project                    : data_structures/booleans/truth_table/12_project.html
     data_structures/booleans/truth_table/13_converse_implication truth table: Converse Implication       : data_structures/booleans/truth_table/13_converse_implication.html
     data_structures/booleans/truth_table/14_true_lies truth table: True Lies                  : data_structures/booleans/truth_table/14_true_lies.html
-    data_structures/dictionaries             Data Structures: Dictionaries           : data_structures/dictionaries.html
-    data_structures/lists/list_comprehensions Data Structures: List Comprehensions    : data_structures/lists/list_comprehensions.html
-    data_structures/lists/lists              Data Structures: Lists                  : data_structures/lists/lists.html
-    data_structures/none                     Data Structures: None                   : data_structures/none.html
+    data_structures/dictionaries             data structures: Dictionaries           : data_structures/dictionaries.html
+    data_structures/lists/list_comprehensions data structures: List Comprehensions    : data_structures/lists/list_comprehensions.html
+    data_structures/lists/lists              data structures: Lists                  : data_structures/lists/lists.html
+    data_structures/none                     data structures: None                   : data_structures/none.html
     exceptions/AssertionError                AssertionError                          : exceptions/AssertionError.html
     exceptions/AttributeError                AttributeError                          : exceptions/AttributeError.html
     exceptions/IndentationError              IndentationError                        : exceptions/IndentationError.html
@@ -84,16 +84,16 @@ std:label
     classes: tests and solutions             classes: tests and solutions            : code/code_classes.html#classes-tests-and-solutions
     contradiction                            Contradiction                           : data_structures/booleans/truth_table/14_true_lies.html#contradiction
     conventions                              Conventions                             : conventions.html#conventions
-    data structures: booleans                Data Structures: Booleans               : data_structures/booleans/booleans.html#data-structures-booleans
-    data structures: booleans: tests         Data Structures: Booleans: tests        : code/code_booleans.html#data-structures-booleans-tests
-    data structures: dictionaries            Data Structures: Dictionaries           : data_structures/dictionaries.html#data-structures-dictionaries
-    data structures: dictionaries: tests and solution Data Structures: Dictionaries: tests and solution: code/code_dictionaries.html#data-structures-dictionaries-tests-and-solution
-    data structures: list comprehensions     Data Structures: List Comprehensions    : data_structures/lists/list_comprehensions.html#data-structures-list-comprehensions
-    data structures: list comprehensions: tests and solutions Data Structures: List Comprehensions: tests and solutions: code/code_list_comprehensions.html#data-structures-list-comprehensions-tests-and-solutions
-    data structures: lists                   Data Structures: Lists                  : data_structures/lists/lists.html#data-structures-lists
-    data structures: lists: tests            Data Structures: Lists: tests           : code/code_lists.html#data-structures-lists-tests
-    data structures: none                    Data Structures: None                   : data_structures/none.html#data-structures-none
-    data structures: none: tests             Data Structures: None: tests            : code/code_none.html#data-structures-none-tests
+    data structures: booleans                data structures: Booleans               : data_structures/booleans/booleans.html#data-structures-booleans
+    data structures: booleans: tests         data structures: Booleans: tests        : code/code_booleans.html#data-structures-booleans-tests
+    data structures: dictionaries            data structures: Dictionaries           : data_structures/dictionaries.html#data-structures-dictionaries
+    data structures: dictionaries: tests and solution data structures: Dictionaries: tests and solution: code/code_dictionaries.html#data-structures-dictionaries-tests-and-solution
+    data structures: list comprehensions     data structures: List Comprehensions    : data_structures/lists/list_comprehensions.html#data-structures-list-comprehensions
+    data structures: list comprehensions: tests and solutions data structures: List Comprehensions: tests and solutions: code/code_list_comprehensions.html#data-structures-list-comprehensions-tests-and-solutions
+    data structures: lists                   data structures: Lists                  : data_structures/lists/lists.html#data-structures-lists
+    data structures: lists: tests            data structures: Lists: tests           : code/code_lists.html#data-structures-lists-tests
+    data structures: none                    data structures: None                   : data_structures/none.html#data-structures-none
+    data structures: none: tests             data structures: None: tests            : code/code_none.html#data-structures-none-tests
     explicit targets                         Explicit targets                        : test_catalog.html#explicit-targets
     functions                                                                        : functions/functions.html#functions
     functions: keyword arguments                                                     : functions/functions_keyword.html#functions-keyword-arguments
@@ -192,7 +192,7 @@ std:label
     negate first                             Negate First                            : data_structures/booleans/truth_table/11_negate.html#negate-first
     negate second                            Negate Second                           : data_structures/booleans/truth_table/11_negate.html#negate-second
     nullary operations                       Nullary Operations                      : data_structures/booleans/truth_table/01.html#nullary-operations
-    passing data structures                  Passing Data Structures                 : how_to/pass_values.html#passing-data-structures
+    passing data structures                  Passing data structures                 : how_to/pass_values.html#passing-data-structures
     project first                            Project First                           : data_structures/booleans/truth_table/12_project.html#project-first
     project second                           Project Second                          : data_structures/booleans/truth_table/12_project.html#project-second
     pumping python: how to solve problems with test driven development Pumping Python: how to solve problems with Test Driven Development: index.html#pumping-python-how-to-solve-problems-with-test-driven-development

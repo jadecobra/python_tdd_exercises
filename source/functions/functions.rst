@@ -1,16 +1,6 @@
-.. include:: ../links.rst
-
 #############################################################################
 functions
 #############################################################################
-
-----
-
-.. contents:: table of contents
-  :local:
-  :depth: 1
-
-----
 
 A ``function`` is a callable_ unit/block of code. It is a way to write statements that can be used to accomplish a task at a different time from when they are written. Using functions makes the code modular which makes it easier to read, test, reuse, maintain and improve.
 
@@ -36,110 +26,14 @@ in other words
 
 ``functions`` are defined using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword, a name, parentheses and a colon at the end
 
-*****************************************************************************
-red: make it fail
-*****************************************************************************
+The following tests cover different ways to make a function
 
-I make a file called ``test_functions.py`` in the ``tests`` folder and add the following failing test
+.. toctree::
+  :titlesonly:
+  :maxdepth: 1
 
-.. code-block:: python
+  test_functions
 
-  import unittest
-  import functions
+----
 
-
-  class TestFunctions(unittest.TestCase):
-
-      def test_functions_w_pass(self):
-          self.assertIsNone(functions.function_w_pass())
-
-the terminal shows a :ref:`ModuleNotFoundError`\ , and I add it to the list of exceptions encountered
-
-.. code-block:: python
-
-  # Exceptions Encountered
-  # AssertionError
-  # ModuleNotFoundError
-
-*****************************************************************************
-green: make it pass
-*****************************************************************************
-
-* I make a file called ``functions.py`` in the project folder and the terminal shows an :ref:`AttributeError`\ , which I add to the list of exceptions encountered
-
-  .. code-block:: python
-
-    # Exceptions Encountered
-    # AssertionError
-    # ModuleNotFoundError
-    # AttributeError
-
-* I add a function definition to ``functions.py``
-
-  .. code-block:: python
-
-    def function_w_pass():
-        pass
-
-  and we have a passing test
-
-  * the test checks if the value of the call to ``functions.function_w_pass`` is :ref:`None`
-  * the function definition simply says `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ yet the test passes
-  * `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is a placeholder keyword which allows the function definition to follow python syntax rules
-  * the test passes because in Python all functions return :ref:`None` by default, like the function has an invisible line that says ``return None``
-
-*****************************************************************************
-refactor: make it better
-*****************************************************************************
-
-* I add a new failing test to ``TestFunctions`` in ``test_functions.py`` to check that functions always return :ref:`None`
-
-  .. code-block:: python
-
-      def test_functions_w_return(self):
-          self.assertIsNone(functions.function_w_return())
-
-  the terminal shows an :ref:`AttributeError`
-
-*  I add a new function to ``functions.py`` to make the test pass, this time with a ``return`` statement instead of `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
-
-  .. code-block:: python
-
-      def function_w_return(self):
-          return
-
-  the terminal shows this test also passes
-
-* I defined 2 functions with different statements in their body but they both return the same result, because "in Python all functions return :ref:`None` by default, like the function has an invisible line that says ``return None``"
-
-*  I add one more test to the ``TestFunctions`` class in ``test_functions.py`` to help drive home the point
-
-  .. code-block:: python
-
-      def test_functions_w_return_none(self):
-          self.assertIsNone(
-              functions.function_w_return_none()
-          )
-
-  the terminal shows an :ref:`AttributeError`
-* green: make it pass
-
-  from the `Zen of Python <https://peps.python.org/pep-0020/>`_ - ``Explicit is better than implicit.`` I add a function definition to ``functions.py`` this time with an explicit ``return`` statement showing the value returned
-
-  .. code-block:: python
-
-    def function_w_return_none():
-        return None
-
-  and the terminal shows passing tests.
-
-The 3 ways I have defined functions so far have the exact same outcome, they all ``return None``. If ``Explicit is better than implicit.`` then I prefer to use ``return None`` telling anyone who reads the code exactly what the function returns.
-
-*****************************************************************************
-review
-*****************************************************************************
-
-Here is what I know so far from the tests
-
-* functions are defined using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword
-* functions return :ref:`None` by default
+:doc:`/code/code_functions`
