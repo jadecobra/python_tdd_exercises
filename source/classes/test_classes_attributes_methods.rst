@@ -379,4 +379,8 @@ CONGRATULATIONS! If you made it this far and typed along with me, You know
 * how to define a class with an initializer
 * how to view the attributes and :ref:`methods<functions>` of a class
 
-Do you want to `read more about classes? <https://docs.python.org/3/tutorial/classes.html#tut-firstclasses>`_
+Would you like to :ref:`test_classes_w_initializers`?
+
+----
+
+:doc:`code/code_classes`

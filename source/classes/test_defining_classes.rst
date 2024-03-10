@@ -257,6 +257,8 @@ Here is a little summary
   I prefer to use the explicit form of class definitions with the parent `object <https://docs.python.org/3/glossary.html#term-object>`_ in parentheses, from `the zen of python <https://peps.python.org/pep-0020/>`_
   ``Explicit is better than implicit``
 
+Would you like to :doc:`test_classes_attributes_methods`?
+
 ----
 
 :doc:`/code/code_classes`
