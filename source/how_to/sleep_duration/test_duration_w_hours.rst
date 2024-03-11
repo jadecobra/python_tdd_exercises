@@ -164,7 +164,7 @@ green: make it pass
 
     duration = None
 
-* I add a call to ``duration`` in the test because I want it accept inputs
+* I add a call to ``duration`` in the test because I want it to accept inputs
 
   .. code-block:: python
 
@@ -313,7 +313,7 @@ refactor: make it better
 test_string_attributes_and_methods
 #############################################################################
 
-I will try to get the hours part of the ``wake_time`` and ``sleep_time`` which are the first two characters
+I want to get the first two characters of ``wake_time`` and ``sleep_time`` which are the hours
 
 .. _test_string_attributes_and_methods_red:
 
@@ -382,7 +382,7 @@ green: make it pass
     # AttributeError
     # SyntaxError
 
-* there is a closing quote without an opening one, so I add it since quotes come in pairs
+* there is a closing quote without an opening one, so I add it since :ref:`quotes come in pairs<conventions_enclosures>`
 
   .. code-block:: python
 
