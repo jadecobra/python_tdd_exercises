@@ -14,7 +14,7 @@ conventions
 
 The following are a few conventions to know in Python
 
-.. _convention_comments:
+.. _conventions_comments:
 
 *****************************************************************************
 comments
@@ -26,7 +26,7 @@ Comments are represented by the hashtag or pound before the thing that is commen
 
   # This is a comment
 
-.. _convention_enclosures:
+.. _conventions_enclosures:
 
 *****************************************************************************
 enclosures
@@ -46,7 +46,7 @@ Enclosures must be closed once open, which means they happen in pairs for exampl
 
 Your Interactive Development Environment (IDE) will take care of this for you
 
-.. _convention_quotes:
+.. _conventions_quotes:
 
 *****************************************************************************
 quotes
@@ -70,7 +70,7 @@ Quotes represent strings_ and can be single, double, triple single or triple dou
   triple single quotes
   '''
 
-.. _convention_tuples:
+.. _conventions_tuples:
 
 *****************************************************************************
 tuples
@@ -82,7 +82,7 @@ A tuple is a sequence or container of data that cannot be changed later, it is i
 
   (1, 2.5, "three", [4, 'five'])
 
-.. _convention_lists:
+.. _conventions_lists:
 
 *****************************************************************************
 lists
@@ -94,7 +94,7 @@ A list/array is a sequence or container of data that can be changed after it is 
 
   [1, 2.5, 'three', (4, "five")]
 
-.. _convention_sets:
+.. _conventions_sets:
 
 *****************************************************************************
 sets
@@ -106,7 +106,7 @@ Sets are represented with curly braces/brackets
 
   {1, 2.5, 'three', (4, 'five')}
 
-.. _convention_dictionaries:
+.. _conventions_dictionaries:
 
 *****************************************************************************
 dictionaries
