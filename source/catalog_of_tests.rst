@@ -13,7 +13,6 @@ catalog of tests
 Here are all the tests written in this book
 
 :ref:`test_failure`
-:ref:`test_type_error_w_function_signatures`
 
 *****************************************************************************
 test_calculator
@@ -69,6 +68,46 @@ test_sleep_duration
 #. :ref:`test_duration_w_date_and_time<test_duration_w_earlier_wake_than_sleep_time>`
 
 *****************************************************************************
+test_assertion_error
+*****************************************************************************
+
+#. :ref:`test_assertion_errors_w_none`
+#. :ref:`test_assertion_errors_w_false`
+#. :ref:`test_assertion_errors_w_true`
+#. :ref:`test_assertion_errors_w_equality`
+
+*****************************************************************************
+test_attribute_error
+*****************************************************************************
+
+#. :ref:`test_attribute_error_w_variables`
+#. :ref:`test_attribute_error_w_functions`
+#. :ref:`test_attribute_error_w_classes`
+#. :ref:`test_attribute_error_w_class_attributes`
+#. :ref:`test_attribute_error_w_class_methods`
+
+*****************************************************************************
+test_none
+*****************************************************************************
+
+#. :ref:`test_none_is_none`
+#. :ref:`test_is_none_a_boolean`
+#. :ref:`test_is_none_an_integer`
+#. :ref:`test_is_none_a_float`
+#. :ref:`test_is_none_a_string`
+#. :ref:`test_is_none_a_tuple`
+#. :ref:`test_is_none_a_list`
+#. :ref:`test_is_none_a_set`
+#. :ref:`test_is_none_a_dictionary`
+
+*****************************************************************************
+test_booleans
+*****************************************************************************
+
+#. :ref:`test_what_is_false`
+#. :ref:`test_what_is_true`
+
+*****************************************************************************
 test_lists
 *****************************************************************************
 
@@ -92,49 +131,9 @@ test_list_comprehensions
 test_functions
 *****************************************************************************
 
+#. :ref:`test_functions`
 #. :ref:`test_singleton_functions`
 #. :ref:`test_passthrough_functions`
 #. :ref:`test_functions_w_positional_arguments`
 #. :ref:`test_functions_w_keyword_arguments`
 #. :ref:`test_functions_w_positional_and_keyword_arguments`
-
-*****************************************************************************
-test_assertion_error
-*****************************************************************************
-
-#. :ref:`test_assertion_errors_w_none`
-#. :ref:`test_assertion_errors_w_false`
-#. :ref:`test_assertion_errors_w_true`
-#. :ref:`test_assertion_errors_w_equality`
-
-*****************************************************************************
-test_attribute_error
-*****************************************************************************
-
-#. :ref:`test_attribute_error_w_variables`
-#. :ref:`test_attribute_error_w_functions`
-#. :ref:`test_attribute_error_w_classes`
-#. :ref:`test_attribute_error_w_class_attributes`
-#. :ref:`test_attribute_error_w_class_methods`
-
-
-*****************************************************************************
-test_none
-*****************************************************************************
-
-#. :ref:`test_none_is_none`
-#. :ref:`test_is_none_a_boolean`
-#. :ref:`test_is_none_an_integer`
-#. :ref:`test_is_none_a_float`
-#. :ref:`test_is_none_a_string`
-#. :ref:`test_is_none_a_tuple`
-#. :ref:`test_is_none_a_list`
-#. :ref:`test_is_none_a_set`
-#. :ref:`test_is_none_a_dictionary`
-
-*****************************************************************************
-test_booleans
-*****************************************************************************
-
-#. :ref:`test_what_is_false`
-#. :ref:`test_what_is_true`
