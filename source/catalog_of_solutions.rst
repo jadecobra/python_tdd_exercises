@@ -7,7 +7,7 @@ catalog of solutions
 Here are the solutions I wrote in the book
 
 .. toctree::
-  :maxdepth: 2
+  :maxdepth: 1
   :titlesonly:
 
   code/make_tdd/code_make_python_tdd_sh

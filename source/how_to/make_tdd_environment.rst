@@ -58,6 +58,8 @@ If the operating system of your computer is Windows, use `Windows Subsystem for 
 
 * run subsequent commands in `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_ terminal
 
+----
+
 ****************************************************************************************
 how to make a python test driven development environment
 ****************************************************************************************
@@ -284,6 +286,8 @@ So far there is not much to improve on what has been written but there has been 
 * ``python3 -m unittest`` will be run anytime I make a change to make sure it does not break previous passing tests
 
 This means ``python3 -m unittest`` is run for each part of the Test Driven Development cycle or each time there is a code change. I automate this so `I Do Not Repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_, it would be better for a program to automatically run the tests when there is a change to the code
+
+----
 
 ****************************************************************************************
 how to automatically run tests
