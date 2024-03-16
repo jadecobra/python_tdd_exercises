@@ -48,10 +48,12 @@ red: make it fail
 
   .. code-block:: python
 
-    def test_duration_w_hours(self):
-        self.assertEqual(
+    class TestSleepDuration(unittest.TestCase):
 
-        )
+        def test_duration_w_hours(self):
+            self.assertEqual(
+
+            )
 
   the terminal shows a :ref:`TypeError`
 
@@ -97,7 +99,7 @@ green: make it pass
 
     NameError: name 'sleep_duration' is not defined
 
-* so I add it as an exception encountered
+* I add it as an exception encountered
 
   .. code-block:: python
 
@@ -106,7 +108,7 @@ green: make it pass
     # TypeError
     # NameError
 
-* when I add an `import statement`_ at the top of the file for the :doc:`module </exceptions/ModuleNotFoundError>`
+* then add an `import statement`_ at the top of the file for the :doc:`module </exceptions/ModuleNotFoundError>`
 
   .. code-block:: python
 
@@ -123,7 +125,7 @@ green: make it pass
 
     AssertionError: <module 'sleep_duration' from '/workspace[46 chars].py'> != None
 
-* so I add a reference to something in the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>`
+* I add a reference to something in the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>`
 
   .. code-block:: python
 
@@ -164,7 +166,7 @@ green: make it pass
 
     duration = None
 
-* I add a call to ``duration`` in the test because I want it to accept inputs
+* then add a call to ``duration`` in the test because I want it to accept inputs
 
   .. code-block:: python
 
@@ -205,7 +207,7 @@ green: make it pass
 
   because the name is not in the signature for ``duration``
 
-* I add it to the signature and set its default value to :ref:`None`
+* I add it and set its default value to :ref:`None`
 
   .. code-block:: python
 
@@ -232,14 +234,14 @@ green: make it pass
 
   because ``sleep_time`` is not in its signature
 
-* I add it, setting the default value to :ref:`None`
+* I add it and set its default value to :ref:`None`
 
   .. code-block:: python
 
     def duration(wake_time=None, sleep_time=None):
         return None
 
-* then I set the expectation of the test to the inputs given
+* then set the expectation of the test to the inputs given
 
   .. code-block:: python
 
@@ -363,7 +365,7 @@ green: make it pass
             ['__add__', '__class__', '__contains__', [934 chars]ill']
         )
 
-  and the terminal shows a SyntaxError_
+  the terminal shows a SyntaxError_
 
   .. code-block:: python
 
@@ -382,7 +384,7 @@ green: make it pass
     # AttributeError
     # SyntaxError
 
-* there is a closing quote without an opening one, so I add it since :ref:`quotes come in pairs<conventions_enclosures>`
+* there is a closing quote without an opening one, I add it since :ref:`quotes come in pairs<conventions_enclosures>`
 
   .. code-block:: python
 
@@ -392,7 +394,7 @@ green: make it pass
             ['__add__', '__class__', '__contains__', '[934 chars]ill']
         )
 
-  and the terminal shows an :ref:`AssertionError` with a different message and a suggestion
+  the terminal shows an :ref:`AssertionError` with a different message and a suggestion
 
   .. code-block:: python
 
@@ -409,7 +411,7 @@ green: make it pass
             ['__add__', '__class__', '__contains__', '[934 chars]ill']
         )
 
-  - and the terminal shows the full list of :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of a string_, thank you Python
+  - and the terminal shows the full list of :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of a string_
   - `unittest.TestCase.maxDiff`_ sets a limit on the number of characters the terminal shows for a difference between two objects. There is no limit when it is set to :ref:`None`
 
 * I copy and paste the values from the terminal into the test, and remove the extra characters - ``'E       -  '`` using find and replace - ``ctrl+h`` (windows/linux) ``command+option+f`` (mac)
@@ -510,7 +512,7 @@ green: make it pass
         )
 
   and the test passes
-* I want to try one of the :ref:`methods<functions>` listed in ``test_string_attributes_and_methods`` to see if it will get me closer to a solution, but I cannot tell what they do by the names alone. I need more details so I use the `help system`_ to show me the `python documentation for strings`_
+* I want to try one of the :ref:`methods<functions>` listed in ``test_string_attributes_and_methods`` to see if it will get me closer to a solution, but I cannot tell what they do by the names alone. I will use the `help system`_ to get more details
 
   .. code-block:: python
 
@@ -518,7 +520,7 @@ green: make it pass
         ...
         self.assertEqual(help(str))
 
-  the terminal shows documentation for the string_ :doc:`module </exceptions/ModuleNotFoundError>` and I read the descriptions for each :ref:`method<functions>` until I see one that looks like it could solve the problem
+  the terminal shows `python documentation for strings`_ and I read the descriptions for each :ref:`method<functions>` until I see one that looks like it could solve the problem
 
   .. code-block:: python
 
@@ -545,7 +547,7 @@ test_string_splitting
 red: make it fail
 -----------------------------------------------------------------------------
 
-I remove ``self.assertEqual(help(str))``, add a failing test for the `str.split`_ :ref:`method<functions>` to see what it does
+I remove ``self.assertEqual(help(str))`` then add a failing test for the `str.split`_ :ref:`method<functions>` to see what it does
 
 .. code-block:: python
 
@@ -605,7 +607,7 @@ refactor: make it better
 
     AssertionError: Lists differ: ['01:23'] != ['01', '23']
 
-* from the `documentation <python documentation for strings>`_, `str.split`_ takes in ``sep=None, maxsplit=-1`` as inputs and ``sep`` is the separator. I want to see what happens when I pass in ``':'`` as the separator
+* the `documentation <python documentation for strings>`_ showed that `str.split`_ takes in a separator. I want to see what happens when I pass in ``':'`` as the separator
 
   .. code-block:: python
 
@@ -615,7 +617,7 @@ refactor: make it better
             ['01', '23']
         )
 
-  the test passes. I now know how to get the different parts of ``wake_time`` and ``sleep_time``
+  the test passes which means I know how to get the different parts of ``wake_time`` and ``sleep_time``
 
 * I comment out the `unittest.skip decorator`_ for ``test_duration_w_hours`` by hitting ``ctrl+/`` (windows/linux) or ``command+/`` (mac)
 
@@ -653,7 +655,7 @@ refactor: make it better
 red: make it fail
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* I want the first item of the list from splitting the timestamp string_ which is the hours, and I know I can get it by using its index as covered in :doc:`/data_structures/lists/lists`. Python uses `zero-based indexing`_ which means the first item is at index ``0`` and the second item is at index ``1``
+* I want the hours part of the timestamp which is first item of the list from splitting the timestamp string_. I can get it by using its index as covered in :doc:`/data_structures/lists/lists`. Python uses `zero-based indexing`_ which means the first item is at index ``0`` and the second item is at index ``1``
 * I uncomment the `unittest.skip decorator`_ to disable ``test_duration_w_hours`` by hitting ``ctrl+/`` (windows/linux) or ``command+/`` (mac)
 
   .. code-block:: python
@@ -662,7 +664,7 @@ red: make it fail
     def test_duration_w_hours(self):
     ...
 
-* then add tests to ``test_string_splitting`` for getting specific parts of the :doc:`list </data_structures/lists/lists>` from calling `str.split`_
+* then add an assertion to ``test_string_splitting`` for getting specific parts of the :doc:`list </data_structures/lists/lists>` from calling `str.split`_
 
   .. code-block:: python
 
@@ -699,7 +701,7 @@ green: make it pass
 refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* I add another test for getting the minutes
+* I add another assertion for the minutes
 
   .. code-block:: python
 
@@ -756,7 +758,7 @@ refactor: make it better
 test_converting_strings_to_integers
 #############################################################################
 
-I want to see if I can use the int_ constructor to convert a string_ to an integer_
+I want to see if I can use the int_ constructor to convert a string_ to an integer_ for the calculation
 
 .. _test_converting_strings_to_integers_red:
 
@@ -806,13 +808,13 @@ green: make it pass
 refactor: make it pass
 -----------------------------------------------------------------------------
 
-* I add another line to test numbers greater than ``9``
+* I add another assertion to test numbers greater than ``9``
 
   .. code-block:: python
 
     self.assertEqual(int('12'), 1)
 
-  and the terminal shows an :ref:`AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -838,7 +840,7 @@ refactor: make it pass
     def test_duration_w_hours(self):
     ...
 
-* and update the expectation to include calls to the int_ constructor
+* then add calls to the int_ constructor as part of the calculation in the test
 
   .. code-block:: python
 
@@ -859,7 +861,7 @@ refactor: make it pass
 
     AssertionError: ('08:00', '07:00') != 1
 
-  the ``duration`` :ref:`function<functions>` returns its inputs but the test now expects the difference
+  the ``duration`` :ref:`function<functions>` returns its inputs but the test now expects the difference between the hours
 
 * I take what I learned from the tests to make it match the expectation
 
@@ -873,7 +875,7 @@ refactor: make it pass
 
   and the terminal shows passing tests! Celebration Time!!
 
-* I want to make sure that the function is tested with random numbers, so I add an `import statement`_ for the random_ :doc:`module </exceptions/ModuleNotFoundError>` to ``test_sleep_duration.py``
+* I want to make sure the function is tested with random numbers by adding an `import statement`_ for the random_ :doc:`module </exceptions/ModuleNotFoundError>` to ``test_sleep_duration.py``
 
   .. code-block:: python
 
@@ -881,7 +883,7 @@ refactor: make it pass
     import sleep_duration
     import unittest
 
-* then add variables for random hours in a day
+* then I add variables to the test for random hours in a day
 
   .. code-block:: python
 
@@ -896,7 +898,7 @@ refactor: make it pass
 
   ``random.randint(0, 23)`` will give me a random integer_ from ``0`` up to and including ``23`` to represent the 24 hours in a day
 
-* and :doc:`interpolate </how_to/pass_values>` the random integers_ as hours for ``wake_time`` and ``sleep_time``
+* I :doc:`interpolate </how_to/pass_values>` the random integers_ as hours for ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
 
@@ -908,9 +910,10 @@ refactor: make it pass
         sleep_time=f'{sleep_hour:02}:00'
     ...
 
-  the terminal still shows passing tests. The ``:02`` in ``{wake_hour:02}`` and ``{sleep_hour:02}`` tell Python to always display two characters for the numbers, with a leading zero when it is one digit. For example, display ``01`` instead of ``1``
+  - the terminal still shows passing tests
+  - ``:02`` in ``{wake_hour:02}`` and ``{sleep_hour:02}`` tell Python to always display two characters for the numbers, with a leading zero when it is one digit. For example, display ``01`` instead of ``1``
 
-* then add a :ref:`function<functions>` to return random hours
+* I add a :ref:`function<functions>` to return random hours
 
   .. code-block:: python
 
@@ -925,7 +928,7 @@ refactor: make it pass
     class TestSleepDuration(unittest.TestCase):
     ...
 
-  and call it in ``test_duration_w_hours``
+  then call it in ``test_duration_w_hours``
 
   .. code-block:: python
 
@@ -947,7 +950,7 @@ refactor: make it pass
 
   still green
 
-* ``wake_time`` and ``sleep_time`` now look exactly the same so I will create a function that returns a random timestamp
+* ``wake_time`` and ``sleep_time`` now look exactly the same, time to create a function that returns a random timestamp
 
   .. code-block:: python
 
