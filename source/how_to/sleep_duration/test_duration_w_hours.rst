@@ -306,7 +306,7 @@ refactor: make it better
 
     TypeError: unsupported operand type(s) for -: 'str' and 'str'
 
-  I cannot subtract one string_ from another
+  I cannot subtract one string_ from another and the timestamps are strings
 
 .. _test_string_attributes_and_methods:
 
