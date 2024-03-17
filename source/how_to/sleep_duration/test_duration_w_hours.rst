@@ -820,13 +820,13 @@ refactor: make it pass
 
     AssertionError: 12 != 1
 
-* so I change the number from ``1`` to ``12``
+* I change the number from ``1`` to ``12``
 
   .. code-block:: python
 
     self.assertEqual(int('12'), 12)
 
-  we are green again
+  and we are green again
 
 ----
 
@@ -898,7 +898,29 @@ refactor: make it pass
 
   ``random.randint(0, 23)`` will give me a random integer_ from ``0`` up to and including ``23`` to represent the 24 hours in a day
 
-* I :doc:`interpolate </how_to/pass_values>` the random integers_ as hours for ``wake_time`` and ``sleep_time``
+* I add an assertion to see what values I get from ``random.randint``
+
+  .. code-block:: python
+
+    # @unittest.skip
+    def test_duration_w_hours(self):
+        wake_hour = random.randint(0, 23)
+        sleep_hour = random.randint(0, 23)
+        self.assertEqual(wake_hour, sleep_hour)
+
+  and get an :ref:`AssertionError` that looks like
+
+  .. code-block:: python
+
+    AssertionError: 9 != 7
+    AssertionError: 16 != 3
+    AssertionError: 16 != 19
+    AssertionError: 3 != 6
+
+  since the numbers are random the test will sometimes pass when ``wake_hour`` and ``sleep_hour`` are the same
+
+* I remove the assertion after confirming that ``wake_hour`` and ``sleep_hour`` are random integers_
+* then I :doc:`interpolate </how_to/pass_values>` them as hours for ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
 
@@ -910,8 +932,24 @@ refactor: make it pass
         sleep_time=f'{sleep_hour:02}:00'
     ...
 
-  - the terminal still shows passing tests
-  - ``:02`` in ``{wake_hour:02}`` and ``{sleep_hour:02}`` tell Python to always display two characters for the numbers, with a leading zero when it is one digit. For example, display ``01`` instead of ``1``
+  ``:02`` in ``{wake_hour:02}`` and ``{sleep_hour:02}`` tell Python to always display two characters for the numbers, with a leading zero when it is one digit. For example, display ``01`` instead of ``1``
+
+* I add an assertion to check that ``wake_time`` and ``sleep_time`` look correct and are still random
+
+  .. code-block:: python
+
+    wake_time=f'{wake_hour:02}:00'
+    sleep_time=f'{sleep_hour:02}:00'
+    self.assertEqual(wake_time, sleep_time)
+
+  and the terminal shows an :ref:`AssertionError` that looks like
+
+  .. code-block:: python
+
+    AssertionError: '20:00' != '02:00'
+    AssertionError: '12:00' != '13:00'
+    AssertionError: '10:00' != '17:00'
+    AssertionError: '08:00' != '11:00'
 
 * I add a :ref:`function<functions>` to return random hours
 
@@ -928,7 +966,7 @@ refactor: make it pass
     class TestSleepDuration(unittest.TestCase):
     ...
 
-  then call it in ``test_duration_w_hours``
+  and call it in ``test_duration_w_hours``
 
   .. code-block:: python
 
@@ -937,7 +975,7 @@ refactor: make it pass
         sleep_hour = random_hour()
     ...
 
-  the terminal still shows passing tests
+  and confirm with the last assertion that ``wake_time`` and ``sleep_time`` still look right
 
 * I can also call ``random_hour`` directly instead of using the variables
 
@@ -948,9 +986,9 @@ refactor: make it pass
         sleep_time = f'{random_hour():02}:00'
     ...
 
-  still green
+  and the assertion still confirms that the values for ``wake_time`` and ``sleep_time`` look right
 
-* ``wake_time`` and ``sleep_time`` now look exactly the same, time to create a function that returns a random timestamp
+* the assignments for ``wake_time`` and ``sleep_time`` look exactly the same, time to create a function that returns a random timestamp
 
   .. code-block:: python
 
@@ -969,8 +1007,9 @@ refactor: make it pass
         sleep_time = random_timestamp()
     ...
 
+* since the values for ``wake_time`` and ``sleep_time`` look right, I remove the assertion and the terminal shows passing tests
 * I remove the `unittest.skip decorator`_
-* since the only parts that change in the solution are the timestamps, I can write a function that gets called to get the hours parts
+* I add a function to get the hours part of a given timestamp since that is all that changes in the solution
 
   .. code-block:: python
 
@@ -1000,7 +1039,7 @@ refactor: make it pass
           - get_hour(sleep_time)
         )
 
-  and the terminal still shows passing tests
+  and the terminal shows passing tests!
 
 ----
 
@@ -1025,7 +1064,7 @@ The challenge is to write a program that calculates the difference between a giv
 * `test_converting_strings_to_integers`_ with the int_ constructor
 * and `test_duration_w_hours`_ where I used
 
-  - `random.randint`_ to generate random integers for hours
+  - `random.randint`_ to generate random integers for the 24 hours in a day
   - and :doc:`interpolation </how_to/pass_values>` to test the functions with random hours
 
 I also encountered the following exceptions
