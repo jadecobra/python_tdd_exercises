@@ -75,7 +75,7 @@ green: make it pass
     # AssertionError
     # TypeError
 
-* then add :ref:`None` as the first and second arguments to the assertion
+* then add :ref:`None` as the first and second arguments of the assertion
 
   .. code-block:: python
 
@@ -84,7 +84,7 @@ green: make it pass
         None
     )
 
-* I replace the first argument in the assertion with a reference to the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>`
+* I replace the first argument of the assertion with a reference to the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>`
 
   .. code-block:: python
 
@@ -181,14 +181,14 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* then I make ``duration`` callable_ by defining it as a :ref:`function<functions>`
+* I make ``duration`` callable_ by defining it as a :ref:`function<functions>`
 
   .. code-block:: python
 
     def duration():
         return None
 
-* I want the ``duration`` :ref:`function<functions>` to take in a ``wake_time`` of ``08:00`` and add it to the test
+* I want the ``duration`` :ref:`function<functions>` to take in a ``wake_time`` and add it to the test with a value of ``'08:00'``
 
   .. code-block:: python
 
@@ -214,7 +214,7 @@ green: make it pass
     def duration(wake_time=None):
         return None
 
-* I also want the ``duration`` :ref:`function<functions>` to take in a ``sleep_time`` of ``'07:00'``
+* I also want the ``duration`` :ref:`function<functions>` to take in a ``sleep_time`` and set the value to ``'07:00'``
 
   .. code-block:: python
 
@@ -226,7 +226,7 @@ green: make it pass
         None
     )
 
-  and get a similar :ref:`TypeError`
+  I get a :ref:`TypeError` like I did for ``wake_time``
 
   .. code-block:: python
 
@@ -259,14 +259,14 @@ green: make it pass
 
     AssertionError: None != ('08:00', '07:00')
 
-* the ``duration`` :ref:`function<functions>` currently returns :ref:`None` so I make it return its inputs
+* the ``duration`` :ref:`function<functions>` returns :ref:`None`, I make it return the inputs instead
 
   .. code-block:: python
 
     def duration(wake_time=None, sleep_time=None):
         return (wake_time, sleep_time)
 
-  and the test passes, We are green
+  and the test passes, Green is a beautiful color!
 
 .. _test_duration_w_hours_refactor_0:
 
@@ -279,8 +279,8 @@ refactor: make it better
   .. code-block:: python
 
     def test_duration_w_hours(self):
-        wake_time='08:00'
-        sleep_time='07:00'
+        wake_time = '09:00'
+        sleep_time = '06:00'
 
         self.assertEqual(
             sleep_duration.duration(
@@ -308,7 +308,7 @@ refactor: make it better
 
     TypeError: unsupported operand type(s) for -: 'str' and 'str'
 
-  I cannot subtract one string_ from another and the timestamps are strings
+  the timestamps are strings and I cannot subtract one string_ from another
 
 .. _test_string_attributes_and_methods:
 
@@ -355,7 +355,7 @@ red: make it fail
 green: make it pass
 -----------------------------------------------------------------------------
 
-* and copy the values on the left side of the comparison then paste to replace :ref:`None` in the test
+* I copy the values from the left side of the comparison and paste to replace :ref:`None` in the test
 
   .. code-block:: python
 
@@ -574,7 +574,7 @@ and the terminal shows an :ref:`AssertionError`
 green: make it pass
 -----------------------------------------------------------------------------
 
-I copy the :doc:`list </data_structures/lists/lists>` in the terminal and paste it in the test to make it pass
+I copy the :doc:`list </data_structures/lists/lists>` from the terminal and paste it in the test to make it pass
 
 .. code-block:: python
 
@@ -627,7 +627,7 @@ refactor: make it better
     def test_duration_w_hours(self):
     ...
 
-* then add calls to the `str.split`_ :ref:`method<functions>`
+* then add calls to the `str.split`_ :ref:`method<functions>` in the calculation
 
   .. code-block:: python
 
@@ -655,7 +655,7 @@ refactor: make it better
 red: make it fail
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* I want the hours part of the timestamp which is first item of the list from splitting the timestamp string_. I can get it by using its index as covered in :doc:`/data_structures/lists/lists`. Python uses `zero-based indexing`_ which means the first item is at index ``0`` and the second item is at index ``1``
+* I want the hours part of the timestamp which is the first item of the list from splitting the timestamp string_. I can get it by using its index as covered in :doc:`/data_structures/lists/lists`. Python uses `zero-based indexing`_ which means the first item is at index ``0`` and the second item is at index ``1``
 * I uncomment the `unittest.skip decorator`_ to disable ``test_duration_w_hours`` by hitting ``ctrl+/`` (windows/linux) or ``command+/`` (mac)
 
   .. code-block:: python
@@ -664,35 +664,35 @@ red: make it fail
     def test_duration_w_hours(self):
     ...
 
-* then add an assertion to ``test_string_splitting`` for getting specific parts of the :doc:`list </data_structures/lists/lists>` from calling `str.split`_
+* then add a variable and an assertion to ``test_string_splitting`` for getting specific parts of the :doc:`list </data_structures/lists/lists>` from calling `str.split`_
 
   .. code-block:: python
 
     def test_string_splitting(self):
+        split = '01:23'.split(':')
+
         self.assertEqual(
-            '01:23'.split(':'),
+            split,
             ['01', '23']
         )
-
-        split = '12:34'.split(':')
         self.assertEqual(split[0], 0)
 
-  the terminal shows an :ref:`AssertionError` because the first item (index 0) from splitting ``'12:34'`` on the separator ``':'`` is ``'12'`` which is the hours part of the timestamp
+  the terminal shows an :ref:`AssertionError` because the first item (index 0) from splitting ``'01:23'`` on the separator ``':'`` is ``'01'`` which is the hours part of the timestamp
 
   .. code-block:: python
 
-    AssertionError: '12' != 0
+    AssertionError: '01' != 0
 
 .. _test_string_splitting_refactor_green:
 
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* I change the value in the test to ``'12'``
+* I change the value in the test to ``'01'``
 
   .. code-block:: python
 
-    self.assertEqual(split[0], '12')
+    self.assertEqual(split[0], '01')
 
   and the test passes
 
@@ -705,22 +705,22 @@ refactor: make it better
 
   .. code-block:: python
 
-    self.assertEqual(split[0], '12')
+    self.assertEqual(split[0], '01')
     self.assertEqual(split[1], 1)
 
   and get an :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: '34' != 1
+    AssertionError: '23' != 1
 
-  the second item (index 1) from splitting ``'12:34'`` on the separator ``':'`` is ``'34'`` which is the minutes part of the timestamp
+  the second item (index 1) from splitting ``'01:23'`` on the separator ``':'`` is ``'23'`` which is the minutes part of the timestamp
 
-* I change the ``1`` to ``'34'``
+* I change the ``1`` to ``'23'``
 
   .. code-block:: python
 
-    self.assertEqual(split[1], '34')
+    self.assertEqual(split[1], '23')
 
   and the test passes
 
