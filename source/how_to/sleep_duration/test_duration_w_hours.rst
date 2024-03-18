@@ -859,7 +859,7 @@ refactor: make it pass
 
   .. code-block:: python
 
-    AssertionError: ('08:00', '07:00') != 1
+    AssertionError: ('09:00', '06:00') != 3
 
   the ``duration`` :ref:`function<functions>` returns its inputs but the test now expects the difference between the hours
 
@@ -892,8 +892,8 @@ refactor: make it pass
         wake_hour = random.randint(0, 23)
         sleep_hour = random.randint(0, 23)
 
-        wake_time='08:00'
-        sleep_time='07:00'
+        wake_time='11:00'
+        sleep_time='04:00'
     ...
 
   ``random.randint(0, 23)`` will give me a random integer_ from ``0`` up to and including ``23`` to represent the 24 hours in a day

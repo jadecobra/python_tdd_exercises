@@ -81,8 +81,8 @@ table of contents
   data_structures/data_structures
   functions/functions
   classes/classes
-  catalog_of_tests
-  catalog_of_solutions
+  tests<catalog_of_tests>
+  solutions<catalog_of_solutions>
 
 ----
 
