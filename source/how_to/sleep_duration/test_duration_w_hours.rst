@@ -896,9 +896,9 @@ refactor: make it pass
         sleep_time='04:00'
     ...
 
-  `random.randint(0, 23) <https://docs.python.org/3/library/random.html#random.randint>`_ will give me a random integer_ from ``0`` up to and including ``23`` to represent the 24 hours in a day
+  `random.randint`_ will give me a random integer_ from ``0`` up to and including ``23`` to represent the 24 hours in a day
 
-* I add an assertion to see what values I get from ``random.randint``
+* I add an assertion to see what values I get from `random.randint`_
 
   .. code-block:: python
 
@@ -951,7 +951,7 @@ refactor: make it pass
     AssertionError: '08:00' != '11:00'
     AssertionError: '10:00' != '17:00'
 
-* I add a :ref:`function<functions>` to return random hours because ``wake_hour`` and ``sleep_hour`` both use the same call to `random.randint <https://docs.python.org/3/library/random.html#random.randint>`_
+* I add a :ref:`function<functions>` to return random hours because ``wake_hour`` and ``sleep_hour`` both use the same call to `random.randint`_
 
   .. code-block:: python
 
