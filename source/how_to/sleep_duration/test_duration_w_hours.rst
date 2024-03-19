@@ -226,7 +226,7 @@ green: make it pass
         None
     )
 
-  I get a :ref:`TypeError` like I did for ``wake_time``
+  I get a similar :ref:`TypeError`
 
   .. code-block:: python
 
@@ -274,7 +274,70 @@ green: make it pass
 refactor: make it better
 *****************************************************************************
 
-* I add variables to the test to remove the repetition
+* If I change ``wake_time`` to ``'09:00'``
+
+  .. code-block:: python
+
+    self.assertEqual(
+        sleep_duration.duration(
+            wake_time='09:00',
+            sleep_time='07:00'
+        ),
+        ('08:00', '07:00')
+    )
+
+  I get an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: Tuples differ: ('09:00', '07:00') != ('08:00', '07:00')
+
+  when I change the expectation to match
+
+  .. code-block:: python
+
+    self.assertEqual(
+        sleep_duration.duration(
+            wake_time='09:00',
+            sleep_time='07:00'
+        ),
+        ('09:00', '07:00')
+    )
+
+  the test passes
+
+* the same thing happens if I change ``sleep_time``
+
+  .. code-block:: python
+
+    self.assertEqual(
+        sleep_duration.duration(
+            wake_time='09:00',
+            sleep_time='06:00'
+        ),
+        ('09:00', '07:00')
+    )
+
+  the terminal shows an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: Tuples differ: ('09:00', '06:00') != ('09:00', '07:00')
+
+  when I change the expectation to match
+
+  .. code-block:: python
+
+    self.assertEqual(
+        sleep_duration.duration(
+            wake_time='09:00',
+            sleep_time='06:00'
+        ),
+        ('09:00', '06:00')
+    )
+
+  the test passes, the ``duration`` :ref:`function<functions>` is returning what it gets as inputs
+* I add variables to the test to avoid the repetition when I make changes to ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
 
@@ -656,7 +719,7 @@ red: make it fail
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * I want the hours part of the timestamp which is the first item of the list from splitting the timestamp string_. I can get it by using its index as covered in :doc:`/data_structures/lists/lists`. Python uses `zero-based indexing`_ which means the first item is at index ``0`` and the second item is at index ``1``
-* I uncomment the `unittest.skip decorator`_ to disable ``test_duration_w_hours`` by hitting ``ctrl+/`` (windows/linux) or ``command+/`` (mac)
+* I remove the comment from the `unittest.skip decorator`_ to disable ``test_duration_w_hours`` by hitting ``ctrl+/`` (windows/linux) or ``command+/`` (mac)
 
   .. code-block:: python
 
@@ -765,7 +828,7 @@ I want to see if I can use the int_ constructor to convert a string_ to an integ
 red: make it fail
 -----------------------------------------------------------------------------
 
-* I uncomment the `unittest.skip decorator`_ to disable the current failing test by hitting ``ctrl+/`` (windows/linux) or ``command+/`` (mac)
+* I remove the comment from the `unittest.skip decorator`_ to disable the current failing test by hitting ``ctrl+/`` (windows/linux) or ``command+/`` (mac)
 
   .. code-block:: python
 
@@ -773,7 +836,7 @@ red: make it fail
     def test_duration_w_hours(self):
     ...
 
-* then add a new failing test
+* then add a new failing test to test hours less than 10 than have a 0 in front of them
 
   .. code-block:: python
 
@@ -861,6 +924,36 @@ refactor: make it pass
 
     AssertionError: ('09:00', '06:00') != 3
 
+  when I change ``wake_time`` to a different value
+
+  .. code-block:: python
+
+    # @unittest.skip
+    def test_duration_w_hours(self):
+        wake_time = '10:00'
+        sleep_time = '06:00'
+
+  I get an :ref:`AssertionError` where the values change on both sides
+
+  .. code-block:: python
+
+    AssertionError: ('10:00', '06:00') != 4
+
+  the same thing happens when I change ``sleep_time``
+
+  .. code-block:: python
+
+    # @unittest.skip
+    def test_duration_w_hours(self):
+        wake_time = '10:00'
+        sleep_time = '05:00'
+
+  an :ref:`AssertionError` where the values change on both sides
+
+  .. code-block:: python
+
+    AssertionError: ('10:00', '05:00') != 5
+
   the ``duration`` :ref:`function<functions>` returns its inputs but the test now expects the difference between the hours
 
 * I take what I learned from the tests to make it match the expectation
@@ -875,7 +968,7 @@ refactor: make it pass
 
   and the terminal shows passing tests! Celebration Time!!
 
-* I want to make sure the function is tested with random numbers by adding an `import statement`_ for the random_ :doc:`module </exceptions/ModuleNotFoundError>` to ``test_sleep_duration.py``
+* to avoid changing the values of ``wake_time`` and ``sleep_time`` in the tests when I have an idea, I make sure the function is tested with random numbers by adding an `import statement`_ for the random_ :doc:`module </exceptions/ModuleNotFoundError>` to ``test_sleep_duration.py``
 
   .. code-block:: python
 
@@ -883,7 +976,7 @@ refactor: make it pass
     import sleep_duration
     import unittest
 
-* then I add variables to the test for random hours in a day
+  then I add variables to the test for random hours in a day
 
   .. code-block:: python
 
@@ -989,7 +1082,7 @@ refactor: make it pass
 
   and the assertion still confirms that the values for ``wake_time`` and ``sleep_time`` look right
 
-* the assignments for ``wake_time`` and ``sleep_time`` look exactly the same, time to create a function that returns a random timestamp
+* the assignments for ``wake_time`` and ``sleep_time`` look the same, time to create a function that returns a random timestamp
 
   .. code-block:: python
 
@@ -1011,7 +1104,7 @@ refactor: make it pass
 
 * since the values for ``wake_time`` and ``sleep_time`` look right, I remove ``self.assertEqual(wake_time, sleep_time)`` and the terminal shows passing tests
 * I remove the `unittest.skip decorator`_
-* I add a function to get the hours part of a given timestamp since that is all that changes in the solution in ``sleep_duration.py``
+* then add a function to get the hours part of a given timestamp since that is all that changes in the solution in ``sleep_duration.py``
 
   .. code-block:: python
 
@@ -1064,10 +1157,11 @@ The challenge is to write a program that calculates the difference between a giv
   - and indexed the :doc:`list </data_structures/lists/lists>` from the split to get specific items
 
 * `test_converting_strings_to_integers`_ with the int_ constructor
-* and `test_duration_w_hours`_ where I used
+* and `test_duration_w_hours`_ where I
 
-  - `random.randint`_ to generate random integers for the 24 hours in a day
-  - and :doc:`interpolation </how_to/pass_values>` to test the functions with random hours
+  - used `random.randint`_ to generate random integers for the 24 hours in a day
+  - then :doc:`interpolated </how_to/pass_values>` the random hours into the timestamps to test the ``duration`` :ref:`function<functions>`
+  - and checked that it subtracts the hour for ``sleep_time`` from the hour for ``wake_time``
 
 I also encountered the following exceptions
 
