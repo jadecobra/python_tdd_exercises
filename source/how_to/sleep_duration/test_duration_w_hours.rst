@@ -1161,7 +1161,7 @@ The challenge is to write a program that calculates the difference between a giv
 
   - used `random.randint`_ to generate random integers for the 24 hours in a day
   - then :doc:`interpolated </how_to/pass_values>` the random hours into the timestamps to test the ``duration`` :ref:`function<functions>`
-  - and checked that it subtracts the hour for ``sleep_time`` from the hour for ``wake_time``
+  - and test that it subtracts the hour for ``sleep_time`` from the hour for ``wake_time``
 
 I also encountered the following exceptions
 
