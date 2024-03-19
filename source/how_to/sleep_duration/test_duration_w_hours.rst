@@ -896,7 +896,7 @@ refactor: make it pass
         sleep_time='04:00'
     ...
 
-  ``random.randint(0, 23)`` will give me a random integer_ from ``0`` up to and including ``23`` to represent the 24 hours in a day
+  `random.randint(0, 23) <https://docs.python.org/3/library/random.html#random.randint>`_ will give me a random integer_ from ``0`` up to and including ``23`` to represent the 24 hours in a day
 
 * I add an assertion to see what values I get from ``random.randint``
 
@@ -914,8 +914,8 @@ refactor: make it pass
 
     AssertionError: 9 != 7
     AssertionError: 16 != 3
-    AssertionError: 16 != 19
     AssertionError: 3 != 6
+    AssertionError: 20 != 8
 
   since the numbers are random the test will sometimes pass when ``wake_hour`` and ``sleep_hour`` are the same
 
@@ -948,10 +948,10 @@ refactor: make it pass
 
     AssertionError: '20:00' != '02:00'
     AssertionError: '12:00' != '13:00'
-    AssertionError: '10:00' != '17:00'
     AssertionError: '08:00' != '11:00'
+    AssertionError: '10:00' != '17:00'
 
-* I add a :ref:`function<functions>` to return random hours
+* I add a :ref:`function<functions>` to return random hours because ``wake_hour`` and ``sleep_hour`` both use the same call to `random.randint <https://docs.python.org/3/library/random.html#random.randint>`_
 
   .. code-block:: python
 
@@ -966,7 +966,7 @@ refactor: make it pass
     class TestSleepDuration(unittest.TestCase):
     ...
 
-  and call it in ``test_duration_w_hours``
+  then call it in ``test_duration_w_hours``
 
   .. code-block:: python
 
@@ -975,15 +975,16 @@ refactor: make it pass
         sleep_hour = random_hour()
     ...
 
-  and confirm with the last assertion that ``wake_time`` and ``sleep_time`` still look right
+  and confirm in the terminal that ``wake_time`` and ``sleep_time`` still look right
 
-* I can also call ``random_hour`` directly instead of using the variables
+* I can also call ``random_hour`` directly instead of using the reference to the variables since they are only used once
 
   .. code-block:: python
 
     def test_duration_w_hours(self):
         wake_time = f'{random_hour():02}:00'
         sleep_time = f'{random_hour():02}:00'
+        self.assertEqual(wake_time, sleep_time)
     ...
 
   and the assertion still confirms that the values for ``wake_time`` and ``sleep_time`` look right
@@ -1005,18 +1006,19 @@ refactor: make it pass
     def test_duration_w_hours(self):
         wake_time = random_timestamp()
         sleep_time = random_timestamp()
+        self.assertEqual(wake_time, sleep_time)
     ...
 
-* since the values for ``wake_time`` and ``sleep_time`` look right, I remove the assertion and the terminal shows passing tests
+* since the values for ``wake_time`` and ``sleep_time`` look right, I remove ``self.assertEqual(wake_time, sleep_time)`` and the terminal shows passing tests
 * I remove the `unittest.skip decorator`_
-* I add a function to get the hours part of a given timestamp since that is all that changes in the solution
+* I add a function to get the hours part of a given timestamp since that is all that changes in the solution in ``sleep_duration.py``
 
   .. code-block:: python
 
     def process(timestamp):
         return int(timestamp.split(':')[0])
 
-  and call it in ``duration``
+  then call it in ``duration``
 
   .. code-block:: python
 
@@ -1026,7 +1028,7 @@ refactor: make it pass
           - process(sleep_time)
         )
 
-* then rename ``process`` to something more descriptive
+* since the tests are still passing I rename ``process`` to something more descriptive
 
   .. code-block:: python
 
@@ -1039,7 +1041,7 @@ refactor: make it pass
           - get_hour(sleep_time)
         )
 
-  and the terminal shows passing tests!
+  and the terminal still shows passing tests!
 
 ----
 
