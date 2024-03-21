@@ -353,7 +353,18 @@ refactor: make it better
             (wake_time, sleep_time)
         )
 
-* then change the expectation of the test to ``wake_time-sleep_time``
+* I can change ``wake_time`` or ``sleep_time``
+
+  .. code-block:: python
+
+    def test_duration_w_hours(self):
+        wake_time = '10:00'
+        sleep_time = '05:00'
+    ...
+
+  the test passes, I no longer have to make the change in two places
+
+* I change the expectation of the test to ``wake_time-sleep_time``
 
   .. code-block:: python
 
@@ -373,6 +384,18 @@ refactor: make it better
 
   the timestamps are strings and I cannot subtract one string_ from another
 
+* I change the expectation back to make the test pass
+
+  .. code-block:: python
+
+    self.assertEqual(
+        sleep_duration.duration(
+            wake_time=wake_time,
+            sleep_time=sleep_time
+        ),
+        wake_time-sleep_time
+    )
+
 .. _test_string_attributes_and_methods:
 
 test_string_attributes_and_methods
@@ -385,15 +408,7 @@ I want to get the first two characters of ``wake_time`` and ``sleep_time`` which
 red: make it fail
 -----------------------------------------------------------------------------
 
-* I disable ``test_duration_w_hours`` by adding the `unittest.skip decorator`_
-
-  .. code-block:: python
-
-    @unittest.skip
-    def test_duration_w_hours(self):
-    ...
-
-* then add ``test_string_attributes_and_methods`` where I use the dir_ :ref:`function<functions>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of strings_, maybe it will help me find a way to break them apart or get the characters I want
+* I add ``test_string_attributes_and_methods`` where I use the dir_ :ref:`function<functions>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of strings_, maybe it will help me find a way to break them apart or get the characters I want
 
   .. code-block:: python
 
@@ -403,7 +418,6 @@ red: make it fail
             None
         )
 
-    @unittest.skip
     def test_duration_w_hours(self):
     ...
 
@@ -600,6 +614,8 @@ green: make it pass
 
   the `str.split`_ :ref:`method<functions>` looks like a good solution since it splits up a word on a given separator
 
+* I remove ``self.assertEqual(help(str))``
+
 .. _test_string_splitting:
 
 test_string_splitting
@@ -610,7 +626,7 @@ test_string_splitting
 red: make it fail
 -----------------------------------------------------------------------------
 
-I remove ``self.assertEqual(help(str))`` then add a failing test for the `str.split`_ :ref:`method<functions>` to see what it does
+I add a failing test for the `str.split`_ :ref:`method<functions>` to see what it does
 
 .. code-block:: python
 
@@ -620,7 +636,6 @@ I remove ``self.assertEqual(help(str))`` then add a failing test for the `str.sp
           None
       )
 
-  @unittest.skip
   def test_duration_w_hours(self):
   ...
 
@@ -647,7 +662,7 @@ I copy the :doc:`list </data_structures/lists/lists>` from the terminal and past
           ['01:23']
       )
 
-and we are green again
+green again
 
 .. _test_string_splitting_refactor:
 
@@ -664,7 +679,7 @@ refactor: make it better
             ['01', '23']
         )
 
-  and the terminal shows an :ref:`AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -682,15 +697,7 @@ refactor: make it better
 
   the test passes which means I know how to get the different parts of ``wake_time`` and ``sleep_time``
 
-* I comment out the `unittest.skip decorator`_ for ``test_duration_w_hours`` by hitting ``ctrl+/`` (windows/linux) or ``command+/`` (mac)
-
-  .. code-block:: python
-
-    # @unittest.skip
-    def test_duration_w_hours(self):
-    ...
-
-* then add calls to the `str.split`_ :ref:`method<functions>` in the calculation
+* I add calls to the `str.split`_ :ref:`method<functions>` in ``test_duration_w_hours``
 
   .. code-block:: python
 
@@ -700,18 +707,28 @@ refactor: make it better
             sleep_time=sleep_time
         ),
         (
-            wake_time.split(':')
-           -sleep_time.split(':')
+            wake_time.split(':'),
+            sleep_time.split(':')
         )
     )
 
-  and the terminal shows a :ref:`TypeError`
+  and the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
-    TypeError: unsupported operand type(s) for -: 'list' and 'list'
+    Tuples differ: ('10:00', '05:00') != (['10', '00'], ['05', '00'])
 
-  I cannot subtract one :doc:`list </data_structures/lists/lists>` from another
+* I update the ``duration`` :ref:`function<functions>` to return the result of splitting the timestamps
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        return (
+            wake_time.split(':'),
+            sleep_time.split(':')
+        )
+
+  green again
 
 .. _test_string_splitting_refactor_red:
 
@@ -719,15 +736,7 @@ red: make it fail
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * I want the hours part of the timestamp which is the first item of the list from splitting the timestamp string_. I can get it by using its index as covered in :doc:`/data_structures/lists/lists`. Python uses `zero-based indexing`_ which means the first item is at index ``0`` and the second item is at index ``1``
-* I remove the comment from the `unittest.skip decorator`_ to disable ``test_duration_w_hours`` by hitting ``ctrl+/`` (windows/linux) or ``command+/`` (mac)
-
-  .. code-block:: python
-
-    @unittest.skip
-    def test_duration_w_hours(self):
-    ...
-
-* then add a variable and an assertion to ``test_string_splitting`` for getting specific parts of the :doc:`list </data_structures/lists/lists>` from calling `str.split`_
+* I add a variable and an assertion to ``test_string_splitting`` for getting specific parts of the :doc:`list </data_structures/lists/lists>` from calling `str.split`_
 
   .. code-block:: python
 
@@ -791,15 +800,7 @@ refactor: make it better
 
 .. _test_duration_w_hours_refactor_1:
 
-* I comment out the `unittest.skip decorator`_ for ``test_duration_w_hours``  to bring me back to the unsolved :ref:`TypeError` by hitting ``ctrl+/`` (windows/linux) or ``command+/`` (mac)
-
-  .. code-block:: python
-
-    # @unittest.skip
-    def test_duration_w_hours(self):
-    ...
-
-* then update the expectation to the result of subtracting the first items of the list from splitting ``wake_time`` and ``sleep_time`` on the separator ``':'``
+* I update the expectation of ``test_duration_w_hours`` to show the first items of the list from splitting ``wake_time`` and ``sleep_time`` on the separator ``':'``
 
   .. code-block:: python
 
@@ -809,41 +810,48 @@ refactor: make it better
             sleep_time=sleep_time
         ),
         (
-            wake_time.split(':')[0]
-           -sleep_time.split(':')[0]
+            wake_time.split(':')[0],
+            sleep_time.split(':')[0]
         )
     )
 
-  and get a :ref:`TypeError` for once again trying to subtract one string_ from another
+  and get an :ref:`AssertionError`
+
+  .. code-block::
+
+    AssertionError: Tuples differ: (['10', '00'], ['05', '00']) != ('10', '05')
+
+* I change the ``duration`` :ref:`function<functions>` to match the expectation
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        return (
+            wake_time.split(':')[0],
+            sleep_time.split(':')[0]
+        )
+
+  and the test passes
 
 .. _test_converting_strings_to_integers:
 
 test_converting_strings_to_integers
 #############################################################################
 
-I want to see if I can use the int_ constructor to convert a string_ to an integer_ for the calculation
+I want to see if I can use the int_ constructor to convert a string_ to an integer_ for the calculation, since I cannot subtract one string_ from another and the hours are still strings_
 
 .. _test_converting_strings_to_integers_red:
 
 red: make it fail
 -----------------------------------------------------------------------------
 
-* I remove the comment from the `unittest.skip decorator`_ to disable the current failing test by hitting ``ctrl+/`` (windows/linux) or ``command+/`` (mac)
-
-  .. code-block:: python
-
-    @unittest.skip
-    def test_duration_w_hours(self):
-    ...
-
-* then add a new failing test to test hours less than 10 than have a 0 in front of them
+* I add a new failing test to test hours less than 10 than have a 0 in front of them
 
   .. code-block:: python
 
     def test_converting_strings_to_integers(self):
         self.assertEqual(int('01'), 0)
 
-    @unittest.skip
     def test_duration_w_hours(self):
     ...
 
@@ -895,15 +903,40 @@ refactor: make it pass
 
 .. _test_duration_w_hours_refactor_2:
 
-* I comment out the `unittest.skip decorator`_ for ``test_duration_w_hours``  to bring me back to the unsolved :ref:`TypeError` by hitting ``ctrl+/`` (windows/linux) or ``command+/`` (mac)
+* I add calls to the int_ constructor to the expectation of ``test_duration_w_hours``
 
   .. code-block:: python
 
-    # @unittest.skip
-    def test_duration_w_hours(self):
-    ...
+    self.assertEqual(
+        sleep_duration.duration(
+            wake_time=wake_time,
+            sleep_time=sleep_time
+        ),
+        (
+            int(wake_time.split(':')[0]),
+            int(sleep_time.split(':')[0])
+        )
+    )
 
-* then add calls to the int_ constructor as part of the calculation in the test
+  and get an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: Tuples differ: ('10', '05') != (10, 5)
+
+* I change the ``duration`` :ref:`function<functions>` to match the expectation
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        return (
+            int(wake_time.split(':')[0]),
+            int(sleep_time.split(':')[0])
+        )
+
+  and the test passes, I have successfully gotten the hours part of both timestamps
+
+* I update the expectation in ``test_duration_w_hours`` to make it calculate the difference between the hours
 
   .. code-block:: python
 
@@ -914,7 +947,7 @@ refactor: make it pass
         ),
         (
             int(wake_time.split(':')[0])
-           -int(sleep_time.split(':')[0])
+            -int(sleep_time.split(':')[0])
         )
     )
 
@@ -922,51 +955,35 @@ refactor: make it pass
 
   .. code-block:: python
 
-    AssertionError: ('09:00', '06:00') != 3
+    AssertionError: (10, 5) != 5
 
-  when I change ``wake_time`` to a different value
+* when I change ``wake_time`` to a different value
 
   .. code-block:: python
 
-    # @unittest.skip
     def test_duration_w_hours(self):
-        wake_time = '10:00'
-        sleep_time = '06:00'
+        wake_time = '11:00'
+        sleep_time = '05:00'
 
-  I get an :ref:`AssertionError` where the values change on both sides
+  I get an :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: ('10:00', '06:00') != 4
+    AssertionError: (11, 5) != 6
 
   the same thing happens when I change ``sleep_time``
 
   .. code-block:: python
 
-    # @unittest.skip
     def test_duration_w_hours(self):
         wake_time = '10:00'
-        sleep_time = '05:00'
+        sleep_time = '04:00'
 
-  an :ref:`AssertionError` where the values change on both sides
-
-  .. code-block:: python
-
-    AssertionError: ('10:00', '05:00') != 5
-
-  the ``duration`` :ref:`function<functions>` returns its inputs but the test now expects the difference between the hours
-
-* I take what I learned from the tests to make it match the expectation
+  I get an :ref:`AssertionError`
 
   .. code-block:: python
 
-    def duration(wake_time=None, sleep_time=None):
-        return (
-            int(wake_time.split(':')[0])
-          - int(sleep_time.split(':')[0])
-        )
-
-  and the terminal shows passing tests! Celebration Time!!
+    AssertionError: (11, 4) != 7
 
 * to avoid changing the values of ``wake_time`` and ``sleep_time`` in the tests when I have an idea, I make sure the function is tested with random numbers by adding an `import statement`_ for the random_ :doc:`module </exceptions/ModuleNotFoundError>` to ``test_sleep_duration.py``
 
@@ -991,28 +1008,6 @@ refactor: make it pass
 
   `random.randint`_ will give me a random integer_ from ``0`` up to and including ``23`` to represent the 24 hours in a day
 
-* I add an assertion to see what values I get from `random.randint`_
-
-  .. code-block:: python
-
-    # @unittest.skip
-    def test_duration_w_hours(self):
-        wake_hour = random.randint(0, 23)
-        sleep_hour = random.randint(0, 23)
-        self.assertEqual(wake_hour, sleep_hour)
-
-  and get an :ref:`AssertionError` that looks like
-
-  .. code-block:: python
-
-    AssertionError: 9 != 7
-    AssertionError: 16 != 3
-    AssertionError: 3 != 6
-    AssertionError: 20 != 8
-
-  since the numbers are random the test will sometimes pass when ``wake_hour`` and ``sleep_hour`` are the same
-
-* I remove the assertion after confirming that ``wake_hour`` and ``sleep_hour`` are random integers_
 * then I :doc:`interpolate </how_to/pass_values>` them as hours for ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
@@ -1021,30 +1016,64 @@ refactor: make it pass
         wake_hour = random.randint(0, 23)
         sleep_hour = random.randint(0, 23)
 
-        wake_time=f'{wake_hour:02}:00'
-        sleep_time=f'{sleep_hour:02}:00'
+        wake_time=f'{wake_hour}:00'
+        sleep_time=f'{sleep_hour}:00'
     ...
-
-  ``:02`` in ``{wake_hour:02}`` and ``{sleep_hour:02}`` tell Python to always display two characters for the numbers, with a leading zero when it is one digit. For example, display ``01`` instead of ``1``
-
-* I add an assertion to check that ``wake_time`` and ``sleep_time`` look correct and are still random
-
-  .. code-block:: python
-
-    wake_time=f'{wake_hour:02}:00'
-    sleep_time=f'{sleep_hour:02}:00'
-    self.assertEqual(wake_time, sleep_time)
 
   and the terminal shows an :ref:`AssertionError` that looks like
 
   .. code-block:: python
 
-    AssertionError: '20:00' != '02:00'
-    AssertionError: '12:00' != '13:00'
-    AssertionError: '08:00' != '11:00'
-    AssertionError: '10:00' != '17:00'
+    AssertionError: (23, 11) != 12
+    AssertionError: (23, 22) != 1
+    AssertionError: (17, 15) != 2
+    AssertionError: (9, 4) != 5
 
-* I add a :ref:`function<functions>` to return random hours because ``wake_hour`` and ``sleep_hour`` both use the same call to `random.randint`_
+* when I update the ``duration`` :ref:`function<functions>` to match the expectation
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        return (
+            int(wake_time.split(':')[0])
+          - int(sleep_time.split(':')[0])
+        )
+
+  the terminal shows passing tests! Celebration Time!!
+
+* I add a function to get the hours part of a given timestamp since that is all that changes in the solution
+
+  .. code-block:: python
+
+    def process(timestamp):
+        return int(timestamp.split(':')[0])
+
+  then call it in ``duration``
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time):
+        return (
+            process(wake_time)
+          - process(sleep_time)
+        )
+
+* I rename ``process`` to something more descriptive since all the tests are passing
+
+  .. code-block:: python
+
+    def get_hour(timestamp):
+        return int(timestamp.split(':')[0])
+
+    def duration(wake_time=None, sleep_time):
+        return (
+            get_hour(wake_time)
+          - get_hour(sleep_time)
+        )
+
+  and the terminal still shows passing tests!
+
+* I add a :ref:`function<functions>` to return random hours in ``test_sleep_duration.py`` because ``wake_hour`` and ``sleep_hour`` both use the same call to `random.randint`_
 
   .. code-block:: python
 
@@ -1068,19 +1097,18 @@ refactor: make it pass
         sleep_hour = random_hour()
     ...
 
-  and confirm in the terminal that ``wake_time`` and ``sleep_time`` still look right
+  still green
 
 * I can also call ``random_hour`` directly instead of using the reference to the variables since they are only used once
 
   .. code-block:: python
 
     def test_duration_w_hours(self):
-        wake_time = f'{random_hour():02}:00'
-        sleep_time = f'{random_hour():02}:00'
-        self.assertEqual(wake_time, sleep_time)
+        wake_time = f'{random_hour()}:00'
+        sleep_time = f'{random_hour()}:00'
     ...
 
-  and the assertion still confirms that the values for ``wake_time`` and ``sleep_time`` look right
+  the terminal still shows passing tests
 
 * the assignments for ``wake_time`` and ``sleep_time`` look the same, time to create a function that returns a random timestamp
 
@@ -1090,7 +1118,7 @@ refactor: make it pass
         return random.randint(0, 23)
 
     def random_timestamp():
-        return f'{random_hour():02}:00'
+        return f'{random_hour()}:00'
 
   and replace the timestamps with calls to ``random_timestamp``
 
@@ -1099,42 +1127,20 @@ refactor: make it pass
     def test_duration_w_hours(self):
         wake_time = random_timestamp()
         sleep_time = random_timestamp()
-        self.assertEqual(wake_time, sleep_time)
     ...
 
-* since the values for ``wake_time`` and ``sleep_time`` look right, I remove ``self.assertEqual(wake_time, sleep_time)`` and the terminal shows passing tests
-* I remove the `unittest.skip decorator`_
-* then add a function to get the hours part of a given timestamp since that is all that changes in the solution in ``sleep_duration.py``
+  still green
+
+* ``random_timestamp`` calls ``random_hour`` and no one else uses it, I can directly make the call to `random.randint`_
 
   .. code-block:: python
 
-    def process(timestamp):
-        return int(timestamp.split(':')[0])
+    def random_timestamp():
+        return f'{random.randint(0, 23)}:00'
 
-  then call it in ``duration``
+  all tests are still passing
 
-  .. code-block:: python
-
-    def duration(wake_time=None, sleep_time):
-        return (
-            process(wake_time)
-          - process(sleep_time)
-        )
-
-* since the tests are still passing I rename ``process`` to something more descriptive
-
-  .. code-block:: python
-
-    def get_hour(timestamp):
-        return int(timestamp.split(':')[0])
-
-    def duration(wake_time=None, sleep_time):
-        return (
-            get_hour(wake_time)
-          - get_hour(sleep_time)
-        )
-
-  and the terminal still shows passing tests!
+* I remove ``random_hour`` which is no longer called by anyone
 
 ----
 
