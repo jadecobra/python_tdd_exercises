@@ -336,7 +336,8 @@ refactor: make it better
         ('09:00', '06:00')
     )
 
-  the test passes, the ``duration`` :ref:`function<functions>` is returning what it gets as inputs
+  the test passes, the ``duration`` :ref:`function<functions>` returns its inputs
+
 * I add variables to the test to avoid the repetition when I make changes to ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
@@ -362,7 +363,7 @@ refactor: make it better
         sleep_time = '05:00'
     ...
 
-  the test passes, I no longer have to make the change in two places
+  and the test passes, I no longer have to make the change in two places
 
 * I change the expectation of the test to ``wake_time-sleep_time``
 
@@ -384,7 +385,7 @@ refactor: make it better
 
   the timestamps are strings and I cannot subtract one string_ from another
 
-* I change the expectation back to make the test pass
+* I change the expectation to go back to what was working
 
   .. code-block:: python
 
@@ -589,7 +590,7 @@ green: make it pass
         )
 
   and the test passes
-* I want to try one of the :ref:`methods<functions>` listed in ``test_string_attributes_and_methods`` to see if it will get me closer to a solution, but I cannot tell what they do by the names alone. I will use the `help system`_ to get more details
+* I want to try one of the :ref:`methods<functions>` listed in ``test_string_attributes_and_methods`` to see if it will get me closer to a solution, but I cannot tell what they do by the names alone. I use the `help system`_ to get more details
 
   .. code-block:: python
 
@@ -735,18 +736,15 @@ refactor: make it better
 red: make it fail
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* I want the hours part of the timestamp which is the first item of the list from splitting the timestamp string_. I can get it by using its index as covered in :doc:`/data_structures/lists/lists`. Python uses `zero-based indexing`_ which means the first item is at index ``0`` and the second item is at index ``1``
-* I add a variable and an assertion to ``test_string_splitting`` for getting specific parts of the :doc:`list </data_structures/lists/lists>` from calling `str.split`_
+* I want the hours part of the timestamp string_ which is the first item of the list from splitting it. I can get it by using its index as covered in :doc:`/data_structures/lists/lists`. Python uses `zero-based indexing`_ which means the first item is at index ``0`` and the second item is at index ``1``
+* I add a variable and an assertion to ``test_string_splitting`` for getting the first item of the :doc:`list </data_structures/lists/lists>` from calling `str.split`_
 
   .. code-block:: python
 
     def test_string_splitting(self):
         split = '01:23'.split(':')
 
-        self.assertEqual(
-            split,
-            ['01', '23']
-        )
+        self.assertEqual(split, ['01', '23'])
         self.assertEqual(split[0], 0)
 
   the terminal shows an :ref:`AssertionError` because the first item (index 0) from splitting ``'01:23'`` on the separator ``':'`` is ``'01'`` which is the hours part of the timestamp
@@ -845,7 +843,7 @@ I want to see if I can use the int_ constructor to convert a string_ to an integ
 red: make it fail
 -----------------------------------------------------------------------------
 
-* I add a new failing test to test hours less than 10 than have a 0 in front of them
+* I add a new failing test to test hours less than ``10`` than have a ``0`` in front of them
 
   .. code-block:: python
 
@@ -934,9 +932,9 @@ refactor: make it pass
             int(sleep_time.split(':')[0])
         )
 
-  and the test passes, I have successfully gotten the hours part of both timestamps
+  and the test passes, I have successfully gotten the hours part of both timestamps as numbers
 
-* I update the expectation in ``test_duration_w_hours`` to make it calculate the difference between the hours
+* I update the expectation in ``test_duration_w_hours`` to the difference between the hours
 
   .. code-block:: python
 
@@ -993,11 +991,10 @@ refactor: make it pass
     import sleep_duration
     import unittest
 
-  then I add variables to the test for random hours in a day
+  then add variables for random hours in a day
 
   .. code-block:: python
 
-    # @unittest.skip
     def test_duration_w_hours(self):
         wake_hour = random.randint(0, 23)
         sleep_hour = random.randint(0, 23)
@@ -1024,10 +1021,10 @@ refactor: make it pass
 
   .. code-block:: python
 
-    AssertionError: (23, 11) != 12
-    AssertionError: (23, 22) != 1
-    AssertionError: (17, 15) != 2
     AssertionError: (9, 4) != 5
+    AssertionError: (14, 14) != 0
+    AssertionError: (17, 15) != 2
+    AssertionError: (23, 11) != 12
 
 * when I update the ``duration`` :ref:`function<functions>` to match the expectation
 
@@ -1041,7 +1038,7 @@ refactor: make it pass
 
   the terminal shows passing tests! Celebration Time!!
 
-* I add a function to get the hours part of a given timestamp since that is all that changes in the solution
+* I add a function to get the hours part of a given timestamp since it is the only part that changes in the solution
 
   .. code-block:: python
 
@@ -1131,7 +1128,7 @@ refactor: make it pass
 
   still green
 
-* ``random_timestamp`` calls ``random_hour`` and no one else uses it, I can directly make the call to `random.randint`_
+* ``random_timestamp`` is now the only one who calls ``random_hour``, it can directly make the call to `random.randint`_ instead
 
   .. code-block:: python
 
