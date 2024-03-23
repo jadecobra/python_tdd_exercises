@@ -9,111 +9,19 @@ def get_random_timestamp(date):
 
 class TestSleepDuration(unittest.TestCase):
 
-    def test_string_attributes_and_methods(self):
-        self.maxDiff = None
-        self.assertEqual(
-            dir('00:00'),
-            [
-                '__add__',
-                '__class__',
-                '__contains__',
-                '__delattr__',
-                '__dir__',
-                '__doc__',
-                '__eq__',
-                '__format__',
-                '__ge__',
-                '__getattribute__',
-                '__getitem__',
-                '__getnewargs__',
-                '__getstate__',
-                '__gt__',
-                '__hash__',
-                '__init__',
-                '__init_subclass__',
-                '__iter__',
-                '__le__',
-                '__len__',
-                '__lt__',
-                '__mod__',
-                '__mul__',
-                '__ne__',
-                '__new__',
-                '__reduce__',
-                '__reduce_ex__',
-                '__repr__',
-                '__rmod__',
-                '__rmul__',
-                '__setattr__',
-                '__sizeof__',
-                '__str__',
-                '__subclasshook__',
-                'capitalize',
-                'casefold',
-                'center',
-                'count',
-                'encode',
-                'endswith',
-                'expandtabs',
-                'find',
-                'format',
-                'format_map',
-                'index',
-                'isalnum',
-                'isalpha',
-                'isascii',
-                'isdecimal',
-                'isdigit',
-                'isidentifier',
-                'islower',
-                'isnumeric',
-                'isprintable',
-                'isspace',
-                'istitle',
-                'isupper',
-                'join',
-                'ljust',
-                'lower',
-                'lstrip',
-                'maketrans',
-                'partition',
-                'removeprefix',
-                'removesuffix',
-                'replace',
-                'rfind',
-                'rindex',
-                'rjust',
-                'rpartition',
-                'rsplit',
-                'rstrip',
-                'split',
-                'splitlines',
-                'startswith',
-                'strip',
-                'swapcase',
-                'title',
-                'translate',
-                'upper',
-                'zfill'
-            ]
-        )
-
     def test_string_splitting(self):
-        self.assertEqual(
-            '01:23'.split(':'),
-            ['01', '23']
-        )
+        split = '01:23'.split(':')
 
-        split = '12:34'.split(':')
-        self.assertEqual(split[0], '12')
-        self.assertEqual(split[1], '34')
+        self.assertEqual(split, ['01', '23'])
+        self.assertEqual(split[0], '01')
+        self.assertEqual(split[1], '23')
 
         self.assertEqual(
             '31/12/99 13:04'.split(':')[0],
             '31/12/99 13'
         )
 
-    def test_converting_strings_to_integers(self):
+    def test_converting_strings_to_numbers(self):
         self.assertEqual(int('12'), 12)
         self.assertEqual(int('01'), 1)
 
@@ -210,5 +118,4 @@ class TestSleepDuration(unittest.TestCase):
 # TypeError
 # NameError
 # AttributeError
-# SyntaxError
 # ValueError

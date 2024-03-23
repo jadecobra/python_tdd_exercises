@@ -137,11 +137,11 @@ green: make it pass
         '31/12/99 13'
     )
 
-* I also add a test to ``test_converting_strings_to_integers`` to confirm that the ValueError_ is raised when calling the int_ constructor on the result of ``'31/12/99 13:04'.split(':')[0]``
+* I also add a test to ``test_converting_strings_to_numbers`` to confirm that the ValueError_ is raised when calling the int_ constructor on the result of ``'31/12/99 13:04'.split(':')[0]``
 
   .. code-block:: python
 
-    def test_converting_strings_to_integers(self):
+    def test_converting_strings_to_numbers(self):
         self.assertEqual(int('12'), 12)
         self.assertEqual(int('01'), 1)
         int('31/12/99 13')
@@ -158,7 +158,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_converting_strings_to_integers(self):
+    def test_converting_strings_to_numbers(self):
         self.assertEqual(int('12'), 12)
         self.assertEqual(int('01'), 1)
 
@@ -720,7 +720,7 @@ The challenge was to make a :ref:`function<functions>` that calculates the diffe
   - used the `str.split`_ :ref:`method<functions>` to split a string_ on a separator
   - indexed the :doc:`list </data_structures/lists/lists>` from the split to get specific items
 
-* `test_converting_strings_to_integers`_
+* `test_converting_strings_to_numbers`_
 * `test_floor_aka_integer_division`_
 * `test_modulo_operation`_
 * `test_datetime_objects`_ where I

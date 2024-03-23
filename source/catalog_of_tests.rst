@@ -53,9 +53,8 @@ test_exceptions
 test_sleep_duration
 *****************************************************************************
 
-#. :ref:`test_string_attributes_and_methods`
 #. :ref:`test_string_splitting`
-#. :ref:`test_converting_strings_to_integers`
+#. :ref:`test_converting_strings_to_numbers`
 #. :ref:`test_floor_aka_integer_division`
 #. :ref:`test_modulo_operation`
 #. :ref:`test_datetime_objects`
