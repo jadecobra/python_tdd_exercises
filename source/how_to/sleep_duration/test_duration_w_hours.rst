@@ -374,7 +374,7 @@ refactor: make it better
             (wake_time, sleep_time)
         )
 
-  then change ``wake_time``
+* If change ``wake_time``
 
   .. code-block:: python
 
@@ -386,7 +386,39 @@ refactor: make it better
 
   .. code-block:: python
 
-    AssertionError: Tuples differ: ('09:00', '06:00') != ('10:00', '6:00')
+    AssertionError: Tuples differ: ('09:00', '06:00') != ('10:00', '06:00')
+
+  I update ``duration`` to match
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        return ('10:00', '06:00')
+
+  and the test passes
+
+* when I change ``sleep_time``
+
+  .. code-block:: python
+
+    def test_duration_w_hours(self):
+        wake_time = '10:00'
+        sleep_time = '05:00'
+
+  I get an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: Tuples differ: ('10:00', '06:00') != ('10:00', '05:00')
+
+  I update ``duration`` to match the expectation
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        return ('10:00', '05:00')
+
+  and the test passes
 
 * I want to avoid changing the values of ``wake_time`` and ``sleep_time`` in the tests every time I have an idea and then updating the ``duration`` :ref:`function` to match. I make sure the function is tested with random numbers by adding an `import statement`_ for the random_ :doc:`module </exceptions/ModuleNotFoundError>` at the top of the file
 
