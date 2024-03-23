@@ -829,39 +829,13 @@ refactor: make it pass
 
   and the terminal still shows passing tests!
 
-* I add a :ref:`function<functions>` to return random hours in ``test_sleep_duration.py`` because ``wake_hour`` and ``sleep_hour`` both use the same call to `random.randint`_
-
-  .. code-block:: python
-
-    import random
-    import sleep_duration
-    import unittest
-
-    def random_hour():
-        return random.randint(0, 23)
-
-
-    class TestSleepDuration(unittest.TestCase):
-    ...
-
-  then call it in ``test_duration_w_hours``
+* I can call `random.randint`_ directly in ``test_sleep_duration.py`` instead of using the reference to the variables since they are only used once
 
   .. code-block:: python
 
     def test_duration_w_hours(self):
-        wake_hour = random_hour()
-        sleep_hour = random_hour()
-    ...
-
-  still green
-
-* I can also call ``random_hour`` directly instead of using the reference to the variables since they are only used once
-
-  .. code-block:: python
-
-    def test_duration_w_hours(self):
-        wake_time = f'{random_hour()}:00'
-        sleep_time = f'{random_hour()}:00'
+        wake_time = f'{random.randint(0, 23)}:00'
+        sleep_time = f'{random.randint(0, 23)}:00'
     ...
 
   the terminal still shows passing tests
@@ -870,11 +844,8 @@ refactor: make it pass
 
   .. code-block:: python
 
-    def random_hour():
-        return random.randint(0, 23)
-
     def random_timestamp():
-        return f'{random_hour()}:00'
+        return f'{random.randint(0, 23)}:00'
 
   and replace the timestamps with calls to ``random_timestamp``
 
@@ -885,18 +856,7 @@ refactor: make it pass
         sleep_time = random_timestamp()
     ...
 
-  still green
-
-* ``random_timestamp`` is now the only one who calls ``random_hour``, it can directly make the call to `random.randint`_ instead
-
-  .. code-block:: python
-
-    def random_timestamp():
-        return f'{random.randint(0, 23)}:00'
-
-  all tests are still passing
-
-* I remove ``random_hour`` which is no longer called by anyone
+  all tests are still passing!
 
 ----
 
