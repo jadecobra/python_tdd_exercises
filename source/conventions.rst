@@ -14,6 +14,29 @@ conventions
 
 The following are a few conventions to know in Python
 
+*****************************************************************************
+names
+*****************************************************************************
+
+- class names are usually in ``CamelCase`` for example
+
+  .. code-block:: python
+
+    class ClassName(object):
+
+  you can use any case you like but TitleCase keeps things consistent
+
+- variables (attributes) and :ref:`function (method)<functions>` names are in ``snake_case`` for example
+
+  .. code-block:: python
+
+    def function_name(argument_1, argument_2, keyword_argument=None):
+    ...
+
+    variable_name = None
+
+for more details see `PEP8: Naming Conventions<https://peps.python.org/pep-0008/#naming-conventions>`_
+
 .. _conventions_comments:
 
 *****************************************************************************

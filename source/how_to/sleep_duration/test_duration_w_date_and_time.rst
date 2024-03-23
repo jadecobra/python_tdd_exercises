@@ -713,7 +713,6 @@ review
 
 The challenge was to make a :ref:`function<functions>` that calculates the difference between 2 given timestamps. I ran the following tests to help me make it
 
-* `test_string_attributes_and_methods`_ where  I used the dir_ :ref:`function<functions>`
 * `test_string_splitting`_ where I
 
   - used the `help system`_ to view documentation

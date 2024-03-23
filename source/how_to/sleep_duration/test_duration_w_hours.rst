@@ -44,6 +44,12 @@ red: make it fail
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_sleep_duration.py:7`` with the mouse to open it
 * then change ``True`` to ``False``
+* I change the :doc:`class </classes/classes>` name to title case to match Python convention
+
+  .. code-block:: python
+
+    class TestSleepDuration(unittest.TestCase):
+
 * and replace the test with a new failing test
 
   .. code-block:: python
@@ -304,7 +310,14 @@ refactor: make it better
 
     Tuples differ: ('08:00', '07:00') != ('09:00', '07:00')
 
-  because ``duration`` returns ``('08:00', '07:00')`` every time it is called
+  because ``duration`` returns ``('08:00', '07:00')`` every time it is called, I change it to match the expectation
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        return ('09:00', '07:00')
+
+  and the test passes
 
 * if I change ``sleep_time``
 
@@ -318,9 +331,7 @@ refactor: make it better
         ('09:00', '07:00')
     )
 
-  the terminal shows the same :ref:`AssertionError`
-
-* when I change the expectation to match
+  the terminal still shows passing tests and when I change the expectation to match
 
   .. code-block:: python
 
@@ -332,11 +343,20 @@ refactor: make it better
         ('09:00', '06:00')
     )
 
-  the :ref:`AssertionError` changes
+  it shows an :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: Tuples differ: ('08:00', '07:00') != ('09:00', '06:00')
+    AssertionError: Tuples differ: ('09:00', '07:00') != ('09:00', '06:00')
+
+  because ``duration`` returns ``('09:00', '07:00')`` every time it is called, I change it to match the expectation
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        return ('09:00', '06:00')
+
+  and the test passes
 
 * I add variables to the test to remove the repetition when I make changes to ``wake_time`` and ``sleep_time``
 
@@ -354,7 +374,21 @@ refactor: make it better
             (wake_time, sleep_time)
         )
 
-* to avoid changing the values of ``wake_time`` and ``sleep_time`` in the tests every time I have an idea, I make sure the function is tested with random numbers by adding an `import statement`_ for the random_ :doc:`module </exceptions/ModuleNotFoundError>` at the top of the file
+  then change ``wake_time``
+
+  .. code-block:: python
+
+    def test_duration_w_hours(self):
+        wake_time = '10:00'
+        sleep_time = '06:00'
+
+  the terminal shows an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: Tuples differ: ('09:00', '06:00') != ('10:00', '6:00')
+
+* I want to avoid changing the values of ``wake_time`` and ``sleep_time`` in the tests every time I have an idea and then updating the ``duration`` :ref:`function` to match. I make sure the function is tested with random numbers by adding an `import statement`_ for the random_ :doc:`module </exceptions/ModuleNotFoundError>` at the top of the file
 
   .. code-block:: python
 
@@ -370,13 +404,13 @@ refactor: make it better
         wake_hour = random.randint(0, 23)
         sleep_hour = random.randint(0, 23)
 
-        wake_time='09:00'
+        wake_time='10:00'
         sleep_time='06:00'
     ...
 
   `random.randint`_ will give me a random integer_ from ``0`` up to and including ``23`` to represent the 24 hours in a day
 
-* then I :doc:`interpolate </how_to/pass_values>` them as hours for ``wake_time`` and ``sleep_time``
+* I :doc:`interpolate </how_to/pass_values>` them as hours for ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
 
@@ -392,12 +426,12 @@ refactor: make it better
 
   .. code-block:: python
 
-    AssertionError: Tuples differ: ('08:00', '07:00') != ('10:00', '2:00')
-    AssertionError: Tuples differ: ('08:00', '07:00') != ('23:00', '0:00')
-    AssertionError: Tuples differ: ('08:00', '07:00') != ('7:00', '3:00')
-    AssertionError: Tuples differ: ('08:00', '07:00') != ('0:00', '22:00')
+    AssertionError: Tuples differ: ('09:00', '06:00') != ('10:00', '2:00')
+    AssertionError: Tuples differ: ('09:00', '06:00') != ('23:00', '0:00')
+    AssertionError: Tuples differ: ('09:00', '06:00') != ('7:00', '3:00')
+    AssertionError: Tuples differ: ('09:00', '06:00') != ('0:00', '22:00')
 
-* ``duration`` still returns ``('08:00', '07:00')`` but the test now uses random timestamps. I update it to return its inputs
+* ``duration`` still returns ``('09:00', '06:00')`` but the test now uses random timestamps. I update it to return its inputs
 
   .. code-block:: python
 
