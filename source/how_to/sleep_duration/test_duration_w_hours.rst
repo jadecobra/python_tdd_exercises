@@ -463,7 +463,7 @@ refactor: make it better
     AssertionError: Tuples differ: ('09:00', '06:00') != ('7:00', '3:00')
     AssertionError: Tuples differ: ('09:00', '06:00') != ('0:00', '22:00')
 
-* ``duration`` still returns ``('09:00', '06:00')`` but the test now uses random timestamps. I update it to return its inputs
+* ``duration`` still returns ``('10:00', '05:00')`` but the test now uses random timestamps. I update it to return its inputs
 
   .. code-block:: python
 
@@ -786,19 +786,19 @@ refactor: make it pass
 
   .. code-block:: python
 
-    self.assertEqual(int('12'), 1)
+    self.assertEqual(int('23'), 1)
 
   the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: 12 != 1
+    AssertionError: 23 != 1
 
-* I change the number from ``1`` to ``12``
+* I change the number from ``1`` to ``23``
 
   .. code-block:: python
 
-    self.assertEqual(int('12'), 12)
+    self.assertEqual(int('23'), 23)
 
   and we are green again
 
