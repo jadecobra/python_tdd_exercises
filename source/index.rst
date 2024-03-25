@@ -66,7 +66,6 @@ howtos
   how_to/exception_handling_tests
   how_to/exception_handling_programs
   how_to/sleep_duration
-  learning_models
 
 *****************************************************************************
 table of contents
@@ -83,6 +82,7 @@ table of contents
   classes/classes
   tests<catalog_of_tests>
   solutions<catalog_of_solutions>
+  learning_models
 
 ----
 
