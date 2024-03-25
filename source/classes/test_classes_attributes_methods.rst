@@ -343,7 +343,7 @@ the terminal shows an :ref:`AssertionError` as the expected and real values do n
 green: make it pass
 #############################################################################
 
-I copy the values from the terminal to update the expectation of the test
+I copy the values from the terminal to change the expectation of the test
 
 .. code-block:: python
 
