@@ -114,7 +114,7 @@ green: make it pass
     # TypeError
     # NameError
 
-* I add an `import statement`_ at the top of the file for the :doc:`module </exceptions/ModuleNotFoundError>`
+* then add an `import statement`_ at the top of the file for the :doc:`module </exceptions/ModuleNotFoundError>`
 
   .. code-block:: python
 
@@ -187,14 +187,14 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* I define ``duration`` as a :ref:`function<functions>` to make it callable_
+  I define ``duration`` as a :ref:`function<functions>` to make it callable_
 
   .. code-block:: python
 
     def duration():
         return None
 
-* I want the ``duration`` :ref:`function<functions>` to take in a ``wake_time`` and add it to the test with a value of ``'08:00'``
+* I want the ``duration`` :ref:`function<functions>` to take in a ``wake_time`` and add it to the test
 
   .. code-block:: python
 
@@ -218,7 +218,7 @@ green: make it pass
     def duration(wake_time=None):
         return None
 
-* I also want the ``duration`` :ref:`function<functions>` to take in a ``sleep_time`` and set the value to ``'07:00'``
+* I also want the ``duration`` :ref:`function<functions>` to take in a ``sleep_time``
 
   .. code-block:: python
 
@@ -230,7 +230,7 @@ green: make it pass
         None
     )
 
-  I get a similar :ref:`TypeError`
+  and get a similar :ref:`TypeError`
 
   .. code-block:: python
 
@@ -261,14 +261,14 @@ green: make it pass
 
     AssertionError: None != ('08:00', '07:00')
 
-  the ``duration`` :ref:`function<functions>` returns :ref:`None`. When I make it return the inputs
+  the ``duration`` :ref:`function<functions>` returns :ref:`None`, I change it to match the expectation
 
   .. code-block:: python
 
     def duration(wake_time=None, sleep_time=None):
         return ('08:00', '07:00')
 
-  the test passes
+  and the test passes
 
 .. _test_duration_w_hours_refactor_0:
 
@@ -276,7 +276,7 @@ green: make it pass
 refactor: make it better
 *****************************************************************************
 
-* I change ``wake_time`` to ``'09:00'``
+* I change ``wake_time`` in the test and it still passes
 
   .. code-block:: python
 
@@ -288,7 +288,7 @@ refactor: make it better
         ('08:00', '07:00')
     )
 
-  the terminal still shows passing tests. When I change the expectation to match
+  When I change the expectation to match
 
   .. code-block:: python
 
@@ -315,7 +315,7 @@ refactor: make it better
 
   and the test passes
 
-* I change ``sleep_time``
+* I also change ``sleep_time`` in the test and it still passes
 
   .. code-block:: python
 
@@ -327,7 +327,7 @@ refactor: make it better
         ('09:00', '07:00')
     )
 
-  the terminal still shows passing tests. When I change the expectation to match
+  When I change the expectation to match
 
   .. code-block:: python
 
@@ -339,7 +339,7 @@ refactor: make it better
         ('09:00', '06:00')
     )
 
-  it shows an :ref:`AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -354,7 +354,7 @@ refactor: make it better
 
   and the test passes
 
-* I add variables to the test to remove the repetition every time I change ``wake_time`` or ``sleep_time``
+* I add variables to the test to stop changing the values for ``wake_time`` or ``sleep_time`` in 2 places
 
   .. code-block:: python
 
@@ -414,7 +414,7 @@ refactor: make it better
     def duration(wake_time=None, sleep_time=None):
         return ('10:00', '05:00')
 
-  and the test passes
+  and the test passes. I no longer need to make the change in the test twice.
 
 * I do not want to change the values of ``wake_time`` and ``sleep_time`` in the tests every time I have an idea and then change the ``duration`` :ref:`function<functions>` to match, I want the :ref:`function<functions>` to be tested with random numbers. I add an `import statement`_ for the random_ :doc:`module </exceptions/ModuleNotFoundError>` at the top of the file
 
@@ -450,7 +450,7 @@ refactor: make it better
         sleep_time=f'{sleep_hour}:00'
     ...
 
-  and the terminal shows an :ref:`AssertionError` that looks like
+  and the terminal shows an :ref:`AssertionError` that looks like one of these
 
   .. code-block:: python
 
@@ -577,7 +577,7 @@ green again
 refactor: make it better
 -----------------------------------------------------------------------------
 
-* I want to get the different parts of the timestamp - the hours and minutes, something like ``['01', '23']`` with a ``:`` as the separator
+* I want to get the different parts of the timestamp - the hours and minutes as different items
 
   .. code-block:: python
 
@@ -620,7 +620,7 @@ refactor: make it better
         )
     )
 
-  and the terminal shows an :ref:`AssertionError` that looks like this
+  and the terminal shows an :ref:`AssertionError` that looks like one of these
 
   .. code-block:: python
 
@@ -669,7 +669,7 @@ refactor: make it better
 
     self.assertEqual(split[0], '01')
 
-  and the test passes
+  and it passes
 
 * I add another assertion for the minutes
 
@@ -707,7 +707,7 @@ refactor: make it better
         )
     )
 
-  and get an :ref:`AssertionError` that looks like this
+  and get an :ref:`AssertionError` that looks like one of these
 
   .. code-block:: python
 
@@ -809,7 +809,7 @@ refactor: make it pass
         )
     )
 
-  and get an :ref:`AssertionError` that looks like this
+  and get an :ref:`AssertionError` that looks like one of these
 
   .. code-block:: python
 
@@ -845,7 +845,7 @@ refactor: make it pass
         )
     )
 
-  and get an :ref:`AssertionError` that looks like this
+  and get an :ref:`AssertionError` that looks like one of these
 
   .. code-block:: python
 
@@ -912,7 +912,7 @@ refactor: make it pass
         sleep_time = random_timestamp()
     ...
 
-  all tests are still passing!
+  all tests are still passing! It is a beautiful life.
 
 ----
 
