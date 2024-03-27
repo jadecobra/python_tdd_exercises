@@ -187,7 +187,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-  I define ``duration`` as a :ref:`function<functions>` to make it callable_
+  I make it callable_ by changing it to a :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -498,7 +498,7 @@ refactor: make it better
         (wake_time, sleep_time)
     )
 
-* I want to get the hours part of ``wake_time`` and ``sleep_time`` which are the first two characters. I add a call to the `help system`_ to get details on the :ref:`methods<functions>` of strings_ to see which ones could help me break a string_ apart or get specific parts from it
+* I want to get the hours part of ``wake_time`` and ``sleep_time`` which are the characters before ``:``. I add a call to the `help system`_ to get details on the :ref:`methods<functions>` of strings_ to see which ones could help me break a string_ apart or get specific parts from it
 
   .. code-block:: python
 
