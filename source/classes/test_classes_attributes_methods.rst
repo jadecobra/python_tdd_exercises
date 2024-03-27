@@ -4,7 +4,6 @@
 classes: attributes and methods
 #############################################################################
 
-----
 
 .. contents:: table of contents
   :local:
@@ -401,4 +400,4 @@ Would you like to :ref:`test_classes_w_initializers`?
 
 ----
 
-:doc:`code/code_classes`
+:doc:`/code/code_classes`
