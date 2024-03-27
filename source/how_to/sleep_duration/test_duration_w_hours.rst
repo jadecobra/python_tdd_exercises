@@ -276,91 +276,13 @@ green: make it pass
 refactor: make it better
 *****************************************************************************
 
-* I change ``wake_time`` in the test and it still passes
-
-  .. code-block:: python
-
-    self.assertEqual(
-        sleep_duration.duration(
-            wake_time='09:00',
-            sleep_time='07:00'
-        ),
-        ('08:00', '07:00')
-    )
-
-  When I change the expectation to match
-
-  .. code-block:: python
-
-    self.assertEqual(
-        sleep_duration.duration(
-            wake_time='09:00',
-            sleep_time='07:00'
-        ),
-        ('09:00', '07:00')
-    )
-
-  I get an :ref:`AssertionError`
-
-  .. code-block:: python
-
-    Tuples differ: ('08:00', '07:00') != ('09:00', '07:00')
-
-  because ``duration`` returns ``('08:00', '07:00')`` every time it is called. I change it to match the expectation
-
-  .. code-block:: python
-
-    def duration(wake_time=None, sleep_time=None):
-        return ('09:00', '07:00')
-
-  and the test passes
-
-* I also change ``sleep_time`` in the test and it still passes
-
-  .. code-block:: python
-
-    self.assertEqual(
-        sleep_duration.duration(
-            wake_time='09:00',
-            sleep_time='06:00'
-        ),
-        ('09:00', '07:00')
-    )
-
-  When I change the expectation to match
-
-  .. code-block:: python
-
-    self.assertEqual(
-        sleep_duration.duration(
-            wake_time='09:00',
-            sleep_time='06:00'
-        ),
-        ('09:00', '06:00')
-    )
-
-  the terminal shows an :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: Tuples differ: ('09:00', '07:00') != ('09:00', '06:00')
-
-  because ``duration`` returns ``('09:00', '07:00')`` every time it is called. I change it to match the expectation
-
-  .. code-block:: python
-
-    def duration(wake_time=None, sleep_time=None):
-        return ('09:00', '06:00')
-
-  and the test passes
-
-* I add variables to the test to stop changing the values for ``wake_time`` or ``sleep_time`` in 2 places
+* I add variables to remove the repetition of the values for ``wake_time`` or ``sleep_time`` in 2 places
 
   .. code-block:: python
 
     def test_duration_w_hours(self):
-        wake_time = '09:00'
-        sleep_time = '06:00'
+        wake_time = '08:00'
+        sleep_time = '07:00'
 
         self.assertEqual(
             sleep_duration.duration(
@@ -375,21 +297,21 @@ refactor: make it better
   .. code-block:: python
 
     def test_duration_w_hours(self):
-        wake_time = '10:00'
-        sleep_time = '06:00'
+        wake_time = '09:00'
+        sleep_time = '07:00'
 
   the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: Tuples differ: ('09:00', '06:00') != ('10:00', '06:00')
+    AssertionError: Tuples differ: ('08:00', '07:00') != ('09:00', '07:00')
 
   I change ``duration`` to match
 
   .. code-block:: python
 
     def duration(wake_time=None, sleep_time=None):
-        return ('10:00', '06:00')
+        return ('09:00', '07:00')
 
   and the test passes
 
@@ -398,25 +320,25 @@ refactor: make it better
   .. code-block:: python
 
     def test_duration_w_hours(self):
-        wake_time = '10:00'
-        sleep_time = '05:00'
+        wake_time = '09:00'
+        sleep_time = '06:00'
 
   I get an :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: Tuples differ: ('10:00', '06:00') != ('10:00', '05:00')
+    AssertionError: Tuples differ: ('09:00', '07:00') != ('09:00', '06:00')
 
   I change ``duration`` to match the expectation
 
   .. code-block:: python
 
     def duration(wake_time=None, sleep_time=None):
-        return ('10:00', '05:00')
+        return ('09:00', '06:00')
 
-  and the test passes. I no longer need to make the change in the test twice.
+  and the test passes
 
-* I do not want to change the values of ``wake_time`` and ``sleep_time`` in the tests every time I have an idea and then change the ``duration`` :ref:`function<functions>` to match, I want the :ref:`function<functions>` to be tested with random numbers. I add an `import statement`_ for the random_ :doc:`module </exceptions/ModuleNotFoundError>` at the top of the file
+* I do not want to change the values of ``wake_time`` and ``sleep_time`` in the tests every time I have an idea and then change the ``duration`` :ref:`function<functions>` to match, it would be better to test the :ref:`function<functions>` with random numbers. I add an `import statement`_ for the random_ :doc:`module </exceptions/ModuleNotFoundError>` at the top of the file
 
   .. code-block:: python
 
