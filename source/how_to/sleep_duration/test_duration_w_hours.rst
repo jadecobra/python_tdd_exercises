@@ -114,7 +114,7 @@ green: make it pass
     # TypeError
     # NameError
 
-* then add an `import statement`_ at the top of the file for the :doc:`module </exceptions/ModuleNotFoundError>`
+  then add an `import statement`_ at the top of the file for the :doc:`module </exceptions/ModuleNotFoundError>`
 
   .. code-block:: python
 
@@ -156,17 +156,17 @@ green: make it pass
     # NameError
     # AttributeError
 
-* then open ``sleep_duration.py`` in the editor to add the name ::
+  then open ``sleep_duration.py`` in the editor to add the name ::
 
     duration
 
-  which gives me a NameError_ in the terminal
+  the terminal shows a NameError_
 
   .. code-block:: python
 
     NameError: name 'duration' is not defined
 
-* I define it by assigning it to :ref:`None`
+  I define it by assigning it to :ref:`None`
 
   .. code-block:: python
 
@@ -276,7 +276,7 @@ green: make it pass
 refactor: make it better
 *****************************************************************************
 
-* I add variables to remove the repetition of the values for ``wake_time`` or ``sleep_time`` in 2 places
+* I add variables to remove the repetition of the values for ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
 
@@ -300,13 +300,13 @@ refactor: make it better
         wake_time = '09:00'
         sleep_time = '07:00'
 
-  the terminal shows an :ref:`AssertionError`
+  and the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: Tuples differ: ('08:00', '07:00') != ('09:00', '07:00')
 
-  I change ``duration`` to match
+  then I change ``duration`` to match
 
   .. code-block:: python
 
@@ -329,7 +329,7 @@ refactor: make it better
 
     AssertionError: Tuples differ: ('09:00', '07:00') != ('09:00', '06:00')
 
-  I change ``duration`` to match the expectation
+  then change ``duration`` to match the expectation
 
   .. code-block:: python
 
@@ -338,7 +338,7 @@ refactor: make it better
 
   and the test passes
 
-* I do not want to change the values of ``wake_time`` and ``sleep_time`` in the tests every time I have an idea and then change the ``duration`` :ref:`function<functions>` to match, it would be better to test the :ref:`function<functions>` with random numbers. I add an `import statement`_ for the random_ :doc:`module </exceptions/ModuleNotFoundError>` at the top of the file
+* I do not want to change the values of ``wake_time`` and ``sleep_time`` in the tests every time I have an idea and then change the ``duration`` :ref:`function<functions>` to match. I think it would be better to test the :ref:`function<functions>` with random numbers. I add an `import statement`_ for the random_ :doc:`module </exceptions/ModuleNotFoundError>` at the top of the file
 
   .. code-block:: python
 
@@ -354,7 +354,7 @@ refactor: make it better
         wake_hour = random.randint(0, 23)
         sleep_hour = random.randint(0, 23)
 
-        wake_time='10:00'
+        wake_time='09:00'
         sleep_time='06:00'
     ...
 
@@ -376,12 +376,12 @@ refactor: make it better
 
   .. code-block:: python
 
-    AssertionError: Tuples differ: ('10:00', '05:00') != ('10:00', '2:00')
-    AssertionError: Tuples differ: ('10:00', '05:00') != ('23:00', '0:00')
-    AssertionError: Tuples differ: ('10:00', '05:00') != ('7:00', '3:00')
-    AssertionError: Tuples differ: ('10:00', '05:00') != ('0:00', '22:00')
+    AssertionError: Tuples differ: ('09:00', '06:00') != ('10:00', '2:00')
+    AssertionError: Tuples differ: ('09:00', '06:00') != ('23:00', '0:00')
+    AssertionError: Tuples differ: ('09:00', '06:00') != ('7:00', '3:00')
+    AssertionError: Tuples differ: ('09:00', '06:00') != ('0:00', '22:00')
 
-  ``duration`` still returns ``('10:00', '05:00')`` but the test now uses random timestamps. I change it to return its inputs
+  ``duration`` still returns ``('09:00', '06:00')`` but the test now uses random timestamps. I change it to return its inputs
 
   .. code-block:: python
 
@@ -426,6 +426,7 @@ refactor: make it better
 
     def test_duration_w_hours(self):
         self.assertEqual(help(str))
+    ...
 
   the terminal shows `python documentation for strings`_ and I read the descriptions until I see a :ref:`method<functions>` that looks like it could help
 
@@ -462,8 +463,7 @@ I add a failing test for the `str.split`_ :ref:`method<functions>` to see what i
 
   def test_string_splitting(self):
       self.assertEqual(
-          '01:23'.split(),
-          None
+          '01:23'.split(), None
       )
 
   def test_duration_w_hours(self):
@@ -486,11 +486,9 @@ I copy the :doc:`list </data_structures/lists/lists>` from the terminal and past
 
 .. code-block:: python
 
-  def test_string_splitting(self):
-      self.assertEqual(
-          '01:23'.split(),
-          ['01:23']
-      )
+  self.assertEqual(
+      '01:23'.split(), ['01:23']
+  )
 
 green again
 
@@ -499,15 +497,13 @@ green again
 refactor: make it better
 -----------------------------------------------------------------------------
 
-* I want to get the different parts of the timestamp - the hours and minutes as different items
+* I change the expectation to the hours and minutes as different items
 
   .. code-block:: python
 
-    def test_string_splitting(self):
-        self.assertEqual(
-            '01:23'.split(),
-            ['01', '23']
-        )
+    self.assertEqual(
+        '01:23'.split(), ['01', '23']
+    )
 
   the terminal shows an :ref:`AssertionError`
 
@@ -519,11 +515,9 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_string_splitting(self):
-        self.assertEqual(
-            '01:23'.split(':'),
-            ['01', '23']
-        )
+    self.assertEqual(
+        '01:23'.split(':'), ['01', '23']
+    )
 
   the test passes which means I know how to get the different parts of ``wake_time`` and ``sleep_time``
 
@@ -563,7 +557,7 @@ refactor: make it better
 
   and the terminal shows green again
 
-* I want the hours part of the timestamp string_ which is the first item of the list from calling `str.split`_ on it. From :doc:`/data_structures/lists/lists` I know I can get the item by using its index, Python uses `zero-based indexing`_ which means the first item is at index ``0`` and the second is at index ``1``. I add a variable to ``test_string_splitting``
+* I want the hours part of the timestamp string_ which is the first item of the list from calling `str.split`_. From :doc:`/data_structures/lists/lists` I know I can get the item by using its index, Python uses `zero-based indexing`_ which means the first item is at index ``0`` and the second is at index ``1``. I add a variable to ``test_string_splitting``
 
   .. code-block:: python
 
