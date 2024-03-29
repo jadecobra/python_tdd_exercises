@@ -34,7 +34,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 sleep_duration
 
-  and it shows an :ref:`AssertionError` after making the files I need
+  and it shows an :ref:`AssertionError` after making the files for the project
 
   .. code-block:: python
 
@@ -42,15 +42,15 @@ red: make it fail
 
     tests/test_sleep_duration.py:7: AssertionError
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_sleep_duration.py:7`` with the mouse to open it
-* then change ``True`` to ``False``
-* I change the :doc:`class </classes/classes>` name to CapWords to match Python convention
+  then I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_sleep_duration.py:7`` with the mouse to open it
+* and change ``True`` to ``False``
+* I also change the :doc:`class </classes/classes>` name to CapWords to match Python convention
 
   .. code-block:: python
 
     class TestSleepDuration(unittest.TestCase):
 
-* and replace the test with a new failing test
+* then replace the test with a new failing test
 
   .. code-block:: python
 
@@ -61,13 +61,13 @@ red: make it fail
 
             )
 
-  the terminal shows a :ref:`TypeError`
+  and get a :ref:`TypeError`
 
   .. code-block:: python
 
     TypeError: TestCase.assertEqual() missing 2 required positional arguments: 'first' and 'second'
 
-  I add it to the list of exceptions encountered
+  which I add to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -90,7 +90,7 @@ green: make it pass
         None
     )
 
-* then replace the first argument of the assertion with a reference to the :doc:`module </exceptions/ModuleNotFoundError>` I am testing
+* then replace the first argument with a reference to the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>`
 
   .. code-block:: python
 
@@ -105,7 +105,7 @@ green: make it pass
 
     NameError: name 'sleep_duration' is not defined
 
-  I add it as an exception encountered
+  and I add it as an exception encountered
 
   .. code-block:: python
 
@@ -146,7 +146,7 @@ green: make it pass
 
     AttributeError: module 'sleep_duration' has no attribute 'duration'
 
-  I add the error to the list of exceptions encountered as well
+  I add the error to the list of exceptions encountered
 
   .. code-block:: python
 
@@ -205,13 +205,13 @@ green: make it pass
         None
     )
 
-  the terminal shows a :ref:`TypeError`
+  then get a :ref:`TypeError`
 
   .. code-block:: python
 
     TypeError: duration() got an unexpected keyword argument 'wake_time'
 
-  because the name is not in the signature for ``duration``, I add it and set its default value to :ref:`None`
+  because the name is not in the signature for ``duration``, I add it with a default value of :ref:`None`
 
   .. code-block:: python
 
@@ -236,14 +236,14 @@ green: make it pass
 
     TypeError: duration() got an unexpected keyword argument 'sleep_time'
 
-  because ``sleep_time`` is not in its signature, I add it and set its default value to :ref:`None`
+  because ``sleep_time`` is not in its signature, I add it with a default value of :ref:`None`
 
   .. code-block:: python
 
     def duration(wake_time=None, sleep_time=None):
         return None
 
-* then set the expectation of the test to the inputs given
+* then set the expectation of the test to the given inputs
 
   .. code-block:: python
 
@@ -255,7 +255,7 @@ green: make it pass
         ('08:00', '07:00')
     )
 
-  and get an :ref:`AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -292,7 +292,7 @@ refactor: make it better
             (wake_time, sleep_time)
         )
 
-* I change ``wake_time``
+* and change ``wake_time``
 
   .. code-block:: python
 
@@ -300,13 +300,13 @@ refactor: make it better
         wake_time = '09:00'
         sleep_time = '07:00'
 
-  and the terminal shows an :ref:`AssertionError`
+  which gives me an :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: Tuples differ: ('08:00', '07:00') != ('09:00', '07:00')
 
-  then I change ``duration`` to match
+  I change ``duration`` to match
 
   .. code-block:: python
 
@@ -315,7 +315,7 @@ refactor: make it better
 
   and the test passes
 
-* when I change ``sleep_time``
+* I change ``sleep_time``
 
   .. code-block:: python
 
@@ -323,13 +323,13 @@ refactor: make it better
         wake_time = '09:00'
         sleep_time = '06:00'
 
-  I get an :ref:`AssertionError`
+  and get an :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: Tuples differ: ('09:00', '07:00') != ('09:00', '06:00')
 
-  then change ``duration`` to match the expectation
+  I change ``duration`` to match the expectation
 
   .. code-block:: python
 
@@ -338,7 +338,7 @@ refactor: make it better
 
   and the test passes
 
-* I do not want to change the values of ``wake_time`` and ``sleep_time`` in the tests every time I have an idea and then change the ``duration`` :ref:`function<functions>` to match. I think it would be better to test the :ref:`function<functions>` with random numbers. I add an `import statement`_ for the random_ :doc:`module </exceptions/ModuleNotFoundError>` at the top of the file
+* I do not want to change the values of ``wake_time`` and ``sleep_time`` in the tests every time I have an idea and then change the ``duration`` :ref:`function<functions>` to match. I think it would be better to test the :ref:`function<functions>` with random numbers. I add an `import statement`_ for the random_ :doc:`module </exceptions/ModuleNotFoundError>` at the top of ``test_sleep_duration.py``
 
   .. code-block:: python
 
@@ -358,7 +358,7 @@ refactor: make it better
         sleep_time='06:00'
     ...
 
-  `random.randint`_ will give me a random integer_ from ``0`` up to and including ``23`` to represent the 24 hours in a day
+  `random.randint`_ gives me a random number from ``0`` up to and including ``23`` to represent the 24 hours in a day
 
 * I :doc:`interpolate </how_to/pass_values>` them as hours for ``wake_time`` and ``sleep_time``
 
@@ -372,7 +372,7 @@ refactor: make it better
         sleep_time=f'{sleep_hour}:00'
     ...
 
-  and the terminal shows an :ref:`AssertionError` that looks like one of these
+  the terminal shows an :ref:`AssertionError` that looks like one of these
 
   .. code-block:: python
 
@@ -402,7 +402,7 @@ refactor: make it better
         (wake_time-sleep_time)
     )
 
-  and the terminal shows a :ref:`TypeError`
+  and get a :ref:`TypeError`
 
   .. code-block:: python
 
@@ -420,7 +420,7 @@ refactor: make it better
         (wake_time, sleep_time)
     )
 
-* I want to get the hours part of ``wake_time`` and ``sleep_time`` which are the characters before ``:``. I add a call to the `help system`_ to get details on the :ref:`methods<functions>` of strings_ to see which ones could help me break a string_ apart or get specific parts from it
+* I want to get the hours part of ``wake_time`` and ``sleep_time`` which are the characters before ``:``. I add a call to the `help system`_ to see which :ref:`methods<functions>` of strings_ can help me break one apart or get specific parts from it
 
   .. code-block:: python
 
@@ -443,7 +443,7 @@ refactor: make it better
     |
     ...
 
-  the `str.split`_ :ref:`method<functions>` looks like a good solution since it splits up a word on a given separator
+  `str.split`_ looks like a good solution since it splits up a word on a given separator
 
 * I remove ``self.assertEqual(help(str))``
 
@@ -469,7 +469,7 @@ I add a failing test for the `str.split`_ :ref:`method<functions>` to see what i
   def test_duration_w_hours(self):
   ...
 
-and the terminal shows an :ref:`AssertionError`
+the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -505,7 +505,7 @@ refactor: make it better
         '01:23'.split(), ['01', '23']
     )
 
-  the terminal shows an :ref:`AssertionError`
+  and get an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -555,9 +555,9 @@ refactor: make it better
             sleep_time.split(':')
         )
 
-  and the terminal shows green again
+  and the terminal is green again
 
-* I want the hours part of the timestamp string_ which is the first item of the list from calling `str.split`_. From :doc:`/data_structures/lists/lists` I know I can get the item by using its index, Python uses `zero-based indexing`_ which means the first item is at index ``0`` and the second is at index ``1``. I add a variable to ``test_string_splitting``
+* I want the hours part of the timestamp string_ which is the first item from calling `str.split`_. From :doc:`the chapter on lists </data_structures/lists/lists>` I know I can get the item by using its index, Python uses `zero-based indexing`_ which means the first item is at index ``0`` and the second is at index ``1``. I add a variable to ``test_string_splitting``
 
   .. code-block:: python
 
@@ -566,14 +566,14 @@ refactor: make it better
 
         self.assertEqual(split, ['01', '23'])
 
-  the terminal still shows passing tests and I add an assertion for indexing the :doc:`list </data_structures/lists/lists>`
+  the terminal still shows passing tests. I add an assertion for indexing the :doc:`list </data_structures/lists/lists>`
 
   .. code-block:: python
 
     self.assertEqual(split, ['01', '23'])
     self.assertEqual(split[0], 0)
 
-  the terminal shows an :ref:`AssertionError` because the first item (index 0) from splitting ``'01:23'`` on the separator ``':'`` is ``'01'`` which is the hours part of the timestamp
+  which gives me an :ref:`AssertionError` because the first item (index 0) from splitting ``'01:23'`` on the separator ``':'`` is ``'01'`` which is the hours part of the timestamp
 
   .. code-block:: python
 
@@ -649,7 +649,7 @@ refactor: make it better
 test_converting_strings_to_numbers
 #############################################################################
 
-The hours part of the timestamp after calling `str.split`_ is still a string_ and I got a :ref:`TypeError` when I tried to do a calculation with strings_ earlier. I want to see if I can use the int_ constructor to convert a string_ to an integer_ for the calculation
+The hours part of the timestamp after calling `str.split`_ is still a string_ and I got a :ref:`TypeError` when I tried to subtract one from another earlier. I want to see if I can use the int_ constructor to convert a string_ to a number for the calculation
 
 .. _test_converting_strings_to_numbers_red:
 
@@ -708,7 +708,7 @@ refactor: make it pass
 
     self.assertEqual(int('23'), 23)
 
-  and we are green again
+  and the terminal is green again
 
 * I add calls to the int_ constructor in the expectation of ``test_duration_w_hours``
 
@@ -801,7 +801,7 @@ refactor: make it pass
 
   and the terminal still shows passing tests!
 
-* I can call `random.randint`_ directly in ``test_sleep_duration.py`` instead of using the reference to the variables since they are only used once
+* ``wake_hour`` and ``sleep_hour`` are only used once in  ``test_sleep_duration.py``, I can replace them with direct calls to `random.randint`_
 
   .. code-block:: python
 
@@ -812,7 +812,7 @@ refactor: make it pass
 
   the terminal still shows passing tests
 
-* the assignments for ``wake_time`` and ``sleep_time`` look the same, time to create a :ref:`function<functions>` that returns a random timestamp
+* the assignments for ``wake_time`` and ``sleep_time`` are the same, time to create a :ref:`function<functions>` that returns a random timestamp
 
   .. code-block:: python
 
@@ -828,7 +828,7 @@ refactor: make it pass
         sleep_time = random_timestamp()
     ...
 
-  all tests are still passing! It is a beautiful life.
+  all tests are still passing! It is a beautiful life!!
 
 ----
 
@@ -851,7 +851,7 @@ The challenge is to write a program that calculates the difference between a giv
 * `test_duration_w_hours`_ where I
 
   - used `random.randint`_ to generate random numbers for the 24 hours in a day
-  - and :doc:`interpolated </how_to/pass_values>` them into the timestamps
+  - and :doc:`interpolated </how_to/pass_values>` them in the timestamps
   - then test that the ``duration`` :ref:`function<functions>` subtracts the hour for ``sleep_time`` from the hour for ``wake_time``
 
 I also encountered the following exceptions

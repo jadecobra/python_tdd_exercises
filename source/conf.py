@@ -10,12 +10,13 @@ exclude_patterns = ['build', 'notes', '.venv', 'code/code_tree.rst', 'rehearsals
 
 html_title = 'Pumping Python: how to solve problems with Test Driven Development'
 html_short_title = 'Pumping Python'
-html_logo = '_static/DRY_html_logo.png'
+html_logo = "_static/dry_favicon_16x16.png"
 html_favicon = '_static/dry_favicon_16x16.png'
-# html_theme = 'alabaster'
 html_theme = 'press'
 html_static_path = ['_static']
 extensions = ['sphinx.ext.autosectionlabel']
+# html_logo = "_static/DRY_html_logo.png"
+# html_theme = 'alabaster'
 # autosectionlabel_prefix_document = True
 
 epub_theme = 'epub'
