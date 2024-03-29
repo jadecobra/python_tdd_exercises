@@ -90,7 +90,7 @@ green: make it pass
         None
     )
 
-* then replace the first argument of the assertion with a reference to the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>`
+* then replace the first argument of the assertion with a reference to the :doc:`module </exceptions/ModuleNotFoundError>` I am testing
 
   .. code-block:: python
 
