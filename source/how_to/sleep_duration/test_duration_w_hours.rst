@@ -447,6 +447,13 @@ refactor: make it better
 
 * I remove ``self.assertEqual(help(str))``
 
+  .. code-block:: python
+
+    def test_duration_w_hours(self):
+        wake_hour = random.randint(0, 23)
+        sleep_hour = random.randint(0, 23)
+    ...
+
 .. _test_string_splitting:
 
 test_string_splitting
