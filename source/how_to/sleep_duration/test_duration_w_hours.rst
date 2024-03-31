@@ -372,7 +372,7 @@ refactor: make it better
         sleep_time=f'{sleep_hour}:00'
     ...
 
-  the terminal shows an :ref:`AssertionError` that looks like one of these
+  the terminal shows an :ref:`AssertionError`, for example
 
   .. code-block:: python
 
@@ -543,7 +543,7 @@ refactor: make it better
         )
     )
 
-  and the terminal shows an :ref:`AssertionError` that looks like one of these
+  and the terminal shows an :ref:`AssertionError`, for example
 
   .. code-block:: python
 
@@ -630,7 +630,7 @@ refactor: make it better
         )
     )
 
-  and get an :ref:`AssertionError` that looks like one of these
+  and get an :ref:`AssertionError`, for example
 
   .. code-block:: python
 
@@ -732,7 +732,7 @@ refactor: make it pass
         )
     )
 
-  and get an :ref:`AssertionError` that looks like one of these
+  and get an :ref:`AssertionError`, for example
 
   .. code-block:: python
 
@@ -751,7 +751,7 @@ refactor: make it pass
             int(sleep_time.split(':')[0])
         )
 
-  and the test passes, I have the hours part of both timestamps as numbers
+  and the test passes. I have the hours part of both timestamps as numbers
 
 * I change the expectation in ``test_duration_w_hours`` to the difference between the hours
 
@@ -768,7 +768,7 @@ refactor: make it pass
         )
     )
 
-  and get an :ref:`AssertionError` that looks like one of these
+  and get an :ref:`AssertionError`, for example
 
   .. code-block:: python
 
@@ -835,7 +835,7 @@ refactor: make it pass
         sleep_time = random_timestamp()
     ...
 
-  all tests are still passing! It is a beautiful life!!
+  all tests are still passing! What a beautiful life!!
 
 ----
 
