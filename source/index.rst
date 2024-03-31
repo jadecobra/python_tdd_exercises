@@ -83,6 +83,7 @@ table of contents
   tests<catalog_of_tests>
   solutions<catalog_of_solutions>
   learning_models
+  dot_notation
 
 ----
 
