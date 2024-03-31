@@ -211,7 +211,7 @@ green: make it pass
 
     TypeError: duration() got an unexpected keyword argument 'wake_time'
 
-  because the name is not in the signature for ``duration``, I add it with a default value of :ref:`None`
+  because the name is not in the :ref:`function's<functions>` signature. I add it with a default value of :ref:`None`
 
   .. code-block:: python
 
@@ -236,7 +236,7 @@ green: make it pass
 
     TypeError: duration() got an unexpected keyword argument 'sleep_time'
 
-  because ``sleep_time`` is not in its signature, I add it with a default value of :ref:`None`
+  because ``sleep_time`` is not in the :ref:`function's<functions>` signature. I add it with a default value of :ref:`None`
 
   .. code-block:: python
 
@@ -292,7 +292,7 @@ refactor: make it better
             (wake_time, sleep_time)
         )
 
-* and change ``wake_time``
+* then change ``wake_time``
 
   .. code-block:: python
 
@@ -329,7 +329,7 @@ refactor: make it better
 
     AssertionError: Tuples differ: ('09:00', '07:00') != ('09:00', '06:00')
 
-  I change ``duration`` to match the expectation
+  then change ``duration`` to match the expectation
 
   .. code-block:: python
 
@@ -372,7 +372,7 @@ refactor: make it better
         sleep_time=f'{sleep_hour:02}:00'
     ...
 
-  the ``:02`` tells Python to always display the numbers as two digits, if it is less than ``10`` it will have a ``0`` in front of it, for example ``01``. The terminal shows an :ref:`AssertionError` like
+  the ``:02`` tells Python to always display the numbers as two digits, if it is less than ``10`` it will have a ``0`` in front of it, for example ``01``. The terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -442,8 +442,6 @@ refactor: make it better
     |          The separator used to split the string.
     |
     ...
-
-  `str.split`_ looks like a good solution since it splits up a word on a given separator
 
 * I remove ``self.assertEqual(help(str))``
 
@@ -543,7 +541,7 @@ refactor: make it better
         )
     )
 
-  and the terminal shows an :ref:`AssertionError` like
+  and the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -630,7 +628,7 @@ refactor: make it better
         )
     )
 
-  and get an :ref:`AssertionError` like
+  and get an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -639,7 +637,7 @@ refactor: make it better
     AssertionError: Tuples differ: (['05', '00'], ['08', '00']) != ('05', '08')
     AssertionError: Tuples differ: (['23', '00'], ['04', '00']) != ('23', '04')
 
-  the ``duration`` :ref:`function<functions>` currently returns the result of splitting the timestamps but the test expects the hours, I change it to match the expectation
+  the ``duration`` :ref:`function<functions>` returns the result of splitting the timestamps but the test expects the hours, I change it to match the expectation
 
   .. code-block:: python
 
@@ -732,7 +730,7 @@ refactor: make it pass
         )
     )
 
-  and get an :ref:`AssertionError` like
+  and get an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -768,7 +766,7 @@ refactor: make it pass
         )
     )
 
-  and get an :ref:`AssertionError` like
+  and get an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -850,14 +848,14 @@ The challenge is to write a program that calculates the difference between a giv
 
 * `test_string_splitting`_ where I
 
-  - used the `str.split`_ :ref:`method<functions>` I found from calling the `help system`_ to split a string_ on a separator
+  - used the `str.split`_ :ref:`method<functions>` I found by calling the `help system`_ to split a string_ on a separator
   - and indexed the :doc:`list </data_structures/lists/lists>` from the split to get specific items
 
 * `test_converting_strings_to_numbers`_ with the int_ constructor
 
 * `test_duration_w_hours`_ where I
 
-  - used `random.randint`_ to generate random numbers for the 24 hours in a day
+  - used `random.randint`_ to generate random numbers from the 24 hours in a day
   - and :doc:`interpolated </how_to/pass_values>` them in the timestamps
   - then test that the ``duration`` :ref:`function<functions>` subtracts the hour for ``sleep_time`` from the hour for ``wake_time``
 
