@@ -358,7 +358,7 @@ refactor: make it better
         sleep_time='06:00'
     ...
 
-  `random.randint`_ gives me a random number from ``0`` up to and including ``23`` to represent the 24 hours in a day
+  `random.randint`_ gives me a random number from ``0`` up to and including ``23`` for the 24 hours in a day
 
 * I :doc:`interpolate </how_to/pass_values>` them as hours for ``wake_time`` and ``sleep_time``
 
@@ -368,18 +368,19 @@ refactor: make it better
         wake_hour = random.randint(0, 23)
         sleep_hour = random.randint(0, 23)
 
-        wake_time=f'{wake_hour}:00'
-        sleep_time=f'{sleep_hour}:00'
+        wake_time=f'{wake_hour:02}:00'
+        sleep_time=f'{sleep_hour:02}:00'
     ...
 
-  the terminal shows an :ref:`AssertionError`, for example
+  - the ``:02`` tells Python to always display the numbers as two digits, if it is less than ``10`` it will have a ``0`` in front of it, for example ``01``
+  - the terminal shows an :ref:`AssertionError`, for example
 
   .. code-block:: python
 
-    AssertionError: Tuples differ: ('09:00', '06:00') != ('10:00', '2:00')
-    AssertionError: Tuples differ: ('09:00', '06:00') != ('23:00', '0:00')
-    AssertionError: Tuples differ: ('09:00', '06:00') != ('7:00', '3:00')
-    AssertionError: Tuples differ: ('09:00', '06:00') != ('0:00', '22:00')
+    AssertionError: Tuples differ: ('09:00', '06:00') != ('10:00', '02:00')
+    AssertionError: Tuples differ: ('09:00', '06:00') != ('23:00', '00:00')
+    AssertionError: Tuples differ: ('09:00', '06:00') != ('07:00', '03:00')
+    AssertionError: Tuples differ: ('09:00', '06:00') != ('00:00', '22:00')
 
   ``duration`` still returns ``('09:00', '06:00')`` but the test now uses random timestamps. I change it to return its inputs
 
@@ -547,9 +548,9 @@ refactor: make it better
 
   .. code-block:: python
 
-    AssertionError: Tuples differ: ('0:00', '10:00') != (['0', '00'], ['10', '00'])
-    AssertionError: Tuples differ: ('23:00', '8:00') != (['23', '00'], ['8', '00'])
-    AssertionError: Tuples differ: ('6:00', '11:00') != (['6', '00'], ['11', '00'])
+    AssertionError: Tuples differ: ('00:00', '10:00') != (['00', '00'], ['10', '00'])
+    AssertionError: Tuples differ: ('23:00', '08:00') != (['23', '00'], ['08', '00'])
+    AssertionError: Tuples differ: ('06:00', '11:00') != (['06', '00'], ['11', '00'])
     AssertionError: Tuples differ: ('13:00', '13:00') != (['13', '00'], ['13', '00'])
 
   the ``duration`` :ref:`function<functions>` returns ``wake_time`` and ``sleep_time`` but the test expects the result of splitting them. I change it to match the expectation
@@ -634,10 +635,10 @@ refactor: make it better
 
   .. code-block:: python
 
-    AssertionError: Tuples differ: (['0', '00'], ['19', '00']) != ('0', '19')
+    AssertionError: Tuples differ: (['00', '00'], ['19', '00']) != ('00', '19')
     AssertionError: Tuples differ: (['14', '00'], ['17', '00']) != ('14', '17')
-    AssertionError: Tuples differ: (['5', '00'], ['8', '00']) != ('5', '8')
-    AssertionError: Tuples differ: (['23', '00'], ['4', '00']) != ('23', '4')
+    AssertionError: Tuples differ: (['05', '00'], ['08', '00']) != ('05', '08')
+    AssertionError: Tuples differ: (['23', '00'], ['04', '00']) != ('23', '04')
 
   the ``duration`` :ref:`function<functions>` currently returns the result of splitting the timestamps but the test expects the hours, I change it to match the expectation
 
@@ -736,9 +737,9 @@ refactor: make it pass
 
   .. code-block:: python
 
-    AssertionError: Tuples differ: ('0', '5') != (0, 5)
-    AssertionError: Tuples differ: ('8', '21') != (8, 21)
-    AssertionError: Tuples differ: ('4', '4') != (4, 4)
+    AssertionError: Tuples differ: ('00', '05') != (0, 5)
+    AssertionError: Tuples differ: ('08', '21') != (8, 21)
+    AssertionError: Tuples differ: ('04', '04') != (4, 4)
     AssertionError: Tuples differ: ('16', '14') != (16, 14)
 
   the ``duration`` :ref:`function<functions>` returns the hours as a string_ but the test expects an integer_, I change it to match the expectation
@@ -813,8 +814,8 @@ refactor: make it pass
   .. code-block:: python
 
     def test_duration_w_hours(self):
-        wake_time = f'{random.randint(0, 23)}:00'
-        sleep_time = f'{random.randint(0, 23)}:00'
+        wake_time = f'{random.randint(0, 23):02}:00'
+        sleep_time = f'{random.randint(0, 23):02}:00'
     ...
 
   the terminal still shows passing tests
@@ -824,7 +825,7 @@ refactor: make it pass
   .. code-block:: python
 
     def random_timestamp():
-        return f'{random.randint(0, 23)}:00'
+        return f'{random.randint(0, 23):02}:00'
 
   and replace the timestamps with calls to ``random_timestamp``
 
