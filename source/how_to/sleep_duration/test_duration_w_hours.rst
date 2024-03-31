@@ -372,8 +372,7 @@ refactor: make it better
         sleep_time=f'{sleep_hour:02}:00'
     ...
 
-  - the ``:02`` tells Python to always display the numbers as two digits, if it is less than ``10`` it will have a ``0`` in front of it, for example ``01``
-  - the terminal shows an :ref:`AssertionError`, for example
+  the ``:02`` tells Python to always display the numbers as two digits, if it is less than ``10`` it will have a ``0`` in front of it, for example ``01``. The terminal shows an :ref:`AssertionError` like
 
   .. code-block:: python
 
@@ -429,7 +428,7 @@ refactor: make it better
         self.assertEqual(help(str))
     ...
 
-  the terminal shows `python documentation for strings`_ and I read the descriptions until I see a :ref:`method<functions>` that looks like it could help
+  the terminal shows `python documentation for strings`_ and I read the descriptions until I see a :ref:`method<functions>` that looks like what I am looking for
 
   .. code-block:: python
 
@@ -544,7 +543,7 @@ refactor: make it better
         )
     )
 
-  and the terminal shows an :ref:`AssertionError`, for example
+  and the terminal shows an :ref:`AssertionError` like
 
   .. code-block:: python
 
@@ -563,9 +562,9 @@ refactor: make it better
             sleep_time.split(':')
         )
 
-  and the terminal is green again
+  and the terminal shows green again
 
-* I want the hours part of the timestamp string_ which is the first item from calling `str.split`_. From :doc:`the chapter on lists </data_structures/lists/lists>` I know I can get the item by using its index, Python uses `zero-based indexing`_ which means the first item is at index ``0`` and the second is at index ``1``. I add a variable to ``test_string_splitting``
+* I want the hours part of the timestamp string_ which is the first item from calling `str.split`_. From :doc:`the chapter on lists </data_structures/lists/lists>` I know I can get it by using its index, Python uses `zero-based indexing`_ which means the first item is at index ``0`` and the second is at index ``1``. I add a variable to ``test_string_splitting``
 
   .. code-block:: python
 
@@ -581,7 +580,7 @@ refactor: make it better
     self.assertEqual(split, ['01', '23'])
     self.assertEqual(split[0], 0)
 
-  which gives me an :ref:`AssertionError` because the first item (index 0) from splitting ``'01:23'`` on the separator ``':'`` is ``'01'`` which is the hours part of the timestamp
+  which gives me an :ref:`AssertionError` because the first item (index 0) from splitting ``'01:23'`` on the separator ``':'`` is ``'01'``, the hours part of the timestamp
 
   .. code-block:: python
 
@@ -600,15 +599,15 @@ refactor: make it better
   .. code-block:: python
 
     self.assertEqual(split[0], '01')
-    self.assertEqual(split[1], 1)
+    self.assertEqual(split[1], '01')
 
   and get an :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: '23' != 1
+    AssertionError: '23' != '01'
 
-  the second item (index 1) from splitting ``'01:23'`` on the separator ``':'`` is ``'23'`` which is the minutes part of the timestamp, I change the ``1`` to ``'23'``
+  the second item (index 1) from splitting ``'01:23'`` on the separator ``':'`` is ``'23'``, the minutes part of the timestamp. I change the ``'01'`` to ``'23'``
 
   .. code-block:: python
 
@@ -616,7 +615,7 @@ refactor: make it better
 
   and the test passes
 
-* I change the expectation of ``test_duration_w_hours`` to show the first items of the list from splitting ``wake_time`` and ``sleep_time`` on the separator ``':'``
+* I change the expectation of ``test_duration_w_hours`` to the hours from ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
 
@@ -631,7 +630,7 @@ refactor: make it better
         )
     )
 
-  and get an :ref:`AssertionError`, for example
+  and get an :ref:`AssertionError` like
 
   .. code-block:: python
 
@@ -657,41 +656,41 @@ refactor: make it better
 test_converting_strings_to_numbers
 #############################################################################
 
-The hours part of the timestamp after calling `str.split`_ is still a string_ and I got a :ref:`TypeError` when I tried to subtract one from another earlier. I want to see if I can use the int_ constructor to convert a string_ to a number for the calculation
+The hours part of the timestamp after calling `str.split`_ is still a string_ and I got a :ref:`TypeError` when I tried to subtract one from another earlier. I want to see if I can use the int_ constructor to convert a string_ to a number
 
 .. _test_converting_strings_to_numbers_red:
 
 red: make it fail
 -----------------------------------------------------------------------------
 
-* I add a new failing test to test numbers that have a ``0`` in front of them
+I add a new failing test to test numbers that have a ``0`` in front of them
 
-  .. code-block:: python
+.. code-block:: python
 
-    def test_converting_strings_to_numbers(self):
-        self.assertEqual(int('01'), 0)
+  def test_converting_strings_to_numbers(self):
+      self.assertEqual(int('01'), 0)
 
-    def test_duration_w_hours(self):
-    ...
+  def test_duration_w_hours(self):
+  ...
 
-  and the terminal shows an :ref:`AssertionError`
+and the terminal shows an :ref:`AssertionError`
 
-  .. code-block:: python
+.. code-block:: python
 
-    AssertionError: 1 != 0
+  AssertionError: 1 != 0
 
 .. _test_converting_strings_to_numbers_green:
 
 green: make it pass
 -----------------------------------------------------------------------------
 
-* I change the expectation to ``1``
+I change the expectation to ``1``
 
-  .. code-block:: python
+.. code-block:: python
 
-    self.assertEqual(int('01'), 1)
+  self.assertEqual(int('01'), 1)
 
-  and the test passes
+and the test passes
 
 .. _test_converting_strings_to_numbers_refactor:
 
@@ -716,7 +715,7 @@ refactor: make it pass
 
     self.assertEqual(int('23'), 23)
 
-  and the terminal is green again
+  and the terminal shows green again
 
 * I add calls to the int_ constructor in the expectation of ``test_duration_w_hours``
 
@@ -733,7 +732,7 @@ refactor: make it pass
         )
     )
 
-  and get an :ref:`AssertionError`, for example
+  and get an :ref:`AssertionError` like
 
   .. code-block:: python
 
@@ -742,7 +741,7 @@ refactor: make it pass
     AssertionError: Tuples differ: ('04', '04') != (4, 4)
     AssertionError: Tuples differ: ('16', '14') != (16, 14)
 
-  the ``duration`` :ref:`function<functions>` returns the hours as a string_ but the test expects an integer_, I change it to match the expectation
+  the ``duration`` :ref:`function<functions>` returns the hours as a string_ but the test expects them as numbers, I change it to match the expectation
 
   .. code-block:: python
 
@@ -752,7 +751,7 @@ refactor: make it pass
             int(sleep_time.split(':')[0])
         )
 
-  and the test passes. I have the hours part of both timestamps as numbers
+  and the test passes
 
 * I change the expectation in ``test_duration_w_hours`` to the difference between the hours
 
@@ -769,7 +768,7 @@ refactor: make it pass
         )
     )
 
-  and get an :ref:`AssertionError`, for example
+  and get an :ref:`AssertionError` like
 
   .. code-block:: python
 
