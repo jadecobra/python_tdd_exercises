@@ -121,7 +121,16 @@ module.Class.attribute
 
           attribute = None
 
-  or
+ how to use in a different file
+
+  .. code-block:: python
+
+      import module
+
+      instance = module.Class()
+      instance.attribute
+
+- or the definition in ``module.py``
 
   .. code-block:: python
 
@@ -130,7 +139,7 @@ module.Class.attribute
           def __init__(self, attribute):
               self.attribute = attribute
 
-- how to use in a different file
+  how to use in a different file
 
   .. code-block:: python
 
