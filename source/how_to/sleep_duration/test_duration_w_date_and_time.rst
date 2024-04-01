@@ -768,7 +768,7 @@ I also encountered the following exceptions
 * :ref:`TypeError`
 * SyntaxError_
 * ValueError_
-*
+
 ----
 
 :doc:`/code/code_sleep_duration`
