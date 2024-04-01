@@ -18,6 +18,7 @@ The ``duration`` :ref:`function<functions>` has been tested with timestamps that
 
 .. _test_duration_w_date_and_time_red:
 
+*****************************************************************************
 red: make it fail
 *****************************************************************************
 
@@ -79,6 +80,7 @@ red: make it fail
 
 .. _test_duration_w_date_and_time_green_0:
 
+*****************************************************************************
 green: make it pass
 *****************************************************************************
 
@@ -185,13 +187,15 @@ green: make it pass
         two date, time, or datetime instances to
         microsecond resolution.
 
+.. _test_datetime_objects:
+
 test_datetime_objects
-*****************************************************************************
+#############################################################################
 
 .. _test_datetime_objects_red:
 
 red: make it fail
-*****************************************************************************
+-----------------------------------------------------------------------------
 
 I add a test to ``test_sleep_duration.py`` based on `Examples of usage: datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_ for `datetime.datetime`_ objects
 
@@ -218,7 +222,7 @@ and the terminal shows a NameError_ because ``datetime`` is not defined in ``tes
 .. _test_datetime_objects_green:
 
 green: make it pass
-*****************************************************************************
+-----------------------------------------------------------------------------
 
 I add an `import statement`_ for the datetime_ module,
 
@@ -262,13 +266,15 @@ and the terminal shows passing tests. From this test I see that
 
   you can see more in `strftime() and strptime() behavior <https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior>`_
 
+.. _test_subtracting_datetime_objects:
+
 test_subtracting_datetime_objects
-*****************************************************************************
+#############################################################################
 
 .. _test_subtracting_datetime_objects_red:
 
 red: make it fail
-*****************************************************************************
+-----------------------------------------------------------------------------
 
 I add a test for subtracting two `datetime.datetime`_ objects
 
@@ -302,7 +308,7 @@ the terminal shows an :ref:`AssertionError`
 .. _test_subtracting_datetime_objects_green:
 
 green: make it pass
-*****************************************************************************
+-----------------------------------------------------------------------------
 
 I copy the value on the left of the :ref:`AssertionError` and replace the expected value in the test to make it pass
 
@@ -316,7 +322,7 @@ I copy the value on the left of the :ref:`AssertionError` and replace the expect
 .. _test_subtracting_datetime_objects_refactor:
 
 refactor: make it better
-*****************************************************************************
+-----------------------------------------------------------------------------
 
 I add a variable to remove the duplication of the timestamp pattern
 
@@ -341,13 +347,15 @@ With these passing tests. I see that I can
 - convert a string_ to a `datetime.datetime`_ object by using `datetime.datetime.strptime`_
 - subtract one `datetime.datetime`_ object from another to get a `datetime.timedelta`_ object
 
+.. _test_converting_timedelta_to_string:
+
 test_converting_timedelta_to_string
-*****************************************************************************
+#############################################################################
 
 .. _test_converting_timedelta_to_string_red:
 
 red: make it fail
-*****************************************************************************
+-----------------------------------------------------------------------------
 
 * The `datetime.timedelta`_ object I get shows seconds, but I want the result as a string_. What happens when I pass it to the str_ constructor?
 
@@ -371,7 +379,7 @@ red: make it fail
 .. _test_converting_timedelta_to_string_green:
 
 green: make it pass
-*****************************************************************************
+-----------------------------------------------------------------------------
 
 I make the expected value in the test match the value from the terminal
 
@@ -583,6 +591,7 @@ From the tests, I know I can
 
 .. _test_duration_w_date_and_time_refactor:
 
+*****************************************************************************
 refactor: make it better
 *****************************************************************************
 
@@ -708,18 +717,19 @@ refactor: make it better
 
 .. _sleep_duration_review:
 
+*****************************************************************************
 review
 *****************************************************************************
 
-The challenge was to make a :ref:`function<functions>` that calculates the difference between 2 given timestamps. I ran the following tests to help me make it
+The challenge was to write a program that calculates the difference between a given wake and sleep time. I ran the following tests to get something that does it
 
-* `test_string_splitting`_ where I
+* :ref:`test_string_splitting` where I
 
-  - used the `help system`_ to view documentation
-  - used the `str.split`_ :ref:`method<functions>` to split a string_ on a separator
-  - indexed the :doc:`list </data_structures/lists/lists>` from the split to get specific items
+  - used the `str.split`_ :ref:`method<functions>` I found by calling the `help system`_ to split a string_ on a separator
+  - and indexed the :doc:`list </data_structures/lists/lists>` from the split to get specific items
 
-* `test_converting_strings_to_numbers`_
+* :ref:`test_converting_strings_to_numbers` with the int_ constructor
+
 * `test_floor_aka_integer_division`_
 * `test_modulo_operation`_
 * `test_datetime_objects`_ where I
@@ -730,14 +740,25 @@ The challenge was to make a :ref:`function<functions>` that calculates the diffe
 * `test_subtracting_datetime_objects`_
 * `test_converting_timedelta_to_string`_
 * `test_duration_w_earlier_wake_than_sleep_time`_
+* :ref:`test_duration_w_hours_and_minutes` where I
+
+  - used `random.randint`_ to generate random numbers
+
+    * from the 24 hours in a day
+    * and the 60 minutes in an hour
+
+  - then :doc:`interpolated </how_to/pass_values>` them in the timestamps
+  - :ref:`test_duration_w_hours` and `test_duration_calculation` to make sure that the ``duration`` :ref:`function` calculates the difference between ``wake_time`` and ``sleep_time`` by
+
+    * converting the timestamp to minutes
+    * subtracting the total minutes of ``sleep_time`` from ``wake_time``
+    * and converting the difference to a duration in hours and minutes by using `floor (integer) division`_ and the modulo_ operator
+
 * `test_duration_w_date_and_time`_
 
   - using `random.randint`_ to generate random integers for hours and minutes
   - using timestamps with dates, and times ranging from ``'00:00'`` up to and including ``'23:59'`` as inputs for ``wake_time`` and ``sleep_time``
   - confirming a ValueError_ is raised when ``wake_time`` is earlier than ``sleep_time``
-  - `test_duration_w_hours`_
-  - `test_duration_w_hours_and_minutes`_
-  - `test_duration_calculation`_
 
 I also encountered the following exceptions
 
@@ -747,7 +768,7 @@ I also encountered the following exceptions
 * :ref:`TypeError`
 * SyntaxError_
 * ValueError_
-
+*
 ----
 
 :doc:`/code/code_sleep_duration`
