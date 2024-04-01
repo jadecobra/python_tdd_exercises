@@ -1,4 +1,4 @@
-.. include:: ../links.rst
+.. include:: ../../links.rst
 
 .. _test_duration_w_hours_and_minutes:
 
@@ -18,6 +18,7 @@ The ``duration`` :ref:`function<functions>` has only been tested with timestamps
 
 .. _test_duration_w_hours_and_minutes_red:
 
+*****************************************************************************
 red: make it fail
 *****************************************************************************
 
@@ -83,6 +84,7 @@ red: make it fail
 
 .. _test_duration_w_hours_and_minutes_green:
 
+*****************************************************************************
 green: make it pass
 *****************************************************************************
 
@@ -131,6 +133,7 @@ green: make it pass
 
 .. _test_duration_w_hours_and_minutes_refactor:
 
+*****************************************************************************
 refactor: make it better
 *****************************************************************************
 
@@ -169,7 +172,7 @@ refactor: make it better
     def random_timestamp():
         return f'{random.randint(0, 23):02}:{random.randint(0, 59):02}'
 
-  and the terminal shows an :ref:`AssertionError`
+  and get an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -193,7 +196,7 @@ refactor: make it better
         )
         return f'{difference_hours:02}:{difference_minutes:02}'
 
-  and get an :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -218,7 +221,7 @@ refactor: make it better
       - get_minutes(sleep_time)
     )
 
-  the terminal shows all tests are still passing
+  all tests are still passing though there is something wrong with this calculation
 
 *****************************************************************************
 review

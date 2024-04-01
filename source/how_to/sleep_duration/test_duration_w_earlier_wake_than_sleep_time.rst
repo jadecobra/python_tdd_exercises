@@ -1,4 +1,4 @@
-.. include:: ../links.rst
+.. include:: ../../links.rst
 
 .. _test_duration_w_earlier_wake_than_sleep_time:
 

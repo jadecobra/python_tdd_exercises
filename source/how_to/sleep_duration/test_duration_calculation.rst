@@ -1,4 +1,4 @@
-.. include:: ../links.rst
+.. include:: ../../links.rst
 
 .. _test_duration_calculation:
 
@@ -18,6 +18,7 @@ The ``duration`` :ref:`function<functions>` currently returns a subtraction of h
 
 .. _test_duration_calculation_red:
 
+*****************************************************************************
 red: make it fail
 *****************************************************************************
 
@@ -44,6 +45,7 @@ the ``duration`` :ref:`function<functions>` returns ``'01:-29'`` which is not a 
 
 .. _test_duration_calculation_green:
 
+*****************************************************************************
 green: make it pass
 *****************************************************************************
 
@@ -137,6 +139,7 @@ green: make it pass
 
 .. _test_duration_calculation_refactor:
 
+*****************************************************************************
 refactor: make it better
 *****************************************************************************
 
@@ -184,6 +187,7 @@ refactor: make it better
 
 * since all the tests are passing, I remove ``get_hour`` and ``get_minutes`` because they have been replaced by ``parse_timestamp``
 
+*****************************************************************************
 test_floor_aka_integer_division
 *****************************************************************************
 
