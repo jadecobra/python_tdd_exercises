@@ -65,7 +65,7 @@ green: make it pass
 
         return f'{difference_hours:02}:{difference_minutes:02}'
 
-* then add a new ``duration`` :ref:`function<functions>` with the following steps to calculate a real difference between two timestamps
+* then add a new ``duration`` :ref:`function<functions>` with the following steps to calculate a real difference between the two timestamps
 
   - get total minutes for each timestamp by multiplying the hour by 60 and adding the minutes
   - get the difference by subtracting total ``sleep_time`` minutes from total ``wake_time`` minutes
@@ -95,31 +95,30 @@ green: make it pass
 
         return f'{difference_hours:02}:{difference_minutes:02}'
 
-  ``test_duration_calculation`` passes and since ``test_duration_w_hours_and_minutes`` uses the wrong calculation, the terminal shows random successes or :ref:`AssertionErrors<AssertionError>` that look like this
+  ``test_duration_calculation`` passes and since ``test_duration_w_hours_and_minutes`` uses the wrong calculation, the terminal shows random successes or :ref:`AssertionErrors<AssertionError>`
 
   .. code-block:: python
 
     AssertionError: '10:53' != '11:-7'
+    AssertionError: '01:59' != '02:-1'
+    AssertionError: '06:54' != '07:-6'
+    AssertionError: '-16:26' != '-15:-34'
 
 * I add the correct calculation to ``test_duration_w_hours_and_minutes``
 
   .. code-block:: python
 
     def test_duration_w_hours_and_minutes(self):
-        wake_hour = random_hour()
-        wake_minutes = random_minutes()
+        wake_time = random_timestamp()
+        sleep_time = random_timestamp()
         wake_time_minutes = (
-            (wake_hour * 60)
-           + wake_minutes
+            (int(wake_time.split(':')[0]) * 60)
+           + int(wake_time.split(':')[1])
         )
-
-        sleep_hour = random_hour()
-        sleep_minutes = random_minutes()
         sleep_time_minutes = (
-            (sleep_hour * 60)
-           + sleep_minutes
+            (int(sleep_time.split(':')[0]) * 60)
+           + int(sleep_time.split(':')[1])
         )
-
         difference = (
             wake_time_minutes
           - sleep_time_minutes
@@ -129,13 +128,13 @@ green: make it pass
 
         self.assertEqual(
             sleep_duration.duration(
-                wake_time=f'{wake_hour:02}:{wake_minutes:02}',
-                sleep_time=f'{sleep_hour:02}:{sleep_minutes:02}'
+                wake_time=wake_time,
+                sleep_time=sleep_time
             ),
             f'{difference_hours:02}:{difference_minutes:02}'
         )
 
-  and I have passing tests again! Green is a beautiful color.
+  and I have passing tests again! I will sleep easier tonight!!
 
 .. _test_duration_calculation_refactor:
 
@@ -143,7 +142,7 @@ green: make it pass
 refactor: make it better
 *****************************************************************************
 
-* I remove ``test_duration_calculation`` from ``test_sleep_duration.py`` because it is now covered by ``test_duration_w_hours_and_minutes``
+* I remove ``test_duration_calculation`` from ``test_sleep_duration.py`` because it is now covered by ``test_duration_w_hours_and_minutes`` which has the correct calculation
 * I remove ``duration_a`` from ``sleep_duration.py`` since the working solution in ``duration`` is better
 * and then I write a :ref:`function<functions>` to get the total minutes from a timestamp and call it in ``duration``
 
@@ -187,16 +186,16 @@ refactor: make it better
 
 * since all the tests are passing, I remove ``get_hour`` and ``get_minutes`` because they have been replaced by ``parse_timestamp``
 
-*****************************************************************************
+
 test_floor_aka_integer_division
-*****************************************************************************
+#############################################################################
 
 I just added two things so I add tests for them. The ``//`` operator returns a whole number that tells how many times the bottom number can be multiplied to get a whole number that is equal to or as close to the top number as possible
 
 .. _test_floor_aka_integer_division_red:
 
 red: make it fail
-*****************************************************************************
+-----------------------------------------------------------------------------
 
 I add a failing test for it
 
@@ -204,7 +203,6 @@ I add a failing test for it
 
   def test_floor_aka_integer_division(self):
       self.assertEqual(120//60, 0)
-      self.assertEqual(150//60, 0)
 
   def test_duration_w_hours_and_minutes(self):
   ...
@@ -218,15 +216,28 @@ and the terminal shows an :ref:`AssertionError`
 .. _test_floor_aka_integer_division_green:
 
 green: make it pass
-*****************************************************************************
+-----------------------------------------------------------------------------
 
-I change the first expected value in the test to the correct value. The result of dividing ``120`` by ``60`` is ``2`` with a remainder of ``0``
+I change the expectation in the test to the correct value. The result of dividing ``120`` by ``60`` is ``2`` with a remainder of ``0``
 
 .. code-block:: python
 
   self.assertEqual(120//60, 2)
 
-and the terminal shows an :ref:`AssertionError` for the next line
+and it passes
+
+.. _test_floor_aka_integer_division_refactor:
+
+refactor: make it better
+-----------------------------------------------------------------------------
+
+I add another assertion
+
+.. code-block:: python
+
+  self.assertEqual(150//60, 0)
+
+and get an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -240,15 +251,17 @@ then I change the expected value for it to the correct value. The result of divi
 
 and the terminal shows passing tests
 
+.. _test_modulo_operation
+
 test_modulo_operation
-*****************************************************************************
+#############################################################################
 
 The ``%`` operator returns the remainder from dividing one number by another
 
 .. _test_modulo_operation_red:
 
 red: make it fail
-*****************************************************************************
+-----------------------------------------------------------------------------
 
 I add a failing test for it
 
@@ -256,7 +269,6 @@ I add a failing test for it
 
   def test_modulo_operation(self):
       self.assertEqual(120%60, 2)
-      self.assertEqual(150%60, 2)
 
   def test_duration_w_hours_and_minutes(self):
   ...
@@ -270,13 +282,26 @@ and the terminal shows an :ref:`AssertionError`
 .. _test_modulo_operation_green:
 
 green: make it pass
-*****************************************************************************
+-----------------------------------------------------------------------------
 
-I change the first expected value in the test to the correct value. The remainder from dividing ``120`` by ``60`` is ``0``
+I change the expectation in the test to the correct value. The remainder from dividing ``120`` by ``60`` is ``0``
 
 .. code-block:: python
 
   self.assertEqual(120%60, 0)
+
+and the test passes
+
+.. _test_modulo_operation_refactor:
+
+refactor: make it better
+-----------------------------------------------------------------------------
+
+I add another assertion
+
+.. code-block:: python
+
+  self.assertEqual(150%60, 2)
 
 and the terminal shows an :ref:`AssertionError`
 
@@ -284,13 +309,51 @@ and the terminal shows an :ref:`AssertionError`
 
   AssertionError: 30 != 2
 
-then I change the second expected value in the test to the correct value. The remainder from dividing ``150`` by ``60`` is ``30``
+then I change the expected value in the test to the correct value. The remainder from dividing ``150`` by ``60`` is ``30``
 
 .. code-block:: python
 
   self.assertEqual(150%60, 30)
 
 things are green again
+
+*****************************************************************************
+review
+*****************************************************************************
+
+The challenge is to write a program that calculates the difference between a given wake and sleep time. I ran the following tests to get something that comes close to doing it
+
+
+* :ref:`test_string_splitting` where I
+
+  - used the `str.split`_ :ref:`method<functions>` I found by calling the `help system`_ to split a string_ on a separator
+  - and indexed the :doc:`list </data_structures/lists/lists>` from the split to get specific items
+
+* :ref:`test_converting_strings_to_numbers` with the int_ constructor
+
+* `test_floor_aka_integer_division`_
+* `test_modulo_operation`_
+* :ref:`test_duration_w_hours` where I
+
+  - used `random.randint`_ to generate random numbers from the 24 hours in a day
+  - and :doc:`interpolated </how_to/pass_values>` them in the timestamps
+  - then test that the ``duration`` :ref:`function<functions>` subtracts the hour for ``sleep_time`` from the hour for ``wake_time``
+
+* :ref:`test_duration_w_hours_and_minutes` where I
+
+  - used `random.randint`_ to generate random numbers
+
+    * from the 24 hours in a day
+    * and the 60 minutes in an hour
+
+  - then :doc:`interpolated </how_to/pass_values>` them in the timestamps
+  - and `test_duration_calculation` to make sure that the ``duration`` :ref:`function` calculates the difference between ``wake_time`` and ``sleep_time`` by
+
+    * converting the timestamp to minutes
+    * subtracting the total minutes of ``sleep_time`` from ``wake_time``
+    * and converting the difference to a duration in hours and minutes by using `floor (integer) division`_ and the modulo_ operator
+
+Would you like to :ref:`test duration with an earlier wake than sleep time<test_duration_w_earlier_wake_than_sleep_time>`?
 
 ----
 

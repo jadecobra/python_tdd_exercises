@@ -59,7 +59,7 @@ red: make it fail
         difference_hours
     )
 
-* I change the expectation to include minutes in the duration returned
+* I change the expectation to include minutes in the duration
 
   .. code-block:: python
 
@@ -80,7 +80,7 @@ red: make it fail
     AssertionError: 8 != '08:00'
     AssertionError: 16 != '16:00'
 
-  the ``duration`` :ref:`function<functions>` returns number and the tests expects a timestamp string_
+  the ``duration`` :ref:`function<functions>` returns a number and the tests expects a timestamp string_
 
 .. _test_duration_w_hours_and_minutes_green:
 
@@ -163,14 +163,17 @@ refactor: make it better
             f'{difference_hours:02}:{difference_minutes:02}'
         )
 
-  the terminal still shows passing tests because ``random_timestamp`` returns timestamps that always have ``00`` as the minutes
+  the terminal still shows passing tests because ``random_timestamp`` returns timestamps that always have ``00`` as minutes
 
 * I change it to return random numbers from ``0`` up to and including ``59`` for the minutes by using `random.randint`_
 
   .. code-block:: python
 
     def random_timestamp():
-        return f'{random.randint(0, 23):02}:{random.randint(0, 59):02}'
+        return (
+            f'{random.randint(0, 23):02}:'
+            f'{random.randint(0, 59):02}'
+        )
 
   and get an :ref:`AssertionError`
 
@@ -196,7 +199,7 @@ refactor: make it better
         )
         return f'{difference_hours:02}:{difference_minutes:02}'
 
-  the terminal shows :ref:`AssertionError`
+  the terminal shows another :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -230,22 +233,26 @@ review
 The challenge is to write a program that calculates the difference between a given wake and sleep time. I ran the following tests to get something that comes close to doing it
 
 
-* `test_string_splitting`_ where I
+* :ref:`test_string_splitting` where I
 
   - used the `str.split`_ :ref:`method<functions>` I found by calling the `help system`_ to split a string_ on a separator
   - and indexed the :doc:`list </data_structures/lists/lists>` from the split to get specific items
 
-* `test_converting_strings_to_numbers`_ with the int_ constructor
+* :ref:`test_converting_strings_to_numbers` with the int_ constructor
 
-* `test_duration_w_hours`_ where I
+* :ref:`test_duration_w_hours` where I
 
   - used `random.randint`_ to generate random numbers from the 24 hours in a day
   - and :doc:`interpolated </how_to/pass_values>` them in the timestamps
   - then test that the ``duration`` :ref:`function<functions>` subtracts the hour for ``sleep_time`` from the hour for ``wake_time``
 
-* `test_duration_w_hours_and_minutes` where I
+* `test_duration_w_hours_and_minutes`_ where I
 
-  - used `random.randint`_ to generate random numbers from the 24 hours in a day and 60 minutes in an hour
+  - used `random.randint`_ to generate random numbers
+
+    * from the 24 hours in a day
+    * and the 60 minutes in an hour
+
   - then :doc:`interpolated </how_to/pass_values>` them in the timestamps
   - and test that the ``duration`` :ref:`function<functions>` subtracts the hour for ``sleep_time`` from the hour for ``wake_time`` and the minutes for ``sleep_time`` from the minutes for ``wake_time``
 
