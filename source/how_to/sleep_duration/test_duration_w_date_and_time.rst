@@ -748,7 +748,7 @@ The challenge was to write a program that calculates the difference between a gi
     * and the 60 minutes in an hour
 
   - then :doc:`interpolated </how_to/pass_values>` them in the timestamps
-  - :ref:`test_duration_w_hours` and `test_duration_calculation` to make sure that the ``duration`` :ref:`function` calculates the difference between ``wake_time`` and ``sleep_time`` by
+  - :ref:`test_duration_w_hours` and `test_duration_calculation` to make sure that the ``duration`` :ref:`function<functions>` calculates the difference between ``wake_time`` and ``sleep_time`` by
 
     * converting the timestamp to minutes
     * subtracting the total minutes of ``sleep_time`` from ``wake_time``
