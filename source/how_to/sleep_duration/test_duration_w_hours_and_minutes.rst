@@ -176,7 +176,7 @@ refactor: make it better
             f'{random.randint(0,59):02}'
         )
 
-  and get an :ref:`AssertionError`
+  I get an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -185,7 +185,7 @@ refactor: make it better
     AssertionError: '-2:00' != '-2:-26'
     AssertionError: '16:00' != '16:-25'
 
-  the ``duration`` :ref:`function<functions>` always returns ``00`` for the minutes part of the duration. I add a variable for the difference in minutes by copying ``difference_hours``
+  the ``duration`` :ref:`function<functions>` always returns ``00`` for the minutes part of the duration. I add a variable for the difference in minutes by copying ``difference_hours`` and renaming it
 
   .. code-block:: python
 
@@ -213,14 +213,14 @@ refactor: make it better
     AssertionError: '-16:-16' != '-16:-7'
     AssertionError: '02:02' != '02:07'
 
-  the ``duration`` :ref:`function<functions>` returns the same numbers for hours and minutes and the test expects the difference between the minutes of ``wake_time`` and ``sleep_time``. I make a copy of the ``get_hour`` :ref:`function<functions>` and call it ``get_minutes`` with the index for the second item from splitting the timestamp
+  the ``duration`` :ref:`function<functions>` returns the same numbers for hours and minutes and the test expects the difference between the minutes of ``wake_time`` and ``sleep_time``. I make a copy of the ``get_hour`` :ref:`function<functions>`, call it ``get_minutes`` then change the index to get the second item from splitting the timestamp
 
   .. code-block:: python
 
     def get_minutes(timestamp):
         return int(timestamp.split(':')[1])
 
-  then replace the calls in ``difference_minutes``
+  and replace the calls in ``difference_minutes``
 
   .. code-block:: python
 
@@ -229,7 +229,7 @@ refactor: make it better
       - get_minutes(sleep_time)
     )
 
-  all tests are still passing though there is something wrong with this calculation
+  and the terminal shows passing tests, there is something wrong with this calculation
 
 *****************************************************************************
 review
