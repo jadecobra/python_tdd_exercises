@@ -4,7 +4,7 @@ import sleep_duration
 import unittest
 
 def get_random_timestamp(date):
-    return f'{date} {random.randint(0, 23):02}:{random.randint(0, 59):02}'
+    return f'{date} {random.randint(0,23):02}:{random.randint(0,59):02}'
 
 
 class TestSleepDuration(unittest.TestCase):

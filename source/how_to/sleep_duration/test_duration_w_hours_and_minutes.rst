@@ -138,7 +138,7 @@ green: make it pass
 refactor: make it better
 *****************************************************************************
 
-* ``test_duration_w_hours`` and ``test_duration_w_hours_and_minutes`` are now exactly the same test so I remove ``test_duration_w_hours``
+* ``test_duration_w_hours`` and ``test_duration_w_hours_and_minutes`` are now the same test so I remove ``test_duration_w_hours``
 * I want to subtract the minutes of ``sleep_time`` from ``wake_time`` and add a variable for it in the test
 
   .. code-block:: python
@@ -166,14 +166,14 @@ refactor: make it better
 
   the terminal still shows passing tests because ``random_timestamp`` returns timestamps that always have ``00`` as minutes
 
-* I change it to return random numbers from ``0`` up to and including ``59`` for the minutes by using `random.randint`_
+* When I change it to return random numbers from ``0`` up to and including ``59`` for the minutes by using `random.randint`_
 
   .. code-block:: python
 
     def random_timestamp():
         return (
-            f'{random.randint(0, 23):02}:'
-            f'{random.randint(0, 59):02}'
+            f'{random.randint(0,23):02}:'
+            f'{random.randint(0,59):02}'
         )
 
   and get an :ref:`AssertionError`

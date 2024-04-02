@@ -688,7 +688,7 @@ refactor: make it better
   .. code-block:: python
 
     def get_random_timestamp(date):
-        return f'{date} {random.randint(0, 23):02}:{random.randint(0, 59):02}'
+        return f'{date} {random.randint(0,23):02}:{random.randint(0,59):02}'
 
   which allows me to remove ``random_hour`` and ``random_minutes`` since they are no longer called by anyone
 

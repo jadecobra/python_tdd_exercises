@@ -817,8 +817,8 @@ refactor: make it pass
   .. code-block:: python
 
     def test_duration_w_hours(self):
-        wake_time = f'{random.randint(0, 23):02}:00'
-        sleep_time = f'{random.randint(0, 23):02}:00'
+        wake_time = f'{random.randint(0,23):02}:00'
+        sleep_time = f'{random.randint(0,23):02}:00'
     ...
 
   the terminal still shows passing tests
@@ -828,7 +828,7 @@ refactor: make it pass
   .. code-block:: python
 
     def random_timestamp():
-        return f'{random.randint(0, 23):02}:00'
+        return f'{random.randint(0,23):02}:00'
 
   and replace the timestamps with calls to ``random_timestamp``
 
