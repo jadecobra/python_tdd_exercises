@@ -6,7 +6,7 @@
 how to measure sleep duration: test_duration_w_hours_and_minutes
 #############################################################################
 
-This is part 2 of 4 where I show an approach to writing a program that calculates the difference between a given wake and sleep time.
+This is part 2 of an approach to writing a program that calculates the difference between a given wake and sleep time.
 
 .. contents:: table of contents
   :local:
@@ -22,8 +22,7 @@ The ``duration`` :ref:`function<functions>` has only been tested with timestamps
 red: make it fail
 *****************************************************************************
 
-* I copy ``test_duration_w_hours`` in ``test_sleep_duration.py`` and paste it below the original
-* then rename the copy to ``test_duration_w_hours_and_minutes``
+* I rename ``test_duration_w_hours`` to ``test_duration_w_hours_and_minutes``
 
   .. code-block:: python
 
@@ -81,13 +80,7 @@ red: make it fail
     AssertionError: 8 != '08:00'
     AssertionError: 16 != '16:00'
 
-  the ``duration`` :ref:`function<functions>` returns a number and the tests expects the duration as a string_
-
-.. _test_duration_w_hours_and_minutes_green:
-
-*****************************************************************************
-green: make it pass
-*****************************************************************************
+  the ``duration`` :ref:`function<functions>` returns a number and the test expects a string_
 
 * I change it to match the expectation
 
@@ -101,45 +94,8 @@ green: make it pass
 
         return f'{difference_hours:02}:00'
 
-  and the terminal shows an :ref:`AssertionError` for ``test_duration_w_hours``
 
-  .. code-block:: python
 
-    AssertionError: '-12:00' != -12
-    AssertionError: '-5:00' != -5
-    AssertionError: '-2:00' != -2
-    AssertionError: '03:00' != 3
-
-  it still expects the previous format. I change it to match
-
-  .. code-block:: python
-
-    def test_duration_w_hours(self):
-        wake_time = random_timestamp()
-        sleep_time = random_timestamp()
-
-        difference_hours = (
-            int(wake_time.split(':')[0])
-           -int(sleep_time.split(':')[0])
-        )
-
-        self.assertEqual(
-            sleep_duration.duration(
-                wake_time=wake_time,
-                sleep_time=sleep_time
-            ),
-            f'{difference_hours:02}:00'
-        )
-
-  and the test passes
-
-.. _test_duration_w_hours_and_minutes_refactor:
-
-*****************************************************************************
-refactor: make it better
-*****************************************************************************
-
-* ``test_duration_w_hours`` and ``test_duration_w_hours_and_minutes`` are now the same test so I remove ``test_duration_w_hours``
 * I add a variable to subtract the minutes of ``sleep_time`` from ``wake_time``
 
   .. code-block:: python
@@ -173,9 +129,7 @@ refactor: make it better
         )
     )
 
-  the terminal still shows passing tests because ``random_timestamp`` returns timestamps that always have ``00`` as minutes
-
-* When I change it to return random numbers from ``0`` up to and including ``59`` for the minutes by using `random.randint`_
+* ``random_timestamp`` returns timestamps that always have ``00`` as minutes. When I change it to return random numbers from ``0`` up to and including ``59`` for the minutes by using `random.randint`_
 
   .. code-block:: python
 
@@ -194,7 +148,15 @@ refactor: make it better
     AssertionError: '-2:00' != '-2:-26'
     AssertionError: '16:00' != '16:-25'
 
-  the ``duration`` :ref:`function<functions>` always returns ``00`` for the minutes part of the duration. I add a variable for the difference in minutes by copying ``difference_hours``, renaming it and adding it to the return statement
+  the ``duration`` :ref:`function<functions>` always returns ``00`` for the minutes part of the duration
+
+.. _test_duration_w_hours_and_minutes_green:
+
+*****************************************************************************
+green: make it pass
+*****************************************************************************
+
+* I add a variable for the difference in minutes by copying ``difference_hours``, renaming it and adding it to the return statement
 
   .. code-block:: python
 
@@ -239,6 +201,12 @@ refactor: make it better
     )
 
   the terminal shows passing tests! Something is wrong with this calculation...
+
+.. _test_duration_w_hours_and_minutes_refactor:
+
+*****************************************************************************
+refactor: make it better
+*****************************************************************************
 
 .. _test_duration_calculation:
 
@@ -363,57 +331,7 @@ green: make it pass
             f'{difference_hours:02}:{difference_minutes:02}'
         )
 
-  and I have passing tests again! I will sleep easier tonight!!
-
-.. _test_duration_calculation_refactor:
-
-refactor: make it better
------------------------------------------------------------------------------
-
-* I remove ``test_duration_calculation`` from ``test_sleep_duration.py`` because it is now covered by ``test_duration_w_hours_and_minutes`` which has the correct calculation
-* I remove ``duration_a`` from ``sleep_duration.py`` since the working solution in ``duration`` is better
-* and then I write a :ref:`function<functions>` to get the total minutes from a timestamp and call it in ``duration``
-
-  .. code-block:: python
-
-    def get_total_minutes(timestamp):
-        return (
-            (get_hour(timestamp) * 60)
-           + get_minutes(timestamp)
-        )
-
-    def duration(wake_time=None, sleep_time=None):
-        wake_time_minutes = get_total_minutes(wake_time)
-        sleep_time_minutes = get_total_minutes(sleep_time)
-
-        difference = (
-            wake_time_minutes
-          - sleep_time_minutes
-        )
-        difference_hours = difference // 60
-        difference_minutes = difference % 60
-
-        return f'{difference_hours:02}:{difference_minutes:02}'
-
-  the terminal still shows passing tests
-
-* I also write a :ref:`function<functions>` to replace ``get_hour`` and ``get_minutes`` then call it in ``get_total_minutes``
-
-  .. code-block:: python
-
-    def parse_timestamp(timestamp=None, index=0):
-        return int(timestamp.split(':')[index])
-
-    def get_total_minutes(timestamp):
-        return (
-            (parse_timestamp(timestamp, 0) * 60)
-           + parse_timestamp(timestamp, 1)
-        )
-
-  we are still green
-
-* since all the tests are passing, I remove ``get_hour`` and ``get_minutes`` because they have been replaced by ``parse_timestamp``
-
+  and I have passing tests again!
 
 test_floor_aka_integer_division
 #############################################################################
@@ -479,7 +397,7 @@ then I change the expected value for it to the correct value. The result of divi
 
 and the terminal shows passing tests
 
-.. _test_modulo_operation
+.. _test_modulo_operation:
 
 test_modulo_operation
 #############################################################################
@@ -546,6 +464,53 @@ then I change the expected value in the test to the correct value. The remainder
 things are green again
 
 ----
+
+
+* I remove ``test_duration_calculation`` from ``test_sleep_duration.py`` because it is now covered by ``test_duration_w_hours_and_minutes`` which has the correct calculation
+* I remove ``duration_a`` from ``sleep_duration.py`` since the working solution in ``duration`` is better
+* and then I write a :ref:`function<functions>` to get the total minutes from a timestamp and call it in ``duration``
+
+  .. code-block:: python
+
+    def get_total_minutes(timestamp):
+        return (
+            (get_hour(timestamp) * 60)
+           + get_minutes(timestamp)
+        )
+
+    def duration(wake_time=None, sleep_time=None):
+        wake_time_minutes = get_total_minutes(wake_time)
+        sleep_time_minutes = get_total_minutes(sleep_time)
+
+        difference = (
+            wake_time_minutes
+          - sleep_time_minutes
+        )
+        difference_hours = difference // 60
+        difference_minutes = difference % 60
+
+        return f'{difference_hours:02}:{difference_minutes:02}'
+
+  the terminal still shows passing tests
+
+* I also write a :ref:`function<functions>` to replace ``get_hour`` and ``get_minutes`` then call it in ``get_total_minutes``
+
+  .. code-block:: python
+
+    def parse_timestamp(timestamp=None, index=0):
+        return int(timestamp.split(':')[index])
+
+    def get_total_minutes(timestamp):
+        return (
+            (parse_timestamp(timestamp, 0) * 60)
+           + parse_timestamp(timestamp, 1)
+        )
+
+  we are still green
+
+* I remove ``get_hour`` and ``get_minutes`` because they have been replaced by ``parse_timestamp``
+* All the tests are still passing! I will sleep easier tonight!!
+
 
 *****************************************************************************
 review
