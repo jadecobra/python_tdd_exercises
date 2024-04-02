@@ -213,7 +213,7 @@ refactor: make it better
 test_duration_calculation
 #############################################################################
 
-The ``duration`` :ref:`function<functions>` currently returns a subtraction of hours and a subtraction of minutes which is not correct for calculating the difference between two timestamps
+The ``duration`` :ref:`function<functions>` returns a subtraction of hours and a subtraction of minutes which is not correct for calculating the difference between two timestamps
 
 .. _test_duration_calculation_red:
 
@@ -246,97 +246,55 @@ the ``duration`` :ref:`function<functions>` returns ``'01:-29'`` which is not a 
 green: make it pass
 -----------------------------------------------------------------------------
 
-* I rename ``duration`` to keep a copy of my current working solution
+* I make a copy of ``duration`` to keep a copy of my current working solution and rename the original
 
   .. code-block:: python
 
     def duration_a(wake_time=None, sleep_time=None):
-        difference_hours = (
-            get_hour(wake_time)
-          - get_hour(sleep_time)
-        )
-        difference_minutes = (
-            get_minutes(wake_time)
-          - get_minutes(sleep_time)
-        )
+    ...
 
-        return f'{difference_hours:02}:{difference_minutes:02}'
-
-* then add a new ``duration`` :ref:`function<functions>` with the following steps to calculate a real difference between the two timestamps
-
-  - get total minutes for each timestamp by multiplying the hour by 60 and adding the minutes
-  - get the difference by subtracting total ``sleep_time`` minutes from total ``wake_time`` minutes
-  - return the difference between total ``wake_time`` and total ``sleep_time`` minutes as hours and minutes by
-
-    * using `floor (integer) division`_ to get the whole number value of dividing the difference by 60 for the hours
-    * using the modulo_ operator to get the remainder from dividing the difference by 60 for the minutes
+* then change the return statement of the ``duration`` :ref:`function<functions>` to multiply ``difference_hours`` by ``60`` so I can convert the total difference to minutes
 
   .. code-block:: python
 
-    def duration(wake_time=None, sleep_time=None):
-        wake_time_minutes = (
-            (get_hour(wake_time) * 60)
-           + get_minutes(wake_time)
-        )
-        sleep_time_minutes = (
-            (get_hour(sleep_time) * 60)
-           + get_minutes(sleep_time)
-        )
+    return (
+        difference_hours*60
+      + difference_minutes
+    )
 
-        difference = (
-            wake_time_minutes
-          - sleep_time_minutes
-        )
-        difference_hours = difference // 60
-        difference_minutes = difference % 60
-
-        return f'{difference_hours:02}:{difference_minutes:02}'
-
-  ``test_duration_calculation`` passes and since ``test_duration_w_hours_and_minutes`` uses the wrong calculation, the terminal shows random successes or :ref:`AssertionErrors<AssertionError>`
+  and get this :ref:`AssertionError` for ``test_duration_calculation``
 
   .. code-block:: python
 
-    AssertionError: '10:53' != '11:-7'
-    AssertionError: '01:59' != '02:-1'
-    AssertionError: '06:54' != '07:-6'
-    AssertionError: '-16:26' != '-15:-34'
+    AssertionError: 31 != '00:31
 
-* I add the correct calculation to ``test_duration_w_hours_and_minutes``
+  and an :ref:`AssertionError` for ``test_duration_w_hours_and_minutes``
 
   .. code-block:: python
 
+    AssertionError: -458 != '-7:-38'
+    AssertionError: -936 != '-15:-36'
+    AssertionError: -31 != '-1:29'
+    AssertionError: 213 != '03:33'
+
+  ``duration`` returns the difference as minutes but the tests expects them as hours and minutes. I need a way to convert minutes to hours and minutes
+
+* I add the `unittest.skip decorator`_ to disable the failing tests while I find a solution
+
+  .. code-block:: python
+
+    @unittest.skip
     def test_duration_w_hours_and_minutes(self):
-        wake_time = random_timestamp()
-        sleep_time = random_timestamp()
-        wake_time_minutes = (
-            (int(wake_time.split(':')[0]) * 60)
-           + int(wake_time.split(':')[1])
-        )
-        sleep_time_minutes = (
-            (int(sleep_time.split(':')[0]) * 60)
-           + int(sleep_time.split(':')[1])
-        )
-        difference = (
-            wake_time_minutes
-          - sleep_time_minutes
-        )
-        difference_hours = difference // 60
-        difference_minutes = difference % 60
+    ...
 
-        self.assertEqual(
-            sleep_duration.duration(
-                wake_time=wake_time,
-                sleep_time=sleep_time
-            ),
-            f'{difference_hours:02}:{difference_minutes:02}'
-        )
-
-  and I have passing tests again!
+    @unittest.skip
+    def test_duration_calculation(self):
+    ...
 
 test_floor_aka_integer_division
 #############################################################################
 
-I just added two things so I add tests for them. The ``//`` operator returns a whole number that tells how many times the bottom number can be multiplied to get a whole number that is equal to or as close to the top number as possible
+The ``//`` operator returns a whole number that tells how many times the bottom number can be multiplied to get a whole number that is equal to or as close to the top number as possible. It should give me the hours when I divide by 60
 
 .. _test_floor_aka_integer_division_red:
 
@@ -350,6 +308,7 @@ I add a failing test for it
   def test_floor_aka_integer_division(self):
       self.assertEqual(120//60, 0)
 
+  @unittest.skip
   def test_duration_w_hours_and_minutes(self):
   ...
 
@@ -377,32 +336,80 @@ and it passes
 refactor: make it better
 -----------------------------------------------------------------------------
 
-I add another assertion
+* I add another assertion
 
-.. code-block:: python
+  .. code-block:: python
 
-  self.assertEqual(150//60, 0)
+    self.assertEqual(150//60, 0)
 
-and get an :ref:`AssertionError`
+  and get an :ref:`AssertionError`
 
-.. code-block:: python
+  .. code-block:: python
 
-  AssertionError: 2 != 0
+    AssertionError: 2 != 0
 
-then I change the expected value for it to the correct value. The result of dividing ``150`` by ``60`` is also ``2`` but with a remainder of ``30``
+  then I change the expected value for it to the correct value. The result of dividing ``150`` by ``60`` is also ``2`` but with a remainder of ``30``
 
-.. code-block:: python
+  .. code-block:: python
 
-  self.assertEqual(150//60, 2)
+    self.assertEqual(150//60, 2)
 
-and the terminal shows passing tests
+  and the terminal shows passing tests
+
+* I comment out the `unittest.skip decorator`_ for ``test_duration_calculation`` with ``ctrl`` (windows/linux) or ``command`` (mac) and ``/`` on the keyboard
+
+  .. code-block:: python
+
+    # @unittest.skip
+    def test_duration_calculation(self):
+
+* then add a variable for the total difference as minutes in ``duration``
+
+  .. code-block:: python
+
+    ...
+    difference = (
+        difference_hours*60
+      + difference_minutes
+    )
+
+    return difference
+
+  I also add a variable for the duration as hours using `floor (integer) division`_
+
+  .. code-block:: python
+
+    duration_hours = difference // 60
+
+  and change the return statement to the expected format
+
+  .. code-block:: python
+
+    return f'{duration_hours:02}:{difference_minutes:02}'
+
+  then get an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: '00:-29' != '00:31'
+
+  the hours part of the duration is correct but the minutes are still wrong. I need a way to get the remainder after dividing by ``60``
+
+* I remove the comment on the `unittest.skip decorator`_ for ``test_duration_calculation`` with ``ctrl`` (windows/linux) or ``command`` (mac) and ``/`` on the keyboard
+
+  .. code-block:: python
+
+    @unittest.skip
+    def test_duration_calculation(self):
+
+  and the terminal shows green again
 
 .. _test_modulo_operation:
 
 test_modulo_operation
 #############################################################################
 
-The ``%`` operator returns the remainder from dividing one number by another
+The ``%`` operator returns the remainder from dividing one number by another, it should help me get the remainder
 
 .. _test_modulo_operation_red:
 
@@ -416,6 +423,7 @@ I add a failing test for it
   def test_modulo_operation(self):
       self.assertEqual(120%60, 2)
 
+  @unittest.skip
   def test_duration_w_hours_and_minutes(self):
   ...
 
@@ -443,73 +451,114 @@ and the test passes
 refactor: make it better
 -----------------------------------------------------------------------------
 
-I add another assertion
-
-.. code-block:: python
-
-  self.assertEqual(150%60, 2)
-
-and the terminal shows an :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: 30 != 2
-
-then I change the expected value in the test to the correct value. The remainder from dividing ``150`` by ``60`` is ``30``
-
-.. code-block:: python
-
-  self.assertEqual(150%60, 30)
-
-things are green again
-
-----
-
-
-* I remove ``test_duration_calculation`` from ``test_sleep_duration.py`` because it is now covered by ``test_duration_w_hours_and_minutes`` which has the correct calculation
-* I remove ``duration_a`` from ``sleep_duration.py`` since the working solution in ``duration`` is better
-* and then I write a :ref:`function<functions>` to get the total minutes from a timestamp and call it in ``duration``
+* I add another assertion
 
   .. code-block:: python
 
-    def get_total_minutes(timestamp):
-        return (
-            (get_hour(timestamp) * 60)
-           + get_minutes(timestamp)
+    self.assertEqual(150%60, 0)
+
+  and the terminal shows an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 30 != 0
+
+  then I change the expected value in the test to the correct value. The remainder from dividing ``150`` by ``60`` is ``30``
+
+  .. code-block:: python
+
+    self.assertEqual(150%60, 30)
+
+  things are green again
+
+* I comment out the `unittest.skip decorator`_ for ``test_duration_calculation`` with ``ctrl`` (windows/linux) or ``command`` (mac) and ``/`` on the keyboard
+* then add a new variable to the ``duration`` :ref:`function<function>` and reference it in the return statement
+
+  .. code-block:: python
+
+    duration_hours = difference // 60
+    duration_minutes = difference % 60
+
+    return (
+        f'{duration_hours:02}:'
+        f'{duration_minutes:02}'
+    )
+
+  the test passes
+
+* I remove the `unittest.skip decorator`_ from ``test_duration_calculation``
+* and comment it out for ``test_duration_w_hours_and_minutes`` with ``ctrl+/`` (windows/linux) or ``command+/`` (mac) on the keyboard
+
+  .. code-block:: python
+
+    # @unittest.skip
+    def test_duration_w_hours_and_minutes(self):
+    ...
+
+  which gives me random successes and random :ref:`AssertionErrors<AssertionError>`
+
+  .. code-block:: python
+
+    AssertionError: '-11:46' != '-10:-14'
+    AssertionError: '-6:04' != '-5:-56'
+    AssertionError: '10:50' != '11:-10'
+    AssertionError: '16:50' != '17:-10'
+
+  the test is still using the wrong calculation. I change it to match the ``duration`` :ref:`function<functions>`
+
+  .. code-block:: python
+
+    difference = (
+        difference_hours*60
+      + difference_minutes
+    )
+    duration_hours = difference // 60
+    duration_minutes = difference % 60
+
+  then add the new variables in the expectation
+
+  .. code-block:: python
+
+    self.assertEqual(
+        sleep_duration.duration(
+            wake_time=wake_time,
+            sleep_time=sleep_time
+        ),
+        (
+            f'{duration_hours:02}:'
+            f'{difference_minutes:02}'
         )
+    )
 
-    def duration(wake_time=None, sleep_time=None):
-        wake_time_minutes = get_total_minutes(wake_time)
-        sleep_time_minutes = get_total_minutes(sleep_time)
+  and the test passes with no more random failures
 
-        difference = (
-            wake_time_minutes
-          - sleep_time_minutes
-        )
-        difference_hours = difference // 60
-        difference_minutes = difference % 60
-
-        return f'{difference_hours:02}:{difference_minutes:02}'
-
-  the terminal still shows passing tests
-
-* I also write a :ref:`function<functions>` to replace ``get_hour`` and ``get_minutes`` then call it in ``get_total_minutes``
+* I remove ``test_duration_calculation`` from ``test_sleep_duration.py`` because it is now covered by ``test_duration_w_hours_and_minutes`` which has the correct calculation
+* then remove ``duration_a`` from ``sleep_duration.py`` since the working solution in ``duration`` is better
+* and write a :ref:`function<functions>` to replace ``get_hour`` and ``get_minutes``
 
   .. code-block:: python
 
     def parse_timestamp(timestamp=None, index=0):
         return int(timestamp.split(':')[index])
 
-    def get_total_minutes(timestamp):
-        return (
-            (parse_timestamp(timestamp, 0) * 60)
-           + parse_timestamp(timestamp, 1)
+*  I call it in ``duration``
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        difference_hours = (
+            parse_timestamp(wake_time, 0)
+          - parse_timestamp(sleep_time, 0)
         )
+        difference_minutes = (
+            parse_timestamp(wake_time, 1)
+          - parse_timestamp(sleep_time, 1)
+        )
+    ...
 
-  we are still green
+  the terminal still shows green
 
-* I remove ``get_hour`` and ``get_minutes`` because they have been replaced by ``parse_timestamp``
-* All the tests are still passing! I will sleep easier tonight!!
+* I remove ``get_hour`` and ``get_minutes`` and all the tests are still passing! I will sleep easier tonight!!
 
 
 *****************************************************************************
@@ -527,8 +576,8 @@ The challenge is to write a program that calculates the difference between a giv
 * :ref:`test_converting_strings_to_numbers` with the int_ constructor
 * `test_floor_aka_integer_division`_
 * `test_modulo_operation`_
-* :ref:`test_duration_w_hours`
-* :ref:`test_duration_w_hours_and_minutes` where I
+* :ref:`test_duration_w_hours<test_duration_w_hours>`
+* `test_duration_w_hours_and_minutes`_ where I
 
   - used `random.randint`_ to generate random numbers
 
