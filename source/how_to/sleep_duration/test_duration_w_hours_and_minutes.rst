@@ -46,6 +46,7 @@ red: make it fail
 
   .. code-block:: python
 
+    ...
     difference_hours = (
         int(wake_time.split(':')[0])
         -int(sleep_time.split(':')[0])
@@ -80,7 +81,7 @@ red: make it fail
     AssertionError: 8 != '08:00'
     AssertionError: 16 != '16:00'
 
-  the ``duration`` :ref:`function<functions>` returns a number and the tests expects a timestamp string_
+  the ``duration`` :ref:`function<functions>` returns a number and the tests expects the duration as a string_
 
 .. _test_duration_w_hours_and_minutes_green:
 
@@ -139,7 +140,7 @@ refactor: make it better
 *****************************************************************************
 
 * ``test_duration_w_hours`` and ``test_duration_w_hours_and_minutes`` are now the same test so I remove ``test_duration_w_hours``
-* I want to subtract the minutes of ``sleep_time`` from ``wake_time`` and add a variable for it in the test
+* I add a variable to subtract the minutes of ``sleep_time`` from ``wake_time``
 
   .. code-block:: python
 
@@ -155,14 +156,22 @@ refactor: make it better
             int(wake_time.split(':')[1])
            -int(sleep_time.split(':')[1])
         )
+    ...
 
-        self.assertEqual(
-            sleep_duration.duration(
-                wake_time=wake_time,
-                sleep_time=sleep_time
-            ),
-            f'{difference_hours:02}:{difference_minutes:02}'
+* then update the expectation to use the variable for the minutes
+
+  .. code-block:: python
+
+    self.assertEqual(
+        sleep_duration.duration(
+            wake_time=wake_time,
+            sleep_time=sleep_time
+        ),
+        (
+            f'{difference_hours:02}:'
+            f'{difference_minutes:02}'
         )
+    )
 
   the terminal still shows passing tests because ``random_timestamp`` returns timestamps that always have ``00`` as minutes
 
@@ -185,7 +194,7 @@ refactor: make it better
     AssertionError: '-2:00' != '-2:-26'
     AssertionError: '16:00' != '16:-25'
 
-  the ``duration`` :ref:`function<functions>` always returns ``00`` for the minutes part of the duration. I add a variable for the difference in minutes by copying ``difference_hours`` and renaming it
+  the ``duration`` :ref:`function<functions>` always returns ``00`` for the minutes part of the duration. I add a variable for the difference in minutes by copying ``difference_hours``, renaming it and adding it to the return statement
 
   .. code-block:: python
 
@@ -229,7 +238,7 @@ refactor: make it better
       - get_minutes(sleep_time)
     )
 
-  and the terminal shows passing tests, there is something wrong with this calculation
+  the terminal shows passing tests! Something is wrong with this calculation...
 
 *****************************************************************************
 review
