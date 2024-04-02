@@ -97,6 +97,7 @@ green: make it pass
             get_hour(wake_time)
           - get_hour(sleep_time)
         )
+
         return f'{difference_hours:02}:00'
 
   and the terminal shows an :ref:`AssertionError` for ``test_duration_w_hours``
@@ -197,7 +198,11 @@ refactor: make it better
             get_hour(wake_time)
           - get_hour(sleep_time)
         )
-        return f'{difference_hours:02}:{difference_minutes:02}'
+
+        return (
+            f'{difference_hours:02}:'
+            f'{difference_minutes:02}'
+        )
 
   the terminal shows another :ref:`AssertionError`
 
@@ -233,13 +238,8 @@ review
 The challenge is to write a program that calculates the difference between a given wake and sleep time. I ran the following tests to get something that comes close to doing it
 
 
-* :ref:`test_string_splitting` where I
-
-  - used the `str.split`_ :ref:`method<functions>` I found by calling the `help system`_ to split a string_ on a separator
-  - and indexed the :doc:`list </data_structures/lists/lists>` from the split to get specific items
-
-* :ref:`test_converting_strings_to_numbers` with the int_ constructor
-
+* :ref:`test_string_splitting`
+* :ref:`test_converting_strings_to_numbers`
 * :ref:`test_duration_w_hours`
 * `test_duration_w_hours_and_minutes`_ where I
 
@@ -249,7 +249,10 @@ The challenge is to write a program that calculates the difference between a giv
     * and the 60 minutes in an hour
 
   - then :doc:`interpolated </how_to/pass_values>` them in the timestamps
-  - and test that the ``duration`` :ref:`function<functions>` subtracts the hour for ``sleep_time`` from the hour for ``wake_time`` and the minutes for ``sleep_time`` from the minutes for ``wake_time``
+  - and test that the ``duration`` :ref:`function<functions>` subtracts
+
+    * the hour for ``sleep_time`` from the hour for ``wake_time``
+    * and the minutes for ``sleep_time`` from the minutes for ``wake_time``
 
 Would you like to :ref:`test the duration calculation<test_duration_calculation>`?
 
