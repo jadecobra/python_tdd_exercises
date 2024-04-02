@@ -12,7 +12,7 @@ how to measure sleep duration: test_duration_w_hours
 
 ----
 
-This is part 1 of 5 where I show an approach to writing a program that calculates the difference between a given wake and sleep time.
+This is part 1 of 4 where I show an approach to writing a program that calculates the difference between a given wake and sleep time.
 
 .. contents:: table of contents
   :local:
