@@ -14,7 +14,7 @@ This is part 2 of an approach to writing a program that calculates the differenc
 
 ----
 
-The ``duration`` :ref:`function<functions>` has only been tested with timestamps that have random hours and ``00`` as minutes. For it to meet the requirements, it should accept timestamps with random hours and random minutes.
+The ``duration`` :ref:`function<functions>` has only been tested with timestamps that have random hours and ``00`` as minutes. For it to meet the requirements, it should accept timestamps where both hours and minutes are random.
 
 .. _test_duration_w_hours_and_minutes_red:
 
@@ -93,8 +93,6 @@ red: make it fail
         )
 
         return f'{difference_hours:02}:00'
-
-
 
 * I add a variable to subtract the minutes of ``sleep_time`` from ``wake_time``
 
@@ -395,7 +393,7 @@ refactor: make it better
 
   the hours part of the duration is correct but the minutes are still wrong. I need a way to get the remainder after dividing by ``60``
 
-* I remove the comment on the `unittest.skip decorator`_ for ``test_duration_calculation`` with ``ctrl`` (windows/linux) or ``command`` (mac) and ``/`` on the keyboard
+* I remove the comment from the `unittest.skip decorator`_ for ``test_duration_calculation`` with ``ctrl`` (windows/linux) or ``command`` (mac) and ``/`` on the keyboard
 
   .. code-block:: python
 
@@ -532,6 +530,7 @@ refactor: make it better
 
   and the test passes with no more random failures
 
+* I remove the `unittest.skip decorator`_ from ``test_duration_w_hours_and_minutes``
 * I remove ``test_duration_calculation`` from ``test_sleep_duration.py`` because it is now covered by ``test_duration_w_hours_and_minutes`` which has the correct calculation
 * then remove ``duration_a`` from ``sleep_duration.py`` since the working solution in ``duration`` is better
 * and write a :ref:`function<functions>` to replace ``get_hour`` and ``get_minutes``
@@ -541,7 +540,7 @@ refactor: make it better
     def parse_timestamp(timestamp=None, index=0):
         return int(timestamp.split(':')[index])
 
-*  I call it in ``duration``
+* I call it in ``duration``
 
   .. code-block:: python
 
@@ -558,7 +557,7 @@ refactor: make it better
 
   the terminal still shows green
 
-* I remove ``get_hour`` and ``get_minutes`` and all the tests are still passing! I will sleep easier tonight!!
+* then remove ``get_hour`` and ``get_minutes`` and all the tests are still passing! I will sleep easier tonight!!
 
 
 *****************************************************************************
@@ -568,11 +567,7 @@ review
 The challenge is to write a program that calculates the difference between a given wake and sleep time. I ran the following tests to get something that comes close to doing it
 
 
-* :ref:`test_string_splitting` where I
-
-  - used the `str.split`_ :ref:`method<functions>` I found by calling the `help system`_ to split a string_ on a separator
-  - and indexed the :doc:`list </data_structures/lists/lists>` from the split to get specific items
-
+* :ref:`test_string_splitting`
 * :ref:`test_converting_strings_to_numbers` with the int_ constructor
 * `test_floor_aka_integer_division`_
 * `test_modulo_operation`_
@@ -585,11 +580,11 @@ The challenge is to write a program that calculates the difference between a giv
     * and the 60 minutes in an hour
 
   - then :doc:`interpolated </how_to/pass_values>` them in the timestamps
-  - and `test_duration_calculation`_ to make sure that the ``duration`` :ref:`function<functions>` calculates the difference between ``wake_time`` and ``sleep_time`` by
+  - and `test_duration_calculation`_ to make sure that the ``duration`` :ref:`function<functions>` calculates the correct difference between ``wake_time`` and ``sleep_time``
+  - and converts the difference to a duration in hours and minutes by using
 
-    * converting the timestamp to minutes
-    * subtracting the total minutes of ``sleep_time`` from ``wake_time``
-    * and converting the difference to a duration in hours and minutes by using `floor (integer) division`_ and the modulo_ operator
+    * `floor (integer) division`_ for the hours
+    * and the modulo_ operator for the minutes
 
 Would you like to :ref:`test duration with an earlier wake than sleep time<test_duration_w_earlier_wake_than_sleep_time>`?
 
