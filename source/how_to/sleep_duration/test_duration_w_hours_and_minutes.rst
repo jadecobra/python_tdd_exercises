@@ -251,13 +251,18 @@ green: make it pass
     def duration_a(wake_time=None, sleep_time=None):
     ...
 
-* then change the return statement of the ``duration`` :ref:`function<functions>` to multiply ``difference_hours`` by ``60`` so I can convert the total difference to minutes
+* then add a return statement of the ``duration`` :ref:`function<functions>` to multiply ``difference_hours`` by ``60`` so I can convert the total difference to minutes
 
   .. code-block:: python
 
     return (
         difference_hours*60
       + difference_minutes
+    )
+
+    return (
+        f'{difference_hours:02}:'
+        f'{difference_minutes:02}'
     )
 
   and get this :ref:`AssertionError` for ``test_duration_calculation``
@@ -354,36 +359,45 @@ refactor: make it better
 
   and the terminal shows passing tests
 
-* I comment out the `unittest.skip decorator`_ for ``test_duration_calculation`` with ``ctrl`` (windows/linux) or ``command`` (mac) and ``/`` on the keyboard
+* I comment out the `unittest.skip decorator`_ for ``test_duration_calculation`` with ``ctrl+/`` (windows/linux) or ``command+/`` (mac) on the keyboard
 
   .. code-block:: python
 
     # @unittest.skip
     def test_duration_calculation(self):
 
-* then add a variable for the total difference as minutes in ``duration``
+* then change the first return statement to a variable for the total difference as minutes in ``duration``
 
   .. code-block:: python
 
-    ...
     difference = (
         difference_hours*60
       + difference_minutes
     )
 
-    return difference
+    return (
+        f'{difference_hours:02}:'
+        f'{difference_minutes:02}'
+    )
 
   I also add a variable for the duration as hours using `floor (integer) division`_
 
   .. code-block:: python
 
+    difference = (
+        difference_hours*60
+      + difference_minutes
+    )
     duration_hours = difference // 60
 
-  and change the return statement to the expected format
+  and replace ``difference_hours`` in the return statement
 
   .. code-block:: python
 
-    return f'{duration_hours:02}:{difference_minutes:02}'
+    return (
+        f'{duration_hours:02}:'
+        f'{difference_minutes:02}'
+    )
 
   then get an :ref:`AssertionError`
 
@@ -393,7 +407,7 @@ refactor: make it better
 
   the hours part of the duration is correct but the minutes are still wrong. I need a way to get the remainder after dividing by ``60``
 
-* I remove the comment from the `unittest.skip decorator`_ for ``test_duration_calculation`` with ``ctrl`` (windows/linux) or ``command`` (mac) and ``/`` on the keyboard
+* I remove the comment from the `unittest.skip decorator`_ for ``test_duration_calculation`` with ``ctrl+/`` (windows/linux) or ``command+/`` (mac) on the keyboard
 
   .. code-block:: python
 
@@ -469,7 +483,7 @@ refactor: make it better
 
   things are green again
 
-* I comment out the `unittest.skip decorator`_ for ``test_duration_calculation`` with ``ctrl`` (windows/linux) or ``command`` (mac) and ``/`` on the keyboard
+* I comment out the `unittest.skip decorator`_ for ``test_duration_calculation`` with ``ctrl+/`` (windows/linux) or ``command+/`` (mac) on the keyboard
 * then add a new variable to the ``duration`` :ref:`function<functions>` and reference it in the return statement
 
   .. code-block:: python
