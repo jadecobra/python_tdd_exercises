@@ -472,7 +472,7 @@ refactor: make it better
   things are green again
 
 * I comment out the `unittest.skip decorator`_ for ``test_duration_calculation`` with ``ctrl`` (windows/linux) or ``command`` (mac) and ``/`` on the keyboard
-* then add a new variable to the ``duration`` :ref:`function<function>` and reference it in the return statement
+* then add a new variable to the ``duration`` :ref:`function<functions>` and reference it in the return statement
 
   .. code-block:: python
 
