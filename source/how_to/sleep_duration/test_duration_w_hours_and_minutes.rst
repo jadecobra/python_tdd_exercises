@@ -14,7 +14,7 @@ This is part 2 of an approach to writing a program that calculates the differenc
 
 ----
 
-The ``duration`` :ref:`function<functions>` has only been tested with timestamps that have random hours and ``00`` as minutes. For it to meet the requirements, it should accept timestamps where both hours and minutes are random.
+The ``duration`` :ref:`function<functions>` has only been tested with timestamps that have random hours and ``00`` as minutes. I want to test it with timestamps where both hours and minutes are random.
 
 .. _test_duration_w_hours_and_minutes_red:
 
@@ -41,7 +41,7 @@ red: make it fail
             )
         )
 
-* and add a variable for the calculation of the difference in hours
+* then add a variable for the calculation of the difference in hours
 
   .. code-block:: python
 
@@ -59,7 +59,7 @@ red: make it fail
         difference_hours
     )
 
-* I change the expectation to include minutes in the duration
+* and change the expectation to include minutes in the duration
 
   .. code-block:: python
 
@@ -94,7 +94,7 @@ red: make it fail
 
         return f'{difference_hours:02}:00'
 
-* I add a variable to subtract the minutes of ``sleep_time`` from ``wake_time``
+* then make a copy of ``difference_minutes`` and change the index to ``1`` to get the minutes from the timestamps
 
   .. code-block:: python
 
@@ -112,7 +112,7 @@ red: make it fail
         )
     ...
 
-* then update the expectation to use the variable for the minutes
+* I change the expectation to use the variable for the minutes
 
   .. code-block:: python
 
@@ -127,7 +127,7 @@ red: make it fail
         )
     )
 
-* ``random_timestamp`` returns timestamps that always have ``00`` as minutes. When I change it to return random numbers from ``0`` up to and including ``59`` for the minutes by using `random.randint`_
+* and change ``random_timestamp`` to return random numbers from ``0`` up to and including ``59`` for the minutes by using `random.randint`_
 
   .. code-block:: python
 
@@ -146,7 +146,7 @@ red: make it fail
     AssertionError: '-2:00' != '-2:-26'
     AssertionError: '16:00' != '16:-25'
 
-  the ``duration`` :ref:`function<functions>` always returns ``00`` for the minutes part of the duration
+  the ``duration`` :ref:`function<functions>` returns ``00`` as the minutes part of the duration, and the test expects the difference between the minutes of ``wake_time`` and ``sleep_time``
 
 .. _test_duration_w_hours_and_minutes_green:
 
@@ -154,7 +154,7 @@ red: make it fail
 green: make it pass
 *****************************************************************************
 
-* I add a variable for the difference in minutes by copying ``difference_hours``, renaming it and adding it to the return statement
+* I make a copy of ``difference_hours``, rename it and add it to the return statement
 
   .. code-block:: python
 
@@ -182,14 +182,14 @@ green: make it pass
     AssertionError: '-16:-16' != '-16:-7'
     AssertionError: '02:02' != '02:07'
 
-  the ``duration`` :ref:`function<functions>` returns the same numbers for hours and minutes and the test expects the difference between the minutes of ``wake_time`` and ``sleep_time``. I make a copy of the ``get_hour`` :ref:`function<functions>`, call it ``get_minutes`` then change the index to get the second item from splitting the timestamp
+  ``duration`` returns the same numbers for hours and minutes because it uses the same function to get the difference. I make a copy of the ``get_hour`` :ref:`function<functions>`, call it ``get_minutes`` and change the index to get the second item from splitting the timestamp
 
   .. code-block:: python
 
     def get_minutes(timestamp):
         return int(timestamp.split(':')[1])
 
-  and replace the calls in ``difference_minutes``
+  then replace the calls in ``difference_minutes``
 
   .. code-block:: python
 
@@ -231,20 +231,20 @@ If ``duration`` is given a ``wake_time`` of ``'03:30'`` and a ``sleep_time`` of 
           '00:31'
       )
 
-but the terminal shows this :ref:`AssertionError` when I add ``test_duration_calculation``
+the terminal shows this :ref:`AssertionError` when I add ``test_duration_calculation``
 
 .. code-block:: python
 
   AssertionError: '01:-29' != '00:31'
 
-the ``duration`` :ref:`function<functions>` returns ``'01:-29'`` which is not a real duration. I need to change the calculation
+``duration`` returns ``'01:-29'`` which is not a real duration, though it is kind of right, ``1`` hour plus ``-29`` minutes is ``31`` minutes. I need to change the calculation
 
 .. _test_duration_calculation_green:
 
 green: make it pass
 -----------------------------------------------------------------------------
 
-* I make a copy of ``duration`` to keep a copy of my current working solution and rename the original
+* I make a copy of ``duration`` to keep a copy of my current working solution, rename the original
 
   .. code-block:: python
 
@@ -531,16 +531,16 @@ refactor: make it better
   and the test passes with no more random failures
 
 * I remove the `unittest.skip decorator`_ from ``test_duration_w_hours_and_minutes``
-* I remove ``test_duration_calculation`` from ``test_sleep_duration.py`` because it is now covered by ``test_duration_w_hours_and_minutes`` which has the correct calculation
-* then remove ``duration_a`` from ``sleep_duration.py`` since the working solution in ``duration`` is better
-* and write a :ref:`function<functions>` to replace ``get_hour`` and ``get_minutes``
+* then remove ``test_duration_calculation`` from ``test_sleep_duration.py`` because it is now covered by ``test_duration_w_hours_and_minutes`` which has the correct calculation
+* and remove ``duration_a`` from ``sleep_duration.py`` since the working solution in ``duration`` is better
+* I write a :ref:`function<functions>` to replace ``get_hour`` and ``get_minutes``
 
   .. code-block:: python
 
     def parse_timestamp(timestamp=None, index=0):
         return int(timestamp.split(':')[index])
 
-* I call it in ``duration``
+* then call it in ``duration``
 
   .. code-block:: python
 
@@ -555,9 +555,9 @@ refactor: make it better
         )
     ...
 
-  the terminal still shows green
+  and the terminal still shows green
 
-* then remove ``get_hour`` and ``get_minutes`` and all the tests are still passing! I will sleep easier tonight!!
+* I remove ``get_hour`` and ``get_minutes`` and all the tests are still passing! I will sleep easier tonight!!
 
 
 *****************************************************************************
@@ -568,7 +568,7 @@ The challenge is to write a program that calculates the difference between a giv
 
 
 * :ref:`test_string_splitting`
-* :ref:`test_converting_strings_to_numbers` with the int_ constructor
+* :ref:`test_converting_strings_to_numbers`
 * `test_floor_aka_integer_division`_
 * `test_modulo_operation`_
 * :ref:`test_duration_w_hours<test_duration_w_hours>`
@@ -583,8 +583,8 @@ The challenge is to write a program that calculates the difference between a giv
   - and `test_duration_calculation`_ to make sure that the ``duration`` :ref:`function<functions>` calculates the correct difference between ``wake_time`` and ``sleep_time``
   - and converts the difference to a duration in hours and minutes by using
 
-    * `floor (integer) division`_ for the hours
-    * and the modulo_ operator for the minutes
+    * `floor (integer) division`_ to get the hours
+    * and the modulo_ operator to get the minutes
 
 Would you like to :ref:`test duration with an earlier wake than sleep time<test_duration_w_earlier_wake_than_sleep_time>`?
 
