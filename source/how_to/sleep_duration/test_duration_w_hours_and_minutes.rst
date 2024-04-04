@@ -80,9 +80,7 @@ red: make it fail
     AssertionError: 8 != '08:00'
     AssertionError: 16 != '16:00'
 
-  the ``duration`` :ref:`function<functions>` returns a number and the test expects a string_
-
-* I change it to match the expectation
+  the ``duration`` :ref:`function<functions>` returns a number and the test expects a string_. I change it to match the expectation
 
   .. code-block:: python
 
@@ -94,7 +92,7 @@ red: make it fail
 
         return f'{difference_hours:02}:00'
 
-* then make a copy of ``difference_minutes`` and change the index to ``1`` to get the minutes from the timestamps
+* then make a copy of ``difference_hours`` in the test, rename it and change the index to ``1`` to get the minutes from the timestamps
 
   .. code-block:: python
 
@@ -112,7 +110,7 @@ red: make it fail
         )
     ...
 
-* I change the expectation to use the variable for the minutes
+* I also change the expectation to use this variable for the minutes
 
   .. code-block:: python
 
@@ -154,7 +152,7 @@ red: make it fail
 green: make it pass
 *****************************************************************************
 
-* I make a copy of ``difference_hours``, rename it and add it to the return statement
+* I make a copy of ``difference_hours`` in the ``duration`` :ref:`function<functions>`, rename it and add it to the return statement
 
   .. code-block:: python
 
@@ -244,14 +242,14 @@ the terminal shows this :ref:`AssertionError` when I add ``test_duration_calcula
 green: make it pass
 -----------------------------------------------------------------------------
 
-* I make a copy of ``duration`` to keep a copy of my current working solution, rename the original
+* I make a copy of ``duration`` to save my current working solution, and rename the original
 
   .. code-block:: python
 
     def duration_a(wake_time=None, sleep_time=None):
     ...
 
-* then add a return statement of the ``duration`` :ref:`function<functions>` to multiply ``difference_hours`` by ``60`` so I can convert the total difference to minutes
+* then add a return statement to the new ``duration`` :ref:`function<functions>` where I multiply ``difference_hours`` by ``60`` to convert the total difference to minutes
 
   .. code-block:: python
 
@@ -265,13 +263,7 @@ green: make it pass
         f'{difference_minutes:02}'
     )
 
-  and get this :ref:`AssertionError` for ``test_duration_calculation``
-
-  .. code-block:: python
-
-    AssertionError: 31 != '00:31
-
-  and an :ref:`AssertionError` for ``test_duration_w_hours_and_minutes``
+  and get an :ref:`AssertionError` for ``test_duration_w_hours_and_minutes``
 
   .. code-block:: python
 
@@ -280,9 +272,15 @@ green: make it pass
     AssertionError: -31 != '-1:29'
     AssertionError: 213 != '03:33'
 
-  ``duration`` returns the difference as minutes but the tests expects them as hours and minutes. I need a way to convert minutes to hours and minutes
+  and this :ref:`AssertionError` for ``test_duration_calculation``
 
-* I add the `unittest.skip decorator`_ to disable the failing tests while I find a solution
+  .. code-block:: python
+
+    AssertionError: 31 != '00:31
+
+  ``duration`` returns the difference as minutes but the tests expects them as hours and minutes. I need a way to convert the difference to hours and minutes
+
+* I add the `unittest.skip decorator`_ to disable the failing tests while I test a solution
 
   .. code-block:: python
 
@@ -359,14 +357,14 @@ refactor: make it better
 
   and the terminal shows passing tests
 
-* I comment out the `unittest.skip decorator`_ for ``test_duration_calculation`` with ``ctrl+/`` (windows/linux) or ``command+/`` (mac) on the keyboard
+* I comment out the `unittest.skip decorator`_ for ``test_duration_calculation``
 
   .. code-block:: python
 
     # @unittest.skip
     def test_duration_calculation(self):
 
-* then change the first return statement to a variable for the total difference as minutes in ``duration``
+* then change the first return statement in the ``duration`` :ref:`function<functions>` to a variable for the total difference as minutes
 
   .. code-block:: python
 
@@ -399,7 +397,7 @@ refactor: make it better
         f'{difference_minutes:02}'
     )
 
-  then get an :ref:`AssertionError`
+  to get an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -407,7 +405,7 @@ refactor: make it better
 
   the hours part of the duration is correct but the minutes are still wrong. I need a way to get the remainder after dividing by ``60``
 
-* I remove the comment from the `unittest.skip decorator`_ for ``test_duration_calculation`` with ``ctrl+/`` (windows/linux) or ``command+/`` (mac) on the keyboard
+* I remove the comment from the `unittest.skip decorator`_ for ``test_duration_calculation``
 
   .. code-block:: python
 
@@ -421,7 +419,7 @@ refactor: make it better
 test_modulo_operation
 #############################################################################
 
-The ``%`` operator returns the remainder from dividing one number by another, it should help me get the remainder
+The ``%`` operator returns the remainder from dividing one number by another, it should help me get the right minutes
 
 .. _test_modulo_operation_red:
 
@@ -481,9 +479,9 @@ refactor: make it better
 
     self.assertEqual(150%60, 30)
 
-  things are green again
+  green again
 
-* I comment out the `unittest.skip decorator`_ for ``test_duration_calculation`` with ``ctrl+/`` (windows/linux) or ``command+/`` (mac) on the keyboard
+* I comment out the `unittest.skip decorator`_ for ``test_duration_calculation``
 * then add a new variable to the ``duration`` :ref:`function<functions>` and reference it in the return statement
 
   .. code-block:: python
@@ -499,7 +497,7 @@ refactor: make it better
   the test passes
 
 * I remove the `unittest.skip decorator`_ from ``test_duration_calculation``
-* and comment it out for ``test_duration_w_hours_and_minutes`` with ``ctrl+/`` (windows/linux) or ``command+/`` (mac) on the keyboard
+* and comment it out for ``test_duration_w_hours_and_minutes``
 
   .. code-block:: python
 
@@ -569,7 +567,7 @@ refactor: make it better
         )
     ...
 
-  and the terminal still shows green
+  the terminal still shows green
 
 * I remove ``get_hour`` and ``get_minutes`` and all the tests are still passing! I will sleep easier tonight!!
 
