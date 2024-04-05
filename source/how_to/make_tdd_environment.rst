@@ -66,11 +66,15 @@ how to make a python test driven development environment
 
 I open a terminal in the Interactive Development Environment (IDE) and type the following commands to make the project
 
-* I use `mkdir <https://man7.org/linux/man-pages/man1/mkdir.1.html>`_ with the ``--parents`` option to make a directory for the project with a child directory called ``tests`` inside it
+* I use `mkdir <https://man7.org/linux/man-pages/man1/mkdir.1.html>`_ with the ``-p/--parents`` option to make a directory for the project with a child directory called ``tests`` inside it
 
   .. code-block:: shell
 
     mkdir --parents project_name/tests
+
+  NOTE::
+
+    if ``--parent`` does not work, try ``-p`` instead
 
 * I make directory to ``project_name`` with the `cd <https://man7.org/linux/man-pages/man1/cd.1p.html>`_ program
 

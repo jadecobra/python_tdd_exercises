@@ -14,7 +14,7 @@ This is part 2 of an approach to writing a program that calculates the differenc
 
 ----
 
-The ``duration`` :ref:`function<functions>` has only been tested with timestamps that have random hours and ``00`` as minutes. I want to test it with timestamps where both hours and minutes are random.
+I want to test the ``duration`` :ref:`function<functions>` with timestamps where both hours and minutes are random.
 
 .. _test_duration_w_hours_and_minutes_red:
 
