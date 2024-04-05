@@ -48,7 +48,7 @@ red: make it fail
     ...
     difference_hours = (
         int(wake_time.split(':')[0])
-        -int(sleep_time.split(':')[0])
+      - int(sleep_time.split(':')[0])
     )
 
     self.assertEqual(
@@ -92,7 +92,7 @@ red: make it fail
 
         return f'{difference_hours:02}:00'
 
-* then make a copy of ``difference_hours`` in the test, rename it and change the index to ``1`` to get the minutes from the timestamps
+* then make a copy of ``difference_hours`` in the test, rename it and change the indices to ``1`` to get the minutes from the timestamps
 
   .. code-block:: python
 
@@ -102,11 +102,11 @@ red: make it fail
 
         difference_hours = (
             int(wake_time.split(':')[0])
-           -int(sleep_time.split(':')[0])
+          - int(sleep_time.split(':')[0])
         )
         difference_minutes = (
             int(wake_time.split(':')[1])
-           -int(sleep_time.split(':')[1])
+          - int(sleep_time.split(':')[1])
         )
     ...
 
@@ -180,7 +180,7 @@ green: make it pass
     AssertionError: '-16:-16' != '-16:-7'
     AssertionError: '02:02' != '02:07'
 
-  ``duration`` returns the same numbers for hours and minutes because it uses the same function to get the difference. I make a copy of the ``get_hour`` :ref:`function<functions>`, call it ``get_minutes`` and change the index to get the second item from splitting the timestamp
+  ``duration`` returns the same numbers for hours and minutes because it uses the hours to calculate the difference. I make a copy of the ``get_hour`` :ref:`function<functions>`, call it ``get_minutes`` and change the index to get the second item from splitting the timestamp
 
   .. code-block:: python
 
@@ -342,7 +342,7 @@ refactor: make it better
 
     AssertionError: 2 != 0
 
-  then I change the expected value for it to the correct value. The result of dividing ``150`` by ``60`` is also ``2`` but with a remainder of ``30``
+  then I change the expected value to the correct value. The result of dividing ``150`` by ``60`` is also ``2`` but with a remainder of ``30``
 
   .. code-block:: python
 
@@ -441,7 +441,7 @@ and the terminal shows an :ref:`AssertionError`
 green: make it pass
 -----------------------------------------------------------------------------
 
-I change the expectation in the test to the correct value. The remainder from dividing ``120`` by ``60`` is ``0``
+I change the expectation to the correct value. The remainder from dividing ``120`` by ``60`` is ``0``
 
 .. code-block:: python
 
@@ -518,7 +518,7 @@ refactor: make it better
     duration_hours = difference // 60
     duration_minutes = difference % 60
 
-  then add the new variables in the expectation
+  then add the new variables to the expectation
 
   .. code-block:: python
 
@@ -536,7 +536,7 @@ refactor: make it better
   and the test passes with no more random failures
 
 * I remove the `unittest.skip decorator`_ from ``test_duration_w_hours_and_minutes``
-* and remove ``test_duration_calculation`` because it is now covered by ``test_duration_w_hours_and_minutes`` which has the correct calculation
+* and remove ``test_duration_calculation`` because it is covered by ``test_duration_w_hours_and_minutes`` which has the correct calculation
 * then write a :ref:`function<functions>` in ``sleep_duration.py`` to replace ``get_hour`` and ``get_minutes``
 
   .. code-block:: python
@@ -583,9 +583,9 @@ The challenge is to write a program that calculates the difference between a giv
 
   - then :doc:`interpolated </how_to/pass_values>` them in the timestamps
   - and `test_duration_calculation`_ to make sure that the ``duration`` :ref:`function<functions>` calculates the correct difference between ``wake_time`` and ``sleep_time``
-  - and converts the difference to a duration in hours and minutes by using
+  - and converts the difference to a duration
 
-    * `floor (integer) division`_ to get the hours
+    * by using `floor (integer) division`_ to get the hours
     * and the modulo_ operator to get the minutes
 
 Would you like to :ref:`test duration with an earlier wake than sleep time<test_duration_w_earlier_wake_than_sleep_time>`?
