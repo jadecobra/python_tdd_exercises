@@ -125,7 +125,7 @@ red: make it fail
         )
     )
 
-* and change ``random_timestamp`` to return random numbers from ``0`` up to and including ``59`` for the minutes by using `random.randint`_
+* and change the ``random_timestamp`` :ref:`function<functions>` to use `random.randint`_ to return random numbers from ``0`` up to and including ``59`` as the minutes
 
   .. code-block:: python
 
@@ -229,7 +229,7 @@ If ``duration`` is given a ``wake_time`` of ``'03:30'`` and a ``sleep_time`` of 
           '00:31'
       )
 
-the terminal shows this :ref:`AssertionError` when I add ``test_duration_calculation``
+the terminal shows an :ref:`AssertionError` when I add ``test_duration_calculation``
 
 .. code-block:: python
 
@@ -242,14 +242,7 @@ the terminal shows this :ref:`AssertionError` when I add ``test_duration_calcula
 green: make it pass
 -----------------------------------------------------------------------------
 
-* I make a copy of ``duration`` to save my current working solution, and rename the original
-
-  .. code-block:: python
-
-    def duration_a(wake_time=None, sleep_time=None):
-    ...
-
-* then add a return statement to the new ``duration`` :ref:`function<functions>` where I multiply ``difference_hours`` by ``60`` to convert the total difference to minutes
+* I add a return statement to the ``duration`` :ref:`function<functions>` where I multiply ``difference_hours`` by ``60`` to convert the total difference to minutes
 
   .. code-block:: python
 
@@ -543,16 +536,15 @@ refactor: make it better
   and the test passes with no more random failures
 
 * I remove the `unittest.skip decorator`_ from ``test_duration_w_hours_and_minutes``
-* then remove ``test_duration_calculation`` from ``test_sleep_duration.py`` because it is now covered by ``test_duration_w_hours_and_minutes`` which has the correct calculation
-* and remove ``duration_a`` from ``sleep_duration.py`` since the working solution in ``duration`` is better
-* I write a :ref:`function<functions>` to replace ``get_hour`` and ``get_minutes``
+* and remove ``test_duration_calculation`` because it is now covered by ``test_duration_w_hours_and_minutes`` which has the correct calculation
+* then write a :ref:`function<functions>` in ``sleep_duration.py`` to replace ``get_hour`` and ``get_minutes``
 
   .. code-block:: python
 
     def parse_timestamp(timestamp=None, index=0):
         return int(timestamp.split(':')[index])
 
-* then call it in ``duration``
+* call it in ``duration``
 
   .. code-block:: python
 
@@ -567,9 +559,7 @@ refactor: make it better
         )
     ...
 
-  the terminal still shows green
-
-* I remove ``get_hour`` and ``get_minutes`` and all the tests are still passing! I will sleep easier tonight!!
+* and remove ``get_hour`` and ``get_minutes``. The terminal shows all the tests are still passing! I will sleep easier tonight!!
 
 
 *****************************************************************************
