@@ -29,23 +29,12 @@ red: make it fail
     def test_duration_w_hours_and_minutes(self):
         wake_time = random_timestamp()
         sleep_time = random_timestamp()
-
-        self.assertEqual(
-            sleep_duration.duration(
-                wake_time=wake_time,
-                sleep_time=sleep_time
-            ),
-            (
-                int(wake_time.split(':')[0])
-               -int(sleep_time.split(':')[0])
-            )
-        )
+    ...
 
 * then add a variable for the calculation of the difference in hours
 
   .. code-block:: python
 
-    ...
     difference_hours = (
         int(wake_time.split(':')[0])
       - int(sleep_time.split(':')[0])
@@ -59,7 +48,7 @@ red: make it fail
         difference_hours
     )
 
-* and change the expectation to include minutes in the duration
+* and change the expectation to a string that includes minutes in the duration
 
   .. code-block:: python
 
@@ -125,7 +114,7 @@ red: make it fail
         )
     )
 
-* and change the ``random_timestamp`` :ref:`function<functions>` to use `random.randint`_ to return random numbers from ``0`` up to and including ``59`` as the minutes
+* and change the ``random_timestamp`` :ref:`function<functions>` to use `random.randint`_ to get random numbers from ``0`` up to and including ``59`` as the minutes
 
   .. code-block:: python
 
@@ -135,12 +124,12 @@ red: make it fail
             f'{random.randint(0,59):02}'
         )
 
-  I get an :ref:`AssertionError`
+  I get a random success when the ``random_timestamp`` returns ``00`` as the minutes and :ref:`AssertionErrors<AssertionError>`
 
   .. code-block:: python
 
     AssertionError: '-18:00' != '-18:44'
-    AssertionError: '18:00' != '18:-10'
+    AssertionError: '05:00' != '05:-16'
     AssertionError: '-2:00' != '-2:-26'
     AssertionError: '16:00' != '16:-25'
 
@@ -196,7 +185,7 @@ green: make it pass
       - get_minutes(sleep_time)
     )
 
-  the terminal shows passing tests! Something is wrong with this calculation...
+  the terminal shows passing tests! There is something wrong with this calculation...
 
 .. _test_duration_w_hours_and_minutes_refactor:
 
@@ -235,7 +224,7 @@ the terminal shows an :ref:`AssertionError` when I add ``test_duration_calculati
 
   AssertionError: '01:-29' != '00:31'
 
-``duration`` returns ``'01:-29'`` which is not a real duration, though it is kind of right, ``1`` hour plus ``-29`` minutes is ``31`` minutes. I need to change the calculation
+``duration`` returns ``'01:-29'`` which is not a real duration, though it is kind of right, ``1`` hour plus ``-29`` minutes is ``31`` minutes, the calculation has to change
 
 .. _test_duration_calculation_green:
 
@@ -285,12 +274,12 @@ green: make it pass
     def test_duration_calculation(self):
     ...
 
-* If I divide the total minutes by 60, the whole number will be the hours and the remainder will be the minutes
+  If I divide the total minutes by ``60``, the whole number will be the hours and the remainder will be the minutes
 
 test_floor_aka_integer_division
 #############################################################################
 
-The ``//`` operator returns a whole number that tells how many times the bottom number can be multiplied to get a whole number that is equal to or as close to the top number as possible. It should give me the hours when I divide by 60
+The ``//`` operator returns a whole number that tells how many times the bottom number can be multiplied to get a whole number that is equal to or as close to the top number as possible. It should give me the hours when I divide by ``60``
 
 .. _test_floor_aka_integer_division_red:
 
@@ -452,7 +441,7 @@ refactor: make it better
     )
     duration_hours = difference // 60
 
-  then add a variable for the minutes of the duration using the modulo_ operator
+  and a variable for the minutes of the duration using the modulo_ operator
 
   .. code-block:: python
 
@@ -558,12 +547,12 @@ The challenge is to write a program that calculates the difference between a giv
 
   - used `random.randint`_ to generate random numbers
 
-    * from the 24 hours in a day
-    * and the 60 minutes in an hour
+    * from the ``24`` hours in a day
+    * and the ``60`` minutes in an hour
 
   - then :doc:`interpolated </how_to/pass_values>` them in the timestamps
-  - and `test_duration_calculation`_ to make sure that the ``duration`` :ref:`function<functions>` calculates the correct difference between ``wake_time`` and ``sleep_time``
-  - and converts the difference to a duration
+  - and `test_duration_calculation`_ to make sure that the ``duration`` :ref:`function<functions>` returns the correct difference between ``wake_time`` and ``sleep_time``
+  - and converts it to a timestamp format
 
     * by using `floor (integer) division`_ to get the hours
     * and the modulo_ operator to get the minutes
