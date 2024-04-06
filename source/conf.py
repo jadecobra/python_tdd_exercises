@@ -3,7 +3,12 @@ copyright = '2023, JadeCobra LLC'
 author = 'Jacob Itegboje'
 
 templates_path = ['_templates']
-exclude_patterns = ['build', 'notes', '.venv', 'code/code_tree.rst', 'rehearsals/*']
+exclude_patterns = [
+    'build',
+    'notes',
+    '.venv',
+    'code/code_tree.rst'
+]
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
@@ -14,6 +19,13 @@ html_logo = "_static/dry_favicon_16x16.png"
 html_favicon = '_static/dry_favicon_16x16.png'
 html_theme = 'press'
 html_static_path = ['_static']
+# html_sidebars = {"**": ["util/searchbox.html", "util/sidetoc.html"]}
+html_theme_options = {
+    "external_links": [
+        ("videos", "https://www.youtube.com/@JacobItegboje"),
+        ("jacobitegboje", "https://jacobitegboje.com"),
+    ]
+}
 extensions = ['sphinx.ext.autosectionlabel']
 # html_logo = "_static/DRY_html_logo.png"
 # html_theme = 'alabaster'
