@@ -499,7 +499,7 @@ refactor: make it better
         ),
         (
             f'{duration_hours:02}:'
-            f'{difference_minutes:02}'
+            f'{duration_minutes:02}'
         )
     )
 
@@ -513,6 +513,9 @@ refactor: make it better
 
     def parse_timestamp(timestamp=None, index=0):
         return int(timestamp.split(':')[index])
+
+    def duration(wake_time=None, sleep_time=None):
+    ...
 
 * call it in ``duration``
 

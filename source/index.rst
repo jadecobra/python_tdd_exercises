@@ -84,6 +84,7 @@ table of contents
   solutions<catalog_of_solutions>
   learning_models
   dot_notation
+  review
 
 ----
 
