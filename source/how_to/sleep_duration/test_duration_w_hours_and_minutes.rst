@@ -511,7 +511,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def parse_timestamp(timestamp=None, index=0):
+    def read_timestamp(timestamp=None, index=0):
         return int(timestamp.split(':')[index])
 
     def duration(wake_time=None, sleep_time=None):
@@ -523,12 +523,12 @@ refactor: make it better
 
     def duration(wake_time=None, sleep_time=None):
         difference_hours = (
-            parse_timestamp(wake_time)
-          - parse_timestamp(sleep_time)
+            read_timestamp(wake_time)
+          - read_timestamp(sleep_time)
         )
         difference_minutes = (
-            parse_timestamp(wake_time, 1)
-          - parse_timestamp(sleep_time, 1)
+            read_timestamp(wake_time, 1)
+          - read_timestamp(sleep_time, 1)
         )
     ...
 

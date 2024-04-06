@@ -84,7 +84,7 @@ red: make it fail
 green: make it pass
 *****************************************************************************
 
-* The ``parse_timestamp`` :ref:`function<functions>` tries to convert the given string_ to an integer but it is in the wrong format
+* The ``read_timestamp`` :ref:`function<functions>` tries to convert the given string_ to an integer but it is in the wrong format
 
   .. code-block:: python
 
@@ -463,7 +463,7 @@ From the tests, I know I can
 
     import datetime
 
-    def parse_timestamp(timestamp=None, index=0):
+    def read_timestamp(timestamp=None, index=0):
     ...
 
   and the terminal shows an :ref:`AssertionError` for ``test_duration_w_earlier_wake_than_sleep_time`` and ``test_duration_w_hours_and_minutes``,  that looks like this
@@ -693,7 +693,7 @@ refactor: make it better
   which allows me to remove ``random_hour`` and ``random_minutes`` since they are no longer called by anyone
 
 * I remove ``duration_a`` from ``sleep_duration.py`` because ``duration`` is a better solution
-* which means I can remove ``get_total_minutes`` and ``parse_timestamp`` because they are no longer called by anyone
+* which means I can remove ``get_total_minutes`` and ``read_timestamp`` because they are no longer called by anyone
 * and I remove the ``difference`` variable from ``duration`` since it is only used once. I can do the calculation directly
 
   .. code-block:: python
