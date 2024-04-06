@@ -99,7 +99,7 @@ red: make it fail
         )
     ...
 
-* I also change the expectation to use this variable for the minutes
+* I also change the expectation to use ``difference_minutes`` for the minutes
 
   .. code-block:: python
 
@@ -124,7 +124,7 @@ red: make it fail
             f'{random.randint(0,59):02}'
         )
 
-  I get a random success when the ``random_timestamp`` returns ``00`` as the minutes and :ref:`AssertionErrors<AssertionError>`
+  I get a random success when ``random_timestamp`` returns ``00`` as the minutes and :ref:`AssertionErrors<AssertionError>`
 
   .. code-block:: python
 
@@ -308,7 +308,7 @@ and the terminal shows an :ref:`AssertionError`
 green: make it pass
 -----------------------------------------------------------------------------
 
-I change the expectation in the test to the correct value. The result of dividing ``120`` by ``60`` is ``2`` with a remainder of ``0``
+The result of dividing ``120`` by ``60`` is ``2`` with a remainder of ``0``. I change the expectation in the test to the correct value.
 
 .. code-block:: python
 
@@ -333,7 +333,7 @@ refactor: make it better
 
     AssertionError: 2 != 0
 
-  then I change the expected value to the correct value. The result of dividing ``150`` by ``60`` is also ``2`` but with a remainder of ``30``
+  the result of dividing ``150`` by ``60`` is also ``2`` but with a remainder of ``30``. I change the expected value to the correct value
 
   .. code-block:: python
 
@@ -375,7 +375,7 @@ and the terminal shows an :ref:`AssertionError`
 green: make it pass
 -----------------------------------------------------------------------------
 
-I change the expectation to the correct value. The remainder from dividing ``120`` by ``60`` is ``0``
+The remainder from dividing ``120`` by ``60`` is ``0``. I change the expectation to the correct value
 
 .. code-block:: python
 
@@ -400,7 +400,7 @@ refactor: make it better
 
     AssertionError: 30 != 0
 
-  then I change the expected value in the test to the correct value. The remainder from dividing ``150`` by ``60`` is ``30``
+  the remainder from dividing ``150`` by ``60`` is ``30``. I change the expected value in the test to the correct value
 
   .. code-block:: python
 
@@ -417,7 +417,7 @@ refactor: make it better
     # @unittest.skip
     def test_duration_calculation(self):
 
-* then change the first return statement in the ``duration`` :ref:`function<functions>` to a variable for the total difference as minutes
+* then change the first return statement in the ``duration`` :ref:`function<functions>` to a variable for the total difference in minutes
 
   .. code-block:: python
 
