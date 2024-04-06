@@ -260,7 +260,7 @@ green: make it pass
 
     AssertionError: 31 != '00:31
 
-  ``duration`` returns the difference as minutes but the tests expects them as hours and minutes. I need a way to convert the difference to hours and minutes
+  ``duration`` returns the difference as minutes. I need a way to convert the difference to hours and minutes to match the expectations of the tests
 
 * I add the `unittest.skip decorator`_ to disable the failing tests while I test a solution
 
@@ -274,7 +274,7 @@ green: make it pass
     def test_duration_calculation(self):
     ...
 
-  If I divide the total minutes by ``60``, the whole number will be the hours and the remainder will be the minutes
+  If I divide the total minutes by ``60``, the whole number from the result is the hours and the remainder is the minutes
 
 test_floor_aka_integer_division
 #############################################################################
@@ -507,7 +507,7 @@ refactor: make it better
 
 * I remove the `unittest.skip decorator`_ from ``test_duration_w_hours_and_minutes``
 * and remove ``test_duration_calculation`` because it is covered by ``test_duration_w_hours_and_minutes`` which has the correct calculation
-* then write a :ref:`function<functions>` in ``sleep_duration.py`` to replace ``get_hour`` and ``get_minutes``
+* then add a :ref:`function<functions>` in ``sleep_duration.py`` to replace ``get_hour`` and ``get_minutes``
 
   .. code-block:: python
 
@@ -520,8 +520,8 @@ refactor: make it better
 
     def duration(wake_time=None, sleep_time=None):
         difference_hours = (
-            parse_timestamp(wake_time, 0)
-          - parse_timestamp(sleep_time, 0)
+            parse_timestamp(wake_time)
+          - parse_timestamp(sleep_time)
         )
         difference_minutes = (
             parse_timestamp(wake_time, 1)
