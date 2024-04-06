@@ -3,7 +3,7 @@ import datetime
 
 def get_datetime_object(timestamp):
     return datetime.datetime.strptime(
-        timestamp, "%d/%m/%y %H:%M"
+        timestamp, '%d/%m/%y %H:%M'
     )
 
 
@@ -13,8 +13,8 @@ def duration(wake_time=None, sleep_time=None):
 
     if wake_datetime < sleep_datetime:
         raise ValueError(
-            f"wake_time: {wake_time} is earlier "
-            f"than sleep_time: {sleep_time}"
+            f'wake_time: {wake_time} is earlier '
+            f'than sleep_time: {sleep_time}'
         )
     else:
         return str(wake_datetime - sleep_datetime)
