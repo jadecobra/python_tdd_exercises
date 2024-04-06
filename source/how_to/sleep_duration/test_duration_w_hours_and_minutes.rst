@@ -114,7 +114,7 @@ red: make it fail
         )
     )
 
-* and change the ``random_timestamp`` :ref:`function<functions>` to use `random.randint`_ to get random numbers from ``0`` up to and including ``59`` as the minutes
+* and change the ``random_timestamp`` :ref:`function<functions>` to use `random.randint`_ to get random numbers from ``0`` up to and including ``59`` for the minutes
 
   .. code-block:: python
 
@@ -124,7 +124,7 @@ red: make it fail
             f'{random.randint(0,59):02}'
         )
 
-  I get a random success when ``random_timestamp`` returns ``00`` as the minutes and :ref:`AssertionErrors<AssertionError>`
+  I get a random success when ``random_timestamp`` returns ``00`` for the minutes and :ref:`AssertionErrors<AssertionError>`
 
   .. code-block:: python
 
@@ -133,7 +133,7 @@ red: make it fail
     AssertionError: '-2:00' != '-2:-26'
     AssertionError: '16:00' != '16:-25'
 
-  the ``duration`` :ref:`function<functions>` returns ``00`` as the minutes part of the duration, and the test expects the difference between the minutes of ``wake_time`` and ``sleep_time``
+  the ``duration`` :ref:`function<functions>` returns ``00`` for the minutes part of the duration, and the test expects the difference between the minutes of ``wake_time`` and ``sleep_time``
 
 .. _test_duration_w_hours_and_minutes_green:
 
@@ -160,7 +160,7 @@ green: make it pass
             f'{difference_minutes:02}'
         )
 
-  the terminal shows another :ref:`AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -169,7 +169,7 @@ green: make it pass
     AssertionError: '-16:-16' != '-16:-7'
     AssertionError: '02:02' != '02:07'
 
-  ``duration`` returns the same numbers for hours and minutes because it uses the hours to calculate the difference. I make a copy of the ``get_hour`` :ref:`function<functions>`, call it ``get_minutes`` and change the index to get the second item from splitting the timestamp
+  ``duration`` returns the same numbers for hours and minutes because it uses the hours to calculate the differences. I make a copy of the ``get_hour`` :ref:`function<functions>`, call it ``get_minutes`` and change the index to get the second item from splitting the timestamp
 
   .. code-block:: python
 
