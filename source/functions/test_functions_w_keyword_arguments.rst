@@ -14,9 +14,9 @@ functions: test_functions_w_keyword_arguments
 
 ----
 
-There is an inherent problem with using positional arguments in functions. It requires the inputs to always be supplied in the correct order. If the program is dependent on that order, then it will behave in an unintended way when it receives input out of order.
+There is an inherent problem with using positional arguments in functions. It requires the inputs to always be supplied in the right order. If the program is dependent on that order, then it will behave in an unintended way when it receives input out of order.
 
-To ensure the function behaves correctly regardless of what order the user provides the input I can use Keyword Arguments
+To ensure the function behaves right regardless of what order the user provides the input I can use Keyword Arguments
 
 .. _test_functions_w_keyword_arguments_red:
 

@@ -1176,7 +1176,7 @@ the terminal shows an :ref:`AssertionError`
 green: make it pass
 #############################################################################
 
-* I add the correct value to the test to make it pass
+* I add the right value to the test to make it pass
 
   .. code-block:: python
 

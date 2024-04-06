@@ -258,7 +258,7 @@ refactor: make it better
 
   the terminal shows an :ref:`AttributeError`
 
-* and I change each assertion with the correct value until they all pass
+* and I change each assertion to the right value until they all pass
 
 ----
 

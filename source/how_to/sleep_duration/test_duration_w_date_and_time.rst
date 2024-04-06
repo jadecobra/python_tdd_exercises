@@ -130,7 +130,7 @@ green: make it pass
     def test_duration_w_date_and_time(self):
     ...
 
-* then change ``test_string_splitting`` with the correct values to make it pass
+* then change ``test_string_splitting`` with the right values to make it pass
 
   .. code-block:: python
 

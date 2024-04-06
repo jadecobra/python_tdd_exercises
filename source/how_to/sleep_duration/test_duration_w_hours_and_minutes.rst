@@ -124,7 +124,7 @@ red: make it fail
             f'{random.randint(0,59):02}'
         )
 
-  I get a random success when ``random_timestamp`` returns ``00`` for the minutes and :ref:`AssertionErrors<AssertionError>`
+  I get a random success when ``random_timestamp`` returns ``00`` for the minutes and random :ref:`AssertionErrors<AssertionError>`
 
   .. code-block:: python
 
@@ -198,7 +198,7 @@ refactor: make it better
 test_duration_calculation
 #############################################################################
 
-The ``duration`` :ref:`function<functions>` returns a subtraction of hours and a subtraction of minutes which is not correct for calculating the difference between two timestamps
+The ``duration`` :ref:`function<functions>` returns a subtraction of hours and a subtraction of minutes which is not right for calculating the difference between two timestamps
 
 .. _test_duration_calculation_red:
 
@@ -308,7 +308,7 @@ and the terminal shows an :ref:`AssertionError`
 green: make it pass
 -----------------------------------------------------------------------------
 
-The result of dividing ``120`` by ``60`` is ``2`` with a remainder of ``0``. I change the expectation in the test to the correct value.
+The result of dividing ``120`` by ``60`` is ``2`` with a remainder of ``0``. I change the expectation in the test to the right value.
 
 .. code-block:: python
 
@@ -333,7 +333,7 @@ refactor: make it better
 
     AssertionError: 2 != 0
 
-  the result of dividing ``150`` by ``60`` is also ``2`` but with a remainder of ``30``. I change the expected value to the correct value
+  the result of dividing ``150`` by ``60`` is also ``2`` but with a remainder of ``30``. I change the expected value to the right value
 
   .. code-block:: python
 
@@ -375,7 +375,7 @@ and the terminal shows an :ref:`AssertionError`
 green: make it pass
 -----------------------------------------------------------------------------
 
-The remainder from dividing ``120`` by ``60`` is ``0``. I change the expectation to the correct value
+The remainder from dividing ``120`` by ``60`` is ``0``. I change the expectation to the right value
 
 .. code-block:: python
 
@@ -400,7 +400,7 @@ refactor: make it better
 
     AssertionError: 30 != 0
 
-  the remainder from dividing ``150`` by ``60`` is ``30``. I change the expected value in the test to the correct value
+  the remainder from dividing ``150`` by ``60`` is ``30``. I change the expected value in the test to the right value
 
   .. code-block:: python
 
@@ -506,7 +506,7 @@ refactor: make it better
   and the test passes with no more random failures
 
 * I remove the `unittest.skip decorator`_ from ``test_duration_w_hours_and_minutes``
-* and remove ``test_duration_calculation`` because it is covered by ``test_duration_w_hours_and_minutes`` which has the correct calculation
+* and remove ``test_duration_calculation`` because it is covered by ``test_duration_w_hours_and_minutes`` which has the right calculation
 * then add a :ref:`function<functions>` in ``sleep_duration.py`` to replace ``get_hour`` and ``get_minutes``
 
   .. code-block:: python
@@ -551,7 +551,7 @@ The challenge is to write a program that calculates the difference between a giv
     * and the ``60`` minutes in an hour
 
   - then :doc:`interpolated </how_to/pass_values>` them in the timestamps
-  - and `test_duration_calculation`_ to make sure that the ``duration`` :ref:`function<functions>` returns the correct difference between ``wake_time`` and ``sleep_time``
+  - and `test_duration_calculation`_ to make sure that the ``duration`` :ref:`function<functions>` returns the right difference between ``wake_time`` and ``sleep_time``
   - and converts it to a timestamp format
 
     * by using `floor (integer) division`_ to get the hours

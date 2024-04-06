@@ -103,7 +103,7 @@ How can I make this better?
           )
 
   the terminal shows an :ref:`AssertionError`
-* I make the test so it has the correct output
+* I make the test so it has the right output
 
   .. code-block:: python
 

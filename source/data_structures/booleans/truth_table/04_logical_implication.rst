@@ -121,7 +121,7 @@ refactor: make it better
         if not p not and not not q:
             return True
 
-  I get a ``SyntaxError`` and correct the syntax to get
+  I get a ``SyntaxError`` and change it to get
 
   .. code-block:: python
 
