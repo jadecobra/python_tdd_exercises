@@ -56,7 +56,7 @@ test_sleep_duration
 #. :ref:`test_string_splitting`
 #. :ref:`test_converting_strings_to_numbers`
 #. :ref:`test_floor_aka_integer_division`
-#. :ref:`test_modulo_operation`
+#. :ref:`test_the_modulo_operation`
 #. :ref:`test_datetime_objects`
 #. :ref:`test_subtracting_datetime_objects`
 #. :ref:`test_converting_timedelta_to_string`

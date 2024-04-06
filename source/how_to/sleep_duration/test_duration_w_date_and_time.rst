@@ -731,7 +731,7 @@ The challenge was to write a program that calculates the difference between a gi
 * :ref:`test_converting_strings_to_numbers` with the int_ constructor
 
 * `test_floor_aka_integer_division`_
-* `test_modulo_operation`_
+* `test_the_modulo_operation`_
 * `test_datetime_objects`_ where I
 
   - used `python's online documentation`_

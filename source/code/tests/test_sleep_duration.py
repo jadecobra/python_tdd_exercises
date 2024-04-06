@@ -32,7 +32,7 @@ class TestSleepDuration(unittest.TestCase):
         self.assertEqual(120//60, 2)
         self.assertEqual(150//60, 2)
 
-    def test_modulo_operation(self):
+    def test_the_modulo_operation(self):
         self.assertEqual(120%60, 0)
         self.assertEqual(150%60, 30)
 

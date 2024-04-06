@@ -341,14 +341,14 @@ refactor: make it better
 
   and the terminal shows passing tests
 
-.. _test_modulo_operation:
+.. _test_the_modulo_operation:
 
-test_modulo_operation
+test_the_modulo_operation
 #############################################################################
 
 The ``%`` operator returns the remainder from dividing one number by another, it should help me get the right minutes
 
-.. _test_modulo_operation_red:
+.. _test_the_modulo_operation_red:
 
 red: make it fail
 -----------------------------------------------------------------------------
@@ -357,7 +357,7 @@ I add a failing test for it
 
 .. code-block:: python
 
-  def test_modulo_operation(self):
+  def test_the_modulo_operation(self):
       self.assertEqual(120%60, 2)
 
   @unittest.skip
@@ -370,7 +370,7 @@ and the terminal shows an :ref:`AssertionError`
 
   AssertionError: 0 != 2
 
-.. _test_modulo_operation_green:
+.. _test_the_modulo_operation_green:
 
 green: make it pass
 -----------------------------------------------------------------------------
@@ -383,7 +383,7 @@ I change the expectation to the correct value. The remainder from dividing ``120
 
 and the test passes
 
-.. _test_modulo_operation_refactor:
+.. _test_the_modulo_operation_refactor:
 
 refactor: make it better
 -----------------------------------------------------------------------------
@@ -541,7 +541,7 @@ The challenge is to write a program that calculates the difference between a giv
 * :ref:`test_string_splitting`
 * :ref:`test_converting_strings_to_numbers`
 * `test_floor_aka_integer_division`_
-* `test_modulo_operation`_
+* `test_the_modulo_operation`_
 * :ref:`test_duration_w_hours<test_duration_w_hours>`
 * `test_duration_w_hours_and_minutes`_ where I
 

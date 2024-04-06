@@ -233,7 +233,7 @@ std:label
     test_duration_w_hours_and_minutes                                                : how_to/sleep_duration.html#test-duration-w-hours-and-minutes
     test_duration_w_hours_only                                                       : how_to/sleep_duration.html#test-duration-w-hours-only
     test_floor_aka_integer_division                                                  : how_to/sleep_duration.html#test-floor-aka-integer-division
-    test_modulo_operation                                                            : how_to/sleep_duration.html#test-modulo-operation
+    test_the_modulo_operation                                                            : how_to/sleep_duration.html#test-modulo-operation
     test_splitting_a_string                                                          : how_to/sleep_duration.html#test-splitting-a-string
     test_string_methods_and_attributes                                               : how_to/sleep_duration.html#test-string-methods-and-attributes
     test_subtracting_datetime_datetime_objects                                         : how_to/sleep_duration.html#test-subtracting-datetime-datetime-objects
