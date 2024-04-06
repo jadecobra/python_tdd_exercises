@@ -285,6 +285,8 @@ green: make it pass
     def test_duration_calculation(self):
     ...
 
+* If I divide the total minutes by 60, the whole number will be the hours and the remainder will be the minutes
+
 test_floor_aka_integer_division
 #############################################################################
 
@@ -349,63 +351,6 @@ refactor: make it better
     self.assertEqual(150//60, 2)
 
   and the terminal shows passing tests
-
-* I comment out the `unittest.skip decorator`_ for ``test_duration_calculation``
-
-  .. code-block:: python
-
-    # @unittest.skip
-    def test_duration_calculation(self):
-
-* then change the first return statement in the ``duration`` :ref:`function<functions>` to a variable for the total difference as minutes
-
-  .. code-block:: python
-
-    difference = (
-        difference_hours*60
-      + difference_minutes
-    )
-
-    return (
-        f'{difference_hours:02}:'
-        f'{difference_minutes:02}'
-    )
-
-  I also add a variable for the duration as hours using `floor (integer) division`_
-
-  .. code-block:: python
-
-    difference = (
-        difference_hours*60
-      + difference_minutes
-    )
-    duration_hours = difference // 60
-
-  and replace ``difference_hours`` in the return statement
-
-  .. code-block:: python
-
-    return (
-        f'{duration_hours:02}:'
-        f'{difference_minutes:02}'
-    )
-
-  to get an :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: '00:-29' != '00:31'
-
-  the hours part of the duration is correct but the minutes are still wrong. I need a way to get the remainder after dividing by ``60``
-
-* I remove the comment from the `unittest.skip decorator`_ for ``test_duration_calculation``
-
-  .. code-block:: python
-
-    @unittest.skip
-    def test_duration_calculation(self):
-
-  and the terminal shows green again
 
 .. _test_modulo_operation:
 
@@ -474,20 +419,56 @@ refactor: make it better
 
   green again
 
+----
+
 * I comment out the `unittest.skip decorator`_ for ``test_duration_calculation``
-* then add a new variable to the ``duration`` :ref:`function<functions>` and reference it in the return statement
+
+  .. code-block:: python
+
+    # @unittest.skip
+    def test_duration_calculation(self):
+
+* then change the first return statement in the ``duration`` :ref:`function<functions>` to a variable for the total difference as minutes
+
+  .. code-block:: python
+
+    difference = (
+        difference_hours*60
+      + difference_minutes
+    )
+
+    return (
+        f'{difference_hours:02}:'
+        f'{difference_minutes:02}'
+    )
+
+  and add a variable for the hours of the duration using `floor (integer) division`_
+
+  .. code-block:: python
+
+    difference = (
+        difference_hours*60
+      + difference_minutes
+    )
+    duration_hours = difference // 60
+
+  then add a variable for the minutes of the duration using the modulo_ operator
 
   .. code-block:: python
 
     duration_hours = difference // 60
     duration_minutes = difference % 60
 
+  I replace ``difference_hours`` and ``difference_minutes`` in the return statement
+
+  .. code-block:: python
+
     return (
         f'{duration_hours:02}:'
         f'{duration_minutes:02}'
     )
 
-  the test passes
+  and the test passes
 
 * I remove the `unittest.skip decorator`_ from ``test_duration_calculation``
 * and comment it out for ``test_duration_w_hours_and_minutes``
@@ -560,7 +541,6 @@ refactor: make it better
     ...
 
 * and remove ``get_hour`` and ``get_minutes``. The terminal shows all the tests are still passing! I will sleep easier tonight!!
-
 
 *****************************************************************************
 review
