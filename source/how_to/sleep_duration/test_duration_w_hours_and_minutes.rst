@@ -297,7 +297,7 @@ I add a failing test for it
       self.assertEqual(120//60, 0)
 
   @unittest.skip
-  def test_duration_w_hours_and_minutes(self):
+  def test_duration_calculation(self):
   ...
 
 and the terminal shows an :ref:`AssertionError`
@@ -364,7 +364,7 @@ I add a failing test for it
       self.assertEqual(120%60, 2)
 
   @unittest.skip
-  def test_duration_w_hours_and_minutes(self):
+  def test_duration_calculation(self):
   ...
 
 and the terminal shows an :ref:`AssertionError`
