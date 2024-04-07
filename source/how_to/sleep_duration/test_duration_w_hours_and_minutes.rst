@@ -124,7 +124,7 @@ red: make it fail
             f'{random.randint(0,59):02}'
         )
 
-  I get a random success when ``random_timestamp`` returns ``00`` for the minutes and random :ref:`AssertionErrors<AssertionError>`
+  I get a random success when ``random_timestamp`` returns ``00`` for the minutes and random :ref:`AssertionErrors<AssertionError>` when it does not
 
   .. code-block:: python
 
@@ -217,6 +217,9 @@ If ``duration`` is given a ``wake_time`` of ``'03:30'`` and a ``sleep_time`` of 
           ),
           '00:31'
       )
+
+  def test_duration_w_hours_and_minutes(self):
+  ...
 
 the terminal shows an :ref:`AssertionError` when I add ``test_duration_calculation``
 
