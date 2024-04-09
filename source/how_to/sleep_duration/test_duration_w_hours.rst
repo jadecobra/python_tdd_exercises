@@ -662,44 +662,29 @@ test_converting_strings_to_numbers
 
 The hours part of the timestamp after calling `str.split`_ is still a string_ and I got a :ref:`TypeError` when I tried to subtract one from another earlier. I want to see if I can use the int_ constructor to convert a string_ to a number
 
-.. _test_converting_strings_to_numbers_red:
+* I add a new failing test to test numbers that have a ``0`` in front of them
 
-red: make it fail
------------------------------------------------------------------------------
+  .. code-block:: python
 
-I add a new failing test to test numbers that have a ``0`` in front of them
+    def test_converting_strings_to_numbers(self):
+        self.assertEqual(int('01'), 0)
 
-.. code-block:: python
+    def test_duration_w_hours(self):
+    ...
 
-  def test_converting_strings_to_numbers(self):
-      self.assertEqual(int('01'), 0)
+  and the terminal shows an :ref:`AssertionError`
 
-  def test_duration_w_hours(self):
-  ...
+  .. code-block:: python
 
-and the terminal shows an :ref:`AssertionError`
+    AssertionError: 1 != 0
 
-.. code-block:: python
+  I change the expectation to ``1``
 
-  AssertionError: 1 != 0
+  .. code-block:: python
 
-.. _test_converting_strings_to_numbers_green:
+    self.assertEqual(int('01'), 1)
 
-green: make it pass
------------------------------------------------------------------------------
-
-I change the expectation to ``1``
-
-.. code-block:: python
-
-  self.assertEqual(int('01'), 1)
-
-and the test passes
-
-.. _test_converting_strings_to_numbers_refactor:
-
-refactor: make it pass
------------------------------------------------------------------------------
+  and the test passes
 
 * I add another assertion to test a bigger number
 
@@ -713,13 +698,15 @@ refactor: make it pass
 
     AssertionError: 23 != 1
 
-* I change the number from ``1`` to ``23``
+  I change the number from ``1`` to ``23``
 
   .. code-block:: python
 
     self.assertEqual(int('23'), 23)
 
   and the terminal shows green again
+
+----
 
 * I add calls to the int_ constructor in the expectation of ``test_duration_w_hours``
 

@@ -353,7 +353,7 @@ The ``%`` operator returns the remainder when one number is divided by another, 
 
     AssertionError: 0 != 2
 
- the remainder when ``120`` is divided by ``60`` is ``0``. I change the expectation to the right value
+  the remainder when ``120`` is divided by ``60`` is ``0``. I change the expectation to the right value
 
   .. code-block:: python
 
