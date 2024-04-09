@@ -81,7 +81,7 @@ red: make it fail
 
         return f'{difference_hours:02}:00'
 
-* then make a copy of ``difference_hours`` in the test, rename it and change the indices to ``1`` to get the difference between the minutes of ``wake_time`` an d ``sleep_time``
+* then make a copy of ``difference_hours`` in the test, rename it and change the indices to ``1`` to get the difference between the minutes of ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
 
