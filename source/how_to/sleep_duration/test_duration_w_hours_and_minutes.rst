@@ -22,7 +22,7 @@ I want to test the ``duration`` :ref:`function<functions>` with timestamps where
 red: make it fail
 *****************************************************************************
 
-* I rename ``test_duration_w_hours`` to ``test_duration_w_hours_and_minutes``
+* I rename ``test_duration_w_hours``
 
   .. code-block:: python
 
@@ -48,7 +48,7 @@ red: make it fail
         difference_hours
     )
 
-* and change the expectation to a string that includes minutes in the duration
+* and change the expectation to a timestamp format
 
   .. code-block:: python
 
@@ -81,7 +81,7 @@ red: make it fail
 
         return f'{difference_hours:02}:00'
 
-* then make a copy of ``difference_hours`` in the test, rename it and change the indices to ``1`` to get the minutes from the timestamps. I want the difference between the minutes of ``wake_time`` an d ``sleep_time``
+* then make a copy of ``difference_hours`` in the test, rename it and change the indices to ``1`` to get the difference between the minutes of ``wake_time`` an d ``sleep_time``
 
   .. code-block:: python
 
@@ -114,7 +114,7 @@ red: make it fail
         )
     )
 
-* and change the ``random_timestamp`` :ref:`function<functions>` to add random numbers from ``0`` up to and including ``59`` for the minutes
+* and change the ``random_timestamp`` :ref:`function<functions>` to have random numbers from ``0`` up to and including ``59`` for the minutes
 
   .. code-block:: python
 
@@ -141,7 +141,7 @@ red: make it fail
 green: make it pass
 *****************************************************************************
 
-* I make a copy of ``difference_hours`` in the ``duration`` :ref:`function<functions>`, rename it and add it to the return statement
+* I make a copy of ``difference_hours`` in ``duration``, rename it and add it to the return statement
 
   .. code-block:: python
 
@@ -169,7 +169,7 @@ green: make it pass
     AssertionError: '-16:-16' != '-16:-7'
     AssertionError: '02:02' != '02:07'
 
-  ``duration`` returns the same numbers for hours and minutes because ``difference_hours`` and ``difference_minutes`` are the same. I make a copy of the ``get_hour`` :ref:`function<functions>`, call it ``get_minutes`` and change the index to get the second item from splitting the timestamp
+  the :ref:`function<functions>` returns the same numbers for hours and minutes because ``difference_hours`` and ``difference_minutes`` are the same. I make a copy of the ``get_hour`` :ref:`function<functions>`, call it ``get_minutes`` and change the index to get the second item from splitting the timestamp
 
   .. code-block:: python
 
@@ -248,7 +248,7 @@ green: make it pass
         f'{difference_minutes:02}'
     )
 
-  and get an :ref:`AssertionError` for ``test_duration_w_hours_and_minutes``
+  the terminal shows an :ref:`AssertionError` for ``test_duration_w_hours_and_minutes``
 
   .. code-block:: python
 
@@ -265,7 +265,7 @@ green: make it pass
 
   ``duration`` returns the difference as minutes. I need a way to convert the difference to hours and minutes to match the expectations of the tests
 
-* I add the `unittest.skip decorator`_ to disable the failing tests while I test a solution
+* I add the `unittest.skip decorator`_ to disable the failing tests while I test the solution
 
   .. code-block:: python
 
@@ -284,65 +284,50 @@ test_floor_aka_integer_division
 
 The ``//`` operator returns a whole number which is how many times the bottom number can be multiplied to get a whole number that is equal to or as close to the top number as possible. It should give me the hours when I divide by ``60``
 
-.. _test_floor_aka_integer_division_red:
+* I add a failing test for it
 
-red: make it fail
------------------------------------------------------------------------------
+  .. code-block:: python
 
-I add a failing test for it
+    def test_floor_aka_integer_division(self):
+        self.assertEqual(120//60, 0)
 
-.. code-block:: python
+    @unittest.skip
+    def test_duration_calculation(self):
+    ...
 
-  def test_floor_aka_integer_division(self):
-      self.assertEqual(120//60, 0)
+  and the terminal shows an :ref:`AssertionError`
 
-  @unittest.skip
-  def test_duration_calculation(self):
-  ...
+  .. code-block:: python
 
-and the terminal shows an :ref:`AssertionError`
+    AssertionError: 2 != 0
 
-.. code-block:: python
+  the result of ``120`` divided by ``60`` is ``2`` with a remainder of ``0``. I change the expectation to the right value.
 
-  AssertionError: 2 != 0
+  .. code-block:: python
 
-.. _test_floor_aka_integer_division_green:
+    self.assertEqual(120//60, 2)
 
-green: make it pass
------------------------------------------------------------------------------
+  and it passes
 
-The result of ``120`` divided by ``60`` is ``2`` with a remainder of ``0``. I change the expectation to the right value.
+* I add another assertion
 
-.. code-block:: python
+  .. code-block:: python
 
-  self.assertEqual(120//60, 2)
+    self.assertEqual(150//60, 0)
 
-and it passes
+  and get an :ref:`AssertionError`
 
-.. _test_floor_aka_integer_division_refactor:
+  .. code-block:: python
 
-refactor: make it better
------------------------------------------------------------------------------
+    AssertionError: 2 != 0
 
-I add another assertion
+  the result of ``150`` divided by ``60`` is also ``2`` but with a remainder of ``30``. I change the expectation to the right value
 
-.. code-block:: python
+  .. code-block:: python
 
-  self.assertEqual(150//60, 0)
+    self.assertEqual(150//60, 2)
 
-and get an :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: 2 != 0
-
-the result of ``150`` divided by ``60`` is also ``2`` but with a remainder of ``30``. I change the expectation to the right value
-
-.. code-block:: python
-
-  self.assertEqual(150//60, 2)
-
-and the terminal shows passing tests
+  and the terminal shows passing tests
 
 .. _test_the_modulo_operation:
 
@@ -351,65 +336,50 @@ test_the_modulo_operation
 
 The ``%`` operator returns the remainder when one number is divided by another, it should help me get the right minutes
 
-.. _test_the_modulo_operation_red:
+* I add a failing test for it
 
-red: make it fail
------------------------------------------------------------------------------
+  .. code-block:: python
 
-I add a failing test for it
+    def test_the_modulo_operation(self):
+        self.assertEqual(120%60, 2)
 
-.. code-block:: python
+    @unittest.skip
+    def test_duration_calculation(self):
+    ...
 
-  def test_the_modulo_operation(self):
-      self.assertEqual(120%60, 2)
+  and the terminal shows an :ref:`AssertionError`
 
-  @unittest.skip
-  def test_duration_calculation(self):
-  ...
+  .. code-block:: python
 
-and the terminal shows an :ref:`AssertionError`
+    AssertionError: 0 != 2
 
-.. code-block:: python
+ the remainder when ``120`` is divided by ``60`` is ``0``. I change the expectation to the right value
 
-  AssertionError: 0 != 2
+  .. code-block:: python
 
-.. _test_the_modulo_operation_green:
+    self.assertEqual(120%60, 0)
 
-green: make it pass
------------------------------------------------------------------------------
+  and the test passes
 
-The remainder when ``120`` is divided by ``60`` is ``0``. I change the expectation to the right value
+* I add another assertion
 
-.. code-block:: python
+  .. code-block:: python
 
-  self.assertEqual(120%60, 0)
+    self.assertEqual(150%60, 0)
 
-and the test passes
+  and the terminal shows an :ref:`AssertionError`
 
-.. _test_the_modulo_operation_refactor:
+  .. code-block:: python
 
-refactor: make it better
------------------------------------------------------------------------------
+    AssertionError: 30 != 0
 
-I add another assertion
+  the remainder when ``150`` is divided by ``60`` is ``30``. I change the expected value in the test to the right value
 
-.. code-block:: python
+  .. code-block:: python
 
-  self.assertEqual(150%60, 0)
+    self.assertEqual(150%60, 30)
 
-and the terminal shows an :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: 30 != 0
-
-the remainder when ``150`` is divided by ``60`` is ``30``. I change the expected value in the test to the right value
-
-.. code-block:: python
-
-  self.assertEqual(150%60, 30)
-
-green again
+  green again
 
 ----
 
