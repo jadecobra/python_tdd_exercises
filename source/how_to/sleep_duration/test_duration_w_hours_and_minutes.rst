@@ -461,7 +461,7 @@ The ``%`` operator returns the remainder when one number is divided by another, 
     duration_hours = difference // 60
     duration_minutes = difference % 60
 
-  then add the new variables to the expectation
+  then change the variables in the expectation
 
   .. code-block:: python
 
