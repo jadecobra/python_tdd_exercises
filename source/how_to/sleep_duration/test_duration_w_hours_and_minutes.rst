@@ -198,7 +198,7 @@ refactor: make it better
 test_duration_calculation
 #############################################################################
 
-The ``duration`` :ref:`function<functions>` returns a subtraction of hours and a subtraction of minutes which is not right for calculating the difference between two timestamps
+The ``duration`` :ref:`function<functions>` returns a subtraction of hours and a subtraction of minutes which is not how to calculate the difference between two timestamps
 
 .. _test_duration_calculation_red:
 
@@ -257,21 +257,23 @@ green: make it pass
     AssertionError: -31 != '-1:29'
     AssertionError: 213 != '03:33'
 
-  and this :ref:`AssertionError` for ``test_duration_calculation``
-
-  .. code-block:: python
-
-    AssertionError: 31 != '00:31
-
-  ``duration`` returns the difference as minutes. I need a way to convert the difference to hours and minutes to match the expectations of the tests
-
-* I add the `unittest.skip decorator`_ to disable the failing tests while I test the solution
+  ``duration`` returns the difference as a number and the test still expects a string_. I add the `unittest.skip decorator`_ to skip it
 
   .. code-block:: python
 
     @unittest.skip
     def test_duration_w_hours_and_minutes(self):
     ...
+
+  and get this :ref:`AssertionError` for ``test_duration_calculation``
+
+  .. code-block:: python
+
+    AssertionError: 31 != '00:31
+
+  the :ref:`function<functions>` returns the right number of minutes for the difference. I need a way to convert it to hours and minutes to match the expectations of the tests. I add the `unittest.skip decorator`_ to skip it while I test the solution
+
+  .. code-block:: python
 
     @unittest.skip
     def test_duration_calculation(self):
