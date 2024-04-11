@@ -533,7 +533,7 @@ The challenge is to write a program that calculates the difference between a giv
   - and converts it to a timestamp format
 
     * by using `floor (integer) division`_ to get the hours
-    * and the modulo_ operator to get the minutes
+    * and the modulo_ operation to get the minutes
 
 Would you like to :ref:`test duration with an earlier wake than sleep time<test_duration_w_earlier_wake_than_sleep_time>`?
 
