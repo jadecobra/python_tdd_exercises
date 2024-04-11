@@ -198,7 +198,7 @@ refactor: make it better
 test_duration_calculation
 #############################################################################
 
-The ``duration`` :ref:`function<functions>` returns a subtraction of hours and a subtraction of minutes which is not how to calculate the difference between two timestamps
+The ``duration`` :ref:`function<functions>` returns a subtraction of hours and a subtraction of minutes which does not give the right difference between the timestamps
 
 .. _test_duration_calculation_red:
 
@@ -336,7 +336,7 @@ The ``//`` operator returns a whole number which is how many times the bottom nu
 test_the_modulo_operation
 #############################################################################
 
-The ``%`` operator returns the remainder when one number is divided by another, it should help me get the right minutes
+The ``%`` operator returns the remainder when one number is divided by another, it should give me the minutes when I divide by ``60``
 
 * I add a failing test for it
 
