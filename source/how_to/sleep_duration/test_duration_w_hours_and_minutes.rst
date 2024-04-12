@@ -124,7 +124,7 @@ red: make it fail
             f'{random.randint(0,59):02}'
         )
 
-  I get a random success when ``random_timestamp`` returns ``00`` for the minutes and random :ref:`AssertionErrors<AssertionError>` when it does not
+  I get a random success when ``random_timestamp`` returns ``00`` for the minutes and :ref:`AssertionErrors<AssertionError>` when it does not
 
   .. code-block:: python
 
@@ -169,7 +169,7 @@ green: make it pass
     AssertionError: '-16:-16' != '-16:-7'
     AssertionError: '02:02' != '02:07'
 
-  the :ref:`function<functions>` returns the same numbers for hours and minutes because ``difference_hours`` and ``difference_minutes`` are the same. I make a copy of the ``get_hour`` :ref:`function<functions>`, call it ``get_minutes`` and change the index to get the second item from splitting the timestamp
+  the :ref:`function<functions>` returns the same numbers for hours and minutes because ``difference_hours`` and ``difference_minutes`` are the same. I make a copy of the ``get_hour`` :ref:`function<functions>`, call it ``get_minutes`` and change the index to get the second item from the timestamp split
 
   .. code-block:: python
 
@@ -381,7 +381,7 @@ The ``%`` operator returns the remainder when one number is divided by another, 
 
     self.assertEqual(150%60, 30)
 
-  green again
+  and the terminal shows green again
 
 ----
 
