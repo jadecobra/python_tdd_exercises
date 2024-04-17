@@ -227,7 +227,7 @@ the terminal shows an :ref:`AssertionError` when I add ``test_duration_calculati
 
   AssertionError: '01:-29' != '00:31'
 
-``duration`` returns ``'01:-29'`` which is not a real duration, though it is kind of right, ``1`` hour plus ``-29`` minutes is ``31`` minutes, the calculation has to change
+``duration`` returns ``'01:-29'`` which is not a real duration, the calculation has to change
 
 .. _test_duration_calculation_green:
 
