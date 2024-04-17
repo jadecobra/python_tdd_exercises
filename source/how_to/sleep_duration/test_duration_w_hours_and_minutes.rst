@@ -452,7 +452,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
     AssertionError: '10:50' != '11:-10'
     AssertionError: '16:50' != '17:-10'
 
-  the test is still using the wrong calculation. I change it to match the ``duration`` :ref:`function<functions>`
+  the calculation in the test is still not right. I change it to match the ``duration`` :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -507,7 +507,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
         )
     ...
 
-* and remove ``get_hour`` and ``get_minutes``. The terminal shows all the tests are still passing! I will sleep easier tonight!!
+* and remove ``get_hour`` and ``get_minutes``. The terminal shows all tests are still passing! I will sleep easier tonight!!
 
 *****************************************************************************
 review
