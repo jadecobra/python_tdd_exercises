@@ -141,7 +141,7 @@ red: make it fail
 green: make it pass
 *****************************************************************************
 
-* I make a copy of ``difference_hours`` in ``duration``, rename it then add it to the return statement
+* I make a copy of ``difference_hours`` in ``duration``, rename it, then add it to the return statement
 
   .. code-block:: python
 
