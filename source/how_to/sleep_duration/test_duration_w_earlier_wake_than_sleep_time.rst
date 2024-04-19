@@ -144,23 +144,19 @@ refactor: make it better
             '-1:00'
         )
 
-* and use `assertRaisesRegex`_ to catch the :doc:`Exception </how_to/exception_handling_tests>` with the specific message raised in ``test_duration_w_earlier_wake_than_sleep_time``
+* and replace the ``self.assertEqual`` with `assertRaisesRegex`_ to catch the :doc:`Exception </how_to/exception_handling_tests>` with the specific message raised in ``test_duration_w_earlier_wake_than_sleep_time``
 
   .. code-block:: python
 
-    def test_duration_w_earlier_wake_than_sleep_time(self):
-        wake_time = '01:00'
-        sleep_time = '02:00'
-
-        with self.assertRaisesRegex(
-            ValueError,
-            f'wake_time: {wake_time} is earlier '
-            f'than sleep_time: {sleep_time}'
-        ):
-            sleep_duration.duration(
-                wake_time=wake_time,
-                sleep_time=sleep_time
-            )
+    with self.assertRaisesRegex(
+        ValueError,
+        f'wake_time: {wake_time} is earlier '
+        f'than sleep_time: {sleep_time}'
+    ):
+        sleep_duration.duration(
+            wake_time=wake_time,
+            sleep_time=sleep_time
+        )
 
   the terminal shows passing tests
 * I remove the `unittest.skip decorator` for ``test_duration_w_hours_and_minutes``
@@ -169,24 +165,7 @@ refactor: make it better
   .. code-block:: python
 
     def test_duration_w_hours_and_minutes(self):
-        wake_time = random_timestamp()
-        sleep_time = random_timestamp()
-
-        difference_hours = (
-            int(wake_time.split(':')[0])
-          - int(sleep_time.split(':')[0])
-        )
-        difference_minutes = (
-            int(wake_time.split(':')[1])
-          - int(sleep_time.split(':')[1])
-        )
-
-        difference = (
-            difference_hours*60
-          + difference_minutes
-        )
-        duration_hours = difference // 60
-        duration_minutes = difference % 60
+        ...
 
         try:
             self.assertEqual(
