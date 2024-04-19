@@ -532,7 +532,7 @@ The challenge is to write a program that calculates the difference between a giv
     * from the ``24`` hours in a day
     * and the ``60`` minutes in an hour
 
-  - then :doc:`interpolated </how_to/pass_values>` them in the timestamp strings that are given to the program
+  - then :doc:`interpolated </how_to/pass_values>` them in the timestamp strings that are given to the :ref:`function<functions>`
   - and `test_duration_calculation`_ to make sure that the ``duration`` :ref:`function<functions>` returns the right difference between ``wake_time`` and ``sleep_time``
   - and converts it to a timestamp format
 
