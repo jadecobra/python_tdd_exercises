@@ -76,23 +76,34 @@ refactor: make it better
   .. code-block:: python
 
     def duration(wake_time=None, sleep_time=None):
-        wake_time_minutes = get_total_minutes(wake_time)
-        sleep_time_minutes = get_total_minutes(sleep_time)
+        difference_hours = (
+            read_timestamp(wake_time)
+          - read_timestamp(sleep_time)
+        )
+        difference_minutes = (
+            read_timestamp(wake_time, 1)
+          - read_timestamp(sleep_time, 1)
+        )
 
-        if wake_time_minutes < sleep_time_minutes:
+        difference = (
+            difference_hours*60
+          + difference_minutes
+        )
+
+        if difference < 0:
             raise ValueError(
-                f'wake_time: {wake_time} is earlier '
-                f'than sleep_time: {sleep_time}'
+                f'wake_time: {wake_time}'
+                ' is earlier than '
+                f'sleep_time: {sleep_time}'
             )
         else:
-            difference = (
-                wake_time_minutes
-            - sleep_time_minutes
-            )
-            difference_hours = difference // 60
-            difference_minutes = difference % 60
+            duration_hours = difference // 60
+            duration_minutes = difference % 60
 
-            return f'{difference_hours:02}:{difference_minutes:02}'
+            return (
+                f'{duration_hours:02}:'
+                f'{duration_minutes:02}'
+            )
 
   - When ``wake_time_minutes`` is less than ``sleep_time_minutes``, ``wake_time`` is earlier than ``sleep_time`` and the ``duration`` :ref:`function<functions>` will raise an :doc:`Exception </how_to/exception_handling_programs>`
   - When ``wake_time_minutes`` is greater than or equal to ``sleep_time_minutes``, ``wake_time`` is later than or the same as ``sleep_time`` and the ``duration`` :ref:`function<functions>` returns the difference between the two timestamps
