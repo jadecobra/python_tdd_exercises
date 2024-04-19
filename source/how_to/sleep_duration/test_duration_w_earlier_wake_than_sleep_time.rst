@@ -71,7 +71,7 @@ and the terminal shows passing tests
 refactor: make it better
 *****************************************************************************
 
-* The ``duration`` :ref:`function<functions>` currently returns negative numbers when given an earlier ``wake_time`` than ``sleep_time``. I want it to return durations only when ``wake_time`` is later than or equal to ``sleep_time``. I add a condition for it to make the decision
+* The ``duration`` :ref:`function<functions>` returns negative numbers when given an earlier ``wake_time`` than ``sleep_time``. I want it to return durations only when ``wake_time`` is later than or equal to ``sleep_time``. I add a condition for it to make the decision
 
   .. code-block:: python
 
@@ -97,25 +97,54 @@ refactor: make it better
   - When ``wake_time_minutes`` is less than ``sleep_time_minutes``, ``wake_time`` is earlier than ``sleep_time`` and the ``duration`` :ref:`function<functions>` will raise an :doc:`Exception </how_to/exception_handling_programs>`
   - When ``wake_time_minutes`` is greater than or equal to ``sleep_time_minutes``, ``wake_time`` is later than or the same as ``sleep_time`` and the ``duration`` :ref:`function<functions>` returns the difference between the two timestamps
 
-  the terminal shows a ValueError_ that looks like this for ``test_duration_w_earlier_wake_than_sleep_time`` and the random cases in ``test_duration_w_hours_and_minutes`` where ``wake_time`` is earlier than ``sleep_time``
+  the terminal shows a ValueError_ for ``test_duration_w_hours_and_minutes`` when ``wake_time`` is earlier than ``sleep_time``
+
+  .. code-block::python
+
+    ValueError: wake_time: 07:33 is earlier than sleep_time: 08:12
+
+  and this ValueError_ for ``test_duration_w_earlier_wake_than_sleep_time``
 
   .. code-block:: python
 
-    ValueError: wake_time: 20:26 is earlier than sleep_time: 23:50
+    ValueError: wake_time: 01:00 is earlier than sleep_time: 02:00
 
-* I add the error to the list of exceptions encountered even though I made this one happen
+* I add the error to the list of exceptions encountered though I made this one happen
 
   .. code-block:: python
 
     # Exceptions Encountered
     # AssertionError
+    # TypeError
     # NameError
     # AttributeError
-    # TypeError
-    # SyntaxError
     # ValueError
 
-* and then use `assertRaisesRegex`_ to catch the :doc:`Exception </how_to/exception_handling_tests>` with the specific message raised in ``test_duration_w_earlier_wake_than_sleep_time``
+* then add the `unittest.skip decorator`_ to ``test_duration_w_hours_and_minutes``
+
+  .. code-block:: python
+
+    @unittest.skip
+    def test_duration_w_hours_and_minutes(self):
+    ...
+
+* I add variables for ``wake_time`` and ``sleep_time``
+
+  .. code-block:: python
+
+    def test_duration_w_earlier_wake_than_sleep_time(self):
+        wake_time = '01:00'
+        sleep_time = '02:00'
+
+        self.assertEqual(
+            sleep_duration.duration(
+                wake_time=wake_time,
+                sleep_time=sleep_time
+            ),
+            '-1:00'
+        )
+
+* and use `assertRaisesRegex`_ to catch the :doc:`Exception </how_to/exception_handling_tests>` with the specific message raised in ``test_duration_w_earlier_wake_than_sleep_time``
 
   .. code-block:: python
 
@@ -133,35 +162,31 @@ refactor: make it better
                 sleep_time=sleep_time
             )
 
-  and the test passes, leaving the random ValueError_ for ``test_duration_w_hours_and_minutes`` when ``wake_time`` is earlier than ``sleep_time``
-
-* I add an :doc:`exception handler </how_to/exception_handling_programs>` using a `try statement`_ and `assertRaisesRegex`_ to confirm the ValueError_ is raised when ``wake_time`` is earlier than ``sleep_time`` with the specific message from ``duration``
+  the terminal shows passing tests
+* I remove the `unittest.skip decorator` for ``test_duration_w_hours_and_minutes``
+* then add an :doc:`exception handler </how_to/exception_handling_programs>` using a `try statement`_ and `assertRaisesRegex`_ to confirm the ValueError_ is raised when ``wake_time`` is earlier than ``sleep_time`` with the specific message from ``duration``
 
   .. code-block:: python
 
     def test_duration_w_hours_and_minutes(self):
-        wake_hour = random_hour()
-        wake_minutes = random_minutes()
-        wake_time_minutes = (
-            (wake_hour * 60)
-           + wake_minutes
-        )
-        wake_time = f'{wake_hour:02}:{wake_minutes:02}'
+        wake_time = random_timestamp()
+        sleep_time = random_timestamp()
 
-        sleep_hour = random_hour()
-        sleep_minutes = random_minutes()
-        sleep_time_minutes = (
-            (sleep_hour) * 60
-           + sleep_minutes
+        difference_hours = (
+            int(wake_time.split(':')[0])
+          - int(sleep_time.split(':')[0])
         )
-        sleep_time = f'{sleep_hour:02}:{sleep_minutes:02}'
+        difference_minutes = (
+            int(wake_time.split(':')[1])
+          - int(sleep_time.split(':')[1])
+        )
 
         difference = (
-            wake_time_minutes
-          - sleep_time_minutes
+            difference_hours*60
+          + difference_minutes
         )
-        difference_hours = difference // 60
-        difference_minutes = difference % 60
+        duration_hours = difference // 60
+        duration_minutes = difference % 60
 
         try:
             self.assertEqual(
@@ -169,7 +194,10 @@ refactor: make it better
                     wake_time=wake_time,
                     sleep_time=sleep_time
                 ),
-                f'{difference_hours:02}:{difference_minutes:02}'
+                (
+                    f'{duration_hours:02}:'
+                    f'{duration_minutes:02}'
+                )
             )
         except ValueError:
             with self.assertRaisesRegex(
