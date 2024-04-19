@@ -35,7 +35,6 @@ red: make it fail
     def test_duration_w_hours_and_minutes(self):
         wake_time = random_timestamp()
         sleep_time = random_timestamp()
-    ...
 
 * then add a variable for the difference between the hours
 
@@ -103,7 +102,6 @@ red: make it fail
             int(wake_time.split(':')[1])
           - int(sleep_time.split(':')[1])
         )
-    ...
 
 * I also add ``difference_minutes`` to the expectation
 
