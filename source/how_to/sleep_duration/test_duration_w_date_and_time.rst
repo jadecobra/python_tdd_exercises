@@ -90,7 +90,7 @@ green: make it pass
 
     invalid literal for int() with base 10: '31/12/99 13'
 
-* The `str.split`_ :ref:`method<functions>` was given a separator of a ``':'`` when the timestamp contained only hours and minutes, but behaves differently when the timestamp has a date. I will add a test to ``test_string_splitting`` for this
+* The `str.split`_ :ref:`method<functions>` was given a separator of a ``':'`` when the timestamp contained only hours and minutes, but behaves differently when the timestamp has a date. I add a test to ``test_string_splitting`` for this
 
   .. code-block:: python
 
@@ -169,7 +169,7 @@ green: make it pass
 
   and tests are green again
 
-* I need a solution that can read the date and time. Writing one myself requires calculating the number of days in months for every year. Instead, I will do a search for `time difference <https://docs.python.org/3/search.html?q=time+difference>`_ in `python's online documentation`_, to see if there is an existing solution and select the datetime_ module from the results since it looks like the right one. Reading through the available types in the module I see `datetime.datetime`_ objects which are a combination of date and time
+* I need a solution that can read the date and time. Writing one myself requires calculating the number of days in months for every year. Instead, I search for `time difference <https://docs.python.org/3/search.html?q=time+difference>`_ in `python's online documentation`_, to see if there is an existing solution and select the datetime_ module from the results since it looks like the right one. Reading through the available types in the module I see `datetime.datetime`_ objects which are a combination of date and time
 
   .. code-block:: python
 

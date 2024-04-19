@@ -513,7 +513,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
         )
     ...
 
-* and remove ``get_hour`` and ``get_minutes``. The terminal shows all tests are still passing! I will sleep easier tonight!!
+* and remove ``get_hour`` and ``get_minutes``. The terminal shows all tests are still passing!
 
 *****************************************************************************
 review

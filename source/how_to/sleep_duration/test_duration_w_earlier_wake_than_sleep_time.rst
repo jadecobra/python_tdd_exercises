@@ -22,7 +22,7 @@ I want to know what happens when the ``duration`` :ref:`function<functions>` is 
 red: make it fail
 *****************************************************************************
 
-I will add a failing test to ``test_sleep_duration.py`` to find out
+I add a failing test to ``test_sleep_duration.py`` to find out
 
 .. code-block:: python
 
@@ -71,7 +71,7 @@ and the terminal shows passing tests
 refactor: make it better
 *****************************************************************************
 
-* The ``duration`` :ref:`function<functions>` currently returns negative numbers when given an earlier ``wake_time`` than ``sleep_time``. I want it to return durations only when ``wake_time`` is later than or equal to ``sleep_time``. I will add a condition so it makes this decision
+* The ``duration`` :ref:`function<functions>` currently returns negative numbers when given an earlier ``wake_time`` than ``sleep_time``. I want it to return durations only when ``wake_time`` is later than or equal to ``sleep_time``. I add a condition for it to make the decision
 
   .. code-block:: python
 
