@@ -14,7 +14,7 @@ This is part 4 of a program that calculates the difference between a given wake 
 
 ----
 
-The ``duration`` :ref:`function<functions>` has been tested with timestamps that have hours and minutes with no date, but I could fall asleep on a Monday and wake up on a Tuesday. What would happen if I added dates to the timestamps?
+I want to see what would happen if I added dates to the timestamps?
 
 .. _test_duration_w_date_and_time_red:
 

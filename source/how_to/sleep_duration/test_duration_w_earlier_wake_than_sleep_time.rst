@@ -14,10 +14,11 @@ This is part 3 of a program that calculates the difference between a given wake 
 
 ----
 
-What happens when the ``duration`` :ref:`function<functions>` is given an earlier ``wake_time`` than ``sleep_time``?
+I want to know what happens when the ``duration`` :ref:`function<functions>` is given an earlier ``wake_time`` than ``sleep_time``?
 
 .. _test_duration_w_earlier_wake_than_sleep_time_red:
 
+*****************************************************************************
 red: make it fail
 *****************************************************************************
 
@@ -45,6 +46,7 @@ the terminal shows an :ref:`AssertionError`
 
 .. _test_duration_w_earlier_wake_than_sleep_time_green:
 
+*****************************************************************************
 green: make it pass
 *****************************************************************************
 
@@ -65,6 +67,7 @@ and the terminal shows passing tests
 
 .. _test_duration_w_earlier_wake_than_sleep_time_refactor:
 
+*****************************************************************************
 refactor: make it better
 *****************************************************************************
 
@@ -181,11 +184,25 @@ refactor: make it better
 
   and we are green, green, green, green all the way
 
-I have a :ref:`function<functions>` that
+*****************************************************************************
+review
+*****************************************************************************
 
-* takes in a ``wake_time`` and ``sleep_time`` as inputs
-* raises a ValueError_ with a message when ``wake_time`` is earlier than ``sleep_time``
-* returns the difference between the two when ``wake_time`` is later than or the same as ``sleep_time``
+The challenge is to write a program that calculates the difference between a given wake and sleep time. I ran the following tests to get something that comes close to doing it
+
+
+* :ref:`test_string_splitting`
+* :ref:`test_converting_strings_to_numbers`
+* `test_floor_aka_integer_division`_
+* `test_the_modulo_operation`_
+* :ref:`test_duration_w_hours<test_duration_w_hours>`
+* :ref:`test_duration_w_hours_and_minutes`
+* `test_duration_w_earlier_wake_than_sleep_time`_ to make sure that the `duration` :ref:`function<functions>`
+
+  - raises a ValueError_ with a message when ``wake_time`` is earlier than ``sleep_time`` or
+  - returns the difference between the two when ``wake_time`` is later than or the same as ``sleep_time``
+
+Would you like to :ref:`test duration with dates and time<test_duration_w_date_and_time>`?
 
 ----
 
