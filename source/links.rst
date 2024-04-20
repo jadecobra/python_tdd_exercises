@@ -1,3 +1,4 @@
+.. _assertEqual: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertEqual
 .. _assertRaises: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises
 .. _assertRaisesRegex: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertRaisesRegex
 .. _callable: https://docs.python.org/3/glossary.html#term-callable

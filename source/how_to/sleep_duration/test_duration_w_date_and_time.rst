@@ -76,7 +76,7 @@ red: make it fail
 
     AssertionError: "wake_time: 31/12/99 13:04 is earlier than sleep_time: 31/12/99 15:25" does not match "invalid literal for int() with base 10: '31/12/99 13'"
 
-  it looks like ``test_duration_w_date_and_time`` encountered a ValueError_ with a different message than the one expected in the test. The `assertRaisesRegex`_ works, the test would have missed this if I did not specify what error message to catch
+  it looks like ``test_duration_w_date_and_time`` encountered a ValueError_ with a different message than the one expected in the test. The assertRaisesRegex_ works, the test would have missed this if I did not specify what error message to catch
 
 .. _test_duration_w_date_and_time_green_0:
 

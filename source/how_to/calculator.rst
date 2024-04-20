@@ -200,7 +200,7 @@ green: make it pass
     AssertionError: None != 1
 
   - An :ref:`AssertionError` is raised when an assertion is :doc:`False </data_structures/booleans/booleans>`
-  - ``self.assertEqual`` raises an :ref:`AssertionError` when the two inputs it is given are not equal. In other words the result of calling ``calculator.add(0, 1)`` is currently not equal to ``1``
+  - assertEqual_ raises an :ref:`AssertionError` when the two inputs it is given are not equal. In other words the result of calling ``calculator.add(0, 1)`` is currently not equal to ``1``
 
 * I make the function return the expected value
 
@@ -459,7 +459,7 @@ refactor: make it better
             )
 
   - all tests are still passing, so my change did not break anything. Fantastic!
-  - The ``x`` and ``y`` variables are initialized once as :doc:`class </classes/classes>` attributes (variables) and accessed later in every test using ``self.x`` and ``self.y``, the same way I can call `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :ref:`methods<functions>` like `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ by using ``self.assertEqual``
+  - The ``x`` and ``y`` variables are initialized once as :doc:`class </classes/classes>` attributes (variables) and accessed later in every test using ``self.x`` and ``self.y``, the same way I can call `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :ref:`methods<functions>` like `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ by using assertEqual_
 
 
 ----
