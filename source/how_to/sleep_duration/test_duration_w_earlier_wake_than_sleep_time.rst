@@ -164,7 +164,7 @@ refactor: make it better
 
     NameError: name 'wake_time' is not defined
 
-* I add variables for ``wake_time`` and ``sleep_time`` then reference them in the assertion
+* I add variables for ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
 
@@ -172,16 +172,14 @@ refactor: make it better
         wake_time = '01:00'
         sleep_time = '02:00'
 
-        with self.assertRaisesRegex(
-            ValueError,
-            f'wake_time: {wake_time}'
-            ' is earlier than '
-            f'sleep_time: {sleep_time}'
-        ):
-            sleep_duration.duration(
-                wake_time=wake_time,
-                sleep_time=sleep_time
-            )
+  then reference them in the call to ``sleep_duration.duration``
+
+  .. code-block:: python
+
+    sleep_duration.duration(
+        wake_time=wake_time,
+        sleep_time=sleep_time
+    )
 
   and the test passes
 * I remove the `unittest.skip decorator`_ for ``test_duration_w_hours_and_minutes``
