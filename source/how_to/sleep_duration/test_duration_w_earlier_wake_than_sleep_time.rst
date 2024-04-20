@@ -206,8 +206,9 @@ refactor: make it better
         except ValueError:
             with self.assertRaisesRegex(
                 ValueError,
-                f'wake_time: {wake_time} is earlier '
-                f'than sleep_time: {sleep_time}'
+                f'wake_time: {wake_time}'
+                ' is earlier than '
+                f'sleep_time: {sleep_time}'
             ):
                 sleep_duration.duration(
                     wake_time=wake_time,
