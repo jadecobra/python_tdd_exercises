@@ -71,7 +71,7 @@ and the terminal shows passing tests
 refactor: make it better
 *****************************************************************************
 
-* The ``duration`` :ref:`function<functions>` returns negative numbers when given an earlier ``wake_time`` than ``sleep_time``. I want it to return durations only when ``wake_time`` is later than or equal to ``sleep_time``. I add a condition for it to make the decision
+* The ``duration`` :ref:`function<functions>` returns negative numbers when given an earlier ``wake_time`` than ``sleep_time``. I want it to return a difference only when ``wake_time`` is later than or equal to ``sleep_time``. I add a condition for it to make the decision
 
   .. code-block:: python
 
@@ -156,7 +156,7 @@ refactor: make it better
             '-1:00'
         )
 
-* and replace the ``self.assertEqual`` with `assertRaisesRegex`_ to catch the :doc:`Exception </how_to/exception_handling_tests>` with the specific message raised in ``test_duration_w_earlier_wake_than_sleep_time``
+* I replace the ``self.assertEqual`` with `assertRaisesRegex`_ to catch the :doc:`Exception </how_to/exception_handling_tests>` with the specific message raised in ``test_duration_w_earlier_wake_than_sleep_time``
 
   .. code-block:: python
 
