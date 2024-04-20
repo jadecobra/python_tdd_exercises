@@ -63,7 +63,7 @@ I change the expected value in the test to make it pass
           '-1:00'
       )
 
-and the terminal shows passing tests
+and the test passes
 
 .. _test_duration_w_earlier_wake_than_sleep_time_refactor:
 
@@ -114,6 +114,8 @@ refactor: make it better
 
     ValueError: wake_time: 07:33 is earlier than sleep_time: 08:12
     ValueError: wake_time: 07:46 is earlier than sleep_time: 14:47
+    ValueError: wake_time: 23:10 is earlier than sleep_time: 23:27
+    ValueError: wake_time: 11:32 is earlier than sleep_time: 13:52
 
   and this ValueError_ for ``test_duration_w_earlier_wake_than_sleep_time``
 
@@ -170,7 +172,7 @@ refactor: make it better
             sleep_time=sleep_time
         )
 
-  the terminal shows passing tests
+  and the test passes
 * I remove the `unittest.skip decorator`_ for ``test_duration_w_hours_and_minutes``
 * then add an :doc:`exception handler </how_to/exception_handling_programs>` using a `try statement`_ and `assertRaisesRegex`_ to confirm the ValueError_ is raised when ``wake_time`` is earlier than ``sleep_time`` with the specific message from ``duration``
 
@@ -201,7 +203,7 @@ refactor: make it better
                     sleep_time=sleep_time
                 )
 
-  and we are green, green, green, green all the way
+  and the terminal shows passing tests, green, green, green, green all the way
 
 *****************************************************************************
 review
