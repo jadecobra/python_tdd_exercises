@@ -76,14 +76,7 @@ refactor: make it better
   .. code-block:: python
 
     def duration(wake_time=None, sleep_time=None):
-        difference_hours = (
-            read_timestamp(wake_time)
-          - read_timestamp(sleep_time)
-        )
-        difference_minutes = (
-            read_timestamp(wake_time, 1)
-          - read_timestamp(sleep_time, 1)
-        )
+        ...
 
         difference = (
             difference_hours*60
