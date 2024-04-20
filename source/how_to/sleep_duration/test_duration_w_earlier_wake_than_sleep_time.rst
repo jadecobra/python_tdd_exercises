@@ -71,7 +71,7 @@ and the test passes
 refactor: make it better
 *****************************************************************************
 
-* The ``duration`` :ref:`function<functions>` returns negative numbers when given an earlier ``wake_time`` than ``sleep_time``. I want it to return a difference only when ``wake_time`` is later than or equal to ``sleep_time``. I add a condition for it to make the decision
+* The ``duration`` :ref:`function<functions>` returns a negative duration when given an earlier ``wake_time`` than ``sleep_time``, which is not a real duration. I cannot fall asleep in the present and wake up in the the past. I want it to only return a difference when ``wake_time`` is later than or equal to ``sleep_time``. I add a condition for it to make the decision
 
   .. code-block:: python
 
@@ -142,7 +142,29 @@ refactor: make it better
     def test_duration_w_hours_and_minutes(self):
     ...
 
-* I add variables for ``wake_time`` and ``sleep_time``
+* I replace the ``self.assertEqual`` with `assertRaisesRegex`_ to catch the :doc:`Exception </how_to/exception_handling_tests>` and make sure it has the right message ``test_duration_w_earlier_wake_than_sleep_time``
+
+  .. code-block:: python
+
+    def test_duration_w_earlier_wake_than_sleep_time(self):
+        with self.assertRaisesRegex(
+            ValueError,
+            f'wake_time: {wake_time}'
+            ' is earlier than '
+            f'sleep_time: {sleep_time}'
+        ):
+            sleep_duration.duration(
+                wake_time='01:00',
+                sleep_time='02:00'
+            )
+
+  and get a NameError_
+
+  .. code-block:: python
+
+    NameError: name 'wake_time' is not defined
+
+* I add variables for ``wake_time`` and ``sleep_time`` then reference them in the assertion
 
   .. code-block:: python
 
@@ -150,31 +172,20 @@ refactor: make it better
         wake_time = '01:00'
         sleep_time = '02:00'
 
-        self.assertEqual(
+        with self.assertRaisesRegex(
+            ValueError,
+            f'wake_time: {wake_time}'
+            ' is earlier than '
+            f'sleep_time: {sleep_time}'
+        ):
             sleep_duration.duration(
                 wake_time=wake_time,
                 sleep_time=sleep_time
-            ),
-            '-1:00'
-        )
-
-* I replace the ``self.assertEqual`` with `assertRaisesRegex`_ to catch the :doc:`Exception </how_to/exception_handling_tests>` with the specific message raised in ``test_duration_w_earlier_wake_than_sleep_time``
-
-  .. code-block:: python
-
-    with self.assertRaisesRegex(
-        ValueError,
-        f'wake_time: {wake_time} is earlier '
-        f'than sleep_time: {sleep_time}'
-    ):
-        sleep_duration.duration(
-            wake_time=wake_time,
-            sleep_time=sleep_time
-        )
+            )
 
   and the test passes
 * I remove the `unittest.skip decorator`_ for ``test_duration_w_hours_and_minutes``
-* then add an :doc:`exception handler </how_to/exception_handling_programs>` using a `try statement`_ and `assertRaisesRegex`_ to confirm the ValueError_ is raised when ``wake_time`` is earlier than ``sleep_time`` with the specific message from ``duration``
+* then add an :doc:`exception handler </how_to/exception_handling_programs>` using a `try statement`_ and `assertRaisesRegex`_ to check that the ValueError_ is raised when ``wake_time`` is earlier than ``sleep_time`` with the specific message from ``duration``
 
   .. code-block:: python
 
@@ -203,7 +214,7 @@ refactor: make it better
                     sleep_time=sleep_time
                 )
 
-  and the terminal shows passing tests, green, green, green, green all the way
+  and the terminal shows passing tests with no more random failures, green, green, green, green all the way
 
 *****************************************************************************
 review
@@ -221,9 +232,8 @@ The challenge is to write a program that calculates the difference between a giv
 * `test_duration_w_earlier_wake_than_sleep_time`_ where I used `assertRaisesRegex`_ to make sure the ``duration`` :ref:`function<functions>` raises a ValueError_ with a message when ``wake_time`` is earlier than ``sleep_time``
 * :ref:`test_duration_w_hours_and_minutes<test_duration_w_hours_and_minutes>` where I used
 
-  - a `try statement`_ that calls the :ref:`function<function>`
-  - and when a ValueError_ happens, checks for the right message with `assertRaisesRegex`_
-  - or gets the right difference between the two when ``wake_time`` is later than or the same as ``sleep_time``
+  - a `try statement`_ that calls the :ref:`function<function>`, gets the right difference between the two when ``wake_time`` is later than or the same as ``sleep_time``
+  - or when a ValueError_ happens, checks that it has right message with `assertRaisesRegex`_
 
 
 Would you like to :ref:`test duration with a date and time<test_duration_w_date_and_time>`?
