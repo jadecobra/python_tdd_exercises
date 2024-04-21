@@ -71,7 +71,7 @@ and the test passes
 refactor: make it better
 *****************************************************************************
 
-* The ``duration`` :ref:`function<functions>` returns a negative timestamp when given an earlier ``wake_time`` than ``sleep_time``, which is not a real duration. I want it to only return a difference when ``wake_time`` is later than or equal to ``sleep_time``. I add a condition for it to make the decision
+* The ``duration`` :ref:`function<functions>` returns a negative timestamp when given an earlier ``wake_time`` than ``sleep_time``, which is not a real duration. I want it to only return a difference when ``wake_time`` is later than or the same as ``sleep_time``. I add a condition for it to make the decision
 
   .. code-block:: python
 
@@ -99,7 +99,7 @@ refactor: make it better
             )
 
   - When ``difference`` is less than ``0``, ``wake_time`` is earlier than ``sleep_time`` and the ``duration`` :ref:`function<functions>` will raise an :doc:`Exception </how_to/exception_handling_programs>`
-  - When ``difference`` is greater than or equal to ``0``, ``wake_time`` is later than or the same as ``sleep_time`` and the ``duration`` :ref:`function<functions>` returns the difference between the two timestamps
+  - When ``difference`` is greater than or the same as ``0``, ``wake_time`` is later than or the same as ``sleep_time`` and the ``duration`` :ref:`function<functions>` returns the difference between the two timestamps
 
   the terminal shows a random ValueError_ for ``test_duration_w_hours_and_minutes`` when ``wake_time`` is earlier than ``sleep_time``
 
@@ -157,7 +157,7 @@ refactor: make it better
 
     NameError: name 'wake_time' is not defined
 
-* I add variables for ``wake_time`` and ``sleep_time``
+  I add variables for ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
 
@@ -207,6 +207,8 @@ refactor: make it better
                 )
 
   and the terminal shows passing tests with no more random failures, green, green, green, green all the way
+
+.. _test_duration_w_earlier_wake_than_sleep_time_review:
 
 *****************************************************************************
 review
