@@ -1,9 +1,9 @@
 .. include:: ../../links.rst
 
-.. _test_duration_w_earlier_wake_than_sleep_time:
+.. _test_duration_w_an_earlier_wake_than_sleep_time:
 
 #############################################################################
-how to measure sleep duration: test_duration_w_earlier_wake_than_sleep_time
+how to measure sleep duration: test_duration_w_an_earlier_wake_than_sleep_time
 #############################################################################
 
 This is part 3 of a program that calculates the difference between a given wake and sleep time.
@@ -16,7 +16,7 @@ This is part 3 of a program that calculates the difference between a given wake 
 
 I want to test the ``duration`` :ref:`function<functions>` with an earlier ``wake_time`` than ``sleep_time``?
 
-.. _test_duration_w_earlier_wake_than_sleep_time_red:
+.. _test_duration_w_an_earlier_wake_than_sleep_time_red:
 
 *****************************************************************************
 red: make it fail
@@ -26,7 +26,7 @@ I add a failing test to ``test_sleep_duration.py``
 
 .. code-block:: python
 
-  def test_duration_w_earlier_wake_than_sleep_time(self):
+  def test_duration_w_an_earlier_wake_than_sleep_time(self):
       self.assertEqual(
           sleep_duration.duration(
               wake_time='01:00',
@@ -44,7 +44,7 @@ and get an :ref:`AssertionError`
 
   AssertionError: '-1:00' != ''
 
-.. _test_duration_w_earlier_wake_than_sleep_time_green:
+.. _test_duration_w_an_earlier_wake_than_sleep_time_green:
 
 *****************************************************************************
 green: make it pass
@@ -54,7 +54,7 @@ I change the expected value in the test
 
 .. code-block:: python
 
-  def test_duration_w_earlier_wake_than_sleep_time(self):
+  def test_duration_w_an_earlier_wake_than_sleep_time(self):
       self.assertEqual(
           sleep_duration.duration(
               wake_time='01:00',
@@ -65,7 +65,7 @@ I change the expected value in the test
 
 and the test passes
 
-.. _test_duration_w_earlier_wake_than_sleep_time_refactor:
+.. _test_duration_w_an_earlier_wake_than_sleep_time_refactor:
 
 *****************************************************************************
 refactor: make it better
@@ -110,7 +110,7 @@ refactor: make it better
     ValueError: wake_time: 23:10 is earlier than sleep_time: 23:27
     ValueError: wake_time: 11:32 is earlier than sleep_time: 13:52
 
-  and this ValueError_ for ``test_duration_w_earlier_wake_than_sleep_time``
+  and this ValueError_ for ``test_duration_w_an_earlier_wake_than_sleep_time``
 
   .. code-block:: python
 
@@ -139,7 +139,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_duration_w_earlier_wake_than_sleep_time(self):
+    def test_duration_w_an_earlier_wake_than_sleep_time(self):
         with self.assertRaisesRegex(
             ValueError,
             f'wake_time: {wake_time}'
@@ -161,7 +161,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_duration_w_earlier_wake_than_sleep_time(self):
+    def test_duration_w_an_earlier_wake_than_sleep_time(self):
         wake_time = '01:00'
         sleep_time = '02:00'
 
@@ -208,7 +208,7 @@ refactor: make it better
 
   and the terminal shows passing tests with no more random failures, green, green, green, green all the way
 
-.. _test_duration_w_earlier_wake_than_sleep_time_review:
+.. _test_duration_w_an_earlier_wake_than_sleep_time_review:
 
 *****************************************************************************
 review
@@ -223,7 +223,7 @@ The challenge is to write a program that calculates the difference between a giv
 * :ref:`test_the_modulo_operation`
 * :ref:`test_duration_w_hours<test_duration_w_hours>`
 * :ref:`test_duration_calculation`
-* `test_duration_w_earlier_wake_than_sleep_time`_ where I used assertRaisesRegex_ to make sure the ``duration`` :ref:`function<functions>` raises a ValueError_ with a message when ``wake_time`` is earlier than ``sleep_time``
+* `test_duration_w_an_earlier_wake_than_sleep_time`_ where I used assertRaisesRegex_ to make sure the ``duration`` :ref:`function<functions>` raises a ValueError_ with a message when ``wake_time`` is earlier than ``sleep_time``
 * :ref:`test_duration_w_hours_and_minutes<test_duration_w_hours_and_minutes>` where I used
 
   - a `try statement`_ which checks that the ``duration`` :ref:`function<functions>` returns the right difference when ``wake_time`` is later than or the same as ``sleep_time``

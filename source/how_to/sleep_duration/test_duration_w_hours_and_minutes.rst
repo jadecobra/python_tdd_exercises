@@ -539,7 +539,7 @@ The challenge is to write a program that calculates the difference between a giv
     * by using `floor (integer) division`_ to get the hours
     * and the modulo_ operation to get the minutes
 
-Would you like to :ref:`test duration with an earlier wake than sleep time<test_duration_w_earlier_wake_than_sleep_time>`?
+Would you like to :ref:`test duration with an earlier wake than sleep time<test_duration_w_an_earlier_wake_than_sleep_time>`?
 
 ----
 

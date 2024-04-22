@@ -65,7 +65,7 @@ class TestSleepDuration(unittest.TestCase):
             '2:07:34'
         )
 
-    def test_duration_w_earlier_wake_than_sleep_time(self):
+    def test_duration_w_an_earlier_wake_than_sleep_time(self):
         wake_time = '21/12/12 01:00'
         sleep_time = '21/12/12 02:00'
 

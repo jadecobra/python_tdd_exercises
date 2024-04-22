@@ -210,7 +210,7 @@ I add a test to ``test_sleep_duration.py`` based on `Examples of usage: datetime
           ''
       )
 
-  def test_duration_w_earlier_wake_than_sleep_time(self):
+  def test_duration_w_an_earlier_wake_than_sleep_time(self):
   ...
 
 and the terminal shows a NameError_ because ``datetime`` is not defined in ``test_sleep_duration.py``, I need to import it
@@ -466,7 +466,7 @@ From the tests, I know I can
     def read_timestamp(timestamp=None, index=0):
     ...
 
-  and the terminal shows an :ref:`AssertionError` for ``test_duration_w_earlier_wake_than_sleep_time`` and ``test_duration_w_hours_and_minutes``,  that looks like this
+  and the terminal shows an :ref:`AssertionError` for ``test_duration_w_an_earlier_wake_than_sleep_time`` and ``test_duration_w_hours_and_minutes``,  that looks like this
 
   .. code-block:: python
 
@@ -479,11 +479,11 @@ From the tests, I know I can
     AssertionError: '5:46:00' != '05:46'
 
 * I change ``test_duration_w_hours_and_minutes`` to match the new timestamp format and notice that it is the same exact same test as ``test_duration_w_date_and_time`` so I remove it, I do not need the same test twice
-* I add dates to ``test_duration_w_earlier_wake_than_sleep_time``
+* I add dates to ``test_duration_w_an_earlier_wake_than_sleep_time``
 
   .. code-block:: python
 
-    def test_duration_w_earlier_wake_than_sleep_time(self):
+    def test_duration_w_an_earlier_wake_than_sleep_time(self):
         wake_time = '21/12/12 01:00'
         sleep_time = '21/12/12 02:00'
 
@@ -503,7 +503,7 @@ From the tests, I know I can
 
     AssertionError: ValueError not raised
 
-  the new ``duration`` function is missing the condition for when ``wake_time`` is earlier than ``sleep_time`` so it did not raise the ValueError_ in ``test_duration_w_earlier_wake_than_sleep_time``
+  the new ``duration`` function is missing the condition for when ``wake_time`` is earlier than ``sleep_time`` so it did not raise the ValueError_ in ``test_duration_w_an_earlier_wake_than_sleep_time``
 
 * When I add the condition
 
@@ -739,7 +739,7 @@ The challenge was to write a program that calculates the difference between a gi
 
 * `test_subtracting_datetime_objects`_
 * `test_converting_timedelta_to_string`_
-* `test_duration_w_earlier_wake_than_sleep_time`_
+* `test_duration_w_an_earlier_wake_than_sleep_time`_
 * :ref:`test_duration_w_hours_and_minutes` where I
 
   - used `random.randint`_ to generate random numbers

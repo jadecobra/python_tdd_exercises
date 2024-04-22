@@ -228,7 +228,7 @@ std:label
     test_converting_timedelta_to_string                                              : how_to/sleep_duration.html#test-converting-timedelta-to-string
     test_datetime_datetime_objects           RED: Make It Fail                       : how_to/sleep_duration.html#test-datetime-datetime-objects
     test_duration_calculation                                                        : how_to/sleep_duration.html#test-duration-calculation
-    test_duration_w_earlier_wake_than_sleep_time                                         : how_to/sleep_duration.html#test-duration-w-earlier-wake-than-sleep-time
+    test_duration_w_an_earlier_wake_than_sleep_time                                         : how_to/sleep_duration.html#test-duration-w-earlier-wake-than-sleep-time
     test_duration_w_given_date_and_time                                              : how_to/sleep_duration.html#test-duration-w-given-date-and-time
     test_duration_w_hours_and_minutes                                                : how_to/sleep_duration.html#test-duration-w-hours-and-minutes
     test_duration_w_hours_only                                                       : how_to/sleep_duration.html#test-duration-w-hours-only

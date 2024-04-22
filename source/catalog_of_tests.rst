@@ -63,8 +63,8 @@ test_sleep_duration
 #. :ref:`test_duration_w_hours<test_duration_w_hours>`
 #. :ref:`test_duration_w_hours_and_minutes<test_duration_w_hours_and_minutes>`
 #. :ref:`test_duration_calculation<test_duration_calculation>`
-#. :ref:`test_duration_w_earlier_wake_than_sleep_time<test_duration_w_earlier_wake_than_sleep_time>`
-#. :ref:`test_duration_w_date_and_time<test_duration_w_earlier_wake_than_sleep_time>`
+#. :ref:`test_duration_w_an_earlier_wake_than_sleep_time<test_duration_w_an_earlier_wake_than_sleep_time>`
+#. :ref:`test_duration_w_date_and_time<test_duration_w_an_earlier_wake_than_sleep_time>`
 
 *****************************************************************************
 test_assertion_error
