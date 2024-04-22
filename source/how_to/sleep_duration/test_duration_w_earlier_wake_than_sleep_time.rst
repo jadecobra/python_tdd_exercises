@@ -116,7 +116,7 @@ refactor: make it better
 
     ValueError: wake_time: 01:00 is earlier than sleep_time: 02:00
 
-* I add the error to the list of exceptions encountered though I made this one happen
+* I add the error to the list of exceptions encountered
 
   .. code-block:: python
 
