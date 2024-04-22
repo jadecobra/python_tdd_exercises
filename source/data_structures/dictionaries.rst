@@ -19,7 +19,7 @@ how to make a dictionary with strings as keys
 ------------------------------------------------
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add a file called ``test_dictionaries.py`` to the ``tests`` folder with the following import statements
 
@@ -36,12 +36,12 @@ the terminal shows a :ref:`ModuleNotFoundError`\  which I add to the list of exc
   # ModuleNotFoundError
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 adding a file called ``dictionaries.py`` to the project folder makes the test pass
 
 refactor: make it better
-#############################################################################
+#################################################################################
 
 * I add a failing test to show how to make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
@@ -171,7 +171,7 @@ how to make a dictionary with numbers as keys
 ------------------------------------------------
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add a failing test to ``TestDictionaries``
 
@@ -191,7 +191,7 @@ the terminal shows an :ref:`AssertionError` since the two values are different
 
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 I make the values in the test to make it pass
 
@@ -206,7 +206,7 @@ I make the values in the test to make it pass
 the terminal shows passing tests confirming that `integers <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ can be used as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
 
 refactor: make it better
-#############################################################################
+#################################################################################
 
 * I know I can use `integers <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ and `strings <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys. I want to add a test to see if I can use `floats <https://docs.python.org/3/library/functions.html?highlight=float#float>`_
 
@@ -254,7 +254,7 @@ how to make a dictionary with booleans as keys
 I wonder if it is possible to use :doc:`False </data_structures/booleans/booleans>` or :doc:`True </data_structures/booleans/booleans>` as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add a test to find out if it is possible to use :doc:`False </data_structures/booleans/booleans>` as a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ key
 
@@ -278,7 +278,7 @@ the terminal shows an :ref:`AssertionError`
   ?           ^^
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 I make the values to make them match and tests are green again. Sweet!
 
@@ -293,7 +293,7 @@ I make the values to make them match and tests are green again. Sweet!
 I can use :doc:`False </data_structures/booleans/booleans>` as a key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
 refactor: make it better
-#############################################################################
+#################################################################################
 
 * I add a test to find out if it is possible to use :doc:`True </data_structures/booleans/booleans>` as a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ key
 
@@ -342,7 +342,7 @@ how to make a dictionary with tuples as keys
 ----------------------------------------------
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add a test to ``TestDictionaries`` to see if I can use tuples as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
 
@@ -366,7 +366,7 @@ the terminal shows an :ref:`AssertionError`
   ?           ^ +
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 I make the values to make the test pass
 
@@ -385,7 +385,7 @@ Can I make a Dictionary with a list as a key?
 -------------------------------------------------
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add a test to ``TestDictionaries`` using a :doc:`list </data_structures/lists/lists>` as a key
 
@@ -410,7 +410,7 @@ I add :ref:`TypeError` to the list of exceptions encountered
   # TypeError
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 I can use ``self.assertRaises`` to confirm that an error is raised by some code without having it crash the tests. I use it here to confirm that Python raises a :ref:`TypeError` when I try to make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a :doc:`list </data_structures/lists/lists>` as the key
 
@@ -432,7 +432,7 @@ Can I make a Dictionary with a set as a key?
 I try a similar test using a set as a key
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 .. code-block:: python
 
@@ -446,7 +446,7 @@ the terminal shows a :ref:`TypeError`
   TypeError: unhashable type: 'set'
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 I use ``self.assertRaises`` to handle the exception
 
@@ -464,7 +464,7 @@ Can I make a Dictionary with a dictionary as a key?
 -------------------------------------------------------
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add a new test
 
@@ -482,7 +482,7 @@ and the terminal shows a :ref:`TypeError`
   E       TypeError: unhashable type: 'dict'
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 I add an exception handler to the test to confirm the findings
 
@@ -519,7 +519,7 @@ how to access dictionary values
 The tests so far show how to make `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ and what objects can be used as ``keys``. The following tests show how to access the values of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add a test to ``TestDictionaries`` in ``test_dictionaries.py``
 
@@ -536,7 +536,7 @@ the terminal shows an :ref:`AssertionError` because ``bob`` is not equal to ``va
   AssertionError: 'value' != 'bob'
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 I make the expected value to make the tests pass
 
@@ -547,7 +547,7 @@ I make the expected value to make the tests pass
       self.assertEqual(a_dictionary["key"], "value")
 
 refactor: make it better
-#############################################################################
+#################################################################################
 
 * I can also display all the values of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ as a :doc:`list </data_structures/lists/lists>` without the keys
 
@@ -642,7 +642,7 @@ how to get a value when the key does not exist
 Sometimes when I try to access values in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_, I use a key that does not exist or misspell a key that does exist
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add a test for both cases
 
@@ -668,7 +668,7 @@ and the terminal shows a `KeyError <https://docs.python.org/3/library/exceptions
 A KeyError_ is raised when a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ is called with a ``key`` that does not exist.
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 * I add KeyError_ to the list of exceptions encountered
 
@@ -718,7 +718,7 @@ green: make it pass
             a_dictionary['ky1']
 
 refactor: make it better
-#############################################################################
+#################################################################################
 
 What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a key that does not exist and not have Python raise an error when it does not find the key?
 
@@ -835,7 +835,7 @@ how to view the attributes and methods of a dictionary
 The chapter on :doc:`/classes/classes` shows how to view the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of an object. Let us look at the attributes and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add a new test to ``TestDictionaries``
 
@@ -855,7 +855,7 @@ the terminal shows an :ref:`AssertionError`
   AssertionError: Lists differ: ['__class__', '__class_getitem__', '__cont[530 chars]ues'] != []
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 I copy the expected values shown in the terminal to make the test pass
 
@@ -922,7 +922,7 @@ I copy the expected values shown in the terminal to make the test pass
 
 
 refactor: make it better
-#############################################################################
+#################################################################################
 
 I see some of the :ref:`methods<functions>` I have tested so far and others I did not. You can write tests for the others to show what they do and/or `read more about dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_.
 
@@ -944,7 +944,7 @@ how to set a default value for a given key
 Let us say I want to find out more about the `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_ method
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add a failing test
 
@@ -957,7 +957,7 @@ I add a failing test
 and the terminal shows a KeyError_
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 I add ``self.assertRaises`` to confirm that a KeyError_ gets raised for the test to pass
 
@@ -970,7 +970,7 @@ I add ``self.assertRaises`` to confirm that a KeyError_ gets raised for the test
           a_dictionary['another_key']
 
 refactor: make it better
-#############################################################################
+#################################################################################
 
 * Then I add a test for `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_
 
@@ -1079,7 +1079,7 @@ test_adding_two_dictionaries
 What if I want to add the ``keys`` and ``values`` of one `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ to another?
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add another test to ``TestDictionaries``
 
@@ -1117,7 +1117,7 @@ the terminal shows an :ref:`AssertionError` because the values of ``a_dictionary
 
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 I make the values to make the test pass
 
@@ -1150,7 +1150,7 @@ how to remove an item from a dictionary
 I can remove an item from a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with the `pop <https://docs.python.org/3/library/stdtypes.html#dict.pop>`_ method. It deletes the ``key`` and ``value`` from the `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ and returns the ``value``
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add a failing test to ``TestDictionaries``
 
@@ -1174,7 +1174,7 @@ the terminal shows an :ref:`AssertionError`
   E       AssertionError: 'toothpaste' != None
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 * I add the right value to the test to make it pass
 

@@ -17,7 +17,7 @@ Negate First
 ------------
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add a test for negate first to ``TestBinaryOperations`` in ``test_truth_table.py``
 
@@ -32,7 +32,7 @@ I add a test for negate first to ``TestBinaryOperations`` in ``test_truth_table.
 and the terminal shows an :ref:`AttributeError`
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 * then I add a function definition to ``truth_table.py``
 
@@ -60,7 +60,7 @@ green: make it pass
   and the test passes
 
 refactor: make it better
-#############################################################################
+#################################################################################
 
 
 * I use implied conditional testing
@@ -96,7 +96,7 @@ Negate Second
 -------------
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add a test for negate second to ``TestBinaryOperations``
 
@@ -111,7 +111,7 @@ I add a test for negate second to ``TestBinaryOperations``
 and the terminal shows an :ref:`AttributeError`
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 
 * I add a function definition to ``truth_table.py``

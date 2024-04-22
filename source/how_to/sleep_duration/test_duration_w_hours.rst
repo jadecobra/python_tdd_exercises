@@ -2,9 +2,9 @@
 
 .. _test_duration_w_hours:
 
-#############################################################################
+#################################################################################
 how to measure sleep duration: test_duration_w_hours
-#############################################################################
+#################################################################################
 
 .. raw:: html
 
@@ -22,9 +22,9 @@ This is part 1 of a program that calculates the difference between a given wake 
 
 .. _test_duration_w_hours_red:
 
-*****************************************************************************
+*********************************************************************************
 red: make it fail
-*****************************************************************************
+*********************************************************************************
 
 * I open a terminal and run :ref:`makePythonTdd.sh` with ``sleep_duration`` as the project name
 
@@ -83,9 +83,9 @@ red: make it fail
 
 .. _test_duration_w_hours_green:
 
-*****************************************************************************
+*********************************************************************************
 green: make it pass
-*****************************************************************************
+*********************************************************************************
 
 * I add :ref:`None` as the first and second arguments of the assertion
 
@@ -278,9 +278,9 @@ green: make it pass
 
 .. _test_duration_w_hours_refactor_0:
 
-*****************************************************************************
+*********************************************************************************
 refactor: make it better
-*****************************************************************************
+*********************************************************************************
 
 * I add variables to remove the repetition of the values for ``wake_time`` and ``sleep_time``
 
@@ -461,7 +461,7 @@ refactor: make it better
 .. _test_string_splitting:
 
 test_string_splitting
-#############################################################################
+#################################################################################
 
 .. _test_string_splitting_red:
 
@@ -658,7 +658,7 @@ refactor: make it better
 .. _test_converting_strings_to_numbers:
 
 test_converting_strings_to_numbers
-#############################################################################
+#################################################################################
 
 The hours part of the timestamp after calling `str.split`_ is still a string_ and I got a :ref:`TypeError` when I tried to subtract one from another earlier. I want to see if I can use the int_ constructor to convert a string_ to a number
 
@@ -832,9 +832,9 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
 
 .. _test_duration_w_hours_review:
 
-*****************************************************************************
+*********************************************************************************
 review
-*****************************************************************************
+*********************************************************************************
 
 The challenge is to write a program that calculates the difference between a given wake and sleep time. I ran the following tests to get something that comes close to doing it
 

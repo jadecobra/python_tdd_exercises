@@ -17,7 +17,7 @@ Project First
 -------------
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add a test for project first to ``TestBinaryOperations`` in ``test_truth_table.py``
 
@@ -32,7 +32,7 @@ I add a test for project first to ``TestBinaryOperations`` in ``test_truth_table
 the terminal shows an :ref:`AttributeError`
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 
 * then I add a function definition to ``truth_table.py``
@@ -69,7 +69,7 @@ green: make it pass
   and the tests pass
 
 refactor: make it better
-#############################################################################
+#################################################################################
 
 * I use implied conditional testing to simplify the statements
 
@@ -101,7 +101,7 @@ Project Second
 --------------
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add a test for project second to ``TestBinaryOperations``
 
@@ -116,7 +116,7 @@ I add a test for project second to ``TestBinaryOperations``
 the terminal shows an :ref:`AttributeError`
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 
 * When I add a function definition to ``truth_table.py``

@@ -1,8 +1,8 @@
 .. include:: ../links.rst
 
-#############################################################################
+#################################################################################
 how to pass values
-#############################################################################
+#################################################################################
 
 .. raw:: html
 
@@ -20,12 +20,12 @@ this chapter shows how to pass values from tests to programs using `Formatted st
 
 .. _test_text_messages:
 
-*****************************************************************************
+*********************************************************************************
 test_text_messages
-*****************************************************************************
+*********************************************************************************
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 * I open a terminal and run :ref:`makePythonTdd.sh` with ``telephone`` as the project name
 
@@ -70,7 +70,7 @@ red: make it fail
     NameError: name 'telephone' is not defined
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 * which I add to the list of telephone
 
@@ -172,7 +172,7 @@ green: make it pass
         return 'I received this message: hello'
 
 refactor: make it better
-#############################################################################
+#################################################################################
 
 The problem with this solution is that no matter what value I send to the ``text`` :ref:`function<functions>` it will always return ``'I received this message: hello'``. I need to make it return a value based on the input it receives
 
@@ -214,14 +214,14 @@ the terminal shows passing tests
 
 .. _test_passing_data_structures:
 
-*****************************************************************************
+*********************************************************************************
 test_passing_data_structures
-*****************************************************************************
+*********************************************************************************
 
 I want to try this with other python data structures to see what happens
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add a new failing test
 
@@ -240,7 +240,7 @@ the terminal shows an :ref:`AssertionError`
   AssertionError: 'I received this message: None' != 'I received this message: "None"'
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 I make the test match the expected value
 
@@ -255,7 +255,7 @@ I make the test match the expected value
 the terminal shows passing tests
 
 refactor: make it better
-#############################################################################
+#################################################################################
 
 As an exercise I add more tests to ``test_passing_data_structures`` to see what happens when I pass different data structures to the ``text`` function
 
@@ -419,9 +419,9 @@ As an exercise I add more tests to ``test_passing_data_structures`` to see what 
 
 ----
 
-*****************************************************************************
+*********************************************************************************
 review
-*****************************************************************************
+*********************************************************************************
 
 VOILA! You now know how to pass values from a test to a program and can represent any values as strings using `string interpolation`_. You also encountered the following exceptions
 

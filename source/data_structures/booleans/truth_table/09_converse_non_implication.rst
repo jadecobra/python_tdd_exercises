@@ -14,7 +14,7 @@ The tests in this chapter cover Converse NonImplication from the `Truth Table <h
 
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add a test for converse nonimplication to ``TestBinaryOperations`` in ``test_truth_table.py``
 
@@ -29,7 +29,7 @@ I add a test for converse nonimplication to ``TestBinaryOperations`` in ``test_t
 the terminal shows an :ref:`AttributeError`
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 * I add a function definition to ``truth_table.py``
 
@@ -51,7 +51,7 @@ green: make it pass
   all the tests pass
 
 refactor: make it better
-#############################################################################
+#################################################################################
 
 * I use implied conditional testing with ``not`` for the first part of the if statement
 

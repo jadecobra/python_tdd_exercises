@@ -14,7 +14,7 @@ The following tests show Exclusive Disjunction from the `Truth Table <https://en
 
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add a test for exclusive disjunction to ``TestBinaryOperations`` in ``test_truth_table.py``
 
@@ -29,7 +29,7 @@ I add a test for exclusive disjunction to ``TestBinaryOperations`` in ``test_tru
 and the terminal shows an :ref:`AttributeError`
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 * then add a definition that returns :doc:`True </data_structures/booleans/booleans>`
 
@@ -63,7 +63,7 @@ green: make it pass
   and all the tests pass. Wonderful!
 
 refactor: make it better
-#############################################################################
+#################################################################################
 
 * In the first case ``p`` and ``q`` have the same value, I can change the statement to reflect this like I did with ``logical_equality``
 

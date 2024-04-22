@@ -1,8 +1,8 @@
 .. include:: ../../links.rst
 
-#############################################################################
+#################################################################################
 lists
-#############################################################################
+#################################################################################
 
 .. raw:: html
 
@@ -27,9 +27,9 @@ A `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ 
 
 .. _test_making_a_list:
 
-*****************************************************************************
+*********************************************************************************
 test_making_a_list
-*****************************************************************************
+*********************************************************************************
 
 red: make it fail
 ==================
@@ -115,9 +115,9 @@ refactor: make it better
 
 ----
 
-*****************************************************************************
+*********************************************************************************
 test_adding_an_item_to_a_list
-*****************************************************************************
+*********************************************************************************
 
 red: make it fail
 ===================
@@ -162,9 +162,9 @@ I started with a list that contained 4 things, added something using the `append
 
 ----
 
-*****************************************************************************
+*********************************************************************************
 test_removing_an_item_from_a_list
-*****************************************************************************
+*********************************************************************************
 
 red: make it fail
 ===================
@@ -233,9 +233,9 @@ What happens when there is more than one of the same item in a list? How does Py
 
 ----
 
-*****************************************************************************
+*********************************************************************************
 test_removing_the_last_item_from_a_list
-*****************************************************************************
+*********************************************************************************
 
 red: make it fail
 ===================
@@ -294,9 +294,9 @@ green: make it pass
 
 .. _test_getting_items_from_a_list:
 
-*****************************************************************************
+*********************************************************************************
 test_getting_items_from_a_list
-*****************************************************************************
+*********************************************************************************
 
 To view an item in a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ I can provide the position as an index in ``[]`` to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. Python uses zero-based indexing which means the positions of items starts at 0. I can also view items from the right side of the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ by using negative numbers
 
@@ -393,9 +393,9 @@ green: make it pass
 
 .. _test_index_error:
 
-*****************************************************************************
+*********************************************************************************
 test_index_error
-*****************************************************************************
+*********************************************************************************
 
 An IndexError_ is raised when I try to get an item from a list but use a number that is greater than the number of items in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_.
 
@@ -466,9 +466,9 @@ refactor: make it better
 
 .. _test_list_attributes_and_methods:
 
-*****************************************************************************
+*********************************************************************************
 test_list_attributes_and_methods
-*****************************************************************************
+*********************************************************************************
 
 The chapter on :doc:`/classes/classes` shows how to view the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of an `object <https://docs.python.org/3/glossary.html#term-object>`_ by using the dir_ :ref:`function<functions>`. Let us try it for `lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
 
@@ -601,9 +601,9 @@ You can add tests for these :ref:`methods<functions>` to find out what they do o
 
 .. _lists_review:
 
-*****************************************************************************
+*********************************************************************************
 review
-*****************************************************************************
+*********************************************************************************
 
 * Lists are represented with ``[]``
 * Lists can be made with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor

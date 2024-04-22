@@ -1,8 +1,8 @@
 .. include:: ../links.rst
 
-#############################################################################
+#################################################################################
 how to make a person
-#############################################################################
+#################################################################################
 
 .. raw:: html
 
@@ -18,12 +18,12 @@ This is an exercise in making :doc:`dictionaries </data_structures/dictionaries>
 
 ---
 
-*****************************************************************************
+*********************************************************************************
 test_person_factory
-*****************************************************************************
+*********************************************************************************
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 * I open a terminal and run :ref:`makePythonTdd.sh` with ``person`` as the project name
 
@@ -67,7 +67,7 @@ red: make it fail
 
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 * which I add to the list of exceptions
 
@@ -85,7 +85,7 @@ green: make it pass
         return None
 
 refactor: make it better
-#############################################################################
+#################################################################################
 
 * I want to pass in values for ``first_name``, ``last_name``, ``year_of_birth``, ``sex`` and have the :ref:`function<functions>` return a :doc:`dictionary </data_structures/dictionaries>` with the ``first_name``, ``last_name``, ``sex`` and ``age`` calculated from the ``year_of_birth``, so I add more details to ``test_person_factory``
 
@@ -242,7 +242,7 @@ test_factory_w_variable_inputs
 -----------------------------------------------------------------------------
 
 red: make it fail
-#############################################################################
+#################################################################################
 * The factory function currently returns the exact same dictionary every time, regardless of what inputs it gets. It is a :doc:`singleton function </functions/test_singleton_functions>`. To be more useful it has to use the inputs it is given. I add another test to ``test_person.py`` with a different set of inputs
 
   .. code-block:: python
@@ -270,7 +270,7 @@ red: make it fail
     AssertionError: {'first_name': 'sibling', 'last_name': 'last_name', 'sex': 'F', 'age': 0} != {'first_name': 'me', 'last_name': 'my_last_name', 'sex': 'M', 'age': 41}
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 * I make the ``factory`` function use the input provided for ``first_name``
 
@@ -358,7 +358,7 @@ green: make it pass
   and the terminal shows passing tests, time for a victory dance
 
 refactor: make it better
-#############################################################################
+#################################################################################
 
 * When I call the ``factory`` :ref:`function<functions>` passing in values for ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``, it returns a :doc:`dictionary </data_structures/dictionaries>` that contains the ``first_name``, ``last_name``, ``sex`` and ``age`` of the person
 
@@ -439,9 +439,9 @@ refactor: make it better
 
 ----
 
-*********************************************************************************
+*************************************************************************************
 test_factory_w_default_keyword_arguments
-*********************************************************************************
+*************************************************************************************
 
 red: make it fail
 ==================
@@ -489,12 +489,12 @@ red: make it fail
 
 .. _test_factory_w_sex_default_keyword_argument:
 
-*********************************************************************************
+*************************************************************************************
 test_factory_w_sex_default_keyword_argument
-*********************************************************************************
+*************************************************************************************
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 * I add a test called ``test_factory_w_sex_default_keyword_argument`` to try another default value
 
@@ -525,7 +525,7 @@ red: make it fail
     AssertionError: {'first_name': 'person', 'last_name': 'last_name', 'sex': None, 'age': 124} != {'first_name': 'person', 'last_name': 'last_name', 'age': 124, 'sex': 'M'}
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 * 3 out of the 4 persons made in the tests have ``M`` as their sex and 1 person has ``F`` as the value for sex. I set the default value for the parameter in ``person.factory`` to the majority to reduce the number of repetitions
 
@@ -541,9 +541,9 @@ green: make it pass
 
 ----
 
-*********************************************************************************
+*************************************************************************************
 review
-*********************************************************************************
+*************************************************************************************
 
 From the tests above I can make a :ref:`function<functions>` that
 

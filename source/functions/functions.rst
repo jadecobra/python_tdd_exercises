@@ -1,8 +1,8 @@
 .. include:: ../links.rst
 
-#############################################################################
+#################################################################################
 functions
-#############################################################################
+#################################################################################
 
 A ``function`` is a callable_ unit/block of code. It is a way to write statements that can be used to accomplish a task at a different time from when they are written. Using functions makes the code modular which makes it easier to read, test, reuse, maintain and improve.
 

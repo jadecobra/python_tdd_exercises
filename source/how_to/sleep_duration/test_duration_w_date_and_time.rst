@@ -2,9 +2,9 @@
 
 .. _test_duration_w_date_and_time:
 
-#############################################################################
+#################################################################################
 how to measure sleep duration: test_duration_w_date_and_time
-#############################################################################
+#################################################################################
 
 This is part 4 of a program that calculates the difference between a given wake and sleep time.
 
@@ -18,9 +18,9 @@ I want to see what would happen if I added dates to the timestamps?
 
 .. _test_duration_w_date_and_time_red:
 
-*****************************************************************************
+*********************************************************************************
 red: make it fail
-*****************************************************************************
+*********************************************************************************
 
 * I copy ``test_duration_w_hours_and_minutes`` and paste it below the original
 * then rename the copy to ``test_duration_w_date_and_time`` to test ``duration`` with timestamps that have a date, hours and minutes
@@ -80,9 +80,9 @@ red: make it fail
 
 .. _test_duration_w_date_and_time_green_0:
 
-*****************************************************************************
+*********************************************************************************
 green: make it pass
-*****************************************************************************
+*********************************************************************************
 
 * The ``read_timestamp`` :ref:`function<functions>` tries to convert the given string_ to an integer but it is in the wrong format
 
@@ -190,7 +190,7 @@ green: make it pass
 .. _test_datetime_objects:
 
 test_datetime_objects
-#############################################################################
+#################################################################################
 
 .. _test_datetime_objects_red:
 
@@ -269,7 +269,7 @@ and the terminal shows passing tests. From this test I see that
 .. _test_subtracting_datetime_objects:
 
 test_subtracting_datetime_objects
-#############################################################################
+#################################################################################
 
 .. _test_subtracting_datetime_objects_red:
 
@@ -350,7 +350,7 @@ With these passing tests. I see that I can
 .. _test_converting_timedelta_to_string:
 
 test_converting_timedelta_to_string
-#############################################################################
+#################################################################################
 
 .. _test_converting_timedelta_to_string_red:
 
@@ -591,9 +591,9 @@ From the tests, I know I can
 
 .. _test_duration_w_date_and_time_refactor:
 
-*****************************************************************************
+*********************************************************************************
 refactor: make it better
-*****************************************************************************
+*********************************************************************************
 
 * I remove ``wake_time_minutes`` and ``sleep_time_minutes`` because they are no longer used
 * as well as ``wake_hour``, ``wake_minutes``, ``sleep_hour`` and ``sleep_minutes``, and replacing them with direct calls to ``random_hour`` and ``random_minutes`` since they are only used once after assignment
@@ -717,9 +717,9 @@ refactor: make it better
 
 .. _sleep_duration_review:
 
-*****************************************************************************
+*********************************************************************************
 review
-*****************************************************************************
+*********************************************************************************
 
 The challenge was to write a program that calculates the difference between a given wake and sleep time. I ran the following tests to get something that does it
 

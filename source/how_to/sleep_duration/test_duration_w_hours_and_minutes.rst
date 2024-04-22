@@ -2,9 +2,9 @@
 
 .. _test_duration_w_hours_and_minutes:
 
-#############################################################################
+#################################################################################
 how to measure sleep duration: test_duration_w_hours_and_minutes
-#############################################################################
+#################################################################################
 
 .. raw:: html
 
@@ -24,9 +24,9 @@ I want to test the ``duration`` :ref:`function<functions>` with timestamps where
 
 .. _test_duration_w_hours_and_minutes_red:
 
-*****************************************************************************
+*********************************************************************************
 red: make it fail
-*****************************************************************************
+*********************************************************************************
 
 * I rename ``test_duration_w_hours``
 
@@ -141,9 +141,9 @@ red: make it fail
 
 .. _test_duration_w_hours_and_minutes_green:
 
-*****************************************************************************
+*********************************************************************************
 green: make it pass
-*****************************************************************************
+*********************************************************************************
 
 * I make a copy of ``difference_hours`` in ``duration``, rename it, then add it to the return statement
 
@@ -193,14 +193,14 @@ green: make it pass
 
 .. _test_duration_w_hours_and_minutes_refactor:
 
-*****************************************************************************
+*********************************************************************************
 refactor: make it better
-*****************************************************************************
+*********************************************************************************
 
 .. _test_duration_calculation:
 
 test_duration_calculation
-#############################################################################
+#################################################################################
 
 The ``duration`` :ref:`function<functions>` returns a subtraction of hours and a subtraction of minutes which does not give the right difference between the timestamps
 
@@ -286,7 +286,7 @@ green: make it pass
   If I divide the total number of minutes by ``60``, the whole number from the result is the hours and the remainder is the minutes
 
 test_floor_aka_integer_division
-#############################################################################
+#################################################################################
 
 The ``//`` operator returns a whole number which is how many times the bottom number can be multiplied to get a whole number that is equal to or as close to the top number as possible. It should give me the hours when I divide by ``60``
 
@@ -338,7 +338,7 @@ The ``//`` operator returns a whole number which is how many times the bottom nu
 .. _test_the_modulo_operation:
 
 test_the_modulo_operation
-#############################################################################
+#################################################################################
 
 The ``%`` operator returns the remainder when a number is divided by another, it should give me the minutes when I divide by ``60``
 
@@ -513,9 +513,9 @@ The ``%`` operator returns the remainder when a number is divided by another, it
 
 * and remove ``get_hour`` and ``get_minutes``. The terminal shows all tests are still passing!
 
-*****************************************************************************
+*********************************************************************************
 review
-*****************************************************************************
+*********************************************************************************
 
 The challenge is to write a program that calculates the difference between a given wake and sleep time. I ran the following tests to get something that comes close to doing it
 

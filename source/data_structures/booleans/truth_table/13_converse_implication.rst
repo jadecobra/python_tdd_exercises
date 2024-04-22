@@ -14,7 +14,7 @@ This chapter continues the journey of writing conditional statements using the `
 
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add a test for converse implication to ``TestBinaryOperations`` in ``test_truth_table.py``
 
@@ -29,7 +29,7 @@ I add a test for converse implication to ``TestBinaryOperations`` in ``test_trut
 the terminal shows an :ref:`AttributeError`
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 * I add a function definition to ``truth_table.py``
 
@@ -60,7 +60,7 @@ green: make it pass
   all the tests pass
 
 refactor: make it better
-#############################################################################
+#################################################################################
 
 * I replace the ``if`` condition using python's implied conditional testing
 

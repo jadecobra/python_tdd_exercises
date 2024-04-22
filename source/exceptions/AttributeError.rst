@@ -2,9 +2,9 @@
 
 .. _AttributeError:
 
-#############################################################################
+#################################################################################
 AttributeError
-#############################################################################
+#################################################################################
 
 ----
 
@@ -18,21 +18,21 @@ An Attribute is a property, variable, function or name that belongs to an `objec
 
 An `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name in an `object <https://docs.python.org/3/glossary.html#term-object>`_ that does not exist.
 
-*****************************************************************************
+*********************************************************************************
 requirements
-*****************************************************************************
+*********************************************************************************
 
 
 :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>`
 
 ----
 
-*****************************************************************************
+*********************************************************************************
 test_attribute_error_w_variables
-*****************************************************************************
+*********************************************************************************
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I open a new file, save it as ``test_attribute_error.py`` in the ``tests`` folder made in :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` and type the following
 
@@ -53,7 +53,7 @@ the terminal shows a :ref:`ModuleNotFoundError` if you have not yet done the :do
 A :ref:`ModuleNotFoundError` is raised when a name is provided to an `import statement`_ and python cannot find the name. Since there is currently no file called ``module.py`` the ``import module`` line causes a failure
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 * I make the list of exceptions encountered
 
@@ -144,7 +144,7 @@ A NameError_ is raised when there is a reference to a name within an `object <ht
 
 
 refactor: make it better
-#############################################################################
+#################################################################################
 
 I could repeat the above tests as a drill to help remember the solution
 
@@ -291,12 +291,12 @@ If you have been typing along *WELL DONE!* You now know
 
 ----
 
-*****************************************************************************
+*********************************************************************************
 test_attribute_error_w_functions
-*****************************************************************************
+*********************************************************************************
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add a new test to ``TestAttributeError`` class in ``tests/test_attribute_error.py``
 
@@ -312,7 +312,7 @@ the terminal shows an `AttributeError <https://docs.python.org/3/library/excepti
   AttributeError: module 'module' has no attribute 'function_0'
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 * I try the solution I know for solving `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ with variables and change ``module.py`` to include a new variable
 
@@ -353,7 +353,7 @@ green: make it pass
   the terminal shows passing tests
 
 refactor: make it better
-#############################################################################
+#################################################################################
 
 * Time to make a drill. You can change ``test_attribute_error_w_functions`` in the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` to include calls to functions in ``module.py`` until you have one for ``module.function_99()``
 
@@ -387,9 +387,9 @@ refactor: make it better
 
 .. _test_attribute_error_w_classes:
 
-*****************************************************************************
+*********************************************************************************
 test_attribute_error_w_classes
-*****************************************************************************
+*********************************************************************************
 
 I think of a :doc:`class </classes/classes>` as a container of :doc:`methods (functions) </functions/functions>` and attributes that represents an `object <https://docs.python.org/3/glossary.html#term-object>`_
 
@@ -401,7 +401,7 @@ For example I could define a ``Human`` class with attributes like eye color, dat
 .. _test_attribute_error_w_classes_red:
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 * I add a test function to the ``TestAttributeError`` class in ``tests/test_attribute_error.py``
 
@@ -419,7 +419,7 @@ red: make it fail
 .. _test_attribute_error_w_classes_green:
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 * I add a name to ``module.py``
 
@@ -447,7 +447,7 @@ green: make it pass
 .. _test_attribute_error_w_classes_refactor:
 
 refactor: make it better
-#############################################################################
+#################################################################################
 
 * This could also be a drill, add lines to ``test_attribute_error_w_classes`` in the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` until you have one for ``module.Class99()``, you will have 100 lines
 
@@ -482,14 +482,14 @@ refactor: make it better
 
 .. _test_attribute_error_w_class_attributes:
 
-*****************************************************************************
+*********************************************************************************
 test_attribute_error_w_class_attributes
-*****************************************************************************
+*********************************************************************************
 
 .. _test_attribute_error_w_class_attributes_red:
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 
 * I add a new test to the ``TestAttributeError`` class in ``test_attribute_error.py``
@@ -508,7 +508,7 @@ red: make it fail
 .. _test_attribute_error_w_class_attributes_green:
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 * I add a variable to ``module.py``
 
@@ -587,7 +587,7 @@ green: make it pass
 .. _test_attribute_error_w_class_attributes_refactor:
 
 refactor: make it better
-#############################################################################
+#################################################################################
 
 * The current solution for ``test_attribute_error_w_classes`` was done by defining functions but the test name contains ``defining_classes``, time to go back and change ``module.py`` using the `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword instead of `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
 
@@ -635,14 +635,14 @@ refactor: make it better
 
 .. _test_attribute_error_w_class_methods:
 
-*****************************************************************************
+*********************************************************************************
 test_attribute_error_w_class_methods
-*****************************************************************************
+*********************************************************************************
 
 .. _test_attribute_error_w_class_methods_red:
 
 red: make it fail
-#############################################################################
+#################################################################################
 * I add a new test to the ``TestAttributeError`` class in ``test_attribute_error.py``
 
   .. code-block:: python
@@ -659,7 +659,7 @@ red: make it fail
 .. _test_attribute_error_w_class_methods_green:
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 * I add a name to ``Class`` in ``module.py``
 
@@ -693,7 +693,7 @@ green: make it pass
 .. _test_attribute_error_w_class_methods_refactor:
 
 refactor: make it better
-#############################################################################
+#################################################################################
 
 You know the "drill", add more lines until there are 100 tests ending with one for ``module.Class.method_99()`` to ``test_attribute_error_w_class_methods`` in ``TestAttributeError`` in ``test_attribute_error.py``
 
@@ -713,9 +713,9 @@ repeat the solution until all tests pass
 
 .. _AttributeError_review:
 
-*****************************************************************************
+*********************************************************************************
 review
-*****************************************************************************
+*********************************************************************************
 
 *CONGRATULATIONS!* you encountered the following exceptions
 

@@ -2,9 +2,9 @@
 
 .. _test_passthrough_functions:
 
-#############################################################################
+#################################################################################
 functions: test_passthrough_functions
-#############################################################################
+#################################################################################
 
 ----
 
@@ -18,9 +18,9 @@ Passthrough :ref:`functions` return their input as output
 
 .. _test_passthrough_functions_red:
 
-*****************************************************************************
+*********************************************************************************
 red: make it fail
-*****************************************************************************
+*********************************************************************************
 
 I add a failing test to the ``TestFunctions`` class in ``test_functions.py``
 
@@ -33,9 +33,9 @@ the terminal shows an :ref:`AttributeError`
 
 .. _test_passthrough_functions_green:
 
-*****************************************************************************
+*********************************************************************************
 green: make it pass
-*****************************************************************************
+*********************************************************************************
 
 * I add a function definition to ``functions.py``
 
@@ -86,16 +86,16 @@ green: make it pass
 
 .. _test_passthrough_functions_refactor:
 
-*****************************************************************************
+*********************************************************************************
 refactor: make it better
-*****************************************************************************
+*********************************************************************************
 
 Wait a minute! Something is not quite right here. The definition for a ``passthrough`` function was that it returned the same thing it was given, the test passes when :doc:`False </data_structures/booleans/booleans>` is given as input, will it still pass when another value is given or will it always return :doc:`False </data_structures/booleans/booleans>`? Time to write a test
 
 .. _test_passthrough_functions_refactor_red:
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add a new assertion to ``test_passthrough_functions``
 
@@ -116,7 +116,7 @@ the function returns :doc:`False </data_structures/booleans/booleans>` instead o
 .. _test_passthrough_functions_refactor_green:
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 I change the definition of ``passthrough`` in ``functions.py``
 
@@ -130,7 +130,7 @@ the terminal shows passing tests. I have more confidence that the passthrough fu
 .. _test_passthrough_functions_refactor_refactor:
 
 refactor: make it better
-#############################################################################
+#################################################################################
 
 I add more assertions
 
@@ -153,9 +153,9 @@ the terminal shows an :ref:`AssertionError` for each line until I make the input
 
 .. _test_passthrough_functions_review:
 
-*****************************************************************************
+*********************************************************************************
 review
-*****************************************************************************
+*********************************************************************************
 
 From the tests I know
 

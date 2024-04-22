@@ -2,9 +2,9 @@
 
 .. _classes:
 
-#############################################################################
+#################################################################################
 classes
-#############################################################################
+#################################################################################
 
 ``classes`` are things that represent an object. I think of ``classes`` as a a container of :doc:`methods (functions) </functions/functions>` and ``attributes (variables)`` that belong together
 

@@ -1,8 +1,8 @@
 .. include:: ../../../links.rst
 
-#############################################################################
+#################################################################################
 truth table: Nullary and Unary Operations
-#############################################################################
+#################################################################################
 
 .. contents:: table of contents
   :local:
@@ -17,9 +17,9 @@ There are only two boolean values
 
 The Truth Table gives the 16 outcomes of binary operations on these two values
 
-*****************************************************************************
+*********************************************************************************
 requirements
-*****************************************************************************
+*********************************************************************************
 
 :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` with ``truth_table`` as the project name
 
@@ -29,14 +29,14 @@ requirements
 
 ----
 
-*****************************************************************************
+*********************************************************************************
 Nullary Operations
-*****************************************************************************
+*********************************************************************************
 
 Nullary operations do not take in inputs and always return the same value. They are :ref:`singleton functions<test_singleton_functions>`
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I make a file called ``test_truth_table.py`` in the ``tests`` folder and add the text below
 
@@ -48,7 +48,7 @@ I make a file called ``test_truth_table.py`` in the ``tests`` folder and add the
 the terminal shows a :ref:`ModuleNotFoundError`
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 * I add :ref:`ModuleNotFoundError` to the list of exceptions encountered
 
@@ -92,7 +92,7 @@ green: make it pass
   and the terminal shows passing tests which remind me that :doc:`True </data_structures/booleans/booleans>` is :doc:`True </data_structures/booleans/booleans>`
 
 refactor: make it better
-#############################################################################
+#################################################################################
 
 
 * I add a test for ``logical_false`` to ``TestNullaryOperations`` class in ``test_truth_table.py``
@@ -122,9 +122,9 @@ refactor: make it better
 
 ----
 
-*****************************************************************************
+*********************************************************************************
 Unary Operations
-*****************************************************************************
+*********************************************************************************
 
 There are two unary operations
 
@@ -134,7 +134,7 @@ There are two unary operations
 .. _test_logical_identity:
 
 test_logical_identity
-#############################################################################
+#################################################################################
 
 A Logical Identity operation takes input and returns it as output, it is a :doc:`passthrough function </functions/functions_passthrough>`
 
@@ -168,7 +168,7 @@ and the terminal shows passing tests
 .. _test_logical_negation:
 
 test_logical_negation
-#############################################################################
+#################################################################################
 
 A Logical Negation operation takes input and returns its opposite as output
 
@@ -208,9 +208,9 @@ green: make it pass
   and the terminal shows passing tests
 
 
-*****************************************************************************
+*********************************************************************************
 review
-*****************************************************************************
+*********************************************************************************
 
 I know that
 

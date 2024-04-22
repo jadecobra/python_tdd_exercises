@@ -2,9 +2,9 @@
 
 .. _test_duration_w_an_earlier_wake_than_sleep_time:
 
-#############################################################################
+#################################################################################
 how to measure sleep duration: test_duration_w_an_earlier_wake_than_sleep_time
-#############################################################################
+#################################################################################
 
 This is part 3 of a program that calculates the difference between a given wake and sleep time.
 
@@ -18,9 +18,9 @@ I want to test the ``duration`` :ref:`function<functions>` with an earlier ``wak
 
 .. _test_duration_w_an_earlier_wake_than_sleep_time_red:
 
-*****************************************************************************
+*********************************************************************************
 red: make it fail
-*****************************************************************************
+*********************************************************************************
 
 I add a failing test to ``test_sleep_duration.py``
 
@@ -46,9 +46,9 @@ and get an :ref:`AssertionError`
 
 .. _test_duration_w_an_earlier_wake_than_sleep_time_green:
 
-*****************************************************************************
+*********************************************************************************
 green: make it pass
-*****************************************************************************
+*********************************************************************************
 
 I change the expected value in the test
 
@@ -67,9 +67,9 @@ and the test passes
 
 .. _test_duration_w_an_earlier_wake_than_sleep_time_refactor:
 
-*****************************************************************************
+*********************************************************************************
 refactor: make it better
-*****************************************************************************
+*********************************************************************************
 
 * The ``duration`` :ref:`function<functions>` returns a negative timestamp when given an earlier ``wake_time`` than ``sleep_time``, which is not a real duration. I want it to only return a difference when ``wake_time`` is later than or the same as ``sleep_time``. I add a condition for it to make the decision
 
@@ -210,9 +210,9 @@ refactor: make it better
 
 .. _test_duration_w_an_earlier_wake_than_sleep_time_review:
 
-*****************************************************************************
+*********************************************************************************
 review
-*****************************************************************************
+*********************************************************************************
 
 The challenge is to write a program that calculates the difference between a given wake and sleep time. I ran the following tests to get something that comes close to doing it
 

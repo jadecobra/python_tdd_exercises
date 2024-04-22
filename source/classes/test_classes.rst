@@ -2,9 +2,9 @@
 
 .. _test_classes:
 
-#############################################################################
+#################################################################################
 classes: test_classes
-#############################################################################
+#################################################################################
 
 .. contents:: table of contents
   :local:
@@ -14,9 +14,9 @@ classes: test_classes
 
 ``classes`` are things that represent an object. I think of ``classes`` as a a container of :doc:`methods (functions) </functions/functions>` and ``attributes (variables)`` that belong together
 
-*****************************************************************************
+*********************************************************************************
 how to make a class in Python
-*****************************************************************************
+*********************************************************************************
 
 * use the `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword
 * use ``TitleCase`` for the name
@@ -25,12 +25,12 @@ how to make a class in Python
 ----
 .. _test_defining_classes_w_pass
 
-*****************************************************************************
+*********************************************************************************
 test_defining_classes_w_pass
-*****************************************************************************
+*********************************************************************************
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I make a new file called ``test_classes.py`` in the ``tests`` directory
 
@@ -48,7 +48,7 @@ I make a new file called ``test_classes.py`` in the ``tests`` directory
 the terminal shows a :ref:`ModuleNotFoundError` because I have an import statement for a module called ``classes``
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 * I add :ref:`ModuleNotFoundError` to the list of exceptions encountered
 
@@ -121,7 +121,7 @@ green: make it pass
 
 
 refactor: make it better
-#############################################################################
+#################################################################################
 
 Here is a quick review of what has happened so far
 
@@ -134,12 +134,12 @@ Here is a quick review of what has happened so far
 
 .. _test_defining_classes_w_parentheses:
 
-*****************************************************************************
+*********************************************************************************
 test_defining_classes_w_parentheses
-*****************************************************************************
+*********************************************************************************
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add another test to ``TestClasses`` in ``test_classes.py`` to show another way to make a class
 
@@ -151,7 +151,7 @@ I add another test to ``TestClasses`` in ``test_classes.py`` to show another way
 the terminal shows an :ref:`AttributeError`
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 
 * I add a class definition like ``ClassWithPass`` to ``classes.py``
@@ -186,9 +186,9 @@ green: make it pass
 
 .. _test_defining_classes_w_object:
 
-*****************************************************************************
+*********************************************************************************
 test_defining_classes_w_object
-*****************************************************************************
+*********************************************************************************
 
 In object oriented programming there is a concept called `Inheritance <https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming>`_\ ). With Inheritance I can define new `objects <https://docs.python.org/3/glossary.html#term-object>`_ that inherit from existing `objects <https://docs.python.org/3/glossary.html#term-object>`_.
 
@@ -197,7 +197,7 @@ Making new objects is easier because I do not have to reinvent or rewrite things
 To use inheritance I specify the "parent" in parentheses when I define the new object (the child) to establish the relationship
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add another test to ``TestClasses`` in ``test_classes.py``
 
@@ -209,7 +209,7 @@ I add another test to ``TestClasses`` in ``test_classes.py``
 and the terminal shows an :ref:`AttributeError`
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 
 * I add a class definition to ``classes.py``

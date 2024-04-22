@@ -2,9 +2,9 @@
 
 .. _test_functions_w_keyword_arguments:
 
-#############################################################################
+#################################################################################
 functions: test_functions_w_keyword_arguments
-#############################################################################
+#################################################################################
 
 ----
 
@@ -20,9 +20,9 @@ To ensure the function behaves right regardless of what order the user provides 
 
 .. _test_functions_w_keyword_arguments_red:
 
-*****************************************************************************
+*********************************************************************************
 red: make it fail
-*****************************************************************************
+*********************************************************************************
 
 I add a new test to ``test_functions.py``
 
@@ -41,9 +41,9 @@ the terminal shows an :ref:`AttributeError`
 
 .. _test_functions_w_keyword_arguments_green:
 
-*****************************************************************************
+*********************************************************************************
 green: make it pass
-*****************************************************************************
+*********************************************************************************
 
 
 * I add a function definition to ``functions.py``
@@ -91,9 +91,9 @@ green: make it pass
 
 .. _test_functions_w_keyword_arguments_refactor:
 
-*****************************************************************************
+*********************************************************************************
 refactor: make it better
-*****************************************************************************
+*********************************************************************************
 
 So far ``passthrough_w_keyword_arguments`` looks the same as ``passthrough_w_positional_arguments`` did when it took in 2 positional arguments, I have not yet seen a difference between a ``positional argument`` and a ``keyword argument``
 
@@ -125,7 +125,7 @@ The function currently only takes in 2 keyword arguments. What if I want a funct
 .. _test_functions_w_keyword_arguments_refactor_red:
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add an assertion
 
@@ -158,7 +158,7 @@ the terminal shows a :ref:`TypeError`
 .. _test_functions_w_keyword_arguments_refactor_green:
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 * I make the signature of ``passthrough_w_keyword_arguments`` accept any number of keyword arguments
 
@@ -252,7 +252,7 @@ green: make it pass
 .. _test_functions_w_keyword_arguments_refactor_refactor:
 
 refactor: make it better
-#############################################################################
+#################################################################################
 
 I add one more assertion to ``test_functions_w_keyword_arguments`` to drill the lesson
 
@@ -329,9 +329,9 @@ the terminal shows an :ref:`AssertionError` and I make the expected values match
 All tests are passing!
 
 
-*****************************************************************************
+*********************************************************************************
 review
-*****************************************************************************
+*********************************************************************************
 
 From the tests I know
 

@@ -28,7 +28,7 @@ So far the tests have shown that for any boolean operation involving 2 inputs: `
 
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add a test for logical equality to ``TestBinaryOperations`` in ``test_truth_table.py``
 
@@ -43,7 +43,7 @@ I add a test for logical equality to ``TestBinaryOperations`` in ``test_truth_ta
 and the terminal shows an :ref:`AttributeError`
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 
 * I then add a definition to ``truth_table.py`` with a return statement, I can pick :doc:`True </data_structures/booleans/booleans>` or :doc:`False </data_structures/booleans/booleans>` since 2 out of the 4 cases are either :doc:`True </data_structures/booleans/booleans>` or :doc:`False </data_structures/booleans/booleans>`
@@ -78,7 +78,7 @@ green: make it pass
   Green! All tests pass
 
 refactor: make it better
-#############################################################################
+#################################################################################
 
 What can I do to make this better?
 

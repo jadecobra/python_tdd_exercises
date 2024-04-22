@@ -2,9 +2,9 @@
 
 .. _test_functions_w_positional_and_keyword_arguments:
 
-#############################################################################
+#################################################################################
 functions: test_functions_w_positional_and_keyword_arguments
-#############################################################################
+#################################################################################
 
 ----
 
@@ -18,9 +18,9 @@ I can also define functions to take both positional arguments and keyword argume
 
 .. _test_functions_w_positional_and_keyword_arguments_red:
 
-*****************************************************************************
+*********************************************************************************
 red: make it fail
-*****************************************************************************
+*********************************************************************************
 
 I add a new failing test to ``test_functions.py``
 
@@ -47,9 +47,9 @@ the terminal shows a ``SyntaxError`` because I put a positional argument after a
 
 .. _test_functions_w_positional_and_keyword_arguments_green:
 
-*****************************************************************************
+*********************************************************************************
 green: make it pass
-*****************************************************************************
+*********************************************************************************
 
 * I fix the order of arguments in ``test_functions_w_positional_and_keyword_arguments`` since keyword arguments come after positional arguments
 
@@ -130,9 +130,9 @@ green: make it pass
 
 .. _test_functions_w_positional_and_keyword_arguments_refactor:
 
-*****************************************************************************
+*********************************************************************************
 refactor: make it better
-*****************************************************************************
+*********************************************************************************
 
 Hold on a second. This looks exactly like what I did in ``test_functions_w_positional_arguments``. I cannot tell from the :doc:`function</functions/functions>` signature which argument is positional and which is a keyword argument and do not want to wait for the function to fail when I send in values to find out
 
@@ -352,9 +352,9 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
 
 .. _test_functions_w_positional_and_keyword_arguments_review:
 
-*****************************************************************************
+*********************************************************************************
 review
-*****************************************************************************
+*********************************************************************************
 
 From the tests I know that
 

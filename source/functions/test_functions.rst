@@ -1,8 +1,8 @@
 .. include:: ../links.rst
 
-#############################################################################
+#################################################################################
 test_functions
-#############################################################################
+#################################################################################
 
 ----
 
@@ -14,12 +14,12 @@ test_functions
 
 .. _test_functions_w_pass:
 
-*****************************************************************************
+*********************************************************************************
 test_functions_w_pass
-*****************************************************************************
+*********************************************************************************
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 * I open a terminal and run :ref:`makePythonTdd.sh` with ``sleep_duration`` as the project name
 
@@ -67,7 +67,7 @@ the terminal shows a :ref:`ModuleNotFoundError`\ , and I add it to the list of e
   # ModuleNotFoundError
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 * I make a file called ``functions.py`` in the project folder and the terminal shows an :ref:`AttributeError`\ , which I add to the list of exceptions encountered
 
@@ -96,12 +96,12 @@ green: make it pass
 
 .. _test_functions_w_return:
 
-*****************************************************************************
+*********************************************************************************
 test_functions_w_return
-*****************************************************************************
+*********************************************************************************
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add a new failing test to ``TestFunctions`` in ``test_functions.py`` to check that functions always return :ref:`None`
 
@@ -113,7 +113,7 @@ I add a new failing test to ``TestFunctions`` in ``test_functions.py`` to check 
 the terminal shows an :ref:`AttributeError`
 
 green: make it fail
-#############################################################################
+#################################################################################
 
 I add a new function to ``functions.py`` to make the test pass, this time with a ``return`` statement instead of `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
 
@@ -128,12 +128,12 @@ I defined 2 functions with different statements in their body but they both retu
 
 .. _test_functions_w_return_none:
 
-*****************************************************************************
+*********************************************************************************
 test_functions_w_return_none
-*****************************************************************************
+*********************************************************************************
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add one more test to the ``TestFunctions`` class in ``test_functions.py`` to help drive home the point
 
@@ -147,7 +147,7 @@ I add one more test to the ``TestFunctions`` class in ``test_functions.py`` to h
 the terminal shows an :ref:`AttributeError`
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 from the `Zen of Python <https://peps.python.org/pep-0020/>`_ - ``Explicit is better than implicit.`` I add a function definition to ``functions.py`` this time with an explicit ``return`` statement showing the value returned
 
@@ -158,9 +158,9 @@ from the `Zen of Python <https://peps.python.org/pep-0020/>`_ - ``Explicit is be
 
 and the terminal shows passing tests.
 
-*****************************************************************************
+*********************************************************************************
 review
-*****************************************************************************
+*********************************************************************************
 
 The 3 ways I have defined functions so far have the exact same outcome, they all ``return None``. If ``Explicit is better than implicit.`` then I prefer to use ``return None`` telling anyone who reads the code exactly what the function returns.
 

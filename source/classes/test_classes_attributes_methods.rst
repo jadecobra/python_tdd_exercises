@@ -1,8 +1,8 @@
 .. include:: ../links.rst
 
-#############################################################################
+#################################################################################
 classes: attributes and methods
-#############################################################################
+#################################################################################
 
 
 .. contents:: table of contents
@@ -11,9 +11,9 @@ classes: attributes and methods
 
 ----
 
-*****************************************************************************
+*********************************************************************************
 requirements
-*****************************************************************************
+*********************************************************************************
 
 :ref:`test_classes`
 
@@ -21,16 +21,16 @@ requirements
 
 .. _test_classes_w_attributes:
 
-*****************************************************************************
+*********************************************************************************
 test_classes_w_attributes
-*****************************************************************************
+*********************************************************************************
 
 I now add some tests for attributes since I know how to define a class for attributes
 
 .. _test_classes_w_attributes_red:
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 
 * I add a failing test to ``TestClasses`` in ``classes.py``
@@ -56,7 +56,7 @@ red: make it fail
 .. _test_classes_w_attributes_green:
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 * I add an attribute to ``ClassWithAttributes``
 
@@ -94,7 +94,7 @@ green: make it pass
 .. _test_classes_w_attributes_refactor:
 
 refactor: make it better
-#############################################################################
+#################################################################################
 
 .. _test_classes_w_attributes_refactor_red:
 
@@ -144,16 +144,16 @@ and the terminal shows all tests pass
 
 .. _test_classes_w_methods:
 
-*****************************************************************************
+*********************************************************************************
 test_classes_w_methods
-*****************************************************************************
+*********************************************************************************
 
 I can also define classes with :ref:`methods<functions>` which are function definitions that belong to the class
 
 .. _test_classes_w_methods_red:
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add some tests for class methods to ``TestClasses`` in ``classes.py``
 
@@ -170,7 +170,7 @@ and the terminal shows :ref:`AttributeError`
 .. _test_classes_w_methods_green:
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 
 * I add a class definition to ``classes.py``
@@ -232,7 +232,7 @@ green: make it pass
 .. _test_classes_w_methods_refactor:
 
 refactor: make it better
-#############################################################################
+#################################################################################
 
 * I can "make this better" by adding a few more tests to ``test_classes_w_methods`` for fun
 
@@ -264,16 +264,16 @@ refactor: make it better
 
 .. _test_classes_w_attributes_and_methods:
 
-*****************************************************************************
+*********************************************************************************
 test_classes_w_attributes_and_methods
-*****************************************************************************
+*********************************************************************************
 
 Since I know how to define classes with methods and how to define classes with attributes, what happens when I define a class with both?
 
 .. _test_classes_w_attributes_and_methods_red:
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add another test for a class that has both attributes and methods
 
@@ -294,7 +294,7 @@ the terminal shows an :ref:`AttributeError`
 .. _test_classes_w_attributes_and_methods_green:
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 I make ``classes.py`` to make the tests pass by defining the class, attribute and methods
 
@@ -312,9 +312,9 @@ I make ``classes.py`` to make the tests pass by defining the class, attribute an
 
 .. _test_object_attributes_and_methods:
 
-*****************************************************************************
+*********************************************************************************
 test_object_attributes_and_methods
-*****************************************************************************
+*********************************************************************************
 
 To view what :ref:`attributes<AttributeError>` and ``methods`` are defined for any `object <https://docs.python.org/3/glossary.html#term-object>`_ I can call ``dir`` on the `object <https://docs.python.org/3/glossary.html#term-object>`_.
 
@@ -323,7 +323,7 @@ The ``dir`` :ref:`method<functions>` returns a :doc:`list </data_structures/list
 .. _test_object_attributes_and_methods_red:
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add a test to ``test_classes.py``
 
@@ -340,7 +340,7 @@ the terminal shows an :ref:`AssertionError` as the expected and real values do n
 .. _test_object_attributes_and_methods_green:
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 I copy the values from the terminal to change the expectation of the test
 
@@ -385,9 +385,9 @@ and it passes, the last two values in the list are ``attribute`` and ``method`` 
 
 ----
 
-*****************************************************************************
+*********************************************************************************
 review
-*****************************************************************************
+*********************************************************************************
 
 CONGRATULATIONS! If you made it this far and typed along with me, You know
 

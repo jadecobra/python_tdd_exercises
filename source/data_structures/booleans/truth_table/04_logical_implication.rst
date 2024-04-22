@@ -29,7 +29,7 @@ Reviewing what I know so far, for any boolean operation involving 2 inputs: ``p`
 
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add a test for logical implication to ``TestBinaryOperations`` in ``test_truth_table.py``
 
@@ -44,7 +44,7 @@ I add a test for logical implication to ``TestBinaryOperations`` in ``test_truth
 the terminal shows an :ref:`AttributeError`
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 
 * I add a function definition with :doc:`True </data_structures/booleans/booleans>` as the return value since it is expected in 3 out of the 4 cases
@@ -68,7 +68,7 @@ green: make it pass
   the tests pass!
 
 refactor: make it better
-#############################################################################
+#################################################################################
 
 
 * What if I make the nested condition one line?

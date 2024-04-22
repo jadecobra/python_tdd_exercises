@@ -13,7 +13,7 @@ truth table: Material NonImplication
 More conditional statements from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_, this time for Material NonImplication
 
 red: make it fail
-#############################################################################
+#################################################################################
 
 I add a test for material non-implication to ``TestBinaryOperations`` in ``test_truth_table.py``
 
@@ -28,7 +28,7 @@ I add a test for material non-implication to ``TestBinaryOperations`` in ``test_
 the terminal shows an :ref:`AttributeError`
 
 green: make it pass
-#############################################################################
+#################################################################################
 
 
 * I add a function definition to ``truth_table.py``
@@ -51,7 +51,7 @@ green: make it pass
   and the tests pass
 
 refactor: make it better
-#############################################################################
+#################################################################################
 
 
 * I use implied conditional testing for the first part of the if statement
