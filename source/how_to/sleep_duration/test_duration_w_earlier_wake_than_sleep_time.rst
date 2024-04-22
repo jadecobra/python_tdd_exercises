@@ -135,7 +135,7 @@ refactor: make it better
     def test_duration_w_hours_and_minutes(self):
     ...
 
-* I replace the assertEqual_ with assertRaisesRegex_ to catch the :doc:`Exception </how_to/exception_handling_tests>` and make sure it has the right message ``test_duration_w_earlier_wake_than_sleep_time``
+* I replace the assertEqual_ with assertRaisesRegex_ to catch the :doc:`Exception </how_to/exception_handling_tests>` and make sure it has the right message
 
   .. code-block:: python
 
@@ -151,7 +151,7 @@ refactor: make it better
                 sleep_time='02:00'
             )
 
-  and get a NameError_
+  the terminal shows a NameError_
 
   .. code-block:: python
 
