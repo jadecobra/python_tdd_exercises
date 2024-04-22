@@ -227,10 +227,10 @@ The challenge is to write a program that calculates the difference between a giv
 * :ref:`test_duration_w_hours_and_minutes<test_duration_w_hours_and_minutes>` where I used
 
   - a `try statement`_ which checks that the ``duration`` :ref:`function<functions>` returns the right difference when ``wake_time`` is later than or the same as ``sleep_time``
-  - or when a ValueError_ happens uses assertRaisesRegex_ to check that it is because the ``wake_time`` is earlier than ``sleep_time``
+  - and when a ValueError_ happens uses assertRaisesRegex_ to check that it is because the ``wake_time`` is earlier than ``sleep_time``
 
 
-Would you like to :ref:`test duration with a date and time<test_duration_w_date_and_time>`?
+Would you like to :ref:`test duration with dates and time<test_duration_w_date_and_time>`?
 
 ----
 
