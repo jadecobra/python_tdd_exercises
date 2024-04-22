@@ -314,7 +314,7 @@ green: make it pass
   - the result of calling ``exceptions.does_not_raise_exception`` is currently :ref:`None` which is not equal to ``'succeeded'`` and the result of calling ``exceptions.raises_exception`` is currently an Exception which is not equal to ``'failed'``
 
 how to use try...except...else
------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 I add a `try statement`_statement to ``exception_handler`` in ``exceptions.py`` to handle exceptions
 

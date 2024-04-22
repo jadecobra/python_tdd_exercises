@@ -232,7 +232,7 @@ Solving the problem this way shows a problem with the test, which means I need t
 Even though the ``add`` function currently passes the existing test it does not meet the actual requirement.
 
 red: make it fail
------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 I add a new test to ``test_addition`` in ``test_calculator.py``
 
@@ -255,7 +255,7 @@ the terminal shows an :ref:`AssertionError`, showing that the ``add`` function a
   E    AssertionError: 1 != 0
 
 green: make it pass
------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 I make the ``add`` function in ``calculator.py`` to add up the inputs it receives
 
@@ -273,7 +273,7 @@ and the terminal shows passing tests which increases my confidence in the ``add`
   ============== 1 passed in 0.01s ==============
 
 refactor: make it better
------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 * I import python's random_ library to generate random integers to test that the function behaves the way I expect for any given numbers
 
@@ -579,7 +579,7 @@ green: make it pass
 
 
 how to Test for Errors
------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 red: make it fail
 #################################################################################

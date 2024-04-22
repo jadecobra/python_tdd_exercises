@@ -99,7 +99,7 @@ refactor: make it better
 .. _test_classes_w_attributes_refactor_red:
 
 red: make it fail
------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 Let us add more tests with the other python data structures to ``test_classes_w_attributes``
 
@@ -120,7 +120,7 @@ the terminal shows an :ref:`AttributeError`
 .. _test_classes_w_attributes_refactor_green:
 
 green: make it pass
------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 I add matching attributes to ``ClassWithAttributes`` to make the tests pass
 

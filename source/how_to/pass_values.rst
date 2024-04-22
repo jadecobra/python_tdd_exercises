@@ -177,7 +177,7 @@ refactor: make it better
 The problem with this solution is that no matter what value I send to the ``text`` :ref:`function<functions>` it will always return ``'I received this message: hello'``. I need to make it return a value based on the input it receives
 
 red: make it fail
------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 I add a new failing test to ``test_text_messages``
 
@@ -201,7 +201,7 @@ the terminal shows an :ref:`AssertionError`
   AssertionError: 'I received this message: hello' != 'I received this message: yes'
 
 green: make it pass
------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 I make the ``text`` :ref:`function<functions>` in ``telephone.py`` to use an ``f`` string which allows passing variable values to strings. This is called `string interpolation`_
 

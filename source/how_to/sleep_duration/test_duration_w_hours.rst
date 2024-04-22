@@ -466,7 +466,7 @@ test_string_splitting
 .. _test_string_splitting_red:
 
 red: make it fail
------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 I add a failing test for the `str.split`_ :ref:`method<functions>` to see what it does
 
@@ -491,7 +491,7 @@ the terminal shows an :ref:`AssertionError`
 .. _test_string_splitting_green:
 
 green: make it pass
------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 I copy the :doc:`list </data_structures/lists/lists>` from the terminal and paste it in the test to make it pass
 
@@ -506,7 +506,7 @@ green again
 .. _test_string_splitting_refactor:
 
 refactor: make it better
------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 * I change the expectation to the hours and minutes as different items
 

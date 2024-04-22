@@ -139,7 +139,7 @@ test_logical_identity
 A Logical Identity operation takes input and returns it as output, it is a :doc:`passthrough function </functions/functions_passthrough>`
 
 red: make it fail
------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 I add a new ``TestCase`` to ``test_truth_table.py``
 
@@ -154,7 +154,7 @@ I add a new ``TestCase`` to ``test_truth_table.py``
 and the terminal shows an :ref:`AttributeError` because there is no definition for ``logical_identity`` in ``truth_table.py``
 
 green: make it pass
------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 I add a function definition for ``logical_identity`` to ``truth_table.py``
 
@@ -173,7 +173,7 @@ test_logical_negation
 A Logical Negation operation takes input and returns its opposite as output
 
 red: make it fail
------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 I add a test for ``logical_negation`` to ``test_truth_table.py``
 
@@ -186,7 +186,7 @@ I add a test for ``logical_negation`` to ``test_truth_table.py``
 the terminal shows an :ref:`AttributeError`, there is no definition for ``logical_negation`` in ``truth_table.py``
 
 green: make it pass
------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 * I add a definition for ``logical_negation``  to ``truth_table.py`` using the solution I had for ``logical_identity``
 

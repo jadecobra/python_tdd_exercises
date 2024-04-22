@@ -179,7 +179,7 @@ refactor: make it better
 #################################################################################
 
 red: make it fail
------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 I do it again with :ref:`functions<functions>` for fun by adding a failing line that raises an :ref:`AttributeError` to ``test_catching_attribute_errors_in_tests``
 
@@ -197,7 +197,7 @@ the terminal shows an :ref:`AttributeError` because ``non_existent_function`` do
   AttributeError: module 'module' has no attribute 'non_existent_function'
 
 green: make it pass
------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 I add an ``assertRaises`` context and indent the failing line to place it within the context to make the test pass
 
@@ -210,7 +210,7 @@ I add an ``assertRaises`` context and indent the failing line to place it within
           module.non_existent_function()
 
 red: make it fail
------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 I add a failing line that raises an :ref:`AttributeError` for :doc:`classes </classes/classes>` to ``test_catching_attribute_errors_in_tests``
 
@@ -230,7 +230,7 @@ the terminal shows an :ref:`AttributeError`
   AttributeError: module 'module' has no attribute 'NonExistentClass'
 
 green: make it pass
------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 I put the failing line in an ``assertRaises`` context to make the test pass
 
@@ -245,7 +245,7 @@ I put the failing line in an ``assertRaises`` context to make the test pass
           module.NonExistentClass()
 
 refactor: make it better
------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 I just made the same context 3 times. The ``self.assertRaises`` catches an :ref:`AttributeError` in each case. I only need to state it once and place all the lines that can raise the same error underneath it to remove the repetition
 

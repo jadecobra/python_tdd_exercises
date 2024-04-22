@@ -207,7 +207,7 @@ The ``duration`` :ref:`function<functions>` returns a subtraction of hours and a
 .. _test_duration_calculation_red:
 
 red: make it fail
------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 If ``duration`` is given a ``wake_time`` of ``'03:30'`` and a ``sleep_time`` of ``'02:59'``, it should return ``'00:31'`` as the difference between the timestamps
 
@@ -236,7 +236,7 @@ the terminal shows an :ref:`AssertionError` when I add ``test_duration_calculati
 .. _test_duration_calculation_green:
 
 green: make it pass
------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 * I add a return statement to the ``duration`` :ref:`function<functions>` where I multiply ``difference_hours`` by ``60`` then add it to ``difference_minutes`` to get the total difference in minutes
 

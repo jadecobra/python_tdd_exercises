@@ -195,7 +195,7 @@ test_datetime_objects
 .. _test_datetime_objects_red:
 
 red: make it fail
------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 I add a test to ``test_sleep_duration.py`` based on `Examples of usage: datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_ for `datetime.datetime`_ objects
 
@@ -222,7 +222,7 @@ and the terminal shows a NameError_ because ``datetime`` is not defined in ``tes
 .. _test_datetime_objects_green:
 
 green: make it pass
------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 I add an `import statement`_ for the datetime_ module,
 
@@ -274,7 +274,7 @@ test_subtracting_datetime_objects
 .. _test_subtracting_datetime_objects_red:
 
 red: make it fail
------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 I add a test for subtracting two `datetime.datetime`_ objects
 
@@ -308,7 +308,7 @@ the terminal shows an :ref:`AssertionError`
 .. _test_subtracting_datetime_objects_green:
 
 green: make it pass
------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 I copy the value on the left of the :ref:`AssertionError` and replace the expected value in the test to make it pass
 
@@ -322,7 +322,7 @@ I copy the value on the left of the :ref:`AssertionError` and replace the expect
 .. _test_subtracting_datetime_objects_refactor:
 
 refactor: make it better
------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 I add a variable to remove the duplication of the timestamp pattern
 
@@ -355,7 +355,7 @@ test_converting_timedelta_to_string
 .. _test_converting_timedelta_to_string_red:
 
 red: make it fail
------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 * The `datetime.timedelta`_ object I get shows seconds, but I want the result as a string_. What happens when I pass it to the str_ constructor?
 
@@ -379,7 +379,7 @@ red: make it fail
 .. _test_converting_timedelta_to_string_green:
 
 green: make it pass
------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 I make the expected value in the test match the value from the terminal
 
