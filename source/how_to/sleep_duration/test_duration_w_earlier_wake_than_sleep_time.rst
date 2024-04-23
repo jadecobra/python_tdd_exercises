@@ -235,7 +235,6 @@ refactor: make it better
             wake_time='03:00',
             sleep_time='02:00'
         )
-        ...
 
   the terminal shows an :ref:`AssertionError`
 
@@ -243,7 +242,7 @@ refactor: make it better
 
     AssertionError: ValueError not raised
 
-  I change ``wake_time`` and the test passes
+  ``03:00`` is not earlier than ``02:00``, I change ``wake_time`` and the test passes
 
   .. code-block:: python
 
@@ -262,7 +261,7 @@ refactor: make it better
             sleep_time=sleep_time
         )
 
-  and the test still shows green with no random failures
+  and the test still shows green with no random failures. Fantastic!
 
 .. _test_duration_w_an_earlier_wake_than_sleep_time_review:
 
