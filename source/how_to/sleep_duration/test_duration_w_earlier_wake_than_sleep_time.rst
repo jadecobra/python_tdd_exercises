@@ -211,7 +211,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def assert_wake_time_earlier(self, wake_time=None, sleep_time=None):
+    def assertWakeTimeEarlier(self, wake_time=None, sleep_time=None):
         with self.assertRaisesRegex(
             ValueError,
             f'wake_time: {wake_time}'
@@ -226,12 +226,12 @@ refactor: make it better
     def test_duration_w_an_earlier_wake_than_sleep_time(self):
     ...
 
-* then replace the text in ``test_duration_w_an_earlier_wake_than_sleep_time`` with a call to ``assert_wake_time_earlier``
+* then replace the text in ``test_duration_w_an_earlier_wake_than_sleep_time`` with a call to ``assertWakeTimeEarlier``
 
   .. code-block:: python
 
     def test_duration_w_an_earlier_wake_than_sleep_time(self):
-        self.assert_wake_time_earlier(
+        self.assertWakeTimeEarlier(
             wake_time='03:00',
             sleep_time='02:00'
         )
@@ -246,17 +246,17 @@ refactor: make it better
 
   .. code-block:: python
 
-    self.assert_wake_time_earlier(
+    self.assertWakeTimeEarlier(
         wake_time='01:00',
         sleep_time='02:00'
     )
 
-* I change the `try statement`_ in ``test_duration_w_hours_and_minutes`` to use ``assert_wake_time_earlier``
+* I change the `try statement`_ in ``test_duration_w_hours_and_minutes`` to use ``assertWakeTimeEarlier``
 
   .. code-block:: python
 
     except ValueError:
-        self.assert_wake_time_earlier(
+        self.assertWakeTimeEarlier(
             wake_time=wake_time,
             sleep_time=sleep_time
         )
