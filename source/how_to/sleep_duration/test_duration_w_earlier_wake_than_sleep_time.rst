@@ -207,6 +207,62 @@ refactor: make it better
                 )
 
   and the terminal shows passing tests with no more random failures, green, green, green, green all the way
+* I add a helper :ref:`function<functions>` to remove the repetition of the assertRaisesRegex_ since it it is the same in ``test_duration_w_an_earlier_wake_than_sleep_time`` and ``test_duration_w_hours_and_minutes``
+
+  .. code-block:: python
+
+    def assert_wake_time_earlier(self, wake_time=None, sleep_time=None):
+        with self.assertRaisesRegex(
+            ValueError,
+            f'wake_time: {wake_time}'
+            ' is earlier than '
+            f'sleep_time: {sleep_time}'
+        ):
+            sleep_duration.duration(
+                wake_time=wake_time,
+                sleep_time=sleep_time
+            )
+
+    def test_duration_w_an_earlier_wake_than_sleep_time(self):
+    ...
+
+* then replace the text in ``test_duration_w_an_earlier_wake_than_sleep_time`` with a call to ``assert_wake_time_earlier``
+
+  .. code-block:: python
+
+    def test_duration_w_an_earlier_wake_than_sleep_time(self):
+        self.assert_wake_time_earlier(
+            wake_time='03:00',
+            sleep_time='02:00'
+        )
+        ...
+
+  the terminal shows an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: ValueError not raised
+
+  I change ``wake_time`` and the test passes
+
+  .. code-block:: python
+
+    self.assert_wake_time_earlier(
+        wake_time='01:00',
+        sleep_time='02:00'
+    )
+
+* I change the `try statement`_ in ``test_duration_w_hours_and_minutes`` to use ``assert_wake_time_earlier``
+
+  .. code-block:: python
+
+    except ValueError:
+        self.assert_wake_time_earlier(
+            wake_time=wake_time,
+            sleep_time=sleep_time
+        )
+
+  and the test still shows green with no random failures
 
 .. _test_duration_w_an_earlier_wake_than_sleep_time_review:
 
