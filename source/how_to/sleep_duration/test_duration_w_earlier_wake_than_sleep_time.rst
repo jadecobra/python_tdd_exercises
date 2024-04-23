@@ -71,7 +71,7 @@ and the test passes
 refactor: make it better
 *********************************************************************************
 
-* The ``duration`` :ref:`function<functions>` returns a negative timestamp when given an earlier ``wake_time`` than ``sleep_time``, which is not a real duration. I want it to only return a difference when ``wake_time`` is later than or the same as ``sleep_time``. I add a condition for it to make the decision
+* The ``duration`` :ref:`function<functions>` returns a negative timestamp when given an earlier ``wake_time`` than ``sleep_time``, which is not a real duration. I want it to only return a difference when ``wake_time`` is later than or the same as ``sleep_time``. I add a condition for this
 
   .. code-block:: python
 
@@ -285,7 +285,7 @@ The challenge is to write a program that calculates the difference between a giv
   - and when a ValueError_ happens uses assertRaisesRegex_ to check that it is because the ``wake_time`` is earlier than ``sleep_time``
 
 
-Would you like to :ref:`test duration with dates and time<test_duration_w_date_and_time>`?
+Would you like to :ref:`test duration with dates in the timestamps<test_duration_w_date_and_time>`?
 
 ----
 
