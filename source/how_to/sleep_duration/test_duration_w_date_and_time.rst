@@ -22,73 +22,31 @@ I want to see what would happen if I added dates to the timestamps?
 red: make it fail
 *********************************************************************************
 
-* I copy ``test_duration_w_hours_and_minutes`` and paste it below the original
-* then rename the copy to ``test_duration_w_date_and_time`` to test ``duration`` with timestamps that have a date, hours and minutes
+* I rename ``test_duration_w_hours_and_minutes`` to ``test_duration_w_date_and_time``
+* then add a date to the ``random_timestamp()`` :ref:`function<functions>`
 
   .. code-block:: python
 
-    def test_duration_w_date_and_time(self):
-        wake_hour = random_hour()
-        wake_minutes = random_minutes()
-        wake_time_minutes = (
-            (wake_hour * 60)
-           + wake_minutes
+    def random_timestamp():
+        return (
+            '31/12/99 '
+            f'{random.randint(0,23):02}:'
+            f'{random.randint(0,59):02}'
         )
-        wake_time = f'31/12/99 {wake_hour:02}:{wake_minutes:02}'
 
-        sleep_hour = random_hour()
-        sleep_minutes = random_minutes()
-        sleep_time_minutes = (
-            (sleep_hour * 60)
-          + sleep_minutes
-        )
-        sleep_time=f'31/12/99 {sleep_hour:02}:{sleep_minutes:02}'
-
-        difference = (
-            wake_time_minutes
-          - sleep_time_minutes
-        )
-        difference_hours = difference // 60
-        difference_minutes = difference % 60
-
-        try:
-            self.assertEqual(
-                sleep_duration.duration(
-                    wake_time=wake_time,
-                    sleep_time=sleep_time
-                ),
-                f'{difference_hours:02}:{difference_minutes:02}'
-            )
-        except ValueError:
-            with self.assertRaisesRegex(
-                ValueError,
-                f'wake_time: {wake_time} is earlier '
-                f'than sleep_time: {sleep_time}'
-            ):
-                sleep_duration.duration(
-                    wake_time=wake_time,
-                    sleep_time=sleep_time
-                )
-
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows a ValueError_
 
   .. code-block:: python
 
-    AssertionError: "wake_time: 31/12/99 13:04 is earlier than sleep_time: 31/12/99 15:25" does not match "invalid literal for int() with base 10: '31/12/99 13'"
+    ValueError: invalid literal for int() with base 10: '31/12/99 03'
 
-  it looks like ``test_duration_w_date_and_time`` encountered a ValueError_ with a different message than the one expected in the test. The assertRaisesRegex_ works, the test would have missed this if I did not specify what error message to catch
+  the test tried to convert the timestamp string_ to a number to calculate ``difference_hours`` but it is in the wrong format
 
 .. _test_duration_w_date_and_time_green_0:
 
 *********************************************************************************
 green: make it pass
 *********************************************************************************
-
-* The ``read_timestamp`` :ref:`function<functions>` tries to convert the given string_ to an integer but it is in the wrong format
-
-  .. code-block:: python
-
-    invalid literal for int() with base 10: '31/12/99 13'
 
 * The `str.split`_ :ref:`method<functions>` was given a separator of a ``':'`` when the timestamp contained only hours and minutes, but behaves differently when the timestamp has a date. I add a test to ``test_string_splitting`` for this
 
@@ -729,9 +687,8 @@ The challenge was to write a program that calculates the difference between a gi
   - and indexed the :doc:`list </data_structures/lists/lists>` from the split to get specific items
 
 * :ref:`test_converting_strings_to_numbers` with the int_ constructor
-
-* `test_floor_aka_integer_division`_
-* `test_the_modulo_operation`_
+* :ref:`test_floor_aka_integer_division`
+* :ref:`test_the_modulo_operation`
 * `test_datetime_objects`_ where I
 
   - used `python's online documentation`_
@@ -740,33 +697,19 @@ The challenge was to write a program that calculates the difference between a gi
 * `test_subtracting_datetime_objects`_
 * `test_converting_timedelta_to_string`_
 * `test_duration_w_an_earlier_wake_than_sleep_time`_
-* :ref:`test_duration_w_hours_and_minutes` where I
+* :ref:`test_duration_w_hours_and_minutes`
+* `test_duration_w_date_and_time`_ where I
 
-  - used `random.randint`_ to generate random numbers
-
-    * from the 24 hours in a day
-    * and the 60 minutes in an hour
-
-  - then :doc:`interpolated </how_to/pass_values>` them in the timestamps
-  - :ref:`test_duration_w_hours` and `test_duration_calculation` to make sure that the ``duration`` :ref:`function<functions>` calculates the difference between ``wake_time`` and ``sleep_time`` by
-
-    * converting the timestamp to minutes
-    * subtracting the total minutes of ``sleep_time`` from ``wake_time``
-    * and converting the difference to a duration in hours and minutes by using `floor (integer) division`_ and the modulo_ operator
-
-* `test_duration_w_date_and_time`_
-
-  - using `random.randint`_ to generate random integers for hours and minutes
-  - using timestamps with dates, and times ranging from ``'00:00'`` up to and including ``'23:59'`` as inputs for ``wake_time`` and ``sleep_time``
-  - confirming a ValueError_ is raised when ``wake_time`` is earlier than ``sleep_time``
+  - used `random.randint`_ to generate random integers for hours and minutes
+  - used timestamps with dates, and times ranging from ``'00:00'`` up to and including ``'23:59'`` as inputs for ``wake_time`` and ``sleep_time``
+  - confirmed a ValueError_ is raised when ``wake_time`` is earlier than ``sleep_time``
 
 I also encountered the following exceptions
 
 * :ref:`AssertionError`
+* :ref:`TypeError`
 * NameError_
 * :ref:`AttributeError`
-* :ref:`TypeError`
-* SyntaxError_
 * ValueError_
 
 ----
