@@ -682,8 +682,8 @@ I also encountered the following exceptions
 * :ref:`AttributeError`
 * ValueError_
 
-Would you like to write the solution to the tests from the tests alone?
 Would you like to :ref:`write the solution using test_sleep_duration.py<test_duration_tests>`?
+
 ----
 
 :doc:`/code/code_sleep_duration`
