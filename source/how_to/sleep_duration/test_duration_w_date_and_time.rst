@@ -696,13 +696,15 @@ The challenge was to write a program that calculates the difference between a gi
 
 * `test_subtracting_datetime_objects`_
 * `test_converting_timedelta_to_string`_
-* `test_duration_w_an_earlier_wake_than_sleep_time`_
-* :ref:`test_duration_w_hours_and_minutes`
+* :ref:`test_duration_w_hours<test_duration_w_hours>`
+* :ref:`test_duration_calculation`
+* :ref:`test_duration_w_an_earlier_wake_than_sleep_time<test_duration_w_an_earlier_wake_than_sleep_time>`
+* :ref:`test_duration_w_hours_and_minutes<test_duration_w_hours_and_minutes>`
 * `test_duration_w_date_and_time`_ where I
 
   - used `random.randint`_ to generate random integers for hours and minutes
   - used timestamps with dates, and times ranging from ``'00:00'`` up to and including ``'23:59'`` as inputs for ``wake_time`` and ``sleep_time``
-  - confirmed a ValueError_ is raised when ``wake_time`` is earlier than ``sleep_time``
+  - made sure a ValueError_ is raised with a message when ``wake_time`` is earlier than ``sleep_time``
 
 I also encountered the following exceptions
 
