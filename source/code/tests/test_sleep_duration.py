@@ -3,38 +3,15 @@ import random
 import sleep_duration
 import unittest
 
-def get_random_timestamp(date):
-    return f'{date} {random.randint(0,23):02}:{random.randint(0,59):02}'
+def random_timestamp(date):
+    return (
+        f'{date} '
+        f'{random.randint(0,23):02}:'
+        f'{random.randint(0,59):02}'
+    )
 
 
 class TestSleepDuration(unittest.TestCase):
-
-    def test_string_splitting(self):
-        split = '01:23'.split(':')
-
-        self.assertEqual(split, ['01', '23'])
-        self.assertEqual(split[0], '01')
-        self.assertEqual(split[1], '23')
-
-        self.assertEqual(
-            '31/12/99 13:04'.split(':')[0],
-            '31/12/99 13'
-        )
-
-    def test_converting_strings_to_numbers(self):
-        self.assertEqual(int('12'), 12)
-        self.assertEqual(int('01'), 1)
-
-        with self.assertRaises(ValueError):
-            int('31/12/99 13')
-
-    def test_floor_aka_integer_division(self):
-        self.assertEqual(120//60, 2)
-        self.assertEqual(150//60, 2)
-
-    def test_the_modulo_operation(self):
-        self.assertEqual(120%60, 0)
-        self.assertEqual(150%60, 30)
 
     def test_datetime_objects(self):
         self.assertEqual(
@@ -46,7 +23,7 @@ class TestSleepDuration(unittest.TestCase):
         )
 
     def test_subtracting_datetime_objects(self):
-        pattern = "%d/%m/%y %H:%M"
+        pattern = '%d/%m/%y %H:%M'
         sleep_time = datetime.datetime.strptime(
             "21/11/06 16:30", pattern
         )
@@ -65,32 +42,34 @@ class TestSleepDuration(unittest.TestCase):
             '2:07:34'
         )
 
-    def test_duration_w_an_earlier_wake_than_sleep_time(self):
-        wake_time = '21/12/12 01:00'
-        sleep_time = '21/12/12 02:00'
-
+    def assert_wake_time_earlier(self, wake_time=None, sleep_time=None):
         with self.assertRaisesRegex(
             ValueError,
-            f'wake_time: {wake_time} is earlier '
-            f'than sleep_time: {sleep_time}'
+            f'wake_time: {wake_time}'
+            ' is earlier than '
+            f'sleep_time: {sleep_time}'
         ):
             sleep_duration.duration(
                 wake_time=wake_time,
                 sleep_time=sleep_time
             )
 
+    def test_duration_w_an_earlier_wake_than_sleep_time(self):
+        self.assert_wake_time_earlier(
+            wake_time='31/12/99 01:00',
+            sleep_time='31/12/99 02:00'
+        )
+
     def test_duration_w_date_and_time(self):
-        wake_time = get_random_timestamp('31/12/99')
-        sleep_time = get_random_timestamp('31/12/99')
+        wake_time = random_timestamp('31/12/99')
+        sleep_time = random_timestamp('30/12/99')
 
         pattern = '%d/%m/%y %H:%M'
-        difference = (
-            datetime.datetime.strptime(
-                wake_time, pattern
-            )
-          - datetime.datetime.strptime(
-                sleep_time, pattern
-            )
+        wake_datetime_object = datetime.datetime.strptime(
+            wake_time, pattern
+        )
+        sleep_datetime_object = datetime.datetime.strptime(
+            sleep_time, pattern
         )
 
         try:
@@ -99,18 +78,16 @@ class TestSleepDuration(unittest.TestCase):
                     wake_time=wake_time,
                     sleep_time=sleep_time
                 ),
-                str(difference)
+                str(
+                    wake_datetime_object
+                  - sleep_datetime_object
+                )
             )
         except ValueError:
-            with self.assertRaisesRegex(
-                ValueError,
-                f'wake_time: {wake_time} is earlier '
-                f'than sleep_time: {sleep_time}'
-            ):
-                sleep_duration.duration(
-                    wake_time=wake_time,
-                    sleep_time=sleep_time
-                )
+            self.assert_wake_time_earlier(
+                wake_time=wake_time,
+                sleep_time=sleep_time
+            )
 
 
 # Exceptions Encountered
