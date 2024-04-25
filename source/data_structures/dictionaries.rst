@@ -76,7 +76,7 @@ refactor: make it better
 
     AssertionError: None != {'key': 'value'}
 
-* I make the return statement to return an empty `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+* I make the `return statement`_ to return an empty `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
   .. code-block:: python
 
@@ -94,7 +94,7 @@ refactor: make it better
   - the value on the right ``{'key': 'value'}`` is what is expected
   - ``!=`` means ``not equal to``
 
-* I make the return statement with the expected values and I get a passing test. YES! We are off to a good start
+* I make the `return statement`_ with the expected values and I get a passing test. YES! We are off to a good start
 
   .. code-block:: python
 

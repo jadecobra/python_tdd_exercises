@@ -444,7 +444,7 @@ green: make it pass
 
     AssertionError: 'succeeded' != 'always returns this'
 
-* I can try adding another return statement to the function to see if that would work
+* I can try adding another `return statement`_ to the function to see if that would work
 
   .. code-block:: python
 
@@ -457,9 +457,9 @@ green: make it pass
             return 'succeeded'
         return 'always returns this'
 
-  no change, the terminal still has the same error. In Python the ``return`` statement is the last thing run in the function. Anything written after a ``return`` statement is ignored, ``always_returns`` currently returns ``succeeded`` from the ``else`` block and ignores the return statement below it
+  no change, the terminal still has the same error. In Python the ``return`` statement is the last thing run in the function. Anything written after a ``return`` statement is ignored, ``always_returns`` currently returns ``succeeded`` from the ``else`` block and ignores the `return statement`_ below it
 
-* I have to add a ``finally`` clause to force it to ignore the other return statements and only return what I want
+* I have to add a ``finally`` clause to force it to ignore the other `return statement`_s and only return what I want
 
   .. code-block:: python
 

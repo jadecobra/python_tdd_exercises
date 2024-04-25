@@ -106,7 +106,7 @@ green: make it pass
         return None
 
   the terminal shows an :ref:`AssertionError`
-* I edit the return statement to make the test pass
+* I edit the `return statement`_ to make the test pass
 
   .. code-block:: python
 

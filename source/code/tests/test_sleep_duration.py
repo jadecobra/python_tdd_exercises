@@ -42,7 +42,7 @@ class TestSleepDuration(unittest.TestCase):
             '2:07:34'
         )
 
-    def assert_wake_time_earlier(self, wake_time=None, sleep_time=None):
+    def assertWakeTimeEarlier(self, wake_time=None, sleep_time=None):
         with self.assertRaisesRegex(
             ValueError,
             f'wake_time: {wake_time}'
@@ -55,7 +55,7 @@ class TestSleepDuration(unittest.TestCase):
             )
 
     def test_duration_w_an_earlier_wake_than_sleep_time(self):
-        self.assert_wake_time_earlier(
+        self.assertWakeTimeEarlier(
             wake_time='31/12/99 01:00',
             sleep_time='31/12/99 02:00'
         )
@@ -65,10 +65,10 @@ class TestSleepDuration(unittest.TestCase):
         sleep_time = random_timestamp('30/12/99')
 
         pattern = '%d/%m/%y %H:%M'
-        wake_datetime_object = datetime.datetime.strptime(
+        wake_datetime = datetime.datetime.strptime(
             wake_time, pattern
         )
-        sleep_datetime_object = datetime.datetime.strptime(
+        sleep_datetime = datetime.datetime.strptime(
             sleep_time, pattern
         )
 
@@ -79,12 +79,12 @@ class TestSleepDuration(unittest.TestCase):
                     sleep_time=sleep_time
                 ),
                 str(
-                    wake_datetime_object
-                  - sleep_datetime_object
+                    wake_datetime
+                  - sleep_datetime
                 )
             )
         except ValueError:
-            self.assert_wake_time_earlier(
+            self.assertWakeTimeEarlier(
                 wake_time=wake_time,
                 sleep_time=sleep_time
             )

@@ -103,7 +103,7 @@ refactor: make it better
         else:
             return False
 
-* then change it to a one line return statement
+* then change it to a one line `return statement`_
 
   .. code-block:: python
 

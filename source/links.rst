@@ -20,6 +20,7 @@
 .. _python's online documentation: https://docs.python.org/3/search.html
 .. _random: https://docs.python.org/3/library/random.html?highlight=random#module-random
 .. _random.randint: https://docs.python.org/3/library/random.html?highlight=random#random.randint
+.. _return statement: https://docs.python.org/3/reference/simple_stmts.html#the-return-statement
 .. _set: https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
 .. _sets: https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
 .. _str.split: https://docs.python.org/3/library/stdtypes.html#str.split

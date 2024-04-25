@@ -176,7 +176,7 @@ refactor: make it better
             return False
 
   the tests still pass, so far so good
-* I can also express conditions in a return statement using `conditional expressions/ternary operators <https://docs.python.org/3/reference/expressions.html?highlight=ternary%20conditional#conditional-expressions>`_
+* I can also express conditions in a `return statement`_ using `conditional expressions/ternary operators <https://docs.python.org/3/reference/expressions.html?highlight=ternary%20conditional#conditional-expressions>`_
 
   .. code-block:: python
 

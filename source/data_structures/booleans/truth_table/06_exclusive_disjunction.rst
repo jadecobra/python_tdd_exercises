@@ -137,7 +137,7 @@ refactor: make it better
         else:
             return False
 
-* time to use the one line return statement
+* time to use the one line `return statement`_
 
   .. code-block:: python
 

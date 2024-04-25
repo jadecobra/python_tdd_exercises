@@ -46,7 +46,7 @@ green: make it pass
 #################################################################################
 
 
-* I then add a definition to ``truth_table.py`` with a return statement, I can pick :doc:`True </data_structures/booleans/booleans>` or :doc:`False </data_structures/booleans/booleans>` since 2 out of the 4 cases are either :doc:`True </data_structures/booleans/booleans>` or :doc:`False </data_structures/booleans/booleans>`
+* I then add a definition to ``truth_table.py`` with a `return statement`_, I can pick :doc:`True </data_structures/booleans/booleans>` or :doc:`False </data_structures/booleans/booleans>` since 2 out of the 4 cases are either :doc:`True </data_structures/booleans/booleans>` or :doc:`False </data_structures/booleans/booleans>`
 
   .. code-block:: python
 

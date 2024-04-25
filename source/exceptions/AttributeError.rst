@@ -575,7 +575,7 @@ green: make it pass
     # TypeError
     # SyntaxError
 
-* when I remove the return statement
+* when I remove the `return statement`_
 
   .. code-block:: python
 

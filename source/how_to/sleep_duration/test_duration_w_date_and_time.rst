@@ -159,7 +159,7 @@ I add a test to ``test_sleep_duration.py`` based on `Examples of usage: datetime
           ''
       )
 
-  def assert_wake_time_earlier(self, wake_time=None, sleep_time=None):
+  def assertWakeTimeEarlier(self, wake_time=None, sleep_time=None):
   ...
 
 and the terminal shows a NameError_ because ``datetime`` is not defined in ``test_sleep_duration.py``, I need to import it
@@ -291,7 +291,7 @@ I add a variable to remove the duplication of the timestamp pattern
           datetime.timedelta(seconds=3600)
       )
 
-With these passing tests. I see that I can
+from the passing tests I can
 
 - convert a string_ to a `datetime.datetime`_ object by using `datetime.datetime.strptime`_
 - subtract one `datetime.datetime`_ object from another to get a `datetime.timedelta`_ object
@@ -312,7 +312,7 @@ red: make it fail
 
     def test_converting_timedelta_to_string(self):
         self.assertEqual(
-            str(datetime.timedelta(seconds=7654)),
+            str(datetime.timedelta(seconds=1234)),
             ''
         )
 
@@ -323,7 +323,7 @@ red: make it fail
 
   .. code-block:: python
 
-    AssertionError: '2:07:34' != ''
+    AssertionError: '0:20:34' != ''
 
 .. _test_converting_timedelta_to_string_green:
 
@@ -335,11 +335,11 @@ I make the expected value in the test match the value from the terminal
 .. code-block:: python
 
   self.assertEqual(
-      str(datetime.timedelta(seconds=7654)),
-      '2:07:34'
+      str(datetime.timedelta(seconds=1234)),
+      '0:20:34'
   )
 
-and we are green. It looks like calling str_ on a `datetime.timedelta`_ object returns a string_ in the format ``Hours:Minutes:Seconds``
+and we are green, calling the str_ constructor with a `datetime.timedelta`_ object returns a string_ in the format ``Hours:Minutes:Seconds``
 
 From the tests, I know I can
 
@@ -383,20 +383,17 @@ From the tests, I know I can
 
     AssertionError: "wake_time: 31/12/99 07:42 is earlier than sleep_time: 31/12/99 10:09" does not match "invalid literal for int() with base 10: '31/12/99 07'"
 
-* then make a copy of the ``duration`` :ref:`function<functions>` in ``sleep_duration.py`` and rename it to ``duration_a`` to keep the existing working solution while I try a new one
-* I add calls to `datetime.datetime.strptime`_ to convert ``wake_time`` and ``sleep_time`` to `datetime.datetime`_ objects
+  the ``read_timestamp`` :ref:`function<functions>` in ``sleep_duration.py`` cannot get the parts of the timestamp correctly
+* I add a `return statement`_ with `datetiem.datetime.strptime`_
 
   .. code-block:: python
 
-    def duration(wake_time=None, sleep_time=None):
-        difference = (
-            datetime.datetime.strptime(
-                wake_time, '%d/%m/%y %H:%M'
-            )
-          - datetime.datetime.strptime(
-                sleep_time, '%d/%/m/%y %H:%M'
-            )
+    def read_timestamp(timestamp=None, index=0):
+        return datetime.datetime.strptime(
+            timestamp,
+            '%d/%m/%y %H:%M'
         )
+        return int(timestamp.split(':')[index])
 
   and get a `NameError`_
 
@@ -406,14 +403,16 @@ From the tests, I know I can
 
   You know I did, the same thing happened earlier when I tested the datetime_ module
 
-* I add an `import statement`_ to the top of ``sleep_duration.py``
+* I add an `import statement`_ to the top of the file
 
   .. code-block:: python
 
     import datetime
 
+
     def read_timestamp(timestamp=None, index=0):
     ...
+
 
   the terminal shows a :ref:`TypeError`
 
@@ -421,64 +420,62 @@ From the tests, I know I can
 
     TypeError: '<' not supported between instances of 'datetime.timedelta' and 'int'
 
-  I cannot compare a `datetime.timedelta`_ object with a number
+  I cannot compare a `datetime.timedelta`_ object with a number in the condition
 
-* I add variables for the calculation and change the condition
+* I make a copy of the ``duration`` :ref:`function<functions>` in ``sleep_duration.py`` and rename it to ``duration_a`` to keep the existing working solution while I try a new one
+* I remove ``difference_hours``, ``difference_minutes`` and ``difference`` since they cannot use timestamps with dates then add variables for the calculation and change the condition
 
   .. code-block:: python
 
     def duration(wake_time=None, sleep_time=None):
-        wake_datetime_object = datetime.datetime.strptime(
-            wake_time, '%d/%m/%y %H:%M'
-        )
-        sleep_datetime_object = datetime.datetime.strptime(
-            sleep_time, '%d/%m/%y %H:%M'
-        )
+        wake_datetime = read_timestamp(wake_time)
+        sleep_datetime = read_timestamp(sleep_time)
 
-        difference = (
-            wake_datetime_object
-          - sleep_datetime_object
-        )
-
-        if wake_datetime_object < sleep_datetime_object:
+        if wake_datetime < sleep_datetime:
 
   which gives me an :ref:`AssertionError` for ``test_duration_w_an_earlier_wake_than_sleep_time``
+
 
   .. code-block:: python
 
     AssertionError: "wake_time: 01:00 is earlier than sleep_time: 02:00" does not match "time data '01:00' does not match format '%d/%m/%y %H:%M'"
 
   it does not have dates in the timestamps
+
 * When I add dates
 
   .. code-block:: python
 
     def test_duration_w_an_earlier_wake_than_sleep_time(self):
-        self.assert_wake_time_earlier(
+        self.assertWakeTimeEarlier(
             wake_time='31/12/99 01:00',
             sleep_time='31/12/99 02:00'
         )
 
-  the terminal shows passing tests and a random :ref:`TypeError` for ``test_duration_w_date_and_time``
+  the terminal shows a NameError_
 
   .. code-block:: python
 
-    TypeError: unsupported operand type(s) for %: 'datetime.timedelta' and 'int'
+    NameError: name 'difference' is not defined
 
-  the modulo_ operation is not supported for `datetime.datetime` objects, I change the ``else`` part of the condition to return a string_ of the `datetime.timedelta`_ object
+  time to change the else block
 
   .. code-block:: python
 
-    if wake_datetime_object < sleep_datetime_object:
+    if wake_datetime < sleep_datetime:
         raise ValueError(
             f'wake_time: {wake_time}'
             ' is earlier than '
             f'sleep_time: {sleep_time}'
         )
     else:
+        difference = (
+            wake_datetime - sleep_datetime
+        )
+
         return str(difference)
 
-  and the terminal shows a NameError_
+  and the terminal shows a NameError_ for ``test_duration_w_hours_and_minutes``
 
   .. code-block:: python
 
@@ -492,18 +489,18 @@ From the tests, I know I can
         wake_time = random_timestamp()
         sleep_time = random_timestamp()
 
-        wake_datetime_object = datetime.datetime.strptime(
+        wake_datetime = datetime.datetime.strptime(
             wake_time, '%d/%m/%y %H:%M'
         )
-        sleep_datetime_object = datetime.datetime.strptime(
+        sleep_datetime = datetime.datetime.strptime(
             sleep_time, '%d/%m/%y %H:%M'
         )
         difference = (
-            wake_datetime_object
-          - sleep_datetime_object
+            wake_datetime
+          - sleep_datetime
         )
 
-  then update the expectation in the assertion to use a string_ of the datetime.timedelta_ object
+  then change the expectation in the assertion to use a string_ of the datetime.timedelta_ object
 
   .. code-block:: python
 
@@ -516,7 +513,7 @@ From the tests, I know I can
             str(difference)
         )
     except ValueError:
-        self.assert_wake_time_earlier(
+        self.assertWakeTimeEarlier(
             wake_time=wake_time,
             sleep_time=sleep_time
         )
@@ -538,10 +535,10 @@ refactor: make it better
           sleep_time = random_timestamp()
 
           pattern = '%d/%m/%y %H:%M'
-          wake_datetime_object = datetime.datetime.strptime(
+          wake_datetime = datetime.datetime.strptime(
               wake_time, pattern
           )
-          sleep_datetime_object = datetime.datetime.strptime(
+          sleep_datetime = datetime.datetime.strptime(
               sleep_time, pattern
           )
 
@@ -566,12 +563,24 @@ refactor: make it better
 
   .. code-block:: python
 
-        def test_duration_w_date_and_time(self):
-            wake_time = random_timestamp('31/12/99')
-            sleep_time = random_timestamp('31/12/99')
+    def test_duration_w_date_and_time(self):
+        wake_time = random_timestamp('31/12/99')
+        sleep_time = random_timestamp('31/12/99')
 
-  and it is green again. I can now test duration with any dates and times and it still passes
+  green again. I can now test duration with any dates and times
+
+  .. code-block:: python
+
+    def test_duration_w_date_and_time(self):
+        wake_time = random_timestamp('31/12/99')
+        sleep_time = random_timestamp('30/12/99')
+
+  and it still passes
+
 * I remove ``test_string_splitting``, ``test_converting_strings_to_numbers``, ``test_floor_aka_integer_division`` and ``test_the_modulo_operation`` as they are not used in the solution anymore
+* I rename ``read_timestamp``, remove ``index`` from the signature and delete the second `return statement`_
+
+  .. code-block:: python
 * I make a :ref:`function<functions>` in ``sleep_duration.py`` called ``get_datetime_object`` that uses `datetime.datetime.strptime`_ to read timestamps
 
   .. code-block:: python
@@ -593,8 +602,8 @@ refactor: make it better
   .. code-block:: python
 
     def duration(wake_time=None, sleep_time=None):
-        wake_datetime_object = get_datetime_object(wake_time)
-        sleep_datetime_object = get_datetime_object(sleep_time)
+        wake_datetime = get_datetime_object(wake_time)
+        sleep_datetime = get_datetime_object(sleep_time)
 
   the terminal still shows green
 
@@ -606,7 +615,7 @@ refactor: make it better
         wake_datetime = get_datetime_object(wake_time)
         sleep_datetime = get_datetime_object(sleep_time)
 
-        if wake_datetime_object < sleep_datetime_object:
+        if wake_datetime < sleep_datetime:
             raise ValueError(
                 f'wake_time: {wake_time}'
                 ' is earlier than '
@@ -614,8 +623,8 @@ refactor: make it better
             )
         else:
             difference = (
-                wake_datetime_object
-              - sleep_datetime_object
+                wake_datetime
+              - sleep_datetime
             )
             return str(difference)
 

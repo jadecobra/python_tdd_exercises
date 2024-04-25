@@ -145,7 +145,7 @@ red: make it fail
 green: make it pass
 *********************************************************************************
 
-* I make a copy of ``difference_hours`` in ``duration``, rename it, then add it to the return statement
+* I make a copy of ``difference_hours`` in ``duration``, rename it, then add it to the `return statement`_
 
   .. code-block:: python
 
@@ -238,7 +238,7 @@ the terminal shows an :ref:`AssertionError` when I add ``test_duration_calculati
 green: make it pass
 ---------------------------------------------------------------------------------
 
-* I add a return statement to the ``duration`` :ref:`function<functions>` where I multiply ``difference_hours`` by ``60`` then add it to ``difference_minutes`` to get the total difference in minutes
+* I add a `return statement`_ to the ``duration`` :ref:`function<functions>` where I multiply ``difference_hours`` by ``60`` then add it to ``difference_minutes`` to get the total difference in minutes
 
   .. code-block:: python
 
@@ -396,7 +396,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
     # @unittest.skip
     def test_duration_calculation(self):
 
-* and change the first return statement in the ``duration`` :ref:`function<functions>` to a variable for the total difference in minutes
+* and change the first `return statement`_ in the ``duration`` :ref:`function<functions>` to a variable for the total difference in minutes
 
   .. code-block:: python
 
@@ -427,7 +427,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
     duration_hours = difference // 60
     duration_minutes = difference % 60
 
-  then replace ``difference_hours`` and ``difference_minutes`` in the return statement
+  then replace ``difference_hours`` and ``difference_minutes`` in the `return statement`_
 
   .. code-block:: python
 
