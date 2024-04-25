@@ -176,9 +176,65 @@ green: make it pass
 
   the expectations of the test look random. I need a different solution
 
+* I change the return statement to show what ``wake_time`` and ``sleep_time`` look like
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        if wake_time < sleep_time:
+            raise ValueError(
+                f"wake_time: {wake_time}"
+                " is earlier than "
+                f"sleep_time: {sleep_time}"
+            )
+        else:
+            return (wake_time, sleep_time)
+
+  and get an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: ('31/12/99 09:52', '31/12/99 02:32') != '7:20:00'
+    AssertionError: ('31/12/99 17:13', '31/12/99 14:38') != '2:35:00'
+    AssertionError: ('31/12/99 17:15', '31/12/99 07:12') != '10:03:00'
+    AssertionError: ('31/12/99 13:50', '31/12/99 06:44') != '7:06:00'
+
+  ``wake_time`` and ``sleep_time`` are timestamps in the format of ``date``, ``hours`` and ``minutes``
+* I go to `python's online documentation`_ and do a search for ``date and time`` and select the datetime_ :ref:`module<ModuleNotFoundError>`
+* I add calls to `datetime.datetime.strptime`_ based on `Examples of usage: datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_ to calculate the difference between the two timestamps
+
+  .. code-block:: python
+
+    else:
+        difference = (
+            datetime.datetime.strptime(
+                wake_time, "%d/%m/%y %H:%M"
+            )
+          - datetime.datetime.strptime(
+                sleep_time, "%d/%m/%y %H:%M"
+            )
+        )
+        return difference
+
+  and get a random NameError_
+
+  .. code-block:: python
+
+    NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
+
+* I add an `import statement_` at the top of the file
+
+  .. code-block:: python
+
+    import datetime
 
 
+    def duration(wake_time=None, sleep_time=None):
+    ...
 
+  and get a random :ref:`AssertionError`
+
+  
 
 
 * I copy the variables from ``test_duration_w_date_and_time``

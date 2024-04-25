@@ -6,7 +6,7 @@
 .. include:: /links.rst
 
 #################################################################################
-pumping python: how to solve problems with test driven development
+pumping python: how I solve problems with test driven development
 #################################################################################
 
 I have put together what has worked for me over a decade of learning python and seeing other people use it into this book as exercises using `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_.
