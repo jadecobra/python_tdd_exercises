@@ -1,19 +1,16 @@
 import datetime
 
 
-def get_datetime_object(timestamp):
+def get_datetime(timestamp):
     return datetime.datetime.strptime(
-        timestamp, '%d/%m/%y %H:%M'
+        timestamp,
+        '%d/%m/%y %H:%M'
     )
 
 
 def duration(wake_time=None, sleep_time=None):
-    wake_datetime = get_datetime_object(
-        wake_time
-    )
-    sleep_datetime = get_datetime_object(
-        sleep_time
-    )
+    wake_datetime = get_datetime(wake_time)
+    sleep_datetime = get_datetime(sleep_time)
 
     if wake_datetime < sleep_datetime:
         raise ValueError(

@@ -187,7 +187,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def get_datetime_object(wake_time, pattern):
+    def get_datetime(wake_time, pattern):
         return datetime.datetime.strptime(
             wake_time, pattern
         )
@@ -198,20 +198,20 @@ refactor: make it better
 
     def duration(wake_time=None, sleep_time=None):
         pattern = '%d/%m/%y %H:%M'
-        wake_datetime = get_datetime_object(
+        wake_datetime = get_datetime(
             wake_time, pattern
         )
-        sleep_datetime = get_datetime_object(
+        sleep_datetime = get_datetime(
             sleep_time, pattern
         )
 
   still green
 
-* pattern gets used for ``wake_datetime`` and ``sleep_datetime`` object, I can add it to the ``get_datetime_object`` as a parameter with a default value
+* pattern gets used for ``wake_datetime`` and ``sleep_datetime`` object, I can add it to the ``get_datetime`` as a parameter with a default value
 
   .. code-block:: python
 
-    def get_datetime_object(wake_time, pattern='%d/%m/%y %H:%M'):
+    def get_datetime(wake_time, pattern='%d/%m/%y %H:%M'):
     ...
 
   and remove ``pattern`` from ``duration``
@@ -219,10 +219,10 @@ refactor: make it better
   .. code-block:: python
 
     def duration(wake_time=None, sleep_time=None):
-        wake_datetime = get_datetime_object(
+        wake_datetime = get_datetime(
             wake_time
         )
-        sleep_datetime = get_datetime_object(
+        sleep_datetime = get_datetime(
             sleep_time
         )
 

@@ -526,7 +526,8 @@ From the tests, I know I can
 refactor: make it better
 *********************************************************************************
 
-* I add a variable for the pattern to remove the repetition
+* I move the difference calculation to the expectation and remove the ``difference`` variable
+* then add a variable for the pattern to remove the repetition
 
   .. code-block:: python
 
@@ -578,72 +579,31 @@ refactor: make it better
   and it still passes
 
 * I remove ``test_string_splitting``, ``test_converting_strings_to_numbers``, ``test_floor_aka_integer_division`` and ``test_the_modulo_operation`` as they are not used in the solution anymore
-* I rename ``read_timestamp``, remove ``index`` from the signature and delete the second `return statement`_
-
-  .. code-block:: python
-* I make a :ref:`function<functions>` in ``sleep_duration.py`` called ``get_datetime_object`` that uses `datetime.datetime.strptime`_ to read timestamps
+* I rename ``read_timestamp`` in ``sleep_duration.py``, remove ``index`` from the signature and delete the second `return statement`_
 
   .. code-block:: python
 
-    def duration_a(wake_time=None, sleep_time=None):
-    ...
-
-    def get_datetime_object(timestamp):
+    def get_datetime(timestamp):
         return datetime.datetime.strptime(
-            timestamp, '%d/%m/%y %H:%M'
+            timestamp,
+            '%d/%m/%y %H:%M'
         )
-
-
-    def duration(wake_time=None, sleep_time=None):
-    ...
-
-* then add calls to ``get_datetime_object`` in ``duration``
-
-  .. code-block:: python
-
-    def duration(wake_time=None, sleep_time=None):
-        wake_datetime = get_datetime_object(wake_time)
-        sleep_datetime = get_datetime_object(sleep_time)
-
   the terminal still shows green
 
-* then change the condition to calculate and return the difference only when ``wake_time`` is later than or the same as ``sleep_time``
+* I remove ``duration_a`` from ``sleep_duration.py`` because ``duration`` is a better solution
+* then change the `return statement`_ in ``duration`` to return the calculation directly and remove the ``difference`` variable
 
   .. code-block:: python
 
     def duration(wake_time=None, sleep_time=None):
-        wake_datetime = get_datetime_object(wake_time)
-        sleep_datetime = get_datetime_object(sleep_time)
+        wake_datetime = get_datetime(wake_time)
+        sleep_datetime = get_datetime(sleep_time)
 
         if wake_datetime < sleep_datetime:
             raise ValueError(
                 f'wake_time: {wake_time}'
                 ' is earlier than '
                 f'sleep_time: {sleep_time}'
-            )
-        else:
-            difference = (
-                wake_datetime
-              - sleep_datetime
-            )
-            return str(difference)
-
-  things are still green all the way
-
-* I remove ``duration_a`` from ``sleep_duration.py`` because ``duration`` is a better solution
-* which means I can remove ``read_timestamp`` because it is no longer called
-* and I remove the ``difference`` variable from ``duration`` since it is only used once. I can return the calculation directly
-
-  .. code-block:: python
-
-    def duration(wake_time=None, sleep_time=None):
-        wake_datetime = get_datetime_object(wake_time)
-        sleep_datetime = get_datetime_object(sleep_time)
-
-        if wake_datetime < sleep_datetime:
-            raise ValueError(
-                f'wake_time: {wake_time} is earlier '
-                f'than sleep_time: {sleep_time}'
             )
         else:
             return str(
