@@ -14,7 +14,7 @@ This is part 5 of a program that calculates the difference between a given wake 
 
 ----
 
-I want to write the program that makes the tests in ``test_sleep_duration.py`` pass
+I want to write the program that makes the tests in ``test_sleep_duration.py`` pass without looking at the tests
 
 .. _test_duration_tests_red:
 
@@ -232,89 +232,24 @@ green: make it pass
     def duration(wake_time=None, sleep_time=None):
     ...
 
-  and get a random :ref:`AssertionError`
-
-  
-
-
-* I copy the variables from ``test_duration_w_date_and_time``
+  and the terminal shows a random :ref:`AssertionError`
 
   .. code-block:: python
 
-    def duration(wake_time=None, sleep_time=None):
-        pattern = '%d/%m/%y %H:%M'
-        wake_datetime = datetime.datetime.strptime(
-            wake_time, pattern
-        )
-        sleep_datetime = datetime.datetime.strptime(
-            sleep_time, pattern
-        )
+    AssertionError: datetime.timedelta(seconds=7560) != '2:06:00'
+    AssertionError: datetime.timedelta(seconds=12120) != '3:22:00'
+    AssertionError: datetime.timedelta(seconds=20520) != '5:42:00'
+    AssertionError: datetime.timedelta(seconds=20940) != '5:49:00'
 
-  and get a NameError_
+  the ``duration`` :ref:`function<functions>` returns a `datetime.timedelta`_ object and the test expects a string
+
+* I add the str_ constructor to the `return statement`_
 
   .. code-block:: python
 
-    NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
+    return str(difference)
 
-  I add an `import statement`_ for datetime_
-
-  .. code-block:: python
-
-    import datetime
-
-
-    def duration(wake_time=None, sleep_time=None):
-
-* then change the return to the difference between the two datetime_ objects
-
-  .. code-block:: python
-
-    return str(
-        wake_datetime
-      - sleep_datetime
-    )
-
-  the terminal shows an :ref:`AssertionError` for ``test_duration_w_an_earlier_wake_than_sleep_time``
-
-  .. code-block:: python
-
-    AssertionError: ValueError not raised
-
-* I add a condition to the ``duration`` :ref:`function<functions>`
-
-  .. code-block:: python
-
-    if wake_datetime < sleep_datetime:
-        raise ValueError
-    else:
-        return str(
-            wake_datetime
-        - sleep_datetime
-        )
-
-  which gives me another :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: "wake_time: 31/12/99 01:00 is earlier than sleep_time: 31/12/99 02:00" does not match ""
-
-* I copy the message from ``assertWakeTimeEarlier`` and paste it as the message for the ValueError_ in ``duration``
-
-  .. code-block:: python
-
-    if wake_datetime < sleep_datetime:
-        raise ValueError(
-            f'wake_time: {wake_time}'
-            ' is earlier than '
-            f'sleep_time: {sleep_time}'
-        )
-    else:
-        return str(
-            wake_datetime
-        - sleep_datetime
-        )
-
-  and the terminal shows passing tests
+  and the test passes with no more random failures
 
 .. _test_duration_tests_refactor:
 
@@ -322,49 +257,38 @@ green: make it pass
 refactor: make it better
 *********************************************************************************
 
-* I create a :ref:`function<functions>` in ``sleep_duration.py`` to replace the calls to `datetime.datetime.strptime`_
+* I create a function to call `datetime.datetime.strptime`_
 
   .. code-block:: python
 
-    def get_datetime(wake_time, pattern):
+    def get_datetime(timestamp):
         return datetime.datetime.strptime(
-            wake_time, pattern
+            timestamp, '%d/%m/%y %H:%M'
         )
 
-  and change the calls in ``duration``
+  then call it in ``duration``
 
   .. code-block:: python
 
-    def duration(wake_time=None, sleep_time=None):
-        pattern = '%d/%m/%y %H:%M'
-        wake_datetime = get_datetime(
-            wake_time, pattern
+    else:
+        difference = (
+            get_datetime(wake_time)
+          - get_datetime(sleep_time)
         )
-        sleep_datetime = get_datetime(
-            sleep_time, pattern
-        )
-
-  still green
-
-* pattern gets used for ``wake_datetime`` and ``sleep_datetime`` object, I can add it to the ``get_datetime`` as a parameter with a default value
-
-  .. code-block:: python
-
-    def get_datetime(wake_time, pattern='%d/%m/%y %H:%M'):
-    ...
-
-  and remove ``pattern`` from ``duration``
-
-  .. code-block:: python
-
-    def duration(wake_time=None, sleep_time=None):
-        wake_datetime = get_datetime(
-            wake_time
-        )
-        sleep_datetime = get_datetime(
-            sleep_time
-        )
+        return str(difference)
 
   the terminal still shows passing tests
+
+* I return the calculation for ``difference`` directly and remove the variable
+
+  .. code-block:: python
+
+    else:
+        return str(
+            get_datetime(wake_time)
+          - get_datetime(sleep_time)
+        )
+
+  the terminal shows all tests are still passing! The End
 
 ----
