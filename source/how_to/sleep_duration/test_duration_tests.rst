@@ -132,7 +132,7 @@ green: make it pass
 
     "wake_time: 31/12/99 07:56 is earlier than sleep_time: 31/12/99 13:31" does not match "wake_time: 31/12/99 01:00 is earlier than sleep_time: 31/12/99 02:00"
 
-  the timestamp values do not match. I :ref:`interpolate<string interpolation>` the values for ``wake_time`` and ``sleep_time`` since they change
+  the timestamp values do not match. I :doc:`interpolate <how_to/pass_values>` the values for ``wake_time`` and ``sleep_time`` since they change
 
   .. code-block:: python
 
@@ -265,6 +265,10 @@ refactor: make it better
         return datetime.datetime.strptime(
             timestamp, '%d/%m/%y %H:%M'
         )
+
+
+    def duration(wake_time=None, sleep_time=None):
+    ...
 
   then call it in ``duration``
 

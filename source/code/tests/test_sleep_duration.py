@@ -19,7 +19,9 @@ class TestSleepDuration(unittest.TestCase):
                 "21/11/06 16:30",
                 "%d/%m/%y %H:%M"
             ),
-            datetime.datetime(2006, 11, 21, 16, 30)
+            datetime.datetime(
+                2006, 11, 21, 16, 30
+            )
         )
 
     def test_subtracting_datetime_objects(self):
@@ -30,6 +32,7 @@ class TestSleepDuration(unittest.TestCase):
         wake_time = datetime.datetime.strptime(
             "21/11/06 17:30", pattern
         )
+
         self.assertEqual(
             wake_time-sleep_time,
             datetime.timedelta(seconds=3600)
@@ -61,14 +64,16 @@ class TestSleepDuration(unittest.TestCase):
 
     def test_duration_w_hours_and_minutes(self):
         wake_time = random_timestamp('31/12/99')
-        sleep_time = random_timestamp('31/12/99')
+        sleep_time = random_timestamp('30/12/99')
 
         pattern = '%d/%m/%y %H:%M'
-        wake_datetime = datetime.datetime.strptime(
-            wake_time, pattern
-        )
-        sleep_datetime = datetime.datetime.strptime(
-            sleep_time, pattern
+        difference = (
+            datetime.datetime.strptime(
+                wake_time, pattern
+            )
+          - datetime.datetime.strptime(
+                sleep_time, pattern
+            )
         )
 
         try:
@@ -77,16 +82,14 @@ class TestSleepDuration(unittest.TestCase):
                     wake_time=wake_time,
                     sleep_time=sleep_time
                 ),
-                str(
-                    wake_datetime
-                  - sleep_datetime
-                )
+                str(difference)
             )
         except ValueError:
             self.assertWakeTimeEarlier(
                 wake_time=wake_time,
                 sleep_time=sleep_time
             )
+
 
 # Exceptions Encountered
 # AssertionError
