@@ -98,7 +98,7 @@ green: make it pass
 
     AssertionError: ValueError not raised
 
-  this means the ``duration`` :ref:`function<functions>` has to make a choice. ``test_duration_w_hours_and_minutes`` expects a timestamp and ``test_duration_w_an_earlier_wake_than_sleep_time`` expects a ValueError_
+  this means the ``duration`` :ref:`function<functions>` has to make a choice. ``test_duration_w_date_and_time`` expects a timestamp and ``test_duration_w_an_earlier_wake_than_sleep_time`` expects a ValueError_
 * I copy the value from the test to replace :ref:`None` in the `return statement`_
 
   .. code-block:: python
@@ -141,7 +141,7 @@ green: make it pass
 
     AttributeError: module 'datetime' has no attribute 'strptime'
 
-  my import statement is different from the `example in the documentation <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_
+  my `import statement`_ is different than the `example in the documentation <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_
 * I change the calls
 
   .. code-block:: python
@@ -221,15 +221,18 @@ green: make it pass
         "sleep_time: 31/12/99 02:00"
     )
 
-  and the terminal shows passing tests
+  and get a random :ref:`AssertionError`
 
-.. _test_duration_tests_refactor:
+  .. code-block:: python
 
-*********************************************************************************
-refactor: make it better
-*********************************************************************************
+    AssertionError: "wake_time: 31/12/99 17:14 is earlier than sleep_time: 31/12/99 18:01" does not match "wake_time: 31/12/99 01:00 is earlier than sleep_time: 31/12/99 02:00"
+    AssertionError: "wake_time: 31/12/99 00:45 is earlier than sleep_time: 31/12/99 17:53" does not match "wake_time: 31/12/99 01:00 is earlier than sleep_time: 31/12/99 02:00"
+    AssertionError: "wake_time: 31/12/99 12:52 is earlier than sleep_time: 31/12/99 21:25" does not match "wake_time: 31/12/99 01:00 is earlier than sleep_time: 31/12/99 02:00"
+    AssertionError: "wake_time: 31/12/99 01:25 is earlier than sleep_time: 31/12/99 13:27" does not match "wake_time: 31/12/99 01:00 is earlier than sleep_time: 31/12/99 02:00"
 
-* I change the ValueError_ message to use ``wake_time`` and ``sleep_time``
+  the timestamps in the ValueError_ message are different from what the test expects
+
+* I change it to use the variables
 
   .. code-block:: python
 
@@ -239,7 +242,13 @@ refactor: make it better
         f"sleep_time: {sleep_time}"
     )
 
-  the terminal still shows passing tests
+  and the terminal shows passing tests with no more random failures
+
+.. _test_duration_tests_refactor:
+
+*********************************************************************************
+refactor: make it better
+*********************************************************************************
 
 * I create a function to call `datetime.datetime.strptime`_
 
@@ -263,7 +272,7 @@ refactor: make it better
         sleep_datetime = get_datetime(sleep_time)
         ...
 
-  all tests are still green! The End
+  all tests are still green!
 
 *********************************************************************************
 review

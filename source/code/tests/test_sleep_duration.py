@@ -38,7 +38,7 @@ class TestSleepDuration(unittest.TestCase):
             datetime.timedelta(seconds=3600)
         )
 
-    def test_converting_timedelta_to_string(self):
+    def test_converting_timedelta_to_a_string(self):
         self.assertEqual(
             str(datetime.timedelta(seconds=1234)),
             '0:20:34'

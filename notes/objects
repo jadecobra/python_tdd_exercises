@@ -225,7 +225,7 @@ std:label
     test multiplication                      Test Multiplication                     : how_to/calculator.html#test-multiplication
     test subtraction                         Test Subtraction                        : how_to/calculator.html#test-subtraction
     test_converting_string_to_integer                                                : how_to/sleep_duration.html#test-converting-string-to-integer
-    test_converting_timedelta_to_string                                              : how_to/sleep_duration.html#test-converting-timedelta-to-string
+    test_converting_timedelta_to_a_string                                              : how_to/sleep_duration.html#test-converting-timedelta-to-string
     test_datetime_datetime_objects           RED: Make It Fail                       : how_to/sleep_duration.html#test-datetime-datetime-objects
     test_duration_calculation                                                        : how_to/sleep_duration.html#test-duration-calculation
     test_duration_w_an_earlier_wake_than_sleep_time                                         : how_to/sleep_duration.html#test-duration-w-earlier-wake-than-sleep-time
