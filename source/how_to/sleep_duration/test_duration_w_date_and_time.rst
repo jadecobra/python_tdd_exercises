@@ -391,52 +391,6 @@ From the tests, I know I can
         )
     ...
 
-
-  .. code-block:: python
-
-    def test_duration_w_date_and_time(self):
-        wake_time = random_timestamp()
-        sleep_time = random_timestamp()
-
-        # difference_hours = (
-        #     int(wake_time.split(':')[0])
-        #   - int(sleep_time.split(':')[0])
-        # )
-        # difference_minutes = (
-        #     int(wake_time.split(':')[1])
-        #   - int(sleep_time.split(':')[1])
-        # )
-
-        # difference = (
-        #     difference_hours*60
-        #   + difference_minutes
-        # )
-        # duration_hours = difference // 60
-        # duration_minutes = difference % 60
-    ...
-
-  and get a NameError_
-
-  .. code-block:: python
-
-    NameError: name 'duration_hours' is not defined
-
-  the expectation has to change as well
-* I comment out the existing code
-
-  .. code-block:: python
-
-    self.assertEqual(
-        sleep_duration.duration(
-            wake_time=wake_time,
-            sleep_time=sleep_time
-        ),
-        # (
-        #     f'{duration_hours:02}:'
-        #     f'{duration_minutes:02}'
-        # )
-    )
-
   and get an :ref:`AssertionError`
 
   .. code-block:: python
@@ -448,48 +402,24 @@ From the tests, I know I can
 
   the ``read_timestamp`` :ref:`function<functions>` in ``sleep_duration.py`` cannot get the parts of the timestamp correctly
 
-
-
-
-
-
-  then add a new calculation for the difference between ``wake_time`` and ``sleep_time`` based on the new tests
+* I make a copy of the ``duration`` :ref:`function<functions>` in ``sleep_duration.py`` and rename it to ``duration_a`` to keep the existing working solution while I try a new one
+* then change the assertion in ``test_duration_w_date_and_time`` to call ``duration_a``
 
   .. code-block:: python
-
-    difference = (
-        datetime.datetime.strptime(
-            wake_time, '%d/%m/%y %H:%M'
-        )
-      - datetime.datetime.strptime(
-            sleep_time, '%d/%m/%y %H:%M'
-        )
-    )
 
     try:
-        ...
-
-  the terminal shows a ValueError_
-
-  .. code-block:: python
-
-    ValueError: time data '05:34' does not match format '%d/%m/%y %H:%M'
-
-  ``random_timestamp`` still has the dates commented out
-
-* I remove the comment from ``random_timestamp``
-
-  .. code-block:: python
-
-    def random_timestamp():
-        return (
-            '31/12/99 '
-            f'{random.randint(0,23):02}:'
-            f'{random.randint(0,59):02}'
+        self.assertEqual(
+            sleep_duration.duration_a(
+                wake_time=wake_time,
+                sleep_time=sleep_time
+            ),
+            str(difference)
         )
+    ...
 
-* I make a copy of the ``duration`` :ref:`function<functions>` in ``sleep_duration.py`` and rename it to ``duration_a`` to keep the existing working solution while I try a new one
-* then add a :ref:`function<functions>` that calls  `datetime.datetime.strptime`_
+  and get the same :ref:`AssertionError` because ``duration_a`` still calls ``read_timestamp`` which cannot read the timestamps with dates
+
+* I add a :ref:`function<functions>` that calls  `datetime.datetime.strptime`_
 
   .. code-block:: python
 
@@ -503,7 +433,7 @@ From the tests, I know I can
     def duration_a(wake_time=None, sleep_time=None):
     ...
 
-* I add calls to ``get_datetime`` in ``duration_a``
+  then add calls to ``get_datetime`` in ``duration_a``
 
   .. code-block:: python
 
@@ -522,21 +452,7 @@ From the tests, I know I can
                 wake_datetime-sleep_datetime
             )
 
-* I change the assertion in ``test_duration_w_date_and_time`` to call ``duration_a``
-
-  .. code-block:: python
-
-    try:
-        self.assertEqual(
-            sleep_duration.duration_a(
-                wake_time=wake_time,
-                sleep_time=sleep_time
-            ),
-            str(difference)
-        )
-    ...
-
-  and get a `NameError`_
+  which gives me a `NameError`_
 
   .. code-block:: python
 
@@ -643,15 +559,18 @@ refactor: make it better
 
   and the terminal shows green again
 
-* I rename ``assertWakeTimeEarlierA`` to ``assertWakeTimeEarlier``
 * then remove
   - ``assertWakeTimeEarlier``
   - ``test_string_splitting``
   - ``test_converting_strings_to_numbers``
-  - ``test_floor_aka_integer_division`` and
+  - ``test_floor_aka_integer_division``
   - ``test_the_modulo_operation``
+  - ``test_datetime_objects``
+  - ``test_subtracting_datetime_objects`` and
+  - ``test_converting_timedelta_to_a_string``
 
-  as they are not used in the solution anymore
+  as they are not needed for the solution anymore
+* I rename ``assertWakeTimeEarlierA`` to ``assertWakeTimeEarlier``
 * I remove ``random_timestamp``
 * then change ``random_timestamp_a`` to ``random_timestamp``
 * the ``random_timestamp`` :ref:`function<functions>` always returns timestamps with the same date, I change it to take in dates as inputs
