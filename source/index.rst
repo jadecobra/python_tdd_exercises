@@ -9,7 +9,7 @@
 pumping python: how I solve problems with test driven development
 #################################################################################
 
-I have put together what has worked for me over a decade of learning python and seeing other people use it into this book as exercises using `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_.
+This book is a collection of `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ exercises that have helped me understand and use Python from more than 10 years of learning and watching other people use it.
 
 *********************************************************************************
 who is this book for?
