@@ -265,4 +265,8 @@ refactor: make it better
 
   all tests are still green! The End
 
-----
+*********************************************************************************
+review
+*********************************************************************************
+
+I wrote a program by following the output in the terminal and `python's online documentation`_ that made the tests in ``test_sleep_duration.py`` pass
