@@ -160,7 +160,7 @@ I add a test to ``test_sleep_duration.py`` based on `Examples of usage: datetime
           ''
       )
 
-  def assertWakeTimeEarlier(self, wake_time=None, sleep_time=None):
+  def assertWakeTimeEarlier(self, wake_time, sleep_time):
   ...
 
 and the terminal shows a NameError_ because ``datetime`` is not defined in ``test_sleep_duration.py``, I need to import it
@@ -264,7 +264,7 @@ I add a test for subtracting two `datetime.datetime`_ objects
           1
       )
 
-  def assertWakeTimeEarlier(self, wake_time=None, sleep_time=None):
+  def assertWakeTimeEarlier(self, wake_time, sleep_time):
   ...
 
 
@@ -332,7 +332,7 @@ red: make it fail
             ''
         )
 
-    def assertWakeTimeEarlier(self, wake_time=None, sleep_time=None):
+    def assertWakeTimeEarlier(self, wake_time, sleep_time):
     ...
 
   the terminal shows an :ref:`AssertionError` with a string_ like what I want
@@ -482,7 +482,7 @@ From the tests, I know I can
 
   .. code-block:: python
 
-    def assertWakeTimeEarlierA(self, wake_time=None, sleep_time=None):
+    def assertWakeTimeEarlierA(self, wake_time, sleep_time):
         with self.assertRaisesRegex(
             ValueError,
             f'wake_time: {wake_time}'

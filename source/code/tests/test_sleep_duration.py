@@ -44,7 +44,7 @@ class TestSleepDuration(unittest.TestCase):
             '0:20:34'
         )
 
-    def assertWakeTimeEarlier(self, wake_time=None, sleep_time=None):
+    def assertWakeTimeEarlier(self, wake_time, sleep_time):
         with self.assertRaisesRegex(
             ValueError,
             f'wake_time: {wake_time}'
