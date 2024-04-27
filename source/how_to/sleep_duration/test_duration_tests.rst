@@ -24,6 +24,10 @@ red: make it fail
 
 I delete all the text in ``sleep_duration.py`` and the terminal shows an :ref:`AttributeError`
 
+.. code-block:: python
+
+  AttributeError: module 'sleep_duration' has no attribute 'duration'
+
 .. _test_duration_tests_green:
 
 *********************************************************************************
@@ -95,100 +99,20 @@ green: make it pass
     AssertionError: ValueError not raised
 
   this means the ``duration`` :ref:`function<functions>` has to make a choice. ``test_duration_w_hours_and_minutes`` expects a timestamp and ``test_duration_w_an_earlier_wake_than_sleep_time`` expects a ValueError_
-* I add a condition based on the name of the test
+* I copy the value from the test to replace :ref:`None` in the `return statement`_
 
   .. code-block:: python
 
     def duration(wake_time=None, sleep_time=None):
-        if wake_time < sleep_time:
-            raise ValueError
-        else:
-            return None
+        return '17:06:00'
 
-  and get an :ref:`AssertionError` for ``test_duration_w_hours_and_minutes``  and ``test_duration_w_an_earlier_wake_than_sleep_time``
-
-  .. code-block:: python
-
-    AssertionError: "wake_time: 31/12/99 01:00 is earlier than sleep_time: 31/12/99 02:00" does not match ""
-    AssertionError: "wake_time: 31/12/99 01:00 is earlier than sleep_time: 31/12/99 02:00" does not match ""
-    AssertionError: "wake_time: 31/12/99 20:30 is earlier than sleep_time: 31/12/99 22:56" does not match ""
-    AssertionError: "wake_time: 31/12/99 11:21 is earlier than sleep_time: 31/12/99 21:01" does not match ""
-
-  the message in the ValueError_ does not match the expectations of the tests
-
-* I copy the message from the terminal then add it to the ValueError_
-
-  .. code-block:: python
-
-    raise ValueError(
-        "wake_time: 31/12/99 01:00"
-        " is earlier than "
-        "sleep_time: 31/12/99 02:00"
-    )
-
-  and get an :ref:`AssertionError` for ``test_duration_w_hours_and_minutes``
-
-  .. code-block:: python
-
-    "wake_time: 31/12/99 07:56 is earlier than sleep_time: 31/12/99 13:31" does not match "wake_time: 31/12/99 01:00 is earlier than sleep_time: 31/12/99 02:00"
-
-  the timestamp values do not match. I :doc:`interpolate <how_to/pass_values>` the values for ``wake_time`` and ``sleep_time`` since they change
-
-  .. code-block:: python
-
-    raise ValueError(
-        f"wake_time: {wake_time}"
-        " is earlier than "
-        f"sleep_time: {sleep_time}"
-    )
-
-  and the terminal shows random successes and the previous :ref:`AssertionErrors<AssertionError>` for ``test_duration_w_hours_and_minutes``
-
-  .. code-block:: python
-
-    AssertionError: None != '6:55:00'
-    AssertionError: None != '8:38:00'
-    AssertionError: None != '9:57:00'
-    AssertionError: None != '12:53:00'
-
-* I copy the value from the terminal and replace :ref:`None` in the `return statement`_
-
-  .. code-block:: python
-
-    def duration(wake_time=None, sleep_time=None):
-        if wake_time < sleep_time:
-            raise ValueError(
-                f"wake_time: {wake_time}"
-                " is earlier than "
-                f"sleep_time: {sleep_time}"
-            )
-        else:
-            return '17:06:00'
-
-  and get a random :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: '17:06:00' != '6:30:00'
-    AssertionError: '17:06:00' != '3:32:00'
-    AssertionError: '17:06:00' != '13:05:00'
-    AssertionError: '17:06:00' != '9:38:00'
-
-  the expectations of the test look random. I need a different solution
-
+  and get another :ref:`AssertionError`, the expectation of the test looks random
 * I change the return statement to show what ``wake_time`` and ``sleep_time`` look like
 
   .. code-block:: python
 
     def duration(wake_time=None, sleep_time=None):
-        if wake_time < sleep_time:
-            raise ValueError(
-                f"wake_time: {wake_time}"
-                " is earlier than "
-                f"sleep_time: {sleep_time}"
-            )
-        else:
-            return (wake_time, sleep_time)
+        return (wake_time, sleep_time)
 
   and get an :ref:`AssertionError`
 
@@ -201,61 +125,121 @@ green: make it pass
 
   ``wake_time`` and ``sleep_time`` are timestamps in the format of ``date``, ``hours`` and ``minutes``
 * I go to `python's online documentation`_ and do a search for ``date and time`` and select the datetime_ :ref:`module<ModuleNotFoundError>`
-* I add calls to `datetime.datetime.strptime`_ based on `Examples of usage: datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_ to calculate the difference between the two timestamps
+* I add calls to `datetime.datetime.strptime`_ based on `Examples of usage: datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_ to calculate the difference between the two timestamps and use new variable names
 
   .. code-block:: python
-
-    else:
-        difference = (
-            datetime.datetime.strptime(
-                wake_time, "%d/%m/%y %H:%M"
-            )
-          - datetime.datetime.strptime(
-                sleep_time, "%d/%m/%y %H:%M"
-            )
-        )
-        return difference
-
-  and get a random NameError_
-
-  .. code-block:: python
-
-    NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
-
-* I add an `import statement_` at the top of the file
-
-  .. code-block:: python
-
-    import datetime
-
 
     def duration(wake_time=None, sleep_time=None):
-    ...
+        wake_datetime = datetime.strptime(wake_time, "%d/%m/%y %H:%M")
+        sleep_datetime = datetime.strptime(sleep_time, "%d/%m/%y %H:%M")
 
-  and the terminal shows a random :ref:`AssertionError`
+        return (wake_datetime, sleep_datetime)
 
-  .. code-block:: python
-
-    AssertionError: datetime.timedelta(seconds=7560) != '2:06:00'
-    AssertionError: datetime.timedelta(seconds=12120) != '3:22:00'
-    AssertionError: datetime.timedelta(seconds=20520) != '5:42:00'
-    AssertionError: datetime.timedelta(seconds=20940) != '5:49:00'
-
-  the ``duration`` :ref:`function<functions>` returns a `datetime.timedelta`_ object and the test expects a string
-
-* I add the str_ constructor to the `return statement`_
+  the terminal shows an :ref:`AttributeError`
 
   .. code-block:: python
 
-    return str(difference)
+    AttributeError: module 'datetime' has no attribute 'strptime'
 
-  and the test passes with no more random failures
+  my import statement is different from the `example in the documentation <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_
+* I change the calls
+
+  .. code-block:: python
+
+    wake_datetime = datetime.datetime.strptime(
+        wake_time, "%d/%m/%y %H:%M"
+    )
+    sleep_datetime = datetime.strptime(
+        sleep_time, "%d/%m/%y %H:%M"
+    )
+
+  and get an :ref:`AssertionError` for
+
+  .. code-block:: python
+
+    AssertionError: (datetime.datetime(1999, 12, 31, 5, 33), [35 chars] 48)) != '12:45:00'
+
+* I want to see what happens when I change the return statement to a calculation
+
+  .. code-block:: python
+
+    return (wake_datetime-sleep_datetime)
+
+  the terminal shows an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: datetime.timedelta(seconds=74880) != '20:48:00'
+
+* I add the str_ constructor
+
+  .. code-block:: python
+
+    return str(wake_datetime-sleep_datetime)
+
+  I am left with the :ref:`AssertionError` for ``test_duration_w_an_earlier_wake_than_sleep_time``
+
+  .. code-block:: python
+
+    AssertionError: ValueError not raised
+
+* I add a condition based on the name of the test
+
+  .. code-block:: python
+
+    def duration(wake_time=None, sleep_time=None):
+        wake_datetime = datetime.datetime.strptime(
+            wake_time, "%d/%m/%y %H:%M"
+        )
+        sleep_datetime = datetime.datetime.strptime(
+            sleep_time, "%d/%m/%y %H:%M"
+        )
+
+        if wake_datetime < sleep_datetime:
+            raise ValueError
+        else:
+            return str(wake_datetime-sleep_datetime)
+
+  and get an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: "wake_time: 31/12/99 01:00 is earlier than sleep_time: 31/12/99 02:00" does not match ""
+    AssertionError: "wake_time: 31/12/99 01:00 is earlier than sleep_time: 31/12/99 02:00" does not match ""
+    AssertionError: "wake_time: 31/12/99 20:30 is earlier than sleep_time: 31/12/99 22:56" does not match ""
+    AssertionError: "wake_time: 31/12/99 11:21 is earlier than sleep_time: 31/12/99 21:01" does not match ""
+
+  the message in the ValueError_ does not match the expectation of the tests
+
+* I copy the message from the terminal then add it to the ValueError_
+
+  .. code-block:: python
+
+    raise ValueError(
+        "wake_time: 31/12/99 01:00"
+        " is earlier than "
+        "sleep_time: 31/12/99 02:00"
+    )
+
+  and the terminal shows passing tests
 
 .. _test_duration_tests_refactor:
 
 *********************************************************************************
 refactor: make it better
 *********************************************************************************
+
+* I change the ValueError_ message to use ``wake_time`` and ``sleep_time``
+
+  .. code-block:: python
+
+    raise ValueError(
+        f"wake_time: {wake_time}"
+        " is earlier than "
+        f"sleep_time: {sleep_time}"
+    )
+
+  the terminal still shows passing tests
 
 * I create a function to call `datetime.datetime.strptime`_
 
@@ -274,25 +258,11 @@ refactor: make it better
 
   .. code-block:: python
 
-    else:
-        difference = (
-            get_datetime(wake_time)
-          - get_datetime(sleep_time)
-        )
-        return str(difference)
+    def duration(wake_time=None, sleep_time=None):
+        wake_datetime = get_datetime(wake_time)
+        sleep_datetime = get_datetime(sleep_time)
+        ...
 
-  the terminal still shows passing tests
-
-* I return the calculation for ``difference`` directly and remove the variable
-
-  .. code-block:: python
-
-    else:
-        return str(
-            get_datetime(wake_time)
-          - get_datetime(sleep_time)
-        )
-
-  the terminal shows all tests are still passing! The End
+  all tests are still green! The End
 
 ----
