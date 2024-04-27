@@ -3,8 +3,7 @@ import datetime
 
 def get_datetime(timestamp):
     return datetime.datetime.strptime(
-        timestamp,
-        '%d/%m/%y %H:%M'
+        timestamp, '%d/%m/%y %H:%M'
     )
 
 
@@ -20,6 +19,5 @@ def duration(wake_time=None, sleep_time=None):
         )
     else:
         return str(
-            wake_datetime
-          - sleep_datetime
+            wake_datetime - sleep_datetime
         )
