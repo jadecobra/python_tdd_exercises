@@ -69,7 +69,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def duration(wake_time=None):
+    def duration(wake_time):
 
   the terminal shows another :ref:`TypeError`
 
@@ -81,9 +81,15 @@ green: make it pass
 
   .. code-block:: python
 
-    def duration(wake_time=None, sleep_time=None):
+    def duration(wake_time, sleep_time):
 
-  and get an :ref:`AssertionError` for ``test_duration_w_date_and_time``
+  and get an :ref:`AssertionError` for ``test_duration_w_an_earlier_wake_than_sleep_time``
+
+  .. code-block:: python
+
+    AssertionError: ValueError not raised
+
+  and another :ref:`AssertionError` for ``test_duration``
 
   .. code-block:: python
 
@@ -92,26 +98,61 @@ green: make it pass
     AssertionError: None != '4:04:00'
     AssertionError: None != '17:06:00'
 
-  and another :ref:`AssertionError` for ``test_duration_w_an_earlier_wake_than_sleep_time``
+  this means the ``duration`` :ref:`function<functions>` has to make a choice. ``test_duration`` expects a timestamp and ``test_duration_w_an_earlier_wake_than_sleep_time`` expects a ValueError_
+
+* I add a condition based on the name of the test
 
   .. code-block:: python
 
-    AssertionError: ValueError not raised
+    def duration(wake_time, sleep_time):
+        if wake_time < sleep_time:
+            raise ValueError
+        else:
+            return None
 
-  this means the ``duration`` :ref:`function<functions>` has to make a choice. ``test_duration_w_date_and_time`` expects a timestamp and ``test_duration_w_an_earlier_wake_than_sleep_time`` expects a ValueError_
+  and get an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: "wake_time: 31/12/99 01:00 is earlier than sleep_time: 31/12/99 02:00" does not match ""
+    AssertionError: "wake_time: 31/12/99 01:00 is earlier than sleep_time: 31/12/99 02:00" does not match ""
+    AssertionError: "wake_time: 31/12/99 20:30 is earlier than sleep_time: 31/12/99 22:56" does not match ""
+    AssertionError: "wake_time: 31/12/99 11:21 is earlier than sleep_time: 31/12/99 21:01" does not match ""
+
+  the message in the ValueError_ does not match the expectation of the tests
+
+* I copy the message from the terminal then add it to the ValueError_
+
+  .. code-block:: python
+
+    raise ValueError(
+        "wake_time: 31/12/99 01:00"
+        " is earlier than "
+        "sleep_time: 31/12/99 02:00"
+    )
+
+  and get an :ref:`AssertionError` for ``test_duration``
+
 * I copy the value from the test to replace :ref:`None` in the `return statement`_
 
   .. code-block:: python
 
-    def duration(wake_time=None, sleep_time=None):
-        return '17:06:00'
+    def duration(wake_time, sleep_time):
+        if wake_time < sleep_time:
+            raise ValueError(
+                "wake_time: 31/12/99 01:00"
+                " is earlier than "
+                "sleep_time: 31/12/99 02:00"
+            )
+        else:
+            return '17:06:00'
 
-  and get another :ref:`AssertionError`, the expectation of the test looks random
+  and get another :ref:`AssertionError`, the expectation of the test changes
 * I change the return statement to show what ``wake_time`` and ``sleep_time`` look like
 
   .. code-block:: python
 
-    def duration(wake_time=None, sleep_time=None):
+    def duration(wake_time, sleep_time):
         return (wake_time, sleep_time)
 
   and get an :ref:`AssertionError`
@@ -129,13 +170,39 @@ green: make it pass
 
   .. code-block:: python
 
-    def duration(wake_time=None, sleep_time=None):
-        wake_datetime = datetime.strptime(wake_time, "%d/%m/%y %H:%M")
-        sleep_datetime = datetime.strptime(sleep_time, "%d/%m/%y %H:%M")
+    def duration(wake_time, sleep_time):
+        if wake_time < sleep_time:
+            raise ValueError(
+                "wake_time: 31/12/99 01:00"
+                " is earlier than "
+                "sleep_time: 31/12/99 02:00"
+            )
+        else:
+            wake_datetime = datetime.strptime(
+                wake_time, "%d/%m/%y %H:%M"
+            )
+            sleep_datetime = datetime.strptime(
+                sleep_time, "%d/%m/%y %H:%M"
+            )
+            return (wake_datetime, sleep_datetime)
 
-        return (wake_datetime, sleep_datetime)
+  and get a NameError_
 
-  the terminal shows an :ref:`AttributeError`
+  .. code-block:: python
+
+    NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
+
+* I add an `import statement`_ at the top of the file
+
+  .. code-block:: python
+
+    import datetime
+
+
+    def duration(wake_time, sleep_time):
+    ...
+
+  and the terminal shows an :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -146,7 +213,7 @@ green: make it pass
 
   .. code-block:: python
 
-    wake_datetime = datetime.datetime.strptime(
+    wake_datetime = datetime.strptime(
         wake_time, "%d/%m/%y %H:%M"
     )
     sleep_datetime = datetime.strptime(
@@ -176,50 +243,6 @@ green: make it pass
   .. code-block:: python
 
     return str(wake_datetime-sleep_datetime)
-
-  I am left with the :ref:`AssertionError` for ``test_duration_w_an_earlier_wake_than_sleep_time``
-
-  .. code-block:: python
-
-    AssertionError: ValueError not raised
-
-* I add a condition based on the name of the test
-
-  .. code-block:: python
-
-    def duration(wake_time=None, sleep_time=None):
-        wake_datetime = datetime.datetime.strptime(
-            wake_time, "%d/%m/%y %H:%M"
-        )
-        sleep_datetime = datetime.datetime.strptime(
-            sleep_time, "%d/%m/%y %H:%M"
-        )
-
-        if wake_datetime < sleep_datetime:
-            raise ValueError
-        else:
-            return str(wake_datetime-sleep_datetime)
-
-  and get an :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: "wake_time: 31/12/99 01:00 is earlier than sleep_time: 31/12/99 02:00" does not match ""
-    AssertionError: "wake_time: 31/12/99 01:00 is earlier than sleep_time: 31/12/99 02:00" does not match ""
-    AssertionError: "wake_time: 31/12/99 20:30 is earlier than sleep_time: 31/12/99 22:56" does not match ""
-    AssertionError: "wake_time: 31/12/99 11:21 is earlier than sleep_time: 31/12/99 21:01" does not match ""
-
-  the message in the ValueError_ does not match the expectation of the tests
-
-* I copy the message from the terminal then add it to the ValueError_
-
-  .. code-block:: python
-
-    raise ValueError(
-        "wake_time: 31/12/99 01:00"
-        " is earlier than "
-        "sleep_time: 31/12/99 02:00"
-    )
 
   and get a random :ref:`AssertionError`
 
@@ -260,17 +283,17 @@ refactor: make it better
         )
 
 
-    def duration(wake_time=None, sleep_time=None):
+    def duration(wake_time, sleep_time):
     ...
 
   then call it in ``duration``
 
   .. code-block:: python
 
-    def duration(wake_time=None, sleep_time=None):
+    else:
         wake_datetime = get_datetime(wake_time)
         sleep_datetime = get_datetime(sleep_time)
-        ...
+        return str(wake_datetime-sleep_datetime)
 
   all tests are still green!
 
