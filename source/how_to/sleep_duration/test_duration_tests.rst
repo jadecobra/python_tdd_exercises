@@ -208,7 +208,7 @@ green: make it pass
 
     AttributeError: module 'datetime' has no attribute 'strptime'
 
-  my `import statement`_ is different than the `example in the documentation <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_
+  my `import statement`_ is different than `the example in the documentation <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_
 * I change the calls
 
   .. code-block:: python

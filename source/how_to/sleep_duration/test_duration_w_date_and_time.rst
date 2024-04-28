@@ -14,7 +14,7 @@ This is part 4 of a program that calculates the difference between a given wake 
 
 ----
 
-I want to see what would happen if I added dates to the timestamps?
+I want to test the ``duration`` :ref:`function<functions>` with dates in the timestamps
 
 .. _test_duration_w_date_and_time_red:
 
@@ -59,7 +59,7 @@ red: make it fail
 green: make it pass
 *********************************************************************************
 
-* I add the `unittest.skip decorator` to ``test_duration_w_date_and_time``
+* I add the `unittest.skip decorator`_ to ``test_duration_w_date_and_time``
 * then add a test to ``test_string_splitting`` to recreate the error
 
   .. code-block:: python
@@ -190,7 +190,7 @@ green: make it pass
 
     AttributeError: module 'datetime' has no attribute 'strptime'
 
-  the reference to the ``strptime`` :ref:`method<functions>` is not right, my `import statement`_ is different than `the example in the documentation<https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_. I update the call
+  the reference to the ``strptime`` :ref:`method<functions>` is not right, my `import statement`_ is different than `the example in the documentation <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_. I update the call
 
   .. code-block:: python
 
@@ -391,7 +391,7 @@ From the tests, I know I can
         )
     ...
 
-  and get an :ref:`AssertionError`
+  and get a random :ref:`AssertionError` when the test calls ``duration``
 
   .. code-block:: python
 
@@ -400,7 +400,7 @@ From the tests, I know I can
     AssertionError: "wake_time: 31/12/99 19:13 is earlier than sleep_time: 31/12/99 23:19" does not match "invalid literal for int() with base 10: '31/12/99 19'"
     AssertionError: "wake_time: 31/12/99 05:55 is earlier than sleep_time: 31/12/99 23:59" does not match "invalid literal for int() with base 10: '31/12/99 05'"
 
-  the ``read_timestamp`` :ref:`function<functions>` in ``sleep_duration.py`` cannot get the parts of the timestamp correctly
+  the test calls ``duration`` which calls ``read_timestamp`` :ref:`function<functions>` in ``sleep_duration.py``. ``read_timestamp`` cannot process timestamps that have dates
 
 * I make a copy of the ``duration`` :ref:`function<functions>` in ``sleep_duration.py`` and rename it to ``duration_a`` to keep the existing working solution while I try a new one
 * then change the assertion in ``test_duration_w_date_and_time`` to call ``duration_a``
@@ -418,65 +418,6 @@ From the tests, I know I can
     ...
 
   and get the same :ref:`AssertionError` because ``duration_a`` still calls ``read_timestamp`` which cannot read the timestamps with dates
-
-* I add a :ref:`function<functions>` that calls  `datetime.datetime.strptime`_
-
-  .. code-block:: python
-
-    def get_datetime(timestamp):
-        return datetime.datetime.strptime(
-            timestamp,
-            '%d/%m/%y %H:%M'
-        )
-
-
-    def duration_a(wake_time=None, sleep_time=None):
-    ...
-
-  then add calls to ``get_datetime`` in ``duration_a``
-
-  .. code-block:: python
-
-    def duration_a(wake_time=None, sleep_time=None):
-        wake_datetime = get_datetime(wake_time)
-        sleep_datetime = get_datetime(sleep_time)
-
-        if wake_datetime < sleep_datetime:
-            raise ValueError(
-                f'wake_time: {wake_time}'
-                ' is earlier than '
-                f'sleep_time: {sleep_time}'
-            )
-        else:
-            return str(
-                wake_datetime-sleep_datetime
-            )
-
-  which gives me a `NameError`_
-
-  .. code-block:: python
-
-    NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
-
-  You know I did, the same thing happened earlier when I tested the datetime_ module
-
-* I add an `import statement`_ to the top of the file
-
-  .. code-block:: python
-
-    import datetime
-
-
-    def read_timestamp(timestamp=None, index=0):
-    ...
-
-  and the terminal shows a random :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: "wake_time: 31/12/99 05:19 is earlier than sleep_time: 31/12/99 11:32" does not match "invalid literal for int() with base 10: '31/12/99 05'"
-
-  ``assertWakeTimeEarlier`` still calls ``duration`` and I want it to use ``duration_a``
 
 * I make a copy of ``assertWakeTimeEarlier``, rename it and add a call to ``duration_a``
 
@@ -504,6 +445,82 @@ From the tests, I know I can
             sleep_time=sleep_time
         )
 
+* I add a call to `datetime.datetime.strptime`_ in ``duration_a``
+
+  .. code-block:: python
+
+    def duration_a(wake_time=None, sleep_time=None):
+        wake_datetime = datetime.datetime.strptime(
+            wake_time, '%d/%m/%y %H:%M'
+        )
+        ...
+
+  which gives me a NameError_
+
+  .. code-block:: python
+
+    NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
+
+  You know I did, the same thing happened earlier when I tested the datetime_ module
+
+* I add an `import statement`_ to the top of the file
+
+  .. code-block:: python
+
+    import datetime
+
+
+    def read_timestamp(timestamp=None, index=0):
+    ...
+
+* then add a variable for ``sleep_time``
+
+  .. code-block:: python
+
+    def duration_a(wake_time=None, sleep_time=None):
+        wake_datetime = datetime.datetime.strptime(
+            wake_time, '%d/%m/%y %H:%M'
+        )
+        sleep_datetime = datetime.datetime.strptime(
+            sleep_time, '%d/%m/%y %H:%M'
+        )
+
+* I remove ``difference_hours`` and ``difference_minutes`` and change ``difference`` to use the new variables
+
+  .. code-block:: python
+
+    difference = (
+        wake_datetime - sleep_datetime
+    )
+
+  the terminal shows a :ref:`TypeError`
+
+  .. code-block:: python
+
+    TypeError: '<' not supported between instances of 'datetime.timedelta' and 'int'
+
+  I cannot compare a `datetime.timedelta`_ object to a number
+
+* I change the condition to use the `datetime.datetime` objects
+
+  .. code-block:: python
+
+    if wake_datetime < sleep_datetime:
+
+  and get another :ref:`TypeError`
+
+  .. code-block:: python
+
+    TypeError: unsupported operand type(s) for %: 'datetime.timedelta' and 'int'
+
+  I cannot use the modulo_ operation on a `datetime.timedelta`_ object
+* I remove ``duration_hours`` and ``duration_minutes`` and change the `return statement`_
+
+  .. code-block:: python
+
+    else:
+        return str(difference)
+
   and the test passes with no random failures.
 
 .. _test_duration_w_date_and_time_refactor:
@@ -512,24 +529,67 @@ From the tests, I know I can
 refactor: make it better
 *********************************************************************************
 
-* I add a variable for the pattern to remove the repetition and remove the commented code
+* I remove the ``difference`` variable and return the calculation directly
 
   .. code-block:: python
 
-    def test_duration_w_date_and_time(self):
-        wake_time = random_timestamp()
-        sleep_time = random_timestamp()
+    else:
+        return str(
+            wake_datetime - sleep_datetime
+        )
 
-        pattern = '%d/%m/%y %H:%M'
-        wake_datetime = datetime.datetime.strptime(
-            wake_time, pattern
+* then add a :ref:`function<functions>` that calls  `datetime.datetime.strptime`_
+
+  .. code-block:: python
+
+    def get_datetime(timestamp):
+        return datetime.datetime.strptime(
+            timestamp,
+            '%d/%m/%y %H:%M'
         )
-        sleep_datetime = datetime.datetime.strptime(
-            sleep_time, pattern
-        )
-        ...
+
+
+    def duration_a(wake_time=None, sleep_time=None):
+    ...
+
+  I add calls to ``get_datetime`` in ``duration_a``
+
+  .. code-block:: python
+
+    def duration_a(wake_time=None, sleep_time=None):
+        wake_datetime = get_datetime(wake_time)
+        sleep_datetime = get_datetime(sleep_time)
+
+        if wake_datetime < sleep_datetime:
+            raise ValueError(
+                f'wake_time: {wake_time}'
+                ' is earlier than '
+                f'sleep_time: {sleep_time}'
+            )
+        else:
+            return str(
+                wake_datetime-sleep_datetime
+            )
 
   still green
+
+* I remove
+
+  - ``read_timestamp`` in ``sleep_duration.py`` and
+  - ``duration`` because ``duration_a`` is a better solution
+
+  and get an :ref:`AttributeError` for ``test_duration_w_an_earlier_wake_than_sleep_time``
+
+  .. code-block:: python
+
+    AttributeError: module 'sleep_duration' has no attribute 'duration'. Did you mean: 'duration_a'?
+
+  and one for ``test_duration_w_hours_and_minutes``
+
+  .. code-block:: python
+
+    AttributeError: module 'sleep_duration' has no attribute 'duration'. Did you mean: 'duration_a'?
+
 * I remove ``test_duration_w_hours_and_minutes`` since it is now covered by ``test_duration_w_date_and_time``
 * then add a call to ``assertWakeTimeEarlierA`` in ``test_duration_w_an_earlier_wake_than_sleep_time``
 
@@ -559,8 +619,9 @@ refactor: make it better
 
   and the terminal shows green again
 
+* I rename ``duration_a`` to ``duration`` in both files and the terminal shows all tests are still passing!
 * then remove
-*
+
   - ``assertWakeTimeEarlier``
   - ``test_converting_timedelta_to_a_string``
   - ``test_subtracting_datetime_objects`` and
@@ -599,13 +660,29 @@ refactor: make it better
         wake_time = random_timestamp('31/12/99')
         sleep_time = random_timestamp('31/12/99')
 
-  green again. I can now test ``duration`` with any dates and times
+  green again. I can now test ``duration`` with any dates and times. I just cannot use dates that do not exist
 
+* I add a variable for the pattern to remove the repetition and remove the commented code
+
+  .. code-block:: python
+
+    def test_duration_w_date_and_time(self):
+        wake_time = random_timestamp()
+        sleep_time = random_timestamp()
+
+        pattern = '%d/%m/%y %H:%M'
+        wake_datetime = datetime.datetime.strptime(
+            wake_time, pattern
+        )
+        sleep_datetime = datetime.datetime.strptime(
+            sleep_time, pattern
+        )
+        ...
+
+  still green
+  
 * I rename ``test_duration_w_date_and_time`` to ``test_duration``
-* I remove
-  - ``read_timestamp`` in ``sleep_duration.py`` and
-  - ``duration`` because ``duration_a`` is a better solution
-* I rename ``duration_a`` to ``duration`` in both files and the terminal shows all tests are still passing!
+
 
 .. _sleep_duration_review:
 
