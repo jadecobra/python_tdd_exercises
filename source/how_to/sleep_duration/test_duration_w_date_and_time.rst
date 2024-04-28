@@ -119,7 +119,7 @@ green: make it pass
 
   and tests are green again
 
-* The int_ constructor will not work when the timestamps have a date. I need a solution that can read the date and time. I search for `time difference <https://docs.python.org/3/search.html?q=time+difference>`_ in `python's online documentation`_, to see if there is an existing solution and select the datetime_ module from the results since it looks like the right one. Reading through the available types in the module I see `datetime.datetime`_ objects which are a combination of date and time
+* The int_ constructor will not work when the timestamps have a date. I need a solution that can read the date and time. I search for `date and time <https://docs.python.org/3/search.html?q=time+difference>`_ in `python's online documentation`_, to see if there is an existing solution and select the datetime_ module from the results since it looks like the right one. Reading through the available types in the module I see `datetime.datetime`_ objects which are a combination of date and time
 
   .. code-block:: python
 
@@ -680,7 +680,7 @@ refactor: make it better
         ...
 
   still green
-  
+
 * I rename ``test_duration_w_date_and_time`` to ``test_duration``
 
 
@@ -712,7 +712,7 @@ The challenge was to write a program that calculates the difference between a gi
   - `random.randint`_ to generate random numbers for hours and minutes
   - and timestamps with dates, and times ranging from ``'00:00'`` up to and including ``'23:59'`` as inputs for ``wake_time`` and ``sleep_time``
   - a `try statement`_ which checks that the ``duration`` :ref:`function<functions>` returns the right difference when ``wake_time`` is later than or the same as ``sleep_time`` as a string_
-  - and when a ValueError_ happens uses assertRaisesRegex_ to check that it is because ``wake_time`` is earlier than ``sleep_time``
+  - and when an :doc:`Exception </how_to/exception_handling_programs>` happens uses assertRaisesRegex_ to check that it is because ``wake_time`` is earlier than ``sleep_time``
 
 I also encountered the following exceptions
 

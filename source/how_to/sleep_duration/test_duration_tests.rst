@@ -46,6 +46,8 @@ green: make it pass
 
   .. code-block:: python
 
+    duration = None
+
   and get a :ref:`TypeError`
 
   .. code-block:: python

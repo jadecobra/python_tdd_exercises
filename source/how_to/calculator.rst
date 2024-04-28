@@ -627,7 +627,7 @@ the terminal shows passing tests, and I now have a way to ``catch`` :doc:`Except
 refactor: make it better
 #################################################################################
 
-I can use a while loop for the other cases when the divisor is not ``0`` by making sure the value of ``y`` that is passed from the test to ``calculator.divide`` is never ``0``
+I can use a `while statement`_ for the other cases when the divisor is not ``0`` by making sure the value of ``y`` that is passed from the test to ``calculator.divide`` is never ``0``
 
 .. code-block:: python
 
