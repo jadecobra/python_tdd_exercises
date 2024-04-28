@@ -63,7 +63,7 @@ I change the expected value in the test
           '-1:00'
       )
 
-and the test passes
+and it passes
 
 .. _test_duration_w_an_earlier_wake_than_sleep_time_refactor:
 
@@ -242,7 +242,7 @@ refactor: make it better
 
     AssertionError: ValueError not raised
 
-  ``03:00`` is not earlier than ``02:00``, I change ``wake_time`` and the test passes
+  ``03:00`` is not earlier than ``02:00``, when I change ``wake_time``
 
   .. code-block:: python
 
@@ -250,6 +250,8 @@ refactor: make it better
         wake_time='01:00',
         sleep_time='02:00'
     )
+
+  the test passes
 
 * I change the `try statement`_ in ``test_duration_w_hours_and_minutes`` to use ``assertWakeTimeEarlier``
 
