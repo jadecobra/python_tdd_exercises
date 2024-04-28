@@ -3,6 +3,7 @@ import random
 import sleep_duration
 import unittest
 
+
 def random_timestamp(date):
     return (
         f'{date} '
@@ -12,37 +13,6 @@ def random_timestamp(date):
 
 
 class TestSleepDuration(unittest.TestCase):
-
-    def test_datetime_objects(self):
-        self.assertEqual(
-            datetime.datetime.strptime(
-                "21/11/06 16:30",
-                "%d/%m/%y %H:%M"
-            ),
-            datetime.datetime(
-                2006, 11, 21, 16, 30
-            )
-        )
-
-    def test_subtracting_datetime_objects(self):
-        pattern = "%d/%m/%y %H:%M"
-        sleep_time = datetime.datetime.strptime(
-            "21/11/06 16:30", pattern
-        )
-        wake_time = datetime.datetime.strptime(
-            "21/11/06 17:30", pattern
-        )
-
-        self.assertEqual(
-            wake_time-sleep_time,
-            datetime.timedelta(seconds=3600)
-        )
-
-    def test_converting_timedelta_to_a_string(self):
-        self.assertEqual(
-            str(datetime.timedelta(seconds=1234)),
-            '0:20:34'
-        )
 
     def assertWakeTimeEarlier(self, wake_time, sleep_time):
         with self.assertRaisesRegex(
@@ -59,10 +29,10 @@ class TestSleepDuration(unittest.TestCase):
     def test_duration_w_an_earlier_wake_than_sleep_time(self):
         self.assertWakeTimeEarlier(
             wake_time='31/12/99 01:00',
-            sleep_time='31/12/99 02:00'
+            sleep_time='31/12/99 02:00',
         )
 
-    def test_duration_w_hours_and_minutes(self):
+    def test_duration(self):
         wake_time = random_timestamp('31/12/99')
         sleep_time = random_timestamp('30/12/99')
 

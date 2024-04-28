@@ -552,7 +552,7 @@ refactor: make it better
   .. code-block:: python
 
     def test_duration_w_an_earlier_wake_than_sleep_time(self):
-        self.assertWakeTimeEarlier(
+        self.assertWakeTimeEarlierA(
             wake_time='31/12/99 01:00',
             sleep_time='31/12/99 02:00'
         )
@@ -560,14 +560,15 @@ refactor: make it better
   and the terminal shows green again
 
 * then remove
+*
   - ``assertWakeTimeEarlier``
-  - ``test_string_splitting``
-  - ``test_converting_strings_to_numbers``
-  - ``test_floor_aka_integer_division``
-  - ``test_the_modulo_operation``
-  - ``test_datetime_objects``
-  - ``test_subtracting_datetime_objects`` and
   - ``test_converting_timedelta_to_a_string``
+  - ``test_subtracting_datetime_objects`` and
+  - ``test_datetime_objects``
+  - ``test_the_modulo_operation``
+  - ``test_floor_aka_integer_division``
+  - ``test_converting_strings_to_numbers``
+  - ``test_string_splitting``
 
   as they are not needed for the solution anymore
 * I rename ``assertWakeTimeEarlierA`` to ``assertWakeTimeEarlier``
@@ -607,7 +608,7 @@ refactor: make it better
         sleep_time = random_timestamp('30/12/99')
 
   and it still passes
-
+* I rename ``test_duration_w_date_and_time`` to ``test_duration``
 * I remove
   - ``read_timestamp`` in ``sleep_duration.py`` and
   - ``duration`` because ``duration_a`` is a better solution
