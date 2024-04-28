@@ -34,7 +34,7 @@ class TestSleepDuration(unittest.TestCase):
 
     def test_duration(self):
         wake_time = random_timestamp('31/12/99')
-        sleep_time = random_timestamp('30/12/99')
+        sleep_time = random_timestamp('31/12/99')
 
         pattern = '%d/%m/%y %H:%M'
         difference = (

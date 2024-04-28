@@ -601,13 +601,6 @@ refactor: make it better
 
   green again. I can now test ``duration`` with any dates and times
 
-  .. code-block:: python
-
-    def test_duration_w_date_and_time(self):
-        wake_time = random_timestamp('31/12/99')
-        sleep_time = random_timestamp('30/12/99')
-
-  and it still passes
 * I rename ``test_duration_w_date_and_time`` to ``test_duration``
 * I remove
   - ``read_timestamp`` in ``sleep_duration.py`` and
