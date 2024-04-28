@@ -22,15 +22,20 @@ I want to test the ``duration`` :ref:`function<functions>` with an earlier ``wak
 red: make it fail
 *********************************************************************************
 
-I add a failing test to ``test_sleep_duration.py``
+I add a failing test to ``test_sleep_duration.py`` with a `while statement`_ to make sure ``wake_time`` is always earlier than ``sleep_time``
 
 .. code-block:: python
 
   def test_duration_w_an_earlier_wake_than_sleep_time(self):
+      wake_time = random_timestamp()
+      sleep_time = random_timestamp()
+      while sleep_time < wake_time:
+          sleep_time = random_timestamp()
+
       self.assertEqual(
           sleep_duration.duration(
-              wake_time='01:00',
-              sleep_time='02:00'
+              wake_time=wake_time,
+              sleep_time=sleep_time
           ),
           ''
       )

@@ -48,7 +48,7 @@ green: make it pass
 
     duration = None
 
-  and get a :ref:`TypeError`
+  which gives me a :ref:`TypeError`
 
   .. code-block:: python
 
@@ -61,7 +61,7 @@ green: make it pass
     def duration():
         return None
 
-  which gives me another :ref:`TypeError`
+  and the terminal shows a :ref:`TypeError`
 
   .. code-block:: python
 
@@ -73,7 +73,7 @@ green: make it pass
 
     def duration(wake_time):
 
-  the terminal shows another :ref:`TypeError`
+  another :ref:`TypeError`
 
   .. code-block:: python
 
@@ -117,9 +117,8 @@ green: make it pass
   .. code-block:: python
 
     AssertionError: "wake_time: 31/12/99 01:00 is earlier than sleep_time: 31/12/99 02:00" does not match ""
-    AssertionError: "wake_time: 31/12/99 01:00 is earlier than sleep_time: 31/12/99 02:00" does not match ""
 
-  the message in the ValueError_ does not match the expectation of the tests
+  the message in the ValueError_ does not match the expectation of the test
 
 * I copy the message from the terminal then add it to the ValueError_
 
@@ -131,24 +130,9 @@ green: make it pass
         "sleep_time: 31/12/99 02:00"
     )
 
-  and get an :ref:`AssertionError` for ``test_duration``
+  leaving the :ref:`AssertionError` for ``test_duration``
 
-  .. code-block:: python
-
-    AssertionError: "wake_time: 31/12/99 20:30 is earlier than sleep_time: 31/12/99 22:56" does not match ""
-    AssertionError: "wake_time: 31/12/99 11:21 is earlier than sleep_time: 31/12/99 21:01" does not match ""
-
-  the timestamps are different than what ``duration`` sends when it raises the ValueError_. I change it to use the variables
-
-  .. code-block:: python
-
-    raise ValueError(
-        f"wake_time: {wake_time}"
-        " is earlier than "
-        f"sleep_time: {sleep_time}"
-    )
-
-* then copy the value from the test to replace :ref:`None` in the `return statement`_
+* I copy the value from the test to replace :ref:`None` in the `return statement`_
 
   .. code-block:: python
 
@@ -167,7 +151,6 @@ green: make it pass
 
   .. code-block:: python
 
-    def duration(wake_time, sleep_time):
         return (wake_time, sleep_time)
 
   the terminal shows an :ref:`AssertionError`
@@ -235,7 +218,7 @@ green: make it pass
 
     return str(wake_datetime-sleep_datetime)
 
-  and the terminal shows passing tests with no more random failures
+  and the terminal shows passing tests! YES!!
 
 .. _test_duration_tests_refactor:
 
@@ -277,12 +260,21 @@ refactor: make it better
         )
 
   the terminal shows all tests are still passing
+* I change the message in the ValueError_ to make it use the variables
+
+  .. code-block:: python
+
+    raise ValueError(
+        f"wake_time: {wake_time}"
+        " is earlier than "
+        f"sleep_time: {sleep_time}"
+    )
 
 *********************************************************************************
 review
 *********************************************************************************
 
-I wrote a program that calculates the difference between a given ``wake_time`` and ``sleep_time`` by following the errors in the terminal to make ``test_sleep_duration.py`` pass
+I wrote a program that calculates the difference between a given ``wake_time`` and ``sleep_time`` by following the errors in the terminal to make the tests pass
 
 I also encountered the following exceptions
 
@@ -290,7 +282,7 @@ I also encountered the following exceptions
 * :ref:`TypeError`
 * NameError_
 * :ref:`AttributeError`
-* ValueError_
+* ValueError_test
 
 ----
 
