@@ -54,7 +54,7 @@ class TestSleepDuration(unittest.TestCase):
                 ),
                 str(difference)
             )
-        except ValueError:
+        except Exception:
             self.assertWakeTimeEarlier(
                 wake_time=wake_time,
                 sleep_time=sleep_time

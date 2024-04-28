@@ -194,7 +194,7 @@ refactor: make it better
                     f'{duration_minutes:02}'
                 )
             )
-        except ValueError:
+        except Exception:
             with self.assertRaisesRegex(
                 ValueError,
                 f'wake_time: {wake_time}'
@@ -255,7 +255,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    except ValueError:
+    except Exception:
         self.assertWakeTimeEarlier(
             wake_time=wake_time,
             sleep_time=sleep_time
