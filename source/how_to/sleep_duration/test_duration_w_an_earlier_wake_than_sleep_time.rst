@@ -105,8 +105,8 @@ refactor: make it better
                 f'{duration_minutes:02}'
             )
 
-  - When ``wake_time`` is earlier than ``sleep_time``, the ``duration`` :ref:`function<functions>` will raise an :doc:`Exception </how_to/exception_handling_programs>`
-  - When ``wake_time`` is later than or the same as ``sleep_time``, the ``duration`` :ref:`function<functions>` returns the difference between the two timestamps
+  - when ``wake_time`` is earlier than ``sleep_time``, the ``duration`` :ref:`function<functions>` will raise an :doc:`Exception </how_to/exception_handling_programs>`
+  - when ``wake_time`` is later than or the same as ``sleep_time``, the ``duration`` :ref:`function<functions>` returns the difference between the two timestamps
 
   the terminal shows a random ValueError_ for ``test_duration_w_hours_and_minutes`` when ``wake_time`` is earlier than ``sleep_time``
 
@@ -193,7 +193,7 @@ refactor: make it better
         while wake_time < sleep_time:
             wake_time = random_timestamp()
 
-  and the terminal shows passing tests with no more random failures, green, green, green, green all the way
+  and the terminal shows passing tests with no more random failures, green, green, green, green all the way!
 
 .. _test_duration_w_an_earlier_wake_than_sleep_time_review:
 
@@ -213,8 +213,7 @@ The challenge is to write a program that calculates the difference between a giv
 * `test_duration_w_an_earlier_wake_than_sleep_time`_ where I used assertRaisesRegex_ to make sure the ``duration`` :ref:`function<functions>` raises a ValueError_ with a message when ``wake_time`` is earlier than ``sleep_time``
 * :ref:`test_duration_w_hours_and_minutes<test_duration_w_hours_and_minutes>` where I used
 
-  - a `try statement`_ which checks that the ``duration`` :ref:`function<functions>` returns the right difference when ``wake_time`` is later than or the same as ``sleep_time``
-  - and when an :doc:`Exception </how_to/exception_handling_programs>` happens, uses assertRaisesRegex_ to check that it is because ``wake_time`` is earlier than ``sleep_time``
+  - a `while statement`_ to make sure that ``wake_time`` is always later than or the same as ``sleep_time`` in the test
 
 
 Would you like to :ref:`test duration with dates in the timestamps<test_duration_w_date_and_time>`?
