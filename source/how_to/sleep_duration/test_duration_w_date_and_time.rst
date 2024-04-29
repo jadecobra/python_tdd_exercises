@@ -349,75 +349,23 @@ and we are green. From the tests, I know I can
         )
     )
 
-* I remove ``difference_hours`` and ``difference_minutes`` from ``duration_a``
-* then change the calculation for difference to use `datetime.datetime.strptime`_
+* I remove ``difference_hours``, ``difference_minutes``, ``duration_hours``, ``duration_minutes`` and ``difference`` from ``duration_a``
+* then change the `return statement`_
 
   .. code-block:: python
 
-    def duration_a(wake_time=None, sleep_time=None):
-        wake_datetime = datetime.datetime.strptime(
-            wake_time, '%d/%m/%y %H:%M'
-        )
-        ...
+    else:
+        return None
 
-  which gives me a NameError_
+  and the terminal shows a ValueError_
 
   .. code-block:: python
 
-    NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
-
-  You know I did, the same thing happened earlier when I tested the datetime_ module
-
-* I add an `import statement`_ to the top of the file
-
-  .. code-block:: python
-
-    import datetime
-
-
-    def read_timestamp(timestamp=None, index=0):
-    ...
-
-  the terminal shows a :ref:`TypeError`
-
-  .. code-block:: python
-
-    TypeError: unsupported operand type(s) for %: 'datetime.timedelta' and 'int'
-
-  I cannot use the modulo_ operation on a `datetime.timedelta`_ object
-* I remove ``duration_hours`` and ``duration_minutes`` and change the `return statement`_
-
-  .. code-block:: python
-
-    return str(difference)
-
-  the terminal shows another ValueError_
-
-  .. code-block:: python
-
-    ValueError: invalid literal for int() with base 10: '31/12/99 17'
-    ValueError: invalid literal for int() with base 10: '31/12/99 18'
-    ValueError: invalid literal for int() with base 10: '31/12/99 21'
     ValueError: invalid literal for int() with base 10: '31/12/99 22'
 
-  the calculation in ``get_difference`` still use the int_ constructor_
-* I make a copy of ``get_difference``, rename it to ``get_difference_a`` and change the calculations to use the `datetime.datetime.strptime`_ :ref:`method<functions>`
+  ``test_duration_w_date_and_time`` still has the old calculations that use the int_ constructor_
 
-  .. code-block:: python
-
-    @staticmethod
-    def get_difference_a(wake_time, sleep_time):
-        difference = (
-            datetime.datetime.strptime(
-                wake_time, '%d/%m/%y %H:%M'
-            )
-          - datetime.datetime.strptime(
-                wake_time, '%d/%m/%y %H:%M'
-            )
-        )
-        return str(difference)
-
-  then add calls to it in ``test_duration_w_date_and_time``
+* I change the call to ``get_difference`` from ``test_duration_w_date_and_time``
 
   .. code-block:: python
 
@@ -427,19 +375,71 @@ and we are green. From the tests, I know I can
                 wake_time=wake_time,
                 sleep_time=sleep_time
             ),
-            self.get_difference_a(
-                wake_time, sleep_time
-            )
+            None
         )
 
-  and the test passes with no random failures. Fantastic!
+* I add a new calculation that uses `datetime.datetime.strptime`_ in the test, and change the expectation in the assertion
+
+  .. code-block:: python
+
+    else:
+        difference = (
+            datetime.datetime.strptime(
+                wake_time, '%d/%m/%y %H:%M'
+            )
+          - datetime.datetime.strptime(
+                sleep_time, '%d/%m/%y %H:%M'
+            )
+        )
+        self.assertEqual(
+            sleep_duration.duration_a(
+                wake_time=wake_time,
+                sleep_time=sleep_time
+            ),
+            str(difference)
+        )
+
+  the terminal shows an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: None != '0:53:00'
+    AssertionError: None != '7:59:00'
+    AssertionError: None != '9:02:00'
+    AssertionError: None != '10:16:00'
+
+* I add an `import statement`_ to the top of ``sleep_duration.py``
+
+  .. code-block:: python
+
+    import datetime
+
+
+    def read_timestamp(timestamp=None, index=0):
+    ...
+
+* then add a calculation to the else block
+
+  .. code-block:: python
+
+    else:
+        difference = (
+            datetime.datetime.strptime(
+                wake_time, '%d/%m/%y %H:%M'
+            )
+          - datetime.datetime.strptime(
+                sleep_time, '%d/%m/%y %H:%M'
+            )
+        )
+        return str(difference)
+
+  and the test passes with no random failures! Fantastic!!
 
 .. _test_duration_w_date_and_time_refactor:
 
 *********************************************************************************
 refactor: make it better
 *********************************************************************************
-
 
 * I add a :ref:`function<functions>` that calls  `datetime.datetime.strptime`_
 
@@ -474,7 +474,8 @@ refactor: make it better
 
     else:
         return str(
-            wake_datetime - sleep_datetime
+            get_datetime(wake_time)
+          - get_datetime(sleep_time)
         )
 
 * I remove
@@ -488,16 +489,17 @@ refactor: make it better
 
     AttributeError: module 'sleep_duration' has no attribute 'duration'. Did you mean: 'duration_a'?
 
-* I remove ``test_duration_w_hours_and_minutes`` since it is now covered by ``test_duration_w_date_and_time``
-* I rename ``duration_a`` to ``duration`` in both files and the terminal shows all tests are still passing!
+* I rename ``duration_a`` to ``duration`` in both files and the terminal shows a ValueError_ for ``test_duration_w_hours_and_minutes`` which still uses the int_ constructor
+* I remove ``test_duration_w_hours_and_minutes`` because it is now covered by ``test_duration_w_date_and_time``
 * then remove
 
+  - ``get_difference``
   - ``test_converting_timedelta_to_a_string``
-  - ``test_subtracting_datetime_objects`` and
+  - ``test_subtracting_datetime_objects``
   - ``test_datetime_objects``
   - ``test_the_modulo_operation``
   - ``test_floor_aka_integer_division``
-  - ``test_converting_strings_to_numbers``
+  - ``test_converting_strings_to_numbers`` and
   - ``test_string_splitting``
 
   as they are not needed for the solution anymore
@@ -527,6 +529,7 @@ refactor: make it better
     def test_duration_w_date_and_time(self):
         wake_time = random_timestamp('31/12/99')
         sleep_time = random_timestamp('31/12/99')
+
         while wake_time < sleep_time:
             wake_time = random_timestamp(
                 '31/12/99'
@@ -534,26 +537,38 @@ refactor: make it better
 
   green again. I can now test ``duration`` with any dates and times. I just cannot use dates that do not exist
 
-* I add a variable for the pattern to remove the repetition and remove the commented code
+* I add a :ref:`method<functions>` that calls `datetime.datetime.strptime`
 
   .. code-block:: python
 
-    def test_duration_w_date_and_time(self):
-        wake_time = random_timestamp()
-        sleep_time = random_timestamp()
+    @staticmethod
+    def get_datetime(wake_time):
+        return datetime.datetime.strptime(
+            wake_time, '%d/%m/%y %H:%M'
+        )
 
-        pattern = '%d/%m/%y %H:%M'
-        wake_datetime = datetime.datetime.strptime(
-            wake_time, pattern
+    def test_duration_w_date_and_time(self):
+    ...
+
+  then call it in the test
+
+  .. code-block:: python
+
+    else:
+        self.assertEqual(
+            sleep_duration.duration(
+                wake_time=wake_time,
+                sleep_time=sleep_time
+            ),
+            str(
+                self.get_datetime(wake_time)
+              - self.get_datetime(sleep_time)
+            )
         )
-        sleep_datetime = datetime.datetime.strptime(
-            sleep_time, pattern
-        )
-        ...
 
   still green
 
-* I rename ``test_duration_w_date_and_time`` to ``test_duration``
+* I rename ``test_duration_w_date_and_time`` to ``test_duration`` and all is well that ends well
 
 .. _sleep_duration_review:
 
@@ -582,8 +597,8 @@ The challenge was to write a program that calculates the difference between a gi
 
   - `random.randint`_ to generate random numbers for hours and minutes
   - that are :doc:`interpolated </how_to/pass_values>` in timestamps with dates as inputs for ``wake_time`` and ``sleep_time``
-  - a `while statement`_ to make sure that ``wake_time`` is always later than or the same as ``sleep_time`` in the test
-  - and that the ``duration`` :ref:`function<functions>` returns the right difference between  ``wake_time`` and ``sleep_time``
+  - a `while statement`_ to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<functions>` raises a ValueError_ with a message
+  - and returns the right difference when ``wake_time`` is later than or the same as ``sleep_time``
 
 I also encountered the following exceptions
 

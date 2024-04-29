@@ -184,7 +184,6 @@ refactor: make it better
             )
         wake_time = random_timestamp()
 
-* then remove ``test_duration_w_an_earlier_wake_than_sleep_time`` since it is now covered by ``test_duration_w_hours_and_minutes``
 * I comment out the condition in ``duration`` to make sure the test still works as expected
 
   .. code-block:: python
@@ -205,7 +204,7 @@ refactor: make it better
     AssertionError: ValueError not raised
 
   the test works as expected. I remove the comments and the terminal shows green again
-
+* then remove ``test_duration_w_an_earlier_wake_than_sleep_time`` since it is now covered by ``test_duration_w_hours_and_minutes``
 * I add an ``else`` block to line up the rest of the code
 
   .. code-block:: python
@@ -313,7 +312,8 @@ refactor: make it better
                 sleep_time=sleep_time
             ),
             self.get_difference(
-                wake_time, sleep_time
+                wake_time=wake_time,
+                sleep_time=sleep_time
             )
         )
 
