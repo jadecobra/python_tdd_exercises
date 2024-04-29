@@ -20,7 +20,7 @@ A `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ 
 
 
 * Lists are represented with ``[]``
-* Lists can be made with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor
+* Lists can be made with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_
 * Lists can hold any `object <https://docs.python.org/3/glossary.html#term-object>`_
 * Lists can be changed after creation by performing an operation, this means they are mutable
 * Lists can be looped over
@@ -63,12 +63,12 @@ green: make it pass
     # AssertionError
     # TypeError
 
-  - Looking at the error I see that the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor expects one argument but four are given in the test, so I am not following the signature for making lists
-  - a `constructor <https://en.wikipedia.org/wiki/Constructor_(object-oriented_programming)>`_ is a :ref:`function<functions>` that is used to make an instance of a :doc:`class </classes/classes>`
-  - I read `python's documentation for lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ and see that the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor takes an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ as input
+  - Looking at the error I see that the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_ expects one argument but four are given in the test, so I am not following the signature for making lists
+  - a constructor_ is a :ref:`function<functions>` that is used to make an instance of a :doc:`class </classes/classes>`
+  - I read `python's documentation for lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ and see that the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_ takes an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ as input
   - An `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ is an object I can go over its items one by one in a loop - `tuples <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_, `lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_, `sets <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ and :doc:`dictionaries </data_structures/dictionaries>` are iterable
 
-* I make the values provided to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor a `tuple <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_ by placing them in parentheses
+* I make the values provided to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_ a `tuple <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_ by placing them in parentheses
 
   .. code-block:: python
 
@@ -93,7 +93,7 @@ green: make it pass
 refactor: make it better
 =========================
 
-* I can make a list with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor but the passing test also shows I can make a list with ``[]`` which uses less characters. I add a test for it
+* I can make a list with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_ but the passing test also shows I can make a list with ``[]`` which uses less characters. I add a test for it
 
   .. code-block:: python
 
@@ -606,7 +606,7 @@ review
 *********************************************************************************
 
 * Lists are represented with ``[]``
-* Lists can be made with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor
+* Lists can be made with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_
 * Lists can hold any `object <https://docs.python.org/3/glossary.html#term-object>`_
 * Lists can be changed after creation by performing an operation, this means they are mutable
 * Lists can be looped over

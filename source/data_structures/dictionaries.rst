@@ -101,7 +101,7 @@ refactor: make it better
     def a_dict():
         return {'key': 'value'}
 
-* it is also possible to make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ using the `dict <https://docs.python.org/3/library/stdtypes.html#dict>`_ constructor. I add another test to ``test_making_dictionaries_w_strings_as_keys``
+* it is also possible to make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ using the `dict <https://docs.python.org/3/library/stdtypes.html#dict>`_ constructor_. I add another test to ``test_making_dictionaries_w_strings_as_keys``
 
   .. code-block:: python
 

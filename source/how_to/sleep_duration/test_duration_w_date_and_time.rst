@@ -41,8 +41,14 @@ red: make it fail
     def test_duration_w_date_and_time(self):
         wake_time = random_timestamp_a()
         sleep_time = random_timestamp_a()
+
         while wake_time < sleep_time:
+            self.assertWakeTimeEarlier(
+                wake_time, sleep_time
+            )
             wake_time = random_timestamp_a()
+        else:
+            ...
 
   and get a ValueError_
 
@@ -62,7 +68,7 @@ green: make it pass
 *********************************************************************************
 
 * I add the `unittest.skip decorator`_ to ``test_duration_w_date_and_time``
-* then add a test to ``test_string_splitting`` to recreate the error
+* then add an assertion to ``test_string_splitting`` to recreate the error
 
   .. code-block:: python
 
@@ -92,7 +98,7 @@ green: make it pass
         '31/12/99 01'
     )
 
-* I also add a test to ``test_converting_strings_to_numbers`` to confirm that the ValueError_ is raised when calling the int_ constructor on the result of ``'31/12/99 13:04'.split(':')[0]``
+* I also add a test to ``test_converting_strings_to_numbers`` to confirm that the ValueError_ is raised when calling the int_ constructor_ on the result of ``'31/12/99 13:04'.split(':')[0]``
 
   .. code-block:: python
 
@@ -120,7 +126,7 @@ green: make it pass
 
   and tests are green again
 
-* The int_ constructor will not work when the timestamps have a date. I need a solution that can read the date and time. I search for `date and time <https://docs.python.org/3/search.html?q=time+difference>`_ in `python's online documentation`_, to see if there is an existing solution and select the datetime_ module from the results. Reading through the available types in the module I see `datetime.datetime`_ objects which are a combination of date and time
+* The int_ constructor_ will not work when the timestamps have a date. I need a solution that can read the date and time. I search for `date and time <https://docs.python.org/3/search.html?q=time+difference>`_ in `python's online documentation`_, to see if there is an existing solution and select the datetime_ module from the results. Reading through the available types in the module I see `datetime.datetime`_ objects which are a combination of date and time
 
   .. code-block:: python
 
@@ -314,7 +320,7 @@ test_converting_timedelta_to_a_string
 red: make it fail
 ---------------------------------------------------------------------------------
 
-* I want the result as a string_ not a `datetime.timedelta`_ . I add a test to see what happens when I pass it to the str_ constructor?
+* I want the result as a string_ not a `datetime.timedelta`_ . I add a test to see what happens when I pass it to the str_ constructor_
 
   .. code-block:: python
 
@@ -347,9 +353,7 @@ I make the expected value in the test match the value from the terminal
       '0:20:34'
   )
 
-and we are green, calling the str_ constructor with a `datetime.timedelta`_ object returns a string_ in the format ``Hours:Minutes:Seconds``
-
-From the tests, I know I can
+and we are green. From the tests, I know I can
 
 * convert a string_ to a `datetime.datetime`_ object using `datetime.datetime.strptime`_
 * subtract one `datetime.datetime`_ object from another to get a `datetime.timedelta`_ object
@@ -359,7 +363,8 @@ From the tests, I know I can
 
 .. _test_duration_w_date_and_time_green_1:
 
-* I remove the `unittest.skip decorator`_ from ``test_duration_w_date_and_time``
+* I remove the `unittest.skip decorator`_ from ``test_duration_w_date_and_time`` and get back the :ref:`ValueError`, the test calls ``duration`` which calls ``read_timestamp`` :ref:`function<functions>` in ``sleep_duration.py``. ``read_timestamp`` cannot process timestamps that have dates because it still uses the int_ constructor_
+* I make a copy of ``duration``
 * then remove ``difference_hours``, ``difference_minutes``, ``duration_hours`` and ``duration_minutes`` and change the calculations for difference to use the `datetime.datetime.strptime`_ :ref:`method<functions>`
 
   .. code-block:: python
@@ -390,7 +395,7 @@ From the tests, I know I can
     ValueError: invalid literal for int() with base 10: '31/12/99 21'
     ValueError: invalid literal for int() with base 10: '31/12/99 22'
 
-  the test calls ``duration`` which calls ``read_timestamp`` :ref:`function<functions>` in ``sleep_duration.py``. ``read_timestamp`` cannot process timestamps that have dates
+
 
 * I make a copy of the ``duration`` :ref:`function<functions>` in ``sleep_duration.py`` and rename it to ``duration_a`` to keep the existing working solution while I try a new one
 * then change the assertion in ``test_duration_w_date_and_time`` to call ``duration_a``

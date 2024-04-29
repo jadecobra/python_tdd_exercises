@@ -660,7 +660,7 @@ refactor: make it better
 test_converting_strings_to_numbers
 #################################################################################
 
-The hours part of the timestamp after calling `str.split`_ is still a string_ and I got a :ref:`TypeError` when I tried to subtract one from another earlier. I want to see if I can use the int_ constructor to convert a string_ to a number
+The hours part of the timestamp after calling `str.split`_ is still a string_ and I got a :ref:`TypeError` when I tried to subtract one from another earlier. I want to see if I can use the int_ constructor_ to convert a string_ to a number
 
 * I add a new failing test to test numbers that have a ``0`` in front of them
 
@@ -708,7 +708,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
 
 ----
 
-* I add calls to the int_ constructor in the expectation of ``test_duration_w_hours``
+* I add calls to the int_ constructor_ in the expectation of ``test_duration_w_hours``
 
   .. code-block:: python
 
@@ -844,7 +844,7 @@ The challenge is to write a program that calculates the difference between a giv
   - used the `str.split`_ :ref:`method<functions>` I found by calling the `help system`_ to split a string_ on a separator
   - and indexed the :doc:`list </data_structures/lists/lists>` from the split to get specific items
 
-* `test_converting_strings_to_numbers`_ with the int_ constructor
+* `test_converting_strings_to_numbers`_ with the int_ constructor_
 
 * `test_duration_w_hours`_ where I
 

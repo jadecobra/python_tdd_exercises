@@ -212,7 +212,7 @@ green: make it pass
 
     AssertionError: datetime.timedelta(seconds=74880) != '20:48:00'
 
-* I add the str_ constructor
+* I add the str_ constructor_
 
   .. code-block:: python
 
