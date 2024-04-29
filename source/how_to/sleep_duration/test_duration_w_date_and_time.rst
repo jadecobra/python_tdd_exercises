@@ -364,39 +364,6 @@ and we are green. From the tests, I know I can
 .. _test_duration_w_date_and_time_green_1:
 
 * I remove the `unittest.skip decorator`_ from ``test_duration_w_date_and_time`` and get back the :ref:`ValueError`, the test calls ``duration`` which calls ``read_timestamp`` :ref:`function<functions>` in ``sleep_duration.py``. ``read_timestamp`` cannot process timestamps that have dates because it still uses the int_ constructor_
-* I make a copy of ``duration``
-* then remove ``difference_hours``, ``difference_minutes``, ``duration_hours`` and ``duration_minutes`` and change the calculations for difference to use the `datetime.datetime.strptime`_ :ref:`method<functions>`
-
-  .. code-block:: python
-
-    difference = (
-        datetime.datetime.strptime(
-            wake_time, '%d/%m/%y %H:%M'
-        )
-      - datetime.datetime.strptime(
-            sleep_time, '%d/%m/%y %H:%M'
-        )
-    )
-
-    self.assertEqual(
-        sleep_duration.duration(
-            wake_time=wake_time,
-            sleep_time=sleep_time
-        ),
-        str(difference)
-    )
-
-  and get a ValueError_
-
-  .. code-block:: python
-
-    ValueError: invalid literal for int() with base 10: '31/12/99 17'
-    ValueError: invalid literal for int() with base 10: '31/12/99 18'
-    ValueError: invalid literal for int() with base 10: '31/12/99 21'
-    ValueError: invalid literal for int() with base 10: '31/12/99 22'
-
-
-
 * I make a copy of the ``duration`` :ref:`function<functions>` in ``sleep_duration.py`` and rename it to ``duration_a`` to keep the existing working solution while I try a new one
 * then change the assertion in ``test_duration_w_date_and_time`` to call ``duration_a``
 
@@ -407,8 +374,11 @@ and we are green. From the tests, I know I can
             wake_time=wake_time,
             sleep_time=sleep_time
         ),
-        str(difference)
+        self.get_difference(
+            wake_time, sleep_time
+        )
     )
+
 * I remove ``difference_hours`` and ``difference_minutes`` from ``duration_a``
 * then change the calculation for difference to use `datetime.datetime.strptime`_
 
@@ -450,6 +420,47 @@ and we are green. From the tests, I know I can
   .. code-block:: python
 
     return str(difference)
+
+  the terminal shows another ValueError_
+
+  .. code-block:: python
+
+    ValueError: invalid literal for int() with base 10: '31/12/99 17'
+    ValueError: invalid literal for int() with base 10: '31/12/99 18'
+    ValueError: invalid literal for int() with base 10: '31/12/99 21'
+    ValueError: invalid literal for int() with base 10: '31/12/99 22'
+
+  the calculation in ``get_difference`` still use the int_ constructor_
+* I make a copy of ``get_difference``, rename it to ``get_difference_a`` and change the calculations to use the `datetime.datetime.strptime`_ :ref:`method<functions>`
+
+  .. code-block:: python
+
+    @staticmethod
+    def get_difference_a(wake_time, sleep_time):
+        difference = (
+            datetime.datetime.strptime(
+                wake_time, '%d/%m/%y %H:%M'
+            )
+          - datetime.datetime.strptime(
+                wake_time, '%d/%m/%y %H:%M'
+            )
+        )
+        return str(difference)
+
+  then add calls to it in ``test_duration_w_date_and_time``
+
+  .. code-block:: python
+
+    else:
+        self.assertEqual(
+            sleep_duration.duration_a(
+                wake_time=wake_time,
+                sleep_time=sleep_time
+            ),
+            self.get_difference_a(
+                wake_time, sleep_time
+            )
+        )
 
   and the test passes with no random failures. Fantastic!
 
