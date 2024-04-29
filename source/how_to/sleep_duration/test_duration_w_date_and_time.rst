@@ -68,37 +68,7 @@ green: make it pass
 *********************************************************************************
 
 * I add the `unittest.skip decorator`_ to ``test_duration_w_date_and_time``
-* then add an assertion to ``test_string_splitting`` to recreate the error
-
-  .. code-block:: python
-
-    def test_string_splitting(self):
-        split = '01:23'.split(':')
-
-        self.assertEqual(split, ['01', '23'])
-        self.assertEqual(split[0], '01')
-        self.assertEqual(split[1], '23')
-        self.assertEqual(
-            '31/12/99 01:23'.split(':')[0],
-            ''
-        )
-
-  the terminal shows an :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: '31/12/99 01' != ''
-
-* and I change ``test_string_splitting`` with the right values to make it pass
-
-  .. code-block:: python
-
-    self.assertEqual(
-        '31/12/99 01:23'.split(':')[0],
-        '31/12/99 01'
-    )
-
-* I also add a test to ``test_converting_strings_to_numbers`` to confirm that the ValueError_ is raised when calling the int_ constructor_ on the result of ``'31/12/99 13:04'.split(':')[0]``
+* then add an assertion to ``test_converting_strings_to_numbers`` to recreate the error
 
   .. code-block:: python
 
@@ -107,13 +77,13 @@ green: make it pass
         self.assertEqual(int('01'), 1)
         int('31/12/99 01')
 
-  and get a ValueError_ with the same message from ``test_duration_w_date_and_time``
+  the terminal shows a ValueError_ with the same message from ``test_duration_w_date_and_time``
 
   .. code-block:: python
 
     ValueError: invalid literal for int() with base 10: '31/12/99 13'
 
-  I cannot convert a string_ in the format ``'31/12/99 13'`` to an integer. I handle the ValueError_ with `assertRaises`_
+  I cannot convert a string_ in the format ``'31/12/99 13'`` to a number. I handle the ValueError_ with `assertRaises`_
 
   .. code-block:: python
 
