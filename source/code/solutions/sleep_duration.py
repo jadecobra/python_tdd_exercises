@@ -7,17 +7,15 @@ def get_datetime(timestamp):
     )
 
 
-def duration(wake_time=None, sleep_time=None):
-    wake_datetime = get_datetime(wake_time)
-    sleep_datetime = get_datetime(sleep_time)
-
-    if wake_datetime < sleep_datetime:
+def duration(wake_time, sleep_time):
+    if wake_time < sleep_time:
         raise ValueError(
-            f'wake_time: {wake_time}'
-            ' is earlier than '
-            f'sleep_time: {sleep_time}'
+            f"wake_time: {wake_time}"
+            " is earlier than "
+            f"sleep_time: {sleep_time}"
         )
     else:
         return str(
-            wake_datetime - sleep_datetime
+            get_datetime(wake_time)
+          - get_datetime(sleep_time)
         )

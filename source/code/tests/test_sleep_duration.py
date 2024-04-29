@@ -26,38 +26,31 @@ class TestSleepDuration(unittest.TestCase):
                 sleep_time=sleep_time
             )
 
-    def test_duration_w_an_earlier_wake_than_sleep_time(self):
-        self.assertWakeTimeEarlier(
-            wake_time='31/12/99 01:00',
-            sleep_time='31/12/99 02:00',
+    @staticmethod
+    def get_datetime(wake_time):
+        return datetime.datetime.strptime(
+            wake_time, '%d/%m/%y %H:%M'
         )
 
     def test_duration(self):
         wake_time = random_timestamp('31/12/99')
         sleep_time = random_timestamp('31/12/99')
 
-        pattern = '%d/%m/%y %H:%M'
-        difference = (
-            datetime.datetime.strptime(
-                wake_time, pattern
+        while wake_time < sleep_time:
+            self.assertWakeTimeEarlier(
+                wake_time, sleep_time
             )
-          - datetime.datetime.strptime(
-                sleep_time, pattern
-            )
-        )
-
-        try:
+            wake_time = random_timestamp('31/12/99')
+        else:
             self.assertEqual(
                 sleep_duration.duration(
                     wake_time=wake_time,
                     sleep_time=sleep_time
                 ),
-                str(difference)
-            )
-        except Exception:
-            self.assertWakeTimeEarlier(
-                wake_time=wake_time,
-                sleep_time=sleep_time
+                str(
+                    self.get_datetime(wake_time)
+                  - self.get_datetime(sleep_time)
+                )
             )
 
 
