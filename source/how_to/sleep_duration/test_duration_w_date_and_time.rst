@@ -512,42 +512,13 @@ refactor: make it better
   - ``read_timestamp`` in ``sleep_duration.py`` and
   - ``duration`` because ``duration_a`` is a better solution
 
-  and get an :ref:`AttributeError` for ``test_duration_w_an_earlier_wake_than_sleep_time`` and ``test_duration_w_hours_and_minutes``
+  and get an :ref:`AttributeError`
 
   .. code-block:: python
 
     AttributeError: module 'sleep_duration' has no attribute 'duration'. Did you mean: 'duration_a'?
 
 * I remove ``test_duration_w_hours_and_minutes`` since it is now covered by ``test_duration_w_date_and_time``
-* then add a call to ``duration_a`` in ``test_duration_w_an_earlier_wake_than_sleep_time``
-
-  .. code-block:: python
-
-    def test_duration_w_an_earlier_wake_than_sleep_time(self):
-        wake_time = '01:00'
-        sleep_time = '02:00'
-
-        with self.assertRaisesRegex(
-            ValueError,
-            f'wake_time: {wake_time}'
-            ' is earlier than '
-            f'sleep_time: {sleep_time}'
-        ):
-            sleep_duration.duration_a(
-                wake_time=wake_time,
-                sleep_time=sleep_time
-            )
-
-  the terminal still shows green, even though it does not have dates in the timestamps. I add dates
-
-  .. code-block:: python
-
-    def test_duration_w_an_earlier_wake_than_sleep_time(self):
-        wake_time = '31/12/99 01:00'
-        sleep_time = '31/12/99 02:00'
-
-  and the terminal shows green again
-
 * I rename ``duration_a`` to ``duration`` in both files and the terminal shows all tests are still passing!
 * then remove
 

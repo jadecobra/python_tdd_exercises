@@ -28,6 +28,13 @@ I delete all the text in ``sleep_duration.py`` and the terminal shows an :ref:`A
 
   AttributeError: module 'sleep_duration' has no attribute 'duration'
 
+which I add to a list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+
+.. code-block:: python
+
+  # Exceptions Encountered
+  # AttributeError
+
 .. _test_duration_tests_green:
 
 *********************************************************************************
@@ -42,6 +49,14 @@ green: make it pass
 
   and get a NameError_
 
+* that I add to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AttributeError
+    # NameError
+
 * then assign the name to :ref:`None`
 
   .. code-block:: python
@@ -54,6 +69,15 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
+  and I add it to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AttributeError
+    # NameError
+    # TypeError
+
 * I change ``duration`` to a :ref:`function<functions>` to make it callable_
 
   .. code-block:: python
@@ -61,7 +85,7 @@ green: make it pass
     def duration():
         return None
 
-  and the terminal shows a :ref:`TypeError`
+  and the terminal shows another :ref:`TypeError`
 
   .. code-block:: python
 
@@ -85,24 +109,33 @@ green: make it pass
 
     def duration(wake_time, sleep_time):
 
-  and get an :ref:`AssertionError` for ``test_duration_w_an_earlier_wake_than_sleep_time``
+  and get an :ref:`AssertionError` that looks like this
+
+  .. code-block:: python
+
+    AssertionError: None != '1:02:00'
+    AssertionError: None != '2:55:00'
+    AssertionError: None != '16:59:00'
+    AssertionError: None != '21:14:00'
+
+  or one that looks like this
 
   .. code-block:: python
 
     AssertionError: ValueError not raised
 
-  and another :ref:`AssertionError` for ``test_duration``
+  this means the ``duration`` :ref:`function<functions>` has to make a choice. ``test_duration`` expects a timestamp and ``test_duration_w_an_earlier_wake_than_sleep_time`` expects a ValueError_
+* I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
   .. code-block:: python
 
-    AssertionError: None != '-1 day, 12:53:00'
-    AssertionError: None != '-1 day, 8:42:00'
-    AssertionError: None != '4:04:00'
-    AssertionError: None != '17:06:00'
+    # Exceptions Encountered
+    # AttributeError
+    # NameError
+    # TypeError
+    # AssertionError
 
-  this means the ``duration`` :ref:`function<functions>` has to make a choice. ``test_duration`` expects a timestamp and ``test_duration_w_an_earlier_wake_than_sleep_time`` expects a ValueError_
-
-* I add a condition based on the name of the test
+* then add a condition based on the name of the test
 
   .. code-block:: python
 
@@ -112,25 +145,40 @@ green: make it pass
         else:
             return None
 
-  and get an :ref:`AssertionError`
+  and get an :ref:`AssertionError` because the message in the ValueError_ does not match the expectation of the test
 
   .. code-block:: python
 
-    AssertionError: "wake_time: 31/12/99 01:00 is earlier than sleep_time: 31/12/99 02:00" does not match ""
+    AssertionError: "wake_time: 31/12/99 12:07 is earlier than sleep_time: 31/12/99 13:37" does not match ""
+    AssertionError: "wake_time: 31/12/99 05:05 is earlier than sleep_time: 31/12/99 18:59" does not match ""
+    AssertionError: "wake_time: 31/12/99 02:27 is earlier than sleep_time: 31/12/99 15:12" does not match ""
+    AssertionError: "wake_time: 31/12/99 19:05 is earlier than sleep_time: 31/12/99 20:03" does not match ""
 
-  the message in the ValueError_ does not match the expectation of the test
+  or an :ref:`AssertionError` because the test expects a timestamp and ``duration`` returns :ref:`None`
 
 * I copy the message from the terminal then add it to the ValueError_
 
   .. code-block:: python
 
     raise ValueError(
-        "wake_time: 31/12/99 01:00"
+        "wake_time: 31/12/99 19:05"
         " is earlier than "
-        "sleep_time: 31/12/99 02:00"
+        "sleep_time: 31/12/99 20:03"
     )
 
-  leaving the :ref:`AssertionError` for ``test_duration``
+  the terminal shows another :ref:`AssertionError` for the message in the ValueError_ not matching, the timestamps change
+
+* I change the message in the ValueError_ to make it use the variables
+
+  .. code-block:: python
+
+    raise ValueError(
+        f"wake_time: {wake_time}"
+        " is earlier than "
+        f"sleep_time: {sleep_time}"
+    )
+
+  and I am left with the :ref:`AssertionError` where the test expects a timestamp
 
 * I copy the value from the test to replace :ref:`None` in the `return statement`_
 
@@ -146,7 +194,7 @@ green: make it pass
         else:
             return '17:06:00'
 
-  and get another :ref:`AssertionError`, the expectation of the test changes
+  and get another :ref:`AssertionError`, the timestamps change
 * I change the return statement to show what ``wake_time`` and ``sleep_time`` look like
 
   .. code-block:: python
@@ -194,7 +242,7 @@ green: make it pass
             )
             return (wake_datetime, sleep_datetime)
 
-  and get an :ref:`AssertionError` for
+  and get an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -260,15 +308,7 @@ refactor: make it better
         )
 
   the terminal shows all tests are still passing
-* I change the message in the ValueError_ to make it use the variables
-
-  .. code-block:: python
-
-    raise ValueError(
-        f"wake_time: {wake_time}"
-        " is earlier than "
-        f"sleep_time: {sleep_time}"
-    )
+* I remove the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
 *********************************************************************************
 review
@@ -278,11 +318,10 @@ I wrote a program that calculates the difference between a given ``wake_time`` a
 
 I also encountered the following exceptions
 
-* :ref:`AssertionError`
-* :ref:`TypeError`
-* NameError_
 * :ref:`AttributeError`
-* ValueError_test
+* NameError_
+* :ref:`TypeError`
+* :ref:`AssertionError`
 
 ----
 

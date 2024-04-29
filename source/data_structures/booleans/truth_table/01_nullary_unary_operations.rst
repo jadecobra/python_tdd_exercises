@@ -50,7 +50,7 @@ the terminal shows a :ref:`ModuleNotFoundError`
 green: make it pass
 #################################################################################
 
-* I add :ref:`ModuleNotFoundError` to the list of exceptions encountered
+* I add :ref:`ModuleNotFoundError` to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
   .. code-block:: python
 
@@ -73,7 +73,7 @@ green: make it pass
       def test_logical_true(self):
           self.assertTrue(truth_table.logical_true())
 
-  and the terminal shows an :ref:`AttributeError` which I add to the list of exceptions encountered
+  and the terminal shows an :ref:`AttributeError` which I add to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
   .. code-block:: python
 

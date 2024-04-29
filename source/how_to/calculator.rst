@@ -98,7 +98,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I add the error to the list of exceptions encountered ::
+* I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered ::
 
     # Exceptions Encountered
     # AssertionError
@@ -128,7 +128,7 @@ green: make it pass
   * ``calculator`` refers to ``calculator.py``
   * ``add`` refers to something (an attribute) within the ``calculator.py`` file
 
-* I add the error to the list of exceptions encountered
+* I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
   .. code-block:: python
 
@@ -163,7 +163,7 @@ green: make it pass
 
   The :ref:`AttributeError` was fixed by declaring a variable called ``add`` in the ``calculator`` module
 
-* The new error is a :ref:`TypeError` which can occur when an `object <https://docs.python.org/3/glossary.html#term-object>`_ is called in a way that disagrees with the object's definition. In this case the ``add`` variable is not callable_ because it refers to :ref:`None` which is not a callable_ object. I add the error to the list of exceptions encountered
+* The new error is a :ref:`TypeError` which can occur when an `object <https://docs.python.org/3/glossary.html#term-object>`_ is called in a way that disagrees with the object's definition. In this case the ``add`` variable is not callable_ because it refers to :ref:`None` which is not a callable_ object. I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
   .. code-block:: python
 
@@ -566,7 +566,7 @@ green: make it pass
       >    return x / y
       E    ZeroDivisionError: division by zero
 
-* I add `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ to the list of exceptions encountered
+* I add `ZeroDivisionError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError>`_ to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
   .. code-block:: python
 

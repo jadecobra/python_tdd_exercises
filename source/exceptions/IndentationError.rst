@@ -45,7 +45,7 @@ red: make it fail
     E    'b'
     E  IndentationError: unexpected indent
 
-  add ``IndentationError`` to the list of Exceptions encountered
+  add ``IndentationError`` to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
   .. code-block:: python
 

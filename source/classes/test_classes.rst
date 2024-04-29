@@ -50,7 +50,7 @@ the terminal shows a :ref:`ModuleNotFoundError` because I have an import stateme
 green: make it pass
 #################################################################################
 
-* I add :ref:`ModuleNotFoundError` to the list of exceptions encountered
+* I add :ref:`ModuleNotFoundError` to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
   .. code-block:: python
 
@@ -58,7 +58,7 @@ green: make it pass
     # AssertionError
     # ModuleNotFoundError
 
-* I make a python module called ``classes.py`` and the terminal shows an :ref:`AttributeError` which I add to the list of exceptions encountered
+* I make a python module called ``classes.py`` and the terminal shows an :ref:`AttributeError` which I add to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
   .. code-block:: python
 
@@ -75,7 +75,7 @@ green: make it pass
 
   and the terminal shows a NameError_ because ``ClassWithPass`` is not defined anywhere
 
-* I add the error to the list of exceptions encountered
+* I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
   .. code-block:: python
 
@@ -98,7 +98,7 @@ green: make it pass
     class ClassWithPass:
 
   the terminal shows an :ref:`IndentationError` because I declared a class without adding any indented text
-* I add the new error to the list of exceptions encountered
+* I add the new error to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
   .. code-block:: python
 

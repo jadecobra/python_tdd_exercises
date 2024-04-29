@@ -75,7 +75,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I add it to the list of exceptions encountered
+* I add it to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
   .. code-block:: python
 
@@ -126,7 +126,7 @@ red: make it fail
     NameError: name 'module' is not defined
 
   A NameError_ is raised when a name is used within a module with no definition for the name. In the test I call ``module.non_existent_attribute`` but there is no definition for ``module``
-* I add it to the list of exceptions encountered
+* I add it to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
   .. code-block:: python
 
@@ -152,7 +152,7 @@ red: make it fail
 
     AttributeError: module 'module' has no attribute 'non_existent_attribute'
 
-* I add the exception to the list of exceptions encountered
+* I add the exception to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
   .. code-block:: python
 

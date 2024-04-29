@@ -108,7 +108,7 @@ green: make it pass
 
     ValueError: wake_time: 01:00 is earlier than sleep_time: 02:00
 
-* I add the error to the list of exceptions encountered
+* I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
   .. code-block:: python
 

@@ -78,7 +78,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* I add the error to the list of exceptions encountered
+* I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
   .. code-block:: python
 

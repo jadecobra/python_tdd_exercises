@@ -118,7 +118,7 @@ refactor: make it better
 
     NameError: name 'list_comprehensions' is not defined
 
-* I add it to the list of exceptions encountered
+* I add it to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
   .. code-block:: python
 
@@ -154,7 +154,7 @@ refactor: make it better
 
     AttributeError: module 'list_comprehensions' has no attribute 'make_a_list'
 
-* I add the error to the list of exceptions encountered
+* I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
   .. code-block:: python
 
@@ -177,7 +177,7 @@ refactor: make it better
 
     TypeError: make_a_list() takes 0 positional arguments but 1 was given
 
-* I add it to the list of exceptions encountered
+* I add it to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
   .. code-block:: python
 
