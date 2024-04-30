@@ -66,9 +66,9 @@ green: make it pass
     def duration(wake_time=None, sleep_time=None):
         if wake_time < sleep_time:
             raise ValueError(
-                f'wake_time: {wake_time}'
+                f'wake_time: "{wake_time}"'
                 ' is earlier than '
-                f'sleep_time: {sleep_time}'
+                f'sleep_time: "{sleep_time}"'
             )
         else:
             difference_hours = (
@@ -100,10 +100,10 @@ green: make it pass
 
   .. code-block:: python
 
-    ValueError: wake_time: 07:33 is earlier than sleep_time: 08:12
-    ValueError: wake_time: 07:46 is earlier than sleep_time: 14:47
-    ValueError: wake_time: 23:10 is earlier than sleep_time: 23:27
-    ValueError: wake_time: 11:32 is earlier than sleep_time: 13:52
+    ValueError: wake_time: "07:33" is earlier than sleep_time: "08:12"
+    ValueError: wake_time: "07:46" is earlier than sleep_time: "14:47"
+    ValueError: wake_time: "23:10" is earlier than sleep_time: "23:27"
+    ValueError: wake_time: "11:32" is earlier than sleep_time: "13:52"
 
 * I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
@@ -136,9 +136,9 @@ green: make it pass
 
         with self.assertRaisesRegex(
             ValueError,
-            f'wake_time: {wake_time}'
+            f'wake_time: "{wake_time}"'
             ' is earlier than '
-            f'sleep_time: {sleep_time}'
+            f'sleep_time: "{sleep_time}"'
         ):
             sleep_duration.duration(
                 wake_time=wake_time,
@@ -173,9 +173,9 @@ refactor: make it better
     while wake_time < sleep_time:
         with self.assertRaisesRegex(
             ValueError,
-            f'wake_time: {wake_time}'
+            f'wake_time: "{wake_time}"'
             ' is earlier than '
-            f'sleep_time: {sleep_time}'
+            f'sleep_time: "{sleep_time}"'
         ):
             sleep_duration.duration(
                 wake_time=wake_time,
@@ -190,9 +190,9 @@ refactor: make it better
     def duration(wake_time=None, sleep_time=None):
     # if wake_time < sleep_time:
     #     raise ValueError(
-    #         f'wake_time: {wake_time}'
+    #         f'wake_time: "{wake_time}"'
     #         ' is earlier than '
-    #         f'sleep_time: {sleep_time}'
+    #         f'sleep_time: "{sleep_time}"'
     #     )
     # else:
 
@@ -246,9 +246,9 @@ refactor: make it better
     def assertWakeTimeEarlier(self, wake_time, sleep_time):
         with self.assertRaisesRegex(
             ValueError,
-            f'wake_time: {wake_time}'
+            f'wake_time: "{wake_time}"'
             ' is earlier than '
-            f'sleep_time: {sleep_time}'
+            f'sleep_time: "{sleep_time}"'
         ):
             sleep_duration.duration(
                 wake_time=wake_time,

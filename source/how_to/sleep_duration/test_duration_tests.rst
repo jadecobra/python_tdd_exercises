@@ -49,7 +49,7 @@ green: make it pass
 
   and get a NameError_
 
-* that I add to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+* that is going to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
   .. code-block:: python
 
@@ -69,7 +69,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-  and I add it to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+  another error for the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
   .. code-block:: python
 
@@ -229,10 +229,10 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: "wake_time: 31/12/99 12:07 is earlier than sleep_time: 31/12/99 13:37" does not match ""
-    AssertionError: "wake_time: 31/12/99 05:05 is earlier than sleep_time: 31/12/99 18:59" does not match ""
-    AssertionError: "wake_time: 31/12/99 02:27 is earlier than sleep_time: 31/12/99 15:12" does not match ""
-    AssertionError: "wake_time: 31/12/99 19:05 is earlier than sleep_time: 31/12/99 20:03" does not match ""
+    AssertionError: "wake_time: "31/12/99 12:07" is earlier than sleep_time: "31/12/99 13:37"" does not match ""
+    AssertionError: "wake_time: "31/12/99 05:05" is earlier than sleep_time: "31/12/99 18:59"" does not match ""
+    AssertionError: "wake_time: "31/12/99 02:27" is earlier than sleep_time: "31/12/99 15:12"" does not match ""
+    AssertionError: "wake_time: "31/12/99 19:05" is earlier than sleep_time: "31/12/99 20:03"" does not match ""
 
   or an :ref:`AssertionError` because the test expects a timestamp and ``duration`` returns :ref:`None`
 
@@ -241,9 +241,9 @@ green: make it pass
   .. code-block:: python
 
     raise ValueError(
-        "wake_time: 31/12/99 19:05"
-        " is earlier than "
-        "sleep_time: 31/12/99 20:03"
+        'wake_time: "31/12/99 19:05"'
+        ' is earlier than '
+        'sleep_time: "31/12/99 20:03"'
     )
 
   the terminal shows another :ref:`AssertionError` for the message in the ValueError_ not matching, the timestamps change
@@ -253,9 +253,9 @@ green: make it pass
   .. code-block:: python
 
     raise ValueError(
-        f"wake_time: {wake_time}"
-        " is earlier than "
-        f"sleep_time: {sleep_time}"
+        f'wake_time: "{wake_time}"'
+        ' is earlier than '
+        f'sleep_time: "{sleep_time}"'
     )
 
   and the terminal shows passing tests! YES!!

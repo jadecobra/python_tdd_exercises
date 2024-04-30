@@ -10,9 +10,9 @@ def get_datetime(timestamp):
 def duration(wake_time, sleep_time):
     if wake_time < sleep_time:
         raise ValueError(
-            f"wake_time: {wake_time}"
+            f"wake_time: "{wake_time}""
             " is earlier than "
-            f"sleep_time: {sleep_time}"
+            f"sleep_time: "{sleep_time}""
         )
     else:
         return str(
