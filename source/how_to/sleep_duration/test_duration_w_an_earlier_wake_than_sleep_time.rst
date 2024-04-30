@@ -203,8 +203,8 @@ refactor: make it better
     AssertionError: ValueError not raised
 
   the test works as expected. I remove the comments and the terminal shows green again
-* and remove ``test_duration_w_an_earlier_wake_than_sleep_time`` because it is now covered by ``test_duration_w_hours_and_minutes``
-* then add an ``else`` block to line up the rest of the code
+* I remove ``test_duration_w_an_earlier_wake_than_sleep_time`` because it is now covered by ``test_duration_w_hours_and_minutes``
+* then add an ``else`` block to line up the rest of the code in ``test_duration_w_hours_and_minutes``
 
   .. code-block:: python
 
@@ -317,7 +317,7 @@ refactor: make it better
             )
         )
 
-  all tests are still green!
+  and all tests are still green!
 
 .. _test_duration_w_an_earlier_wake_than_sleep_time_review:
 
