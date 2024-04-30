@@ -22,7 +22,7 @@ I want to test the ``duration`` :ref:`function<functions>` with dates in the tim
 red: make it fail
 *********************************************************************************
 
-* I make a copy of ``random_timestamp``, rename it, then add a date to the `return statement`_
+* I make a copy of ``random_timestamp``, change the name of the copy, then add a date to the `return statement`_
 
   .. code-block:: python
 
@@ -33,7 +33,7 @@ red: make it fail
             f'{random.randint(0,59):02}'
         )
 
-* and make a copy of ``test_duration_w_hours_and_minutes`` and rename it ``test_duration_w_date_and_time``
+* I also make a copy of ``test_duration_w_hours_and_minutes`` and change the name to ``test_duration_w_date_and_time``
 * then add calls to ``random_timestamp_a``
 
   .. code-block:: python
@@ -83,7 +83,7 @@ green: make it pass
 
     ValueError: invalid literal for int() with base 10: '31/12/99 13'
 
-  I cannot convert a string_ in the format ``'31/12/99 13'`` to a number. I handle the ValueError_ with `assertRaises`_
+  I cannot convert a timestamp string_ to a number when it has a date. I :doc:`handle</how_to/exception_handling_tests>` the ValueError_ with `assertRaises`_
 
   .. code-block:: python
 
@@ -94,7 +94,7 @@ green: make it pass
         with self.assertRaises(ValueError):
             int('31/12/99 01')
 
-  and tests are green again
+  and the test is green again
 
 * The int_ constructor_ will not work when the timestamps have a date. I need a solution that can read the date and time. I search for `date and time <https://docs.python.org/3/search.html?q=time+difference>`_ in `python's online documentation`_, to see if there is an existing solution and select the datetime_ module from the results. Reading through the available types in the module I see `datetime.datetime`_ objects which are a combination of date and time
 
@@ -115,7 +115,7 @@ test_datetime_objects
 red: make it fail
 ---------------------------------------------------------------------------------
 
-I add a test to ``test_sleep_duration.py`` based on `Examples of usage: datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_ for `datetime.datetime`_ objects
+I add a test to ``test_sleep_duration.py`` from `Examples of usage: datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_ for `datetime.datetime`_ objects
 
 .. code-block:: python
 
@@ -142,66 +142,66 @@ and the terminal shows a NameError_ because ``datetime`` is not defined in ``tes
 green: make it pass
 ---------------------------------------------------------------------------------
 
-* I add an `import statement`_ for the datetime_ module,
+I add an `import statement`_ for the datetime_ module,
 
-  .. code-block:: python
+.. code-block:: python
 
-    import datetime
-    import random
-    import sleep_duration
-    import unittest
-    ...
+  import datetime
+  import random
+  import sleep_duration
+  import unittest
+  ...
 
-  and the terminal shows an :ref:`AttributeError`
+and the terminal shows an :ref:`AttributeError`
 
-  .. code-block:: python
+.. code-block:: python
 
-    AttributeError: module 'datetime' has no attribute 'strptime'
+  AttributeError: module 'datetime' has no attribute 'strptime'
 
-  the reference to the ``strptime`` :ref:`method<functions>` is not right, my `import statement`_ is different than `the example in the documentation <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_. I update the call
+the reference to the ``strptime`` :ref:`method<functions>` is not right, my `import statement`_ is different from `the example in the documentation <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_. I add the module name to the call
 
-  .. code-block:: python
+.. code-block:: python
 
-    self.assertEqual(
-        datetime.datetime.strptime(
-            "21/11/06 16:30",
-            "%d/%m/%y %H:%M"
-        ),
-        ''
-    )
+  self.assertEqual(
+      datetime.datetime.strptime(
+          "21/11/06 16:30",
+          "%d/%m/%y %H:%M"
+      ),
+      ''
+  )
 
-  and get an :ref:`AssertionError`,
+and get an :ref:`AssertionError`,
 
-  .. code-block:: python
+.. code-block:: python
 
-    AssertionError: datetime.datetime(2006, 11, 21, 16, 30) != ''
+  AssertionError: datetime.datetime(2006, 11, 21, 16, 30) != ''
 
-  I copy the value on the left side of the :ref:`AssertionError` to replace the expected value in the test,
+I copy the value on the left side of the :ref:`AssertionError` to replace the expected value in the test,
 
-  .. code-block:: python
+.. code-block:: python
 
-    self.assertEqual(
-        datetime.datetime.strptime(
-            "21/11/06 16:30",
-            "%d/%m/%y %H:%M"
-        ),
-        datetime.datetime(
-            2006, 11, 21, 16, 30
-        )
-    )
+  self.assertEqual(
+      datetime.datetime.strptime(
+          "21/11/06 16:30",
+          "%d/%m/%y %H:%M"
+      ),
+      datetime.datetime(
+          2006, 11, 21, 16, 30
+      )
+  )
 
-  and the test passes. From this test I see that
+and the test passes. From this test I see that
 
-  * when the `datetime.datetime.strptime`_ :ref:`method<functions>` is given 2 strings_ as inputs - a timestamp and a pattern, it returns a `datetime.datetime`_ object with ``year``, ``month``, ``date``, ``hours`` and ``minutes``
-  * It also looks like the pattern provided means
+* when the `datetime.datetime.strptime`_ :ref:`method<functions>` is given 2 strings_ as inputs - a timestamp and a pattern, it returns a `datetime.datetime`_ object with ``year``, ``month``, ``date``, ``hours`` and ``minutes``
+* It also looks like the pattern provided means
 
-    - ``%d`` is for days
-    - ``%m`` is for months
-    - ``%y`` is for 2 digit years
-    - ``%H`` is for hours
-    - ``%M`` is for minutes
+  - ``%d`` is for days
+  - ``%m`` is for months
+  - ``%y`` is for 2 digit years
+  - ``%H`` is for hours
+  - ``%M`` is for minutes
 
-    you can see more in `strftime() and strptime() behavior <https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior>`_
+  you can see more in `strftime() and strptime() behavior <https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior>`_
 
 .. _test_subtracting_datetime_objects:
 
@@ -290,24 +290,24 @@ test_converting_timedelta_to_a_string
 red: make it fail
 ---------------------------------------------------------------------------------
 
-* I want the result as a string_ not a `datetime.timedelta`_ . I add a test to see what happens when I pass it to the str_ constructor_
+I want the result as a string_ not a `datetime.timedelta`_  object. I add a test to see what happens when I pass it to the str_ constructor_
 
-  .. code-block:: python
+.. code-block:: python
 
-    def test_converting_timedelta_to_a_string(self):
-        self.assertEqual(
-            str(datetime.timedelta(seconds=1234)),
-            ''
-        )
+  def test_converting_timedelta_to_a_string(self):
+      self.assertEqual(
+          str(datetime.timedelta(seconds=1234)),
+          ''
+      )
 
-    def assertWakeTimeEarlier(self, wake_time, sleep_time):
-    ...
+  def assertWakeTimeEarlier(self, wake_time, sleep_time):
+  ...
 
-  the terminal shows an :ref:`AssertionError` with a string_ like what I want
+the terminal shows an :ref:`AssertionError` with a string_
 
-  .. code-block:: python
+.. code-block:: python
 
-    AssertionError: '0:20:34' != ''
+  AssertionError: '0:20:34' != ''
 
 .. _test_converting_timedelta_to_a_string_green:
 
@@ -323,7 +323,7 @@ I make the expected value in the test match the value from the terminal
       '0:20:34'
   )
 
-and we are green. From the tests, I know I can
+and the tests passes. From the tests, I know I can
 
 * convert a string_ to a `datetime.datetime`_ object using `datetime.datetime.strptime`_
 * subtract one `datetime.datetime`_ object from another to get a `datetime.timedelta`_ object
@@ -333,8 +333,8 @@ and we are green. From the tests, I know I can
 
 .. _test_duration_w_date_and_time_green_1:
 
-* I remove the `unittest.skip decorator`_ from ``test_duration_w_date_and_time`` and get back the :ref:`ValueError`, the test calls ``duration`` which calls ``read_timestamp`` :ref:`function<functions>` in ``sleep_duration.py``. ``read_timestamp`` cannot process timestamps that have dates because it still uses the int_ constructor_
-* I make a copy of the ``duration`` :ref:`function<functions>` in ``sleep_duration.py`` and rename it to ``duration_a`` to keep the existing working solution while I try a new one
+* I remove the `unittest.skip decorator`_ from ``test_duration_w_date_and_time`` and get back ValueError_, the test calls ``duration`` which calls ``read_timestamp`` in ``sleep_duration.py``. ``read_timestamp`` cannot process timestamps that have dates because it still uses the int_ constructor_
+* I make a copy of the ``duration`` :ref:`function<functions>` in ``sleep_duration.py`` and rename it to ``duration_a`` to keep the working solution while I try a new one
 * then change the assertion in ``test_duration_w_date_and_time`` to call ``duration_a``
 
   .. code-block:: python
@@ -365,7 +365,7 @@ and we are green. From the tests, I know I can
 
   ``test_duration_w_date_and_time`` still has the old calculations that use the int_ constructor_
 
-* I change the call to ``get_difference`` from ``test_duration_w_date_and_time``
+* I remove the call to ``get_difference`` from ``test_duration_w_date_and_time``
 
   .. code-block:: python
 
@@ -378,7 +378,7 @@ and we are green. From the tests, I know I can
             None
         )
 
-* I add a new calculation that uses `datetime.datetime.strptime`_ in the test, and change the expectation in the assertion
+* then add a new calculation that uses `datetime.datetime.strptime`_ in the test, and change the expectation in the assertion
 
   .. code-block:: python
 
@@ -480,14 +480,14 @@ refactor: make it better
 
 * I remove
 
-  - ``read_timestamp`` in ``sleep_duration.py`` and
+  - ``read_timestamp`` and
   - ``duration`` because ``duration_a`` is a better solution
 
-  and get an :ref:`AttributeError`
+  the terminal shows an :ref:`AttributeError`
 
   .. code-block:: python
 
-    AttributeError: module 'sleep_duration' has no attribute 'duration'. Did you mean: 'duration_a'?
+    AttributeError: module 'sleep_duration' has no attribute 'duration'...
 
 * I rename ``duration_a`` to ``duration`` in both files and the terminal shows a ValueError_ for ``test_duration_w_hours_and_minutes`` which still uses the int_ constructor
 * I remove ``test_duration_w_hours_and_minutes`` because it is now covered by ``test_duration_w_date_and_time``
@@ -499,13 +499,13 @@ refactor: make it better
   - ``test_datetime_objects``
   - ``test_the_modulo_operation``
   - ``test_floor_aka_integer_division``
-  - ``test_converting_strings_to_numbers`` and
-  - ``test_string_splitting``
+  - ``test_converting_strings_to_numbers``
+  - ``test_string_splitting`` and
+  - ``random_timestamp``
 
   as they are not needed for the solution anymore
-* I remove ``random_timestamp``
-* then change ``random_timestamp_a`` to ``random_timestamp``
-* the ``random_timestamp`` :ref:`function<functions>` always returns timestamps with the same date, I change it to take in dates as inputs
+* I change the name of ``random_timestamp_a`` to ``random_timestamp``
+* this ``random_timestamp`` :ref:`function<functions>` always returns timestamps with the same date, I change it to take in dates as inputs
 
   .. code-block:: python
 
@@ -522,7 +522,7 @@ refactor: make it better
 
     TypeError: random_timestamp() missing 1 required positional argument: 'date'
 
-  I update the calls in the test
+  I add dates to the calls in the test
 
   .. code-block:: python
 
@@ -535,7 +535,7 @@ refactor: make it better
                 '31/12/99'
             )
 
-  green again. I can now test ``duration`` with any dates and times. I just cannot use dates that do not exist
+  and the terminal shows green again. I can now test ``duration`` with any dates and times, but cannot use dates that do not exist
 
 * I add a :ref:`method<functions>` that calls `datetime.datetime.strptime`
 
