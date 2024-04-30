@@ -22,18 +22,19 @@ I want to write the program that makes the tests in ``test_sleep_duration.py`` p
 red: make it fail
 *********************************************************************************
 
-I delete all the text in ``sleep_duration.py`` and the terminal shows an :ref:`AttributeError`
+* I close ``test_sleep_duration.py``
+* then delete all the text in ``sleep_duration.py`` and the terminal shows an :ref:`AttributeError`
 
-.. code-block:: python
+  .. code-block:: python
 
-  AttributeError: module 'sleep_duration' has no attribute 'duration'
+    AttributeError: module 'sleep_duration' has no attribute 'duration'
 
-which I add to a list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+  which I add to a list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
-.. code-block:: python
+  .. code-block:: python
 
-  # Exceptions Encountered
-  # AttributeError
+    # Exceptions Encountered
+    # AttributeError
 
 .. _test_duration_tests_green:
 
@@ -49,7 +50,11 @@ green: make it pass
 
   and get a NameError_
 
-* that is going to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+  .. code-block:: python
+
+    NameError: name 'duration' is not defined
+
+* which I add to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
   .. code-block:: python
 
@@ -91,13 +96,13 @@ green: make it pass
 
     TypeError: duration() got an unexpected keyword argument 'wake_time'
 
-  and I add the name to the :ref:`function<functions>` signature
+  I add the name to the :ref:`function<functions>` signature
 
   .. code-block:: python
 
     def duration(wake_time):
 
-  another :ref:`TypeError`
+  and get another :ref:`TypeError` for another keywword argument
 
   .. code-block:: python
 
@@ -118,7 +123,7 @@ green: make it pass
     AssertionError: None != '16:59:00'
     AssertionError: None != '21:14:00'
 
-  or one that looks like this
+  or
 
   .. code-block:: python
 
@@ -135,7 +140,7 @@ green: make it pass
     # TypeError
     # AssertionError
 
-* then change the `return statement`_ to display to inputs. I want to see the relation between ``wake_time``, ``sleep_time`` and the expectation of the test
+* then change the `return statement`_ to display its inputs. I want to see the relation between ``wake_time``, ``sleep_time`` and the expectation of the test
 
   .. code-block:: python
 
@@ -193,7 +198,7 @@ green: make it pass
 
   .. code-block:: python
 
-    return (wake_datetime-sleep_datetime)
+    return (wake_datetime - sleep_datetime)
 
   the terminal shows an :ref:`AssertionError`
 
@@ -205,11 +210,11 @@ green: make it pass
 
   .. code-block:: python
 
-    return str(wake_datetime-sleep_datetime)
+    return str(wake_datetime - sleep_datetime)
 
-  the test passes and I am left with the random :ref:`AssertionError` when ValueError_ is not raised. I need a condition to add to the :ref:`function<functions>`
+  the test passes, and I am left with the random :ref:`AssertionError` when ValueError_ is not raised
 
-* I add a condition to the :ref:`function<functions>` based on the name ``assertWakeTimeEarlier`` and the differences I encountered where all positive
+* I add a condition to the :ref:`function<functions>` based on the name ``assertWakeTimeEarlier`` and the differences I encountered were all positive
 
   .. code-block:: python
 
@@ -225,7 +230,7 @@ green: make it pass
             )
             return str(wake_datetime-sleep_datetime)
 
-  and get an :ref:`AssertionError` because the message in the ValueError_ does not match the expectation of the test
+  the terminal shows an :ref:`AssertionError` because the message in the ValueError_ does not match the expectation of the test
 
   .. code-block:: python
 
@@ -233,8 +238,6 @@ green: make it pass
     AssertionError: "wake_time: "31/12/99 05:05" is earlier than sleep_time: "31/12/99 18:59"" does not match ""
     AssertionError: "wake_time: "31/12/99 02:27" is earlier than sleep_time: "31/12/99 15:12"" does not match ""
     AssertionError: "wake_time: "31/12/99 19:05" is earlier than sleep_time: "31/12/99 20:03"" does not match ""
-
-  or an :ref:`AssertionError` because the test expects a timestamp and ``duration`` returns :ref:`None`
 
 * I copy the message from the terminal then add it to the ValueError_
 
@@ -246,9 +249,9 @@ green: make it pass
         'sleep_time: "31/12/99 20:03"'
     )
 
-  the terminal shows another :ref:`AssertionError` for the message in the ValueError_ not matching, the timestamps change
+  and get another :ref:`AssertionError` for the message in the ValueError_ not matching because the timestamps change
 
-* I change the message in the ValueError_ to make it use the variables
+* I change the message in the ValueError_ to use the variables
 
   .. code-block:: python
 
@@ -266,7 +269,7 @@ green: make it pass
 refactor: make it better
 *********************************************************************************
 
-* I create a function to call `datetime.datetime.strptime`_
+* I make a function that calls `datetime.datetime.strptime`_
 
   .. code-block:: python
 
@@ -300,13 +303,13 @@ refactor: make it better
         )
 
   the terminal shows all tests are still passing
-* I remove the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+* and I remove the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
 *********************************************************************************
 review
 *********************************************************************************
 
-The challenge was to write a program that passes the tests without seeing them. I wrote something that calculates the difference between a given ``wake_time`` and ``sleep_time`` by following the errors in the terminal to make the tests pass
+The challenge was to write a program that passes the tests without seeing them. I wrote something that calculates the difference between a given ``wake_time`` and ``sleep_time`` by following the errors in the terminal
 
 I also encountered the following exceptions
 

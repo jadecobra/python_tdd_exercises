@@ -810,7 +810,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
 
   the terminal still shows passing tests
 
-* the assignments for ``wake_time`` and ``sleep_time`` are the same, time to create a :ref:`function<functions>` that returns a random timestamp
+* the assignments for ``wake_time`` and ``sleep_time`` are the same, time to make a :ref:`function<functions>` that returns a random timestamp
 
   .. code-block:: python
 

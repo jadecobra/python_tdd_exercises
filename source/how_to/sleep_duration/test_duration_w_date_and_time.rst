@@ -68,7 +68,7 @@ green: make it pass
 *********************************************************************************
 
 * I add the `unittest.skip decorator`_ to ``test_duration_w_date_and_time``
-* then add an assertion to ``test_converting_strings_to_numbers`` to recreate the error
+* then add an assertion to ``test_converting_strings_to_numbers`` to make the error I just saw
 
   .. code-block:: python
 
