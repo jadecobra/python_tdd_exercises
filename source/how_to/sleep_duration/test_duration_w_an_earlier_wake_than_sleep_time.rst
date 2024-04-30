@@ -96,7 +96,7 @@ green: make it pass
   - when ``wake_time`` is earlier than ``sleep_time``, the ``duration`` :ref:`function<functions>` will raise an :doc:`Exception </how_to/exception_handling_programs>`
   - when ``wake_time`` is later than or the same as ``sleep_time``, the ``duration`` :ref:`function<functions>` will return the difference between the two timestamps
 
-  the terminal shows a random ValueError_ for ``test_duration_w_hours_and_minutes`` when ``wake_time`` is earlier than ``sleep_time``
+  the terminal shows a random ValueError_ for ``test_duration_w_hours_and_minutes`` when ``wake_time`` is earlier than ``sleep_time`` and for ``test_duration_w_an_earlier_wake_than_sleep_time``
 
   .. code-block:: python
 
@@ -104,12 +104,6 @@ green: make it pass
     ValueError: wake_time: 07:46 is earlier than sleep_time: 14:47
     ValueError: wake_time: 23:10 is earlier than sleep_time: 23:27
     ValueError: wake_time: 11:32 is earlier than sleep_time: 13:52
-
-  and this ValueError_ for ``test_duration_w_an_earlier_wake_than_sleep_time``
-
-  .. code-block:: python
-
-    ValueError: wake_time: 01:00 is earlier than sleep_time: 02:00
 
 * I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
@@ -135,6 +129,11 @@ green: make it pass
   .. code-block:: python
 
     def test_duration_w_an_earlier_wake_than_sleep_time(self):
+        wake_time = random_timestamp()
+        sleep_time = random_timestamp()
+        while wake_time >= sleep_time:
+            wake_time = random_timestamp()
+
         with self.assertRaisesRegex(
             ValueError,
             f'wake_time: {wake_time}'
@@ -142,8 +141,8 @@ green: make it pass
             f'sleep_time: {sleep_time}'
         ):
             sleep_duration.duration(
-                wake_time='01:00',
-                sleep_time='02:00'
+                wake_time=wake_time,
+                sleep_time=sleep_time
             )
 
   and the test passes
@@ -167,7 +166,7 @@ green: make it pass
 refactor: make it better
 *********************************************************************************
 
-* I copy the `assertRaisesRegex`_ statement from ``test_duration_w_an_earlier_wake_than_sleep_time`` and add it to the `while statement`_ in ``test_duration_w_date_and_time``
+* I copy the `assertRaisesRegex`_ statement from ``test_duration_w_an_earlier_wake_than_sleep_time`` and add it to the `while statement`_ in ``test_duration_w_date_and_time`` to remove repetition
 
   .. code-block:: python
 
@@ -204,8 +203,8 @@ refactor: make it better
     AssertionError: ValueError not raised
 
   the test works as expected. I remove the comments and the terminal shows green again
-* then remove ``test_duration_w_an_earlier_wake_than_sleep_time`` since it is now covered by ``test_duration_w_hours_and_minutes``
-* I add an ``else`` block to line up the rest of the code
+* and remove ``test_duration_w_an_earlier_wake_than_sleep_time`` because it is now covered by ``test_duration_w_hours_and_minutes``
+* then add an ``else`` block to line up the rest of the code
 
   .. code-block:: python
 
@@ -240,7 +239,7 @@ refactor: make it better
         )
 
   still green
-* then add an ``assert`` :ref:`method<functions>` to replace the `assertRaisesRegex` statement
+* I add an ``assert`` :ref:`method<functions>` to replace the `assertRaisesRegex`_ block
 
   .. code-block:: python
 
@@ -257,8 +256,9 @@ refactor: make it better
             )
 
     def test_duration_w_hours_and_minutes(self):
+    ...
 
-  and call it in ``test_duration_w_hours_and_minutes``
+  then call it in ``test_duration_w_hours_and_minutes``
 
   .. code-block:: python
 
@@ -275,7 +275,7 @@ refactor: make it better
             ...
 
   the terminal still shows passing tests
-* I also add a function for calculating the difference between ``wake_time`` and ``sleep_time``
+* I also add a `static method`_ for calculating the difference between ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
 
@@ -337,8 +337,8 @@ The challenge is to write a program that calculates the difference between a giv
 * `test_duration_w_an_earlier_wake_than_sleep_time`_
 * :ref:`test_duration_w_hours_and_minutes<test_duration_w_hours_and_minutes>` where I used a `while statement`_
 
-  - that uses assertRaisesRegex_ to make sure the ``duration`` :ref:`function<functions>` raises a ValueError_ with a message when ``wake_time`` is earlier than ``sleep_time``
-  - and that the :ref:`function<functions>` returns the right difference when ``wake_time`` is later than or the same as ``sleep_time``
+  - to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<functions>` raises a ValueError_ with a message
+  - and returns the right difference when ``wake_time`` is later than or the same as ``sleep_time``
 
 
 Would you like to :ref:`test duration with dates in the timestamps<test_duration_w_date_and_time>`?

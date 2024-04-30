@@ -317,4 +317,4 @@ I also encountered the following exceptions
 
 ----
 
-:doc:`code/code_sleep_duration`
+:doc:`/code/code_sleep_duration`
