@@ -1,9 +1,9 @@
 .. include:: ../../links.rst
 
-.. _test_duration_tests:
+.. _test_duration_test:
 
 #################################################################################
-how to measure sleep duration: test_duration_tests
+how to measure sleep duration: test_duration_test
 #################################################################################
 
 This is part 5 of a program that calculates the difference between a given wake and sleep time.
@@ -14,9 +14,9 @@ This is part 5 of a program that calculates the difference between a given wake 
 
 ----
 
-I want to write the program that makes the tests in ``test_sleep_duration.py`` pass without looking at the tests
+I want to write the program that makes the test in ``test_sleep_duration.py`` pass without looking at it
 
-.. _test_duration_tests_red:
+.. _test_duration_test_red:
 
 *********************************************************************************
 red: make it fail
@@ -36,7 +36,7 @@ red: make it fail
     # Exceptions Encountered
     # AttributeError
 
-.. _test_duration_tests_green:
+.. _test_duration_test_green:
 
 *********************************************************************************
 green: make it pass
@@ -261,9 +261,9 @@ green: make it pass
         f'sleep_time: "{sleep_time}"'
     )
 
-  and the terminal shows passing tests! YES!!
+  and the terminal shows a passing test! YES!!
 
-.. _test_duration_tests_refactor:
+.. _test_duration_test_refactor:
 
 *********************************************************************************
 refactor: make it better
@@ -291,7 +291,7 @@ refactor: make it better
         sleep_datetime = get_datetime(sleep_time)
         return str(wake_datetime-sleep_datetime)
 
-  all tests are still green!
+  the terminal still shows green!
 * I can return the calculation directly without creating the variables
 
   .. code-block:: python
@@ -302,14 +302,14 @@ refactor: make it better
           - get_datetime(sleep_time)
         )
 
-  the terminal shows all tests are still passing
+  the terminal shows the test is still passing
 * and I remove the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
 *********************************************************************************
 review
 *********************************************************************************
 
-The challenge was to write a program that passes the tests without seeing them. I wrote something that calculates the difference between a given ``wake_time`` and ``sleep_time`` by following the errors in the terminal
+The challenge was to write a program that passes the test. I wrote something that calculates the difference between a given ``wake_time`` and ``sleep_time`` by following the errors in the terminal
 
 I also encountered the following exceptions
 
