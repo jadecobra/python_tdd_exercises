@@ -537,7 +537,7 @@ refactor: make it better
 
   and the terminal shows green again. I can now test ``duration`` with any dates and times, but cannot use dates that do not exist
 
-* I add a :ref:`method<functions>` that calls `datetime.datetime.strptime`
+* I add a :ref:`method<functions>` that calls `datetime.datetime.strptime`_
 
   .. code-block:: python
 

@@ -309,9 +309,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-The challenge was to write a program that passes the test. I wrote something that calculates the difference between a given ``wake_time`` and ``sleep_time`` by following the errors in the terminal
-
-I also encountered the following exceptions
+The challenge was to write a program that passes the test. I wrote something that calculates the difference between a given ``wake_time`` and ``sleep_time`` by following the exceptions encountered in the terminal
 
 * :ref:`AttributeError`
 * NameError_
