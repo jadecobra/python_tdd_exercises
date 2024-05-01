@@ -822,8 +822,8 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
   .. code-block:: python
 
     def test_duration_w_hours(self):
-        wake_time = random_timestamp()
         sleep_time = random_timestamp()
+        wake_time = random_timestamp()
     ...
 
   all tests are still passing! What a beautiful life!!

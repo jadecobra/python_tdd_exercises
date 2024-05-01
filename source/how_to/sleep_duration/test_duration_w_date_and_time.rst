@@ -39,8 +39,8 @@ red: make it fail
   .. code-block:: python
 
     def test_duration_w_date_and_time(self):
-        wake_time = random_timestamp_a()
         sleep_time = random_timestamp_a()
+        wake_time = random_timestamp_a()
 
         while wake_time < sleep_time:
             self.assertWakeTimeEarlier(

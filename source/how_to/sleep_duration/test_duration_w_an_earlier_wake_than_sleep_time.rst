@@ -27,8 +27,8 @@ I add a failing test to ``test_sleep_duration.py`` with a `while statement`_ to 
 .. code-block:: python
 
   def test_duration_w_an_earlier_wake_than_sleep_time(self):
-      wake_time = random_timestamp()
       sleep_time = random_timestamp()
+      wake_time = random_timestamp()
       while wake_time >= sleep_time:
           wake_time = random_timestamp()
 
@@ -59,7 +59,35 @@ green: make it pass
 *********************************************************************************
 
 
-* The ``duration`` :ref:`function<functions>` returns a negative timestamp when given an earlier ``wake_time`` than ``sleep_time``, which is not a real duration. I want it to only return a difference when ``wake_time`` is later than or the same as ``sleep_time``. I add a condition
+* The ``duration`` :ref:`function<functions>` returns a negative timestamp when given an earlier ``wake_time`` than ``sleep_time``, which is not a real duration. I want it to only return a difference when ``wake_time`` is later than or the same as ``sleep_time``
+* I replace the assertEqual_ with assertRaisesRegex_ to check that the :ref:`function<functions>` raises a ValueError_ with a message when ``wake_time`` is earlier than ``sleep_time``
+
+  .. code-block:: python
+
+    def test_duration_w_an_earlier_wake_than_sleep_time(self):
+        sleep_time = random_timestamp()
+        wake_time = random_timestamp()
+        while wake_time >= sleep_time:
+            wake_time = random_timestamp()
+
+        with self.assertRaisesRegex(
+            ValueError,
+            f'wake_time: "{wake_time}"'
+            ' is earlier than '
+            f'sleep_time: "{sleep_time}"'
+        ):
+            sleep_duration.duration(
+                wake_time=wake_time,
+                sleep_time=sleep_time
+            )
+
+  the terminal shows an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: ValueError not raised
+
+  I add a condition to the ``duration`` :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -93,10 +121,7 @@ green: make it pass
                 f'{duration_minutes:02}'
             )
 
-  - when ``wake_time`` is earlier than ``sleep_time``, the ``duration`` :ref:`function<functions>` will raise an :doc:`Exception </how_to/exception_handling_programs>`
-  - when ``wake_time`` is later than or the same as ``sleep_time``, the ``duration`` :ref:`function<functions>` will return the difference between the two timestamps
-
-  the terminal shows a random ValueError_ for ``test_duration_w_hours_and_minutes`` when ``wake_time`` is earlier than ``sleep_time`` and for ``test_duration_w_an_earlier_wake_than_sleep_time``
+  the terminal shows a random ValueError_ for ``test_duration_w_hours_and_minutes`` when ``wake_time`` is earlier than ``sleep_time``
 
   .. code-block:: python
 
@@ -116,45 +141,13 @@ green: make it pass
     # AttributeError
     # ValueError
 
-* then add the `unittest.skip decorator`_ to ``test_duration_w_hours_and_minutes``
-
-  .. code-block:: python
-
-    @unittest.skip
-    def test_duration_w_hours_and_minutes(self):
-    ...
-
-* I replace the assertEqual_ with assertRaisesRegex_ to catch the :doc:`Exception </how_to/exception_handling_tests>` and make sure it has the right message
-
-  .. code-block:: python
-
-    def test_duration_w_an_earlier_wake_than_sleep_time(self):
-        wake_time = random_timestamp()
-        sleep_time = random_timestamp()
-        while wake_time >= sleep_time:
-            wake_time = random_timestamp()
-
-        with self.assertRaisesRegex(
-            ValueError,
-            f'wake_time: "{wake_time}"'
-            ' is earlier than '
-            f'sleep_time: "{sleep_time}"'
-        ):
-            sleep_duration.duration(
-                wake_time=wake_time,
-                sleep_time=sleep_time
-            )
-
-  and the test passes
-
-* I remove the `unittest.skip decorator`_ for ``test_duration_w_hours_and_minutes``
 * then add a `while statement`_ to make sure ``wake_time`` is never earlier than ``sleep_time`` in the test
 
   .. code-block:: python
 
     def test_duration_w_hours_and_minutes(self):
-        wake_time = random_timestamp()
         sleep_time = random_timestamp()
+        wake_time = random_timestamp()
         while wake_time < sleep_time:
             wake_time = random_timestamp()
 
@@ -263,8 +256,8 @@ refactor: make it better
   .. code-block:: python
 
     def test_duration_w_hours_and_minutes(self):
-        wake_time = random_timestamp()
         sleep_time = random_timestamp()
+        wake_time = random_timestamp()
 
         while wake_time < sleep_time:
             self.assertWakeTimeEarlier(

@@ -33,8 +33,8 @@ red: make it fail
   .. code-block:: python
 
     def test_duration_w_hours_and_minutes(self):
-        wake_time = random_timestamp()
         sleep_time = random_timestamp()
+        wake_time = random_timestamp()
 
 * then add a variable for the difference between the hours
 
@@ -91,8 +91,8 @@ red: make it fail
   .. code-block:: python
 
     def test_duration_w_hours_and_minutes(self):
-        wake_time = random_timestamp()
         sleep_time = random_timestamp()
+        wake_time = random_timestamp()
 
         difference_hours = (
             int(wake_time.split(':')[0])

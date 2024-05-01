@@ -102,7 +102,7 @@ green: make it pass
 
     def duration(wake_time):
 
-  and get another :ref:`TypeError` for another keywword argument
+  and get a :ref:`TypeError` for another keywword argument
 
   .. code-block:: python
 
@@ -114,7 +114,7 @@ green: make it pass
 
     def duration(wake_time, sleep_time):
 
-  and get an :ref:`AssertionError` that looks like this
+  the terminal shows an :ref:`AssertionError` that looks like this
 
   .. code-block:: python
 
