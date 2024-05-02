@@ -131,18 +131,20 @@ I add a test to ``test_sleep_duration.py`` from `Examples of usage: datetime <ht
   def assertWakeTimeEarlier(self, wake_time, sleep_time):
   ...
 
-and the terminal shows a NameError_ because ``datetime`` is not defined in ``test_sleep_duration.py``, I need to import it
+and the terminal shows a NameError_ because ``datetime`` is not defined in ``test_sleep_duration.py``
 
 .. code-block:: python
 
   NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
+
+I have to import it to use it
 
 .. _test_datetime_objects_green:
 
 green: make it pass
 ---------------------------------------------------------------------------------
 
-I add an `import statement`_ for the datetime_ module,
+I add an `import statement`_ for the datetime_ module
 
 .. code-block:: python
 
@@ -170,7 +172,7 @@ the reference to the ``strptime`` :ref:`method<functions>` is not right, my `imp
       ''
   )
 
-and get an :ref:`AssertionError`,
+and get an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -190,10 +192,10 @@ I copy the value on the left side of the :ref:`AssertionError` to replace the ex
       )
   )
 
-and the test passes. From this test I see that
+and the test passes. It looks like
 
 * when the `datetime.datetime.strptime`_ :ref:`method<functions>` is given 2 strings_ as inputs - a timestamp and a pattern, it returns a `datetime.datetime`_ object with ``year``, ``month``, ``date``, ``hours`` and ``minutes``
-* It also looks like the pattern provided means
+* and the pattern provided means
 
   - ``%d`` is for days
   - ``%m`` is for months
@@ -201,7 +203,7 @@ and the test passes. From this test I see that
   - ``%H`` is for hours
   - ``%M`` is for minutes
 
-  you can see more in `strftime() and strptime() behavior <https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior>`_
+  there are more details in `strftime() and strptime() behavior <https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior>`_
 
 .. _test_subtracting_datetime_objects:
 
@@ -261,24 +263,41 @@ I copy the value on the left of the :ref:`AssertionError` and replace the expect
 refactor: make it better
 ---------------------------------------------------------------------------------
 
-I add a variable to remove the duplication of the timestamp pattern
+* I add a :ref:`method<functions>` to call `datetime.datetime.strptime`_ and remove the duplication of the timestamp pattern
 
-.. code-block:: python
+  .. code-block:: python
 
-  def test_subtracting_datetime_objects(self):
-      pattern = '%d/%m/%y %H:%M'
-      sleep_time = datetime.datetime.strptime(
-          '21/11/06 16:30', pattern
-      )
-      wake_time = datetime.datetime.strptime(
-          '21/11/06 17:30', pattern
-      )
-      ...
+    @staticmethod
+    def get_datetime(wake_time):
+        return datetime.datetime.strptime(
+            wake_time, '%d/%m/%y %H:%M'
+        )
 
-from the passing tests I can
+    def test_subtracting_datetime_objects(self):
+    ...
 
-- convert a string_ to a `datetime.datetime`_ object by using `datetime.datetime.strptime`_
-- subtract one `datetime.datetime`_ object from another to get a `datetime.timedelta`_ object
+* then call it in the ``test_subtracting_datetime_objects``
+
+  .. code-block:: python
+
+    def test_subtracting_datetime_objects(self):
+        sleep_time = self.get_datetime('21/11/06 16:30')
+        wake_time = self.get_datetime('21/11/06 17:30')
+        ...
+
+* and ``test_datetime_objects``
+
+  .. code-block:: python
+
+    ...
+    self.assertEqual(
+        self.get_datetime("21/11/06 16:30"),
+        datetime.datetime(
+            2006, 11, 21, 16, 30
+        )
+    )
+
+I can convert a string_ to a `datetime.datetime`_ object by using `datetime.datetime.strptime`_ and subtract one `datetime.datetime`_ object from another to get a `datetime.timedelta`_ object
 
 .. _test_converting_timedelta_to_a_string:
 
@@ -378,18 +397,14 @@ and the tests passes. From the tests, I know I can
             None
         )
 
-* then add a new calculation that uses `datetime.datetime.strptime`_ in the test, and change the expectation in the assertion
+* then add a new calculation that calls ``get_datetime`` in the test, and change the expectation in the assertion
 
   .. code-block:: python
 
     else:
         difference = (
-            datetime.datetime.strptime(
-                wake_time, '%d/%m/%y %H:%M'
-            )
-          - datetime.datetime.strptime(
-                sleep_time, '%d/%m/%y %H:%M'
-            )
+            self.get_datetime(wake_time)
+          - self.get_datetime(sleep_time)
         )
         self.assertEqual(
             sleep_duration.duration_a(
@@ -418,30 +433,7 @@ and the tests passes. From the tests, I know I can
     def read_timestamp(timestamp=None, index=0):
     ...
 
-* then add a calculation to the else block
-
-  .. code-block:: python
-
-    else:
-        difference = (
-            datetime.datetime.strptime(
-                wake_time, '%d/%m/%y %H:%M'
-            )
-          - datetime.datetime.strptime(
-                sleep_time, '%d/%m/%y %H:%M'
-            )
-        )
-        return str(difference)
-
-  and the test passes with no random failures! Fantastic!!
-
-.. _test_duration_w_date_and_time_refactor:
-
-*********************************************************************************
-refactor: make it better
-*********************************************************************************
-
-* I add a :ref:`function<functions>` that calls  `datetime.datetime.strptime`_
+* then add a :ref:`function<functions>` to call `datetime.datetime.strptime`_ with a pattern
 
   .. code-block:: python
 
@@ -455,7 +447,7 @@ refactor: make it better
     def duration_a(wake_time=None, sleep_time=None):
     ...
 
-  then add calls to ``get_datetime`` in ``duration_a``
+* I call ``get_datetime`` for the new difference calculation in ``duration_a``
 
   .. code-block:: python
 
@@ -464,10 +456,16 @@ refactor: make it better
             get_datetime(wake_time)
           - get_datetime(sleep_time)
         )
-
         return str(difference)
 
-  still green
+  and the test passes with no random failures! Fantastic!!
+
+.. _test_duration_w_date_and_time_refactor:
+
+*********************************************************************************
+refactor: make it better
+*********************************************************************************
+
 * I remove the ``difference`` variable and return the calculation directly
 
   .. code-block:: python
@@ -478,7 +476,7 @@ refactor: make it better
           - get_datetime(sleep_time)
         )
 
-* I remove
+* then remove
 
   - ``read_timestamp`` and
   - ``duration`` because ``duration_a`` is a better solution
@@ -496,14 +494,14 @@ refactor: make it better
   - ``get_difference``
   - ``test_converting_timedelta_to_a_string``
   - ``test_subtracting_datetime_objects``
-  - ``test_datetime_objects``
   - ``test_the_modulo_operation``
   - ``test_floor_aka_integer_division``
   - ``test_converting_strings_to_numbers``
   - ``test_string_splitting`` and
   - ``random_timestamp``
 
-  as they are not needed for the solution anymore
+  because they do not test the solution directly
+
 * I change the name of ``random_timestamp_a`` to ``random_timestamp``
 * this ``random_timestamp`` :ref:`function<functions>` always returns timestamps with the same date, I change it to take in dates as inputs
 
@@ -536,21 +534,32 @@ refactor: make it better
             )
 
   and the terminal shows green again. I can now test ``duration`` with any dates and times, but cannot use dates that do not exist
-
-* I add a :ref:`method<functions>` that calls `datetime.datetime.strptime`_
+* I rename ``test_datetime_objects`` to ``test_get_datetime`` and change it to reference ``get_datetime`` from the ``sleep_duration`` :ref:`module<ModuleNotFoundError>`
 
   .. code-block:: python
 
-    @staticmethod
-    def get_datetime(wake_time):
-        return datetime.datetime.strptime(
-            wake_time, '%d/%m/%y %H:%M'
+    def test_get_datetime(self):
+        self.assertEqual(
+            sleep_duration.get_datetime("21/11/06 16:30"),
+            datetime.datetime(
+                2006, 11, 21, 16, 30
+            )
         )
 
-    def test_duration_w_date_and_time(self):
-    ...
+  still green!
 
-  then call it in the test
+* I also change the difference calculation in ``test_duration_w_date_and_time`` to call ``get_datetime`` from the ``sleep_duration`` :ref:`module<ModuleNotFoundError>`
+
+  .. code-block:: python
+
+    else:
+        difference = (
+            sleep_duration.get_datetime(wake_time)
+          - sleep_duration.get_datetime(sleep_time)
+        )
+        ...
+
+  I can use the calculation directly and remove the ``difference`` variable
 
   .. code-block:: python
 
@@ -558,16 +567,15 @@ refactor: make it better
         self.assertEqual(
             sleep_duration.duration(
                 wake_time=wake_time,
-                sleep_time=sleep_time
+                sleep_time=sleep_time,
             ),
             str(
-                self.get_datetime(wake_time)
-              - self.get_datetime(sleep_time)
+                sleep_duration.get_datetime(wake_time)
+              - sleep_duration.get_datetime(sleep_time)
             )
         )
 
-  still green
-
+  and remove ``get_datetime`` from ``test_sleep_duration.py`` because ``test_get_datetime`` covers what it does
 * I rename ``test_duration_w_date_and_time`` to ``test_duration`` and all is well that ends well
 
 .. _sleep_duration_review:
