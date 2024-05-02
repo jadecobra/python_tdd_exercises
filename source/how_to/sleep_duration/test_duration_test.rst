@@ -128,21 +128,6 @@ green: make it pass
     def get_datetime(parameter):
         return datetime.datetime(1999, 12, 31, 19, 8)
 
-  and get another :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: datetime.datetime(1999, 12, 31, 19, 8) != datetime.datetime(1999, 12, 31, 0, 15)
-
-  the values change
-
-* I change the `return statement` to show input parameter because I want to see the relationship to the expectation of the test
-
-  .. code-block:: python
-
-    
-
-
   the terminal shows a NameError_
 
   .. code-block:: python
@@ -158,6 +143,56 @@ green: make it pass
 
       def get_datetime(parameter):
       ...
+
+  and get another :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: datetime.datetime(1999, 12, 31, 19, 8) != datetime.datetime(1999, 12, 31, 0, 15)
+
+  the values change
+
+* I change the `return statement` to show the input parameter because I want to see the relationship to the expectation of the test
+
+  .. code-block:: python
+
+    def get_datetime(parameter):
+        return parameter
+
+  the terminal shows an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: '31/12/99 02:58' != datetime.datetime(1999, 12, 31, 2, 58)
+    AssertionError: '31/12/99 03:14' != datetime.datetime(1999, 12, 31, 3, 14)
+    AssertionError: '31/12/99 08:30' != datetime.datetime(1999, 12, 31, 8, 30)
+    AssertionError: '31/12/99 23:41' != datetime.datetime(1999, 12, 31, 23, 41)
+
+  I need a way to convert a string_ that has a date and time to a `datetime.datetime`_ object
+
+* I look at `Examples of usage: datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_ for `datetime.datetime`_ objects to learn how to do the conversion. The example with the `datetime.datetime.strptime` :ref:`method<functions>` looks like what I need. I make a copy of it to add to the ``get_datetime`` :ref:`function<functions>`, and change the timestamp to reference ``parameter``
+
+  .. code-block:: python
+
+    def get_datetime(parameter):
+        return datetime.strptime(
+            parameter, "%d/%m/%y %H:%M"
+        )
+
+  which gives me an :ref:`AttributeError`
+
+  .. code-block:: python
+
+    AttributeError: module 'datetime' has no attribute 'strptime'
+
+  the reference to the ``strptime`` :ref:`method<functions>` is not right, my `import statement`_ is different from `the example in the documentation <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_. I add the module name to the call
+
+  .. code-block:: python
+
+    def get_datetime(parameter):
+        return datetime.datetime.strptime(
+            parameter, "%d/%m/%y %H:%M"
+        )
 
   and get an :ref:`AttributeError`
 
@@ -239,11 +274,11 @@ green: make it pass
 
   it looks like the ``duration`` :ref:`function<functions>` has to make a choice. The test expects a timestamp or a ValueError_
 
-* I change the `return statement`_ to display its inputs. I want to see the relation between ``wake_time``, ``sleep_time`` and the expectation of the test
+* I change the `return statement`_ to display its inputs and ignore the :ref:`AssertionErrors<AssertionError>` about the ValueError_ to work on it later. I want to see the relationship between ``wake_time``, ``sleep_time`` and the expectation of the test so I can figure out the timestamp parts
 
   .. code-block:: python
 
-    def duration(wake_time, sleep_time):
+    def duration(wake_time=None, sleep_time=None):
         return (wake_time, sleep_time)
 
   the terminal shows an :ref:`AssertionError` when it does not expect a ValueError_
@@ -256,25 +291,14 @@ green: make it pass
     AssertionError: ('31/12/99 19:14', '31/12/99 10:00') != '9:14:00'
 
   it looks like the test expects the difference between the timestamps
-* I make a copy of a timestamp and add it to the :ref:`function<functions>` as a reference
+
+* I add calls to ``get_datetime`` to calculate the difference between the two timestamps and use new variable names
 
   .. code-block:: python
 
-    def duration(wake_time, sleep_time):
-        return (wake_time, sleep_time)
-        '31/12/99 10:00'
-
-* I add calls to ```datetime.datetime.strptime`_ based on `Examples of usage: datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_`` to calculate the difference between the two timestamps and use new variable names
-
-  .. code-block:: python
-
-    def duration(wake_time, sleep_time):
-        wake_datetime = datetime.datetime.strptime(
-            wake_time, '%d/%m/%y %H:%M'
-        )
-        sleep_datetime = datetime.datetime.strptime(
-            sleep_time, '%d/%m/%y %H:%M'
-        )
+    def duration(wake_time=None, sleep_time=None):
+        wake_datetime = get_datetime(wake_time)
+        sleep_datetime = get_datetime(sleep_time)
         return (wake_datetime, sleep_datetime)
 
   and get an :ref:`AssertionError`
@@ -293,6 +317,9 @@ green: make it pass
 
   .. code-block:: python
 
+    AssertionError: datetime.timedelta(seconds=4020) != '1:07:00'
+    AssertionError: datetime.timedelta(seconds=16200) != '4:30:00'
+    AssertionError: datetime.timedelta(seconds=52740) != '14:39:00'
     AssertionError: datetime.timedelta(seconds=74880) != '20:48:00'
 
 * I add the str_ constructor_
@@ -307,17 +334,13 @@ green: make it pass
 
   .. code-block:: python
 
-    def duration(wake_time, sleep_time):
+    def duration(wake_time=None, sleep_time=None):
         if wake_time < sleep_time:
             raise ValueError
         else:
-            wake_datetime = datetime.datetime.strptime(
-                wake_time, '%d/%m/%y %H:%M'
-            )
-            sleep_datetime = datetime.datetime.strptime(
-                sleep_time, '%d/%m/%y %H:%M'
-            )
-            return str(wake_datetime-sleep_datetime)
+            wake_datetime = get_datetime(wake_time)
+            sleep_datetime = get_datetime(sleep_time)
+            return str(wake_datetime - sleep_datetime)
 
   the terminal shows an :ref:`AssertionError` because the message in the ValueError_ does not match the expectation of the test
 
@@ -328,7 +351,7 @@ green: make it pass
     AssertionError: "wake_time: "31/12/99 02:27" is earlier than sleep_time: "31/12/99 15:12"" does not match ""
     AssertionError: "wake_time: "31/12/99 19:05" is earlier than sleep_time: "31/12/99 20:03"" does not match ""
 
-* I copy the message from the terminal then add it to the ValueError_
+* I copy the message from the terminal then add it to the ValueError_, and change the outer double quotes to single quotes
 
   .. code-block:: python
 
@@ -338,9 +361,9 @@ green: make it pass
         'sleep_time: "31/12/99 20:03"'
     )
 
-  and get another :ref:`AssertionError` for the message in the ValueError_ not matching because the timestamps change
+  which gives me another :ref:`AssertionError` for the timestamps in the ValueError_ message not matching
 
-* I change the message in the ValueError_ to use the variables
+* I :doc:`interpolate</how_to/pass_values>` ``wake_time`` and ``sleep_time`` in the message
 
   .. code-block:: python
 
@@ -358,30 +381,7 @@ green: make it pass
 refactor: make it better
 *********************************************************************************
 
-* I make a function that calls `datetime.datetime.strptime`_
-
-  .. code-block:: python
-
-    def get_datetime(timestamp):
-        return datetime.datetime.strptime(
-            timestamp, '%d/%m/%y %H:%M'
-        )
-
-
-    def duration(wake_time, sleep_time):
-    ...
-
-  then call it in ``duration``
-
-  .. code-block:: python
-
-    else:
-        wake_datetime = get_datetime(wake_time)
-        sleep_datetime = get_datetime(sleep_time)
-        return str(wake_datetime-sleep_datetime)
-
-  the terminal still shows green!
-* I can return the calculation directly without creating the variables
+* I return the calculation directly without creating the variables
 
   .. code-block:: python
 
@@ -391,14 +391,14 @@ refactor: make it better
           - get_datetime(sleep_time)
         )
 
-  the terminal shows the test is still passing
+  the terminal shows all tests are still passing
 * and I remove the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
 *********************************************************************************
 review
 *********************************************************************************
 
-The challenge was to write a program that passes the test. I wrote something that calculates the difference between a given ``wake_time`` and ``sleep_time`` by following the exceptions encountered in the terminal
+The challenge was to write a program that passes the tests in ``test_sleep_duration.py`` without looking at it. I wrote something that calculates the difference between a given ``wake_time`` and ``sleep_time`` by following the exceptions encountered in the terminal
 
 * :ref:`AttributeError`
 * NameError_
