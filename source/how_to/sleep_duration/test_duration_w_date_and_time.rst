@@ -59,7 +59,7 @@ red: make it fail
     ValueError: invalid literal for int() with base 10: '31/12/99 11'
     ValueError: invalid literal for int() with base 10: '31/12/99 21'
 
-  the test tried to convert the timestamp string_ to a number to calculate ``difference_hours`` but it is in the wrong format
+  the test called ``duration`` which called ``read_timestamp`` that tried to convert the timestamp string_ to a number by using the int_ constructor_ but it is in the wrong format
 
 .. _test_duration_w_date_and_time_green_0:
 
@@ -273,7 +273,7 @@ refactor: make it better
             wake_time, '%d/%m/%y %H:%M'
         )
 
-    def test_subtracting_datetime_objects(self):
+    def test_datetime_objects(self):
     ...
 
 * then call it in the ``test_subtracting_datetime_objects``
@@ -281,8 +281,12 @@ refactor: make it better
   .. code-block:: python
 
     def test_subtracting_datetime_objects(self):
-        sleep_time = self.get_datetime('21/11/06 16:30')
-        wake_time = self.get_datetime('21/11/06 17:30')
+        sleep_time = self.get_datetime(
+            '21/11/06 16:30'
+        )
+        wake_time = self.get_datetime(
+            '21/11/06 17:30'
+        )
         ...
 
 * and ``test_datetime_objects``
@@ -534,7 +538,13 @@ refactor: make it better
             )
 
   and the terminal shows green again. I can now test ``duration`` with any dates and times, but cannot use dates that do not exist
-* I rename ``test_datetime_objects`` to ``test_get_datetime`` and change it to reference ``get_datetime`` from the ``sleep_duration`` :ref:`module<ModuleNotFoundError>`
+
+.. _test_get_datetime:
+
+test_get_datetime
+#################################################################################
+
+* I rename ``test_datetime_objects`` to ``test_get_datetime`` and change it to reference ``get_datetime`` from the ``sleep_duration`` :ref:`module<ModuleNotFoundError>` because they are the same
 
   .. code-block:: python
 
@@ -546,7 +556,24 @@ refactor: make it better
             )
         )
 
-  still green!
+  still green! The test has a problem, the values never change. I want to test the :ref:`function<functions>` with random timestamps
+
+* I add a new variable and change the assertion
+
+  .. code-block:: python
+
+    def test_get_datetime(self):
+        timestamp = random_timestamp('31/12/99')
+        self.assertEqual(
+            sleep_duration.get_datetime(
+                timestamp
+            ),
+            datetime.datetime.strptime(
+                timestamp, '%d/%m/%y %H:%M'
+            )
+        )
+
+  the terminal still shows green
 
 * I also change the difference calculation in ``test_duration_w_date_and_time`` to call ``get_datetime`` from the ``sleep_duration`` :ref:`module<ModuleNotFoundError>`
 
@@ -559,23 +586,7 @@ refactor: make it better
         )
         ...
 
-  the terminal stil shows passing tests
-
-* I can use the calculation directly and remove the ``difference`` variable
-
-  .. code-block:: python
-
-    else:
-        self.assertEqual(
-            sleep_duration.duration(
-                wake_time=wake_time,
-                sleep_time=sleep_time,
-            ),
-            str(
-                sleep_duration.get_datetime(wake_time)
-              - sleep_duration.get_datetime(sleep_time)
-            )
-        )
+  the terminal still shows passing tests
 
   still green
 
