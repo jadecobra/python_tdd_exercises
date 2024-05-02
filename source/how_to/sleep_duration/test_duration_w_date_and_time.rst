@@ -559,7 +559,9 @@ refactor: make it better
         )
         ...
 
-  I can use the calculation directly and remove the ``difference`` variable
+  the terminal stil shows passing tests
+
+* I can use the calculation directly and remove the ``difference`` variable
 
   .. code-block:: python
 
@@ -575,8 +577,10 @@ refactor: make it better
             )
         )
 
-  and remove ``get_datetime`` from ``test_sleep_duration.py`` because ``test_get_datetime`` covers what it does
-* I rename ``test_duration_w_date_and_time`` to ``test_duration`` and all is well that ends well
+  still green
+
+* I remove ``get_datetime`` from ``test_sleep_duration.py`` because ``test_get_datetime`` covers what it does
+* then rename ``test_duration_w_date_and_time`` to ``test_duration`` and all is well that ends well
 
 .. _sleep_duration_review:
 
