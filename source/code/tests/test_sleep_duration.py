@@ -14,6 +14,17 @@ def random_timestamp(date):
 
 class TestSleepDuration(unittest.TestCase):
 
+    def test_get_datetime(self):
+        timestamp = random_timestamp('31/12/99')
+        self.assertEqual(
+            sleep_duration.get_datetime(
+                timestamp
+            ),
+            datetime.datetime.strptime(
+                timestamp, '%d/%m/%y %H:%M'
+            )
+        )
+
     def assertWakeTimeEarlier(self, wake_time, sleep_time):
         with self.assertRaisesRegex(
             ValueError,
@@ -26,33 +37,33 @@ class TestSleepDuration(unittest.TestCase):
                 sleep_time=sleep_time
             )
 
-    @staticmethod
-    def get_datetime(wake_time):
-        return datetime.datetime.strptime(
-            wake_time, '%d/%m/%y %H:%M'
-        )
-
     def test_duration(self):
-        wake_time = random_timestamp('31/12/99')
         sleep_time = random_timestamp('31/12/99')
+        wake_time = random_timestamp('31/12/99')
 
         while wake_time < sleep_time:
             self.assertWakeTimeEarlier(
-                wake_time, sleep_time
+                wake_time=wake_time,
+                sleep_time=sleep_time
             )
             wake_time = random_timestamp(
                 '31/12/99'
             )
         else:
+            difference = (
+                sleep_duration.get_datetime(
+                    wake_time
+                )
+              - sleep_duration.get_datetime(
+                    sleep_time
+                )
+            )
             self.assertEqual(
                 sleep_duration.duration(
                     wake_time=wake_time,
                     sleep_time=sleep_time
                 ),
-                str(
-                    self.get_datetime(wake_time)
-                  - self.get_datetime(sleep_time)
-                )
+                str(difference)
             )
 
 

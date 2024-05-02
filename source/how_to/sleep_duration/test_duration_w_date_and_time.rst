@@ -616,6 +616,7 @@ The challenge was to write a program that calculates the difference between a gi
 * :ref:`test_duration_calculation`
 * :ref:`test_duration_w_an_earlier_wake_than_sleep_time<test_duration_w_an_earlier_wake_than_sleep_time>`
 * :ref:`test_duration_w_hours_and_minutes<test_duration_w_hours_and_minutes>`
+* `test_get_datetime`
 * `test_duration_w_date_and_time`_ where I used
 
   - `random.randint`_ to generate random numbers for hours and minutes
