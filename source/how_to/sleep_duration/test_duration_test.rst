@@ -373,7 +373,7 @@ green: make it pass
         f'sleep_time: "{sleep_time}"'
     )
 
-  and the terminal shows a passing test! YES!!
+  and the terminal shows passing tests! YES!!
 
 .. _test_duration_test_refactor:
 
@@ -398,7 +398,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-The challenge was to write a program that passes the tests in ``test_sleep_duration.py`` without looking at it. I wrote something that calculates the difference between a given ``wake_time`` and ``sleep_time`` by following the exceptions encountered in the terminal
+The challenge was to write a program that passes the tests in ``test_sleep_duration.py`` without looking at the tests. I wrote something that calculates the difference between a given ``wake_time`` and ``sleep_time`` by following the exceptions encountered in the terminal
 
 * :ref:`AttributeError`
 * NameError_
