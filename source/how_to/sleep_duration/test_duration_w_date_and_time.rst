@@ -619,7 +619,24 @@ refactor: make it better
 
   I get the ValueError_ as well, good! I want bad dates to cause an error
 
-* I change ``sleep_time`` back to a real date and all is green again
+* I change ``sleep_time`` back to a real date and all is green again!
+* I remove the ``difference`` variable from the test to do the calculation directly
+
+  .. code-block:: python
+
+    else:
+        self.assertEqual(
+            sleep_duration.duration(
+                wake_time=wake_time,
+                sleep_time=sleep_time
+            ),
+            str(
+                self.get_datetime(wake_time)
+              - self.get_datetime(sleep_time)
+            )
+        )
+
+  the terminal still shows green
 
 .. _test_get_datetime:
 
@@ -632,7 +649,9 @@ test_get_datetime
 
     def test_get_datetime(self):
         self.assertEqual(
-            sleep_duration.get_datetime("21/11/06 16:30"),
+            sleep_duration.get_datetime(
+                "21/11/06 16:30"
+            ),
             datetime.datetime(
                 2006, 11, 21, 16, 30
             )
@@ -670,9 +689,40 @@ test_get_datetime
 
   the terminal still shows passing tests
 
-  still green
+* I remove ``get_datetime`` :ref:`method<functions>` from ``test_sleep_duration.py`` because ``test_get_datetime`` covers what it does and get an :ref:`AttributeError`
 
-* I remove ``get_datetime`` from ``test_sleep_duration.py`` because ``test_get_datetime`` covers what it does
+  .. code-block:: python
+
+    AttributeError: 'TestSleepDuration' object has no attribute 'get_datetime'. Did you mean: 'test_get_datetime'?
+
+  I change all the calls from ``self.get_datetime`` to ``sleep_duration.get_datetime``
+
+  .. code-block:: python
+
+    def test_duration_w_date_and_time(self):
+        sleep_time = random_timestamp('31/12/99')
+        wake_time = random_timestamp('31/12/99')
+
+        while (
+            sleep_duration.get_datetime(wake_time)
+          < sleep_duration.get_datetime(sleep_time)
+        ):
+            self.assertWakeTimeEarlier(
+                wake_time=wake_time,
+                sleep_time=sleep_time
+            )
+            wake_time = random_timestamp('31/12/99')
+        else:
+            self.assertEqual(
+                sleep_duration.duration(
+                    wake_time=wake_time,
+                    sleep_time=sleep_time
+                ),
+                str(
+                    sleep_duration.get_datetime(wake_time)
+                  - sleep_duration.get_datetime(sleep_time)
+                )
+            )
 * then change ``test_duration_w_date_and_time`` to ``test_duration`` and all is well that ends well
 
 .. _sleep_duration_review:

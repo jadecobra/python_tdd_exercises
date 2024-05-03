@@ -41,7 +41,10 @@ class TestSleepDuration(unittest.TestCase):
         sleep_time = random_timestamp('31/12/99')
         wake_time = random_timestamp('31/12/99')
 
-        while wake_time < sleep_time:
+        while (
+            sleep_duration.get_datetime(wake_time)
+          < sleep_duration.get_datetime(sleep_time)
+        ):
             self.assertWakeTimeEarlier(
                 wake_time=wake_time,
                 sleep_time=sleep_time
@@ -50,20 +53,15 @@ class TestSleepDuration(unittest.TestCase):
                 '31/12/99'
             )
         else:
-            difference = (
-                sleep_duration.get_datetime(
-                    wake_time
-                )
-              - sleep_duration.get_datetime(
-                    sleep_time
-                )
-            )
             self.assertEqual(
                 sleep_duration.duration(
                     wake_time=wake_time,
                     sleep_time=sleep_time
                 ),
-                str(difference)
+                str(
+                    sleep_duration.get_datetime(wake_time)
+                  - sleep_duration.get_datetime(sleep_time)
+                )
             )
 
 
