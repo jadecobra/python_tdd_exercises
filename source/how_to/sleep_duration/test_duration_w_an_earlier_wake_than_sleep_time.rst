@@ -232,48 +232,12 @@ refactor: make it better
         )
 
   still green
-* I add an ``assert`` :ref:`method<functions>` to change the `assertRaisesRegex`_ block
-
-  .. code-block:: python
-
-    def assertWakeTimeEarlier(self, wake_time, sleep_time):
-        with self.assertRaisesRegex(
-            ValueError,
-            f'wake_time: "{wake_time}"'
-            ' is earlier than '
-            f'sleep_time: "{sleep_time}"'
-        ):
-            sleep_duration.duration(
-                wake_time=wake_time,
-                sleep_time=sleep_time
-            )
-
-    def test_duration_w_hours_and_minutes(self):
-    ...
-
-  then call it in ``test_duration_w_hours_and_minutes``
-
-  .. code-block:: python
-
-    def test_duration_w_hours_and_minutes(self):
-        sleep_time = random_timestamp()
-        wake_time = random_timestamp()
-
-        while wake_time < sleep_time:
-            self.assertWakeTimeEarlier(
-                wake_time, sleep_time
-            )
-            wake_time = random_timestamp()
-        else:
-            ...
-
-  the terminal still shows passing tests
 * I also add a `static method`_ for calculating the difference between ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
 
     @staticmethod
-    def get_difference(wake_time, sleep_time):
+    def get_difference(wake_time=None, sleep_time=None):
         difference_hours = (
             int(wake_time.split(':')[0])
           - int(sleep_time.split(':')[0])
@@ -295,6 +259,9 @@ refactor: make it better
             f'{duration_minutes:02}'
         )
 
+    def test_duration_w_hours_and_minutes(self):
+    ...
+
   then call it in ``test_duration_w_hours_and_minutes``
 
   .. code-block:: python
@@ -311,7 +278,46 @@ refactor: make it better
             )
         )
 
-  and all tests are still green!
+  all tests are still green
+
+* I add an ``assert`` :ref:`method<functions>` to change the `assertRaisesRegex`_ block
+
+  .. code-block:: python
+
+    def assertWakeTimeEarlier(self, wake_time=None, sleep_time=None):
+        with self.assertRaisesRegex(
+            ValueError,
+            f'wake_time: "{wake_time}"'
+            ' is earlier than '
+            f'sleep_time: "{sleep_time}"'
+        ):
+            sleep_duration.duration(
+                wake_time=wake_time,
+                sleep_time=sleep_time
+            )
+
+    @staticmethod
+    def get_difference(wake_time=None, sleep_time=None):
+    ...
+
+  and call it in ``test_duration_w_hours_and_minutes``
+
+  .. code-block:: python
+
+    def test_duration_w_hours_and_minutes(self):
+        sleep_time = random_timestamp()
+        wake_time = random_timestamp()
+
+        while wake_time < sleep_time:
+            self.assertWakeTimeEarlier(
+                wake_time=wake_time,
+                sleep_time=sleep_time
+            )
+            wake_time = random_timestamp()
+        else:
+            ...
+
+  the terminal shows all tests are still green
 
 .. _test_duration_w_an_earlier_wake_than_sleep_time_review:
 

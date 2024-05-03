@@ -128,7 +128,7 @@ I add a test to ``test_sleep_duration.py`` from `Examples of usage: datetime <ht
           ''
       )
 
-  def assertWakeTimeEarlier(self, wake_time, sleep_time):
+  def assertWakeTimeEarlier(self, wake_time=None, sleep_time=None):
   ...
 
 and the terminal shows a NameError_ because ``datetime`` is not defined in ``test_sleep_duration.py``
@@ -234,7 +234,7 @@ I add a test for subtracting two `datetime.datetime`_ objects
           1
       )
 
-  def assertWakeTimeEarlier(self, wake_time, sleep_time):
+  def assertWakeTimeEarlier(self, wake_time=None, sleep_time=None):
   ...
 
 
@@ -323,7 +323,7 @@ I want the result as a string_ not a `datetime.timedelta`_  object. I add a test
           ''
       )
 
-  def assertWakeTimeEarlier(self, wake_time, sleep_time):
+  def assertWakeTimeEarlier(self, wake_time=None, sleep_time=None):
   ...
 
 the terminal shows an :ref:`AssertionError` with a string_
@@ -357,7 +357,7 @@ and the tests passes. From the tests, I know I can
 .. _test_duration_w_date_and_time_green_1:
 
 * I remove the `unittest.skip decorator`_ from ``test_duration_w_date_and_time`` and get back ValueError_, the test calls ``duration`` which calls ``read_timestamp`` in ``sleep_duration.py``. ``read_timestamp`` cannot process timestamps that have dates because it still uses the int_ constructor_
-* I make a copy of the ``duration`` :ref:`function<functions>` in ``sleep_duration.py`` and rename it to ``duration_a`` to keep the working solution while I try a new one
+* I make a copy of the ``duration`` :ref:`function<functions>` in ``sleep_duration.py`` and change the name to ``duration_a`` to keep the working solution while I try a new one
 * then change the assertion in ``test_duration_w_date_and_time`` to call ``duration_a``
 
   .. code-block:: python
@@ -491,7 +491,7 @@ refactor: make it better
 
     AttributeError: module 'sleep_duration' has no attribute 'duration'...
 
-* I rename ``duration_a`` to ``duration`` in both files and the terminal shows a ValueError_ for ``test_duration_w_hours_and_minutes`` which still uses the int_ constructor
+* I change the name of ``duration_a`` to ``duration`` in both files and the terminal shows a ValueError_ for ``test_duration_w_hours_and_minutes`` which still uses the int_ constructor
 * I remove ``test_duration_w_hours_and_minutes`` because it is now covered by ``test_duration_w_date_and_time``
 * then remove
 
@@ -544,7 +544,7 @@ refactor: make it better
 test_get_datetime
 #################################################################################
 
-* I rename ``test_datetime_objects`` to ``test_get_datetime`` and change it to reference ``get_datetime`` from the ``sleep_duration`` :ref:`module<ModuleNotFoundError>` because they are the same
+* I change ``test_datetime_objects`` to ``test_get_datetime`` and make it reference ``get_datetime`` from the ``sleep_duration`` :ref:`module<ModuleNotFoundError>` because they are the same
 
   .. code-block:: python
 
@@ -591,7 +591,7 @@ test_get_datetime
   still green
 
 * I remove ``get_datetime`` from ``test_sleep_duration.py`` because ``test_get_datetime`` covers what it does
-* then rename ``test_duration_w_date_and_time`` to ``test_duration`` and all is well that ends well
+* then change ``test_duration_w_date_and_time`` to ``test_duration`` and all is well that ends well
 
 .. _sleep_duration_review:
 

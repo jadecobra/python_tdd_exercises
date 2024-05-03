@@ -28,7 +28,7 @@ I want to test the ``duration`` :ref:`function<functions>` with timestamps where
 red: make it fail
 *********************************************************************************
 
-* I rename ``test_duration_w_hours``
+* I change the name of ``test_duration_w_hours``
 
   .. code-block:: python
 
@@ -86,7 +86,7 @@ red: make it fail
 
         return f'{difference_hours:02}:00'
 
-* then make a copy of ``difference_hours`` in the test, rename it and change ``0`` to ``1`` on each line to get the difference between the minutes of ``wake_time`` and ``sleep_time``
+* then make a copy of ``difference_hours`` in the test, change the name, and change ``0`` to ``1`` on each line to get the difference between the minutes of ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
 
@@ -145,7 +145,7 @@ red: make it fail
 green: make it pass
 *********************************************************************************
 
-* I make a copy of ``difference_hours`` in ``duration``, rename it, then add it to the `return statement`_
+* I make a copy of ``difference_hours`` in ``duration``, change the name, then add it to the `return statement`_
 
   .. code-block:: python
 

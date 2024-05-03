@@ -326,7 +326,7 @@ green: make it pass
   - ``return result`` returns ``result`` after the loop completes
 
   the terminal shows all tests are passing
-* I rename the input from ``argument`` to ``iterable`` to be more explicit
+* I change the input name from ``argument`` to ``iterable`` to be more explicit
 
   .. code-block:: python
 
@@ -450,7 +450,7 @@ green: make it pass
         return [item for item in argument]
 
   and all tests pass
-* I rename ``argument`` to ``iterable`` to be more explicit
+* I change ``argument`` to ``iterable`` to be more explicit
 
   .. code-block:: python
 
