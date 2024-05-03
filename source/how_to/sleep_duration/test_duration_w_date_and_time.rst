@@ -427,7 +427,7 @@ and the tests passes. From the tests, I know I can
     AssertionError: None != '9:02:00'
     AssertionError: None != '10:16:00'
 
-* I change the `return statement`
+* I change the `return statement`_
 
   .. code-block:: python
 
@@ -561,6 +561,24 @@ refactor: make it better
 
   and the terminal shows green again. I can now test ``duration`` with any dates and times
 
+* I add a variable to remove repetition and make sure ``wake_time`` has the same date inside and outside the `while statement`_
+
+  .. code-block:: python
+
+      def test_duration_w_date_and_time(self):
+        sleep_time = random_timestamp('31/12/99')
+        wake_date = '31/12/99'
+        wake_time = random_timestamp(wake_date)
+
+        while wake_time < sleep_time:
+            self.assertWakeTimeEarlier(
+                wake_time=wake_time,
+                sleep_time=sleep_time
+            )
+            wake_time = random_timestamp(
+                wake_date
+            )
+
 * I change the date for ``sleep_time`` to test it
 
   .. code-block:: python
@@ -581,19 +599,19 @@ refactor: make it better
 
   green again
 
-* I change the date for ``wake_time``
+* When I change the date for ``wake_date``
 
   .. code-block:: python
 
-    wake_time = random_timestamp('30/12/99')
+    wake_date = '30/12/99'
 
-  still green, then change it to a bad date
+  the test is stuck in a loop because ``wake_date`` is earlier than the date for ``sleep_time``, when I change it to a date that does not exist
 
   .. code-block:: python
 
-    wake_time = random_timestamp('32/12/99')
+    wake_date = '32/12/99'
 
-  and get a ValueError_
+  I get a ValueError_
 
   .. code-block:: python
 
@@ -748,7 +766,7 @@ The challenge was to write a program that calculates the difference between a gi
 * :ref:`test_duration_calculation`
 * :ref:`test_duration_w_an_earlier_wake_than_sleep_time<test_duration_w_an_earlier_wake_than_sleep_time>`
 * :ref:`test_duration_w_hours_and_minutes<test_duration_w_hours_and_minutes>`
-* `test_get_datetime`
+* `test_get_datetime`_
 * `test_duration_w_date_and_time`_ where I used
 
   - `random.randint`_ to generate random numbers for hours and minutes

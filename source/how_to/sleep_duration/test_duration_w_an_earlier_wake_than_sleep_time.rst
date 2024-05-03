@@ -59,8 +59,7 @@ green: make it pass
 *********************************************************************************
 
 
-* The ``duration`` :ref:`function<functions>` returns a negative timestamp when given an earlier ``wake_time`` than ``sleep_time``, which is not a real duration. I want it to only return a difference when ``wake_time`` is later than or the same as ``sleep_time``
-* I change the assertEqual_ to assertRaisesRegex_ to make sure the :ref:`function<functions>` raises a ValueError_ with a message when ``wake_time`` is earlier than ``sleep_time``
+* The ``duration`` :ref:`function<functions>` returns a negative timestamp when given an earlier ``wake_time`` than ``sleep_time``, which is not a real duration. I want it to only return a difference when ``wake_time`` is later than or the same as ``sleep_time``. I change the assertEqual_ to assertRaisesRegex_ to make sure the :ref:`function<functions>` raises a ValueError_ with a message when ``wake_time`` is earlier than ``sleep_time``
 
   .. code-block:: python
 
@@ -176,7 +175,7 @@ refactor: make it better
             )
         wake_time = random_timestamp()
 
-* I comment out the condition in ``duration`` to make sure the test still works as expected
+* then comment out the condition in ``duration`` to make sure the test still works as expected
 
   .. code-block:: python
 

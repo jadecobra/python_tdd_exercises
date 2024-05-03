@@ -152,7 +152,7 @@ green: make it pass
 
   the values change
 
-* I change the `return statement` to show the input argument because I want to see the relationship to the expectation of the test
+* I change the `return statement`_ to show the input argument because I want to see the relationship to the expectation of the test
 
   .. code-block:: python
 
