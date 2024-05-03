@@ -19,16 +19,23 @@ html_logo = "_static/dry_favicon_16x16.png"
 html_favicon = '_static/dry_favicon_16x16.png'
 html_theme = 'press'
 html_static_path = ['_static']
-# html_sidebars = {"**": ["util/searchbox.html", "util/sidetoc.html"]}
 html_theme_options = {
     "external_links": [
         ("videos", "https://www.youtube.com/@JacobItegboje"),
         ("jacobitegboje", "https://jacobitegboje.com"),
     ]
 }
-extensions = ['sphinx.ext.autosectionlabel']
+
 # html_logo = "_static/DRY_html_logo.png"
 # html_theme = 'alabaster'
+# html_sidebars = {
+#     "**": [
+#         # "util/searchbox.html",
+#         # "globaltoc.html",
+#     ]
+# }
+
+extensions = ['sphinx.ext.autosectionlabel']
 # autosectionlabel_prefix_document = True
 
 epub_theme = 'epub'

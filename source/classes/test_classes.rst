@@ -246,10 +246,10 @@ Here is a little summary
 
 * classes by default inherit from the `object <https://docs.python.org/3/glossary.html#term-object>`_ class, because in each of the tests, whether the parent is stated or not, each class I defined is an ``instance`` of an `object <https://docs.python.org/3/glossary.html#term-object>`_
 
-.. admonition:: Zen of Python
+.. admonition:: Zen of Python (:PEP:`20`)
 
 
-  I prefer to use the explicit form of class definitions with the parent `object <https://docs.python.org/3/glossary.html#term-object>`_ in parentheses, from `the zen of python <https://peps.python.org/pep-0020/>`_
+  I prefer to use the explicit form of class definitions with the parent `object <https://docs.python.org/3/glossary.html#term-object>`_ in parentheses, from the zen of python:
   ``Explicit is better than implicit``
 
 Would you like to :doc:`test_classes_attributes_methods`?
