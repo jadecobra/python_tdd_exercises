@@ -1,9 +1,9 @@
 .. include:: ../../links.rst
 
-.. _test_duration_test:
+.. _test_duration_tests:
 
 #################################################################################
-how to measure sleep duration: test_duration_test
+how to measure sleep duration: test_duration_tests
 #################################################################################
 
 This is part 5 of a program that calculates the difference between a given wake and sleep time.
@@ -16,7 +16,7 @@ This is part 5 of a program that calculates the difference between a given wake 
 
 I want to write the program that makes the tests in ``test_sleep_duration.py`` pass without looking at them
 
-.. _test_duration_test_red:
+.. _test_duration_tests_red:
 
 *********************************************************************************
 red: make it fail
@@ -36,7 +36,7 @@ red: make it fail
     # Exceptions Encountered
     # AttributeError
 
-.. _test_duration_test_green:
+.. _test_duration_tests_green:
 
 *********************************************************************************
 green: make it pass
@@ -375,7 +375,7 @@ green: make it pass
 
   and the terminal shows passing tests! YES!!
 
-.. _test_duration_test_refactor:
+.. _test_duration_tests_refactor:
 
 *********************************************************************************
 refactor: make it better
