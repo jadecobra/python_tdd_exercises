@@ -62,7 +62,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* I replace the ``if`` condition using python's implied conditional testing
+* I change the ``if`` condition using python's implied conditional testing
 
   .. code-block:: python
 
@@ -114,7 +114,7 @@ refactor: make it better
         if not p and q:
             return False
 
-* I replace the second condition with ``else``
+* I change the second condition with ``else``
 
   .. code-block:: python
 

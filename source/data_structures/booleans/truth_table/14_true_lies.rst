@@ -42,7 +42,7 @@ green: make it pass
         return False
 
   the terminal shows an :ref:`AssertionError` for the first case
-* I replace the return value
+* I change the return value
 
   .. code-block:: python
 

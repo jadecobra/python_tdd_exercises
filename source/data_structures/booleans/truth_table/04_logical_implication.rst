@@ -81,7 +81,7 @@ refactor: make it better
         return True
 
   the tests still pass
-* in the earlier examples I replaced the equality tests with implied condition statements
+* in the earlier examples I changed the equality tests with implied condition statements
 
   .. code-block:: python
 
@@ -101,7 +101,7 @@ refactor: make it better
         else:
             return True
 
-* then replace the ``else`` clause with the opposite of the ``if`` statement to get
+* then change the ``else`` clause with the opposite of the ``if`` statement to get
 
   .. code-block:: python
 
@@ -141,7 +141,7 @@ refactor: make it better
         if p and not q:
             return False
 
-* then replace the second statement with an ``else``
+* then change the second statement with an ``else``
 
   .. code-block:: python
 

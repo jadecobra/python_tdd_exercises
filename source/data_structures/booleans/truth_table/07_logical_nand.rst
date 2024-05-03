@@ -93,7 +93,7 @@ refactor: make it better
         if p and q:
             return False
 
-* I replace the second statement with ``else`` to simplify
+* I change the second statement with ``else`` to simplify
 
   .. code-block:: python
 

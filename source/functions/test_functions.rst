@@ -45,7 +45,7 @@ red: make it fail
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_sleep_duration.py:7`` with the mouse to open it
 * then change ``True`` to ``False``
-* and replace the test with a new failing test
+* and change the test with a new failing test
 
 .. code-block:: python
 

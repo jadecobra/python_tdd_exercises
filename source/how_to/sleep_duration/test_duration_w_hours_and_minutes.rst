@@ -180,7 +180,7 @@ green: make it pass
     def get_minutes(timestamp):
         return int(timestamp.split(':')[1])
 
-  then replace the calls in ``difference_minutes``
+  then change the calls in ``difference_minutes``
 
   .. code-block:: python
 
@@ -427,7 +427,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
     duration_hours = difference // 60
     duration_minutes = difference % 60
 
-  then replace ``difference_hours`` and ``difference_minutes`` in the `return statement`_
+  then change ``difference_hours`` and ``difference_minutes`` in the `return statement`_
 
   .. code-block:: python
 
@@ -486,7 +486,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
 
 * I take out the `unittest.skip decorator`_ from ``test_duration_w_hours_and_minutes``
 * and remove ``test_duration_calculation`` because it is covered by ``test_duration_w_hours_and_minutes`` which has the right calculation
-* then add a :ref:`function<functions>` in ``sleep_duration.py`` to replace ``get_hour`` and ``get_minutes``
+* then add a :ref:`function<functions>` in ``sleep_duration.py`` to change ``get_hour`` and ``get_minutes``
 
   .. code-block:: python
 

@@ -49,7 +49,7 @@ red: make it fail
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_person.py:7`` with the mouse to open it
 * and change ``True`` to ``False`` to make ``test_failure`` pass
-* then add a failing test to replace ``test_failure``
+* then change ``test_failure`` to ``test_person_factory``
 
   .. code-block:: python
 
@@ -325,7 +325,7 @@ green: make it pass
 
     NameError: name 'this_year' is not defined
 
-* I replace ``this_year()`` with the return value from ``test_person_factory.this_year``
+* I change ``this_year()`` to the return value from ``test_person_factory.this_year``
 
   .. code-block:: python
 

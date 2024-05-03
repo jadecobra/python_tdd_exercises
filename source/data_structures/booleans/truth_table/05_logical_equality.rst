@@ -117,7 +117,7 @@ What can I do to make this better?
         if p != q:
             return False
 
-* then replace the second condition with ``else``
+* then change the second condition with ``else``
 
   .. code-block:: python
 

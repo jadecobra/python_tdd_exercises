@@ -67,7 +67,7 @@ red: make it fail
     # Exceptions Encountered
     # AssertionError
 
-* I replace ``test_failure`` with ``test_addition``
+* I change ``test_failure`` with ``test_addition``
 
   .. code-block:: python
 

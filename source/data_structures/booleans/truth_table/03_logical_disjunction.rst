@@ -67,7 +67,7 @@ refactor: make it better
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-* I know from :doc:`/data_structures/booleans/truth_table/02_logical_conjunction` that when I have a nested if statement it can be replaced with an ``and`` so I make the condition
+* I know from :doc:`/data_structures/booleans/truth_table/02_logical_conjunction` that when I have a nested if statement it can be changed with an ``and`` so I make the condition
 
   .. code-block:: python
 

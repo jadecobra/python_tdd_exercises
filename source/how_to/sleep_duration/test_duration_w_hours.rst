@@ -56,7 +56,7 @@ red: make it fail
 
     class TestSleepDuration(unittest.TestCase):
 
-* then replace the test with a new failing test
+* then change the test to a new failing test
 
   .. code-block:: python
 
@@ -96,7 +96,7 @@ green: make it pass
         None
     )
 
-* then replace the first argument with a reference to the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>`
+* then change the first argument to reference the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>`
 
   .. code-block:: python
 
@@ -799,7 +799,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
 
   and the terminal still shows passing tests!
 
-* ``wake_hour`` and ``sleep_hour`` are only used once in  ``test_sleep_duration.py``, I can replace them with direct calls to `random.randint`_
+* ``wake_hour`` and ``sleep_hour`` are only used once in  ``test_sleep_duration.py``, I can change them with direct calls to `random.randint`_
 
   .. code-block:: python
 
@@ -817,7 +817,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
     def random_timestamp():
         return f'{random.randint(0,23):02}:00'
 
-  and replace the timestamps with calls to ``random_timestamp``
+  and call it in ``test_duration_w_hours``
 
   .. code-block:: python
 

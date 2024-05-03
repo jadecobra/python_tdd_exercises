@@ -88,7 +88,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
   .. admonition:: If you are using Windows without `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
 
-    replace ``touch`` with ``New-Item``
+    change ``touch`` to ``New-Item``
 
   - I make an empty file called ``project_name.py`` to hold the source code for the program
 
@@ -121,7 +121,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
       |  ╰──test_project_name.py
       ╰──project_name.py
 
-.. tip:: ``project_name`` is a placeholder for the name of the project. For example to make a project called ``magic``, I would replace ``project_name`` with ``magic``
+.. tip:: ``project_name`` is a placeholder for the name of the project. For example to make a project called ``magic``, I would change ``project_name`` to ``magic``
 
 ----
 

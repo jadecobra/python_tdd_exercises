@@ -121,7 +121,7 @@ green: make it pass
     # TypeError
     # AssertionError
 
-* I copy the value from the terminal to replace :ref:`None` in the `return statement`_
+* I copy the value from the terminal to change :ref:`None` in the `return statement`_
 
   .. code-block:: python
 

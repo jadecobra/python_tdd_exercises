@@ -178,7 +178,7 @@ and get an :ref:`AssertionError`
 
   AssertionError: datetime.datetime(2006, 11, 21, 16, 30) != ''
 
-I copy the value on the left side of the :ref:`AssertionError` to replace the expected value in the test,
+I copy the value on the left side of the :ref:`AssertionError` to change the expected value in the test,
 
 .. code-block:: python
 
@@ -249,7 +249,7 @@ the terminal shows an :ref:`AssertionError`
 green: make it pass
 ---------------------------------------------------------------------------------
 
-I copy the value on the left of the :ref:`AssertionError` and replace the expected value in the test to make it pass
+I copy the value on the left of the :ref:`AssertionError` and change the expected value in the test to make it pass
 
 .. code-block:: python
 

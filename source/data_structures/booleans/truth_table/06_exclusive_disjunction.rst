@@ -127,7 +127,7 @@ refactor: make it better
         if p == q:
             return False
 
-* then replace the second one with ``else``
+* then change the second one with ``else``
 
   .. code-block:: python
 

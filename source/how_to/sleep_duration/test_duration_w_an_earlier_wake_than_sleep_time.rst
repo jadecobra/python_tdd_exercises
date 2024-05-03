@@ -60,7 +60,7 @@ green: make it pass
 
 
 * The ``duration`` :ref:`function<functions>` returns a negative timestamp when given an earlier ``wake_time`` than ``sleep_time``, which is not a real duration. I want it to only return a difference when ``wake_time`` is later than or the same as ``sleep_time``
-* I replace the assertEqual_ with assertRaisesRegex_ to make sure the :ref:`function<functions>` raises a ValueError_ with a message when ``wake_time`` is earlier than ``sleep_time``
+* I change the assertEqual_ to assertRaisesRegex_ to make sure the :ref:`function<functions>` raises a ValueError_ with a message when ``wake_time`` is earlier than ``sleep_time``
 
   .. code-block:: python
 
@@ -232,7 +232,7 @@ refactor: make it better
         )
 
   still green
-* I add an ``assert`` :ref:`method<functions>` to replace the `assertRaisesRegex`_ block
+* I add an ``assert`` :ref:`method<functions>` to change the `assertRaisesRegex`_ block
 
   .. code-block:: python
 
@@ -289,7 +289,7 @@ refactor: make it better
         )
         duration_hours = difference // 60
         duration_minutes = difference % 60
-        
+
         return (
             f'{duration_hours:02}:'
             f'{duration_minutes:02}'
