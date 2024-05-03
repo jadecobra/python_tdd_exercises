@@ -96,7 +96,7 @@ green: make it pass
 
   and the test is green again
 
-* The int_ constructor_ will not work when the timestamps have a date. I need a solution that can read the date and time. I search for `date and time <https://docs.python.org/3/search.html?q=time+difference>`_ in `python's online documentation`_, to see if there is an existing solution and select the datetime_ module from the results. Reading through the available types in the module I see `datetime.datetime`_ objects which are a combination of date and time
+* The int_ constructor_ will not work when the timestamps have a date. I need a solution that can read the date and time. I search for `date and time <https://docs.python.org/3/search.html?q=dare+and+time>`_ in `python's online documentation`_, to see if there is an existing solution and select the datetime_ module from the results. Reading through the available types in the module I see `datetime.datetime`_ objects which are a combination of date and time
 
   .. code-block:: python
 

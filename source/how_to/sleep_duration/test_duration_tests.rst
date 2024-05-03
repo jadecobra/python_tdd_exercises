@@ -54,7 +54,7 @@ green: make it pass
 
     NameError: name 'get_datetime' is not defined
 
-* which I add to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+* I add it to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered as well
 
   .. code-block:: python
 
@@ -62,7 +62,7 @@ green: make it pass
     # AttributeError
     # NameError
 
-* I define it by assigning it to :ref:`None`
+* then define the name by assigning it to :ref:`None`
 
   .. code-block:: python
 
@@ -100,7 +100,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def get_datetime(parameter):
+    def get_datetime(argument):
 
   and get an :ref:`AssertionError`
 
@@ -125,7 +125,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def get_datetime(parameter):
+    def get_datetime(argument):
         return datetime.datetime(1999, 12, 31, 19, 8)
 
   the terminal shows a NameError_
@@ -141,7 +141,7 @@ green: make it pass
       import datetime
 
 
-      def get_datetime(parameter):
+      def get_datetime(argument):
       ...
 
   and get another :ref:`AssertionError`
@@ -152,12 +152,12 @@ green: make it pass
 
   the values change
 
-* I change the `return statement` to show the input parameter because I want to see the relationship to the expectation of the test
+* I change the `return statement` to show the input argument because I want to see the relationship to the expectation of the test
 
   .. code-block:: python
 
-    def get_datetime(parameter):
-        return parameter
+    def get_datetime(argument):
+        return argument
 
   the terminal shows an :ref:`AssertionError`
 
@@ -170,13 +170,13 @@ green: make it pass
 
   I need a way to convert a string_ that has a date and time to a `datetime.datetime`_ object
 
-* I look at `Examples of usage: datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_ for `datetime.datetime`_ objects to learn how to do the conversion. The example with the `datetime.datetime.strptime` :ref:`method<functions>` looks like what I need. I make a copy of it to add to the ``get_datetime`` :ref:`function<functions>`, and change the timestamp to reference ``parameter``
+* I look at `Examples of usage: datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_ for `datetime.datetime`_ objects to learn how to do the conversion. The example with the `datetime.datetime.strptime` :ref:`method<functions>` looks like what I need. I make a copy of it to add to the ``get_datetime`` :ref:`function<functions>`, and change the timestamp to reference ``argument``
 
   .. code-block:: python
 
-    def get_datetime(parameter):
+    def get_datetime(argument):
         return datetime.strptime(
-            parameter, "%d/%m/%y %H:%M"
+            argument, "%d/%m/%y %H:%M"
         )
 
   which gives me an :ref:`AttributeError`
@@ -189,9 +189,9 @@ green: make it pass
 
   .. code-block:: python
 
-    def get_datetime(parameter):
+    def get_datetime(argument):
         return datetime.datetime.strptime(
-            parameter, "%d/%m/%y %H:%M"
+            argument, "%d/%m/%y %H:%M"
         )
 
   and get an :ref:`AttributeError`
@@ -351,7 +351,32 @@ green: make it pass
     AssertionError: "wake_time: "31/12/99 02:27" is earlier than sleep_time: "31/12/99 15:12"" does not match ""
     AssertionError: "wake_time: "31/12/99 19:05" is earlier than sleep_time: "31/12/99 20:03"" does not match ""
 
-* I copy the message from the terminal then add it to the ValueError_, and change the outer double quotes to single quotes
+* I copy the message from the terminal then add it to the ValueError_
+
+  .. code-block:: python
+
+    if wake_time < sleep_time:
+        raise ValueError("wake_time: "31/12/99 19:05" is earlier than sleep_time: "31/12/99 20:03"")
+
+  and get a SyntaxError_
+
+  .. code-block:: python
+
+    SyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers
+
+  python does not know where the string ends or begins because the message has double quotes inside double quotes
+
+* I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>`
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AttributeError
+    # NameError
+    # TypeError
+    # SyntaxError
+
+* then change the outer double quotes to single quotes
 
   .. code-block:: python
 
@@ -398,12 +423,13 @@ refactor: make it better
 review
 *********************************************************************************
 
-The challenge was to write a program that passes the tests in ``test_sleep_duration.py`` without looking at the tests. I wrote something that calculates the difference between a given ``wake_time`` and ``sleep_time`` by following the exceptions encountered in the terminal
+The challenge was to write a program that passes the tests in ``test_sleep_duration.py`` without looking at them. I wrote something that calculates the difference between a given ``wake_time`` and ``sleep_time`` by following the exceptions encountered in the terminal
 
 * :ref:`AttributeError`
 * NameError_
 * :ref:`TypeError`
 * :ref:`AssertionError`
+* SyntaxError_
 
 ----
 
