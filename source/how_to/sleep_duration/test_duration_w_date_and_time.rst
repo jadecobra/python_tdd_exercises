@@ -427,17 +427,23 @@ and the tests passes. From the tests, I know I can
     AssertionError: None != '9:02:00'
     AssertionError: None != '10:16:00'
 
-* I add an `import statement`_ to the top of ``sleep_duration.py``
+* I change the `return statement`
 
   .. code-block:: python
 
-    import datetime
+    else:
+        return str()
 
+  and get another :ref:`AssertionError`
 
-    def read_timestamp(timestamp=None, index=0):
-    ...
+  .. code-block:: python
 
-* then add a :ref:`function<functions>` to call `datetime.datetime.strptime`_ with a pattern
+    AssertionError: '' != '6:07:00'
+    AssertionError: '' != '5:20:00'
+    AssertionError: '' != '1:54:00'
+    AssertionError: '' != '11:01:00'
+
+* I add a :ref:`function<functions>` to call `datetime.datetime.strptime`_ with a pattern
 
   .. code-block:: python
 
@@ -451,7 +457,7 @@ and the tests passes. From the tests, I know I can
     def duration_a(wake_time=None, sleep_time=None):
     ...
 
-* I call ``get_datetime`` for the new difference calculation in ``duration_a``
+* then call it for the new difference calculation in ``duration_a`` and change the `return statement`_
 
   .. code-block:: python
 
@@ -461,6 +467,24 @@ and the tests passes. From the tests, I know I can
           - get_datetime(sleep_time)
         )
         return str(difference)
+
+  the terminal shows a NameError_
+
+  .. code-block:: python
+
+    NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
+
+  You know I did!
+
+* I add an `import statement`_ to the top of ``sleep_duration.py``
+
+  .. code-block:: python
+
+    import datetime
+
+
+    def read_timestamp(timestamp=None, index=0):
+    ...
 
   and the test passes with no random failures! Fantastic!!
 
@@ -491,8 +515,7 @@ refactor: make it better
 
     AttributeError: module 'sleep_duration' has no attribute 'duration'...
 
-* I change the name of ``duration_a`` to ``duration`` in both files and the terminal shows a ValueError_ for ``test_duration_w_hours_and_minutes`` which still uses the int_ constructor
-* I remove ``test_duration_w_hours_and_minutes`` because it is now covered by ``test_duration_w_date_and_time``
+* I change the name of ``duration_a`` to ``duration`` in both files and the terminal shows a ValueError_ for ``test_duration_w_hours_and_minutes`` which does not have dates in its timestamps. I remove it because it is covered by ``test_duration_w_date_and_time``
 * then remove
 
   - ``get_difference``
@@ -501,13 +524,12 @@ refactor: make it better
   - ``test_the_modulo_operation``
   - ``test_floor_aka_integer_division``
   - ``test_converting_strings_to_numbers``
-  - ``test_string_splitting`` and
-  - ``random_timestamp``
+  - ``test_string_splitting``
 
   because they do not test the solution directly
 
-* I change the name of ``random_timestamp_a`` to ``random_timestamp``
-* this ``random_timestamp`` :ref:`function<functions>` always returns timestamps with the same date, I change it to take in dates as inputs
+* I remove ``random_timestamp`` and change the name of ``random_timestamp_a`` to ``random_timestamp``
+* this ``random_timestamp`` :ref:`function<functions>` always returns timestamps with the same date, I change it to take in a date as input
 
   .. code-block:: python
 
@@ -537,7 +559,67 @@ refactor: make it better
                 '31/12/99'
             )
 
-  and the terminal shows green again. I can now test ``duration`` with any dates and times, but cannot use dates that do not exist
+  and the terminal shows green again. I can now test ``duration`` with any dates and times
+
+* I change the date for ``sleep_time`` to test it
+
+  .. code-block:: python
+
+    sleep_time = random_timestamp('30/12/99')
+
+  still green, then change it to a date that cannot exist
+
+  .. code-block:: python
+
+    sleep_time = random_timestamp('32/12/99')
+
+  and the test is stuck in a loop. I have a problem, I change the date back
+
+  .. code-block:: python
+
+    sleep_time = random_timestamp('31/12/99')
+
+  green again
+
+* I change the date for ``wake_time``
+
+  .. code-block:: python
+
+    wake_time = random_timestamp('30/12/99')
+
+  still green, then change it to a bad date
+
+  .. code-block:: python
+
+    wake_time = random_timestamp('32/12/99')
+
+  and get a ValueError_
+
+  .. code-block:: python
+
+    ValueError: time data '32/12/99 01:11' does not match format '%d/%m/%y %H:%M'
+
+  this is better. I want the same thing to happen when I use a date that does not exist for ``sleep_time``
+
+* I change the `while statement`_ to call ``get_datetime``
+
+  .. code-block:: python
+
+    while (
+        self.get_datetime(wake_time)
+      < self.get_datetime(sleep_time)
+    ):
+        ...
+
+  the terminal still shows the ValueError_, I change ``wake_time`` back to a real date, and the test is green again. When I change ``sleep_time`` to a bad date
+
+  .. code-block:: python
+
+    sleep_time = random_timestamp('32/12/99')
+
+  I get the ValueError_ as well, good! I want bad dates to cause an error
+
+* I change ``sleep_time`` back to a real date and all is green again
 
 .. _test_get_datetime:
 
