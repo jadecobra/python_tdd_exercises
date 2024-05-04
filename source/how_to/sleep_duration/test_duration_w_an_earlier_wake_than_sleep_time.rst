@@ -188,7 +188,7 @@ refactor: make it better
     #     )
     # else:
 
-  and get an :ref:`AssertionError` for ``test_duration_w_an_earlier_wake_than_sleep_time`` and randomly for ``test_duration_w_hours_and_minutes`` when ``wake_time`` is earlier than ``sleep_time``
+  the terminal shows an :ref:`AssertionError` for ``test_duration_w_an_earlier_wake_than_sleep_time`` and a random one for ``test_duration_w_hours_and_minutes`` when ``wake_time`` is earlier than ``sleep_time``
 
   .. code-block:: python
 
@@ -231,7 +231,7 @@ refactor: make it better
         )
 
   still green
-* I also add a `static method`_ for calculating the difference between ``wake_time`` and ``sleep_time``
+* I add a `static method`_ to calculate the difference between ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
 
@@ -279,7 +279,7 @@ refactor: make it better
 
   all tests are still green
 
-* I add an ``assert`` :ref:`method<functions>` to change the `assertRaisesRegex`_ block
+* I add an ``assert`` :ref:`method<functions>` for the `assertRaisesRegex`_ block
 
   .. code-block:: python
 
@@ -316,7 +316,7 @@ refactor: make it better
         else:
             ...
 
-  the terminal shows all tests are still green
+  the terminal shows all tests are still green all the way
 
 .. _test_duration_w_an_earlier_wake_than_sleep_time_review:
 
