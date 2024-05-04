@@ -54,7 +54,7 @@ green: make it pass
 
     NameError: name 'get_datetime' is not defined
 
-* I add it to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered as well
+  I add it to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered as well
 
   .. code-block:: python
 
@@ -111,7 +111,7 @@ green: make it pass
     None != datetime.datetime(1999, 12, 31, 13, 28)
     None != datetime.datetime(1999, 12, 31, 19, 8)
 
-* which I add to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+  which I add to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
   .. code-block:: python
 
@@ -152,7 +152,7 @@ green: make it pass
 
   the values change
 
-* I change the `return statement`_ to show the input argument because I want to see the relationship to the expectation of the test
+* I change the `return statement`_ to show the input argument because I want to see its relationship to the expectation of the test
 
   .. code-block:: python
 
@@ -170,7 +170,7 @@ green: make it pass
 
   I need a way to convert a string_ that has a date and time to a `datetime.datetime`_ object
 
-* I look at `Examples of usage: datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_ for `datetime.datetime`_ objects to learn how to do the conversion. The example with the `datetime.datetime.strptime` :ref:`method<functions>` looks like what I need. I make a copy of it to add to the ``get_datetime`` :ref:`function<functions>`, and change the timestamp to reference ``argument``
+* I look at `Examples of usage: datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_ for `datetime.datetime`_ objects to learn how to do the conversion. The example with the `datetime.datetime.strptime`_ :ref:`method<functions>` looks like what I need. I make a copy of it to add to the ``get_datetime`` :ref:`function<functions>`, and change the timestamp to reference ``argument``
 
   .. code-block:: python
 
@@ -239,23 +239,23 @@ green: make it pass
 
     TypeError: duration() got an unexpected keyword argument 'wake_time'
 
-  I add the name to the :ref:`function<functions>` signature with a default value of :ref:`None`
+  I add the name to the :ref:`function<functions>` signature
 
   .. code-block:: python
 
-    def duration(wake_time=None):
+    def duration(wake_time):
 
-  and get a :ref:`TypeError` for another keywwrd argument
+  and get a :ref:`TypeError` for another keyword argument
 
   .. code-block:: python
 
     TypeError: duration() got an unexpected keyword argument 'sleep_time'
 
-  which I add to the signature with a default value of :ref:`None`
+  which I add to the signature
 
   .. code-block:: python
 
-    def duration(wake_time=None, sleep_time=None):
+    def duration(wake_time, sleep_time):
 
   the terminal shows an :ref:`AssertionError` that looks like this
 
@@ -274,11 +274,11 @@ green: make it pass
 
   it looks like the ``duration`` :ref:`function<functions>` has to make a choice. The test expects a timestamp or a ValueError_
 
-* I change the `return statement`_ to display its inputs and ignore the :ref:`AssertionErrors<AssertionError>` about the ValueError_ to work on it later. I want to see the relationship between ``wake_time``, ``sleep_time`` and the expectation of the test so I can figure out the timestamp parts
+* I change the `return statement`_ to display its inputs and ignore the :ref:`AssertionErrors<AssertionError>` about the ValueError_. I want to see the relationship between ``wake_time``, ``sleep_time`` and the expectation of the test so I can figure out the timestamp parts
 
   .. code-block:: python
 
-    def duration(wake_time=None, sleep_time=None):
+    def duration(wake_time, sleep_time):
         return (wake_time, sleep_time)
 
   the terminal shows an :ref:`AssertionError` when it does not expect a ValueError_
@@ -292,11 +292,11 @@ green: make it pass
 
   it looks like the test expects the difference between the timestamps
 
-* I add calls to ``get_datetime`` to calculate the difference between the two timestamps and use new variable names
+* I add calls to ``get_datetime`` with new variables
 
   .. code-block:: python
 
-    def duration(wake_time=None, sleep_time=None):
+    def duration(wake_time, sleep_time):
         wake_datetime = get_datetime(wake_time)
         sleep_datetime = get_datetime(sleep_time)
         return (wake_datetime, sleep_datetime)
@@ -328,13 +328,17 @@ green: make it pass
 
     return str(wake_datetime - sleep_datetime)
 
-  the test passes, and I am left with the random :ref:`AssertionError` when ValueError_ is not raised
+  the terminal shows the random :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: ValueError not raised
 
 * I add a condition to the :ref:`function<functions>` based on the name ``assertWakeTimeEarlier`` and the differences I encountered were all positive
 
   .. code-block:: python
 
-    def duration(wake_time=None, sleep_time=None):
+    def duration(wake_time, sleep_time):
         if wake_time < sleep_time:
             raise ValueError
         else:
@@ -351,7 +355,7 @@ green: make it pass
     AssertionError: "wake_time: "31/12/99 02:27" is earlier than sleep_time: "31/12/99 15:12"" does not match ""
     AssertionError: "wake_time: "31/12/99 19:05" is earlier than sleep_time: "31/12/99 20:03"" does not match ""
 
-* I copy the message from the terminal then add it to the ValueError_
+* I copy the message from the terminal, then add it to the ValueError_
 
   .. code-block:: python
 
@@ -362,11 +366,9 @@ green: make it pass
 
   .. code-block:: python
 
-    SyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers
+    SyntaxError: invalid syntax. Perhaps you forgot a comma?
 
-  python does not know where the string ends or begins because the message has double quotes inside double quotes
-
-* I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>`
+  python does not know where the string ends or begins because the message has double quotes inside double quotes. I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>`
 
   .. code-block:: python
 
@@ -386,7 +388,13 @@ green: make it pass
         'sleep_time: "31/12/99 20:03"'
     )
 
-  which gives me another :ref:`AssertionError` for the timestamps in the ValueError_ message not matching
+  which gives me another :ref:`AssertionError`
+
+  .. code-block:: python
+
+
+
+  the timestamps in the ValueError_ message are different
 
 * I :doc:`interpolate</how_to/pass_values>` ``wake_time`` and ``sleep_time`` in the message
 
@@ -415,6 +423,14 @@ refactor: make it better
             get_datetime(wake_time)
           - get_datetime(sleep_time)
         )
+
+  still green
+
+* I change the name of the positional argument in ``get_datetime`` to be more descriptive
+
+  .. code-block:: python
+
+    def get_datetime(timestamp):
 
   the terminal shows all tests are still passing
 * and I remove the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
