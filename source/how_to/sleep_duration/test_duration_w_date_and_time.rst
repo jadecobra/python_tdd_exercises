@@ -565,8 +565,9 @@ refactor: make it better
 
   .. code-block:: python
 
-      def test_duration_w_date_and_time(self):
+    def test_duration_w_date_and_time(self):
         sleep_time = random_timestamp('31/12/99')
+
         wake_date = '31/12/99'
         wake_time = random_timestamp(wake_date)
 
@@ -605,13 +606,13 @@ refactor: make it better
 
     wake_date = '30/12/99'
 
-  the test is stuck in a loop because ``wake_date`` is earlier than the date for ``sleep_time``, when I change it to a date that does not exist
+  the test is stuck in a loop that does not end because ``wake_date`` is earlier than the date for ``sleep_time``, another problem. When I change it to a date that does not exist
 
   .. code-block:: python
 
     wake_date = '32/12/99'
 
-  I get a ValueError_
+  the terminal shows a get a ValueError_
 
   .. code-block:: python
 
@@ -638,6 +639,34 @@ refactor: make it better
   I get the ValueError_ as well, good! I want bad dates to cause an error
 
 * I change ``sleep_time`` back to a real date and all is green again!
+* I add a variable to fix the problem of the loop that does not end when ``wake_date``  is earlier than the date for ``sleep_time``
+
+  .. code-block:: python
+
+    def test_duration_w_date_and_time(self):
+        sleep_date = '31/12/99'
+        sleep_time = random_timestamp(sleep_date)
+
+        wake_date = '31/12/99'
+        wake_time = random_timestamp(wake_date)
+
+        while wake_time < sleep_time:
+            self.assertWakeTimeEarlier(
+                wake_time=wake_time,
+                sleep_time=sleep_time
+            )
+            wake_date = sleep_date
+            wake_time = random_timestamp(
+                wake_date
+            )
+
+  change ``wake_date`` to an earlier date
+
+  .. code-block:: python
+
+    wake_date = '30/12/99'
+
+  the terminal still shows green and I change it back
 * I remove the ``difference`` variable from the test to do the calculation directly
 
   .. code-block:: python
@@ -719,7 +748,9 @@ test_get_datetime
 
     def test_duration_w_date_and_time(self):
         sleep_time = random_timestamp('31/12/99')
-        wake_time = random_timestamp('31/12/99')
+
+        wake_date = '31/12/99'
+        wake_time = random_timestamp(wake_date)
 
         while (
             sleep_duration.get_datetime(wake_time)
@@ -729,7 +760,7 @@ test_get_datetime
                 wake_time=wake_time,
                 sleep_time=sleep_time
             )
-            wake_time = random_timestamp('31/12/99')
+            wake_time = random_timestamp(wake_date)
         else:
             self.assertEqual(
                 sleep_duration.duration(

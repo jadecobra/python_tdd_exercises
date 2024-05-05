@@ -15,11 +15,9 @@ def random_timestamp(date):
 class TestSleepDuration(unittest.TestCase):
 
     def test_get_datetime(self):
-        timestamp = random_timestamp('31/12/99')
+        timestamp = random_timestamp('21/11/06')
         self.assertEqual(
-            sleep_duration.get_datetime(
-                timestamp
-            ),
+            sleep_duration.get_datetime(timestamp),
             datetime.datetime.strptime(
                 timestamp, '%d/%m/%y %H:%M'
             )
@@ -38,8 +36,11 @@ class TestSleepDuration(unittest.TestCase):
             )
 
     def test_duration(self):
+        sleep_date = '31/12/99'
         sleep_time = random_timestamp('31/12/99')
-        wake_time = random_timestamp('31/12/99')
+
+        wake_date = '31/12/99'
+        wake_time = random_timestamp(wake_date)
 
         while (
             sleep_duration.get_datetime(wake_time)
@@ -49,9 +50,8 @@ class TestSleepDuration(unittest.TestCase):
                 wake_time=wake_time,
                 sleep_time=sleep_time
             )
-            wake_time = random_timestamp(
-                '31/12/99'
-            )
+            wake_date = sleep_date
+            wake_time = random_timestamp(wake_date)
         else:
             self.assertEqual(
                 sleep_duration.duration(
