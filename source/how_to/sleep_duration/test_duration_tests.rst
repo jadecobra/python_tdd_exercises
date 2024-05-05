@@ -14,7 +14,7 @@ This is part 5 of a program that calculates the difference between a given wake 
 
 ----
 
-I want to write the program that makes the tests in ``test_sleep_duration.py`` pass without looking at them
+I want to write the program that makes the tests in ``test_sleep_duration.py`` pass without looking at them as if they were written by someone else
 
 .. _test_duration_tests_red:
 
@@ -29,7 +29,7 @@ red: make it fail
 
     AttributeError: module 'sleep_duration' has no attribute 'get_datetime'
 
-  which I add to a list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+  which I add to a list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered in a new file
 
   .. code-block:: python
 
@@ -433,7 +433,7 @@ refactor: make it better
     def get_datetime(timestamp):
 
   the terminal shows all tests are still passing
-* and I remove the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+* and I close the file with the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
 *********************************************************************************
 review

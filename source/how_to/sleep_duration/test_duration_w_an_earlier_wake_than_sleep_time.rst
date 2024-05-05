@@ -316,7 +316,7 @@ refactor: make it better
         else:
             ...
 
-  the terminal shows all tests are still green all the way
+  the tests are still green all the way
 
 .. _test_duration_w_an_earlier_wake_than_sleep_time_review:
 
