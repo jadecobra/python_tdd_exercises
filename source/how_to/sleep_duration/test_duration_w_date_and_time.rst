@@ -852,6 +852,9 @@ refactor: make it better
 test_get_datetime
 #################################################################################
 
+
+.. _test_get_datetime_red:
+
 * I want to add a test for the ``get_datetime`` :ref:`function<functions>` in the ``sleep_duration`` :ref:`module<ModuleNotFoundError>`. I change ``test_datetime_objects`` to ``test_get_datetime`` and make it reference ``sleep_duration.get_datetime`` because they are the same
 
   .. code-block:: python
@@ -868,7 +871,22 @@ test_get_datetime
 
   still green! The test has a problem, the values never change. I want to test the :ref:`function<functions>` with random timestamps
 
-* I add a new variable and change the assertion
+* I change the expectation to use `datetime.datetime.strptime`_
+
+  .. code-block:: python
+
+    def test_get_datetime(self):
+        self.assertEqual(
+            sleep_duration.get_datetime(
+                timestamp
+            ),
+            datetime.datetime.strptime(
+                '21/11/06 16:30',
+                '%d/%m/%y %H:%M'
+            )
+        )
+
+* then add a new variable to make the timestamps random
 
   .. code-block:: python
 
@@ -879,11 +897,42 @@ test_get_datetime
                 timestamp
             ),
             datetime.datetime.strptime(
-                timestamp, '%d/%m/%y %H:%M'
+                '21/11/06 16:30',
+                '%d/%m/%y %H:%M'
             )
         )
 
-  the terminal still shows green
+  the terminal shows an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: datetime.datetime(2006, 11, 21, 0, 25) != datetime.datetime(2006, 11, 21, 16, 30)
+    AssertionError: datetime.datetime(2006, 11, 21, 6, 7) != datetime.datetime(2006, 11, 21, 16, 30)
+    AssertionError: datetime.datetime(2006, 11, 21, 15, 52) != datetime.datetime(2006, 11, 21, 16, 30)
+    AssertionError: datetime.datetime(2006, 11, 21, 18, 16) != datetime.datetime(2006, 11, 21, 16, 30)
+
+
+.. _test_get_datetime_green:
+
+I add the variable to the assertion
+
+.. code-block:: python
+
+  def test_get_datetime(self):
+      timestamp = random_timestamp('21/11/06')
+      self.assertEqual(
+          sleep_duration.get_datetime(
+              timestamp
+          ),
+          datetime.datetime.strptime(
+              timestamp,
+              '%d/%m/%y %H:%M'
+          )
+      )
+
+and the terminal shows green again
+
+.. _test_get_datetime_refactor:
 
 * I remove ``get_datetime`` :ref:`method<functions>` from ``test_sleep_duration.py`` because ``test_get_datetime`` covers what it does, and get an :ref:`AttributeError`
 
@@ -926,7 +975,9 @@ test_get_datetime
 
   the terminal shows green again
 
-* then change ``test_duration_w_date_and_time`` to ``test_duration`` and all is well that ends well
+----
+
+I change ``test_duration_w_date_and_time`` to ``test_duration`` and all is well that ends well
 
 .. _sleep_duration_review:
 
@@ -943,7 +994,7 @@ The challenge was to write a program that calculates the difference between a gi
 * `test_datetime_objects`_ where I
 
   - used `python's online documentation`_
-  - converted a string_ to a `datetime.datetime`_ object using the `datetime.datetime.strptime`_ :ref:`method<functions>`
+  - and converted a string_ to a `datetime.datetime`_ object using the `datetime.datetime.strptime`_ :ref:`method<functions>`
 
 * `test_subtracting_datetime_objects`_
 * `test_converting_timedelta_to_a_string`_
