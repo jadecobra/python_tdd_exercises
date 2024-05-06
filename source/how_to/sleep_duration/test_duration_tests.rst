@@ -292,7 +292,21 @@ green: make it pass
 
   it looks like the test expects the difference between the timestamps
 
-* I add calls to ``get_datetime`` with new variables
+* I return the difference between ``wake_time`` and ``sleep_time``
+
+  .. code-block:: python
+
+    def duration(wake_time, sleep_time):
+        return (wake_time - sleep_time)
+
+  and get a :ref:`TypeError`
+
+  .. code-block:: python
+
+    TypeError: unsupported operand type(s) for -: 'str' and 'str'
+
+  I cannot subtract one string from another. I change the `return statement`_ back
+* then add calls to ``get_datetime`` with new variables
 
   .. code-block:: python
 
@@ -322,6 +336,7 @@ green: make it pass
     AssertionError: datetime.timedelta(seconds=52740) != '14:39:00'
     AssertionError: datetime.timedelta(seconds=74880) != '20:48:00'
 
+  the test expects a string_ and the :ref:`function<functions>` returns a `datetime.timedelta`_ object
 * I add the str_ constructor_
 
   .. code-block:: python
