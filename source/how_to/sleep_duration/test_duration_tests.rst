@@ -307,7 +307,7 @@ green: make it pass
 
     AssertionError: (datetime.datetime(1999, 12, 31, 5, 33), [35 chars] 48)) != '12:45:00'
 
-* I want to see what happens when I change the return statement to a calculation
+* I want to see what will happen when I change the return statement to a calculation
 
   .. code-block:: python
 
@@ -328,13 +328,13 @@ green: make it pass
 
     return str(wake_datetime - sleep_datetime)
 
-  the terminal shows the random :ref:`AssertionError`
+  the terminal shows the random :ref:`AssertionError` about the ValueError_
 
   .. code-block:: python
 
     AssertionError: ValueError not raised
 
-* I add a condition to the :ref:`function<functions>` based on the name ``assertWakeTimeEarlier`` and the differences I encountered were all positive
+* I add a condition to the :ref:`function<functions>` based on the name ``assertWakeTimeEarlier``, the differences between the timestamps I saw were also positive because the ``wake_time`` was later than the ``sleep_time``
 
   .. code-block:: python
 
@@ -359,14 +359,25 @@ green: make it pass
 
   .. code-block:: python
 
-    if wake_time < sleep_time:
-        raise ValueError("wake_time: "31/12/99 19:05" is earlier than sleep_time: "31/12/99 20:03"")
+    def duration(wake_time, sleep_time):
+        if wake_time < sleep_time:
+            raise ValueError("wake_time: "31/12/99 19:05" is earlier than sleep_time: "31/12/99 20:03"")
+        else:
+            wake_datetime = get_datetime(wake_time)
+            sleep_datetime = get_datetime(sleep_time)
+            return str(wake_datetime - sleep_datetime)
 
-  and get a SyntaxError_
+  and get a SyntaxError_ with this message
 
   .. code-block:: python
 
     SyntaxError: invalid syntax. Perhaps you forgot a comma?
+
+  or this message
+
+  .. code-block:: python
+
+    SyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers
 
   python does not know where the string ends or begins because the message has double quotes inside double quotes. I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>`
 
@@ -382,17 +393,23 @@ green: make it pass
 
   .. code-block:: python
 
-    raise ValueError(
-        'wake_time: "31/12/99 19:05"'
-        ' is earlier than '
-        'sleep_time: "31/12/99 20:03"'
-    )
+    def duration(wake_time, sleep_time):
+        if wake_time < sleep_time:
+            raise ValueError(
+                'wake_time: "31/12/99 19:05"'
+                ' is earlier than '
+                'sleep_time: "31/12/99 20:03"'
+            )
+        else:
+            wake_datetime = get_datetime(wake_time)
+            sleep_datetime = get_datetime(sleep_time)
+            return str(wake_datetime - sleep_datetime)
 
   which gives me another :ref:`AssertionError`
 
   .. code-block:: python
 
-
+    FILL ME IN
 
   the timestamps in the ValueError_ message are different
 
@@ -400,11 +417,17 @@ green: make it pass
 
   .. code-block:: python
 
-    raise ValueError(
-        f'wake_time: "{wake_time}"'
-        ' is earlier than '
-        f'sleep_time: "{sleep_time}"'
-    )
+    def duration(wake_time, sleep_time):
+        if wake_time < sleep_time:
+            raise ValueError(
+                f'wake_time: "{wake_time}"'
+                ' is earlier than '
+                f'sleep_time: "{sleep_time}"'
+            )
+        else:
+            wake_datetime = get_datetime(wake_time)
+            sleep_datetime = get_datetime(sleep_time)
+            return str(wake_datetime - sleep_datetime)
 
   and the terminal shows passing tests! YES!!
 
@@ -414,15 +437,22 @@ green: make it pass
 refactor: make it better
 *********************************************************************************
 
-* I return the calculation directly without creating the variables
+* I return the calculation directly and remove ``wake_datetime`` and ``sleep_datetime``
 
   .. code-block:: python
 
-    else:
-        return str(
-            get_datetime(wake_time)
-          - get_datetime(sleep_time)
-        )
+    def duration(wake_time, sleep_time):
+        if wake_time < sleep_time:
+            raise ValueError(
+                f'wake_time: "{wake_time}"'
+                ' is earlier than '
+                f'sleep_time: "{sleep_time}"'
+            )
+        else:
+            return str(
+                get_datetime(wake_time)
+              - get_datetime(sleep_time)
+            )
 
   still green
 
@@ -431,6 +461,9 @@ refactor: make it better
   .. code-block:: python
 
     def get_datetime(timestamp):
+        return datetime.datetime.strptime(
+            timestamp, "%d/%m/%y %H:%M"
+        )
 
   the terminal shows all tests are still passing
 * and I close the file with the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered

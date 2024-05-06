@@ -120,7 +120,7 @@ green: make it pass
                 f'{duration_minutes:02}'
             )
 
-  the terminal shows a random ValueError_ for ``test_duration_w_hours_and_minutes`` when ``wake_time`` is earlier than ``sleep_time``
+  and the terminal shows a random ValueError_ for ``test_duration_w_hours_and_minutes`` when ``wake_time`` is earlier than ``sleep_time``
 
   .. code-block:: python
 
@@ -194,7 +194,7 @@ refactor: make it better
 
     AssertionError: ValueError not raised
 
-  the test works as expected. I remove the comments and the terminal shows green again
+  the ``assertWakeTimeEarlier`` works as expected. I remove the comments and the terminal shows green again
 * I remove ``test_duration_w_an_earlier_wake_than_sleep_time`` because it is now covered by ``test_duration_w_hours_and_minutes``
 * then add an ``else`` block to line up the rest of the code in ``test_duration_w_hours_and_minutes``
 
@@ -231,6 +231,7 @@ refactor: make it better
         )
 
   still green
+  
 * I add a `static method`_ to calculate the difference between ``wake_time`` and ``sleep_time``
 
   .. code-block:: python

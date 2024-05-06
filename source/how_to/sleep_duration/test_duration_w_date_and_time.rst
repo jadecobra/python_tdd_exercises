@@ -48,7 +48,16 @@ red: make it fail
             )
             wake_time = random_timestamp_a()
         else:
-            ...
+            self.assertEqual(
+                sleep_duration.duration(
+                    sleep_time=sleep_time,
+                    wake_time=wake_time
+                ),
+                self.get_difference(
+                    wake_time=wake_time,
+                    sleep_time=sleep_time
+                )
+            )
 
   and get a ValueError_
 
@@ -59,7 +68,7 @@ red: make it fail
     ValueError: invalid literal for int() with base 10: '31/12/99 11'
     ValueError: invalid literal for int() with base 10: '31/12/99 21'
 
-  the test called ``duration`` which called ``read_timestamp`` that tried to convert the timestamp string_ to a number by using the int_ constructor_ but it is in the wrong format
+  the test called ``duration`` which called ``read_timestamp`` that converts the timestamp string_ to a number by using the int_ constructor_ but it is in the wrong format
 
 .. _test_duration_w_date_and_time_green_0:
 
@@ -164,13 +173,14 @@ the reference to the ``strptime`` :ref:`method<functions>` is not right, my `imp
 
 .. code-block:: python
 
-  self.assertEqual(
-      datetime.datetime.strptime(
-          "21/11/06 16:30",
-          "%d/%m/%y %H:%M"
-      ),
-      ''
-  )
+  def test_datetime_objects(self):
+      self.assertEqual(
+          datetime.datetime.strptime(
+              "21/11/06 16:30",
+              "%d/%m/%y %H:%M"
+          ),
+          ''
+      )
 
 and get an :ref:`AssertionError`
 
@@ -182,19 +192,20 @@ I copy the value on the left side of the :ref:`AssertionError` to change the exp
 
 .. code-block:: python
 
-  self.assertEqual(
-      datetime.datetime.strptime(
-          "21/11/06 16:30",
-          "%d/%m/%y %H:%M"
-      ),
-      datetime.datetime(
-          2006, 11, 21, 16, 30
+  def test_datetime_objects(self):
+      self.assertEqual(
+          datetime.datetime.strptime(
+              "21/11/06 16:30",
+              "%d/%m/%y %H:%M"
+          ),
+          datetime.datetime(
+              2006, 11, 21, 16, 30
+          )
       )
-  )
 
-and the test passes. It looks like
+and it passes
 
-* when the `datetime.datetime.strptime`_ :ref:`method<functions>` is given 2 strings_ as inputs - a timestamp and a pattern, it returns a `datetime.datetime`_ object with ``year``, ``month``, ``date``, ``hours`` and ``minutes``
+* when the `datetime.datetime.strptime`_ :ref:`method<functions>` is given 2 strings_ as inputs - a timestamp and a pattern, it returns a `datetime.datetime`_ object based on the pattern provided
 * and the pattern provided means
 
   - ``%d`` is for days
@@ -253,17 +264,27 @@ I copy the value on the left of the :ref:`AssertionError` and change the expecte
 
 .. code-block:: python
 
-  self.assertEqual(
-      wake_time-sleep_time,
-      datetime.timedelta(seconds=3600)
-  )
+  def test_subtracting_datetime_objects(self):
+      sleep_time = datetime.datetime.strptime(
+          "21/11/06 16:30",
+          "%d/%m/%y %H:%M"
+      )
+      wake_time = datetime.datetime.strptime(
+          "21/11/06 17:30",
+          "%d/%m/%y %H:%M"
+      )
+
+      self.assertEqual(
+          wake_time-sleep_time,
+          datetime.timedelta(seconds=3600)
+      )
 
 .. _test_subtracting_datetime_objects_refactor:
 
 refactor: make it better
 ---------------------------------------------------------------------------------
 
-* I add a :ref:`method<functions>` to call `datetime.datetime.strptime`_ and remove the duplication of the timestamp pattern
+* I add a :ref:`method<functions>` to call `datetime.datetime.strptime`_ to remove the repetition of the timestamp pattern
 
   .. code-block:: python
 
@@ -287,19 +308,23 @@ refactor: make it better
         wake_time = self.get_datetime(
             '21/11/06 17:30'
         )
-        ...
+
+        self.assertEqual(
+            wake_time-sleep_time,
+            datetime.timedelta(seconds=3600)
+        )
 
 * and ``test_datetime_objects``
 
   .. code-block:: python
 
-    ...
-    self.assertEqual(
-        self.get_datetime("21/11/06 16:30"),
-        datetime.datetime(
-            2006, 11, 21, 16, 30
+    def test_datetime_objects(self):
+        self.assertEqual(
+            self.get_datetime("21/11/06 16:30"),
+            datetime.datetime(
+                2006, 11, 21, 16, 30
+            )
         )
-    )
 
 I can convert a string_ to a `datetime.datetime`_ object by using `datetime.datetime.strptime`_ and subtract one `datetime.datetime`_ object from another to get a `datetime.timedelta`_ object
 
@@ -313,7 +338,7 @@ test_converting_timedelta_to_a_string
 red: make it fail
 ---------------------------------------------------------------------------------
 
-I want the result as a string_ not a `datetime.timedelta`_  object. I add a test to see what happens when I pass it to the str_ constructor_
+I want the result as a string_ not a `datetime.timedelta`_  object. I add a test to see what happens when I call the str_ constructor_ with it
 
 .. code-block:: python
 
@@ -341,10 +366,11 @@ I make the expected value in the test match the value from the terminal
 
 .. code-block:: python
 
-  self.assertEqual(
-      str(datetime.timedelta(seconds=1234)),
-      '0:20:34'
-  )
+  def test_converting_timedelta_to_a_string(self):
+      self.assertEqual(
+          str(datetime.timedelta(seconds=1234)),
+          '0:20:34'
+      )
 
 and the tests passes. From the tests, I know I can
 
@@ -356,67 +382,104 @@ and the tests passes. From the tests, I know I can
 
 .. _test_duration_w_date_and_time_green_1:
 
-* I remove the `unittest.skip decorator`_ from ``test_duration_w_date_and_time`` and get back ValueError_, the test calls ``duration`` which calls ``read_timestamp`` in ``sleep_duration.py``. ``read_timestamp`` cannot process timestamps that have dates because it still uses the int_ constructor_
+* I remove the `unittest.skip decorator`_ from ``test_duration_w_date_and_time`` and get back the ValueError_, the test calls ``duration`` which calls ``read_timestamp`` in ``sleep_duration.py``, that cannot process timestamps that have dates because it still uses the int_ constructor_
 * I make a copy of the ``duration`` :ref:`function<functions>` in ``sleep_duration.py`` and change the name to ``duration_a`` to keep the working solution while I try a new one
 * then change the assertion in ``test_duration_w_date_and_time`` to call ``duration_a``
 
   .. code-block:: python
 
-    self.assertEqual(
-        sleep_duration.duration_a(
-            wake_time=wake_time,
-            sleep_time=sleep_time
-        ),
-        self.get_difference(
-            wake_time, sleep_time
-        )
-    )
+    def test_duration_w_date_and_time(self):
+        sleep_time = random_timestamp_a()
+        wake_time = random_timestamp_a()
+
+        while wake_time < sleep_time:
+            self.assertWakeTimeEarlier(
+                wake_time, sleep_time
+            )
+            wake_time = random_timestamp_a()
+        else:
+            self.assertEqual(
+                sleep_duration.duration_a(
+                    wake_time=wake_time,
+                    sleep_time=sleep_time
+                ),
+                self.get_difference(
+                    wake_time, sleep_time
+                )
+            )
 
 * I remove ``difference_hours``, ``difference_minutes``, ``duration_hours``, ``duration_minutes`` and ``difference`` from ``duration_a``
 * then change the `return statement`_
 
   .. code-block:: python
 
-    else:
-        return None
+    def duration_a(wake_time=None, sleep_time=None):
+        if wake_time < sleep_time:
+            raise ValueError(
+                f'wake_time: "{wake_time}"'
+                ' is earlier than '
+                f'sleep_time: "{sleep_time}"'
+            )
+        else:
+            return None
 
-  and the terminal shows a ValueError_
+  and the terminal shows the same ValueError_
 
   .. code-block:: python
 
     ValueError: invalid literal for int() with base 10: '31/12/99 22'
 
-  ``test_duration_w_date_and_time`` still has the old calculations that use the int_ constructor_
+  ``test_duration_w_date_and_time`` calls ``get_difference`` which has the old calculations that use the int_ constructor_
 
 * I remove the call to ``get_difference`` from ``test_duration_w_date_and_time``
 
   .. code-block:: python
 
-    else:
-        self.assertEqual(
-            sleep_duration.duration_a(
+    def test_duration_w_date_and_time(self):
+        sleep_time = random_timestamp_a()
+        wake_time = random_timestamp_a()
+
+        while wake_time < sleep_time:
+            self.assertWakeTimeEarlier(
+                sleep_time=sleep_time,
                 wake_time=wake_time,
-                sleep_time=sleep_time
-            ),
-            None
-        )
+            )
+            wake_time = random_timestamp_a()
+        else:
+            self.assertEqual(
+                sleep_duration.duration_a(
+                    wake_time=wake_time,
+                    sleep_time=sleep_time
+                ),
+                None
+            )
 
 * then add a new calculation that calls ``get_datetime`` in the test, and change the expectation in the assertion
 
   .. code-block:: python
 
-    else:
-        difference = (
-            self.get_datetime(wake_time)
-          - self.get_datetime(sleep_time)
-        )
-        self.assertEqual(
-            sleep_duration.duration_a(
+    def test_duration_w_date_and_time(self):
+        sleep_time = random_timestamp_a()
+        wake_time = random_timestamp_a()
+
+        while wake_time < sleep_time:
+            self.assertWakeTimeEarlier(
+                sleep_time=sleep_time,
                 wake_time=wake_time,
-                sleep_time=sleep_time
-            ),
-            str(difference)
-        )
+            )
+            wake_time = random_timestamp_a()
+        else:
+            difference = (
+                self.get_datetime(wake_time)
+              - self.get_datetime(sleep_time)
+            )
+            self.assertEqual(
+                sleep_duration.duration_a(
+                    wake_time=wake_time,
+                    sleep_time=sleep_time
+                ),
+                str(difference)
+            )
 
   the terminal shows an :ref:`AssertionError`
 
@@ -426,22 +489,6 @@ and the tests passes. From the tests, I know I can
     AssertionError: None != '7:59:00'
     AssertionError: None != '9:02:00'
     AssertionError: None != '10:16:00'
-
-* I change the `return statement`_
-
-  .. code-block:: python
-
-    else:
-        return str()
-
-  and get another :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: '' != '6:07:00'
-    AssertionError: '' != '5:20:00'
-    AssertionError: '' != '1:54:00'
-    AssertionError: '' != '11:01:00'
 
 * I add a :ref:`function<functions>` to call `datetime.datetime.strptime`_ with a pattern
 
@@ -461,12 +508,19 @@ and the tests passes. From the tests, I know I can
 
   .. code-block:: python
 
-    else:
-        difference = (
-            get_datetime(wake_time)
-          - get_datetime(sleep_time)
-        )
-        return str(difference)
+    def duration_a(wake_time=None, sleep_time=None):
+        if wake_time < sleep_time:
+            raise ValueError(
+                f'wake_time: "{wake_time}"'
+                ' is earlier than '
+                f'sleep_time: "{sleep_time}"'
+            )
+        else:
+            difference = (
+                get_datetime(wake_time)
+              - get_datetime(sleep_time)
+            )
+            return str(difference)
 
   the terminal shows a NameError_
 
@@ -498,11 +552,18 @@ refactor: make it better
 
   .. code-block:: python
 
-    else:
-        return str(
-            get_datetime(wake_time)
-          - get_datetime(sleep_time)
-        )
+    def duration_a(wake_time=None, sleep_time=None):
+        if wake_time < sleep_time:
+            raise ValueError(
+                f'wake_time: "{wake_time}"'
+                ' is earlier than '
+                f'sleep_time: "{sleep_time}"'
+            )
+        else:
+            return str(
+                get_datetime(wake_time)
+              - get_datetime(sleep_time)
+            )
 
 * then remove
 
@@ -551,12 +612,28 @@ refactor: make it better
   .. code-block:: python
 
     def test_duration_w_date_and_time(self):
-        wake_time = random_timestamp('31/12/99')
         sleep_time = random_timestamp('31/12/99')
+        wake_time = random_timestamp('31/12/99')
 
         while wake_time < sleep_time:
+            self.assertWakeTimeEarlier(
+                sleep_time=sleep_time,
+                wake_time=wake_time,
+            )
             wake_time = random_timestamp(
                 '31/12/99'
+            )
+        else:
+            difference = (
+                self.get_datetime(wake_time)
+              - self.get_datetime(sleep_time)
+            )
+            self.assertEqual(
+                sleep_duration.duration_a(
+                    wake_time=wake_time,
+                    sleep_time=sleep_time
+                ),
+                str(difference)
             )
 
   and the terminal shows green again. I can now test ``duration`` with any dates and times
@@ -578,6 +655,18 @@ refactor: make it better
             )
             wake_time = random_timestamp(
                 wake_date
+            )
+        else:
+            difference = (
+                self.get_datetime(wake_time)
+              - self.get_datetime(sleep_time)
+            )
+            self.assertEqual(
+                sleep_duration.duration_a(
+                    wake_time=wake_time,
+                    sleep_time=sleep_time
+                ),
+                str(difference)
             )
 
 * I change the date for ``sleep_time`` to test it
@@ -619,26 +708,42 @@ refactor: make it better
     ValueError: time data '32/12/99 01:11' does not match format '%d/%m/%y %H:%M'
 
   this is better. I want the same thing to happen when I use a date that does not exist for ``sleep_time``
-
-* I change the `while statement`_ to call ``get_datetime``
-
-  .. code-block:: python
-
-    while (
-        self.get_datetime(wake_time)
-      < self.get_datetime(sleep_time)
-    ):
-        ...
-
-  the terminal still shows the ValueError_, I change ``wake_time`` back to a real date, and the test is green again. When I change ``sleep_time`` to a bad date
+* I change ``wake_time`` back and change ``sleep_time`` again to cause the loop to not end then change the `while statement`_ to call ``get_datetime``
 
   .. code-block:: python
 
-    sleep_time = random_timestamp('32/12/99')
+    def test_duration_w_date_and_time(self):
+        sleep_time = random_timestamp('32/12/99')
 
-  I get the ValueError_ as well, good! I want bad dates to cause an error
+        wake_date = '31/12/99'
+        wake_time = random_timestamp(wake_date)
 
-* I change ``sleep_time`` back to a real date and all is green again!
+        while (
+            self.get_datetime(wake_time)
+          < self.get_datetime(sleep_time)
+        ):
+            self.assertWakeTimeEarlier(
+                wake_time=wake_time,
+                sleep_time=sleep_time
+            )
+            wake_time = random_timestamp(
+                wake_date
+            )
+        else:
+            difference = (
+                self.get_datetime(wake_time)
+              - self.get_datetime(sleep_time)
+            )
+            self.assertEqual(
+                sleep_duration.duration_a(
+                    wake_time=wake_time,
+                    sleep_time=sleep_time
+                ),
+                str(difference)
+            )
+
+  the terminal shows a ValueError_, good! I want bad dates to cause an error. I change ``sleep_time`` back to a real date, and the test is green again.
+
 * I add a variable to fix the problem of the loop that does not end when ``wake_date``  is earlier than the date for ``sleep_time``
 
   .. code-block:: python
@@ -659,29 +764,57 @@ refactor: make it better
             wake_time = random_timestamp(
                 wake_date
             )
+        else:
+            difference = (
+                self.get_datetime(wake_time)
+              - self.get_datetime(sleep_time)
+            )
+            self.assertEqual(
+                sleep_duration.duration_a(
+                    wake_time=wake_time,
+                    sleep_time=sleep_time
+                ),
+                str(difference)
+            )
 
-  change ``wake_date`` to an earlier date
+  and change ``wake_date`` to an earlier date
 
   .. code-block:: python
 
     wake_date = '30/12/99'
 
-  the terminal still shows green and I change it back
-* I remove the ``difference`` variable from the test to do the calculation directly
+  the terminal still shows green, I change it back
+* then remove the ``difference`` variable from the test to do the calculation directly
 
   .. code-block:: python
 
-    else:
-        self.assertEqual(
-            sleep_duration.duration(
+    def test_duration_w_date_and_time(self):
+        sleep_date = '31/12/99'
+        sleep_time = random_timestamp(sleep_date)
+
+        wake_date = '31/12/99'
+        wake_time = random_timestamp(wake_date)
+
+        while wake_time < sleep_time:
+            self.assertWakeTimeEarlier(
                 wake_time=wake_time,
                 sleep_time=sleep_time
-            ),
-            str(
-                self.get_datetime(wake_time)
-              - self.get_datetime(sleep_time)
             )
-        )
+            wake_date = sleep_date
+            wake_time = random_timestamp(
+                wake_date
+            )
+        else:
+            self.assertEqual(
+                sleep_duration.duration(
+                    wake_time=wake_time,
+                    sleep_time=sleep_time
+                ),
+                str(
+                    self.get_datetime(wake_time)
+                  - self.get_datetime(sleep_time)
+                )
+            )
 
   the terminal still shows green
 
@@ -723,20 +856,7 @@ test_get_datetime
 
   the terminal still shows green
 
-* I also change the difference calculation in ``test_duration_w_date_and_time`` to call ``get_datetime`` from the ``sleep_duration`` :ref:`module<ModuleNotFoundError>`
-
-  .. code-block:: python
-
-    else:
-        difference = (
-            sleep_duration.get_datetime(wake_time)
-          - sleep_duration.get_datetime(sleep_time)
-        )
-        ...
-
-  the terminal still shows passing tests
-
-* I remove ``get_datetime`` :ref:`method<functions>` from ``test_sleep_duration.py`` because ``test_get_datetime`` covers what it does and get an :ref:`AttributeError`
+* I remove ``get_datetime`` :ref:`method<functions>` from ``test_sleep_duration.py`` because ``test_get_datetime`` covers what it does, and get an :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -747,7 +867,8 @@ test_get_datetime
   .. code-block:: python
 
     def test_duration_w_date_and_time(self):
-        sleep_time = random_timestamp('31/12/99')
+        sleep_date = '31/12/99'
+        sleep_time = random_timestamp(sleep_date)
 
         wake_date = '31/12/99'
         wake_time = random_timestamp(wake_date)
@@ -760,6 +881,7 @@ test_get_datetime
                 wake_time=wake_time,
                 sleep_time=sleep_time
             )
+            wake_date = sleep_date
             wake_time = random_timestamp(wake_date)
         else:
             self.assertEqual(
@@ -772,6 +894,9 @@ test_get_datetime
                   - sleep_duration.get_datetime(sleep_time)
                 )
             )
+
+  the terminal shows green again
+
 * then change ``test_duration_w_date_and_time`` to ``test_duration`` and all is well that ends well
 
 .. _sleep_duration_review:
