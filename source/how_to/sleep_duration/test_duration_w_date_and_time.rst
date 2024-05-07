@@ -68,7 +68,7 @@ red: make it fail
     ValueError: invalid literal for int() with base 10: '31/12/99 11'
     ValueError: invalid literal for int() with base 10: '31/12/99 21'
 
-  the test called ``duration`` which called ``read_timestamp`` that converts the timestamp string_ to a number by using the int_ constructor_ but it is in the wrong format
+  the test calls ``duration`` which calls ``read_timestamp`` that converts the timestamp string_ to a number by using the int_ constructor_ but it is in the wrong format
 
 .. _test_duration_w_date_and_time_green_0:
 
@@ -100,7 +100,7 @@ green: make it pass
 
     ValueError: invalid literal for int() with base 10: '31/12/99 13'
 
-  I cannot convert a timestamp string_ to a number when it has a date with the int_ constructor_. I :doc:`handle</how_to/exception_handling_tests>` the ValueError_ with `assertRaises`_
+  I cannot use the int_ constructor_ to convert a timestamp string_ to a number when it has a date. I add an `assertRaises`_ to :doc:`handle</how_to/exception_handling_tests>` the ValueError_
 
   .. code-block:: python
 
@@ -113,9 +113,9 @@ green: make it pass
 
   and the test is green again
 
-* I remove the `unittest.skip decorator`_ from ``test_duration_w_date_and_time`` and get back the ValueError_, the test calls ``duration`` which calls ``read_timestamp`` in ``sleep_duration.py``, that cannot process timestamps that have dates because it still uses the int_ constructor_
-* I make a copy of the ``duration`` :ref:`function<functions>` in ``sleep_duration.py`` and change the name to ``duration_a`` to keep the working solution while I try a new one
-* then remove ``difference_hours``, ``difference_minutes``, ``duration_hours``, ``duration_minutes`` and ``difference`` from ``duration_a`` and change the `return statement`_
+* I remove the `unittest.skip decorator`_ from ``test_duration_w_date_and_time`` to get back the ValueError_
+* and make a copy of the ``duration`` :ref:`function<functions>` in ``sleep_duration.py``, then change the name to ``duration_a`` to keep the working solution while I try a new one
+* I remove ``difference_hours``, ``difference_minutes``, ``duration_hours``, ``duration_minutes`` and ``difference`` from ``duration_a`` and change the `return statement`_
 
   .. code-block:: python
 
@@ -129,7 +129,7 @@ green: make it pass
         else:
             return None
 
-* I change the assertion in ``test_duration_w_date_and_time`` to reference the new :ref:`function<functions>`
+* then change the assertion in ``test_duration_w_date_and_time`` to reference the new :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -161,7 +161,7 @@ green: make it pass
 
     ValueError: invalid literal for int() with base 10: '31/12/99 22'
 
-  the test calls ``get_difference`` in the exception which has the old calculations that use the int_ constructor_
+  the test calls ``get_difference`` in the expectation which uses the int_ constructor_ in its calculations
 * I change it to return ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
@@ -194,7 +194,7 @@ green: make it pass
     AssertionError: None != ('31/12/99 13:10', '31/12/99 12:00')
     AssertionError: None != ('31/12/99 16:41', '31/12/99 12:35')
 
-* I change the `return statement`_ in ``duration_a``
+* then change the `return statement`_ in ``duration_a``
 
   .. code-block:: python
 
@@ -216,7 +216,7 @@ green: make it pass
 refactor: make it better
 *********************************************************************************
 
-The int_ constructor_ will not work when the timestamps have a date. I need a solution that can read the date and time. I search for `date and time <https://docs.python.org/3/search.html?q=dare+and+time>`_ in `python's online documentation`_, to see if there is an existing solution and select the datetime_ module from the results. Reading through the available types in the module I see `datetime.datetime`_ objects which are a combination of date and time
+The int_ constructor_ will not work when the timestamps have a date. I need a solution that can read timestamps with date and time. I search for `date and time <https://docs.python.org/3/search.html?q=date+and+time>`_ in `python's online documentation`_, to see if there is an existing solution and select the datetime_ module from the results. Reading through the available types in the module I see `datetime.datetime`_ objects which are a combination of date and time
 
 .. code-block:: python
 
@@ -312,10 +312,7 @@ I copy the value on the left side of the :ref:`AssertionError` to change the exp
           )
       )
 
-and it passes
-
-* when the `datetime.datetime.strptime`_ :ref:`method<functions>` is given 2 strings_ as inputs - a timestamp and a pattern, it returns a `datetime.datetime`_ object based on the pattern provided
-* and the pattern provided means
+and it passes. When the `datetime.datetime.strptime`_ :ref:`method<functions>` is given 2 strings_ as inputs - a timestamp and a pattern, it returns a `datetime.datetime`_ object based on the pattern provided. The pattern provided means
 
   - ``%d`` is for days
   - ``%m`` is for months
@@ -323,7 +320,7 @@ and it passes
   - ``%H`` is for hours
   - ``%M`` is for minutes
 
-  there are more details in `strftime() and strptime() behavior <https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior>`_
+there are more details in `strftime() and strptime() behavior <https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior>`_
 
 .. _test_datetime_objects_refactor:
 
@@ -452,7 +449,7 @@ test_get_datetime
 red: make it fail
 ---------------------------------------------------------------------------------
 
-* I want to add a test for the ``get_datetime`` :ref:`function<functions>`. I change ``test_datetime_objects`` to ``test_get_datetime`` and make it reference ``sleep_duration.get_datetime`` because they are the same
+* I want to add a test for the ``get_datetime`` :ref:`function<functions>`. I change ``test_datetime_objects`` to ``test_get_datetime`` and make it reference ``sleep_duration.get_datetime`` which calls `datetime.datetime.strptime`_
 
   .. code-block:: python
 
@@ -466,7 +463,7 @@ red: make it fail
             )
         )
 
-  still green! The test has a problem, the timestamp is always the same. I want to test the :ref:`function<functions>` with random timestamps
+  still green! The test has a problem, the timestamp is always the same. I want to test with random timestamps
 
 * I change the expectation to use `datetime.datetime.strptime`_
 
@@ -684,7 +681,7 @@ refactor: make it better
               - get_datetime(sleep_time)
             )
 
-  and the test passes! Time to Dance!!
+  and the test passes! It is dancing time!!
 
 * I remove
 
@@ -780,7 +777,7 @@ refactor: make it better
                 )
             )
 
-  and the terminal shows green again
+  the terminal shows green again
 
 * I add a variable to remove repetition and make sure ``wake_time`` has the same date inside and outside the `while statement`_
 
@@ -828,7 +825,7 @@ refactor: make it better
 
     sleep_time = random_timestamp('32/12/99')
 
-  and the test is stuck in a loop. I have a problem, I change the date back
+  and the test is stuck in a loop, this is a problem, I change the date back
 
   .. code-block:: python
 
@@ -842,7 +839,7 @@ refactor: make it better
 
     wake_date = '30/12/99'
 
-  the test is stuck in a loop that does not end because ``wake_date`` is earlier than the date for ``sleep_time``, another problem. When I change it to a date that does not exist
+  the test is stuck in a loop because ``wake_date`` is earlier than the date for ``sleep_time``, another problem. When I change it to a date that does not exist
 
   .. code-block:: python
 
@@ -855,7 +852,8 @@ refactor: make it better
     ValueError: time data '32/12/99 01:11' does not match format '%d/%m/%y %H:%M'
 
   this is better. I want the same thing to happen when I use a date that does not exist for ``sleep_time``
-* I change ``wake_date`` back and change ``sleep_time`` to cause the loop to not end, then change the `while statement`_ to call ``sleep_duration.get_datetime``
+
+* I change ``wake_date`` back and change the date for ``sleep_time`` to cause the loop to not end, then change the `while statement`_ to call ``sleep_duration.get_datetime``
 
   .. code-block:: python
 
@@ -903,7 +901,7 @@ refactor: make it better
 
   good! I want bad dates to cause an error. I change ``sleep_time`` back to a real date, and the test is green again.
 
-* I change ``wake_date`` to an earlier date to cause the loop to not end again
+* I change ``wake_date`` to an earlier date to cause the loop to run with no end
 
   .. code-block:: python
 
@@ -941,44 +939,9 @@ refactor: make it better
                 str(difference)
             )
 
-  the loop ends and the terminal shows green again, I change ``wake_date`` back
-* then remove the ``difference`` variable from the test to do the calculation directly
+  the loop ends and the terminal shows green again, I change ``wake_date`` back and the terminal still shows green
 
-  .. code-block:: python
-
-    def test_duration_w_date_and_time(self):
-        sleep_date = '31/12/99'
-        sleep_time = random_timestamp(sleep_date)
-
-        wake_date = '31/12/99'
-        wake_time = random_timestamp(wake_date)
-
-        while wake_time < sleep_time:
-            self.assertWakeTimeEarlier(
-                wake_time=wake_time,
-                sleep_time=sleep_time
-            )
-            wake_date = sleep_date
-            wake_time = random_timestamp(
-                wake_date
-            )
-        else:
-            self.assertEqual(
-                sleep_duration.duration(
-                    wake_time=wake_time,
-                    sleep_time=sleep_time
-                ),
-                str(
-                    self.get_datetime(wake_time)
-                  - self.get_datetime(sleep_time)
-                )
-            )
-
-  the terminal still shows green
-
-----
-
-I change ``test_duration_w_date_and_time`` to ``test_duration`` and all is well that ends well
+* I change ``test_duration_w_date_and_time`` to ``test_duration`` and all is well that ends well
 
 .. _sleep_duration_review:
 
