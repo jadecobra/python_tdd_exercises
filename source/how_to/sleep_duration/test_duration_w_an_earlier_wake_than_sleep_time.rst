@@ -29,7 +29,7 @@ I add a failing test to ``test_sleep_duration.py`` with a `while statement`_ to 
   def test_duration_w_an_earlier_wake_than_sleep_time(self):
       sleep_time = random_timestamp()
       wake_time = random_timestamp()
-      while wake_time >= sleep_time:
+      while sleep_time < wake_time:
           wake_time = random_timestamp()
 
       self.assertEqual(
@@ -66,7 +66,7 @@ green: make it pass
     def test_duration_w_an_earlier_wake_than_sleep_time(self):
         sleep_time = random_timestamp()
         wake_time = random_timestamp()
-        while wake_time >= sleep_time:
+        while sleep_time < wake_time:
             wake_time = random_timestamp()
 
         with self.assertRaisesRegex(
@@ -456,7 +456,7 @@ The challenge is to write a program that calculates the difference between a giv
 * :ref:`test_duration_w_hours_and_minutes<test_duration_w_hours_and_minutes>` where I used a `while statement`_
 
   - to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<functions>` raises a ValueError_ with a message
-  - and returns the right difference when ``wake_time`` is later than or the same as ``sleep_time``
+  - and it returns the right difference when ``wake_time`` is later than or the same as ``sleep_time``
 
 
 Would you like to :ref:`test duration with dates in the timestamps<test_duration_w_date_and_time>`?
