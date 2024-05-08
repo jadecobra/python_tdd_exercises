@@ -125,7 +125,7 @@ red: make it fail
 
     NameError: name 'module' is not defined
 
-  A NameError_ is raised when a name is used within a module with no definition for the name. In the test I call ``module.non_existent_attribute`` but there is no definition for ``module``
+  A NameError_ is raised when a name is used within a :ref:`module<ModuleNotFoundError>` with no definition for the name. I call ``module.non_existent_attribute`` in the test and there is no definition for ``module``
 * I add it to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
   .. code-block:: python

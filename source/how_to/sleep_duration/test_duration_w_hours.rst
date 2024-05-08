@@ -96,7 +96,7 @@ green: make it pass
         None
     )
 
-* then change the first argument to reference the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>`
+* then change the first argument to reference the ``sleep_duration`` :ref:`module<ModuleNotFoundError>`
 
   .. code-block:: python
 
@@ -120,7 +120,7 @@ green: make it pass
     # TypeError
     # NameError
 
-  then add an `import statement`_ at the top of the file for the :doc:`module </exceptions/ModuleNotFoundError>`
+  then add an `import statement`_ at the top of the file for the :ref:`module<ModuleNotFoundError>`
 
   .. code-block:: python
 
@@ -137,7 +137,7 @@ green: make it pass
 
     AssertionError: <module 'sleep_duration' from '/workspace[46 chars].py'> != None
 
-* I add a reference to something in the ``sleep_duration`` :doc:`module </exceptions/ModuleNotFoundError>`
+* I add a reference to something in the ``sleep_duration`` :ref:`module<ModuleNotFoundError>`
 
   .. code-block:: python
 
@@ -344,7 +344,7 @@ refactor: make it better
 
   and the test passes
 
-* I do not want to change the values of ``wake_time`` and ``sleep_time`` in the tests every time I have an idea and then change the ``duration`` :ref:`function<functions>` to match. It would be better to test the :ref:`function<functions>` with random numbers. I add an `import statement`_ for the random_ :doc:`module </exceptions/ModuleNotFoundError>` at the top of ``test_sleep_duration.py``
+* I do not want to change the values of ``wake_time`` and ``sleep_time`` in the tests every time I have an idea and then change the ``duration`` :ref:`function<functions>` to match. It would be better to test the :ref:`function<functions>` with random numbers. I add an `import statement`_ for the random_ :ref:`module<ModuleNotFoundError>`  at the top of ``test_sleep_duration.py``
 
   .. code-block:: python
 

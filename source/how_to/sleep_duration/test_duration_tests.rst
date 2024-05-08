@@ -29,20 +29,20 @@ red: make it fail
 
     AttributeError: module 'sleep_duration' has no attribute 'get_datetime'
 
-  which I add to a list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered in a new file
-
-  .. code-block:: python
-
-    # Exceptions Encountered
-    # AttributeError
-
 .. _test_duration_tests_green:
 
 *********************************************************************************
 green: make it pass
 *********************************************************************************
 
-* I add the name to the file
+* I open a new file, then add a list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AttributeError
+
+* then add the missing name to ``sleep_duration.py``
 
   .. code-block:: python
 
@@ -62,7 +62,7 @@ green: make it pass
     # AttributeError
     # NameError
 
-* then define the name by assigning it to :ref:`None`
+* and define the name by assigning it to :ref:`None`
 
   .. code-block:: python
 
@@ -90,7 +90,7 @@ green: make it pass
     def get_datetime():
         return None
 
-  and the terminal shows another :ref:`TypeError`
+  the terminal shows another :ref:`TypeError`
 
   .. code-block:: python
 
@@ -170,22 +170,7 @@ green: make it pass
 
   I need a way to convert a string_ that has a date and time to a `datetime.datetime`_ object
 
-* I look at `Examples of usage: datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_ for `datetime.datetime`_ objects to learn how to do the conversion. The example with the `datetime.datetime.strptime`_ :ref:`method<functions>` looks like what I need. I make a copy of it to add to the ``get_datetime`` :ref:`function<functions>`, and change the timestamp to reference ``argument``
-
-  .. code-block:: python
-
-    def get_datetime(argument):
-        return datetime.strptime(
-            argument, "%d/%m/%y %H:%M"
-        )
-
-  which gives me an :ref:`AttributeError`
-
-  .. code-block:: python
-
-    AttributeError: module 'datetime' has no attribute 'strptime'
-
-  the reference to the ``strptime`` :ref:`method<functions>` is not right, my `import statement`_ is different from `the example in the documentation <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_. I add the module name to the call
+* I use the `example from the datetime documentation <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_ to do the conversion, and change the timestamp to reference ``argument``
 
   .. code-block:: python
 
@@ -569,7 +554,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-The challenge was to write a program that passes the tests in ``test_sleep_duration.py`` without looking at them. I wrote something that calculates the difference between a given ``wake_time`` and ``sleep_time`` by following the exceptions encountered in the terminal
+The challenge was to write a program that passes the tests in ``test_sleep_duration.py`` without looking at them. I wrote something that returns the difference between a given ``wake_time`` and ``sleep_time`` by following these exceptions encountered in the terminal
 
 * :ref:`AttributeError`
 * NameError_

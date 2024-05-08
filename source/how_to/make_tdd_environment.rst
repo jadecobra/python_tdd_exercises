@@ -159,9 +159,9 @@ red: make it fail
 
   Here is an explanation of the code above
 
-  - ``import unittest`` imports the `unittest <https://docs.python.org/3/library/unittest.html>`_ module, which is a module from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_ used for testing
+  - ``import unittest`` imports the `unittest <https://docs.python.org/3/library/unittest.html>`_ module, which is a :ref:`module<ModuleNotFoundError>`from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_ used for testing
   - ``TestProjectName`` is a :doc:`class </classes/classes>` that will hold tests. `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is the python keyword for making :doc:`/classes/classes`
-  - `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ is a :doc:`class </classes/classes>` defined in the `unittest <https://docs.python.org/3/library/unittest.html>`_ module which contains :doc:`methods (functions) </functions/functions>` for testing
+  - `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ is a :doc:`class </classes/classes>` defined in the `unittest <https://docs.python.org/3/library/unittest.html>`_ :ref:`module<ModuleNotFoundError>` which contains :doc:`methods (functions) </functions/functions>` for testing
   - ``TestProjectName`` inherits from `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_. A simple way to think of inheritance is that ``TestProjectName`` is a child of `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ and can do the same things `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ can
   - ``def test_failure`` is the definition of a test :ref:`method<functions>` to test the program I am making
 
@@ -226,8 +226,8 @@ This is the ``RED`` part of the Test Driven Development cycle. The error in the 
 * ``python3 -m unittest`` is the command to run tests with ``unittest``
 
   - ``python3`` is the major version of python being used
-  - ``-m`` is an option passed to python to call a module given after the option
-  - `unittest <https://docs.python.org/3/library/unittest.html>`_ is a module from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_ used for testing
+  - ``-m`` is an option passed to python to call a :ref:`module<ModuleNotFoundError>` given after the option
+  - `unittest <https://docs.python.org/3/library/unittest.html>`_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_ used for testing
 
 .. _test_failure_green:
 
@@ -313,15 +313,15 @@ how to make a Virtual Environment
   - `pytest <https://docs.pytest.org/>`_ is a python package like `unittest <https://docs.python.org/3/library/unittest.html>`_ for running tests in Python
   - ``requirements.txt`` is the name of a file where I can list required python packages for `pip <https://pypi.org/project/pip/>`_ the `python package manager <https://pypi.org/project/pip/>`_ to install later, you can use any name you like
 
-* I make a `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ with the `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ module from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_
+* I make a `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ with the `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ :ref:`module<ModuleNotFoundError>` from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_
 
   .. code-block:: python
 
       python3 -m venv .venv
 
   - ``python3`` is the major version of python being used
-  - ``-m`` is an option passed to python to call the module given after the option
-  - `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ is a module from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_ for making `virtual environments <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ when given a name
+  - ``-m`` is an option passed to python to call the :ref:`module<ModuleNotFoundError>` given after the option
+  - `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_ for making `virtual environments <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ when given a name
   - a `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ is a separate folder for dependencies of the project
   - ``.venv`` is the standard name for `virtual environments <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ in Python, you can use any name you like
 
@@ -348,8 +348,8 @@ how to make a Virtual Environment
       python3 -m pip install --upgrade pip
 
   - ``python3`` is the major version of python being used
-  - ``-m`` is an option passed to python to call the module given after the option
-  - `pip <https://pypi.org/project/pip/>`_ is a module from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_ for installing python packages
+  - ``-m`` is an option passed to python to call the :ref:`module<ModuleNotFoundError>` given after the option
+  - `pip <https://pypi.org/project/pip/>`_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_ for installing python packages
   - ``install`` is an argument given to `pip <https://pypi.org/project/pip/>`_ to install a given package name
   - ``pip`` is the package name given for `pip <https://pypi.org/project/pip/>`_ to install, in this case  ``pip`` installs ``pip``
   - ``--upgrade`` is an option given to the ``install`` argument for `pip <https://pypi.org/project/pip/>`_ to install the latest version of the name given
