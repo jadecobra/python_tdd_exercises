@@ -14,7 +14,7 @@ This is part 4 of a program that calculates the difference between a given wake 
 
 ----
 
-I want to test the ``duration`` :ref:`function<functions>` with dates in the timestamps
+I want to test the ``duration`` :ref:`function<functions>` with timestamps that have dates
 
 .. _test_duration_w_date_and_time_red:
 
@@ -999,22 +999,21 @@ The challenge was to write a program that calculates the difference between a gi
 * :ref:`test_converting_strings_to_numbers`
 * :ref:`test_floor_aka_integer_division`
 * :ref:`test_the_modulo_operation`
-* `test_datetime_objects`_ where I
-
-  - used `python's online documentation`_
-  - and converted a string_ to a `datetime.datetime`_ object using the `datetime.datetime.strptime`_ :ref:`method<functions>`
-
 * :ref:`test_duration_w_hours<test_duration_w_hours>`
 * :ref:`test_duration_calculation`
 * :ref:`test_duration_w_an_earlier_wake_than_sleep_time<test_duration_w_an_earlier_wake_than_sleep_time>`
 * :ref:`test_duration_w_hours_and_minutes<test_duration_w_hours_and_minutes>`
+* `test_datetime_objects`_ where I
+
+  - used `python's online documentation`_
+  - and converted a string_ to a `datetime.datetime`_ object using the `datetime.datetime.strptime`_ :ref:`method<functions>`
 * `test_get_datetime`_
 * `test_duration_w_date_and_time`_ where I used
 
   - `random.randint`_ to generate random numbers for hours and minutes
-  - that are :doc:`interpolated </how_to/pass_values>` in timestamps with dates as inputs for ``wake_time`` and ``sleep_time``
+  - that are :doc:`interpolated </how_to/pass_values>` in timestamps with given dates as inputs for ``wake_time`` and ``sleep_time``
   - a `while statement`_ to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<functions>` raises a ValueError_ with a message
-  - and when ``wake_time`` is later than or the same as ``sleep_time`` it returns the right difference between them
+  - and when ``wake_time`` is later than or the same as ``sleep_time`` it returns the right difference between the two
 
 I also encountered the following exceptions
 
