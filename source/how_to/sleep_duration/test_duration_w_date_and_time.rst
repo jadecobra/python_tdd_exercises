@@ -949,7 +949,43 @@ refactor: make it better
 
   the loop ends and the terminal shows green again, I change ``wake_date`` back and the terminal still shows green
 
-* I change ``test_duration_w_date_and_time`` to ``test_duration`` and all is well that ends well
+* I remove the ``wake_date`` variable because it is only used once
+
+  .. code-block:: python
+
+    def test_duration(self):
+        sleep_date = '31/12/99'
+        sleep_time = random_timestamp(sleep_date)
+        wake_time = random_timestamp('3/12/99')
+
+        while (
+            sleep_duration.get_datetime(wake_time)
+          < sleep_duration.get_datetime(sleep_time)
+        ):
+            self.assertWakeTimeEarlier(
+                wake_time=wake_time,
+                sleep_time=sleep_time
+            )
+            wake_time = random_timestamp(
+                sleep_date
+            )
+        else:
+            self.assertEqual(
+                sleep_duration.duration(
+                    sleep_time=sleep_time,
+                    wake_time=wake_time
+                ),
+                str(
+                    sleep_duration.get_datetime(
+                        wake_time
+                    )
+                  - sleep_duration.get_datetime(
+                        sleep_time
+                    )
+                )
+            )
+
+* then change ``test_duration_w_date_and_time`` to ``test_duration`` and all is well that ends well
 
 .. _sleep_duration_review:
 

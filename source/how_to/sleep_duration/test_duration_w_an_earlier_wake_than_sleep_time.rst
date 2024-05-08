@@ -29,7 +29,7 @@ I add a failing test to ``test_sleep_duration.py`` with a `while statement`_ to 
   def test_duration_w_an_earlier_wake_than_sleep_time(self):
       sleep_time = random_timestamp()
       wake_time = random_timestamp()
-      while sleep_time < wake_time:
+      while wake_time >= sleep_time:
           wake_time = random_timestamp()
 
       self.assertEqual(
@@ -66,7 +66,7 @@ green: make it pass
     def test_duration_w_an_earlier_wake_than_sleep_time(self):
         sleep_time = random_timestamp()
         wake_time = random_timestamp()
-        while sleep_time < wake_time:
+        while wake_time >= sleep_time:
             wake_time = random_timestamp()
 
         with self.assertRaisesRegex(
