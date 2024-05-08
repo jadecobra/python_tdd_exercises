@@ -140,7 +140,7 @@ green: make it pass
     # AttributeError
     # ValueError
 
-* then add a `while statement`_ to make sure ``wake_time`` is never earlier than ``sleep_time`` for the difference calculation
+* then add a `while statement`_ to make sure ``wake_time`` is not earlier than ``sleep_time`` for the difference calculation
 
   .. code-block:: python
 
