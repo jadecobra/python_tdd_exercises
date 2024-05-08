@@ -14,7 +14,7 @@ This is part 3 of a program that calculates the difference between a given wake 
 
 ----
 
-I want to test the ``duration`` :ref:`function<functions>` with a ``wake_time`` that is earlier than ``sleep_time``
+I want to test the ``duration`` :ref:`function<functions>` with a ``wake_time`` that is earlier than the ``sleep_time``
 
 .. _test_duration_w_an_earlier_wake_than_sleep_time_red:
 
@@ -355,7 +355,7 @@ refactor: make it better
     def test_duration_w_hours_and_minutes(self):
     ...
 
-  then call it in ``test_duration_w_hours_and_minutes``
+  then call it in ``test_duration_w_hours_and_minutes`` to replace the expectation
 
   .. code-block:: python
 
@@ -456,7 +456,7 @@ The challenge is to write a program that calculates the difference between a giv
 * :ref:`test_duration_w_hours_and_minutes<test_duration_w_hours_and_minutes>` where I used a `while statement`_
 
   - to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<functions>` raises a ValueError_ with a message
-  - and it returns the right difference when ``wake_time`` is later than or the same as ``sleep_time``
+  - and when ``wake_time`` is later than or the same as ``sleep_time`` it returns the right difference between them
 
 
 Would you like to :ref:`test duration with dates in the timestamps<test_duration_w_date_and_time>`?

@@ -1014,7 +1014,7 @@ The challenge was to write a program that calculates the difference between a gi
   - `random.randint`_ to generate random numbers for hours and minutes
   - that are :doc:`interpolated </how_to/pass_values>` in timestamps with dates as inputs for ``wake_time`` and ``sleep_time``
   - a `while statement`_ to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<functions>` raises a ValueError_ with a message
-  - and it returns the right difference when ``wake_time`` is later than or the same as ``sleep_time``
+  - and when ``wake_time`` is later than or the same as ``sleep_time`` it returns the right difference between them
 
 I also encountered the following exceptions
 
