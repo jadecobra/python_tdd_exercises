@@ -920,7 +920,10 @@ refactor: make it better
         wake_date = '31/12/99'
         wake_time = random_timestamp(wake_date)
 
-        while wake_time < sleep_time:
+        while (
+            sleep_duration.get_datetime(wake_time)
+          < sleep_duration.get_datetime(sleep_time)
+        ):
             self.assertWakeTimeEarlier(
                 wake_time=wake_time,
                 sleep_time=sleep_time
@@ -929,16 +932,19 @@ refactor: make it better
                 sleep_date
             )
         else:
-            difference = (
-                self.get_datetime(wake_time)
-              - self.get_datetime(sleep_time)
-            )
             self.assertEqual(
-                sleep_duration.duration_a(
-                    wake_time=wake_time,
-                    sleep_time=sleep_time
+                sleep_duration.duration(
+                    sleep_time=sleep_time,
+                    wake_time=wake_time
                 ),
-                str(difference)
+                str(
+                    sleep_duration.get_datetime(
+                        wake_time
+                    )
+                  - sleep_duration.get_datetime(
+                        sleep_time
+                    )
+                )
             )
 
   the loop ends and the terminal shows green again, I change ``wake_date`` back and the terminal still shows green
@@ -972,7 +978,7 @@ The challenge was to write a program that calculates the difference between a gi
   - `random.randint`_ to generate random numbers for hours and minutes
   - that are :doc:`interpolated </how_to/pass_values>` in timestamps with dates as inputs for ``wake_time`` and ``sleep_time``
   - a `while statement`_ to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<functions>` raises a ValueError_ with a message
-  - and returns the right difference when ``wake_time`` is later than or the same as ``sleep_time``
+  - and it returns the right difference when ``wake_time`` is later than or the same as ``sleep_time``
 
 I also encountered the following exceptions
 
