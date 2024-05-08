@@ -118,7 +118,7 @@ So far ``passthrough_w_keyword_arguments`` looks the same as ``passthrough_w_pos
               ('my_first_name', 'my_last_name')
           )
 
-  the terminal shows passing tests. Unlike in ``test_functions_w_positional_arguments`` using the name when passing inputs, ensures the function always displays output in the right order regardless of the order in which the input data is given
+  the terminal shows passing tests. Unlike in ``test_functions_w_positional_arguments`` using the name when passing inputs, ensures the function always shows output in the right order regardless of the order in which the input data is given
 
 The function currently only takes in 2 keyword arguments. What if I want a function that can take in any number of keyword arguments? There is a starred expression for keyword arguments - ``**``.
 

@@ -312,13 +312,15 @@ I copy the value on the left side of the :ref:`AssertionError` to change the exp
           )
       )
 
-and it passes. When the `datetime.datetime.strptime`_ :ref:`method<functions>` is given 2 strings_ as inputs - a timestamp and a pattern, it returns a `datetime.datetime`_ object based on the pattern provided. The pattern provided means
+and it passes
 
-  - ``%d`` is for days
-  - ``%m`` is for months
-  - ``%y`` is for 2 digit years
-  - ``%H`` is for hours
-  - ``%M`` is for minutes
+When the `datetime.datetime.strptime`_ :ref:`method<functions>` is given 2 strings_ as inputs - a timestamp and a pattern, it returns a `datetime.datetime`_ object based on the pattern provided. The pattern provided means
+
+- ``%d`` is for days
+- ``%m`` is for months
+- ``%y`` is for 2 digit years
+- ``%H`` is for hours
+- ``%M`` is for minutes
 
 there are more details in `strftime() and strptime() behavior <https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior>`_
 

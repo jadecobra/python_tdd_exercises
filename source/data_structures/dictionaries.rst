@@ -549,7 +549,7 @@ I make the expected value to make the tests pass
 refactor: make it better
 #################################################################################
 
-* I can also display all the values of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ as a :doc:`list </data_structures/lists/lists>` without the keys
+* I can also show all the values of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ as a :doc:`list </data_structures/lists/lists>` without the keys
 
   .. code-block:: python
 
@@ -591,7 +591,7 @@ refactor: make it better
             ]
         )
 
-* I can also display the keys of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ as a :doc:`list </data_structures/lists/lists>`
+* I can also show the keys of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ as a :doc:`list </data_structures/lists/lists>`
 
   .. code-block:: python
 

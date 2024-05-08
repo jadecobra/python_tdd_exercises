@@ -516,7 +516,7 @@ green: make it pass
 
     Class = None
 
-  and the terminal still displays an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ but with a different message
+  and the terminal still shows an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ but with a different message
 
   .. code-block:: python
 
