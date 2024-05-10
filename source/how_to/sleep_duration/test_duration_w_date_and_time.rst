@@ -329,7 +329,7 @@ there are more details in `strftime() and strptime() behavior <https://docs.pyth
 refactor: make it better
 ---------------------------------------------------------------------------------
 
-* I add calls to the `datetime.datetime.strptime`_ :ref:`method` in ``test_duration_w_date_and_time``
+* I add calls to the `datetime.datetime.strptime`_ :ref:`method<functions>` in ``test_duration_w_date_and_time``
 
   .. code-block:: python
 
@@ -1013,7 +1013,7 @@ The challenge was to write a program that calculates the difference between a gi
   - `random.randint`_ to generate random numbers for hours and minutes
   - that are :doc:`interpolated </how_to/pass_values>` in timestamps with given dates as inputs for ``wake_time`` and ``sleep_time``
   - a `while statement`_ to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<functions>` raises a ValueError_ with a message
-  - and when ``wake_time`` is later than or the same as ``sleep_time`` it returns the right difference between the two
+  - and it returns the right difference between the two when ``wake_time`` is later than or the same as ``sleep_time``
 
 I also encountered the following exceptions
 
@@ -1023,7 +1023,7 @@ I also encountered the following exceptions
 * :ref:`AttributeError`
 * ValueError_
 
-Would you like to :ref:`write the solution using test_sleep_duration.py<test_duration_tests>` only?
+Would you like to :ref:`write the solution using test_sleep_duration.py only?<test_duration_tests>`
 
 ----
 

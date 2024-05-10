@@ -152,7 +152,7 @@ green: make it pass
 
   the values change
 
-* I change the `return statement`_ to show the input argument because I want to see its relationship to the expectation of the test
+* I change the `return statement`_ to show the input argument because I want to see what is different from the expectation of the test
 
   .. code-block:: python
 
@@ -374,7 +374,7 @@ green: make it pass
 
   the test expects a timestamp
 
-* I change the `return statement`_ to show its inputs. I want to see the relationship between ``wake_time``, ``sleep_time`` and the expectation of the test so I can figure out the timestamp parts
+* I change the `return statement`_ to show its inputs. I want to see the difference between ``wake_time``, ``sleep_time`` and the expectation of the test so I can figure out the timestamp parts
 
   .. code-block:: python
 

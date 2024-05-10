@@ -389,7 +389,7 @@ refactor: make it better
 
   all tests are still green
 
-* I add an ``assert`` :ref:`method<functions>` for the `assertRaisesRegex`_ block
+* I also add an ``assert`` :ref:`method<functions>` for the `assertRaisesRegex`_ block
 
   .. code-block:: python
 
@@ -456,7 +456,7 @@ The challenge is to write a program that calculates the difference between a giv
 * :ref:`test_duration_w_hours_and_minutes<test_duration_w_hours_and_minutes>` where I used a `while statement`_
 
   - to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<functions>` raises a ValueError_ with a message
-  - and when ``wake_time`` is later than or the same as ``sleep_time`` it returns the right difference between the two
+  - and it returns the right difference between the two when ``wake_time`` is later than or the same as ``sleep_time``
 
 
 Would you like to :ref:`test duration with timestamps that have dates?<test_duration_w_date_and_time>`
