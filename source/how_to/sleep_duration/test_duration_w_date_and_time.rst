@@ -1023,7 +1023,7 @@ I also encountered the following exceptions
 * :ref:`AttributeError`
 * ValueError_
 
-Would you like to :ref:`write the solution using test_sleep_duration.py only?<test_duration_tests>`
+Would you like to :ref:`write the solution without looking at test_sleep_duration.py?<test_duration_tests>`
 
 ----
 
