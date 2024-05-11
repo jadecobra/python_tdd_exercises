@@ -59,7 +59,7 @@ green: make it pass
 *********************************************************************************
 
 
-* The ``duration`` :ref:`function<functions>` returns a negative timestamp when given an earlier ``wake_time`` than ``sleep_time``, which is not a real duration. I want it to return a difference only when ``wake_time`` is later than or the same as ``sleep_time``. I change the assertEqual_ to assertRaisesRegex_ to make sure the :ref:`function<functions>` raises a ValueError_ with a message when ``wake_time`` is earlier than ``sleep_time``
+* The ``duration`` :ref:`function<functions>` returns a negative timestamp when given an earlier ``wake_time`` than ``sleep_time``, which is not a real duration. I want it to return a difference when ``wake_time`` is later than or the same as ``sleep_time`` and raise a ValueError_ with a message when ``wake_time`` is earlier than ``sleep_time``. I change the assertEqual_ to assertRaisesRegex_ to catch the :doc:`Exception</how_to/exception_handling_programs>` when it is raised by the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -275,7 +275,7 @@ refactor: make it better
 
   the ``assertWakeTimeEarlier`` :ref:`method<functions>` works as expected. I remove the comments and the terminal shows green again
 * I remove ``test_duration_w_an_earlier_wake_than_sleep_time`` because it is now covered by ``test_duration_w_hours_and_minutes``
-* then add an ``else`` block to line up the rest of the code in ``test_duration_w_hours_and_minutes``
+* then add an ``else`` block for the rest of the code in ``test_duration_w_hours_and_minutes``
 
   .. code-block:: python
 

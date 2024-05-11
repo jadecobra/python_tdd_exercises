@@ -36,10 +36,10 @@ class TestSleepDuration(unittest.TestCase):
             )
 
     def test_duration(self):
-        sleep_date = '31/12/99'
-        sleep_time = random_timestamp('31/12/99')
+        sleep_date = '99/12/31'
+        sleep_time = random_timestamp('99/12/31')
 
-        wake_date = '31/12/99'
+        wake_date = '99/12/31'
         wake_time = random_timestamp(wake_date)
 
         while (

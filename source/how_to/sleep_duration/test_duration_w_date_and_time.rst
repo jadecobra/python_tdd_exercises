@@ -28,7 +28,7 @@ red: make it fail
 
     def random_timestamp_a():
         return (
-            '31/12/99 '
+            '99/12/31 '
             f'{random.randint(0,23):02}:'
             f'{random.randint(0,59):02}'
         )
@@ -63,10 +63,10 @@ red: make it fail
 
   .. code-block:: python
 
-    ValueError: invalid literal for int() with base 10: '31/12/99 03'
-    ValueError: invalid literal for int() with base 10: '31/12/99 07'
-    ValueError: invalid literal for int() with base 10: '31/12/99 11'
-    ValueError: invalid literal for int() with base 10: '31/12/99 21'
+    ValueError: invalid literal for int() with base 10: '99/12/31 03'
+    ValueError: invalid literal for int() with base 10: '99/12/31 07'
+    ValueError: invalid literal for int() with base 10: '99/12/31 11'
+    ValueError: invalid literal for int() with base 10: '99/12/31 21'
 
   the test calls ``duration`` which calls ``read_timestamp`` that converts the timestamp string_ to a number by using the int_ constructor_ but it is in the wrong format
 
@@ -92,13 +92,13 @@ green: make it pass
     def test_converting_strings_to_numbers(self):
         self.assertEqual(int('12'), 12)
         self.assertEqual(int('01'), 1)
-        int('31/12/99 01')
+        int('99/12/31 01')
 
   the terminal shows a ValueError_ with the same message from ``test_duration_w_date_and_time``
 
   .. code-block:: python
 
-    ValueError: invalid literal for int() with base 10: '31/12/99 13'
+    ValueError: invalid literal for int() with base 10: '99/12/31 13'
 
   I cannot use the int_ constructor_ to convert a timestamp string_ to a number when it has a date. I add an `assertRaises`_ to :doc:`handle</how_to/exception_handling_tests>` the ValueError_
 
@@ -109,13 +109,13 @@ green: make it pass
         self.assertEqual(int('01'), 1)
 
         with self.assertRaises(ValueError):
-            int('31/12/99 01')
+            int('99/12/31 01')
 
   and the test is green again
 
 * I remove the `unittest.skip decorator`_ from ``test_duration_w_date_and_time`` to get back the ValueError_
 * and make a copy of the ``duration`` :ref:`function<functions>` in ``sleep_duration.py``, then change the name to ``duration_a`` to keep the working solution while I try a new one
-* I remove ``difference_hours``, ``difference_minutes``, ``duration_hours``, ``duration_minutes`` and ``difference`` from ``duration_a`` and change the `return statement`_
+* I remove ``difference_hours``, ``difference_minutes``, ``duration_hours``, ``duration_minutes`` and ``difference`` from ``duration_a`` then change the `return statement`_
 
   .. code-block:: python
 
@@ -129,7 +129,7 @@ green: make it pass
         else:
             return None
 
-* then change the assertion in ``test_duration_w_date_and_time`` to reference the new :ref:`function<functions>`
+* I change the assertion in ``test_duration_w_date_and_time`` to reference the new :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -159,7 +159,7 @@ green: make it pass
 
   .. code-block:: python
 
-    ValueError: invalid literal for int() with base 10: '31/12/99 22'
+    ValueError: invalid literal for int() with base 10: '99/12/31 22'
 
   the test calls ``get_difference`` in the expectation which uses the int_ constructor_ in its calculations
 * I change it to return ``wake_time`` and ``sleep_time``
@@ -189,10 +189,10 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: None != ('31/12/99 09:52', '31/12/99 07:11')
-    AssertionError: None != ('31/12/99 18:16', '31/12/99 11:21')
-    AssertionError: None != ('31/12/99 13:10', '31/12/99 12:00')
-    AssertionError: None != ('31/12/99 16:41', '31/12/99 12:35')
+    AssertionError: None != ('99/12/31 09:52', '99/12/31 07:11')
+    AssertionError: None != ('99/12/31 18:16', '99/12/31 11:21')
+    AssertionError: None != ('99/12/31 13:10', '99/12/31 12:00')
+    AssertionError: None != ('99/12/31 16:41', '99/12/31 12:35')
 
 * then change the `return statement`_ in ``duration_a``
 
@@ -329,6 +329,44 @@ there are more details in `strftime() and strptime() behavior <https://docs.pyth
 refactor: make it better
 ---------------------------------------------------------------------------------
 
+* I change the order to test the pattern
+
+  .. code-block:: python
+
+    def test_datetime_objects(self):
+        self.assertEqual(
+            datetime.datetime.strptime(
+                "06/11/21 16:30",
+                "%d/%m/%y %H:%M"
+            ),
+            datetime.datetime(
+                2006, 11, 21, 16, 30
+            )
+        )
+
+  the terminal shows an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: datetime.datetime(2021, 11, 6, 16, 30) != datetime.datetime(2006, 11, 21, 16, 30)
+
+  I change the pattern to match
+
+  .. code-block:: python
+
+    def test_datetime_objects(self):
+        self.assertEqual(
+            datetime.datetime.strptime(
+                "06/11/21 16:30",
+                "%y/%m/%d %H:%M"
+            ),
+            datetime.datetime(
+                2006, 11, 21, 16, 30
+            )
+        )
+
+  and the test passes
+
 * I add calls to the `datetime.datetime.strptime`_ :ref:`method<functions>` in ``test_duration_w_date_and_time``
 
   .. code-block:: python
@@ -365,12 +403,12 @@ refactor: make it better
 
   .. code-block:: python
 
-    AssertionError: Tuples differ: ('31/12/99 07:20', '31/12/99 03:08') != (datetime.datetime(1999, 12, 31, 7, 20), datetime.datetime(1999, 12, 31, 3, 8))
-    AssertionError: Tuples differ: ('31/12/99 15:01', '31/12/99 00:37') != (datetime.datetime(1999, 12, 31, 15, 1), datetime.datetime(1999, 12, 31, 0, 37))
-    AssertionError: Tuples differ: ('31/12/99 20:50', '31/12/99 14:22') != (datetime.datetime(1999, 12, 31, 20, 50), [35 chars] 22))
-    AssertionError: Tuples differ: ('31/12/99 16:40', '31/12/99 13:39') != (datetime.datetime(1999, 12, 31, 16, 40), [35 chars] 39))
+    AssertionError: Tuples differ: ('99/12/31 07:20', '99/12/31 03:08') != (datetime.datetime(1999, 12, 31, 7, 20), datetime.datetime(1999, 12, 31, 3, 8))
+    AssertionError: Tuples differ: ('99/12/31 15:01', '99/12/31 00:37') != (datetime.datetime(1999, 12, 31, 15, 1), datetime.datetime(1999, 12, 31, 0, 37))
+    AssertionError: Tuples differ: ('99/12/31 20:50', '99/12/31 14:22') != (datetime.datetime(1999, 12, 31, 20, 50), [35 chars] 22))
+    AssertionError: Tuples differ: ('99/12/31 16:40', '99/12/31 13:39') != (datetime.datetime(1999, 12, 31, 16, 40), [35 chars] 39))
 
-* I change the `return statement`_ in ``duration_a``
+* then change the `return statement`_ in ``duration_a``
 
   .. code-block:: python
 
@@ -740,7 +778,7 @@ refactor: make it better
   .. code-block:: python
 
     def test_get_datetime(self):
-        timestamp = random_timestamp('31/12/99')
+        timestamp = random_timestamp('99/12/31')
         self.assertEqual(
             sleep_duration.get_datetime(
                 timestamp
@@ -752,8 +790,8 @@ refactor: make it better
         )
 
     def test_duration_w_date_and_time(self):
-        sleep_time = random_timestamp('31/12/99')
-        wake_time = random_timestamp('31/12/99')
+        sleep_time = random_timestamp('99/12/31')
+        wake_time = random_timestamp('99/12/31')
 
         while wake_time < sleep_time:
             self.assertWakeTimeEarlier(
@@ -761,7 +799,7 @@ refactor: make it better
                 wake_time=wake_time,
             )
             wake_time = random_timestamp(
-                '31/12/99'
+                '99/12/31'
             )
         else:
             self.assertEqual(
@@ -786,9 +824,9 @@ refactor: make it better
   .. code-block:: python
 
     def test_duration_w_date_and_time(self):
-        sleep_time = random_timestamp('31/12/99')
+        sleep_time = random_timestamp('99/12/31')
 
-        wake_date = '31/12/99'
+        wake_date = '99/12/31'
         wake_time = random_timestamp(wake_date)
 
         while wake_time < sleep_time:
@@ -831,7 +869,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    sleep_time = random_timestamp('31/12/99')
+    sleep_time = random_timestamp('99/12/31')
 
   green again
 
@@ -862,7 +900,7 @@ refactor: make it better
     def test_duration_w_date_and_time(self):
         sleep_time = random_timestamp('32/12/99')
 
-        wake_date = '31/12/99'
+        wake_date = '99/12/31'
         wake_time = random_timestamp(wake_date)
 
         while (
@@ -914,10 +952,10 @@ refactor: make it better
   .. code-block:: python
 
     def test_duration_w_date_and_time(self):
-        sleep_date = '31/12/99'
+        sleep_date = '99/12/31'
         sleep_time = random_timestamp(sleep_date)
 
-        wake_date = '31/12/99'
+        wake_date = '99/12/31'
         wake_time = random_timestamp(wake_date)
 
         while (
@@ -954,7 +992,7 @@ refactor: make it better
   .. code-block:: python
 
     def test_duration(self):
-        sleep_date = '31/12/99'
+        sleep_date = '99/12/31'
         sleep_time = random_timestamp(sleep_date)
         wake_time = random_timestamp('3/12/99')
 

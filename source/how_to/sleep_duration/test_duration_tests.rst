@@ -163,10 +163,10 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: '31/12/99 02:58' != datetime.datetime(1999, 12, 31, 2, 58)
-    AssertionError: '31/12/99 03:14' != datetime.datetime(1999, 12, 31, 3, 14)
-    AssertionError: '31/12/99 08:30' != datetime.datetime(1999, 12, 31, 8, 30)
-    AssertionError: '31/12/99 23:41' != datetime.datetime(1999, 12, 31, 23, 41)
+    AssertionError: '06/11/21 02:58' != datetime.datetime(2006, 11, 21, 2, 58)
+    AssertionError: '06/11/21 03:14' != datetime.datetime(2006, 11, 21, 3, 14)
+    AssertionError: '06/11/21 08:30' != datetime.datetime(2006, 11, 21, 8, 30)
+    AssertionError: '06/11/21 23:41' != datetime.datetime(2006, 11, 21, 23, 41)
 
   I need a way to convert a string_ that has a date and time to a `datetime.datetime`_ object
 
@@ -176,7 +176,7 @@ green: make it pass
 
     def get_datetime(argument):
         return datetime.datetime.strptime(
-            argument, "%d/%m/%y %H:%M"
+            argument, '%y/%m/%d %H:%M'
         )
 
   and get an :ref:`AttributeError`
@@ -259,10 +259,10 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: "wake_time: "31/12/99 12:07" is earlier than sleep_time: "31/12/99 13:37"" does not match ""
-    AssertionError: "wake_time: "31/12/99 05:05" is earlier than sleep_time: "31/12/99 18:59"" does not match ""
-    AssertionError: "wake_time: "31/12/99 02:27" is earlier than sleep_time: "31/12/99 15:12"" does not match ""
-    AssertionError: "wake_time: "31/12/99 19:05" is earlier than sleep_time: "31/12/99 20:03"" does not match ""
+    AssertionError: "wake_time: "99/12/31 12:07" is earlier than sleep_time: "99/12/31 13:37"" does not match ""
+    AssertionError: "wake_time: "99/12/31 05:05" is earlier than sleep_time: "99/12/31 18:59"" does not match ""
+    AssertionError: "wake_time: "99/12/31 02:27" is earlier than sleep_time: "99/12/31 15:12"" does not match ""
+    AssertionError: "wake_time: "99/12/31 19:05" is earlier than sleep_time: "99/12/31 20:03"" does not match ""
 
 * I copy the message from the terminal, then add it to the ValueError_
 
@@ -270,7 +270,7 @@ green: make it pass
 
     def duration(wake_time, sleep_time):
         raise ValueError(
-            "wake_time: "31/12/99 19:05" is earlier than sleep_time: "31/12/99 20:03""
+            "wake_time: "99/12/31 19:05" is earlier than sleep_time: "99/12/31 20:03""
         )
 
   and get a SyntaxError_ with this message
@@ -301,19 +301,19 @@ green: make it pass
 
     def duration(wake_time, sleep_time):
         raise ValueError(
-            'wake_time: "31/12/99 19:05"'
+            'wake_time: "99/12/31 19:05"'
             ' is earlier than '
-            'sleep_time: "31/12/99 20:03"'
+            'sleep_time: "99/12/31 20:03"'
         )
 
   which gives me another :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: "wake_time: "31/12/99 03:18" is earlier than sleep_time: "31/12/99 13:34"" does not match "wake_time: "30/12/99 19:05" is earlier than sleep_time: "31/12/99 20:03""
-    AssertionError: "wake_time: "31/12/99 04:56" is earlier than sleep_time: "31/12/99 05:27"" does not match "wake_time: "30/12/99 19:05" is earlier than sleep_time: "31/12/99 20:03""
-    AssertionError: "wake_time: "31/12/99 05:58" is earlier than sleep_time: "31/12/99 03:14"" does not match "wake_time: "30/12/99 19:05" is earlier than sleep_time: "31/12/99 20:03""
-    AssertionError: "wake_time: "31/12/99 22:25" is earlier than sleep_time: "31/12/99 05:05"" does not match "wake_time: "30/12/99 19:05" is earlier than sleep_time: "31/12/99 20:03""
+    AssertionError: "wake_time: "99/12/31 03:18" is earlier than sleep_time: "99/12/31 13:34"" does not match "wake_time: "30/12/99 19:05" is earlier than sleep_time: "99/12/31 20:03""
+    AssertionError: "wake_time: "99/12/31 04:56" is earlier than sleep_time: "99/12/31 05:27"" does not match "wake_time: "30/12/99 19:05" is earlier than sleep_time: "99/12/31 20:03""
+    AssertionError: "wake_time: "99/12/31 05:58" is earlier than sleep_time: "99/12/31 03:14"" does not match "wake_time: "30/12/99 19:05" is earlier than sleep_time: "99/12/31 20:03""
+    AssertionError: "wake_time: "99/12/31 22:25" is earlier than sleep_time: "99/12/31 05:05"" does not match "wake_time: "30/12/99 19:05" is earlier than sleep_time: "99/12/31 20:03""
 
   the timestamps in the ValueError_ message are different
 
@@ -332,10 +332,10 @@ green: make it pass
 
   .. code-block:: python
 
-    ValueError: wake_time: "31/12/99 19:54" is earlier than sleep_time: "31/12/99 18:12"
-    ValueError: wake_time: "31/12/99 22:07" is earlier than sleep_time: "31/12/99 21:33"
-    ValueError: wake_time: "31/12/99 18:53" is earlier than sleep_time: "31/12/99 18:01"
-    ValueError: wake_time: "31/12/99 23:39" is earlier than sleep_time: "31/12/99 23:16"
+    ValueError: wake_time: "99/12/31 19:54" is earlier than sleep_time: "99/12/31 18:12"
+    ValueError: wake_time: "99/12/31 22:07" is earlier than sleep_time: "99/12/31 21:33"
+    ValueError: wake_time: "99/12/31 18:53" is earlier than sleep_time: "99/12/31 18:01"
+    ValueError: wake_time: "99/12/31 23:39" is earlier than sleep_time: "99/12/31 23:16"
 
   this is not right, the timestamps for ``wake_time`` are not earlier than ``sleep_time``, I have to add a condition to ``duration``
 
@@ -392,10 +392,10 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: ('31/12/99 06:44', '31/12/99 05:33') != '1:11:00'
-    AssertionError: ('31/12/99 17:53', '31/12/99 11:23') != '6:30:00'
-    AssertionError: ('31/12/99 10:25', '31/12/99 02:15') != '8:10:00'
-    AssertionError: ('31/12/99 19:14', '31/12/99 10:00') != '9:14:00'
+    AssertionError: ('99/12/31 06:44', '99/12/31 05:33') != '1:11:00'
+    AssertionError: ('99/12/31 17:53', '99/12/31 11:23') != '6:30:00'
+    AssertionError: ('99/12/31 10:25', '99/12/31 02:15') != '8:10:00'
+    AssertionError: ('99/12/31 19:14', '99/12/31 10:00') != '9:14:00'
 
   it looks like the test expects the difference between the timestamps
 
@@ -544,7 +544,7 @@ refactor: make it better
 
     def get_datetime(timestamp):
         return datetime.datetime.strptime(
-            timestamp, "%d/%m/%y %H:%M"
+            timestamp, '%y/%m/%d %H:%M'
         )
 
   the terminal shows all tests are still passing
