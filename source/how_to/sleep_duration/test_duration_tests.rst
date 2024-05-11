@@ -42,13 +42,13 @@ green: make it pass
     # Exceptions Encountered
     # AttributeError
 
-* then add the missing name to ``sleep_duration.py``
+* and the missing name to ``sleep_duration.py``
 
   .. code-block:: python
 
     get_datetime
 
-  and get a NameError_
+  the terminal shows a NameError_
 
   .. code-block:: python
 
@@ -144,15 +144,15 @@ green: make it pass
       def get_datetime(argument):
       ...
 
-  and get another :ref:`AssertionError`
+  and get an :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: datetime.datetime(1999, 12, 31, 19, 8) != datetime.datetime(1999, 12, 31, 0, 15)
 
-  the values change
+  the expected values change
 
-* I change the `return statement`_ to show the input argument because I want to see what is different from the expectation of the test
+* I change the `return statement`_ to show the input argument because I want to see how it is different from the expectation of the test
 
   .. code-block:: python
 
@@ -315,7 +315,7 @@ green: make it pass
     AssertionError: "wake_time: "99/12/31 05:58" is earlier than sleep_time: "99/12/31 03:14"" does not match "wake_time: "30/12/99 19:05" is earlier than sleep_time: "99/12/31 20:03""
     AssertionError: "wake_time: "99/12/31 22:25" is earlier than sleep_time: "99/12/31 05:05"" does not match "wake_time: "30/12/99 19:05" is earlier than sleep_time: "99/12/31 20:03""
 
-  the timestamps in the ValueError_ message are different
+  the timestamps in the ValueError_ message are not the same
 
 * I :doc:`interpolate</how_to/pass_values>` ``wake_time`` and ``sleep_time`` in the message
 
@@ -348,8 +348,9 @@ green: make it pass
     # NameError
     # TypeError
     # SyntaxError
+    # ValueError
 
-  then add a condition
+  then add a condition based on the message from the ValueError_
 
   .. code-block:: python
 
@@ -421,7 +422,7 @@ green: make it pass
 
   I cannot subtract one string from another. I change the `return statement`_ back
 
-* then add calls to ``get_datetime`` with new variables
+* then add calls to ``get_datetime``
 
   .. code-block:: python
 
@@ -476,16 +477,6 @@ green: make it pass
   the test expects a string_ and the :ref:`function<functions>` returns a `datetime.timedelta`_ object, and the days are all negative. I think I am doing something wrong
 
 * I add the str_ constructor_ to match the format of the expectation
-
-  .. code-block:: python
-
-    AssertionError: datetime.timedelta(seconds=4020) != '1:07:00'
-    AssertionError: datetime.timedelta(seconds=16200) != '4:30:00'
-    AssertionError: datetime.timedelta(seconds=52740) != '14:39:00'
-    AssertionError: datetime.timedelta(seconds=74880) != '20:48:00'
-
-
-* I add the str_ constructor_
 
   .. code-block:: python
 
@@ -548,6 +539,7 @@ refactor: make it better
         )
 
   the terminal shows all tests are still passing
+
 * and I close the file with the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
 *********************************************************************************
