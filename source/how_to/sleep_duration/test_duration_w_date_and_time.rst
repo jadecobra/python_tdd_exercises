@@ -77,7 +77,7 @@ green: make it pass
 *********************************************************************************
 
 * I copy the string from the terminal
-* then add the `unittest.skip decorator`_ to ``test_duration_w_date_and_time``
+* add the `unittest.skip decorator`_ to ``test_duration_w_date_and_time``
 
   .. code-block:: python
 
@@ -85,7 +85,7 @@ green: make it pass
     def test_duration_w_date_and_time(self):
     ...
 
-* and add an assertion to ``test_converting_strings_to_numbers`` to make the error I just saw
+* then add an assertion to ``test_converting_strings_to_numbers`` to make the error I just saw
 
   .. code-block:: python
 
@@ -338,7 +338,7 @@ refactor: make it better
     def test_datetime_objects(self):
         self.assertEqual(
             datetime.datetime.strptime(
-                "21/11/06 16:30",
+                "06/11/21 16:30",
                 "%d/%m/%y %H:%M"
             ),
             datetime.datetime(
