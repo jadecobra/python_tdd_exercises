@@ -68,7 +68,7 @@ red: make it fail
     ValueError: invalid literal for int() with base 10: '99/12/31 11'
     ValueError: invalid literal for int() with base 10: '99/12/31 21'
 
-  the test calls ``duration`` which calls ``read_timestamp`` that converts the timestamp string_ to a number by using the int_ constructor_ but it is in the wrong format
+  the test calls ``duration``, which calls ``read_timestamp``, which converts the timestamp string_ to a number by using the int_ constructor_ but it is in the wrong format
 
 .. _test_duration_w_date_and_time_green_0:
 
@@ -92,6 +92,7 @@ green: make it pass
     def test_converting_strings_to_numbers(self):
         self.assertEqual(int('12'), 12)
         self.assertEqual(int('01'), 1)
+
         int('99/12/31 01')
 
   the terminal shows a ValueError_ with the same message from ``test_duration_w_date_and_time``
@@ -161,7 +162,8 @@ green: make it pass
 
     ValueError: invalid literal for int() with base 10: '99/12/31 22'
 
-  the test calls ``get_difference`` in the expectation which uses the int_ constructor_ in its calculations
+  because the test calls ``get_difference`` in the expectation which uses the int_ constructor_ in its calculations
+
 * I change it to return ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
@@ -314,13 +316,13 @@ I copy the value on the left side of the :ref:`AssertionError` to change the exp
 
 and it passes
 
-When the `datetime.datetime.strptime`_ :ref:`method<functions>` is given 2 strings_ as inputs - a timestamp and a pattern, it returns a `datetime.datetime`_ object based on the pattern provided. The pattern provided means
+When the `datetime.datetime.strptime`_ :ref:`method<functions>` is given 2 strings_ as inputs - a timestamp and a pattern, it returns a `datetime.datetime`_ object based on the pattern provided. The pattern provided is
 
-- ``%d`` is for days
-- ``%m`` is for months
-- ``%y`` is for 2 digit years
-- ``%H`` is for hours
-- ``%M`` is for minutes
+- ``%d`` for days
+- ``%m`` for months
+- ``%y`` for 2 digit years
+- ``%H`` for hours
+- ``%M`` for minutes
 
 there are more details in `strftime() and strptime() behavior <https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior>`_
 
@@ -329,14 +331,14 @@ there are more details in `strftime() and strptime() behavior <https://docs.pyth
 refactor: make it better
 ---------------------------------------------------------------------------------
 
-* I change the order to test the pattern
+* I change the order in the date to test the pattern
 
   .. code-block:: python
 
     def test_datetime_objects(self):
         self.assertEqual(
             datetime.datetime.strptime(
-                "06/11/21 16:30",
+                "21/11/06 16:30",
                 "%d/%m/%y %H:%M"
             ),
             datetime.datetime(
@@ -390,11 +392,11 @@ refactor: make it better
                 (
                     datetime.datetime.strptime(
                         wake_time,
-                        '%d/%m/%y %H:%M'
+                        '%y/%m/%d %H:%M'
                     ),
                     datetime.datetime.strptime(
                         sleep_time,
-                        '%d/%m/%y %H:%M'
+                        '%y/%m/%d %H:%M'
                     )
                 )
             )
@@ -422,10 +424,10 @@ refactor: make it better
         else:
             return (
                 datetime.datetime.strptime(
-                    wake_time, '%d/%m/%y %H:%M'
+                    wake_time, '%y/%m/%d %H:%M'
                 ),
                 datetime.datetime.strptime(
-                    sleep_time, '%d/%m/%y %H:%M'
+                    sleep_time, '%y/%m/%d %H:%M'
                 )
             )
 
@@ -453,7 +455,7 @@ refactor: make it better
 
     def get_datetime(timestamp):
         return datetime.datetime.strptime(
-            timestamp, '%d/%m/%y %H:%M'
+            timestamp, '%y/%m/%d %H:%M'
         )
 
 
@@ -516,7 +518,7 @@ red: make it fail
             ),
             datetime.datetime.strptime(
                 '21/11/06 16:30',
-                '%d/%m/%y %H:%M'
+                '%y/%m/%d %H:%M'
             )
         )
 
@@ -532,7 +534,7 @@ red: make it fail
             ),
             datetime.datetime.strptime(
                 '21/11/06 16:30',
-                '%d/%m/%y %H:%M'
+                '%y/%m/%d %H:%M'
             )
         )
 
@@ -562,7 +564,7 @@ I add the variable to the expectation
           ),
           datetime.datetime.strptime(
               timestamp,
-              '%d/%m/%y %H:%M'
+              '%y/%m/%d %H:%M'
           )
       )
 
@@ -573,37 +575,37 @@ and the terminal shows green again
 refactor: make it better
 ---------------------------------------------------------------------------------
 
-* I change the calls to `datetime.datetime.strptime`_ to ``sleep_duration.get_datetime``
+I change the calls to `datetime.datetime.strptime`_ to ``sleep_duration.get_datetime``
 
-  .. code-block:: python
+.. code-block:: python
 
-    def test_duration_w_date_and_time(self):
-        sleep_time = random_timestamp_a()
-        wake_time = random_timestamp_a()
+  def test_duration_w_date_and_time(self):
+      sleep_time = random_timestamp_a()
+      wake_time = random_timestamp_a()
 
-        while wake_time < sleep_time:
-            self.assertWakeTimeEarlier(
-                wake_time=wake_time,
-                sleep_time=sleep_time
-            )
-            wake_time = random_timestamp_a()
-        else:
-            self.assertEqual(
-                sleep_duration.duration_a(
-                    sleep_time=sleep_time,
-                    wake_time=wake_time
-                ),
-                (
-                    sleep_duration.get_datetime(
-                        wake_time
-                    ),
-                    sleep_duration.get_datetime(
-                        sleep_time
-                    )
-                )
-            )
+      while wake_time < sleep_time:
+          self.assertWakeTimeEarlier(
+              wake_time=wake_time,
+              sleep_time=sleep_time
+          )
+          wake_time = random_timestamp_a()
+      else:
+          self.assertEqual(
+              sleep_duration.duration_a(
+                  sleep_time=sleep_time,
+                  wake_time=wake_time
+              ),
+              (
+                  sleep_duration.get_datetime(
+                      wake_time
+                  ),
+                  sleep_duration.get_datetime(
+                      sleep_time
+                  )
+              )
+          )
 
-  the terminal shows green again
+still green
 
 ----
 
@@ -646,7 +648,7 @@ refactor: make it better
     AssertionError: (datetime.datetime(1999, 12, 31, 23, 59),[35 chars], 1)) != datetime.timedelta(seconds=7080)
     AssertionError: (datetime.datetime(1999, 12, 31, 16, 1), [35 chars] 55)) != datetime.timedelta(seconds=7560)
 
-  the ``duration_a`` :ref:`function<functions>` returns `datetime.datetime`_ objects and the test expects `datetime.timedelta` object. I change it to match the expectation
+  the ``duration_a`` :ref:`function<functions>` returns `datetime.datetime`_ objects and the test expects a `datetime.timedelta` object. I change it to match the expectation
 
   .. code-block:: python
 
@@ -665,7 +667,7 @@ refactor: make it better
 
   and the test passes
 
-* I change the expectation in the test because I want the result as a string_ not a `datetime.timedelta`_ object
+* I add the str_ constructor to the expectation in the test because I want the result as a string_ not a `datetime.timedelta`_ object
 
   .. code-block:: python
 
@@ -738,10 +740,10 @@ refactor: make it better
 
   .. code-block:: python
 
-    ValueError: time data '04:51' does not match format '%d/%m/%y %H:%M'
-    ValueError: time data '13:35' does not match format '%d/%m/%y %H:%M'
-    ValueError: time data '12:26' does not match format '%d/%m/%y %H:%M'
-    ValueError: time data '23:20' does not match format '%d/%m/%y %H:%M'
+    ValueError: time data '04:51' does not match format '%y/%m/%d %H:%M'
+    ValueError: time data '13:35' does not match format '%y/%m/%d %H:%M'
+    ValueError: time data '12:26' does not match format '%y/%m/%d %H:%M'
+    ValueError: time data '23:20' does not match format '%y/%m/%d %H:%M'
 
   ``test_duration_w_hours_and_minutes`` does not have dates in its timestamps. I remove it because it is covered by ``test_duration_w_date_and_time``
 
@@ -778,14 +780,14 @@ refactor: make it better
   .. code-block:: python
 
     def test_get_datetime(self):
-        timestamp = random_timestamp('99/12/31')
+        timestamp = random_timestamp('06/11/21')
         self.assertEqual(
             sleep_duration.get_datetime(
                 timestamp
             ),
             datetime.datetime.strptime(
                 timestamp,
-                '%d/%m/%y %H:%M'
+                '%y/%m/%d %H:%M'
             )
         )
 
@@ -819,7 +821,7 @@ refactor: make it better
 
   the terminal shows green again
 
-* I add a variable to remove repetition and make sure ``wake_time`` has the same date inside and outside the `while statement`_
+* I add a variable to remove the repetition of the date for ``wake_time``
 
   .. code-block:: python
 
@@ -857,13 +859,13 @@ refactor: make it better
 
   .. code-block:: python
 
-    sleep_time = random_timestamp('30/12/99')
+    sleep_time = random_timestamp('99/12/30')
 
   still green, then change it to a bad date
 
   .. code-block:: python
 
-    sleep_time = random_timestamp('32/12/99')
+    sleep_time = random_timestamp('99/12/32')
 
   and the test is stuck in a loop, this is a problem, I change the date back
 
@@ -873,32 +875,32 @@ refactor: make it better
 
   green again
 
-* When I change ``wake_date``
+* When I change ``wake_date`` to a bad date
 
   .. code-block:: python
 
-    wake_date = '30/12/99'
+    wake_date = '99/12/32'
 
-  the test is stuck in a loop because ``wake_date`` is earlier than the date for ``sleep_time``, another problem. When I change it to a date that does not exist
-
-  .. code-block:: python
-
-    wake_date = '32/12/99'
-
-  the terminal shows a get a ValueError_
+  the terminal shows a ValueError_
 
   .. code-block:: python
 
-    ValueError: time data '32/12/99 01:11' does not match format '%d/%m/%y %H:%M'
+    ValueError: time data '99/12/32 01:11' does not match format '%y/%m/%d %H:%M'
 
-  this is better. I want the same thing to happen when I use a date that does not exist for ``sleep_time``
+  this is better. I want the same thing to happen when I use a date that does not exist for ``sleep_time``. I change ``wake_date`` to an earlier date than ``sleep_time``
+
+  .. code-block:: python
+
+    wake_date = '99/12/32'
+
+  and the test is stuck in a loop because ``wake_time`` is always earlier than ``sleep_time`` when its date is earlier than the date for ``sleep_time``, another problem.
 
 * I change ``wake_date`` back and change the date for ``sleep_time`` to cause the loop to not end, then change the `while statement`_ to call ``sleep_duration.get_datetime``
 
   .. code-block:: python
 
     def test_duration_w_date_and_time(self):
-        sleep_time = random_timestamp('32/12/99')
+        sleep_time = random_timestamp('99/12/32')
 
         wake_date = '99/12/31'
         wake_time = random_timestamp(wake_date)
@@ -934,10 +936,10 @@ refactor: make it better
 
   .. code-block:: python
 
-    ValueError: time data '32/12/99 08:15' does not match format '%d/%m/%y %H:%M'
-    ValueError: time data '32/12/99 09:36' does not match format '%d/%m/%y %H:%M'
-    ValueError: time data '32/12/99 10:27' does not match format '%d/%m/%y %H:%M'
-    ValueError: time data '32/12/99 19:27' does not match format '%d/%m/%y %H:%M'
+    ValueError: time data '99/12/32 08:15' does not match format '%y/%m/%d %H:%M'
+    ValueError: time data '99/12/32 09:36' does not match format '%y/%m/%d %H:%M'
+    ValueError: time data '99/12/32 10:27' does not match format '%y/%m/%d %H:%M'
+    ValueError: time data '99/12/32 19:27' does not match format '%y/%m/%d %H:%M'
 
   good! I want bad dates to cause an error. I change ``sleep_time`` back to a real date, and the test is green again.
 
@@ -945,7 +947,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    wake_date = '30/12/99'
+    wake_date = '99/12/30'
 
   then add a variable and use it to fix the problem when ``wake_date``  is earlier than the date for ``sleep_time``
 
@@ -994,7 +996,7 @@ refactor: make it better
     def test_duration(self):
         sleep_date = '99/12/31'
         sleep_time = random_timestamp(sleep_date)
-        wake_time = random_timestamp('3/12/99')
+        wake_time = random_timestamp('99/12/31')
 
         while (
             sleep_duration.get_datetime(wake_time)
