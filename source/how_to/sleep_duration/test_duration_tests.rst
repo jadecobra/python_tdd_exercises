@@ -176,7 +176,7 @@ green: make it pass
 
     def get_datetime(argument):
         return datetime.datetime.strptime(
-            argument, '%y/%m/%d %H:%M'
+            argument, '%Y/%m/%d %H:%M'
         )
 
   and get an :ref:`AttributeError`
@@ -259,10 +259,10 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: "wake_time: "99/12/31 12:07" is earlier than sleep_time: "99/12/31 13:37"" does not match ""
-    AssertionError: "wake_time: "99/12/31 05:05" is earlier than sleep_time: "99/12/31 18:59"" does not match ""
-    AssertionError: "wake_time: "99/12/31 02:27" is earlier than sleep_time: "99/12/31 15:12"" does not match ""
-    AssertionError: "wake_time: "99/12/31 19:05" is earlier than sleep_time: "99/12/31 20:03"" does not match ""
+    AssertionError: "wake_time: "1999/12/31 12:07" is earlier than sleep_time: "1999/12/31 13:37"" does not match ""
+    AssertionError: "wake_time: "1999/12/31 05:05" is earlier than sleep_time: "1999/12/31 18:59"" does not match ""
+    AssertionError: "wake_time: "1999/12/31 02:27" is earlier than sleep_time: "1999/12/31 15:12"" does not match ""
+    AssertionError: "wake_time: "1999/12/31 19:05" is earlier than sleep_time: "1999/12/31 20:03"" does not match ""
 
 * I copy the message from the terminal, then add it to the ValueError_
 
@@ -270,7 +270,7 @@ green: make it pass
 
     def duration(wake_time, sleep_time):
         raise ValueError(
-            "wake_time: "99/12/31 19:05" is earlier than sleep_time: "99/12/31 20:03""
+            "wake_time: "1999/12/31 19:05" is earlier than sleep_time: "1999/12/31 20:03""
         )
 
   and get a SyntaxError_ with this message
@@ -301,19 +301,19 @@ green: make it pass
 
     def duration(wake_time, sleep_time):
         raise ValueError(
-            'wake_time: "99/12/31 19:05"'
+            'wake_time: "1999/12/31 19:05"'
             ' is earlier than '
-            'sleep_time: "99/12/31 20:03"'
+            'sleep_time: "1999/12/31 20:03"'
         )
 
   which gives me another :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: "wake_time: "99/12/31 03:18" is earlier than sleep_time: "99/12/31 13:34"" does not match "wake_time: "30/12/99 19:05" is earlier than sleep_time: "99/12/31 20:03""
-    AssertionError: "wake_time: "99/12/31 04:56" is earlier than sleep_time: "99/12/31 05:27"" does not match "wake_time: "30/12/99 19:05" is earlier than sleep_time: "99/12/31 20:03""
-    AssertionError: "wake_time: "99/12/31 05:58" is earlier than sleep_time: "99/12/31 03:14"" does not match "wake_time: "30/12/99 19:05" is earlier than sleep_time: "99/12/31 20:03""
-    AssertionError: "wake_time: "99/12/31 22:25" is earlier than sleep_time: "99/12/31 05:05"" does not match "wake_time: "30/12/99 19:05" is earlier than sleep_time: "99/12/31 20:03""
+    AssertionError: "wake_time: "1999/12/31 03:18" is earlier than sleep_time: "1999/12/31 13:34"" does not match "wake_time: "30/12/99 19:05" is earlier than sleep_time: "1999/12/31 20:03""
+    AssertionError: "wake_time: "1999/12/31 04:56" is earlier than sleep_time: "1999/12/31 05:27"" does not match "wake_time: "30/12/99 19:05" is earlier than sleep_time: "1999/12/31 20:03""
+    AssertionError: "wake_time: "1999/12/31 05:58" is earlier than sleep_time: "1999/12/31 03:14"" does not match "wake_time: "30/12/99 19:05" is earlier than sleep_time: "1999/12/31 20:03""
+    AssertionError: "wake_time: "1999/12/31 22:25" is earlier than sleep_time: "1999/12/31 05:05"" does not match "wake_time: "30/12/99 19:05" is earlier than sleep_time: "1999/12/31 20:03""
 
   the timestamps in the ValueError_ message are not the same
 
@@ -332,10 +332,10 @@ green: make it pass
 
   .. code-block:: python
 
-    ValueError: wake_time: "99/12/31 19:54" is earlier than sleep_time: "99/12/31 18:12"
-    ValueError: wake_time: "99/12/31 22:07" is earlier than sleep_time: "99/12/31 21:33"
-    ValueError: wake_time: "99/12/31 18:53" is earlier than sleep_time: "99/12/31 18:01"
-    ValueError: wake_time: "99/12/31 23:39" is earlier than sleep_time: "99/12/31 23:16"
+    ValueError: wake_time: "1999/12/31 19:54" is earlier than sleep_time: "1999/12/31 18:12"
+    ValueError: wake_time: "1999/12/31 22:07" is earlier than sleep_time: "1999/12/31 21:33"
+    ValueError: wake_time: "1999/12/31 18:53" is earlier than sleep_time: "1999/12/31 18:01"
+    ValueError: wake_time: "1999/12/31 23:39" is earlier than sleep_time: "1999/12/31 23:16"
 
   this is not right, the timestamps for ``wake_time`` are not earlier than ``sleep_time``, I have to add a condition to ``duration``
 
@@ -393,10 +393,10 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: ('99/12/31 06:44', '99/12/31 05:33') != '1:11:00'
-    AssertionError: ('99/12/31 17:53', '99/12/31 11:23') != '6:30:00'
-    AssertionError: ('99/12/31 10:25', '99/12/31 02:15') != '8:10:00'
-    AssertionError: ('99/12/31 19:14', '99/12/31 10:00') != '9:14:00'
+    AssertionError: ('1999/12/31 06:44', '1999/12/31 05:33') != '1:11:00'
+    AssertionError: ('1999/12/31 17:53', '1999/12/31 11:23') != '6:30:00'
+    AssertionError: ('1999/12/31 10:25', '1999/12/31 02:15') != '8:10:00'
+    AssertionError: ('1999/12/31 19:14', '1999/12/31 10:00') != '9:14:00'
 
   it looks like the test expects the difference between the timestamps
 
@@ -535,7 +535,7 @@ refactor: make it better
 
     def get_datetime(timestamp):
         return datetime.datetime.strptime(
-            timestamp, '%y/%m/%d %H:%M'
+            timestamp, '%Y/%m/%d %H:%M'
         )
 
   the terminal shows all tests are still passing
