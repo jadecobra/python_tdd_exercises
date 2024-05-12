@@ -89,6 +89,7 @@ green: make it pass
   I add a :doc:`condition</data_structures/booleans/booleans>` to the ``duration`` :ref:`function<functions>` to raise the ValueError_
 
   .. code-block:: python
+      :emphasize-lines: 1,4
 
     def duration(wake_time=None, sleep_time=None):
         if wake_time < sleep_time:
@@ -143,6 +144,7 @@ green: make it pass
 * then add a `while statement`_ to make sure ``wake_time`` is not earlier than ``sleep_time`` for the difference calculation
 
   .. code-block:: python
+    :emphasize-lines: 4,5
 
     def test_duration_w_hours_and_minutes(self):
         sleep_time = random_timestamp()
