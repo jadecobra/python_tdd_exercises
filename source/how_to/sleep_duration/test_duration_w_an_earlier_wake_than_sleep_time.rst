@@ -86,7 +86,7 @@ green: make it pass
 
     AssertionError: ValueError not raised
 
-  I add a :doc:`condition</data_structures/booleans/booleans>` to the ``duration`` :ref:`function<functions>` that raises the ValueError_
+  I add a :doc:`condition</data_structures/booleans/booleans>` to the ``duration`` :ref:`function<functions>` to raise the ValueError_
 
   .. code-block:: python
 
@@ -387,7 +387,7 @@ refactor: make it better
                 )
             )
 
-  all tests are still green
+  still green
 
 * I also add an ``assert`` :ref:`method<functions>` for the `assertRaisesRegex`_ block
 
@@ -435,7 +435,7 @@ refactor: make it better
                 )
             )
 
-  the tests are still green all the way
+  all tests are still passing!
 
 .. _test_duration_w_an_earlier_wake_than_sleep_time_review:
 
