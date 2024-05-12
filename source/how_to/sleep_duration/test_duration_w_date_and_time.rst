@@ -76,8 +76,7 @@ red: make it fail
 green: make it pass
 *********************************************************************************
 
-* I copy the string from the terminal
-* add the `unittest.skip decorator`_ to ``test_duration_w_date_and_time``
+* I add the `unittest.skip decorator`_ to ``test_duration_w_date_and_time``
 
   .. code-block:: python
 
@@ -93,13 +92,13 @@ green: make it pass
         self.assertEqual(int('12'), 12)
         self.assertEqual(int('01'), 1)
 
-        int('1999/12/31 01')
+        int('1999/12/31 21')
 
   the terminal shows a ValueError_ with the same message from ``test_duration_w_date_and_time``
 
   .. code-block:: python
 
-    ValueError: invalid literal for int() with base 10: '1999/12/31 13'
+    ValueError: invalid literal for int() with base 10: '1999/12/31 21'
 
   I cannot use the int_ constructor_ to convert a timestamp string_ to a number when it has a date. I add an `assertRaises`_ to :doc:`handle</how_to/exception_handling_tests>` the ValueError_
 
@@ -110,7 +109,7 @@ green: make it pass
         self.assertEqual(int('01'), 1)
 
         with self.assertRaises(ValueError):
-            int('1999/12/31 01')
+            int('1999/12/31 21')
 
   and the test is green again
 

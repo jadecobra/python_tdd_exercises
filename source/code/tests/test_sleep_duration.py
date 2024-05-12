@@ -14,15 +14,6 @@ def random_timestamp(date):
 
 class TestSleepDuration(unittest.TestCase):
 
-    def test_get_datetime(self):
-        timestamp = random_timestamp('21/11/06')
-        self.assertEqual(
-            sleep_duration.get_datetime(timestamp),
-            datetime.datetime.strptime(
-                timestamp, '%d/%m/%y %H:%M'
-            )
-        )
-
     def assertWakeTimeEarlier(self, wake_time=None, sleep_time=None):
         with self.assertRaisesRegex(
             ValueError,
@@ -31,16 +22,26 @@ class TestSleepDuration(unittest.TestCase):
             f'sleep_time: "{sleep_time}"'
         ):
             sleep_duration.duration(
-                wake_time=wake_time,
-                sleep_time=sleep_time
+                sleep_time=sleep_time,
+                wake_time=wake_time
             )
 
-    def test_duration(self):
-        sleep_date = '99/12/31'
-        sleep_time = random_timestamp('99/12/31')
+    def test_get_datetime(self):
+        timestamp = random_timestamp('2006/11/21')
+        self.assertEqual(
+            sleep_duration.get_datetime(
+                timestamp
+            ),
+            datetime.datetime.strptime(
+                timestamp,
+                '%Y/%m/%d %H:%M'
+            )
+        )
 
-        wake_date = '99/12/31'
-        wake_time = random_timestamp(wake_date)
+    def test_duration(self):
+        sleep_date = '1999/12/31'
+        sleep_time = random_timestamp(sleep_date)
+        wake_time = random_timestamp('1999/12/30')
 
         while (
             sleep_duration.get_datetime(wake_time)
@@ -50,17 +51,22 @@ class TestSleepDuration(unittest.TestCase):
                 wake_time=wake_time,
                 sleep_time=sleep_time
             )
-            wake_date = sleep_date
-            wake_time = random_timestamp(wake_date)
+            wake_time = random_timestamp(
+                sleep_date
+            )
         else:
             self.assertEqual(
                 sleep_duration.duration(
-                    wake_time=wake_time,
-                    sleep_time=sleep_time
+                    sleep_time=sleep_time,
+                    wake_time=wake_time
                 ),
                 str(
-                    sleep_duration.get_datetime(wake_time)
-                  - sleep_duration.get_datetime(sleep_time)
+                    sleep_duration.get_datetime(
+                        wake_time
+                    )
+                  - sleep_duration.get_datetime(
+                        sleep_time
+                    )
                 )
             )
 
