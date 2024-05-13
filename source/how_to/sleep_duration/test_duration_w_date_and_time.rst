@@ -68,7 +68,7 @@ red: make it fail
     ValueError: invalid literal for int() with base 10: '1999/12/31 11'
     ValueError: invalid literal for int() with base 10: '1999/12/31 21'
 
-  the test calls ``duration``, which calls ``read_timestamp``, which converts the timestamp string_ to a number by using the int_ constructor_ but it is in the wrong format
+  the test calls ``duration``, which calls ``read_timestamp`` to convert the timestamp string_ to a number with the int_ constructor_ but it is in the wrong format
 
 .. _test_duration_w_date_and_time_green_0:
 
@@ -115,7 +115,7 @@ green: make it pass
 
 * I remove the `unittest.skip decorator`_ from ``test_duration_w_date_and_time`` to get back the ValueError_
 * and make a copy of the ``duration`` :ref:`function<functions>` in ``sleep_duration.py``, then change the name to ``duration_a`` to keep the working solution while I try a new one
-* I remove ``difference_hours``, ``difference_minutes``, ``duration_hours``, ``duration_minutes`` and ``difference`` from ``duration_a`` then change the `return statement`_
+* I change the ``else`` block to return :ref:`None`
 
   .. code-block:: python
 
@@ -129,7 +129,7 @@ green: make it pass
         else:
             return None
 
-* I change the assertion in ``test_duration_w_date_and_time`` to reference the new :ref:`function<functions>`
+* then change the assertion in ``test_duration_w_date_and_time`` to reference the new :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -345,13 +345,13 @@ refactor: make it better
             )
         )
 
-  the terminal shows an :ref:`AssertionError`
+  and get an :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: datetime.datetime(2021, 11, 6, 16, 30) != datetime.datetime(2006, 11, 21, 16, 30)
 
-  I change the pattern to match
+  when I change the pattern to match
 
   .. code-block:: python
 
@@ -366,9 +366,9 @@ refactor: make it better
             )
         )
 
-  and the test passes
+  the test passes
 
-* then I change the year to be four digits
+* I change the year to four digits
 
   .. code-block:: python
 
@@ -383,13 +383,13 @@ refactor: make it better
             )
         )
 
-  and get a ValueError_
+  which gives me a ValueError_
 
   .. code-block:: python
 
     ValueError: time data '2006/11/21 16:30' does not match format '%y/%m/%d %H:%M'
 
-  I change the pattern to use ``%Y`` for the year
+  when I change the pattern to use ``%Y`` for the year
 
   .. code-block:: python
 
@@ -404,7 +404,7 @@ refactor: make it better
             )
         )
 
-  green again!
+  the terminal shows green again!
 
 * I add calls to the `datetime.datetime.strptime`_ :ref:`method<functions>` in ``test_duration_w_date_and_time``
 
