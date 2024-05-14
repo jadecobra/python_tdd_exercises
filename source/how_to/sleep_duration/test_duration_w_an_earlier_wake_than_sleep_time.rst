@@ -120,7 +120,7 @@ green: make it pass
                 f'{duration_minutes:02}'
             )
 
-  and the terminal shows a random ValueError_ for ``test_duration_w_hours_and_minutes`` when ``wake_time`` is earlier than ``sleep_time``
+  and the terminal shows a random ValueError_ for ``test_duration_w_hours_and_minutes`` when ``wake_time`` is earlier than ``sleep_time``. Good, this is what I want
 
   .. code-block:: python
 
@@ -147,6 +147,7 @@ green: make it pass
     def test_duration_w_hours_and_minutes(self):
         sleep_time = random_timestamp()
         wake_time = random_timestamp()
+
         while wake_time < sleep_time:
             wake_time = random_timestamp()
 
@@ -273,7 +274,7 @@ refactor: make it better
 
     AssertionError: ValueError not raised
 
-  the ``assertWakeTimeEarlier`` :ref:`method<functions>` works as expected. I remove the comments and the terminal shows green again
+  the `assertRaisesRegex`_ works as expected. I remove the comments and the terminal shows green again
 * I remove ``test_duration_w_an_earlier_wake_than_sleep_time`` because it is now covered by ``test_duration_w_hours_and_minutes``
 * then add an ``else`` block for the rest of the code in ``test_duration_w_hours_and_minutes``
 
@@ -456,7 +457,7 @@ The challenge is to write a program that calculates the difference between a giv
 * :ref:`test_duration_w_hours_and_minutes<test_duration_w_hours_and_minutes>` where I used a `while statement`_
 
   - to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<functions>` raises a ValueError_ with a message
-  - and it returns the right difference between the two when ``wake_time`` is later than or the same as ``sleep_time``
+  - and returns the right difference between the two when ``wake_time`` is later than or the same as ``sleep_time``
 
 
 Would you like to :ref:`test duration with timestamps that have dates?<test_duration_w_date_and_time>`
