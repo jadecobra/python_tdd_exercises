@@ -14,7 +14,7 @@ This is part 5 of a program that calculates the difference between a given wake 
 
 ----
 
-I want to write the program that makes the tests in ``test_sleep_duration.py`` pass without looking at them as if they were written by someone else
+I want to write the program that makes the tests in ``test_sleep_duration.py`` pass without looking at them
 
 .. _test_duration_tests_red:
 
@@ -35,7 +35,7 @@ red: make it fail
 green: make it pass
 *********************************************************************************
 
-* I open a new file, then add a list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+* I open a new file, add a list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
   .. code-block:: python
 

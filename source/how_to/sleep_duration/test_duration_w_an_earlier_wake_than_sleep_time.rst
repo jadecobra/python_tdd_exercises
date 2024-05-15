@@ -147,7 +147,6 @@ green: make it pass
     def test_duration_w_hours_and_minutes(self):
         sleep_time = random_timestamp()
         wake_time = random_timestamp()
-
         while wake_time < sleep_time:
             wake_time = random_timestamp()
 
@@ -186,7 +185,7 @@ green: make it pass
 refactor: make it better
 *********************************************************************************
 
-* I copy the `assertRaisesRegex`_ statement from ``test_duration_w_an_earlier_wake_than_sleep_time`` and add it to the `while statement`_ in ``test_duration_w_date_and_time`` to remove repetition. It will run when ``wake_time`` is earlier than ``sleep_time``
+* I copy the `assertRaisesRegex`_ statement from ``test_duration_w_an_earlier_wake_than_sleep_time`` and add it to the `while statement`_ to run when ``wake_time`` is earlier than ``sleep_time``
 
   .. code-block:: python
 
@@ -234,7 +233,7 @@ refactor: make it better
             )
         )
 
-  I comment out the condition in ``duration`` to make sure the test still works as expected
+  then comment out the condition in ``duration`` to make sure the test still works as expected
 
   .. code-block:: python
 
@@ -275,6 +274,7 @@ refactor: make it better
     AssertionError: ValueError not raised
 
   the `assertRaisesRegex`_ works as expected. I remove the comments and the terminal shows green again
+
 * I remove ``test_duration_w_an_earlier_wake_than_sleep_time`` because it is now covered by ``test_duration_w_hours_and_minutes``
 * then add an ``else`` block for the rest of the code in ``test_duration_w_hours_and_minutes``
 
@@ -331,7 +331,9 @@ refactor: make it better
   .. code-block:: python
 
     @staticmethod
-    def get_difference(wake_time=None, sleep_time=None):
+    def get_difference(
+        wake_time=None, sleep_time=None
+    ):
         difference_hours = (
             int(wake_time.split(':')[0])
           - int(sleep_time.split(':')[0])
@@ -394,7 +396,9 @@ refactor: make it better
 
   .. code-block:: python
 
-    def assertWakeTimeEarlier(self, wake_time=None, sleep_time=None):
+    def assertWakeTimeEarlier(
+        self, wake_time=None, sleep_time=None
+    ):
         with self.assertRaisesRegex(
             ValueError,
             f'wake_time: "{wake_time}"'
@@ -407,7 +411,7 @@ refactor: make it better
             )
 
     @staticmethod
-    def get_difference(wake_time=None, sleep_time=None):
+    def get_difference(
     ...
 
   and call it in ``test_duration_w_hours_and_minutes``
