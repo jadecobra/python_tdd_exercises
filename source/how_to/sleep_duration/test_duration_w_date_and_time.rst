@@ -114,22 +114,7 @@ green: make it pass
   and the test is green again
 
 * I remove the `unittest.skip decorator`_ from ``test_duration_w_date_and_time`` to get back the ValueError_
-* and make a copy of the ``duration`` :ref:`function<functions>` in ``sleep_duration.py``, then change the name to ``duration_a`` to keep the working solution while I try a new one
-* I change the ``else`` block to return :ref:`None`
-
-  .. code-block:: python
-
-    def duration_a(wake_time=None, sleep_time=None):
-        if wake_time < sleep_time:
-            raise ValueError(
-                f'wake_time: "{wake_time}"'
-                ' is earlier than '
-                f'sleep_time: "{sleep_time}"'
-            )
-        else:
-            return None
-
-* then change the assertion in ``test_duration_w_date_and_time`` to reference the new :ref:`function<functions>`
+* then change the call in the assertion  to a different :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -155,7 +140,27 @@ green: make it pass
                 )
             )
 
-  and the terminal shows the same ValueError_
+  which gives me an :ref:`AttributeError`
+
+  .. code-block:: python
+
+    AttributeError: module 'sleep_duration' has no attribute 'duration_a'...
+
+* I make a copy of the ``duration`` :ref:`function<functions>` in ``sleep_duration.py``, then change the name to ``duration_a`` to keep the working solution while I try a new one, and change the ``else`` block to return :ref:`None`
+
+  .. code-block:: python
+
+    def duration_a(wake_time=None, sleep_time=None):
+        if wake_time < sleep_time:
+            raise ValueError(
+                f'wake_time: "{wake_time}"'
+                ' is earlier than '
+                f'sleep_time: "{sleep_time}"'
+            )
+        else:
+            return None
+
+* the terminal still shows the same ValueError_ as before
 
   .. code-block:: python
 
