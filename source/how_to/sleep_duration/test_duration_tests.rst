@@ -375,7 +375,7 @@ green: make it pass
 
   the test expects a timestamp
 
-* I change the `return statement`_ to show its inputs. I want to see the difference between ``wake_time``, ``sleep_time`` and the expectation of the test so I can figure out the timestamp parts
+* I change the `return statement`_ to show its inputs. I want to see the difference between ``wake_time``, ``sleep_time`` and the expectation of the test
 
   .. code-block:: python
 
