@@ -547,7 +547,7 @@ red: make it fail
             )
         )
 
-  still green! The test has a problem, the timestamp is always the same. I want to test with random timestamps
+  still green! The test has a problem, the timestamp is always the same, I want random timestamps
 
 * I change the expectation to use `datetime.datetime.strptime`_
 
@@ -690,7 +690,7 @@ still green
     AssertionError: (datetime.datetime(1999, 12, 31, 23, 59),[35 chars], 1)) != datetime.timedelta(seconds=7080)
     AssertionError: (datetime.datetime(1999, 12, 31, 16, 1), [35 chars] 55)) != datetime.timedelta(seconds=7560)
 
-  the ``duration_a`` :ref:`function<functions>` returns `datetime.datetime`_ objects and the test expects a `datetime.timedelta` object. I change it to match the expectation
+  the ``duration_a`` :ref:`function<functions>` returns `datetime.datetime`_ objects and the test expects a `datetime.timedelta`_ object. I change it to match the expectation
 
   .. code-block:: python
 
@@ -739,7 +739,7 @@ still green
                 )
             )
 
-  the terminal shows an :ref:`AssertionError`
+  and the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -748,7 +748,7 @@ still green
     AssertionError: datetime.timedelta(seconds=31020) != '8:37:00'
     AssertionError: datetime.timedelta(seconds=49920) != '13:52:00'
 
-  I make the same change to the `return statement`_ in ``duration_a``
+  when I make the same change to the `return statement`_ in ``duration_a``
 
   .. code-block:: python
 
@@ -765,14 +765,15 @@ still green
               - get_datetime(sleep_time)
             )
 
-  and the test passes! Dance time!!
+  the test passes! It is time to dance, dance, dance revolution!!
 
-* I remove
+* I remove ``duration`` because ``duration_a`` is a better solution and get
 
-  - ``duration`` because ``duration_a`` is a better solution, and
-  - ``read_timestamp`` because no one is calling it anymore
+  .. code-block:: python
 
-  the terminal shows an :ref:`AttributeError`
+    FILL_ME_IN
+
+* I remove ``read_timestamp`` because no one is calling it anymore and the terminal shows an :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -789,9 +790,9 @@ still green
 
   ``test_duration_w_hours_and_minutes`` does not have dates in its timestamps. I remove it because it is covered by ``test_duration_w_date_and_time``
 
-* then remove
+* then remove ``get_difference`` because no one calls it anymore
+* and remove
 
-  - ``get_difference`` because no one calls it anymore, and
   - ``test_the_modulo_operation``
   - ``test_floor_aka_integer_division``
   - ``test_converting_strings_to_numbers``
@@ -822,14 +823,14 @@ still green
   .. code-block:: python
 
     def test_get_datetime(self):
-        timestamp = random_timestamp('06/11/21')
+        timestamp = random_timestamp('2006/11/21')
         self.assertEqual(
             sleep_duration.get_datetime(
                 timestamp
             ),
             datetime.datetime.strptime(
                 timestamp,
-                '%y/%m/%d %H:%M'
+                '%Y/%m/%d %H:%M'
             )
         )
 
@@ -901,13 +902,13 @@ still green
 
   .. code-block:: python
 
-    sleep_time = random_timestamp('99/12/30')
+    sleep_time = random_timestamp('1999/12/30')
 
   still green, then change it to a bad date
 
   .. code-block:: python
 
-    sleep_time = random_timestamp('99/12/32')
+    sleep_time = random_timestamp('1999/12/32')
 
   and the test is stuck in a loop, this is a problem, I change the date back
 
@@ -929,13 +930,7 @@ still green
 
     ValueError: time data '99/12/32 01:11' does not match format '%y/%m/%d %H:%M'
 
-  this is better. I want the same thing to happen when I use a date that does not exist for ``sleep_time``. I change ``wake_date`` to an earlier date than ``sleep_time``
-
-  .. code-block:: python
-
-    wake_date = '99/12/32'
-
-  and the test is stuck in a loop because ``wake_time`` is always earlier than ``sleep_time`` when its date is earlier than the date for ``sleep_time``, another problem.
+  this is better. I want the same thing to happen when I use a bad date for ``sleep_time``
 
 * I change ``wake_date`` back and change the date for ``sleep_time`` to cause the loop to not end, then change the `while statement`_ to call ``sleep_duration.get_datetime``
 
@@ -978,20 +973,22 @@ still green
 
   .. code-block:: python
 
-    ValueError: time data '99/12/32 08:15' does not match format '%y/%m/%d %H:%M'
-    ValueError: time data '99/12/32 09:36' does not match format '%y/%m/%d %H:%M'
-    ValueError: time data '99/12/32 10:27' does not match format '%y/%m/%d %H:%M'
-    ValueError: time data '99/12/32 19:27' does not match format '%y/%m/%d %H:%M'
+    ValueError: time data '1999/12/32 08:15' does not match format '%Y/%m/%d %H:%M'
+    ValueError: time data '1999/12/32 09:36' does not match format '%Y/%m/%d %H:%M'
+    ValueError: time data '1999/12/32 10:27' does not match format '%Y/%m/%d %H:%M'
+    ValueError: time data '1999/12/32 19:27' does not match format '%Y/%m/%d %H:%M'
 
   good! I want bad dates to cause an error. I change ``sleep_time`` back to a real date, and the test is green again.
 
-* I change ``wake_date`` to an earlier date to cause the loop to run with no end
+*  I change ``wake_date`` to an earlier date than ``sleep_time``
 
   .. code-block:: python
 
-    wake_date = '99/12/30'
+    wake_date = '1999/12/30'
 
-  then add a variable and use it to fix the problem when ``wake_date``  is earlier than the date for ``sleep_time``
+  and the test is stuck in a loop because ``wake_time`` is always earlier than ``sleep_time`` when its date is earlier than the date for ``sleep_time``, another problem.
+
+* I add a variable to fix this
 
   .. code-block:: python
 
