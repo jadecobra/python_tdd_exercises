@@ -334,7 +334,7 @@ As an exercise I add more tests to ``test_passing_data_structures`` to see what 
         "I received this message: 1.23"
     )
 
-* and add a test for a tuple_
+* then add a test for a tuple_
 
   .. code-block:: python
 

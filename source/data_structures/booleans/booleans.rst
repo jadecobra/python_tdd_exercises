@@ -29,7 +29,7 @@ test_what_is_false
 red: make it fail
 #################################################################################
 
-I make a file called ``test_booleans.py`` and add a failing test in ``test_what_is_false`` to check if `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is an instance of the `boolean <https://docs.python.org/3/library/functions.html#bool>`_ :doc:`class </classes/classes>`
+I make a file called ``test_booleans.py`` then add a failing test in ``test_what_is_false`` to check if `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is an instance of the `boolean <https://docs.python.org/3/library/functions.html#bool>`_ :doc:`class </classes/classes>`
 
 .. code-block:: python
 

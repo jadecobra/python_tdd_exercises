@@ -247,7 +247,7 @@ I add a test for making a list with a `for <https://docs.python.org/3/tutorial/c
             a_list
         )
 
-the terminal shows an :ref:`AssertionError` for the values of ``a_list`` because it is no longer empty after I loop through ``container`` and add items
+the terminal shows an :ref:`AssertionError` for the values of ``a_list`` because it is no longer empty after I loop through ``container`` then add items
 
 .. code-block:: python
 

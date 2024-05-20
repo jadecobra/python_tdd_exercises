@@ -97,7 +97,7 @@ refactor: make it better
 
   the terminal shows an :ref:`AttributeError`
 
-* I try the same solution I used for the ``Boy`` class and add a definition for the ``Girl`` class to ``classes.py``
+* I try the same solution I used for the ``Boy`` class then add a definition for the ``Girl`` class to ``classes.py``
 
   .. code-block:: python
 
@@ -215,7 +215,7 @@ refactor: make it better
             pass
 
 * I remove the ``sex`` attribute from the ``Boy`` class and the tests continue to pass
-* I remove the ``__init__`` method, and add the `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ placeholder
+* I remove the ``__init__`` method, then add the `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ placeholder
 
   .. code-block:: python
 

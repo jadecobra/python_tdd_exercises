@@ -185,7 +185,7 @@ green: make it pass
 refactor: make it better
 *********************************************************************************
 
-* I copy the `assertRaisesRegex`_ statement from ``test_duration_w_an_earlier_wake_than_sleep_time`` and add it to the `while statement`_ to run when ``wake_time`` is earlier than ``sleep_time``
+* I copy the `assertRaisesRegex`_ statement from ``test_duration_w_an_earlier_wake_than_sleep_time`` then add it to the `while statement`_ to run when ``wake_time`` is earlier than ``sleep_time``
 
   .. code-block:: python
 
@@ -233,7 +233,7 @@ refactor: make it better
             )
         )
 
-  then comment out the condition in ``duration`` to make sure the test still works as expected
+  and comment out the condition in ``duration`` to make sure the test still works as expected
 
   .. code-block:: python
 
@@ -267,7 +267,7 @@ refactor: make it better
                 f'{duration_minutes:02}'
             )
 
-  and get an :ref:`AssertionError` for ``test_duration_w_an_earlier_wake_than_sleep_time`` and a random one for ``test_duration_w_hours_and_minutes`` when ``wake_time`` is earlier than ``sleep_time``
+  which gives me an :ref:`AssertionError` for ``test_duration_w_an_earlier_wake_than_sleep_time`` and a random one for ``test_duration_w_hours_and_minutes`` when ``wake_time`` is earlier than ``sleep_time``
 
   .. code-block:: python
 

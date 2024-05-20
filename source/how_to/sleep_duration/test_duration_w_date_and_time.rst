@@ -84,7 +84,7 @@ green: make it pass
     def test_duration_w_date_and_time(self):
     ...
 
-* then add an assertion to ``test_converting_strings_to_numbers`` to make the error I just saw
+* then add an assertion to ``test_converting_strings_to_numbers`` to make the error I just saw happen again
 
   .. code-block:: python
 
@@ -160,7 +160,7 @@ green: make it pass
         else:
             return None
 
-* the terminal still shows the same ValueError_ as before
+  the terminal still shows the same ValueError_ as before
 
   .. code-block:: python
 
@@ -303,7 +303,7 @@ and get an :ref:`AssertionError`
 
   AssertionError: datetime.datetime(2006, 11, 21, 16, 30) != ''
 
-I copy the value on the left side of the :ref:`AssertionError` to change the expected value in the test,
+I copy the value on the left side of the :ref:`AssertionError` to change the expected value in the test
 
 .. code-block:: python
 
@@ -320,7 +320,7 @@ I copy the value on the left side of the :ref:`AssertionError` to change the exp
 
 and it passes
 
-When the `datetime.datetime.strptime`_ :ref:`method<functions>` is given 2 strings_ as inputs - a timestamp and a pattern, it returns a `datetime.datetime`_ object based on the pattern provided. The pattern provided is
+The `datetime.datetime.strptime`_ :ref:`method<functions>` takes 2 strings_ as inputs - a timestamp and a pattern, it returns a `datetime.datetime`_ object based on the pattern provided. The pattern provided is
 
 - ``%d`` for days
 - ``%m`` for months
@@ -564,7 +564,7 @@ red: make it fail
             )
         )
 
-* then add a variable with a random timestamp
+  then add a variable with a random timestamp
 
   .. code-block:: python
 
@@ -765,21 +765,15 @@ still green
               - get_datetime(sleep_time)
             )
 
-  the test passes! It is time to dance, dance, dance revolution!!
+  the test passes, time to dance, cue the music!
 
-* I remove ``duration`` because ``duration_a`` is a better solution and get
-
-  .. code-block:: python
-
-    FILL_ME_IN
-
-* I remove ``read_timestamp`` because no one is calling it anymore and the terminal shows an :ref:`AttributeError`
+* I remove ``duration`` because ``duration_a`` is a better solution and ``read_timestamp`` because no one is calling it anymore. The terminal shows an :ref:`AttributeError`
 
   .. code-block:: python
 
     AttributeError: module 'sleep_duration' has no attribute 'duration'...
 
-* I change the name of ``duration_a`` to ``duration`` in both files and the terminal shows a ValueError_
+* I change the name of ``duration_a`` to ``duration`` in ``sleep_duration.py`` and ``test_sleep_duration.py`` and the terminal shows a ValueError_
 
   .. code-block:: python
 
@@ -790,8 +784,7 @@ still green
 
   ``test_duration_w_hours_and_minutes`` does not have dates in its timestamps. I remove it because it is covered by ``test_duration_w_date_and_time``
 
-* then remove ``get_difference`` because no one calls it anymore
-* and remove
+* then remove ``get_difference`` because no one calls it anymore and
 
   - ``test_the_modulo_operation``
   - ``test_floor_aka_integer_division``
@@ -801,7 +794,7 @@ still green
   because they do not test the solution directly
 
 * I remove ``random_timestamp`` and change the name of ``random_timestamp_a`` to ``random_timestamp``
-* this ``random_timestamp`` :ref:`function<functions>` always returns timestamps with the same date, I change it to take in a date as input
+* the new ``random_timestamp`` :ref:`function<functions>` always returns timestamps with the same date, I change it to take in a date as input
 
   .. code-block:: python
 
@@ -862,7 +855,7 @@ still green
                 )
             )
 
-  the terminal shows green again
+  and the terminal shows green again
 
 * I add a variable to remove the repetition of the date for ``wake_time``
 
@@ -898,19 +891,19 @@ still green
                 )
             )
 
-* I change the date for ``sleep_time`` to test it
+* then change the date for ``sleep_time`` to test it
 
   .. code-block:: python
 
     sleep_time = random_timestamp('1999/12/30')
 
-  still green, then change it to a bad date
+  still green. I change it to a bad date
 
   .. code-block:: python
 
     sleep_time = random_timestamp('1999/12/32')
 
-  and the test is stuck in a loop, this is a problem, I change the date back
+  and the test is stuck in a loop, this is a problem. I change the date back
 
   .. code-block:: python
 
@@ -986,7 +979,7 @@ still green
 
     wake_date = '1999/12/30'
 
-  and the test is stuck in a loop because ``wake_time`` is always earlier than ``sleep_time`` when its date is earlier than the date for ``sleep_time``, another problem.
+  and the test is stuck in a loop, another problem because ``wake_time`` is always earlier than ``sleep_time`` when its date is earlier than the date for ``sleep_time``
 
 * I add a variable to fix this
 

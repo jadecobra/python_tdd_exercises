@@ -505,7 +505,7 @@ how to automatically make a python test driven development environment on window
 
     New-Item makePythonTdd.ps1
 
-* I open the file in the Interactive Development Editor and add the following code
+* I open the file in the Interactive Development Editor then add the following code
 
     the line numbers below are a guide, you do not need to copy them
 

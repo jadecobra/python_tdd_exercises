@@ -200,7 +200,7 @@ green: make it pass
     def duration():
         return None
 
-* I want the ``duration`` :ref:`function<functions>` to take in a ``wake_time`` and add it to the test
+* I want the ``duration`` :ref:`function<functions>` to take in a ``wake_time`` then add it to the test
 
   .. code-block:: python
 

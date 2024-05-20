@@ -38,7 +38,7 @@ Nullary operations do not take in inputs and always return the same value. They 
 red: make it fail
 #################################################################################
 
-I make a file called ``test_truth_table.py`` in the ``tests`` folder and add the text below
+I make a file called ``test_truth_table.py`` in the ``tests`` folder then add the text below
 
 .. code-block:: python
 
