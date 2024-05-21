@@ -6,6 +6,12 @@
 how to measure sleep duration: test_duration_w_an_earlier_wake_than_sleep_time
 #################################################################################
 
+.. raw:: html
+
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/PF6h_vOe55E?si=pLNDmUvLF8m1eof-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+---
+
 This is part 3 of a program that calculates the difference between a given wake and sleep time.
 
 .. contents:: table of contents
@@ -120,7 +126,7 @@ green: make it pass
                 f'{duration_minutes:02}'
             )
 
-  and the terminal shows a random ValueError_ for ``test_duration_w_hours_and_minutes`` when ``wake_time`` is earlier than ``sleep_time``. Good, this is what I want
+  and the terminal shows a random ValueError_ for ``test_duration_w_hours_and_minutes`` when ``wake_time`` is earlier than ``sleep_time``
 
   .. code-block:: python
 
