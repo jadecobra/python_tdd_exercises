@@ -267,7 +267,7 @@ refactor: make it better
                 f'{duration_minutes:02}'
             )
 
-  which gives me an :ref:`AssertionError` for ``test_duration_w_an_earlier_wake_than_sleep_time`` and a random one for ``test_duration_w_hours_and_minutes`` when ``wake_time`` is earlier than ``sleep_time``
+  which gives me an :ref:`AssertionError` for ``test_duration_w_an_earlier_wake_than_sleep_time`` and a random one when ``wake_time`` is earlier than ``sleep_time`` in ``test_duration_w_hours_and_minutes``
 
   .. code-block:: python
 
@@ -390,7 +390,7 @@ refactor: make it better
                 )
             )
 
-  still green
+  green again
 
 * I also add an ``assert`` :ref:`method<functions>` for the `assertRaisesRegex`_ block
 
@@ -440,7 +440,7 @@ refactor: make it better
                 )
             )
 
-  all tests are still passing!
+  all tests are still passing! Fantastic!
 
 .. _test_duration_w_an_earlier_wake_than_sleep_time_review:
 
