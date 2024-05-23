@@ -14,7 +14,9 @@ def random_timestamp(date):
 
 class TestSleepDuration(unittest.TestCase):
 
-    def assertWakeTimeEarlier(self, wake_time=None, sleep_time=None):
+    def assertWakeTimeEarlier(
+        self, wake_time=None, sleep_time=None
+    ):
         with self.assertRaisesRegex(
             ValueError,
             f'wake_time: "{wake_time}"'
@@ -41,7 +43,7 @@ class TestSleepDuration(unittest.TestCase):
     def test_duration(self):
         sleep_date = '1999/12/31'
         sleep_time = random_timestamp(sleep_date)
-        wake_time = random_timestamp('1999/12/30')
+        wake_time = random_timestamp('1999/12/31')
 
         while (
             sleep_duration.get_datetime(wake_time)

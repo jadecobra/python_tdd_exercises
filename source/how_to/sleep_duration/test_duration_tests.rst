@@ -253,7 +253,7 @@ green: make it pass
   .. code-block:: python
 
     def duration(sleep_time, wake_time):
-        raise ValueError
+        raise ValueError()
 
   and get another :ref:`AssertionError` because the message in the ValueError_ does not match the expectation of the test
 
