@@ -335,7 +335,7 @@ there are more details in `strftime() and strptime() behavior <https://docs.pyth
 refactor: make it better
 ---------------------------------------------------------------------------------
 
-* I change the order in the date to test the pattern
+* I change the order of the date to test the pattern
 
   .. code-block:: python
 
@@ -394,7 +394,7 @@ refactor: make it better
 
     ValueError: time data '2006/11/21 16:30' does not match format '%y/%m/%d %H:%M'
 
-  when I change the pattern to use ``%Y`` for the year
+  I change the pattern to use ``%Y`` for the year
 
   .. code-block:: python
 
@@ -409,7 +409,7 @@ refactor: make it better
             )
         )
 
-  the terminal shows green again!
+  and the terminal shows green again!
 
 * I add calls to the `datetime.datetime.strptime`_ :ref:`method<functions>` in ``test_duration_w_date_and_time``
 
@@ -452,7 +452,7 @@ refactor: make it better
     AssertionError: Tuples differ: ('1999/12/31 20:50', '1999/12/31 14:22') != (datetime.datetime(1999, 12, 31, 20, 50), [35 chars] 22))
     AssertionError: Tuples differ: ('1999/12/31 16:40', '1999/12/31 13:39') != (datetime.datetime(1999, 12, 31, 16, 40), [35 chars] 39))
 
-* then change the `return statement`_ in ``duration_a``
+  ``duration_a`` returns the timestamps as strings_ and the text expects `datetime.datetime`_ objects. I change its `return statement`_ to match
 
   .. code-block:: python
 
@@ -473,13 +473,13 @@ refactor: make it better
                 )
             )
 
-  which gives me a NameError_
+  the terminal shows a NameError_
 
   .. code-block:: python
 
     NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
 
-  You know I did! I add an `import statement`_ to the top of ``sleep_duration.py``
+  I add an `import statement`_ to the top of ``sleep_duration.py``
 
   .. code-block:: python
 
@@ -547,7 +547,7 @@ red: make it fail
             )
         )
 
-  still green! The test has a problem, the timestamp is always the same, I want random timestamps
+  this test always uses the same timestamp, I want it to use random timestamps
 
 * I change the expectation to use `datetime.datetime.strptime`_
 
@@ -765,7 +765,7 @@ still green
               - get_datetime(sleep_time)
             )
 
-  the test passes, time to dance, cue the music!
+  the test passes!
 
 * I remove ``duration`` because ``duration_a`` is a better solution and ``read_timestamp`` because no one is calling it anymore. The terminal shows an :ref:`AttributeError`
 
@@ -773,7 +773,7 @@ still green
 
     AttributeError: module 'sleep_duration' has no attribute 'duration'...
 
-* I change the name of ``duration_a`` to ``duration`` in ``sleep_duration.py`` and ``test_sleep_duration.py`` and the terminal shows a ValueError_
+* I change the name of ``duration_a`` to ``duration`` in ``sleep_duration.py`` and ``test_sleep_duration.py``. The terminal shows a ValueError_
 
   .. code-block:: python
 
@@ -1083,7 +1083,7 @@ The challenge was to write a program that calculates the difference between a gi
 * `test_duration_w_date_and_time`_ where I used
 
   - `random.randint`_ to generate random numbers for hours and minutes
-  - that are :doc:`interpolated </how_to/pass_values>` in timestamps with given dates as inputs for ``wake_time`` and ``sleep_time``
+  - that are :doc:`interpolated </how_to/pass_values>` in timestamps with given dates for ``wake_time`` and ``sleep_time``
   - a `while statement`_ to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<functions>` raises a ValueError_ with a message
   - and returns the right difference between the two when ``wake_time`` is later than or the same as ``sleep_time``
 
