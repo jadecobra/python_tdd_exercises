@@ -35,7 +35,7 @@ red: make it fail
 green: make it pass
 *********************************************************************************
 
-* I open a new file, add a list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+* I add a list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
   .. code-block:: python
 
@@ -540,7 +540,7 @@ refactor: make it better
 
   the terminal shows all tests are still passing
 
-* and I close the file with the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+* I remove the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered because the program does not need it
 
 *********************************************************************************
 review
