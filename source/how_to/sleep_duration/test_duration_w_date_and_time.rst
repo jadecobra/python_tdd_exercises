@@ -200,7 +200,7 @@ green: make it pass
     AssertionError: None != ('1999/12/31 13:10', '1999/12/31 12:00')
     AssertionError: None != ('1999/12/31 16:41', '1999/12/31 12:35')
 
-* then change the `return statement`_ in ``duration_a``
+  I change the `return statement`_ in ``duration_a``
 
   .. code-block:: python
 
