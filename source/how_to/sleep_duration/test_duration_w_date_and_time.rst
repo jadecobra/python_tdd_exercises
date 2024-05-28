@@ -973,13 +973,13 @@ still green
 
   good! I want bad dates to cause an error. I change ``sleep_time`` back to a real date, and the test is green again.
 
-*  I change ``wake_date`` to an earlier date than ``sleep_time``
+* I change ``wake_date`` to an earlier date than ``sleep_time``
 
   .. code-block:: python
 
     wake_date = '1999/12/30'
 
-  and the test is stuck in a loop, another problem because ``wake_time`` is always earlier than ``sleep_time`` when its date is earlier than the date for ``sleep_time``
+  and the test is stuck in a loop because ``wake_time`` is always earlier than ``sleep_time`` when its date is earlier
 
 * I add a variable to fix this
 
@@ -1057,7 +1057,7 @@ still green
                 )
             )
 
-* then change ``test_duration_w_date_and_time`` to ``test_duration`` and all is well that ends well
+* then change ``test_duration_w_date_and_time`` to ``test_duration`` and terminal still shows passing tests
 
 .. _sleep_duration_review:
 
