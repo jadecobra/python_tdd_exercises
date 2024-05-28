@@ -84,7 +84,7 @@ green: make it pass
     def test_duration_w_date_and_time(self):
     ...
 
-* then add an assertion to ``test_converting_strings_to_numbers`` to make the error I just saw happen again
+* then add an assertion to ``test_converting_strings_to_numbers`` to make the ValueError_ happen again
 
   .. code-block:: python
 
@@ -113,7 +113,7 @@ green: make it pass
 
   and the test is green again
 
-* I remove the `unittest.skip decorator`_ from ``test_duration_w_date_and_time`` to get back the ValueError_
+* I remove the `unittest.skip decorator`_ from ``test_duration_w_date_and_time``
 * then change the call in the assertion  to a different :ref:`function<functions>`
 
   .. code-block:: python
@@ -452,7 +452,7 @@ refactor: make it better
     AssertionError: Tuples differ: ('1999/12/31 20:50', '1999/12/31 14:22') != (datetime.datetime(1999, 12, 31, 20, 50), [35 chars] 22))
     AssertionError: Tuples differ: ('1999/12/31 16:40', '1999/12/31 13:39') != (datetime.datetime(1999, 12, 31, 16, 40), [35 chars] 39))
 
-  ``duration_a`` returns the timestamps as strings_ and the text expects `datetime.datetime`_ objects. I change its `return statement`_ to match
+  ``duration_a`` returns the timestamps as strings_ and the test expects `datetime.datetime`_ objects. I change its `return statement`_ to match
 
   .. code-block:: python
 
@@ -915,13 +915,13 @@ still green
 
   .. code-block:: python
 
-    wake_date = '99/12/32'
+    wake_date = '1999/12/32'
 
   the terminal shows a ValueError_
 
   .. code-block:: python
 
-    ValueError: time data '99/12/32 01:11' does not match format '%y/%m/%d %H:%M'
+    ValueError: time data '1999/12/32 01:11' does not match format '%Y/%m/%d %H:%M'
 
   this is better. I want the same thing to happen when I use a bad date for ``sleep_time``
 
@@ -930,7 +930,7 @@ still green
   .. code-block:: python
 
     def test_duration_w_date_and_time(self):
-        sleep_time = random_timestamp('99/12/32')
+        sleep_time = random_timestamp('1999/12/32')
 
         wake_date = '1999/12/31'
         wake_time = random_timestamp(wake_date)
