@@ -170,7 +170,7 @@ green: make it pass
 
   I need a way to convert a string_ that has a date and time to a `datetime.datetime`_ object
 
-* I use the `example from the datetime documentation <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_ to do the conversion, and change the timestamp to reference ``argument``
+* I use the `example from the datetime documentation <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_ to do the conversion
 
   .. code-block:: python
 
@@ -242,11 +242,22 @@ green: make it pass
 
     def duration(sleep_time, wake_time):
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows this :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: ValueError not raised
+
+  or
+
+  .. code-block:: python
+
+    AssertionError: None != '0:00:00'
+    AssertionError: None != '1:02:00'
+    AssertionError: None != '2:55:00'
+    AssertionError: None != '16:59:00'
+
+  it looks like the ``duration`` :ref:`function<functions>` has to make decisions based on something
 
 * I change the `return statement`_ to raise a ValueError_
 
