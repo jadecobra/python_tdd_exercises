@@ -68,7 +68,7 @@ red: make it fail
     ValueError: invalid literal for int() with base 10: '1999/12/31 11'
     ValueError: invalid literal for int() with base 10: '1999/12/31 21'
 
-  the test calls ``duration``, which calls ``read_timestamp``, which calls the int_ constructor_ to convert the timestamp string_ to a number after splitting it, but it is not in the right format
+  the test calls ``duration``, which calls ``read_timestamp``, which calls the int_ constructor_ to convert the timestamp string_ to a number after calling `str.split`_ on it, but it is not in the right format
 
 .. _test_duration_w_date_and_time_green_0:
 
@@ -222,7 +222,7 @@ green: make it pass
 refactor: make it better
 *********************************************************************************
 
-The int_ constructor_ will not work when the timestamps have a date. I need a solution that can read timestamps with date and time. I search for `date and time <https://docs.python.org/3/search.html?q=date+and+time>`_ in `python's online documentation`_, to see if there is an existing solution and select the datetime_ :ref:`module<ModuleNotFoundError>` from the results. Reading through the available types in the :ref:`module<ModuleNotFoundError>` I see `datetime.datetime`_ objects which are a combination of date and time
+The int_ constructor_ will not work when the timestamps have a date. I need a solution that can read timestamps with date and time. I search for `date and time <https://docs.python.org/3/search.html?q=date+and+time>`_ in `python's online documentation`_, to see if there is an existing solution and select the datetime_ :ref:`module<ModuleNotFoundError>` from the results. Reading through the available types in the :ref:`module<ModuleNotFoundError>` I see `datetime.datetime`_ objects
 
 .. code-block:: python
 
@@ -409,7 +409,7 @@ refactor: make it better
             )
         )
 
-  and the terminal shows green again!
+  and the terminal shows green again
 
 * I add calls to the `datetime.datetime.strptime`_ :ref:`method<functions>` in ``test_duration_w_date_and_time``
 
@@ -473,13 +473,13 @@ refactor: make it better
                 )
             )
 
-  the terminal shows a NameError_
+  and the terminal shows a NameError_
 
   .. code-block:: python
 
     NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
 
-  I add an `import statement`_ to the top of ``sleep_duration.py``
+  then I add an `import statement`_ to the top of ``sleep_duration.py``
 
   .. code-block:: python
 
@@ -504,7 +504,7 @@ refactor: make it better
     def duration_a(wake_time=None, sleep_time=None):
     ...
 
-  then call it in the `return statement`_ of ``duration_a``
+  and call it in the `return statement`_ of ``duration_a``
 
   .. code-block:: python
 
