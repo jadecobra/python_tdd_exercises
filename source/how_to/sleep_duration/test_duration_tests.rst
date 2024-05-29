@@ -420,7 +420,7 @@ green: make it pass
 
     TypeError: unsupported operand type(s) for -: 'str' and 'str'
 
-  I cannot subtract one string from another. I change the `return statement`_ back
+  I still cannot subtract one string from another. I change the `return statement`_ back
 
 * then add calls to ``get_datetime``
 
