@@ -68,7 +68,7 @@ red: make it fail
     ValueError: invalid literal for int() with base 10: '1999/12/31 11'
     ValueError: invalid literal for int() with base 10: '1999/12/31 21'
 
-  the test calls ``duration``, which calls ``read_timestamp`` to convert the timestamp string_ to a number with the int_ constructor_ but it is in the wrong format
+  the test calls ``duration``, which calls ``read_timestamp``, which calls the int_ constructor_ to convert the timestamp string_ to a number after splitting it, but it is not in the right format
 
 .. _test_duration_w_date_and_time_green_0:
 
@@ -989,7 +989,7 @@ still green
         sleep_date = '1999/12/31'
         sleep_time = random_timestamp(sleep_date)
 
-        wake_date = '1999/12/31'
+        wake_date = '1999/12/30'
         wake_time = random_timestamp(wake_date)
 
         while (
@@ -1019,7 +1019,7 @@ still green
                 )
             )
 
-  the loop ends and the terminal shows green again, I change ``wake_date`` back and the terminal still shows green
+  the loop ends and the terminal shows green again
 
 * I remove the ``wake_date`` variable because it is only used once
 
@@ -1028,7 +1028,7 @@ still green
     def test_duration(self):
         sleep_date = '1999/12/31'
         sleep_time = random_timestamp(sleep_date)
-        wake_time = random_timestamp('1999/12/31')
+        wake_time = random_timestamp('1999/12/30')
 
         while (
             sleep_duration.get_datetime(wake_time)

@@ -106,10 +106,10 @@ green: make it pass
 
   .. code-block:: python
 
-    None != datetime.datetime(1999, 12, 31, 7, 1)
-    None != datetime.datetime(1999, 12, 31, 10, 59)
-    None != datetime.datetime(1999, 12, 31, 13, 28)
-    None != datetime.datetime(1999, 12, 31, 19, 8)
+    None != datetime.datetime(2006, 11, 21, 7, 1)
+    None != datetime.datetime(2006, 11, 21, 10, 59)
+    None != datetime.datetime(2006, 11, 21, 13, 28)
+    None != datetime.datetime(2006, 11, 21, 19, 8)
 
   which I add to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
@@ -126,7 +126,7 @@ green: make it pass
   .. code-block:: python
 
     def get_datetime(argument):
-        return datetime.datetime(1999, 12, 31, 19, 8)
+        return datetime.datetime(2006, 11, 21, 19, 8)
 
   the terminal shows a NameError_
 
@@ -148,7 +148,7 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: datetime.datetime(1999, 12, 31, 19, 8) != datetime.datetime(1999, 12, 31, 0, 15)
+    AssertionError: datetime.datetime(2006, 11, 21, 19, 8) != datetime.datetime(2006, 11, 21, 0, 15)
 
   the expected values change
 
@@ -163,10 +163,10 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: '06/11/21 02:58' != datetime.datetime(2006, 11, 21, 2, 58)
-    AssertionError: '06/11/21 03:14' != datetime.datetime(2006, 11, 21, 3, 14)
-    AssertionError: '06/11/21 08:30' != datetime.datetime(2006, 11, 21, 8, 30)
-    AssertionError: '06/11/21 23:41' != datetime.datetime(2006, 11, 21, 23, 41)
+    AssertionError: '2006/11/21 02:58' != datetime.datetime(2006, 11, 21, 2, 58)
+    AssertionError: '2006/11/21 03:14' != datetime.datetime(2006, 11, 21, 3, 14)
+    AssertionError: '2006/11/21 08:30' != datetime.datetime(2006, 11, 21, 8, 30)
+    AssertionError: '2006/11/21 23:41' != datetime.datetime(2006, 11, 21, 23, 41)
 
   I need a way to convert a string_ that has a date and time to a `datetime.datetime`_ object
 
@@ -248,17 +248,6 @@ green: make it pass
 
     AssertionError: ValueError not raised
 
-  or
-
-  .. code-block:: python
-
-    AssertionError: None != '0:00:00'
-    AssertionError: None != '1:02:00'
-    AssertionError: None != '2:55:00'
-    AssertionError: None != '16:59:00'
-
-  it looks like the ``duration`` :ref:`function<functions>` has to make decisions based on something
-
 * I change the `return statement`_ to raise a ValueError_
 
   .. code-block:: python
@@ -270,10 +259,10 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: "wake_time: "1999/12/31 12:07" is earlier than sleep_time: "1999/12/31 13:37"" does not match ""
-    AssertionError: "wake_time: "1999/12/31 05:05" is earlier than sleep_time: "1999/12/31 18:59"" does not match ""
-    AssertionError: "wake_time: "1999/12/31 02:27" is earlier than sleep_time: "1999/12/31 15:12"" does not match ""
-    AssertionError: "wake_time: "1999/12/31 19:05" is earlier than sleep_time: "1999/12/31 20:03"" does not match ""
+    AssertionError: "wake_time: "1999/12/30 12:07" is earlier than sleep_time: "1999/12/31 13:37"" does not match ""
+    AssertionError: "wake_time: "1999/12/30 05:05" is earlier than sleep_time: "1999/12/31 18:59"" does not match ""
+    AssertionError: "wake_time: "1999/12/30 02:27" is earlier than sleep_time: "1999/12/31 15:12"" does not match ""
+    AssertionError: "wake_time: "1999/12/30 19:05" is earlier than sleep_time: "1999/12/31 20:03"" does not match ""
 
 * I copy the message from the terminal, then add it to the ValueError_
 
@@ -281,7 +270,7 @@ green: make it pass
 
     def duration(wake_time, sleep_time):
         raise ValueError(
-            "wake_time: "1999/12/31 19:05" is earlier than sleep_time: "1999/12/31 20:03""
+            "wake_time: "1999/12/30 19:05" is earlier than sleep_time: "1999/12/31 20:03""
         )
 
   and get a SyntaxError_ with this message
