@@ -68,7 +68,7 @@ red: make it fail
     ValueError: invalid literal for int() with base 10: '1999/12/31 11'
     ValueError: invalid literal for int() with base 10: '1999/12/31 21'
 
-  the test calls ``duration``, which calls ``read_timestamp``, which calls the int_ constructor_ to convert the timestamp string_ to a number after calling `str.split`_, but it is not in the right format
+  the test calls ``duration``, which calls ``read_timestamp``, which calls the int_ constructor_ to convert the timestamp string_ to a number after it calls `str.split`_, but it is not in the right format
 
 .. _test_duration_w_date_and_time_green_0:
 
@@ -146,7 +146,7 @@ green: make it pass
 
     AttributeError: module 'sleep_duration' has no attribute 'duration_a'...
 
-* I make a copy of the ``duration`` :ref:`function<functions>` in ``sleep_duration.py``, then change the name to ``duration_a`` to keep the working solution while I try a new one, then change the ``else`` block to return :ref:`None`
+* I make a copy of the ``duration`` :ref:`function<functions>` in ``sleep_duration.py``, then change the name to ``duration_a`` to keep the solution while I try a new one, then change the ``else`` block to return :ref:`None`
 
   .. code-block:: python
 
@@ -222,7 +222,7 @@ green: make it pass
 refactor: make it better
 *********************************************************************************
 
-The int_ constructor_ will not work when the timestamps have a date. I need a solution that can read timestamps with date and time. I search for `date and time <https://docs.python.org/3/search.html?q=date+and+time>`_ in `python's online documentation`_, to see if there is an existing solution and select the datetime_ :ref:`module<ModuleNotFoundError>` from the results. Reading through the available types in the :ref:`module<ModuleNotFoundError>` I see `datetime.datetime`_ objects
+The int_ constructor_ will not work when the timestamps have a date. I need a solution that can read timestamps with date and time. I search for `date and time <https://docs.python.org/3/search.html?q=date+and+time>`_ in `python's online documentation`_, to see if there is an existing solution and select the datetime_ :ref:`module<ModuleNotFoundError>` from the results. The available types in the :ref:`module<ModuleNotFoundError>` show `datetime.datetime`_ objects
 
 .. code-block:: python
 
@@ -765,9 +765,9 @@ still green
               - get_datetime(sleep_time)
             )
 
-  the test passes!
+  the test passes
 
-* I remove ``duration`` because ``duration_a`` is a better solution and ``read_timestamp`` because no one is calling it anymore. The terminal shows an :ref:`AttributeError`
+* I remove ``duration`` because ``duration_a`` is a better solution and ``read_timestamp`` because no one calls it anymore. The terminal shows an :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -1057,7 +1057,7 @@ still green
                 )
             )
 
-* then change ``test_duration_w_date_and_time`` to ``test_duration`` and terminal still shows passing tests
+* then change ``test_duration_w_date_and_time`` to ``test_duration`` and the terminal shows the tests are still passing
 
 .. _sleep_duration_review:
 
