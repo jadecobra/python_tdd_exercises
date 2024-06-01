@@ -47,7 +47,7 @@ I add a file called ``test_list_comprehensions.py`` to the ``tests`` folder with
 
 * ``a_list = []`` makes an empty list called ``a_list``
 * ``self.assertEqual(a_list, [])`` confirms that ``a_list`` is empty since it is equal to ``[]``
-* ``container = range(10)`` makes an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ of numbers from 0 to 9 with the `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ constructor and calls it ``container``
+* ``container = range(10)`` makes an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ of numbers from 0 to 9 with the `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ constructor_and calls it ``container``
 * `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ makes an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ of numbers from 0 to the given number minus 1
 * ``for item in container:`` uses a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ statement to make a loop that goes over every item of ``container``
 * ``a_list.append(item)`` adds the item from ``container`` to ``a_list`` on each cycle of the loop, using the ``append`` :ref:`method<functions>`, see :doc:`/data_structures/lists/lists` for more details
@@ -84,7 +84,7 @@ and the test passes
 refactor: make it better
 #################################################################################
 
-* I add another test to check what happens when I use the :doc:`list </data_structures/lists/lists>` constructor on ``container``
+* I add another test to check what happens when I use the :doc:`list </data_structures/lists/lists>` constructor_on ``container``
 
   .. code-block:: python
 
@@ -201,7 +201,7 @@ refactor: make it better
 
     AssertionError: None != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-* When I make the function to return the result of calling the :doc:`list </data_structures/lists/lists>` constructor with ``argument`` as input
+* When I make the function to return the result of calling the :doc:`list </data_structures/lists/lists>` constructor_with ``argument`` as input
 
   .. code-block:: python
 

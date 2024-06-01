@@ -68,7 +68,7 @@ red: make it fail
     ValueError: invalid literal for int() with base 10: '1999/12/31 11'
     ValueError: invalid literal for int() with base 10: '1999/12/31 21'
 
-  the test calls ``duration``, which calls ``read_timestamp``, which calls the int_ constructor_ to convert the timestamp string_ to a number after calling `str.split`_ on it, but it is not in the right format
+  the test calls ``duration``, which calls ``read_timestamp``, which calls the int_ constructor_ to convert the timestamp string_ to a number after calling `str.split`_, but it is not in the right format
 
 .. _test_duration_w_date_and_time_green_0:
 
@@ -146,7 +146,7 @@ green: make it pass
 
     AttributeError: module 'sleep_duration' has no attribute 'duration_a'...
 
-* I make a copy of the ``duration`` :ref:`function<functions>` in ``sleep_duration.py``, then change the name to ``duration_a`` to keep the working solution while I try a new one, and change the ``else`` block to return :ref:`None`
+* I make a copy of the ``duration`` :ref:`function<functions>` in ``sleep_duration.py``, then change the name to ``duration_a`` to keep the working solution while I try a new one, then change the ``else`` block to return :ref:`None`
 
   .. code-block:: python
 
@@ -166,7 +166,7 @@ green: make it pass
 
     ValueError: invalid literal for int() with base 10: '1999/12/31 22'
 
-  because the test calls ``get_difference`` in the expectation which uses the int_ constructor_ in its calculations
+  because the test calls ``get_difference`` in the expectation which uses the int_ constructor_
 
 * I change it to return ``wake_time`` and ``sleep_time``
 
@@ -394,7 +394,7 @@ refactor: make it better
 
     ValueError: time data '2006/11/21 16:30' does not match format '%y/%m/%d %H:%M'
 
-  I change the pattern to use ``%Y`` for the year
+  when I change the pattern to use ``%Y`` for the year
 
   .. code-block:: python
 
@@ -409,7 +409,7 @@ refactor: make it better
             )
         )
 
-  and the terminal shows green again
+  the terminal shows green again
 
 * I add calls to the `datetime.datetime.strptime`_ :ref:`method<functions>` in ``test_duration_w_date_and_time``
 
@@ -479,7 +479,7 @@ refactor: make it better
 
     NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
 
-  then I add an `import statement`_ to the top of ``sleep_duration.py``
+  I add an `import statement`_ to the top of ``sleep_duration.py``
 
   .. code-block:: python
 
@@ -580,7 +580,7 @@ red: make it fail
             )
         )
 
-  the terminal shows an :ref:`AssertionError`
+  and get an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -709,7 +709,7 @@ still green
 
   and the test passes
 
-* I add the str_ constructor to the expectation in the test because I want the result as a string_ not a `datetime.timedelta`_ object
+* I add the str_ constructor_ to the expectation in the test because I want the result as a string_ not a `datetime.timedelta`_ object
 
   .. code-block:: python
 

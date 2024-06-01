@@ -1,4 +1,4 @@
-.. include:: ../../links.rst
+.. include:: links.rst
 
 .. _review:
 
@@ -19,6 +19,6 @@ exceptions
 * What causes a :ref:`ModuleNotFoundError`?
 * What causes a NameError_?
 * What is the difference between an :ref:`AttributeError` and a NameError_?
-* What causes a :ref:`TypeError`
+* What causes a :ref:`TypeError`?
 * What data structure has an IndexError_?
 * What data structure has a KeyError_?
