@@ -14,7 +14,7 @@ This is part 5 of a program that calculates the difference between a given wake 
 
 ----
 
-I want to write the program that makes the tests in ``test_sleep_duration.py`` pass without looking at them
+I want to write a program that makes the tests in ``test_sleep_duration.py`` pass without looking at them
 
 .. _test_duration_tests_red:
 
@@ -90,13 +90,13 @@ green: make it pass
     def get_datetime():
         return None
 
-  the terminal shows another :ref:`TypeError`
+  and the terminal shows another :ref:`TypeError`
 
   .. code-block:: python
 
     TypeError: get_datetime() takes 0 positional arguments but 1 was given
 
-  I add a name to the :ref:`function<functions>` signature
+  then I add a name to the :ref:`function<functions>` signature
 
   .. code-block:: python
 
@@ -128,13 +128,13 @@ green: make it pass
     def get_datetime(argument):
         return datetime.datetime(2006, 11, 21, 19, 8)
 
-  the terminal shows a NameError_
+  and the terminal shows a NameError_
 
   .. code-block:: python
 
     NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
 
-* I add an `import statement`_ for the datetime_ :ref:`module<ModuleNotFoundError>`
+* then I add an `import statement`_ for the datetime_ :ref:`module<ModuleNotFoundError>`
 
   .. code-block:: python
 
@@ -150,7 +150,7 @@ green: make it pass
 
     AssertionError: datetime.datetime(2006, 11, 21, 19, 8) != datetime.datetime(2006, 11, 21, 0, 15)
 
-  the expected values change
+  the expected values changed
 
 * I change the `return statement`_ to show the input argument because I want to see how it is different from the expectation of the test
 
@@ -242,7 +242,7 @@ green: make it pass
 
     def duration(sleep_time, wake_time):
 
-  the terminal shows this :ref:`AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -474,7 +474,7 @@ green: make it pass
     AssertionError: datetime.timedelta(days=-1, seconds=47220) != '10:53:00'
     AssertionError: datetime.timedelta(days=-1, seconds=84840) != '0:26:00'
 
-  the test expects a string_ and the :ref:`function<functions>` returns a `datetime.timedelta`_ object, and the days are all negative. I think I am doing something wrong
+  the test expects a string_ and the :ref:`function<functions>` returns a `datetime.timedelta`_ object. The values for days are also negative. I think I am doing something wrong
 
 * I add the str_ constructor_ to match the format of the expectation
 
@@ -538,7 +538,7 @@ refactor: make it better
             timestamp, '%Y/%m/%d %H:%M'
         )
 
-  the terminal shows all tests are still passing
+  and the terminal shows all tests are still passing
 
 * I remove the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered because the program does not need it
 
