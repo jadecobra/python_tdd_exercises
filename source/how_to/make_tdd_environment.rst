@@ -10,10 +10,6 @@ how to make a python test driven development environment
 
 ----
 
-`Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ is a way of developing software with a focus on tests. I write tests for ideas to reach a goal or meet a requirement, and the results tell me if I am closer or further away from the goal. The process is repeated until I reach the goal.
-
-I recommend reading `Kent Beck’s <https://en.wikipedia.org/wiki/Kent_Beck>`_ `Test Driven Development by Example <https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk>`_ and `Martin Fowler’s <https://en.wikipedia.org/wiki/Martin_Fowler_(software_engineer)>`_ `Refactoring <https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk>`_, they both influenced the way I write programs.
-
 This chapter covers one way to make a Python Test Driven Development environment
 
 .. contents:: table of contents
@@ -76,7 +72,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
     if ``--parent`` does not work, try ``-p`` instead
 
-* I make directory to ``project_name`` with the `cd <https://man7.org/linux/man-pages/man1/cd.1p.html>`_ program
+* I change directory to ``project_name`` with the `cd <https://man7.org/linux/man-pages/man1/cd.1p.html>`_ program
 
   .. code-block:: shell
 
@@ -105,7 +101,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
     .. WARNING:: make sure you use two underscores for ``__init__.py``
 
-  - I make another empty file called ``test_project_name.py`` in the ``tests`` folder to hold the tests
+  - then make one more empty file called ``test_project_name.py`` in the ``tests`` folder to hold the tests
 
     .. code-block:: shell
 
@@ -173,8 +169,10 @@ red: make it fail
       - `assertFalse <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse>`_ is a :ref:`method<functions>` in the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class which checks if its input is :doc:`False </data_structures/booleans/booleans>` and raises an :ref:`AssertionError` when the input is not :doc:`False </data_structures/booleans/booleans>`
       - :doc:`True </data_structures/booleans/booleans>` is given as input to ``assertFalse``
 
-* I save the file and turn on the ``Auto Save`` feature in the Interactive Development Environment (IDE) to automatically save when I make a change
-* I type this in the terminal to test the code ::
+* I save the file and turn on the ``Auto Save`` feature in the Interactive Development Environment (IDE) to automatically save files when I make a change
+* I type this in the terminal to test the code
+
+  .. code-block:: python
 
     python3 -m unittest
 
@@ -249,13 +247,13 @@ green: make it pass
     # Exceptions Encountered
     # AssertionError
 
-* I make the input on line 7 to :doc:`False </data_structures/booleans/booleans>`
+* I change the input on line 7 to :doc:`False </data_structures/booleans/booleans>`
 
   .. code-block:: python
 
     self.assertFalse(False)
 
-* then run the test again from the terminal
+  then run the test again from the terminal
 
   .. code-block:: python
 
@@ -300,7 +298,7 @@ how to automatically run tests
 how to make a Virtual Environment
 ############################################################################################
 
-* With the `echo <https://man7.org/linux/man-pages/man1/echo.1.html>`_ program I make a file called ``requirements.txt`` in the ``project_name`` folder with `pytest-watch <https://pypi.org/project/pytest-watch/>`_ as the text
+* I make a file called ``requirements.txt`` in the ``project_name``
 
   .. code-block:: shell
 
@@ -311,7 +309,7 @@ how to make a Virtual Environment
   - ``>`` is an operator that is used to send output from a program to the file given
   - `pytest-watch <https://pypi.org/project/pytest-watch/>`_ is a python program that automatically runs the `pytest <https://docs.pytest.org/>`_ python package when a python file in the project changes
   - `pytest <https://docs.pytest.org/>`_ is a python package like `unittest <https://docs.python.org/3/library/unittest.html>`_ for running tests in Python
-  - ``requirements.txt`` is the name of a file where I can list required python packages for `pip <https://pypi.org/project/pip/>`_ the `python package manager <https://pypi.org/project/pip/>`_ to install later, you can use any name you like
+  - ``requirements.txt`` is the name of a file where I list required python packages for `pip <https://pypi.org/project/pip/>`_ the `python package manager <https://pypi.org/project/pip/>`_ to install later, you can use any name you like
 
 * I make a `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ with the `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ :ref:`module<ModuleNotFoundError>` from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_
 
