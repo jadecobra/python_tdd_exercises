@@ -924,7 +924,7 @@ still green
 
   this is better. I want the same thing to happen when I use a bad date for ``sleep_time``
 
-* I change ``wake_date`` back and change the date for ``sleep_time`` to cause the loop to not end, then change the `while statement`_ to call ``sleep_duration.get_datetime``
+* I change ``wake_date`` back and change the date for ``sleep_time`` to a bad date again to cause the loop to not end, then change the `while statement`_ to call ``sleep_duration.get_datetime``
 
   .. code-block:: python
 
@@ -961,7 +961,7 @@ still green
                 )
             )
 
-  the terminal shows a ValueError_
+  and the terminal shows a ValueError_
 
   .. code-block:: python
 
@@ -1081,10 +1081,8 @@ The challenge was to write a program that calculates the difference between a gi
 * `test_get_datetime`_
 * `test_duration_w_date_and_time`_ where I used
 
-  - `random.randint`_ to generate random numbers for hours and minutes
-  - that are :doc:`interpolated </how_to/pass_values>` in timestamps with given dates for ``wake_time`` and ``sleep_time``
-  - a `while statement`_ to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<functions>` raises a ValueError_ with a message
-  - and returns the right difference between the two when ``wake_time`` is later than or the same as ``sleep_time``
+  - `random.randint`_ to generate random numbers for hours and minutes that are :doc:`interpolated </how_to/pass_values>` in timestamps with given dates for ``wake_time`` and ``sleep_time``
+  - a `while statement`_ to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<functions>` raises a ValueError_ with a message and returns the right difference between the two when ``wake_time`` is later than or the same as ``sleep_time``
 
 I also encountered the following exceptions
 

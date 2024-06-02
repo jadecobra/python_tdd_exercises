@@ -848,8 +848,7 @@ The challenge is to write a program that calculates the difference between a giv
 
 * `test_duration_w_hours`_ where I
 
-  - used `random.randint`_ to generate random numbers from the 24 hours in a day
-  - and :doc:`interpolated </how_to/pass_values>` them in the timestamps
+  - used `random.randint`_ to generate random numbers from the 24 hours in a day and :doc:`interpolated </how_to/pass_values>` them in the timestamps
   - then test that the ``duration`` :ref:`function<functions>` subtracts the hour for ``sleep_time`` from the hour for ``wake_time``
 
 I also encountered the following exceptions
