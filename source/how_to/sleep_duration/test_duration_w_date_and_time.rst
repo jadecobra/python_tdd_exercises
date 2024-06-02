@@ -394,7 +394,7 @@ refactor: make it better
 
     ValueError: time data '2006/11/21 16:30' does not match format '%y/%m/%d %H:%M'
 
-  when I change the pattern to use ``%Y`` for the year
+  when I change the pattern to use ``Y`` for the year
 
   .. code-block:: python
 
@@ -491,7 +491,7 @@ refactor: make it better
 
   and the test passes
 
-* I just called `datetime.datetime.strptime`_ 5 times in a row, time to add a :ref:`function<functions>` for it
+* I just called `datetime.datetime.strptime`_ 5 times in a row with the same pattern, time to add a :ref:`function<functions>` for it
 
   .. code-block:: python
 
@@ -784,16 +784,15 @@ still green
 
   ``test_duration_w_hours_and_minutes`` does not have dates in its timestamps. I remove it because it is covered by ``test_duration_w_date_and_time``
 
-* then remove ``get_difference`` because no one calls it anymore and
+* then remove ``get_difference`` because no one calls it anymore
+* I also remove the following tests because they do not test the solution directly
 
   - ``test_the_modulo_operation``
   - ``test_floor_aka_integer_division``
   - ``test_converting_strings_to_numbers``
   - ``test_string_splitting``
 
-  because they do not test the solution directly
-
-* I remove ``random_timestamp`` and change the name of ``random_timestamp_a`` to ``random_timestamp``
+* and remove ``random_timestamp`` then change the name of ``random_timestamp_a`` to ``random_timestamp``
 * the new ``random_timestamp`` :ref:`function<functions>` always returns timestamps with the same date, I change it to take in a date as input
 
   .. code-block:: python
