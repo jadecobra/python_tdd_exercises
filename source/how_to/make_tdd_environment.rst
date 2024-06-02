@@ -453,7 +453,7 @@ You made it this far and have become the greatest programmer in the world. Follo
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-* This program will always make a project called ``project_name`` so I need to add a variable to make it make any project name I pass to the program as input. I add a variable called ``PROJECT_NAME`` which is referenced with ``$PROJECT_NAME``
+* This program will always make a project called ``project_name`` so I need to add a variable to make any project name I pass to the program as input. I add a variable called ``PROJECT_NAME`` which is referenced with ``$PROJECT_NAME``
 
   .. code-block:: shell
 
@@ -486,7 +486,7 @@ You made it this far and have become the greatest programmer in the world. Follo
 
     chmod +x makePythonTdd.sh
 
-* I can make a Test Driven Development environment on demand by giving a name for the ``PROJECT_NAME`` variable when the program is called. For example, typing this command in the terminal in the folder where ``makePythonTdd.sh`` is saved will make a Test Driven Development environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator` ::
+* I can make a Test Driven Development environment any time I want by giving a name for the ``PROJECT_NAME`` variable when the program is called. For example, typing this command in the terminal in the folder where ``makePythonTdd.sh`` is saved will make a Test Driven Development environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator` ::
 
     ./makePythonTdd.sh calculator
 
@@ -512,7 +512,7 @@ how to automatically make a python test driven development environment on window
     :language: PowerShell
 
 
-* I can make a Test Driven Development environment on demand by giving a name for the ``PROJECT_NAME`` variable when the program is called. For example, typing this command in the terminal in the folder where ``makePythonTdd.ps1`` is saved will make a Test Driven Development environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator` ::
+* I can make a Test Driven Development environment anytime I want by giving a name for the ``PROJECT_NAME`` variable when the program is called. For example, typing this command in the terminal in the folder where ``makePythonTdd.ps1`` is saved will make a Test Driven Development environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator` ::
 
     ./makePythonTdd.ps1 calculator
 
@@ -522,7 +522,7 @@ how to automatically make a python test driven development environment on window
 review
 ********************************************************************************************
 
-One of the advantages of programming is that I can take a series of steps and make them a one line command which the computer does on my behalf.
+One of the advantages of programming is that I can take a series of steps and make them a one line command which the computer does for me.
 
 You now know one way to make a Test Driven Development Environment for Python projects, and have a program to do it for you anytime you want. Happy Trails!
 
