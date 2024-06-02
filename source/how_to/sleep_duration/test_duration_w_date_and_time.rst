@@ -322,11 +322,11 @@ and it passes
 
 The `datetime.datetime.strptime`_ :ref:`method<functions>` takes 2 strings_ as inputs - a timestamp and a pattern, it returns a `datetime.datetime`_ object based on the pattern provided. The pattern provided is
 
-- ``%d`` for days
-- ``%m`` for months
-- ``%y`` for 2 digit years
-- ``%H`` for hours
-- ``%M`` for minutes
+- ``d`` for days
+- ``m`` for months
+- ``y`` for 2 digit years
+- ``H`` for hours
+- ``M`` for minutes
 
 there are more details in `strftime() and strptime() behavior <https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior>`_
 
