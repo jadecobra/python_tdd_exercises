@@ -41,7 +41,7 @@ I open a new file, save it as ``test_attribute_error.py`` in the ``tests`` folde
   import unittest
   import module
 
-* ``import unittest`` imports the `unittest <https://docs.python.org/3/library/unittest.html>`_ module from the python standard library
+* ``import unittest`` imports the unittest_ module from the python standard library
 * ``import module`` imports the ``module`` module - which will hold the code I am testing
 
 the terminal shows a :ref:`ModuleNotFoundError` if you have not yet done the :doc:`/how_to/exception_handling_tests` chapter
