@@ -364,7 +364,7 @@ refactor: make it better
     def test_duration_w_hours_and_minutes(self):
     ...
 
-  then call it in ``test_duration_w_hours_and_minutes`` to replace the expectation
+  then call it in ``test_duration_w_hours_and_minutes`` to change the expectation
 
   .. code-block:: python
 
