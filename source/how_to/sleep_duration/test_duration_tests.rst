@@ -242,38 +242,60 @@ green: make it pass
 
     def duration(sleep_time, wake_time):
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows this :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: ValueError not raised
 
-* I change the `return statement`_ to raise a ValueError_
+  or
+
+  .. code-block:: python
+
+    AssertionError: None != '2944049 days, 15:58:00'
+    AssertionError: None != '130331 days, 11:57:00'
+    AssertionError: None != '1829637 days, 5:10:00'
+    AssertionError: None != '2846203 days, 15:15:00'
+
+  it looks like the ``duration`` :ref:`function<functions>` has to make a decision based on its inputs
+
+* I change the `return statement`_ to raise a ValueError_ with the inputs or return the inputs to see the difference between them and the expected output
 
   .. code-block:: python
 
     def duration(sleep_time, wake_time):
-        raise ValueError
+        raise ValueError(sleep_time, wake_time)
 
-  and get another :ref:`AssertionError` because the message in the ValueError_ does not match the expectation of the test
+* When I raise a ValueError_ in ``duration`` I get another :ref:`AssertionError` because the message in the ValueError_ does not match the expectation of the test
 
   .. code-block:: python
 
-    AssertionError: "wake_time: "1999/12/30 12:07" is earlier than sleep_time: "1999/12/31 13:37"" does not match ""
-    AssertionError: "wake_time: "1999/12/30 05:05" is earlier than sleep_time: "1999/12/31 18:59"" does not match ""
-    AssertionError: "wake_time: "1999/12/30 02:27" is earlier than sleep_time: "1999/12/31 15:12"" does not match ""
-    AssertionError: "wake_time: "1999/12/30 19:05" is earlier than sleep_time: "1999/12/31 20:03"" does not match ""
+    AssertionError: "wake_time: "3133/04/18 05:11" is earlier than sleep_time: "6999/09/22 05:07"" does not match "('6999/09/22 05:07', '3133/04/18 05:11')"
+    AssertionError: "wake_time: "5856/04/20 15:58" is earlier than sleep_time: "7186/01/12 06:39"" does not match "('7186/01/12 06:39', '5856/04/20 15:58')"
+    AssertionError: "wake_time: "5602/08/29 05:06" is earlier than sleep_time: "8373/05/08 05:29"" does not match "('8373/05/08 05:29', '5602/08/29 05:06')"
+    AssertionError: "wake_time: "7413/05/24 15:04" is earlier than sleep_time: "8720/08/18 01:02"" does not match ""
 
-* I copy the message from the terminal, then add it to the ValueError_
+  this tells me that the test expects a message with the ValueError_, I could also get a ValueError_
+
+  .. code-block:: python
+
+    ValueError: ('0887/08/27 17:21', '5668/08/15 20:16')
+    ValueError: ('2880/08/20 10:10', '9134/08/22 20:28')
+    ValueError: ('6471/03/10 05:04', '7883/06/01 02:38')
+    ValueError: ('7370/08/12 21:34', '7937/03/27 01:58')
+
+  which does not tell me anything so I comment it out and get one of the :ref:`AssertionErrors<AssertionError>`, I can raise a ValueError_ again or try to return the inputs
+
+* When I get the error with the message about ``wake_time`` being earlier than ``sleep_time``, I copy it from the terminal, to change the ValueError_ message
 
   .. code-block:: python
 
     def duration(wake_time, sleep_time):
         raise ValueError(
-            "wake_time: "1999/12/30 19:05" is earlier than sleep_time: "1999/12/31 20:03""
+            "wake_time: "7413/05/24 15:04" is earlier than sleep_time: "8720/08/18 01:02"" does not match ""
         )
 
-  and get a SyntaxError_ with this message
+  which gives me a SyntaxError_ with this message
 
   .. code-block:: python
 
@@ -295,33 +317,52 @@ green: make it pass
     # TypeError
     # SyntaxError
 
-* then change the outer double quotes to single quotes
+  then change the outer double quotes to single quotes
 
   .. code-block:: python
 
     def duration(wake_time, sleep_time):
         raise ValueError(
-            'wake_time: "1999/12/31 19:05"'
+            'wake_time: "7413/05/24 15:04"'
             ' is earlier than '
-            'sleep_time: "1999/12/31 20:03"'
+            'sleep_time: "8720/08/18 01:02"'
         )
 
-  which gives me another :ref:`AssertionError`
+  which gives me another :ref:`AssertionError` because the timestamps in the ValueError_ message are not the same
 
   .. code-block:: python
 
-    AssertionError: "wake_time: "1999/12/31 03:18" is earlier than sleep_time: "1999/12/31 13:34"" does not match "wake_time: "30/12/99 19:05" is earlier than sleep_time: "1999/12/31 20:03""
-    AssertionError: "wake_time: "1999/12/31 04:56" is earlier than sleep_time: "1999/12/31 05:27"" does not match "wake_time: "30/12/99 19:05" is earlier than sleep_time: "1999/12/31 20:03""
-    AssertionError: "wake_time: "1999/12/31 05:58" is earlier than sleep_time: "1999/12/31 03:14"" does not match "wake_time: "30/12/99 19:05" is earlier than sleep_time: "1999/12/31 20:03""
-    AssertionError: "wake_time: "1999/12/31 22:25" is earlier than sleep_time: "1999/12/31 05:05"" does not match "wake_time: "30/12/99 19:05" is earlier than sleep_time: "1999/12/31 20:03""
+    AssertionError: "wake_time: "1184/07/11 12:07" is earlier than sleep_time: "3059/12/16 04:30"" does not match "wake_time: "0615/04/17 08:51" is earlier than sleep_time: "6631/03/18 20:25""
+    AssertionError: "wake_time: "2476/05/07 19:46" is earlier than sleep_time: "9204/03/10 20:53"" does not match "wake_time: "0615/04/17 08:51" is earlier than sleep_time: "6631/03/18 20:25""
+    AssertionError: "wake_time: "3208/04/09 09:10" is earlier than sleep_time: "3957/12/23 22:44"" does not match "wake_time: "0615/04/17 08:51" is earlier than sleep_time: "6631/03/18 20:25""
+    AssertionError: "wake_time: "7169/09/04 15:18" is earlier than sleep_time: "9367/03/02 03:17"" does not match "wake_time: "0615/04/17 08:51" is earlier than sleep_time: "6631/03/18 20:25""
 
-  the timestamps in the ValueError_ message are not the same
+  or a ValueError_
+
+  .. code-block:: python
+
+    ValueError: wake_time: "7413/05/24 15:04" is earlier than sleep_time: "8720/08/18 01:02"
+
+  which tells me nothing, so I return ``sleep_time`` and ``wake_time`` instead
+
+  .. code-block:: python
+
+    def duration(sleep_time, wake_time):
+        return (sleep_time, wake_time)
+        # raise ValueError(
+        #    'wake_time: "7413/05/24 15:04"'
+        #    ' is earlier than '
+        #    'sleep_time: "8720/08/18 01:02"'
+        # )
+
+  and get one of the :ref:`AssertionErrors<AssertionError>` I got before. I keep switching between the `return statement`_ and ``raise ValueError`` until I get the :ref:`AssertionError` that the ValueError_ messages do not match
 
 * I :doc:`interpolate</how_to/pass_values>` ``wake_time`` and ``sleep_time`` in the message
 
   .. code-block:: python
 
     def duration(wake_time, sleep_time):
+        # return (sleep_time, wake_time)
         raise ValueError(
             f'wake_time: "{wake_time}"'
             ' is earlier than '
@@ -332,14 +373,12 @@ green: make it pass
 
   .. code-block:: python
 
-    ValueError: wake_time: "1999/12/31 19:54" is earlier than sleep_time: "1999/12/31 18:12"
-    ValueError: wake_time: "1999/12/31 22:07" is earlier than sleep_time: "1999/12/31 21:33"
-    ValueError: wake_time: "1999/12/31 18:53" is earlier than sleep_time: "1999/12/31 18:01"
-    ValueError: wake_time: "1999/12/31 23:39" is earlier than sleep_time: "1999/12/31 23:16"
+    ValueError: wake_time: "9251/06/04 01:20" is earlier than sleep_time: "1034/03/24 22:35"
+    ValueError: wake_time: "2669/08/09 17:30" is earlier than sleep_time: "2520/01/27 06:40"
+    ValueError: wake_time: "3201/08/13 15:20" is earlier than sleep_time: "1074/03/31 16:44"
+    ValueError: wake_time: "9810/07/30 04:29" is earlier than sleep_time: "9792/03/04 12:44"
 
-  this is not right, the timestamps for ``wake_time`` are not earlier than ``sleep_time``, I have to add a condition to ``duration``
-
-* I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+  this is not right, the timestamps for ``wake_time`` are not earlier than ``sleep_time``, I have to add a condition to ``duration``. I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
   .. code-block:: python
 
@@ -361,42 +400,18 @@ green: make it pass
                 ' is earlier than '
                 f'sleep_time: "{sleep_time}"'
             )
-        else:
-            return None
-
-  which gives me an :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: None != '0:00:00'
-    AssertionError: None != '1:02:00'
-    AssertionError: None != '2:55:00'
-    AssertionError: None != '16:59:00'
-
-  the test expects a timestamp
-
-* I change the `return statement`_ to show its inputs. I want to see the difference between ``wake_time``, ``sleep_time`` and the expectation of the test
-
-  .. code-block:: python
-
-    def duration(sleep_time, wake_time):
-        if wake_time < sleep_time:
-            raise ValueError(
-                f'wake_time: "{wake_time}"'
-                ' is earlier than '
-                f'sleep_time: "{sleep_time}"'
-            )
-        else:
-            return (sleep_time, wake_time)
+        ')
+    else:
+        return (sleep_time, wake_time)
 
   the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: ('1999/12/31 06:44', '1999/12/31 05:33') != '1:11:00'
-    AssertionError: ('1999/12/31 17:53', '1999/12/31 11:23') != '6:30:00'
-    AssertionError: ('1999/12/31 10:25', '1999/12/31 02:15') != '8:10:00'
-    AssertionError: ('1999/12/31 19:14', '1999/12/31 10:00') != '9:14:00'
+    AssertionError: ('0435/03/20 02:03', '0711/05/03 10:35') != '100850 days, 8:32:00'
+    AssertionError: ('2544/12/29 13:05', '4351/03/05 09:47') != '659692 days, 20:42:00'
+    AssertionError: ('1583/06/02 07:48', '3962/03/06 17:07') != '868824 days, 9:19:00'
+    AssertionError: ('1820/06/12 16:07', '8786/05/18 04:27') != '2544253 days, 12:20:00'
 
   it looks like the test expects the difference between the timestamps
 
@@ -422,33 +437,7 @@ green: make it pass
 
   I still cannot subtract one string from another. I change the `return statement`_ back
 
-* then add calls to ``get_datetime``
-
-  .. code-block:: python
-
-    def duration(sleep_time, wake_time):
-        if wake_time < sleep_time:
-            raise ValueError(
-                f'wake_time: "{wake_time}"'
-                ' is earlier than '
-                f'sleep_time: "{sleep_time}"'
-            )
-        else:
-            return (
-                get_datetime(sleep_time),
-                get_datetime(wake_time)
-            )
-
-  and get an :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: (datetime.datetime(1999, 12, 31, 8, 9), datetime.datetime(1999, 12, 31, 11, 38)) != '3:29:00'
-    AssertionError: (datetime.datetime(1999, 12, 31, 14, 11),[36 chars] 34)) != '5:23:00'
-    AssertionError: (datetime.datetime(1999, 12, 31, 3, 6), datetime.datetime(1999, 12, 31, 14, 56)) != '11:50:00'
-    AssertionError: (datetime.datetime(1999, 12, 31, 5, 33), [35 chars] 48)) != '12:45:00'
-
-* I want to see what will happen when I change the return statement to a calculation
+* then add calls to ``get_datetime`` because I can do arithmetic with `datetime.datetime`_ objects
 
   .. code-block:: python
 
@@ -469,12 +458,12 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: datetime.timedelta(days=-1, seconds=72900) != '3:45:00'
-    AssertionError: datetime.timedelta(days=-1, seconds=45060) != '11:29:00'
-    AssertionError: datetime.timedelta(days=-1, seconds=47220) != '10:53:00'
-    AssertionError: datetime.timedelta(days=-1, seconds=84840) != '0:26:00'
+    AssertionError: datetime.timedelta(days=-43256, seconds=82860) != '43255 days, 0:59:00'
+    AssertionError: datetime.timedelta(days=-28643, seconds=68100) != '28642 days, 5:05:00'
+    AssertionError: datetime.timedelta(days=-744003, seconds=22500) != '744002 days, 17:45:00'
+    AssertionError: datetime.timedelta(days=-1226280, seconds=76800) != '1226279 days, 2:40:00'
 
-  the test expects a string_ and the :ref:`function<functions>` returns a `datetime.timedelta`_ object. The values for days are also negative. I think I am doing something wrong
+  the test expects a string_ and the :ref:`function<functions>` returns a `datetime.timedelta`_ object. The values for days are also negative and the test expects positive numbers for the days, I think I am doing something wrong
 
 * I add the str_ constructor_ to match the format of the expectation
 
@@ -497,12 +486,12 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: '-1 day, 23:22:00' != '0:38:00'
-    AssertionError: '-1 day, 18:41:00' != '5:19:00'
-    AssertionError: '-1 day, 21:22:00' != '2:38:00'
-    AssertionError: '-1 day, 18:27:00' != '5:33:00'
+    AssertionError: '-2681410 days, 19:19:00' != '2681409 days, 4:41:00'
+    AssertionError: '-1492190 days, 13:23:00' != '1492189 days, 10:37:00'
+    AssertionError: '-398812 days, 16:44:00' != '398811 days, 7:16:00'
+    AssertionError: '-1209690 days, 0:49:00' != '1209689 days, 23:11:00'
 
-  the ``duration`` :ref:`function<functions>` returns negative timestamps but the test expects positive timestamps
+  the ``duration`` :ref:`function<functions>` returns negative timestamps but the test expects positive timestamps, and the negative days all look like they are one number off from the expectation
 
 * I switch ``wake_time`` and ``sleep_time`` in the `return statement`_
 
