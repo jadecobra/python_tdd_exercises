@@ -1,3 +1,4 @@
+#!/bin/bash
 PROJECT_NAME=$1
 mkdir --parents $PROJECT_NAME/tests
 cd $PROJECT_NAME
