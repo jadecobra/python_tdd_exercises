@@ -12,54 +12,65 @@ how I setup my Interactive Development Environment (IDE)
 
 As of the writing of this book I use `Visual Studio Code <https://code.visualstudio.com/download>`_
 
-***************************
+.. contents:: table of contents
+  :local:
+  :depth: 2
+
+*********************************************************************************
 Screen Layout
-***************************
+*********************************************************************************
 
 I split my screen in the following ways depending on the use case
 
-- When using a reference I like to have it on the left and the Interactive Development Environment on the right. Try different layouts to see what is best for you.
+for references
+#################################################################################
 
-  .. image:: /_static/setup_my_ide/reference_on_left.png
+I put references on the left and the Interactive Development Environment on the right. Try different layouts to see what is best for you.
+
+.. image:: /_static/setup_my_ide/reference_on_left.png
+  :width: 600
+  :alt: Reference on the left
+
+
+for testing
+#################################################################################
+
+When working in the Interactive Development Environment alone I have the following windows open depending on what I want to see
+
+* explorer - to see files/folder structure
+
+  .. image:: /_static/setup_my_ide/explorer_w_editors.png
     :width: 600
-    :alt: Reference on the left
+    :alt: Explorer with Editors
 
-- When working only in the Interactive Development Environment I have the following windows open depending on what I want to see
+* editors side by side - one for tests, one for source code
 
-  * explorer - to see files/folder structure
+  .. image:: /_static/setup_my_ide/2_editors.png
+    :width: 600
+    :alt: Editors side by side
 
-    .. image:: /_static/setup_my_ide/explorer_w_editors.png
+* the terminal to show results of the tests
+
+  - at the bottom - for most cases
+
+    .. image:: /_static/setup_my_ide/terminal_on_bottom.png
       :width: 600
-      :alt: Explorer with Editors
+      :alt: Terminal Window at the bottom
 
-  * editors side by side - one for tests, one for source code
+  - to the right - when the results I am looking at in the terminal are too long to see at once in the bottom
 
-    .. image:: /_static/setup_my_ide/2_editors.png
+    .. image:: /_static/setup_my_ide/terminal_on_right.png
       :width: 600
-      :alt: Editors side by side
-
-  * the terminal to show results of the tests
-
-    - at the bottom - for most cases
-
-      .. image:: /_static/setup_my_ide/terminal_on_bottom.png
-        :width: 600
-        :alt: Terminal Window at the bottom
-
-    - to the right - when the results I am looking at in the terminal are too long to see at once in the bottom
-
-      .. image:: /_static/setup_my_ide/terminal_on_right.png
-        :width: 600
-        :alt: Terminal Window on the right
+      :alt: Terminal Window on the right
 
 This setup allows me to make comparisons by asking myself
 
 * What is similar?
 * What is different?
 
-***************************
+*********************************************************************************
 Visual Studio Extensions
-***************************
+*********************************************************************************
 
 Here are extensions I use to customize `Visual Studio Code <https://code.visualstudio.com/download>`_
 

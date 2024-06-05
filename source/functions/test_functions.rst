@@ -166,7 +166,7 @@ The 3 ways I have defined functions so far have the exact same outcome, they all
 
 Here is what I know so far from the tests
 
-* functions are defined using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword
+* functions are defined using the def_ keyword
 * functions return :ref:`None` by default
 
 Would you like to :ref:`test singleton functions?<test_singleton_functions>`

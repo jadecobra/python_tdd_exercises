@@ -33,11 +33,11 @@ requirements
 windows requirements
 #################################################################################
 
-If the operating system of your computer is Windows, use `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
+If the operating system of your computer is Windows, use `Windows Subsystem for Linux`_
 
 * click ``start``
 * type ``PowerShell`` and click to open a terminal
-* install `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_ by typing the following in the terminal
+* install `Windows Subsystem for Linux`_ by typing the following in the terminal
 
   .. code-block:: powershell
 
@@ -51,7 +51,7 @@ If the operating system of your computer is Windows, use `Windows Subsystem for 
     sudo apt full-upgrade --yes
     sudo apt install python3 python3-venv --yes
 
-* run subsequent commands in `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_ terminal
+* run subsequent commands in `Windows Subsystem for Linux`_ terminal
 
 ----
 
@@ -81,7 +81,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
 * `touch <https://man7.org/linux/man-pages/man1/touch.1.html>`_ is a program which makes an empty file when given a name
 
-  .. admonition:: If you are using Windows without `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
+  .. admonition:: If you are using Windows without `Windows Subsystem for Linux`_
 
     change ``touch`` to ``New-Item``
 
@@ -154,13 +154,13 @@ red: make it fail
 
   Here is an explanation of the code above
 
-  - ``import unittest`` imports unittest_ which is a :ref:`module<ModuleNotFoundError>` from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_ used for testing
+  - ``import unittest`` imports unittest_ which is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ used for testing
   - ``TestProjectName`` is a :doc:`class </classes/classes>` that will hold tests. `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is the python keyword for making :doc:`/classes/classes`
   - `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ is a :doc:`class </classes/classes>` defined in the unittest_ :ref:`module<ModuleNotFoundError>` which contains :doc:`methods (functions) </functions/functions>` for testing
   - ``TestProjectName`` inherits from `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_. which means it is a child of `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ that can do the same things `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ can
   - ``def test_failure`` is the definition of a test :ref:`method<functions>` to test the program I am making
 
-    * `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is the python keyword for making :ref:`functions (methods)<functions>`
+    * def_ is the python keyword for making :ref:`functions (methods)<functions>`
     * ``test_failure`` is the name of the :ref:`method<functions>`
     * ``self`` is the ``TestProjectName`` :ref:`class<classes>`. I can use ``self`` to access :doc:`methods (functions) </functions/functions>` and :ref:`attributes<AttributeError>` within the ``TestProjectName`` class, this avoids having to type ``TestProjectName().assertFalse(True)`` to access the ``assertFalse`` :ref:`method<functions>`
     * ``self.assertFalse(True)`` is the actual test. I expect this line to fail because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
@@ -224,7 +224,7 @@ This is the ``RED`` part of the Test Driven Development cycle. The error in the 
 
   - ``python3`` is the major version of python being used
   - ``-m`` is an option passed to python to call a :ref:`module<ModuleNotFoundError>` given after the option
-  - unittest_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_ used for testing
+  - unittest_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ used for testing
 
 * I write down :doc:`Exceptions </how_to/exception_handling_programs>` I encounter to become more familiar with them. Time to add :ref:`AssertionError` to the list
 
@@ -303,14 +303,14 @@ how to make a Virtual Environment
 
       echo "pytest-watch" > requirements.txt
 
-  - the command above makes a file named ``requirements.txt`` with `pytest-watch <https://pypi.org/project/pytest-watch/>`_ as the text inside it
-  - `echo <https://man7.org/linux/man-pages/man1/echo.1.html>`_ is a program that writes its given arguments to the standard output
+  - the command above makes a file named ``requirements.txt`` with `pytest-watch`_ as the text inside it
+  - echo_ is a program that writes its given arguments to the standard output
   - ``>`` is an operator that is used to send output from a program to the file given
-  - `pytest-watch <https://pypi.org/project/pytest-watch/>`_ is a python program that automatically runs the `pytest <https://docs.pytest.org/>`_ python package when a python file in the project changes
-  - `pytest <https://docs.pytest.org/>`_ is a python package like unittest_ for running tests in Python
-  - ``requirements.txt`` is the name of a file where I list required python packages for pip_ the `python package manager <https://pypi.org/project/pip/>`_ to install later, you can use any name you like
+  - `pytest-watch`_ is a python program that automatically runs the pytest_ python package when a python file in the project changes
+  - pytest_ is a python package like unittest_ for running tests in Python
+  - ``requirements.txt`` is the name of a file where I list required python packages for pip_ the `python package manager`_ to install later, you can use any name you like
 
-* I make a `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ with the `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ :ref:`module<ModuleNotFoundError>` from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_
+* I make a `virtual environment`_ with the venv_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_
 
   .. code-block:: python
 
@@ -318,27 +318,27 @@ how to make a Virtual Environment
 
   - ``python3`` is the major version of python being used
   - ``-m`` is an option passed to python to call the :ref:`module<ModuleNotFoundError>` given after the option
-  - `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_ for making `virtual environments <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ when given a name
-  - a `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ is a separate folder for dependencies of the project
+  - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ for making a `virtual environment`_ when given a name
+  - a `virtual environment`_ is a separate folder for dependencies of the project
   - ``.venv`` is the standard name for `virtual environments <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ in Python, you can use any name you like
 
-* I activate the `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ to use it ::
+* I activate the `virtual environment`_ to use it ::
 
       source .venv/bin/activate
 
-  .. admonition:: If you are using Windows without `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_ type this instead
+  .. admonition:: If you are using Windows without `Windows Subsystem for Linux`_ type this instead
 
     .. code-block::
 
       .venv/scripts/activate
 
-  the ``(.venv)`` on the far left of the command line in the terminal shows that the `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ is activated
+  the ``(.venv)`` on the far left of the command line in the terminal shows that the `virtual environment`_ is activated
 
   .. code-block:: shell
 
     (.venv) vscode ➜ .../project_name $
 
-* I upgrade pip_ the `python package manager <https://pypi.org/project/pip/>`_ to the latest version
+* I upgrade pip_ the `python package manager`_ to the latest version
 
   .. code-block:: python
 
@@ -346,7 +346,7 @@ how to make a Virtual Environment
 
   - ``python3`` is the major version of python being used
   - ``-m`` is an option passed to python to call the :ref:`module<ModuleNotFoundError>` given after the option
-  - pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_ for installing python packages
+  - pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ for installing python packages
   - ``install`` is an argument given to pip_ to install a given package name
   - ``pip`` is the package name given for pip_ to install, in this case  ``pip`` installs ``pip``
   - ``--upgrade`` is an option given to the ``install`` argument for pip_ to install the latest version of the name given
@@ -355,7 +355,7 @@ how to make a Virtual Environment
 
   .. code-block:: python
 
-    pip list
+    python3 -m pip list
 
   and the terminal shows
 
@@ -365,8 +365,9 @@ how to make a Virtual Environment
     ------- -------
     pip     24.0
 
+  you versions may vary
 
-* to install any python packages listed in ``requirements.txt`` in the `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_. In this case pip_ will install ``pytest-watch``
+* then I install the `pytest-watch`_ from the ``requirements.txt`` in the `virtual environment`_
 
   .. code-block:: python
 
@@ -374,6 +375,30 @@ how to make a Virtual Environment
 
   - ``--requirement`` is another option that can be passed to the ``install`` argument to install python packages from a given file
   - ``requirements.txt`` is the file that contains a list of libraries for pip_ to install
+
+* I use pip_ to see the packages that are now installed
+
+  .. code-block:: python
+
+    pip list
+
+  and the terminal shows this
+
+  .. code-block:: python
+
+    Package      Version
+    ------------ -------
+    colorama     0.4.6
+    docopt       0.6.2
+    iniconfig    2.0.0
+    packaging    24.0
+    pip          24.0
+    pluggy       1.5.0
+    pytest       8.2.2
+    pytest-watch 4.2.0
+    watchdog     4.0.1
+
+  your versions may vary
 
 * The folder structure now looks like this
 
@@ -410,7 +435,7 @@ how to make a Virtual Environment
 how to deactivate a virtual environment
 ############################################################################################
 
-type the following in a terminal with an active `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ ::
+type the following in a terminal with an active `virtual environment`_ ::
 
   deactivate
 
@@ -419,11 +444,11 @@ type the following in a terminal with an active `virtual environment <https://do
 how to activate a virtual environment
 ############################################################################################
 
-Make sure you are in the directory that contains the `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ for example ``project_name`` and type the following in the terminal::
+Make sure you are in the directory that contains the `virtual environment`_ for example ``project_name`` and type the following in the terminal::
 
   source .venv/bin/activate
 
-.. admonition:: If you are using Windows without `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
+.. admonition:: If you are using Windows without `Windows Subsystem for Linux`_
 
   .. code-block::
 
@@ -438,7 +463,7 @@ how to automatically make a python test driven development environment
 You made it this far and have become the greatest programmer in the world. Following the `The Do Not Repeat Yourself (DRY) Principle <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_, I would write a program that contains all the steps above. I can then use it to make a Test Driven Development Environment any time I want without having to remember each step of the process
 
 * I exit the tests in the terminal by pressing ``ctrl`` + ``c`` on the keyboard
-* I type ``deactivate`` to deactivate the `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_
+* I type ``deactivate`` to deactivate the `virtual environment`_
 * I change directory to the parent of ``project_name`` ::
 
     cd ..
@@ -511,7 +536,7 @@ how to automatically make a python test driven development environment on window
 
 .. warning::
 
-  This section only applies if you are using Windows without `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/install>`_
+  This section only applies if you are using Windows without `Windows Subsystem for Linux`_
 
 * I make a file named :ref:`makePythonTdd.ps1` by using the ``New-Item`` command in PowerShell ::
 

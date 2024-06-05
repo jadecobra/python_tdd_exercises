@@ -97,7 +97,7 @@ review
 From the tests I know
 
 * that singleton functions return the same thing every time they are called
-* functions are defined using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword
+* functions are defined using the def_ keyword
 * functions return :ref:`None` by default
 
 Would you like to :ref:`test passthrough functions?<test_passthrough_functions>`

@@ -26,7 +26,7 @@ in other words
 
 ``program`` is the ``function`` that carries out the processing of ``input_data`` to return ``output_data``
 
-``functions`` are defined using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword, a name, parentheses and a colon at the end
+``functions`` are defined using the def_ keyword, a name, parentheses and a colon at the end
 
 The following tests cover different ways to make a function
 

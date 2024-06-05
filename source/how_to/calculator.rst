@@ -173,7 +173,7 @@ green: make it pass
     # AttributeError
     # TypeError
 
-* I have to define ``add`` as a :ref:`function<functions>` or :doc:`class </classes/classes>` to make it callable. I know the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword is used for making :doc:`/functions/functions` and will test changing the ``add`` variable to a :ref:`function<functions>` in ``calculator.py``
+* I have to define ``add`` as a :ref:`function<functions>` or :doc:`class </classes/classes>` to make it callable. I know the def_ keyword is used for making :doc:`/functions/functions` and will test changing the ``add`` variable to a :ref:`function<functions>` in ``calculator.py``
 
   .. code-block:: python
 

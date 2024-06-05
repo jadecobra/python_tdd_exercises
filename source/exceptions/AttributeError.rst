@@ -343,7 +343,7 @@ green: make it pass
 
   Parentheses are used at the end of the name of an object when calling it, for example  ``module.function_0()`` will call ``function_0`` from ``module.py``
 
-* What if I make ``function_0`` in ``module.py`` to a function by using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword?
+* What if I make ``function_0`` in ``module.py`` to a function by using the def_ keyword?
 
   .. code-block:: python
 
@@ -433,7 +433,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-  I had a similar issue earlier, what if I make ``Class0`` callable_ by changing the variable to a function using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword in ``module.py``
+  I had a similar issue earlier, what if I make ``Class0`` callable_ by changing the variable to a function using the def_ keyword in ``module.py``
 
   .. code-block:: python
 
@@ -545,7 +545,7 @@ green: make it pass
 
   the terminal still shows the same error, my guess was wrong
 
-* what if I use the `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword to define ``Class`` instead of `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_?
+* what if I use the `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword to define ``Class`` instead of def_?
 
   .. code-block:: python
 
@@ -589,7 +589,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* The current solution for ``test_attribute_error_w_classes`` was done by defining functions but the test name contains ``defining_classes``, time to go back and change ``module.py`` using the `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword instead of `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
+* The current solution for ``test_attribute_error_w_classes`` was done by defining functions but the test name contains ``defining_classes``, time to go back and change ``module.py`` using the `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword instead of def_
 
   .. code-block:: python
 
@@ -679,7 +679,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* then I make ``method_0`` from an attribute to a :ref:`method<functions>` using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword to make it callable_
+* then I make ``method_0`` from an attribute to a :ref:`method<functions>` using the def_ keyword to make it callable_
 
   .. code-block:: python
 
@@ -743,5 +743,5 @@ and learned
 
 * attributes and :ref:`methods<functions>` in a :doc:`class </classes/classes>` can be accessible from outside the :doc:`class </classes/classes>`
 * attributes and :ref:`functions<functions>` in a :ref:`function<functions>` are not accessible from outside the :ref:`function<functions>`
-* keywords used to define them - `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ vs `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
+* keywords used to define them - `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ vs def_
 * naming conventions - ``CamelCase`` vs ``snake_case``

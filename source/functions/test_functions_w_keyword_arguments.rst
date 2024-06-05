@@ -341,7 +341,7 @@ From the tests I know
 * that positional arguments are represented as `tuples <https://docs.python.org/3/library/stdtypes.html#tuple>`_ with parentheses - ``()``
 * that passthrough functions return what they receive as input
 * that singleton functions return the same thing every time they are called
-* functions are defined using the `def <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword
+* functions are defined using the def_ keyword
 * functions return :ref:`None` by default
 
 Would you like to :ref:`test functions with positional and keyword arguments?<test_functions_w_positional_and_keyword_arguments>`

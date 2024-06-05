@@ -12,7 +12,9 @@
 .. _datetime.datetime: https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects
 .. _datetime.datetime.strptime: https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime.datetime.strptime
 .. _datetime.timedelta: https://docs.python.org/3/library/datetime.html?highlight=datetime#timedelta-objects
+.. _def: https://docs.python.org/3/reference/lexical_analysis.html#keywords
 .. _dir: https://docs.python.org/3/library/functions.html?highlight=dir#dir
+.. _echo: https://man7.org/linux/man-pages/man1/echo.1.html
 .. _float: https://docs.python.org/3/library/functions.html#float
 .. _floats: https://docs.python.org/3/library/functions.html#float
 .. _floor (integer) division: https://en.wikipedia.org/wiki/Division_(mathematics)#Division_in_different_contexts
@@ -22,8 +24,12 @@
 .. _integers: https://docs.python.org/3/library/functions.html?highlight=int#int
 .. _modulo: https://en.wikipedia.org/wiki/Modulo
 .. _pip: https://pypi.org/project/pip/
+.. _pytest: https://docs.pytest.org/
+.. _pytest-watch: https://pypi.org/project/pytest-watch/
+.. _python package manager: https://pypi.org/project/pip/
 .. _python documentation for strings: https://docs.python.org/3/library/string.html?highlight=string#module-string
 .. _python's online documentation: https://docs.python.org/3/search.html
+.. _python standard library: https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library
 .. _random: https://docs.python.org/3/library/random.html?highlight=random#module-random
 .. _random.randint: https://docs.python.org/3/library/random.html?highlight=random#random.randint
 .. _static method: https://docs.python.org/3/library/functions.html#staticmethod
@@ -41,6 +47,8 @@
 .. _unittest.skip decorator: https://docs.python.org/3/library/unittest.html#unittest.skip
 .. _unittest.TestCase.assertRaises: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises
 .. _unittest.TestCase.assertRaisesRegex: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertRaisesRegex
+.. _venv: https://docs.python.org/3/library/venv.html#module-venv
+.. _virtual environment: https://docs.python.org/3/glossary.html#term-virtual-environment
 .. _zero-based indexing: https://en.wikipedia.org/wiki/Zero-based_numbering
 
 .. _Exceptions: https://docs.python.org/3/library/exceptions.html?highlight=exception#Exception
