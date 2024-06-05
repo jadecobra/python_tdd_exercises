@@ -435,9 +435,9 @@ green: make it pass
 
     TypeError: unsupported operand type(s) for -: 'str' and 'str'
 
-  I still cannot subtract one string from another. I change the `return statement`_ back
+  I still cannot subtract one string from another
 
-* then add calls to ``get_datetime`` because I can do arithmetic with `datetime.datetime`_ objects
+* I change the `return statement`_ back, then add calls to ``get_datetime`` because I can do arithmetic with `datetime.datetime`_ objects
 
   .. code-block:: python
 
@@ -491,7 +491,7 @@ green: make it pass
     AssertionError: '-398812 days, 16:44:00' != '398811 days, 7:16:00'
     AssertionError: '-1209690 days, 0:49:00' != '1209689 days, 23:11:00'
 
-  the ``duration`` :ref:`function<functions>` returns negative timestamps but the test expects positive timestamps, and the negative days all look like they are one number off from the expectation
+  the ``duration`` :ref:`function<functions>` returns negative timestamps but the test expects positive timestamps, and the negative days all look like they are one number off from the expectation aside from the negative symbol
 
 * I switch ``wake_time`` and ``sleep_time`` in the `return statement`_
 
@@ -529,7 +529,7 @@ refactor: make it better
 
   and the terminal shows all tests are still passing
 
-* I remove the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered because the program does not need it
+* then I remove the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered because it was just for me
 
 *********************************************************************************
 review
