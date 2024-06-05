@@ -792,268 +792,78 @@ and the test is still green
   - ``test_string_splitting``
 
 * and remove ``random_timestamp`` then change the name of ``random_timestamp_a`` to ``random_timestamp``
-* the new ``random_timestamp`` :ref:`function<functions>` always returns timestamps with the same date, I change it to take in a date as input
+* the new ``random_timestamp`` :ref:`function<functions>` always returns timestamps with the same date, I change it to return random dates
 
   .. code-block:: python
 
     def random_timestamp(date):
         return (
-            f'{date} '
+            f'{random.randint(0,9999):04}/'
+            f'{random.randint(1,12):02}/'
+            f'{random.randint(1,31):02} '
             f'{random.randint(0,23):02}:'
             f'{random.randint(0,59):02}'
         )
 
-  and get a :ref:`TypeError`
+  and get a random ValueError_
 
   .. code-block:: python
 
-    TypeError: random_timestamp() missing 1 required positional argument: 'date'
+    ValueError: day is out of range for month
 
-  I add dates to the calls in the tests
+  I need to make sure the random dates that are created by the :ref:`function<functions>` are real dates
+
+* I change the name of ``random_timestamp`` to ``get_random_timestamp`` and create a new :ref:`function<functions>` that checks if the random timestamps generated are good
 
   .. code-block:: python
 
-    def test_get_datetime(self):
-        timestamp = random_timestamp('2006/11/21')
-        self.assertEqual(
-            sleep_duration.get_datetime(
-                timestamp
-            ),
-            datetime.datetime.strptime(
-                timestamp,
-                '%Y/%m/%d %H:%M'
-            )
+    def get_random_timestamp():
+        return (
+            f'{random.randint(0,9999):04}/'
+            f'{random.randint(1,12):02}/'
+            f'{random.randint(1,31):02} '
+            f'{random.randint(0,23):02}:'
+            f'{random.randint(0,59):02}'
         )
 
-    def test_duration_w_date_and_time(self):
-        sleep_time = random_timestamp('1999/12/31')
-        wake_time = random_timestamp('1999/12/31')
 
-        while wake_time < sleep_time:
-            self.assertWakeTimeEarlier(
-                sleep_time=sleep_time,
-                wake_time=wake_time,
-            )
-            wake_time = random_timestamp(
-                '1999/12/31'
-            )
+    def random_timestamp():
+        result = get_random_timestamp()
+        try:
+            sleep_duration.get_datetime(result)
+        except ValueError:
+            return random_timestamp()
         else:
-            self.assertEqual(
-                sleep_duration.duration(
-                    wake_time=wake_time,
-                    sleep_time=sleep_time
-                ),
-                str(
-                    sleep_duration.get_datetime(
-                        wake_time
-                    )
-                  - sleep_duration.get_datetime(
-                        sleep_time
-                    )
-                )
-            )
+            return result
 
-  and the terminal shows green again
+  and the test passes. The new ``random_timestamp`` :ref:`function<functions>` does the following
 
-* I add a variable to remove the repetition of the date for ``wake_time``
+  - generates a random timestamp by calling ``get_random_timestamp``
+  - checks to see if the timestamp is good by calling ``sleep_duration.get_datetime``
+  - if the check passes it returns the timestamp
+  - if the check raises a ValueError_ it repeats the process by calling itself
+
+* I add another :ref:`function<functions>` to remove some repetition
 
   .. code-block:: python
 
-    def test_duration_w_date_and_time(self):
-        sleep_time = random_timestamp('1999/12/31')
+    def random_number(start, end, zeros=2):
+      return f'{random.randint(start, end):0{zeros}}'
 
-        wake_date = '1999/12/31'
-        wake_time = random_timestamp(wake_date)
-
-        while wake_time < sleep_time:
-            self.assertWakeTimeEarlier(
-                wake_time=wake_time,
-                sleep_time=sleep_time
-            )
-            wake_time = random_timestamp(
-                wake_date
-            )
-        else:
-            self.assertEqual(
-                sleep_duration.duration(
-                    wake_time=wake_time,
-                    sleep_time=sleep_time
-                ),
-                str(
-                    sleep_duration.get_datetime(
-                        wake_time
-                    )
-                  - sleep_duration.get_datetime(
-                        sleep_time
-                    )
-                )
-            )
-
-* then change the date for ``sleep_time`` to test it
+  and change ``get_random_timestamp`` with calls to it
 
   .. code-block:: python
 
-    sleep_time = random_timestamp('1999/12/30')
+    def get_random_timestamp():
+        return (
+            f'{random_number(0,9999,4)}/'
+            f'{random_number(1,12)}/'
+            f'{random_number(1,31)} '
+            f'{random_number(0,23)}:'
+            f'{random_number(0,59)}'
+        )
 
-  still green. I change it to a bad date
-
-  .. code-block:: python
-
-    sleep_time = random_timestamp('1999/12/32')
-
-  and the test is stuck in a loop, this is a problem. I change the date back
-
-  .. code-block:: python
-
-    sleep_time = random_timestamp('1999/12/31')
-
-  green again
-
-* When I change ``wake_date`` to a bad date
-
-  .. code-block:: python
-
-    wake_date = '1999/12/32'
-
-  the terminal shows a ValueError_
-
-  .. code-block:: python
-
-    ValueError: time data '1999/12/32 01:11' does not match format '%Y/%m/%d %H:%M'
-
-  I like this and want the same thing to happen when I use a bad date for ``sleep_time``
-
-* I change ``wake_date`` back and change the date for ``sleep_time`` to a bad date to cause the loop not to end, then change the `while statement`_ to call ``sleep_duration.get_datetime``
-
-  .. code-block:: python
-
-    def test_duration_w_date_and_time(self):
-        sleep_time = random_timestamp('1999/12/32')
-
-        wake_date = '1999/12/31'
-        wake_time = random_timestamp(wake_date)
-
-        while (
-            sleep_duration.get_datetime(wake_time)
-          < sleep_duration.get_datetime(sleep_time)
-        ):
-            self.assertWakeTimeEarlier(
-                wake_time=wake_time,
-                sleep_time=sleep_time
-            )
-            wake_time = random_timestamp(
-                wake_date
-            )
-        else:
-            self.assertEqual(
-                sleep_duration.duration(
-                    wake_time=wake_time,
-                    sleep_time=sleep_time
-                ),
-                str(
-                    sleep_duration.get_datetime(
-                        wake_time
-                    )
-                  - sleep_duration.get_datetime(
-                        sleep_time
-                    )
-                )
-            )
-
-  and the terminal shows a ValueError_
-
-  .. code-block:: python
-
-    ValueError: time data '1999/12/32 08:15' does not match format '%Y/%m/%d %H:%M'
-    ValueError: time data '1999/12/32 09:36' does not match format '%Y/%m/%d %H:%M'
-    ValueError: time data '1999/12/32 10:27' does not match format '%Y/%m/%d %H:%M'
-    ValueError: time data '1999/12/32 19:27' does not match format '%Y/%m/%d %H:%M'
-
-  good! I want bad dates to cause an error. I change ``sleep_time`` back to a real date, and the test is green again.
-
-* I change ``wake_date`` to an earlier date than ``sleep_time``
-
-  .. code-block:: python
-
-    wake_date = '1999/12/30'
-
-  and the test is stuck in a loop because ``wake_time`` is always earlier than ``sleep_time`` when its date is earlier
-
-* I add a variable to fix this
-
-  .. code-block:: python
-
-    def test_duration_w_date_and_time(self):
-        sleep_date = '1999/12/31'
-        sleep_time = random_timestamp(sleep_date)
-
-        wake_date = '1999/12/30'
-        wake_time = random_timestamp(wake_date)
-
-        while (
-            sleep_duration.get_datetime(wake_time)
-          < sleep_duration.get_datetime(sleep_time)
-        ):
-            self.assertWakeTimeEarlier(
-                wake_time=wake_time,
-                sleep_time=sleep_time
-            )
-            wake_time = random_timestamp(
-                sleep_date
-            )
-        else:
-            self.assertEqual(
-                sleep_duration.duration(
-                    sleep_time=sleep_time,
-                    wake_time=wake_time
-                ),
-                str(
-                    sleep_duration.get_datetime(
-                        wake_time
-                    )
-                  - sleep_duration.get_datetime(
-                        sleep_time
-                    )
-                )
-            )
-
-  the loop ends and the terminal shows green again because ``wake_time`` can now be earlier, the same or later than ``sleep_time`` since it has the same date after running the ``assertWakeTimeEarlier`` test
-
-* I remove the ``wake_date`` variable because it is only used once
-
-  .. code-block:: python
-
-    def test_duration(self):
-        sleep_date = '1999/12/31'
-        sleep_time = random_timestamp(sleep_date)
-        wake_time = random_timestamp('1999/12/30')
-
-        while (
-            sleep_duration.get_datetime(wake_time)
-          < sleep_duration.get_datetime(sleep_time)
-        ):
-            self.assertWakeTimeEarlier(
-                wake_time=wake_time,
-                sleep_time=sleep_time
-            )
-            wake_time = random_timestamp(
-                sleep_date
-            )
-        else:
-            self.assertEqual(
-                sleep_duration.duration(
-                    sleep_time=sleep_time,
-                    wake_time=wake_time
-                ),
-                str(
-                    sleep_duration.get_datetime(
-                        wake_time
-                    )
-                  - sleep_duration.get_datetime(
-                        sleep_time
-                    )
-                )
-            )
+    TRY USING JOIN
 
 * then change ``test_duration_w_date_and_time`` to ``test_duration`` and the terminal shows all tests are still passing
 
@@ -1073,14 +883,11 @@ The challenge was to write a program that calculates the difference between a gi
 * :ref:`test_duration_calculation`
 * :ref:`test_duration_w_an_earlier_wake_than_sleep_time<test_duration_w_an_earlier_wake_than_sleep_time>`
 * :ref:`test_duration_w_hours_and_minutes<test_duration_w_hours_and_minutes>`
-* `test_datetime_objects`_ where I
-
-  - used `python's online documentation`_
-  - and converted a string_ to a `datetime.datetime`_ object using the `datetime.datetime.strptime`_ :ref:`method<functions>`
+* `test_datetime_objects`_ where I used `python's online documentation`_ to read about the `datetime.datetime.strptime`_ :ref:`method<functions>` which I used to convert a string_ to a `datetime.datetime`_ object
 * `test_get_datetime`_
 * `test_duration_w_date_and_time`_ where I used
 
-  - `random.randint`_ to generate random numbers for hours and minutes that are :doc:`interpolated </how_to/pass_values>` in timestamps with given dates for ``wake_time`` and ``sleep_time``
+  - `random.randint`_ to generate random numbers timestamps with dates and times that are :doc:`interpolated </how_to/pass_values>` in strings for ``wake_time`` and ``sleep_time``
   - a `while statement`_ to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<functions>` raises a ValueError_ with a message and returns the right difference between the two when ``wake_time`` is later than or the same as ``sleep_time``
 
 I also encountered the following exceptions

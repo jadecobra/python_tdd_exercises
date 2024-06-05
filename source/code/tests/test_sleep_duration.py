@@ -3,13 +3,28 @@ import random
 import sleep_duration
 import unittest
 
+def random_number(start, end, zeros=2):
+    return f'{random.randint(start, end):0{zeros}}'
 
-def random_timestamp(date):
+
+def get_random_timestamp():
     return (
-        f'{date} '
-        f'{random.randint(0,23):02}:'
-        f'{random.randint(0,59):02}'
+        f'{random_number(0,9999,4)}/'
+        f'{random_number(1,12)}/'
+        f'{random_number(1,31)} '
+        f'{random_number(0,23)}:'
+        f'{random_number(0,59)}'
     )
+
+
+def random_timestamp():
+    result = get_random_timestamp()
+    try:
+        sleep_duration.get_datetime(result)
+    except ValueError:
+        return random_timestamp()
+    else:
+        return result
 
 
 class TestSleepDuration(unittest.TestCase):
@@ -29,7 +44,7 @@ class TestSleepDuration(unittest.TestCase):
             )
 
     def test_get_datetime(self):
-        timestamp = random_timestamp('2006/11/21')
+        timestamp = random_timestamp()
         self.assertEqual(
             sleep_duration.get_datetime(
                 timestamp
@@ -41,21 +56,15 @@ class TestSleepDuration(unittest.TestCase):
         )
 
     def test_duration(self):
-        sleep_date = '1999/12/31'
-        sleep_time = random_timestamp(sleep_date)
-        wake_time = random_timestamp('1999/12/30')
+        sleep_time = random_timestamp()
+        wake_time = random_timestamp()
 
-        while (
-            sleep_duration.get_datetime(wake_time)
-          < sleep_duration.get_datetime(sleep_time)
-        ):
+        while wake_time < sleep_time:
             self.assertWakeTimeEarlier(
                 wake_time=wake_time,
                 sleep_time=sleep_time
             )
-            wake_time = random_timestamp(
-                sleep_date
-            )
+            wake_time = random_timestamp()
         else:
             self.assertEqual(
                 sleep_duration.duration(
