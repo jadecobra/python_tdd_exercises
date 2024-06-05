@@ -21,6 +21,7 @@
 .. _integer: https://docs.python.org/3/library/functions.html?highlight=int#int
 .. _integers: https://docs.python.org/3/library/functions.html?highlight=int#int
 .. _modulo: https://en.wikipedia.org/wiki/Modulo
+.. _pip: https://pypi.org/project/pip/
 .. _python documentation for strings: https://docs.python.org/3/library/string.html?highlight=string#module-string
 .. _python's online documentation: https://docs.python.org/3/search.html
 .. _random: https://docs.python.org/3/library/random.html?highlight=random#module-random

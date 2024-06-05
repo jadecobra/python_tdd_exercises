@@ -84,7 +84,7 @@ green: make it pass
     def test_duration_w_date_and_time(self):
     ...
 
-* then add an assertion to ``test_converting_strings_to_numbers`` to make the ValueError_ happen again
+* then add an assertion in ``test_converting_strings_to_numbers`` to see if I can make the ValueError_ happen again
 
   .. code-block:: python
 
@@ -146,7 +146,7 @@ green: make it pass
 
     AttributeError: module 'sleep_duration' has no attribute 'duration_a'...
 
-* I make a copy of the ``duration`` :ref:`function<functions>` in ``sleep_duration.py``, then change the name to ``duration_a`` to keep a copy of the working solution while I try a new one, and change the ``else`` block to return :ref:`None`
+* I make a copy of the ``duration`` :ref:`function<functions>` in ``sleep_duration.py``, change the name to ``duration_a`` to keep a copy of the working solution while I try a new one, and change the ``else`` block
 
   .. code-block:: python
 

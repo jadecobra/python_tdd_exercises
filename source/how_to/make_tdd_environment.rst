@@ -25,7 +25,6 @@ requirements
 * download and install `Python <https://www.python.org/downloads/>`_
 * An Interactive Development Environment (IDE). Here are a few options
 
-  - `Visual Studio Code in a Browser <http://vscode.dev>`_
   - `Visual Studio Code <https://code.visualstudio.com/download>`_ on your computer
   - `PyCharm Community Edition <https://www.jetbrains.com/pycharm/download>`_
   - `Sublime <https://www.sublimetext.com>`_
@@ -70,7 +69,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
   NOTE::
 
-    if ``--parent`` does not work, try ``-p`` instead
+    if ``--parents`` does not work, try ``-p`` instead
 
 * I change directory to ``project_name`` with the `cd <https://man7.org/linux/man-pages/man1/cd.1p.html>`_ program
 
@@ -227,11 +226,6 @@ This is the ``RED`` part of the Test Driven Development cycle. The error in the 
   - ``-m`` is an option passed to python to call a :ref:`module<ModuleNotFoundError>` given after the option
   - unittest_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_ used for testing
 
-.. _test_failure_green:
-
-green: make it pass
-#################################################################################
-
 * I write down :doc:`Exceptions </how_to/exception_handling_programs>` I encounter to become more familiar with them. Time to add :ref:`AssertionError` to the list
 
   .. code-block:: python
@@ -247,29 +241,34 @@ green: make it pass
     # Exceptions Encountered
     # AssertionError
 
-* I change the input on line 7 to :doc:`False </data_structures/booleans/booleans>`
+.. _test_failure_green:
 
-  .. code-block:: python
+green: make it pass
+#################################################################################
 
-    self.assertFalse(False)
+I change the input on line 7 to :doc:`False </data_structures/booleans/booleans>`
 
-  then run the test again from the terminal
+.. code-block:: python
 
-  .. code-block:: python
+  self.assertFalse(False)
 
-    python3 -m unittest
+then run the test again from the terminal
 
-  and the terminal shows a passing test
+.. code-block:: python
 
-  .. code-block:: python
+  python3 -m unittest
 
-    .
-    ------------------------------------------------------
-    Ran 1 test in 0.000s
+and the terminal shows a passing test
 
-    OK
+.. code-block:: python
 
-  *cue CELEBRATION MUSIC AND DANCE!* I am GREEN.
+  .
+  ------------------------------------------------------
+  Ran 1 test in 0.000s
+
+  OK
+
+*cue CELEBRATION MUSIC AND DANCE!* I am GREEN.
 
 .. _test_failure_refactor:
 
@@ -285,7 +284,7 @@ So far there is not much to improve on what has been written but there has been 
 
 * ``python3 -m unittest`` was run to see the test fail
 * ``python3 -m unittest`` was run to see the test pass
-* ``python3 -m unittest`` will be run anytime I make a change to make sure it does not break previous passing tests
+* ``python3 -m unittest`` will be run anytime I make a change to make sure it does not break tests that already passed
 
 This means ``python3 -m unittest`` is run for each part of the Test Driven Development cycle or each time there is a code change. I automate this so `I Do Not Repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_, it would be better for a program to automatically run the tests when there is a change to the code
 
@@ -309,7 +308,7 @@ how to make a Virtual Environment
   - ``>`` is an operator that is used to send output from a program to the file given
   - `pytest-watch <https://pypi.org/project/pytest-watch/>`_ is a python program that automatically runs the `pytest <https://docs.pytest.org/>`_ python package when a python file in the project changes
   - `pytest <https://docs.pytest.org/>`_ is a python package like unittest_ for running tests in Python
-  - ``requirements.txt`` is the name of a file where I list required python packages for `pip <https://pypi.org/project/pip/>`_ the `python package manager <https://pypi.org/project/pip/>`_ to install later, you can use any name you like
+  - ``requirements.txt`` is the name of a file where I list required python packages for pip_ the `python package manager <https://pypi.org/project/pip/>`_ to install later, you can use any name you like
 
 * I make a `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ with the `venv <https://docs.python.org/3/library/venv.html#module-venv>`_ :ref:`module<ModuleNotFoundError>` from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_
 
@@ -339,7 +338,7 @@ how to make a Virtual Environment
 
     (.venv) vscode ➜ .../project_name $
 
-* I upgrade `pip <https://pypi.org/project/pip/>`_ the `python package manager <https://pypi.org/project/pip/>`_ to the latest version
+* I upgrade pip_ the `python package manager <https://pypi.org/project/pip/>`_ to the latest version
 
   .. code-block:: python
 
@@ -347,19 +346,34 @@ how to make a Virtual Environment
 
   - ``python3`` is the major version of python being used
   - ``-m`` is an option passed to python to call the :ref:`module<ModuleNotFoundError>` given after the option
-  - `pip <https://pypi.org/project/pip/>`_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_ for installing python packages
-  - ``install`` is an argument given to `pip <https://pypi.org/project/pip/>`_ to install a given package name
-  - ``pip`` is the package name given for `pip <https://pypi.org/project/pip/>`_ to install, in this case  ``pip`` installs ``pip``
-  - ``--upgrade`` is an option given to the ``install`` argument for `pip <https://pypi.org/project/pip/>`_ to install the latest version of the name given
+  - pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library <https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library>`_ for installing python packages
+  - ``install`` is an argument given to pip_ to install a given package name
+  - ``pip`` is the package name given for pip_ to install, in this case  ``pip`` installs ``pip``
+  - ``--upgrade`` is an option given to the ``install`` argument for pip_ to install the latest version of the name given
 
-* After upgrading, I use `pip <https://pypi.org/project/pip/>`_ to install any python packages listed in ``requirements.txt`` in the `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_. In this case `pip <https://pypi.org/project/pip/>`_ will install ``pytest-watch``
+* After upgrading, I use pip_ to see the packages that are already installed in the virtual environment
+
+  .. code-block:: python
+
+    pip list
+
+  and the terminal shows
+
+  .. code-block:: shell
+
+    Package Version
+    ------- -------
+    pip     24.0
+
+
+* to install any python packages listed in ``requirements.txt`` in the `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_. In this case pip_ will install ``pytest-watch``
 
   .. code-block:: python
 
       python3 -m pip install --requirement requirements.txt
 
   - ``--requirement`` is another option that can be passed to the ``install`` argument to install python packages from a given file
-  - ``requirements.txt`` is the file that contains a list of libraries for `pip <https://pypi.org/project/pip/>`_ to install
+  - ``requirements.txt`` is the file that contains a list of libraries for pip_ to install
 
 * The folder structure now looks like this
 
@@ -425,7 +439,7 @@ You made it this far and have become the greatest programmer in the world. Follo
 
 * I exit the tests in the terminal by pressing ``ctrl`` + ``c`` on the keyboard
 * I type ``deactivate`` to deactivate the `virtual environment <https://docs.python.org/3/glossary.html#term-virtual-environment>`_
-* I make directory to the parent of ``project_name`` ::
+* I change directory to the parent of ``project_name`` ::
 
     cd ..
 
