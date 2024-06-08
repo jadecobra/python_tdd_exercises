@@ -51,7 +51,7 @@ If the operating system of your computer is Windows, use `Windows Subsystem Linu
     sudo apt full-upgrade --yes
     sudo apt install python3 python3-venv --yes
 
-* run subsequent commands in `Windows Subsystem Linux`_ terminal
+* run commands in a `Windows Subsystem Linux`_ terminal
 
 ----
 
@@ -91,7 +91,8 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
         touch project_name.py
 
-  - tests will be stored in the ``tests`` folder to separate them from the source code (the actual program)
+    tests will be stored in the ``tests`` folder to separate them from the source code (the actual program)
+
   - I make another empty file called ``__init__.py`` in the ``tests`` folder to tell Python that the ``tests`` folder is a python `package <https://docs.python.org/3/glossary.html#term-regular-package>`_
 
     .. code-block:: shell
@@ -100,7 +101,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
     .. WARNING:: make sure you use two underscores for ``__init__.py``
 
-  - then make one more empty file called ``test_project_name.py`` in the ``tests`` folder to hold the tests
+  - I make one more empty file called ``test_project_name.py`` in the ``tests`` folder
 
     .. code-block:: shell
 
@@ -155,17 +156,18 @@ red: make it fail
   Here is an explanation of the code above
 
   - ``import unittest`` imports unittest_ which is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ used for testing
-  - ``TestProjectName`` is a :doc:`class </classes/classes>` that will hold tests. `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is the python keyword for making :doc:`/classes/classes`
+  - ``TestProjectName`` is a :doc:`class </classes/classes>` that will hold tests
+  - `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is the python keyword for making :doc:`/classes/classes`
   - `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ is a :doc:`class </classes/classes>` defined in the unittest_ :ref:`module<ModuleNotFoundError>` which contains :doc:`methods (functions) </functions/functions>` for testing
-  - ``TestProjectName`` inherits from `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_. which means it is a child of `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ that can do the same things `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ can
+  - ``TestProjectName`` inherits from `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_, it is a child or clone of `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ that can do the same things as `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_
   - ``def test_failure`` is the definition of a test :ref:`method<functions>` to test the program I am making
 
     * def_ is the python keyword for making :ref:`functions (methods)<functions>`
     * ``test_failure`` is the name of the :ref:`method<functions>`
-    * ``self`` is the ``TestProjectName`` :ref:`class<classes>`. I can use ``self`` to access :doc:`methods (functions) </functions/functions>` and :ref:`attributes<AttributeError>` within the ``TestProjectName`` class, this avoids having to type ``TestProjectName().assertFalse(True)`` to access the ``assertFalse`` :ref:`method<functions>`
+    * ``self`` is the ``TestProjectName`` :ref:`class<classes>`. I can use ``self`` to access :doc:`methods (functions) </functions/functions>` and :ref:`attributes<AttributeError>` of the ``TestProjectName`` class, without having to type ``TestProjectName().assertFalse(True)`` to access the ``assertFalse`` :ref:`method<functions>`
     * ``self.assertFalse(True)`` is the actual test. I expect this line to fail because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
 
-      - `assertFalse <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse>`_ is a :ref:`method<functions>` in the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class which checks if its input is :doc:`False </data_structures/booleans/booleans>` and raises an :ref:`AssertionError` when the input is not :doc:`False </data_structures/booleans/booleans>`
+      - `assertFalse <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse>`_ is a :ref:`method<functions>` in the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`class </classes/classes>` that checks if its input is :doc:`False </data_structures/booleans/booleans>` and raises an :ref:`AssertionError` when it is not
       - :doc:`True </data_structures/booleans/booleans>` is given as input to ``assertFalse``
 
 * I save the file and turn on the ``Auto Save`` feature in the Interactive Development Environment (IDE) to automatically save files when I make a change
