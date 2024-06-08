@@ -59,7 +59,7 @@ red: make it fail
                 )
             )
 
-  and get a ValueError_
+  which gives me a ValueError_
 
   .. code-block:: python
 
@@ -146,7 +146,7 @@ green: make it pass
 
     AttributeError: module 'sleep_duration' has no attribute 'duration_a'...
 
-* I make a copy of the ``duration`` :ref:`function<functions>` in ``sleep_duration.py``, change the name to ``duration_a`` to keep a copy of the working solution while I try a new one, and change the ``else`` block
+* I make a copy of the ``duration`` :ref:`function<functions>` in ``sleep_duration.py`` and change the name to ``duration_a`` to keep the working solution while I try a new one, then change the ``else`` block
 
   .. code-block:: python
 
@@ -160,13 +160,13 @@ green: make it pass
         else:
             return None
 
-  the terminal still shows the same ValueError_ as before
+  and the terminal shows a ValueError_
 
   .. code-block:: python
 
     ValueError: invalid literal for int() with base 10: '1999/12/31 22'
 
-  because the test calls ``get_difference`` in the expectation which uses the int_ constructor_
+  this time because the test calls the ``get_difference`` :ref:`method<functions>` in the expectation which uses the int_ constructor_
 
 * I change it to return ``wake_time`` and ``sleep_time``
 
@@ -200,7 +200,7 @@ green: make it pass
     AssertionError: None != ('1999/12/31 13:10', '1999/12/31 12:00')
     AssertionError: None != ('1999/12/31 16:41', '1999/12/31 12:35')
 
-  then change the `return statement`_ in ``duration_a``
+  I change the `return statement`_ in ``duration_a``
 
   .. code-block:: python
 
@@ -335,7 +335,7 @@ there are more details in `strftime() and strptime() behavior <https://docs.pyth
 refactor: make it better
 ---------------------------------------------------------------------------------
 
-* I change the order of the date to test the pattern
+* I change the order in the date to test the pattern
 
   .. code-block:: python
 
