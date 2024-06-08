@@ -199,7 +199,9 @@ green: make it pass
 
     NameError: name 'duration' is not defined
 
-* then assign the name to :ref:`None` to define it
+  I have done this dance before
+
+* I assign the name to :ref:`None` to define it
 
   .. code-block:: python
 
@@ -275,7 +277,7 @@ green: make it pass
     AssertionError: "wake_time: "5602/08/29 05:06" is earlier than sleep_time: "8373/05/08 05:29"" does not match "('8373/05/08 05:29', '5602/08/29 05:06')"
     AssertionError: "wake_time: "7413/05/24 15:04" is earlier than sleep_time: "8720/08/18 01:02"" does not match ""
 
-  this tells me that the test expects a message with the ValueError_, I could also get a ValueError_
+  this tells me that the test expects a message with the ValueError_, or I get a ValueError_
 
   .. code-block:: python
 
@@ -378,7 +380,7 @@ green: make it pass
     ValueError: wake_time: "3201/08/13 15:20" is earlier than sleep_time: "1074/03/31 16:44"
     ValueError: wake_time: "9810/07/30 04:29" is earlier than sleep_time: "9792/03/04 12:44"
 
-  this is not right, the timestamps for ``wake_time`` are not earlier than ``sleep_time``, I have to add a condition to ``duration``. I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+  this is not right, the timestamps for ``wake_time`` are not earlier than ``sleep_time``, I have to add a condition to the ``duration`` :ref:`function<functions>`. I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
   .. code-block:: python
 
@@ -491,7 +493,7 @@ green: make it pass
     AssertionError: '-398812 days, 16:44:00' != '398811 days, 7:16:00'
     AssertionError: '-1209690 days, 0:49:00' != '1209689 days, 23:11:00'
 
-  the ``duration`` :ref:`function<functions>` returns negative timestamps but the test expects positive timestamps, and the negative days all look like they are one number off from the expectation aside from the negative symbol
+  the ``duration`` :ref:`function<functions>` returns negative timestamps but the test expects positive timestamps, and the negative days all look like they are one number off from the expectation
 
 * I switch ``wake_time`` and ``sleep_time`` in the `return statement`_
 

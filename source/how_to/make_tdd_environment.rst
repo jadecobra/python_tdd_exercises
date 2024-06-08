@@ -25,7 +25,7 @@ requirements
 * download and install `Python <https://www.python.org/downloads/>`_
 * An Interactive Development Environment (IDE). Here are a few options
 
-  - `Visual Studio Code <https://code.visualstudio.com/download>`_ on your computer
+  - `Visual Studio Code <https://code.visualstudio.com/download>`_
   - `PyCharm Community Edition <https://www.jetbrains.com/pycharm/download>`_
   - `Sublime <https://www.sublimetext.com>`_
   - `Other Interactive Development Environment (IDE) options <https://wiki.python.org/moin/IntegratedDevelopmentEnvironments>`_
@@ -33,11 +33,11 @@ requirements
 windows requirements
 #################################################################################
 
-If the operating system of your computer is Windows, use `Windows Subsystem for Linux`_
+If the operating system of your computer is Windows, use `Windows Subsystem Linux`_
 
 * click ``start``
 * type ``PowerShell`` and click to open a terminal
-* install `Windows Subsystem for Linux`_ by typing the following in the terminal
+* install `Windows Subsystem Linux`_ by typing the following in the terminal
 
   .. code-block:: powershell
 
@@ -51,7 +51,7 @@ If the operating system of your computer is Windows, use `Windows Subsystem for 
     sudo apt full-upgrade --yes
     sudo apt install python3 python3-venv --yes
 
-* run subsequent commands in `Windows Subsystem for Linux`_ terminal
+* run subsequent commands in `Windows Subsystem Linux`_ terminal
 
 ----
 
@@ -81,7 +81,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
 * `touch <https://man7.org/linux/man-pages/man1/touch.1.html>`_ is a program which makes an empty file when given a name
 
-  .. admonition:: If you are using Windows without `Windows Subsystem for Linux`_
+  .. admonition:: If you are using Windows without `Windows Subsystem Linux`_
 
     change ``touch`` to ``New-Item``
 
@@ -326,7 +326,7 @@ how to make a Virtual Environment
 
       source .venv/bin/activate
 
-  .. admonition:: If you are using Windows without `Windows Subsystem for Linux`_ type this instead
+  .. admonition:: If you are using Windows without `Windows Subsystem Linux`_ type this instead
 
     .. code-block::
 
@@ -448,7 +448,7 @@ Make sure you are in the directory that contains the `virtual environment`_ for 
 
   source .venv/bin/activate
 
-.. admonition:: If you are using Windows without `Windows Subsystem for Linux`_
+.. admonition:: If you are using Windows without `Windows Subsystem Linux`_
 
   .. code-block::
 
@@ -538,7 +538,7 @@ how to automatically make a python test driven development environment on window
 
 .. warning::
 
-  This section only applies if you are using Windows without `Windows Subsystem for Linux`_
+  This section only applies if you are using Windows without `Windows Subsystem Linux`_
 
 * I make a file named :ref:`makePythonTdd.ps1` by using the ``New-Item`` command in PowerShell ::
 
