@@ -56,7 +56,7 @@ If the operating system of your computer is Windows, use `Windows Subsystem Linu
 ----
 
 ********************************************************************************************
-how to make a python test driven development environment
+setup
 ********************************************************************************************
 
 I open a terminal in the Interactive Development Environment (IDE) and type the following commands to make the project
