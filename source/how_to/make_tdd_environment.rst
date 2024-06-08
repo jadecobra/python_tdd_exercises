@@ -565,7 +565,7 @@ review
 
 One of the advantages of programming is that I can take a series of steps and make them a one line command which the computer does for me.
 
-You now know one way to make a Test Driven Development Environment for Python projects, and have a program to do it for you anytime you want. Happy Trails!
+You now know one way to make a Test Driven Development Environment for Python projects, and have a program to do it for you anytime you want
 
 Would you like to test :doc:`/how_to/calculator`?
 

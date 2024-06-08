@@ -65,7 +65,7 @@ When working in the Interactive Development Environment alone I have the followi
 
 This setup allows me to make comparisons by asking myself
 
-* What is similar?
+* what is the same?
 * What is different?
 
 *********************************************************************************

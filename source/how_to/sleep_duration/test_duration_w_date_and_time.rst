@@ -68,7 +68,7 @@ red: make it fail
     ValueError: invalid literal for int() with base 10: '1999/12/31 11'
     ValueError: invalid literal for int() with base 10: '1999/12/31 21'
 
-  the test calls ``duration``, which calls ``read_timestamp``, which calls the int_ constructor_ to convert the timestamp string_ to a number after it calls `str.split`_, but it is not in the right format
+  the test calls ``duration``, which calls ``read_timestamp``, that uses the int_ constructor_ to convert the timestamp string_ to a number after it calls `str.split`_, but it is not in the right format
 
 .. _test_duration_w_date_and_time_green_0:
 
@@ -84,7 +84,7 @@ green: make it pass
     def test_duration_w_date_and_time(self):
     ...
 
-* then add an assertion in ``test_converting_strings_to_numbers`` to see if I can make the ValueError_ happen again
+* then add an assertion in ``test_converting_strings_to_numbers`` to see if I can make the same ValueError_ happen again
 
   .. code-block:: python
 
@@ -320,13 +320,13 @@ I copy the value on the left side of the :ref:`AssertionError` to change the exp
 
 and it passes
 
-The `datetime.datetime.strptime`_ :ref:`method<functions>` takes 2 strings_ as inputs - a timestamp and a pattern, it returns a `datetime.datetime`_ object based on the pattern provided. The pattern provided is
+The `datetime.datetime.strptime`_ :ref:`method<functions>` returns a `datetime.datetime`_ object when given 2 strings_ as inputs - a timestamp and a pattern that represents the timestamp. The pattern provided is
 
-- ``d`` for days
-- ``m`` for months
-- ``y`` for 2 digit years
-- ``H`` for hours
-- ``M`` for minutes
+- ``%d`` for days
+- ``%m`` for months
+- ``%y`` for 2 digit years
+- ``%H`` for hours
+- ``%M`` for minutes
 
 there are more details in `strftime() and strptime() behavior <https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior>`_
 
@@ -394,7 +394,7 @@ refactor: make it better
 
     ValueError: time data '2006/11/21 16:30' does not match format '%y/%m/%d %H:%M'
 
-  when I change the pattern to use ``Y`` for the year
+  and when I change the pattern to use ``%Y`` for the year
 
   .. code-block:: python
 
@@ -791,7 +791,8 @@ and the test is still green
   - ``test_converting_strings_to_numbers``
   - ``test_string_splitting``
 
-* and remove ``random_timestamp`` then change the name of ``random_timestamp_a`` to ``random_timestamp``
+* and remove ``random_timestamp`` because no one calls it anymore
+* then change the name of ``random_timestamp_a`` to ``random_timestamp``
 * the new ``random_timestamp`` :ref:`function<functions>` always returns timestamps with the same date, I change it to return random dates
 
   .. code-block:: python
@@ -847,10 +848,10 @@ and the test is still green
 
   .. code-block:: python
 
-    def random_number(start, end, zeros=2):
-      return f'{random.randint(start, end):0{zeros}}'
+    def random_number(start, end, digits=2):
+        return f'{random.randint(start, end):0{digits}}'
 
-  and change ``get_random_timestamp`` with calls to it
+  then add calls to it in ``get_random_timestamp``
 
   .. code-block:: python
 
@@ -863,9 +864,8 @@ and the test is still green
             f'{random_number(0,59)}'
         )
 
-    TRY USING JOIN
-
-* then change ``test_duration_w_date_and_time`` to ``test_duration`` and the terminal shows all tests are still passing
+  all tests are still green
+* I change ``test_duration_w_date_and_time`` to ``test_duration`` and the terminal shows all tests are still passing
 
 .. _sleep_duration_review:
 
@@ -887,7 +887,7 @@ The challenge was to write a program that calculates the difference between a gi
 * `test_get_datetime`_
 * `test_duration_w_date_and_time`_ where I used
 
-  - `random.randint`_ to generate random numbers timestamps with dates and times that are :doc:`interpolated </how_to/pass_values>` in strings for ``wake_time`` and ``sleep_time``
+  - `random.randint`_ to generate random numbers for timestamps with dates and times that are :doc:`interpolated </how_to/pass_values>` in strings for ``wake_time`` and ``sleep_time``
   - a `while statement`_ to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<functions>` raises a ValueError_ with a message and returns the right difference between the two when ``wake_time`` is later than or the same as ``sleep_time``
 
 I also encountered the following exceptions

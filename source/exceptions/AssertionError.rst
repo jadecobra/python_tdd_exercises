@@ -38,7 +38,7 @@ I can also test how the program behaves when it is given inputs using ``assert``
 
 These assertions help catch bugs that break previous tested behavior when introduced, as well as answer the following questions
 
-* What is similar?
+* what is the same?
 * What is different?
 
 A difference between my expectations and reality (what happens when I run the program) gives me a clue about what changes are needed to make them match

@@ -3,8 +3,9 @@ import random
 import sleep_duration
 import unittest
 
-def random_number(start, end, zeros=2):
-    return f'{random.randint(start, end):0{zeros}}'
+def random_number(start, end, digits=2):
+    return f'{random.randint(start, end):0{digits}}'
+
 
 
 def get_random_timestamp():
