@@ -37,13 +37,13 @@ If the operating system of your computer is Windows, use `Windows Subsystem Linu
 
 * click ``start``
 * type ``PowerShell`` and click to open a terminal
-* install `Windows Subsystem Linux`_ by typing the following in the terminal
+* install `Windows Subsystem Linux`_ by typing the following in a PowerShell_ terminal
 
   .. code-block:: powershell
 
     wsl --install --distribution debian
 
-* after installation run the following to install python
+* after installation run the following in a bash_ terminal to install python
 
   .. code-block:: shell
 
@@ -51,7 +51,7 @@ If the operating system of your computer is Windows, use `Windows Subsystem Linu
     sudo apt full-upgrade --yes
     sudo apt install python3 python3-venv --yes
 
-* run commands in a `Windows Subsystem Linux`_ terminal
+* run the rest of the commands in this chapter in a bash_ terminal
 
 ----
 
@@ -495,7 +495,7 @@ You made it this far and have become the greatest programmer in the world. Follo
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-  ``#!/bin/bash`` is a shebang_ line that tells the computer to use PowerShell_ to run the program
+  ``#!/bin/bash`` is a shebang_ line that tells the computer to use bash_ to run the program
 
 * This program will always make a project called ``project_name`` so I need to add a variable to make any project name I pass to the program as input. I add a variable called ``PROJECT_NAME`` which is referenced with ``$PROJECT_NAME``
 
@@ -556,7 +556,7 @@ how to automatically make a python test driven development environment on window
     :linenos:
     :language: PowerShell
 
-  ``#!/usr/bin/pwsh`` is a shebang_ line that tells the computer to use the bash_ shell to run the program
+  ``#!/usr/bin/pwsh`` is a shebang_ line that tells the computer to use the PowerShell_ shell to run the program
 
 * I can make a Test Driven Development environment anytime I want by giving a name for the ``PROJECT_NAME`` variable when the program is called. For example, typing this command in the terminal in the folder where ``makePythonTdd.ps1`` is saved will make a Test Driven Development environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator` ::
 
