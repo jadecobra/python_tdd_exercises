@@ -15,6 +15,7 @@
 .. _datetime.datetime: https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects
 .. _datetime.datetime.strptime: https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime.datetime.strptime
 .. _datetime.timedelta: https://docs.python.org/3/library/datetime.html?highlight=datetime#timedelta-objects
+.. _Debian: https://www.debian.org
 .. _def: https://docs.python.org/3/reference/lexical_analysis.html#keywords
 .. _dir: https://docs.python.org/3/library/functions.html?highlight=dir#dir
 .. _echo: https://man7.org/linux/man-pages/man1/echo.1.html
@@ -75,3 +76,4 @@
 .. _Windows Subsystem Linux: https://learn.microsoft.com/en-us/windows/wsl/install
 .. _The Abstraction Principle: https://en.wikipedia.org/wiki/Abstraction_principle_(computer_programming)
 .. _The Do Not Repeat Yourself (DRY) Principle: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
+.. _Linux distributions: https://en.wikipedia.org/wiki/List_of_Linux_distributions

@@ -43,7 +43,7 @@ If the operating system of your computer is Windows, use `Windows Subsystem Linu
 
     wsl --install --distribution debian
 
-* after installation run the following in a bash_ terminal to install python
+* run the following in a bash_ terminal to install python after installing Debian_ or any of the `Linux distributions`_
 
   .. code-block:: shell
 
