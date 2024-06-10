@@ -54,7 +54,7 @@ classes/classes                          classes                                
     how_to/exception_handling_programs       how to handle Exceptions in programs    : how_to/exception_handling_programs.html
     how_to/exception_handling_tests          how to test that an Exception is raised : how_to/exception_handling_tests.html
     how_to/pass_values                       how to pass values                      : how_to/pass_values.html
-    how_to/setup_my_ide                      How I setup my Interactive Development Environment (IDE): how_to/setup_my_ide.html
+    how_to/setup_my_ide                      How I setup my Integrated Development Environment (IDE): how_to/setup_my_ide.html
     how_to/sleep_duration                    how to measure sleep duration           : how_to/sleep_duration.html
     index                                    Pumping Python: how to solve problems with Test Driven Development: index.html
     learning_models                          how to measure learning                 : learning_models.html
@@ -106,7 +106,7 @@ std:label
     genindex                                 Index                                   : genindex.html
     green: make it pass                     green: make it pass                    : how_to/calculator.html#id14
     green: make it pass                      GREEN: make it pass                     : how_to/sleep_duration.html#id19
-    how i setup my interactive development environment (ide) How I setup my Interactive Development Environment (IDE): how_to/setup_my_ide.html#how-i-setup-my-interactive-development-environment-ide
+    how i setup my Integrated Development Environment (ide) How I setup my Integrated Development Environment (IDE): how_to/setup_my_ide.html#how-i-setup-my-interactive-development-environment-ide
     how to access dictionary values          how to access dictionary values         : data_structures/dictionaries.html#how-to-access-dictionary-values
     how to activate a virtual environment    how to Activate a Virtual Environment   : how_to/make_tdd_environment.html#how-to-activate-a-virtual-environment
     how to add an item to a list             how to add an item to a list            : data_structures/lists/lists.html#how-to-add-an-item-to-a-list

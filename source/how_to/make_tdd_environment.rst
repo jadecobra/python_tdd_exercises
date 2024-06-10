@@ -23,12 +23,12 @@ requirements
 *********************************************************************************
 
 * download and install `Python <https://www.python.org/downloads/>`_
-* An Interactive Development Environment (IDE). Here are a few options
+* An Integrated Development Environment (IDE). Here are a few options
 
   - `Visual Studio Code <https://code.visualstudio.com/download>`_
   - `PyCharm Community Edition <https://www.jetbrains.com/pycharm/download>`_
-  - `Sublime <https://www.sublimetext.com>`_
-  - `Other Interactive Development Environment (IDE) options <https://wiki.python.org/moin/IntegratedDevelopmentEnvironments>`_
+  - `Sublime Text <https://www.sublimetext.com>`_
+  - `Other Integrated Development Environment (IDE) options <https://wiki.python.org/moin/IntegratedDevelopmentEnvironments>`_
 
 windows requirements
 #################################################################################
@@ -59,9 +59,9 @@ If the operating system of your computer is Windows, use `Windows Subsystem Linu
 setup
 ********************************************************************************************
 
-I open a terminal in the Interactive Development Environment (IDE) and type the following commands to make the project
+I open a terminal in the Integrated Development Environment (IDE) and type the following commands to make the project
 
-* I use `mkdir <https://man7.org/linux/man-pages/man1/mkdir.1.html>`_ with the ``-p/--parents`` option to make a directory for the project with a child directory called ``tests`` inside it
+* I use mkdir_ with the ``-p/--parents`` option to make a directory for the project with a child directory called ``tests`` inside it
 
   .. code-block:: shell
 
@@ -71,7 +71,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
     if ``--parents`` does not work, try ``-p`` instead
 
-* I change directory to ``project_name`` with the `cd <https://man7.org/linux/man-pages/man1/cd.1p.html>`_ program
+* I change directory to ``project_name`` with the cd_ program
 
   .. code-block:: shell
 
@@ -79,7 +79,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
   this is where all the code for the project will stay
 
-* `touch <https://man7.org/linux/man-pages/man1/touch.1.html>`_ is a program which makes an empty file when given a name
+* touch_ is a program which makes an empty file when given a name
 
   .. admonition:: If you are using Windows without `Windows Subsystem Linux`_
 
@@ -93,7 +93,7 @@ I open a terminal in the Interactive Development Environment (IDE) and type the 
 
     tests will be stored in the ``tests`` folder to separate them from the source code (the actual program)
 
-  - I make another empty file called ``__init__.py`` in the ``tests`` folder to tell Python that the ``tests`` folder is a python `package <https://docs.python.org/3/glossary.html#term-regular-package>`_
+  - I make another empty file called ``__init__.py`` in the ``tests`` folder to tell Python that the ``tests`` folder is a python package_
 
     .. code-block:: shell
 
@@ -138,7 +138,7 @@ The Test Driven Development cycle is ``RED GREEN REFACTOR``
 red: make it fail
 ############################################################################################
 
-* I open up ``project_name/tests/test_project_name.py`` in the Interactive Development Environment (IDE) and type the following
+* I open up ``project_name/tests/test_project_name.py`` in the Integrated Development Environment (IDE) and type the following
 
     the line numbers below are a guide, you do not need to copy them
 
@@ -157,9 +157,9 @@ red: make it fail
 
   - ``import unittest`` imports unittest_ which is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ used for testing
   - ``TestProjectName`` is a :doc:`class </classes/classes>` that will hold tests
-  - `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is the python keyword for making :doc:`/classes/classes`
-  - `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ is a :doc:`class </classes/classes>` defined in the unittest_ :ref:`module<ModuleNotFoundError>` which contains :doc:`methods (functions) </functions/functions>` for testing
-  - ``TestProjectName`` inherits from `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_, it is a child or clone of `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ that can do the same things as `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_
+  - :doc:`class </classes/classes>` is the python keyword for making :doc:`/classes/classes`
+  - `unittest.TestCase`_ is a :doc:`class </classes/classes>` defined in the unittest_ :ref:`module<ModuleNotFoundError>` which contains :doc:`methods (functions) </functions/functions>` for testing
+  - ``TestProjectName`` inherits from `unittest.TestCase`_, it is a child or clone of `unittest.TestCase`_ that can do the same things as `unittest.TestCase`_
   - ``def test_failure`` is the definition of a test :ref:`method<functions>` to test the program I am making
 
     * def_ is the python keyword for making :ref:`functions (methods)<functions>`
@@ -167,10 +167,10 @@ red: make it fail
     * ``self`` is the ``TestProjectName`` :ref:`class<classes>`. I can use ``self`` to access :doc:`methods (functions) </functions/functions>` and :ref:`attributes<AttributeError>` of the ``TestProjectName`` class, without having to type ``TestProjectName().assertFalse(True)`` to access the ``assertFalse`` :ref:`method<functions>`
     * ``self.assertFalse(True)`` is the actual test. I expect this line to fail because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
 
-      - `assertFalse <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse>`_ is a :ref:`method<functions>` in the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`class </classes/classes>` that checks if its input is :doc:`False </data_structures/booleans/booleans>` and raises an :ref:`AssertionError` when it is not
+      - assertFalse_ is a :ref:`method<functions>` in the `unittest.TestCase`_ :doc:`class </classes/classes>` that checks if its input is :doc:`False </data_structures/booleans/booleans>` and raises an :ref:`AssertionError` when it is not
       - :doc:`True </data_structures/booleans/booleans>` is given as input to ``assertFalse``
 
-* I save the file and turn on the ``Auto Save`` feature in the Interactive Development Environment (IDE) to automatically save files when I make a change
+* I save the file and turn on the ``Auto Save`` feature in the Integrated Development Environment (IDE) to automatically save files when I make a change
 * I type this in the terminal to test the code
 
   .. code-block:: python
@@ -204,14 +204,14 @@ This is the ``RED`` part of the Test Driven Development cycle. The error in the 
 * ``AssertionError: True is not false`` The error is an :ref:`AssertionError` which is raised by python when an assert statement is :doc:`False </data_structures/booleans/booleans>`. In this case the error is raised because ``True is not false``
 * ``self.assertFalse(True)`` is the line of code that caused the failure
 
-  - ``assertFalse`` is a :ref:`method<functions>` in the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :doc:`class </classes/classes>` which checks if its input is :doc:`False </data_structures/booleans/booleans>`
+  - ``assertFalse`` is a :ref:`method<functions>` in the `unittest.TestCase`_ :doc:`class </classes/classes>` which checks if its input is :doc:`False </data_structures/booleans/booleans>`
   - :doc:`True </data_structures/booleans/booleans>` is given as input to ``assertFalse`` and the statement raises an :ref:`AssertionError` because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
 
 * ``File ".../project_name/tests/test_project_name.py", line 7, in test_failure`` is the line number and location of the file where the :ref:`AssertionError` occurred.
 
   .. tip::
 
-    Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click with your mouse on ``File ".../project_name/tests/test_project_name.py", line 7, in test_failure`` in the terminal and the Interactive Development Environment (IDE) will place the cursor at the position in the file where the error occurred
+    Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click with your mouse on ``File ".../project_name/tests/test_project_name.py", line 7, in test_failure`` in the terminal and the Integrated Development Environment (IDE) will place the cursor at the position in the file where the error occurred
 
 * ``Traceback (most recent call last):`` all the indented information shown after this line is the ``traceback`` showing the most recent call python made last
 * ``FAIL: test_failure (tests.TestProjectName.test_failure)`` is a header with information about the test
@@ -279,8 +279,8 @@ refactor: make it better
 
 I can make code better by using
 
-* `The Abstraction Principle <https://en.wikipedia.org/wiki/Abstraction_principle_(computer_programming)>`_ or
-* `The Do Not Repeat Yourself (DRY) Principle <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
+* `The Abstraction Principle`_ or
+* `The Do Not Repeat Yourself (DRY) Principle`_
 
 So far there is not much to improve on what has been written but there has been repetition
 
@@ -462,7 +462,7 @@ Make sure you are in the directory that contains the `virtual environment`_ for 
 how to automatically make a python test driven development environment
 ********************************************************************************************
 
-You made it this far and have become the greatest programmer in the world. Following the `The Do Not Repeat Yourself (DRY) Principle <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_, I would write a program that contains all the steps above. I can then use it to make a Test Driven Development Environment any time I want without having to remember each step of the process
+You made it this far and have become the greatest programmer in the world. Following the `The Do Not Repeat Yourself (DRY) Principle`_, I would write a program that contains all the steps above. I can then use it to make a Test Driven Development Environment any time I want without having to remember each step of the process
 
 * I exit the tests in the terminal by pressing ``ctrl`` + ``c`` on the keyboard
 * I type ``deactivate`` to deactivate the `virtual environment`_
@@ -478,7 +478,7 @@ You made it this far and have become the greatest programmer in the world. Follo
 
     touch makePythonTdd.sh
 
-* I open the file in the Interactive Development Environment (IDE) and copy each command shown in the terminal from ``history`` except ``python3 -m unittest`` since I want the tests to run automatically
+* I open the file in the Integrated Development Environment (IDE) and copy each command shown in the terminal from ``history`` except ``python3 -m unittest`` since I want the tests to run automatically
 
   .. code-block:: ruby
 

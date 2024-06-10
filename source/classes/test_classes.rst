@@ -126,7 +126,7 @@ refactor: make it better
 Here is a quick review of what has happened so far
 
 * `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is a placeholder
-* ``self.assertIsInstance`` is a `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :ref:`method<functions>` that checks if the first input to the :ref:`method<functions>` is an instance of the second input
+* ``self.assertIsInstance`` is a `unittest.TestCase`_ :ref:`method<functions>` that checks if the first input to the :ref:`method<functions>` is an instance of the second input
 * the test ``self.assertIsInstance(classes.ClassWithPass(), object)`` checks if ``ClassWithPass`` is an `object <https://docs.python.org/3/glossary.html#term-object>`_
 * in Python everything is an `object <https://docs.python.org/3/glossary.html#term-object>`_ , which means if it exists in Python there is a class definition for it somewhere or it inherits from a class
 

@@ -34,7 +34,7 @@ requirements
 red: make it fail
 *********************************************************************************
 
-Open a new file in the Interactive Development Environment editor and save it as ``test_module_not_found_error.py`` in the ``tests`` folder made from :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>`
+Open a new file in the Integrated Development Environment editor and save it as ``test_module_not_found_error.py`` in the ``tests`` folder made from :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>`
 
 Type the following in the file
 

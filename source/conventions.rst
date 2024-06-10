@@ -67,7 +67,7 @@ Enclosures must be closed once open, which means they happen in pairs for exampl
   []
   {}
 
-Your Interactive Development Environment (IDE) will take care of this for you
+Your Integrated Development Environment (IDE) will take care of this for you
 
 .. _conventions_quotes:
 

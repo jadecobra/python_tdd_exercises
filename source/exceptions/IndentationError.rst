@@ -274,4 +274,4 @@ Indentation matters in Python because it is how blocks of code are segmented. Wh
 
 This helps with reading the code so I can tell what belongs to a namespace the same way curly braces do for languages that use them for that purpose.
 
-Interactive Development Environments have gotten a lot better and automatically indent code for you using the convention of the language you are writing, which saves time spent counting the number of spaces to indent
+Integrated Development Environments have gotten a lot better and automatically indent code for you using the convention of the language you are writing, which saves time spent counting the number of spaces to indent

@@ -547,7 +547,7 @@ I want a test for the ``get_datetime`` :ref:`function<functions>` so I change ``
           )
       )
 
-this test always uses the same timestamp, I want it to use random timestamps. I change the expectation to use `datetime.datetime.strptime`_
+I change the expectation to use `datetime.datetime.strptime`_
 
 .. code-block:: python
 
@@ -562,7 +562,7 @@ this test always uses the same timestamp, I want it to use random timestamps. I 
           )
       )
 
-then add a variable with a random timestamp
+then add a variable for a random timestamp
 
 .. code-block:: python
 
@@ -772,7 +772,7 @@ and the test is still green
 
     AttributeError: module 'sleep_duration' has no attribute 'duration'...
 
-* I change the name of ``duration_a`` to ``duration`` in ``sleep_duration.py`` and ``test_sleep_duration.py`` and the terminal shows a ValueError_
+* I change the name of ``duration_a`` to ``duration`` in ``sleep_duration.py`` and ``test_sleep_duration.py`` which leaves me with a ValueError_
 
   .. code-block:: python
 
@@ -793,7 +793,7 @@ and the test is still green
 
 * and remove ``random_timestamp`` because no one calls it anymore
 * then change the name of ``random_timestamp_a`` to ``random_timestamp``
-* the new ``random_timestamp`` :ref:`function<functions>` always returns timestamps with the same date, I change it to return random dates
+* the new ``random_timestamp`` :ref:`function<functions>` always returns timestamps with the same date, I change it to return random dates as well
 
   .. code-block:: python
 

@@ -77,7 +77,7 @@ green: make it pass
         def test_attribute_error_w_variables(self):
             module.variable_0
 
-  - ``class TestAttributeErrors(unittest.TestCase):`` is a class definition that inherits from `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ and will hold the tests
+  - ``class TestAttributeErrors(unittest.TestCase):`` is a class definition that inherits from `unittest.TestCase`_ and will hold the tests
   - ``def test_attribute_error_w_variables(self):`` is the definition of the first test function to find out if defining variables can solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
   - ``module.variable_0`` - the actual test, I think of this as making a phone call to ``variable_0`` in ``module.py``
 
@@ -545,7 +545,7 @@ green: make it pass
 
   the terminal still shows the same error, my guess was wrong
 
-* what if I use the `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword to define ``Class`` instead of def_?
+* what if I use the :doc:`class </classes/classes>` keyword to define ``Class`` instead of def_?
 
   .. code-block:: python
 
@@ -589,7 +589,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* The current solution for ``test_attribute_error_w_classes`` was done by defining functions but the test name contains ``defining_classes``, time to go back and change ``module.py`` using the `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword instead of def_
+* The current solution for ``test_attribute_error_w_classes`` was done by defining functions but the test name contains ``defining_classes``, time to go back and change ``module.py`` using the :doc:`class </classes/classes>` keyword instead of def_
 
   .. code-block:: python
 
@@ -743,5 +743,5 @@ and learned
 
 * attributes and :ref:`methods<functions>` in a :doc:`class </classes/classes>` can be accessible from outside the :doc:`class </classes/classes>`
 * attributes and :ref:`functions<functions>` in a :ref:`function<functions>` are not accessible from outside the :ref:`function<functions>`
-* keywords used to define them - `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ vs def_
+* keywords used to define them - :doc:`class </classes/classes>` vs def_
 * naming conventions - ``CamelCase`` vs ``snake_case``

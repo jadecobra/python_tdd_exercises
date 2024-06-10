@@ -7,6 +7,8 @@
 .. _assertRaises: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises
 .. _assertRaisesRegex: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertRaisesRegex
 .. _callable: https://docs.python.org/3/glossary.html#term-callable
+.. _cd: https://man7.org/linux/man-pages/man1/cd.1p.html
+.. _class: https://docs.python.org/3/reference/lexical_analysis.html#keywords
 .. _constructor: https://en.wikipedia.org/wiki/Constructor_(object-oriented_programming)
 .. _datetime: https://docs.python.org/3/library/datetime.html?highlight=time%20difference#module-datetime
 .. _datetime.datetime: https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects
@@ -22,7 +24,9 @@
 .. _int: https://docs.python.org/3/library/functions.html?highlight=int#int
 .. _integer: https://docs.python.org/3/library/functions.html?highlight=int#int
 .. _integers: https://docs.python.org/3/library/functions.html?highlight=int#int
+.. _mkdir: https://man7.org/linux/man-pages/man1/mkdir.1.html
 .. _modulo: https://en.wikipedia.org/wiki/Modulo
+.. _package: https://docs.python.org/3/glossary.html#term-regular-package
 .. _pip: https://pypi.org/project/pip/
 .. _pytest: https://docs.pytest.org/
 .. _pytest-watch: https://pypi.org/project/pytest-watch/
@@ -40,11 +44,15 @@
 .. _string: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
 .. _string interpolation: https://peps.python.org/pep-0498/
 .. _strings: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
+.. _touch: https://man7.org/linux/man-pages/man1/touch.1.html
 .. _tuple: https://docs.python.org/3/library/stdtypes.html#tuples
 .. _tuples: https://docs.python.org/3/library/stdtypes.html#tuples
 .. _unittest: https://docs.python.org/3/library/unittest.html
 .. _unittest.TestCase.maxDiff: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff
 .. _unittest.skip decorator: https://docs.python.org/3/library/unittest.html#unittest.skip
+.. _unittest.TestCase: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase
+.. _assertFalse: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse
+.. _unittest.TestCase.assertFalse: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse
 .. _unittest.TestCase.assertRaises: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises
 .. _unittest.TestCase.assertRaisesRegex: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertRaisesRegex
 .. _venv: https://docs.python.org/3/library/venv.html#module-venv
@@ -61,3 +69,5 @@
 .. _ValueError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError
 
 .. _Windows Subsystem Linux: https://learn.microsoft.com/en-us/windows/wsl/install
+.. _The Abstraction Principle: https://en.wikipedia.org/wiki/Abstraction_principle_(computer_programming)
+.. _The Do Not Repeat Yourself (DRY) Principle: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself

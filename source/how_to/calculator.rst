@@ -137,7 +137,7 @@ green: make it pass
     # NameError
     # AttributeError
 
-* then open ``calculator.py`` in the Interactive Development Environment (IDE) and type the name ``add``
+* then open ``calculator.py`` in the Integrated Development Environment (IDE) and type the name ``add``
 
   .. code-block:: python
 
@@ -459,7 +459,7 @@ refactor: make it better
             )
 
   - all tests are still passing, so my change did not break anything. Fantastic!
-  - The ``x`` and ``y`` variables are initialized once as :doc:`class </classes/classes>` attributes (variables) and accessed later in every test using ``self.x`` and ``self.y``, the same way I can call `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ :ref:`methods<functions>` like `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ by using assertEqual_
+  - The ``x`` and ``y`` variables are initialized once as :doc:`class </classes/classes>` attributes (variables) and accessed later in every test using ``self.x`` and ``self.y``, the same way I can call `unittest.TestCase`_ :ref:`methods<functions>` like `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ by using assertEqual_
 
 
 ----

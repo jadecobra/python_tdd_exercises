@@ -117,7 +117,7 @@ the test passes because the assert statement is now true since :doc:`False </dat
 refactor: make it better
 #################################################################################
 
-I can also make assertions with some :ref:`methods<functions>` from the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ class
+I can also make assertions with some :ref:`methods<functions>` from the `unittest.TestCase`_ class
 
 
 * red: make it fail
@@ -253,7 +253,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
 * red: make it fail
 
-  I add a failing line using the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ method
+  I add a failing line using the `unittest.TestCase`_ method
 
   .. code-block:: python
 
@@ -494,7 +494,7 @@ refactor: make it better
 
 * red: make it fail
 
-  I add a line with the `unittest.TestCase <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase>`_ method for equality testing
+  I add a line with the `unittest.TestCase`_ method for equality testing
 
   .. code-block:: python
 
@@ -687,7 +687,7 @@ If you have been typing along *WELL DONE!* Your magic powers are growing. From t
 
   - `assertIsNone <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNone>`_ - is this thing :ref:`None`? (try saying that 10 times fast)
   - `assertIsNotNone <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNotNone>`_ - is this thing not :ref:`None`?
-  - `assertFalse <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse>`_ - is this thing :doc:`False </data_structures/booleans/booleans>`?
+  - `unittest.TestCase.assertFalse`_ - is this thing :doc:`False </data_structures/booleans/booleans>`?
   - `assertTrue <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertTrue>`_ - is this thing :doc:`True </data_structures/booleans/booleans>`?
   - `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ - are these two things equal?
   - `assertNotEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotEqual>`_ - are these two things not equal?

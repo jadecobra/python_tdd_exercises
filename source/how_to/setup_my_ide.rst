@@ -1,7 +1,7 @@
 .. include:: ../links.rst
 
 #################################################################################
-how I setup my Interactive Development Environment (IDE)
+how I setup my Integrated Development Environment (IDE)
 #################################################################################
 
 .. raw:: html
@@ -25,7 +25,7 @@ I split my screen in the following ways depending on the use case
 for references
 #################################################################################
 
-I put references on the left and the Interactive Development Environment on the right. Try different layouts to see what is best for you.
+I put references on the left and the Integrated Development Environment on the right. Try different layouts to see what is best for you.
 
 .. image:: /_static/setup_my_ide/reference_on_left.png
   :width: 600
@@ -35,7 +35,7 @@ I put references on the left and the Interactive Development Environment on the 
 for testing
 #################################################################################
 
-When working in the Interactive Development Environment alone I have the following windows open depending on what I want to see
+When working in the Integrated Development Environment alone I have the following windows open depending on what I want to see
 
 * explorer - to see files/folder structure
 
