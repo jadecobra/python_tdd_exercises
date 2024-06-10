@@ -470,7 +470,7 @@ You made it this far and have become the greatest programmer in the world. Follo
 
     cd ..
 
-* I use the `history <https://man7.org/linux/man-pages/man3/history.3.html>`_ program to list the commands I typed earlier in the terminal as a reference for the program ::
+* I use the history_ program to list the commands I typed earlier in the terminal as a reference for the program ::
 
     history
 
@@ -494,6 +494,8 @@ You made it this far and have become the greatest programmer in the world. Follo
     python3 -m pip install --upgrade pip
     python3 -m pip install --requirement requirements.txt
     pytest-watch
+
+  ``#!/bin/bash`` is a shebang_ line that tells the computer to use PowerShell_ to run the program
 
 * This program will always make a project called ``project_name`` so I need to add a variable to make any project name I pass to the program as input. I add a variable called ``PROJECT_NAME`` which is referenced with ``$PROJECT_NAME``
 
@@ -554,6 +556,7 @@ how to automatically make a python test driven development environment on window
     :linenos:
     :language: PowerShell
 
+  ``#!/usr/bin/pwsh`` is a shebang_ line that tells the computer to use the bash_ shell to run the program
 
 * I can make a Test Driven Development environment anytime I want by giving a name for the ``PROJECT_NAME`` variable when the program is called. For example, typing this command in the terminal in the folder where ``makePythonTdd.ps1`` is saved will make a Test Driven Development environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator` ::
 

@@ -6,6 +6,7 @@
 .. _assertEqual: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertEqual
 .. _assertRaises: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises
 .. _assertRaisesRegex: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertRaisesRegex
+.. _bash https://www.gnu.org/software/bash/
 .. _callable: https://docs.python.org/3/glossary.html#term-callable
 .. _cd: https://man7.org/linux/man-pages/man1/cd.1p.html
 .. _class: https://docs.python.org/3/reference/lexical_analysis.html#keywords
@@ -21,6 +22,7 @@
 .. _floats: https://docs.python.org/3/library/functions.html#float
 .. _floor (integer) division: https://en.wikipedia.org/wiki/Division_(mathematics)#Division_in_different_contexts
 .. _help system: https://docs.python.org/3/library/functions.html?highlight=dir#help
+.. _history: https://man7.org/linux/man-pages/man3/history.3.html
 .. _int: https://docs.python.org/3/library/functions.html?highlight=int#int
 .. _integer: https://docs.python.org/3/library/functions.html?highlight=int#int
 .. _integers: https://docs.python.org/3/library/functions.html?highlight=int#int
@@ -34,11 +36,13 @@
 .. _python documentation for strings: https://docs.python.org/3/library/string.html?highlight=string#module-string
 .. _python's online documentation: https://docs.python.org/3/search.html
 .. _python standard library: https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library
+.. _PowerShell: https://learn.microsoft.com/en-us/powershell/
 .. _random: https://docs.python.org/3/library/random.html?highlight=random#module-random
 .. _random.randint: https://docs.python.org/3/library/random.html?highlight=random#random.randint
 .. _static method: https://docs.python.org/3/library/functions.html#staticmethod
 .. _set: https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
 .. _sets: https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
+.. _shebang: https://en.wikipedia.org/wiki/Shebang_(Unix)
 .. _str.split: https://docs.python.org/3/library/stdtypes.html#str.split
 .. _str: https://docs.python.org/3/library/stdtypes.html#str
 .. _string: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str

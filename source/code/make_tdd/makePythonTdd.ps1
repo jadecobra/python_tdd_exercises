@@ -1,3 +1,4 @@
+#!/usr/bin/pwsh
 $projectName=$args[0]
 mkdir -p $projectName/tests
 Set-Location $projectName
