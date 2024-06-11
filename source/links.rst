@@ -6,7 +6,7 @@
 .. _assertEqual: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertEqual
 .. _assertRaises: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises
 .. _assertRaisesRegex: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertRaisesRegex
-.. _bash https://www.gnu.org/software/bash/
+.. _bash: https://www.gnu.org/software/bash/
 .. _callable: https://docs.python.org/3/glossary.html#term-callable
 .. _cd: https://man7.org/linux/man-pages/man1/cd.1p.html
 .. _class: https://docs.python.org/3/reference/lexical_analysis.html#keywords
@@ -29,7 +29,8 @@
 .. _integers: https://docs.python.org/3/library/functions.html?highlight=int#int
 .. _mkdir: https://man7.org/linux/man-pages/man1/mkdir.1.html
 .. _modulo: https://en.wikipedia.org/wiki/Modulo
-.. _package: https://docs.python.org/3/glossary.html#term-regular-package
+.. _python package: https://docs.python.org/3/glossary.html#term-regular-package
+.. _python packages: https://docs.python.org/3/glossary.html#term-regular-package
 .. _pip: https://pypi.org/project/pip/
 .. _pytest: https://docs.pytest.org/
 .. _pytest-watch: https://pypi.org/project/pytest-watch/

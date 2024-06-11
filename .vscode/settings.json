@@ -2,6 +2,7 @@
     "esbonio.sphinx.confDir": "${workspaceFolder}/source",
     "esbonio.sphinx.buildDir": "${workspaceFolder}/build/html",
     "cSpell.words": [
+        "_bash",
         "HOWTOs"
     ],
 }

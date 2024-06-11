@@ -51,7 +51,7 @@ If the operating system of your computer is Windows, use `Windows Subsystem Linu
     sudo apt full-upgrade --yes
     sudo apt install python3 python3-venv --yes
 
-* run the rest of the commands in this chapter in a bash_ terminal
+  run the rest of the commands in this chapter in a bash_ terminal
 
 ----
 
@@ -67,19 +67,19 @@ I open a terminal in the Integrated Development Environment (IDE) and type the f
 
     mkdir --parents project_name/tests
 
-  NOTE::
+  .. admonition:: if ``--parents`` does not work
 
-    if ``--parents`` does not work, try ``-p`` instead
+    try ``-p``
 
 * I change directory to ``project_name`` with the cd_ program
 
   .. code-block:: shell
 
-      cd project_name
+    cd project_name
 
   this is where all the code for the project will stay
 
-* touch_ is a program which makes an empty file when given a name
+* touch_ is a program that makes an empty file when given a name
 
   .. admonition:: If you are using Windows without `Windows Subsystem Linux`_
 
@@ -89,23 +89,21 @@ I open a terminal in the Integrated Development Environment (IDE) and type the f
 
     .. code-block:: shell
 
-        touch project_name.py
+      touch project_name.py
 
-    tests will be stored in the ``tests`` folder to separate them from the source code (the actual program)
-
-  - I make another empty file called ``__init__.py`` in the ``tests`` folder to tell Python that the ``tests`` folder is a python package_
+  - tests will be stored in the ``tests`` folder to separate them from the source code (the actual program). I make another empty file called ``__init__.py`` in the ``tests`` folder to tell Python that it is a `python package`_
 
     .. code-block:: shell
 
-        touch tests/__init__.py
+      touch tests/__init__.py
 
     .. WARNING:: make sure you use two underscores for ``__init__.py``
 
-  - I make one more empty file called ``test_project_name.py`` in the ``tests`` folder
+  - then make one more empty file called ``test_project_name.py`` in the ``tests`` folder
 
     .. code-block:: shell
 
-        touch tests/test_project_name.py
+      touch tests/test_project_name.py
 
 * Here is what the folder structure looks like
 
@@ -201,10 +199,10 @@ This is the ``RED`` part of the Test Driven Development cycle. The error in the 
 
 * ``FAILED (failures=1)`` there is one failure
 * ``Ran 1 test in 0.000s`` how long it took the test to run
-* ``AssertionError: True is not false`` The error is an :ref:`AssertionError` which is raised by python when an assert statement is :doc:`False </data_structures/booleans/booleans>`. In this case the error is raised because ``True is not false``
+* ``AssertionError: True is not false`` The error is an :ref:`AssertionError` that is raised by python when an assert statement is :doc:`False </data_structures/booleans/booleans>`. In this case the error is raised because ``True is not false``
 * ``self.assertFalse(True)`` is the line of code that caused the failure
 
-  - ``assertFalse`` is a :ref:`method<functions>` in the `unittest.TestCase`_ :doc:`class </classes/classes>` which checks if its input is :doc:`False </data_structures/booleans/booleans>`
+  - ``assertFalse`` is a :ref:`method<functions>` in the `unittest.TestCase`_ :doc:`class </classes/classes>` that checks if its input is :doc:`False </data_structures/booleans/booleans>`
   - :doc:`True </data_structures/booleans/booleans>` is given as input to ``assertFalse`` and the statement raises an :ref:`AssertionError` because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
 
 * ``File ".../project_name/tests/test_project_name.py", line 7, in test_failure`` is the line number and location of the file where the :ref:`AssertionError` occurred.
@@ -228,7 +226,7 @@ This is the ``RED`` part of the Test Driven Development cycle. The error in the 
   - ``-m`` is an option passed to python to call a :ref:`module<ModuleNotFoundError>` given after the option
   - unittest_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ used for testing
 
-* I write down :doc:`Exceptions </how_to/exception_handling_programs>` I encounter to become more familiar with them. Time to add :ref:`AssertionError` to the list
+* I recommend you write down :doc:`Exceptions </how_to/exception_handling_programs>` you meet on this journey to become more familiar with them. Time to add :ref:`AssertionError` to the list
 
   .. code-block:: python
 
@@ -275,7 +273,7 @@ and the terminal shows a passing test
 .. _test_failure_refactor:
 
 refactor: make it better
-#################################################################################
+############################################################################################
 
 I can make code better by using
 
@@ -308,9 +306,9 @@ how to make a Virtual Environment
   - the command above makes a file named ``requirements.txt`` with `pytest-watch`_ as the text inside it
   - echo_ is a program that writes its given arguments to the standard output
   - ``>`` is an operator that is used to send output from a program to the file given
-  - `pytest-watch`_ is a python program that automatically runs the pytest_ python package when a python file in the project changes
-  - pytest_ is a python package like unittest_ for running tests in Python
-  - ``requirements.txt`` is the name of a file where I list required python packages for pip_ the `python package manager`_ to install later, you can use any name you like
+  - `pytest-watch`_ is a python program that automatically runs the pytest_ `python package`_ when a python file in the project changes
+  - pytest_ is a `python package`_ like unittest_ for running tests in Python
+  - ``requirements.txt`` is the name of a file where I list required `python packages`_ for pip_ the `python package manager`_ to install later, you can use any name you like
 
 * I make a `virtual environment`_ with the venv_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_
 
@@ -344,11 +342,9 @@ how to make a Virtual Environment
 
   .. code-block:: python
 
-      python3 -m pip install --upgrade pip
+    pip install --upgrade pip
 
-  - ``python3`` is the major version of python being used
-  - ``-m`` is an option passed to python to call the :ref:`module<ModuleNotFoundError>` given after the option
-  - pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ for installing python packages
+  - pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that installs `python packages`_
   - ``install`` is an argument given to pip_ to install a given package name
   - ``pip`` is the package name given for pip_ to install, in this case  ``pip`` installs ``pip``
   - ``--upgrade`` is an option given to the ``install`` argument for pip_ to install the latest version of the name given
@@ -357,7 +353,7 @@ how to make a Virtual Environment
 
   .. code-block:: python
 
-    python3 -m pip list
+    pip list
 
   and the terminal shows
 
@@ -367,15 +363,15 @@ how to make a Virtual Environment
     ------- -------
     pip     24.0
 
-  you versions may vary
+  your versions may vary
 
-* then I install the `pytest-watch`_ from the ``requirements.txt`` in the `virtual environment`_
+* then I install the `pytest-watch`_ package and its dependencies from the ``requirements.txt`` in the `virtual environment`_
 
   .. code-block:: python
 
-      python3 -m pip install --requirement requirements.txt
+      pip install --requirement requirements.txt
 
-  - ``--requirement`` is another option that can be passed to the ``install`` argument to install python packages from a given file
+  - ``--requirement`` is another option that can be passed to the ``install`` argument to install `python packages`_ from a given file
   - ``requirements.txt`` is the file that contains a list of libraries for pip_ to install
 
 * I use pip_ to see the packages that are now installed
@@ -497,7 +493,7 @@ You made it this far and have become the greatest programmer in the world. Follo
 
   ``#!/bin/bash`` is a shebang_ line that tells the computer to use bash_ to run the program
 
-* This program will always make a project called ``project_name`` so I need to add a variable to make any project name I pass to the program as input. I add a variable called ``PROJECT_NAME`` which is referenced with ``$PROJECT_NAME``
+* This program will always make a project called ``project_name`` so I need to add a variable to make any project name I pass to the program as input. I add a variable called ``PROJECT_NAME`` that is referenced with ``$PROJECT_NAME``
 
   .. code-block:: shell
 
@@ -538,7 +534,7 @@ You made it this far and have become the greatest programmer in the world. Follo
 ----
 
 how to automatically make a python test driven development environment on windows without WSL
-###################################################################################################
+############################################################################################
 
 .. warning::
 
@@ -568,7 +564,7 @@ how to automatically make a python test driven development environment on window
 review
 ********************************************************************************************
 
-One of the advantages of programming is that I can take a series of steps and make them a one line command which the computer does for me.
+One of the advantages of programming is that I can take a series of steps and make them a one line command for the computer to do for me.
 
 You now know one way to make a Test Driven Development Environment for Python projects, and have a program to do it for you anytime you want
 
