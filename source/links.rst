@@ -77,3 +77,9 @@
 .. _The Abstraction Principle: https://en.wikipedia.org/wiki/Abstraction_principle_(computer_programming)
 .. _The Do Not Repeat Yourself (DRY) Principle: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
 .. _Linux distributions: https://en.wikipedia.org/wiki/List_of_Linux_distributions
+
+.. _Visual Studio Code: https://code.visualstudio.com/download
+.. _Dark Rainbow Theme: https://marketplace.visualstudio.com/items?itemName=DarkRainbow.darkrainbow
+.. _indent-rainbow: https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow
+.. _Black Formatter: https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter
+.. _Code Spell Checker: https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker

@@ -22,7 +22,7 @@ It was introduced in :doc:`how to make a python test driven development environm
 
   self.assertFalse(True)
 
-which is similar to
+which is like
 
 .. code-block:: python
 
@@ -98,7 +98,7 @@ red: make it fail
 
     tests/test_assertion_error.py:7: AssertionError
 
-  - This `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ is raised by the line ``assert False is None`` which is similar to asking the question "is False the same as None?"
+  - This `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ is raised by the line ``assert False is None`` which is like asking the question "is False the same as None?"
   - The difference is that the ``assert`` at the beginning of the line makes the statement more like "DO NOT PROCEED UNLESS :doc:`False </data_structures/booleans/booleans>` is :ref:`None`"
   - Since :ref:`None` and :doc:`False </data_structures/booleans/booleans>` are not equal, the ``assert`` statement is :doc:`False </data_structures/booleans/booleans>` and python raises an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 

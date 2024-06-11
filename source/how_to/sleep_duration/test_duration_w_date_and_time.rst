@@ -146,7 +146,7 @@ green: make it pass
 
     AttributeError: module 'sleep_duration' has no attribute 'duration_a'...
 
-* I make a copy of the ``duration`` :ref:`function<functions>` in ``sleep_duration.py`` and change the name to ``duration_a`` to keep the working solution while I try a new one, then change the ``else`` block
+* I make a copy of the ``duration`` :ref:`function<functions>` in ``sleep_duration.py`` and change the name to ``duration_a`` to keep the working solution while I try a new one. I change the ``else`` block to return :ref:`None`
 
   .. code-block:: python
 

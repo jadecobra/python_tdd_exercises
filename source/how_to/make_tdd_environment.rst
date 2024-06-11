@@ -25,7 +25,7 @@ requirements
 * download and install `Python <https://www.python.org/downloads/>`_
 * An Integrated Development Environment (IDE). Here are a few options
 
-  - `Visual Studio Code <https://code.visualstudio.com/download>`_
+  - `Visual Studio Code`_
   - `PyCharm Community Edition <https://www.jetbrains.com/pycharm/download>`_
   - `Sublime Text <https://www.sublimetext.com>`_
   - `Other Integrated Development Environment (IDE) options <https://wiki.python.org/moin/IntegratedDevelopmentEnvironments>`_

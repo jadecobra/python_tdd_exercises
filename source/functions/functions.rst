@@ -12,7 +12,7 @@ Programming involves providing a process with input data and the process returni
 
     input_data -> program -> output_data
 
-Which is similar to functions in mathematics where a function is represented as ``f`` with inputs ``x`` and an output of ``y``
+Which is like functions in mathematics where a function is represented as ``f`` with inputs ``x`` and an output of ``y``
 
 .. code-block:: python
 

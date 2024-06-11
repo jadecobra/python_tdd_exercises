@@ -10,7 +10,7 @@ how I setup my Integrated Development Environment (IDE)
 
 ----
 
-As of the writing of this book I use `Visual Studio Code <https://code.visualstudio.com/download>`_
+As of the writing of this book I use `Visual Studio Code`_
 
 .. contents:: table of contents
   :local:
@@ -72,11 +72,11 @@ This setup allows me to make comparisons by asking myself
 Visual Studio Extensions
 *********************************************************************************
 
-Here are extensions I use to customize `Visual Studio Code <https://code.visualstudio.com/download>`_
+Here are extensions I use to customize `Visual Studio Code`_
 
-* `Dark Rainbow Theme <https://marketplace.visualstudio.com/items?itemName=DarkRainbow.darkrainbow>`_ - I like pretty colors
-* `indent-rainbow <https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow>`_ - did I mention I like pretty colors?
+* `Dark Rainbow Theme`_  - I like pretty colors
+* `indent-rainbow`_ - did I mention I like pretty colors?
 * `Python <https://marketplace.visualstudio.com/items?itemName=ms-python.python>`_ - python helper
-* `Black Formatter <https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter>`_ - code formatter
+* `Code Spell Checker`_ - to catch spelling mistakes
 
 ----

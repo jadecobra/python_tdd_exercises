@@ -82,7 +82,7 @@ red: make it fail
                 1
             )
 
-  - I use the `unittest.TestCase.assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ :ref:`method<functions>` which checks if its 2 inputs are equal. It is similar to the statement ``assert x == y`` or asking ``is x equal to y?``
+  - I use the `unittest.TestCase.assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ :ref:`method<functions>` which checks if its 2 inputs are equal. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
   - I am sending two things to `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ for evaluation
 
     * first: ``calculator.add(0, 1)`` calls the ``add`` function in ``calculator.py`` with ``0`` and ``1`` as inputs
