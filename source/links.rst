@@ -64,6 +64,7 @@
 .. _venv: https://docs.python.org/3/library/venv.html#module-venv
 .. _virtual environment: https://docs.python.org/3/glossary.html#term-virtual-environment
 .. _zero-based indexing: https://en.wikipedia.org/wiki/Zero-based_numbering
+.. _zsh: https://zsh.sourceforge.io
 
 .. _Exceptions: https://docs.python.org/3/library/exceptions.html?highlight=exception#Exception
 .. _ImportError: https://docs.python.org/3/library/exceptions.html#ImportError

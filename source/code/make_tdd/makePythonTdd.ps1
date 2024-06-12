@@ -1,4 +1,3 @@
-#!/usr/bin/pwsh
 $projectName=$args[0]
 mkdir -p $projectName/tests
 Set-Location $projectName
@@ -6,7 +5,7 @@ Set-Location $projectName
 New-Item "$projectName.py"
 New-Item tests/__init__.py
 
-$testSetup = @"
+$testCode = @"
 import unittest
 
 
@@ -19,10 +18,10 @@ class Test$($projectName)(unittest.TestCase):
 # Exceptions Encountered
 # AssertionError
 "@
-$testSetup |  Out-File $("tests/test_$($projectName).py") -Encoding UTF8
+$testCode |  Out-File $("tests/test_$($projectName).py") -Encoding UTF8
 
+"pytest-watch" | Out-File requirements.txt
 python -m venv .venv
 .venv/scripts/activate
-python -m pip install --upgrade pip
-python -m pip install pytest-watch
+python -m pip install --upgrade pip --requirement requirements.txt
 pytest-watch

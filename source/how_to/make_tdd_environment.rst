@@ -307,7 +307,7 @@ how to make a Virtual Environment
   - echo_ is a program that writes its given arguments to the standard output
   - ``>`` is an operator that is used to send output from a program to the file given
   - `pytest-watch`_ is a python program that automatically runs the pytest_ `python package`_ when a python file in the project changes
-  - pytest_ is a `python package`_ like unittest_ for running tests in Python
+  - pytest_ is a `python package`_ like unittest_ for running tests
   - ``requirements.txt`` is the name of a file where I list required `python packages`_ for pip_ the `python package manager`_ to install later, you can use any name you like
 
 * I make a `virtual environment`_ with the venv_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_
@@ -458,7 +458,7 @@ Make sure you are in the directory that contains the `virtual environment`_ for 
 how to automatically make a python test driven development environment
 ********************************************************************************************
 
-You made it this far and have become the greatest programmer in the world. Following the `The Do Not Repeat Yourself (DRY) Principle`_, I would write a program that contains all the steps above. I can then use it to make a Test Driven Development Environment any time I want without having to remember each step of the process
+You made it this far and have become the greatest programmer in the world. Following the `The Do Not Repeat Yourself (DRY) Principle`_, I would write a program that contains all the steps it took to get here. I can then use it to make a Test Driven Development Environment any time I want without having to remember each step of the process
 
 * I exit the tests in the terminal by pressing ``ctrl`` + ``c`` on the keyboard
 * I type ``deactivate`` to deactivate the `virtual environment`_
@@ -478,7 +478,7 @@ You made it this far and have become the greatest programmer in the world. Follo
 
   .. code-block:: ruby
 
-    #!/bin/bash
+    #!/bin/zsh
     mkdir --parents project_name/tests
     cd project_name
     touch project_name.py
@@ -491,7 +491,7 @@ You made it this far and have become the greatest programmer in the world. Follo
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-  ``#!/bin/bash`` is a shebang_ line that tells the computer to use bash_ to run the program
+  ``#!/bin/zsh`` is a shebang_ line that tells the computer to use zsh_ to run the program. If it does not work for you, replace it with ``#!/bin/bash`` to use bash_
 
 * This program will always make a project called ``project_name`` so I need to add a variable to make any project name I pass to the program as input. I add a variable called ``PROJECT_NAME`` that is referenced with ``$PROJECT_NAME``
 
@@ -551,8 +551,6 @@ how to automatically make a python test driven development environment on window
   .. literalinclude:: /code/make_tdd/makePythonTdd.ps1
     :linenos:
     :language: PowerShell
-
-  ``#!/usr/bin/pwsh`` is a shebang_ line that tells the computer to use the PowerShell_ shell to run the program
 
 * I can make a Test Driven Development environment anytime I want by giving a name for the ``PROJECT_NAME`` variable when the program is called. For example, typing this command in the terminal in the folder where ``makePythonTdd.ps1`` is saved will make a Test Driven Development environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator` ::
 
