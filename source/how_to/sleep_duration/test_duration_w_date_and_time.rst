@@ -68,7 +68,7 @@ red: make it fail
     ValueError: invalid literal for int() with base 10: '1999/12/31 11'
     ValueError: invalid literal for int() with base 10: '1999/12/31 21'
 
-  the test calls ``duration``, which calls ``read_timestamp``, that uses the int_ constructor_ to convert the timestamp string_ to a number after it calls `str.split`_, but it is not in the right format
+  the test calls ``duration``, which calls ``read_timestamp``, which uses the int_ constructor_ to convert the timestamp string_ to a number after it calls `str.split`_, but it is not in the right format
 
 .. _test_duration_w_date_and_time_green_0:
 
@@ -166,7 +166,7 @@ green: make it pass
 
     ValueError: invalid literal for int() with base 10: '1999/12/31 22'
 
-  this time because the test calls the ``get_difference`` :ref:`method<functions>` in the expectation which uses the int_ constructor_
+  because the test calls the ``get_difference`` :ref:`method<functions>` in the expectation which uses the int_ constructor_
 
 * I change it to return ``wake_time`` and ``sleep_time``
 
@@ -222,7 +222,7 @@ green: make it pass
 refactor: make it better
 *********************************************************************************
 
-I want a solution that can read timestamps with date and time since I cannot use the int_ constructor_ when the timestamps have a date. I search for `date and time <https://docs.python.org/3/search.html?q=date+and+time>`_ in `python's online documentation`_, to see if there is an existing solution and select the datetime_ :ref:`module<ModuleNotFoundError>` from the results. The available types in the :ref:`module<ModuleNotFoundError>` show `datetime.datetime`_ objects
+I want something that can read dates and time from timestamps. I search `python's online documentation`_ for `date and time <https://docs.python.org/3/search.html?q=date+and+time>`_ to see if there is an existing solution and select the datetime_ :ref:`module<ModuleNotFoundError>` from the results. The available types in the :ref:`module<ModuleNotFoundError>` show `datetime.datetime`_ objects
 
 .. code-block:: python
 
@@ -533,7 +533,7 @@ test_get_datetime
 red: make it fail
 ---------------------------------------------------------------------------------
 
-I want a test for the ``get_datetime`` :ref:`function<functions>` so I change ``test_datetime_objects`` to ``test_get_datetime`` and make it reference ``sleep_duration.get_datetime`` which calls `datetime.datetime.strptime`_
+I want a test for the ``get_datetime`` :ref:`function<functions>` so I change the name of ``test_datetime_objects`` to ``test_get_datetime`` and make it reference ``sleep_duration.get_datetime`` which calls the `datetime.datetime.strptime`_ :ref:`method<functions>`
 
 .. code-block:: python
 
