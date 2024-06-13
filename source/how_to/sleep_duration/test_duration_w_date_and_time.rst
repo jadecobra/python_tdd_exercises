@@ -303,7 +303,7 @@ and get an :ref:`AssertionError`
 
   AssertionError: datetime.datetime(2006, 11, 21, 16, 30) != ''
 
-I copy the value on the left side of the :ref:`AssertionError` to change the expected value in the test
+I copy the value from the left side of the :ref:`AssertionError` to change the expected value in the test
 
 .. code-block:: python
 
@@ -887,7 +887,7 @@ The challenge was to write a program that calculates the difference between a gi
 * `test_get_datetime`_
 * `test_duration_w_date_and_time`_ where I used
 
-  - `random.randint`_ to generate timestamps with random dates and times that are :doc:`interpolated </how_to/pass_values>` in strings for ``wake_time`` and ``sleep_time``
+  - `random.randint`_ and an :doc:`exception handler</how_to/exception_handling_programs>` to generate timestamps with random dates and times that are :doc:`interpolated </how_to/pass_values>` in strings for ``wake_time`` and ``sleep_time``
   - a `while statement`_ to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<functions>` raises a ValueError_ with a message and returns the right difference between the two when ``wake_time`` is later than or the same as ``sleep_time``
 
 I also encountered the following exceptions
