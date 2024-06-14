@@ -96,7 +96,7 @@ green: make it pass
 
     TypeError: get_datetime() takes 0 positional arguments but 1 was given
 
-  then I add a name to the :ref:`function<functions>` signature
+  then I add a name to the :ref:`function's<functions>` signature
 
   .. code-block:: python
 
@@ -150,7 +150,7 @@ green: make it pass
 
     AssertionError: datetime.datetime(2006, 11, 21, 19, 8) != datetime.datetime(2006, 11, 21, 0, 15)
 
-  the expected values changed
+  the expected values of the test changed
 
 * I change the `return statement`_, I want to see the difference between the input and expected output
 
@@ -159,7 +159,7 @@ green: make it pass
     def get_datetime(argument):
         return argument
 
-  the terminal shows an :ref:`AssertionError`
+  and the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -226,7 +226,7 @@ green: make it pass
 
     TypeError: duration() got an unexpected keyword argument 'sleep_time'
 
-  I add the name to the :ref:`function<functions>` signature
+  I add the name to the :ref:`function's<functions>` signature
 
   .. code-block:: python
 
@@ -288,7 +288,7 @@ green: make it pass
 
   which does not tell me anything so I comment it out to get one of the other :ref:`AssertionErrors<AssertionError>`, I can raise a ValueError_ again or try to return the inputs
 
-* When I get the error with the message about ``wake_time`` being earlier than ``sleep_time``, I copy it from the terminal, to change the ValueError_ message
+* When I get the error with the message about ``wake_time`` being earlier than ``sleep_time``, I copy it from the terminal to change the message of the ValueError_
 
   .. code-block:: python
 
@@ -330,7 +330,7 @@ green: make it pass
             'sleep_time: "8720/08/18 01:02"'
         )
 
-  which gives me another :ref:`AssertionError` because the timestamps in the ValueError_ message are not the same
+  and get another :ref:`AssertionError` because the timestamps in the ValueError_ message are not the same
 
   .. code-block:: python
 
@@ -345,7 +345,7 @@ green: make it pass
 
     ValueError: wake_time: "7413/05/24 15:04" is earlier than sleep_time: "8720/08/18 01:02"
 
-  which tells me nothing, so I return ``sleep_time`` and ``wake_time`` instead
+  which tells me nothing, so I return ``sleep_time`` and ``wake_time``
 
   .. code-block:: python
 
@@ -405,7 +405,7 @@ green: make it pass
     else:
         return (sleep_time, wake_time)
 
-  the terminal shows an :ref:`AssertionError`
+  and the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
