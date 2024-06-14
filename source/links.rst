@@ -9,6 +9,7 @@
 .. _bash: https://www.gnu.org/software/bash/
 .. _callable: https://docs.python.org/3/glossary.html#term-callable
 .. _cd: https://man7.org/linux/man-pages/man1/cd.1p.html
+.. _chmod: https://en.wikipedia.org/wiki/Chmod
 .. _class: https://docs.python.org/3/reference/lexical_analysis.html#keywords
 .. _constructor: https://en.wikipedia.org/wiki/Constructor_(object-oriented_programming)
 .. _datetime: https://docs.python.org/3/library/datetime.html?highlight=time%20difference#module-datetime

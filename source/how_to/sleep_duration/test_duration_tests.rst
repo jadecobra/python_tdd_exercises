@@ -134,7 +134,7 @@ green: make it pass
 
     NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
 
-* then I add an `import statement`_ for the datetime_ :ref:`module<ModuleNotFoundError>`
+* I add an `import statement`_ for the datetime_ :ref:`module<ModuleNotFoundError>`
 
   .. code-block:: python
 
@@ -152,7 +152,7 @@ green: make it pass
 
   the expected values changed
 
-* I change the `return statement`_ to show the input argument because I want to see how it is different from the expectation of the test
+* I change the `return statement`_, I want to see the difference between the input and expected output
 
   .. code-block:: python
 
@@ -170,7 +170,7 @@ green: make it pass
 
   I need a way to convert a string_ that has a date and time to a `datetime.datetime`_ object
 
-* I use the `example from the datetime documentation <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_ to do the conversion
+* I use the `datetime.datetime.strptime`_ :ref:`method<functions>` to do the conversion
 
   .. code-block:: python
 
@@ -277,7 +277,7 @@ green: make it pass
     AssertionError: "wake_time: "5602/08/29 05:06" is earlier than sleep_time: "8373/05/08 05:29"" does not match "('8373/05/08 05:29', '5602/08/29 05:06')"
     AssertionError: "wake_time: "7413/05/24 15:04" is earlier than sleep_time: "8720/08/18 01:02"" does not match ""
 
-  this tells me that the test expects a message with the ValueError_, or I get a ValueError_
+  this tells me that the test expects a message with the ValueError_, or I get a ValueError_ that looks like this
 
   .. code-block:: python
 
@@ -286,7 +286,7 @@ green: make it pass
     ValueError: ('6471/03/10 05:04', '7883/06/01 02:38')
     ValueError: ('7370/08/12 21:34', '7937/03/27 01:58')
 
-  which does not tell me anything so I comment it out and get one of the :ref:`AssertionErrors<AssertionError>`, I can raise a ValueError_ again or try to return the inputs
+  which does not tell me anything so I comment it out to get one of the other :ref:`AssertionErrors<AssertionError>`, I can raise a ValueError_ again or try to return the inputs
 
 * When I get the error with the message about ``wake_time`` being earlier than ``sleep_time``, I copy it from the terminal, to change the ValueError_ message
 
@@ -380,7 +380,7 @@ green: make it pass
     ValueError: wake_time: "3201/08/13 15:20" is earlier than sleep_time: "1074/03/31 16:44"
     ValueError: wake_time: "9810/07/30 04:29" is earlier than sleep_time: "9792/03/04 12:44"
 
-  this is not right, the timestamps for ``wake_time`` are not earlier than ``sleep_time``, I have to add a condition to the ``duration`` :ref:`function<functions>`. I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+  this is not right, the timestamps for ``wake_time`` are not earlier than ``sleep_time``. The ``duration`` :ref:`function<functions>` needs a condition to make sure it only raises a ValueError_ when ``wake_time`` is earlier than ``sleep_time``. I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
   .. code-block:: python
 
@@ -402,7 +402,6 @@ green: make it pass
                 ' is earlier than '
                 f'sleep_time: "{sleep_time}"'
             )
-        ')
     else:
         return (sleep_time, wake_time)
 

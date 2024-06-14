@@ -59,7 +59,7 @@ If the operating system of your computer is Windows, use `Windows Subsystem Linu
 setup
 ********************************************************************************************
 
-I open a terminal in the Integrated Development Environment (IDE) and type the following commands to make the project
+I open a terminal in the Integrated Development Environment (IDE) and type the following commands
 
 * I use mkdir_ with the ``-p/--parents`` option to make a directory for the project with a child directory called ``tests`` inside it
 
@@ -69,7 +69,7 @@ I open a terminal in the Integrated Development Environment (IDE) and type the f
 
   .. admonition:: if ``--parents`` does not work
 
-    try ``-p``
+    try ``mkdir -p project_name/tests``
 
 * I change directory to ``project_name`` with the cd_ program
 
@@ -99,7 +99,7 @@ I open a terminal in the Integrated Development Environment (IDE) and type the f
 
     .. WARNING:: make sure you use two underscores for ``__init__.py``
 
-  - then make one more empty file called ``test_project_name.py`` in the ``tests`` folder
+  - I make one more empty file called ``test_project_name.py`` in the ``tests`` folder
 
     .. code-block:: shell
 
@@ -162,7 +162,7 @@ red: make it fail
 
     * def_ is the python keyword for making :ref:`functions (methods)<functions>`
     * ``test_failure`` is the name of the :ref:`method<functions>`
-    * ``self`` is the ``TestProjectName`` :ref:`class<classes>`. I can use ``self`` to access :doc:`methods (functions) </functions/functions>` and :ref:`attributes<AttributeError>` of the ``TestProjectName`` class, without having to type ``TestProjectName().assertFalse(True)`` to access the ``assertFalse`` :ref:`method<functions>`
+    * ``self`` is the ``TestProjectName`` :ref:`class<classes>`. I can use ``self`` to access :doc:`methods (functions) </functions/functions>` and :ref:`attributes<AttributeError>` of the ``TestProjectName`` class, without having to type ``TestProjectName()`` to access them
     * ``self.assertFalse(True)`` is the actual test. I expect this line to fail because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
 
       - assertFalse_ is a :ref:`method<functions>` in the `unittest.TestCase`_ :doc:`class </classes/classes>` that checks if its input is :doc:`False </data_structures/booleans/booleans>` and raises an :ref:`AssertionError` when it is not
@@ -198,14 +198,14 @@ If you are typing along, *CONGRATULATIONS!* You have written your first test.
 This is the ``RED`` part of the Test Driven Development cycle. The error in the terminal has important information. I like to read it from the bottom to the top
 
 * ``FAILED (failures=1)`` there is one failure
-* ``Ran 1 test in 0.000s`` how long it took the test to run
-* ``AssertionError: True is not false`` The error is an :ref:`AssertionError` that is raised by python when an assert statement is :doc:`False </data_structures/booleans/booleans>`. In this case the error is raised because ``True is not false``
+* ``Ran 1 test in 0.000s`` how long the test ran
+* ``AssertionError: True is not false`` The error is an :ref:`AssertionError` which is raised by python when an assert statement is :doc:`False </data_structures/booleans/booleans>`. In this case the error is raised because ``True is not false``
 * ``self.assertFalse(True)`` is the line of code that caused the failure
 
   - ``assertFalse`` is a :ref:`method<functions>` in the `unittest.TestCase`_ :doc:`class </classes/classes>` that checks if its input is :doc:`False </data_structures/booleans/booleans>`
   - :doc:`True </data_structures/booleans/booleans>` is given as input to ``assertFalse`` and the statement raises an :ref:`AssertionError` because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
 
-* ``File ".../project_name/tests/test_project_name.py", line 7, in test_failure`` is the line number and location of the file where the :ref:`AssertionError` occurred.
+* ``File ".../project_name/tests/test_project_name.py", line 7, in test_failure`` is the line number and location of the file where the :ref:`AssertionError` happened.
 
   .. tip::
 
@@ -258,7 +258,7 @@ then run the test again from the terminal
 
   python3 -m unittest
 
-and the terminal shows a passing test
+and it shows a passing test
 
 .. code-block:: python
 
@@ -280,13 +280,13 @@ I can make code better by using
 * `The Abstraction Principle`_ or
 * `The Do Not Repeat Yourself (DRY) Principle`_
 
-So far there is not much to improve on what has been written but there has been repetition
+and there has been some repetition
 
 * ``python3 -m unittest`` was run to see the test fail
 * ``python3 -m unittest`` was run to see the test pass
 * ``python3 -m unittest`` will be run anytime I make a change to make sure it does not break tests that already passed
 
-This means ``python3 -m unittest`` is run for each part of the Test Driven Development cycle or each time there is a code change. I automate this so `I Do Not Repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_, it would be better for a program to automatically run the tests when there is a change to the code
+This means ``python3 -m unittest`` is run for each part of the Test Driven Development cycle or each time there is a code change. I automate this so `I Do Not Repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_, it would be better for a program to automatically run the tests when there is a change
 
 ----
 
@@ -306,7 +306,7 @@ how to make a Virtual Environment
   - the command above makes a file named ``requirements.txt`` with `pytest-watch`_ as the text inside it
   - echo_ is a program that writes its given arguments to the standard output
   - ``>`` is an operator that is used to send output from a program to the file given
-  - `pytest-watch`_ is a python program that automatically runs the pytest_ `python package`_ when a python file in the project changes
+  - `pytest-watch`_ is a python program that automatically runs pytest_ when a python file in the project changes
   - pytest_ is a `python package`_ like unittest_ for running tests
   - ``requirements.txt`` is the name of a file where I list required `python packages`_ for pip_ the `python package manager`_ to install later, you can use any name you like
 
@@ -372,7 +372,7 @@ how to make a Virtual Environment
       pip install --requirement requirements.txt
 
   - ``--requirement`` is another option that can be passed to the ``install`` argument to install `python packages`_ from a given file
-  - ``requirements.txt`` is the file that contains a list of libraries for pip_ to install
+  - ``requirements.txt`` is the file that contains a list of `python packages`_ for pip_ to install
 
 * I use pip_ to see the packages that are now installed
 
@@ -425,7 +425,7 @@ how to make a Virtual Environment
 
     =============== 1 passed in 0.00s =======================
 
-* I make the input on line 7 in ``test_project_name.py`` to :doc:`True </data_structures/booleans/booleans>` to make it fail and back to :doc:`False </data_structures/booleans/booleans>` to make it pass with the terminal responding to each change
+* I change the input on line 7 in ``test_project_name.py`` to :doc:`True </data_structures/booleans/booleans>` to make it fail and back to :doc:`False </data_structures/booleans/booleans>` to make it pass with the terminal responding to each change
 * I can press ``ctrl`` + ``c`` on the keyboard in the terminal to stop the tests at anytime
 
 ----
@@ -461,8 +461,8 @@ how to automatically make a python test driven development environment
 You made it this far and have become the greatest programmer in the world. Following the `The Do Not Repeat Yourself (DRY) Principle`_, I would write a program that contains all the steps it took to get here. I can then use it to make a Test Driven Development Environment any time I want without having to remember each step of the process
 
 * I exit the tests in the terminal by pressing ``ctrl`` + ``c`` on the keyboard
-* I type ``deactivate`` to deactivate the `virtual environment`_
-* I change directory to the parent of ``project_name`` ::
+* then type ``deactivate`` to leave the `virtual environment`_
+* and change directory to the parent of ``project_name`` ::
 
     cd ..
 
@@ -470,15 +470,15 @@ You made it this far and have become the greatest programmer in the world. Follo
 
     history
 
-* I make an empty file with a name that describes what the program does so it is easy to remember later, for example :ref:`makePythonTdd.sh` ::
+* and make an empty file with a name that describes what the program does so it is easy to remember later, for example :ref:`makePythonTdd.sh` ::
 
     touch makePythonTdd.sh
 
-* I open the file in the Integrated Development Environment (IDE) and copy each command shown in the terminal from ``history`` except ``python3 -m unittest`` since I want the tests to run automatically
+* then open the file in the Integrated Development Environment (IDE) and copy each command I need to set up a Test Driven Environment
 
   .. code-block:: ruby
 
-    #!/bin/zsh
+    #!/bin/bash
     mkdir --parents project_name/tests
     cd project_name
     touch project_name.py
@@ -491,9 +491,9 @@ You made it this far and have become the greatest programmer in the world. Follo
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-  ``#!/bin/zsh`` is a shebang_ line that tells the computer to use zsh_ to run the program. If it does not work for you, replace it with ``#!/bin/bash`` to use bash_
+  ``#!/bin/bash`` is a shebang_ line that tells the computer to use bash_ to run the program. You can change it to ``#!/bin/zsh`` if you have zsh_ installed
 
-* This program will always make a project called ``project_name`` so I need to add a variable to make any project name I pass to the program as input. I add a variable called ``PROJECT_NAME`` that is referenced with ``$PROJECT_NAME``
+* This program will always make a project called ``project_name``. I add a variable called ``PROJECT_NAME`` that is referenced with ``$PROJECT_NAME`` to make it possible to make any project name I give
 
   .. code-block:: shell
 
@@ -526,6 +526,8 @@ You made it this far and have become the greatest programmer in the world. Follo
 * I use `chmod <https://man7.org/linux/man-pages/man1/chmod.1.html>`_ to make the program executable ::
 
     chmod +x makePythonTdd.sh
+
+  chmod_ is a program that changes the mode of the file
 
 * I can make a Test Driven Development environment any time I want by giving a name for the ``PROJECT_NAME`` variable when the program is called. For example, typing this command in the terminal in the folder where ``makePythonTdd.sh`` is saved will make a Test Driven Development environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator` ::
 
