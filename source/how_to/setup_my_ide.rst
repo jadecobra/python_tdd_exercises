@@ -20,30 +20,32 @@ As of the writing of this book I use `Visual Studio Code`_
 Screen Layout
 *********************************************************************************
 
-I split my screen in the following ways depending on the use case
+I split my screen in the following ways depending on the use case, try different layouts to see what is best for you.
 
 for references
 #################################################################################
 
-I put references on the left and the Integrated Development Environment on the right. Try different layouts to see what is best for you.
+I put references on the left and the Integrated Development Environment on the right
 
 .. image:: /_static/setup_my_ide/reference_on_left.png
   :width: 600
   :alt: Reference on the left
 
+this is convenient when I do not have an extra screen
+
 
 for testing
 #################################################################################
 
-When working in the Integrated Development Environment alone I have the following windows open depending on what I want to see
+When working with just the Integrated Development Environment, I have the following windows open depending on what I want to see
 
-* explorer - to see files/folder structure
+* explorer on the left to see files/folder structure at once
 
   .. image:: /_static/setup_my_ide/explorer_w_editors.png
     :width: 600
     :alt: Explorer with Editors
 
-* editors side by side - one for tests, one for source code
+* editors side by side - source code on the left and tests on the right
 
   .. image:: /_static/setup_my_ide/2_editors.png
     :width: 600
@@ -57,13 +59,13 @@ When working in the Integrated Development Environment alone I have the followin
       :width: 600
       :alt: Terminal Window at the bottom
 
-  - to the right - when the results I am looking at in the terminal are too long to see at once in the bottom
+  - to the right - when the results I am looking at in the terminal are too long to see in the bottom, for example when working JSON or :ref:`dictionaries`
 
     .. image:: /_static/setup_my_ide/terminal_on_right.png
       :width: 600
       :alt: Terminal Window on the right
 
-This setup allows me to make comparisons by asking myself
+This setup helps me answer these questions
 
 * what is the same?
 * What is different?
@@ -75,8 +77,8 @@ Visual Studio Extensions
 Here are extensions I use to customize `Visual Studio Code`_
 
 * `Dark Rainbow Theme`_  - I like pretty colors
-* `indent-rainbow`_ - did I mention I like pretty colors?
-* `Python <https://marketplace.visualstudio.com/items?itemName=ms-python.python>`_ - python helper
+* `indent-rainbow`_ - did I mention I like pretty colors? This makes indentation easier to see from a distance
+* `Python <https://marketplace.visualstudio.com/items?itemName=ms-python.python>`_ - python language support
 * `Code Spell Checker`_ - to catch spelling mistakes
 
 ----

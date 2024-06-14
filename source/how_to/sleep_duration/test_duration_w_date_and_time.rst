@@ -844,7 +844,7 @@ and the test is still green
   - if the check passes it returns the timestamp
   - if the check raises a ValueError_ it repeats the process by calling itself
 
-* I add another :ref:`function<functions>` to remove some repetition
+* I can add another :ref:`function<functions>` to remove some repetition
 
   .. code-block:: python
 
