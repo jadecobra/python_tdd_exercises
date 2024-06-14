@@ -19,7 +19,6 @@ class Test$PROJECT_NAME(unittest.TestCase):
 DELIMITER
 
 echo "pytest-watch" > requirements.txt
-
 python3 -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip --requirement requirements.txt

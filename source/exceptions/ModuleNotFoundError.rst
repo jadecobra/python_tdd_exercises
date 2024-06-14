@@ -166,19 +166,19 @@ Looking at the traceback starting from the bottom
 green: make it pass
 *********************************************************************************
 
-* make ``module_0.py`` in the ``project_name`` folder and the terminal shows
+* make ``module_0.py`` in the ``magic`` folder and the terminal shows
 
   .. code-block:: python
 
     ModuleNotFoundError: No module called 'module_1'
 
-* make ``module_1.py`` in the ``project_name`` folder, the terminal shows the same error for a new line
+* make ``module_1.py`` in the ``magic`` folder, the terminal shows the same error for a new line
 
   .. code-block:: python
 
     ModuleNotFoundError: No module called 'module_2'
 
-* make ``module_2.py`` in the ``project_name`` folder, the terminal shows the following
+* make ``module_2.py`` in the ``magic`` folder, the terminal shows the following
 
   .. code-block:: python
 

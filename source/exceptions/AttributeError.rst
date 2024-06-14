@@ -63,7 +63,7 @@ green: make it pass
     # AssertionError
     # ModuleNotFoundError
 
-* then make ``module.py`` in the ``project_name`` folder and the terminal all tests are passing
+* then make ``module.py`` in the ``magic`` folder and the terminal all tests are passing
 * I continue adding tests to ``test_attribute_error.py``
 
   .. code-block:: python
