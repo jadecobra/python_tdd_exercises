@@ -277,12 +277,7 @@ and it shows a passing test
 refactor: make it better
 ############################################################################################
 
-I can make code better by using
-
-* `The Abstraction Principle`_ or
-* `The Do Not Repeat Yourself (DRY) Principle`_
-
-and there has been some repetition
+I can make code better by using `The Abstraction Principle`_ or `The Do Not Repeat Yourself (DRY) Principle`_. There has been some repetition
 
 * ``python3 -m unittest`` was run to see the test fail
 * ``python3 -m unittest`` was run to see the test pass
@@ -460,7 +455,7 @@ Make sure you are in the directory that contains the `virtual environment`_ for 
 how to automatically make a python test driven development environment
 ********************************************************************************************
 
-You made it this far and have become the greatest programmer in the world. Following the `The Do Not Repeat Yourself (DRY) Principle`_, I would write a program that contains all the steps it took to get here. I can then use it to make a Test Driven Development Environment any time I want without having to remember each step of the process
+You made it this far and have become the greatest programmer in the world. Following `The Do Not Repeat Yourself (DRY) Principle`_, I would write a program that contains all the steps it took to get here. I can then use it to make a Test Driven Development Environment any time I want without having to remember each step of the process
 
 * I exit the tests in the terminal by pressing ``ctrl`` + ``c`` on the keyboard
 * then type ``deactivate`` to leave the `virtual environment`_
