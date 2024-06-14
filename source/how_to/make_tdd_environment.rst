@@ -148,7 +148,7 @@ red: make it fail
     import unittest
 
 
-    class TestProjectName(unittest.TestCase):
+    class TestMagic(unittest.TestCase):
 
         def test_failure(self):
             self.assertFalse(True)
@@ -156,15 +156,15 @@ red: make it fail
   Here is an explanation of the code above
 
   - ``import unittest`` imports unittest_ which is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ used for testing
-  - ``TestProjectName`` is a :doc:`class </classes/classes>` that will hold tests
+  - ``TestMagic`` is a :doc:`class </classes/classes>` that will hold tests
   - :doc:`class </classes/classes>` is the python keyword for making :doc:`/classes/classes`
   - `unittest.TestCase`_ is a :doc:`class </classes/classes>` defined in the unittest_ :ref:`module<ModuleNotFoundError>` which contains :doc:`methods (functions) </functions/functions>` for testing
-  - ``TestProjectName`` inherits from `unittest.TestCase`_, it is a child or clone of `unittest.TestCase`_ that can do the same things as `unittest.TestCase`_
+  - ``TestMagic`` inherits from `unittest.TestCase`_, it is a child or clone of `unittest.TestCase`_ that can do the same things as `unittest.TestCase`_
   - ``def test_failure`` is the definition of a test :ref:`method<functions>` to test the program I am making
 
     * def_ is the python keyword for making :ref:`functions (methods)<functions>`
     * ``test_failure`` is the name of the :ref:`method<functions>`
-    * ``self`` is the ``TestProjectName`` :ref:`class<classes>`. I can use ``self`` to access :doc:`methods (functions) </functions/functions>` and :ref:`attributes<AttributeError>` of the ``TestProjectName`` class, without having to type ``TestProjectName()`` to access them
+    * ``self`` is the ``TestMagic`` :ref:`class<classes>`. I can use ``self`` to access :doc:`methods (functions) </functions/functions>` and :ref:`attributes<AttributeError>` of the ``TestMagic`` class, without having to type ``TestMagic()`` to access them
     * ``self.assertFalse(True)`` is the actual test. I expect this line to fail because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
 
       - assertFalse_ is a :ref:`method<functions>` in the `unittest.TestCase`_ :doc:`class </classes/classes>` that checks if its input is :doc:`False </data_structures/booleans/booleans>` and raises an :ref:`AssertionError` when it is not
@@ -183,7 +183,7 @@ red: make it fail
 
     F
     ======================================================
-    FAIL: test_failure (tests.TestProjectName.test_failure)
+    FAIL: test_failure (tests.TestMagic.test_failure)
     ------------------------------------------------------
     Traceback (most recent call last):
     File ".../magic/tests/test_magic.py", line 7, in test_failure
@@ -214,11 +214,11 @@ This is the ``RED`` part of the Test Driven Development cycle. The error in the 
     Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click with your mouse on ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` in the terminal and the Integrated Development Environment (IDE) will place the cursor at the position in the file where the error occurred
 
 * ``Traceback (most recent call last):`` all the indented information shown after this line is the ``traceback`` showing the most recent call python made last
-* ``FAIL: test_failure (tests.TestProjectName.test_failure)`` is a header with information about the test
+* ``FAIL: test_failure (tests.TestMagic.test_failure)`` is a header with information about the test
 
-  - ``tests.TestProjectName.test_failure`` is the location of the failing test
+  - ``tests.TestMagic.test_failure`` is the location of the failing test
   -  ``tests`` is the tests folder
-  - ``TestProjectName`` is the class defined on line 4
+  - ``TestMagic`` is the class defined on line 4
   - ``test_failure`` is the function defined on line 6
 
 * ``F`` indicates a failure
@@ -235,7 +235,7 @@ This is the ``RED`` part of the Test Driven Development cycle. The error in the 
     import unittest
 
 
-    class TestProjectName(unittest.TestCase):
+    class TestMagic(unittest.TestCase):
 
         def test_failure(self):
             self.assertFalse(True)
