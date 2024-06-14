@@ -14,7 +14,7 @@ Programming involves providing a process with input data and the process returni
 
 Which is like functions in mathematics where a function is represented as ``f`` with inputs ``x`` and an output of ``y``
 
-.. code-block:: python
+.. math::
 
   f(x) -> y
 
