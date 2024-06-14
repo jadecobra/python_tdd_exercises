@@ -513,6 +513,8 @@ You made it this far and have become the greatest programmer in the world. Follo
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
+  ``$1`` represents the first argument given when the program is called
+
 * I use the `cat <https://www.man7.org/linux/man-pages/man1/cat.1.html>`_ program to add text for the first failing test in ``test_$PROJECT_NAME.py``
 
     the line numbers below are a guide, you do not need to copy them
@@ -527,7 +529,7 @@ You made it this far and have become the greatest programmer in the world. Follo
 
     chmod +x makePythonTdd.sh
 
-  chmod_ is a program that changes the mode of the file
+  chmod_ is a program that changes the mode of the file given
 
 * I can make a Test Driven Development environment any time I want by giving a name for the ``PROJECT_NAME`` variable when the program is called. For example, typing this command in the terminal in the folder where ``makePythonTdd.sh`` is saved will make a Test Driven Development environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator` ::
 
