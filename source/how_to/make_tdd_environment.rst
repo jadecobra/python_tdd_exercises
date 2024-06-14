@@ -65,17 +65,17 @@ I open a terminal in the Integrated Development Environment (IDE) and type the f
 
   .. code-block:: shell
 
-    mkdir --parents project_name/tests
+    mkdir --parents magic/tests
 
   .. admonition:: if ``--parents`` does not work
 
-    try ``mkdir -p project_name/tests``
+    try ``mkdir -p magic/tests``
 
-* I change directory to ``project_name`` with the cd_ program
+* I change directory to ``magic`` with the cd_ program
 
   .. code-block:: shell
 
-    cd project_name
+    cd magic
 
   this is where all the code for the project will stay
 
@@ -85,11 +85,11 @@ I open a terminal in the Integrated Development Environment (IDE) and type the f
 
     change ``touch`` to ``New-Item``
 
-  - I make an empty file called ``project_name.py`` to hold the source code for the program
+  - I make an empty file called ``magic.py`` to hold the source code for the program
 
     .. code-block:: shell
 
-      touch project_name.py
+      touch magic.py
 
   - tests will be stored in the ``tests`` folder to separate them from the source code (the actual program). I make another empty file called ``__init__.py`` in the ``tests`` folder to tell Python that it is a `python package`_
 
@@ -99,23 +99,25 @@ I open a terminal in the Integrated Development Environment (IDE) and type the f
 
     .. WARNING:: make sure you use two underscores for ``__init__.py``
 
-  - I make one more empty file called ``test_project_name.py`` in the ``tests`` folder
+  - I make one more empty file called ``test_magic.py`` in the ``tests`` folder
 
     .. code-block:: shell
 
-      touch tests/test_project_name.py
+      touch tests/test_magic.py
+
+    this is the file where I will write the tests
 
 * Here is what the folder structure looks like
 
   .. code-block:: python
 
-    project_name
+    magic
       ╰──tests
       |  ╰──__init__.py
-      |  ╰──test_project_name.py
-      ╰──project_name.py
+      |  ╰──test_magic.py
+      ╰──magic.py
 
-.. tip:: ``project_name`` is a placeholder for the name of the project. For example to make a project called ``magic``, I would change ``project_name`` to ``magic``
+.. tip:: ``magic`` is a placeholder for the name of the project. For example to make a project called ``calculator``, I would change ``magic`` to ``calculator``
 
 ----
 
@@ -136,7 +138,7 @@ The Test Driven Development cycle is ``RED GREEN REFACTOR``
 red: make it fail
 ############################################################################################
 
-* I open up ``project_name/tests/test_project_name.py`` in the Integrated Development Environment (IDE) and type the following
+* I open up ``magic/tests/test_magic.py`` in the Integrated Development Environment (IDE) and type the following
 
     the line numbers below are a guide, you do not need to copy them
 
@@ -184,7 +186,7 @@ red: make it fail
     FAIL: test_failure (tests.TestProjectName.test_failure)
     ------------------------------------------------------
     Traceback (most recent call last):
-    File ".../project_name/tests/test_project_name.py", line 7, in test_failure
+    File ".../magic/tests/test_magic.py", line 7, in test_failure
         self.assertFalse(True)
     AssertionError: True is not false
 
@@ -205,11 +207,11 @@ This is the ``RED`` part of the Test Driven Development cycle. The error in the 
   - ``assertFalse`` is a :ref:`method<functions>` in the `unittest.TestCase`_ :doc:`class </classes/classes>` that checks if its input is :doc:`False </data_structures/booleans/booleans>`
   - :doc:`True </data_structures/booleans/booleans>` is given as input to ``assertFalse`` and the statement raises an :ref:`AssertionError` because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
 
-* ``File ".../project_name/tests/test_project_name.py", line 7, in test_failure`` is the line number and location of the file where the :ref:`AssertionError` happened.
+* ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` is the line number and location of the file where the :ref:`AssertionError` happened.
 
   .. tip::
 
-    Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click with your mouse on ``File ".../project_name/tests/test_project_name.py", line 7, in test_failure`` in the terminal and the Integrated Development Environment (IDE) will place the cursor at the position in the file where the error occurred
+    Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click with your mouse on ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` in the terminal and the Integrated Development Environment (IDE) will place the cursor at the position in the file where the error occurred
 
 * ``Traceback (most recent call last):`` all the indented information shown after this line is the ``traceback`` showing the most recent call python made last
 * ``FAIL: test_failure (tests.TestProjectName.test_failure)`` is a header with information about the test
@@ -297,7 +299,7 @@ how to automatically run tests
 how to make a Virtual Environment
 ############################################################################################
 
-* I make a file called ``requirements.txt`` in the ``project_name``
+* I make a file called ``requirements.txt`` in the ``magic`` folder
 
   .. code-block:: shell
 
@@ -336,7 +338,7 @@ how to make a Virtual Environment
 
   .. code-block:: shell
 
-    (.venv) vscode ➜ .../project_name $
+    (.venv) vscode ➜ .../magic $
 
 * I upgrade pip_ the `python package manager`_ to the latest version
 
@@ -402,13 +404,13 @@ how to make a Virtual Environment
 
   .. code-block:: python
 
-    project_name
+    magic
       ╰──.venv
       ╰──tests
       |  ╰──__pycache__
       |  ╰──__init__.py
-      |  ╰──test_project_name.py
-      ╰──project_name.py
+      |  ╰──test_magic.py
+      ╰──magic.py
       ╰──requirements.txt
 
 * When I type ``pytest-watch`` in the terminal, the test runs and it shows results without going back to the command line
@@ -418,14 +420,14 @@ how to make a Virtual Environment
     [TODAYS_DATE] Running: py.test
     ================== test session starts===================
     ...
-    rootdir: .../project_name
+    rootdir: .../magic
     collected 1 item
 
-    tests/test_project_name.py .          [100%]
+    tests/test_magic.py .          [100%]
 
     =============== 1 passed in 0.00s =======================
 
-* I change the input on line 7 in ``test_project_name.py`` to :doc:`True </data_structures/booleans/booleans>` to make it fail and back to :doc:`False </data_structures/booleans/booleans>` to make it pass with the terminal responding to each change
+* I change the input on line 7 in ``test_magic.py`` to :doc:`True </data_structures/booleans/booleans>` to make it fail and back to :doc:`False </data_structures/booleans/booleans>` to make it pass with the terminal responding to each change
 * I can press ``ctrl`` + ``c`` on the keyboard in the terminal to stop the tests at anytime
 
 ----
@@ -442,7 +444,7 @@ type the following in a terminal with an active `virtual environment`_ ::
 how to activate a virtual environment
 ############################################################################################
 
-Make sure you are in the directory that contains the `virtual environment`_ for example ``project_name`` and type the following in the terminal::
+Make sure you are in the directory that contains the `virtual environment`_ for example ``magic`` and type the following in the terminal::
 
   source .venv/bin/activate
 
@@ -462,7 +464,7 @@ You made it this far and have become the greatest programmer in the world. Follo
 
 * I exit the tests in the terminal by pressing ``ctrl`` + ``c`` on the keyboard
 * then type ``deactivate`` to leave the `virtual environment`_
-* and change directory to the parent of ``project_name`` ::
+* and change directory to the parent of ``magic`` ::
 
     cd ..
 
@@ -479,11 +481,11 @@ You made it this far and have become the greatest programmer in the world. Follo
   .. code-block:: ruby
 
     #!/bin/bash
-    mkdir --parents project_name/tests
-    cd project_name
-    touch project_name.py
+    mkdir --parents magic/tests
+    cd magic
+    touch magic.py
     touch tests/__init__.py
-    touch tests/test_project_name.py
+    touch tests/test_magic.py
     echo "pytest-watch" > requirements.txt
     python3 -m venv .venv
     source .venv/bin/activate
@@ -493,7 +495,7 @@ You made it this far and have become the greatest programmer in the world. Follo
 
   ``#!/bin/bash`` is a shebang_ line that tells the computer to use bash_ to run the program. You can change it to ``#!/bin/zsh`` if you have zsh_ installed
 
-* This program will always make a project called ``project_name``. I add a variable called ``PROJECT_NAME`` that is referenced with ``$PROJECT_NAME`` to make it possible to make any project name I give
+* This program will always make a project called ``magic``. I add a variable called ``PROJECT_NAME`` that is referenced with ``$PROJECT_NAME`` to make it possible to make any project name I give
 
   .. code-block:: shell
 
