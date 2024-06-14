@@ -513,7 +513,7 @@ You made it this far and have become the greatest programmer in the world. Follo
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-  ``$1`` represents the first argument given when the program is called
+  ``$1`` represents the first argument given when the program is called. You can use it in place of ``$PROJECT_NAME`` and will get the same result
 
 * I use the `cat <https://www.man7.org/linux/man-pages/man1/cat.1.html>`_ program to add text for the first failing test in ``test_$PROJECT_NAME.py``
 
@@ -548,7 +548,7 @@ how to automatically make a python test driven development environment on window
 
     New-Item makePythonTdd.ps1
 
-* I open the file in the Interactive Development Editor then add the following code
+* and open the file in the Integrated Development Environment's Editor then add the following code
 
     the line numbers below are a guide, you do not need to copy them
 
@@ -566,9 +566,9 @@ how to automatically make a python test driven development environment on window
 review
 ********************************************************************************************
 
-One of the advantages of programming is that I can take a series of steps and make them a one line command for the computer to do for me.
+One of the advantages of programming is that I can take some steps and make them a one line command that the computer does for me.
 
-You now know one way to make a Test Driven Development Environment for Python projects, and have a program to do it for you anytime you want
+You now know one way to make a Test Driven Development Environment for Python projects, and have a program to do it anytime you want.
 
 Would you like to test :doc:`/how_to/calculator`?
 
