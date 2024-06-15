@@ -6,6 +6,12 @@
 how to measure sleep duration: test_duration_w_date_and_time
 #################################################################################
 
+.. raw:: html
+
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/LQDh03LiKz4?si=WKU0KwdHNBSYLwfx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+----
+
 This is part 4 of a program that calculates the difference between a given wake and sleep time.
 
 .. contents:: table of contents
