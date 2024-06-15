@@ -222,7 +222,7 @@ green: make it pass
 refactor: make it better
 *********************************************************************************
 
-I want something that can read dates and time from timestamps. I search `python's online documentation`_ for `date and time <https://docs.python.org/3/search.html?q=date+and+time>`_ to see if there is an existing solution and select the datetime_ :ref:`module<ModuleNotFoundError>` from the results. The available types in the :ref:`module<ModuleNotFoundError>` show `datetime.datetime`_ objects
+I want something that can read dates and times from timestamps. I search `python's online documentation`_ for `date and time <https://docs.python.org/3/search.html?q=date+and+time>`_ to see if there is an existing solution and select the datetime_ :ref:`module<ModuleNotFoundError>` from the results. The available types in the :ref:`module<ModuleNotFoundError>` show `datetime.datetime`_ objects
 
 .. code-block:: python
 
@@ -284,7 +284,7 @@ and the terminal shows an :ref:`AttributeError`
 
   AttributeError: module 'datetime' has no attribute 'strptime'
 
-the reference to the ``strptime`` :ref:`method<functions>` is not right because my `import statement`_ is different from `the example in the documentation <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_, so I add the :ref:`module<ModuleNotFoundError>` name to the call
+because my `import statement`_ is different from `the example in the documentation <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_, so I add the :ref:`module<ModuleNotFoundError>` name to the call
 
 .. code-block:: python
 
@@ -840,7 +840,7 @@ and the test is still green
   and the test passes. The new ``random_timestamp`` :ref:`function<functions>` does the following
 
   - generates a random timestamp by calling ``get_random_timestamp``
-  - checks to see if the timestamp is good by calling ``sleep_duration.get_datetime``
+  - checks if the timestamp is good by calling ``sleep_duration.get_datetime``
   - if the check passes it returns the timestamp
   - if the check raises a ValueError_ it repeats the process by calling itself
 

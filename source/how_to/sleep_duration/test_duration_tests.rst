@@ -213,7 +213,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* I define it as a :ref:`function<functions>` to make it callable_
+* then change it to a :ref:`function<functions>` to make it callable_
 
   .. code-block:: python
 
@@ -455,7 +455,7 @@ green: make it pass
               - get_datetime(wake_time)
             )
 
-  the terminal shows an :ref:`AssertionError`
+  and the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -464,7 +464,7 @@ green: make it pass
     AssertionError: datetime.timedelta(days=-744003, seconds=22500) != '744002 days, 17:45:00'
     AssertionError: datetime.timedelta(days=-1226280, seconds=76800) != '1226279 days, 2:40:00'
 
-  the test expects a string_ and the :ref:`function<functions>` returns a `datetime.timedelta`_ object. The values for days are also negative and the test expects positive numbers for the days, I think I am doing something wrong
+  the test expects a string_ and the :ref:`function<functions>` returns a `datetime.timedelta`_ object. The values for days are also negative and the test expects positive numbers for the days, I think I did something wrong
 
 * I add the str_ constructor_ to match the format of the expectation
 
@@ -492,7 +492,7 @@ green: make it pass
     AssertionError: '-398812 days, 16:44:00' != '398811 days, 7:16:00'
     AssertionError: '-1209690 days, 0:49:00' != '1209689 days, 23:11:00'
 
-  the ``duration`` :ref:`function<functions>` returns negative timestamps but the test expects positive timestamps, and the negative days all look like they are one number off from the expectation
+  the ``duration`` :ref:`function<functions>` returns negative timestamps but the test expects positive timestamps, and the negative days all look like they are one number less than the expectation
 
 * I switch ``wake_time`` and ``sleep_time`` in the `return statement`_
 

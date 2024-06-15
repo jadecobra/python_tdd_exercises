@@ -283,7 +283,7 @@ I can make code better by using `The Abstraction Principle`_ or `The Do Not Repe
 * ``python3 -m unittest`` was run to see the test pass
 * ``python3 -m unittest`` will be run anytime I make a change to make sure it does not break tests that already passed
 
-This means ``python3 -m unittest`` is run for each part of the Test Driven Development cycle or each time there is a code change. I automate this so `I Do Not Repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_, it would be better for a program to automatically run the tests when there is a change
+This means ``python3 -m unittest`` is run for each part of the Test Driven Development cycle or each time there is a code change. I do not want to keep typing ``python3 -m unittest`` , it would be better for a program to automatically run the tests when there is a change so `I Do Not Repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
 ----
 
@@ -428,7 +428,7 @@ how to make a Virtual Environment
 ----
 
 how to deactivate a virtual environment
-############################################################################################
+#################################################################################################
 
 type the following in a terminal with an active `virtual environment`_ ::
 
@@ -535,7 +535,7 @@ You made it this far and have become the greatest programmer in the world. Follo
 ----
 
 how to automatically make a python test driven development environment on windows without WSL
-############################################################################################
+#################################################################################################
 
 .. warning::
 
