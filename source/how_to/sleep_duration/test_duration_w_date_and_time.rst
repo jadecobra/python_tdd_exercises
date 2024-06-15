@@ -84,7 +84,7 @@ green: make it pass
     def test_duration_w_date_and_time(self):
     ...
 
-* then add an assertion in ``test_converting_strings_to_numbers`` to see if I can make the same ValueError_ happen again
+* then add an assertion in ``test_converting_strings_to_numbers`` to see if I can make the same ValueError_ happen again to make sure the problem is with converting the string to a number
 
   .. code-block:: python
 
@@ -812,9 +812,9 @@ and the test is still green
 
     ValueError: day is out of range for month
 
-  I need to make sure the random dates that are created by the :ref:`function<functions>` are real dates
+  I need to make sure the random dates that are made by the :ref:`function<functions>` are real dates
 
-* I change the name of ``random_timestamp`` to ``get_random_timestamp`` and create a new :ref:`function<functions>` that checks if the random timestamps generated are good
+* I change the name of ``random_timestamp`` to ``get_random_timestamp`` and make a new :ref:`function<functions>` to make sure the random timestamps generated are good
 
   .. code-block:: python
 
@@ -837,12 +837,12 @@ and the test is still green
         else:
             return result
 
-  and the test passes. The new ``random_timestamp`` :ref:`function<functions>` does the following
+  The new ``random_timestamp`` :ref:`function<functions>` does the following
 
   - generates a random timestamp by calling ``get_random_timestamp``
   - checks if the timestamp is good by calling ``sleep_duration.get_datetime``
-  - if the check passes it returns the timestamp
-  - if the check raises a ValueError_ it repeats the process by calling itself
+  - if the timestamp is good, the :ref:`function<functions>` returns it
+  - if the timestamp is bad, it raises a ValueError_ and repeats the process by calling itself
 
 * I can add another :ref:`function<functions>` to remove some repetition
 
