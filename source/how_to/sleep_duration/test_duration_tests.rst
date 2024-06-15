@@ -168,9 +168,9 @@ green: make it pass
     AssertionError: '2006/11/21 08:30' != datetime.datetime(2006, 11, 21, 8, 30)
     AssertionError: '2006/11/21 23:41' != datetime.datetime(2006, 11, 21, 23, 41)
 
-  I need a way to convert a string_ that has a date and time to a `datetime.datetime`_ object
+  I need a way to change a string_ that has a date and time to a `datetime.datetime`_ object
 
-* I use the `datetime.datetime.strptime`_ :ref:`method<functions>` to do the conversion
+* I use the `datetime.datetime.strptime`_ :ref:`method<functions>` to make it happen
 
   .. code-block:: python
 

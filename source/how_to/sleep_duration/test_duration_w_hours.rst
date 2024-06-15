@@ -660,7 +660,7 @@ refactor: make it better
 test_converting_strings_to_numbers
 #################################################################################
 
-The hours part of the timestamp after calling `str.split`_ is still a string_ and I got a :ref:`TypeError` when I tried to subtract one from another earlier. I want to see if I can use the int_ constructor_ to convert a string_ to a number
+The hours part of the timestamp after calling `str.split`_ is still a string_ and I got a :ref:`TypeError` when I tried to subtract one from another earlier. I want to see if I can use the int_ constructor_ to change a string_ to a number
 
 * I add a new failing test to test numbers that have a ``0`` in front of them
 

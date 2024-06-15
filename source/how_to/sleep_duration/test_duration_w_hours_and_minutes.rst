@@ -275,7 +275,7 @@ green: make it pass
 
     AssertionError: 31 != '00:31
 
-  the :ref:`function<functions>` returns the right number of minutes for the difference. I need a way to convert it to hours and minutes to match the expectations of the tests. I add the `unittest.skip decorator`_ to skip it while I test the solution
+  the :ref:`function<functions>` returns the right number of minutes for the difference. I need a way to change it to hours and minutes to match the expectations of the tests. I add the `unittest.skip decorator`_ to skip it while I test the solution
 
   .. code-block:: python
 
@@ -534,7 +534,7 @@ The challenge is to write a program that calculates the difference between a giv
 
   - then :doc:`interpolated </how_to/pass_values>` them in the timestamp strings that are given to the :ref:`function<functions>`
   - and `test_duration_calculation`_ to make sure that the ``duration`` :ref:`function<functions>` returns the right difference between ``wake_time`` and ``sleep_time``
-  - and converts it to a timestamp format
+  - and changes it to a timestamp format
 
     * by using `floor (integer) division`_ to get the hours
     * and the modulo_ operation to get the minutes

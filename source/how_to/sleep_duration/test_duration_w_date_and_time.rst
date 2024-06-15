@@ -68,7 +68,7 @@ red: make it fail
     ValueError: invalid literal for int() with base 10: '1999/12/31 11'
     ValueError: invalid literal for int() with base 10: '1999/12/31 21'
 
-  the test calls ``duration``, which calls ``read_timestamp``, which uses the int_ constructor_ to convert the timestamp string_ to a number after it calls `str.split`_, but it is not in the right format
+  the test calls ``duration``, which calls ``read_timestamp``, which uses the int_ constructor_ to change the timestamp string_ to a number after it calls `str.split`_, but it is not in the right format
 
 .. _test_duration_w_date_and_time_green_0:
 
@@ -100,7 +100,7 @@ green: make it pass
 
     ValueError: invalid literal for int() with base 10: '1999/12/31 21'
 
-  I cannot use the int_ constructor_ to convert a timestamp string_ to a number when it has a date. I add an `assertRaises`_ to :doc:`handle</how_to/exception_handling_tests>` the ValueError_
+  I cannot use the int_ constructor_ to change a timestamp string_ to a number when it has a date. I add an `assertRaises`_ to :doc:`handle</how_to/exception_handling_tests>` the ValueError_
 
   .. code-block:: python
 
@@ -883,7 +883,7 @@ The challenge was to write a program that calculates the difference between a gi
 * :ref:`test_duration_calculation`
 * :ref:`test_duration_w_an_earlier_wake_than_sleep_time<test_duration_w_an_earlier_wake_than_sleep_time>`
 * :ref:`test_duration_w_hours_and_minutes<test_duration_w_hours_and_minutes>`
-* `test_datetime_objects`_ where I used `python's online documentation`_ to read about the `datetime.datetime.strptime`_ :ref:`method<functions>` which I used to convert a string_ to a `datetime.datetime`_ object
+* `test_datetime_objects`_ where I used `python's online documentation`_ to read about the `datetime.datetime.strptime`_ :ref:`method<functions>` which I used to change a string_ to a `datetime.datetime`_ object
 * `test_get_datetime`_
 * `test_duration_w_date_and_time`_ where I used
 
