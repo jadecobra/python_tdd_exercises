@@ -46,6 +46,7 @@
 .. _set: https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
 .. _sets: https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
 .. _shebang: https://en.wikipedia.org/wiki/Shebang_(Unix)
+.. _standard output (stdout): https://en.wikipedia.org/wiki/Standard_streams#Standard_output_(stdout)
 .. _str.split: https://docs.python.org/3/library/stdtypes.html#str.split
 .. _str: https://docs.python.org/3/library/stdtypes.html#str
 .. _string: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
