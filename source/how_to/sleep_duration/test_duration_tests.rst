@@ -297,7 +297,7 @@ green: make it pass
             "wake_time: "7413/05/24 15:04" is earlier than sleep_time: "8720/08/18 01:02"" does not match ""
         )
 
-  which gives me a SyntaxError_ with this message
+  and get a SyntaxError_ with this message
 
   .. code-block:: python
 
