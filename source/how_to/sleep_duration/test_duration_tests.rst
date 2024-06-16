@@ -152,7 +152,7 @@ green: make it pass
 
   the expected values of the test changed
 
-* I change the `return statement`_, I want to see the difference between the input and expected output
+* I change the `return statement`_ to see the difference between the input and expected output
 
   .. code-block:: python
 
@@ -380,7 +380,7 @@ green: make it pass
     ValueError: wake_time: "3201/08/13 15:20" is earlier than sleep_time: "1074/03/31 16:44"
     ValueError: wake_time: "9810/07/30 04:29" is earlier than sleep_time: "9792/03/04 12:44"
 
-  this is not right, the timestamps for ``wake_time`` are not earlier than ``sleep_time``. The ``duration`` :ref:`function<functions>` needs a condition to make sure it only raises a ValueError_ when ``wake_time`` is earlier than ``sleep_time``. I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+  this is not right, the timestamps for ``wake_time`` are not earlier than ``sleep_time``. The ``duration`` :ref:`function<functions>` needs a condition to make sure it raises a ValueError_ only when ``wake_time`` is earlier than ``sleep_time``. I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
   .. code-block:: python
 
@@ -464,7 +464,7 @@ green: make it pass
     AssertionError: datetime.timedelta(days=-744003, seconds=22500) != '744002 days, 17:45:00'
     AssertionError: datetime.timedelta(days=-1226280, seconds=76800) != '1226279 days, 2:40:00'
 
-  the test expects a string_ and the :ref:`function<functions>` returns a `datetime.timedelta`_ object. The values for days are also negative and the test expects positive numbers for the days, I think I did something wrong
+  the test expects a string_ and the :ref:`function<functions>` returns a `datetime.timedelta`_ object. The values for days are also negative and the test expects positive numbers for the days, I did something wrong
 
 * I add the str_ constructor_ to match the format of the expectation
 

@@ -200,7 +200,7 @@ This is the ``RED`` part of the Test Driven Development cycle. The error in the 
 
 * ``FAILED (failures=1)`` there is one failure
 * ``Ran 1 test in 0.000s`` how long the test ran
-* ``AssertionError: True is not false`` The error is an :ref:`AssertionError` which is raised by python when an assert statement is :doc:`False </data_structures/booleans/booleans>`
+* ``AssertionError: True is not false`` The error is an :ref:`AssertionError` which is raised because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
 * ``self.assertFalse(True)`` is the line of code that caused the failure
 
   - assertFalse_ is a :ref:`method<functions>` in the `unittest.TestCase`_ :doc:`class </classes/classes>` that checks if its input is :doc:`False </data_structures/booleans/booleans>`
@@ -449,7 +449,7 @@ Make sure you are in the directory that contains the `virtual environment`_ for 
 how to automatically make a python test driven development environment
 ********************************************************************************************
 
-You made it this far and have become the greatest programmer in the world. Following `The Do Not Repeat Yourself (DRY) Principle`_, I would write a program that contains all the steps it took to get here. I can then use it to make a Test Driven Development Environment any time I want without having to remember each step of the process
+You made it this far and have become the greatest programmer in the world. Following `The Do Not Repeat Yourself (DRY) Principle`_, I would write a program that contains all the steps it took to get here. I can then use that to make a Test Driven Development Environment any time I want without having to remember each step of the process
 
 * I exit the tests in the terminal by pressing ``ctrl`` + ``c`` on the keyboard
 * then type ``deactivate`` to leave the `virtual environment`_
