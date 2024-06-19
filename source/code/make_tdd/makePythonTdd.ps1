@@ -1,7 +1,6 @@
 $projectName=$args[0]
 mkdir -p $projectName/tests
 Set-Location $projectName
-
 New-Item "$projectName.py"
 New-Item tests/__init__.py
 

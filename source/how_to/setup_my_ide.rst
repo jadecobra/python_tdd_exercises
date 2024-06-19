@@ -76,9 +76,9 @@ Visual Studio Extensions
 
 Here are extensions I use to customize `Visual Studio Code`_
 
-* `Dark Rainbow Theme`_  - I like pretty colors
-* `indent-rainbow`_ - did I mention I like pretty colors? This makes indentation easier to see from a distance
-* `Python <https://marketplace.visualstudio.com/items?itemName=ms-python.python>`_ - python language support
 * `Code Spell Checker`_ - to catch spelling mistakes
+* `indent-rainbow`_ - I like pretty colors and this makes indentation easier to see from a distance
+* `Python <https://marketplace.visualstudio.com/items?itemName=ms-python.python>`_ - python language support
+* `Dark Rainbow Theme`_  - did I mention I like pretty colors?
 
 ----

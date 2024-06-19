@@ -26,8 +26,6 @@ requirements
 * An Integrated Development Environment (IDE). Here are a few options
 
   - `Visual Studio Code`_
-  - `PyCharm Community Edition <https://www.jetbrains.com/pycharm/download>`_
-  - `Sublime Text <https://www.sublimetext.com>`_
   - `Other Integrated Development Environment (IDE) options <https://wiki.python.org/moin/IntegratedDevelopmentEnvironments>`_
 
 windows requirements
@@ -196,7 +194,7 @@ red: make it fail
 
 If you are typing along, *CONGRATULATIONS!* You have written your first test.
 
-This is the ``RED`` part of the Test Driven Development cycle. The error in the terminal has important information. I like to read it from the bottom up
+This is the ``RED`` part of the Test Driven Development cycle. The error in the terminal has important information that I like to read from the bottom up
 
 * ``FAILED (failures=1)`` there is one failure
 * ``Ran 1 test in 0.000s`` how long the test ran
@@ -276,8 +274,8 @@ and it shows a passing test
 refactor: make it better
 ############################################################################################
 
-So far ``python3 -m unittest`` was run to see the test fail, and again to see the test pass.If I make a change to the code I will have to run it again to make sure it does not break tests that passed before.
-This means it is run for each part of the Test Driven Development cycle or each time there is a code change. I do not want to keep typing ``python3 -m unittest`` , it would be better for a program to automatically run the tests when there is a change so `I Do Not Repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
+So far ``python3 -m unittest`` was run to see the test fail, and again to see the test pass. I will have to run it again for any code change, to make sure tests that were passing are not broken by the code change.
+This means it is run for each part of the Test Driven Development cycle or each time there is a code change. I do not want to type ``python3 -m unittest`` anymore, it would be better for a program to automatically run the tests when there is a change so `I Do Not Repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
 ----
 
@@ -298,7 +296,7 @@ how to make a Virtual Environment
   - echo_ is a program that writes its given arguments to the `standard output (stdout)`_
   - ``>`` is an operator that is used to send output from a program to the file given
   - `pytest-watch`_ is a python program that automatically runs pytest_ when a python file in the directory changes
-  - pytest_ is a `python package`_ like unittest_ for running tests
+  - pytest_ is a `python package`_ like unittest_ used for testing
   - ``requirements.txt`` is the name of a file where I can list required `python packages`_ for pip_ the `python package manager`_ to install later, you can use any name you like
 
 * I make a `virtual environment`_ with the venv_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_
@@ -449,7 +447,7 @@ Make sure you are in the directory that contains the `virtual environment`_ for 
 how to automatically make a python test driven development environment
 ********************************************************************************************
 
-You made it this far and have become the greatest programmer in the world. Following `The Do Not Repeat Yourself (DRY) Principle`_, I would write a program that contains all the steps it took to get here. I can then use that to make a Test Driven Development Environment any time I want without having to remember each step of the process
+You made it this far and have become the greatest programmer in the world. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I would write a program that contains all the steps it took to get here, then I can use it to make a Test Driven Development Environment any time I want without having to remember each step of the process
 
 * I exit the tests in the terminal by pressing ``ctrl`` + ``c`` on the keyboard
 * then type ``deactivate`` to leave the `virtual environment`_
