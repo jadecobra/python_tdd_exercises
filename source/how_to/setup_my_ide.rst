@@ -68,7 +68,7 @@ When working with just the Integrated Development Environment, I have the follow
 This setup helps me answer these questions
 
 * what is the same?
-* What is different?
+* what is different?
 
 *********************************************************************************
 Visual Studio Extensions

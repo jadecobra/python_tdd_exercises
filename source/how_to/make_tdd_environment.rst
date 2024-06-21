@@ -319,7 +319,7 @@ how to make a Virtual Environment
 
     .. code-block::
 
-      .venv/scripts/activate
+      .venv/scripts/activate.ps1
 
   the ``(.venv)`` on the far left of the command line in the terminal shows that the `virtual environment`_ is activated
 
@@ -437,9 +437,17 @@ Make sure you are in the directory that contains the `virtual environment`_ for 
 
 .. admonition:: If you are using Windows without `Windows Subsystem Linux`_
 
+  You may need to Set the Execution Policy first
+
   .. code-block::
 
-    .venv/scripts/activate
+    Set-ExecutionPolicy RemoteSigned
+
+  then activate the virtual environment
+
+  .. code-block::
+
+    .venv/scripts/activate.ps1
 
 -----
 
