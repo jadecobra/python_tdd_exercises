@@ -31,7 +31,7 @@ I put references on the left and the Integrated Development Environment on the r
   :width: 600
   :alt: Reference on the left
 
-this is great when I do not have an extra screen
+this helps when I do not have an extra screen
 
 
 for testing
@@ -45,7 +45,7 @@ When working with just the Integrated Development Environment, I have the follow
     :width: 600
     :alt: Explorer with Editors
 
-* editors side by side - source code on the left and tests on the right
+* editors side by side - source code on the left with tests on the right
 
   .. image:: /_static/setup_my_ide/2_editors.png
     :width: 600
@@ -59,13 +59,13 @@ When working with just the Integrated Development Environment, I have the follow
       :width: 600
       :alt: Terminal Window at the bottom
 
-  - to the right - when the results I am looking at in the terminal are too long to see in the bottom, for example when working JSON or :ref:`dictionaries`
+  - to the right - when the results I am looking at in the terminal are too long to see in the bottom, for example when working with documentation, JSON or :ref:`dictionaries`
 
     .. image:: /_static/setup_my_ide/terminal_on_right.png
       :width: 600
       :alt: Terminal Window on the right
 
-This setup helps me answer these questions
+This setup helps me answer two questions
 
 * what is the same?
 * what is different?
@@ -78,7 +78,7 @@ Here are extensions I use to customize `Visual Studio Code`_
 
 * `Code Spell Checker`_ - to catch spelling mistakes
 * `indent-rainbow`_ - I like pretty colors and this makes indentation easier to see from a distance
-* `Python <https://marketplace.visualstudio.com/items?itemName=ms-python.python>`_ - python language support
+* `Python <https://marketplace.visualstudio.com/items?itemName=ms-python.python>`_ - python language support with Pylance and a Python debugger
 * `Dark Rainbow Theme`_  - did I mention I like pretty colors?
 
 ----
