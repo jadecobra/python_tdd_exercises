@@ -17,7 +17,7 @@ class Test$($projectName)(unittest.TestCase):
 # Exceptions Encountered
 # AssertionError
 "@
-$testCode |  Out-File $("tests/test_$($projectName).py") -Encoding UTF8
+$testCode |  Out-File "tests/test_$projectName.py"
 
 "pytest-watch" | Out-File requirements.txt
 python -m venv .venv
