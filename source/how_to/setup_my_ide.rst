@@ -20,7 +20,7 @@ As of the writing of this book I use `Visual Studio Code`_
 Screen Layout
 *********************************************************************************
 
-I split my screen in the following ways depending on the use case, try different layouts to see what is best for you.
+I split my screen in the following ways depending on the use case, try different layouts to see what works best for you.
 
 for references
 #################################################################################
@@ -31,7 +31,7 @@ I put references on the left and the Integrated Development Environment on the r
   :width: 600
   :alt: Reference on the left
 
-this is convenient when I do not have an extra screen
+this is great when I do not have an extra screen
 
 
 for testing
