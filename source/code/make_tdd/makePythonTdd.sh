@@ -21,5 +21,6 @@ DELIMITER
 echo "pytest-watch" > requirements.txt
 python3 -m venv .venv
 source .venv/bin/activate
-pip install --upgrade pip --requirement requirements.txt
+pip install --upgrade pip
+pip install --requirement requirements.txt
 pytest-watch

@@ -39,7 +39,7 @@ for testing
 
 When working with just the Integrated Development Environment, I have the following windows open depending on what I want to see
 
-* explorer on the left to see files/folder structure at once
+* explorer on the left to see files/folder structure at once, and I can drag and drop files directly in the editor
 
   .. image:: /_static/setup_my_ide/explorer_w_editors.png
     :width: 600
@@ -74,7 +74,7 @@ This setup helps me answer two questions
 Visual Studio Extensions
 *********************************************************************************
 
-Here are extensions I use to customize `Visual Studio Code`_
+Here are extensions I use in `Visual Studio Code`_
 
 * `Code Spell Checker`_ - to catch spelling mistakes
 * `indent-rainbow`_ - I like pretty colors and this makes indentation easier to see from a distance

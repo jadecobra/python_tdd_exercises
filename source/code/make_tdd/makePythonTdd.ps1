@@ -22,5 +22,6 @@ $testCode |  Out-File "tests/test_$projectName.py"
 "pytest-watch" | Out-File requirements.txt
 python -m venv .venv
 .venv/scripts/activate.ps1
-python -m pip install --upgrade pip --requirement requirements.txt
+python -m pip install --upgrade pip
+python -m pip install --requirement requirements.txt
 pytest-watch
