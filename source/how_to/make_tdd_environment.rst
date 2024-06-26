@@ -275,7 +275,7 @@ refactor: make it better
 ############################################################################################
 
 So far ``python3 -m unittest`` was run to see the test fail, and to see the test pass. I will have to run it again after code changes to make sure they do not break passing tests.
-This means it is run for each part of the Test Driven Development cycle or each time there is a code change. I do not want to type ``python3 -m unittest`` anymore, it would be better if a program ran the tests for me so `I Do Not Repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
+This means it is run for each part of the Test Driven Development cycle or each time there is a code change. I do not want to type ``python3 -m unittest`` anymore, it would be better for a program to run the tests so `I Do Not Repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
 ----
 
@@ -437,15 +437,15 @@ Make sure you are in the directory that contains the `virtual environment`_ for 
 
 .. admonition:: If you are using Windows without `Windows Subsystem Linux`_
 
-  You may need to Set the Execution Policy first
+  You may need to Set the Execution Policy in Administrator mode first
 
-  .. code-block::
+  .. code-block:: PowerShell
 
     Set-ExecutionPolicy RemoteSigned
 
   then activate the virtual environment
 
-  .. code-block::
+  .. code-block:: PowerShell
 
     .venv/scripts/activate.ps1
 
@@ -565,7 +565,7 @@ review
 
 One of the advantages of programming is that I can take some steps and make them a one line command that the computer does for me.
 
-You now know one way to make a Test Driven Development Environment for Python projects, and have a program to do it for you anytime you want.
+You now know one way to make a Python Test Driven Development Environment, and have a program to do it for you anytime you want.
 
 Would you like to test :doc:`/how_to/calculator`?
 
