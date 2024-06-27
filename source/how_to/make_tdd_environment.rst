@@ -275,7 +275,7 @@ refactor: make it better
 ############################################################################################
 
 So far ``python3 -m unittest`` was run to see the test fail, and to see the test pass. I will have to run it again after code changes to make sure they do not break passing tests.
-This means it is run for each part of the Test Driven Development cycle or each time there is a code change. I do not want to type ``python3 -m unittest`` anymore, it would be better for a program to run the tests so `I Do Not Repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
+This means it is run for each part of the Test Driven Development cycle or each time there is a code change. I do not want to type ``python3 -m unittest`` again, it would be better for a program to run the tests so `I Do Not Repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
 ----
 
@@ -441,7 +441,7 @@ Make sure you are in the directory that contains the `virtual environment`_ for 
 
   .. code-block:: PowerShell
 
-    Set-ExecutionPolicy RemoteSigned
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 
   then activate the virtual environment
 
@@ -455,7 +455,7 @@ Make sure you are in the directory that contains the `virtual environment`_ for 
 how to automatically make a python test driven development environment
 ********************************************************************************************
 
-You made it this far and have become the greatest programmer in the world. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I would write a program that contains all the steps it took to get here, then I can use it anytime I want to make a Test Driven Development Environment without having to remember each step of the process
+You made it this far and have become the greatest programmer in the world. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I would write a program that contains all the steps it took to get here, then I can use it anytime I want to make a Test Driven Development Environment without having to remember each step
 
 * I exit the tests in the terminal by pressing ``ctrl`` + ``c`` on the keyboard
 * then type ``deactivate`` to leave the `virtual environment`_
