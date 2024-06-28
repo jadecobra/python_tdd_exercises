@@ -18,9 +18,9 @@ class Test$PROJECT_NAME(unittest.TestCase):
 # AssertionError
 DELIMITER
 
-echo "pytest-watch" > requirements.txt
 python3 -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip
+echo "pytest-watch" > requirements.txt
 pip install --requirement requirements.txt
 pytest-watch

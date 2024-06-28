@@ -286,19 +286,6 @@ how to automatically run tests
 how to make a Virtual Environment
 ############################################################################################
 
-* I make a file called ``requirements.txt`` in the ``magic`` folder
-
-  .. code-block:: shell
-
-      echo "pytest-watch" > requirements.txt
-
-  - the command above makes a file named ``requirements.txt`` with `pytest-watch`_ as the text inside it
-  - echo_ is a program that writes its given arguments to the `standard output (stdout)`_
-  - ``>`` is an operator that is used to send output from a program to the file given
-  - `pytest-watch`_ is a python program that automatically runs pytest_ when a python file in the directory changes
-  - pytest_ is a `python package`_ like unittest_ used for testing
-  - ``requirements.txt`` is the name of a file where I can list required `python packages`_ for pip_ the `python package manager`_ to install later, you can use any name you like
-
 * I make a `virtual environment`_ with the venv_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_
 
   .. code-block:: python
@@ -353,6 +340,19 @@ how to make a Virtual Environment
     pip     24.0
 
   your versions may vary
+
+* I make a file called ``requirements.txt`` in the ``magic`` folder
+
+  .. code-block:: shell
+
+      echo "pytest-watch" > requirements.txt
+
+  - the command above makes a file named ``requirements.txt`` with `pytest-watch`_ as the text inside it
+  - echo_ is a program that writes its given arguments to the `standard output (stdout)`_
+  - ``>`` is an operator that is used to send output from a program to the file given
+  - `pytest-watch`_ is a python program that automatically runs pytest_ when a python file in the directory changes
+  - pytest_ is a `python package`_ like unittest_ used for testing
+  - ``requirements.txt`` is the name of a file where I can list required `python packages`_ for pip_ the `python package manager`_ to install later, you can use any name you like
 
 * then I install the `pytest-watch`_ package and its dependencies from the ``requirements.txt`` in the `virtual environment`_
 

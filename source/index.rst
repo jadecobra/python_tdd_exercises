@@ -48,8 +48,7 @@ I suggest you
 * try to write solutions using only the tests from the :ref:`catalog_of_tests` as your guide
 * try adding tests for any ideas you get as you go through a chapter
 * you can also go through the :ref:`how-tos` section sequentially
-* work consistently at it, what can you sustainably do everyday for the next 10 years?
-* do not quit until you get to the end, especially when it is hard, it is part of the experience when learning to solve problems, and there is a lot of failure. If you take it one small step at a time you eventually get there
+* do not quit until you get to the end of a chapter, especially when it is hard, it is part of the experience when learning to solve problems, and there is a lot of failure. If you take it one small step at a time you eventually get there
 * if you prefer videos, there is one for each chapter at `<https://www.youtube.com/@JacobItegboje>`_
 
 .. _how-tos:
