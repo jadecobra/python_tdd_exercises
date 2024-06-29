@@ -111,10 +111,10 @@ setup
 
     magic
       ╰──src
-        ╰──magic.py
+         ╰──magic.py
       ╰──tests
-      |  ╰──__init__.py
-      |  ╰──test_magic.py
+         ╰──__init__.py
+         ╰──test_magic.py
 
 .. tip:: ``magic`` is a placeholder for the name of the project. For example, change ``magic`` to ``calculator`` to work on a ``calculator`` project
 
@@ -394,11 +394,13 @@ how to make a Virtual Environment
 
     magic
       ╰──.venv
+      ╰──src
+      | ╰──magic.py
+      magic.py
       ╰──tests
       |  ╰──__pycache__
       |  ╰──__init__.py
       |  ╰──test_magic.py
-      ╰──magic.py
       ╰──requirements.txt
 
 * When I type ``pytest-watch`` in the terminal, the test runs and it shows results without going back to the command line
