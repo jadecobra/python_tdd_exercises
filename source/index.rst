@@ -39,7 +39,7 @@ how can I use this book?
 
 You can choose how you go through the chapters by starting with what you like.
 
-I suggest you
+My recommendations are that you
 
 * start with :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` because it is required by every chapter
 * type out the code portions as you go through any chapter without copying and pasting the code
@@ -47,9 +47,10 @@ I suggest you
 * try remaking the tests from memory or write new tests for a concept you are working on
 * try to write solutions using only the tests from the :ref:`catalog_of_tests` as your guide
 * try adding tests for any ideas you get as you go through a chapter
-* you can also go through the :ref:`how-tos` section sequentially
+* you can also go through the :ref:`how-tos` section in order
 * do not quit until you get to the end of a chapter, especially when it is hard, it is part of the experience when learning to solve problems, and there is a lot of failure. If you take it one small step at a time you eventually get there
-* if you prefer videos, there is one for each chapter at `<https://www.youtube.com/@JacobItegboje>`_
+
+If you prefer videos, there is one for each chapter at `<https://www.youtube.com/@JacobItegboje>`_
 
 .. _how-tos:
 

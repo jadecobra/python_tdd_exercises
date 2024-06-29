@@ -1,8 +1,10 @@
 #!/bin/bash
 PROJECT_NAME=$1
-mkdir --parents $PROJECT_NAME/tests
+mkdir $PROJECT_NAME
 cd $PROJECT_NAME
-touch $PROJECT_NAME.py tests/__init__.py
+mkdir src tests
+touch src/$PROJECT_NAME.py
+touch tests/__init__.py
 
 cat << DELIMITER > tests/test_$PROJECT_NAME.py
 import unittest

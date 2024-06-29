@@ -31,11 +31,11 @@ requirements
 windows requirements
 #################################################################################
 
-If the operating system of your computer is Windows, use `Windows Subsystem Linux`_
+If you are using a Windows computer, install `Windows Subsystem Linux`_
 
 * click ``start``
-* type ``PowerShell`` and click to open a terminal
-* install `Windows Subsystem Linux`_ by typing this in a PowerShell_ terminal
+* type ``PowerShell``, right click and select ``Run as administrator`` to open a terminal
+* install `Windows Subsystem Linux`_ by typing
 
   .. code-block:: powershell
 
@@ -57,15 +57,11 @@ If the operating system of your computer is Windows, use `Windows Subsystem Linu
 setup
 ********************************************************************************************
 
-* I open a terminal in the Integrated Development Environment (IDE) then use mkdir_ with the ``-p/--parents`` option to make a directory for the project with a child directory called ``tests`` inside it
+* I open a terminal in the Integrated Development Environment (IDE) then use mkdir_ to make a directory for the project
 
   .. code-block:: shell
 
-    mkdir --parents magic/tests
-
-  .. admonition:: if ``--parents`` does not work
-
-    try ``mkdir -p magic/tests``
+    mkdir magic
 
 * and change directory to the project with the cd_ program
 
@@ -73,21 +69,29 @@ setup
 
     cd magic
 
-  this is where all the code for the project will stay
+  this is where all code for the project will stay
 
-* touch_ is a program that makes an empty file when given a name
+* I make child directories for the source code and tests
+
+  .. code-block:: shell
+
+    mkdir src tests
+
+* then add empty files for the project
 
   .. admonition:: If you are using Windows without `Windows Subsystem Linux`_
 
     change ``touch`` to ``New-Item``
 
-  - I use it to make an empty file that will hold the source code for the program
+  - I make an empty file that will hold the source code for the program
 
     .. code-block:: shell
 
-      touch magic.py
+      touch src/magic.py
 
-  - tests will be stored in the ``tests`` folder to separate them from the source code (the actual program). I make another empty file called ``__init__.py`` in the ``tests`` folder to tell Python that it is a `python package`_
+    touch_ is a program that makes an empty file when given a name
+
+  - tests will stay in the ``tests`` folder to separate them from the source code (the actual program). I make an empty file called ``__init__.py`` in the ``tests`` folder to tell Python that it is a `python package`_
 
     .. code-block:: shell
 
@@ -95,7 +99,7 @@ setup
 
     .. WARNING:: make sure you use two underscores for ``__init__.py``
 
-  - I make one more empty file in the ``tests`` folder that will have the test
+  - then add one more empty file to the ``tests`` folder for the actual test
 
     .. code-block:: shell
 
@@ -106,12 +110,13 @@ setup
   .. code-block:: python
 
     magic
+      ╰──src
+        ╰──magic.py
       ╰──tests
       |  ╰──__init__.py
       |  ╰──test_magic.py
-      ╰──magic.py
 
-.. tip:: ``magic`` is a placeholder for the name of the project. For example to make a project called ``calculator``, I would change ``magic`` to ``calculator``
+.. tip:: ``magic`` is a placeholder for the name of the project. For example, change ``magic`` to ``calculator`` to work on a ``calculator`` project
 
 ----
 
@@ -149,25 +154,25 @@ red: make it fail
 
   Here is an explanation of the code above
 
-  - ``import unittest`` imports unittest_ which is a :ref:`module<ModuleNotFoundError>` used for testing from the `python standard library`_
+  - ``import unittest`` imports the unittest_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_. This :ref:`module<ModuleNotFoundError>` is used for testing
   - ``class TestMagic`` is the definition of a test :doc:`class </classes/classes>`
 
     * :doc:`class </classes/classes>` is the python keyword for making :doc:`/classes/classes`
-    * ``TestMagic`` is the name given to the :doc:`class </classes/classes>` that will hold the tests
+    * ``TestMagic`` is the name given to the :doc:`class </classes/classes>` that will hold the tests, you can use any name you want as long as it starts with ``Test``
     * `unittest.TestCase`_ is a :doc:`class </classes/classes>` defined in the unittest_ :ref:`module<ModuleNotFoundError>` that contains :doc:`methods (functions) </functions/functions>` for testing
     * ``TestMagic`` inherits from `unittest.TestCase`_, it is a child or clone of `unittest.TestCase`_ that can do the same things it can
 
   - ``def test_failure`` is the definition of a test :ref:`method<functions>` to test the program I am making
 
     * def_ is the python keyword for making :ref:`functions (methods)<functions>`
-    * ``test_failure`` is the name of the :ref:`method<functions>`
-    * ``self`` is the ``TestMagic`` :ref:`class<classes>`. I use ``self`` to access :doc:`methods (functions) </functions/functions>` and :ref:`attributes<AttributeError>` of the ``TestMagic`` class, without having to type ``TestMagic()`` or ``unittest.TestCase()``
+    * ``test_failure`` is the name of the :ref:`method<functions>`,  you can use any name you want as long as it starts with ``test_``
+    * ``self`` is the ``TestMagic`` :ref:`class<classes>`. I use ``self`` to access :doc:`methods (functions) </functions/functions>` and :ref:`attributes<AttributeError>` of the ``TestMagic`` class and by extension `unittest.TestCase`_, without having to type ``TestMagic().`` or ``unittest.TestCase().``
     * ``self.assertFalse(True)`` is the actual test. I expect this line to fail because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
 
-      - assertFalse_ is a :ref:`method<functions>` in the `unittest.TestCase`_ :doc:`class </classes/classes>` that checks if its input is :doc:`False </data_structures/booleans/booleans>` and raises an :ref:`AssertionError` when it is not
+      - assertFalse_ is a :ref:`method<functions>` in the `unittest.TestCase`_ :doc:`class </classes/classes>` that checks if its input is :doc:`False </data_structures/booleans/booleans>`
       - :doc:`True </data_structures/booleans/booleans>` is given as input to ``assertFalse``
 
-* I save the file and turn on the ``Auto Save`` feature in the Integrated Development Environment (IDE) to automatically save files when I make a change
+* I turn on the ``Auto Save`` feature in the Integrated Development Environment (IDE) to automatically save files when I make a change
 * then type this in the terminal to run the test
 
   .. code-block:: python
@@ -194,21 +199,17 @@ red: make it fail
 
 If you are typing along, *CONGRATULATIONS!* You have written your first test.
 
-This is the ``RED`` part of the Test Driven Development cycle. The error in the terminal has important information that I like to read from the bottom up
+This is the ``RED`` part of the Test Driven Development cycle. The error in the terminal has important information, reading from the bottom
 
 * ``FAILED (failures=1)`` there is one failure
 * ``Ran 1 test in 0.000s`` how long the test ran
 * ``AssertionError: True is not false`` The error is an :ref:`AssertionError` which is raised because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
 * ``self.assertFalse(True)`` is the line of code that caused the failure
-
-  - assertFalse_ is a :ref:`method<functions>` in the `unittest.TestCase`_ :doc:`class </classes/classes>` that checks if its input is :doc:`False </data_structures/booleans/booleans>`
-  - :doc:`True </data_structures/booleans/booleans>` is given as input to assertFalse_ and it raises an :ref:`AssertionError` because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
-
-* ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` is the line number and location of the file where the :ref:`AssertionError` happened.
+* ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` is the line number and location of the file where the :ref:`AssertionError` happened
 
   .. tip::
 
-    Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click with your mouse on ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` in the terminal and the Integrated Development Environment (IDE) will place the cursor at the position in the file where the error occurred
+    Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click with your mouse on ``File ".../magic/tests/test_magic.py", line 7`` in the terminal and the Integrated Development Environment (IDE) will open the file in the editor and place the cursor on the line in the file where the error happened
 
 * ``Traceback (most recent call last):`` all the indented information shown after this line is the ``traceback`` showing the calls python made that led to the error
 * ``FAIL: test_failure (tests.TestMagic.test_failure)`` is a header with information in :doc:`dot notation</dot_notation>` about the test
@@ -222,10 +223,10 @@ This is the ``RED`` part of the Test Driven Development cycle. The error in the 
 * ``python3 -m unittest`` is the command to run tests with ``unittest``
 
   - ``python3`` is the major version of python being used
-  - ``-m`` is an option passed to python to call a :ref:`module<ModuleNotFoundError>` given after the option as a script
+  - ``-m`` is an option passed to python to run the :ref:`module<ModuleNotFoundError>` given after the option as a script
   - unittest_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ used for testing
 
-* I recommend you write down :doc:`Exceptions </how_to/exception_handling_programs>` you meet on this journey to become more familiar with them. Time to add :ref:`AssertionError` to the list
+* I recommend you write down :doc:`Exceptions </how_to/exception_handling_programs>` you meet on this journey to become more familiar with them, it will help when you run into errors later. Time to add :ref:`AssertionError` to the list
 
   .. code-block:: python
 
@@ -274,8 +275,8 @@ and it shows a passing test
 refactor: make it better
 ############################################################################################
 
-So far ``python3 -m unittest`` was run to see the test fail, and to see the test pass. I will have to run it again after code changes to make sure they do not break passing tests.
-This means it is run for each part of the Test Driven Development cycle or each time there is a code change. I do not want to type ``python3 -m unittest`` again, it would be better for a program to run the tests so `I Do Not Repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
+How can I make this better? I ran ``python3 -m unittest`` to see the test fail, again to see the test pass and will have to run it again anytime I change the code, to make sure tests that were passing are not broken and the new code does what I expect.
+This means it is run for each part of the Test Driven Development cycle or any time there is a code change. I do not want to type ``python3 -m unittest`` again, it would be better for a program to run the tests so `I Do Not Repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
 ----
 
@@ -293,8 +294,8 @@ how to make a Virtual Environment
       python3 -m venv .venv
 
   - ``python3`` is the major version of python being used
-  - ``-m`` is an option passed to python to call the :ref:`module<ModuleNotFoundError>` given after the option
-  - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ for making a `virtual environment`_ when given a name
+  - ``-m`` is an option passed to python to run the :ref:`module<ModuleNotFoundError>` given after the option as a script
+  - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ for making a `virtual environment`_ with a given name
   - a `virtual environment`_ is a separate folder for dependencies of the project
   - ``.venv`` is the standard name for `virtual environments <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ in Python, you can use any name you like
 
@@ -352,7 +353,7 @@ how to make a Virtual Environment
   - ``>`` is an operator that is used to send output from a program to the file given
   - `pytest-watch`_ is a python program that automatically runs pytest_ when a python file in the directory changes
   - pytest_ is a `python package`_ like unittest_ used for testing
-  - ``requirements.txt`` is the name of a file where I can list required `python packages`_ for pip_ the `python package manager`_ to install later, you can use any name you like
+  - ``requirements.txt`` is the name of a file where I can list `python packages`_ for pip_ the `python package manager`_ to install later, you can use any name you like
 
 * then I install the `pytest-watch`_ package and its dependencies from the ``requirements.txt`` in the `virtual environment`_
 
@@ -522,7 +523,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   all the text between the two ``DELIMITER`` words will be written to ``tests/test_$PROJECT_NAME.py``
 
-* I use `chmod <https://man7.org/linux/man-pages/man1/chmod.1.html>`_ to make the program executable ::
+* I use chmod_ to make the program executable ::
 
     chmod +x makePythonTdd.sh
 
