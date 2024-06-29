@@ -111,7 +111,7 @@ setup
 
     magic
       ╰──src
-         ╰──magic.py
+      |  ╰──magic.py
       ╰──tests
          ╰──__init__.py
          ╰──test_magic.py
@@ -179,6 +179,14 @@ red: make it fail
 
     python3 -m unittest
 
+  .. admonition:: If you are using Windows without `Windows Subsystem Linux`_
+
+    use ``python`` instead of ``python3``
+
+    .. code-block:: shell
+
+      python -m unittest
+
   and the terminal shows a failure
 
   .. code-block:: python
@@ -211,7 +219,7 @@ This is the ``RED`` part of the Test Driven Development cycle. The error in the 
 
     Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click with your mouse on ``File ".../magic/tests/test_magic.py", line 7`` in the terminal and the Integrated Development Environment (IDE) will open the file in the editor and place the cursor on the line in the file where the error happened
 
-* ``Traceback (most recent call last):`` all the indented information shown after this line is the ``traceback`` showing the calls python made that led to the error
+* ``Traceback (most recent call last):`` all the indented information shown after this line is the ``traceback`` showing the calls that led to the error
 * ``FAIL: test_failure (tests.TestMagic.test_failure)`` is a header with information in :doc:`dot notation</dot_notation>` about the test
 
   - ``tests.TestMagic.test_failure`` is the location of the failing test
@@ -224,9 +232,8 @@ This is the ``RED`` part of the Test Driven Development cycle. The error in the 
 
   - ``python3`` is the major version of python being used
   - ``-m`` is an option passed to python to run the :ref:`module<ModuleNotFoundError>` given after the option as a script
-  - unittest_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ used for testing
 
-* I recommend you write down :doc:`Exceptions </how_to/exception_handling_programs>` you meet on this journey to become more familiar with them, it will help when you run into errors later. Time to add :ref:`AssertionError` to the list
+* I recommend you write down :doc:`Exceptions </how_to/exception_handling_programs>` you meet to become more familiar with them, it will help when you run into errors later. Time to add :ref:`AssertionError` to the list
 
   .. code-block:: python
 
@@ -257,6 +264,14 @@ then run the test again from the terminal
 .. code-block:: python
 
   python3 -m unittest
+
+.. admonition:: If you are using Windows without `Windows Subsystem Linux`_
+
+  use ``python`` instead of ``python3``
+
+  .. code-block:: shell
+
+    python -m unittest
 
 and it shows a passing test
 
@@ -294,9 +309,9 @@ how to make a Virtual Environment
       python3 -m venv .venv
 
   - ``python3`` is the major version of python being used
-  - ``-m`` is an option passed to python to run the :ref:`module<ModuleNotFoundError>` given after the option as a script
+  - ``-m`` is an option passed to python to run the given :ref:`module<ModuleNotFoundError>` as a script
   - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ for making a `virtual environment`_ with a given name
-  - a `virtual environment`_ is a separate folder for dependencies of the project
+  - a `virtual environment`_ is a separate folder where packages that are dependencies of the project will be installed
   - ``.venv`` is the standard name for `virtual environments <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ in Python, you can use any name you like
 
 * I activate the `virtual environment`_ to use it ::
@@ -304,6 +319,12 @@ how to make a Virtual Environment
       source .venv/bin/activate
 
   .. admonition:: If you are using Windows without `Windows Subsystem Linux`_ type this instead
+
+    .. code-block::
+
+      .venv/scripts/activate
+
+    or
 
     .. code-block::
 
@@ -323,10 +344,10 @@ how to make a Virtual Environment
 
   - pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that installs `python packages`_
   - ``install`` is an argument given to pip_ to install a given package name
-  - ``pip`` is the package name given for pip_ to install, in this case  ``pip`` installs ``pip``
   - ``--upgrade`` is an option given to the ``install`` argument for pip_ to install the latest version of the name given
+  - ``pip`` is the package name given for pip_ to install, in this case it upgrades itself
 
-* After upgrading, I use pip_ to see the packages that are already installed in the virtual environment
+* After the upgrade, I can use pip_ to see the packages that are already installed in the virtual environment
 
   .. code-block:: python
 
@@ -338,7 +359,7 @@ how to make a Virtual Environment
 
     Package Version
     ------- -------
-    pip     24.0
+    pip     24.1.1
 
   your versions may vary
 
@@ -347,6 +368,12 @@ how to make a Virtual Environment
   .. code-block:: shell
 
       echo "pytest-watch" > requirements.txt
+
+  .. admonition:: If you are using Windows without `Windows Subsystem Linux`_ type this instead
+
+    .. code-block::
+
+      "pytest-watch" | Out-File requirements.txt
 
   - the command above makes a file named ``requirements.txt`` with `pytest-watch`_ as the text inside it
   - echo_ is a program that writes its given arguments to the `standard output (stdout)`_
@@ -370,7 +397,7 @@ how to make a Virtual Environment
 
     pip list
 
-  and the terminal shows this
+  and the terminal shows
 
   .. code-block:: python
 
@@ -448,6 +475,12 @@ Make sure you are in the directory that contains the `virtual environment`_ for 
 
   then activate the virtual environment
 
+  .. code-block::
+
+    .venv/scripts/activate
+
+  or
+
   .. code-block:: PowerShell
 
     .venv/scripts/activate.ps1
@@ -479,8 +512,9 @@ You made it this far and have become the greatest programmer in the world. To fo
   .. code-block:: ruby
 
     #!/bin/bash
-    mkdir --parents magic/tests
+    mkdir --parents magic
     cd magic
+    mkdir src tests
     touch magic.py
     touch tests/__init__.py
     touch tests/test_magic.py
@@ -499,8 +533,9 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     #!/bin/bash
     PROJECT_NAME=$1
-    mkdir --parents $PROJECT_NAME/tests
+    mkdir --parents $PROJECT_NAME
     cd $PROJECT_NAME
+    mkdir src tests
     touch $PROJECT_NAME.py
     touch tests/__init__.py
     touch tests/test_$PROJECT_NAME.py
@@ -556,7 +591,7 @@ how to automatically make a python test driven development environment on window
     :linenos:
     :language: PowerShell
 
-* I can make a Test Driven Development environment anytime I want by giving a name for the ``PROJECT_NAME`` variable when the program is called. For example, typing this command in the terminal in the folder where ``makePythonTdd.ps1`` is saved will make a Test Driven Development environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator` ::
+* I can make a Test Driven Development environment anytime I want by giving a name for the ``$projectName`` variable when the program is called. For example, typing this command in the terminal in the folder where ``makePythonTdd.ps1`` is saved will make a Test Driven Development environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator` ::
 
     ./makePythonTdd.ps1 calculator
 
@@ -566,9 +601,7 @@ how to automatically make a python test driven development environment on window
 review
 ********************************************************************************************
 
-One of the advantages of programming is that I can take some steps and make them a one line command that the computer does for me.
-
-You now know one way to make a Python Test Driven Development Environment, and have a program to do it for you anytime you want.
+One of the advantages of programming is that I can take some steps and make them a one line command that the computer does for me. You now know one way to make a Python Test Driven Development Environment, and have a program to do it for you anytime you want.
 
 Would you like to test :doc:`/how_to/calculator`?
 
