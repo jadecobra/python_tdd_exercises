@@ -9,7 +9,7 @@
 pumping python: how I solve problems with test driven development
 #################################################################################
 
-This book is a collection of `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ exercises that have helped me understand and use Python from more than 10 years of learning and watching other people use it.
+This book is a collection of `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ exercises that have helped me understand and use Python from more than 10 years of learning and watching other people use it as a programmer in various roles as a Developer, Platform Engineer, DevOps Engineer and Solutions Architect.
 
 `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ is a way of developing software with a focus on tests. I write tests for ideas to reach a goal or meet a requirement, and the results tell me if I am closer or further away from the goal. The process is repeated until I reach the goal.
 

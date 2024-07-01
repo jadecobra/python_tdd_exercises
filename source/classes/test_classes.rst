@@ -194,7 +194,7 @@ In object oriented programming there is a concept called `Inheritance <https://e
 
 Making new objects is easier because I do not have to reinvent or rewrite things that already exist, I can inherit them instead and change the new objects for my specific use case
 
-To use inheritance I specify the "parent" in parentheses when I define the new object (the child) to establish the relationship
+To use inheritance I specify the "parent" in parentheses when I define the new object (the child) to make the relationship
 
 red: make it fail
 #################################################################################

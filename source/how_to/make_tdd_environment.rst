@@ -49,7 +49,7 @@ If you are using a Windows computer, install `Windows Subsystem Linux`_
     sudo apt full-upgrade --yes
     sudo apt install python3 python3-venv --yes
 
-  run the rest of the commands in this chapter in a bash_ terminal
+  run the rest of the commands in your bash_ terminal
 
 ----
 
@@ -57,7 +57,7 @@ If you are using a Windows computer, install `Windows Subsystem Linux`_
 setup
 ********************************************************************************************
 
-* I open a terminal in the Integrated Development Environment (IDE) then use mkdir_ to make a directory for the project
+* I open a terminal in the Integrated Development Environment (IDE) then use mkdir_ to make a folder/directory for the project
 
   .. code-block:: shell
 
@@ -71,7 +71,7 @@ setup
 
   this is where all code for the project will stay
 
-* I make child directories for the source code and tests
+* I make child folders/directories for the source code and tests
 
   .. code-block:: shell
 
@@ -91,7 +91,7 @@ setup
 
     touch_ is a program that makes an empty file when given a name
 
-  - tests will stay in the ``tests`` folder to separate them from the source code (the actual program). I make an empty file called ``__init__.py`` in the ``tests`` folder to tell Python that it is a `python package`_
+  - tests will stay in the ``tests`` folder/directory to separate them from the source code (the actual program). I make an empty file called ``__init__.py`` in the ``tests`` folder/directory to tell Python that it is a `python package`_, this will help it find the tests later
 
     .. code-block:: shell
 
@@ -99,13 +99,15 @@ setup
 
     .. WARNING:: make sure you use two underscores for ``__init__.py``
 
-  - then add one more empty file to the ``tests`` folder for the actual test
+  - then add one more empty file to the ``tests`` folder/directory for the actual test
 
     .. code-block:: shell
 
       touch tests/test_magic.py
 
-* Here is what the folder structure looks like
+    you can use any name you like as long as it starts with ``test_``
+
+* Here is what the folder/directory structure looks like
 
   .. code-block:: python
 
@@ -154,7 +156,7 @@ red: make it fail
 
   Here is an explanation of the code above
 
-  - ``import unittest`` imports the unittest_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_. This :ref:`module<ModuleNotFoundError>` is used for testing
+  - ``import unittest`` imports the unittest_ :ref:`module<ModuleNotFoundError>` which is used for testing, from the `python standard library`_
   - ``class TestMagic`` is the definition of a test :doc:`class </classes/classes>`
 
     * :doc:`class </classes/classes>` is the python keyword for making :doc:`/classes/classes`
@@ -192,22 +194,22 @@ red: make it fail
   .. code-block:: python
 
     F
-    ======================================================
-    FAIL: test_failure (tests.TestMagic.test_failure)
-    ------------------------------------------------------
+    =============================================================
+    FAIL: test_failure (tests.test_magic.TestMagic.test_failure)
+    -------------------------------------------------------------
     Traceback (most recent call last):
     File ".../magic/tests/test_magic.py", line 7, in test_failure
         self.assertFalse(True)
     AssertionError: True is not false
 
-    ------------------------------------------------------
+    -------------------------------------------------------------
     Ran 1 test in 0.000s
 
     FAILED (failures=1)
 
 If you are typing along, *CONGRATULATIONS!* You have written your first test.
 
-This is the ``RED`` part of the Test Driven Development cycle. The error in the terminal has important information, reading from the bottom
+This is the ``RED`` part of the Test Driven Development cycle. The error in the terminal has important information, here is an explanation reading from the bottom
 
 * ``FAILED (failures=1)`` there is one failure
 * ``Ran 1 test in 0.000s`` how long the test ran
@@ -217,23 +219,24 @@ This is the ``RED`` part of the Test Driven Development cycle. The error in the 
 
   .. tip::
 
-    Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click with your mouse on ``File ".../magic/tests/test_magic.py", line 7`` in the terminal and the Integrated Development Environment (IDE) will open the file in the editor and place the cursor on the line in the file where the error happened
+    Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click with your mouse on ``File ".../magic/tests/test_magic.py", line 7`` in the terminal, the Integrated Development Environment (IDE) will open the file in the editor with the cursor on the line where the error happened
 
 * ``Traceback (most recent call last):`` all the indented information shown after this line is the ``traceback`` showing the calls that led to the error
-* ``FAIL: test_failure (tests.TestMagic.test_failure)`` is a header with information in :doc:`dot notation</dot_notation>` about the test
+* ``FAIL: test_failure (tests.test_magic.TestMagic.test_failure)`` is a header with information in :doc:`dot notation</dot_notation>` about the test
 
-  - ``tests.TestMagic.test_failure`` is the location of the failing test
-  -  ``tests`` is the tests folder
+  - ``tests.test_magic.TestMagic.test_failure`` is the location of the failing test
+  -  ``tests`` is the tests folder/directory
+  -  ``test_magic`` is the ``test_magic.py`` file
   - ``TestMagic`` is the class defined on line 4
-  - ``test_failure`` is the function defined on line 6
+  - ``test_failure`` is the :ref:`method<functions>` defined on line 6
 
 * ``F`` indicates a failure
-* ``python3 -m unittest`` is the command to run tests with ``unittest``
+* ``python3 -m unittest`` is the command to run tests with the ``unittest`` :ref:`module<ModuleNotFoundError>`
 
   - ``python3`` is the major version of python being used
   - ``-m`` is an option passed to python to run the :ref:`module<ModuleNotFoundError>` given after the option as a script
 
-* I recommend you write down :doc:`Exceptions </how_to/exception_handling_programs>` you meet to become more familiar with them, it will help when you run into errors later. Time to add :ref:`AssertionError` to the list
+* I recommend you write down :doc:`Exceptions </how_to/exception_handling_programs>` you meet to become familiar with them, it will help when you run into errors later. Time to add :ref:`AssertionError` to the list
 
   .. code-block:: python
 
@@ -290,7 +293,7 @@ and it shows a passing test
 refactor: make it better
 ############################################################################################
 
-How can I make this better? I ran ``python3 -m unittest`` to see the test fail, again to see the test pass and will have to run it again anytime I change the code, to make sure tests that were passing are not broken and the new code does what I expect.
+I ran ``python3 -m unittest`` to see the test fail, again to see the test pass, and to make sure tests that were passing are not broken and the new code does what I expect, I will have to run it again anytime I change the code.
 This means it is run for each part of the Test Driven Development cycle or any time there is a code change. I do not want to type ``python3 -m unittest`` again, it would be better for a program to run the tests so `I Do Not Repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
 ----
@@ -310,15 +313,14 @@ how to make a Virtual Environment
 
   - ``python3`` is the major version of python being used
   - ``-m`` is an option passed to python to run the given :ref:`module<ModuleNotFoundError>` as a script
-  - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ for making a `virtual environment`_ with a given name
-  - a `virtual environment`_ is a separate folder where packages that are dependencies of the project will be installed
+  - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ for making a `virtual environment`_ with a given name. A `virtual environment`_ is a separate folder/directory where packages that are dependencies of the project will be installed
   - ``.venv`` is the standard name for `virtual environments <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ in Python, you can use any name you like
 
 * I activate the `virtual environment`_ to use it ::
 
       source .venv/bin/activate
 
-  .. admonition:: If you are using Windows without `Windows Subsystem Linux`_ type this instead
+  .. admonition:: If you are using Windows without `Windows Subsystem Linux`_, type this
 
     .. code-block::
 
@@ -330,7 +332,7 @@ how to make a Virtual Environment
 
       .venv/scripts/activate.ps1
 
-  the ``(.venv)`` on the far left of the command line in the terminal shows that the `virtual environment`_ is activated
+  the ``(.venv)`` on the far left of the command line in the terminal shows that I am using the `virtual environment`_
 
   .. code-block:: shell
 
@@ -363,13 +365,13 @@ how to make a Virtual Environment
 
   your versions may vary
 
-* I make a file called ``requirements.txt`` in the ``magic`` folder
+* I make a file called ``requirements.txt`` in the ``magic`` folder/directory
 
   .. code-block:: shell
 
       echo "pytest-watch" > requirements.txt
 
-  .. admonition:: If you are using Windows without `Windows Subsystem Linux`_ type this instead
+  .. admonition:: If you are using Windows without `Windows Subsystem Linux`_,, type this
 
     .. code-block::
 
@@ -378,11 +380,11 @@ how to make a Virtual Environment
   - the command above makes a file named ``requirements.txt`` with `pytest-watch`_ as the text inside it
   - echo_ is a program that writes its given arguments to the `standard output (stdout)`_
   - ``>`` is an operator that is used to send output from a program to the file given
-  - `pytest-watch`_ is a python program that automatically runs pytest_ when a python file in the directory changes
-  - pytest_ is a `python package`_ like unittest_ used for testing
-  - ``requirements.txt`` is the name of a file where I can list `python packages`_ for pip_ the `python package manager`_ to install later, you can use any name you like
+  - `pytest-watch`_ is a python program that automatically runs pytest_ when a python file in the folder/directory changes
+  - pytest_ is a `python package`_ like unittest_ that is used for testing
+  - ``requirements.txt`` is the name of a file where I can list `python packages`_ for pip_ the `python package manager`_ to install in the `virtual environment`_ later, you can use any name you like
 
-* then I install the `pytest-watch`_ package and its dependencies from the ``requirements.txt`` in the `virtual environment`_
+* then install the `pytest-watch`_ package and its dependencies from the ``requirements.txt`` file
 
   .. code-block:: python
 
@@ -391,7 +393,7 @@ how to make a Virtual Environment
   - ``--requirement`` is another option that can be passed to the ``install`` argument to install `python packages`_ from a given file
   - ``requirements.txt`` is the file that contains a list of `python packages`_ for pip_ to install
 
-* I use pip_ to see the packages that are now installed
+* I use pip_ to see the packages that are now installed in the `virtual environment`_
 
   .. code-block:: python
 
@@ -415,7 +417,7 @@ how to make a Virtual Environment
 
   your versions may vary
 
-* The folder structure now looks like this
+* The folder/directory structure now looks like this
 
   .. code-block:: python
 
@@ -444,15 +446,28 @@ how to make a Virtual Environment
 
     =============== 1 passed in 0.00s =======================
 
-* I change the input on line 7 in ``test_magic.py`` to :doc:`True </data_structures/booleans/booleans>` to make it fail and back to :doc:`False </data_structures/booleans/booleans>` to make it pass with the terminal responding to each change
-* I can press ``ctrl`` + ``c`` on the keyboard in the terminal to stop the tests at anytime
+* I change the input on line 7 in ``test_magic.py`` to :doc:`True </data_structures/booleans/booleans>`
+
+  .. code-block:: python
+
+
+  and it shows an :ref:`AssertionError`
+
+  .. code-block:: python
+
+
+* then I change it back to :doc:`False </data_structures/booleans/booleans>` to make it pass with the terminal responding to each change
+
+  .. tip:: press ``ctrl`` + ``c`` on the keyboard in the terminal when you want to stop the tests
 
 ----
 
 how to deactivate a virtual environment
 #################################################################################################
 
-type the following in a terminal with an active `virtual environment`_ ::
+type the following in a terminal with an active `virtual environment`_
+
+.. code-block::
 
   deactivate
 
@@ -461,7 +476,9 @@ type the following in a terminal with an active `virtual environment`_ ::
 how to activate a virtual environment
 ############################################################################################
 
-Make sure you are in the directory that contains the `virtual environment`_ for example ``magic`` and type the following in the terminal::
+Make sure you are in the folder/directory that contains the `virtual environment`_ for example ``magic`` and type the following in the terminal
+
+.. code-block:: shell
 
   source .venv/bin/activate
 
@@ -491,31 +508,37 @@ Make sure you are in the directory that contains the `virtual environment`_ for 
 how to automatically make a python test driven development environment
 ********************************************************************************************
 
-You made it this far and have become the greatest programmer in the world. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I would write a program that contains all the steps it took to get here, then I can use it anytime I want to make a Test Driven Development Environment without having to remember each step
+You made it this far and have become the greatest programmer in the world. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I would write a program that contains all the commands it took to get here, then I can use the program to make a Test Driven Development Environment  anytime I want and not have to remember the steps
 
 * I exit the tests in the terminal by pressing ``ctrl`` + ``c`` on the keyboard
 * then type ``deactivate`` to leave the `virtual environment`_
-* and change directory to the parent of ``magic`` ::
+* and change directory to the parent of ``magic``
+
+  .. code-block:: shell
 
     cd ..
 
-* I use the history_ program to list the commands I typed earlier in the terminal as a reference for the program ::
+* I use the history_ program to list the commands I typed in the terminal as a reference for the program
+
+  .. code-block:: shell
 
     history
 
-* and make an empty file with a name that describes what the program does so it is easy to remember later, for example :ref:`makePythonTdd.sh` ::
+* then make an empty file with a name that describes what the program does so it is easy to remember later, for example :ref:`makePythonTdd.sh`
+
+  .. code-block:: shell
 
     touch makePythonTdd.sh
 
-* then open the file in the Integrated Development Environment (IDE) and copy each command I need to set up a Test Driven Environment
+* and open the file in the Integrated Development Environment (IDE), then copy each command I need to set up a Test Driven Environment
 
   .. code-block:: ruby
 
     #!/bin/bash
-    mkdir --parents magic
+    mkdir magic
     cd magic
     mkdir src tests
-    touch magic.py
+    touch src/magic.py
     touch tests/__init__.py
     touch tests/test_magic.py
     echo "pytest-watch" > requirements.txt
@@ -527,13 +550,13 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   ``#!/bin/bash`` is a shebang_ line that tells the computer to use bash_ to run the program. You can change it to ``#!/bin/zsh`` if you have zsh_ installed
 
-* This program will always make a project called ``magic``. I add a variable called ``PROJECT_NAME`` that is referenced with ``$PROJECT_NAME`` to make it possible to make any project name I give
+* This program will always make a project called ``magic``. I add a variable called ``PROJECT_NAME`` that is referenced with ``$PROJECT_NAME`` to make it possible to make any project name I give when the program is called
 
   .. code-block:: shell
 
     #!/bin/bash
     PROJECT_NAME=$1
-    mkdir --parents $PROJECT_NAME
+    mkdir $PROJECT_NAME
     cd $PROJECT_NAME
     mkdir src tests
     touch $PROJECT_NAME.py
@@ -560,13 +583,17 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   all the text between the two ``DELIMITER`` words will be written to ``tests/test_$PROJECT_NAME.py``
 
-* I use chmod_ to make the program executable ::
+* I use chmod_ to make the program executable
+
+  .. code-block:: shell
 
     chmod +x makePythonTdd.sh
 
   chmod_ is a program that changes the mode of the file given
 
-* I can make a Test Driven Development environment any time I want by giving a name for the ``PROJECT_NAME`` variable when the program is called. For example, typing this command in the terminal in the folder where ``makePythonTdd.sh`` is saved will make a Test Driven Development environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator` ::
+* I can now make a Test Driven Development environment by giving a name for the ``PROJECT_NAME`` variable when I call the program. For example, typing this command in the terminal in the folder/directory where ``makePythonTdd.sh`` is saved will make a Test Driven Development environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator`
+
+  .. code-block:: shell
 
     ./makePythonTdd.sh calculator
 
@@ -577,9 +604,11 @@ how to automatically make a python test driven development environment on window
 
 .. warning::
 
-  This section only applies if you are using Windows without `Windows Subsystem Linux`_
+  This is for Windows without `Windows Subsystem Linux`_
 
-* I make a file named :ref:`makePythonTdd.ps1` by using the ``New-Item`` command in PowerShell ::
+* I make a file named :ref:`makePythonTdd.ps1` by using the ``New-Item`` command in PowerShell
+
+  .. code-block:: PowerShell
 
     New-Item makePythonTdd.ps1
 
@@ -591,7 +620,13 @@ how to automatically make a python test driven development environment on window
     :linenos:
     :language: PowerShell
 
-* I can make a Test Driven Development environment anytime I want by giving a name for the ``$projectName`` variable when the program is called. For example, typing this command in the terminal in the folder where ``makePythonTdd.ps1`` is saved will make a Test Driven Development environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator` ::
+  - ``$args[0]`` represents the first argument given when the program is called. You can use it in place of ``$projectName`` and will get the same result
+  - ``@""@`` is like ``DELIMITER`` it allows writing multiline text in PowerShell_
+  - ``|`` is an operator that is used to send output from one program to another
+
+* I can now make a Test Driven Development environment by giving a name for the ``$projectName`` variable when the program is called. For example, typing this command in the terminal in the folder/directory where ``makePythonTdd.ps1`` is saved will make a Test Driven Development environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator`
+
+  .. code-block:: PowerShell
 
     ./makePythonTdd.ps1 calculator
 
@@ -601,7 +636,7 @@ how to automatically make a python test driven development environment on window
 review
 ********************************************************************************************
 
-One of the advantages of programming is that I can take some steps and make them a one line command that the computer does for me. You now know one way to make a Python Test Driven Development Environment, and have a program to do it for you anytime you want.
+One of the advantages of programming is that I can take some steps and make them a one line command for the computer to do for me. You now know one way to make a Python Test Driven Development Environment, and have a program to do it for you anytime you want.
 
 Would you like to test :doc:`/how_to/calculator`?
 
