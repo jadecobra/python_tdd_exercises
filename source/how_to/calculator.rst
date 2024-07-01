@@ -78,22 +78,22 @@ red: make it fail
 
         def test_addition(self):
             self.assertEqual(
-                calculator.add(0, 1),
+                src.calculator.add(0,1),
                 1
             )
 
-  - I use the `unittest.TestCase.assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ :ref:`method<functions>` which checks if its 2 inputs are equal. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
-  - I am sending two things to `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ for evaluation
+  - I use the assertEqual_ :ref:`method<functions>` from the `unittest.TestCase`_ :doc:`class</classes/classes>` which checks if its 2 inputs are equal. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
+  - I am sending two things for assertEqual_ to check
 
-    * first: ``calculator.add(0, 1)`` calls the ``add`` function in ``calculator.py`` with ``0`` and ``1`` as inputs
+    * first: ``src.calculator.add(0,1)`` calls the ``add`` function in ``calculator.py`` with ``0`` and ``1`` as inputs
     * second: ``1`` is the expected result from calling the ``add`` function in ``calculator.py`` with ``0`` and ``1`` as inputs
-    * my expectation is that ``calculator.add(0, 1)`` is equal to ``1``
+    * my expectation is that ``src.calculator.add(0,1)`` is equal to ``1``
 
   the terminal shows a NameError because ``calculator`` is not defined anywhere in ``test_calculator.py``
 
   .. code-block:: python
 
-    NameError: name 'calculator' is not defined
+    NameError: name 'src.calculator' is not defined
 
 green: make it pass
 #################################################################################
@@ -108,7 +108,7 @@ green: make it pass
 
   .. code-block:: python
 
-    import calculator
+    import src.calculator
     import unittest
 
 
@@ -119,13 +119,13 @@ green: make it pass
 
   .. code-block:: python
 
-    AttributeError: module 'calculator' has no attribute 'add'
+    AttributeError: module 'src.calculator' has no attribute 'add'
 
   - The :ref:`AttributeError` is at line 12 in ``test_calculator.py``
   - An :ref:`AttributeError` is raised when accessing or calling an attribute that python cannot find
-  - I think of ``calculator.add`` as an address
+  - I think of ``src.calculator.add`` as an address
 
-  * ``calculator`` refers to ``calculator.py``
+  * ``src.calculator`` refers to ``calculator.py`` in the ``src`` folder/directory
   * ``add`` refers to something (an attribute) within the ``calculator.py`` file
 
 * I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
@@ -186,7 +186,7 @@ green: make it pass
 
     TypeError: add() takes 0 positional arguments but 2 were given
 
-* This :ref:`TypeError` shows that the current definition of the ``add`` function takes in 0 inputs, but I provided 2 - ``calculator.add(0, 1)`` in the call. I make the definition in ``calculator.py`` to make it match the requirement of the ``add`` function taking in two numbers
+* This :ref:`TypeError` shows that the current definition of the ``add`` function takes in 0 inputs, but I provided 2 - ``src.calculator.add(0,1)`` in the call. I make the definition in ``calculator.py`` to make it match the requirement of the ``add`` function taking in two numbers
 
   .. code-block:: python
 
@@ -200,7 +200,7 @@ green: make it pass
     AssertionError: None != 1
 
   - An :ref:`AssertionError` is raised when an assertion is :doc:`False </data_structures/booleans/booleans>`
-  - assertEqual_ raises an :ref:`AssertionError` when the two inputs it is given are not equal. In other words the result of calling ``calculator.add(0, 1)`` is currently not equal to ``1``
+  - assertEqual_ raises an :ref:`AssertionError` when the two inputs it is given are not equal. In other words the result of calling ``src.calculator.add(0,1)`` is currently not equal to ``1``
 
 * I make the function return the expected value
 
@@ -240,11 +240,11 @@ I add a new test to ``test_addition`` in ``test_calculator.py``
 
   def test_addition(self):
       self.assertEqual(
-          calculator.add(0, 1),
+          src.calculator.add(0, 1),
           1
       )
       self.assertEqual(
-          calculator.add(-1, 1),
+          src.calculator.add(-1, 1),
           0
       )
 
@@ -279,7 +279,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    import calculator
+    import src.calculator
     import random
     import unittest
 
@@ -294,7 +294,7 @@ refactor: make it better
             y = random.randint(-1, 1)
 
             self.assertEqual(
-                calculator.add(x, y),
+                src.calculator.add(x, y),
                 x+y
             )
 
@@ -349,7 +349,7 @@ red: make it fail
         y = random.randint(-1, 1)
 
         self.assertEqual(
-            calculator.add(x, y),
+            src.calculator.add(x, y),
             x+y
         )
 
@@ -358,7 +358,7 @@ red: make it fail
         y = random.randint(-1, 1)
 
         self.assertEqual(
-            calculator.subtract(x, y),
+            src.calculator.subtract(x, y),
             x-y
         )
 
@@ -366,7 +366,7 @@ red: make it fail
 
   .. code-block:: python
 
-    AttributeError: module 'calculator' has no attribute 'subtract'
+    AttributeError: module 'src.calculator' has no attribute 'subtract'
 
 green: make it pass
 #################################################################################
@@ -448,18 +448,18 @@ refactor: make it better
 
         def test_addition(self):
             self.assertEqual(
-                calculator.add(self.x, self.y),
+                src.calculator.add(self.x, self.y),
                 self.x+self.y
             )
 
         def test_subtraction(self):
             self.assertEqual(
-                calculator.subtract(self.x, self.y),
+                src.calculator.subtract(self.x, self.y),
                 self.x-self.y
             )
 
   - all tests are still passing, so my change did not break anything. Fantastic!
-  - The ``x`` and ``y`` variables are initialized once as :doc:`class </classes/classes>` attributes (variables) and accessed later in every test using ``self.x`` and ``self.y``, the same way I can call `unittest.TestCase`_ :ref:`methods<functions>` like `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ by using assertEqual_
+  - The ``x`` and ``y`` variables are initialized once as :doc:`class </classes/classes>` attributes (variables) and accessed later in every test using ``self.x`` and ``self.y``, the same way I can call `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ by using ``self.assertEqual``
 
 
 ----
@@ -481,19 +481,19 @@ I add a failing test called ``test_multiplication`` to ``test_calculator.py``
 
   def test_subtraction(self):
       self.assertEqual(
-          calculator.subtract(self.x, self.y),
+          src.calculator.subtract(self.x, self.y),
           self.x-self.y
       )
 
   def test_multiplication(self):
       self.assertEqual(
-          calculator.multiply(self.x, self.y),
+          src.calculator.multiply(self.x, self.y),
           self.x*self.y
       )
 
 the terminal shows an :ref:`AttributeError` ::
 
-  AttributeError: module 'calculator' has no attribute 'multiply'
+  AttributeError: module 'src.calculator' has no attribute 'multiply'
 
 green: make it pass
 #################################################################################
@@ -529,19 +529,19 @@ I add ``test_division`` to ``test_calculator.py``
 
   def test_multiplication(self):
       self.assertEqual(
-          calculator.multiply(self.x, self.y),
+          src.calculator.multiply(self.x, self.y),
           self.x*self.y
       )
 
   def test_division(self):
       self.assertEqual(
-          calculator.divide(self.x, self.y),
+          src.calculator.divide(self.x, self.y),
           self.x/self.y
       )
 
 the terminal shows an :ref:`AttributeError` ::
 
-  AttributeError: module 'calculator' has no attribute 'division'
+  AttributeError: module 'src.calculator' has no attribute 'division'
 
 green: make it pass
 #################################################################################
@@ -589,9 +589,9 @@ I add a failing line to ``test_calculator.py`` that causes a `ZeroDivisionError 
 .. code-block:: python
 
   def test_division(self):
-      calculator.divide(self.x, 0)
+      src.calculator.divide(self.x, 0)
       # self.assertEqual(
-      #     calculator.divide(self.x, self.y),
+      #     src.calculator.divide(self.x, self.y),
       #     self.x/self.y
       # )
 
@@ -616,9 +616,9 @@ I can use the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` in ``te
 
   def test_division(self):
       with self.assertRaises(ZeroDivisionError):
-          calculator.divide(self.x, 0)
+          src.calculator.divide(self.x, 0)
       # self.assertEqual(
-      #     calculator.divide(self.x, self.y),
+      #     src.calculator.divide(self.x, self.y),
       #     self.x/self.y
       # )
 
@@ -633,11 +633,11 @@ I can use a `while statement`_ for the other cases when the divisor is not ``0``
 
   def test_division(self):
       with self.assertRaises(ZeroDivisionError):
-          calculator.divide(self.x, 0)
+          src.calculator.divide(self.x, 0)
       while self.y == 0:
           self.y = random.randint(-1, 1)
       self.assertEqual(
-          calculator.divide(self.x, self.y),
+          src.calculator.divide(self.x, self.y),
           self.x/self.y
       )
 

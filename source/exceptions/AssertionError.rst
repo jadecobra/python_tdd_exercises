@@ -689,7 +689,7 @@ If you have been typing along *WELL DONE!* Your magic powers are growing. From t
   - `assertIsNotNone <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNotNone>`_ - is this thing not :ref:`None`?
   - `unittest.TestCase.assertFalse`_ - is this thing :doc:`False </data_structures/booleans/booleans>`?
   - `assertTrue <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertTrue>`_ - is this thing :doc:`True </data_structures/booleans/booleans>`?
-  - `assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ - are these two things equal?
+  - assertEqual_ - are these two things equal?
   - `assertNotEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotEqual>`_ - are these two things not equal?
 
 Would you like to test :ref:`AttributeErrors<AttributeError>`?
