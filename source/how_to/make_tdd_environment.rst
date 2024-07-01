@@ -274,7 +274,7 @@ This is the ``RED`` part of the Test Driven Development cycle. The error in the 
 green: make it pass
 #################################################################################
 
-I change the input on line 7 to :doc:`False </data_structures/booleans/booleans>`
+I change the input on line 7 from :doc:`True </data_structures/booleans/booleans>` to :doc:`False </data_structures/booleans/booleans>`
 
 .. code-block:: python
 
@@ -464,17 +464,25 @@ how to make a Virtual Environment
 
     =============== 1 passed in 0.00s =======================
 
-* I change the input on line 7 in ``test_magic.py`` to :doc:`True </data_structures/booleans/booleans>`
+* I change the input on line 7 in ``test_magic.py`` from :doc:`False </data_structures/booleans/booleans>` to :doc:`True </data_structures/booleans/booleans>` and it shows an :ref:`AssertionError`
 
   .. code-block:: python
 
+    ====================================== FAILURES =======================================
+    _______________________________ TestMagic.test_failure ________________________________
 
-  and it shows an :ref:`AssertionError`
+    self = <tests.test_magic.TestMagic testMethod=test_failure>
 
-  .. code-block:: python
+        def test_failure(self):
+    >       self.assertFalse(True)
+    E       AssertionError: True is not false
 
+    tests/test_magic.py:7: AssertionError
+    ============================== short test summary info ================================
+    FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
+    ================================= 1 failed in 0.05s ===================================
 
-* then I change it back to :doc:`False </data_structures/booleans/booleans>` to make it pass with the terminal responding to each change
+  then I change it back to :doc:`False </data_structures/booleans/booleans>` to make it pass with the terminal responding to each change
 
   .. tip:: press ``ctrl`` + ``c`` on the keyboard in the terminal when you want to stop the tests
 
