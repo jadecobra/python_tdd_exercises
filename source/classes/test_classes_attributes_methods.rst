@@ -208,7 +208,7 @@ green: make it pass
 
   the terminal shows a :ref:`TypeError` since ``method_a`` refers to :ref:`None` which is not callable
 
-* I make the definition of ``method_a`` to make it a :ref:`function<functions>` which makes it callable
+* I change the definition of ``method_a`` to make it a :ref:`function<functions>` which makes it callable
 
   .. code-block:: python
 

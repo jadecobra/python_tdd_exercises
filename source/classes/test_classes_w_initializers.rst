@@ -202,7 +202,7 @@ refactor: make it better
 
   the terminal still shows passing tests
 
-* I make the definitions for ``Boy`` to inherit from the ``Human`` class and all tests are still passing
+* I change the definitions for ``Boy`` to inherit from the ``Human`` class and all tests are still passing
 
   .. code-block:: python
 
@@ -263,7 +263,7 @@ refactor: make it better
 
   the terminal shows passing tests. Lovely
 
-* I wonder if I can do the same with the ``Other`` class? I make the definition to inherit from the ``Human`` class
+* I wonder if I can do the same with the ``Other`` class? I change the definition to inherit from the ``Human`` class
 
   .. code-block:: python
 

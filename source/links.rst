@@ -76,6 +76,7 @@
 .. _NameError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError
 .. _SyntaxError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#SyntaxError
 .. _ValueError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError
+.. _ZeroDivisionError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError
 
 .. _The Abstraction Principle: https://en.wikipedia.org/wiki/Abstraction_principle_(computer_programming)
 .. _The Do Not Repeat Yourself (DRY) Principle: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself

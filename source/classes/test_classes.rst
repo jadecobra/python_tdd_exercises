@@ -223,7 +223,7 @@ green: make it pass
 
   the terminal shows all tests passed
 
-* then I make the definition to explicitly state the parent `object <https://docs.python.org/3/glossary.html#term-object>`_
+* then I change the definition to explicitly state the parent `object <https://docs.python.org/3/glossary.html#term-object>`_
 
   .. code-block:: python
 

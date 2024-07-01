@@ -75,7 +75,7 @@ green: make it pass
 
   because the result of calling ``functions.passthrough`` with :doc:`False </data_structures/booleans/booleans>` as input is :ref:`None` which is not equal to the expected result (:doc:`False </data_structures/booleans/booleans>`)
 
-* I make the definition of ``passthrough`` to make the test pass
+* I change the definition of ``passthrough`` to make the test pass
 
   .. code-block:: python
 

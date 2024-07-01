@@ -151,7 +151,7 @@ green: make it pass
     TypeError: text() takes 0 positional arguments but 1 was given
 
   I provided a positional argument as input with the value ``'hello'`` when I called ``telephone.text`` in the test , but the current signature of the ``text`` :ref:`function<functions>` does not allow it accept any inputs
-- I make the definition for ``text`` to make it accept a value as input
+- I change the definition for ``text`` to make it accept a value as input
 
   .. code-block:: python
 

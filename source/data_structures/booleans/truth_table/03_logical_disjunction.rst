@@ -51,7 +51,7 @@ green: make it pass
 
   and the terminal shows an :ref:`AssertionError`
 
-* 3 of the test cases are passing because ``logical_disjunction`` returns :doc:`True </data_structures/booleans/booleans>` for each one of them. I need a condition for the fourth case to pass, so I make the definition
+* 3 of the test cases are passing because ``logical_disjunction`` returns :doc:`True </data_structures/booleans/booleans>` for each one of them. I need a condition for the fourth case to pass, so I change the definition
 
   .. code-block:: python
 
