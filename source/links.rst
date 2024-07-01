@@ -77,10 +77,12 @@
 .. _SyntaxError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#SyntaxError
 .. _ValueError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError
 
-.. _Windows Subsystem Linux: https://learn.microsoft.com/en-us/windows/wsl/install
 .. _The Abstraction Principle: https://en.wikipedia.org/wiki/Abstraction_principle_(computer_programming)
 .. _The Do Not Repeat Yourself (DRY) Principle: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
 .. _Linux distributions: https://en.wikipedia.org/wiki/List_of_Linux_distributions
+.. _Linux: https://www.kernel.org/category/about.html
+.. _New-Item: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/new-item?view=powershell-7.4
+.. _Windows Subsystem Linux: https://learn.microsoft.com/en-us/windows/wsl/install
 
 .. _Visual Studio Code: https://code.visualstudio.com/download
 .. _Dark Rainbow Theme: https://marketplace.visualstudio.com/items?itemName=DarkRainbow.darkrainbow

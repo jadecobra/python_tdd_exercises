@@ -31,7 +31,7 @@ requirements
 windows requirements
 #################################################################################
 
-If you are using a Windows computer, try to install Linux with `Windows Subsystem Linux`_
+If you are using a Windows computer, try to install Linux_ with `Windows Subsystem Linux`_
 
 * click ``start``
 * type ``PowerShell``, right click and select ``Run as administrator`` to open a terminal
@@ -41,17 +41,19 @@ If you are using a Windows computer, try to install Linux with `Windows Subsyste
 
     wsl --install --distribution debian
 
-  .. admonition:: if you cannot install `Windows Subsystem Linux`_, do not worry, I will show changes you can make to get the same results
+  .. tip:: if you cannot install `Windows Subsystem Linux`_, do not worry I will show changes you can make to get the same results
 
-* run these commands in a bash_ terminal to install python after installing Debian_ or any of the `Linux distributions`_
 
-  .. code-block:: shell
+linux requirements
+#################################################################################
 
-    sudo apt update
-    sudo apt full-upgrade --yes
-    sudo apt install python3 python3-venv --yes
+run these commands in a terminal to install python on the Linux_ Operating System
 
-  run the rest of the commands in your bash_ terminal
+.. code-block:: shell
+
+  sudo apt update
+  sudo apt full-upgrade --yes
+  sudo apt install python3 python3-venv --yes
 
 ----
 
@@ -65,7 +67,7 @@ setup
 
     mkdir magic
 
-* and change directory to the project with the cd_ program
+  and change directory to the project with the cd_ program
 
   .. code-block:: shell
 
@@ -81,17 +83,19 @@ setup
 
 * then add empty files for the project
 
-  .. admonition:: If you are using Windows without `Windows Subsystem Linux`_
-
-    change ``touch`` to ``New-Item``
-
   - I make an empty file that will hold the source code for the program
 
     .. code-block:: shell
 
       touch src/magic.py
 
-    touch_ is a program that makes an empty file when given a name
+    .. admonition:: on Windows without `Windows Subsystem Linux`_ use ``New-Item``
+
+      .. code-block:: shell
+
+        New-Item src/magic.py
+
+    touch_/`New-Item`_ make an empty file when given a name
 
   - tests will stay in the ``tests`` folder/directory to separate them from the source code (the actual program). I make an empty file called ``__init__.py`` in the ``tests`` folder/directory to tell Python that it is a `python package`_, this will help it find the tests later
 
@@ -101,11 +105,23 @@ setup
 
     .. WARNING:: make sure you use two underscores for ``__init__.py``
 
+    .. admonition:: on Windows without `Windows Subsystem Linux`_ use ``New-Item``
+
+      .. code-block:: shell
+
+        New-Item tests/__init__.py
+
   - then add one more empty file to the ``tests`` folder/directory for the actual test
 
     .. code-block:: shell
 
       touch tests/test_magic.py
+
+    .. admonition:: on Windows without `Windows Subsystem Linux`_ use ``New-Item``
+
+      .. code-block:: shell
+
+        New-Item tests/test_magic.py
 
     you can use any name you like as long as it starts with ``test_``
 
@@ -164,14 +180,14 @@ red: make it fail
     * :doc:`class </classes/classes>` is the python keyword for making :doc:`/classes/classes`
     * ``TestMagic`` is the name given to the :doc:`class </classes/classes>` that will hold the tests, you can use any name you want as long as it starts with ``Test``
     * `unittest.TestCase`_ is a :doc:`class </classes/classes>` defined in the unittest_ :ref:`module<ModuleNotFoundError>` that contains :doc:`methods (functions) </functions/functions>` for testing
-    * ``TestMagic`` inherits from `unittest.TestCase`_, it is a child or clone of `unittest.TestCase`_ that can do the same things it can
+    * ``TestMagic`` inherits from `unittest.TestCase`_, it is a child or clone of `unittest.TestCase`_ that can do the same things it can, and I can change its behavior in the :doc:`class</classes/classes>` definition
 
   - ``def test_failure`` is the definition of a test :ref:`method<functions>` to test the program I am making
 
-    * def_ is the python keyword for making :ref:`functions (methods)<functions>`
+    * def_ is the python keyword for making :ref:`functions/methods<functions>`, a method is a function in a class
     * ``test_failure`` is the name of the :ref:`method<functions>`,  you can use any name you want as long as it starts with ``test_``
     * ``self`` is the ``TestMagic`` :ref:`class<classes>`. I use ``self`` to access :doc:`methods (functions) </functions/functions>` and :ref:`attributes<AttributeError>` of the ``TestMagic`` class and by extension `unittest.TestCase`_, without having to type ``TestMagic().`` or ``unittest.TestCase().``
-    * ``self.assertFalse(True)`` is the actual test. I expect this line to fail because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
+    * ``self.assertFalse(True)`` is the actual test. I expect this line to fail because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`. If it passes then I have a problem
 
       - assertFalse_ is a :ref:`method<functions>` in the `unittest.TestCase`_ :doc:`class </classes/classes>` that checks if its input is :doc:`False </data_structures/booleans/booleans>`
       - :doc:`True </data_structures/booleans/booleans>` is given as input to ``assertFalse``
@@ -183,7 +199,7 @@ red: make it fail
 
     python3 -m unittest
 
-  .. admonition:: If you are using Windows without `Windows Subsystem Linux`_
+  .. admonition:: on Windows without `Windows Subsystem Linux`_
 
     use ``python`` instead of ``python3``
 
@@ -270,7 +286,7 @@ then run the test again from the terminal
 
   python3 -m unittest
 
-.. admonition:: If you are using Windows without `Windows Subsystem Linux`_
+.. admonition:: on Windows without `Windows Subsystem Linux`_
 
   use ``python`` instead of ``python3``
 
@@ -322,7 +338,7 @@ how to make a Virtual Environment
 
       source .venv/bin/activate
 
-  .. admonition:: If you are using Windows without `Windows Subsystem Linux`_, type this
+  .. admonition:: on Windows without `Windows Subsystem Linux`_, type this
 
     .. code-block::
 
@@ -373,7 +389,7 @@ how to make a Virtual Environment
 
       echo "pytest-watch" > requirements.txt
 
-  .. admonition:: If you are using Windows without `Windows Subsystem Linux`_,, type this
+  .. admonition:: on Windows without `Windows Subsystem Linux`_,, type this
 
     .. code-block::
 
@@ -484,7 +500,7 @@ Make sure you are in the folder/directory that contains the `virtual environment
 
   source .venv/bin/activate
 
-.. admonition:: If you are using Windows without `Windows Subsystem Linux`_
+.. admonition:: on Windows without `Windows Subsystem Linux`_
 
   You may need to Set the Execution Policy in Administrator mode first
 
