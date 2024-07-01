@@ -31,7 +31,7 @@ requirements
 windows requirements
 #################################################################################
 
-If you are using a Windows computer, install `Windows Subsystem Linux`_
+If you are using a Windows computer, try to install Linux with `Windows Subsystem Linux`_
 
 * click ``start``
 * type ``PowerShell``, right click and select ``Run as administrator`` to open a terminal
@@ -40,6 +40,8 @@ If you are using a Windows computer, install `Windows Subsystem Linux`_
   .. code-block:: powershell
 
     wsl --install --distribution debian
+
+  .. admonition:: if you cannot install `Windows Subsystem Linux`_, do not worry, I will show changes you can make to get the same results
 
 * run these commands in a bash_ terminal to install python after installing Debian_ or any of the `Linux distributions`_
 
