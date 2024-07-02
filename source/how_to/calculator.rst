@@ -91,11 +91,11 @@ red: make it fail
     * second: ``1`` is the expected result from calling the ``add`` function in ``calculator.py`` with ``0`` and ``1`` as inputs
     * my expectation is that ``src.calculator.add(0, 1)`` is equal to ``1``
 
-  the terminal shows a NameError because ``calculator`` is not defined anywhere in ``test_calculator.py``
+  the terminal shows a NameError because ``src`` is not defined anywhere in ``test_calculator.py``
 
   .. code-block:: python
 
-    NameError: name 'src.calculator' is not defined
+    NameError: name 'src' is not defined
 
 green: make it pass
 #################################################################################
@@ -201,8 +201,7 @@ green: make it pass
 
     AssertionError: None != 1
 
-  - An :ref:`AssertionError` is raised when an assertion is :doc:`False </data_structures/booleans/booleans>`
-  - assertEqual_ raises an :ref:`AssertionError` when the two inputs it is given are not equal. In other words the result of calling ``src.calculator.add(0, 1)`` is currently not equal to ``1``
+  An :ref:`AssertionError` is raised when an assertion is :doc:`False </data_structures/booleans/booleans>`. assertEqual_ :ref:`method<functions>` raises an :ref:`AssertionError` when the two inputs it is given are not equal. In other words the result of calling ``src.calculator.add(0, 1)`` is currently not equal to ``1``
 
 * I make the function return the expected value
 
@@ -215,7 +214,7 @@ green: make it pass
 
   .. code-block:: python
 
-    tests/test_calculator.py ..              [100%]
+    tests/test_calculator.py .               [100%]
 
     ============== 1 passed in 0.01s ===============
 
@@ -259,7 +258,7 @@ the terminal shows an :ref:`AssertionError`, showing that the ``add`` function a
 green: make it pass
 ---------------------------------------------------------------------------------
 
-I make the ``add`` function in ``calculator.py`` to add up the inputs it receives
+I change the `return statement`_ of the ``add`` :ref:`function<functions>` to return the sum of its inputs
 
 .. code-block:: python
 
@@ -270,14 +269,14 @@ and the terminal shows passing tests which increases my confidence in the ``add`
 
 .. code-block:: python
 
-  tests/test_calculator.py ..          [100%]
+  tests/test_calculator.py .              [100%]
 
   ============== 1 passed in 0.01s ==============
 
 refactor: make it better
 ---------------------------------------------------------------------------------
 
-* I import python's random_ library to generate random integers to test that the function behaves the way I expect for any given numbers
+* I want to test the function with random numbers, so import python's random_ library to generate random numbers for the test
 
   .. code-block:: python
 
@@ -285,7 +284,7 @@ refactor: make it better
     import src.calculator
     import unittest
 
-* then assign a random integer to the x and y variables and change the test to use these variables
+* then assign a random number to the x and y variables and change the test to use these variables
 
   .. code-block:: python
 
@@ -328,7 +327,7 @@ refactor: make it better
 test_subtraction
 *********************************************************************************
 
-Since addition works and the next item from the TODO list is ``test subtraction`` it is time to add a failing test
+Since addition works, it is time to add a failing test that tests subtraction
 
 red: make it fail
 #################################################################################
@@ -389,7 +388,7 @@ green: make it pass
     def subtract():
         return None
 
-  and the terminal shows a :ref:`TypeError` with a different error message. Progress!
+  and the terminal shows a :ref:`TypeError` with a different error message. Progress again!
 
   .. code-block:: python
 
@@ -411,7 +410,7 @@ green: make it pass
     AssertionError: None != 0
     AssertionError: None != 1
 
-* When I change the `return statement`_ in ``subtract`` to return the difference between th einputs
+* When I change the `return statement`_ in ``subtract`` to return the difference between the inputs
 
   .. code-block:: python
 
@@ -431,7 +430,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* There is some duplication to remove so `I Do Not Repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
+* I have some duplication to remove in keeping with `The Do Not Repeat Yourself (DRY) Principle`_
 
   - ``x = random.randint(-1, 1)`` happens twice
   - ``y = random.randint(-1, 1)`` happens twice
@@ -494,6 +493,8 @@ the terminal shows an :ref:`AttributeError` ::
 
   AttributeError: module 'src.calculator' has no attribute 'multiply'
 
+this is definitely familiar
+
 green: make it pass
 #################################################################################
 
@@ -503,6 +504,7 @@ using what I know so far I add a definition for ``multiplication`` to ``calculat
 
   def subtract(x, y):
       return x - y
+
 
   def multiply(x, y):
       return x * y
@@ -521,6 +523,8 @@ SUCCESS! The terminal shows passing tests and I remove ``test_multiplication`` f
 *********************************************************************************
 test_division
 *********************************************************************************
+
+Now it is down to the test for division
 
 red: make it fail
 #################################################################################
@@ -586,7 +590,7 @@ how to Test for Errors
 red: make it fail
 #################################################################################
 
-I add a failing line to ``test_calculator.py`` that causes a ZeroDivisionError_ by explicitly dividing by 0, and comment out test that sometimes fails to remove the variability of the test while I figure out the error
+I add a failing line to ``test_division``, I want to cause a ZeroDivisionError_ by dividing by 0, and comment out test that sometimes fails to remove the variability of the test while I figure out the error
 
 .. code-block:: python
 
@@ -612,7 +616,7 @@ the terminal shows my expectations with a failure for any value of ``x`` when ``
 green: make it pass
 #################################################################################
 
-I can use the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` in ``test_division`` to confirm that a ZeroDivisionError_ is raised when I try to divide a number by ``0``
+I can use the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` in ``test_division`` to make sure that a ZeroDivisionError_ is raised when I try to divide a number by ``0``
 
 .. code-block:: python
 
