@@ -10,8 +10,8 @@ pumping python: how I solve problems with test driven development
 #################################################################################
 
 
-My name is Jacob Itegboje and I have been a Python Programmer in roles as a Developer, Platform Engineer, DevOps Engineer and Solutions Architect. This book is a collection of `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ exercises that have helped me understand and use the language for more than 10 years of learning and watching other people use it.
-`Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ is a way of developing software with a focus on tests. I write tests for ideas to reach a goal or meet a requirement, and the results tell me if I am closer or further away from the goal. The process is repeated until I reach the goal.
+My name is Jacob Itegboje and I have been a Python Programmer in roles as a Developer, Platform Engineer, DevOps Engineer and Solutions Architect. This book is a collection of `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ exercises that have helped me understand and use the language for over a decade.
+`Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ is a way to develop software with a focus on tests. I write tests for ideas to reach a goal or meet a requirement, and the results tell me if I am closer or further away from the goal. The process is repeated until I get to the goal.
 
 I recommend reading `Kent Beck’s <https://en.wikipedia.org/wiki/Kent_Beck>`_ `Test Driven Development by Example <https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk>`_ and `Martin Fowler’s <https://en.wikipedia.org/wiki/Martin_Fowler_(software_engineer)>`_ `Refactoring <https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk>`_, they both influenced the way I write programs.
 
@@ -42,15 +42,16 @@ You can choose how you go through the chapters by starting with what you like.
 My recommendations are that you
 
 * start with :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` because it is required by every chapter
-* type out the code portions as you go through any chapter without copying and pasting the code
+* you can also go through the :ref:`how-tos` section in order
+* type out the code portions as you go through a chapter without copying and pasting the code
 * repeat a chapter you like until you can do it from memory
-* try remaking the tests from memory or write new tests for a concept you are working on
+* try to write the tests when you are done with a chapter and have the solution
+* try to write solutions when you are done with a chapter without looking at the tests
 * try to write solutions using only the tests from the :ref:`catalog_of_tests` as your guide
 * try adding tests for any ideas you get as you go through a chapter
-* you can also go through the :ref:`how-tos` section in order
-* do not quit until you get to the end of a chapter, especially when it is hard, it is part of the experience when learning to solve problems, and there is a lot of failure. If you take it one small step at a time you eventually get there
+* do not quit until you get to the end of a chapter, especially when it gets hard, it is part of the experience when learning to solve problems, and there is a lot of failure. Walk away from it and go do something that is no related for a while, then come back to it. If you take one small step at a time you eventually get where you want to go
 
-If you prefer videos, there is one for each chapter at `<https://www.youtube.com/@JacobItegboje>`_
+If you like videos, there is one for each chapter at `<https://www.youtube.com/@JacobItegboje>`_
 
 .. _how-tos:
 

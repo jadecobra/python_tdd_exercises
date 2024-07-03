@@ -16,12 +16,12 @@ lists
 
 ----
 
-A `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ is an `object <https://docs.python.org/3/glossary.html#term-object>`_ that can hold other `objects <https://docs.python.org/3/glossary.html#term-object>`_
+A `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ is an object_ that can hold other `objects <https://docs.python.org/3/glossary.html#term-object>`_
 
 
 * Lists are represented with ``[]``
 * Lists can be made with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_
-* Lists can hold any `object <https://docs.python.org/3/glossary.html#term-object>`_
+* Lists can hold any object_
 * Lists can be changed after creation by performing an operation, this means they are mutable
 * Lists can be looped over
 
@@ -470,7 +470,7 @@ refactor: make it better
 test_list_attributes_and_methods
 *********************************************************************************
 
-The chapter on :doc:`/classes/classes` shows how to view the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of an `object <https://docs.python.org/3/glossary.html#term-object>`_ by using the dir_ :ref:`function<functions>`. Let us try it for `lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
+The chapter on :doc:`/classes/classes` shows how to view the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of an object_ by using the dir_ :ref:`function<functions>`. Let us try it for `lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
 
 red: make it fail
 ===================
@@ -607,7 +607,7 @@ review
 
 * Lists are represented with ``[]``
 * Lists can be made with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_
-* Lists can hold any `object <https://docs.python.org/3/glossary.html#term-object>`_
+* Lists can hold any object_
 * Lists can be changed after creation by performing an operation, this means they are mutable
 * Lists can be looped over
 

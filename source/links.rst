@@ -4,6 +4,7 @@
 .. _while statement: https://docs.python.org/3/reference/compound_stmts.html#the-while-statement
 
 .. _assertEqual: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertEqual
+.. _assertFalse: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse
 .. _assertRaises: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises
 .. _assertRaisesRegex: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertRaisesRegex
 .. _bash: https://www.gnu.org/software/bash/
@@ -30,6 +31,7 @@
 .. _integers: https://docs.python.org/3/library/functions.html?highlight=int#int
 .. _mkdir: https://man7.org/linux/man-pages/man1/mkdir.1.html
 .. _modulo: https://en.wikipedia.org/wiki/Modulo
+.. _object: https://docs.python.org/3/glossary.html#term-object
 .. _python package: https://docs.python.org/3/glossary.html#term-regular-package
 .. _python packages: https://docs.python.org/3/glossary.html#term-regular-package
 .. _pip: https://pypi.org/project/pip/
@@ -39,7 +41,6 @@
 .. _python documentation for strings: https://docs.python.org/3/library/string.html?highlight=string#module-string
 .. _python's online documentation: https://docs.python.org/3/search.html
 .. _python standard library: https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library
-.. _PowerShell: https://learn.microsoft.com/en-us/powershell/
 .. _random: https://docs.python.org/3/library/random.html?highlight=random#module-random
 .. _random.randint: https://docs.python.org/3/library/random.html?highlight=random#random.randint
 .. _static method: https://docs.python.org/3/library/functions.html#staticmethod
@@ -59,7 +60,6 @@
 .. _unittest.TestCase.maxDiff: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff
 .. _unittest.skip decorator: https://docs.python.org/3/library/unittest.html#unittest.skip
 .. _unittest.TestCase: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase
-.. _assertFalse: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse
 .. _unittest.TestCase.assertFalse: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse
 .. _unittest.TestCase.assertRaises: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises
 .. _unittest.TestCase.assertRaisesRegex: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertRaisesRegex
@@ -74,6 +74,7 @@
 .. _IndentationError: https://docs.python.org/3/library/exceptions.html#IndentationError
 .. _KeyError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError
 .. _NameError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError
+.. _PowerShell: https://learn.microsoft.com/en-us/powershell/
 .. _SyntaxError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#SyntaxError
 .. _ValueError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError
 .. _ZeroDivisionError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError

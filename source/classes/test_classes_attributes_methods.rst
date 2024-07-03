@@ -316,7 +316,7 @@ I make ``classes.py`` to make the tests pass by defining the class, attribute an
 test_object_attributes_and_methods
 *********************************************************************************
 
-To view what :ref:`attributes<AttributeError>` and ``methods`` are defined for any `object <https://docs.python.org/3/glossary.html#term-object>`_ I can call ``dir`` on the `object <https://docs.python.org/3/glossary.html#term-object>`_.
+To view what :ref:`attributes<AttributeError>` and ``methods`` are defined for any object_ I can call ``dir`` on the object_.
 
 The ``dir`` :ref:`method<functions>` returns a :doc:`list </data_structures/lists/lists>` of all attributes and :ref:`methods<functions>` of the object provided to it as input
 

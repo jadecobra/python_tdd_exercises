@@ -41,7 +41,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 calculator
 
-  and it shows an :ref:`AssertionError` after making the files I need
+  the terminal shows an :ref:`AssertionError` after making the files I need
 
   .. code-block:: python
 
@@ -51,7 +51,7 @@ red: make it fail
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_calculator.py:7`` with the mouse to open it
 * and change ``True`` to ``False`` to make ``test_failure`` pass
-* then add a TODO list to keep track of requirements for the calculator
+* then add a TODO list to keep track of work for the calculator
 
   .. code-block:: python
 
@@ -84,12 +84,8 @@ red: make it fail
                 1
             )
 
-  - I use the assertEqual_ :ref:`method<functions>` from the `unittest.TestCase`_ :doc:`class</classes/classes>` which checks if its 2 inputs are equal. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
-  - I am sending two things for assertEqual_ to check
-
-    * first: ``src.calculator.add(0, 1)`` calls the ``add`` function in ``calculator.py`` with ``0`` and ``1`` as inputs
-    * second: ``1`` is the expected result from calling the ``add`` function in ``calculator.py`` with ``0`` and ``1`` as inputs
-    * my expectation is that ``src.calculator.add(0, 1)`` is equal to ``1``
+  - the assertEqual_ :ref:`method<functions>` from the `unittest.TestCase`_ :doc:`class</classes/classes>` checks if its 2 inputs are equal. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
+  - in this case my expectation is that ``src.calculator.add(0, 1)`` is equal to ``1``
 
   the terminal shows a NameError because ``src`` is not defined anywhere in ``test_calculator.py``
 
@@ -108,7 +104,7 @@ green: make it pass
     # AssertionError
     # NameError
 
-* then add an `import statement`_ for the ``calculator`` module
+* then add an `import statement`_ for the ``calculator`` module from the ``src`` folder
 
   .. code-block:: python
 
@@ -125,12 +121,10 @@ green: make it pass
 
     AttributeError: module 'src.calculator' has no attribute 'add'
 
-  - The :ref:`AttributeError` is at line 12 in ``test_calculator.py``
-  - An :ref:`AttributeError` is raised when accessing or calling an attribute that python cannot find
-  - I think of ``src.calculator.add`` as an address
+  An :ref:`AttributeError` is raised when accessing or calling an attribute that python cannot find. I think of ``src.calculator.add`` as an address
 
   * ``src.calculator`` refers to ``calculator.py`` in the ``src`` folder/directory
-  * ``add`` refers to something (an attribute) within the ``calculator.py`` file
+  * ``add`` refers to something (an attribute) within the ``calculator.py`` file which is currently empty
 
 * I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
@@ -147,13 +141,15 @@ green: make it pass
 
     add
 
-  the terminal shows a NameError_ because ``add`` is not defined (there is no assignment to the name)
+  the terminal shows a NameError_
 
   .. code-block:: python
 
     NameError: name 'add' is not defined
 
-* I assign the name ``add`` to the null value :ref:`None`
+  because ``add`` is not defined (there is no assignment to the name)
+
+* I assign it to the null value :ref:`None`
 
   .. code-block:: python
 
@@ -167,7 +163,7 @@ green: make it pass
 
   The :ref:`AttributeError` was fixed by declaring a variable called ``add`` in the ``calculator`` module
 
-* The new error is a :ref:`TypeError` which can occur when an `object <https://docs.python.org/3/glossary.html#term-object>`_ is called in a way that disagrees with the object's definition. In this case the ``add`` variable is not callable_ because it refers to :ref:`None` which is not a callable_ object. I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+* The new error is a :ref:`TypeError` which can occur when an object_ is called in a way that disagrees with its definition. In this case the ``add`` variable is not callable_ because it refers to :ref:`None` which is not a callable_ object. I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
 
   .. code-block:: python
 
@@ -177,7 +173,7 @@ green: make it pass
     # AttributeError
     # TypeError
 
-* I have to define ``add`` as a :ref:`function<functions>` or :doc:`class </classes/classes>` to make it callable. I know the def_ keyword is used for making :doc:`/functions/functions` and will test changing the ``add`` variable to a :ref:`function<functions>` in ``calculator.py``
+* I have to define ``add`` as a :ref:`function<functions>` or :doc:`class </classes/classes>` to make it callable. I change the ``add`` variable to a :ref:`function<functions>` with the def_ keyword
 
   .. code-block:: python
 
@@ -190,22 +186,22 @@ green: make it pass
 
     TypeError: add() takes 0 positional arguments but 2 were given
 
-* This :ref:`TypeError` shows that the current definition of the ``add`` function takes in 0 inputs, but I provided 2 - ``src.calculator.add(0, 1)`` in the call. I change the definition in ``calculator.py`` to make it match the requirement of the ``add`` function taking in two numbers
+* This :ref:`TypeError` shows that the current definition of the ``add`` function takes in 0 inputs, but I provided 2 in when I called it in the test - ``src.calculator.add(0, 1)``. I change the definition in ``calculator.py`` to match the requirement of the ``add`` function taking in two numbers
 
   .. code-block:: python
 
     def add(x, y):
         return None
 
-  the terminal shows an :ref:`AssertionError`
+  and the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: None != 1
 
-  An :ref:`AssertionError` is raised when an assertion is :doc:`False </data_structures/booleans/booleans>`. assertEqual_ :ref:`method<functions>` raises an :ref:`AssertionError` when the two inputs it is given are not equal. In other words the result of calling ``src.calculator.add(0, 1)`` is currently not equal to ``1``
+  the result of ``src.calculator.add(0, 1)`` is not equal to ``1`` because the ``add`` :ref:`function<functions>` returns :ref:`None`
 
-* I make the function return the expected value
+* I change it to return the expected value
 
   .. code-block:: python
 
@@ -224,20 +220,20 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-Wait a minute. Is it that easy? Do I just provide the expectation of the test to make it pass? In the green phase, yes. I do whatever it takes to make the test pass even if I have to cheat.
+Wait a minute! Is it that easy? Do I just provide the expectation of the test to make it pass? In the green phase, Yes. I do whatever it takes to make the test pass even if I have to cheat.
 
 Solving the problem this way shows a problem with the test, which means I need to "Make it Better"
 
-* If a user tries to add other numbers that are not ``0`` and ``1``, the ``add`` function will return ``1``
-* If a user tries to add negative numbers, the ``add`` function wil return ``1``
-* The ``add`` function will return ``1`` no matter what inputs the user gives. It is a :doc:`singleton function </functions/test_singleton_functions>`
+* When a user tries to add other numbers that are not ``0`` and ``1``, the ``add`` function returns ``1``
+* When a user tries to add negative numbers, the ``add`` function returns ``1``
+* The ``add`` function returns ``1`` no matter what inputs are given. It is a :doc:`singleton function </functions/test_singleton_functions>`
 
 Even though the ``add`` function currently passes this test it does not meet the actual requirement.
 
 red: make it fail
 ---------------------------------------------------------------------------------
 
-I add a new test to ``test_addition`` in ``test_calculator.py``
+I add a new test to ``test_addition`` in ``test_calculator.py`` to show that ``add`` always returns ``1``
 
 .. code-block:: python
 
@@ -251,7 +247,7 @@ I add a new test to ``test_addition`` in ``test_calculator.py``
           0
       )
 
-the terminal shows an :ref:`AssertionError`, showing that the ``add`` function always returns ``1`` no matter what inputs are given
+the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -267,18 +263,12 @@ I change the `return statement`_ of the ``add`` :ref:`function<functions>` to re
   def add(x, y):
       return x + y
 
-and the terminal shows passing tests which increases my confidence in the ``add`` function
-
-.. code-block:: python
-
-  tests/test_calculator.py .              [100%]
-
-  ============== 1 passed in 0.01s ==============
+and the terminal shows passing tests
 
 refactor: make it better
 ---------------------------------------------------------------------------------
 
-* I want to test the function with random numbers, so import python's random_ library to generate random numbers for the test
+* I want to test the function with random numbers, so I do not need to add more tests to check the ``add`` :ref:`function<functions>`. I import python's random_ library to generate random numbers for the test
 
   .. code-block:: python
 
@@ -302,13 +292,12 @@ refactor: make it better
             )
 
   - ``x = random.randint(-1, 1)`` assigns a variable called ``x`` to the result of calling ``random.randint(-1, 1)``
-  - ``random.randint(-1, 1)`` returns a random digit that is -1, 0 or 1 to represent the case of negative numbers, zero and positive numbers
-  - the ``assertEqual`` tests that when these two random numbers are given to the ``add`` function as inputs, the output returned is the result of adding them together
+  - ``random.randint(-1, 1)`` returns a random digit that is either -1, 0 or 1 to represent the case of negative numbers, zero and positive numbers
 
   the terminal still shows passing tests
 
-* I no longer need the previous tests because this new test shows the scenarios for negative numbers, zero and positive numbers
-* I remove ``test addition`` from the TODO list since it passes
+* I no longer need the previous tests because this new test covers the cases for negative numbers, zero and positive numbers
+* I can remove ``test addition`` from the TODO list
 
   .. code-block:: python
 
@@ -323,7 +312,7 @@ refactor: make it better
 test_subtraction
 *********************************************************************************
 
-Since addition works, it is time to add a failing test that tests subtraction
+Since addition works, it is time to add a failing test for subtraction
 
 red: make it fail
 #################################################################################
@@ -543,7 +532,7 @@ I add ``test_division`` to ``test_calculator.py``
 
 the terminal shows an :ref:`AttributeError` ::
 
-  AttributeError: module 'src.calculator' has no attribute 'division'
+  AttributeError: module 'src.calculator' has no attribute 'divide'
 
 green: make it pass
 #################################################################################

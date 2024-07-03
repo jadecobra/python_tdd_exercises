@@ -111,7 +111,7 @@ From the tests I see that
 refactor: make it better
 #################################################################################
 
-:doc:`booleans </data_structures/booleans/booleans>` are represented by the `bool <https://docs.python.org/3/library/functions.html#bool>`_ :doc:`class </classes/classes>` in Python. I can add a test with `unittest.TestCase.assertIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsInstance>`_ to check if an `object <https://docs.python.org/3/glossary.html#term-object>`_ is an instance of a :doc:`class </classes/classes>`
+:doc:`booleans </data_structures/booleans/booleans>` are represented by the `bool <https://docs.python.org/3/library/functions.html#bool>`_ :doc:`class </classes/classes>` in Python. I can add a test with `unittest.TestCase.assertIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsInstance>`_ to check if an object_ is an instance of a :doc:`class </classes/classes>`
 
 
 * red: make it fail
@@ -142,7 +142,7 @@ refactor: make it better
           self.assertIsNotNone(False)
           self.assertNotIsInstance(None, bool)
 
-  `unittest.TestCase.assertNotIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance>`_ checks that a given `object <https://docs.python.org/3/glossary.html#term-object>`_ is NOT an instance of the given :doc:`class </classes/classes>`
+  `unittest.TestCase.assertNotIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance>`_ checks that a given object_ is NOT an instance of the given :doc:`class </classes/classes>`
 
 From the tests I see that
 

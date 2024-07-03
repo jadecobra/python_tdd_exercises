@@ -14,9 +14,9 @@ AttributeError
 
 ----
 
-An Attribute is a property, variable, function or name that belongs to an `object <https://docs.python.org/3/glossary.html#term-object>`_. For example when I describe a human being I can list attributes like height, weight, sex and color.
+An Attribute is a property, variable, function or name that belongs to an object_. For example when I describe a human being I can list attributes like height, weight, sex and color.
 
-An `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name in an `object <https://docs.python.org/3/glossary.html#term-object>`_ that does not exist.
+An `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name in an object_ that does not exist.
 
 *********************************************************************************
 requirements
@@ -138,9 +138,9 @@ I solved the `AttributeError <https://docs.python.org/3/library/exceptions.html?
 AttributeError vs NameError
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-An `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name in an `object <https://docs.python.org/3/glossary.html#term-object>`_ from outside the `object <https://docs.python.org/3/glossary.html#term-object>`_ and the name does not exist, for example ``humans.wings``
+An `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name in an object_ from outside the object_ and the name does not exist, for example ``humans.wings``
 
-A NameError_ is raised when there is a reference to a name within an `object <https://docs.python.org/3/glossary.html#term-object>`_ and there is no definition for the name
+A NameError_ is raised when there is a reference to a name within an object_ and there is no definition for the name
 
 
 refactor: make it better
@@ -339,7 +339,7 @@ green: make it pass
 
 * a :ref:`TypeError` is raised in this case because I called an object that was not callable_
 
-  A callable_ object is an object that may be able to handle inputs. I can make an `object <https://docs.python.org/3/glossary.html#term-object>`_ callable_ by defining it as a :doc:`class </classes/classes>` or a :ref:`function<functions>`
+  A callable_ object is an object that may be able to handle inputs. I can make an object_ callable_ by defining it as a :doc:`class </classes/classes>` or a :ref:`function<functions>`
 
   Parentheses are used at the end of the name of an object when calling it, for example  ``module.function_0()`` will call ``function_0`` from ``module.py``
 
@@ -391,7 +391,7 @@ refactor: make it better
 test_attribute_error_w_classes
 *********************************************************************************
 
-I think of a :doc:`class </classes/classes>` as a container of :doc:`methods (functions) </functions/functions>` and attributes that represents an `object <https://docs.python.org/3/glossary.html#term-object>`_
+I think of a :doc:`class </classes/classes>` as a container of :doc:`methods (functions) </functions/functions>` and attributes that represents an object_
 
 - attributes are names which represent a value
 - :ref:`methods<functions>` are :doc:`/functions/functions` that may be able to accept inputs and may return a value - they are callable_
