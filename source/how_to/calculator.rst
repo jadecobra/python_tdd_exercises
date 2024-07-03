@@ -69,7 +69,7 @@ red: make it fail
     # Exceptions Encountered
     # AssertionError
 
-* I change ``test_failure`` with ``test_addition``
+* I change ``test_failure`` to ``test_addition``
 
   .. code-block:: python
 
@@ -100,7 +100,9 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered ::
+* I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+
+  .. code-block:: python
 
     # Exceptions Encountered
     # AssertionError
@@ -305,21 +307,15 @@ refactor: make it better
 
   the terminal still shows passing tests
 
-    .. code-block:: python
-
-      tests/test_calculator.py ..              [100%]
-
-      ============= 1 passed in 0.01s ===============
-
 * I no longer need the previous tests because this new test shows the scenarios for negative numbers, zero and positive numbers
 * I remove ``test addition`` from the TODO list since it passes
 
-    .. code-block:: python
+  .. code-block:: python
 
-      # TODO
-      # test subtraction
-      # test multiplication
-      # test division
+    # TODO
+    # test subtraction
+    # test multiplication
+    # test division
 
 ----
 
