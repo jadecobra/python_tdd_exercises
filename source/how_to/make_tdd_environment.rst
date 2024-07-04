@@ -309,7 +309,7 @@ and it shows a passing test
 refactor: make it better
 ############################################################################################
 
-I ran ``python3 -m unittest`` to see the test fail, again to see the test pass, and to make sure tests that were passing are not broken and the new code does what I expect, I will have to run it again anytime I change the code.
+I ran ``python3 -m unittest`` to see the test fail, again to see the test pass, I will have to run it again anytime I change the code to make sure tests that were passing are not broken and the new code does what I expect.
 This means it is run for each part of the Test Driven Development cycle or any time there is a code change. I do not want to type ``python3 -m unittest`` again, it would be better for a program to run the tests so `I Do Not Repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
 ----
