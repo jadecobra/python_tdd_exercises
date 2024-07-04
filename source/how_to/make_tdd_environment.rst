@@ -58,7 +58,7 @@ run these commands in a terminal to install python on the Linux_ Operating Syste
 ----
 
 ********************************************************************************************
-setup
+make a python test driven development environment
 ********************************************************************************************
 
 * I open a terminal in the Integrated Development Environment (IDE) then use mkdir_ to make a folder/directory for the project
@@ -97,7 +97,7 @@ setup
 
     touch_/`New-Item`_ make an empty file when given a name
 
-  - tests will stay in the ``tests`` folder/directory to separate them from the source code (the actual program). I make an empty file called ``__init__.py`` in the ``tests`` folder/directory to tell Python that it is a `python package`_, this will help it find the tests later
+  - tests will stay in the ``tests`` folder/directory to separate them from the source code (the actual program). I make an empty file called ``__init__.py`` in the ``tests`` folder/directory to tell Python that it is a `python package`_ to help it find the tests
 
     .. code-block:: shell
 
@@ -180,7 +180,7 @@ red: make it fail
     * :doc:`class </classes/classes>` is the python keyword for making :doc:`/classes/classes`
     * ``TestMagic`` is the name given to the :doc:`class </classes/classes>` that will hold the tests, you can use any name you want as long as it starts with ``Test``
     * `unittest.TestCase`_ is a :doc:`class </classes/classes>` defined in the unittest_ :ref:`module<ModuleNotFoundError>` that contains :doc:`methods (functions) </functions/functions>` for testing
-    * ``TestMagic`` inherits from `unittest.TestCase`_, it is a child or clone of `unittest.TestCase`_ that can do the same things it can, and I can change its behavior in the :doc:`class</classes/classes>` definition
+    * ``TestMagic`` inherits from `unittest.TestCase`_, it is a child or clone of `unittest.TestCase`_ and can do the same things it can. I can also change its behavior in the :doc:`class</classes/classes>` definition
 
   - ``def test_failure`` is the definition of a test :ref:`method<functions>` to test the program I am making
 
@@ -207,7 +207,7 @@ red: make it fail
 
       python -m unittest
 
-  and the terminal shows a failure
+  and get a failure
 
   .. code-block:: python
 
@@ -225,7 +225,7 @@ red: make it fail
 
     FAILED (failures=1)
 
-If you are typing along, *CONGRATULATIONS!* You have written your first test.
+If you are typing along, *CONGRATULATIONS!* You just wrote a test.
 
 This is the ``RED`` part of the Test Driven Development cycle. The error in the terminal has important information, here is an explanation reading from the bottom
 
@@ -280,15 +280,13 @@ I change the input on line 7 from :doc:`True </data_structures/booleans/booleans
 
   self.assertFalse(False)
 
-then run the test again from the terminal
+then run the test again in the terminal
 
 .. code-block:: python
 
   python3 -m unittest
 
-.. admonition:: on Windows without `Windows Subsystem Linux`_
-
-  use ``python`` instead of ``python3``
+.. admonition:: on Windows without `Windows Subsystem Linux`_ use ``python`` instead of ``python3``
 
   .. code-block:: shell
 
@@ -338,7 +336,7 @@ how to make a Virtual Environment
 
       source .venv/bin/activate
 
-  .. admonition:: on Windows without `Windows Subsystem Linux`_, type this
+  .. admonition:: type this on Windows without `Windows Subsystem Linux`_
 
     .. code-block::
 
@@ -389,7 +387,7 @@ how to make a Virtual Environment
 
       echo "pytest-watch" > requirements.txt
 
-  .. admonition:: on Windows without `Windows Subsystem Linux`_,, type this
+  .. admonition:: type this on Windows without `Windows Subsystem Linux`_
 
     .. code-block::
 
