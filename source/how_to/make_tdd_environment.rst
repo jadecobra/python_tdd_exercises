@@ -538,7 +538,7 @@ Make sure you are in the folder/directory that contains the `virtual environment
 how to automatically make a python test driven development environment
 ********************************************************************************************
 
-You made it this far and have become the greatest programmer in the world. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I would write a program that contains all the commands it took to get here, then I can use it program to make a Test Driven Development Environment anytime I want and not have to remember each step of the process
+You made it this far and have become the greatest programmer in the world. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I would write a program that contains all the commands it took to get here, then I can use it to make a Test Driven Development Environment anytime I want and not have to remember each step of the process
 
 * I exit the tests in the terminal by pressing ``ctrl`` + ``c`` on the keyboard
 * then type ``deactivate`` to leave the `virtual environment`_
