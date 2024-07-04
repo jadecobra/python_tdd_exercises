@@ -49,7 +49,7 @@ My recommendations are that you
 * try to write solutions when you are done with a chapter without looking at the tests
 * try to write solutions using only the tests from the :ref:`catalog_of_tests` as your guide
 * try adding tests for any ideas you get as you go through a chapter
-* do not quit until you get to the end of a chapter, especially when it gets hard, it is part of the experience when learning to solve problems, and there is a lot of failure. Walk away from it and go do something that is no related for a while, then come back to it. If you take one small step at a time you eventually get where you want to go
+* do not quit until you get to the end of a chapter, especially when it gets hard, it is part of the experience when learning to solve problems, and there is a lot of failure. Walk away from it to do something that is not related for a while, then come back to it. If you take one small step at a time you eventually get where you want to go
 
 If you like videos, there is one for each chapter at `<https://www.youtube.com/@JacobItegboje>`_
 
