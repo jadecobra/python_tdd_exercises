@@ -310,7 +310,7 @@ refactor: make it better
 ############################################################################################
 
 I ran ``python3 -m unittest`` to see the test fail, again to see the test pass, I will have to run it again anytime I change the code to make sure tests that were passing are not broken and the new code does what I expect.
-This means it is run for each part of the Test Driven Development cycle or any time there is a code change. I do not want to type ``python3 -m unittest`` again, it would be better for a program to run the tests so `I Do Not Repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
+This means it is run for each part of the Test Driven Development cycle or any time there is a code change. I do not want to type ``python3 -m unittest`` again, it is better for a program to run the tests so `I Do Not Repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
 ----
 
@@ -325,7 +325,13 @@ how to make a Virtual Environment
 
   .. code-block:: python
 
-      python3 -m venv .venv
+    python3 -m venv .venv
+
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use ``python`` instead of ``python3``
+
+    .. code-block:: shell
+
+      python -m venv .venv
 
   - ``python3`` is the major version of python being used
   - ``-m`` is an option passed to python to run the given :ref:`module<ModuleNotFoundError>` as a script
@@ -400,7 +406,7 @@ how to make a Virtual Environment
   - pytest_ is a `python package`_ like unittest_ that is used for testing
   - ``requirements.txt`` is the name of a file where I can list `python packages`_ for pip_ the `python package manager`_ to install in the `virtual environment`_ later, you can use any name you like
 
-* then install the `pytest-watch`_ package and its dependencies from the ``requirements.txt`` file
+* I install the `pytest-watch`_ package and its dependencies from the ``requirements.txt`` file
 
   .. code-block:: python
 
@@ -500,7 +506,7 @@ type the following in a terminal with an active `virtual environment`_
 how to activate a virtual environment
 ############################################################################################
 
-Make sure you are in the folder/directory that contains the `virtual environment`_ for example ``magic`` and type the following in the terminal
+Make sure you are in the folder/directory that contains the `virtual environment`_ for example ``magic``, and type the following in the terminal
 
 .. code-block:: shell
 
@@ -532,7 +538,7 @@ Make sure you are in the folder/directory that contains the `virtual environment
 how to automatically make a python test driven development environment
 ********************************************************************************************
 
-You made it this far and have become the greatest programmer in the world. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I would write a program that contains all the commands it took to get here, then I can use the program to make a Test Driven Development Environment  anytime I want and not have to remember the steps
+You made it this far and have become the greatest programmer in the world. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I would write a program that contains all the commands it took to get here, then I can use it program to make a Test Driven Development Environment anytime I want and not have to remember each step of the process
 
 * I exit the tests in the terminal by pressing ``ctrl`` + ``c`` on the keyboard
 * then type ``deactivate`` to leave the `virtual environment`_
@@ -554,7 +560,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     touch makePythonTdd.sh
 
-* and open the file in the Integrated Development Environment (IDE), then copy each command I need to set up a Test Driven Environment
+* and open the file in the Integrated Development Environment (IDE), then copy each command I need to make a Test Driven Development Environment
 
   .. code-block:: ruby
 
@@ -595,7 +601,7 @@ You made it this far and have become the greatest programmer in the world. To fo
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-  ``$1`` represents the first argument given when the program is called. You can use it in place of ``$PROJECT_NAME`` and will get the same result
+  ``$1`` represents the first argument given when the program is called. You can use it in place of ``$PROJECT_NAME``
 
 * I use the `cat <https://www.man7.org/linux/man-pages/man1/cat.1.html>`_ program to add text for the first failing test in ``test_$PROJECT_NAME.py``
 
@@ -626,9 +632,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 how to automatically make a python test driven development environment on windows without WSL
 #################################################################################################
 
-.. warning::
-
-  This is for Windows without `Windows Subsystem Linux`_
+.. warning:: This is for Windows without `Windows Subsystem Linux`_
 
 * I make a file named :ref:`makePythonTdd.ps1` by using the ``New-Item`` command in PowerShell
 
