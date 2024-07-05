@@ -656,7 +656,7 @@ You also encountered the following exceptions
 * :ref:`TypeError`
 * ZeroDivisionError_
 
-Would you like to learn :doc:`/how_to/pass_values`?
+Would you like to test :doc:`passing values</how_to/pass_values>`?
 
 ----
 
