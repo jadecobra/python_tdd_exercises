@@ -34,14 +34,15 @@ windows requirements
 If you are using a Windows computer, try to install Linux_ with `Windows Subsystem Linux`_
 
 * click ``start``
-* type ``PowerShell``, right click and select ``Run as administrator`` to open a terminal
-* install `Windows Subsystem Linux`_ by typing
+* then type ``PowerShell``
+* right click and select ``Run as administrator`` to open a terminal
+* to install `Windows Subsystem Linux`_, type
 
   .. code-block:: powershell
 
     wsl --install --distribution debian
 
-  .. tip:: if you cannot install `Windows Subsystem Linux`_, do not worry I will show changes you can make to get the same results
+  .. tip:: if you cannot install `Windows Subsystem Linux`_, do not worry, I show what you can do to get the same results
 
 
 linux requirements
@@ -67,7 +68,7 @@ make a python test driven development environment
 
     mkdir magic
 
-  and change directory to the project with the cd_ program
+  then change directory to the project with the cd_ program
 
   .. code-block:: shell
 
@@ -75,7 +76,7 @@ make a python test driven development environment
 
   this is where all code for the project will stay
 
-* I make child folders/directories for the source code and tests
+* and make child folders/directories for the source code and tests
 
   .. code-block:: shell
 
@@ -95,15 +96,15 @@ make a python test driven development environment
 
         New-Item src/magic.py
 
-    touch_/`New-Item`_ make an empty file when given a name
+    touch_/`New-Item`_ makes an empty file when given a name
 
-  - tests will stay in the ``tests`` folder/directory to separate them from the source code (the actual program). I make an empty file called ``__init__.py`` in the ``tests`` folder/directory to tell Python that it is a `python package`_ to help it find the tests
+  - tests will stay in the ``tests`` folder/directory to separate them from the source code (the actual program). I make an empty file called ``__init__.py`` in the ``tests`` folder/directory to tell Python that it is a `python package`_, this will help it find the tests later
 
     .. code-block:: shell
 
       touch tests/__init__.py
 
-    .. WARNING:: make sure you use two underscores for ``__init__.py``
+    .. WARNING:: make sure you use two underscores (__) for ``__init__.py``
 
     .. admonition:: on Windows without `Windows Subsystem Linux`_ use ``New-Item``
 
@@ -159,7 +160,7 @@ red: make it fail
 
 * I open up ``magic/tests/test_magic.py`` in the Integrated Development Environment (IDE) and type this
 
-    the line numbers below are a guide, you do not need to copy them
+    you do not need to copy them the line numbers below, they are a guide
 
   .. code-block:: python
     :linenos:
@@ -334,7 +335,7 @@ how to make a Virtual Environment
       python -m venv .venv
 
   - ``python3`` is the major version of python being used
-  - ``-m`` is an option passed to python to run the given :ref:`module<ModuleNotFoundError>` as a script
+  - ``-m`` is the option passed to python to run the given :ref:`module<ModuleNotFoundError>` as a script
   - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ for making a `virtual environment`_ with a given name. A `virtual environment`_ is a separate folder/directory where packages that are dependencies of the project will be installed
   - ``.venv`` is the standard name for `virtual environments <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ in Python, you can use any name you like
 
@@ -405,6 +406,8 @@ how to make a Virtual Environment
   - `pytest-watch`_ is a python program that automatically runs pytest_ when a python file in the folder/directory changes
   - pytest_ is a `python package`_ like unittest_ that is used for testing
   - ``requirements.txt`` is the name of a file where I can list `python packages`_ for pip_ the `python package manager`_ to install in the `virtual environment`_ later, you can use any name you like
+  - ``|`` is an operator called a pipe that is used to send the result on the left to the program on the right
+  - ``Out-File`` is a program that writes the input given to the file given
 
 * I install the `pytest-watch`_ package and its dependencies from the ``requirements.txt`` file
 
