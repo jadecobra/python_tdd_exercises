@@ -214,7 +214,7 @@ green: make it pass
 
     tests/test_calculator.py .               [100%]
 
-    ============== 1 passed in 0.01s ===============
+    ============== 1 passed in X.YZs ===============
 
 
 refactor: make it better

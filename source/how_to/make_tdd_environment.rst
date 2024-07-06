@@ -124,7 +124,7 @@ how to manually make a python test driven development environment
 
         New-Item tests/test_magic.py
 
-    you can use any name you like as long as it starts with ``test_``
+    you can use any name you want, as long as it starts with ``test_``
 
 * Here is what the folder/directory structure looks like
 
@@ -140,8 +140,6 @@ how to manually make a python test driven development environment
 .. tip:: ``magic`` is a placeholder for the name of the project. For example, change ``magic`` to ``calculator`` to work on a ``calculator`` project
 
 ----
-
-.. _test_failure:
 
 ********************************************************************************************
 test_failure
@@ -175,18 +173,18 @@ red: make it fail
 
   Here is an explanation of the code above
 
-  - ``import unittest`` imports the unittest_ :ref:`module<ModuleNotFoundError>` which is used for testing, from the `python standard library`_
+  - ``import unittest`` imports unittest_ which is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ used for testing
   - ``class TestMagic`` is the definition of a test :doc:`class </classes/classes>`
 
     * :doc:`class </classes/classes>` is the python keyword for making :doc:`/classes/classes`
-    * ``TestMagic`` is the name given to the :doc:`class </classes/classes>` that will hold the tests, you can use any name you want as long as it starts with ``Test``
+    * ``TestMagic`` is the name given to the :doc:`class </classes/classes>` that will hold the tests, you can use any name you want, as long as it starts with ``Test``
     * `unittest.TestCase`_ is a :doc:`class </classes/classes>` defined in the unittest_ :ref:`module<ModuleNotFoundError>` that contains :doc:`methods (functions) </functions/functions>` for testing
     * ``TestMagic`` inherits from `unittest.TestCase`_, it is a child or clone of `unittest.TestCase`_ and can do the same things. I can also change its behavior in the :doc:`class</classes/classes>` definition
 
   - ``def test_failure`` is the definition of a test :ref:`method<functions>` to test the program I am making
 
     * def_ is the python keyword for making :ref:`functions/methods<functions>`, a method is a function in a class
-    * ``test_failure`` is the name of the :ref:`method<functions>`,  you can use any name you want as long as it starts with ``test_``
+    * ``test_failure`` is the name of the :ref:`method<functions>`, you can use any name you want, as long as it starts with ``test_``
     * ``self`` is the ``TestMagic`` :ref:`class<classes>`. I use ``self`` to access :doc:`methods (functions) </functions/functions>` and :ref:`attributes<AttributeError>` of the ``TestMagic`` class and by extension `unittest.TestCase`_
     * ``self.assertFalse(True)`` is the actual test. I expect this line to fail because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`. If it passes then I have a problem
 
@@ -222,7 +220,7 @@ red: make it fail
     AssertionError: True is not false
 
     -------------------------------------------------------------
-    Ran 1 test in 0.000s
+    Ran 1 test in X.YZAs
 
     FAILED (failures=1)
 
@@ -231,16 +229,16 @@ If you are typing along, *CONGRATULATIONS!* You just wrote a test.
 This is the ``RED`` part of the Test Driven Development cycle. The error in the terminal has important information, here is an explanation from the bottom up
 
 * ``FAILED (failures=1)`` the number of failures
-* ``Ran 1 test in 0.000s`` the number of tests run and how long it took
-* ``AssertionError: True is not false`` The error is an :ref:`AssertionError` which is raised because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
-* ``self.assertFalse(True)`` is the line of code that caused the failure
+* ``Ran 1 test in X.YZAs`` the number of tests run and how long it took
+* ``AssertionError: True is not false`` the :ref:`Exception<Exceptions>` raised and its message, in this case an :ref:`AssertionError` is raised because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
+* ``self.assertFalse(True)`` is the line of code that caused the failure/error
 * ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` is the line number and location of the file where the :ref:`AssertionError` happened
 
   .. tip::
 
-    Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click with your mouse on ``File ".../magic/tests/test_magic.py", line 7`` in the terminal, the Integrated Development Environment (IDE) will open the file in the editor with the cursor on the line where the error happened
+    Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click with your mouse on ``File ".../magic/tests/test_magic.py", line 7`` in the terminal, the Integrated Development Environment (IDE) will open the file in the editor with the cursor at the line where the error happened
 
-* ``Traceback (most recent call last):`` all the indented information shown after this line is the ``traceback`` showing the calls that led to the error
+* ``Traceback (most recent call last):`` all the indented information shown after this line shows the calls that led to the error
 * ``FAIL: test_failure (tests.test_magic.TestMagic.test_failure)`` is a header with information in :doc:`dot notation</dot_notation>` about the test
 
   - ``tests.test_magic.TestMagic.test_failure`` is the location of the failing test
@@ -299,7 +297,7 @@ and it shows a passing test
 
   .
   ------------------------------------------------------
-  Ran 1 test in 0.000s
+  Ran 1 test in X.YZAs
 
   OK
 
@@ -310,7 +308,7 @@ and it shows a passing test
 refactor: make it better
 ############################################################################################
 
-I ran ``python3 -m unittest`` to see the test fail, again to see the test pass, I will have to run it again anytime I change the code to make sure tests that were passing are not broken and the new code does what I expect.
+I ran ``python3 -m unittest`` to see the test fail, again to see the test pass, and will have to run it again when I change the code, to make sure tests that were passing are not broken and the new code does what I expect.
 This means it is run for each part of the Test Driven Development cycle or any time there is a code change. I do not want to type ``python3 -m unittest`` again, it is better for a program to run the tests so `I Do Not Repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
 ----
@@ -336,8 +334,8 @@ how to make a virtual environment
 
   - ``python3`` is the major version of python being used
   - ``-m`` is the option passed to python to run the given :ref:`module<ModuleNotFoundError>` as a script
-  - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ for making a `virtual environment`_ with a given name. A `virtual environment`_ is a separate folder/directory where packages that are dependencies of the project will be installed
-  - ``.venv`` is the standard name for `virtual environments <https://docs.python.org/3/glossary.html#term-virtual-environment>`_ in Python, you can use any name you like
+  - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ used to make a `virtual environment`_ with a given name. A `virtual environment`_ is a separate folder/directory where `python packages`_ that are dependencies of the project will be installed
+  - ``.venv`` is the name given for this `virtual environment`_, you can use any name you want
 
 * I activate the `virtual environment`_ to use it ::
 
@@ -355,7 +353,7 @@ how to make a virtual environment
 
       .venv/scripts/activate.ps1
 
-  the ``(.venv)`` on the far left of the command line in the terminal shows that I am using the `virtual environment`_
+  the ``(.venv)`` on the far left of the command line in the terminal shows that I am in the `virtual environment`_
 
   .. code-block:: shell
 
@@ -367,12 +365,12 @@ how to make a virtual environment
 
     pip install --upgrade pip
 
-  - pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that installs `python packages`_
+  - pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ used to install `python packages`_
   - ``install`` is an argument given to pip_ to install a given package name
-  - ``--upgrade`` is an option given to the ``install`` argument for pip_ to install the latest version of the name given
+  - ``--upgrade`` is an option given to the ``install`` argument for pip_ to upgrade the version of the `python package`_ given
   - ``pip`` is the package name given for pip_ to install, in this case it upgrades itself
 
-* After the upgrade, I can use pip_ to see the packages that are already installed in the virtual environment
+* I can use pip_ to see what packages are installed in the virtual environment
 
   .. code-block:: python
 
@@ -384,9 +382,7 @@ how to make a virtual environment
 
     Package Version
     ------- -------
-    pip     24.1.1
-
-  your versions may vary
+    pip     x.y.z
 
 * I make a file called ``requirements.txt`` in the ``magic`` folder/directory
 
@@ -400,14 +396,14 @@ how to make a virtual environment
 
       "pytest-watch" | Out-File requirements.txt
 
-  - the command above makes a file named ``requirements.txt`` with `pytest-watch`_ as the text inside it
+  - this makes a file named ``requirements.txt`` with `pytest-watch`_ as the text inside it
   - echo_ is a program that writes its given arguments to the `standard output (stdout)`_
   - ``>`` is an operator that is used to send output from a program to the file given
-  - `pytest-watch`_ is a python program that automatically runs pytest_ when a python file in the folder/directory changes
-  - pytest_ is a `python package`_ like unittest_ that is used for testing
-  - ``requirements.txt`` is the name of a file where I can list `python packages`_ for pip_ the `python package manager`_ to install in the `virtual environment`_ later, you can use any name you like
   - ``|`` is an operator called a pipe that is used to send the result on the left to the program on the right
   - ``Out-File`` is a program that writes the input given to the file given
+  - `pytest-watch`_ is a python program that automatically runs pytest_ when a python file in the folder/directory changes
+  - pytest_ is a `python package`_ like unittest_ that is used for testing
+  - ``requirements.txt`` is the name of a file where I can list `python packages`_ for pip_ to install, you can use any name you want
 
 * I install the `pytest-watch`_ package and its dependencies from the ``requirements.txt`` file
 
@@ -430,17 +426,15 @@ how to make a virtual environment
 
     Package      Version
     ------------ -------
-    colorama     0.4.6
-    docopt       0.6.2
-    iniconfig    2.0.0
-    packaging    24.0
-    pip          24.0
-    pluggy       1.5.0
-    pytest       8.2.2
-    pytest-watch 4.2.0
-    watchdog     4.0.1
-
-  your versions may vary
+    colorama     x.y.z
+    docopt       x.y.z
+    iniconfig    x.y.z
+    packaging    x.y
+    pip          x.y
+    pluggy       x.y.z
+    pytest       x.y.z
+    pytest-watch x.y.z
+    watchdog     x.y.z
 
 * The folder/directory structure now looks like this
 
@@ -469,7 +463,7 @@ how to make a virtual environment
 
     tests/test_magic.py .          [100%]
 
-    =============== 1 passed in 0.00s =======================
+    =============== 1 passed in X.YZs =======================
 
 * I change the input on line 7 in ``test_magic.py`` from :doc:`False </data_structures/booleans/booleans>` to :doc:`True </data_structures/booleans/booleans>` and it shows an :ref:`AssertionError`
 
@@ -487,7 +481,7 @@ how to make a virtual environment
     tests/test_magic.py:7: AssertionError
     ============================== short test summary info ================================
     FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
-    ================================= 1 failed in 0.05s ===================================
+    ================================= 1 failed in X.YZs ===================================
 
   then I change it back to :doc:`False </data_structures/booleans/booleans>` to make it pass with the terminal responding to each change
 
