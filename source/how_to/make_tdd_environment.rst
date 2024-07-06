@@ -654,7 +654,7 @@ how to automatically make a python test driven development environment on window
   - ``@""@`` is like ``DELIMITER`` it allows writing multiline text in PowerShell_
   - ``|`` is an operator that is used to send output from one program to another
 
-* I can now make a Test Driven Development environment by giving a name for the ``$projectName`` variable when the program is called. For example, typing this command in the terminal in the folder/directory where ``makePythonTdd.ps1`` is saved will make a Test Driven Development environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator`
+* I can now make a Test Driven Development environment when I call the program with a name for the ``$projectName`` variable. For example, when I type this command in the terminal in the folder/directory where ``makePythonTdd.ps1`` is saved, the computer will make a Test Driven Development environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator`
 
   .. code-block:: PowerShell
 
