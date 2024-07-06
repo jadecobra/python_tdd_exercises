@@ -1,5 +1,7 @@
 .. include:: ../links.rst
 
+.. _Exceptions:
+
 #################################################################################
 how to handle Exceptions in programs
 #################################################################################
@@ -78,7 +80,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+* I add the error to the list of :ref:`Exceptions` encountered
 
   .. code-block:: python
 

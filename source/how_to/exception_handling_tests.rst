@@ -16,13 +16,13 @@ how to test that an Exception is raised
 
 ----
 
-Exceptions_ are raised in Python when an error occurs and break execution of the program. When an exception is encountered no further instructions in the program will run.
+`Exceptions <https://docs.python.org/3/library/exceptions.html?highlight=exception#Exception>`_ are raised in Python when an error occurs and break execution of the program. When an exception is encountered no further instructions in the program will run.
 
 This is useful because it means there is a problem that should be taken care of for the program to continue as expected.
 
-It is also a pain when it causes the program to exit early. What if I want the program to run regardless of errors? I might want it to give messages to the user who may not care or understand the details that come with Exceptions_.
+It is also a pain when it causes the program to exit early. What if I want the program to run regardless of errors? I might want it to give messages to the user who may not care or understand the details that come with `Exceptions <https://docs.python.org/3/library/exceptions.html?highlight=exception#Exception>`_.
 
-Exception Handling is a way to deal with Exceptions_, it allows programs to make decisions when an Exception is encountered.
+Exception Handling is a way to deal with `Exceptions <https://docs.python.org/3/library/exceptions.html?highlight=exception#Exception>`_, it allows programs to make decisions when an Exception is encountered.
 
 .. _test_catching_module_not_found_error_in_tests:
 
@@ -75,7 +75,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I add it to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+* I add it to the list of :ref:`Exceptions` encountered
 
   .. code-block:: python
 
@@ -126,7 +126,7 @@ red: make it fail
     NameError: name 'module' is not defined
 
   A NameError_ is raised when a name is used within a :ref:`module<ModuleNotFoundError>` with no definition for the name. I call ``module.non_existent_attribute`` in the test and there is no definition for ``module``
-* I add it to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+* I add it to the list of :ref:`Exceptions` encountered
 
   .. code-block:: python
 
@@ -152,7 +152,7 @@ red: make it fail
 
     AttributeError: module 'module' has no attribute 'non_existent_attribute'
 
-* I add the exception to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+* I add the exception to the list of :ref:`Exceptions` encountered
 
   .. code-block:: python
 

@@ -41,7 +41,7 @@ red: make it fail
 green: make it pass
 *********************************************************************************
 
-* I add a list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+* I add a list of :ref:`Exceptions` encountered
 
   .. code-block:: python
 
@@ -60,7 +60,7 @@ green: make it pass
 
     NameError: name 'get_datetime' is not defined
 
-  I add it to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered as well
+  I add it to the list of :ref:`Exceptions` encountered as well
 
   .. code-block:: python
 
@@ -80,7 +80,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-  another error for the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+  another error for the list of :ref:`Exceptions` encountered
 
   .. code-block:: python
 
@@ -117,7 +117,7 @@ green: make it pass
     None != datetime.datetime(2006, 11, 21, 13, 28)
     None != datetime.datetime(2006, 11, 21, 19, 8)
 
-  which I add to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+  which I add to the list of :ref:`Exceptions` encountered
 
   .. code-block:: python
 
@@ -315,7 +315,7 @@ green: make it pass
 
     SyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers
 
-  python does not know where the string ends or begins because the message has double quotes inside double quotes. I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>`
+  python does not know where the string ends or begins because the message has double quotes inside double quotes. I add the error to the list of :ref:`Exceptions`
 
   .. code-block:: python
 
@@ -386,7 +386,7 @@ green: make it pass
     ValueError: wake_time: "3201/08/13 15:20" is earlier than sleep_time: "1074/03/31 16:44"
     ValueError: wake_time: "9810/07/30 04:29" is earlier than sleep_time: "9792/03/04 12:44"
 
-  this is not right, the timestamps for ``wake_time`` are not earlier than ``sleep_time``. The ``duration`` :ref:`function<functions>` needs a condition to make sure it raises a ValueError_ only when ``wake_time`` is earlier than ``sleep_time``. I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+  this is not right, the timestamps for ``wake_time`` are not earlier than ``sleep_time``. The ``duration`` :ref:`function<functions>` needs a condition to make sure it raises a ValueError_ only when ``wake_time`` is earlier than ``sleep_time``. I add the error to the list of :ref:`Exceptions` encountered
 
   .. code-block:: python
 
@@ -536,7 +536,7 @@ refactor: make it better
 
   and the terminal shows all tests are still passing
 
-* then I remove the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered because it was just for me
+* then I remove the list of :ref:`Exceptions` encountered because it was just for me
 
 *********************************************************************************
 review

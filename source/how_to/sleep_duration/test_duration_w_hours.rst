@@ -73,7 +73,7 @@ red: make it fail
 
     TypeError: TestCase.assertEqual() missing 2 required positional arguments: 'first' and 'second'
 
-  which I add to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+  which I add to the list of :ref:`Exceptions` encountered
 
   .. code-block:: python
 
@@ -152,7 +152,7 @@ green: make it pass
 
     AttributeError: module 'sleep_duration' has no attribute 'duration'
 
-  I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+  I add the error to the list of :ref:`Exceptions` encountered
 
   .. code-block:: python
 

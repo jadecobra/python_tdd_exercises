@@ -93,7 +93,7 @@ green: make it pass
 
     AttributeError: module 'telephone' has no attribute 'text'
 
-* I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+* I add the error to the list of :ref:`Exceptions` encountered
 
   .. code-block:: python
 
@@ -127,7 +127,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-- I add the exception to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+- I add the exception to the list of :ref:`Exceptions` encountered
 
   .. code-block:: python
 

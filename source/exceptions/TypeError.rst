@@ -79,7 +79,7 @@ red: make it fail
     import functions
     E  ModuleNotFoundError: No module called 'functions'
 
-* I add it to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+* I add it to the list of :ref:`Exceptions` encountered
 
   .. code-block:: python
 
@@ -97,7 +97,7 @@ green: make it pass
 
     E    AttributeError: module 'functions' has no attribute 'function_a'
 
-  which I add to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+  which I add to the list of :ref:`Exceptions` encountered
 
   .. code-block:: python
 
@@ -119,7 +119,7 @@ green: make it pass
    E    TypeError: 'NoneType' object is not callable
 
   A reminder of the first encounter with ``TypeError`` from `how to solve the AttributeError by defining a Function <./AttributeError.rst>`_
-* I add it to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+* I add it to the list of :ref:`Exceptions` encountered
 
   .. code-block:: python
 

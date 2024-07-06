@@ -55,7 +55,7 @@ A :ref:`ModuleNotFoundError` is raised when a name is provided to an `import sta
 green: make it pass
 #################################################################################
 
-* I make the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+* I make the list of :ref:`Exceptions` encountered
 
   .. code-block:: python
 
@@ -87,7 +87,7 @@ green: make it pass
 
     AttributeError: module 'module' has no attribute 'variable_0'
 
-* I add the error to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+* I add the error to the list of :ref:`Exceptions` encountered
 
   .. code-block:: python
 
@@ -326,7 +326,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* I add it to the list of :doc:`Exceptions</how_to/exception_handling_programs>` encountered
+* I add it to the list of :ref:`Exceptions` encountered
 
   .. code-block:: python
 

@@ -36,7 +36,7 @@ If you are using a Windows computer, try to install Linux_ with `Windows Subsyst
 * click ``start``
 * then type ``PowerShell``
 * right click and select ``Run as administrator`` to open a terminal
-* to install `Windows Subsystem Linux`_, type
+* then install `Windows Subsystem Linux`_ with
 
   .. code-block:: powershell
 
@@ -59,7 +59,7 @@ run these commands in a terminal to install python on the Linux_ Operating Syste
 ----
 
 ********************************************************************************************
-make a python test driven development environment
+how to manually make a python test driven development environment
 ********************************************************************************************
 
 * I open a terminal in the Integrated Development Environment (IDE) then use mkdir_ to make a folder/directory for the project
@@ -76,7 +76,7 @@ make a python test driven development environment
 
   this is where all code for the project will stay
 
-* and make child folders/directories for the source code and tests
+* I make child folders/directories for the source code and tests
 
   .. code-block:: shell
 
@@ -151,7 +151,7 @@ The Test Driven Development cycle is ``RED GREEN REFACTOR``
 
 * **RED**: make it fail - write a failing test to make sure the test works
 * **GREEN**: make it pass - write only what is needed to make the failing test pass
-* **REFACTOR**: make it better
+* **REFACTOR**: make it better - `remove duplication <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 
 .. _test_failure_red:
 
@@ -160,7 +160,7 @@ red: make it fail
 
 * I open up ``magic/tests/test_magic.py`` in the Integrated Development Environment (IDE) and type this
 
-    you do not need to copy them the line numbers below, they are a guide
+    you do not need to copy the line numbers below, they are a guide
 
   .. code-block:: python
     :linenos:
@@ -181,13 +181,13 @@ red: make it fail
     * :doc:`class </classes/classes>` is the python keyword for making :doc:`/classes/classes`
     * ``TestMagic`` is the name given to the :doc:`class </classes/classes>` that will hold the tests, you can use any name you want as long as it starts with ``Test``
     * `unittest.TestCase`_ is a :doc:`class </classes/classes>` defined in the unittest_ :ref:`module<ModuleNotFoundError>` that contains :doc:`methods (functions) </functions/functions>` for testing
-    * ``TestMagic`` inherits from `unittest.TestCase`_, it is a child or clone of `unittest.TestCase`_ and can do the same things it can. I can also change its behavior in the :doc:`class</classes/classes>` definition
+    * ``TestMagic`` inherits from `unittest.TestCase`_, it is a child or clone of `unittest.TestCase`_ and can do the same things. I can also change its behavior in the :doc:`class</classes/classes>` definition
 
   - ``def test_failure`` is the definition of a test :ref:`method<functions>` to test the program I am making
 
     * def_ is the python keyword for making :ref:`functions/methods<functions>`, a method is a function in a class
     * ``test_failure`` is the name of the :ref:`method<functions>`,  you can use any name you want as long as it starts with ``test_``
-    * ``self`` is the ``TestMagic`` :ref:`class<classes>`. I use ``self`` to access :doc:`methods (functions) </functions/functions>` and :ref:`attributes<AttributeError>` of the ``TestMagic`` class and by extension `unittest.TestCase`_, without having to type ``TestMagic().`` or ``unittest.TestCase().``
+    * ``self`` is the ``TestMagic`` :ref:`class<classes>`. I use ``self`` to access :doc:`methods (functions) </functions/functions>` and :ref:`attributes<AttributeError>` of the ``TestMagic`` class and by extension `unittest.TestCase`_
     * ``self.assertFalse(True)`` is the actual test. I expect this line to fail because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`. If it passes then I have a problem
 
       - assertFalse_ is a :ref:`method<functions>` in the `unittest.TestCase`_ :doc:`class </classes/classes>` that checks if its input is :doc:`False </data_structures/booleans/booleans>`
@@ -208,7 +208,7 @@ red: make it fail
 
       python -m unittest
 
-  and get a failure
+  and it shows a failure
 
   .. code-block:: python
 
@@ -228,10 +228,10 @@ red: make it fail
 
 If you are typing along, *CONGRATULATIONS!* You just wrote a test.
 
-This is the ``RED`` part of the Test Driven Development cycle. The error in the terminal has important information, here is an explanation reading from the bottom
+This is the ``RED`` part of the Test Driven Development cycle. The error in the terminal has important information, here is an explanation from the bottom up
 
-* ``FAILED (failures=1)`` there is one failure
-* ``Ran 1 test in 0.000s`` how long the test ran
+* ``FAILED (failures=1)`` the number of failures
+* ``Ran 1 test in 0.000s`` the number of tests run and how long it took
 * ``AssertionError: True is not false`` The error is an :ref:`AssertionError` which is raised because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
 * ``self.assertFalse(True)`` is the line of code that caused the failure
 * ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` is the line number and location of the file where the :ref:`AssertionError` happened
@@ -319,7 +319,7 @@ This means it is run for each part of the Test Driven Development cycle or any t
 how to automatically run tests
 ********************************************************************************************
 
-how to make a Virtual Environment
+how to make a virtual environment
 ############################################################################################
 
 * I make a `virtual environment`_ with the venv_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_
