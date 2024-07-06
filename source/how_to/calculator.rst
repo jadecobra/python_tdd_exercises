@@ -646,7 +646,7 @@ I can use a `while statement`_ for the other cases when the divisor is not ``0``
 review
 *********************************************************************************
 
-CONGRATULATIONS! You made it through writing a program that can perform the 4 basic arithmetic operations of addition, subtraction, multiplication and division using Test Driven Development.
+CONGRATULATIONS! You used Test Driven Development to write a program that can perform the 4 basic arithmetic operations of addition, subtraction, multiplication and division.
 
 You also encountered the following exceptions
 
