@@ -9,6 +9,7 @@
 .. _assertRaisesRegex: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertRaisesRegex
 .. _bash: https://www.gnu.org/software/bash/
 .. _callable: https://docs.python.org/3/glossary.html#term-callable
+.. _cat: https://www.man7.org/linux/man-pages/man1/cat.1.html
 .. _cd: https://man7.org/linux/man-pages/man1/cd.1p.html
 .. _chmod: https://en.wikipedia.org/wiki/Chmod
 .. _class: https://docs.python.org/3/reference/lexical_analysis.html#keywords

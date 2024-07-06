@@ -405,14 +405,14 @@ how to make a virtual environment
   - pytest_ is a `python package`_ like unittest_ that is used for testing
   - ``requirements.txt`` is the name of a file where I can list `python packages`_ for pip_ to install, you can use any name you want
 
-* I install the `pytest-watch`_ package and its dependencies from the ``requirements.txt`` file
+* I install `pytest-watch`_ and its dependencies
 
   .. code-block:: python
 
       pip install --requirement requirements.txt
 
   - ``--requirement`` is another option that can be passed to the ``install`` argument to install `python packages`_ from a given file
-  - ``requirements.txt`` is the file that contains a list of `python packages`_ for pip_ to install
+  - ``requirements.txt`` is the file that contains the list of `python packages`_ I want to install
 
 * I use pip_ to see the packages that are now installed in the `virtual environment`_
 
@@ -461,7 +461,7 @@ how to make a virtual environment
     rootdir: .../magic
     collected 1 item
 
-    tests/test_magic.py .          [100%]
+    tests/test_magic.py .                              [100%]
 
     =============== 1 passed in X.YZs =======================
 
@@ -483,7 +483,7 @@ how to make a virtual environment
     FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
     ================================= 1 failed in X.YZs ===================================
 
-  then I change it back to :doc:`False </data_structures/booleans/booleans>` to make it pass with the terminal responding to each change
+  then I change it back to :doc:`False </data_structures/booleans/booleans>` to make it pass
 
   .. tip:: press ``ctrl`` + ``c`` on the keyboard in the terminal when you want to stop the tests
 
@@ -492,7 +492,7 @@ how to make a virtual environment
 how to deactivate a virtual environment
 #################################################################################################
 
-type the following in a terminal with an active `virtual environment`_
+type this in a terminal with an active `virtual environment`_
 
 .. code-block::
 
@@ -503,7 +503,7 @@ type the following in a terminal with an active `virtual environment`_
 how to activate a virtual environment
 ############################################################################################
 
-Make sure you are in the folder/directory that contains the `virtual environment`_ for example ``magic``, and type the following in the terminal
+Make sure you are in the folder/directory that contains the `virtual environment`_ for example ``magic``, and type this in the terminal
 
 .. code-block:: shell
 
@@ -511,7 +511,7 @@ Make sure you are in the folder/directory that contains the `virtual environment
 
 .. admonition:: on Windows without `Windows Subsystem Linux`_
 
-  You may need to Set the Execution Policy in Administrator mode first
+  You may first need to set the Execution Policy in an Administrator mode PowerShell_ terminal to allow the activation script to work
 
   .. code-block:: PowerShell
 
@@ -535,29 +535,34 @@ Make sure you are in the folder/directory that contains the `virtual environment
 how to automatically make a python test driven development environment
 ********************************************************************************************
 
-You made it this far and have become the greatest programmer in the world. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I would write a program that contains all the commands it took to get here, then I can use it to make a Test Driven Development Environment anytime I want and not have to remember each step of the process
+You made it this far and have become the greatest programmer in the world. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I would write a program that has all the commands it took to get here, then I can use it to make a Test Driven Development Environment anytime I want and not have to remember each step of the process
 
 * I exit the tests in the terminal by pressing ``ctrl`` + ``c`` on the keyboard
-* then type ``deactivate`` to leave the `virtual environment`_
+* then leave the `virtual environment`_
+
+  .. code-block:: shell
+
+    deactivate
+
 * and change directory to the parent of ``magic``
 
   .. code-block:: shell
 
     cd ..
 
-* I use the history_ program to list the commands I typed in the terminal as a reference for the program
+* I use the history_ program to list the commands I typed in the terminal, to use them as a reference for the program
 
   .. code-block:: shell
 
     history
 
-* then make an empty file with a name that describes what the program does so it is easy to remember later, for example :ref:`makePythonTdd.sh`
+* make an empty file with a name that describes what the program does so it is easy to remember later, for example :ref:`makePythonTdd.sh`
 
   .. code-block:: shell
 
     touch makePythonTdd.sh
 
-* and open the file in the Integrated Development Environment (IDE), then copy each command I need to make a Test Driven Development Environment
+* then open the file in the Integrated Development Environment (IDE), and copy each command I need to make a Test Driven Development Environment
 
   .. code-block:: ruby
 
@@ -577,7 +582,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   ``#!/bin/bash`` is a shebang_ line that tells the computer to use bash_ to run the program. You can change it to ``#!/bin/zsh`` if you have zsh_ installed
 
-* This program will always make a project called ``magic``. I add a variable called ``PROJECT_NAME`` that is referenced with ``$PROJECT_NAME`` to make it possible to make any project name I give when the program is called
+* This program will always make a project name ``magic``. I add a variable that is referenced with ``$PROJECT_NAME`` to make it possible to make a project for any name I give when the program is called
 
   .. code-block:: shell
 
@@ -600,7 +605,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   ``$1`` represents the first argument given when the program is called. You can use it in place of ``$PROJECT_NAME``
 
-* I use the `cat <https://www.man7.org/linux/man-pages/man1/cat.1.html>`_ program to add text for the first failing test in ``test_$PROJECT_NAME.py``
+* I use the cat_ program to add text for the first failing test in ``test_$PROJECT_NAME.py``
 
     the line numbers below are a guide, you do not need to copy them
 
@@ -608,7 +613,7 @@ You made it this far and have become the greatest programmer in the world. To fo
     :language: shell
     :linenos:
 
-  all the text between the two ``DELIMITER`` words will be written to ``tests/test_$PROJECT_NAME.py``
+  all the text between the two ``DELIMITER`` words will be written to ``tests/test_$PROJECT_NAME.py``. You can use any words/characters you want to replace ``DELIMITER``
 
 * I use chmod_ to make the program executable
 
@@ -618,7 +623,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   chmod_ is a program that changes the mode of the file given
 
-* I can now make a Test Driven Development environment by giving a name for the ``PROJECT_NAME`` variable when I call the program. For example, typing this command in the terminal in the folder/directory where ``makePythonTdd.sh`` is saved will make a Test Driven Development environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator`
+* I can now make a Test Driven Development environment when I call the program with a name for the ``PROJECT_NAME`` variable. For example, when I type this command in the terminal in the folder/directory where ``makePythonTdd.sh`` is saved, the computer will make a Test Driven Development environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator`
 
   .. code-block:: shell
 
