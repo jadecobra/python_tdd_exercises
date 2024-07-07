@@ -589,7 +589,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* The current solution for ``test_attribute_error_w_classes`` was done by defining functions but the test name contains ``defining_classes``, time to go back and change ``module.py`` using the :doc:`class </classes/classes>` keyword instead of def_
+* The current solution for ``test_attribute_error_w_classes`` was done by defining functions but the test name has ``defining_classes``, time to go back and change ``module.py`` using the :doc:`class </classes/classes>` keyword instead of def_
 
   .. code-block:: python
 

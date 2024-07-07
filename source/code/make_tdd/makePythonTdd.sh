@@ -6,7 +6,7 @@ mkdir src tests
 touch src/$PROJECT_NAME.py
 touch tests/__init__.py
 
-cat << DELIMITER > tests/test_$PROJECT_NAME.py
+cat > tests/test_$PROJECT_NAME.py << DELIMITER
 import unittest
 
 

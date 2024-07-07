@@ -10,7 +10,7 @@ truth table: Logical Implication
 
 ----
 
-This chapter contains tests for Logical Implication from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
+This chapter has tests for Logical Implication from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
 Reviewing what I know so far, for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures/booleans/booleans>` or :doc:`False </data_structures/booleans/booleans>`
 

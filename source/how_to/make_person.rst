@@ -360,7 +360,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* When I call the ``factory`` :ref:`function<functions>` passing in values for ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``, it returns a :doc:`dictionary </data_structures/dictionaries>` that contains the ``first_name``, ``last_name``, ``sex`` and ``age`` of the person
+* When I call the ``factory`` :ref:`function<functions>` passing in values for ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``, it returns a :doc:`dictionary </data_structures/dictionaries>` that has the ``first_name``, ``last_name``, ``sex`` and ``age`` of the person
 
 * I noticed that there is some repetition in the test. If I want to test with a different value for any of the arguments passed to ``person.factory``, I would have to make the change in 2 places - once in the argument passed to the :ref:`function<functions>` and then again in the resulting :doc:`dictionary </data_structures/dictionaries>`. I can refactor this to make it easier to make changes to the test when I want,  especially since the programming gods told me `not to repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 

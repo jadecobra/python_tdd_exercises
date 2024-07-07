@@ -79,11 +79,14 @@
 .. _ValueError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError
 .. _ZeroDivisionError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError
 
-.. _The Abstraction Principle: https://en.wikipedia.org/wiki/Abstraction_principle_(computer_programming)
-.. _The Do Not Repeat Yourself (DRY) Principle: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
 .. _Linux distributions: https://en.wikipedia.org/wiki/List_of_Linux_distributions
 .. _Linux: https://www.kernel.org/category/about.html
 .. _New-Item: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/new-item?view=powershell-7.4
+.. _Refactoring: https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk
+.. _Test Driven Development: https://en.wikipedia.org/wiki/Test-driven_development
+.. _Test Driven Development by Example: https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk
+.. _The Abstraction Principle: https://en.wikipedia.org/wiki/Abstraction_principle_(computer_programming)
+.. _The Do Not Repeat Yourself (DRY) Principle: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
 .. _Windows Subsystem Linux: https://learn.microsoft.com/en-us/windows/wsl/install
 
 .. _Visual Studio Code: https://code.visualstudio.com/download

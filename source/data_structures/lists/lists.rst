@@ -133,9 +133,9 @@ I add a test for adding items to an existing list with the `append <https://docs
         self.assertEqual(a_list, [0, 1, 2, 3])
 
 - ``a_list = [0, 1, 2, 3]`` makes a list of 4 items and calls it ``a_list``
-- the first ``self.assertEqual(a_list, [0, 1, 2, 3])`` checks that ``a_list`` contains the four items
+- the first ``self.assertEqual(a_list, [0, 1, 2, 3])`` checks that ``a_list`` has the four items
 - ``a_list.append(4)`` calls the `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` of the list
-- ``self.assertEqual(a_list, [0, 1, 2, 3])`` checks what ``a_list`` contains after `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ is called
+- ``self.assertEqual(a_list, [0, 1, 2, 3])`` checks what ``a_list`` has after `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ is called
 
 the terminal shows an :ref:`AssertionError` because the values in ``a_list`` change after ``a_list.append(4)`` is called
 

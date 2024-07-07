@@ -53,7 +53,7 @@ I add a file called ``test_list_comprehensions.py`` to the ``tests`` folder with
 * ``a_list.append(item)`` adds the item from ``container`` to ``a_list`` on each cycle of the loop, using the ``append`` :ref:`method<functions>`, see :doc:`/data_structures/lists/lists` for more details
 * the second ``self.assertEqual(a_list, [])`` checks to see if ``a_list`` is still empty after the operation
 
-the terminal shows an :ref:`AssertionError` because ``a_list`` is no longer empty, it contains 10 items after the loop runs
+the terminal shows an :ref:`AssertionError` because ``a_list`` is no longer empty, it has 10 items after the loop runs
 
 .. code-block:: python
 

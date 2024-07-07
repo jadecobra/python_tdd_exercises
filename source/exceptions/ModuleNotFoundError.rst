@@ -17,7 +17,7 @@ ModuleNotFoundError
 The drill below will help you remember how to solve a ``ModuleNotFoundError`` in Python and what a python module is.
 
 ``ModuleNotFoundError`` is raised when python attempts to import a module that does not exist or it cannot find a given module name for an `import statement`_.
-A Python Module is a file that ends in ``.py`` or a directory that contains an ``__init__.py``.
+A Python Module is a file that ends in ``.py`` or a directory that has an ``__init__.py``.
 
 Programming allows us to gain from our previous efforts as well as the efforts of others in the form of packages and modules that can be distributed for other people to use. To use these packages in Python they have to be imported.
 
