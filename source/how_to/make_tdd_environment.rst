@@ -10,7 +10,7 @@ how to make a python test driven development environment
 
 ----
 
-This chapter covers one way to make a Python Test Driven Development environment
+This chapter covers a way to make a Python Test Driven Development environment
 
 .. contents:: table of contents
   :local:
@@ -48,7 +48,7 @@ If you are using a Windows computer, try to install Linux_ with `Windows Subsyst
 linux requirements
 #################################################################################
 
-run these commands in a terminal to install python on the Linux_ Operating System
+run these commands in a terminal to install python in Linux_
 
 .. code-block:: shell
 
@@ -68,7 +68,7 @@ how to manually make a python test driven development environment
 
     mkdir magic
 
-  then change directory to the project with the cd_ program
+  and change directory to the project with the cd_ program
 
   .. code-block:: shell
 
@@ -145,7 +145,7 @@ how to manually make a python test driven development environment
 test_failure
 ********************************************************************************************
 
-The Test Driven Development cycle is ``RED GREEN REFACTOR``
+The `Test Driven Development`_ cycle is ``RED GREEN REFACTOR``
 
 * **RED**: make it fail - write a failing test to make sure the test works
 * **GREEN**: make it pass - write only what is needed to make the failing test pass
@@ -156,7 +156,7 @@ The Test Driven Development cycle is ``RED GREEN REFACTOR``
 red: make it fail
 ############################################################################################
 
-* I open up ``magic/tests/test_magic.py`` in the Integrated Development Environment (IDE) and type this
+* I open up ``magic/tests/test_magic.py`` in the Integrated Development Environment (IDE) and type the following
 
     the line numbers below are a guide, you do not need to copy them
 
@@ -179,19 +179,19 @@ red: make it fail
     * :doc:`class </classes/classes>` is the python keyword for making :doc:`/classes/classes`, which are a collection of attributes and :ref:`methods<functions>` for a purpose
     * ``TestMagic`` is the name given to the :doc:`class </classes/classes>` that will hold the tests, you can use any name you want, as long as it starts with ``Test``
     * `unittest.TestCase`_ is a :doc:`class </classes/classes>` defined in the unittest_ :ref:`module<ModuleNotFoundError>` which has :doc:`methods (functions) </functions/functions>` for testing
-    * ``TestMagic`` inherits from `unittest.TestCase`_, it is a child or clone of `unittest.TestCase`_ and can do the same things. I can also change its behavior in the :doc:`class</classes/classes>` definition
+    * ``TestMagic`` inherits from `unittest.TestCase`_, it is a child or clone of `unittest.TestCase`_ and can do the same things, I can also change its behavior in the :doc:`class</classes/classes>` definition
 
   - ``def test_failure`` is the definition of a test :ref:`method<functions>` to test the program I am making
 
     * def_ is the python keyword for making :ref:`functions/methods<functions>`, a method is a function in a class
     * ``test_failure`` is the name of the :ref:`method<functions>`, you can use any name you want, as long as it starts with ``test_``
-    * ``self`` is the ``TestMagic`` :ref:`class<classes>`. I use ``self`` to access :doc:`methods (functions) </functions/functions>` and :ref:`attributes<AttributeError>` of the ``TestMagic`` class and by extension `unittest.TestCase`_
+    * ``self`` is the ``TestMagic`` :ref:`class<classes>`. I use ``self`` to access :doc:`methods (functions) </functions/functions>` and :ref:`attributes<AttributeError>` of the ``TestMagic`` class and by extension `unittest.TestCase`_. If I did not use self I would have to say ``TestMagic().`` or ``unittest.TestCase().`` to access their attributes and :ref:`methods<functions>`
     * ``self.assertFalse(True)`` is the actual test. I expect this line to fail because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`. If it passes then I have a problem
 
       - assertFalse_ is a :ref:`method<functions>` in the `unittest.TestCase`_ :doc:`class </classes/classes>` that checks if its input is :doc:`False </data_structures/booleans/booleans>`
       - :doc:`True </data_structures/booleans/booleans>` is given as input to ``assertFalse``
 
-* I turn on the ``Auto Save`` feature in the Integrated Development Environment (IDE) to automatically save files when I make a change
+* I turn on the ``Auto Save`` feature in the Integrated Development Environment (IDE) to automatically save files when I make a change so `I do not repeat myself`_
 * then type this in the terminal to run the test
 
   .. code-block:: python
@@ -231,12 +231,10 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The error in t
 * ``FAILED (failures=1)`` the number of failures
 * ``Ran 1 test in A.XYZs`` the number of tests run and how long it took
 * ``AssertionError: True is not false`` the :ref:`Exception<Exceptions>` raised and its message, in this case an :ref:`AssertionError` is raised because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
-* ``self.assertFalse(True)`` is the line of code that caused the failure/error
-* ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` is the line number and location of the file where the :ref:`AssertionError` happened
+* ``self.assertFalse(True)`` the line of code that caused the failure/error
+* ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` the line number and location of the file where the :ref:`AssertionError` happened
 
-  .. tip::
-
-    Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click with your mouse on ``File ".../magic/tests/test_magic.py", line 7`` in the terminal, the Integrated Development Environment (IDE) will open the file in the editor with the cursor at the line where the error happened
+  .. tip:: Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click with your mouse on ``File ".../magic/tests/test_magic.py", line 7`` in the terminal, and the Integrated Development Environment (IDE) will open the file in the editor with the cursor at the line where the error happened
 
 * ``Traceback (most recent call last):`` all the indented information shown after this line shows the calls that led to the error
 * ``FAIL: test_failure (tests.test_magic.TestMagic.test_failure)`` is a header with information in :doc:`dot notation</dot_notation>` about the test
@@ -253,7 +251,7 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The error in t
   - ``python3`` is the major version of python being used
   - ``-m`` is an option passed to python to run the :ref:`module<ModuleNotFoundError>` given after the option as a script
 
-* I recommend you write down :doc:`Exceptions </how_to/exception_handling_programs>` you meet to become familiar with them, it will help when you run into errors later. Time to add :ref:`AssertionError` to the list
+* I recommend you keep a list of :doc:`Exceptions </how_to/exception_handling_programs>` you meet to become familiar with them, it helps when you run into errors later. Time to add :ref:`AssertionError` to the list
 
   .. code-block:: python
 
@@ -309,7 +307,7 @@ refactor: make it better
 ############################################################################################
 
 I ran ``python3 -m unittest`` to see the test fail, again to see the test pass, and will have to run it again when I change the code, to make sure tests that were passing are not broken and the new code does what I expect.
-This means it is run for each part of the `Test Driven Development`_ cycle or any time there is a code change. I do not want to type ``python3 -m unittest`` again, it is better for a program to run the tests so `I Do Not Repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
+This means it is run for each part of the `Test Driven Development`_ cycle or any time there is a code change. I do not want to type ``python3 -m unittest`` again, it is better for a program to run the tests so `I do not repeat myself`_.
 
 ----
 
@@ -343,7 +341,7 @@ how to make a virtual environment
 
     source .venv/bin/activate
 
-  .. admonition:: on Windows without `Windows Subsystem Linux`_ You may first need to set the Execution Policy in an Administrator mode PowerShell_ terminal to allow the activation script to work
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ run PowerShell_ in Administrator mode and set the Execution Policy for the activation script to work
 
     .. code-block:: PowerShell
 
@@ -517,9 +515,7 @@ Make sure you are in the folder/directory that has the `virtual environment`_ fo
 
   source .venv/bin/activate
 
-.. admonition:: on Windows without `Windows Subsystem Linux`_
-
-  You may first need to set the Execution Policy in an Administrator mode PowerShell_ terminal to allow the activation script to work
+.. admonition:: on Windows without `Windows Subsystem Linux`_ run PowerShell_ in Administrator mode and set the Execution Policy for the activation script to work
 
   .. code-block:: PowerShell
 
@@ -558,19 +554,19 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     cd ..
 
-* I use the history_ program to list the commands I typed in the terminal, to use them as a reference for the program
+* I use the history_ program to list the commands I typed and use them as a reference for the program
 
   .. code-block:: shell
 
     history
 
-* and make an empty file with a name that describes what the program does so it is easy to remember later, for example :ref:`makePythonTdd.sh`
+* then make an empty file with a name that describes what the program does so it is easy to remember later, for example :ref:`makePythonTdd.sh`
 
   .. code-block:: shell
 
     touch makePythonTdd.sh
 
-* then open the file in the Integrated Development Environment (IDE), and copy the commands I need to make a `Test Driven Development`_ Environment
+* I open the file in the Integrated Development Environment (IDE), and copy the commands I need to make a `Test Driven Development`_ Environment
 
   .. code-block:: ruby
 
@@ -611,7 +607,7 @@ You made it this far and have become the greatest programmer in the world. To fo
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-  ``$1`` represents the first argument given when the program is called. You can use it in place of ``$PROJECT_NAME``
+  ``$1`` represents the first argument given when the program is called, you can use it in place of ``$PROJECT_NAME`` if you want
 
 * I use the cat_ program to add text for the first failing test in ``test_$PROJECT_NAME.py``
 
@@ -653,7 +649,7 @@ how to automatically make a python test driven development environment on window
 
     New-Item makePythonTdd.ps1
 
-* and open the file in the Integrated Development Environment's Editor then add the following code
+* and open the file in the Integrated Development Environment's Editor then add the following
 
     the line numbers below are a guide, you do not need to copy them
 
@@ -680,7 +676,7 @@ how to automatically make a python test driven development environment on window
 review
 ********************************************************************************************
 
-One of the advantages of programming is that I can take some steps and make them a one line command for the computer to do for me. You now know one way to make a Python Test Driven Development Environment, and have a program to do it for you anytime you want.
+One of the advantages of programming is that I can take some steps and make them a one line command for the computer to do for me. You now know a way to make a Python Test Driven Development Environment, and have a program to do it for you anytime you want.
 
 Would you like to test :doc:`/how_to/calculator`?
 
