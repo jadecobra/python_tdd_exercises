@@ -814,23 +814,125 @@ green: make it pass
 
     AttributeError: module 'src.calculator' has no attribute 'multiply'
 
+* I add a :ref:`function<functions>` for ``multiply``
+
+  .. code-block:: python
+
+    def multiply():
+        return None
+
+  and get a :ref:`TypeError`
+
+  .. code-block:: python
+
+    TypeError: multiply() takes 0 positional arguments but 2 were given
+
+  then add 2 variables for the positional arguments
+
+  .. code-block:: python
+
+    def multiply(a, b):
+        return None
+
+  which gives me an :ref:`AssertionError`
+
+  .. code-block:: python
+
+* I change the `return statement` to see the difference between the inputs and the expected output
+
+  .. code-block:: python
+
+    def multiply(a, b):
+        return (a, b)
+
+  and the terminal shows another :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: (-1, 1) != -1
+    AssertionError: (0, -1) != 0
+    AssertionError: (0, 0) != 0
+    AssertionError: (1, 1) != 1
+
+  I change the `return statement` to return the product of the inputs, matching the name of the :ref:`function<functions>`
+
+  .. code-block:: python
+
+    def multiply(a, b):
+        return a * b
+
+
+  the terminal shows an :ref:`AttributeError`
 
   .. code-block:: python
 
     AttributeError: module 'src.calculator' has no attribute 'divide'
 
+* I add a :ref:`function<functions>`
+
+  .. code-block:: python
+
+    def divide(a, b):
+        return None
+
+  which gives me an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: ZeroDivisionError not raised
+
+  this test expects an :ref:`Exception<exceptions>` which is raised when a number is divided by 0. I change the `return statement`_ to match the name of the :ref:`function<functions>`
+
+  .. code-block:: python
+
+    def divide(a, b):
+        return a / b
+
+  and the terminal shows an :ref:`AttributeError`
 
   .. code-block:: python
 
     AttributeError: module 'src.calculator' has no attribute 'add'
 
+* I add a :ref:`function<functions>`
 
+  .. code-block:: python
 
+    def add(a, b):
+        return None
 
-refactor: make it better
-#################################################################################
+  which gives me an :ref:`AssertionError`
 
+  .. code-block:: python
 
+    AssertionError: None != 0
+
+  then change the `return statement`_ to show the difference between the inputs and the expected output
+
+  .. code-block:: python
+
+    def add(a, b):
+      return (a, b)
+
+  and get another :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: (-1, -1) != -2
+    AssertionError: (-1, 0) != -1
+    AssertionError: (1, -1) != 0
+    AssertionError: (0, 1) != 1
+
+  when I change the `return statement`_ to the sum of the inputs
+
+  .. code-block:: python
+
+    def add(a, b):
+        return a + b
+
+  the terminal shows all tests are passing
+
+----
 
 *********************************************************************************
 review
