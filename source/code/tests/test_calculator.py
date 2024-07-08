@@ -3,10 +3,14 @@ import random
 import unittest
 
 
+def random_number():
+    return random.randint(-1, 1)
+
+
 class TestCalculator(unittest.TestCase):
 
-    x = random.randint(-1, 1)
-    y = random.randint(-1, 1)
+    x = random_number()
+    y = random_number()
 
     def test_addition(self):
         self.assertEqual(
@@ -29,8 +33,9 @@ class TestCalculator(unittest.TestCase):
     def test_division(self):
         with self.assertRaises(ZeroDivisionError):
             calculator.divide(self.x, 0)
+
         while self.y == 0:
-            self.y = random.randint(-1, 1)
+            self.y = random_number()
         self.assertEqual(
             calculator.divide(self.x, self.y),
             self.x/self.y
