@@ -35,8 +35,8 @@ If you are using a Windows computer, try to install Linux_ with `Windows Subsyst
 
 * click ``start``
 * then type ``PowerShell``
-* right click and select ``Run as administrator`` to open a terminal
-* then install `Windows Subsystem Linux`_ with
+* right click and select ``Run as administrator``
+* then install `Windows Subsystem Linux`_ in the terminal
 
   .. code-block:: powershell
 
@@ -53,7 +53,6 @@ run these commands in a terminal to install python in Linux_
 .. code-block:: shell
 
   sudo apt update
-  sudo apt full-upgrade --yes
   sudo apt install python3 python3-venv --yes
 
 ----
@@ -62,13 +61,13 @@ run these commands in a terminal to install python in Linux_
 how to manually make a python test driven development environment
 ********************************************************************************************
 
-* I open a terminal in the Integrated Development Environment (IDE) then use mkdir_ to make a folder/directory for the project
+* I open a terminal in the Integrated Development Environment (IDE) and use mkdir_ to make a folder/directory for the project
 
   .. code-block:: shell
 
     mkdir magic
 
-  and change directory to the project with the cd_ program
+  then change directory to the project with the cd_ program
 
   .. code-block:: shell
 
@@ -84,7 +83,7 @@ how to manually make a python test driven development environment
 
 * then add empty files for the project
 
-  - I make an empty file that will hold the source code for the program
+  - first an empty file that will hold the source code for the program
 
     .. code-block:: shell
 
@@ -98,7 +97,7 @@ how to manually make a python test driven development environment
 
     touch_/`New-Item`_ makes an empty file when given a name
 
-  - tests will stay in the ``tests`` folder/directory to separate them from the source code (the actual program). I make an empty file called ``__init__.py`` in the ``tests`` folder/directory to tell Python that it is a `python package`_, this will help it find the tests later
+  - then an empty file called ``__init__.py`` in the ``tests`` folder/directory to tell Python that it is a `python package`_, this will help it find the tests later
 
     .. code-block:: shell
 
@@ -112,7 +111,7 @@ how to manually make a python test driven development environment
 
         New-Item tests/__init__.py
 
-  - then add one more empty file to the ``tests`` folder/directory for the actual test
+  - and one more empty file in the ``tests`` folder/directory for the actual test
 
     .. code-block:: shell
 
@@ -306,7 +305,7 @@ and it shows a passing test
 refactor: make it better
 ############################################################################################
 
-I ran ``python3 -m unittest`` to see the test fail, again to see the test pass, and will have to run it again when I change the code, to make sure tests that were passing are not broken and the new code does what I expect.
+I ran ``python3 -m unittest`` to see the test fail, again to see the test pass, and will have to run it when I make a code change, to make sure tests that were passing are not broken and the new code does what I expect.
 This means it is run for each part of the `Test Driven Development`_ cycle or any time there is a code change. I do not want to type ``python3 -m unittest`` again, it is better for a program to run the tests so `I do not repeat myself`_.
 
 ----
@@ -390,7 +389,7 @@ how to make a virtual environment
     ------- -------
     pip     x.y.z
 
-* I make a file called ``requirements.txt`` in the ``magic`` folder/directory
+* I make a file with `pytest-watch`_ as its text, called ``requirements.txt`` in the ``magic`` folder/directory
 
   .. code-block:: shell
 
@@ -402,7 +401,6 @@ how to make a virtual environment
 
       "pytest-watch" | Out-File requirements.txt
 
-  - this makes a file called ``requirements.txt`` with `pytest-watch`_ as the text inside it
   - echo_ is a program that writes its given arguments to the `standard output (stdout)`_
   - ``>`` is an operator that is used to send output from a program to the file given
   - ``|`` is an operator called a pipe that is used to send the result on the left to the program on the right

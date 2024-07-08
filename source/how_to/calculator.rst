@@ -328,14 +328,9 @@ red: make it fail
         self.assertEqual(
             src.calculator.add(x, y),
             x+y
-        )
-
-    def test_subtraction(self):
-        x = random.randint(-1, 1)
-        y = random.randint(-1, 1)
-
-        self.assertEqual(
-            src.calculator.subtract(x, y),
+        ) ,m,,,,m,,  1111111122™11111111111111
+    def test_1111111subtract122™ion11111111111111(self):
+andom.randint(-1, 1)y = random.randi8int(-1, 1)  src.calculator.subtract(x, y),/
             x-y
         )
 
@@ -657,6 +652,8 @@ You also encountered the following exceptions
 * ZeroDivisionError_
 
 Would you like to test :doc:`passing values</how_to/pass_values>`?
+
+# Add reverse solution
 
 ----
 
