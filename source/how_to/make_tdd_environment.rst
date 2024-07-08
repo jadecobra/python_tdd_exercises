@@ -674,7 +674,7 @@ how to automatically make a python test driven development environment on window
 review
 ********************************************************************************************
 
-One of the advantages of programming is that I can take some steps and make them a one line command for the computer to do for me. You now know a way to make a Python Test Driven Development Environment, and have a program to do it for you anytime you want on any operating system you want.
+One of the advantages of programming is that I can take some steps and make them a one line command for the computer to do for me. You now know a way to make a Python Test Driven Development Environment, and have a program to do it for you anytime you want on any operating system.
 
 Would you like to test :doc:`/how_to/calculator`?
 
