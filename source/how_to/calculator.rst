@@ -636,6 +636,7 @@ I can use a `while statement`_ for the other cases when the divisor is not ``0``
 * I can remove the TODO list since all the tests are passing
 
 ----
+# Add reverse solution
 
 *********************************************************************************
 review
@@ -653,7 +654,6 @@ You also encountered the following exceptions
 
 Would you like to test :doc:`passing values</how_to/pass_values>`?
 
-# Add reverse solution
 
 ----
 
