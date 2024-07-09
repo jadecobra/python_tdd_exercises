@@ -345,7 +345,7 @@ how to make a virtual environment
 
       Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 
-    select ``Yes`` when prompted, then activate the virtual environment
+    this will enable scripts that have been signed by a verified publisher if you confirm, you can read more at `Set-ExecutionPolicy`_. Activate the virtual environment in PowerShell_
 
     .. code-block::
 
@@ -517,7 +517,7 @@ Make sure you are in the folder/directory that has the `virtual environment`_ fo
 
     Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 
-  select ``Yes`` when prompted, then activate the virtual environment
+  this will enable scripts that have been signed by a verified publisher if you confirm, you can read more at `Set-ExecutionPolicy`_. Activate the virtual environment in PowerShell_
 
   .. code-block::
 
@@ -655,7 +655,6 @@ how to automatically make a python test driven development environment on window
 
   - ``$args[0]`` is the first argument given when the program is called. You can use it in place of ``$projectName`` and will get the same result
   - ``@""@`` is like ``DELIMITER`` it allows writing multiline text in PowerShell_
-  - ``|`` is an operator that is used to send output from one program to another
 
 * I can now make a `Test Driven Development`_ environment when I call the program with a name for the ``$projectName`` variable. For example, when I type
 
@@ -672,7 +671,7 @@ how to automatically make a python test driven development environment on window
 review
 ********************************************************************************************
 
-One of the advantages of programming is that I can take some steps and make them a one line command for the computer to do for me. You now know a way to make a Python Test Driven Development Environment, and have a program to do it for you anytime you want on any operating system.
+One of the advantages of programming is that I can take some steps and make them a one line command for the computer to do for me. You now know a way to make a Python Test Driven Development Environment, and have a program to do it for you anytime you want on any `Operating System`_.
 
 Would you like to test :doc:`/how_to/calculator`?
 
