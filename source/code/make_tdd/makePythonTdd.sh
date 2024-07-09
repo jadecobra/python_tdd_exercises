@@ -21,6 +21,6 @@ class Test$PROJECT_NAME(unittest.TestCase):
 python3 -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip
-echo "pytest-watch" > requirements.txt
+echo pytest-watch > requirements.txt
 pip install --requirement requirements.txt
 pytest-watch

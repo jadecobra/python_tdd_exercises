@@ -43,8 +43,8 @@ My recommendations are that you
 
 * type out the code portions as you go through a chapter without copying and pasting the code
 * repeat a chapter you like until you can do it from memory
-* delete then try to write tests when you are done with a chapter and have the solution
-* delete then try to write a solution when you are done with a chapter without looking at the tests, and having only the terminal response as your guide to see what solution you come up with
+* at the end of a chapter, delete the tests then try to write them from memory or use the solution as a guide
+* at the end of a chapter, close the tests, then delete the solution and try to write a solution with the terminal response as your guide
 * try to write solutions using only the tests from the :ref:`catalog_of_tests` as your guide
 * try adding tests for any ideas you get as you go through a chapter, the sooner you start writing tests the better you will get at doing it since it requires a little bit of a shift in thinking
 * do not quit until you get to the end of a chapter, especially when it gets hard, it is part of the experience when learning to solve problems, because there is a lot of failure. You can always walk away from the chapter to do something that is not related for a while, then come back to it. If you take one small step at a time you eventually get where you want to go
