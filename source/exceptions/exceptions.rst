@@ -6,7 +6,7 @@
 exceptions
 #################################################################################
 
-The tests in this chapter cover the following exceptions that have helped me gain a better understanding of programs written in python
+The tests in this chapter cover the following exceptions that have helped me gain a better understanding of python programs
 
 .. toctree::
   :titlesonly:
@@ -17,7 +17,3 @@ The tests in this chapter cover the following exceptions that have helped me gai
   AssertionError
   AttributeError
   TypeError
-
-----
-
-:doc:`/code/code_sleep_duration`

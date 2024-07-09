@@ -61,7 +61,7 @@ run these commands in a terminal to install python in Linux_
 how to manually make a python test driven development environment
 ********************************************************************************************
 
-* I open a terminal in the Integrated Development Environment (IDE) and use mkdir_ to make a folder/directory for the project
+* Imagine I have to work on a project called ``magic``. I open a terminal in the Integrated Development Environment (IDE) and use mkdir_ to make a folder/directory for the project
 
   .. code-block:: shell
 
@@ -136,8 +136,6 @@ how to manually make a python test driven development environment
          ╰──__init__.py
          ╰──test_magic.py
 
-.. tip:: ``magic`` is a placeholder for the name of the project. For example, change ``magic`` to ``calculator`` to work on a ``calculator`` project
-
 ----
 
 ********************************************************************************************
@@ -184,13 +182,14 @@ red: make it fail
 
     * def_ is the python keyword for making :ref:`functions/methods<functions>`, a method is a function in a class
     * ``test_failure`` is the name of the :ref:`method<functions>`, you can use any name you want, as long as it starts with ``test_``
-    * ``self`` is the ``TestMagic`` :ref:`class<classes>`. I use ``self`` to access :doc:`methods (functions) </functions/functions>` and :ref:`attributes<AttributeError>` of the ``TestMagic`` class and by extension `unittest.TestCase`_. If I did not use self I would have to say ``TestMagic().`` or ``unittest.TestCase().`` to access their attributes and :ref:`methods<functions>`
-    * ``self.assertFalse(True)`` is the actual test. I expect this line to fail because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`. If it passes then I have a problem
+    * ``self`` is the ``TestMagic`` :ref:`class<classes>`. I use ``self`` to access :doc:`methods (functions) </functions/functions>` and :ref:`attributes<AttributeError>` of the ``TestMagic`` class and by extension `unittest.TestCase`_, this way I do not have to use ``TestMagic().`` or ``unittest.TestCase().`` to access their attributes and :ref:`methods<functions>`
+    * ``self.assertFalse(True)`` is an assertion
 
       - assertFalse_ is a :ref:`method<functions>` in the `unittest.TestCase`_ :doc:`class </classes/classes>` that checks if its input is :doc:`False </data_structures/booleans/booleans>`
       - :doc:`True </data_structures/booleans/booleans>` is given as input to ``assertFalse``
+      - I expect the assertion line to fail because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`, there is a problem if it passes
 
-* I turn on the ``Auto Save`` feature in the Integrated Development Environment (IDE) to automatically save files when I make a change so `I do not repeat myself`_
+* I turn on the ``Auto Save`` feature in the Integrated Development Environment (IDE) to automatically save files when I make a change so `I do not repeat myself`_ by hitting save every time I make a change
 * then type this in the terminal to run the test
 
   .. code-block:: python
@@ -239,9 +238,9 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The error in t
 * ``FAIL: test_failure (tests.test_magic.TestMagic.test_failure)`` is a header with information in :doc:`dot notation</dot_notation>` about the test
 
   - ``tests.test_magic.TestMagic.test_failure`` is the location of the failing test
-  -  ``tests`` is the tests folder/directory
+  -  ``tests`` is the ``tests`` folder/directory
   -  ``test_magic`` is the ``test_magic.py`` file
-  - ``TestMagic`` is the class defined on line 4
+  - ``TestMagic`` is the :doc:`class </classes/classes>` defined on line 4
   - ``test_failure`` is the :ref:`method<functions>` defined on line 6
 
 * ``F`` indicates a failure
@@ -305,7 +304,7 @@ and it shows a passing test
 refactor: make it better
 ############################################################################################
 
-I ran ``python3 -m unittest`` to see the test fail, again to see the test pass, and will have to run it when I make a code change, to make sure tests that were passing are not broken and the new code does what I expect.
+I ran ``python3 -m unittest`` to see the test fail, again to see the test pass, and will have to run it again when I make a code change, to make sure tests that were passing are not broken and the new code does what I expect.
 This means it is run for each part of the `Test Driven Development`_ cycle or any time there is a code change. I do not want to type ``python3 -m unittest`` again, it is better for a program to run the tests so `I do not repeat myself`_.
 
 ----
@@ -330,8 +329,8 @@ how to make a virtual environment
       python -m venv .venv
 
   - ``python3`` is the major version of python being used
-  - ``-m`` is the option passed to python to run the given :ref:`module<ModuleNotFoundError>` as a script
-  - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ used to make a `virtual environment`_ with a given name. A `virtual environment`_ is a separate folder/directory where `python packages`_ the project needs will be installed
+  - ``-m`` is an option passed to python to run the :ref:`module<ModuleNotFoundError>` given after the option as a script
+  - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ used to make a `virtual environment`_ with a given name. A `virtual environment`_ is a separate folder/directory where `python packages`_ needed by the project will be installed
   - ``.venv`` is the name given for this `virtual environment`_, you can use any name you want
 
 * I activate the `virtual environment`_ to use it
@@ -370,7 +369,7 @@ how to make a virtual environment
 
     pip install --upgrade pip
 
-  - pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ used to install `python packages`_
+  - pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ used for installing `python packages`_
   - ``install`` is an argument given to pip_ to install a given package name
   - ``--upgrade`` is an option given to the ``install`` argument for pip_ to upgrade the version of the `python package`_ given
   - ``pip`` is the package name given for pip_ to install, in this case it upgrades itself
@@ -393,18 +392,17 @@ how to make a virtual environment
 
   .. code-block:: shell
 
-      echo "pytest-watch" > requirements.txt
+      echo pytest-watch > requirements.txt
 
   .. admonition:: type this on Windows without `Windows Subsystem Linux`_
 
     .. code-block::
 
-      "pytest-watch" | Out-File requirements.txt
+      Write-Output pytest-watch > requirements.txt
 
   - echo_ is a program that writes its given arguments to the `standard output (stdout)`_
+  - `Write-Output`_ is a program that writes the input given to the file given
   - ``>`` is an operator that is used to send output from a program to the file given
-  - ``|`` is an operator called a pipe that is used to send the result on the left to the program on the right
-  - ``Out-File`` is a program that writes the input given to the file given
   - `pytest-watch`_ is a python program that automatically runs pytest_ when a python file in the folder/directory changes
   - pytest_ is a `python package`_ like unittest_ that is used for testing
   - ``requirements.txt`` is the name of a file where I can list `python packages`_ for pip_ to install, you can use any name you want
@@ -575,7 +573,7 @@ You made it this far and have become the greatest programmer in the world. To fo
     touch src/magic.py
     touch tests/__init__.py
     touch tests/test_magic.py
-    echo "pytest-watch" > requirements.txt
+    echo pytest-watch > requirements.txt
     python3 -m venv .venv
     source .venv/bin/activate
     python3 -m pip install --upgrade pip
@@ -597,7 +595,7 @@ You made it this far and have become the greatest programmer in the world. To fo
     touch tests/__init__.py
     touch tests/test_$PROJECT_NAME.py
 
-    echo "pytest-watch" > requirements.txt
+    echo pytest-watch > requirements.txt
 
     python3 -m venv .venv
     source .venv/bin/activate
