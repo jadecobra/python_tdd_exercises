@@ -11,7 +11,7 @@ You have made it to the end of the book, time to check how much you have learned
 .. _review_exceptions:
 
 *********************************************************************************
-exceptions
+exceptions review
 *********************************************************************************
 
 * What causes an :ref:`AssertionError`?
