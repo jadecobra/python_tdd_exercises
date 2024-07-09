@@ -1,15 +1,15 @@
-$projectName=$args[0]
-mkdir $projectName
-cd $projectName
+$PROJECT_NAME=$args[0]
+mkdir $PROJECT_NAME
+cd $PROJECT_NAME
 mkdir src tests
-New-Item "src/$projectName.py"
+New-Item "src/$PROJECT_NAME.py"
 New-Item tests/__init__.py
 
 @"
 import unittest
 
 
-class Test$($projectName)(unittest.TestCase):
+class Test$($PROJECT_NAME)(unittest.TestCase):
 
     def test_failure(self):
         self.assertFalse(True)
@@ -17,11 +17,11 @@ class Test$($projectName)(unittest.TestCase):
 
 # Exceptions Encountered
 # AssertionError
-"@ > "tests/test_$projectName.py"
+"@ > "tests/test_$PROJECT_NAME.py"
 
 python -m venv .venv
 .venv/scripts/activate.ps1
 python -m pip install --upgrade pip
-Write-Output pytest-watch > requirements.txt
+"pytest-watch" > requirements.txt
 python -m pip install --requirement requirements.txt
 pytest-watch

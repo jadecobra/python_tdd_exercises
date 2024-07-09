@@ -398,10 +398,9 @@ how to make a virtual environment
 
     .. code-block::
 
-      Write-Output pytest-watch > requirements.txt
+      "pytest-watch" > requirements.txt
 
   - echo_ is a program that writes its given arguments to the `standard output (stdout)`_
-  - `Write-Output`_ is a program that writes the input given to the file given
   - ``>`` is an operator that is used to send output from a program to the file given
   - `pytest-watch`_ is a python program that automatically runs pytest_ when a python file in the folder/directory changes
   - pytest_ is a `python package`_ like unittest_ that is used for testing
@@ -453,7 +452,13 @@ how to make a virtual environment
       |  ╰──test_magic.py
       ╰──requirements.txt
 
-* When I type ``pytest-watch`` in the terminal, the test runs and it shows results without going back to the command line
+* I run the tests from the terminal
+
+  .. code-block:: shell
+
+    pytest-watch
+
+  and it shows results without going back to the command line
 
   .. code-block:: ruby
 
@@ -467,7 +472,7 @@ how to make a virtual environment
 
     =============== 1 passed in X.YZs =======================
 
-* I change the input on line 7 in ``test_magic.py`` from :doc:`False </data_structures/booleans/booleans>` to :doc:`True </data_structures/booleans/booleans>` and it shows an :ref:`AssertionError`
+* when I change the input on line 7 in ``test_magic.py`` from :doc:`False </data_structures/booleans/booleans>` to :doc:`True </data_structures/booleans/booleans>` it shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -550,17 +555,17 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     cd ..
 
-* I use the history_ program to list the commands I typed and use them as a reference for the program
-
-  .. code-block:: shell
-
-    history
-
 * then make an empty file with a name that describes what the program does so it is easy to remember later, for example :ref:`makePythonTdd.sh`
 
   .. code-block:: shell
 
     touch makePythonTdd.sh
+
+* I use the history_ program to list the commands I typed and use them as a reference for the program
+
+  .. code-block:: shell
+
+    history
 
 * I open the file in the Integrated Development Environment (IDE), and copy the commands I need to make a `Test Driven Development`_ Environment
 
@@ -573,16 +578,16 @@ You made it this far and have become the greatest programmer in the world. To fo
     touch src/magic.py
     touch tests/__init__.py
     touch tests/test_magic.py
-    echo pytest-watch > requirements.txt
     python3 -m venv .venv
     source .venv/bin/activate
-    python3 -m pip install --upgrade pip
-    python3 -m pip install --requirement requirements.txt
+    pip install --upgrade pip
+    echo pytest-watch > requirements.txt
+    pip install --requirement requirements.txt
     pytest-watch
 
   ``#!/bin/bash`` is a shebang_ line that tells the computer to use bash_ to run the program. You can change it to ``#!/bin/zsh`` if you have zsh_ installed
 
-* This program will always make a project called ``magic``. I add a variable that is referenced with ``$PROJECT_NAME`` to make it possible to make a project for any name I give when the program is called
+* This program will always make a project called ``magic``. I add a variable that is referenced with ``$PROJECT_NAME`` to make it possible to make a project for any name I give when the program is called and use it to replace ``magic`` in the program
 
   .. code-block:: shell
 
@@ -594,12 +599,10 @@ You made it this far and have become the greatest programmer in the world. To fo
     touch $PROJECT_NAME.py
     touch tests/__init__.py
     touch tests/test_$PROJECT_NAME.py
-
-    echo pytest-watch > requirements.txt
-
     python3 -m venv .venv
     source .venv/bin/activate
     python3 -m pip install --upgrade pip
+    echo pytest-watch > requirements.txt
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 

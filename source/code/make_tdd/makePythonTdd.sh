@@ -6,8 +6,7 @@ mkdir src tests
 touch src/$PROJECT_NAME.py
 touch tests/__init__.py
 
-cat > tests/test_$PROJECT_NAME.py << DELIMITER
-import unittest
+echo "import unittest
 
 
 class Test$PROJECT_NAME(unittest.TestCase):
@@ -17,8 +16,7 @@ class Test$PROJECT_NAME(unittest.TestCase):
 
 
 # Exceptions Encountered
-# AssertionError
-DELIMITER
+# AssertionError" > tests/test_$PROJECT_NAME.py
 
 python3 -m venv .venv
 source .venv/bin/activate
