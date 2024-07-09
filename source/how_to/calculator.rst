@@ -838,6 +838,10 @@ green: make it pass
 
   .. code-block:: python
 
+    AssertionError: None != -1
+    AssertionError: None != 0
+    AssertionError: None != 1
+
 * I change the `return statement` to see the difference between the inputs and the expected output
 
   .. code-block:: python
