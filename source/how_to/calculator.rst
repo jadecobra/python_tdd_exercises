@@ -710,7 +710,7 @@ I can use a `while statement`_ for the other cases when the divisor is not ``0``
 ----
 
 *********************************************************************************
-test_calculator
+test_calculator_tests
 *********************************************************************************
 
 I want to write the program that makes the tests in ``test_calculator.py`` pass without looking at them

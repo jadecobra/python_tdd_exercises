@@ -22,7 +22,7 @@ test_calculator
 #. :ref:`test_subtraction`
 #. :ref:`test_multiplication`
 #. :ref:`test_division`
-#. :ref:`test_calculator`
+#. :ref:`test_calculator_tests`
 
 *********************************************************************************
 test_telephone
@@ -64,7 +64,7 @@ test_sleep_duration
 #. :ref:`test_duration_w_hours_and_minutes<test_duration_w_hours_and_minutes>`
 #. :ref:`test_duration_calculation<test_duration_calculation>`
 #. :ref:`test_duration_w_an_earlier_wake_than_sleep_time<test_duration_w_an_earlier_wake_than_sleep_time>`
-#. :ref:`test_duration_w_date_and_time<test_duration_w_an_earlier_wake_than_sleep_time>`
+#. :ref:`test_duration_w_date_and_time<test_duration_w_date_and_time>`
 
 *********************************************************************************
 test_assertion_error
