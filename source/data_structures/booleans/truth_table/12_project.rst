@@ -53,8 +53,8 @@ green: make it pass
   and the :ref:`AssertionError` is now for the third case
 * before I add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction``, ``negate_first`` and ``negate_second`` because 2 out of the 4 cases have the same return value. I see that
 
-  * when ``p == True`` the result is :doc:`True </data_structures/booleans/booleans>`
-  * when ``p == False`` the result is :doc:`False </data_structures/booleans/booleans>`
+  * when ``p == True`` the result is :ref:`True <test_what_is_true>`
+  * when ``p == False`` the result is :ref:`False <test_what_is_false>`
 
 * I add conditions to represent this
 
@@ -137,8 +137,8 @@ green: make it pass
   the terminal shows an :ref:`AssertionError` for the second case
 * before I add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction``, ``negate_first``, ``negate_second`` and ``project_first`` because 2 out of the 4 cases have the same return value. I see that
 
-  * when ``q == True`` the result is :doc:`True </data_structures/booleans/booleans>`
-  * when ``q == False`` the result is :doc:`False </data_structures/booleans/booleans>`
+  * when ``q == True`` the result is :ref:`True <test_what_is_true>`
+  * when ``q == False`` the result is :ref:`False <test_what_is_false>`
 
 * What if I try using the conclusion from ``project_first``?
 
@@ -158,7 +158,7 @@ green: make it pass
 
 -----
 
-From the tests I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures/booleans/booleans>` or :doc:`False </data_structures/booleans/booleans>`
+From the tests I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True <test_what_is_true>` or :ref:`False <test_what_is_false>`
 
 
 * ``project second`` always returns ``q``
@@ -176,10 +176,10 @@ From the tests I know that for any boolean operation involving 2 inputs: ``p`` a
 * ``logical conjunction`` is ``and``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
-* :doc:`False </data_structures/booleans/booleans>` is ``not True``
-* :doc:`True </data_structures/booleans/booleans>` is ``not False``
-* :doc:`False </data_structures/booleans/booleans>` is :doc:`False </data_structures/booleans/booleans>`
-* :doc:`True </data_structures/booleans/booleans>` is :doc:`True </data_structures/booleans/booleans>`
+* :ref:`False <test_what_is_false>` is ``not True``
+* :ref:`True <test_what_is_true>` is ``not False``
+* :ref:`False <test_what_is_false>` is :ref:`False <test_what_is_false>`
+* :ref:`True <test_what_is_true>` is :ref:`True <test_what_is_true>`
 
 ----
 

@@ -44,7 +44,7 @@ green: make it pass
     def passthrough():
         return None
 
-  the terminal shows a :ref:`TypeError` because the definition for ``passthrough`` does not allow ``inputs`` but the test sends :doc:`False </data_structures/booleans/booleans>` as input
+  the terminal shows a :ref:`TypeError` because the definition for ``passthrough`` does not allow ``inputs`` but the test sends :ref:`False <test_what_is_false>` as input
 
   .. code-block:: python
 
@@ -73,7 +73,7 @@ green: make it pass
 
     AssertionError: None != False
 
-  because the result of calling ``functions.passthrough`` with :doc:`False </data_structures/booleans/booleans>` as input is :ref:`None` which is not equal to the expected result (:doc:`False </data_structures/booleans/booleans>`)
+  because the result of calling ``functions.passthrough`` with :ref:`False <test_what_is_false>` as input is :ref:`None` which is not equal to the expected result (:ref:`False <test_what_is_false>`)
 
 * I change the definition of ``passthrough`` to make the test pass
 
@@ -90,7 +90,7 @@ green: make it pass
 refactor: make it better
 *********************************************************************************
 
-Wait a minute! Something is not quite right here. The definition for a ``passthrough`` function was that it returned the same thing it was given, the test passes when :doc:`False </data_structures/booleans/booleans>` is given as input, will it still pass when another value is given or will it always return :doc:`False </data_structures/booleans/booleans>`? Time to write a test
+Wait a minute! Something is not quite right here. The definition for a ``passthrough`` function was that it returned the same thing it was given, the test passes when :ref:`False <test_what_is_false>` is given as input, will it still pass when another value is given or will it always return :ref:`False <test_what_is_false>`? Time to write a test
 
 .. _test_passthrough_functions_refactor_red:
 
@@ -111,7 +111,7 @@ the terminal shows an :ref:`AssertionError`
 
   AssertionError: False != True
 
-the function returns :doc:`False </data_structures/booleans/booleans>` instead of :doc:`True </data_structures/booleans/booleans>` in the second case, confirming my suspicions, I am not all the way genius, yet
+the function returns :ref:`False <test_what_is_false>` instead of :ref:`True <test_what_is_true>` in the second case, confirming my suspicions, I am not all the way genius, yet
 
 .. _test_passthrough_functions_refactor_green:
 

@@ -16,9 +16,9 @@ booleans
 
 ----
 
-The tests in this chapter go over `booleans <https://docs.python.org/3/library/functions.html#bool>`_ by comparing them with other data structures in Python to learn what they are and what they are not.
+The tests in this chapter go over booleans_ by comparing them with other data structures in Python to learn what they are and what they are not.
 
-There are two `boolean <https://docs.python.org/3/library/functions.html#bool>`_ values - `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ and `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+There are two boolean_ values - True_ and False_
 
 .. _test_what_is_false:
 
@@ -29,7 +29,7 @@ test_what_is_false
 red: make it fail
 #################################################################################
 
-I make a file called ``test_booleans.py`` then add a failing test in ``test_what_is_false`` to check if `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is an instance of the `boolean <https://docs.python.org/3/library/functions.html#bool>`_ :ref:`class <classes>`
+I make a file called ``test_booleans.py`` then add a failing test in ``test_what_is_false`` to check if False_ is an instance of the boolean_ :ref:`class <classes>`
 
 .. code-block:: python
 
@@ -41,7 +41,7 @@ I make a file called ``test_booleans.py`` then add a failing test in ``test_what
       def test_what_is_false(self):
           self.assertNotIsInstance(False, bool)
 
-the terminal shows an :ref:`AssertionError` because `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is an instance of the `boolean <https://docs.python.org/3/library/functions.html#bool>`_ :ref:`class <classes>`
+the terminal shows an :ref:`AssertionError` because False_ is an instance of the boolean_ :ref:`class <classes>`
 
 .. code-block:: python
 
@@ -60,7 +60,7 @@ I make ``assertNotIsInstance`` to ``assertIsInstance`` to make the test pass
 
 The `unittest.TestCase.assertIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsInstance>`_ :ref:`method<functions>` checks that the first input given is an instance of the :ref:`class <classes>` given as the second input. It is like asking the question ``is False an instance of bool?``
 
-From the tests I see that `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
+From the tests I see that False_ is a boolean_
 
 refactor: make it better
 #################################################################################
@@ -71,26 +71,26 @@ refactor: make it better
 
     self.assertTrue(False)
 
-  the terminal shows an :ref:`AssertionError` because `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is not `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
+  the terminal shows an :ref:`AssertionError` because False_ is not True_
 
   .. code-block:: python
 
     AssertionError: False is not true
 
-  The `unittest.TestCase.assertTrue <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertTrue>`_ :ref:`method<functions>` checks if a given input is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
+  The `unittest.TestCase.assertTrue <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertTrue>`_ :ref:`method<functions>` checks if a given input is True_
 
-* When I make ``assertTrue`` to ``assertFalse`` to test if `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ the test passes
+* When I make ``assertTrue`` to ``assertFalse`` to test if False_ is False_ the test passes
 
   .. code-block:: python
 
     self.assertFalse(False)
 
-  The `unittest.TestCase.assertFalse <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse>`_ :ref:`method<functions>` checks if a given input is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+  The `unittest.TestCase.assertFalse <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse>`_ :ref:`method<functions>` checks if a given input is False_
 
 From these tests I see that
 
-* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
+* False_ is False_
+* False_ is a boolean_
 
 ----
 
@@ -104,14 +104,14 @@ red: make it fail
 #################################################################################
 
 
-I add a :ref:`method<functions>` called ``test_what_is_true`` with a failing line to to check if `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is an instance of the `boolean <https://docs.python.org/3/library/functions.html#bool>`_ :ref:`class <classes>`
+I add a :ref:`method<functions>` called ``test_what_is_true`` with a failing line to to check if True_ is an instance of the boolean_ :ref:`class <classes>`
 
 .. code-block:: python
 
     def test_what_is_true(self):
         self.assertNotIsInstance(True, bool)
 
-the terminal shows an :ref:`AssertionError` because `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is an instance of the `boolean <https://docs.python.org/3/library/functions.html#bool>`_ :ref:`class <classes>`
+the terminal shows an :ref:`AssertionError` because True_ is an instance of the boolean_ :ref:`class <classes>`
 
 .. code-block:: python
 
@@ -136,13 +136,13 @@ refactor: make it better
 
     self.assertFalse(True)
 
-  the terminal shows an :ref:`AssertionError` because `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is not `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+  the terminal shows an :ref:`AssertionError` because True_ is not False_
 
   .. code-block:: python
 
     AssertionError: True is not false
 
-* When I make ``assertFalse`` to ``assertTrue`` to test if `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ the test passes
+* When I make ``assertFalse`` to ``assertTrue`` to test if True_ is True_ the test passes
 
   .. code-block:: python
 
@@ -150,21 +150,21 @@ refactor: make it better
 
 From the tests I see that
 
-* `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
-* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
+* True_ is True_
+* True_ is a boolean_
+* False_ is False_
+* False_ is a boolean_
 
-I want to know if any of the other Python data types are `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
+I want to know if any of the other Python data types are False_ or True_
 
-* is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_?
-* is an `integer <https://docs.python.org/3/library/functions.html#int>`_ `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_?
-* is a `float <https://docs.python.org/3/library/functions.html#float>`_ `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_?
-* is a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_?
-* is a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_?
-* is a :doc:`list </data_structures/lists/lists>` `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_?
-* is a set_ `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_?
-* is a :doc:`dictionary </data_structures/dictionaries>` `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_?
+* is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ False_ or True_?
+* is an `integer <https://docs.python.org/3/library/functions.html#int>`_ False_ or True_?
+* is a `float <https://docs.python.org/3/library/functions.html#float>`_ False_ or True_?
+* is a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ False_ or True_?
+* is a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ False_ or True_?
+* is a :doc:`list </data_structures/lists/lists>` False_ or True_?
+* is a set_ False_ or True_?
+* is a :doc:`dictionary </data_structures/dictionaries>` False_ or True_?
 
 ----
 
@@ -176,7 +176,7 @@ red: make it fail
 #################################################################################
 
 
-I add a line to ``test_what_is_true`` to test if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
+I add a line to ``test_what_is_true`` to test if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is False_ or True_
 
 .. code-block:: python
 
@@ -218,11 +218,11 @@ and the terminal still shows passing tests
 
 From the tests I see that
 
-* `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
+* True_ is True_
+* True_ is a boolean_
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is False_
+* False_ is False_
+* False_ is a boolean_
 
 ----
 
@@ -234,7 +234,7 @@ red: make it fail
 #################################################################################
 
 
-I add a line to test if an `integer <https://docs.python.org/3/library/functions.html#int>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
+I add a line to test if an `integer <https://docs.python.org/3/library/functions.html#int>`_ is False_ or True_
 
 .. code-block:: python
 
@@ -306,7 +306,7 @@ refactor: make it better
         self.assertFalse(None)
         self.assertFalse(0)
 
-* I add one more line to test if positive :ref:`integers<int>`_ are `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
+* I add one more line to test if positive :ref:`integers<int>`_ are False_ or True_
 
   .. code-block:: python
 
@@ -343,13 +343,13 @@ refactor: make it better
 
 From the tests I see that
 
-* Positive and Negative :ref:`integers<int>`_ are `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
-* ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
+* Positive and Negative :ref:`integers<int>`_ are True_
+* True_ is True_
+* True_ is a boolean_
+* ``0`` is False_
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is False_
+* False_ is False_
+* False_ is a boolean_
 
 -----
 
@@ -360,7 +360,7 @@ is a float False or True?
 red: make it fail
 #################################################################################
 
-I add a line to test if a `float <https://docs.python.org/3/library/functions.html#float>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
+I add a line to test if a `float <https://docs.python.org/3/library/functions.html#float>`_ is False_ or True_
 
 .. code-block:: python
 
@@ -403,7 +403,7 @@ refactor: make it better
         self.assertFalse(0)
         self.assertFalse(0.0)
 
-* I add 2 more lines to test if positive and negative floats_ are also `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* I add 2 more lines to test if positive and negative floats_ are also False_
 
   .. code-block:: python
 
@@ -443,15 +443,15 @@ refactor: make it better
 
 From the tests I see that
 
-* Positive and Negative floats_ are `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* Positive and Negative :ref:`integers<int>`_ are `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
-* ``0.0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
+* Positive and Negative floats_ are True_
+* Positive and Negative :ref:`integers<int>`_ are True_
+* True_ is True_
+* True_ is a boolean_
+* ``0.0`` is False_
+* ``0`` is False_
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is False_
+* False_ is False_
+* False_ is a boolean_
 
 -----
 
@@ -463,7 +463,7 @@ red: make it fail
 #################################################################################
 
 
-I add a line to test if a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
+I add a line to test if a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is False_ or True_
 
 .. code-block:: python
 
@@ -508,7 +508,7 @@ refactor: make it better
         self.assertFalse(0.0)
         self.assertFalse('')
 
-* I add a line to test if a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ with characters is also `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* I add a line to test if a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ with characters is also False_
 
   .. code-block:: python
 
@@ -537,17 +537,17 @@ refactor: make it better
 
 From the tests I see that
 
-* a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* Positive and Negative floats_ are `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* Positive and Negative :ref:`integers<int>`_ are `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
-* an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* ``0.0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
+* a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ with things is True_
+* Positive and Negative floats_ are True_
+* Positive and Negative :ref:`integers<int>`_ are True_
+* True_ is True_
+* True_ is a boolean_
+* an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is False_
+* ``0.0`` is False_
+* ``0`` is False_
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is False_
+* False_ is False_
+* False_ is a boolean_
 
 ----
 
@@ -558,7 +558,7 @@ is a tuple False or True?
 red: make it fail
 #################################################################################
 
-I add a line to test if a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
+I add a line to test if a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ is False_ or True_
 
 .. code-block:: python
 
@@ -602,7 +602,7 @@ refactor: make it better
 #################################################################################
 
 
-* I add a line to test if a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ with things is also `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* I add a line to test if a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ with things is also False_
 
   .. code-block:: python
 
@@ -630,19 +630,19 @@ refactor: make it better
 
 From the tests I see that
 
-* a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* Positive and Negative floats_ are `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* Positive and Negative :ref:`integers<int>`_ are `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
-* an empty `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* ``0.0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
+* a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ with things is True_
+* a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ with things is True_
+* Positive and Negative floats_ are True_
+* Positive and Negative :ref:`integers<int>`_ are True_
+* True_ is True_
+* True_ is a boolean_
+* an empty `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ is False_
+* an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is False_
+* ``0.0`` is False_
+* ``0`` is False_
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is False_
+* False_ is False_
+* False_ is a boolean_
 
 ----
 
@@ -653,7 +653,7 @@ is a list False or True?
 red: make it fail
 #################################################################################
 
-I add a line to test if a :doc:`list </data_structures/lists/lists>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
+I add a line to test if a :doc:`list </data_structures/lists/lists>` is False_ or True_
 
 .. code-block:: python
 
@@ -698,7 +698,7 @@ and the terminal shows passing tests
 refactor: make it better
 #################################################################################
 
-* I add a line to test if a :doc:`list </data_structures/lists/lists>`  with things is also `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* I add a line to test if a :doc:`list </data_structures/lists/lists>`  with things is also False_
 
   .. code-block:: python
 
@@ -728,20 +728,20 @@ refactor: make it better
 
 From the tests I see that
 
-* a :doc:`list </data_structures/lists/lists>` with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* Positive and Negative floats_ are `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* Positive and Negative :ref:`integers<int>`_ are `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
-* an empty :doc:`list </data_structures/lists/lists>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* ``0.0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
+* a :doc:`list </data_structures/lists/lists>` with things is True_
+* a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ with things is True_
+* a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ with things is True_
+* Positive and Negative floats_ are True_
+* Positive and Negative :ref:`integers<int>`_ are True_
+* True_ is True_
+* True_ is a boolean_
+* an empty :doc:`list </data_structures/lists/lists>` is False_
+* an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is False_
+* ``0.0`` is False_
+* ``0`` is False_
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is False_
+* False_ is False_
+* False_ is a boolean_
 
 -----
 
@@ -753,7 +753,7 @@ red: make it fail
 #################################################################################
 
 
-I add a line to test if a set_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
+I add a line to test if a set_ is False_ or True_
 
 .. code-block:: python
 
@@ -790,7 +790,7 @@ refactor: make it better
 #################################################################################
 
 
-* I add a line to test if a set_ with things is also `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* I add a line to test if a set_ with things is also False_
 
   .. code-block:: python
 
@@ -820,22 +820,22 @@ refactor: make it better
 
 From the tests I see that
 
-* a set_ with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* a :doc:`list </data_structures/lists/lists>` with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* Positive and Negative floats_ are `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* Positive and Negative :ref:`integers<int>`_ are `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
-* an empty set_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* an empty :doc:`list </data_structures/lists/lists>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* ``0.0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
+* a set_ with things is True_
+* a :doc:`list </data_structures/lists/lists>` with things is True_
+* a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ with things is True_
+* a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ with things is True_
+* Positive and Negative floats_ are True_
+* Positive and Negative :ref:`integers<int>`_ are True_
+* True_ is True_
+* True_ is a boolean_
+* an empty set_ is False_
+* an empty :doc:`list </data_structures/lists/lists>` is False_
+* an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is False_
+* ``0.0`` is False_
+* ``0`` is False_
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is False_
+* False_ is False_
+* False_ is a boolean_
 
 ----
 
@@ -846,7 +846,7 @@ is a dictionary False or True?
 red: make it fail
 #################################################################################
 
-I add a line to test if a :doc:`dictionary </data_structures/dictionaries>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ or `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
+I add a line to test if a :doc:`dictionary </data_structures/dictionaries>` is False_ or True_
 
 .. code-block:: python
 
@@ -893,7 +893,7 @@ the terminal shows passing tests
 refactor: make it better
 #################################################################################
 
-* I add a line to test if a :doc:`dictionary </data_structures/dictionaries>` with things is also `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
+* I add a line to test if a :doc:`dictionary </data_structures/dictionaries>` with things is also False_
 
   .. code-block:: python
 
@@ -926,30 +926,30 @@ refactor: make it better
 
 From the tests I see that
 
-* a :doc:`dictionary </data_structures/dictionaries>` with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* a set_ with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* a :doc:`list </data_structures/lists/lists>` with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ with things is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* Positive and Negative floats_ are `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* Positive and Negative :ref:`integers<int>`_ are `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
-* an empty :doc:`dictionary </data_structures/dictionaries>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* an empty set_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* an empty :doc:`list </data_structures/lists/lists>` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* ``0.0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* ``0`` is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
+* a :doc:`dictionary </data_structures/dictionaries>` with things is True_
+* a set_ with things is True_
+* a :doc:`list </data_structures/lists/lists>` with things is True_
+* a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ with things is True_
+* a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ with things is True_
+* Positive and Negative floats_ are True_
+* Positive and Negative :ref:`integers<int>`_ are True_
+* True_ is True_
+* True_ is a boolean_
+* an empty :doc:`dictionary </data_structures/dictionaries>` is False_
+* an empty set_ is False_
+* an empty :doc:`list </data_structures/lists/lists>` is False_
+* an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is False_
+* ``0.0`` is False_
+* ``0`` is False_
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is False_
+* False_ is False_
+* False_ is a boolean_
 
 I can sum this up as
 
-* all `objects <https://docs.python.org/3/glossary.html#term-object>`_ that have things are `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_
-* empty `objects <https://docs.python.org/3/glossary.html#term-object>`_ including ``0`` and :ref:`None` are `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_
-* `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
+* all `objects <https://docs.python.org/3/glossary.html#term-object>`_ that have things are True_
+* empty `objects <https://docs.python.org/3/glossary.html#term-object>`_ including ``0`` and :ref:`None` are False_
+* False_ is a boolean_
 
 Would you like to :doc:`test the truth table<truth_table>`?
 

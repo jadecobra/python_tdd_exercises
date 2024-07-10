@@ -22,6 +22,7 @@ test_calculator
 #. :ref:`test_subtraction`
 #. :ref:`test_multiplication`
 #. :ref:`test_division`
+#. :ref:`test_calculator`
 
 *********************************************************************************
 test_telephone
@@ -58,8 +59,6 @@ test_sleep_duration
 #. :ref:`test_floor_aka_integer_division`
 #. :ref:`test_the_modulo_operation`
 #. :ref:`test_datetime_objects`
-#. :ref:`test_subtracting_datetime_objects`
-#. :ref:`test_converting_timedelta_to_a_string`
 #. :ref:`test_get_datetime`
 #. :ref:`test_duration_w_hours<test_duration_w_hours>`
 #. :ref:`test_duration_w_hours_and_minutes<test_duration_w_hours_and_minutes>`

@@ -14,7 +14,7 @@ AssertionError
 
 ----
 
-An `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ is an Exception that is raised when the result of an ``assert`` statement is :doc:`False </data_structures/booleans/booleans>`
+An `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ is an Exception that is raised when the result of an ``assert`` statement is :ref:`False <test_what_is_false>`
 
 It was introduced in :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` with the first failing test
 
@@ -32,7 +32,7 @@ which is like
 why are asserts important?
 *********************************************************************************
 
-When building a program I can add ``assert`` statements to the program to ensure that certain things are :doc:`True </data_structures/booleans/booleans>` for it to proceed past the statements.
+When building a program I can add ``assert`` statements to the program to ensure that certain things are :ref:`True <test_what_is_true>` for it to proceed past the statements.
 
 I can also test how the program behaves when it is given inputs using ``assert`` statements.
 
@@ -99,8 +99,8 @@ red: make it fail
     tests/test_assertion_error.py:7: AssertionError
 
   - This `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ is raised by the line ``assert False is None`` which is like asking the question "is False the same as None?"
-  - The difference is that the ``assert`` at the beginning of the line makes the statement more like "DO NOT PROCEED UNLESS :doc:`False </data_structures/booleans/booleans>` is :ref:`None`"
-  - Since :ref:`None` and :doc:`False </data_structures/booleans/booleans>` are not equal, the ``assert`` statement is :doc:`False </data_structures/booleans/booleans>` and python raises an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
+  - The difference is that the ``assert`` at the beginning of the line makes the statement more like "DO NOT PROCEED UNLESS :ref:`False <test_what_is_false>` is :ref:`None`"
+  - Since :ref:`None` and :ref:`False <test_what_is_false>` are not equal, the ``assert`` statement is :ref:`False <test_what_is_false>` and python raises an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
 
 green: make it pass
 #################################################################################
@@ -112,7 +112,7 @@ When I make the failing line to
   def test_assertion_errors_w_none(self):
       assert False is not None
 
-the test passes because the assert statement is now true since :doc:`False </data_structures/booleans/booleans>` is not :ref:`None`
+the test passes because the assert statement is now true since :ref:`False <test_what_is_false>` is not :ref:`None`
 
 refactor: make it better
 #################################################################################
@@ -146,11 +146,11 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
         assert False is not None
         self.assertIsNotNone(False)
 
-  the terminal shows passing tests because the statement is :doc:`True </data_structures/booleans/booleans>`. I can now say that in Python :doc:`False </data_structures/booleans/booleans>` is not :ref:`None`
+  the terminal shows passing tests because the statement is :ref:`True <test_what_is_true>`. I can now say that in Python :ref:`False <test_what_is_false>` is not :ref:`None`
 
 * red: make it fail
 
-  I add another test to find out how :ref:`None` is related to :doc:`True </data_structures/booleans/booleans>`
+  I add another test to find out how :ref:`None` is related to :ref:`True <test_what_is_true>`
 
   .. code-block:: python
 
@@ -212,8 +212,8 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
   since all my tests are passing I can say that in Python
 
-  - :doc:`True </data_structures/booleans/booleans>` is not :ref:`None`
-  - :doc:`False </data_structures/booleans/booleans>` is not :ref:`None`
+  - :ref:`True <test_what_is_true>` is not :ref:`None`
+  - :ref:`False <test_what_is_false>` is not :ref:`None`
 
 * red: make it fail
 
@@ -292,8 +292,8 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 From the tests I can see that
 
 * :ref:`None` is :ref:`None`
-* :doc:`True </data_structures/booleans/booleans>` is not :ref:`None`
-* :doc:`False </data_structures/booleans/booleans>` is not :ref:`None`
+* :ref:`True <test_what_is_true>` is not :ref:`None`
+* :ref:`False <test_what_is_false>` is not :ref:`None`
 
 Which of these ``assert`` statements do you prefer when testing :ref:`None`?
 
@@ -308,7 +308,7 @@ Which of these ``assert`` statements do you prefer when testing :ref:`None`?
 test_assertion_errors_w_false
 *********************************************************************************
 
-Can I raise an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ for things that are :doc:`False </data_structures/booleans/booleans>`?
+Can I raise an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ for things that are :ref:`False <test_what_is_false>`?
 
 red: make it fail
 #################################################################################
@@ -368,11 +368,11 @@ I make the failing line to make the test pass
 
 From the tests I can see that in Python
 
-* :doc:`False </data_structures/booleans/booleans>` is :doc:`False </data_structures/booleans/booleans>`
-* :doc:`False </data_structures/booleans/booleans>` is not :doc:`True </data_structures/booleans/booleans>`
+* :ref:`False <test_what_is_false>` is :ref:`False <test_what_is_false>`
+* :ref:`False <test_what_is_false>` is not :ref:`True <test_what_is_true>`
 * :ref:`None` is :ref:`None`
-* :doc:`True </data_structures/booleans/booleans>` is not :ref:`None`
-* :doc:`False </data_structures/booleans/booleans>` is not :ref:`None`
+* :ref:`True <test_what_is_true>` is not :ref:`None`
+* :ref:`False <test_what_is_false>` is not :ref:`None`
 
 ----
 
@@ -382,7 +382,7 @@ From the tests I can see that in Python
 test_assertion_errors_w_true
 *********************************************************************************
 
-Can I raise an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ for things that are :doc:`True </data_structures/booleans/booleans>`?
+Can I raise an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ for things that are :ref:`True <test_what_is_true>`?
 
 red: make it fail
 #################################################################################
@@ -441,15 +441,15 @@ I make the failing line to make the test pass
 From the tests I can see that
 
 
-* :doc:`True </data_structures/booleans/booleans>` is :doc:`True </data_structures/booleans/booleans>`
-* :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
-* :doc:`False </data_structures/booleans/booleans>` is :doc:`False </data_structures/booleans/booleans>`
-* :doc:`False </data_structures/booleans/booleans>` is not :doc:`True </data_structures/booleans/booleans>`
+* :ref:`True <test_what_is_true>` is :ref:`True <test_what_is_true>`
+* :ref:`True <test_what_is_true>` is not :ref:`False <test_what_is_false>`
+* :ref:`False <test_what_is_false>` is :ref:`False <test_what_is_false>`
+* :ref:`False <test_what_is_false>` is not :ref:`True <test_what_is_true>`
 * :ref:`None` is :ref:`None`
-* :doc:`True </data_structures/booleans/booleans>` is not :ref:`None`
-* :doc:`False </data_structures/booleans/booleans>` is not :ref:`None`
+* :ref:`True <test_what_is_true>` is not :ref:`None`
+* :ref:`False <test_what_is_false>` is not :ref:`None`
 
-I could sum up the above statements this way - in Python :doc:`True </data_structures/booleans/booleans>`, :doc:`False </data_structures/booleans/booleans>` and :ref:`None` are different. My understanding of these differences helps me know howPython behaves and gives a foundation of predictable expectations of the language.
+I could sum up the above statements this way - in Python :ref:`True <test_what_is_true>`, :ref:`False <test_what_is_false>` and :ref:`None` are different. My understanding of these differences helps me know howPython behaves and gives a foundation of predictable expectations of the language.
 
 ----
 
@@ -487,7 +487,7 @@ I make the failing line to make the test pass
   def test_assertion_errors_w_equality(self):
       assert False != None
 
-the test passes because :doc:`False </data_structures/booleans/booleans>` is not equal to :ref:`None`
+the test passes because :ref:`False <test_what_is_false>` is not equal to :ref:`None`
 
 refactor: make it better
 #################################################################################
@@ -508,7 +508,7 @@ refactor: make it better
 
     AssertionError: False != None
 
-  The `unittest.TestCase.assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ :ref:`method<functions>` checks if the two given inputs, :doc:`False </data_structures/booleans/booleans>` and :ref:`None` are equal
+  The `unittest.TestCase.assertEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertEqual>`_ :ref:`method<functions>` checks if the two given inputs, :ref:`False <test_what_is_false>` and :ref:`None` are equal
 
 * green: make it pass
 
@@ -522,13 +522,13 @@ refactor: make it better
 
   I have learned that in Python
 
-  * :doc:`True </data_structures/booleans/booleans>` is :doc:`True </data_structures/booleans/booleans>`
-  * :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
-  * :doc:`False </data_structures/booleans/booleans>` is :doc:`False </data_structures/booleans/booleans>`
-  * :doc:`False </data_structures/booleans/booleans>` is not :doc:`True </data_structures/booleans/booleans>`
+  * :ref:`True <test_what_is_true>` is :ref:`True <test_what_is_true>`
+  * :ref:`True <test_what_is_true>` is not :ref:`False <test_what_is_false>`
+  * :ref:`False <test_what_is_false>` is :ref:`False <test_what_is_false>`
+  * :ref:`False <test_what_is_false>` is not :ref:`True <test_what_is_true>`
   * :ref:`None` is :ref:`None`
-  * :doc:`True </data_structures/booleans/booleans>` is not :ref:`None`
-  * :doc:`False </data_structures/booleans/booleans>` is not :ref:`None` and :doc:`False </data_structures/booleans/booleans>` is not equal to :ref:`None`
+  * :ref:`True <test_what_is_true>` is not :ref:`None`
+  * :ref:`False <test_what_is_false>` is not :ref:`None` and :ref:`False <test_what_is_false>` is not equal to :ref:`None`
 
 * red: make it fail
 
@@ -594,13 +594,13 @@ refactor: make it better
 
   and the terminal shows passing tests. I can now say that in Python
 
-  * :doc:`True </data_structures/booleans/booleans>` is :doc:`True </data_structures/booleans/booleans>`
-  * :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
-  * :doc:`False </data_structures/booleans/booleans>` is :doc:`False </data_structures/booleans/booleans>`
-  * :doc:`False </data_structures/booleans/booleans>` is not :doc:`True </data_structures/booleans/booleans>`
+  * :ref:`True <test_what_is_true>` is :ref:`True <test_what_is_true>`
+  * :ref:`True <test_what_is_true>` is not :ref:`False <test_what_is_false>`
+  * :ref:`False <test_what_is_false>` is :ref:`False <test_what_is_false>`
+  * :ref:`False <test_what_is_false>` is not :ref:`True <test_what_is_true>`
   * :ref:`None` is :ref:`None`
-  * :doc:`True </data_structures/booleans/booleans>` is not :ref:`None` and :doc:`True </data_structures/booleans/booleans>` is not equal to :ref:`None`
-  * :doc:`False </data_structures/booleans/booleans>` is not :ref:`None` and :doc:`False </data_structures/booleans/booleans>` is not equal to :ref:`None`
+  * :ref:`True <test_what_is_true>` is not :ref:`None` and :ref:`True <test_what_is_true>` is not equal to :ref:`None`
+  * :ref:`False <test_what_is_false>` is not :ref:`None` and :ref:`False <test_what_is_false>` is not equal to :ref:`None`
 
 * red: make it fail
 
@@ -660,13 +660,13 @@ refactor: make it better
 
   and from the tests I can say that in Python
 
-  * :doc:`True </data_structures/booleans/booleans>` is :doc:`True </data_structures/booleans/booleans>` and :doc:`True </data_structures/booleans/booleans>` is equal to :doc:`True </data_structures/booleans/booleans>`
-  * :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>` and :doc:`True </data_structures/booleans/booleans>` is not equal to :doc:`False </data_structures/booleans/booleans>`
-  * :doc:`False </data_structures/booleans/booleans>` is :doc:`False </data_structures/booleans/booleans>` and :doc:`False </data_structures/booleans/booleans>` is equal to :doc:`False </data_structures/booleans/booleans>`
-  * :doc:`False </data_structures/booleans/booleans>` is not :doc:`True </data_structures/booleans/booleans>` and :doc:`False </data_structures/booleans/booleans>` is not equal to :doc:`True </data_structures/booleans/booleans>`
+  * :ref:`True <test_what_is_true>` is :ref:`True <test_what_is_true>` and :ref:`True <test_what_is_true>` is equal to :ref:`True <test_what_is_true>`
+  * :ref:`True <test_what_is_true>` is not :ref:`False <test_what_is_false>` and :ref:`True <test_what_is_true>` is not equal to :ref:`False <test_what_is_false>`
+  * :ref:`False <test_what_is_false>` is :ref:`False <test_what_is_false>` and :ref:`False <test_what_is_false>` is equal to :ref:`False <test_what_is_false>`
+  * :ref:`False <test_what_is_false>` is not :ref:`True <test_what_is_true>` and :ref:`False <test_what_is_false>` is not equal to :ref:`True <test_what_is_true>`
   * :ref:`None` is :ref:`None` and :ref:`None` is equal to :ref:`None`
-  * :doc:`True </data_structures/booleans/booleans>` is not :ref:`None` and :doc:`True </data_structures/booleans/booleans>` is not equal to :ref:`None`
-  * :doc:`False </data_structures/booleans/booleans>` is not :ref:`None` and :doc:`False </data_structures/booleans/booleans>` is not equal to :ref:`None`
+  * :ref:`True <test_what_is_true>` is not :ref:`None` and :ref:`True <test_what_is_true>` is not equal to :ref:`None`
+  * :ref:`False <test_what_is_false>` is not :ref:`None` and :ref:`False <test_what_is_false>` is not equal to :ref:`None`
 
 ----
 
@@ -680,15 +680,15 @@ If you have been typing along *WELL DONE!* Your magic powers are growing. From t
 
 * how to test for equality
 * how to test if something is :ref:`None` or not
-* how to test if something is :doc:`False </data_structures/booleans/booleans>` or not
-* how to test if something is :doc:`True </data_structures/booleans/booleans>` or not
+* how to test if something is :ref:`False <test_what_is_false>` or not
+* how to test if something is :ref:`True <test_what_is_true>` or not
 * how to use ``assert`` statements
 * how to use the following ``unittest.TestCase.assert`` methods
 
   - `assertIsNone <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNone>`_ - is this thing :ref:`None`? (try saying that 10 times fast)
   - `assertIsNotNone <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNotNone>`_ - is this thing not :ref:`None`?
-  - `unittest.TestCase.assertFalse`_ - is this thing :doc:`False </data_structures/booleans/booleans>`?
-  - `assertTrue <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertTrue>`_ - is this thing :doc:`True </data_structures/booleans/booleans>`?
+  - `unittest.TestCase.assertFalse`_ - is this thing :ref:`False <test_what_is_false>`?
+  - `assertTrue <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertTrue>`_ - is this thing :ref:`True <test_what_is_true>`?
   - assertEqual_ - are these two things equal?
   - `assertNotEqual <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotEqual>`_ - are these two things not equal?
 

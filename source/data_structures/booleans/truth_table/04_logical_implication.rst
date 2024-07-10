@@ -12,19 +12,19 @@ truth table: Logical Implication
 
 This chapter has tests for Logical Implication from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
-Reviewing what I know so far, for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures/booleans/booleans>` or :doc:`False </data_structures/booleans/booleans>`
+Reviewing what I know so far, for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True <test_what_is_true>` or :ref:`False <test_what_is_false>`
 
 
 * ``logical disjunction`` is ``or``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
 * ``logical conjunction`` is ``and``
-* ``return True if x else y`` can be rewritten as ``return x``, if ``x`` evaluates to :doc:`True </data_structures/booleans/booleans>`
+* ``return True if x else y`` can be rewritten as ``return x``, if ``x`` evaluates to :ref:`True <test_what_is_true>`
 * when there are multiple outcomes I only need to write the condition for the special case and use ``else`` for the others
-* :doc:`False </data_structures/booleans/booleans>` is ``not True``
-* :doc:`True </data_structures/booleans/booleans>` is ``not False``
-* :doc:`False </data_structures/booleans/booleans>` is :doc:`False </data_structures/booleans/booleans>`
-* :doc:`True </data_structures/booleans/booleans>` is :doc:`True </data_structures/booleans/booleans>`
+* :ref:`False <test_what_is_false>` is ``not True``
+* :ref:`True <test_what_is_true>` is ``not False``
+* :ref:`False <test_what_is_false>` is :ref:`False <test_what_is_false>`
+* :ref:`True <test_what_is_true>` is :ref:`True <test_what_is_true>`
 
 
 
@@ -47,7 +47,7 @@ green: make it pass
 #################################################################################
 
 
-* I add a function definition with :doc:`True </data_structures/booleans/booleans>` as the return value since it is expected in 3 out of the 4 cases
+* I add a function definition with :ref:`True <test_what_is_true>` as the return value since it is expected in 3 out of the 4 cases
 
   .. code-block:: python
 
@@ -166,17 +166,17 @@ refactor: make it better
         return not p or q
 
 
-fantastic! the tests pass. I can see that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures/booleans/booleans>` or :doc:`False </data_structures/booleans/booleans>`
+fantastic! the tests pass. I can see that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True <test_what_is_true>` or :ref:`False <test_what_is_false>`
 
 * ``logical implication`` is ``not p or q``
 * ``logical disjunction`` is ``or``
 * ``logical conjunction`` is ``and``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
-* :doc:`False </data_structures/booleans/booleans>` is ``not True``
-* :doc:`True </data_structures/booleans/booleans>` is ``not False``
-* :doc:`False </data_structures/booleans/booleans>` is :doc:`False </data_structures/booleans/booleans>`
-* :doc:`True </data_structures/booleans/booleans>` is :doc:`True </data_structures/booleans/booleans>`
+* :ref:`False <test_what_is_false>` is ``not True``
+* :ref:`True <test_what_is_true>` is ``not False``
+* :ref:`False <test_what_is_false>` is :ref:`False <test_what_is_false>`
+* :ref:`True <test_what_is_true>` is :ref:`True <test_what_is_true>`
 
 ----
 

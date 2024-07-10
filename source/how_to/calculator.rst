@@ -10,7 +10,7 @@ how to make a calculator
 
 ----
 
-In this chapter I make a basic calculator that performs addition, subtraction, multiplication and division
+I make a basic calculator that does addition, subtraction, multiplication and division
 
 .. contents:: table of contents
   :local:
@@ -656,7 +656,7 @@ the terminal shows my expectations with a failure for any value of ``x`` when ``
   >    return x / y
   E    ZeroDivisionError: division by zero
 
-:doc:`Exceptions </how_to/exception_handling_programs>` like ZeroDivisionError_ break execution of a program. No code will run past the line that causes an :doc:`Exception </how_to/exception_handling_programs>` when it is raised which means I have to take care of this error, so I do not have random failures in the test
+:ref:`Exceptions<Exceptions>` like ZeroDivisionError_ break execution of a program. No code will run past the line that causes an :doc:`Exception </how_to/exception_handling_programs>` when it is raised which means I have to take care of this error, so I do not have random failures in the test
 
 .. _test_division_green_1:
 
@@ -675,7 +675,7 @@ I can use the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` in ``te
       #     self.x/self.y
       # )
 
-the terminal shows passing tests, and I have a way to handle :doc:`Exceptions </how_to/exception_handling_programs>` when testing, which helps to confirm that the code raises an error while allowing other tests to continue running. There is more of this in :doc:`/how_to/exception_handling_tests`
+the terminal shows passing tests, and I have a way to handle :ref:`Exceptions<Exceptions>` when testing, which helps to confirm that the code raises an error while allowing other tests to continue running. There is more of this in :doc:`/how_to/exception_handling_tests`
 
 .. _test_division_refactor_1:
 

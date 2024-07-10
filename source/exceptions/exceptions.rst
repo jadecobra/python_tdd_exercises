@@ -1,9 +1,7 @@
 .. include:: ../links.rst
 
-.. _exceptions:
-
 #################################################################################
-exceptions
+exceptions (errors)
 #################################################################################
 
 The tests in this chapter cover the following exceptions that have helped me gain a better understanding ofPython programs

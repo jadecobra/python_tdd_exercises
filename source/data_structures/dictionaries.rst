@@ -251,12 +251,12 @@ refactor: make it better
 how to make a dictionary with booleans as keys
 -------------------------------------------------
 
-I wonder if it is possible to use :doc:`False </data_structures/booleans/booleans>` or :doc:`True </data_structures/booleans/booleans>` as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
+I wonder if it is possible to use :ref:`False <test_what_is_false>` or :ref:`True <test_what_is_true>` as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
 
 red: make it fail
 #################################################################################
 
-I add a test to find out if it is possible to use :doc:`False </data_structures/booleans/booleans>` as a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ key
+I add a test to find out if it is possible to use :ref:`False <test_what_is_false>` as a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ key
 
 .. code-block:: python
 
@@ -290,12 +290,12 @@ I make the values to make them match and tests are green again. Sweet!
           {False: 'boom'}
       )
 
-I can use :doc:`False </data_structures/booleans/booleans>` as a key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+I can use :ref:`False <test_what_is_false>` as a key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
 refactor: make it better
 #################################################################################
 
-* I add a test to find out if it is possible to use :doc:`True </data_structures/booleans/booleans>` as a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ key
+* I add a test to find out if it is possible to use :ref:`True <test_what_is_true>` as a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ key
 
   .. code-block:: python
 
@@ -771,7 +771,7 @@ What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datas
         self.assertIsNone(a_dictionary.get('non_existent_key'))
         self.assertIsNone(a_dictionary.get('non_existent_key', False))
 
-  the terminal shows an :ref:`AssertionError` because :doc:`False </data_structures/booleans/booleans>` is not :ref:`None`
+  the terminal shows an :ref:`AssertionError` because :ref:`False <test_what_is_false>` is not :ref:`None`
 
   .. code-block:: python
 

@@ -12,18 +12,18 @@ truth table: Logical Equality
 
 The journey of conditional statements using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_ continues with Logical Equality
 
-So far the tests have shown that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures/booleans/booleans>` or :doc:`False </data_structures/booleans/booleans>`
+So far the tests have shown that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True <test_what_is_true>` or :ref:`False <test_what_is_false>`
 
 * ``logical implication`` is ``not p or q``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
 * ``logical disjunction`` is ``or``
 * ``logical conjunction`` is ``and``
-* :doc:`False </data_structures/booleans/booleans>` is ``not True``
-* :doc:`True </data_structures/booleans/booleans>` is ``not False``
-* :doc:`False </data_structures/booleans/booleans>` is :doc:`False </data_structures/booleans/booleans>`
-* :doc:`True </data_structures/booleans/booleans>` is :doc:`True </data_structures/booleans/booleans>`
-* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :doc:`True </data_structures/booleans/booleans>`
+* :ref:`False <test_what_is_false>` is ``not True``
+* :ref:`True <test_what_is_true>` is ``not False``
+* :ref:`False <test_what_is_false>` is :ref:`False <test_what_is_false>`
+* :ref:`True <test_what_is_true>` is :ref:`True <test_what_is_true>`
+* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :ref:`True <test_what_is_true>`
 * when there are multiple outcomes I only need to write the condition for the special case and use ``else`` for the others
 
 
@@ -46,7 +46,7 @@ green: make it pass
 #################################################################################
 
 
-* I then add a definition to ``truth_table.py`` with a `return statement`_, I can pick :doc:`True </data_structures/booleans/booleans>` or :doc:`False </data_structures/booleans/booleans>` since 2 out of the 4 cases are either :doc:`True </data_structures/booleans/booleans>` or :doc:`False </data_structures/booleans/booleans>`
+* I then add a definition to ``truth_table.py`` with a `return statement`_, I can pick :ref:`True <test_what_is_true>` or :ref:`False <test_what_is_false>` since 2 out of the 4 cases are either :ref:`True <test_what_is_true>` or :ref:`False <test_what_is_false>`
 
   .. code-block:: python
 
@@ -143,7 +143,7 @@ What can I do to make this better?
 
   and the tests are still green
 
-what I know so far from the tests is that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :doc:`True </data_structures/booleans/booleans>` or :doc:`False </data_structures/booleans/booleans>`
+what I know so far from the tests is that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True <test_what_is_true>` or :ref:`False <test_what_is_false>`
 
 * ``logical equality`` is ``==``
 * ``logical implication`` is ``not p or q``
@@ -151,10 +151,10 @@ what I know so far from the tests is that for any boolean operation involving 2 
 * ``logical conjunction`` is ``and``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
-* :doc:`False </data_structures/booleans/booleans>` is ``not True``
-* :doc:`True </data_structures/booleans/booleans>` is ``not False``
-* :doc:`False </data_structures/booleans/booleans>` is :doc:`False </data_structures/booleans/booleans>`
-* :doc:`True </data_structures/booleans/booleans>` is :doc:`True </data_structures/booleans/booleans>`
+* :ref:`False <test_what_is_false>` is ``not True``
+* :ref:`True <test_what_is_true>` is ``not False``
+* :ref:`False <test_what_is_false>` is :ref:`False <test_what_is_false>`
+* :ref:`True <test_what_is_true>` is :ref:`True <test_what_is_true>`
 
 ----
 

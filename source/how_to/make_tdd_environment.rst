@@ -10,7 +10,7 @@ how to make a python test driven development environment
 
 ----
 
-This chapter covers a way to make a Python Test Driven Development environment
+This is one way to make a Python Test Driven Development environment
 
 .. contents:: table of contents
   :local:
@@ -176,18 +176,18 @@ red: make it fail
     * ``class``` is the Python keyword for making :ref:`classes`, which are a collection of :ref:`attributes<AttributeError>` and :ref:`methods<functions>` for a purpose
     * ``TestMagic`` is the name of this :ref:`class <classes>` that will hold the test. You can use any name as long as it starts with ``Test``
     * `unittest.TestCase`_ is a :ref:`class <classes>` defined in the unittest_ :ref:`module<ModuleNotFoundError>` which has :ref:`methods (functions) <functions>` for testing
-    * ``class TestMagic(unittest.TestCase)`` defines that ``TestMagic`` inherits from `unittest.TestCase`_, it is a child or clone of `unittest.TestCase`_ and can do the same things, I can also change its behavior in its definition
+    * ``class TestMagic(unittest.TestCase)`` defines that ``TestMagic`` inherits from `unittest.TestCase`_ which allows me use its :ref:`methods (functions) <functions>` for testing
 
   - ``def test_failure``
 
     * def_ is the Python keyword for making :ref:`methods and functions<functions>`, a method is a function in a class
     * ``test_failure`` is the name of this :ref:`method<functions>`, you can use any name as long as it starts with ``test_``
-    * ``self`` is the ``TestMagic`` :ref:`class<classes>`. I use ``self`` to access :ref:`attributes<AttributeError>` and :ref:`methods (functions) <functions>` of the ``TestMagic`` class and by extension `unittest.TestCase`_ instead of ``TestMagic().`` or ``unittest.TestCase().``
+    * ``self`` is the ``TestMagic`` :ref:`class<classes>`. I use ``self`` to access :ref:`attributes<AttributeError>` and :ref:`methods (functions) <functions>` of the ``TestMagic`` class and by extension `unittest.TestCase`_ instead of using ``TestMagic().`` or ``unittest.TestCase().``
     * ``self.assertFalse(True)`` is an assertion
 
-      - assertFalse_ is a :ref:`method<functions>` in the `unittest.TestCase`_ :ref:`class <classes>` that checks if its input is :doc:`False </data_structures/booleans/booleans>`
-      - :doc:`True </data_structures/booleans/booleans>` is given as input to ``assertFalse``
-      - I expect the assertion to fail because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`, I have a problem if it does not fail
+      - assertFalse_ is a :ref:`method<functions>` in the `unittest.TestCase`_ :ref:`class <classes>` that checks if its input is :ref:`False <test_what_is_false>`
+      - :ref:`True <test_what_is_true>` is given as input to ``assertFalse``
+      - I expect the assertion to fail because :ref:`True <test_what_is_true>` is not :ref:`False <test_what_is_false>`, I have a problem if it does not fail
 
 * I turn on the ``Auto Save`` feature in the Integrated Development Environment (IDE) to automatically save files when I make a change so `I do not repeat myself`_ by hitting save every time I make a change
 * then type this in the terminal to run the test
@@ -228,7 +228,7 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
 
 * ``FAILED (failures=1)`` the number of failures
 * ``Ran 1 test in A.XYZs`` the number of tests run and how long it took
-* ``AssertionError: True is not false`` the :ref:`Exception<Exceptions>` raised and its message, in this case an :ref:`AssertionError` is raised because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
+* ``AssertionError: True is not false`` the :ref:`Exception<Exceptions>` raised and its message, in this case an :ref:`AssertionError` is raised because :ref:`True <test_what_is_true>` is not :ref:`False <test_what_is_false>`
 * ``self.assertFalse(True)`` the line of code that caused the failure
 * ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` the line number and location of the file where the failure happened
 
@@ -249,7 +249,7 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
   - ``python3`` is the major version of Python being used
   - ``-m`` is an option passed to Python to run the :ref:`module<ModuleNotFoundError>` given after the option as a script
 
-* I recommend you keep a list of :doc:`Exceptions </how_to/exception_handling_programs>` you meet to become familiar with them, it helps when you run into failures later. Time to add :ref:`AssertionError` to the list
+* I recommend you keep a list of :ref:`Exceptions<Exceptions>` you meet to become familiar with them, it helps when you run into failures later. Time to add :ref:`AssertionError` to the list
 
   .. code-block:: python
 
@@ -269,7 +269,7 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
 green: make it pass
 #################################################################################
 
-I change the input on line 7 from :doc:`True </data_structures/booleans/booleans>` to :doc:`False </data_structures/booleans/booleans>`
+I change the input on line 7 from :ref:`True <test_what_is_true>` to :ref:`False <test_what_is_false>`
 
 .. code-block:: python
 
@@ -361,7 +361,7 @@ how to make a virtual environment
 
   .. code-block:: shell
 
-    (.venv) vscode ➜ .../magic $
+    (.venv) .../magic $
 
 * I upgrade pip_ the `python package manager`_ to the latest version
 
@@ -472,7 +472,7 @@ how to make a virtual environment
 
     =============== 1 passed in X.YZs =======================
 
-* when I change the input on line 7 in ``test_magic.py`` from :doc:`False </data_structures/booleans/booleans>` to :doc:`True </data_structures/booleans/booleans>` it shows an :ref:`AssertionError`
+* when I change the input on line 7 in ``test_magic.py`` from :ref:`False <test_what_is_false>` to :ref:`True <test_what_is_true>` it shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -490,7 +490,7 @@ how to make a virtual environment
     FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
     ================================= 1 failed in X.YZs ===================================
 
-  then I change it back to :doc:`False </data_structures/booleans/booleans>` to make it pass and can write the rest of the code for the project as the tests run automatically
+  then I change it back to :ref:`False <test_what_is_false>` to make it pass and can write the rest of the code for the project while the tests run automatically
 
   .. tip:: press ``ctrl`` + ``c`` on the keyboard in the terminal when you want to stop the tests
 
@@ -587,7 +587,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   ``#!/bin/bash`` is a shebang_ line that tells the computer to use bash_ to run the program. You can change it to ``#!/bin/zsh`` if you have zsh_ installed
 
-* This program will always make a project called ``magic``. I add a variable that is referenced with ``$PROJECT_NAME`` to make it possible to make a project for any name I give when the program is called and use it to replace ``magic`` in the program
+* This program will always make a project called ``magic``. I add a variable to make it possible to make a project for any name I give when the program is called and use it to replace ``magic`` in the program
 
   .. code-block:: shell
 
@@ -606,7 +606,7 @@ You made it this far and have become the greatest programmer in the world. To fo
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-  ``$1`` represents the first argument given when the program is called, you can use it in place of ``$PROJECT_NAME`` if you want
+  ``$1`` represents the first argument given when the program is called, you can use it in place of ``$PROJECT_NAME``
 
 * I use the cat_ program to add text for the first failing test in ``test_$PROJECT_NAME.py``
 
@@ -616,8 +616,6 @@ You made it this far and have become the greatest programmer in the world. To fo
     :language: shell
     :linenos:
 
-  all the text between the two ``DELIMITER`` words will be written to ``tests/test_$PROJECT_NAME.py``. You can use any words/characters you want to replace ``DELIMITER``
-
 * I use chmod_ to make the program executable
 
   .. code-block:: shell
@@ -626,14 +624,13 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   chmod_ is a program that changes the mode of the file given
 
-* I can now make a `Test Driven Development`_ environment when I call the program with a name for the ``PROJECT_NAME`` variable. For example, when I type
+* I can make a `Test Driven Development`_ environment when I call the program with a name for the ``PROJECT_NAME`` variable. For example, when I type
 
   .. code-block:: shell
 
     ./makePythonTdd.sh calculator
 
   in the terminal in the folder/directory where ``makePythonTdd.sh`` is saved, the computer will make a `Test Driven Development`_ environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator`
-
 
 ----
 
@@ -656,10 +653,10 @@ how to automatically make a python test driven development environment on window
     :linenos:
     :language: PowerShell
 
-  - ``$args[0]`` is the first argument given when the program is called. You can use it in place of ``$projectName`` and will get the same result
-  - ``@""@`` is like ``DELIMITER`` it allows writing multiline text in PowerShell_
+  - ``$args[0]`` is the first argument given when the program is called. You can use it in place of ``$PROJECT_NAME``
+  - ``@""@`` allows writing multiline text in PowerShell_
 
-* I can now make a `Test Driven Development`_ environment when I call the program with a name for the ``$projectName`` variable. For example, when I type
+* I can make a `Test Driven Development`_ environment when I call the program with a name for the ``$PROJECT_NAME`` variable. For example, when I type
 
   .. code-block:: PowerShell
 
@@ -670,11 +667,13 @@ how to automatically make a python test driven development environment on window
 
 ----
 
+.. _make_tdd_environment_review:
+
 ********************************************************************************************
 review
 ********************************************************************************************
 
-One of the advantages of programming is that I can take some steps and make them a one line command for the computer to do for me. You now know a way to make a Python Test Driven Development Environment, and have a program to do it for you anytime you want on any `Operating System`_.
+One of the advantages of programming is that I can take some steps and make them a one line command for the computer to do for me. You have seen a way to make a Python Test Driven Development Environment, and have a program to do it for you anytime you want on any Linux_, Windows_ or MacOS_.
 
 Would you like to test :doc:`/how_to/calculator`?
 

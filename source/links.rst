@@ -8,6 +8,8 @@
 .. _assertRaises: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises
 .. _assertRaisesRegex: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertRaisesRegex
 .. _bash: https://www.gnu.org/software/bash/
+.. _boolean: https://docs.python.org/3/library/functions.html#bool
+.. _booleans: https://docs.python.org/3/library/functions.html#bool
 .. _callable: https://docs.python.org/3/glossary.html#term-callable
 .. _cat: https://www.man7.org/linux/man-pages/man1/cat.1.html
 .. _cd: https://man7.org/linux/man-pages/man1/cd.1p.html
@@ -18,7 +20,6 @@
 .. _datetime.datetime: https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects
 .. _datetime.datetime.strptime: https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime.datetime.strptime
 .. _datetime.timedelta: https://docs.python.org/3/library/datetime.html?highlight=datetime#timedelta-objects
-.. _Debian: https://www.debian.org
 .. _def: https://docs.python.org/3/reference/lexical_analysis.html#keywords
 .. _dir: https://docs.python.org/3/library/functions.html?highlight=dir#dir
 .. _echo: https://man7.org/linux/man-pages/man1/echo.1.html
@@ -83,15 +84,19 @@
 .. _Set-ExecutionPolicy: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.4&viewFallbackFrom=powershell-6
 .. _Write-Output: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-output?view=powershell-7.4
 
+.. _Debian: https://www.debian.org
+.. _False: https://docs.python.org/3/library/constants.html?highlight=true#False
 .. _I Do Not Repeat myself: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
 .. _Linux distributions: https://en.wikipedia.org/wiki/List_of_Linux_distributions
 .. _Linux: https://www.kernel.org/category/about.html
-.. _Operating System: https://en.wikipedia.org/wiki/Operating_system
+.. _MacOS: https://www.apple.com/macos
 .. _Refactoring: https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk
+.. _True: https://docs.python.org/3/library/constants.html?highlight=true#True
 .. _Test Driven Development: https://en.wikipedia.org/wiki/Test-driven_development
 .. _Test Driven Development by Example: https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk
 .. _The Abstraction Principle: https://en.wikipedia.org/wiki/Abstraction_principle_(computer_programming)
 .. _The Do Not Repeat Yourself (DRY) Principle: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
+.. _Windows: https://www.microsoft.com/en-us/windows
 .. _Windows Subsystem Linux: https://learn.microsoft.com/en-us/windows/wsl/install
 
 .. _Visual Studio Code: https://code.visualstudio.com/download
