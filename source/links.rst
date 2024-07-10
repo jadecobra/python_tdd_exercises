@@ -81,6 +81,7 @@
 .. _ZeroDivisionError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError
 
 .. _New-Item: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/new-item?view=powershell-7.4
+.. _Out-File: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-file?view=powershell-7.4
 .. _Set-ExecutionPolicy: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.4&viewFallbackFrom=powershell-6
 .. _Write-Output: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-output?view=powershell-7.4
 

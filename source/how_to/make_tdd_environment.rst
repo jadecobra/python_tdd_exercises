@@ -347,7 +347,15 @@ how to make a virtual environment
 
       Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 
-    confirm the change and it will enable scripts that have been signed by a verified publisher to run on your computer, you can read more at `Set-ExecutionPolicy`_. Activate the virtual environment in PowerShell_
+    the terminal will show
+
+    .. code-block:: PowerShell
+
+      The execution policy helps protect you from scripts that you do not trust. Changing the execution policy might expose you to the security risks described in the about_Execution_Policies help topic at https:/go.microsoft.com/fwlink/?LinkID=135170. Do you want to change the execution policy?
+
+      [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
+
+    type ``Y`` to confirm the change and it will enable scripts that have been signed by a verified publisher to run on your computer, you can read more at `Set-ExecutionPolicy`_. Activate the virtual environment in PowerShell_
 
     .. code-block::
 
@@ -400,10 +408,12 @@ how to make a virtual environment
 
     .. code-block::
 
-      "pytest-watch" > requirements.txt
+      "pytest-watch" | Out-File requirements.txt -Encoding UTF8
 
   - echo_ is a program that writes its given arguments to the `standard output (stdout)`_
   - ``>`` is an operator that is used to send output from a program to the given file
+  - ``|`` is an operator that is used to send output from the left as input to the right
+  - `Out-File`_ writes input text to a given file
   - `pytest-watch`_ is a Python program that automatically runs pytest_ when a Python file in the folder/directory changes
   - pytest_ is a `python package`_ like unittest_ that is used for testing
   - ``requirements.txt`` is the name of a file where I can list `python packages`_ for pip_ to install, you can use any name
@@ -657,6 +667,7 @@ how to automatically make a python test driven development environment on window
 
   - ``$args[0]`` is the first argument given when the program is called. You can use it in place of ``$PROJECT_NAME``
   - ``@""@`` allows writing multiline text in PowerShell_
+  - `Out-File`_ writes input text to a given file
 
 * I can make a `Test Driven Development`_ environment when I call the program with a name for the ``$PROJECT_NAME`` variable. For example, when I type
 
@@ -675,7 +686,7 @@ how to automatically make a python test driven development environment on window
 review
 ********************************************************************************************
 
-One of the advantages of programming is that I can take some steps and make them a one line command for the computer to do for me. You have seen a way to make a Python Test Driven Development Environment, and have a program to do it for you on any Linux_, Windows_ or MacOS_ computer.
+One of the advantages of programming is that I can take some steps and make them a one line command for the computer to do for me. You have seen a way to make a Python Test Driven Development Environment, and have a program to do it for you on any Linux_, Windows_ or MacOS_ computers.
 
 Would you like to test :doc:`/how_to/calculator`?
 
