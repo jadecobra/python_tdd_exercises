@@ -6,7 +6,7 @@
 classes
 #################################################################################
 
-``classes`` are definitions that represent an object. I think of them as :ref:`attributes<AttributeError>` and :doc:`methods (functions) </functions/functions>` that belong together
+``classes`` are definitions that represent an object. I think of them as :ref:`attributes<AttributeError>` and :ref:`methods (functions) <functions>` that belong together
 
 The following tests cover different ways to make classes
 

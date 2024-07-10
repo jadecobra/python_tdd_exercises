@@ -173,7 +173,7 @@ red: make it fail
   - ``import unittest`` imports unittest_ which is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that is used for testing
   - ``class TestMagic``
 
-    * ``class``` is the Python keyword for making :doc:`/classes/classes`, which are a collection of attributes and :ref:`methods<functions>` for a purpose
+    * ``class``` is the Python keyword for making :doc:`/classes/classes`, which are a collection of :ref:`attributes<AttributeError>` and :ref:`methods<functions>` for a purpose
     * ``TestMagic`` is the name given to the :doc:`class </classes/classes>` that will hold the tests, you can use any name you want, as long as it starts with ``Test``
     * `unittest.TestCase`_ is a :doc:`class </classes/classes>` defined in the unittest_ :ref:`module<ModuleNotFoundError>` which has :doc:`methods (functions) </functions/functions>` for testing
     * ``TestMagic`` inherits from `unittest.TestCase`_, it is a child or clone of `unittest.TestCase`_ and can do the same things, I can also change its behavior in the :doc:`class</classes/classes>` definition
@@ -182,7 +182,7 @@ red: make it fail
 
     * def_ is the Python keyword for making :ref:`functions/methods<functions>`, a method is a function in a class
     * ``test_failure`` is the name of this :ref:`method<functions>`, you can use any name you want, as long as it starts with ``test_``
-    * ``self`` is the ``TestMagic`` :ref:`class<classes>`. I use it to access :ref:`attributes<AttributeError>` and :doc:`methods (functions) </functions/functions>` of the ``TestMagic`` class and by extension `unittest.TestCase`_, this way I do not have to use ``TestMagic().`` or ``unittest.TestCase().`` to access their attributes and :ref:`methods<functions>`
+    * ``self`` is the ``TestMagic`` :ref:`class<classes>`. I use it to access :ref:`attributes<AttributeError>` and :ref:`methods (functions) <functions>` of the ``TestMagic`` class and by extension `unittest.TestCase`_, this way I do not have to use ``TestMagic().`` or ``unittest.TestCase().`` to access their :ref:`attributes<AttributeError>` and :ref:`methods<functions>`
     * ``self.assertFalse(True)`` is an assertion
 
       - assertFalse_ is a :ref:`method<functions>` in the `unittest.TestCase`_ :doc:`class </classes/classes>` that checks if its input is :doc:`False </data_structures/booleans/booleans>`

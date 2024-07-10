@@ -391,7 +391,7 @@ refactor: make it better
 test_attribute_error_w_classes
 *********************************************************************************
 
-I think of a :doc:`class </classes/classes>` as a container of :ref:`attributes<AttributeError>` and :doc:`methods (functions) </functions/functions>` that represents an object_
+I think of a :doc:`class </classes/classes>` as a container of :ref:`attributes<AttributeError>` and :ref:`methods (functions) <functions>` that represents an object_
 
 - attributes are names which represent something
 - :ref:`methods<functions>` are :doc:`/functions/functions`, they
@@ -745,7 +745,7 @@ and learned
 
 -------------------------------------------------------
 
-* attributes and :ref:`methods<functions>` in a :doc:`class </classes/classes>` can be accessible from outside the :doc:`class </classes/classes>`
+* :ref:`attributes<AttributeError>` and :ref:`methods<functions>` in a :doc:`class </classes/classes>` can be accessible from outside the :doc:`class </classes/classes>`
 * attributes and :ref:`functions<functions>` in a :ref:`function<functions>` are not accessible from outside the :ref:`function<functions>`
 * keywords used to define them - :doc:`class </classes/classes>` vs def_
 * naming conventions - ``CamelCase`` vs ``snake_case``

@@ -18,7 +18,7 @@ how to make a class in Python
 
 * use the `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword
 * use ``TitleCase`` for the name
-* use a name that tells what the collection of :ref:`attributes<AttributeError>` and :doc:`methods (functions) </functions/functions>` does - this is hard to do and is something I am still learning
+* use a name that tells what the collection of :ref:`attributes<AttributeError>` and :ref:`methods (functions) <functions>` does - this is hard to do and is something I am still learning
 
 ----
 .. _test_defining_classes_w_pass

@@ -832,7 +832,7 @@ Do you think you could write an implementation for the ``get`` method after read
 how to view the attributes and methods of a dictionary
 -------------------------------------------------------
 
-The chapter on :doc:`/classes/classes` shows how to view the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of an object. Let us look at the attributes and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+The chapter on :doc:`/classes/classes` shows how to view the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of an object. Let us look at the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
 red: make it fail
 #################################################################################
@@ -1071,7 +1071,7 @@ refactor: make it better
         }
     )
 
-  all tests pass, and I add what I know about `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_ to the list of attributes and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+  all tests pass, and I add what I know about `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_ to the list of :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
 test_adding_two_dictionaries
 ---------------------------------------------------
@@ -1275,7 +1275,7 @@ You also know
 * What objects cannot be used as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
 * how to view `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
 * how to view `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ values
-* how to view the attributes and :ref:`methods<functions>` of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+* how to view the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 * how to set a default value for a key
 * how to change a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with another `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 * how to remove an item from a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
