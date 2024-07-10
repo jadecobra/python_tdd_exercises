@@ -212,7 +212,7 @@ I add an ``assertRaises`` context and indent the failing line to place it within
 red: make it fail
 ---------------------------------------------------------------------------------
 
-I add a failing line that raises an :ref:`AttributeError` for :doc:`classes </classes/classes>` to ``test_catching_attribute_errors_in_tests``
+I add a failing line that raises an :ref:`AttributeError` for :ref:`classes` to ``test_catching_attribute_errors_in_tests``
 
 .. code-block:: python
 

@@ -202,7 +202,7 @@ refactor: make it better
     import person
     import unittest
 
-  ``import datetime`` imports the ``datetime`` library so I can use its :doc:`/functions/functions` and :doc:`classes </classes/classes>`
+  ``import datetime`` imports the ``datetime`` library so I can use its :doc:`/functions/functions` and :ref:`classes`
 * then I add a call in the ``this_year`` :ref:`function <functions>` in ``test_person.py`` to return the current year
 
   .. code-block:: python
@@ -210,7 +210,7 @@ refactor: make it better
     def this_year():
         return datetime.datetime.now().year
 
-  - ``return datetime.datetime.now().year`` returns the ``year`` attribute of the object returned by the ``now`` :ref:`method<functions>` of the ``datetime.datetime`` :doc:`class </classes/classes>`, which is a representation of the current local date and time. I could also use ``today`` or ``utcnow`` instead of ``now`` to achieve the same result
+  - ``return datetime.datetime.now().year`` returns the ``year`` attribute of the object returned by the ``now`` :ref:`method<functions>` of the ``datetime.datetime`` :ref:`class <classes>`, which is a representation of the current local date and time. I could also use ``today`` or ``utcnow`` instead of ``now`` to achieve the same result
   - I get the ``year`` attribute of the object returned since that is `all I need to get by <https://www.youtube.com/watch?v=XW1HNWqdVbk>`_
 
 * the terminal shows an :ref:`AssertionError` since the ``person.factory`` function returns :ref:`None` and the test expects a :doc:`dictionary </data_structures/dictionaries>` with keys and values.

@@ -173,9 +173,9 @@ red: make it fail
   - ``import unittest`` imports unittest_ which is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that is used for testing
   - ``class TestMagic``
 
-    * ``class``` is the Python keyword for making :doc:`/classes/classes`, which are a collection of :ref:`attributes<AttributeError>` and :ref:`methods<functions>` for a purpose
-    * ``TestMagic`` is the name of this :doc:`class </classes/classes>` that will hold the test. You can use any name as long as it starts with ``Test``
-    * `unittest.TestCase`_ is a :doc:`class </classes/classes>` defined in the unittest_ :ref:`module<ModuleNotFoundError>` which has :ref:`methods (functions) <functions>`for testing
+    * ``class``` is the Python keyword for making :ref:`classes`, which are a collection of :ref:`attributes<AttributeError>` and :ref:`methods<functions>` for a purpose
+    * ``TestMagic`` is the name of this :ref:`class <classes>` that will hold the test. You can use any name as long as it starts with ``Test``
+    * `unittest.TestCase`_ is a :ref:`class <classes>` defined in the unittest_ :ref:`module<ModuleNotFoundError>` which has :ref:`methods (functions) <functions>`for testing
     * ``class TestMagic(unittest.TestCase)`` defines that ``TestMagic`` inherits from `unittest.TestCase`_, it is a child or clone of `unittest.TestCase`_ and can do the same things, I can also change its behavior in its definition
 
   - ``def test_failure``
@@ -185,7 +185,7 @@ red: make it fail
     * ``self`` is the ``TestMagic`` :ref:`class<classes>`. I use ``self`` to access :ref:`attributes<AttributeError>` and :ref:`methods (functions) <functions>` of the ``TestMagic`` class and by extension `unittest.TestCase`_ instead of ``TestMagic().`` or ``unittest.TestCase().``
     * ``self.assertFalse(True)`` is an assertion
 
-      - assertFalse_ is a :ref:`method<functions>` in the `unittest.TestCase`_ :doc:`class </classes/classes>` that checks if its input is :doc:`False </data_structures/booleans/booleans>`
+      - assertFalse_ is a :ref:`method<functions>` in the `unittest.TestCase`_ :ref:`class <classes>` that checks if its input is :doc:`False </data_structures/booleans/booleans>`
       - :doc:`True </data_structures/booleans/booleans>` is given as input to ``assertFalse``
       - I expect the assertion to fail because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`, I have a problem if it does not fail
 
@@ -240,7 +240,7 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
   - ``tests.test_magic.TestMagic.test_failure`` is the location of the failing test
   -  ``tests`` is the ``tests`` folder/directory
   -  ``test_magic`` is the ``test_magic.py`` file
-  - ``TestMagic`` is the :doc:`class </classes/classes>` defined on line 4
+  - ``TestMagic`` is the :ref:`class <classes>` defined on line 4
   - ``test_failure`` is the :ref:`method<functions>` defined on line 6
 
 * ``F`` indicates a failure

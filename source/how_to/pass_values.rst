@@ -259,7 +259,7 @@ refactor: make it better
 
 As an exercise I add more tests to ``test_passing_data_structures`` to see what happens when I pass different data structures to the ``text`` function
 
-* What happens when I pass in a :doc:`class </classes/classes>` constructor_ to the ``text`` function
+* What happens when I pass in a :ref:`class <classes>` constructor_ to the ``text`` function
 
   .. code-block:: python
 

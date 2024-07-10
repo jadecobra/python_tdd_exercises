@@ -139,7 +139,7 @@ green: make it pass
 Solve the IndentationError in Classes
 -------------------------------------
 
-add more tests, this time to raise indentation errors for :doc:`Classes </classes/classes>` definitions *noting the difference in spacing*
+add more tests, this time to raise indentation errors for :ref:`classes` definitions *noting the difference in spacing*
 
 red: make it fail
 ^^^^^^^^^^^^^^^^^
@@ -270,7 +270,7 @@ green: make it pass
 refactor: make it better
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Indentation matters in Python because it is how blocks of code are segmented. When a :ref:`function<functions>` is defined, all the statements that belong to it are indented, same with a :doc:`class </classes/classes>`, all the :ref:`methods<functions>` and attributes that belong to it are indented underneath the definition
+Indentation matters in Python because it is how blocks of code are segmented. When a :ref:`function<functions>` is defined, all the statements that belong to it are indented, same with a :ref:`class <classes>`, all the :ref:`methods<functions>` and attributes that belong to it are indented underneath the definition
 
 This helps with reading the code so I can tell what belongs to a namespace the same way curly braces do for languages that use them for that purpose.
 

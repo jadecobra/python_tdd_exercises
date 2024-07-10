@@ -29,7 +29,7 @@ test_what_is_false
 red: make it fail
 #################################################################################
 
-I make a file called ``test_booleans.py`` then add a failing test in ``test_what_is_false`` to check if `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is an instance of the `boolean <https://docs.python.org/3/library/functions.html#bool>`_ :doc:`class </classes/classes>`
+I make a file called ``test_booleans.py`` then add a failing test in ``test_what_is_false`` to check if `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is an instance of the `boolean <https://docs.python.org/3/library/functions.html#bool>`_ :ref:`class <classes>`
 
 .. code-block:: python
 
@@ -41,13 +41,13 @@ I make a file called ``test_booleans.py`` then add a failing test in ``test_what
       def test_what_is_false(self):
           self.assertNotIsInstance(False, bool)
 
-the terminal shows an :ref:`AssertionError` because `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is an instance of the `boolean <https://docs.python.org/3/library/functions.html#bool>`_ :doc:`class </classes/classes>`
+the terminal shows an :ref:`AssertionError` because `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is an instance of the `boolean <https://docs.python.org/3/library/functions.html#bool>`_ :ref:`class <classes>`
 
 .. code-block:: python
 
   AssertionError: False is an instance of <class 'bool'>
 
-The `unittest.TestCase.assertNotIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance>`_ :ref:`method<functions>` checks that the first input given is NOT an instance of the :doc:`class </classes/classes>` given as the second input. It is like asking the question ``is False not an instance of bool?``
+The `unittest.TestCase.assertNotIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance>`_ :ref:`method<functions>` checks that the first input given is NOT an instance of the :ref:`class <classes>` given as the second input. It is like asking the question ``is False not an instance of bool?``
 
 green: make it pass
 #################################################################################
@@ -58,7 +58,7 @@ I make ``assertNotIsInstance`` to ``assertIsInstance`` to make the test pass
 
   self.assertIsInstance(False, bool)
 
-The `unittest.TestCase.assertIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsInstance>`_ :ref:`method<functions>` checks that the first input given is an instance of the :doc:`class </classes/classes>` given as the second input. It is like asking the question ``is False an instance of bool?``
+The `unittest.TestCase.assertIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsInstance>`_ :ref:`method<functions>` checks that the first input given is an instance of the :ref:`class <classes>` given as the second input. It is like asking the question ``is False an instance of bool?``
 
 From the tests I see that `False <https://docs.python.org/3/library/constants.html?highlight=true#False>`_ is a `boolean <https://docs.python.org/3/library/functions.html#bool>`_
 
@@ -104,14 +104,14 @@ red: make it fail
 #################################################################################
 
 
-I add a :ref:`method<functions>` called ``test_what_is_true`` with a failing line to to check if `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is an instance of the `boolean <https://docs.python.org/3/library/functions.html#bool>`_ :doc:`class </classes/classes>`
+I add a :ref:`method<functions>` called ``test_what_is_true`` with a failing line to to check if `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is an instance of the `boolean <https://docs.python.org/3/library/functions.html#bool>`_ :ref:`class <classes>`
 
 .. code-block:: python
 
     def test_what_is_true(self):
         self.assertNotIsInstance(True, bool)
 
-the terminal shows an :ref:`AssertionError` because `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is an instance of the `boolean <https://docs.python.org/3/library/functions.html#bool>`_ :doc:`class </classes/classes>`
+the terminal shows an :ref:`AssertionError` because `True <https://docs.python.org/3/library/constants.html?highlight=true#True>`_ is an instance of the `boolean <https://docs.python.org/3/library/functions.html#bool>`_ :ref:`class <classes>`
 
 .. code-block:: python
 

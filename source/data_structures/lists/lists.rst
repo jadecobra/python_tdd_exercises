@@ -64,7 +64,7 @@ green: make it pass
     # TypeError
 
   - Looking at the error I see that the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_ expects one argument but four are given in the test, so I am not following the signature for making lists
-  - a constructor_ is a :ref:`function<functions>` that is used to make an instance of a :doc:`class </classes/classes>`
+  - a constructor_ is a :ref:`function<functions>` that is used to make an instance of a :ref:`class <classes>`
   - I read `python's documentation for lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ and see that the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_ takes an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ as input
   - An `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ is an object I can go over its items one by one in a loop - `tuples <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_, `lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_, `sets <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ and :doc:`dictionaries </data_structures/dictionaries>` are iterable
 
@@ -470,7 +470,7 @@ refactor: make it better
 test_list_attributes_and_methods
 *********************************************************************************
 
-The chapter on :doc:`/classes/classes` shows how to view the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of an object_ by using the dir_ :ref:`function<functions>`. Let us try it for `lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
+The chapter on :ref:`classes` shows how to view the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of an object_ by using the dir_ :ref:`function<functions>`. Let us try it for `lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
 
 red: make it fail
 ===================
@@ -500,7 +500,7 @@ green: make it pass
 
     Diff is 748 characters long. Set self.maxDiff to None to see it
 
-  `maxDiff <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff>`_ is an attribute of the `unittest.TestCase`_ :doc:`class </classes/classes>` that sets the maximum amount of characters to show in the comparison between the two objects  in the terminal. When it is set to :ref:`None` there is no limit to the number of characters
+  `maxDiff <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff>`_ is an attribute of the `unittest.TestCase`_ :ref:`class <classes>` that sets the maximum amount of characters to show in the comparison between the two objects  in the terminal. When it is set to :ref:`None` there is no limit to the number of characters
 * I add ``self.maxDiff`` to the test
 
   .. code-block:: python

@@ -339,7 +339,7 @@ green: make it pass
 
 * a :ref:`TypeError` is raised in this case because I called an object that was not callable_
 
-  A callable_ object is an object that may be able to handle inputs. I can make an object_ callable_ by defining it as a :doc:`class </classes/classes>` or a :ref:`function<functions>`
+  A callable_ object is an object that may be able to handle inputs. I can make an object_ callable_ by defining it as a :ref:`class <classes>` or a :ref:`function<functions>`
 
   Parentheses are used at the end of the name of an object when calling it, for example  ``module.function_0()`` will call ``function_0`` from ``module.py``
 
@@ -391,7 +391,7 @@ refactor: make it better
 test_attribute_error_w_classes
 *********************************************************************************
 
-I think of a :doc:`class </classes/classes>` as a container of :ref:`attributes<AttributeError>` and :ref:`methods (functions) <functions>` that represents an object_
+I think of a :ref:`class <classes>` as a container of :ref:`attributes<AttributeError>` and :ref:`methods (functions) <functions>` that represents an object_
 
 - attributes are names which represent something
 - :ref:`methods<functions>` are :doc:`/functions/functions`, they
@@ -444,7 +444,7 @@ green: make it pass
     def Class0():
         return None
 
-  The test passes! Something is odd here, what is the difference between :doc:`classes </classes/classes>` and :doc:`/functions/functions`? Why am I writing a different set of tests for :doc:`classes </classes/classes>` if the solutions are the same for :doc:`/functions/functions`?
+  The test passes! Something is odd here, what is the difference between :ref:`classes` and :doc:`/functions/functions`? Why am I writing a different set of tests for :ref:`classes` if the solutions are the same for :doc:`/functions/functions`?
 
   For now, I move on with these questions unanswered until they become obvious
 
@@ -480,7 +480,7 @@ refactor: make it better
 * how to solve a :ref:`TypeError` by defining a callable_
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
-* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :doc:`class </classes/classes>`? do I know how to define :doc:`class </classes/classes>` if I define them the same way I do :doc:`/functions/functions`?
+* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :ref:`class <classes>`? do I know how to define :ref:`class <classes>` if I define them the same way I do :doc:`/functions/functions`?
 
 ----
 
@@ -549,7 +549,7 @@ green: make it pass
 
   the terminal still shows the same error, my guess was wrong
 
-* what if I use the :doc:`class </classes/classes>` keyword to define ``Class`` instead of def_?
+* what if I use the :ref:`class <classes>` keyword to define ``Class`` instead of def_?
 
   .. code-block:: python
 
@@ -593,7 +593,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* The current solution for ``test_attribute_error_w_classes`` was done by defining functions but the test name has ``defining_classes``, time to go back and change ``module.py`` using the :doc:`class </classes/classes>` keyword instead of def_
+* The current solution for ``test_attribute_error_w_classes`` was done by defining functions but the test name has ``defining_classes``, time to go back and change ``module.py`` using the :ref:`class <classes>` keyword instead of def_
 
   .. code-block:: python
 
@@ -605,7 +605,7 @@ refactor: make it better
 
   `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is a keyword used as a placeholder
 
-* I now know how to properly define a :doc:`class </classes/classes>` with an attribute. You can make a drill to practice by adding more lines to ``test_attribute_error_w_class_attributes`` until you have a total of 100 lines
+* I now know how to properly define a :ref:`class <classes>` with an attribute. You can make a drill to practice by adding more lines to ``test_attribute_error_w_class_attributes`` until you have a total of 100 lines
 
   .. code-block:: python
 
@@ -632,8 +632,8 @@ refactor: make it better
 * how to solve a :ref:`TypeError` by defining a callable_
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
-* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :doc:`class </classes/classes>`
-* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining attributes (variables) in a :doc:`class </classes/classes>`
+* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :ref:`class <classes>`
+* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining attributes (variables) in a :ref:`class <classes>`
 
 ----
 
@@ -737,15 +737,15 @@ and learned
 * how to solve a :ref:`TypeError` by defining a callable_
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
-* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :doc:`class </classes/classes>`
-* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining attributes (variables) in a :doc:`class </classes/classes>`
-* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :ref:`methods (functions) <functions>`in a :doc:`class </classes/classes>`
+* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :ref:`class <classes>`
+* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining attributes (variables) in a :ref:`class <classes>`
+* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :ref:`methods (functions) <functions>`in a :ref:`class <classes>`
 
 :ref:`classes` vs :doc:`/functions/functions` in Python
 
 -------------------------------------------------------
 
-* :ref:`attributes<AttributeError>` and :ref:`methods<functions>` in a :doc:`class </classes/classes>` can be accessible from outside the :doc:`class </classes/classes>`
+* :ref:`attributes<AttributeError>` and :ref:`methods<functions>` in a :ref:`class <classes>` can be accessible from outside the :ref:`class <classes>`
 * attributes and :ref:`functions<functions>` in a :ref:`function<functions>` are not accessible from outside the :ref:`function<functions>`
-* keywords used to define them - :doc:`class </classes/classes>` vs def_
+* keywords used to define them - :ref:`class <classes>` vs def_
 * naming conventions - ``CamelCase`` vs ``snake_case``

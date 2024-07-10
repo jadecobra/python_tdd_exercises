@@ -50,7 +50,7 @@ red: make it fail
 
   then I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_sleep_duration.py:7`` with the mouse to open it
 * and change ``True`` to ``False``
-* I also change the :doc:`class </classes/classes>` name to CapWords to match Python convention
+* I also change the :ref:`class <classes>` name to CapWords to match Python convention
 
   .. code-block:: python
 

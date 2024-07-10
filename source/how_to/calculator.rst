@@ -176,7 +176,7 @@ green: make it pass
     # AttributeError
     # TypeError
 
-* I have to define ``add`` as a :ref:`function<functions>` or :doc:`class </classes/classes>` to make it callable. I change the ``add`` variable to a :ref:`function<functions>` with the def_ keyword
+* I have to define ``add`` as a :ref:`function<functions>` or :ref:`class <classes>` to make it callable. I change the ``add`` variable to a :ref:`function<functions>` with the def_ keyword
 
   .. code-block:: python
 
@@ -474,7 +474,7 @@ refactor: make it better
   - ``x = random_number()`` happens twice
   - ``y = random_number()`` happens twice
 
-* I can use :doc:`class </classes/classes>` attributes (variables) in the ``TestCalculator`` :doc:`class </classes/classes>` in ``test_calculator.py`` to make the random variables only once and reference them later in the tests by using ``self``
+* I can use :ref:`class <classes>` attributes (variables) in the ``TestCalculator`` :ref:`class <classes>` in ``test_calculator.py`` to make the random variables only once and reference them later in the tests by using ``self``
 
   .. code-block:: python
 
@@ -496,7 +496,7 @@ refactor: make it better
             )
 
   - all tests are still passing, so my change did not break anything. Fantastic!
-  - The ``x`` and ``y`` variables are initialized once as :doc:`class </classes/classes>` attributes (variables) and accessed later in every test using ``self.x`` and ``self.y``, the same way I can call `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ by using ``self.assertEqual``
+  - The ``x`` and ``y`` variables are initialized once as :ref:`class <classes>` attributes (variables) and accessed later in every test using ``self.x`` and ``self.y``, the same way I can call `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ by using ``self.assertEqual``
 
 
 ----

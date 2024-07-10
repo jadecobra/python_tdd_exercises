@@ -111,7 +111,7 @@ From the tests I see that
 refactor: make it better
 #################################################################################
 
-:doc:`booleans </data_structures/booleans/booleans>` are represented by the `bool <https://docs.python.org/3/library/functions.html#bool>`_ :doc:`class </classes/classes>` in Python. I can add a test with `unittest.TestCase.assertIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsInstance>`_ to check if an object_ is an instance of a :doc:`class </classes/classes>`
+:doc:`booleans </data_structures/booleans/booleans>` are represented by the `bool <https://docs.python.org/3/library/functions.html#bool>`_ :ref:`class <classes>` in Python. I can add a test with `unittest.TestCase.assertIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsInstance>`_ to check if an object_ is an instance of a :ref:`class <classes>`
 
 
 * red: make it fail
@@ -142,7 +142,7 @@ refactor: make it better
           self.assertIsNotNone(False)
           self.assertNotIsInstance(None, bool)
 
-  `unittest.TestCase.assertNotIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance>`_ checks that a given object_ is NOT an instance of the given :doc:`class </classes/classes>`
+  `unittest.TestCase.assertNotIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance>`_ checks that a given object_ is NOT an instance of the given :ref:`class <classes>`
 
 From the tests I see that
 
@@ -203,7 +203,7 @@ I make ``assertIsNone`` to ``assertIsNotNone`` in ``test_is_none_an_integer`` to
 refactor: make it better
 #################################################################################
 
-:ref:`integers<int>`_ are represented by the `int <https://docs.python.org/3/library/functions.html#int>`_ :doc:`class </classes/classes>` in Python, I can add an instance test like I did with :doc:`booleans </data_structures/booleans/booleans>`
+:ref:`integers<int>`_ are represented by the `int <https://docs.python.org/3/library/functions.html#int>`_ :ref:`class <classes>` in Python, I can add an instance test like I did with :doc:`booleans </data_structures/booleans/booleans>`
 
 
 * red: make it fail
@@ -281,7 +281,7 @@ I make ``assertIsNone`` to ``assertIsNotNone`` in ``test_is_none_a_float`` to ma
 refactor: make it better
 #################################################################################
 
-floats_ are represented by the `float <https://docs.python.org/3/library/functions.html#float>`_ :doc:`class </classes/classes>` in Python, I can do an instance test
+floats_ are represented by the `float <https://docs.python.org/3/library/functions.html#float>`_ :ref:`class <classes>` in Python, I can do an instance test
 
 
 * red: make it fail
