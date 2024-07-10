@@ -78,7 +78,7 @@ Here are extensions I use in `Visual Studio Code`_
 
 * `Code Spell Checker`_ - to catch spelling mistakes
 * `indent-rainbow`_ - I like pretty colors and this makes indentation easier to see from a distance
-* `Python <https://marketplace.visualstudio.com/items?itemName=ms-python.python>`_ - python language support with Pylance and a Python debugger
+* `Python <https://marketplace.visualstudio.com/items?itemName=ms-python.python>`_ - Python language support with Pylance and a Python debugger
 * `Dark Rainbow Theme`_  - did I mention I like pretty colors?
 
 ----

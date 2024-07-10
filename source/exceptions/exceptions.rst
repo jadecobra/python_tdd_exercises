@@ -6,7 +6,7 @@
 exceptions
 #################################################################################
 
-The tests in this chapter cover the following exceptions that have helped me gain a better understanding of python programs
+The tests in this chapter cover the following exceptions that have helped me gain a better understanding ofPython programs
 
 .. toctree::
   :titlesonly:

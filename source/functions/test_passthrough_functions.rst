@@ -125,7 +125,7 @@ I change the definition of ``passthrough`` in ``functions.py``
   def passthrough(input_data):
       return input_data
 
-the terminal shows passing tests. I have more confidence that the passthrough function will likely return the input data it is given. I add more tests for good measure using the other python data structures
+the terminal shows passing tests. I have more confidence that the passthrough function will likely return the input data it is given. I add more tests for good measure using the other Python data structures
 
 .. _test_passthrough_functions_refactor_refactor:
 

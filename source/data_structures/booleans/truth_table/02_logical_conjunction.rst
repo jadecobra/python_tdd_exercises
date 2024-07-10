@@ -163,7 +163,7 @@ refactor: make it better
 
   .. note::
 
-    python `comparisons <https://docs.python.org/3/reference/expressions.html?highlight=ternary%20conditional#comparisons>`_ for booleans can be implicitly stated because python calls ``bool()`` on the values, e.g ``if p == True`` can be rewritten as ``if p``
+   Python `comparisons <https://docs.python.org/3/reference/expressions.html?highlight=ternary%20conditional#comparisons>`_ for booleans can be implicitly stated becausePython calls ``bool()`` on the values, e.g ``if p == True`` can be rewritten as ``if p``
 
   I rewrite the ``if`` statement in a simpler way
 
@@ -183,7 +183,7 @@ refactor: make it better
     def logical_conjunction(p, q):
         return True if p and q else False
 
-* since python implicitly tests conditionals I can rewrite the statement this way
+* sincePython implicitly tests conditionals I can rewrite the statement this way
 
   .. code-block:: python
 

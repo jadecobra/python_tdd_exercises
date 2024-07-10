@@ -53,7 +53,7 @@ red: make it fail
     # AssertionError
     # IndentationError
 
-  python raises an ``IndentationError`` for line 2 because it was not expecting the indentation there. Indentation has meaning in Python and in this case it does not meet the predefined rules for indentation
+ Python raises an ``IndentationError`` for line 2 because it was not expecting the indentation there. Indentation has meaning in Python and in this case it does not meet the predefined rules for indentation
 
 green: make it pass
 ^^^^^^^^^^^^^^^^^^^

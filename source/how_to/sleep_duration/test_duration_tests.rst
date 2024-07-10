@@ -315,7 +315,7 @@ green: make it pass
 
     SyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers
 
-  python does not know where the string ends or begins because the message has double quotes inside double quotes. I add the error to the list of :ref:`Exceptions`
+  Python does not know where the string ends or begins because the message has double quotes inside double quotes. I add the error to the list of :ref:`Exceptions`
 
   .. code-block:: python
 

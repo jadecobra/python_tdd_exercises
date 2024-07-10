@@ -13,8 +13,8 @@ exclude_patterns = [
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_title = 'Pumping Python: how to solve problems with Test Driven Development'
-html_short_title = 'Pumping Python'
+html_title = 'pumping python: how I solve problems with Test Driven Development'
+html_short_title = 'pumping python'
 html_logo = "_static/dry_favicon_16x16.png"
 html_favicon = '_static/dry_favicon_16x16.png'
 html_theme = 'press'
@@ -39,7 +39,7 @@ extensions = ['sphinx.ext.autosectionlabel']
 # autosectionlabel_prefix_document = True
 
 epub_theme = 'epub'
-epub_description = 'Pumping Python: how to solve problems with Test Driven Development'
+epub_description = 'pumping python: how I solve problems with Test Driven Development'
 epub_cover = ('_static/DRY.png', '')
 
 latex_logo = '_static/DRY.png'

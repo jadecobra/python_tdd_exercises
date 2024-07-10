@@ -89,7 +89,7 @@ green: make it pass
 
   * the test checks if the value of the call to ``functions.function_w_pass`` is :ref:`None`
   * the function definition simply says `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ yet the test passes
-  * `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is a placeholder keyword which allows the function definition to follow python syntax rules
+  * `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is a placeholder keyword which allows the function definition to follow Python syntax rules
   * the test passes because in Python all functions return :ref:`None` by default, like the function has an invisible line that says ``return None``
 
 ----

@@ -449,7 +449,7 @@ From the tests I can see that
 * :doc:`True </data_structures/booleans/booleans>` is not :ref:`None`
 * :doc:`False </data_structures/booleans/booleans>` is not :ref:`None`
 
-I could sum up the above statements this way - in Python :doc:`True </data_structures/booleans/booleans>`, :doc:`False </data_structures/booleans/booleans>` and :ref:`None` are different. My understanding of these differences helps me know how python behaves and gives a foundation of predictable expectations of the language.
+I could sum up the above statements this way - in Python :doc:`True </data_structures/booleans/booleans>`, :doc:`False </data_structures/booleans/booleans>` and :ref:`None` are different. My understanding of these differences helps me know howPython behaves and gives a foundation of predictable expectations of the language.
 
 ----
 

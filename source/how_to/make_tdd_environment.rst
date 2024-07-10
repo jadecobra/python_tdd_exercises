@@ -42,13 +42,13 @@ If you are using a Windows computer, try to install Linux_ with `Windows Subsyst
 
     wsl --install --distribution debian
 
-  .. tip:: if you cannot install `Windows Subsystem Linux`_, do not worry, I show what you can do to get the same results
+  .. tip:: if you cannot install `Windows Subsystem Linux`_, do not worry, there is still code for you
 
 
 linux requirements
 #################################################################################
 
-run these commands in a terminal to install python in Linux_
+run these commands in a terminal to install Python in Linux_
 
 .. code-block:: shell
 
@@ -97,7 +97,7 @@ how to manually make a python test driven development environment
 
     touch_/`New-Item`_ makes an empty file when given a name
 
-  - then an empty file called ``__init__.py`` in the ``tests`` folder/directory to tell Python that it is a `python package`_, this will help it find the tests later
+  - then I make an empty file called ``__init__.py`` in the ``tests`` folder/directory to tell Python that it is a `python package`_, this will help it find the tests later
 
     .. code-block:: shell
 
@@ -170,17 +170,17 @@ red: make it fail
 
   Here is an explanation of the code above
 
-  - ``import unittest`` imports unittest_ which is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ used for testing
+  - ``import unittest`` imports unittest_ which is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that is used for testing
   - ``class TestMagic`` is the definition of a test :doc:`class </classes/classes>`
 
-    * :doc:`class </classes/classes>` is the python keyword for making :doc:`/classes/classes`, which are a collection of attributes and :ref:`methods<functions>` for a purpose
+    * :doc:`class </classes/classes>` is the Python keyword for making :doc:`/classes/classes`, which are a collection of attributes and :ref:`methods<functions>` for a purpose
     * ``TestMagic`` is the name given to the :doc:`class </classes/classes>` that will hold the tests, you can use any name you want, as long as it starts with ``Test``
     * `unittest.TestCase`_ is a :doc:`class </classes/classes>` defined in the unittest_ :ref:`module<ModuleNotFoundError>` which has :doc:`methods (functions) </functions/functions>` for testing
     * ``TestMagic`` inherits from `unittest.TestCase`_, it is a child or clone of `unittest.TestCase`_ and can do the same things, I can also change its behavior in the :doc:`class</classes/classes>` definition
 
   - ``def test_failure`` is the definition of a test :ref:`method<functions>` to test the program I am making
 
-    * def_ is the python keyword for making :ref:`functions/methods<functions>`, a method is a function in a class
+    * def_ is the Python keyword for making :ref:`functions/methods<functions>`, a method is a function in a class
     * ``test_failure`` is the name of the :ref:`method<functions>`, you can use any name you want, as long as it starts with ``test_``
     * ``self`` is the ``TestMagic`` :ref:`class<classes>`. I use ``self`` to access :doc:`methods (functions) </functions/functions>` and :ref:`attributes<AttributeError>` of the ``TestMagic`` class and by extension `unittest.TestCase`_, this way I do not have to use ``TestMagic().`` or ``unittest.TestCase().`` to access their attributes and :ref:`methods<functions>`
     * ``self.assertFalse(True)`` is an assertion
@@ -246,8 +246,8 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The error in t
 * ``F`` indicates a failure
 * ``python3 -m unittest`` is the command to run tests with the ``unittest`` :ref:`module<ModuleNotFoundError>`
 
-  - ``python3`` is the major version of python being used
-  - ``-m`` is an option passed to python to run the :ref:`module<ModuleNotFoundError>` given after the option as a script
+  - ``python3`` is the major version of Python being used
+  - ``-m`` is an option passed to Python to run the :ref:`module<ModuleNotFoundError>` given after the option as a script
 
 * I recommend you keep a list of :doc:`Exceptions </how_to/exception_handling_programs>` you meet to become familiar with them, it helps when you run into errors later. Time to add :ref:`AssertionError` to the list
 
@@ -316,7 +316,7 @@ how to automatically run tests
 how to make a virtual environment
 ############################################################################################
 
-* I make a `virtual environment`_ with the venv_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_
+* I make a `virtual environment`_ with the venv_ :ref:`module<ModuleNotFoundError>`
 
   .. code-block:: python
 
@@ -328,9 +328,9 @@ how to make a virtual environment
 
       python -m venv .venv
 
-  - ``python3`` is the major version of python being used
-  - ``-m`` is an option passed to python to run the :ref:`module<ModuleNotFoundError>` given after the option as a script
-  - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ used to make a `virtual environment`_ with a given name. A `virtual environment`_ is a separate folder/directory where `python packages`_ needed by the project will be installed
+  - ``python3`` is the major version of Python being used
+  - ``-m`` is an option passed to Python to run the :ref:`module<ModuleNotFoundError>` given after the option as a script
+  - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that is used to make a `virtual environment`_ with a given name. A `virtual environment`_ is a separate folder/directory where `python packages`_ needed by the project will be installed
   - ``.venv`` is the name given for this `virtual environment`_, you can use any name you want
 
 * I activate the `virtual environment`_ to use it
@@ -369,7 +369,7 @@ how to make a virtual environment
 
     pip install --upgrade pip
 
-  - pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ used for installing `python packages`_
+  - pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that is used to install `python packages`_
   - ``install`` is an argument given to pip_ to install a given package name
   - ``--upgrade`` is an option given to the ``install`` argument for pip_ to upgrade the version of the `python package`_ given
   - ``pip`` is the package name given for pip_ to install, in this case it upgrades itself
@@ -402,7 +402,7 @@ how to make a virtual environment
 
   - echo_ is a program that writes its given arguments to the `standard output (stdout)`_
   - ``>`` is an operator that is used to send output from a program to the file given
-  - `pytest-watch`_ is a python program that automatically runs pytest_ when a python file in the folder/directory changes
+  - `pytest-watch`_ is a Python program that automatically runs pytest_ when a Python file in the folder/directory changes
   - pytest_ is a `python package`_ like unittest_ that is used for testing
   - ``requirements.txt`` is the name of a file where I can list `python packages`_ for pip_ to install, you can use any name you want
 

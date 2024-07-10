@@ -41,7 +41,7 @@ I open a new file, save it as ``test_attribute_error.py`` in the ``tests`` folde
   import unittest
   import module
 
-* ``import unittest`` imports the unittest_ module from the python standard library
+* ``import unittest`` imports the unittest_ module from thePython standard library
 * ``import module`` imports the ``module`` module - which will hold the code I am testing
 
 the terminal shows a :ref:`ModuleNotFoundError` if you have not yet done the :doc:`/how_to/exception_handling_tests` chapter
@@ -50,7 +50,7 @@ the terminal shows a :ref:`ModuleNotFoundError` if you have not yet done the :do
 
   ModuleNotFoundError: No module called 'module'
 
-A :ref:`ModuleNotFoundError` is raised when a name is provided to an `import statement`_ and python cannot find the name. Since there is currently no file called ``module.py`` the ``import module`` line causes a failure
+A :ref:`ModuleNotFoundError` is raised when a name is provided to an `import statement`_ andPython cannot find the name. Since there is currently no file called ``module.py`` the ``import module`` line causes a failure
 
 green: make it pass
 #################################################################################

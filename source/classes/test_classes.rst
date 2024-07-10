@@ -58,7 +58,7 @@ green: make it pass
     # AssertionError
     # ModuleNotFoundError
 
-* I make a python module called ``classes.py`` and the terminal shows an :ref:`AttributeError` which I add to the list of :ref:`Exceptions` encountered
+* I make Python module called ``classes.py`` and the terminal shows an :ref:`AttributeError` which I add to the list of :ref:`Exceptions` encountered
 
   .. code-block:: python
 
@@ -91,7 +91,7 @@ green: make it pass
 
     ClassWithPass = None
 
-* and then redefine the variable as a class using the python `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword
+* and then redefine the variable as a class using thePython `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword
 
   .. code-block:: python
 
@@ -109,7 +109,7 @@ green: make it pass
     # NameError
     # IndentationError
 
-* python has the `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword to use as a placeholder for moments like this cue `Kelly Clarkson <https://youtu.be/S7b8ADhadJU?si=TxScdecOYlsxB5uW>`_
+*Python has the `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword to use as a placeholder for moments like this cue `Kelly Clarkson <https://youtu.be/S7b8ADhadJU?si=TxScdecOYlsxB5uW>`_
 
   .. code-block:: python
 

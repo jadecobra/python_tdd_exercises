@@ -152,7 +152,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
     def accepts_positional_and_keyword_arguments(first_name=None, last_name=None):
         return first_name, last_name
 
-  I still have passing tests. It looks like python lets us use default arguments with no issues, and I can provide keyword arguments positionally without using the name.
+  I still have passing tests. It looks like Python lets us use default arguments with no issues, and I can provide keyword arguments positionally without using the name.
 
 * I add another test to ``test_functions_w_positional_and_keyword_arguments`` to show this
 

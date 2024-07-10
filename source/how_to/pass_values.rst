@@ -218,7 +218,7 @@ the terminal shows passing tests
 test_passing_data_structures
 *********************************************************************************
 
-I want to try this with other python data structures to see what happens
+I want to try this with other Python data structures to see what happens
 
 red: make it fail
 #################################################################################

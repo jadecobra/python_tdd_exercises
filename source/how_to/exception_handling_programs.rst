@@ -535,7 +535,7 @@ review
 *********************************************************************************
 
 CONGRATULATIONS
-Your python powers are growing, you have seen
+Your Python powers are growing, you have seen
 
 * how to deliberately raise exceptions
 * how to verify that exceptions are raised

@@ -124,7 +124,7 @@ green: make it pass
 
     AttributeError: module 'src.calculator' has no attribute 'add'
 
-  An :ref:`AttributeError` is raised when accessing or calling an attribute that python cannot find. I think of ``src.calculator.add`` as an address
+  An :ref:`AttributeError` is raised when accessing or calling an attribute that Python cannot find. I think of ``src.calculator.add`` as an address
 
   * ``src.calculator`` refers to ``calculator.py`` in the ``src`` folder/directory
   * ``add`` refers to something (an attribute) within the ``calculator.py`` file which is currently empty

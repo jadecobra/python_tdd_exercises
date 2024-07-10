@@ -148,7 +148,7 @@ green: make it pass
   * ``self.assertIsNone(functions.function_a("a"))`` I am checking if the call ``functions.function_a("a")`` is equal to :ref:`None`
   * ``functions.function_a("a")`` is the call. I think of it like an address
 
-    - ``functions`` refers to ``functions.py`` which is a python module
+    - ``functions`` refers to ``functions.py`` which is a Python module
     - ``function_a`` refers to the name ``function_a`` defined in ``functions.py``
     - ``()`` is how a function is called after it is defined
     - ``"a"`` is the value passed to ``function_a`` as input

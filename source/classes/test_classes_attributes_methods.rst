@@ -101,7 +101,7 @@ refactor: make it better
 red: make it fail
 ---------------------------------------------------------------------------------
 
-Let us add more tests with the other python data structures to ``test_classes_w_attributes``
+Let us add more tests with the other Python data structures to ``test_classes_w_attributes``
 
 .. code-block:: python
 

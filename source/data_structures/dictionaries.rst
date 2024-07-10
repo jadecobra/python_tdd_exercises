@@ -743,7 +743,7 @@ What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datas
     >       self.assertIsNone(a_dictionary['non_existent_key'])
     E       KeyError: 'non_existent_key'
 
-* I can use the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :ref:`method<functions>` when I do not want python to raise a KeyError_ for a key that does not exist
+* I can use the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :ref:`method<functions>` when I do not wantPython to raise a KeyError_ for a key that does not exist
 
   .. code-block:: python
 
