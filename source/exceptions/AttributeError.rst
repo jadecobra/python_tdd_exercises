@@ -739,7 +739,7 @@ and learned
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :ref:`class <classes>`
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining attributes (variables) in a :ref:`class <classes>`
-* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :ref:`methods (functions) <functions>`in a :ref:`class <classes>`
+* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :ref:`methods (functions) <functions>` in a :ref:`class <classes>`
 
 :ref:`classes` vs :doc:`/functions/functions` in Python
 

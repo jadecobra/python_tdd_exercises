@@ -175,7 +175,7 @@ red: make it fail
 
     * ``class``` is the Python keyword for making :ref:`classes`, which are a collection of :ref:`attributes<AttributeError>` and :ref:`methods<functions>` for a purpose
     * ``TestMagic`` is the name of this :ref:`class <classes>` that will hold the test. You can use any name as long as it starts with ``Test``
-    * `unittest.TestCase`_ is a :ref:`class <classes>` defined in the unittest_ :ref:`module<ModuleNotFoundError>` which has :ref:`methods (functions) <functions>`for testing
+    * `unittest.TestCase`_ is a :ref:`class <classes>` defined in the unittest_ :ref:`module<ModuleNotFoundError>` which has :ref:`methods (functions) <functions>` for testing
     * ``class TestMagic(unittest.TestCase)`` defines that ``TestMagic`` inherits from `unittest.TestCase`_, it is a child or clone of `unittest.TestCase`_ and can do the same things, I can also change its behavior in its definition
 
   - ``def test_failure``
