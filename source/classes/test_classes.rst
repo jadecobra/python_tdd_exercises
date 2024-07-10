@@ -12,15 +12,13 @@ classes: test_classes
 
 ----
 
-``classes`` are things that represent an object. I think of ``classes`` as a a container of :doc:`methods (functions) </functions/functions>` and ``attributes (variables)`` that belong together
-
 *********************************************************************************
 how to make a class in Python
 *********************************************************************************
 
 * use the `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword
 * use ``TitleCase`` for the name
-* use a descriptive name that describes the collection of :doc:`methods (functions) </functions/functions>` and ``attributes (variables)`` - this is hard to do and is something I am still learning
+* use a name that tells what the collection of :ref:`attributes<AttributeError>` and :doc:`methods (functions) </functions/functions>` does - this is hard to do and is something I am still learning
 
 ----
 .. _test_defining_classes_w_pass

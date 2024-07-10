@@ -391,12 +391,16 @@ refactor: make it better
 test_attribute_error_w_classes
 *********************************************************************************
 
-I think of a :doc:`class </classes/classes>` as a container of :doc:`methods (functions) </functions/functions>` and attributes that represents an object_
+I think of a :doc:`class </classes/classes>` as a container of :ref:`attributes<AttributeError>` and :doc:`methods (functions) </functions/functions>` that represents an object_
 
-- attributes are names which represent a value
-- :ref:`methods<functions>` are :doc:`/functions/functions` that may be able to accept inputs and may return a value - they are callable_
+- attributes are names which represent something
+- :ref:`methods<functions>` are :doc:`/functions/functions`, they
 
-For example I could define a ``Human`` class with attributes like eye color, date of birth, height and weight. I could also define :ref:`methods<functions>` like age which returns a value based on the current year and date of birth attribute
+  * can accept inputs if you want
+  * return values and
+  * are callable_
+
+For example I can define a ``Human`` class with attributes like eye color, date of birth, height and weight. I can also define :ref:`methods<functions>` like age which returns a value based on the current year and date of birth attribute
 
 .. _test_attribute_error_w_classes_red:
 
