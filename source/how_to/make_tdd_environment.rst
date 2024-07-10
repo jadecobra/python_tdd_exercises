@@ -123,7 +123,7 @@ how to manually make a python test driven development environment
 
         New-Item tests/test_magic.py
 
-    you can use any name you want, as long as it starts with ``test_``
+    you can use any name as long as it starts with ``test_``
 
 * these are the folders/directories and files in the project
 
@@ -175,21 +175,21 @@ red: make it fail
   - ``import unittest`` imports the unittest_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used for testing
   - ``class TestMagic``
 
-    * ``class``` is the Python keyword for making :ref:`classes`, which are a collection of :ref:`attributes<AttributeError>` and :ref:`methods<functions>` for a purpose
+    * ``class`` is the Python keyword for making :ref:`classes`, which are a collection of :ref:`attributes<AttributeError>` and :ref:`methods<functions>` for a purpose
     * ``TestMagic`` is the name of this :ref:`class <classes>` that will hold the test. You can use any name as long as it starts with ``Test``
     * `unittest.TestCase`_ is a :ref:`class <classes>` defined in the unittest_ :ref:`module<ModuleNotFoundError>` which has :ref:`methods (functions) <functions>` for testing
-    * ``class TestMagic(unittest.TestCase)`` defines that ``TestMagic`` inherits from `unittest.TestCase`_ which allows me use its :ref:`methods (functions) <functions>` for testing
+    * ``class TestMagic(unittest.TestCase)`` defines that ``TestMagic`` inherits from `unittest.TestCase`_ which allows me use its :ref:`methods (functions) <functions>`
 
   - ``def test_failure``
 
     * def_ is the Python keyword for making :ref:`methods and functions<functions>`, a method is a function in a class
     * ``test_failure`` is the name of this :ref:`method<functions>`, you can use any name as long as it starts with ``test_``
-    * ``self`` is the ``TestMagic`` :ref:`class<classes>`. I use ``self`` to access :ref:`attributes<AttributeError>` and :ref:`methods (functions) <functions>` of the ``TestMagic`` class and by extension `unittest.TestCase`_ instead of using ``TestMagic().`` or ``unittest.TestCase().``
+    * ``self`` is the ``TestMagic`` :ref:`class<classes>`. I use ``self`` to access :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the ``TestMagic`` class and by extension `unittest.TestCase`_ instead of using ``TestMagic().`` or ``unittest.TestCase().``
     * ``self.assertFalse(True)`` is an assertion
 
       - assertFalse_ is a :ref:`method<functions>` in the `unittest.TestCase`_ :ref:`class <classes>` that checks if its input is :ref:`False <test_what_is_false>`
       - :ref:`True <test_what_is_true>` is given as input to ``assertFalse``
-      - I expect the assertion to fail because :ref:`True <test_what_is_true>` is not :ref:`False <test_what_is_false>`, I have a problem if it does not fail
+      - I expect this line to fail because :ref:`True <test_what_is_true>` is not :ref:`False <test_what_is_false>`, I have a problem if it does not fail
 
 * I turn on the ``Auto Save`` feature in the Integrated Development Environment (IDE) to automatically save files when I make a change so `I do not repeat myself`_ by hitting save every time I make a change
 * then type this in the terminal to run the test
@@ -333,7 +333,7 @@ how to make a virtual environment
   - ``python3`` is the major version of Python being used
   - ``-m`` is an option passed to Python to run the :ref:`module<ModuleNotFoundError>` given after the option as a script
   - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to make a `virtual environment`_ with a given name. A `virtual environment`_ is a separate folder/directory where `python packages`_ needed by the project will be installed
-  - ``.venv`` is the name given for this `virtual environment`_, you can use any name you want
+  - ``.venv`` is the name given for this `virtual environment`_, you can use any name
 
 * I activate the `virtual environment`_ to use it
 
@@ -347,7 +347,7 @@ how to make a virtual environment
 
       Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 
-    this will enable scripts that have been signed by a verified publisher if you confirm, you can read more at `Set-ExecutionPolicy`_. Activate the virtual environment in PowerShell_
+    confirm the change and it will enable scripts that have been signed by a verified publisher to run on your computer, you can read more at `Set-ExecutionPolicy`_. Activate the virtual environment in PowerShell_
 
     .. code-block::
 
@@ -390,7 +390,7 @@ how to make a virtual environment
     ------- -------
     pip     x.y.z
 
-* I make a file with `pytest-watch`_ as its text, called ``requirements.txt`` in the ``magic`` folder/directory
+* I make a file in the ``magic`` folder/directory with `pytest-watch`_ as its text
 
   .. code-block:: shell
 
@@ -403,10 +403,10 @@ how to make a virtual environment
       "pytest-watch" > requirements.txt
 
   - echo_ is a program that writes its given arguments to the `standard output (stdout)`_
-  - ``>`` is an operator that is used to send output from a program to the file given
+  - ``>`` is an operator that is used to send output from a program to the given file
   - `pytest-watch`_ is a Python program that automatically runs pytest_ when a Python file in the folder/directory changes
   - pytest_ is a `python package`_ like unittest_ that is used for testing
-  - ``requirements.txt`` is the name of a file where I can list `python packages`_ for pip_ to install, you can use any name you want
+  - ``requirements.txt`` is the name of a file where I can list `python packages`_ for pip_ to install, you can use any name
 
 * I install `pytest-watch`_ and its dependencies
 
@@ -494,7 +494,7 @@ how to make a virtual environment
 
   then I change it back to :ref:`False <test_what_is_false>` to make it pass and can write the rest of the code for the project while the tests run automatically
 
-  .. tip:: press ``ctrl`` + ``c`` on the keyboard in the terminal when you want to stop the tests
+  .. tip:: press ``ctrl`` + ``c`` on the keyboard in the terminal to stop the tests at anytime
 
 ----
 
@@ -603,9 +603,9 @@ You made it this far and have become the greatest programmer in the world. To fo
     touch tests/test_$PROJECT_NAME.py
     python3 -m venv .venv
     source .venv/bin/activate
-    python3 -m pip install --upgrade pip
+    pip install --upgrade pip
     echo pytest-watch > requirements.txt
-    python3 -m pip install --requirement requirements.txt
+    pip install --requirement requirements.txt
     pytest-watch
 
   ``$1`` represents the first argument given when the program is called, you can use it in place of ``$PROJECT_NAME``
@@ -624,7 +624,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     chmod +x makePythonTdd.sh
 
-  chmod_ is a program that changes the mode of the file given
+  chmod_ is a program that changes the mode of the given file
 
 * I can make a `Test Driven Development`_ environment when I call the program with a name for the ``PROJECT_NAME`` variable. For example, when I type
 
@@ -675,7 +675,7 @@ how to automatically make a python test driven development environment on window
 review
 ********************************************************************************************
 
-One of the advantages of programming is that I can take some steps and make them a one line command for the computer to do for me. You have seen a way to make a Python Test Driven Development Environment, and have a program to do it for you anytime you want on any Linux_, Windows_ or MacOS_.
+One of the advantages of programming is that I can take some steps and make them a one line command for the computer to do for me. You have seen a way to make a Python Test Driven Development Environment, and have a program to do it for you on any Linux_, Windows_ or MacOS_ computer.
 
 Would you like to test :doc:`/how_to/calculator`?
 
