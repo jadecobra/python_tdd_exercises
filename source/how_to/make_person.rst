@@ -136,7 +136,7 @@ refactor: make it better
     class TestPersonFactory(unittest.TestCase):
     ...
 
-  the terminal shows a :ref:`TypeError` since the ``person.factory`` :doc:`function</functions/functions>` signature does not allow it accept inputs and the test sends four arguments when it calls the :ref:`function<functions>`
+  the terminal shows a :ref:`TypeError` since the ``person.factory`` :ref:`function<functions>` signature does not allow it accept inputs and the test sends four arguments when it calls the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -203,7 +203,7 @@ refactor: make it better
     import unittest
 
   ``import datetime`` imports the ``datetime`` library so I can use its :doc:`/functions/functions` and :doc:`classes </classes/classes>`
-* then I add a call in the ``this_year`` :doc:`function  </functions/functions>` in ``test_person.py`` to return the current year
+* then I add a call in the ``this_year`` :ref:`function <functions>` in ``test_person.py`` to return the current year
 
   .. code-block:: python
 
@@ -485,7 +485,7 @@ red: make it fail
     ):
     ...
 
-  the terminal shows passing tests. When no value is given for the ``last_name`` argument to ``person.factory`` it uses ``"last_name"`` because that is the defined default value in the :doc:`function</functions/functions>` signature
+  the terminal shows passing tests. When no value is given for the ``last_name`` argument to ``person.factory`` it uses ``"last_name"`` because that is the defined default value in the :ref:`function<functions>` signature
 
 .. _test_factory_w_sex_default_keyword_argument:
 

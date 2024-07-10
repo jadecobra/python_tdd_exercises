@@ -174,20 +174,20 @@ red: make it fail
   - ``class TestMagic``
 
     * ``class``` is the Python keyword for making :doc:`/classes/classes`, which are a collection of :ref:`attributes<AttributeError>` and :ref:`methods<functions>` for a purpose
-    * ``TestMagic`` is the name given to the :doc:`class </classes/classes>` that will hold the tests, you can use any name you want, as long as it starts with ``Test``
-    * `unittest.TestCase`_ is a :doc:`class </classes/classes>` defined in the unittest_ :ref:`module<ModuleNotFoundError>` which has :doc:`methods (functions) </functions/functions>` for testing
-    * ``TestMagic`` inherits from `unittest.TestCase`_, it is a child or clone of `unittest.TestCase`_ and can do the same things, I can also change its behavior in the :doc:`class</classes/classes>` definition
+    * ``TestMagic`` is the name of this :doc:`class </classes/classes>` that will hold the test. You can use any name as long as it starts with ``Test``
+    * `unittest.TestCase`_ is a :doc:`class </classes/classes>` defined in the unittest_ :ref:`module<ModuleNotFoundError>` which has :ref:`methods (functions) <functions>`for testing
+    * ``class TestMagic(unittest.TestCase)`` defines that ``TestMagic`` inherits from `unittest.TestCase`_, it is a child or clone of `unittest.TestCase`_ and can do the same things, I can also change its behavior in its definition
 
   - ``def test_failure``
 
-    * def_ is the Python keyword for making :ref:`functions/methods<functions>`, a method is a function in a class
-    * ``test_failure`` is the name of this :ref:`method<functions>`, you can use any name you want, as long as it starts with ``test_``
-    * ``self`` is the ``TestMagic`` :ref:`class<classes>`. I use it to access :ref:`attributes<AttributeError>` and :ref:`methods (functions) <functions>` of the ``TestMagic`` class and by extension `unittest.TestCase`_, this way I do not have to use ``TestMagic().`` or ``unittest.TestCase().`` to access their :ref:`attributes<AttributeError>` and :ref:`methods<functions>`
+    * def_ is the Python keyword for making :ref:`methods and functions<functions>`, a method is a function in a class
+    * ``test_failure`` is the name of this :ref:`method<functions>`, you can use any name as long as it starts with ``test_``
+    * ``self`` is the ``TestMagic`` :ref:`class<classes>`. I use ``self`` to access :ref:`attributes<AttributeError>` and :ref:`methods (functions) <functions>` of the ``TestMagic`` class and by extension `unittest.TestCase`_ instead of ``TestMagic().`` or ``unittest.TestCase().``
     * ``self.assertFalse(True)`` is an assertion
 
       - assertFalse_ is a :ref:`method<functions>` in the `unittest.TestCase`_ :doc:`class </classes/classes>` that checks if its input is :doc:`False </data_structures/booleans/booleans>`
       - :doc:`True </data_structures/booleans/booleans>` is given as input to ``assertFalse``
-      - I expect the assertion line to fail because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`, there is a problem if it passes
+      - I expect the assertion to fail because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`, I have a problem if it does not fail
 
 * I turn on the ``Auto Save`` feature in the Integrated Development Environment (IDE) to automatically save files when I make a change so `I do not repeat myself`_ by hitting save every time I make a change
 * then type this in the terminal to run the test
@@ -224,18 +224,18 @@ red: make it fail
 
 If you are typing along, *CONGRATULATIONS!* You just wrote a test.
 
-This is the ``RED`` part of the `Test Driven Development`_ cycle. The error in the terminal has important information, here is an explanation from the bottom up
+This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in the terminal is about the failure, here is an explanation from the bottom up
 
 * ``FAILED (failures=1)`` the number of failures
 * ``Ran 1 test in A.XYZs`` the number of tests run and how long it took
 * ``AssertionError: True is not false`` the :ref:`Exception<Exceptions>` raised and its message, in this case an :ref:`AssertionError` is raised because :doc:`True </data_structures/booleans/booleans>` is not :doc:`False </data_structures/booleans/booleans>`
-* ``self.assertFalse(True)`` the line of code that caused the failure/error
-* ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` the line number and location of the file where the :ref:`AssertionError` happened
+* ``self.assertFalse(True)`` the line of code that caused the failure
+* ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` the line number and location of the file where the failure happened
 
-  .. tip:: Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click with your mouse on ``File ".../magic/tests/test_magic.py", line 7`` in the terminal, and the Integrated Development Environment (IDE) will open the file in the editor with the cursor at the line where the error happened
+  .. tip:: Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``File ".../magic/tests/test_magic.py", line 7`` with your mouse in the terminal, and the Integrated Development Environment (IDE) will open the file in the editor with the cursor at the line where the failure happened
 
-* ``Traceback (most recent call last):`` all the indented information shown after this line shows the calls that led to the error
-* ``FAIL: test_failure (tests.test_magic.TestMagic.test_failure)`` is a header with information in :doc:`dot notation</dot_notation>` about the test
+* ``Traceback (most recent call last):`` all the information shown after this line that is indented to the right shows the calls that led to the failure
+* ``FAIL: test_failure (tests.test_magic.TestMagic.test_failure)`` is a header with information in :doc:`dot notation</dot_notation>` about the failing test :ref:`method<functions>`
 
   - ``tests.test_magic.TestMagic.test_failure`` is the location of the failing test
   -  ``tests`` is the ``tests`` folder/directory
@@ -249,7 +249,7 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The error in t
   - ``python3`` is the major version of Python being used
   - ``-m`` is an option passed to Python to run the :ref:`module<ModuleNotFoundError>` given after the option as a script
 
-* I recommend you keep a list of :doc:`Exceptions </how_to/exception_handling_programs>` you meet to become familiar with them, it helps when you run into errors later. Time to add :ref:`AssertionError` to the list
+* I recommend you keep a list of :doc:`Exceptions </how_to/exception_handling_programs>` you meet to become familiar with them, it helps when you run into failures later. Time to add :ref:`AssertionError` to the list
 
   .. code-block:: python
 

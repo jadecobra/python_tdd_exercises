@@ -209,7 +209,7 @@ refactor: make it better
         return list(argument)
 
   the test passes
-* I make the name of the :doc:`function's </functions/functions>` input from ``argument`` to ``iterable`` to make it more explicit
+* I make the name of the :ref:`function's<functions>` input from ``argument`` to ``iterable`` to make it more explicit
 
   .. code-block:: python
 
@@ -291,7 +291,7 @@ green: make it pass
     def for_loop():
         return None
 
-  and the terminal shows a :ref:`TypeError` because the :doc:`function</functions/functions>` signature does not match the call in the test
+  and the terminal shows a :ref:`TypeError` because the :ref:`function<functions>` signature does not match the call in the test
 
   .. code-block:: python
 

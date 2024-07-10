@@ -198,7 +198,7 @@ green: make it pass
 
     TypeError: exception_handler() takes 0 positional arguments but 1 was given
 
-* I make the :doc:`function</functions/functions>` signature for ``exception_handler`` accept a positional argument
+* I make the :ref:`function<functions>` signature for ``exception_handler`` accept a positional argument
 
   .. code-block:: python
 

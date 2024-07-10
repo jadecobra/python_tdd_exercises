@@ -77,7 +77,7 @@ green: make it pass
 
     TypeError: accepts_positional_and_keyword_arguments() got an unexpected keyword argument 'last_name'
 
-* I make the :doc:`function</functions/functions>` signature to take in an argument
+* I make the :ref:`function<functions>` signature to take in an argument
 
   .. code-block:: python
 
@@ -90,7 +90,7 @@ green: make it pass
 
     TypeError: accepts_positional_and_keyword_arguments() got multiple values for argument 'last_name'
 
-* I add another argument to the :doc:`function</functions/functions>` signature
+* I add another argument to the :ref:`function<functions>` signature
 
   .. code-block:: python
 
@@ -134,7 +134,7 @@ green: make it pass
 refactor: make it better
 *********************************************************************************
 
-Hold on a second. This looks exactly like what I did in ``test_functions_w_positional_arguments``. I cannot tell from the :doc:`function</functions/functions>` signature which argument is positional and which is a keyword argument and do not want to wait for the function to fail when I send in values to find out
+Hold on a second. This looks exactly like what I did in ``test_functions_w_positional_arguments``. I cannot tell from the :ref:`function<functions>` signature which argument is positional and which is a keyword argument and do not want to wait for the function to fail when I send in values to find out
 
 * I make the signature of ``accepts_positional_and_keyword_arguments`` to have a default value for the keyword argument
 
