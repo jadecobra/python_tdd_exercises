@@ -377,7 +377,13 @@ how to make a virtual environment
 
   .. code-block:: python
 
-    pip install --upgrade pip
+    python3 -m pip install --upgrade pip
+
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use ``python`` instead of ``python3``
+
+    .. code-block:: shell
+
+      python -m pip install --upgrade pip
 
   - pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to install `python packages`_
   - ``install`` is an argument given to pip_ to install a given package name
