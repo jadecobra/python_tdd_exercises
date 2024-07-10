@@ -23,7 +23,7 @@ requirements
 *********************************************************************************
 
 * download and install `Python <https://www.python.org/downloads/>`_
-* An Integrated Development Environment (IDE). Here are a few options
+* get an Integrated Development Environment (IDE). Here are a few options
 
   - `Visual Studio Code`_
   - `Other Integrated Development Environment (IDE) options <https://wiki.python.org/moin/IntegratedDevelopmentEnvironments>`_
@@ -42,7 +42,7 @@ If you are using a Windows computer, try to install Linux_ with `Windows Subsyst
 
     wsl --install --distribution debian
 
-  .. tip:: if you cannot install `Windows Subsystem Linux`_, do not worry, there is still code for you
+  .. tip:: if you cannot install `Windows Subsystem Linux`_, do not worry, there is code for you too
 
 
 linux requirements
@@ -81,7 +81,7 @@ how to manually make a python test driven development environment
 
     mkdir src tests
 
-* then add empty files for the project
+* then add empty files
 
   - first an empty file that will hold the source code for the program
 
@@ -103,7 +103,7 @@ how to manually make a python test driven development environment
 
       touch tests/__init__.py
 
-    .. WARNING:: make sure you use two underscores (__) for ``__init__.py``
+    .. WARNING:: make sure to use two underscores (__) for ``__init__.py``
 
     .. admonition:: on Windows without `Windows Subsystem Linux`_ use ``New-Item``
 
@@ -125,7 +125,7 @@ how to manually make a python test driven development environment
 
     you can use any name you want, as long as it starts with ``test_``
 
-* Here is what the folder/directory structure looks like
+* these are the folders/directories and files in the project
 
   .. code-block:: python
 
@@ -135,6 +135,8 @@ how to manually make a python test driven development environment
       ╰──tests
          ╰──__init__.py
          ╰──test_magic.py
+
+  ``py`` at the end of a file shows that it is a Python :ref:`module<ModuleNotFoundError>`
 
 ----
 
@@ -170,7 +172,7 @@ red: make it fail
 
   Here is an explanation of the code above
 
-  - ``import unittest`` imports unittest_ which is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that is used for testing
+  - ``import unittest`` imports the unittest_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used for testing
   - ``class TestMagic``
 
     * ``class``` is the Python keyword for making :ref:`classes`, which are a collection of :ref:`attributes<AttributeError>` and :ref:`methods<functions>` for a purpose
@@ -330,7 +332,7 @@ how to make a virtual environment
 
   - ``python3`` is the major version of Python being used
   - ``-m`` is an option passed to Python to run the :ref:`module<ModuleNotFoundError>` given after the option as a script
-  - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that is used to make a `virtual environment`_ with a given name. A `virtual environment`_ is a separate folder/directory where `python packages`_ needed by the project will be installed
+  - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to make a `virtual environment`_ with a given name. A `virtual environment`_ is a separate folder/directory where `python packages`_ needed by the project will be installed
   - ``.venv`` is the name given for this `virtual environment`_, you can use any name you want
 
 * I activate the `virtual environment`_ to use it
@@ -369,7 +371,7 @@ how to make a virtual environment
 
     pip install --upgrade pip
 
-  - pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that is used to install `python packages`_
+  - pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to install `python packages`_
   - ``install`` is an argument given to pip_ to install a given package name
   - ``--upgrade`` is an option given to the ``install`` argument for pip_ to upgrade the version of the `python package`_ given
   - ``pip`` is the package name given for pip_ to install, in this case it upgrades itself
