@@ -11,7 +11,6 @@
 .. _boolean: https://docs.python.org/3/library/functions.html#bool
 .. _booleans: https://docs.python.org/3/library/functions.html#bool
 .. _callable: https://docs.python.org/3/glossary.html#term-callable
-.. _cat: https://www.man7.org/linux/man-pages/man1/cat.1.html
 .. _cd: https://man7.org/linux/man-pages/man1/cd.1p.html
 .. _chmod: https://en.wikipedia.org/wiki/Chmod
 .. _class: https://docs.python.org/3/reference/lexical_analysis.html#keywords
@@ -87,6 +86,7 @@
 
 .. _Debian: https://www.debian.org
 .. _False: https://docs.python.org/3/library/constants.html?highlight=true#False
+.. _remove duplication: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
 .. _I Do Not Repeat myself: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
 .. _Linux distributions: https://en.wikipedia.org/wiki/List_of_Linux_distributions
 .. _Linux: https://www.kernel.org/category/about.html

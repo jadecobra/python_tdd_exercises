@@ -27,8 +27,8 @@ requirements
 
   - `Visual Studio Code`_
   - `Sublime Text`_
-  - `PyCharm`_
-  - `Other Integrated Development Environment (IDE) options <https://wiki.python.org/moin/IntegratedDevelopmentEnvironments>`_
+  - PyCharm_
+  - `other Integrated Development Environment (IDE) options <https://wiki.python.org/moin/IntegratedDevelopmentEnvironments>`_
 
 windows requirements
 #################################################################################
@@ -77,7 +77,7 @@ how to manually make a python test driven development environment
 
   this is where all code for the project will stay
 
-* I make a child folder/directory for the source code
+* I make a child folder for the source code
 
   .. code-block:: shell
 
@@ -97,13 +97,13 @@ how to manually make a python test driven development environment
 
   touch_/`New-Item`_ makes an empty file when given a name
 
-* I make a child folder/directory one for the tests
+* I make a child directory for the tests
 
   .. code-block:: shell
 
     mkdir tests
 
-  - then an empty file called ``__init__.py`` in the ``tests`` folder/directory to tell Python that it is a `python package`_, this will help it find the tests later
+  - then an empty file called ``__init__.py`` in the ``tests`` folder to tell Python that it is a `python package`_, this will help it find the tests later
 
     .. code-block:: shell
 
@@ -117,7 +117,7 @@ how to manually make a python test driven development environment
 
         New-Item tests/__init__.py
 
-  - and one more empty file in the ``tests`` folder/directory for the actual test
+  - and one more empty file in the ``tests`` directory for the actual test
 
     .. code-block:: shell
 
@@ -154,7 +154,7 @@ The `Test Driven Development`_ cycle is ``RED GREEN REFACTOR``
 
 * **RED**: make it fail - write a failing test to make sure the test works
 * **GREEN**: make it pass - write only what is needed to make the failing test pass
-* **REFACTOR**: make it better - `remove duplication <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
+* **REFACTOR**: make it better - `remove duplication`_
 
 .. _test_failure_red:
 
@@ -182,7 +182,7 @@ red: make it fail
   - ``class TestMagic``
 
     * ``class`` is the Python keyword for making :ref:`classes`, which are a collection of :ref:`attributes<AttributeError>` and :ref:`methods<functions>` for a purpose
-    * ``TestMagic`` is the name of this :ref:`class <classes>` that will hold the test. You can use any name as long as it starts with ``Test``
+    * ``TestMagic`` is the name of this :ref:`class <classes>` and will hold the test. You can use any name as long as it starts with ``Test``
     * `unittest.TestCase`_ is a :ref:`class <classes>` defined in the unittest_ :ref:`module<ModuleNotFoundError>` which has :ref:`methods (functions) <functions>` for testing
     * ``class TestMagic(unittest.TestCase)`` defines that ``TestMagic`` inherits from `unittest.TestCase`_ which allows me use its :ref:`methods (functions) <functions>`
 
@@ -190,14 +190,14 @@ red: make it fail
 
     * def_ is the Python keyword for making :ref:`methods and functions<functions>`, a method is a function in a class
     * ``test_failure`` is the name of this :ref:`method<functions>`, you can use any name as long as it starts with ``test_``
-    * ``self`` is the ``TestMagic`` :ref:`class<classes>`. I use ``self`` to access :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the ``TestMagic`` class and by extension `unittest.TestCase`_ instead of using ``TestMagic().`` or ``unittest.TestCase().``
+    * ``self`` is used to access :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the ``TestMagic`` class and by extension `unittest.TestCase`_ instead of using ``TestMagic().`` or ``unittest.TestCase().``
     * ``self.assertFalse(True)`` is an assertion
 
       - assertFalse_ is a :ref:`method<functions>` in the `unittest.TestCase`_ :ref:`class <classes>` that checks if its input is :ref:`False <test_what_is_false>`
-      - :ref:`True <test_what_is_true>` is given as input to ``assertFalse``
-      - I expect this line to fail because :ref:`True <test_what_is_true>` is not :ref:`False <test_what_is_false>`, I have a problem if it does not fail
+      - :ref:`True <test_what_is_true>` is given as the input
+      - I expect this line to fail because :ref:`True <test_what_is_true>` is not :ref:`False <test_what_is_false>`, there is a problem if it does not fail
 
-* I turn on the ``Auto Save`` feature in the Integrated Development Environment (IDE) to automatically save files when I make a change so `I do not repeat myself`_ by hitting save every time I make a change
+* I turn on the ``Auto Save`` feature in the Integrated Development Environment (IDE) to automatically save files when I make a change so `I do not repeat myself`_ by manually saving every time there is a change
 * then type this in the terminal to run the test
 
   .. code-block:: python
@@ -246,7 +246,7 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
 * ``FAIL: test_failure (tests.test_magic.TestMagic.test_failure)`` is a header with information in :doc:`dot notation</dot_notation>` about the failing test :ref:`method<functions>`
 
   - ``tests.test_magic.TestMagic.test_failure`` is the location of the failing test
-  -  ``tests`` is the ``tests`` folder/directory
+  -  ``tests`` is the ``tests`` folder, this is one of the reasons the ``__init__.py`` file was added to the folder
   -  ``test_magic`` is the ``test_magic.py`` file
   - ``TestMagic`` is the :ref:`class <classes>` defined on line 4
   - ``test_failure`` is the :ref:`method<functions>` defined on line 6
@@ -312,7 +312,7 @@ and it shows a passing test
 refactor: make it better
 ############################################################################################
 
-I ran ``python3 -m unittest`` to see the test fail, again to see the test pass, and will have to run it again when I make a code change, to make sure tests that were passing are not broken and the new code does what I expect.
+I ran ``python3 -m unittest`` to see the test fail, ran it again to see the test pass, and will have to run it when I make a code change, to make sure tests that were passing are not broken and the new code does what I expect.
 This means it is run for each part of the `Test Driven Development`_ cycle or any time there is a code change. I do not want to type ``python3 -m unittest`` again, it is better for a program to run the tests so `I do not repeat myself`_.
 
 ----
@@ -339,7 +339,7 @@ how to make a virtual environment
   - ``python3`` is the major version of Python being used
   - ``-m`` is an option passed to Python to run the :ref:`module<ModuleNotFoundError>` given after the option as a script
   - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to make a `virtual environment`_ with a given name. A `virtual environment`_ is a separate folder/directory where `python packages`_ needed by the project will be installed
-  - ``.venv`` is the name given for this `virtual environment`_, you can use any name
+  - ``.venv`` is the name given for this, you can use any name
 
 * I activate the `virtual environment`_ to use it
 
@@ -365,7 +365,9 @@ how to make a virtual environment
 
       [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 
-    type ``Y`` to confirm the change and it will enable scripts that have been signed by a verified publisher to run on your computer, you can read more at `Set-ExecutionPolicy`_. To activate the virtual environment type in the terminal you were working in before the execution policy change
+    Type ``Y`` to confirm the change and it will enable scripts that have been signed by a verified publisher to run on your computer, you can read more at `Set-ExecutionPolicy`_
+
+    To activate the virtual environment type in the terminal you were working in before the Execution Policy change
 
     .. code-block::
 
@@ -440,8 +442,8 @@ how to make a virtual environment
 
       pip install --requirement requirements.txt
 
-  - ``--requirement`` is another option that can be passed to the ``install`` argument to install `python packages`_ from a given file
-  - ``requirements.txt`` is the file that has the list of `python packages`_ I want to install
+  - ``--requirement`` is another option that can be passed to the ``install`` argument for `python packages`_ in a given file
+  - ``requirements.txt`` is the name of the file given
 
 * I use pip_ to see the packages that are now installed in the `virtual environment`_
 
@@ -473,7 +475,6 @@ how to make a virtual environment
       ╰──.venv
       ╰──src
       | ╰──magic.py
-      magic.py
       ╰──tests
       |  ╰──__pycache__
       |  ╰──__init__.py
@@ -548,7 +549,7 @@ Make sure you are in the folder/directory that has the `virtual environment`_ fo
 
   .. code-block:: PowerShell
 
-    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+    Set-ExecutionPolicy RemoteSigned
 
   this will enable scripts that have been signed by a verified publisher if you confirm, you can read more at `Set-ExecutionPolicy`_. Activate the virtual environment in PowerShell_
 
@@ -638,7 +639,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   ``$1`` represents the first argument given when the program is called, you can use it in place of ``$PROJECT_NAME``
 
-* I use the cat_ program to add text for the first failing test in ``test_$PROJECT_NAME.py``
+* I add text for the first failing test to ``test_$PROJECT_NAME.py``
 
     the line numbers below are a guide, you do not need to copy them
 
@@ -646,7 +647,7 @@ You made it this far and have become the greatest programmer in the world. To fo
     :language: shell
     :linenos:
 
-* I use chmod_ to make the program executable
+* then make the program executable
 
   .. code-block:: shell
 
