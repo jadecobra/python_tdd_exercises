@@ -347,15 +347,19 @@ how to make a virtual environment
 
       Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 
-    the terminal will show
+    the terminal shows
 
-    .. code-block:: PowerShell
+    .. code-block:: text
 
-      The execution policy helps protect you from scripts that you do not trust. Changing the execution policy might expose you to the security risks described in the about_Execution_Policies help topic at https:/go.microsoft.com/fwlink/?LinkID=135170. Do you want to change the execution policy?
+      The execution policy helps protect you from scripts that you do not trust.
+      Changing the execution policy might expose you to the security risks
+      described in the about_Execution_Policies help topic at
+      https:/go.microsoft.com/fwlink/?LinkID=135170.
+      Do you want to change the execution policy?
 
       [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 
-    type ``Y`` to confirm the change and it will enable scripts that have been signed by a verified publisher to run on your computer, you can read more at `Set-ExecutionPolicy`_. Activate the virtual environment in PowerShell_
+    type ``Y`` to confirm the change and it will enable scripts that have been signed by a verified publisher to run on your computer, you can read more at `Set-ExecutionPolicy`_. To activate the virtual environment type in the terminal you were working in before the execution policy change
 
     .. code-block::
 
