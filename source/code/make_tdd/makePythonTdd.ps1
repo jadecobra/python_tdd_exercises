@@ -2,8 +2,8 @@ $PROJECT_NAME=$args[0]
 mkdir $PROJECT_NAME
 cd $PROJECT_NAME
 mkdir src
-mkdir tests
 New-Item "src/$PROJECT_NAME.py"
+mkdir tests
 New-Item tests/__init__.py
 
 "import unittest

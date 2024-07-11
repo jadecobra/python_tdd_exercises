@@ -75,29 +75,33 @@ how to manually make a python test driven development environment
 
   this is where all code for the project will stay
 
-* I make child folders/directories for the source code and tests
+* I make a child folder/directory for the source code
 
   .. code-block:: shell
 
-    mkdir src tests
+    mkdir src
 
-* then add empty files
+  then add an empty file for the source code (the actual program)
 
-  - first an empty file that will hold the source code for the program
+  .. code-block:: shell
+
+    touch src/magic.py
+
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use ``New-Item``
 
     .. code-block:: shell
 
-      touch src/magic.py
+      New-Item src/magic.py
 
-    .. admonition:: on Windows without `Windows Subsystem Linux`_ use ``New-Item``
+  touch_/`New-Item`_ makes an empty file when given a name
 
-      .. code-block:: shell
+* I make a child folder/directory one for the tests
 
-        New-Item src/magic.py
+  .. code-block:: shell
 
-    touch_/`New-Item`_ makes an empty file when given a name
+    mkdir tests
 
-  - then I make an empty file called ``__init__.py`` in the ``tests`` folder/directory to tell Python that it is a `python package`_, this will help it find the tests later
+  - then an empty file called ``__init__.py`` in the ``tests`` folder/directory to tell Python that it is a `python package`_, this will help it find the tests later
 
     .. code-block:: shell
 
@@ -345,7 +349,7 @@ how to make a virtual environment
 
     .. code-block:: PowerShell
 
-      Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+      Set-ExecutionPolicy RemoteSigned
 
     the terminal shows
 
@@ -596,8 +600,9 @@ You made it this far and have become the greatest programmer in the world. To fo
     #!/bin/bash
     mkdir magic
     cd magic
-    mkdir src tests
+    mkdir src
     touch src/magic.py
+    mkdir tests
     touch tests/__init__.py
     touch tests/test_magic.py
     python3 -m venv .venv
@@ -617,8 +622,9 @@ You made it this far and have become the greatest programmer in the world. To fo
     PROJECT_NAME=$1
     mkdir $PROJECT_NAME
     cd $PROJECT_NAME
-    mkdir src tests
-    touch $PROJECT_NAME.py
+    mkdir src
+    touch src/$PROJECT_NAME.py
+    mkdir tests
     touch tests/__init__.py
     touch tests/test_$PROJECT_NAME.py
     python3 -m venv .venv
