@@ -26,6 +26,8 @@ requirements
 * get an Integrated Development Environment (IDE). Here are a few options
 
   - `Visual Studio Code`_
+  - `Sublime Text`_
+  - `PyCharm`_
   - `Other Integrated Development Environment (IDE) options <https://wiki.python.org/moin/IntegratedDevelopmentEnvironments>`_
 
 windows requirements

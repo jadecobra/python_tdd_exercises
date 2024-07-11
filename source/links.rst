@@ -100,6 +100,8 @@
 .. _Windows: https://www.microsoft.com/en-us/windows
 .. _Windows Subsystem Linux: https://learn.microsoft.com/en-us/windows/wsl/install
 
+.. _PyCharm: https://www.jetbrains.com/pycharm/download
+.. _Sublime Text: https://www.sublimetext.com
 .. _Visual Studio Code: https://code.visualstudio.com/download
 .. _Dark Rainbow Theme: https://marketplace.visualstudio.com/items?itemName=DarkRainbow.darkrainbow
 .. _indent-rainbow: https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow
