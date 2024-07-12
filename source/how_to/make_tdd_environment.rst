@@ -117,7 +117,7 @@ how to manually make a python test driven development environment
 
       New-Item tests/__init__.py
 
-  and one more empty file in the ``tests`` directory for the actual test
+  I add  one more empty file in the ``tests`` directory for the actual test
 
   .. code-block:: shell
 
@@ -161,7 +161,7 @@ The `Test Driven Development`_ cycle is ``RED GREEN REFACTOR``
 red: make it fail
 ############################################################################################
 
-* I open up ``magic/tests/test_magic.py`` in the Integrated Development Environment (IDE) and type the following
+* I open ``magic/tests/test_magic.py`` in the Integrated Development Environment (IDE) and type the following
 
     the line numbers below are a guide, you do not need to copy them
 
@@ -176,7 +176,7 @@ red: make it fail
         def test_failure(self):
             self.assertFalse(True)
 
-  Here is an explanation of the code above
+  Here is an explanation of the code in the file
 
   - ``import unittest`` imports the unittest_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used for testing
   - ``class TestMagic``
@@ -190,7 +190,7 @@ red: make it fail
 
     * def_ is the Python keyword for making :ref:`methods and functions<functions>`, a method is a function in a class
     * ``test_failure`` is the name of this :ref:`method<functions>`, you can use any name as long as it starts with ``test_``
-    * ``self`` is used to access :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the ``TestMagic`` class and by extension `unittest.TestCase`_ instead of using ``TestMagic().`` or ``unittest.TestCase().``
+    * ``self`` is used to access :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the ``TestMagic`` class and by extension the `unittest.TestCase`_ class instead of using ``TestMagic().`` or ``unittest.TestCase().``
     * ``self.assertFalse(True)`` is an assertion
 
       - assertFalse_ is a :ref:`method<functions>` in the `unittest.TestCase`_ :ref:`class <classes>` that checks if its input is :ref:`False <test_what_is_false>`
