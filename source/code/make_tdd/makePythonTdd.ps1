@@ -23,5 +23,5 @@ python -m venv .venv
 .venv/scripts/activate.ps1
 python -m pip install --upgrade pip
 "pytest-watch" | Out-File requirements.txt -Encoding UTF8
-pip install --requirement requirements.txt
+python -m pip install --requirement requirements.txt
 pytest-watch
