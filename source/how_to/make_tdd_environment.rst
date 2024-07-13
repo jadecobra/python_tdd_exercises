@@ -6,7 +6,7 @@ how to make a python test driven development environment
 
 .. raw:: html
 
-  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/QRIO98ofeFM?si=y4VchKPNr7mzeTln" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/CLC1YAHHbjU?si=0agM3_IhWmUYpTln" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ----
 
@@ -44,7 +44,7 @@ If you are using a Windows computer, try to install Linux_ with `Windows Subsyst
 
     wsl --install --distribution debian
 
-  .. tip:: if you cannot install `Windows Subsystem Linux`_, do not worry, there is code for you too
+  .. tip:: do not worry if you cannot install `Windows Subsystem Linux`_, I have you covered
 
 
 linux requirements
@@ -545,27 +545,7 @@ Make sure you are in the folder/directory that has the `virtual environment`_ fo
 
   source .venv/bin/activate
 
-.. admonition:: on Windows_ without `Windows Subsystem Linux`_ run PowerShell_ in Administrator mode and set the Execution Policy for the activation script to work
-
-  .. code-block:: PowerShell
-
-    Set-ExecutionPolicy RemoteSigned
-
-  the terminal shows
-
-  .. code-block:: text
-
-    The execution policy helps protect you from scripts that you do not trust.
-    Changing the execution policy might expose you to the security risks
-    described in the about_Execution_Policies help topic at
-    https:/go.microsoft.com/fwlink/?LinkID=135170.
-    Do you want to change the execution policy?
-
-    [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
-
-  Type ``Y`` to confirm the change and it will enable scripts that have been signed by a verified publisher to run on your computer, you can read more at `Set-ExecutionPolicy`_
-
-  To activate the virtual environment, go back to the terminal you were working in before the Execution Policy change and type
+.. admonition:: on Windows_ without `Windows Subsystem Linux`_
 
   .. code-block::
 
@@ -659,7 +639,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   ``$1`` represents the first argument given when the program is called, you can use it in place of ``$PROJECT_NAME``
 
-* I add text for the first failing test to ``test_$PROJECT_NAME.py``
+* I use the echo_ program to add text for the first failing test to ``test_$PROJECT_NAME.py``
 
     the line numbers below are a guide, you do not need to copy them
 
