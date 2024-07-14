@@ -722,31 +722,28 @@ the terminal shows passing tests, proof that the code raises an :ref:`Exception<
 refactor: make it better
 #################################################################################
 
-I use a `while statement`_ for the other cases when the divisor is not ``0`` by making sure the value of ``y`` that is passed from the test to ``src.calculator.divide`` is never ``0``
+* I use a `while statement`_ for the other cases when the divisor is not ``0`` by making sure the value of ``y`` that is passed from the test to ``src.calculator.divide`` is never ``0``
 
-.. code-block:: python
+  .. code-block:: python
 
-  def test_division(self):
-      with self.assertRaises(ZeroDivisionError):
-          src.calculator.divide(self.x, 0)
+    def test_division(self):
+        with self.assertRaises(ZeroDivisionError):
+            src.calculator.divide(self.x, 0)
 
-      while self.y == 0:
-          self.y = random_number()
-      else:
-          self.assertEqual(
-              src.calculator.divide(self.x, self.y),
-              self.x/self.y
-          )
+        while self.y == 0:
+            self.y = random_number()
+        else:
+            self.assertEqual(
+                src.calculator.divide(self.x, self.y),
+                self.x/self.y
+            )
 
-``while self.y == 0:`` makes a loop that repeats as long as ``self.y`` is equal to ``0``
+  - if the value of ``self.y`` is ``0``
 
-* if the value of ``self.y`` is ``0``
+    * it assigns ``self.y`` to the result of calling the ``random_number`` :ref:`function<functions>`
+    * and checks again, repeating the process until ``self.y`` is not ``0``
 
-  - it confirms that a ZeroDivisionError_ is raised
-  - then assigns ``self.y`` to the result of calling the ``random_number`` :ref:`function<functions>`
-  - and checks again, repeating the process until ``self.y`` is not ``0``
-
-* if the value of ``self.y`` is not ``0`` it leaves the loop and runs what is in the ``else`` block
+  - if the value of ``self.y`` is not ``0`` it leaves the loop and runs what is in the ``else`` block
 
 * I move the the assertRaises_ block into the `while statement`_
 
@@ -765,7 +762,13 @@ I use a `while statement`_ for the other cases when the divisor is not ``0`` by 
 
   and the terminal shows passing tests
 
-* I can remove the TODO list since all tests are passing
+* I remove the TODO list since all tests are passing
+* and change the range of random numbers for the tests to be from minus 1 trillion to 1 trillion
+
+  .. code-block:: python
+
+      def random_number():
+        return random.randint(-10**12, 10**12)
 
 ----
 
