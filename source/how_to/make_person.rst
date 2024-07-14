@@ -31,9 +31,7 @@ red: make it fail
 
     ./makePythonTdd.sh person
 
-  .. NOTE::
-
-    If you are using Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
 
     .. code-block:: python
 
@@ -113,7 +111,7 @@ refactor: make it better
 
     NameError: name 'this_year' is not defined
 
-* I add it to the list of :ref:`Exceptions` encountered
+* I add it to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
@@ -142,7 +140,7 @@ refactor: make it better
 
     TypeError: factory() got an unexpected keyword argument 'first_name'
 
-* I add the error to the list of :ref:`Exceptions` encountered
+* I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 

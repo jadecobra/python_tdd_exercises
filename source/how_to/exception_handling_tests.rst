@@ -39,9 +39,7 @@ red: make it fail
 
     ./makePythonTdd.sh exceptions
 
-  .. NOTE::
-
-    If you are using Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
 
     .. code-block:: python
 
@@ -75,7 +73,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I add it to the list of :ref:`Exceptions` encountered
+* I add it to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
@@ -126,7 +124,7 @@ red: make it fail
     NameError: name 'module' is not defined
 
   A NameError_ is raised when a name is used within a :ref:`module<ModuleNotFoundError>` with no definition for the name. I call ``module.non_existent_attribute`` in the test and there is no definition for ``module``
-* I add it to the list of :ref:`Exceptions` encountered
+* I add it to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
@@ -152,7 +150,7 @@ red: make it fail
 
     AttributeError: module 'module' has no attribute 'non_existent_attribute'
 
-* I add the exception to the list of :ref:`Exceptions` encountered
+* I add the exception to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 

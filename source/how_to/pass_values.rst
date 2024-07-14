@@ -33,9 +33,7 @@ red: make it fail
 
     ./makePythonTdd.sh telephone
 
-  .. NOTE::
-
-    If you are using Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
 
     .. code-block:: python
 
@@ -93,7 +91,7 @@ green: make it pass
 
     AttributeError: module 'telephone' has no attribute 'text'
 
-* I add the error to the list of :ref:`Exceptions` encountered
+* I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
@@ -127,7 +125,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-- I add the exception to the list of :ref:`Exceptions` encountered
+- I add the exception to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 

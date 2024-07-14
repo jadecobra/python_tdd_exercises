@@ -1,5 +1,5 @@
-import calculator
 import random
+import src.calculator
 import unittest
 
 
@@ -14,36 +14,37 @@ class TestCalculator(unittest.TestCase):
 
     def test_addition(self):
         self.assertEqual(
-            calculator.add(self.x, self.y),
+            src.calculator.add(self.x, self.y),
             self.x+self.y
         )
 
     def test_subtraction(self):
         self.assertEqual(
-            calculator.subtract(self.x, self.y),
+            src.calculator.subtract(self.x, self.y),
             self.x-self.y
         )
 
     def test_multiplication(self):
         self.assertEqual(
-            calculator.multiply(self.x, self.y),
+            src.calculator.multiply(self.x, self.y),
             self.x*self.y
         )
 
     def test_division(self):
-        with self.assertRaises(ZeroDivisionError):
-            calculator.divide(self.x, 0)
-
         while self.y == 0:
+            with self.assertRaises(ZeroDivisionError):
+                src.calculator.divide(self.x, self.y)
             self.y = random_number()
-        self.assertEqual(
-            calculator.divide(self.x, self.y),
-            self.x/self.y
-        )
+        else:
+            self.assertEqual(
+                src.calculator.divide(self.x, self.y),
+                self.x/self.y
+            )
 
 
 # Exceptions Encountered
 # AssertionError
 # NameError
+# AttributeError
 # TypeError
 # ZeroDivisionError

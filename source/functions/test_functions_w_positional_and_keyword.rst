@@ -34,7 +34,7 @@ I add a new failing test to ``test_functions.py``
         {}
       )
 
-the terminal shows a ``SyntaxError`` because I put a positional argument after a keyword argument. I add the error to the list of :ref:`Exceptions` encountered
+the terminal shows a ``SyntaxError`` because I put a positional argument after a keyword argument. I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
 
 .. code-block:: python
 

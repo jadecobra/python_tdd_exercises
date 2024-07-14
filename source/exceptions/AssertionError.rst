@@ -60,9 +60,7 @@ red: make it fail
 
     ./makePythonTdd.sh assertion_error
 
-  .. NOTE::
-
-    If you are using Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
 
     .. code-block:: python
 

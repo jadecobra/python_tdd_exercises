@@ -40,9 +40,7 @@ red: make it fail
 
     ./makePythonTdd.sh type_error
 
-  .. NOTE::
-
-    If you are using Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
 
     .. code-block:: python
 
@@ -79,7 +77,7 @@ red: make it fail
     import functions
     E  ModuleNotFoundError: No module called 'functions'
 
-* I add it to the list of :ref:`Exceptions` encountered
+* I add it to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
@@ -97,7 +95,7 @@ green: make it pass
 
     E    AttributeError: module 'functions' has no attribute 'function_a'
 
-  which I add to the list of :ref:`Exceptions` encountered
+  which I add to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
@@ -119,7 +117,7 @@ green: make it pass
    E    TypeError: 'NoneType' object is not callable
 
   A reminder of the first encounter with ``TypeError`` from `how to solve the AttributeError by defining a Function <./AttributeError.rst>`_
-* I add it to the list of :ref:`Exceptions` encountered
+* I add it to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 

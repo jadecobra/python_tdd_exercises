@@ -27,9 +27,7 @@ red: make it fail
 
     ./makePythonTdd.sh sleep_duration
 
-  .. NOTE::
-
-    If you are using Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
 
     .. code-block:: python
 
@@ -58,7 +56,7 @@ red: make it fail
       def test_functions_w_pass(self):
           self.assertIsNone(functions.function_w_pass())
 
-the terminal shows a :ref:`ModuleNotFoundError`\ , and I add it to the list of :ref:`Exceptions` encountered
+the terminal shows a :ref:`ModuleNotFoundError`\ , and I add it to the list of :ref:`Exceptions<Exceptions>` encountered
 
 .. code-block:: python
 
@@ -69,7 +67,7 @@ the terminal shows a :ref:`ModuleNotFoundError`\ , and I add it to the list of :
 green: make it pass
 #################################################################################
 
-* I make a file called ``functions.py`` in the project folder and the terminal shows an :ref:`AttributeError`\ , which I add to the list of :ref:`Exceptions` encountered
+* I make a file called ``functions.py`` in the project folder and the terminal shows an :ref:`AttributeError`\ , which I add to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 

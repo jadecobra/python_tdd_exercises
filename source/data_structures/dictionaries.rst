@@ -28,7 +28,7 @@ I add a file called ``test_dictionaries.py`` to the ``tests`` folder with the fo
   import unittest
   import dictionaries
 
-the terminal shows a :ref:`ModuleNotFoundError`\  which I add to the list of :ref:`Exceptions` encountered
+the terminal shows a :ref:`ModuleNotFoundError`\  which I add to the list of :ref:`Exceptions<Exceptions>` encountered
 
 .. code-block:: python
 
@@ -55,7 +55,7 @@ refactor: make it better
               {"key": "value"}
           )
 
-  the terminal shows an :ref:`AttributeError` which I add to the list of :ref:`Exceptions` encountered
+  the terminal shows an :ref:`AttributeError` which I add to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
@@ -400,7 +400,7 @@ the terminal shows a :ref:`TypeError` because only `hashable <https://docs.pytho
 
   E    TypeError: unhashable type: 'list'
 
-I add :ref:`TypeError` to the list of :ref:`Exceptions` encountered
+I add :ref:`TypeError` to the list of :ref:`Exceptions<Exceptions>` encountered
 
 .. code-block:: python
 
@@ -670,7 +670,7 @@ A KeyError_ is raised when a `dictionary <https://docs.python.org/3/library/stdt
 green: make it pass
 #################################################################################
 
-* I add KeyError_ to the list of :ref:`Exceptions` encountered
+* I add KeyError_ to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 

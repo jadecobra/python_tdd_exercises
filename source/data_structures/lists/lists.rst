@@ -55,7 +55,7 @@ the terminal shows a :ref:`TypeError`
 
 green: make it pass
 ===================
-* I add the error to the list of :ref:`Exceptions` encountered
+* I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
@@ -420,7 +420,7 @@ the terminal shows an IndexError_
 green: make it pass
 ===================
 
-* I add IndexError_ to the list of :ref:`Exceptions` encountered
+* I add IndexError_ to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 

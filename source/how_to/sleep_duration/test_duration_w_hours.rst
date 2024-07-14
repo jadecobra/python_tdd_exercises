@@ -32,9 +32,7 @@ red: make it fail
 
     ./makePythonTdd.sh sleep_duration
 
-  .. NOTE::
-
-    If you are using Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
 
     .. code-block:: python
 
@@ -73,7 +71,7 @@ red: make it fail
 
     TypeError: TestCase.assertEqual() missing 2 required positional arguments: 'first' and 'second'
 
-  which I add to the list of :ref:`Exceptions` encountered
+  which I add to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
@@ -152,7 +150,7 @@ green: make it pass
 
     AttributeError: module 'sleep_duration' has no attribute 'duration'
 
-  I add the error to the list of :ref:`Exceptions` encountered
+  I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
