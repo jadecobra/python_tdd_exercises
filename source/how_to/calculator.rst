@@ -763,12 +763,12 @@ refactor: make it better
   and the terminal shows passing tests
 
 * I remove the TODO list since all tests are passing
-* and change the range of random numbers for the tests to be from minus 1 trillion to 1 trillion
+* and change the range of random numbers for the tests to be from minus 10 to 10
 
   .. code-block:: python
 
       def random_number():
-        return random.randint(-10**12, 10**12)
+        return random.randint(-10, 10)
 
 ----
 
@@ -1005,7 +1005,7 @@ green: make it pass
 review
 *********************************************************************************
 
-CONGRATULATIONS! You used Test Driven Development to write a program that can perform the 4 basic arithmetic operations of addition, subtraction, multiplication and division.
+CONGRATULATIONS! You used Test Driven Development to write a program that performs the 4 basic arithmetic operations of addition, subtraction, multiplication and division.
 
 You also encountered the following exceptions
 
