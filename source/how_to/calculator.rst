@@ -841,10 +841,10 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: None != -1
+    AssertionError: None != -10
+    AssertionError: None != -9
     AssertionError: None != 0
-    AssertionError: None != 1
-    AssertionError: None != 2
+    AssertionError: None != 12
 
 * I change the `return statement`_ to see the difference between the inputs and expected output
 
@@ -857,10 +857,10 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: (-1, 1) != -2
-    AssertionError: (0, 1) != -1
-    AssertionError: (0, 0) != 0
-    AssertionError: (0, -1) != 1
+    AssertionError: (-10, 2) != -12
+    AssertionError: (-1, 7) != -8
+    AssertionError: (10, 6) != 4
+    AssertionError: (7, -10) != 17
 
   as the name suggests, the tests expects the difference between the two inputs
 
@@ -901,9 +901,10 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: None != -1
-    AssertionError: None != 0
-    AssertionError: None != 1
+    AssertionError: None != -42
+    AssertionError: None != -10
+    AssertionError: None != 20
+    AssertionError: None != 36
 
 * I change the `return statement` to see the difference between the inputs and the expected output
 
@@ -912,14 +913,14 @@ green: make it pass
     def multiply(a, b):
         return a, b
 
-  and the terminal shows another :ref:`AssertionError`
+  and the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: (-1, 1) != -1
-    AssertionError: (0, -1) != 0
-    AssertionError: (0, 0) != 0
-    AssertionError: (1, 1) != 1
+    AssertionError: (-6, 6) != -36
+    AssertionError: (-2, 3) != -6
+    AssertionError: (2, 5) != 10
+    AssertionError: (-9, -5) != 45
 
   I change the `return statement` to return the product of the inputs, matching the name of the :ref:`function<functions>`
 
@@ -929,7 +930,7 @@ green: make it pass
         return a * b
 
 
-  the terminal shows an :ref:`AttributeError`
+  the terminal shows another :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -946,58 +947,54 @@ green: make it pass
 
   .. code-block:: python
 
+    AssertionError: None != -0.1111111111111111
+    AssertionError: None != -1.0
+    AssertionError: None != 0.25
+    AssertionError: None != 1.3333333333333333
+
+  I change the `return statement`_ to show the difference between the inputs and the expected output
+
+  .. code-block: python
+
+    def divide(a, b):
+        return a, b
+
+  and get an :ref:`AssertionError` that shows the expected output is the result of dividing the inputs
+
+  .. code-block:: python
+
+    AssertionError: (-10, 6) != -1.6666666666666667
+    AssertionError: (-6, -6) != 1.0
+    AssertionError: (5, 7) != 0.7142857142857143
+    AssertionError: (10, 9) != 1.1111111111111112
+
+  or
+
+  .. code-block:: python
+
     AssertionError: ZeroDivisionError not raised
 
-  this test expects an :ref:`Exception<exceptions>` which is raised when a number is divided by 0. I change the `return statement`_ to match the name of the :ref:`function<functions>`
+  I change the `return statement`_ to match the expectation
 
   .. code-block:: python
 
     def divide(a, b):
         return a / b
 
-  and the terminal shows an :ref:`AttributeError`
+  and get another :ref:`AttributeError`
 
   .. code-block:: python
 
     AttributeError: module 'src.calculator' has no attribute 'add'
 
-* I add a :ref:`function<functions>`
-
-  .. code-block:: python
-
-    def add(a, b):
-        return None
-
-  which gives me an :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: None != 0
-
-  then change the `return statement`_ to show the difference between the inputs and the expected output
-
-  .. code-block:: python
-
-    def add(a, b):
-      return a, b
-
-  and get another :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: (-1, -1) != -2
-    AssertionError: (-1, 0) != -1
-    AssertionError: (1, -1) != 0
-    AssertionError: (0, 1) != 1
-
-  when I change the `return statement`_ to the sum of the inputs
+* I add a :ref:`function<functions>` using what I know so far
 
   .. code-block:: python
 
     def add(a, b):
         return a + b
 
-  the terminal shows all tests are passing
+  and the terminal shows all tests are passing with no random failures
 
 ----
 

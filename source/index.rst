@@ -41,7 +41,7 @@ Start with :doc:`how to make a python test driven development environment </how_
 
 My recommendations are that you
 
-* type out the code portions as you go through a chapter without copying and pasting the code
+* type out the code portions as you go through a chapter without copying and pasting
 * repeat a chapter you like until you can do it from memory
 * at the end of a chapter, delete the tests then try to write them from memory or use the solution as a guide
 * at the end of a chapter, close the tests, then delete the solution and try to write a solution with the terminal response as your guide

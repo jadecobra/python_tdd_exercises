@@ -16,7 +16,7 @@ how to pass values
 
 ----
 
-This is how to pass values from tests to programs using `Formatted string literals <https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals>`_ to place values inside a string
+This is how to pass values from tests to programs using `Formatted string literals <https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals>`_ to place values inside strings_
 
 .. _test_text_messages:
 
@@ -57,7 +57,7 @@ red: make it fail
 
         def test_text_messages(self):
             self.assertEqual(
-                telephone.text('hello'),
+                src.telephone.text('hello'),
                 'I received this message: hello'
             )
 
@@ -65,10 +65,7 @@ red: make it fail
 
   .. code-block:: python
 
-    NameError: name 'telephone' is not defined
-
-green: make it pass
-#################################################################################
+    NameError: name 'src' is not defined
 
 * which I add to the list of telephone
 
@@ -78,18 +75,21 @@ green: make it pass
     # AssertionError
     # NameError
 
-* then add an `import statement`_ for the ``telephone`` module
+green: make it pass
+#################################################################################
+
+* I add an `import statement`_ for the ``telephone`` module
 
   .. code-block:: python
 
-    import telephone
+    import src.telephone
     import unittest
 
   the terminal shows an :ref:`AttributeError`
 
   .. code-block:: python
 
-    AttributeError: module 'telephone' has no attribute 'text'
+    AttributeError: module 'src.telephone' has no attribute 'text'
 
 * I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
 
@@ -119,7 +119,7 @@ green: make it pass
 
     text = None
 
-  and the terminal shows a :ref:`TypeError` because ``text`` is not callable_
+  and the terminal shows a :ref:`TypeError` because :ref:`None` is not callable_ and ``text`` is currently :ref:`None`
 
   .. code-block:: python
 
@@ -135,7 +135,7 @@ green: make it pass
     # AttributeError
     # TypeError
 
-- I make ``text`` in ``telephone.py`` to a :ref:`function<functions>` to make it callable_
+- I make ``text`` a :ref:`function<functions>` to make it callable_
 
   .. code-block:: python
 
@@ -148,7 +148,7 @@ green: make it pass
 
     TypeError: text() takes 0 positional arguments but 1 was given
 
-  I provided a positional argument as input with the value ``'hello'`` when I called ``telephone.text`` in the test , but the current signature of the ``text`` :ref:`function<functions>` does not allow it accept any inputs
+  I gave ``hello`` as input when I called ``src.telephone.text`` in the test , but the current signature of the ``text`` :ref:`function<functions>` does not allow it accept any inputs
 - I change the definition for ``text`` to make it accept a value as input
 
   .. code-block:: python
@@ -162,7 +162,7 @@ green: make it pass
 
     AssertionError: None != 'I received this message: hello'
 
-- I make the return value to match the expectation and the test pass
+- I copy the text from the terminal and paste it in the `return statement`_ to make it match the expectation
 
   .. code-block:: python
 
@@ -172,22 +172,22 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-The problem with this solution is that no matter what value I send to the ``text`` :ref:`function<functions>` it will always return ``'I received this message: hello'``. I need to make it return a value based on the input it receives
+The problem with this solution is that no matter what value I send to the ``text`` :ref:`function<functions>` it will always return ``'I received this message: hello'``, it is a :doc:`singleton function </functions/test_singleton_functions>`. I want to make it return a value based on the input it receives
 
 red: make it fail
 ---------------------------------------------------------------------------------
 
-I add a new failing test to ``test_text_messages``
+I add a new assertion to ``test_text_messages``
 
 .. code-block:: python
 
   def test_text_messages(self):
       self.assertEqual(
-          telephone.text('hello'),
+          src.telephone.text('hello'),
           'I received this message: hello'
       )
       self.assertEqual(
-          telephone.text('yes'),
+          src.telephone.text('yes'),
           'I received this message: yes'
       )
 
@@ -201,7 +201,7 @@ the terminal shows an :ref:`AssertionError`
 green: make it pass
 ---------------------------------------------------------------------------------
 
-I make the ``text`` :ref:`function<functions>` in ``telephone.py`` to use an ``f`` string which allows passing variable values to strings. This is called `string interpolation`_
+I change the string_ to an ``f`` string in the ``text`` :ref:`function<functions>`, this allows me to pass values to the string_. It is called `string interpolation`_
 
 .. code-block:: python
 
@@ -216,7 +216,7 @@ the terminal shows passing tests
 test_passing_data_structures
 *********************************************************************************
 
-I want to try this with other Python data structures to see what happens
+I want to try this with other Python :doc:`/data_structures/data_structures` to see what happens
 
 red: make it fail
 #################################################################################
@@ -227,7 +227,7 @@ I add a new failing test
 
   def test_passing_data_structures(self):
       self.assertEqual(
-          telephone.text(None),
+          src.telephone.text(None),
           'I received this message: "None"'
       )
 
@@ -245,7 +245,7 @@ I make the test match the expected value
 .. code-block:: python
 
   self.assertEqual(
-      telephone.text(None),
+      src.telephone.text(None),
       'I received this message: None'
   )
 
@@ -255,19 +255,19 @@ the terminal shows passing tests
 refactor: make it better
 #################################################################################
 
-As an exercise I add more tests to ``test_passing_data_structures`` to see what happens when I pass different data structures to the ``text`` function
+I add more assertions to ``test_passing_data_structures`` to see what happens when I pass different data structures to the ``text`` function
 
-* What happens when I pass in a :ref:`class <classes>` constructor_ to the ``text`` function
+* What happens when I pass in a :ref:`class <classes>` constructor_ to the ``text`` function?
 
   .. code-block:: python
 
     ...
     self.assertEqual(
-        telephone.text(None),
+        src.telephone.text(None),
         'I received this message: None'
     )
     self.assertEqual(
-        telephone.text(bool),
+        src.telephone.text(bool),
         "I received this message: bool"
     )
 
@@ -280,16 +280,16 @@ As an exercise I add more tests to ``test_passing_data_structures`` to see what 
   .. code-block:: python
 
     self.assertEqual(
-        telephone.text(bool),
+        src.telephone.text(bool),
         "I received this message: <class 'bool'>"
     )
 
-* I also add a test for an integer_
+* I also add an assertion for an integer_
 
   .. code-block:: python
 
     self.assertEqual(
-        telephone.text(123),
+        src.telephone.text(123),
         "I received this message: '123'"
     )
 
@@ -304,16 +304,16 @@ As an exercise I add more tests to ``test_passing_data_structures`` to see what 
   .. code-block:: python
 
     self.assertEqual(
-        telephone.text(123),
+        src.telephone.text(123),
         "I received this message: 123"
     )
 
-* then add a test for a float_
+* then add an assertion for a float_
 
   .. code-block:: python
 
     self.assertEqual(
-        telephone.text(1.23),
+        src.telephone.text(1.23),
         "I received this message: '1.23'"
     )
 
@@ -328,27 +328,27 @@ As an exercise I add more tests to ``test_passing_data_structures`` to see what 
   .. code-block:: python
 
     self.assertEqual(
-        telephone.text(1.23),
+        src.telephone.text(1.23),
         "I received this message: 1.23"
     )
 
-* then add a test for a tuple_
+* then add an assertion for a tuple_
 
   .. code-block:: python
 
     self.assertEqual(
-        telephone.text((1, 2, 3, 'n')),
+        src.telephone.text((1, 2, 3, 'n')),
         "I received this message: '(1, 2, 3, n)'"
     )
 
   the terminal shows an :ref:`AssertionError`
 
-* I add a test for a :doc:`list </data_structures/lists/lists>`
+* I add an assertion for a :doc:`list </data_structures/lists/lists>`
 
   .. code-block:: python
 
     self.assertEqual(
-        telephone.text([1, 2, 3, 'n']),
+        src.telephone.text([1, 2, 3, 'n']),
         "I received this message: '[1, 2, 3, n]'"
     )
 
@@ -361,16 +361,16 @@ As an exercise I add more tests to ``test_passing_data_structures`` to see what 
   .. code-block:: python
 
     self.assertEqual(
-        telephone.text([1, 2, 3, 'n']),
+        src.telephone.text([1, 2, 3, 'n']),
         "I received this message: [1, 2, 3, 'n']"
     )
 
-* then add a test for a set_
+* then add an assertion for a set_
 
   .. code-block:: python
 
     self.assertEqual(
-        telephone.text({1, 2, 3, 'n'}),
+        src.telephone.text({1, 2, 3, 'n'}),
         "I received this message: '{1, 2, 3, n}'"
     )
 
@@ -385,16 +385,19 @@ As an exercise I add more tests to ``test_passing_data_structures`` to see what 
   .. code-block:: python
 
     self.assertEqual(
-        telephone.text({1, 2, 3, 'n'}),
+        src.telephone.text({1, 2, 3, 'n'}),
         "I received this message: {1, 2, 3, 'n'}"
     )
 
-* finally, I add a test for a :doc:`dictionary </data_structures/dictionaries>`
+* finally, I add an assertion for a :doc:`dictionary </data_structures/dictionaries>`
 
   .. code-block:: python
 
     self.assertEqual(
-        telephone.text({"key1": "value1", "keyN": "valueN"}),
+        src.telephone.text({
+            "key1": "value1",
+            "keyN": "valueN"
+        }),
         "I received this message: '{key1: value1, keyN: valueN}'"
     )
 
@@ -409,7 +412,7 @@ As an exercise I add more tests to ``test_passing_data_structures`` to see what 
   .. code-block:: python
 
     self.assertEqual(
-        telephone.text({"key1": "value1", "keyN": "valueN"}),
+        src.telephone.text({"key1": "value1", "keyN": "valueN"}),
         "I received this message: {'key1': 'value1', 'keyN': 'valueN'}"
     )
 
@@ -428,7 +431,7 @@ VOILA! You now know how to pass values from a test to a program and can represen
 * :ref:`AttributeError`
 * :ref:`TypeError`
 
-Would you like to know :doc:`/how_to/make_person`?
+Would you like to test :doc:`/how_to/make_person`?
 
 ----
 
