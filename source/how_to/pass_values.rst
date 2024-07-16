@@ -205,7 +205,7 @@ I change the string_ in the `return statement`_ to an `f-string` in the ``text``
   def text(value):
       return f'I received this message: {value}'
 
-the terminal shows passing tests
+the terminal shows the test passed
 
 ----
 
@@ -255,7 +255,7 @@ test_passing_a_class
 red: make it fail
 #################################################################################
 
-What happens when I pass in a :ref:`class <classes>`_ to the ``text`` :ref:`function<functions>`?
+What happens when I pass in a :ref:`class <classes>` to the ``text`` :ref:`function<functions>`?
 
 .. code-block:: python
 
@@ -404,7 +404,7 @@ I add a test for a :doc:`list </data_structures/lists/lists>`
           "I received this message: '[1, 2, 3, n]'"
       )
 
-the terminal shows an :ref:`AssertionError` ::
+the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -533,20 +533,20 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: None != 'I received this message: hello'
+    AssertionError: None != 'I received this message: None'
 
 * I change the `return statement`_ to match the expectation
 
   .. code-block:: python
 
     def text(argument):
-        return 'I received this message: hello'
+        return 'I received this message: None'
 
   and get another :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: 'I received this message: hello' != 'I received this message: yes'
+    AssertionError: 'I received this message: None' != 'I received this message: 123'
 
 * I change the `return statement`_ to see the difference between the input and the expected output
 
@@ -555,11 +555,18 @@ green: make it pass
     def text(argument):
         return argument
 
-  and the terminal shows
+  and the terminal shows these :ref:`AssertionErrors<AssertionError>` in the ``short test summary info`` section
 
   .. code-block:: python
 
     AssertionError: 'hello' != 'I received this message: hello'
+    AssertionError: <class 'bool'> != "I received this message: <class 'bool'>"
+    AssertionError: {'key1': 'value1', 'keyN': 'valueN'} != "I received this message: {'key1': 'value1', 'keyN': 'v...
+    AssertionError: 1.23 != 'I received this message: 1.23'
+    AssertionError: [1, 2, 3, 'n'] != "I received this message: [1, 2, 3, 'n']"
+    AssertionError: (1, 2, 3, 'n') != "I received this message: (1, 2, 3, 'n')"
+    AssertionError: 123 != 'I received this message: 123'
+    AssertionError: None != 'I received this message: None'
 
   it looks like the message depends on the argument passed
 
@@ -570,7 +577,7 @@ green: make it pass
     def text(argument):
         return f'I received this message: {argument}'
 
-  and all tests pass
+  and all the tests pass
 
 ----
 
@@ -578,7 +585,7 @@ green: make it pass
 review
 *********************************************************************************
 
-VOILA! You now know how to pass values from a test to a program and can represent any values as strings using by `string interpolation`_. You also encountered the following exceptions
+VOILA! You now know how to pass values from a test to a program and can represent any values as strings using by `string interpolation`_ with an `f-string`_. You also encountered the following exceptions
 
 * :ref:`AssertionError`
 * NameError_

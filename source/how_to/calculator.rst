@@ -10,7 +10,7 @@ how to make a calculator
 
 ----
 
-In this chapter I make a basic calculator that does addition, subtraction, multiplication and division
+In this chapter I write a program that does the arithmetic operations of addition, subtraction, multiplication and division
 
 .. contents:: table of contents
   :local:
@@ -1015,7 +1015,7 @@ green: make it pass
   .. code-block:: python
 
     def divide(a, b):
-        return multiply(a, 1/b)
+        return a / b
 
   and get another :ref:`AttributeError`
 
