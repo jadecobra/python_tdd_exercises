@@ -322,7 +322,23 @@ refactor: make it better
                 x+y
             )
 
-* I add a function to remove the duplication of the calls to `random.randint`_ with the same values
+* I change the range of random numbers for the test
+
+  .. code-block:: python
+
+    def test_addition(self):
+        x = random.randint(-10, 10)
+        y = random.randint(-10, 10)
+
+        self.assertEqual(
+            src.calculator.add(x, y),
+            x+y
+        )
+
+
+  and it is still green
+
+* then add a function to remove the duplication of the calls to `random.randint`_ with the same values
 
   .. code-block:: python
 
@@ -332,8 +348,7 @@ refactor: make it better
 
 
     def random_number():
-        return random.randint(-1, 1)
-
+        return random.randint(-10, 10)
 
   and call it for the ``x`` and ``y`` variables
 
@@ -350,14 +365,12 @@ refactor: make it better
 
   the test still passes
 
-* I can now change the range of random numbers I use in the test in one place instead of two, for example
+* I can now change the range of random numbers I use in the test in one place instead of two
 
   .. code-block:: python
 
       def random_number():
-        return random.randint(-10**9, 10**9)
-
-  If I want to use a range of numbers from minus 1 billion to 1 billion
+        return random.randint(-10, 10)
 
 * I remove ``test addition`` from the TODO list
 
@@ -414,7 +427,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I add a name to ``calculator.py``
+* I add a name to ``calculator.py`` assigning it to :ref:`None`
 
   .. code-block:: python
 
@@ -439,7 +452,7 @@ green: make it pass
     def subtract():
         return None
 
-  and the terminal shows a :ref:`TypeError` with a different error message. Progress again!
+  and the terminal shows another :ref:`TypeError` with a different error message. Progress again!
 
   .. code-block:: python
 
@@ -456,19 +469,19 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: None != -2
-    AssertionError: None != -1
-    AssertionError: None != 0
-    AssertionError: None != 1
+    AssertionError: None != -17
+    AssertionError: None != -4
+    AssertionError: None != 7
+    AssertionError: None != 10
 
-  ``subtract`` returns :ref:`None` and the test expects the difference between ``x`` and ``y``
+  ``subtract`` returns :ref:`None` and the test expects ``x`` minus ``y``
 
 * When I change the `return statement`_ in ``subtract`` to return the difference between the inputs
 
   .. code-block:: python
 
     def subtract(x, y):
-        return x - y
+        return add(x, -y)
 
   the test passes. SUCCESS!
 
@@ -675,16 +688,16 @@ how to Test for Errors
 red: make it fail
 #################################################################################
 
-I add a failing line to cause the ZeroDivisionError_ by dividing by ``0``, and comment out the test that sometimes fails, while I figure out the error
+I add a failing line to cause the ZeroDivisionError_ by dividing by ``0``
 
 .. code-block:: python
 
   def test_division(self):
       src.calculator.divide(self.x, 0)
-      # self.assertEqual(
-      #     src.calculator.divide(self.x, self.y),
-      #     self.x/self.y
-      # )
+      self.assertEqual(
+          src.calculator.divide(self.x, self.y),
+          self.x/self.y
+      )
 
 the terminal shows my expectations with a failure for any value of ``x`` when ``y`` is ``0``.
 
@@ -696,7 +709,7 @@ the terminal shows my expectations with a failure for any value of ``x`` when ``
   >    return x / y
   E    ZeroDivisionError: division by zero
 
-:ref:`Exceptions<Exceptions>` like ZeroDivisionError_ break execution of a program. No code will run past the line that causes an :doc:`Exception </how_to/exception_handling_programs>` when it is raised which means I have to take care of this error, so I do not have random failures in the test
+:ref:`Exceptions<Exceptions>` like ZeroDivisionError_ break execution of a program. No code will run past the line that causes an :doc:`Exception </how_to/exception_handling_programs>` when it is raised which means I have to take care of it
 
 .. _test_division_green_1:
 
@@ -710,10 +723,11 @@ I can use the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` in ``te
   def test_division(self):
       with self.assertRaises(ZeroDivisionError):
           src.calculator.divide(self.x, 0)
-      # self.assertEqual(
-      #     src.calculator.divide(self.x, self.y),
-      #     self.x/self.y
-      # )
+
+      self.assertEqual(
+         src.calculator.divide(self.x, self.y),
+         self.x/self.y
+      )
 
 the terminal shows passing tests, proof that the code raises an :ref:`Exception<exceptions>`
 
@@ -745,7 +759,27 @@ refactor: make it better
 
   - if the value of ``self.y`` is not ``0`` it leaves the loop and runs what is in the ``else`` block
 
-* I move the the assertRaises_ block into the `while statement`_
+* Since ``self.y`` is ``0`` in the first part of the `while statement`_ I can add a call to the ``divide`` function that will always raise a ZeroDivisionError_
+
+  .. code-block:: python
+
+    def test_division(self):
+        while self.y == 0:
+            src.calculator.divide(self.x, self.y)
+            self.y = random_number()
+        else:
+            self.assertEqual(
+                src.calculator.divide(self.x, self.y),
+                self.x/self.y
+            )
+
+  and the terminal shows a ZeroDivisionError_ when ``self.y`` is randomly ``0``
+
+  .. code-block:: python
+
+    ZeroDivisionError: division by zero
+
+* I add an assertRaises_ block to catch the :ref:`Exception<Exceptions>` and remove the previous assertRaises_ block
 
   .. code-block:: python
 
@@ -810,6 +844,8 @@ green: make it pass
   I assign it to :ref:`None`
 
   .. code-block:: python
+
+    subtract = None
 
   and the terminal shows a :ref:`TypeError`
 
@@ -979,7 +1015,7 @@ green: make it pass
   .. code-block:: python
 
     def divide(a, b):
-        return a / b
+        return multiply(a, 1/b)
 
   and get another :ref:`AttributeError`
 
