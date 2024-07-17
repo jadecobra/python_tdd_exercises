@@ -482,7 +482,7 @@ refactor: make it better
     def assertReceivedMessage(self, value):
         self.assertEqual(
             src.telephone.text(value),
-            f'I received this message: {value}'
+            f"I received this message: {value}"
         )
 
   then use it in the tests
@@ -534,14 +534,57 @@ refactor: make it better
                 'keyN': 'valueN'
             },
         ):
+            self.assertReceivedMessage(value)
+
+  still green. Since ``assertReceivedMessage`` is now written only once in the `for loop`_ I can replace it with what it represents
+
+  .. code-block:: python
+
+    def test_passing_values(self):
+        for value in (
+            'hello',
+            'yes',
+            None,
+            1234,
+            1.234,
+            (1, 2, 3, 'n'),
+            [1, 2, 3, 'n'],
+            {
+                'key1': 'value1',
+                'keyN': 'valueN'
+            },
+        ):
             self.assertEqual(
                 src.telephone.text(value),
-                f'I received this message: {value}'
+                f"I received this message: {value}"
             )
 
-  still green
+  then delete the ``assertReceivedMessage`` :ref:`method<functions>`
 
-* I remove the other tests since they are all covered by ``test_passing_values``
+* I also remove the other tests since they are all covered by ``test_passing_values``
+* It is now easy to add any object I want to the test, for example if I want to test passing a set_
+
+  .. code-block:: python
+
+    def test_passing_values(self):
+        for value in (
+            'hello',
+            'yes',
+            None,
+            1234,
+            1.234,
+            (1, 2, 3, 'n'),
+            [1, 2, 3, 'n'],
+            {1, 2, 3, 'n'},
+            {
+                'key1': 'value1',
+                'keyN': 'valueN'
+            },
+        ):
+            self.assertEqual(
+                src.telephone.text(value),
+                f"I received this message: {value}"
+            )
 
 ----
 

@@ -20,7 +20,7 @@ class TestTelephone(unittest.TestCase):
         ):
             self.assertEqual(
                 src.telephone.text(value),
-                f'I received this message: {value}'
+                f"I received this message: {value}"
             )
 
 
