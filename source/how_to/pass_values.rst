@@ -516,19 +516,40 @@ refactor: make it better
 
   the terminal shows all tests are still passing
 
+* there is still some repetition as I am calling ``assertReceivedMessage`` multiple times, the only thing that changes are the values so I will replace them with a `for loop`_
 
+  .. code-block:: python
 
+    def test_passing_values(self):
+        for value in (
+            'hello',
+            'yes',
+            None,
+            1234,
+            1.234,
+            (1, 2, 3, 'n'),
+            [1, 2, 3, 'n'],
+            {
+                'key1': 'value1',
+                'keyN': 'valueN'
+            },
+        ):
+            self.assertEqual(
+                src.telephone.text(value),
+                f'I received this message: {value}'
+            )
 
+  still green
 
-green: make it pass
-#################################################################################
+* I remove the other tests since they are all covered by ``test_passing_values``
 
+----
 
 *********************************************************************************
 test_telephone
 *********************************************************************************
 
-time to write the program that makes the tests in ``test_telephone.py`` pass without looking at them
+time to write the program that make the test in ``test_telephone.py`` pass without looking at it
 
 red: make it fail
 #################################################################################
@@ -591,40 +612,34 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: None != 'I received this message: None'
+    AssertionError: None != 'I received this message: hello'
 
 * I change the `return statement`_ to match the expectation
 
   .. code-block:: python
 
     def text(argument):
-        return 'I received this message: None'
+        return 'I received this message: hello'
 
   and get another :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: 'I received this message: None' != 'I received this message: 1234'
+    AssertionError: 'I received this message: hello' != 'I received this message: yes'
 
-* I change the `return statement`_ to see the difference between the input and the expected output
+* I add a `return statement`_ to see the difference between the input and the expected output
 
   .. code-block:: python
 
     def text(argument):
         return argument
+        return 'I received this message: hello'
 
-  and the terminal shows these :ref:`AssertionErrors<AssertionError>` in the ``short test summary info`` section
+  and the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: 'hello' != 'I received this message: hello'
-    AssertionError: <class 'bool'> != "I received this message: <class 'bool'>"
-    AssertionError: {'key1': 'value1', 'keyN': 'valueN'} != "I received this message: {'key1': 'value1', 'keyN': 'v...
-    AssertionError: 1.234 != 'I received this message: 1.234'
-    AssertionError: [1, 2, 3, 'n'] != "I received this message: [1, 2, 3, 'n']"
-    AssertionError: (1, 2, 3, 'n') != "I received this message: (1, 2, 3, 'n')"
-    AssertionError: 1234 != 'I received this message: 1234'
-    AssertionError: None != 'I received this message: None'
 
   it looks like the message depends on the argument passed
 
@@ -635,7 +650,7 @@ green: make it pass
     def text(argument):
         return f'I received this message: {argument}'
 
-  and all the tests pass
+  and the test passes
 
 ----
 
