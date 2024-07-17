@@ -39,15 +39,15 @@ how can I use this book?
 
 Start with :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` because it is required by the other chapters,  then you can choose how you go through the chapters based on what you like, or you could go through the :ref:`how-tos` section in order, the other chapters cover :ref:`exceptions<Exceptions>`, :doc:`data_structures/data_structures`, :ref:`functions`, and :ref:`classes`
 
-My recommendations are that you
+Here are a few things I would do to have fun as I go through this process
 
-* type out the code portions as you go through a chapter without copying and pasting
-* repeat a chapter you like until you can do it from memory
+* type out the code portions of a chapter without copying and pasting
+* repeat a chapter I like until I can do it from memory
 * at the end of a chapter, delete the tests then try to write them from memory or use the solution as a guide
-* at the end of a chapter, close the tests, then delete the solution and try to write a solution with the terminal response as your guide
-* try to write solutions using only the tests from the :ref:`catalog_of_tests` as your guide
-* try adding tests for any ideas you get as you go through a chapter, the sooner you start writing tests the better you will get at the process since it requires a different way of thinking
-* do not quit until you get to the end of a chapter, especially when it gets hard, it is part of the experience when learning to solve problems, because there is a lot of failure. You can always walk away to go do something different for a while, then come back to it. If you take one small step at a time you eventually get where you want to go
+* at the end of a chapter, close the tests, then delete the solution and try to write a solution with only the terminal response as the guide
+* try to write solutions using only the tests from the :ref:`catalog_of_tests` as the guide
+* try adding tests for any ideas I get as I go through a chapter, the sooner you start writing tests the better you will get at the process since it requires a different way of thinking
+* I would not quit until I get to the end of a chapter, especially when it gets hard, it is part of the experience when learning to solve problems, because there is a lot of failure. You can always walk away to go do something different for a while, then come back to it. If you take one small step at a time you eventually get where you want to go
 
 If you like videos, there is one for each chapter at `<https://www.youtube.com/@JacobItegboje>`_
 
