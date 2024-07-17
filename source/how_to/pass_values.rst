@@ -212,7 +212,7 @@ the terminal shows the test passed
 I want to try this with other Python :doc:`/data_structures/data_structures` to see what happens
 
 *********************************************************************************
-test_passing_none
+test_passing_None
 *********************************************************************************
 
 red: make it fail
@@ -222,7 +222,7 @@ I add a new failing test
 
 .. code-block:: python
 
-  def test_passing_none(self):
+  def test_passing_None(self):
       self.assertEqual(
           src.telephone.text(None),
           "I received this message: 'None'"
@@ -292,15 +292,15 @@ I also add a test for an integer_
 
   def test_passing_an_integer(self):
       self.assertEqual(
-          src.telephone.text(123),
-          "I received this message: '123'"
+          src.telephone.text(1234),
+          "I received this message: '1234'"
       )
 
 and the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: 'I received this message: 123' != "I received this message: '123'"
+  AssertionError: 'I received this message: 1234' != "I received this message: '1234'"
 
 green: make it pass
 #################################################################################
@@ -311,8 +311,8 @@ I remove the quotes from the expectation to make the test pass
 
   def test_passing_an_integer(self):
       self.assertEqual(
-          src.telephone.text(123),
-          "I received this message: 123"
+          src.telephone.text(1234),
+          "I received this message: 1234"
       )
 
 *********************************************************************************
@@ -328,15 +328,15 @@ then add a test for a float_
 
   def test_passing_a_float(self):
       self.assertEqual(
-          src.telephone.text(1.23),
-          "I received this message: '1.23'"
+          src.telephone.text(1.234),
+          "I received this message: '1.234'"
       )
 
 and the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: 'I received this message: 1.23' != "I received this message: '1.23'"
+  AssertionError: 'I received this message: 1.234' != "I received this message: '1.234'"
 
 green: make it pass
 #################################################################################
@@ -347,8 +347,8 @@ I remove the quotes from the expectation to make the test pass
 
   def test_passing_a_float(self):
       self.assertEqual(
-          src.telephone.text(1.23),
-          "I received this message: 1.23"
+          src.telephone.text(1.234),
+          "I received this message: 1.234"
       )
 
 *********************************************************************************
@@ -467,6 +467,64 @@ and the terminal shows all tests are passing
 ----
 
 *********************************************************************************
+test_passing_values
+*********************************************************************************
+
+I just repeated the same phrase in the expectation 9 times, time to remove some duplication
+
+refactor: make it better
+#################################################################################
+
+* I add an assert :ref:`method<functions>` to replace the `assertEqual`_ calls in the test
+
+  .. code-block:: python
+
+    def assertReceivedMessage(self, value):
+        self.assertEqual(
+            src.telephone.text(value),
+            f'I received this message: {value}'
+        )
+
+  then use it in the tests
+
+  .. code-block:: python
+
+    def test_passing_a_string(self):
+        self.assertReceivedMessage('hello')
+        self.assertReceivedMessage('yes')
+
+    def test_passing_None(self):
+        self.assertReceivedMessage(None)
+
+    def test_passing_an_integer(self):
+        self.assertReceivedMessage(1234)
+
+    def test_passing_a_float(self):
+        self.assertReceivedMessage(1.234)
+
+    def test_passing_a_tuple(self):
+        self.assertReceivedMessage((1, 2, 3, 'n'))
+
+    def test_passing_a_list(self):
+        self.assertReceivedMessage([1, 2, 3, 'n'])
+
+    def test_passing_a_dictionary(self):
+        self.assertReceivedMessage({
+            'key1': 'value1',
+            'keyN': 'valueN'
+        })
+
+  the terminal shows all tests are still passing
+
+
+
+
+
+green: make it pass
+#################################################################################
+
+
+*********************************************************************************
 test_telephone
 *********************************************************************************
 
@@ -546,7 +604,7 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: 'I received this message: None' != 'I received this message: 123'
+    AssertionError: 'I received this message: None' != 'I received this message: 1234'
 
 * I change the `return statement`_ to see the difference between the input and the expected output
 
@@ -562,10 +620,10 @@ green: make it pass
     AssertionError: 'hello' != 'I received this message: hello'
     AssertionError: <class 'bool'> != "I received this message: <class 'bool'>"
     AssertionError: {'key1': 'value1', 'keyN': 'valueN'} != "I received this message: {'key1': 'value1', 'keyN': 'v...
-    AssertionError: 1.23 != 'I received this message: 1.23'
+    AssertionError: 1.234 != 'I received this message: 1.234'
     AssertionError: [1, 2, 3, 'n'] != "I received this message: [1, 2, 3, 'n']"
     AssertionError: (1, 2, 3, 'n') != "I received this message: (1, 2, 3, 'n')"
-    AssertionError: 123 != 'I received this message: 123'
+    AssertionError: 1234 != 'I received this message: 1234'
     AssertionError: None != 'I received this message: None'
 
   it looks like the message depends on the argument passed
@@ -585,7 +643,9 @@ green: make it pass
 review
 *********************************************************************************
 
-VOILA! You now know how to pass values from a test to a program and can represent any values as strings using by `string interpolation`_ with an `f-string`_. You also encountered the following exceptions
+VOILA! You now know how to pass values from a test to a program and can represent any values as strings by using `string interpolation`_ with an `f-string`_
+
+You also encountered the following exceptions
 
 * :ref:`AssertionError`
 * NameError_

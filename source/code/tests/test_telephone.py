@@ -1,55 +1,28 @@
-import telephone
+import src.telephone
 import unittest
 
 
 class TestTelephone(unittest.TestCase):
 
-    def test_text_messages(self):
-        self.assertEqual(
-            telephone.text('hello'),
-            'I received this message: hello'
-        )
-        self.assertEqual(
-            telephone.text('yes'),
-            'I received this message: yes'
-        )
-
-    def test_passing_data_structures(self):
-        self.assertEqual(
-            telephone.text(None),
-            'I received this message: None'
-        )
-        self.assertEqual(
-            telephone.text(bool),
-            "I received this message: <class 'bool'>"
-        )
-        self.assertEqual(
-            telephone.text(1234),
-            "I received this message: 1234"
-        )
-        self.assertEqual(
-            telephone.text(1.234),
-            "I received this message: 1.234"
-        )
-        self.assertEqual(
-            telephone.text((1, 2, 3, 'n')),
-            "I received this message: (1, 2, 3, 'n')"
-        )
-        self.assertEqual(
-            telephone.text([1, 2, 3, 'n']),
-            "I received this message: [1, 2, 3, 'n']"
-        )
-        self.assertEqual(
-            telephone.text({1, 2, 3, 'n'}),
-            "I received this message: {1, 2, 3, 'n'}"
-        )
-        self.assertEqual(
-            telephone.text({
+    def test_passing_values(self):
+        for value in (
+            'hello',
+            'yes',
+            None,
+            1234,
+            1.234,
+            (1, 2, 3, 'n'),
+            [1, 2, 3, 'n'],
+            {
                 'key1': 'value1',
                 'keyN': 'valueN'
-            }),
-            "I received this message: {'key1': 'value1', 'keyN': 'valueN'}"
-        )
+            },
+        ):
+            self.assertEqual(
+                src.telephone.text(value),
+                f'I received this message: {value}'
+            )
+
 
 # Exceptions Encountered
 # AssertionError

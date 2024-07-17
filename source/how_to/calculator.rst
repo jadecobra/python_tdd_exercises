@@ -481,7 +481,7 @@ green: make it pass
   .. code-block:: python
 
     def subtract(x, y):
-        return add(x, -y)
+        return x - y
 
   the test passes. SUCCESS!
 
