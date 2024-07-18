@@ -26,7 +26,8 @@
 .. _floats: https://docs.python.org/3/library/functions.html#float
 .. _floor (integer) division: https://en.wikipedia.org/wiki/Division_(mathematics)#Division_in_different_contexts
 .. _for loop: https://docs.python.org/3/tutorial/controlflow.html#for-statements
-.. _f-string: https://docs.python.org/3/glossary.html#term-f-string
+.. _f-string: https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals
+.. _f-strings: https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals
 .. _help system: https://docs.python.org/3/library/functions.html?highlight=dir#help
 .. _history: https://man7.org/linux/man-pages/man3/history.3.html
 .. _int: https://docs.python.org/3/library/functions.html?highlight=int#int

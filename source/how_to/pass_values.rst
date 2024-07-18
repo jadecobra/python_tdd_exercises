@@ -701,7 +701,7 @@ green: make it pass
 review
 *********************************************************************************
 
-VOILA! You now know how to pass values from a test to a program and can represent any values as strings by using `string interpolation`_ with an `f-string`_
+VOILA! You now know how to pass values from a test to a program and can represent values in strings with `f-strings`_
 
 You also encountered the following exceptions
 
