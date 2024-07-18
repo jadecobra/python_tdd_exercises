@@ -10,7 +10,7 @@ pumping python: how I solve problems with test driven development
 #################################################################################
 
 
-My name is Jacob Itegboje and I have been a Python Programmer in roles as a Developer, Platform Engineer, DevOps Engineer and Solutions Architect. This is a collection of `Test Driven Development`_ exercises that have helped me learn and use the language for more than a decade.
+My name is Jacob Itegboje and I have been a Python Programmer in roles as a Developer, Platform Engineer, DevOps Engineer and Solutions Architect. This is a collection of `Test Driven Development`_ exercises that have helped me use the language for more than a decade.
 `Test Driven Development`_ is a way to write software with a focus on tests. I write tests for ideas to reach a goal or meet a requirement, and the results tell me if I am closer to the goal or not. The process is repeated until I get to the goal.
 
 I recommend reading `Kent Beck’s <https://en.wikipedia.org/wiki/Kent_Beck>`_ `Test Driven Development by Example`_ and `Martin Fowler’s <https://en.wikipedia.org/wiki/Martin_Fowler_(software_engineer)>`_ `Refactoring`_, they both influenced the way I write programs.

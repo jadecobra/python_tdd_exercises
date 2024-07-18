@@ -16,7 +16,7 @@ how to pass values
 
 ----
 
-This is how to pass values from tests to programs using `Formatted string literals <https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals>`_ to place values inside strings_
+This is how to pass values from tests to programs with `f-strings`_
 
 *********************************************************************************
 test_passing_a_string

@@ -304,7 +304,7 @@ refactor: make it better
   the test is still green
 
   - ``x = random.randint(-1, 1)`` assigns a variable called ``x`` to the result of calling ``random.randint(-1, 1)``
-  - ``random.randint(-1, 1)`` returns a random digit that can be -1 to represent negative numbers, 0, or 1 to represent positive numbers
+  - ``random.randint(-1, 1)`` returns a random digit that can be -1 to represent negative numbers, 0 to represent itself, or 1 to represent positive numbers
 
 
 * I no longer need the previous assertions because the new one uses random numbers to cover all cases, so I remove them
