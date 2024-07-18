@@ -479,7 +479,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def assertReceivedMessage(self, value):
+    def assertMessageReceived(self, value):
         self.assertEqual(
             src.telephone.text(value),
             f"I received this message: {value}"
@@ -490,33 +490,33 @@ refactor: make it better
   .. code-block:: python
 
     def test_passing_a_string(self):
-        self.assertReceivedMessage('hello')
-        self.assertReceivedMessage('yes')
+        self.assertMessageReceived('hello')
+        self.assertMessageReceived('yes')
 
     def test_passing_None(self):
-        self.assertReceivedMessage(None)
+        self.assertMessageReceived(None)
 
     def test_passing_an_integer(self):
-        self.assertReceivedMessage(1234)
+        self.assertMessageReceived(1234)
 
     def test_passing_a_float(self):
-        self.assertReceivedMessage(1.234)
+        self.assertMessageReceived(1.234)
 
     def test_passing_a_tuple(self):
-        self.assertReceivedMessage((1, 2, 3, 'n'))
+        self.assertMessageReceived((1, 2, 3, 'n'))
 
     def test_passing_a_list(self):
-        self.assertReceivedMessage([1, 2, 3, 'n'])
+        self.assertMessageReceived([1, 2, 3, 'n'])
 
     def test_passing_a_dictionary(self):
-        self.assertReceivedMessage({
+        self.assertMessageReceived({
             'key1': 'value1',
             'keyN': 'valueN'
         })
 
   the terminal shows all tests are still passing
 
-* there is still some repetition as I am calling ``assertReceivedMessage`` multiple times, the only thing that changes are the values so I will replace them with a `for loop`_
+* there is still some repetition as I am calling ``assertMessageReceived`` multiple times, the only thing that changes are the values so I will replace them with a `for loop`_
 
   .. code-block:: python
 
@@ -534,9 +534,9 @@ refactor: make it better
                 'keyN': 'valueN'
             },
         ):
-            self.assertReceivedMessage(value)
+            self.assertMessageReceived(value)
 
-  still green. Since ``assertReceivedMessage`` is now written only once in the `for loop`_ I can replace it with what it represents
+  still green. Since ``assertMessageReceived`` is now written only once in the `for loop`_ I can replace it with what it represents
 
   .. code-block:: python
 
@@ -559,7 +559,7 @@ refactor: make it better
                 f"I received this message: {value}"
             )
 
-  then delete the ``assertReceivedMessage`` :ref:`method<functions>`
+  then delete the ``assertMessageReceived`` :ref:`method<functions>`
 
 * I also remove the other tests since they are all covered by ``test_passing_values``
 * It is now easy to add any object I want to the test, for example if I want to test passing a set_
