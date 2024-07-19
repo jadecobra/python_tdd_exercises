@@ -347,7 +347,7 @@ refactor: make it better
     import unittest
 
 
-    def random_number():
+    def a_random_number():
         return random.randint(-10, 10)
 
   and call it for the ``x`` and ``y`` variables
@@ -355,8 +355,8 @@ refactor: make it better
   .. code-block:: python
 
     def test_addition(self):
-        x = random_number()
-        y = random_number()
+        x = a_random_number()
+        y = a_random_number()
 
         self.assertEqual(
             src.calculator.add(x, y),
@@ -369,7 +369,7 @@ refactor: make it better
 
   .. code-block:: python
 
-      def random_number():
+      def a_random_number():
         return random.randint(-10, 10)
 
 * I remove ``test addition`` from the TODO list
@@ -399,8 +399,8 @@ red: make it fail
   .. code-block:: python
 
     def test_addition(self):
-        x = random_number()
-        y = random_number()
+        x = a_random_number()
+        y = a_random_number()
 
         self.assertEqual(
             src.calculator.add(x, y),
@@ -408,8 +408,8 @@ red: make it fail
         )
 
     def test_subtraction(self):
-        x = random_number()
-        y = random_number()
+        x = a_random_number()
+        y = a_random_number()
 
         self.assertEqual(
             src.calculator.subtract(x, y),
@@ -492,8 +492,8 @@ refactor: make it better
 
 * I have some duplication to remove in keeping with `The Do Not Repeat Yourself (DRY) Principle`_
 
-  - ``x = random_number()`` happens twice, once in ``test_addition`` and again in ``test_subtraction``
-  - ``y = random_number()`` happens twice, once in ``test_addition`` and again in ``test_subtraction``
+  - ``x = a_random_number()`` happens twice, once in ``test_addition`` and again in ``test_subtraction``
+  - ``y = a_random_number()`` happens twice, once in ``test_addition`` and again in ``test_subtraction``
 
 * I can use :ref:`class <classes>` attributes (variables) in the ``TestCalculator`` :ref:`class <classes>` to make the random variables once
 
@@ -501,8 +501,8 @@ refactor: make it better
 
     class TestCalculator(unittest.TestCase):
 
-        x = random_number()
-        y = random_number()
+        x = a_random_number()
+        y = a_random_number()
 
         def test_addition(self):
             x = self.x
@@ -530,8 +530,8 @@ refactor: make it better
 
     class TestCalculator(unittest.TestCase):
 
-        x = random_number()
-        y = random_number()
+        x = a_random_number()
+        y = a_random_number()
 
         def test_addition(self):
             self.assertEqual(
@@ -745,7 +745,7 @@ refactor: make it better
             src.calculator.divide(self.x, 0)
 
         while self.y == 0:
-            self.y = random_number()
+            self.y = a_random_number()
         else:
             self.assertEqual(
                 src.calculator.divide(self.x, self.y),
@@ -766,7 +766,7 @@ refactor: make it better
     def test_division(self):
         while self.y == 0:
             src.calculator.divide(self.x, self.y)
-            self.y = random_number()
+            self.y = a_random_number()
         else:
             self.assertEqual(
                 src.calculator.divide(self.x, self.y),
@@ -787,7 +787,7 @@ refactor: make it better
         while self.y == 0:
             with self.assertRaises(ZeroDivisionError):
                 src.calculator.divide(self.x, self.y)
-            self.y = random_number()
+            self.y = a_random_number()
         else:
             self.assertEqual(
                 src.calculator.divide(self.x, self.y),
@@ -801,7 +801,7 @@ refactor: make it better
 
   .. code-block:: python
 
-      def random_number():
+      def a_random_number():
         return random.randint(-10, 10)
 
 ----
