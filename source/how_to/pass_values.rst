@@ -65,7 +65,7 @@ red: make it fail
 
     NameError: name 'src' is not defined
 
-* which I add to the list of telephone
+* which I add to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
@@ -212,13 +212,47 @@ the terminal shows the test passed
 I want to try this with other Python :doc:`/data_structures/data_structures` to see what happens
 
 *********************************************************************************
+test_passing_a_class
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+What happens when I pass a :ref:`class <classes>` to the ``text`` :ref:`function<functions>`?
+
+.. code-block:: python
+
+  def test_passing_a_class(self):
+      self.assertEqual(
+          src.telephone.text(object),
+          "I received this message: object"
+      )
+
+the terminal shows an :ref:`AssertionError` ::
+
+  AssertionError: "I received this message: <class 'object'>" != 'I received this message: object'
+
+green: make it pass
+#################################################################################
+
+I make the expectation match reality and the test passes
+
+.. code-block:: python
+
+  def test_passing_a_class(self):
+      self.assertEqual(
+          src.telephone.text(object),
+          "I received this message: <class 'object'>"
+      )
+
+*********************************************************************************
 test_passing_None
 *********************************************************************************
 
 red: make it fail
 #################################################################################
 
-I add a new failing test
+I add a new failing test for :ref:`None`
 
 .. code-block:: python
 
@@ -249,38 +283,72 @@ I change the expectation to match reality
 and the test passes
 
 *********************************************************************************
-test_passing_a_class
+test_passing_a_boolean
 *********************************************************************************
 
 red: make it fail
 #################################################################################
 
-What happens when I pass in a :ref:`class <classes>` to the ``text`` :ref:`function<functions>`?
+
+I add a test for :ref:`booleans`, first with an assertion for :ref:`True <test_what_is_true>`
 
 .. code-block:: python
 
-  def test_passing_a_class(self):
+  def test_passing_a_boolean(self):
       self.assertEqual(
-          src.telephone.text(bool),
-          "I received this message: bool"
+          src.telephone.text(True),
+          "I received this message: 'True'"
       )
 
-the terminal shows an :ref:`AssertionError` ::
+the terminal shows an :ref:`AssertionError`
 
-  AssertionError: "I received this message: <class 'bool'>" != 'I received this message: bool'
+.. code-block:: python
+
+  AssertionError: "I received this message: True" != "I received this message: 'True'"
 
 green: make it pass
 #################################################################################
 
-I make the test match the expectation and the test passes
+* I make the test match the expectation and the test passes
 
-.. code-block:: python
+  .. code-block:: python
 
-  def test_passing_a_class(self):
-      self.assertEqual(
-          src.telephone.text(bool),
-          "I received this message: <class 'bool'>"
-      )
+    def test_passing_a_boolean(self):
+        self.assertEqual(
+            src.telephone.text(True),
+            "I received this message: True"
+        )
+
+* then add an assertion for :ref:`False <test_what_is_false>`
+
+  .. code-block:: python
+
+    def test_passing_a_boolean(self):
+        self.assertEqual(
+            src.telephone.text(True),
+            "I received this message: True"
+        )
+        self.assertEqual(
+            src.telephone.text(False),
+            "I received this message: 'False'"
+        )
+
+  which gives me an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: "I received this message: False" != "I received this message: 'False'"
+
+* I change the expectation
+
+  .. code-block:: python
+
+    self.assertEqual(
+        src.telephone.text(False),
+        "I received this message: False"
+    )
+
+  and the test passes
 
 *********************************************************************************
 test_passing_an_integer
@@ -404,7 +472,7 @@ I add a test for a :doc:`list </data_structures/lists/lists>`
           "I received this message: '[1, 2, 3, n]'"
       )
 
-the terminal shows an :ref:`AssertionError`
+and get an :ref:`AssertionError`
 
 .. code-block:: python
 
