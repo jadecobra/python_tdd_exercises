@@ -533,7 +533,7 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: None != 'I received this message: hello'
+    AssertionError: None != 'I received this message: 1234'
 
 * I change the `return statement`_ to match the expectation
 
@@ -554,15 +554,22 @@ green: make it pass
 
     def text(argument):
         return argument
-        return 'I received this message: hello'
+        return 'I received this message: 1234'
 
-  and the terminal shows an :ref:`AssertionError`
+  the test summary info shows an :ref:`AssertionError` for each test
 
   .. code-block:: python
 
+    AssertionError: None != 'I received this message: None'
+    AssertionError: <class 'bool'> != "I received this message: <class 'bool'>"
+    AssertionError: {'key1': 'value1', 'keyN': 'valueN'} != "I received this message: {'key1': 'value1', 'keyN': 'v...
+    AssertionError: 1.234 != 'I received this message: 1.234'
+    AssertionError: [1, 2, 3, 'n'] != "I received this message: [1, 2, 3, 'n']"
     AssertionError: 'hello' != 'I received this message: hello'
+    AssertionError: (1, 2, 3, 'n') != "I received this message: (1, 2, 3, 'n')"
+    AssertionError: 1234 != 'I received this message: 1234'
 
-  it looks like the message depends on the argument passed
+  the tests expect the message to have the the argument passed
 
 * I change the `return statement`_ to use an `f-string`
 
@@ -579,7 +586,7 @@ green: make it pass
 review
 *********************************************************************************
 
-VOILA! You now know how to pass values from a test to a program and can represent values in strings with `f-strings`_
+VOILA! You now know how to pass values from a test to a program and can represent values in a string_ with an `f-string`_
 
 You also encountered the following exceptions
 
