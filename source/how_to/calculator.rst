@@ -49,7 +49,7 @@ red: make it fail
     tests/test_calculator.py:7: AssertionError
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_calculator.py:7`` with the mouse to open it
-* and change ``True`` to ``False`` to make ``test_failure`` pass
+* change ``True`` to ``False`` to make ``test_failure`` pass
 * then add a TODO list to keep track of work for the calculator
 
   .. code-block:: python
@@ -84,7 +84,7 @@ red: make it fail
             )
 
   - the assertEqual_ :ref:`method<functions>` from the `unittest.TestCase`_ :doc:`class</classes/classes>` checks if its 2 inputs are equal. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
-  - in this case my expectation is that ``src.calculator.add(0, 1)`` is equal to ``1``
+  - the best explanation I have seen for this is that one of them is reality and the other is my expectation. In this case my expectation is that ``src.calculator.add(0, 1)`` will return ``1`` because ``0`` plus ``1`` is ``1``
 
   the terminal shows a NameError because ``src`` is not defined anywhere in ``test_calculator.py``
 
@@ -136,7 +136,7 @@ green: make it pass
     # NameError
     # AttributeError
 
-* then open ``calculator.py`` in the Integrated Development Environment (IDE) and type the name ``add``
+* then open ``calculator.py`` in the Integrated Development Environment (IDE) and type the name
 
   .. code-block:: python
 
@@ -162,7 +162,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* The new error is a :ref:`TypeError` which can occur when an object_ is called in a way that disagrees with its definition. In this case the ``add`` variable is not callable_ because it refers to :ref:`None` which is not a callable_ object. I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
+  because the ``add`` variable refers to :ref:`None` which is not a callable_ object. I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
@@ -187,14 +187,14 @@ green: make it pass
 
   the current definition of the ``add`` function takes in 0 inputs, but two were provided 2 in the test - ``src.calculator.add(0, 1)``
 
-* I change the definition in ``calculator.py`` to match the requirement of the ``add`` function taking in two numbers
+* I change the definition to match the requirement of two positional arguments
 
   .. code-block:: python
 
     def add(x, y):
         return None
 
-  and the terminal shows an :ref:`AssertionError`
+  which gives me an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -216,15 +216,9 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-Wait a minute! Is it that easy? Do I just provide the expectation of the test to make it pass? In the green phase, Yes. I do the easiest thing to make the test pass.
+Wait a minute! Is it that easy? Do I provide the expectation of the test to make it pass? In the green phase, Yes. I do the easiest thing to make the test pass.
 
-Solving the problem this way shows a problem with the test, which means I need to "Make it Better"
-
-* When a user tries to add other numbers that are not ``0`` and ``1``, the ``add`` function returns ``1``
-* When a user tries to add negative numbers, the ``add`` function returns ``1``
-* The ``add`` function returns ``1`` no matter what inputs are given. It is a :doc:`singleton function </functions/test_singleton_functions>`
-
-Even though the ``add`` function currently passes this test it does not meet the actual requirement.
+Solving the problem this way shows it has a problem, I have to "Make it Better". The ``add`` function returns ``1`` no matter what inputs are given. It is a :doc:`singleton function </functions/test_singleton_functions>`, I want it to do a calculation with the inputs instead. Even though ``add`` currently passes the test it does not meet the actual requirement.
 
 .. _test_addition_refactor_red:
 
@@ -253,10 +247,12 @@ and the terminal shows an :ref:`AssertionError`
 
 .. _test_addition_refactor_green:
 
+the :ref:`function<functions>` returns ``1`` but the test expects ``0``
+
 green: make it pass
 ---------------------------------------------------------------------------------
 
-I change the `return statement`_ of the ``add`` :ref:`function<functions>`
+I change the `return statement`_
 
 .. code-block:: python
 
@@ -270,7 +266,7 @@ and the terminal shows a passing test
 refactor: make it better
 ---------------------------------------------------------------------------------
 
-* I want to test the function with random numbers, so I do not need to add more tests to check the ``add`` :ref:`function<functions>`. I import python's random_ library to generate random numbers for the test
+* I used 2 examples to test the :ref:`function<functions>` and could add more but it would be better to use random numbers, so I do not need to add more assertions. I add an `import statement`_
 
   .. code-block:: python
 
@@ -278,7 +274,9 @@ refactor: make it better
     import src.calculator
     import unittest
 
-* then add variables that are assigned to random numbers, I also add an assertion
+  random_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to make fake random numbers
+
+* I add variables and a new assertion
 
   .. code-block:: python
 
@@ -301,13 +299,12 @@ refactor: make it better
                 0
             )
 
-  the test is still green
+  the terminal shows the test is still green
 
   - ``x = random.randint(-1, 1)`` assigns a variable called ``x`` to the result of calling ``random.randint(-1, 1)``
-  - ``random.randint(-1, 1)`` returns a random digit that can be -1 to represent negative numbers, 0 to represent itself, or 1 to represent positive numbers
+  - ``random.randint(-1, 1)`` gives me a random number from ``-1`` up to and including ``1``, ``-1`` for negative numbers, ``0`` for itself, and ``1`` for positive numbers
 
-
-* I no longer need the previous assertions because the new one uses random numbers to cover all cases, so I remove them
+* I remove the other assertions because they are now covered by the one that uses the random numbers
 
   .. code-block:: python
 
@@ -334,7 +331,6 @@ refactor: make it better
             src.calculator.add(x, y),
             x+y
         )
-
 
   and it is still green
 
@@ -365,7 +361,7 @@ refactor: make it better
 
   the test still passes
 
-* I can now change the range of random numbers I use in the test in one place instead of two
+* I can now change the range of random numbers for the test in one place
 
   .. code-block:: python
 
@@ -387,7 +383,7 @@ refactor: make it better
 test_subtraction
 *********************************************************************************
 
-Since addition works, it is time to add a failing test for subtraction
+Time to add a failing test for subtraction
 
 .. _test_subtraction_red:
 
@@ -416,7 +412,7 @@ red: make it fail
             x-y
         )
 
-  and get an :ref:`AttributeError`
+  which gives me an :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -427,7 +423,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I add a name to ``calculator.py`` assigning it to :ref:`None`
+* I add the name to ``calculator.py`` and assign it to :ref:`None`
 
   .. code-block:: python
 
@@ -437,7 +433,7 @@ green: make it pass
 
     subtract = None
 
-  and the terminal shows a :ref:`TypeError`
+  the terminal shows a :ref:`TypeError`
 
   .. code-block:: python
 
@@ -445,7 +441,7 @@ green: make it pass
 
   this is familiar
 
-* I change ``subtract`` to a :ref:`function<functions>` to make it callable
+* I change it to a :ref:`function<functions>` to make it callable
 
   .. code-block:: python
 
@@ -476,7 +472,7 @@ green: make it pass
 
   ``subtract`` returns :ref:`None` and the test expects ``x`` minus ``y``
 
-* When I change the `return statement`_ in ``subtract`` to return the difference between the inputs
+* When I change the `return statement`_ to return the difference between the inputs
 
   .. code-block:: python
 
