@@ -14,16 +14,26 @@ class TestTelephone(unittest.TestCase):
             "I received this message: yes"
         )
 
+    def test_passing_a_class(self):
+        self.assertEqual(
+            src.telephone.text(object),
+            "I received this message: <class 'object'>"
+        )
+
     def test_passing_None(self):
         self.assertEqual(
             src.telephone.text(None),
             "I received this message: None"
         )
 
-    def test_passing_a_class(self):
+    def test_passing_a_boolean(self):
         self.assertEqual(
-            src.telephone.text(bool),
-            "I received this message: <class 'bool'>"
+            src.telephone.text(True),
+            "I received this message: True"
+        )
+        self.assertEqual(
+            src.telephone.text(False),
+            "I received this message: False"
         )
 
     def test_passing_an_integer(self):
