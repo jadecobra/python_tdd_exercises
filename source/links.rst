@@ -41,6 +41,7 @@
 .. _pip: https://pypi.org/project/pip/
 .. _pytest: https://docs.pytest.org/
 .. _pytest-watch: https://pypi.org/project/pytest-watch/
+.. _python koans:
 .. _python package manager: https://pypi.org/project/pip/
 .. _python documentation for strings: https://docs.python.org/3/library/string.html?highlight=string#module-string
 .. _python's online documentation: https://docs.python.org/3/search.html

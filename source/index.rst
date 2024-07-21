@@ -39,7 +39,7 @@ how can I use this book?
 
 Start with :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` because it is needed by the other chapters,  then you can choose how you go through the chapters based on what you like, or you could go through the :ref:`how-tos` section step by step, the other chapters cover :ref:`exceptions<Exceptions>`, :doc:`data_structures/data_structures`, :ref:`functions`, and :ref:`classes`
 
-Here are a few things I would do to have fun as I go through this process if I were in your shoes
+Here are a few things I would do if I were in your shoes, to have fun as I go through this process
 
 * type out the code portions of a chapter without copying and pasting
 * repeat a chapter I like until I can do it from memory
