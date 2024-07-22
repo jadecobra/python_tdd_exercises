@@ -9,6 +9,11 @@
 pumping python: how I solve problems with test driven development
 #################################################################################
 
+.. raw:: html
+
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/fxPgowISTA4?si=fHnq4SbtySWs696z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+----
 
 My name is Jacob Itegboje and this is a collection of `Test Driven Development`_ exercises that have helped me use Python for more than a decade.
 `Test Driven Development`_ is a way to write software with a focus on tests. I write tests for ideas to reach a goal or meet a requirement, and the results tell me if I am closer to the goal or not. I repeat the process until I get to the goal.
@@ -20,7 +25,7 @@ who is this book for?
 *********************************************************************************
 
 * If you are interested in Python, this book is for you
-* If you just started your journey, CONGRATULATIONS! You picked Python from the many available `programming languages <https://en.wikipedia.org/wiki/Programming_language>`_, Celebrate it, this book is for you
+* If you just started your journey, CONGRATULATIONS! You picked Python from the many `programming languages <https://en.wikipedia.org/wiki/Programming_language>`_ out there, Celebrate it, this book is for you
 * If you are new to `Test Driven Development`_ in Python, this book is for you
 * If you already use Python but do not know any of the :ref:`Exceptions<Exceptions>` below, this book is for you
 
@@ -43,7 +48,7 @@ Here are a few things I would do if I were in your shoes, to make the process mo
 
 * type out the code portions of a chapter without copying and pasting
 * at the end of a chapter, delete the tests and try to write them from memory or use the solution as a guide
-* close the tests at the end of a chapter, delete the solution and try to write a solution with the terminal response as a guide
+* close the tests at the end of a chapter, delete the solution and try to write one with the terminal response as a guide
 * try to write solutions using the tests from the :ref:`catalog_of_tests` as a guide
 * try adding tests for any ideas I get as I go through a chapter, the sooner you start writing tests the better since it requires a different way of thinking
 * I would not quit until I get to the end of a chapter, especially when it is hard, this is part of the experience when learning to solve problems, things get harder before they are easier because there is a lot of failure. I can always walk away to go do something different for a while, then come back and try again. If you take one small step at a time you eventually get where you want to go
