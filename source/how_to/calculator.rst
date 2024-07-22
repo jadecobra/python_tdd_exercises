@@ -48,7 +48,7 @@ red: make it fail
 
     tests/test_calculator.py:7: AssertionError
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_calculator.py:7`` with the mouse to open it
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_calculator.py:7`` with the mouse to open it in the editor
 * change ``True`` to ``False`` to make ``test_failure`` pass
 * then add a TODO list to keep track of work for the calculator
 
@@ -68,7 +68,7 @@ red: make it fail
     # Exceptions Encountered
     # AssertionError
 
-* I change ``test_failure`` to ``test_addition``
+* I change ``test_failure`` to ``test_addition``, then add an assertion
 
   .. code-block:: python
 
@@ -84,7 +84,7 @@ red: make it fail
             )
 
   - the assertEqual_ :ref:`method<functions>` from the `unittest.TestCase`_ :doc:`class</classes/classes>` checks if its 2 inputs are equal. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
-  - the best explanation I have seen for this is that one of them is reality and the other is my expectation. In this case my expectation is that ``src.calculator.add(0, 1)`` will return ``1`` because ``0`` plus ``1`` is ``1``
+  - the explanation I like for this is that one of them is reality and the other is my expectation. In this case my expectation is that ``src.calculator.add(0, 1)`` will return ``1`` because ``0`` plus ``1`` is ``1``
 
   the terminal shows a NameError because ``src`` is not defined anywhere in ``test_calculator.py``
 
