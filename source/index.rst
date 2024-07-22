@@ -46,7 +46,7 @@ Here are a few things I would do if I were in your shoes, to make the process mo
 * close the tests at the end of a chapter, delete the solution and try to write a solution with the terminal response as a guide
 * try to write solutions using the tests from the :ref:`catalog_of_tests` as a guide
 * try adding tests for any ideas I get as I go through a chapter, the sooner you start writing tests the better since it requires a different way of thinking
-* I would not quit until I get to the end of a chapter, especially when it is hard, it is part of the experience when learning to solve problems, things are harder before they get easier because there is a lot of failure. I can always walk away to go do something different for a while, then come back and try again. If you take one small step at a time you eventually get where you want to go
+* I would not quit until I get to the end of a chapter, especially when it is hard, this is part of the experience when learning to solve problems, things are harder before they get easier because there is a lot of failure. I can always walk away to go do something different for a while, then come back and try again. If you take one small step at a time you eventually get where you want to go
 
 If you like videos, there is one for each chapter at `<https://www.youtube.com/@JacobItegboje>`_
 
