@@ -84,9 +84,9 @@ red: make it fail
             )
 
   - the assertEqual_ :ref:`method<functions>` from the `unittest.TestCase`_ :doc:`class</classes/classes>` checks if its 2 inputs are equal. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
-  - the explanation I like for this is that one of them is reality and the other is my expectation. In this case my expectation is that ``src.calculator.add(0, 1)`` will return ``1`` because ``0`` plus ``1`` is ``1``
+  - the explanation I like for this is that one of them is ``reality`` and the other is my ``expectation``. In this case, reality is the call ``src.calculator.add(0, 1)``, and my expectation is ``1`` because ``0`` plus ``1`` is ``1``
 
-  the terminal shows a NameError because ``src`` is not defined anywhere in ``test_calculator.py``
+  the terminal shows a NameError_ because ``src`` is not defined anywhere in ``test_calculator.py``
 
   .. code-block:: python
 
@@ -136,7 +136,7 @@ green: make it pass
     # NameError
     # AttributeError
 
-* then open ``calculator.py`` in the Integrated Development Environment (IDE) and type the name
+* then open ``calculator.py`` in the editor to type the name
 
   .. code-block:: python
 
@@ -156,7 +156,7 @@ green: make it pass
 
     add = None
 
-  and the terminal shows a :ref:`TypeError`
+  and get a :ref:`TypeError`
 
   .. code-block:: python
 
