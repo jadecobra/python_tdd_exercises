@@ -608,13 +608,13 @@ green: make it pass
   .. code-block:: python
 
     def text(argument):
-        return 'I received this message: hello'
+        return 'I received this message: 1234'
 
   and get another :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: 'I received this message: hello' != 'I received this message: yes'
+    AssertionError: 'I received this message: 1234' != "I received this message: (1, 2, 3, 'n')"
 
 * I add a `return statement`_ to see the difference between the input and the expected output
 
@@ -646,7 +646,7 @@ green: make it pass
     def text(argument):
         return f'I received this message: {argument}'
 
-  and the test passes
+  and all 8 tests pass!
 
 ----
 
