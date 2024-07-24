@@ -49,7 +49,7 @@ red: make it fail
     tests/test_calculator.py:7: AssertionError
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_calculator.py:7`` with the mouse to open it in the editor
-* change ``True`` to ``False`` to make ``test_failure`` pass
+* change ``True`` to ``False`` to make the test pass
 * then add a TODO list to keep track of work for the calculator
 
   .. code-block:: python
@@ -122,10 +122,11 @@ green: make it pass
 
     AttributeError: module 'src.calculator' has no attribute 'add'
 
-  I think of ``src.calculator.add`` as an address
+  I think of ``src.calculator.add`` like an address
 
-  * ``src.calculator`` refers to ``calculator.py`` in the ``src`` folder/directory
-  * ``add`` refers to something (an attribute) in the ``calculator.py`` file which is currently empty
+  * ``src`` is the ``src`` folder/directory
+  * ``calculator`` is ``calculator.py`` in the directory
+  * ``add`` is something (an attribute) in the file which is currently empty
 
 * I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
 
@@ -162,7 +163,9 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-  because the ``add`` variable refers to :ref:`None` which is not a callable_ object. I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
+  because the ``add`` variable refers to :ref:`None` which is not a callable_ object
+
+* I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
@@ -172,14 +175,14 @@ green: make it pass
     # AttributeError
     # TypeError
 
-* I can define ``add`` as a :ref:`function<functions>` or :ref:`class <classes>` to make it callable. I change the ``add`` variable to a :ref:`function<functions>` with the def_ keyword
+* I can define ``add`` as a :ref:`function<functions>` or :ref:`class <classes>` to make it callable_. I change the ``add`` variable to a :ref:`function<functions>` with the def_ keyword because it is easier than making it a :ref:`class<classes>`
 
   .. code-block:: python
 
     def add():
         return None
 
-  the terminal still shows a :ref:`TypeError` but with a different message. Progress!
+  the terminal shows another :ref:`TypeError` but with a different message. Progress!
 
   .. code-block:: python
 
@@ -194,7 +197,7 @@ green: make it pass
     def add(x, y):
         return None
 
-  which gives me an :ref:`AssertionError`
+  and get an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -216,9 +219,9 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-Wait a minute! Is it that easy? Do I provide the expectation of the test to make it pass? In the green phase, Yes. I do the easiest thing to make the test pass.
+Wait a minute! Is it that easy? Do I provide the expectation of the test to make it pass? In the green phase, Yes. I do the easiest thing to make it pass.
 
-Solving the problem this way shows it has a problem, I have to "Make it Better". The ``add`` function returns ``1`` no matter what inputs are given. It is a :doc:`singleton function </functions/test_singleton_functions>`, I want it to do a calculation with the inputs instead. Even though ``add`` currently passes the test it does not meet the actual requirement.
+Solving the problem this way shows a problem with the test, I have to "Make it Better". The ``add`` function returns ``1`` no matter what inputs it is given. It is a :doc:`singleton function </functions/test_singleton_functions>`, I want it to do a calculation with the inputs instead. Even though ``add`` currently passes the test it does not meet the actual requirement.
 
 .. _test_addition_refactor_red:
 
@@ -252,7 +255,7 @@ the :ref:`function<functions>` returns ``1`` but the test expects ``0``
 green: make it pass
 ---------------------------------------------------------------------------------
 
-I change the `return statement`_
+I change the `return statement`_ to a calculation
 
 .. code-block:: python
 
@@ -276,7 +279,7 @@ refactor: make it better
 
   random_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to make fake random numbers
 
-* I add variables and a new assertion
+* then I add variables and a new assertion
 
   .. code-block:: python
 
@@ -302,7 +305,8 @@ refactor: make it better
   the terminal shows the test is still green
 
   - ``x = random.randint(-1, 1)`` assigns a variable called ``x`` to the result of calling ``random.randint(-1, 1)``
-  - ``random.randint(-1, 1)`` gives me a random number from ``-1`` up to and including ``1``, ``-1`` for negative numbers, ``0`` for itself, and ``1`` for positive numbers
+  - ``random.randint(-1, 1)`` gives me a random number from ``-1`` up to and including ``1``
+  - ``-1`` for negative numbers, ``0`` for itself, and ``1`` for positive numbers
 
 * I remove the other assertions because they are now covered by the one that uses the random numbers
 
@@ -319,7 +323,7 @@ refactor: make it better
                 x+y
             )
 
-* I change the range of random numbers for the test
+* If I want to change the range of random numbers for the test, I have to do it in more than one place
 
   .. code-block:: python
 
@@ -332,9 +336,7 @@ refactor: make it better
             x+y
         )
 
-  and it is still green
-
-* then add a function to remove the duplication of the calls to `random.randint`_ with the same values
+* I add a function to remove the duplication of the calls to `random.randint`_ with the same values
 
   .. code-block:: python
 
@@ -344,7 +346,7 @@ refactor: make it better
 
 
     def a_random_number():
-        return random.randint(-10, 10)
+        return random.randint(-1, 1)
 
   and call it for the ``x`` and ``y`` variables
 
@@ -359,8 +361,6 @@ refactor: make it better
             x+y
         )
 
-  the test still passes
-
 * I can now change the range of random numbers for the test in one place
 
   .. code-block:: python
@@ -368,7 +368,9 @@ refactor: make it better
       def a_random_number():
         return random.randint(-10, 10)
 
-* I remove ``test addition`` from the TODO list
+  and the test still passes
+
+* then remove ``test addition`` from the TODO list
 
   .. code-block:: python
 
@@ -383,14 +385,12 @@ refactor: make it better
 test_subtraction
 *********************************************************************************
 
-Time to add a failing test for subtraction
-
 .. _test_subtraction_red:
 
 red: make it fail
 #################################################################################
 
-* I add a :ref:`method<functions>` called ``test_subtraction``
+* I add a :ref:`method<functions>` to test subtraction
 
   .. code-block:: python
 
@@ -448,7 +448,7 @@ green: make it pass
     def subtract():
         return None
 
-  and the terminal shows another :ref:`TypeError` with a different error message. Progress again!
+  and the terminal shows another :ref:`TypeError` with a different message. Progress again!
 
   .. code-block:: python
 
@@ -470,7 +470,7 @@ green: make it pass
     AssertionError: None != 7
     AssertionError: None != 10
 
-  ``subtract`` returns :ref:`None` and the test expects ``x`` minus ``y``
+  ``subtract`` returns :ref:`None` and the test expects ``x-y``
 
 * When I change the `return statement`_ to return the difference between the inputs
 
@@ -518,7 +518,7 @@ refactor: make it better
                 x-y
             )
 
-  the ``x`` and ``y`` variables are initialized once as :ref:`class <classes>` attributes (variables) and accessed later in every test using ``self.x`` and ``self.y``, the same way I can call `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_ and the terminal still shows passing tests
+  the ``x`` and ``y`` variables are made once as :ref:`class <classes>` attributes (variables) and used later in every test with ``self.x`` and ``self.y``, the same way I can call `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_ and the terminal still shows passing tests
 
 * I remove the ``x`` and ``y`` variables from ``test_addition`` and ``test_subtraction``
 
@@ -793,7 +793,7 @@ refactor: make it better
   and the terminal shows passing tests
 
 * I remove the TODO list since all tests are passing
-* and change the range of random numbers for the tests to be from minus 10 to 10
+* and change the range of random numbers for the tests to be from negative ``-10`` to ``10``
 
   .. code-block:: python
 

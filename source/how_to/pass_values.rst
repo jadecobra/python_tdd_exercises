@@ -46,7 +46,7 @@ red: make it fail
     tests/test_telephone.py:7: AssertionError
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_telephone.py:7`` with the mouse to open it
-* and change ``True`` to ``False`` to make ``test_failure`` pass
+* change ``True`` to ``False`` to make ``test_failure`` pass
 * then change ``test_failure`` to ``test_passing_a_string``
 
   .. code-block:: python
@@ -59,7 +59,10 @@ red: make it fail
                 "I received this message: hello"
             )
 
-  and the terminal shows a NameError_
+  - the assertEqual_ :ref:`method<functions>` from the `unittest.TestCase`_ :doc:`class</classes/classes>` checks if its 2 inputs are equal. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
+  - the explanation I like for this is that one of them is ``reality`` and the other is my ``expectation``. In this case, reality is the call ``src.telephone.text('hello')``, and my expectation is ``"I received this message: hello"``
+
+  the terminal shows a NameError_
 
   .. code-block:: python
 
