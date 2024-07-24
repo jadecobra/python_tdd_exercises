@@ -336,7 +336,7 @@ refactor: make it better
             x+y
         )
 
-* I add a function to remove the duplication of the calls to `random.randint`_ with the same values
+* I add a function to remove the duplication of the calls to `random.randint`_
 
   .. code-block:: python
 
@@ -348,7 +348,7 @@ refactor: make it better
     def a_random_number():
         return random.randint(-1, 1)
 
-  and call it for the ``x`` and ``y`` variables
+  then call it for the ``x`` and ``y`` variables
 
   .. code-block:: python
 
@@ -370,7 +370,7 @@ refactor: make it better
 
   and the test still passes
 
-* then remove ``test addition`` from the TODO list
+* I remove ``test addition`` from the TODO list
 
   .. code-block:: python
 
@@ -488,8 +488,12 @@ refactor: make it better
 
 * I have some duplication to remove in keeping with `The Do Not Repeat Yourself (DRY) Principle`_
 
-  - ``x = a_random_number()`` happens twice, once in ``test_addition`` and again in ``test_subtraction``
-  - ``y = a_random_number()`` happens twice, once in ``test_addition`` and again in ``test_subtraction``
+  .. code-block:: python
+
+    x = a_random_number()
+    y = a_random_number()
+
+  happens twice, once in ``test_addition`` and again in ``test_subtraction``
 
 * I can use :ref:`class <classes>` attributes (variables) in the ``TestCalculator`` :ref:`class <classes>` to make the random variables once
 
@@ -518,7 +522,7 @@ refactor: make it better
                 x-y
             )
 
-  the ``x`` and ``y`` variables are made once as :ref:`class <classes>` attributes (variables) and used later in every test with ``self.x`` and ``self.y``, the same way I can call `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_ and the terminal still shows passing tests
+  the ``x`` and ``y`` variables are made once as :ref:`class <classes>` attributes (variables) and used later in every test with ``self.x`` and ``self.y``, the same way I can call `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_ and the terminal shows the tests are still passing
 
 * I remove the ``x`` and ``y`` variables from ``test_addition`` and ``test_subtraction``
 
@@ -557,14 +561,14 @@ refactor: make it better
 test_multiplication
 *********************************************************************************
 
-Moving on to test multiplication, the next item on the TODO list
+Time to test multiplication, the next item on the TODO list
 
 .. _test_multiplication_red:
 
 red: make it fail
 #################################################################################
 
-I add a failing test for multiplication
+I add a failing test
 
 .. code-block:: python
 
@@ -580,34 +584,36 @@ I add a failing test for multiplication
           self.x*self.y
       )
 
-and the terminal shows an :ref:`AttributeError` ::
+and the terminal shows an :ref:`AttributeError`
+
+.. code-block:: python
 
   AttributeError: module 'src.calculator' has no attribute 'multiply'
-
-this is definitely familiar
 
 .. _test_multiplication_green:
 
 green: make it pass
 #################################################################################
 
-using what I know so far I add a definition for ``multiplication`` in ``calculator.py``
+* using what I know so far I add a :ref:`function<functions>` to ``calculator.py``
 
-.. code-block:: python
+  .. code-block:: python
 
-  def subtract(x, y):
-      return x - y
+    def subtract(x, y):
+        return x - y
 
 
-  def multiply(x, y):
-      return x * y
+    def multiply(x, y):
+        return x * y
 
-SUCCESS! The terminal shows passing tests and I remove ``test_multiplication`` from the TODO list
+  SUCCESS! The terminal shows passing tests
 
-.. code-block:: python
+* I remove ``test_multiplication`` from the TODO list
 
-  # TODO
-  # test division
+  .. code-block:: python
+
+    # TODO
+    # test division
 
 ----
 
@@ -622,7 +628,7 @@ Now it is down to the test for division
 red: make it fail
 #################################################################################
 
-I add a test for division
+I add a test
 
 .. code-block:: python
 
@@ -638,7 +644,9 @@ I add a test for division
           self.x/self.y
       )
 
-which gives me an :ref:`AttributeError` ::
+which gives me an :ref:`AttributeError`
+
+.. code-block:: python
 
   AttributeError: module 'src.calculator' has no attribute 'divide'
 
@@ -647,14 +655,14 @@ which gives me an :ref:`AttributeError` ::
 green: make it pass
 #################################################################################
 
-* I add a ``divide`` :ref:`function<functions>` to ``calculator.py``
+* I add a :ref:`function<functions>` to ``calculator.py``
 
   .. code-block:: python
 
     def divide(x, y):
         return x / y
 
-  the terminal shows a random ZeroDivisionError_ when ``y`` is ``0``
+  and the terminal shows a random ZeroDivisionError_ when ``y`` is ``0``
 
     .. code-block:: python
 
@@ -663,6 +671,8 @@ green: make it pass
         def divide(x, y):
       >    return x / y
       E    ZeroDivisionError: division by zero
+
+  dividing by ``0`` is not defined in mathematics and raises a ZeroDivisionError_ in python
 
 * which I add to the list of :ref:`Exceptions<Exceptions>` encountered
 
@@ -684,7 +694,7 @@ how to Test for Errors
 red: make it fail
 #################################################################################
 
-I add a failing line to cause the ZeroDivisionError_ by dividing by ``0``
+I add a line to cause the ZeroDivisionError_
 
 .. code-block:: python
 
@@ -695,7 +705,7 @@ I add a failing line to cause the ZeroDivisionError_ by dividing by ``0``
           self.x/self.y
       )
 
-the terminal shows my expectations with a failure for any value of ``x`` when ``y`` is ``0``.
+the terminal shows my expectations with a failure for any value of ``x`` since ``y`` is ``0``
 
 .. code-block:: python
 
@@ -725,14 +735,14 @@ I can use the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` in ``te
          self.x/self.y
       )
 
-the terminal shows passing tests, proof that the code raises an :ref:`Exception<exceptions>`
+the terminal shows passing tests, which shows that the code raises an :ref:`Exception<exceptions>`
 
 .. _test_division_refactor_1:
 
 refactor: make it better
 #################################################################################
 
-* I use a `while statement`_ for the other cases when the divisor is not ``0`` by making sure the value of ``y`` that is passed from the test to ``src.calculator.divide`` is never ``0``
+* I use a `while statement`_ to making sure the value of ``y`` that is passed from the test to ``src.calculator.divide`` is never ``0``
 
   .. code-block:: python
 
@@ -750,7 +760,7 @@ refactor: make it better
 
   - if the value of ``self.y`` is ``0``
 
-    * it assigns ``self.y`` to the result of calling the ``random_number`` :ref:`function<functions>`
+    * it assigns ``self.y`` to the result of calling ``a_random_number``
     * and checks again, repeating the process until ``self.y`` is not ``0``
 
   - if the value of ``self.y`` is not ``0`` it leaves the loop and runs what is in the ``else`` block
@@ -769,7 +779,7 @@ refactor: make it better
                 self.x/self.y
             )
 
-  and the terminal shows a ZeroDivisionError_ when ``self.y`` is randomly ``0``
+  and the terminal shows a ZeroDivisionError_ when ``self.y`` is ``0``
 
   .. code-block:: python
 
@@ -792,13 +802,7 @@ refactor: make it better
 
   and the terminal shows passing tests
 
-* I remove the TODO list since all tests are passing
-* and change the range of random numbers for the tests to be from negative ``-10`` to ``10``
-
-  .. code-block:: python
-
-      def a_random_number():
-        return random.randint(-10, 10)
+* I remove the TODO list
 
 ----
 
@@ -885,7 +889,7 @@ green: make it pass
     def subtract(a, b):
         return a, b
 
-  which gives me another :ref:`AssertionError`
+  and get another :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -894,7 +898,7 @@ green: make it pass
     AssertionError: (10, 6) != 4
     AssertionError: (7, -10) != 17
 
-  as the name suggests, the tests expects the difference between the two inputs
+  as the name suggests, the test expects the difference between the two inputs
 
 * I change the `return statement`_ to match the expectation
 
@@ -903,7 +907,7 @@ green: make it pass
     def subtract(a, b):
         return a - b
 
-  and get another :ref:`AttributeError`
+  the terminal shows another :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -961,7 +965,6 @@ green: make it pass
     def multiply(a, b):
         return a * b
 
-
   the terminal shows another :ref:`AttributeError`
 
   .. code-block:: python
@@ -1013,7 +1016,7 @@ green: make it pass
     def divide(a, b):
         return a / b
 
-  and get another :ref:`AttributeError`
+  and get an :ref:`AttributeError`
 
   .. code-block:: python
 
