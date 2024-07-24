@@ -206,7 +206,7 @@ green: make it pass
 
         method_a = None
 
-  the terminal shows a :ref:`TypeError` since ``method_a`` refers to :ref:`None` which is not callable
+  the terminal shows a :ref:`TypeError` since ``method_a`` is :ref:`None` which is not callable
 
 * I change the definition of ``method_a`` to make it a :ref:`function<functions>` which makes it callable
 

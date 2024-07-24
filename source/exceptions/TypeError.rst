@@ -14,7 +14,7 @@ TypeError
 
 A `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ can be raised when a function is called with the wrong number of inputs. This means the function call does not match the :ref:`function<functions>` signature.
 
-* A function signature is the definition of the function which determines what inputs it accepts, for example
+* A function signature is the definition of the function which determines what inputs it takes, for example
 
   .. code-block:: python
 
@@ -146,8 +146,8 @@ green: make it pass
   * ``self.assertIsNone(functions.function_a("a"))`` I am checking if the call ``functions.function_a("a")`` is equal to :ref:`None`
   * ``functions.function_a("a")`` is the call. I think of it like an address
 
-    - ``functions`` refers to ``functions.py`` which is a Python module
-    - ``function_a`` refers to the name ``function_a`` defined in ``functions.py``
+    - ``functions`` is to ``functions.py`` which is a Python module
+    - ``function_a`` is the name ``function_a`` defined in ``functions.py``
     - ``()`` is how a function is called after it is defined
     - ``"a"`` is the value passed to ``function_a`` as input
 

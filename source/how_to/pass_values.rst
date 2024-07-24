@@ -16,7 +16,7 @@ how to pass values
 
 ----
 
-This is how to pass values from tests to programs with `f-strings`_
+This is how to pass values from tests to programs
 
 *********************************************************************************
 test_passing_a_string
@@ -135,7 +135,7 @@ green: make it pass
     # AttributeError
     # TypeError
 
-- I make ``text`` a :ref:`function<functions>` to make it callable_
+- then make ``text`` a :ref:`function<functions>` for it to be callable_
 
   .. code-block:: python
 
@@ -148,8 +148,9 @@ green: make it pass
 
     TypeError: text() takes 0 positional arguments but 1 was given
 
-  I gave ``hello`` as input when I called ``src.telephone.text`` in the test , but the current signature of the ``text`` :ref:`function<functions>` does not allow it accept any inputs
-- I change the definition for ``text`` to make it accept a value as input
+  I gave ``hello`` as input when I called ``src.telephone.text`` in the test and the definition of the ``text`` :ref:`function<functions>` does not allow it take input
+
+- I change the :ref:`function<functions>` to make it take a value
 
   .. code-block:: python
 
@@ -172,7 +173,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-The problem with this solution is that no matter what value I send to the ``text`` :ref:`function<functions>` it will always return ``'I received this message: hello'``, it is a :doc:`singleton function </functions/test_singleton_functions>`. I want to make it return the value it receives by using an `f-string`_
+The problem with this solution is that the ``text`` :ref:`function<functions>` will always return ``'I received this message: hello'``, it does not care what input it gets, it is a :doc:`singleton function </functions/test_singleton_functions>`. I want to make it return the value it receives as part of a message
 
 red: make it fail
 ---------------------------------------------------------------------------------
@@ -201,14 +202,29 @@ the terminal shows an :ref:`AssertionError`
 green: make it pass
 ---------------------------------------------------------------------------------
 
-I change the string_ in the `return statement`_ to an `f-string` in the ``text`` :ref:`function<functions>`, this allows me to pass values to the string_. It is called `string interpolation`_
+* I change the string_ in the `return statement`_
 
-.. code-block:: python
+  .. code-block:: python
 
-  def text(value):
-      return f'I received this message: {value}'
+    def text(value):
+        return 'I received this message: yes'
 
-the terminal shows the test passed
+  and get an :ref:`AssertionError` for the previous assertion
+
+  .. code-block:: python
+
+    AssertionError: 'I received this message: yes' != 'I received this message: hello'
+
+  this will not work, I have to change the `return statement`_ to something that uses the input
+
+* I change the string_ in the `return statement`_ to an `f-string` which allows me to pass values to the string_
+
+  .. code-block:: python
+
+    def text(value):
+        return f'I received this message: {value}'
+
+  the terminal shows the test passed. This solution is called `string interpolation`_
 
 ----
 
@@ -541,13 +557,13 @@ and the terminal shows all tests are passing
 test_telephone
 *********************************************************************************
 
-time to write the program that make the test in ``test_telephone.py`` pass without looking at it
+time to write the program that makes the tests in ``test_telephone.py`` pass without looking at it
 
 red: make it fail
 #################################################################################
 
 * I close ``test_telephone.py``
-* then delete all the text in ``telephone.py`` and the terminal shows an :ref:`AttributeError`
+* then delete the text in ``telephone.py`` and the terminal shows an :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -556,7 +572,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I add the name to ``telephone.py``
+* I add the name
 
   .. code-block:: python
 
@@ -632,7 +648,8 @@ green: make it pass
   .. code-block:: python
 
     AssertionError: None != 'I received this message: None'
-    AssertionError: <class 'bool'> != "I received this message: <class 'bool'>"
+    AssertionError: True != 'I received this message: True'
+    AssertionError: <class 'object'> != "I received this message: <class 'object'>"
     AssertionError: {'key1': 'value1', 'keyN': 'valueN'} != "I received this message: {'key1': 'value1', 'keyN': 'v...
     AssertionError: 1.234 != 'I received this message: 1.234'
     AssertionError: [1, 2, 3, 'n'] != "I received this message: [1, 2, 3, 'n']"
@@ -642,7 +659,7 @@ green: make it pass
 
   the tests expect the message to have the the argument passed
 
-* I change the `return statement`_ to use an `f-string`
+* I remove the first `return statement`_ then make the second one use an `f-string`
 
   .. code-block:: python
 

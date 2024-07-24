@@ -296,7 +296,7 @@ review
 Why did that work?
 
 * the ``Boy``, ``Girl`` and ``Other`` class now inherit from the ``Human`` class which means they all get the same :ref:`methods<functions>` and attributes that the ``Human`` class has, including the ``__init__`` method
-* ``self.sex`` within each class refers to the ``sex`` attribute in the class, allowing its definition from within the ``__init__`` method
+* ``self.sex`` in each class is the ``sex`` attribute in the class, allowing its definition from within the ``__init__`` method
 * since ``self.sex`` is defined as a class attribute, it is accessible from outside the class as I do in the tests i.e ``classes.Girl(sex='F').sex`` and ``classes.Other(sex='?').sex``
 
 ----

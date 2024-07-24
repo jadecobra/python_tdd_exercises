@@ -56,7 +56,7 @@ red: make it pass
 #################################################################################
 
 
-I add a new test that checks if a singleton that accepts inputs returns the same value regardless of the inputs
+I add a new test that checks if a singleton that takes inputs returns the same value regardless of the inputs
 
 .. code-block:: python
 

@@ -163,7 +163,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-  because the ``add`` variable refers to :ref:`None` which is not a callable_ object
+  because the ``add`` variable is :ref:`None` which is not a callable_ object
 
 * I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
 
