@@ -255,7 +255,7 @@ the :ref:`function<functions>` returns ``1`` but the test expects ``0``
 green: make it pass
 ---------------------------------------------------------------------------------
 
-I change the `return statement`_ to a calculation
+I make the `return statement`_ do a calculation
 
 .. code-block:: python
 
@@ -472,7 +472,7 @@ green: make it pass
 
   ``subtract`` returns :ref:`None` and the test expects ``x-y``
 
-* When I change the `return statement`_ to return the difference between the inputs
+* When I make the :ref:`function<functions>` return the difference between the inputs
 
   .. code-block:: python
 
@@ -904,7 +904,7 @@ green: make it pass
 
   as the name suggests, the test expects the difference between the two inputs
 
-* I change the `return statement`_ to match the expectation
+* I make the `return statement`_ match the expectation
 
   .. code-block:: python
 
