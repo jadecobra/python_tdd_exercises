@@ -119,7 +119,7 @@ green: make it pass
 
     text = None
 
-  and the terminal shows a :ref:`TypeError` because :ref:`None` is not callable_ and ``text`` is currently :ref:`None`
+  which gives me a :ref:`TypeError` because :ref:`None` is not callable_ and ``text`` is currently :ref:`None`
 
   .. code-block:: python
 
@@ -150,25 +150,27 @@ green: make it pass
 
   I gave ``hello`` as input when I called ``src.telephone.text`` in the test and the definition of the ``text`` :ref:`function<functions>` does not allow it take input
 
-- I change the :ref:`function<functions>` to make it take a value
+- I make it take a value
 
   .. code-block:: python
 
     def text(value):
         return None
 
-  the terminal shows an :ref:`AssertionError`
+  and get an :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: None != 'I received this message: hello'
 
-- I copy the text from the terminal and paste it in the `return statement`_ to make it match the expectation
+- I copy the string_ from the terminal and paste it in the `return statement`_ to make it match the expectation
 
   .. code-block:: python
 
     def text(value):
         return 'I received this message: hello'
+
+  and the test passes
 
 refactor: make it better
 #################################################################################
@@ -224,7 +226,7 @@ green: make it pass
     def text(value):
         return f'I received this message: {value}'
 
-  the terminal shows the test passed. This solution is called `string interpolation`_
+  the terminal shows a passing test. This is called `string interpolation`_
 
 ----
 
@@ -247,7 +249,9 @@ What happens when I pass a :ref:`class <classes>` to the ``text`` :ref:`function
           "I received this message: object"
       )
 
-the terminal shows an :ref:`AssertionError` ::
+the terminal shows an :ref:`AssertionError`
+
+.. code-block:: python
 
   AssertionError: "I received this message: <class 'object'>" != 'I received this message: object'
 
@@ -263,6 +267,40 @@ I make the expectation match reality and the test passes
           src.telephone.text(object),
           "I received this message: <class 'object'>"
       )
+
+refactor: make it better
+#################################################################################
+
+I add another assertion with a different :ref:`class<classes>` name
+
+.. code-block:: python
+
+  def test_passing_a_class(self):
+      self.assertEqual(
+          src.telephone.text(TestTelephone),
+          "I received this message: <class 'object'>"
+      )
+      self.assertEqual(
+          src.telephone.text(TestTelephone),
+          "I received this message: <class 'object'>"
+      )
+
+which gives me an :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: "I received this message: <class 'tests.test_telephone.TestTelephone'>" != "I received this message: <class 'object'>"
+
+when I change the name of the :ref:`class<classes>` to match
+
+.. code-block:: python
+
+    self.assertEqual(
+        src.telephone.text(TestTelephone),
+        "I received this message: <class 'tests.test_telephone.TestTelephone'>"
+    )
+
+the test passes
 
 *********************************************************************************
 test_passing_None
@@ -596,7 +634,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-  I define it as a :ref:`function<functions>`
+  I make it a :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -609,7 +647,7 @@ green: make it pass
 
     TypeError: text() takes 0 positional arguments but 1 was given
 
-  and I add a positional argument to the :ref:`function's'<functions>` signature
+  I add a positional argument to the :ref:`function's'<functions>` signature
 
   .. code-block: python
 
@@ -622,7 +660,7 @@ green: make it pass
 
     AssertionError: None != 'I received this message: 1234'
 
-* I change the `return statement`_ to match the expectation
+* I copy the string_ from the terminal and paste it in the `return statement`_ to match the expectation
 
   .. code-block:: python
 
@@ -657,7 +695,7 @@ green: make it pass
     AssertionError: (1, 2, 3, 'n') != "I received this message: (1, 2, 3, 'n')"
     AssertionError: 1234 != 'I received this message: 1234'
 
-  the tests expect the message to have the the argument passed
+  the tests expect the message to have the argument passed
 
 * I remove the first `return statement`_ then make the second one use an `f-string`
 
@@ -666,7 +704,7 @@ green: make it pass
     def text(argument):
         return f'I received this message: {argument}'
 
-  and all 8 tests pass!
+  and all tests pass!
 
 ----
 
