@@ -175,7 +175,7 @@ green: make it pass
     # AttributeError
     # TypeError
 
-* I can define ``add`` as a :ref:`function<functions>` or :ref:`class <classes>` to make it callable_. I change the ``add`` variable to a :ref:`function<functions>` with the def_ keyword because it is easier than making it a :ref:`class<classes>`
+* I change ``add`` to a :ref:`function<functions>` with the def_ keyword to make it callable_
 
   .. code-block:: python
 
@@ -188,9 +188,9 @@ green: make it pass
 
     TypeError: add() takes 0 positional arguments but 2 were given
 
-  the current definition of the ``add`` function takes in 0 inputs, but two were provided 2 in the test - ``src.calculator.add(0, 1)``
+  ``add`` currently takes in 0 inputs, but 2 were provided in the test - ``src.calculator.add(0, 1)``
 
-* I change the definition to match the requirement of two positional arguments
+* I make the definition match the requirement of 2 positional arguments
 
   .. code-block:: python
 
@@ -205,7 +205,7 @@ green: make it pass
 
   the ``add`` :ref:`function<functions>` returns :ref:`None` and the test expects ``1``
 
-* I change the `return statement`_ to match the expected value
+* I make the `return statement`_ match the expected value
 
   .. code-block:: python
 
@@ -219,9 +219,9 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-Wait a minute! Is it that easy? Do I provide the expectation of the test to make it pass? In the green phase, Yes. I do the easiest thing to make it pass.
+Wait a minute! Is it that easy? Do I provide the expectation of the test to make it pass? In the green phase, Yes. I do the easiest thing to make the failing test pass.
 
-Solving the problem this way shows a problem with the test, I have to "Make it Better". The ``add`` function returns ``1`` no matter what inputs it is given. It is a :doc:`singleton function </functions/test_singleton_functions>`, I want it to do a calculation with the inputs instead. Even though ``add`` currently passes the test it does not meet the actual requirement.
+This solution shows a problem with the test, I have to "Make it Better". The ``add`` function returns ``1`` no matter what inputs it gets, it is a :doc:`singleton function </functions/test_singleton_functions>`, I want it to do a calculation with the inputs instead. Even though ``add`` currently passes the test it does not meet the actual requirement.
 
 .. _test_addition_refactor_red:
 
@@ -277,7 +277,7 @@ refactor: make it better
     import src.calculator
     import unittest
 
-  random_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to make fake random numbers
+  random_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, that is used to make fake random numbers
 
 * then I add variables and a new assertion
 
@@ -441,7 +441,7 @@ green: make it pass
 
   this is familiar
 
-* I change it to a :ref:`function<functions>` to make it callable
+* I make it a :ref:`function<functions>` to make it callable_
 
   .. code-block:: python
 
@@ -454,7 +454,7 @@ green: make it pass
 
     TypeError: subtract() takes 0 positional arguments but 2 were given
 
-* I make the ``subtract`` :ref:`function<functions>` take inputs to match the expectation
+* I make the :ref:`function<functions>` take inputs
 
   .. code-block:: python
 
@@ -664,13 +664,13 @@ green: make it pass
 
   and the terminal shows a random ZeroDivisionError_ when ``y`` is ``0``
 
-    .. code-block:: python
+  .. code-block:: python
 
-      x = 1, y = 0
+    x = 1, y = 0
 
-        def divide(x, y):
-      >    return x / y
-      E    ZeroDivisionError: division by zero
+      def divide(x, y):
+    >    return x / y
+    E    ZeroDivisionError: division by zero
 
   dividing by ``0`` is not defined in mathematics and raises a ZeroDivisionError_ in python
 
@@ -694,16 +694,17 @@ how to Test for Errors
 red: make it fail
 #################################################################################
 
-I add a line to cause the ZeroDivisionError_
+I add a line to cause the ZeroDivisionError_ and comment out the code that randomly fails
 
 .. code-block:: python
 
   def test_division(self):
       src.calculator.divide(self.x, 0)
-      self.assertEqual(
-          src.calculator.divide(self.x, self.y),
-          self.x/self.y
-      )
+
+      # self.assertEqual(
+      #    src.calculator.divide(self.x, self.y),
+      #    self.x/self.y
+      # )
 
 the terminal shows my expectations with a failure for any value of ``x`` since ``y`` is ``0``
 
@@ -730,19 +731,19 @@ I can use the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` in ``te
       with self.assertRaises(ZeroDivisionError):
           src.calculator.divide(self.x, 0)
 
-      self.assertEqual(
-         src.calculator.divide(self.x, self.y),
-         self.x/self.y
-      )
+      # self.assertEqual(
+      #   src.calculator.divide(self.x, self.y),
+      #   self.x/self.y
+      # )
 
-the terminal shows passing tests, which shows that the code raises an :ref:`Exception<exceptions>`
+the terminal shows passing tests, which shows that the code raises an :ref:`Exception<exceptions>` and I still have a problem when ``self.y`` is randomly 0
 
 .. _test_division_refactor_1:
 
 refactor: make it better
 #################################################################################
 
-* I use a `while statement`_ to making sure the value of ``y`` that is passed from the test to ``src.calculator.divide`` is never ``0``
+* I use a `while statement`_ to make sure the value of ``self.y`` in the assertion is never ``0``
 
   .. code-block:: python
 
@@ -770,6 +771,9 @@ refactor: make it better
   .. code-block:: python
 
     def test_division(self):
+        with self.assertRaises(ZeroDivisionError):
+            src.calculator.divide(self.x, 0)
+
         while self.y == 0:
             src.calculator.divide(self.x, self.y)
             self.y = a_random_number()
@@ -785,7 +789,7 @@ refactor: make it better
 
     ZeroDivisionError: division by zero
 
-* I add an assertRaises_ block to catch the :ref:`Exception<Exceptions>` and remove the previous assertRaises_ block
+* I add an assertRaises_ block to catch the :ref:`Exception<Exceptions>` in the `while statement`_ and remove the previous one in the test
 
   .. code-block:: python
 
@@ -800,7 +804,7 @@ refactor: make it better
                 self.x/self.y
             )
 
-  and the terminal shows passing tests
+  the terminal shows passing tests
 
 * I remove the TODO list
 
@@ -835,7 +839,7 @@ green: make it pass
 
     subtract
 
-  and get a NameError_
+  and get a NameError_, see if you can predict the :ref:`Exceptions<Exceptions>` that will be raised as I go along
 
   .. code-block:: python
 
@@ -853,7 +857,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-  I define it as a :ref:`function<functions>`
+  I make it a :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -942,7 +946,7 @@ green: make it pass
     AssertionError: None != 20
     AssertionError: None != 36
 
-* I change the `return statement` to see the difference between the inputs and the expected output
+* I make it return the inputs to see the difference between them and the expected output
 
   .. code-block:: python
 
@@ -958,7 +962,7 @@ green: make it pass
     AssertionError: (2, 5) != 10
     AssertionError: (-9, -5) != 45
 
-  I change the `return statement` to return the product of the inputs, matching the name of the :ref:`function<functions>`
+  I make it return the product of the inputs, matching the name of the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -976,25 +980,9 @@ green: make it pass
   .. code-block:: python
 
     def divide(a, b):
-        return None
-
-  which gives me an :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: None != -0.1111111111111111
-    AssertionError: None != -1.0
-    AssertionError: None != 0.25
-    AssertionError: None != 1.3333333333333333
-
-  I change the `return statement`_ to show the difference between the inputs and the expected output
-
-  .. code-block: python
-
-    def divide(a, b):
         return a, b
 
-  and get an :ref:`AssertionError` that shows the expected output is the result of dividing the inputs
+  which gives me an :ref:`AssertionError` that shows the expected output is the result of dividing the inputs
 
   .. code-block:: python
 
@@ -1022,7 +1010,7 @@ green: make it pass
 
     AttributeError: module 'src.calculator' has no attribute 'add'
 
-* I add a :ref:`function<functions>` using what I know so far
+* I add a :ref:`function<functions>` using what I know so far that the return statements match the name of the :ref:`functions`
 
   .. code-block:: python
 
