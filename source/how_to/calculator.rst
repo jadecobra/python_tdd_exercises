@@ -84,7 +84,7 @@ red: make it fail
             )
 
   - the assertEqual_ :ref:`method<functions>` from the `unittest.TestCase`_ :doc:`class</classes/classes>` checks if its 2 inputs are equal. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
-  - the explanation I like for this is that one of them is ``reality`` and the other is my ``expectation``. In this case, reality is the call ``src.calculator.add(0, 1)``, and my expectation is ``1`` because ``0`` plus ``1`` is ``1``
+  - the explanation I like from the ones I have seen is that one of them is ``reality`` and the other is my ``expectation``. In this case, reality is the call ``src.calculator.add(0, 1)``, and my expectation is ``1`` because ``0`` plus ``1`` is ``1``
 
   the terminal shows a NameError_ because ``src`` is not defined anywhere in ``test_calculator.py``
 
@@ -759,12 +759,12 @@ refactor: make it better
                 self.x/self.y
             )
 
-  - if the value of ``self.y`` is ``0``
+  - when the value of ``self.y`` is ``0``
 
     * it assigns ``self.y`` to the result of calling ``a_random_number``
     * and checks again, repeating the process until ``self.y`` is not ``0``
 
-  - if the value of ``self.y`` is not ``0`` it leaves the loop and runs what is in the ``else`` block
+  - when the value of ``self.y`` is not ``0`` it leaves the loop and runs what is in the ``else`` block
 
 * Since ``self.y`` is ``0`` in the first part of the `while statement`_ I can add a call to the ``divide`` function that will always raise a ZeroDivisionError_
 
