@@ -48,7 +48,7 @@ red: make it fail
 
     tests/test_calculator.py:7: AssertionError
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_calculator.py:7`` with the mouse to open it in the editor
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard then click on ``tests/test_calculator.py:7`` with the mouse to open it in the editor
 * change ``True`` to ``False`` to make the test pass
 * then add a TODO list to keep track of work for the calculator
 

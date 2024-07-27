@@ -41,7 +41,7 @@ red: make it fail
 
     tests/test_sleep_duration.py:7: AssertionError
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_sleep_duration.py:7`` with the mouse to open it
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard then click on ``tests/test_sleep_duration.py:7`` with the mouse to open it
 * then change ``True`` to ``False``
 * and change the test with a new failing test
 
