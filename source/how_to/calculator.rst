@@ -49,8 +49,8 @@ red: make it fail
     tests/test_calculator.py:7: AssertionError
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard then click on ``tests/test_calculator.py:7`` with the mouse to open it in the editor
-* change ``True`` to ``False`` to make the test pass
-* then add a TODO list to keep track of work for the calculator
+* and change ``True`` to ``False`` to make the test pass
+* then add a list to keep track of work for the calculator
 
   .. code-block:: python
 
@@ -83,10 +83,10 @@ red: make it fail
                 1
             )
 
-  - the assertEqual_ :ref:`method<functions>` from the `unittest.TestCase`_ :doc:`class</classes/classes>` checks if its 2 inputs are equal. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
-  - the explanation I like from the ones I have seen is that one of them is ``reality`` and the other is my ``expectation``. In this case, reality is the call ``src.calculator.add(0, 1)``, and my expectation is ``1`` because ``0`` plus ``1`` is ``1``
+  - the assertEqual_ :ref:`method<functions>` from the `unittest.TestCase`_ :doc:`class</classes/classes>` checks if its 2 inputs are the same. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
+  - the explanation I like from what I have seen is that one of them is ``reality`` and the other is my ``expectation``. In this case, reality is the call ``src.calculator.add(0, 1)``, and my expectation is ``1`` because ``0`` plus ``1`` is ``1``
 
-  the terminal shows a NameError_ because ``src`` is not defined anywhere in ``test_calculator.py``
+  the terminal shows a NameError_ ``src`` is not defined anywhere in ``test_calculator.py``
 
   .. code-block:: python
 
@@ -122,11 +122,11 @@ green: make it pass
 
     AttributeError: module 'src.calculator' has no attribute 'add'
 
-  I think of ``src.calculator.add`` like an address
+  I think of ``src.calculator.add`` as an address
 
   * ``src`` is the ``src`` folder/directory
-  * ``calculator`` is ``calculator.py`` in the directory
-  * ``add`` is something (an attribute) in the file which is currently empty
+  * ``calculator`` is ``calculator.py`` in the ``src`` directory
+  * ``add`` is something (an attribute) in the ``calculator.py`` file which is currently empty
 
 * I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
 
@@ -175,7 +175,7 @@ green: make it pass
     # AttributeError
     # TypeError
 
-* I change ``add`` to a :ref:`function<functions>` with the def_ keyword to make it callable_
+* then change ``add`` to a :ref:`function<functions>` with the def_ keyword to make it callable_
 
   .. code-block:: python
 
@@ -190,14 +190,14 @@ green: make it pass
 
   ``add`` currently takes in 0 inputs, but 2 were provided in the test - ``src.calculator.add(0, 1)``
 
-* I make the definition match the requirement of 2 positional arguments
+* I make it take 2 positional arguments
 
   .. code-block:: python
 
     def add(x, y):
         return None
 
-  and get an :ref:`AssertionError`
+  which gives me an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -205,23 +205,23 @@ green: make it pass
 
   the ``add`` :ref:`function<functions>` returns :ref:`None` and the test expects ``1``
 
-* I make the `return statement`_ match the expected value
+* when I make the `return statement`_ match the expected value
 
   .. code-block:: python
 
     def add(x, y):
         return 1
 
-  and the test passes. Time for a victory lap!
+  the test passes. Time for a victory lap!
 
 .. _test_addition_refactor:
 
 refactor: make it better
 #################################################################################
 
-Wait a minute! Is it that easy? Do I provide the expectation of the test to make it pass? In the green phase, Yes. I do the easiest thing to make the failing test pass.
+Wait a minute! Is it that easy? Do I provide the expectation of the test to make it pass? In the green phase, Yes. I do the easiest thing that will make a failing test pass.
 
-This solution shows a problem with the test, I have to "Make it Better". The ``add`` function returns ``1`` no matter what inputs it gets, it is a :doc:`singleton function </functions/test_singleton_functions>`, I want it to do a calculation with the inputs instead. Even though ``add`` currently passes the test it does not meet the actual requirement.
+This solution shows a problem with the test, I have to "Make it Better". The ``add`` function returns ``1`` no matter what inputs it gets, it is a :doc:`singleton function </functions/test_singleton_functions>`. The ``add`` :ref:`function<functions>` passes the test but does not meet the actual requirement, I want it to do a calculation with the inputs instead. .
 
 .. _test_addition_refactor_red:
 
@@ -250,12 +250,12 @@ and the terminal shows an :ref:`AssertionError`
 
 .. _test_addition_refactor_green:
 
-the :ref:`function<functions>` returns ``1`` but the test expects ``0``
+the ``add`` returns ``1`` and the test expects ``0``
 
 green: make it pass
 ---------------------------------------------------------------------------------
 
-I make the `return statement`_ do a calculation
+I change the `return statement`_ to a calculation
 
 .. code-block:: python
 
@@ -269,7 +269,7 @@ and the terminal shows a passing test
 refactor: make it better
 ---------------------------------------------------------------------------------
 
-* I used 2 examples to test the :ref:`function<functions>` and could add more but it would be better to use random numbers, so I do not need to add more assertions. I add an `import statement`_
+* I used 2 examples to test the :ref:`function<functions>` and could add more but it would be better to use random numbers, to not need more assertions. I add an `import statement`_
 
   .. code-block:: python
 
@@ -368,7 +368,7 @@ refactor: make it better
       def a_random_number():
         return random.randint(-10, 10)
 
-  and the test still passes
+  and the terminal still shows green
 
 * I remove ``test addition`` from the TODO list
 
@@ -454,14 +454,14 @@ green: make it pass
 
     TypeError: subtract() takes 0 positional arguments but 2 were given
 
-* I make the :ref:`function<functions>` take inputs
+* I make it take inputs
 
   .. code-block:: python
 
     def subtract(x, y):
         return None
 
-  and the terminal shows an :ref:`AssertionError`
+  and get an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -495,7 +495,7 @@ refactor: make it better
 
   happens twice, once in ``test_addition`` and again in ``test_subtraction``
 
-* I can use :ref:`class <classes>` attributes (variables) in the ``TestCalculator`` :ref:`class <classes>` to make the random variables once
+* I can use :ref:`class <classes>` attributes (variables) to remove the duplication
 
   .. code-block:: python
 
@@ -522,7 +522,7 @@ refactor: make it better
                 x-y
             )
 
-  the ``x`` and ``y`` variables are made once as :ref:`class <classes>` attributes (variables) and used later in every test with ``self.x`` and ``self.y``, the same way I can call `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_ and the terminal shows the tests are still passing
+  the terminal shows the tests are still passing, the ``x`` and ``y`` variables are made once as :ref:`class <classes>` attributes (variables) and used later in every test with ``self.x`` and ``self.y``, the same way I can call `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_.
 
 * I remove the ``x`` and ``y`` variables from ``test_addition`` and ``test_subtraction``
 
@@ -608,7 +608,7 @@ green: make it pass
 
   SUCCESS! The terminal shows passing tests
 
-* I remove ``test_multiplication`` from the TODO list
+* and I remove ``test_multiplication`` from the TODO list
 
   .. code-block:: python
 
@@ -723,7 +723,7 @@ the terminal shows my expectations with a failure for any value of ``x`` since `
 green: make it pass
 #################################################################################
 
-I can use the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` in ``test_division`` to make sure that a ZeroDivisionError_ is raised when I try to divide a number by ``0``
+I can use the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` to make sure that a ZeroDivisionError_ is raised when I try to divide a number by ``0``
 
 .. code-block:: python
 
@@ -736,14 +736,14 @@ I can use the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` in ``te
       #   self.x/self.y
       # )
 
-the terminal shows passing tests, which shows that the code raises an :ref:`Exception<exceptions>` and I still have a problem when ``self.y`` is randomly 0
+the test passes, showing that the code raises a ZeroDivisionError_
 
 .. _test_division_refactor_1:
 
 refactor: make it better
 #################################################################################
 
-* I use a `while statement`_ to make sure the value of ``self.y`` in the assertion is never ``0``
+* I still have a problem since ``self.y`` can sometimes be ``0``, I use a `while statement`_ to make sure it is never ``0`` in the assertion
 
   .. code-block:: python
 
@@ -759,12 +759,12 @@ refactor: make it better
                 self.x/self.y
             )
 
-  - when the value of ``self.y`` is ``0``
+  - if the value of ``self.y`` is ``0``
 
-    * it assigns ``self.y`` to the result of calling ``a_random_number``
-    * and checks again, repeating the process until ``self.y`` is not ``0``
+    * it will be assigned to the result of calling ``a_random_number``
+    * and checked again, repeating the process until ``self.y`` is not ``0``
 
-  - when the value of ``self.y`` is not ``0`` it leaves the loop and runs what is in the ``else`` block
+  - if the value of ``self.y`` is not ``0`` at any point, the loop will be exited and the code in the ``else`` block will run
 
 * Since ``self.y`` is ``0`` in the first part of the `while statement`_ I can add a call to the ``divide`` function that will always raise a ZeroDivisionError_
 
@@ -789,7 +789,7 @@ refactor: make it better
 
     ZeroDivisionError: division by zero
 
-* I add an assertRaises_ block to catch the :ref:`Exception<Exceptions>` in the `while statement`_ and remove the previous one in the test
+* I add an assertRaises_ block to catch the :ref:`Exception<Exceptions>` in the `while statement`_ and remove the previous one from the test
 
   .. code-block:: python
 
@@ -822,11 +822,13 @@ red: make it fail
 #################################################################################
 
 * I close ``test_calculator.py``
-* then delete all the text in ``calculator.py`` and the terminal shows an :ref:`AttributeError`
+* then delete the text in ``calculator.py`` and the terminal shows an :ref:`AttributeError`
 
   .. code-block:: python
 
     AttributeError: module 'src.calculator' has no attribute 'subtract'
+
+  see if you can tell what :ref:`Exceptions<Exceptions>` will be raised as I go along
 
 .. _test_calculator_green:
 
@@ -839,7 +841,7 @@ green: make it pass
 
     subtract
 
-  and get a NameError_, see if you can predict the :ref:`Exceptions<Exceptions>` that will be raised as I go along
+  and get a NameError_
 
   .. code-block:: python
 
@@ -851,7 +853,7 @@ green: make it pass
 
     subtract = None
 
-  and the terminal shows a :ref:`TypeError`
+  which gives me a :ref:`TypeError`
 
   .. code-block:: python
 
@@ -864,7 +866,7 @@ green: make it pass
     def subtract():
         return None
 
-  which gives me another :ref:`TypeError` with a different message
+  and the terminal shows another :ref:`TypeError` with a different message
 
   .. code-block:: python
 
@@ -877,7 +879,7 @@ green: make it pass
     def subtract(a, b):
         return None
 
-  and the terminal shows an :ref:`AssertionError`
+  and get an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -911,7 +913,7 @@ green: make it pass
     def subtract(a, b):
         return a - b
 
-  the terminal shows another :ref:`AttributeError`
+  and the terminal shows another :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -969,7 +971,7 @@ green: make it pass
     def multiply(a, b):
         return a * b
 
-  the terminal shows another :ref:`AttributeError`
+  and get another :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -1010,7 +1012,7 @@ green: make it pass
 
     AttributeError: module 'src.calculator' has no attribute 'add'
 
-* I add a :ref:`function<functions>` using what I know so far that the return statements match the name of the :ref:`functions`
+* the return statements of the last 3 have matched the names of the :ref:`functions`, I add a new one
 
   .. code-block:: python
 
@@ -1036,7 +1038,6 @@ You also encountered the following exceptions
 * ZeroDivisionError_
 
 Would you like to test :doc:`passing values</how_to/pass_values>`?
-
 
 ----
 
