@@ -21,7 +21,7 @@ test_functions_w_pass
 red: make it fail
 #################################################################################
 
-* I open a terminal and run :ref:`makePythonTdd.sh` with ``sleep_duration`` as the project name
+* I open a terminal to run :ref:`makePythonTdd.sh` with ``sleep_duration`` as the project name
 
   .. code-block:: python
 

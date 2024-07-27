@@ -25,7 +25,7 @@ test_person_factory
 red: make it fail
 #################################################################################
 
-* I open a terminal and run :ref:`makePythonTdd.sh` with ``person`` as the project name
+* I open a terminal to run :ref:`makePythonTdd.sh` with ``person`` as the project name
 
   .. code-block:: python
 
