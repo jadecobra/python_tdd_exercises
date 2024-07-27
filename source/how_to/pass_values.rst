@@ -37,7 +37,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 telephone
 
-  and it shows an :ref:`AssertionError` after making the files and folders for the project
+  and it shows an :ref:`AssertionError` after making files and folders for the project
 
   .. code-block:: python
 
@@ -62,13 +62,16 @@ red: make it fail
   - the assertEqual_ :ref:`method<functions>` from the `unittest.TestCase`_ :doc:`class</classes/classes>` checks if its 2 inputs are equal. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
   - the explanation I like from the ones I have seen is that one of them is ``reality`` and the other is my ``expectation``. In this case, reality is the call ``src.telephone.text('hello')``, and my expectation is ``"I received this message: hello"``
 
-  the terminal shows a NameError_
+  but I get a NameError_
 
   .. code-block:: python
 
     NameError: name 'src' is not defined
 
-* which I add to the list of :ref:`Exceptions<Exceptions>` encountered
+green: make it pass
+#################################################################################
+
+* I add it to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
@@ -76,23 +79,20 @@ red: make it fail
     # AssertionError
     # NameError
 
-green: make it pass
-#################################################################################
-
-* I add an `import statement`_ for the ``telephone`` module
+* then add an `import statement`_ for the ``telephone`` module
 
   .. code-block:: python
 
     import src.telephone
     import unittest
 
-  the terminal shows an :ref:`AttributeError`
+  which gives me an :ref:`AttributeError`
 
   .. code-block:: python
 
     AttributeError: module 'src.telephone' has no attribute 'text'
 
-* I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
+* another one for the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
@@ -101,19 +101,19 @@ green: make it pass
     # NameError
     # AttributeError
 
-- then add a name to ``telephone.py``
+* I add a name to ``telephone.py``
 
   .. code-block:: python
 
     text
 
-  and the terminal shows a NameError_
+  the terminal shows a NameError_
 
   .. code-block:: python
 
     NameError: name 'text' is not defined
 
-- I assign ``text`` to the null value :ref:`None`
+* and I assign ``text`` to the null value :ref:`None`
 
   .. code-block:: python
 
@@ -125,7 +125,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-- I add the exception to the list of :ref:`Exceptions<Exceptions>` encountered
+* I add it to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
@@ -135,22 +135,22 @@ green: make it pass
     # AttributeError
     # TypeError
 
-- then make ``text`` a :ref:`function<functions>` for it to be callable_
+* then make ``text`` a :ref:`function<functions>` for it to be callable_
 
   .. code-block:: python
 
       def text():
           return None
 
-  and the terminal shows another :ref:`TypeError`
+  the terminal shows another :ref:`TypeError`
 
   .. code-block:: python
 
     TypeError: text() takes 0 positional arguments but 1 was given
 
-  I gave ``hello`` as input when I called ``src.telephone.text`` in the test and the definition of the ``text`` :ref:`function<functions>` does not allow it take input
+  ``src.telephone.text`` was given input when called in the test but the definition of the :ref:`function<functions>` does not allow it take input
 
-- I make it take a value
+* I make it take a value
 
   .. code-block:: python
 
@@ -163,7 +163,7 @@ green: make it pass
 
     AssertionError: None != 'I received this message: hello'
 
-- I copy the string_ from the terminal and paste it in the `return statement`_ to make it match the expectation
+* I copy the string_ from the terminal then paste it in the `return statement`_ to replace :ref:`None`
 
   .. code-block:: python
 
@@ -175,7 +175,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-The problem with this solution is that the ``text`` :ref:`function<functions>` will always return ``'I received this message: hello'``, it does not care what input it gets, it is a :doc:`singleton function </functions/test_singleton_functions>`. I want to make it return the value it receives as part of a message
+The problem with this solution is that the ``text`` :ref:`function<functions>` will always return ``'I received this message: hello'``, it does not care what input it gets, it is a :doc:`singleton function </functions/test_singleton_functions>`. I want to make it return the value it receives as part of the message
 
 red: make it fail
 ---------------------------------------------------------------------------------
@@ -204,7 +204,7 @@ the terminal shows an :ref:`AssertionError`
 green: make it pass
 ---------------------------------------------------------------------------------
 
-* I change the string_ in the `return statement`_
+* I make the `return statement`_ match the expectation
 
   .. code-block:: python
 
@@ -217,16 +217,16 @@ green: make it pass
 
     AssertionError: 'I received this message: yes' != 'I received this message: hello'
 
-  this will not work, I have to change the `return statement`_ to something that uses the input
+  this will not work, I have to make the `return statement`_ use the input
 
-* I change the string_ in the `return statement`_ to an `f-string` which allows me to pass values to the string_
+* I use an `f-string` to pass values to the string_
 
   .. code-block:: python
 
     def text(value):
         return f'I received this message: {value}'
 
-  the terminal shows a passing test. This is called `string interpolation`_
+  and the terminal shows a passing test. This is called `string interpolation`_
 
 ----
 
@@ -239,7 +239,7 @@ test_passing_a_class
 red: make it fail
 #################################################################################
 
-What happens when I pass a :ref:`class <classes>` to the ``text`` :ref:`function<functions>`?
+I add a failing test for a :ref:`class <classes>`
 
 .. code-block:: python
 
@@ -346,7 +346,6 @@ test_passing_a_boolean
 red: make it fail
 #################################################################################
 
-
 I add a test for :ref:`booleans`, first with an assertion for :ref:`True <test_what_is_true>`
 
 .. code-block:: python
@@ -366,7 +365,7 @@ the terminal shows an :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-* I make the test match the expectation and the test passes
+* I change the expectation
 
   .. code-block:: python
 
@@ -376,7 +375,9 @@ green: make it pass
             "I received this message: True"
         )
 
-* then add an assertion for :ref:`False <test_what_is_false>`
+  and the test passes
+
+* then I add an assertion for :ref:`False <test_what_is_false>`
 
   .. code-block:: python
 
@@ -430,7 +431,7 @@ and the terminal shows an :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I remove the quotes from the expectation to make the test pass
+I remove the quotes from the expectation
 
 .. code-block:: python
 
@@ -440,6 +441,8 @@ I remove the quotes from the expectation to make the test pass
           "I received this message: 1234"
       )
 
+and the terminal shows a passing test
+
 *********************************************************************************
 test_passing_a_float
 *********************************************************************************
@@ -447,7 +450,7 @@ test_passing_a_float
 red: make it fail
 #################################################################################
 
-then add a test for a float_
+I add a test for a float_
 
 .. code-block:: python
 
@@ -457,7 +460,7 @@ then add a test for a float_
           "I received this message: '1.234'"
       )
 
-and the terminal shows an :ref:`AssertionError`
+and get an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -466,7 +469,7 @@ and the terminal shows an :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I remove the quotes from the expectation to make the test pass
+I remove the quotes from the expectation
 
 .. code-block:: python
 
@@ -476,6 +479,8 @@ I remove the quotes from the expectation to make the test pass
           "I received this message: 1.234"
       )
 
+and the test passes
+
 *********************************************************************************
 test_passing_a_tuple
 *********************************************************************************
@@ -483,7 +488,7 @@ test_passing_a_tuple
 red: make it fail
 #################################################################################
 
-then add a test for a tuple_
+I add a test for a tuple_
 
 .. code-block:: python
 
@@ -493,7 +498,7 @@ then add a test for a tuple_
           "I received this message: '(1, 2, 3, n)'"
       )
 
-the terminal shows an :ref:`AssertionError`
+which gives me an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -502,7 +507,7 @@ the terminal shows an :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-and I make the expectation match reality
+I make the expectation match reality
 
 .. code-block:: python
 
@@ -511,6 +516,8 @@ and I make the expectation match reality
           src.telephone.text((1, 2, 3, 'n')),
           "I received this message: (1, 2, 3, 'n')"
       )
+
+and the terminal shows green
 
 *********************************************************************************
 test_passing_a_list
@@ -547,6 +554,8 @@ I change the expectation to match reality
           src.telephone.text([1, 2, 3, 'n']),
           "I received this message: [1, 2, 3, 'n']"
       )
+
+and the terminal shows passing tests
 
 *********************************************************************************
 test_passing_a_dictionary
@@ -634,14 +643,14 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-  I make it a :ref:`function<functions>`
+  when I make it a :ref:`function<functions>`
 
   .. code-block:: python
 
     def text():
         return None
 
-  which gives me another :ref:`TypeError` with a different message
+  the terminal shows a :ref:`TypeError` with a different message
 
   .. code-block:: python
 
@@ -654,13 +663,13 @@ green: make it pass
     def text(argument):
         return None
 
-  the terminal shows an :ref:`AssertionError`
+  and the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: None != 'I received this message: 1234'
 
-* I copy the string_ from the terminal and paste it in the `return statement`_ to match the expectation
+* I copy the string_ from the terminal, paste it in the `return statement`_ to match the expectation
 
   .. code-block:: python
 
@@ -695,7 +704,7 @@ green: make it pass
     AssertionError: (1, 2, 3, 'n') != "I received this message: (1, 2, 3, 'n')"
     AssertionError: 1234 != 'I received this message: 1234'
 
-  the tests expect the message to have the argument passed
+  they expect the message to have the input as part of the output
 
 * I remove the first `return statement`_ then make the second one use an `f-string`
 
@@ -712,7 +721,7 @@ green: make it pass
 review
 *********************************************************************************
 
-VOILA! You now know how to pass values from a test to a program and can represent values in a string_ with an `f-string`_
+VOILA! You now know how to pass values from a test to a program and can places values in a string_ with an `f-string`_
 
 You also encountered the following exceptions
 

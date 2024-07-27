@@ -86,11 +86,13 @@ red: make it fail
   - the assertEqual_ :ref:`method<functions>` from the `unittest.TestCase`_ :doc:`class</classes/classes>` checks if its 2 inputs are the same. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
   - the explanation I like from what I have seen is that one of them is ``reality`` and the other is my ``expectation``. In this case, reality is the call ``src.calculator.add(0, 1)``, and my expectation is ``1`` because ``0`` plus ``1`` is ``1``
 
-  the terminal shows a NameError_ ``src`` is not defined anywhere in ``test_calculator.py``
+  but the terminal shows a NameError_
 
   .. code-block:: python
 
     NameError: name 'src' is not defined
+
+  ``src`` is not defined anywhere in ``test_calculator.py``
 
 .. _test_addition_green:
 
