@@ -37,7 +37,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 telephone
 
-  and it shows an :ref:`AssertionError` after making the files I need
+  and it shows an :ref:`AssertionError` after making the files and folders for the project
 
   .. code-block:: python
 
