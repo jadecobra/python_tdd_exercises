@@ -11,7 +11,7 @@ pumping python: how I solve problems with test driven development
 
 .. raw:: html
 
-  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/fxPgowISTA4?si=fHnq4SbtySWs696z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <iframe style="border-radius:10px" width="560"  height="315" src="https://www.youtube-nocookie.com/embed/fxPgowISTA4?si=fHnq4SbtySWs696z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ----
 
@@ -54,6 +54,20 @@ Here are a few things I would do if I were in your shoes, to make the process mo
 * I would not quit until I get to the end of a chapter, especially when it is hard, this is part of the experience when learning to solve problems, things get harder before they are easier because there is a lot of failure. I can always walk away to go do something different for a while, then come back and try again. If you take one small step at a time you eventually get where you want to go
 
 If you like videos, there is one for each chapter at `<https://www.youtube.com/@JacobItegboje>`_
+
+Here are some music playlists you can listen to while you go through the book or videos
+
+.. raw:: html
+
+  <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" width="560" height="315" style="width:560;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/playlist/beatstrumentals/pl.f54198ad42404535be13eabf3835fb22"></iframe>
+
+.. raw:: html
+
+  <iframe style="border-radius:10px" src="https://open.spotify.com/embed/playlist/1uJ4BgylqE1PJ6Ua14laJf?utm_source=generator" width="560" height="315" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+.. raw:: html
+
+  <iframe style="border-radius:10px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=4AjlrNFMuyInE1an&amp;list=PLWuEDVEvwXgqQZ-TPhLgmQSD7NsNlK_OW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 .. _how-tos:
 
