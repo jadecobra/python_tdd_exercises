@@ -97,7 +97,7 @@ table of contents
 music
 *********************************************************************************
 
-Here are some music playlists you can listen to while you go through the book or videos
+Here are some playlists of music you can listen to while you go through the book or videos
 
 .. raw:: html
 
