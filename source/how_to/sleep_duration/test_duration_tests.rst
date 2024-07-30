@@ -542,7 +542,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-The challenge was to write a program that makes the tests in ``test_sleep_duration.py`` pass without looking at them. I wrote something that returns the difference between a given ``wake_time`` and ``sleep_time`` by following these exceptions from the terminal
+The challenge was to write a program that makes the tests in ``test_sleep_duration.py`` pass without looking at them. I wrote something that returns the difference between a given ``wake_time`` and ``sleep_time`` by following these :ref:`Exceptions<Exceptions>` from the terminal
 
 * :ref:`AttributeError`
 * NameError_

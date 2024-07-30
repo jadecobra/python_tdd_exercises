@@ -255,7 +255,7 @@ I just made the same context 3 times. The ``self.assertRaises`` catches an :ref:
           module.non_existent_function()
           module.NonExistentClass()
 
-Fantastic! all the tests still pass and I have a way to catch exceptions that are raised in programs I am testing. I also encountered the following exceptions
+Fantastic! all the tests still pass and I have a way to catch exceptions that are raised in programs I am testing. I also encountered the following :ref:`Exceptions<Exceptions>`
 
 * :ref:`AssertionError`
 * :ref:`ModuleNotFoundError`

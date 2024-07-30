@@ -912,7 +912,7 @@ I have written the same thing multiple times in these tests and since the progra
 
   the terminal shows all tests are still passing
 
-I also encountered the following exceptions
+I also encountered the following :ref:`Exceptions<Exceptions>`
 
 * :ref:`AssertionError`
 * NameError_

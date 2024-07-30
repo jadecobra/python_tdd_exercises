@@ -550,7 +550,7 @@ From the tests above I can make a :ref:`function<functions>` that
 * have default values for when a value is not given for a certain input
 * perform an action based on a given input
 
-I also encountered the following exceptions
+I also encountered the following :ref:`Exceptions<Exceptions>`
 
 * :ref:`AssertionError`
 * :ref:`AttributeError`

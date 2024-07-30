@@ -721,9 +721,19 @@ green: make it pass
 review
 *********************************************************************************
 
-VOILA! You now know how to pass values from a test to a program and can places values in a string_ with an `f-string`_
+I ran the following tests to see what would happen when I pass Python :doc:`/data_structures/data_structures` from a test to a program and place the values in an `f-string_`
 
-You also encountered the following exceptions
+* `test_passing_a_string`_
+* `test_passing_a_class`_
+* `test_passing_None`_
+* `test_passing_a_boolean`_
+* `test_passing_an_integer`_
+* `test_passing_a_float`_
+* `test_passing_a_tuple`_
+* `test_passing_a_list`_
+* `test_passing_a_dictionary`_
+
+I also encountered the following :ref:`Exceptions<Exceptions>`
 
 * :ref:`AssertionError`
 * NameError_

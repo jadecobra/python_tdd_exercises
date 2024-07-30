@@ -830,7 +830,7 @@ red: make it fail
 
     AttributeError: module 'src.calculator' has no attribute 'subtract'
 
-  see if you can tell what :ref:`Exceptions<Exceptions>` will be raised as I go along
+  see if you can tell what :ref:`Exceptions<Exceptions>` will show up as I go along
 
 .. _test_calculator_green:
 
@@ -1029,9 +1029,14 @@ green: make it pass
 review
 *********************************************************************************
 
-CONGRATULATIONS! You used Test Driven Development to write a program that performs the 4 basic arithmetic operations of addition, subtraction, multiplication and division.
+I used Test Driven Development to write a program that performs the 4 basic arithmetic operations and wrote the following tests to do it
 
-You also encountered the following exceptions
+* `test_addition`_
+* `test_subtraction`_
+* `test_multiplication`_
+* `test_division`_
+
+I also encountered the following :ref:`Exceptions<Exceptions>`
 
 * :ref:`AssertionError`
 * NameError_

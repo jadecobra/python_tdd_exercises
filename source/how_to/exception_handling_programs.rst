@@ -543,7 +543,7 @@ Your Python powers are growing, you have seen
 * how to verify that exceptions are raised
 * how to handle exceptions when they occur
 
-You also encountered the following exceptions
+I also encountered the following :ref:`Exceptions<Exceptions>`
 
 * :ref:`AssertionError`
 * :ref:`ModuleNotFoundError`
