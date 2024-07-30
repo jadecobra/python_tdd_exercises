@@ -1029,7 +1029,7 @@ green: make it pass
 review
 *********************************************************************************
 
-I used Test Driven Development to write a program that performs the 4 basic arithmetic operations and wrote the following tests to do it
+I used Test Driven Development to write a program that performs the 4 arithmetic operations and wrote the following tests to do it
 
 * `test_addition`_
 * `test_subtraction`_
