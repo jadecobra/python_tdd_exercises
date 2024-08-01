@@ -56,16 +56,36 @@ red: make it fail
         def test_person_factory(self):
             self.assertEqual(person.factory(), None)
 
-  the terminal shows an :ref:`AttributeError`
+  and get a NameError_
 
   .. code-block:: python
 
-    AttributeError: module 'person' has no attribute 'factory'
-
+    NameError: name 'src' is not defined
 
 
 green: make it pass
 #################################################################################
+
+* I add it to the list of :ref:`Exceptions<Exceptions>` encountered
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AssertionError
+    # NameError
+
+* then add an `import statement`_ for the ``person`` module
+
+  .. code-block:: python
+
+    import src.person
+    import unittest
+
+  which gives me an :ref:`AttributeError`
+
+  .. code-block:: python
+
+    AttributeError: module 'person' has no attribute 'factory'
 
 * which I add to the list of exceptions
 
@@ -91,7 +111,7 @@ refactor: make it better
 
     def test_person_factory(self):
         self.assertEqual(
-            person.factory(
+            src.person.factory(
                 first_name="baby",
                 last_name="last_name",
                 year_of_birth=this_year(),
@@ -247,7 +267,7 @@ red: make it fail
 
     def test_factory_w_variable_inputs(self):
         self.assertEqual(
-            person.factory(
+            src.person.factory(
                 first_name="me",
                 last_name="my_last_name",
                 year_of_birth=1983,
@@ -371,7 +391,7 @@ refactor: make it better
         year_of_birth = 1983
 
         self.assertEqual(
-            person.factory(
+            src.person.factory(
                 first_name=first_name,
                 last_name=last_name,
                 year_of_birth=year_of_birth,
@@ -396,7 +416,7 @@ refactor: make it better
           year_of_birth = 1942
 
           self.assertEqual(
-              person.factory(
+              src.person.factory(
                   first_name=first_name,
                   last_name=last_name,
                   year_of_birth=year_of_birth,
@@ -421,7 +441,7 @@ refactor: make it better
         year_of_birth = this_year()
 
         self.assertEqual(
-            person.factory(
+            src.person.factory(
                 first_name=first_name,
                 last_name=last_name,
                 year_of_birth=year_of_birth,
@@ -454,7 +474,7 @@ red: make it fail
         year_of_birth = 2014
 
         self.assertEqual(
-            person.factory(
+            src.person.factory(
                 first_name=first_name,
                 year_of_birth=year_of_birth,
                 sex=sex,
@@ -504,7 +524,7 @@ red: make it fail
         year_of_birth = 1900
 
         self.assertEqual(
-            person.factory(
+            src.person.factory(
                 first_name=first_name,
                 year_of_birth=year_of_birth,
             ),
