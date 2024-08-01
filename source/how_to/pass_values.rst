@@ -721,7 +721,7 @@ green: make it pass
 review
 *********************************************************************************
 
-I ran the following tests to see what would happen when I pass Python :doc:`/data_structures/data_structures` from a test to a program and place the values in an `f-string_`
+I ran the following tests to see what happens when I pass Python :doc:`/data_structures/data_structures` from a test to a program and place the values in an `f-string_`
 
 * `test_passing_a_string`_
 * `test_passing_a_class`_
