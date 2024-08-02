@@ -36,7 +36,7 @@ test_person_factory
 *********************************************************************************
 
 #. :ref:`test_person_factory`
-#. :ref:`test_factory_w_default_keyword_arguments`
+#. :ref:`test_factory_w_last_name_default_keyword_argument`
 #. :ref:`test_factory_w_sex_default_keyword_argument`
 
 *********************************************************************************

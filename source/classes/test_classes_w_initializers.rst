@@ -113,7 +113,7 @@ refactor: make it better
     TypeError: Girl() takes no arguments
 
   - ``classes.Girl(sex='F')`` looks like a call to a :ref:`function<functions>`
-  - I can define classes that accept values by using an initializer
+  - I can define classes that take values by using an initializer
   - An initializer is a class :ref:`method<functions>` that allows customization of instances/copies of a `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
 
 * I add the initializer :ref:`method<functions>` called ``__init__`` to the ``Girl`` class
@@ -134,7 +134,7 @@ refactor: make it better
 
    TypeError: __init__() got an unexpected keyword argument 'sex'
 
-* I make the signature of the ``__init__`` :ref:`method<functions>` accept a keyword argument
+* I make the signature of the ``__init__`` :ref:`method<functions>` take a keyword argument
 
   .. code-block:: python
 

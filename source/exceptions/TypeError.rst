@@ -227,7 +227,7 @@ There's not much to do here but add assertions for practice.
 
     TypeError: function_b() takes 1 positional argument but 2 were given
 
-  ah, the previous definition accepted no positional arguments, and now allows 1 positional argument but I called it with 2 positional arguments.
+  ah, the previous definition took no positional arguments, and now allows 1 positional argument but I called it with 2 positional arguments.
 
 * I make ``function_b`` in ``functions.py`` to take in 2 positional arguments
 
@@ -276,7 +276,7 @@ There's not much to do here but add assertions for practice.
 
     TypeError: function_c() takes 0 positional arguments but 3 were given
 
-* I make the signature of ``function_c`` accept one input argument
+* I make the signature of ``function_c`` take one input argument
 
   .. code-block:: python
 

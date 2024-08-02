@@ -59,7 +59,7 @@ green: make it pass
 
     TypeError: passthrough_w_keyword_arguments() got an unexpected keyword argument 'first_name'
 
-* I make the :ref:`function<functions>` signature to make it accept a positional argument
+* I make the :ref:`function<functions>` signature to make it take a positional argument
 
   .. code-block:: python
 
@@ -160,7 +160,7 @@ the terminal shows a :ref:`TypeError`
 green: make it pass
 #################################################################################
 
-* I make the signature of ``passthrough_w_keyword_arguments`` accept any number of keyword arguments
+* I make the signature of ``passthrough_w_keyword_arguments`` take any number of keyword arguments
 
   .. code-block:: python
 

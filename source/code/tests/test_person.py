@@ -49,7 +49,7 @@ class TestPersonFactory(unittest.TestCase):
             },
         )
 
-    def test_factory_w_default_keyword_arguments(self):
+    def test_factory_w_last_name_default_keyword_argument(self):
         first_name = "child_a"
         sex = "M"
         year_of_birth = 2014
@@ -62,7 +62,7 @@ class TestPersonFactory(unittest.TestCase):
             ),
             {
                 "first_name": first_name,
-                "last_name": "last_name",
+                "last_name": "doe",
                 "sex": sex,
                 "age": this_year() - year_of_birth,
             },
@@ -79,7 +79,7 @@ class TestPersonFactory(unittest.TestCase):
             ),
             {
                 "first_name": first_name,
-                "last_name": "last_name",
+                "last_name": "doe",
                 "age": this_year() - year_of_birth,
                 "sex": "M",
             },

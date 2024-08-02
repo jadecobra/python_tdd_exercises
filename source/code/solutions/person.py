@@ -1,7 +1,7 @@
 import datetime
 
 def factory(
-    first_name=None, last_name="last_name",
+    first_name=None, last_name="doe",
     year_of_birth=None, sex="M"
 ):
     return {

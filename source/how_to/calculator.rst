@@ -18,7 +18,6 @@ In this chapter I write a program that does the arithmetic operations of additio
 
 ----
 
-
 *********************************************************************************
 test_addition
 *********************************************************************************

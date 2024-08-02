@@ -198,7 +198,7 @@ green: make it pass
 
     TypeError: exception_handler() takes 0 positional arguments but 1 was given
 
-* I make the :ref:`function<functions>` signature for ``exception_handler`` accept a positional argument
+* I make the :ref:`function<functions>` signature for ``exception_handler`` take a positional argument
 
   .. code-block:: python
 
@@ -415,7 +415,7 @@ green: make it pass
 
     TypeError: always_returns() takes 0 positional arguments but 1 was given
 
-* I make the signature of ``always_returns`` accept a function, and return the result of calling it
+* I make the signature of ``always_returns`` take a function, and return the result of calling it
 
   .. code-block:: python
 

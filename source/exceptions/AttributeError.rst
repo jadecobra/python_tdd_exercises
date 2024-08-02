@@ -396,7 +396,7 @@ I think of a :ref:`class <classes>` as a container of :ref:`attributes<Attribute
 - attributes are names which represent something
 - :ref:`methods<functions>` are :doc:`/functions/functions`, they
 
-  * can accept inputs if you want
+  * can take inputs if you want
   * return values and
   * are callable_
 

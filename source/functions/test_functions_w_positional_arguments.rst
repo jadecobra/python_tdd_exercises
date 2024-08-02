@@ -14,7 +14,7 @@ functions: test_functions_w_positional_arguments
 
 ----
 
-I can define a function to take in more than one input, For instance if I am writing a function to perform operations on 2 numbers as I do in :doc:`/how_to/calculator` , the function has to be able to accept the 2 numbers it performs operations on
+I can define a function to take in more than one input, For instance if I am writing a function to perform operations on 2 numbers as I do in :doc:`/how_to/calculator` , the function has to be able to take the 2 numbers it performs operations on
 
 *********************************************************************************
 red: make it fail
