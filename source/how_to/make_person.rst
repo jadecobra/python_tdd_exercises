@@ -14,7 +14,7 @@ This is an exercise in making :doc:`dictionaries </data_structures/dictionaries>
 
 .. contents:: table of contents
   :local:
-  :depth: 2
+  :depth: 1
 
 ----
 
@@ -230,6 +230,13 @@ refactor: make it better
 
   ``datetime.datetime.now().year`` returns the ``year`` attribute of the object returned by the ``now`` :ref:`method<functions>` of the ``datetime.datetime`` :ref:`class <classes>`, which is a representation of the current local date and time. I could also use ``today`` or ``utcnow`` instead of ``now`` to get the same value
 
+  .. code-block:: python
+
+    def this_year():
+        return datetime.datetime.now().year
+        return datetime.datetime.utcnow().year
+        return datetime.datetime.today().year
+
 * the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
@@ -262,7 +269,7 @@ test_factory_w_variable_inputs
 red: make it fail
 #################################################################################
 
-* The ``factory`` :ref:`function<functions>` currently returns the exact same dictionary every time, it does not care about the inputs, it is a :doc:`singleton function </functions/test_singleton_functions>`. It has to use the inputs to be useful. I add another test to ``test_person.py`` with a different set of inputs
+* The ``factory`` :ref:`function<functions>` currently returns the exact same dictionary every time it is called. I want it to use inputs. I add another test to ``test_person.py`` with a different set of inputs
 
   .. code-block:: python
 
@@ -385,7 +392,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-There is some repetition in the test. If I want to test with a different value for any of the arguments passed to ``person.factory``, I would have to make the change in 2 places - once in the argument passed to the :ref:`function<functions>` and then again in the resulting :doc:`dictionary </data_structures/dictionaries>`. I can refactor this to make it easier to make changes to the test when I want,  especially since the programming gods told me `not to repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_.
+* To test with the ``person.factory`` :ref:`function<functions>` with a different value for any of the input parameters, I have to make the change in 2 places - once in the argument passed to the :ref:`function<functions>` and in the expected :doc:`dictionary </data_structures/dictionaries>`. I can refactor this to make it easier to make changes to the test when I want,  especially since the programming gods told me `not to repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_.
 
   .. code-block:: python
 
@@ -410,7 +417,7 @@ There is some repetition in the test. If I want to test with a different value f
             }
         )
 
-  I remove the duplication by making a variable for each of the inputs that is passed to the ``factory`` :ref:`function<functions>` and reference the variables in the :ref:`function<functions>` call. I now only need to make a change in one place when I want, for example
+  I remove it by making a variable for each of the inputs that is passed to the ``factory`` :ref:`function<functions>` and reference the variables in the :ref:`function<functions>` call. I now only need to make a change in one place when I want, for example
 
   .. code-block:: python
 
@@ -460,7 +467,7 @@ There is some repetition in the test. If I want to test with a different value f
             }
         )
 
-* I remove ``test_factory_w_variable_inputs`` because it is now the same test as ``test_person_factory``
+  and the terminal shows both tests are passing
 
 ----
 
@@ -538,8 +545,8 @@ red: make it fail
             {
                 "first_name": first_name,
                 "last_name": "doe",
+                "sex": "M",
                 "age": this_year() - year_of_birth,
-                "sex": "M"
             }
         )
 
@@ -564,15 +571,237 @@ green: make it pass
     ):
     ...
 
-  and the terminal shows passing tests
+  and the terminal shows all tests are passing
 
 ----
+
+*********************************************************************************
+test_person_tests
+*********************************************************************************
+
+.. _test_person_tests_red:
+
+red: make it fail
+#################################################################################
+
+* I close ``test_person.py``
+* then delete the text in ``person.py`` and the terminal shows an :ref:`AttributeError`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.person' has no attribute 'factory'
+
+  see if you can tell what :ref:`Exceptions<Exceptions>` will show up as I go along
+
+.. _test_person_tests_green:
+
+green: make it pass
+#################################################################################
+
+* I add a :ref:`function<functions>`
+
+  .. code-block:: python
+
+    def factory():
+        return None
+
+  and get a :ref:`TypeError`
+
+  .. code-block:: python
+
+    TypeError: factory() got an unexpected keyword argument 'first_name'
+
+  then add the keyword argument to the :ref:`function<functions>`
+
+  .. code-block:: python
+
+    def factory(first_name=None):
+        return None
+
+  which gives me another :ref:`TypeError`
+
+  .. code-block:: python
+
+    TypeError: factory() got an unexpected keyword argument 'last_name'
+
+  I add the keyword argument
+
+  .. code-block:: python
+
+    def factory(first_name=None, last_name=None):
+        return None
+
+  and the terminal shows another :ref:`TypeError`
+
+  .. code-block:: python
+
+    TypeError: factory() got an unexpected keyword argument 'sex'
+
+  I add the keyword argument
+
+  .. code-block:: python
+
+    def factory(
+            first_name=None, last_name=None,
+            sex=None
+        ):
+        return None
+
+  and get a :ref:`TypeError`
+
+  .. code-block:: python
+
+    TypeError: factory() got an unexpected keyword argument 'year_of_birth'
+
+  when I add the keyword argument
+
+  .. code-blocK:: python
+
+    def factory(
+            first_name=None, last_name=None,
+            sex=None, year_of_birth=None
+        ):
+        return None
+
+  I get an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: None != {'first_name': 'john', 'last_name': 'doe', 'sex': 'M', 'age': 82}
+
+* I copy the value from the terminal and use it to replace :ref:`None` in the `return statement`_
+
+  .. code-block:: python
+
+    def factory(
+            first_name=None, last_name=None,
+            sex=None, year_of_birth=None
+        ):
+        return {
+            'first_name': 'john',
+            'last_name': 'doe',
+            'sex': 'M',
+            'age': 82
+        }
+
+  the terminal shows another :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {'first_name': 'john', 'last_name': 'doe', 'sex': 'M', 'age': 82} != {'first_name': 'person', 'last_name': 'doe', 'sex': 'M', 'age': 124}
+
+  the values for ``age`` and ``first_name`` are different
+
+* I make the `return statement`_ use the input parameters for those values
+
+  .. code-block:: python
+
+    def factory(
+            first_name=None, last_name=None,
+            sex=None, year_of_birth=None
+        ):
+        return {
+            'first_name': first_name,
+            'last_name': 'doe',
+            'sex': 'M',
+            'age': year_of_birth
+        }
+
+  and still have an :ref:`AssertionError`
+
+  .. code-block
+
+    AssertionError: {'first_name': 'john', 'last_name': 'doe', 'sex': 'M', 'age': 1942} != {'first_name': 'john', 'last_name': 'doe', 'sex': 'M', 'age': 82}
+
+  the ``age`` is not the ``year_of_birth`` but the difference between this year and it
+
+* I add an `import statement`_ for the datetime_ :ref:`module<ModuleNotFoundError>` to use it
+
+  .. code-block:: python
+
+    import datetime
+
+
+    def factory(
+    ...
+
+  then add a call to it for the age calculation
+
+  .. code-block:: python
+
+    def factory(
+            first_name=None, last_name=None,
+            sex=None, year_of_birth=None
+        ):
+        return {
+            'first_name': first_name,
+            'last_name': 'doe',
+            'sex': 'M',
+            'age': datetime.datetime.today().year - year_of_birth
+        }
+
+  and get another :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {'first_name': 'baby', 'last_name': 'doe', 'sex': 'M', 'age': 0} != {'first_name': 'baby', 'last_name': 'last_name', 'sex': 'F', 'age': 0}
+
+  the values for ``last_name`` and ``sex`` are different
+
+* I add the input parameters for those values in the `return statement`_
+
+  .. code-block:: python
+
+    def factory(
+            first_name=None, last_name=None,
+            sex=None, year_of_birth=None
+        ):
+        return {
+            'first_name': first_name,
+            'last_name': last_name,
+            'sex': sex,
+            'age': datetime.datetime.now().year - year_of_birth
+        }
+
+  which gives me another :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {'first_name': 'person', 'last_name': None, 'sex': None, 'age': 124} != {'first_name': 'person', 'last_name': 'doe', 'sex': 'M', 'age': 124}
+
+  the values for ``last_name`` and ``sex`` are still different, and are both :ref:`None` which is the default value for the keyword arguments
+
+* I change the default value for ``last_name``
+
+  .. code-block:: python
+
+    def factory(
+            first_name=None, last_name='doe',
+            sex=None, year_of_birth=None
+        ):
+
+  and the terminal shows another :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {'first_name': 'person', 'last_name': 'doe', 'sex': None, 'age': 124} != {'first_name': 'person', 'last_name': 'doe', 'sex': 'M', 'age': 124}
+
+* when I make the default value for ``sex`` match the expectation
+
+  .. code-block:: python
+
+    def factory(
+            first_name=None, last_name='doe',
+            sex='M', year_of_birth=None
+        ):
+
+  all the tests pass!
 
 *************************************************************************************
 review
 *************************************************************************************
 
-I ran the following tests to make a :ref:`function<functions>` that returns a :doc:`dictionary </data_structures/dictionaries>` as output, takes in keyword arguments as input, has default values for when a value is not given for a certain input and perform an action based on a given input
+I ran the following tests to make a :ref:`function<functions>` that takes in keyword arguments as input, has default values for when a value is not given, performs an action based on a given input, and returns a :doc:`dictionary </data_structures/dictionaries>` as output
 
 * `test_person_factory`_
 * `test_factory_w_variable_inputs`_
