@@ -14,7 +14,7 @@ AssertionError
 
 ----
 
-An `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ is an Exception that is raised when the result of an ``assert`` statement is :ref:`False <test_what_is_false>`
+An `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_ is an Exception that is raised when the result of an ``assert`` statement is :ref:`False <test_what_is_false>`
 
 It was introduced in :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` with the first failing test
 
@@ -88,7 +88,7 @@ red: make it fail
         def test_assertion_errors_w_none(self):
             assert False is None
 
-  the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
+  the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
 
   .. code-block:: python
 
@@ -96,9 +96,9 @@ red: make it fail
 
     tests/test_assertion_error.py:7: AssertionError
 
-  - This `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ is raised by the line ``assert False is None`` which is like asking the question "is False the same as None?"
+  - This `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_ is raised by the line ``assert False is None`` which is like asking the question "is False the same as None?"
   - The difference is that the ``assert`` at the beginning of the line makes the statement more like "DO NOT PROCEED UNLESS :ref:`False <test_what_is_false>` is :ref:`None`"
-  - Since :ref:`None` and :ref:`False <test_what_is_false>` are not equal, the ``assert`` statement is :ref:`False <test_what_is_false>` and python raises an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
+  - Since :ref:`None` and :ref:`False <test_what_is_false>` are not equal, the ``assert`` statement is :ref:`False <test_what_is_false>` and python raises an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
 
 green: make it pass
 #################################################################################
@@ -128,7 +128,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
         assert False is not None
         self.assertIsNone(False)
 
-  the terminal shows a more descriptive `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ since ``False is not None``
+  the terminal shows a more descriptive `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_ since ``False is not None``
 
   .. code-block:: python
 
@@ -158,7 +158,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
         assert True is None
 
-  the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
+  the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
 
   .. code-block:: python
 
@@ -189,7 +189,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
         assert True is not None
         self.assertIsNone(True)
 
-  the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
+  the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
 
   .. code-block:: python
 
@@ -228,7 +228,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
         assert None is not None
 
-  the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
+  the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
 
   .. code-block:: python
 
@@ -265,7 +265,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
         assert None is None
         self.assertIsNotNone(None)
 
-  and the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
+  and the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
 
   .. code-block:: python
 
@@ -306,7 +306,7 @@ Which of these ``assert`` statements do you prefer when testing :ref:`None`?
 test_assertion_errors_w_false
 *********************************************************************************
 
-Can I raise an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ for things that are :ref:`False <test_what_is_false>`?
+Can I raise an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_ for things that are :ref:`False <test_what_is_false>`?
 
 red: make it fail
 #################################################################################
@@ -380,7 +380,7 @@ From the tests I can see that in Python
 test_assertion_errors_w_true
 *********************************************************************************
 
-Can I raise an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_ for things that are :ref:`True <test_what_is_true>`?
+Can I raise an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_ for things that are :ref:`True <test_what_is_true>`?
 
 red: make it fail
 #################################################################################
@@ -419,7 +419,7 @@ What if I try the above test using the `unittest.TestCase.assertTrue <https://do
       assert True is True
       self.assertTrue(False)
 
-the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
+the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
 
 .. code-block:: python
 
@@ -469,7 +469,7 @@ I add a new test to ``TestAssertionError`` in ``test_assertion_error.py``
   def test_assertion_errors_w_equality(self):
       assert False == None
 
-the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
+the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
 
 .. code-block:: python
 
@@ -500,7 +500,7 @@ refactor: make it better
         assert False != None
         self.assertEqual(False, None)
 
-  and the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
+  and the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
 
   .. code-block:: python
 
@@ -540,7 +540,7 @@ refactor: make it better
 
         assert True == None
 
-  and the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
+  and the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
 
   .. code-block:: python
 
@@ -571,7 +571,7 @@ refactor: make it better
         assert True != None
         self.assertEqual(True, None)
 
-  the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=assertionerror#AssertionError>`_
+  the terminal shows an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
 
   .. code-block:: python
 

@@ -687,7 +687,7 @@ refactor: make it better
             'first_name': first_name,
             'last_name': last_name,
             'sex': sex,
-            'age': datetime.datetime.now().year - year_of_birth,
+            'age': datetime.datetime.today().year - year_of_birth,
         }
 
   the terminal shows another NameError_
@@ -729,11 +729,60 @@ refactor: make it better
         last_name = 'doe'
         sex = 'F'
         year_of_birth = random.randint(
+            this_year()-120, this_year()
+        )
+        ...
+
+  ``random.randint(1900, this_year())`` gives me a random number from ``1900`` up to the current year which is returned by ``this_year()`` and the test is still green
+
+* I use random values for the ``sex`` variable
+
+  .. code-block:: python
+
+    def test_person_factory(self):
+        first_name = 'jane'
+        last_name = 'doe'
+        sex = random.choice(('F', 'M'))
+        year_of_birth = random.randint(
             1900, this_year()
         )
+        ...
 
-  ``random.randint(1900, this_year())`` gives me a random number from ``1900`` up to the current year which is returned by ``this_year()``
+  ``random.choice(('F', 'M'))`` gives me a random value from ``F`` or ``M`` and the test is still green
 
+* I do the same thing with the ``last_name`` variable
+
+  .. code-block:: python
+
+    def test_person_factory(self):
+        first_name = 'jane'
+        last_name = random.choice((
+            'doe', 'smith', 'blow', 'public'
+        ))
+        sex = random.choice(('F', 'M'))
+        year_of_birth = random.randint(
+            1900, this_year()
+        )
+        ...
+
+* and the ``first_name`` variable
+
+  .. code-blocK:: python
+
+    def test_person_factory(self):
+        first_name = random.choice((
+            'john', 'joe', 'jane', 'person'
+        ))
+        last_name = random.choice((
+            'doe', 'smith', 'blow', 'public'
+        ))
+        sex = random.choice(('F', 'M'))
+        year_of_birth = random.randint(
+            1900, this_year()
+        )
+        ...
+
+  the terminal still shows green
 
 ----
 
@@ -741,19 +790,23 @@ refactor: make it better
 test_factory_w_default_keyword_arguments
 *************************************************************************************
 
-If I wanted to
+I want to see what would happens if I try to make a person without giving a value for the ``last_name``
 
 red: make it fail
-==================
+#################################################################################
 
-* I add a failing test for default values to ``test_person.py``
+* I add a failing test to find out
 
   .. code-block:: python
 
-    def test_factory_w_last_name_default_keyword_argument(self):
-        first_name = "child_a"
+    def test_factory_w_default_keyword_arguments(self):
+        first_name = random.choice((
+            'john', 'joe', 'jane', 'person'
+        ))
         sex = "M"
-        year_of_birth = 2014
+        year_of_birth = random.randint(
+            1900, this_year()
+        )
 
         self.assertEqual(
             src.person.factory(
@@ -773,37 +826,36 @@ red: make it fail
 
   .. code-block:: python
 
-    AssertionError: {'first_name': 'child_a', 'last_name': None, 'sex': 'M', 'age': 10} != {'first_name': 'child_a', 'last_name': 'doe', 'sex': 'M', 'age': 10}
+    AssertionError: {'first_name': 'joe', 'last_name': None, 'sex': 'M', 'age': 47} != {'first_name': 'child_a', 'last_name': 'doe', 'sex': 'M', 'age': 47}
 
-* The test expects a value of ``"doe"`` but ``person.factory`` returns :ref:`None`. When I make the default value for ``last_name`` in the :ref:`function<functions>` match the expectation
+  the test expects a value of ``"doe"`` but ``person.factory`` returns :ref:`None`
+
+green: make it pass
+#################################################################################
+
+* When I make the default value for ``last_name`` in the :ref:`function<functions>` match the expectation
 
   .. code-block:: python
 
     def factory(
-        first_name=None, last_name="doe",
+        first_name=None, last_name='doe',
         year_of_birth=None, sex=None
     ):
     ...
 
-  the terminal shows passing tests. When no value is given for the ``last_name`` argument to ``person.factory`` it uses ``"doe"`` because that is the default value in the :ref:`function<functions>` signature
+  the terminal shows passing tests. When no value is given for the ``last_name`` argument to ``person.factory`` it uses ``'doe'`` because that is the default value in the :ref:`function<functions>` signature
 
-.. _test_factory_w_sex_default_keyword_argument:
-
-*************************************************************************************
-test_factory_w_sex_default_keyword_argument
-*************************************************************************************
-
-red: make it fail
-#################################################################################
-
-* I add a test to try another default value
+* I remove ``sex`` from the :ref:`function<functions>` call then change the expectation
 
   .. code-block:: python
 
-
-    def test_factory_w_sex_default_keyword_argument(self):
-        first_name = "person"
-        year_of_birth = 1900
+    def test_factory_w_default_keyword_arguments(self):
+        first_name = random.choice((
+            'john', 'joe', 'jane', 'person'
+        ))
+        year_of_birth = random.randint(
+            1900, this_year()
+        )
 
         self.assertEqual(
             src.person.factory(
@@ -813,33 +865,100 @@ red: make it fail
             {
                 "first_name": first_name,
                 "last_name": "doe",
-                "sex": "M",
-                "age": this_year() - year_of_birth,
+                "sex": 'M',
+                "age": this_year() - year_of_birth
             }
         )
 
-  the terminal shows an :ref:`AssertionError`
+  and get an :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: {'first_name': 'person', 'last_name': 'last_name', 'sex': None, 'age': 124} != {'first_name': 'person', 'last_name': 'last_name', 'age': 124, 'sex': 'M'}
+    AssertionError: {'first_name': 'child_a', 'last_name': 'doe', 'sex': None, 'age': 36} != {'first_name': 'child_a', 'last_name': 'doe', 'sex': 'M', 'age': 36}
 
-  there is a difference in the values for ``sex``
-
-green: make it pass
-#################################################################################
-
-* I set the default value for the parameter in ``person.factory``
+* I add a default value to match the expectation
 
   .. code-block:: python
 
     def factory(
-        first_name=None, last_name="doe",
-        year_of_birth=None, sex="M"
-    ):
+            first_name=None, last_name='doe',
+            sex='M', year_of_birth=None
+        ):
+        ...
+
+  and the terminal shows passing tests
+
+refactor: make it better
+#################################################################################
+
+* I have duplication for ``first_name`` that I can remove with a :ref:`function<functions>`
+
+  .. code-block:: python
+
+    ...
+    import unittest
+
+
+    def a_random_first_name():
+        return random.choice((
+            'john', 'joe', 'jane', 'person'
+        ))
+
+
+    def this_year():
     ...
 
-  and the terminal shows all tests are passing
+  then add calls to it in both tests
+
+  .. code-block:: python
+
+    def test_person_factory(self):
+        first_name = a_random_first_name()
+        ...
+
+    def test_factory_w_default_keyword_arguments(self):
+        first_name = a_random_first_name()
+        ...
+
+  the terminal still shows passing tests
+
+* I add a :ref:`function<functions>` to remove the duplication of the ``year_of_birth``
+
+  .. code-block:: python
+
+    def a_random_first_name():
+        return random.choice((
+            'john', 'joe', 'jane', 'person'
+        ))
+
+
+    def a_random_year():
+        return random.randint(
+            1900, this_year()
+        )
+
+
+    ...
+
+  then add calls to the :ref:`function<functions>`
+
+  .. code-block:: python
+
+    def test_person_factory(self):
+        first_name = a_random_first_name()
+        last_name = random.choice((
+            'doe', 'smith', 'blow', 'public'
+        ))
+        sex = random.choice(('F', 'M'))
+        year_of_birth = a_random_year()
+        ...
+
+    def test_factory_w_default_keyword_arguments(self):
+        first_name = a_random_first_name()
+        year_of_birth = a_random_year()
+        ...
+
+  and all tests are still passing
 
 ----
 
@@ -935,7 +1054,10 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: None != {'first_name': 'john', 'last_name': 'doe', 'sex': 'M', 'age': 82}
+    AssertionError: None != {'first_name': 'john', 'last_name': 'smith', 'sex': 'F', 'age': 31}
+    AssertionError: None != {'first_name': 'jane', 'last_name': 'blow', 'sex': 'M', 'age': 55}
+    AssertionError: None != {'first_name': 'person', 'last_name': 'smith', 'sex': 'F', 'age': 97}
+    AssertionError: None != {'first_name': 'john', 'last_name': 'blow', 'sex': 'F', 'age': 20}
 
 * I copy the value from the terminal and use it to replace :ref:`None` in the `return statement`_
 
@@ -947,20 +1069,23 @@ green: make it pass
         ):
         return {
             'first_name': 'john',
-            'last_name': 'doe',
-            'sex': 'M',
-            'age': 82
+            'last_name': 'blow',
+            'sex': 'F',
+            'age': 20
         }
 
   the terminal shows another :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: {'first_name': 'john', 'last_name': 'doe', 'sex': 'M', 'age': 82} != {'first_name': 'person', 'last_name': 'doe', 'sex': 'M', 'age': 124}
+    AssertionError: {'first_name': 'john', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'joe', 'last_name': 'public', 'sex': 'M', 'age': 98}
+    AssertionError: {'first_name': 'john', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 73}
+    AssertionError: {'first_name': 'john', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'jane', 'last_name': 'blow', 'sex': 'M', 'age': 50}
+    AssertionError: {'first_name': 'john', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'jane', 'last_name': 'public', 'sex': 'F', 'age': 98}
 
-  the values for ``age`` and ``first_name`` are different
+  the values for ``age``, ``first_name``, ``last_name`` and ``sex`` change
 
-* I make the `return statement`_ use the input parameters for those values
+* I make the `return statement`_ use the input parameters for ``first_name``
 
   .. code-block:: python
 
@@ -970,20 +1095,101 @@ green: make it pass
         ):
         return {
             'first_name': first_name,
-            'last_name': 'doe',
-            'sex': 'M',
-            'age': year_of_birth
+            'last_name': 'blow',
+            'sex': 'F',
+            'age': 20
         }
 
   and still have an :ref:`AssertionError`
 
   .. code-block
 
-    AssertionError: {'first_name': 'john', 'last_name': 'doe', 'sex': 'M', 'age': 1942} != {'first_name': 'john', 'last_name': 'doe', 'sex': 'M', 'age': 82}
+    AssertionError: {'first_name': 'person', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'person', 'last_name': 'public', 'sex': 'F', 'age': 69}
+    AssertionError: {'first_name': 'joe', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'joe', 'last_name': 'blow', 'sex': 'F', 'age': 97}
+    AssertionError: {'first_name': 'john', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'john', 'last_name': 'smith', 'sex': 'M', 'age': 74}
+    AssertionError: {'first_name': 'john', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'john', 'last_name': 'public', 'sex': 'F', 'age': 19}
 
-  the ``age`` is not the ``year_of_birth`` but the difference between this year and it
+  the ``last_name``, ``sex`` and ``age`` change
 
-* I add an `import statement`_ for the datetime_ :ref:`module<ModuleNotFoundError>` to use it
+* I use the input parameter for ``last_name`` in the `return statement`_
+
+  .. code-block:: python
+
+    def factory(
+            first_name=None, last_name=None,
+            sex=None, year_of_birth=None
+        ):
+        return {
+            'first_name': first_name,
+            'last_name': last_name,
+            'sex': 'F',
+            'age': 20
+        }
+
+  and get another :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {'first_name': 'jane', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'jane', 'last_name': 'blow', 'sex': 'M', 'age': 3}
+    AssertionError: {'first_name': 'joe', 'last_name': 'smith', 'sex': 'F', 'age': 20} != {'first_name': 'joe', 'last_name': 'smith', 'sex': 'F', 'age': 118}
+    AssertionError: {'first_name': 'joe', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'joe', 'last_name': 'blow', 'sex': 'M', 'age': 19}
+    AssertionError: {'first_name': 'joe', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'joe', 'last_name': 'blow', 'sex': 'M', 'age': 95}
+
+  the values for ``sex`` and ``age`` change
+
+* When I add ``sex`` to the `return statement`_
+
+  .. code-block:: python
+
+    def factory(
+            first_name=None, last_name=None,
+            sex=None, year_of_birth=None
+        ):
+        return {
+            'first_name': first_name,
+            'last_name': last_name,
+            'sex': sex,
+            'age': 20
+        }
+
+  the terminal shows another :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {'first_name': 'joe', 'last_name': 'doe', 'sex': 'M', 'age': 20} != {'first_name': 'joe', 'last_name': 'doe', 'sex': 'M', 'age': 1}
+    AssertionError: {'first_name': 'joe', 'last_name': 'public', 'sex': 'F', 'age': 20} != {'first_name': 'joe', 'last_name': 'public', 'sex': 'F', 'age': 90}
+    AssertionError: {'first_name': 'joe', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'joe', 'last_name': 'blow', 'sex': 'F', 'age': 113}
+    AssertionError: {'first_name': 'person', 'last_name': 'doe', 'sex': 'M', 'age': 20} != {'first_name': 'person', 'last_name': 'doe', 'sex': 'M', 'age': 58}
+
+  the ``age`` is different
+
+* I add the input parameter to the `return statement`_
+
+  .. code-block:: python
+
+    def factory(
+        first_name=None, last_name=None,
+        sex=None, year_of_birth=None
+    ):
+        return {
+            'first_name': first_name,
+            'last_name': last_name,
+            'sex': sex,
+            'age': year_of_birth,
+        }
+
+  and get an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {'first_name': 'joe', 'last_name': 'doe', 'sex': 'M', 'age': 2022} != {'first_name': 'joe', 'last_name': 'doe', 'sex': 'M', 'age': 2}
+    AssertionError: {'first_name': 'jane', 'last_name': 'smith', 'sex': 'M', 'age': 2024} != {'first_name': 'jane', 'last_name': 'smith', 'sex': 'M', 'age': 0}
+    AssertionError: {'first_name': 'jane', 'last_name': 'blow', 'sex': 'F', 'age': 1981} != {'first_name': 'jane', 'last_name': 'blow', 'sex': 'F', 'age': 43}
+    AssertionError: {'first_name': 'person', 'last_name': 'smith', 'sex': 'M', 'age': 1969} != {'first_name': 'person', 'last_name': 'smith', 'sex': 'M', 'age': 55}
+
+  the ``year_of_birth``is not the ``age`` but the difference between the current year and the ``year_of_birth``
+
+* I add an `import statement`_ for the datetime_ :ref:`module<ModuleNotFoundError>`
 
   .. code-block:: python
 
@@ -1003,41 +1209,21 @@ green: make it pass
         ):
         return {
             'first_name': first_name,
-            'last_name': 'doe',
-            'sex': 'M',
-            'age': datetime.datetime.today().year - year_of_birth
+            'last_name': last_name,
+            'sex': sex,
+            'age': datetime.datetime.today().year - year_of_birth,
         }
 
   and get another :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: {'first_name': 'baby', 'last_name': 'doe', 'sex': 'M', 'age': 0} != {'first_name': 'baby', 'last_name': 'last_name', 'sex': 'F', 'age': 0}
+    AssertionError: {'first_name': 'john', 'last_name': None, 'sex': None, 'age': 12} != {'first_name': 'john', 'last_name': 'doe', 'sex': 'M', 'age': 12}
+    AssertionError: {'first_name': 'person', 'last_name': None, 'sex': None, 'age': 48} != {'first_name': 'person', 'last_name': 'doe', 'sex': 'M', 'age': 48}
+    AssertionError: {'first_name': 'john', 'last_name': None, 'sex': None, 'age': 76} != {'first_name': 'john', 'last_name': 'doe', 'sex': 'M', 'age': 76}
+    AssertionError: {'first_name': 'john', 'last_name': None, 'sex': None, 'age': 45} != {'first_name': 'john', 'last_name': 'doe', 'sex': 'M', 'age': 45}
 
-  the values for ``last_name`` and ``sex`` are different
-
-* I add the input parameters for those values in the `return statement`_
-
-  .. code-block:: python
-
-    def factory(
-            first_name=None, last_name=None,
-            sex=None, year_of_birth=None
-        ):
-        return {
-            'first_name': first_name,
-            'last_name': last_name,
-            'sex': sex,
-            'age': datetime.datetime.now().year - year_of_birth
-        }
-
-  which gives me another :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: {'first_name': 'person', 'last_name': None, 'sex': None, 'age': 124} != {'first_name': 'person', 'last_name': 'doe', 'sex': 'M', 'age': 124}
-
-  the values for ``last_name`` and ``sex`` are still different, and are both :ref:`None` which is the default value for the keyword arguments
+  the values for ``last_name`` and ``sex`` are different, they are both :ref:`None` which is the default value for the keyword arguments
 
 * I change the default value for ``last_name``
 
@@ -1052,7 +1238,10 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: {'first_name': 'person', 'last_name': 'doe', 'sex': None, 'age': 124} != {'first_name': 'person', 'last_name': 'doe', 'sex': 'M', 'age': 124}
+    AssertionError: {'first_name': 'joe', 'last_name': 'doe', 'sex': None, 'age': 22} != {'first_name': 'joe', 'last_name': 'doe', 'sex': 'M', 'age': 22}
+    AssertionError: {'first_name': 'person', 'last_name': 'doe', 'sex': None, 'age': 96} != {'first_name': 'person', 'last_name': 'doe', 'sex': 'M', 'age': 96}
+    AssertionError: {'first_name': 'person', 'last_name': 'doe', 'sex': None, 'age': 117} != {'first_name': 'person', 'last_name': 'doe', 'sex': 'M', 'age': 117}
+    AssertionError: {'first_name': 'person', 'last_name': 'doe', 'sex': None, 'age': 12} != {'first_name': 'person', 'last_name': 'doe', 'sex': 'M', 'age': 12}
 
 * when I make the default value for ``sex`` match the expectation
 
@@ -1072,9 +1261,7 @@ review
 I ran the following tests to make a :ref:`function<functions>` that takes in keyword arguments as input, has default values for when a value is not given, performs an action based on a given input, and returns a :doc:`dictionary </data_structures/dictionaries>` as output
 
 * `test_person_factory`_
-* `test_factory_w_variable_inputs`_
-* `test_factory_w_last_name_default_keyword_argument`_
-* `test_factory_w_sex_default_keyword_argument`_
+* `test_factory_w_default_keyword_arguments`_
 
 I also encountered the following :ref:`Exceptions<Exceptions>`
 
