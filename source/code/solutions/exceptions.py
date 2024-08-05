@@ -1,8 +1,10 @@
 def raises_exception():
     raise Exception('BOOM')
 
+
 def does_not_raise_exception():
     return None
+
 
 def exception_handler(function):
     try:
@@ -11,6 +13,7 @@ def exception_handler(function):
         return 'failed'
     else:
         return 'succeeded'
+
 
 def always_returns(function):
     try:
