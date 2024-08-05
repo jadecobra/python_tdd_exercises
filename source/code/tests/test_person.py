@@ -1,6 +1,19 @@
 import datetime
+import random
 import src.person
 import unittest
+
+
+def a_random_first_name():
+    return random.choice((
+        'john', 'joe', 'jane', 'person'
+    ))
+
+
+def a_random_year():
+    return random.randint(
+        1900, this_year()
+    )
 
 
 def this_year():
@@ -9,52 +22,44 @@ def this_year():
 
 class TestPerson(unittest.TestCase):
 
-    def assertFactoryWorks(
-        self, first_name=None, last_name='doe',
-        sex='M', year_of_birth=None,
-    ):
+    def test_person_factory(self):
+        first_name = a_random_first_name()
+        last_name = random.choice((
+            'doe', 'smith', 'blow', 'public'
+        ))
+        sex = random.choice(('F', 'M'))
+        year_of_birth = a_random_year()
+
         self.assertEqual(
             src.person.factory(
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
-                year_of_birth=year_of_birth
+                year_of_birth=year_of_birth,
             ),
             {
                 'first_name': first_name,
                 'last_name': last_name,
                 'sex': sex,
-                'age': this_year() - year_of_birth
+                'age': this_year() - year_of_birth,
             }
         )
 
-    def test_person_factory(self):
-        self.assertFactoryWorks(
-            first_name=first_name,
-            last_name='last_name',
-            sex='F',
-            year_of_birth=this_year(),
-        )
+    def test_factory_w_default_keyword_arguments(self):
+        first_name = a_random_first_name()
+        year_of_birth = a_random_year()
 
-    def test_person_factory_w_variable_inputs(self):
-        self.assertFactoryWorks(
-            first_name='john',
-            last_name='doe',
-            sex='M',
-            year_of_birth=1942,
-        )
-
-    def test_person_factory_w_last_name_default_argument(self):
-        self.assertFactoryWorks(
-            first_name='child_a',
-            sex='M',
-            year_of_birth=2014,
-        )
-
-    def test_person_factory_w_sex_default_argument(self):
-        self.assertFactoryWorks(
-            first_name='person',
-            year_of_birth=1900,
+        self.assertEqual(
+            src.person.factory(
+                first_name=first_name,
+                year_of_birth=year_of_birth,
+            ),
+            {
+                "first_name": first_name,
+                "last_name": "doe",
+                "sex": 'M',
+                "age": this_year() - year_of_birth
+            }
         )
 
 
@@ -62,3 +67,4 @@ class TestPerson(unittest.TestCase):
 # AssertionError
 # NameError
 # AttributeError
+# TypeError
