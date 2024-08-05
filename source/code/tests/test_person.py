@@ -30,7 +30,7 @@ class TestPerson(unittest.TestCase):
 
     def test_person_factory(self):
         self.assertFactoryWorks(
-            first_name='baby',
+            first_name=first_name,
             last_name='last_name',
             sex='F',
             year_of_birth=this_year(),
