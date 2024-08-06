@@ -309,7 +309,7 @@ refactor: make it better
   - ``random.randint(-1, 1)`` gives me a random number from ``-1`` up to and including ``1``
   - ``-1`` for negative numbers, ``0`` for itself, and ``1`` for positive numbers
 
-* I remove the other assertions because they are now covered by the one that uses the random numbers
+* I remove the other assertions because they are now covered by the one that uses random numbers
 
   .. code-block:: python
 
@@ -324,7 +324,7 @@ refactor: make it better
                 x+y
             )
 
-* If I want to change the range of random numbers for the test, I have to do it in more than one place
+* If I want to use a bigger range of random numbers for the test, I have to do it in more than one place
 
   .. code-block:: python
 
@@ -337,7 +337,7 @@ refactor: make it better
             x+y
         )
 
-* I add a function to remove the duplication of the calls to `random.randint`_
+* I add a :ref:`function<functions>` to remove the duplication of the calls to `random.randint`_
 
   .. code-block:: python
 
@@ -496,7 +496,7 @@ refactor: make it better
 
   happens twice, once in ``test_addition`` and again in ``test_subtraction``
 
-* I can use :ref:`class <classes>` attributes (variables) to remove the duplication
+* I can use :ref:`class <classes>` attributes (variables) to remove the duplication and use the same numbers for both tests
 
   .. code-block:: python
 
@@ -523,7 +523,7 @@ refactor: make it better
                 x-y
             )
 
-  the terminal shows the tests are still passing, the ``x`` and ``y`` variables are made once as :ref:`class <classes>` attributes (variables) and used later in every test with ``self.x`` and ``self.y``, the same way I can call `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_.
+  the terminal shows the tests are still passing, the ``x`` and ``y`` variables are made once as :ref:`class <classes>` attributes (variables) and used later in each test with ``self.x`` and ``self.y``, the same way I can call `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_
 
 * I remove the ``x`` and ``y`` variables from ``test_addition`` and ``test_subtraction``
 
@@ -687,7 +687,7 @@ green: make it pass
     # ZeroDivisionError
 
 
-how to Test for Errors
+how to test an Exception is raised
 ---------------------------------------------------------------------------------
 
 .. _test_division_red_1:
@@ -763,11 +763,11 @@ refactor: make it better
   - if the value of ``self.y`` is ``0``
 
     * it will be assigned to the result of calling ``a_random_number``
-    * and checked again, repeating the process until ``self.y`` is not ``0``
+    * then check again, repeating the process until ``self.y`` is not ``0``
 
   - if the value of ``self.y`` is not ``0`` at any point, the loop will be exited and the code in the ``else`` block will run
 
-* Since ``self.y`` is ``0`` in the first part of the `while statement`_ I can add a call to the ``divide`` function that will always raise a ZeroDivisionError_
+* Since ``self.y`` is ``0`` in the first part of the `while statement`_ I can add a call to the ``divide`` :ref:`function<functions>` that will always raise a ZeroDivisionError_
 
   .. code-block:: python
 
@@ -805,7 +805,7 @@ refactor: make it better
                 self.x/self.y
             )
 
-  the terminal shows passing tests
+  the terminal shows all tests are passing with no random failures
 
 * I remove the TODO list
 
@@ -880,7 +880,7 @@ green: make it pass
     def subtract(a, b):
         return None
 
-  and get an :ref:`AssertionError`
+  which gives me an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -920,7 +920,7 @@ green: make it pass
 
     AttributeError: module 'src.calculator' has no attribute 'multiply'
 
-* I add a :ref:`function<functions>` for ``multiply``
+* I add a :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -985,7 +985,7 @@ green: make it pass
     def divide(a, b):
         return a, b
 
-  which gives me an :ref:`AssertionError` that shows the expected output is the result of dividing the inputs
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1013,7 +1013,7 @@ green: make it pass
 
     AttributeError: module 'src.calculator' has no attribute 'add'
 
-* the return statements of the last 3 have matched the names of the :ref:`functions`, I add a new one
+* the `return statement`_ of the last 3 :ref:`functions` have matched their names, I use that for the new one
 
   .. code-block:: python
 

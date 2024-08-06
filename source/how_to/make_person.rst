@@ -576,13 +576,12 @@ refactor: make it better
     def this_year():
         return datetime.datetime.now().year
 
-  ``datetime.datetime.now().year`` returns the ``year`` attribute of the object returned by the ``now`` :ref:`method<functions>` of the ``datetime.datetime`` :ref:`class <classes>`, which is a representation of the current local date and time. I could also use ``today`` or ``utcnow`` instead of ``now`` to get the same value
+  ``datetime.datetime.now().year`` returns the ``year`` attribute of the object returned by the ``now`` :ref:`method<functions>` of the ``datetime.datetime`` :ref:`class <classes>`, which is a representation of the current local date and time. I could also use ``today`` instead of ``now`` to get the same value
 
   .. code-block:: python
 
     def this_year():
         return datetime.datetime.now().year
-        return datetime.datetime.utcnow().year
         return datetime.datetime.today().year
 
   the terminal shows an :ref:`AssertionError`
