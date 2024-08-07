@@ -22,7 +22,7 @@ def this_year():
 
 class TestPerson(unittest.TestCase):
 
-    def test_person_factory(self):
+    def test_person_factory_keyword_arguments(self):
         first_name = a_random_first_name()
         last_name = random.choice((
             'doe', 'smith', 'blow', 'public'
@@ -45,7 +45,7 @@ class TestPerson(unittest.TestCase):
             }
         )
 
-    def test_factory_w_default_keyword_arguments(self):
+    def test_person_factory_w_default_keyword_arguments(self):
         first_name = a_random_first_name()
         year_of_birth = a_random_year()
 

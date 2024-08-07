@@ -36,8 +36,8 @@ test_person_factory
 *********************************************************************************
 
 #. :ref:`test_person_factory`
-#. :ref:`test_factory_w_default_keyword_arguments`
-#. :ref:`test_factory_w_default_keyword_arguments`
+#. :ref:`test_person_factory_w_default_keyword_arguments`
+#. :ref:`test_person_factory_w_default_keyword_arguments`
 
 *********************************************************************************
 test_exceptions

@@ -47,13 +47,13 @@ red: make it fail
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard then click on ``tests/test_person.py:7`` with the mouse to open it
 * and change ``True`` to ``False`` to make ``test_failure`` pass
-* then change ``test_failure`` to ``test_person_factory``
+* then change ``test_failure`` to ``test_person_factory_w_keyword_arguments``
 
   .. code-block:: python
 
     class TestPersonFactory(unittest.TestCase):
 
-        def test_person_factory(self):
+        def test_person_factory_keyword_arguments(self):
             self.assertEqual(person.factory(), None)
 
   and get a NameError_
@@ -105,17 +105,14 @@ green: make it pass
 
   the terminal shows a passing test
 
-refactor: make it better
-#################################################################################
-
 * I want the ``factory`` :ref:`function<functions>` to take in a value for a person's first name
 
   .. code-block:: python
 
-    def test_person_factory(self):
+    def test_person_factory_keyword_arguments(self):
         self.assertEqual(
             src.person.factory(
-                first_name=first_name
+                first_name='first_name'
             ),
             None
         )
@@ -149,10 +146,10 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_person_factory(self):
+    def test_person_factory_keyword_arguments(self):
         self.assertEqual(
             src.person.factory(
-                first_name=first_name,
+                first_name='first_name',
                 last_name='last_name'
             ),
             None
@@ -177,10 +174,10 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_person_factory(self):
+    def test_person_factory_keyword_arguments(self):
         self.assertEqual(
             src.person.factory(
-                first_name=first_name,
+                first_name='first_name',
                 last_name='last_name',
                 sex='F'
             ),
@@ -209,10 +206,10 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_person_factory(self):
+    def test_person_factory_keyword_arguments(self):
         self.assertEqual(
             src.person.factory(
-                first_name=first_name,
+                first_name='first_name',
                 last_name='last_name',
                 sex='F',
                 year_of_birth=this_year()
@@ -263,10 +260,10 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_person_factory(self):
+    def test_person_factory_keyword_arguments(self):
         self.assertEqual(
             src.person.factory(
-                first_name=first_name,
+                first_name='first_name',
                 last_name='last_name',
                 sex='F',
                 year_of_birth=this_year()
@@ -296,7 +293,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_person_factory(self):
+    def test_person_factory_keyword_arguments(self):
         self.assertEqual(
             src.person.factory(
                 first_name=first_name,
@@ -305,7 +302,7 @@ refactor: make it better
                 year_of_birth=this_year()
             ),
             {
-                'first_name': 'baby'
+                'first_name': 'first_name',
             }
         )
 
@@ -313,7 +310,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    AssertionError: {} != {'first_name': 'baby'}
+    AssertionError: {} != {'first_name': 'first_name'}
 
 * I copy the value from the right side and paste it to replace the empty :ref:`dictionary<dictionaries>` in the `return statement`_
 
@@ -321,22 +318,22 @@ refactor: make it better
 
   and the test passes
 
-* there is some repetition in the test. I typed ``baby`` twice, and if I have to change it, I will have to do it in 2 places in the test, and again in the ``factory`` :ref:`function<functions>`. To follow the `The Do Not Repeat Yourself (DRY) Principle`_, I will remove this repetition with a variable
+* there is some repetition in the test. I typed ``'first_name'`` twice, and if I have to change it, will have to do it in 2 places in the test, and again in the ``factory`` :ref:`function<functions>`. To follow the `The Do Not Repeat Yourself (DRY) Principle`_, I will remove this repetition with a variable
 
   .. code-block:: python
 
-    def test_person_factory(self):
+    def test_person_factory_keyword_arguments(self):
         first_name = 'first_name'
 
         self.assertEqual(
             src.person.factory(
-                first_name=first_name,
+                first_name='first_name',
                 last_name='last_name',
                 sex='F',
                 year_of_birth=this_year()
             ),
             {
-                'first_name': first_name
+                'first_name': 'first_name',
             }
         )
 
@@ -344,7 +341,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_person_factory(self):
+    def test_person_factory_keyword_arguments(self):
         first_name = 'jane'
         ...
 
@@ -352,9 +349,9 @@ refactor: make it better
 
   .. code-block:: python
 
-    AssertionError: {'first_name': 'baby'} != {'first_name': 'jane'}
+    AssertionError: {'first_name': 'first_name'} != {'first_name': 'jane'}
 
-* I make the `return statement` uses the input instead of a fixed value
+* I copy the value from the terminal and use it to replace the `return statement`
 
   .. code-block:: python
 
@@ -362,7 +359,7 @@ refactor: make it better
             first_name=None, last_name=None,
             sex=None, year_of_birth=None
         ):
-        return {'first_name': first_name}
+        return {'first_name': 'jane}
 
   and the test is green again
 
@@ -370,7 +367,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_person_factory(self):
+    def test_person_factory_keyword_arguments(self):
         first_name = 'jane'
 
         self.assertEqual(
@@ -392,7 +389,7 @@ refactor: make it better
 
     AssertionError: {'first_name': 'jane'} != {'first_name': 'jane', 'last_name': 'last_name'}
 
-* I make the `return statement`_ match the expectation
+* I copy the value from the terminal and paste it to replace the `return statement`_
 
   .. code-block:: python
 
@@ -401,8 +398,8 @@ refactor: make it better
         sex=None, year_of_birth=None
     ):
         return {
-            'first_name': first_name,
-            'last_name': 'last_name',
+            'first_name': 'jane',
+            'last_name': 'last_name'
         }
 
   and the test passes
@@ -411,7 +408,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_person_factory(self):
+    def test_person_factory_keyword_arguments(self):
         first_name = 'jane'
         last_name = 'last_name'
 
@@ -432,7 +429,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_person_factory(self):
+    def test_person_factory_keyword_arguments(self):
         first_name = 'jane'
         last_name = 'doe'
         ...
@@ -443,7 +440,7 @@ refactor: make it better
 
     AssertionError: {'first_name': 'jane', 'last_name': 'last_name'} != {'first_name': 'jane', 'last_name': 'doe'}
 
-* I change the `return statement`_ to use the input parameter
+* I copy the value from the terminal and paste it to replace the `return statement`_
 
   .. code-block:: python
 
@@ -462,7 +459,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_person_factory(self):
+    def test_person_factory_keyword_arguments(self):
         first_name = 'jane'
         last_name = 'doe'
 
@@ -486,7 +483,7 @@ refactor: make it better
 
     AssertionError: {'first_name': 'jane', 'last_name': 'doe'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'}
 
-  I add it to the `return statement`_
+  I copy the value from the terminal and paste it to replace the `return statement`_
 
   .. code-block:: python
 
@@ -495,18 +492,18 @@ refactor: make it better
             sex=None, year_of_birth=None
         ):
         return {
-            'first_name': first_name,
-            'last_name': last_name,
-            'sex': sex,
+            'first_name': 'jane',
+            'last_name': 'doe',
+            'sex': 'F'
         }
 
-  and the terminal shows a passing tess
+  and the terminal shows a passing test
 
 * I remove the repetition in the test by adding a variable
 
   .. code-block:: python
 
-    def test_person_factory(self):
+    def test_person_factory_keyword_arguments(self):
         first_name = 'jane'
         last_name = 'doe'
         sex = 'F'
@@ -531,7 +528,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_person_factory(self):
+    def test_person_factory_keyword_arguments(self):
         first_name = 'jane'
         last_name = 'doe'
         sex = 'F'
@@ -590,9 +587,7 @@ refactor: make it better
 
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 0}
 
-  ``age`` is not part of the `return statement`_
-
-* when I add it
+* when I copy the value from the terminal and use it to replace the `return statement`_ in ``factory``
 
   .. code-block:: python
 
@@ -600,20 +595,15 @@ refactor: make it better
         first_name=None, last_name=None,
         year_of_birth=None, sex=None
     ):
-        return {
-            'first_name': 'sibling',
-            'last_name': 'last_name',
-            'sex': 'F',
-            'age': 0
-        }
+        return {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 0}
 
   the test passes
 
-* The ``factory`` :ref:`function<functions>` returns the same age every time it is called. I want it to use the input value to calculate the age. I add a variable for age
+* I add a variable to remove the repetition of ``this_year()``
 
   .. code-block:: python
 
-    def test_person_factory(self):
+    def test_person_factory_keyword_arguments(self):
         first_name = 'jane'
         last_name = 'doe'
         sex = 'F'
@@ -634,24 +624,45 @@ refactor: make it better
             }
         )
 
-  and the test is still green. When I change the value for ``year_of_birth``
+refactor: make it better
+#################################################################################
+
+I  want to use random values to test the ``factory`` :ref:`function<functions>` because it returns the same :ref:`dictionary<dictionaries>` every time it is called, I want it to be able to take in different inputs and return them
+
+* first I add a new `import statement`_
 
   .. code-block:: python
 
-    def test_person_factory(self):
+    import datetime
+    import random
+    import src.person
+    import unittest
+
+  random_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, that is used to make fake random numbers
+
+* I change the ``year_of_birth`` value to use random numbers
+
+  .. code-block:: python
+
+    def test_person_factory_keyword_arguments(self):
         first_name = 'jane'
         last_name = 'doe'
         sex = 'F'
-        year_of_birth = 1900
+        year_of_birth = random.randint(
+            this_year()-120, this_year()
+        )
         ...
 
-  the terminal shows an :ref:`AssertionError`
+  ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 year ago up to the current year which is returned by ``this_year()`` and the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 0} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 124}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 0} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 5}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 0} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 6}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 0} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 23}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 0} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 111}
 
-* I copy the age calculation from the expectation
+  I copy the age calculation from the expectation
 
   .. code-block:: python
 
@@ -672,9 +683,7 @@ refactor: make it better
 
     NameError: name 'this_year' is not defined
 
-  because I called a function that does not exist in ``person.py``
-
-* I change ``this_year()`` to the return value from ``test_person_factory.this_year``
+  because I called a function that does not exist in ``person.py``. I change ``this_year()`` to the return value from ``test_person_factory.this_year``
 
   .. code-block:: python
 
@@ -695,7 +704,7 @@ refactor: make it better
 
     NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
 
-* I add an `import statement`_ at the beginning of ``person.py``
+  I add an `import statement`_ at the beginning of ``person.py``
 
   .. code-block:: python
 
@@ -706,87 +715,135 @@ refactor: make it better
     def factory(
     ...
 
-  and the terminal shows passing tests, time for a victory dance
-
-* I want to use a random values to test ``factory``, first I add a new `import statement`_
-
-  .. code-block:: python
-
-    import datetime
-    import random
-    import src.person
-    import unittest
-
-  random_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, that is used to make fake random numbers
-
-* I change the ``year_of_birth`` value to use random numbers
-
-  .. code-block:: python
-
-    def test_person_factory(self):
-        first_name = 'jane'
-        last_name = 'doe'
-        sex = 'F'
-        year_of_birth = random.randint(
-            this_year()-120, this_year()
-        )
-        ...
-
-  ``random.randint(1900, this_year())`` gives me a random number from ``1900`` up to the current year which is returned by ``this_year()`` and the test is still green
+  and the terminal shows a passing test, time for a victory dance
 
 * I use random values for the ``sex`` variable
 
   .. code-block:: python
 
-    def test_person_factory(self):
+    def test_person_factory_keyword_arguments(self):
         first_name = 'jane'
         last_name = 'doe'
         sex = random.choice(('F', 'M'))
         year_of_birth = random.randint(
-            1900, this_year()
+            this_year()-120, this_year()
         )
         ...
 
-  ``random.choice(('F', 'M'))`` gives me a random value from ``F`` or ``M`` and the test is still green
-
-* I do the same thing with the ``last_name`` variable
+  ``random.choice(('F', 'M'))`` gives me a random value from ``F`` or ``M`` and the terminal shows random successes or :ref:`AssertionErrors<AssertionError>`
 
   .. code-block:: python
 
-    def test_person_factory(self):
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 15} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 15}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 87} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 87}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 93} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 93}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 94} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 94}
+
+  when I change the `return statement`_ to use the input parameter for ``sex``
+
+  .. code-block:: python
+
+    def factory(
+            first_name=None, last_name=None,
+            sex=None, year_of_birth=None,
+        ):
+        return {
+            'first_name': 'jane',
+            'last_name': 'doe',
+            'sex': sex,
+            'age': datetime.datetime.today().year - year_of_birth,
+        }
+
+  the test passes with no more random failures
+
+* I use the `random.choice`_ with the ``last_name`` variable
+
+  .. code-block:: python
+
+    def test_person_factory_keyword_arguments(self):
         first_name = 'jane'
         last_name = random.choice((
             'doe', 'smith', 'blow', 'public'
         ))
         sex = random.choice(('F', 'M'))
         year_of_birth = random.randint(
-            1900, this_year()
+            this_year()-120, this_year()
         )
         ...
 
-* and the ``first_name`` variable
+  and get random successes or :ref:`AssertionErrors<AssertionError>`
+
+  .. code-block:: python
+
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 19} != {'first_name': 'jane', 'last_name': 'blow', 'sex': 'M', 'age': 19}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 60} != {'first_name': 'jane', 'last_name': 'public', 'sex': 'M', 'age': 60}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 77} != {'first_name': 'jane', 'last_name': 'smith', 'sex': 'F', 'age': 77}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 114} != {'first_name': 'jane', 'last_name': 'blow', 'sex': 'M', 'age': 114}
+
+  I change the `return statement`_ to use the input parameter
+
+  .. code-block:: python
+
+    def factory(
+            first_name=None, last_name=None,
+            sex=None, year_of_birth=None,
+        ):
+        return {
+            'first_name': 'jane',
+            'last_name': last_name,
+            'sex': sex,
+            'age': datetime.datetime.today().year - year_of_birth,
+        }
+
+  and the test is green again
+
+* I do the same thing for the ``first_name`` variable
 
   .. code-blocK:: python
 
-    def test_person_factory(self):
+    def test_person_factory_keyword_arguments(self):
         first_name = random.choice((
-            'john', 'joe', 'jane', 'person'
+            'jane', 'joe', 'john', 'person'
         ))
         last_name = random.choice((
             'doe', 'smith', 'blow', 'public'
         ))
         sex = random.choice(('F', 'M'))
         year_of_birth = random.randint(
-            1900, this_year()
+            this_year()-120, this_year()
         )
         ...
 
-  the terminal still shows green
+  and the terminal shows a random :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {'first_name': 'jane', 'last_name': 'public', 'sex': 'F', 'age': 24} != {'first_name': 'person', 'last_name': 'public', 'sex': 'F', 'age': 24}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 35} != {'first_name': 'person', 'last_name': 'doe', 'sex': 'M', 'age': 35}
+    AssertionError: {'first_name': 'jane', 'last_name': 'smith', 'sex': 'F', 'age': 119} != {'first_name': 'joe', 'last_name': 'smith', 'sex': 'F', 'age': 119}
+    AssertionError: {'first_name': 'jane', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'joe', 'last_name': 'blow', 'sex': 'F', 'age': 20}
+
+  I change the `return statement`_ to use the input parameter
+
+  .. code-block:: python
+
+    def factory(
+            first_name=None, last_name=None,
+            sex=None, year_of_birth=None,
+        ):
+        return {
+            'first_name': first_name,
+            'last_name': last_name,
+            'sex': sex,
+            'age': datetime.datetime.today().year - year_of_birth,
+        }
+
+  and the test is green again. Time for a victory dance!
 
 ----
 
 *************************************************************************************
-test_factory_w_default_keyword_arguments
+test_person_factory_w_default_keyword_arguments
 *************************************************************************************
 
 I want to see what would happens if I try to make a person without giving a value for the ``last_name``
@@ -798,13 +855,13 @@ red: make it fail
 
   .. code-block:: python
 
-    def test_factory_w_default_keyword_arguments(self):
+    def test_person_factory_w_default_keyword_arguments(self):
         first_name = random.choice((
             'john', 'joe', 'jane', 'person'
         ))
         sex = "M"
         year_of_birth = random.randint(
-            1900, this_year()
+            this_year()-120, this_year()
         )
 
         self.assertEqual(
@@ -825,7 +882,10 @@ red: make it fail
 
   .. code-block:: python
 
-    AssertionError: {'first_name': 'joe', 'last_name': None, 'sex': 'M', 'age': 47} != {'first_name': 'child_a', 'last_name': 'doe', 'sex': 'M', 'age': 47}
+    AssertionError: {'first_name': 'john', 'last_name': None, 'sex': 'F', 'age': 1} != {'first_name': 'john', 'last_name': 'doe', 'sex': 'F', 'age': 1}
+    AssertionError: {'first_name': 'john', 'last_name': None, 'sex': 'M', 'age': 44} != {'first_name': 'john', 'last_name': 'doe', 'sex': 'M', 'age': 44}
+    AssertionError: {'first_name': 'john', 'last_name': None, 'sex': 'F', 'age': 65} != {'first_name': 'john', 'last_name': 'doe', 'sex': 'F', 'age': 65}
+    AssertionError: {'first_name': 'john', 'last_name': None, 'sex': 'F', 'age': 118} != {'first_name': 'john', 'last_name': 'doe', 'sex': 'F', 'age': 118}
 
   the test expects a value of ``"doe"`` but ``person.factory`` returns :ref:`None`
 
@@ -842,18 +902,18 @@ green: make it pass
     ):
     ...
 
-  the terminal shows passing tests. When no value is given for the ``last_name`` argument to ``person.factory`` it uses ``'doe'`` because that is the default value in the :ref:`function<functions>` signature
+  the terminal shows passing tests. When no value is given for the ``last_name`` argument to ``person.factory`` it uses ``'doe'`` because that is the default value in the :ref:`function<functions>` signature, it is same as calling it with ``last_name='doe'``
 
 * I remove ``sex`` from the :ref:`function<functions>` call then change the expectation
 
   .. code-block:: python
 
-    def test_factory_w_default_keyword_arguments(self):
+    def test_person_factory_w_default_keyword_arguments(self):
         first_name = random.choice((
             'john', 'joe', 'jane', 'person'
         ))
         year_of_birth = random.randint(
-            1900, this_year()
+            this_year()-120, this_year()
         )
 
         self.assertEqual(
@@ -873,9 +933,12 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: {'first_name': 'child_a', 'last_name': 'doe', 'sex': None, 'age': 36} != {'first_name': 'child_a', 'last_name': 'doe', 'sex': 'M', 'age': 36}
+    AssertionError: {'first_name': 'person', 'last_name': 'doe', 'sex': None, 'age': 2} != {'first_name': 'person', 'last_name': 'doe', 'sex': 'M', 'age': 2}
+    AssertionError: {'first_name': 'person', 'last_name': 'doe', 'sex': None, 'age': 5} != {'first_name': 'person', 'last_name': 'doe', 'sex': 'M', 'age': 5}
+    AssertionError: {'first_name': 'john', 'last_name': 'doe', 'sex': None, 'age': 68} != {'first_name': 'john', 'last_name': 'doe', 'sex': 'M', 'age': 68}
+    AssertionError: {'first_name': 'joe', 'last_name': 'doe', 'sex': None, 'age': 82} != {'first_name': 'joe', 'last_name': 'doe', 'sex': 'M', 'age': 82}
 
-* I add a default value to match the expectation
+  I add a default value to match the expectation
 
   .. code-block:: python
 
@@ -898,24 +961,26 @@ refactor: make it better
     import unittest
 
 
+    def this_year():
+    ...
+
+
     def a_random_first_name():
         return random.choice((
             'john', 'joe', 'jane', 'person'
         ))
 
 
-    def this_year():
-    ...
 
   then add calls to it in both tests
 
   .. code-block:: python
 
-    def test_person_factory(self):
+    def test_person_factory_keyword_arguments(self):
         first_name = a_random_first_name()
         ...
 
-    def test_factory_w_default_keyword_arguments(self):
+    def test_person_factory_w_default_keyword_arguments(self):
         first_name = a_random_first_name()
         ...
 
@@ -925,6 +990,11 @@ refactor: make it better
 
   .. code-block:: python
 
+    ...
+    def this_year():
+        ...
+
+
     def a_random_first_name():
         return random.choice((
             'john', 'joe', 'jane', 'person'
@@ -933,7 +1003,7 @@ refactor: make it better
 
     def a_random_year():
         return random.randint(
-            1900, this_year()
+            this_year()-120, this_year()
         )
 
 
@@ -943,7 +1013,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_person_factory(self):
+    def test_person_factory_keyword_arguments(self):
         first_name = a_random_first_name()
         last_name = random.choice((
             'doe', 'smith', 'blow', 'public'
@@ -952,7 +1022,7 @@ refactor: make it better
         year_of_birth = a_random_year()
         ...
 
-    def test_factory_w_default_keyword_arguments(self):
+    def test_person_factory_w_default_keyword_arguments(self):
         first_name = a_random_first_name()
         year_of_birth = a_random_year()
         ...
@@ -1082,7 +1152,7 @@ green: make it pass
     AssertionError: {'first_name': 'john', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'jane', 'last_name': 'blow', 'sex': 'M', 'age': 50}
     AssertionError: {'first_name': 'john', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'jane', 'last_name': 'public', 'sex': 'F', 'age': 98}
 
-  the values for ``age``, ``first_name``, ``last_name`` and ``sex`` change
+  the values for ``first_name``, ``last_name``, ``sex`` and ``age`` change
 
 * I make the `return statement`_ use the input parameters for ``first_name``
 
@@ -1257,10 +1327,10 @@ green: make it pass
 review
 *************************************************************************************
 
-I ran the following tests to make a :ref:`function<functions>` that takes in keyword arguments as input, has default values for when a value is not given, performs an action based on a given input, and returns a :doc:`dictionary </data_structures/dictionaries>` as output
+I ran the following tests to make a :ref:`function<functions>` that takes in keyword arguments as input, has default values for when a value is not given, performs an action based on an input, and returns a :doc:`dictionary </data_structures/dictionaries>` as output
 
-* `test_person_factory`_
-* `test_factory_w_default_keyword_arguments`_
+* `test_person_factory_w_keyword_arguments`_
+* `test_person_factory_w_default_keyword_arguments`_
 
 I also encountered the following :ref:`Exceptions<Exceptions>`
 
