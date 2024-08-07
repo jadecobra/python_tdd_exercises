@@ -19,7 +19,7 @@ This is an exercise in making :doc:`dictionaries </data_structures/dictionaries>
 ----
 
 *********************************************************************************
-test_person_factory
+test_person_factory_keyword_arguments
 *********************************************************************************
 
 red: make it fail
@@ -47,7 +47,7 @@ red: make it fail
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard then click on ``tests/test_person.py:7`` with the mouse to open it
 * and change ``True`` to ``False`` to make ``test_failure`` pass
-* then change ``test_failure`` to ``test_person_factory_w_keyword_arguments``
+* then change ``test_failure`` to ``test_person_factory_keyword_arguments``
 
   .. code-block:: python
 
@@ -683,7 +683,7 @@ I  want to use random values to test the ``factory`` :ref:`function<functions>` 
 
     NameError: name 'this_year' is not defined
 
-  because I called a function that does not exist in ``person.py``. I change ``this_year()`` to the return value from ``test_person_factory.this_year``
+  because I called a function that does not exist in ``person.py``. I change ``this_year()`` to the return value from ``test_person_factory_keyword_arguments.this_year``
 
   .. code-block:: python
 
@@ -1329,7 +1329,7 @@ review
 
 I ran the following tests to make a :ref:`function<functions>` that takes in keyword arguments as input, has default values for when a value is not given, performs an action based on an input, and returns a :doc:`dictionary </data_structures/dictionaries>` as output
 
-* `test_person_factory_w_keyword_arguments`_
+* `test_person_factory_keyword_arguments`_
 * `test_person_factory_w_default_keyword_arguments`_
 
 I also encountered the following :ref:`Exceptions<Exceptions>`
