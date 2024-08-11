@@ -220,16 +220,14 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-Wait a minute! Is it that easy? Do I give the test what it expects to make it pass? In the green phase, Yes. I do the easiest thing that will make a failing test pass.
-
-This solution shows a problem with the test, I have to "Make it Better". Though the ``add`` function passes the test, it does not meet the actual requirement, it returns ``1`` no matter what inputs it gets, I want it to do a calculation with the inputs and return the result
+The ``add`` function passes the test but does not meet the actual requirement, it returns ``1`` no matter what inputs it gets, I want it to do a calculation with the inputs and return the result
 
 .. _test_addition_refactor_red:
 
 red: make it fail
 ---------------------------------------------------------------------------------
 
-I add an assertion to show that ``add`` always returns ``1``
+I add an assertion to show the problem with the :ref:`function<functions>`
 
 .. code-block:: python
 
@@ -512,9 +510,7 @@ refactor: make it better
     x = a_random_number()
     y = a_random_number()
 
-  happens twice, once in ``test_addition`` and again in ``test_subtraction``
-
-* I can use :ref:`class <classes>` attributes (variables) to remove the duplication and use the same numbers for both tests
+  happens twice, once in ``test_addition`` and again in ``test_subtraction``. I can use :ref:`class <classes>` attributes (variables) to remove the repetition and use the same numbers for both tests
 
   .. code-block:: python
 
@@ -564,9 +560,9 @@ refactor: make it better
                 self.x-self.y
             )
 
-  still green!
+  the tests are still green!
 
-* then remove ``test subtraction`` from the TODO list
+* I remove ``test subtraction`` from the TODO list
 
   .. code-block:: python
 
@@ -698,7 +694,7 @@ green: make it pass
 
   dividing by ``0`` is not defined in mathematics and raises a ZeroDivisionError_ in python
 
-* which I add to the list of :ref:`Exceptions<Exceptions>` encountered
+* I add it to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
@@ -790,7 +786,7 @@ refactor: make it better
     * assign ``self.y`` to the result of calling ``a_random_number``
     * check again, and repeat until ``self.y`` is not ``0``
 
-  - if the value of ``self.y`` is not ``0`` at any point, exit the loop and run the code in the ``else`` block
+  - if the value of ``self.y`` is not ``0``, exit the loop and run the code in the ``else`` block
 
 * Since ``self.y`` is ``0`` in the first part of the `while statement`_ I can add a call to the ``divide`` :ref:`function<functions>` that will always raise a ZeroDivisionError_
 
@@ -809,7 +805,7 @@ refactor: make it better
                 self.x/self.y
             )
 
-  and when ``self.y`` is ``0``, the terminal shows a ZeroDivisionError_
+  when ``self.y`` is ``0``, the terminal shows a ZeroDivisionError_
 
   .. code-block:: python
 
@@ -851,7 +847,7 @@ refactor: make it better
 test_calculator_tests
 *********************************************************************************
 
-Since everything is green, I can have some fun and write the program that makes the tests in ``test_calculator.py`` pass without looking at them
+Since everything is green, I can have some fun and write the program that makes the tests pass without looking at them
 
 .. _test_calculator_red:
 
