@@ -19,7 +19,7 @@ This is an exercise in making :doc:`dictionaries </data_structures/dictionaries>
 ----
 
 *********************************************************************************
-test_person_factory_keyword_arguments
+test_person_factory_w_keyword_arguments
 *********************************************************************************
 
 red: make it fail
@@ -47,13 +47,13 @@ red: make it fail
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard then click on ``tests/test_person.py:7`` with the mouse to open it
 * and change ``True`` to ``False`` to make ``test_failure`` pass
-* then change ``test_failure`` to ``test_person_factory_keyword_arguments``
+* then change ``test_failure`` to ``test_person_factory_w_keyword_arguments``
 
   .. code-block:: python
 
     class TestPersonFactory(unittest.TestCase):
 
-        def test_person_factory_keyword_arguments(self):
+        def test_person_factory_w_keyword_arguments(self):
             self.assertEqual(person.factory(), None)
 
   and get a NameError_
@@ -109,7 +109,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_keyword_arguments(self):
+    def test_person_factory_w_keyword_arguments(self):
         self.assertEqual(
             src.person.factory(
                 first_name='first_name'
@@ -146,7 +146,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_keyword_arguments(self):
+    def test_person_factory_w_keyword_arguments(self):
         self.assertEqual(
             src.person.factory(
                 first_name='first_name',
@@ -174,7 +174,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_keyword_arguments(self):
+    def test_person_factory_w_keyword_arguments(self):
         self.assertEqual(
             src.person.factory(
                 first_name='first_name',
@@ -206,7 +206,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_keyword_arguments(self):
+    def test_person_factory_w_keyword_arguments(self):
         self.assertEqual(
             src.person.factory(
                 first_name='first_name',
@@ -260,7 +260,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_keyword_arguments(self):
+    def test_person_factory_w_keyword_arguments(self):
         self.assertEqual(
             src.person.factory(
                 first_name='first_name',
@@ -293,7 +293,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_keyword_arguments(self):
+    def test_person_factory_w_keyword_arguments(self):
         self.assertEqual(
             src.person.factory(
                 first_name=first_name,
@@ -322,7 +322,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_keyword_arguments(self):
+    def test_person_factory_w_keyword_arguments(self):
         first_name = 'first_name'
 
         self.assertEqual(
@@ -341,7 +341,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_keyword_arguments(self):
+    def test_person_factory_w_keyword_arguments(self):
         first_name = 'jane'
         ...
 
@@ -367,7 +367,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_keyword_arguments(self):
+    def test_person_factory_w_keyword_arguments(self):
         first_name = 'jane'
 
         self.assertEqual(
@@ -408,7 +408,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_keyword_arguments(self):
+    def test_person_factory_w_keyword_arguments(self):
         first_name = 'jane'
         last_name = 'last_name'
 
@@ -429,7 +429,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_keyword_arguments(self):
+    def test_person_factory_w_keyword_arguments(self):
         first_name = 'jane'
         last_name = 'doe'
         ...
@@ -459,7 +459,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_keyword_arguments(self):
+    def test_person_factory_w_keyword_arguments(self):
         first_name = 'jane'
         last_name = 'doe'
 
@@ -503,7 +503,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_keyword_arguments(self):
+    def test_person_factory_w_keyword_arguments(self):
         first_name = 'jane'
         last_name = 'doe'
         sex = 'F'
@@ -528,7 +528,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_keyword_arguments(self):
+    def test_person_factory_w_keyword_arguments(self):
         first_name = 'jane'
         last_name = 'doe'
         sex = 'F'
@@ -603,7 +603,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_keyword_arguments(self):
+    def test_person_factory_w_keyword_arguments(self):
         first_name = 'jane'
         last_name = 'doe'
         sex = 'F'
@@ -644,7 +644,7 @@ I  want to use random values to test the ``factory`` :ref:`function<functions>` 
 
   .. code-block:: python
 
-    def test_person_factory_keyword_arguments(self):
+    def test_person_factory_w_keyword_arguments(self):
         first_name = 'jane'
         last_name = 'doe'
         sex = 'F'
@@ -683,7 +683,7 @@ I  want to use random values to test the ``factory`` :ref:`function<functions>` 
 
     NameError: name 'this_year' is not defined
 
-  because I called a function that does not exist in ``person.py``. I change ``this_year()`` to the return value from ``test_person_factory_keyword_arguments.this_year``
+  because I called a function that does not exist in ``person.py``. I change ``this_year()`` to the return value from ``test_person_factory_w_keyword_arguments.this_year``
 
   .. code-block:: python
 
@@ -721,7 +721,7 @@ I  want to use random values to test the ``factory`` :ref:`function<functions>` 
 
   .. code-block:: python
 
-    def test_person_factory_keyword_arguments(self):
+    def test_person_factory_w_keyword_arguments(self):
         first_name = 'jane'
         last_name = 'doe'
         sex = random.choice(('F', 'M'))
@@ -760,7 +760,7 @@ I  want to use random values to test the ``factory`` :ref:`function<functions>` 
 
   .. code-block:: python
 
-    def test_person_factory_keyword_arguments(self):
+    def test_person_factory_w_keyword_arguments(self):
         first_name = 'jane'
         last_name = random.choice((
             'doe', 'smith', 'blow', 'public'
@@ -801,7 +801,7 @@ I  want to use random values to test the ``factory`` :ref:`function<functions>` 
 
   .. code-blocK:: python
 
-    def test_person_factory_keyword_arguments(self):
+    def test_person_factory_w_keyword_arguments(self):
         first_name = random.choice((
             'jane', 'joe', 'john', 'person'
         ))
@@ -976,7 +976,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_person_factory_keyword_arguments(self):
+    def test_person_factory_w_keyword_arguments(self):
         first_name = a_random_first_name()
         ...
 
@@ -1013,7 +1013,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_person_factory_keyword_arguments(self):
+    def test_person_factory_w_keyword_arguments(self):
         first_name = a_random_first_name()
         last_name = random.choice((
             'doe', 'smith', 'blow', 'public'
@@ -1329,7 +1329,7 @@ review
 
 I ran the following tests to make a :ref:`function<functions>` that takes in keyword arguments as input, has default values for when a value is not given, performs an action based on an input, and returns a :doc:`dictionary </data_structures/dictionaries>` as output
 
-* `test_person_factory_keyword_arguments`_
+* `test_person_factory_w_keyword_arguments`_
 * `test_person_factory_w_default_keyword_arguments`_
 
 I also encountered the following :ref:`Exceptions<Exceptions>`

@@ -1,7 +1,7 @@
 .. include:: ../links.rst
 
 #################################################################################
-how to test an Exception is raised
+how to test that an Exception is raised
 #################################################################################
 
 .. raw:: html

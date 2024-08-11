@@ -83,7 +83,7 @@ red: make it fail
             )
 
   - the assertEqual_ :ref:`method<functions>` from the `unittest.TestCase`_ :doc:`class</classes/classes>` checks if its 2 inputs are the same. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
-  - the explanation I like from what I have seen is that one of them is ``reality`` and the other is my ``expectation``. In this case, reality is the call ``src.calculator.add(0, 1)``, and my expectation is ``1`` because ``0`` plus ``1`` is ``1``
+  - the explanation I like from what I have seen is that one of them is ``reality`` - ``src.calculator.add(0, 1)``, and the other is my ``expectation`` - ``1``, because ``0`` plus ``1`` is ``1``
 
   but the terminal shows a NameError_
 
@@ -106,7 +106,7 @@ green: make it pass
     # AssertionError
     # NameError
 
-* then add an `import statement`_ for the ``calculator`` module from the ``src`` folder
+* then add an `import statement`_
 
   .. code-block:: python
 
@@ -183,7 +183,7 @@ green: make it pass
     def add():
         return None
 
-  the terminal shows another :ref:`TypeError` but with a different message. Progress!
+  the terminal shows another :ref:`TypeError`
 
   .. code-block:: python
 
@@ -220,9 +220,9 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-Wait a minute! Is it that easy? Do I provide the expectation of the test to make it pass? In the green phase, Yes. I do the easiest thing that will make a failing test pass.
+Wait a minute! Is it that easy? Do I give the test what it expects to make it pass? In the green phase, Yes. I do the easiest thing that will make a failing test pass.
 
-This solution shows a problem with the test, I have to "Make it Better". The ``add`` function returns ``1`` no matter what inputs it gets, it is a :doc:`singleton function </functions/test_singleton_functions>`. The ``add`` :ref:`function<functions>` passes the test but does not meet the actual requirement, I want it to do a calculation with the inputs instead. .
+This solution shows a problem with the test, I have to "Make it Better". Though the ``add`` function passes the test, it does not meet the actual requirement, it returns ``1`` no matter what inputs it gets, I want it to do a calculation with the inputs and return the result
 
 .. _test_addition_refactor_red:
 
@@ -251,7 +251,7 @@ and the terminal shows an :ref:`AssertionError`
 
 .. _test_addition_refactor_green:
 
-the ``add`` returns ``1`` and the test expects ``0``
+the :ref:`function<functions>` returns ``1`` and the test expects ``0``
 
 green: make it pass
 ---------------------------------------------------------------------------------
@@ -270,7 +270,7 @@ and the terminal shows a passing test
 refactor: make it better
 ---------------------------------------------------------------------------------
 
-* I used 2 examples to test the :ref:`function<functions>` and could add more but it would be better to use random numbers, to not need more assertions. I add an `import statement`_
+* I used 2 examples to test the ``add`` :ref:`function<functions>` and could add more but it would be better to use random numbers. I add an `import statement`_
 
   .. code-block:: python
 
@@ -306,8 +306,7 @@ refactor: make it better
   the terminal shows the test is still green
 
   - ``x = random.randint(-1, 1)`` assigns a variable called ``x`` to the result of calling ``random.randint(-1, 1)``
-  - ``random.randint(-1, 1)`` gives me a random number from ``-1`` up to and including ``1``
-  - ``-1`` for negative numbers, ``0`` for itself, and ``1`` for positive numbers
+  - ``random.randint(-1, 1)`` gives me a random number from ``-1`` up to and including ``1``. ``-1`` for negative numbers, ``0`` for itself, and ``1`` for positive numbers
 
 * I remove the other assertions because they are now covered by the one that uses random numbers
 
@@ -337,7 +336,7 @@ refactor: make it better
             x+y
         )
 
-* I add a :ref:`function<functions>` to remove the duplication of the calls to `random.randint`_
+  I add a :ref:`function<functions>` to remove the duplication of the calls to `random.randint`_
 
   .. code-block:: python
 
@@ -362,14 +361,21 @@ refactor: make it better
             x+y
         )
 
-* I can now change the range of random numbers for the test in one place
+  now I only need to change the range of random numbers for the test in one place
 
   .. code-block:: python
 
       def a_random_number():
-        return random.randint(-10, 10)
+          return random.randint(-10, 10)
 
-  and the terminal still shows green
+  and the terminal still shows green. I can go as big as the computer will let me, for example
+
+    .. code-block:: python
+
+      def a_random_number():
+          return random.randint(-10**100000, 10**100000)
+
+  still green. I keep the range at ``-10, 10``
 
 * I remove ``test addition`` from the TODO list
 
@@ -432,9 +438,21 @@ green: make it pass
         return x + y
 
 
+    subtract
+
+  the terminal shows a NameError_
+
+  .. code-block:: python
+
+    NameError: name 'subtract' is not defined
+
+  I assign it to :ref:`None`
+
+  .. code-block:: python
+
     subtract = None
 
-  the terminal shows a :ref:`TypeError`
+  and get a :ref:`TypeError`
 
   .. code-block:: python
 
@@ -449,7 +467,7 @@ green: make it pass
     def subtract():
         return None
 
-  and the terminal shows another :ref:`TypeError` with a different message. Progress again!
+  and the terminal shows another :ref:`TypeError`
 
   .. code-block:: python
 
@@ -562,7 +580,7 @@ refactor: make it better
 test_multiplication
 *********************************************************************************
 
-Time to test multiplication, the next item on the TODO list
+Time for the next item on the TODO list - test multiplication
 
 .. _test_multiplication_red:
 
@@ -596,25 +614,23 @@ and the terminal shows an :ref:`AttributeError`
 green: make it pass
 #################################################################################
 
-* using what I know so far I add a :ref:`function<functions>` to ``calculator.py``
+using what I know so far I add a :ref:`function<functions>` to ``calculator.py``
 
-  .. code-block:: python
+.. code-block:: python
 
-    def subtract(x, y):
-        return x - y
+  def subtract(x, y):
+      return x - y
 
 
-    def multiply(x, y):
-        return x * y
+  def multiply(x, y):
+      return x * y
 
-  SUCCESS! The terminal shows passing tests
+SUCCESS! The terminal shows passing tests and I remove ``test_multiplication`` from the TODO list
 
-* and I remove ``test_multiplication`` from the TODO list
+.. code-block:: python
 
-  .. code-block:: python
-
-    # TODO
-    # test division
+  # TODO
+  # test division
 
 ----
 
@@ -622,7 +638,7 @@ green: make it pass
 test_division
 *********************************************************************************
 
-Now it is down to the test for division
+It is down to the test for division
 
 .. _test_division_red_0:
 
@@ -663,6 +679,13 @@ green: make it pass
     def divide(x, y):
         return x / y
 
+  then make the range of numbers for the tests smaller
+
+  .. code-block:: python
+
+      def a_random_number():
+          return random.randint(-1, 1)
+
   and the terminal shows a random ZeroDivisionError_ when ``y`` is ``0``
 
   .. code-block:: python
@@ -687,7 +710,7 @@ green: make it pass
     # ZeroDivisionError
 
 
-how to test an Exception is raised
+how to test that an Exception is raised
 ---------------------------------------------------------------------------------
 
 .. _test_division_red_1:
@@ -760,12 +783,14 @@ refactor: make it better
                 self.x/self.y
             )
 
-  - if the value of ``self.y`` is ``0``
+  this `while statement`_ checks if the value of ``self.y`` is ``0``
 
-    * it will be assigned to the result of calling ``a_random_number``
-    * then check again, repeating the process until ``self.y`` is not ``0``
+  - if it is
 
-  - if the value of ``self.y`` is not ``0`` at any point, the loop will be exited and the code in the ``else`` block will run
+    * assign ``self.y`` to the result of calling ``a_random_number``
+    * check again, and repeat until ``self.y`` is not ``0``
+
+  - if the value of ``self.y`` is not ``0`` at any point, exit the loop and run the code in the ``else`` block
 
 * Since ``self.y`` is ``0`` in the first part of the `while statement`_ I can add a call to the ``divide`` :ref:`function<functions>` that will always raise a ZeroDivisionError_
 
@@ -784,7 +809,7 @@ refactor: make it better
                 self.x/self.y
             )
 
-  and the terminal shows a ZeroDivisionError_ when ``self.y`` is ``0``
+  and when ``self.y`` is ``0``, the terminal shows a ZeroDivisionError_
 
   .. code-block:: python
 
@@ -806,6 +831,17 @@ refactor: make it better
             )
 
   the terminal shows all tests are passing with no random failures
+
+* I use a bigger range of numbers for the tests
+
+  .. code-block:: python
+
+      .. code-block:: python
+
+      def a_random_number():
+          return random.randint(-10**1000000, 10**1000000)
+
+  and all the tests are still passing, it just takes longer to run. I change the range back to ``-10, 10``
 
 * I remove the TODO list
 
@@ -829,7 +865,7 @@ red: make it fail
 
     AttributeError: module 'src.calculator' has no attribute 'subtract'
 
-  see if you can tell what :ref:`Exceptions<Exceptions>` will show up as I go along
+  see if you can tell the :ref:`Exceptions<Exceptions>` that will show up as I go along
 
 .. _test_calculator_green:
 
@@ -1013,14 +1049,14 @@ green: make it pass
 
     AttributeError: module 'src.calculator' has no attribute 'add'
 
-* the `return statement`_ of the last 3 :ref:`functions` have matched their names, I use that for the new one
+* the `return statement`_ of the last 3 :ref:`functions` matched their names, I use that for the new one
 
   .. code-block:: python
 
     def add(a, b):
         return a + b
 
-  and the terminal shows all tests are passing with no random failures
+  and the terminal shows all tests are passing with no random failures. Lovely!
 
 ----
 
