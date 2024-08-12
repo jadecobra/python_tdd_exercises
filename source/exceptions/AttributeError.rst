@@ -120,7 +120,7 @@ green: make it pass
     # AttributeError
     # NameError
 
-* then change the failing line in ``module.py`` to fix it by assigning the name ``variable_0`` to the :doc:`null value </data_structures/none>`
+* then change the failing line in ``module.py`` to fix it by assigning the name ``variable_0`` to :ref:`None`
 
   .. code-block:: python
 

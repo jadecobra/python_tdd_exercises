@@ -197,7 +197,7 @@ green: make it pass
   the terminal shows a NameError_ because there is no definition for ``method_a``
 
 
-* I define ``method_a`` as an attribute by assigning the name to the null value :ref:`None`
+* I define ``method_a`` as an attribute by assigning the name to :ref:`None`
 
   .. code-block:: python
 

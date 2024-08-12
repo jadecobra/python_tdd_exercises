@@ -82,7 +82,7 @@ red: make it fail
                 1
             )
 
-  - the assertEqual_ :ref:`method<functions>` from the `unittest.TestCase`_ :doc:`class</classes/classes>` checks if its 2 inputs are the same. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
+  - the assertEqual_ :ref:`method<functions>` from the `unittest.TestCase`_ :ref:`class<classes>` checks if its 2 inputs are the same. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
   - the explanation I like from what I have seen is that one of them is ``reality`` - ``src.calculator.add(0, 1)``, and the other is my ``expectation`` - ``1``, because ``0`` plus ``1`` is ``1``
 
   but the terminal shows a NameError_
@@ -123,11 +123,7 @@ green: make it pass
 
     AttributeError: module 'src.calculator' has no attribute 'add'
 
-  I think of ``src.calculator.add`` as an address
-
-  * ``src`` is the ``src`` folder/directory
-  * ``calculator`` is ``calculator.py`` in the ``src`` directory
-  * ``add`` is something (an attribute) in the ``calculator.py`` file which is currently empty
+  I think of ``src.calculator.add`` as an address, ``add`` is something (an attribute) in the ``calculator.py`` file which is currently empty and is in the ``src`` folder/directory
 
 * I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
 
@@ -138,7 +134,7 @@ green: make it pass
     # NameError
     # AttributeError
 
-* then open ``calculator.py`` in the editor to type the name
+* then open ``calculator.py`` in the editor to put the name
 
   .. code-block:: python
 
@@ -152,7 +148,7 @@ green: make it pass
 
   because there is no assignment to the name
 
-* I assign it to the null value :ref:`None`
+* I assign it to :ref:`None`
 
   .. code-block:: python
 
@@ -164,7 +160,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-  because the ``add`` variable is :ref:`None` which is not a callable_ object
+  because the ``add`` variable is :ref:`None` which is not callable_
 
 * I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
 
@@ -189,7 +185,7 @@ green: make it pass
 
     TypeError: add() takes 0 positional arguments but 2 were given
 
-  ``add`` currently takes in 0 inputs, but 2 were provided in the test - ``src.calculator.add(0, 1)``
+  ``add`` currently takes in 0 inputs, but 2 were provided in the test - ``0`` and ``1``
 
 * I make it take 2 positional arguments
 
@@ -220,7 +216,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-The ``add`` function passes the test but does not meet the actual requirement, it returns ``1`` no matter what inputs it gets, I want it to do a calculation with the inputs and return the result
+The ``add`` function passes the test but does not meet the actual requirement, it does not care about the inputs and returns ``1`` everytime it is called, I want it to do a calculation with the inputs and return the result
 
 .. _test_addition_refactor_red:
 
@@ -241,7 +237,7 @@ I add an assertion to show the problem with the :ref:`function<functions>`
           0
       )
 
-and the terminal shows an :ref:`AssertionError`
+which gives me an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -254,7 +250,7 @@ the :ref:`function<functions>` returns ``1`` and the test expects ``0``
 green: make it pass
 ---------------------------------------------------------------------------------
 
-I change the `return statement`_ to a calculation
+I change the `return statement`_ to a calculation with the inputs
 
 .. code-block:: python
 
@@ -268,7 +264,7 @@ and the terminal shows a passing test
 refactor: make it better
 ---------------------------------------------------------------------------------
 
-* I used 2 examples to test the ``add`` :ref:`function<functions>` and could add more but it would be better to use random numbers. I add an `import statement`_
+* I add an `import statement`_ to use random numbers in the test
 
   .. code-block:: python
 
@@ -301,10 +297,8 @@ refactor: make it better
                 0
             )
 
-  the terminal shows the test is still green
-
-  - ``x = random.randint(-1, 1)`` assigns a variable called ``x`` to the result of calling ``random.randint(-1, 1)``
-  - ``random.randint(-1, 1)`` gives me a random number from ``-1`` up to and including ``1``. ``-1`` for negative numbers, ``0`` for itself, and ``1`` for positive numbers
+  - the terminal shows passing tests
+  - ``x = random.randint(-1, 1)`` assigns a variable called ``x`` to the result of calling ``random.randint(-1, 1)`` which gives me a random number from ``-1`` up to and including ``1``. ``-1`` for negative numbers, ``0`` for itself, and ``1`` for positive numbers
 
 * I remove the other assertions because they are now covered by the one that uses random numbers
 
@@ -334,7 +328,7 @@ refactor: make it better
             x+y
         )
 
-  I add a :ref:`function<functions>` to remove the duplication of the calls to `random.randint`_
+  I add a :ref:`function<functions>` to remove the duplication of calls to `random.randint`_
 
   .. code-block:: python
 
@@ -366,16 +360,16 @@ refactor: make it better
       def a_random_number():
           return random.randint(-10, 10)
 
-  and the terminal still shows green. I can go as big as the computer will let me, for example
+  and the terminal still shows green. I can use as big of a range of numbers as the computer can handle, for example
 
     .. code-block:: python
 
       def a_random_number():
           return random.randint(-10**100000, 10**100000)
 
-  still green. I keep the range at ``-10, 10``
+  the test is still green though it takes longer to run. I change the range back to ``-10, 10``
 
-* I remove ``test addition`` from the TODO list
+* then remove ``test addition`` from the TODO list
 
   .. code-block:: python
 

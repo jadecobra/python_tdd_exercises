@@ -59,7 +59,7 @@ red: make it fail
                 "I received this message: hello"
             )
 
-  - the assertEqual_ :ref:`method<functions>` from the `unittest.TestCase`_ :doc:`class</classes/classes>` checks if its 2 inputs are equal. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
+  - the assertEqual_ :ref:`method<functions>` from the `unittest.TestCase`_ :ref:`class<classes>` checks if its 2 inputs are equal. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
   - the explanation I like from the ones I have seen is that one of them is ``reality`` and the other is my ``expectation``. In this case, reality is the call ``src.telephone.text('hello')``, and my expectation is ``"I received this message: hello"``
 
   but I get a NameError_
@@ -113,7 +113,7 @@ green: make it pass
 
     NameError: name 'text' is not defined
 
-* and I assign ``text`` to the null value :ref:`None`
+* and I assign ``text`` to :ref:`None`
 
   .. code-block:: python
 

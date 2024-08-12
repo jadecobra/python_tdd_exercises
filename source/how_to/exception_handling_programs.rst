@@ -68,7 +68,7 @@ green: make it pass
 
     NameError: name 'raises_exception' is not defined
 
-* I assign ``raises_exception`` to the null value :ref:`None`
+* I assign ``raises_exception`` to :ref:`None`
 
   .. code-block:: python
 
@@ -173,7 +173,7 @@ green: make it pass
 
     NameError: name 'exception_handler' is not defined
 
-* I assign ``exception_handler`` to the null value :ref:`None`
+* I assign ``exception_handler`` to :ref:`None`
 
   .. code-block:: python
 
@@ -267,7 +267,7 @@ green: make it pass
 
     NameError: name 'does_not_raise_exception' is not defined
 
-* I assign ``does_not_raise_exception`` to the null value :ref:`None`
+* I assign ``does_not_raise_exception`` to :ref:`None`
 
   .. code-block:: python
 
