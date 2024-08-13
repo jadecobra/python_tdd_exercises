@@ -1054,7 +1054,31 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I add a :ref:`function<functions>`
+* I add the name
+
+  .. code-block:: python
+
+    factory
+
+  the terminal shows a NameError_
+
+  .. code-block:: python
+
+    NameError: name 'factory' is not defined
+
+* I assign it to :ref:`None`
+
+  .. code-block:: python
+
+    factory = None
+
+  and get a :ref:`TypeError`
+
+  .. code-block:: python
+
+    TypeError: 'NoneType' object is not callable
+
+* I make it a :ref:`function<functions>`
 
   .. code-block:: python
 
