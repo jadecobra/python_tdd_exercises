@@ -268,7 +268,7 @@ green: make it pass
                 sex='F',
                 year_of_birth=this_year()
             ),
-            {}
+            dict()
         )
 
   and get an :ref:`AssertionError`
@@ -301,9 +301,9 @@ green: make it pass
                 sex='F',
                 year_of_birth=this_year()
             ),
-            {
-                'first_name': 'first_name',
-            }
+            dict(
+                first_name='first_name',
+            )
         )
 
   the terminal shows an :ref:`AssertionError`
@@ -327,14 +327,14 @@ green: make it pass
 
         self.assertEqual(
             src.person.factory(
-                first_name='first_name',
+                first_name=first_name,
                 last_name='last_name',
                 sex='F',
                 year_of_birth=this_year()
             ),
-            {
-                'first_name': 'first_name',
-            }
+            dict(
+                first_name=first_name,
+            )
         )
 
   the terminal still shows green. I now only need to change the value of ``first_name`` in one place
@@ -377,10 +377,10 @@ green: make it pass
                 sex='F',
                 year_of_birth=this_year()
             ),
-            {
-                'first_name': first_name,
-                'last_name': 'last_name',
-            }
+            dict(
+                first_name=first_name,
+                last_name='last_name',
+            )
         )
 
   and get an :ref:`AssertionError`
@@ -419,10 +419,10 @@ green: make it pass
                 sex='F',
                 year_of_birth=this_year()
             ),
-            {
-                'first_name': first_name,
-                'last_name': last_name,
-            }
+            dict(
+                first_name=first_name,
+                last_name=last_name,
+            )
         )
 
   then change the value
@@ -470,11 +470,11 @@ green: make it pass
                 sex='F',
                 year_of_birth=this_year()
             ),
-            {
-                'first_name': first_name,
-                'last_name': last_name,
-                'sex': 'F',
-            }
+            dict(
+                first_name=first_name,
+                last_name=last_name,
+                sex='F',
+            )
         )
 
   the terminal shows an :ref:`AssertionError`
@@ -515,11 +515,11 @@ green: make it pass
                 sex=sex,
                 year_of_birth=this_year()
             ),
-            {
-                'first_name': first_name,
-                'last_name': last_name,
-                'sex': sex,
-            }
+            dict(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+            )
         )
 
   and the test is still green
@@ -540,12 +540,12 @@ green: make it pass
                 sex=sex,
                 year_of_birth=this_year()
             ),
-            {
-                'first_name': first_name,
-                'last_name': last_name,
-                'sex': sex,
-                'age': this_year() - this_year(),
-            }
+            dict(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                age=this_year() - this_year(),
+            )
         )
 
   and the terminal shows a :ref:`TypeError`
@@ -578,7 +578,6 @@ green: make it pass
   .. code-block:: python
 
     def this_year():
-        return datetime.datetime.now().year
         return datetime.datetime.today().year
 
   the terminal shows an :ref:`AssertionError`
@@ -616,12 +615,12 @@ green: make it pass
                 sex=sex,
                 year_of_birth=year_of_birth,
             ),
-            {
-                'first_name': first_name,
-                'last_name': last_name,
-                'sex': sex,
-                'age': this_year() - year_of_birth,
-            }
+            dict(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                age=this_year() - year_of_birth,
+            )
         )
 
 refactor: make it better
@@ -851,7 +850,8 @@ I want to see what would happens if I try to make a person without giving a valu
 red: make it fail
 #################################################################################
 
-* I add a failing test to find out
+* I make a copy of ``test_person_factory_w_keyword_arguments`` and paste it below
+* then change the name to ``test_person_factory_w_default_keyword_arguments`` and remove the ``last_name`` variable
 
   .. code-block:: python
 
@@ -870,12 +870,12 @@ red: make it fail
                 year_of_birth=year_of_birth,
                 sex=sex,
             ),
-            {
-                "first_name": first_name,
-                "last_name": "doe",
-                "sex": sex,
-                "age": this_year() - year_of_birth
-            }
+            dict(
+                first_name=first_name,
+                last_name="doe",
+                sex=sex,
+                age=this_year() - year_of_birth
+            )
         )
 
   the terminal shows an :ref:`AssertionError` because the value for ``last_name`` does not match the expected value

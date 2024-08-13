@@ -298,7 +298,8 @@ refactor: make it better
             )
 
   - the terminal shows passing tests
-  - ``x = random.randint(-1, 1)`` assigns a variable called ``x`` to the result of calling ``random.randint(-1, 1)`` which gives me a random number from ``-1`` up to and including ``1``. ``-1`` for negative numbers, ``0`` for itself, and ``1`` for positive numbers
+  - ``x = random.randint(-1, 1)`` assigns a variable called ``x`` to the result of calling ``random.randint(-1, 1)`` which gives me a random number from ``-1`` up to and including ``1``
+  - ``-1`` for negative numbers, ``0`` for itself, and ``1`` for positive numbers
 
 * I remove the other assertions because they are now covered by the one that uses random numbers
 
@@ -362,10 +363,10 @@ refactor: make it better
 
   and the terminal still shows green. I can use as big of a range of numbers as the computer can handle, for example
 
-    .. code-block:: python
+  .. code-block:: python
 
-      def a_random_number():
-          return random.randint(-10**100000, 10**100000)
+    def a_random_number():
+        return random.randint(-10**100000, 10**100000)
 
   the test is still green though it takes longer to run. I change the range back to ``-10, 10``
 
@@ -554,7 +555,7 @@ refactor: make it better
                 self.x-self.y
             )
 
-  the tests are still green!
+  and the tests are still green!
 
 * I remove ``test subtraction`` from the TODO list
 
@@ -570,14 +571,12 @@ refactor: make it better
 test_multiplication
 *********************************************************************************
 
-Time for the next item on the TODO list - test multiplication
-
 .. _test_multiplication_red:
 
 red: make it fail
 #################################################################################
 
-I add a failing test
+I add a failing test for multiplication
 
 .. code-block:: python
 
@@ -628,14 +627,12 @@ SUCCESS! The terminal shows passing tests and I remove ``test_multiplication`` f
 test_division
 *********************************************************************************
 
-It is down to the test for division
-
 .. _test_division_red_0:
 
 red: make it fail
 #################################################################################
 
-I add a test
+I add a test for division
 
 .. code-block:: python
 
@@ -676,7 +673,7 @@ green: make it pass
       def a_random_number():
           return random.randint(-1, 1)
 
-  and the terminal shows a random ZeroDivisionError_ when ``y`` is ``0``
+  and when ``y`` is randomly ``0`` the terminal shows a ZeroDivisionError_
 
   .. code-block:: python
 
@@ -686,7 +683,7 @@ green: make it pass
     >    return x / y
     E    ZeroDivisionError: division by zero
 
-  dividing by ``0`` is not defined in mathematics and raises a ZeroDivisionError_ in python
+  dividing by ``0`` is not defined in mathematics and raises this :ref:`Exception<Exceptions>` in Python
 
 * I add it to the list of :ref:`Exceptions<Exceptions>` encountered
 
@@ -730,7 +727,7 @@ the terminal shows my expectations with a failure for any value of ``x`` since `
   >    return x / y
   E    ZeroDivisionError: division by zero
 
-:ref:`Exceptions<Exceptions>` like ZeroDivisionError_ break execution of a program. No code will run past the line that causes an :doc:`Exception </how_to/exception_handling_programs>` when it is raised which means I have to take care of it
+:ref:`Exceptions<Exceptions>` like ZeroDivisionError_ break execution of a program. No code will run past the line that causes one when it is raised which means I have to take care of it
 
 .. _test_division_green_1:
 
@@ -750,14 +747,14 @@ I can use the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` to make
       #   self.x/self.y
       # )
 
-the test passes, showing that the code raises a ZeroDivisionError_
+the test passes, showing that the code raises the :ref:`Exception<Exceptions>`
 
 .. _test_division_refactor_1:
 
 refactor: make it better
 #################################################################################
 
-* I still have a problem since ``self.y`` can sometimes be ``0``, I use a `while statement`_ to make sure it is never ``0`` in the assertion
+* I still have a problem since ``self.y`` can sometimes be ``0``, I use a `while statement`_ to make sure ``self.y`` is never ``0``
 
   .. code-block:: python
 
@@ -777,12 +774,12 @@ refactor: make it better
 
   - if it is
 
-    * assign ``self.y`` to the result of calling ``a_random_number``
-    * check again, and repeat until ``self.y`` is not ``0``
+    * it assigns ``self.y`` to the result of calling ``a_random_number``
+    * then checks again, and repeats the process until ``self.y`` is not ``0``
 
-  - if the value of ``self.y`` is not ``0``, exit the loop and run the code in the ``else`` block
+  - if the value of ``self.y`` is not ``0``, it exits the loop and runs the code in the ``else`` block
 
-* Since ``self.y`` is ``0`` in the first part of the `while statement`_ I can add a call to the ``divide`` :ref:`function<functions>` that will always raise a ZeroDivisionError_
+* Since ``self.y`` is ``0`` in the first part of the `while statement`_ I can add a call to the ``divide`` :ref:`function<functions>` that will fail
 
   .. code-block:: python
 
@@ -799,7 +796,7 @@ refactor: make it better
                 self.x/self.y
             )
 
-  when ``self.y`` is ``0``, the terminal shows a ZeroDivisionError_
+  when ``self.y`` is randomly ``0``, the terminal shows a ZeroDivisionError_
 
   .. code-block:: python
 
@@ -831,9 +828,9 @@ refactor: make it better
       def a_random_number():
           return random.randint(-10**1000000, 10**1000000)
 
-  and all the tests are still passing, it just takes longer to run. I change the range back to ``-10, 10``
+  and all the tests are still passing, and it takes longer to run. I change the range back to ``-10, 10``
 
-* I remove the TODO list
+* then remove the TODO list
 
 ----
 
@@ -893,7 +890,7 @@ green: make it pass
     def subtract():
         return None
 
-  and the terminal shows another :ref:`TypeError` with a different message
+  and the terminal shows another :ref:`TypeError`
 
   .. code-block:: python
 
