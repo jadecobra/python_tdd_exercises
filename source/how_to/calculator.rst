@@ -852,7 +852,7 @@ red: make it fail
 
     AttributeError: module 'src.calculator' has no attribute 'subtract'
 
-  see if you can tell the :ref:`Exceptions<Exceptions>` that will show up as I go along
+  can tell what :ref:`Exceptions<Exceptions>` will show up as I go along?
 
 .. _test_calculator_green:
 
@@ -928,7 +928,7 @@ green: make it pass
     AssertionError: (10, 6) != 4
     AssertionError: (7, -10) != 17
 
-  as the name suggests, the test expects the difference between the two inputs
+  the name is ``subtract`` and the test expects the difference between the two inputs
 
 * I make the `return statement`_ match the expectation
 
@@ -972,7 +972,7 @@ green: make it pass
     AssertionError: None != 20
     AssertionError: None != 36
 
-* I make it return the inputs to see the difference between them and the expected output
+* I change the `return statement`_ to see the different between the inputs and the expected output
 
   .. code-block:: python
 
@@ -988,7 +988,7 @@ green: make it pass
     AssertionError: (2, 5) != 10
     AssertionError: (-9, -5) != 45
 
-  I make it return the product of the inputs, matching the name of the :ref:`function<functions>`
+  I change it to the product of the inputs, matching the name of the :ref:`function<functions>`
 
   .. code-block:: python
 
