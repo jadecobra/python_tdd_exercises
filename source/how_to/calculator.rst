@@ -316,7 +316,7 @@ refactor: make it better
                 x+y
             )
 
-* If I want to use a bigger range of random numbers for the test, I have to do it in more than one place
+* If I want to use a bigger range of random numbers for the test, I have to make a change in more than one place
 
   .. code-block:: python
 
@@ -361,7 +361,7 @@ refactor: make it better
       def a_random_number():
           return random.randint(-10, 10)
 
-  and the terminal still shows green. I can use as big of a range of numbers as the computer can handle, for example
+  and the terminal still shows green. I can use as any range of numbers the computer can handle, for example
 
   .. code-block:: python
 
@@ -498,7 +498,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* I have some duplication to remove in keeping with `The Do Not Repeat Yourself (DRY) Principle`_
+* I have some duplication to remove in following `The Do Not Repeat Yourself (DRY) Principle`_
 
   .. code-block:: python
 
@@ -532,7 +532,7 @@ refactor: make it better
                 x-y
             )
 
-  the terminal shows the tests are still passing, the ``x`` and ``y`` variables are made once as :ref:`class <classes>` attributes (variables) and used later in each test with ``self.x`` and ``self.y``, the same way I can call `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_
+  the terminal shows the tests are still passing, the ``x`` and ``y`` variables are made once as :ref:`class <classes>` attributes (variables) and used later in each test with ``self.x`` and ``self.y``, the same way I I call `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_
 
 * I remove the ``x`` and ``y`` variables from ``test_addition`` and ``test_subtraction``
 
@@ -614,7 +614,7 @@ using what I know so far I add a :ref:`function<functions>` to ``calculator.py``
   def multiply(x, y):
       return x * y
 
-SUCCESS! The terminal shows passing tests and I remove ``test_multiplication`` from the TODO list
+which gives me passing tests. I remove ``test_multiplication`` from the TODO list
 
 .. code-block:: python
 
@@ -632,7 +632,7 @@ test_division
 red: make it fail
 #################################################################################
 
-I add a test for division
+time for division
 
 .. code-block:: python
 
@@ -648,7 +648,7 @@ I add a test for division
           self.x/self.y
       )
 
-which gives me an :ref:`AttributeError`
+the terminal shows an :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -683,7 +683,7 @@ green: make it pass
     >    return x / y
     E    ZeroDivisionError: division by zero
 
-  dividing by ``0`` is not defined in mathematics and raises this :ref:`Exception<Exceptions>` in Python
+  dividing by ``0`` is not defined in mathematics and raises an :ref:`Exception<Exceptions>` in Python
 
 * I add it to the list of :ref:`Exceptions<Exceptions>` encountered
 
@@ -717,7 +717,7 @@ I add a line to cause the ZeroDivisionError_ and comment out the code that rando
       #    self.x/self.y
       # )
 
-the terminal shows my expectations with a failure for any value of ``x`` since ``y`` is ``0``
+the terminal shows my expectation with a failure for any value of ``x`` since ``y`` is ``0``
 
 .. code-block:: python
 
@@ -727,7 +727,7 @@ the terminal shows my expectations with a failure for any value of ``x`` since `
   >    return x / y
   E    ZeroDivisionError: division by zero
 
-:ref:`Exceptions<Exceptions>` like ZeroDivisionError_ break execution of a program. No code will run past the line that causes one when it is raised which means I have to take care of it
+:ref:`Exceptions<Exceptions>` like ZeroDivisionError_ break execution of a program. No code will run past the line that caused one, which means I have to take care of it
 
 .. _test_division_green_1:
 
@@ -754,7 +754,7 @@ the test passes, showing that the code raises the :ref:`Exception<Exceptions>`
 refactor: make it better
 #################################################################################
 
-* I still have a problem since ``self.y`` can sometimes be ``0``, I use a `while statement`_ to make sure ``self.y`` is never ``0``
+* I still have a problem since ``self.y`` can sometimes be ``0``, I use a `while statement`_ to make sure ``self.y`` is never ``0`` in the assertion
 
   .. code-block:: python
 
@@ -772,7 +772,7 @@ refactor: make it better
 
   this `while statement`_ checks if the value of ``self.y`` is ``0``
 
-  - if it is
+  - if it is ``0``
 
     * it assigns ``self.y`` to the result of calling ``a_random_number``
     * then checks again, and repeats the process until ``self.y`` is not ``0``
@@ -802,7 +802,7 @@ refactor: make it better
 
     ZeroDivisionError: division by zero
 
-* I add an assertRaises_ block to catch the :ref:`Exception<Exceptions>` in the `while statement`_ and remove the previous one from the test
+* I add an assertRaises_ block to catch the :ref:`Exception<Exceptions>` in the `while statement`_ and remove the previous statement from the test because it is now part of the loop
 
   .. code-block:: python
 
@@ -828,7 +828,7 @@ refactor: make it better
       def a_random_number():
           return random.randint(-10**1000000, 10**1000000)
 
-  and all the tests are still passing, and it takes longer to run. I change the range back to ``-10, 10``
+  all the tests are still passing, and it takes longer to run. I change the range back to ``-10, 10``
 
 * then remove the TODO list
 
