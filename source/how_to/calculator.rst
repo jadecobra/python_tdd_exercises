@@ -91,7 +91,7 @@ red: make it fail
 
     NameError: name 'src' is not defined
 
-  ``src`` is not defined anywhere in ``test_calculator.py``
+  ``src`` is not defined in ``test_calculator.py``
 
 .. _test_addition_green:
 
@@ -216,7 +216,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-The ``add`` function passes the test but does not meet the actual requirement, it does not care about the inputs and returns ``1`` everytime it is called, I want it to do a calculation with the inputs and return the result
+The ``add`` function passes the test but does not meet the actual requirement, it does not care about the inputs and returns ``1`` every time it is called, I want it to do a calculation with the inputs and return the result
 
 .. _test_addition_refactor_red:
 
@@ -250,7 +250,7 @@ the :ref:`function<functions>` returns ``1`` and the test expects ``0``
 green: make it pass
 ---------------------------------------------------------------------------------
 
-I change the `return statement`_ to a calculation with the inputs
+I change the `return statement`_ to the sum of the inputs
 
 .. code-block:: python
 
