@@ -146,8 +146,6 @@ green: make it pass
 
     NameError: name 'add' is not defined
 
-  because there is no assignment to the name
-
 * I assign it to :ref:`None`
 
   .. code-block:: python
@@ -216,7 +214,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-The ``add`` function passes the test but does not meet the actual requirement, it does not care about the inputs and returns ``1`` every time it is called, I want it to do a calculation with the inputs and return the result
+The ``add`` :ref:`function<functions>` passes the test but does not meet the actual requirement because it does not care about the inputs. It always returns ``1`` and want it to do a calculation with the inputs and return the result
 
 .. _test_addition_refactor_red:
 
@@ -274,7 +272,7 @@ refactor: make it better
 
   random_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, that is used to make fake random numbers
 
-* then I add variables and a new assertion
+* I add variables and a new assertion
 
   .. code-block:: python
 
@@ -297,11 +295,12 @@ refactor: make it better
                 0
             )
 
-  - the terminal shows passing tests
+  the terminal shows passing tests
+
   - ``x = random.randint(-1, 1)`` assigns a variable called ``x`` to the result of calling ``random.randint(-1, 1)`` which gives me a random number from ``-1`` up to and including ``1``
   - ``-1`` for negative numbers, ``0`` for itself, and ``1`` for positive numbers
 
-* I remove the other assertions because they are now covered by the one that uses random numbers
+* I remove the other assertions because they are covered by the one that uses random numbers
 
   .. code-block:: python
 
@@ -316,7 +315,7 @@ refactor: make it better
                 x+y
             )
 
-* If I want to use a bigger range of random numbers for the test, I have to make a change in more than one place
+* When I want to use a bigger range of random numbers for the test, I have to make a change in more than one place
 
   .. code-block:: python
 
@@ -423,7 +422,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I add the name to ``calculator.py`` and assign it to :ref:`None`
+* I add the name to ``calculator.py``
 
   .. code-block:: python
 
@@ -451,7 +450,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-  this is familiar
+  I have seen this before
 
 * I make it a :ref:`function<functions>` to make it callable_
 
@@ -498,7 +497,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* I have some duplication to remove in following `The Do Not Repeat Yourself (DRY) Principle`_
+* I have some duplication to remove
 
   .. code-block:: python
 
@@ -532,7 +531,7 @@ refactor: make it better
                 x-y
             )
 
-  the terminal shows the tests are still passing, the ``x`` and ``y`` variables are made once as :ref:`class <classes>` attributes (variables) and used later in each test with ``self.x`` and ``self.y``, the same way I I call `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_
+  the terminal shows the tests are still passing, the ``x`` and ``y`` variables are made once as :ref:`class <classes>` attributes (variables) and used later in each test with ``self.x`` and ``self.y``, the same way I call `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_
 
 * I remove the ``x`` and ``y`` variables from ``test_addition`` and ``test_subtraction``
 
@@ -705,7 +704,7 @@ how to test that an Exception is raised
 red: make it fail
 #################################################################################
 
-I add a line to cause the ZeroDivisionError_ and comment out the code that randomly fails
+I add a line to raise the ZeroDivisionError_ and comment out the code that randomly fails
 
 .. code-block:: python
 
@@ -727,7 +726,7 @@ the terminal shows my expectation with a failure for any value of ``x`` since ``
   >    return x / y
   E    ZeroDivisionError: division by zero
 
-:ref:`Exceptions<Exceptions>` like ZeroDivisionError_ break execution of a program. No code will run past the line that caused one, which means I have to take care of it
+:ref:`Exceptions<Exceptions>` like ZeroDivisionError_ break execution of a program. No code will run past the line that caused one, which means I have to take care of this one
 
 .. _test_division_green_1:
 
@@ -754,7 +753,7 @@ the test passes, showing that the code raises the :ref:`Exception<Exceptions>`
 refactor: make it better
 #################################################################################
 
-* I still have a problem since ``self.y`` can sometimes be ``0``, I use a `while statement`_ to make sure ``self.y`` is never ``0`` in the assertion
+* I still have a problem since ``self.y`` can sometimes be ``0``, I use a `while statement`_ to make sure this never happens in the assertion
 
   .. code-block:: python
 
@@ -772,12 +771,12 @@ refactor: make it better
 
   this `while statement`_ checks if the value of ``self.y`` is ``0``
 
-  - if it is ``0``
+  - if it is
 
-    * it assigns ``self.y`` to the result of calling ``a_random_number``
-    * then checks again, and repeats the process until ``self.y`` is not ``0``
+    * ``self.y`` is assigned to the result of calling ``a_random_number``
+    * then is checked again, repeating the process until ``self.y`` is not ``0``
 
-  - if the value of ``self.y`` is not ``0``, it exits the loop and runs the code in the ``else`` block
+  - if the value of ``self.y`` is not ``0`` at any point, it exits the loop and runs the code in the ``else`` block
 
 * Since ``self.y`` is ``0`` in the first part of the `while statement`_ I can add a call to the ``divide`` :ref:`function<functions>` that will fail
 
