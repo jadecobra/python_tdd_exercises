@@ -851,7 +851,7 @@ red: make it fail
 
     AttributeError: module 'src.calculator' has no attribute 'subtract'
 
-  can tell what :ref:`Exceptions<Exceptions>` will show up as I go along?
+  Can you tell what :ref:`Exceptions<Exceptions>` will show up as I go along?
 
 .. _test_calculator_green:
 
@@ -895,14 +895,14 @@ green: make it pass
 
     TypeError: subtract() takes 0 positional arguments but 2 were given
 
-  then I add positional arguments to the :ref:`function<functions>`
+  I add positional arguments to the :ref:`function<functions>`
 
   .. code-block:: python
 
     def subtract(a, b):
         return None
 
-  which gives me an :ref:`AssertionError`
+  and get an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -911,14 +911,14 @@ green: make it pass
     AssertionError: None != 0
     AssertionError: None != 12
 
-* I change the `return statement`_ to see the difference between the inputs and expected output
+* then change the `return statement`_ to see the difference between the inputs and expected output
 
   .. code-block:: python
 
     def subtract(a, b):
         return a, b
 
-  and get another :ref:`AssertionError`
+  the terminal shows another :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -927,7 +927,7 @@ green: make it pass
     AssertionError: (10, 6) != 4
     AssertionError: (7, -10) != 17
 
-  the name is ``subtract`` and the test expects the difference between the two inputs
+  the name of the :ref:`function<functions>` is ``subtract`` and the test expects the difference between the two inputs
 
 * I make the `return statement`_ match the expectation
 
@@ -971,7 +971,7 @@ green: make it pass
     AssertionError: None != 20
     AssertionError: None != 36
 
-* I change the `return statement`_ to see the different between the inputs and the expected output
+* I change the `return statement`_ to see the difference between the inputs and the expected output
 
   .. code-block:: python
 
@@ -1007,7 +1007,7 @@ green: make it pass
     def divide(a, b):
         return a, b
 
-  the terminal shows an :ref:`AssertionError`
+  and the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1022,14 +1022,14 @@ green: make it pass
 
     AssertionError: ZeroDivisionError not raised
 
-  I change the `return statement`_ to match the expectation
+  when I change the `return statement`_ to match the expectation
 
   .. code-block:: python
 
     def divide(a, b):
         return a / b
 
-  and get an :ref:`AttributeError`
+  the terminal shows an :ref:`AttributeError`
 
   .. code-block:: python
 
