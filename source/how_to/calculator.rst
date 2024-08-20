@@ -49,7 +49,7 @@ red: make it fail
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard then click on ``tests/test_calculator.py:7`` with the mouse to open it in the editor
 * and change ``True`` to ``False`` to make the test pass
-* then add a list to keep track of work for the calculator
+* then add a list to keep track of the work
 
   .. code-block:: python
 
@@ -67,7 +67,7 @@ red: make it fail
     # Exceptions Encountered
     # AssertionError
 
-* I change ``test_failure`` to ``test_addition``, then add an assertion
+* I change ``test_failure`` to ``test_addition`` then add an assertion
 
   .. code-block:: python
 
@@ -192,7 +192,7 @@ green: make it pass
     def add(x, y):
         return None
 
-  which gives me an :ref:`AssertionError`
+  and get an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -214,7 +214,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-The ``add`` :ref:`function<functions>` passes the test but does not meet the actual requirement because it does not care about the inputs. It always returns ``1`` and want it to do a calculation with the inputs and return the result
+The ``add`` :ref:`function<functions>` passes the test but does not meet the actual requirement because it always returns ``1``, it does not care about the inputs. I want it to do a calculation with the inputs and return the result
 
 .. _test_addition_refactor_red:
 
@@ -438,7 +438,7 @@ green: make it pass
 
     NameError: name 'subtract' is not defined
 
-  I assign it to :ref:`None`
+  then I assign it to :ref:`None`
 
   .. code-block:: python
 
@@ -504,7 +504,7 @@ refactor: make it better
     x = a_random_number()
     y = a_random_number()
 
-  happens twice, once in ``test_addition`` and again in ``test_subtraction``. I can use :ref:`class <classes>` attributes (variables) to remove the repetition and use the same numbers for both tests
+  the declarations above happen twice, once in ``test_addition`` and again in ``test_subtraction``. I can use :ref:`class <classes>` attributes (variables) to remove the repetition and use the same numbers for both tests
 
   .. code-block:: python
 
@@ -726,7 +726,7 @@ the terminal shows my expectation with a failure for any value of ``x`` since ``
   >    return x / y
   E    ZeroDivisionError: division by zero
 
-:ref:`Exceptions<Exceptions>` like ZeroDivisionError_ break execution of a program. No code will run past the line that caused one, which means I have to take care of this one
+:ref:`Exceptions<Exceptions>` like ZeroDivisionError_ break execution of a program. No code will run past the line that caused one, which means I have to take care of this one. See :doc:`/how_to/exception_handling_tests` for more details
 
 .. _test_division_green_1:
 
@@ -753,7 +753,7 @@ the test passes, showing that the code raises the :ref:`Exception<Exceptions>`
 refactor: make it better
 #################################################################################
 
-* I still have a problem since ``self.y`` can sometimes be ``0``, I use a `while statement`_ to make sure this never happens in the assertion
+* I still have a problem since ``self.y`` can sometimes be ``0``, I use a `while statement`_ to make sure it never happens in the assertion
 
   .. code-block:: python
 
@@ -769,12 +769,12 @@ refactor: make it better
                 self.x/self.y
             )
 
-  this `while statement`_ checks if the value of ``self.y`` is ``0``
+  here is what this `while statement`_ does
 
-  - if it is
+  - if the value of ``self.y`` is ``0``
 
-    * ``self.y`` is assigned to the result of calling ``a_random_number``
-    * then is checked again, repeating the process until ``self.y`` is not ``0``
+    * it assigns ``self.y`` to the result of calling ``a_random_number``
+    * then checks if the value of ``self.y`` is ``0`` again, repeating the process until ``self.y`` is not ``0``
 
   - if the value of ``self.y`` is not ``0`` at any point, it exits the loop and runs the code in the ``else`` block
 
@@ -822,12 +822,10 @@ refactor: make it better
 
   .. code-block:: python
 
-      .. code-block:: python
+    def a_random_number():
+        return random.randint(-10**1000000, 10**1000000)
 
-      def a_random_number():
-          return random.randint(-10**1000000, 10**1000000)
-
-  all the tests are still passing, and it takes longer to run. I change the range back to ``-10, 10``
+  the terminal still shows green, and it takes longer for the tests to run. I change the range back to ``-10, 10``
 
 * then remove the TODO list
 
