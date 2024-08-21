@@ -47,9 +47,9 @@ red: make it fail
 
     tests/test_calculator.py:7: AssertionError
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard then click on ``tests/test_calculator.py:7`` with the mouse to open it in the editor
-* and change ``True`` to ``False`` to make the test pass
-* then add a list to keep track of the work
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_calculator.py:7`` with the mouse to open it in the editor
+* then change ``True`` to ``False`` to make the test pass
+* I add a list to keep track of the work for the program
 
   .. code-block:: python
 
@@ -67,7 +67,7 @@ red: make it fail
     # Exceptions Encountered
     # AssertionError
 
-* I change ``test_failure`` to ``test_addition`` then add an assertion
+* and change ``test_failure`` to ``test_addition`` then add an assertion
 
   .. code-block:: python
 
@@ -91,7 +91,7 @@ red: make it fail
 
     NameError: name 'src' is not defined
 
-  ``src`` is not defined in ``test_calculator.py``
+  because ``src`` is not defined in ``test_calculator.py``
 
 .. _test_addition_green:
 
@@ -123,7 +123,7 @@ green: make it pass
 
     AttributeError: module 'src.calculator' has no attribute 'add'
 
-  I think of ``src.calculator.add`` as an address, ``add`` is something (an attribute) in the ``calculator.py`` file which is currently empty and is in the ``src`` folder/directory
+  I think of ``src.calculator.add`` as an address, ``add`` is something (an attribute) in the empty ``calculator.py`` file from the ``src`` folder/directory
 
 * I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
 
@@ -207,7 +207,7 @@ green: make it pass
     def add(x, y):
         return 1
 
-  the test passes. Time for a victory lap!
+  the test passes, time for a victory lap!
 
 .. _test_addition_refactor:
 
@@ -235,7 +235,7 @@ I add an assertion to show the problem with the :ref:`function<functions>`
           0
       )
 
-which gives me an :ref:`AssertionError`
+and get an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -248,14 +248,14 @@ the :ref:`function<functions>` returns ``1`` and the test expects ``0``
 green: make it pass
 ---------------------------------------------------------------------------------
 
-I change the `return statement`_ to the sum of the inputs
+when I change the `return statement`_ to the sum of the inputs
 
 .. code-block:: python
 
   def add(x, y):
       return x + y
 
-and the terminal shows a passing test
+the terminal shows a passing test
 
 .. _test_addition_refactor_refactor:
 
@@ -272,7 +272,7 @@ refactor: make it better
 
   random_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, that is used to make fake random numbers
 
-* I add variables and a new assertion
+* then I add variables and a new assertion
 
   .. code-block:: python
 
@@ -284,7 +284,7 @@ refactor: make it better
 
             self.assertEqual(
                 src.calculator.add(x, y),
-                x+y
+                x+x
             )
             self.assertEqual(
                 src.calculator.add(0, 1),
@@ -295,7 +295,25 @@ refactor: make it better
                 0
             )
 
-  the terminal shows passing tests
+  because the range of numbers is small, the terminal shows random success or an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 0 != 2
+    AssertionError: -1 != -2
+    AssertionError: -1 != 0
+    AssertionError: 1 != 2
+
+  I change the expectation in the assertion to the correct calculation
+
+  .. code-block:: python
+
+    self.assertEqual(
+        src.calculator.add(x, y),
+        x+y
+    )
+
+  and the terminal shows passing tests
 
   - ``x = random.randint(-1, 1)`` assigns a variable called ``x`` to the result of calling ``random.randint(-1, 1)`` which gives me a random number from ``-1`` up to and including ``1``
   - ``-1`` for negative numbers, ``0`` for itself, and ``1`` for positive numbers
@@ -315,7 +333,7 @@ refactor: make it better
                 x+y
             )
 
-* When I want to use a bigger range of random numbers for the test, I have to make a change in more than one place
+* When I want to use a different range of random numbers for the test, I have to make a change in more than one place
 
   .. code-block:: python
 
@@ -360,14 +378,14 @@ refactor: make it better
       def a_random_number():
           return random.randint(-10, 10)
 
-  and the terminal still shows green. I can use as any range of numbers the computer can handle, for example
+  and the terminal still shows green. I can use any range of numbers the computer can handle, for example
 
   .. code-block:: python
 
     def a_random_number():
         return random.randint(-10**100000, 10**100000)
 
-  the test is still green though it takes longer to run. I change the range back to ``-10, 10``
+  the test is still green amd takes longer to run. I change the range back to ``-10, 10``
 
 * then remove ``test addition`` from the TODO list
 
@@ -531,7 +549,7 @@ refactor: make it better
                 x-y
             )
 
-  the terminal shows the tests are still passing, the ``x`` and ``y`` variables are made once as :ref:`class <classes>` attributes (variables) and used later in each test with ``self.x`` and ``self.y``, the same way I call `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_
+  the terminal shows the tests are still passing. The ``x`` and ``y`` variables are made once as :ref:`class <classes>` attributes (variables) and used later in each test with ``self.x`` and ``self.y``, the same way I use `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_
 
 * I remove the ``x`` and ``y`` variables from ``test_addition`` and ``test_subtraction``
 
@@ -726,7 +744,7 @@ the terminal shows my expectation with a failure for any value of ``x`` since ``
   >    return x / y
   E    ZeroDivisionError: division by zero
 
-:ref:`Exceptions<Exceptions>` like ZeroDivisionError_ break execution of a program. No code will run past the line that caused one, which means I have to take care of this one. See :doc:`/how_to/exception_handling_tests` for more details
+:ref:`Exceptions<Exceptions>` like ZeroDivisionError_ break execution of a program. No code will run past the line that caused one, which means I have to take care of this one. See :doc:`/how_to/exception_handling_tests` for more
 
 .. _test_division_green_1:
 
@@ -835,7 +853,7 @@ refactor: make it better
 test_calculator_tests
 *********************************************************************************
 
-Since everything is green, I can have some fun and write the program that makes the tests pass without looking at them
+Since everything is green, I can write the program that makes the tests pass without looking at them
 
 .. _test_calculator_red:
 
@@ -849,7 +867,7 @@ red: make it fail
 
     AttributeError: module 'src.calculator' has no attribute 'subtract'
 
-  Can you tell what :ref:`Exceptions<Exceptions>` will show up as I go along?
+  can you tell what :ref:`Exceptions<Exceptions>` will show up as I go along?
 
 .. _test_calculator_green:
 
@@ -916,7 +934,7 @@ green: make it pass
     def subtract(a, b):
         return a, b
 
-  the terminal shows another :ref:`AssertionError`
+  and the terminal shows another :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1040,7 +1058,7 @@ green: make it pass
     def add(a, b):
         return a + b
 
-  and the terminal shows all tests are passing with no random failures. Lovely!
+  and all tests are passing with no random failures. Lovely!
 
 ----
 
