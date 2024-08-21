@@ -6,7 +6,7 @@ how to make a calculator
 
 .. raw:: html
 
-  <iframe style="border-radius:12px" width="560"  height="315" src="https://www.youtube-nocookie.com/embed/0gVgMoed3zI?si=FQR1fMtJzElXcQ5n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe style="border-radius:12px" width="560"  height="315" src="https://www.youtube-nocookie.com/embed/i8fGEqdH3yk?si=eBow2hwdlh01aVUF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ----
 
@@ -768,7 +768,7 @@ green: make it pass
 
   .. code-block:: python
 
-    E    ZeroDivisionError: division by zero
+    ZeroDivisionError: division by zero
 
 * When I change it to use the right one
 
@@ -856,7 +856,7 @@ refactor: make it better
     def a_random_number():
         return random.randint(-10**1000000, 10**1000000)
 
-  the terminal still shows green, and it takes longer for the tests to run. I change the range back to ``-10, 10``
+  the terminal still shows green and it takes longer to run the tests. I change the range back to ``-10, 10``
 
 * then remove the TODO list
 
