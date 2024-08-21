@@ -371,7 +371,7 @@ refactor: make it better
             x+y
         )
 
-  now I only need to change the range of random numbers for the test in one place
+  I now only need to change the range of random numbers for the test in one place
 
   .. code-block:: python
 
@@ -385,7 +385,7 @@ refactor: make it better
     def a_random_number():
         return random.randint(-10**100000, 10**100000)
 
-  the test is still green amd takes longer to run. I change the range back to ``-10, 10``
+  the test is still green and takes longer to run. I change the range back to ``-10, 10``
 
 * then remove ``test addition`` from the TODO list
 
@@ -522,7 +522,7 @@ refactor: make it better
     x = a_random_number()
     y = a_random_number()
 
-  the declarations above happen twice, once in ``test_addition`` and again in ``test_subtraction``. I can use :ref:`class <classes>` attributes (variables) to remove the repetition and use the same numbers for both tests
+  the code above happen twice, once in ``test_addition`` and again in ``test_subtraction``. I can use :ref:`class <classes>` attributes (variables) to remove them and use the same numbers for both tests
 
   .. code-block:: python
 
@@ -751,20 +751,33 @@ the terminal shows my expectation with a failure for any value of ``x`` since ``
 green: make it pass
 #################################################################################
 
-I can use the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` to make sure that a ZeroDivisionError_ is raised when I try to divide a number by ``0``
+* I can use the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` to make sure that a ZeroDivisionError_ is raised when I try to divide a number by ``0``
 
-.. code-block:: python
+  .. code-block:: python
 
-  def test_division(self):
-      with self.assertRaises(ZeroDivisionError):
-          src.calculator.divide(self.x, 0)
+    def test_division(self):
+        with self.assertRaises(AssertionError):
+            src.calculator.divide(self.x, 0)
 
-      # self.assertEqual(
-      #   src.calculator.divide(self.x, self.y),
-      #   self.x/self.y
-      # )
+        # self.assertEqual(
+        #   src.calculator.divide(self.x, self.y),
+        #   self.x/self.y
+        # )
 
-the test passes, showing that the code raises the :ref:`Exception<Exceptions>`
+  because I used the wrong :ref:`Exception<Exceptions>` the terminal still shows a ZeroDivisionError_
+
+  .. code-block:: python
+
+    E    ZeroDivisionError: division by zero
+
+* When I change it to use the right one
+
+  .. code-block:: python
+
+    with self.assertRaises(ZeroDivisionError):
+        src.calculator.divide(self.x, 0)
+
+  the test passes, showing that the code raises the :ref:`Exception<Exceptions>`
 
 .. _test_division_refactor_1:
 
@@ -787,7 +800,7 @@ refactor: make it better
                 self.x/self.y
             )
 
-  here is what this `while statement`_ does
+  here is what it does
 
   - if the value of ``self.y`` is ``0``
 
