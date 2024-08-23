@@ -4,7 +4,7 @@ import src.person
 import unittest
 
 
-def a_random_first_name():
+def a_random_name():
     return random.choice((
         'john', 'joe', 'jane', 'person'
     ))
@@ -23,7 +23,7 @@ def this_year():
 class TestPerson(unittest.TestCase):
 
     def test_person_factory_w_keyword_arguments(self):
-        first_name = a_random_first_name()
+        first_name = a_random_name()
         last_name = random.choice((
             'doe', 'smith', 'blow', 'public'
         ))
@@ -46,7 +46,7 @@ class TestPerson(unittest.TestCase):
         )
 
     def test_person_factory_w_default_keyword_arguments(self):
-        first_name = a_random_first_name()
+        first_name = a_random_name()
         year_of_birth = a_random_year()
 
         self.assertEqual(
