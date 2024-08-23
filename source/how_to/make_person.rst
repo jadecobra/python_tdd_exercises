@@ -137,8 +137,8 @@ green: make it pass
 
   .. code-block:: python
 
-    def factory(first_name=None):
-    ...
+    def factory(first_name):
+        return None
 
   and the test passes
 
@@ -165,8 +165,8 @@ green: make it pass
 
   .. code-block:: python
 
-    def factory(first_name=None, last_name=None):
-    ...
+    def factory(first_name, last_name):
+        return None
 
   the terminal shows a passing test
 
@@ -195,9 +195,9 @@ green: make it pass
   .. code-block:: python
 
     def factory(
-        first_name=None, last_name=None,
-        sex=None
-    ):
+            first_name, last_name,
+            sex
+        ):
         return None
 
   and the test is green again
@@ -249,9 +249,9 @@ green: make it pass
   .. code-block:: python
 
     def factory(
-        first_name=None, last_name=None,
-        sex=None, year_of_birth=None
-    ):
+            first_name, last_name,
+            sex, year_of_birth
+        ):
         return None
 
   the test passes
@@ -282,9 +282,9 @@ green: make it pass
   .. code-block:: python
 
     def factory(
-        first_name=None, last_name=None,
-        sex=None, year_of_birth=None
-    ):
+            first_name, last_name,
+            sex, year_of_birth
+        ):
         return {}
 
   the test is green again
@@ -356,8 +356,8 @@ green: make it pass
   .. code-block:: python
 
     def factory(
-            first_name=None, last_name=None,
-            sex=None, year_of_birth=None
+            first_name, last_name,
+            sex, year_of_birth
         ):
         return {'first_name': 'jane}
 
@@ -394,9 +394,9 @@ green: make it pass
   .. code-block:: python
 
     def factory(
-        first_name=None, last_name=None,
-        sex=None, year_of_birth=None
-    ):
+            first_name, last_name,
+            sex, year_of_birth
+        ):
         return {
             'first_name': 'jane',
             'last_name': 'last_name'
@@ -445,8 +445,8 @@ green: make it pass
   .. code-block:: python
 
     def factory(
-            first_name=None, last_name=None,
-            sex=None, year_of_birth=None
+            first_name, last_name,
+            sex, year_of_birth
         ):
         return {
             'first_name': first_name,
@@ -488,8 +488,8 @@ green: make it pass
   .. code-block:: python
 
     def factory(
-            first_name=None, last_name=None,
-            sex=None, year_of_birth=None
+            first_name, last_name,
+            sex, year_of_birth
         ):
         return {
             'first_name': 'jane',
@@ -591,10 +591,10 @@ green: make it pass
   .. code-block:: python
 
     def factory(
-        first_name=None, last_name=None,
-        year_of_birth=None, sex=None
-    ):
-        return {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 0}
+            first_name, last_name,
+            sex, year_of_birth
+        ):
+        return {'age': 0, 'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'}
 
   the test passes
 
@@ -656,18 +656,18 @@ I  want to use random values to test the ``factory`` :ref:`function<functions>` 
 
   .. code-block:: python
 
-    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 0} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 5}
-    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 0} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 6}
-    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 0} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 23}
-    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 0} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 111}
+    AssertionError: {'age': 0, 'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 10}
+    AssertionError: {'age': 0, 'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 50}
+    AssertionError: {'age': 0, 'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 89}
+    AssertionError: {'age': 0, 'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 90}
 
   I copy the age calculation from the expectation
 
   .. code-block:: python
 
     def factory(
-            first_name=None, last_name=None,
-            sex=None, year_of_birth=None
+            first_name, last_name,
+            sex, year_of_birth
         ):
         return {
             'first_name': first_name,
