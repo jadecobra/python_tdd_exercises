@@ -4,20 +4,20 @@ import src.person
 import unittest
 
 
-def a_random_name():
-    return random.choice((
-        'john', 'joe', 'jane', 'person'
-    ))
+def this_year():
+    return datetime.datetime.now().year
 
 
 def a_random_year():
     return random.randint(
-        1900, this_year()
+        this_year()-120, this_year()
     )
 
 
-def this_year():
-    return datetime.datetime.now().year
+def a_random_name():
+    return random.choice((
+        'jane', 'joe', 'john', 'person'
+    ))
 
 
 class TestPerson(unittest.TestCase):
@@ -35,14 +35,14 @@ class TestPerson(unittest.TestCase):
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
-                year_of_birth=year_of_birth,
+                year_of_birth=year_of_birth
             ),
-            {
-                'first_name': first_name,
-                'last_name': last_name,
-                'sex': sex,
-                'age': this_year() - year_of_birth,
-            }
+            dict(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                age=this_year()-year_of_birth,
+            )
         )
 
     def test_person_factory_w_default_keyword_arguments(self):
@@ -52,14 +52,14 @@ class TestPerson(unittest.TestCase):
         self.assertEqual(
             src.person.factory(
                 first_name=first_name,
-                year_of_birth=year_of_birth,
+                year_of_birth=year_of_birth
             ),
-            {
-                "first_name": first_name,
-                "last_name": "doe",
-                "sex": 'M',
-                "age": this_year() - year_of_birth
-            }
+            dict(
+                first_name=first_name,
+                last_name='doe',
+                sex='M',
+                age=this_year()-year_of_birth,
+            )
         )
 
 
@@ -68,3 +68,4 @@ class TestPerson(unittest.TestCase):
 # NameError
 # AttributeError
 # TypeError
+# SyntaxError

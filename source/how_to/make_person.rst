@@ -594,7 +594,12 @@ green: make it pass
             first_name, last_name,
             sex, year_of_birth
         ):
-        return {'age': 0, 'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'}
+        return {
+            'first_name': 'jane',
+            'last_name': 'doe',
+            'sex': 'F',
+            'age': 0
+        }
 
   the test passes
 
@@ -656,10 +661,10 @@ I  want to use random values to test the ``factory`` :ref:`function<functions>` 
 
   .. code-block:: python
 
-    AssertionError: {'age': 0, 'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 10}
-    AssertionError: {'age': 0, 'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 50}
-    AssertionError: {'age': 0, 'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 89}
-    AssertionError: {'age': 0, 'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 90}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 0} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 2}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 0} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 7}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 0} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 14}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 0} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 60}
 
   I copy the age calculation from the expectation
 
@@ -670,9 +675,9 @@ I  want to use random values to test the ``factory`` :ref:`function<functions>` 
             sex, year_of_birth
         ):
         return {
-            'first_name': first_name,
-            'last_name': last_name,
-            'sex': sex,
+            'first_name': 'jane',
+            'last_name': 'doe',
+            'sex': 'F',
             'age': this_year() - year_of_birth,
         }
 
@@ -691,10 +696,10 @@ I  want to use random values to test the ``factory`` :ref:`function<functions>` 
             sex, year_of_birth
         ):
         return {
+            'first_name': 'jane',
+            'last_name': 'doe',
+            'sex': 'F,
             'age': datetime.datetime.now().year - year_of_birth,
-            'first_name': first_name,
-            'last_name': last_name,
-            'sex': sex,
         }
 
   the terminal shows another NameError_
@@ -733,10 +738,10 @@ I  want to use random values to test the ``factory`` :ref:`function<functions>` 
 
   .. code-block:: python
 
-    AssertionError: {'age': 74, 'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 74}
-    AssertionError: {'age': 75, 'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 75}
-    AssertionError: {'age': 98, 'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 98}
-    AssertionError: {'age': 106, 'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 106}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 56} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 56}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 76} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 76}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 109} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 109}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 115} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 115}
 
   when I change the `return statement`_ to use the input parameter for ``sex``
 
@@ -750,7 +755,7 @@ I  want to use random values to test the ``factory`` :ref:`function<functions>` 
             'first_name': 'jane',
             'last_name': 'doe',
             'sex': sex,
-            'age': datetime.datetime.today().year - year_of_birth,
+            'age': datetime.datetime.now().year - year_of_birth,
         }
 
   the test passes with no more random failures
@@ -774,10 +779,10 @@ I  want to use random values to test the ``factory`` :ref:`function<functions>` 
 
   .. code-block:: python
 
-    AssertionError: {'age': 46, 'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'} != {'first_name': 'jane', 'last_name': 'smith', 'sex': 'M', 'age': 46}
-    AssertionError: {'age': 59, 'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'} != {'first_name': 'jane', 'last_name': 'smith', 'sex': 'F', 'age': 59}
-    AssertionError: {'age': 89, 'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'} != {'first_name': 'jane', 'last_name': 'bloggs', 'sex': 'F', 'age': 89}
-    AssertionError: {'age': 104, 'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'} != {'first_name': 'jane', 'last_name': 'bloggs', 'sex': 'M', 'age': 104}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 51} != {'first_name': 'jane', 'last_name': 'bloggs', 'sex': 'F', 'age': 51}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 54} != {'first_name': 'jane', 'last_name': 'bloggs', 'sex': 'M', 'age': 54}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 110} != {'first_name': 'jane', 'last_name': 'bloggs', 'sex': 'F', 'age': 110}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 116} != {'first_name': 'jane', 'last_name': 'blow', 'sex': 'M', 'age': 116}
 
   I change the `return statement`_ to use the input parameter for ``last_name``
 
@@ -817,10 +822,10 @@ I  want to use random values to test the ``factory`` :ref:`function<functions>` 
 
   .. code-block:: python
 
-    AssertionError: {'age': 3, 'first_name': 'jane', 'last_name': 'blow', 'sex': 'M'} != {'first_name': 'joe', 'last_name': 'blow', 'sex': 'M', 'age': 3}
-    AssertionError: {'age': 46, 'first_name': 'jane', 'last_name': 'smith', 'sex': 'M'} != {'first_name': 'john', 'last_name': 'smith', 'sex': 'M', 'age': 46}
-    AssertionError: {'age': 88, 'first_name': 'jane', 'last_name': 'bloggs', 'sex': 'F'} != {'first_name': 'person', 'last_name': 'bloggs', 'sex': 'F', 'age': 88}
-    AssertionError: {'age': 100, 'first_name': 'jane', 'last_name': 'blow', 'sex': 'M'} != {'first_name': 'person', 'last_name': 'blow', 'sex': 'M', 'age': 100}
+    AssertionError: {'first_name': 'jane', 'last_name': 'public', 'sex': 'F', 'age': 6} != {'first_name': 'john', 'last_name': 'public', 'sex': 'F', 'age': 6}
+    AssertionError: {'first_name': 'jane', 'last_name': 'smith', 'sex': 'M', 'age': 19} != {'first_name': 'person', 'last_name': 'smith', 'sex': 'M', 'age': 19}
+    AssertionError: {'first_name': 'jane', 'last_name': 'public', 'sex': 'M', 'age': 59} != {'first_name': 'person', 'last_name': 'public', 'sex': 'M', 'age': 59}
+    AssertionError: {'first_name': 'jane', 'last_name': 'smith', 'sex': 'F', 'age': 117} != {'first_name': 'joe', 'last_name': 'smith', 'sex': 'F', 'age': 117}
 
   I change the `return statement`_ to use the input parameter for ``first_name``
 
@@ -882,6 +887,8 @@ red: make it fail
 
     TypeError: factory() missing 1 required positional argument: 'last_name'
 
+  because I used positional arguments in the ``factory`` :ref:`function's<functions>` signature, I have to change it to a keyword argument
+
 
 green: make it pass
 #################################################################################
@@ -901,6 +908,8 @@ green: make it pass
   .. code-block:: python
 
     SyntaxError: parameter without a default follows parameter with a default
+
+  for the ``sex`` input parameter
 
 * I add it to the list of :ref:`Exceptions<exceptions>` encountered
 
@@ -928,6 +937,8 @@ green: make it pass
   .. code-block:: python
 
     SyntaxError: parameter without a default follows parameter with a default
+
+  for the ``year_of_birth`` input parameter
 
 * when I assign a default value to the ``year_of_birth`` parameter
 
@@ -970,10 +981,10 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: {'age': 27, 'first_name': 'person', 'last_name': 'doe', 'sex': None} != {'first_name': 'person', 'last_name': 'doe', 'sex': 'M', 'age': 27}
-    AssertionError: {'age': 65, 'first_name': 'jane', 'last_name': 'doe', 'sex': None} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 65}
-    AssertionError: {'age': 74, 'first_name': 'john', 'last_name': 'doe', 'sex': None} != {'first_name': 'john', 'last_name': 'doe', 'sex': 'M', 'age': 74}
-    AssertionError: {'age': 85, 'first_name': 'john', 'last_name': 'doe', 'sex': None} != {'first_name': 'john', 'last_name': 'doe', 'sex': 'M', 'age': 85}
+    AssertionError: {'first_name': 'joe', 'last_name': 'doe', 'sex': None, 'age': 4} != {'first_name': 'joe', 'last_name': 'doe', 'sex': 'M', 'age': 4}
+    AssertionError: {'first_name': 'joe', 'last_name': 'doe', 'sex': None, 'age': 32} != {'first_name': 'joe', 'last_name': 'doe', 'sex': 'M', 'age': 32}
+    AssertionError: {'first_name': 'john', 'last_name': 'doe', 'sex': None, 'age': 45} != {'first_name': 'john', 'last_name': 'doe', 'sex': 'M', 'age': 45}
+    AssertionError: {'first_name': 'john', 'last_name': 'doe', 'sex': None, 'age': 58} != {'first_name': 'john', 'last_name': 'doe', 'sex': 'M', 'age': 58}
 
   I add a default value to match the expectation
 

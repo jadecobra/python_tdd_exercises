@@ -2,7 +2,7 @@ import datetime
 
 
 def factory(
-        first_name=None, last_name='doe',
+        first_name, last_name='doe',
         sex='M', year_of_birth=None
     ):
     return {
