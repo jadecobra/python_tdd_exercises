@@ -1078,6 +1078,79 @@ refactor: make it better
 
   and all tests are still passing
 
+* I could also add class variables to remove the repetition of the calls to the new :ref:`functions`
+
+  .. code-block:: python
+
+    ...
+    class TestPerson(unittest.TestCase):
+
+        first_name = a_random_name()
+        year_of_birth = a_random_year()
+
+        ...
+
+  then reference them in the tests
+
+  .. code-block:: python
+
+    def test_person_factory_w_keyword_arguments(self):
+        first_name = self.first_name
+        last_name = random.choice((
+            'doe', 'smith', 'blow', 'public'
+        ))
+        sex = random.choice(('F', 'M'))
+        year_of_birth = self.year_of_birth
+
+        ...
+
+    def test_person_factory_w_default_keyword_arguments(self):
+        first_name = self.first_name
+        year_of_birth = self.year_of_birth
+
+  the terminal still shows green
+
+* I can also remove the variables since they are now :ref:`class<classes>` attributes
+
+  .. code-block:: python
+
+    def test_person_factory_w_keyword_arguments(self):
+        last_name = random.choice((
+            'doe', 'smith', 'blow', 'public'
+        ))
+        sex = random.choice(('F', 'M'))
+
+        self.assertEqual(
+            src.person.factory(
+                first_name=self.first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=self.year_of_birth
+            ),
+            dict(
+                first_name=self.first_name,
+                last_name=last_name,
+                sex=sex,
+                age=this_year()-self.year_of_birth,
+            )
+        )
+
+    def test_person_factory_w_default_keyword_arguments(self):
+        self.assertEqual(
+            src.person.factory(
+                first_name=self.first_name,
+                year_of_birth=self.year_of_birth
+            ),
+            dict(
+                first_name=self.first_name,
+                last_name='doe',
+                sex='M',
+                age=this_year()-self.year_of_birth,
+            )
+        )
+
+  and the tests are still passing
+
 ----
 
 *********************************************************************************
