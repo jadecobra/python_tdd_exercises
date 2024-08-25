@@ -8,22 +8,14 @@ def this_year():
     return datetime.datetime.now().year
 
 
-def a_random_year():
-    return random.randint(
-        this_year()-120, this_year()
-    )
-
-
-def a_random_name():
-    return random.choice((
-        'jane', 'john', 'joe', 'person'
-    ))
-
-
 class TestPerson(unittest.TestCase):
 
-    first_name = a_random_name()
-    year_of_birth = a_random_year()
+    first_name = random.choice((
+        'jane', 'joe', 'john', 'person'
+    ))
+    year_of_birth = random.randint(
+        this_year()-120, this_year()
+    )
 
     def test_person_factory_w_keyword_arguments(self):
         last_name = random.choice((

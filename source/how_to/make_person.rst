@@ -1001,92 +1001,19 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* I have duplication for ``first_name`` that I can remove with a :ref:`function<functions>`
-
-  .. code-block:: python
-
-    ...
-    import unittest
-
-
-    def this_year():
-    ...
-
-
-    def a_random_name():
-        return random.choice((
-            'john', 'joe', 'jane', 'person'
-        ))
-
-
-    ...
-
-  then add calls to it in both tests
-
-  .. code-block:: python
-
-    def test_person_factory_w_keyword_arguments(self):
-        first_name = a_random_name()
-        ...
-
-    def test_person_factory_w_default_keyword_arguments(self):
-        first_name = a_random_name()
-        ...
-
-  the terminal still shows passing tests
-
-* I add a :ref:`function<functions>` to remove the duplication of the ``year_of_birth``
-
-  .. code-block:: python
-
-    ...
-    def this_year():
-        ...
-
-
-    def a_random_name():
-        return random.choice((
-            'john', 'joe', 'jane', 'person'
-        ))
-
-
-    def a_random_year():
-        return random.randint(
-            this_year()-120, this_year()
-        )
-
-
-    ...
-
-  then add calls to the :ref:`function<functions>`
-
-  .. code-block:: python
-
-    def test_person_factory_w_keyword_arguments(self):
-        first_name = a_random_name()
-        last_name = random.choice((
-            'doe', 'smith', 'blow', 'public'
-        ))
-        sex = random.choice(('F', 'M'))
-        year_of_birth = a_random_year()
-        ...
-
-    def test_person_factory_w_default_keyword_arguments(self):
-        first_name = a_random_name()
-        year_of_birth = a_random_year()
-        ...
-
-  and all tests are still passing
-
-* I could also add class variables to remove the repetition of the calls to the new :ref:`functions`
+* I have duplication for ``first_name`` that I can remove with :ref:`class<classes>` attributes
 
   .. code-block:: python
 
     ...
     class TestPerson(unittest.TestCase):
 
-        first_name = a_random_name()
-        year_of_birth = a_random_year()
+        first_name = random.choice((
+            'jane', 'joe', 'john', 'person'
+        ))
+        year_of_birth = random.randint(
+            this_year()-120, this_year()
+        )
 
         ...
 
@@ -1110,7 +1037,7 @@ refactor: make it better
 
   the terminal still shows green
 
-* I can also remove the variables since they are now :ref:`class<classes>` attributes
+* and I remove the variables because they are no longer needed
 
   .. code-block:: python
 
@@ -1149,7 +1076,7 @@ refactor: make it better
             )
         )
 
-  and the tests are still passing
+  all tests are still passing
 
 ----
 
