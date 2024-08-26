@@ -1442,7 +1442,7 @@ green: make it pass
 review
 *************************************************************************************
 
-I ran the following tests to make a :ref:`function<functions>` that takes in keyword arguments as input, has default values for when one is not given, performs an action based on an input, and returns a :doc:`dictionary </data_structures/dictionaries>` as output
+I ran the following tests to make a :ref:`function<functions>` that takes in keyword arguments as input, has default values for when  is not given, performs an action based on an input, and returns a :doc:`dictionary </data_structures/dictionaries>` as output
 
 * `test_person_factory_w_keyword_arguments`_
 * `test_person_factory_w_default_keyword_arguments`_
@@ -1455,7 +1455,7 @@ I also encountered the following :ref:`Exceptions<Exceptions>`
 * :ref:`TypeError`
 * SyntaxError_
 
-Would you like to :doc:`test that an Exception is raised</how_to/exception_handling_tests>`?
+Would you like to know :doc:`/how_to/exception_handling_tests`?
 
 ----
 
