@@ -66,7 +66,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 assertion_error
 
-  and it shows an :ref:`AssertionError` after making files and folders for the project
+  and it shows an :ref:`AssertionError` after making the folders and files for the project
 
   .. code-block:: python
 
@@ -75,8 +75,8 @@ red: make it fail
     tests/test_assertion_error.py:7: AssertionError
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_assertion_error.py:7`` with the mouse to open it
-* and change ``True`` to ``False`` to make ``test_failure`` pass
-* then change the test with a new failing test
+* then change ``True`` to ``False`` to make ``test_failure`` pass
+* and change ``test_failure``
 
   .. code-block:: python
 

@@ -21,29 +21,29 @@ test_functions_w_pass
 red: make it fail
 #################################################################################
 
-* I open a terminal to run :ref:`makePythonTdd.sh` with ``sleep_duration`` as the project name
+* I open a terminal to run :ref:`makePythonTdd.sh` with ``functions`` as the project name
 
   .. code-block:: python
 
-    ./makePythonTdd.sh sleep_duration
+    ./makePythonTdd.sh functions
 
   .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
 
     .. code-block:: python
 
-      ./makePythonTdd.ps1 sleep_duration
+      ./makePythonTdd.ps1 functions
 
-  and it shows an :ref:`AssertionError` after making files and folders for the project
+  and it shows an :ref:`AssertionError` after making the folders and files for the project
 
   .. code-block:: python
 
     E       AssertionError: True is not false
 
-    tests/test_sleep_duration.py:7: AssertionError
+    tests/test_functions.py:7: AssertionError
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_sleep_duration.py:7`` with the mouse to open it
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_functions.py:7`` with the mouse to open it
 * then change ``True`` to ``False``
-* and change the test with a new failing test
+* and change ``test_failure``
 
 .. code-block:: python
 

@@ -46,7 +46,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 type_error
 
-  and it shows an :ref:`AssertionError` after making files and folders for the project
+  and it shows an :ref:`AssertionError` after making the folders and files for the project
 
   .. code-block:: python
 
@@ -56,7 +56,7 @@ red: make it fail
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_type_error.py:7`` with the mouse to open it
 * then change ``True`` to ``False``
-* and change the test with a new failing test
+* and change ``test_failure``
 
 
   .. code-block:: python

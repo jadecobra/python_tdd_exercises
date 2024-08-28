@@ -16,7 +16,7 @@ how to pass values
 
 ----
 
-This is how to pass values from tests to programs
+I want to test passing values from tests to programs
 
 *********************************************************************************
 test_passing_a_string
@@ -37,7 +37,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 telephone
 
-  and it shows an :ref:`AssertionError` after making files and folders for the project
+  and it shows an :ref:`AssertionError` after making the folders and files for the project
 
   .. code-block:: python
 
@@ -47,7 +47,7 @@ red: make it fail
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_telephone.py:7`` with the mouse to open it
 * then change ``True`` to ``False`` to make the test pass
-* then change ``test_failure`` to ``test_passing_a_string``
+* and change ``test_failure`` to ``test_passing_a_string``
 
   .. code-block:: python
 
@@ -219,7 +219,7 @@ green: make it pass
 
   this will not work, I have to make the `return statement`_ use the input
 
-* I use an `f-string` to pass values to the string_
+* I use an `f-string`_ to pass values to the string_
 
   .. code-block:: python
 
@@ -706,7 +706,7 @@ green: make it pass
 
   they expect the message to have the input as part of the output
 
-* I remove the first `return statement`_ then make the second one use an `f-string`
+* I remove the first `return statement`_ then make the second one use an `f-string`_
 
   .. code-block:: python
 
