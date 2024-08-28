@@ -6,11 +6,11 @@ class TestTelephone(unittest.TestCase):
 
     def test_passing_a_string(self):
         self.assertEqual(
-            src.telephone.text('hello'),
+            src.telephone.text("hello"),
             "I received this message: hello"
         )
         self.assertEqual(
-            src.telephone.text('yes'),
+            src.telephone.text("yes"),
             "I received this message: yes"
         )
 
@@ -20,7 +20,7 @@ class TestTelephone(unittest.TestCase):
             "I received this message: <class 'object'>"
         )
 
-    def test_passing_None(self):
+    def test_passing_none(self):
         self.assertEqual(
             src.telephone.text(None),
             "I received this message: None"
@@ -50,13 +50,13 @@ class TestTelephone(unittest.TestCase):
 
     def test_passing_a_tuple(self):
         self.assertEqual(
-            src.telephone.text((1, 2, 3, 'n')),
+            src.telephone.text((1, 2, 3, "n")),
             "I received this message: (1, 2, 3, 'n')"
         )
 
     def test_passing_a_list(self):
         self.assertEqual(
-            src.telephone.text([1, 2, 3, 'n']),
+            src.telephone.text([1, 2, 3, "n"]),
             "I received this message: [1, 2, 3, 'n']"
         )
 

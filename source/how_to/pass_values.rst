@@ -55,12 +55,12 @@ red: make it fail
 
         def test_passing_a_string(self):
             self.assertEqual(
-                src.telephone.text('hello'),
+                src.telephone.text("hello"),
                 "I received this message: hello"
             )
 
   - the assertEqual_ :ref:`method<functions>` from the `unittest.TestCase`_ :ref:`class<classes>` checks if its 2 inputs are equal. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
-  - the explanation I like from the ones I have seen is that one of them is ``reality`` and the other is my ``expectation``. In this case, reality is the call ``src.telephone.text('hello')``, and my expectation is ``"I received this message: hello"``
+  - the explanation I like from the ones I have seen is that one of them is ``reality`` and the other is my ``expectation``. In this case, reality is the call ``src.telephone.text("hello")``, and my expectation is ``"I received this message: hello"``
 
   but I get a NameError_
 
@@ -186,11 +186,11 @@ I add a new assertion to ``test_passing_a_string``
 
   def test_passing_a_string(self):
       self.assertEqual(
-          src.telephone.text('hello'),
+          src.telephone.text("hello"),
           "I received this message: hello"
       )
       self.assertEqual(
-          src.telephone.text('yes'),
+          src.telephone.text("yes"),
           "I received this message: yes"
       )
 
@@ -303,7 +303,7 @@ when I change the name of the :ref:`class<classes>` to match
 the test passes
 
 *********************************************************************************
-test_passing_None
+test_passing_none
 *********************************************************************************
 
 red: make it fail
@@ -313,7 +313,7 @@ I add a new failing test for :ref:`None`
 
 .. code-block:: python
 
-  def test_passing_None(self):
+  def test_passing_none(self):
       self.assertEqual(
           src.telephone.text(None),
           "I received this message: 'None'"
@@ -494,7 +494,7 @@ I add a test for a tuple_
 
   def test_passing_a_tuple(self):
       self.assertEqual(
-          src.telephone.text((1, 2, 3, 'n')),
+          src.telephone.text((1, 2, 3, "n")),
           "I received this message: '(1, 2, 3, n)'"
       )
 
@@ -513,7 +513,7 @@ I make the expectation match reality
 
   def test_passing_a_tuple(self):
       self.assertEqual(
-          src.telephone.text((1, 2, 3, 'n')),
+          src.telephone.text((1, 2, 3, "n")),
           "I received this message: (1, 2, 3, 'n')"
       )
 
@@ -532,7 +532,7 @@ I add a test for a :doc:`list </data_structures/lists/lists>`
 
   def test_passing_a_list(self):
       self.assertEqual(
-          src.telephone.text([1, 2, 3, 'n']),
+          src.telephone.text([1, 2, 3, "n"]),
           "I received this message: '[1, 2, 3, n]'"
       )
 
@@ -551,7 +551,7 @@ I change the expectation to match reality
 
   def test_passing_a_list(self):
       self.assertEqual(
-          src.telephone.text([1, 2, 3, 'n']),
+          src.telephone.text([1, 2, 3, "n"]),
           "I received this message: [1, 2, 3, 'n']"
       )
 
@@ -667,20 +667,20 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: None != 'I received this message: 1234'
+    AssertionError: None != 'I received this message: None'
 
 * I copy the string_ from the terminal, paste it in the `return statement`_ to match the expectation
 
   .. code-block:: python
 
     def text(argument):
-        return 'I received this message: 1234'
+        return 'I received this message: None'
 
   and get another :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: 'I received this message: 1234' != "I received this message: (1, 2, 3, 'n')"
+    AssertionError: 'I received this message: None' != 'I received this message: 1234'
 
 * I add a `return statement`_ to see the difference between the input and the expected output
 
@@ -688,21 +688,21 @@ green: make it pass
 
     def text(argument):
         return argument
-        return 'I received this message: 1234'
+        return 'I received this message: None'
 
   the test summary info shows an :ref:`AssertionError` for each test
 
   .. code-block:: python
 
-    AssertionError: None != 'I received this message: None'
     AssertionError: True != 'I received this message: True'
     AssertionError: <class 'object'> != "I received this message: <class 'object'>"
     AssertionError: {'key1': 'value1', 'keyN': 'valueN'} != "I received this message: {'key1': 'value1', 'keyN': 'v...
     AssertionError: 1.234 != 'I received this message: 1.234'
     AssertionError: [1, 2, 3, 'n'] != "I received this message: [1, 2, 3, 'n']"
-    AssertionError: 'hello' != 'I received this message: hello'
+    AssertionError: "hello" != 'I received this message: hello'
     AssertionError: (1, 2, 3, 'n') != "I received this message: (1, 2, 3, 'n')"
     AssertionError: 1234 != 'I received this message: 1234'
+    AssertionError: None != 'I received this message: None'
 
   they expect the message to have the input as part of the output
 
@@ -725,7 +725,7 @@ I ran the following tests to see what happens when I pass Python :doc:`/data_str
 
 * `test_passing_a_string`_
 * `test_passing_a_class`_
-* `test_passing_None`_
+* `test_passing_none`_
 * `test_passing_a_boolean`_
 * `test_passing_an_integer`_
 * `test_passing_a_float`_
