@@ -59,10 +59,7 @@ red: make it fail
                 "I received this message: hello"
             )
 
-  - the assertEqual_ :ref:`method<functions>` from the `unittest.TestCase`_ :ref:`class<classes>` checks if its 2 inputs are equal. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
-  - the explanation I like from the ones I have seen is that one of them is ``reality`` and the other is my ``expectation``. In this case, reality is the call ``src.telephone.text("hello")``, and my expectation is ``"I received this message: hello"``
-
-  but I get a NameError_
+  I get a NameError_
 
   .. code-block:: python
 
@@ -107,25 +104,27 @@ green: make it pass
 
     text
 
-  the terminal shows a NameError_
+  and the terminal shows a NameError_
 
   .. code-block:: python
 
     NameError: name 'text' is not defined
 
-* and I assign ``text`` to :ref:`None`
+* then I assign ``text`` to :ref:`None`
 
   .. code-block:: python
 
     text = None
 
-  which gives me a :ref:`TypeError` because :ref:`None` is not callable_ and ``text`` is currently :ref:`None`
+  which gives me a :ref:`TypeError`
 
   .. code-block:: python
 
     TypeError: 'NoneType' object is not callable
 
-* I add it to the list of :ref:`Exceptions<Exceptions>` encountered
+  ``text`` is currently :ref:`None` and :ref:`None` is not callable_
+
+* I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
@@ -135,7 +134,7 @@ green: make it pass
     # AttributeError
     # TypeError
 
-* then make ``text`` a :ref:`function<functions>` for it to be callable_
+* then make ``text`` a :ref:`function<functions>` to make it callable_
 
   .. code-block:: python
 
@@ -148,7 +147,7 @@ green: make it pass
 
     TypeError: text() takes 0 positional arguments but 1 was given
 
-  ``src.telephone.text`` was given input when called in the test but the definition of the :ref:`function<functions>` does not allow it take input
+  ``src.telephone.text`` was called with input in the test but the definition of the :ref:`function<functions>` does not allow it take input
 
 * I make it take a value
 
@@ -195,7 +194,7 @@ I add a new assertion to ``test_passing_a_string``
       )
 
 
-the terminal shows an :ref:`AssertionError`
+which gives me an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -204,20 +203,20 @@ the terminal shows an :ref:`AssertionError`
 green: make it pass
 ---------------------------------------------------------------------------------
 
-* I make the `return statement`_ match the expectation
+* when I make the `return statement`_ match the expectation
 
   .. code-block:: python
 
     def text(value):
         return 'I received this message: yes'
 
-  and get an :ref:`AssertionError` for the previous assertion
+  I get an :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: 'I received this message: yes' != 'I received this message: hello'
 
-  this will not work, I have to make the `return statement`_ use the input
+  for the previous assertion. This will not work, I have to make the `return statement`_ use the input
 
 * I use an `f-string`_ to pass values to the string_
 
@@ -230,7 +229,7 @@ green: make it pass
 
 ----
 
-I want to try this with other Python :doc:`/data_structures/data_structures` to see what happens
+I want to see what happens when I do this this with other Python :doc:`/data_structures/data_structures`
 
 *********************************************************************************
 test_passing_a_class
