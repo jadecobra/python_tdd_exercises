@@ -116,13 +116,13 @@ green: make it pass
 
     text = None
 
-  which gives me a :ref:`TypeError`
+  and get a :ref:`TypeError`
 
   .. code-block:: python
 
     TypeError: 'NoneType' object is not callable
 
-  ``text`` is currently :ref:`None` and :ref:`None` is not callable_
+  ``text`` is currently :ref:`None` which is not callable_
 
 * I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
 
@@ -147,7 +147,7 @@ green: make it pass
 
     TypeError: text() takes 0 positional arguments but 1 was given
 
-  ``src.telephone.text`` was called with input in the test but the definition of the :ref:`function<functions>` does not allow it take input
+  ``src.telephone.text`` was called with input but the definition of the :ref:`function<functions>` does not allow it take input
 
 * I make it take a value
 
@@ -174,7 +174,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-The problem with this solution is that the ``text`` :ref:`function<functions>` will always return ``'I received this message: hello'``, it does not care what input it gets, it is a :doc:`singleton function </functions/test_singleton_functions>`. I want to make it return the value it receives as part of the message
+The problem with this solution is that the ``text`` :ref:`function<functions>` will always return ``'I received this message: hello'``, it does not care about the input, it is a :doc:`singleton function </functions/test_singleton_functions>`. I want it to return the value it receives as part of the message
 
 red: make it fail
 ---------------------------------------------------------------------------------
@@ -192,7 +192,6 @@ I add a new assertion to ``test_passing_a_string``
           src.telephone.text("yes"),
           "I received this message: yes"
       )
-
 
 which gives me an :ref:`AssertionError`
 
@@ -218,7 +217,7 @@ green: make it pass
 
   for the previous assertion. This will not work, I have to make the `return statement`_ use the input
 
-* I use an `f-string`_ to pass values to the string_
+* I use an `f-string`_ to add values to the string_
 
   .. code-block:: python
 
@@ -396,7 +395,7 @@ green: make it pass
 
     AssertionError: "I received this message: False" != "I received this message: 'False'"
 
-* I change the expectation
+* when I change the expectation
 
   .. code-block:: python
 
@@ -405,7 +404,7 @@ green: make it pass
         "I received this message: False"
     )
 
-  and the test passes
+  the test passes
 
 *********************************************************************************
 test_passing_an_integer
@@ -585,7 +584,7 @@ the terminal shows an :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I make the expectation match reality
+when I make the expectation match reality
 
 .. code-block:: python
 
@@ -595,7 +594,7 @@ I make the expectation match reality
           "I received this message: {'key1': 'value1', 'keyN': 'valueN'}"
       )
 
-and the terminal shows all tests are passing
+the terminal shows all tests are passing
 
 ----
 
@@ -655,7 +654,7 @@ green: make it pass
 
     TypeError: text() takes 0 positional arguments but 1 was given
 
-  I add a positional argument to the :ref:`function's'<functions>` signature
+  I add a positional argument to the :ref:`function's<functions>` signature
 
   .. code-block: python
 
@@ -703,7 +702,7 @@ green: make it pass
     AssertionError: 1234 != 'I received this message: 1234'
     AssertionError: None != 'I received this message: None'
 
-  they expect the message to have the input as part of the output
+  the tests expect the input as part of the message
 
 * I remove the first `return statement`_ then make the second one use an `f-string`_
 
@@ -720,7 +719,7 @@ green: make it pass
 review
 *********************************************************************************
 
-I ran the following tests to see what happens when I pass Python :doc:`/data_structures/data_structures` from a test to a program and place the values in an `f-string_`
+I ran the following tests to see what happens when I pass Python :doc:`/data_structures/data_structures` from a test to a program and place them in an `f-string`_
 
 * `test_passing_a_string`_
 * `test_passing_a_class`_
