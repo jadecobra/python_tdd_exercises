@@ -116,7 +116,6 @@ red: make it fail
 
     NameError: name 'module' is not defined
 
-  A NameError_ is raised when a name is used within a :ref:`module<ModuleNotFoundError>` with no definition for the name. I call ``module.non_existent_attribute`` in the test and there is no definition for ``module``
 * I add it to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
@@ -126,7 +125,7 @@ red: make it fail
     # ModuleNotFoundError
     # NameError
 
-* I add an `import statement`_ for ``module`` at the top of ``test_exceptions.py``
+* I add an `import statement`_
 
   .. code-block:: python
 
@@ -139,7 +138,7 @@ red: make it fail
 
     ModuleNotFoundError: No module named 'module'
 
-* I make a file named ``module.py`` in the project folder and the terminal shows an :ref:`AttributeError` because the called attribute ``non_existent_attribute`` does not exist in ``module.py`` ::
+* I make a file named ``module.py`` in the project folder and the terminal shows an :ref:`AttributeError` because ``non_existent_attribute`` does not exist in ``module.py`` ::
 
     AttributeError: module 'module' has no attribute 'non_existent_attribute'
 
@@ -156,7 +155,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-I add a ``with self.assertRaises`` context to ``test_catching_attribute_errors_in_tests``
+I add a call to the `unittest.TestCase.assertRaises`_ :ref:`method<functions>`
 
 .. code-block:: python
 
@@ -172,7 +171,7 @@ refactor: make it better
 red: make it fail
 ---------------------------------------------------------------------------------
 
-I do it again with :ref:`functions<functions>` for fun by adding a failing line that raises an :ref:`AttributeError` to ``test_catching_attribute_errors_in_tests``
+For fun I do it again with a :ref:`function<functions>` that does not exist
 
 .. code-block:: python
 
@@ -181,7 +180,7 @@ I do it again with :ref:`functions<functions>` for fun by adding a failing line 
           module.non_existent_attribute
       module.non_existent_function()
 
-the terminal shows an :ref:`AttributeError` because ``non_existent_function`` does not exist in ``module.py``
+the terminal shows an :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -190,7 +189,7 @@ the terminal shows an :ref:`AttributeError` because ``non_existent_function`` do
 green: make it pass
 ---------------------------------------------------------------------------------
 
-I add an ``assertRaises`` context and indent the failing line to place it within the context to make the test pass
+I add an `unittest.TestCase.assertRaises`_ :ref:`method<functions>` and indent the failing line to place it within the context to make the test pass
 
 .. code-block:: python
 
@@ -223,7 +222,7 @@ the terminal shows an :ref:`AttributeError`
 green: make it pass
 ---------------------------------------------------------------------------------
 
-I put the failing line in an ``assertRaises`` context to make the test pass
+I place the failing line in a `unittest.TestCase.assertRaises`_ context to make the test pass
 
 .. code-block:: python
 
@@ -238,7 +237,7 @@ I put the failing line in an ``assertRaises`` context to make the test pass
 refactor: make it better
 ---------------------------------------------------------------------------------
 
-I just made the same context 3 times. The ``self.assertRaises`` catches an :ref:`AttributeError` in each case. I only need to state it once and place all the lines that can raise the same error underneath it to remove the repetition
+I just made the same context 3 times. The `unittest.TestCase.assertRaises`_ :ref:`method<functions>` catches an :ref:`AttributeError` in each case. I only need to state it once and place all the lines that can raise the same error underneath it to remove the repetition
 
 .. code-block:: python
 
