@@ -92,12 +92,6 @@ green: make it pass
 
   and the terminal shows passing tests
 
-  - ``with`` - makes the context where I test that the exception is raised
-
-    * `read more about the with statement <https://docs.python.org/3/reference/compound_stmts.html?highlight=statement#the-with-statement>`_
-    * `read more about with statement context managers <https://docs.python.org/3/reference/datamodel.html#with-statement-context-managers>`_
-    * `read PEP 343 - The "with" Statement <https://peps.python.org/pep-0343/>`_
-
 ----
 
 .. _test_catching_attribute_errors_in_tests:
