@@ -767,7 +767,7 @@ I  want to use random values to test the ``factory`` :ref:`function<functions>` 
     def test_person_factory_w_keyword_arguments(self):
         first_name = 'jane'
         last_name = random.choice((
-            'doe', 'smith', 'blow', 'public'
+            'doe', 'smith', 'blow', 'public',
         ))
         sex = random.choice(('F', 'M'))
         year_of_birth = random.randint(
@@ -807,10 +807,10 @@ I  want to use random values to test the ``factory`` :ref:`function<functions>` 
 
     def test_person_factory_w_keyword_arguments(self):
         first_name = random.choice((
-            'jane', 'joe', 'john', 'person'
+            'jane', 'joe', 'john', 'person',
         ))
         last_name = random.choice((
-            'doe', 'smith', 'blow', 'public'
+            'doe', 'smith', 'blow', 'public',
         ))
         sex = random.choice(('F', 'M'))
         year_of_birth = random.randint(
@@ -862,7 +862,7 @@ red: make it fail
 
     def test_person_factory_w_default_keyword_arguments(self):
         first_name = random.choice((
-            'john', 'joe', 'jane', 'person'
+            'john', 'joe', 'jane', 'person',
         ))
         sex = "M"
         year_of_birth = random.randint(
@@ -958,7 +958,7 @@ green: make it pass
 
     def test_person_factory_w_default_keyword_arguments(self):
         first_name = random.choice((
-            'john', 'joe', 'jane', 'person'
+            'john', 'joe', 'jane', 'person',
         ))
         year_of_birth = random.randint(
             this_year()-120, this_year()
@@ -1009,7 +1009,7 @@ refactor: make it better
     class TestPerson(unittest.TestCase):
 
         first_name = random.choice((
-            'jane', 'joe', 'john', 'person'
+            'jane', 'joe', 'john', 'person',
         ))
         year_of_birth = random.randint(
             this_year()-120, this_year()
@@ -1024,7 +1024,7 @@ refactor: make it better
     def test_person_factory_w_keyword_arguments(self):
         first_name = self.first_name
         last_name = random.choice((
-            'doe', 'smith', 'blow', 'public'
+            'doe', 'smith', 'blow', 'public',
         ))
         sex = random.choice(('F', 'M'))
         year_of_birth = self.year_of_birth
@@ -1043,7 +1043,7 @@ refactor: make it better
 
     def test_person_factory_w_keyword_arguments(self):
         last_name = random.choice((
-            'doe', 'smith', 'blow', 'public'
+            'doe', 'smith', 'blow', 'public',
         ))
         sex = random.choice(('F', 'M'))
 
