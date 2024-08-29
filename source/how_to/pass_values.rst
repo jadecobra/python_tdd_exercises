@@ -16,7 +16,7 @@ how to pass values
 
 ----
 
-I want to test passing values from tests to programs
+I want to test passing values to programs
 
 *********************************************************************************
 test_passing_a_string
@@ -162,14 +162,14 @@ green: make it pass
 
     AssertionError: None != 'I received: hello'
 
-* I copy the string_ from the terminal then paste it in the `return statement`_ to replace :ref:`None`
+* I copy the string_ from the terminal, paste it in the `return statement`_ to replace :ref:`None`
 
   .. code-block:: python
 
     def text(value):
         return 'I received: hello'
 
-  and the test passes
+  and the test passes!
 
 refactor: make it better
 #################################################################################
@@ -298,7 +298,7 @@ when I change the name of the :ref:`class<classes>` to match
         "I received: <class 'tests.test_telephone.TestTelephone'>"
     )
 
-the test passes
+the test passes.
 
 *********************************************************************************
 test_passing_none
@@ -326,7 +326,7 @@ and the terminal shows an :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I change the expectation to match reality
+I remove the quotes from around :ref:`None` in the expectation to match reality
 
 .. code-block:: python
 
@@ -335,7 +335,7 @@ I change the expectation to match reality
       "I received: None"
   )
 
-and the test passes
+and the test passes.
 
 *********************************************************************************
 test_passing_a_boolean
@@ -404,7 +404,7 @@ green: make it pass
         "I received: False"
     )
 
-  the test passes
+  the test passes.
 
 *********************************************************************************
 test_passing_an_integer
@@ -467,7 +467,7 @@ and get an :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I remove the quotes from the expectation
+I remove the quotes from the number
 
 .. code-block:: python
 
@@ -575,7 +575,7 @@ finally, I add a test for a :doc:`dictionary </data_structures/dictionaries>`
           "I received: '{key1: value1, keyN: valueN}'"
       )
 
-the terminal shows an :ref:`AssertionError`
+and the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -594,7 +594,7 @@ when I make the expectation match reality
           "I received: {'key1': 'value1', 'keyN': 'valueN'}"
       )
 
-the terminal shows all tests are passing
+the terminal shows all tests are passing.
 
 ----
 
@@ -602,7 +602,7 @@ the terminal shows all tests are passing
 test_telephone
 *********************************************************************************
 
-time to write the program that makes the tests in ``test_telephone.py`` pass without looking at it
+Time to write the program that makes the tests in ``test_telephone.py`` pass without looking at them
 
 red: make it fail
 #################################################################################
