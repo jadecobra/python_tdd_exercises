@@ -56,7 +56,7 @@ red: make it fail
         def test_passing_a_string(self):
             self.assertEqual(
                 src.telephone.text("hello"),
-                "I received this message: hello"
+                "I received: hello"
             )
 
   I get a NameError_
@@ -160,21 +160,21 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: None != 'I received this message: hello'
+    AssertionError: None != 'I received: hello'
 
 * I copy the string_ from the terminal then paste it in the `return statement`_ to replace :ref:`None`
 
   .. code-block:: python
 
     def text(value):
-        return 'I received this message: hello'
+        return 'I received: hello'
 
   and the test passes
 
 refactor: make it better
 #################################################################################
 
-The problem with this solution is that the ``text`` :ref:`function<functions>` will always return ``'I received this message: hello'``, it does not care about the input, it is a :doc:`singleton function </functions/test_singleton_functions>`. I want it to return the value it receives as part of the message
+The problem with this solution is that the ``text`` :ref:`function<functions>` will always return ``'I received: hello'``, it does not care about the input, it is a :doc:`singleton function </functions/test_singleton_functions>`. I want it to return the value it receives as part of the message
 
 red: make it fail
 ---------------------------------------------------------------------------------
@@ -186,18 +186,18 @@ I add a new assertion to ``test_passing_a_string``
   def test_passing_a_string(self):
       self.assertEqual(
           src.telephone.text("hello"),
-          "I received this message: hello"
+          "I received: hello"
       )
       self.assertEqual(
           src.telephone.text("yes"),
-          "I received this message: yes"
+          "I received: yes"
       )
 
 which gives me an :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: 'I received this message: hello' != 'I received this message: yes'
+  AssertionError: 'I received: hello' != 'I received: yes'
 
 green: make it pass
 ---------------------------------------------------------------------------------
@@ -207,13 +207,13 @@ green: make it pass
   .. code-block:: python
 
     def text(value):
-        return 'I received this message: yes'
+        return 'I received: yes'
 
   I get an :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: 'I received this message: yes' != 'I received this message: hello'
+    AssertionError: 'I received: yes' != 'I received: hello'
 
   for the previous assertion. This will not work, I have to make the `return statement`_ use the input
 
@@ -222,7 +222,7 @@ green: make it pass
   .. code-block:: python
 
     def text(value):
-        return f'I received this message: {value}'
+        return f'I received: {value}'
 
   and the terminal shows a passing test. This is called `string interpolation`_
 
@@ -244,14 +244,14 @@ I add a failing test for a :ref:`class <classes>`
   def test_passing_a_class(self):
       self.assertEqual(
           src.telephone.text(object),
-          "I received this message: object"
+          "I received: object"
       )
 
 the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: "I received this message: <class 'object'>" != 'I received this message: object'
+  AssertionError: "I received: <class 'object'>" != 'I received: object'
 
 green: make it pass
 #################################################################################
@@ -263,7 +263,7 @@ I make the expectation match reality and the test passes
   def test_passing_a_class(self):
       self.assertEqual(
           src.telephone.text(object),
-          "I received this message: <class 'object'>"
+          "I received: <class 'object'>"
       )
 
 refactor: make it better
@@ -276,18 +276,18 @@ I add another assertion with a different :ref:`class<classes>` name
   def test_passing_a_class(self):
       self.assertEqual(
           src.telephone.text(TestTelephone),
-          "I received this message: <class 'object'>"
+          "I received: <class 'object'>"
       )
       self.assertEqual(
           src.telephone.text(TestTelephone),
-          "I received this message: <class 'object'>"
+          "I received: <class 'object'>"
       )
 
 which gives me an :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: "I received this message: <class 'tests.test_telephone.TestTelephone'>" != "I received this message: <class 'object'>"
+  AssertionError: "I received: <class 'tests.test_telephone.TestTelephone'>" != "I received: <class 'object'>"
 
 when I change the name of the :ref:`class<classes>` to match
 
@@ -295,7 +295,7 @@ when I change the name of the :ref:`class<classes>` to match
 
     self.assertEqual(
         src.telephone.text(TestTelephone),
-        "I received this message: <class 'tests.test_telephone.TestTelephone'>"
+        "I received: <class 'tests.test_telephone.TestTelephone'>"
     )
 
 the test passes
@@ -314,14 +314,14 @@ I add a new failing test for :ref:`None`
   def test_passing_none(self):
       self.assertEqual(
           src.telephone.text(None),
-          "I received this message: 'None'"
+          "I received: 'None'"
       )
 
 and the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: 'I received this message: None' != "I received this message: 'None'"
+  AssertionError: 'I received: None' != "I received: 'None'"
 
 green: make it pass
 #################################################################################
@@ -332,7 +332,7 @@ I change the expectation to match reality
 
   self.assertEqual(
       src.telephone.text(None),
-      "I received this message: None"
+      "I received: None"
   )
 
 and the test passes
@@ -351,14 +351,14 @@ I add a test for :ref:`booleans`, first with an assertion for :ref:`True <test_w
   def test_passing_a_boolean(self):
       self.assertEqual(
           src.telephone.text(True),
-          "I received this message: 'True'"
+          "I received: 'True'"
       )
 
 the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: "I received this message: True" != "I received this message: 'True'"
+  AssertionError: "I received: True" != "I received: 'True'"
 
 green: make it pass
 #################################################################################
@@ -370,7 +370,7 @@ green: make it pass
     def test_passing_a_boolean(self):
         self.assertEqual(
             src.telephone.text(True),
-            "I received this message: True"
+            "I received: True"
         )
 
   and the test passes
@@ -382,18 +382,18 @@ green: make it pass
     def test_passing_a_boolean(self):
         self.assertEqual(
             src.telephone.text(True),
-            "I received this message: True"
+            "I received: True"
         )
         self.assertEqual(
             src.telephone.text(False),
-            "I received this message: 'False'"
+            "I received: 'False'"
         )
 
   which gives me an :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: "I received this message: False" != "I received this message: 'False'"
+    AssertionError: "I received: False" != "I received: 'False'"
 
 * when I change the expectation
 
@@ -401,7 +401,7 @@ green: make it pass
 
     self.assertEqual(
         src.telephone.text(False),
-        "I received this message: False"
+        "I received: False"
     )
 
   the test passes
@@ -417,14 +417,14 @@ I also add a test for an integer_
   def test_passing_an_integer(self):
       self.assertEqual(
           src.telephone.text(1234),
-          "I received this message: '1234'"
+          "I received: '1234'"
       )
 
 and the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: 'I received this message: 1234' != "I received this message: '1234'"
+  AssertionError: 'I received: 1234' != "I received: '1234'"
 
 green: make it pass
 #################################################################################
@@ -436,7 +436,7 @@ I remove the quotes from the expectation
   def test_passing_an_integer(self):
       self.assertEqual(
           src.telephone.text(1234),
-          "I received this message: 1234"
+          "I received: 1234"
       )
 
 and the terminal shows a passing test
@@ -455,14 +455,14 @@ I add a test for a float_
   def test_passing_a_float(self):
       self.assertEqual(
           src.telephone.text(1.234),
-          "I received this message: '1.234'"
+          "I received: '1.234'"
       )
 
 and get an :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: 'I received this message: 1.234' != "I received this message: '1.234'"
+  AssertionError: 'I received: 1.234' != "I received: '1.234'"
 
 green: make it pass
 #################################################################################
@@ -474,7 +474,7 @@ I remove the quotes from the expectation
   def test_passing_a_float(self):
       self.assertEqual(
           src.telephone.text(1.234),
-          "I received this message: 1.234"
+          "I received: 1.234"
       )
 
 and the test passes
@@ -493,14 +493,14 @@ I add a test for a tuple_
   def test_passing_a_tuple(self):
       self.assertEqual(
           src.telephone.text((1, 2, 3, "n")),
-          "I received this message: '(1, 2, 3, n)'"
+          "I received: '(1, 2, 3, n)'"
       )
 
 which gives me an :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: "I received this message: (1, 2, 3, 'n')" != "I received this message: '(1, 2, 3, n)'"
+  AssertionError: "I received: (1, 2, 3, 'n')" != "I received: '(1, 2, 3, n)'"
 
 green: make it pass
 #################################################################################
@@ -512,7 +512,7 @@ I make the expectation match reality
   def test_passing_a_tuple(self):
       self.assertEqual(
           src.telephone.text((1, 2, 3, "n")),
-          "I received this message: (1, 2, 3, 'n')"
+          "I received: (1, 2, 3, 'n')"
       )
 
 and the terminal shows green
@@ -531,14 +531,14 @@ I add a test for a :doc:`list </data_structures/lists/lists>`
   def test_passing_a_list(self):
       self.assertEqual(
           src.telephone.text([1, 2, 3, "n"]),
-          "I received this message: '[1, 2, 3, n]'"
+          "I received: '[1, 2, 3, n]'"
       )
 
 and get an :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: "I received this message: [1, 2, 3, 'n']" != "I received this message: '[1, 2, 3, n]'"
+  AssertionError: "I received: [1, 2, 3, 'n']" != "I received: '[1, 2, 3, n]'"
 
 green: make it pass
 #################################################################################
@@ -550,7 +550,7 @@ I change the expectation to match reality
   def test_passing_a_list(self):
       self.assertEqual(
           src.telephone.text([1, 2, 3, "n"]),
-          "I received this message: [1, 2, 3, 'n']"
+          "I received: [1, 2, 3, 'n']"
       )
 
 and the terminal shows passing tests
@@ -572,14 +572,14 @@ finally, I add a test for a :doc:`dictionary </data_structures/dictionaries>`
               "key1": "value1",
               "keyN": "valueN"
           }),
-          "I received this message: '{key1: value1, keyN: valueN}'"
+          "I received: '{key1: value1, keyN: valueN}'"
       )
 
 the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: "I received this message: {'key1': 'value1', 'keyN': 'valueN'}" != "I received this message: '{key1: value1, keyN: valueN}'"
+  AssertionError: "I received: {'key1': 'value1', 'keyN': 'valueN'}" != "I received: '{key1: value1, keyN: valueN}'"
 
 green: make it pass
 #################################################################################
@@ -591,7 +591,7 @@ when I make the expectation match reality
   def test_passing_a_dictionary(self):
       self.assertEqual(
           src.telephone.text({"key1": "value1", "keyN": "valueN"}),
-          "I received this message: {'key1': 'value1', 'keyN': 'valueN'}"
+          "I received: {'key1': 'value1', 'keyN': 'valueN'}"
       )
 
 the terminal shows all tests are passing
@@ -665,20 +665,20 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: None != 'I received this message: None'
+    AssertionError: None != 'I received: None'
 
 * I copy the string_ from the terminal, paste it in the `return statement`_ to match the expectation
 
   .. code-block:: python
 
     def text(argument):
-        return 'I received this message: None'
+        return 'I received: None'
 
   and get another :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: 'I received this message: None' != 'I received this message: 1234'
+    AssertionError: 'I received: None' != 'I received: 1234'
 
 * I add a `return statement`_ to see the difference between the input and the expected output
 
@@ -686,21 +686,21 @@ green: make it pass
 
     def text(argument):
         return argument
-        return 'I received this message: None'
+        return 'I received: None'
 
   the test summary info shows an :ref:`AssertionError` for each test
 
   .. code-block:: python
 
-    AssertionError: True != 'I received this message: True'
-    AssertionError: <class 'object'> != "I received this message: <class 'object'>"
-    AssertionError: {'key1': 'value1', 'keyN': 'valueN'} != "I received this message: {'key1': 'value1', 'keyN': 'v...
-    AssertionError: 1.234 != 'I received this message: 1.234'
-    AssertionError: [1, 2, 3, 'n'] != "I received this message: [1, 2, 3, 'n']"
-    AssertionError: "hello" != 'I received this message: hello'
-    AssertionError: (1, 2, 3, 'n') != "I received this message: (1, 2, 3, 'n')"
-    AssertionError: 1234 != 'I received this message: 1234'
-    AssertionError: None != 'I received this message: None'
+    AssertionError: True != 'I received: True'
+    AssertionError: <class 'object'> != "I received: <class 'object'>"
+    AssertionError: {'key1': 'value1', 'keyN': 'valueN'} != "I received: {'key1': 'value1', 'keyN': 'v...
+    AssertionError: 1.234 != 'I received: 1.234'
+    AssertionError: [1, 2, 3, 'n'] != "I received: [1, 2, 3, 'n']"
+    AssertionError: "hello" != 'I received: hello'
+    AssertionError: (1, 2, 3, 'n') != "I received: (1, 2, 3, 'n')"
+    AssertionError: 1234 != 'I received: 1234'
+    AssertionError: None != 'I received: None'
 
   the tests expect the input as part of the message
 
@@ -709,7 +709,7 @@ green: make it pass
   .. code-block:: python
 
     def text(argument):
-        return f'I received this message: {argument}'
+        return f'I received: {argument}'
 
   and all tests pass!
 
