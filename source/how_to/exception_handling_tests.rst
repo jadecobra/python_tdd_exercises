@@ -81,8 +81,8 @@ green: make it pass
     # AssertionError
     # ModuleNotFoundError
 
-* I can take care of this error by making the module, but I want to catch or handle the exception in the test as a way to show that a ``ModuleNotFoundError`` was raised when I try to import ``non_existent_module``
-* I add a ``self.assertRaises`` to ``test_catching_module_not_found_error_in_tests``
+* I can take care of this error by making the module, but I want to catch or handle the exception in the test
+* I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` to make sure that a :ref:`ModuleNotFoundError` is raised when I try to import ``non_existent_module``
 
   .. code-block:: python
 
@@ -90,9 +90,8 @@ green: make it pass
         with self.assertRaises(ModuleNotFoundError):
             import non_existent_module
 
-  and the terminal shows passing tests. How does all this work?
+  and the terminal shows passing tests
 
-  - I use the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` which takes a given `Exception <https://docs.python.org/3/library/exceptions.html?highlight=exception#Exception>`_ as its input, in this case :ref:`ModuleNotFoundError` and checks if that error is raised by the statements given in the context below (the indented block after the ``with`` statement)
   - ``with`` - makes the context where I test that the exception is raised
 
     * `read more about the with statement <https://docs.python.org/3/reference/compound_stmts.html?highlight=statement#the-with-statement>`_
