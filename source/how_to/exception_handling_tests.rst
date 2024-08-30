@@ -512,7 +512,7 @@ the terminal shows an Exception_
 green: make it pass
 #################################################################################
 
-when I add a `unittest.TestCase.assertRaises`_ :ref:`method<functiosn>` to the test
+when I add a `unittest.TestCase.assertRaises`_ :ref:`method<functions>` to the test
 
 .. code-block:: python
 
