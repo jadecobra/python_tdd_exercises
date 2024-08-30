@@ -247,15 +247,270 @@ I just made the same context 3 times. The `unittest.TestCase.assertRaises`_ :ref
           module.non_existent_function()
           module.NonExistentClass()
 
+*********************************************************************************
+test_catching_type_error_in_tests
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+* I add a failing test for a :ref:`TypeError`
+
+  .. code-block:: python
+
+    def test_catching_type_error_in_tests(self):
+        module.function("arg1", "arg2", "arg3", "arg4")
+
+  the terminal shows an :ref:`AttributeError`
+
+  .. code-block:: python
+
+    AttributeError: module 'module' has no attribute 'function'
+
+* then add the :ref:`function<functions>` to ``module.py``
+
+  .. code-block:: python
+
+    def function(argument):
+        return None
+
+  and get a :ref:`TypeError`
+
+  .. code-block:: python
+
+    TypeError: function() takes 1 positional argument but 4 were given
+
+  the call uses 4 positional argument but it only takes 1 input
+
+* I add the exception to the list of :ref:`Exceptions<Exceptions>` encountered
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AssertionError
+    # ModuleNotFoundError
+    # NameError
+    # AttributeError
+    # TypeError
+
+green: make it pass
+#################################################################################
+
+when I add a `unittest.TestCase.assertRaises` to the test
+
+.. code-block:: python
+
+  def test_catching_type_error_in_tests(self):
+      with self.assertRaises(TypeError):
+          module.function("arg1", "arg2", "arg3", "arg4")
+
+the terminal shows passing tests
+
+*********************************************************************************
+test_catching_index_error_in_tests
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+* I add a failing test for a :ref:`TypeError`
+
+  .. code-block:: python
+
+    def test_catching_index_error_in_tests(self):
+        [1, 2, 3, 4][5]
+
+  the terminal shows an IndexError_
+
+  .. code-block:: python
+
+    IndexError: list index out of range
+
+* I add the exception to the list of :ref:`Exceptions<Exceptions>` encountered
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AssertionError
+    # ModuleNotFoundError
+    # NameError
+    # AttributeError
+    # TypeError
+    # IndexError
+
+green: make it pass
+#################################################################################
+
+I add a `unittest.TestCase.assertRaises` to the test
+
+.. code-block:: python
+
+    def test_catching_index_error_in_tests(self):
+        with self.assertRaises(IndexError):
+            [1, 2, 3, 4][5]
+
+and the terminal shows passing tests
+
+*********************************************************************************
+test_catching_index_error_in_tests
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+* I add a failing test for a :ref:`TypeError`
+
+  .. code-block:: python
+
+    def test_catching_index_error_in_tests(self):
+        [1, 2, 3, 4][5]
+
+  the terminal shows an IndexError_
+
+  .. code-block:: python
+
+    IndexError: list index out of range
+
+* I add the exception to the list of :ref:`Exceptions<Exceptions>` encountered
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AssertionError
+    # ModuleNotFoundError
+    # NameError
+    # AttributeError
+    # TypeError
+    # IndexError
+
+green: make it pass
+#################################################################################
+
+I add a `unittest.TestCase.assertRaises` to the test
+
+.. code-block:: python
+
+    def test_catching_index_error_in_tests(self):
+        with self.assertRaises(IndexError):
+            [1, 2, 3, 4][5]
+
+and the terminal shows passing tests
+
+*********************************************************************************
+test_catching_key_error_in_tests
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+* I add a failing test for a :ref:`TypeError`
+
+  .. code-block:: python
+
+    def test_catching_key_error_in_tests(self):
+        {"key": "value"}["non_existent_key"]
+
+  the terminal shows a KeyError_
+
+  .. code-block:: python
+
+    KeyError: 'non_existent_key'
+
+* I add the exception to the list of :ref:`Exceptions<Exceptions>` encountered
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AssertionError
+    # ModuleNotFoundError
+    # NameError
+    # AttributeError
+    # TypeError
+    # IndexError
+    # KeyError
+
+green: make it pass
+#################################################################################
+
+I add an `unittest.TestCase.assertRaises` context to the test
+
+.. code-block:: python
+
+    def test_catching_key_error_in_tests(self):
+        with self.assertRaises(KeyError):
+            {"key": "value"}["non_existent_key"]
+
+and the terminal shows passing tests.
+
+*********************************************************************************
+test_catching_zero_division_error_in_tests
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+* I add a failing test for a :ref:`TypeError`
+
+  .. code-block:: python
+
+    def test_catching_zero_division_error_in_tests(self):
+        1 / 0
+
+  the terminal shows an ZeroDivisionError_
+
+  .. code-block:: python
+
+    ZeroDivisionError: division by zero
+
+* I add the exception to the list of :ref:`Exceptions<Exceptions>` encountered
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AssertionError
+    # ModuleNotFoundError
+    # NameError
+    # AttributeError
+    # TypeError
+    # IndexError
+    # KeyError
+    # ZeroDivisionError
+
+green: make it pass
+#################################################################################
+
+when I add a `unittest.TestCase.assertRaises` to the test
+
+.. code-block:: python
+
+  def test_catching_zero_division_error_in_tests(self):
+      with self.assertRaises(ZeroDivisionError):
+          1 / 0
+
+the terminal shows passing tests
+
+*********************************************************************************
+review
+*********************************************************************************
+
 Fantastic! all the tests still pass and I have a way to catch exceptions that are raised in programs I am testing. I also encountered the following :ref:`Exceptions<Exceptions>`
 
 * :ref:`AssertionError`
 * :ref:`ModuleNotFoundError`
 * NameError_
 * :ref:`AttributeError`
+* :ref:`TypeError`
+* IndexError_
+* KeyError_
+* ZeroDivisionError_
 
 Would you like to look at :doc:`/how_to/exception_handling_programs`?
 
 ----
 
 :doc:`/code/code_exception_handling`
+
+# TODO
+# ZeroDivisionError
+# KeyError
+# IndexError
