@@ -189,7 +189,7 @@ the terminal shows an :ref:`AttributeError`
 green: make it pass
 ---------------------------------------------------------------------------------
 
-I add an `unittest.TestCase.assertRaises`_ :ref:`method<functions>` and indent the failing line to place it within the context to make the test pass
+I add a call to the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` and indent the failing line to place it in the context to make the test pass
 
 .. code-block:: python
 
@@ -222,7 +222,7 @@ the terminal shows an :ref:`AttributeError`
 green: make it pass
 ---------------------------------------------------------------------------------
 
-I place the failing line in a `unittest.TestCase.assertRaises`_ context to make the test pass
+I place the failing line in the `unittest.TestCase.assertRaises`_ context to make the test pass
 
 .. code-block:: python
 
@@ -296,7 +296,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-when I add a `unittest.TestCase.assertRaises` to the test
+when I add a `unittest.TestCase.assertRaises`_ to the test
 
 .. code-block:: python
 
@@ -341,7 +341,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-I add a `unittest.TestCase.assertRaises` to the test
+I add a `unittest.TestCase.assertRaises`_ to the test
 
 .. code-block:: python
 
@@ -386,7 +386,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-I add a `unittest.TestCase.assertRaises` to the test
+I add a call to `unittest.TestCase.assertRaises`_ :ref:`method<functions>` to the test
 
 .. code-block:: python
 
@@ -432,7 +432,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-I add an `unittest.TestCase.assertRaises` context to the test
+I add an `unittest.TestCase.assertRaises`_ context to the test
 
 .. code-block:: python
 
@@ -479,7 +479,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-when I add a `unittest.TestCase.assertRaises` to the test
+when I add an `unittest.TestCase.assertRaises` :ref:`method<functions>` to the test
 
 .. code-block:: python
 
@@ -490,10 +490,43 @@ when I add a `unittest.TestCase.assertRaises` to the test
 the terminal shows passing tests
 
 *********************************************************************************
+test_catching_zero_division_error_in_tests
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+I add a failing test for any :ref:`Exception<Exceptions>`
+
+.. code-block:: python
+
+  def test_catching_exceptions_in_tests(self):
+      raise Exception
+
+the terminal shows an Exception_
+
+.. code-block:: python
+
+  Exception
+
+green: make it pass
+#################################################################################
+
+when I add a `unittest.TestCase.assertRaises`_ :ref:`method<functiosn>` to the test
+
+.. code-block:: python
+
+  def test_catching_exceptions_in_tests(self):
+      with self.assertRaises(Exception):
+          raise Exception
+
+the terminal shows all tests are passing. Fantastic!
+
+*********************************************************************************
 review
 *********************************************************************************
 
-Fantastic! all the tests still pass and I have a way to catch exceptions that are raised in programs I am testing. I also encountered the following :ref:`Exceptions<Exceptions>`
+I have a way to catch :ref:`Exceptions<Exceptions>` when I am testing and encountered the following
 
 * :ref:`AssertionError`
 * :ref:`ModuleNotFoundError`
