@@ -426,7 +426,7 @@ when I add an `unittest.TestCase.assertRaises` :ref:`method<functions>` to the t
 the terminal shows passing tests
 
 *********************************************************************************
-test_catching_zero_division_error_in_tests
+test_catching_exceptions_in_tests
 *********************************************************************************
 
 red: make it fail
@@ -473,7 +473,7 @@ I have a way to catch :ref:`Exceptions<Exceptions>` when I am testing and encoun
 * KeyError_
 * ZeroDivisionError_
 
-Would you like to look at :doc:`/how_to/exception_handling_programs`?
+Would you like to test :doc:`/how_to/exception_handling_programs`?
 
 ----
 

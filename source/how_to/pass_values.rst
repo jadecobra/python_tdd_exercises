@@ -145,7 +145,7 @@ green: make it pass
 
     TypeError: text() takes 0 positional arguments but 1 was given
 
-  ``src.telephone.text`` was called with input but the definition of the :ref:`function<functions>` does not allow it take input
+  ``src.telephone.text`` was called with input but the definition of the :ref:`function<functions>` does not allow this
 
 * I make it take a value
 
@@ -172,7 +172,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-The problem with this solution is that the ``text`` :ref:`function<functions>` will always return ``'I received: hello'``, it does not care about the input, it is a :doc:`singleton function </functions/test_singleton_functions>`. I want it to return the value it receives as part of the message
+The problem with this solution is that the ``text`` :ref:`function<functions>` will always return ``'I received: hello'``, it does not care about the input, it is a :doc:`singleton function </functions/test_singleton_functions>`. I want it to return the value it receives as part of the message.
 
 red: make it fail
 ---------------------------------------------------------------------------------
@@ -213,7 +213,7 @@ green: make it pass
 
     AssertionError: 'I received: yes' != 'I received: hello'
 
-  for the previous assertion. This will not work, I have to make the `return statement`_ use the input
+  this will not work, the `return statement`_ has to use the input
 
 * I use an `f-string`_ to add values to the string_
 
@@ -324,7 +324,7 @@ and the terminal shows an :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I remove the quotes from around :ref:`None` in the expectation to match reality
+I remove the quotes from around :ref:`None` in the expectation
 
 .. code-block:: python
 
@@ -494,7 +494,7 @@ I add a test for a tuple_
           "I received: '(1, 2, 3, n)'"
       )
 
-which gives me an :ref:`AssertionError`
+the terminal shows an :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -560,7 +560,7 @@ test_passing_a_dictionary
 red: make it fail
 #################################################################################
 
-finally, I add a test for a :doc:`dictionary </data_structures/dictionaries>`
+I add a test for a :doc:`dictionary </data_structures/dictionaries>`
 
 .. code-block:: python
 
@@ -646,7 +646,7 @@ green: make it pass
     def text():
         return None
 
-  the terminal shows a :ref:`TypeError` with a different message
+  the terminal shows another :ref:`TypeError`
 
   .. code-block:: python
 
@@ -686,7 +686,7 @@ green: make it pass
         return argument
         return 'I received: None'
 
-  the test summary info shows an :ref:`AssertionError` for each test
+  the test summary info shows that every test has an :ref:`AssertionError`
 
   .. code-block:: python
 
