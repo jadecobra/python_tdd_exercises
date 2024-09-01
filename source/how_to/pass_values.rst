@@ -287,7 +287,7 @@ which gives me an :ref:`AssertionError`
 
   AssertionError: "I received: <class 'tests.test_telephone.TestTelephone'>" != "I received: <class 'object'>"
 
-when I change the name of the :ref:`class<classes>` to match
+when I change the name of the :ref:`class<classes>` to match reality
 
 .. code-block:: python
 
@@ -568,7 +568,7 @@ I add a test for a :doc:`dictionary </data_structures/dictionaries>`
       self.assertEqual(
           src.telephone.text({
               "key1": "value1",
-              "keyN": "valueN"
+              "keyN": "valueN",
           }),
           "I received: '{key1: value1, keyN: valueN}'"
       )
@@ -588,7 +588,10 @@ when I make the expectation match reality
 
   def test_passing_a_dictionary(self):
       self.assertEqual(
-          src.telephone.text({"key1": "value1", "keyN": "valueN"}),
+          src.telephone.text({
+              "key1": "value1",
+              "keyN": "valueN"
+          }),
           "I received: {'key1': 'value1', 'keyN': 'valueN'}"
       )
 
@@ -665,7 +668,7 @@ green: make it pass
 
     AssertionError: None != 'I received: None'
 
-* I copy the string_ from the terminal, paste it in the `return statement`_ to match the expectation
+* I copy the string_ from the terminal, paste it in the `return statement`_ to match the expectation of the test
 
   .. code-block:: python
 
@@ -692,7 +695,7 @@ green: make it pass
 
     AssertionError: True != 'I received: True'
     AssertionError: <class 'object'> != "I received: <class 'object'>"
-    AssertionError: {'key1': 'value1', 'keyN': 'valueN'} != "I received: {'key1': 'value1', 'keyN': 'v...
+    AssertionError: {'key1': 'value1', 'keyN': 'valueN'} != "I received: {'key1': 'value1', 'keyN': 'valueN'}"
     AssertionError: 1.234 != 'I received: 1.234'
     AssertionError: [1, 2, 3, 'n'] != "I received: [1, 2, 3, 'n']"
     AssertionError: "hello" != 'I received: hello'
