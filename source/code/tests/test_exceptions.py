@@ -1,5 +1,4 @@
-import exceptions
-import module
+import src.exceptions
 import unittest
 
 
@@ -10,13 +9,18 @@ class TestExceptions(unittest.TestCase):
             import non_existent_module
 
     def test_catching_attribute_error_in_tests(self):
-            module.non_existent_attribute
-            module.non_existent_function()
-            module.NonExistentClass()
+        with self.assertRaises(AttributeError):
+            src.exceptions.non_existent_attribute
+        with self.assertRaises(AttributeError):
+            src.exceptions.non_existent_function()
+        with self.assertRaises(AttributeError):
+            src.exceptions.NonExistentClass()
 
     def test_catching_type_error_in_tests(self):
         with self.assertRaises(TypeError):
-            module.function("arg1", "arg2", "arg3", "arg4")
+            src.exceptions.function(
+                'arg1', 'arg2', 'arg3', 'arg4'
+            )
 
     def test_catching_index_error_in_tests(self):
         with self.assertRaises(IndexError):
@@ -24,15 +28,11 @@ class TestExceptions(unittest.TestCase):
 
     def test_catching_key_error_in_tests(self):
         with self.assertRaises(KeyError):
-            {"key": "value"}["non_existent_key"]
+            {'key': 'value'}['non_existent_key']
 
     def test_catching_zero_division_error_in_tests(self):
         with self.assertRaises(ZeroDivisionError):
             1 / 0
-
-    def test_catching_exceptions_in_tests(self):
-        with self.assertRaises(Exception):
-            raise Exception
 
 
 # Exceptions Encountered
