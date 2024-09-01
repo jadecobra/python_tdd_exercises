@@ -16,13 +16,11 @@ how to test that an Exception is raised
 
 ----
 
-`Exceptions <https://docs.python.org/3/library/exceptions.html?highlight=exception#Exception>`_ are raised in Python when an error occurs and break execution of the program. When an exception is encountered no further instructions in the program will run.
+`Exceptions <https://docs.python.org/3/library/exceptions.html?highlight=exception#Exception>`_ are raised in Python when an error happens and break execution of the program, this means nothing in the program past the line that caused it will run.
 
-This is useful because it means there is a problem that should be taken care of for the program to continue as expected.
+They are useful because it means there is a problem that should be taken care of for the program to continue as expected. They can be a pain when they causes the program to stop early. What if I want the program to run even with errors? I might want it to give messages to the user who does not care or understand the details of the `Exceptions <https://docs.python.org/3/library/exceptions.html?highlight=exception#Exception>`_.
 
-It is also a pain when it causes the program to exit early. What if I want the program to run regardless of errors? I might want it to give messages to the user who may not care or understand the details that come with `Exceptions <https://docs.python.org/3/library/exceptions.html?highlight=exception#Exception>`_.
-
-Exception Handling is a way to deal with `Exceptions <https://docs.python.org/3/library/exceptions.html?highlight=exception#Exception>`_, it allows programs to make decisions when an Exception is encountered.
+Exception Handling is a way to deal with this, it allows programs to make decisions when one is encountered.
 
 .. _test_catching_module_not_found_error_in_tests:
 

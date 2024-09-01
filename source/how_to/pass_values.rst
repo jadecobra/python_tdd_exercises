@@ -122,8 +122,6 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-  ``text`` is currently :ref:`None` which is not callable_
-
 * I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
@@ -162,14 +160,14 @@ green: make it pass
 
     AssertionError: None != 'I received: hello'
 
-* I copy the string_ from the terminal, paste it in the `return statement`_ to replace :ref:`None`
+* when I copy the string_ from the terminal and paste it in the `return statement`_ to replace :ref:`None`
 
   .. code-block:: python
 
     def text(value):
         return 'I received: hello'
 
-  and the test passes!
+  the test passes!
 
 refactor: make it better
 #################################################################################
@@ -228,7 +226,7 @@ green: make it pass
 
 ----
 
-I want to see what happens when I do this this with other Python :doc:`/data_structures/data_structures`
+I want to see what happens when I do this with other Python :doc:`/data_structures/data_structures`
 
 *********************************************************************************
 test_passing_a_class
@@ -477,7 +475,7 @@ I remove the quotes from the number
           "I received: 1.234"
       )
 
-and the test passes
+and the test shows passing tests.
 
 *********************************************************************************
 test_passing_a_tuple
@@ -515,7 +513,7 @@ I make the expectation match reality
           "I received: (1, 2, 3, 'n')"
       )
 
-and the terminal shows green
+and the terminal shows green again.
 
 *********************************************************************************
 test_passing_a_list
@@ -553,7 +551,7 @@ I change the expectation to match reality
           "I received: [1, 2, 3, 'n']"
       )
 
-and the terminal shows passing tests
+and the terminal shows passing tests.
 
 *********************************************************************************
 test_passing_a_dictionary
@@ -656,7 +654,7 @@ green: make it pass
 
   I add a positional argument to the :ref:`function's<functions>` signature
 
-  .. code-block: python
+  .. code-block:: python
 
     def text(argument):
         return None

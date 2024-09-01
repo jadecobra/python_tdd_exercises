@@ -10,11 +10,8 @@ class TestExceptions(unittest.TestCase):
             import non_existent_module
 
     def test_catching_attribute_error_in_tests(self):
-        with self.assertRaises(AttributeError):
             module.non_existent_attribute
-        with self.assertRaises(AttributeError):
             module.non_existent_function()
-        with self.assertRaises(AttributeError):
             module.NonExistentClass()
 
     def test_catching_type_error_in_tests(self):
