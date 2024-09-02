@@ -6,21 +6,23 @@ class TestExceptions(unittest.TestCase):
 
     def test_catching_module_not_found_error_in_tests(self):
         with self.assertRaises(ModuleNotFoundError):
-            import non_existent_module
+            import module_that_does_not_exist
+
+    def test_catching_name_error_in_tests(self):
+        with self.assertRaises(NameError):
+            exceptions
 
     def test_catching_attribute_error_in_tests(self):
         with self.assertRaises(AttributeError):
-            src.exceptions.non_existent_attribute
+            src.exceptions.attribute_that_does_not_exist
         with self.assertRaises(AttributeError):
-            src.exceptions.non_existent_function()
+            src.exceptions.function_that_does_not_exist()
         with self.assertRaises(AttributeError):
-            src.exceptions.NonExistentClass()
+            src.exceptions.ClassThatDoesNotExist()
 
     def test_catching_type_error_in_tests(self):
         with self.assertRaises(TypeError):
-            src.exceptions.function(
-                'arg1', 'arg2', 'arg3', 'arg4'
-            )
+            src.exceptions.function('arg1', 'arg2', 'arg3', 'arg4')
 
     def test_catching_index_error_in_tests(self):
         with self.assertRaises(IndexError):
@@ -28,11 +30,15 @@ class TestExceptions(unittest.TestCase):
 
     def test_catching_key_error_in_tests(self):
         with self.assertRaises(KeyError):
-            {'key': 'value'}['non_existent_key']
+            {'key': 'value'}['key_that_does_not_exist']
 
     def test_catching_zero_division_error_in_tests(self):
         with self.assertRaises(ZeroDivisionError):
             1 / 0
+
+    def test_catching_exceptions_in_tests(self):
+        with self.assertRaises(Exception):
+            raise Exception
 
 
 # Exceptions Encountered

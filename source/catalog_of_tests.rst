@@ -44,7 +44,7 @@ test_exceptions
 *********************************************************************************
 
 #. :ref:`test_catching_module_not_found_error_in_tests`
-#. :ref:`test_catching_attribute_errors_in_tests`
+#. :ref:`test_catching_attribute_error_in_tests`
 #. :ref:`test_catching_exceptions`
 #. :ref:`test_catching_failures`
 #. :ref:`test_catching_successes`
