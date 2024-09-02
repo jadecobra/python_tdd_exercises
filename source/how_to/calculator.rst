@@ -874,7 +874,7 @@ red: make it fail
 #################################################################################
 
 * I close ``test_calculator.py``
-* then delete the text in ``calculator.py`` and the terminal shows an :ref:`AttributeError`
+* then delete all the text in ``calculator.py`` and the terminal shows an :ref:`AttributeError`
 
   .. code-block:: python
 

@@ -207,7 +207,7 @@ green: make it pass
     def text(value):
         return 'I received: yes'
 
-  I get an :ref:`AssertionError`
+  I get another :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -226,7 +226,7 @@ green: make it pass
 
 ----
 
-I want to see what happens when I do this with other Python :doc:`/data_structures/data_structures`
+I want to see what happens when I pass other Python :doc:`/data_structures/data_structures` to the program
 
 *********************************************************************************
 test_passing_a_class
@@ -402,7 +402,7 @@ green: make it pass
         "I received: False"
     )
 
-  the test passes.
+  the terminal shows passing tests.
 
 *********************************************************************************
 test_passing_an_integer
@@ -437,7 +437,7 @@ I remove the quotes from the expectation
           "I received: 1234"
       )
 
-and the terminal shows a passing test
+and the terminal shows passing tests
 
 *********************************************************************************
 test_passing_a_float
@@ -475,7 +475,7 @@ I remove the quotes from the number
           "I received: 1.234"
       )
 
-and the test shows passing tests.
+and the terminal shows passing tests.
 
 *********************************************************************************
 test_passing_a_tuple
@@ -551,7 +551,7 @@ I change the expectation to match reality
           "I received: [1, 2, 3, 'n']"
       )
 
-and the terminal shows passing tests.
+and the terminal shows green again.
 
 *********************************************************************************
 test_passing_a_dictionary
@@ -609,7 +609,7 @@ red: make it fail
 #################################################################################
 
 * I close ``test_telephone.py``
-* then delete the text in ``telephone.py`` and the terminal shows an :ref:`AttributeError`
+* then delete all the text in ``telephone.py`` and the terminal shows an :ref:`AttributeError`
 
   .. code-block:: python
 

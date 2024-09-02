@@ -1090,7 +1090,7 @@ red: make it fail
 #################################################################################
 
 * I close ``test_person.py``
-* then delete the text in ``person.py`` and the terminal shows an :ref:`AttributeError`
+* then delete all the text in ``person.py`` and the terminal shows an :ref:`AttributeError`
 
   .. code-block:: python
 
