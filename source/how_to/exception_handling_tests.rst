@@ -16,11 +16,11 @@ how to test that an Exception is raised
 
 ----
 
-`Exceptions <https://docs.python.org/3/library/exceptions.html?highlight=exception#Exception>`_ are raised in Python when an error happens and break execution of the program, this means nothing past the line that caused it will run.
+When an error happens in Python, an Exception_ is raised, which breaks execution of the program, this means nothing past the line that caused it will run.
 
-They are useful because it means there is a problem that should be taken care of for the program to continue as expected. They can be a pain when they cause the program to stop early. What if I want the program to run even with errors? I might want it to give messages to the user who does not care or understand the details of the `Exceptions <https://docs.python.org/3/library/exceptions.html?highlight=exception#Exception>`_.
+It is useful because there is a problem that needs to be solved for the program to continue as expected. It can be a pain when it causes the program to stop early. What if I want the program to run even with errors? I might want it to give messages to the user who does not care or understand the details of the Exception_.
 
-Exception Handling is a way to deal with this, it allows programs to make decisions when one is encountered.
+Exception_ Handling is a way to deal with this, it allows programs to make decisions when one is encountered or confirm that the code caused one.
 
 .. _test_catching_module_not_found_error_in_tests:
 
@@ -79,7 +79,7 @@ green: make it pass
     # AssertionError
     # ModuleNotFoundError
 
-* I can take care of this error by making the module, but I want to catch or handle the exception in the test
+  I can take care of this error by making the module, but I want to catch or handle the exception in the test
 * I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` to make sure that a :ref:`ModuleNotFoundError` is raised when I try to import ``non_existent_module``
 
   .. code-block:: python
@@ -291,10 +291,12 @@ the terminal shows passing tests
 test_catching_index_error_in_tests
 *********************************************************************************
 
+An IndexError_ is raised when a :ref:`list<lists>` is accessed with a number that is more than the possible number of indexes for the items in it
+
 red: make it fail
 #################################################################################
 
-* I add a failing test for a :ref:`TypeError`
+* I add a failing test
 
   .. code-block:: python
 
@@ -336,10 +338,12 @@ and the terminal shows passing tests
 test_catching_key_error_in_tests
 *********************************************************************************
 
+A KeyError_ is raised when a :ref:`dictionary<dictionaries>` is accessed with a key that is not in it
+
 red: make it fail
 #################################################################################
 
-* I add a failing test for a :ref:`TypeError`
+* I add a failing test
 
   .. code-block:: python
 
@@ -397,6 +401,8 @@ red: make it fail
   .. code-block:: python
 
     ZeroDivisionError: division by zero
+
+  this also happens in :doc:`/how_to/calculator`
 
 * I add the exception to the list of :ref:`Exceptions<Exceptions>` encountered
 
@@ -478,8 +484,3 @@ Would you like to test :doc:`/how_to/exception_handling_programs`?
 ----
 
 :doc:`/code/code_exception_handling`
-
-# TODO
-# ZeroDivisionError
-# KeyError
-# IndexError
