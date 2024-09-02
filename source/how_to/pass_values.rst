@@ -132,7 +132,7 @@ green: make it pass
     # AttributeError
     # TypeError
 
-* then make ``text`` a :ref:`function<functions>` to make it callable_
+* then change ``text`` to a :ref:`function<functions>` to make it callable_
 
   .. code-block:: python
 
