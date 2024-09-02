@@ -20,7 +20,7 @@ When an error happens in Python, an Exception_ is raised, which breaks execution
 
 It is useful because there is a problem that needs to be solved for the program to continue as expected. It can be a pain when it causes the program to stop early. What if I want the program to run even with errors? I might want it to give messages to the user who does not care or understand the details of the Exception_.
 
-Exception_ Handling is a way to deal with this, it allows programs to make decisions when one is encountered or confirm that the code caused one.
+Exception_ Handling is a way to deal with this, it allows programs to make decisions when one happens.
 
 .. _test_catching_module_not_found_error_in_tests:
 
