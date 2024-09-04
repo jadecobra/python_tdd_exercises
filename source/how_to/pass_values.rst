@@ -59,7 +59,7 @@ red: make it fail
                 "I received: hello"
             )
 
-  I get a NameError_
+  the terminal shows a NameError_
 
   .. code-block:: python
 
@@ -122,7 +122,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
+* which I add to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
@@ -139,7 +139,7 @@ green: make it pass
       def text():
           return None
 
-  the terminal shows another :ref:`TypeError`
+  and the terminal shows another :ref:`TypeError`
 
   .. code-block:: python
 
@@ -251,6 +251,8 @@ the terminal shows an :ref:`AssertionError`
 
   AssertionError: "I received: <class 'object'>" != 'I received: object'
 
+object_ is the mother of all Python :ref:`classes<classes>` because they inherit from it by default
+
 green: make it pass
 #################################################################################
 
@@ -267,7 +269,7 @@ I make the expectation match reality and the test passes
 refactor: make it better
 #################################################################################
 
-I add another assertion with a different :ref:`class<classes>` name
+I add another assertion for a different :ref:`class<classes>`
 
 .. code-block:: python
 
@@ -703,7 +705,7 @@ green: make it pass
     AssertionError: 1234 != 'I received: 1234'
     AssertionError: None != 'I received: None'
 
-  the tests expect the input as part of the message
+  they all expect the input as part of the message
 
 * I remove the first `return statement`_ then make the second one use an `f-string`_
 
