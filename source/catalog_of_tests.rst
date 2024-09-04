@@ -18,11 +18,15 @@ Here are all the tests written in this book
 test_calculator
 *********************************************************************************
 
-#. :ref:`test_addition`
-#. :ref:`test_subtraction`
-#. :ref:`test_multiplication`
-#. :ref:`test_division`
-#. :ref:`test_calculator_tests`
+#. :ref:`test_passing_a_string`
+#. :ref:`test_passing_a_class`
+#. :ref:`test_passing_none`
+#. :ref:`test_passing_a_boolean`
+#. :ref:`test_passing_an_integer`
+#. :ref:`test_passing_a_float`
+#. :ref:`test_passing_a_tuple`
+#. :ref:`test_passing_a_list`
+#. :ref:`test_passing_a_dictionary`
 
 *********************************************************************************
 test_telephone
