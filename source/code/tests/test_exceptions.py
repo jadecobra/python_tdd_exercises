@@ -22,7 +22,7 @@ class TestExceptions(unittest.TestCase):
 
     def test_catching_type_error_in_tests(self):
         with self.assertRaises(TypeError):
-            src.exceptions.function('arg1', 'arg2')
+            src.exceptions.function('argument')
 
     def test_catching_index_error_in_tests(self):
         a_list = [1, 2, 3, 'n']
@@ -37,7 +37,7 @@ class TestExceptions(unittest.TestCase):
 
     def test_catching_zero_division_error_in_tests(self):
         with self.assertRaises(ZeroDivisionError):
-            1 / 0
+            0 / 0
 
     def test_catching_exceptions_in_tests(self):
         with self.assertRaises(Exception):

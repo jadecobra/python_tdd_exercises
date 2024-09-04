@@ -275,7 +275,7 @@ red: make it fail
   .. code-block:: python
 
     def test_catching_type_error_in_tests(self):
-        src.exceptions.function('arg1', 'arg2', 'arg3', 'arg4')
+        src.exceptions.function('argument')
 
   the terminal shows an :ref:`AttributeError`
 
@@ -287,16 +287,16 @@ red: make it fail
 
   .. code-block:: python
 
-    def function(argument):
+    def function():
         return None
 
   and get a :ref:`TypeError`
 
   .. code-block:: python
 
-    TypeError: function() takes 1 positional argument but 4 were given
+    TypeError: function() takes 0 positional argument but 1 were given
 
-  the call uses 4 positional argument but it only takes 1 input
+  the call uses 1 positional argument but the :ref:`function<functions>` does not accept input
 
 * I add the exception to the list of :ref:`Exceptions<Exceptions>` encountered
 
@@ -318,7 +318,7 @@ when I add a `unittest.TestCase.assertRaises`_ to the test
 
   def test_catching_type_error_in_tests(self):
       with self.assertRaises(TypeError):
-          src.exceptions.function('arg1', 'arg2', 'arg3', 'arg4')
+          src.exceptions.function('argument')
 
 the terminal shows passing tests
 
@@ -338,7 +338,7 @@ red: make it fail
   .. code-block:: python
 
     def test_catching_index_error_in_tests(self):
-        a_list = [1, 2, 3, 4]
+        a_list = [1, 2, 3, 'n']
         a_list[4]
 
   the terminal shows an IndexError_
