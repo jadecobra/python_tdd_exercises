@@ -18,6 +18,16 @@ Here are all the tests written in this book
 test_calculator
 *********************************************************************************
 
+#. :ref:`test_addition`
+#. :ref:`test_subtraction`
+#. :ref:`test_multiplication`
+#. :ref:`test_division`
+#. :ref:`test_calculator_tests`
+
+*********************************************************************************
+test_telephone
+*********************************************************************************
+
 #. :ref:`test_passing_a_string`
 #. :ref:`test_passing_a_class`
 #. :ref:`test_passing_none`
@@ -29,18 +39,10 @@ test_calculator
 #. :ref:`test_passing_a_dictionary`
 
 *********************************************************************************
-test_telephone
-*********************************************************************************
-
-#. :ref:`test_text_messages`
-#. :ref:`test_passing_data_structures`
-
-*********************************************************************************
 test_person_factory
 *********************************************************************************
 
-#. :ref:`test_person_factory`
-#. :ref:`test_person_factory_w_default_keyword_arguments`
+#. :ref:`test_person_factory_w_keyword_arguments`
 #. :ref:`test_person_factory_w_default_keyword_arguments`
 
 *********************************************************************************
@@ -48,7 +50,13 @@ test_exceptions
 *********************************************************************************
 
 #. :ref:`test_catching_module_not_found_error_in_tests`
+#. :ref:`test_catching_name_error_in_tests`
 #. :ref:`test_catching_attribute_error_in_tests`
+#. :ref:`test_catching_type_error_in_tests`
+#. :ref:`test_catching_index_error_in_tests`
+#. :ref:`test_catching_key_error_in_tests`
+#. :ref:`test_catching_zero_division_error_in_tests`
+#. :ref:`test_catching_exceptions_in_tests`
 #. :ref:`test_catching_exceptions`
 #. :ref:`test_catching_failures`
 #. :ref:`test_catching_successes`
