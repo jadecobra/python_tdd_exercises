@@ -25,7 +25,7 @@ test_passing_a_string
 red: make it fail
 #################################################################################
 
-* I open a terminal to run :ref:`makePythonTdd.sh` with ``telephone`` as the project name
+* I open a terminal to run :ref:`makePythonTdd.sh` with ``telephone`` as the name of the project
 
   .. code-block:: python
 
@@ -172,7 +172,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-The problem with this solution is that the ``text`` :ref:`function<functions>` will always return ``'I received: hello'``, it does not care about the input, it is a :doc:`singleton function </functions/test_singleton_functions>`. I want it to return the value it receives as part of the message.
+The problem with this solution is that ``text`` is a :doc:`singleton function </functions/test_singleton_functions>`, it does not care about the input and will always return ``'I received: hello'``. I want it to return the value it receives as part of the message.
 
 red: make it fail
 ---------------------------------------------------------------------------------
@@ -222,7 +222,7 @@ green: make it pass
     def text(value):
         return f'I received: {value}'
 
-  and the terminal shows a passing test. This is called `string interpolation`_
+  and the terminal shows a passing test. This solution is called `string interpolation`_
 
 ----
 
@@ -437,7 +437,7 @@ I remove the quotes from the expectation
           "I received: 1234"
       )
 
-and the terminal shows passing tests
+and the terminal shows passing tests.
 
 *********************************************************************************
 test_passing_a_float
@@ -720,7 +720,7 @@ green: make it pass
 review
 *********************************************************************************
 
-I ran the following tests to see what happens when I pass Python :doc:`/data_structures/data_structures` from a test to a program and place them in an `f-string`_
+I ran the following to see what happens when I pass Python :doc:`/data_structures/data_structures` from a test to a program and place them in an `f-string`_
 
 * `test_passing_a_string`_
 * `test_passing_a_class`_

@@ -26,7 +26,7 @@ This is part 1 of a program that calculates the difference between a given wake 
 red: make it fail
 *********************************************************************************
 
-* I open a terminal to run :ref:`makePythonTdd.sh` with ``sleep_duration`` as the project name
+* I open a terminal to run :ref:`makePythonTdd.sh` with ``sleep_duration`` as the name of the project
 
   .. code-block:: python
 

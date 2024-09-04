@@ -27,7 +27,7 @@ test_addition
 red: make it fail
 #################################################################################
 
-* I open a terminal to run :ref:`makePythonTdd.sh` with ``calculator`` as the project name
+* I open a terminal to run :ref:`makePythonTdd.sh` with ``calculator`` as the name of the project
 
   .. code-block:: python
 

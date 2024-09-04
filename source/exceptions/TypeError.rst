@@ -34,7 +34,7 @@ A `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=except
 red: make it fail
 *********************************************************************************
 
-* I open a terminal to run :ref:`makePythonTdd.sh` with ``type_error`` as the project name
+* I open a terminal to run :ref:`makePythonTdd.sh` with ``type_error`` as the name of the project
 
   .. code-block:: python
 

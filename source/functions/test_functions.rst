@@ -21,7 +21,7 @@ test_functions_w_pass
 red: make it fail
 #################################################################################
 
-* I open a terminal to run :ref:`makePythonTdd.sh` with ``functions`` as the project name
+* I open a terminal to run :ref:`makePythonTdd.sh` with ``functions`` as the name of the project
 
   .. code-block:: python
 

@@ -21,7 +21,7 @@ The Truth Table gives the 16 outcomes of binary operations on these two values
 requirements
 *********************************************************************************
 
-:doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` with ``truth_table`` as the project name
+:doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` with ``truth_table`` as the name of the project
 
 .. contents:: table of contents
   :local:

@@ -54,7 +54,7 @@ test_assertion_errors_w_none
 red: make it fail
 #################################################################################
 
-* I open a terminal to run :ref:`makePythonTdd.sh` with ``assertion_error`` as the project name
+* I open a terminal to run :ref:`makePythonTdd.sh` with ``assertion_error`` as the name of the project
 
   .. code-block:: python
 

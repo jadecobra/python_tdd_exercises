@@ -31,7 +31,7 @@ test_catching_module_not_found_error_in_tests
 red: make it fail
 #################################################################################
 
-* I open a terminal to run :ref:`makePythonTdd.sh` with ``exceptions`` as the project name
+* I open a terminal to run :ref:`makePythonTdd.sh` with ``exceptions`` as the name of the project
 
   .. code-block:: python
 

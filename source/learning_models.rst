@@ -12,7 +12,7 @@ An Infinite Learning Model
 red: make it fail
 #################################################################################
 
-* I open a terminal to run :ref:`makePythonTdd.sh` with ``learning`` as the project name
+* I open a terminal to run :ref:`makePythonTdd.sh` with ``learning`` as the name of the project
 
   .. code-block:: python
 
