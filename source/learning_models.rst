@@ -12,7 +12,29 @@ An Infinite Learning Model
 red: make it fail
 #################################################################################
 
-add a file called ``test_learning_models.py`` to the ``tests`` folder with the following contents
+* I open a terminal to run :ref:`makePythonTdd.sh` with ``learning`` as the project name
+
+  .. code-block:: python
+
+    ./makePythonTdd.sh learning
+
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+
+    .. code-block:: python
+
+      ./makePythonTdd.ps1 learning
+
+  after making the folders and files for the project, it runs the first test and the terminal shows an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    E       AssertionError: True is not false
+
+    tests/test_learning.py:7: AssertionError
+
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_learning.py:7`` with the mouse to open it
+* then change ``True`` to ``False`` to make the test pass
+* replace the text in ``test_learning.py`` with
 
 .. literalinclude:: /code/tests/test_learning_models.py
 
