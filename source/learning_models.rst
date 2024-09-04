@@ -36,7 +36,13 @@ red: make it fail
 * then change ``True`` to ``False`` to make the test pass
 * replace the text in ``test_learning.py`` with
 
-.. literalinclude:: /code/tests/test_learning_models.py
+  .. literalinclude:: /code/tests/test_learning_models.py
+
+* the terminal shows an :ref:`AttributeError`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.learning' has no attribute 'model'
 
 
 green: make it pass
