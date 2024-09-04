@@ -1078,6 +1078,24 @@ refactor: make it better
 
   all tests are still passing
 
+* if I want the values for ``self.first_name`` and ``self.year_of_birth`` to be different in both tests I can use the `unittest.TestCase.setUp`_ :ref:`method<functions>` which runs before every test
+
+  .. code-block:: python
+
+    class TestPerson(unittest.TestCase):
+
+        def setUp(self):
+            self.first_name = random.choice((
+                'jane', 'joe', 'john', 'person',
+            ))
+            self.year_of_birth = random.randint(
+                this_year()-120, this_year()
+            )
+
+        ...
+
+  the terminal still shows green
+
 ----
 
 *********************************************************************************

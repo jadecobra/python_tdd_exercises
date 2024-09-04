@@ -10,16 +10,17 @@ def this_year():
 
 class TestPerson(unittest.TestCase):
 
-    first_name = random.choice((
-        'jane', 'joe', 'john', 'person'
-    ))
-    year_of_birth = random.randint(
-        this_year()-120, this_year()
-    )
+    def setUp(self):
+        self.first_name = random.choice((
+            'jane', 'joe', 'john', 'person',
+        ))
+        self.year_of_birth = random.randint(
+            this_year()-120, this_year()
+        )
 
     def test_person_factory_w_keyword_arguments(self):
         last_name = random.choice((
-            'doe', 'smith', 'blow', 'public'
+            'doe', 'smith', 'blow', 'public',
         ))
         sex = random.choice(('F', 'M'))
 
@@ -28,7 +29,7 @@ class TestPerson(unittest.TestCase):
                 first_name=self.first_name,
                 last_name=last_name,
                 sex=sex,
-                year_of_birth=self.year_of_birth
+                year_of_birth=self.year_of_birth,
             ),
             dict(
                 first_name=self.first_name,
@@ -42,7 +43,7 @@ class TestPerson(unittest.TestCase):
         self.assertEqual(
             src.person.factory(
                 first_name=self.first_name,
-                year_of_birth=self.year_of_birth
+                year_of_birth=self.year_of_birth,
             ),
             dict(
                 first_name=self.first_name,

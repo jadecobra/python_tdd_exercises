@@ -52,6 +52,7 @@
 .. _static method: https://docs.python.org/3/library/functions.html#staticmethod
 .. _set: https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
 .. _sets: https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
+.. _setUp: https://docs.python.org/3/library/unittest.html#unittest.TestCase.setUp
 .. _shebang: https://en.wikipedia.org/wiki/Shebang_(Unix)
 .. _standard output (stdout): https://en.wikipedia.org/wiki/Standard_streams#Standard_output_(stdout)
 .. _str.split: https://docs.python.org/3/library/stdtypes.html#str.split
@@ -69,6 +70,7 @@
 .. _unittest.TestCase.assertFalse: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse
 .. _unittest.TestCase.assertRaises: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises
 .. _unittest.TestCase.assertRaisesRegex: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertRaisesRegex
+.. _unittest.TestCase.setUp: https://docs.python.org/3/library/unittest.html#unittest.TestCase.setUp
 .. _venv: https://docs.python.org/3/library/venv.html#module-venv
 .. _virtual environment: https://docs.python.org/3/glossary.html#term-virtual-environment
 .. _zero-based indexing: https://en.wikipedia.org/wiki/Zero-based_numbering
