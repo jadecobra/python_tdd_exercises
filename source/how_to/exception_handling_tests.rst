@@ -338,7 +338,8 @@ red: make it fail
   .. code-block:: python
 
     def test_catching_index_error_in_tests(self):
-        [1, 2, 3, 4][5]
+        a_list = [1, 2, 3, 4]
+        a_list[4]
 
   the terminal shows an IndexError_
 
@@ -361,15 +362,45 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-I add a `unittest.TestCase.assertRaises`_ to the test
+* then add a `unittest.TestCase.assertRaises`_ to the test
 
-.. code-block:: python
+  .. code-block:: python
 
     def test_catching_index_error_in_tests(self):
+        a_list = [1, 2, 3, 'n']
         with self.assertRaises(IndexError):
-            [1, 2, 3, 4][5]
+            a_list[4]
 
-and the terminal shows passing tests.
+  and the terminal shows passing tests.
+
+* I add another line that fails
+
+  .. code-block:: python
+
+    def test_catching_index_error_in_tests(self):
+        a_list = [1, 2, 3, 'n']
+        with self.assertRaises(IndexError):
+            a_list[4]
+        a_list[-5]
+
+  the terminal shows an IndexError_
+
+  .. code-block:: python
+
+    IndexError: list index out of range
+
+  when I add the `assertRaises`
+
+  .. code-block:: python
+
+    def test_catching_index_error_in_tests(self):
+        a_list = [1, 2, 3, 'n']
+        with self.assertRaises(IndexError):
+            a_list[4]
+        with self.assertRaises(IndexError):
+            a_list[-5]
+
+  the terminal shows green again
 
 ----
 

@@ -22,11 +22,14 @@ class TestExceptions(unittest.TestCase):
 
     def test_catching_type_error_in_tests(self):
         with self.assertRaises(TypeError):
-            src.exceptions.function('arg1', 'arg2', 'arg3', 'arg4')
+            src.exceptions.function('arg1', 'arg2')
 
     def test_catching_index_error_in_tests(self):
+        a_list = [1, 2, 3, 'n']
         with self.assertRaises(IndexError):
-            [1, 2, 3, 4][5]
+            a_list[4]
+        with self.assertRaises(IndexError):
+            a_list[-5]
 
     def test_catching_key_error_in_tests(self):
         with self.assertRaises(KeyError):
