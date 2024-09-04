@@ -132,7 +132,7 @@ green: make it pass
     # AttributeError
     # TypeError
 
-* then change ``text`` to a :ref:`function<functions>` to make it callable_
+* I change ``text`` to a :ref:`function<functions>` to make it callable_
 
   .. code-block:: python
 
@@ -251,7 +251,7 @@ the terminal shows an :ref:`AssertionError`
 
   AssertionError: "I received: <class 'object'>" != 'I received: object'
 
-object_ is the mother of all Python :ref:`classes<classes>` because they inherit from it by default
+object_ is the mother of all Python :ref:`classes<classes>`, they inherit from it by default
 
 green: make it pass
 #################################################################################
@@ -269,7 +269,7 @@ I make the expectation match reality and the test passes
 refactor: make it better
 #################################################################################
 
-I add another assertion for a different :ref:`class<classes>`
+then add another assertion for a different :ref:`class<classes>`
 
 .. code-block:: python
 
