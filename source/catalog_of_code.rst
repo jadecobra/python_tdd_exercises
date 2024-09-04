@@ -1,10 +1,10 @@
 .. catalog_of_solutions:
 
 #################################################################################
-catalog of solutions
+catalog of code
 #################################################################################
 
-Here are the solutions I wrote in the book
+Here are the tests and solutions in the book
 
 .. toctree::
   :maxdepth: 1

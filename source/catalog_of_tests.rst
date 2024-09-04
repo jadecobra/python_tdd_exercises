@@ -10,7 +10,7 @@ catalog of tests
 
 ----
 
-Here are all the tests written in this book
+Here are all the tests in this book
 
 :ref:`test_failure`
 

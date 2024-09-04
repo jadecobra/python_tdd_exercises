@@ -88,7 +88,7 @@ table of contents
   functions/functions
   classes/classes
   tests<catalog_of_tests>
-  solutions<catalog_of_solutions>
+  tests and solutions<catalog_of_code>
   learning_models
   dot_notation
   review
