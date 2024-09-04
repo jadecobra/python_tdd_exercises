@@ -6,7 +6,7 @@ how to pass values
 
 .. raw:: html
 
-  <iframe style="border-radius:12px" width="560"  height="315" src="https://www.youtube-nocookie.com/embed/Og17sfCamr0?si=zPQO30JbmFjTiprI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/QEiyAO7aEVQ?si=gN_vRO0VrSyWR7R6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ----
 
@@ -722,7 +722,7 @@ green: make it pass
 review
 *********************************************************************************
 
-I ran the following to see what happens when I pass Python :doc:`/data_structures/data_structures` from a test to a program and place them in an `f-string`_
+Here are the tests I ran to see what happens when I pass Python :doc:`/data_structures/data_structures` from a test to a program and place them in an `f-string`_
 
 * `test_passing_a_string`_
 * `test_passing_a_class`_
