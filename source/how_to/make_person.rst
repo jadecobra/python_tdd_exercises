@@ -877,7 +877,7 @@ red: make it fail
             ),
             dict(
                 first_name=first_name,
-                last_name="doe",
+                last_name=last_name,
                 sex=sex,
                 age=this_year() - year_of_birth
             )
@@ -887,18 +887,18 @@ red: make it fail
 
     TypeError: factory() missing 1 required positional argument: 'last_name'
 
-  because I used positional arguments in the ``factory`` :ref:`function's<functions>` signature, I have to change it to a keyword argument
+  because I called the ``factory`` :ref:`function<functions>` with 3 arguments in the test but the definition takes 4
 
 
 green: make it pass
 #################################################################################
 
-* When I make the default value for ``last_name`` in the :ref:`function<functions>` match the expectation
+* I add a default value for ``last_name``
 
   .. code-block:: python
 
     def factory(
-            first_name, last_name='doe',
+            first_name, last_name=None,
             sex, year_of_birth
         ):
         ...
@@ -909,7 +909,7 @@ green: make it pass
 
     SyntaxError: parameter without a default follows parameter with a default
 
-  for the ``sex`` input parameter
+  I broke a Python rule by having a parameter that does not have a default value come after a parameter that has one
 
 * I add it to the list of :ref:`Exceptions<exceptions>` encountered
 
@@ -927,7 +927,7 @@ green: make it pass
   .. code-block:: python
 
     def factory(
-            first_name, last_name='doe',
+            first_name, last_name=None,
             sex=None, year_of_birth
         ):
         ...
@@ -940,19 +940,75 @@ green: make it pass
 
   for the ``year_of_birth`` input parameter
 
-* when I assign a default value to the ``year_of_birth`` parameter
+* I assign a default value to the ``year_of_birth`` parameter
+
+  .. code-block:: python
+
+    def factory(
+            first_name, last_name=None,
+            sex=None, year_of_birth=None
+        ):
+        ...
+
+  the terminal shows a NameError_
+
+  .. code-block:: python
+
+    NameError: name 'last_name' is not defined
+
+  the ``last_name`` key in the expected :ref:`dictionary<dictionaries>` needs a value
+
+* I set the expectation for ``last_name``
+
+  .. code-block:: python
+
+    self.assertEqual(
+        src.person.factory(
+            first_name=first_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        ),
+        dict(
+            first_name=first_name,
+            last_name='doe',
+            sex=sex,
+            age=this_year()-year_of_birth,
+        )
+    )
+
+  and the terminal shows an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {'first_name': 'joe', 'last_name': None, 'sex': 'F', 'age': 28} != {'first_name': 'joe', 'last_name': 'doe', 'sex': 'F', 'age': 28}
+    AssertionError: {'first_name': 'person', 'last_name': None, 'sex': 'M', 'age': 33} != {'first_name': 'person', 'last_name': 'doe', 'sex': 'M', 'age': 33}
+    AssertionError: {'first_name': 'jane', 'last_name': None, 'sex': 'F', 'age': 70} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 70}
+    AssertionError: {'first_name': 'jane', 'last_name': None, 'sex': 'F', 'age': 83} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 83}
+
+  the `factory` :ref:`function<functions>` returns a :ref:`dictionary<dictionaries>` with a value of :ref:`None` for the ``last_name`` and the test expects a value of ``doe``
+
+* When I make the default value for ``last_name`` in the :ref:`function<functions>` match the expectation
 
   .. code-block:: python
 
     def factory(
             first_name, last_name='doe',
-            sex=None, year_of_birth=None
+            sex, year_of_birth
         ):
         ...
 
   the terminal shows passing tests. When no value is given for the ``last_name`` argument to ``person.factory`` it uses ``'doe'`` because that is the default value in the :ref:`function<functions>` signature, it is same as calling it with ``last_name='doe'``
 
-* I remove ``sex`` from the :ref:`function<functions>` call then change the expectation
+  .. code-block:: python
+
+    src.person.factory(
+        first_name=first_name,
+        sex=sex,
+        last_name='doe',
+        year_of_birth=year_of_birth,
+    )
+
+* I want to see what happens if I remove ``sex`` from the :ref:`function<functions>` call then change the expectation
 
   .. code-block:: python
 
