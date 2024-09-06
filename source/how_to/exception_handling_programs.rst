@@ -31,7 +31,7 @@ test_catching_exceptions
   .. code-block:: python
 
     def test_catching_exceptions(self):
-        exceptions.raises_exception()
+        src.exceptions.raises_exception()
 
   the terminal shows a NameError_
 
@@ -117,7 +117,7 @@ green: make it pass
 
     def test_catching_exceptions(self):
         with self.assertRaises(Exception):
-            exceptions.raises_exception()
+            src.exceptions.raises_exception()
 
   the terminal shows passing tests
 
@@ -146,8 +146,8 @@ I add a new failing test to ``test_exceptions.py``
 
   def test_catching_failures(self):
       self.assertEqual(
-          exceptions.exception_handler(
-              exceptions.raises_exception
+          src.exceptions.exception_handler(
+              src.exceptions.raises_exception
           ),
           'failed'
       )
@@ -205,7 +205,7 @@ green: make it pass
     def exception_handler(argument):
         return None
 
-  and the terminal shows an :ref:`AssertionError` because the result of calling ``exceptions.exception_handler`` with ``exceptions.raises_exception`` as the input is currently :ref:`None` which is not equal to ``'failed'``
+  and the terminal shows an :ref:`AssertionError` because the result of calling ``src.exceptions.exception_handler`` with ``src.exceptions.raises_exception`` as the input is currently :ref:`None` which is not equal to ``'failed'``
 
   .. code-block:: python
 
@@ -237,8 +237,8 @@ I add a new test that provides a different input with an expectation of a differ
 
   def test_catching_successes(self):
       self.assertEqual(
-          exceptions.exception_handler(
-              exceptions.does_not_raise_exception
+          src.exceptions.exception_handler(
+              src.exceptions.does_not_raise_exception
           ),
           'succeeded'
       )
@@ -273,7 +273,7 @@ green: make it pass
 
     does_not_raise_exception = None
 
-  and the terminal shows an :ref:`AssertionError` because the value returned by ``exceptions.exception_handler`` when given ``exceptions.does_not_raise_exception`` as input is ``'failed'`` which is not equal to ``'succeeded'``
+  and the terminal shows an :ref:`AssertionError` because the value returned by ``src.exceptions.exception_handler`` when given ``src.exceptions.does_not_raise_exception`` as input is ``'failed'`` which is not equal to ``'succeeded'``
 
   .. code-block::
 
@@ -312,8 +312,8 @@ green: make it pass
     AssertionError: None != 'succeeded'
 
   - The ``exception_handler`` :ref:`function<functions>` returns the result of calling the :ref:`function<functions>` it receives as input
-  - When I call ``exceptions.exception_handler`` with ``exceptions.does_not_raise_exception`` as input, it calls the :ref:`function<functions>` and returns the result
-  - the result of calling ``exceptions.does_not_raise_exception`` is currently :ref:`None` which is not equal to ``'succeeded'`` and the result of calling ``exceptions.raises_exception`` is currently an Exception which is not equal to ``'failed'``
+  - When I call ``src.exceptions.exception_handler`` with ``src.exceptions.does_not_raise_exception`` as input, it calls the :ref:`function<functions>` and returns the result
+  - the result of calling ``src.exceptions.does_not_raise_exception`` is currently :ref:`None` which is not equal to ``'succeeded'`` and the result of calling ``src.exceptions.raises_exception`` is currently an Exception which is not equal to ``'failed'``
 
 how to use try...except...else
 ---------------------------------------------------------------------------------
@@ -363,8 +363,8 @@ I add a failing test to ``test_exceptions.py``
 
   def test_finally_always_returns(self):
       self.assertEqual(
-          exceptions.always_returns(
-              exceptions.does_not_raise_exception
+          src.exceptions.always_returns(
+              src.exceptions.does_not_raise_exception
           ),
           "always returns this"
       )
@@ -422,7 +422,7 @@ green: make it pass
     def always_returns(function):
         return function()
 
-  the terminal shows an :ref:`AssertionError` because ``exceptions.always_returns`` returns the value of calling ``does_not_raise_exception`` which is :ref:`None` and is not equal to the expectation in the test which is ``'always returns this'``
+  the terminal shows an :ref:`AssertionError` because ``src.exceptions.always_returns`` returns the value of calling ``does_not_raise_exception`` which is :ref:`None` and is not equal to the expectation in the test which is ``'always returns this'``
 
   .. code-block:: python
 
@@ -483,14 +483,14 @@ green: make it pass
 
     def test_finally_always_returns(self):
         self.assertEqual(
-            exceptions.always_returns(
-                exceptions.does_not_raise_exception
+            src.exceptions.always_returns(
+                src.exceptions.does_not_raise_exception
             ),
             "always returns this"
         )
         self.assertEqual(
-            exceptions.always_returns(
-                exceptions.raises_exception
+            src.exceptions.always_returns(
+                src.exceptions.raises_exception
             ),
             'succeeded'
         )
@@ -507,14 +507,14 @@ green: make it pass
 
     def test_finally_always_returns(self):
         self.assertEqual(
-            exceptions.always_returns(
-                exceptions.does_not_raise_exception
+            src.exceptions.always_returns(
+                src.exceptions.does_not_raise_exception
             ),
             "always returns this"
         )
         self.assertEqual(
-            exceptions.always_returns(
-                exceptions.raises_exception
+            src.exceptions.always_returns(
+                src.exceptions.raises_exception
             ),
             "always returns this"
         )
