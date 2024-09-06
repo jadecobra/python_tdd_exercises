@@ -37,11 +37,48 @@ class TestExceptions(unittest.TestCase):
 
     def test_catching_zero_division_error_in_tests(self):
         with self.assertRaises(ZeroDivisionError):
-            0 / 0
+            1 / 0
 
     def test_catching_exceptions_in_tests(self):
         with self.assertRaises(Exception):
             raise Exception
+
+    def test_catching_exceptions(self):
+        with self.assertRaisesRegex(
+            Exception,
+            'BOOM'
+        ):
+            src.exceptions.raises_exception()
+
+    def test_catching_failure(self):
+        self.assertEqual(
+            src.exceptions.exception_handler(
+                src.exceptions.raises_exception
+            ),
+            'failed'
+        )
+
+    def test_catching_success(self):
+        self.assertEqual(
+            src.exceptions.exception_handler(
+                src.exceptions.does_not_raise_exception
+            ),
+            'succeeded'
+        )
+
+    def test_finally_always_returns(self):
+        self.assertEqual(
+            src.exceptions.always_returns(
+                src.exceptions.does_not_raise_exception
+            ),
+            'always returns this'
+        )
+        self.assertEqual(
+            src.exceptions.always_returns(
+                src.exceptions.raises_exception
+            ),
+            'always returns this'
+        )
 
 
 # Exceptions Encountered

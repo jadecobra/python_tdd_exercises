@@ -59,7 +59,7 @@ test_exceptions
 #. :ref:`test_catching_exceptions_in_tests`
 #. :ref:`test_catching_exceptions`
 #. :ref:`test_catching_failures`
-#. :ref:`test_catching_successes`
+#. :ref:`test_catching_success`
 #. :ref:`test_finally_always_returns`
 
 *********************************************************************************

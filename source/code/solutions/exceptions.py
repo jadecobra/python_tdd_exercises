@@ -1,3 +1,7 @@
+def function():
+    return None
+
+
 def raises_exception():
     raise Exception('BOOM')
 
