@@ -559,14 +559,7 @@ green: make it pass
 review
 *********************************************************************************
 
-CONGRATULATIONS
-Your Python powers are growing, you have seen
-
-* how to cause Exceptions_
-* how to catch/handle them in tests
-* how to catch/handle them in programs
-
-Would you like to test :doc:`/how_to/sleep_duration`?
+I ran tests to show how to cause Exceptions_, and catch/handle them in tests and programs. Would you like to test :doc:`/how_to/sleep_duration`?
 
 ----
 
