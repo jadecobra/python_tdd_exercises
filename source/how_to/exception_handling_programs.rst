@@ -30,7 +30,7 @@ test_catching_exceptions
 
   .. code-block:: python
 
-    def test_catching_exceptions(self):
+    def test_catching_exceptions_w_messagesself):
         src.exceptions.raises_exception()
 
   the terminal shows a :ref:`AttributeError`
@@ -69,7 +69,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-*  I make it a :ref:`function<functions>`
+* I make it a :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -85,7 +85,7 @@ green: make it pass
     def raises_exception():
         raise Exception('BOOM')
 
-  the terminal shows the ``Exception`` is raised
+  the terminal shows the Exception_
 
   .. code-block:: python
 
@@ -95,7 +95,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_catching_exceptions(self):
+    def test_catching_exceptions_w_messagesself):
         with self.assertRaisesRegex(
             Exception,
             'BOOM'
@@ -111,10 +111,10 @@ Time to add exception handling to the program so it returns a message when it en
 
 ----
 
-.. _test_catching_failures:
+.. _test_catching_failure:
 
 *********************************************************************************
-test_catching_failures
+test_catching_failure
 *********************************************************************************
 
 red: make it fail
@@ -124,7 +124,7 @@ I add a new failing test to ``test_exceptions.py``
 
 .. code-block:: python
 
-  def test_catching_failures(self):
+  def test_catching_failure(self):
       self.assertEqual(
           src.exceptions.exception_handler(
               src.exceptions.raises_exception
@@ -169,7 +169,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* when I make a :ref:`function<functions>`
+* when I make it a :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -189,11 +189,13 @@ green: make it pass
     def exception_handler(argument):
         return None
 
-  and the terminal shows an :ref:`AssertionError` because the result of calling ``src.exceptions.exception_handler`` with ``src.exceptions.raises_exception`` as the input is currently :ref:`None` which is not equal to ``'failed'``
+  and the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: None != 'failed'
+
+  because the result of calling ``src.exceptions.exception_handler`` is :ref:`None` and the test expects ``'failed'``
 
 * I change the `return statement`_ to match the exceptation
 
@@ -212,12 +214,12 @@ green: make it pass
 test_catching_success
 *********************************************************************************
 
+the solution has a problem, the ``exception_handler`` is a :doc:`singleton function </functions/test_singleton_functions>` that always returns ``'failed'`` it does not care about the input.
+
 red: make it fail
 #################################################################################
 
-the solution has a problem, the ``exception_handler`` always returns ``'failed'`` regardless of what I provide as an argument. It is a :doc:`singleton function </functions/test_singleton_functions>`.
-
-I add a new test that provides a different input with an expectation of a different result
+I add a new test
 
 .. code-block:: python
 
@@ -264,15 +266,15 @@ green: make it pass
 
     does_not_raise_exception = None
 
-  and the terminal shows an :ref:`AssertionError` because the value returned by ``src.exceptions.exception_handler`` when given ``src.exceptions.does_not_raise_exception`` as input is ``'failed'`` which is not equal to ``'succeeded'``
+  and the terminal shows an :ref:`AssertionError`
 
   .. code-block::
 
     AssertionError: 'failed' != 'succeeded'
 
-  To practice handling exceptions, I want the ``exception_handler`` :ref:`function<functions>` to return a different result based on the exceptions that happen inside it
+  ``src.exceptions.exception_handler`` still always returns ``'failed'`` and the test expects ``'succeeded'``
 
-* I make ``exception_handler`` call its input as a :ref:`function<functions>`
+* To practice handling exceptions, I want the ``exception_handler`` :ref:`function<functions>` to return a different result based on if an Exception_ is raised or not. I make ``exception_handler`` call its input as a :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -326,7 +328,7 @@ I add a `try statement`_statement to ``exception_handler`` in ``exceptions.py`` 
 
 and the terminal shows passing tests. The `try statement`_ is used to catch/handle exceptions in Python. It allows the program to make a decision when it encounters an Exception instead of ending execution
 
-I think of the  `try statement`_statement as
+I think of the  `try statement`_ statement as
 
 * ``try`` **this**
 * ``except Exception`` - when **this** raises an ``Exception`` do something
@@ -346,7 +348,7 @@ In this case
 test_finally_always_returns
 *********************************************************************************
 
-There is an extra clause in the `try statement`_ statement called ``finally``. Anything in the ``finally`` clause always runs, regardless of what happens in the ``try...except...else`` blocks
+There is an extra clause in the `try statement`_ statement called ``finally``. Anything in this clause always runs, regardless of what happens in the ``try...except...else`` blocks
 
 red: make it fail
 #################################################################################
@@ -425,11 +427,13 @@ green: make it pass
     def always_returns(function):
         return function()
 
-  the terminal shows an :ref:`AssertionError` because ``src.exceptions.always_returns`` returns the value of calling ``does_not_raise_exception`` which is :ref:`None` and is not equal to the expectation in the test which is ``'always returns this'``
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: None != 'always returns this'
+
+  the :ref:`function<functions>` returns the value of calling ``does_not_raise_exception`` which is :ref:`None` and the test expects ``'always returns this'``
 
 * I add exception handling using ``try...except...else``
 
@@ -449,7 +453,7 @@ green: make it pass
 
     AssertionError: 'succeeded' != 'always returns this'
 
-  ``always_returns`` returns ``'succeeded'`` since no exception is raised when it calls ``does_not_raise_exception`` and ``'succeeded'`` is not equal to ``'always returns this'``
+  the :ref:`function<functions>` returns ``'succeeded'`` since no exception is raised when it calls ``does_not_raise_exception`` and ``'succeeded'`` is not equal to ``'always returns this'``
 
 * I can try adding another `return statement`_ to the function to see if that would work
 
@@ -497,14 +501,14 @@ green: make it pass
             src.exceptions.always_returns(
                 src.exceptions.raises_exception
             ),
-            'succeeded'
+            'failed'
         )
 
   the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: 'always returns this' != 'succeeded'
+    AssertionError: 'always returns this' != 'failed'
 
 * I change the expectation to match reality
 
@@ -526,12 +530,26 @@ green: make it pass
 
   and the test passes
 
-.. NOTE::
+* in this case, it would be the same as
 
-  I could have defined ``always_returns`` as a :doc:`singleton function </functions/test_singleton_functions>` and the tests would still pass, but it would not show how to use ``try...except...else...finally`` ::
+  .. code-block:: python
+
+    def always_returns(function):
+        try:
+            function()
+        except Exception:
+            return 'always returns this'
+        else:
+            return 'always returns this'
+
+  which would be the same as defining ``always_returns`` as a :doc:`singleton function </functions/test_singleton_functions>`
+
+  .. code-block:: python
 
       def always_returns(function):
           return 'always returns this'
+
+  and the tests would still pass, but it would not show how to use ``try...except...else...finally``
 
 ----
 
@@ -544,11 +562,9 @@ review
 CONGRATULATIONS
 Your Python powers are growing, you have seen
 
-* how to deliberately raise exceptions
-* how to verify that exceptions are raised
-* how to handle exceptions when they occur
-
-I also encountered the following :ref:`Exceptions<Exceptions>`
+* how to cause Exceptions_
+* how to catch/handle them in tests
+* how to catch/handle them in programs
 
 Would you like to test :doc:`/how_to/sleep_duration`?
 

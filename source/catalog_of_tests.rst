@@ -58,7 +58,7 @@ test_exceptions
 #. :ref:`test_catching_zero_division_error_in_tests`
 #. :ref:`test_catching_exceptions_in_tests`
 #. :ref:`test_catching_exceptions`
-#. :ref:`test_catching_failures`
+#. :ref:`test_catching_failure`
 #. :ref:`test_catching_success`
 #. :ref:`test_finally_always_returns`
 

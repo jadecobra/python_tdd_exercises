@@ -43,7 +43,7 @@ class TestExceptions(unittest.TestCase):
         with self.assertRaises(Exception):
             raise Exception
 
-    def test_catching_exceptions(self):
+    def test_catching_exceptions_w_messagesself):
         with self.assertRaisesRegex(
             Exception,
             'BOOM'
