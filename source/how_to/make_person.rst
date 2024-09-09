@@ -1529,7 +1529,7 @@ I also encountered the following :ref:`Exceptions<Exceptions>`
 * :ref:`TypeError`
 * SyntaxError_
 
-Would you like to know :doc:`/how_to/exception_handling_tests`?
+Would you like to test :doc:`handling exceptions in tests?</how_to/exception_handling_tests>`
 
 ----
 

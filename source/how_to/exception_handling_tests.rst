@@ -18,7 +18,7 @@ how to test that an Exception is raised
 
 When an error happens in Python, an Exception_ is raised, which breaks execution of the program, this means nothing past the line that caused it will run.
 
-It is useful because there is a problem that needs to be taken of for the program to continue as expected. It can be a pain when it causes the program to stop early. What if I want the program to run even with errors? I might want it to give messages to the user who does not care about or understand the details of the error.
+It is useful because there is a problem that needs to be solved for the program to continue as expected. It can be a pain when it causes the program to stop early. What if I want the program to run even with errors? I might want it to give messages to the user who does not understand or care about the details of the error.
 
 Exception_ Handling is a way to deal with this, it allows programs to make decisions when one happens.
 
@@ -60,13 +60,13 @@ red: make it fail
     class TestException(unittest.TestCase):
 
         def test_catching_module_not_found_error_in_tests(self):
-            import module_that_does_not_exist
+            import does_not_exist
 
   the terminal shows a :ref:`ModuleNotFoundError`
 
   .. code-block:: python
 
-    ModuleNotFoundError: No module named 'module_that_does_not_exist'
+    ModuleNotFoundError: No module named 'does_not_exist'
 
 green: make it pass
 #################################################################################
@@ -80,13 +80,13 @@ green: make it pass
     # ModuleNotFoundError
 
   I can take care of this error by making the module, but I want to catch or handle the exception in the test
-* I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` to make sure that a :ref:`ModuleNotFoundError` is raised when I try to import ``module_that_does_not_exist``
+* I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` to make sure that a :ref:`ModuleNotFoundError` is raised when I try to import ``does_not_exist``
 
   .. code-block:: python
 
     def test_catching_module_not_found_error_in_tests(self):
         with self.assertRaises(ModuleNotFoundError):
-            import module_that_does_not_exist
+            import does_not_exist
 
   and the terminal shows passing tests
 
@@ -104,13 +104,13 @@ red: make it fail
   .. code-block:: python
 
     def test_catching_name_error_in_tests(self):
-        exceptions
+        does_not_exist
 
   the terminal shows a NameError_
 
   .. code-block:: python
 
-    NameError: name 'exceptions' is not defined
+    NameError: name 'does_not_exist' is not defined
 
 * I add the exception to the list of :ref:`Exceptions<Exceptions>` encountered
 
@@ -130,7 +130,7 @@ when I add a `unittest.TestCase.assertRaises`_ to the test
 
   def test_catching_name_error_in_tests(self):
       with self.assertRaises(NameError):
-          exceptions
+          does_not_exist
 
 the terminal shows passing tests
 
@@ -148,7 +148,7 @@ red: make it fail
   .. code-block:: python
 
     def test_catching_attribute_error_in_tests(self):
-        src.exceptions.attribute_that_does_not_exist
+        src.exceptions.does_not_exist
 
   the terminal shows a NameError_
 
@@ -167,7 +167,7 @@ red: make it fail
 
   .. code-block:: python
 
-    AttributeError: module 'src.exceptions' has no attribute 'attribute_that_does_not_exist'
+    AttributeError: module 'src.exceptions' has no attribute 'does_not_exist'
 
 * I add the exception to the list of :ref:`Exceptions<Exceptions>` encountered
 
@@ -188,78 +188,9 @@ I add a call to the `unittest.TestCase.assertRaises`_ :ref:`method<functions>`
 
   def test_catching_attribute_error_in_tests(self):
       with self.assertRaises(AttributeError):
-          src.exceptions.attribute_that_does_not_exist
+          src.exceptions.does_not_exist
 
 the terminal shows passing tests
-
-refactor: make it better
-#################################################################################
-
-red: make it fail
----------------------------------------------------------------------------------
-
-For fun I do it again with a :ref:`function<functions>` that does not exist
-
-.. code-block:: python
-
-  def test_catching_attribute_error_in_tests(self):
-      with self.assertRaises(AttributeError):
-          src.exceptions.attribute_that_does_not_exist
-      src.exceptions.function_that_does_not_exist()
-
-the terminal shows an :ref:`AttributeError`
-
-.. code-block:: python
-
-  AttributeError: module 'src.exceptions' has no attribute 'function_that_does_not_exist'
-
-green: make it pass
----------------------------------------------------------------------------------
-
-I add a call to the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` and indent the failing line to place it in the context to make the test pass
-
-.. code-block:: python
-
-  def test_catching_attribute_error_in_tests(self):
-      with self.assertRaises(AttributeError):
-          src.exceptions.attribute_that_does_not_exist
-      with self.assertRaises(AttributeError):
-          src.exceptions.function_that_does_not_exist()
-
-red: make it fail
----------------------------------------------------------------------------------
-
-I add a failing line that raises an :ref:`AttributeError` for :ref:`classes` to ``test_catching_attribute_error_in_tests``
-
-.. code-block:: python
-
-  def test_catching_attribute_error_in_tests(self):
-      with self.assertRaises(AttributeError):
-          src.exceptions.attribute_that_does_not_exist
-      with self.assertRaises(AttributeError):
-          src.exceptions.function_that_does_not_exist()
-      src.exceptions.ClassThatDoesNotExist()
-
-the terminal shows an :ref:`AttributeError`
-
-.. code-block:: python
-
-  AttributeError: module 'src.exceptions' has no attribute 'ClassThatDoesNotExist'
-
-green: make it pass
----------------------------------------------------------------------------------
-
-I place the failing line in the `unittest.TestCase.assertRaises`_ context to make the test pass
-
-.. code-block:: python
-
-  def test_catching_attribute_error_in_tests(self):
-      with self.assertRaises(AttributeError):
-          src.exceptions.attribute_that_does_not_exist
-      with self.assertRaises(AttributeError):
-          src.exceptions.function_that_does_not_exist()
-      with self.assertRaises(AttributeError):
-          src.exceptions.ClassThatDoesNotExist()
 
 ----
 
@@ -418,13 +349,13 @@ red: make it fail
   .. code-block:: python
 
     def test_catching_key_error_in_tests(self):
-        {'key': 'value'}['non_existent_key']
+        {'key': 'value'}['does_not_exist']
 
   the terminal shows a KeyError_
 
   .. code-block:: python
 
-    KeyError: 'non_existent_key'
+    KeyError: 'does_not_exist'
 
 * I add the exception to the list of :ref:`Exceptions<Exceptions>` encountered
 
@@ -448,7 +379,7 @@ I add an `unittest.TestCase.assertRaises`_ context to the test
 
     def test_catching_key_error_in_tests(self):
         with self.assertRaises(KeyError):
-            {'key': 'value'}['non_existent_key']
+            {'key': 'value'}['does_not_exist']
 
 and the terminal shows passing tests.
 
@@ -553,7 +484,7 @@ I have a way to catch :ref:`Exceptions<Exceptions>` when I am testing and encoun
 * KeyError_
 * ZeroDivisionError_
 
-Would you like to test :doc:`/how_to/exception_handling_programs`?
+Would you like to test :doc:`handling exceptions in programs?</how_to/exception_handling_programs>`
 
 ----
 

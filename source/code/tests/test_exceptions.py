@@ -6,19 +6,15 @@ class TestExceptions(unittest.TestCase):
 
     def test_catching_module_not_found_error_in_tests(self):
         with self.assertRaises(ModuleNotFoundError):
-            import module_that_does_not_exist
+            import does_not_exist
 
     def test_catching_name_error_in_tests(self):
         with self.assertRaises(NameError):
-            exceptions
+            does_not_exist
 
     def test_catching_attribute_error_in_tests(self):
         with self.assertRaises(AttributeError):
-            src.exceptions.attribute_that_does_not_exist
-        with self.assertRaises(AttributeError):
-            src.exceptions.function_that_does_not_exist()
-        with self.assertRaises(AttributeError):
-            src.exceptions.ClassThatDoesNotExist()
+            src.exceptions.does_not_exist
 
     def test_catching_type_error_in_tests(self):
         with self.assertRaises(TypeError):
@@ -33,7 +29,7 @@ class TestExceptions(unittest.TestCase):
 
     def test_catching_key_error_in_tests(self):
         with self.assertRaises(KeyError):
-            {'key': 'value'}['key_that_does_not_exist']
+            {'key': 'value'}['does_not_exist']
 
     def test_catching_zero_division_error_in_tests(self):
         with self.assertRaises(ZeroDivisionError):
@@ -46,7 +42,7 @@ class TestExceptions(unittest.TestCase):
     def test_catching_exceptions_w_messages(self):
         with self.assertRaisesRegex(
             Exception,
-            'BOOM'
+            'BOOM!'
         ):
             src.exceptions.raises_exception()
 
@@ -66,15 +62,15 @@ class TestExceptions(unittest.TestCase):
             'succeeded'
         )
 
-    def test_finally_always_returns(self):
+    def test_finally_always_runs(self):
         self.assertEqual(
-            src.exceptions.always_returns(
+            src.exceptions.always_runs(
                 src.exceptions.does_not_raise_exception
             ),
             'always returns this'
         )
         self.assertEqual(
-            src.exceptions.always_returns(
+            src.exceptions.always_runs(
                 src.exceptions.raises_exception
             ),
             'always returns this'

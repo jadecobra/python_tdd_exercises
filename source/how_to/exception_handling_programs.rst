@@ -78,36 +78,65 @@ green: make it pass
 
   and the terminal shows passing tests
 
-* I can use the `raise <https://docs.python.org/3/reference/simple_stmts.html#the-raise-statement>`_ keyword to cause an Exception with a message
+* I want the :ref:`function<functions>`  to raise an Exception_
+
+  .. code-block:: python
+
+    def test_catching_exceptions_w_messages(self):
+        with self.assertRaises(Exception):
+            src.exceptions.raises_exception()
+
+  the terminal shows an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: Exception not raised
+
+* I can use the `raise <https://docs.python.org/3/reference/simple_stmts.html#the-raise-statement>`_ keyword to cause one
 
   .. code-block:: python
 
     def raises_exception():
-        raise Exception('BOOM')
+        raise Exception
 
-  the terminal shows the Exception_
+  the terminal shows a passing test
+
+* The problem with this is that this will catch any Exception_ I use, for example
 
   .. code-block:: python
 
-    Exception: BOOM
+    def raises_exception():
+        raise AssertionError
 
-* I add the `unittest.TestCase.assertRaisesRegex`_ :ref:`method<functions>` to show that this specific Exception_ is raised
+  the terminal still shows a passing test
+
+* I add the `unittest.TestCase.assertRaisesRegex`_ :ref:`method<functions>` which takes in two values, an Exception_ and a message
 
   .. code-block:: python
 
     def test_catching_exceptions_w_messages(self):
         with self.assertRaisesRegex(
             Exception,
-            'BOOM'
+            'BOOM!'
         ):
             src.exceptions.raises_exception()
 
-  the terminal shows passing tests
+  which gives me an :ref:`AssertionError`
 
-refactor: make it better
-#################################################################################
+  .. code-block:: python
 
-Time to add exception handling to the program so it returns a message when it encounters an Exception_ instead of stopping
+    AssertionError: "BOOM!" does not match ""
+
+  though the Exception_ is right, the message is not
+
+* I add it to the :ref:`function`
+
+  .. code-block:: python
+
+    def raises_exception():
+        raise Exception('BOOM!')
+
+  and the test passes
 
 ----
 
@@ -116,6 +145,8 @@ Time to add exception handling to the program so it returns a message when it en
 *********************************************************************************
 test_catching_failure
 *********************************************************************************
+
+Next, I add exception handling for the program to send a message when an Exception_ happens
 
 red: make it fail
 #################################################################################
@@ -214,7 +245,7 @@ green: make it pass
 test_catching_success
 *********************************************************************************
 
-the solution has a problem, the ``exception_handler`` is a :doc:`singleton function </functions/test_singleton_functions>` that always returns ``'failed'`` it does not care about the input.
+the solution has a problem, the ``exception_handler`` is a :doc:`singleton function </functions/test_singleton_functions>` that always returns ``'failed'`` it does not care about the input. I want it to do something with the input and return ``failed`` only if an Exception_ happens or ``success`` if nothing happens
 
 red: make it fail
 #################################################################################
@@ -274,7 +305,7 @@ green: make it pass
 
   ``src.exceptions.exception_handler`` still always returns ``'failed'`` and the test expects ``'succeeded'``
 
-* To practice handling exceptions, I want the ``exception_handler`` :ref:`function<functions>` to return a different result based on if an Exception_ is raised or not. I make ``exception_handler`` call its input as a :ref:`function<functions>`
+* I make ``exception_handler`` call its input as a :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -342,10 +373,10 @@ In this case
 
 ----
 
-.. _test_finally_always_returns:
+.. _test_finally_always_runs:
 
 *********************************************************************************
-test_finally_always_returns
+test_finally_always_runs
 *********************************************************************************
 
 There is an extra clause in the `try statement`_ statement called ``finally``. Anything in this clause always runs, regardless of what happens in the ``try...except...else`` blocks
@@ -357,9 +388,9 @@ I add a failing test to ``test_exceptions.py``
 
 .. code-block:: python
 
-  def test_finally_always_returns(self):
+  def test_finally_always_runs(self):
       self.assertEqual(
-          src.exceptions.always_returns(
+          src.exceptions.always_runs(
               src.exceptions.does_not_raise_exception
           ),
           'always returns this'
@@ -369,7 +400,7 @@ the terminal shows an :ref:`AttributeError`
 
 .. code-block:: python
 
-  AttributeError: module 'src.exceptions' has no attribute 'always_returns'
+  AttributeError: module 'src.exceptions' has no attribute 'always_runs'
 
 green: make it pass
 #################################################################################
@@ -393,7 +424,7 @@ green: make it pass
 
   .. code-block:: python
 
-    NameError: name 'always_returns' is not defined
+    NameError: name 'always_runs' is not defined
 
 * I assign the name to :ref:`None`
 
@@ -490,15 +521,15 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_finally_always_returns(self):
+    def test_finally_always_runs(self):
         self.assertEqual(
-            src.exceptions.always_returns(
+            src.exceptions.always_runs(
                 src.exceptions.does_not_raise_exception
             ),
             'always returns this'
         )
         self.assertEqual(
-            src.exceptions.always_returns(
+            src.exceptions.always_runs(
                 src.exceptions.raises_exception
             ),
             'failed'
@@ -514,15 +545,15 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_finally_always_returns(self):
+    def test_finally_always_runs(self):
         self.assertEqual(
-            src.exceptions.always_returns(
+            src.exceptions.always_runs(
                 src.exceptions.does_not_raise_exception
             ),
             'always returns this'
         )
         self.assertEqual(
-            src.exceptions.always_returns(
+            src.exceptions.always_runs(
                 src.exceptions.raises_exception
             ),
             'always returns this'

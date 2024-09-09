@@ -3,7 +3,7 @@ def function():
 
 
 def raises_exception():
-    raise Exception('BOOM')
+    raise Exception('BOOM!')
 
 
 def does_not_raise_exception():
@@ -19,7 +19,7 @@ def exception_handler(function):
         return 'succeeded'
 
 
-def always_returns(function):
+def always_runs(function):
     try:
         function()
     except Exception:
