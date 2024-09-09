@@ -23,14 +23,14 @@ This is a continuation of :doc:`exception_handling_tests`
 .. _test_catching_exceptions:
 
 *********************************************************************************
-test_catching_exceptions
+test_catching_exceptions_w_messages
 *********************************************************************************
 
 * I add a failing test to ``test_exceptions.py``
 
   .. code-block:: python
 
-    def test_catching_exceptions_w_messagesself):
+    def test_catching_exceptions_w_messages(self):
         src.exceptions.raises_exception()
 
   the terminal shows a :ref:`AttributeError`
@@ -78,7 +78,7 @@ green: make it pass
 
   and the terminal shows passing tests
 
-* I can use the `raise <https://docs.python.org/3/reference/simple_stmts.html#the-raise-statement>`_ keyword to cause an exception when ``raises_exception`` is called
+* I can use the `raise <https://docs.python.org/3/reference/simple_stmts.html#the-raise-statement>`_ keyword to cause an Exception with a message
 
   .. code-block:: python
 
@@ -95,7 +95,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_catching_exceptions_w_messagesself):
+    def test_catching_exceptions_w_messages(self):
         with self.assertRaisesRegex(
             Exception,
             'BOOM'
@@ -314,7 +314,7 @@ green: make it pass
 how to use try...except...else
 ---------------------------------------------------------------------------------
 
-I add a `try statement`_statement to ``exception_handler`` in ``exceptions.py`` to handle exceptions
+I add a `try statement`_ statement to handle exceptions
 
 .. code-block:: python
 
