@@ -60,7 +60,7 @@ test_exceptions
 #. :ref:`test_catching_exceptions`
 #. :ref:`test_catching_failure`
 #. :ref:`test_catching_success`
-#. :ref:`test_finally_always_runs`
+#. :ref:`test_finally_always_returns`
 
 *********************************************************************************
 test_sleep_duration

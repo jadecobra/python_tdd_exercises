@@ -31,13 +31,13 @@ test_catching_exceptions_w_messages
   .. code-block:: python
 
     def test_catching_exceptions_w_messages(self):
-        src.exceptions.raises_exception()
+        src.exceptions.raise_exception()
 
   the terminal shows a :ref:`AttributeError`
 
   .. code-block:: python
 
-    AttributeError: module 'src.exceptions' has no attribute 'raises_exception'
+    AttributeError: module 'src.exceptions' has no attribute 'raise_exception'
 
 green: make it pass
 #################################################################################
@@ -49,19 +49,19 @@ green: make it pass
     def function():
         return None
 
-    raises_exception
+    raise_exception
 
   and the terminal shows a NameError_
 
   .. code-block:: python
 
-    NameError: name 'raises_exception' is not defined
+    NameError: name 'raise_exception' is not defined
 
 * I assign it to :ref:`None`
 
   .. code-block:: python
 
-    raises_exception = None
+    raise_exception = None
 
   and the terminal shows a :ref:`TypeError`
 
@@ -73,7 +73,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def raises_exception():
+    def raise_exception():
         return None
 
   and the terminal shows passing tests
@@ -84,7 +84,7 @@ green: make it pass
 
     def test_catching_exceptions_w_messages(self):
         with self.assertRaises(Exception):
-            src.exceptions.raises_exception()
+            src.exceptions.raise_exception()
 
   the terminal shows an :ref:`AssertionError`
 
@@ -96,7 +96,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def raises_exception():
+    def raise_exception():
         raise Exception
 
   the terminal shows a passing test
@@ -105,7 +105,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def raises_exception():
+    def raise_exception():
         raise AssertionError
 
   the terminal still shows a passing test
@@ -119,7 +119,7 @@ green: make it pass
             Exception,
             'BOOM!'
         ):
-            src.exceptions.raises_exception()
+            src.exceptions.raise_exception()
 
   which gives me an :ref:`AssertionError`
 
@@ -133,7 +133,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def raises_exception():
+    def raise_exception():
         raise Exception('BOOM!')
 
   and the test passes
@@ -158,7 +158,7 @@ I add a new failing test to ``test_exceptions.py``
   def test_catching_failure(self):
       self.assertEqual(
           src.exceptions.exception_handler(
-              src.exceptions.raises_exception
+              src.exceptions.raise_exception
           ),
           'failed'
       )
@@ -176,7 +176,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def raises_exception():
+    def raise_exception():
         raise Exception('BOOM')
 
 
@@ -275,7 +275,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def raises_exception():
+    def raise_exception():
         raise Exception('BOOM')
 
 
@@ -340,7 +340,7 @@ green: make it pass
 
   - The ``exception_handler`` :ref:`function<functions>` returns the result of calling the :ref:`function<functions>` it receives as input
   - When I call ``src.exceptions.exception_handler`` with ``src.exceptions.does_not_raise_exception`` as input, it calls the :ref:`function<functions>` and returns the result which is :ref:`None` and is not equal to ``'succeeded'``
-  - the result of calling ``src.exceptions.raises_exception`` is currently an Exception which is not equal to ``'failed'``
+  - the result of calling ``src.exceptions.raise_exception`` is currently an Exception which is not equal to ``'failed'``
 
 how to use try...except...else
 ---------------------------------------------------------------------------------
@@ -373,10 +373,10 @@ In this case
 
 ----
 
-.. _test_finally_always_runs:
+.. _test_finally_always_returns:
 
 *********************************************************************************
-test_finally_always_runs
+test_finally_always_returns
 *********************************************************************************
 
 There is an extra clause in the `try statement`_ statement called ``finally``. Anything in this clause always runs, regardless of what happens in the ``try...except...else`` blocks
@@ -388,9 +388,9 @@ I add a failing test to ``test_exceptions.py``
 
 .. code-block:: python
 
-  def test_finally_always_runs(self):
+  def test_finally_always_returns(self):
       self.assertEqual(
-          src.exceptions.always_runs(
+          src.exceptions.always_returns(
               src.exceptions.does_not_raise_exception
           ),
           'always returns this'
@@ -400,85 +400,24 @@ the terminal shows an :ref:`AttributeError`
 
 .. code-block:: python
 
-  AttributeError: module 'src.exceptions' has no attribute 'always_runs'
+  AttributeError: module 'src.exceptions' has no attribute 'always_returns'
 
 green: make it pass
 #################################################################################
 
-* I add the name
+* I make a copy of ``exception_handler`` and change the name of the copy to ``always_returns``
 
   .. code-block:: python
 
-    def exception_handler(function):
+    def always_returns(function):
         try:
             function()
         except Exception:
             return 'failed'
         else:
             return 'succeeded'
-
-
-    always_returns
-
-  and the terminal shows a NameError_
-
-  .. code-block:: python
-
-    NameError: name 'always_runs' is not defined
-
-* I assign the name to :ref:`None`
-
-  .. code-block:: python
-
-    always_returns = None
-
-  and the terminal shows a :ref:`TypeError`
-
-  .. code-block:: python
-
-    TypeError: 'NoneType' object is not callable
-
-* I make it a :ref:`function<functions>`
-
-  .. code-block:: python
-
-    def always_returns():
-        return None
-
-  and the terminal shows another :ref:`TypeError`
-
-  .. code-block:: python
-
-    TypeError: always_returns() takes 0 positional arguments but 1 was given
-
-* I make it return the result of calling the input
-
-  .. code-block:: python
-
-    def always_returns(function):
-        return function()
 
   the terminal shows an :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: None != 'always returns this'
-
-  the :ref:`function<functions>` returns the value of calling ``does_not_raise_exception`` which is :ref:`None` and the test expects ``'always returns this'``
-
-* I add exception handling using ``try...except...else``
-
-  .. code-block:: python
-
-    def always_returns(function):
-        try:
-            function()
-        except Exception:
-            return 'failed'
-        else:
-            return 'succeeded'
-
-  the terminal shows another :ref:`AssertionError`
 
   .. code-block::
 
@@ -499,9 +438,9 @@ green: make it pass
             return 'succeeded'
         return 'always returns this'
 
-  no change, the terminal still has the same error. In Python the `return statement`_ is the last thing run in the :ref:`function<functions>`. Anything written after one will not run, ``always_returns`` currently returns ``succeeded`` from the ``else`` block and ignores the `return statement`_ below it
+  no change, the terminal still has the same error. In Python the `return statement`_ is the last thing run in a :ref:`function<functions>`. Anything written after one will not run, ``always_returns`` currently returns ``succeeded`` from the ``else`` block and ignores the `return statement`_ below it
 
-* I have to add a ``finally`` clause to force it to ignore any `return statement`_ and only return what I want
+* I have to add a ``finally`` clause to force it to ignore any `return statement`_ and return only what I want
 
   .. code-block:: python
 
@@ -521,16 +460,16 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_finally_always_runs(self):
+    def test_finally_always_returns(self):
         self.assertEqual(
-            src.exceptions.always_runs(
+            src.exceptions.always_returns(
                 src.exceptions.does_not_raise_exception
             ),
             'always returns this'
         )
         self.assertEqual(
-            src.exceptions.always_runs(
-                src.exceptions.raises_exception
+            src.exceptions.always_returns(
+                src.exceptions.raise_exception
             ),
             'failed'
         )
@@ -545,16 +484,16 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_finally_always_runs(self):
+    def test_finally_always_returns(self):
         self.assertEqual(
-            src.exceptions.always_runs(
+            src.exceptions.always_returns(
                 src.exceptions.does_not_raise_exception
             ),
             'always returns this'
         )
         self.assertEqual(
-            src.exceptions.always_runs(
-                src.exceptions.raises_exception
+            src.exceptions.always_returns(
+                src.exceptions.raise_exception
             ),
             'always returns this'
         )
@@ -580,7 +519,7 @@ green: make it pass
       def always_returns(function):
           return 'always returns this'
 
-  and the tests would still pass, but it would not show how to use ``try...except...else...finally``
+  and the tests would still pass, but that would not show how to use ``try...except...else...finally``
 
 ----
 

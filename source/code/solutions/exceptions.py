@@ -2,7 +2,7 @@ def function():
     return None
 
 
-def raises_exception():
+def raise_exception():
     raise Exception('BOOM!')
 
 
@@ -19,7 +19,7 @@ def exception_handler(function):
         return 'succeeded'
 
 
-def always_runs(function):
+def always_returns(function):
     try:
         function()
     except Exception:

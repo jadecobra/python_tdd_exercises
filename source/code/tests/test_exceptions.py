@@ -44,12 +44,12 @@ class TestExceptions(unittest.TestCase):
             Exception,
             'BOOM!'
         ):
-            src.exceptions.raises_exception()
+            src.exceptions.raise_exception()
 
     def test_catching_failure(self):
         self.assertEqual(
             src.exceptions.exception_handler(
-                src.exceptions.raises_exception
+                src.exceptions.raise_exception
             ),
             'failed'
         )
@@ -62,16 +62,16 @@ class TestExceptions(unittest.TestCase):
             'succeeded'
         )
 
-    def test_finally_always_runs(self):
+    def test_finally_always_returns(self):
         self.assertEqual(
-            src.exceptions.always_runs(
+            src.exceptions.always_returns(
                 src.exceptions.does_not_raise_exception
             ),
             'always returns this'
         )
         self.assertEqual(
-            src.exceptions.always_runs(
-                src.exceptions.raises_exception
+            src.exceptions.always_returns(
+                src.exceptions.raise_exception
             ),
             'always returns this'
         )
