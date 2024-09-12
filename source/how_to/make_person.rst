@@ -1132,9 +1132,9 @@ refactor: make it better
             )
         )
 
-  all tests are still passing
+  all tests are still passing, and now both tests have the same values for ``self.first_name`` and ``self.year_of_birth``
 
-* if I want the values for ``self.first_name`` and ``self.year_of_birth`` to be different in both tests I can use the `unittest.TestCase.setUp`_ :ref:`method<functions>` which runs before every test
+* for the values to be different, as they were before I added the :ref:`class<classes>` attributes, I can use the `unittest.TestCase.setUp`_ :ref:`method<functions>` which runs before every test
 
   .. code-block:: python
 
