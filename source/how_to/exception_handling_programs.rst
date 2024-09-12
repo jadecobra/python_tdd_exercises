@@ -129,7 +129,7 @@ green: make it pass
 
   though the Exception_ is right, the message is not
 
-* I add it to the :ref:`function`
+* I add it to the :ref:`function<functions>`
 
   .. code-block:: python
 
