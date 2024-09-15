@@ -37,12 +37,11 @@ class TestExceptions(unittest.TestCase):
 
     def test_catching_exceptions_in_tests(self):
         with self.assertRaises(Exception):
-            raise Exception
+            src.exceptions.raise_exception()
 
     def test_catching_exceptions_w_messages(self):
         with self.assertRaisesRegex(
-            Exception,
-            'BOOM!'
+            Exception, 'BOOM'
         ):
             src.exceptions.raise_exception()
 
@@ -62,15 +61,15 @@ class TestExceptions(unittest.TestCase):
             'succeeded'
         )
 
-    def test_finally_always_returns(self):
+    def test_finally_always_runs(self):
         self.assertEqual(
-            src.exceptions.always_returns(
+            src.exceptions.always_runs(
                 src.exceptions.does_not_raise_exception
             ),
             'always returns this'
         )
         self.assertEqual(
-            src.exceptions.always_returns(
+            src.exceptions.always_runs(
                 src.exceptions.raise_exception
             ),
             'always returns this'

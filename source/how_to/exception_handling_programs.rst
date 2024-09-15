@@ -116,8 +116,7 @@ green: make it pass
 
     def test_catching_exceptions_w_messages(self):
         with self.assertRaisesRegex(
-            Exception,
-            'BOOM!'
+            Exception, 'BOOM!'
         ):
             src.exceptions.raise_exception()
 
@@ -137,6 +136,16 @@ green: make it pass
         raise Exception('BOOM!')
 
   and the test passes
+
+* I can also replace the ``raise Exception`` line in the previous test
+
+  .. code-block:: python
+
+    def test_catching_exceptions_in_tests(self):
+        with self.assertRaises(Exception):
+            src.exceptions.raise_exception()
+
+  and the terminal still shows passing tests
 
 ----
 
