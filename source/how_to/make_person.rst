@@ -10,7 +10,7 @@ how to make a person
 
 ----
 
-This is an exercise in making :doc:`dictionaries </data_structures/dictionaries>`  with :doc:`/functions/functions`. It assumes familiarity with those concepts, though you can still try out the chapter even if you are not.
+This is an exercise in making :doc:`dictionaries </data_structures/dictionaries>`  with :doc:`/functions/functions`, it assumes familiarity with those concepts, but is not required.
 
 .. contents:: table of contents
   :local:
@@ -37,7 +37,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 person
 
-  after making the folders and files for the project, it runs the first test and the terminal shows an :ref:`AssertionError`
+  it makes the folders and files for the project, installs packages, then runs the first test and the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1516,12 +1516,7 @@ green: make it pass
 review
 *************************************************************************************
 
-I ran the following tests to make a :ref:`function<functions>` that takes in keyword arguments as input, has default values for when one is not given, performs an action based on an input, and returns a :doc:`dictionary </data_structures/dictionaries>` as output
-
-* `test_person_factory_w_keyword_arguments`_
-* `test_person_factory_w_default_keyword_arguments`_
-
-I also encountered the following :ref:`Exceptions<Exceptions>`
+I ran tests to make a :ref:`function<functions>` that takes in keyword arguments as input, has default values for when one is not given, performs an action based on an input, and returns a :doc:`dictionary </data_structures/dictionaries>` as output. I also encountered the following :ref:`Exceptions<Exceptions>`
 
 * :ref:`AssertionError`
 * NameError_
