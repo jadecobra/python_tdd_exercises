@@ -202,7 +202,7 @@ green: make it pass
 
   and the test is green again
 
-* I also want the :ref:`function<functions>` to take a value for the year the person was born
+* I also want ``factory`` to take a keyword argument named ``year_of_birth`` and assign it to the result of calling a :ref:`function<functions>` that returns the current year
 
   .. code-block:: python
 
@@ -217,7 +217,7 @@ green: make it pass
             None
         )
 
-  and get a NameError_
+  the terminal shows a NameError_
 
   .. code-block:: python
 
@@ -238,7 +238,7 @@ green: make it pass
     class TestPersonFactory(unittest.TestCase):
     ..
 
-  which gives me a :ref:`TypeError`
+  and get a :ref:`TypeError`
 
   .. code-block:: python
 
@@ -256,7 +256,7 @@ green: make it pass
 
   the test passes
 
-* I change the expectation of the test to a :ref:`dictionary<dictionaries>`
+* I want the ``factory`` :ref:`function<functions>` to return a :ref:`dictionary<dictionaries>` as output, so I change the expectation in the assertion
 
   .. code-block:: python
 
@@ -289,7 +289,7 @@ green: make it pass
 
   the test is green again
 
-* I want the output to contain the value given for ``first_name``
+* I want the :ref:`dictionary<dictionaries>` to have a key named ``first_name`` with the same value as was given in the call to the ``factory`` :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -316,9 +316,15 @@ green: make it pass
 
   .. code-block:: python
 
+    def factory(
+            first_name, last_name,
+            sex, year_of_birth
+        ):
+        return {'first_name': 'first_name'}
+
   and the test passes
 
-* there is some repetition in the test. I typed ``'first_name'`` twice, and if I have to change it, will have to do it in 2 places in the test, and again in the ``factory`` :ref:`function<functions>`. To follow the `The Do Not Repeat Yourself (DRY) Principle`_, I will remove this repetition with a variable
+* ``'first_name'`` appears twice in the test, if I have to change it, I have to make the change in 2 places. To follow `The Do Not Repeat Yourself (DRY) Principle`_ I remove the repetition with a variable
 
   .. code-block:: python
 
@@ -351,7 +357,7 @@ green: make it pass
 
     AssertionError: {'first_name': 'first_name'} != {'first_name': 'jane'}
 
-* I copy the value from the terminal and use it to replace the `return statement`
+* I copy the value from the terminal and use it to replace the `return statement`_
 
   .. code-block:: python
 

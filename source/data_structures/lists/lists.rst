@@ -158,7 +158,7 @@ I make the values in the test match the values in the terminal
 
 and it shows passing tests.
 
-I started with a list that contained 4 things, added something using the `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ method, then confirmed what I added is now part of the list
+I started with a list that had 4 things, added something using the `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ method, then confirmed what I added is now part of the list
 
 ----
 
