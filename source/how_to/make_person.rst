@@ -179,7 +179,7 @@ green: make it pass
             src.person.factory(
                 first_name='first_name',
                 last_name='last_name',
-                sex='F'
+                sex='M'
             ),
             None
         )
@@ -211,7 +211,7 @@ green: make it pass
             src.person.factory(
                 first_name='first_name',
                 last_name='last_name',
-                sex='F',
+                sex='M',
                 year_of_birth=this_year()
             ),
             None
@@ -265,7 +265,7 @@ green: make it pass
             src.person.factory(
                 first_name='first_name',
                 last_name='last_name',
-                sex='F',
+                sex='M',
                 year_of_birth=this_year()
             ),
             dict()
@@ -298,7 +298,7 @@ green: make it pass
             src.person.factory(
                 first_name=first_name,
                 last_name='last_name',
-                sex='F',
+                sex='M',
                 year_of_birth=this_year()
             ),
             dict(
@@ -335,7 +335,7 @@ green: make it pass
             src.person.factory(
                 first_name=first_name,
                 last_name='last_name',
-                sex='F',
+                sex='M',
                 year_of_birth=this_year()
             ),
             dict(
@@ -369,7 +369,7 @@ green: make it pass
 
   and the test is green again
 
-* I want the output to also have the last name
+* I also want the :ref:`dictionary<dictionaries>` to have a key named ``last_name`` with the same value as was given in the call to the ``factory`` :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -380,7 +380,7 @@ green: make it pass
             src.person.factory(
                 first_name=first_name,
                 last_name='last_name',
-                sex='F',
+                sex='M',
                 year_of_birth=this_year()
             ),
             dict(
@@ -389,7 +389,7 @@ green: make it pass
             )
         )
 
-  and get an :ref:`AssertionError`
+  which gives me an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -410,7 +410,7 @@ green: make it pass
 
   and the test passes
 
-* I have a repetition and a fixed value in the `return statement`_, I add a variable to remove it from the test
+* there is a repetition for ``last_name`` same as with ``first_name``, I add a variable to remove it
 
   .. code-block:: python
 
@@ -422,7 +422,7 @@ green: make it pass
             src.person.factory(
                 first_name=first_name,
                 last_name=last_name,
-                sex='F',
+                sex='M',
                 year_of_birth=this_year()
             ),
             dict(
@@ -461,7 +461,7 @@ green: make it pass
 
   and the test passes
 
-* I add ``sex`` to the expectation in the test
+* I add a key named ``sex`` to the :ref:`dictionary<dictionaries>` with the same value as was given in the call to the ``factory`` :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -473,13 +473,13 @@ green: make it pass
             src.person.factory(
                 first_name=first_name,
                 last_name=last_name,
-                sex='F',
+                sex='M',
                 year_of_birth=this_year()
             ),
             dict(
                 first_name=first_name,
                 last_name=last_name,
-                sex='F',
+                sex='M',
             )
         )
 
@@ -487,7 +487,7 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: {'first_name': 'jane', 'last_name': 'doe'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'}
 
   I copy the value from the terminal and paste it to replace the `return statement`_
 
@@ -500,7 +500,7 @@ green: make it pass
         return {
             'first_name': 'jane',
             'last_name': 'doe',
-            'sex': 'F'
+            'sex': 'M'
         }
 
   and the terminal shows a passing test
@@ -512,7 +512,7 @@ green: make it pass
     def test_person_factory_w_keyword_arguments(self):
         first_name = 'jane'
         last_name = 'doe'
-        sex = 'F'
+        sex = 'M'
 
         self.assertEqual(
             src.person.factory(
@@ -529,6 +529,22 @@ green: make it pass
         )
 
   and the test is still green
+
+* when I change the value of the ``sex`` variable
+
+  .. code-block:: python
+
+    def test_person_factory_w_keyword_arguments(self):
+        first_name = 'jane'
+        last_name = 'doe'
+        sex = 'F'
+        ...
+
+  the terminal shows an :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'}
 
 * I add ``age`` to the expectation
 
