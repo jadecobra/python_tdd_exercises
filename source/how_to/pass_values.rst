@@ -741,7 +741,7 @@ I also encountered the following :ref:`Exceptions<Exceptions>`
 * :ref:`AttributeError`
 * :ref:`TypeError`
 
-Would you like to test :doc:`/how_to/make_person`?
+Would you like to test :doc:`how to make a person?</how_to/make_person>`
 
 ----
 

@@ -1600,7 +1600,7 @@ I also encountered the following :ref:`Exceptions<Exceptions>`
 * :ref:`TypeError`
 * SyntaxError_
 
-Would you like to know :doc:`/how_to/exception_handling_tests`?
+Would you like to know :doc:`how to test that an Exception is raised?</how_to/exception_handling_tests>`
 
 ----
 

@@ -1094,7 +1094,7 @@ I also encountered the following :ref:`Exceptions<Exceptions>`
 * :ref:`TypeError`
 * ZeroDivisionError_
 
-Would you like to test :doc:`passing values</how_to/pass_values>`?
+Would you like to test :doc:`passing values?</how_to/pass_values>`
 
 ----
 

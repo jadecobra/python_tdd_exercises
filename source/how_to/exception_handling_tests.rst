@@ -484,7 +484,7 @@ I have a way to catch :ref:`Exceptions<Exceptions>` when I am testing and encoun
 * KeyError_
 * ZeroDivisionError_
 
-Would you like to test :doc:`handling exceptions in programs?</how_to/exception_handling_programs>`
+Would you like to test :doc:`handling Exceptions in programs?</how_to/exception_handling_programs>`
 
 ----
 
