@@ -1470,7 +1470,7 @@ green: make it pass
     AssertionError: {'first_name': 'jane', 'last_name': 'blow', 'sex': 'F', 'age': 1981} != {'first_name': 'jane', 'last_name': 'blow', 'sex': 'F', 'age': 43}
     AssertionError: {'first_name': 'person', 'last_name': 'smith', 'sex': 'M', 'age': 1969} != {'first_name': 'person', 'last_name': 'smith', 'sex': 'M', 'age': 55}
 
-  the ``year_of_birth``is not the ``age`` but the difference between the current year and the ``year_of_birth``
+  I need the difference between the current year and the ``year_of_birth`` to get the ``age``
 
 * I add an `import statement`_ for the datetime_ :ref:`module<ModuleNotFoundError>`
 
@@ -1586,7 +1586,13 @@ green: make it pass
 review
 *************************************************************************************
 
-I ran tests to make a :ref:`function<functions>` that takes in keyword arguments as input, has default values for when one is not given, performs an action based on an input, and returns a :doc:`dictionary </data_structures/dictionaries>` as output. I also encountered the following :ref:`Exceptions<Exceptions>`
+I ran tests to make a :ref:`function<functions>` that
+- takes in keyword arguments as input
+- has default values for when one is not given
+- performs an action based on an input
+- and returns a :doc:`dictionary </data_structures/dictionaries>` as output
+
+I also encountered the following :ref:`Exceptions<Exceptions>`
 
 * :ref:`AssertionError`
 * NameError_
