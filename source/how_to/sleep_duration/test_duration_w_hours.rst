@@ -38,7 +38,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 sleep_duration
 
-  it makes the folders and files for the project, installs packages, then runs the first test and the terminal shows an :ref:`AssertionError`
+  it makes the folders and files for the project, installs packages, runs the first test and the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
