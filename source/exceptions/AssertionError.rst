@@ -75,7 +75,7 @@ red: make it fail
     tests/test_assertion_error.py:7: AssertionError
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_assertion_error.py:7`` with the mouse to open it
-* then change ``True`` to ``False`` to make ``test_failure`` pass
+* then change ``True`` to ``False`` to make the test pass
 * and change ``test_failure``
 
   .. code-block:: python

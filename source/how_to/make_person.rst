@@ -46,7 +46,7 @@ red: make it fail
     tests/test_person.py:7: AssertionError
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_person.py:7`` with the mouse to open it
-* then change ``True`` to ``False`` to make ``test_failure`` pass
+* then change ``True`` to ``False`` to make the test pass
 * and change ``test_failure`` to ``test_person_factory_w_keyword_arguments``
 
   .. code-block:: python
@@ -56,7 +56,7 @@ red: make it fail
         def test_person_factory_w_keyword_arguments(self):
             self.assertEqual(person.factory(), None)
 
-  and get a NameError_
+  the terminal shows a NameError_
 
   .. code-block:: python
 
@@ -133,7 +133,7 @@ green: make it pass
     # AttributeError
     # TypeError
 
-* then add a keyword argument for ``first_name`` to the ``factory`` :ref:`function<functions>`
+* then add a keyword argument named ``first_name`` to the ``factory`` :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -142,7 +142,7 @@ green: make it pass
 
   and the test passes
 
-* I also want the :ref:`function<functions>` to take a value for a last name and it to the test
+* I also want the :ref:`function<functions>` to take a keyword argument named ``last_name``
 
   .. code-block:: python
 
@@ -157,11 +157,11 @@ green: make it pass
 
   which gives me another :ref:`TypeError`
 
-    .. code-block:: python
+  .. code-block:: python
 
     TypeError: factory() got an unexpected keyword argument 'last_name'
 
-* after adding a keyword argument for ``last_name``  to the ``factory`` function
+* when I add the name to the ``factory`` function
 
   .. code-block:: python
 
@@ -170,7 +170,7 @@ green: make it pass
 
   the terminal shows a passing test
 
-* I want it to also take in a value for the person's sex
+* I want the ``factory`` :ref:`function<functions>` to also take in a keyword argument named ``sex``
 
   .. code-block:: python
 
@@ -190,7 +190,7 @@ green: make it pass
 
     TypeError: factory() got an unexpected keyword argument 'sex'
 
-* I add the name to the :ref:`function<functions>` with a default value of :ref:`None`
+* I add the name to the :ref:`function<functions>`
 
   .. code-block:: python
 
