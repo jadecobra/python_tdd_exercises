@@ -410,7 +410,7 @@ green: make it pass
 
   and the test passes
 
-* there is a repetition for ``last_name`` same as with ``first_name``, I add a variable to remove it
+* there is a repetition of ``'last_name'`` so I add a variable to remove it like I did for ``first_name``
 
   .. code-block:: python
 
@@ -566,7 +566,7 @@ green: make it pass
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
-                age=this_year() - this_year(),
+                age=this_year()-this_year(),
             )
         )
 
@@ -578,7 +578,7 @@ green: make it pass
 
   I cannot do subtraction with :ref:`None`
 
-* I add an `import statement`_ for the datetime_ :ref:`module<ModuleNotFoundError>`
+* I add an `import statement`_
 
   .. code-block:: python
 
@@ -586,7 +586,7 @@ green: make it pass
     import src.person
     import unittest
 
-  datetime_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, that is used for dates and times, I will use it to return the current year
+  datetime_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, that is used for dates and times
 
 * I change the `return statement`_ in the ``this_year`` :ref:`function <functions>` to add a call that returns the current year
 
@@ -595,7 +595,7 @@ green: make it pass
     def this_year():
         return datetime.datetime.now().year
 
-  ``datetime.datetime.now().year`` returns the ``year`` attribute of the object returned by the ``now`` :ref:`method<functions>` of the ``datetime.datetime`` :ref:`class <classes>`, which is a representation of the current local date and time. I could also use ``today`` instead of ``now`` to get the same value
+  this returns the ``year`` attribute of the ``datetime`` object returned by the `now <https://docs.python.org/3/library/datetime.html#datetime.datetime.now>`_ :ref:`method<functions>` of the ``datetime`` :ref:`class <classes>`,  from the datetime_ :ref:`module<ModuleNotFoundError>`. I could also use the `today <https://docs.python.org/3/library/datetime.html#datetime.date.today>`_ :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -608,7 +608,7 @@ green: make it pass
 
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 0}
 
-* when I copy the value from the terminal and use it to replace the `return statement`_ in ``factory``
+* when I copy the value from the terminal and use it to replace the `return statement`_
 
   .. code-block:: python
 
@@ -650,10 +650,12 @@ green: make it pass
             )
         )
 
+  the terminal still shows green
+
 refactor: make it better
 #################################################################################
 
-I  want to use random values to test the ``factory`` :ref:`function<functions>` because it returns the same :ref:`dictionary<dictionaries>` every time it is called, I want it to be able to take in different inputs and return them
+I  want to use random values to test the ``factory`` :ref:`function<functions>` because it returns the same :ref:`dictionary<dictionaries>` every time it is called, I want it to be able to take in different inputs and do something with them
 
 * first I add a new `import statement`_
 
@@ -666,7 +668,7 @@ I  want to use random values to test the ``factory`` :ref:`function<functions>` 
 
   random_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, that is used to make fake random numbers
 
-* I change the ``year_of_birth`` value to use random numbers
+* I make the ``year_of_birth`` variable use random numbers
 
   .. code-block:: python
 
@@ -679,7 +681,7 @@ I  want to use random values to test the ``factory`` :ref:`function<functions>` 
         )
         ...
 
-  ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 year ago up to the current year which is returned by ``this_year()`` and the terminal shows an :ref:`AssertionError`
+  ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 years ago up to and including the current year which is returned by ``this_year()``. The terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -703,13 +705,13 @@ I  want to use random values to test the ``factory`` :ref:`function<functions>` 
             'age': this_year() - year_of_birth,
         }
 
-  the terminal shows a NameError_
+  and get a NameError_
 
   .. code-block:: python
 
     NameError: name 'this_year' is not defined
 
-  because I called a function that does not exist in ``person.py``. I change ``this_year()`` to the return value from ``test_person_factory_w_keyword_arguments.this_year``
+  because I called a :ref:`function<functions>` that does not exist in ``person.py``. I change ``this_year()`` to the return value from ``test_person_factory_w_keyword_arguments.this_year``
 
   .. code-block:: python
 
@@ -724,13 +726,13 @@ I  want to use random values to test the ``factory`` :ref:`function<functions>` 
             'age': datetime.datetime.now().year - year_of_birth,
         }
 
-  the terminal shows another NameError_
+  and the terminal shows another NameError_
 
   .. code-block:: python
 
     NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
 
-  I add an `import statement`_ at the beginning of ``person.py``
+  I add an `import statement`_ to ``person.py``
 
   .. code-block:: python
 
@@ -741,9 +743,9 @@ I  want to use random values to test the ``factory`` :ref:`function<functions>` 
     def factory(
     ...
 
-  and the terminal shows a passing test, time for a victory dance
+  and the terminal shows a passing test
 
-* I use random values for the ``sex`` variable
+* I add randomness to the ``sex`` variable
 
   .. code-block:: python
 
@@ -823,7 +825,7 @@ I  want to use random values to test the ``factory`` :ref:`function<functions>` 
 
   and the test is green again
 
-* I use random values for the ``first_name`` variable
+* I do the same thing for the ``first_name`` variable
 
   .. code-blocK:: python
 
@@ -840,7 +842,7 @@ I  want to use random values to test the ``factory`` :ref:`function<functions>` 
         )
         ...
 
-  and get a random :ref:`AssertionError`
+  and get random success or an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -872,7 +874,7 @@ I  want to use random values to test the ``factory`` :ref:`function<functions>` 
 test_person_factory_w_default_keyword_arguments
 *************************************************************************************
 
-I want to see what would happen if I try to make a person without giving a value for the ``last_name``
+I want to see what would happen if I try to make a person without giving a value for the ``last_name`` variable
 
 red: make it fail
 #################################################################################
@@ -890,6 +892,20 @@ red: make it fail
         year_of_birth = random.randint(
             this_year()-120, this_year()
         )
+    ...
+
+  which gives me a NameError_
+
+  .. code-block:: python
+
+    NameError: name 'last_name' is not defined
+
+green: make it pass
+#################################################################################
+
+* I remove it from the call to the ``factory`` :ref:`function<functions>`
+
+  .. code-block:: python
 
         self.assertEqual(
             src.person.factory(
@@ -905,15 +921,13 @@ red: make it fail
             )
         )
 
-  the terminal shows a :ref:`TypeError`
+  and the terminal shows a :ref:`TypeError`
+
+  .. code-block:: python
 
     TypeError: factory() missing 1 required positional argument: 'last_name'
 
   because I called the ``factory`` :ref:`function<functions>` with 3 arguments in the test but the definition takes 4
-
-
-green: make it pass
-#################################################################################
 
 * I add a default value for ``last_name``
 
@@ -925,7 +939,7 @@ green: make it pass
         ):
         ...
 
-  the terminal shows a SyntaxError_
+  which gives me a SyntaxError_
 
   .. code-block:: python
 
@@ -954,13 +968,11 @@ green: make it pass
         ):
         ...
 
-  which gives me another SyntaxError_
+  and get another SyntaxError_
 
   .. code-block:: python
 
     SyntaxError: parameter without a default follows parameter with a default
-
-  for the ``year_of_birth`` input parameter
 
 * I assign a default value to the ``year_of_birth`` parameter
 
@@ -972,15 +984,15 @@ green: make it pass
         ):
         ...
 
-  the terminal shows a NameError_
+  and the terminal shows a NameError_
 
   .. code-block:: python
 
     NameError: name 'last_name' is not defined
 
-  the ``last_name`` key in the expected :ref:`dictionary<dictionaries>` needs a value
+  the ``last_name`` key in the expected :ref:`dictionary<dictionaries>` points to a variable that no longer exists
 
-* I set the expectation for ``last_name``
+* I change the expectation for ``last_name``
 
   .. code-block:: python
 
@@ -1007,7 +1019,7 @@ green: make it pass
     AssertionError: {'first_name': 'jane', 'last_name': None, 'sex': 'F', 'age': 70} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 70}
     AssertionError: {'first_name': 'jane', 'last_name': None, 'sex': 'F', 'age': 83} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 83}
 
-  the `factory` :ref:`function<functions>` returns a :ref:`dictionary<dictionaries>` with a value of :ref:`None` for the ``last_name`` and the test expects a value of ``doe``
+  the ``factory`` :ref:`function<functions>` returns a :ref:`dictionary<dictionaries>` with a value of :ref:`None` for ``last_name`` and the test expects a value of ``'doe'``
 
 * When I make the default value for ``last_name`` in the :ref:`function<functions>` match the expectation
 
@@ -1030,7 +1042,7 @@ green: make it pass
         year_of_birth=year_of_birth,
     )
 
-* I want to see what happens if I remove ``sex`` from the :ref:`function<functions>` call then change the expectation
+* I want to see what happens if I remove ``sex`` from the call to the ``factory`` :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -1041,19 +1053,53 @@ green: make it pass
         year_of_birth = random.randint(
             this_year()-120, this_year()
         )
+        ...
 
-        self.assertEqual(
-            src.person.factory(
-                first_name=first_name,
-                year_of_birth=year_of_birth,
-            ),
-            {
-                "first_name": first_name,
-                "last_name": "doe",
-                "sex": 'M',
-                "age": this_year() - year_of_birth
-            }
-        )
+  the terminal shows a NameError_
+
+  .. code-block:: python
+
+    NameError: name 'sex' is not defined
+
+* I remove it from the call
+
+  .. code-block:: python
+
+    self.assertEqual(
+        src.person.factory(
+            first_name=first_name,
+            year_of_birth=year_of_birth,
+        ),
+        {
+            "first_name": first_name,
+            "last_name": "doe",
+            "sex": sex,
+            "age": this_year() - year_of_birth
+        }
+    )
+
+  and get another NameError_
+
+  .. code-block:: python
+
+    NameError: name 'sex' is not defined
+
+  the value in the :ref:`dictionary<dictionaries>` refers to a variable that no longer exists. I change the expectation
+
+  .. code-block:: python
+
+    self.assertEqual(
+        src.person.factory(
+            first_name=first_name,
+            year_of_birth=year_of_birth,
+        ),
+        {
+            "first_name": first_name,
+            "last_name": "doe",
+            "sex": 'M',
+            "age": this_year() - year_of_birth
+        }
+    )
 
   and get an :ref:`AssertionError`
 
@@ -1064,7 +1110,9 @@ green: make it pass
     AssertionError: {'first_name': 'john', 'last_name': 'doe', 'sex': None, 'age': 45} != {'first_name': 'john', 'last_name': 'doe', 'sex': 'M', 'age': 45}
     AssertionError: {'first_name': 'john', 'last_name': 'doe', 'sex': None, 'age': 58} != {'first_name': 'john', 'last_name': 'doe', 'sex': 'M', 'age': 58}
 
-  I add a default value to match the expectation
+  the ``factory`` :ref:`function<functions>` returns a :ref:`dictionary<dictionaries>` with a value of :ref:`None` for ``sex`` and the test expects a value of ``'M'``
+
+* when I add a default value to match the expectation
 
   .. code-block:: python
 
@@ -1074,12 +1122,12 @@ green: make it pass
         ):
         ...
 
-  and the terminal shows passing tests
+  the terminal shows passing tests
 
 refactor: make it better
 #################################################################################
 
-* I have duplication for ``first_name`` that I can remove with :ref:`class<classes>` attributes
+* ``first_name`` and ``year_of_birth`` are made the same way in both tests, I can remove this repetition with :ref:`class<classes>` attributes
 
   .. code-block:: python
 
@@ -1095,7 +1143,7 @@ refactor: make it better
 
         ...
 
-  then reference them in the tests
+  then use them in the tests with ``self`` the same way I do the ``assert`` :ref:`methods<functions>`
 
   .. code-block:: python
 
@@ -1115,7 +1163,7 @@ refactor: make it better
 
   the terminal still shows green
 
-* and I remove the variables because they are no longer needed
+* since the variables point to the class attributes, I use them directly and remove the variables that are no longer needed
 
   .. code-block:: python
 
@@ -1156,7 +1204,7 @@ refactor: make it better
 
   all tests are still passing, and now both tests have the same values for ``self.first_name`` and ``self.year_of_birth``
 
-* for the values to be different, as they were before I added the :ref:`class<classes>` attributes, I can use the `unittest.TestCase.setUp`_ :ref:`method<functions>` which runs before every test
+* for the values to be different, as they were before I made them :ref:`class<classes>` attributes, I can use the `unittest.TestCase.setUp`_ :ref:`method<functions>` which runs before every test
 
   .. code-block:: python
 
@@ -1172,7 +1220,7 @@ refactor: make it better
 
         ...
 
-  the terminal still shows green
+  the terminal still shows all tests are passing
 
 ----
 
