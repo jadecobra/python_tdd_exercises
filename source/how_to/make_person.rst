@@ -1588,7 +1588,7 @@ review
 
 I ran tests to make a :ref:`function<functions>` that
 - takes in keyword arguments as input
-- has default values for when one is not given
+- has default values for some of them
 - performs an action based on an input
 - and returns a :doc:`dictionary </data_structures/dictionaries>` as output
 

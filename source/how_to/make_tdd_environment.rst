@@ -712,5 +712,3 @@ Would you like to test :doc:`handling exceptions in programs?</how_to/calculator
 
 * :doc:`/code/make_tdd/code_make_python_tdd_sh`
 * :doc:`/code/make_tdd/code_make_python_tdd_ps1`
-
-# ADD an import statement for the program
