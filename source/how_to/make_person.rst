@@ -1243,7 +1243,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    AttributeError: module 'TestPerson' has no attribute 'first_name'
+    AttributeError: 'TestPerson' object has no attribute 'first_name'
 
   because there is no longer a class attribute named ``first_name``, it is now local to the `unittest.TestCase.setUp`_ :ref:`method<functions>` and the other methods cannot reach it
 
@@ -1263,7 +1263,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    AttributeError: module 'TestPerson' has no attribute 'year_of_birth'
+    AttributeError: 'TestPerson' object has no attribute 'year_of_birth'
 
 * I make the same change for ``year_of_birth``
 
