@@ -461,7 +461,7 @@ green: make it pass
 
   and the test passes
 
-* I add a key named ``sex`` to the :ref:`dictionary<dictionaries>` with the same value as was given in the call to the ``factory`` :ref:`function<functions>`
+* I add a key named ``sex`` to the :ref:`dictionary<dictionaries>` with the same value as what was given in the call to the ``factory`` :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -602,9 +602,9 @@ green: make it pass
     import src.person
     import unittest
 
-  datetime_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, that is used for dates and times
+  datetime_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that is used for dates and times
 
-* then change the `return statement`_ in the ``this_year`` :ref:`function <functions>` to add a call that returns the current year
+* I change the `return statement`_ in the ``this_year`` :ref:`function <functions>` to add a call that returns the current year
 
   .. code-block:: python
 
@@ -624,7 +624,9 @@ green: make it pass
 
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 0}
 
-* when I copy the value from the terminal and use it to replace the `return statement`_
+  the new :ref:`dictionary<dictionaries>`  has a value for ``age``
+
+* when I copy it from the terminal and use it to replace the `return statement`_
 
   .. code-block:: python
 
@@ -666,7 +668,7 @@ green: make it pass
             )
         )
 
-  still green
+  and the test is still green
 
 refactor: make it better
 #################################################################################
@@ -684,7 +686,7 @@ I  want to use random values for the ``year_of_birth`` variable
 
   random_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, that is used to make fake random numbers
 
-* then make the ``year_of_birth`` variable use random numbers
+* then I make the ``year_of_birth`` variable use random numbers
 
   .. code-block:: python
 
