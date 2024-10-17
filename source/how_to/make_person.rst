@@ -1297,8 +1297,6 @@ red: make it fail
 
     AttributeError: module 'src.person' has no attribute 'factory'
 
-  see if you can tell what :ref:`Exceptions<Exceptions>` will show up as I go along
-
 .. _test_person_tests_green:
 
 green: make it pass
@@ -1335,20 +1333,20 @@ green: make it pass
     def factory():
         return None
 
-  and get a :ref:`TypeError`
+  the terminal shows another :ref:`TypeError`
 
   .. code-block:: python
 
     TypeError: factory() got an unexpected keyword argument 'first_name'
 
-  then add the keyword argument to the :ref:`function<functions>`
+  I add the keyword argument to the :ref:`function<functions>` definition
 
   .. code-block:: python
 
     def factory(first_name):
         return None
 
-  which gives me another :ref:`TypeError`
+  and get another :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1361,7 +1359,7 @@ green: make it pass
     def factory(first_name, last_name):
         return None
 
-  and the terminal shows another :ref:`TypeError`
+  and the terminal shows a :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1414,7 +1412,7 @@ green: make it pass
             'age': 20
         }
 
-  the terminal shows another :ref:`AssertionError`
+  which gives me another :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1637,7 +1635,7 @@ green: make it pass
         ):
         ...
 
-  all the tests pass!
+  both tests pass!
 
 *************************************************************************************
 review
