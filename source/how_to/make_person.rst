@@ -287,9 +287,9 @@ green: make it pass
         ):
         return {}
 
-  the test is green again
+  the test is green again, showing that ``{}`` and ``dict()`` are the same
 
-* I want the :ref:`dictionary<dictionaries>` to have a key named ``first_name`` with the same value as was given in the call to the ``factory`` :ref:`function<functions>`
+* I want the :ref:`dictionary<dictionaries>` to have a key named ``first_name`` with the same value as what was given in the call to the ``factory`` :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -369,7 +369,7 @@ green: make it pass
 
   and the test is green again
 
-* I want the :ref:`dictionary<dictionaries>` to have a key named ``last_name`` with the same value as was given in the call to the ``factory`` :ref:`function<functions>`
+* I want the :ref:`dictionary<dictionaries>` to have a key named ``last_name`` with the same value as what was given in the call to the ``factory`` :ref:`function<functions>`
 
   .. code-block:: python
 
