@@ -921,7 +921,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I remove it from the call to the ``factory`` :ref:`function<functions>`
+* I remove ``last_name`` from the call to the ``factory`` :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -939,7 +939,7 @@ green: make it pass
             )
         )
 
-  and the terminal shows a :ref:`TypeError`
+  and get a :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1008,7 +1008,7 @@ green: make it pass
 
     NameError: name 'last_name' is not defined
 
-  the ``last_name`` key in the expected :ref:`dictionary<dictionaries>` points to a variable that no longer exists
+  the value for the ``last_name`` key in the expected :ref:`dictionary<dictionaries>` points to a variable that no longer exists
 
 * I change the expectation for ``last_name``
 
@@ -1049,15 +1049,15 @@ green: make it pass
         ):
         ...
 
-  the terminal shows passing tests. When no value is given for the ``last_name`` argument to ``person.factory`` it uses ``'doe'`` because that is the default value in the :ref:`function<functions>` signature, it is same as calling it with ``last_name='doe'``
+  the terminal shows passing tests. When no value is given for the ``last_name`` argument to the ``factory`` :ref:`function<functions>` it uses ``'doe'`` because that is the default value in the :ref:`function<functions>` signature, it is same as calling it with ``last_name='doe'``
 
   .. code-block:: python
 
     src.person.factory(
         first_name=first_name,
         sex=sex,
-        last_name='doe',
         year_of_birth=year_of_birth,
+        last_name='doe',
     )
 
 * I want to see what happens if I do not know the value for the ``sex`` variable
@@ -1140,7 +1140,16 @@ green: make it pass
         ):
         ...
 
-  the terminal shows passing tests
+  the terminal shows passing tests. When no value is given for the ``sex`` argument to the ``factory`` :ref:`function<functions>` it uses ``'M'`` because that is the default value in the :ref:`function<functions>` signature, it is same as calling it with ``sex='M'``
+
+  .. code-block:: python
+
+    src.person.factory(
+        first_name=first_name,
+        year_of_birth=year_of_birth,
+        last_name='doe',
+        sex='M,
+    )
 
 refactor: make it better
 #################################################################################
@@ -1183,7 +1192,7 @@ refactor: make it better
 
   the terminal still shows green
 
-* since the variables point to the class attributes, I use them directly and remove the variables that are no longer needed
+* since the variables point to class attributes, I can use them directly in place of the variables
 
   .. code-block:: python
 
@@ -1224,7 +1233,7 @@ refactor: make it better
 
   all tests are still passing
 
-* both tests have the same values for ``self.first_name`` and ``self.year_of_birth`` since I made them :ref:`class<classes>` attributes, they were not always the same values before the change. I can use the `unittest.TestCase.setUp`_ :ref:`method<functions>` which runs before every test to fix this
+* both tests now have the same values for ``self.first_name`` and ``self.year_of_birth`` since I made them :ref:`class<classes>` attributes, they were not always the same before the change. I can use the `unittest.TestCase.setUp`_ :ref:`method<functions>` which runs before every test to fix this
 
   .. code-block:: python
 
@@ -1328,7 +1337,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* I make it a :ref:`function<functions>`
+* when I make it a :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -1348,7 +1357,7 @@ green: make it pass
     def factory(first_name):
         return None
 
-  and get another :ref:`TypeError`
+  and get a :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1380,7 +1389,7 @@ green: make it pass
 
     TypeError: factory() got an unexpected keyword argument 'year_of_birth'
 
-  when I add the keyword argument
+  when I add the missing keyword argument
 
   .. code-block:: python
 
@@ -1477,7 +1486,7 @@ green: make it pass
 
   the values for ``sex`` and ``age`` change
 
-* When I use the ``sex`` parameter in the `return statement`_
+* When I use the ``sex`` input parameter in the `return statement`_
 
   .. code-block:: python
 
@@ -1539,7 +1548,7 @@ green: make it pass
     def factory(
     ...
 
-  then add a call to it for the age calculation
+  then use it for the age calculation
 
   .. code-block:: python
 
