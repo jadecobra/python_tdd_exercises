@@ -1370,26 +1370,26 @@ green: make it pass
     def factory(first_name, last_name):
         return None
 
-  and the terminal shows a :ref:`TypeError`
+  and the terminal shows another :ref:`TypeError`
 
   .. code-block:: python
 
     TypeError: factory() got an unexpected keyword argument 'sex'
 
-  I add the keyword argument
+  when I add the keyword argument
 
   .. code-block:: python
 
     def factory(first_name, last_name, sex):
         return None
 
-  and get a :ref:`TypeError`
+  I get a :ref:`TypeError`
 
   .. code-block:: python
 
     TypeError: factory() got an unexpected keyword argument 'year_of_birth'
 
-  when I add the missing keyword argument
+  I add the missing keyword argument
 
   .. code-block:: python
 
@@ -1399,7 +1399,7 @@ green: make it pass
         ):
         return None
 
-  I get an :ref:`AssertionError`
+  and the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1408,7 +1408,7 @@ green: make it pass
     AssertionError: None != {'first_name': 'jane', 'last_name': 'blow', 'sex': 'M', 'age': 55}
     AssertionError: None != {'first_name': 'person', 'last_name': 'smith', 'sex': 'F', 'age': 97}
 
-* I copy the value from the terminal and use it to replace :ref:`None` in the `return statement`_
+* I copy the value from the terminal to replace :ref:`None` in the `return statement`_
 
   .. code-block:: python
 
@@ -1434,7 +1434,7 @@ green: make it pass
 
   the values for ``first_name``, ``last_name``, ``sex`` and ``age`` change
 
-* I make the `return statement`_ use the input parameters for ``first_name``
+* I make the :ref:`dictionary<dictionaries>` in the `return statement`_ use the ``first_name`` input parameter
 
   .. code-block:: python
 
@@ -1460,7 +1460,7 @@ green: make it pass
 
   the ``last_name``, ``sex`` and ``age`` change
 
-* I use the input parameter to ``last_name`` in the `return statement`_
+* I use the ``last_name`` input parameter in the `return statement`_
 
   .. code-block:: python
 
@@ -1548,7 +1548,7 @@ green: make it pass
     def factory(
     ...
 
-  then use it for the age calculation
+  then use it to get the current year for the age calculation
 
   .. code-block:: python
 
@@ -1563,7 +1563,7 @@ green: make it pass
             'age': datetime.datetime.today().year - year_of_birth,
         }
 
-  and get a :ref:`TypeError`
+  the terminal shows a :ref:`TypeError`
 
   .. code-block:: python
 
