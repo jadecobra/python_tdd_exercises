@@ -108,7 +108,7 @@ green: make it pass
 
     NameError: name 'variable_0' is not defined
 
-  ``NameError: name 'variable_0' is not defined`` the NameError_ is raised because ``variable_0`` in ``module.py`` is considered a reference and there is currently no definition or assignment for that name
+  because ``variable_0`` in ``module.py`` is a reference to something that does not exist
 
 * I add NameError_ to the list of errors encountered
 
@@ -120,19 +120,19 @@ green: make it pass
     # AttributeError
     # NameError
 
-* then change the failing line in ``module.py`` to fix it by assigning the name ``variable_0`` to :ref:`None`
+* then change the failing line in ``module.py`` to point ``variable_0`` to :ref:`None`
 
   .. code-block:: python
 
     variable_0 = None
 
-  this assigns the name ``variable_0`` to :ref:`None` and the terminal shows a passing test. YES!
+  the terminal shows a passing test. YES!
 
 I solved the `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a variable
 
 .. NOTE::
 
-  - in Python ``=`` is used to assign names to objects, for example ``five = 5`` means I can refer to the number ``5`` with the name ``five``
+  - in Python ``=`` is used to point names to objects, for example ``five = 5`` means I can refer to the number ``5`` with the name ``five``
   - the equality sign ``==`` is used to check if two things are equal example  ``5 == 4`` means "is ``5`` is equal to ``4``?"
 
 AttributeError vs NameError

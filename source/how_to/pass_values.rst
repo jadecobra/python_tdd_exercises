@@ -37,7 +37,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 telephone
 
-  it makes the folders and files for the project, installs packages, runs the first test and the terminal shows an :ref:`AssertionError`
+  it makes the folders and files that are needed, installs packages, runs the first test and the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -110,7 +110,7 @@ green: make it pass
 
     NameError: name 'text' is not defined
 
-* then I assign ``text`` to :ref:`None`
+* then I point ``text`` to :ref:`None`
 
   .. code-block:: python
 
@@ -632,7 +632,7 @@ green: make it pass
 
     NameError: name 'text' is not defined
 
-  I assign it to :ref:`None`
+  I point it to :ref:`None`
 
   .. code-block:: python
 

@@ -57,7 +57,7 @@ green: make it pass
 
     NameError: name 'raise_exception' is not defined
 
-* I assign it to :ref:`None`
+* I point it to :ref:`None`
 
   .. code-block:: python
 
@@ -197,7 +197,7 @@ green: make it pass
 
     NameError: name 'exception_handler' is not defined
 
-* I assign it to :ref:`None`
+* I point it to :ref:`None`
 
   .. code-block:: python
 
@@ -300,7 +300,7 @@ green: make it pass
 
     NameError: name 'does_not_raise_exception' is not defined
 
-* I assign ``does_not_raise_exception`` to :ref:`None`
+* I point ``does_not_raise_exception`` to :ref:`None`
 
   .. code-block:: python
 

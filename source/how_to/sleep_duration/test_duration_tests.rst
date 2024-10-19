@@ -68,7 +68,7 @@ green: make it pass
     # AttributeError
     # NameError
 
-* and define the name by assigning it to :ref:`None`
+* and point ``get_datetime`` to :ref:`None`
 
   .. code-block:: python
 
@@ -207,7 +207,7 @@ green: make it pass
 
   I have done this dance before
 
-* I assign the name to :ref:`None` to define it
+* I point it to :ref:`None` to define it
 
   .. code-block:: python
 

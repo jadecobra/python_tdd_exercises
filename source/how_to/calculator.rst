@@ -146,7 +146,7 @@ green: make it pass
 
     NameError: name 'add' is not defined
 
-* I assign it to :ref:`None`
+* I point it to :ref:`None`
 
   .. code-block:: python
 
@@ -315,7 +315,7 @@ refactor: make it better
 
   and the terminal shows passing tests
 
-  - ``x = random.randint(-1, 1)`` assigns a variable called ``x`` to the result of calling ``random.randint(-1, 1)`` which gives me a random number from ``-1`` up to and including ``1``
+  - ``x = random.randint(-1, 1)`` points a variable called ``x`` to the result of calling ``random.randint(-1, 1)`` which gives me a random number from ``-1`` up to and including ``1``
   - ``-1`` for negative numbers, ``0`` for itself, and ``1`` for positive numbers
 
 * I remove the other assertions because they are covered by the one that uses random numbers
@@ -456,7 +456,7 @@ green: make it pass
 
     NameError: name 'subtract' is not defined
 
-  then I assign it to :ref:`None`
+  then I point it to :ref:`None`
 
   .. code-block:: python
 
@@ -804,7 +804,7 @@ refactor: make it better
 
   - if the value of ``self.y`` is ``0``
 
-    * it assigns ``self.y`` to the result of calling ``a_random_number``
+    * it points ``self.y`` to the result of calling ``a_random_number``
     * then checks if the value of ``self.y`` is ``0`` again, repeating the process until ``self.y`` is not ``0``
 
   - if the value of ``self.y`` is not ``0`` at any point, it exits the loop and runs the code in the ``else`` block
@@ -899,7 +899,7 @@ green: make it pass
 
     NameError: name 'subtract' is not defined
 
-  I assign it to :ref:`None`
+  I point it to :ref:`None`
 
   .. code-block:: python
 

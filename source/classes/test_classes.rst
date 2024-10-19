@@ -83,7 +83,7 @@ green: make it pass
     # AttributeError
     # NameError
 
-* I make the name to an assignment to :ref:`None`
+* I point the name to :ref:`None`
 
   .. code-block:: python
 

@@ -10,7 +10,7 @@ how to make a person
 
 ----
 
-This is an exercise in making :doc:`dictionaries </data_structures/dictionaries>`  with :doc:`/functions/functions`, it assumes familiarity with those concepts, but is not required.
+This is an exercise in making :doc:`dictionaries </data_structures/dictionaries>` with :doc:`/functions/functions`
 
 .. contents:: table of contents
   :local:
@@ -37,7 +37,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 person
 
-  it makes the folders and files for the project, installs packages, runs the first test and the terminal shows an :ref:`AssertionError`
+  it makes the folders and files that are needed, installs packages, runs the first test and the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -133,7 +133,7 @@ green: make it pass
     # AttributeError
     # TypeError
 
-* then add the name as an input parameter for the ``factory`` :ref:`function<functions>`
+* then add the name as an input parameter to the ``factory`` :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -202,7 +202,7 @@ green: make it pass
 
   and the test is green again
 
-* I want ``factory`` to take a keyword argument named ``year_of_birth`` and assign it to the result of calling a :ref:`function<functions>` that returns the current year
+* I want ``factory`` to take a keyword argument named ``year_of_birth`` and point it to the result of calling a :ref:`function<functions>` that returns the current year
 
   .. code-block:: python
 
@@ -785,7 +785,7 @@ I  want to use random values for the ``year_of_birth`` variable
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 109} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 109}
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 115} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 115}
 
-  when I change the `return statement`_ to use the input parameter for ``sex``
+  when I change the `return statement`_ to use the input parameter to ``sex``
 
   .. code-block:: python
 
@@ -826,7 +826,7 @@ I  want to use random values for the ``year_of_birth`` variable
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 110} != {'first_name': 'jane', 'last_name': 'bloggs', 'sex': 'F', 'age': 110}
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 116} != {'first_name': 'jane', 'last_name': 'blow', 'sex': 'M', 'age': 116}
 
-  I change the `return statement`_ to use the input parameter for ``last_name``
+  I change the `return statement`_ to use the input parameter to ``last_name``
 
   .. code-block:: python
 
@@ -869,7 +869,7 @@ I  want to use random values for the ``year_of_birth`` variable
     AssertionError: {'first_name': 'jane', 'last_name': 'public', 'sex': 'M', 'age': 59} != {'first_name': 'person', 'last_name': 'public', 'sex': 'M', 'age': 59}
     AssertionError: {'first_name': 'jane', 'last_name': 'smith', 'sex': 'F', 'age': 117} != {'first_name': 'joe', 'last_name': 'smith', 'sex': 'F', 'age': 117}
 
-  I change the `return statement`_ to use the input parameter for ``first_name``
+  I change the `return statement`_ to use the input parameter to ``first_name``
 
   .. code-block:: python
 
@@ -992,7 +992,7 @@ green: make it pass
 
     SyntaxError: parameter without a default follows parameter with a default
 
-* I assign a default value to the ``year_of_birth`` parameter
+* I give the ``year_of_birth`` parameter a default value
 
   .. code-block:: python
 
@@ -1325,7 +1325,7 @@ green: make it pass
 
     NameError: name 'factory' is not defined
 
-* I assign it to :ref:`None`
+* I point it to :ref:`None`
 
   .. code-block:: python
 
@@ -1460,7 +1460,7 @@ green: make it pass
 
   the ``last_name``, ``sex`` and ``age`` change
 
-* I use the input parameter for ``last_name`` in the `return statement`_
+* I use the input parameter to ``last_name`` in the `return statement`_
 
   .. code-block:: python
 

@@ -69,7 +69,7 @@ green: make it pass
 
   and the terminal shows a ` <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
-* after I make the name with an assignment to :ref:`None`
+* after I point the name to :ref:`None`
 
   .. code-block:: python
 
@@ -197,7 +197,7 @@ green: make it pass
   the terminal shows a NameError_ because there is no definition for ``method_a``
 
 
-* I define ``method_a`` as an attribute by assigning the name to :ref:`None`
+* I define ``method_a`` as an attribute by pointing it to :ref:`None`
 
   .. code-block:: python
 

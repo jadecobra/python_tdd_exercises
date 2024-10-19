@@ -38,7 +38,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 sleep_duration
 
-  it makes the folders and files for the project, installs packages, runs the first test and the terminal shows an :ref:`AssertionError`
+  it makes the folders and files that are needed, installs packages, runs the first test and the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -170,7 +170,7 @@ green: make it pass
 
     NameError: name 'duration' is not defined
 
-  I define it by assigning it to :ref:`None`
+  I point it to :ref:`None` to define it
 
   .. code-block:: python
 
@@ -808,7 +808,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
 
   the terminal still shows passing tests
 
-* the assignments for ``wake_time`` and ``sleep_time`` are the same, time to make a :ref:`function<functions>` that returns a random timestamp
+* ``wake_time`` and ``sleep_time`` are defined in the same way, time to make a :ref:`function<functions>` that returns a random timestamp
 
   .. code-block:: python
 
