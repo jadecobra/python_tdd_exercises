@@ -202,7 +202,7 @@ green: make it pass
 
   and the test is green again
 
-* I want ``factory`` to take a keyword argument named ``year_of_birth`` and point it to the result of calling a :ref:`function<functions>` that returns the current year
+* I want the ``factory`` :ref:`function<functions>` to take a keyword argument named ``year_of_birth`` and give it the result of calling a :ref:`function<functions>` that returns the current year
 
   .. code-block:: python
 
@@ -296,7 +296,7 @@ green: make it pass
     def test_person_factory_w_keyword_arguments(self):
         self.assertEqual(
             src.person.factory(
-                first_name=first_name,
+                first_name='first_name',
                 last_name='last_name',
                 sex='M',
                 year_of_birth=this_year()
@@ -324,7 +324,7 @@ green: make it pass
 
   and the test passes
 
-* ``'first_name'`` appears twice in the test, if I have to change it, I have to make the change in 2 places. To follow `The Do Not Repeat Yourself (DRY) Principle`_ I remove the repetition with a variable
+* ``'first_name'`` appears twice in the test, if I want to change it, I have to make the change in 2 places. To follow `The Do Not Repeat Yourself (DRY) Principle`_ I remove the repetition with a variable
 
   .. code-block:: python
 
@@ -604,7 +604,7 @@ green: make it pass
 
   datetime_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that is used for dates and times
 
-* I change the `return statement`_ in the ``this_year`` :ref:`function <functions>` to add a call that returns the current year
+* I change the `return statement`_ in the ``this_year`` :ref:`function <functions>` to get the current year
 
   .. code-block:: python
 
@@ -624,7 +624,7 @@ green: make it pass
 
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 0}
 
-  the new :ref:`dictionary<dictionaries>`  has a value for ``age``
+  the new :ref:`dictionary<dictionaries>` has a value for ``age``
 
 * when I copy it from the terminal and use it to replace the `return statement`_
 
@@ -664,7 +664,7 @@ green: make it pass
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
-                age=this_year() - year_of_birth,
+                age=this_year()-year_of_birth,
             )
         )
 
@@ -675,7 +675,7 @@ refactor: make it better
 
 I  want to use random values for the ``year_of_birth`` variable
 
-* first I add a new `import statement`_
+* first I add an `import statement`_
 
   .. code-block:: python
 
@@ -729,7 +729,7 @@ I  want to use random values for the ``year_of_birth`` variable
 
     NameError: name 'this_year' is not defined
 
-  because I called a :ref:`function<functions>` that does not exist in ``person.py``. I change ``this_year()`` to use the value from the `return statement`_ of the ``this_year`` :ref:`function<functions>`
+  because I called a :ref:`function<functions>` that does not exist in ``person.py``. I change ``this_year()`` to use the value from the `return statement`_ of the ``this_year`` :ref:`function<functions>` from ``test_person.py``
 
   .. code-block:: python
 
@@ -776,7 +776,7 @@ I  want to use random values for the ``year_of_birth`` variable
         )
         ...
 
-  ``random.choice(('F', 'M'))`` gives me ``F`` or ``M`` at random and the terminal shows random successes or an :ref:`AssertionError`
+  ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` and the terminal shows random successes or an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -785,7 +785,7 @@ I  want to use random values for the ``year_of_birth`` variable
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 109} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 109}
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 115} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 115}
 
-  when I change the `return statement`_ to use the input parameter to ``sex``
+  when I change the `return statement`_ to use the ``sex`` input parameter
 
   .. code-block:: python
 
@@ -826,7 +826,7 @@ I  want to use random values for the ``year_of_birth`` variable
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 110} != {'first_name': 'jane', 'last_name': 'bloggs', 'sex': 'F', 'age': 110}
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 116} != {'first_name': 'jane', 'last_name': 'blow', 'sex': 'M', 'age': 116}
 
-  I change the `return statement`_ to use the input parameter to ``last_name``
+  I change the `return statement`_ to use the ``last_name`` input parameter
 
   .. code-block:: python
 
@@ -869,7 +869,7 @@ I  want to use random values for the ``year_of_birth`` variable
     AssertionError: {'first_name': 'jane', 'last_name': 'public', 'sex': 'M', 'age': 59} != {'first_name': 'person', 'last_name': 'public', 'sex': 'M', 'age': 59}
     AssertionError: {'first_name': 'jane', 'last_name': 'smith', 'sex': 'F', 'age': 117} != {'first_name': 'joe', 'last_name': 'smith', 'sex': 'F', 'age': 117}
 
-  I change the `return statement`_ to use the input parameter to ``first_name``
+  I change the `return statement`_ to use the ``first_name`` input parameter
 
   .. code-block:: python
 
