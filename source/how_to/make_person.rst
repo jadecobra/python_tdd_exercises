@@ -906,7 +906,7 @@ red: make it fail
         first_name = random.choice((
             'john', 'joe', 'jane', 'person',
         ))
-        sex = "M"
+        sex = 'M'
         year_of_birth = random.randint(
             this_year()-120, this_year()
         )
