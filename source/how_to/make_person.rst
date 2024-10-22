@@ -287,7 +287,7 @@ green: make it pass
         ):
         return {}
 
-  the test is green again, showing that ``{}`` and ``dict()`` are the same
+  ``{}`` and ``dict()`` are the same
 
 * I want the :ref:`dictionary<dictionaries>` to have a key named ``first_name`` with the same value as what was given in the call to the ``factory`` :ref:`function<functions>`
 
@@ -312,7 +312,7 @@ green: make it pass
 
     AssertionError: {} != {'first_name': 'first_name'}
 
-* I copy the value from the right and paste it to replace the empty :ref:`dictionary<dictionaries>` in the `return statement`_
+* I copy the value from the right then use it to replace the empty :ref:`dictionary<dictionaries>` in the `return statement`_
 
   .. code-block:: python
 
@@ -324,7 +324,7 @@ green: make it pass
 
   and the test passes
 
-* ``'first_name'`` appears twice in the test, I have to make a change in two places if I want a different value for it. To follow `The Do Not Repeat Yourself (DRY) Principle`_ I remove the repetition with a variable
+* ``'first_name'`` appears twice in the test, I have to make a change in two places if I want a different value for it. To follow `The Do Not Repeat Yourself (DRY) Principle`_ I add a variable to remove the repetition
 
   .. code-block:: python
 
@@ -395,7 +395,7 @@ green: make it pass
 
     AssertionError: {'first_name': 'jane'} != {'first_name': 'jane', 'last_name': 'last_name'}
 
-* I copy the value from the terminal and paste it to replace the `return statement`_
+* I copy the value from the terminal then use it to replace the `return statement`_
 
   .. code-block:: python
 
@@ -408,7 +408,7 @@ green: make it pass
             'last_name': 'last_name'
         }
 
-  the terminal shows green again
+  and the terminal shows green again
 
 * there is a repetition of ``'last_name'`` so I add a variable to remove it like I did for ``first_name``
 
@@ -446,7 +446,7 @@ green: make it pass
 
     AssertionError: {'first_name': 'jane', 'last_name': 'last_name'} != {'first_name': 'jane', 'last_name': 'doe'}
 
-* I copy the value from the terminal and paste it to replace the `return statement`_
+* I copy the value from the terminal then use it to replace the `return statement`_
 
   .. code-block:: python
 
@@ -489,7 +489,7 @@ green: make it pass
 
     AssertionError: {'first_name': 'jane', 'last_name': 'doe'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'}
 
-  I copy the value from the right side and paste it to replace the `return statement`_
+  I copy the value from the right side then use it to replace the `return statement`_
 
   .. code-block:: python
 
@@ -546,7 +546,7 @@ green: make it pass
 
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'}
 
-  I copy the value from the terminal and paste it to replace the `return statement`_
+  I copy the value from the terminal then use it to replace the `return statement`_
 
   .. code-block:: python
 
