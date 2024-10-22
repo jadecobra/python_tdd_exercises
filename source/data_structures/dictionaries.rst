@@ -76,7 +76,7 @@ refactor: make it better
 
     AssertionError: None != {'key': 'value'}
 
-* I make the `return statement`_ to return an empty `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+* I make the `return statement`_ send an empty `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
   .. code-block:: python
 

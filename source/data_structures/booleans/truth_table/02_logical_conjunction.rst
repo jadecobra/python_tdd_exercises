@@ -73,7 +73,7 @@ green: make it pass
         return None
 
   and the terminal shows an :ref:`AssertionError`
-* I make ``logical_conjunction`` in ``truth_table.py`` to return :ref:`True <test_what_is_true>`
+* I make ``logical_conjunction`` in ``truth_table.py`` return :ref:`True <test_what_is_true>`
 
   .. code-block:: python
 

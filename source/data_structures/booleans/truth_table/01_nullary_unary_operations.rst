@@ -197,7 +197,7 @@ green: make it pass
 
   the terminal shows an :ref:`AssertionError`.
 
-  The ``logical_negation`` function returns the value it receives as input but the test expects it to return the opposite
+  The ``logical_negation`` function returns the value it receives as input but the test expects the opposite
 * I use the ``not`` keyword to return the opposite of the :doc:`boolean </data_structures/booleans/booleans>` value ``logical_negation`` receives
 
   .. code-block:: python

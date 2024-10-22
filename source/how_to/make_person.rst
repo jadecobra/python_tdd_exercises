@@ -142,7 +142,7 @@ green: make it pass
 
   and the test passes
 
-* I also want the :ref:`function<functions>` to take a keyword argument named ``last_name``
+* I also want the :ref:`function<functions>` to take in a keyword argument named ``last_name``
 
   .. code-block:: python
 
@@ -161,7 +161,7 @@ green: make it pass
 
     TypeError: factory() got an unexpected keyword argument 'last_name'
 
-* when I add the name to the ``factory`` function
+* when I add the name to the ``factory`` :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -202,7 +202,7 @@ green: make it pass
 
   and the test is green again
 
-* I want the ``factory`` :ref:`function<functions>` to take a keyword argument named ``year_of_birth`` and give it the result of calling a :ref:`function<functions>` that returns the current year
+* I want the ``factory`` :ref:`function<functions>` to take in a keyword argument named ``year_of_birth`` and give it the result of calling a :ref:`function<functions>` that returns the current year
 
   .. code-block:: python
 
@@ -223,7 +223,7 @@ green: make it pass
 
     NameError: name 'this_year' is not defined
 
-* I add a definition for ``this_year`` to the top of ``test_person.py``
+* I add a definition for ``this_year`` before the :ref:`class<classes>` definition
 
   .. code-block:: python
 
@@ -244,7 +244,7 @@ green: make it pass
 
     TypeError: factory() got an unexpected keyword argument 'year_of_birth'
 
-  when I add the name to the :ref:`function<functions>`
+  I add the name to the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -254,7 +254,7 @@ green: make it pass
         ):
         return None
 
-  the test passes
+  and the test passes
 
 * I want the ``factory`` :ref:`function<functions>` to return a :ref:`dictionary<dictionaries>` as output, so I change the expectation in the assertion
 
@@ -271,7 +271,7 @@ green: make it pass
             dict()
         )
 
-  and get an :ref:`AssertionError`
+  the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -324,7 +324,7 @@ green: make it pass
 
   and the test passes
 
-* ``'first_name'`` appears twice in the test, if I want to change it, I have to make the change in 2 places. To follow `The Do Not Repeat Yourself (DRY) Principle`_ I remove the repetition with a variable
+* ``'first_name'`` appears twice in the test, I have to make a change in two places if I want a different value for it. To follow `The Do Not Repeat Yourself (DRY) Principle`_ I remove the repetition with a variable
 
   .. code-block:: python
 
@@ -489,7 +489,7 @@ green: make it pass
 
     AssertionError: {'first_name': 'jane', 'last_name': 'doe'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'}
 
-  I copy the value from the terminal and paste it to replace the `return statement`_
+  I copy the value from the right side and paste it to replace the `return statement`_
 
   .. code-block:: python
 
@@ -503,9 +503,9 @@ green: make it pass
             'sex': 'M'
         }
 
-  and the terminal shows a passing test again
+  and the terminal shows green again
 
-* I remove the repetition in the test by adding a variable
+* I add a variable to remove the repetition in the test
 
   .. code-block:: python
 
@@ -560,7 +560,7 @@ green: make it pass
             'sex': 'F'
         }
 
-  and the terminal shows green again
+  green again
 
 * I add ``age`` to the expectation with a calculation
 
@@ -611,7 +611,7 @@ green: make it pass
     def this_year():
         return datetime.datetime.now().year
 
-  this returns the ``year`` attribute of the ``datetime`` object returned by the `now <https://docs.python.org/3/library/datetime.html#datetime.datetime.now>`_ :ref:`method<functions>` of the ``datetime`` :ref:`class <classes>`,  from the datetime_ :ref:`module<ModuleNotFoundError>`. I could also use the `today <https://docs.python.org/3/library/datetime.html#datetime.date.today>`_ :ref:`method<functions>` to get the same result
+  this returns the ``year`` attribute of the ``datetime`` object returned by the `now <https://docs.python.org/3/library/datetime.html#datetime.datetime.now>`_ :ref:`method<functions>` of the ``datetime`` :ref:`class <classes>`, from the datetime_ :ref:`module<ModuleNotFoundError>`. I could also use the `today <https://docs.python.org/3/library/datetime.html#datetime.date.today>`_ :ref:`method<functions>` to get the same result
 
   .. code-block:: python
 
@@ -729,7 +729,7 @@ I  want to use random values for the ``year_of_birth`` variable
 
     NameError: name 'this_year' is not defined
 
-  because I called a :ref:`function<functions>` that does not exist in ``person.py``. I change ``this_year()`` to use the value from the `return statement`_ of the ``this_year`` :ref:`function<functions>` from ``test_person.py``
+  because I called a :ref:`function<functions>` that does not exist in ``person.py``. I change the call to the ``this_year()`` :ref:`function<functions>` to call from its `return statement`_ ``test_person.py``
 
   .. code-block:: python
 
@@ -892,7 +892,7 @@ I  want to use random values for the ``year_of_birth`` variable
 test_person_factory_w_default_keyword_arguments
 *************************************************************************************
 
-I want to see what would happen if I try to make a person without giving a value for the ``last_name`` variable
+I want to see what would happen if I try to make a person without a value for the ``last_name`` variable
 
 red: make it fail
 #################################################################################
@@ -962,8 +962,6 @@ green: make it pass
   .. code-block:: python
 
     SyntaxError: parameter without a default follows parameter with a default
-
-  I broke a Python rule by having a parameter that does not have a default value come after a parameter that has one
 
 * I add it to the list of :ref:`Exceptions<exceptions>` encountered
 
@@ -1089,10 +1087,10 @@ green: make it pass
             year_of_birth=year_of_birth,
         ),
         {
-            "first_name": first_name,
-            "last_name": "doe",
-            "sex": sex,
-            "age": this_year() - year_of_birth
+            'first_name': first_name,
+            'last_name': 'doe',
+            'sex': sex,
+            'age': this_year()-year_of_birth,
         }
     )
 
@@ -1112,10 +1110,10 @@ green: make it pass
             year_of_birth=year_of_birth,
         ),
         {
-            "first_name": first_name,
-            "last_name": "doe",
-            "sex": 'M',
-            "age": this_year() - year_of_birth
+            'first_name': first_name,
+            'last_name': 'doe',
+            'sex': 'M',
+            'age': this_year()-year_of_birth,
         }
     )
 
@@ -1256,7 +1254,7 @@ refactor: make it better
 
     AttributeError: 'TestPerson' object has no attribute 'first_name'
 
-  because there is no longer a class attribute named ``first_name``, it is now local to the `unittest.TestCase.setUp`_ :ref:`method<functions>` and the other methods cannot reach it
+  because there is no longer a class attribute named ``first_name``, it is now local to the `unittest.TestCase.setUp`_ :ref:`method<functions>` and the other :ref:`methods<functions>` cannot reach it
 
 * I add ``self.`` to make it a class attribute
 
@@ -1486,7 +1484,7 @@ green: make it pass
 
   the values for ``sex`` and ``age`` change
 
-* When I use the ``sex`` input parameter in the `return statement`_
+* When I add the ``sex`` input parameter to the `return statement`_
 
   .. code-block:: python
 

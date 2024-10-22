@@ -56,7 +56,7 @@ green: make it pass
         return input_data
 
   the terminal shows an :ref:`AssertionError`
-* I make ``passthrough_w_positional_arguments`` to return the two arguments it receives
+* I make ``passthrough_w_positional_arguments`` return the two arguments it receives
 
   .. code-block:: python
 

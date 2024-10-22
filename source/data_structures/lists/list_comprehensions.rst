@@ -201,7 +201,7 @@ refactor: make it better
 
     AssertionError: None != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-* When I make the function to return the result of calling the :doc:`list </data_structures/lists/lists>` constructor_ with ``argument`` as input
+* When I make the function return the result of calling the :doc:`list </data_structures/lists/lists>` constructor_ with ``argument`` as input
 
   .. code-block:: python
 
