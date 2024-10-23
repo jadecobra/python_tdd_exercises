@@ -592,7 +592,7 @@ green: make it pass
 
     TypeError: unsupported operand type(s) for -: 'NoneType' and 'NoneType'
 
-  I cannot do subtraction with :ref:`None`
+  I cannot do subtraction with :ref:`None` and I want the value for the current year
 
 * I add an `import statement`_
 
@@ -699,7 +699,7 @@ I  want to use random values for the ``year_of_birth`` variable
         )
         ...
 
-  ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 years ago up to and including the current year which is returned by ``this_year()``. The terminal shows an :ref:`AssertionError`
+  ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 years ago, up to and including the current year which is returned by ``this_year()``. The terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -708,7 +708,7 @@ I  want to use random values for the ``year_of_birth`` variable
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 0} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 14}
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 0} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 60}
 
-  I copy the age calculation from the expectation
+  I use the age calculation from the expectation
 
   .. code-block:: python
 
@@ -729,7 +729,7 @@ I  want to use random values for the ``year_of_birth`` variable
 
     NameError: name 'this_year' is not defined
 
-  because I called a :ref:`function<functions>` that does not exist in ``person.py``. I change the call to the ``this_year()`` :ref:`function<functions>` to call from its `return statement`_ ``test_person.py``
+  because I called a :ref:`function<functions>` that does not exist in ``person.py``. I change the call to the ``this_year()`` :ref:`function<functions>` to its `return statement`_ from ``test_person.py``
 
   .. code-block:: python
 
@@ -757,7 +757,6 @@ I  want to use random values for the ``year_of_birth`` variable
     import datetime
 
 
-
     def factory(
     ...
 
@@ -776,7 +775,7 @@ I  want to use random values for the ``year_of_birth`` variable
         )
         ...
 
-  ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` and the terminal shows random successes or an :ref:`AssertionError`
+  ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` and the terminal shows random success or an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -884,7 +883,7 @@ I  want to use random values for the ``year_of_birth`` variable
             'age': datetime.datetime.today().year - year_of_birth,
         }
 
-  and the terminal shows a passing test. Time for a victory dance!
+  and the terminal shows a passing test.
 
 ----
 
@@ -945,7 +944,7 @@ green: make it pass
 
     TypeError: factory() missing 1 required positional argument: 'last_name'
 
-  because I called the ``factory`` :ref:`function<functions>` with 3 arguments in the test but the definition takes 4
+  the ``factory`` :ref:`function<functions>` is called with 3 arguments in the test but the definition takes 4
 
 * I add a default value for ``last_name``
 
@@ -957,7 +956,7 @@ green: make it pass
         ):
         ...
 
-  which gives me a SyntaxError_
+  and the terminal shows a SyntaxError_
 
   .. code-block:: python
 
@@ -1058,7 +1057,7 @@ green: make it pass
         last_name='doe',
     )
 
-* I want to see what happens if I do not know the value for the ``sex`` variable
+* I remove the ``sex`` variable to see what happens if I do not know the value for it
 
   .. code-block:: python
 
@@ -1510,7 +1509,7 @@ green: make it pass
 
   the ``age`` is different
 
-* I add the input parameter to the `return statement`_
+* I add the ``year_of_birth`` input parameter to the `return statement`_
 
   .. code-block:: python
 
@@ -1589,7 +1588,7 @@ green: make it pass
         ):
         ...
 
-  the terminal shows another SyntaxError_
+  the terminal shows the same SyntaxError_
 
   .. code-block:: python
 
