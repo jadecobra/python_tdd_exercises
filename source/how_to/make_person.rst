@@ -1035,7 +1035,7 @@ green: make it pass
     AssertionError: {'first_name': 'joe', 'last_name': None, 'sex': 'F', 'age': 28} != {'first_name': 'joe', 'last_name': 'doe', 'sex': 'F', 'age': 28}
     AssertionError: {'first_name': 'person', 'last_name': None, 'sex': 'M', 'age': 33} != {'first_name': 'person', 'last_name': 'doe', 'sex': 'M', 'age': 33}
     AssertionError: {'first_name': 'jane', 'last_name': None, 'sex': 'F', 'age': 70} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 70}
-    AssertionError: {'first_name': 'jane', 'last_name': None, 'sex': 'F', 'age': 83} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 83}
+    AssertionError: {'first_name': 'john', 'last_name': None, 'sex': 'M', 'age': 83} != {'first_name': 'john', 'last_name': 'doe', 'sex': 'M', 'age': 83}
 
   the ``factory`` :ref:`function<functions>` returns a :ref:`dictionary<dictionaries>` with a value of :ref:`None` for ``last_name`` and the test expects ``'doe'``
 
@@ -1124,9 +1124,9 @@ green: make it pass
   .. code-block:: python
 
     AssertionError: {'first_name': 'joe', 'last_name': 'doe', 'sex': None, 'age': 4} != {'first_name': 'joe', 'last_name': 'doe', 'sex': 'M', 'age': 4}
-    AssertionError: {'first_name': 'joe', 'last_name': 'doe', 'sex': None, 'age': 32} != {'first_name': 'joe', 'last_name': 'doe', 'sex': 'M', 'age': 32}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': None, 'age': 32} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 32}
     AssertionError: {'first_name': 'john', 'last_name': 'doe', 'sex': None, 'age': 45} != {'first_name': 'john', 'last_name': 'doe', 'sex': 'M', 'age': 45}
-    AssertionError: {'first_name': 'john', 'last_name': 'doe', 'sex': None, 'age': 58} != {'first_name': 'john', 'last_name': 'doe', 'sex': 'M', 'age': 58}
+    AssertionError: {'first_name': 'person', 'last_name': 'doe', 'sex': None, 'age': 58} != {'first_name': 'person', 'last_name': 'doe', 'sex': 'M', 'age': 58}
 
   the ``factory`` :ref:`function<functions>` returns a :ref:`dictionary<dictionaries>` with a value of :ref:`None` for ``sex`` and the test expects a value of ``'M'``
 
