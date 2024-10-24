@@ -1148,7 +1148,16 @@ green: make it pass
         first_name=first_name,
         year_of_birth=year_of_birth,
         last_name='doe',
-        sex='M,
+        sex='M',
+    )
+
+  since the values are the same as the default values, I can call the :ref:`function<functions>` without them
+
+  .. code-block:: python
+
+    src.person.factory(
+        first_name=first_name,
+        year_of_birth=year_of_birth,
     )
 
 refactor: make it better
