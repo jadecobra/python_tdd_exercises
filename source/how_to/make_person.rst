@@ -153,7 +153,7 @@ green: make it pass
         self.assertEqual(
             src.person.factory(
                 first_name='first_name',
-                last_name='last_name'
+                last_name='last_name',
             ),
             None
         )
@@ -182,12 +182,12 @@ green: make it pass
             src.person.factory(
                 first_name='first_name',
                 last_name='last_name',
-                sex='M'
+                sex='M',
             ),
             None
         )
 
-  and the terminal shows a :ref:`TypeError`
+  the terminal shows a :ref:`TypeError`
 
   .. code-block:: python
 
@@ -205,7 +205,7 @@ green: make it pass
 
   and the test is green again
 
-* I want the ``factory`` :ref:`function<functions>` to take in a keyword argument named ``year_of_birth`` and give it the result of calling a :ref:`function<functions>` that returns the current year
+* I want the ``factory`` :ref:`function<functions>` to take in a keyword argument named ``year_of_birth`` and give it the result of calling a :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -290,7 +290,7 @@ green: make it pass
         ):
         return {}
 
-  ``{}`` and ``dict()`` are the same
+  the test passes because ``{}`` and ``dict()`` are the same
 
 * I want the :ref:`dictionary<dictionaries>` to have a key named ``first_name`` with the same value as what was given in the call to the ``factory`` :ref:`function<functions>`
 
