@@ -1242,7 +1242,7 @@ refactor: make it better
 
   all tests are still passing
 
-* both tests now have the same values for ``self.first_name`` and ``self.year_of_birth`` since I made them :ref:`class<classes>` attributes, they were not always the same before the change. I can use the `unittest.TestCase.setUp`_ :ref:`method<functions>` which runs before every test to fix this
+* both tests now have the same values for ``self.first_name`` and ``self.year_of_birth`` since I made them :ref:`class<classes>` attributes, they were not always the same before the change. I can use the `unittest.TestCase.setUp`_ :ref:`method<functions>` which runs before every test to make sure they are assigned to random values right before each test
 
   .. code-block:: python
 
@@ -1316,6 +1316,8 @@ red: make it fail
   .. code-block:: python
 
     AttributeError: module 'src.person' has no attribute 'factory'
+
+  I want to write the solution without looking at the tests
 
 .. _test_person_tests_green:
 
@@ -1460,7 +1462,7 @@ green: make it pass
 
   and still have an :ref:`AssertionError`
 
-  .. code-block
+  .. code-block:: python
 
     AssertionError: {'first_name': 'person', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'person', 'last_name': 'public', 'sex': 'F', 'age': 69}
     AssertionError: {'first_name': 'joe', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'joe', 'last_name': 'blow', 'sex': 'F', 'age': 97}
@@ -1572,7 +1574,7 @@ green: make it pass
             'age': datetime.datetime.today().year - year_of_birth,
         }
 
-  the terminal shows a :ref:`TypeError`
+  and the terminal shows a :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1661,11 +1663,7 @@ green: make it pass
 review
 *************************************************************************************
 
-I ran tests to make a :ref:`function<functions>` that
-- takes in keyword arguments as input
-- has default values for some of them
-- performs an action based on an input
-- and returns a :doc:`dictionary </data_structures/dictionaries>` as output
+I ran tests to make a :ref:`function<functions>` that takes in keyword arguments as input, has default values for some of them, performs an action based on an input and returns a :doc:`dictionary </data_structures/dictionaries>` as output
 
 I also encountered the following :ref:`Exceptions<Exceptions>`
 
