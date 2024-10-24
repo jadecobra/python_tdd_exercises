@@ -77,7 +77,7 @@ green: make it pass
     # AssertionError
     # NameError
 
-* then add an `import statement`_ for the ``person`` module
+* then add an `import statement`_ for the ``person`` :ref:`module<ModuleNotFoundError>`
 
   .. code-block:: python
 
@@ -115,7 +115,7 @@ green: make it pass
     def test_person_factory_w_keyword_arguments(self):
         self.assertEqual(
             src.person.factory(
-                first_name='first_name'
+                first_name='first_name',
             ),
             None
         )
@@ -126,7 +126,7 @@ green: make it pass
 
     TypeError: factory() got an unexpected keyword argument 'first_name'
 
-* I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
+* another one for the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
