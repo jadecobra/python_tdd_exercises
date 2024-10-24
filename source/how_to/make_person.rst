@@ -434,7 +434,7 @@ green: make it pass
             )
         )
 
-  then change the value
+  then I change the value
 
   .. code-block:: python
 
@@ -563,7 +563,7 @@ green: make it pass
             'sex': 'F'
         }
 
-  green again
+  and the test is green again
 
 * I add ``age`` to the expectation with a calculation
 
