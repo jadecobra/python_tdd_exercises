@@ -54,7 +54,10 @@ red: make it fail
     class TestPersonFactory(unittest.TestCase):
 
         def test_person_factory_w_keyword_arguments(self):
-            self.assertEqual(person.factory(), None)
+            self.assertEqual(
+                src.person.factory(),
+                None
+            )
 
   the terminal shows a NameError_
 
