@@ -126,7 +126,7 @@ green: make it pass
 
     TypeError: factory() got an unexpected keyword argument 'first_name'
 
-* another one for the list of :ref:`Exceptions<Exceptions>` encountered
+* I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
