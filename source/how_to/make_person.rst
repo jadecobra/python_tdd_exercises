@@ -1049,7 +1049,7 @@ green: make it pass
         ):
         ...
 
-  the terminal shows passing tests. When no value is given for the ``last_name`` argument to the ``factory`` :ref:`function<functions>` it uses ``'doe'`` because that is the default value in the :ref:`function<functions>` signature, it is same as calling it with ``last_name='doe'``
+  the terminal shows passing tests. When no value is given for the ``last_name`` argument to the ``factory`` :ref:`function<functions>` it uses ``'doe'`` because that is the default value in the :ref:`function's<functions>` signature, it is same as calling it with ``last_name='doe'``
 
   .. code-block:: python
 
@@ -1066,7 +1066,7 @@ green: make it pass
 
     def test_function_w_default_keyword_arguments(self):
         first_name = random.choice((
-            'john', 'joe', 'jane', 'person',
+            'jane', 'joe', 'john', 'person',
         ))
         year_of_birth = random.randint(
             this_year()-120, this_year()
@@ -1297,7 +1297,7 @@ refactor: make it better
             this_year()-120, this_year()
         )
 
-  and both tests are green again
+  and both tests are green again. ``self.first_name`` and ``self.year_of_birth`` are now given random values before the first test runs and again before the second test runs
 
 ----
 
