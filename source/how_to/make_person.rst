@@ -108,7 +108,7 @@ green: make it pass
 
   the terminal shows a passing test
 
-* I want the ``factory`` :ref:`function<functions>` to take in a keyword argument named ``first_name``
+* I want the :ref:`function<functions>` to take in a keyword argument named ``first_name``
 
   .. code-block:: python
 
@@ -136,7 +136,7 @@ green: make it pass
     # AttributeError
     # TypeError
 
-* then add the name as an input parameter to the ``factory`` :ref:`function<functions>`
+* then add the name as an input parameter to the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -164,7 +164,7 @@ green: make it pass
 
     TypeError: factory() got an unexpected keyword argument 'last_name'
 
-* when I add the name to the ``factory`` :ref:`function<functions>`
+* when I add the name to the :ref:`function<functions>` definition
 
   .. code-block:: python
 
@@ -173,7 +173,7 @@ green: make it pass
 
   the terminal shows a passing test
 
-* I want the ``factory`` :ref:`function<functions>` to take in a keyword argument named ``sex``
+* I want the :ref:`function<functions>` to take in a keyword argument named ``sex``
 
   .. code-block:: python
 
@@ -193,7 +193,7 @@ green: make it pass
 
     TypeError: factory() got an unexpected keyword argument 'sex'
 
-* I add the name to the :ref:`function<functions>` signature
+* I add the name to the :ref:`function<functions>` definition
 
   .. code-block:: python
 
@@ -205,7 +205,7 @@ green: make it pass
 
   and the test is green again
 
-* I want the ``factory`` :ref:`function<functions>` to take in a keyword argument named ``year_of_birth`` and give it the result of calling a :ref:`function<functions>` as a value
+* I want the :ref:`function<functions>` to take in a keyword argument and give it the result of calling another :ref:`function<functions>` as the value for it
 
   .. code-block:: python
 
@@ -226,7 +226,7 @@ green: make it pass
 
     NameError: name 'this_year' is not defined
 
-* I add a definition for ``this_year`` above the :ref:`class<classes>` definition
+* I add the :ref:`function<functions>` above the :ref:`class<classes>` definition
 
   .. code-block:: python
 
@@ -247,7 +247,7 @@ green: make it pass
 
     TypeError: factory() got an unexpected keyword argument 'year_of_birth'
 
-  I add the name to the :ref:`function<functions>`
+  I add the name to the :ref:`function<functions>` definition
 
   .. code-block:: python
 
@@ -274,7 +274,7 @@ green: make it pass
             dict()
         )
 
-  the terminal shows an :ref:`AssertionError`
+  and the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -413,7 +413,7 @@ green: make it pass
 
   and the terminal shows green again
 
-* there is a repetition of ``'last_name'`` so I add a variable to remove it like I did for ``first_name``
+* there is a repetition of ``'last_name'`` so I add a variable to remove it like I did with ``first_name``
 
   .. code-block:: python
 
