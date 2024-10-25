@@ -1394,7 +1394,7 @@ green: make it pass
     def factory(first_name, last_name, sex):
         return None
 
-  I get a :ref:`TypeError`
+  I still get a :ref:`TypeError`
 
   .. code-block:: python
 
