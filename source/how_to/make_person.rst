@@ -145,7 +145,7 @@ green: make it pass
 
   and the test passes
 
-* I also want the :ref:`function<functions>` to take in a keyword argument named ``last_name``
+* I want the :ref:`function<functions>` to also take in a keyword argument named ``last_name``
 
   .. code-block:: python
 
