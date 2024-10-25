@@ -20,7 +20,7 @@ class TestPerson(unittest.TestCase):
 
     def test_person_factory_w_keyword_arguments(self):
         last_name = random.choice((
-            'doe', 'smith', 'blow', 'public',
+            'doe', 'smith', 'bloggs', 'public',
         ))
         sex = random.choice(('F', 'M'))
 

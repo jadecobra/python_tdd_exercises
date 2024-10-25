@@ -906,7 +906,7 @@ red: make it fail
 
     def test_function_w_default_keyword_arguments(self):
         first_name = random.choice((
-            'john', 'joe', 'jane', 'person',
+            'jane', 'joe', 'john', 'person',
         ))
         sex = 'M'
         year_of_birth = random.randint(
