@@ -205,7 +205,7 @@ green: make it pass
 
   and the test is green again
 
-* I want the ``factory`` :ref:`function<functions>` to take in a keyword argument named ``year_of_birth`` and give it the result of calling a :ref:`function<functions>`
+* I want the ``factory`` :ref:`function<functions>` to take in a keyword argument named ``year_of_birth`` and give it the result of calling a :ref:`function<functions>` as a value
 
   .. code-block:: python
 
@@ -226,7 +226,7 @@ green: make it pass
 
     NameError: name 'this_year' is not defined
 
-* I add a definition for ``this_year`` before the :ref:`class<classes>` definition
+* I add a definition for ``this_year`` above the :ref:`class<classes>` definition
 
   .. code-block:: python
 
@@ -327,7 +327,7 @@ green: make it pass
 
   and the test passes
 
-* ``'first_name'`` appears twice in the test, I have to make a change in two places if I want a different value for it. To follow `The Do Not Repeat Yourself (DRY) Principle`_ I add a variable to remove the repetition
+* ``'first_name'`` appears twice in the test, if I want a different value for it, I have to make a change in two places. I add a variable to remove the repetition
 
   .. code-block:: python
 
@@ -811,7 +811,7 @@ I  want to use random values for the ``year_of_birth`` variable
     def test_person_factory_w_keyword_arguments(self):
         first_name = 'jane'
         last_name = random.choice((
-            'doe', 'smith', 'blow', 'public',
+            'doe', 'smith', 'bloggs', 'public',
         ))
         sex = random.choice(('F', 'M'))
         year_of_birth = random.randint(
@@ -823,10 +823,10 @@ I  want to use random values for the ``year_of_birth`` variable
 
   .. code-block:: python
 
-    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 51} != {'first_name': 'jane', 'last_name': 'bloggs', 'sex': 'F', 'age': 51}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 51} != {'first_name': 'jane', 'last_name': 'smith', 'sex': 'F', 'age': 51}
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 54} != {'first_name': 'jane', 'last_name': 'bloggs', 'sex': 'M', 'age': 54}
-    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 110} != {'first_name': 'jane', 'last_name': 'bloggs', 'sex': 'F', 'age': 110}
-    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 116} != {'first_name': 'jane', 'last_name': 'blow', 'sex': 'M', 'age': 116}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 110} != {'first_name': 'jane', 'last_name': 'public', 'sex': 'F', 'age': 110}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 116} != {'first_name': 'jane', 'last_name': 'public', 'sex': 'M', 'age': 116}
 
   I change the `return statement`_ to use the ``last_name`` input parameter
 
@@ -854,7 +854,7 @@ I  want to use random values for the ``year_of_birth`` variable
             'jane', 'joe', 'john', 'person',
         ))
         last_name = random.choice((
-            'doe', 'smith', 'blow', 'public',
+            'doe', 'smith', 'bloggs', 'public',
         ))
         sex = random.choice(('F', 'M'))
         year_of_birth = random.randint(
@@ -868,7 +868,7 @@ I  want to use random values for the ``year_of_birth`` variable
 
     AssertionError: {'first_name': 'jane', 'last_name': 'public', 'sex': 'F', 'age': 6} != {'first_name': 'john', 'last_name': 'public', 'sex': 'F', 'age': 6}
     AssertionError: {'first_name': 'jane', 'last_name': 'smith', 'sex': 'M', 'age': 19} != {'first_name': 'person', 'last_name': 'smith', 'sex': 'M', 'age': 19}
-    AssertionError: {'first_name': 'jane', 'last_name': 'public', 'sex': 'M', 'age': 59} != {'first_name': 'person', 'last_name': 'public', 'sex': 'M', 'age': 59}
+    AssertionError: {'first_name': 'jane', 'last_name': 'bloggs', 'sex': 'M', 'age': 59} != {'first_name': 'person', 'last_name': 'bloggs', 'sex': 'M', 'age': 59}
     AssertionError: {'first_name': 'jane', 'last_name': 'smith', 'sex': 'F', 'age': 117} != {'first_name': 'joe', 'last_name': 'smith', 'sex': 'F', 'age': 117}
 
   I change the `return statement`_ to use the ``first_name`` input parameter
@@ -1186,7 +1186,7 @@ refactor: make it better
     def test_person_factory_w_keyword_arguments(self):
         first_name = self.first_name
         last_name = random.choice((
-            'doe', 'smith', 'blow', 'public',
+            'doe', 'smith', 'bloggs', 'public',
         ))
         sex = random.choice(('F', 'M'))
         year_of_birth = self.year_of_birth
@@ -1207,7 +1207,7 @@ refactor: make it better
 
     def test_person_factory_w_keyword_arguments(self):
         last_name = random.choice((
-            'doe', 'smith', 'blow', 'public',
+            'doe', 'smith', 'bloggs', 'public',
         ))
         sex = random.choice(('F', 'M'))
 
@@ -1414,9 +1414,9 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: None != {'first_name': 'john', 'last_name': 'blow', 'sex': 'M', 'age': 20}
+    AssertionError: None != {'first_name': 'john', 'last_name': 'bloggs', 'sex': 'M', 'age': 20}
     AssertionError: None != {'first_name': 'john', 'last_name': 'smith', 'sex': 'F', 'age': 31}
-    AssertionError: None != {'first_name': 'jane', 'last_name': 'blow', 'sex': 'M', 'age': 55}
+    AssertionError: None != {'first_name': 'jane', 'last_name': 'bloggs', 'sex': 'M', 'age': 55}
     AssertionError: None != {'first_name': 'person', 'last_name': 'smith', 'sex': 'F', 'age': 97}
 
 * I copy the value from the terminal to replace :ref:`None` in the `return statement`_
@@ -1429,7 +1429,7 @@ green: make it pass
         ):
         return {
             'first_name': 'john',
-            'last_name': 'blow',
+            'last_name': 'bloggs',
             'sex': 'F',
             'age': 20
         }
@@ -1438,10 +1438,10 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: {'first_name': 'john', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'jane', 'last_name': 'blow', 'sex': 'M', 'age': 50}
-    AssertionError: {'first_name': 'john', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 73}
-    AssertionError: {'first_name': 'john', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'john', 'last_name': 'bloggs', 'sex': 'F', 'age': 77}
-    AssertionError: {'first_name': 'john', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'jane', 'last_name': 'public', 'sex': 'F', 'age': 98}
+    AssertionError: {'first_name': 'john', 'last_name': 'bloggs', 'sex': 'F', 'age': 20} != {'first_name': 'jane', 'last_name': 'bloggs', 'sex': 'M', 'age': 50}
+    AssertionError: {'first_name': 'john', 'last_name': 'bloggs', 'sex': 'F', 'age': 20} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 73}
+    AssertionError: {'first_name': 'john', 'last_name': 'bloggs', 'sex': 'F', 'age': 20} != {'first_name': 'john', 'last_name': 'bloggs', 'sex': 'F', 'age': 77}
+    AssertionError: {'first_name': 'john', 'last_name': 'bloggs', 'sex': 'F', 'age': 20} != {'first_name': 'jane', 'last_name': 'public', 'sex': 'F', 'age': 98}
 
   the values for ``first_name``, ``last_name``, ``sex`` and ``age`` change
 
@@ -1455,7 +1455,7 @@ green: make it pass
         ):
         return {
             'first_name': first_name,
-            'last_name': 'blow',
+            'last_name': 'bloggs',
             'sex': 'F',
             'age': 20
         }
@@ -1464,10 +1464,10 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: {'first_name': 'person', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'person', 'last_name': 'public', 'sex': 'F', 'age': 69}
-    AssertionError: {'first_name': 'joe', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'joe', 'last_name': 'blow', 'sex': 'F', 'age': 97}
-    AssertionError: {'first_name': 'john', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'john', 'last_name': 'smith', 'sex': 'M', 'age': 74}
-    AssertionError: {'first_name': 'john', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'john', 'last_name': 'public', 'sex': 'F', 'age': 19}
+    AssertionError: {'first_name': 'person', 'last_name': 'bloggs', 'sex': 'F', 'age': 20} != {'first_name': 'person', 'last_name': 'public', 'sex': 'F', 'age': 69}
+    AssertionError: {'first_name': 'joe', 'last_name': 'bloggs', 'sex': 'F', 'age': 20} != {'first_name': 'joe', 'last_name': 'bloggs', 'sex': 'F', 'age': 97}
+    AssertionError: {'first_name': 'john', 'last_name': 'bloggs', 'sex': 'F', 'age': 20} != {'first_name': 'john', 'last_name': 'smith', 'sex': 'M', 'age': 74}
+    AssertionError: {'first_name': 'john', 'last_name': 'bloggs', 'sex': 'F', 'age': 20} != {'first_name': 'john', 'last_name': 'public', 'sex': 'F', 'age': 19}
 
   the ``last_name``, ``sex`` and ``age`` change
 
@@ -1490,10 +1490,10 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: {'first_name': 'jane', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'jane', 'last_name': 'blow', 'sex': 'M', 'age': 3}
+    AssertionError: {'first_name': 'jane', 'last_name': 'bloggs', 'sex': 'F', 'age': 20} != {'first_name': 'jane', 'last_name': 'bloggs', 'sex': 'M', 'age': 3}
     AssertionError: {'first_name': 'joe', 'last_name': 'smith', 'sex': 'F', 'age': 20} != {'first_name': 'joe', 'last_name': 'smith', 'sex': 'F', 'age': 118}
-    AssertionError: {'first_name': 'joe', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'joe', 'last_name': 'blow', 'sex': 'M', 'age': 19}
-    AssertionError: {'first_name': 'joe', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'joe', 'last_name': 'blow', 'sex': 'M', 'age': 95}
+    AssertionError: {'first_name': 'joe', 'last_name': 'bloggs', 'sex': 'F', 'age': 20} != {'first_name': 'joe', 'last_name': 'bloggs', 'sex': 'M', 'age': 19}
+    AssertionError: {'first_name': 'joe', 'last_name': 'bloggs', 'sex': 'F', 'age': 20} != {'first_name': 'joe', 'last_name': 'bloggs', 'sex': 'M', 'age': 95}
 
   the values for ``sex`` and ``age`` change
 
@@ -1518,7 +1518,7 @@ green: make it pass
 
     AssertionError: {'first_name': 'joe', 'last_name': 'doe', 'sex': 'M', 'age': 20} != {'first_name': 'joe', 'last_name': 'doe', 'sex': 'M', 'age': 1}
     AssertionError: {'first_name': 'joe', 'last_name': 'public', 'sex': 'F', 'age': 20} != {'first_name': 'joe', 'last_name': 'public', 'sex': 'F', 'age': 90}
-    AssertionError: {'first_name': 'joe', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'joe', 'last_name': 'blow', 'sex': 'F', 'age': 113}
+    AssertionError: {'first_name': 'joe', 'last_name': 'bloggs', 'sex': 'F', 'age': 20} != {'first_name': 'joe', 'last_name': 'bloggs', 'sex': 'F', 'age': 113}
     AssertionError: {'first_name': 'person', 'last_name': 'doe', 'sex': 'M', 'age': 20} != {'first_name': 'person', 'last_name': 'doe', 'sex': 'M', 'age': 58}
 
   the ``age`` is different
@@ -1544,7 +1544,7 @@ green: make it pass
 
     AssertionError: {'first_name': 'joe', 'last_name': 'doe', 'sex': 'M', 'age': 2022} != {'first_name': 'joe', 'last_name': 'doe', 'sex': 'M', 'age': 2}
     AssertionError: {'first_name': 'jane', 'last_name': 'smith', 'sex': 'M', 'age': 2024} != {'first_name': 'jane', 'last_name': 'smith', 'sex': 'M', 'age': 0}
-    AssertionError: {'first_name': 'jane', 'last_name': 'blow', 'sex': 'F', 'age': 1981} != {'first_name': 'jane', 'last_name': 'blow', 'sex': 'F', 'age': 43}
+    AssertionError: {'first_name': 'jane', 'last_name': 'bloggs', 'sex': 'F', 'age': 1981} != {'first_name': 'jane', 'last_name': 'bloggs', 'sex': 'F', 'age': 43}
     AssertionError: {'first_name': 'person', 'last_name': 'smith', 'sex': 'M', 'age': 1969} != {'first_name': 'person', 'last_name': 'smith', 'sex': 'M', 'age': 55}
 
   I need the difference between the current year and the ``year_of_birth`` to get the ``age``

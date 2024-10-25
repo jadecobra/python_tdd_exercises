@@ -3,6 +3,7 @@
     "esbonio.sphinx.buildDir": "${workspaceFolder}/build/html",
     "cSpell.words": [
         "_bash",
+        "bloggs",
         "HOWTOs",
         "Itegboje",
         "pycache",
