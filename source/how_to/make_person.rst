@@ -19,7 +19,7 @@ This is an exercise in making :doc:`dictionaries </data_structures/dictionaries>
 ----
 
 *********************************************************************************
-test_person_factory_w_keyword_arguments
+test_function_w_keyword_arguments
 *********************************************************************************
 
 red: make it fail
@@ -47,13 +47,13 @@ red: make it fail
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_person.py:7`` with the mouse to open it
 * then change ``True`` to ``False`` to make the test pass
-* and change ``test_failure`` to ``test_person_factory_w_keyword_arguments``
+* and change ``test_failure`` to ``test_function_w_keyword_arguments``
 
   .. code-block:: python
 
     class TestPersonFactory(unittest.TestCase):
 
-        def test_person_factory_w_keyword_arguments(self):
+        def test_function_w_keyword_arguments(self):
             self.assertEqual(
                 src.person.factory(),
                 None
@@ -112,7 +112,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_w_keyword_arguments(self):
+    def test_function_w_keyword_arguments(self):
         self.assertEqual(
             src.person.factory(
                 first_name='first_name',
@@ -149,7 +149,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_w_keyword_arguments(self):
+    def test_function_w_keyword_arguments(self):
         self.assertEqual(
             src.person.factory(
                 first_name='first_name',
@@ -177,7 +177,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_w_keyword_arguments(self):
+    def test_function_w_keyword_arguments(self):
         self.assertEqual(
             src.person.factory(
                 first_name='first_name',
@@ -209,7 +209,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_w_keyword_arguments(self):
+    def test_function_w_keyword_arguments(self):
         self.assertEqual(
             src.person.factory(
                 first_name='first_name',
@@ -263,7 +263,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_w_keyword_arguments(self):
+    def test_function_w_keyword_arguments(self):
         self.assertEqual(
             src.person.factory(
                 first_name='first_name',
@@ -296,7 +296,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_w_keyword_arguments(self):
+    def test_function_w_keyword_arguments(self):
         self.assertEqual(
             src.person.factory(
                 first_name='first_name',
@@ -331,7 +331,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_w_keyword_arguments(self):
+    def test_function_w_keyword_arguments(self):
         first_name = 'first_name'
 
         self.assertEqual(
@@ -350,7 +350,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_w_keyword_arguments(self):
+    def test_function_w_keyword_arguments(self):
         first_name = 'jane'
         ...
 
@@ -376,7 +376,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_w_keyword_arguments(self):
+    def test_function_w_keyword_arguments(self):
         first_name = 'jane'
 
         self.assertEqual(
@@ -417,7 +417,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_w_keyword_arguments(self):
+    def test_function_w_keyword_arguments(self):
         first_name = 'jane'
         last_name = 'last_name'
 
@@ -438,7 +438,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_w_keyword_arguments(self):
+    def test_function_w_keyword_arguments(self):
         first_name = 'jane'
         last_name = 'doe'
         ...
@@ -468,7 +468,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_w_keyword_arguments(self):
+    def test_function_w_keyword_arguments(self):
         first_name = 'jane'
         last_name = 'doe'
 
@@ -512,7 +512,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_w_keyword_arguments(self):
+    def test_function_w_keyword_arguments(self):
         first_name = 'jane'
         last_name = 'doe'
         sex = 'M'
@@ -537,7 +537,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_w_keyword_arguments(self):
+    def test_function_w_keyword_arguments(self):
         first_name = 'jane'
         last_name = 'doe'
         sex = 'F'
@@ -569,7 +569,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_w_keyword_arguments(self):
+    def test_function_w_keyword_arguments(self):
         first_name = 'jane'
         last_name = 'doe'
         sex = 'F'
@@ -650,7 +650,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_w_keyword_arguments(self):
+    def test_function_w_keyword_arguments(self):
         first_name = 'jane'
         last_name = 'doe'
         sex = 'F'
@@ -693,7 +693,7 @@ I  want to use random values for the ``year_of_birth`` variable
 
   .. code-block:: python
 
-    def test_person_factory_w_keyword_arguments(self):
+    def test_function_w_keyword_arguments(self):
         first_name = 'jane'
         last_name = 'doe'
         sex = 'F'
@@ -769,7 +769,7 @@ I  want to use random values for the ``year_of_birth`` variable
 
   .. code-block:: python
 
-    def test_person_factory_w_keyword_arguments(self):
+    def test_function_w_keyword_arguments(self):
         first_name = 'jane'
         last_name = 'doe'
         sex = random.choice(('F', 'M'))
@@ -808,7 +808,7 @@ I  want to use random values for the ``year_of_birth`` variable
 
   .. code-block:: python
 
-    def test_person_factory_w_keyword_arguments(self):
+    def test_function_w_keyword_arguments(self):
         first_name = 'jane'
         last_name = random.choice((
             'doe', 'smith', 'bloggs', 'public',
@@ -849,7 +849,7 @@ I  want to use random values for the ``year_of_birth`` variable
 
   .. code-blocK:: python
 
-    def test_person_factory_w_keyword_arguments(self):
+    def test_function_w_keyword_arguments(self):
         first_name = random.choice((
             'jane', 'joe', 'john', 'person',
         ))
@@ -891,7 +891,7 @@ I  want to use random values for the ``year_of_birth`` variable
 ----
 
 *************************************************************************************
-test_person_factory_w_default_keyword_arguments
+test_function_w_default_keyword_arguments
 *************************************************************************************
 
 I want to see what would happen if I try to make a person without a value for the ``last_name`` variable
@@ -899,12 +899,12 @@ I want to see what would happen if I try to make a person without a value for th
 red: make it fail
 #################################################################################
 
-* I make a copy of ``test_person_factory_w_keyword_arguments`` and paste it below
-* then change the name to ``test_person_factory_w_default_keyword_arguments`` and remove the ``last_name`` variable
+* I make a copy of ``test_function_w_keyword_arguments`` and paste it below
+* then change the name to ``test_function_w_default_keyword_arguments`` and remove the ``last_name`` variable
 
   .. code-block:: python
 
-    def test_person_factory_w_default_keyword_arguments(self):
+    def test_function_w_default_keyword_arguments(self):
         first_name = random.choice((
             'john', 'joe', 'jane', 'person',
         ))
@@ -1064,7 +1064,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_person_factory_w_default_keyword_arguments(self):
+    def test_function_w_default_keyword_arguments(self):
         first_name = random.choice((
             'john', 'joe', 'jane', 'person',
         ))
@@ -1183,7 +1183,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_person_factory_w_keyword_arguments(self):
+    def test_function_w_keyword_arguments(self):
         first_name = self.first_name
         last_name = random.choice((
             'doe', 'smith', 'bloggs', 'public',
@@ -1193,7 +1193,7 @@ refactor: make it better
 
         ...
 
-    def test_person_factory_w_default_keyword_arguments(self):
+    def test_function_w_default_keyword_arguments(self):
         first_name = self.first_name
         year_of_birth = self.year_of_birth
 
@@ -1205,7 +1205,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_person_factory_w_keyword_arguments(self):
+    def test_function_w_keyword_arguments(self):
         last_name = random.choice((
             'doe', 'smith', 'bloggs', 'public',
         ))
@@ -1226,7 +1226,7 @@ refactor: make it better
             )
         )
 
-    def test_person_factory_w_default_keyword_arguments(self):
+    def test_function_w_default_keyword_arguments(self):
         self.assertEqual(
             src.person.factory(
                 first_name=self.first_name,
@@ -1256,7 +1256,7 @@ refactor: make it better
                 this_year()-120, this_year()
             )
 
-        def test_person_factory_w_keyword_arguments(self):
+        def test_function_w_keyword_arguments(self):
             ...
 
   the terminal shows an :ref:`AttributeError`
