@@ -392,7 +392,7 @@ green: make it pass
             )
         )
 
-  which gives me an :ref:`AssertionError`
+  and get an :ref:`AssertionError`
 
   .. code-block:: python
 
