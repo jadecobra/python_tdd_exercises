@@ -646,7 +646,7 @@ green: make it pass
 
   the test passes
 
-* I add a variable for the year of birth
+* I add a variable to remove duplication
 
   .. code-block:: python
 
@@ -676,7 +676,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-I  want to use random values for the ``year_of_birth`` variable
+I  want to use random values for ``year_of_birth``
 
 * first I add an `import statement`_
 
@@ -871,7 +871,7 @@ I  want to use random values for the ``year_of_birth`` variable
     AssertionError: {'first_name': 'jane', 'last_name': 'bloggs', 'sex': 'M', 'age': 59} != {'first_name': 'person', 'last_name': 'bloggs', 'sex': 'M', 'age': 59}
     AssertionError: {'first_name': 'jane', 'last_name': 'smith', 'sex': 'F', 'age': 117} != {'first_name': 'joe', 'last_name': 'smith', 'sex': 'F', 'age': 117}
 
-  I change the `return statement`_ to use the ``first_name`` input parameter
+  when I change the `return statement`_ to use the ``first_name`` input parameter
 
   .. code-block:: python
 
@@ -886,7 +886,7 @@ I  want to use random values for the ``year_of_birth`` variable
             'age': datetime.datetime.today().year - year_of_birth,
         }
 
-  and the terminal shows a passing test.
+  the terminal shows a passing test.
 
 ----
 
