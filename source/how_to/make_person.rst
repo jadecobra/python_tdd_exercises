@@ -1179,7 +1179,7 @@ refactor: make it better
 
         ...
 
-  then use them in the tests with ``self`` the same way I do the ``assert`` :ref:`methods<functions>`
+  then use them in the tests with ``self``, the same way I use the ``assert`` :ref:`methods<functions>`
 
   .. code-block:: python
 
