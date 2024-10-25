@@ -1297,7 +1297,7 @@ refactor: make it better
             this_year()-120, this_year()
         )
 
-  and both tests are green again. ``self.first_name`` and ``self.year_of_birth`` are now given random values before the first test runs and again before the second test runs
+  and both tests are green again. ``self.first_name`` and ``self.year_of_birth`` are now given random values before the first test, then given random values again before the second test
 
 ----
 
@@ -1438,10 +1438,10 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: {'first_name': 'john', 'last_name': 'bloggs', 'sex': 'F', 'age': 20} != {'first_name': 'jane', 'last_name': 'bloggs', 'sex': 'M', 'age': 50}
+    AssertionError: {'first_name': 'john', 'last_name': 'bloggs', 'sex': 'F', 'age': 20} != {'first_name': 'jane', 'last_name': 'smith', 'sex': 'M', 'age': 50}
     AssertionError: {'first_name': 'john', 'last_name': 'bloggs', 'sex': 'F', 'age': 20} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 73}
-    AssertionError: {'first_name': 'john', 'last_name': 'bloggs', 'sex': 'F', 'age': 20} != {'first_name': 'john', 'last_name': 'bloggs', 'sex': 'F', 'age': 77}
-    AssertionError: {'first_name': 'john', 'last_name': 'bloggs', 'sex': 'F', 'age': 20} != {'first_name': 'jane', 'last_name': 'public', 'sex': 'F', 'age': 98}
+    AssertionError: {'first_name': 'john', 'last_name': 'bloggs', 'sex': 'F', 'age': 20} != {'first_name': 'john', 'last_name': 'smith', 'sex': 'M', 'age': 77}
+    AssertionError: {'first_name': 'john', 'last_name': 'bloggs', 'sex': 'F', 'age': 20} != {'first_name': 'jane', 'last_name': 'public', 'sex': 'M', 'age': 98}
 
   the values for ``first_name``, ``last_name``, ``sex`` and ``age`` change
 
@@ -1464,10 +1464,10 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: {'first_name': 'person', 'last_name': 'bloggs', 'sex': 'F', 'age': 20} != {'first_name': 'person', 'last_name': 'public', 'sex': 'F', 'age': 69}
-    AssertionError: {'first_name': 'joe', 'last_name': 'bloggs', 'sex': 'F', 'age': 20} != {'first_name': 'joe', 'last_name': 'bloggs', 'sex': 'F', 'age': 97}
+    AssertionError: {'first_name': 'person', 'last_name': 'bloggs', 'sex': 'F', 'age': 20} != {'first_name': 'person', 'last_name': 'public', 'sex': 'M', 'age': 69}
+    AssertionError: {'first_name': 'joe', 'last_name': 'bloggs', 'sex': 'F', 'age': 20} != {'first_name': 'joe', 'last_name': 'bloggs', 'sex': 'M', 'age': 97}
     AssertionError: {'first_name': 'john', 'last_name': 'bloggs', 'sex': 'F', 'age': 20} != {'first_name': 'john', 'last_name': 'smith', 'sex': 'M', 'age': 74}
-    AssertionError: {'first_name': 'john', 'last_name': 'bloggs', 'sex': 'F', 'age': 20} != {'first_name': 'john', 'last_name': 'public', 'sex': 'F', 'age': 19}
+    AssertionError: {'first_name': 'john', 'last_name': 'bloggs', 'sex': 'F', 'age': 20} != {'first_name': 'john', 'last_name': 'public', 'sex': 'M', 'age': 19}
 
   the ``last_name``, ``sex`` and ``age`` change
 
@@ -1491,7 +1491,7 @@ green: make it pass
   .. code-block:: python
 
     AssertionError: {'first_name': 'jane', 'last_name': 'bloggs', 'sex': 'F', 'age': 20} != {'first_name': 'jane', 'last_name': 'bloggs', 'sex': 'M', 'age': 3}
-    AssertionError: {'first_name': 'joe', 'last_name': 'smith', 'sex': 'F', 'age': 20} != {'first_name': 'joe', 'last_name': 'smith', 'sex': 'F', 'age': 118}
+    AssertionError: {'first_name': 'joe', 'last_name': 'smith', 'sex': 'F', 'age': 20} != {'first_name': 'joe', 'last_name': 'smith', 'sex': 'M', 'age': 118}
     AssertionError: {'first_name': 'joe', 'last_name': 'bloggs', 'sex': 'F', 'age': 20} != {'first_name': 'joe', 'last_name': 'bloggs', 'sex': 'M', 'age': 19}
     AssertionError: {'first_name': 'joe', 'last_name': 'bloggs', 'sex': 'F', 'age': 20} != {'first_name': 'joe', 'last_name': 'bloggs', 'sex': 'M', 'age': 95}
 
