@@ -1201,7 +1201,7 @@ refactor: make it better
 
   the terminal still shows green
 
-* since the variables point to :ref:`class<classes>` attributes, I can use them directly in place of the variables
+* since the variables point to :ref:`class<classes>` attributes, I can use them in place of the variables
 
   .. code-block:: python
 
