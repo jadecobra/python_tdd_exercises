@@ -18,7 +18,7 @@ how to test that an Exception is raised
 
 When an error happens in Python, an Exception_ is raised, which breaks execution of the program, this means nothing past the line that caused it will run.
 
-It is useful because there is a problem that needs to be solved for the program to continue as expected. It can be a pain when it causes the program to stop early. What if I want it to run even with errors? I might want it to give messages to the user who does not understand or care about the details of the error.
+It is useful because there is a problem that needs to be solved for the program to continue as expected. It can be a pain when it causes the program to stop early. What if I want it to run even with errors? I may want it to give messages to the user who does not understand or care about the details of the error.
 
 Exception_ Handling is a way to deal with this, it allows programs to make decisions when one happens.
 
@@ -43,7 +43,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 exceptions
 
-  it makes the folders and files that are needed, installs packages, runs the first test and the terminal shows an :ref:`AssertionError`
+  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
