@@ -270,7 +270,7 @@ refactor: make it better
     import src.calculator
     import unittest
 
-  random_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, that is used to make fake random numbers
+  random_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that is used to make fake random numbers
 
 * then I add variables and a new assertion
 

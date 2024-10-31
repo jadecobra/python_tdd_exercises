@@ -614,7 +614,7 @@ green: make it pass
     def this_year():
         return datetime.datetime.now().year
 
-  ``datetime.datetime.now().year`` returns the ``year`` attribute of the ``datetime`` object returned by the `now <https://docs.python.org/3/library/datetime.html#datetime.datetime.now>`_ :ref:`method<functions>` of the ``datetime`` :ref:`class <classes>`, from the datetime_ :ref:`module<ModuleNotFoundError>`. I can also use the `today <https://docs.python.org/3/library/datetime.html#datetime.date.today>`_ :ref:`method<functions>` to get the same result
+  ``datetime.datetime.now().year`` returns the ``year`` attribute of the ``datetime`` object returned by the `now <https://docs.python.org/3/library/datetime.html#datetime.datetime.now>`_ :ref:`method<functions>` of the ``datetime`` :ref:`class <classes>`, from the datetime_ :ref:`module<ModuleNotFoundError>`. I can also use the `today <https://docs.python.org/3/library/datetime.html#datetime.date.today>`_ :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -676,7 +676,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* first I add an `import statement`_ because I want to use random values for ``year_of_birth``
+* I want to use random values for ``year_of_birth`` and add an `import statement`_
 
   .. code-block:: python
 
@@ -685,7 +685,7 @@ refactor: make it better
     import src.person
     import unittest
 
-  random_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, that is used to make fake random numbers
+  random_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that is used to make fake random numbers
 
 * then I make the ``year_of_birth`` variable use random numbers
 
