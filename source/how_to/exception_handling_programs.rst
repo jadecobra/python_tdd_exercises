@@ -78,7 +78,7 @@ green: make it pass
 
   and the terminal shows passing tests
 
-* I want the :ref:`function<functions>`  to raise an Exception_
+* I want the :ref:`function<functions>` to raise an Exception_ when called
 
   .. code-block:: python
 
@@ -101,16 +101,7 @@ green: make it pass
 
   the terminal shows a passing test
 
-* The problem with this is that this will catch any Exception_ I use, for example
-
-  .. code-block:: python
-
-    def raise_exception():
-        raise AssertionError
-
-  the terminal still shows a passing test
-
-* I add the `unittest.TestCase.assertRaisesRegex`_ :ref:`method<functions>` which takes in two values, an Exception_ and a message
+* I can use the `unittest.TestCase.assertRaisesRegex`_ :ref:`method<functions>` which takes in two values, an Exception_ and a message to be more specific when catching Exceptions_
 
   .. code-block:: python
 
@@ -120,13 +111,13 @@ green: make it pass
         ):
             src.exceptions.raise_exception()
 
-  which gives me an :ref:`AssertionError`
+  this gives me an :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: "BOOM!" does not match ""
 
-  though the Exception_ is right, the message is not
+  the Exception_ is right, the message is not
 
 * I add it to the :ref:`function<functions>`
 
@@ -155,7 +146,7 @@ green: make it pass
 test_catching_failure
 *********************************************************************************
 
-Next, I add exception handling for the program to send a message when an Exception_ happens
+Time to add exception handling for the program to send a message when an Exception_ happens
 
 red: make it fail
 #################################################################################
@@ -237,7 +228,7 @@ green: make it pass
 
   because the result of calling ``src.exceptions.exception_handler`` is :ref:`None` and the test expects ``'failed'``
 
-* I change the `return statement`_ to match the exceptation
+* I change the `return statement`_ to match the expectation
 
   .. code-block:: python
 
@@ -254,7 +245,7 @@ green: make it pass
 test_catching_success
 *********************************************************************************
 
-the solution has a problem, the ``exception_handler`` is a :doc:`singleton function </functions/test_singleton_functions>` that always returns ``'failed'`` it does not care about the input. I want it to do something with the input and return ``failed`` only if an Exception_ happens or ``success`` if nothing happens
+the solution has a problem, the ``exception_handler`` is a :doc:`singleton function </functions/test_singleton_functions>`, it does not care about the input and always returns ``'failed'``. I want it to do something with the input and return ``failed`` if an Exception_ happens or ``success`` if an Exception_ does not happen
 
 red: make it fail
 #################################################################################
@@ -312,9 +303,9 @@ green: make it pass
 
     AssertionError: 'failed' != 'succeeded'
 
-  ``src.exceptions.exception_handler`` still always returns ``'failed'`` and the test expects ``'succeeded'``
+  ``src.exceptions.exception_handler`` still returns ``'failed'`` and the test expects ``'succeeded'``
 
-* I make ``exception_handler`` call its input as a :ref:`function<functions>`
+* I make ``exception_handler`` return the result of a call to its input as a :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -354,19 +345,51 @@ green: make it pass
 how to use try...except...else
 ---------------------------------------------------------------------------------
 
-I add a `try statement`_ statement to handle exceptions
+* I add a `try statement`_ statement to handle Exceptions_
 
-.. code-block:: python
+  .. code-block:: python
 
-  def exception_handler(function):
-      try:
-          function()
-      except Exception:
-          return 'failed'
-      else:
-          return 'succeeded'
+    def exception_handler(function):
+        try:
+            function()
+        except Exception:
+            return 'failed'
 
-and the terminal shows passing tests. The `try statement`_ is used to catch/handle exceptions in Python. It allows the program to make a decision when it encounters an Exception instead of ending execution
+  the terminal still shows the :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: None != 'succeeded'
+
+* I add an ``else`` clause
+
+  .. code-block:: python
+
+    def exception_handler(function):
+        try:
+            function()
+        except Exception:
+            return 'failed'
+        else:
+            return None
+
+  still an :ref:`AssertionError`
+
+* I change the `return statement`_
+
+  .. code-block:: python
+
+    def exception_handler(function):
+        try:
+            function()
+        except Exception:
+            return 'failed'
+        else:
+            return 'succeeded'
+
+  and the terminal shows passing tests
+
+The `try statement`_ is used to catch/handle exceptions in Python. It allows the program to make a decision when it encounters an Exception instead of ending execution
 
 I think of the  `try statement`_ statement as
 
