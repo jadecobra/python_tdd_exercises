@@ -1284,7 +1284,7 @@ refactor: make it better
             )
         )
 
-* both tests now have the same values for ``self.first_name`` and ``self.year_of_birth`` since I made them :ref:`class<classes>` attributes, they were not always the same before the change. I can use the `unittest.TestCase.setUp`_ :ref:`method<functions>` which runs before every test to make sure they are assigned to random values right before each test
+* both tests have the same values for ``self.first_name`` and ``self.year_of_birth`` since I made them :ref:`class<classes>` attributes, they were not always the same before the change. I can use the `unittest.TestCase.setUp`_ :ref:`method<functions>` which runs before every test to make sure they are assigned to random values before each test
 
   .. code-block:: python
 
@@ -1327,7 +1327,7 @@ refactor: make it better
 
     AttributeError: 'TestPerson' object has no attribute 'year_of_birth'
 
-* I make the same change for ``year_of_birth``
+* then I make the same change for ``year_of_birth``
 
   .. code-block:: python
 
@@ -1353,13 +1353,11 @@ red: make it fail
 #################################################################################
 
 * I close ``test_person.py``
-* then delete all the text in ``person.py`` and the terminal shows an :ref:`AttributeError`
+* I want to write the solution without looking at the tests and delete all the text in ``person.py``, the terminal shows an :ref:`AttributeError`
 
   .. code-block:: python
 
     AttributeError: module 'src.person' has no attribute 'factory'
-
-  I want to write the solution without looking at the tests
 
 .. _test_person_tests_green:
 
