@@ -77,7 +77,7 @@ green: make it pass
     # AssertionError
     # NameError
 
-* then add an `import statement`_ for the ``person`` :ref:`module<ModuleNotFoundError>`
+* then I add an `import statement`_ for the ``person`` :ref:`module<ModuleNotFoundError>`
 
   .. code-block:: python
 
@@ -88,7 +88,7 @@ green: make it pass
 
   .. code-block:: python
 
-    AttributeError: module 'person' has no attribute 'factory'
+    AttributeError: module 'src.person' has no attribute 'factory'
 
 * I add it to the list of exceptions
 
@@ -193,7 +193,7 @@ green: make it pass
 
     TypeError: factory() got an unexpected keyword argument 'sex'
 
-* I add the name to the :ref:`function<functions>` definition
+* I add the name as input to the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -226,7 +226,7 @@ green: make it pass
 
     NameError: name 'this_year' is not defined
 
-* I add a new :ref:`function<functions>` above the :ref:`class<classes>` definition
+* I add the new :ref:`function<functions>` above the :ref:`class<classes>` definition
 
   .. code-block:: python
 
@@ -687,7 +687,7 @@ refactor: make it better
 
   random_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that is used to make fake random numbers
 
-* then I make the ``year_of_birth`` variable use random numbers
+* I make the ``year_of_birth`` variable use random numbers
 
   .. code-block:: python
 
@@ -1284,7 +1284,7 @@ refactor: make it better
             )
         )
 
-* both tests have the same values for ``self.first_name`` and ``self.year_of_birth`` since I made them :ref:`class<classes>` attributes, they were not always the same before the change. I can use the `unittest.TestCase.setUp`_ :ref:`method<functions>` which runs before every test to make sure they are assigned to random values before each test
+* after adding the :ref:`class<classes>` attributes, both tests have the same random values for ``first_name`` and ``year_of_birth``, they were not always the same before the change. I can use the `unittest.TestCase.setUp`_ :ref:`method<functions>` which runs before every test to make sure they are assigned to new random values before each test
 
   .. code-block:: python
 
@@ -1321,7 +1321,7 @@ refactor: make it better
             this_year()-120, this_year()
         )
 
-  which gives me another :ref:`AttributeError`
+  and get another :ref:`AttributeError`
 
   .. code-block:: python
 
