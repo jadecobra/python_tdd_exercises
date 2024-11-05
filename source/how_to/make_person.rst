@@ -205,7 +205,7 @@ green: make it pass
 
   and the terminal shows a passing test
 
-* I want the :ref:`function<functions>` to take in a keyword argument and give it the result of calling another :ref:`function<functions>` as the value for it
+* I want the :ref:`function<functions>` to take in a keyword argument and give it the result of calling another one as the value for it
 
   .. code-block:: python
 
@@ -614,7 +614,7 @@ green: make it pass
     def this_year():
         return datetime.datetime.now().year
 
-  ``datetime.datetime.now().year`` returns the ``year`` attribute of the ``datetime`` object returned by the `now <https://docs.python.org/3/library/datetime.html#datetime.datetime.now>`_ :ref:`method<functions>` of the ``datetime`` :ref:`class <classes>`, from the datetime_ :ref:`module<ModuleNotFoundError>`. I can also use the `today <https://docs.python.org/3/library/datetime.html#datetime.date.today>`_ :ref:`method<functions>`
+  ``datetime.datetime.now().year`` returns the ``year`` attribute of the ``datetime`` object returned by the `now <https://docs.python.org/3/library/datetime.html#datetime.datetime.now>`_ :ref:`method<functions>` of the ``datetime`` :ref:`class <classes>`, from the datetime_ :ref:`module<ModuleNotFoundError>`. I can also use the `today <https://docs.python.org/3/library/datetime.html#datetime.date.today>`_ :ref:`method<functions>` to get the same value
 
   .. code-block:: python
 
@@ -676,7 +676,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* I want to use random values for ``year_of_birth`` and add an `import statement`_
+* I add an `import statement`_ to use random values
 
   .. code-block:: python
 
@@ -687,7 +687,7 @@ refactor: make it better
 
   random_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that is used to make fake random numbers
 
-* I make the ``year_of_birth`` variable use random numbers
+* I use it for the ``year_of_birth`` variable
 
   .. code-block:: python
 
@@ -700,7 +700,7 @@ refactor: make it better
         )
         ...
 
-  ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 years ago, up to and including the current year which is returned by ``this_year()``. The terminal shows an :ref:`AssertionError`
+  ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 years ago, up to and including the current year which is returned by ``this_year()``. When the age is not ``0``, the terminal shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -910,7 +910,7 @@ red: make it fail
         year_of_birth = random.randint(
             this_year()-120, this_year()
         )
-    ...
+        ...
 
   which gives me a NameError_
 
@@ -1100,7 +1100,7 @@ green: make it pass
 
     NameError: name 'sex' is not defined
 
-  the value in the :ref:`dictionary<dictionaries>` refers to the variable I removed earlier. I change the expectation
+  the value in the :ref:`dictionary<dictionaries>` refers to the variable I removed. I change the expectation
 
   .. code-block:: python
 
