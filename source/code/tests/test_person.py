@@ -18,7 +18,7 @@ class TestPerson(unittest.TestCase):
             this_year()-120, this_year()
         )
 
-    def test_person_factory_w_keyword_arguments(self):
+    def test_factory_w_keyword_arguments(self):
         last_name = random.choice((
             'doe', 'smith', 'blow', 'public',
         ))
@@ -39,7 +39,7 @@ class TestPerson(unittest.TestCase):
             )
         )
 
-    def test_person_factory_w_default_keyword_arguments(self):
+    def test_factory_w_default_keyword_arguments(self):
         self.assertEqual(
             src.person.factory(
                 first_name=self.first_name,
