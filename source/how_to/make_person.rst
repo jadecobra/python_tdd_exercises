@@ -1047,7 +1047,7 @@ green: make it pass
         ):
         ...
 
-  the terminal shows passing tests. When no value is given for the ``last_name`` argument to the ``factory`` :ref:`function<functions>` it uses ``'doe'`` because that is the default value in the :ref:`function's<functions>` signature, it is same as calling it with ``last_name='doe'``
+  the terminal shows passing tests. When the ``factory`` :ref:`function<functions>` is called with no value for the ``last_name`` argument, it uses ``'doe'`` because that is the default value in the :ref:`function<functions>` signature, it is same as calling it with ``last_name='doe'``
 
   .. code-block:: python
 
@@ -1100,7 +1100,7 @@ green: make it pass
 
     NameError: name 'sex' is not defined
 
-  the value in the :ref:`dictionary<dictionaries>` refers to the variable I removed. I change the expectation
+  the value in the :ref:`dictionary<dictionaries>` still refers to the variable I removed. I change the expectation
 
   .. code-block:: python
 
@@ -1138,7 +1138,7 @@ green: make it pass
         ):
         ...
 
-  the terminal shows passing tests. When no value is given for the ``sex`` argument to the ``factory`` :ref:`function<functions>` it uses ``'M'`` because that is the default value in the :ref:`function<functions>` signature, it is same as calling it with ``sex='M'``
+  the terminal shows passing tests. When the ``factory`` :ref:`function<functions>` is called with no value for the ``sex`` argument, it uses ``'M'`` because that is the default value in the :ref:`function<functions>` signature, it is same as calling it with ``sex='M'``
 
   .. code-block:: python
 
