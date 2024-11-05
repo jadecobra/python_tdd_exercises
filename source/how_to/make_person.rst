@@ -1284,7 +1284,7 @@ refactor: make it better
             )
         )
 
-* after adding the :ref:`class<classes>` attributes, both tests have the same random values for ``first_name`` and ``year_of_birth``, they were not always the same before the change. I can use the `unittest.TestCase.setUp`_ :ref:`method<functions>` which runs before every test to make sure they are assigned to new random values before each test
+* both tests have the same random values for ``first_name`` and ``year_of_birth``, they were not always the same before the change. I can use the `unittest.TestCase.setUp`_ :ref:`method<functions>` which runs before every test to make sure they are assigned to new random values before each test
 
   .. code-block:: python
 
@@ -1307,7 +1307,7 @@ refactor: make it better
 
     AttributeError: 'TestPerson' object has no attribute 'first_name'
 
-  because there is no longer a class attribute named ``first_name``, it is now local to the `unittest.TestCase.setUp`_ :ref:`method<functions>` and the other :ref:`methods<functions>` cannot reach it
+  because there is no longer a class attribute with the name, it is local to the `unittest.TestCase.setUp`_ :ref:`method<functions>` and the other :ref:`methods<functions>` cannot reach it
 
 * I add ``self.`` to make it a class attribute
 
@@ -1327,7 +1327,7 @@ refactor: make it better
 
     AttributeError: 'TestPerson' object has no attribute 'year_of_birth'
 
-* then I make the same change for ``year_of_birth``
+* then I make the same change for it
 
   .. code-block:: python
 
@@ -1339,7 +1339,7 @@ refactor: make it better
             this_year()-120, this_year()
         )
 
-  and both tests are green again. ``self.first_name`` and ``self.year_of_birth`` are now given random values before the first test, then given random values again before the second test
+  and both tests are green again. ``self.first_name`` and ``self.year_of_birth`` are given random values before the first test, then given random values again before the second test
 
 ----
 
@@ -1382,7 +1382,7 @@ green: make it pass
 
     factory = None
 
-  and get a :ref:`TypeError`
+  which gives me a :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1589,7 +1589,7 @@ green: make it pass
 
   I need the difference between the current year and the ``year_of_birth`` to get the ``age``
 
-* I add an `import statement`_ for the datetime_ :ref:`module<ModuleNotFoundError>`
+* I add an `import statement`_
 
   .. code-block:: python
 
