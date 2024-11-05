@@ -398,7 +398,7 @@ green: make it pass
 
     AssertionError: {'first_name': 'jane'} != {'first_name': 'jane', 'last_name': 'last_name'}
 
-* I copy the value from the terminal then use it to replace the `return statement`_
+* I copy the value from the terminal then use it to change the `return statement`_
 
   .. code-block:: python
 
@@ -413,7 +413,7 @@ green: make it pass
 
   and the terminal shows green again
 
-* ``'last_name'`` happens twice in the test, I add a variable to remove it like I did with ``first_name``
+* ``'last_name'`` happens twice in the test, I add a variable to remove the duplication like I did with ``first_name``
 
   .. code-block:: python
 
