@@ -6,7 +6,7 @@ how to make a person
 
 .. raw:: html
 
-  <iframe style="border-radius:12px" width="560"  height="315" src="https://www.youtube-nocookie.com/embed/A7bCTJhr14g?si=QRx1U5esOaK7khD8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe style="border-radius:12px" width="560"  height="315" src="https://www.youtube-nocookie.com/embed/MAzF1fF-mwg?si=4mUekNwDAFGboUlM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ----
 
@@ -1485,7 +1485,7 @@ green: make it pass
 
   the values for ``first_name``, ``last_name``, ``sex`` and ``age`` change
 
-* I make the :ref:`dictionary<dictionaries>` in the `return statement`_ use the ``first_name`` input parameter
+* I make the :ref:`dictionary<dictionaries>` in the `return statement`_ use the ``first_name`` input parameter instead of a hardcoded value
 
   .. code-block:: python
 
