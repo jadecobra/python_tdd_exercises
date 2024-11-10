@@ -400,7 +400,21 @@ A KeyError_ is raised when a :ref:`dictionary<dictionaries>` I try to get a valu
 red: make it fail
 #################################################################################
 
-* I add a failing test
+* I add a :ref:`dictionary<dictionaries>`
+
+  .. code-block:: python
+
+    def test_catching_key_error_in_tests(self):
+        {'key': 'value'}
+
+  when I access it with a key that exists
+
+  .. code-block:: python
+
+    def test_catching_key_error_in_tests(self):
+        {'key': 'value'}['key']
+
+  the terminal still shows green. When I access it with a key that does not exist
 
   .. code-block:: python
 
