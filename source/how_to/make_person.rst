@@ -99,7 +99,7 @@ green: make it pass
     # NameError
     # AttributeError
 
-* then open up ``person.py`` from the ``src`` folder to add a :ref:`function<functions>`
+* then open ``person.py`` from the ``src`` folder to add a :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -205,7 +205,7 @@ green: make it pass
 
   and the terminal shows a passing test
 
-* I want the :ref:`function<functions>` to take in a keyword argument and give it the result of calling another one as the value for it
+* I want the :ref:`function<functions>` to take in a keyword argument and give it the result of calling another one
 
   .. code-block:: python
 
@@ -215,7 +215,7 @@ green: make it pass
                 first_name='first_name',
                 last_name='last_name',
                 sex='M',
-                year_of_birth=this_year()
+                year_of_birth=this_year(),
             ),
             None
         )
@@ -269,7 +269,7 @@ green: make it pass
                 first_name='first_name',
                 last_name='last_name',
                 sex='M',
-                year_of_birth=this_year()
+                year_of_birth=this_year(),
             ),
             dict()
         )
@@ -302,7 +302,7 @@ green: make it pass
                 first_name='first_name',
                 last_name='last_name',
                 sex='M',
-                year_of_birth=this_year()
+                year_of_birth=this_year(),
             ),
             dict(
                 first_name='first_name',
@@ -346,7 +346,7 @@ green: make it pass
             )
         )
 
-  the test is still green. I now only need to change the value of ``first_name`` in one place
+  and the test is still green. I now only need to change the value of ``first_name`` in one place
 
   .. code-block:: python
 
@@ -579,7 +579,7 @@ green: make it pass
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
-                year_of_birth=this_year()
+                year_of_birth=this_year(),
             ),
             dict(
                 first_name=first_name,
@@ -607,7 +607,7 @@ green: make it pass
 
   datetime_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that is used for dates and times
 
-* I change the `return statement`_ in the ``this_year`` :ref:`function <functions>` to get the current year
+* I change the `return statement`_ in the ``this_year`` :ref:`function <functions>` to make it return the current year
 
   .. code-block:: python
 
@@ -629,7 +629,7 @@ green: make it pass
 
   the new :ref:`dictionary<dictionaries>` has a value for ``age``
 
-* when I copy it from the terminal and use it to replace the `return statement`_
+* when I copy it from the terminal to replace the `return statement`_
 
   .. code-block:: python
 
@@ -892,7 +892,7 @@ refactor: make it better
 test_function_w_default_keyword_arguments
 *************************************************************************************
 
-I want to see what would happen if I try to make a person without a value for the ``last_name`` variable
+I want to see what would happen when I try to make a person without a value for the ``last_name``
 
 red: make it fail
 #################################################################################
@@ -912,7 +912,7 @@ red: make it fail
         )
         ...
 
-  which gives me a NameError_
+  to get a NameError_
 
   .. code-block:: python
 
@@ -1008,7 +1008,7 @@ green: make it pass
 
   the value for the ``last_name`` key in the expected :ref:`dictionary<dictionaries>` points to a variable that no longer exists
 
-* I change the expectation for ``last_name``
+* I change the expectation for it
 
   .. code-block:: python
 
@@ -1100,7 +1100,7 @@ green: make it pass
 
     NameError: name 'sex' is not defined
 
-  the value in the :ref:`dictionary<dictionaries>` still refers to the variable I removed. I change the expectation
+  the value in the :ref:`dictionary<dictionaries>` still uses the variable I removed. I change the expectation
 
   .. code-block:: python
 
@@ -1177,7 +1177,7 @@ refactor: make it better
 
         ...
 
-  then use them in the tests with ``self.``, the same way I use the ``assert`` :ref:`methods<functions>`
+  then use them in the tests with ``self.`` the same way I use the ``assert`` :ref:`methods<functions>`
 
   .. code-block:: python
 
@@ -1199,7 +1199,7 @@ refactor: make it better
 
   the terminal still shows green
 
-* since the variables point to :ref:`class<classes>` attributes, I can use them in place of the variables
+* since the variables point to :ref:`class<classes>` attributes, I can use them directly
 
   .. code-block:: python
 
@@ -1327,7 +1327,7 @@ refactor: make it better
 
     AttributeError: 'TestPerson' object has no attribute 'year_of_birth'
 
-* then I make the same change for it
+* same problem, same solution
 
   .. code-block:: python
 
