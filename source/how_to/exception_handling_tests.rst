@@ -16,9 +16,9 @@ how to test that an Exception is raised
 
 ----
 
-When an error happens in Python, an Exception_ is raised, which breaks execution of the program, this means nothing past the line that caused it will run.
+When an error happens in Python, an Exception_ is raised breaking execution of the program, this means nothing past the line that caused it will run.
 
-It is useful because there is a problem that needs to be solved for the program to continue as expected. It can be a pain when it causes the program to stop early. What if I want it to run even with errors? I may want it to give messages to the user who does not understand or care about the details of the error.
+It is useful because there is a problem that needs to be solved for the program to continue as expected. It can be a pain when it causes the program to stop early. What if I want it to run with errors? I may want it to give messages to the user who does not understand or care about the details of the error.
 
 Exception_ Handling is a way to deal with this, it allows programs to make decisions when one happens.
 
@@ -80,7 +80,7 @@ green: make it pass
     # ModuleNotFoundError
 
   I can take care of this error by making the module, but I want to catch or handle the exception in the test
-* I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` to make sure that a :ref:`ModuleNotFoundError` is raised when I try to import ``does_not_exist``
+* I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` introduced in :doc:`/how_to/calculator` to make sure that a :ref:`ModuleNotFoundError` is raised when I try to import ``does_not_exist``
 
   .. code-block:: python
 
