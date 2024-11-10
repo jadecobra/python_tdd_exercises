@@ -79,8 +79,7 @@ green: make it pass
     # AssertionError
     # ModuleNotFoundError
 
-  I can take care of this error by making the module, but I want to catch or handle the exception in the test
-* I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` introduced in :doc:`/how_to/calculator` to make sure that when I try to import a :ref:`module<ModuleNotFoundError>` that does not exist, I get a :ref:`ModuleNotFoundError`
+* I can take care of this error by making the module, but I want to catch or handle the :ref:`Exception<Exceptions>` in the test. I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` introduced in :doc:`/how_to/calculator`
 
   .. code-block:: python
 
@@ -88,7 +87,7 @@ green: make it pass
         with self.assertRaises(ModuleNotFoundError):
             import does_not_exist
 
-  and the terminal shows passing tests
+  and the test passes, showing that when I try to import a file that does not exist, I get a :ref:`ModuleNotFoundError`
 
 ----
 
@@ -124,7 +123,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-when I add a `unittest.TestCase.assertRaises`_ to the test
+then I add a `unittest.TestCase.assertRaises`_
 
 .. code-block:: python
 
@@ -132,7 +131,7 @@ when I add a `unittest.TestCase.assertRaises`_ to the test
       with self.assertRaises(NameError):
           does_not_exist
 
-the terminal shows passing tests
+and the terminal shows passing tests
 
 ---
 
@@ -169,6 +168,8 @@ red: make it fail
 
     AttributeError: module 'src.exceptions' has no attribute 'does_not_exist'
 
+  because I called something that does not exist from something that does exist
+
 * I add the exception to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
@@ -182,7 +183,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-I add a call to the `unittest.TestCase.assertRaises`_ :ref:`method<functions>`
+then add a call to the `unittest.TestCase.assertRaises`_ :ref:`method<functions>`
 
 .. code-block:: python
 
@@ -208,20 +209,20 @@ red: make it fail
     def test_catching_type_error_in_tests(self):
         src.exceptions.function('argument')
 
-  the terminal shows an :ref:`AttributeError`
+  and get an :ref:`AttributeError`
 
   .. code-block:: python
 
     AttributeError: module 'src.exceptions' has no attribute 'function'
 
-* then I add the :ref:`function<functions>` to ``exceptions.py``
+* when I add it to ``exceptions.py``
 
   .. code-block:: python
 
     def function():
         return None
 
-  and get a :ref:`TypeError`
+  the terminal shows a :ref:`TypeError`
 
   .. code-block:: python
 
@@ -243,7 +244,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-when I add a `unittest.TestCase.assertRaises`_ to the test
+then add a `unittest.TestCase.assertRaises`_ to the test
 
 .. code-block:: python
 
@@ -251,7 +252,7 @@ when I add a `unittest.TestCase.assertRaises`_ to the test
       with self.assertRaises(TypeError):
           src.exceptions.function('argument')
 
-the terminal shows passing tests
+and the terminal shows passing tests
 
 ----
 
@@ -259,12 +260,35 @@ the terminal shows passing tests
 test_catching_index_error_in_tests
 *********************************************************************************
 
-An IndexError_ is raised when a :ref:`list<lists>` is accessed with a number that is more than the possible number of indexes for the items in it
+An IndexError_ is raised with a :ref:`list<lists>`
 
 red: make it fail
 #################################################################################
 
-* I add a failing test
+* I add a test for it
+
+  .. code-block:: python
+
+    def test_catching_index_error_in_tests(self):
+        a_list = [1, 2, 3, 'n']
+
+  Python uses zero-based indexing, this means the first item in the :ref:`list<lists>` has zero as its index
+
+  .. code-block:: python
+
+    def test_catching_index_error_in_tests(self):
+        a_list = [1, 2, 3, 'n']
+        a_list[0]
+
+  the terminal still shows green. The last item is the total number of items minus 1, which is 3 in this case
+
+  .. code-block:: python
+
+    def test_catching_index_error_in_tests(self):
+        a_list = [1, 2, 3, 'n']
+        a_list[3]
+
+  still green. When I use a number bigger than the total number of items
 
   .. code-block:: python
 
@@ -278,7 +302,7 @@ red: make it fail
 
     IndexError: list index out of range
 
-* I add the exception to the list of :ref:`Exceptions<Exceptions>` encountered
+* I add it to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
@@ -293,7 +317,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* then add a `unittest.TestCase.assertRaises`_ to the test
+* then add a `unittest.TestCase.assertRaises`_
 
   .. code-block:: python
 
@@ -302,9 +326,29 @@ green: make it pass
         with self.assertRaises(IndexError):
             a_list[4]
 
-  and the terminal shows passing tests.
+  and the test passes
 
-* I add another line that fails
+* I can also index with negative numbers. The last item in the :ref:`list<lists>` is ``-1```
+
+  .. code-block:: python
+
+    def test_catching_index_error_in_tests(self):
+        a_list = [1, 2, 3, 'n']
+        with self.assertRaises(IndexError):
+            a_list[4]
+        a_list[-1]
+
+  the terminal still shows passing tests. The first item is negative the total number of items minus 1, ``-4`` in this case
+
+  .. code-block:: python
+
+    def test_catching_index_error_in_tests(self):
+        a_list = [1, 2, 3, 'n']
+        with self.assertRaises(IndexError):
+            a_list[4]
+        a_list[-4]
+
+  still green. When I use a negative number that is outside the range
 
   .. code-block:: python
 
@@ -320,7 +364,7 @@ green: make it pass
 
     IndexError: list index out of range
 
-  when I add the `assertRaises`
+  I add the `assertRaises`
 
   .. code-block:: python
 
@@ -331,7 +375,19 @@ green: make it pass
         with self.assertRaises(IndexError):
             a_list[-5]
 
-  the terminal shows green again
+  and the terminal shows green again
+
+* It looks like there is a duplication of the :ref:`IndexError` but this is not true even though the test is still green when I remove the second one
+
+  .. code-block:: python
+
+    def test_catching_index_error_in_tests(self):
+        a_list = [1, 2, 3, 'n']
+        with self.assertRaises(IndexError):
+            a_list[4]
+            a_list[-5]
+
+  I will show why this is a problem before the end of the chapter
 
 ----
 
@@ -339,7 +395,7 @@ green: make it pass
 test_catching_key_error_in_tests
 *********************************************************************************
 
-A KeyError_ is raised when a :ref:`dictionary<dictionaries>` is accessed with a key that is not in it
+A KeyError_ is raised when a :ref:`dictionary<dictionaries>` I try to get a value with a key that is not in it
 
 red: make it fail
 #################################################################################
@@ -373,7 +429,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-I add an `unittest.TestCase.assertRaises`_ context to the test
+I add an `unittest.TestCase.assertRaises`_ to the test
 
 .. code-block:: python
 
@@ -381,7 +437,7 @@ I add an `unittest.TestCase.assertRaises`_ context to the test
         with self.assertRaises(KeyError):
             {'key': 'value'}['does_not_exist']
 
-and the terminal shows passing tests.
+and the terminal shows green again
 
 *********************************************************************************
 test_catching_zero_division_error_in_tests
