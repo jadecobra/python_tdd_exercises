@@ -80,7 +80,7 @@ green: make it pass
     # ModuleNotFoundError
 
   I can take care of this error by making the module, but I want to catch or handle the exception in the test
-* I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` introduced in :doc:`/how_to/calculator` to make sure that a :ref:`ModuleNotFoundError` is raised when I try to import ``does_not_exist``
+* I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` introduced in :doc:`/how_to/calculator` to make sure that when I try to import a :ref:`module<ModuleNotFoundError>` that does not exist, I get a :ref:`ModuleNotFoundError`
 
   .. code-block:: python
 
@@ -190,7 +190,7 @@ I add a call to the `unittest.TestCase.assertRaises`_ :ref:`method<functions>`
       with self.assertRaises(AttributeError):
           src.exceptions.does_not_exist
 
-the terminal shows passing tests
+and the terminal shows passing tests
 
 ----
 
@@ -214,7 +214,7 @@ red: make it fail
 
     AttributeError: module 'src.exceptions' has no attribute 'function'
 
-* then add the :ref:`function<functions>` to ``exceptions.py``
+* then I add the :ref:`function<functions>` to ``exceptions.py``
 
   .. code-block:: python
 
@@ -225,7 +225,7 @@ red: make it fail
 
   .. code-block:: python
 
-    TypeError: function() takes 0 positional argument but 1 were given
+    TypeError: function() takes 0 positional argument but 1 was given
 
   the call uses 1 positional argument but the :ref:`function<functions>` does not accept input
 
