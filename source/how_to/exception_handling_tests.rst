@@ -395,12 +395,12 @@ green: make it pass
 test_catching_key_error_in_tests
 *********************************************************************************
 
-A KeyError_ is raised when a :ref:`dictionary<dictionaries>` I try to get a value with a key that is not in it
+A KeyError_ is raised with a :ref:`dictionary<dictionaries>`
 
 red: make it fail
 #################################################################################
 
-* I add a :ref:`dictionary<dictionaries>`
+* I add one to a new test
 
   .. code-block:: python
 
@@ -414,7 +414,7 @@ red: make it fail
     def test_catching_key_error_in_tests(self):
         {'key': 'value'}['key']
 
-  the terminal still shows green. When I access it with a key that does not exist
+  the terminal shows green, when I access it with a key that does not exist
 
   .. code-block:: python
 
@@ -460,20 +460,18 @@ test_catching_zero_division_error_in_tests
 red: make it fail
 #################################################################################
 
-* I add a failing test for a :ref:`TypeError`
+* I add another failing test
 
   .. code-block:: python
 
     def test_catching_zero_division_error_in_tests(self):
         1 / 0
 
-  the terminal shows an ZeroDivisionError_
+  the terminal shows a ZeroDivisionError_
 
   .. code-block:: python
 
     ZeroDivisionError: division by zero
-
-  this also happens in :doc:`/how_to/calculator`
 
 * I add the exception to the list of :ref:`Exceptions<Exceptions>` encountered
 
@@ -492,7 +490,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-when I add an `unittest.TestCase.assertRaises` :ref:`method<functions>` to the test
+when I add the `unittest.TestCase.assertRaises` :ref:`method<functions>` to the test
 
 .. code-block:: python
 
@@ -511,7 +509,7 @@ test_catching_exceptions_in_tests
 red: make it fail
 #################################################################################
 
-I add a failing test for any :ref:`Exception<Exceptions>`
+I add a failing test for any :ref:`Exception<Exceptions>` with the raise_ keyword
 
 .. code-block:: python
 
