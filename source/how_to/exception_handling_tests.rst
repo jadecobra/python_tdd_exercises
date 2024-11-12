@@ -509,18 +509,31 @@ test_catching_exceptions_in_tests
 red: make it fail
 #################################################################################
 
-I add a failing test for any :ref:`Exception<Exceptions>` with the raise_ keyword
+* I add a failing test with the raise_ keyword
 
-.. code-block:: python
+  .. code-block:: python
 
-  def test_catching_exceptions_in_tests(self):
-      raise Exception
+    def test_catching_exceptions_in_tests(self):
+        raise Exception
 
-the terminal shows an Exception_
+  the terminal shows an Exception_ which is the mother of the other exceptions encountered so far
 
-.. code-block:: python
+  .. code-block:: python
 
-  Exception
+    Exception
+
+* I can use the raise_ keyword to cause any :ref:`Exception<Exceptions>`
+
+  .. code-block:: python
+
+    def test_catching_exceptions_in_tests(self):
+        raise AssertionError
+
+  and the terminal will show it
+
+  .. code-block:: python
+
+    Exception
 
 green: make it pass
 #################################################################################
@@ -534,6 +547,73 @@ when I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` to the
           raise Exception
 
 the terminal shows all tests are passing.
+
+refactor: make it better
+#################################################################################
+
+* I can use this catch any of the :ref:`Exception<Exceptions>` encountered so far
+
+  .. code-block:: python
+
+    def test_catching_key_error_in_tests(self):
+        with self.assertRaises(Exception):
+            {'key': 'value'}['does_not_exist']
+
+
+    def test_catching_zero_division_error_in_tests(self):
+        with self.assertRaises(Exception):
+            1 / 0
+
+  the problem with using Exception_ to catch its children is that it does not tell anyone who reads the code what the specific error is or what line caused it if there is more than one line of code in the assertRaises_ that causes an error. It is better to be specific and clearly state what error is raised by the line of code
+
+* as promised here is why the IndexError_ from earlier is not a duplicate, even though when I remove the second one the tests still show green
+
+  .. code-block:: python
+
+    def test_catching_index_error_in_tests(self):
+        a_list = [1, 2, 3, 'n']
+        with self.assertRaises(IndexError):
+            a_list[4]
+            a_list[-5]
+
+  the second line that causes an IndexError_ never runs, here is how I know, if I add another :ref:`Exception<Exceptions>` between them
+
+  .. code-block:: python
+
+    def test_catching_index_error_in_tests(self):
+        a_list = [1, 2, 3, 'n']
+        with self.assertRaises(IndexError):
+            a_list[4]
+            raise Exception
+            a_list[-5]
+
+  the terminal shows a passing test, even though an Exception_ is not an IndexError_, the assertRaises_ exists after it encounters the first line that causes an IndexError_. If I move the new line above the first line that raises an IndexError_
+
+  .. code-block:: python
+
+    def test_catching_index_error_in_tests(self):
+        a_list = [1, 2, 3, 'n']
+        with self.assertRaises(IndexError):
+            raise Exception
+            a_list[4]
+            a_list[-5]
+
+  I get an Exception_
+
+  .. code-block:: python
+
+    Exception
+
+  because Exception_ is not an IndexError_. As a rule of thumb I write one line of code for one exception handler, that way I know which line causes which error
+
+  .. code-block:: python
+
+    def test_catching_index_error_in_tests(self):
+        a_list = [1, 2, 3, 'n']
+        with self.assertRaises(IndexError):
+            a_list[4]
+        with self.assertRaises(IndexError):
+            a_list[-5]
 
 ----
 
