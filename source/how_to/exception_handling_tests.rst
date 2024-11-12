@@ -525,7 +525,7 @@ the terminal shows an Exception_
 green: make it pass
 #################################################################################
 
-when I add a `unittest.TestCase.assertRaises`_ :ref:`method<functions>` to the test
+when I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` to the test
 
 .. code-block:: python
 
@@ -533,7 +533,7 @@ when I add a `unittest.TestCase.assertRaises`_ :ref:`method<functions>` to the t
       with self.assertRaises(Exception):
           raise Exception
 
-the terminal shows all tests are passing. Fantastic!
+the terminal shows all tests are passing.
 
 ----
 
@@ -541,7 +541,7 @@ the terminal shows all tests are passing. Fantastic!
 review
 *********************************************************************************
 
-I have a way to catch :ref:`Exceptions<Exceptions>` when I am testing and encountered the following
+I have a way to catch :ref:`Exceptions<Exceptions>` when in testing and encountered the following
 
 * :ref:`AssertionError`
 * :ref:`ModuleNotFoundError`
