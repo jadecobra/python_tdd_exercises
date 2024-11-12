@@ -16,9 +16,9 @@ how to test that an Exception is raised
 
 ----
 
-When an error happens in Python, an Exception_ is raised breaking execution of the program, this means nothing past the line that caused it will run.
+When an error happens in Python, an Exception_ is raised to break execution of the program, this means nothing past the line that caused it will run.
 
-It is useful because there is a problem that needs to be solved for the program to continue as expected. It can be a pain when it causes the program to stop early. What if I want it to run with errors? I may want it to give messages to the user who does not understand or care about the details of the error.
+It is useful because there is a problem that needs to be solved to continue as expected, It can be a pain when it causes the program to stop early. What if I want it to run with errors? I may want it to give messages to the user who does not understand or care about the details of the error.
 
 Exception_ Handling is a way to deal with this, it allows programs to make decisions when one happens.
 
@@ -79,7 +79,7 @@ green: make it pass
     # AssertionError
     # ModuleNotFoundError
 
-* I can take care of this error by making the module, but I want to catch or handle the :ref:`Exception<Exceptions>` in the test. I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` introduced in :doc:`/how_to/calculator`
+* I want to catch or handle the :ref:`Exception<Exceptions>` in the test, instead of making the :ref:`module<ModuleNotFoundError>` to solve the problem. I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` introduced in :doc:`/how_to/calculator` which checks that the code within its context raises the :ref:`Exception<Exceptions>` it is given
 
   .. code-block:: python
 
@@ -105,7 +105,7 @@ red: make it fail
     def test_catching_name_error_in_tests(self):
         does_not_exist
 
-  the terminal shows a NameError_
+  and the terminal shows a NameError_
 
   .. code-block:: python
 
@@ -123,7 +123,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-then I add a `unittest.TestCase.assertRaises`_
+then add `unittest.TestCase.assertRaises`_
 
 .. code-block:: python
 
@@ -142,7 +142,7 @@ test_catching_attribute_error_in_tests
 red: make it fail
 #################################################################################
 
-* I add a new failing test
+* I add another failing test
 
   .. code-block:: python
 
@@ -155,14 +155,14 @@ red: make it fail
 
     NameError: name 'src.exceptions' is not defined
 
-* I add an `import statement`_
+* I add an `import statement`_ for the :ref:`module<ModuleNotFoundError>`
 
   .. code-block:: python
 
     import src.exceptions
     import unittest
 
-  the terminal shows an:ref:`AttributeError`
+  and get an:ref:`AttributeError`
 
   .. code-block:: python
 
@@ -202,7 +202,7 @@ test_catching_type_error_in_tests
 red: make it fail
 #################################################################################
 
-* I add a failing test for a :ref:`TypeError`
+* I add a failing test
 
   .. code-block:: python
 
@@ -244,7 +244,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-then add a `unittest.TestCase.assertRaises`_ to the test
+then add `unittest.TestCase.assertRaises`_ to the test
 
 .. code-block:: python
 
@@ -265,14 +265,14 @@ An IndexError_ is raised with a :ref:`list<lists>`
 red: make it fail
 #################################################################################
 
-* I add a test for it
+* I make one in a new test
 
   .. code-block:: python
 
     def test_catching_index_error_in_tests(self):
         a_list = [1, 2, 3, 'n']
 
-  Python uses zero-based indexing, this means the first item in the :ref:`list<lists>` has zero as its index
+  the first item in the :ref:`list<lists>` has zero as its index
 
   .. code-block:: python
 
@@ -280,7 +280,7 @@ red: make it fail
         a_list = [1, 2, 3, 'n']
         a_list[0]
 
-  the terminal still shows green. The last item is the total number of items minus 1, which is 3 in this case
+  the terminal still shows green. The last item is the total number of items minus 1, which is ``3`` in this case
 
   .. code-block:: python
 
@@ -317,7 +317,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* then add a `unittest.TestCase.assertRaises`_
+* then add `unittest.TestCase.assertRaises`_
 
   .. code-block:: python
 
@@ -338,7 +338,7 @@ green: make it pass
             a_list[4]
         a_list[-1]
 
-  the terminal still shows passing tests. The first item is negative the total number of items minus 1, ``-4`` in this case
+  the terminal still shows passing tests. The first item is negative the total number of items, ``-4`` in this case
 
   .. code-block:: python
 
@@ -377,7 +377,7 @@ green: make it pass
 
   and the terminal shows green again
 
-* It looks like there is a duplication of the :ref:`IndexError` but this is not true even though the test is still green when I remove the second one
+* It looks like there is a duplication of the IndexError_ but this is not true even though the test is still green when I remove the second one
 
   .. code-block:: python
 
