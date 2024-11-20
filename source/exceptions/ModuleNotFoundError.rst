@@ -218,7 +218,6 @@ green: make it pass
 review
 *********************************************************************************
 
-*WELL DONE!*
-You are on your way to being a master troubleshooter and know how to solve the :ref:`ModuleNotFoundError`
+*WELL DONE!* You are on your way to being a master troubleshooter and know how to solve the :ref:`ModuleNotFoundError`
 
 Would you like to test :ref:`AssertionErrors<AssertionError>`?

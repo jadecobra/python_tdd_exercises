@@ -411,7 +411,7 @@ In this case
 review
 *********************************************************************************
 
-I ran tests to show how to cause Exceptions_, and catch/handle them in tests and programs. Would you like to test :doc:`how to measure sleep duration?</how_to/sleep_duration>`
+I ran tests to show how to cause Exceptions_, and catch or handle them in tests and programs. Would you like to test :doc:`how to measure sleep duration?</how_to/sleep_duration>`
 
 ----
 
