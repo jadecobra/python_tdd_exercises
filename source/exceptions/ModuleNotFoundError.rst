@@ -14,7 +14,7 @@ ModuleNotFoundError
 
 ----
 
-Programming allows us to gain from our previous efforts as well as the efforts of others in the form of packages and modules that can be distributed for other people to use. To use these packages in Python they have to be imported.
+Programming allows us to gain from problems we or others have solved before in the form of packages and modules that can be distributed, we have to import them to use them.
 
 The drill below will help you remember how to solve a ``ModuleNotFoundError`` in Python and what a Python module is.
 
@@ -219,6 +219,6 @@ review
 *********************************************************************************
 
 *WELL DONE!*
-You are on your way to being a troubleshooting master. You now know how to solve ``ModuleNotFoundError`` and encountered the following exceptions
+You are on your way to being a master troubleshooter and know how to solve the :ref:`ModuleNotFoundError`
 
 Would you like to test :ref:`AssertionErrors<AssertionError>`?
