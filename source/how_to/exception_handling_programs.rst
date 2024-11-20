@@ -394,14 +394,14 @@ The `try statement`_ is used to catch/handle exceptions in Python. It allows the
 I think of the  `try statement`_ statement as
 
 * ``try`` **this**
-* ``except Exception`` - when **this** raises an ``Exception`` do something
-* ``else`` - when **this** does not raise an ``Exception`` do something else
+* ``except Exception`` - when **this** raises this ``Exception`` run the code in this block
+* ``else`` - when **this** does NOT raise the ``Exception`` in the ``except`` block, run the code in this block
 
 In this case
 
 * ``try`` **calling** ``function()``
 * ``except Exception`` - when **calling** ``function()`` raises an ``Exception`` return ``'failed'``
-* ``else`` - when **calling** ``function()`` does NOT raise an ``Exception`` return ``'succeeded'``
+* ``else`` - when **calling** ``function()`` does NOT raise the ``Exception`` return ``'succeeded'``
 
 ----
 
