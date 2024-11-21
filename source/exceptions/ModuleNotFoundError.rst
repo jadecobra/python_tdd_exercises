@@ -254,7 +254,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-I ran through an exercise to be familiar with :ref:`ModuleNotFoundError` and Python modules. Would you like to test :ref:`AssertionErrors?<AssertionError>`
+I ran a test for the :ref:`ModuleNotFoundError` and Python modules. Would you like to test :ref:`AssertionErrors?<AssertionError>`
 
 ----
 
