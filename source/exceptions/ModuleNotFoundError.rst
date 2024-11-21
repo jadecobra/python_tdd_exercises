@@ -246,7 +246,7 @@ refactor: make it better
         import src.module_98
         import src.module_99
 
-  and make the ``.py`` files needed to make the test pass
+  and make the ``.py`` files to make the test pass
 
 ----
 
