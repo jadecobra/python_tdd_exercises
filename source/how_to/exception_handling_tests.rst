@@ -215,20 +215,25 @@ red: make it fail
 
     AttributeError: module 'src.exceptions' has no attribute 'function'
 
-* when I add it to ``exceptions.py``
+* I add the name to ``exceptions.py``
 
   .. code-block:: python
 
-    def function():
-        return None
+    function
 
-  the terminal shows a :ref:`TypeError`
+  and get a NameError_
 
   .. code-block:: python
 
-    TypeError: function() takes 0 positional argument but 1 was given
+    NameError: name 'function' is not defined
 
-  the call uses 1 positional argument but the :ref:`function<functions>` does not accept input
+  I assign it to :ref:`None` to define it
+
+  .. code-block:: python
+
+    function = None
+
+  and get a :ref:`TypeError`
 
 * I add the exception to the list of :ref:`Exceptions<Exceptions>` encountered
 
@@ -244,7 +249,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-then add `unittest.TestCase.assertRaises`_ to the test
+I add `unittest.TestCase.assertRaises`_ to the test
 
 .. code-block:: python
 
@@ -253,6 +258,37 @@ then add `unittest.TestCase.assertRaises`_ to the test
           src.exceptions.function('argument')
 
 and the terminal shows passing tests
+
+refactor: make it better
+#################################################################################
+
+If I define it as a :ref:`function<functions>`
+
+.. code-block:: python
+
+  def function():
+      return None
+
+the terminal still shows passing tests because the call uses 1 positional argument but the :ref:`function<functions>` does not accept input, I still have a :ref:`TypeError`. When I add an argument to the definition
+
+.. code-block:: python
+
+  def function(argument):
+      return None
+
+the terminal shows an :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: TypeError not raised
+
+because the :ref:`function<functions>` call now matches the signature, no :ref:`TypeError` is raised. I undo the change to make the test pass
+
+.. code-block:: python
+
+  def function():
+      return None
+
 
 ----
 
