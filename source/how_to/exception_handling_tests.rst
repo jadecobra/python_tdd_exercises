@@ -364,7 +364,7 @@ green: make it pass
 
   and the test passes
 
-* I can also index with negative numbers. The last item in the :ref:`list<lists>` is ``-1```
+* I can also index with negative numbers. The index for the last item in the :ref:`list<lists>` is ``-1```
 
   .. code-block:: python
 
@@ -374,7 +374,7 @@ green: make it pass
             a_list[4]
         a_list[-1]
 
-  the terminal still shows passing tests. The first item is negative the total number of items, ``-4`` in this case
+  the terminal still shows passing tests. The index for the first item in the :ref:`list<lists>` is negative the total number of items, ``-4`` in this case
 
   .. code-block:: python
 
@@ -450,7 +450,7 @@ red: make it fail
     def test_catching_key_error_in_tests(self):
         {'key': 'value'}['key']
 
-  the terminal shows green, when I access it with a key that does not exist
+  the terminal shows green. When I access it with a key that does not exist
 
   .. code-block:: python
 
@@ -479,7 +479,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-I add an `unittest.TestCase.assertRaises`_ to the test
+then add an `unittest.TestCase.assertRaises`_ to the test
 
 .. code-block:: python
 
@@ -509,7 +509,7 @@ red: make it fail
 
     ZeroDivisionError: division by zero
 
-* I add the exception to the list of :ref:`Exceptions<Exceptions>` encountered
+* I add it to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
@@ -534,7 +534,7 @@ when I add the `unittest.TestCase.assertRaises` :ref:`method<functions>` to the 
       with self.assertRaises(ZeroDivisionError):
           1 / 0
 
-the terminal shows passing tests.
+the terminal shows passing tests
 
 ----
 
@@ -545,7 +545,7 @@ test_catching_exceptions_in_tests
 red: make it fail
 #################################################################################
 
-* I add a failing test with the raise_ keyword
+* I add a failing test
 
   .. code-block:: python
 
@@ -569,7 +569,7 @@ red: make it fail
 
   .. code-block:: python
 
-    Exception
+    AssertionError
 
 green: make it pass
 #################################################################################
@@ -582,12 +582,12 @@ when I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` to the
       with self.assertRaises(Exception):
           raise Exception
 
-the terminal shows all tests are passing.
+the terminal shows all tests are passing. To review the `unittest.TestCase.assertRaises` :ref:`method<functions>` checks that the code within its context raises the :ref:`Exception` it is given
 
 refactor: make it better
 #################################################################################
 
-* I can use this catch any of the :ref:`Exception<Exceptions>` encountered so far
+* I can use Exception_ to catch any of the :ref:`Exception<Exceptions>` encountered so far, because they inherit from it
 
   .. code-block:: python
 
@@ -600,9 +600,9 @@ refactor: make it better
         with self.assertRaises(Exception):
             1 / 0
 
-  the problem with using Exception_ to catch its children is that it does not tell anyone who reads the code what the specific error is or what line caused it if there is more than one line of code in the assertRaises_ that causes an error. It is better to be specific and clearly state what error is raised by the line of code
+  all the tests are still green. The problem with using Exception_ to catch its children is that it does not tell anyone who reads the code what the specific error is or which line caused the error if there is more than one line of code in the assertRaises_. It is better to be specific and clearly state what error is raised by the line of code
 
-* as promised here is why the IndexError_ from earlier is not a duplicate, even though when I remove the second one the tests still show green
+* as promised here is why the IndexError_ from earlier is not a duplicate, even though when I remove the second one the tests still pass
 
   .. code-block:: python
 
@@ -623,7 +623,7 @@ refactor: make it better
             raise Exception
             a_list[-5]
 
-  the terminal shows a passing test, even though an Exception_ is not an IndexError_, the assertRaises_ exists after it encounters the first line that causes an IndexError_. If I move the new line above the first line that raises an IndexError_
+  the terminal shows a passing test, even though an Exception_ is not an IndexError_, it looks like the assertRaises_ exists after it encounters the first line that causes an IndexError_. If I move the new line above the first line that raises an IndexError_
 
   .. code-block:: python
 
@@ -657,7 +657,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-I have a way to catch :ref:`Exceptions<Exceptions>` when in testing and encountered the following
+I have a way to catch :ref:`Exceptions<Exceptions>` when testing and encountered the following
 
 * :ref:`AssertionError`
 * :ref:`ModuleNotFoundError`
