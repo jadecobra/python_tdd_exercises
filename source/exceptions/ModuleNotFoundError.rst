@@ -14,9 +14,9 @@ ModuleNotFoundError
 
 ----
 
-Programming allows us to gain from solutions to problems that we or other people come up with, in the form of packages and modules, they have to be imported to be used. ``ModuleNotFoundError`` is raised when Python tries to import a module that does not exist or it cannot find the module in an `import statement`_.
+Programming allows us to gain from solutions to problems that we or other people come up with, in the form of packages and modules, they have to be imported to be used. The ``ModuleNotFoundError`` is raised when Python tries to import a module that does not exist or it cannot find the module from an `import statement`_.
 
-A Python Module is a file that ends in ``.py`` or a directory that has an ``__init__.py``. This exercise will help you remember how to solve ``ModuleNotFoundError`` and what a Python module is.
+A Python Module is a file that ends in ``.py`` or a directory that has an ``__init__.py``. This exercise will help you remember how to solve the ``ModuleNotFoundError`` and what a Python module is.
 
 *********************************************************************************
 requirements
@@ -254,7 +254,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-I ran a test for the :ref:`ModuleNotFoundError` and Python modules. Would you like to test :ref:`AssertionErrors?<AssertionError>`
+I ran a test for the :ref:`ModuleNotFoundError` and Python modules. Would you like to test the :ref:`AssertionError?<AssertionError>`
 
 ----
 
