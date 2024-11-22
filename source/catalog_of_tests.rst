@@ -42,8 +42,8 @@ test_telephone
 test_person_factory
 *********************************************************************************
 
-#. :ref:`test_factory_w_keyword_arguments`
-#. :ref:`test_factory_w_default_keyword_arguments`
+#. :ref:`test_function_w_keyword_arguments`
+#. :ref:`test_function_w_default_keyword_arguments`
 
 *********************************************************************************
 test_exceptions
@@ -57,10 +57,9 @@ test_exceptions
 #. :ref:`test_catching_key_error_in_tests`
 #. :ref:`test_catching_zero_division_error_in_tests`
 #. :ref:`test_catching_exceptions_in_tests`
-#. :ref:`test_catching_exceptions`
+#. :ref:`test_catching_exceptions_w_messages`
 #. :ref:`test_catching_failure`
 #. :ref:`test_catching_success`
-#. :ref:`test_finally_always_returns`
 
 *********************************************************************************
 test_sleep_duration

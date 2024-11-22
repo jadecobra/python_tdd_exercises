@@ -111,7 +111,7 @@ red: make it fail
 
     NameError: name 'does_not_exist' is not defined
 
-* I add the exception to the list of :ref:`Exceptions<Exceptions>` encountered
+* I add it to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
@@ -170,7 +170,7 @@ red: make it fail
 
   because I called something that does not exist from something that does exist
 
-* I add the exception to the list of :ref:`Exceptions<Exceptions>` encountered
+* I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
@@ -235,7 +235,11 @@ red: make it fail
 
   and get a :ref:`TypeError`
 
-* I add the exception to the list of :ref:`Exceptions<Exceptions>` encountered
+  .. code-block:: python
+
+    TypeError: 'NoneType' object is not callable
+
+* I add it to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
@@ -269,7 +273,7 @@ If I define it as a :ref:`function<functions>`
   def function():
       return None
 
-the terminal still shows passing tests because the call uses 1 positional argument but the :ref:`function<functions>` does not accept input, I still have a :ref:`TypeError`. When I add an argument to the definition
+the terminal still shows passing tests because the call uses 1 positional argument but the :ref:`function<functions>` does not accept input, I still have a :ref:`TypeError`. When I add a parameter to the definition
 
 .. code-block:: python
 
@@ -308,7 +312,7 @@ red: make it fail
     def test_catching_index_error_in_tests(self):
         a_list = [1, 2, 3, 'n']
 
-  the first item in the :ref:`list<lists>` has zero as its index
+  the first item in the :ref:`list<lists>` has `0` as its index
 
   .. code-block:: python
 
@@ -316,7 +320,7 @@ red: make it fail
         a_list = [1, 2, 3, 'n']
         a_list[0]
 
-  the terminal still shows green. The last item is the total number of items minus 1, which is ``3`` in this case
+  the terminal still shows green. The index for the last item is the total number of items minus 1, which is ``3`` in this case
 
   .. code-block:: python
 
@@ -364,7 +368,7 @@ green: make it pass
 
   and the test passes
 
-* I can also index with negative numbers. The index for the last item in the :ref:`list<lists>` is ``-1```
+* I can also use negative numbers, the index for the last item in the :ref:`list<lists>` is ``-1```
 
   .. code-block:: python
 
@@ -400,7 +404,7 @@ green: make it pass
 
     IndexError: list index out of range
 
-  I add the `assertRaises`
+  I add the assertRaises_
 
   .. code-block:: python
 
@@ -463,7 +467,7 @@ red: make it fail
 
     KeyError: 'does_not_exist'
 
-* I add the exception to the list of :ref:`Exceptions<Exceptions>` encountered
+* I add it to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
@@ -479,7 +483,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-then add an `unittest.TestCase.assertRaises`_ to the test
+then add assertRaises_ to the test
 
 .. code-block:: python
 
@@ -526,7 +530,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-when I add the `unittest.TestCase.assertRaises` :ref:`method<functions>` to the test
+when I add the assertRaises_ :ref:`method<functions>` to the test
 
 .. code-block:: python
 
@@ -574,7 +578,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-when I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` to the test
+when I add the assertRaises_ :ref:`method<functions>` to the test
 
 .. code-block:: python
 
@@ -582,7 +586,7 @@ when I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` to the
       with self.assertRaises(Exception):
           raise Exception
 
-the terminal shows all tests are passing. The `unittest.TestCase.assertRaises` :ref:`method<functions>` checks that the code within its context raises the :ref:`Exception<Exceptions>` it is given
+the terminal shows all tests are passing. The assertRaises_ :ref:`method<functions>` checks that the code within its context raises the :ref:`Exception<Exceptions>` it is given
 
 refactor: make it better
 #################################################################################
@@ -623,7 +627,7 @@ refactor: make it better
             raise Exception
             a_list[-5]
 
-  the terminal shows a passing test, even though an Exception_ is not an IndexError_, it looks like the assertRaises_ exists after it encounters the first line that causes an IndexError_. If I move the new line above the first line that raises an IndexError_
+  the terminal shows a passing test, even though an Exception_ is not an IndexError_, it looks like assertRaises_ exits after it encounters the first line that causes an IndexError_. If I move the new line above the first line that raises an IndexError_
 
   .. code-block:: python
 
