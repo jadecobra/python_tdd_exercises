@@ -582,7 +582,7 @@ when I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` to the
       with self.assertRaises(Exception):
           raise Exception
 
-the terminal shows all tests are passing. To review the `unittest.TestCase.assertRaises` :ref:`method<functions>` checks that the code within its context raises the :ref:`Exception` it is given
+the terminal shows all tests are passing. The `unittest.TestCase.assertRaises` :ref:`method<functions>` checks that the code within its context raises the :ref:`Exception<Exceptions>` it is given
 
 refactor: make it better
 #################################################################################
