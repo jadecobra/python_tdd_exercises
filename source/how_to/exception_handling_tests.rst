@@ -79,7 +79,7 @@ green: make it pass
     # AssertionError
     # ModuleNotFoundError
 
-* I want to catch or handle the :ref:`Exception<Exceptions>` in the test, instead of making the :ref:`module<ModuleNotFoundError>` to solve the problem. I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` introduced in :doc:`/how_to/calculator` which checks that the code within its context raises the :ref:`Exception<Exceptions>` it is given
+* I want to catch or handle the :ref:`Exception<Exceptions>` in the test, and not make the :ref:`module<ModuleNotFoundError>` to solve the problem. I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` introduced in :doc:`/how_to/calculator` which checks that the code within its context raises the :ref:`Exception<Exceptions>` it is given
 
   .. code-block:: python
 
@@ -87,7 +87,7 @@ green: make it pass
         with self.assertRaises(ModuleNotFoundError):
             import does_not_exist
 
-  and the test passes, showing that when I try to import a file that does not exist, I get a :ref:`ModuleNotFoundError`
+  and the test passes, when I try to import a file that does not exist, I get a :ref:`ModuleNotFoundError`
 
 ----
 
@@ -153,7 +153,7 @@ red: make it fail
 
   .. code-block:: python
 
-    NameError: name 'src.exceptions' is not defined
+    NameError: name 'src' is not defined
 
 * I add an `import statement`_ for the :ref:`module<ModuleNotFoundError>`
 
@@ -273,7 +273,7 @@ If I define it as a :ref:`function<functions>`
   def function():
       return None
 
-the terminal still shows passing tests because the call uses 1 positional argument but the :ref:`function<functions>` does not accept input, I still have a :ref:`TypeError`. When I add a parameter to the definition
+the terminal still shows passing tests because the call sends 1 positional argument but the :ref:`function<functions>` does not accept input, I still have a :ref:`TypeError`. When I add a parameter to the definition
 
 .. code-block:: python
 
@@ -447,21 +447,21 @@ red: make it fail
     def test_catching_key_error_in_tests(self):
         {'key': 'value'}
 
-  when I access it with a key that exists
+  when I use a key that exists to get a value
 
   .. code-block:: python
 
     def test_catching_key_error_in_tests(self):
         {'key': 'value'}['key']
 
-  the terminal shows green. When I access it with a key that does not exist
+  the terminal shows green. When use a key that does not exist
 
   .. code-block:: python
 
     def test_catching_key_error_in_tests(self):
         {'key': 'value'}['does_not_exist']
 
-  the terminal shows a KeyError_
+  I get a KeyError_
 
   .. code-block:: python
 
@@ -530,7 +530,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-when I add the assertRaises_ :ref:`method<functions>` to the test
+then add the assertRaises_ :ref:`method<functions>` to the test
 
 .. code-block:: python
 
@@ -538,7 +538,7 @@ when I add the assertRaises_ :ref:`method<functions>` to the test
       with self.assertRaises(ZeroDivisionError):
           1 / 0
 
-the terminal shows passing tests
+and the terminal shows passing tests
 
 ----
 
@@ -591,7 +591,7 @@ the terminal shows all tests are passing. The assertRaises_ :ref:`method<functio
 refactor: make it better
 #################################################################################
 
-* I can use Exception_ to catch any of the :ref:`Exceptions<Exceptions>` encountered so far, because they inherit from it
+* I can use Exception_ to catch any of the :ref:`Exceptions<Exceptions>` that inherit from it, its children if you will
 
   .. code-block:: python
 
@@ -604,7 +604,7 @@ refactor: make it better
         with self.assertRaises(Exception):
             1 / 0
 
-  all the tests are still green. The problem with using Exception_ to catch its children is that it does not tell anyone who reads the code what the specific error is or which line caused the error if there is more than one line of code in the assertRaises_. It is better to be specific and clearly state what error is raised by the line of code. This also does not work for cousins or siblings
+  all the tests are still green. The problem with using Exception_ to catch its children is that it does not tell anyone who reads the code what the specific error is or which line caused the error when there is more than one line of code in the assertRaises_. It is better to be specific and state the error that is raised by the line of code. This also does not work for cousins or siblings
 
   .. code-block:: python
 
@@ -658,7 +658,7 @@ refactor: make it better
 
     Exception
 
-  because it is not an IndexError_. As a rule of thumb I write one line of code for one exception handler, that way I know which line causes which error
+  because it is not an IndexError_. As a rule of thumb I write one line of code for one exception handler, that way I know which line caused which error
 
   .. code-block:: python
 
