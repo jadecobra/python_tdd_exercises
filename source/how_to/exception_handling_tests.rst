@@ -162,7 +162,7 @@ red: make it fail
     import src.exceptions
     import unittest
 
-  and get an:ref:`AttributeError`
+  and get an :ref:`AttributeError`
 
   .. code-block:: python
 
