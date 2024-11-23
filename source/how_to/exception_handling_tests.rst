@@ -312,7 +312,7 @@ red: make it fail
     def test_catching_index_error_in_tests(self):
         a_list = [1, 2, 3, 'n']
 
-  the first item in the :ref:`list<lists>` has `0` as its index
+  the first item in the :ref:`list<lists>` has ``0`` as its index
 
   .. code-block:: python
 
@@ -368,7 +368,7 @@ green: make it pass
 
   and the test passes
 
-* I can also use negative numbers, the index for the last item in the :ref:`list<lists>` is ``-1```
+* I can also use negative numbers, the index for the last item in the :ref:`list<lists>` is ``-1``
 
   .. code-block:: python
 
@@ -591,7 +591,7 @@ the terminal shows all tests are passing. The assertRaises_ :ref:`method<functio
 refactor: make it better
 #################################################################################
 
-* I can use Exception_ to catch any of the :ref:`Exception<Exceptions>` encountered so far, because they inherit from it
+* I can use Exception_ to catch any of the :ref:`Exceptions<Exceptions>` encountered so far, because they inherit from it
 
   .. code-block:: python
 
@@ -604,7 +604,21 @@ refactor: make it better
         with self.assertRaises(Exception):
             1 / 0
 
-  all the tests are still green. The problem with using Exception_ to catch its children is that it does not tell anyone who reads the code what the specific error is or which line caused the error if there is more than one line of code in the assertRaises_. It is better to be specific and clearly state what error is raised by the line of code
+  all the tests are still green. The problem with using Exception_ to catch its children is that it does not tell anyone who reads the code what the specific error is or which line caused the error if there is more than one line of code in the assertRaises_. It is better to be specific and clearly state what error is raised by the line of code. This also does not work for cousins or siblings
+
+  .. code-block:: python
+
+    def test_catching_key_error_in_tests(self):
+        with self.assertRaises(AssertionError):
+            {'key': 'value'}['does_not_exist']
+
+  shows a KeyError_
+
+  .. code-block:: python
+
+    KeyError: 'does_not_exist'
+
+  because KeyError_ is not an :ref:`AssertionError`
 
 * as promised here is why the IndexError_ from earlier is not a duplicate, even though when I remove the second one the tests still pass
 
@@ -627,7 +641,7 @@ refactor: make it better
             raise Exception
             a_list[-5]
 
-  the terminal shows a passing test, even though an Exception_ is not an IndexError_, it looks like assertRaises_ exits after it encounters the first line that causes an IndexError_. If I move the new line above the first line that raises an IndexError_
+  the terminal shows a passing test, even though Exception_ is not an IndexError_, it looks like assertRaises_ exits after it encounters the first line that causes an IndexError_. If I move the new line above the first line that raises an IndexError_
 
   .. code-block:: python
 
@@ -638,13 +652,13 @@ refactor: make it better
             a_list[4]
             a_list[-5]
 
-  I get an Exception_
+  the terminal shows Exception_
 
   .. code-block:: python
 
     Exception
 
-  because Exception_ is not an IndexError_. As a rule of thumb I write one line of code for one exception handler, that way I know which line causes which error
+  because it is not an IndexError_. As a rule of thumb I write one line of code for one exception handler, that way I know which line causes which error
 
   .. code-block:: python
 
