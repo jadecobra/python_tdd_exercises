@@ -604,7 +604,7 @@ refactor: make it better
         with self.assertRaises(Exception):
             1 / 0
 
-  all the tests are still green. The problem with using Exception_ to catch its children is that it does not tell anyone who reads the code what the specific error is or which line caused the error when there is more than one line of code in the assertRaises_. It is better to be specific and state the error that is raised by the line of code. This also does not work for cousins or siblings
+  all the tests are still green. The problem with using Exception_ to catch its children is that it does not tell anyone that reads the code what the specific error is or which line caused the error when there is more than one line of code in the assertRaises_. It is better to be specific and state the error that is raised by the line of code. This also does not work for cousins or siblings
 
   .. code-block:: python
 
@@ -618,7 +618,7 @@ refactor: make it better
 
     KeyError: 'does_not_exist'
 
-  because KeyError_ is not an :ref:`AssertionError`
+  because it is not an :ref:`AssertionError`
 
 * as promised here is why the IndexError_ from earlier is not a duplicate, even though when I remove the second one the tests still pass
 

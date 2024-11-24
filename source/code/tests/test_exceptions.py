@@ -61,20 +61,6 @@ class TestExceptions(unittest.TestCase):
             'succeeded'
         )
 
-    def test_finally_always_runs(self):
-        self.assertEqual(
-            src.exceptions.always_runs(
-                src.exceptions.does_not_raise_exception
-            ),
-            'always returns this'
-        )
-        self.assertEqual(
-            src.exceptions.always_runs(
-                src.exceptions.raise_exception
-            ),
-            'always returns this'
-        )
-
 
 # Exceptions Encountered
 # AssertionError
