@@ -79,7 +79,7 @@ green: make it pass
     # AssertionError
     # ModuleNotFoundError
 
-* I want to catch or handle the :ref:`Exception<Exceptions>` in the test, and not make the :ref:`module<ModuleNotFoundError>` to solve the problem. I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` introduced in :doc:`/how_to/calculator` which checks that the code within its context raises the :ref:`Exception<Exceptions>` it is given
+* I want to catch or handle the :ref:`Exception<Exceptions>` in the test, and not make the :ref:`module<ModuleNotFoundError>`. I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` introduced in :doc:`/how_to/calculator` which checks that the code within its context raises the :ref:`Exception<Exceptions>` it is given
 
   .. code-block:: python
 
@@ -87,7 +87,7 @@ green: make it pass
         with self.assertRaises(ModuleNotFoundError):
             import does_not_exist
 
-  and the test passes, when I try to import a file that does not exist, I get a :ref:`ModuleNotFoundError`
+  and the test passes. I get a :ref:`ModuleNotFoundError` when I try to import a file that does not exist,
 
 ----
 
@@ -273,7 +273,7 @@ If I define it as a :ref:`function<functions>`
   def function():
       return None
 
-the terminal still shows passing tests because the call sends 1 positional argument but the :ref:`function<functions>` does not accept input, I still have a :ref:`TypeError`. When I add a parameter to the definition
+the terminal still shows passing tests, I still have a :ref:`TypeError` because the call sends 1 positional argument but the :ref:`function<functions>` does not accept input. When I add a parameter to the definition
 
 .. code-block:: python
 
@@ -286,13 +286,12 @@ the terminal shows an :ref:`AssertionError`
 
   AssertionError: TypeError not raised
 
-because the :ref:`function<functions>` call now matches the signature, no :ref:`TypeError` is raised. I undo the change to make the test pass
+:ref:`TypeError` is not raised because the :ref:`function<functions>` call matches the signature. I undo the change to make the test pass
 
 .. code-block:: python
 
   def function():
       return None
-
 
 ----
 
@@ -357,7 +356,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* then add `unittest.TestCase.assertRaises`_
+* then add assertRaises_
 
   .. code-block:: python
 
@@ -368,7 +367,7 @@ green: make it pass
 
   and the test passes
 
-* I can also use negative numbers, the index for the last item in the :ref:`list<lists>` is ``-1``
+* I can also index with negative numbers, the one for the last item in the :ref:`list<lists>` is ``-1``
 
   .. code-block:: python
 
@@ -417,7 +416,7 @@ green: make it pass
 
   and the terminal shows green again
 
-* It looks like there is a duplication of the IndexError_ but this is not true even though the test is still green when I remove the second one
+* It looks like there is a duplication of the IndexError_ but it is not, even though the test is still green when I remove the second one
 
   .. code-block:: python
 
@@ -427,7 +426,7 @@ green: make it pass
             a_list[4]
             a_list[-5]
 
-  I will show why this is a problem before the end of the chapter
+  I will show why before the end of the chapter
 
 ----
 
@@ -500,7 +499,7 @@ test_catching_zero_division_error_in_tests
 red: make it fail
 #################################################################################
 
-* I add another failing test
+* I add another failing test, this happened in :doc:`/how_to/calculator`
 
   .. code-block:: python
 
@@ -604,7 +603,7 @@ refactor: make it better
         with self.assertRaises(Exception):
             1 / 0
 
-  all the tests are still green. The problem with using Exception_ to catch its children is that it does not tell anyone that reads the code what the specific error is or which line caused the error when there is more than one line of code in the assertRaises_. It is better to be specific and state the error that is raised by the line of code. This also does not work for cousins or siblings
+  all the tests are still green. The problem with using Exception_ to catch its children is that it does not tell anyone that reads the code what the specific error is or which line caused the error when there is more than one line of code in the assertRaises_. It is better to be specific and state the error that is raised by the line of code. This does not work for cousins or siblings
 
   .. code-block:: python
 
@@ -620,7 +619,7 @@ refactor: make it better
 
   because it is not an :ref:`AssertionError`
 
-* as promised here is why the IndexError_ from earlier is not a duplicate, even though when I remove the second one the tests still pass
+* as promised here is why the IndexError_ from earlier is not a repetition, even though when I remove the second one the tests still pass
 
   .. code-block:: python
 
@@ -630,7 +629,7 @@ refactor: make it better
             a_list[4]
             a_list[-5]
 
-  the second line that causes an IndexError_ never runs, here is how I know, if I add another :ref:`Exception<Exceptions>` between them
+  the second line that causes an IndexError_ does not run, if I add another :ref:`Exception<Exceptions>` between them
 
   .. code-block:: python
 
@@ -641,7 +640,7 @@ refactor: make it better
             raise Exception
             a_list[-5]
 
-  the terminal shows a passing test, even though Exception_ is not an IndexError_, it looks like assertRaises_ exits after it encounters the first line that causes an IndexError_. If I move the new line above the first line that raises an IndexError_
+  the terminal shows a passing test, even though Exception_ is not an IndexError_, it looks like assertRaises_ exits after the first line that causes an IndexError_. If I move the new line above the first line that raises an IndexError_
 
   .. code-block:: python
 
