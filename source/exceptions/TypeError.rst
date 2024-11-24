@@ -54,7 +54,7 @@ red: make it fail
 
     tests/test_type_error.py:7: AssertionError
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_type_error.py:7`` with the mouse to open it
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_type_error.py:7`` with the mouse to open it in the editor
 * then change ``True`` to ``False``
 * and change ``test_failure``
 

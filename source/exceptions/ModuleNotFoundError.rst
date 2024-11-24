@@ -30,8 +30,11 @@ requirements
 ----
 
 *********************************************************************************
-red: make it fail
+test_module_not_found_error
 *********************************************************************************
+
+red: make it fail
+#################################################################################
 
 * I open a terminal to run :ref:`makePythonTdd.sh` with ``module_not_found_error`` as the name of the project
 
@@ -53,7 +56,7 @@ red: make it fail
 
     tests/test_module_not_found_error.py:7: AssertionError
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_module_not_found_error.py:7`` with the mouse to open it, then change ``test_failure`` to ``test_module_not_found_error``
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_module_not_found_error.py:7`` with the mouse to open it in the editor, then change ``test_failure`` to ``test_module_not_found_error``
 
   .. code-block:: python
 
@@ -84,15 +87,13 @@ red: make it fail
 
   If you want more information about imports you can read `The Import Statement <https://docs.python.org/3/reference/simple_stmts.html#import>`_
 
-*********************************************************************************
 green: make it pass
-*********************************************************************************
+#################################################################################
 
 I make ``module_0.py`` in the ``src`` folder and the terminal shows a passing test
 
-*********************************************************************************
 refactor: make it better
-*********************************************************************************
+#################################################################################
 
 * I add another `import statement`_
 

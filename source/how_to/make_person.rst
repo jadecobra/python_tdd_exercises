@@ -45,7 +45,7 @@ red: make it fail
 
     tests/test_person.py:7: AssertionError
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_person.py:7`` with the mouse to open it
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_person.py:7`` with the mouse to open it in the editor
 * then change ``True`` to ``False`` to make the test pass
 * and change ``test_failure`` to ``test_function_w_keyword_arguments``
 

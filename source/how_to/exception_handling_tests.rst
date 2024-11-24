@@ -18,7 +18,7 @@ how to test that an Exception is raised
 
 When an error happens in Python, an Exception_ is raised to break execution of the program, this means nothing past the line that caused it will run.
 
-It is useful because there is a problem to be solved to continue as expected, It can be a pain when it causes the program to stop early. What if I want it to run with errors? I may want to give messages to the user who does not care about or understand the details of the error.
+It is useful because there is a problem to be solved to continue as expected, It can be a pain when it causes the program to stop early. What if I want it to run with errors? I might want to give messages to the user who does not care about or understand the details of the error.
 
 Exception_ Handling is a way to deal with this, it allows programs to make decisions when one happens.
 
@@ -51,7 +51,7 @@ red: make it fail
 
     tests/test_exceptions.py:7: AssertionError
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_exceptions.py:7`` with the mouse to open it
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_exceptions.py:7`` with the mouse to open it in the editor
 * then change ``True`` to ``False`` to make the test pass
 * and change ``test_failure`` to ``test_catching_module_not_found_error_in_tests`` with an `import statement`_
 
