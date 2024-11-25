@@ -23,6 +23,7 @@ Here are the tests and solutions in the book
   lists<code/code_lists>
   list comprehensions<code/code_list_comprehensions>
   dictionaries<code/code_dictionaries>
+  ModuleNotFoundError<code/code_module_not_found_error>
   AssertionError<code/code_assertion_error>
   AttributeError<code/code_attribute_error>
   TypeError<code/code_type_error>

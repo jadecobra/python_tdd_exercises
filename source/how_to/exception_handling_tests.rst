@@ -71,7 +71,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I add it to the list of :ref:`Exceptions<Exceptions>` encountered
+* I add it to the list of :ref:`Exceptions<exceptions>` encountered
 
   .. code-block:: python
 
@@ -133,7 +133,7 @@ then add `unittest.TestCase.assertRaises`_
 
 and the terminal shows passing tests
 
----
+----
 
 *********************************************************************************
 test_catching_attribute_error_in_tests
@@ -221,7 +221,7 @@ red: make it fail
 
     function
 
-  and get a NameError_
+  the terminal shows a NameError_
 
   .. code-block:: python
 
@@ -446,14 +446,14 @@ red: make it fail
     def test_catching_key_error_in_tests(self):
         {'key': 'value'}
 
-  when I use a key that exists to get a value
+  when I try to get a value for a key that exists
 
   .. code-block:: python
 
     def test_catching_key_error_in_tests(self):
         {'key': 'value'}['key']
 
-  the terminal shows green. When use a key that does not exist
+  the terminal shows green. When I use a key that does not exist
 
   .. code-block:: python
 
@@ -603,7 +603,9 @@ refactor: make it better
         with self.assertRaises(Exception):
             1 / 0
 
-  all the tests are still green. The problem with using Exception_ to catch its children is that it does not tell anyone that reads the code what the specific error is or which line caused the error when there is more than one line of code in the assertRaises_. It is better to be specific and state the error that is raised by the line of code. This does not work for cousins or siblings
+  all the tests are still green. The problem with using Exception_ to catch its children is that it does not tell anyone that reads the code what the specific error is or which line caused the error when there is more than one line of code in the assertRaises_. It is better to be specific and state the error that is raised by the line of code.
+
+* I cannot use cousins or siblings to catch other :ref:`Exceptions<Exceptions>`
 
   .. code-block:: python
 
