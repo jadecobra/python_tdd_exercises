@@ -87,7 +87,7 @@ green: make it pass
         with self.assertRaises(ModuleNotFoundError):
             import does_not_exist
 
-  and the test passes. I get a :ref:`ModuleNotFoundError` when I try to import a file that does not exist,
+  and the test passes. I get a :ref:`ModuleNotFoundError` when I try to import a file that does not exist
 
 ----
 
@@ -273,7 +273,7 @@ If I define it as a :ref:`function<functions>`
   def function():
       return None
 
-the terminal still shows passing tests, I still have a :ref:`TypeError` because the call sends 1 positional argument but the :ref:`function<functions>` does not accept input. When I add a parameter to the definition
+the terminal still shows passing tests, I have a :ref:`TypeError` because the call sends 1 positional argument but the :ref:`function<functions>` does not accept input. When I add a parameter to the definition
 
 .. code-block:: python
 
@@ -319,7 +319,7 @@ red: make it fail
         a_list = [1, 2, 3, 'n']
         a_list[0]
 
-  the terminal still shows green. The index for the last item is the total number of items minus 1, which is ``3`` in this case
+  the terminal shows green. The index for the last item is the total number of items minus ``1``, which is ``3`` in this case
 
   .. code-block:: python
 
@@ -416,7 +416,7 @@ green: make it pass
 
   and the terminal shows green again
 
-* It looks like there is a duplication of the IndexError_ but it is not, even though the test is still green when I remove the second one
+* It looks like there is a duplication of the IndexError_ but it is not, even though the test is green when I remove the second one
 
   .. code-block:: python
 
@@ -499,7 +499,7 @@ test_catching_zero_division_error_in_tests
 red: make it fail
 #################################################################################
 
-* I add another failing test, this happened in :doc:`/how_to/calculator`
+* I add another failing test, this happened in :doc:`/how_to/calculator`, any number divided by ``0``
 
   .. code-block:: python
 
@@ -603,7 +603,7 @@ refactor: make it better
         with self.assertRaises(Exception):
             1 / 0
 
-  all the tests are still green. The problem with using Exception_ to catch its children is that it does not tell anyone that reads the code what the specific error is or which line caused the error when there is more than one line of code in the assertRaises_. It is better to be specific and state the error that is raised by the line of code.
+  all the tests are green. The problem with using Exception_ to catch its children is that it does not tell anyone that reads the code what the specific error is or which line caused the error when there is more than one line of code in the assertRaises_. It is better to be specific and state the error that is raised by the line of code.
 
 * I cannot use cousins or siblings to catch other :ref:`Exceptions<Exceptions>`
 
@@ -631,7 +631,7 @@ refactor: make it better
             a_list[4]
             a_list[-5]
 
-  the second line that causes an IndexError_ does not run, if I add another :ref:`Exception<Exceptions>` between them
+  the second line that causes an IndexError_ does not run. If I add another :ref:`Exception<Exceptions>` between them
 
   .. code-block:: python
 
@@ -642,7 +642,7 @@ refactor: make it better
             raise Exception
             a_list[-5]
 
-  the terminal shows a passing test, even though Exception_ is not an IndexError_, it looks like assertRaises_ exits after the first line that causes an IndexError_. If I move the new line above the first line that raises an IndexError_
+  the terminal shows a passing test, even though Exception_ is not an IndexError_, it looks like assertRaises_ exits after the first line that causes an IndexError_. When I move the new line above the first line that raises an IndexError_
 
   .. code-block:: python
 
@@ -659,7 +659,9 @@ refactor: make it better
 
     Exception
 
-  because it is not an IndexError_. As a rule of thumb I write one line of code for one exception handler, that way I know which line caused which error
+  because it is not an IndexError_.
+
+* As a rule of thumb I write one line of code for one exception handler, that way I know which line caused which error
 
   .. code-block:: python
 
