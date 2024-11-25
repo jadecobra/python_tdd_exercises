@@ -138,8 +138,8 @@ green: make it pass
 
     ModuleNotFoundError: No module called 'src.module_3'
 
-* I add ``module_3.py`` to the ``src`` folder and the test passes. That is the exercise, you can do a few more to help drill it
-*
+* I add ``module_3.py`` to the ``src`` folder and the test passes
+
 ----
 
 *********************************************************************************

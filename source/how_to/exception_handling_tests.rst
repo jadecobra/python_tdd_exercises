@@ -22,8 +22,6 @@ It is useful because there is a problem to be solved to continue as expected, It
 
 Exception_ Handling is a way to deal with this, it allows programs to make decisions when one happens.
 
-.. _test_catching_module_not_found_error_in_tests:
-
 *********************************************************************************
 test_catching_module_not_found_error_in_tests
 *********************************************************************************
@@ -87,7 +85,7 @@ green: make it pass
         with self.assertRaises(ModuleNotFoundError):
             import does_not_exist
 
-  and the test passes. I get a :ref:`ModuleNotFoundError` when I try to import a file that does not exist
+  and the test passes
 
 ----
 
@@ -183,7 +181,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-then add a call to the `unittest.TestCase.assertRaises`_ :ref:`method<functions>`
+then I add a call to the `unittest.TestCase.assertRaises`_ :ref:`method<functions>`
 
 .. code-block:: python
 
@@ -221,7 +219,7 @@ red: make it fail
 
     function
 
-  the terminal shows a NameError_
+  and the terminal shows a NameError_
 
   .. code-block:: python
 
@@ -253,7 +251,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-I add `unittest.TestCase.assertRaises`_ to the test
+then I add `unittest.TestCase.assertRaises`_ to the test
 
 .. code-block:: python
 
@@ -273,7 +271,7 @@ If I define it as a :ref:`function<functions>`
   def function():
       return None
 
-the terminal still shows passing tests, I have a :ref:`TypeError` because the call sends an argument but the :ref:`function<functions>` does not accept input. When I add a parameter to the definition
+the terminal still shows passing tests, I have a :ref:`TypeError` because the call sends an argument and the :ref:`function<functions>` does not accept input. When I add a parameter to the definition
 
 .. code-block:: python
 
@@ -426,7 +424,7 @@ green: make it pass
             a_list[4]
             a_list[-5]
 
-  I will show why this is not a repetition at the end of the chapter
+  at the end of the chapter I will show why this is not a repetition
 
 ----
 
@@ -610,7 +608,7 @@ refactor: make it better
   .. code-block:: python
 
     def test_catching_key_error_in_tests(self):
-        with self.assertRaises(AssertionError):
+        with self.assertRaises(ModuleNotFoundError):
             {'key': 'value'}['does_not_exist']
 
   shows a KeyError_
@@ -619,7 +617,7 @@ refactor: make it better
 
     KeyError: 'does_not_exist'
 
-  because it is not an :ref:`AssertionError`
+  because it is not a :ref:`ModuleNotFoundError`
 
 * as promised here is why the IndexError_ from earlier is not a repetition, even though when I remove the second one the tests still pass
 
@@ -642,7 +640,7 @@ refactor: make it better
             raise Exception
             a_list[-5]
 
-  the terminal shows a passing test, even though Exception_ is not an IndexError_, it looks like assertRaises_ exits after the first line that causes an IndexError_. When I move the new line above the first line that raises an IndexError_
+  the terminal shows a passing test, even though Exception_ is not an IndexError_, it looks like assertRaises_ exits after the first line that causes an IndexError_. When I move the new line above it
 
   .. code-block:: python
 
