@@ -78,7 +78,7 @@ test_sleep_duration
 #. :ref:`test_duration_w_date_and_time<test_duration_w_date_and_time>`
 
 *********************************************************************************
-test_module_not_found_error
+test_exceptions
 *********************************************************************************
 
 #. :ref:`test_module_not_found_error`

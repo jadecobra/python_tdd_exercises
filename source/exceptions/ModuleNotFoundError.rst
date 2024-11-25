@@ -30,11 +30,8 @@ requirements
 ----
 
 *********************************************************************************
-test_module_not_found_error
-*********************************************************************************
-
 red: make it fail
-#################################################################################
+*********************************************************************************
 
 * I open a terminal to run :ref:`makePythonTdd.sh` with ``module_not_found_error`` as the name of the project
 
@@ -87,15 +84,12 @@ red: make it fail
 
   If you want more information about imports you can read `The Import Statement <https://docs.python.org/3/reference/simple_stmts.html#import>`_
 
+*********************************************************************************
 green: make it pass
-#################################################################################
+*********************************************************************************
 
-I make ``module_0.py`` in the ``src`` folder and the terminal shows a passing test
-
-refactor: make it better
-#################################################################################
-
-* I add another `import statement`_
+* I make ``module_0.py`` in the ``src`` folder and the terminal shows a passing test
+* then add another `import statement`_
 
   .. code-block:: python
 

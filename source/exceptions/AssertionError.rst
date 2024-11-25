@@ -683,7 +683,7 @@ If you have been typing along *WELL DONE!* Your magic powers are growing. From t
 * how to use ``assert`` statements
 * how to use the following ``unittest.TestCase.assert`` methods
 
-  - `assertIsNone <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNone>`_ - is this thing :ref:`None`? (try saying that 10 times fast)
+  - `assertIsNone <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNone>`_ - is this thing :ref:`None`?
   - `assertIsNotNone <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNotNone>`_ - is this thing not :ref:`None`?
   - `unittest.TestCase.assertFalse`_ - is this thing :ref:`False <test_what_is_false>`?
   - `assertTrue <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertTrue>`_ - is this thing :ref:`True <test_what_is_true>`?
