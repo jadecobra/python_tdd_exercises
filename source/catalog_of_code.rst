@@ -17,15 +17,15 @@ Here are the tests and solutions in the book
   how to make a person<code/code_person_factory>
   how to handle exceptions<code/code_exception_handling>
   how to measure sleep duration<code/code_sleep_duration>
+  ModuleNotFoundError<code/code_module_not_found_error>
+  AssertionError<code/code_assertion_error>
+  AttributeError<code/code_attribute_error>
+  TypeError<code/code_type_error>
   None<code/code_none>
   booleans<code/code_booleans>
   truth table<code/code_truth_table>
   lists<code/code_lists>
   list comprehensions<code/code_list_comprehensions>
   dictionaries<code/code_dictionaries>
-  ModuleNotFoundError<code/code_module_not_found_error>
-  AssertionError<code/code_assertion_error>
-  AttributeError<code/code_attribute_error>
-  TypeError<code/code_type_error>
   functions<code/code_functions>
   classes<code/code_classes>
