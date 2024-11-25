@@ -79,7 +79,7 @@ green: make it pass
     # AssertionError
     # ModuleNotFoundError
 
-* I want to catch or handle the :ref:`Exception<Exceptions>` in the test, and not make the :ref:`module<ModuleNotFoundError>`. I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` introduced in :doc:`/how_to/calculator` which checks that the code within its context raises the :ref:`Exception<Exceptions>` it is given
+* I want to catch or handle the :ref:`Exception<Exceptions>` in the test, not make the :ref:`module<ModuleNotFoundError>`. I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` introduced in :doc:`/how_to/calculator` which checks that the code within its context raises the :ref:`Exception<Exceptions>` it is given
 
   .. code-block:: python
 
@@ -273,7 +273,7 @@ If I define it as a :ref:`function<functions>`
   def function():
       return None
 
-the terminal still shows passing tests, I have a :ref:`TypeError` because the call sends 1 positional argument but the :ref:`function<functions>` does not accept input. When I add a parameter to the definition
+the terminal still shows passing tests, I have a :ref:`TypeError` because the call sends an argument but the :ref:`function<functions>` does not accept input. When I add a parameter to the definition
 
 .. code-block:: python
 
@@ -327,7 +327,7 @@ red: make it fail
         a_list = [1, 2, 3, 'n']
         a_list[3]
 
-  still green. When I use a number bigger than the total number of items
+  still green. When I use a bigger number than the total number of items
 
   .. code-block:: python
 
@@ -426,7 +426,7 @@ green: make it pass
             a_list[4]
             a_list[-5]
 
-  I will show why before the end of the chapter
+  I will show why this is not a repetition at the end of the chapter
 
 ----
 
@@ -499,7 +499,7 @@ test_catching_zero_division_error_in_tests
 red: make it fail
 #################################################################################
 
-* I add another failing test, this happened in :doc:`/how_to/calculator`, any number divided by ``0``
+* I add another failing test, this happened in :doc:`/how_to/calculator`
 
   .. code-block:: python
 
@@ -603,7 +603,7 @@ refactor: make it better
         with self.assertRaises(Exception):
             1 / 0
 
-  all the tests are green. The problem with using Exception_ to catch its children is that it does not tell anyone that reads the code what the specific error is or which line caused the error when there is more than one line of code in the assertRaises_. It is better to be specific and state the error that is raised by the line of code.
+  all the tests are green. The problem with using Exception_ to catch its children is that it does not tell anyone that reads the code what the specific error is or which line caused the error when there is more than one line of code in the assertRaises_. It is better to be specific and state the error that is raised by the line of code
 
 * I cannot use cousins or siblings to catch other :ref:`Exceptions<Exceptions>`
 
@@ -659,9 +659,9 @@ refactor: make it better
 
     Exception
 
-  because it is not an IndexError_.
+  because it is not an IndexError_
 
-* As a rule of thumb I write one line of code for one exception handler, that way I know which line caused which error
+* As a rule of thumb I write one line of code for one exception handler to know which line caused which error
 
   .. code-block:: python
 
