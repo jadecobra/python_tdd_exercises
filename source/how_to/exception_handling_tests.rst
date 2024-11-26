@@ -603,7 +603,6 @@ refactor: make it better
 
   all the tests are green. The problem with using Exception_ to catch its children is that it does not tell anyone that reads the code what the specific error is or which line caused the error when there is more than one line of code in the assertRaises_. It is better to be specific and state the error that is raised by the line of code because from the `Zen of python`_: ``Explicit is better than implicit``
 
-
 * I cannot use cousins or siblings to catch other :ref:`Exceptions<Exceptions>`
 
   .. code-block:: python
@@ -620,7 +619,7 @@ refactor: make it better
 
   because it is not a :ref:`ModuleNotFoundError`
 
-* as promised here is why the AssertRaises_ from earlier is not a repetition, even though when I remove the second one the tests still pass
+* as promised here is why the second AssertRaises_ in :ref:`test_catching_index_error_in_tests` is not a repetition, even though the test still passes when I remove it
 
   .. code-block:: python
 
@@ -630,7 +629,7 @@ refactor: make it better
             a_list[4]
             a_list[-5]
 
-  the second line that causes an IndexError_ does not run. If I add another :ref:`Exception<Exceptions>` between them
+  If I add another :ref:`Exception<Exceptions>` between the two lines
 
   .. code-block:: python
 
