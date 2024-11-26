@@ -147,7 +147,7 @@ the terminal shows an :ref:`AttributeError`
 green: make it pass
 #################################################################################
 
-from the `Zen of Python <https://peps.python.org/pep-0020/>`_ - ``Explicit is better than implicit.`` I add a function definition to ``functions.py`` this time with an explicit ``return`` statement showing the value returned
+from the `Zen of Python`_: ``Explicit is better than implicit.`` I add a function definition to ``functions.py`` this time with an explicit ``return`` statement showing the value returned
 
 .. code-block:: python
 

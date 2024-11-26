@@ -247,7 +247,7 @@ Here is a little summary
 .. admonition:: Zen of Python (:PEP:`20`)
 
 
-  I prefer to use the explicit form of class definitions with the parent object_ in parentheses, from the zen of python:
+  I prefer to use the explicit form of class definitions with the parent object_ in parentheses, from the `Zen of Python`:
   ``Explicit is better than implicit``
 
 Would you like to :doc:`test_classes_attributes_methods`?

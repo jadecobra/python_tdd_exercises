@@ -601,7 +601,7 @@ refactor: make it better
         with self.assertRaises(Exception):
             1 / 0
 
-  all the tests are green. The problem with using Exception_ to catch its children is that it does not tell anyone that reads the code what the specific error is or which line caused the error when there is more than one line of code in the assertRaises_. It is better to be specific and state the error that is raised by the line of code because from the zen of python: ``Explicit is better than implicit``
+  all the tests are green. The problem with using Exception_ to catch its children is that it does not tell anyone that reads the code what the specific error is or which line caused the error when there is more than one line of code in the assertRaises_. It is better to be specific and state the error that is raised by the line of code because from the `Zen of python`_: ``Explicit is better than implicit``
 
 
 * I cannot use cousins or siblings to catch other :ref:`Exceptions<Exceptions>`
