@@ -77,7 +77,7 @@ green: make it pass
     # AssertionError
     # ModuleNotFoundError
 
-* I want to catch or handle the :ref:`Exception<Exceptions>` in the test, not make the :ref:`module<ModuleNotFoundError>`. I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` introduced in :doc:`/how_to/calculator` which checks that the code within its context raises the :ref:`Exception<Exceptions>` it is given
+* I could make the :ref:`module<ModuleNotFoundError>` to solve the problem but I want to catch or handle the :ref:`Exception<Exceptions>` in the test. I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` introduced in the :doc:`/how_to/calculator` chapter, it checks that the code within its context raises the :ref:`Exception<Exceptions>` it is given
 
   .. code-block:: python
 
@@ -85,7 +85,7 @@ green: make it pass
         with self.assertRaises(ModuleNotFoundError):
             import does_not_exist
 
-  and the test passes, showing that ``import does_not_exist`` causes a :ref:`ModuleNotFoundError`
+  and the test passes
 
 ----
 
@@ -264,7 +264,7 @@ and the terminal shows passing tests
 refactor: make it better
 #################################################################################
 
-If I define it as a :ref:`function<functions>`
+If I go on to define it as a :ref:`function<functions>`
 
 .. code-block:: python
 
@@ -284,7 +284,7 @@ the terminal shows an :ref:`AssertionError`
 
   AssertionError: TypeError not raised
 
-because the :ref:`function<functions>` call matches the signature. I undo the change to make the test pass
+because the :ref:`function<functions>` call matches the signature. I undo the change to get back the :ref:`TypeError` and make the test pass
 
 .. code-block:: python
 
@@ -601,7 +601,8 @@ refactor: make it better
         with self.assertRaises(Exception):
             1 / 0
 
-  all the tests are green. The problem with using Exception_ to catch its children is that it does not tell anyone that reads the code what the specific error is or which line caused the error when there is more than one line of code in the assertRaises_. It is better to be specific and state the error that is raised by the line of code
+  all the tests are green. The problem with using Exception_ to catch its children is that it does not tell anyone that reads the code what the specific error is or which line caused the error when there is more than one line of code in the assertRaises_. It is better to be specific and state the error that is raised by the line of code because from the zen of python: ``Explicit is better than implicit``
+
 
 * I cannot use cousins or siblings to catch other :ref:`Exceptions<Exceptions>`
 

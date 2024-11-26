@@ -108,6 +108,7 @@
 .. _The Do Not Repeat Yourself (DRY) Principle: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
 .. _Windows: https://www.microsoft.com/en-us/windows
 .. _Windows Subsystem Linux: https://learn.microsoft.com/en-us/windows/wsl/install
+.. _Zen of Python: https://peps.python.org/pep-0020/
 
 .. _PyCharm: https://www.jetbrains.com/pycharm/download
 .. _Sublime Text: https://www.sublimetext.com
