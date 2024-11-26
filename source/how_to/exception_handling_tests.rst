@@ -85,7 +85,7 @@ green: make it pass
         with self.assertRaises(ModuleNotFoundError):
             import does_not_exist
 
-  and the test passes
+  and the test passes, showing that ``import does_not_exist`` causes a :ref:`ModuleNotFoundError`
 
 ----
 
@@ -284,7 +284,7 @@ the terminal shows an :ref:`AssertionError`
 
   AssertionError: TypeError not raised
 
-:ref:`TypeError` is not raised because the :ref:`function<functions>` call matches the signature. I undo the change to make the test pass
+because the :ref:`function<functions>` call matches the signature. I undo the change to make the test pass
 
 .. code-block:: python
 
@@ -365,7 +365,7 @@ green: make it pass
 
   and the test passes
 
-* I can also index with negative numbers, the one for the last item in the :ref:`list<lists>` is ``-1``
+* I can also index with negative numbers, the one for the last item in the :ref:`list<lists>` is ``-1``, think reading from right to left
 
   .. code-block:: python
 
@@ -414,7 +414,7 @@ green: make it pass
 
   and the terminal shows green again
 
-* It looks like there is a duplication of the IndexError_ but it is not, even though the test is green when I remove the second one
+* It looks like there is a duplication of the assertRaises_ but it is not, even though the test is green when I remove the second one
 
   .. code-block:: python
 
@@ -497,14 +497,14 @@ test_catching_zero_division_error_in_tests
 red: make it fail
 #################################################################################
 
-* I add another failing test, this happened in :doc:`/how_to/calculator`
+* I add another failing test for something that happened in the :doc:`/how_to/calculator` chapter
 
   .. code-block:: python
 
     def test_catching_zero_division_error_in_tests(self):
         1 / 0
 
-  the terminal shows a ZeroDivisionError_
+  any number divided by ``0`` and the terminal shows a ZeroDivisionError_
 
   .. code-block:: python
 
@@ -583,7 +583,7 @@ when I add the assertRaises_ :ref:`method<functions>` to the test
       with self.assertRaises(Exception):
           raise Exception
 
-the terminal shows all tests are passing. The assertRaises_ :ref:`method<functions>` checks that the code within its context raises the :ref:`Exception<Exceptions>` it is given
+the terminal shows all tests are passing. To review, the assertRaises_ :ref:`method<functions>` checks that the code within its context raises the :ref:`Exception<Exceptions>` it is given
 
 refactor: make it better
 #################################################################################
@@ -619,7 +619,7 @@ refactor: make it better
 
   because it is not a :ref:`ModuleNotFoundError`
 
-* as promised here is why the IndexError_ from earlier is not a repetition, even though when I remove the second one the tests still pass
+* as promised here is why the AssertRaises_ from earlier is not a repetition, even though when I remove the second one the tests still pass
 
   .. code-block:: python
 
