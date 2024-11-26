@@ -18,7 +18,7 @@ how to test that an Exception is raised
 
 When an error happens in Python, an Exception_ is raised to break execution of the program, this means nothing past the line that caused it will run.
 
-It is useful because there is a problem to be solved to continue as expected, It can be a pain when it causes the program to stop early. What if I want it to run with errors? I might want to give messages to the user who does not care about or understand the details of the error.
+It is useful because there is a problem to be solved to continue as expected, it can be a pain when it causes the program to stop early. What if I want it to run with errors? I might want to give messages to the user who does not care about or understand the details of the error.
 
 Exception_ Handling is a way to deal with this, it allows programs to make decisions when one happens.
 
@@ -77,7 +77,7 @@ green: make it pass
     # AssertionError
     # ModuleNotFoundError
 
-* I could make the :ref:`module<ModuleNotFoundError>` to solve the problem but I want to catch or handle the :ref:`Exception<Exceptions>` in the test. I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` introduced in the :doc:`/how_to/calculator` chapter, it checks that the code within its context raises the :ref:`Exception<Exceptions>` it is given
+* I can make ``does_not_exist.py`` to solve the problem but I want to catch or handle the :ref:`Exception<Exceptions>` in the test. I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` introduced in the :doc:`/how_to/calculator` chapter, it checks that the code within its context raises the :ref:`Exception<Exceptions>` it is given
 
   .. code-block:: python
 
@@ -121,7 +121,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-then add `unittest.TestCase.assertRaises`_
+then I add `unittest.TestCase.assertRaises`_
 
 .. code-block:: python
 
@@ -160,7 +160,7 @@ red: make it fail
     import src.exceptions
     import unittest
 
-  and get an :ref:`AttributeError`
+  which gives me an :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -264,14 +264,14 @@ and the terminal shows passing tests
 refactor: make it better
 #################################################################################
 
-If I go on to define it as a :ref:`function<functions>`
+If I make it as a :ref:`function<functions>`
 
 .. code-block:: python
 
   def function():
       return None
 
-the terminal still shows passing tests, I have a :ref:`TypeError` because the call sends an argument and the :ref:`function<functions>` does not accept input. When I add a parameter to the definition
+the terminal still shows passing tests, I still have a :ref:`TypeError` because the call sends an argument and the :ref:`function<functions>` does not accept input. When I add a parameter to the definition
 
 .. code-block:: python
 
@@ -601,7 +601,7 @@ refactor: make it better
         with self.assertRaises(Exception):
             1 / 0
 
-  all the tests are green. The problem with using Exception_ to catch its children is that it does not tell anyone that reads the code what the specific error is or which line caused the error when there is more than one line of code in the assertRaises_. It is better to be specific and state the error that is raised by the line of code because from the `Zen of python`_: ``Explicit is better than implicit``
+  all the tests are still green. The problem with using Exception_ to catch its children is it does not tell anyone that reads the code what the specific error is or which line caused the error when there is more than one line of code in the assertRaises_. It is better to be specific and state the error that is raised by the line of code because from the `Zen of python`_: ``Explicit is better than implicit``
 
 * I cannot use cousins or siblings to catch other :ref:`Exceptions<Exceptions>`
 
