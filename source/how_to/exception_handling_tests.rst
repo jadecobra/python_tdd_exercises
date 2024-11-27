@@ -211,7 +211,7 @@ red: make it fail
 
   .. code-block:: python
 
-    AttributeError: module 'src.exceptions' has no attribute 'function'
+    AttributeError: module 'src.exceptions' has no attribute 'function_name'
 
 * I add the name to ``exceptions.py``
 
@@ -297,19 +297,17 @@ because the :ref:`function<functions>` call matches the signature. I undo the ch
 test_catching_index_error_in_tests
 *********************************************************************************
 
-An IndexError_ is raised with a :ref:`list<lists>`
-
 red: make it fail
 #################################################################################
 
-* I make one in a new test
+* I make a :ref:`list<lists>` in a new test
 
   .. code-block:: python
 
     def test_catching_index_error_in_tests(self):
         a_list = [1, 2, 3, 'n']
 
-  the first item in the :ref:`list<lists>` has ``0`` as its index
+  the first item in it has ``0`` as its index
 
   .. code-block:: python
 
@@ -375,7 +373,7 @@ green: make it pass
             a_list[4]
         a_list[-1]
 
-  the terminal still shows passing tests. The index for the first item in the :ref:`list<lists>` is negative the total number of items, ``-4`` in this case
+  the terminal still shows passing tests. The index for the first item is negative the total number of items, ``-4`` in this case
 
   .. code-block:: python
 
@@ -432,12 +430,10 @@ green: make it pass
 test_catching_key_error_in_tests
 *********************************************************************************
 
-A KeyError_ is raised with a :ref:`dictionary<dictionaries>`
-
 red: make it fail
 #################################################################################
 
-* I add one to a new test
+* I add a :ref:`dictionary<dictionaries>` to a new test
 
   .. code-block:: python
 
