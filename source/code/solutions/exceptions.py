@@ -1,4 +1,4 @@
-def function():
+def function_name():
     return None
 
 

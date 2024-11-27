@@ -205,7 +205,7 @@ red: make it fail
   .. code-block:: python
 
     def test_catching_type_error_in_tests(self):
-        src.exceptions.function('argument')
+        src.exceptions.function_name('argument')
 
   and get an :ref:`AttributeError`
 
@@ -217,19 +217,19 @@ red: make it fail
 
   .. code-block:: python
 
-    function
+    function_name
 
   and the terminal shows a NameError_
 
   .. code-block:: python
 
-    NameError: name 'function' is not defined
+    NameError: name 'function_name' is not defined
 
   I assign it to :ref:`None` to define it
 
   .. code-block:: python
 
-    function = None
+    function_name = None
 
   and get a :ref:`TypeError`
 
@@ -257,7 +257,7 @@ then I add `unittest.TestCase.assertRaises`_ to the test
 
   def test_catching_type_error_in_tests(self):
       with self.assertRaises(TypeError):
-          src.exceptions.function('argument')
+          src.exceptions.function_name('argument')
 
 and the terminal shows passing tests
 
@@ -268,14 +268,14 @@ If I make it as a :ref:`function<functions>`
 
 .. code-block:: python
 
-  def function():
+  def function_name():
       return None
 
 the terminal still shows passing tests, I still have a :ref:`TypeError` because the call sends an argument and the :ref:`function<functions>` does not accept input. When I add a parameter to the definition
 
 .. code-block:: python
 
-  def function(argument):
+  def function_name(argument):
       return None
 
 the terminal shows an :ref:`AssertionError`
@@ -288,7 +288,7 @@ because the :ref:`function<functions>` call matches the signature. I undo the ch
 
 .. code-block:: python
 
-  def function():
+  def function_name():
       return None
 
 ----
