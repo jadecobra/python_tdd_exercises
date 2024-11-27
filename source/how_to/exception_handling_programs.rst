@@ -46,7 +46,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def function():
+    def function_name():
         return None
 
     raise_exception
@@ -305,22 +305,36 @@ green: make it pass
 
   ``src.exceptions.exception_handler`` still returns ``'failed'`` and the test expects ``'succeeded'``
 
-* I make ``exception_handler`` return the result of a call to its input as a :ref:`function<functions>`
+* I make ``exception_handler`` return its input
 
   .. code-block:: python
 
-    def exception_handler(function):
-        return function()
+    def exception_handler(argument):
+        return argument
+        return 'failed'
+
+  and the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    REPLACE_ME!!!!!!!
+
+* I rename the input parameter and make it return the result of a call to it as a :ref:`function<functions>`
+
+  .. code-block:: python
+
+    def exception_handler(a_function):
+        return a_function()
         return 'failed'
 
   the terminal shows a :ref:`TypeError`
 
   .. code-block:: python
 
-    function = None
+    a_function = None
 
-        def exception_handler(function):
-    >       return function()
+        def exception_handler(a_function):
+    >       return a_function()
     E       TypeError: 'NoneType' object is not callable
 
   because ``does_not_raise_exception`` is not callable_
@@ -349,9 +363,9 @@ how to use try...except...else
 
   .. code-block:: python
 
-    def exception_handler(function):
+    def exception_handler(a_function):
         try:
-            function()
+            a_function()
         except Exception:
             return 'failed'
 
@@ -365,9 +379,9 @@ how to use try...except...else
 
   .. code-block:: python
 
-    def exception_handler(function):
+    def exception_handler(a_function):
         try:
-            function()
+            a_function()
         except Exception:
             return 'failed'
         else:
@@ -379,9 +393,9 @@ how to use try...except...else
 
   .. code-block:: python
 
-    def exception_handler(function):
+    def exception_handler(a_function):
         try:
-            function()
+            a_function()
         except Exception:
             return 'failed'
         else:
@@ -399,9 +413,9 @@ I think of the  `try statement`_ statement as
 
 In this case
 
-* ``try`` **calling** ``function()``
-* ``except Exception`` - when **calling** ``function()`` raises an ``Exception`` return ``'failed'``
-* ``else`` - when **calling** ``function()`` does NOT raise the ``Exception`` return ``'succeeded'``
+* ``try`` **calling** ``a_function()``
+* ``except Exception`` - when **calling** ``a_function()`` raises an ``Exception`` return ``'failed'``
+* ``else`` - when **calling** ``a_function()`` does NOT raise the ``Exception`` return ``'succeeded'``
 
 ----
 
@@ -411,7 +425,7 @@ In this case
 review
 *********************************************************************************
 
-I ran tests to show how to cause Exceptions_, and catch or handle them in tests and programs. Would you like to test :doc:`how to measure sleep duration?</how_to/sleep_duration>`
+I ran tests to show how to cause Exceptions_, and catch or handle them in tests and programs. Would you like to test :doc:`measuring sleep duration?</how_to/sleep_duration>`
 
 ----
 

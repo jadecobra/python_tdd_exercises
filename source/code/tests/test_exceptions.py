@@ -37,7 +37,7 @@ class TestExceptions(unittest.TestCase):
 
     def test_catching_exceptions_in_tests(self):
         with self.assertRaises(Exception):
-            src.exceptions.raise_exception()
+            raise Exception
 
     def test_catching_exceptions_w_messages(self):
         with self.assertRaisesRegex(

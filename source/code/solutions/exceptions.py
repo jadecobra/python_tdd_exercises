@@ -10,9 +10,9 @@ def does_not_raise_exception():
     return None
 
 
-def exception_handler(function):
+def exception_handler(a_function):
     try:
-        function()
+        a_function()
     except Exception:
         return 'failed'
     else:
