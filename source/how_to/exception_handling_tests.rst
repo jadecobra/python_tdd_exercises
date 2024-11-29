@@ -166,7 +166,7 @@ red: make it fail
 
     AttributeError: module 'src.exceptions' has no attribute 'does_not_exist'
 
-  because I called something that does not exist from something that does exist
+  because I tried to get something that does not exist from something that does exist
 
 * I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
 
