@@ -264,14 +264,14 @@ and the terminal shows passing tests
 refactor: make it better
 #################################################################################
 
-If I make it as a :ref:`function<functions>`
+If I make it a :ref:`function<functions>`
 
 .. code-block:: python
 
   def function_name():
       return None
 
-the terminal still shows passing tests, I still have a :ref:`TypeError` because the call sends an argument and the :ref:`function<functions>` does not accept input. When I add a parameter to the definition
+the terminal still shows passing tests, I have a :ref:`TypeError` because the call sends an argument and the :ref:`function<functions>` does not accept input. When I add a parameter to the definition
 
 .. code-block:: python
 
@@ -549,7 +549,7 @@ red: make it fail
     def test_catching_exceptions_in_tests(self):
         raise Exception
 
-  the terminal shows an Exception_ which is the mother of the other exceptions encountered so far
+  the terminal shows an Exception_ which is the mother of the :ref:`exceptions<Exceptions>` encountered so far, they inherit from it
 
   .. code-block:: python
 
@@ -597,7 +597,7 @@ refactor: make it better
         with self.assertRaises(Exception):
             1 / 0
 
-  all the tests are still green. The problem with using Exception_ to catch its children is it does not tell anyone that reads the code what the specific error is or which line caused the error when there is more than one line of code in the assertRaises_. It is better to be specific and state the error that is raised by the line of code because from the `Zen of python`_: ``Explicit is better than implicit``
+  all the tests are still green. The problem with using Exception_ to catch its children is it does not tell anyone that reads the code what the actual error is or which line caused it when there is more than one line of code in the assertRaises_. It is better to be specific and use the error that is raised by the line of code because from the `Zen of python`_: ``Explicit is better than implicit``
 
 * I cannot use cousins or siblings to catch other :ref:`Exceptions<Exceptions>`
 
@@ -636,7 +636,7 @@ refactor: make it better
             raise Exception
             a_list[-5]
 
-  the terminal shows a passing test, even though Exception_ is not an IndexError_, it looks like assertRaises_ exits after the first line that causes an IndexError_. When I move the new line above it
+  the terminal still shows a passing test, even though Exception_ is not an IndexError_, it looks like the assertRaises_ exits after the first line that causes an IndexError_. When I move the new line above it
 
   .. code-block:: python
 
@@ -655,7 +655,7 @@ refactor: make it better
 
   because it is not an IndexError_
 
-* As a rule of thumb I write one line of code for one exception handler to know which line caused which error
+* following the recommendation from the Python documentation, as a rule of thumb I write one line of code for one exception handler to know which line caused which error
 
   .. code-block:: python
 
