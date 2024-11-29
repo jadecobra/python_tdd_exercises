@@ -655,7 +655,7 @@ refactor: make it better
 
   because it is not an IndexError_
 
-* following the recommendation from the Python documentation, as a rule of thumb I write one line of code for one exception handler to know which line caused which error
+* as a rule of thumb I write one line of code for one exception handler to know which line caused which error
 
   .. code-block:: python
 
