@@ -120,7 +120,7 @@ green: make it pass
 
   the Exception_ is right, the message is not
 
-* I add it to the :ref:`function<functions>`
+* I add the message
 
   .. code-block:: python
 
@@ -128,16 +128,6 @@ green: make it pass
         raise Exception('BOOM!')
 
   and the test passes
-
-* I can also replace the ``raise Exception`` line in the previous test
-
-  .. code-block:: python
-
-    def test_catching_exceptions_in_tests(self):
-        with self.assertRaises(Exception):
-            src.exceptions.raise_exception()
-
-  and the terminal still shows passing tests
 
 ----
 
@@ -246,7 +236,7 @@ green: make it pass
 test_catching_success
 *********************************************************************************
 
-the solution has a problem, the ``exception_handler`` is a :doc:`singleton function </functions/test_singleton_functions>`, it does not care about the input and always returns ``'failed'``. I want it to do something with the input and return ``failed`` if an Exception_ happens or ``success`` if an Exception_ does not happen
+the ``exception_handler`` is a :doc:`singleton function </functions/test_singleton_functions>` does not use the input, I want it to do something with it and return ``failed`` if an Exception_ happens or ``success`` if an Exception_ does not happen
 
 red: make it fail
 #################################################################################
@@ -318,7 +308,8 @@ green: make it pass
 
   .. code-block:: python
 
-    REPLACE_ME!!!!!!!
+    FAILED tests/test_exceptions.py::TestExceptions::test_catching_failure - AssertionError: <function raise_exception at 0xabcd12e34567> != 'failed'
+    FAILED tests/test_exceptions.py::TestExceptions::test_catching_success - AssertionError: None != 'succeeded'
 
 * I rename the input parameter and make it return the result of a call to it as a :ref:`function<functions>`
 
