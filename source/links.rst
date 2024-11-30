@@ -46,7 +46,7 @@
 .. _python documentation for strings: https://docs.python.org/3/library/string.html?highlight=string#module-string
 .. _python's online documentation: https://docs.python.org/3/search.html
 .. _python standard library: https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library
-.. _raise: https://docs.python.org/3/reference/simple_stmts.html#the-raise-statement
+.. _raise statement: https://docs.python.org/3/reference/simple_stmts.html#the-raise-statement
 .. _random: https://docs.python.org/3/library/random.html?highlight=random#module-random
 .. _random.randint: https://docs.python.org/3/library/random.html?highlight=random#random.randint
 .. _random.choice: https://docs.python.org/3/library/random.html#random.choice

@@ -49,6 +49,7 @@ green: make it pass
     def function_name():
         return None
 
+
     raise_exception
 
   and the terminal shows a NameError_
@@ -92,7 +93,7 @@ green: make it pass
 
     AssertionError: Exception not raised
 
-* I can use the `raise <https://docs.python.org/3/reference/simple_stmts.html#the-raise-statement>`_ keyword to cause one
+* I can use the `raise statement`_ to cause one
 
   .. code-block:: python
 

@@ -555,7 +555,7 @@ red: make it fail
 
     Exception
 
-* I can use the raise_ keyword to cause any :ref:`Exception<Exceptions>`
+* I can use the `raise statement`_ to cause any :ref:`Exception<Exceptions>`
 
   .. code-block:: python
 
