@@ -55,7 +55,7 @@ red: make it fail
 
   .. code-block:: python
 
-    class TestException(unittest.TestCase):
+    class TestExceptions(unittest.TestCase):
 
         def test_catching_module_not_found_error_in_tests(self):
             import does_not_exist
@@ -77,7 +77,7 @@ green: make it pass
     # AssertionError
     # ModuleNotFoundError
 
-* I can make ``does_not_exist.py`` to solve the problem but I want to catch or handle the :ref:`Exception<Exceptions>` in the test. I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` introduced in the :doc:`/how_to/calculator` chapter, it checks that the code within its context raises the :ref:`Exception<Exceptions>` it is given
+* I can make ``does_not_exist.py`` to solve the problem but I want to catch or handle the :ref:`Exception<Exceptions>` in the test. I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` which checks that the code within its context raises the :ref:`Exception<Exceptions>` it is given
 
   .. code-block:: python
 
@@ -440,7 +440,7 @@ red: make it fail
     def test_catching_key_error_in_tests(self):
         {'key': 'value'}
 
-  when I try to get a value for a key that exists
+  when I try to get the value for a key that exists
 
   .. code-block:: python
 
@@ -672,7 +672,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-I have a way to catch :ref:`Exceptions<Exceptions>` when testing and encountered the following
+I have a way to catch :ref:`Exceptions<Exceptions>` in tests and encountered the following
 
 * :ref:`AssertionError`
 * :ref:`ModuleNotFoundError`
