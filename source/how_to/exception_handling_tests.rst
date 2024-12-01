@@ -121,7 +121,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-then I add `unittest.TestCase.assertRaises`_
+I add `unittest.TestCase.assertRaises`_
 
 .. code-block:: python
 
@@ -166,7 +166,7 @@ red: make it fail
 
     AttributeError: module 'src.exceptions' has no attribute 'does_not_exist'
 
-  because I tried to get something that does not exist from something that does exist
+  because I tried to get something that does not exist from something that exists
 
 * I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
 
@@ -225,7 +225,7 @@ red: make it fail
 
     NameError: name 'function_name' is not defined
 
-  I assign it to :ref:`None` to define it
+  then I assign it to :ref:`None` to define it
 
   .. code-block:: python
 
@@ -422,7 +422,16 @@ green: make it pass
             a_list[4]
             a_list[-5]
 
-  at the end of the chapter I will show why this is not a repetition
+  at the end of the chapter I show why this is not a repetition, I undo the change
+
+  .. code-block:: python
+
+    def test_catching_index_error_in_tests(self):
+        a_list = [1, 2, 3, 'n']
+        with self.assertRaises(IndexError):
+            a_list[4]
+        with self.assertRaises(IndexError):
+            a_list[-5]
 
 ----
 
@@ -549,7 +558,7 @@ red: make it fail
     def test_catching_exceptions_in_tests(self):
         raise Exception
 
-  the terminal shows an Exception_ which is the mother of the :ref:`exceptions<Exceptions>` encountered so far, they inherit from it
+  the terminal shows an Exception_ which is the mother of the :ref:`Exceptions<Exceptions>` encountered so far, they inherit from it
 
   .. code-block:: python
 
@@ -579,7 +588,9 @@ when I add the assertRaises_ :ref:`method<functions>` to the test
       with self.assertRaises(Exception):
           raise Exception
 
-the terminal shows all tests are passing. To review, the assertRaises_ :ref:`method<functions>` checks that the code within its context raises the :ref:`Exception<Exceptions>` it is given
+the terminal shows all tests are passing.
+
+To review, the assertRaises_ :ref:`method<functions>` checks that the code within its context raises the :ref:`Exception<Exceptions>` it is given
 
 refactor: make it better
 #################################################################################
@@ -625,7 +636,7 @@ refactor: make it better
             a_list[4]
             a_list[-5]
 
-  If I add another :ref:`Exception<Exceptions>` between the two lines
+  If I add a `raise statement`_ between the two lines
 
   .. code-block:: python
 
@@ -636,7 +647,7 @@ refactor: make it better
             raise Exception
             a_list[-5]
 
-  the terminal still shows a passing test, even though Exception_ is not an IndexError_, it looks like the assertRaises_ exits after the first line that causes an IndexError_. When I move the new line above it
+  the terminal still shows a passing test, even though Exception_ is not an IndexError_, it looks like the assertRaises_ exits after the first line that causes an IndexError_. When I move the `raise statement`_ above it
 
   .. code-block:: python
 
