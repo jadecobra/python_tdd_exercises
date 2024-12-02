@@ -337,7 +337,7 @@ red: make it fail
 
     IndexError: list index out of range
 
-* I add it to the list of :ref:`Exceptions<Exceptions>` encountered
+* which I add to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
@@ -352,7 +352,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* then add assertRaises_
+* then I add assertRaises_
 
   .. code-block:: python
 
@@ -456,7 +456,7 @@ red: make it fail
     def test_catching_key_error_in_tests(self):
         {'key': 'value'}['key']
 
-  the terminal shows green. When I use a key that does not exist
+  the terminal shows green and when I use a key that does not exist
 
   .. code-block:: python
 
@@ -469,7 +469,7 @@ red: make it fail
 
     KeyError: 'does_not_exist'
 
-* I add it to the list of :ref:`Exceptions<Exceptions>` encountered
+* another one for the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
@@ -485,7 +485,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-then add assertRaises_ to the test
+I add assertRaises_ to the test
 
 .. code-block:: python
 
@@ -610,7 +610,7 @@ refactor: make it better
 
   all the tests are still green. The problem with using Exception_ to catch its children is it does not tell anyone that reads the code what the actual error is or which line caused it when there is more than one line of code in the assertRaises_. It is better to be specific and use the error that is raised by the line of code because from the `Zen of python`_: ``Explicit is better than implicit``
 
-* I cannot use cousins or siblings to catch other :ref:`Exceptions<Exceptions>`
+* I cannot use siblings or cousins to catch other :ref:`Exceptions<Exceptions>`
 
   .. code-block:: python
 
@@ -626,7 +626,7 @@ refactor: make it better
 
   because it is not a :ref:`ModuleNotFoundError`
 
-* as promised here is why the second AssertRaises_ in :ref:`test_catching_index_error_in_tests` is not a repetition, even though the test still passes when I remove it
+* As promised here is why the second AssertRaises_ in :ref:`test_catching_index_error_in_tests` is not a repetition, even though the test still passes when I remove it
 
   .. code-block:: python
 
