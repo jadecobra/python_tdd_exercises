@@ -33,7 +33,7 @@ test_catching_exceptions_w_messages
     def test_catching_exceptions_w_messages(self):
         src.exceptions.raise_exception()
 
-  the terminal shows an :ref:`AttributeError`
+  and the terminal shows an :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -42,7 +42,7 @@ test_catching_exceptions_w_messages
 green: make it pass
 #################################################################################
 
-* I add the name
+* then I add the name
 
   .. code-block:: python
 
@@ -52,7 +52,7 @@ green: make it pass
 
     raise_exception
 
-  and the terminal shows a NameError_
+  which gives me a NameError_
 
   .. code-block:: python
 
@@ -70,7 +70,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* I make it a :ref:`function<functions>`
+* then I make it a :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -100,9 +100,9 @@ green: make it pass
     def raise_exception():
         raise Exception
 
-  the terminal shows a passing test
+  and the terminal shows a passing test
 
-* to be more specific when catching Exceptions_ I can use the `unittest.TestCase.assertRaisesRegex`_ :ref:`method<functions>` which takes in two values, an Exception_ and a message, it uses `Regular Expressions`_ for the message
+* I can use the `unittest.TestCase.assertRaisesRegex`_ :ref:`method<functions>` to be more specific when catching Exceptions_, it checks that the code within its context raises the :ref:`Exception<Exceptions>` it is given, with the message it is given, it uses `Regular Expressions`_ for the message
 
   .. code-block:: python
 
@@ -262,7 +262,7 @@ and get an :ref:`AttributeError`
 green: make it pass
 #################################################################################
 
-* I add ``does_not_raise_exception`` to ``exceptions.py``
+* then I add ``does_not_raise_exception`` to ``exceptions.py``
 
   .. code-block:: python
 
@@ -296,7 +296,7 @@ green: make it pass
 
   ``src.exceptions.exception_handler`` still returns ``'failed'`` and the test expects ``'succeeded'``
 
-* I make ``exception_handler`` return its input
+* then I make ``exception_handler`` return its input
 
   .. code-block:: python
 
@@ -304,17 +304,17 @@ green: make it pass
         return argument
         return 'failed'
 
-  and the terminal shows :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionErrors<AssertionError>`
 
   .. code-block:: python
 
     FAILED tests/test_exceptions.py::TestExceptions::test_catching_failure - AssertionError: <function raise_exception at 0xabcd12e34567> != 'failed'
     FAILED tests/test_exceptions.py::TestExceptions::test_catching_success - AssertionError: None != 'succeeded'
 
-  - ``test_catching_failure`` is now failing, ``exception_handler`` returns the name and its address in memory in this test
+  - ``test_catching_failure`` is now failing, ``exception_handler`` returns the name of the :ref:`function<functions>` it receives and its address in memory in this test
   - in ``test_catching_success``, ``exception_handler`` returns ``does_not_raise_exception`` which points to :ref:`None`
 
-* I rename the input parameter and make it return the result of a call to it as a :ref:`function<functions>`
+* I rename the input parameter and make ``exception_handler`` return the result of a call to its input as a :ref:`function<functions>`
 
   .. code-block:: python
 
