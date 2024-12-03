@@ -102,7 +102,7 @@ green: make it pass
 
   and the terminal shows a passing test
 
-* I can use the `unittest.TestCase.assertRaisesRegex`_ :ref:`method<functions>` to be more specific when catching Exceptions_, it checks that the code within its context raises the :ref:`Exception<Exceptions>` it is given, with the message it is given, it uses `Regular Expressions`_ for the message
+* I can use the `unittest.TestCase.assertRaisesRegex`_ :ref:`method<functions>` to be more specific when catching Exceptions_, it checks that the code in its context raises the :ref:`Exception<Exceptions>` it is given, with the message it is given, it uses `Regular Expressions`_ for the message
 
   .. code-block:: python
 

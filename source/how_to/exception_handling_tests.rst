@@ -77,7 +77,7 @@ green: make it pass
     # AssertionError
     # ModuleNotFoundError
 
-* I can make ``does_not_exist.py`` to solve the problem but I want to catch or handle the :ref:`Exception<Exceptions>` in the test. I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` which checks that the code within its context raises the :ref:`Exception<Exceptions>` it is given
+* I can make ``does_not_exist.py`` to solve the problem but I want to catch or handle the :ref:`Exception<Exceptions>` in the test. I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` which checks that the code in its context raises the :ref:`Exception<Exceptions>` it is given
 
   .. code-block:: python
 
@@ -264,7 +264,7 @@ and the terminal shows passing tests
 refactor: make it better
 #################################################################################
 
-If I make it a :ref:`function<functions>`
+If I make ``function_name`` a :ref:`function<functions>`
 
 .. code-block:: python
 
@@ -323,7 +323,7 @@ red: make it fail
         a_list = [1, 2, 3, 'n']
         a_list[3]
 
-  still green. When I use a bigger number than the total number of items
+  still green. When I use a number that is bigger than the index for the last item
 
   .. code-block:: python
 
@@ -337,7 +337,7 @@ red: make it fail
 
     IndexError: list index out of range
 
-* which I add to the list of :ref:`Exceptions<Exceptions>` encountered
+* I add it to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
@@ -590,7 +590,7 @@ when I add the assertRaises_ :ref:`method<functions>` to the test
 
 the terminal shows all tests are passing.
 
-To review, the assertRaises_ :ref:`method<functions>` checks that the code within its context raises the :ref:`Exception<Exceptions>` it is given
+To review, the assertRaises_ :ref:`method<functions>` checks that the code in its context raises the :ref:`Exception<Exceptions>` it is given
 
 refactor: make it better
 #################################################################################
@@ -608,7 +608,7 @@ refactor: make it better
         with self.assertRaises(Exception):
             1 / 0
 
-  all the tests are still green. The problem with using Exception_ to catch its children is it does not tell anyone that reads the code what the actual error is or which line caused it when there is more than one line of code in the assertRaises_. It is better to be specific and use the error that is raised by the line of code because from the `Zen of python`_: ``Explicit is better than implicit``
+  all the tests are still green. The problem with using Exception_ to catch its children is it does not tell anyone that reads the code what the actual error is or which line caused it, especially when there is more than one line of code in the context. It is better to be specific, because from the `Zen of python`_: ``Explicit is better than implicit``
 
 * I cannot use siblings or cousins to catch other :ref:`Exceptions<Exceptions>`
 
@@ -683,7 +683,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-I have a way to catch :ref:`Exceptions<Exceptions>` in tests and encountered the following
+I have a way to catch :ref:`Exceptions<Exceptions>` in tests and ran into the following
 
 * :ref:`AssertionError`
 * :ref:`ModuleNotFoundError`

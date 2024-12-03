@@ -1255,7 +1255,7 @@ green: make it pass
 
 ----
 
-you encountered the following exceptions
+you ran into the following exceptions
 
 * :ref:`AssertionError`
 * :ref:`ModuleNotFoundError`

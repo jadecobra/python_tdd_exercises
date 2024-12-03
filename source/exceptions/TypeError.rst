@@ -388,7 +388,7 @@ review
 
 You now know how to solve a `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#TypeError>`_ by matching function signatures and their calls
 
-You encountered the following exceptions
+You ran into the following exceptions
 
 * :ref:`AssertionError`
 * :ref:`ModuleNotFoundError`

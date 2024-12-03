@@ -1705,7 +1705,7 @@ review
 
 I ran tests to make a :ref:`function<functions>` that takes in keyword arguments as input, has default values for some of them, performs an action based on an input and returns a :doc:`dictionary </data_structures/dictionaries>` as output
 
-I also encountered the following :ref:`Exceptions<Exceptions>`
+I also ran into the following :ref:`Exceptions<Exceptions>`
 
 * :ref:`AssertionError`
 * NameError_

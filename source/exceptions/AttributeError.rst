@@ -721,7 +721,7 @@ repeat the solution until all tests pass
 review
 *********************************************************************************
 
-*CONGRATULATIONS!* you encountered the following exceptions
+*CONGRATULATIONS!* you ran into the following exceptions
 
 * :ref:`AssertionError`
 * :ref:`ModuleNotFoundError`

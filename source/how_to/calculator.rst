@@ -1086,7 +1086,7 @@ I wrote the following tests for a program that performs the arithmetic operation
 * `test_multiplication`_
 * `test_division`_
 
-I also encountered the following :ref:`Exceptions<Exceptions>`
+I also ran into the following :ref:`Exceptions<Exceptions>`
 
 * :ref:`AssertionError`
 * NameError_

@@ -621,7 +621,7 @@ I ran the following tests to show things I can do with lists in Python
 * `test_index_error`_
 * `test_list_attributes_and_methods`_
 
-and encountered the following exceptions
+and ran into the following exceptions
 
 * :ref:`AssertionError`
 * :ref:`TypeError`
