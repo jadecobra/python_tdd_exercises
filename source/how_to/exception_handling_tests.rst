@@ -422,7 +422,7 @@ green: make it pass
             a_list[4]
             a_list[-5]
 
-  at the end of the chapter I show why this is not a repetition, I undo the change
+  at the end of the chapter I show why this is not a repetition, I undo the change for now
 
   .. code-block:: python
 
@@ -502,7 +502,7 @@ test_catching_zero_division_error_in_tests
 red: make it fail
 #################################################################################
 
-* I add another failing test for something that happened in the :doc:`/how_to/calculator` chapter
+* I add another failing test for something that happened in :doc:`/how_to/calculator`
 
   .. code-block:: python
 
@@ -590,7 +590,8 @@ when I add the assertRaises_ :ref:`method<functions>` to the test
 
 the terminal shows all tests are passing.
 
-To review, the assertRaises_ :ref:`method<functions>` checks that the code in its context raises the :ref:`Exception<Exceptions>` it is given
+
+To review, the assertRaises_ :ref:`method<functions>` checks that the code in its context raises the :ref:`Exception<Exceptions>` it is given.
 
 refactor: make it better
 #################################################################################
@@ -608,7 +609,7 @@ refactor: make it better
         with self.assertRaises(Exception):
             1 / 0
 
-  all the tests are still green. The problem with using Exception_ to catch its children is it does not tell anyone that reads the code what the actual error is or which line caused it, especially when there is more than one line of code in the context. It is better to be specific, because from the `Zen of python`_: ``Explicit is better than implicit``
+  all the tests are still green. The problem with using Exception_ to catch its children is it does not tell anyone that reads the code what the actual error is or which line caused it, especially when there is more than one line of code in the context. It is better to be specific, from the `Zen of python`_: ``Explicit is better than implicit``
 
 * I cannot use siblings or cousins to catch other :ref:`Exceptions<Exceptions>`
 

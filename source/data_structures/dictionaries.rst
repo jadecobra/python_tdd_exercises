@@ -757,7 +757,7 @@ What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datas
         self.assertIsNone(a_dictionary.get('non_existent_key'))
 
   the terminal shows a passing test. This means that when I use the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :ref:`method<functions>` and the ``key`` does not exist, I get :ref:`None` as the result.
-* I can state the above explicitly because from the `Zen of Python`_: ``Explicit is better than implicit``
+* I can state the above explicitly, from the `Zen of Python`_: ``Explicit is better than implicit``
 
   .. code-block:: python
 
