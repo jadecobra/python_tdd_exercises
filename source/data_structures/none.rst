@@ -60,7 +60,7 @@ When I make the ``assertIsNotNone`` to ``assertIsNone`` in ``test_none_is_none``
 
 the test passes
 
-`unittest.TestCase.assertIsNone <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNone>`_ checks that the given input is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
+`unittest.TestCase.assertIsNone`_ checks that the given input is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
 refactor: make it better
 #################################################################################

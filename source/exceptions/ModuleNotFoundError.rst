@@ -57,13 +57,13 @@ red: make it fail
   class TestModuleNotFoundError(unittest.TestCase):
 
       def test_module_not_found_error(self):
-          import src.module_0
+          import src.module_00
 
   and the terminal shows
 
   .. code-block:: python
 
-    ModuleNotFoundError: No module called 'src.module_0'
+    ModuleNotFoundError: No module called 'src.module_00'
 
   - ``ModuleNotFoundError`` is raised when an `import statement`_ fails because python cannot find a module/package with the given name, in this case ``module_0`` does not exist
   - ``import module_0`` is the line of code that caused the failure
@@ -87,14 +87,14 @@ green: make it pass
   .. code-block:: python
 
     def test_module_not_found_error(self):
-        import src.module_0
-        import src.module_1
+        import src.module_00
+        import src.module_01
 
   which gives me
 
   .. code-block:: python
 
-    ModuleNotFoundError: No module named 'src.module_1'
+    ModuleNotFoundError: No module named 'src.module_01'
 
 * When I add ``module_1.py`` to the ``src`` folder, the terminal shows a passing test
 * I continue with another `import statement`
@@ -102,15 +102,15 @@ green: make it pass
   .. code-block:: python
 
     def test_module_not_found_error(self):
-        import src.module_0
-        import src.module_1
-        import src.module_2
+        import src.module_00
+        import src.module_01
+        import src.module_02
 
   and get
 
   .. code-block:: python
 
-    ModuleNotFoundError: No module called 'src.module_2'
+    ModuleNotFoundError: No module called 'src.module_02'
 
 * I add ``module_2.py`` to the ``src`` folder, and the terminal shows green again
 * after another `import statement`_
@@ -118,16 +118,16 @@ green: make it pass
   .. code-block:: python
 
     def test_module_not_found_error(self):
-        import src.module_0
-        import src.module_1
-        import src.module_2
-        import src.module_3
+        import src.module_00
+        import src.module_01
+        import src.module_02
+        import src.module_03
 
   the terminal shows
 
   .. code-block:: python
 
-    ModuleNotFoundError: No module called 'src.module_3'
+    ModuleNotFoundError: No module called 'src.module_03'
 
 * I add ``module_3.py`` to the ``src`` folder and the test passes
 

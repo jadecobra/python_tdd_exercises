@@ -87,10 +87,10 @@ test_exceptions
 test_assertion_error
 *********************************************************************************
 
-#. :ref:`test_assertion_errors_w_none`
-#. :ref:`test_assertion_errors_w_false`
-#. :ref:`test_assertion_errors_w_true`
-#. :ref:`test_assertion_errors_w_equality`
+#. :ref:`test_assertion_error_w_none`
+#. :ref:`test_assertion_error_w_false`
+#. :ref:`test_assertion_error_w_true`
+#. :ref:`test_assertion_error_w_equality`
 
 *********************************************************************************
 test_attribute_error
