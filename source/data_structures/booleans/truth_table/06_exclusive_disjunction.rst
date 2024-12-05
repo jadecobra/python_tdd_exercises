@@ -31,7 +31,7 @@ and the terminal shows an :ref:`AttributeError`
 green: make it pass
 #################################################################################
 
-* then add a definition that returns :ref:`True <test_what_is_true>`
+* then add a definition that returns :ref:`True<test_what_is_true>`
 
   .. code-block:: python
 
@@ -151,7 +151,7 @@ refactor: make it better
     def exclusive_disjunction(p, q):
         return p != q
 
-From the tests I see that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True <test_what_is_true>` or :ref:`False <test_what_is_false>`
+From the tests I see that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
 
 
 
@@ -162,10 +162,10 @@ From the tests I see that for any boolean operation involving 2 inputs: ``p`` an
 * ``logical conjunction`` is ``and``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
-* :ref:`False <test_what_is_false>` is ``not True``
-* :ref:`True <test_what_is_true>` is ``not False``
-* :ref:`False <test_what_is_false>` is :ref:`False <test_what_is_false>`
-* :ref:`True <test_what_is_true>` is :ref:`True <test_what_is_true>`
+* :ref:`False<test_what_is_false>` is ``not True``
+* :ref:`True<test_what_is_true>` is ``not False``
+* :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`
+* :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
 
 
 ----

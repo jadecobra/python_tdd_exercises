@@ -85,7 +85,7 @@ refactor: make it better
 
   and I am still green
 
-From the tests I can see that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True <test_what_is_true>` or :ref:`False <test_what_is_false>`
+From these tests, I can say that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
 
 
 * ``material non implication`` is ``p and not q``
@@ -99,10 +99,10 @@ From the tests I can see that for any boolean operation involving 2 inputs: ``p`
 * ``logical conjunction`` is ``and``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
-* :ref:`False <test_what_is_false>` is ``not True``
-* :ref:`True <test_what_is_true>` is ``not False``
-* :ref:`False <test_what_is_false>` is :ref:`False <test_what_is_false>`
-* :ref:`True <test_what_is_true>` is :ref:`True <test_what_is_true>`
+* :ref:`False<test_what_is_false>` is ``not True``
+* :ref:`True<test_what_is_true>` is ``not False``
+* :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`
+* :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
 
 ----
 

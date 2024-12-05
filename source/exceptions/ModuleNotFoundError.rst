@@ -21,15 +21,6 @@ A Python :ref:`module<ModuleNotFoundError>` is a file that ends in ``.py``. The 
 This exercise will help you remember how to solve the ``ModuleNotFoundError`` and what a Python module is.
 
 *********************************************************************************
-requirements
-*********************************************************************************
-
-
-:doc:`how to make a python test driven development environment </how_to/make_tdd_environment>`
-
-----
-
-*********************************************************************************
 test_module_not_found_error
 *********************************************************************************
 

@@ -4,7 +4,11 @@
 .. _while statement: https://docs.python.org/3/reference/compound_stmts.html#the-while-statement
 
 .. _assertEqual: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertEqual
+.. _assertNotEqual: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertNotEqual
 .. _assertFalse: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse
+.. _assertTrue: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertTrue
+.. _assertIsNone: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNone
+.. _assertIsNotNone: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNotNone
 .. _assertRaises: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises
 .. _assertRaisesRegex: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertRaisesRegex
 .. _bash: https://www.gnu.org/software/bash/
@@ -68,7 +72,10 @@
 .. _unittest.TestCase.maxDiff: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff
 .. _unittest.skip decorator: https://docs.python.org/3/library/unittest.html#unittest.skip
 .. _unittest.TestCase: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase
+.. _unittest.TestCase.assertEqual: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertEqual
+.. _unittest.TestCase.assertNotEqual: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertNotEqual
 .. _unittest.TestCase.assertFalse: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse
+.. _unittest.TestCase.assertTrue: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertTrue
 .. _unittest.TestCase.assertRaises: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises
 .. _unittest.TestCase.assertRaisesRegex: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertRaisesRegex
 .. _unittest.TestCase.setUp: https://docs.python.org/3/library/unittest.html#unittest.TestCase.setUp

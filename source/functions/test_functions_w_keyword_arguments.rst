@@ -247,7 +247,7 @@ green: make it pass
             {'a': 1, 'b': 2, 'c': 3, 'd': 4}
         )
 
-  the terminal shows passing tests. From the tests I can see that keyword arguments are treated as :doc:`dictionaries </data_structures/dictionaries>`  in Python
+  the terminal shows passing tests. From these tests, I can say that keyword arguments are treated as :doc:`dictionaries </data_structures/dictionaries>`  in Python
 
 .. _test_functions_w_keyword_arguments_refactor_refactor:
 

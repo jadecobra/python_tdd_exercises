@@ -94,11 +94,11 @@ green: make it pass
 review
 *********************************************************************************
 
-*YOU DID IT!* You made it to the end of the ``Truth Table`` series. Summarizing what the tests have shown so far, I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True <test_what_is_true>` or :ref:`False <test_what_is_false>`
+*YOU DID IT!* You made it to the end of the ``Truth Table`` series. Summarizing what the tests have shown so far, I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
 
 
-* ``contradition`` always returns :ref:`False <test_what_is_false>` it is a :doc:`singleton function </functions/test_singleton_functions>`
-* ``tautology`` always returns :ref:`True <test_what_is_true>` it is a :doc:`singleton function </functions/test_singleton_functions>`
+* ``contradition`` always returns :ref:`False<test_what_is_false>` it is a :doc:`singleton function </functions/test_singleton_functions>`
+* ``tautology`` always returns :ref:`True<test_what_is_true>` it is a :doc:`singleton function </functions/test_singleton_functions>`
 * ``converse implication`` is ``not p and q`` which is different from ``not(p and q)``
 * ``project second`` always returns ``q``
 * ``project first`` always returns ``p``
@@ -115,10 +115,10 @@ review
 * ``logical conjunction`` is ``and``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
-* :ref:`False <test_what_is_false>` is ``not True``
-* :ref:`True <test_what_is_true>` is ``not False``
-* :ref:`False <test_what_is_false>` is :ref:`False <test_what_is_false>`
-* :ref:`True <test_what_is_true>` is :ref:`True <test_what_is_true>`
+* :ref:`False<test_what_is_false>` is ``not True``
+* :ref:`True<test_what_is_true>` is ``not False``
+* :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`
+* :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
 
 Would you like to :doc:`test lists</data_structures/lists/lists>`?
 

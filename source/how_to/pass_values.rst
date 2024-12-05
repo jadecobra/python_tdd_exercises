@@ -344,7 +344,7 @@ test_passing_a_boolean
 red: make it fail
 #################################################################################
 
-I add a test for :ref:`booleans`, first with an assertion for :ref:`True <test_what_is_true>`
+I add a test for :ref:`booleans`, first with an assertion for :ref:`True<test_what_is_true>`
 
 .. code-block:: python
 
@@ -375,7 +375,7 @@ green: make it pass
 
   and the test passes
 
-* then I add an assertion for :ref:`False <test_what_is_false>`
+* then I add an assertion for :ref:`False<test_what_is_false>`
 
   .. code-block:: python
 

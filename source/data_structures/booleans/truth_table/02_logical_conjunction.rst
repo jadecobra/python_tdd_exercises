@@ -14,8 +14,8 @@ In this chapter I continue to step through learning conditional statements in Py
 
 I know that there are two boolean values
 
-* :ref:`True <test_what_is_true>`
-* :ref:`False <test_what_is_false>`
+* :ref:`True<test_what_is_true>`
+* :ref:`False<test_what_is_false>`
 
 
 
@@ -73,7 +73,7 @@ green: make it pass
         return None
 
   and the terminal shows an :ref:`AssertionError`
-* I make ``logical_conjunction`` in ``truth_table.py`` return :ref:`True <test_what_is_true>`
+* I make ``logical_conjunction`` in ``truth_table.py`` return :ref:`True<test_what_is_true>`
 
   .. code-block:: python
 
@@ -82,7 +82,7 @@ green: make it pass
 
   which makes the first of the four tests pass, the terminal now shows a failure for the second line
 * I can make this function return different values based on the input it receives with `if statements <https://docs.python.org/3/tutorial/controlflow.html?highlight=statement#if-statements>`_
-* I add an `if statement <https://docs.python.org/3/reference/compound_stmts.html?highlight=return%20true#the-if-statement>`_ for the first case ``self.assertTrue(truth_table.logical_conjunction(True, True))`` where p is :ref:`True <test_what_is_true>` and q is :ref:`True <test_what_is_true>`
+* I add an `if statement <https://docs.python.org/3/reference/compound_stmts.html?highlight=return%20true#the-if-statement>`_ for the first case ``self.assertTrue(truth_table.logical_conjunction(True, True))`` where p is :ref:`True<test_what_is_true>` and q is :ref:`True<test_what_is_true>`
 
   .. code-block:: python
 
@@ -107,11 +107,11 @@ refactor: make it better
 
 * Why does this work?
 
-  - I add a condition for when the value of ``p`` is equal to :ref:`True <test_what_is_true>`
-  - Inside the first condition I add another condition for when the value of ``q`` is equal to :ref:`True <test_what_is_true>`
-  - when both conditions are met, the ``logical_conjunction`` function returns :ref:`True <test_what_is_true>`. What does it return when those two conditions are not met?
+  - I add a condition for when the value of ``p`` is equal to :ref:`True<test_what_is_true>`
+  - Inside the first condition I add another condition for when the value of ``q`` is equal to :ref:`True<test_what_is_true>`
+  - when both conditions are met, the ``logical_conjunction`` function returns :ref:`True<test_what_is_true>`. What does it return when those two conditions are not met?
 
-* I know from :doc:`/functions/functions` that a function returns :ref:`None` by default so it must be returning :ref:`None` for the other cases. This means :ref:`None` is :ref:`False <test_what_is_false>` as seen in :doc:`/data_structures/booleans/booleans`
+* I know from :doc:`/functions/functions` that a function returns :ref:`None` by default so it must be returning :ref:`None` for the other cases. This means :ref:`None` is :ref:`False<test_what_is_false>` as seen in :doc:`/data_structures/booleans/booleans`
 * I can add a test as a reminder
 
   .. code-block:: python
@@ -123,7 +123,7 @@ refactor: make it better
           return None
 
   tests are still passing
-* Since :ref:`None` is :ref:`False <test_what_is_false>`, I can be more explicit by using the boolean :ref:`False <test_what_is_false>`
+* Since :ref:`None` is :ref:`False<test_what_is_false>`, I can be more explicit by using the boolean :ref:`False<test_what_is_false>`
 
   .. code-block:: python
 
@@ -157,7 +157,7 @@ refactor: make it better
 
   tests are still green because this expresses all four cases from ``test_logical_conjunction``
 
-  - in 1 case where ``p is True`` and ``q is True`` it returns True:ref:`True <test_what_is_true>`
+  - in 1 case where ``p is True`` and ``q is True`` it returns True:ref:`True<test_what_is_true>`
   - in the 3 remaining cases it returns False
   - does this mean that in a binary operation with 2 outcomes I only need to write a condition for one and write an else for the other? This could save me having to write out a condition for every case
 
@@ -192,16 +192,16 @@ refactor: make it better
 
   tests are still green. I don't think I can get a simpler statement than this
 
-After testing ``logical_conjunction`` which is a conditional operation using ``and``, I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True <test_what_is_true>` or :ref:`False <test_what_is_false>`
+After testing ``logical_conjunction`` which is a conditional operation using ``and``, I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
 
 
-* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :ref:`True <test_what_is_true>`
+* ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :ref:`True<test_what_is_true>`
 * when there are multiple outcomes I only need to write the condition for the special case and use ``else`` for the others
 * ``logical conjunction`` is ``and``
-* :ref:`False <test_what_is_false>` is ``not True``
-* :ref:`True <test_what_is_true>` is ``not False``
-* :ref:`False <test_what_is_false>` is :ref:`False <test_what_is_false>`
-* :ref:`True <test_what_is_true>` is :ref:`True <test_what_is_true>`
+* :ref:`False<test_what_is_false>` is ``not True``
+* :ref:`True<test_what_is_true>` is ``not False``
+* :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`
+* :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
 
 ----
 

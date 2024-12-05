@@ -17,10 +17,10 @@ Reviewing the tests I have so far, I know that
 * I can express ``conditional statements`` on one line with ``return``
 * when there are multiple outcomes I only need to write the condition for the special case and use ``else`` for the others
 * ``logical conjunction`` is ``and``
-* :ref:`False <test_what_is_false>` is ``not True``
-* :ref:`True <test_what_is_true>` is ``not False``
-* :ref:`False <test_what_is_false>` is :ref:`False <test_what_is_false>`
-* :ref:`True <test_what_is_true>` is :ref:`True <test_what_is_true>`
+* :ref:`False<test_what_is_false>` is ``not True``
+* :ref:`True<test_what_is_true>` is ``not False``
+* :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`
+* :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
 
 
 red: make it fail
@@ -51,7 +51,7 @@ green: make it pass
 
   and the terminal shows an :ref:`AssertionError`
 
-* 3 of the test cases are passing because ``logical_disjunction`` returns :ref:`True <test_what_is_true>` for each one of them. I need a condition for the fourth case to pass, so I change the definition
+* 3 of the test cases are passing because ``logical_disjunction`` returns :ref:`True<test_what_is_true>` for each one of them. I need a condition for the fourth case to pass, so I change the definition
 
   .. code-block:: python
 
@@ -78,7 +78,7 @@ refactor: make it better
 
   the terminal shows the tests are still passing
 
-* I can restate the equality comparison against :ref:`False <test_what_is_false>` in terms of :ref:`True <test_what_is_true>` by using the ``not equal`` comparison operator ``!=``
+* I can restate the equality comparison against :ref:`False<test_what_is_false>` in terms of :ref:`True<test_what_is_true>` by using the ``not equal`` comparison operator ``!=``
 
   .. code-block:: python
 
@@ -164,7 +164,7 @@ refactor: make it better
         else:
             return True
 
-* the ``else`` clause that returns :ref:`True <test_what_is_true>` can be restated as the opposite of the ``if`` statement
+* the ``else`` clause that returns :ref:`True<test_what_is_true>` can be restated as the opposite of the ``if`` statement
 
   .. code-block:: python
 
@@ -220,17 +220,17 @@ refactor: make it better
 
   *VOILA!* the tests still pass and I have a simple statement that makes all 4 states pass for ``logical_disjunction``
 
-The tests so far show that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True <test_what_is_true>` or :ref:`False <test_what_is_false>`
+The tests so far show that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
 
 
 * ``logical disjunction`` is ``or``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
 * ``logical conjunction`` is ``and``
-* :ref:`False <test_what_is_false>` is ``not True``
-* :ref:`True <test_what_is_true>` is ``not False``
-* :ref:`False <test_what_is_false>` is :ref:`False <test_what_is_false>`
-* :ref:`True <test_what_is_true>` is :ref:`True <test_what_is_true>`
+* :ref:`False<test_what_is_false>` is ``not True``
+* :ref:`True<test_what_is_true>` is ``not False``
+* :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`
+* :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
 
 ----
 

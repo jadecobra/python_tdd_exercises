@@ -12,8 +12,8 @@ truth table: Nullary and Unary Operations
 
 There are only two boolean values
 
-* :ref:`True <test_what_is_true>`
-* :ref:`False <test_what_is_false>`
+* :ref:`True<test_what_is_true>`
+* :ref:`False<test_what_is_false>`
 
 The Truth Table gives the 16 outcomes of binary operations on these two values
 
@@ -89,7 +89,7 @@ green: make it pass
     def logical_true():
         return True
 
-  and the terminal shows passing tests which remind me that :ref:`True <test_what_is_true>` is :ref:`True <test_what_is_true>`
+  and the terminal shows passing tests which remind me that :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
 
 refactor: make it better
 #################################################################################
@@ -111,14 +111,14 @@ refactor: make it better
         return True
 
   and the terminal shows an :ref:`AssertionError` since the ``logical_false`` function currently returns a different value from what is expected
-* When I make the return value to :ref:`False <test_what_is_false>`, the terminal shows passing tests
+* When I make the return value to :ref:`False<test_what_is_false>`, the terminal shows passing tests
 
   .. code-block:: python
 
     def logical_false():
         return False
 
-* I am again reminded that :ref:`False <test_what_is_false>` is :ref:`False <test_what_is_false>` and :ref:`True <test_what_is_true>` is :ref:`True <test_what_is_true>`
+* I am again reminded that :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>` and :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
 
 ----
 
@@ -214,10 +214,10 @@ review
 
 I know that
 
-* :ref:`True <test_what_is_true>` is ``not False``
-* :ref:`False <test_what_is_false>` is ``not True``
-* :ref:`False <test_what_is_false>` is :ref:`False <test_what_is_false>`
-* :ref:`True <test_what_is_true>` is :ref:`True <test_what_is_true>`
+* :ref:`True<test_what_is_true>` is ``not False``
+* :ref:`False<test_what_is_false>` is ``not True``
+* :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`
+* :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
 
 ----
 

@@ -193,9 +193,9 @@ red: make it fail
     * ``self`` is used to access :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the ``TestMagic`` class and by extension the `unittest.TestCase`_ class instead of using ``TestMagic().`` or ``unittest.TestCase().``
     * ``self.assertFalse(True)`` is an assertion
 
-      - assertFalse_ is a :ref:`method<functions>` in the `unittest.TestCase`_ :ref:`class <classes>` that checks if its input is :ref:`False <test_what_is_false>`
-      - :ref:`True <test_what_is_true>` is given as the input
-      - I expect this line to fail because :ref:`True <test_what_is_true>` is not :ref:`False <test_what_is_false>`, there is a problem if it does not fail
+      - assertFalse_ is a :ref:`method<functions>` in the `unittest.TestCase`_ :ref:`class <classes>` that checks if its input is :ref:`False<test_what_is_false>`
+      - :ref:`True<test_what_is_true>` is given as the input
+      - I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`, there is a problem if it does not fail
 
 * I turn on the ``Auto Save`` feature in the Integrated Development Environment (IDE) to automatically save files when I make a change so `I do not repeat myself`_ by manually saving every time there is a change
 * then type this in the terminal to run the test
@@ -236,7 +236,7 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
 
 * ``FAILED (failures=1)`` the number of failures
 * ``Ran 1 test in A.XYZs`` the number of tests run and how long it took
-* ``AssertionError: True is not false`` the :ref:`Exception<Exceptions>` raised and its message, in this case an :ref:`AssertionError` is raised because :ref:`True <test_what_is_true>` is not :ref:`False <test_what_is_false>`
+* ``AssertionError: True is not false`` the :ref:`Exception<Exceptions>` raised and its message, in this case an :ref:`AssertionError` is raised because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
 * ``self.assertFalse(True)`` the line of code that caused the failure
 * ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` the line number and location of the file where the failure happened
 
@@ -277,7 +277,7 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
 green: make it pass
 #################################################################################
 
-I change the input on line 7 from :ref:`True <test_what_is_true>` to :ref:`False <test_what_is_false>`
+I change the input on line 7 from :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>`
 
 .. code-block:: python
 
@@ -501,7 +501,7 @@ how to make a virtual environment
 
     =============== 1 passed in X.YZs =======================
 
-* when I change the input on line 7 in ``test_magic.py`` from :ref:`False <test_what_is_false>` to :ref:`True <test_what_is_true>` it shows an :ref:`AssertionError`
+* when I change the input on line 7 in ``test_magic.py`` from :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` it shows an :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -519,7 +519,7 @@ how to make a virtual environment
     FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
     ================================= 1 failed in X.YZs ===================================
 
-  then I change it back to :ref:`False <test_what_is_false>` to make it pass and can write the rest of the code for the project while the tests run automatically
+  then I change it back to :ref:`False<test_what_is_false>` to make it pass and can write the rest of the code for the project while the tests run automatically
 
   .. tip:: press ``ctrl`` + ``c`` on the keyboard in the terminal to stop the tests at anytime
 

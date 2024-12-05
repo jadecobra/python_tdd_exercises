@@ -104,8 +104,8 @@ I make ``assertIsNone`` to ``assertIsNotNone`` in ``test_is_none_a_boolean`` to 
 
 From the tests I see that
 
-* :ref:`False <test_what_is_false>` is not `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
-* :ref:`True <test_what_is_true>` is not `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
+* :ref:`False<test_what_is_false>` is not `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
+* :ref:`True<test_what_is_true>` is not `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
 refactor: make it better

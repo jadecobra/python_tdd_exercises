@@ -31,7 +31,7 @@ green: make it pass
 #################################################################################
 
 
-* I add a definition for the function to ``truth_table.py`` returning :ref:`True <test_what_is_true>` since 3 out of the 4 cases return it
+* I add a definition for the function to ``truth_table.py`` returning :ref:`True<test_what_is_true>` since 3 out of the 4 cases return it
 
   .. code-block:: python
 
@@ -39,7 +39,7 @@ green: make it pass
       return True
 
   the terminal shows an :ref:`AssertionError` for the first case
-* and I add a condition for the one case that returns :ref:`False <test_what_is_false>`
+* and I add a condition for the one case that returns :ref:`False<test_what_is_false>`
 
   .. code-block:: python
 
@@ -119,7 +119,7 @@ refactor: make it better
 
 ----
 
-To review, I know from the tests that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True <test_what_is_true>` or :ref:`False <test_what_is_false>`
+To review, I know from the tests that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
 
 
 * ``logical NAND`` is ``not (p and q)``
@@ -130,10 +130,10 @@ To review, I know from the tests that for any boolean operation involving 2 inpu
 * ``logical conjunction`` is ``and``
 * ``and`` is "not ``or``"
 * ``or`` is "not ``and``"
-* :ref:`False <test_what_is_false>` is ``not True``
-* :ref:`True <test_what_is_true>` is ``not False``
-* :ref:`False <test_what_is_false>` is :ref:`False <test_what_is_false>`
-* :ref:`True <test_what_is_true>` is :ref:`True <test_what_is_true>`
+* :ref:`False<test_what_is_false>` is ``not True``
+* :ref:`True<test_what_is_true>` is ``not False``
+* :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`
+* :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
 
 ----
 

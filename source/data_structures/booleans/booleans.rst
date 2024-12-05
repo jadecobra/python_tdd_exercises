@@ -77,7 +77,7 @@ refactor: make it better
 
     AssertionError: False is not true
 
-  The `unittest.TestCase.assertTrue <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertTrue>`_ :ref:`method<functions>` checks if a given input is True_
+  The `unittest.TestCase.assertTrue` :ref:`method<functions>` checks if a given input is True_
 
 * When I make ``assertTrue`` to ``assertFalse`` to test if False_ is False_ the test passes
 
@@ -85,7 +85,7 @@ refactor: make it better
 
     self.assertFalse(False)
 
-  The `unittest.TestCase.assertFalse <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse>`_ :ref:`method<functions>` checks if a given input is False_
+  The `unittest.TestCase.assertFalse`_ :ref:`method<functions>` checks if a given input is False_
 
 From these tests I see that
 
