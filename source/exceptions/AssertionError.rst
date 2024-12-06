@@ -30,12 +30,12 @@ which is like
 why are asserts important?
 *********************************************************************************
 
-When building a program I can add ``assert`` statements to make sure something is :ref:`True<test_what_is_true>` before it can continue. I can also test how the program behaves when it is given inputs by using ``assert`` statements. These help catch bugs that break previous tested behavior when introduced, as well as answer the following questions
+When building a program I can add ``assert`` statements to make sure something is :ref:`True<test_what_is_true>` before it can continue. I can also use them to test how the program behaves when it is given inputs. This help catch bugs that break previous tested behavior when introduced, as well as answer the following questions
 
 * what is the same?
 * What is different?
 
-A difference between my expectations and reality (what happens when I run the program) gives me a clue about what changes are needed to make them match
+A difference between my expectations and reality (what happens when I run the program) gives me a clue about what to change to make them match
 
 ----
 
@@ -134,14 +134,6 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
         self.assertIsNotNone(False)
 
   the terminal shows a passing test because the statement is :ref:`True<test_what_is_true>`. I can now say that in Python :ref:`False<test_what_is_false>` is not :ref:`None`
-
-  .. code-block:: python
-
-    # Exceptions Encountered
-    # AssertionError
-
-    # NOTES
-    # False is not None
 
 * I add another test to find out how :ref:`None` is related to :ref:`True<test_what_is_true>`
 
@@ -418,7 +410,7 @@ and the terminal shows passing tests. Which allows me to say that
 * :ref:`True<test_what_is_true>` is not :ref:`None`
 * :ref:`False<test_what_is_false>` is not :ref:`None`
 
-I could sum up the above statements this way - in Python :ref:`True<test_what_is_true>`, :ref:`False<test_what_is_false>` and :ref:`None` are different. My understanding of these differences helps me know how Python behaves and gives a foundation of predictable expectations of the language. I could just compare things to them.
+I could sum up the above statements this way - in Python :ref:`True<test_what_is_true>`, :ref:`False<test_what_is_false>` and :ref:`None` are different, which helps me know how Python behaves and gives a foundation of predictable expectations of the language. I could just compare things to them.
 
 ----
 
@@ -635,7 +627,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-If you have been typing along *WELL DONE!* Your magic powers are growing. From the tests above you now know
+If you have been typing along *WELL DONE!* Your magic powers are growing. From these tests you know
 
 * how to test for equality
 * how to test if something is :ref:`None` or not
@@ -651,7 +643,7 @@ If you have been typing along *WELL DONE!* Your magic powers are growing. From t
   - assertEqual_ - are these two things equal?
   - assertNotEqual_ - are these two things not equal?
 
-Would you like to test :ref:`AttributeErrors<AttributeError>`?
+Would you like to test the :ref:`AttributeError`?
 
 ----
 
