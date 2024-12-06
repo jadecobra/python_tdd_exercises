@@ -42,7 +42,7 @@ test_catching_exceptions_w_messages
 green: make it pass
 #################################################################################
 
-* then I add the name
+* then I add the name to ``exceptions.py``
 
   .. code-block:: python
 
@@ -296,7 +296,7 @@ green: make it pass
 
   ``src.exceptions.exception_handler`` still returns ``'failed'`` and the test expects ``'succeeded'``
 
-* then I make ``exception_handler`` return its input
+* I make ``exception_handler`` return its input
 
   .. code-block:: python
 
@@ -312,7 +312,7 @@ green: make it pass
     FAILED tests/test_exceptions.py::TestExceptions::test_catching_success - AssertionError: None != 'succeeded'
 
   - ``test_catching_failure`` is now failing, ``exception_handler`` returns the name of the :ref:`function<functions>` it receives and its address in memory in this test
-  - in ``test_catching_success``, ``exception_handler`` returns ``does_not_raise_exception`` which points to :ref:`None`
+  - ``test_catching_success`` is still failing, ``exception_handler`` returns ``does_not_raise_exception`` which points to :ref:`None`
 
 * I rename the input parameter and make ``exception_handler`` return the result of a call to its input as a :ref:`function<functions>`
 
@@ -347,7 +347,7 @@ green: make it pass
 
     AssertionError: None != 'succeeded'
 
-* the result of calling ``src.exceptions.raise_exception`` in ``test_catching_failure`` is currently an Exception_
+* the result of calling ``src.exceptions.raise_exception`` in ``test_catching_failure`` is an Exception_
 
   .. code-block:: python
 
@@ -400,7 +400,7 @@ how to use try...except...else
 
   the terminal shows passing tests
 
-The `try statement`_ is used to catch/handle exceptions in Python. It allows the program to make a decision when it encounters an Exception instead of ending execution. I think of it as
+The `try statement`_ is used to catch/handle exceptions in Python. It allows the program to make a decision when it runs into an Exception_. I think of it as
 
 * ``try`` **this**
 * ``except Exception`` - when **this** raises ``Exception`` run the code in this block
