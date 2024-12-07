@@ -16,11 +16,11 @@ lists
 
 ----
 
-A `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ is an object_ that can hold other `objects <https://docs.python.org/3/glossary.html#term-object>`_
+A list_ is an object_ that can hold other `objects <https://docs.python.org/3/glossary.html#term-object>`_
 
 
 * Lists are represented with ``[]``
-* Lists can be made with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_
+* Lists can be made with the list_ constructor_
 * Lists can hold any object_
 * Lists can be changed after creation by performing an operation, this means they are mutable
 * Lists can be looped over
@@ -63,12 +63,12 @@ green: make it pass
     # AssertionError
     # TypeError
 
-  - Looking at the error I see that the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_ expects one argument but four are given in the test, so I am not following the signature for making lists
+  - Looking at the error I see that the list_ constructor_ expects one argument but four are given in the test, so I am not following the signature for making lists
   - a constructor_ is a :ref:`function<functions>` that is used to make an instance of a :ref:`class <classes>`
-  - I read `python's documentation for lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ and see that the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_ takes an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ as input
-  - An `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ is an object I can go over its items one by one in a loop - `tuples <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_, `lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_, `sets <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ and :doc:`dictionaries </data_structures/dictionaries>` are iterable
+  - I read python's documentation for `lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ and see that the list_ constructor_ takes an iterable_ as input
+  - An iterable_ is an object I can go over its items one by one in a loop - tuples_, `lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_, sets_ and :ref:`dictionaries` are iterable
 
-* I make the values provided to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_ a `tuple <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_ by placing them in parentheses
+* I make the values provided to the list_ constructor_ a tuple_ by placing them in parentheses
 
   .. code-block:: python
 
@@ -93,7 +93,7 @@ green: make it pass
 refactor: make it better
 =========================
 
-* I can make a list with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_ but the passing test also shows I can make a list with ``[]`` which uses less characters. I add a test for it
+* I can make a list with the list_ constructor_ but the passing test also shows I can make a list with ``[]`` which uses less characters. I add a test for it
 
   .. code-block:: python
 
@@ -169,7 +169,7 @@ test_removing_an_item_from_a_list
 red: make it fail
 ===================
 
-Since I know how to add an item to a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ I want to add a test for taking away an item from a list using the `remove <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ method
+Since I know how to add an item to a list_ I want to add a test for taking away an item from a list using the `remove <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ method
 
 .. code-block:: python
 
@@ -201,7 +201,7 @@ I make the values match the values in the terminal and the test passes
 refactor: make it better
 =========================
 
-What happens when there is more than one of the same item in a list? How does Python decide which of them to remove when I call ``.remove(item)`` on a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_?
+What happens when there is more than one of the same item in a list? How does Python decide which of them to remove when I call ``.remove(item)`` on a list_?
 
 * I add a failing test to find out
 
@@ -229,7 +229,7 @@ What happens when there is more than one of the same item in a list? How does Py
         a_list.remove(2)
         self.assertEqual(a_list, [0, 1, 2, 3, 2])
 
-  From the test I see that the `remove <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` takes away the first item when there is more than one of the same item in a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+  From the test I see that the `remove <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` takes away the first item when there is more than one of the same item in a list_
 
 ----
 
@@ -240,7 +240,7 @@ test_removing_the_last_item_from_a_list
 red: make it fail
 ===================
 
-I add a test for taking away the last item from a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+I add a test for taking away the last item from a list_
 
 .. code-block:: python
 
@@ -298,12 +298,12 @@ green: make it pass
 test_getting_items_from_a_list
 *********************************************************************************
 
-To view an item in a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ I can provide the position as an index in ``[]`` to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. Python uses zero-based indexing which means the positions of items starts at 0. I can also view items from the right side of the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ by using negative numbers
+To view an item in a list_ I can provide the position as an index in ``[]`` to the list_. Python uses zero-based indexing which means the positions of items starts at 0. I can also view items from the right side of the list_ by using negative numbers
 
 red: make it fail
 ===================
 
-I add a failing test for indexing a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+I add a failing test for indexing a list_
 
 .. code-block:: python
 
@@ -397,7 +397,7 @@ green: make it pass
 test_index_error
 *********************************************************************************
 
-IndexError_ is raised when I try to get an item from a list but use a number that is greater than the number of items in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_.
+IndexError_ is raised when I try to get an item from a list but use a number that is greater than the number of items in the list_.
 
 red: make it fail
 ===================
@@ -606,7 +606,7 @@ review
 *********************************************************************************
 
 * Lists are represented with ``[]``
-* Lists can be made with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_
+* Lists can be made with the list_ constructor_
 * Lists can hold any object_
 * Lists can be changed after creation by performing an operation, this means they are mutable
 * Lists can be looped over

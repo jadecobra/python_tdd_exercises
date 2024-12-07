@@ -377,7 +377,7 @@ I make the values to make the test pass
       {(1, 2): "value"}
   )
 
-the tests so far show that I can use `tuples <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_, `booleans <https://docs.python.org/3/library/stdtypes.html#boolean-type-bool>`_, `floats <https://docs.python.org/3/library/functions.html?highlight=float#float>`_, `integers <https://docs.python.org/3/library/functions.html?highlight=int#int>`_, and `strings <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
+the tests so far show that I can use tuples_, `booleans <https://docs.python.org/3/library/stdtypes.html#boolean-type-bool>`_, `floats <https://docs.python.org/3/library/functions.html?highlight=float#float>`_, `integers <https://docs.python.org/3/library/functions.html?highlight=int#int>`_, and `strings <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
 
 ----
 
@@ -503,7 +503,7 @@ from these tests I know that I can make `dictionaries <https://docs.python.org/3
 * `booleans <https://docs.python.org/3/library/stdtypes.html#boolean-type-bool>`_
 * `integers <https://docs.python.org/3/library/functions.html?highlight=int#int>`_
 * `floats <https://docs.python.org/3/library/functions.html?highlight=float#float>`_
-* `tuples <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_
+* tuples_
 
 and I cannot make `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with the following data structures as keys
 

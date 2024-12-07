@@ -247,7 +247,7 @@ green: make it pass
             {'a': 1, 'b': 2, 'c': 3, 'd': 4}
         )
 
-  the terminal shows passing tests. From these tests, I can say that keyword arguments are treated as :doc:`dictionaries </data_structures/dictionaries>`  in Python
+  the terminal shows passing tests. From these tests, I can say that keyword arguments are treated as :ref:`dictionaries`  in Python
 
 .. _test_functions_w_keyword_arguments_refactor_refactor:
 
@@ -336,7 +336,7 @@ review
 From the tests I know
 
 * I can use ``**name`` to represent any number of keyword arguments
-* that keyword arguments are represented as :doc:`dictionaries </data_structures/dictionaries>`  with curly braces - ``{}``
+* that keyword arguments are represented as :ref:`dictionaries`  with curly braces - ``{}``
 * I can use ``*name`` to represent any number of positional arguments
 * that positional arguments are represented as `tuples <https://docs.python.org/3/library/stdtypes.html#tuple>`_ with parentheses - ``()``
 * that passthrough functions return what they receive as input

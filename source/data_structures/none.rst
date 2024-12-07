@@ -416,7 +416,7 @@ test_is_none_a_tuple
 red: make it fail
 #################################################################################
 
-I add a new test to ``test_none.py`` to find out if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a `tuple <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_
+I add a new test to ``test_none.py`` to find out if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a tuple_
 
 .. code-block:: python
 
@@ -432,7 +432,7 @@ the terminal shows :ref:`AssertionError`
   AssertionError: () is not None
 
 
-``()`` is how `tuples <https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple>`_ are represented in Python
+``()`` is how tuples_ are represented in Python
 
 green: make it pass
 #################################################################################^
@@ -528,7 +528,7 @@ test_is_none_a_set
 red: make it fail
 #################################################################################
 
-following the same pattern from earlier, I add a new failing test for `sets <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_
+following the same pattern from earlier, I add a new failing test for sets_
 
 .. code-block:: python
 
@@ -570,7 +570,7 @@ test_is_none_a_dictionary
 red: make it fail
 #################################################################################
 
-I add a new test to compare `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ with :doc:`dictionaries </data_structures/dictionaries>`
+I add a new test to compare `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ with :ref:`dictionaries`
 
 .. code-block:: python
 
@@ -591,7 +591,7 @@ the terminal shows :ref:`AssertionError`
   AssertionError: {} is not None
 
 * ``dict()`` is one way to make an empty :doc:`dictionary </data_structures/dictionaries>` in Python
-* ``{}`` is how :doc:`dictionaries </data_structures/dictionaries>`  are represented in Python. Wait a minute! `sets <https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset>`_ are also represented with ``{}``. The difference is that :doc:`dictionaries </data_structures/dictionaries>` hold key-value pairs
+* ``{}`` is how :ref:`dictionaries`  are represented in Python. Wait a minute! sets_ are also represented with ``{}``. The difference is that :ref:`dictionaries` hold key-value pairs
 * Do you want to :doc:`read more about dictionaries </data_structures/dictionaries>`?
 
 green: make it pass

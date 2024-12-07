@@ -16,7 +16,7 @@ lists: list comprehensions
 
 ----
 
-`List Comprehensions <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#list-comprehensions>`_ are a way to make a :doc:`list </data_structures/lists/lists>` from an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_. It is a simple way to go over every item in the :doc:`list </data_structures/lists/lists>` and perform an operation usually in one line
+`List Comprehensions <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#list-comprehensions>`_ are a way to make a :doc:`list </data_structures/lists/lists>` from an iterable_. It is a simple way to go over every item in the :doc:`list </data_structures/lists/lists>` and perform an operation usually in one line
 
 .. _test_making_a_list_from_an_iterable:
 
@@ -47,8 +47,8 @@ I add a file called ``test_list_comprehensions.py`` to the ``tests`` folder with
 
 * ``a_list = []`` makes an empty list called ``a_list``
 * ``self.assertEqual(a_list, [])`` confirms that ``a_list`` is empty since it is equal to ``[]``
-* ``container = range(10)`` makes an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ of numbers from 0 to 9 with the `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ constructor_ and calls it ``container``
-* `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ makes an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ of numbers from 0 to the given number minus 1
+* ``container = range(10)`` makes an iterable_ of numbers from 0 to 9 with the `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ constructor_ and calls it ``container``
+* `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ makes an iterable_ of numbers from 0 to the given number minus 1
 * ``for item in container:`` uses a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ statement to make a loop that goes over every item of ``container``
 * ``a_list.append(item)`` adds the item from ``container`` to ``a_list`` on each cycle of the loop, using the ``append`` :ref:`method<functions>`, see :doc:`/data_structures/lists/lists` for more details
 * the second ``self.assertEqual(a_list, [])`` checks to see if ``a_list`` is still empty after the operation
@@ -321,7 +321,7 @@ green: make it pass
         return result
 
   - ``result = []`` makes an empty list called ``result``
-  - ``for item in argument:`` makes a loop over the items of ``argument`` which is an `iterable <https://docs.python.org/3/glossary.html#term-iterable>`_ passed into the function
+  - ``for item in argument:`` makes a loop over the items of ``argument`` which is an iterable_ passed into the function
   - ``result.append(item)`` adds each item from ``argument`` to the list called ``result``
   - ``return result`` returns ``result`` after the loop completes
 

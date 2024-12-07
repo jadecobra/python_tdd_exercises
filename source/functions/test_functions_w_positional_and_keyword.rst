@@ -361,7 +361,7 @@ From the tests I know that
 * I can define default values for arguments
 * positional arguments must come before keyword arguments
 * I can use ``**name`` to represent any number of keyword arguments
-* that keyword arguments are represented as :doc:`dictionaries </data_structures/dictionaries>`  with curly braces - ``{}``
+* that keyword arguments are represented as :ref:`dictionaries`  with curly braces - ``{}``
 * I can use ``*name`` to represent any number of positional arguments
 * that positional arguments are represented as `tuples <https://docs.python.org/3/library/stdtypes.html#tuple>`_ with parentheses - ``()``
 * that passthrough functions return what they receive as input
