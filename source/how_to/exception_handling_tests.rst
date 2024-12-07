@@ -69,7 +69,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I add it to the list of :ref:`Exceptions<exceptions>` encountered
+* I add it to the list of Exceptions_ encountered
 
   .. code-block:: python
 

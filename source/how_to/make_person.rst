@@ -90,7 +90,7 @@ green: make it pass
 
     AttributeError: module 'src.person' has no attribute 'factory'
 
-* I add it to the list of exceptions
+* I add it to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -963,7 +963,7 @@ green: make it pass
 
     SyntaxError: parameter without a default follows parameter with a default
 
-* I add it to the list of :ref:`Exceptions<exceptions>` encountered
+* I add it to the list of Exceptions_ encountered
 
   .. code-block:: python
 
