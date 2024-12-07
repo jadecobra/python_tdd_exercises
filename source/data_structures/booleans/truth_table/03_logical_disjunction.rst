@@ -114,7 +114,7 @@ refactor: make it better
             return False
         return True
 
-  I get a ``SyntaxError`` which I add to the list of :ref:`Exceptions<Exceptions>` encountered
+  I get a ``SyntaxError`` which I add to the list of Exceptions_ encountered
 
   .. code-block:: python
 

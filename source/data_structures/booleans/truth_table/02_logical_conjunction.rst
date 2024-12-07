@@ -47,7 +47,7 @@ green: make it pass
         return None
 
   the terminal shows :ref:`TypeError`
-* I add the new error to the list of :ref:`Exceptions<Exceptions>` encountered
+* I add the new error to the list of Exceptions_ encountered
 
   .. code-block:: python
 

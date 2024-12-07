@@ -77,7 +77,7 @@ green: make it pass
     # AssertionError
     # ModuleNotFoundError
 
-* I can make ``does_not_exist.py`` to solve the problem but I want to catch or handle the :ref:`Exception<Exceptions>` in the test. I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` which checks that the code in its context raises the :ref:`Exception<Exceptions>` it is given
+* I can make ``does_not_exist.py`` to solve the problem but I want to catch or handle it in the test. I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` which checks that the code in its context raises the `Exception <https://docs.python.org/3/library/exceptions.html>`_ it is given
 
   .. code-block:: python
 
@@ -109,7 +109,7 @@ red: make it fail
 
     NameError: name 'does_not_exist' is not defined
 
-* I add it to the list of :ref:`Exceptions<Exceptions>` encountered
+* I add it to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -168,7 +168,7 @@ red: make it fail
 
   because I tried to get something that does not exist from something that exists
 
-* I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
+* I add the error to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -237,7 +237,7 @@ red: make it fail
 
     TypeError: 'NoneType' object is not callable
 
-* I add it to the list of :ref:`Exceptions<Exceptions>` encountered
+* I add it to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -337,7 +337,7 @@ red: make it fail
 
     IndexError: list index out of range
 
-* I add it to the list of :ref:`Exceptions<Exceptions>` encountered
+* I add it to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -469,7 +469,7 @@ red: make it fail
 
     KeyError: 'does_not_exist'
 
-* another one for the list of :ref:`Exceptions<Exceptions>` encountered
+* another one for the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -515,7 +515,7 @@ red: make it fail
 
     ZeroDivisionError: division by zero
 
-* I add it to the list of :ref:`Exceptions<Exceptions>` encountered
+* I add it to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -558,7 +558,7 @@ red: make it fail
     def test_catching_exceptions_in_tests(self):
         raise Exception
 
-  the terminal shows an Exception_ which is the mother of the :ref:`Exceptions<Exceptions>` encountered so far, they inherit from it
+  the terminal shows an Exception_ which is the mother of the Exceptions_ encountered so far, they inherit from it
 
   .. code-block:: python
 
@@ -596,7 +596,7 @@ To review, the assertRaises_ :ref:`method<functions>` checks that the code in it
 refactor: make it better
 #################################################################################
 
-* I can use Exception_ to catch any of the :ref:`Exceptions<Exceptions>` that inherit from it, its children if you will
+* I can use Exception_ to catch any of the Exceptions_ that inherit from it, its children if you will
 
   .. code-block:: python
 
@@ -611,7 +611,7 @@ refactor: make it better
 
   all the tests are still green. The problem with using Exception_ to catch its children is it does not tell anyone that reads the code what the actual error is or which line caused it, especially when there is more than one line of code in the context. It is better to be specific, from the `Zen of python`_: ``Explicit is better than implicit``
 
-* I cannot use siblings or cousins to catch other :ref:`Exceptions<Exceptions>`
+* I cannot use siblings or cousins to catch other Exceptions_
 
   .. code-block:: python
 
@@ -684,7 +684,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-I have a way to catch :ref:`Exceptions<Exceptions>` in tests and ran into the following
+I have a way to catch Exceptions_ in tests and ran into the following
 
 * :ref:`AssertionError`
 * :ref:`ModuleNotFoundError`

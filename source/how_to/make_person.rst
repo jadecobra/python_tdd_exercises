@@ -69,7 +69,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I add it to the list of :ref:`Exceptions<Exceptions>` encountered
+* I add it to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -126,7 +126,7 @@ green: make it pass
 
     TypeError: factory() got an unexpected keyword argument 'first_name'
 
-* I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
+* I add the error to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -1705,7 +1705,7 @@ review
 
 I ran tests to make a :ref:`function<functions>` that takes in keyword arguments as input, has default values for some of them, performs an action based on an input and returns a :doc:`dictionary </data_structures/dictionaries>` as output
 
-I also ran into the following :ref:`Exceptions<Exceptions>`
+I also ran into the following Exceptions_
 
 * :ref:`AssertionError`
 * NameError_

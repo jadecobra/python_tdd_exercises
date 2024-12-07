@@ -88,6 +88,7 @@
 .. _zsh: https://zsh.sourceforge.io
 
 .. _Exception: https://docs.python.org/3/library/exceptions.html#Exception
+.. _Exceptions: https://docs.python.org/3/library/exceptions.html#Exception
 .. _ImportError: https://docs.python.org/3/library/exceptions.html#ImportError
 .. _IndexError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#IndexError
 .. _IndentationError: https://docs.python.org/3/library/exceptions.html#IndentationError

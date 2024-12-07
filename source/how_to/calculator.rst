@@ -98,7 +98,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
+* I add the error to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -125,7 +125,7 @@ green: make it pass
 
   I think of ``src.calculator.add`` as an address, ``add`` is something (an attribute) in the empty ``calculator.py`` file from the ``src`` folder/directory
 
-* I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
+* I add the error to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -160,7 +160,7 @@ green: make it pass
 
   because the ``add`` variable is :ref:`None` which is not callable_
 
-* I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
+* I add the error to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -702,7 +702,7 @@ green: make it pass
 
   dividing by ``0`` is not defined in mathematics and raises :ref:`Exception<Exceptions>` in Python
 
-* I add it to the list of :ref:`Exceptions<Exceptions>` encountered
+* I add it to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -744,7 +744,7 @@ the terminal shows my expectation with a failure for any value of ``x`` since ``
   >    return x / y
   E    ZeroDivisionError: division by zero
 
-:ref:`Exceptions<Exceptions>` like ZeroDivisionError_ break execution of a program. No code will run past the line that caused one, which means I have to take care of this one. See :doc:`/how_to/exception_handling_tests` for more
+Exceptions_ like ZeroDivisionError_ break execution of a program. No code will run past the line that caused one, which means I have to take care of this one. See :doc:`/how_to/exception_handling_tests` for more
 
 .. _test_division_green_1:
 
@@ -880,7 +880,7 @@ red: make it fail
 
     AttributeError: module 'src.calculator' has no attribute 'subtract'
 
-  can you tell what :ref:`Exceptions<Exceptions>` will show up as I go along?
+  can you tell what Exceptions_ will show up as I go along?
 
 .. _test_calculator_green:
 
@@ -1086,7 +1086,7 @@ I wrote the following tests for a program that performs the arithmetic operation
 * `test_multiplication`_
 * `test_division`_
 
-I also ran into the following :ref:`Exceptions<Exceptions>`
+I also ran into the following Exceptions_
 
 * :ref:`AssertionError`
 * NameError_

@@ -257,7 +257,7 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
   - ``python3`` is the major version of Python being used
   - ``-m`` is an option passed to Python to run the :ref:`module<ModuleNotFoundError>` given after the option as a script
 
-* I recommend you keep a list of :ref:`Exceptions<Exceptions>` you meet to become familiar with them, it helps when you run into failures later. Time to add :ref:`AssertionError` to the list
+* I recommend you keep a list of Exceptions_ you meet to become familiar with them, it helps when you run into failures later. Time to add :ref:`AssertionError` to the list
 
   .. code-block:: python
 

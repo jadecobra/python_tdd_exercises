@@ -71,7 +71,7 @@ red: make it fail
 
     TypeError: TestCase.assertEqual() missing 2 required positional arguments: 'first' and 'second'
 
-  which I add to the list of :ref:`Exceptions<Exceptions>` encountered
+  which I add to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -150,7 +150,7 @@ green: make it pass
 
     AttributeError: module 'sleep_duration' has no attribute 'duration'
 
-  I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
+  I add the error to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -849,7 +849,7 @@ The challenge is to write a program that calculates the difference between a giv
   - used `random.randint`_ to generate random numbers from the 24 hours in a day and :doc:`interpolated </how_to/pass_values>` them in the timestamps
   - then test that the ``duration`` :ref:`function<functions>` subtracts the hour for ``sleep_time`` from the hour for ``wake_time``
 
-I also ran into the following :ref:`Exceptions<Exceptions>`
+I also ran into the following Exceptions_
 
 * :ref:`AssertionError`
 * :ref:`TypeError`

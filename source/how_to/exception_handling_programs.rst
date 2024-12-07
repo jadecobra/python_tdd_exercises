@@ -50,7 +50,7 @@ green: make it pass
 
     raise_exception
 
-  which gives me NameError_
+  and get NameError_
 
   .. code-block:: python
 
@@ -91,7 +91,7 @@ green: make it pass
 
     AssertionError: Exception not raised
 
-* I use the `raise statement`_ to cause one
+* I use the `raise statement`_
 
   .. code-block:: python
 
@@ -100,7 +100,7 @@ green: make it pass
 
   and the terminal shows a passing test
 
-* I can use the `unittest.TestCase.assertRaisesRegex`_ :ref:`method<functions>` to be more specific when catching Exceptions_, it checks that the code in its context raises the :ref:`Exception<Exceptions>` it is given, with the message it is given, it uses `Regular Expressions`_ for the message
+* I can use the `unittest.TestCase.assertRaisesRegex`_ :ref:`method<functions>` to be more specific when catching Exceptions_, it checks that the code in its context raises the `Exception <https://docs.python.org/3/library/exceptions.html>`_ it is given, with the message it is given, it uses `Regular Expressions`_ for the message
 
   .. code-block:: python
 

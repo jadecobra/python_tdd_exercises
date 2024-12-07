@@ -27,7 +27,7 @@ who is this book for?
 * If you are interested in Python, this book is for you
 * If you just started your journey, CONGRATULATIONS! You picked Python from the many `programming languages <https://en.wikipedia.org/wiki/Programming_language>`_ out there, Celebrate it, this book is for you
 * If you are new to `Test Driven Development`_ in Python, this book is for you
-* If you already use Python but do not know any of the :ref:`Exceptions<Exceptions>` below, this book is for you
+* If you already use Python but do not know any of the Exceptions_ below, this book is for you
 
   - :ref:`AssertionError`
   - :ref:`AttributeError`

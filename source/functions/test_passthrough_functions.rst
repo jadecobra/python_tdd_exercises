@@ -50,7 +50,7 @@ green: make it pass
 
     TypeError: passthrough() takes 0 positional arguments but 1 was given
 
-* I add the new exception to the list of :ref:`Exceptions<Exceptions>` encountered
+* I add the new exception to the list of Exceptions_ encountered
 
   .. code-block:: python
 

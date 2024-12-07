@@ -1,9 +1,9 @@
 .. include:: ../links.rst
 
-.. _Exceptions:
+.. _Errors:
 
 #################################################################################
-exceptions (errors)
+errors
 #################################################################################
 
 The tests in this chapter cover the following

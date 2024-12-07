@@ -56,7 +56,7 @@ red: make it fail
       def test_functions_w_pass(self):
           self.assertIsNone(functions.function_w_pass())
 
-the terminal shows :ref:`ModuleNotFoundError` , and I add it to the list of :ref:`Exceptions<Exceptions>` encountered
+the terminal shows :ref:`ModuleNotFoundError` , and I add it to the list of Exceptions_ encountered
 
 .. code-block:: python
 
@@ -67,7 +67,7 @@ the terminal shows :ref:`ModuleNotFoundError` , and I add it to the list of :ref
 green: make it pass
 #################################################################################
 
-* I make a file called ``functions.py`` in the project folder and the terminal shows :ref:`AttributeError`\ , which I add to the list of :ref:`Exceptions<Exceptions>` encountered
+* I make a file called ``functions.py`` in the project folder and the terminal shows :ref:`AttributeError`\ , which I add to the list of Exceptions_ encountered
 
   .. code-block:: python
 

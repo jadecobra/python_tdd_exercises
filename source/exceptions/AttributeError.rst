@@ -55,7 +55,7 @@ the terminal shows :ref:`ModuleNotFoundError` if you have not yet done the :doc:
 green: make it pass
 #################################################################################
 
-* I make the list of :ref:`Exceptions<Exceptions>` encountered
+* I make the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -87,7 +87,7 @@ green: make it pass
 
     AttributeError: module 'module' has no attribute 'variable_0'
 
-* I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
+* I add the error to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -326,7 +326,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* I add it to the list of :ref:`Exceptions<Exceptions>` encountered
+* I add it to the list of Exceptions_ encountered
 
   .. code-block:: python
 

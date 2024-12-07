@@ -896,7 +896,7 @@ The challenge was to write a program that calculates the difference between a gi
   - `random.randint`_ and an :doc:`exception handler</how_to/exception_handling_programs>` to generate timestamps with random dates and times that are :doc:`interpolated </how_to/pass_values>` in strings for ``wake_time`` and ``sleep_time``
   - a `while statement`_ to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<functions>` raises ValueError_ with a message and returns the right difference between the two when ``wake_time`` is later than or the same as ``sleep_time``
 
-I also ran into the following :ref:`Exceptions<Exceptions>`
+I also ran into the following Exceptions_
 
 * :ref:`AssertionError`
 * :ref:`TypeError`

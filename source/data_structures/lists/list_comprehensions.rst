@@ -118,7 +118,7 @@ refactor: make it better
 
     NameError: name 'list_comprehensions' is not defined
 
-* I add it to the list of :ref:`Exceptions<Exceptions>` encountered
+* I add it to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -154,7 +154,7 @@ refactor: make it better
 
     AttributeError: module 'list_comprehensions' has no attribute 'make_a_list'
 
-* I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
+* I add the error to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -177,7 +177,7 @@ refactor: make it better
 
     TypeError: make_a_list() takes 0 positional arguments but 1 was given
 
-* I add it to the list of :ref:`Exceptions<Exceptions>` encountered
+* I add it to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -912,7 +912,7 @@ I have written the same thing multiple times in these tests and since the progra
 
   the terminal shows all tests are still passing
 
-I also ran into the following :ref:`Exceptions<Exceptions>`
+I also ran into the following Exceptions_
 
 * :ref:`AssertionError`
 * NameError_

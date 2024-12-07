@@ -68,7 +68,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I add it to the list of :ref:`Exceptions<Exceptions>` encountered
+* I add it to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -89,7 +89,7 @@ green: make it pass
 
     AttributeError: module 'src.telephone' has no attribute 'text'
 
-* another one for the list of :ref:`Exceptions<Exceptions>` encountered
+* another one for the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -122,7 +122,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* which I add to the list of :ref:`Exceptions<Exceptions>` encountered
+* which I add to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -734,7 +734,7 @@ Here are the tests I ran to see what happens when I pass Python :doc:`/data_stru
 * `test_passing_a_list`_
 * `test_passing_a_dictionary`_
 
-I also ran into the following :ref:`Exceptions<Exceptions>`
+I also ran into the following Exceptions_
 
 * :ref:`AssertionError`
 * NameError_
