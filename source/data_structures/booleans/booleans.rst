@@ -947,8 +947,8 @@ From the tests I see that
 
 I can sum this up as
 
-* all `objects <https://docs.python.org/3/glossary.html#term-object>`_ that have things are True_
-* empty `objects <https://docs.python.org/3/glossary.html#term-object>`_ including ``0`` and :ref:`None` are False_
+* all objects_ that have things are True_
+* empty objects_ including ``0`` and :ref:`None` are False_
 * False_ is a boolean_
 
 Would you like to :doc:`test the truth table<truth_table>`?

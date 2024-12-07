@@ -42,6 +42,7 @@
 .. _mkdir: https://man7.org/linux/man-pages/man1/mkdir.1.html
 .. _modulo: https://en.wikipedia.org/wiki/Modulo
 .. _object: https://docs.python.org/3/glossary.html#term-object
+.. _objects: https://docs.python.org/3/glossary.html#term-object
 .. _python package: https://docs.python.org/3/glossary.html#term-regular-package
 .. _python packages: https://docs.python.org/3/glossary.html#term-regular-package
 .. _pip: https://pypi.org/project/pip/

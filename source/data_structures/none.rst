@@ -65,7 +65,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-There are otherPython `objects <https://docs.python.org/3/glossary.html#term-object>`_ I can compare with `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ to learn more about what it is or is not
+There are otherPython objects_ I can compare with `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ to learn more about what it is or is not
 
 ----
 

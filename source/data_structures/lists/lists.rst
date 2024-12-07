@@ -16,7 +16,7 @@ lists
 
 ----
 
-A list_ is an object_ that can hold other `objects <https://docs.python.org/3/glossary.html#term-object>`_
+A list_ is an object_ that can hold other objects_
 
 
 * Lists are represented with ``[]``

@@ -188,7 +188,7 @@ green: make it pass
 test_defining_classes_w_object
 *********************************************************************************
 
-In object oriented programming there is a concept called `Inheritance <https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming>`_\ ). With Inheritance I can define new `objects <https://docs.python.org/3/glossary.html#term-object>`_ that inherit from existing `objects <https://docs.python.org/3/glossary.html#term-object>`_.
+In object oriented programming there is a concept called `Inheritance <https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming>`_\ ). With Inheritance I can define new objects_ that inherit from existing objects_.
 
 Making new objects is easier because I do not have to reinvent or rewrite things that already exist, I can inherit them instead and change the new objects for my specific use case
 
