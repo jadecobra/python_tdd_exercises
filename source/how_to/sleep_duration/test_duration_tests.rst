@@ -54,7 +54,7 @@ green: make it pass
 
     get_datetime
 
-  the terminal shows a NameError_
+  the terminal shows NameError_
 
   .. code-block:: python
 
@@ -134,7 +134,7 @@ green: make it pass
     def get_datetime(argument):
         return datetime.datetime(2006, 11, 21, 19, 8)
 
-  and the terminal shows a NameError_
+  and the terminal shows NameError_
 
   .. code-block:: python
 
@@ -199,7 +199,7 @@ green: make it pass
 
     duration
 
-  and get a NameError_
+  and get NameError_
 
   .. code-block:: python
 
@@ -267,14 +267,14 @@ green: make it pass
 
   it looks like the ``duration`` :ref:`function<functions>` has to make a decision based on its inputs
 
-* I change the `return statement`_ to raise a ValueError_ with the inputs or return the inputs to see the difference between them and the expected output
+* I change the `return statement`_ to raise ValueError_ with the inputs or return the inputs to see the difference between them and the expected output
 
   .. code-block:: python
 
     def duration(sleep_time, wake_time):
         raise ValueError(sleep_time, wake_time)
 
-* When I raise a ValueError_ in ``duration`` I get another :ref:`AssertionError` because the message in the ValueError_ does not match the expectation of the test
+* When I raise ValueError_ in ``duration`` I get another :ref:`AssertionError` because the message in the ValueError_ does not match the expectation of the test
 
   .. code-block:: python
 
@@ -283,7 +283,7 @@ green: make it pass
     AssertionError: "wake_time: "5602/08/29 05:06" is earlier than sleep_time: "8373/05/08 05:29"" does not match "('8373/05/08 05:29', '5602/08/29 05:06')"
     AssertionError: "wake_time: "7413/05/24 15:04" is earlier than sleep_time: "8720/08/18 01:02"" does not match ""
 
-  this tells me that the test expects a message with the ValueError_, or I get a ValueError_ that looks like this
+  this tells me that the test expects a message with the ValueError_, or I get ValueError_ that looks like this
 
   .. code-block:: python
 
@@ -292,7 +292,7 @@ green: make it pass
     ValueError: ('6471/03/10 05:04', '7883/06/01 02:38')
     ValueError: ('7370/08/12 21:34', '7937/03/27 01:58')
 
-  which does not tell me anything so I comment it out to get one of the other :ref:`AssertionErrors<AssertionError>`, I can raise a ValueError_ again or try to return the inputs
+  which does not tell me anything so I comment it out to get one of the other :ref:`AssertionErrors<AssertionError>`, I can raise ValueError_ again or try to return the inputs
 
 * When I get the error with the message about ``wake_time`` being earlier than ``sleep_time``, I copy it from the terminal to change the message of the ValueError_
 
@@ -345,7 +345,7 @@ green: make it pass
     AssertionError: "wake_time: "3208/04/09 09:10" is earlier than sleep_time: "3957/12/23 22:44"" does not match "wake_time: "0615/04/17 08:51" is earlier than sleep_time: "6631/03/18 20:25""
     AssertionError: "wake_time: "7169/09/04 15:18" is earlier than sleep_time: "9367/03/02 03:17"" does not match "wake_time: "0615/04/17 08:51" is earlier than sleep_time: "6631/03/18 20:25""
 
-  or a ValueError_
+  or ValueError_
 
   .. code-block:: python
 
@@ -377,7 +377,7 @@ green: make it pass
             f'sleep_time: "{sleep_time}"'
         )
 
-  and get a ValueError_
+  and get ValueError_
 
   .. code-block:: python
 
@@ -386,7 +386,7 @@ green: make it pass
     ValueError: wake_time: "3201/08/13 15:20" is earlier than sleep_time: "1074/03/31 16:44"
     ValueError: wake_time: "9810/07/30 04:29" is earlier than sleep_time: "9792/03/04 12:44"
 
-  this is not right, the timestamps for ``wake_time`` are not earlier than ``sleep_time``. The ``duration`` :ref:`function<functions>` needs a condition to make sure it raises a ValueError_ only when ``wake_time`` is earlier than ``sleep_time``. I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
+  this is not right, the timestamps for ``wake_time`` are not earlier than ``sleep_time``. The ``duration`` :ref:`function<functions>` needs a condition to make sure it raises ValueError_ only when ``wake_time`` is earlier than ``sleep_time``. I add the error to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 

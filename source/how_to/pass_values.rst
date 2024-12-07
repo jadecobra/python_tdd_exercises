@@ -59,7 +59,7 @@ red: make it fail
                 "I received: hello"
             )
 
-  the terminal shows a NameError_
+  the terminal shows NameError_
 
   .. code-block:: python
 
@@ -104,7 +104,7 @@ green: make it pass
 
     text
 
-  and the terminal shows a NameError_
+  and the terminal shows NameError_
 
   .. code-block:: python
 
@@ -626,7 +626,7 @@ green: make it pass
 
     text
 
-  and get a NameError_
+  and get NameError_
 
   .. code-block:: python
 

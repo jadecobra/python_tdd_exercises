@@ -665,7 +665,7 @@ and the terminal shows a `KeyError <https://docs.python.org/3/library/exceptions
   >       a_dictionary['non_existent_key']
   E       KeyError: 'non_existent_key'
 
-A KeyError_ is raised when a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ is called with a ``key`` that does not exist.
+KeyError_ is raised when a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ is called with a ``key`` that does not exist.
 
 green: make it pass
 #################################################################################
@@ -695,7 +695,7 @@ green: make it pass
             a_dictionary['non_existent_key']
         a_dictionary['ky1']
 
-* the terminal shows a KeyError_ for the next line where I misspelled the key
+* the terminal shows KeyError_ for the next line where I misspelled the key
 
   .. code-block:: python
 
@@ -736,14 +736,14 @@ What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datas
         }
         self.assertIsNone(a_dictionary['non_existent_key'])
 
-  the terminal shows a KeyError_ because ``non_existent_key`` does not exist in ``a_dictionary``
+  the terminal shows KeyError_ because ``non_existent_key`` does not exist in ``a_dictionary``
 
   .. code-block:: python
 
     >       self.assertIsNone(a_dictionary['non_existent_key'])
     E       KeyError: 'non_existent_key'
 
-* I can use the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :ref:`method<functions>` when I do not wantPython to raise a KeyError_ for a key that does not exist
+* I can use the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :ref:`method<functions>` when I do not wantPython to raise KeyError_ for a key that does not exist
 
   .. code-block:: python
 
@@ -954,12 +954,12 @@ I add a failing test
       a_dictionary = {'bippity': 'boppity'}
       a_dictionary['another_key']
 
-and the terminal shows a KeyError_
+and the terminal shows KeyError_
 
 green: make it pass
 #################################################################################
 
-I add ``self.assertRaises`` to confirm that a KeyError_ gets raised for the test to pass
+I add ``self.assertRaises`` to confirm that KeyError_ gets raised for the test to pass
 
 .. code-block:: python
 
@@ -1016,8 +1016,8 @@ refactor: make it better
             }
         )
 
-  - when I first try to access the value for ``another_key`` in ``a_dictionary`` I get a KeyError_ because it does not exist in the `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
-  - after using `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_ and passing in ``another_key`` as the key, it gets added to the `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ so I do not get a KeyError_ when I try to access it again
+  - when I first try to access the value for ``another_key`` in ``a_dictionary`` I get KeyError_ because it does not exist in the `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+  - after using `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_ and passing in ``another_key`` as the key, it gets added to the `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ so I do not get KeyError_ when I try to access it again
 
   .. code-block:: python
 

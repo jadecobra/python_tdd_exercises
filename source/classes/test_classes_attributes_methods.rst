@@ -194,7 +194,7 @@ green: make it pass
 
         method_a
 
-  the terminal shows a NameError_ because there is no definition for ``method_a``
+  the terminal shows NameError_ because there is no definition for ``method_a``
 
 
 * I define ``method_a`` as an attribute by pointing it to :ref:`None`

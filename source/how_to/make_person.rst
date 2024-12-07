@@ -59,7 +59,7 @@ red: make it fail
                 None
             )
 
-  the terminal shows a NameError_
+  the terminal shows NameError_
 
   .. code-block:: python
 
@@ -220,7 +220,7 @@ green: make it pass
             None
         )
 
-  the terminal shows a NameError_
+  the terminal shows NameError_
 
   .. code-block:: python
 
@@ -724,7 +724,7 @@ refactor: make it better
             'age': this_year() - year_of_birth,
         }
 
-  and get a NameError_
+  and get NameError_
 
   .. code-block:: python
 
@@ -912,7 +912,7 @@ red: make it fail
         )
         ...
 
-  to get a NameError_
+  to get NameError_
 
   .. code-block:: python
 
@@ -1000,7 +1000,7 @@ green: make it pass
         ):
         ...
 
-  and the terminal shows a NameError_
+  and the terminal shows NameError_
 
   .. code-block:: python
 
@@ -1071,7 +1071,7 @@ green: make it pass
         )
         ...
 
-  the terminal shows a NameError_
+  the terminal shows NameError_
 
   .. code-block:: python
 
@@ -1370,7 +1370,7 @@ green: make it pass
 
     factory
 
-  the terminal shows a NameError_
+  the terminal shows NameError_
 
   .. code-block:: python
 

@@ -102,7 +102,7 @@ green: make it pass
 
     variable_0
 
-  and the terminal shows a NameError_
+  and the terminal shows NameError_
 
   .. code-block::
 
@@ -140,7 +140,7 @@ AttributeError vs NameError
 
 An `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name in an object_ from outside the object_ and the name does not exist, for example ``humans.wings``
 
-A NameError_ is raised when there is a reference to a name within an object_ and there is no definition for the name
+NameError_ is raised when there is a reference to a name within an object_ and there is no definition for the name
 
 
 refactor: make it better
@@ -169,7 +169,7 @@ I could repeat the above tests as a drill to help remember the solution
     variable_0 = None
     variable_1
 
-  the terminal shows a NameError_
+  the terminal shows NameError_
 
   .. code-block:: python
 
@@ -207,7 +207,7 @@ I could repeat the above tests as a drill to help remember the solution
     variable_1 = None
     variable_2
 
-  the terminal shows a NameError_
+  the terminal shows NameError_
 
   .. code-block:: python
 
@@ -248,7 +248,7 @@ I could repeat the above tests as a drill to help remember the solution
     variable_2 = None
     variable_3
 
-  the terminal shows a NameError_
+  the terminal shows NameError_
 
   .. code-block:: python
 
@@ -266,7 +266,7 @@ I could repeat the above tests as a drill to help remember the solution
 I have a pattern for the drill. When I test an attribute in a module, I get
 
 * an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ when the attribute does not exist
-* a NameError_ when I add the name to the module
+* NameError_ when I add the name to the module
 * a passing test when I define the name as a variable
 
 If you are feeling adventurous you can add more tests to ``test_attribute_error_w_variables`` until you get to ``module.variable_99``, you will have 100 lines
@@ -286,7 +286,7 @@ Repeat the pattern until all tests pass.
 If you have been typing along *WELL DONE!* You now know
 
 * how to solve :ref:`ModuleNotFoundError`
-* how to solve a NameError_ using variables
+* how to solve NameError_ using variables
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 
 ----
@@ -378,7 +378,7 @@ refactor: make it better
 *YOU DID IT AGAIN!* You now know
 
 * how to solve :ref:`ModuleNotFoundError`
-* how to solve a NameError_
+* how to solve NameError_
 * how to solve :ref:`TypeError` by defining a callable
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
@@ -476,7 +476,7 @@ refactor: make it better
 *WELL DONE!* You now know
 
 * how to solve :ref:`ModuleNotFoundError`
-* how to solve a NameError_
+* how to solve NameError_
 * how to solve :ref:`TypeError` by defining a callable_
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
@@ -628,7 +628,7 @@ refactor: make it better
 *WELL DONE!* You now know You now know
 
 * how to solve :ref:`ModuleNotFoundError`
-* how to solve a NameError_
+* how to solve NameError_
 * how to solve :ref:`TypeError` by defining a callable_
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
@@ -733,7 +733,7 @@ review
 and learned
 
 * how to solve :ref:`ModuleNotFoundError`
-* how to solve a NameError_
+* how to solve NameError_
 * how to solve :ref:`TypeError` by defining a callable_
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`

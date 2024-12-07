@@ -85,7 +85,7 @@ red: make it fail
   - the assertEqual_ :ref:`method<functions>` from the `unittest.TestCase`_ :ref:`class<classes>` checks if its 2 inputs are the same. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
   - the explanation I like from what I have seen is that one of them is ``reality`` - ``src.calculator.add(0, 1)``, and the other is my ``expectation`` - ``1``, because ``0`` plus ``1`` is ``1``
 
-  but the terminal shows a NameError_
+  but the terminal shows NameError_
 
   .. code-block:: python
 
@@ -140,7 +140,7 @@ green: make it pass
 
     add
 
-  the terminal shows a NameError_
+  the terminal shows NameError_
 
   .. code-block:: python
 
@@ -450,7 +450,7 @@ green: make it pass
 
     subtract
 
-  the terminal shows a NameError_
+  the terminal shows NameError_
 
   .. code-block:: python
 
@@ -893,7 +893,7 @@ green: make it pass
 
     subtract
 
-  and get a NameError_
+  and get NameError_
 
   .. code-block:: python
 

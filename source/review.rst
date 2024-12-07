@@ -17,8 +17,8 @@ exceptions review
 * What causes :ref:`AssertionError`?
 * What causes :ref:`AttributeError`?
 * What causes :ref:`ModuleNotFoundError`?
-* What causes a NameError_?
-* What is the difference between :ref:`AttributeError` and a NameError_?
+* What causes NameError_?
+* What is the difference between :ref:`AttributeError` and NameError_?
 * What causes :ref:`TypeError`?
-* What data structure has an IndexError_?
-* What data structure has a KeyError_?
+* What data structure has IndexError_?
+* What data structure has KeyError_?

@@ -112,7 +112,7 @@ refactor: make it better
           a_list
       )
 
-  the terminal shows a NameError_
+  the terminal shows NameError_
 
   .. code-block:: python
 

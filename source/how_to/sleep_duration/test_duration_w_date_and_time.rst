@@ -65,7 +65,7 @@ red: make it fail
                 )
             )
 
-  which gives me a ValueError_
+  which gives me ValueError_
 
   .. code-block:: python
 
@@ -100,7 +100,7 @@ green: make it pass
 
         int('1999/12/31 21')
 
-  the terminal shows a ValueError_ with the same message from ``test_duration_w_date_and_time``
+  the terminal shows ValueError_ with the same message from ``test_duration_w_date_and_time``
 
   .. code-block:: python
 
@@ -166,7 +166,7 @@ green: make it pass
         else:
             return None
 
-  and the terminal shows a ValueError_
+  and the terminal shows ValueError_
 
   .. code-block:: python
 
@@ -263,7 +263,7 @@ I add a test to ``test_sleep_duration.py`` from `Examples of usage: datetime <ht
   def test_duration_w_date_and_time(self):
   ...
 
-and the terminal shows a NameError_
+and the terminal shows NameError_
 
 .. code-block:: python
 
@@ -394,7 +394,7 @@ refactor: make it better
             )
         )
 
-  which gives me a ValueError_
+  which gives me ValueError_
 
   .. code-block:: python
 
@@ -479,7 +479,7 @@ refactor: make it better
                 )
             )
 
-  and the terminal shows a NameError_
+  and the terminal shows NameError_
 
   .. code-block:: python
 
@@ -778,7 +778,7 @@ and the test is still green
 
     AttributeError: module 'sleep_duration' has no attribute 'duration'...
 
-* I change the name of ``duration_a`` to ``duration`` in ``sleep_duration.py`` and ``test_sleep_duration.py`` which leaves me with a ValueError_
+* I change the name of ``duration_a`` to ``duration`` in ``sleep_duration.py`` and ``test_sleep_duration.py`` which leaves me with ValueError_
 
   .. code-block:: python
 
@@ -848,7 +848,7 @@ and the test is still green
   - generates a random timestamp by calling ``get_random_timestamp``
   - checks if the timestamp is good by calling ``sleep_duration.get_datetime``
   - if the timestamp is good, the :ref:`function<functions>` returns it
-  - if the timestamp is bad, it raises a ValueError_ and repeats the process by calling itself
+  - if the timestamp is bad, it raises ValueError_ and repeats the process by calling itself
 
 * I can add another :ref:`function<functions>` to remove some repetition
 
@@ -894,7 +894,7 @@ The challenge was to write a program that calculates the difference between a gi
 * `test_duration_w_date_and_time`_ where I used
 
   - `random.randint`_ and an :doc:`exception handler</how_to/exception_handling_programs>` to generate timestamps with random dates and times that are :doc:`interpolated </how_to/pass_values>` in strings for ``wake_time`` and ``sleep_time``
-  - a `while statement`_ to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<functions>` raises a ValueError_ with a message and returns the right difference between the two when ``wake_time`` is later than or the same as ``sleep_time``
+  - a `while statement`_ to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<functions>` raises ValueError_ with a message and returns the right difference between the two when ``wake_time`` is later than or the same as ``sleep_time``
 
 I also ran into the following :ref:`Exceptions<Exceptions>`
 

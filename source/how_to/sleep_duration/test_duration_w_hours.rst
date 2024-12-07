@@ -103,7 +103,7 @@ green: make it pass
         None
     )
 
-  which gives me a NameError_
+  which gives me NameError_
 
   .. code-block:: python
 
@@ -164,7 +164,7 @@ green: make it pass
 
     duration
 
-  the terminal shows a NameError_
+  the terminal shows NameError_
 
   .. code-block:: python
 

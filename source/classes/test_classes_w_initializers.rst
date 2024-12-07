@@ -67,7 +67,7 @@ green: make it pass
 
         sex
 
-  the terminal produces a NameError_
+  the terminal produces NameError_
 
 
 * I add a definition for the ``sex`` attribute

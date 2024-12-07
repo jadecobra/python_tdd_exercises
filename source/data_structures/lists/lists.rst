@@ -397,7 +397,7 @@ green: make it pass
 test_index_error
 *********************************************************************************
 
-An IndexError_ is raised when I try to get an item from a list but use a number that is greater than the number of items in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_.
+IndexError_ is raised when I try to get an item from a list but use a number that is greater than the number of items in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_.
 
 red: make it fail
 ===================
@@ -410,7 +410,7 @@ I add a failing test to show this
         a_list = ['first', 'second', 'third', 'fourth']
         a_list[5]
 
-the terminal shows an IndexError_
+the terminal shows IndexError_
 
 .. code-block:: python
 
@@ -453,7 +453,7 @@ refactor: make it better
             a_list[5]
         a_list[-5]
 
-  the terminal shows an IndexError_
+  the terminal shows IndexError_
 * When I indent the line under the `self.assertRaises` context, the test passes
 
   .. code-block:: python

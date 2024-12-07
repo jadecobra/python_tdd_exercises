@@ -1,7 +1,5 @@
 .. include:: ../links.rst
 
-.. _Exceptions:
-
 #################################################################################
 how to handle Exceptions in programs
 #################################################################################
@@ -52,7 +50,7 @@ green: make it pass
 
     raise_exception
 
-  which gives me a NameError_
+  which gives me NameError_
 
   .. code-block:: python
 
@@ -173,7 +171,7 @@ green: make it pass
 
     exception_handler
 
-  I get a NameError_
+  I get NameError_
 
   .. code-block:: python
 
@@ -276,7 +274,7 @@ green: make it pass
     def exception_handler(argument):
         return 'failed'
 
-  and the terminal shows a NameError_
+  and the terminal shows NameError_
 
   .. code-block:: python
 

@@ -103,7 +103,7 @@ red: make it fail
     def test_catching_name_error_in_tests(self):
         does_not_exist
 
-  and the terminal shows a NameError_
+  and the terminal shows NameError_
 
   .. code-block:: python
 
@@ -147,7 +147,7 @@ red: make it fail
     def test_catching_attribute_error_in_tests(self):
         src.exceptions.does_not_exist
 
-  the terminal shows a NameError_
+  the terminal shows NameError_
 
   .. code-block:: python
 
@@ -219,7 +219,7 @@ red: make it fail
 
     function_name
 
-  and the terminal shows a NameError_
+  and the terminal shows NameError_
 
   .. code-block:: python
 
@@ -331,7 +331,7 @@ red: make it fail
         a_list = [1, 2, 3, 'n']
         a_list[4]
 
-  the terminal shows an IndexError_
+  the terminal shows IndexError_
 
   .. code-block:: python
 
@@ -393,7 +393,7 @@ green: make it pass
             a_list[4]
         a_list[-5]
 
-  the terminal shows an IndexError_
+  the terminal shows IndexError_
 
   .. code-block:: python
 
@@ -463,7 +463,7 @@ red: make it fail
     def test_catching_key_error_in_tests(self):
         {'key': 'value'}['does_not_exist']
 
-  I get a KeyError_
+  I get KeyError_
 
   .. code-block:: python
 
@@ -619,7 +619,7 @@ refactor: make it better
         with self.assertRaises(ModuleNotFoundError):
             {'key': 'value'}['does_not_exist']
 
-  shows a KeyError_
+  shows KeyError_
 
   .. code-block:: python
 
@@ -648,7 +648,7 @@ refactor: make it better
             raise Exception
             a_list[-5]
 
-  the terminal still shows a passing test, even though Exception_ is not an IndexError_, it looks like the assertRaises_ exits after the first line that causes an IndexError_. When I move the `raise statement`_ above it
+  the terminal still shows a passing test, even though Exception_ is not IndexError_, it looks like the assertRaises_ exits after the first line that causes IndexError_. When I move the `raise statement`_ above it
 
   .. code-block:: python
 
@@ -665,7 +665,7 @@ refactor: make it better
 
     Exception
 
-  because it is not an IndexError_
+  because it is not IndexError_
 
 * as a rule of thumb I write one line of code for one exception handler to know which line caused which error
 
