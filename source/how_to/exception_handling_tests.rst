@@ -77,7 +77,7 @@ green: make it pass
     # AssertionError
     # ModuleNotFoundError
 
-* I can make ``does_not_exist.py`` to solve the problem but I want to catch or handle it in the test. I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` which checks that the code in its context raises the `Exception <https://docs.python.org/3/library/exceptions.html>`_ it is given
+* I can make ``does_not_exist.py`` to solve the problem but I want to catch or handle it in the test. I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` which checks that the code in its context raises the Exception_ it is given
 
   .. code-block:: python
 
@@ -558,7 +558,7 @@ red: make it fail
     def test_catching_exceptions_in_tests(self):
         raise Exception
 
-  the terminal shows an Exception_ which is the mother of the Exceptions_ encountered so far, they inherit from it
+  the terminal shows Exception_ which is the mother of the Exceptions_ encountered so far, they inherit from it
 
   .. code-block:: python
 
@@ -590,7 +590,6 @@ when I add the assertRaises_ :ref:`method<functions>` to the test
 
 the terminal shows all tests are passing.
 
-
 To review, the assertRaises_ :ref:`method<functions>` checks that the code in its context raises the Exception_ it is given.
 
 refactor: make it better
@@ -609,7 +608,7 @@ refactor: make it better
         with self.assertRaises(Exception):
             1 / 0
 
-  all the tests are still green. The problem with using Exception_ to catch its children is it does not tell anyone that reads the code what the actual error is or which line caused it, especially when there is more than one line of code in the context. It is better to be specific, from the `Zen of python`_: ``Explicit is better than implicit``
+  all the tests are still green. The problem with using Exception_ to catch its children, is it does not tell anyone that reads the code what the actual error is or which line caused it, especially when there is more than one line of code in the context. It is better to be specific, from the `Zen of python`_: ``Explicit is better than implicit``
 
 * I cannot use siblings or cousins to catch other Exceptions_
 
@@ -667,7 +666,7 @@ refactor: make it better
 
   because it is not IndexError_
 
-* as a rule of thumb I write one line of code for one exception handler to know which line caused which error
+* as a rule of thumb I write one line of code for one :doc:`exception handler</how_to/exception_handling_tests>` to know which line caused which error
 
   .. code-block:: python
 

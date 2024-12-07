@@ -100,7 +100,7 @@ green: make it pass
 
   and the terminal shows passing tests
 
-* I can use the `unittest.TestCase.assertRaisesRegex`_ :ref:`method<functions>` to be more specific in tests, it checks that the code in its context raises the `Exception <https://docs.python.org/3/library/exceptions.html>`_ it is given, with the message it is given, it uses `Regular Expressions`_ for this
+* I can use the `unittest.TestCase.assertRaisesRegex`_ :ref:`method<functions>` to be more specific in tests, it checks that the code in its context raises the Exception_ it is given, with the message it is given, it uses `Regular Expressions`_ for this
 
   .. code-block:: python
 
@@ -135,7 +135,7 @@ green: make it pass
 test_catching_failure
 *********************************************************************************
 
-Time to add an exception handler to the program
+Time to add an :doc:`exception handler</how_to/exception_handling_tests>` to the program
 
 red: make it fail
 #################################################################################

@@ -484,7 +484,7 @@ and the terminal shows :ref:`TypeError`
 green: make it pass
 #################################################################################
 
-I add an exception handler to the test to confirm the findings
+I add an :doc:`exception handler</how_to/exception_handling_tests>` to the test to confirm the findings
 
 .. code-block:: python
 
@@ -680,7 +680,7 @@ green: make it pass
     # TypeError
     # KeyError
 
-* then add an exception handler to confirm that the error is raised
+* then add an :doc:`exception handler</how_to/exception_handling_tests>` to confirm that the error is raised
 
   .. code-block:: python
 
@@ -702,7 +702,7 @@ green: make it pass
     >       a_dictionary['ky1']
     E       KeyError: 'ky1'
 
-  and I add it to the exception handler to make the test pass
+  and I add it to the :doc:`exception handler</how_to/exception_handling_tests>` to make the test pass
 
   .. code-block:: python
 
