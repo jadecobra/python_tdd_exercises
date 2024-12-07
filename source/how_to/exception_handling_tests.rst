@@ -41,7 +41,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 exceptions
 
-  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows an :ref:`AssertionError`
+  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -60,7 +60,7 @@ red: make it fail
         def test_catching_module_not_found_error_in_tests(self):
             import does_not_exist
 
-  the terminal shows a :ref:`ModuleNotFoundError`
+  the terminal shows :ref:`ModuleNotFoundError`
 
   .. code-block:: python
 
@@ -160,7 +160,7 @@ red: make it fail
     import src.exceptions
     import unittest
 
-  which gives me an :ref:`AttributeError`
+  which gives me :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -207,7 +207,7 @@ red: make it fail
     def test_catching_type_error_in_tests(self):
         src.exceptions.function_name('argument')
 
-  and get an :ref:`AttributeError`
+  and get :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -231,7 +231,7 @@ red: make it fail
 
     function_name = None
 
-  and get a :ref:`TypeError`
+  and get :ref:`TypeError`
 
   .. code-block:: python
 
@@ -271,14 +271,14 @@ If I make ``function_name`` a :ref:`function<functions>`
   def function_name():
       return None
 
-the terminal still shows passing tests, I have a :ref:`TypeError` because the call sends an argument and the :ref:`function<functions>` does not accept input. When I add a parameter to the definition
+the terminal still shows passing tests, I have the :ref:`TypeError` because the call sends an argument and the :ref:`function<functions>` does not accept input. When I add a parameter to the definition
 
 .. code-block:: python
 
   def function_name(argument):
       return None
 
-the terminal shows an :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -625,7 +625,7 @@ refactor: make it better
 
     KeyError: 'does_not_exist'
 
-  because it is not a :ref:`ModuleNotFoundError`
+  because it is not :ref:`ModuleNotFoundError`
 
 * As promised here is why the second AssertRaises_ in :ref:`test_catching_index_error_in_tests` is not a repetition, even though the test still passes when I remove it
 

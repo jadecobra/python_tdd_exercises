@@ -49,7 +49,7 @@ I add a failing test to ``test_sleep_duration.py`` with a `while statement`_ to 
   def test_duration_w_hours_and_minutes(self):
   ...
 
-and get an :ref:`AssertionError`
+and get :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -86,7 +86,7 @@ green: make it pass
                 wake_time=wake_time
             )
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -273,7 +273,7 @@ refactor: make it better
                 f'{duration_minutes:02}'
             )
 
-  which gives me an :ref:`AssertionError` for ``test_duration_w_an_earlier_wake_than_sleep_time`` and a random one when ``wake_time`` is earlier than ``sleep_time`` in ``test_duration_w_hours_and_minutes``
+  which gives me :ref:`AssertionError` for ``test_duration_w_an_earlier_wake_than_sleep_time`` and a random one when ``wake_time`` is earlier than ``sleep_time`` in ``test_duration_w_hours_and_minutes``
 
   .. code-block:: python
 

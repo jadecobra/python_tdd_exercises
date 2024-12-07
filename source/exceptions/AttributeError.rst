@@ -44,13 +44,13 @@ I open a new file, save it as ``test_attribute_error.py`` in the ``tests`` folde
 * ``import unittest`` imports the unittest_ module from thePython standard library
 * ``import module`` imports the ``module`` module - which will hold the code I am testing
 
-the terminal shows a :ref:`ModuleNotFoundError` if you have not yet done the :doc:`/how_to/exception_handling_tests` chapter
+the terminal shows :ref:`ModuleNotFoundError` if you have not yet done the :doc:`/how_to/exception_handling_tests` chapter
 
 .. code-block:: python
 
   ModuleNotFoundError: No module called 'module'
 
-A :ref:`ModuleNotFoundError` is raised when a name is provided to an `import statement`_ andPython cannot find the name. Since there is currently no file called ``module.py`` the ``import module`` line causes a failure
+:ref:`ModuleNotFoundError` is raised when a name is provided to an `import statement`_ andPython cannot find the name. Since there is currently no file called ``module.py`` the ``import module`` line causes a failure
 
 green: make it pass
 #################################################################################
@@ -285,7 +285,7 @@ Repeat the pattern until all tests pass.
 
 If you have been typing along *WELL DONE!* You now know
 
-* how to solve a :ref:`ModuleNotFoundError`
+* how to solve :ref:`ModuleNotFoundError`
 * how to solve a NameError_ using variables
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 
@@ -320,7 +320,7 @@ green: make it pass
 
     function_0 = None
 
-  I see a :ref:`TypeError` in the terminal
+  I see :ref:`TypeError` in the terminal
 
   .. code-block:: python
 
@@ -337,7 +337,7 @@ green: make it pass
     # NameError
     # TypeError
 
-* a :ref:`TypeError` is raised in this case because I called an object that was not callable_
+* :ref:`TypeError` is raised in this case because I called an object that was not callable_
 
   A callable_ object is an object that may be able to handle inputs. I can make an object_ callable_ by defining it as a :ref:`class <classes>` or a :ref:`function<functions>`
 
@@ -377,9 +377,9 @@ refactor: make it better
 
 *YOU DID IT AGAIN!* You now know
 
-* how to solve a :ref:`ModuleNotFoundError`
+* how to solve :ref:`ModuleNotFoundError`
 * how to solve a NameError_
-* how to solve a :ref:`TypeError` by defining a callable
+* how to solve :ref:`TypeError` by defining a callable
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
 
@@ -431,7 +431,7 @@ green: make it pass
 
     Class0 = None
 
-  and the terminal shows a :ref:`TypeError`
+  and the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -475,9 +475,9 @@ refactor: make it better
 
 *WELL DONE!* You now know
 
-* how to solve a :ref:`ModuleNotFoundError`
+* how to solve :ref:`ModuleNotFoundError`
 * how to solve a NameError_
-* how to solve a :ref:`TypeError` by defining a callable_
+* how to solve :ref:`TypeError` by defining a callable_
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :ref:`class <classes>`? do I know how to define :ref:`class <classes>` if I define them the same way I do :doc:`/functions/functions`?
@@ -627,9 +627,9 @@ refactor: make it better
 
 *WELL DONE!* You now know You now know
 
-* how to solve a :ref:`ModuleNotFoundError`
+* how to solve :ref:`ModuleNotFoundError`
 * how to solve a NameError_
-* how to solve a :ref:`TypeError` by defining a callable_
+* how to solve :ref:`TypeError` by defining a callable_
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :ref:`class <classes>`
@@ -677,7 +677,7 @@ green: make it pass
         ...
         method_0 = None
 
-  and the terminal shows a :ref:`TypeError`
+  and the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -732,9 +732,9 @@ review
 
 and learned
 
-* how to solve a :ref:`ModuleNotFoundError`
+* how to solve :ref:`ModuleNotFoundError`
 * how to solve a NameError_
-* how to solve a :ref:`TypeError` by defining a callable_
+* how to solve :ref:`TypeError` by defining a callable_
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :ref:`class <classes>`

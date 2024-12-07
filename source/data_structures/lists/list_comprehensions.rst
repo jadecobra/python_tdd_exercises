@@ -53,7 +53,7 @@ I add a file called ``test_list_comprehensions.py`` to the ``tests`` folder with
 * ``a_list.append(item)`` adds the item from ``container`` to ``a_list`` on each cycle of the loop, using the ``append`` :ref:`method<functions>`, see :doc:`/data_structures/lists/lists` for more details
 * the second ``self.assertEqual(a_list, [])`` checks to see if ``a_list`` is still empty after the operation
 
-the terminal shows an :ref:`AssertionError` because ``a_list`` is no longer empty, it has 10 items after the loop runs
+the terminal shows :ref:`AssertionError` because ``a_list`` is no longer empty, it has 10 items after the loop runs
 
 .. code-block:: python
 
@@ -90,7 +90,7 @@ refactor: make it better
 
       self.assertEqual(list(container), [])
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -133,7 +133,7 @@ refactor: make it better
     import list_comprehensions
     import unittest
 
-  the terminal shows a :ref:`ModuleNotFoundError`
+  the terminal shows :ref:`ModuleNotFoundError`
 
   .. code-block:: python
 
@@ -148,7 +148,7 @@ refactor: make it better
     # NameError
     # ModuleNotFoundError
 
-  then make a file called ``list_comprehensions.py`` in the project folder and the terminal shows an :ref:`AttributeError`
+  then make a file called ``list_comprehensions.py`` in the project folder and the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -171,7 +171,7 @@ refactor: make it better
     def make_a_list():
         return None
 
-  and the terminal shows a :ref:`TypeError`
+  and the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -195,7 +195,7 @@ refactor: make it better
     def make_a_list(argument):
         return None
 
-  and the terminal shows an :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -247,7 +247,7 @@ I add a test for making a list with a `for <https://docs.python.org/3/tutorial/c
             a_list
         )
 
-the terminal shows an :ref:`AssertionError` for the values of ``a_list`` because it is no longer empty after I loop through ``container`` then add items
+the terminal shows :ref:`AssertionError` for the values of ``a_list`` because it is no longer empty after I loop through ``container`` then add items
 
 .. code-block:: python
 
@@ -278,7 +278,7 @@ green: make it pass
             a_list
         )
 
-  the terminal shows an :ref:`AttributeError` since ``list_comprehensions.py`` does not have a definition for ``for_loop``
+  the terminal shows :ref:`AttributeError` since ``list_comprehensions.py`` does not have a definition for ``for_loop``
 
   .. code-block:: python
 
@@ -291,7 +291,7 @@ green: make it pass
     def for_loop():
         return None
 
-  and the terminal shows a :ref:`TypeError` because the :ref:`function<functions>` signature does not match the call in the test
+  and the terminal shows :ref:`TypeError` because the :ref:`function<functions>` signature does not match the call in the test
 
   .. code-block:: python
 
@@ -304,7 +304,7 @@ green: make it pass
     def for_loop(argument):
         return None
 
-  and the terminal shows an :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -373,7 +373,7 @@ I add a failing test to ``TestListComprehensions``
             a_list
         )
 
-the terminal shows an :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -436,7 +436,7 @@ green: make it pass
             a_list
         )
 
-  the terminal now shows an :ref:`AttributeError` for the last line
+  the terminal now shows :ref:`AttributeError` for the last line
 
   .. code-block:: python
 
@@ -510,7 +510,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
             even_numbers
         )
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -543,7 +543,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
               even_numbers
           )
 
-  and the terminal shows an :ref:`AssertionError` for the next line
+  and the terminal shows :ref:`AssertionError` for the next line
 
   .. code-block:: python
 
@@ -572,7 +572,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
               even_numbers
           )
 
-  and get an :ref:`AssertionError` because the lists are not the same, I have too many values
+  and get :ref:`AssertionError` because the lists are not the same, I have too many values
 
   .. code-block:: python
 
@@ -587,7 +587,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
         even_numbers
     )
 
-  the terminal shows an :ref:`AttributeError` for the next line. Progress
+  the terminal shows :ref:`AttributeError` for the next line. Progress
 
   .. code-block:: python
 
@@ -621,7 +621,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
             odd_numbers
         )
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -647,7 +647,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
             odd_numbers
         )
 
-  the terminal shows an :ref:`AssertionError` for the next test
+  the terminal shows :ref:`AssertionError` for the next test
 
   .. code-block:: python
 
@@ -662,7 +662,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
         odd_numbers
     )
 
-  and the terminal shows an :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -677,7 +677,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
         odd_numbers
     )
 
-  the terminal shows an :ref:`AttributeError` for the next line
+  the terminal shows :ref:`AttributeError` for the next line
 
   .. code-block:: python
 

@@ -29,7 +29,7 @@ I add a failing test to the ``TestFunctions`` class in ``test_functions.py``
     def test_passthrough_functions(self):
         self.assertEqual(functions.passthrough(False), False)
 
-the terminal shows an :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 .. _test_passthrough_functions_green:
 
@@ -44,7 +44,7 @@ green: make it pass
     def passthrough():
         return None
 
-  the terminal shows a :ref:`TypeError` because the definition for ``passthrough`` does not allow ``inputs`` but the test sends :ref:`False<test_what_is_false>` as input
+  the terminal shows :ref:`TypeError` because the definition for ``passthrough`` does not allow ``inputs`` but the test sends :ref:`False<test_what_is_false>` as input
 
   .. code-block:: python
 
@@ -67,7 +67,7 @@ green: make it pass
     def passthrough(input_data):
         return None
 
-  and the terminal shows an :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -105,7 +105,7 @@ I add a new assertion to ``test_passthrough_functions``
       self.assertEqual(functions.passthrough(False), False)
       self.assertEqual(functions.passthrough(True), True)
 
-the terminal shows an :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -147,7 +147,7 @@ I add more assertions
       self.assertEqual(functions.passthrough(set), False)
       self.assertEqual(functions.passthrough(dict), False)
 
-the terminal shows an :ref:`AssertionError` for each line until I make the input match the output, proving that the passthrough function I have defined returns the input it is given. Hooray! I am genius again
+the terminal shows :ref:`AssertionError` for each line until I make the input match the output, proving that the passthrough function I have defined returns the input it is given. Hooray! I am genius again
 
 ----
 

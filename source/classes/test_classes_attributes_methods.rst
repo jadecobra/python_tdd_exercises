@@ -40,7 +40,7 @@ red: make it fail
     def test_classes_w_attributes(self):
         self.assertEqual(classes.ClassWithAttributes.a_boolean, bool)
 
-  the terminal shows an :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
 * I add a class definition to ``classes.py``
 
@@ -51,7 +51,7 @@ red: make it fail
 
         pass
 
-  the terminal shows an :ref:`AttributeError` for a missing attribute in the newly defined class
+  the terminal shows :ref:`AttributeError` for a missing attribute in the newly defined class
 
 .. _test_classes_w_attributes_green:
 
@@ -78,7 +78,7 @@ green: make it pass
 
         a_boolean = None
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
 * I redefine the attribute to make the test pass
 
@@ -115,7 +115,7 @@ Let us add more tests with the other Python data structures to ``test_classes_w_
       self.assertEqual(classes.ClassWithAttributes.a_set, set)
       self.assertEqual(classes.ClassWithAttributes.a_dictionary, dict)
 
-the terminal shows an :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 .. _test_classes_w_attributes_refactor_green:
 
@@ -182,7 +182,7 @@ green: make it pass
 
         pass
 
-  the terminal now gives an :ref:`AttributeError` with a different error
+  the terminal now gives :ref:`AttributeError` with a different error
 
 
 * When I add the missing attribute to the ``ClassWithMethods`` class
@@ -206,7 +206,7 @@ green: make it pass
 
         method_a = None
 
-  the terminal shows a :ref:`TypeError` since ``method_a`` is :ref:`None` which is not callable
+  the terminal shows :ref:`TypeError` since ``method_a`` is :ref:`None` which is not callable
 
 * I change the definition of ``method_a`` to make it a :ref:`function<functions>` which makes it callable
 
@@ -218,7 +218,7 @@ green: make it pass
         def method_a():
             return None
 
-  and the terminal shows an :ref:`AssertionError`. Progress!
+  and the terminal shows :ref:`AssertionError`. Progress!
 
 * I then change the value that ``method_a`` returns to match the expectation of the test
 
@@ -256,7 +256,7 @@ refactor: make it better
             'You called MethodD'
         )
 
-  the terminal shows an :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
 * and I change each assertion to the right value until they all pass
 
@@ -289,7 +289,7 @@ I add another test for a class that has both attributes and methods
           'you called a method'
       )
 
-the terminal shows an :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 .. _test_classes_w_attributes_and_methods_green:
 
@@ -335,7 +335,7 @@ I add a test to ``test_classes.py``
         []
     )
 
-the terminal shows an :ref:`AssertionError` as the expected and real values do not match
+the terminal shows :ref:`AssertionError` as the expected and real values do not match
 
 .. _test_object_attributes_and_methods_green:
 

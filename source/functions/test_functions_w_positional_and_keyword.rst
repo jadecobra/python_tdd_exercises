@@ -63,7 +63,7 @@ green: make it pass
             {}
         )
 
-  the terminal shows an :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 * I add a definition for the function to ``functions.py``
 
   .. code-block:: python
@@ -71,7 +71,7 @@ green: make it pass
     def takes_positional_and_keyword_arguments():
         return None
 
-  the terminal shows a :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -105,7 +105,7 @@ green: make it pass
     def takes_positional_and_keyword_arguments(first_name, last_name):
         return None
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 * I edit the `return statement`_ to make the test pass
 
   .. code-block:: python
@@ -204,7 +204,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
             ()
         )
 
-  the terminal shows a :ref:`TypeError` because the function signature only has two keyword arguments which are not provided in the call
+  the terminal shows :ref:`TypeError` because the function signature only has two keyword arguments which are not provided in the call
 
 * using what I know from previous tests I can alter the function to use starred expressions
 
@@ -213,7 +213,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
     def takes_positional_and_keyword_arguments(*args, **kwargs):
         return args, kwargs
 
-  the terminal shows an :ref:`AssertionError` for a previous passing test. I have introduced a regression
+  the terminal shows :ref:`AssertionError` for a previous passing test. I have introduced a regression
 
   .. code-block:: python
 
@@ -273,7 +273,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
         (('my_first_name', 'last_name'), {})
     )
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -301,7 +301,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
           (None, None)
       )
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -316,7 +316,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
         ((), {})
     )
 
-* I uncomment the last test to see it fail and the terminal shows an :ref:`AssertionError`
+* I uncomment the last test to see it fail and the terminal shows :ref:`AssertionError`
 
   .. code-block::
 

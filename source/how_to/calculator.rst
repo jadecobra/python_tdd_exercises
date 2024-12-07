@@ -39,7 +39,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 calculator
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -117,7 +117,7 @@ green: make it pass
     class TestCalculator(unittest.TestCase):
     ...
 
-  and the terminal shows an :ref:`AttributeError`
+  and the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -152,7 +152,7 @@ green: make it pass
 
     add = None
 
-  and get a :ref:`TypeError`
+  and get :ref:`TypeError`
 
   .. code-block:: python
 
@@ -192,7 +192,7 @@ green: make it pass
     def add(x, y):
         return None
 
-  and get an :ref:`AssertionError`
+  and get :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -235,7 +235,7 @@ I add an assertion to show the problem with the :ref:`function<functions>`
           0
       )
 
-and get an :ref:`AssertionError`
+and get :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -295,7 +295,7 @@ refactor: make it better
                 0
             )
 
-  because the range of numbers is small, the terminal shows random success or an :ref:`AssertionError`
+  because the range of numbers is small, the terminal shows random success or :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -429,7 +429,7 @@ red: make it fail
             x-y
         )
 
-  which gives me an :ref:`AttributeError`
+  which gives me :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -462,7 +462,7 @@ green: make it pass
 
     subtract = None
 
-  and get a :ref:`TypeError`
+  and get :ref:`TypeError`
 
   .. code-block:: python
 
@@ -490,7 +490,7 @@ green: make it pass
     def subtract(x, y):
         return None
 
-  and get an :ref:`AssertionError`
+  and get :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -609,7 +609,7 @@ I add a failing test for multiplication
           self.x*self.y
       )
 
-and the terminal shows an :ref:`AttributeError`
+and the terminal shows :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -665,7 +665,7 @@ time for division
           self.x/self.y
       )
 
-the terminal shows an :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -700,7 +700,7 @@ green: make it pass
     >    return x / y
     E    ZeroDivisionError: division by zero
 
-  dividing by ``0`` is not defined in mathematics and raises an :ref:`Exception<Exceptions>` in Python
+  dividing by ``0`` is not defined in mathematics and raises :ref:`Exception<Exceptions>` in Python
 
 * I add it to the list of :ref:`Exceptions<Exceptions>` encountered
 
@@ -874,7 +874,7 @@ red: make it fail
 #################################################################################
 
 * I close ``test_calculator.py``
-* then delete all the text in ``calculator.py`` and the terminal shows an :ref:`AttributeError`
+* then delete all the text in ``calculator.py`` and the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -905,7 +905,7 @@ green: make it pass
 
     subtract = None
 
-  which gives me a :ref:`TypeError`
+  which gives me :ref:`TypeError`
 
   .. code-block:: python
 
@@ -931,7 +931,7 @@ green: make it pass
     def subtract(a, b):
         return None
 
-  and get an :ref:`AssertionError`
+  and get :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -978,7 +978,7 @@ green: make it pass
     def multiply():
         return None
 
-  and get a :ref:`TypeError`
+  and get :ref:`TypeError`
 
   .. code-block:: python
 
@@ -991,7 +991,7 @@ green: make it pass
     def multiply(a, b):
         return None
 
-  which gives me an :ref:`AssertionError`
+  which gives me :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1007,7 +1007,7 @@ green: make it pass
     def multiply(a, b):
         return a, b
 
-  and the terminal shows an :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1036,7 +1036,7 @@ green: make it pass
     def divide(a, b):
         return a, b
 
-  and the terminal shows an :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1058,7 +1058,7 @@ green: make it pass
     def divide(a, b):
         return a / b
 
-  the terminal shows an :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 

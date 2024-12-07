@@ -29,7 +29,7 @@ I add a test for project first to ``TestBinaryOperations`` in ``test_truth_table
         self.assertFalse(truth_table.project_first(False, True))
         self.assertFalse(truth_table.project_first(False, False))
 
-the terminal shows an :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 green: make it pass
 #################################################################################
@@ -42,7 +42,7 @@ green: make it pass
     def project_first(p, q):
         return False
 
-  and the terminal shows an :ref:`AssertionError` for the first case
+  and the terminal shows :ref:`AssertionError` for the first case
 * I make the `return statement`_
 
   .. code-block:: python
@@ -113,7 +113,7 @@ I add a test for project second to ``TestBinaryOperations``
         self.assertTrue(truth_table.project_second(False, True))
         self.assertFalse(truth_table.project_second(False, False))
 
-the terminal shows an :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 green: make it pass
 #################################################################################
@@ -126,7 +126,7 @@ green: make it pass
     def project_second(p, q):
         return False
 
-  the terminal shows an :ref:`AssertionError` for the first case
+  the terminal shows :ref:`AssertionError` for the first case
 * and I make the return value to make it pass
 
   .. code-block:: python
@@ -134,7 +134,7 @@ green: make it pass
     def project_second(p, q):
         return True
 
-  the terminal shows an :ref:`AssertionError` for the second case
+  the terminal shows :ref:`AssertionError` for the second case
 * before I add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction``, ``negate_first``, ``negate_second`` and ``project_first`` because 2 out of the 4 cases have the same return value. I see that
 
   * when ``q == True`` the result is :ref:`True<test_what_is_true>`
@@ -147,7 +147,7 @@ green: make it pass
     def project_second(p, q):
         return p
 
-  the terminal still shows an :ref:`AssertionError`
+  the terminal still shows :ref:`AssertionError`
 * What if I return ``q`` instead?
   .. code-block:: python
 

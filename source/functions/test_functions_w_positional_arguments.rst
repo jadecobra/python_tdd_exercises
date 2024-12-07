@@ -32,7 +32,7 @@ I add a new test to ``test_functions.py``
             ('my_first_name', 'my_last_name')
         )
 
-the terminal shows an :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 *********************************************************************************
 green: make it pass
@@ -45,7 +45,7 @@ green: make it pass
     def passthrough_w_positional_arguments(input_data):
         return input_data
 
-  the terminal shows a :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 * I make the signature of ``passthrough_w_positional_arguments`` to take in more than one argument
 
   .. code-block:: python
@@ -55,7 +55,7 @@ green: make it pass
     ):
         return input_data
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 * I make ``passthrough_w_positional_arguments`` return the two arguments it receives
 
   .. code-block:: python
@@ -102,7 +102,7 @@ How can I make this better?
               ('my_first_name', 'my_last_name')
           )
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 * I make the test so it has the right output
 
   .. code-block:: python
@@ -153,7 +153,7 @@ How can I make this better?
               (bool, int, float, str, tuple, list, set, dict)
           )
 
-  the terminal shows a :ref:`TypeError` because 2 positional arguments were expected by the function but 4 were given
+  the terminal shows :ref:`TypeError` because 2 positional arguments were expected by the function but 4 were given
 * in Python I can represent multiple arguments using a starred expression `see arbitrary argument lists <https://docs.python.org/3/tutorial/controlflow.html#arbitrary-argument-lists>`_, so I make the signature of ``functions_w_positional_arguments`` with a starred expression to alow it take in any number of arguments
 
   .. code-block:: python

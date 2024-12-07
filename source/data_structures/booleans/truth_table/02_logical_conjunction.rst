@@ -34,7 +34,7 @@ After making a ``TestCase`` for binary operations in ``test_truth_table.py``
           self.assertFalse(truth_table.logical_conjunction(False, True))
           self.assertFalse(truth_table.logical_conjunction(False, False))
 
-the terminal shows an :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 green: make it pass
 #################################################################################
@@ -46,7 +46,7 @@ green: make it pass
     def logical_conjunction():
         return None
 
-  the terminal shows a :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 * I add the new error to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
@@ -72,7 +72,7 @@ green: make it pass
     def logical_conjunction(p, q):
         return None
 
-  and the terminal shows an :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 * I make ``logical_conjunction`` in ``truth_table.py`` return :ref:`True<test_what_is_true>`
 
   .. code-block:: python
@@ -90,7 +90,7 @@ green: make it pass
         if p == True:
             return True
 
-  the terminal still shows an :ref:`AssertionError`
+  the terminal still shows :ref:`AssertionError`
 * I then add a condition for the second input value
 
   .. code-block:: python
@@ -123,7 +123,7 @@ refactor: make it better
           return None
 
   tests are still passing
-* Since :ref:`None` is :ref:`False<test_what_is_false>`, I can be more explicit by using the boolean :ref:`False<test_what_is_false>`
+* Since :ref:`None` is :ref:`False<test_what_is_false>`, I can be more explicit by using the boole:ref:`False<test_what_is_false>`
 
   .. code-block:: python
 

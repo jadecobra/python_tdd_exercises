@@ -33,7 +33,7 @@ test_catching_exceptions_w_messages
     def test_catching_exceptions_w_messages(self):
         src.exceptions.raise_exception()
 
-  and the terminal shows an :ref:`AttributeError`
+  and the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -64,7 +64,7 @@ green: make it pass
 
     raise_exception = None
 
-  and the terminal shows a :ref:`TypeError`
+  and the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -87,7 +87,7 @@ green: make it pass
         with self.assertRaises(Exception):
             src.exceptions.raise_exception()
 
-  the terminal shows an :ref:`AssertionError`
+  I get :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -112,7 +112,7 @@ green: make it pass
         ):
             src.exceptions.raise_exception()
 
-  this gives me an :ref:`AssertionError`
+  this gives me :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -154,7 +154,7 @@ I add a new failing test to ``test_exceptions.py``
           'failed'
       )
 
-the terminal shows an :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 .. code-block::
 
@@ -185,7 +185,7 @@ green: make it pass
 
     exception_handler = None
 
-  and get a :ref:`TypeError`
+  and get :ref:`TypeError`
 
   .. code-block:: python
 
@@ -211,7 +211,7 @@ green: make it pass
     def exception_handler(argument):
         return None
 
-  which gives me an :ref:`AssertionError`
+  which gives me :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -253,7 +253,7 @@ I add a new test
           'succeeded'
       )
 
-and get an :ref:`AttributeError`
+and get :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -288,7 +288,7 @@ green: make it pass
 
     does_not_raise_exception = None
 
-  and get an :ref:`AssertionError`
+  and get :ref:`AssertionError`
 
   .. code-block::
 
@@ -322,7 +322,7 @@ green: make it pass
         return a_function()
         return 'failed'
 
-  the terminal shows a :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -341,7 +341,7 @@ green: make it pass
     def does_not_raise_exception():
         return None
 
-  and the terminal shows an :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -366,7 +366,7 @@ how to use try...except...else
         except Exception:
             return 'failed'
 
-  ``test_catching_failure`` passes and the terminal still shows an :ref:`AssertionError` for ``test_catching_success``
+  ``test_catching_failure`` passes and the terminal still shows :ref:`AssertionError` for ``test_catching_success``
 
   .. code-block:: python
 
@@ -384,7 +384,7 @@ how to use try...except...else
         else:
             return None
 
-  and still get an :ref:`AssertionError`
+  and still get :ref:`AssertionError`
 
 * when I change the `return statement`_
 

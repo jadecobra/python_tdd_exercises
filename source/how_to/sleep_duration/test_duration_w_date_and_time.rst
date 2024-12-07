@@ -146,7 +146,7 @@ green: make it pass
                 )
             )
 
-  which gives me an :ref:`AttributeError`
+  which gives me :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -197,7 +197,7 @@ green: make it pass
                 (wake_time, sleep_time)
             )
 
-  and get an :ref:`AssertionError`
+  and get :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -284,7 +284,7 @@ I add an `import statement`_ for the datetime_ module
   import unittest
   ...
 
-and the terminal shows an :ref:`AttributeError`
+and the terminal shows :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -303,7 +303,7 @@ because my `import statement`_ is different from `the example in the documentati
           ''
       )
 
-and get an :ref:`AssertionError`
+and get :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -356,7 +356,7 @@ refactor: make it better
             )
         )
 
-  and get an :ref:`AssertionError`
+  and get :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -449,7 +449,7 @@ refactor: make it better
                 )
             )
 
-  and get an :ref:`AssertionError`
+  and get :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -584,7 +584,7 @@ then add a variable for a random timestamp
           )
       )
 
-and get an :ref:`AssertionError`
+and get :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -685,7 +685,7 @@ and the test is still green
                 )
             )
 
-  and get an :ref:`AssertionError`
+  and get :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -743,7 +743,7 @@ and the test is still green
                 )
             )
 
-  and the terminal shows an :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -772,7 +772,7 @@ and the test is still green
   the test passes
 
 * I remove ``duration`` because ``duration_a`` is a better solution
-* which means I can remove ``read_timestamp`` because no one calls it anymore. The terminal shows an :ref:`AttributeError`
+* which means I can remove ``read_timestamp`` because no one calls it anymore. The terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 

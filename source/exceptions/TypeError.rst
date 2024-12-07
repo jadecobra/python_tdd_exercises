@@ -46,7 +46,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 type_error
 
-  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows an :ref:`AssertionError`
+  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -70,7 +70,7 @@ red: make it fail
         def test_type_error_w_function_signatures(self):
             self.assertIsNone(functions.function_a("a"))
 
-  the terminal shows a :ref:`ModuleNotFoundError`
+  the terminal shows :ref:`ModuleNotFoundError`
 
   .. code-block:: python
 

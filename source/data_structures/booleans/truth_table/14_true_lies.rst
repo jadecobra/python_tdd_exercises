@@ -28,7 +28,7 @@ I add a test for tautology to ``TestBinaryOperations`` in ``test_truth_table.py`
         self.assertTrue(truth_table.tautology(False, True))
         self.assertTrue(truth_table.tautology(False, False))
 
-the terminal shows an :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 green: make it pass
 #################################################################################
@@ -41,7 +41,7 @@ green: make it pass
     def tautology(p, q):
         return False
 
-  the terminal shows an :ref:`AssertionError` for the first case
+  the terminal shows :ref:`AssertionError` for the first case
 * I change the return value
 
   .. code-block:: python
@@ -68,7 +68,7 @@ I add a test for contradiction to ``TestBinaryOperations``
         self.assertFalse(truth_table.contradiction(False, True))
         self.assertFalse(truth_table.contradiction(False, False))
 
-the terminal shows an :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 green: make it pass
 #################################################################################
@@ -80,7 +80,7 @@ green: make it pass
     def contradiction(p, q):
         return True
 
-  the terminal shows an :ref:`AssertionError` for the first case
+  the terminal shows :ref:`AssertionError` for the first case
 * When I make the return value, the test passes
 
   .. code-block:: python

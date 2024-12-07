@@ -26,7 +26,7 @@ I add a test for converse implication to ``TestBinaryOperations`` in ``test_trut
         self.assertFalse(truth_table.converse_implication(False, True))
         self.assertTrue(truth_table.converse_implication(False, False))
 
-the terminal shows an :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 green: make it pass
 #################################################################################
@@ -38,7 +38,7 @@ green: make it pass
     def converse_implication(p, q):
         return False
 
-  and the terminal shows an :ref:`AssertionError` for the first case
+  and the terminal shows :ref:`AssertionError` for the first case
 * I make the return value
 
   .. code-block:: python
@@ -46,7 +46,7 @@ green: make it pass
     def converse_implication(p, q):
         return True
 
-  the terminal shows an :ref:`AssertionError` for the third case
+  the terminal shows :ref:`AssertionError` for the third case
 * I add a condition for it and an explicit ``else`` clause
 
   .. code-block:: python

@@ -29,7 +29,7 @@ I add a test for negate first to ``TestBinaryOperations`` in ``test_truth_table.
         self.assertTrue(truth_table.negate_first(False, True))
         self.assertTrue(truth_table.negate_first(False, False))
 
-and the terminal shows an :ref:`AttributeError`
+and the terminal shows :ref:`AttributeError`
 
 green: make it pass
 #################################################################################
@@ -41,7 +41,7 @@ green: make it pass
     def negate_first(p, q):
         return False
 
-  the terminal shows an :ref:`AssertionError` for the third case
+  the terminal shows :ref:`AssertionError` for the third case
 * before I add a condition for it, this looks similar to ``logical_equality`` and ``exclusive_disjunction`` because 2 out of the 4 cases have the same return value. I see that
 
   * when ``p == True`` the result is :ref:`False<test_what_is_false>`
@@ -108,7 +108,7 @@ I add a test for negate second to ``TestBinaryOperations``
         self.assertFalse(truth_table.negate_second(False, True))
         self.assertTrue(truth_table.negate_second(False, False))
 
-and the terminal shows an :ref:`AttributeError`
+and the terminal shows :ref:`AttributeError`
 
 green: make it pass
 #################################################################################
@@ -121,7 +121,7 @@ green: make it pass
     def negate_second(p, q):
         return False
 
-  and the terminal shows an :ref:`AssertionError` for the third case
+  and the terminal shows :ref:`AssertionError` for the third case
 * before I add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction`` and ``negate_first`` because 2 out of the 4 cases have the same return value. I see that
 
   - when ``q == True`` the result is :ref:`False<test_what_is_false>`
@@ -134,7 +134,7 @@ green: make it pass
     def negate_second(p, q):
         return not p
 
-  the terminal still shows an :ref:`AssertionError`
+  the terminal still shows :ref:`AssertionError`
 * What if I try ``q`` instead?
 
   .. code-block:: python

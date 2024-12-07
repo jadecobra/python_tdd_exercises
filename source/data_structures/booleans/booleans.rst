@@ -41,7 +41,7 @@ I make a file called ``test_booleans.py`` then add a failing test in ``test_what
       def test_what_is_false(self):
           self.assertNotIsInstance(False, bool)
 
-the terminal shows an :ref:`AssertionError` because False_ is an instance of the boolean_ :ref:`class <classes>`
+the terminal shows :ref:`AssertionError` because False_ is an instance of the boolean_ :ref:`class <classes>`
 
 .. code-block:: python
 
@@ -71,7 +71,7 @@ refactor: make it better
 
     self.assertTrue(False)
 
-  the terminal shows an :ref:`AssertionError` because False_ is not True_
+  the terminal shows :ref:`AssertionError` because False_ is not True_
 
   .. code-block:: python
 
@@ -111,7 +111,7 @@ I add a :ref:`method<functions>` called ``test_what_is_true`` with a failing lin
     def test_what_is_true(self):
         self.assertNotIsInstance(True, bool)
 
-the terminal shows an :ref:`AssertionError` because True_ is an instance of the boolean_ :ref:`class <classes>`
+the terminal shows :ref:`AssertionError` because True_ is an instance of the boolean_ :ref:`class <classes>`
 
 .. code-block:: python
 
@@ -136,7 +136,7 @@ refactor: make it better
 
     self.assertFalse(True)
 
-  the terminal shows an :ref:`AssertionError` because True_ is not False_
+  the terminal shows :ref:`AssertionError` because True_ is not False_
 
   .. code-block:: python
 
@@ -185,7 +185,7 @@ I add a line to ``test_what_is_true`` to test if `None <https://docs.python.org/
         self.assertTrue(True)
         self.assertTrue(None)
 
-the terminal shows an :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -244,7 +244,7 @@ I add a line to test if an `integer <https://docs.python.org/3/library/functions
         self.assertFalse(None)
         self.assertFalse(-1)
 
-the terminal shows an :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -285,7 +285,7 @@ refactor: make it better
         self.assertTrue(-1)
         self.assertTrue(0)
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -317,7 +317,7 @@ refactor: make it better
         self.assertFalse(0)
         self.assertFalse(1)
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -371,7 +371,7 @@ I add a line to test if a `float <https://docs.python.org/3/library/functions.ht
         self.assertTrue(1)
         self.assertTrue(0.0)
 
-the terminal shows an :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -416,7 +416,7 @@ refactor: make it better
         self.assertFalse(-1.2)
         self.assertFalse(2.3)
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -476,7 +476,7 @@ I add a line to test if a `string <https://docs.python.org/3/library/stdtypes.ht
         self.assertTrue(2.3)
         self.assertTrue('')
 
-the terminal shows an :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -514,7 +514,7 @@ refactor: make it better
 
     self.assertFalse('text')
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -572,7 +572,7 @@ I add a line to test if a `tuple <https://docs.python.org/3/library/stdtypes.htm
         self.assertTrue('text')
         self.assertTrue(())
 
-The terminal shows an :ref:`AssertionError`
+The terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -608,7 +608,7 @@ refactor: make it better
 
     self.assertFalse((1, 2, 3, 'n'))
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -668,7 +668,7 @@ I add a line to test if a :doc:`list </data_structures/lists/lists>` is False_ o
         self.assertTrue((1, 2, 3, 'n'))
         self.assertTrue([])
 
-the terminal shows an :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -704,7 +704,7 @@ refactor: make it better
 
     self.assertFalse([1, 2, 3, 'n'])
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -769,7 +769,7 @@ I add a line to test if a set_ is False_ or True_
         self.assertTrue([1, 2, 3, 'n'])
         self.assertTrue(set())
 
-the terminal shows an :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -796,7 +796,7 @@ refactor: make it better
 
     self.assertFalse({1, 2, 3, 'n'})
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -863,7 +863,7 @@ I add a line to test if a :doc:`dictionary </data_structures/dictionaries>` is F
         self.assertTrue({1, 2, 3, 'n'})
         self.assertTrue({})
 
-the terminal shows an :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -899,7 +899,7 @@ refactor: make it better
 
     self.assertFalse({'key': 'value'})
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 

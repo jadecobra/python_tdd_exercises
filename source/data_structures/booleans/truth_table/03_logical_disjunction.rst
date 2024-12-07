@@ -36,7 +36,7 @@ I add a test for logical disjunction to ``TestBinaryOperations`` in ``test_truth
         self.assertTrue(truth_table.logical_disjunction(False, True))
         self.assertFalse(truth_table.logical_disjunction(False, False))
 
-and the terminal shows an :ref:`AttributeError`
+and the terminal shows :ref:`AttributeError`
 
 green: make it pass
 ~~~~~~~~~~~~~~~~~~~
@@ -49,7 +49,7 @@ green: make it pass
     def logical_disjunction(p, q):
         return True
 
-  and the terminal shows an :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
 * 3 of the test cases are passing because ``logical_disjunction`` returns :ref:`True<test_what_is_true>` for each one of them. I need a condition for the fourth case to pass, so I change the definition
 

@@ -39,7 +39,7 @@ I add a failing test to ``test_classes.py``
   def test_classes_w_initializers(self):
       self.assertEqual(classes.Boy().sex, 'M')
 
-the terminal shows an :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 .. _test_classes_w_initializers_green:
 
@@ -95,7 +95,7 @@ refactor: make it better
         self.assertEqual(classes.Boy().sex, 'M')
         self.assertEqual(classes.Girl(sex='F').sex, 'F')
 
-  the terminal shows an :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
 * I try the same solution I used for the ``Boy`` class then add a definition for the ``Girl`` class to ``classes.py``
 
@@ -106,7 +106,7 @@ refactor: make it better
 
         sex = 'M'
 
-  and the terminal shows a :ref:`TypeError`
+  and the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -128,7 +128,7 @@ refactor: make it better
         def __init__(self):
             pass
 
-  and the terminal shows a :ref:`TypeError`
+  and the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -152,7 +152,7 @@ refactor: make it better
         self.assertEqual(classes.Girl(sex='F').sex, 'F')
         self.assertEqual(classes.Other(sex='?').sex, '?')
 
-  and the terminal shows an :ref:`AttributeError`
+  and the terminal shows :ref:`AttributeError`
 
 * I add a class definition to ``classes.py``
 
@@ -237,7 +237,7 @@ refactor: make it better
         def __init__(self):
             pass
 
-* I remove the ``sex`` attribute and the terminal shows an :ref:`AssertionError`
+* I remove the ``sex`` attribute and the terminal shows :ref:`AssertionError`
 * I make the ``Human`` class to set the ``sex`` attribute in the parent initializer instead of at the child level
 
   .. code-block:: python
@@ -250,7 +250,7 @@ refactor: make it better
         def __init__(self, sex='M'):
             self.sex = sex
 
-  the terminal still shows an :ref:`AssertionError`
+  the terminal still shows :ref:`AssertionError`
 
 * when I remove the ``__init__`` :ref:`method<functions>` from the ``Girl`` class
 

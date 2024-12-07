@@ -33,7 +33,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 functions
 
-  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows an :ref:`AssertionError`
+  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -56,7 +56,7 @@ red: make it fail
       def test_functions_w_pass(self):
           self.assertIsNone(functions.function_w_pass())
 
-the terminal shows a :ref:`ModuleNotFoundError`\ , and I add it to the list of :ref:`Exceptions<Exceptions>` encountered
+the terminal shows :ref:`ModuleNotFoundError` , and I add it to the list of :ref:`Exceptions<Exceptions>` encountered
 
 .. code-block:: python
 
@@ -67,7 +67,7 @@ the terminal shows a :ref:`ModuleNotFoundError`\ , and I add it to the list of :
 green: make it pass
 #################################################################################
 
-* I make a file called ``functions.py`` in the project folder and the terminal shows an :ref:`AttributeError`\ , which I add to the list of :ref:`Exceptions<Exceptions>` encountered
+* I make a file called ``functions.py`` in the project folder and the terminal shows :ref:`AttributeError`\ , which I add to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
@@ -108,7 +108,7 @@ I add a new failing test to ``TestFunctions`` in ``test_functions.py`` to check 
     def test_functions_w_return(self):
         self.assertIsNone(functions.function_w_return())
 
-the terminal shows an :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 green: make it fail
 #################################################################################
@@ -142,7 +142,7 @@ I add one more test to the ``TestFunctions`` class in ``test_functions.py`` to h
             functions.function_w_return_none()
         )
 
-the terminal shows an :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 green: make it pass
 #################################################################################

@@ -25,7 +25,7 @@ I add a test for material non-implication to ``TestBinaryOperations`` in ``test_
         self.assertFalse(truth_table.material_non_implication(False, True))
         self.assertFalse(truth_table.material_non_implication(False, False))
 
-the terminal shows an :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 green: make it pass
 #################################################################################
@@ -38,7 +38,7 @@ green: make it pass
     def material_non_implication(p, q):
         return False
 
-  the terminal shows an :ref:`AssertionError` for the second case
+  the terminal shows :ref:`AssertionError` for the second case
 * I add a condition for it
 
   .. code-block:: python

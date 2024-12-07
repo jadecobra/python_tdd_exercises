@@ -43,7 +43,7 @@ I make a new file called ``test_classes.py`` in the ``tests`` directory
       def test_defining_classes_w_pass(self):
           self.assertIsInstance(classes.ClassWithPass(), object)
 
-the terminal shows a :ref:`ModuleNotFoundError` because I have an import statement for a module called ``classes``
+the terminal shows :ref:`ModuleNotFoundError` because I have an import statement for a module called ``classes``
 
 green: make it pass
 #################################################################################
@@ -56,7 +56,7 @@ green: make it pass
     # AssertionError
     # ModuleNotFoundError
 
-* I make Python module called ``classes.py`` and the terminal shows an :ref:`AttributeError` which I add to the list of :ref:`Exceptions<Exceptions>` encountered
+* I make Python module called ``classes.py`` and the terminal shows :ref:`AttributeError` which I add to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
@@ -95,7 +95,7 @@ green: make it pass
 
     class ClassWithPass:
 
-  the terminal shows an :ref:`IndentationError` because I declared a class without adding any indented text
+  the terminal shows :ref:`IndentationError` because I declared a class without adding any indented text
 * I add the new error to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
@@ -146,7 +146,7 @@ I add another test to ``TestClasses`` in ``test_classes.py`` to show another way
   def test_defining_classes_w_parentheses(self):
       self.assertIsInstance(classes.ClassWithParentheses(), object)
 
-the terminal shows an :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 green: make it pass
 #################################################################################
@@ -204,7 +204,7 @@ I add another test to ``TestClasses`` in ``test_classes.py``
   def test_defining_classes_w_object(self):
       self.assertIsInstance(classes.ClassWithObject(), object)
 
-and the terminal shows an :ref:`AttributeError`
+and the terminal shows :ref:`AttributeError`
 
 green: make it pass
 #################################################################################

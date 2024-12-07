@@ -65,7 +65,7 @@ red: make it fail
         f'{difference_hours:02}:00'
     )
 
-  which gives me an :ref:`AssertionError`
+  which gives me :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -164,7 +164,7 @@ green: make it pass
             f'{difference_minutes:02}'
         )
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -225,7 +225,7 @@ If ``duration`` is given a ``wake_time`` of ``'03:30'`` and a ``sleep_time`` of 
   def test_duration_w_hours_and_minutes(self):
   ...
 
-the terminal shows an :ref:`AssertionError` when I add ``test_duration_calculation``
+the terminal shows :ref:`AssertionError` when I add ``test_duration_calculation``
 
 .. code-block:: python
 
@@ -252,7 +252,7 @@ green: make it pass
         f'{difference_minutes:02}'
     )
 
-  the terminal shows an :ref:`AssertionError` for ``test_duration_w_hours_and_minutes``
+  the terminal shows :ref:`AssertionError` for ``test_duration_w_hours_and_minutes``
 
   .. code-block:: python
 
@@ -301,7 +301,7 @@ The ``//`` operator returns a whole number which is how many times the bottom nu
     def test_duration_calculation(self):
     ...
 
-  and the terminal shows an :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -321,7 +321,7 @@ The ``//`` operator returns a whole number which is how many times the bottom nu
 
     self.assertEqual(150//60, 0)
 
-  and get an :ref:`AssertionError`
+  and get :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -353,7 +353,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
     def test_duration_calculation(self):
     ...
 
-  and the terminal shows an :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -373,7 +373,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
 
     self.assertEqual(150%60, 0)
 
-  and the terminal shows an :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 

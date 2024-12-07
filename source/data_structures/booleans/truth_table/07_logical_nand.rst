@@ -25,7 +25,7 @@ I add a test for Logical NAND to ``TestBinaryOperations`` in ``test_truth_table.
         self.assertTrue(truth_table.logical_nand(False, True))
         self.assertTrue(truth_table.logical_nand(False, False))
 
-the terminal shows an :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 green: make it pass
 #################################################################################
@@ -38,7 +38,7 @@ green: make it pass
     def logical_nand(p, q):
       return True
 
-  the terminal shows an :ref:`AssertionError` for the first case
+  the terminal shows :ref:`AssertionError` for the first case
 * and I add a condition for the one case that returns :ref:`False<test_what_is_false>`
 
   .. code-block:: python

@@ -29,7 +29,7 @@ red: make it fail
 *********************************************************************************
 
 * I close ``test_sleep_duration.py``
-* then delete all the text in ``sleep_duration.py`` and the terminal shows an :ref:`AttributeError`
+* then delete all the text in ``sleep_duration.py`` and the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -74,7 +74,7 @@ green: make it pass
 
     get_datetime = None
 
-  which gives me a :ref:`TypeError`
+  which gives me :ref:`TypeError`
 
   .. code-block:: python
 
@@ -108,7 +108,7 @@ green: make it pass
 
     def get_datetime(argument):
 
-  and get an :ref:`AssertionError`
+  and get :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -150,7 +150,7 @@ green: make it pass
       def get_datetime(argument):
       ...
 
-  and get an :ref:`AssertionError`
+  and get :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -165,7 +165,7 @@ green: make it pass
     def get_datetime(argument):
         return argument
 
-  and the terminal shows an :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -185,7 +185,7 @@ green: make it pass
             argument, '%Y/%m/%d %H:%M'
         )
 
-  and get an :ref:`AttributeError`
+  and get :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -213,7 +213,7 @@ green: make it pass
 
     duration = None
 
-  which gives me a :ref:`TypeError`
+  which gives me :ref:`TypeError`
 
   .. code-block:: python
 
@@ -238,7 +238,7 @@ green: make it pass
 
     def duration(sleep_time):
 
-  and get a :ref:`TypeError` for another keyword argument
+  and get :ref:`TypeError` for another keyword argument
 
   .. code-block:: python
 
@@ -411,7 +411,7 @@ green: make it pass
     else:
         return (sleep_time, wake_time)
 
-  and the terminal shows an :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -436,7 +436,7 @@ green: make it pass
         else:
             return (sleep_time - wake_time)
 
-  and get a :ref:`TypeError`
+  and get :ref:`TypeError`
 
   .. code-block:: python
 
@@ -461,7 +461,7 @@ green: make it pass
               - get_datetime(wake_time)
             )
 
-  and the terminal shows an :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 

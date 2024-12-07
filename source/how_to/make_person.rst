@@ -37,7 +37,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 person
 
-  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows an :ref:`AssertionError`
+  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -84,7 +84,7 @@ green: make it pass
     import src.person
     import unittest
 
-  and get an :ref:`AttributeError`
+  and get :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -120,7 +120,7 @@ green: make it pass
             None
         )
 
-  the terminal shows a :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -158,7 +158,7 @@ green: make it pass
             None
         )
 
-  this gives me a :ref:`TypeError`
+  this gives me :ref:`TypeError`
 
   .. code-block:: python
 
@@ -187,7 +187,7 @@ green: make it pass
             None
         )
 
-  the terminal shows a :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -241,7 +241,7 @@ green: make it pass
     class TestPersonFactory(unittest.TestCase):
     ..
 
-  and get a :ref:`TypeError`
+  and get :ref:`TypeError`
 
   .. code-block:: python
 
@@ -274,7 +274,7 @@ green: make it pass
             dict()
         )
 
-  and the terminal shows an :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -309,7 +309,7 @@ green: make it pass
             )
         )
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -354,7 +354,7 @@ green: make it pass
         first_name = 'jane'
         ...
 
-  and the terminal shows an :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -392,7 +392,7 @@ green: make it pass
             )
         )
 
-  and get an :ref:`AssertionError`
+  and get :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -443,7 +443,7 @@ green: make it pass
         last_name = 'doe'
         ...
 
-  and get an :ref:`AssertionError`
+  and get :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -486,7 +486,7 @@ green: make it pass
             )
         )
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -543,7 +543,7 @@ green: make it pass
         sex = 'F'
         ...
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -589,7 +589,7 @@ green: make it pass
             )
         )
 
-  the terminal shows a :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -621,7 +621,7 @@ green: make it pass
     def this_year():
         return datetime.datetime.today().year
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -700,7 +700,7 @@ refactor: make it better
         )
         ...
 
-  ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 years ago, up to and including the current year which is returned by ``this_year()``. When the age is not ``0``, the terminal shows an :ref:`AssertionError`
+  ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 years ago, up to and including the current year which is returned by ``this_year()``. When the age is not ``0``, the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -776,7 +776,7 @@ refactor: make it better
         )
         ...
 
-  ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` and the terminal shows random success or an :ref:`AssertionError`
+  ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` and the terminal shows random success or :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -817,7 +817,7 @@ refactor: make it better
         )
         ...
 
-  and get random success or an :ref:`AssertionError`
+  and get random success or :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -860,7 +860,7 @@ refactor: make it better
         )
         ...
 
-  and get random success or an :ref:`AssertionError`
+  and get random success or :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -939,7 +939,7 @@ green: make it pass
             )
         )
 
-  and get a :ref:`TypeError`
+  and get :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1026,7 +1026,7 @@ green: make it pass
         )
     )
 
-  and the terminal shows an :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1117,7 +1117,7 @@ green: make it pass
         }
     )
 
-  and get an :ref:`AssertionError`
+  and get :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1301,7 +1301,7 @@ refactor: make it better
         def test_function_w_keyword_arguments(self):
             ...
 
-  the terminal shows an :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -1353,7 +1353,7 @@ red: make it fail
 #################################################################################
 
 * I close ``test_person.py``
-* I want to write the solution without looking at the tests and delete all the text in ``person.py``, the terminal shows an :ref:`AttributeError`
+* I want to write the solution without looking at the tests and delete all the text in ``person.py``, the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -1382,7 +1382,7 @@ green: make it pass
 
     factory = None
 
-  which gives me a :ref:`TypeError`
+  which gives me :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1408,7 +1408,7 @@ green: make it pass
     def factory(first_name):
         return None
 
-  and get a :ref:`TypeError`
+  and get :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1434,7 +1434,7 @@ green: make it pass
     def factory(first_name, last_name, sex):
         return None
 
-  I still get a :ref:`TypeError`
+  I still get :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1450,7 +1450,7 @@ green: make it pass
         ):
         return None
 
-  and the terminal shows an :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1500,7 +1500,7 @@ green: make it pass
             'age': 20
         }
 
-  and still have an :ref:`AssertionError`
+  and still have :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1578,7 +1578,7 @@ green: make it pass
             'age': year_of_birth,
         }
 
-  and get an :ref:`AssertionError`
+  and get :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1614,7 +1614,7 @@ green: make it pass
             'age': datetime.datetime.today().year - year_of_birth,
         }
 
-  and the terminal shows a :ref:`TypeError`
+  and the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1657,7 +1657,7 @@ green: make it pass
             sex=None, year_of_birth=None
         ):
 
-  and the terminal shows an :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 

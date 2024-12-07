@@ -29,7 +29,7 @@ I add a test to ``test_functions.py``
     def test_singleton_functions(self):
         self.assertEqual(functions.singleton(), 'my_first_name')
 
-the terminal shows an :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 .. _test_singleton_functions_green:
 
@@ -70,7 +70,7 @@ I add a new test that checks if a singleton that takes inputs returns the same v
           'joe'
       )
 
-the terminal shows an :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 .. _test_singleton_functions_w_inputs_green:
 

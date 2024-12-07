@@ -45,7 +45,7 @@ I make a file called ``test_truth_table.py`` in the ``tests`` folder then add th
   import unittest
   import truth_table
 
-the terminal shows a :ref:`ModuleNotFoundError`
+the terminal shows :ref:`ModuleNotFoundError`
 
 green: make it pass
 #################################################################################
@@ -73,7 +73,7 @@ green: make it pass
       def test_logical_true(self):
           self.assertTrue(truth_table.logical_true())
 
-  and the terminal shows an :ref:`AttributeError` which I add to the list of :ref:`Exceptions<Exceptions>` encountered
+  and the terminal shows :ref:`AttributeError` which I add to the list of :ref:`Exceptions<Exceptions>` encountered
 
   .. code-block:: python
 
@@ -110,7 +110,7 @@ refactor: make it better
     def logical_false():
         return True
 
-  and the terminal shows an :ref:`AssertionError` since the ``logical_false`` function currently returns a different value from what is expected
+  and the terminal shows :ref:`AssertionError` since the ``logical_false`` function currently returns a different value from what is expected
 * When I make the return value to :ref:`False<test_what_is_false>`, the terminal shows passing tests
 
   .. code-block:: python
@@ -151,7 +151,7 @@ I add a new ``TestCase`` to ``test_truth_table.py``
           self.assertTrue(truth_table.logical_identity(True))
           self.assertFalse(truth_table.logical_identity(False))
 
-and the terminal shows an :ref:`AttributeError` because there is no definition for ``logical_identity`` in ``truth_table.py``
+and the terminal shows :ref:`AttributeError` because there is no definition for ``logical_identity`` in ``truth_table.py``
 
 green: make it pass
 ---------------------------------------------------------------------------------
@@ -183,7 +183,7 @@ I add a test for ``logical_negation`` to ``test_truth_table.py``
         self.assertFalse(truth_table.logical_negation(True))
         self.assertTrue(truth_table.logical_negation(False))
 
-the terminal shows an :ref:`AttributeError`, there is no definition for ``logical_negation`` in ``truth_table.py``
+the terminal shows :ref:`AttributeError`, there is no definition for ``logical_negation`` in ``truth_table.py``
 
 green: make it pass
 ---------------------------------------------------------------------------------
@@ -195,7 +195,7 @@ green: make it pass
     def logical_negation(value):
         return value
 
-  the terminal shows an :ref:`AssertionError`.
+  the terminal shows :ref:`AssertionError`.
 
   The ``logical_negation`` function returns the value it receives as input but the test expects the opposite
 * I use the ``not`` keyword to return the opposite of the :doc:`boolean </data_structures/booleans/booleans>` value ``logical_negation`` receives

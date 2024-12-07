@@ -37,7 +37,7 @@ I add a new test to ``test_functions.py``
             ('my_first_name', 'my_last_name')
         )
 
-the terminal shows an :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 .. _test_functions_w_keyword_arguments_green:
 
@@ -53,7 +53,7 @@ green: make it pass
     def passthrough_w_keyword_arguments():
         return None
 
-  the terminal shows a :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -66,7 +66,7 @@ green: make it pass
     def passthrough_w_keyword_arguments(first_name):
         return None
 
-  the terminal shows a :ref:`TypeError` with a different message
+  the terminal shows :ref:`TypeError` with a different message
 
   .. code-block:: python
 
@@ -79,7 +79,7 @@ green: make it pass
     def passthrough_w_keyword_arguments(first_name, last_name):
         return None
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 * I adjust the `return statement`_ to make the test pass
 
   .. code-block:: python
@@ -153,7 +153,7 @@ I add an assertion
             {}
         )
 
-the terminal shows a :ref:`TypeError`
+the terminal shows :ref:`TypeError`
 
 .. _test_functions_w_keyword_arguments_refactor_green:
 
@@ -167,7 +167,7 @@ green: make it pass
     def passthrough_w_keyword_arguments(**keyword_arguments):
         return keyword_arguments
 
-  the terminal shows an :ref:`AssertionError` for the previous test that was passing. I have introduced a regression - the new code has caused an old passing test to fail.
+  the terminal shows :ref:`AssertionError` for the previous test that was passing. I have introduced a regression - the new code has caused an old passing test to fail.
 
 * so I change the expectation
 
@@ -185,7 +185,7 @@ green: make it pass
             }
         )
 
-  the terminal shows an :ref:`AssertionError` for the next test that was passing. I have another regression
+  the terminal shows :ref:`AssertionError` for the next test that was passing. I have another regression
 
 * I make the expectation match the output
 
@@ -213,7 +213,7 @@ green: make it pass
             }
         )
 
-  and the terminal shows an :ref:`AssertionError` for the last test I added
+  and the terminal shows :ref:`AssertionError` for the last test I added
 
 * time to match the last test to the expected value in the comparison
 
@@ -299,7 +299,7 @@ I add one more assertion to ``test_functions_w_keyword_arguments`` to drill the 
           {}
       )
 
-the terminal shows an :ref:`AssertionError` and I make the expected values match the values from the terminal
+the terminal shows :ref:`AssertionError` and I make the expected values match the values from the terminal
 
 .. code-block:: python
 

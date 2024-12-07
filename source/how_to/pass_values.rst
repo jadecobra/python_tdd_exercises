@@ -37,7 +37,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 telephone
 
-  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows an :ref:`AssertionError`
+  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -83,7 +83,7 @@ green: make it pass
     import src.telephone
     import unittest
 
-  which gives me an :ref:`AttributeError`
+  which gives me :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -116,7 +116,7 @@ green: make it pass
 
     text = None
 
-  and get a :ref:`TypeError`
+  and get :ref:`TypeError`
 
   .. code-block:: python
 
@@ -154,7 +154,7 @@ green: make it pass
     def text(value):
         return None
 
-  and get an :ref:`AssertionError`
+  and get :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -191,7 +191,7 @@ I add a new assertion to ``test_passing_a_string``
           "I received: yes"
       )
 
-which gives me an :ref:`AssertionError`
+which gives me :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -245,7 +245,7 @@ I add a failing test for a :ref:`class <classes>`
           "I received: object"
       )
 
-the terminal shows an :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -283,7 +283,7 @@ then add another assertion for a different :ref:`class<classes>`
           "I received: <class 'object'>"
       )
 
-which gives me an :ref:`AssertionError`
+which gives me :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -317,7 +317,7 @@ I add a new failing test for :ref:`None`
           "I received: 'None'"
       )
 
-and the terminal shows an :ref:`AssertionError`
+and the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -354,7 +354,7 @@ I add a test for :ref:`booleans`, first with an assertion for :ref:`True<test_wh
           "I received: 'True'"
       )
 
-the terminal shows an :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -389,7 +389,7 @@ green: make it pass
             "I received: 'False'"
         )
 
-  which gives me an :ref:`AssertionError`
+  which gives me :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -420,7 +420,7 @@ I also add a test for an integer_
           "I received: '1234'"
       )
 
-and the terminal shows an :ref:`AssertionError`
+and the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -458,7 +458,7 @@ I add a test for a float_
           "I received: '1.234'"
       )
 
-and get an :ref:`AssertionError`
+and get :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -496,7 +496,7 @@ I add a test for a tuple_
           "I received: '(1, 2, 3, n)'"
       )
 
-the terminal shows an :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -534,7 +534,7 @@ I add a test for a :doc:`list </data_structures/lists/lists>`
           "I received: '[1, 2, 3, n]'"
       )
 
-and get an :ref:`AssertionError`
+and get :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -575,7 +575,7 @@ I add a test for a :doc:`dictionary </data_structures/dictionaries>`
           "I received: '{key1: value1, keyN: valueN}'"
       )
 
-and the terminal shows an :ref:`AssertionError`
+and the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -611,7 +611,7 @@ red: make it fail
 #################################################################################
 
 * I close ``test_telephone.py``
-* then delete all the text in ``telephone.py`` and the terminal shows an :ref:`AttributeError`
+* then delete all the text in ``telephone.py`` and the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -638,7 +638,7 @@ green: make it pass
 
     text = None
 
-  and the terminal shows a :ref:`TypeError`
+  and the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -664,7 +664,7 @@ green: make it pass
     def text(argument):
         return None
 
-  and the terminal shows an :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -691,7 +691,7 @@ green: make it pass
         return argument
         return 'I received: None'
 
-  the test summary info shows that every test has an :ref:`AssertionError`
+  the test summary info shows that every test has :ref:`AssertionError`
 
   .. code-block:: python
 

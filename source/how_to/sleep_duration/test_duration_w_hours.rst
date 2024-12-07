@@ -38,7 +38,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 sleep_duration
 
-  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows an :ref:`AssertionError`
+  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -65,7 +65,7 @@ red: make it fail
 
             )
 
-  and get a :ref:`TypeError`
+  and get :ref:`TypeError`
 
   .. code-block:: python
 
@@ -129,7 +129,7 @@ green: make it pass
     class TestSleepDuration(unittest.TestCase):
     ...
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -144,7 +144,7 @@ green: make it pass
         None
     )
 
-  and get an :ref:`AttributeError`
+  and get :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -185,7 +185,7 @@ green: make it pass
         None
     )
 
-  and get a :ref:`TypeError`
+  and get :ref:`TypeError`
 
   .. code-block:: python
 
@@ -209,7 +209,7 @@ green: make it pass
         None
     )
 
-  then get a :ref:`TypeError`
+  then get :ref:`TypeError`
 
   .. code-block:: python
 
@@ -259,7 +259,7 @@ green: make it pass
         ('08:00', '07:00')
     )
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -304,7 +304,7 @@ refactor: make it better
         wake_time = '09:00'
         sleep_time = '07:00'
 
-  which gives me an :ref:`AssertionError`
+  which gives me :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -327,7 +327,7 @@ refactor: make it better
         wake_time = '09:00'
         sleep_time = '06:00'
 
-  and get an :ref:`AssertionError`
+  and get :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -376,7 +376,7 @@ refactor: make it better
         sleep_time=f'{sleep_hour:02}:00'
     ...
 
-  the ``:02`` tells Python to always show the numbers as two digits, if it is less than ``10`` it will have a ``0`` in front of it, for example ``01``. The terminal shows an :ref:`AssertionError`
+  the ``:02`` tells Python to always show the numbers as two digits, if it is less than ``10`` it will have a ``0`` in front of it, for example ``01``. The terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -406,7 +406,7 @@ refactor: make it better
         (wake_time-sleep_time)
     )
 
-  and get a :ref:`TypeError`
+  and get :ref:`TypeError`
 
   .. code-block:: python
 
@@ -478,7 +478,7 @@ I add a failing test for the `str.split`_ :ref:`method<functions>` to see what i
   def test_duration_w_hours(self):
   ...
 
-the terminal shows an :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -514,7 +514,7 @@ refactor: make it better
         '01:23'.split(), ['01', '23']
     )
 
-  and get an :ref:`AssertionError`
+  and get :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -545,7 +545,7 @@ refactor: make it better
         )
     )
 
-  and the terminal shows an :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -582,7 +582,7 @@ refactor: make it better
     self.assertEqual(split, ['01', '23'])
     self.assertEqual(split[0], 0)
 
-  which gives me an :ref:`AssertionError` because the first item (index 0) from splitting ``'01:23'`` on the separator ``':'`` is ``'01'``, the hours part of the timestamp
+  which gives me :ref:`AssertionError` because the first item (index 0) from splitting ``'01:23'`` on the separator ``':'`` is ``'01'``, the hours part of the timestamp
 
   .. code-block:: python
 
@@ -603,7 +603,7 @@ refactor: make it better
     self.assertEqual(split[0], '01')
     self.assertEqual(split[1], '01')
 
-  and get an :ref:`AssertionError`
+  and get :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -632,7 +632,7 @@ refactor: make it better
         )
     )
 
-  and get an :ref:`AssertionError`
+  and get :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -658,7 +658,7 @@ refactor: make it better
 test_converting_strings_to_numbers
 #################################################################################
 
-The hours part of the timestamp after calling `str.split`_ is still a string_ and I got a :ref:`TypeError` when I tried to subtract one from another earlier. I want to see if I can use the int_ constructor_ to change a string_ to a number
+The hours part of the timestamp after calling `str.split`_ is still a string_ and I got the :ref:`TypeError` when I tried to subtract one from another earlier. I want to see if I can use the int_ constructor_ to change a string_ to a number
 
 * I add a new failing test to test numbers that have a ``0`` in front of them
 
@@ -670,7 +670,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
     def test_duration_w_hours(self):
     ...
 
-  and the terminal shows an :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -690,7 +690,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
 
     self.assertEqual(int('23'), 1)
 
-  the terminal shows an :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -721,7 +721,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
         )
     )
 
-  and get an :ref:`AssertionError`
+  and get :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -757,7 +757,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
         )
     )
 
-  and get an :ref:`AssertionError`
+  and get :ref:`AssertionError`
 
   .. code-block:: python
 

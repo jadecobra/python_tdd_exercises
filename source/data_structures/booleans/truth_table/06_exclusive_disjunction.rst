@@ -26,7 +26,7 @@ I add a test for exclusive disjunction to ``TestBinaryOperations`` in ``test_tru
         self.assertTrue(truth_table.exclusive_disjunction(False, True))
         self.assertFalse(truth_table.exclusive_disjunction(False, False))
 
-and the terminal shows an :ref:`AttributeError`
+and the terminal shows :ref:`AttributeError`
 
 green: make it pass
 #################################################################################
@@ -38,7 +38,7 @@ green: make it pass
     def exclusive_disjunction(p, q):
         return True
 
-  the terminal shows an :ref:`AssertionError` for the second case
+  the terminal shows :ref:`AssertionError` for the second case
 * I add a condition for it
 
   .. code-block:: python
@@ -48,7 +48,7 @@ green: make it pass
             return False
         return True
 
-  and the terminal shows an :ref:`AssertionError` for the fourth case
+  and the terminal shows :ref:`AssertionError` for the fourth case
 * I add a condition to resolve it
 
   .. code-block:: python
