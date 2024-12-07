@@ -700,7 +700,7 @@ green: make it pass
     >    return x / y
     E    ZeroDivisionError: division by zero
 
-  dividing by ``0`` is not defined in mathematics and raises :ref:`Exception<Exceptions>` in Python
+  dividing by ``0`` is not defined in mathematics and raises an Exception_ in Python
 
 * I add it to the list of Exceptions_ encountered
 
@@ -764,7 +764,7 @@ green: make it pass
         #   self.x/self.y
         # )
 
-  because I used the wrong :ref:`Exception<Exceptions>` the terminal still shows a ZeroDivisionError_
+  because I used the wrong Exception_ the terminal still shows a ZeroDivisionError_
 
   .. code-block:: python
 
@@ -777,7 +777,7 @@ green: make it pass
     with self.assertRaises(ZeroDivisionError):
         src.calculator.divide(self.x, 0)
 
-  the test passes, showing that the code raises the :ref:`Exception<Exceptions>`
+  the test passes, showing that the code raises the Exception_
 
 .. _test_division_refactor_1:
 
@@ -832,7 +832,7 @@ refactor: make it better
 
     ZeroDivisionError: division by zero
 
-* I add an assertRaises_ block to catch the :ref:`Exception<Exceptions>` in the `while statement`_ and remove the previous statement from the test because it is now part of the loop
+* I add an assertRaises_ block to catch the Exception_ in the `while statement`_ and remove the previous statement from the test because it is now part of the loop
 
   .. code-block:: python
 

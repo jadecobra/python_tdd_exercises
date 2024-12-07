@@ -98,9 +98,9 @@ green: make it pass
     def raise_exception():
         raise Exception
 
-  and the terminal shows a passing test
+  and the terminal shows passing tests
 
-* I can use the `unittest.TestCase.assertRaisesRegex`_ :ref:`method<functions>` to be more specific when catching Exceptions_, it checks that the code in its context raises the `Exception <https://docs.python.org/3/library/exceptions.html>`_ it is given, with the message it is given, it uses `Regular Expressions`_ for the message
+* I can use the `unittest.TestCase.assertRaisesRegex`_ :ref:`method<functions>` to be more specific in tests, it checks that the code in its context raises the `Exception <https://docs.python.org/3/library/exceptions.html>`_ it is given, with the message it is given, it uses `Regular Expressions`_ for this
 
   .. code-block:: python
 
@@ -110,7 +110,7 @@ green: make it pass
         ):
             src.exceptions.raise_exception()
 
-  this gives me :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 

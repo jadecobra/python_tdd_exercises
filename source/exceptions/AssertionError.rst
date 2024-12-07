@@ -14,7 +14,7 @@ AssertionError
 
 ----
 
-`AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_ is :ref:`Exception<Exceptions>` that is raised when the result of an ``assert`` statement is :ref:`False<test_what_is_false>`. It was introduced in :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` with the first failing test
+`AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_ is an Exception_ that is raised when the result of an ``assert`` statement is :ref:`False<test_what_is_false>`. It was introduced in :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` with the first failing test
 
 .. code-block:: python
 

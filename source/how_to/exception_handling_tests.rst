@@ -564,7 +564,7 @@ red: make it fail
 
     Exception
 
-* I can use the `raise statement`_ to cause any :ref:`Exception<Exceptions>`
+* I can use the `raise statement`_ to cause any Exception_
 
   .. code-block:: python
 
@@ -591,7 +591,7 @@ when I add the assertRaises_ :ref:`method<functions>` to the test
 the terminal shows all tests are passing.
 
 
-To review, the assertRaises_ :ref:`method<functions>` checks that the code in its context raises the :ref:`Exception<Exceptions>` it is given.
+To review, the assertRaises_ :ref:`method<functions>` checks that the code in its context raises the Exception_ it is given.
 
 refactor: make it better
 #################################################################################
