@@ -65,8 +65,8 @@ red: make it fail
 
     ModuleNotFoundError: No module called 'src.module_00'
 
-  - ``ModuleNotFoundError`` is raised when an `import statement`_ fails because python cannot find a module/package with the given name, in this case ``module_0`` does not exist
-  - ``import module_0`` is the line of code that caused the failure
+  - ``ModuleNotFoundError`` is raised when an `import statement`_ fails because python cannot find a module/package with the name, in this case ``module_00`` does not exist
+  - ``import module_00`` is the line of code that caused the failure
 
 * I add the error to the list of Exceptions_ encountered
 
@@ -81,8 +81,8 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I make ``module_0.py`` in the ``src`` folder and the terminal shows a passing test
-* then add another `import statement`_
+* I rename ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py`` and the terminal shows a passing test
+* then I add another `import statement`_
 
   .. code-block:: python
 
@@ -96,7 +96,7 @@ green: make it pass
 
     ModuleNotFoundError: No module named 'src.module_01'
 
-* When I add ``module_1.py`` to the ``src`` folder, the terminal shows a passing test
+* When I add ``module_01.py`` to the ``src`` folder, the terminal shows a passing test
 * I continue with another `import statement`
 
   .. code-block:: python
@@ -112,7 +112,7 @@ green: make it pass
 
     ModuleNotFoundError: No module called 'src.module_02'
 
-* I add ``module_2.py`` to the ``src`` folder, and the terminal shows green again
+* I add ``module_02.py`` to the ``src`` folder, and the terminal shows green again
 * after another `import statement`_
 
   .. code-block:: python
@@ -129,7 +129,7 @@ green: make it pass
 
     ModuleNotFoundError: No module called 'src.module_03'
 
-* I add ``module_3.py`` to the ``src`` folder and the test passes
+* I add the file to the ``src`` folder and the test passes
 
 ----
 
