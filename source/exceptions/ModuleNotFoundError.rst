@@ -137,7 +137,7 @@ green: make it pass
 review
 *********************************************************************************
 
-I ran a test for the :ref:`ModuleNotFoundError` and Python modules. Would you like to test the :ref:`AssertionError`?
+You can keep going and do this as a drill up to ``src.module_99`` if you want and you would have done this exercise 100 times, which would make you very familiar with it. I ran a test for the :ref:`ModuleNotFoundError` and Python modules. Would you like to test the :ref:`AssertionError`?
 
 ----
 
