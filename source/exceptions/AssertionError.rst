@@ -32,7 +32,7 @@ why are asserts important?
 
 When building a program I can add ``assert`` statements to make sure something is :ref:`True<test_what_is_true>` before it continues. I can also use them to test how the program behaves when it is given inputs. This helps catch bugs that break previous tested behavior when introduced, as well as answer the following questions
 
-* what is the same?
+* What is the same?
 * What is different?
 
 A difference between my expectations and reality, which is what happens when I run the program, gives me a clue about what to change to make them match
@@ -410,7 +410,7 @@ and the terminal shows passing tests. Which allows me to say that
 * :ref:`True<test_what_is_true>` is not :ref:`None`
 * :ref:`False<test_what_is_false>` is not :ref:`None`
 
-I could sum up the above statements this way - in Python :ref:`True<test_what_is_true>`, :ref:`False<test_what_is_false>` and :ref:`None` are different, which helps me know how Python behaves and gives a foundation of predictable expectations of the language. I could just compare things to them.
+I can sum up these statements as - in Python :ref:`True<test_what_is_true>`, :ref:`False<test_what_is_false>` and :ref:`None` are different, which helps me know how it behaves and gives me something to compare things with.
 
 ----
 
@@ -420,7 +420,7 @@ I could sum up the above statements this way - in Python :ref:`True<test_what_is
 test_assertion_error_w_equality
 *********************************************************************************
 
-I can also make assertions where I compare if two things are the same or equal
+I can also make assertions where I check if two things are equal
 
 red: make it fail
 #################################################################################
