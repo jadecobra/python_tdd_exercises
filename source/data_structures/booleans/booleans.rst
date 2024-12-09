@@ -20,7 +20,7 @@ The tests in this chapter go over booleans_ by comparing them with other data st
 
 There are two boolean_ values - True_ and False_
 
-.. _test_what_is_false:
+.. _False:
 
 *********************************************************************************
 test_what_is_false
@@ -94,7 +94,7 @@ From these tests I see that
 
 ----
 
-.. _test_what_is_true:
+.. _True:
 
 *********************************************************************************
 test_what_is_true

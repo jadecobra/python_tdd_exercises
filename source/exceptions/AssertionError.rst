@@ -35,7 +35,7 @@ When building a program I can add ``assert`` statements to make sure something i
 * What is the same?
 * What is different?
 
-A difference between my expectations and reality, which is what happens when I run the program, gives me a clue about what to change to make them match
+A difference between my expectations and reality, which is what happens when the program runs, gives me a clue about what to change to make them match
 
 ----
 
@@ -251,11 +251,6 @@ the test passes, and I can say that
 * :ref:`None` is :ref:`None`
 * :ref:`True<test_what_is_true>` is not :ref:`None`
 * :ref:`False<test_what_is_false>` is not :ref:`None`
-
-Which of these ``assert`` statements do you prefer when testing :ref:`None`?
-
-* ``assert x is None``
-* ``self.assertIsNone(x)``
 
 ----
 
@@ -627,7 +622,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-If you have been typing along *WELL DONE!* Your magic powers are growing. From these tests you know
+If you have been typing along *WELL DONE!* Your magic powers are growing. You now know
 
 * how to test for equality
 * how to test if something is :ref:`None` or not
