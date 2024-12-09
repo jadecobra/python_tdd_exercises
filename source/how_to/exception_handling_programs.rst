@@ -40,7 +40,7 @@ test_catching_exceptions_w_messages
 green: make it pass
 #################################################################################
 
-* then I add the name to ``exceptions.py``
+* I add the name to ``exceptions.py``
 
   .. code-block:: python
 
@@ -85,7 +85,7 @@ green: make it pass
         with self.assertRaises(Exception):
             src.exceptions.raise_exception()
 
-  I get :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -98,7 +98,7 @@ green: make it pass
     def raise_exception():
         raise Exception
 
-  and the terminal shows passing tests
+  and the tests pass
 
 * I can use the `unittest.TestCase.assertRaisesRegex`_ :ref:`method<functions>` to be more specific in tests, it checks that the code in its context raises the Exception_ it is given, with the message it is given, it uses `Regular Expressions`_ for this
 
@@ -116,9 +116,7 @@ green: make it pass
 
     AssertionError: "BOOM!" does not match ""
 
-  the Exception_ is right, the message is not
-
-* I add it
+* the Exception_ is right, the message is not. I add it
 
   .. code-block:: python
 
@@ -194,7 +192,7 @@ green: make it pass
     def exception_handler():
         return None
 
-  and still get :ref:`TypeError`
+  and get a different message for the :ref:`TypeError`
 
   .. code-block:: python
 
@@ -232,7 +230,7 @@ green: make it pass
 test_catching_success
 *********************************************************************************
 
-The ``exception_handler`` does not use the input, I want it to do something with it and return ``failed`` when an Exception_ happens or ``success`` when it does not.
+I want ``exception_handler`` to process the input and return ``failed`` when an Exception_ happens or ``success`` when it does not.
 
 red: make it fail
 #################################################################################
@@ -258,7 +256,7 @@ and get :ref:`AttributeError`
 green: make it pass
 #################################################################################
 
-* then I add the name to ``exceptions.py``
+* I add the name to ``exceptions.py``
 
   .. code-block:: python
 
@@ -307,8 +305,8 @@ green: make it pass
     FAILED tests/test_exceptions.py::TestExceptions::test_catching_failure - AssertionError: <function raise_exception at 0xabcd12e34567> != 'failed'
     FAILED tests/test_exceptions.py::TestExceptions::test_catching_success - AssertionError: None != 'succeeded'
 
-  - ``test_catching_failure`` is now failing, ``exception_handler`` returns the name of the :ref:`function<functions>` it receives and its address in memory in this test
-  - ``test_catching_success`` is still failing, ``exception_handler`` returns ``does_not_raise_exception`` which points to :ref:`None`
+  - ``test_catching_failure`` is now failing, in this test ``exception_handler`` returns the name of the :ref:`function<functions>` it receives and its address in memory
+  - ``test_catching_success`` is still failing, in this test ``exception_handler`` returns ``does_not_raise_exception`` which points to :ref:`None`
 
 * I rename the input parameter and make ``exception_handler`` return the result of a call to its input as a :ref:`function<functions>`
 
@@ -318,7 +316,7 @@ green: make it pass
         return a_function()
         return 'failed'
 
-  the terminal shows :ref:`TypeError`
+* the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -328,9 +326,7 @@ green: make it pass
     >       return a_function()
     E       TypeError: 'NoneType' object is not callable
 
-  because ``does_not_raise_exception`` is not callable_
-
-* I make it a :ref:`function<functions>` to fix this
+  because ``does_not_raise_exception`` points to :ref:`None`, which is not callable_. I make it a :ref:`function<functions>` to fix this
 
   .. code-block:: python
 
@@ -380,9 +376,7 @@ how to use try...except...else
         else:
             return None
 
-  and still get :ref:`AssertionError`
-
-* when I change the `return statement`_
+  then change its `return statement`_
 
   .. code-block:: python
 
@@ -394,7 +388,7 @@ how to use try...except...else
         else:
             return 'succeeded'
 
-  the terminal shows passing tests
+  and the terminal shows passing tests
 
 The `try statement`_ is used to catch/handle exceptions in Python. It allows the program to make a decision when it runs into an Exception_. I think of it as
 
