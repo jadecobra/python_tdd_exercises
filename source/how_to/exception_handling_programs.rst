@@ -98,7 +98,7 @@ green: make it pass
     def raise_exception():
         raise Exception
 
-  and the tests pass
+  and the test passes
 
 * I can use the `unittest.TestCase.assertRaisesRegex`_ :ref:`method<functions>` to be more specific in tests, it checks that the code in its context raises the Exception_ it is given, with the message it is given, it uses `Regular Expressions`_ for this
 
@@ -298,17 +298,25 @@ green: make it pass
         return argument
         return 'failed'
 
-  and the terminal shows :ref:`AssertionErrors<AssertionError>`
+  and two tests have :ref:`AssertionError`
 
   .. code-block:: python
 
     FAILED tests/test_exceptions.py::TestExceptions::test_catching_failure - AssertionError: <function raise_exception at 0xabcd12e34567> != 'failed'
     FAILED tests/test_exceptions.py::TestExceptions::test_catching_success - AssertionError: None != 'succeeded'
 
-  - ``test_catching_failure`` is now failing, in this test ``exception_handler`` returns the name of the :ref:`function<functions>` it receives and its address in memory
-  - ``test_catching_success`` is still failing, in this test ``exception_handler`` returns ``does_not_raise_exception`` which points to :ref:`None`
+  - ``test_catching_failure`` fails - in this test ``exception_handler`` returns the name of the :ref:`function<functions>` it receives and its address in memory
+  - ``test_catching_success`` still fails - in this test ``exception_handler`` returns ``does_not_raise_exception`` which points to :ref:`None`
 
-* I rename the input parameter and make ``exception_handler`` return the result of a call to its input as a :ref:`function<functions>`
+* I rename the input parameter
+
+  .. code-block:: python
+
+    def exception_handler(a_function):
+        return a_function
+        return 'failed'
+
+  then make ``exception_handler`` return the result of a call to its input as a :ref:`function<functions>`
 
   .. code-block:: python
 
