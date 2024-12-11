@@ -43,6 +43,7 @@ class TestAssertionError(unittest.TestCase):
         assert False != True
         self.assertNotEqual(False, True)
 
+
 # NOTES
 # False is not True and False is not equal to True
 # True is True and True is equal to True
