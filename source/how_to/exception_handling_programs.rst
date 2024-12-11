@@ -324,34 +324,34 @@ green: make it pass
         return a_function()
         return 'failed'
 
-* the terminal shows :ref:`TypeError`
+  - and the terminal shows :ref:`TypeError`
 
-  .. code-block:: python
+    .. code-block:: python
 
-    a_function = None
+      a_function = None
 
-        def exception_handler(a_function):
-    >       return a_function()
-    E       TypeError: 'NoneType' object is not callable
+          def exception_handler(a_function):
+      >       return a_function()
+      E       TypeError: 'NoneType' object is not callable
 
-  because ``does_not_raise_exception`` points to :ref:`None`, which is not callable_. I make it a :ref:`function<functions>` to fix this
+    because ``does_not_raise_exception`` points to :ref:`None`, which is not callable_. I make it a :ref:`function<functions>` to fix this
 
-  .. code-block:: python
+    .. code-block:: python
 
-    def does_not_raise_exception():
-        return None
+      def does_not_raise_exception():
+          return None
 
-  and the terminal shows :ref:`AssertionError`
+    and the terminal shows :ref:`AssertionError`
 
-  .. code-block:: python
+    .. code-block:: python
 
-    AssertionError: None != 'succeeded'
+      AssertionError: None != 'succeeded'
 
-* the result of calling ``src.exceptions.raise_exception`` in ``test_catching_failure`` is an Exception_ with a message
+  - the result of calling ``src.exceptions.raise_exception`` in ``test_catching_failure`` is an Exception_ with a message
 
-  .. code-block:: python
+    .. code-block:: python
 
-    FAILED tests/test_exceptions.py::TestExceptions::test_catching_failure - Exception: 'BOOM!'
+      FAILED tests/test_exceptions.py::TestExceptions::test_catching_failure - Exception: 'BOOM!'
 
 how to use try...except...else
 ---------------------------------------------------------------------------------
@@ -398,17 +398,50 @@ how to use try...except...else
 
   and the terminal shows passing tests
 
-The `try statement`_ is used to catch/handle exceptions in Python. It allows the program to make a decision when it runs into an Exception_. I think of it as
+  The `try statement`_ is used to catch/handle exceptions in Python. It allows the program to make a decision when it runs into an Exception_. I think of it as
 
-* ``try`` **this**
-* ``except Exception`` - when **this** raises ``Exception`` run the code in this block
-* ``else`` - when **this** does NOT raise ``Exception`` run the code in this block
+  - ``try`` **this**
+  - ``except Exception`` - when **this** raises ``Exception`` run the code in this block
+  - ``else`` - when **this** does NOT raise ``Exception`` run the code in this block
 
-In this case
+  In this case
 
-* ``try`` **calling** ``a_function()``
-* ``except Exception`` - when **calling** ``a_function()`` raises ``Exception`` return ``'failed'``
-* ``else`` - when **calling** ``a_function()`` does NOT raise ``Exception`` return ``'succeeded'``
+  - ``try`` **calling** ``a_function()``
+  - ``except Exception`` - when **calling** ``a_function()`` raises ``Exception`` return ``'failed'``
+  - ``else`` - when **calling** ``a_function()`` does NOT raise ``Exception`` return ``'succeeded'``
+
+* I can be more specific with the Exception_ in the ``except`` block, for example
+
+  .. code-block:: python
+
+    def exception_handler(a_function):
+        try:
+            a_function()
+        except ModuleNotFoundError:
+            return 'failed'
+        else:
+            return 'succeeded'
+
+  shows this in the terminal
+
+  .. code-block:: python
+
+    Exception: 'BOOM!'
+
+  because it is not a :ref:`ModuleNotFoundError`, this `try statement`_ will only catch the Exception_ given in the ``except`` block, all others will be raised
+
+* I change it back to what works
+
+  .. code-block:: python
+
+    def exception_handler(a_function):
+        try:
+            a_function()
+        except Exception:
+            return 'failed'
+        else:
+            return 'succeeded'
+
 
 ----
 
