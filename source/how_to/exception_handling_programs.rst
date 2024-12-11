@@ -442,6 +442,7 @@ how to use try...except...else
         else:
             return 'succeeded'
 
+  and the terminal shows green again
 
 ----
 

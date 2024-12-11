@@ -45,13 +45,13 @@ class TestAssertionError(unittest.TestCase):
 
 
 # NOTES
-# False is not True and False is not equal to True
-# True is True and True is equal to True
-# True is not False and True is not equal to False
-# False is False and False is equal to False
-# None is None and None is equal to None
-# True is not None and True is not equal to None
-# False is not None and False is not equal to None
+# False is not True and is not equal to True
+# True is True and is equal to True
+# True is not False and is not equal to False
+# False is False and is equal to False
+# None is None and is equal to None
+# True is not None is not equal to None
+# False is not None is not equal to None
 
 
 # Exceptions Encountered
