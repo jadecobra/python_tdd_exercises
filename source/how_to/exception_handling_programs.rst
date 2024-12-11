@@ -100,7 +100,7 @@ green: make it pass
 
   and the test passes
 
-* I can use the `unittest.TestCase.assertRaisesRegex`_ :ref:`method<functions>` to be more specific in tests, it checks that the code in its context raises the Exception_ it is given, with the message it is given, it uses `Regular Expressions`_ for this
+* I can use the `unittest.TestCase.assertRaisesRegex`_ :ref:`method<functions>` to be more specific in tests, it checks that the code in its context raises the Exception_ it is given with the message it is given, it uses `Regular Expressions`_ for this
 
   .. code-block:: python
 
@@ -230,7 +230,7 @@ green: make it pass
 test_catching_success
 *********************************************************************************
 
-I want ``exception_handler`` to process the input and return ``failed`` when an Exception_ happens or ``success`` when it does not.
+I want ``exception_handler`` to process its input and return ``failed`` when an Exception_ happens or ``success`` when it does not.
 
 red: make it fail
 #################################################################################
@@ -428,7 +428,7 @@ how to use try...except...else
 
     Exception: 'BOOM!'
 
-  because it is not a :ref:`ModuleNotFoundError`, this `try statement`_ will only catch the Exception_ given in the ``except`` block, all others will be raised
+  because it is not a :ref:`ModuleNotFoundError`, the `try statement`_ will only catch the Exception_ given and its children in the ``except`` block, all others will be raised
 
 * I change it back to what works
 

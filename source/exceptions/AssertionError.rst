@@ -30,7 +30,7 @@ which is like
 why are asserts important?
 *********************************************************************************
 
-When building a program I can add ``assert`` statements to make sure something is :ref:`True<test_what_is_true>` before it continues. I can also use them to test how the program behaves when it is given inputs. This also helps catch bugs that break previous tested behavior when introduced, as well as answer the following questions
+When building a program I can add ``assert`` statements to make sure something is :ref:`True<test_what_is_true>` before it continues. I can also use them to test how the program behaves when it is given inputs. This helps catch bugs that break previous tested behavior when introduced, as well as answer the following questions
 
 * What is the same?
 * What is different?
