@@ -18,8 +18,6 @@ Programming allows us to gain from solutions to problems that we or other people
 
 A Python :ref:`module<ModuleNotFoundError>` is a file that ends in ``.py``. The ``ModuleNotFoundError`` is raised when Python cannot find a module that is in an `import statement`_.
 
-This exercise will help you remember how to solve the ``ModuleNotFoundError`` and what a Python module is.
-
 *********************************************************************************
 test_module_not_found_error
 *********************************************************************************

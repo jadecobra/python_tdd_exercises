@@ -142,7 +142,7 @@ I add a new failing test
 
   def test_catching_failure(self):
       self.assertEqual(
-          src.exceptions.exception_handler(
+          src.exceptions.an_exception_handler(
               src.exceptions.raise_exception
           ),
           'failed'
@@ -152,7 +152,7 @@ the terminal shows :ref:`AttributeError`
 
 .. code-block::
 
-  AttributeError: module 'src.exceptions' has no attribute 'exception_handler'
+  AttributeError: module 'src.exceptions' has no attribute 'an_exception_handler'
 
 green: make it pass
 #################################################################################
@@ -165,19 +165,19 @@ green: make it pass
         raise Exception('BOOM')
 
 
-    exception_handler
+    an_exception_handler
 
   I get NameError_
 
   .. code-block:: python
 
-    NameError: name 'exception_handler' is not defined
+    NameError: name 'an_exception_handler' is not defined
 
 * I point it to :ref:`None`
 
   .. code-block:: python
 
-    exception_handler = None
+    an_exception_handler = None
 
   and get :ref:`TypeError`
 
@@ -189,20 +189,20 @@ green: make it pass
 
   .. code-block:: python
 
-    def exception_handler():
+    def an_exception_handler():
         return None
 
   and get a different message for the :ref:`TypeError`
 
   .. code-block:: python
 
-    TypeError: exception_handler() takes 0 positional arguments but 1 was given
+    TypeError: an_exception_handler() takes 0 positional arguments but 1 was given
 
 * I make the :ref:`function<functions>` take input
 
   .. code-block:: python
 
-    def exception_handler(argument):
+    def an_exception_handler(argument):
         return None
 
   and the terminal shows :ref:`AssertionError`
@@ -211,13 +211,13 @@ green: make it pass
 
     AssertionError: None != 'failed'
 
-  because the result of calling ``src.exceptions.exception_handler`` is :ref:`None` and the test expects ``'failed'``
+  because the result of calling ``src.exceptions.an_exception_handler`` is :ref:`None` and the test expects ``'failed'``
 
 * I change the `return statement`_ to match the expectation
 
   .. code-block:: python
 
-    def exception_handler(argument):
+    def an_exception_handler(argument):
         return 'failed'
 
   and the test passes.
@@ -230,7 +230,7 @@ green: make it pass
 test_catching_success
 *********************************************************************************
 
-I want ``exception_handler`` to process its input and return ``failed`` when an Exception_ happens or ``success`` when it does not.
+I want ``an_exception_handler`` to process its input and return ``failed`` when an Exception_ happens or ``success`` when it does not.
 
 red: make it fail
 #################################################################################
@@ -241,7 +241,7 @@ I add a new test
 
   def test_catching_success(self):
       self.assertEqual(
-          src.exceptions.exception_handler(
+          src.exceptions.an_exception_handler(
               src.exceptions.does_not_raise_exception
           ),
           'succeeded'
@@ -267,7 +267,7 @@ green: make it pass
     does_not_raise_exception
 
 
-    def exception_handler(argument):
+    def an_exception_handler(argument):
         return 'failed'
 
   and the terminal shows NameError_
@@ -288,13 +288,13 @@ green: make it pass
 
     AssertionError: 'failed' != 'succeeded'
 
-  ``src.exceptions.exception_handler`` still returns ``'failed'`` and the test expects ``'succeeded'``
+  ``src.exceptions.an_exception_handler`` still returns ``'failed'`` and the test expects ``'succeeded'``
 
-* I make ``exception_handler`` return its input
+* I make ``an_exception_handler`` return its input
 
   .. code-block:: python
 
-    def exception_handler(argument):
+    def an_exception_handler(argument):
         return argument
         return 'failed'
 
@@ -305,22 +305,22 @@ green: make it pass
     FAILED tests/test_exceptions.py::TestExceptions::test_catching_failure - AssertionError: <function raise_exception at 0xabcd12e34567> != 'failed'
     FAILED tests/test_exceptions.py::TestExceptions::test_catching_success - AssertionError: None != 'succeeded'
 
-  - ``test_catching_failure`` fails - in this test ``exception_handler`` returns the name of the :ref:`function<functions>` it receives and its address in memory
-  - ``test_catching_success`` still fails - in this test ``exception_handler`` returns ``does_not_raise_exception`` which points to :ref:`None`
+  - ``test_catching_failure`` fails - in this test ``an_exception_handler`` returns the name of the :ref:`function<functions>` it receives and its address in memory
+  - ``test_catching_success`` still fails - in this test ``an_exception_handler`` returns ``does_not_raise_exception`` which points to :ref:`None`
 
 * I rename the input parameter
 
   .. code-block:: python
 
-    def exception_handler(a_function):
+    def an_exception_handler(a_function):
         return a_function
         return 'failed'
 
-  then make ``exception_handler`` return the result of a call to its input as a :ref:`function<functions>`
+  then make ``an_exception_handler`` return the result of a call to its input as a :ref:`function<functions>`
 
   .. code-block:: python
 
-    def exception_handler(a_function):
+    def an_exception_handler(a_function):
         return a_function()
         return 'failed'
 
@@ -330,7 +330,7 @@ green: make it pass
 
       a_function = None
 
-          def exception_handler(a_function):
+          def an_exception_handler(a_function):
       >       return a_function()
       E       TypeError: 'NoneType' object is not callable
 
@@ -360,7 +360,7 @@ how to use try...except...else
 
   .. code-block:: python
 
-    def exception_handler(a_function):
+    def an_exception_handler(a_function):
         try:
             a_function()
         except Exception:
@@ -376,7 +376,7 @@ how to use try...except...else
 
   .. code-block:: python
 
-    def exception_handler(a_function):
+    def an_exception_handler(a_function):
         try:
             a_function()
         except Exception:
@@ -388,7 +388,7 @@ how to use try...except...else
 
   .. code-block:: python
 
-    def exception_handler(a_function):
+    def an_exception_handler(a_function):
         try:
             a_function()
         except Exception:
@@ -414,7 +414,7 @@ how to use try...except...else
 
   .. code-block:: python
 
-    def exception_handler(a_function):
+    def an_exception_handler(a_function):
         try:
             a_function()
         except ModuleNotFoundError:
@@ -434,7 +434,7 @@ how to use try...except...else
 
   .. code-block:: python
 
-    def exception_handler(a_function):
+    def an_exception_handler(a_function):
         try:
             a_function()
         except Exception:

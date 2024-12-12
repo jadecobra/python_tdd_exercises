@@ -10,7 +10,7 @@ def does_not_raise_exception():
     return None
 
 
-def exception_handler(a_function):
+def an_exception_handler(a_function):
     try:
         a_function()
     except Exception:

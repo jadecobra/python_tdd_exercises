@@ -47,7 +47,7 @@ class TestExceptions(unittest.TestCase):
 
     def test_catching_failure(self):
         self.assertEqual(
-            src.exceptions.exception_handler(
+            src.exceptions.an_exception_handler(
                 src.exceptions.raise_exception
             ),
             'failed'
@@ -55,7 +55,7 @@ class TestExceptions(unittest.TestCase):
 
     def test_catching_success(self):
         self.assertEqual(
-            src.exceptions.exception_handler(
+            src.exceptions.an_exception_handler(
                 src.exceptions.does_not_raise_exception
             ),
             'succeeded'
