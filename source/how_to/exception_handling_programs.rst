@@ -75,7 +75,7 @@ green: make it pass
     def raise_exception():
         return None
 
-  the terminal shows passing tests
+  the test passes
 
 * I want the :ref:`function<functions>` to raise an Exception_ when it is called
 
@@ -98,7 +98,7 @@ green: make it pass
     def raise_exception():
         raise Exception
 
-  and the test passes
+  and the test is green
 
 * I can use the `unittest.TestCase.assertRaisesRegex`_ :ref:`method<functions>` to be more specific in tests, it checks that the code in its context raises the Exception_ it is given with the message it is given, it uses `Regular Expressions`_ for this
 
@@ -211,7 +211,7 @@ green: make it pass
 
     AssertionError: None != 'failed'
 
-  because the result of calling ``src.exceptions.an_exception_handler`` is :ref:`None` and the test expects ``'failed'``
+  the result of calling ``src.exceptions.an_exception_handler`` is :ref:`None` and the test expects ``'failed'``
 
 * I change the `return statement`_ to match the expectation
 
@@ -298,7 +298,7 @@ green: make it pass
         return argument
         return 'failed'
 
-  and two tests have :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -308,7 +308,7 @@ green: make it pass
   - ``test_catching_failure`` fails - in this test ``an_exception_handler`` returns the name of the :ref:`function<functions>` it receives and its address in memory
   - ``test_catching_success`` still fails - in this test ``an_exception_handler`` returns ``does_not_raise_exception`` which points to :ref:`None`
 
-* I rename the input parameter
+* I rename the input parameter to describe it better
 
   .. code-block:: python
 
@@ -356,7 +356,7 @@ green: make it pass
 how to use try...except...else
 ---------------------------------------------------------------------------------
 
-* when I add a `try statement`_ statement
+* when I add a `try statement`_
 
   .. code-block:: python
 
@@ -396,13 +396,13 @@ how to use try...except...else
         else:
             return 'succeeded'
 
-  and the terminal shows passing tests
+  and the terminal shows passing tests.
 
   The `try statement`_ is used to catch/handle exceptions in Python. It allows the program to make a decision when it runs into an Exception_. I think of it as
 
   - ``try`` **this**
-  - ``except Exception`` - when **this** raises ``Exception`` run the code in this block
-  - ``else`` - when **this** does NOT raise ``Exception`` run the code in this block
+  - ``except Exception`` - when **this** raises ``Exception``, run the code in this block
+  - ``else`` - when **this** does NOT raise ``Exception``, run the code in this block
 
   In this case
 
@@ -428,7 +428,7 @@ how to use try...except...else
 
     Exception: 'BOOM!'
 
-  because it is not a :ref:`ModuleNotFoundError`, the `try statement`_ will only catch the Exception_ given and its children in the ``except`` block, all others will be raised
+  because Exception_ is not :ref:`ModuleNotFoundError`, the `try statement`_ will only catch the one given in the ``except`` block and its children, all others will be raised
 
 * I change it back to what works
 
