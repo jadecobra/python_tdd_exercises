@@ -670,7 +670,16 @@ class Class():
 
 ----
 
-.. _AttributeError_review:
+*********************************************************************************
+:ref:`classes` vs :doc:`/functions/functions` in Python
+*********************************************************************************
+
+* :ref:`attributes<AttributeError>` and :ref:`methods<functions>` in a :ref:`class <classes>` can be accessible from outside the :ref:`class <classes>`
+* attributes and :ref:`functions<functions>` in a :ref:`function<functions>` are not accessible from outside the :ref:`function<functions>`
+* keywords used to define them - :ref:`class <classes>` vs def_
+* naming conventions - ``CamelCase`` vs ``snake_case``
+
+----
 
 *********************************************************************************
 review
@@ -681,8 +690,8 @@ I ran tests for `AttributeError <https://docs.python.org/3/library/exceptions.ht
 * variables
 * :ref:`functions`
 * :ref:`classes <classes>`
-* attributes (variables) in a :ref:`classes <classes>`
-* :ref:`methods (functions) <functions>` in a :ref:`classes <classes>`
+* attributes (variables) in :ref:`classes <classes>`
+* :ref:`methods (functions) <functions>` in :ref:`classes <classes>`
 
 I also ran into the following Exceptions_
 
@@ -693,11 +702,8 @@ I also ran into the following Exceptions_
 * :ref:`TypeError`
 * SyntaxError_
 
-:ref:`classes` vs :doc:`/functions/functions` in Python
+Would you like to test the :ref:`TypeError`?
 
--------------------------------------------------------
+----
 
-* :ref:`attributes<AttributeError>` and :ref:`methods<functions>` in a :ref:`class <classes>` can be accessible from outside the :ref:`class <classes>`
-* attributes and :ref:`functions<functions>` in a :ref:`function<functions>` are not accessible from outside the :ref:`function<functions>`
-* keywords used to define them - :ref:`class <classes>` vs def_
-* naming conventions - ``CamelCase`` vs ``snake_case``
+:doc:`/code/code_attribute_error`
