@@ -560,6 +560,13 @@ refactor: make it better
 
   .. code-block:: python
 
+    class Class():
+
+        attribute_00 = None
+        attribute_01 = None
+        attribute_02 = None
+        attribute_03 = None
+
 ----
 
 .. _test_attribute_error_w_class_methods:
@@ -572,35 +579,36 @@ test_attribute_error_w_class_methods
 
 red: make it fail
 #################################################################################
-* I add a new test to the ``TestAttributeError`` class in ``test_attribute_error.py``
+* I add a new test
 
   .. code-block:: python
 
     def test_attribute_error_w_class_methods(self):
-        src.module.Class.method_0()
+        src.module.Class.method_00()
 
   the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
-    AttributeError: type object 'Class' has no attribute 'method_0'
+    AttributeError: type object 'Class' has no attribute 'method_00'
 
 .. _test_attribute_error_w_class_methods_green:
 
 green: make it pass
 #################################################################################
 
-* I add a name to ``Class`` in ``module.py``
+* I add the name to ``Class`` and point it to :ref:`None`
 
   .. code-block:: python
 
     class Class():
+
         attribute_00 = None
         attribute_01 = None
         attribute_02 = None
         attribute_03 = None
-        ...
-        method_0 = None
+
+        method_00 = None
 
   and the terminal shows :ref:`TypeError`
 
@@ -608,35 +616,57 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* then I make ``method_0`` from an attribute to a :ref:`method<functions>` using the def_ keyword to make it callable_
+* then I make it :ref:`method<functions>` by using the def_ keyword to make it callable_
 
   .. code-block:: python
 
     class Class():
     ...
-        def method_0():
+        def method_00():
             return None
 
-  and all tests pass. Fantastic!
+  and the tests passes
 
 .. _test_attribute_error_w_class_methods_refactor:
 
 refactor: make it better
 #################################################################################
 
-You know the "drill", add more lines until there are 100 tests ending with one for ``src.module.Class.method_99()`` to ``test_attribute_error_w_class_methods`` in ``TestAttributeError`` in ``test_attribute_error.py``
+You know the "drill", I add more lines
 
 .. code-block:: python
 
   def test_attribute_error_w_class_methods(self):
-      src.module.Class.method_0()
-      src.module.Class.method_1()
-      src.module.Class.method_2()
-      src.module.Class.method_3()
-      ...
-      src.module.Class.method_99()
+      src.module.Class.method_00()
+      src.module.Class.method_01()
+      src.module.Class.method_02()
+      src.module.Class.method_03()
 
-repeat the solution until all tests pass
+the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+
+.. code-block:: python
+
+  AttributeError: type object 'Class' has no attribute 'method_01'. Did you mean: 'method_00'?
+
+I repeat the solution until all tests pass
+
+.. code-block:: python
+
+class Class():
+
+    ...
+
+    def method_00():
+        return None
+
+    def method_01():
+        return None
+
+    def method_02():
+        return None
+
+    def method_03():
+        return None
 
 ----
 
@@ -646,7 +676,15 @@ repeat the solution until all tests pass
 review
 *********************************************************************************
 
-*CONGRATULATIONS!* you ran into the following exceptions
+I ran tests for `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ to show how to solve it by defining
+
+* variables
+* :ref:`functions`
+* :ref:`classes <classes>`
+* attributes (variables) in a :ref:`classes <classes>`
+* :ref:`methods (functions) <functions>` in a :ref:`classes <classes>`
+
+I also ran into the following Exceptions_
 
 * :ref:`AssertionError`
 * :ref:`ModuleNotFoundError`
@@ -654,17 +692,6 @@ review
 * NameError_
 * :ref:`TypeError`
 * SyntaxError_
-
-and learned
-
-* how to solve :ref:`ModuleNotFoundError`
-* how to solve NameError_
-* how to solve :ref:`TypeError` by defining a callable_
-* how to solve shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
-* how to solve shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
-* how to solve shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :ref:`class <classes>`
-* how to solve shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining attributes (variables) in a :ref:`class <classes>`
-* how to solve shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :ref:`methods (functions) <functions>` in a :ref:`class <classes>`
 
 :ref:`classes` vs :doc:`/functions/functions` in Python
 

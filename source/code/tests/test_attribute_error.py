@@ -29,10 +29,10 @@ class TestAttributeError(unittest.TestCase):
         src.module.Class.attribute_03
 
     def test_attribute_error_w_class_methods(self):
-        src.module.Class.method_0()
-        src.module.Class.method_1()
-        src.module.Class.method_2()
-        src.module.Class.method_3()
+        src.module.Class.method_00()
+        src.module.Class.method_01()
+        src.module.Class.method_02()
+        src.module.Class.method_03()
 
 # Exceptions Encountered
 # AssertionError
