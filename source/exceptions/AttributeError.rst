@@ -16,7 +16,7 @@ AttributeError
 
 An Attribute is a property, variable, function or name that belongs to an object_. For example when I describe a human being I can list attributes like height, weight, sex and color.
 
-An `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name in an object_ that does not exist.
+shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name in an object_ that does not exist.
 
 *********************************************************************************
 requirements
@@ -56,28 +56,43 @@ red: make it fail
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_attribute_error.py:7`` with the mouse to open it in the editor
 * then change ``True`` to ``False`` to make the test pass
-* and ``test_failure`` to ``test_attribute_error_w_variables``
+* I add an `import statement`_
 
   .. code-block:: python
 
     import unittest
-    import module
+    import src.module
 
-
-    class TestAttributeErrors(unittest.TestCase):
-
-        def test_attribute_error_w_variables(self):
-            module.variable_0
-
-  - ``class TestAttributeErrors(unittest.TestCase):`` is a class definition that inherits from `unittest.TestCase`_ and will hold the tests
-  - ``def test_attribute_error_w_variables(self):`` is the definition of the first test function to find out if defining variables can solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
-  - ``module.variable_0`` - the actual test, I think of this as making a phone call to ``variable_0`` in ``module.py``
-
-  the terminal shows an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  and the terminal shows :ref:`ModuleNotFoundError`
 
   .. code-block:: python
 
-    AttributeError: module 'module' has no attribute 'variable_0'
+    ModuleNotFoundError: No module named 'src.module'
+
+  I add it to the list of Exceptions_ encountered
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AssertionError
+    # ModuleNotFoundError
+
+  then open the ``src`` folder and rename ``attribute_error.py`` to ``module.py`` and the test passes
+
+* I change ``test_failure`` to ``test_attribute_error_w_variables``
+
+  .. code-block:: python
+
+    class TestAttributeError(unittest.TestCase):
+
+        def test_attribute_error_w_variables(self):
+            src.module.variable_00
+
+  I think of ``src.module.variable_00`` as an address for ``variable_00`` in ``module.py`` in the ``src`` folder, the address does not exist so the  terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+
+  .. code-block:: python
+
+    AttributeError: module 'src.module' has no attribute 'variable_00'
 
 * I add the error to the list of Exceptions_ encountered
 
@@ -85,50 +100,48 @@ red: make it fail
 
     # Exceptions Encountered
     # AssertionError
+    # ModuleNotFoundError
     # AttributeError
 
 * then add a name to ``module.py``
 
   .. code-block:: python
 
-    variable_0
+    variable_00
 
   and the terminal shows NameError_
 
   .. code-block::
 
-    NameError: name 'variable_0' is not defined
+    NameError: name 'variable_00' is not defined
 
-  because ``variable_0`` in ``module.py`` is a reference to something that does not exist
-
-* I add NameError_ to the list of errors encountered
+  because ``variable_00`` in ``module.py`` is a reference to something that does not exist. I add NameError_ to the list of Exceptions_ encountered
 
   .. code-block:: python
 
     # Exceptions Encountered
     # AssertionError
+    # ModuleNotFoundError
     # AttributeError
     # NameError
 
-* then change the failing line in ``module.py`` to point ``variable_0`` to :ref:`None`
+* I point ``variable_00`` to :ref:`None`
 
   .. code-block:: python
 
-    variable_0 = None
+    variable_00 = None
 
-  the terminal shows a passing test. YES!
-
-I solved the `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a variable
+  and the terminal shows a passing test. I solved the `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a variable
 
 .. NOTE::
 
   - in Python ``=`` is used to point names to objects, for example ``five = 5`` means I can refer to the number ``5`` with the name ``five``
-  - the equality sign ``==`` is used to check if two things are equal example  ``5 == 4`` means "is ``5`` is equal to ``4``?"
+  - the equality sign ``==`` is used to check if two things are equal example  ``5 == 4`` means "is ``5`` is equal to ``4``?", this is used in the :ref:`AssertionError` chapter
 
 AttributeError vs NameError
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-An `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name in an object_ from outside the object_ and the name does not exist, for example ``humans.wings``
+shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name in an object_ from outside the object_ and the name does not exist, for example ``humans.wings``
 
 NameError_ is raised when there is a reference to a name within an object_ and there is no definition for the name
 
@@ -136,148 +149,97 @@ NameError_ is raised when there is a reference to a name within an object_ and t
 refactor: make it better
 #################################################################################
 
-I could repeat the above tests as a drill to help remember the solution
+I can repeat the test as a drill to help remember it
 
 * I add a failing line
 
   .. code-block:: python
 
     def test_attribute_error_w_variables(self):
-        module.variable_0
-        module.variable_1
+        src.module.variable_00
+        src.module.variable_01
 
-  the terminal shows an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
-    AttributeError: module 'module' has no attribute 'variable_1'
+    AttributeError: module 'src.module' has no attribute 'variable_01'. Did you mean: 'variable_00'?
 
 * I add the name to ``module.py``
 
   .. code-block:: python
 
-    variable_0 = None
-    variable_1
+    variable_00 = None
+    variable_01
 
   the terminal shows NameError_
 
   .. code-block:: python
 
-    NameError: name 'variable_1' is not defined
+    NameError: name 'variable_01' is not defined
 
-* I add a definition for ``variable_1``
+* I point it to :ref:`None`
 
   .. code-block:: python
 
-    variable_0 = None
-    variable_1 = None
+    variable_00 = None
+    variable_01 = None
 
-  the terminal shows passing tests
+  and the test passes
 
-* I add a failing line
+* I do it again
 
   .. code-block:: python
 
     def test_attribute_error_w_variables(self):
-        module.variable_0
-        module.variable_1
-        module.variable_2
+        src.module.variable_00
+        src.module.variable_01
+        src.module.variable_02
 
-  the terminal shows an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
-
-  .. code-block:: python
-
-    AttributeError: module 'module' has no attribute 'variable_2'
-
-* I add the name to ``module.py``
+  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
-    variable_0 = None
-    variable_1 = None
-    variable_2
+    AttributeError: module 'src.module' has no attribute 'variable_02'. Did you mean: 'variable_00'?
 
-  the terminal shows NameError_
+* I add the name to ``module.py`` and point it to :ref:`None`
 
   .. code-block:: python
 
-    NameError: name 'variable_2' is not defined
+    variable_00 = None
+    variable_01 = None
+    variable_02 = None
 
-* I define ``variable_2`` in ``module.py``
+  and the terminal shows green again
 
-  .. code-block:: python
-
-    variable_0 = None
-    variable_1 = None
-    variable_2 = None
-
-  The tests pass
-
-* I add a failing line
+* One more time
 
   .. code-block:: python
 
     def test_attribute_error_w_variables(self):
-        module.variable_0
-        module.variable_1
-        module.variable_2
-        module.variable_3
+        src.module.variable_00
+        src.module.variable_01
+        src.module.variable_02
+        src.module.variable_03
 
-  the terminal shows an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
-
-  .. code-block:: python
-
-    AttributeError: module 'module' has no attribute 'variable_3'
-
-* I add the name
+  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
-    variable_0 = None
-    variable_1 = None
-    variable_2 = None
-    variable_3
+    AttributeError: module 'src.module' has no attribute 'variable_03'. Did you mean: 'variable_00'?
 
-  the terminal shows NameError_
+* I add the name and point it to :ref:`None`
 
   .. code-block:: python
 
-    NameError: name 'variable_3' is not defined
+    variable_00 = None
+    variable_01 = None
+    variable_02 = None
+    variable_03 = None
 
-* I define the name
+  and the terminal shows a passing test
 
-  .. code-block:: python
-
-    variable_0 = None
-    variable_1 = None
-    variable_2 = None
-    variable_3 = None
-
-I have a pattern for the drill. When I test an attribute in a module, I get
-
-* an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ when the attribute does not exist
-* NameError_ when I add the name to the module
-* a passing test when I define the name as a variable
-
-If you are feeling adventurous you can add more tests to ``test_attribute_error_w_variables`` until you get to ``module.variable_99``, you will have 100 lines
-
-.. code-block:: python
-
-  def test_attribute_error_w_variables(self):
-      module.variable_0
-      module.variable_1
-      module.variable_2
-      module.variable_3
-      ...
-      module.variable_99
-
-Repeat the pattern until all tests pass.
-
-If you have been typing along *WELL DONE!* You now know
-
-* how to solve :ref:`ModuleNotFoundError`
-* how to solve NameError_ using variables
-* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
+The test shows that I get `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ when the attribute does not exist and NameError_ when I add the name to the module without defining it
 
 ----
 
@@ -288,29 +250,29 @@ test_attribute_error_w_functions
 red: make it fail
 #################################################################################
 
-I add a new test to ``TestAttributeError`` class in ``tests/test_attribute_error.py``
+I add a new test
 
 .. code-block:: python
 
   def test_attribute_error_w_functions(self):
-      module.function_0()
+      src.module.function_00()
 
-the terminal shows an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
 .. code-block:: python
 
-  AttributeError: module 'module' has no attribute 'function_0'
+  AttributeError: module 'src.module' has no attribute 'function_00'
 
 green: make it pass
 #################################################################################
 
-* I try the solution I know for solving `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ with variables and change ``module.py`` to include a new variable
+* I add the name and point it to :ref:`None`
 
   .. code-block:: python
 
-    function_0 = None
+    function_00 = None
 
-  I see :ref:`TypeError` in the terminal
+  and get :ref:`TypeError`
 
   .. code-block:: python
 
@@ -322,21 +284,16 @@ green: make it pass
 
     # Exceptions Encountered
     # AssertionError
+    # ModuleNotFoundError
     # AttributeError
     # NameError
     # TypeError
 
-* :ref:`TypeError` is raised in this case because I called an object that was not callable_
-
-  A callable_ object is an object that may be able to handle inputs. I can make an object_ callable_ by defining it as a :ref:`class <classes>` or a :ref:`function<functions>`
-
-  Parentheses are used at the end of the name of an object when calling it, for example  ``module.function_0()`` will call ``function_0`` from ``module.py``
-
-* What if I make ``function_0`` in ``module.py`` to a function by using the def_ keyword?
+* When I make it a :ref:`function<functions>`
 
   .. code-block:: python
 
-    def function_0():
+    def function_00():
         return None
 
   the terminal shows passing tests
@@ -344,33 +301,40 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* Time to make a drill. You can change ``test_attribute_error_w_functions`` in the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` to include calls to functions in ``module.py`` until you have one for ``module.function_99()``
+* Time to make it a drill
 
   .. code-block:: python
 
     def test_attribute_error_w_functions(self):
-        module.function_0()
-        module.function_1()
-        module.function_2()
-        module.function_3()
-        ...
-        module.function_99()
+        src.module.function_00()
+        src.module.function_01()
+        src.module.function_02()
+        src.module.function_03()
 
-  the terminal shows an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
-    AttributeError: module 'module' has no attribute 'function_1'
+    AttributeError: module 'src.module' has no attribute 'function_01'. Did you mean: 'function_00'?
 
-  add the solutions to ``module.py`` until all tests pass
+  I add the :ref:`functions` to ``module.py`` until all tests pass
 
-*YOU DID IT AGAIN!* You now know
+  .. code-block:: python
 
-* how to solve :ref:`ModuleNotFoundError`
-* how to solve NameError_
-* how to solve :ref:`TypeError` by defining a callable
-* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
-* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
+    def function_00():
+        return None
+
+
+    def function_01():
+        return None
+
+
+    def function_02():
+        return None
+
+
+    def function_03():
+        return None
 
 ----
 
@@ -380,7 +344,7 @@ refactor: make it better
 test_attribute_error_w_classes
 *********************************************************************************
 
-I think of a :ref:`class <classes>` as a container of :ref:`attributes<AttributeError>` and :ref:`methods (functions) <functions>` that represents an object_
+I think of a :ref:`class <classes>` as a container of :ref:`attributes<AttributeError>` and :ref:`methods (functions) <functions>` that represent an object_
 
 - attributes are names which represent something
 - :ref:`methods<functions>` are :doc:`/functions/functions`, they
@@ -396,41 +360,29 @@ For example I can define a ``Human`` class with attributes like eye color, date 
 red: make it fail
 #################################################################################
 
-* I add a test function to the ``TestAttributeError`` class in ``tests/test_attribute_error.py``
+* I add a failing test
 
   .. code-block:: python
 
     def test_attribute_error_w_classes(self):
-        module.Class0()
+        src.module.Class00()
 
-  the terminal shows
+  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
-    AttributeError: module 'module' has no attribute 'Class0'
+    AttributeError: module 'src.module' has no attribute 'Class00'
 
 .. _test_attribute_error_w_classes_green:
 
 green: make it pass
 #################################################################################
 
-* I add a name to ``module.py``
+* I add it as a :ref:`function<functions>` using the previous solution
 
   .. code-block:: python
 
-    Class0 = None
-
-  and the terminal shows :ref:`TypeError`
-
-  .. code-block:: python
-
-    TypeError: 'NoneType' object is not callable
-
-  I had a similar issue earlier, what if I make ``Class0`` callable_ by changing the variable to a function using the def_ keyword in ``module.py``
-
-  .. code-block:: python
-
-    def Class0():
+    def Class00():
         return None
 
   The test passes! Something is odd here, what is the difference between :ref:`classes` and :doc:`/functions/functions`? Why am I writing a different set of tests for :ref:`classes` if the solutions are the same for :doc:`/functions/functions`?
@@ -442,34 +394,40 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* This could also be a drill, add lines to ``test_attribute_error_w_classes`` in the ``TestAttributeError`` class in ``tests/test_attribute_error.py`` until you have one for ``module.Class99()``, you will have 100 lines
+* I make it a drill
 
   .. code-block:: python
 
     def test_attribute_error_w_classes(self):
-        module.Class0()
-        module.Class1()
-        module.Class2()
-        module.Class3()
-        ...
-        module.Class99()
+        src.module.Class00()
+        src.module.Class01()
+        src.module.Class02()
+        src.module.Class03()
 
-  the terminal shows an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
-    AttributeError: module 'module' has no attribute 'Class1'
+    AttributeError: module 'src.module' has no attribute 'Class01'. Did you mean: 'Class00'?
 
-  add each solution to ``module.py`` until all the tests pass
+  I add each solution to ``module.py`` until all the tests pass
 
-*WELL DONE!* You now know
+  .. code-block:: python
 
-* how to solve :ref:`ModuleNotFoundError`
-* how to solve NameError_
-* how to solve :ref:`TypeError` by defining a callable_
-* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
-* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
-* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :ref:`class <classes>`? do I know how to define :ref:`class <classes>` if I define them the same way I do :doc:`/functions/functions`?
+    def Class00():
+        return None
+
+
+    def Class01():
+        return None
+
+
+    def Class02():
+        return None
+
+
+    def Class03():
+        return None
 
 ----
 
@@ -485,68 +443,56 @@ red: make it fail
 #################################################################################
 
 
-* I add a new test to the ``TestAttributeError`` class in ``test_attribute_error.py``
+* I add a new test
 
   .. code-block:: python
 
     def test_attribute_error_w_class_attributes(self):
-        module.Class.attribute_0
+        src.module.Class.attribute_00
 
-  the terminal shows an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
-    AttributeError: module 'module' has no attribute 'Class'
+    AttributeError: module 'src.module' has no attribute 'Class'. Did you mean: 'Class00'?
 
 .. _test_attribute_error_w_class_attributes_green:
 
 green: make it pass
 #################################################################################
 
-* I add a variable to ``module.py``
-
-  .. code-block:: python
-
-    Class = None
-
-  and the terminal still shows an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ but with a different message
-
-  .. code-block:: python
-
-    AttributeError: 'NoneType' object has no attribute 'attribute_0'
-
-  when I make the variable to a function
+* I add it as a :ref:`function<functions>`
 
   .. code-block:: python
 
     def Class():
         return None
 
-  the terminal shows an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ but with a slightly different message
+  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
-    AttributeError: 'function' object has no attribute 'attribute_0'
+    AttributeError: 'function' object has no attribute 'attribute_00'
 
-* I wonder if it is possible to define an attribute in a function and access it from outside the function. I add an attribute to ``Class`` in ``module.py``
+* I try to define an attribute in a :ref:`function` and access it from outside
 
   .. code-block:: python
 
     def Class():
-        attribute_0 = None
+        attribute_00 = None
         return None
 
-  the terminal still shows the same error, my guess was wrong
+  and the terminal still shows the same error
 
-* what if I use the :ref:`class <classes>` keyword to define ``Class`` instead of def_?
+* I use the :ref:`class <classes>` keyword to define it instead of def_?
 
   .. code-block:: python
 
     class Class():
-        attribute_0 = None
+        attribute_00 = None
         return None
 
-  the terminal now shows a SyntaxError_
+  the terminal now shows SyntaxError_
 
   .. code-block:: python
 
@@ -562,6 +508,7 @@ green: make it pass
 
     # Exceptions Encountered
     # AssertionError
+    # ModuleNotFoundError
     # AttributeError
     # NameError
     # TypeError
@@ -572,7 +519,7 @@ green: make it pass
   .. code-block:: python
 
     class Class():
-        attribute_0 = None
+        attribute_00 = None
 
   the test passes. WOO HOO!
 
@@ -581,46 +528,37 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* The current solution for ``test_attribute_error_w_classes`` was done by defining functions but the test name has ``defining_classes``, time to go back and change ``module.py`` using the :ref:`class <classes>` keyword instead of def_
+* The current solution for ``test_attribute_error_w_classes`` was done by defining :ref:`functions` but the test name has ``defining_classes``, time to go back and change ``module.py`` using the :ref:`class <classes>` keyword instead of def_
 
   .. code-block:: python
 
-    class Class0():
+    class Class00():
         pass
     ...
-    class Class99():
+    class Class04():
         pass
 
   `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is a keyword used as a placeholder
 
-* I now know how to properly define a :ref:`class <classes>` with an attribute. You can make a drill to practice by adding more lines to ``test_attribute_error_w_class_attributes`` until you have a total of 100 lines
+* I make it a drill to practice
 
   .. code-block:: python
 
     def test_attribute_error_w_class_attributes(self):
-        module.Class.attribute_0
-        module.Class.attribute_1
-        module.Class.attribute_2
-        module.Class.attribute_3
-        ...
-        module.Class.attribute_99
+        src.module.Class.attribute_00
+        src.module.Class.attribute_01
+        src.module.Class.attribute_02
+        src.module.Class.attribute_03
 
   the terminal shows
 
   .. code-block:: python
 
-    AttributeError: type object 'Class' has no attribute 'attribute_1'
+     AttributeError: type object 'Class' has no attribute 'attribute_01'. Did you mean: 'attribute_00'?
 
-  add the solutions to ``module.py`` until all tests pass
+  I add the solutions to ``module.py`` until all tests pass
 
-*WELL DONE!* You now know You now know
-
-* how to solve NameError_
-* how to solve :ref:`TypeError` by defining a callable_
-* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
-* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
-* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :ref:`class <classes>`
-* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining attributes (variables) in a :ref:`class <classes>`
+  .. code-block:: python
 
 ----
 
@@ -639,9 +577,9 @@ red: make it fail
   .. code-block:: python
 
     def test_attribute_error_w_class_methods(self):
-        module.Class.method_0()
+        src.module.Class.method_0()
 
-  the terminal shows an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
@@ -657,10 +595,10 @@ green: make it pass
   .. code-block:: python
 
     class Class():
-        attribute_0 = None
-        attribute_1 = None
-        attribute_2 = None
-        attribute_3 = None
+        attribute_00 = None
+        attribute_01 = None
+        attribute_02 = None
+        attribute_03 = None
         ...
         method_0 = None
 
@@ -686,17 +624,17 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-You know the "drill", add more lines until there are 100 tests ending with one for ``module.Class.method_99()`` to ``test_attribute_error_w_class_methods`` in ``TestAttributeError`` in ``test_attribute_error.py``
+You know the "drill", add more lines until there are 100 tests ending with one for ``src.module.Class.method_99()`` to ``test_attribute_error_w_class_methods`` in ``TestAttributeError`` in ``test_attribute_error.py``
 
 .. code-block:: python
 
   def test_attribute_error_w_class_methods(self):
-      module.Class.method_0()
-      module.Class.method_1()
-      module.Class.method_2()
-      module.Class.method_3()
+      src.module.Class.method_0()
+      src.module.Class.method_1()
+      src.module.Class.method_2()
+      src.module.Class.method_3()
       ...
-      module.Class.method_99()
+      src.module.Class.method_99()
 
 repeat the solution until all tests pass
 
@@ -722,11 +660,11 @@ and learned
 * how to solve :ref:`ModuleNotFoundError`
 * how to solve NameError_
 * how to solve :ref:`TypeError` by defining a callable_
-* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
-* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
-* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :ref:`class <classes>`
-* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining attributes (variables) in a :ref:`class <classes>`
-* how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :ref:`methods (functions) <functions>` in a :ref:`class <classes>`
+* how to solve shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
+* how to solve shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :doc:`/functions/functions`
+* how to solve shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a :ref:`class <classes>`
+* how to solve shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining attributes (variables) in a :ref:`class <classes>`
+* how to solve shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining :ref:`methods (functions) <functions>` in a :ref:`class <classes>`
 
 :ref:`classes` vs :doc:`/functions/functions` in Python
 

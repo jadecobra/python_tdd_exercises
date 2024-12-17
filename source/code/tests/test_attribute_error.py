@@ -2,37 +2,37 @@ import unittest
 import module
 
 
-class TestAttributeErrors(unittest.TestCase):
+class TestAttributeError(unittest.TestCase):
 
     def test_attribute_error_w_variables(self):
-        module.variable_0
-        module.variable_1
-        module.variable_2
-        module.variable_3
+        src.module.variable_00
+        src.module.variable_01
+        src.module.variable_02
+        src.module.variable_03
 
     def test_attribute_error_w_functions(self):
-        module.function_0()
-        module.function_1()
-        module.function_2()
-        module.function_3()
+        src.module.function_00()
+        src.module.function_01()
+        src.module.function_02()
+        src.module.function_03()
 
     def test_attribute_error_w_classes(self):
-        module.Class0()
-        module.Class1()
-        module.Class2()
-        module.Class3()
+        src.module.Class00()
+        src.module.Class01()
+        src.module.Class02()
+        src.module.Class03()
 
     def test_attribute_error_w_class_attributes(self):
-        module.Class.attribute_0
-        module.Class.attribute_1
-        module.Class.attribute_2
-        module.Class.attribute_3
+        src.module.Class.attribute_00
+        src.module.Class.attribute_01
+        src.module.Class.attribute_02
+        src.module.Class.attribute_03
 
     def test_attribute_error_w_class_methods(self):
-        module.Class.method_0()
-        module.Class.method_1()
-        module.Class.method_2()
-        module.Class.method_3()
+        src.module.Class.method_0()
+        src.module.Class.method_1()
+        src.module.Class.method_2()
+        src.module.Class.method_3()
 
 # Exceptions Encountered
 # AssertionError
