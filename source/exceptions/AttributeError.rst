@@ -14,9 +14,7 @@ AttributeError
 
 ----
 
-An Attribute is a property, variable, function or name that belongs to an object_. For example when I describe a human being I can list attributes like height, weight, sex and color.
-
-shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name in an object_ that does not exist.
+An Attribute is a property, variable, function or name that belongs to an object_. For example when I describe a human being I can list attributes like height, weight, sex and color. The `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name in an object_ that does not exist.
 
 *********************************************************************************
 requirements
@@ -88,7 +86,7 @@ red: make it fail
         def test_attribute_error_w_variables(self):
             src.module.variable_00
 
-  I think of ``src.module.variable_00`` as an address for ``variable_00`` in ``module.py`` in the ``src`` folder, the address does not exist so the  terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  I think of ``src.module.variable_00`` as an address for ``variable_00`` in ``module.py`` in the ``src`` folder, since the address does not exist the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
