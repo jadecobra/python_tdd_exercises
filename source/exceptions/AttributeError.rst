@@ -34,37 +34,29 @@ test_attribute_error_w_variables
 red: make it fail
 #################################################################################
 
-I open a new file, save it as ``test_attribute_error.py`` in the ``tests`` folder made in :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` and type the following
-
-.. code-block:: python
-
-  import unittest
-  import module
-
-* ``import unittest`` imports the unittest_ module from thePython standard library
-* ``import module`` imports the ``module`` module - which will hold the code I am testing
-
-the terminal shows :ref:`ModuleNotFoundError` if you have not yet done the :doc:`/how_to/exception_handling_tests` chapter
-
-.. code-block:: python
-
-  ModuleNotFoundError: No module called 'module'
-
-:ref:`ModuleNotFoundError` is raised when a name is provided to an `import statement`_ andPython cannot find the name. Since there is currently no file called ``module.py`` the ``import module`` line causes a failure
-
-green: make it pass
-#################################################################################
-
-* I make the list of Exceptions_ encountered
+* I open a terminal to run :ref:`makePythonTdd.sh` with ``attribute_error`` as the name of the project
 
   .. code-block:: python
 
-    # Exceptions Encountered
-    # AssertionError
-    # ModuleNotFoundError
+    ./makePythonTdd.sh attribute_error
 
-* then make ``module.py`` in the ``magic`` folder and the terminal all tests are passing
-* I continue adding tests to ``test_attribute_error.py``
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+
+    .. code-block:: python
+
+      ./makePythonTdd.ps1 attribute_error
+
+  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    E       AssertionError: True is not false
+
+    tests/test_attribute_error.py:7: AssertionError
+
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_attribute_error.py:7`` with the mouse to open it in the editor
+* then change ``True`` to ``False`` to make the test pass
+* and ``test_failure`` to ``test_attribute_error_w_variables``
 
   .. code-block:: python
 
@@ -93,7 +85,6 @@ green: make it pass
 
     # Exceptions Encountered
     # AssertionError
-    # ModuleNotFoundError
     # AttributeError
 
 * then add a name to ``module.py``
@@ -116,7 +107,6 @@ green: make it pass
 
     # Exceptions Encountered
     # AssertionError
-    # ModuleNotFoundError
     # AttributeError
     # NameError
 
@@ -332,7 +322,6 @@ green: make it pass
 
     # Exceptions Encountered
     # AssertionError
-    # ModuleNotFoundError
     # AttributeError
     # NameError
     # TypeError
@@ -573,7 +562,6 @@ green: make it pass
 
     # Exceptions Encountered
     # AssertionError
-    # ModuleNotFoundError
     # AttributeError
     # NameError
     # TypeError
@@ -627,7 +615,6 @@ refactor: make it better
 
 *WELL DONE!* You now know You now know
 
-* how to solve :ref:`ModuleNotFoundError`
 * how to solve NameError_
 * how to solve :ref:`TypeError` by defining a callable_
 * how to solve an `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining variables
