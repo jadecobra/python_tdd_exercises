@@ -100,7 +100,7 @@ green: make it pass
 
   and the test is green
 
-* I can use the `unittest.TestCase.assertRaisesRegex`_ :ref:`method<functions>` to be more specific in tests, it checks that the code in its context raises the Exception_ it is given with the message it is given, it uses `Regular Expressions`_ for this
+* I can use the `unittest.TestCase.assertRaisesRegex`_ :ref:`method<functions>` to be more specific in tests, it checks that the code in its context raises the Exception_ it is given, with the message it is given, it uses `Regular Expressions`_ for this
 
   .. code-block:: python
 
@@ -211,7 +211,7 @@ green: make it pass
 
     AssertionError: None != 'failed'
 
-  the result of calling ``src.exceptions.an_exception_handler`` is :ref:`None` and the test expects ``'failed'``
+  the result of calling ``src.exceptions.an_exception_handler`` is :ref:`None`, the test expects ``'failed'``
 
 * I change the `return statement`_ to match the expectation
 
@@ -288,7 +288,7 @@ green: make it pass
 
     AssertionError: 'failed' != 'succeeded'
 
-  ``src.exceptions.an_exception_handler`` still returns ``'failed'`` and the test expects ``'succeeded'``
+  ``src.exceptions.an_exception_handler`` still returns ``'failed'``, the test expects ``'succeeded'``
 
 * I make ``an_exception_handler`` return its input
 
@@ -298,7 +298,7 @@ green: make it pass
         return argument
         return 'failed'
 
-  the terminal shows :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -400,9 +400,9 @@ how to use try...except...else
 
   The `try statement`_ is used to catch/handle exceptions in Python. It allows the program to make a decision when it runs into an Exception_. I think of it as
 
-  - ``try`` **this**
-  - ``except Exception`` - when **this** raises ``Exception``, run the code in this block
-  - ``else`` - when **this** does NOT raise ``Exception``, run the code in this block
+  - ``try`` running **this**
+  - ``except Exception`` - when running **this** raises ``Exception``, run the code in this block
+  - ``else`` - when running **this** does NOT raise ``Exception``, run the code in this block
 
   In this case
 
@@ -428,7 +428,7 @@ how to use try...except...else
 
     Exception: 'BOOM!'
 
-  because Exception_ is not :ref:`ModuleNotFoundError`, the `try statement`_ will only catch the one given in the ``except`` block and its children, all others will be raised
+  because Exception_ is not :ref:`ModuleNotFoundError`, the `try statement`_ will only catch the Exception_ given in the ``except`` block and its children, all others will be raised
 
 * I change it back to what works
 
