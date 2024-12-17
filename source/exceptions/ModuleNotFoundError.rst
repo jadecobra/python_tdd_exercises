@@ -14,9 +14,7 @@ ModuleNotFoundError
 
 ----
 
-Programming allows us to gain from solutions to problems that we or other people come up with, in the form of modules or packages, that can be imported to be used.
-
-A Python :ref:`module<ModuleNotFoundError>` is a file that ends in ``.py``. The ``ModuleNotFoundError`` is raised when Python cannot find a module that is in an `import statement`_.
+Programming allows us to gain from solutions to problems that we or others come up with, in the form of modules or packages that can be imported to be used. A Python :ref:`module<ModuleNotFoundError>` is a file that ends in ``.py`` and the ``ModuleNotFoundError`` is raised when Python cannot find a module that is in an `import statement`_.
 
 *********************************************************************************
 test_module_not_found_error
@@ -57,14 +55,13 @@ red: make it fail
       def test_module_not_found_error(self):
           import src.module_00
 
-  and the terminal shows
+  and the terminal shows `ModuleNotFoundError <https://docs.python.org/3/library/exceptions.html#ModuleNotFoundError>`_
 
   .. code-block:: python
 
     ModuleNotFoundError: No module called 'src.module_00'
 
-  - ``ModuleNotFoundError`` is raised when an `import statement`_ fails because python cannot find a module/package with the name, in this case ``module_00`` does not exist
-  - ``import module_00`` is the line of code that caused the failure
+  because Python cannot find ``module_00.py`` in the ``src`` folder
 
 * I add the error to the list of Exceptions_ encountered
 
@@ -74,13 +71,11 @@ red: make it fail
     # AssertionError
     # ModuleNotFoundError
 
-  If you want more information about imports you can read `The Import Statement <https://docs.python.org/3/reference/simple_stmts.html#import>`_
-
 green: make it pass
 #################################################################################
 
-* I rename ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py`` and the terminal shows a passing test
-* then I add another `import statement`_
+* then I rename ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py`` and the terminal shows a passing test
+* I add another `import statement`_
 
   .. code-block:: python
 
@@ -88,7 +83,7 @@ green: make it pass
         import src.module_00
         import src.module_01
 
-  which gives me
+  which gives me `ModuleNotFoundError <https://docs.python.org/3/library/exceptions.html#ModuleNotFoundError>`_
 
   .. code-block:: python
 
@@ -104,7 +99,7 @@ green: make it pass
         import src.module_01
         import src.module_02
 
-  and get
+  and get `ModuleNotFoundError <https://docs.python.org/3/library/exceptions.html#ModuleNotFoundError>`_
 
   .. code-block:: python
 
@@ -135,7 +130,7 @@ green: make it pass
 review
 *********************************************************************************
 
-You can keep going and do this as a drill up to ``src.module_99`` if you want and you would have done this exercise 100 times, which would make you very familiar with it. I ran a test for the :ref:`ModuleNotFoundError` and Python modules. Would you like to test the :ref:`AssertionError`?
+I ran a test for the `ModuleNotFoundError <https://docs.python.org/3/library/exceptions.html#ModuleNotFoundError>`_ and Python modules. Would you like to test the :ref:`AssertionError`?
 
 ----
 
