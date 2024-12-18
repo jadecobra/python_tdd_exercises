@@ -131,15 +131,10 @@ red: make it fail
 
   and the terminal shows a passing test. I solved the `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a variable
 
-.. NOTE::
-
-  - in Python ``=`` is used to point names to objects, for example ``five = 5`` means I can refer to the number ``5`` with the name ``five``
-  - the equality sign ``==`` is used to check if two things are equal example  ``5 == 4`` means "is ``5`` is equal to ``4``?", this is used in the :ref:`AssertionError` chapter
-
 AttributeError vs NameError
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name in an object_ from outside the object_ and the name does not exist, for example ``humans.wings``
+shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name that does not exist in an object_ that does exist, for example ``humans.wings``
 
 NameError_ is raised when there is a reference to a name within an object_ and there is no definition for the name
 
@@ -650,32 +645,21 @@ I repeat the solution until all tests pass
 
 .. code-block:: python
 
-class Class():
+  class Class():
 
-    ...
+      ...
 
-    def method_00():
-        return None
+      def method_00():
+          return None
 
-    def method_01():
-        return None
+      def method_01():
+          return None
 
-    def method_02():
-        return None
+      def method_02():
+          return None
 
-    def method_03():
-        return None
-
-----
-
-*********************************************************************************
-:ref:`classes` vs :doc:`/functions/functions` in Python
-*********************************************************************************
-
-* :ref:`attributes<AttributeError>` and :ref:`methods<functions>` in a :ref:`class <classes>` can be accessible from outside the :ref:`class <classes>`
-* attributes and :ref:`functions<functions>` in a :ref:`function<functions>` are not accessible from outside the :ref:`function<functions>`
-* keywords used to define them - :ref:`class <classes>` vs def_
-* naming conventions - ``CamelCase`` vs ``snake_case``
+      def method_03():
+          return None
 
 ----
 

@@ -1,5 +1,5 @@
 import unittest
-import module
+import src.module
 
 
 class TestAttributeError(unittest.TestCase):
@@ -33,6 +33,8 @@ class TestAttributeError(unittest.TestCase):
         src.module.Class.method_01()
         src.module.Class.method_02()
         src.module.Class.method_03()
+
+
 
 # Exceptions Encountered
 # AssertionError
