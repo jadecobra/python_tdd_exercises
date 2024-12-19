@@ -59,38 +59,22 @@ red: make it fail
   .. code-block:: python
 
     import unittest
-    import src.module
+    import src.attribute_error
 
-  and the terminal shows :ref:`ModuleNotFoundError`
-
-  .. code-block:: python
-
-    ModuleNotFoundError: No module named 'src.module'
-
-  I add it to the list of Exceptions_ encountered
-
-  .. code-block:: python
-
-    # Exceptions Encountered
-    # AssertionError
-    # ModuleNotFoundError
-
-  then open the ``src`` folder and rename ``attribute_error.py`` to ``module.py`` and the test passes
-
-* I change ``test_failure`` to ``test_attribute_error_w_variables``
+* then change ``test_failure`` to ``test_attribute_error_w_variables``
 
   .. code-block:: python
 
     class TestAttributeError(unittest.TestCase):
 
         def test_attribute_error_w_variables(self):
-            src.module.variable_00
+            src.attribute_error.variable_00
 
-  I think of ``src.module.variable_00`` as an address for ``variable_00`` in ``module.py`` in the ``src`` folder, since the address does not exist the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  I think of ``src.attribute_error.variable_00`` as an address for ``variable_00`` in ``attribute_error.py`` in the ``src`` folder, since the address does not exist the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
-    AttributeError: module 'src.module' has no attribute 'variable_00'
+    AttributeError: module 'src.attribute_error' has no attribute 'variable_00'
 
 * I add the error to the list of Exceptions_ encountered
 
@@ -98,10 +82,9 @@ red: make it fail
 
     # Exceptions Encountered
     # AssertionError
-    # ModuleNotFoundError
     # AttributeError
 
-* then add a name to ``module.py``
+* then add a name to ``attribute_error.py``
 
   .. code-block:: python
 
@@ -113,13 +96,12 @@ red: make it fail
 
     NameError: name 'variable_00' is not defined
 
-  because ``variable_00`` in ``module.py`` is a reference to something that does not exist. I add NameError_ to the list of Exceptions_ encountered
+  because ``variable_00`` in ``attribute_error.py`` is a reference to something that does not exist. I add NameError_ to the list of Exceptions_ encountered
 
   .. code-block:: python
 
     # Exceptions Encountered
     # AssertionError
-    # ModuleNotFoundError
     # AttributeError
     # NameError
 
@@ -149,16 +131,16 @@ I can repeat the test as a drill to help remember it
   .. code-block:: python
 
     def test_attribute_error_w_variables(self):
-        src.module.variable_00
-        src.module.variable_01
+        src.attribute_error.variable_00
+        src.attribute_error.variable_01
 
   the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
-    AttributeError: module 'src.module' has no attribute 'variable_01'. Did you mean: 'variable_00'?
+    AttributeError: module 'src.attribute_error' has no attribute 'variable_01'. Did you mean: 'variable_00'?
 
-* I add the name to ``module.py``
+* I add the name to ``attribute_error.py``
 
   .. code-block:: python
 
@@ -185,17 +167,17 @@ I can repeat the test as a drill to help remember it
   .. code-block:: python
 
     def test_attribute_error_w_variables(self):
-        src.module.variable_00
-        src.module.variable_01
-        src.module.variable_02
+        src.attribute_error.variable_00
+        src.attribute_error.variable_01
+        src.attribute_error.variable_02
 
   the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
-    AttributeError: module 'src.module' has no attribute 'variable_02'. Did you mean: 'variable_00'?
+    AttributeError: module 'src.attribute_error' has no attribute 'variable_02'. Did you mean: 'variable_00'?
 
-* I add the name to ``module.py`` and point it to :ref:`None`
+* I add the name to ``attribute_error.py`` and point it to :ref:`None`
 
   .. code-block:: python
 
@@ -210,16 +192,16 @@ I can repeat the test as a drill to help remember it
   .. code-block:: python
 
     def test_attribute_error_w_variables(self):
-        src.module.variable_00
-        src.module.variable_01
-        src.module.variable_02
-        src.module.variable_03
+        src.attribute_error.variable_00
+        src.attribute_error.variable_01
+        src.attribute_error.variable_02
+        src.attribute_error.variable_03
 
   the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
-    AttributeError: module 'src.module' has no attribute 'variable_03'. Did you mean: 'variable_00'?
+    AttributeError: module 'src.attribute_error' has no attribute 'variable_03'. Did you mean: 'variable_00'?
 
 * I add the name and point it to :ref:`None`
 
@@ -232,7 +214,7 @@ I can repeat the test as a drill to help remember it
 
   and the terminal shows a passing test
 
-The test shows that I get `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ when the attribute does not exist and NameError_ when I add the name to the module without defining it
+The test shows that I get `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ when the attribute does not exist and NameError_ when I add the name to the :ref:`module <ModuleNotFoundError>` without defining it
 
 ----
 
@@ -248,13 +230,13 @@ I add a new test
 .. code-block:: python
 
   def test_attribute_error_w_functions(self):
-      src.module.function_00()
+      src.attribute_error.function_00()
 
 the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
 .. code-block:: python
 
-  AttributeError: module 'src.module' has no attribute 'function_00'
+  AttributeError: module 'src.attribute_error' has no attribute 'function_00'
 
 green: make it pass
 #################################################################################
@@ -277,7 +259,6 @@ green: make it pass
 
     # Exceptions Encountered
     # AssertionError
-    # ModuleNotFoundError
     # AttributeError
     # NameError
     # TypeError
@@ -299,18 +280,18 @@ refactor: make it better
   .. code-block:: python
 
     def test_attribute_error_w_functions(self):
-        src.module.function_00()
-        src.module.function_01()
-        src.module.function_02()
-        src.module.function_03()
+        src.attribute_error.function_00()
+        src.attribute_error.function_01()
+        src.attribute_error.function_02()
+        src.attribute_error.function_03()
 
   the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
-    AttributeError: module 'src.module' has no attribute 'function_01'. Did you mean: 'function_00'?
+    AttributeError: module 'src.attribute_error' has no attribute 'function_01'. Did you mean: 'function_00'?
 
-  I add the :ref:`functions` to ``module.py`` until all tests pass
+  I add the :ref:`functions` to ``attribute_error.py`` until all tests pass
 
   .. code-block:: python
 
@@ -340,7 +321,7 @@ test_attribute_error_w_classes
 I think of a :ref:`class <classes>` as a container of :ref:`attributes<AttributeError>` and :ref:`methods (functions) <functions>` that represent an object_
 
 - attributes are names which represent something
-- :ref:`methods<functions>` are :doc:`/functions/functions`, they
+- :ref:`methods<functions>` are :ref:`functions`, they
 
   * can take inputs if you want
   * return values and
@@ -358,13 +339,13 @@ red: make it fail
   .. code-block:: python
 
     def test_attribute_error_w_classes(self):
-        src.module.Class00()
+        src.attribute_error.Class00()
 
   the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
-    AttributeError: module 'src.module' has no attribute 'Class00'
+    AttributeError: module 'src.attribute_error' has no attribute 'Class00'
 
 .. _test_attribute_error_w_classes_green:
 
@@ -378,7 +359,7 @@ green: make it pass
     def Class00():
         return None
 
-  The test passes! Something is odd here, what is the difference between :ref:`classes` and :doc:`/functions/functions`? Why am I writing a different set of tests for :ref:`classes` if the solutions are the same for :doc:`/functions/functions`?
+  The test passes! Something is odd here, what is the difference between :ref:`classes` and :ref:`functions`? Why am I writing a different set of tests for :ref:`classes` if the solutions are the same for :ref:`functions`?
 
   For now, I move on with these questions unanswered until they become obvious
 
@@ -392,18 +373,18 @@ refactor: make it better
   .. code-block:: python
 
     def test_attribute_error_w_classes(self):
-        src.module.Class00()
-        src.module.Class01()
-        src.module.Class02()
-        src.module.Class03()
+        src.attribute_error.Class00()
+        src.attribute_error.Class01()
+        src.attribute_error.Class02()
+        src.attribute_error.Class03()
 
   the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
-    AttributeError: module 'src.module' has no attribute 'Class01'. Did you mean: 'Class00'?
+    AttributeError: module 'src.attribute_error' has no attribute 'Class01'. Did you mean: 'Class00'?
 
-  I add each solution to ``module.py`` until all the tests pass
+  I add each solution to ``attribute_error.py`` until all the tests pass
 
   .. code-block:: python
 
@@ -441,13 +422,13 @@ red: make it fail
   .. code-block:: python
 
     def test_attribute_error_w_class_attributes(self):
-        src.module.Class.attribute_00
+        src.attribute_error.Class.attribute_00
 
   the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
-    AttributeError: module 'src.module' has no attribute 'Class'. Did you mean: 'Class00'?
+    AttributeError: module 'src.attribute_error' has no attribute 'Class'. Did you mean: 'Class00'?
 
 .. _test_attribute_error_w_class_attributes_green:
 
@@ -501,7 +482,6 @@ green: make it pass
 
     # Exceptions Encountered
     # AssertionError
-    # ModuleNotFoundError
     # AttributeError
     # NameError
     # TypeError
@@ -521,7 +501,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* The current solution for ``test_attribute_error_w_classes`` was done by defining :ref:`functions` but the test name has ``defining_classes``, time to go back and change ``module.py`` using the :ref:`class <classes>` keyword instead of def_
+* The current solution for ``test_attribute_error_w_classes`` was done by defining :ref:`functions` but the test name has ``defining_classes``, time to go back and change ``attribute_error.py`` using the :ref:`class <classes>` keyword instead of def_
 
   .. code-block:: python
 
@@ -538,10 +518,10 @@ refactor: make it better
   .. code-block:: python
 
     def test_attribute_error_w_class_attributes(self):
-        src.module.Class.attribute_00
-        src.module.Class.attribute_01
-        src.module.Class.attribute_02
-        src.module.Class.attribute_03
+        src.attribute_error.Class.attribute_00
+        src.attribute_error.Class.attribute_01
+        src.attribute_error.Class.attribute_02
+        src.attribute_error.Class.attribute_03
 
   the terminal shows
 
@@ -549,7 +529,7 @@ refactor: make it better
 
      AttributeError: type object 'Class' has no attribute 'attribute_01'. Did you mean: 'attribute_00'?
 
-  I add the solutions to ``module.py`` until all tests pass
+  I add the solutions to ``attribute_error.py`` until all tests pass
 
   .. code-block:: python
 
@@ -577,7 +557,7 @@ red: make it fail
   .. code-block:: python
 
     def test_attribute_error_w_class_methods(self):
-        src.module.Class.method_00()
+        src.attribute_error.Class.method_00()
 
   the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
@@ -630,10 +610,10 @@ You know the "drill", I add more lines
 .. code-block:: python
 
   def test_attribute_error_w_class_methods(self):
-      src.module.Class.method_00()
-      src.module.Class.method_01()
-      src.module.Class.method_02()
-      src.module.Class.method_03()
+      src.attribute_error.Class.method_00()
+      src.attribute_error.Class.method_01()
+      src.attribute_error.Class.method_02()
+      src.attribute_error.Class.method_03()
 
 the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
@@ -678,13 +658,12 @@ I ran tests for `AttributeError <https://docs.python.org/3/library/exceptions.ht
 I also ran into the following Exceptions_
 
 * :ref:`AssertionError`
-* :ref:`ModuleNotFoundError`
 * :ref:`AttributeError`
 * NameError_
 * :ref:`TypeError`
 * SyntaxError_
 
-Would you like to test the :ref:`TypeError`?
+Would you like to test the :ref:`TypeError?<TypeError>`
 
 ----
 

@@ -1,44 +1,42 @@
 import unittest
-import src.module
+import src.attribute_error
 
 
 class TestAttributeError(unittest.TestCase):
 
     def test_attribute_error_w_variables(self):
-        src.module.variable_00
-        src.module.variable_01
-        src.module.variable_02
-        src.module.variable_03
+        src.attribute_error.variable_00
+        src.attribute_error.variable_01
+        src.attribute_error.variable_02
+        src.attribute_error.variable_03
 
     def test_attribute_error_w_functions(self):
-        src.module.function_00()
-        src.module.function_01()
-        src.module.function_02()
-        src.module.function_03()
+        src.attribute_error.function_00()
+        src.attribute_error.function_01()
+        src.attribute_error.function_02()
+        src.attribute_error.function_03()
 
     def test_attribute_error_w_classes(self):
-        src.module.Class00()
-        src.module.Class01()
-        src.module.Class02()
-        src.module.Class03()
+        src.attribute_error.Class00()
+        src.attribute_error.Class01()
+        src.attribute_error.Class02()
+        src.attribute_error.Class03()
 
     def test_attribute_error_w_class_attributes(self):
-        src.module.Class.attribute_00
-        src.module.Class.attribute_01
-        src.module.Class.attribute_02
-        src.module.Class.attribute_03
+        src.attribute_error.Class.attribute_00
+        src.attribute_error.Class.attribute_01
+        src.attribute_error.Class.attribute_02
+        src.attribute_error.Class.attribute_03
 
     def test_attribute_error_w_class_methods(self):
-        src.module.Class.method_00()
-        src.module.Class.method_01()
-        src.module.Class.method_02()
-        src.module.Class.method_03()
-
+        src.attribute_error.Class.method_00()
+        src.attribute_error.Class.method_01()
+        src.attribute_error.Class.method_02()
+        src.attribute_error.Class.method_03()
 
 
 # Exceptions Encountered
 # AssertionError
-# ModuleNotFoundError
 # AttributeError
 # NameError
 # TypeError

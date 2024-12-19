@@ -111,7 +111,7 @@ refactor: make it better
   - Inside the first condition I add another condition for when the value of ``q`` is equal to :ref:`True<test_what_is_true>`
   - when both conditions are met, the ``logical_conjunction`` function returns :ref:`True<test_what_is_true>`. What does it return when those two conditions are not met?
 
-* I know from :doc:`/functions/functions` that a function returns :ref:`None` by default so it must be returning :ref:`None` for the other cases. This means :ref:`None` is :ref:`False<test_what_is_false>` as seen in :doc:`/data_structures/booleans/booleans`
+* I know from :ref:`functions` that a function returns :ref:`None` by default so it must be returning :ref:`None` for the other cases. This means :ref:`None` is :ref:`False<test_what_is_false>` as seen in :doc:`/data_structures/booleans/booleans`
 * I can add a test as a reminder
 
   .. code-block:: python

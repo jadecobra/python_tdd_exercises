@@ -157,7 +157,7 @@ green: make it pass
   - the number you provide is like ``"a"``
   - hitting dial is like ``()``
 
-  This is covered in more depth in :doc:`/functions/functions`
+  This is covered in more depth in :ref:`functions`
 
 
 * I make ``function_a`` in ``functions.py``
