@@ -18,4 +18,4 @@ solutions
 
 Here are the solutions in ``module.py``
 
-.. literalinclude:: solutions/module.py
+.. literalinclude:: solutions/attribute_error.py

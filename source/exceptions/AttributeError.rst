@@ -421,7 +421,7 @@ green: make it pass
 
     AttributeError: 'function' object has no attribute 'attribute_00'
 
-* I try to define an attribute in a :ref:`function` and access it from outside
+* I try to define an attribute in a :ref:`function <functions>` and access it from outside
 
   .. code-block:: python
 
