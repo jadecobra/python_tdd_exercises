@@ -16,12 +16,6 @@ class TestAttributeError(unittest.TestCase):
         src.attribute_error.function_02()
         src.attribute_error.function_03()
 
-    def test_attribute_error_w_classes(self):
-        src.attribute_error.Class00()
-        src.attribute_error.Class01()
-        src.attribute_error.Class02()
-        src.attribute_error.Class03()
-
     def test_attribute_error_w_class_attributes(self):
         src.attribute_error.Class.attribute_00
         src.attribute_error.Class.attribute_01

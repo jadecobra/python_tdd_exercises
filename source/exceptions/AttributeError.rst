@@ -14,7 +14,7 @@ AttributeError
 
 ----
 
-An Attribute is a property, variable, function or name that belongs to an object_. For example when I describe a human being I can list attributes like height, weight, sex and color. The `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name in an object_ that does not exist.
+An Attribute is a property, variable, function or name that belongs to an object_. For example when I describe a human being I can list attributes like height, weight, sex and color. The `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name that does not exist in an object_ that does exist.
 
 *********************************************************************************
 requirements
@@ -303,88 +303,10 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_attribute_error_w_classes
-*********************************************************************************
-
-red: make it fail
-#################################################################################
-
-* I add a failing test
-
-  .. code-block:: python
-
-    def test_attribute_error_w_classes(self):
-        src.attribute_error.Class00()
-
-  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
-
-  .. code-block:: python
-
-    AttributeError: module 'src.attribute_error' has no attribute 'Class00'
-
-.. _test_attribute_error_w_classes_green:
-
-green: make it pass
-#################################################################################
-
-* I add it as a :ref:`function<functions>` using the previous solution
-
-  .. code-block:: python
-
-    def Class00():
-        return None
-
-  The test passes! Something is odd here, what is the difference between :ref:`classes` and :ref:`functions`? Why am I writing a different set of tests for :ref:`classes` if the solutions are the same for :ref:`functions`?
-
-  For now, I move on with these questions unanswered until they become obvious
-
-.. _test_attribute_error_w_classes_refactor:
-
-refactor: make it better
-#################################################################################
-
-* I make it a drill
-
-  .. code-block:: python
-
-    def test_attribute_error_w_classes(self):
-        src.attribute_error.Class00()
-        src.attribute_error.Class01()
-        src.attribute_error.Class02()
-        src.attribute_error.Class03()
-
-  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
-
-  .. code-block:: python
-
-    AttributeError: module 'src.attribute_error' has no attribute 'Class01'. Did you mean: 'Class00'?
-
-  I add each solution to ``attribute_error.py`` until all the tests pass
-
-  .. code-block:: python
-
-    def Class00():
-        return None
-
-
-    def Class01():
-        return None
-
-
-    def Class02():
-        return None
-
-
-    def Class03():
-        return None
-
-----
-
-*********************************************************************************
 test_attribute_error_w_class_attributes
 *********************************************************************************
 
-.. _test_attribute_error_w_class_attributes_red:
+attributes are variables defined inside a :ref:`class<classes>`
 
 red: make it fail
 #################################################################################
@@ -421,7 +343,7 @@ green: make it pass
 
     AttributeError: 'function' object has no attribute 'attribute_00'
 
-* I try to define an attribute in a :ref:`function <functions>` and access it from outside
+* I try to define a variable in the :ref:`function <functions>` and access it from outside
 
   .. code-block:: python
 
@@ -431,7 +353,7 @@ green: make it pass
 
   and the terminal still shows the same error
 
-* I use the :ref:`class <classes>` keyword to define it instead of def_?
+* I use the :ref:`class <classes>` keyword it instead of the def_ keyword?
 
   .. code-block:: python
 
@@ -439,7 +361,7 @@ green: make it pass
         attribute_00 = None
         return None
 
-  the terminal now shows SyntaxError_
+  and the terminal now shows SyntaxError_
 
   .. code-block:: python
 
@@ -447,9 +369,7 @@ green: make it pass
     E    ^^^^^^^^^^^
     E  SyntaxError: 'return' outside function
 
-  the error is caused by the ``return`` statement being outside a :ref:`function<functions>`
-
-* I add SyntaxError_ to the list of exceptions
+* I add it to the list of Exceptions_
 
   .. code-block:: python
 
@@ -460,31 +380,19 @@ green: make it pass
     # TypeError
     # SyntaxError
 
-* when I remove the `return statement`_
+* then remove the `return statement`_
 
   .. code-block:: python
 
     class Class():
         attribute_00 = None
 
-  the test passes
+  and the test passes
 
 refactor: make it better
 #################################################################################
 
-* I defined :ref:`functions` in ``test_attribute_error_w_classes`` time to go back and change them to :ref:`classes` to match the name of the test
-
-  .. code-block:: python
-
-    class Class00():
-        pass
-    ...
-    class Class04():
-        pass
-
-  `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is a keyword used as a placeholder
-
-* I make it a drill to practice
+* I make it a drill
 
   .. code-block:: python
 
@@ -494,13 +402,13 @@ refactor: make it better
         src.attribute_error.Class.attribute_02
         src.attribute_error.Class.attribute_03
 
-  the terminal shows
+  and the terminal shows
 
   .. code-block:: python
 
      AttributeError: type object 'Class' has no attribute 'attribute_01'. Did you mean: 'attribute_00'?
 
-  I add the solutions to ``attribute_error.py`` until all tests pass
+  I add the attributes to ``attribute_error.py`` until all tests pass
 
   .. code-block:: python
 
@@ -513,13 +421,11 @@ refactor: make it better
 
 ----
 
-.. _test_attribute_error_w_class_methods:
-
 *********************************************************************************
 test_attribute_error_w_class_methods
 *********************************************************************************
 
-.. _test_attribute_error_w_class_methods_red:
+:ref:`methods <functions>` are :ref:`functions` defined inside a :ref:`class<classes>`
 
 red: make it fail
 #################################################################################
@@ -536,7 +442,6 @@ red: make it fail
 
     AttributeError: type object 'Class' has no attribute 'method_00'
 
-.. _test_attribute_error_w_class_methods_green:
 
 green: make it pass
 #################################################################################

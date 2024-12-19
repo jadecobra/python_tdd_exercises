@@ -20,22 +20,6 @@ def function_03():
     return None
 
 
-class Class00():
-    pass
-
-
-class Class01():
-    pass
-
-
-class Class02():
-    pass
-
-
-class Class03():
-    pass
-
-
 class Class():
 
     attribute_00 = None
