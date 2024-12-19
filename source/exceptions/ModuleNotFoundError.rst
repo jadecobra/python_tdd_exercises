@@ -14,7 +14,7 @@ ModuleNotFoundError
 
 ----
 
-``ModuleNotFoundError`` is raised when Python cannot find a module from an `import statement`_. A Python :ref:`module<ModuleNotFoundError>` is a file that ends in ``.py`
+``ModuleNotFoundError`` is raised when Python cannot find a module from an `import statement`_. A Python :ref:`module<ModuleNotFoundError>` is a file that ends in ``.py``
 
 *********************************************************************************
 test_module_not_found_error
@@ -47,13 +47,13 @@ red: make it fail
 
   .. code-block:: python
 
-  import unittest
+    import unittest
 
 
-  class TestModuleNotFoundError(unittest.TestCase):
+    class TestModuleNotFoundError(unittest.TestCase):
 
-      def test_module_not_found_error(self):
-          import src.module_00
+        def test_module_not_found_error(self):
+            import src.module_00
 
   and the terminal shows `ModuleNotFoundError <https://docs.python.org/3/library/exceptions.html#ModuleNotFoundError>`_
 
@@ -90,7 +90,7 @@ green: make it pass
     ModuleNotFoundError: No module named 'src.module_01'
 
 * When I add ``module_01.py`` to the ``src`` folder, the terminal shows a passing test
-* I continue with another `import statement`
+* I continue with another `import statement`_
 
   .. code-block:: python
 
@@ -130,7 +130,7 @@ green: make it pass
 review
 *********************************************************************************
 
-I ran a test for the `ModuleNotFoundError <https://docs.python.org/3/library/exceptions.html#ModuleNotFoundError>`_ and Python modules. Would you like to test the :ref:`AssertionError`?
+I ran a test for the `ModuleNotFoundError <https://docs.python.org/3/library/exceptions.html#ModuleNotFoundError>`_ and Python modules. Would you like to test the :ref:`AssertionError?<AssertionError>`
 
 ----
 
