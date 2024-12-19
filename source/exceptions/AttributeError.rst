@@ -96,7 +96,7 @@ red: make it fail
 
     NameError: name 'variable_00' is not defined
 
-  because ``variable_00`` in ``attribute_error.py`` is a reference to something that does not exist. I add NameError_ to the list of Exceptions_ encountered
+  I add it to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -110,16 +110,6 @@ red: make it fail
   .. code-block:: python
 
     variable_00 = None
-
-  and the terminal shows a passing test. I solved the `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining a variable
-
-AttributeError vs NameError
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name that does not exist in an object_ that does exist, for example ``humans.wings``
-
-NameError_ is raised when there is a reference to a name within an object_ and there is no definition for the name
-
 
 refactor: make it better
 #################################################################################
@@ -312,24 +302,9 @@ refactor: make it better
 
 ----
 
-.. _test_attribute_error_w_classes:
-
 *********************************************************************************
 test_attribute_error_w_classes
 *********************************************************************************
-
-I think of a :ref:`class <classes>` as a container of :ref:`attributes<AttributeError>` and :ref:`methods (functions) <functions>` that represent an object_
-
-- attributes are names which represent something
-- :ref:`methods<functions>` are :ref:`functions`, they
-
-  * can take inputs if you want
-  * return values and
-  * are callable_
-
-For example I can define a ``Human`` class with attributes like eye color, date of birth, height and weight. I can also define :ref:`methods<functions>` like age which returns a value based on the current year and date of birth attribute
-
-.. _test_attribute_error_w_classes_red:
 
 red: make it fail
 #################################################################################
@@ -404,8 +379,6 @@ refactor: make it better
         return None
 
 ----
-
-.. _test_attribute_error_w_class_attributes:
 
 *********************************************************************************
 test_attribute_error_w_class_attributes
@@ -494,14 +467,12 @@ green: make it pass
     class Class():
         attribute_00 = None
 
-  the test passes. WOO HOO!
-
-.. _test_attribute_error_w_class_attributes_refactor:
+  the test passes
 
 refactor: make it better
 #################################################################################
 
-* The current solution for ``test_attribute_error_w_classes`` was done by defining :ref:`functions` but the test name has ``defining_classes``, time to go back and change ``attribute_error.py`` using the :ref:`class <classes>` keyword instead of def_
+* I defined :ref:`functions` in ``test_attribute_error_w_classes`` time to go back and change them to :ref:`classes` to match the name of the test
 
   .. code-block:: python
 
