@@ -1255,20 +1255,7 @@ green: make it pass
 
 ----
 
-you ran into the following exceptions
-
-* :ref:`AssertionError`
-* :ref:`ModuleNotFoundError`
-* :ref:`AttributeError`
-* :ref:`TypeError`
-* NameError_
-
-# ModuleNotFoundError
-    # AttributeError
-    # TypeError
-    # KeyError
-
-You also know
+I ran tests to show
 
 * how to make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 * What objects can be used as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
@@ -1277,10 +1264,18 @@ You also know
 * how to view `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ values
 * how to view the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 * how to set a default value for a key
-* how to change a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with another `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+* how to change a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with another `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ and
 * how to remove an item from a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
-Would you like to test :ref:`functions`?
+I alsop ran into the following Exceptions_
+
+* :ref:`AssertionError`
+* :ref:`ModuleNotFoundError`
+* :ref:`AttributeError`
+* :ref:`TypeError`
+* NameError_
+
+Would you like to test :ref:`functions?<functions>`
 
 ----
 

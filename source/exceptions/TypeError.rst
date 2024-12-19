@@ -386,9 +386,7 @@ What happens when you do this with ``function_a``, ``function_b``, ``function_c`
 review
 *********************************************************************************
 
-You now know how to solve a `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#TypeError>`_ by matching function signatures and their calls
-
-You ran into the following exceptions
+I can solve the `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#TypeError>`_ by matching function signatures and their calls. I also ran into the following Exceptions_
 
 * :ref:`AssertionError`
 * :ref:`ModuleNotFoundError`

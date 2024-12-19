@@ -15,7 +15,7 @@ Here are the tests and solutions in the book
   how to  make a calculator<code/code_calculator>
   how to pass values<code/code_pass_values>
   how to make a person<code/code_person_factory>
-  how to handle exceptions<code/code_exception_handling>
+  how to test/handle exceptions<code/code_exception_handling>
   how to measure sleep duration<code/code_sleep_duration>
   ModuleNotFoundError<code/code_module_not_found_error>
   AssertionError<code/code_assertion_error>

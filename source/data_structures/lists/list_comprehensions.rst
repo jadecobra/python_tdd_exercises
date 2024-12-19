@@ -139,7 +139,7 @@ refactor: make it better
 
     ModuleNotFoundError: No module named 'list_comprehensions'
 
-* I add it to the list of exceptions
+* I add it to the list of Exceptions_ encountered
 
   .. code-block:: python
 
