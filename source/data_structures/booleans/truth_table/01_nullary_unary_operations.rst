@@ -104,7 +104,11 @@ refactor: make it better
     def test_logical_false(self):
         self.assertFalse(truth_table.logical_false())
 
-  the terminal shows another :ref:`AttributeError` since there is no definition for ``logical_false`` in ``truth_table.py``
+  the terminal shows :ref:`AttributeError`
+
+  .. code-block:: python
+
+  since there is no definition for ``logical_false`` in ``truth_table.py``
 * I add a function definition for ``logical_false`` to ``truth_table.py``
 
   .. code-block:: python
@@ -112,7 +116,11 @@ refactor: make it better
     def logical_false():
         return True
 
-  and the terminal shows :ref:`AssertionError` since the ``logical_false`` function currently returns a different value from what is expected
+  and the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+  since the ``logical_false`` function currently returns a different value from what is expected
 * When I make the return value to :ref:`False<test_what_is_false>`, the terminal shows passing tests
 
   .. code-block:: python
@@ -132,8 +140,6 @@ There are two unary operations
 
 * Logical Identity
 * Logical Negation
-
-.. _test_logical_identity:
 
 test_logical_identity
 #################################################################################
