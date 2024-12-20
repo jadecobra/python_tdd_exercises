@@ -14,7 +14,7 @@ AssertionError
 
 ----
 
-`AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_ is an Exception_ that is raised when the result of an ``assert`` statement is :ref:`False<test_what_is_false>`. It was introduced in :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` with the first failing test
+`AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_ is raised when an ``assert`` statement is :ref:`False<test_what_is_false>`. It was introduced in :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` with the first failing test
 
 .. code-block:: python
 
@@ -30,12 +30,12 @@ which is like
 why are asserts important?
 *********************************************************************************
 
-When building a program I can add ``assert`` statements to make sure something is :ref:`True<test_what_is_true>` before it continues. I can also use them to test how the program behaves when it is given inputs. This helps catch bugs that break previous tested behavior when introduced, as well as answer the following questions
+When building a program I can add ``assert`` statements to make sure something is :ref:`True<test_what_is_true>` before it continues. I can also use them to test how the program behaves when it is given inputs, which helps catch bugs that break previous tested behavior when introduced, as well as answer the following questions
 
-* What is the same?
-* What is different?
+* what is the same?
+* what is different?
 
-A difference between my expectations and reality, which is what happens when the program runs, gives me a clue about what to change to make them match
+The difference between my expectations and reality, which is what happens when the program runs, gives me a clue about what to change to make them match
 
 ----
 
