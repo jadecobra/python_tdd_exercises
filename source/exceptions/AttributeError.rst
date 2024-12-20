@@ -16,13 +16,6 @@ AttributeError
 
 An Attribute is a property, variable, function or name that belongs to an object_. For example when I describe a human being I can list attributes like height, weight, sex and color. The `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name that does not exist in an object_ that does exist.
 
-*********************************************************************************
-requirements
-*********************************************************************************
-
-
-:doc:`how to make a python test driven development environment </how_to/make_tdd_environment>`
-
 ----
 
 *********************************************************************************
