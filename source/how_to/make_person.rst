@@ -1703,7 +1703,7 @@ green: make it pass
 review
 *************************************************************************************
 
-I ran tests to make a :ref:`function<functions>` that takes in keyword arguments as input, has default values for some of them, performs an action based on an input and returns a :doc:`dictionary </data_structures/dictionaries>` as output
+I ran tests to make a :ref:`function<functions>` that takes in keyword arguments as input, has default values for some of them, performs an action based on an input and returns a :ref:`dictionary <dictionaries>` as output
 
 I also ran into the following Exceptions_
 

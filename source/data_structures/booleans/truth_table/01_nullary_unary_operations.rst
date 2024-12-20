@@ -38,40 +38,41 @@ Nullary operations do not take in inputs and always return the same value. They 
 red: make it fail
 #################################################################################
 
-I make a file called ``test_truth_table.py`` in the ``tests`` folder then add the text below
-
-.. code-block:: python
-
-  import unittest
-  import truth_table
-
-the terminal shows :ref:`ModuleNotFoundError`
-
-green: make it pass
-#################################################################################
-
-* I add :ref:`ModuleNotFoundError` to the list of Exceptions_ encountered
+* I open a terminal to run :ref:`makePythonTdd.sh` with ``truth_table`` as the name of the project
 
   .. code-block:: python
 
-   # Exceptions Encountered
-   # AssertionError
-   # ModuleNotFoundError
+    ./makePythonTdd.sh truth_table
 
-* then I make a file called ``truth_table.py`` in the project folder and the test passes
-* I add a failing test to ``test_truth_table.py``
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+
+    .. code-block:: python
+
+      ./makePythonTdd.ps1 truth_table
+
+  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-   import unittest
-   import truth_table
+    E       AssertionError: True is not false
+
+    tests/test_truth_table.py:7: AssertionError
+
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_truth_table.py:7`` with the mouse to open it in the editor
+* then change ``True`` to ``False`` to make the test pass
+* and change the text to
+
+  .. code-block:: python
+
+    import unittest
+    import truth_table
 
 
-   class TestNullaryOperations(unittest.TestCase):
+    class TestNullaryOperations(unittest.TestCase):
 
 
-      def test_logical_true(self):
-          self.assertTrue(truth_table.logical_true())
+        def test_logical_true(self):
+            self.assertTrue(truth_table.logical_true())
 
   and the terminal shows :ref:`AttributeError` which I add to the list of Exceptions_ encountered
 
@@ -79,8 +80,10 @@ green: make it pass
 
    # Exceptions Encountered
    # AssertionError
-   # ModuleNotFoundError
    # AttributeError
+
+green: make it pass
+#################################################################################
 
 * I add a :doc:`singleton function </functions/test_singleton_functions>` called ``logical_true`` to ``truth_table.py``
 
@@ -93,7 +96,6 @@ green: make it pass
 
 refactor: make it better
 #################################################################################
-
 
 * I add a test for ``logical_false`` to ``TestNullaryOperations`` class in ``test_truth_table.py``
 

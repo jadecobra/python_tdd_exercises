@@ -484,14 +484,14 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: ['01:23'] != None
 
-`str.split`_ returns a :doc:`list </data_structures/lists/lists>` when called
+`str.split`_ returns a :ref:`list <lists>` when called
 
 .. _test_string_splitting_green:
 
 green: make it pass
 ---------------------------------------------------------------------------------
 
-I copy the :doc:`list </data_structures/lists/lists>` from the terminal and paste it in the test to make it pass
+I copy the :ref:`list <lists>` from the terminal and paste it in the test to make it pass
 
 .. code-block:: python
 
@@ -575,7 +575,7 @@ refactor: make it better
 
         self.assertEqual(split, ['01', '23'])
 
-  the terminal still shows passing tests. I add an assertion for indexing the :doc:`list </data_structures/lists/lists>`
+  the terminal still shows passing tests. I add an assertion for indexing the :ref:`list <lists>`
 
   .. code-block:: python
 
@@ -840,7 +840,7 @@ The challenge is to write a program that calculates the difference between a giv
 * `test_string_splitting`_ where I
 
   - used the `str.split`_ :ref:`method<functions>` I found by calling the `help system`_ to split a string_ on a separator
-  - and indexed the :doc:`list </data_structures/lists/lists>` from the split to get specific items
+  - and indexed the :ref:`list <lists>` from the split to get specific items
 
 * `test_converting_strings_to_numbers`_ with the int_ constructor_
 

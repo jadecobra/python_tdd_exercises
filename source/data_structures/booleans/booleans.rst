@@ -20,8 +20,6 @@ The tests in this chapter go over booleans_ by comparing them with other data st
 
 There are two boolean_ values - True_ and False_
 
-.. _False:
-
 *********************************************************************************
 test_what_is_false
 *********************************************************************************
@@ -29,38 +27,58 @@ test_what_is_false
 red: make it fail
 #################################################################################
 
-I make a file called ``test_booleans.py`` then add a failing test in ``test_what_is_false`` to check if False_ is an instance of the boolean_ :ref:`class <classes>`
+* I open a terminal to run :ref:`makePythonTdd.sh` with ``booleans`` as the name of the project
 
-.. code-block:: python
+  .. code-block:: python
 
-  import unittest
+    ./makePythonTdd.sh booleans
+
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+
+    .. code-block:: python
+
+      ./makePythonTdd.ps1 booleans
+
+  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    E       AssertionError: True is not false
+
+    tests/test_booleans.py:7: AssertionError
+
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_booleans.py:7`` with the mouse to open it in the editor
+* then change ``True`` to ``False`` to make the test pass
+* and ``test_failure`` to ``test_what_is_false`` to check if False_ is an instance of the boolean_ :ref:`class <classes>`
+
+  .. code-block:: python
+
+    import unittest
 
 
-  class TestBooleans(unittest.TestCase):
+    class TestBooleans(unittest.TestCase):
 
-      def test_what_is_false(self):
-          self.assertNotIsInstance(False, bool)
+        def test_what_is_false(self):
+            self.assertNotIsInstance(False, bool)
 
-the terminal shows :ref:`AssertionError` because False_ is an instance of the boolean_ :ref:`class <classes>`
+  the terminal shows :ref:`AssertionError`
 
-.. code-block:: python
+  .. code-block:: python
 
-  AssertionError: False is an instance of <class 'bool'>
+    AssertionError: False is an instance of <class 'bool'>
 
-The `unittest.TestCase.assertNotIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance>`_ :ref:`method<functions>` checks that the first input given is NOT an instance of the :ref:`class <classes>` given as the second input. It is like asking the question ``is False not an instance of bool?``
+  The `unittest.TestCase.assertNotIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance>`_ :ref:`method<functions>` checks that the first input given is NOT an instance of the :ref:`class <classes>` given as the second input. It is like asking the question ``is False not an instance of bool?``
 
 green: make it pass
 #################################################################################
 
-I make ``assertNotIsInstance`` to ``assertIsInstance`` to make the test pass
+I change assertNotIsInstance_ to assertIsInstance_ to make the test pass
 
 .. code-block:: python
 
   self.assertIsInstance(False, bool)
 
-The `unittest.TestCase.assertIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsInstance>`_ :ref:`method<functions>` checks that the first input given is an instance of the :ref:`class <classes>` given as the second input. It is like asking the question ``is False an instance of bool?``
-
-From the tests I see that False_ is a boolean_
+The `unittest.TestCase.assertIsInstance`_ :ref:`method<functions>` checks that the first input given is an instance of the :ref:`class <classes>` given as the second input. It is like asking the question ``is False an instance of bool?``. The test shows that False_ is a boolean_
 
 refactor: make it better
 #################################################################################
@@ -79,7 +97,7 @@ refactor: make it better
 
   The `unittest.TestCase.assertTrue` :ref:`method<functions>` checks if a given input is True_
 
-* When I make ``assertTrue`` to ``assertFalse`` to test if False_ is False_ the test passes
+* When I change assertTrue_ to assertFalse_ to test if False_ is False_ the test passes
 
   .. code-block:: python
 
@@ -93,8 +111,6 @@ From these tests I see that
 * False_ is a boolean_
 
 ----
-
-.. _True:
 
 *********************************************************************************
 test_what_is_true
@@ -129,7 +145,6 @@ I make ``assertNotIsInstance`` to ``assertIsInstance`` to make the test pass
 refactor: make it better
 #################################################################################
 
-
 * I add a failing line to ``test_what_is_true``
 
   .. code-block:: python
@@ -142,7 +157,7 @@ refactor: make it better
 
     AssertionError: True is not false
 
-* When I make ``assertFalse`` to ``assertTrue`` to test if True_ is True_ the test passes
+* When I change assertFalse_ to assertTrue_ to test if True_ is True_ the test passes
 
   .. code-block:: python
 
@@ -158,13 +173,13 @@ From the tests I see that
 I want to know if any of the other Python data types are False_ or True_
 
 * is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ False_ or True_?
-* is an `integer <https://docs.python.org/3/library/functions.html#int>`_ False_ or True_?
-* is a `float <https://docs.python.org/3/library/functions.html#float>`_ False_ or True_?
-* is a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ False_ or True_?
-* is a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ False_ or True_?
-* is a :doc:`list </data_structures/lists/lists>` False_ or True_?
+* is an integer_ False_ or True_?
+* is a float_ False_ or True_?
+* is a string_ False_ or True_?
+* is a tuple_ False_ or True_?
+* is a :ref:`list <lists>` False_ or True_?
 * is a set_ False_ or True_?
-* is a :doc:`dictionary </data_structures/dictionaries>` False_ or True_?
+* is a :ref:`dictionary <dictionaries>` False_ or True_?
 
 ----
 
@@ -194,7 +209,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I make ``assertTrue`` to ``assertFalse``
+I change assertTrue_ to assertFalse_
 
 .. code-block:: python
 
@@ -234,7 +249,7 @@ red: make it fail
 #################################################################################
 
 
-I add a line to test if an `integer <https://docs.python.org/3/library/functions.html#int>`_ is False_ or True_
+I add a line to test if an integer_ is False_ or True_
 
 .. code-block:: python
 
@@ -253,7 +268,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I make ``assertFalse`` to ``assertTrue``
+I make assertFalse_ to assertTrue_
 
 .. code-block:: python
 
@@ -291,7 +306,7 @@ refactor: make it better
 
     AssertionError: 0 is not true
 
-  I make ``assertTrue`` to ``assertFalse`` and the terminal shows passing tests
+  I change assertTrue_ to assertFalse_ and the terminal shows passing tests
 
   .. code-block:: python
 
@@ -323,7 +338,7 @@ refactor: make it better
 
     AssertionError: 1 is not false
 
-* When I make ``assertFalse`` to ``assertTrue`` the test passes
+* When I change assertFalse_ to assertTrue_ the test passes
 
   .. code-block:: python
 
@@ -360,7 +375,7 @@ is a float False or True?
 red: make it fail
 #################################################################################
 
-I add a line to test if a `float <https://docs.python.org/3/library/functions.html#float>`_ is False_ or True_
+I add a line to test if a float_ is False_ or True_
 
 .. code-block:: python
 
@@ -380,7 +395,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I make ``assertTrue`` to ``assertFalse``
+I change assertTrue_ to assertFalse_
 
 .. code-block:: python
 
@@ -422,7 +437,7 @@ refactor: make it better
 
     AssertionError: -1.2 is not false
 
-* I make ``assertFalse`` to ``assertTrue`` for both of them and the terminal shows passing tests
+* I change assertFalse_ to assertTrue_ for both of them and the terminal shows passing tests
 
   .. code-block:: python
 
@@ -463,7 +478,7 @@ red: make it fail
 #################################################################################
 
 
-I add a line to test if a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is False_ or True_
+I add a line to test if a string_ is False_ or True_
 
 .. code-block:: python
 
@@ -485,7 +500,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I make ``assertTrue`` to ``assertFalse``
+I change assertTrue_ to assertFalse_
 
 .. code-block:: python
 
@@ -508,7 +523,7 @@ refactor: make it better
         self.assertFalse(0.0)
         self.assertFalse('')
 
-* I add a line to test if a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ with characters is also False_
+* I add a line to test if a string_ with characters is also False_
 
   .. code-block:: python
 
@@ -520,7 +535,7 @@ refactor: make it better
 
     AssertionError: 'text' is not false
 
-* I make ``assertFalse`` to ``assertTrue`` and move the line to the ``test_what_is_true`` :ref:`method<functions>`
+* I change assertFalse_ to assertTrue_ and move the line to the ``test_what_is_true`` :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -537,12 +552,12 @@ refactor: make it better
 
 From the tests I see that
 
-* a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ with things is True_
+* a string_ with things is True_
 * Positive and Negative floats_ are True_
 * Positive and Negative :ref:`integers<int>`_ are True_
 * True_ is True_
 * True_ is a boolean_
-* an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is False_
+* an empty string_ is False_
 * ``0.0`` is False_
 * ``0`` is False_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is False_
@@ -558,7 +573,7 @@ is a tuple False or True?
 red: make it fail
 #################################################################################
 
-I add a line to test if a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ is False_ or True_
+I add a line to test if a tuple_ is False_ or True_
 
 .. code-block:: python
 
@@ -583,7 +598,7 @@ tuples_ are represented with ``()`` in Python
 green: make it pass
 #################################################################################
 
-I make ``assertTrue`` to ``assertFalse`` and move the line to the ``test_what_is_false`` :ref:`method<functions>`
+I change assertTrue_ to assertFalse_ and move the line to the ``test_what_is_false`` :ref:`method<functions>`
 
 .. code-block:: python
 
@@ -602,7 +617,7 @@ refactor: make it better
 #################################################################################
 
 
-* I add a line to test if a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ with things is also False_
+* I add a line to test if a tuple_ with things is also False_
 
   .. code-block:: python
 
@@ -614,7 +629,7 @@ refactor: make it better
 
     AssertionError: (1, 2, 3, 'n') is not false
 
-* I make ``assertFalse`` to ``assertTrue`` and move the line to the ``test_what_is_true`` :ref:`method<functions>`
+* I change assertFalse_ to assertTrue_ and move the line to the ``test_what_is_true`` :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -630,14 +645,14 @@ refactor: make it better
 
 From the tests I see that
 
-* a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ with things is True_
-* a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ with things is True_
+* a tuple_ with things is True_
+* a string_ with things is True_
 * Positive and Negative floats_ are True_
 * Positive and Negative :ref:`integers<int>`_ are True_
 * True_ is True_
 * True_ is a boolean_
-* an empty `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ is False_
-* an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is False_
+* an empty tuple_ is False_
+* an empty string_ is False_
 * ``0.0`` is False_
 * ``0`` is False_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is False_
@@ -653,7 +668,7 @@ is a list False or True?
 red: make it fail
 #################################################################################
 
-I add a line to test if a :doc:`list </data_structures/lists/lists>` is False_ or True_
+I add a line to test if a :ref:`list <lists>` is False_ or True_
 
 .. code-block:: python
 
@@ -679,7 +694,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I make ``assertTrue`` to ``assertFalse`` and move the line to the ``test_what_is_false`` :ref:`method<functions>`
+I change assertTrue_ to assertFalse_ and move the line to the ``test_what_is_false`` :ref:`method<functions>`
 
 .. code-block:: python
 
@@ -698,7 +713,7 @@ and the terminal shows passing tests
 refactor: make it better
 #################################################################################
 
-* I add a line to test if a :doc:`list </data_structures/lists/lists>`  with things is also False_
+* I add a line to test if a :ref:`list <lists>`  with things is also False_
 
   .. code-block:: python
 
@@ -709,7 +724,7 @@ refactor: make it better
   .. code-block:: python
 
     AssertionError: [1, 2, 3, 'n'] is not false
-* I make ``assertFalse`` to ``assertTrue`` and move the line to the ``test_what_is_true`` :ref:`method<functions>`
+* I change assertFalse_ to assertTrue_ and move the line to the ``test_what_is_true`` :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -728,15 +743,15 @@ refactor: make it better
 
 From the tests I see that
 
-* a :doc:`list </data_structures/lists/lists>` with things is True_
-* a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ with things is True_
-* a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ with things is True_
+* a :ref:`list <lists>` with things is True_
+* a tuple_ with things is True_
+* a string_ with things is True_
 * Positive and Negative floats_ are True_
 * Positive and Negative :ref:`integers<int>`_ are True_
 * True_ is True_
 * True_ is a boolean_
-* an empty :doc:`list </data_structures/lists/lists>` is False_
-* an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is False_
+* an empty :ref:`list <lists>` is False_
+* an empty string_ is False_
 * ``0.0`` is False_
 * ``0`` is False_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is False_
@@ -778,7 +793,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I make ``assertTrue`` to ``assertFalse`` and move the line to the ``test_what_is_false`` :ref:`method<functions>`
+I change assertTrue_ to assertFalse_ and move the line to the ``test_what_is_false`` :ref:`method<functions>`
 
 .. code-block:: python
 
@@ -802,7 +817,7 @@ refactor: make it better
 
     AssertionError: {1, 2, 3, 'n'} is not false
 
-* I make ``assertFalse`` to ``assertTrue`` and move the line to the ``test_what_is_true`` :ref:`method<functions>`
+* I change assertFalse_ to assertTrue_ and move the line to the ``test_what_is_true`` :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -821,16 +836,16 @@ refactor: make it better
 From the tests I see that
 
 * a set_ with things is True_
-* a :doc:`list </data_structures/lists/lists>` with things is True_
-* a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ with things is True_
-* a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ with things is True_
+* a :ref:`list <lists>` with things is True_
+* a tuple_ with things is True_
+* a string_ with things is True_
 * Positive and Negative floats_ are True_
 * Positive and Negative :ref:`integers<int>`_ are True_
 * True_ is True_
 * True_ is a boolean_
 * an empty set_ is False_
-* an empty :doc:`list </data_structures/lists/lists>` is False_
-* an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is False_
+* an empty :ref:`list <lists>` is False_
+* an empty string_ is False_
 * ``0.0`` is False_
 * ``0`` is False_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is False_
@@ -846,7 +861,7 @@ is a dictionary False or True?
 red: make it fail
 #################################################################################
 
-I add a line to test if a :doc:`dictionary </data_structures/dictionaries>` is False_ or True_
+I add a line to test if a :ref:`dictionary <dictionaries>` is False_ or True_
 
 .. code-block:: python
 
@@ -872,7 +887,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I make ``assertTrue`` to ``assertFalse`` and move the line to the ``test_what_is_false`` :ref:`method<functions>`
+I change assertTrue_ to assertFalse_ and move the line to the ``test_what_is_false`` :ref:`method<functions>`
 
 .. code-block:: python
 
@@ -893,7 +908,7 @@ the terminal shows passing tests
 refactor: make it better
 #################################################################################
 
-* I add a line to test if a :doc:`dictionary </data_structures/dictionaries>` with things is also False_
+* I add a line to test if a :ref:`dictionary <dictionaries>` with things is also False_
 
   .. code-block:: python
 
@@ -905,7 +920,7 @@ refactor: make it better
 
     AssertionError: {'key': 'value'} is not false
 
-* I make ``assertFalse`` to ``assertTrue`` and move the line to the ``test_what_is_true`` :ref:`method<functions>`
+* I change assertFalse_ to assertTrue_ and move the line to the ``test_what_is_true`` :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -926,19 +941,19 @@ refactor: make it better
 
 From the tests I see that
 
-* a :doc:`dictionary </data_structures/dictionaries>` with things is True_
+* a :ref:`dictionary <dictionaries>` with things is True_
 * a set_ with things is True_
-* a :doc:`list </data_structures/lists/lists>` with things is True_
-* a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_ with things is True_
-* a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ with things is True_
+* a :ref:`list <lists>` with things is True_
+* a tuple_ with things is True_
+* a string_ with things is True_
 * Positive and Negative floats_ are True_
 * Positive and Negative :ref:`integers<int>`_ are True_
 * True_ is True_
 * True_ is a boolean_
-* an empty :doc:`dictionary </data_structures/dictionaries>` is False_
+* an empty :ref:`dictionary <dictionaries>` is False_
 * an empty set_ is False_
-* an empty :doc:`list </data_structures/lists/lists>` is False_
-* an empty `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_ is False_
+* an empty :ref:`list <lists>` is False_
+* an empty string_ is False_
 * ``0.0`` is False_
 * ``0`` is False_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is False_

@@ -16,7 +16,7 @@ lists: list comprehensions
 
 ----
 
-`List Comprehensions <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#list-comprehensions>`_ are a way to make a :doc:`list </data_structures/lists/lists>` from an iterable_. It is a simple way to go over every item in the :doc:`list </data_structures/lists/lists>` and perform an operation usually in one line
+`List Comprehensions <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#list-comprehensions>`_ are a way to make a :ref:`list <lists>` from an iterable_. It is a simple way to go over every item in the :ref:`list <lists>` and perform an operation usually in one line
 
 .. _test_making_a_list_from_an_iterable:
 
@@ -84,7 +84,7 @@ and the test passes
 refactor: make it better
 #################################################################################
 
-* I add another test to check what happens when I use the :doc:`list </data_structures/lists/lists>` constructor_ on ``container``
+* I add another test to check what happens when I use the :ref:`list <lists>` constructor_ on ``container``
 
   .. code-block:: python
 
@@ -102,7 +102,7 @@ refactor: make it better
 
     self.assertEqual(list(container), a_list)
 
-  and the test passes because calling ``list`` on an ``iterable`` makes a :doc:`list </data_structures/lists/lists>`
+  and the test passes because calling ``list`` on an ``iterable`` makes a :ref:`list <lists>`
 * I add another test
 
   .. code-block:: python
@@ -201,7 +201,7 @@ refactor: make it better
 
     AssertionError: None != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-* When I make the function return the result of calling the :doc:`list </data_structures/lists/lists>` constructor_ with ``argument`` as input
+* When I make the function return the result of calling the :ref:`list <lists>` constructor_ with ``argument`` as input
 
   .. code-block:: python
 
@@ -216,7 +216,7 @@ refactor: make it better
     def make_a_list(iterable):
         return list(iterable)
 
-From the tests I see that I can make a :doc:`list </data_structures/lists/lists>` from any iterable by using the :doc:`list </data_structures/lists/lists>` constructor
+From the tests I see that I can make a :ref:`list <lists>` from any iterable by using the :ref:`list <lists>` constructor
 
 ----
 
@@ -338,10 +338,10 @@ green: make it pass
 
   all tests are still passing
 
-From the tests I see that I can make a :doc:`list </data_structures/lists/lists>` from any iterable by using
+From the tests I see that I can make a :ref:`list <lists>` from any iterable by using
 
 * a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ loop
-* the :doc:`list </data_structures/lists/lists>` constructor
+* the :ref:`list <lists>` constructor
 
 ----
 
@@ -694,10 +694,10 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
 
 ----
 
-I see from the tests that I can make a :doc:`list </data_structures/lists/lists>` from any iterable by using
+I see from the tests that I can make a :ref:`list <lists>` from any iterable by using
 
 * a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ loop
-* the :doc:`list </data_structures/lists/lists>` constructor
+* the :ref:`list <lists>` constructor
 * `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_
 
 If you typed along you now know a couple of ways to loop through ``iterables`` and have your program make decisions by using ``conditions``.

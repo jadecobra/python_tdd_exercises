@@ -387,7 +387,7 @@ Can I make a Dictionary with a list as a key?
 red: make it fail
 #################################################################################
 
-I add a test to ``TestDictionaries`` using a :doc:`list </data_structures/lists/lists>` as a key
+I add a test to ``TestDictionaries`` using a :ref:`list <lists>` as a key
 
 .. code-block:: python
 
@@ -412,7 +412,7 @@ I add :ref:`TypeError` to the list of Exceptions_ encountered
 green: make it pass
 #################################################################################
 
-I can use ``self.assertRaises`` to confirm that an error is raised by some code without having it crash the tests. I use it here to confirm that Python raises :ref:`TypeError` when I try to make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a :doc:`list </data_structures/lists/lists>` as the key
+I can use ``self.assertRaises`` to confirm that an error is raised by some code without having it crash the tests. I use it here to confirm that Python raises :ref:`TypeError` when I try to make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a :ref:`list <lists>` as the key
 
 .. code-block:: python
 
@@ -422,7 +422,7 @@ I can use ``self.assertRaises`` to confirm that an error is raised by some code 
 
 see :doc:`/how_to/exception_handling_tests` for more details on why that worked.
 
-From the test I see that I cannot make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a :doc:`list </data_structures/lists/lists>` as a key
+From the test I see that I cannot make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a :ref:`list <lists>` as a key
 
 ----
 
@@ -456,7 +456,7 @@ I use ``self.assertRaises`` to handle the exception
       with self.assertRaises(TypeError):
           {{1, 2}: "BOOM"}
 
-Tests are green again. I cannot use a set_ or a :doc:`list </data_structures/lists/lists>` as a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ key
+Tests are green again. I cannot use a set_ or a :ref:`list <lists>` as a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ key
 
 ----
 
@@ -493,7 +493,7 @@ I add an :doc:`exception handler</how_to/exception_handling_tests>` to the test 
         with self.assertRaises(TypeError):
             {a_dictionary: "BOOM"}
 
-and the terminal shows passing tests. I cannot use a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_, set_ or a :doc:`list </data_structures/lists/lists>` as a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ key
+and the terminal shows passing tests. I cannot use a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_, set_ or a :ref:`list <lists>` as a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ key
 
 ----
 
@@ -549,7 +549,7 @@ I make the expected value to make the tests pass
 refactor: make it better
 #################################################################################
 
-* I can also show all the values of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ as a :doc:`list </data_structures/lists/lists>` without the keys
+* I can also show all the values of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ as a :ref:`list <lists>` without the keys
 
   .. code-block:: python
 
@@ -591,7 +591,7 @@ refactor: make it better
             ]
         )
 
-* I can also show the keys of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ as a :doc:`list </data_structures/lists/lists>`
+* I can also show the keys of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ as a :ref:`list <lists>`
 
   .. code-block:: python
 

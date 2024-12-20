@@ -56,7 +56,7 @@ red: make it fail
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_type_error.py:7`` with the mouse to open it in the editor
 * then change ``True`` to ``False``
-* and change ``test_failure``
+* and change ``test_failure`` to ``test_type_error_w_function_signatures``
 
 
   .. code-block:: python

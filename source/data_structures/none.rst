@@ -155,10 +155,10 @@ refactor: make it better
 I want to know if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is equal to any of the other data types in Python
 
 * is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ an `int <https://docs.python.org/3/library/functions.html#int>`_?
-* is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ a `float <https://docs.python.org/3/library/functions.html#float>`_?
-* is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_?
-* is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_?
-* is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ a :doc:`list </data_structures/lists/lists>`?
+* is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ a float_?
+* is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ a string_?
+* is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ a tuple_?
+* is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ a :ref:`list <lists>`?
 * is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ a set_?
 * is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ a :doc:`dict </data_structures/dictionaries>`?
 
@@ -238,7 +238,7 @@ refactor: make it better
 
 From the tests I see that
 
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an `integer <https://docs.python.org/3/library/functions.html#int>`_
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an integer_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures/booleans/booleans>`
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
@@ -281,7 +281,7 @@ I make ``assertIsNone`` to ``assertIsNotNone`` in ``test_is_none_a_float`` to ma
 refactor: make it better
 #################################################################################
 
-floats_ are represented by the `float <https://docs.python.org/3/library/functions.html#float>`_ :ref:`class <classes>` in Python, I can do an instance test
+floats_ are represented by the float_ :ref:`class <classes>` in Python, I can do an instance test
 
 
 * red: make it fail
@@ -295,7 +295,7 @@ floats_ are represented by the `float <https://docs.python.org/3/library/functio
         self.assertIsNotNone(0.2)
         self.assertIsInstance(None, float)
 
-  the terminal shows :ref:`AssertionError` because `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an instance of `float <https://docs.python.org/3/library/functions.html#float>`_
+  the terminal shows :ref:`AssertionError` because `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an instance of float_
 
   .. code-block:: python
 
@@ -314,8 +314,8 @@ floats_ are represented by the `float <https://docs.python.org/3/library/functio
 
 From the tests I see that
 
-- `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `float <https://docs.python.org/3/library/functions.html#float>`_
-- `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an `integer <https://docs.python.org/3/library/functions.html#int>`_
+- `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a float_
+- `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an integer_
 - `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures/booleans/booleans>`
 - `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
@@ -338,7 +338,7 @@ see :doc:`/conventions` for a little more detail
 red: make it fail
 #################################################################################
 
-I add a new failing test to ``test_none.py`` to compare `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ with a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
+I add a new failing test to ``test_none.py`` to compare `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ with a string_
 
 .. code-block:: python
 
@@ -400,9 +400,9 @@ refactor: make it better
 
 From the tests I see that
 
-- `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
-- `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `float <https://docs.python.org/3/library/functions.html#float>`_
-- `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an `integer <https://docs.python.org/3/library/functions.html#int>`_
+- `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a string_
+- `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a float_
+- `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an integer_
 - `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures/booleans/booleans>`
 - `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
@@ -463,10 +463,10 @@ green: make it pass
 
 From the tests I see that
 
-- `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_
-- `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
-- `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `float <https://docs.python.org/3/library/functions.html#float>`_
-- `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an `integer <https://docs.python.org/3/library/functions.html#int>`_
+- `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a tuple_
+- `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a string_
+- `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a float_
+- `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an integer_
 - `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures/booleans/booleans>`
 - `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
@@ -485,7 +485,7 @@ test_is_none_a_list
 red: make it fail
 #################################################################################
 
-I add a new test to the series of tests to check if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a :doc:`list </data_structures/lists/lists>`
+I add a new test to the series of tests to check if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a :ref:`list <lists>`
 
 .. code-block:: python
 
@@ -510,11 +510,11 @@ I have done this dance a few times. I make ``assertIsNone`` to ``assertIsNotNone
 
 With the passing tests I see that
 
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`list </data_structures/lists/lists>`
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `float <https://docs.python.org/3/library/functions.html#float>`_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an `integer <https://docs.python.org/3/library/functions.html#int>`_
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :ref:`list <lists>`
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a tuple_
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a string_
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a float_
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an integer_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures/booleans/booleans>`
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
@@ -552,11 +552,11 @@ I make ``assertIsNone`` to ``assertIsNotNone`` and ``assertIsInstance`` to ``ass
 From the tests I see that
 
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a set_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`list </data_structures/lists/lists>`
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `float <https://docs.python.org/3/library/functions.html#float>`_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an `integer <https://docs.python.org/3/library/functions.html#int>`_
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :ref:`list <lists>`
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a tuple_
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a string_
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a float_
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an integer_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures/booleans/booleans>`
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
@@ -590,7 +590,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: {} is not None
 
-* ``dict()`` is one way to make an empty :doc:`dictionary </data_structures/dictionaries>` in Python
+* ``dict()`` is one way to make an empty :ref:`dictionary <dictionaries>` in Python
 * ``{}`` is how :ref:`dictionaries`  are represented in Python. Wait a minute! sets_ are also represented with ``{}``. The difference is that :ref:`dictionaries` hold key-value pairs
 * Do you want to :doc:`read more about dictionaries </data_structures/dictionaries>`?
 
@@ -598,13 +598,13 @@ green: make it pass
 #################################################################################
 I make the tests to make them pass and can see from the tests that
 
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`dictionary </data_structures/dictionaries>`
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :ref:`dictionary <dictionaries>`
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a set_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`list </data_structures/lists/lists>`
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `tuple <https://docs.python.org/3/library/stdtypes.html#tuples>`_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `string <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a `float <https://docs.python.org/3/library/functions.html#float>`_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an `integer <https://docs.python.org/3/library/functions.html#int>`_
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :ref:`list <lists>`
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a tuple_
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a string_
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a float_
+* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not an integer_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is not a :doc:`boolean </data_structures/booleans/booleans>`
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 

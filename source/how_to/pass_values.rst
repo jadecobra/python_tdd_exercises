@@ -524,7 +524,7 @@ test_passing_a_list
 red: make it fail
 #################################################################################
 
-I add a test for a :doc:`list </data_structures/lists/lists>`
+I add a test for a :ref:`list <lists>`
 
 .. code-block:: python
 
@@ -562,7 +562,7 @@ test_passing_a_dictionary
 red: make it fail
 #################################################################################
 
-I add a test for a :doc:`dictionary </data_structures/dictionaries>`
+I add a test for a :ref:`dictionary <dictionaries>`
 
 .. code-block:: python
 
