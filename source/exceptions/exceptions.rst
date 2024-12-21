@@ -10,7 +10,7 @@ The tests in this chapter cover the following
 
 .. toctree::
   :titlesonly:
-  :maxdepth: 1
+  :maxdepth: 3
 
   ModuleNotFoundError
   AssertionError
