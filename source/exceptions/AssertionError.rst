@@ -405,7 +405,7 @@ and the terminal shows passing tests. Which allows me to say that
 * :ref:`True<test_what_is_true>` is not :ref:`None`
 * :ref:`False<test_what_is_false>` is not :ref:`None`
 
-I can sum up these statements as - in Python :ref:`True<test_what_is_true>`, :ref:`False<test_what_is_false>` and :ref:`None` are different, which helps me know how it behaves and gives me something to compare things with.
+I can sum up these statements as - in Python :ref:`True<test_what_is_true>`, :ref:`False<test_what_is_false>` and :ref:`None` are different, which sets up a basic expectation of the language, I can compare things with them.
 
 ----
 
