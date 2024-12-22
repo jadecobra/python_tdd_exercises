@@ -92,7 +92,7 @@ red: make it fail
 
   - This `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_ is raised by the line ``assert False is None`` which is like asking the question "is False the same as None?"
   - The difference is that the ``assert`` at the beginning of the line makes the statement more like "DO NOT GO ON, UNLESS :ref:`False<test_what_is_false>` is :ref:`None`"
-  - Since :ref:`None` and :ref:`False<test_what_is_false>` are not equal, the ``assert`` statement is :ref:`False<test_what_is_false>` and python raises an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
+  - Since :ref:`None` and are not equal, the ``assert`` statement is :ref:`False<test_what_is_false>` and python raises an `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
 
 green: make it pass
 #################################################################################
@@ -482,7 +482,7 @@ refactor: make it better
   * :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`
   * :ref:`None` is :ref:`None`
   * :ref:`True<test_what_is_true>` is not :ref:`None`
-  * :ref:`False<test_what_is_false>` is not :ref:`None` and :ref:`False<test_what_is_false>` is not equal to :ref:`None`
+  * :ref:`False<test_what_is_false>` is not :ref:`None` and is not equal to :ref:`None`
 
 * I add a new failing line
 
@@ -547,8 +547,8 @@ refactor: make it better
   * :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
   * :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`
   * :ref:`None` is :ref:`None`
-  * :ref:`True<test_what_is_true>` is not :ref:`None` and :ref:`True<test_what_is_true>` is not equal to :ref:`None`
-  * :ref:`False<test_what_is_false>` is not :ref:`None` and :ref:`False<test_what_is_false>` is not equal to :ref:`None`
+  * :ref:`True<test_what_is_true>` is not :ref:`None` and is not equal to :ref:`None`
+  * :ref:`False<test_what_is_false>` is not :ref:`None` and is not equal to :ref:`None`
 
 * red: make it fail
 
@@ -606,13 +606,13 @@ refactor: make it better
 
   and from the tests I can say that in Python
 
-  * :ref:`False<test_what_is_false>` is not :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` is not equal to :ref:`True<test_what_is_true>`
-  * :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>` and :ref:`True<test_what_is_true>` is equal to :ref:`True<test_what_is_true>`
-  * :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>` and :ref:`True<test_what_is_true>` is not equal to :ref:`False<test_what_is_false>`
-  * :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>` and :ref:`False<test_what_is_false>` is equal to :ref:`False<test_what_is_false>`
-  * :ref:`None` is :ref:`None` and :ref:`None` is equal to :ref:`None`
-  * :ref:`True<test_what_is_true>` is not :ref:`None` and :ref:`True<test_what_is_true>` is not equal to :ref:`None`
-  * :ref:`False<test_what_is_false>` is not :ref:`None` and :ref:`False<test_what_is_false>` is not equal to :ref:`None`
+  * :ref:`False<test_what_is_false>` is not :ref:`True<test_what_is_true>` and is not equal to :ref:`True<test_what_is_true>`
+  * :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>` and is equal to :ref:`True<test_what_is_true>`
+  * :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>` and is not equal to :ref:`False<test_what_is_false>`
+  * :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>` and is equal to :ref:`False<test_what_is_false>`
+  * :ref:`None` is :ref:`None` and is equal to :ref:`None`
+  * :ref:`True<test_what_is_true>` is not :ref:`None` and is not equal to :ref:`None`
+  * :ref:`False<test_what_is_false>` is not :ref:`None` and is not equal to :ref:`None`
 
 ----
 
