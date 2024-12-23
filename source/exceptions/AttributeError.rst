@@ -516,7 +516,7 @@ I repeat the solution until all tests pass
 review
 *********************************************************************************
 
-I ran tests for `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ to show how to solve it by defining
+I ran tests to show how to solve the `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ by defining
 
 * variables
 * :ref:`functions`
