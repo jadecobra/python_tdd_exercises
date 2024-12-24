@@ -6,7 +6,7 @@
 errors
 #################################################################################
 
-The tests in this chapter cover the following
+The tests in this chapter cover the following Exceptions_
 
 .. toctree::
   :titlesonly:
@@ -16,3 +16,11 @@ The tests in this chapter cover the following
   AssertionError
   AttributeError
   TypeError
+
+there is also a how to on handling Exceptions_ in tests and programs
+
+.. toctree::
+  :maxdepth: 1
+
+  /how_to/exception_handling_tests
+  /how_to/exception_handling_programs
