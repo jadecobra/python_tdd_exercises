@@ -110,7 +110,7 @@ green: make it pass
     ModuleNotFoundError: No module called 'src.module_02'
 
 * I add ``module_02.py`` to the ``src`` folder, and the terminal shows green again
-* One last failing `import statement`_
+* one last failing `import statement`_
 
   .. code-block:: python
 
