@@ -89,7 +89,7 @@ green: make it pass
 
     ModuleNotFoundError: No module named 'src.module_01'
 
-* When I add ``module_01.py`` to the ``src`` folder, the terminal shows a passing test
+* When I make a new file named ``module_01.py`` in the ``src`` folder, the terminal shows a passing test
 * I continue with another `import statement`_
 
   .. code-block:: python
@@ -106,7 +106,7 @@ green: make it pass
     ModuleNotFoundError: No module called 'src.module_02'
 
 * I add ``module_02.py`` to the ``src`` folder, and the terminal shows green again
-* after another failing `import statement`_
+* One last failing `import statement`_
 
   .. code-block:: python
 
@@ -116,7 +116,7 @@ green: make it pass
         import src.module_02
         import src.module_03
 
-  the terminal shows
+  and the terminal shows
 
   .. code-block:: python
 
