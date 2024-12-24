@@ -134,4 +134,4 @@ I ran a test for the `ModuleNotFoundError <https://docs.python.org/3/library/exc
 
 ----
 
-:doc:`/code/code_exception_handling`
+:doc:`/code/code_module_not_found_error`
