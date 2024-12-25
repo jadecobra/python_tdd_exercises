@@ -1,17 +1,17 @@
-def function_a(argument):
+def function_00():
     return None
 
 
-def function_b(argument_1, argument_2):
+def function_01(argument):
     return None
 
 
-def function_c(
-        argument_1, argument_2,
-        argument_3
+def function_02(argument1, argument2):
+    return None
+
+
+def function_03(
+        argument1, argument2,
+        argument3
     ):
-    return None
-
-
-def function_d(*arguments):
     return None
