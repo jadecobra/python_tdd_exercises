@@ -62,34 +62,15 @@ red: make it fail
   .. code-block:: python
 
     import unittest
-    import functions
+    import src.type_error
 
 
     class TestTypeErrors(unittest.TestCase):
 
         def test_type_error_w_function_signatures(self):
-            self.assertIsNone(functions.function_a("a"))
+            self.assertIsNone(src.type_error.function_a("a"))
 
-  the terminal shows :ref:`ModuleNotFoundError`
-
-  .. code-block:: python
-
-    import functions
-    E  ModuleNotFoundError: No module called 'functions'
-
-* I add it to the list of Exceptions_ encountered
-
-  .. code-block:: python
-
-      # Exceptions Encountered
-      # AssertionError
-      # ModuleNotFoundError
-
-*********************************************************************************
-green: make it pass
-*********************************************************************************
-
-* I have a lot of practice solving this error from :ref:`ModuleNotFoundError`. I make a file called ``functions.py`` and the terminal shows
+* and the terminal shows
 
   .. code-block:: python
 
@@ -101,10 +82,14 @@ green: make it pass
 
       # Exceptions Encountered
       # AssertionError
-      # ModuleNotFoundError
       # AttributeError
 
-* I add a name to ``functions.py``
+*********************************************************************************
+green: make it pass
+*********************************************************************************
+
+
+* I add a name to ``src.type_error.py``
 
   .. code-block:: python
 
@@ -123,7 +108,6 @@ green: make it pass
 
     # Exceptions Encountered
     # AssertionError
-    # ModuleNotFoundError
     # AttributeError
     # TypeError
 
@@ -143,11 +127,11 @@ green: make it pass
   Another ``TypeError`` but with a new message. Reading the error from the bottom up
 
   * ``function_a() takes 0 positional arguments but 1 was given`` there was an expectation which was not met in how the function is called, it violates the defined signature
-  * ``self.assertIsNone(functions.function_a("a"))`` I am checking if the call ``functions.function_a("a")`` is equal to :ref:`None`
-  * ``functions.function_a("a")`` is the call. I think of it like an address
+  * ``self.assertIsNone(src.type_error.function_a("a"))`` I am checking if the call ``src.type_error.function_a("a")`` is equal to :ref:`None`
+  * ``src.type_error.function_a("a")`` is the call. I think of it like an address
 
-    - ``functions`` is to ``functions.py`` which is a Python module
-    - ``function_a`` is the name ``function_a`` defined in ``functions.py``
+    - ``functions`` is to ``src.type_error.py`` which is a Python module
+    - ``function_a`` is the name ``function_a`` defined in ``src.type_error.py``
     - ``()`` is how a function is called after it is defined
     - ``"a"`` is the value passed to ``function_a`` as input
 
@@ -160,14 +144,14 @@ green: make it pass
   This is covered in more depth in :ref:`functions`
 
 
-* I make ``function_a`` in ``functions.py``
+* I make ``function_a`` in ``src.type_error.py``
 
   .. code-block:: python
 
-    def function_a(data):
+    def function_a(argument):
         return None
 
-the terminal shows passing tests. BOOM!
+the terminal shows passing tests
 
 *********************************************************************************
 refactor: make it better
@@ -179,7 +163,7 @@ There's not much to do here but add assertions for practice.
 
   .. code-block:: python
 
-    self.assertIsNone(functions.function_b("a", "b"))
+    self.assertIsNone(src.type_error.function_b("a", "b"))
 
   the terminal shows
 
@@ -187,7 +171,7 @@ There's not much to do here but add assertions for practice.
 
     AttributeError: module 'functions' has no attribute 'function_b'
 
-* I add a name to ``functions.py``
+* I add a name to ``src.type_error.py``
 
   .. code-block:: python
 
@@ -212,9 +196,9 @@ There's not much to do here but add assertions for practice.
 
    E    TypeError: function_b() takes 0 positional arguments but 2 were given
 
-  the offending line ``functions.function_b("a", "b")`` called ``function_b`` with 2 parameters but the definition has the function taking no inputs
+  the offending line ``src.type_error.function_b("a", "b")`` called ``function_b`` with 2 parameters but the definition has the function taking no inputs
 
-* I make ``function_b`` in ``functions.py``
+* I make ``function_b`` in ``src.type_error.py``
 
   .. code-block:: python
 
@@ -229,7 +213,7 @@ There's not much to do here but add assertions for practice.
 
   ah, the previous definition took no positional arguments, and now allows 1 positional argument but I called it with 2 positional arguments.
 
-* I make ``function_b`` in ``functions.py`` to take in 2 positional arguments
+* I make ``function_b`` in ``src.type_error.py`` to take in 2 positional arguments
 
   .. code-block:: python
 
@@ -243,7 +227,7 @@ There's not much to do here but add assertions for practice.
 
   .. code-block:: python
 
-    self.assertIsNone(functions.function_c("a", "b", "c"))
+    self.assertIsNone(src.type_error.function_c("a", "b", "c"))
 
   the terminal shows
 
@@ -251,7 +235,7 @@ There's not much to do here but add assertions for practice.
 
     AttributeError: module 'functions' has no attribute 'function_c'
 
-* I add a name to ``functions.py``
+* I add a name to ``src.type_error.py``
 
   .. code-block:: python
 
@@ -289,7 +273,7 @@ There's not much to do here but add assertions for practice.
 
     TypeError: function_c() takes 1 positional argument but 3 were given
 
-* I make ``function_c`` in ``functions.py`` to take in another argument
+* I make ``function_c`` in ``src.type_error.py`` to take in another argument
 
   .. code-block:: python
 
@@ -302,7 +286,7 @@ There's not much to do here but add assertions for practice.
 
     TypeError: function_c() takes 2 positional arguments but 3 were given
 
-* I make ``function_c`` in ``functions.py`` to take in one more argument
+* I make ``function_c`` in ``src.type_error.py`` to take in one more argument
 
   .. code-block:: python
 
@@ -315,7 +299,7 @@ There's not much to do here but add assertions for practice.
 
   .. code-block:: python
 
-    self.assertIsNone(functions.function_d("a", "b", "c", "d"))
+    self.assertIsNone(src.type_error.function_d("a", "b", "c", "d"))
 
   the terminal shows
 
@@ -323,7 +307,7 @@ There's not much to do here but add assertions for practice.
 
     AttributeError: module 'functions' has no attribute 'function_d'
 
-* I add a name to ``functions.py``
+* I add a name to ``src.type_error.py``
 
   .. code-block:: python
 
@@ -335,7 +319,7 @@ There's not much to do here but add assertions for practice.
 
     TypeError: 'NoneType' object is not callable
 
-* I make ``function_d`` in ``functions.py`` to a :ref:`function<functions>`
+* I make ``function_d`` in ``src.type_error.py`` to a :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -348,7 +332,7 @@ There's not much to do here but add assertions for practice.
 
     TypeError: function_d() takes 0 positional arguments but 4 were given
 
-* What if I try the solution for the previous test? I make the signature of ``function_d`` in ``functions.py``
+* What if I try the solution for the previous test? I make the signature of ``function_d`` in ``src.type_error.py``
 
   .. code-block:: python
 
@@ -361,7 +345,7 @@ There's not much to do here but add assertions for practice.
 
     TypeError: function_d() takes 3 positional arguments but 4 were given
 
-* I make ``function_d`` in ``functions.py`` to take 4 arguments
+* I make ``function_d`` in ``src.type_error.py`` to take 4 arguments
 
   .. code-block:: python
 
@@ -370,7 +354,7 @@ There's not much to do here but add assertions for practice.
 
   the terminal shows all tests pass...but wait! there's more. I can make this better.
 
-* There's another solution to the above test. What if I can define a function that takes in any number of parameters, is there a signature in Python that allows a function to take 1 argument, 4 arguments, or any number of arguments? YES! I can use the starred expression ``*args`` to pass in any number of positional arguments to to ``function_d`` in ``functions.py``
+* There's another solution to the above test. What if I can define a function that takes in any number of parameters, is there a signature in Python that allows a function to take 1 argument, 4 arguments, or any number of arguments? YES! I can use the starred expression ``*args`` to pass in any number of positional arguments to to ``function_d`` in ``src.type_error.py``
 
   .. code-block:: python
 
@@ -386,12 +370,7 @@ What happens when you do this with ``function_a``, ``function_b``, ``function_c`
 review
 *********************************************************************************
 
-I can solve the `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#TypeError>`_ by matching function signatures and their calls. I also ran into the following Exceptions_
-
-* :ref:`AssertionError`
-* :ref:`ModuleNotFoundError`
-* :ref:`AttributeError`
-* :ref:`TypeError`
+I can solve the `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#TypeError>`_ by matching function signatures and their calls
 
 ----
 
