@@ -379,49 +379,19 @@ test_type_error_w_function_signatures
 
     AttributeError: module 'src.type_error' has no attribute 'function_02'. Did you mean: 'function_00'?
 
-* I add a name to ``type_error.py``
+* I add it as a :ref:`function<functions>` to ``type_error.py``
 
   .. code-block:: python
 
-    function_02 = None
-
-  the terminal shows
-
-  .. code-block:: python
-
-    TypeError: 'NoneType' object is not callable
-
-* I make ``function_02`` a function
-
-  .. code-block:: python
-
-    def function_02():
+    def function_01(
+            argument_1, argument_2
+        ):
         return None
 
-  the terminal shows
 
-  .. code-block:: python
-
-    TypeError: function_02() takes 0 positional arguments but 3 were given
-
-* I make the signature of ``function_02`` take one input argument
-
-  .. code-block:: python
-
-    def function_02(argument_1):
-        return None
-
-  the terminal shows
-
-  .. code-block:: python
-
-    TypeError: function_02() takes 1 positional argument but 3 were given
-
-* I make ``function_02`` in ``type_error.py`` to take in another argument
-
-  .. code-block:: python
-
-    def function_02(argument_1, argument_2):
+    def function_02(
+            argument_1, argument_2
+        ):
         return None
 
   the terminal shows
@@ -430,71 +400,58 @@ test_type_error_w_function_signatures
 
     TypeError: function_02() takes 2 positional arguments but 3 were given
 
-* I make ``function_02`` in ``type_error.py`` to take in one more argument
+* I make the number of inputs in the signature match the number of inputs given in the call
 
   .. code-block:: python
 
     def function_02(
-        argument_1, argument_2
-    ):
+            argument_1, argument_2,
+            argument_3
+        ):
         return None
 
-  and the terminal shows all tests pass
+  and the terminal shows green again
 
-* If you are not bored yet, I add a failing test to ``TestTypeErrors`` in ``test_type_error.py``
+* I add one more failing line to the test
 
   .. code-block:: python
 
-    src.type_error.function_03("a", "b", "c", "d")
+    def test_type_error_w_function_signatures(self):
+        src.type_error.function_00('a')
+        src.type_error.function_01('a', 'b')
+        src.type_error.function_02('a', 'b', 'c')
+        src.type_error.function_03('a', 'b', 'c', 'd')
 
   the terminal shows
 
   .. code-block:: python
 
-    AttributeError: module 'functions' has no attribute 'function_03'
+    AttributeError: module 'src.type_error' has no attribute 'function_03'. Did you mean: 'function_00'?
 
-* I add a name to ``type_error.py``
-
-  .. code-block:: python
-
-    function_03 = None
-
-  the terminal shows
+* I add the :ref:`function<functions>` to ``type_error.py``
 
   .. code-block:: python
 
-    TypeError: 'NoneType' object is not callable
-
-* I make ``function_03`` in ``type_error.py`` to a :ref:`function<functions>`
-
-  .. code-block:: python
-
-    def function_03():
+    def function_02(
+            argument_1, argument_2,
+            argument_3
+        ):
         return None
 
-  the terminal shows
-
-  .. code-block::
-
-    TypeError: function_03() takes 0 positional arguments but 4 were given
-
-* What if I try the solution for the previous test? I make the signature of ``function_03`` in ``type_error.py``
-
-  .. code-block:: python
 
     def function_03(
-        argument_1, argument_2,
-        argument_3
-    ):
+            argument_1, argument_2,
+            argument_3
+        ):
         return None
 
-  the terminal shows
+  and get :ref:`TypeError`
 
   .. code-block:: python
 
     TypeError: function_03() takes 3 positional arguments but 4 were given
 
-* I make ``function_03`` in ``type_error.py`` to take 4 arguments
+* I make the :ref:`function<functions>` take 4 arguments
 
   .. code-block:: python
 
@@ -504,16 +461,13 @@ test_type_error_w_function_signatures
     ):
         return None
 
-  the terminal shows all tests pass...but wait! there's more. I can make this better.
-
-What happens when you do this with ``function_00``, ``function_01``, ``function_02`` and ``function_03``?
-
+  and the terminal shows all tests are passing
 
 *********************************************************************************
 review
 *********************************************************************************
 
-I can solve the `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#TypeError>`_ by matching function signatures and their calls
+I can solve the `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#TypeError>`_ by making sure things are called in the way they are designed to be called
 
 ----
 
