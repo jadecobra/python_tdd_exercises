@@ -210,179 +210,176 @@ refactor: make it better
 
     a_list = [1, 2, 3, 'n']
 
-  and the terminal shows 
+  and the terminal shows :ref:`TypeError`
 
+  .. code-block:: python
+
+    TypeError: 'list' object is not callable
+
+* When I make it a :ref:`function<functions>`
+
+  .. code-block:: python
+
+    def true():
+        return True
+
+
+    def a_list():
+        return [1, 2, 3, 'n']
+
+  the test passes
+
+* I add a new failing line to the test
+
+  .. code-block:: python
+
+    def test_type_error_w_non_callables(self):
+        src.type_error.none()
+        src.type_error.false()
+        src.type_error.true()
+        src.type_error.a_list()
+        src.type_error.a_dictionary()
+
+  and get :ref:`AttributeError`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.type_error' has no attribute 'a_dictionary'
+
+  I add the name and point it to a :ref:`dictionary<dictionaries>`
+
+  .. code-block:: python
+
+    def a_list():
+        return [1, 2, 3, 'n']
+
+
+    a_dictionary = {'key': 'value'}
+
+  and the terminal shows :ref:`TypeError`
+
+  .. code-block:: python
+
+    TypeError: 'dict' object is not callable
+
+* when I change it to a :ref:`function<functions>`
+
+  .. code-block:: python
+
+    def a_list():
+        return [1, 2, 3, 'n']
+
+
+    def a_dictionary():
+        return {'key': 'value'}
+
+  the terminal shows green again
+
+----
 
 *********************************************************************************
 test_type_error_w_function_signatures
 *********************************************************************************
 
+* I add a new test
+
   .. code-block:: python
 
     def test_type_error_w_function_signatures(self):
-        src.type_error.function_00()
+        src.type_error.function_00('a')
 
-* and the terminal shows :ref:`AttributeError`
-
-  .. code-block:: python
-
-    E    AttributeError: module 'functions' has no attribute 'function_00'
-
-
-
-
-* I add a name to ``src.type_error.py``
+  and the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
-    function_00 = None
+    AttributeError: module 'src.type_error' has no attribute 'function_00'
 
-  the terminal shows
-
-  .. code-block:: python
-
-   E    TypeError: 'NoneType' object is not callable
-
-* I add it to the list of Exceptions_ encountered
+  I add the name to ``type_error.py`` as a :ref:`function<functions>`
 
   .. code-block:: python
 
-    # Exceptions Encountered
-    # AssertionError
-    # AttributeError
-    # TypeError
+    def a_dictionary():
+        return {'key': 'value'}
 
-* then change it to a callable_
-
-  .. code-block:: python
 
     def function_00():
         return None
 
-  and the test passes
-
-
-
-
-
-
-
-
-  the terminal shows
+  and get :ref:`TypeError`
 
   .. code-block:: python
 
-    E    TypeError: function_00() takes 0 positional arguments but 1 was given
+   TypeError: function_00() takes 0 positional arguments but 1 was given
 
-  same error, different message
+  because ``function_00`` is called in a way that is different from its signature or design
 
-  * ``function_00() takes 0 positional arguments but 1 was given`` there was an expectation which was not met in how the ``function_00`` is called, it violates the defined signature
-  * ``src.type_error.function_00("a")`` I am checking if the call ``src.type_error.function_00("a")`` is equal to :ref:`None`
-  * ``src.type_error.function_00("a")`` is the call. I think of it like an address
-
-    - ``functions`` is to ``src.type_error.py`` which is a Python module
-    - ``function_00`` is the name ``function_00`` defined in ``src.type_error.py``
-    - ``()`` is how a function is called after it is defined
-    - ``"a"`` is the value passed to ``function_00`` as input
-
-  Imagine you have a telephone, it has a call function but to make a call you must provide a number then hit dial
-
-  - ``call`` is like ``function_00``
-  - the number you provide is like ``"a"``
-  - hitting dial is like ``()``
-
-  This is covered in more depth in :ref:`functions`
-
-
-* I make ``function_00`` in ``src.type_error.py``
+* I add an input argument to the :ref:`function<functions>` in ``type_error.py``
 
   .. code-block:: python
 
     def function_00(argument):
         return None
 
-the terminal shows passing tests
+  and the terminal shows passing tests
 
-
-There's not much to do here but add assertions for practice.
-
-* I add a new test to ``test_type_error_w_function_signatures`` in ``test_type_error.py``
+* I add a new failing line
 
   .. code-block:: python
 
-    src.type_error.function_01("a", "b")
+    def test_type_error_w_function_signatures(self):
+        src.type_error.function_00('a')
+        src.type_error.function_01('a', 'b')
 
   the terminal shows
 
   .. code-block:: python
 
-    AttributeError: module 'functions' has no attribute 'function_01'
+    AttributeError: module 'src.type_error' has no attribute 'function_01'. Did you mean: 'function_00'?
 
-* I add a name to ``src.type_error.py``
-
-  .. code-block:: python
-
-    function_01 = None
-
-  the terminal shows
+  I add the name to ``type_error.py`` as a :ref:`function<functions>`
 
   .. code-block:: python
 
-    TypeError: 'NoneType' object is not callable
-
-* I make ``function_01`` to a function
-
-  .. code-block:: python
-
-    def function_01():
+    def function_00(argument):
         return None
 
-  the terminal shows
 
-  .. code-block:: python
-
-   E    TypeError: function_01() takes 0 positional arguments but 2 were given
-
-  the offending line ``src.type_error.function_01("a", "b")`` called ``function_01`` with 2 parameters but the definition has the function taking no inputs
-
-* I make ``function_01`` in ``src.type_error.py``
-
-  .. code-block:: python
-
-    def function_01(positional_argument_1):
+    def function_01(argument):
         return None
 
-  and the terminal shows
+  and the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
     TypeError: function_01() takes 1 positional argument but 2 were given
 
-  ah, the previous definition took no positional arguments, and now allows 1 positional argument but I called it with 2 positional arguments.
-
-* I make ``function_01`` in ``src.type_error.py`` to take in 2 positional arguments
+* I make the number of inputs in the definition match the number of inputs in the call
 
   .. code-block:: python
 
-    def function_01(positional_argument_1, positional_argument_2):
-        return None
+    def function_01(
+          argument_1, argument_2
+      ):
+      return None
 
-  the terminal shows all tests pass.
-* Is there another solution to the above test? Can I define a function that takes in any number of parameters? see :ref:`test_functions_w_positional_arguments`
+  and the test passes
 
-* I add a failing test to ``TestTypeErrors`` in ``test_type_error.py``
+* I add another failing line
 
   .. code-block:: python
 
-    src.type_error.function_02("a", "b", "c")
+    def test_type_error_w_function_signatures(self):
+        src.type_error.function_00('a')
+        src.type_error.function_01('a', 'b')
+        src.type_error.function_02('a', 'b', 'c')
 
   the terminal shows
 
   .. code-block:: python
 
-    AttributeError: module 'functions' has no attribute 'function_02'
+    AttributeError: module 'src.type_error' has no attribute 'function_02'. Did you mean: 'function_00'?
 
-* I add a name to ``src.type_error.py``
+* I add a name to ``type_error.py``
 
   .. code-block:: python
 
@@ -420,7 +417,7 @@ There's not much to do here but add assertions for practice.
 
     TypeError: function_02() takes 1 positional argument but 3 were given
 
-* I make ``function_02`` in ``src.type_error.py`` to take in another argument
+* I make ``function_02`` in ``type_error.py`` to take in another argument
 
   .. code-block:: python
 
@@ -433,7 +430,7 @@ There's not much to do here but add assertions for practice.
 
     TypeError: function_02() takes 2 positional arguments but 3 were given
 
-* I make ``function_02`` in ``src.type_error.py`` to take in one more argument
+* I make ``function_02`` in ``type_error.py`` to take in one more argument
 
   .. code-block:: python
 
@@ -456,7 +453,7 @@ There's not much to do here but add assertions for practice.
 
     AttributeError: module 'functions' has no attribute 'function_03'
 
-* I add a name to ``src.type_error.py``
+* I add a name to ``type_error.py``
 
   .. code-block:: python
 
@@ -468,7 +465,7 @@ There's not much to do here but add assertions for practice.
 
     TypeError: 'NoneType' object is not callable
 
-* I make ``function_03`` in ``src.type_error.py`` to a :ref:`function<functions>`
+* I make ``function_03`` in ``type_error.py`` to a :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -481,7 +478,7 @@ There's not much to do here but add assertions for practice.
 
     TypeError: function_03() takes 0 positional arguments but 4 were given
 
-* What if I try the solution for the previous test? I make the signature of ``function_03`` in ``src.type_error.py``
+* What if I try the solution for the previous test? I make the signature of ``function_03`` in ``type_error.py``
 
   .. code-block:: python
 
@@ -497,7 +494,7 @@ There's not much to do here but add assertions for practice.
 
     TypeError: function_03() takes 3 positional arguments but 4 were given
 
-* I make ``function_03`` in ``src.type_error.py`` to take 4 arguments
+* I make ``function_03`` in ``type_error.py`` to take 4 arguments
 
   .. code-block:: python
 
