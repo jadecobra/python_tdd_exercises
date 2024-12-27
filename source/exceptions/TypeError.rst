@@ -15,8 +15,11 @@ TypeError
 `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ is raised when an object_ is called in a way that is different from its definition. For example when a :ref:`function<functions>` is called in a way that does not match its :ref:`function<functions>` signature.
 
 *********************************************************************************
-red: make it fail
+test_type_error_w_non_callables
 *********************************************************************************
+
+red: make it fail
+#################################################################################
 
 * I open a terminal to run :ref:`makePythonTdd.sh` with ``type_error`` as the name of the project
 
@@ -40,8 +43,7 @@ red: make it fail
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_type_error.py:7`` with the mouse to open it in the editor
 * then change ``True`` to ``False``
-* and change ``test_failure`` to ``test_type_error_w_function_signatures``
-
+* and change ``test_failure`` to ``test_type_error_w_non_callables``
 
   .. code-block:: python
 
@@ -51,14 +53,14 @@ red: make it fail
 
     class TestTypeErrors(unittest.TestCase):
 
-        def test_type_error_w_function_signatures(self):
-            src.type_error.function_00()
+        def test_type_error_w_non_callables(self):
+            src.type_error.none()
 
-* and the terminal shows
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
-    E    AttributeError: module 'functions' has no attribute 'function_00'
+    AttributeError: module 'src.type_error' has no attribute 'none'
 
   which I add to the list of Exceptions_ encountered
 
@@ -68,9 +70,165 @@ red: make it fail
       # AssertionError
       # AttributeError
 
-*********************************************************************************
 green: make it pass
+#################################################################################
+
+I add the name to ``type_error.py`` and point it to :ref:`None`
+
+.. code-block:: python
+
+  none = None
+
+and the terminal shows :ref:`TypeError`
+
+.. code-block:: python
+
+  TypeError: 'NoneType' object is not callable
+
+when I make it a :ref:`function<functions>`
+
+.. code-block:: python
+
+  def none():
+      return None
+
+the test passes
+
+refactor: make it better
+#################################################################################
+
+* I add another line to the test
+
+  .. code-block:: python
+
+    def test_type_error_w_non_callables(self):
+        src.type_error.none()
+        src.type_error.false()
+
+  and the terminal shows :ref:`AttributeError`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.type_error' has no attribute 'false'
+
+  when I add the name to ``type_error.py`` and point it to :ref:`False<test_what_is_false>`
+
+  .. code-block:: python
+
+    def none():
+        return None
+
+
+    false = False
+
+  the terminal shows :ref:`TypeError`
+
+  .. code-block:: python
+
+    TypeError: 'bool' object is not callable
+
+* I change it to a :ref:`function<functions>`
+
+  .. code-block:: python
+
+    def none():
+        return None
+
+
+    def false():
+        return False
+
+  and the terminal shows green again
+
+* I add a line to test the other :ref:`boolean<Booleans>`
+
+  .. code-block:: python
+
+    def test_type_error_w_non_callables(self):
+        src.type_error.none()
+        src.type_error.false()
+        src.type_error.true()
+
+  the terminal shows :ref:`AttributeError`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.type_error' has no attribute 'true'
+
+  then I add the name to ``type_error.py`` and point it to :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+
+    def false():
+        return False
+
+
+    true = True
+
+  which gives me :ref:`TypeError`
+
+  .. code-block:: python
+
+    TypeError: 'bool' object is not callable
+
+* I change it to a :ref:`function<functions>`
+
+  .. code-block:: python
+
+    def false():
+        return False
+
+
+    def true():
+        return True
+
+  and the test passes
+
+* I add another line to the test
+
+  .. code-block:: python
+
+    def test_type_error_w_non_callables(self):
+        src.type_error.none()
+        src.type_error.false()
+        src.type_error.true()
+        src.type_error.a_list()
+
+  and the terminal shows :ref:`AttributeError`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.type_error' has no attribute 'a_list'
+
+  I add a name to ``type_error.py`` and point it to a :ref:`list<lists>`
+
+  .. code-block:: python
+
+    def true():
+        return True
+
+
+    a_list = [1, 2, 3, 'n']
+
+  and the terminal shows 
+
+
 *********************************************************************************
+test_type_error_w_function_signatures
+*********************************************************************************
+
+  .. code-block:: python
+
+    def test_type_error_w_function_signatures(self):
+        src.type_error.function_00()
+
+* and the terminal shows :ref:`AttributeError`
+
+  .. code-block:: python
+
+    E    AttributeError: module 'functions' has no attribute 'function_00'
+
+
 
 
 * I add a name to ``src.type_error.py``
@@ -103,9 +261,12 @@ green: make it pass
 
   and the test passes
 
-*********************************************************************************
-refactor: make it better
-*********************************************************************************
+
+
+
+
+
+
 
   the terminal shows
 
@@ -250,7 +411,7 @@ There's not much to do here but add assertions for practice.
 
   .. code-block:: python
 
-    def function_02(arg1):
+    def function_02(argument_1):
         return None
 
   the terminal shows
@@ -263,7 +424,7 @@ There's not much to do here but add assertions for practice.
 
   .. code-block:: python
 
-    def function_02(arg1, arg2):
+    def function_02(argument_1, argument_2):
         return None
 
   the terminal shows
@@ -276,7 +437,9 @@ There's not much to do here but add assertions for practice.
 
   .. code-block:: python
 
-    def function_02(arg1, arg2, arg3):
+    def function_02(
+        argument_1, argument_2
+    ):
         return None
 
   and the terminal shows all tests pass
@@ -322,7 +485,10 @@ There's not much to do here but add assertions for practice.
 
   .. code-block:: python
 
-    def function_03(arg1, arg2, arg3):
+    def function_03(
+        argument_1, argument_2,
+        argument_3
+    ):
         return None
 
   the terminal shows
@@ -335,19 +501,13 @@ There's not much to do here but add assertions for practice.
 
   .. code-block:: python
 
-    def function_03(arg1, arg2, arg3, arg4):
+    def function_03(
+        argument_1, argument_2,
+        argument_3, argument_4
+    ):
         return None
 
   the terminal shows all tests pass...but wait! there's more. I can make this better.
-
-* There's another solution to the above test. What if I can define a function that takes in any number of parameters, is there a signature in Python that allows a function to take 1 argument, 4 arguments, or any number of arguments? YES! I can use the starred expression ``*args`` to pass in any number of positional arguments to to ``function_03`` in ``src.type_error.py``
-
-  .. code-block:: python
-
-    def function_03(*args):
-        return None
-
-  the terminal shows all tests still pass. FANTASTIC!!
 
 What happens when you do this with ``function_00``, ``function_01``, ``function_02`` and ``function_03``?
 
