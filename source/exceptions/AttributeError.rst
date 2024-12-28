@@ -527,7 +527,6 @@ I ran tests to show how to solve the `AttributeError <https://docs.python.org/3/
 I also ran into the following Exceptions_
 
 * :ref:`AssertionError`
-* :ref:`AttributeError`
 * NameError_
 * :ref:`TypeError`
 * SyntaxError_
