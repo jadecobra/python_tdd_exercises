@@ -30,7 +30,7 @@ which is like
 why are asserts important?
 *********************************************************************************
 
-When building a program I can add ``assert`` statements to make sure something is :ref:`True<test_what_is_true>` before it continues. I can also use them to test how the program behaves when it is given inputs, which helps catch bugs that break previous tested behavior when introduced, as well as answer the following questions
+When building a program I can add ``assert`` statements to make sure something is :ref:`True<test_what_is_true>` before it continues, I can also use them to test how the program behaves when it is given inputs, which helps catch bugs that break previous tested behavior when introduced. They also help me answer the following questions
 
 * what is the same?
 * what is different?
@@ -482,7 +482,7 @@ refactor: make it better
   * :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`
   * :ref:`None` is :ref:`None`
   * :ref:`True<test_what_is_true>` is not :ref:`None`
-  * :ref:`False<test_what_is_false>` is not :ref:`None` and is not equal to :ref:`None`
+  * :ref:`False<test_what_is_false>` is not :ref:`None` and not equal to :ref:`None`
 
 * I add a new failing line
 
@@ -547,8 +547,8 @@ refactor: make it better
   * :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
   * :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`
   * :ref:`None` is :ref:`None`
-  * :ref:`True<test_what_is_true>` is not :ref:`None` and is not equal to :ref:`None`
-  * :ref:`False<test_what_is_false>` is not :ref:`None` and is not equal to :ref:`None`
+  * :ref:`True<test_what_is_true>` is not :ref:`None` and not equal to :ref:`None`
+  * :ref:`False<test_what_is_false>` is not :ref:`None` and not equal to :ref:`None`
 
 * red: make it fail
 
@@ -606,13 +606,13 @@ refactor: make it better
 
   and from the tests I can say that in Python
 
-  * :ref:`False<test_what_is_false>` is not :ref:`True<test_what_is_true>` and is not equal to :ref:`True<test_what_is_true>`
-  * :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>` and is equal to :ref:`True<test_what_is_true>`
-  * :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>` and is not equal to :ref:`False<test_what_is_false>`
-  * :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>` and is equal to :ref:`False<test_what_is_false>`
-  * :ref:`None` is :ref:`None` and is equal to :ref:`None`
-  * :ref:`True<test_what_is_true>` is not :ref:`None` and is not equal to :ref:`None`
-  * :ref:`False<test_what_is_false>` is not :ref:`None` and is not equal to :ref:`None`
+  * :ref:`False<test_what_is_false>` is not :ref:`True<test_what_is_true>` and not equal to :ref:`True<test_what_is_true>`
+  * :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>` and equal to :ref:`True<test_what_is_true>`
+  * :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>` and not equal to :ref:`False<test_what_is_false>`
+  * :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>` and equal to :ref:`False<test_what_is_false>`
+  * :ref:`None` is :ref:`None` and equal to :ref:`None`
+  * :ref:`True<test_what_is_true>` is not :ref:`None` and not equal to :ref:`None`
+  * :ref:`False<test_what_is_false>` is not :ref:`None` and not equal to :ref:`None`
 
 ----
 
@@ -622,14 +622,14 @@ refactor: make it better
 review
 *********************************************************************************
 
-If you have been typing along *WELL DONE!* Your magic powers are growing. You now know
+I ran tests to show how to
 
-* how to test for equality
-* how to test if something is :ref:`None` or not
-* how to test if something is :ref:`False<test_what_is_false>` or not
-* how to test if something is :ref:`True<test_what_is_true>` or not
-* how to use ``assert`` statements
-* how to use the following ``unittest.TestCase.assert`` methods
+* test for equality
+* test if something is :ref:`None` or not
+* test if something is :ref:`False<test_what_is_false>` or not
+* test if something is :ref:`True<test_what_is_true>` or not
+* use ``assert`` statements
+* use the following ``unittest.TestCase.assert`` methods
 
   - assertIsNone_ - is this thing :ref:`None`?
   - assertIsNotNone_ - is this thing not :ref:`None`?
