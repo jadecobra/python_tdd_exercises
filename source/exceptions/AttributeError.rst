@@ -14,7 +14,7 @@ AttributeError
 
 ----
 
-The `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name that does not exist in an object_ that does exist. An Attribute is a name for something that belongs to an object_. 
+The `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name that does not exist in an object_ that does exist. An Attribute is a name for something that belongs to an object_. For example, a human being has attributes like height, weight, sex and color.
 
 ----
 

@@ -622,21 +622,12 @@ refactor: make it better
 review
 *********************************************************************************
 
-I ran tests to show how to
+I ran tests to show how to use ``assert`` statements and :ref:`methods<functions>` to test if something is
 
-* test for equality
-* test if something is :ref:`None` or not
-* test if something is :ref:`False<test_what_is_false>` or not
-* test if something is :ref:`True<test_what_is_true>` or not
-* use ``assert`` statements
-* use the following ``unittest.TestCase.assert`` methods
-
-  - assertIsNone_ - is this thing :ref:`None`?
-  - assertIsNotNone_ - is this thing not :ref:`None`?
-  - assertFalse_ - is this thing :ref:`False<test_what_is_false>`?
-  - assertTrue_ - is this thing :ref:`True<test_what_is_true>`?
-  - assertEqual_ - are these two things equal?
-  - assertNotEqual_ - are these two things not equal?
+* :ref:`None` or not
+* :ref:`False<test_what_is_false>` or not
+* :ref:`True<test_what_is_true>` or not
+* equal or not
 
 Would you like to test the :ref:`AttributeError`?
 
