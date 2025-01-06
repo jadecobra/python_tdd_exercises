@@ -1,4 +1,5 @@
 .. _assert statement: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
+.. _assert statements: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
 .. _import statement: https://docs.python.org/3/reference/simple_stmts.html#the-import-statement
 .. _return statement: https://docs.python.org/3/reference/simple_stmts.html#the-return-statement
 .. _try statement: https://docs.python.org/3/reference/compound_stmts.html#the-try-statement

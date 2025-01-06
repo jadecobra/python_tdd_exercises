@@ -127,7 +127,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
         assert False is not None
         self.assertIsNotNone(False)
 
-  the terminal shows a passing test because the statement is :ref:`True<test_what_is_true>`. I can add a note that :ref:`False<test_what_is_false>` is not :ref:`None`
+  the terminal shows a passing test because the statement is :ref:`True<test_what_is_true>`. I add a note that :ref:`False<test_what_is_false>` is not :ref:`None`
 
   .. code-block:: python
 
@@ -190,7 +190,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
       assert True is not None
       self.assertIsNotNone(True)
 
-  the test passes. I can now say that in Python
+  the test passes. I can say that in Python
 
   - :ref:`True<test_what_is_true>` is not :ref:`None` and
   - :ref:`False<test_what_is_false>` is not :ref:`None`
@@ -249,7 +249,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
       assert None is None
       self.assertIsNone(None)
 
-  the test passes and I can say that
+  the test passes and I add a note
 
   - :ref:`None` is :ref:`None`
   - :ref:`True<test_what_is_true>` is not :ref:`None`
@@ -322,7 +322,7 @@ I change the failing line
       assert True is not False
       self.assertFalse(False)
 
-and the test passes. I can say that in Python
+and the test passes. I add to the notes
 
 * :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
 * :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`
@@ -396,7 +396,7 @@ I change the failing line to a :ref:`True<test_what_is_true>` statement
       assert False is not True
       self.assertTrue(True)
 
-and all tests are passing. I can update the notes to say that
+and all tests are passing. I update the notes to say that
 
 * :ref:`False<test_what_is_false>` is not :ref:`True<test_what_is_true>`
 * :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
@@ -537,7 +537,7 @@ refactor: make it better
         assert True != None
         self.assertNotEqual(True, None)
 
-  and the terminal shows passing tests. I can update the notes to say that
+  and the terminal shows passing tests. I update the notes to say that
 
   - :ref:`False<test_what_is_false>` is not :ref:`True<test_what_is_true>`
   - :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
@@ -711,7 +711,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    AssertionError: False == False
+    AssertionError: True == False
 
   then I change the :ref:`method<functions>`
 
@@ -724,8 +724,145 @@ refactor: make it better
 
   - :ref:`False<test_what_is_false>` is not :ref:`True<test_what_is_true>`
   - :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
-  - :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
-  - :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>` and equal to False
+  - :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>` and not equal to :ref:`False<test_what_is_false>`
+  - :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>` and equal to :ref:`False<test_what_is_false>`
+  - :ref:`None` is :ref:`None` and equal to :ref:`None`
+  - :ref:`True<test_what_is_true>` is not :ref:`None` and not equal to :ref:`None`
+  - :ref:`False<test_what_is_false>` is not :ref:`None` and not equal to :ref:`None`
+
+* I add another failing line
+
+  .. code-block:: python
+
+    def test_assertion_error_w_equality(self):
+        assert False != None
+        self.assertNotEqual(False, None)
+
+        assert True != None
+        self.assertNotEqual(True, None)
+
+        assert None == None
+        self.assertEqual(None, None)
+
+        assert False == False
+        self.assertEqual(False, False)
+
+        assert True != False
+        self.assertNotEqual(True, False)
+
+        assert True != True
+
+  the terminal shows `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
+
+  .. code-block:: python
+
+    E    assert True != True
+
+  I change the line
+
+  .. code-block:: python
+
+    assert True != False
+    self.assertNotEqual(True, False)
+
+    assert True == True
+
+  and the terminal shows passing tests. I add another failing line
+
+  .. code-block:: python
+
+    assert True == True
+    self.assertNotEqual(True, True)
+
+  and get `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
+
+  .. code-block:: python
+
+    AssertionError: True == True
+
+  then I change the :ref:`method<functions>`
+
+  .. code-block:: python
+
+    assert True != False
+    self.assertNotEqual(True, False)
+
+  and the test passes
+
+  - :ref:`False<test_what_is_false>` is not :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>` and equal to :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>` and not equal to :ref:`False<test_what_is_false>`
+  - :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>` and equal to :ref:`False<test_what_is_false>`
+  - :ref:`None` is :ref:`None` and equal to :ref:`None`
+  - :ref:`True<test_what_is_true>` is not :ref:`None` and not equal to :ref:`None`
+  - :ref:`False<test_what_is_false>` is not :ref:`None` and not equal to :ref:`None`
+
+* time for the last one
+
+  .. code-block:: python
+
+    def test_assertion_error_w_equality(self):
+        assert False != None
+        self.assertNotEqual(False, None)
+
+        assert True != None
+        self.assertNotEqual(True, None)
+
+        assert None == None
+        self.assertEqual(None, None)
+
+        assert False == False
+        self.assertEqual(False, False)
+
+        assert True != False
+        self.assertNotEqual(True, False)
+
+        assert True == True
+        self.assertEqual(True, True)
+
+        assert False == True
+
+  the terminal shows `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
+
+  .. code-block:: python
+
+    E    assert False == True
+
+  when I make the line :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+
+    assert True == True
+    self.assertEqual(True, True)
+
+    assert False != True
+
+  the test passes. I add a line with the assert_ :ref:`method<functions>`
+
+  .. code-block:: python
+
+    assert False != True
+    self.assertEqual(False, True)
+
+  and the terminal shows `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
+
+  .. code-block:: python
+
+    AssertionError: False != True
+
+  I change the :ref:`method<functions>`
+
+  .. code-block:: python
+
+    assert False != True
+    self.assertNotEqual(False, True)
+
+  and the test passes, showing that
+
+  - :ref:`False<test_what_is_false>` is not :ref:`True<test_what_is_true>` and not equal to :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>` and equal to :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>` and not equal to :ref:`False<test_what_is_false>`
+  - :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>` and equal to :ref:`False<test_what_is_false>`
   - :ref:`None` is :ref:`None` and equal to :ref:`None`
   - :ref:`True<test_what_is_true>` is not :ref:`None` and not equal to :ref:`None`
   - :ref:`False<test_what_is_false>` is not :ref:`None` and not equal to :ref:`None`
@@ -738,7 +875,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-I ran tests to show how to use ``assert`` statements and :ref:`methods<functions>` to test if something is
+I ran tests to show how to use `assert statements`_ and :ref:`methods<functions>` to test if something is
 
 * :ref:`None` or not
 * :ref:`False<test_what_is_false>` or not
