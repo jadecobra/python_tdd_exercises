@@ -1,8 +1,10 @@
+.. _assert statement: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
 .. _import statement: https://docs.python.org/3/reference/simple_stmts.html#the-import-statement
 .. _return statement: https://docs.python.org/3/reference/simple_stmts.html#the-return-statement
 .. _try statement: https://docs.python.org/3/reference/compound_stmts.html#the-try-statement
 .. _while statement: https://docs.python.org/3/reference/compound_stmts.html#the-while-statement
 
+.. _assert: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
 .. _assertEqual: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertEqual
 .. _assertNotEqual: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertNotEqual
 .. _assertFalse: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse
@@ -80,6 +82,8 @@
 .. _unittest.TestCase.assertEqual: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertEqual
 .. _unittest.TestCase.assertNotEqual: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertNotEqual
 .. _unittest.TestCase.assertFalse: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse
+.. _unittest.TestCase.assertIsNone: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNone
+.. _unittest.TestCase.assertIsNotNone: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNotNone
 .. _unittest.TestCase.assertTrue: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertTrue
 .. _unittest.TestCase.assertRaises: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises
 .. _unittest.TestCase.assertRaisesRegex: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertRaisesRegex
