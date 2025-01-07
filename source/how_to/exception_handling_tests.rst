@@ -51,7 +51,7 @@ red: make it fail
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_exceptions.py:7`` with the mouse to open it in the editor
 * then change ``True`` to ``False`` to make the test pass
-* and ``test_failure`` to ``test_catching_module_not_found_error_in_tests`` with an `import statement`_
+* and change ``test_failure`` to ``test_catching_module_not_found_error_in_tests`` with an `import statement`_
 
   .. code-block:: python
 

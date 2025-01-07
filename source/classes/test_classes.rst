@@ -95,7 +95,7 @@ green: make it pass
 
     class ClassWithPass:
 
-  the terminal shows :ref:`IndentationError` because I declared a class without adding any indented text
+  the terminal shows IndentationError_ because I declared a class without adding any indented text
 * I add the new error to the list of Exceptions_ encountered
 
   .. code-block:: python

@@ -26,12 +26,12 @@ which is like
 
   assert True is False
 
-When building a program I can use ``assert`` statements to make sure something is :ref:`True<test_what_is_true>` before it continues, I can also use them to test how the program behaves, for example when it is given inputs, which can catch things that break previous tested behavior when added. They also help me answer 2 questions
+When building a program I can use ``assert`` statements to make sure something is :ref:`True<test_what_is_true>` before it continues, I can also use them to test how the program behaves, for example when it is given inputs, which can help catch things that break previous tested behavior when added. They also help me answer 2 questions
 
 * what is the same?
 * what is different?
 
-The difference between my expectations and reality, which is what happens when the program runs, gives me a clue about what to change to make them match
+The difference between my expectations and reality, which is what happens when the program runs, gives me a clue about what to change to make them match.
 
 ----
 
@@ -66,7 +66,7 @@ red: make it fail
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_assertion_error.py:7`` with the mouse to open it in the editor
 * then change ``True`` to ``False`` to make the test pass
-* and ``test_failure`` to ``test_assertion_error_w_none``
+* and change ``test_failure`` to ``test_assertion_error_w_none``
 
   .. code-block:: python
 
@@ -857,7 +857,7 @@ refactor: make it better
     assert False != True
     self.assertNotEqual(False, True)
 
-  and the test passes, showing that
+  and all tests pass
 
   - :ref:`False<test_what_is_false>` is not :ref:`True<test_what_is_true>` and not equal to :ref:`True<test_what_is_true>`
   - :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>` and equal to :ref:`True<test_what_is_true>`

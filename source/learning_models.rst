@@ -34,7 +34,7 @@ red: make it fail
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and click on ``tests/test_learning.py:7`` with the mouse to open it in the editor
 * then change ``True`` to ``False`` to make the test pass
-* replace the text in ``test_learning.py`` with
+* and change the text in ``test_learning.py`` with
 
   .. literalinclude:: /code/tests/test_learning_models.py
 
