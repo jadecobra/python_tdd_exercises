@@ -617,13 +617,16 @@ refactor: make it better
 
   and the test is green again. I add a note
 
-  - :ref:`False<test_what_is_false>` is not :ref:`True<test_what_is_true>`
-  - :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
-  - :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
-  - :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`
-  - :ref:`None` is :ref:`None` and equal to :ref:`None`
-  - :ref:`True<test_what_is_true>` is not :ref:`None` and not equal to :ref:`None`
-  - :ref:`False<test_what_is_false>` is not :ref:`None` and not equal to :ref:`None`
+  .. code-block:: python
+
+    # NOTES
+    # False is not True
+    # True is True
+    # True is not False
+    # False is False
+    # None is None and equal to None
+    # True is not None and not equal to None
+    # False is not None and not equal to None
 
 * I add another failing line
 
@@ -651,9 +654,6 @@ refactor: make it better
 
   .. code-block:: python
 
-    assert None == None
-    self.assertEqual(None, None)
-
     assert False == False
 
   and the test passes. I add a call to an assert :ref:`method<functions>`
@@ -676,15 +676,18 @@ refactor: make it better
     assert False == False
     self.assertEqual(False, False)
 
-  and the test passes
+  and the test passes. I add a note
 
-  - :ref:`False<test_what_is_false>` is not :ref:`True<test_what_is_true>`
-  - :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
-  - :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
-  - :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>` and equal to False
-  - :ref:`None` is :ref:`None` and equal to :ref:`None`
-  - :ref:`True<test_what_is_true>` is not :ref:`None` and not equal to :ref:`None`
-  - :ref:`False<test_what_is_false>` is not :ref:`None` and not equal to :ref:`None`
+  .. code-block:: python
+
+    # NOTES
+    # False is not True
+    # True is True
+    # True is not False
+    # False is False and equal to False
+    # None is None and equal to None
+    # True is not None and not equal to None
+    # False is not None and not equal to None
 
 * on to the next line
 
@@ -731,7 +734,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    AssertionError: True == False
+    AssertionError: True != False
 
   then I change the :ref:`method<functions>`
 
@@ -740,15 +743,18 @@ refactor: make it better
     assert True != False
     self.assertNotEqual(True, False)
 
-  and the test passes, I add to the notes
+  and the test passes. I add to the notes
 
-  - :ref:`False<test_what_is_false>` is not :ref:`True<test_what_is_true>`
-  - :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
-  - :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>` and not equal to :ref:`False<test_what_is_false>`
-  - :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>` and equal to :ref:`False<test_what_is_false>`
-  - :ref:`None` is :ref:`None` and equal to :ref:`None`
-  - :ref:`True<test_what_is_true>` is not :ref:`None` and not equal to :ref:`None`
-  - :ref:`False<test_what_is_false>` is not :ref:`None` and not equal to :ref:`None`
+  .. code-block:: python
+
+    # NOTES
+    # False is not True
+    # True is True
+    # True is not False and not equal to False
+    # False is False and equal to False
+    # None is None and equal to None
+    # True is not None and not equal to None
+    # False is not None and not equal to None
 
 * I add another failing line
 
@@ -782,9 +788,6 @@ refactor: make it better
 
   .. code-block:: python
 
-    assert True != False
-    self.assertNotEqual(True, False)
-
     assert True == True
 
   and the terminal shows passing tests. I add another failing line
@@ -804,20 +807,23 @@ refactor: make it better
 
   .. code-block:: python
 
-    assert True != False
-    self.assertNotEqual(True, False)
+    assert True == True
+    self.assertEqual(True, True)
 
-  and the test passes
+  and the test passes. I add another note
 
-  - :ref:`False<test_what_is_false>` is not :ref:`True<test_what_is_true>`
-  - :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>` and equal to :ref:`True<test_what_is_true>`
-  - :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>` and not equal to :ref:`False<test_what_is_false>`
-  - :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>` and equal to :ref:`False<test_what_is_false>`
-  - :ref:`None` is :ref:`None` and equal to :ref:`None`
-  - :ref:`True<test_what_is_true>` is not :ref:`None` and not equal to :ref:`None`
-  - :ref:`False<test_what_is_false>` is not :ref:`None` and not equal to :ref:`None`
+  .. code-block:: python
 
-* time for the last one
+    # NOTES
+    # False is not True
+    # True is True and equal to True
+    # True is not False and not equal to False
+    # False is False and equal to False
+    # None is None and equal to None
+    # True is not None and not equal to None
+    # False is not None and not equal to None
+
+* time for the last statement
 
   .. code-block:: python
 
@@ -852,9 +858,6 @@ refactor: make it better
 
   .. code-block:: python
 
-    assert True == True
-    self.assertEqual(True, True)
-
     assert False != True
 
   the test passes. I add a line with the assert_ :ref:`method<functions>`
@@ -877,15 +880,18 @@ refactor: make it better
     assert False != True
     self.assertNotEqual(False, True)
 
-  and all tests pass
+  and all tests are passing. I add a note for the last statement
 
-  - :ref:`False<test_what_is_false>` is not :ref:`True<test_what_is_true>` and not equal to :ref:`True<test_what_is_true>`
-  - :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>` and equal to :ref:`True<test_what_is_true>`
-  - :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>` and not equal to :ref:`False<test_what_is_false>`
-  - :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>` and equal to :ref:`False<test_what_is_false>`
-  - :ref:`None` is :ref:`None` and equal to :ref:`None`
-  - :ref:`True<test_what_is_true>` is not :ref:`None` and not equal to :ref:`None`
-  - :ref:`False<test_what_is_false>` is not :ref:`None` and not equal to :ref:`None`
+  .. code-block:: python
+
+    # NOTES
+    # False is not True and not equal to True
+    # True is True and equal to True
+    # True is not False and not equal to False
+    # False is False and equal to False
+    # None is None and equal to None
+    # True is not None and not equal to None
+    # False is not None and not equal to None
 
 ----
 
