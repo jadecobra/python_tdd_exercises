@@ -9,4 +9,5 @@
         "pycache",
         "pytest"
     ],
+    "makefile.configureOnOpen": false,
 }
