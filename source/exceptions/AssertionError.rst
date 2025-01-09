@@ -26,7 +26,7 @@ which is like
 
   assert True is False
 
-When building a program I can use ``assert`` statements to make sure something is :ref:`True<test_what_is_true>` before it continues, I can also use them to test how the program behaves, for example when it is given inputs, which can help catch things that break previous tested behavior when added. They also help me answer 2 questions
+When building a program I can use assert_ statements to make sure something is :ref:`True<test_what_is_true>` before it continues, I can also use them to test how the program behaves, for example when it is given inputs, which can help catch things that break previous tested behavior when added. They also help me answer 2 questions
 
 * what is the same?
 * what is different?
@@ -98,7 +98,7 @@ When I change the failing line
   def test_assertion_error_w_none(self):
       assert False is not None
 
-the test passes because the `assert statement`_ is now true since :ref:`False<test_what_is_false>` is not :ref:`None`
+the test passes because the statement is now :ref:`True<test_what_is_true>`
 
 refactor: make it better
 #################################################################################
@@ -119,7 +119,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
     AssertionError: False is not None
 
-* When I change the statement to use a different assert :ref:`method<functions>`
+  when I change the statement to use the opposite of the assert_ :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -127,7 +127,9 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
         assert False is not None
         self.assertIsNotNone(False)
 
-  the terminal shows a passing test because the statement is :ref:`True<test_what_is_true>`. I add a note that :ref:`False<test_what_is_false>` is not :ref:`None`
+  the terminal shows a passing test because the statement is :ref:`True<test_what_is_true>`
+
+* I add a note that :ref:`False<test_what_is_false>` is not :ref:`None`
 
   .. code-block:: python
 
@@ -154,7 +156,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
     E    assert True is None
 
-* I change the failing line to make it :ref:`True<test_what_is_true>`
+  I change the failing line to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
 
@@ -183,17 +185,26 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
     AssertionError: True is not None
 
-* when I change the statement
+  when I change the statement
 
   .. code-block:: python
 
       assert True is not None
       self.assertIsNotNone(True)
 
-  the test passes. I can say that in Python
+  the test passes
 
-  - :ref:`True<test_what_is_true>` is not :ref:`None` and
-  - :ref:`False<test_what_is_false>` is not :ref:`None`
+* I add another note
+
+  .. code-block:: python
+
+    # NOTES
+    # True is not None
+    # False is not None
+
+
+    # Exceptions Encountered
+    # AssertionError
 
 * I add another failing line
 
