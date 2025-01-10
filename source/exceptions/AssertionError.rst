@@ -306,7 +306,7 @@ and the terminal shows all tests are passing
 red: make it fail
 #################################################################################
 
-There is a :ref:`method<functions>` for this as well, you are familiar with it from the first failing test
+There is a :ref:`method<functions>` for this, it is the one from the first failing test
 
 .. code-block:: python
 
@@ -385,7 +385,7 @@ and the terminal shows green again
 red: make it fail
 #################################################################################
 
-there is a :ref:`method<functions>` for this as well
+there is also a :ref:`method<functions>` for this
 
 .. code-block:: python
 
