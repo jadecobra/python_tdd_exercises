@@ -333,7 +333,7 @@ green: make it pass
         self.assertFalse(False)
 
   and the test passes
-* time to add to the notes
+* time to add notes
 
   .. code-block:: python
 
@@ -743,7 +743,7 @@ refactor: make it better
     assert True != False
     self.assertNotEqual(True, False)
 
-  and the test passes. I add to the notes
+  and the test passes. I add notes
 
   .. code-block:: python
 
