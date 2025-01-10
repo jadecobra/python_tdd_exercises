@@ -481,7 +481,7 @@ refactor: make it better
 
     AssertionError: None == None
 
-* when I change the failing line to a :ref:`True<test_what_is_true>` statement with `unittest.TestCase.assertEqual`_
+  when I change the failing line to a :ref:`True<test_what_is_true>` statement with `unittest.TestCase.assertEqual`_
 
   .. code-block:: python
 
@@ -513,56 +513,44 @@ refactor: make it better
         self.assertEqual(None, None)
 
         assert False == None
-E    assert False == None
-assert False != None
-assert False != None
-self.assertEqual(False, None)
-AssertionError: False != None
-assert False != None
-self.assertNotEqual(False, None)
-# False is not None and not equal to None
-assert False != None
-self.assertNotEqual(False, None)
-
-assert True == None
 
   and the terminal shows `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
 
   .. code-block:: python
 
-    E    assert True == None
+    E    assert False == None
 
-* when I change the failing line to a :ref:`True<test_what_is_true>` statement
+  when I change the failing line to a :ref:`True<test_what_is_true>` statement
 
   .. code-block:: python
 
     def test_assertion_error_w_equality(self):
-        assert False != None
-        self.assertNotEqual(False, None)
+        assert None == None
+        self.assertEqual(None, None)
 
-        assert True != None
+        assert False != None
 
   the terminal shows passing tests
 
-* I add the `unittest.TestCase.assertEqual`_ :ref:`method<functions>`
+  I add the `unittest.TestCase.assertEqual`_ :ref:`method<functions>`
 
   .. code-block:: python
 
-    assert True != None
-    self.assertEqual(True, None)
+    assert False != None
+    self.assertEqual(False, None)
 
   the terminal shows `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
 
   .. code-block:: python
 
-    AssertionError: True != None
+    AssertionError: False != None
 
-* I change the failing line to a :ref:`True<test_what_is_true>` statement
+  I change the failing line to a :ref:`True<test_what_is_true>` statement
 
   .. code-block:: python
 
-    assert True != None
-    self.assertNotEqual(True, None)
+    assert False != None
+    self.assertNotEqual(False, None)
 
   and the terminal shows passing tests
 
@@ -575,57 +563,59 @@ assert True == None
     # True is True
     # True is not False
     # False is False
-    # None is None
-    # True is not None and not equal to None
+    # True is not None
     # False is not None and not equal to None
+    # None is None and equal to None
 
 * I add the next failing line
 
   .. code-block:: python
 
+
     def test_assertion_error_w_equality(self):
+        assert None == None
+        self.assertEqual(None, None)
+
         assert False != None
         self.assertNotEqual(False, None)
 
-        assert True != None
-        self.assertNotEqual(True, None)
-
-        assert None != None
+        assert True == None
 
   and get `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
 
   .. code-block:: python
 
-    E    assert None != None
+    E    assert True == None
 
   I change it
 
   .. code-block:: python
 
-    assert True != None
-    self.assertNotEqual(True, None)
+    assert False != None
+    self.assertNotEqual(False, None)
 
-    assert None == None
+    assert True != None
 
   and the test passes. I do the same thing with an assert :ref:`method<functions>`
 
   .. code-block:: python
 
-    assert None == None
-    self.assertNotEqual(None, None)
+    assert True != None
+    self.assertEqual(True, None)
+
 
   the terminal shows `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
 
   .. code-block:: python
 
-    AssertionError: None == None
+    AssertionError: True != None
 
   I change the :ref:`method<functions>`
 
   .. code-block:: python
 
-    assert None == None
-    self.assertEqual(None, None)
+    assert True != None
+    self.assertNotEqual(True, None)
 
   and the test is green again. I add a note
 
@@ -636,23 +626,23 @@ assert True == None
     # True is True
     # True is not False
     # False is False
-    # None is None and equal to None
     # True is not None and not equal to None
     # False is not None and not equal to None
+    # None is None and equal to None
 
 * I add another failing line
 
   .. code-block:: python
 
     def test_assertion_error_w_equality(self):
+        assert None == None
+        self.assertEqual(None, None)
+
         assert False != None
         self.assertNotEqual(False, None)
 
         assert True != None
         self.assertNotEqual(True, None)
-
-        assert None == None
-        self.assertEqual(None, None)
 
         assert False != False
 
@@ -697,23 +687,23 @@ assert True == None
     # True is True
     # True is not False
     # False is False and equal to False
-    # None is None and equal to None
     # True is not None and not equal to None
     # False is not None and not equal to None
+    # None is None and equal to None
 
 * on to the next line
 
   .. code-block:: python
 
     def test_assertion_error_w_equality(self):
+        assert None == None
+        self.assertEqual(None, None)
+
         assert False != None
         self.assertNotEqual(False, None)
 
         assert True != None
         self.assertNotEqual(True, None)
-
-        assert None == None
-        self.assertEqual(None, None)
 
         assert False == False
         self.assertEqual(False, False)
@@ -764,23 +754,23 @@ assert True == None
     # True is True
     # True is not False and not equal to False
     # False is False and equal to False
-    # None is None and equal to None
     # True is not None and not equal to None
     # False is not None and not equal to None
+    # None is None and equal to None
 
 * I add another failing line
 
   .. code-block:: python
 
     def test_assertion_error_w_equality(self):
+        assert None == None
+        self.assertEqual(None, None)
+
         assert False != None
         self.assertNotEqual(False, None)
 
         assert True != None
         self.assertNotEqual(True, None)
-
-        assert None == None
-        self.assertEqual(None, None)
 
         assert False == False
         self.assertEqual(False, False)
@@ -831,23 +821,23 @@ assert True == None
     # True is True and equal to True
     # True is not False and not equal to False
     # False is False and equal to False
-    # None is None and equal to None
     # True is not None and not equal to None
     # False is not None and not equal to None
+    # None is None and equal to None
 
 * time for the last statement
 
   .. code-block:: python
 
     def test_assertion_error_w_equality(self):
+        assert None == None
+        self.assertEqual(None, None)
+
         assert False != None
         self.assertNotEqual(False, None)
 
         assert True != None
         self.assertNotEqual(True, None)
-
-        assert None == None
-        self.assertEqual(None, None)
 
         assert False == False
         self.assertEqual(False, False)
@@ -901,9 +891,9 @@ assert True == None
     # True is True and equal to True
     # True is not False and not equal to False
     # False is False and equal to False
-    # None is None and equal to None
     # True is not None and not equal to None
     # False is not None and not equal to None
+    # None is None and equal to None
 
 ----
 
