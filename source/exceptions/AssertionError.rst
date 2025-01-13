@@ -138,7 +138,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
     # Exceptions Encountered
     # AssertionError
 
-* then add a new failing line
+* then I add a new failing line
 
   .. code-block:: python
 
@@ -158,13 +158,9 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
   .. code-block:: python
 
-    def test_assertion_error_w_none(self):
-        assert None is None
-        self.assertIsNone(None)
+    assert False is not None
 
-        assert False is not None
-
-  and the test passes. I add another line with the assertIsNone_ :ref:`method<functions>`
+  and the test passes. I add another line with the assertIsNone_ :ref:`method<functions>` which checks if something is :ref:`None`
 
   .. code-block:: python
 
@@ -172,7 +168,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
         assert None is None
         self.assertIsNone(None)
 
-        assert False is None
+        assert False is not None
         self.assertIsNone(False)
 
   the terminal shows `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
@@ -181,14 +177,14 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
     AssertionError: False is not None
 
-  when I change the statement
+  I change the statement
 
   .. code-block:: python
 
-      assert False is None
-      self.assertIsNotNone(False)
+    assert False is None
+    self.assertIsNotNone(False)
 
-  the test passes. I add another note
+  and the test passes. I add another note
 
   .. code-block:: python
 
@@ -196,7 +192,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
     # False is not None
     # None is None
 
-* then add a failing line
+* then I add a failing line
 
   .. code-block:: python
 
@@ -215,13 +211,13 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
     E    assert True is None
 
-  when I change the statement to make it :ref:`True<test_what_is_true>`
+  I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
 
     assert True is not None
 
-  the terminal shows green again. I add a failing line using the assertIsNone_ :ref:`method<functions>`
+  and the terminal shows green again. I add a failing line using the assertIsNone_ :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -298,7 +294,7 @@ and the terminal shows all tests are passing
 red: make it fail
 #################################################################################
 
-There is a :ref:`method<functions>` for this, it is the one from the first failing test
+There is a :ref:`method<functions>` for this, it is the one from the first failing test which checks if something is :ref:`False<test_what_is_false>`
 
 .. code-block:: python
 
@@ -311,7 +307,6 @@ the terminal shows `AssertionError <https://docs.python.org/3/library/exceptions
 .. code-block:: python
 
   AssertionError: True is not false
-
 
 green: make it pass
 #################################################################################
@@ -364,7 +359,7 @@ and the terminal shows `AssertionError <https://docs.python.org/3/library/except
 green: make it pass
 #################################################################################
 
-then I change the failing line to make it :ref:`True<test_what_is_true>`
+then I make the statement :ref:`True<test_what_is_true>`
 
 .. code-block:: python
 
@@ -376,7 +371,7 @@ and the terminal shows green again
 red: make it fail
 #################################################################################
 
-there is also a :ref:`method<functions>` for this
+there is also a :ref:`method<functions>` to check if something is :ref:`True<test_what_is_true>`
 
 .. code-block:: python
 
@@ -471,7 +466,7 @@ refactor: make it better
 
     AssertionError: None == None
 
-  when I change the failing line to a :ref:`True<test_what_is_true>` statement with `unittest.TestCase.assertEqual`_
+  when I use the `unittest.TestCase.assertEqual`_ :ref:`method<functions>` to make the failing line :ref:`True<test_what_is_true>`
 
   .. code-block:: python
 
@@ -492,7 +487,7 @@ refactor: make it better
     # False is not None
     # None is None and equal to None
 
-* then add a new failing line
+* then I add a new failing line
 
   .. code-block:: python
 
@@ -512,11 +507,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_assertion_error_w_equality(self):
-        assert None == None
-        self.assertEqual(None, None)
-
-        assert False != None
+    assert False != None
 
   the terminal shows passing tests. I add the `unittest.TestCase.assertEqual`_ :ref:`method<functions>`
 
@@ -573,9 +564,6 @@ refactor: make it better
   I change the statement
 
   .. code-block:: python
-
-    assert False != None
-    self.assertNotEqual(False, None)
 
     assert True != None
 
@@ -640,7 +628,7 @@ refactor: make it better
 
     assert True != False
 
-  and the test passes. I add a call to an assert :ref:`method<functions>`
+  and the test passes. I add a call to assertEqual_
 
   .. code-block:: python
 
@@ -702,9 +690,6 @@ refactor: make it better
 
   .. code-block:: python
 
-    assert True != False
-    self.assertNotEqual(True, False)
-
     assert False == False
 
   and the test passes. I add another failing line
@@ -727,7 +712,7 @@ refactor: make it better
     assert False == False
     self.assertEqual(False, False)
 
-  the test passes. I add notes
+  the test passes and I add notes
 
   .. code-block:: python
 
