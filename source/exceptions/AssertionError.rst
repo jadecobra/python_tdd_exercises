@@ -727,7 +727,7 @@ refactor: make it better
     assert False == False
     self.assertEqual(False, False)
 
-  and the test passes. I add notes
+  the test passes. I add notes
 
   .. code-block:: python
 
