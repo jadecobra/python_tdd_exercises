@@ -86,7 +86,7 @@ red: make it fail
 
     tests/test_assertion_error.py:7: AssertionError
 
-  the assert_ at the beginning of the line makes the statement something like "DO NOT CONTINUE, UNLESS :ref:`None` is NOT :ref:`None`", the `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_ is raised to break execution of the program because the statement is :ref:`False<test_what_is_false>`
+  the assert_ at the beginning of the line makes the statement something like "DO NOT CONTINUE, UNLESS :ref:`None` is NOT :ref:`None`". The `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_ is raised to break execution of the program because the statement is :ref:`False<test_what_is_false>`
 
 green: make it pass
 #################################################################################
@@ -127,7 +127,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
         assert None is None
         self.assertIsNone(None)
 
-  the test passes and I add a note that :ref:`None` is :ref:`None`
+  the test passes and I add a note
 
   .. code-block:: python
 
@@ -138,7 +138,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
     # Exceptions Encountered
     # AssertionError
 
-* then add another failing line
+* then add a new failing line
 
   .. code-block:: python
 
@@ -196,7 +196,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
     # False is not None
     # None is None
 
-* then add another failing line
+* then add a failing line
 
   .. code-block:: python
 
@@ -329,8 +329,8 @@ and the test passes. Time to add notes
 .. code-block:: python
 
   # NOTES
-  # True is not False
   # False is False
+  # True is not False
   # True is not None
   # False is not None
   # None is None
@@ -406,10 +406,10 @@ and all tests are passing. I add more notes
 .. code-block:: python
 
   # NOTES
-  # False is not True
   # True is True
-  # True is not False
+  # False is not True
   # False is False
+  # True is not False
   # True is not None
   # False is not None
   # None is None
@@ -484,10 +484,10 @@ refactor: make it better
   .. code-block:: python
 
     # NOTES
-    # False is not True
     # True is True
-    # True is not False
+    # False is not True
     # False is False
+    # True is not False
     # True is not None
     # False is not None
     # None is None and equal to None
@@ -543,10 +543,10 @@ refactor: make it better
   .. code-block:: python
 
     # NOTES
-    # False is not True
     # True is True
-    # True is not False
+    # False is not True
     # False is False
+    # True is not False
     # True is not None
     # False is not None and not equal to None
     # None is None and equal to None
@@ -604,10 +604,10 @@ refactor: make it better
   .. code-block:: python
 
     # NOTES
-    # False is not True
     # True is True
-    # True is not False
+    # False is not True
     # False is False
+    # True is not False
     # True is not None and not equal to None
     # False is not None and not equal to None
     # None is None and equal to None
@@ -626,39 +626,39 @@ refactor: make it better
         assert True != None
         self.assertNotEqual(True, None)
 
-        assert False != False
+        assert True == False
 
   the terminal shows `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
 
   .. code-block:: python
 
-    E    assert False != False
+    E    assert True == False
 
   I change the failing line
 
   .. code-block:: python
 
-    assert False == False
+    assert True != False
 
   and the test passes. I add a call to an assert :ref:`method<functions>`
 
   .. code-block:: python
 
-    assert False == False
-    self.assertNotEqual(False, False)
+    assert True != False
+    self.assertEqual(True, False)
 
   and get `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
 
   .. code-block:: python
 
-    AssertionError: False == False
+    AssertionError: True != False
 
   then I change the :ref:`method<functions>`
 
   .. code-block:: python
 
-    assert False == False
-    self.assertEqual(False, False)
+    assert True != False
+    self.assertNotEqual(True, False)
 
   and the test passes. I add a note
 
@@ -667,8 +667,8 @@ refactor: make it better
     # NOTES
     # False is not True
     # True is True
-    # True is not False
-    # False is False and equal to False
+    # False is False
+    # True is not False and not equal to False
     # True is not None and not equal to None
     # False is not None and not equal to None
     # None is None and equal to None
@@ -687,55 +687,55 @@ refactor: make it better
         assert True != None
         self.assertNotEqual(True, None)
 
-        assert False == False
-        self.assertEqual(False, False)
+        assert True != False
+        self.assertNotEqual(True, False)
 
-        assert True == False
+        assert False != False
 
   which gives me `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
 
   .. code-block:: python
 
-    E    assert True == False
+    E    assert False != False
 
   I make the line :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-
-    assert False == False
-    self.assertEqual(False, False)
-
-    assert True != False
-
-  and the test passes. I add another failing line
-
-  .. code-block:: python
-
-    assert True != False
-    self.assertEqual(True, False)
-
-  the terminal shows `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
-
-  .. code-block:: python
-
-    AssertionError: True != False
-
-  when I change the :ref:`method<functions>`
 
   .. code-block:: python
 
     assert True != False
     self.assertNotEqual(True, False)
 
+    assert False == False
+
+  and the test passes. I add another failing line
+
+  .. code-block:: python
+
+    assert False == False
+    self.assertNotEqual(False, False)
+
+  the terminal shows `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
+
+  .. code-block:: python
+
+    AssertionError: False == False
+
+  when I change the :ref:`method<functions>`
+
+  .. code-block:: python
+
+    assert False == False
+    self.assertEqual(False, False)
+
   and the test passes. I add notes
 
   .. code-block:: python
 
     # NOTES
-    # False is not True
     # True is True
-    # True is not False and not equal to False
+    # False is not True
     # False is False and equal to False
+    # True is not False and not equal to False
     # True is not None and not equal to None
     # False is not None and not equal to None
     # None is None and equal to None
@@ -754,55 +754,55 @@ refactor: make it better
         assert True != None
         self.assertNotEqual(True, None)
 
-        assert False == False
-        self.assertEqual(False, False)
-
         assert True != False
         self.assertNotEqual(True, False)
 
-        assert True != True
+        assert False == False
+        self.assertEqual(False, False)
+
+        assert False == True
 
   the terminal shows `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
 
   .. code-block:: python
 
-    E    assert True != True
+    E    assert False == True
 
   I change the line
 
   .. code-block:: python
 
-    assert True == True
+    assert False != True
 
   and the terminal shows passing tests. I add another failing line
 
   .. code-block:: python
 
-    assert True == True
-    self.assertNotEqual(True, True)
+    assert False != True
+    self.assertEqual(False, True)
 
   and get `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
 
   .. code-block:: python
 
-    AssertionError: True == True
+    AssertionError: False != True
 
   then I change the :ref:`method<functions>`
 
   .. code-block:: python
 
-    assert True == True
-    self.assertEqual(True, True)
+    assert False != True
+    self.assertNotEqual(False, True)
 
   and the test passes. I add another note
 
   .. code-block:: python
 
     # NOTES
-    # False is not True
-    # True is True and equal to True
-    # True is not False and not equal to False
+    # True is True
+    # False is not True and not equal to True
     # False is False and equal to False
+    # True is not False and not equal to False
     # True is not None and not equal to None
     # False is not None and not equal to None
     # None is None and equal to None
@@ -821,58 +821,58 @@ refactor: make it better
         assert True != None
         self.assertNotEqual(True, None)
 
-        assert False == False
-        self.assertEqual(False, False)
-
         assert True != False
         self.assertNotEqual(True, False)
 
-        assert True == True
-        self.assertEqual(True, True)
+        assert False == False
+        self.assertEqual(False, False)
 
-        assert False == True
+        assert False != True
+        self.assertNotEqual(False, True)
+
+        assert True != True
 
   the terminal shows `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
 
   .. code-block:: python
 
-    E    assert False == True
+    E    assert True != True
 
   when I make the line :ref:`True<test_what_is_true>`
 
   .. code-block:: python
 
-    assert False != True
+    assert True == True
 
   the test passes. I add a line with the assert_ :ref:`method<functions>`
 
   .. code-block:: python
 
-    assert False != True
-    self.assertEqual(False, True)
+    assert True == True
+    self.assertNotEqual(True, True)
 
   and the terminal shows `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
 
   .. code-block:: python
 
-    AssertionError: False != True
+    AssertionError: True == True
 
   I change the :ref:`method<functions>`
 
   .. code-block:: python
 
-    assert False != True
-    self.assertNotEqual(False, True)
+    assert True == True
+    self.assertEqual(True, True)
 
   and all tests are passing. I add a note for the last statement
 
   .. code-block:: python
 
     # NOTES
-    # False is not True and not equal to True
     # True is True and equal to True
-    # True is not False and not equal to False
+    # False is not True and not equal to True
     # False is False and equal to False
+    # True is not False and not equal to False
     # True is not None and not equal to None
     # False is not None and not equal to None
     # None is None and equal to None
