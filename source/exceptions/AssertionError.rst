@@ -343,7 +343,7 @@ and the test passes. Time to add notes
 test_assertion_error_w_true
 *********************************************************************************
 
-I can also test if something is :ref:`True<test_what_is_true>`
+I can test if something is :ref:`True<test_what_is_true>`
 
 red: make it fail
 #################################################################################
@@ -424,7 +424,7 @@ These statements can be summed up as - :ref:`True<test_what_is_true>`, :ref:`Fal
 test_assertion_error_w_equality
 *********************************************************************************
 
-I can also make assertions where I check if two things are equal
+I can also test if two things are equal
 
 red: make it fail
 #################################################################################
