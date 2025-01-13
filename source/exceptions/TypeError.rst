@@ -51,7 +51,7 @@ red: make it fail
     import src.type_error
 
 
-    class TestTypeErrors(unittest.TestCase):
+    class TestTypeError(unittest.TestCase):
 
         def test_type_error_w_non_callables(self):
             src.type_error.none()

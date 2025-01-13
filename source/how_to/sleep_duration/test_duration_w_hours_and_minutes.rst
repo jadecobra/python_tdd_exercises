@@ -128,7 +128,7 @@ red: make it fail
             f'{random.randint(0,59):02}'
         )
 
-  I get random success when ``random_timestamp`` returns ``00`` for the minutes and :ref:`AssertionErrors<AssertionError>` when it does not
+  I get random success when ``random_timestamp`` returns ``00`` for the minutes and :ref:`AssertionError` when it does not
 
   .. code-block:: python
 
@@ -447,7 +447,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
     def test_duration_w_hours_and_minutes(self):
     ...
 
-  which gives me random successes and random :ref:`AssertionErrors<AssertionError>`
+  which gives me random successes and random :ref:`AssertionError`
 
   .. code-block:: python
 

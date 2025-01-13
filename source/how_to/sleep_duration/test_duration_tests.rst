@@ -292,7 +292,7 @@ green: make it pass
     ValueError: ('6471/03/10 05:04', '7883/06/01 02:38')
     ValueError: ('7370/08/12 21:34', '7937/03/27 01:58')
 
-  which does not tell me anything so I comment it out to get one of the other :ref:`AssertionErrors<AssertionError>`, I can raise ValueError_ again or try to return the inputs
+  which does not tell me anything so I comment it out to get the other message I got with the :ref:`AssertionError`, I can raise ValueError_ again or try to return the inputs
 
 * When I get the error with the message about ``wake_time`` being earlier than ``sleep_time``, I copy it from the terminal to change the message of the ValueError_
 
@@ -363,7 +363,7 @@ green: make it pass
         #    'sleep_time: "8720/08/18 01:02"'
         # )
 
-  and get one of the :ref:`AssertionErrors<AssertionError>` I got before. I keep switching between the `return statement`_ and ``raise ValueError`` until I get the :ref:`AssertionError` that the ValueError_ messages do not match
+  and get the :ref:`AssertionError` I got before. I keep switching between the `return statement`_ and ``raise ValueError`` until I get the :ref:`AssertionError` that the ValueError_ messages do not match
 
 * I :doc:`interpolate</how_to/pass_values>` ``wake_time`` and ``sleep_time`` in the message
 

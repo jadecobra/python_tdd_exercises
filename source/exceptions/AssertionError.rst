@@ -31,7 +31,7 @@ When building a program I can use assert_ statements to make sure something is :
 * what is the same?
 * what is different?
 
-The difference between my expectations and reality, which is what happens when the program runs, gives me a clue about what to change to make them match.
+The difference between my expectations and reality - what happens when the program runs, gives me a clue about what to change to make them match.
 
 ----
 
@@ -73,7 +73,7 @@ red: make it fail
     import unittest
 
 
-    class TestAssertionErrors(unittest.TestCase):
+    class TestAssertionError(unittest.TestCase):
 
         def test_assertion_error_w_none(self):
             assert None is not None
