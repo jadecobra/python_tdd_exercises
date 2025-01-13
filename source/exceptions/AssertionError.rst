@@ -665,8 +665,8 @@ refactor: make it better
   .. code-block:: python
 
     # NOTES
-    # False is not True
     # True is True
+    # False is not True
     # False is False
     # True is not False and not equal to False
     # True is not None and not equal to None
