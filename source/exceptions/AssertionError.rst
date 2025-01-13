@@ -201,7 +201,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
   .. code-block:: python
 
     def test_assertion_error_w_none(self):
-        assert None is not None
+        assert None is None
         self.assertIsNone(None)
 
         assert False is not None
