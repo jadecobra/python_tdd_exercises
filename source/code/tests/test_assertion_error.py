@@ -4,14 +4,14 @@ import unittest
 class TestAssertionError(unittest.TestCase):
 
     def test_assertion_error_w_none(self):
+        assert None is None
+        self.assertIsNone(None)
+
         assert False is not None
         self.assertIsNotNone(False)
 
         assert True is not None
         self.assertIsNotNone(True)
-
-        assert None is None
-        self.assertIsNone(None)
 
     def test_assertion_error_w_false(self):
         assert True is not False
@@ -22,36 +22,36 @@ class TestAssertionError(unittest.TestCase):
         self.assertTrue(True)
 
     def test_assertion_error_w_equality(self):
+        assert None == None
+        self.assertEqual(None, None)
+
         assert False != None
         self.assertNotEqual(False, None)
 
         assert True != None
         self.assertNotEqual(True, None)
 
-        assert None == None
-        self.assertEqual(None, None)
+        assert True != False
+        self.assertNotEqual(True, False)
 
         assert False == False
         self.assertEqual(False, False)
 
-        assert True != False
-        self.assertNotEqual(True, False)
+        assert False != True
+        self.assertNotEqual(False, True)
 
         assert True == True
         self.assertEqual(True, True)
 
-        assert False != True
-        self.assertNotEqual(False, True)
-
 
 # NOTES
-# False is not True and is not equal to True
 # True is True and is equal to True
-# True is not False and is not equal to False
+# False is not True and is not equal to True
 # False is False and is equal to False
-# None is None and is equal to None
+# True is not False and is not equal to False
 # True is not None is not equal to None
 # False is not None is not equal to None
+# None is None and is equal to None
 
 
 # Exceptions Encountered
