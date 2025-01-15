@@ -321,7 +321,7 @@ refactor: make it better
         self.assertFalse(None)
         self.assertFalse(0)
 
-* I add one more line to test if positive :ref:`integers<int>`_ are False_ or True_
+* I add one more line to test if positive integers_ are False_ or True_
 
   .. code-block:: python
 
@@ -358,7 +358,7 @@ refactor: make it better
 
 From the tests I see that
 
-* Positive and Negative :ref:`integers<int>`_ are True_
+* Positive and Negative integers_ are True_
 * True_ is True_
 * True_ is a boolean_
 * ``0`` is False_
@@ -459,7 +459,7 @@ refactor: make it better
 From the tests I see that
 
 * Positive and Negative floats_ are True_
-* Positive and Negative :ref:`integers<int>`_ are True_
+* Positive and Negative integers_ are True_
 * True_ is True_
 * True_ is a boolean_
 * ``0.0`` is False_
@@ -554,7 +554,7 @@ From the tests I see that
 
 * a string_ with things is True_
 * Positive and Negative floats_ are True_
-* Positive and Negative :ref:`integers<int>`_ are True_
+* Positive and Negative integers_ are True_
 * True_ is True_
 * True_ is a boolean_
 * an empty string_ is False_
@@ -648,7 +648,7 @@ From the tests I see that
 * a tuple_ with things is True_
 * a string_ with things is True_
 * Positive and Negative floats_ are True_
-* Positive and Negative :ref:`integers<int>`_ are True_
+* Positive and Negative integers_ are True_
 * True_ is True_
 * True_ is a boolean_
 * an empty tuple_ is False_
@@ -689,7 +689,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: [] is not true
 
-:doc:`lists </data_structures/lists/lists>` are represented with ``[]`` in Python
+:ref:`lists` are represented with ``[]`` in Python
 
 green: make it pass
 #################################################################################
@@ -747,7 +747,7 @@ From the tests I see that
 * a tuple_ with things is True_
 * a string_ with things is True_
 * Positive and Negative floats_ are True_
-* Positive and Negative :ref:`integers<int>`_ are True_
+* Positive and Negative integers_ are True_
 * True_ is True_
 * True_ is a boolean_
 * an empty :ref:`list <lists>` is False_
@@ -840,7 +840,7 @@ From the tests I see that
 * a tuple_ with things is True_
 * a string_ with things is True_
 * Positive and Negative floats_ are True_
-* Positive and Negative :ref:`integers<int>`_ are True_
+* Positive and Negative integers_ are True_
 * True_ is True_
 * True_ is a boolean_
 * an empty set_ is False_
@@ -947,7 +947,7 @@ From the tests I see that
 * a tuple_ with things is True_
 * a string_ with things is True_
 * Positive and Negative floats_ are True_
-* Positive and Negative :ref:`integers<int>`_ are True_
+* Positive and Negative integers_ are True_
 * True_ is True_
 * True_ is a boolean_
 * an empty :ref:`dictionary <dictionaries>` is False_

@@ -394,7 +394,7 @@ I add a test to ``TestDictionaries`` using a :ref:`list <lists>` as a key
   def test_making_dictionaries_w_lists_as_keys(self):
       {[1, 2]: "BOOM"}
 
-the terminal shows :ref:`TypeError` because only `hashable <https://docs.python.org/3/glossary.html#term-hashable>`_ types can be used as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys and :doc:`lists </data_structures/lists/lists>` are not `hashable <https://docs.python.org/3/glossary.html#term-hashable>`_
+the terminal shows :ref:`TypeError` because only `hashable <https://docs.python.org/3/glossary.html#term-hashable>`_ types can be used as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys and :ref:`lists` are not `hashable <https://docs.python.org/3/glossary.html#term-hashable>`_
 
 .. code-block::
 
@@ -507,7 +507,7 @@ from these tests I know that I can make `dictionaries <https://docs.python.org/3
 
 and I cannot make `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with the following data structures as keys
 
-* :doc:`lists </data_structures/lists/lists>`
+* :ref:`lists`
 * `sets <https://docs.python.org/3/tutorial/datastructures.html#sets>`_
 * `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 

@@ -17,6 +17,7 @@
 .. _assertRaises: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises
 .. _assertRaisesRegex: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertRaisesRegex
 .. _bash: https://www.gnu.org/software/bash/
+.. _bool: https://docs.python.org/3/library/functions.html#bool
 .. _boolean: https://docs.python.org/3/library/functions.html#bool
 .. _booleans: https://docs.python.org/3/library/functions.html#bool
 .. _callable: https://docs.python.org/3/glossary.html#term-callable
@@ -77,6 +78,8 @@
 .. _tuple: https://docs.python.org/3/library/stdtypes.html#tuples
 .. _tuples: https://docs.python.org/3/library/stdtypes.html#tuples
 .. _unittest: https://docs.python.org/3/library/unittest.html
+.. _unittest.TestCase.assertNotIsInstance: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance
+.. _unittest.TestCase.assertIsInstance: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsInstance
 .. _unittest.TestCase.maxDiff: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff
 .. _unittest.skip decorator: https://docs.python.org/3/library/unittest.html#unittest.skip
 .. _unittest.TestCase: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase
