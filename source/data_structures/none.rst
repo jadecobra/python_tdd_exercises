@@ -155,7 +155,7 @@ refactor: make it better
     # True is not None
     # None is None
 
-* :ref:`booleans` are represented by the bool_ :ref:`class <classes>` Python. I can add a test with the `unittest.TestCase.assertIsInstance`_ :ref:`method<functions>`to check if something is is an instance of a :ref:`class <classes>`
+* :ref:`booleans` are represented by the bool_ :ref:`class <classes>` Python. I can add a test with the `unittest.TestCase.assertIsInstance`_ :ref:`method<functions>` to check if something is is an instance of a :ref:`class<classes>`
 
   .. code-block:: python
 
