@@ -123,7 +123,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
     AssertionError: unexpectedly None
 
-  when I change the statement to use the assertIsNone_ :ref:`method<functions>`
+  when I change the statement to use the assertIsNone_ :ref:`method<functions>` which checks if something is :ref:`None`
 
   .. code-block:: python
 
@@ -235,7 +235,7 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
         assert True is not None
         self.assertIsNone(True)
 
-  and the terminal shows `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
+  the terminal shows `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
 
   .. code-block:: python
 
@@ -441,22 +441,24 @@ the terminal shows `AssertionError <https://docs.python.org/3/library/exceptions
 
   E    assert None != None
 
+``!=`` is the symbol for ``NOT equal`` which makes this statement read as ``assert None is NOT equal to None``
+
 green: make it pass
 #################################################################################
 
-then I change the failing line
+I change the failing line and the test passes
 
 .. code-block:: python
 
   def test_assertion_error_w_equality(self):
       assert None == None
 
-and the test passes
+``==`` is the symbol for ``is equal`` which makes this statement read as ``assert None is equal to None``
 
 refactor: make it better
 #################################################################################
 
-* there is a :ref:`method<functions>` for this as well
+* there is a :ref:`method<functions>` for this
 
   .. code-block:: python
 
@@ -716,7 +718,7 @@ refactor: make it better
     assert False == False
     self.assertEqual(False, False)
 
-  the test passes and I add notes
+  the test passes and I add a note
 
   .. code-block:: python
 
@@ -874,7 +876,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-I ran tests to show how to use `assert statements`_ and :ref:`methods<functions>` to test if something is
+With `assert statements`_ and :ref:`methods<functions>` I can test if something is
 
 * :ref:`None` or not
 * :ref:`False<test_what_is_false>` or not
