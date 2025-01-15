@@ -98,7 +98,6 @@ test_attribute_error
 
 #. :ref:`test_attribute_error_w_variables`
 #. :ref:`test_attribute_error_w_functions`
-#. :ref:`test_attribute_error_w_classes`
 #. :ref:`test_attribute_error_w_class_attributes`
 #. :ref:`test_attribute_error_w_class_methods`
 

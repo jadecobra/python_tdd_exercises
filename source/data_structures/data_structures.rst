@@ -4,7 +4,7 @@
 data structures
 #################################################################################
 
-The following tests cover a few data structures I think are important to know in python
+The following tests cover a few data structures in python
 
 .. toctree::
   :titlesonly:
