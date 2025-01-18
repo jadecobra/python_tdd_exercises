@@ -105,7 +105,7 @@ test_attribute_error
 test_none
 *********************************************************************************
 
-#. :ref:`test_none_is_none`
+#. :ref:`test_what_is_none`
 #. :ref:`test_is_none_a_boolean`
 #. :ref:`test_is_none_an_integer`
 #. :ref:`test_is_none_a_float`

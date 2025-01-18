@@ -17,7 +17,7 @@ None
 ----
 
 *********************************************************************************
-test_none_is_none
+test_what_is_none
 *********************************************************************************
 
 `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is an object used to represent the absence of a value
@@ -55,7 +55,7 @@ red: make it fail
 
   class TestNone(unittest.TestCase):
 
-      def test_none_is_none(self):
+      def test_what_is_none(self):
           self.assertIsNotNone(None)
 
 the terminal shows :ref:`AssertionError`
@@ -73,7 +73,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_none_is_none(self):
+    def test_what_is_none(self):
         self.assertIsNone(None)
 
   the test passes
@@ -446,7 +446,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    AssertionError: "text" is not None
+    AssertionError: 'text' is not None
 
   I make the test pass
 
@@ -726,7 +726,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    AssertionError: {1, 2, 3, "n"} is not None
+    AssertionError: {3, 1, 'n', 2} is not None
 
   I change it to make it pass
 
@@ -758,7 +758,7 @@ refactor: make it better
     def test_is_none_a_set(self):
         self.assertIsNotNone(set())
         self.assertIsNotNone({1, 2, 3, "n"})
-        self.assertIsNotInstance(None, set)
+        self.assertNotIsInstance(None, set)
 
 * then I add a note
 
@@ -818,18 +818,13 @@ refactor: make it better
 
     def test_is_none_a_dictionary(self):
         self.assertIsNoneNone(dict())
-        self.assertIsNone({
-            "a": 1,
-            "b": 2,
-            "c": 3,
-            "n": "n"
-        })
+        self.assertIsNone({'key': 'value'})
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: { "a": 1, "b": 2, "c": 3, "n": "n" } is not None
+    AssertionError: {'key': 'value'} is not None
 
   I make the test pass
 
@@ -837,12 +832,7 @@ refactor: make it better
 
     def test_is_none_a_dictionary(self):
         self.assertIsNotNone(dict())
-        self.assertIsNotNone({
-            "a": 1,
-            "b": 2,
-            "c": 3,
-            "n": "n"
-        })
+        self.assertIsNotNone({'key': 'value'})
 
 * then add an instance test
 
@@ -850,12 +840,7 @@ refactor: make it better
 
     def test_is_none_a_dictionary(self):
         self.assertIsNotNone(dict())
-        self.assertIsNotNone({
-            "a": 1,
-            "b": 2,
-            "c": 3,
-            "n": "n"
-        })
+        self.assertIsNotNone({'key': 'value'})
         self.assertIsInstance(None, dict)
 
   the terminal shows :ref:`AssertionError`
@@ -870,13 +855,8 @@ refactor: make it better
 
     def test_is_none_a_dictionary(self):
         self.assertIsNotNone(dict())
-        self.assertIsNotNone({
-            "a": 1,
-            "b": 2,
-            "c": 3,
-            "n": "n"
-        })
-        self.assertIsNotInstance(None, dict)
+        self.assertIsNotNone({'key': 'value'})
+        self.assertNotIsInstance(None, dict)
 
 * and I add a note
 
