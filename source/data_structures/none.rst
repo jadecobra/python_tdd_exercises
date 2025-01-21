@@ -163,31 +163,85 @@ refactor: make it better
     # False is NOT None
     # None is None
 
-* :ref:`booleans` are represented by the bool_ :ref:`class <classes>`. I can add a test with the assertIsInstance_ and assertNotIsInstance_ :ref:`methods<functions>` from the `unittest.TestCase`_ :ref:`class<classes>` to check if something is is an instance of a :ref:`class<classes>`
+* :ref:`booleans` are represented by the bool_ :ref:`class <classes>`. I can add a test with the assertIsInstance_ and assertNotIsInstance_ :ref:`methods<functions>` from the `unittest.TestCase`_ :ref:`class<classes>` to check if something is is an instance of a :ref:`class<classes>` or not
 
   .. code-block:: python
 
     def test_is_none_a_boolean(self):
-        self.assertIsNotNone(True)
         self.assertIsNotNone(False)
-        self.assertNotIsInstance(None, bool)
+        self.assertIsNotNone(True)
+        self.assertNotIsInstance(False, bool)
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
+    AssertionError: False is an instance of <class 'bool'>
+
+  I change the line to make it pass
+
+  .. code-block:: python
+
+    def test_is_none_a_boolean(self):
+        self.assertIsNotNone(False)
+        self.assertIsNotNone(True)
+        self.assertIsInstance(False, bool)
+
+  then add another one
+
+  .. code-block:: python
+
+    def test_is_none_a_boolean(self):
+        self.assertIsNotNone(False)
+        self.assertIsNotNone(True)
+        self.assertIsInstance(False, bool)
+        self.assertNotIsInstance(True, bool)
+
+  and get :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: True is an instance of <class 'bool'>
+
+  I change the failing line
+
+  .. code-block:: python
+
+    def test_is_none_a_boolean(self):
+        self.assertIsNotNone(False)
+        self.assertIsNotNone(True)
+        self.assertIsInstance(False, bool)
+        self.assertIsInstance(True, bool)
+
+  and the test passes
+
+*  I add one more line
+
+  .. code-block:: python
+
+    def test_is_none_a_boolean(self):
+        self.assertIsNotNone(False)
+        self.assertIsNotNone(True)
+        self.assertIsInstance(False, bool)
+        self.assertIsInstance(True, bool)
+        self.assertIsInstance(None, bool)
+
+  and get :ref:`AssertionError`
+
+  .. code-block:: python
+
     AssertionError: None is not an instance of <class 'bool'>
 
-* I change the :ref:`method<functions>` to make the statement :ref:`True<test_what_is_true>`
+  I change the :ref:`method<functions>` to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
 
       def test_is_none_a_boolean(self):
-          self.assertIsNotNone(True)
           self.assertIsNotNone(False)
+          self.assertIsNotNone(True)
+          self.assertIsInstance(False, bool)
+          self.assertIsInstance(True, bool)
           self.assertNotIsInstance(None, bool)
-
-  `unittest.TestCase.assertNotIsInstance`_ checks if something is NOT an instance of the given :ref:`class <classes>`
 
 * I change the notes
 
