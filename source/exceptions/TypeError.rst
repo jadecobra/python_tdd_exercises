@@ -12,11 +12,13 @@ TypeError
 
 ----
 
-`TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ is raised when an object_ is called in a way that is different from its definition. For example when a :ref:`function<functions>` is called in a way that does not match its :ref:`function<functions>` signature.
+`TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ is raised when an object_ is called in a way that it is not meant to be used.
 
 *********************************************************************************
 test_type_error_w_non_callables
 *********************************************************************************
+
+There are objects that cannot be called
 
 red: make it fail
 #################################################################################
@@ -280,6 +282,8 @@ refactor: make it better
 *********************************************************************************
 test_type_error_w_function_signatures
 *********************************************************************************
+
+`TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ is also raised when a :ref:`function<functions>` is called in a way that does not match its signature.
 
 * I add a new test
 
