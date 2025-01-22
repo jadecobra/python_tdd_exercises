@@ -200,8 +200,6 @@ green: make it pass
   .. code-block:: python
 
     def test_is_none_a_float(self):
-        self.assertIsNotNone(-1.2)
-        self.assertIsNotNone(0.3)
         self.assertNotIsInstance(None, float)
 
 * time for a new note
@@ -223,7 +221,7 @@ test_is_none_a_string
 red: make it fail
 #################################################################################
 
-I add a test for to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a string_, which is any character(s) inside single, double or triple quotes, for example
+I add a test for to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a string_ - which is any character(s) inside single, double or triple quotes, for example
 
 * ``'single quotes'``
 * ``'''triple single quotes'''``
@@ -243,14 +241,16 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: None is not an instance of <class 'str'>
 
-* I make the test pass
+* when I change the :ref:`method<functions>`
 
   .. code-block:: python
 
     def test_is_none_a_string(self):
         self.assertNotIsInstance(None, str)
 
-* then add a note
+  the test passes
+
+* then I add a note
 
   .. code-block:: python
 
@@ -286,7 +286,7 @@ the terminal shows :ref:`AssertionError`
 red: make it fail
 #################################################################################
 
-* I change the :ref:`method<functions>` to make the test pass
+* then I change the :ref:`method<functions>` to make the test pass
 
   .. code-block:: python
 
@@ -377,14 +377,14 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-* I change the line to make the test pass
+* I make it pass
 
   .. code-block:: python
 
     def test_is_none_a_set(self):
         self.assertNotIsInstance(None, set)
 
-* then I add a note
+* then add another note
 
   .. code-block:: python
 
