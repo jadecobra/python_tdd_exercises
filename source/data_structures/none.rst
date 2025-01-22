@@ -361,7 +361,7 @@ test_is_none_a_set
 red: make it fail
 #################################################################################
 
-I add a new failing test to see `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ if is a set_
+I add a new failing test to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a set_
 
 .. code-block:: python
 
