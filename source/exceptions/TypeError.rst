@@ -471,7 +471,7 @@ test_type_error_w_function_signatures
 review
 *********************************************************************************
 
-I can solve the `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#TypeError>`_ by making sure things are called in the way they are defined.
+I ran tests for `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#TypeError>`_ with objects that are not callable and :ref:`function<functions>` signatures.
 
 ----
 
