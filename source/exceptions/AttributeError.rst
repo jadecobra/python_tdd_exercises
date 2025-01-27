@@ -730,7 +730,6 @@ I ran tests for the `AttributeError <https://docs.python.org/3/library/exception
 
 * variables
 * :ref:`functions`
-* :ref:`classes <classes>`
 * attributes (variables) in :ref:`classes <classes>`
 * :ref:`methods (functions) <functions>` in :ref:`classes <classes>`
 
