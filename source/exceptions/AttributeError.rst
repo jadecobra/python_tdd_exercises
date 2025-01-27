@@ -231,6 +231,12 @@ green: make it pass
 
   .. code-block:: python
 
+    variable_00 = None
+    variable_01 = None
+    variable_02 = None
+    variable_03 = None
+
+
     function_00 = None
 
   and get :ref:`TypeError`
@@ -253,6 +259,12 @@ green: make it pass
 
   .. code-block:: python
 
+    variable_00 = None
+    variable_01 = None
+    variable_02 = None
+    variable_03 = None
+
+
     def function_00():
         return None
 
@@ -261,12 +273,13 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* Time to make it a drill
+* time to make it a drill
 
   .. code-block:: python
 
     def test_attribute_error_w_functions(self):
         src.attribute_error.function_00()
+        src.attribute_error.function_01()
 
   the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
@@ -281,34 +294,13 @@ refactor: make it better
     def function_00():
         return None
 
-  and the test passes
-
-* I add another line
-
-  .. code-block:: python
-
-    def test_attribute_error_w_functions(self):
-        src.attribute_error.function_00()
-        src.attribute_error.function_01()
-
-  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
-
-  .. code-block:: python
-
-    AttributeError: module 'src.attribute_error' has no attribute 'function_02'. Did you mean: 'function_00'?
-
-  I make the test pass
-
-  .. code-block:: python
-
-    def function_00():
-        return None
-
 
     def function_01():
         return None
 
-* I do it again
+  and the test passes
+
+* I add another line
 
   .. code-block:: python
 
@@ -323,7 +315,7 @@ refactor: make it better
 
     AttributeError: module 'src.attribute_error' has no attribute 'function_02'. Did you mean: 'function_00'?
 
-  I add the :ref:`function<functions>`
+  I make the test pass
 
   .. code-block:: python
 
@@ -338,9 +330,7 @@ refactor: make it better
     def function_02():
         return None
 
-  and the test passes
-
-* One more line
+* I do it again
 
   .. code-block:: python
 
@@ -348,7 +338,7 @@ refactor: make it better
         src.attribute_error.function_00()
         src.attribute_error.function_01()
         src.attribute_error.function_02()
-        src.attribute_error.function_03()
+        src.attribute_error.function_02()
 
   the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
@@ -356,7 +346,7 @@ refactor: make it better
 
     AttributeError: module 'src.attribute_error' has no attribute 'function_03'. Did you mean: 'function_00'?
 
-  I make the test pass
+  I add the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -374,6 +364,8 @@ refactor: make it better
 
     def function_03():
         return None
+
+  and the test passes
 
 ----
 
@@ -418,25 +410,27 @@ green: make it pass
 
     AttributeError: 'function' object has no attribute 'attribute_00'
 
-* I try to define a variable in the :ref:`function <functions>` and access it from outside
+* I define a variable in the :ref:`function <functions>`
 
   .. code-block:: python
 
     def Class():
+
         attribute_00 = None
         return None
 
-  and the terminal still shows the same error
+  and the terminal still shows the same exception_ because I cannot access a variable that belongs to a :ref:`function<functions>` from outside it
 
-* I use the :ref:`class <classes>` keyword it instead of the def_ keyword?
+* I use the :ref:`class <classes>` keyword instead of the def_ keyword
 
   .. code-block:: python
 
     class Class():
+
         attribute_00 = None
         return None
 
-  and the terminal now shows SyntaxError_
+  and the terminal shows SyntaxError_
 
   .. code-block:: python
 
@@ -455,7 +449,7 @@ green: make it pass
     # TypeError
     # SyntaxError
 
-* then remove the `return statement`_
+* then remove the `return statement`_ since ``Class`` is no longer a :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -467,7 +461,57 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* I make it a drill
+* I add another line
+
+  .. code-block:: python
+
+    def test_attribute_error_w_class_attributes(self):
+        src.attribute_error.Class.attribute_00
+        src.attribute_error.Class.attribute_01
+
+  and the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+
+  .. code-block:: python
+
+     AttributeError: type object 'Class' has no attribute 'attribute_01'. Did you mean: 'attribute_00'?
+
+  I add the name to the :ref:`class<classes>` definition
+
+  .. code-block:: python
+
+    class Class():
+
+        attribute_00 = None
+        attribute_01 = None
+
+  and the test passes
+
+* I do it again
+
+  .. code-block:: python
+
+    def test_attribute_error_w_class_attributes(self):
+        src.attribute_error.Class.attribute_00
+        src.attribute_error.Class.attribute_01
+        src.attribute_error.Class.attribute_02
+
+  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+
+  .. code-block:: python
+
+     AttributeError: type object 'Class' has no attribute 'attribute_02'. Did you mean: 'attribute_00'?
+
+  I make the test pass
+
+  .. code-block:: python
+
+    class Class():
+
+        attribute_00 = None
+        attribute_01 = None
+        attribute_02 = None
+
+* then add one more line
 
   .. code-block:: python
 
@@ -477,13 +521,13 @@ refactor: make it better
         src.attribute_error.Class.attribute_02
         src.attribute_error.Class.attribute_03
 
-  and the terminal shows
+  and the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
-     AttributeError: type object 'Class' has no attribute 'attribute_01'. Did you mean: 'attribute_00'?
+     AttributeError: type object 'Class' has no attribute 'attribute_03'. Did you mean: 'attribute_00'?
 
-  I add the attributes to ``attribute_error.py`` until all tests pass
+  I add the name
 
   .. code-block:: python
 
@@ -493,6 +537,8 @@ refactor: make it better
         attribute_01 = None
         attribute_02 = None
         attribute_03 = None
+
+  and the terminal shows passing tests
 
 ----
 
