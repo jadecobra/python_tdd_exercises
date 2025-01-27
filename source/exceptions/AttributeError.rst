@@ -378,7 +378,6 @@ attributes are variables defined inside a :ref:`class<classes>`
 red: make it fail
 #################################################################################
 
-
 * I add a new test
 
   .. code-block:: python
@@ -400,6 +399,22 @@ green: make it pass
 * I add it as a :ref:`function<functions>`
 
   .. code-block:: python
+
+    def function_00():
+        return None
+
+
+    def function_01():
+        return None
+
+
+    def function_02():
+        return None
+
+
+    def function_03():
+        return None
+
 
     def Class():
         return None
@@ -586,12 +601,17 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* then I make it :ref:`method<functions>` by using the def_ keyword to make it callable_
+* I make it a :ref:`method<functions>` by using the def_ keyword to make it callable_
 
   .. code-block:: python
 
     class Class():
-    ...
+
+        attribute_00 = None
+        attribute_01 = None
+        attribute_02 = None
+        attribute_03 = None
+
         def method_00():
             return None
 
@@ -602,41 +622,105 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-You know the "drill", I add more lines
+* You know the "drill", I add a new line
 
-.. code-block:: python
+  .. code-block:: python
 
-  def test_attribute_error_w_class_methods(self):
-      src.attribute_error.Class.method_00()
-      src.attribute_error.Class.method_01()
-      src.attribute_error.Class.method_02()
-      src.attribute_error.Class.method_03()
+    def test_attribute_error_w_class_methods(self):
+        src.attribute_error.Class.method_00()
+        src.attribute_error.Class.method_01()
 
-the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
-.. code-block:: python
+  .. code-block:: python
 
-  AttributeError: type object 'Class' has no attribute 'method_01'. Did you mean: 'method_00'?
+    AttributeError: type object 'Class' has no attribute 'method_01'. Did you mean: 'method_00'?
 
-I repeat the solution until all tests pass
+  I add a definition for it
 
-.. code-block:: python
+  .. code-block:: python
 
-  class Class():
+    class Class():
 
-      ...
+        ...
 
-      def method_00():
-          return None
+        def method_00():
+            return None
 
-      def method_01():
-          return None
+        def method_01():
+            return None
 
-      def method_02():
-          return None
+  and the terminal shows green again
 
-      def method_03():
-          return None
+* I add another line
+
+  .. code-block:: python
+
+    def test_attribute_error_w_class_methods(self):
+        src.attribute_error.Class.method_00()
+        src.attribute_error.Class.method_01()
+        src.attribute_error.Class.method_02()
+
+  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+
+  .. code-block:: python
+
+    AttributeError: type object 'Class' has no attribute 'method_02'. Did you mean: 'method_00'?
+
+  I repeat the solution
+
+  .. code-block:: python
+
+    class Class():
+
+        ...
+
+        def method_00():
+            return None
+
+        def method_01():
+            return None
+
+        def method_02():
+            return None
+
+  the test passes
+
+* then I add the last line
+
+  .. code-block:: python
+
+    def test_attribute_error_w_class_methods(self):
+        src.attribute_error.Class.method_00()
+        src.attribute_error.Class.method_01()
+        src.attribute_error.Class.method_02()
+        src.attribute_error.Class.method_03()
+
+  and the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+
+  .. code-block:: python
+
+    AttributeError: type object 'Class' has no attribute 'method_01'. Did you mean: 'method_00'?
+
+  I make the test pass
+
+  .. code-block:: python
+
+    class Class():
+
+        ...
+
+        def method_00():
+            return None
+
+        def method_01():
+            return None
+
+        def method_02():
+            return None
+
+        def method_03():
+            return None
 
 ----
 
