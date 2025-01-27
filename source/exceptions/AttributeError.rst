@@ -14,7 +14,7 @@ AttributeError
 
 ----
 
-The `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name that does not exist in an object_ that does exist. An Attribute is a name for something that belongs to an object_, for example, a human being has attributes like height, weight, sex and color.
+The `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name that does not exist in an object_ that does exist. An attribute is a name for something that belongs to an object_, for example, a human being has attributes like height, weight, sex and color.
 
 ----
 
@@ -80,7 +80,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* then add a name to ``attribute_error.py``
+* then I add a name to ``attribute_error.py``
 
   .. code-block:: python
 
@@ -92,7 +92,7 @@ green: make it pass
 
     NameError: name 'variable_00' is not defined
 
-  I add it to the list of Exceptions_ encountered
+* I add it to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -126,7 +126,7 @@ refactor: make it better
 
     AttributeError: module 'src.attribute_error' has no attribute 'variable_01'. Did you mean: 'variable_00'?
 
-* I add the name to ``attribute_error.py``
+  I add the name to ``attribute_error.py``
 
   .. code-block:: python
 
@@ -139,7 +139,7 @@ refactor: make it better
 
     NameError: name 'variable_01' is not defined
 
-* I point it to :ref:`None`
+  I point it to :ref:`None`
 
   .. code-block:: python
 
@@ -163,7 +163,7 @@ refactor: make it better
 
     AttributeError: module 'src.attribute_error' has no attribute 'variable_02'. Did you mean: 'variable_00'?
 
-* I add the name to ``attribute_error.py`` and point it to :ref:`None`
+  I add the name and point it to :ref:`None`
 
   .. code-block:: python
 
@@ -173,7 +173,7 @@ refactor: make it better
 
   and the terminal shows green again
 
-* One more time
+* one more time
 
   .. code-block:: python
 
@@ -189,7 +189,7 @@ refactor: make it better
 
     AttributeError: module 'src.attribute_error' has no attribute 'variable_03'. Did you mean: 'variable_00'?
 
-* I add the name and point it to :ref:`None`
+  I add it to the file
 
   .. code-block:: python
 
@@ -198,7 +198,7 @@ refactor: make it better
     variable_02 = None
     variable_03 = None
 
-  and the terminal shows a passing test
+  and the test passes
 
 I get `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ when the attribute does not exist and NameError_ when I add a name to the :ref:`module <ModuleNotFoundError>` and do not define it
 
@@ -255,7 +255,7 @@ green: make it pass
     # NameError
     # TypeError
 
-* When I make it a :ref:`function<functions>`
+* when I make it a :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -273,7 +273,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* time to make it a drill
+* time to do it as a drill
 
   .. code-block:: python
 
@@ -346,7 +346,7 @@ refactor: make it better
 
     AttributeError: module 'src.attribute_error' has no attribute 'function_03'. Did you mean: 'function_00'?
 
-  I add the :ref:`function<functions>`
+  I add it to the :ref:`module<ModuleNotFoundError>`
 
   .. code-block:: python
 
@@ -434,9 +434,9 @@ green: make it pass
         attribute_00 = None
         return None
 
-  and the terminal still shows the same exception_ because I cannot access a variable that belongs to a :ref:`function<functions>` from outside it
+  and the terminal still shows the same exception_ because I cannot access a variable that belongs to a :ref:`function<functions>` from outside of it
 
-* I use the :ref:`class <classes>` keyword instead of the def_ keyword
+* I change the def_ keyword to use the :ref:`class <classes>` keyword
 
   .. code-block:: python
 
@@ -453,7 +453,7 @@ green: make it pass
     E    ^^^^^^^^^^^
     E  SyntaxError: 'return' outside function
 
-* I add it to the list of Exceptions_
+* I add it to the list of Exceptions_ Encountered
 
   .. code-block:: python
 
