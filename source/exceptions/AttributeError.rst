@@ -200,7 +200,7 @@ refactor: make it better
 
   and the test passes
 
-I get `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ when the attribute does not exist and NameError_ when I add a name to the :ref:`module <ModuleNotFoundError>` and do not define it
+`AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when the attribute does not exist and NameError_ is raised when there is a name in a :ref:`module <ModuleNotFoundError>` that is not defined
 
 ----
 
