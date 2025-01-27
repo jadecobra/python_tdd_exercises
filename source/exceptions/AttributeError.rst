@@ -200,8 +200,6 @@ refactor: make it better
 
   and the test passes
 
-`AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when the attribute does not exist and NameError_ is raised when there is a name in a :ref:`module <ModuleNotFoundError>` that is not defined
-
 ----
 
 *********************************************************************************
@@ -239,7 +237,7 @@ green: make it pass
 
     function_00 = None
 
-  and get :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -338,7 +336,7 @@ refactor: make it better
         src.attribute_error.function_00()
         src.attribute_error.function_01()
         src.attribute_error.function_02()
-        src.attribute_error.function_02()
+        src.attribute_error.function_03()
 
   the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
