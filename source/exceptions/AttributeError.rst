@@ -434,7 +434,7 @@ green: make it pass
 
   and the terminal still shows the same exception_ because I cannot access a variable that belongs to a :ref:`function<functions>` from outside of it
 
-* I change the def_ keyword to use the :ref:`class <classes>` keyword
+* I change the def_ keyword to the :ref:`class <classes>` keyword
 
   .. code-block:: python
 
