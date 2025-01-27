@@ -63,7 +63,7 @@ red: make it fail
         def test_attribute_error_w_variables(self):
             src.attribute_error.variable_00
 
-  I think of ``src.attribute_error.variable_00`` as an address for ``variable_00`` in ``attribute_error.py`` in the ``src`` folder, since the address does not exist the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  I think of ``src.attribute_error.variable_00`` as an address for ``variable_00`` in ``attribute_error.py`` in the ``src`` folder, since the file is empty, the variable does not exist and the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
@@ -77,13 +77,16 @@ red: make it fail
     # AssertionError
     # AttributeError
 
+green: make it pass
+#################################################################################
+
 * then add a name to ``attribute_error.py``
 
   .. code-block:: python
 
     variable_00
 
-  and the terminal shows NameError_
+  which gives me NameError_
 
   .. code-block::
 
@@ -98,18 +101,18 @@ red: make it fail
     # AttributeError
     # NameError
 
-* I point ``variable_00`` to :ref:`None`
+* and point ``variable_00`` to :ref:`None`
 
   .. code-block:: python
 
     variable_00 = None
 
+  the terminal shows a passing test
+
 refactor: make it better
 #################################################################################
 
-I can repeat the test as a drill to help remember it
-
-* I add a failing line
+* I repeat the test as a drill
 
   .. code-block:: python
 
@@ -130,7 +133,7 @@ I can repeat the test as a drill to help remember it
     variable_00 = None
     variable_01
 
-  the terminal shows NameError_
+  and get NameError_
 
   .. code-block:: python
 
@@ -197,7 +200,7 @@ I can repeat the test as a drill to help remember it
 
   and the terminal shows a passing test
 
-The test shows that I get `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ when the attribute does not exist and NameError_ when I add the name to the :ref:`module <ModuleNotFoundError>` without defining it
+I get `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ when the attribute does not exist and NameError_ when I add a name to the :ref:`module <ModuleNotFoundError>` and do not define it
 
 ----
 
@@ -236,7 +239,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* I add it to the list of Exceptions_ encountered
+* which I add to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -253,12 +256,91 @@ green: make it pass
     def function_00():
         return None
 
-  the terminal shows passing tests
+  the test passes
 
 refactor: make it better
 #################################################################################
 
 * Time to make it a drill
+
+  .. code-block:: python
+
+    def test_attribute_error_w_functions(self):
+        src.attribute_error.function_00()
+
+  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+
+  .. code-block:: python
+
+    AttributeError: module 'src.attribute_error' has no attribute 'function_01'. Did you mean: 'function_00'?
+
+  I add the :ref:`function<functions>` to ``attribute_error.py``
+
+  .. code-block:: python
+
+    def function_00():
+        return None
+
+  and the test passes
+
+* I add another line
+
+  .. code-block:: python
+
+    def test_attribute_error_w_functions(self):
+        src.attribute_error.function_00()
+        src.attribute_error.function_01()
+
+  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+
+  .. code-block:: python
+
+    AttributeError: module 'src.attribute_error' has no attribute 'function_02'. Did you mean: 'function_00'?
+
+  I make the test pass
+
+  .. code-block:: python
+
+    def function_00():
+        return None
+
+
+    def function_01():
+        return None
+
+* I do it again
+
+  .. code-block:: python
+
+    def test_attribute_error_w_functions(self):
+        src.attribute_error.function_00()
+        src.attribute_error.function_01()
+        src.attribute_error.function_02()
+
+  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+
+  .. code-block:: python
+
+    AttributeError: module 'src.attribute_error' has no attribute 'function_02'. Did you mean: 'function_00'?
+
+  I add the :ref:`function<functions>`
+
+  .. code-block:: python
+
+    def function_00():
+        return None
+
+
+    def function_01():
+        return None
+
+
+    def function_02():
+        return None
+
+  and the test passes
+
+* One more line
 
   .. code-block:: python
 
@@ -272,9 +354,9 @@ refactor: make it better
 
   .. code-block:: python
 
-    AttributeError: module 'src.attribute_error' has no attribute 'function_01'. Did you mean: 'function_00'?
+    AttributeError: module 'src.attribute_error' has no attribute 'function_03'. Did you mean: 'function_00'?
 
-  I add the :ref:`functions` to ``attribute_error.py`` until all tests pass
+  I make the test pass
 
   .. code-block:: python
 
