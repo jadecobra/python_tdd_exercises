@@ -381,13 +381,13 @@ red: make it fail
   .. code-block:: python
 
     def test_attribute_error_w_class_attributes(self):
-        src.attribute_error.Class.attribute_00
+        src.attribute_error.AClass.attribute_00
 
   the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
-    AttributeError: module 'src.attribute_error' has no attribute 'Class'. Did you mean: 'Class00'?
+    AttributeError: module 'src.attribute_error' has no attribute 'AClass'
 
 .. _test_attribute_error_w_class_attributes_green:
 
@@ -414,7 +414,7 @@ green: make it pass
         return None
 
 
-    def Class():
+    def AClass():
         return None
 
   the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
@@ -427,7 +427,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def Class():
+    def AClass():
 
         attribute_00 = None
         return None
@@ -438,7 +438,7 @@ green: make it pass
 
   .. code-block:: python
 
-    class Class():
+    class AClass():
 
         attribute_00 = None
         return None
@@ -462,11 +462,11 @@ green: make it pass
     # TypeError
     # SyntaxError
 
-* then remove the `return statement`_ since ``Class`` is no longer a :ref:`function<functions>`
+* then remove the `return statement`_ since ``AClass`` is no longer a :ref:`function<functions>`
 
   .. code-block:: python
 
-    class Class():
+    class AClass():
         attribute_00 = None
 
   and the test passes
@@ -479,20 +479,20 @@ refactor: make it better
   .. code-block:: python
 
     def test_attribute_error_w_class_attributes(self):
-        src.attribute_error.Class.attribute_00
-        src.attribute_error.Class.attribute_01
+        src.attribute_error.AClass.attribute_00
+        src.attribute_error.AClass.attribute_01
 
   and the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
-     AttributeError: type object 'Class' has no attribute 'attribute_01'. Did you mean: 'attribute_00'?
+     AttributeError: type object 'AClass' has no attribute 'attribute_01'. Did you mean: 'attribute_00'?
 
   I add the name to the :ref:`class<classes>` definition
 
   .. code-block:: python
 
-    class Class():
+    class AClass():
 
         attribute_00 = None
         attribute_01 = None
@@ -504,21 +504,21 @@ refactor: make it better
   .. code-block:: python
 
     def test_attribute_error_w_class_attributes(self):
-        src.attribute_error.Class.attribute_00
-        src.attribute_error.Class.attribute_01
-        src.attribute_error.Class.attribute_02
+        src.attribute_error.AClass.attribute_00
+        src.attribute_error.AClass.attribute_01
+        src.attribute_error.AClass.attribute_02
 
   the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
-     AttributeError: type object 'Class' has no attribute 'attribute_02'. Did you mean: 'attribute_00'?
+     AttributeError: type object 'AClass' has no attribute 'attribute_02'. Did you mean: 'attribute_00'?
 
   I make the test pass
 
   .. code-block:: python
 
-    class Class():
+    class AClass():
 
         attribute_00 = None
         attribute_01 = None
@@ -529,22 +529,22 @@ refactor: make it better
   .. code-block:: python
 
     def test_attribute_error_w_class_attributes(self):
-        src.attribute_error.Class.attribute_00
-        src.attribute_error.Class.attribute_01
-        src.attribute_error.Class.attribute_02
-        src.attribute_error.Class.attribute_03
+        src.attribute_error.AClass.attribute_00
+        src.attribute_error.AClass.attribute_01
+        src.attribute_error.AClass.attribute_02
+        src.attribute_error.AClass.attribute_03
 
   and the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
-     AttributeError: type object 'Class' has no attribute 'attribute_03'. Did you mean: 'attribute_00'?
+     AttributeError: type object 'AClass' has no attribute 'attribute_03'. Did you mean: 'attribute_00'?
 
   I add the name
 
   .. code-block:: python
 
-    class Class():
+    class AClass():
 
         attribute_00 = None
         attribute_01 = None
@@ -568,23 +568,23 @@ red: make it fail
   .. code-block:: python
 
     def test_attribute_error_w_class_methods(self):
-        src.attribute_error.Class.method_00()
+        src.attribute_error.AClass.method_00()
 
   the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
-    AttributeError: type object 'Class' has no attribute 'method_00'
+    AttributeError: type object 'AClass' has no attribute 'method_00'
 
 
 green: make it pass
 #################################################################################
 
-* I add the name to ``Class`` and point it to :ref:`None`
+* I add the name to ``AClass`` and point it to :ref:`None`
 
   .. code-block:: python
 
-    class Class():
+    class AClass():
 
         attribute_00 = None
         attribute_01 = None
@@ -603,7 +603,7 @@ green: make it pass
 
   .. code-block:: python
 
-    class Class():
+    class AClass():
 
         attribute_00 = None
         attribute_01 = None
@@ -625,20 +625,20 @@ refactor: make it better
   .. code-block:: python
 
     def test_attribute_error_w_class_methods(self):
-        src.attribute_error.Class.method_00()
-        src.attribute_error.Class.method_01()
+        src.attribute_error.AClass.method_00()
+        src.attribute_error.AClass.method_01()
 
   the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
-    AttributeError: type object 'Class' has no attribute 'method_01'. Did you mean: 'method_00'?
+    AttributeError: type object 'AClass' has no attribute 'method_01'. Did you mean: 'method_00'?
 
   I add a definition for it
 
   .. code-block:: python
 
-    class Class():
+    class AClass():
 
         ...
 
@@ -655,21 +655,21 @@ refactor: make it better
   .. code-block:: python
 
     def test_attribute_error_w_class_methods(self):
-        src.attribute_error.Class.method_00()
-        src.attribute_error.Class.method_01()
-        src.attribute_error.Class.method_02()
+        src.attribute_error.AClass.method_00()
+        src.attribute_error.AClass.method_01()
+        src.attribute_error.AClass.method_02()
 
   the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
-    AttributeError: type object 'Class' has no attribute 'method_02'. Did you mean: 'method_00'?
+    AttributeError: type object 'AClass' has no attribute 'method_02'. Did you mean: 'method_00'?
 
   I repeat the solution
 
   .. code-block:: python
 
-    class Class():
+    class AClass():
 
         ...
 
@@ -689,22 +689,22 @@ refactor: make it better
   .. code-block:: python
 
     def test_attribute_error_w_class_methods(self):
-        src.attribute_error.Class.method_00()
-        src.attribute_error.Class.method_01()
-        src.attribute_error.Class.method_02()
-        src.attribute_error.Class.method_03()
+        src.attribute_error.AClass.method_00()
+        src.attribute_error.AClass.method_01()
+        src.attribute_error.AClass.method_02()
+        src.attribute_error.AClass.method_03()
 
   and the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
-    AttributeError: type object 'Class' has no attribute 'method_01'. Did you mean: 'method_00'?
+    AttributeError: type object 'AClass' has no attribute 'method_01'. Did you mean: 'method_00'?
 
   I make the test pass
 
   .. code-block:: python
 
-    class Class():
+    class AClass():
 
         ...
 

@@ -22,7 +22,7 @@ names
 
   .. code-block:: python
 
-    class ClassName(object):
+    class AClassName(object):
 
   you can use any case you like but TitleCase keeps things consistent
 

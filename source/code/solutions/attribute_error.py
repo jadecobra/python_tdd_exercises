@@ -20,7 +20,7 @@ def function_03():
     return None
 
 
-class Class():
+class AClass():
 
     attribute_00 = None
     attribute_01 = None

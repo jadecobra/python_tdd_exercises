@@ -8,14 +8,14 @@ You have made it through the end of the book. Do you understand the following?
   :local:
 
 *********************************************************************************
-Class.attribute
+AClass.attribute
 *********************************************************************************
 
 in the same file
 
 .. code-block:: python
 
-    class Class(object):
+    class AClass(object):
 
         attribute = None
 
@@ -23,33 +23,33 @@ or
 
 .. code-block:: python
 
-    class Class(object):
+    class AClass(object):
 
         def __init__(self, attribute):
             self.attribute = attribute
 
 *********************************************************************************
-Class.method()
+AClass.method()
 *********************************************************************************
 
 in the same file
 
 .. code-block:: python
 
-    class Class(object):
+    class AClass(object):
 
         def method(self):
             return None
 
 *********************************************************************************
-Class.method(*args, **kwargs)
+AClass.method(*args, **kwargs)
 *********************************************************************************
 
 in the same file
 
 .. code-block:: python
 
-    class Class(object):
+    class AClass(object):
 
         def method(self, *args, **kwargs):
             return None
@@ -110,14 +110,14 @@ module.function(*args, **kwargs)
       module.function(*args, **kwargs)
 
 *********************************************************************************
-module.Class.attribute
+module.AClass.attribute
 *********************************************************************************
 
 - the definiton in ``module.py``
 
   .. code-block:: python
 
-      class Class(object):
+      class AClass(object):
 
           attribute = None
 
@@ -127,14 +127,14 @@ module.Class.attribute
 
       import module
 
-      instance = module.Class()
+      instance = module.AClass()
       instance.attribute
 
 - or the definition in ``module.py``
 
   .. code-block:: python
 
-      class Class(object):
+      class AClass(object):
 
           def __init__(self, attribute):
               self.attribute = attribute
@@ -145,18 +145,18 @@ module.Class.attribute
 
       import module
 
-      instance = module.Class(attribute='Attribute')
+      instance = module.AClass(attribute='Attribute')
       instance.attribute
 
 *********************************************************************************
-module.Class.method()
+module.AClass.method()
 *********************************************************************************
 
 - the definiton in ``module.py``
 
   .. code-block:: python
 
-      class Class(object):
+      class AClass(object):
 
           def method(self):
               return None
@@ -167,18 +167,18 @@ module.Class.method()
 
       import module
 
-      instance = module.Class()
+      instance = module.AClass()
       instance.method()
 
 *********************************************************************************
-module.Class.method(*args, **kwargs)
+module.AClass.method(*args, **kwargs)
 *********************************************************************************
 
 - the definiton in ``module.py``
 
   .. code-block:: python
 
-      class Class(object):
+      class AClass(object):
 
           def method(self, *args, **kwargs):
               return None
@@ -189,5 +189,5 @@ module.Class.method(*args, **kwargs)
 
       import module
 
-      instance = module.Class()
+      instance = module.AClass()
       instance.method(*args, **kwargs)

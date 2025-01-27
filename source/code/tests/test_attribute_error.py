@@ -17,16 +17,16 @@ class TestAttributeError(unittest.TestCase):
         src.attribute_error.function_03()
 
     def test_attribute_error_w_class_attributes(self):
-        src.attribute_error.Class.attribute_00
-        src.attribute_error.Class.attribute_01
-        src.attribute_error.Class.attribute_02
-        src.attribute_error.Class.attribute_03
+        src.attribute_error.AClass.attribute_00
+        src.attribute_error.AClass.attribute_01
+        src.attribute_error.AClass.attribute_02
+        src.attribute_error.AClass.attribute_03
 
     def test_attribute_error_w_class_methods(self):
-        src.attribute_error.Class.method_00()
-        src.attribute_error.Class.method_01()
-        src.attribute_error.Class.method_02()
-        src.attribute_error.Class.method_03()
+        src.attribute_error.AClass.method_00()
+        src.attribute_error.AClass.method_01()
+        src.attribute_error.AClass.method_02()
+        src.attribute_error.AClass.method_03()
 
 
 # Exceptions Encountered
