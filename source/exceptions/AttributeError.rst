@@ -698,7 +698,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    AttributeError: type object 'AClass' has no attribute 'method_01'. Did you mean: 'method_00'?
+    AttributeError: type object 'AClass' has no attribute 'method_03'. Did you mean: 'method_00'?
 
   I make the test pass
 
@@ -730,8 +730,8 @@ I ran tests for the `AttributeError <https://docs.python.org/3/library/exception
 
 * variables
 * :ref:`functions`
-* attributes (variables) in :ref:`classes <classes>`
-* :ref:`methods (functions) <functions>` in :ref:`classes <classes>`
+* :ref:`class<classes>` attributes (variables)
+* :ref:`class<classes>` :ref:`methods (functions)
 
 I also ran into the following Exceptions_
 
