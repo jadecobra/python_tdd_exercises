@@ -12,10 +12,11 @@ class TestTypeError(unittest.TestCase):
         src.type_error.a_dictionary()
 
     def test_type_error_w_function_signatures(self):
-        src.type_error.function_00('a')
-        src.type_error.function_01('a', 'b')
-        src.type_error.function_02('a', 'b', 'c')
-        src.type_error.function_03('a', 'b', 'c', 'd')
+        src.type_error.function_00(1)
+        src.type_error.function_01(1, 2)
+        src.type_error.function_02(1, 2, 3)
+        src.type_error.function_03(1, 2, 3, 'n')
+
 
 
 # Exceptions Encountered
