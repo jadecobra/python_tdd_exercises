@@ -107,7 +107,7 @@ green: make it pass
 
     variable_00 = None
 
-  the terminal shows a passing test
+  the test passes
 
 refactor: make it better
 #################################################################################
@@ -328,7 +328,7 @@ refactor: make it better
     def function_02():
         return None
 
-* I do it again
+* then I add another line
 
   .. code-block:: python
 
@@ -731,7 +731,7 @@ I ran tests for the `AttributeError <https://docs.python.org/3/library/exception
 * variables
 * :ref:`functions`
 * :ref:`class<classes>` attributes (variables)
-* :ref:`class<classes>` :ref:`methods (functions)
+* :ref:`class<classes>` :ref:`methods<functions>` (functions)
 
 I also ran into the following Exceptions_
 
