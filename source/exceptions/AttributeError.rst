@@ -486,7 +486,7 @@ refactor: make it better
 
   .. code-block:: python
 
-     AttributeError: type object 'AClass' has no attribute 'attribute_01'. Did you mean: 'attribute_00'?
+    AttributeError: type object 'AClass' has no attribute 'attribute_01'. Did you mean: 'attribute_00'?
 
   I add the name to the :ref:`class<classes>` definition
 
@@ -613,7 +613,7 @@ green: make it pass
         def method_00():
             return None
 
-  and the tests passes
+  and the test passes
 
 .. _test_attribute_error_w_class_methods_refactor:
 
