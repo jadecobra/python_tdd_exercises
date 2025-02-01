@@ -18,7 +18,7 @@ booleans
 
 The tests in this chapter go over booleans_ by comparing them with other data structures in Python to learn what they are and what they are not.
 
-There are two boolean_ values - True_ and False_
+There are two boolean_commit values - True_ and False_
 
 *********************************************************************************
 test_what_is_false

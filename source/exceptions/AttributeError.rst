@@ -116,7 +116,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* I repeat the test as a drill
+* I do it a few more times as a drill
 
   .. code-block:: python
 
