@@ -179,3 +179,10 @@ test_functions
 #. :ref:`test_functions_w_positional_arguments<test_functions_w_positional_arguments>`
 #. :ref:`test_functions_w_keyword_arguments<test_functions_w_keyword_arguments>`
 #. :ref:`test_functions_w_positional_and_keyword_arguments<test_functions_w_positional_and_keyword_arguments>`
+
+*********************************************************************************
+test_classes
+*********************************************************************************
+
+#. :ref:`test_classes_w_initializers`
+#. :ref:`test_classes_attributes_methods`
