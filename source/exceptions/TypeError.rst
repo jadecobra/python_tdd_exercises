@@ -483,15 +483,15 @@ I add a new test with a failing line
 .. code-block:: python
 
   def test_type_error_w_types_that_do_not_mix(self):
-      'text' + 1
+      None + 1
 
 the terminal shows `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
 
 .. code-block:: python
 
-  TypeError: can only concatenate str (not "int") to str
+  TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
 
-I cannot add something that is not a string_ to a string_
+I cannot do arithmetic with :ref:`None`
 
 green: make it pass
 #################################################################################
@@ -502,7 +502,7 @@ I add the assertRaises_ :ref:`method<functions>`
 
   def test_type_error_w_types_that_do_not_mix(self):
       with self.assertRaises(TypeError):
-          'text' + 1
+          None + 1
 
 and the test passes
 
@@ -515,41 +515,41 @@ refactor: make it better
 
     def test_type_error_w_types_that_do_not_mix(self):
         with self.assertRaises(TypeError):
-            'text' + 1
-        None + 2.3
+            None + 1
+        'text' + 2.3
 
   which gives me `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
 
   .. code-block:: python
 
-    TypeError: unsupported operand type(s) for +: 'NoneType' and 'float'
+    TypeError: can only concatenate str (not "float") to str
 
-  I cannot do arithmetic with :ref:`None`, I add assertRaises_ to make the test pass
-
-  .. code-block:: python
-
-    def test_type_error_w_types_that_do_not_mix(self):
-        with self.assertRaises(TypeError):
-            'text' + 1
-        with self.assertRaises(TypeError):
-            None + 2.3
-
-* I add one more line
+  I add assertRaises_ to make the test pass
 
   .. code-block:: python
 
     def test_type_error_w_types_that_do_not_mix(self):
         with self.assertRaises(TypeError):
-            'text' + 1
+            None + 1
         with self.assertRaises(TypeError):
-            None + 2.3
-        {1, 2, 3, 'n'} - {'key': 'value'}
+            'text' + 2.3
+
+* then add one more line
+
+  .. code-block:: python
+
+    def test_type_error_w_types_that_do_not_mix(self):
+        with self.assertRaises(TypeError):
+            None + 1
+        with self.assertRaises(TypeError):
+            'text' + 2.3
+        (1, 2, 3, 'n') - {1, 2, 3, 'n'}
 
   and I get `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
 
   .. code-block:: python
 
-    TypeError: unsupported operand type(s) for -: 'set' and 'dict'
+    TypeError: unsupported operand type(s) for -: 'tuple' and 'set'
 
   I add assertRaises_
 
@@ -557,13 +557,13 @@ refactor: make it better
 
     def test_type_error_w_types_that_do_not_mix(self):
         with self.assertRaises(TypeError):
-            'text' + 1
+            None + 1
         with self.assertRaises(TypeError):
-            None + 2.3
+            'text' + 2.3
         with self.assertRaises(TypeError):
-            {1, 2, 3, 'n'} - {'key': 'value'}
+            (1, 2, 3, 'n') - {1, 2, 3, 'n'}
 
-  and all tests are passing.
+  and the terminal shows all tests are passing.
 
 ----
 
