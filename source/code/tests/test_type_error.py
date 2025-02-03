@@ -21,7 +21,7 @@ class TestTypeError(unittest.TestCase):
         with self.assertRaises(TypeError):
             None + 1
         with self.assertRaises(TypeError):
-            2.3 + 'text'
+            'text' + 2.3
         with self.assertRaises(TypeError):
             (1, 2, 3, 'n') - {1, 2, 3, 'n'}
 
