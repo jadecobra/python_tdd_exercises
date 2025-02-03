@@ -470,7 +470,7 @@ test_type_error_w_function_signatures
 ----
 
 *********************************************************************************
-test_type_error_w_function_signatures
+test_type_error_w_objects_that_do_not_mix
 *********************************************************************************
 
 `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ is raised when I try to do operations on objects_ that do not mix

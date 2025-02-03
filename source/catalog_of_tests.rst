@@ -102,6 +102,14 @@ test_attribute_error
 #. :ref:`test_attribute_error_w_class_methods`
 
 *********************************************************************************
+test_type_error
+*********************************************************************************
+
+#. :ref:`test_type_error_w_non_callables`
+#. :ref:`test_type_error_w_function_signatures`
+#. :ref:`test_type_error_w_objects_that_do_not_mix`
+
+*********************************************************************************
 test_none
 *********************************************************************************
 
