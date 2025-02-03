@@ -534,7 +534,7 @@ refactor: make it better
         with self.assertRaises(TypeError):
             None + 2.3
 
-* One more example
+* I add one more line
 
   .. code-block:: python
 
@@ -563,7 +563,9 @@ refactor: make it better
         with self.assertRaises(TypeError):
             {1, 2, 3, 'n'} - {'key': 'value'}
 
-  and all tests are passing
+  and all tests are passing.
+
+----
 
 *********************************************************************************
 review
