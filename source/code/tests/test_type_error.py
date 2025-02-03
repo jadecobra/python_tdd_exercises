@@ -17,6 +17,14 @@ class TestTypeError(unittest.TestCase):
         src.type_error.function_02('a', 'b', 'c')
         src.type_error.function_03('a', 'b', 'c', 'd')
 
+    def test_type_error_w_types_that_do_not_mix(self):
+        with self.assertRaises(TypeError):
+            'text' + 1
+        with self.assertRaises(TypeError):
+            None + 2.3
+        with self.assertRaises(TypeError):
+            {1, 2, 3, 'n'} - {'key': 'value'}
+
 
 # Exceptions Encountered
 # AssertionError

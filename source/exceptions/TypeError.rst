@@ -12,7 +12,7 @@ TypeError
 
 ----
 
-`TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ is raised when an object_ is called in a way that it is not meant to be used.
+`TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ is raised when an object_ is used in a way that it is not meant to be used.
 
 *********************************************************************************
 test_type_error_w_non_callables
@@ -465,13 +465,111 @@ test_type_error_w_function_signatures
     ):
         return None
 
-  and the terminal shows all tests are passing
+  and the terminal shows both tests are passing
+
+----
+
+*********************************************************************************
+test_type_error_w_function_signatures
+*********************************************************************************
+
+`TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ is raised when I try to do operations on objects_ that do not mix
+
+red: make it fail
+#################################################################################
+
+I add a new test with a failing line
+
+.. code-block:: python
+
+  def test_type_error_w_types_that_do_not_mix(self):
+      'text' + 1
+
+the terminal shows `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
+
+.. code-block:: python
+
+  TypeError: can only concatenate str (not "int") to str
+
+I cannot add something that is not a string_ to a string_
+
+green: make it pass
+#################################################################################
+
+I add the assertRaises_ :ref:`method<functions>`
+
+.. code-block:: python
+
+  def test_type_error_w_types_that_do_not_mix(self):
+      with self.assertRaises(TypeError):
+          'text' + 1
+
+and the test passes
+
+refactor: make it better
+#################################################################################
+
+* I add another line
+
+  .. code-block:: python
+
+    def test_type_error_w_types_that_do_not_mix(self):
+        with self.assertRaises(TypeError):
+            'text' + 1
+        None + 2.3
+
+  which gives me `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
+
+  .. code-block:: python
+
+    TypeError: unsupported operand type(s) for +: 'NoneType' and 'float'
+
+  I cannot do arithmetic with :ref:`None`, I add assertRaises_ to make the test pass
+
+  .. code-block:: python
+
+    def test_type_error_w_types_that_do_not_mix(self):
+        with self.assertRaises(TypeError):
+            'text' + 1
+        with self.assertRaises(TypeError):
+            None + 2.3
+
+* One more example
+
+  .. code-block:: python
+
+    def test_type_error_w_types_that_do_not_mix(self):
+        with self.assertRaises(TypeError):
+            'text' + 1
+        with self.assertRaises(TypeError):
+            None + 2.3
+        {1, 2, 3, 'n'} - {'key': 'value'}
+
+  and I get `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
+
+  .. code-block:: python
+
+    TypeError: unsupported operand type(s) for -: 'set' and 'dict'
+
+  I add assertRaises_
+
+  .. code-block:: python
+
+    def test_type_error_w_types_that_do_not_mix(self):
+        with self.assertRaises(TypeError):
+            'text' + 1
+        with self.assertRaises(TypeError):
+            None + 2.3
+        with self.assertRaises(TypeError):
+            {1, 2, 3, 'n'} - {'key': 'value'}
+
+  and all tests are passing
 
 *********************************************************************************
 review
 *********************************************************************************
 
-I ran tests for `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#TypeError>`_ with objects that are not callable and :ref:`function<functions>` signatures.
+I ran tests for `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#TypeError>`_ with objects that are not callable, :ref:`function<functions>` signatures and objects_ that do not mix.
 
 ----
 
