@@ -482,7 +482,7 @@ I add a new test with a failing line
 
 .. code-block:: python
 
-  def test_type_error_w_types_that_do_not_mix(self):
+  def test_type_error_w_objects_that_do_not_mix(self):
       None + 1
 
 the terminal shows `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
@@ -500,7 +500,7 @@ I add the assertRaises_ :ref:`method<functions>`
 
 .. code-block:: python
 
-  def test_type_error_w_types_that_do_not_mix(self):
+  def test_type_error_w_objects_that_do_not_mix(self):
       with self.assertRaises(TypeError):
           None + 1
 
@@ -513,7 +513,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_type_error_w_types_that_do_not_mix(self):
+    def test_type_error_w_objects_that_do_not_mix(self):
         with self.assertRaises(TypeError):
             None + 1
         'text' + 2.3
@@ -528,7 +528,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_type_error_w_types_that_do_not_mix(self):
+    def test_type_error_w_objects_that_do_not_mix(self):
         with self.assertRaises(TypeError):
             None + 1
         with self.assertRaises(TypeError):
@@ -538,7 +538,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_type_error_w_types_that_do_not_mix(self):
+    def test_type_error_w_objects_that_do_not_mix(self):
         with self.assertRaises(TypeError):
             None + 1
         with self.assertRaises(TypeError):
@@ -555,7 +555,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_type_error_w_types_that_do_not_mix(self):
+    def test_type_error_w_objects_that_do_not_mix(self):
         with self.assertRaises(TypeError):
             None + 1
         with self.assertRaises(TypeError):
