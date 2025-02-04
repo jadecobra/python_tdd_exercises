@@ -1,6 +1,8 @@
+.. _conditional expression: https://docs.python.org/3/reference/expressions.html#conditional-expressions
 .. _assert statement: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
 .. _assert statements: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
 .. _import statement: https://docs.python.org/3/reference/simple_stmts.html#the-import-statement
+.. _if statement: https://docs.python.org/3/reference/compound_stmts.html#the-if-statement
 .. _return statement: https://docs.python.org/3/reference/simple_stmts.html#the-return-statement
 .. _try statement: https://docs.python.org/3/reference/compound_stmts.html#the-try-statement
 .. _while statement: https://docs.python.org/3/reference/compound_stmts.html#the-while-statement
@@ -47,6 +49,7 @@
 .. _list: https://docs.python.org/3/library/stdtypes.html?highlight=list#list
 .. _mkdir: https://man7.org/linux/man-pages/man1/mkdir.1.html
 .. _modulo: https://en.wikipedia.org/wiki/Modulo
+.. _not: https://docs.python.org/3/reference/expressions.html#boolean-operations
 .. _object: https://docs.python.org/3/glossary.html#term-object
 .. _objects: https://docs.python.org/3/glossary.html#term-object
 .. _python package: https://docs.python.org/3/glossary.html#term-regular-package

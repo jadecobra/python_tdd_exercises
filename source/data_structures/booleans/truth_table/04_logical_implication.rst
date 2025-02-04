@@ -111,7 +111,7 @@ refactor: make it better
         if not(p and not q):
             return True
 
-* when I "multiply" out the statement with ``not`` to
+* when I "multiply" out the statement with not_ to
 
   .. code-block:: python
 

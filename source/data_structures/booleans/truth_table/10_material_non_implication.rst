@@ -66,7 +66,7 @@ refactor: make it better
 
   all tests still pass
 
-* then change the second part to use ``not``
+* then change the second part to use not_
 
   .. code-block:: python
 

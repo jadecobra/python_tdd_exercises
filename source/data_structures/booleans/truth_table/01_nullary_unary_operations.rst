@@ -10,8 +10,6 @@ truth table: Nullary and Unary Operations
 
 ----
 
-Nullary operations do not take inputs and always return the same value. They are :ref:`singleton functions<test_singleton_functions>`
-
 *********************************************************************************
 requirements
 *********************************************************************************
@@ -21,13 +19,18 @@ requirements
 ----
 
 *********************************************************************************
-test_logical_true
+Nullary Operations
 *********************************************************************************
 
-red: make it fail
+Nullary operations do not take input and always return the same value. They are :ref:`singleton functions<test_singleton_functions>`
+
+test_logical_true
 #################################################################################
 
-* I change the text in the ``test_truth_table.py`` to
+red: make it fail
+---------------------------------------------------------------------------------
+
+* I change the text in ``test_truth_table.py`` to
 
   .. code-block:: python
 
@@ -45,10 +48,9 @@ red: make it fail
 
   .. code-block:: python
 
-    AttributeError: module 'src.truth_table'
+    AttributeError: module 'src.truth_table' has no attribute 'logical_true'
 
-
-* which I add to the list of Exceptions_ encountered
+* I add it to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -57,9 +59,9 @@ red: make it fail
    # AttributeError
 
 green: make it pass
-#################################################################################
+---------------------------------------------------------------------------------
 
-* I add a :doc:`singleton function </functions/test_singleton_functions>` called ``logical_true`` to ``truth_table.py``
+* then I add a :ref:`function<functions>` to ``truth_table.py``
 
   .. code-block:: python
 
@@ -68,24 +70,37 @@ green: make it pass
 
   and the terminal shows passing tests which remind me that :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
 
-refactor: make it better
+test_logical_false
 #################################################################################
 
-* I add a test for ``logical_false`` to ``TestNullaryOperations`` class in ``test_truth_table.py``
+red: make it fail
+---------------------------------------------------------------------------------
+
+I add another test
+
+.. code-block:: python
+
+  def test_logical_true(self):
+      self.assertTrue(src.truth_table.logical_true())
+
+  def test_logical_false(self):
+      self.assertFalse(src.truth_table.logical_false())
+
+the terminal shows :ref:`AttributeError`
+
+.. code-block:: python
+
+  AttributeError: module 'src.truth_table' has no attribute 'logical_false'
+
+green: make it pass
+---------------------------------------------------------------------------------
+
+* I add a :ref:`function<functions>` definition to ``truth_table.py``
 
   .. code-block:: python
 
-    def test_logical_false(self):
-        self.assertFalse(src.truth_table.logical_false())
-
-  the terminal shows :ref:`AttributeError`
-
-  .. code-block:: python
-
-  since there is no definition for ``logical_false`` in ``truth_table.py``
-* I add a function definition for ``logical_false`` to ``truth_table.py``
-
-  .. code-block:: python
+    def logical_true():
+        return True
 
     def logical_false():
         return True
@@ -94,15 +109,18 @@ refactor: make it better
 
   .. code-block:: python
 
-  since the ``logical_false`` function currently returns a different value from what is expected
-* When I make the return value to :ref:`False<test_what_is_false>`, the terminal shows passing tests
+    AssertionError: True is not False
+
+* When I change the return value
 
   .. code-block:: python
 
     def logical_false():
         return False
 
-* I am again reminded that :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>` and :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
+  the test passes
+
+* I am reminded that :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>` and :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
 
 ----
 
@@ -112,13 +130,13 @@ Unary Operations
 
 There are two unary operations
 
-* Logical Identity
-* Logical Negation
+* :ref:`Logical Identity<test_logical_identity>`
+* :ref:`Logical Negation<test_logical_negation>`
 
 test_logical_identity
 #################################################################################
 
-A Logical Identity operation takes input and returns it as output, it is a :doc:`passthrough function </functions/functions_passthrough>`
+A Logical Identity operation takes input and returns it as output, it is a :ref:`passthrough function<test_passthrough_functions>`
 
 red: make it fail
 ---------------------------------------------------------------------------------
@@ -131,41 +149,106 @@ I add a new ``TestCase`` to ``test_truth_table.py``
 
       def test_logical_identity(self):
           self.assertTrue(src.truth_table.logical_identity(True))
-          self.assertFalse(src.truth_table.logical_identity(False))
 
-and the terminal shows :ref:`AttributeError` because there is no definition for ``logical_identity`` in ``truth_table.py``
+and the terminal shows :ref:`AttributeError`
+
+.. code-block:: python
+
+  AttributeError: module 'src.truth_table' has no attribute 'logical_identity'
 
 green: make it pass
 ---------------------------------------------------------------------------------
 
-I add a function definition for ``logical_identity`` to ``truth_table.py``
+* I add the :ref:`function<functions>`
+
+  .. code-block:: python
+
+    def logical_false():
+        return False
+
+    def logical_identity():
+        return None
+
+  the terminal shows :ref:`TypeError`
+
+  .. code-block:: python
+
+    TypeError: logical_identity() takes 0 positional arguments but 1 was given
+
+  I add a parameter
+
+  .. code-block:: python
+
+    def logical_identity(argument):
+        return None
+
+  and the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: None is not true
+
+  I change the `return statement`_
+
+  .. code-block:: python
+
+    def logical_identity(argument):
+        return True
+
+  and the test passes
+
+refactor: make it better
+---------------------------------------------------------------------------------
+
+I add another line to the test
 
 .. code-block:: python
 
-  def logical_identity(value):
-      return value
+  def test_logical_identity(self):
+      self.assertTrue(src.truth_table.logical_identity(True))
+      self.assertFalse(src.truth_table.logical_identity(False))
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: False is not true
+
+I make ``logical_identity`` return its input
+
+.. code-block:: python
+
+  def logical_identity(argument):
+      return argument
 
 and the terminal shows passing tests
 
-.. _test_logical_negation:
+----
 
 test_logical_negation
 #################################################################################
 
-A Logical Negation operation takes input and returns its opposite as output
+A Logical Negation operation takes input and returns the opposite
 
 red: make it fail
 ---------------------------------------------------------------------------------
 
-I add a test for ``logical_negation`` to ``test_truth_table.py``
+I add a test for it
 
 .. code-block:: python
 
-    def test_logical_negation(self):
-        self.assertFalse(src.truth_table.logical_negation(True))
-        self.assertTrue(src.truth_table.logical_negation(False))
+  def test_logical_identity(self):
+      self.assertTrue(src.truth_table.logical_identity(True))
+      self.assertFalse(src.truth_table.logical_identity(False))
 
-the terminal shows :ref:`AttributeError`, there is no definition for ``logical_negation`` in ``truth_table.py``
+  def test_logical_negation(self):
+      self.assertFalse(src.truth_table.logical_negation(True))
+
+the terminal shows :ref:`AttributeError`
+
+.. code-block:: python
+
+  AttributeError: module 'src.truth_table' has no attribute 'logical_negation'
 
 green: make it pass
 ---------------------------------------------------------------------------------
@@ -174,13 +257,21 @@ green: make it pass
 
   .. code-block:: python
 
-    def logical_negation(value):
-        return value
 
-  the terminal shows :ref:`AssertionError`.
+    def logical_identity(argument):
+        return argument
 
-  The ``logical_negation`` function returns the value it receives as input but the test expects the opposite
-* I use the ``not`` keyword to return the opposite of the :doc:`boolean </data_structures/booleans/booleans>` value ``logical_negation`` receives
+    def logical_negation(argument):
+        return argument
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  The ``logical_negation`` :ref:`function<functions>` returns the value it receives as input but the test expects the opposite
+* I use the not_ keyword to return the opposite of the :doc:`boolean </data_structures/booleans/booleans>` value ``logical_negation`` receives
 
   .. code-block:: python
 
@@ -188,6 +279,14 @@ green: make it pass
         return not value
 
   and the terminal shows passing tests
+
+.. code-block:: python
+
+  def test_logical_negation(self):
+      self.assertFalse(src.truth_table.logical_negation(True))
+      self.assertTrue(src.truth_table.logical_negation(False))
+
+the terminal shows :ref:`AttributeError`, there is no definition for ``logical_negation`` in ``truth_table.py``
 
 
 *********************************************************************************

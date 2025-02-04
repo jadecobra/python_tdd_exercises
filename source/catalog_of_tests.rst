@@ -134,6 +134,8 @@ test_booleans
 test_truth_table
 *********************************************************************************
 
+#. :ref:`test_logical_true`
+#. :ref:`test_logical_false`
 #. :ref:`test_logical_identity`
 #. :ref:`test_logical_negation`
 #. :ref:`test_logical_conjunction`

@@ -53,7 +53,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* I use implied conditional testing with ``not`` for the first part of the if statement
+* I use implied conditional testing with not_ for the first part of the if statement
 
   .. code-block:: python
 

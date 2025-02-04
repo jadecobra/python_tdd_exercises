@@ -86,7 +86,7 @@ refactor: make it better
             return False
         return True
 
-* I can also express the ``if`` statement with the ``not`` keyword like I did with ``logical_negation`` to express the opposite of a :doc:`boolean </data_structures/booleans/booleans>`
+* I can also express the ``if`` statement with the not_ keyword like I did with ``logical_negation`` to express the opposite of a :doc:`boolean </data_structures/booleans/booleans>`
 
   .. code-block:: python
 
@@ -95,7 +95,7 @@ refactor: make it better
             return False
         return True
 
-* ``not`` happens twice in that statement, which I can "factor" out like in algebra
+* not_ happens twice in that statement, which I can "factor" out like in algebra
 
   .. code-block:: python
 

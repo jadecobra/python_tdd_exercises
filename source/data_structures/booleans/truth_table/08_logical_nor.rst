@@ -58,7 +58,7 @@ refactor: make it better
             return True
         return False
 
-* I abstract the repetition of ``not`` by rewriting the entire statement in terms of ``not``
+* I abstract the repetition of not_ by rewriting the entire statement in terms of not_
 
   .. code-block:: python
 
@@ -67,7 +67,7 @@ refactor: make it better
             return True
         return False
 
-  the terminal shows a ``SyntaxError`` and I rewrite the statement with proper syntax, "factoring" out the ``not``
+  the terminal shows a ``SyntaxError`` and I rewrite the statement with proper syntax, "factoring" out the not_
 
   .. code-block:: python
 
