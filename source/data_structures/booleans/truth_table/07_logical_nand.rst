@@ -20,10 +20,10 @@ I add a test for Logical NAND to ``TestBinaryOperations`` in ``test_truth_table.
 .. code-block:: python
 
     def test_logical_nand(self):
-        self.assertFalse(truth_table.logical_nand(True, True))
-        self.assertTrue(truth_table.logical_nand(True, False))
-        self.assertTrue(truth_table.logical_nand(False, True))
-        self.assertTrue(truth_table.logical_nand(False, False))
+        self.assertFalse(src.truth_table.logical_nand(True, True))
+        self.assertTrue(src.truth_table.logical_nand(True, False))
+        self.assertTrue(src.truth_table.logical_nand(False, True))
+        self.assertTrue(src.truth_table.logical_nand(False, False))
 
 the terminal shows :ref:`AttributeError`
 

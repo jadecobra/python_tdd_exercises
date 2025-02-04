@@ -24,10 +24,10 @@ I add a test for project first to ``TestBinaryOperations`` in ``test_truth_table
 .. code-block:: python
 
     def test_project_first(self):
-        self.assertTrue(truth_table.project_first(True, True))
-        self.assertTrue(truth_table.project_first(True, False))
-        self.assertFalse(truth_table.project_first(False, True))
-        self.assertFalse(truth_table.project_first(False, False))
+        self.assertTrue(src.truth_table.project_first(True, True))
+        self.assertTrue(src.truth_table.project_first(True, False))
+        self.assertFalse(src.truth_table.project_first(False, True))
+        self.assertFalse(src.truth_table.project_first(False, False))
 
 the terminal shows :ref:`AttributeError`
 
@@ -108,10 +108,10 @@ I add a test for project second to ``TestBinaryOperations``
 .. code-block:: python
 
     def test_project_second(self):
-        self.assertTrue(truth_table.project_second(True, True))
-        self.assertFalse(truth_table.project_second(True, False))
-        self.assertTrue(truth_table.project_second(False, True))
-        self.assertFalse(truth_table.project_second(False, False))
+        self.assertTrue(src.truth_table.project_second(True, True))
+        self.assertFalse(src.truth_table.project_second(True, False))
+        self.assertTrue(src.truth_table.project_second(False, True))
+        self.assertFalse(src.truth_table.project_second(False, False))
 
 the terminal shows :ref:`AttributeError`
 

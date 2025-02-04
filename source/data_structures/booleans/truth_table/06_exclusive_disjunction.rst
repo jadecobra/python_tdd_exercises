@@ -21,10 +21,10 @@ I add a test for exclusive disjunction to ``TestBinaryOperations`` in ``test_tru
 .. code-block:: python
 
     def test_exclusive_disjunction(self):
-        self.assertFalse(truth_table.exclusive_disjunction(True, True))
-        self.assertTrue(truth_table.exclusive_disjunction(True, False))
-        self.assertTrue(truth_table.exclusive_disjunction(False, True))
-        self.assertFalse(truth_table.exclusive_disjunction(False, False))
+        self.assertFalse(src.truth_table.exclusive_disjunction(True, True))
+        self.assertTrue(src.truth_table.exclusive_disjunction(True, False))
+        self.assertTrue(src.truth_table.exclusive_disjunction(False, True))
+        self.assertFalse(src.truth_table.exclusive_disjunction(False, False))
 
 and the terminal shows :ref:`AttributeError`
 

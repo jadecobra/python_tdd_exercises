@@ -29,10 +29,10 @@ After making a ``TestCase`` for binary operations in ``test_truth_table.py``
   class TestBinaryOperations(unittest.TestCase):
 
       def test_logical_conjunction(self):
-          self.assertTrue(truth_table.logical_conjunction(True, True))
-          self.assertFalse(truth_table.logical_conjunction(True, False))
-          self.assertFalse(truth_table.logical_conjunction(False, True))
-          self.assertFalse(truth_table.logical_conjunction(False, False))
+          self.assertTrue(src.truth_table.logical_conjunction(True, True))
+          self.assertFalse(src.truth_table.logical_conjunction(True, False))
+          self.assertFalse(src.truth_table.logical_conjunction(False, True))
+          self.assertFalse(src.truth_table.logical_conjunction(False, False))
 
 the terminal shows :ref:`AttributeError`
 

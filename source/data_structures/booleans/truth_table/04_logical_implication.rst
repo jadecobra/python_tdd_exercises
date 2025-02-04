@@ -36,10 +36,10 @@ I add a test for logical implication to ``TestBinaryOperations`` in ``test_truth
 .. code-block:: python
 
     def test_logical_implication_or the_material_implication(self):
-        self.assertTrue(truth_table.logical_implication(True, True))
-        self.assertFalse(truth_table.logical_implication(True, False))
-        self.assertTrue(truth_table.logical_implication(False, True))
-        self.assertTrue(truth_table.logical_implication(False, False))
+        self.assertTrue(src.truth_table.logical_implication(True, True))
+        self.assertFalse(src.truth_table.logical_implication(True, False))
+        self.assertTrue(src.truth_table.logical_implication(False, True))
+        self.assertTrue(src.truth_table.logical_implication(False, False))
 
 the terminal shows :ref:`AttributeError`
 

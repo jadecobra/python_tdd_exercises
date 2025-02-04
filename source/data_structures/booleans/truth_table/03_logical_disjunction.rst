@@ -31,10 +31,10 @@ I add a test for logical disjunction to ``TestBinaryOperations`` in ``test_truth
 .. code-block:: python
 
     def test_logical_disjunction(self):
-        self.assertTrue(truth_table.logical_disjunction(True, True))
-        self.assertTrue(truth_table.logical_disjunction(True, False))
-        self.assertTrue(truth_table.logical_disjunction(False, True))
-        self.assertFalse(truth_table.logical_disjunction(False, False))
+        self.assertTrue(src.truth_table.logical_disjunction(True, True))
+        self.assertTrue(src.truth_table.logical_disjunction(True, False))
+        self.assertTrue(src.truth_table.logical_disjunction(False, True))
+        self.assertFalse(src.truth_table.logical_disjunction(False, False))
 
 and the terminal shows :ref:`AttributeError`
 

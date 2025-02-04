@@ -21,10 +21,10 @@ I add a test for converse implication to ``TestBinaryOperations`` in ``test_trut
 .. code-block:: python
 
     def test_converse_implication(self):
-        self.assertTrue(truth_table.converse_implication(True, True))
-        self.assertTrue(truth_table.converse_implication(True, False))
-        self.assertFalse(truth_table.converse_implication(False, True))
-        self.assertTrue(truth_table.converse_implication(False, False))
+        self.assertTrue(src.truth_table.converse_implication(True, True))
+        self.assertTrue(src.truth_table.converse_implication(True, False))
+        self.assertFalse(src.truth_table.converse_implication(False, True))
+        self.assertTrue(src.truth_table.converse_implication(False, False))
 
 the terminal shows :ref:`AttributeError`
 

@@ -20,10 +20,10 @@ I add a test for material non-implication to ``TestBinaryOperations`` in ``test_
 .. code-block:: python
 
     def test_material_non_implication(self):
-        self.assertFalse(truth_table.material_non_implication(True, True))
-        self.assertTrue(truth_table.material_non_implication(True, False))
-        self.assertFalse(truth_table.material_non_implication(False, True))
-        self.assertFalse(truth_table.material_non_implication(False, False))
+        self.assertFalse(src.truth_table.material_non_implication(True, True))
+        self.assertTrue(src.truth_table.material_non_implication(True, False))
+        self.assertFalse(src.truth_table.material_non_implication(False, True))
+        self.assertFalse(src.truth_table.material_non_implication(False, False))
 
 the terminal shows :ref:`AttributeError`
 

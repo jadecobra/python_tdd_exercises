@@ -24,10 +24,10 @@ I add a test for negate first to ``TestBinaryOperations`` in ``test_truth_table.
 .. code-block:: python
 
     def test_negate_first(self):
-        self.assertFalse(truth_table.negate_first(True, True))
-        self.assertFalse(truth_table.negate_first(True, False))
-        self.assertTrue(truth_table.negate_first(False, True))
-        self.assertTrue(truth_table.negate_first(False, False))
+        self.assertFalse(src.truth_table.negate_first(True, True))
+        self.assertFalse(src.truth_table.negate_first(True, False))
+        self.assertTrue(src.truth_table.negate_first(False, True))
+        self.assertTrue(src.truth_table.negate_first(False, False))
 
 and the terminal shows :ref:`AttributeError`
 
@@ -103,10 +103,10 @@ I add a test for negate second to ``TestBinaryOperations``
 .. code-block:: python
 
     def test_negate_second(self):
-        self.assertFalse(truth_table.negate_second(True, True))
-        self.assertTrue(truth_table.negate_second(True, False))
-        self.assertFalse(truth_table.negate_second(False, True))
-        self.assertTrue(truth_table.negate_second(False, False))
+        self.assertFalse(src.truth_table.negate_second(True, True))
+        self.assertTrue(src.truth_table.negate_second(True, False))
+        self.assertFalse(src.truth_table.negate_second(False, True))
+        self.assertTrue(src.truth_table.negate_second(False, False))
 
 and the terminal shows :ref:`AttributeError`
 

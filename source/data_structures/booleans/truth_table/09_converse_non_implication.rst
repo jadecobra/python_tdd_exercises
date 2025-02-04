@@ -21,10 +21,10 @@ I add a test for converse nonimplication to ``TestBinaryOperations`` in ``test_t
 .. code-block:: python
 
     def test_converse_non_implication(self):
-        self.assertFalse(truth_table.converse_non_implication(True, True))
-        self.assertFalse(truth_table.converse_non_implication(True, False))
-        self.assertTrue(truth_table.converse_non_implication(False, True))
-        self.assertFalse(truth_table.converse_non_implication(False, False))
+        self.assertFalse(src.truth_table.converse_non_implication(True, True))
+        self.assertFalse(src.truth_table.converse_non_implication(True, False))
+        self.assertTrue(src.truth_table.converse_non_implication(False, True))
+        self.assertFalse(src.truth_table.converse_non_implication(False, False))
 
 the terminal shows :ref:`AttributeError`
 

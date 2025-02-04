@@ -20,10 +20,10 @@ I add a test for exclusive disjunction to ``TestBinaryOperations`` in ``test_tru
 .. code-block:: python
 
     def test_logical_nor(self):
-        self.assertFalse(truth_table.logical_nor(True, True))
-        self.assertFalse(truth_table.logical_nor(True, False))
-        self.assertFalse(truth_table.logical_nor(False, True))
-        self.assertTrue(truth_table.logical_nor(False, False))
+        self.assertFalse(src.truth_table.logical_nor(True, True))
+        self.assertFalse(src.truth_table.logical_nor(True, False))
+        self.assertFalse(src.truth_table.logical_nor(False, True))
+        self.assertTrue(src.truth_table.logical_nor(False, False))
 
 and the terminal shows :ref:`AttributeError`
 

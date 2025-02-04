@@ -10,13 +10,7 @@ truth table: Nullary and Unary Operations
 
 ----
 
-.. contents:: table of contents
-  :local:
-  :depth: 1
-
-----
-
-Nullary operations do not take in inputs and always return the same value. They are :ref:`singleton functions<test_singleton_functions>`
+Nullary operations do not take inputs and always return the same value. They are :ref:`singleton functions<test_singleton_functions>`
 
 *********************************************************************************
 requirements
@@ -24,28 +18,37 @@ requirements
 
 :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` with ``truth_table`` as the name of the project
 
-
-
 ----
+
+*********************************************************************************
+test_logical_true
+*********************************************************************************
 
 red: make it fail
 #################################################################################
 
-* and change the text to
+* I change the text in the ``test_truth_table.py`` to
 
   .. code-block:: python
 
     import unittest
-    import truth_table
+    import src.truth_table
 
 
     class TestNullaryOperations(unittest.TestCase):
 
 
         def test_logical_true(self):
-            self.assertTrue(truth_table.logical_true())
+            self.assertTrue(src.truth_table.logical_true())
 
-  and the terminal shows :ref:`AttributeError` which I add to the list of Exceptions_ encountered
+  and the terminal shows :ref:`AttributeError`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.truth_table'
+
+
+* which I add to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -73,7 +76,7 @@ refactor: make it better
   .. code-block:: python
 
     def test_logical_false(self):
-        self.assertFalse(truth_table.logical_false())
+        self.assertFalse(src.truth_table.logical_false())
 
   the terminal shows :ref:`AttributeError`
 
@@ -127,8 +130,8 @@ I add a new ``TestCase`` to ``test_truth_table.py``
   class TestUnaryOperations(unittest.TestCase):
 
       def test_logical_identity(self):
-          self.assertTrue(truth_table.logical_identity(True))
-          self.assertFalse(truth_table.logical_identity(False))
+          self.assertTrue(src.truth_table.logical_identity(True))
+          self.assertFalse(src.truth_table.logical_identity(False))
 
 and the terminal shows :ref:`AttributeError` because there is no definition for ``logical_identity`` in ``truth_table.py``
 
@@ -159,8 +162,8 @@ I add a test for ``logical_negation`` to ``test_truth_table.py``
 .. code-block:: python
 
     def test_logical_negation(self):
-        self.assertFalse(truth_table.logical_negation(True))
-        self.assertTrue(truth_table.logical_negation(False))
+        self.assertFalse(src.truth_table.logical_negation(True))
+        self.assertTrue(src.truth_table.logical_negation(False))
 
 the terminal shows :ref:`AttributeError`, there is no definition for ``logical_negation`` in ``truth_table.py``
 

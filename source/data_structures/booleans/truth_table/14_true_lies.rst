@@ -23,10 +23,10 @@ I add a test for tautology to ``TestBinaryOperations`` in ``test_truth_table.py`
 .. code-block:: python
 
     def test_tautology(self):
-        self.assertTrue(truth_table.tautology(True, True))
-        self.assertTrue(truth_table.tautology(True, False))
-        self.assertTrue(truth_table.tautology(False, True))
-        self.assertTrue(truth_table.tautology(False, False))
+        self.assertTrue(src.truth_table.tautology(True, True))
+        self.assertTrue(src.truth_table.tautology(True, False))
+        self.assertTrue(src.truth_table.tautology(False, True))
+        self.assertTrue(src.truth_table.tautology(False, False))
 
 the terminal shows :ref:`AttributeError`
 
@@ -63,10 +63,10 @@ I add a test for contradiction to ``TestBinaryOperations``
 .. code-block:: python
 
     def test_contradiction(self):
-        self.assertFalse(truth_table.contradiction(True, True))
-        self.assertFalse(truth_table.contradiction(True, False))
-        self.assertFalse(truth_table.contradiction(False, True))
-        self.assertFalse(truth_table.contradiction(False, False))
+        self.assertFalse(src.truth_table.contradiction(True, True))
+        self.assertFalse(src.truth_table.contradiction(True, False))
+        self.assertFalse(src.truth_table.contradiction(False, True))
+        self.assertFalse(src.truth_table.contradiction(False, False))
 
 the terminal shows :ref:`AttributeError`
 
