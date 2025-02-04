@@ -698,8 +698,6 @@ how to automatically make a python test driven development environment on Window
 
 ----
 
-.. _make_tdd_environment_review:
-
 ********************************************************************************************
 review
 ********************************************************************************************

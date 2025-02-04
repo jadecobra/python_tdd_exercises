@@ -10,12 +10,13 @@ truth table: Nullary and Unary Operations
 
 ----
 
-There are only two boolean values
+.. contents:: table of contents
+  :local:
+  :depth: 1
 
-* :ref:`True<test_what_is_true>`
-* :ref:`False<test_what_is_false>`
+----
 
-The Truth Table gives the 16 outcomes of binary operations on these two values
+Nullary operations do not take in inputs and always return the same value. They are :ref:`singleton functions<test_singleton_functions>`
 
 *********************************************************************************
 requirements
@@ -23,43 +24,31 @@ requirements
 
 :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` with ``truth_table`` as the name of the project
 
-.. contents:: table of contents
-  :local:
-  :depth: 1
+*********************************************************************************
+how to return to the automated tests if you exit
+*********************************************************************************
+
+.. code-block:: shell
+
+  cd truth_table
+  source .venv/bin/activate
+  pytest-watch
+
+*********************************************************************************
+how to return to the automated tests on Windows_ without WSL if you exit
+*********************************************************************************
+
+.. warning:: This is for Windows_ without `Windows Subsystem Linux`_
+
+  cd truth_table
+  .venv/scripts/activate.ps1
+  pytest-watch
 
 ----
-
-*********************************************************************************
-Nullary Operations
-*********************************************************************************
-
-Nullary operations do not take in inputs and always return the same value. They are :ref:`singleton functions<test_singleton_functions>`
 
 red: make it fail
 #################################################################################
 
-* I open a terminal to run :ref:`makePythonTdd.sh` with ``truth_table`` as the name of the project
-
-  .. code-block:: python
-
-    ./makePythonTdd.sh truth_table
-
-  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
-
-    .. code-block:: python
-
-      ./makePythonTdd.ps1 truth_table
-
-  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    E       AssertionError: True is not false
-
-    tests/test_truth_table.py:7: AssertionError
-
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_truth_table.py:7`` to open it in the editor
-* then change ``True`` to ``False`` to make the test pass
 * and change the text to
 
   .. code-block:: python

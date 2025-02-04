@@ -134,11 +134,12 @@ test_booleans
 test_truth_table
 *********************************************************************************
 
-#. :ref:`test_nullary_operations`
+#. :ref:`test_logical_identity`
+#. :ref:`test_logical_negation`
 #. :ref:`test_logical_conjunction`
 #. :ref:`test_logical_disjunction`
 #. :ref:`test_logical_implication`
-#. :ref:`test_logical_equality`
+#. :ref:`test_logical_equality_or_logical_biconditional`
 #. :ref:`test_exclusive_disjunction`
 #. :ref:`test_logical_nand`
 #. :ref:`test_logical_nor`
