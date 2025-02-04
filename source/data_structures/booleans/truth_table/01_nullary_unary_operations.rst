@@ -271,7 +271,7 @@ green: make it pass
     AssertionError: True is not false
 
   The ``logical_negation`` :ref:`function<functions>` returns the value it receives as input but the test expects the opposite
-* I use the not_ keyword to return the opposite of the :doc:`boolean </data_structures/booleans/booleans>` value ``logical_negation`` receives
+* I add the not_ keyword to the `return statement`_
 
   .. code-block:: python
 
@@ -280,20 +280,42 @@ green: make it pass
 
   and the terminal shows passing tests
 
+refactor: make it better
+---------------------------------------------------------------------------------
+
+I add another line
+
+.. code-block:: python
+
+  def test_logical_negation(self):
+      self.assertFalse(src.truth_table.logical_negation(True))
+      self.assertFalse(src.truth_table.logical_negation(False))
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: True is not false
+
+when I change the :ref:`method<functions>`
+
+.. code-block:: python
+
 .. code-block:: python
 
   def test_logical_negation(self):
       self.assertFalse(src.truth_table.logical_negation(True))
       self.assertTrue(src.truth_table.logical_negation(False))
 
-the terminal shows :ref:`AttributeError`, there is no definition for ``logical_negation`` in ``truth_table.py``
+the test passes
 
+----
 
 *********************************************************************************
 review
 *********************************************************************************
 
-I know that
+the tests show that
 
 * :ref:`True<test_what_is_true>` is ``not False``
 * :ref:`False<test_what_is_false>` is ``not True``
