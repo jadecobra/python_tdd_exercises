@@ -24,25 +24,7 @@ requirements
 
 :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` with ``truth_table`` as the name of the project
 
-*********************************************************************************
-how to return to the automated tests if you exit
-*********************************************************************************
 
-.. code-block:: shell
-
-  cd truth_table
-  source .venv/bin/activate
-  pytest-watch
-
-*********************************************************************************
-how to return to the automated tests on Windows_ without WSL if you exit
-*********************************************************************************
-
-.. warning:: This is for Windows_ without `Windows Subsystem Linux`_
-
-  cd truth_table
-  .venv/scripts/activate.ps1
-  pytest-watch
 
 ----
 

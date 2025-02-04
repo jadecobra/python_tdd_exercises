@@ -42,6 +42,26 @@ requirements
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_truth_table.py:7`` to open it in the editor
 * then change ``True`` to ``False`` to make the test pass
 
+*********************************************************************************
+how to return to the automated tests if you exit
+*********************************************************************************
+
+.. code-block:: shell
+
+  cd truth_table
+  source .venv/bin/activate
+  pytest-watch
+
+*********************************************************************************
+how to return to the automated tests on Windows_ without WSL if you exit
+*********************************************************************************
+
+.. warning:: This is for Windows_ without `Windows Subsystem Linux`_
+
+  cd truth_table
+  .venv/scripts/activate.ps1
+  pytest-watch
+
 .. toctree::
   :titlesonly:
 
