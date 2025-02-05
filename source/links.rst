@@ -7,6 +7,7 @@
 .. _if statements: https://docs.python.org/3/tutorial/controlflow.html#if-statements
 .. _return statement: https://docs.python.org/3/reference/simple_stmts.html#the-return-statement
 .. _ternary operator: https://docs.python.org/3/reference/expressions.html#conditional-expressions
+.. _ternary operators: https://docs.python.org/3/reference/expressions.html#conditional-expressions
 .. _try statement: https://docs.python.org/3/reference/compound_stmts.html#the-try-statement
 .. _while statement: https://docs.python.org/3/reference/compound_stmts.html#the-while-statement
 

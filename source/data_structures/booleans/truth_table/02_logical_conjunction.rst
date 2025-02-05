@@ -189,13 +189,13 @@ refactor: make it better
 
   tests are still green because this covers all four cases
 
-  - in the case where ``p is True`` and ``q is True`` it returns True:ref:`True<test_what_is_true>`
+  - in the case where ``p is True`` and ``q is True`` it returns :ref:`True<test_what_is_true>`
   - in the 3 remaining cases it returns False
-  - does this mean that in a binary operation with 2 outcomes I only need to write a condition for one and write an else_ clause for the other? If this is true, I would not have to write a condition for every case
+  - in a binary operation, even though there are 4 cases, there are only 2 outcomes. I can write a condition for one case then write an else_ clause for the others, I do not have to write a condition for every case
 
   .. note::
 
-   comparisons_ for :ref:`booleans` can be implicitly stated because Python calls ``bool()`` on the values, which returns :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`. This means ``if p == True`` can be rewritten as ``if p``
+    comparisons_ for :ref:`booleans` can be implicitly stated because Python calls ``bool()`` on the values, which returns :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`. This means ``if p == True`` can be rewritten as ``if p``
 
   I rewrite the `if statement`_ in a simpler way
 
@@ -208,14 +208,14 @@ refactor: make it better
             return False
 
   the tests are still green, so far so good
-* I can also express conditions in a `return statement`_ using `conditional expressions/ternary operators <https://docs.python.org/3/reference/expressions.html?highlight=ternary%20conditional#conditional-expressions>`_
+* I can use `conditional expressions`_(`ternary operators`_) to make the `return statement`_ simpler
 
   .. code-block:: python
 
     def logical_conjunction(p, q):
         return True if p and q else False
 
-* sincePython implicitly tests conditionals I can rewrite the statement this way
+* since Python implicitly tests conditionals I can make the statement even simpler
 
   .. code-block:: python
 
