@@ -516,7 +516,7 @@ refactor: make it better
     def test_type_error_w_objects_that_do_not_mix(self):
         with self.assertRaises(TypeError):
             None + 1
-        'text' + 2.3
+        'text' + 1.0
 
   which gives me `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
 
@@ -532,7 +532,7 @@ refactor: make it better
         with self.assertRaises(TypeError):
             None + 1
         with self.assertRaises(TypeError):
-            'text' + 2.3
+            'text' + 1.0
 
 * then add one more line
 
@@ -542,7 +542,7 @@ refactor: make it better
         with self.assertRaises(TypeError):
             None + 1
         with self.assertRaises(TypeError):
-            'text' + 2.3
+            'text' + 1.0
         (1, 2, 3, 'n') - {1, 2, 3, 'n'}
 
   and I get `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
@@ -559,7 +559,7 @@ refactor: make it better
         with self.assertRaises(TypeError):
             None + 1
         with self.assertRaises(TypeError):
-            'text' + 2.3
+            'text' + 1.0
         with self.assertRaises(TypeError):
             (1, 2, 3, 'n') - {1, 2, 3, 'n'}
 
