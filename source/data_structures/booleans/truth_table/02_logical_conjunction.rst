@@ -224,14 +224,14 @@ refactor: make it better
 
   tests are still green. I don't think I can get a simpler statement than this
 
-After testing ``logical_conjunction`` which is a conditional operation using and_, I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
+From the tests, I know that for any :ref:`boolean<booleans>` operation involving 2 inputs: ``p`` and ``q`` for example, that can take the values :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
 
 
 * ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :ref:`True<test_what_is_true>`
-* when there are multiple outcomes I only need to write the condition for the special case and use ``else`` for the others
+* even though there are 4 cases, there are only 2 outcomes, I only need to write the condition for the special case and use an else_ clause for the others
 * ``logical conjunction`` is and_
-* :ref:`False<test_what_is_false>` is ``not True``
-* :ref:`True<test_what_is_true>` is ``not False``
+* :ref:`False<test_what_is_false>` is not_ :ref:`True<test_what_is_true>`
+* :ref:`True<test_what_is_true>` is not_ :ref:`False<test_what_is_false>`
 * :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`
 * :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
 

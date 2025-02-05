@@ -317,8 +317,8 @@ review
 
 the tests show that
 
-* :ref:`True<test_what_is_true>` is ``not False``
-* :ref:`False<test_what_is_false>` is ``not True``
+* :ref:`True<test_what_is_true>` is not_ :ref:`False<test_what_is_false>`
+* :ref:`False<test_what_is_false>` is not_ :ref:`True<test_what_is_true>`
 * :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`
 * :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
 

@@ -17,8 +17,8 @@ Reviewing the tests I have so far, I know that
 * I can express ``conditional statements`` on one line with ``return``
 * when there are multiple outcomes I only need to write the condition for the special case and use ``else`` for the others
 * ``logical conjunction`` is and_
-* :ref:`False<test_what_is_false>` is ``not True``
-* :ref:`True<test_what_is_true>` is ``not False``
+* :ref:`False<test_what_is_false>` is not_ :ref:`True<test_what_is_true>`
+* :ref:`True<test_what_is_true>` is not_ :ref:`False<test_what_is_false>`
 * :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`
 * :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
 
@@ -226,8 +226,8 @@ The tests so far show that for any boolean operation involving 2 inputs: ``p`` a
 * and_ is "not or_"
 * or_ is "not and_"
 * ``logical conjunction`` is and_
-* :ref:`False<test_what_is_false>` is ``not True``
-* :ref:`True<test_what_is_true>` is ``not False``
+* :ref:`False<test_what_is_false>` is not_ :ref:`True<test_what_is_true>`
+* :ref:`True<test_what_is_true>` is not_ :ref:`False<test_what_is_false>`
 * :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`
 * :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
 

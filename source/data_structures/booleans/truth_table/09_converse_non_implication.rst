@@ -104,8 +104,8 @@ From the tests I see that for any boolean operation involving 2 inputs: ``p`` an
 * ``logical conjunction`` is and_
 * and_ is "not or_"
 * or_ is "not and_"
-* :ref:`False<test_what_is_false>` is ``not True``
-* :ref:`True<test_what_is_true>` is ``not False``
+* :ref:`False<test_what_is_false>` is not_ :ref:`True<test_what_is_true>`
+* :ref:`True<test_what_is_true>` is not_ :ref:`False<test_what_is_false>`
 * :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`
 * :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
 
