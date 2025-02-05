@@ -1,10 +1,12 @@
-.. _conditional expression: https://docs.python.org/3/reference/expressions.html#conditional-expressions
 .. _assert statement: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
 .. _assert statements: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
+.. _conditional expression: https://docs.python.org/3/reference/expressions.html#conditional-expressions
+.. _conditional expressions: https://docs.python.org/3/reference/expressions.html#conditional-expressions
 .. _import statement: https://docs.python.org/3/reference/simple_stmts.html#the-import-statement
 .. _if statement: https://docs.python.org/3/reference/compound_stmts.html#the-if-statement
 .. _if statements: https://docs.python.org/3/tutorial/controlflow.html#if-statements
 .. _return statement: https://docs.python.org/3/reference/simple_stmts.html#the-return-statement
+.. _ternary operator: https://docs.python.org/3/reference/expressions.html#conditional-expressions
 .. _try statement: https://docs.python.org/3/reference/compound_stmts.html#the-try-statement
 .. _while statement: https://docs.python.org/3/reference/compound_stmts.html#the-while-statement
 
@@ -29,6 +31,7 @@
 .. _chmod: https://en.wikipedia.org/wiki/Chmod
 .. _class: https://docs.python.org/3/reference/lexical_analysis.html#keywords
 .. _constructor: https://en.wikipedia.org/wiki/Constructor_(object-oriented_programming)
+.. _comparisons: https://docs.python.org/3/reference/expressions.html?highlight=ternary%20conditional#comparisons
 .. _datetime: https://docs.python.org/3/library/datetime.html?highlight=time%20difference#module-datetime
 .. _datetime.datetime: https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects
 .. _datetime.datetime.strptime: https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime.datetime.strptime

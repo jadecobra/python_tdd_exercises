@@ -107,7 +107,7 @@ refactor: make it better
         else:
             return True
 
-* then rewrite it as the opposite ``if`` statement
+* then rewrite it as the opposite `if statement`_
 
   .. code-block:: python
 

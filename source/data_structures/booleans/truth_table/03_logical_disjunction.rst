@@ -86,7 +86,7 @@ refactor: make it better
             return False
         return True
 
-* I can also express the ``if`` statement with the not_ keyword like I did with ``logical_negation`` to express the opposite of a :doc:`boolean </data_structures/booleans/booleans>`
+* I can also express the `if statement`_ with the not_ keyword like I did with ``logical_negation`` to express the opposite of a :doc:`boolean </data_structures/booleans/booleans>`
 
   .. code-block:: python
 
@@ -163,7 +163,7 @@ refactor: make it better
         else:
             return True
 
-* the else_ clause that returns :ref:`True<test_what_is_true>` can be restated as the opposite of the ``if`` statement
+* the else_ clause that returns :ref:`True<test_what_is_true>` can be restated as the opposite of the `if statement`_
 
   .. code-block:: python
 

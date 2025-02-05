@@ -177,7 +177,7 @@ refactor: make it better
         return False
 
   still green
-* I rewrite the opposite of the ``if`` statement by adding an else_ clause
+* I rewrite the opposite of the `if statement`_ by adding an else_ clause
 
   .. code-block:: python
 
@@ -187,17 +187,17 @@ refactor: make it better
         else:
             return False
 
-  tests are still green because this expresses all four cases from ``test_logical_conjunction``
+  tests are still green because this covers all four cases
 
-  - in 1 case where ``p is True`` and ``q is True`` it returns True:ref:`True<test_what_is_true>`
+  - in the case where ``p is True`` and ``q is True`` it returns True:ref:`True<test_what_is_true>`
   - in the 3 remaining cases it returns False
-  - does this mean that in a binary operation with 2 outcomes I only need to write a condition for one and write an else for the other? This could save me having to write out a condition for every case
+  - does this mean that in a binary operation with 2 outcomes I only need to write a condition for one and write an else_ clause for the other? If this is true, I would not have to write a condition for every case
 
   .. note::
 
-   Python `comparisons <https://docs.python.org/3/reference/expressions.html?highlight=ternary%20conditional#comparisons>`_ for booleans can be implicitly stated becausePython calls ``bool()`` on the values, e.g ``if p == True`` can be rewritten as ``if p``
+   comparisons_ for :ref:`booleans` can be implicitly stated because Python calls ``bool()`` on the values, which returns :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`. This means ``if p == True`` can be rewritten as ``if p``
 
-  I rewrite the ``if`` statement in a simpler way
+  I rewrite the `if statement`_ in a simpler way
 
   .. code-block:: python
 
@@ -207,7 +207,7 @@ refactor: make it better
         else:
             return False
 
-  the tests still pass, so far so good
+  the tests are still green, so far so good
 * I can also express conditions in a `return statement`_ using `conditional expressions/ternary operators <https://docs.python.org/3/reference/expressions.html?highlight=ternary%20conditional#conditional-expressions>`_
 
   .. code-block:: python

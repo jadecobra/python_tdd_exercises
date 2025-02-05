@@ -73,7 +73,7 @@ refactor: make it better
         else:
             return True
 
-* I make the else_ clause to the opposite of the ``if`` statement
+* I make the else_ clause to the opposite of the `if statement`_
 
   .. code-block:: python
 

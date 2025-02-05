@@ -101,7 +101,7 @@ refactor: make it better
         else:
             return True
 
-* then change the else_ clause with the opposite of the ``if`` statement to get
+* then change the else_ clause with the opposite of the `if statement`_ to get
 
   .. code-block:: python
 

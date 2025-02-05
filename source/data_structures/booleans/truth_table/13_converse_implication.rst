@@ -73,7 +73,7 @@ refactor: make it better
             return True
 
   the tests are still passing
-* I make ``else`` to the opposite of the ``if`` statement
+* I make ``else`` to the opposite of the `if statement`_
 
   .. code-block:: python
 
