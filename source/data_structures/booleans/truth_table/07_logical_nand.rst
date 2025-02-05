@@ -53,7 +53,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* I add an ``else`` clause to be explicit
+* I add an else_ clause to be explicit
 
   .. code-block:: python
 
@@ -73,7 +73,7 @@ refactor: make it better
         else:
             return True
 
-* I make the ``else`` clause to the opposite of the ``if`` statement
+* I make the else_ clause to the opposite of the ``if`` statement
 
   .. code-block:: python
 

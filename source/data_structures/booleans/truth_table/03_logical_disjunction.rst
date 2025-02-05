@@ -163,7 +163,7 @@ refactor: make it better
         else:
             return True
 
-* the ``else`` clause that returns :ref:`True<test_what_is_true>` can be restated as the opposite of the ``if`` statement
+* the else_ clause that returns :ref:`True<test_what_is_true>` can be restated as the opposite of the ``if`` statement
 
   .. code-block:: python
 

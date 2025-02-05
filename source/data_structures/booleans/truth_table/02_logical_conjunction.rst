@@ -177,7 +177,7 @@ refactor: make it better
         return False
 
   still green
-* I rewrite the opposite of the ``if`` statement by adding an ``else`` clause
+* I rewrite the opposite of the ``if`` statement by adding an else_ clause
 
   .. code-block:: python
 

@@ -91,7 +91,7 @@ refactor: make it better
         return True
 
   this looks simpler and the tests still pass
-* I write out the second part with an ``else`` clause to be explicit
+* I write out the second part with an else_ clause to be explicit
 
   .. code-block:: python
 
@@ -101,7 +101,7 @@ refactor: make it better
         else:
             return True
 
-* then change the ``else`` clause with the opposite of the ``if`` statement to get
+* then change the else_ clause with the opposite of the ``if`` statement to get
 
   .. code-block:: python
 

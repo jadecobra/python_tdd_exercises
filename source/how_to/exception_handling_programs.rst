@@ -372,7 +372,7 @@ how to use try...except...else
 
     AssertionError: None != 'succeeded'
 
-* I add an ``else`` clause
+* I add an else_ clause
 
   .. code-block:: python
 

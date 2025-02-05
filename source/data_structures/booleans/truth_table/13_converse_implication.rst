@@ -47,7 +47,7 @@ green: make it pass
         return True
 
   the terminal shows :ref:`AssertionError` for the third case
-* I add a condition for it and an explicit ``else`` clause
+* I add a condition for it and an explicit else_ clause
 
   .. code-block:: python
 
