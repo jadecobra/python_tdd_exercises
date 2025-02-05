@@ -99,10 +99,10 @@ From these tests, I can say that for any boolean operation involving 2 inputs: `
 * ``exclusive disjunction`` is ``!=`` or the opposite of ``logical_equality``
 * ``logical equality`` is ``==``
 * ``logical implication`` is ``not p or q``
-* ``logical disjunction`` is ``or``
-* ``logical conjunction`` is ``and``
-* ``and`` is "not ``or``"
-* ``or`` is "not ``and``"
+* ``logical disjunction`` is or_
+* ``logical conjunction`` is and_
+* and_ is "not or_"
+* or_ is "not and_"
 * :ref:`False<test_what_is_false>` is ``not True``
 * :ref:`True<test_what_is_true>` is ``not False``
 * :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`

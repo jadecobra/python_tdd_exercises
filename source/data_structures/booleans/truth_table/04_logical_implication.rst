@@ -15,10 +15,10 @@ This chapter has tests for Logical Implication from the `Truth Table <https://en
 Reviewing what I know so far, for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
 
 
-* ``logical disjunction`` is ``or``
-* ``and`` is "not ``or``"
-* ``or`` is "not ``and``"
-* ``logical conjunction`` is ``and``
+* ``logical disjunction`` is or_
+* and_ is "not or_"
+* or_ is "not and_"
+* ``logical conjunction`` is and_
 * ``return True if x else y`` can be rewritten as ``return x``, if ``x`` evaluates to :ref:`True<test_what_is_true>`
 * when there are multiple outcomes I only need to write the condition for the special case and use ``else`` for the others
 * :ref:`False<test_what_is_false>` is ``not True``
@@ -169,10 +169,10 @@ refactor: make it better
 fantastic! the tests pass. I can see that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
 
 * ``logical implication`` is ``not p or q``
-* ``logical disjunction`` is ``or``
-* ``logical conjunction`` is ``and``
-* ``and`` is "not ``or``"
-* ``or`` is "not ``and``"
+* ``logical disjunction`` is or_
+* ``logical conjunction`` is and_
+* and_ is "not or_"
+* or_ is "not and_"
 * :ref:`False<test_what_is_false>` is ``not True``
 * :ref:`True<test_what_is_true>` is ``not False``
 * :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`

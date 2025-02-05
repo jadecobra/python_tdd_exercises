@@ -141,7 +141,7 @@ A Logical Identity operation takes input and returns it as output, it is a :ref:
 red: make it fail
 ---------------------------------------------------------------------------------
 
-I add a new ``TestCase`` to ``test_truth_table.py``
+I add a new TestCase_ to ``test_truth_table.py``
 
 .. code-block:: python
 

@@ -16,7 +16,7 @@ Reviewing the tests I have so far, I know that
 
 * I can express ``conditional statements`` on one line with ``return``
 * when there are multiple outcomes I only need to write the condition for the special case and use ``else`` for the others
-* ``logical conjunction`` is ``and``
+* ``logical conjunction`` is and_
 * :ref:`False<test_what_is_false>` is ``not True``
 * :ref:`True<test_what_is_true>` is ``not False``
 * :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`
@@ -66,7 +66,7 @@ green: make it pass
 refactor: make it better
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-* I know from :doc:`/data_structures/booleans/truth_table/02_logical_conjunction` that when I have a nested if statement it can be changed with an ``and`` so I make the condition
+* I know from :doc:`/data_structures/booleans/truth_table/02_logical_conjunction` that when I have a nested if statement it can be changed with an and_ so I make the condition
 
   .. code-block:: python
 
@@ -142,7 +142,7 @@ refactor: make it better
             return False
         return True
 
-  okay, this looks more like what will get the original statement when "multiplied" since ``the opposite of the opposite of something is something``. To fix the syntax I use the opposite of ``and`` which is ``or``
+  okay, this looks more like what will get the original statement when "multiplied" since ``the opposite of the opposite of something is something``. To fix the syntax I use the opposite of and_ which is or_
 
   .. code-block:: python
 
@@ -222,10 +222,10 @@ refactor: make it better
 The tests so far show that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
 
 
-* ``logical disjunction`` is ``or``
-* ``and`` is "not ``or``"
-* ``or`` is "not ``and``"
-* ``logical conjunction`` is ``and``
+* ``logical disjunction`` is or_
+* and_ is "not or_"
+* or_ is "not and_"
+* ``logical conjunction`` is and_
 * :ref:`False<test_what_is_false>` is ``not True``
 * :ref:`True<test_what_is_true>` is ``not False``
 * :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`

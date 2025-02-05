@@ -1,8 +1,8 @@
 .. include:: ../../../links.rst
 
-#################################
+#################################################################################
 truth table: Logical Conjunction
-#################################
+#################################################################################
 
 .. contents:: table of contents
   :local:
@@ -10,19 +10,20 @@ truth table: Logical Conjunction
 
 ----
 
-In this chapter I continue to step through learning conditional statements in Python with the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
+*********************************************************************************
+requirements
+*********************************************************************************
 
-I know that there are two boolean values
+:doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` with ``truth_table`` as the name of the project
 
-* :ref:`True<test_what_is_true>`
-* :ref:`False<test_what_is_false>`
-
+test_logical_conjunction
+#################################################################################
 
 
 red: make it fail
-#################################################################################
+---------------------------------------------------------------------------------
 
-After making a ``TestCase`` for binary operations in ``test_truth_table.py``
+I add a TestCase_ for binary operations in ``test_truth_table.py`` with ``test_logical_conjunction`` as the first test
 
 .. code-block:: python
 
@@ -36,18 +37,30 @@ After making a ``TestCase`` for binary operations in ``test_truth_table.py``
 
 the terminal shows :ref:`AttributeError`
 
-green: make it pass
-#################################################################################
+.. code-block:: python
 
-* I add a definition for ``logical_conjunction`` to ``truth_table.py``
+  AttributeError: module 'src.truth_table' has no attribute 'logical_conjunction'
+
+green: make it pass
+---------------------------------------------------------------------------------
+
+* I add a definition
 
   .. code-block:: python
+
+    def logical_negation(value):
+        return not value
 
     def logical_conjunction():
         return None
 
   the terminal shows :ref:`TypeError`
-* I add the new error to the list of Exceptions_ encountered
+
+  .. code-block:: python
+
+    TypeError: logical_conjunction() takes 0 positional arguments but 2 was given
+
+* I add the error to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -57,15 +70,20 @@ green: make it pass
     # AttributeError
     # TypeError
 
-* I make the :ref:`function<functions>` signature to include a positional argument
+* then I make the :ref:`function<functions>` take input
 
   .. code-block:: python
 
     def logical_conjunction(p):
         return None
 
-  the terminal shows another :ref:`TypeError` but with a different message
-* I add another positional argument to match the expected signature
+  the terminal shows :ref:`TypeError`
+
+  .. code-blocK:: python
+
+    TypeError: logical_conjunction() takes 1 positional arguments but 2 was given
+
+* I add another positional argument
 
   .. code-block:: python
 
@@ -73,16 +91,25 @@ green: make it pass
         return None
 
   and the terminal shows :ref:`AssertionError`
-* I make ``logical_conjunction`` in ``truth_table.py`` return :ref:`True<test_what_is_true>`
+
+  .. code-block::
+
+    AssertionError: None is not true
+
+* I make it return :ref:`True<test_what_is_true>`
 
   .. code-block:: python
 
     def logical_conjunction(p, q):
         return True
 
-  which makes the first of the four tests pass, the terminal now shows a failure for the second line
-* I can make this function return different values based on the input it receives with `if statements <https://docs.python.org/3/tutorial/controlflow.html?highlight=statement#if-statements>`_
-* I add an `if statement <https://docs.python.org/3/reference/compound_stmts.html?highlight=return%20true#the-if-statement>`_ for the first case ``self.assertTrue(truth_table.logical_conjunction(True, True))`` where p is :ref:`True<test_what_is_true>` and q is :ref:`True<test_what_is_true>`
+  the first line passes and for the second line the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+* I can make this function return different values based on the input it receives with `if statements`_.I add one for the first case ``self.assertTrue(truth_table.logical_conjunction(True, True))`` where ``p`` and ``q`` are both :ref:`True<test_what_is_true>`
 
   .. code-block:: python
 
@@ -91,7 +118,12 @@ green: make it pass
             return True
 
   the terminal still shows :ref:`AssertionError`
-* I then add a condition for the second input value
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+* I add a condition for the second input value
 
   .. code-block:: python
 
@@ -100,19 +132,19 @@ green: make it pass
             if q == True:
                 return True
 
-  the terminal shows passing tests. Lovely!
+  and the test passes. Lovely!
 
 refactor: make it better
-#################################################################################
+---------------------------------------------------------------------------------
 
 * Why does this work?
 
   - I add a condition for when the value of ``p`` is equal to :ref:`True<test_what_is_true>`
-  - Inside the first condition I add another condition for when the value of ``q`` is equal to :ref:`True<test_what_is_true>`
-  - when both conditions are met, the ``logical_conjunction`` function returns :ref:`True<test_what_is_true>`. What does it return when those two conditions are not met?
+  - I add another condition in the first one for when the value of ``q`` is equal to :ref:`True<test_what_is_true>`
+  - when both conditions are met, the :ref:`function<functions>` returns :ref:`True<test_what_is_true>`
+  - what does it return when those two conditions are not met?
 
-* I know from :ref:`functions` that a function returns :ref:`None` by default so it must be returning :ref:`None` for the other cases. This means :ref:`None` is :ref:`False<test_what_is_false>` as seen in :doc:`/data_structures/booleans/booleans`
-* I can add a test as a reminder
+* I know from :ref:`functions` that :ref:`None` is returned by default so the ``logical_conjunction`` :ref:`function<functions>` must be returning :ref:`None` for the other cases, and I also know from :ref:`booleans` that :ref:`None` is :ref:`False<test_what_is_false>`. I add a `return statement` to be explicit
 
   .. code-block:: python
 
@@ -122,8 +154,8 @@ refactor: make it better
                   return True
           return None
 
-  tests are still passing
-* Since :ref:`None` is :ref:`False<test_what_is_false>`, I can be more explicit by using the boole:ref:`False<test_what_is_false>`
+  all tests are still passing
+* Since :ref:`None` is :ref:`False<test_what_is_false>`, I can be more explicit by using :ref:`False<test_what_is_false>`
 
   .. code-block:: python
 
@@ -133,9 +165,9 @@ refactor: make it better
                 return True
         return False
 
-  tests still pass
+  still green
 
-* These are nested conditionals and I can express them on one line by using the ``and`` keyword
+* I can express these conditions on one line with the and_ keyword
 
   .. code-block:: python
 
@@ -192,12 +224,12 @@ refactor: make it better
 
   tests are still green. I don't think I can get a simpler statement than this
 
-After testing ``logical_conjunction`` which is a conditional operation using ``and``, I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
+After testing ``logical_conjunction`` which is a conditional operation using and_, I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
 
 
 * ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :ref:`True<test_what_is_true>`
 * when there are multiple outcomes I only need to write the condition for the special case and use ``else`` for the others
-* ``logical conjunction`` is ``and``
+* ``logical conjunction`` is and_
 * :ref:`False<test_what_is_false>` is ``not True``
 * :ref:`True<test_what_is_true>` is ``not False``
 * :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`

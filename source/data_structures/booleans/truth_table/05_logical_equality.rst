@@ -15,10 +15,10 @@ The journey of conditional statements using the `Truth Table <https://en.wikiped
 So far the tests have shown that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
 
 * ``logical implication`` is ``not p or q``
-* ``and`` is "not ``or``"
-* ``or`` is "not ``and``"
-* ``logical disjunction`` is ``or``
-* ``logical conjunction`` is ``and``
+* and_ is "not or_"
+* or_ is "not and_"
+* ``logical disjunction`` is or_
+* ``logical conjunction`` is and_
 * :ref:`False<test_what_is_false>` is ``not True``
 * :ref:`True<test_what_is_true>` is ``not False``
 * :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`
@@ -147,10 +147,10 @@ what I know so far from the tests is that for any boolean operation involving 2 
 
 * ``logical equality`` is ``==``
 * ``logical implication`` is ``not p or q``
-* ``logical disjunction`` is ``or``
-* ``logical conjunction`` is ``and``
-* ``and`` is "not ``or``"
-* ``or`` is "not ``and``"
+* ``logical disjunction`` is or_
+* ``logical conjunction`` is and_
+* and_ is "not or_"
+* or_ is "not and_"
 * :ref:`False<test_what_is_false>` is ``not True``
 * :ref:`True<test_what_is_true>` is ``not False``
 * :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`

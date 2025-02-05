@@ -3,10 +3,12 @@
 .. _assert statements: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
 .. _import statement: https://docs.python.org/3/reference/simple_stmts.html#the-import-statement
 .. _if statement: https://docs.python.org/3/reference/compound_stmts.html#the-if-statement
+.. _if statements: https://docs.python.org/3/tutorial/controlflow.html#if-statements
 .. _return statement: https://docs.python.org/3/reference/simple_stmts.html#the-return-statement
 .. _try statement: https://docs.python.org/3/reference/compound_stmts.html#the-try-statement
 .. _while statement: https://docs.python.org/3/reference/compound_stmts.html#the-while-statement
 
+.. _and: https://docs.python.org/3/reference/expressions.html#and
 .. _assert: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
 .. _assertEqual: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertEqual
 .. _assertNotEqual: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertNotEqual
@@ -34,6 +36,7 @@
 .. _def: https://docs.python.org/3/reference/lexical_analysis.html#keywords
 .. _dir: https://docs.python.org/3/library/functions.html?highlight=dir#dir
 .. _echo: https://man7.org/linux/man-pages/man1/echo.1.html
+.. _else: https://docs.python.org/3/reference/compound_stmts.html#else
 .. _float: https://docs.python.org/3/library/functions.html#float
 .. _floats: https://docs.python.org/3/library/functions.html#float
 .. _floor (integer) division: https://en.wikipedia.org/wiki/Division_(mathematics)#Division_in_different_contexts
@@ -49,9 +52,10 @@
 .. _list: https://docs.python.org/3/library/stdtypes.html?highlight=list#list
 .. _mkdir: https://man7.org/linux/man-pages/man1/mkdir.1.html
 .. _modulo: https://en.wikipedia.org/wiki/Modulo
-.. _not: https://docs.python.org/3/reference/expressions.html#boolean-operations
+.. _not: https://docs.python.org/3/reference/expressions.html#not
 .. _object: https://docs.python.org/3/glossary.html#term-object
 .. _objects: https://docs.python.org/3/glossary.html#term-object
+.. _or: https://docs.python.org/3/reference/expressions.html#or
 .. _python package: https://docs.python.org/3/glossary.html#term-regular-package
 .. _python packages: https://docs.python.org/3/glossary.html#term-regular-package
 .. _pip: https://pypi.org/project/pip/
@@ -109,6 +113,7 @@
 .. _KeyError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError
 .. _NameError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError
 .. _PowerShell: https://learn.microsoft.com/en-us/powershell/
+.. _TestCase: https://docs.python.org/3/library/unittest.html#unittest.TestCase
 .. _SyntaxError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#SyntaxError
 .. _ValueError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ValueError
 .. _ZeroDivisionError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#ZeroDivisionError

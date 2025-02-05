@@ -10,9 +10,9 @@ booleans: truth table
 
 ----
 
-Sometimes I want programs to make decisions based on inputs or conditions, and can make this happen with conditional statements.
+Sometimes I want programs to make decisions based on inputs or conditions, and can make this happen with `if statements`_.
 
-The following chapters are exercises on writing conditional statements in Python with the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
+The following chapters are exercises on writing `if statements`_ in Python using the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
 
 There are two boolean values
 
