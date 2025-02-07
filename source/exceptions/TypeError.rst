@@ -45,7 +45,7 @@ red: make it fail
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_type_error.py:7`` to open it in the editor
 * then change ``True`` to ``False``
-* * I add an `import statement`_
+* I add an `import statement`_
 
   .. code-block:: python
 
@@ -101,14 +101,14 @@ green: make it pass
     # AttributeError
     # TypeError
 
-* then make ``none`` a :ref:`function<functions>` to make it callable_
+* and I make ``none`` a :ref:`function<functions>` to make it callable_
 
   .. code-block:: python
 
     def none():
         return None
 
-  and the test passes
+  the test passes
 
 refactor: make it better
 #################################################################################
@@ -255,13 +255,13 @@ refactor: make it better
         src.type_error.a_list()
         src.type_error.a_dictionary()
 
-  and get :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
     AttributeError: module 'src.type_error' has no attribute 'a_dictionary'
 
-  then I add the name and point it to a :ref:`dictionary<dictionaries>`
+  I add the name and point it to a :ref:`dictionary<dictionaries>`
 
   .. code-block:: python
 
@@ -454,7 +454,7 @@ refactor: make it better
 
     AttributeError: module 'src.type_error' has no attribute 'function_03'. Did you mean: 'function_00'?
 
-  then I add the :ref:`function<functions>`
+  I add the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -495,7 +495,7 @@ refactor: make it better
 test_type_error_w_objects_that_do_not_mix
 *********************************************************************************
 
-I cannot mix objects_ that are not the same type
+Some operations do not work if the objects_ are not the same type_
 
 red: make it fail
 #################################################################################
@@ -595,7 +595,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-I ran tests for `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#TypeError>`_ with objects_ that are not callable_, :ref:`function<functions>` signatures and objects_ that do not mix.
+I ran tests for `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#TypeError>`_ with objects_ that are not callable_, :ref:`function<functions>` signatures and objects_ that do not mix. Would you like to :ref:`test data structures?<data structures>`
 
 ----
 
