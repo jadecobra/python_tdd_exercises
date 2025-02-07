@@ -12,7 +12,7 @@ TypeError
 
 ----
 
-`TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ is raised when an object_ is used in a way that it is not meant to be used.
+The `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ is raised when an object_ is used in a way that it should not be.
 
 *********************************************************************************
 test_type_error_w_non_callables
@@ -64,7 +64,7 @@ red: make it fail
 
     AttributeError: module 'src.type_error' has no attribute 'none'
 
-  which I add to the list of Exceptions_ encountered
+  I add it to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -75,26 +75,37 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-I add the name to ``type_error.py`` and point it to :ref:`None`
+* I add the name to ``type_error.py`` and point it to the object_ :ref:`None`
 
-.. code-block:: python
+  .. code-block:: python
 
-  none = None
+    none = None
 
-and the terminal shows :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
-.. code-block:: python
+  .. code-block:: python
 
-  TypeError: 'NoneType' object is not callable
+    TypeError: 'NoneType' object is not callable
 
-when I make it a :ref:`function<functions>`
+  the ``()`` to the right of ``src.type_error.none`` makes it a call, but ``none`` is a reference to the object :ref:`None` which is not callable
 
-.. code-block:: python
+* I add the error to the list of Exceptions_ encountered
 
-  def none():
-      return None
+  .. code-block:: python
 
-the test passes
+      # Exceptions Encountered
+      # AssertionError
+      # AttributeError
+      # TypeError
+
+* then I make ``none`` a :ref:`function<functions>`
+
+  .. code-block:: python
+
+    def none():
+        return None
+
+  and the test passes
 
 refactor: make it better
 #################################################################################
