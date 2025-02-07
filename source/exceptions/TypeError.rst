@@ -45,13 +45,16 @@ red: make it fail
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_type_error.py:7`` to open it in the editor
 * then change ``True`` to ``False``
-* and change ``test_failure`` to ``test_type_error_w_non_callables``
+* * I add an `import statement`_
 
   .. code-block:: python
 
     import unittest
     import src.type_error
 
+* and change ``test_failure`` to ``test_type_error_w_non_callables``
+
+  .. code-block:: python
 
     class TestTypeError(unittest.TestCase):
 
@@ -75,7 +78,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I add the name to ``type_error.py`` and point it to :ref:`None`
+* then I add the name to ``type_error.py`` and point it to :ref:`None`
 
   .. code-block:: python
 
@@ -87,7 +90,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-  the ``()`` to the right of ``src.type_error.none`` makes it a call, and ``none`` is a reference to the object :ref:`None` which is not callable
+  the ``()`` to the right of ``src.type_error.none`` makes it a call, and ``none`` is a reference to :ref:`None` which is not callable_
 
 * I add the error to the list of Exceptions_ encountered
 
@@ -98,7 +101,7 @@ green: make it pass
     # AttributeError
     # TypeError
 
-* then make ``none`` a :ref:`function<functions>`
+* then make ``none`` a :ref:`function<functions>` to make it callable_
 
   .. code-block:: python
 
@@ -212,7 +215,7 @@ refactor: make it better
 
     AttributeError: module 'src.type_error' has no attribute 'a_list'
 
-  I add a name and point it to a :ref:`list<lists>`
+  I add the name and point it to a :ref:`list<lists>`
 
   .. code-block:: python
 
@@ -222,7 +225,7 @@ refactor: make it better
 
     a_list = [1, 2, 3, 'n']
 
-  the terminal shows :ref:`TypeError`
+  and the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -258,7 +261,7 @@ refactor: make it better
 
     AttributeError: module 'src.type_error' has no attribute 'a_dictionary'
 
-  I add the name and point it to a :ref:`dictionary<dictionaries>`
+  then I add the name and point it to a :ref:`dictionary<dictionaries>`
 
   .. code-block:: python
 
@@ -268,13 +271,13 @@ refactor: make it better
 
     a_dictionary = {'key': 'value'}
 
-  the terminal shows :ref:`TypeError`
+  and the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
     TypeError: 'dict' object is not callable
 
-  I change it to a :ref:`function<functions>`
+  then I change it to a :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -285,7 +288,7 @@ refactor: make it better
     def a_dictionary():
         return {'key': 'value'}
 
-  and the terminal shows green again
+  and the terminal shows green again. It is safe to say that I cannot call :ref:`data structures`
 
 ----
 
@@ -293,7 +296,7 @@ refactor: make it better
 test_type_error_w_function_signatures
 *********************************************************************************
 
-`TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ is also raised when a :ref:`function<functions>` call does not match its signature.
+calls to a :ref:`function<functions>` have to match its signature
 
 red: make it fail
 #################################################################################
@@ -311,7 +314,7 @@ red: make it fail
 
     AttributeError: module 'src.type_error' has no attribute 'function_00'
 
-  I add a :ref:`function<functions>` to ``type_error.py``
+  then I add the :ref:`function<functions>` to ``type_error.py``
 
   .. code-block:: python
 
@@ -359,7 +362,7 @@ refactor: make it better
 
     AttributeError: module 'src.type_error' has no attribute 'function_01'. Did you mean: 'function_00'?
 
-  I add the name
+  I add the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -376,7 +379,7 @@ refactor: make it better
 
     TypeError: function_01() takes 1 positional argument but 2 were given
 
-  I make the number of inputs in the definition match the number of inputs in the call
+  when I make the number of inputs in the definition match the number of inputs in the call
 
   .. code-block:: python
 
@@ -385,7 +388,7 @@ refactor: make it better
       ):
       return None
 
-  and the test passes
+  the test passes
 
 * I add another failing line
 
@@ -402,7 +405,7 @@ refactor: make it better
 
     AttributeError: module 'src.type_error' has no attribute 'function_02'. Did you mean: 'function_00'?
 
-  I add a :ref:`function<functions>` to ``type_error.py``
+  I add the :ref:`function<functions>` to ``type_error.py``
 
   .. code-block:: python
 
@@ -417,13 +420,13 @@ refactor: make it better
         ):
         return None
 
-  the terminal shows :ref:`TypeError`
+  and the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
     TypeError: function_02() takes 2 positional arguments but 3 were given
 
-  I make the number of inputs in the signature match the number of inputs in the call
+  then I make the number of inputs match
 
   .. code-block:: python
 
@@ -492,7 +495,7 @@ refactor: make it better
 test_type_error_w_objects_that_do_not_mix
 *********************************************************************************
 
-`TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ is raised when I try to do operations with objects_ that do not mix
+I cannot mix objects_ that are not the same type
 
 red: make it fail
 #################################################################################
@@ -543,7 +546,7 @@ refactor: make it better
 
     TypeError: can only concatenate str (not "float") to str
 
-  I add assertRaises_
+  I cannot add something that is not a string_ to a string_. I add assertRaises_
 
   .. code-block:: python
 
@@ -566,7 +569,7 @@ refactor: make it better
             'text' + 0.1
         (1, 2, 3, 'n') - {1, 2, 3, 'n'}
 
-  and get `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
+  the terminal shows `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
 
   .. code-block:: python
 
