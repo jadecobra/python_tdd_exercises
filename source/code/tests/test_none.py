@@ -23,12 +23,12 @@ class TestNone(unittest.TestCase):
         self.assertNotIsInstance(None, int)
 
     def test_is_none_a_float(self):
-        self.assertIsNotNone(-1.0)
+        self.assertIsNotNone(-0.1)
         self.assertIsNotNone(0.0)
-        self.assertIsNotNone(1.0)
-        self.assertIsInstance(-1.0, float)
+        self.assertIsNotNone(0.1)
+        self.assertIsInstance(-0.1, float)
         self.assertIsInstance(0.0, float)
-        self.assertIsInstance(1.0, float)
+        self.assertIsInstance(0.1, float)
         self.assertNotIsInstance(None, float)
 
     def test_is_none_a_string(self):

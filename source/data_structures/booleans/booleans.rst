@@ -428,21 +428,21 @@ refactor: make it better
         self.assertFalse(None)
         self.assertFalse(0)
         self.assertFalse(0.0)
-        self.assertFalse(-1.0)
-        self.assertFalse(1.0)
+        self.assertFalse(-0.1)
+        self.assertFalse(0.1)
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: -1.0 is not false
+    AssertionError: -0.1 is not false
 
 * I change assertFalse_ to assertTrue_ for both of them and the terminal shows passing tests
 
   .. code-block:: python
 
-    self.assertTrue(-1.0)
-    self.assertTrue(1.0)
+    self.assertTrue(-0.1)
+    self.assertTrue(0.1)
 
 * I move the lines to the ``test_what_is_true`` :ref:`method<functions>`
 
@@ -453,8 +453,8 @@ refactor: make it better
         self.assertTrue(True)
         self.assertTrue(-1)
         self.assertTrue(1)
-        self.assertTrue(-1.0)
-        self.assertTrue(1.0)
+        self.assertTrue(-0.1)
+        self.assertTrue(0.1)
 
 From the tests I see that
 
@@ -487,8 +487,8 @@ I add a line to test if a string_ is False_ or True_
         self.assertTrue(True)
         self.assertTrue(-1)
         self.assertTrue(1)
-        self.assertTrue(-1.0)
-        self.assertTrue(1.0)
+        self.assertTrue(-0.1)
+        self.assertTrue(0.1)
         self.assertTrue('')
 
 the terminal shows :ref:`AssertionError`
@@ -544,8 +544,8 @@ refactor: make it better
         self.assertTrue(True)
         self.assertTrue(-1)
         self.assertTrue(1)
-        self.assertTrue(-1.0)
-        self.assertTrue(1.0)
+        self.assertTrue(-0.1)
+        self.assertTrue(0.1)
         self.assertTrue('text')
 
   the terminal shows passing tests
@@ -582,8 +582,8 @@ I add a line to test if a tuple_ is False_ or True_
         self.assertTrue(True)
         self.assertTrue(-1)
         self.assertTrue(1)
-        self.assertTrue(-1.0)
-        self.assertTrue(1.0)
+        self.assertTrue(-0.1)
+        self.assertTrue(0.1)
         self.assertTrue('text')
         self.assertTrue(())
 
@@ -638,8 +638,8 @@ refactor: make it better
         self.assertTrue(True)
         self.assertTrue(-1)
         self.assertTrue(1)
-        self.assertTrue(-1.0)
-        self.assertTrue(1.0)
+        self.assertTrue(-0.1)
+        self.assertTrue(0.1)
         self.assertTrue('text')
         self.assertTrue((1, 2, 3, 'n'))
 
@@ -677,8 +677,8 @@ I add a line to test if a :ref:`list <lists>` is False_ or True_
         self.assertTrue(True)
         self.assertTrue(-1)
         self.assertTrue(1)
-        self.assertTrue(-1.0)
-        self.assertTrue(1.0)
+        self.assertTrue(-0.1)
+        self.assertTrue(0.1)
         self.assertTrue('text')
         self.assertTrue((1, 2, 3, 'n'))
         self.assertTrue([])
@@ -733,8 +733,8 @@ refactor: make it better
         self.assertTrue(True)
         self.assertTrue(-1)
         self.assertTrue(1)
-        self.assertTrue(-1.0)
-        self.assertTrue(1.0)
+        self.assertTrue(-0.1)
+        self.assertTrue(0.1)
         self.assertTrue('text')
         self.assertTrue((1, 2, 3, 'n'))
         self.assertTrue([1, 2, 3, 'n'])
@@ -777,8 +777,8 @@ I add a line to test if a set_ is False_ or True_
         self.assertTrue(True)
         self.assertTrue(-1)
         self.assertTrue(1)
-        self.assertTrue(-1.0)
-        self.assertTrue(1.0)
+        self.assertTrue(-0.1)
+        self.assertTrue(0.1)
         self.assertTrue('text')
         self.assertTrue((1, 2, 3, 'n'))
         self.assertTrue([1, 2, 3, 'n'])
@@ -826,8 +826,8 @@ refactor: make it better
         self.assertTrue(True)
         self.assertTrue(-1)
         self.assertTrue(1)
-        self.assertTrue(-1.0)
-        self.assertTrue(1.0)
+        self.assertTrue(-0.1)
+        self.assertTrue(0.1)
         self.assertTrue('text')
         self.assertTrue((1, 2, 3, 'n'))
         self.assertTrue([1, 2, 3, 'n'])
@@ -870,8 +870,8 @@ I add a line to test if a :ref:`dictionary <dictionaries>` is False_ or True_
         self.assertTrue(True)
         self.assertTrue(-1)
         self.assertTrue(1)
-        self.assertTrue(-1.0)
-        self.assertTrue(1.0)
+        self.assertTrue(-0.1)
+        self.assertTrue(0.1)
         self.assertTrue('text')
         self.assertTrue((1, 2, 3, 'n'))
         self.assertTrue([1, 2, 3, 'n'])
@@ -929,8 +929,8 @@ refactor: make it better
         self.assertTrue(True)
         self.assertTrue(-1)
         self.assertTrue(1)
-        self.assertTrue(-1.0)
-        self.assertTrue(1.0)
+        self.assertTrue(-0.1)
+        self.assertTrue(0.1)
         self.assertTrue('text')
         self.assertTrue((1, 2, 3, 'n'))
         self.assertTrue([1, 2, 3, 'n'])

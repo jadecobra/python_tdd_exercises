@@ -75,7 +75,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I add the name to ``type_error.py`` and point it to the object_ :ref:`None`
+* I add the name to ``type_error.py`` and point it to :ref:`None`
 
   .. code-block:: python
 
@@ -87,7 +87,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-  the ``()`` to the right of ``src.type_error.none`` makes it a call, but ``none`` is a reference to the object :ref:`None` which is not callable
+  the ``()`` to the right of ``src.type_error.none`` makes it a call, and ``none`` is a reference to the object :ref:`None` which is not callable
 
 * I add the error to the list of Exceptions_ encountered
 
@@ -140,7 +140,7 @@ refactor: make it better
 
     TypeError: 'bool' object is not callable
 
-* I make it a :ref:`function<functions>`
+  I make it a :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -183,7 +183,7 @@ refactor: make it better
 
     TypeError: 'bool' object is not callable
 
-* when I make it a :ref:`function<functions>`
+  when I make it a :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -228,7 +228,7 @@ refactor: make it better
 
     TypeError: 'list' object is not callable
 
-* when I make it a :ref:`function<functions>`
+  then I make it a :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -239,7 +239,7 @@ refactor: make it better
     def a_list():
         return [1, 2, 3, 'n']
 
-  the test passes
+  and the test passes
 
 * I add a new failing line to the test
 
@@ -268,13 +268,13 @@ refactor: make it better
 
     a_dictionary = {'key': 'value'}
 
-  and the terminal shows :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
     TypeError: 'dict' object is not callable
 
-* I change it to a :ref:`function<functions>`
+  I change it to a :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -294,6 +294,9 @@ test_type_error_w_function_signatures
 *********************************************************************************
 
 `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ is also raised when a :ref:`function<functions>` call does not match its signature.
+
+red: make it fail
+#################################################################################
 
 * I add a new test
 
@@ -327,6 +330,9 @@ test_type_error_w_function_signatures
 
   because ``function_00`` is called with ``'a'`` as input but the definition does not accept any inputs
 
+green: make it pass
+#################################################################################
+
 * I add an input argument to the :ref:`function<functions>` definition
 
   .. code-block:: python
@@ -335,6 +341,9 @@ test_type_error_w_function_signatures
         return None
 
   and the terminal shows passing tests
+
+refactor: make it better
+#################################################################################
 
 * I add a new failing line
 
@@ -387,7 +396,7 @@ test_type_error_w_function_signatures
         src.type_error.function_01('a', 'b')
         src.type_error.function_02('a', 'b', 'c')
 
-  the terminal shows
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -408,7 +417,7 @@ test_type_error_w_function_signatures
         ):
         return None
 
-  the terminal shows
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -436,7 +445,7 @@ test_type_error_w_function_signatures
         src.type_error.function_02('a', 'b', 'c')
         src.type_error.function_03('a', 'b', 'c', 'd')
 
-  the terminal shows
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -526,7 +535,7 @@ refactor: make it better
     def test_type_error_w_objects_that_do_not_mix(self):
         with self.assertRaises(TypeError):
             None + 1
-        'text' + 1.0
+        'text' + 0.1
 
   which gives me `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
 
@@ -542,7 +551,7 @@ refactor: make it better
         with self.assertRaises(TypeError):
             None + 1
         with self.assertRaises(TypeError):
-            'text' + 1.0
+            'text' + 0.1
 
   and the test passes
 
@@ -554,7 +563,7 @@ refactor: make it better
         with self.assertRaises(TypeError):
             None + 1
         with self.assertRaises(TypeError):
-            'text' + 1.0
+            'text' + 0.1
         (1, 2, 3, 'n') - {1, 2, 3, 'n'}
 
   and get `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
@@ -571,7 +580,7 @@ refactor: make it better
         with self.assertRaises(TypeError):
             None + 1
         with self.assertRaises(TypeError):
-            'text' + 1.0
+            'text' + 0.1
         with self.assertRaises(TypeError):
             (1, 2, 3, 'n') - {1, 2, 3, 'n'}
 
@@ -583,7 +592,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-I ran tests for `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#TypeError>`_ with objects that are not callable, :ref:`function<functions>` signatures and objects_ that do not mix.
+I ran tests for `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#TypeError>`_ with objects that are not callable_, :ref:`function<functions>` signatures and objects_ that do not mix.
 
 ----
 
