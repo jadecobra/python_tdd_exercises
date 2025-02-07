@@ -140,13 +140,12 @@ refactor: make it better
 
     TypeError: 'bool' object is not callable
 
-* I change it to a :ref:`function<functions>`
+* I make it a :ref:`function<functions>`
 
   .. code-block:: python
 
     def none():
         return None
-
 
     def false():
         return False
@@ -184,7 +183,7 @@ refactor: make it better
 
     TypeError: 'bool' object is not callable
 
-* I change it to a :ref:`function<functions>`
+* when I make it a :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -195,7 +194,7 @@ refactor: make it better
     def true():
         return True
 
-  and the test passes
+  the test passes
 
 * I add another line to the test
 
@@ -213,7 +212,7 @@ refactor: make it better
 
     AttributeError: module 'src.type_error' has no attribute 'a_list'
 
-  I add a name to ``type_error.py`` and point it to a :ref:`list<lists>`
+  I add a name and point it to a :ref:`list<lists>`
 
   .. code-block:: python
 
@@ -229,7 +228,7 @@ refactor: make it better
 
     TypeError: 'list' object is not callable
 
-* When I make it a :ref:`function<functions>`
+* when I make it a :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -275,7 +274,7 @@ refactor: make it better
 
     TypeError: 'dict' object is not callable
 
-* when I change it to a :ref:`function<functions>`
+* I change it to a :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -286,7 +285,7 @@ refactor: make it better
     def a_dictionary():
         return {'key': 'value'}
 
-  the terminal shows green again
+  and the terminal shows green again
 
 ----
 
@@ -294,7 +293,7 @@ refactor: make it better
 test_type_error_w_function_signatures
 *********************************************************************************
 
-`TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ is also raised when a :ref:`function<functions>` is called in a way that does not match its signature.
+`TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ is also raised when a :ref:`function<functions>` call does not match its signature.
 
 * I add a new test
 
@@ -303,13 +302,13 @@ test_type_error_w_function_signatures
     def test_type_error_w_function_signatures(self):
         src.type_error.function_00('a')
 
-  and the terminal shows :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
     AttributeError: module 'src.type_error' has no attribute 'function_00'
 
-  I add the name to ``type_error.py`` as a :ref:`function<functions>`
+  then I add a :ref:`function<functions>` to ``type_error.py``
 
   .. code-block:: python
 
@@ -326,9 +325,9 @@ test_type_error_w_function_signatures
 
    TypeError: function_00() takes 0 positional arguments but 1 was given
 
-  because ``function_00`` is called in a way that is different from its signature or design
+  because ``function_00`` is called with ``'a'`` as input but the definition does not accept any inputs
 
-* I add an input argument to the :ref:`function<functions>` in ``type_error.py``
+* I add an input argument to the :ref:`function<functions>` definition
 
   .. code-block:: python
 
@@ -351,7 +350,7 @@ test_type_error_w_function_signatures
 
     AttributeError: module 'src.type_error' has no attribute 'function_01'. Did you mean: 'function_00'?
 
-  I add the name to ``type_error.py`` as a :ref:`function<functions>`
+  I add the name
 
   .. code-block:: python
 
@@ -368,7 +367,7 @@ test_type_error_w_function_signatures
 
     TypeError: function_01() takes 1 positional argument but 2 were given
 
-* I make the number of inputs in the definition match the number of inputs in the call
+  I make the number of inputs in the definition match the number of inputs in the call
 
   .. code-block:: python
 
@@ -394,7 +393,7 @@ test_type_error_w_function_signatures
 
     AttributeError: module 'src.type_error' has no attribute 'function_02'. Did you mean: 'function_00'?
 
-* I add it as a :ref:`function<functions>` to ``type_error.py``
+  I add a :ref:`function<functions>` to ``type_error.py``
 
   .. code-block:: python
 
@@ -415,7 +414,7 @@ test_type_error_w_function_signatures
 
     TypeError: function_02() takes 2 positional arguments but 3 were given
 
-* I make the number of inputs in the signature match the number of inputs given in the call
+  I make the number of inputs in the signature match the number of inputs in the call
 
   .. code-block:: python
 
@@ -443,7 +442,7 @@ test_type_error_w_function_signatures
 
     AttributeError: module 'src.type_error' has no attribute 'function_03'. Did you mean: 'function_00'?
 
-* I add the :ref:`function<functions>` to ``type_error.py``
+  then I add the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -466,7 +465,7 @@ test_type_error_w_function_signatures
 
     TypeError: function_03() takes 3 positional arguments but 4 were given
 
-* I make the :ref:`function<functions>` take 4 arguments
+  I add a 4th argument to the definition
 
   .. code-block:: python
 
@@ -484,7 +483,7 @@ test_type_error_w_function_signatures
 test_type_error_w_objects_that_do_not_mix
 *********************************************************************************
 
-`TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ is raised when I try to do operations on objects_ that do not mix
+`TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ is raised when I try to do operations with objects_ that do not mix
 
 red: make it fail
 #################################################################################
@@ -535,7 +534,7 @@ refactor: make it better
 
     TypeError: can only concatenate str (not "float") to str
 
-  I add assertRaises_ to make the test pass
+  I add assertRaises_
 
   .. code-block:: python
 
@@ -545,7 +544,9 @@ refactor: make it better
         with self.assertRaises(TypeError):
             'text' + 1.0
 
-* then add one more line
+  and the test passes
+
+* then I add one more line
 
   .. code-block:: python
 
@@ -556,7 +557,7 @@ refactor: make it better
             'text' + 1.0
         (1, 2, 3, 'n') - {1, 2, 3, 'n'}
 
-  and I get `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
+  and get `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
 
   .. code-block:: python
 
