@@ -68,9 +68,9 @@ red: make it fail
 
   .. code-block:: python
 
-      # Exceptions Encountered
-      # AssertionError
-      # AttributeError
+    # Exceptions Encountered
+    # AssertionError
+    # AttributeError
 
 green: make it pass
 #################################################################################
@@ -93,12 +93,12 @@ green: make it pass
 
   .. code-block:: python
 
-      # Exceptions Encountered
-      # AssertionError
-      # AttributeError
-      # TypeError
+    # Exceptions Encountered
+    # AssertionError
+    # AttributeError
+    # TypeError
 
-* then I make ``none`` a :ref:`function<functions>`
+* then make ``none`` a :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -167,7 +167,7 @@ refactor: make it better
 
     AttributeError: module 'src.type_error' has no attribute 'true'
 
-  then I add the name to ``type_error.py`` and point it to :ref:`True<test_what_is_true>`
+  I add the name to ``type_error.py`` and point it to :ref:`True<test_what_is_true>`
 
   .. code-block:: python
 
@@ -177,7 +177,7 @@ refactor: make it better
 
     true = True
 
-  which gives me :ref:`TypeError`
+  and get :ref:`TypeError`
 
   .. code-block:: python
 
@@ -222,7 +222,7 @@ refactor: make it better
 
     a_list = [1, 2, 3, 'n']
 
-  and the terminal shows :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -241,7 +241,7 @@ refactor: make it better
 
   and the test passes
 
-* I add a new failing line to the test
+* I add a new failing line
 
   .. code-block:: python
 
@@ -311,7 +311,7 @@ red: make it fail
 
     AttributeError: module 'src.type_error' has no attribute 'function_00'
 
-  then I add a :ref:`function<functions>` to ``type_error.py``
+  I add a :ref:`function<functions>` to ``type_error.py``
 
   .. code-block:: python
 
@@ -326,14 +326,14 @@ red: make it fail
 
   .. code-block:: python
 
-   TypeError: function_00() takes 0 positional arguments but 1 was given
+    TypeError: function_00() takes 0 positional arguments but 1 was given
 
   because ``function_00`` is called with ``'a'`` as input but the definition does not accept any inputs
 
 green: make it pass
 #################################################################################
 
-* I add an input argument to the :ref:`function<functions>` definition
+* I add an input parameter to the :ref:`function<functions>` definition
 
   .. code-block:: python
 
@@ -353,7 +353,7 @@ refactor: make it better
         src.type_error.function_00('a')
         src.type_error.function_01('a', 'b')
 
-  the terminal shows
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -474,7 +474,7 @@ refactor: make it better
 
     TypeError: function_03() takes 3 positional arguments but 4 were given
 
-  I add a 4th argument to the definition
+  I add a 4th parameter to the definition
 
   .. code-block:: python
 
@@ -592,7 +592,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-I ran tests for `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#TypeError>`_ with objects that are not callable_, :ref:`function<functions>` signatures and objects_ that do not mix.
+I ran tests for `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#TypeError>`_ with objects_ that are not callable_, :ref:`function<functions>` signatures and objects_ that do not mix.
 
 ----
 
