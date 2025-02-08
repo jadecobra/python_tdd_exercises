@@ -40,7 +40,6 @@ red: make it fail
 
     class TestNullaryOperations(unittest.TestCase):
 
-
         def test_logical_true(self):
             self.assertTrue(src.truth_table.logical_true())
 
@@ -90,7 +89,7 @@ the terminal shows :ref:`AttributeError`
 
 .. code-block:: python
 
-  AttributeError: module 'src.truth_table' has no attribute 'logical_false'
+  AttributeError: module 'src.truth_table' has no attribute 'logical_false'. Did you mean: 'logical_true'?
 
 green: make it pass
 ---------------------------------------------------------------------------------
