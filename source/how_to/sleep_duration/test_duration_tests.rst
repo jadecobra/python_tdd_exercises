@@ -444,7 +444,7 @@ green: make it pass
 
   I still cannot subtract one string from another
 
-* I change the `return statement`_ back, then add calls to ``get_datetime`` because I can do arithmetic with `datetime.datetime`_ objects
+* I change the `return statement`_ back, then add calls to ``get_datetime`` because I can do arithmetic_ with `datetime.datetime`_ objects
 
   .. code-block:: python
 

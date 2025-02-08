@@ -655,7 +655,7 @@ and the test is still green
 
 ----
 
-* I change the expectation in the test to the difference between the timestamps because I can do arithmetic with `datetime.datetime`_ objects
+* I change the expectation in the test to the difference between the timestamps because I can do arithmetic_ with `datetime.datetime`_ objects
 
   .. code-block:: python
 

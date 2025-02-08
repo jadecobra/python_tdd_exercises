@@ -94,7 +94,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-  the ``()`` to the right of ``src.type_error.none`` makes it a call, and ``none`` is a reference to :ref:`None` which is not callable_
+  the ``()`` to the right of ``src.type_error.none`` makes it a call, and the name ``none`` is a reference to :ref:`None` which is not callable_
 
 * I add the error to the list of Exceptions_ encountered
 
@@ -292,7 +292,7 @@ refactor: make it better
     def a_dictionary():
         return {'key': 'value'}
 
-  and the terminal shows green again. It is safe to say that I cannot call :ref:`data structures`
+  and the terminal shows green again. It is safe to say that I cannot call :ref:`data structures`.
 
 ----
 
@@ -300,7 +300,7 @@ refactor: make it better
 test_type_error_w_function_signatures
 *********************************************************************************
 
-calls to a :ref:`function<functions>` have to match its signature
+Calls to a :ref:`function<functions>` have to match its signature
 
 red: make it fail
 #################################################################################
@@ -491,7 +491,7 @@ refactor: make it better
     ):
         return None
 
-  and the terminal shows both tests are passing
+  and the terminal shows both tests are passing.
 
 ----
 
@@ -517,7 +517,7 @@ the terminal shows `TypeError <https://docs.python.org/3/library/exceptions.html
 
   TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
 
-I cannot do arithmetic with :ref:`None`
+I cannot do arithmetic_ with :ref:`None`
 
 green: make it pass
 #################################################################################

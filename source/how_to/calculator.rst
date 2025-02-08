@@ -10,7 +10,7 @@ how to make a calculator
 
 ----
 
-In this chapter I write a program that does the arithmetic operations of addition, subtraction, multiplication and division
+In this chapter I write a program that does the arithmetic_ operations of addition, subtraction, multiplication and division
 
 .. contents:: table of contents
   :local:
@@ -1079,7 +1079,7 @@ green: make it pass
 review
 *********************************************************************************
 
-I wrote the following tests for a program that performs the arithmetic operations
+I wrote the following tests for a program that performs the arithmetic_ operations
 
 * `test_addition`_
 * `test_subtraction`_

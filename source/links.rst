@@ -12,6 +12,7 @@
 .. _while statement: https://docs.python.org/3/reference/compound_stmts.html#the-while-statement
 
 .. _and: https://docs.python.org/3/reference/expressions.html#and
+.. _arithmetic: https://en.wikipedia.org/wiki/Arithmetic
 .. _assert: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
 .. _assertEqual: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertEqual
 .. _assertNotEqual: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertNotEqual
