@@ -154,3 +154,6 @@
 .. _indent-rainbow: https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow
 .. _Black Formatter: https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter
 .. _Code Spell Checker: https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
+
+.. _Logical Identity: https://en.wikipedia.org/wiki/Identity_function
+.. _Logical Negation: https://en.wikipedia.org/wiki/Negation

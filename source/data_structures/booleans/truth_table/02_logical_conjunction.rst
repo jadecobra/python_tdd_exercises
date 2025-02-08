@@ -23,7 +23,7 @@ test_logical_conjunction
 red: make it fail
 ---------------------------------------------------------------------------------
 
-I add a TestCase_ for binary operations in ``test_truth_table.py`` with ``test_logical_conjunction`` as the first test
+The Truth Table gives the 16 outcomes of binary operations on these two values. I add a TestCase_ for binary operations in ``test_truth_table.py`` with ``test_logical_conjunction`` as the first test
 
 .. code-block:: python
 

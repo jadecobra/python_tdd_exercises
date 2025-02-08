@@ -53,9 +53,9 @@ red: make it fail
 
   .. code-block:: python
 
-   # Exceptions Encountered
-   # AssertionError
-   # AttributeError
+    # Exceptions Encountered
+    # AssertionError
+    # AttributeError
 
 green: make it pass
 ---------------------------------------------------------------------------------
@@ -101,6 +101,7 @@ green: make it pass
     def logical_true():
         return True
 
+
     def logical_false():
         return True
 
@@ -110,7 +111,7 @@ green: make it pass
 
     AssertionError: True is not False
 
-* When I change the return value
+* When I change the `return statement`_
 
   .. code-block:: python
 
@@ -135,7 +136,7 @@ There are two unary operations
 test_logical_identity
 #################################################################################
 
-A Logical Identity operation takes input and returns it as output, it is a :ref:`passthrough function<test_passthrough_functions>`
+`Logical Identity`_ is a :ref:`passthrough function<test_passthrough_functions>`, it takes input and returns it
 
 red: make it fail
 ---------------------------------------------------------------------------------
@@ -165,6 +166,7 @@ green: make it pass
     def logical_false():
         return False
 
+
     def logical_identity():
         return None
 
@@ -174,7 +176,16 @@ green: make it pass
 
     TypeError: logical_identity() takes 0 positional arguments but 1 was given
 
-  I add a parameter
+  I add the error to the list of Exceptions_ encountered
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AssertionError
+    # AttributeError
+    # TypeError
+
+  then I add a parameter
 
   .. code-block:: python
 
@@ -211,7 +222,7 @@ the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: False is not true
+  AssertionError: True is not false
 
 I make ``logical_identity`` return its input
 
@@ -227,7 +238,7 @@ and the terminal shows passing tests
 test_logical_negation
 #################################################################################
 
-A Logical Negation operation takes input and returns the opposite
+`Logical Negation`_ takes input and returns the opposite
 
 red: make it fail
 ---------------------------------------------------------------------------------

@@ -19,8 +19,6 @@ There are two boolean values
 * :ref:`True<test_what_is_true>`
 * :ref:`False<test_what_is_false>`
 
-The Truth Table gives the 16 outcomes of binary operations on these two values
-
 *********************************************************************************
 requirements
 *********************************************************************************
