@@ -271,6 +271,7 @@ green: make it pass
     def logical_identity(argument):
         return argument
 
+
     def logical_negation(argument):
         return argument
 
@@ -285,8 +286,8 @@ green: make it pass
 
   .. code-block:: python
 
-    def logical_negation(value):
-        return not value
+    def logical_negation(argument):
+        return not argument
 
   and the terminal shows passing tests
 
@@ -308,8 +309,6 @@ the terminal shows :ref:`AssertionError`
   AssertionError: True is not false
 
 when I change the :ref:`method<functions>`
-
-.. code-block:: python
 
 .. code-block:: python
 

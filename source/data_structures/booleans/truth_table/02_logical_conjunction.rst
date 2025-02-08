@@ -48,8 +48,9 @@ green: make it pass
 
   .. code-block:: python
 
-    def logical_negation(value):
-        return not value
+    def logical_negation(argument):
+        return not argument
+
 
     def logical_conjunction():
         return None
