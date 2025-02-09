@@ -948,6 +948,7 @@ From the tests I see that
 * a string_ with things is True_
 * Positive and Negative floats_ are True_
 * Positive and Negative integers_ are True_
+* True_ is not_ False_
 * True_ is True_
 * True_ is a boolean_
 * an empty :ref:`dictionary <dictionaries>` is False_
@@ -957,6 +958,7 @@ From the tests I see that
 * ``0.0`` is False_
 * ``0`` is False_
 * `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is False_
+* False_ is not True_
 * False_ is False_
 * False_ is a boolean_
 
