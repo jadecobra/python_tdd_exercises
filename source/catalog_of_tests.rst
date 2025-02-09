@@ -137,7 +137,7 @@ test_truth_table
 #. :ref:`test_logical_true`
 #. :ref:`test_logical_false`
 #. :ref:`test_logical_identity`
-#. :ref:`test_logical_negation`
+#. :ref:`test_logical_negation_or_not`
 #. :ref:`test_logical_conjunction`
 #. :ref:`test_logical_disjunction`
 #. :ref:`test_logical_implication`

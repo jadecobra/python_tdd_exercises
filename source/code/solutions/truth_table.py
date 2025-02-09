@@ -6,12 +6,12 @@ def logical_false():
     return False
 
 
-def logical_identity(value):
-    return value
+def logical_identity(argument):
+    return argument
 
 
-def logical_negation(value):
-    return not value
+def logical_negation(argument):
+    return not argument
 
 
 def logical_conjunction(p, q):

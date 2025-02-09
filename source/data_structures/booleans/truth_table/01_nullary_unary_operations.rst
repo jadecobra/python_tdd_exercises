@@ -131,12 +131,12 @@ Unary Operations
 There are two unary operations
 
 * :ref:`Logical Identity<test_logical_identity>`
-* :ref:`Logical Negation<test_logical_negation>`
+* :ref:`Logical Negation<test_logical_negation_or_not>`
 
 test_logical_identity
 #################################################################################
 
-`Logical Identity`_ is a :ref:`passthrough function<test_passthrough_functions>`, it takes input and returns it
+`Logical Identity`_ returns its input as output, it is a :ref:`passthrough function<test_passthrough_functions>`
 
 red: make it fail
 ---------------------------------------------------------------------------------
@@ -168,9 +168,9 @@ green: make it pass
 
 
     def logical_identity():
-        return None
+        return False
 
-  the terminal shows :ref:`TypeError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -190,13 +190,13 @@ green: make it pass
   .. code-block:: python
 
     def logical_identity(argument):
-        return None
+        return False
 
   and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: None is not true
+    AssertionError: False is not true
 
   I change the `return statement`_
 
@@ -235,10 +235,10 @@ and the terminal shows passing tests
 
 ----
 
-test_logical_negation
+test_logical_negation_or_not
 #################################################################################
 
-`Logical Negation`_ takes input and returns the opposite
+`Logical Negation`_ returns the opposite of its input
 
 red: make it fail
 ---------------------------------------------------------------------------------
@@ -251,7 +251,7 @@ I add a test for it
       self.assertTrue(src.truth_table.logical_identity(True))
       self.assertFalse(src.truth_table.logical_identity(False))
 
-  def test_logical_negation(self):
+  def test_logical_negation_or_not(self):
       self.assertFalse(src.truth_table.logical_negation(True))
 
 the terminal shows :ref:`AttributeError`
@@ -298,7 +298,7 @@ I add another line
 
 .. code-block:: python
 
-  def test_logical_negation(self):
+  def test_logical_negation_or_not(self):
       self.assertFalse(src.truth_table.logical_negation(True))
       self.assertFalse(src.truth_table.logical_negation(False))
 
@@ -312,7 +312,7 @@ when I change the :ref:`method<functions>`
 
 .. code-block:: python
 
-  def test_logical_negation(self):
+  def test_logical_negation_or_not(self):
       self.assertFalse(src.truth_table.logical_negation(True))
       self.assertTrue(src.truth_table.logical_negation(False))
 
@@ -330,6 +330,8 @@ the tests show that
 * :ref:`False<test_what_is_false>` is not_ :ref:`True<test_what_is_true>`
 * :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`
 * :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
+
+Would you like to :ref:`test binary operations?<truth table: Logical Conjunction>`
 
 ----
 

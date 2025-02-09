@@ -17,7 +17,7 @@ class TestUnaryOperations(unittest.TestCase):
         self.assertTrue(src.truth_table.logical_identity(True))
         self.assertFalse(src.truth_table.logical_identity(False))
 
-    def test_logical_negation(self):
+    def test_logical_negation_or_not(self):
         self.assertFalse(src.truth_table.logical_negation(True))
         self.assertTrue(src.truth_table.logical_negation(False))
 
