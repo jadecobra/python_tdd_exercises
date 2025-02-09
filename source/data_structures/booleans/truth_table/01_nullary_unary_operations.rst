@@ -67,7 +67,7 @@ green: make it pass
     def logical_true():
         return True
 
-  and the terminal shows passing tests which remind me that :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
+  and the terminal shows passing tests
 
 test_logical_false
 #################################################################################
@@ -119,8 +119,6 @@ green: make it pass
         return False
 
   the test passes
-
-* I am reminded that :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>` and :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
 
 ----
 
@@ -324,14 +322,7 @@ the test passes
 review
 *********************************************************************************
 
-the tests show that
-
-* :ref:`True<test_what_is_true>` is not_ :ref:`False<test_what_is_false>`
-* :ref:`False<test_what_is_false>` is not_ :ref:`True<test_what_is_true>`
-* :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`
-* :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
-
-Would you like to :ref:`test binary operations?<truth table: Logical Conjunction>`
+I ran tests for Nullary and Unary operations. Would you like to :ref:`test binary operations?<truth table: Logical Conjunction>`
 
 ----
 
