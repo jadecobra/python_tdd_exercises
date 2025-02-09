@@ -131,7 +131,7 @@ Unary Operations
 There are two unary operations
 
 * :ref:`Logical Identity<test_logical_identity>`
-* :ref:`Logical Negation<test_logical_negation_or_not>`
+* :ref:`Logical Negation<test_logical_negation_aka_not>`
 
 test_logical_identity
 #################################################################################
@@ -170,7 +170,7 @@ green: make it pass
     def logical_identity():
         return False
 
-  the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -235,7 +235,7 @@ and the terminal shows passing tests
 
 ----
 
-test_logical_negation_or_not
+test_logical_negation_aka_not
 #################################################################################
 
 `Logical Negation`_ returns the opposite of its input
@@ -251,7 +251,7 @@ I add a test for it
       self.assertTrue(src.truth_table.logical_identity(True))
       self.assertFalse(src.truth_table.logical_identity(False))
 
-  def test_logical_negation_or_not(self):
+  def test_logical_negation_aka_not(self):
       self.assertFalse(src.truth_table.logical_negation(True))
 
 the terminal shows :ref:`AttributeError`
@@ -298,7 +298,7 @@ I add another line
 
 .. code-block:: python
 
-  def test_logical_negation_or_not(self):
+  def test_logical_negation_aka_not(self):
       self.assertFalse(src.truth_table.logical_negation(True))
       self.assertFalse(src.truth_table.logical_negation(False))
 
@@ -312,7 +312,7 @@ when I change the :ref:`method<functions>`
 
 .. code-block:: python
 
-  def test_logical_negation_or_not(self):
+  def test_logical_negation_aka_not(self):
       self.assertFalse(src.truth_table.logical_negation(True))
       self.assertTrue(src.truth_table.logical_negation(False))
 
