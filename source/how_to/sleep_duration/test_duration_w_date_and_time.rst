@@ -22,7 +22,7 @@ This is part 4 of a program that calculates the difference between a given wake 
 
 I want to test the ``duration`` :ref:`function<functions>` with timestamps that have dates
 
-.. _test_duration_w_date_and_time_red:
+
 
 *********************************************************************************
 red: make it fail
@@ -242,7 +242,7 @@ I want something that can read dates and times from timestamps. I search `python
 test_datetime_objects
 #################################################################################
 
-.. _test_datetime_objects_red:
+
 
 red: make it fail
 ---------------------------------------------------------------------------------
@@ -269,7 +269,7 @@ and the terminal shows NameError_
 
   NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
 
-.. _test_datetime_objects_green:
+
 
 green: make it pass
 ---------------------------------------------------------------------------------
@@ -534,7 +534,7 @@ refactor: make it better
 test_get_datetime
 #################################################################################
 
-.. _test_get_datetime_red:
+
 
 red: make it fail
 ---------------------------------------------------------------------------------
@@ -593,7 +593,7 @@ and get :ref:`AssertionError`
   AssertionError: datetime.datetime(1999, 12, 31, 9, 16) != datetime.datetime(2006, 11, 21, 16, 30)
   AssertionError: datetime.datetime(1999, 12, 31, 15, 5) != datetime.datetime(2006, 11, 21, 16, 30)
 
-.. _test_get_datetime_green:
+
 
 green: make it pass
 ---------------------------------------------------------------------------------

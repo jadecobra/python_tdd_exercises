@@ -20,7 +20,7 @@ This is part 1 of a program that calculates the difference between a given wake 
 
 ----
 
-.. _test_duration_w_hours_red:
+
 
 *********************************************************************************
 red: make it fail
@@ -79,7 +79,7 @@ red: make it fail
     # AssertionError
     # TypeError
 
-.. _test_duration_w_hours_green:
+
 
 *********************************************************************************
 green: make it pass
@@ -461,7 +461,7 @@ refactor: make it better
 test_string_splitting
 #################################################################################
 
-.. _test_string_splitting_red:
+
 
 red: make it fail
 ---------------------------------------------------------------------------------
@@ -486,7 +486,7 @@ the terminal shows :ref:`AssertionError`
 
 `str.split`_ returns a :ref:`list <lists>` when called
 
-.. _test_string_splitting_green:
+
 
 green: make it pass
 ---------------------------------------------------------------------------------

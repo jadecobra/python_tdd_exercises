@@ -22,7 +22,7 @@ This is part 3 of a program that calculates the difference between a given wake 
 
 I want to test the ``duration`` :ref:`function<functions>` with a ``wake_time`` that is earlier than the ``sleep_time``
 
-.. _test_duration_w_an_earlier_wake_than_sleep_time_red:
+
 
 *********************************************************************************
 red: make it fail
@@ -58,7 +58,7 @@ and get :ref:`AssertionError`
   AssertionError: '-8:34' != ''
   AssertionError: '-10:57' != ''
 
-.. _test_duration_w_an_earlier_wake_than_sleep_time_green:
+
 
 *********************************************************************************
 green: make it pass

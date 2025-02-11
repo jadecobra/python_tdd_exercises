@@ -156,7 +156,7 @@ The `Test Driven Development`_ cycle is ``RED GREEN REFACTOR``
 * **GREEN**: make it pass - write only what is needed to make the failing test pass
 * **REFACTOR**: make it better - `remove duplication`_
 
-.. _test_failure_red:
+
 
 red: make it fail
 ############################################################################################
@@ -272,7 +272,7 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
     # Exceptions Encountered
     # AssertionError
 
-.. _test_failure_green:
+
 
 green: make it pass
 #################################################################################

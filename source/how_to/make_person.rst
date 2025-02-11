@@ -1347,7 +1347,7 @@ refactor: make it better
 test_person_tests
 *********************************************************************************
 
-.. _test_person_tests_red:
+
 
 red: make it fail
 #################################################################################
@@ -1359,7 +1359,7 @@ red: make it fail
 
     AttributeError: module 'src.person' has no attribute 'factory'
 
-.. _test_person_tests_green:
+
 
 green: make it pass
 #################################################################################

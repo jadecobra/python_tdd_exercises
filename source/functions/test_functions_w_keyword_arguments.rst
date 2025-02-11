@@ -18,11 +18,12 @@ There is an inherent problem with using positional arguments in functions. It re
 
 To ensure the function behaves right regardless of what order the user provides the input I can use Keyword Arguments
 
-.. _test_functions_w_keyword_arguments_red:
+*********************************************************************************
+test_functions_w_keyword_arguments
+*********************************************************************************
 
-*********************************************************************************
 red: make it fail
-*********************************************************************************
+---------------------------------------------------------------------------------
 
 I add a new test to ``test_functions.py``
 
@@ -39,7 +40,7 @@ I add a new test to ``test_functions.py``
 
 the terminal shows :ref:`AttributeError`
 
-.. _test_functions_w_keyword_arguments_green:
+
 
 *********************************************************************************
 green: make it pass
@@ -122,7 +123,7 @@ So far ``passthrough_w_keyword_arguments`` looks the same as ``passthrough_w_pos
 
 The function currently only takes in 2 keyword arguments. What if I want a function that can take in any number of keyword arguments? There is a starred expression for keyword arguments - ``**``.
 
-.. _test_functions_w_keyword_arguments_refactor_red:
+
 
 red: make it fail
 #################################################################################
@@ -155,7 +156,7 @@ I add an assertion
 
 the terminal shows :ref:`TypeError`
 
-.. _test_functions_w_keyword_arguments_refactor_green:
+
 
 green: make it pass
 #################################################################################

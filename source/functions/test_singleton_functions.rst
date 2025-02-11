@@ -75,7 +75,7 @@ I add a new test that checks if a singleton that takes inputs returns the same v
 
 the terminal shows :ref:`AttributeError`
 
-.. _test_singleton_functions_w_inputs_green:
+
 
 green: make it pass
 ---------------------------------------------------------------------------------

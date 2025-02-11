@@ -22,7 +22,7 @@ This is part 5 of a program that calculates the difference between a given wake 
 
 I want to write a program that makes the tests in ``test_sleep_duration.py`` pass without looking at them
 
-.. _test_duration_tests_red:
+
 
 *********************************************************************************
 red: make it fail
@@ -35,7 +35,7 @@ red: make it fail
 
     AttributeError: module 'sleep_duration' has no attribute 'get_datetime'
 
-.. _test_duration_tests_green:
+
 
 *********************************************************************************
 green: make it pass

@@ -22,7 +22,7 @@ This is part 2 of a program that calculates the difference between a given wake 
 
 I want to test the ``duration`` :ref:`function<functions>` with timestamps where both hours and minutes are random.
 
-.. _test_duration_w_hours_and_minutes_red:
+
 
 *********************************************************************************
 red: make it fail
@@ -139,7 +139,7 @@ red: make it fail
 
   the ``duration`` :ref:`function<functions>` returns ``00`` for the minutes part of the duration, and the test expects the difference between the minutes of ``wake_time`` and ``sleep_time``
 
-.. _test_duration_w_hours_and_minutes_green:
+
 
 *********************************************************************************
 green: make it pass
@@ -204,7 +204,7 @@ test_duration_calculation
 
 The ``duration`` :ref:`function<functions>` returns a subtraction of hours and a subtraction of minutes which does not give the right difference between the timestamps
 
-.. _test_duration_calculation_red:
+
 
 red: make it fail
 ---------------------------------------------------------------------------------
@@ -233,7 +233,7 @@ the terminal shows :ref:`AssertionError` when I add ``test_duration_calculation`
 
 ``duration`` returns ``'01:-29'`` which is not a real duration, the calculation has to change
 
-.. _test_duration_calculation_green:
+
 
 green: make it pass
 ---------------------------------------------------------------------------------

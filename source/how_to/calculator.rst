@@ -22,7 +22,7 @@ In this chapter I write a program that does the arithmetic_ operations of additi
 test_addition
 *********************************************************************************
 
-.. _test_addition_red:
+
 
 red: make it fail
 #################################################################################
@@ -93,7 +93,7 @@ red: make it fail
 
   because ``src`` is not defined in ``test_calculator.py``
 
-.. _test_addition_green:
+
 
 green: make it pass
 #################################################################################
@@ -216,7 +216,7 @@ refactor: make it better
 
 The ``add`` :ref:`function<functions>` passes the test but does not meet the actual requirement because it always returns ``1``, it does not care about the inputs. I want it to do a calculation with the inputs and return the result
 
-.. _test_addition_refactor_red:
+
 
 red: make it fail
 ---------------------------------------------------------------------------------
@@ -241,7 +241,7 @@ and get :ref:`AssertionError`
 
   E    AssertionError: 1 != 0
 
-.. _test_addition_refactor_green:
+
 
 the :ref:`function<functions>` returns ``1`` and the test expects ``0``
 
@@ -402,7 +402,7 @@ refactor: make it better
 test_subtraction
 *********************************************************************************
 
-.. _test_subtraction_red:
+
 
 red: make it fail
 #################################################################################
@@ -435,7 +435,7 @@ red: make it fail
 
     AttributeError: module 'src.calculator' has no attribute 'subtract'
 
-.. _test_subtraction_green:
+
 
 green: make it pass
 #################################################################################
@@ -588,7 +588,7 @@ refactor: make it better
 test_multiplication
 *********************************************************************************
 
-.. _test_multiplication_red:
+
 
 red: make it fail
 #################################################################################
@@ -615,7 +615,7 @@ and the terminal shows :ref:`AttributeError`
 
   AttributeError: module 'src.calculator' has no attribute 'multiply'
 
-.. _test_multiplication_green:
+
 
 green: make it pass
 #################################################################################
@@ -868,7 +868,7 @@ test_calculator_tests
 
 Since everything is green, I can write the program that makes the tests pass without looking at them
 
-.. _test_calculator_red:
+
 
 red: make it fail
 #################################################################################
@@ -882,7 +882,7 @@ red: make it fail
 
   can you tell what Exceptions_ will show up as I go along?
 
-.. _test_calculator_green:
+
 
 green: make it pass
 #################################################################################

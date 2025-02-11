@@ -27,7 +27,7 @@ test_classes_w_attributes
 
 I now add some tests for attributes since I know how to define a class for attributes
 
-.. _test_classes_w_attributes_red:
+
 
 red: make it fail
 #################################################################################
@@ -52,8 +52,6 @@ red: make it fail
         pass
 
   the terminal shows :ref:`AttributeError` for a missing attribute in the newly defined class
-
-.. _test_classes_w_attributes_green:
 
 green: make it pass
 #################################################################################
@@ -96,7 +94,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-.. _test_classes_w_attributes_refactor_red:
+
 
 red: make it fail
 ---------------------------------------------------------------------------------
@@ -116,8 +114,6 @@ Let us add more tests with the other Python data structures to ``test_classes_w_
       self.assertEqual(classes.ClassWithAttributes.a_dictionary, dict)
 
 the terminal shows :ref:`AttributeError`
-
-.. _test_classes_w_attributes_refactor_green:
 
 green: make it pass
 ---------------------------------------------------------------------------------
@@ -150,7 +146,7 @@ test_classes_w_methods
 
 I can also define classes with :ref:`methods<functions>` which are function definitions that belong to the class
 
-.. _test_classes_w_methods_red:
+
 
 red: make it fail
 #################################################################################
@@ -167,7 +163,7 @@ I add some tests for class methods to ``TestClasses`` in ``classes.py``
 
 and the terminal shows :ref:`AttributeError`
 
-.. _test_classes_w_methods_green:
+
 
 green: make it pass
 #################################################################################
@@ -270,7 +266,7 @@ test_classes_w_attributes_and_methods
 
 Since I know how to define classes with methods and how to define classes with attributes, what happens when I define a class with both?
 
-.. _test_classes_w_attributes_and_methods_red:
+
 
 red: make it fail
 #################################################################################
@@ -291,7 +287,7 @@ I add another test for a class that has both attributes and methods
 
 the terminal shows :ref:`AttributeError`
 
-.. _test_classes_w_attributes_and_methods_green:
+
 
 green: make it pass
 #################################################################################
@@ -320,7 +316,7 @@ To view what :ref:`attributes<AttributeError>` and ``methods`` are defined for a
 
 The ``dir`` :ref:`method<functions>` returns a :ref:`list <lists>` of all :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the object provided to it as input
 
-.. _test_object_attributes_and_methods_red:
+
 
 red: make it fail
 #################################################################################
@@ -337,7 +333,7 @@ I add a test to ``test_classes.py``
 
 the terminal shows :ref:`AssertionError` as the expected and real values do not match
 
-.. _test_object_attributes_and_methods_green:
+
 
 green: make it pass
 #################################################################################
