@@ -47,7 +47,7 @@ green: make it pass
 #################################################################################
 
 
-* I add a function definition with :ref:`True<test_what_is_true>` as the return value since it is expected in 3 out of the 4 cases
+* I add a:ref:`function<functions>`definition with :ref:`True<test_what_is_true>` as the return value since it is expected in 3 out of the 4 cases
 
   .. code-block:: python
 

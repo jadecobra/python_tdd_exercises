@@ -76,7 +76,7 @@ green: make it pass
     # ModuleNotFoundError
     # AttributeError
 
-* I add a function definition to ``functions.py``
+* I add a:ref:`function<functions>`definition to ``functions.py``
 
   .. code-block:: python
 
@@ -86,9 +86,9 @@ green: make it pass
   and we have a passing test
 
   * the test checks if the value of the call to ``functions.function_w_pass`` is :ref:`None`
-  * the function definition simply says `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ yet the test passes
-  * `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is a placeholder keyword which allows the function definition to follow Python syntax rules
-  * the test passes because in Python all :ref:`functions` return :ref:`None` by default, like the function has an invisible line that says ``return None``
+  * the:ref:`function<functions>`definition simply says `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ yet the test passes
+  * `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is a placeholder keyword which allows the:ref:`function<functions>`definition to follow Python syntax rules
+  * the test passes because in Python all :ref:`functions` return :ref:`None` by default, like the:ref:`function<functions>`has an invisible line that says ``return None``
 
 ----
 
@@ -111,7 +111,7 @@ the terminal shows :ref:`AttributeError`
 green: make it fail
 ---------------------------------------------------------------------------------
 
-I add a new function to ``functions.py`` to make the test pass, this time with a ``return`` statement instead of `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
+I add a new:ref:`function<functions>`to ``functions.py`` to make the test pass, this time with a ``return`` statement instead of `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
 
 .. code-block:: python
 
@@ -120,7 +120,7 @@ I add a new function to ``functions.py`` to make the test pass, this time with a
 
 the terminal shows this test also passes
 
-I defined 2 :ref:`functions` with different statements in their body but they both return the same result, because "in Python all :ref:`functions` return :ref:`None` by default, like the function has an invisible line that says ``return None``"
+I defined 2 :ref:`functions` with different statements in their body but they both return the same result, because "in Python all :ref:`functions` return :ref:`None` by default, like the:ref:`function<functions>`has an invisible line that says ``return None``"
 
 *********************************************************************************
 test_functions_w_return_none
@@ -143,7 +143,7 @@ the terminal shows :ref:`AttributeError`
 green: make it pass
 ---------------------------------------------------------------------------------
 
-from the `Zen of Python`_: ``Explicit is better than implicit.`` I add a function definition to ``functions.py`` this time with an explicit ``return`` statement showing the value returned
+from the `Zen of Python`_: ``Explicit is better than implicit.`` I add a:ref:`function<functions>`definition to ``functions.py`` this time with an explicit ``return`` statement showing the value returned
 
 .. code-block:: python
 
@@ -156,7 +156,7 @@ and the terminal shows passing tests.
 review
 *********************************************************************************
 
-The 3 ways I have defined :ref:`functions` so far have the exact same outcome, they all ``return None``. If ``Explicit is better than implicit.`` then I prefer to use ``return None`` telling anyone who reads the code exactly what the function returns.
+The 3 ways I have defined :ref:`functions` so far have the exact same outcome, they all ``return None``. If ``Explicit is better than implicit.`` then I prefer to use ``return None`` telling anyone who reads the code exactly what the:ref:`function<functions>`returns.
 
 Here is what I know so far from the tests
 

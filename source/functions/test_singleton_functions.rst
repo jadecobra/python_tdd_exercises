@@ -80,7 +80,7 @@ the terminal shows :ref:`AttributeError`
 green: make it pass
 ---------------------------------------------------------------------------------
 
-and I add a function for ``singleton_w_inputs`` to ``functions.py``
+and I add a:ref:`function<functions>`for ``singleton_w_inputs`` to ``functions.py``
 
 .. code-block:: python
 

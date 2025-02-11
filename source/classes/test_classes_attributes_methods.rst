@@ -144,7 +144,7 @@ and the terminal shows all tests pass
 test_classes_w_methods
 *********************************************************************************
 
-I can also define classes with :ref:`methods<functions>` which are function definitions that belong to the class
+I can also define classes with :ref:`methods<functions>` which are:ref:`function<functions>`definitions that belong to the class
 
 
 

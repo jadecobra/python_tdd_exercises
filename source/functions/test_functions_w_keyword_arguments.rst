@@ -16,7 +16,7 @@ functions: test_functions_w_keyword_arguments
 
 There is an inherent problem with using positional arguments in functions. It requires the inputs to always be supplied in the right order. If the program is dependent on that order, then it will behave in an unintended way when it receives input out of order.
 
-To ensure the function behaves right regardless of what order the user provides the input I can use Keyword Arguments
+To ensure the:ref:`function<functions>`behaves right regardless of what order the user provides the input I can use Keyword Arguments
 
 *********************************************************************************
 test_functions_w_keyword_arguments
@@ -43,7 +43,7 @@ the terminal shows :ref:`AttributeError`
 green: make it pass
 ---------------------------------------------------------------------------------
 
-* I add a function definition to ``functions.py``
+* I add a:ref:`function<functions>`definition to ``functions.py``
 
   .. code-block:: python
 
@@ -86,16 +86,10 @@ green: make it pass
 
   Eureka! the terminal shows passing tests
 
-
-
-*********************************************************************************
 refactor: make it better
-*********************************************************************************
+---------------------------------------------------------------------------------
 
-So far ``passthrough_w_keyword_arguments`` looks the same as ``passthrough_w_positional_arguments`` did when it took in 2 positional arguments, I have not yet seen a difference between a ``positional argument`` and a ``keyword argument``
-
-
-* I add an assertion that puts the input data out of order to see if there is a difference
+* So far ``passthrough_w_keyword_arguments`` looks the same as ``passthrough_w_positional_arguments`` did when it took in 2 positional arguments, I have not yet seen a difference between a ``positional argument`` and a ``keyword argument``. I add an assertion that puts the input data out of order to see if there is a difference
 
   .. code-block:: python
 
@@ -115,47 +109,35 @@ So far ``passthrough_w_keyword_arguments`` looks the same as ``passthrough_w_pos
               ('my_first_name', 'my_last_name')
           )
 
-  the terminal shows passing tests. Unlike in ``test_functions_w_positional_arguments`` using the name when passing inputs, ensures the function always shows output in the right order regardless of the order in which the input data is given
+  the terminal shows passing tests. Unlike in ``test_functions_w_positional_arguments`` using the name when passing inputs, ensures the:ref:`function<functions>`always shows output in the right order regardless of the order in which the input data is given
 
-The function currently only takes in 2 keyword arguments. What if I want a function that can take in any number of keyword arguments? There is a starred expression for keyword arguments - ``**``.
+* The:ref:`function<functions>`currently only takes in 2 keyword arguments. What if I want a:ref:`function<functions>`that can take in any number of keyword arguments? There is a starred expression for keyword arguments - ``**``. I add an assertion
 
+  .. code-block:: python
 
+      def test_functions_w_keyword_arguments(self):
+          self.assertEqual(
+              functions.passthrough_w_keyword_arguments(
+                  first_name='my_first_name',
+                  last_name='my_last_name'
+              ),
+              ('my_first_name', 'my_last_name')
+          )
+          self.assertEqual(
+              functions.passthrough_w_keyword_arguments(
+                  last_name='my_last_name',
+                  first_name='my_first_name'
+              ),
+              ('my_first_name', 'my_last_name')
+          )
+          self.assertEqual(
+              functions.passthrough_w_keyword_arguments(
+                  a=1, b=2, c=3, d=4
+              ),
+              {}
+          )
 
-red: make it fail
-#################################################################################
-
-I add an assertion
-
-.. code-block:: python
-
-    def test_functions_w_keyword_arguments(self):
-        self.assertEqual(
-            functions.passthrough_w_keyword_arguments(
-                first_name='my_first_name',
-                last_name='my_last_name'
-            ),
-            ('my_first_name', 'my_last_name')
-        )
-        self.assertEqual(
-            functions.passthrough_w_keyword_arguments(
-                last_name='my_last_name',
-                first_name='my_first_name'
-            ),
-            ('my_first_name', 'my_last_name')
-        )
-        self.assertEqual(
-            functions.passthrough_w_keyword_arguments(
-                a=1, b=2, c=3, d=4
-            ),
-            {}
-        )
-
-the terminal shows :ref:`TypeError`
-
-
-
-green: make it pass
-#################################################################################
+  the terminal shows :ref:`TypeError`
 
 * I make the signature of ``passthrough_w_keyword_arguments`` take any number of keyword arguments
 

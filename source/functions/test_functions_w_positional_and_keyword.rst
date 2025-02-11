@@ -61,7 +61,7 @@ green: make it pass
         )
 
   the terminal shows :ref:`AttributeError`
-* I add a definition for the function to ``functions.py``
+* I add a definition for the:ref:`function<functions>`to ``functions.py``
 
   .. code-block:: python
 
@@ -129,7 +129,7 @@ green: make it pass
 refactor: make it better
 ---------------------------------------------------------------------------------
 
-Hold on a second. This looks exactly like what I did in ``test_functions_w_positional_arguments``. I cannot tell from the :ref:`function<functions>` signature which argument is positional and which is a keyword argument and do not want to wait for the function to fail when I send in values to find out
+Hold on a second. This looks exactly like what I did in ``test_functions_w_positional_arguments``. I cannot tell from the :ref:`function<functions>` signature which argument is positional and which is a keyword argument and do not want to wait for the:ref:`function<functions>`to fail when I send in values to find out
 
 * I make the signature of ``takes_positional_and_keyword_arguments`` to have a default value for the keyword argument
 
@@ -199,9 +199,9 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
             ()
         )
 
-  the terminal shows :ref:`TypeError` because the function signature only has two keyword arguments which are not provided in the call
+  the terminal shows :ref:`TypeError` because the:ref:`function<functions>`signature only has two keyword arguments which are not provided in the call
 
-* using what I know from previous tests I can alter the function to use starred expressions
+* using what I know from previous tests I can alter the:ref:`function<functions>`to use starred expressions
 
   .. code-block:: python
 

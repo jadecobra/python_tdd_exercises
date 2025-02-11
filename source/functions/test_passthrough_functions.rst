@@ -35,7 +35,7 @@ the terminal shows :ref:`AttributeError`
 green: make it pass
 ---------------------------------------------------------------------------------
 
-* I add a function definition to ``functions.py``
+* I add a:ref:`function<functions>`definition to ``functions.py``
 
   .. code-block:: python
 
@@ -103,7 +103,7 @@ Wait a minute! Something is not quite right here. The definition for a passthrou
 
     AssertionError: False != True
 
-  the function returns :ref:`False<test_what_is_false>` instead of :ref:`True<test_what_is_true>` in the second case, I am not all the way genius, yet
+  the:ref:`function<functions>`returns :ref:`False<test_what_is_false>` instead of :ref:`True<test_what_is_true>` in the second case, I am not all the way genius, yet
 
 * I change the definition of ``passthrough`` in ``functions.py``
 
@@ -112,7 +112,7 @@ Wait a minute! Something is not quite right here. The definition for a passthrou
     def passthrough(argument):
         return argument
 
-  the terminal shows passing tests. I have more confidence that the passthrough function will return its input.
+  the terminal shows passing tests. I have more confidence that the passthrough:ref:`function<functions>`will return its input.
 
 * I add more tests for good measure using the other Python data structures
 
@@ -129,7 +129,7 @@ Wait a minute! Something is not quite right here. The definition for a passthrou
         self.assertEqual(functions.passthrough(set), False)
         self.assertEqual(functions.passthrough(dict), False)
 
-  the terminal shows :ref:`AssertionError` for each line until I make the input match the output, proving that the passthrough function I have defined returns the input it is given. Hooray! I am genius again
+  the terminal shows :ref:`AssertionError` for each line until I make the input match the output, proving that the passthrough:ref:`function<functions>`I have defined returns the input it is given. Hooray! I am genius again
 
 ----
 

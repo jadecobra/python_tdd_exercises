@@ -34,7 +34,7 @@ green: make it pass
 #################################################################################
 
 
-* I add a function definition to ``truth_table.py``
+* I add a:ref:`function<functions>`definition to ``truth_table.py``
 
   .. code-block:: python
 
@@ -73,7 +73,7 @@ the terminal shows :ref:`AttributeError`
 green: make it pass
 #################################################################################
 
-* I add a function definition to ``truth_table.py``
+* I add a:ref:`function<functions>`definition to ``truth_table.py``
 
   .. code-block:: python
 

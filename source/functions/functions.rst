@@ -12,7 +12,7 @@ Programming involves providing a process with input data and the process returni
 
     argument -> program -> output_data
 
-Which is like :ref:`functions` in mathematics where a function is represented as ``f`` with inputs ``x`` and an output of ``y``
+Which is like :ref:`functions` in mathematics where a:ref:`function<functions>`is represented as ``f`` with inputs ``x`` and an output of ``y``
 
 .. math::
 

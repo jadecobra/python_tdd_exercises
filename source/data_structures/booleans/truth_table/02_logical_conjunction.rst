@@ -110,7 +110,7 @@ green: make it pass
 
     AssertionError: True is not false
 
-* I can make this function return different values based on the input it receives with `if statements`_.I add one for the first case ``self.assertTrue(truth_table.logical_conjunction(True, True))`` where ``p`` and ``q`` are both :ref:`True<test_what_is_true>`
+* I can make this:ref:`function<functions>`return different values based on the input it receives with `if statements`_.I add one for the first case ``self.assertTrue(truth_table.logical_conjunction(True, True))`` where ``p`` and ``q`` are both :ref:`True<test_what_is_true>`
 
   .. code-block:: python
 

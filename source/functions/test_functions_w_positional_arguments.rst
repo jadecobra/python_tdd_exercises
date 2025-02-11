@@ -19,7 +19,7 @@ functions: test_functions_w_positional_arguments
 test_functions_w_positional_arguments
 *********************************************************************************
 
-I can define a function to take in more than one input, For instance if I am writing a function to perform operations on 2 numbers as I do in :doc:`/how_to/calculator` , the function has to be able to take the 2 numbers it performs operations on. I add a new test to ``test_functions.py``
+I can define a:ref:`function<functions>`to take in more than one input, For instance if I am writing a:ref:`function<functions>`to perform operations on 2 numbers as I do in :doc:`/how_to/calculator` , the:ref:`function<functions>`has to be able to take the 2 numbers it performs operations on. I add a new test to ``test_functions.py``
 
 .. code-block:: python
 
@@ -119,7 +119,7 @@ How can I make this better?
           )
 
   the terminal shows passing tests
-* the function currently takes in 2 positional arguments. There are scenarios where a function needs to take in more arguments, like when I do not know the number of positional arguments that will be passed to the function
+* the:ref:`function<functions>`currently takes in 2 positional arguments. There are scenarios where a:ref:`function<functions>`needs to take in more arguments, like when I do not know the number of positional arguments that will be passed to the function
 * I add tests for cases where the number of positional arguments received is not known ``test_functions_w_positional_arguments``
 
   .. code-block:: python
@@ -150,7 +150,7 @@ How can I make this better?
               (bool, int, float, str, tuple, list, set, dict)
           )
 
-  the terminal shows :ref:`TypeError` because 2 positional arguments were expected by the function but 4 were given
+  the terminal shows :ref:`TypeError` because 2 positional arguments were expected by the:ref:`function<functions>`but 4 were given
 * in Python I can represent multiple arguments using a starred expression `see arbitrary argument lists <https://docs.python.org/3/tutorial/controlflow.html#arbitrary-argument-lists>`_, so I make the signature of ``functions_w_positional_arguments`` with a starred expression to alow it take in any number of arguments
 
   .. code-block:: python

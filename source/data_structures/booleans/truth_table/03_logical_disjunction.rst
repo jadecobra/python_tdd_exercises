@@ -42,7 +42,7 @@ green: make it pass
 ~~~~~~~~~~~~~~~~~~~
 
 
-* Then I make ``truth_table.py`` with a function definition like I did for ``logical_conjunction``
+* Then I make ``truth_table.py`` with a:ref:`function<functions>`definition like I did for ``logical_conjunction``
 
   .. code-block:: python
 

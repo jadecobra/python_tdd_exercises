@@ -35,7 +35,7 @@ green: make it pass
 #################################################################################
 
 
-* then I add a function definition to ``truth_table.py``
+* then I add a:ref:`function<functions>`definition to ``truth_table.py``
 
   .. code-block:: python
 
@@ -119,7 +119,7 @@ green: make it pass
 #################################################################################
 
 
-* When I add a function definition to ``truth_table.py``
+* When I add a:ref:`function<functions>`definition to ``truth_table.py``
 
   .. code-block:: python
 

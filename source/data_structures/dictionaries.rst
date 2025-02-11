@@ -63,14 +63,14 @@ refactor: make it better
     # ModuleNotFoundError
     # AttributeError
 
-* I add a function definition to ``dictionaries.py``
+* I add a:ref:`function<functions>`definition to ``dictionaries.py``
 
   .. code-block:: python
 
     def a_dict():
         return None
 
-  and the terminal shows :ref:`AssertionError` since the function I defined returns :ref:`None` instead of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+  and the terminal shows :ref:`AssertionError` since the:ref:`function<functions>`I defined returns :ref:`None` instead of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
   .. code-block:: python
 
@@ -90,7 +90,7 @@ refactor: make it better
       E    AssertionError: {} != {'key': 'value'}
 
   - ``AssertionError: {} != {'key': 'value'}`` shows that two values are not equal
-  - the value on the left ``{}`` is what the function returns, in other words the result of calling ``dictionaries.a_dict()`` from the test
+  - the value on the left ``{}`` is what the:ref:`function<functions>`returns, in other words the result of calling ``dictionaries.a_dict()`` from the test
   - the value on the right ``{'key': 'value'}`` is what is expected
   - ``!=`` means ``not equal to``
 
