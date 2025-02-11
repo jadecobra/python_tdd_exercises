@@ -1,6 +1,5 @@
 .. include:: ../links.rst
 
-.. _test_singleton_functions:
 
 #################################################################################
 functions: test_singleton_functions

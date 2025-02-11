@@ -644,7 +644,6 @@ which gives me passing tests. I remove ``test_multiplication`` from the TODO lis
 test_division
 *********************************************************************************
 
-.. _test_division_red_0:
 
 red: make it fail
 #################################################################################
@@ -671,7 +670,6 @@ the terminal shows :ref:`AttributeError`
 
   AttributeError: module 'src.calculator' has no attribute 'divide'
 
-.. _test_division_green_0:
 
 green: make it pass
 #################################################################################
@@ -717,7 +715,6 @@ green: make it pass
 how to test that an Exception is raised
 ---------------------------------------------------------------------------------
 
-.. _test_division_red_1:
 
 red: make it fail
 #################################################################################
@@ -746,7 +743,6 @@ the terminal shows my expectation with a failure for any value of ``x`` since ``
 
 Exceptions_ like ZeroDivisionError_ break execution of a program. No code will run past the line that caused one, which means I have to take care of this one. See :doc:`/how_to/exception_handling_tests` for more
 
-.. _test_division_green_1:
 
 green: make it pass
 #################################################################################
@@ -779,7 +775,6 @@ green: make it pass
 
   the test passes, showing that the code raises the Exception_
 
-.. _test_division_refactor_1:
 
 refactor: make it better
 #################################################################################

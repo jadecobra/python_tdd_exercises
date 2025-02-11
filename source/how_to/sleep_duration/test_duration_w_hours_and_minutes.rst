@@ -1,6 +1,5 @@
 .. include:: ../../links.rst
 
-.. _test_duration_w_hours_and_minutes:
 
 #################################################################################
 how to measure sleep duration: test_duration_w_hours_and_minutes
@@ -197,7 +196,6 @@ green: make it pass
 refactor: make it better
 *********************************************************************************
 
-.. _test_duration_calculation:
 
 test_duration_calculation
 #################################################################################
@@ -335,7 +333,6 @@ The ``//`` operator returns a whole number which is how many times the bottom nu
 
   and the terminal shows passing tests
 
-.. _test_the_modulo_operation:
 
 test_the_modulo_operation
 #################################################################################

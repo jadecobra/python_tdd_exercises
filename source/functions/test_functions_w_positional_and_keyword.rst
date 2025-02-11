@@ -1,6 +1,5 @@
 .. include:: ../links.rst
 
-.. _test_functions_w_positional_and_keyword_arguments:
 
 #################################################################################
 functions: test_functions_w_positional_and_keyword_arguments
@@ -345,7 +344,6 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
 
 ----
 
-.. _test_functions_w_positional_and_keyword_arguments_review:
 
 *********************************************************************************
 review

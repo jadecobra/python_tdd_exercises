@@ -1,6 +1,5 @@
 .. include:: ../links.rst
 
-.. _test_functions_w_positional_arguments:
 
 #################################################################################
 functions: test_functions_w_positional_arguments

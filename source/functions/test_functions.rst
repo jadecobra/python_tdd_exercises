@@ -12,7 +12,6 @@ test_functions
 
 ----
 
-.. _test_functions_w_pass:
 
 *********************************************************************************
 test_functions_w_pass

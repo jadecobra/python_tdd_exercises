@@ -18,7 +18,6 @@ This is a continuation of :doc:`exception_handling_tests`
 
 ----
 
-.. _test_catching_exceptions:
 
 *********************************************************************************
 test_catching_exceptions_w_messages
@@ -127,7 +126,6 @@ green: make it pass
 
 ----
 
-.. _test_catching_failure:
 
 *********************************************************************************
 test_catching_failure
@@ -224,7 +222,6 @@ green: make it pass
 
 ----
 
-.. _test_catching_success:
 
 *********************************************************************************
 test_catching_success

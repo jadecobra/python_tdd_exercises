@@ -1,6 +1,5 @@
 .. include:: ../../links.rst
 
-.. _test_duration_tests:
 
 #################################################################################
 how to measure sleep duration: test_duration_tests

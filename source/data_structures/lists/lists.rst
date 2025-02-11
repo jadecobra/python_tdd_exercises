@@ -25,7 +25,6 @@ A list_ is an object_ that can hold other objects_
 * Lists can be changed after creation by performing an operation, this means they are mutable
 * Lists can be looped over
 
-.. _test_making_a_list:
 
 *********************************************************************************
 test_making_a_list
@@ -292,7 +291,6 @@ green: make it pass
 
 ----
 
-.. _test_getting_items_from_a_list:
 
 *********************************************************************************
 test_getting_items_from_a_list
@@ -391,7 +389,6 @@ green: make it pass
 
 ----
 
-.. _test_index_error:
 
 *********************************************************************************
 test_index_error
@@ -464,7 +461,6 @@ refactor: make it better
 
 ----
 
-.. _test_list_attributes_and_methods:
 
 *********************************************************************************
 test_list_attributes_and_methods

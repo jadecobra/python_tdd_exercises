@@ -1,6 +1,5 @@
 .. include:: ../../links.rst
 
-.. _test_duration_w_an_earlier_wake_than_sleep_time:
 
 #################################################################################
 how to measure sleep duration: test_duration_w_an_earlier_wake_than_sleep_time
@@ -448,7 +447,6 @@ refactor: make it better
 
   all tests are still passing! Fantastic!
 
-.. _test_duration_w_an_earlier_wake_than_sleep_time_review:
 
 *********************************************************************************
 review

@@ -1,6 +1,5 @@
 .. include:: ../links.rst
 
-.. _test_passthrough_functions:
 
 #################################################################################
 functions: test_passthrough_functions

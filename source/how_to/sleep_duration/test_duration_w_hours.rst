@@ -1,6 +1,5 @@
 .. include:: ../../links.rst
 
-.. _test_duration_w_hours:
 
 #################################################################################
 how to measure sleep duration: test_duration_w_hours
@@ -274,7 +273,6 @@ green: make it pass
 
   and the test passes
 
-.. _test_duration_w_hours_refactor_0:
 
 *********************************************************************************
 refactor: make it better
@@ -456,7 +454,6 @@ refactor: make it better
         sleep_hour = random.randint(0, 23)
     ...
 
-.. _test_string_splitting:
 
 test_string_splitting
 #################################################################################
@@ -653,7 +650,6 @@ refactor: make it better
 
   and the test passes
 
-.. _test_converting_strings_to_numbers:
 
 test_converting_strings_to_numbers
 #################################################################################
@@ -828,7 +824,6 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
 
 ----
 
-.. _test_duration_w_hours_review:
 
 *********************************************************************************
 review

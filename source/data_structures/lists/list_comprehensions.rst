@@ -18,14 +18,13 @@ lists: list comprehensions
 
 `List Comprehensions <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#list-comprehensions>`_ are a way to make a :ref:`list <lists>` from an iterable_. It is a simple way to go over every item in the :ref:`list <lists>` and perform an operation usually in one line
 
-.. _test_making_a_list_from_an_iterable:
 
 *********************************************************************************
 test_making_a_list_from_an_iterable
 *********************************************************************************
 
 red: make it fail
-#################################################################################
+---------------------------------------------------------------------------------
 
 I add a file called ``test_list_comprehensions.py`` to the ``tests`` folder with the following code
 
@@ -59,9 +58,8 @@ the terminal shows :ref:`AssertionError` because ``a_list`` is no longer empty, 
 
   E    AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
 
-
 green: make it pass
-#################################################################################
+---------------------------------------------------------------------------------
 
 I make the values in the test match the result
 
@@ -82,7 +80,7 @@ I make the values in the test match the result
 and the test passes
 
 refactor: make it better
-#################################################################################
+---------------------------------------------------------------------------------
 
 * I add another test to check what happens when I use the :ref:`list <lists>` constructor_ on ``container``
 
@@ -220,14 +218,12 @@ From the tests I see that I can make a :ref:`list <lists>` from any iterable by 
 
 ----
 
-.. _test_making_a_list_w_a_for_loop:
-
 *********************************************************************************
 test_making_a_list_w_a_for_loop
 *********************************************************************************
 
 red: make it fail
-#################################################################################
+---------------------------------------------------------------------------------
 
 I add a test for making a list with a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ loop
 
@@ -253,9 +249,8 @@ the terminal shows :ref:`AssertionError` for the values of ``a_list`` because it
 
   AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
 
-
 green: make it pass
-#################################################################################
+---------------------------------------------------------------------------------
 
 * I make the values of the test match the result
 
@@ -344,8 +339,6 @@ From the tests I see that I can make a :ref:`list <lists>` from any iterable by 
 * the :ref:`list <lists>` constructor
 
 ----
-
-.. _test_making_lists_w_list_comprehensions:
 
 ****************************************************************************************
 test_making_lists_w_list_comprehensions

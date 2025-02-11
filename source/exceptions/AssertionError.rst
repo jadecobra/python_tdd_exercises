@@ -39,7 +39,6 @@ The difference between my expectations and reality (what happens when the progra
 
 ----
 
-.. _test_assertion_error_w_none:
 
 *********************************************************************************
 test_assertion_error_w_none
@@ -259,7 +258,6 @@ I can also make assertions with some :ref:`methods<functions>` from the `unittes
 
 ----
 
-.. _test_assertion_error_w_false:
 
 *********************************************************************************
 test_assertion_error_w_false
@@ -336,7 +334,6 @@ and the test passes. Time to add notes
 
 ----
 
-.. _test_assertion_error_w_true:
 
 *********************************************************************************
 test_assertion_error_w_true
@@ -417,7 +414,6 @@ These statements can be summed up as - :ref:`True<test_what_is_true>`, :ref:`Fal
 
 ----
 
-.. _test_assertion_error_w_equality:
 
 *********************************************************************************
 test_assertion_error_w_equality
@@ -870,7 +866,6 @@ refactor: make it better
 
 ----
 
-.. _test_assertion_error_review:
 
 *********************************************************************************
 review

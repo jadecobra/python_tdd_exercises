@@ -1,6 +1,5 @@
 .. include:: ../links.rst
 
-.. _test_classes:
 
 #################################################################################
 classes: test_classes
@@ -130,7 +129,6 @@ Here is a quick review of what has happened so far
 
 ----
 
-.. _test_defining_classes_w_parentheses:
 
 *********************************************************************************
 test_defining_classes_w_parentheses
@@ -182,7 +180,6 @@ green: make it pass
 
 ----
 
-.. _test_defining_classes_w_object:
 
 *********************************************************************************
 test_defining_classes_w_object

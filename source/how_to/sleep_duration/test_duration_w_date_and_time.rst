@@ -1,6 +1,5 @@
 .. include:: ../../links.rst
 
-.. _test_duration_w_date_and_time:
 
 #################################################################################
 how to measure sleep duration: test_duration_w_date_and_time
@@ -76,7 +75,6 @@ red: make it fail
 
   the test calls ``duration``, which calls ``read_timestamp``, which uses the int_ constructor_ to change the timestamp string_ to a number after it calls `str.split`_, but it is not in the right format
 
-.. _test_duration_w_date_and_time_green_0:
 
 *********************************************************************************
 green: make it pass
@@ -237,7 +235,6 @@ I want something that can read dates and times from timestamps. I search `python
       Attributes: year, month, day, hour,
       minute, second, microsecond, and tzinfo.
 
-.. _test_datetime_objects:
 
 test_datetime_objects
 #################################################################################
@@ -529,7 +526,6 @@ refactor: make it better
 
   still green!
 
-.. _test_get_datetime:
 
 test_get_datetime
 #################################################################################

@@ -19,7 +19,6 @@ requirements
 
 ----
 
-.. _test_classes_w_attributes:
 
 *********************************************************************************
 test_classes_w_attributes
@@ -138,7 +137,6 @@ and the terminal shows all tests pass
 
 ----
 
-.. _test_classes_w_methods:
 
 *********************************************************************************
 test_classes_w_methods
@@ -256,7 +254,6 @@ refactor: make it better
 
 ----
 
-.. _test_classes_w_attributes_and_methods:
 
 *********************************************************************************
 test_classes_w_attributes_and_methods
@@ -304,7 +301,6 @@ I make ``classes.py`` to make the tests pass by defining the class, attribute an
 
 ----
 
-.. _test_object_attributes_and_methods:
 
 *********************************************************************************
 test_object_attributes_and_methods

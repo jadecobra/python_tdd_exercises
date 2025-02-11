@@ -1,6 +1,5 @@
 .. include:: ../links.rst
 
-.. _test_classes_w_initializers:
 
 #################################################################################
 classes: test_classes_w_initializers
@@ -287,7 +286,6 @@ refactor: make it better
 
 ----
 
-.. _test_classes_w_initializers_review:
 
 *********************************************************************************
 review
