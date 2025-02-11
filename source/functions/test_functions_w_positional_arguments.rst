@@ -173,7 +173,7 @@ From the tests I know
 * :ref:`functions` are defined using the def_ keyword
 * :ref:`functions` return :ref:`None` by default
 
-Would you like to :ref:`test :ref:`functions` with keyword arguments?<test_functions_w_keyword_arguments>`
+Would you like to :ref:`test functions` with keyword arguments?<test_functions_w_keyword_arguments>`
 
 ----
 
