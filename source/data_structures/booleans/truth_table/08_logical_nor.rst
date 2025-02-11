@@ -67,7 +67,7 @@ refactor: make it better
             return True
         return False
 
-  the terminal shows a ``SyntaxError`` and I rewrite the statement with proper syntax, "factoring" out the not_
+  the terminal shows a SyntaxError_ and I rewrite the statement with proper syntax, "factoring" out the not_
 
   .. code-block:: python
 

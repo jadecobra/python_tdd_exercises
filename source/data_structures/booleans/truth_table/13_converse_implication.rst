@@ -93,7 +93,7 @@ refactor: make it better
         if (not not p) (not and) (not q):
             return True
 
-  the terminal shows a ``SyntaxError``
+  the terminal shows a SyntaxError_
 * which I fix by canceling out ``not not`` and replacing ``not and`` with or_
 
   .. code-block:: python

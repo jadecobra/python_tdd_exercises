@@ -14,15 +14,15 @@ functions: test_functions_w_positional_and_keyword_arguments
 
 ----
 
-I can also define :ref:`functions` to take both positional arguments and keyword arguments as inputs
-
-.. _test_functions_w_positional_and_keyword_arguments_red:
 
 *********************************************************************************
+test_functions_w_positional_and_keyword_arguments
+*********************************************************************************
+
 red: make it fail
-*********************************************************************************
+---------------------------------------------------------------------------------
 
-I add a new failing test to ``test_functions.py``
+I can also define :ref:`functions` to take both positional arguments and keyword arguments as inputs. I add a new failing test to ``test_functions.py``
 
 .. code-block:: python
 
@@ -34,7 +34,7 @@ I add a new failing test to ``test_functions.py``
         {}
       )
 
-the terminal shows a ``SyntaxError`` because I put a positional argument after a keyword argument. I add the error to the list of Exceptions_ encountered
+the terminal shows a SyntaxError_ because I put a positional argument after a keyword argument. I add the error to the list of Exceptions_ encountered
 
 .. code-block:: python
 
@@ -45,11 +45,8 @@ the terminal shows a ``SyntaxError`` because I put a positional argument after a
   # TypeError
   # SyntaxError
 
-.. _test_functions_w_positional_and_keyword_arguments_green:
-
-*********************************************************************************
 green: make it pass
-*********************************************************************************
+---------------------------------------------------------------------------------
 
 * I fix the order of arguments in ``test_functions_w_positional_and_keyword_arguments`` since keyword arguments come after positional arguments
 
@@ -128,11 +125,9 @@ green: make it pass
 
   the terminal shows passing tests
 
-.. _test_functions_w_positional_and_keyword_arguments_refactor:
 
-*********************************************************************************
 refactor: make it better
-*********************************************************************************
+---------------------------------------------------------------------------------
 
 Hold on a second. This looks exactly like what I did in ``test_functions_w_positional_arguments``. I cannot tell from the :ref:`function<functions>` signature which argument is positional and which is a keyword argument and do not want to wait for the function to fail when I send in values to find out
 
@@ -219,7 +214,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
 
     E   AssertionError: Tuples differ: (('my_first_name',), {'last_name': 'my_last_name'}) != ('my_first_name', 'my_last_name')
 
-* I comment out the other tests for a bit, so I can focus on the failing test
+* I comment out the other assertions so I can focus on the failing test
 
   .. code-block:: python
 
@@ -250,7 +245,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
           #    ()
           # )
 
-* I make the expected values in the test to make it pass
+* I change the expected values in the test to make it pass
 
   .. code-block:: python
 

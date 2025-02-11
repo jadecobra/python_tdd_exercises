@@ -19,7 +19,7 @@ test_functions_w_pass
 *********************************************************************************
 
 red: make it fail
-#################################################################################
+---------------------------------------------------------------------------------
 
 * I open a terminal to run :ref:`makePythonTdd.sh` with ``functions`` as the name of the project
 
@@ -65,7 +65,7 @@ the terminal shows :ref:`ModuleNotFoundError` , and I add it to the list of Exce
   # ModuleNotFoundError
 
 green: make it pass
-#################################################################################
+---------------------------------------------------------------------------------
 
 * I make a file called ``functions.py`` in the project folder and the terminal shows :ref:`AttributeError`\ , which I add to the list of Exceptions_ encountered
 
@@ -92,14 +92,12 @@ green: make it pass
 
 ----
 
-.. _test_functions_w_return:
-
 *********************************************************************************
 test_functions_w_return
 *********************************************************************************
 
 red: make it fail
-#################################################################################
+---------------------------------------------------------------------------------
 
 I add a new failing test to ``TestFunctions`` in ``test_functions.py`` to check that :ref:`functions` always return :ref:`None`
 
@@ -111,7 +109,7 @@ I add a new failing test to ``TestFunctions`` in ``test_functions.py`` to check 
 the terminal shows :ref:`AttributeError`
 
 green: make it fail
-#################################################################################
+---------------------------------------------------------------------------------
 
 I add a new function to ``functions.py`` to make the test pass, this time with a ``return`` statement instead of `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
 
@@ -124,14 +122,12 @@ the terminal shows this test also passes
 
 I defined 2 :ref:`functions` with different statements in their body but they both return the same result, because "in Python all :ref:`functions` return :ref:`None` by default, like the function has an invisible line that says ``return None``"
 
-.. _test_functions_w_return_none:
-
 *********************************************************************************
 test_functions_w_return_none
 *********************************************************************************
 
 red: make it fail
-#################################################################################
+---------------------------------------------------------------------------------
 
 I add one more test to the ``TestFunctions`` class in ``test_functions.py`` to help drive home the point
 
@@ -145,7 +141,7 @@ I add one more test to the ``TestFunctions`` class in ``test_functions.py`` to h
 the terminal shows :ref:`AttributeError`
 
 green: make it pass
-#################################################################################
+---------------------------------------------------------------------------------
 
 from the `Zen of Python`_: ``Explicit is better than implicit.`` I add a function definition to ``functions.py`` this time with an explicit ``return`` statement showing the value returned
 

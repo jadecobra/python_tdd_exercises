@@ -14,13 +14,12 @@ functions: test_functions_w_positional_arguments
 
 ----
 
-I can define a function to take in more than one input, For instance if I am writing a function to perform operations on 2 numbers as I do in :doc:`/how_to/calculator` , the function has to be able to take the 2 numbers it performs operations on
 
 *********************************************************************************
-red: make it fail
+test_functions_w_positional_arguments
 *********************************************************************************
 
-I add a new test to ``test_functions.py``
+I can define a function to take in more than one input, For instance if I am writing a function to perform operations on 2 numbers as I do in :doc:`/how_to/calculator` , the function has to be able to take the 2 numbers it performs operations on. I add a new test to ``test_functions.py``
 
 .. code-block:: python
 
@@ -34,9 +33,8 @@ I add a new test to ``test_functions.py``
 
 the terminal shows :ref:`AttributeError`
 
-*********************************************************************************
 green: make it pass
-*********************************************************************************
+---------------------------------------------------------------------------------
 
 * I add the solution I know works from ``test_passthrough_functions`` ``functions.py``
 
@@ -67,9 +65,8 @@ green: make it pass
 
   the terminal shows passing tests
 
-*********************************************************************************
 refactor: make it better
-*********************************************************************************
+---------------------------------------------------------------------------------
 
 How can I make this better?
 
