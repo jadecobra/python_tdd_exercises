@@ -52,7 +52,7 @@ test_singleton_functions_w_inputs
 
 .. _test_singleton_functions_w_inputs_red:
 
-red: make it pass
+red: make it fail
 #################################################################################
 
 
