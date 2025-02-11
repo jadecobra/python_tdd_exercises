@@ -25,8 +25,6 @@ So far I have gone over how to define classes, attributes and methods. I now exp
 
 When making a new class, we can define an initializer which is a :ref:`method<functions>` that can receive inputs to be used to customize instances/copies of the class
 
-
-
 *********************************************************************************
 red: make it fail
 *********************************************************************************
@@ -39,8 +37,6 @@ I add a failing test to ``test_classes.py``
       self.assertEqual(classes.Boy().sex, 'M')
 
 the terminal shows :ref:`AttributeError`
-
-
 
 *********************************************************************************
 green: make it pass
@@ -79,8 +75,6 @@ green: make it pass
         sex = 'M'
 
   the terminal shows passing tests
-
-
 
 *********************************************************************************
 refactor: make it better

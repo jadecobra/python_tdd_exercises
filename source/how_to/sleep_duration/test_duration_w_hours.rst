@@ -19,8 +19,6 @@ This is part 1 of a program that calculates the difference between a given wake 
 
 ----
 
-
-
 *********************************************************************************
 red: make it fail
 *********************************************************************************
@@ -77,8 +75,6 @@ red: make it fail
     # Exceptions Encountered
     # AssertionError
     # TypeError
-
-
 
 *********************************************************************************
 green: make it pass
@@ -458,8 +454,6 @@ refactor: make it better
 test_string_splitting
 #################################################################################
 
-
-
 red: make it fail
 ---------------------------------------------------------------------------------
 
@@ -483,8 +477,6 @@ the terminal shows :ref:`AssertionError`
 
 `str.split`_ returns a :ref:`list <lists>` when called
 
-
-
 green: make it pass
 ---------------------------------------------------------------------------------
 
@@ -497,8 +489,6 @@ I copy the :ref:`list <lists>` from the terminal and paste it in the test to mak
   )
 
 green again
-
-
 
 refactor: make it better
 ---------------------------------------------------------------------------------

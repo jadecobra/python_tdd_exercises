@@ -22,8 +22,6 @@ In this chapter I write a program that does the arithmetic_ operations of additi
 test_addition
 *********************************************************************************
 
-
-
 red: make it fail
 #################################################################################
 
@@ -92,8 +90,6 @@ red: make it fail
     NameError: name 'src' is not defined
 
   because ``src`` is not defined in ``test_calculator.py``
-
-
 
 green: make it pass
 #################################################################################
@@ -209,14 +205,10 @@ green: make it pass
 
   the test passes, time for a victory lap!
 
-
-
 refactor: make it better
 #################################################################################
 
 The ``add`` :ref:`function<functions>` passes the test but does not meet the actual requirement because it always returns ``1``, it does not care about the inputs. I want it to do a calculation with the inputs and return the result
-
-
 
 red: make it fail
 ---------------------------------------------------------------------------------
@@ -241,8 +233,6 @@ and get :ref:`AssertionError`
 
   E    AssertionError: 1 != 0
 
-
-
 the :ref:`function<functions>` returns ``1`` and the test expects ``0``
 
 green: make it pass
@@ -256,8 +246,6 @@ when I change the `return statement`_ to the sum of the inputs
       return x + y
 
 the terminal shows a passing test
-
-
 
 refactor: make it better
 ---------------------------------------------------------------------------------
@@ -402,8 +390,6 @@ refactor: make it better
 test_subtraction
 *********************************************************************************
 
-
-
 red: make it fail
 #################################################################################
 
@@ -434,8 +420,6 @@ red: make it fail
   .. code-block:: python
 
     AttributeError: module 'src.calculator' has no attribute 'subtract'
-
-
 
 green: make it pass
 #################################################################################
@@ -509,8 +493,6 @@ green: make it pass
         return x - y
 
   the test passes. SUCCESS!
-
-
 
 refactor: make it better
 #################################################################################
@@ -588,8 +570,6 @@ refactor: make it better
 test_multiplication
 *********************************************************************************
 
-
-
 red: make it fail
 #################################################################################
 
@@ -614,8 +594,6 @@ and the terminal shows :ref:`AttributeError`
 .. code-block:: python
 
   AttributeError: module 'src.calculator' has no attribute 'multiply'
-
-
 
 green: make it pass
 #################################################################################
@@ -863,8 +841,6 @@ test_calculator_tests
 
 Since everything is green, I can write the program that makes the tests pass without looking at them
 
-
-
 red: make it fail
 #################################################################################
 
@@ -876,8 +852,6 @@ red: make it fail
     AttributeError: module 'src.calculator' has no attribute 'subtract'
 
   can you tell what Exceptions_ will show up as I go along?
-
-
 
 green: make it pass
 #################################################################################

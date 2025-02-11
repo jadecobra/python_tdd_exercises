@@ -6,8 +6,6 @@ import unittest
 def random_number(start, end, digits=2):
     return f'{random.randint(start, end):0{digits}}'
 
-
-
 def get_random_timestamp():
     return (
         f'{random_number(0,9999,4)}/'

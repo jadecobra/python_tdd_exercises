@@ -21,8 +21,6 @@ This is part 5 of a program that calculates the difference between a given wake 
 
 I want to write a program that makes the tests in ``test_sleep_duration.py`` pass without looking at them
 
-
-
 *********************************************************************************
 red: make it fail
 *********************************************************************************
@@ -33,8 +31,6 @@ red: make it fail
   .. code-block:: python
 
     AttributeError: module 'sleep_duration' has no attribute 'get_datetime'
-
-
 
 *********************************************************************************
 green: make it pass
@@ -517,8 +513,6 @@ green: make it pass
             )
 
   and the terminal shows passing tests! YES!!
-
-
 
 *********************************************************************************
 refactor: make it better

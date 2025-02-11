@@ -393,8 +393,6 @@ red: make it fail
 
     AttributeError: module 'src.attribute_error' has no attribute 'AClass'
 
-
-
 green: make it pass
 #################################################################################
 
@@ -618,8 +616,6 @@ green: make it pass
             return None
 
   and the test passes
-
-
 
 refactor: make it better
 #################################################################################

@@ -26,8 +26,6 @@ Reviewing what I know so far, for any boolean operation involving 2 inputs: ``p`
 * :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`
 * :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
 
-
-
 red: make it fail
 #################################################################################
 

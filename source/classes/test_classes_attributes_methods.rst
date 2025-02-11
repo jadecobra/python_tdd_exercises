@@ -26,8 +26,6 @@ test_classes_w_attributes
 
 I now add some tests for attributes since I know how to define a class for attributes
 
-
-
 red: make it fail
 #################################################################################
 
@@ -88,12 +86,8 @@ green: make it pass
 
   and the terminal shows all tests passed
 
-
-
 refactor: make it better
 #################################################################################
-
-
 
 red: make it fail
 ---------------------------------------------------------------------------------
@@ -143,8 +137,6 @@ test_classes_w_methods
 *********************************************************************************
 
 I can also define classes with :ref:`methods<functions>` which are:ref:`function<functions>`definitions that belong to the class
-
-
 
 red: make it fail
 #################################################################################
@@ -221,8 +213,6 @@ green: make it pass
 
   and the test passes
 
-
-
 refactor: make it better
 #################################################################################
 
@@ -261,8 +251,6 @@ test_classes_w_attributes_and_methods
 
 Since I know how to define classes with methods and how to define classes with attributes, what happens when I define a class with both?
 
-
-
 red: make it fail
 #################################################################################
 
@@ -281,8 +269,6 @@ I add another test for a class that has both attributes and methods
       )
 
 the terminal shows :ref:`AttributeError`
-
-
 
 green: make it pass
 #################################################################################
@@ -310,8 +296,6 @@ To view what :ref:`attributes<AttributeError>` and ``methods`` are defined for a
 
 The ``dir`` :ref:`method<functions>` returns a :ref:`list <lists>` of all :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the object provided to it as input
 
-
-
 red: make it fail
 #################################################################################
 
@@ -326,8 +310,6 @@ I add a test to ``test_classes.py``
     )
 
 the terminal shows :ref:`AssertionError` as the expected and real values do not match
-
-
 
 green: make it pass
 #################################################################################

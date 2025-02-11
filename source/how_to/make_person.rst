@@ -1347,8 +1347,6 @@ refactor: make it better
 test_person_tests
 *********************************************************************************
 
-
-
 red: make it fail
 #################################################################################
 
@@ -1358,8 +1356,6 @@ red: make it fail
   .. code-block:: python
 
     AttributeError: module 'src.person' has no attribute 'factory'
-
-
 
 green: make it pass
 #################################################################################

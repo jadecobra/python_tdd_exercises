@@ -153,8 +153,6 @@ refactor: make it better
 
 From the tests I see that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
 
-
-
 * ``exclusive disjunction`` is ``!=`` or the opposite of ``logical_equality``
 * ``logical equality`` is ``==``
 * ``logical implication`` is ``not p or q``

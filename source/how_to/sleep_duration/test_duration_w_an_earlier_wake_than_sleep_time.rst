@@ -21,8 +21,6 @@ This is part 3 of a program that calculates the difference between a given wake 
 
 I want to test the ``duration`` :ref:`function<functions>` with a ``wake_time`` that is earlier than the ``sleep_time``
 
-
-
 *********************************************************************************
 red: make it fail
 *********************************************************************************
@@ -56,8 +54,6 @@ and get :ref:`AssertionError`
   AssertionError: '-2:12' != ''
   AssertionError: '-8:34' != ''
   AssertionError: '-10:57' != ''
-
-
 
 *********************************************************************************
 green: make it pass
@@ -183,8 +179,6 @@ green: make it pass
         )
 
   and the terminal shows passing tests with no more random failures, green, green, green, green all the way!
-
-
 
 *********************************************************************************
 refactor: make it better

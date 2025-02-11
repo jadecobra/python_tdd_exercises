@@ -21,8 +21,6 @@ This is part 4 of a program that calculates the difference between a given wake 
 
 I want to test the ``duration`` :ref:`function<functions>` with timestamps that have dates
 
-
-
 *********************************************************************************
 red: make it fail
 *********************************************************************************
@@ -220,8 +218,6 @@ green: make it pass
 
   and the test passes
 
-
-
 *********************************************************************************
 refactor: make it better
 *********************************************************************************
@@ -238,8 +234,6 @@ I want something that can read dates and times from timestamps. I search `python
 
 test_datetime_objects
 #################################################################################
-
-
 
 red: make it fail
 ---------------------------------------------------------------------------------
@@ -265,8 +259,6 @@ and the terminal shows NameError_
 .. code-block:: python
 
   NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
-
-
 
 green: make it pass
 ---------------------------------------------------------------------------------
@@ -332,8 +324,6 @@ The `datetime.datetime.strptime`_ :ref:`method<functions>` returns a `datetime.d
 - ``%M`` for minutes
 
 there are more details in `strftime() and strptime() behavior <https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior>`_
-
-
 
 refactor: make it better
 ---------------------------------------------------------------------------------
@@ -530,8 +520,6 @@ refactor: make it better
 test_get_datetime
 #################################################################################
 
-
-
 red: make it fail
 ---------------------------------------------------------------------------------
 
@@ -589,8 +577,6 @@ and get :ref:`AssertionError`
   AssertionError: datetime.datetime(1999, 12, 31, 9, 16) != datetime.datetime(2006, 11, 21, 16, 30)
   AssertionError: datetime.datetime(1999, 12, 31, 15, 5) != datetime.datetime(2006, 11, 21, 16, 30)
 
-
-
 green: make it pass
 ---------------------------------------------------------------------------------
 
@@ -611,8 +597,6 @@ I add the variable to the expectation
       )
 
 and the terminal shows green again
-
-
 
 refactor: make it better
 ---------------------------------------------------------------------------------

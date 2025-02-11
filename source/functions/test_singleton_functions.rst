@@ -74,8 +74,6 @@ I add a new test that checks if a singleton that takes inputs returns the same v
 
 the terminal shows :ref:`AttributeError`
 
-
-
 green: make it pass
 ---------------------------------------------------------------------------------
 
