@@ -228,85 +228,81 @@ refactor: make it better
 
   the terminal shows passing tests. From these tests, I can say that keyword arguments are treated as :ref:`dictionaries`  in Python
 
+* I add one more assertion to ``test_functions_w_keyword_arguments`` to drill the lesson
 
+  .. code-block:: python
 
-refactor: make it better
-#################################################################################
+    def test_functions_w_keyword_arguments(self):
+        self.assertEqual(
+            functions.passthrough_w_keyword_arguments(
+                first_name='my_first_name',
+                last_name='my_last_name'
+            ),
+            {
+                'first_name': 'my_first_name',
+                'last_name': 'my_last_name'
+            }
+        )
+        self.assertEqual(
+            functions.passthrough_w_keyword_arguments(
+                last_name='my_last_name',
+                first_name='my_first_name'
+            ),
+            {
+                'first_name': 'my_first_name',
+                'last_name': 'my_last_name'
+            }
+        )
+        self.assertEqual(
+            functions.passthrough_w_keyword_arguments(
+                a=1, b=2, c=3, d=4
+            ),
+            {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+        )
+        self.assertEqual(
+            functions.passthrough_w_keyword_arguments(
+                a_boolean=bool,
+                an_integer=int,
+                a_float=float,
+                a_string=str,
+                a_tuple=tuple,
+                a_list=list,
+                a_set=set,
+                a_dictionary=dict
+            ),
+            {}
+        )
 
-I add one more assertion to ``test_functions_w_keyword_arguments`` to drill the lesson
+  the terminal shows :ref:`AssertionError` and I make the expected values match the values from the terminal
 
-.. code-block:: python
+  .. code-block:: python
 
-  def test_functions_w_keyword_arguments(self):
-      self.assertEqual(
-          functions.passthrough_w_keyword_arguments(
-              first_name='my_first_name',
-              last_name='my_last_name'
-          ),
-          {
-              'first_name': 'my_first_name',
-              'last_name': 'my_last_name'
-          }
-      )
-      self.assertEqual(
-          functions.passthrough_w_keyword_arguments(
-              last_name='my_last_name',
-              first_name='my_first_name'
-          ),
-          {
-              'first_name': 'my_first_name',
-              'last_name': 'my_last_name'
-          }
-      )
-      self.assertEqual(
-          functions.passthrough_w_keyword_arguments(
-              a=1, b=2, c=3, d=4
-          ),
-          {'a': 1, 'b': 2, 'c': 3, 'd': 4}
-      )
-      self.assertEqual(
-          functions.passthrough_w_keyword_arguments(
-              a_boolean=bool,
-              an_integer=int,
-              a_float=float,
-              a_string=str,
-              a_tuple=tuple,
-              a_list=list,
-              a_set=set,
-              a_dictionary=dict
-          ),
-          {}
-      )
+    self.assertEqual(
+        functions.passthrough_w_keyword_arguments(
+            a_boolean=bool,
+            an_integer=int,
+            a_float=float,
+            a_string=str,
+            a_tuple=tuple,
+            a_list=list,
+            a_set=set,
+            a_dictionary=dict
+        ),
+        {
+            'a_boolean': bool,
+            'an_integer': int,
+            'a_float': float,
+            'a_string': str,
+            'a_tuple': tuple,
+            'a_list': list,
+            'a_set': set,
+            'a_dictionary': dict
+        }
+    )
 
-the terminal shows :ref:`AssertionError` and I make the expected values match the values from the terminal
+  All tests are passing!
 
-.. code-block:: python
-
-  self.assertEqual(
-      functions.passthrough_w_keyword_arguments(
-          a_boolean=bool,
-          an_integer=int,
-          a_float=float,
-          a_string=str,
-          a_tuple=tuple,
-          a_list=list,
-          a_set=set,
-          a_dictionary=dict
-      ),
-      {
-          'a_boolean': bool,
-          'an_integer': int,
-          'a_float': float,
-          'a_string': str,
-          'a_tuple': tuple,
-          'a_list': list,
-          'a_set': set,
-          'a_dictionary': dict
-      }
-  )
-
-All tests are passing!
-
+----
 
 *********************************************************************************
 review
