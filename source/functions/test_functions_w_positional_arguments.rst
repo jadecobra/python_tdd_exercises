@@ -42,8 +42,8 @@ green: make it pass
 
   .. code-block:: python
 
-    def passthrough_w_positional_arguments(input_data):
-        return input_data
+    def passthrough_w_positional_arguments(argument):
+        return argument
 
   the terminal shows :ref:`TypeError`
 * I make the signature of ``passthrough_w_positional_arguments`` to take in more than one argument
@@ -51,9 +51,9 @@ green: make it pass
   .. code-block:: python
 
     def passthrough_w_positional_arguments(
-        input_data, second_argument
+        argument, second_argument
     ):
-        return input_data
+        return argument
 
   the terminal shows :ref:`AssertionError`
 * I make ``passthrough_w_positional_arguments`` return the two arguments it receives
@@ -61,9 +61,9 @@ green: make it pass
   .. code-block:: python
 
     def passthrough_w_positional_arguments(
-        input_data, second_argument
+        argument, second_argument
     ):
-        return input_data, second_argument
+        return argument, second_argument
 
   the terminal shows passing tests
 
@@ -73,7 +73,7 @@ refactor: make it better
 
 How can I make this better?
 
-* I called the first argument ``input_data`` and the second argument ``second_argument``. Technically, both arguments are input data, so I need a better name that is more descriptive
+* I called the first argument ``argument`` and the second argument ``second_argument``. Technically, both arguments are input data, so I need a better name that is more descriptive
 * I make the signature of ``passthrough_w_positional_arguments`` to use more descriptive names
 
   .. code-block:: python
@@ -171,12 +171,12 @@ From the tests I know
 
 * I can use ``*name`` to represent any number of positional arguments
 * that positional arguments are represented as `tuples <https://docs.python.org/3/library/stdtypes.html#tuple>`_ with parentheses - ``()``
-* that passthrough functions return what they receive as input
-* that singleton functions return the same thing every time they are called
-* functions are defined using the def_ keyword
-* functions return :ref:`None` by default
+* that passthrough :ref:`functions` return what they receive as input
+* that singleton :ref:`functions` return the same thing every time they are called
+* :ref:`functions` are defined using the def_ keyword
+* :ref:`functions` return :ref:`None` by default
 
-Would you like to :ref:`test functions with keyword arguments?<test_functions_w_keyword_arguments>`
+Would you like to :ref:`test :ref:`functions` with keyword arguments?<test_functions_w_keyword_arguments>`
 
 ----
 

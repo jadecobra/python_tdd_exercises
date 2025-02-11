@@ -14,13 +14,22 @@ functions: test_singleton_functions
 
 ----
 
+*********************************************************************************
+requirements
+*********************************************************************************
+
+:doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` with ``functions`` as the name of the project
+
+----
+
+*********************************************************************************
+test_singleton_functions
+*********************************************************************************
+
 Singleton :ref:`functions` always return the same thing when called
 
-.. _test_singleton_functions_red:
-
-*********************************************************************************
 red: make it fail
-*********************************************************************************
+---------------------------------------------------------------------------------
 
 I add a test to ``test_functions.py``
 
@@ -31,30 +40,24 @@ I add a test to ``test_functions.py``
 
 the terminal shows :ref:`AttributeError`
 
-.. _test_singleton_functions_green:
-
-*********************************************************************************
 green: make it pass
-*********************************************************************************
+---------------------------------------------------------------------------------
 
-I make ``functions.py`` to make it pass
+I change the :ref:`function<functions>` to make it pass
 
 .. code-block:: python
 
   def singleton():
       return 'my_first_name'
 
-.. _test_singleton_functions_w_inputs:
+----
 
 *********************************************************************************
 test_singleton_functions_w_inputs
 *********************************************************************************
 
-.. _test_singleton_functions_w_inputs_red:
-
 red: make it fail
-#################################################################################
-
+---------------------------------------------------------------------------------
 
 I add a new test that checks if a singleton that takes inputs returns the same value regardless of the inputs
 
@@ -75,7 +78,7 @@ the terminal shows :ref:`AttributeError`
 .. _test_singleton_functions_w_inputs_green:
 
 green: make it pass
-#################################################################################
+---------------------------------------------------------------------------------
 
 and I add a function for ``singleton_w_inputs`` to ``functions.py``
 
@@ -88,17 +91,15 @@ the terminal shows passing tests
 
 ----
 
-.. _test_singleton_functions_w_inputs_review:
-
 *********************************************************************************
 review
 *********************************************************************************
 
 From the tests I know
 
-* that singleton functions return the same thing every time they are called
-* functions are defined using the def_ keyword
-* functions return :ref:`None` by default
+* that singleton :ref:`functions` return the same thing every time they are called
+* :ref:`functions` are defined using the def_ keyword
+* :ref:`functions` return :ref:`None` by default
 
 Would you like to :ref:`test passthrough functions?<test_passthrough_functions>`
 
