@@ -222,7 +222,7 @@ green: make it pass
 
   and the test passes
 
-.. _test_duration_w_date_and_time_refactor:
+
 
 *********************************************************************************
 refactor: make it better
@@ -336,7 +336,7 @@ The `datetime.datetime.strptime`_ :ref:`method<functions>` returns a `datetime.d
 
 there are more details in `strftime() and strptime() behavior <https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior>`_
 
-.. _test_datetime_objects_refactor:
+
 
 refactor: make it better
 ---------------------------------------------------------------------------------
@@ -616,7 +616,7 @@ I add the variable to the expectation
 
 and the terminal shows green again
 
-.. _test_get_datetime_refactor:
+
 
 refactor: make it better
 ---------------------------------------------------------------------------------

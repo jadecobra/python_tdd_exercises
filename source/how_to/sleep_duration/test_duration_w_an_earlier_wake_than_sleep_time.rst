@@ -185,7 +185,7 @@ green: make it pass
 
   and the terminal shows passing tests with no more random failures, green, green, green, green all the way!
 
-.. _test_duration_w_an_earlier_wake_than_sleep_time_refactor:
+
 
 *********************************************************************************
 refactor: make it better

@@ -209,7 +209,7 @@ green: make it pass
 
   the test passes, time for a victory lap!
 
-.. _test_addition_refactor:
+
 
 refactor: make it better
 #################################################################################
@@ -257,7 +257,7 @@ when I change the `return statement`_ to the sum of the inputs
 
 the terminal shows a passing test
 
-.. _test_addition_refactor_refactor:
+
 
 refactor: make it better
 ---------------------------------------------------------------------------------
@@ -510,7 +510,7 @@ green: make it pass
 
   the test passes. SUCCESS!
 
-.. _test_subtraction_refactor:
+
 
 refactor: make it better
 #################################################################################

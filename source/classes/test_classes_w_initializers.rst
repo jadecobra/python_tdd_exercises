@@ -81,7 +81,7 @@ green: make it pass
 
   the terminal shows passing tests
 
-.. _test_classes_w_initializers_refactor:
+
 
 *********************************************************************************
 refactor: make it better

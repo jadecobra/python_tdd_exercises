@@ -307,7 +307,7 @@ and it shows a passing test
 
 *cue CELEBRATION MUSIC AND DANCE!* I am GREEN.
 
-.. _test_failure_refactor:
+
 
 refactor: make it better
 ############################################################################################

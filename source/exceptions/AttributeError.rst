@@ -619,7 +619,7 @@ green: make it pass
 
   and the test passes
 
-.. _test_attribute_error_w_class_methods_refactor:
+
 
 refactor: make it better
 #################################################################################

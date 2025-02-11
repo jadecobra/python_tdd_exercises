@@ -519,7 +519,7 @@ green: make it pass
 
   and the terminal shows passing tests! YES!!
 
-.. _test_duration_tests_refactor:
+
 
 *********************************************************************************
 refactor: make it better

@@ -89,7 +89,7 @@ green: make it pass
 
   and the terminal shows all tests passed
 
-.. _test_classes_w_attributes_refactor:
+
 
 refactor: make it better
 #################################################################################
@@ -163,8 +163,6 @@ I add some tests for class methods to ``TestClasses`` in ``classes.py``
 
 and the terminal shows :ref:`AttributeError`
 
-
-
 green: make it pass
 #################################################################################
 
@@ -225,7 +223,7 @@ green: make it pass
 
   and the test passes
 
-.. _test_classes_w_methods_refactor:
+
 
 refactor: make it better
 #################################################################################

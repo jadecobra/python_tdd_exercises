@@ -40,12 +40,8 @@ I add a new test to ``test_functions.py``
 
 the terminal shows :ref:`AttributeError`
 
-
-
-*********************************************************************************
 green: make it pass
-*********************************************************************************
-
+---------------------------------------------------------------------------------
 
 * I add a function definition to ``functions.py``
 
@@ -90,7 +86,7 @@ green: make it pass
 
   Eureka! the terminal shows passing tests
 
-.. _test_functions_w_keyword_arguments_refactor:
+
 
 *********************************************************************************
 refactor: make it better
@@ -250,7 +246,7 @@ green: make it pass
 
   the terminal shows passing tests. From these tests, I can say that keyword arguments are treated as :ref:`dictionaries`  in Python
 
-.. _test_functions_w_keyword_arguments_refactor_refactor:
+
 
 refactor: make it better
 #################################################################################

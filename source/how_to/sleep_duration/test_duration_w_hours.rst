@@ -501,7 +501,7 @@ I copy the :ref:`list <lists>` from the terminal and paste it in the test to mak
 
 green again
 
-.. _test_string_splitting_refactor:
+
 
 refactor: make it better
 ---------------------------------------------------------------------------------

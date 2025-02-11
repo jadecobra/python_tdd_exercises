@@ -191,7 +191,7 @@ green: make it pass
 
   and the terminal shows passing tests! There is something wrong with this calculation...
 
-.. _test_duration_w_hours_and_minutes_refactor:
+
 
 *********************************************************************************
 refactor: make it better
