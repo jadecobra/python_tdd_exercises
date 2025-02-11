@@ -345,7 +345,7 @@ test_making_lists_w_list_comprehensions
 ****************************************************************************************
 
 red: make it fail
-#################################################################################
+---------------------------------------------------------------------------------
 
 I add a failing test to ``TestListComprehensions``
 
@@ -372,9 +372,8 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
 
-
 green: make it pass
-#################################################################################
+---------------------------------------------------------------------------------
 
 * I make the values in the test match the terminal
 
@@ -450,32 +449,30 @@ green: make it pass
     def list_comprehension(iterable):
         return [item for item in iterable]
 
-----
+  I made two :ref:`functions<functions>`, one that uses a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ loop and another that uses a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ to do the same thing. The difference between
 
-I made two :ref:`functions<functions>`, one that uses a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ loop and another that uses a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ to do the same thing. The difference between
+  .. code-block:: python
 
-.. code-block:: python
+      a_list = []
+      for item in container:
+          a_list.append()
 
-    a_list = []
-    for item in container:
-        a_list.append()
+  and
 
-and
+  .. code-block:: python
 
-.. code-block:: python
+      [item for item in container]
 
-    [item for item in container]
+  Is that in the first case I have to
 
-Is that in the first case I have to
+  * make a list
+  * loop through the iterable
+  * add the items I want from the iterable to the list
 
-* make a list
-* loop through the iterable
-* add the items I want from the iterable to the list
-
-With the list comprehension I can get the same result with less words, lines and steps
+  With the list comprehension I can get the same result with less words, lines and steps
 
 refactor: make it better
-#################################################################################
+---------------------------------------------------------------------------------
 
 There is more I can do with `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_, I can add conditions to the operations performed
 
@@ -685,26 +682,18 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
 
   and the terminal shows all tests passed
 
-----
 
-I see from the tests that I can make a :ref:`list <lists>` from any iterable by using
+  I see from the tests that I can make a :ref:`list <lists>` from any iterable by using
 
-* a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ loop
-* the :ref:`list <lists>` constructor
-* `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_
+  * a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ loop
+  * the :ref:`list <lists>` constructor
+  * `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_
 
-If you typed along you now know a couple of ways to loop through ``iterables`` and have your program make decisions by using ``conditions``.
+  If you typed along you now know a couple of ways to loop through ``iterables`` and have your program make decisions by using ``conditions``.
 
-You also know how to do it with less words using `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_. Your magic powers are growing.
+  You also know how to do it with less words using `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_. Your magic powers are growing.
 
-
-*********************************************************************************
-refactor: make it better
-*********************************************************************************
-
-I have written the same thing multiple times in these tests and since the programming gods told me `to not repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_, It is time to remove the repetition in the code.
-
-* In each test I make an empty list, verify it is empty and then perform operations on it. Since that part is the same for every test I can add it to the `unittest.TestCase.setUp <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.setUp>`_ :ref:`method<functions>` which is called before a test method. Anything I place in this :ref:`method<functions>` will run before the tests, I place my empty list creation and verification in here ::
+* I have written the same thing multiple times in these tests and since the programming gods told me `to not repeat myself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_, It is time to remove the repetition in the code. In each test I make an empty list, verify it is empty and then perform operations on it. Since that part is the same for every test I can add it to the `unittest.TestCase.setUp <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.setUp>`_ :ref:`method<functions>` which is called before a test method. Anything I place in this :ref:`method<functions>` will run before the tests, I place my empty list creation and verification in here ::
 
     def setUp(self):
         self.a_list = []
@@ -905,6 +894,12 @@ I have written the same thing multiple times in these tests and since the progra
 
   the terminal shows all tests are still passing
 
+----
+
+*********************************************************************************
+review
+*********************************************************************************
+
 I also ran into the following Exceptions_
 
 * :ref:`AssertionError`
@@ -913,7 +908,7 @@ I also ran into the following Exceptions_
 * :ref:`AttributeError`
 * :ref:`TypeError`
 
-Would you like to test :doc:`/data_structures/dictionaries`?
+Would you like to test :ref:`dictionaries`?
 
 ----
 
