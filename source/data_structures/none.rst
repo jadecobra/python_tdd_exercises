@@ -47,29 +47,30 @@ red: make it fail
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_none.py:7`` to open it in the editor
 * then change ``True`` to ``False`` to make the test pass
+* and change ``test_failure`` to ``test_what_is_none``
 
-.. code-block:: python
+  .. code-block:: python
 
-  import unittest
+    import unittest
 
 
-  class TestNone(unittest.TestCase):
+    class TestNone(unittest.TestCase):
 
-      def test_what_is_none(self):
-          self.assertIsNotNone(None)
+        def test_what_is_none(self):
+            self.assertIsNotNone(None)
 
-the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
-.. code-block:: python
+  .. code-block:: python
 
-  AssertionError: unexpectedly None
+    AssertionError: unexpectedly None
 
-assertIsNotNone_ checks that the input given is NOT `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
+  assertIsNotNone_ checks that its input is NOT `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
 green: make it pass
 #################################################################################
 
-* When I use the assertIsNone_ :ref:`method<functions>` which checks that the given input is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
+* When I use the assertIsNone_ :ref:`method<functions>` which checks that its input is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
   .. code-block:: python
 
@@ -98,7 +99,68 @@ test_is_none_a_boolean
 red: make it fail
 #################################################################################
 
-I add a new test with the assertNotIsInstance_ :ref:`method<functions>` from the `unittest.TestCase`_ :ref:`class<classes>` that checks if something is an instance of a given :ref:`class<classes>`
+The `unittest.TestCase`_ :ref:`class<classes>` has two :ref:`methods<functions>` I can use to test if an object_ is an instance of a :ref:`class<classes>` I add a new test with the assertNotIsInstance_ :ref:`method<functions>` from ` that checks if something is an instance of a given :ref:`class<classes>`
+
+* I add a failing test
+
+  .. code-block:: python
+
+    def test_is_none_a_boolean(self):
+        self.assertIsNone(False)
+
+  the terminal responds with :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: False is not None
+
+* then I add the error to the list of Exceptions_ encountered
+
+  .. code-block:: python
+
+    # NOTES
+    # False is NOT None
+    # None is None
+
+green: make it pass
+#################################################################################
+
+I change the :ref:`method`
+
+.. code-block:: python
+
+  def test_is_none_a_boolean(self):
+      self.assertIsNotNone(False)
+
+and the test passes
+
+refactor: make it better
+#################################################################################
+
+* I add another failing line
+
+  .. code-block:: python
+
+    def test_is_none_a_boolean(self):
+        self.assertIsNotNone(False)
+        self.assertIsNone(True)
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: True is not None
+
+  I add a note
+
+  .. code-block:: python
+
+    # NOTES
+    # True is NOT None
+    # False is NOT None
+    # None is None
+
+  then
 
 .. code-block:: python
 
@@ -111,8 +173,6 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: None is not an instance of <class 'bool'>
 
-green: make it pass
-#################################################################################
 
 * I use the assertIsInstance_ :ref:`method<functions>` to make the test pass
 

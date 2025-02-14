@@ -60,14 +60,27 @@ red: make it fail
 green: make it pass
 ---------------------------------------------------------------------------------
 
-* then I add a :ref:`function<functions>` to ``truth_table.py``
+then I add a :ref:`function<functions>` to ``truth_table.py``
 
-  .. code-block:: python
+.. code-block:: python
 
-    def logical_true():
-        return True
+  def logical_true():
+      return None
 
-  and the terminal shows passing tests
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: None is not true
+
+I change the `return statement`_
+
+.. code-block:: python
+
+  def logical_true():
+      return True
+
+and the test passes
 
 test_logical_false
 #################################################################################

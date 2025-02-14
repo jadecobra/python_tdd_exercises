@@ -39,7 +39,6 @@ The difference between my expectations and reality (what happens when the progra
 
 ----
 
-
 *********************************************************************************
 test_assertion_error_w_none
 *********************************************************************************
