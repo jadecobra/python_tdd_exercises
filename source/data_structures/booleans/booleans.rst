@@ -67,7 +67,7 @@ red: make it fail
 
     AssertionError: False is an instance of <class 'bool'>
 
-  The `unittest.TestCase.assertNotIsInstance <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance>`_ :ref:`method<functions>` checks that the first input given is NOT an instance of the :ref:`class <classes>` given as the second input. It is like asking the question ``is False not an instance of bool?``
+  The `unittest.TestCase.assertNotIsInstance`_ :ref:`method<functions>` checks that the first input given is NOT an instance of the :ref:`class <classes>` given as the second input. It is like asking the question ``is False not an instance of bool?``
 
 green: make it pass
 #################################################################################
