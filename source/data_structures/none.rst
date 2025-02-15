@@ -208,7 +208,7 @@ refactor: make it better
 
     AssertionError: True is an instance of <class 'bool'>
 
-  :ref:`True<test_what_is_true>` is a boolean_. I use the assertIsInstance_ :ref:`method<methods>`
+  :ref:`True<test_what_is_true>` is a boolean_. I use the assertIsInstance_ :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -244,7 +244,7 @@ refactor: make it better
       def test_is_none_a_boolean(self):
           self.assertNotIsInstance(None, bool)
 
-* then I change the last two notes
+* and change the last two notes
 
   .. code-block:: python
 
@@ -261,30 +261,213 @@ test_is_none_an_integer
 red: make it fail
 #################################################################################
 
-I add a new test to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is an integer_
+Time to test if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is an integer_
 
 .. code-block:: python
 
   def test_is_none_an_integer(self):
-      self.assertIsInstance(None, int)
+      self.assertIsNone(-1)
 
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: None is not an instance of <class 'int'>
+  AssertionError: -1 is not None
 
 green: make it pass
 #################################################################################
 
-* I make the test pass
+I change the :ref:`method<functions>`
 
 .. code-block:: python
 
   def test_is_none_an_integer(self):
-      self.assertNotIsInstance(None, int)
+      self.assertIsNotNone(-1)
 
-* then add a new note
+and the test passes
+
+red: make it better
+#################################################################################
+
+* I add a new line
+
+  .. code-block:: python
+
+    def test_is_none_an_integer(self):
+        self.assertIsNotNone(-1)
+        self.assertIsNone(0)
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 0 is not None
+
+  when I change the :ref:`method<functions>`
+
+  .. code-block:: python
+
+    def test_is_none_an_integer(self):
+        self.assertIsNotNone(-1)
+        self.assertIsNotNone(0)
+
+  the test passes
+
+* I add another line
+
+  .. code-block:: python
+
+    def test_is_none_an_integer(self):
+        self.assertIsNotNone(-1)
+        self.assertIsNotNone(0)
+        self.assertIsNone(1)
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 1 is not None
+
+  I change the :ref:`method<functions>`
+
+  .. code-block:: python
+
+    def test_is_none_an_integer(self):
+        self.assertIsNotNone(-1)
+        self.assertIsNotNone(0)
+        self.assertIsNotNone(1)
+
+  and the test passes
+
+* I add an instance test
+
+  .. code-block:: python
+
+    def test_is_none_an_integer(self):
+        self.assertIsNotNone(-1)
+        self.assertIsNotNone(0)
+        self.assertIsNotNone(1)
+        self.assertNotIsInstance(-1, int)
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: -1 is an instance of <class 'int'>
+
+  - int_ is the :ref:`class<classes>` for integers_
+  - ``-1`` is an integer_ representing positive integers_
+
+  I make the test pass
+
+  .. code-block:: python
+
+    def test_is_none_an_integer(self):
+        self.assertIsNotNone(-1)
+        self.assertIsNotNone(0)
+        self.assertIsNotNone(1)
+        self.assertIsInstance(-1, int)
+        self.assertIsInstance(0, int)
+
+* then I add another instance test
+
+  .. code-block:: python
+
+    def test_is_none_an_integer(self):
+        self.assertIsNotNone(-1)
+        self.assertIsNotNone(0)
+        self.assertIsNotNone(1)
+        self.assertIsInstance(-1, int)
+        self.assertNotIsInstance(0, int)
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 0 is an instance of <class 'int'>
+
+  ``0`` is an integer_
+
+  I change the :ref:`method<functions>`
+
+  .. code-block:: python
+
+    def test_is_none_an_integer(self):
+        self.assertIsNotNone(-1)
+        self.assertIsNotNone(0)
+        self.assertIsNotNone(1)
+        self.assertIsInstance(-1, int)
+        self.assertIsInstance(0, int)
+
+  and the test passes
+
+* I add an instance test again
+
+  .. code-block:: python
+
+    def test_is_none_an_integer(self):
+        self.assertIsNotNone(-1)
+        self.assertIsNotNone(0)
+        self.assertIsNotNone(1)
+        self.assertIsInstance(-1, int)
+        self.assertIsInstance(0, int)
+        self.assertNotIsInstance(1, int)
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 1 is an instance of <class 'int'>
+
+  ``1`` is an integer_ representing the positive integers_
+
+  when I change the :ref:`method<functions>`
+
+  .. code-block:: python
+
+    def test_is_none_an_integer(self):
+        self.assertIsNotNone(-1)
+        self.assertIsNotNone(0)
+        self.assertIsNotNone(1)
+        self.assertIsInstance(-1, int)
+        self.assertIsInstance(0, int)
+        self.assertIsInstance(1, int)
+
+  the terminal shows passing tests
+
+* one more instance test
+
+  .. code-block:: python
+
+    def test_is_none_an_integer(self):
+        self.assertIsNotNone(-1)
+        self.assertIsNotNone(0)
+        self.assertIsNotNone(1)
+        self.assertIsInstance(-1, int)
+        self.assertIsInstance(0, int)
+        self.assertIsInstance(1, int)
+        self.assertIsInstance(None, int)
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: None is not an instance of <class 'int'>
+
+  I make the test pass
+
+  .. code-block:: python
+
+    def test_is_none_an_integer(self):
+        self.assertIsNotNone(-1)
+        self.assertIsNotNone(0)
+        self.assertIsNotNone(1)
+        self.assertIsInstance(-1, int)
+        self.assertIsInstance(0, int)
+        self.assertIsInstance(1, int)
+        self.assertNotIsInstance(None, int)
+
+* then I add a new note
 
   .. code-block:: python
 
