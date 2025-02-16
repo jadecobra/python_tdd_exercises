@@ -865,23 +865,123 @@ I add a test to see if `None <https://docs.python.org/3/library/constants.html?h
 
 .. code-block:: python
 
-    def test_is_none_a_tuple(self):
-        self.assertIsInstance(None, tuple)
+  def test_is_none_a_tuple(self):
+      self.assertIsNone(())
 
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: None is not an instance of <class 'tuple'>
+  AssertionError: () is not None
 
-red: make it fail
+green: make it pass
 #################################################################################
 
-* then I change the :ref:`method<functions>` to make the test pass
+I change the :ref:`method<functions>`
+
+.. code-block:: python
+
+  def test_is_none_a_tuple(self):
+      self.assertIsNotNone(())
+
+and the test passes
+
+refactor: make it better
+#################################################################################
+
+* I add a failing line
 
   .. code-block:: python
 
     def test_is_none_a_tuple(self):
+        self.assertIsNotNone(())
+        self.assertIsNone((1, 2, 3, 'n'))
+
+  and the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: (1, 2, 3, 'n') is not None
+
+  I change the :ref:`method<functions>`
+
+  .. code-block:: python
+
+    def test_is_none_a_tuple(self):
+        self.assertIsNotNone(())
+        self.assertIsNotNone((1, 2, 3, 'n'))
+
+  and the test passes
+
+* I add an instance test
+
+  .. code-block:: python
+
+    def test_is_none_a_tuple(self):
+        self.assertIsNotNone(())
+        self.assertIsNotNone((1, 2, 3, 'n'))
+        self.assertNotIsInstance((), tuple)
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: () is an instance of <class 'tuple'>
+
+  ``()`` is a tuple_, it is the empty tuple_. I change the :ref:`method<functions>`
+
+  .. code-block:: python
+
+    def test_is_none_a_tuple(self):
+        self.assertIsNotNone(())
+        self.assertIsNotNone((1, 2, 3, 'n'))
+        self.assertIsInstance((), tuple)
+        self.assertNotIsInstance((1, 2, 3, 'n'), tuple)
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: (1, 2, 3, 'n') is an instance of <class 'tuple'>
+
+  ``(1, 2, 3, 'n')`` is a tuple_. I change the :ref:`method<functions>`
+
+  .. code-block:: python
+
+    def test_is_none_a_tuple(self):
+        self.assertIsNotNone(())
+        self.assertIsNotNone((1, 2, 3, 'n'))
+        self.assertIsInstance((), tuple)
+        self.assertIsInstance((1, 2, 3, 'n'), tuple)
+
+  and the test passes
+
+* I add one more instance test
+
+  .. code-block:: python
+
+    def test_is_none_a_tuple(self):
+        self.assertIsNotNone(())
+        self.assertIsNotNone((1, 2, 3, 'n'))
+        self.assertIsInstance((), tuple)
+        self.assertIsInstance((1, 2, 3, 'n'), tuple)
+        self.assertIsInstance(None, tuple)
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: None is not an instance of <class 'tuple'>
+
+  then I change the :ref:`method<functions>` to make the test pass
+
+  .. code-block:: python
+
+    def test_is_none_a_tuple(self):
+        self.assertIsNotNone(())
+        self.assertIsNotNone((1, 2, 3, 'n'))
+        self.assertIsInstance((), tuple)
+        self.assertIsInstance((1, 2, 3, 'n'), tuple)
         self.assertNotIsInstance(None, tuple)
 
 * and I add a note
@@ -896,7 +996,7 @@ red: make it fail
     # None is NOT a boolean
     # None is None
 
-Based on what I have seen so far, I think it is safe to say that `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ and not anything else
+From the tests so far, it is safe to say that `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ and not anything else, but I keep testing
 
 ----
 
