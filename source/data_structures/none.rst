@@ -158,7 +158,7 @@ refactor: make it better
     # False is NOT None
     # None is None
 
-  when I change the :ref:`method`
+  when I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -349,16 +349,13 @@ red: make it better
         self.assertIsNotNone(1)
         self.assertNotIsInstance(-1, int)
 
-  the terminal shows :ref:`AssertionError`
+  int_ is the :ref:`class<classes>` for integers_, the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: -1 is an instance of <class 'int'>
 
-  - int_ is the :ref:`class<classes>` for integers_
-  - ``-1`` is an integer_ representing positive integers_
-
-  I make the test pass
+  ``-1`` is an integer_ representing positive integers_. I make the test pass
 
   .. code-block:: python
 
@@ -419,9 +416,7 @@ red: make it better
 
     AssertionError: 1 is an instance of <class 'int'>
 
-  ``1`` is an integer_ representing the positive integers_
-
-  when I change the :ref:`method<functions>`
+  ``1`` is an integer_ representing the positive integers_. When I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -579,8 +574,6 @@ refactor: make it better
 
     AssertionError: -0.1 is an instance of <class 'float'>
 
-  ``-0.1`` is a float_ representing negative floating point numbers
-
   I change the :ref:`method<functions>`
 
   .. code-block:: python
@@ -591,7 +584,7 @@ refactor: make it better
         self.assertIsNotNone(0.1)
         self.assertIsInstance(-0.1, float)
 
-  and the test passes
+  and the test passes. ``-0.1`` is a float_ representing negative floating point numbers
 
 * I add another instance test
 
@@ -610,9 +603,7 @@ refactor: make it better
 
     AssertionError: 0.0 is an instance of <class 'float'>
 
-  ``0.0`` is a float_
-
-  I change the :ref:`method<functions>`
+  ``0.0`` is a floating point number. I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -643,9 +634,7 @@ refactor: make it better
 
     AssertionError: 0.1 is an instance of <class 'float'>
 
-  ``0.1`` is a float_ representing positive floating point numbers
-
-  I make the test pass
+  ``0.1`` is a float_ representing positive floating point numbers. I make the test pass
 
   .. code-block:: python
 
@@ -657,7 +646,7 @@ refactor: make it better
         self.assertIsInstance(0.0, float)
         self.assertIsInstance(0.1, float)
 
-* I add one more failing line
+* then I add one more failing line
 
   .. code-block:: python
 
@@ -676,7 +665,7 @@ refactor: make it better
 
     AssertionError: None is not an instance of <class 'float'>
 
-  then I change the :ref:`method<functions>`
+  I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -786,7 +775,7 @@ refactor: make it better
         self.assertIsNotNone("text")
         self.assertIsInstance('', str)
 
-  the test passes
+  and the test passes
 
 * I add another line
 
