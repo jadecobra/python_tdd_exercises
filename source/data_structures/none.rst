@@ -1007,30 +1007,150 @@ test_is_none_a_list
 red: make it fail
 #################################################################################
 
-I add a new test to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a :ref:`list <lists>`
+I add a new test for :ref:`lists`
 
 .. code-block:: python
 
   def test_is_none_a_list(self):
-      self.assertIsInstance(None, list)
+      self.assertIsNone([])
 
-the terminal shows :ref:`AssertionError`
+and the terminal responds with :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: None is not an instance of <class 'list'>
+  AssertionError: [] is not None
 
 green: make it pass
 #################################################################################
 
-* I change the line to make the test pass
+
+when I change the :ref:`method<functions>` to match
+
+.. code-block:: python
+
+  def test_is_none_a_list(self):
+      self.assertIsNotNone([])
+
+the test passes
+
+refactor: make it better
+#################################################################################
+
+* I add another failing line
+
+  .. code-block:: python
+
+    def test_is_none_a_list(self):
+        self.assertIsNotNone([])
+        self.assertIsNone([1, 2, 3, 'n'])
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: [1, 2, 3, 'n'] is not None
+
+  when I change the :ref:`method<functions>`
+
+  .. code-block:: python
+
+    def test_is_none_a_list(self):
+        self.assertIsNotNone([])
+        self.assertIsNotNone([1, 2, 3, 'n'])
+
+  the test passes
+
+* I add an instance test
+
+  .. code-block:: python
+
+    def test_is_none_a_list(self):
+        self.assertIsNotNone([])
+        self.assertIsNotNone([1, 2, 3, 'n'])
+        self.assertNotIsInstance([], list)
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: [] is an instance of <class 'list'>
+
+  ``[]`` is a list_, it is the empty list_. I change the :ref:`method<functions>`
+
+  .. code-block:: python
+
+    def test_is_none_a_list(self):
+        self.assertIsNotNone([])
+        self.assertIsNotNone([1, 2, 3, 'n'])
+        self.assertIsInstance([], list)
+
+  and the test passes
+
+* I add another instance test
+
+  .. code-block:: python
+
+    def test_is_none_a_list(self):
+        self.assertIsNotNone([])
+        self.assertIsNotNone([1, 2, 3, 'n'])
+        self.assertIsInstance([], list)
+        self.assertNotIsInstance([1, 2, 3, 'n'], list)
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: [1, 2, 3, 'n'] is an instance of <class 'list'>
+
+  ``[1, 2, 3, 'n']`` is a list_
+
+  when I change the :ref:`method<functions>`
+
+  .. code-block:: python
+
+    def test_is_none_a_list(self):
+        self.assertIsNotNone([])
+        self.assertIsNotNone([1, 2, 3, 'n'])
+        self.assertIsInstance([], list)
+        self.assertIsInstance([1, 2, 3, 'n'], list)
+
+  the test passes
+
+* I add one more line
+
+  .. code-block:: python
+
+    def test_is_none_a_list(self):
+        self.assertIsNotNone([])
+        self.assertIsNotNone([1, 2, 3, 'n'])
+        self.assertIsInstance([], list)
+        self.assertIsInstance([1, 2, 3, 'n'], list)
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    def test_is_none_a_list(self):
+        self.assertIsNotNone([])
+        self.assertIsNotNone([1, 2, 3, 'n'])
+        self.assertIsInstance([], list)
+        self.assertIsInstance([1, 2, 3, 'n'], list)
+        self.assertIsInstance(None, list)
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: None is not an instance of <class 'list'>
+
+  I change the line to make the test pass
 
   .. code-block:: python
 
     def test_is_none_a_list(self):
         self.assertIsInstance(None, list)
 
-* then add a new note
+  then add a new note
 
   .. code-block:: python
 
