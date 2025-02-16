@@ -490,23 +490,206 @@ I add a new test to see if `None <https://docs.python.org/3/library/constants.ht
 .. code-block:: python
 
   def test_is_none_a_float(self):
-      self.assertIsInstance(None, float)
+      self.assertIsNone(-0.1)
 
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: None is not an instance of <class 'float'>
+  AssertionError: -0.1 is not None
 
 green: make it pass
 #################################################################################
 
-* I change the line to make the test pass
+I change the :ref:`method<functions>`
+
+.. code-block:: python
+
+  def test_is_none_a_float(self):
+      self.assertIsNotNone(-0.1)
+
+and the test passes
+
+refactor: make it better
+#################################################################################
+
+* I add another line
 
   .. code-block:: python
 
     def test_is_none_a_float(self):
+        self.assertIsNotNone(-0.1)
+        self.assertIsNone(0.0)
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 0.0 is not None
+
+  I change the :ref:`method<functions>` to match
+
+  .. code-block:: python
+
+    def test_is_none_a_float(self):
+        self.assertIsNotNone(-0.1)
+        self.assertIsNotNone(0.0)
+
+  and the test passes
+
+* I add a line again
+
+  .. code-block:: python
+
+    def test_is_none_a_float(self):
+        self.assertIsNotNone(-0.1)
+        self.assertIsNotNone(0.0)
+        self.assertIsNone(0.1)
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 0.1 is not None
+
+  after I change the :ref:`method<functions>`
+
+  .. code-block:: python
+
+    def test_is_none_a_float(self):
+        self.assertIsNotNone(-0.1)
+        self.assertIsNotNone(0.0)
+        self.assertIsNotNone(0.1)
+
+  the test passes
+
+* time for the instance tests
+
+  .. code-block:: python
+
+    def test_is_none_a_float(self):
+        self.assertIsNotNone(-0.1)
+        self.assertIsNotNone(0.0)
+        self.assertIsNotNone(0.1)
+        self.assertNotIsInstance(-0.1, float)
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: -0.1 is an instance of <class 'float'>
+
+  ``-0.1`` is a float_ representing negative floating point numbers
+
+  I change the :ref:`method<functions>`
+
+  .. code-block:: python
+
+    def test_is_none_a_float(self):
+        self.assertIsNotNone(-0.1)
+        self.assertIsNotNone(0.0)
+        self.assertIsNotNone(0.1)
+        self.assertIsInstance(-0.1, float)
+
+  and the test passes
+
+* I add another instance test
+
+  .. code-block:: python
+
+    def test_is_none_a_float(self):
+        self.assertIsNotNone(-0.1)
+        self.assertIsNotNone(0.0)
+        self.assertIsNotNone(0.1)
+        self.assertIsInstance(-0.1, float)
+        self.assertNotIsInstance(0.0, float)
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 0.0 is an instance of <class 'float'>
+
+  ``0.0`` is a float_
+
+  I change the :ref:`method<functions>`
+
+  .. code-block:: python
+
+    def test_is_none_a_float(self):
+        self.assertIsNotNone(-0.1)
+        self.assertIsNotNone(0.0)
+        self.assertIsNotNone(0.1)
+        self.assertIsInstance(-0.1, float)
+        self.assertIsInstance(0.0, float)
+
+  and the test passes
+
+* I add another failing line
+
+  .. code-block:: python
+
+    def test_is_none_a_float(self):
+        self.assertIsNotNone(-0.1)
+        self.assertIsNotNone(0.0)
+        self.assertIsNotNone(0.1)
+        self.assertIsInstance(-0.1, float)
+        self.assertIsInstance(0.0, float)
+        self.assertNotIsInstance(0.1, float)
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 0.1 is an instance of <class 'float'>
+
+  ``0.1`` is a float_ representing positive floating point numbers
+
+  I make the test pass
+
+  .. code-block:: python
+
+    def test_is_none_a_float(self):
+        self.assertIsNotNone(-0.1)
+        self.assertIsNotNone(0.0)
+        self.assertIsNotNone(0.1)
+        self.assertIsInstance(-0.1, float)
+        self.assertIsInstance(0.0, float)
+        self.assertIsInstance(0.1, float)
+
+* I add one more failing line
+
+  .. code-block:: python
+
+    def test_is_none_a_float(self):
+        self.assertIsNotNone(-0.1)
+        self.assertIsNotNone(0.0)
+        self.assertIsNotNone(0.1)
+        self.assertIsInstance(-0.1, float)
+        self.assertIsInstance(0.0, float)
+        self.assertIsInstance(0.1, float)
+        self.assertIsInstance(None, float)
+
+  and get :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: None is not an instance of <class 'float'>
+
+  then I change the :ref:`method<functions>`
+
+  .. code-block:: python
+
+    def test_is_none_a_float(self):
+        self.assertIsNotNone(-0.1)
+        self.assertIsNotNone(0.0)
+        self.assertIsNotNone(0.1)
+        self.assertIsInstance(-0.1, float)
+        self.assertIsInstance(0.0, float)
+        self.assertIsInstance(0.1, float)
         self.assertNotIsInstance(None, float)
+
+  and the test passes
 
 * time for a new note
 
