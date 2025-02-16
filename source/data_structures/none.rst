@@ -710,31 +710,144 @@ test_is_none_a_string
 red: make it fail
 #################################################################################
 
-I add a test for to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a string_ - which is any character(s) inside single, double or triple quotes, for example
-
-* ``'single quotes'``
-* ``'''triple single quotes'''``
-* ``"double quotes"``
-* ``"""triple double quotes"""``
-
-see :ref:`quotes` for a more details
+I add a test to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a string_
 
 .. code-block:: python
 
   def test_is_none_a_string(self):
-      self.assertIsInstance(None, str)
+      self.assertIsNone('')
 
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: None is not an instance of <class 'str'>
+  AssertionError: '' is not None
 
-* when I change the :ref:`method<functions>`
+green: make it pass
+#################################################################################
+
+I change the :ref:`method<functions>`
+
+.. code-block:: python
+
+  def test_is_none_a_string(self):
+      self.assertIsNotNone('')
+
+and the test passes
+
+refactor: make it better
+#################################################################################
+
+* then I add another line
 
   .. code-block:: python
 
     def test_is_none_a_string(self):
+        self.assertIsNotNone('')
+        self.assertIsNone("text")
+
+  and the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 'text' is not None
+
+  I change the :ref:`method<functions>` to match
+
+  .. code-block:: python
+
+    def test_is_none_a_string(self):
+        self.assertIsNotNone('')
+        self.assertIsNotNone("text")
+
+  and the test passes
+
+* I add a line again
+
+  .. code-block:: python
+
+    def test_is_none_a_string(self):
+        self.assertIsNotNone('')
+        self.assertIsNotNone("text")
+        self.assertNotIsInstance('', str)
+
+  str_ is the :ref:`class<classes>` for strings_, the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: '' is an instance of <class 'str'>
+
+  ``''`` is a string_, it is the empty string_. I change the :ref:`method<functions>`
+
+  .. code-block:: python
+
+    def test_is_none_a_string(self):
+        self.assertIsNotNone('')
+        self.assertIsNotNone("text")
+        self.assertIsInstance('', str)
+
+  the test passes
+
+* I add another line
+
+  .. code-block:: python
+
+    def test_is_none_a_string(self):
+        self.assertIsNotNone('')
+        self.assertIsNotNone("text")
+        self.assertIsInstance('', str)
+        self.assertNotIsInstance("text", str)
+
+  and the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 'text' is an instance of <class 'str'>
+
+  ``'text'`` is a string_, then I add a :ref:`method<functions>`
+
+  .. code-block:: python
+
+    def test_is_none_a_string(self):
+        self.assertIsNotNone('')
+        self.assertIsNotNone("text")
+        self.assertIsInstance('', str)
+        self.assertIsInstance("text", str)
+
+  and the test passes. A string_ is any character(s) inside single, double or triple quotes, for example
+  * ``'single quotes'``
+  * ``'''triple single quotes'''``
+  * ``"double quotes"``
+  * ``"""triple double quotes"""``
+
+  see :ref:`quotes` for a more details
+
+* I add one more instance test
+
+  .. code-block:: python
+
+    def test_is_none_a_string(self):
+        self.assertIsNotNone('')
+        self.assertIsNotNone("text")
+        self.assertIsInstance('', str)
+        self.assertIsInstance("text", str)
+        self.assertIsInstance(None, str)
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: None is not an instance of <class 'str'>
+
+  when I change the :ref:`method<functions>`
+
+  .. code-block:: python
+
+    def test_is_none_a_string(self):
+        self.assertIsNotNone('')
+        self.assertIsNotNone("text")
+        self.assertIsInstance('', str)
+        self.assertIsInstance("text", str)
         self.assertNotIsInstance(None, str)
 
   the test passes
