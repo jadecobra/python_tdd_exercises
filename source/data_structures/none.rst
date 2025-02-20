@@ -1304,30 +1304,137 @@ test_is_none_a_dictionary
 red: make it fail
 #################################################################################
 
-I add a new test to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a :ref:`<dictionary> dictionaries`
+One last test to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a :ref:`<dictionary> dictionaries`
 
 .. code-block:: python
 
   def test_is_none_a_dictionary(self):
-      self.assertIsInstance(None, dict)
+      self.assertIsNone(dict())
 
 the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: {} is not None
+
+wait a minute! ``{}`` is how Python represents sets. True, it also represents :ref:`dictionaries` with curly braces. I will show the difference in a little bit
+
+green: make it pass
+#################################################################################
+
+I change the :ref:`method<functions>`
+
+.. code-block:: python
+
+  def test_is_none_a_dictionary(self):
+      self.assertIsNotNone(dict())
+
+and the test passes
+
+refactor: make it better
+#################################################################################
+
+* I add another line
+
+  .. code-block:: python
+
+    def test_is_none_a_dictionary(self):
+        self.assertIsNotNone(dict())
+        self.assertIsNone({'key': 'value'})
+
+  and get :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {'key': 'value'} is not None
+
+  when I change the :ref:`method<fucntions>`
+
+
+  .. code-block:: python
+
+    def test_is_none_a_dictionary(self):
+        self.assertIsNotNone(dict())
+        self.assertIsNotNone({'key': 'value'})
+
+  the terminal shows passing tests
+
+* and I add an instance test
+
+  .. code-block:: python
+
+    def test_is_none_a_dictionary(self):
+        self.assertIsNotNone(dict())
+        self.assertIsNotNone({'key': 'value'})
+        self.assertNotIsInstance({}, dict)
+
+  ``dict`` is the :ref:`class<classes>` for :ref:`dictionaries`, the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {} is an instance of <class 'dict'>
+
+  ``{}`` is the empty :ref:`dictionary<dictionaries>`. I change the :ref:`method<functions>` to make it pass
+
+  .. code-block:: python
+
+    def test_is_none_a_dictionary(self):
+        self.assertIsNotNone(dict())
+        self.assertIsNotNone({'key': 'value'})
+        self.assertIsInstance({}, dict)
+
+* then I add another instance test
+
+  .. code-block:: python
+
+    def test_is_none_a_dictionary(self):
+        self.assertIsNotNone(dict())
+        self.assertIsNotNone({'key': 'value'})
+        self.assertIsInstance({}, dict)
+        self.assertNotIsInstance({'key': 'value'}, dict)
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {'key': 'value'} is an instance of <class 'dict'>
+
+  ``{'key': 'value'}`` is a :ref:`dictionary<dictionaries>` with ``:`` separating the key on the left from the value on the right, you can add more key-value pairs separating them with commas, there is more on this in the :ref:`dictionaries` chapter. I change the :ref:`method<functions>`
+
+  .. code-block:: python
+
+    def test_is_none_a_dictionary(self):
+        self.assertIsNotNone(dict())
+        self.assertIsNotNone({'key': 'value'})
+        self.assertIsInstance({}, dict)
+        self.assertIsInstance({'key': 'value'}, dict)
+
+  and the test passes
+
+* time for the last instance test
+
+  .. code-block:: python
+
+    def test_is_none_a_dictionary(self):
+        self.assertIsNotNone(dict())
+        self.assertIsNotNone({'key': 'value'})
+        self.assertIsInstance({}, dict)
+        self.assertIsInstance({'key': 'value'}, dict)
+
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: None is not an instance of <class 'dict'>
 
-green: make it pass
-#################################################################################
-
-* I make the test pass
+  I make the test pass
 
   .. code-block:: python
 
     def test_is_none_a_dictionary(self):
         self.assertNotIsInstance(None, dict)
 
-* and I add a note
+* then I add a note
 
   .. code-block:: python
 
