@@ -1177,25 +1177,111 @@ I add a new failing test to see if `None <https://docs.python.org/3/library/cons
 .. code-block:: python
 
   def test_is_none_a_set(self):
-      self.assertIsInstance(None, set)
+      self.assertIsNone(set())
 
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: None is not an instance of <class 'set'>
+  AssertionError: set() is not None
 
 green: make it pass
 #################################################################################
 
-* I make it pass
+I change the :ref:`method<functions>` to match the message
+
+.. code-block:: python
+
+  def test_is_none_a_set(self):
+      self.assertIsNotNone(set())
+
+and the test passes
+
+refactor: make it better
+#################################################################################
+
+* I add another line
+
+  .. code-block:: python
+
+    def test_is_none_a_set(self):
+        self.assertIsNotNone(set())
+        self.assertIsNone({1, 2, 3, 'n'})
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {1, 2, 3, 'n'} is not NOne
+
+  when I change the :ref:`method<functions>`
+
+  .. code-block:: python
+
+    def test_is_none_a_set(self):
+        self.assertIsNotNone(set())
+        self.assertIsNotNone({1, 2, 3, 'n'})
+
+  the test passes
+
+* I add an instance test
+
+  .. code-block:: python
+
+    def test_is_none_a_set(self):
+        self.assertIsNotNone(set())
+        self.assertIsNotNone({1, 2, 3, 'n'})
+        self.assertNotIsInstance({1, 2, 3, 'n'}, set)
+
+  and the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {1, 2, 3, 'n'} is an instance of <class 'set'>
+
+  I make the test pass
+
+  .. code-block:: python
+
+    def test_is_none_a_set(self):
+        self.assertIsNotNone(set())
+        self.assertIsNotNone({1, 2, 3, 'n'})
+        self.assertIsInstance({1, 2, 3, 'n'}, set)
+
+* then I add another instance test
+
+  .. code-block:: python
+
+    def test_is_none_a_set(self):
+        self.assertIsNotNone(set())
+        self.assertIsNotNone({1, 2, 3, 'n'})
+        self.assertIsInstance({1, 2, 3, 'n'}, set)
+        self.assertIsInstance(None, set)
+
+  which gives me :ref:`AssertionError`
+
+  .. code-block:: python
+
+    def test_is_none_a_set(self):
+        self.assertIsNotNone(set())
+        self.assertIsNotNone({1, 2, 3, 'n'})
+        self.assertIsInstance({1, 2, 3, 'n'}, set)
+        self.assertIsInstance(None, set)
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: None is not an instance of <class 'set'>
+
+  I change the :ref:`method<functions>` to make it pass
 
   .. code-block:: python
 
     def test_is_none_a_set(self):
         self.assertNotIsInstance(None, set)
 
-* then add another note
+* then I add a new note
 
   .. code-block:: python
 
