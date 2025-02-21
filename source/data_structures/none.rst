@@ -25,7 +25,7 @@ test_what_is_none
 red: make it fail
 #################################################################################
 
-* I open a terminal to run :ref:`makePythonTdd.sh` with ``non`` as the name of the project
+* I open a terminal to run :ref:`makePythonTdd.sh` with ``none`` as the name of the project
 
   .. code-block:: python
 
@@ -123,7 +123,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-I change the :ref:`method`
+I change the :ref:`method<functions>`
 
 .. code-block:: python
 
@@ -1304,7 +1304,7 @@ test_is_none_a_dictionary
 red: make it fail
 #################################################################################
 
-One last test to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a :ref:`<dictionary> dictionaries`
+One last test to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a :ref:`dictionary<dictionaries>`
 
 .. code-block:: python
 
@@ -1348,8 +1348,7 @@ refactor: make it better
 
     AssertionError: {'key': 'value'} is not None
 
-  when I change the :ref:`method<fucntions>`
-
+  when I change the :ref:`method<functions>`
 
   .. code-block:: python
 
