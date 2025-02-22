@@ -706,7 +706,7 @@ I add a test to see if `None <https://docs.python.org/3/library/constants.html?h
   def test_is_none_a_string(self):
       self.assertIsNone('')
 
-the terminal shows :ref:`AssertionError`
+and the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -751,7 +751,7 @@ refactor: make it better
 
   and the test passes
 
-* I add a line again
+* I add a failing line for an instance test
 
   .. code-block:: python
 
@@ -787,13 +787,13 @@ refactor: make it better
         self.assertIsInstance('', str)
         self.assertNotIsInstance("text", str)
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
     AssertionError: 'text' is an instance of <class 'str'>
 
-  ``'text'`` is a string_, then I add a :ref:`method<functions>`
+  ``'text'`` is a string_, then I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -804,12 +804,13 @@ refactor: make it better
         self.assertIsInstance("text", str)
 
   and the test passes. A string_ is any character(s) inside single, double or triple quotes, for example
-  * ``'single quotes'``
-  * ``'''triple single quotes'''``
-  * ``"double quotes"``
-  * ``"""triple double quotes"""``
 
-  see :ref:`quotes` for a more details
+  - ``'single quotes'``
+  - ``'''triple single quotes'''``
+  - ``"double quotes"``
+  - ``"""triple double quotes"""``
+
+  see :ref:`quotes` for more
 
 * I add one more instance test
 
@@ -822,7 +823,7 @@ refactor: make it better
         self.assertIsInstance("text", str)
         self.assertIsInstance(None, str)
 
-  the terminal shows :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -841,7 +842,7 @@ refactor: make it better
 
   the test passes
 
-* then I add a note
+* and I add a note
 
   .. code-block:: python
 
