@@ -1167,7 +1167,7 @@ test_is_none_a_set
 red: make it fail
 #################################################################################
 
-I add a new failing test to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a set_
+I add a new test to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a set_
 
 .. code-block:: python
 
@@ -1209,7 +1209,7 @@ refactor: make it better
 
     AssertionError: {1, 2, 3, 'n'} is not NOne
 
-  when I change the :ref:`method<functions>`
+  I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -1217,9 +1217,9 @@ refactor: make it better
         self.assertIsNotNone(set())
         self.assertIsNotNone({1, 2, 3, 'n'})
 
-  the test passes
+  and the test passes
 
-* I add an instance test
+* then I add an instance test
 
   .. code-block:: python
 
@@ -1243,7 +1243,7 @@ refactor: make it better
         self.assertIsNotNone({1, 2, 3, 'n'})
         self.assertIsInstance({1, 2, 3, 'n'}, set)
 
-* then I add another instance test
+* then add another instance test
 
   .. code-block:: python
 
@@ -1254,16 +1254,6 @@ refactor: make it better
         self.assertIsInstance(None, set)
 
   which gives me :ref:`AssertionError`
-
-  .. code-block:: python
-
-    def test_is_none_a_set(self):
-        self.assertIsNotNone(set())
-        self.assertIsNotNone({1, 2, 3, 'n'})
-        self.assertIsInstance({1, 2, 3, 'n'}, set)
-        self.assertIsInstance(None, set)
-
-  the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -1276,7 +1266,7 @@ refactor: make it better
     def test_is_none_a_set(self):
         self.assertNotIsInstance(None, set)
 
-* then I add a new note
+* then add a note
 
   .. code-block:: python
 
@@ -1312,7 +1302,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: {} is not None
 
-wait a minute! ``{}`` is how Python represents sets. True, it also represents :ref:`dictionaries` with curly braces. I will show the difference in a little bit
+wait a minute! ``{}`` is how Python represents sets_, it also represents :ref:`dictionaries` this way, with a difference. I will show this in a little bit
 
 green: make it pass
 #################################################################################
@@ -1329,7 +1319,7 @@ and the test passes
 refactor: make it better
 #################################################################################
 
-* I add another line
+* then I add another line
 
   .. code-block:: python
 
@@ -1362,7 +1352,7 @@ refactor: make it better
         self.assertIsNotNone({'key': 'value'})
         self.assertNotIsInstance({}, dict)
 
-  ``dict`` is the :ref:`class<classes>` for :ref:`dictionaries`, the terminal shows :ref:`AssertionError`
+  dict_ is the :ref:`class<classes>` for :ref:`dictionaries`, the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
