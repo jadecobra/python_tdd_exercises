@@ -20,7 +20,7 @@ None
 test_what_is_none
 *********************************************************************************
 
-`None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is an object used to represent the absence of a value
+`None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ means there is nothing there
 
 red: make it fail
 #################################################################################
