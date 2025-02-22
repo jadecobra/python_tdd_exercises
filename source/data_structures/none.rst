@@ -106,7 +106,7 @@ red: make it fail
     def test_is_none_a_boolean(self):
         self.assertIsNone(False)
 
-  and the terminal responds with :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1015,7 +1015,7 @@ I add a new test for :ref:`lists`
   def test_is_none_a_list(self):
       self.assertIsNone([])
 
-and the terminal responds with :ref:`AssertionError`
+and the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
