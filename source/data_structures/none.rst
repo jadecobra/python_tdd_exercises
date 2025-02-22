@@ -766,7 +766,7 @@ refactor: make it better
 
     AssertionError: '' is an instance of <class 'str'>
 
-  ``''`` is a string_, it is the empty string_. I change the :ref:`method<functions>`
+  ``''`` is the empty string_. I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -929,7 +929,7 @@ refactor: make it better
 
     AssertionError: () is an instance of <class 'tuple'>
 
-  ``()`` is a tuple_, it is the empty tuple_. I change the :ref:`method<functions>`
+  ``()`` is the empty tuple_. I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -968,7 +968,7 @@ refactor: make it better
         self.assertIsInstance((1, 2, 3, 'n'), tuple)
         self.assertIsInstance(None, tuple)
 
-  the terminal shows :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -997,7 +997,7 @@ refactor: make it better
     # None is NOT a boolean
     # None is None
 
-From the tests so far, it is safe to say that `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ and not anything else, but I keep testing
+  it is safe to say that so far it looks like `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ and not anything else
 
 ----
 
@@ -1051,7 +1051,7 @@ refactor: make it better
 
     AssertionError: [1, 2, 3, 'n'] is not None
 
-  when I change the :ref:`method<functions>`
+  I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -1059,9 +1059,9 @@ refactor: make it better
         self.assertIsNotNone([])
         self.assertIsNotNone([1, 2, 3, 'n'])
 
-  the test passes
+  and the test passes
 
-* I add an instance test
+* then I add an instance test
 
   .. code-block:: python
 
@@ -1070,13 +1070,13 @@ refactor: make it better
         self.assertIsNotNone([1, 2, 3, 'n'])
         self.assertNotIsInstance([], list)
 
-  the terminal shows :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
     AssertionError: [] is an instance of <class 'list'>
 
-  ``[]`` is a list_, it is the empty list_. I change the :ref:`method<functions>`
+  ``[]`` is the empty list_. I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -1087,7 +1087,7 @@ refactor: make it better
 
   and the test passes
 
-* I add another instance test
+* then I add another instance test
 
   .. code-block:: python
 
@@ -1097,7 +1097,7 @@ refactor: make it better
         self.assertIsInstance([], list)
         self.assertNotIsInstance([1, 2, 3, 'n'], list)
 
-  the terminal shows :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -1105,7 +1105,7 @@ refactor: make it better
 
   ``[1, 2, 3, 'n']`` is a list_
 
-  when I change the :ref:`method<functions>`
+  I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -1115,19 +1115,9 @@ refactor: make it better
         self.assertIsInstance([], list)
         self.assertIsInstance([1, 2, 3, 'n'], list)
 
-  the test passes
+  and the test passes
 
 * I add one more line
-
-  .. code-block:: python
-
-    def test_is_none_a_list(self):
-        self.assertIsNotNone([])
-        self.assertIsNotNone([1, 2, 3, 'n'])
-        self.assertIsInstance([], list)
-        self.assertIsInstance([1, 2, 3, 'n'], list)
-
-  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1149,7 +1139,11 @@ refactor: make it better
   .. code-block:: python
 
     def test_is_none_a_list(self):
-        self.assertIsInstance(None, list)
+        self.assertIsNotNone([])
+        self.assertIsNotNone([1, 2, 3, 'n'])
+        self.assertIsInstance([], list)
+        self.assertIsInstance([1, 2, 3, 'n'], list)
+        self.assertNotIsInstance(None, list)
 
   then add a new note
 
