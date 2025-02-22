@@ -63,7 +63,7 @@ red: make it fail
 
   the terminal shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: False is an instance of <class 'bool'>
 
@@ -129,7 +129,7 @@ I add a :ref:`method<functions>` called ``test_what_is_true`` with a failing lin
 
 the terminal shows :ref:`AssertionError` because True_ is an instance of the boolean_ :ref:`class <classes>`
 
-.. code-block:: python
+.. code-block:: shell
 
     AssertionError: True is an instance of <class 'bool'>
 

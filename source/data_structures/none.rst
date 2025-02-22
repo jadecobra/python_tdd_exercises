@@ -70,7 +70,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* When I use the assertIsNone_ :ref:`method<functions>` which checks that its input is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
+* When I use the assertIsNone_ :ref:`method<functions>` to check if the input is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
   .. code-block:: python
 
@@ -99,20 +99,20 @@ test_is_none_a_boolean
 red: make it fail
 #################################################################################
 
-* I add a failing test
+* then I add a failing test
 
   .. code-block:: python
 
     def test_is_none_a_boolean(self):
         self.assertIsNone(False)
 
-  the terminal responds with :ref:`AssertionError`
+  and the terminal responds with :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: False is not None
 
-* then I add the error to the list of Exceptions_ encountered
+* which I add to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -135,7 +135,7 @@ and the test passes
 refactor: make it better
 #################################################################################
 
-* I add another failing line
+* then I add another failing line
 
   .. code-block:: python
 
@@ -143,7 +143,7 @@ refactor: make it better
         self.assertIsNotNone(False)
         self.assertIsNone(True)
 
-  the terminal shows :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -158,7 +158,7 @@ refactor: make it better
     # False is NOT None
     # None is None
 
-  when I change the :ref:`method<functions>`
+  I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -166,9 +166,9 @@ refactor: make it better
         self.assertIsNotNone(False)
         self.assertIsNotNone(True)
 
-  the test passes
+  and the test passes
 
-* the `unittest.TestCase`_ :ref:`class<classes>` has two :ref:`methods<functions>` I can use to test if an object_ is an instance of a :ref:`class<classes>`
+* The `unittest.TestCase`_ :ref:`class<classes>` has two :ref:`methods<functions>` I can use to test if an object_ is an instance of a :ref:`class<classes>` or not
 
   .. code-block:: python
 
@@ -179,7 +179,7 @@ refactor: make it better
 
   the assertNotIsInstance_ :ref:`method<functions>` checks if the object_ on the left in the parentheses is NOT an instance of the :ref:`class<classes>` on the right. The terminal shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: False is an instance of <class 'bool'>
 
@@ -204,7 +204,7 @@ refactor: make it better
 
   the terminal shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: True is an instance of <class 'bool'>
 
@@ -233,7 +233,7 @@ refactor: make it better
 
   the terminal shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: None is not an instance of <class 'bool'>
 
