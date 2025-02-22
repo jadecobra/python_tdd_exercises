@@ -351,7 +351,7 @@ red: make it better
 
   int_ is the :ref:`class<classes>` for integers_, the terminal shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: -1 is an instance of <class 'int'>
 
@@ -379,7 +379,7 @@ red: make it better
 
   the terminal shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 0 is an instance of <class 'int'>
 
@@ -412,7 +412,7 @@ red: make it better
 
   the terminal shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 1 is an instance of <class 'int'>
 
@@ -445,7 +445,7 @@ red: make it better
 
   the terminal shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: None is not an instance of <class 'int'>
 
@@ -570,7 +570,7 @@ refactor: make it better
 
   the terminal shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: -0.1 is an instance of <class 'float'>
 
@@ -599,7 +599,7 @@ refactor: make it better
 
   the terminal shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 0.0 is an instance of <class 'float'>
 
@@ -630,7 +630,7 @@ refactor: make it better
 
   the terminal shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 0.1 is an instance of <class 'float'>
 
@@ -661,7 +661,7 @@ refactor: make it better
 
   and get :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: None is not an instance of <class 'float'>
 
@@ -762,7 +762,7 @@ refactor: make it better
 
   str_ is the :ref:`class<classes>` for strings_, the terminal shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: '' is an instance of <class 'str'>
 
@@ -789,7 +789,7 @@ refactor: make it better
 
   and the terminal shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 'text' is an instance of <class 'str'>
 
@@ -824,7 +824,7 @@ refactor: make it better
 
   the terminal shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: None is not an instance of <class 'str'>
 
@@ -924,7 +924,7 @@ refactor: make it better
 
   the terminal shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: () is an instance of <class 'tuple'>
 
@@ -940,7 +940,7 @@ refactor: make it better
 
   the terminal shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: (1, 2, 3, 'n') is an instance of <class 'tuple'>
 
@@ -969,7 +969,7 @@ refactor: make it better
 
   the terminal shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: None is not an instance of <class 'tuple'>
 
@@ -1071,7 +1071,7 @@ refactor: make it better
 
   the terminal shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: [] is an instance of <class 'list'>
 
@@ -1098,7 +1098,7 @@ refactor: make it better
 
   the terminal shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: [1, 2, 3, 'n'] is an instance of <class 'list'>
 
@@ -1139,7 +1139,7 @@ refactor: make it better
 
   the terminal shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: None is not an instance of <class 'list'>
 
@@ -1235,7 +1235,7 @@ refactor: make it better
 
   and the terminal shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {1, 2, 3, 'n'} is an instance of <class 'set'>
 
@@ -1270,7 +1270,7 @@ refactor: make it better
 
   the terminal shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: None is not an instance of <class 'set'>
 
@@ -1369,7 +1369,7 @@ refactor: make it better
 
   ``dict`` is the :ref:`class<classes>` for :ref:`dictionaries`, the terminal shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {} is an instance of <class 'dict'>
 
@@ -1394,7 +1394,7 @@ refactor: make it better
 
   the terminal shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'key': 'value'} is an instance of <class 'dict'>
 
@@ -1422,7 +1422,7 @@ refactor: make it better
 
   the terminal shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: None is not an instance of <class 'dict'>
 
