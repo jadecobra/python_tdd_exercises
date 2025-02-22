@@ -480,14 +480,14 @@ test_is_none_a_float
 red: make it fail
 #################################################################################
 
-I add a new test to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a float_
+I add another test to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a float_
 
 .. code-block:: python
 
   def test_is_none_a_float(self):
       self.assertIsNone(-0.1)
 
-the terminal shows :ref:`AssertionError`
+and the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -532,7 +532,7 @@ refactor: make it better
 
   and the test passes
 
-* I add a line again
+* I add a failing line
 
   .. code-block:: python
 
@@ -541,7 +541,7 @@ refactor: make it better
         self.assertIsNotNone(0.0)
         self.assertIsNone(0.1)
 
-  the terminal shows :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -574,7 +574,7 @@ refactor: make it better
 
     AssertionError: -0.1 is an instance of <class 'float'>
 
-  I change the :ref:`method<functions>`
+  ``-0.1`` is a float_ representing negative floating point numbers. I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -584,9 +584,9 @@ refactor: make it better
         self.assertIsNotNone(0.1)
         self.assertIsInstance(-0.1, float)
 
-  and the test passes. ``-0.1`` is a float_ representing negative floating point numbers
+  and the test passes
 
-* I add another instance test
+* I add the next instance test
 
   .. code-block:: python
 
@@ -616,7 +616,7 @@ refactor: make it better
 
   and the test passes
 
-* I add another failing line
+* I add another instance test
 
   .. code-block:: python
 
@@ -628,7 +628,7 @@ refactor: make it better
         self.assertIsInstance(0.0, float)
         self.assertNotIsInstance(0.1, float)
 
-  the terminal shows :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -665,7 +665,7 @@ refactor: make it better
 
     AssertionError: None is not an instance of <class 'float'>
 
-  I change the :ref:`method<functions>`
+  when I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -678,7 +678,7 @@ refactor: make it better
         self.assertIsInstance(0.1, float)
         self.assertNotIsInstance(None, float)
 
-  and the test passes
+  the test passes
 
 * time for a new note
 
