@@ -112,7 +112,7 @@ red: make it fail
 
     AssertionError: False is not None
 
-* which I add to the list of Exceptions_ encountered
+* I add it to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -355,7 +355,7 @@ refactor: make it better
 
     AssertionError: -1 is an instance of <class 'int'>
 
-  ``-1`` is an integer_ representing positive integers_. I make the test pass
+  ``-1`` represents the positive integers_. I make the test pass
 
   .. code-block:: python
 
@@ -416,7 +416,7 @@ refactor: make it better
 
     AssertionError: 1 is an instance of <class 'int'>
 
-  ``1`` is an integer_ representing the positive integers_. When I change the :ref:`method<functions>`
+  ``1`` represents the positive integers_. When I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -574,7 +574,7 @@ refactor: make it better
 
     AssertionError: -0.1 is an instance of <class 'float'>
 
-  ``-0.1`` is a float_ representing negative floating point numbers. I change the :ref:`method<functions>`
+  ``-0.1`` represents the negative floating point numbers. I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -634,7 +634,7 @@ refactor: make it better
 
     AssertionError: 0.1 is an instance of <class 'float'>
 
-  ``0.1`` is a float_ representing positive floating point numbers. I make the test pass
+  ``0.1`` represents the positive floating point numbers. I make the test pass
 
   .. code-block:: python
 
