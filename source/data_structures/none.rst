@@ -383,9 +383,7 @@ refactor: make it better
 
     AssertionError: 0 is an instance of <class 'int'>
 
-  ``0`` is an integer_
-
-  I change the :ref:`method<functions>`
+  ``0`` is an integer_. I change the :ref:`method<functions>`
 
   .. code-block:: python
 
