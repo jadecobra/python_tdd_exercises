@@ -407,13 +407,13 @@ refactor: make it better
         self.assertIsInstance(0, int)
         self.assertNotIsInstance(1, int)
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
     AssertionError: 1 is an instance of <class 'int'>
 
-  ``1`` is for positive integers_. When I change the :ref:`method<functions>`
+  ``1`` is for positive integers_. I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -425,7 +425,7 @@ refactor: make it better
         self.assertIsInstance(0, int)
         self.assertIsInstance(1, int)
 
-  the terminal shows passing tests
+  and the terminal shows passing tests
 
 * one more instance test
 
@@ -459,7 +459,7 @@ refactor: make it better
         self.assertIsInstance(1, int)
         self.assertNotIsInstance(None, int)
 
-* then add a new note
+* then I add a new note
 
   .. code-block:: python
 
@@ -477,14 +477,14 @@ test_is_none_a_float
 red: make it fail
 #################################################################################
 
-I add another test to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a float_
+I add a test to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a float_
 
 .. code-block:: python
 
   def test_is_none_a_float(self):
       self.assertIsNone(-0.1)
 
-and the terminal shows :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -519,7 +519,7 @@ refactor: make it better
 
     AssertionError: 0.0 is not None
 
-  I change the :ref:`method<functions>` to match
+  when I change the :ref:`method<functions>` to match
 
   .. code-block:: python
 
@@ -527,7 +527,7 @@ refactor: make it better
         self.assertIsNotNone(-0.1)
         self.assertIsNotNone(0.0)
 
-  and the test passes
+  the test passes
 
 * I add a failing line
 
@@ -555,7 +555,7 @@ refactor: make it better
 
   the test passes
 
-* time for the instance tests
+* time for instance tests
 
   .. code-block:: python
 
@@ -625,7 +625,7 @@ refactor: make it better
         self.assertIsInstance(0.0, float)
         self.assertNotIsInstance(0.1, float)
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -643,7 +643,7 @@ refactor: make it better
         self.assertIsInstance(0.0, float)
         self.assertIsInstance(0.1, float)
 
-* then I add one more failing line
+* then I add one more line
 
   .. code-block:: python
 
