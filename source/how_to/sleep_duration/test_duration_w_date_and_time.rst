@@ -315,7 +315,7 @@ I copy the value from the left side of the :ref:`AssertionError` to change the e
 
 and it passes
 
-The `datetime.datetime.strptime`_ :ref:`method<functions>` returns a `datetime.datetime`_ object when given 2 strings_ as inputs - a timestamp and a pattern that represents the timestamp. The pattern provided is
+The `datetime.datetime.strptime`_ :ref:`method<functions>` returns a `datetime.datetime`_ object when given 2 strings_ as inputs - a timestamp and a pattern that is for the timestamp. The pattern provided is
 
 - ``%d`` for days
 - ``%m`` for months

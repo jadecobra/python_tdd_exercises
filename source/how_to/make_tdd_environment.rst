@@ -631,7 +631,7 @@ You made it this far and have become the greatest programmer in the world. To fo
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-  ``$1`` represents the first argument given when the program is called, you can use it in place of ``$PROJECT_NAME``
+  ``$1`` is for the first argument given when the program is called, you can use it in place of ``$PROJECT_NAME``
 
 * I use the echo_ program to add text for the first failing test to ``test_$PROJECT_NAME.py``
 

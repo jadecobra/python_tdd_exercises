@@ -20,7 +20,7 @@ None
 test_what_is_none
 *********************************************************************************
 
-`None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ means there is nothing there
+`None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is used when there is no value
 
 red: make it fail
 #################################################################################
@@ -355,7 +355,7 @@ refactor: make it better
 
     AssertionError: -1 is an instance of <class 'int'>
 
-  ``-1`` represents the positive integers_. I make the test pass
+  ``-1`` is for the positive integers_. I make the test pass
 
   .. code-block:: python
 
@@ -416,7 +416,7 @@ refactor: make it better
 
     AssertionError: 1 is an instance of <class 'int'>
 
-  ``1`` represents the positive integers_. When I change the :ref:`method<functions>`
+  ``1`` is for the positive integers_. When I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -574,7 +574,7 @@ refactor: make it better
 
     AssertionError: -0.1 is an instance of <class 'float'>
 
-  ``-0.1`` represents the negative floating point numbers. I change the :ref:`method<functions>`
+  ``-0.1`` is for the negative floating point numbers. I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -634,7 +634,7 @@ refactor: make it better
 
     AssertionError: 0.1 is an instance of <class 'float'>
 
-  ``0.1`` represents the positive floating point numbers. I make the test pass
+  ``0.1`` is for the positive floating point numbers. I make the test pass
 
   .. code-block:: python
 
@@ -1302,7 +1302,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: {} is not None
 
-wait a minute! ``{}`` is how Python represents sets_, it also represents :ref:`dictionaries` this way, with a difference. I will show this in a little bit
+wait a minute! ``{}`` is how Python is for sets_, it also is for :ref:`dictionaries` this way, with a difference. I will show this in a little bit
 
 green: make it pass
 #################################################################################
