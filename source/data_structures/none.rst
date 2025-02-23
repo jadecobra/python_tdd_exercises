@@ -70,25 +70,23 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* When I use the assertIsNone_ :ref:`method<functions>` to check if the input is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
+When I use the assertIsNone_ :ref:`method<functions>` to check if the input is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
-  .. code-block:: python
+.. code-block:: python
 
-    def test_what_is_none(self):
-        self.assertIsNone(None)
+  def test_what_is_none(self):
+      self.assertIsNone(None)
 
-  the test passes
+the test passes, and I add a note
 
-* and I add a note
+.. code-block:: python
 
-  .. code-block:: python
-
-    # NOTES
-    # None is None
+  # NOTES
+  # None is None
 
 
-    # Exceptions Encountered
-    # AssertionError
+  # Exceptions Encountered
+  # AssertionError
 
 ----
 
@@ -99,20 +97,23 @@ test_is_none_a_boolean
 red: make it fail
 #################################################################################
 
-* I add another failing test
+I add another failing test
 
-  .. code-block:: python
+.. code-block:: python
 
-    def test_is_none_a_boolean(self):
-        self.assertIsNone(False)
+  def test_is_none_a_boolean(self):
+      self.assertIsNone(False)
 
-  and the terminal shows :ref:`AssertionError`
+and the terminal shows :ref:`AssertionError`
 
-  .. code-block:: python
+.. code-block:: python
 
-    AssertionError: False is not None
+  AssertionError: False is not None
 
-* I add it to the list of Exceptions_ encountered
+green: make it pass
+#################################################################################
+
+I add the error to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -120,8 +121,6 @@ red: make it fail
     # False is NOT None
     # None is None
 
-green: make it pass
-#################################################################################
 
 then I change the :ref:`method<functions>`
 
@@ -143,7 +142,7 @@ refactor: make it better
         self.assertIsNotNone(False)
         self.assertIsNone(True)
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -158,7 +157,7 @@ refactor: make it better
     # False is NOT None
     # None is None
 
-  when I change the :ref:`method<functions>`
+  change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -166,7 +165,7 @@ refactor: make it better
         self.assertIsNotNone(False)
         self.assertIsNotNone(True)
 
-  the test passes
+  and the test passes
 
 * The `unittest.TestCase`_ :ref:`class<classes>` has two :ref:`methods<functions>` I can use to test if an object_ is an instance of a :ref:`class<classes>` or not
 
