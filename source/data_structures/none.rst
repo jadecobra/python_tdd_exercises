@@ -157,7 +157,7 @@ refactor: make it better
     # False is NOT None
     # None is None
 
-  change the :ref:`method<functions>`
+  I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -191,7 +191,7 @@ refactor: make it better
         self.assertIsNotNone(True)
         self.assertIsInstance(False, bool)
 
-  and the test passes. I do it again with :ref:`True<test_what_is_true>`
+  the test passes. I do it again with :ref:`True<test_what_is_true>`
 
   .. code-block:: python
 
@@ -201,7 +201,7 @@ refactor: make it better
         self.assertIsInstance(False, bool)
         self.assertNotIsInstance(True, bool)
 
-  the terminal shows :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -219,7 +219,7 @@ refactor: make it better
 
   and the test passes
 
-* I add another line to test if :ref:`None` is a boolean_
+* then I add another line to test if :ref:`None` is a boolean_
 
   .. code-block:: python
 
@@ -236,7 +236,7 @@ refactor: make it better
 
     AssertionError: None is not an instance of <class 'bool'>
 
-  then I change the :ref:`method<functions>` to make the test pass
+  I change the :ref:`method<functions>` to make the test pass
 
   .. code-block:: python
 
@@ -1058,7 +1058,7 @@ refactor: make it better
 
   and the test passes
 
-* then I add an instance test
+* I add an instance test
 
   .. code-block:: python
 
@@ -1421,6 +1421,7 @@ refactor: make it better
 
     # NOTES
     # None is NOT a dictionary
+    # None is NOt a set
     # None is NOT a list
     # None is NOT a tuple
     # None is NOT a string
