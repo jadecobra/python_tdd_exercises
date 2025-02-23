@@ -732,7 +732,7 @@ refactor: make it better
         self.assertIsNotNone('')
         self.assertIsNone("text")
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -895,7 +895,7 @@ refactor: make it better
         self.assertIsNotNone(())
         self.assertIsNone((1, 2, 3, 'n'))
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -911,7 +911,7 @@ refactor: make it better
 
   and the test passes
 
-* I add an instance test
+* then I add an instance test
 
   .. code-block:: python
 
@@ -920,7 +920,7 @@ refactor: make it better
         self.assertIsNotNone((1, 2, 3, 'n'))
         self.assertNotIsInstance((), tuple)
 
-  the terminal shows :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -994,7 +994,7 @@ refactor: make it better
     # None is NOT a boolean
     # None is None
 
-  it is safe to say that so far it looks like `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ and not anything else
+  it looks like `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ and not anything else
 
 ----
 
@@ -1020,7 +1020,6 @@ and the terminal shows :ref:`AssertionError`
 
 green: make it pass
 #################################################################################
-
 
 when I change the :ref:`method<functions>` to match
 
@@ -1299,7 +1298,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: {} is not None
 
-wait a minute! ``{}`` is how Python is for sets_, it also is for :ref:`dictionaries` this way, with a difference. I will show this in a little bit
+wait a minute! Python uses ``{}`` for sets_, it also uses it for :ref:`dictionaries`, with a difference. I show this in a little bit
 
 green: make it pass
 #################################################################################
@@ -1401,6 +1400,7 @@ refactor: make it better
         self.assertIsNotNone({'key': 'value'})
         self.assertIsInstance({}, dict)
         self.assertIsInstance({'key': 'value'}, dict)
+        self.assertIsInstance(None, dict)
 
   the terminal shows :ref:`AssertionError`
 
@@ -1413,9 +1413,13 @@ refactor: make it better
   .. code-block:: python
 
     def test_is_none_a_dictionary(self):
+        self.assertIsNotNone(dict())
+        self.assertIsNotNone({'key': 'value'})
+        self.assertIsInstance({}, dict)
+        self.assertIsInstance({'key': 'value'}, dict)
         self.assertNotIsInstance(None, dict)
 
-* then I add a note
+* then I add the last note
 
   .. code-block:: python
 
