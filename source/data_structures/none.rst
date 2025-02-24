@@ -357,7 +357,7 @@ refactor: make it better
 
     AssertionError: -1 is an instance of <class 'int'>
 
-  ``-1`` is for positive integers_. I make the test pass
+  ``-1`` is for the positive integers_. I make the test pass
 
   .. code-block:: python
 
@@ -416,7 +416,7 @@ refactor: make it better
 
     AssertionError: 1 is an instance of <class 'int'>
 
-  ``1`` is for positive integers_. I change the :ref:`method<functions>`
+  ``1`` is for the positive integers_. I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -634,7 +634,7 @@ refactor: make it better
 
     AssertionError: 0.1 is an instance of <class 'float'>
 
-  ``0.1`` is for positive floating point numbers. I make the test pass
+  ``0.1`` is for the positive floating point numbers. I make the test pass
 
   .. code-block:: python
 
