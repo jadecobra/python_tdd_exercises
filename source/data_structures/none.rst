@@ -789,7 +789,7 @@ refactor: make it better
 
     AssertionError: 'text' is an instance of <class 'str'>
 
-  ``'text'`` is a string_, then I change the :ref:`method<functions>`
+  ``'text'`` is a string_. I change the :ref:`method<functions>` to make the test pass
 
   .. code-block:: python
 
@@ -799,7 +799,7 @@ refactor: make it better
         self.assertIsInstance('', str)
         self.assertIsInstance("text", str)
 
-  and the test passes. A string_ is any character(s) inside single, double or triple quotes, for example
+  A string_ is any character(s) inside single, double or triple quotes, for example
 
   - ``'single quotes'``
   - ``'''triple single quotes'''``
