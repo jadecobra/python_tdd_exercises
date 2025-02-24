@@ -42,7 +42,7 @@ class TestNone(unittest.TestCase):
         self.assertIsNotNone(())
         self.assertIsNotNone((1, 2, 3, 'n'))
         self.assertIsInstance((), tuple)
-        self.assertIsInstance((1, 2, 3, 'n'),  tuple)
+        self.assertIsInstance((1, 2, 3, 'n'), tuple)
         self.assertNotIsInstance(None, tuple)
 
     def test_is_none_a_list(self):
