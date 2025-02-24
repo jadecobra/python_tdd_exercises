@@ -115,12 +115,11 @@ green: make it pass
 
 I add the error to the list of Exceptions_ encountered
 
-  .. code-block:: python
+.. code-block:: python
 
-    # NOTES
-    # False is NOT None
-    # None is None
-
+  # NOTES
+  # False is NOT None
+  # None is None
 
 then I change the :ref:`method<functions>`
 
