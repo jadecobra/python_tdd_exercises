@@ -113,7 +113,7 @@ and the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I add the error to the list of Exceptions_ encountered
+I add a note
 
 .. code-block:: python
 
@@ -235,14 +235,18 @@ refactor: make it better
 
     AssertionError: None is not an instance of <class 'bool'>
 
-  I change the :ref:`method<functions>` to make the test pass
+  :ref:`None` is NOT a boolean_. I change the :ref:`method<functions>`
 
   .. code-block:: python
 
-      def test_is_none_a_boolean(self):
-          self.assertNotIsInstance(None, bool)
+    def test_is_none_a_boolean(self):
+        self.assertIsNotNone(False)
+        self.assertIsNotNone(True)
+        self.assertIsInstance(False, bool)
+        self.assertIsInstance(True, bool)
+        self.assertNotIsInstance(None, bool)
 
-* and change the last two notes I added
+  the test passes, and I change the last two notes
 
   .. code-block:: python
 
@@ -458,7 +462,7 @@ refactor: make it better
         self.assertIsInstance(1, int)
         self.assertNotIsInstance(None, int)
 
-* then I add a new note
+  then I add a new note
 
   .. code-block:: python
 
@@ -756,7 +760,7 @@ refactor: make it better
         self.assertIsNotNone("text")
         self.assertNotIsInstance('', str)
 
-  str_ is the :ref:`class<classes>` for strings_, the terminal shows :ref:`AssertionError`
+  str_ is the :ref:`class<classes>` for strings_. The terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -836,9 +840,7 @@ refactor: make it better
         self.assertIsInstance("text", str)
         self.assertNotIsInstance(None, str)
 
-  the test passes
-
-* and I add a note
+  the test passes and I add a note
 
   .. code-block:: python
 
@@ -970,7 +972,7 @@ refactor: make it better
 
     AssertionError: None is not an instance of <class 'tuple'>
 
-  then I change the :ref:`method<functions>` to make the test pass
+  I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -981,7 +983,7 @@ refactor: make it better
         self.assertIsInstance((1, 2, 3, 'n'), tuple)
         self.assertNotIsInstance(None, tuple)
 
-* and I add a note
+  the test passes and I add a note
 
   .. code-block:: python
 
@@ -1261,7 +1263,7 @@ refactor: make it better
     def test_is_none_a_set(self):
         self.assertNotIsInstance(None, set)
 
-* then add a note
+  then add a note
 
   .. code-block:: python
 
@@ -1418,7 +1420,7 @@ refactor: make it better
         self.assertIsInstance({'key': 'value'}, dict)
         self.assertNotIsInstance(None, dict)
 
-* then I add the last note
+  then I add the last note
 
   .. code-block:: python
 
