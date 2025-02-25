@@ -101,10 +101,13 @@ I add another failing test
 
 .. code-block:: python
 
+  def test_what_is_none(self):
+      self.assertIsNone(None)
+
   def test_is_none_a_boolean(self):
       self.assertIsNone(False)
 
-and the terminal shows :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -121,7 +124,7 @@ I add a note
   # False is NOT None
   # None is None
 
-then I change the :ref:`method<functions>`
+then change the :ref:`method<functions>`
 
 .. code-block:: python
 
@@ -147,7 +150,7 @@ refactor: make it better
 
     AssertionError: True is not None
 
-  then I add a note
+  I add a note
 
   .. code-block:: python
 
@@ -156,7 +159,7 @@ refactor: make it better
     # False is NOT None
     # None is None
 
-  I change the :ref:`method<functions>`
+  then I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -166,7 +169,7 @@ refactor: make it better
 
   and the test passes
 
-* The `unittest.TestCase`_ :ref:`class<classes>` has two :ref:`methods<functions>` I can use to test if an object_ is an instance of a :ref:`class<classes>` or not
+* The `unittest.TestCase`_ :ref:`class<classes>` has two :ref:`methods<functions>` I can use to test if an object_ is an instance of a :ref:`class<classes>` or not, I use them to test is :ref:`None` is a boolean_
 
   .. code-block:: python
 
@@ -200,7 +203,7 @@ refactor: make it better
         self.assertIsInstance(False, bool)
         self.assertNotIsInstance(True, bool)
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -216,9 +219,9 @@ refactor: make it better
         self.assertIsInstance(False, bool)
         self.assertIsInstance(True, bool)
 
-  and the test passes
+  the test passes
 
-* then I add another line to test if :ref:`None` is a boolean_
+* I add another line
 
   .. code-block:: python
 
@@ -229,7 +232,7 @@ refactor: make it better
         self.assertIsInstance(True, bool)
         self.assertIsInstance(None, bool)
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -299,7 +302,7 @@ refactor: make it better
         self.assertIsNotNone(-1)
         self.assertIsNone(0)
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -341,7 +344,7 @@ refactor: make it better
 
   and the test passes
 
-* then I add an instance test
+* I add an instance test
 
   .. code-block:: python
 
@@ -368,7 +371,7 @@ refactor: make it better
         self.assertIsInstance(-1, int)
         self.assertIsInstance(0, int)
 
-* then I add another instance test
+* I add another instance test
 
   .. code-block:: python
 
@@ -379,7 +382,7 @@ refactor: make it better
         self.assertIsInstance(-1, int)
         self.assertNotIsInstance(0, int)
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -574,7 +577,7 @@ refactor: make it better
 
     AssertionError: -0.1 is an instance of <class 'float'>
 
-  ``-0.1`` is for negative floating point numbers. I change the :ref:`method<functions>`
+  ``-0.1`` is for the negative floating point numbers. I change the :ref:`method<functions>`
 
   .. code-block:: python
 
