@@ -270,6 +270,10 @@ I add a test to see if `None <https://docs.python.org/3/library/constants.html?h
 
 .. code-block:: python
 
+  def test_is_none_a_boolean(self):
+      ...
+      self.assertNotIsInstance(None, bool)
+
   def test_is_none_an_integer(self):
       self.assertIsNone(-1)
 
@@ -282,7 +286,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-when I change the :ref:`method<functions>`
+when I change the :ref:`method<functions>` to match
 
 .. code-block:: python
 
@@ -308,7 +312,7 @@ refactor: make it better
 
     AssertionError: 0 is not None
 
-  then I change the :ref:`method<functions>`
+  I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -316,7 +320,7 @@ refactor: make it better
         self.assertIsNotNone(-1)
         self.assertIsNotNone(0)
 
-  and the test passes
+  and the terminal shows green again
 
 * I add another line
 
@@ -360,7 +364,7 @@ refactor: make it better
 
     AssertionError: -1 is an instance of <class 'int'>
 
-  ``-1`` is for the positive integers_. I make the test pass
+  ``-1`` is an integer_ for the positive integers_. I make the test pass
 
   .. code-block:: python
 
@@ -369,7 +373,6 @@ refactor: make it better
         self.assertIsNotNone(0)
         self.assertIsNotNone(1)
         self.assertIsInstance(-1, int)
-        self.assertIsInstance(0, int)
 
 * I add another instance test
 
@@ -486,6 +489,10 @@ red: make it fail
 I add a test to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a float_
 
 .. code-block:: python
+
+  def test_is_none_an_integer(self):
+      ...
+      self.assertNotIsInstance(None, int)
 
   def test_is_none_a_float(self):
       self.assertIsNone(-0.1)
