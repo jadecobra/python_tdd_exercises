@@ -178,13 +178,13 @@ refactor: make it better
         self.assertIsNotNone(True)
         self.assertNotIsInstance(False, bool)
 
-  the assertNotIsInstance_ :ref:`method<functions>` checks if the object_ on the left in the parentheses is NOT an instance of the :ref:`class<classes>` on the right. The terminal shows :ref:`AssertionError`
+  the assertNotIsInstance_ :ref:`method<functions>` checks if :ref:`False<test_what_is_false>` is NOT an instance of the bool_ :ref:`class<classes>`. The terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
     AssertionError: False is an instance of <class 'bool'>
 
-  :ref:`False<test_what_is_false>` is a boolean_. I change the :ref:`method<functions>` to assertIsInstance_ which checks if the object_ on the left of the parentheses is an instance of the :ref:`class<classes>` on the right
+  :ref:`False<test_what_is_false>` is a boolean_. I change the :ref:`method<functions>` to assertIsInstance_ to show that :ref:`False<test_what_is_false>` is an instance of the bool_ :ref:`class<classes>`
 
   .. code-block:: python
 
@@ -713,6 +713,10 @@ I add a test to see if `None <https://docs.python.org/3/library/constants.html?h
 
 .. code-block:: python
 
+  def test_is_none_a_float(self):
+      ...
+      self.assertNotIsInstance(None, float)
+
   def test_is_none_a_string(self):
       self.assertIsNone('')
 
@@ -813,7 +817,7 @@ refactor: make it better
         self.assertIsInstance('', str)
         self.assertIsInstance("text", str)
 
-  A string_ is any character(s) inside single, double or triple quotes, for example
+  A string_ is anything in single, double or triple quotes, for example
 
   - ``'single quotes'``
   - ``'''triple single quotes'''``
@@ -873,6 +877,10 @@ red: make it fail
 I add a test to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a tuple_
 
 .. code-block:: python
+
+  def test_is_none_a_string(self):
+      ...
+      self.assertNotIsInstance(None, str)
 
   def test_is_none_a_tuple(self):
       self.assertIsNone(())
