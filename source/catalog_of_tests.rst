@@ -10,8 +10,6 @@ catalog of tests
 
 ----
 
-Here are all the tests in this book
-
 :ref:`test_failure`
 
 *********************************************************************************
