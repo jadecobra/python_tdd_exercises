@@ -21,13 +21,13 @@ My name is Jacob Itegboje and this is a collection of `Test Driven Development`_
 I recommend reading `Kent Beck’s <https://en.wikipedia.org/wiki/Kent_Beck>`_ `Test Driven Development by Example`_ and `Martin Fowler’s <https://en.wikipedia.org/wiki/Martin_Fowler_(software_engineer)>`_ `Refactoring`_, they both influenced the way I write programs.
 
 *********************************************************************************
-who is this book for?
+who is this for?
 *********************************************************************************
 
-* If you are interested in Python, this book is for you
-* If you just started your journey, CONGRATULATIONS! You picked Python from the many `programming languages <https://en.wikipedia.org/wiki/Programming_language>`_ out there, Celebrate it, this book is for you
-* If you are new to `Test Driven Development`_ in Python, this book is for you
-* If you already use Python but do not know any of the Exceptions_ below, this book is for you
+* If you are interested in Python, this is for you
+* If you just started your journey, CONGRATULATIONS! You picked Python from the many `programming languages <https://en.wikipedia.org/wiki/Programming_language>`_ out there, Celebrate it, this is for you
+* If you are new to `Test Driven Development`_ in Python, this is for you
+* If you already use Python but do not know any of the Exceptions_ below, this is for you
 
   - :ref:`AssertionError`
   - :ref:`AttributeError`
@@ -39,7 +39,7 @@ who is this book for?
   - ValueError_
 
 *********************************************************************************
-how can I use this book?
+how can I use this?
 *********************************************************************************
 
 Start with :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` because it is needed by the other chapters,  then choose how you go through the chapters based on what you like, or you could go through the :ref:`how-tos` section step by step, the other chapters cover :ref:`errors`, :doc:`data_structures/data_structures`, :ref:`functions`, and :ref:`classes`

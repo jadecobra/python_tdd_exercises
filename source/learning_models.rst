@@ -48,6 +48,6 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-If you've gone through any of the other exercises in this book, then you have what you need to solve these problems
+If you've gone through any of the other exercises in this, then you have what you need to solve these problems
 
 Please send me your solutions. I would love to see them
