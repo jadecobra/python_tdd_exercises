@@ -169,7 +169,7 @@ refactor: make it better
 
   and the test passes
 
-* The `unittest.TestCase`_ :ref:`class<classes>` has two :ref:`methods<functions>` I can use to test if an object_ is an instance of a :ref:`class<classes>` or not, I use them to test is :ref:`None` is a boolean_
+* The `unittest.TestCase`_ :ref:`class<classes>` has two :ref:`methods<functions>` I can use to test if an object_ is an instance of a :ref:`class<classes>` or not, I use them to test if :ref:`None` is a boolean_
 
   .. code-block:: python
 
@@ -249,7 +249,7 @@ refactor: make it better
         self.assertIsInstance(True, bool)
         self.assertNotIsInstance(None, bool)
 
-  the test passes, and I change the last two notes
+  the test passes, and I change the last two notes I added
 
   .. code-block:: python
 
@@ -551,13 +551,13 @@ refactor: make it better
         self.assertIsNotNone(0.0)
         self.assertIsNone(0.1)
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: 0.1 is not None
 
-  after I change the :ref:`method<functions>`
+  I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -566,7 +566,7 @@ refactor: make it better
         self.assertIsNotNone(0.0)
         self.assertIsNotNone(0.1)
 
-  the test passes
+  and the test passes
 
 * time for instance tests
 
@@ -578,7 +578,7 @@ refactor: make it better
         self.assertIsNotNone(0.1)
         self.assertNotIsInstance(-0.1, float)
 
-  the terminal shows :ref:`AssertionError`
+  float_ is the :ref:`class<classes>` for floating point numbers, the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -688,9 +688,7 @@ refactor: make it better
         self.assertIsInstance(0.1, float)
         self.assertNotIsInstance(None, float)
 
-  the test passes
-
-* time for a new note
+  the test passes, time for a new note
 
   .. code-block:: python
 
@@ -720,7 +718,7 @@ I add a test to see if `None <https://docs.python.org/3/library/constants.html?h
   def test_is_none_a_string(self):
       self.assertIsNone('')
 
-and the terminal shows :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -765,7 +763,7 @@ refactor: make it better
 
   and the test passes
 
-* I add a failing line for an instance test
+* then I add a failing line for an instance test
 
   .. code-block:: python
 
@@ -1028,6 +1026,10 @@ I add a new test for :ref:`lists`
 
 .. code-block:: python
 
+  def test_is_none_a_tuple(self):
+      ...
+      self.assertNotIsInstance(None, tuple)
+
   def test_is_none_a_list(self):
       self.assertIsNone([])
 
@@ -1118,9 +1120,7 @@ refactor: make it better
 
     AssertionError: [1, 2, 3, 'n'] is an instance of <class 'list'>
 
-  ``[1, 2, 3, 'n']`` is a list_
-
-  I change the :ref:`method<functions>`
+  ``[1, 2, 3, 'n']`` is a list_. I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -1143,7 +1143,7 @@ refactor: make it better
         self.assertIsInstance([1, 2, 3, 'n'], list)
         self.assertIsInstance(None, list)
 
-  the terminal shows :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -1186,6 +1186,10 @@ I add a new test to see if `None <https://docs.python.org/3/library/constants.ht
 
 .. code-block:: python
 
+  def test_is_none_a_list(self):
+      ...
+      self.assertNotIsInstance(None, list)
+
   def test_is_none_a_set(self):
       self.assertIsNone(set())
 
@@ -1222,7 +1226,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    AssertionError: {1, 2, 3, 'n'} is not NOne
+    AssertionError: {1, 2, 3, 'n'} is not None
 
   I change the :ref:`method<functions>`
 
@@ -1279,6 +1283,9 @@ refactor: make it better
   .. code-block:: python
 
     def test_is_none_a_set(self):
+        self.assertIsNotNone(set())
+        self.assertIsNotNone({1, 2, 3, 'n'})
+        self.assertIsInstance({1, 2, 3, 'n'}, set)
         self.assertNotIsInstance(None, set)
 
   then add a note
@@ -1308,6 +1315,10 @@ One last test to see if `None <https://docs.python.org/3/library/constants.html?
 
 .. code-block:: python
 
+  def test_is_none_a_set(self):
+      ...
+      self.assertNotIsInstance(None, set)
+
   def test_is_none_a_dictionary(self):
       self.assertIsNone(dict())
 
@@ -1317,7 +1328,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: {} is not None
 
-wait a minute! Python uses ``{}`` for sets_, it also uses it for :ref:`dictionaries`, with a difference. I show this in a little bit
+wait a minute! Python uses ``{}`` for sets_, it also uses them for :ref:`dictionaries`, with a difference.
 
 green: make it pass
 #################################################################################
@@ -1358,7 +1369,7 @@ refactor: make it better
 
   the terminal shows passing tests
 
-* and I add an instance test
+* I add an instance test
 
   .. code-block:: python
 
@@ -1382,7 +1393,7 @@ refactor: make it better
         self.assertIsNotNone({'key': 'value'})
         self.assertIsInstance({}, dict)
 
-* then I add another instance test
+* I add another instance test
 
   .. code-block:: python
 
@@ -1392,7 +1403,7 @@ refactor: make it better
         self.assertIsInstance({}, dict)
         self.assertNotIsInstance({'key': 'value'}, dict)
 
-  the terminal shows :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
