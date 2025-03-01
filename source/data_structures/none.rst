@@ -789,7 +789,7 @@ refactor: make it better
 
   and the test passes
 
-* I add another line
+* then I add another line
 
   .. code-block:: python
 
@@ -799,7 +799,7 @@ refactor: make it better
         self.assertIsInstance('', str)
         self.assertNotIsInstance("text", str)
 
-  the terminal shows :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -944,6 +944,17 @@ refactor: make it better
     AssertionError: () is an instance of <class 'tuple'>
 
   ``()`` is the empty tuple_. I change the :ref:`method<functions>`
+
+  .. code-block:: python
+
+    def test_is_none_a_tuple(self):
+        self.assertIsNotNone(())
+        self.assertIsNotNone((1, 2, 3, 'n'))
+        self.assertIsInstance((), tuple)
+
+  and the test passes
+
+* I add another line
 
   .. code-block:: python
 
@@ -1182,7 +1193,7 @@ test_is_none_a_set
 red: make it fail
 #################################################################################
 
-I add a new test to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a set_
+I want to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a set_
 
 .. code-block:: python
 
@@ -1328,7 +1339,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: {} is not None
 
-wait a minute! Python uses ``{}`` for sets_, it also uses them for :ref:`dictionaries`, with a difference.
+wait a minute! Python uses ``{}`` for sets_, it also uses them for :ref:`dictionaries` with a difference.
 
 green: make it pass
 #################################################################################
@@ -1393,7 +1404,7 @@ refactor: make it better
         self.assertIsNotNone({'key': 'value'})
         self.assertIsInstance({}, dict)
 
-* I add another instance test
+* then I add another instance test
 
   .. code-block:: python
 
@@ -1409,7 +1420,7 @@ refactor: make it better
 
     AssertionError: {'key': 'value'} is an instance of <class 'dict'>
 
-  ``{'key': 'value'}`` is a :ref:`dictionary<dictionaries>` with ``:`` separating the key on the left from the value on the right, you can add more key-value pairs separating them with commas, there is more on this in the :ref:`dictionaries` chapter. I change the :ref:`method<functions>`
+  ``{'key': 'value'}`` is a :ref:`dictionary<dictionaries>` with ``:`` separating the key on the left from the value on the right, you can add more key-value pairs separating them with commas, that is the difference between :ref:`dictionaries` and sets_, there is more on this in the :ref:`dictionaries` chapter. I change the :ref:`method<functions>`
 
   .. code-block:: python
 
