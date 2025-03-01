@@ -178,7 +178,7 @@ refactor: make it better
         self.assertIsNotNone(True)
         self.assertNotIsInstance(False, bool)
 
-  the assertNotIsInstance_ :ref:`method<functions>` checks if :ref:`False<test_what_is_false>` is NOT an instance of the bool_ :ref:`class<classes>`. The terminal shows :ref:`AssertionError`
+  I use the assertNotIsInstance_ :ref:`method<functions>` to test if :ref:`False<test_what_is_false>` is NOT an instance of the bool_ :ref:`class<classes>` which is for booleans_. The terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -219,7 +219,7 @@ refactor: make it better
         self.assertIsInstance(False, bool)
         self.assertIsInstance(True, bool)
 
-  the test passes
+  and the test passes
 
 * I add another line
 
@@ -286,14 +286,14 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-when I change the :ref:`method<functions>` to match
+I change the :ref:`method<functions>` to match
 
 .. code-block:: python
 
   def test_is_none_an_integer(self):
       self.assertIsNotNone(-1)
 
-the test passes
+and the test passes
 
 refactor: make it better
 #################################################################################
@@ -404,7 +404,7 @@ refactor: make it better
 
   and the test passes
 
-* I add another instance test
+* I add another one
 
   .. code-block:: python
 
@@ -449,7 +449,7 @@ refactor: make it better
         self.assertIsInstance(1, int)
         self.assertIsInstance(None, int)
 
-  the terminal shows :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -468,7 +468,7 @@ refactor: make it better
         self.assertIsInstance(1, int)
         self.assertNotIsInstance(None, int)
 
-  then I add a new note
+  then add a new note
 
   .. code-block:: python
 
