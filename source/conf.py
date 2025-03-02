@@ -22,21 +22,10 @@ html_static_path = ['_static']
 html_theme_options = {
     "external_links": [
         ("videos", "https://www.youtube.com/@JacobItegboje"),
-        ("jacobitegboje", "https://jacobitegboje.com"),
     ]
 }
 
-# html_logo = "_static/DRY_html_logo.png"
-# html_theme = 'alabaster'
-# html_sidebars = {
-#     "**": [
-#         # "util/searchbox.html",
-#         # "globaltoc.html",
-#     ]
-# }
-
 extensions = ['sphinx.ext.autosectionlabel']
-# autosectionlabel_prefix_document = True
 
 epub_theme = 'epub'
 epub_description = 'pumping python: how I solve problems with Test Driven Development'
@@ -48,3 +37,13 @@ latex_show_urls = 'inline'
 latex_them = 'howto' # 'manual'
 
 text_sectionchars = '#*=-~"+`'
+
+# html_logo = "_static/DRY_html_logo.png"
+# html_theme = 'alabaster'
+# html_sidebars = {
+#     "**": [
+#         # "util/searchbox.html",
+#         # "globaltoc.html",
+#     ]
+# }
+# autosectionlabel_prefix_document = True
