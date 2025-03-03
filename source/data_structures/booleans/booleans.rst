@@ -381,7 +381,8 @@ refactor: make it better
         self.assertTrue(-1)
 
   the terminal shows tests are still passing
-* I add a new line with a test for ``0``
+
+* I add a new line
 
   .. code-block:: python
 
@@ -486,7 +487,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I change assertTrue_ to assertFalse_
+I change the :ref:`method<functions>`
 
 .. code-block:: python
 
@@ -591,7 +592,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I change assertTrue_ to assertFalse_
+I change the :ref:`method<functions>`
 
 .. code-block:: python
 
@@ -689,7 +690,7 @@ tuples_ are represented with ``()`` in Python
 green: make it pass
 #################################################################################
 
-I change assertTrue_ to assertFalse_ and move the line to ``test_what_is_false``
+I change the :ref:`method<functions>` and move the line to ``test_what_is_false``
 
 .. code-block:: python
 
@@ -785,7 +786,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I change assertTrue_ to assertFalse_ and move the line to ``test_what_is_false``
+I change the :ref:`method<functions>` and move the line to ``test_what_is_false``
 
 .. code-block:: python
 
@@ -884,7 +885,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I change assertTrue_ to assertFalse_ and move the line to ``test_what_is_false``
+I change the :ref:`method<functions>` and move the line to ``test_what_is_false``
 
 .. code-block:: python
 
