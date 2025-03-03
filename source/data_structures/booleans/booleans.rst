@@ -227,7 +227,7 @@ refactor: make it better
         self.assertFalse(False)
         self.assertTrue(True)
 
-  and the test passes, I move the line to ``test_what_is_true``
+  and the test passes, I move the line to the ``test_what_is_true`` :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -251,15 +251,9 @@ refactor: make it better
     # False is not true
     # False is a boolean
 
-
-* True_ is True_
-* True_ is a boolean_
-* False_ is False_
-* False_ is a boolean_
-
 I want to know if any of the other Python data types are False_ or True_
 
-* is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ False_ or True_?
+* is :ref:`None` False_ or True_?
 * is an integer_ False_ or True_?
 * is a float_ False_ or True_?
 * is a string_ False_ or True_?
@@ -278,7 +272,7 @@ red: make it fail
 #################################################################################
 
 
-I add a line to ``test_what_is_true`` to test if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is False_ or True_
+I add a line to ``test_what_is_true`` to test if :ref:`None` is False_ or True_
 
 .. code-block:: python
 
@@ -296,7 +290,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I change assertTrue_ to assertFalse_
+I change the :ref:`method`
 
 .. code-block:: python
 
@@ -307,7 +301,7 @@ and the terminal shows passing tests
 refactor: make it better
 #################################################################################
 
-I move the line to the ``test_what_is_false`` :ref:`method<functions>`
+I move the line to ``test_what_is_false``
 
 .. code-block:: python
 
@@ -316,15 +310,22 @@ I move the line to the ``test_what_is_false`` :ref:`method<functions>`
         self.assertFalse(False)
         self.assertFalse(None)
 
-and the terminal still shows passing tests
+    def test_what_is_true(self):
+        self.assertIsInstance(True, bool)
+        self.assertTrue(True)
 
-From the tests I see that
+then add a note
 
-* True_ is True_
-* True_ is a boolean_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is False_
-* False_ is False_
-* False_ is a boolean_
+.. code-block:: python
+
+  # NOTES
+  # True is true
+  # True is not false
+  # True is a boolean
+  # None is false
+  # False is false
+  # False is not true
+  # False is a boolean
 
 ----
 
@@ -449,7 +450,7 @@ From the tests I see that
 * True_ is True_
 * True_ is a boolean_
 * ``0`` is False_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is False_
+* :ref:`None` is False_
 * False_ is False_
 * False_ is a boolean_
 
@@ -551,7 +552,7 @@ From the tests I see that
 * True_ is a boolean_
 * ``0.0`` is False_
 * ``0`` is False_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is False_
+* :ref:`None` is False_
 * False_ is False_
 * False_ is a boolean_
 
@@ -647,7 +648,7 @@ From the tests I see that
 * an empty string_ is False_
 * ``0.0`` is False_
 * ``0`` is False_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is False_
+* :ref:`None` is False_
 * False_ is False_
 * False_ is a boolean_
 
@@ -742,7 +743,7 @@ From the tests I see that
 * an empty string_ is False_
 * ``0.0`` is False_
 * ``0`` is False_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is False_
+* :ref:`None` is False_
 * False_ is False_
 * False_ is a boolean_
 
@@ -841,7 +842,7 @@ From the tests I see that
 * an empty string_ is False_
 * ``0.0`` is False_
 * ``0`` is False_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is False_
+* :ref:`None` is False_
 * False_ is False_
 * False_ is a boolean_
 
@@ -935,7 +936,7 @@ From the tests I see that
 * an empty string_ is False_
 * ``0.0`` is False_
 * ``0`` is False_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is False_
+* :ref:`None` is False_
 * False_ is False_
 * False_ is a boolean_
 
@@ -1044,7 +1045,7 @@ From the tests I see that
 * an empty string_ is False_
 * ``0.0`` is False_
 * ``0`` is False_
-* `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is False_
+* :ref:`None` is False_
 * False_ is not True_
 * False_ is False_
 * False_ is a boolean_
