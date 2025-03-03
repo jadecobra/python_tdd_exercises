@@ -356,19 +356,22 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I make assertFalse_ to assertTrue_
+I change the :ref:`method<functions>`
 
 .. code-block:: python
 
-  self.assertTrue(-1)
+    def test_what_is_false(self):
+        self.assertIsInstance(False, bool)
+        self.assertFalse(False)
+        self.assertFalse(None)
+        self.assertTrue(-1)
 
-and the terminal shows passing tests
+and the test passes
 
 refactor: make it better
 #################################################################################
 
-
-* I move the line to the ``test_what_is_true`` :ref:`method<functions>`
+* I move the line to ``test_what_is_true``
 
   .. code-block:: python
 
@@ -399,7 +402,7 @@ refactor: make it better
   .. code-block:: python
 
     self.assertFalse(0)
-* I move the line to the ``test_what_is_false`` :ref:`method<functions>`
+* I move the line to ``test_what_is_false``
 
   .. code-block:: python
 
@@ -432,7 +435,7 @@ refactor: make it better
 
     self.assertTrue(1)
 
-* I move the line to the ``test_what_is_false`` :ref:`method<functions>`
+* I move the line to ``test_what_is_false``
 
   .. code-block:: python
 
@@ -495,7 +498,7 @@ refactor: make it better
 #################################################################################
 
 
-* I move the line to the ``test_what_is_false`` :ref:`method<functions>`
+* I move the line to ``test_what_is_false``
 
   .. code-block:: python
 
@@ -532,7 +535,7 @@ refactor: make it better
     self.assertTrue(-0.1)
     self.assertTrue(0.1)
 
-* I move the lines to the ``test_what_is_true`` :ref:`method<functions>`
+* I move the lines to ``test_what_is_true``
 
   .. code-block::python
 
@@ -599,7 +602,7 @@ and the terminal shows passing tests
 refactor: make it better
 #################################################################################
 
-* I move the line to the ``test_what_is_false`` :ref:`method<functions>`
+* I move the line to ``test_what_is_false``
 
   .. code-block:: python
 
@@ -623,7 +626,7 @@ refactor: make it better
 
     AssertionError: 'text' is not false
 
-* I change assertFalse_ to assertTrue_ and move the line to the ``test_what_is_true`` :ref:`method<functions>`
+* I change assertFalse_ to assertTrue_ and move the line to ``test_what_is_true``
 
   .. code-block:: python
 
@@ -686,7 +689,7 @@ tuples_ are represented with ``()`` in Python
 green: make it pass
 #################################################################################
 
-I change assertTrue_ to assertFalse_ and move the line to the ``test_what_is_false`` :ref:`method<functions>`
+I change assertTrue_ to assertFalse_ and move the line to ``test_what_is_false``
 
 .. code-block:: python
 
@@ -717,7 +720,7 @@ refactor: make it better
 
     AssertionError: (1, 2, 3, 'n') is not false
 
-* I change assertFalse_ to assertTrue_ and move the line to the ``test_what_is_true`` :ref:`method<functions>`
+* I change assertFalse_ to assertTrue_ and move the line to ``test_what_is_true``
 
   .. code-block:: python
 
@@ -782,7 +785,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I change assertTrue_ to assertFalse_ and move the line to the ``test_what_is_false`` :ref:`method<functions>`
+I change assertTrue_ to assertFalse_ and move the line to ``test_what_is_false``
 
 .. code-block:: python
 
@@ -812,7 +815,7 @@ refactor: make it better
   .. code-block:: python
 
     AssertionError: [1, 2, 3, 'n'] is not false
-* I change assertFalse_ to assertTrue_ and move the line to the ``test_what_is_true`` :ref:`method<functions>`
+* I change assertFalse_ to assertTrue_ and move the line to ``test_what_is_true``
 
   .. code-block:: python
 
@@ -881,7 +884,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I change assertTrue_ to assertFalse_ and move the line to the ``test_what_is_false`` :ref:`method<functions>`
+I change assertTrue_ to assertFalse_ and move the line to ``test_what_is_false``
 
 .. code-block:: python
 
@@ -905,7 +908,7 @@ refactor: make it better
 
     AssertionError: {1, 2, 3, 'n'} is not false
 
-* I change assertFalse_ to assertTrue_ and move the line to the ``test_what_is_true`` :ref:`method<functions>`
+* I change assertFalse_ to assertTrue_ and move the line to ``test_what_is_true``
 
   .. code-block:: python
 
@@ -1008,7 +1011,7 @@ refactor: make it better
 
     AssertionError: {'key': 'value'} is not false
 
-* I change assertFalse_ to assertTrue_ and move the line to the ``test_what_is_true`` :ref:`method<functions>`
+* I change assertFalse_ to assertTrue_ and move the line to ``test_what_is_true``
 
   .. code-block:: python
 
