@@ -398,12 +398,13 @@ refactor: make it better
 
     AssertionError: 0 is not true
 
-  I change assertTrue_ to assertFalse_ and the terminal shows passing tests
+  I change the :ref:`method<functions>`
 
   .. code-block:: python
 
     self.assertFalse(0)
-* I move the line to ``test_what_is_false``
+
+  the test passes and I move the line to ``test_what_is_false``
 
   .. code-block:: python
 
@@ -413,7 +414,7 @@ refactor: make it better
         self.assertFalse(None)
         self.assertFalse(0)
 
-* I add one more line to test if positive integers_ are False_ or True_
+* I add one more line
 
   .. code-block:: python
 
@@ -430,15 +431,21 @@ refactor: make it better
 
     AssertionError: 1 is not false
 
-* When I change assertFalse_ to assertTrue_ the test passes
+  when I change the :ref:`method<functions>`
 
   .. code-block:: python
 
     self.assertTrue(1)
 
-* I move the line to ``test_what_is_false``
+  the test passes, I move the line to ``test_what_is_true``
 
   .. code-block:: python
+
+    def test_what_is_false(self):
+        self.assertIsInstance(False, bool)
+        self.assertFalse(False)
+        self.assertFalse(None)
+        self.assertFalse(0)
 
     def test_what_is_true(self):
         self.assertIsInstance(True, bool)
@@ -446,17 +453,20 @@ refactor: make it better
         self.assertTrue(-1)
         self.assertTrue(1)
 
-  the terminal still shows passing tests
+  then I add notes
 
-From the tests I see that
+  .. code-block:: python
 
-* Positive and Negative integers_ are True_
-* True_ is True_
-* True_ is a boolean_
-* ``0`` is False_
-* :ref:`None` is False_
-* False_ is False_
-* False_ is a boolean_
+    # NOTES
+    # positive and negative integers are true
+    # True is true
+    # True is not false
+    # True is a boolean
+    # 0 is false
+    # None is false
+    # False is false
+    # False is not true
+    # False is a boolean
 
 -----
 
