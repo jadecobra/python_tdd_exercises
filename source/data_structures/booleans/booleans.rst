@@ -16,8 +16,6 @@ booleans
 
 ----
 
-The tests in this chapter go over booleans_ by comparing them with other data structures in Python to learn what they are and what they are not.
-
 There are two booleans_ - True_ and False_
 
 *********************************************************************************
@@ -67,7 +65,7 @@ red: make it fail
 
     AssertionError: False is an instance of <class 'bool'>
 
-  The `unittest.TestCase.assertNotIsInstance`_ :ref:`method<functions>` checks that the first input given is NOT an instance of the :ref:`class <classes>` given as the second input. It is like asking the question ``is False not an instance of bool?``
+  False_ is a boolean_
 
 green: make it pass
 #################################################################################
@@ -76,39 +74,19 @@ I change assertNotIsInstance_ to assertIsInstance_ to make the test pass
 
 .. code-block:: python
 
-  self.assertIsInstance(False, bool)
+  def test_what_is_false(self):
+      self.assertIsInstance(False, bool)
 
-The `unittest.TestCase.assertIsInstance`_ :ref:`method<functions>` checks that the first input given is an instance of the :ref:`class <classes>` given as the second input. It is like asking the question ``is False an instance of bool?``. The test shows that False_ is a boolean_
+these :ref:`methods<functions>` were introduced in the :ref:`AssertionError` chapter. I add a note
 
-refactor: make it better
-#################################################################################
+.. code-block:: python
 
-* I add a failing line to ``test_what_is_false``
+  # NOTES
+  # False is a boolean
 
-  .. code-block:: python
 
-    self.assertTrue(False)
-
-  the terminal shows :ref:`AssertionError` because False_ is not True_
-
-  .. code-block:: python
-
-    AssertionError: False is not true
-
-  The `unittest.TestCase.assertTrue` :ref:`method<functions>` checks if a given input is True_
-
-* When I change assertTrue_ to assertFalse_ to test if False_ is False_ the test passes
-
-  .. code-block:: python
-
-    self.assertFalse(False)
-
-  The `unittest.TestCase.assertFalse`_ :ref:`method<functions>` checks if a given input is False_
-
-From these tests I see that
-
-* False_ is False_
-* False_ is a boolean_
+  # Exceptions Encountered
+  # AssertionError
 
 ----
 
@@ -120,50 +98,159 @@ red: make it fail
 #################################################################################
 
 
-I add a :ref:`method<functions>` called ``test_what_is_true`` with a failing line to to check if True_ is an instance of the boolean_ :ref:`class <classes>`
+I add another test
 
 .. code-block:: python
 
-    def test_what_is_true(self):
-        self.assertNotIsInstance(True, bool)
+  def test_what_is_false(self):
+      self.assertIsInstance(False, bool)
 
-the terminal shows :ref:`AssertionError` because True_ is an instance of the boolean_ :ref:`class <classes>`
+  def test_what_is_true(self):
+      self.assertNotIsInstance(True, bool)
+
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: shell
 
     AssertionError: True is an instance of <class 'bool'>
 
+True_ is a boolean_
+
 green: make it pass
 #################################################################################
 
-I make ``assertNotIsInstance`` to ``assertIsInstance`` to make the test pass
+I change the :ref:`method<functions>`
 
 .. code-block:: python
 
-  self.assertIsInstance(True, bool)
+  def test_what_is_true(self):
+      self.assertIsInstance(True, bool)
 
+the test passes and I add a note
+
+.. code-block:: python
+
+  # NOTES
+  # True is a boolean
+  # False is a boolean
+
+----
+
+*********************************************************************************
 refactor: make it better
-#################################################################################
+*********************************************************************************
 
 * I add a failing line to ``test_what_is_true``
 
   .. code-block:: python
 
-    self.assertFalse(True)
+    def test_what_is_true(self):
+        self.assertIsInstance(True, bool)
+        self.assertTrue(False)
 
-  the terminal shows :ref:`AssertionError` because True_ is not False_
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  because False_ is not True_. I add a note
+
+  .. code-block:: python
+
+    # NOTES
+    # True is a boolean
+    # False is not true
+    # False is a boolean
+
+  when I change assertTrue_ to assertFalse_
+
+  .. code-block:: python
+
+    def test_what_is_true(self):
+        self.assertIsInstance(True, bool)
+        self.assertFalse(False)
+
+  the test passes and I move the line to the ``test_what_is_false`` :ref:`method<functions>`
+
+  .. code-block:: python
+
+    def test_what_is_false(self):
+        self.assertIsInstance(False, bool)
+        self.assertFalse(False)
+
+    def test_what_is_true(self):
+        self.assertIsInstance(True, bool)
+
+  I add another note
+
+  .. code-block:: python
+
+    # NOTES
+    # True is a boolean
+    # False is false
+    # False is not true
+    # False is a boolean
+
+* I add a failing line to ``test_what_is_false``
+
+  .. code-block:: python
+
+    def test_what_is_false(self):
+        self.assertIsInstance(False, bool)
+        self.assertFalse(False)
+        self.assertFalse(True)
+
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: True is not false
 
-* When I change assertFalse_ to assertTrue_ to test if True_ is True_ the test passes
+  because True_ is not False_. I add a note
 
   .. code-block:: python
 
-    self.assertTrue(True)
+    # NOTES
+    # True is not false
+    # True is a boolean
+    # False is false
+    # False is not true
+    # False is a boolean
 
-From the tests I see that
+  then change assertFalse_ to assertTrue_
+
+  .. code-block:: python
+
+    def test_what_is_false(self):
+        self.assertIsInstance(False, bool)
+        self.assertFalse(False)
+        self.assertTrue(True)
+
+  and the test passes, I move the line to ``test_what_is_true``
+
+  .. code-block:: python
+
+    def test_what_is_false(self):
+        self.assertIsInstance(False, bool)
+        self.assertFalse(False)
+
+    def test_what_is_true(self):
+        self.assertIsInstance(True, bool)
+        self.assertTrue(True)
+
+  then add another note
+
+  .. code-block:: python
+
+    # NOTES
+    # True is true
+    # True is not false
+    # True is a boolean
+    # False is false
+    # False is not true
+    # False is a boolean
+
 
 * True_ is True_
 * True_ is a boolean_
