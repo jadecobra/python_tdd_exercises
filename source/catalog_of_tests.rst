@@ -132,24 +132,6 @@ test_booleans
 test_truth_table
 *********************************************************************************
 
-#. :ref:`test_logical_true`
-#. :ref:`test_logical_false`
-#. :ref:`test_logical_identity`
-#. :ref:`test_logical_negation_aka_not`
-#. :ref:`test_logical_conjunction`
-#. :ref:`test_logical_disjunction`
-#. :ref:`test_logical_implication`
-#. :ref:`test_logical_equality_or_logical_biconditional`
-#. :ref:`test_exclusive_disjunction`
-#. :ref:`test_logical_nand`
-#. :ref:`test_logical_nor`
-#. :ref:`test_converse_non_implication`
-#. :ref:`test_material_non_implication`
-#. :ref:`test_negate`
-#. :ref:`test_project`
-#. :ref:`test_converse_implication`
-#. :ref:`test_true_lies`
-
 *********************************************************************************
 test_lists
 *********************************************************************************
