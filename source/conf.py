@@ -22,6 +22,7 @@ html_static_path = ['_static']
 html_theme_options = {
     "external_links": [
         ("videos", "https://www.youtube.com/@JacobItegboje"),
+        ("jacobitegboje", "https://cal.com/jacobitegboje")
     ]
 }
 
