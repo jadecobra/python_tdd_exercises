@@ -335,7 +335,7 @@ the test passes
 review
 *********************************************************************************
 
-I ran tests for :ref:`Nullary<Nullary Operations>` and :ref:`Unary operations<Unary Operations>`. Would you like to :ref:`test binary operations?<truth table: Logical Conjunction>`
+I ran tests for :ref:`Nullary<Nullary Operations>` and :ref:`Unary operations<Unary Operations>`. Would you like to :ref:`test binary operations?<truth table: truth table: Logical Conjunction and Logical Disjunction>`
 
 ----
 
