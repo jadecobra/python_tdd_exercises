@@ -607,7 +607,7 @@ refactor: make it better
     # False is not true
     # False is a boolean
 
-  I can make the new notes simpler
+  I can make the new notes simpler because floats_ and integers_ are numbers and ``0.0`` is the same as ``0`` even though they are different types_
 
   .. code-block:: python
 
@@ -638,7 +638,7 @@ I add a line to test if a string_ is False_ or True_
   def test_what_is_true(self):
       self.assertIsInstance(True, bool)
       self.assertTrue(True)
-      self.assertTrue(-0.1)
+      self.assertTrue(-1)
       self.assertTrue(1)
       self.assertTrue(-0.1)
       self.assertTrue(0.1)
@@ -659,7 +659,7 @@ I change the :ref:`method<functions>`
 
   self.assertFalse(str())
 
-and the terminal shows passing tests
+and the test passes
 
 refactor: make it better
 #################################################################################
@@ -676,11 +676,18 @@ refactor: make it better
         self.assertFalse(0.0)
         self.assertFalse(str())
 
-* I add a line to test if a string_ with characters is also False_
+* then I add another line
 
   .. code-block:: python
 
-    self.assertFalse('text')
+    def test_what_is_false(self):
+        self.assertIsInstance(False, bool)
+        self.assertFalse(False)
+        self.assertFalse(None)
+        self.assertFalse(0)
+        self.assertFalse(0.0)
+        self.assertFalse(str())
+        self.assertFalse('text')
 
   the terminal shows :ref:`AssertionError`
 
@@ -688,9 +695,23 @@ refactor: make it better
 
     AssertionError: 'text' is not false
 
-* I change assertFalse_ to assertTrue_ and move the line to ``test_what_is_true``
+  I change the :ref:`method<functions>`
 
   .. code-block:: python
+
+    self.assertTrue('text')
+
+  the test passes and I move the line to ``test_what_is_true``
+
+  .. code-block:: python
+
+    def test_what_is_false(self):
+        self.assertIsInstance(False, bool)
+        self.assertFalse(False)
+        self.assertFalse(None)
+        self.assertFalse(0)
+        self.assertFalse(0.0)
+        self.assertFalse(str())
 
     def test_what_is_true(self):
         self.assertIsInstance(True, bool)
@@ -701,21 +722,22 @@ refactor: make it better
         self.assertTrue(0.1)
         self.assertTrue('text')
 
-  the terminal shows passing tests
+  then I add a note
 
-From the tests I see that
+  .. code-block:: python
 
-* a string_ with things is True_
-* Positive and Negative floats_ are True_
-* Positive and Negative integers_ are True_
-* True_ is True_
-* True_ is a boolean_
-* an empty string_ is False_
-* ``0.0`` is False_
-* ``0`` is False_
-* :ref:`None` is False_
-* False_ is False_
-* False_ is a boolean_
+    # NOTES
+    # a string with things is true
+    # positive and negative numbers are true
+    # True is true
+    # True is not false
+    # True is a boolean
+    # the empty string is false
+    # 0 is false
+    # None is false
+    # False is false
+    # False is not true
+    # False is a boolean
 
 ----
 

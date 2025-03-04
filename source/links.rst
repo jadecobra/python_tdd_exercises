@@ -91,6 +91,7 @@
 .. _tuple: https://docs.python.org/3/library/stdtypes.html#tuples
 .. _tuples: https://docs.python.org/3/library/stdtypes.html#tuples
 .. _type: https://docs.python.org/3/glossary.html#term-type
+.. _types: https://docs.python.org/3/glossary.html#term-type
 .. _unittest: https://docs.python.org/3/library/unittest.html
 .. _unittest.TestCase.assertNotIsInstance: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance
 .. _unittest.TestCase.assertIsInstance: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsInstance
