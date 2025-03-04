@@ -481,18 +481,18 @@ I add a line to test if a float_ is False_ or True_
 
 .. code-block:: python
 
-    def test_what_is_true(self):
-        self.assertIsInstance(True, bool)
-        self.assertTrue(True)
-        self.assertTrue(-1)
-        self.assertTrue(1)
-        self.assertTrue(0.0)
+  def test_what_is_false(self):
+      self.assertIsInstance(False, bool)
+      self.assertFalse(False)
+      self.assertFalse(None)
+      self.assertFalse(0)
+      self.assertFalse(-0.1)
 
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: 0.0 is not true
+  AssertionError: -0.1 is not false
 
 green: make it pass
 #################################################################################
@@ -501,15 +501,43 @@ I change the :ref:`method<functions>`
 
 .. code-block:: python
 
-  self.assertFalse(0.0)
+  self.assertTrue(-0.1)
 
-and the terminal shows passing tests
+the test passes and I move the line to ``test_what_is_true``
+
+.. code-block:: python
+
+  def test_what_is_true(self):
+      self.assertIsInstance(True, bool)
+      self.assertTrue(True)
+      self.assertTrue(-0.1)
 
 refactor: make it better
 #################################################################################
 
+* I add a failing line
 
-* I move the line to ``test_what_is_false``
+  .. code-block:: python
+
+    def test_what_is_true(self):
+        self.assertIsInstance(True, bool)
+        self.assertTrue(True)
+        self.assertTrue(-0.1)
+        self.assertTrue(0.0)
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 0.0 is not true
+
+  I change the :ref:`method<functions>`
+
+  .. code-block:: python
+
+    self.assertFalse(0.0)
+
+  the terminal shows passing tests and I move the line to ``test_what_is_false``
 
   .. code-block:: python
 
@@ -520,7 +548,7 @@ refactor: make it better
         self.assertFalse(0)
         self.assertFalse(0.0)
 
-* I add 2 more lines to test if positive and negative floats_ are also False_
+* I add another line
 
   .. code-block:: python
 
@@ -530,25 +558,29 @@ refactor: make it better
         self.assertFalse(None)
         self.assertFalse(0)
         self.assertFalse(0.0)
-        self.assertFalse(-0.1)
         self.assertFalse(0.1)
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: -0.1 is not false
+    AssertionError: 0.1 is not false
 
-* I change assertFalse_ to assertTrue_ for both of them and the terminal shows passing tests
+  when I change the :ref:`method<functions>`
 
   .. code-block:: python
 
-    self.assertTrue(-0.1)
     self.assertTrue(0.1)
 
-* I move the lines to ``test_what_is_true``
+  the test passes and I move the line to ``test_what_is_true``
 
-  .. code-block::python
+  .. code-block:: python
+
+    def test_what_is_false(self):
+        self.assertIsInstance(False, bool)
+        self.assertFalse(False)
+        self.assertFalse(None)
+        self.assertFalse(0)
 
     def test_what_is_true(self):
         self.assertIsInstance(True, bool)
@@ -558,17 +590,37 @@ refactor: make it better
         self.assertTrue(-0.1)
         self.assertTrue(0.1)
 
-From the tests I see that
+  then I add notes
 
-* Positive and Negative floats_ are True_
-* Positive and Negative integers_ are True_
-* True_ is True_
-* True_ is a boolean_
-* ``0.0`` is False_
-* ``0`` is False_
-* :ref:`None` is False_
-* False_ is False_
-* False_ is a boolean_
+  .. code-block:: python
+
+    # NOTES
+    # positive and negative floats are true
+    # positive and negative integers are true
+    # True is true
+    # True is not false
+    # True is a boolean
+    # 0.0 is false
+    # 0 is false
+    # None is false
+    # False is false
+    # False is not true
+    # False is a boolean
+
+  I can make the new notes simpler
+
+  .. code-block:: python
+
+    # NOTES
+    # positive and negative numbers are true
+    # True is true
+    # True is not false
+    # True is a boolean
+    # 0 is false
+    # None is false
+    # False is false
+    # False is not true
+    # False is a boolean
 
 -----
 
@@ -579,19 +631,18 @@ is a string False or True?
 red: make it fail
 #################################################################################
 
-
 I add a line to test if a string_ is False_ or True_
 
 .. code-block:: python
 
-    def test_what_is_true(self):
-        self.assertIsInstance(True, bool)
-        self.assertTrue(True)
-        self.assertTrue(-1)
-        self.assertTrue(1)
-        self.assertTrue(-0.1)
-        self.assertTrue(0.1)
-        self.assertTrue('')
+  def test_what_is_true(self):
+      self.assertIsInstance(True, bool)
+      self.assertTrue(True)
+      self.assertTrue(-0.1)
+      self.assertTrue(1)
+      self.assertTrue(-0.1)
+      self.assertTrue(0.1)
+      self.assertTrue(str())
 
 the terminal shows :ref:`AssertionError`
 
@@ -606,7 +657,7 @@ I change the :ref:`method<functions>`
 
 .. code-block:: python
 
-  self.assertFalse('')
+  self.assertFalse(str())
 
 and the terminal shows passing tests
 
@@ -623,7 +674,7 @@ refactor: make it better
         self.assertFalse(None)
         self.assertFalse(0)
         self.assertFalse(0.0)
-        self.assertFalse('')
+        self.assertFalse(str())
 
 * I add a line to test if a string_ with characters is also False_
 
@@ -644,7 +695,7 @@ refactor: make it better
     def test_what_is_true(self):
         self.assertIsInstance(True, bool)
         self.assertTrue(True)
-        self.assertTrue(-1)
+        self.assertTrue(-0.1)
         self.assertTrue(1)
         self.assertTrue(-0.1)
         self.assertTrue(0.1)
@@ -682,7 +733,7 @@ I add a line to test if a tuple_ is False_ or True_
     def test_what_is_true(self):
         self.assertIsInstance(True, bool)
         self.assertTrue(True)
-        self.assertTrue(-1)
+        self.assertTrue(-0.1)
         self.assertTrue(1)
         self.assertTrue(-0.1)
         self.assertTrue(0.1)
@@ -710,7 +761,7 @@ I change the :ref:`method<functions>` and move the line to ``test_what_is_false`
         self.assertFalse(None)
         self.assertFalse(0)
         self.assertFalse(0.0)
-        self.assertFalse('')
+        self.assertFalse(str())
         self.assertFalse(())
 
 the terminal shows passing tests
@@ -738,7 +789,7 @@ refactor: make it better
     def test_what_is_true(self):
         self.assertIsInstance(True, bool)
         self.assertTrue(True)
-        self.assertTrue(-1)
+        self.assertTrue(-0.1)
         self.assertTrue(1)
         self.assertTrue(-0.1)
         self.assertTrue(0.1)
@@ -777,7 +828,7 @@ I add a line to test if a :ref:`list <lists>` is False_ or True_
     def test_what_is_true(self):
         self.assertIsInstance(True, bool)
         self.assertTrue(True)
-        self.assertTrue(-1)
+        self.assertTrue(-0.1)
         self.assertTrue(1)
         self.assertTrue(-0.1)
         self.assertTrue(0.1)
@@ -806,7 +857,7 @@ I change the :ref:`method<functions>` and move the line to ``test_what_is_false`
         self.assertFalse(None)
         self.assertFalse(0)
         self.assertFalse(0.0)
-        self.assertFalse('')
+        self.assertFalse(str())
         self.assertFalse(())
         self.assertFalse([])
 
@@ -833,7 +884,7 @@ refactor: make it better
     def test_what_is_true(self):
         self.assertIsInstance(True, bool)
         self.assertTrue(True)
-        self.assertTrue(-1)
+        self.assertTrue(-0.1)
         self.assertTrue(1)
         self.assertTrue(-0.1)
         self.assertTrue(0.1)
@@ -877,7 +928,7 @@ I add a line to test if a set_ is False_ or True_
     def test_what_is_true(self):
         self.assertIsInstance(True, bool)
         self.assertTrue(True)
-        self.assertTrue(-1)
+        self.assertTrue(-0.1)
         self.assertTrue(1)
         self.assertTrue(-0.1)
         self.assertTrue(0.1)
@@ -926,7 +977,7 @@ refactor: make it better
     def test_what_is_true(self):
         self.assertIsInstance(True, bool)
         self.assertTrue(True)
-        self.assertTrue(-1)
+        self.assertTrue(-0.1)
         self.assertTrue(1)
         self.assertTrue(-0.1)
         self.assertTrue(0.1)
@@ -970,7 +1021,7 @@ I add a line to test if a :ref:`dictionary <dictionaries>` is False_ or True_
     def test_what_is_true(self):
         self.assertIsInstance(True, bool)
         self.assertTrue(True)
-        self.assertTrue(-1)
+        self.assertTrue(-0.1)
         self.assertTrue(1)
         self.assertTrue(-0.1)
         self.assertTrue(0.1)
@@ -999,7 +1050,7 @@ I change assertTrue_ to assertFalse_ and move the line to the ``test_what_is_fal
         self.assertFalse(None)
         self.assertFalse(0)
         self.assertFalse(0.0)
-        self.assertFalse('')
+        self.assertFalse(str())
         self.assertFalse(())
         self.assertFalse([])
         self.assertFalse(set())
@@ -1029,7 +1080,7 @@ refactor: make it better
     def test_what_is_true(self):
         self.assertIsInstance(True, bool)
         self.assertTrue(True)
-        self.assertTrue(-1)
+        self.assertTrue(-0.1)
         self.assertTrue(1)
         self.assertTrue(-0.1)
         self.assertTrue(0.1)
