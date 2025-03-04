@@ -232,11 +232,11 @@ refactor: make it better
   .. code-block:: python
 
     def test_what_is_false(self):
-        self.assertIsInstance(False, bool)
+        ...
         self.assertFalse(False)
 
     def test_what_is_true(self):
-        self.assertIsInstance(True, bool)
+        ...
         self.assertTrue(True)
 
   then add another note
@@ -306,12 +306,11 @@ I move the line to ``test_what_is_false``
 .. code-block:: python
 
     def test_what_is_false(self):
-        self.assertIsInstance(False, bool)
-        self.assertFalse(False)
+        ...
         self.assertFalse(None)
 
     def test_what_is_true(self):
-        self.assertIsInstance(True, bool)
+        ...
         self.assertTrue(True)
 
 then add a note
@@ -442,14 +441,11 @@ refactor: make it better
   .. code-block:: python
 
     def test_what_is_false(self):
-        self.assertIsInstance(False, bool)
-        self.assertFalse(False)
-        self.assertFalse(None)
+        ...
         self.assertFalse(0)
 
     def test_what_is_true(self):
-        self.assertIsInstance(True, bool)
-        self.assertTrue(True)
+        ...
         self.assertTrue(-1)
         self.assertTrue(1)
 
@@ -577,16 +573,11 @@ refactor: make it better
   .. code-block:: python
 
     def test_what_is_false(self):
-        self.assertIsInstance(False, bool)
-        self.assertFalse(False)
-        self.assertFalse(None)
+        ...
         self.assertFalse(0)
 
     def test_what_is_true(self):
-        self.assertIsInstance(True, bool)
-        self.assertTrue(True)
-        self.assertTrue(-1)
-        self.assertTrue(1)
+        ...
         self.assertTrue(-0.1)
         self.assertTrue(0.1)
 
@@ -706,20 +697,11 @@ refactor: make it better
   .. code-block:: python
 
     def test_what_is_false(self):
-        self.assertIsInstance(False, bool)
-        self.assertFalse(False)
-        self.assertFalse(None)
-        self.assertFalse(0)
-        self.assertFalse(0.0)
+        ...
         self.assertFalse(str())
 
     def test_what_is_true(self):
-        self.assertIsInstance(True, bool)
-        self.assertTrue(True)
-        self.assertTrue(-0.1)
-        self.assertTrue(1)
-        self.assertTrue(-0.1)
-        self.assertTrue(0.1)
+        ...
         self.assertTrue('text')
 
   then I add a note
@@ -826,22 +808,11 @@ refactor: make it better
   .. code-block:: python
 
     def test_what_is_false(self):
-        self.assertIsInstance(False, bool)
-        self.assertFalse(False)
-        self.assertFalse(None)
-        self.assertFalse(0)
-        self.assertFalse(0.0)
-        self.assertFalse(str())
+        ...
         self.assertFalse(tuple())
 
     def test_what_is_true(self):
-        self.assertIsInstance(True, bool)
-        self.assertTrue(True)
-        self.assertTrue(-0.1)
-        self.assertTrue(1)
-        self.assertTrue(-0.1)
-        self.assertTrue(0.1)
-        self.assertTrue('text')
+        ...
         self.assertTrue((1, 2, 3, 'n'))
 
   then I add notes
@@ -876,16 +847,16 @@ I add a line to test if a :ref:`list <lists>` is False_ or True_
 
 .. code-block:: python
 
-    def test_what_is_true(self):
-        self.assertIsInstance(True, bool)
-        self.assertTrue(True)
-        self.assertTrue(-0.1)
-        self.assertTrue(1)
-        self.assertTrue(-0.1)
-        self.assertTrue(0.1)
-        self.assertTrue('text')
-        self.assertTrue((1, 2, 3, 'n'))
-        self.assertTrue(list())
+  def test_what_is_true(self):
+      self.assertIsInstance(True, bool)
+      self.assertTrue(True)
+      self.assertTrue(-0.1)
+      self.assertTrue(1)
+      self.assertTrue(-0.1)
+      self.assertTrue(0.1)
+      self.assertTrue('text')
+      self.assertTrue((1, 2, 3, 'n'))
+      self.assertTrue(list())
 
 the terminal shows :ref:`AssertionError`
 
@@ -949,24 +920,11 @@ refactor: make it better
   .. code-block:: python
 
     def test_what_is_false(self):
-        self.assertIsInstance(False, bool)
-        self.assertFalse(False)
-        self.assertFalse(None)
-        self.assertFalse(0)
-        self.assertFalse(0.0)
-        self.assertFalse(str())
-        self.assertFalse(tuple())
+        ...
         self.assertFalse(list())
 
     def test_what_is_true(self):
-        self.assertIsInstance(True, bool)
-        self.assertTrue(True)
-        self.assertTrue(-0.1)
-        self.assertTrue(1)
-        self.assertTrue(-0.1)
-        self.assertTrue(0.1)
-        self.assertTrue('text')
-        self.assertTrue((1, 2, 3, 'n'))
+        ...
         self.assertTrue([1, 2, 3, 'n'])
 
   then add a note
@@ -998,7 +956,6 @@ is a set False or True?
 
 red: make it fail
 #################################################################################
-
 
 I add a line to test if a set_ is False_ or True_
 
@@ -1084,7 +1041,15 @@ refactor: make it better
   .. code-block:: python
 
     def test_what_is_false(self):
-        ...
+        self.assertIsInstance(False, bool)
+        self.assertFalse(False)
+        self.assertFalse(None)
+        self.assertFalse(0)
+        self.assertFalse(0.0)
+        self.assertFalse(str())
+        self.assertFalse(tuple())
+        self.assertFalse(list())
+        self.assertFalse(set())
 
     def test_what_is_true(self):
         self.assertIsInstance(True, bool)
@@ -1134,18 +1099,18 @@ I add a line to test if a :ref:`dictionary <dictionaries>` is False_ or True_
 
 .. code-block:: python
 
-    def test_what_is_true(self):
-        self.assertIsInstance(True, bool)
-        self.assertTrue(True)
-        self.assertTrue(-0.1)
-        self.assertTrue(1)
-        self.assertTrue(-0.1)
-        self.assertTrue(0.1)
-        self.assertTrue('text')
-        self.assertTrue((1, 2, 3, 'n'))
-        self.assertTrue([1, 2, 3, 'n'])
-        self.assertTrue({1, 2, 3, 'n'})
-        self.assertTrue({})
+  def test_what_is_true(self):
+      self.assertIsInstance(True, bool)
+      self.assertTrue(True)
+      self.assertTrue(-0.1)
+      self.assertTrue(1)
+      self.assertTrue(-0.1)
+      self.assertTrue(0.1)
+      self.assertTrue('text')
+      self.assertTrue((1, 2, 3, 'n'))
+      self.assertTrue([1, 2, 3, 'n'])
+      self.assertTrue({1, 2, 3, 'n'})
+      self.assertTrue(dict())
 
 the terminal shows :ref:`AssertionError`
 
@@ -1156,9 +1121,34 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I change assertTrue_ to assertFalse_ and move the line to the ``test_what_is_false`` :ref:`method<functions>`
+when I change assertTrue_ to assertFalse_
 
 .. code-block:: python
+
+  self.assertFalse(dict())
+
+the test passes and I move the line to ``test_what_is_false``
+
+.. code-block:: python
+
+  def test_what_is_false(self):
+      self.assertIsInstance(False, bool)
+      self.assertFalse(False)
+      self.assertFalse(None)
+      self.assertFalse(0)
+      self.assertFalse(0.0)
+      self.assertFalse(str())
+      self.assertFalse(tuple())
+      self.assertFalse(list())
+      self.assertFalse(set())
+      self.assertFalse(dict())
+
+refactor: make it better
+#################################################################################
+
+* I add a line to test if a :ref:`dictionary <dictionaries>` with things is also False_
+
+  .. code-block:: python
 
     def test_what_is_false(self):
         self.assertIsInstance(False, bool)
@@ -1168,20 +1158,10 @@ I change assertTrue_ to assertFalse_ and move the line to the ``test_what_is_fal
         self.assertFalse(0.0)
         self.assertFalse(str())
         self.assertFalse(tuple())
-        self.assertFalse([])
+        self.assertFalse(list())
         self.assertFalse(set())
-        self.assertFalse({})
-
-the terminal shows passing tests
-
-refactor: make it better
-#################################################################################
-
-* I add a line to test if a :ref:`dictionary <dictionaries>` with things is also False_
-
-  .. code-block:: python
-
-    self.assertFalse({'key': 'value'})
+        self.assertFalse(dict())
+        self.assertFalse({'key': 'value'})
 
   the terminal shows :ref:`AssertionError`
 
@@ -1189,14 +1169,32 @@ refactor: make it better
 
     AssertionError: {'key': 'value'} is not false
 
-* I change assertFalse_ to assertTrue_ and move the line to ``test_what_is_true``
+  I change assertFalse_ to assertTrue_
 
   .. code-block:: python
+
+    self.assertTrue({'key': 'value'})
+
+  the test passes and I move the line to ``test_what_is_true``
+
+  .. code-block:: python
+
+    def test_what_is_false(self):
+        self.assertIsInstance(False, bool)
+        self.assertFalse(False)
+        self.assertFalse(None)
+        self.assertFalse(0)
+        self.assertFalse(0.0)
+        self.assertFalse(str())
+        self.assertFalse(tuple())
+        self.assertFalse(list())
+        self.assertFalse(set())
+        self.assertFalse(dict())
 
     def test_what_is_true(self):
         self.assertIsInstance(True, bool)
         self.assertTrue(True)
-        self.assertTrue(-0.1)
+        self.assertTrue(-1)
         self.assertTrue(1)
         self.assertTrue(-0.1)
         self.assertTrue(0.1)
@@ -1206,36 +1204,46 @@ refactor: make it better
         self.assertTrue({1, 2, 3, 'n'})
         self.assertTrue({'key': 'value'})
 
-  the terminal shows all tests pass
+  I add the last two notes
 
-From the tests I see that
+  .. code-block:: python
 
-* a :ref:`dictionary <dictionaries>` with things is True_
-* a set_ with things is True_
-* a :ref:`list <lists>` with things is True_
-* a tuple_ with things is True_
-* a string_ with things is True_
-* Positive and Negative floats_ are True_
-* Positive and Negative integers_ are True_
-* True_ is not_ False_
-* True_ is True_
-* True_ is a boolean_
-* an empty :ref:`dictionary <dictionaries>` is False_
-* an empty set_ is False_
-* an empty :ref:`list <lists>` is False_
-* an empty string_ is False_
-* ``0.0`` is False_
+    # NOTES
+    # a dictionary with things is true
+    # a set with things is true
+    # a list with things is true
+    # a tuple with things is true
+    # a string with things is true
+    # positive and negative numbers are true
+    # True is true
+    # True is not false
+    # True is a boolean
+    # the empty dictionary is false
+    # the empty set is false
+    # the empty list is false
+    # the empty tuple is false
+    # the empty string is false
+    # 0 is false
+    # None is false
+    # False is false
+    # False is not true
+    # False is a boolean
+
+----
+
+*********************************************************************************
+review
+*********************************************************************************
+
+Another way to say the notes from the tests is that
+
+* a container with things is True_
+* empty containers are False_
+* positive and negative numbers are True_
 * ``0`` is False_
-* :ref:`None` is False_
 * False_ is not True_
-* False_ is False_
-* False_ is a boolean_
-
-I can sum this up as
-
-* all objects_ that have things are True_
-* empty objects_ including ``0`` and :ref:`None` are False_
-* False_ is a boolean_
+* True_ is not False_
+* True_ and False_ are booleans_
 
 Would you like to :doc:`test the truth table<truth_table>`?
 
