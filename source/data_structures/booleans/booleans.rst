@@ -290,7 +290,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I change the :ref:`method`
+I change the :ref:`method<functions>`
 
 .. code-block:: python
 
@@ -752,15 +752,15 @@ I add a line to see if a tuple_ is False_ or True_
 
 .. code-block:: python
 
-    def test_what_is_true(self):
-        self.assertIsInstance(True, bool)
-        self.assertTrue(True)
-        self.assertTrue(-0.1)
-        self.assertTrue(1)
-        self.assertTrue(-0.1)
-        self.assertTrue(0.1)
-        self.assertTrue('text')
-        self.assertTrue(tuple())
+  def test_what_is_true(self):
+      self.assertIsInstance(True, bool)
+      self.assertTrue(True)
+      self.assertTrue(-0.1)
+      self.assertTrue(1)
+      self.assertTrue(-0.1)
+      self.assertTrue(0.1)
+      self.assertTrue('text')
+      self.assertTrue(tuple())
 
 The terminal shows :ref:`AssertionError`
 
@@ -781,14 +781,14 @@ the test passes and I move the line to ``test_what_is_false``
 
 .. code-block:: python
 
-    def test_what_is_false(self):
-        self.assertIsInstance(False, bool)
-        self.assertFalse(False)
-        self.assertFalse(None)
-        self.assertFalse(0)
-        self.assertFalse(0.0)
-        self.assertFalse(str())
-        self.assertFalse(tuple())
+  def test_what_is_false(self):
+      self.assertIsInstance(False, bool)
+      self.assertFalse(False)
+      self.assertFalse(None)
+      self.assertFalse(0)
+      self.assertFalse(0.0)
+      self.assertFalse(str())
+      self.assertFalse(tuple())
 
 the terminal shows passing tests
 
@@ -885,7 +885,7 @@ I add a line to test if a :ref:`list <lists>` is False_ or True_
         self.assertTrue(0.1)
         self.assertTrue('text')
         self.assertTrue((1, 2, 3, 'n'))
-        self.assertTrue([])
+        self.assertTrue(list())
 
 the terminal shows :ref:`AssertionError`
 
@@ -902,6 +902,25 @@ I change the :ref:`method<functions>` and move the line to ``test_what_is_false`
 
 .. code-block:: python
 
+  def test_what_is_false(self):
+      self.assertIsInstance(False, bool)
+      self.assertFalse(False)
+      self.assertFalse(None)
+      self.assertFalse(0)
+      self.assertFalse(0.0)
+      self.assertFalse(str())
+      self.assertFalse(tuple())
+      self.assertFalse(list())
+
+and the terminal shows passing tests
+
+refactor: make it better
+#################################################################################
+
+* I add another line
+
+  .. code-block:: python
+
     def test_what_is_false(self):
         self.assertIsInstance(False, bool)
         self.assertFalse(False)
@@ -910,27 +929,34 @@ I change the :ref:`method<functions>` and move the line to ``test_what_is_false`
         self.assertFalse(0.0)
         self.assertFalse(str())
         self.assertFalse(tuple())
-        self.assertFalse([])
-
-and the terminal shows passing tests
-
-refactor: make it better
-#################################################################################
-
-* I add a line to test if a :ref:`list <lists>`  with things is also False_
-
-  .. code-block:: python
-
-    self.assertFalse([1, 2, 3, 'n'])
+        self.assertFalse(list())
+        self.assertFalse([1, 2, 3, 'n'])
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: [1, 2, 3, 'n'] is not false
-* I change assertFalse_ to assertTrue_ and move the line to ``test_what_is_true``
+
+* I change the :ref:`method<functions>`
 
   .. code-block:: python
+
+    self.assertTrue([1, 2, 3, 'n'])
+
+  the test passes and I move the line to ``test_what_is_true``
+
+  .. code-block:: python
+
+    def test_what_is_false(self):
+        self.assertIsInstance(False, bool)
+        self.assertFalse(False)
+        self.assertFalse(None)
+        self.assertFalse(0)
+        self.assertFalse(0.0)
+        self.assertFalse(str())
+        self.assertFalse(tuple())
+        self.assertFalse(list())
 
     def test_what_is_true(self):
         self.assertIsInstance(True, bool)
@@ -943,24 +969,26 @@ refactor: make it better
         self.assertTrue((1, 2, 3, 'n'))
         self.assertTrue([1, 2, 3, 'n'])
 
-  the terminal shows passing tests
+  then add a note
 
-From the tests I see that
+  .. code-block:: python
 
-* a :ref:`list <lists>` with things is True_
-* a tuple_ with things is True_
-* a string_ with things is True_
-* Positive and Negative floats_ are True_
-* Positive and Negative integers_ are True_
-* True_ is True_
-* True_ is a boolean_
-* an empty :ref:`list <lists>` is False_
-* an empty string_ is False_
-* ``0.0`` is False_
-* ``0`` is False_
-* :ref:`None` is False_
-* False_ is False_
-* False_ is a boolean_
+    # NOTES
+    # a list with things is true
+    # a tuple with things is true
+    # a string with things is true
+    # positive and negative numbers are true
+    # True is true
+    # True is not false
+    # True is a boolean
+    # the empty list is false
+    # the empty tuple is false
+    # the empty string is false
+    # 0 is false
+    # None is false
+    # False is false
+    # False is not true
+    # False is a boolean
 
 -----
 
