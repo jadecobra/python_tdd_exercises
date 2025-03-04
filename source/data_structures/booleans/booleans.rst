@@ -359,11 +359,7 @@ I change the :ref:`method<functions>`
 
 .. code-block:: python
 
-    def test_what_is_false(self):
-        self.assertIsInstance(False, bool)
-        self.assertFalse(False)
-        self.assertFalse(None)
-        self.assertTrue(-1)
+  self.assertTrue(-1)
 
 and the test passes
 
@@ -375,8 +371,7 @@ refactor: make it better
   .. code-block:: python
 
     def test_what_is_true(self):
-        self.assertIsInstance(True, bool)
-        self.assertTrue(True)
+        ...
         self.assertTrue(-1)
 
   the terminal shows tests are still passing
@@ -386,8 +381,7 @@ refactor: make it better
   .. code-block:: python
 
     def test_what_is_true(self):
-        self.assertIsInstance(True, bool)
-        self.assertTrue(True)
+        ...
         self.assertTrue(-1)
         self.assertTrue(0)
 
@@ -408,9 +402,7 @@ refactor: make it better
   .. code-block:: python
 
     def test_what_is_false(self):
-        self.assertIsInstance(False, bool)
-        self.assertFalse(False)
-        self.assertFalse(None)
+        ...
         self.assertFalse(0)
 
 * I add one more line
@@ -418,9 +410,7 @@ refactor: make it better
   .. code-block:: python
 
     def test_what_is_false(self):
-        self.assertIsInstance(False, bool)
-        self.assertFalse(False)
-        self.assertFalse(None)
+        ...
         self.assertFalse(0)
         self.assertFalse(1)
 
@@ -504,8 +494,7 @@ the test passes and I move the line to ``test_what_is_true``
 .. code-block:: python
 
   def test_what_is_true(self):
-      self.assertIsInstance(True, bool)
-      self.assertTrue(True)
+      ...
       self.assertTrue(-0.1)
 
 refactor: make it better
@@ -516,8 +505,7 @@ refactor: make it better
   .. code-block:: python
 
     def test_what_is_true(self):
-        self.assertIsInstance(True, bool)
-        self.assertTrue(True)
+        ...
         self.assertTrue(-0.1)
         self.assertTrue(0.0)
 
@@ -538,10 +526,7 @@ refactor: make it better
   .. code-block:: python
 
     def test_what_is_false(self):
-        self.assertIsInstance(False, bool)
-        self.assertFalse(False)
-        self.assertFalse(None)
-        self.assertFalse(0)
+        ...
         self.assertFalse(0.0)
 
 * I add another line
@@ -549,10 +534,7 @@ refactor: make it better
   .. code-block:: python
 
     def test_what_is_false(self):
-        self.assertIsInstance(False, bool)
-        self.assertFalse(False)
-        self.assertFalse(None)
-        self.assertFalse(0)
+        ...
         self.assertFalse(0.0)
         self.assertFalse(0.1)
 
@@ -660,11 +642,7 @@ refactor: make it better
   .. code-block:: python
 
     def test_what_is_false(self):
-        self.assertIsInstance(False, bool)
-        self.assertFalse(False)
-        self.assertFalse(None)
-        self.assertFalse(0)
-        self.assertFalse(0.0)
+        ...
         self.assertFalse(str())
 
 * then I add another line
@@ -672,11 +650,7 @@ refactor: make it better
   .. code-block:: python
 
     def test_what_is_false(self):
-        self.assertIsInstance(False, bool)
-        self.assertFalse(False)
-        self.assertFalse(None)
-        self.assertFalse(0)
-        self.assertFalse(0.0)
+        ...
         self.assertFalse(str())
         self.assertFalse('text')
 
@@ -764,12 +738,7 @@ the test passes and I move the line to ``test_what_is_false``
 .. code-block:: python
 
   def test_what_is_false(self):
-      self.assertIsInstance(False, bool)
-      self.assertFalse(False)
-      self.assertFalse(None)
-      self.assertFalse(0)
-      self.assertFalse(0.0)
-      self.assertFalse(str())
+      ...
       self.assertFalse(tuple())
 
 the terminal shows passing tests
@@ -782,12 +751,7 @@ refactor: make it better
   .. code-block:: python
 
     def test_what_is_false(self):
-        self.assertIsInstance(False, bool)
-        self.assertFalse(False)
-        self.assertFalse(None)
-        self.assertFalse(0)
-        self.assertFalse(0.0)
-        self.assertFalse(str())
+        ...
         self.assertFalse(tuple())
         self.assertFalse((1, 2, 3, 'n'))
 
@@ -874,13 +838,7 @@ I change the :ref:`method<functions>` and move the line to ``test_what_is_false`
 .. code-block:: python
 
   def test_what_is_false(self):
-      self.assertIsInstance(False, bool)
-      self.assertFalse(False)
-      self.assertFalse(None)
-      self.assertFalse(0)
-      self.assertFalse(0.0)
-      self.assertFalse(str())
-      self.assertFalse(tuple())
+      ...
       self.assertFalse(list())
 
 and the terminal shows passing tests
@@ -893,13 +851,7 @@ refactor: make it better
   .. code-block:: python
 
     def test_what_is_false(self):
-        self.assertIsInstance(False, bool)
-        self.assertFalse(False)
-        self.assertFalse(None)
-        self.assertFalse(0)
-        self.assertFalse(0.0)
-        self.assertFalse(str())
-        self.assertFalse(tuple())
+        ...
         self.assertFalse(list())
         self.assertFalse([1, 2, 3, 'n'])
 
@@ -993,14 +945,7 @@ the test passes and and I move the line to ``test_what_is_false``
 .. code-block:: python
 
   def test_what_is_false(self):
-      self.assertIsInstance(False, bool)
-      self.assertFalse(False)
-      self.assertFalse(None)
-      self.assertFalse(0)
-      self.assertFalse(0.0)
-      self.assertFalse(str())
-      self.assertFalse(tuple())
-      self.assertFalse(list())
+      ...
       self.assertFalse(set())
 
 the terminal shows passing tests
@@ -1013,14 +958,7 @@ refactor: make it better
   .. code-block:: python
 
     def test_what_is_false(self):
-        self.assertIsInstance(False, bool)
-        self.assertFalse(False)
-        self.assertFalse(None)
-        self.assertFalse(0)
-        self.assertFalse(0.0)
-        self.assertFalse(str())
-        self.assertFalse(tuple())
-        self.assertFalse(list())
+        ...
         self.assertFalse(set())
         self.assertFalse({1, 2, 3, 'n'})
 
@@ -1041,26 +979,11 @@ refactor: make it better
   .. code-block:: python
 
     def test_what_is_false(self):
-        self.assertIsInstance(False, bool)
-        self.assertFalse(False)
-        self.assertFalse(None)
-        self.assertFalse(0)
-        self.assertFalse(0.0)
-        self.assertFalse(str())
-        self.assertFalse(tuple())
-        self.assertFalse(list())
+        ...
         self.assertFalse(set())
 
     def test_what_is_true(self):
-        self.assertIsInstance(True, bool)
-        self.assertTrue(True)
-        self.assertTrue(-0.1)
-        self.assertTrue(1)
-        self.assertTrue(-1)
-        self.assertTrue(1)
-        self.assertTrue('text')
-        self.assertTrue((1, 2, 3, 'n'))
-        self.assertTrue([1, 2, 3, 'n'])
+        ...
         self.assertTrue({1, 2, 3, 'n'})
 
   then I add notes
