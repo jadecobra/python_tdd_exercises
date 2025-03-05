@@ -16,7 +16,7 @@ requirements
 
 :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` with ``truth_table`` as the name of the project
 
-The Truth Table gives the 16 outcomes of binary operations on these two values. I add a TestCase_ for binary operations in ``test_truth_table.py`` with ``test_logical_conjunction`` as the first test
+The Truth Table gives the 16 outcomes of binary operations on True_ and False_.
 
 *********************************************************************************
 test_logical_conjunction
@@ -26,6 +26,7 @@ test_logical_conjunction
 red: make it fail
 #################################################################################
 
+I add a TestCase_ for binary operations in ``test_truth_table.py`` with ``test_logical_conjunction`` as the first test
 
 .. code-block:: python
 
@@ -33,6 +34,45 @@ red: make it fail
 
       def test_logical_conjunction(self):
           self.assertTrue(src.truth_table.logical_conjunction(True, True))
+
+the terminal shows :ref:`AttributeError`
+
+.. code-block:: python
+
+  AttributeError: module 'src.truth_table' has no attribute 'logical_conjunction'. Did you mean: 'logical_negation'?
+
+
+green: make it pass
+#################################################################################
+
+I add the :ref:`function<functions>`
+
+.. code-block:: python
+
+  def logical_negation(argument):
+      return not argument
+
+
+  def logical_conjunction(argument):
+      return not argument
+
+and the terminal shows :ref:`TypeError`
+
+.. code-block:: python
+
+  TypeError: logical_conjunction() takes 1 positional arguments but 2 were given
+
+I change the signature
+
+.. code-block:: python
+
+  def logical_conjunction(p, q):
+      return not p
+
+
+.. code-block:: python
+
+
           self.assertFalse(src.truth_table.logical_conjunction(True, False))
           self.assertFalse(src.truth_table.logical_conjunction(False, True))
           self.assertFalse(src.truth_table.logical_conjunction(False, False))
@@ -43,8 +83,6 @@ the terminal shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_conjunction'
 
-green: make it pass
-#################################################################################
 
 * I add a definition
 
