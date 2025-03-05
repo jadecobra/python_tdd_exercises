@@ -442,6 +442,7 @@ From the tests, I know that for any :ref:`boolean<booleans>` operation involving
 * ``logical negation`` is not_
 * ``logical conjunction`` is and_
 
+:ref:`Logical Implication <truth_table: Logical Implication>` is next
 
 ----
 
