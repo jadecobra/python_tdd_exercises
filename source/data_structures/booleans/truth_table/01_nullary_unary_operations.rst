@@ -30,7 +30,7 @@ test_logical_true
 red: make it fail
 ---------------------------------------------------------------------------------
 
-* I change the text in ``test_truth_table.py`` to
+* I change the text in ``test_truth_table.py``
 
   .. code-block:: python
 
@@ -73,7 +73,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: None is not true
 
-I change the `return statement`_
+I change :ref:`False <test_what_is_false>` to :ref:`True <test_what_is_true>` in the `return statement`_
 
 .. code-block:: python
 
@@ -124,7 +124,7 @@ green: make it pass
 
     AssertionError: True is not False
 
-* When I change the `return statement`_
+* When I change :ref:`True <test_what_is_true>` to :ref:`False<test_what_is_false>` in the `return statement`_
 
   .. code-block:: python
 
@@ -139,7 +139,7 @@ green: make it pass
 Unary Operations
 *********************************************************************************
 
-There are two unary operations
+There are two unary operations, they take input
 
 * :ref:`Logical Identity<test_logical_identity>`
 * :ref:`Logical Negation<test_logical_negation_aka_not>`
@@ -242,7 +242,7 @@ I make ``logical_identity`` return its input
   def logical_identity(argument):
       return argument
 
-and the terminal shows passing tests
+and the terminal shows passing tests. ``logical_identity`` is a :ref:`singleton function<test_singleton_functions>`
 
 ----
 
@@ -254,7 +254,7 @@ test_logical_negation_aka_not
 red: make it fail
 ---------------------------------------------------------------------------------
 
-I add a test for it
+I add a test
 
 .. code-block:: python
 

@@ -154,7 +154,7 @@ refactor: make it better
 
     AssertionError: False is not true
 
-  because False_ is not True_. I add a note
+  I add a note
 
   .. code-block:: python
 
@@ -207,7 +207,7 @@ refactor: make it better
 
     AssertionError: True is not false
 
-  because True_ is not False_. I add a note
+  I add a note
 
   .. code-block:: python
 
@@ -227,7 +227,7 @@ refactor: make it better
         self.assertFalse(False)
         self.assertTrue(True)
 
-  and the test passes, I move the line to the ``test_what_is_true`` :ref:`method<functions>`
+  the test passes and I move the line to the ``test_what_is_true`` :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -251,7 +251,7 @@ refactor: make it better
     # False is not true
     # False is a boolean
 
-I want to know if any of the other Python data types are False_ or True_
+I want to know if any of the other Python data types_ are False_ or True_
 
 * is :ref:`None` False_ or True_?
 * is an integer_ False_ or True_?
@@ -272,14 +272,14 @@ red: make it fail
 #################################################################################
 
 
-I add a line to ``test_what_is_true`` to test if :ref:`None` is False_ or True_
+I add a line under ``test_what_is_true`` to test if :ref:`None` is False_ or True_
 
 .. code-block:: python
 
-    def test_what_is_true(self):
-        self.assertIsInstance(True, bool)
-        self.assertTrue(True)
-        self.assertTrue(None)
+  def test_what_is_true(self):
+      self.assertIsInstance(True, bool)
+      self.assertTrue(True)
+      self.assertTrue(None)
 
 the terminal shows :ref:`AssertionError`
 
@@ -336,15 +336,15 @@ red: make it fail
 #################################################################################
 
 
-I add a line to test if an integer_ is False_ or True_
+I add a line
 
 .. code-block:: python
 
-    def test_what_is_false(self):
-        self.assertIsInstance(False, bool)
-        self.assertFalse(False)
-        self.assertFalse(None)
-        self.assertFalse(-1)
+  def test_what_is_false(self):
+      self.assertIsInstance(False, bool)
+      self.assertFalse(False)
+      self.assertFalse(None)
+      self.assertFalse(-1)
 
 the terminal shows :ref:`AssertionError`
 
@@ -463,7 +463,7 @@ is a float False or True?
 red: make it fail
 #################################################################################
 
-I add a line to test if a float_ is False_ or True_
+I add a line to test
 
 .. code-block:: python
 
@@ -500,7 +500,7 @@ the test passes and I move the line to ``test_what_is_true``
 refactor: make it better
 #################################################################################
 
-* I add a failing line
+* I add a line
 
   .. code-block:: python
 
@@ -580,7 +580,7 @@ refactor: make it better
     # False is not true
     # False is a boolean
 
-  I can make the new notes simpler because floats_ and integers_ are numbers and ``0.0`` is the same as ``0`` even though they are different types_
+  I can make the new notes simpler because floats_ and integers_ are numbers and ``0.0`` is the same as ``0`` to me, even though they are different types_
 
   .. code-block:: python
 
@@ -604,7 +604,7 @@ is a string False or True?
 red: make it fail
 #################################################################################
 
-I add a line to test if a string_ is False_ or True_
+I add a line to test strings_
 
 .. code-block:: python
 
@@ -622,6 +622,8 @@ the terminal shows :ref:`AssertionError`
 .. code-block:: python
 
   AssertionError: '' is not true
+
+the empty string_ is not True_
 
 green: make it pass
 #################################################################################
@@ -704,7 +706,7 @@ is a tuple False or True?
 red: make it fail
 #################################################################################
 
-I add a line to see if a tuple_ is False_ or True_
+I add a line to see
 
 .. code-block:: python
 
@@ -723,6 +725,8 @@ The terminal shows :ref:`AssertionError`
 .. code-block:: python
 
   AssertionError: () is not true
+
+the empty tuple_ is not True_
 
 green: make it pass
 #################################################################################
@@ -746,7 +750,7 @@ the terminal shows passing tests
 refactor: make it better
 #################################################################################
 
-* I add a line to test if a tuple_ with things is also False_
+* I add another line
 
   .. code-block:: python
 
@@ -779,7 +783,7 @@ refactor: make it better
         ...
         self.assertTrue((1, 2, 3, 'n'))
 
-  then I add notes
+  I add notes
 
   .. code-block:: python
 
@@ -807,7 +811,7 @@ is a list False or True?
 red: make it fail
 #################################################################################
 
-I add a line to test if a :ref:`list <lists>` is False_ or True_
+I add a line to test
 
 .. code-block:: python
 
