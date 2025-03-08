@@ -235,14 +235,24 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: True is not false
 
-I make ``logical_identity`` return its input
+when I change the `return statement`_
+
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+    def logical_identity(argument):
+        return False
+
+the line that was passing before now fails, I make ``logical_identity`` return its input
 
 .. code-block:: python
 
   def logical_identity(argument):
       return argument
 
-and the terminal shows passing tests. ``logical_identity`` is a :ref:`singleton function<test_singleton_functions>`
+and the terminal shows passing tests. ``logical_identity`` is a :ref:`passthrough function<test_passthrough_functions>` it returns its input
 
 ----
 
@@ -274,7 +284,7 @@ the terminal shows :ref:`AttributeError`
 green: make it pass
 ---------------------------------------------------------------------------------
 
-* I add a definition for ``logical_negation``  to ``truth_table.py`` using the solution I had for ``logical_identity``
+* I add a definition for it
 
   .. code-block:: python
 
@@ -292,8 +302,59 @@ green: make it pass
 
     AssertionError: True is not false
 
-  The ``logical_negation`` :ref:`function<functions>` returns the value it receives as input but the test expects the opposite
-* I add the not_ keyword to the `return statement`_
+  when I make it return False_
+
+  .. code-block:: python
+
+    def logical_negation(argument):
+        return False
+
+  the terminal shows passing tests
+
+refactor: make it better
+---------------------------------------------------------------------------------
+
+* I add the next case
+
+  .. code-block:: python
+
+    def test_logical_negation_aka_not(self):
+        self.assertFalse(src.truth_table.logical_negation(True))
+        self.assertTrue(src.truth_table.logical_negation(False))
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  I change the `return statement`_
+
+  .. code-block:: python
+
+    def logical_negation(argument):
+        return True
+
+  and the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: True is not False
+
+  the test fails for the line that passed before, when I make the :ref:`function<functions>` return its input
+
+  .. code-block:: python
+
+    def logical_negation(argument):
+        return argument
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: True is not False
+
+  the test expects the opposite of the input, I add the not_ keyword to the `return statement`_
 
   .. code-block:: python
 
@@ -302,32 +363,13 @@ green: make it pass
 
   and the terminal shows passing tests
 
-refactor: make it better
----------------------------------------------------------------------------------
+* I change the name of the test
 
-I add another line
+  .. code-block:: python
 
-.. code-block:: python
-
-  def test_logical_negation_aka_not(self):
-      self.assertFalse(src.truth_table.logical_negation(True))
-      self.assertFalse(src.truth_table.logical_negation(False))
-
-the terminal shows :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: True is not false
-
-when I change the :ref:`method<functions>`
-
-.. code-block:: python
-
-  def test_logical_negation_aka_not(self):
-      self.assertFalse(src.truth_table.logical_negation(True))
-      self.assertTrue(src.truth_table.logical_negation(False))
-
-the test passes
+    def test_logical_negation_aka_not(self):
+        self.assertFalse(src.truth_table.logical_negation(True))
+        self.assertFalse(src.truth_table.logical_negation(False))
 
 ----
 
