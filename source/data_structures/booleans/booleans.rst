@@ -272,7 +272,7 @@ red: make it fail
 #################################################################################
 
 
-I add a line under ``test_what_is_true`` to test if :ref:`None` is False_ or True_
+I add a line to test if :ref:`None` is False_ or True_
 
 .. code-block:: python
 
@@ -580,7 +580,7 @@ refactor: make it better
     # False is not true
     # False is a boolean
 
-  I can make the new notes simpler because floats_ and integers_ are numbers and ``0.0`` is the same as ``0`` to me, even though they are different types_
+  I can make the new notes simpler because floats_ and integers_ are numbers and ``0.0`` is the same as ``0`` even though they are different types_
 
   .. code-block:: python
 
@@ -832,12 +832,12 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: [] is not true
 
-:ref:`lists` are represented with ``[]`` in Python
+the empty :ref:`list<lists>` is not True_
 
 green: make it pass
 #################################################################################
 
-I change the :ref:`method<functions>` and move the line to ``test_what_is_false``
+I change the :ref:`method<functions>` then move the line to ``test_what_is_false``
 
 .. code-block:: python
 
@@ -913,7 +913,7 @@ is a set False or True?
 red: make it fail
 #################################################################################
 
-I add a line to test if a set_ is False_ or True_
+I add a line to test
 
 .. code-block:: python
 
@@ -935,6 +935,8 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: set() is not true
 
+the empty set_ is not True_
+
 green: make it pass
 #################################################################################
 
@@ -944,15 +946,13 @@ I change the :ref:`method<functions>`
 
   self.assertFalse(set())
 
-the test passes and and I move the line to ``test_what_is_false``
+the test passes and I move the line to ``test_what_is_false``
 
 .. code-block:: python
 
   def test_what_is_false(self):
       ...
       self.assertFalse(set())
-
-the terminal shows passing tests
 
 refactor: make it better
 #################################################################################
@@ -1045,6 +1045,8 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: {} is not true
 
+the empty :ref:`dictionary <dictionaries>` is not True_
+
 green: make it pass
 #################################################################################
 
@@ -1073,7 +1075,7 @@ the test passes and I move the line to ``test_what_is_false``
 refactor: make it better
 #################################################################################
 
-* I add a line to test if a :ref:`dictionary <dictionaries>` with things is also False_
+* I add another line to test if a :ref:`dictionary <dictionaries>` with things is also False_
 
   .. code-block:: python
 
@@ -1131,7 +1133,7 @@ refactor: make it better
         self.assertTrue({1, 2, 3, 'n'})
         self.assertTrue({'key': 'value'})
 
-  I add the last two notes
+  then I add the last two notes
 
   .. code-block:: python
 
@@ -1164,8 +1166,8 @@ review
 
 Another way to say the notes from the tests is that
 
-* a container with things is True_
-* empty containers are False_
+* a containers with things is True_
+* an empty container is False_
 * positive and negative numbers are True_
 * ``0`` is False_
 * False_ is not True_
