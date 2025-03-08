@@ -16,19 +16,22 @@ requirements
 
 :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` with ``truth_table`` as the name of the project
 
-The Truth Table gives the 16 outcomes of binary operations on True_ and False_.
+There are 16 binary operations with outcomes for conditions using booleans_
 
 *********************************************************************************
 test_logical_conjunction
 *********************************************************************************
 
-
 red: make it fail
 #################################################################################
 
-I add a TestCase_ for binary operations in ``test_truth_table.py`` with ``test_logical_conjunction`` as the first test
+I add a TestCase_ to ``test_truth_table.py`` with ``test_logical_conjunction`` as the first test
 
 .. code-block:: python
+
+  class TestUnaryOperations(unittest.TestCase):
+      ...
+
 
   class TestBinaryOperations(unittest.TestCase):
 
@@ -60,7 +63,7 @@ and the terminal shows :ref:`TypeError`
 
 .. code-block:: python
 
-  TypeError: logical_conjunction() takes 1 positional arguments but 2 were given
+  TypeError: logical_conjunction() takes 1 positional argument but 2 were given
 
 I change the signature
 
@@ -69,144 +72,116 @@ I change the signature
   def logical_conjunction(p, q):
       return not p
 
+and the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
+  AssertionError: False is not true
 
-          self.assertFalse(src.truth_table.logical_conjunction(True, False))
-          self.assertFalse(src.truth_table.logical_conjunction(False, True))
-          self.assertFalse(src.truth_table.logical_conjunction(False, False))
-
-the terminal shows :ref:`AttributeError`
+I change the `return statement`_
 
 .. code-block:: python
 
-  AttributeError: module 'src.truth_table' has no attribute 'logical_conjunction'
+  def logical_conjunction(p, q):
+      return True
 
-
-* I add a definition
-
-  .. code-block:: python
-
-    def logical_negation(argument):
-        return not argument
-
-
-    def logical_conjunction():
-        return None
-
-  the terminal shows :ref:`TypeError`
-
-  .. code-block:: python
-
-    TypeError: logical_conjunction() takes 0 positional arguments but 2 was given
-
-* I add the error to the list of Exceptions_ encountered
-
-  .. code-block:: python
-
-    # Exceptions Encountered
-    # AssertionError
-    # ModuleNotFoundError
-    # AttributeError
-    # TypeError
-
-* then I make the :ref:`function<functions>` take input
-
-  .. code-block:: python
-
-    def logical_conjunction(p):
-        return None
-
-  the terminal shows :ref:`TypeError`
-
-  .. code-blocK:: python
-
-    TypeError: logical_conjunction() takes 1 positional arguments but 2 was given
-
-* I add another positional argument
-
-  .. code-block:: python
-
-    def logical_conjunction(p, q):
-        return None
-
-  and the terminal shows :ref:`AssertionError`
-
-  .. code-block::
-
-    AssertionError: None is not true
-
-* I make it return :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-
-    def logical_conjunction(p, q):
-        return True
-
-  the first line passes and for the second line the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: True is not false
-
-* I can make this:ref:`function<functions>`return different values based on the input it receives with `if statements`_.I add one for the first case ``self.assertTrue(truth_table.logical_conjunction(True, True))`` where ``p`` and ``q`` are both :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-
-    def logical_conjunction(p, q):
-        if p == True:
-            return True
-
-  the terminal still shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: True is not false
-
-* I add a condition for the second input value
-
-  .. code-block:: python
-
-    def logical_conjunction(p, q):
-        if p == True:
-            if q == True:
-                return True
-
-  and the test passes. Lovely!
+and the test passes
 
 refactor: make it better
 #################################################################################
 
-* Why does this work?
-
-  - I add a condition for when the value of ``p`` is equal to :ref:`True<test_what_is_true>`
-  - I add another condition in the first one for when the value of ``q`` is equal to :ref:`True<test_what_is_true>`
-  - when both conditions are met, the :ref:`function<functions>` returns :ref:`True<test_what_is_true>`
-  - what does it return when those two conditions are not met?
-
-* I know from :ref:`functions` that :ref:`None` is returned by default so the ``logical_conjunction`` :ref:`function<functions>` must be returning :ref:`None` for the other cases, and I also know from :ref:`booleans` that :ref:`None` is :ref:`False<test_what_is_false>`. I add a `return statement` to be explicit
+* I add the next case
 
   .. code-block:: python
 
-      def logical_conjunction(p, q):
-          if p == True:
-              if q == True:
-                  return True
-          return None
+    def test_logical_conjunction(self):
+        self.assertTrue(src.truth_table.logical_conjunction(True, True))
+          self.assertFalse(src.truth_table.logical_conjunction(True, False))
 
-  all tests are still passing
-* Since :ref:`None` is :ref:`False<test_what_is_false>`, I can be more explicit by using :ref:`False<test_what_is_false>`
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  I add a condition to the :ref:`function <functions>`
 
   .. code-block:: python
 
     def logical_conjunction(p, q):
         if p == True:
-            if q == True:
-                return True
-        return False
+            if q == False:
+                return False
+        return True
 
-  still green
+  the test passes
+
+* I add the next case
+
+  .. code-block:: python
+
+    def test_logical_conjunction(self):
+        self.assertTrue(src.truth_table.logical_conjunction(True, True))
+        self.assertFalse(src.truth_table.logical_conjunction(True, False))
+        self.assertFalse(src.truth_table.logical_conjunction(False, True))
+
+  and get :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  I add another condition
+
+  .. code-block:: python
+
+    def logical_conjunction(p, q):
+        if p == False:
+            if q == True:
+                return False
+        if p == True:
+            if q == False:
+                return False
+        return True
+
+  the test passes
+
+* I add the last case
+
+  .. code-block:: python
+
+    def test_logical_conjunction(self):
+        self.assertTrue(src.truth_table.logical_conjunction(True, True))
+        self.assertFalse(src.truth_table.logical_conjunction(True, False))
+        self.assertFalse(src.truth_table.logical_conjunction(False, True))
+        self.assertFalse(src.truth_table.logical_conjunction(False, False))
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  I add a condition
+
+  .. code-block:: python
+
+    def logical_conjunction(p, q):
+        if p == False:
+            if q == True:
+                return False
+            if q == False:
+                return False
+        if p == True:
+            if q == False:
+                return False
+        return True
+
+  the terminal shows passing tests
+
+* I add the condition for the first case to make it clear
+
+
 
 * I can express these conditions on one line with the and_ keyword
 

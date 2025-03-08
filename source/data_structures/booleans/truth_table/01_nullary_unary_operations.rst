@@ -142,7 +142,7 @@ Unary Operations
 There are two unary operations, they take input
 
 * :ref:`Logical Identity<test_logical_identity>`
-* :ref:`Logical Negation<test_logical_negation_aka_not>`
+* :ref:`Logical Negation<test_logical_negation>`
 
 test_logical_identity
 #################################################################################
@@ -256,7 +256,7 @@ and the terminal shows passing tests. ``logical_identity`` is a :ref:`passthroug
 
 ----
 
-test_logical_negation_aka_not
+test_logical_negation
 #################################################################################
 
 `Logical Negation`_ returns the opposite of its input
@@ -272,7 +272,7 @@ I add a test
       self.assertTrue(src.truth_table.logical_identity(True))
       self.assertFalse(src.truth_table.logical_identity(False))
 
-  def test_logical_negation_aka_not(self):
+  def test_logical_negation(self):
       self.assertFalse(src.truth_table.logical_negation(True))
 
 the terminal shows :ref:`AttributeError`
@@ -318,7 +318,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_logical_negation_aka_not(self):
+    def test_logical_negation(self):
         self.assertFalse(src.truth_table.logical_negation(True))
         self.assertTrue(src.truth_table.logical_negation(False))
 
