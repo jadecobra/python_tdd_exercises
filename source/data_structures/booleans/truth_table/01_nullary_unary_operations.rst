@@ -139,15 +139,13 @@ green: make it pass
 Unary Operations
 *********************************************************************************
 
-There are two unary operations, they take input
+There are two unary operations, they take one input
 
 * :ref:`Logical Identity<test_logical_identity>`
 * :ref:`Logical Negation<test_logical_negation>`
 
 test_logical_identity
 #################################################################################
-
-`Logical Identity`_ returns its input as output, it is a :ref:`passthrough function<test_passthrough_functions>`
 
 red: make it fail
 ---------------------------------------------------------------------------------
@@ -235,10 +233,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: True is not false
 
-when I change the `return statement`_
-
-
-the terminal shows :ref:`AssertionError`
+when I change the `return statement`_, the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -252,19 +247,17 @@ the line that was passing before now fails, I make ``logical_identity`` return i
   def logical_identity(argument):
       return argument
 
-and the terminal shows passing tests. ``logical_identity`` is a :ref:`passthrough function<test_passthrough_functions>` it returns its input
+and the terminal shows passing tests. ``logical_identity`` is a :ref:`passthrough function<test_passthrough_functions>` it returns its input as output
 
 ----
 
 test_logical_negation
 #################################################################################
 
-`Logical Negation`_ returns the opposite of its input
-
 red: make it fail
 ---------------------------------------------------------------------------------
 
-I add a test
+I add a new test
 
 .. code-block:: python
 
@@ -341,7 +334,7 @@ refactor: make it better
 
     AssertionError: True is not False
 
-  the test fails for the line that passed before, when I make the :ref:`function<functions>` return its input
+  the test fails for the line that passed before. When I make the :ref:`function<functions>` return its input
 
   .. code-block:: python
 
@@ -361,7 +354,7 @@ refactor: make it better
     def logical_negation(argument):
         return not argument
 
-  and the terminal shows passing tests
+  and the terminal shows passing tests. ``logical_negation`` returns the opposite of its input
 
 * I change the name of the test
 
