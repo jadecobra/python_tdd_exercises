@@ -834,7 +834,13 @@ the empty :ref:`list<lists>` is not True_
 green: make it pass
 #################################################################################
 
-I change the :ref:`method<functions>` then move the line to ``test_what_is_false``
+I change the :ref:`method<functions>`
+
+.. code-block:: python
+
+  self.assertFalse(list())
+
+the test passes, and I move the line to ``test_what_is_false``
 
 .. code-block:: python
 
