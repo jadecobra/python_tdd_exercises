@@ -65,8 +65,6 @@ red: make it fail
 
     AssertionError: False is an instance of <class 'bool'>
 
-  False_ is a boolean_
-
 green: make it pass
 #################################################################################
 
@@ -77,7 +75,7 @@ I change assertNotIsInstance_ to assertIsInstance_ to make the test pass
   def test_what_is_false(self):
       self.assertIsInstance(False, bool)
 
-these :ref:`methods<functions>` were introduced in the :ref:`AssertionError` chapter. I add a note
+then I add a note
 
 .. code-block:: python
 
@@ -114,8 +112,6 @@ the terminal shows :ref:`AssertionError`
 
     AssertionError: True is an instance of <class 'bool'>
 
-True_ is a boolean_
-
 green: make it pass
 #################################################################################
 
@@ -126,7 +122,7 @@ I change the :ref:`method<functions>`
   def test_what_is_true(self):
       self.assertIsInstance(True, bool)
 
-the test passes and I add a note
+the test passes and I add another note
 
 .. code-block:: python
 
@@ -182,7 +178,7 @@ refactor: make it better
     def test_what_is_true(self):
         self.assertIsInstance(True, bool)
 
-  I add another note
+  then I add a note
 
   .. code-block:: python
 
@@ -232,11 +228,11 @@ refactor: make it better
   .. code-block:: python
 
     def test_what_is_false(self):
-        ...
+        self.assertIsInstance(False, bool)
         self.assertFalse(False)
 
     def test_what_is_true(self):
-        ...
+        self.assertIsInstance(True, bool)
         self.assertTrue(True)
 
   then add another note
@@ -251,7 +247,7 @@ refactor: make it better
     # False is not true
     # False is a boolean
 
-I want to know if any of the other Python data types_ are False_ or True_
+I want to test the other Python basic data types_ to see if any of them are False_ or True_
 
 * is :ref:`None` False_ or True_?
 * is an integer_ False_ or True_?
@@ -272,7 +268,7 @@ red: make it fail
 #################################################################################
 
 
-I add a line to test if :ref:`None` is False_ or True_
+I add a line
 
 .. code-block:: python
 
@@ -306,11 +302,12 @@ I move the line to ``test_what_is_false``
 .. code-block:: python
 
     def test_what_is_false(self):
-        ...
+        self.assertIsInstance(False, bool)
+        self.assertFalse(False)
         self.assertFalse(None)
 
     def test_what_is_true(self):
-        ...
+        self.assertIsInstance(True, bool)
         self.assertTrue(True)
 
 then add a note
@@ -336,7 +333,7 @@ red: make it fail
 #################################################################################
 
 
-I add a line
+I add another line
 
 .. code-block:: python
 
@@ -366,7 +363,7 @@ and the test passes
 refactor: make it better
 #################################################################################
 
-* I move the line to ``test_what_is_true``
+* then I move the line to ``test_what_is_true``
 
   .. code-block:: python
 
@@ -374,7 +371,7 @@ refactor: make it better
         ...
         self.assertTrue(-1)
 
-  the terminal shows tests are still passing
+  and the terminal shows both tests are still passing
 
 * I add a new line
 
@@ -426,7 +423,7 @@ refactor: make it better
 
     self.assertTrue(1)
 
-  the test passes, I move the line to ``test_what_is_true``
+  the test passes and I move the line to ``test_what_is_true``
 
   .. code-block:: python
 
@@ -556,7 +553,7 @@ refactor: make it better
 
     def test_what_is_false(self):
         ...
-        self.assertFalse(0)
+        self.assertFalse(0.0)
 
     def test_what_is_true(self):
         ...
@@ -680,7 +677,7 @@ refactor: make it better
         ...
         self.assertTrue('text')
 
-  then I add a note
+  I add notes
 
   .. code-block:: python
 
@@ -713,7 +710,7 @@ I add a line to see
   def test_what_is_true(self):
       self.assertIsInstance(True, bool)
       self.assertTrue(True)
-      self.assertTrue(-0.1)
+      self.assertTrue(-1)
       self.assertTrue(1)
       self.assertTrue(-0.1)
       self.assertTrue(0.1)
@@ -783,7 +780,7 @@ refactor: make it better
         ...
         self.assertTrue((1, 2, 3, 'n'))
 
-  I add notes
+  then I add notes
 
   .. code-block:: python
 
@@ -811,7 +808,7 @@ is a list False or True?
 red: make it fail
 #################################################################################
 
-I add a line to test
+I add a line
 
 .. code-block:: python
 
@@ -883,7 +880,7 @@ refactor: make it better
         ...
         self.assertTrue([1, 2, 3, 'n'])
 
-  then add a note
+  then add notes
 
   .. code-block:: python
 
@@ -990,7 +987,7 @@ refactor: make it better
         ...
         self.assertTrue({1, 2, 3, 'n'})
 
-  then I add notes
+  I add more notes
 
   .. code-block:: python
 
@@ -1029,7 +1026,7 @@ I add a line to test if a :ref:`dictionary <dictionaries>` is False_ or True_
   def test_what_is_true(self):
       self.assertIsInstance(True, bool)
       self.assertTrue(True)
-      self.assertTrue(-0.1)
+      self.assertTrue(-1)
       self.assertTrue(1)
       self.assertTrue(-0.1)
       self.assertTrue(0.1)
@@ -1056,7 +1053,7 @@ when I change assertTrue_ to assertFalse_
 
   self.assertFalse(dict())
 
-the test passes and I move the line to ``test_what_is_false``
+the test passes and I move the line to the ``test_what_is_false`` :ref:`method<functions>`
 
 .. code-block:: python
 
@@ -1104,7 +1101,7 @@ refactor: make it better
 
     self.assertTrue({'key': 'value'})
 
-  the test passes and I move the line to ``test_what_is_true``
+  the test passes and I move the line to the ``test_what_is_true`` :ref:`method<functions>`
 
   .. code-block:: python
 
