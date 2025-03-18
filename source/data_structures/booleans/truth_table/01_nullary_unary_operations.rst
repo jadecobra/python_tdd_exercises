@@ -30,35 +30,36 @@ test_logical_true
 red: make it fail
 ---------------------------------------------------------------------------------
 
-* I change the text in ``test_truth_table.py``
+I change the text in ``test_truth_table.py``
 
-  .. code-block:: python
+.. code-block:: python
 
-    import unittest
-    import src.truth_table
+  import unittest
+  import src.truth_table
 
 
-    class TestNullaryOperations(unittest.TestCase):
+  class TestNullaryOperations(unittest.TestCase):
 
-        def test_logical_true(self):
-            self.assertTrue(src.truth_table.logical_true())
+      def test_logical_true(self):
+          self.assertTrue(src.truth_table.logical_true())
 
-  and the terminal shows :ref:`AttributeError`
+and the terminal shows :ref:`AttributeError`
 
-  .. code-block:: python
+.. code-block:: python
 
-    AttributeError: module 'src.truth_table' has no attribute 'logical_true'
+  AttributeError: module 'src.truth_table' has no attribute 'logical_true'
 
-* I add it to the list of Exceptions_ encountered
-
-  .. code-block:: python
-
-    # Exceptions Encountered
-    # AssertionError
-    # AttributeError
 
 green: make it pass
 ---------------------------------------------------------------------------------
+
+I add it to the list of Exceptions_ encountered
+
+.. code-block:: python
+
+  # Exceptions Encountered
+  # AssertionError
+  # AttributeError
 
 then I add a :ref:`function<functions>` to ``truth_table.py``
 
@@ -122,7 +123,7 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: True is not False
+    AssertionError: True is not false
 
 * When I change :ref:`True <test_what_is_true>` to :ref:`False<test_what_is_false>` in the `return statement`_
 
@@ -332,7 +333,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    AssertionError: True is not False
+    AssertionError: True is not false
 
   the test fails for the line that passed before. When I make the :ref:`function<functions>` return its input
 
@@ -345,7 +346,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    AssertionError: True is not False
+    AssertionError: True is not false
 
   the test expects the opposite of the input, I add the not_ keyword to the `return statement`_
 
