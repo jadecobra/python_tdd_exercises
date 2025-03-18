@@ -840,7 +840,7 @@ I change the :ref:`method<functions>`
 
   self.assertFalse(list())
 
-the test passes, and I move the line to ``test_what_is_false``
+and the test passes, then I move the line to ``test_what_is_false``
 
 .. code-block:: python
 
@@ -848,7 +848,7 @@ the test passes, and I move the line to ``test_what_is_false``
       ...
       self.assertFalse(list())
 
-and the terminal shows passing tests
+the terminal shows green again
 
 refactor: make it better
 #################################################################################
