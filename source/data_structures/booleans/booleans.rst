@@ -68,14 +68,14 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-I change assertNotIsInstance_ to assertIsInstance_ to make the test pass
+I change assertNotIsInstance_ to assertIsInstance_
 
 .. code-block:: python
 
   def test_what_is_false(self):
       self.assertIsInstance(False, bool)
 
-then I add a note
+the test passes and I add a note
 
 .. code-block:: python
 
@@ -235,7 +235,7 @@ refactor: make it better
         self.assertIsInstance(True, bool)
         self.assertTrue(True)
 
-  then add another note
+  then I add another note
 
   .. code-block:: python
 
@@ -601,7 +601,7 @@ is a string False or True?
 red: make it fail
 #################################################################################
 
-I add a line to test strings_
+I add a line to test
 
 .. code-block:: python
 
@@ -1169,7 +1169,7 @@ review
 
 Another way to say the notes from the tests is that
 
-* a containers with things is True_
+* a container with things is True_
 * an empty container is False_
 * positive and negative numbers are True_
 * ``0`` is False_
