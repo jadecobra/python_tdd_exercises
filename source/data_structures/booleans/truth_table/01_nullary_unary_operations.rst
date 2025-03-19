@@ -241,14 +241,14 @@ when I change the `return statement`_, the terminal shows :ref:`AssertionError`
     def logical_identity(argument):
         return False
 
-the line that was passing before now fails, I make ``logical_identity`` return its input
+the line before was passing but now fails. I make ``logical_identity`` return its input
 
 .. code-block:: python
 
   def logical_identity(argument):
       return argument
 
-and the terminal shows passing tests. ``logical_identity`` is a :ref:`passthrough function<test_passthrough_functions>` it returns its input as output
+and the terminal shows passing tests. ``logical_identity`` returns its input as output, it is a :ref:`passthrough function<test_passthrough_functions>`
 
 ----
 
