@@ -59,6 +59,7 @@
 .. _mkdir: https://man7.org/linux/man-pages/man1/mkdir.1.html
 .. _modulo: https://en.wikipedia.org/wiki/Modulo
 .. _not: https://docs.python.org/3/reference/expressions.html#not
+.. _nots: https://docs.python.org/3/reference/expressions.html#not
 .. _object: https://docs.python.org/3/glossary.html#term-object
 .. _objects: https://docs.python.org/3/glossary.html#term-object
 .. _or: https://docs.python.org/3/reference/expressions.html#or
