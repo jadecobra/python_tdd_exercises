@@ -27,30 +27,78 @@ I add a test
 
 .. code-block:: python
 
-    def test_logical_implication_or_material_implication(self):
+    def test_logical_or_material_implication(self):
         self.assertTrue(src.truth_table.logical_implication(True, True))
 
+the terminal shows :ref:`AttributeError`
 
 .. code-block:: python
 
-        self.assertFalse(src.truth_table.logical_implication(True, False))
-        self.assertTrue(src.truth_table.logical_implication(False, True))
-        self.assertTrue(src.truth_table.logical_implication(False, False))
-
-the terminal shows :ref:`AttributeError`
+  AttributeError: module 'src.truth_table' has no attribute 'logical_implication'. Did you mean: 'logical_disjunction'?
 
 green: make it pass
 #################################################################################
 
+I add the :ref:`method<functions>`
 
-* I add a:ref:`function<functions>`definition with :ref:`True<test_what_is_true>` as the return value since it is expected in 3 out of the 4 cases
+.. code-block:: python
+
+  def logical_implication(p, q):
+      return p or q
+
+the terminal shows green
+
+refactor: make it better
+#################################################################################
+
+
+* I add the next case
+
+  .. code-block:: python
+
+    def test_logical_or_material_implication(self):
+        self.assertTrue(src.truth_table.logical_implication(True, True))
+        self.assertFalse(src.truth_table.logical_implication(True, False))
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  I add an if statement_
 
   .. code-block:: python
 
     def logical_implication(p, q):
-        return True
+        if p == True:
+            if q == False:
+                return False
+        return p or q
 
-  the terminal shows the second case failing
+  the terminal shows green again
+
+* I add
+
+  .. code-block:: python
+
+
+    def test_logical_or_material_implication(self):
+        self.assertTrue(src.truth_table.logical_implication(True, True))
+        self.assertFalse(src.truth_table.logical_implication(True, False))
+        self.assertTrue(src.truth_table.logical_implication(False, True))
+        self.assertTrue(src.truth_table.logical_implication(False, False))
+
+
+  .. code-block:: python
+
+    def test_logical_or_material_implication(self):
+        self.assertTrue(src.truth_table.logical_implication(True, True))
+        self.assertFalse(src.truth_table.logical_implication(True, False))
+        self.assertTrue(src.truth_table.logical_implication(False, True))
+        self.assertTrue(src.truth_table.logical_implication(False, False))
+
+
 * I add a condition for this case
 
   .. code-block:: python
@@ -63,8 +111,6 @@ green: make it pass
 
   the tests pass!
 
-refactor: make it better
-#################################################################################
 
 
 * What if I make the nested condition one line?
@@ -180,5 +226,12 @@ fantastic! the tests pass. I can see that for any boolean operation involving 2 
 test_logical_equality
 *********************************************************************************
 
+----
+
+*********************************************************************************
+review
+*********************************************************************************
+
+----
 
 :doc:`/code/code_truth_table`

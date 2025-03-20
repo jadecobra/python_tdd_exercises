@@ -371,8 +371,6 @@ refactor: make it better
         ...
         self.assertTrue(-1)
 
-  and the terminal shows both tests are still passing
-
 * I add a new line
 
   .. code-block:: python
@@ -741,8 +739,6 @@ the test passes and I move the line to ``test_what_is_false``
   def test_what_is_false(self):
       ...
       self.assertFalse(tuple())
-
-the terminal shows passing tests
 
 refactor: make it better
 #################################################################################
