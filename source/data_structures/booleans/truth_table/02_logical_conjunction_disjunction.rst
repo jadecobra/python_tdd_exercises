@@ -447,15 +447,15 @@ refactor: make it better
 review
 *********************************************************************************
 
-From the tests, I know that for any :ref:`boolean<booleans>` operation involving 2 inputs: ``p`` and ``q`` for example, that can take the values :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
-
+From the tests, I know that binary operations involve 2 inputs: ``p`` and ``q`` for example, that can take the values :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
 
 * ``return True if x else y`` can be rewritten as ``return x`` if ``x`` evaluates to :ref:`True<test_what_is_true>`
 * even though there are 4 cases, there are only 2 outcomes, I only need to write the condition for the special case and use an else_ clause for the others
-* ``logical negation`` is not_
 * ``logical conjunction`` is and_
+* ``logical_disjunction``` is or_
+* ``logical negation`` is not_
 
-:ref:`Logical Implication <truth_table: Logical Implication>` is next
+:ref:`Logical Implication and Logical Equality<truth table: Logical Implication and Logical Equality>` are next
 
 ----
 

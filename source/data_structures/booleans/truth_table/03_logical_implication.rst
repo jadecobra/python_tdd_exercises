@@ -1,7 +1,7 @@
 .. include:: ../../../links.rst
 
 #################################################################################
-truth table: Logical Implication
+truth table: Logical Implication and Logical Equality
 #################################################################################
 
 .. contents:: table of contents
@@ -10,31 +10,29 @@ truth table: Logical Implication
 
 ----
 
-This chapter has tests for Logical Implication from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
+*********************************************************************************
+requirements
+*********************************************************************************
 
-Reviewing what I know so far, for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
+:doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` with ``truth_table`` as the name of the project
 
-
-* ``logical disjunction`` is or_
-* and_ is "not or_"
-* or_ is "not and_"
-* ``logical conjunction`` is and_
-* ``return True if x else y`` can be rewritten as ``return x``, if ``x`` evaluates to :ref:`True<test_what_is_true>`
-* when there are multiple outcomes I only need to write the condition for the special case and use ``else`` for the others
-* :ref:`False<test_what_is_false>` is not_ :ref:`True<test_what_is_true>`
-* :ref:`True<test_what_is_true>` is not_ :ref:`False<test_what_is_false>`
-* :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`
-* :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
+*********************************************************************************
+test_logical_implication
+*********************************************************************************
 
 red: make it fail
 #################################################################################
 
-I add a test for logical implication to ``TestBinaryOperations`` in ``test_truth_table.py``
+I add a test
 
 .. code-block:: python
 
     def test_logical_implication_or_material_implication(self):
         self.assertTrue(src.truth_table.logical_implication(True, True))
+
+
+.. code-block:: python
+
         self.assertFalse(src.truth_table.logical_implication(True, False))
         self.assertTrue(src.truth_table.logical_implication(False, True))
         self.assertTrue(src.truth_table.logical_implication(False, False))
@@ -177,5 +175,10 @@ fantastic! the tests pass. I can see that for any boolean operation involving 2 
 * :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
 
 ----
+
+*********************************************************************************
+test_logical_equality
+*********************************************************************************
+
 
 :doc:`/code/code_truth_table`
