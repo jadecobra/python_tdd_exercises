@@ -66,7 +66,7 @@ refactor: make it better
 
     AssertionError: True is not false
 
-  I add an if statement_
+  I add an `if statement`_
 
   .. code-block:: python
 
@@ -78,17 +78,7 @@ refactor: make it better
 
   the terminal shows green again
 
-* I add
-
-  .. code-block:: python
-
-
-    def test_logical_or_material_implication(self):
-        self.assertTrue(src.truth_table.logical_implication(True, True))
-        self.assertFalse(src.truth_table.logical_implication(True, False))
-        self.assertTrue(src.truth_table.logical_implication(False, True))
-        self.assertTrue(src.truth_table.logical_implication(False, False))
-
+* I add the next case
 
   .. code-block:: python
 
@@ -96,10 +86,8 @@ refactor: make it better
         self.assertTrue(src.truth_table.logical_implication(True, True))
         self.assertFalse(src.truth_table.logical_implication(True, False))
         self.assertTrue(src.truth_table.logical_implication(False, True))
-        self.assertTrue(src.truth_table.logical_implication(False, False))
 
-
-* I add a condition for this case
+  the terminal shows green, I add an `if statement`_ to make sure it is right
 
   .. code-block:: python
 
@@ -107,118 +95,281 @@ refactor: make it better
         if p == True:
             if q == False:
                 return False
-        return True
+        if p == False:
+            if q == True:
+                return False
+        return p or q
 
-  the tests pass!
+  the terminal shows :ref:`AssertionError`
 
+  .. code-block:: python
 
+    AssertionError: False is not true
 
-* What if I make the nested condition one line?
+  when I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in the `return statement`_
+
+  .. code-block:: python
+
+    def logical_implication(p, q):
+        if p == True:
+            if q == False:
+                return False
+        if p == False:
+            if q == True:
+                return True
+        return p or q
+
+  the test is green again
+
+* I add the last case
+
+  .. code-block:: python
+
+    def test_logical_or_material_implication(self):
+        self.assertTrue(src.truth_table.logical_implication(True, True))
+        self.assertFalse(src.truth_table.logical_implication(True, False))
+        self.assertTrue(src.truth_table.logical_implication(False, True))
+        self.assertTrue(src.truth_table.logical_implication(False, False))
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  I add an `if statement`_
+
+  .. code-block:: python
+
+    def logical_implication(p, q):
+        if p == True:
+            if q == False:
+                return False
+        if p == False:
+            if q == True:
+                return True
+            if q == False:
+                return True
+        return p or q
+
+  the test passes
+
+* I add a condition for the first case to make it clearer
+
+  .. code-block:: python
+
+    def logical_implication(p, q):
+        if p == True:
+            if q == True:
+                return False
+            if q == False:
+                return False
+        if p == False:
+            if q == True:
+                return True
+            if q == False:
+                return True
+        return p or q
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  I change the `return statement`_
+
+  .. code-block:: python
+
+    def logical_implication(p, q):
+        if p == True:
+            if q == True:
+                return True
+            if q == False:
+                return False
+        if p == False:
+            if q == True:
+                return True
+            if q == False:
+                return True
+        return p or q
+
+  and the test passes
+
+* I comment out ``return p or q``
+
+  .. code-block:: python
+
+    def logical_implication(p, q):
+        if p == True:
+            if q == True:
+                return True
+            if q == False:
+                return False
+        if p == False:
+            if q == True:
+                return True
+            if q == False:
+                return True
+        # return p or q
+
+  the terminal still shows green, so I remove the line
+
+* I write an `if statement` for the one case where the outcome is :ref:`False <test_what_is_false>`
 
   .. code-block:: python
 
     def logical_implication(p, q):
         if p == True and q == False:
             return False
-        return True
+        else:
+            return True
+        if p == True:
+            if q == True:
+                return True
+            if q == False:
+                return False
+        if p == False:
+            if q == True:
+                return True
+            if q == False:
+                return True
 
-  the tests still pass
-* in the earlier examples I changed the equality tests with implied condition statements
+  the terminal still shows green. I remove the other `if statements`_
 
   .. code-block:: python
 
     def logical_implication(p, q):
-        if p and not q:
-            return False
-        return True
-
-  this looks simpler and the tests still pass
-* I write out the second part with an else_ clause to be explicit
-
-  .. code-block:: python
-
-    def logical_implication(p, q):
-        if p and not q:
+        if p == True and q == False:
             return False
         else:
             return True
 
-* then change the else_ clause with the opposite of the `if statement`_ to get
+  I can rewrite the first line in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
 
     def logical_implication(p, q):
-        if p and not q:
+        if p == True and q != True:
+        # if p == True and q == False:
             return False
-        if not(p and not q):
+        else:
             return True
 
-* when I "multiply" out the statement with not_ to
+  the terminal shows green. I remove the commented line and rewrite the first line with bool_
+
+  .. code-block:: python
+
+    def logical_implication(p, q):
+        if bool(p) == True and bool(q) != True:
+        # if p == True and q != True:
+            return False
+        else:
+            return True
+
+  the tests are still passing. I remove the commented line and rewrite the first line again using not_
+
+  .. code-block:: python
+
+    def logical_implication(p, q):
+        if bool(p) == True and not bool(q) == True:
+        # if bool(p) == True and bool(q) != True:
+            return False
+        else:
+            return True
+
+  the test is still green, I remove the commented line then remove the repetition
+
+  .. code-block:: python
+
+    def logical_implication(p, q):
+        if bool(p) and not bool(q):
+        # if bool(p) == True and not bool(q) == True:
+            return False
+        else:
+            return True
+
+  still green, I remove the commented line and remove bool_
+
+  .. code-block:: python
+
+    def logical_implication(p, q):
+        if p and not q:
+        # if bool(p) and not bool(q):
+            return False
+        else:
+            return True
+
+  the test is still green. I remove the commented line and rewrite the else_ statement with the opposite `if statement`_
 
   .. code-block:: python
 
     def logical_implication(p, q):
         if p and not q:
             return False
+        if not (p and not q):
+            return True
+
+  the terminal shows green. I move the first two lines to the bottom and rewrite the `if statement`_ with an else_ clause
+
+  .. code-block:: python
+
+    def logical_implication(p, q):
+        if not (p and not q):
+            return True
+        else:
+        # if p and not q:
+            return False
+
+  the test is still green, I remove the commented line and "multiply" out the first statement since it has not_ twice
+
+  .. code-block:: python
+
+    def logical_implication(p, q):
         if not p not and not not q:
-            return True
-
-  I get a SyntaxError_ and change it to get
-
-  .. code-block:: python
-
-    def logical_implication(p, q):
-        if p and not q:
-            return False
-        if not p or q:
-            return True
-
-* I reorder the statements
-
-  .. code-block:: python
-
-    def logical_implication(p, q):
-        if not p or q:
-            return True
-        if p and not q:
-            return False
-
-* then change the second statement with an ``else``
-
-  .. code-block:: python
-
-    def logical_implication(p, q):
-        if not p or q:
+        if not (p and not q):
             return True
         else:
             return False
 
-* and rewrite the statements as one line
+  ``not and`` is or_ and ``not not`` cancels out
+
+  .. code-block:: python
+
+    def logical_implication(p, q):
+        if not p or q:
+        # if not (p and not q):
+            return True
+        else:
+            return False
+
+  the terminal still shows green, I remove the comment and rewrite the statement as a `conditional expression`_
 
   .. code-block:: python
 
     def logical_implication(p, q):
         return True if not p or q else False
+        if not p or q:
+            return True
+        else:
+            return False
 
-* I simplify using python's implicit conditional testing
+  still green, I remove the rest of the lines and make the `return statement`_ simpler
+
+  .. code-block:: python
+
+    def logical_implication(p, q):
+        return not p or q
+        return True if not p or q else False
+
+  the test is still green. I remove the second `return statement`_
 
   .. code-block:: python
 
     def logical_implication(p, q):
         return not p or q
 
-
-fantastic! the tests pass. I can see that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
-
-* ``logical implication`` is ``not p or q``
-* ``logical disjunction`` is or_
-* ``logical conjunction`` is and_
-* and_ is "not or_"
-* or_ is "not and_"
-* :ref:`False<test_what_is_false>` is not_ :ref:`True<test_what_is_true>`
-* :ref:`True<test_what_is_true>` is not_ :ref:`False<test_what_is_false>`
-* :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`
-* :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
+  and all tests are still passing
 
 ----
 
