@@ -848,8 +848,6 @@ and the test passes, then I move the line to ``test_what_is_false``
       ...
       self.assertFalse(list())
 
-the terminal shows green again
-
 refactor: make it better
 #################################################################################
 
@@ -1167,7 +1165,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-From the tests I can say that
+From the tests I can see that
 
 * a container with things is True_
 * an empty container is False_
