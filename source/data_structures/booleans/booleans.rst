@@ -6,7 +6,7 @@ booleans
 
 .. raw:: html
 
-  <iframe style="border-radius:12px" width="560"  height="315" src="https://www.youtube-nocookie.com/embed/TGIZs2yHr4I?si=5f3ksQHQb9V2N6PP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/6r3QcYN0wxQ?si=cQaK63rwX3f9PGX6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ----
 
@@ -1167,7 +1167,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-Another way to say the notes from the tests is that
+From the tests I can say that
 
 * a container with things is True_
 * an empty container is False_
