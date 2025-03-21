@@ -1,10 +1,8 @@
 .. include:: ../../../links.rst
 
-###################################
-truth table: Exclusive Disjunction
-###################################
-
-The following tests show Exclusive Disjunction from the `Truth Table <https://en.wikipedia.org/wiki/Truth_table>`_
+#################################################################################
+truth table: Exclusive Disjunction and Logical NAND
+#################################################################################
 
 .. contents:: table of contents
   :local:
@@ -12,13 +10,84 @@ The following tests show Exclusive Disjunction from the `Truth Table <https://en
 
 ----
 
+*********************************************************************************
+requirements
+*********************************************************************************
+
+:doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` with ``truth_table`` as the name of the project
+
+*********************************************************************************
+test_exclusive_disjunction
+*********************************************************************************
 
 red: make it fail
 #################################################################################
 
-I add a test for exclusive disjunction to ``TestBinaryOperations`` in ``test_truth_table.py``
+I add a new test
 
 .. code-block:: python
+
+  def test_exclusive_disjunction(self):
+      self.assertFalse(src.truth_table.exclusive_disjunction(True, True))
+
+the terminal shows :ref:`AttributeError`
+
+.. code-block:: python
+
+  AttributeError: module 'src.truth_table' has no attribute 'exclusive_disjunction'
+
+green: make it pass
+#################################################################################
+
+I add the :ref:`function<functions>`
+
+.. code-block:: python
+
+  def exclusive_disjunction(p, q):
+      return (p or not q) and (not p or q)
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: True is not false
+
+I change the `return statement`
+
+.. code-block:: python
+
+  def exclusive_disjunction(p, q):
+      return False
+
+and the test passes
+
+refactor: make it better
+#################################################################################
+
+* I add the next case
+
+  .. code-block:: python
+
+    def test_exclusive_disjunction(self):
+        self.assertFalse(src.truth_table.exclusive_disjunction(True, True))
+        self.assertTrue(src.truth_table.exclusive_disjunction(True, False))
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  
+
+  .. code-block:: python
+
+    def test_exclusive_disjunction(self):
+        self.assertFalse(src.truth_table.exclusive_disjunction(True, True))
+        self.assertTrue(src.truth_table.exclusive_disjunction(True, False))
+        self.assertTrue(src.truth_table.exclusive_disjunction(False, True))
+
+  .. code-block:: python
 
     def test_exclusive_disjunction(self):
         self.assertFalse(src.truth_table.exclusive_disjunction(True, True))
@@ -26,10 +95,9 @@ I add a test for exclusive disjunction to ``TestBinaryOperations`` in ``test_tru
         self.assertTrue(src.truth_table.exclusive_disjunction(False, True))
         self.assertFalse(src.truth_table.exclusive_disjunction(False, False))
 
-and the terminal shows :ref:`AttributeError`
+  and the terminal shows :ref:`AttributeError`
 
-green: make it pass
-#################################################################################
+
 
 * then add a definition that returns :ref:`True<test_what_is_true>`
 
@@ -62,8 +130,7 @@ green: make it pass
 
   and all the tests pass. Wonderful!
 
-refactor: make it better
-#################################################################################
+
 
 * In the first case ``p`` and ``q`` have the same value, I can change the statement to reflect this like I did with ``logical_equality``
 
