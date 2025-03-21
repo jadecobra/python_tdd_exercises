@@ -49,7 +49,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* I restate the ``if`` condition using implicit conditional testing
+* I restate the ``if`` condition using hidden conditional testing
 
   .. code-block:: python
 

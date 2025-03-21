@@ -277,7 +277,7 @@ refactor: make it better
         else:
             return False
 
-  the terminal shows green and I remove the commented line. Python has implicit truth value testing which allows me to rewrite the first line as
+  the terminal shows green and I remove the commented line. Python has hidden truth value testing which allows me to rewrite the first line as
 
   .. code-block:: python
 
@@ -288,7 +288,7 @@ refactor: make it better
         else:
             return False
 
-  the test is still green, I remove the commented line. Python has `conditional expressions`_(`ternary operators`_) which allows me to write the `if statements`_ in a simpler way
+  the test is still green, I remove the commented line. Python has `conditional expressions`_ (`ternary operators`_) which allows me to write the `if statements`_ in a simpler way
 
   .. code-block:: python
 
@@ -554,7 +554,7 @@ refactor: make it better
         else:
             return True
 
-  still green. I remove the commented line and bool_ to use implicit truth value testing
+  still green. I remove the commented line and bool_ to use hidden truth value testing
 
   .. code-block:: python
 
@@ -670,7 +670,7 @@ refactor: make it better
         else:
             return False
 
-  since the opposite of the opposite of a thing is the thing, the two nots_ cancel each other. I rewrite the statements as a `conditional expressions`_(`ternary operators`_)
+  since the opposite of the opposite of a thing is the thing, the two nots_ cancel each other. I rewrite the statements as a `conditional expressions`_ (`ternary operators`_)
 
   .. code-block:: python
 
