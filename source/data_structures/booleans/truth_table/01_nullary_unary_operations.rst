@@ -155,8 +155,8 @@ I add a new TestCase_ with a test to ``test_truth_table.py``
 
 .. code-block:: python
 
-    def logical_false():
-        return False
+  class TestNullaryOperations(unittest.TestCase):
+      ...
 
 
   class TestUnaryOperations(unittest.TestCase):
