@@ -140,7 +140,7 @@ green: make it pass
 Unary Operations
 *********************************************************************************
 
-There are two unary operations, they take one input
+There are two unary operations, they each take one input
 
 * :ref:`Logical Identity<test_logical_identity>`
 * :ref:`Logical Negation<test_logical_negation>`
@@ -151,9 +151,13 @@ test_logical_identity
 red: make it fail
 ---------------------------------------------------------------------------------
 
-I add a new TestCase_ to ``test_truth_table.py``
+I add a new TestCase_ with a test to ``test_truth_table.py``
 
 .. code-block:: python
+
+    def logical_false():
+        return False
+
 
   class TestUnaryOperations(unittest.TestCase):
 
@@ -241,7 +245,7 @@ when I change the `return statement`_, the terminal shows :ref:`AssertionError`
     def logical_identity(argument):
         return False
 
-the line before was passing but now fails. I make ``logical_identity`` return its input
+for the line that passed before. I make ``logical_identity`` return its input
 
 .. code-block:: python
 
@@ -335,7 +339,7 @@ refactor: make it better
 
     AssertionError: True is not false
 
-  the test fails for the line that passed before. When I make the :ref:`function<functions>` return its input
+  it fails for the line that passed before. When I make the :ref:`function<functions>` return its input
 
   .. code-block:: python
 
@@ -348,7 +352,7 @@ refactor: make it better
 
     AssertionError: True is not false
 
-  the test expects the opposite of the input, I add the not_ keyword to the `return statement`_
+  the expectation of the test is that when :ref:`True<test_what_is_true>` is given, the result is :ref:`False<test_what_is_false>` and when :ref:`False<test_what_is_false>` is given, the result is :ref:`True<test_what_is_true>`, I can make that happen with the not_ keyword
 
   .. code-block:: python
 
