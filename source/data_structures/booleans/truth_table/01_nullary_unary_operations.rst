@@ -4,6 +4,10 @@
 truth table: Nullary and Unary Operations
 #################################################################################
 
+.. raw:: html
+
+  <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/HL4kNmo3UIo?si=sv1CU9Flu7kybun5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 .. contents:: table of contents
   :local:
   :depth: 1
@@ -154,7 +158,7 @@ test_logical_identity
 red: make it fail
 ---------------------------------------------------------------------------------
 
-I add a new TestCase_ with a test to ``test_truth_table.py``
+I add a new TestCase_ and a test to ``test_truth_table.py``
 
 .. code-block:: python
 
@@ -167,7 +171,7 @@ I add a new TestCase_ with a test to ``test_truth_table.py``
       def test_logical_identity(self):
           self.assertTrue(src.truth_table.logical_identity(True))
 
-and the terminal shows :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -254,14 +258,14 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: False is not true
 
-there is a failure for the line that passed before. The expectation of the test is that when :ref:`True<test_what_is_true>` is given, the result is :ref:`True<test_what_is_true>` and when :ref:`False<test_what_is_false>` is given, the result is :ref:`False<test_what_is_true>`, I make ``logical_identity`` return its input
+there is a failure for the line that passed before. The expectation of the test is that when :ref:`True<test_what_is_true>` is given, the result is :ref:`True<test_what_is_true>` and when :ref:`False<test_what_is_false>` is given, the result is :ref:`False<test_what_is_true>`. I make ``logical_identity`` return its input
 
 .. code-block:: python
 
   def logical_identity(argument):
       return argument
 
-and the terminal shows passing tests. ``logical_identity`` returns its input as output, it is a :ref:`passthrough function<test_passthrough_functions>`
+and the terminal shows passing tests. ``logical_identity`` is a :ref:`passthrough function<test_passthrough_functions>`, it returns its input as output.
 
 ----
 
