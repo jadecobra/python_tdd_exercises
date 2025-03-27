@@ -22,7 +22,10 @@ requirements
 Nullary Operations
 *********************************************************************************
 
-Nullary operations do not take input and always return the same value, they are :ref:`singleton functions<test_singleton_functions>`
+There are two Nullary operations, they do not take input and always return the same value, they are :ref:`singleton functions<test_singleton_functions>`
+
+* :ref:`Logical True<test_logical_true>`
+* :ref:`Logical False<test_logical_false>`
 
 test_logical_true
 #################################################################################
