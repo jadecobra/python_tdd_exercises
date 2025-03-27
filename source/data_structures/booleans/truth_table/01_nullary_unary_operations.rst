@@ -238,14 +238,20 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: True is not false
 
-when I change the `return statement`_, the terminal shows :ref:`AssertionError`
+when I change the `return statement`_
 
 .. code-block:: python
 
     def logical_identity(argument):
         return False
 
-for the line that passed before. I make ``logical_identity`` return its input
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: False is not true
+
+there is a failure for the line that passed before. The expectation of the test is that when :ref:`True<test_what_is_true>` is given, the result is :ref:`True<test_what_is_true>` and when :ref:`False<test_what_is_false>` is given, the result is :ref:`False<test_what_is_true>`, I make ``logical_identity`` return its input
 
 .. code-block:: python
 
