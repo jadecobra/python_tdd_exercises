@@ -260,24 +260,13 @@ refactor: make it better
   .. code-block:: python
 
     def logical_conjunction(p, q):
-        if bool(p) == True and bool(q) == True:
+        if bool(p) and bool(q):
         # if p == True and q == True:
             return True
         else:
             return False
 
-  still green. ``bool(x)`` checks if ``x`` is :ref:`True <test_what_is_true>` and the ``== True`` checks if the result of ``bool(x)`` is :ref:`True <test_what_is_true>`, making it a repetition. I remove the commented line and rewrite the first line to remove the duplication
-
-  .. code-block:: python
-
-    def logical_conjunction(p, q):
-        if bool(p) and bool(q):
-        # if bool(p) == True and bool(q) == True:
-            return True
-        else:
-            return False
-
-  the terminal shows green and I remove the commented line. Python has hidden truth value testing which allows me to rewrite the first line as
+  still green. ``bool(x)`` checks if ``x`` is :ref:`True <test_what_is_true>`. I remove the commented line and rewrite the first line
 
   .. code-block:: python
 
@@ -288,7 +277,9 @@ refactor: make it better
         else:
             return False
 
-  the test is still green, I remove the commented line. Python has `ternary operators`_ (`conditional expressions`_) which allows me to write the `if statements`_ in a simpler way
+  the test is still green, Python tests ``p`` and ``q`` for truth in the background, I remove the commented line
+
+* Python has `ternary operators`_ (`conditional expressions`_) which allows me to write the `if statements`_ in a simpler way
 
   .. code-block:: python
 
@@ -299,7 +290,7 @@ refactor: make it better
         else:
             return False
 
-  the terminal shows green, I remove the other if statements and rewrite the `return statement`_ to make it simpler, thanks to Python's truth value testing
+  the terminal shows green, I remove the other `if statements`_ and rewrite the `return statement`_ to make it simpler, thanks to Python's truth value testing
 
   .. code-block:: python
 
@@ -333,7 +324,7 @@ test_logical_disjunction
 red: make it fail
 #################################################################################
 
-I add a another test to the ``TestBinaryOperations`` TestCase_
+I add another test to the ``TestBinaryOperations`` TestCase_
 
 .. code-block:: python
 
@@ -360,7 +351,7 @@ I add the :ref:`function<functions>`
   def logical_disjunction(p, q):
       return p and q
 
-and the test passes
+the test passes
 
 refactor: make it better
 #################################################################################
@@ -406,7 +397,7 @@ refactor: make it better
 
     AssertionError: False is not true
 
-  I add an `if statement`_ for it
+  I add an `if statement`_ for this case
 
   .. code-block:: python
 
@@ -467,7 +458,7 @@ refactor: make it better
                 return True
         return p and q
 
-  then test passes, and I add an `if statement`_ for the first case
+  the test passes, and I add an `if statement`_ for the first case
 
   .. code-block:: python
 
@@ -482,7 +473,7 @@ refactor: make it better
                 return True
             if q == True:
                 return False
-        return p and q
+        # return p and q
 
   the terminal shows :ref:`AssertionError`
 
@@ -490,7 +481,7 @@ refactor: make it better
 
     AssertionError: False is not true
 
-  I change the `return statement`_ and comment out the last line in the :ref:`function<functions>`
+  I change the `return statement`_
 
   .. code-block:: python
 
@@ -507,9 +498,9 @@ refactor: make it better
                 return True
         # return p and q
 
-  the terminal shows green again so I remove the commented line
+  the terminal shows green again and I remove the commented line
 
-* There are also only two results for ``logical_disjunction`` - :ref:`True<test_what_is_true>` in one case and :ref:`False<test_what_is_false>` in the other 3 cases, it was the same with ``logical_conjunction``. I add a new `if statement`_ for the condition that returns :ref:`False<test_what_is_false>`
+* There are also only two results for ``logical_disjunction`` - :ref:`True<test_what_is_true>` in one case and :ref:`False<test_what_is_false>` in the other 3 cases. I add a new `if statement`_ with an else_ clause
 
   .. code-block:: python
 
@@ -529,7 +520,7 @@ refactor: make it better
             if q == True:
                 return True
 
-  the terminal still shows green. I remove the other `if statements`_, then rewrite the first line in terms of :ref:`True<test_what_is_true>`
+  the terminal still shows green. I remove the other `if statements`_, then write the opposite of the `if statement`_
 
   .. code-block:: python
 
@@ -539,7 +530,7 @@ refactor: make it better
         else:
             return True
 
-  the test is still green. I remove the commented line and rewrite the else_ clause with the opposite of the `if statement`_ with ``logical_negation(not)``
+  the test is still green. I remove the commented line and rewrite the else_ clause with the opposite of the `if statement`_ using ``logical_negation(not)``
 
   .. code-block:: python
 
@@ -571,7 +562,7 @@ refactor: make it better
         # if p == False and q == False:
             return False
 
-  still green. I remove the commented line and "multiply" not_ by each symbol in the parentheses
+  the terminal shows green. I remove the commented line and "multiply" not_ by each symbol in the parentheses
 
   .. code-block:: python
 
@@ -586,11 +577,13 @@ refactor: make it better
 
   .. code-block:: python
 
+    SyntaxError: invalid syntax
+
   - not_ ``==`` is ``!=``
   - not_ :ref:`False<test_what_is_false>` is :ref:`True<test_what_is_true>`
   - not_ and_ is or_
 
-  I fix the syntax
+  I fix the line
 
   .. code-block:: python
 
@@ -601,37 +594,41 @@ refactor: make it better
         else:
             return False
 
-  and the test passes. I remove the commented line then add bool_
+  and the test passes. I remove the commented line and rewrite the first line to remove not_
 
   .. code-block:: python
 
     def logical_disjunction(p, q):
-        if not bool(p) != True or not bool(q) != True:
+        if p == True or q == True:
+        # if not p != True or not q != True:
             return True
         else:
             return False
 
-  still green. ``not bool(x) != True`` is the same thing as ``bool(x) == True``, I change the `if statement`_
+
+  ``not p != True`` is the same as ``p == True``. I remove the commented line then rewrite it with bool_
 
   .. code-block:: python
 
     def logical_disjunction(p, q):
-        if bool(p) == True or bool(q) == True:
+        if bool(p) or bool(q):
+        # if p == True or q == True:
             return True
         else:
             return False
 
-  I remove bool_ to use Python's hidden truth value testing'
+  I remove the comment and rewrite the `if statement`_ with Python's hidden truth value testing
 
   .. code-block:: python
 
     def logical_disjunction(p, q):
         if p or q:
+        # if bool(p) or bool(q):
             return True
         else:
             return False
 
-  I rewrite the statements as a `conditional expression`_
+  still green. I rewrite the statements as a `conditional expression`_
 
   .. code-block:: python
 
@@ -650,7 +647,7 @@ refactor: make it better
         return p or q
         return True if p or q else False
 
-  still green. I remove the second `return statement`_
+  green again. I remove the second `return statement`_
 
   .. code-block:: python
 
@@ -676,7 +673,7 @@ review
 I ran tests for
 
 * ``logical conjunction`` which is and_
-* ``logical_disjunction``` which is or_
+* ``logical_disjunction`` which is or_
 * ``logical negation`` which is not_
 
 :ref:`Logical Implication and Logical Equality<truth table: Logical Implication and Logical Equality>` are next
