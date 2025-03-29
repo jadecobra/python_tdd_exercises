@@ -388,7 +388,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-I ran tests for :ref:`Nullary<Nullary Operations>` and :ref:`Unary operations<Unary Operations>`. Would you like to :ref:`test binary operations?<truth table: Logical Conjunction and Logical Disjunction>`
+I ran tests for :ref:`Nullary<Nullary Operations>` and :ref:`Unary operations<Unary Operations>`. Would you like to :ref:`test binary operations?<truth table: Binary Operations I>`
 
 ----
 

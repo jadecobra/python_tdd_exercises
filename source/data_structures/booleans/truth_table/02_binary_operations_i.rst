@@ -1,7 +1,7 @@
 .. include:: ../../../links.rst
 
 #################################################################################
-truth table: Logical Conjunction and Logical Disjunction
+truth table: Binary Operations I
 #################################################################################
 
 .. contents:: table of contents

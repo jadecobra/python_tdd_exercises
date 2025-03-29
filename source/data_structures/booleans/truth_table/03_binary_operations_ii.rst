@@ -1,7 +1,7 @@
 .. include:: ../../../links.rst
 
 #################################################################################
-truth table: Exclusive Disjunction and Logical NAND
+truth table: Binary Operations II
 #################################################################################
 
 .. contents:: table of contents
@@ -348,7 +348,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    
+
 
 * I add a condition to resolve it
 
@@ -455,19 +455,291 @@ refactor: make it better
     def exclusive_disjunction(p, q):
         return p != q
 
-From the tests I see that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
+----
 
-* ``exclusive disjunction`` is ``!=`` or the opposite of ``logical_equality``
-* ``logical equality`` is ``==``
-* ``logical implication`` is ``not p or q``
-* ``logical disjunction`` is or_
-* ``logical conjunction`` is and_
-* and_ is "not or_"
-* or_ is "not and_"
-* :ref:`False<test_what_is_false>` is not_ :ref:`True<test_what_is_true>`
-* :ref:`True<test_what_is_true>` is not_ :ref:`False<test_what_is_false>`
-* :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`
-* :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
+*********************************************************************************
+test_logical_nand
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+I add a test for Logical NAND to ``TestBinaryOperations`` in ``test_truth_table.py``
+
+.. code-block:: python
+
+    def test_logical_nand(self):
+        self.assertFalse(src.truth_table.logical_nand(True, True))
+        self.assertTrue(src.truth_table.logical_nand(True, False))
+        self.assertTrue(src.truth_table.logical_nand(False, True))
+        self.assertTrue(src.truth_table.logical_nand(False, False))
+
+the terminal shows :ref:`AttributeError`
+
+green: make it pass
+#################################################################################
+
+
+* I add a definition for the:ref:`function<functions>`to ``truth_table.py`` returning :ref:`True<test_what_is_true>` since 3 out of the 4 cases return it
+
+  .. code-block:: python
+
+    def logical_nand(p, q):
+      return True
+
+  the terminal shows :ref:`AssertionError` for the first case
+* and I add a condition for the one case that returns :ref:`False<test_what_is_false>`
+
+  .. code-block:: python
+
+    def logical_nand(p, q):
+        if p == True and q == True:
+            return False
+        return True
+
+  Green! All tests pass
+
+refactor: make it better
+#################################################################################
+
+* I add an else_ clause to be explicit
+
+  .. code-block:: python
+
+    def logical_nand(p, q):
+        if p == True and q == True:
+            return False
+        else:
+            return True
+
+* then change the first condition to an implied conditional test
+
+  .. code-block:: python
+
+    def logical_nand(p, q):
+        if p and q:
+            return False
+        else:
+            return True
+
+* I make the else_ clause to the opposite of the `if statement`_
+
+  .. code-block:: python
+
+    def logical_nand(p, q):
+        if p and q:
+            return False
+        if not (p and q):
+            return True
+
+* then reorder the statements
+
+  .. code-block:: python
+
+    def logical_nand(p, q):
+        if not(p and q):
+            return True
+        if p and q:
+            return False
+
+* I change the second statement with ``else`` to simplify
+
+  .. code-block:: python
+
+    def logical_nand(p, q):
+        if not(p and q):
+            return True
+        else:
+            return False
+
+* then change it to a one line `return statement`_
+
+  .. code-block:: python
+
+    def logical_nand(p, q):
+        return True if not(p and q) else False
+
+* which I simplify to
+
+  .. code-block:: python
+
+    def logical_nand(p, q):
+        return not(p and q)
+
+----
+
+*********************************************************************************
+test_logical_nor
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+I add a test for exclusive disjunction to ``TestBinaryOperations`` in ``test_truth_table.py``
+
+.. code-block:: python
+
+    def test_logical_nor(self):
+        self.assertFalse(src.truth_table.logical_nor(True, True))
+        self.assertFalse(src.truth_table.logical_nor(True, False))
+        self.assertFalse(src.truth_table.logical_nor(False, True))
+        self.assertTrue(src.truth_table.logical_nor(False, False))
+
+and the terminal shows :ref:`AttributeError`
+
+green: make it pass
+#################################################################################
+
+* I add a:ref:`function<functions>`definition to ``truth_table.py``
+
+  .. code-block:: python
+
+    def logical_nor(p, q):
+        return False
+
+* and the first 3 pass, there is a failure for the 4th case, so I add a condition for it
+
+  .. code-block:: python
+
+    def logical_nor(p, q):
+        if p == False and q == False:
+            return True
+        return False
+
+refactor: make it better
+#################################################################################
+
+* I restate the ``if`` condition using hidden conditional testing
+
+  .. code-block:: python
+
+    def logical_nor(p, q):
+        if not p and not q:
+            return True
+        return False
+
+* I abstract the repetition of not_ by rewriting the entire statement in terms of not_
+
+  .. code-block:: python
+
+    def logical_nor(p, q):
+        if (not p) (not or) (not q):
+            return True
+        return False
+
+  the terminal shows a SyntaxError_ and I rewrite the statement with proper syntax, "factoring" out the not_
+
+  .. code-block:: python
+
+    def logical_nor(p, q):
+        if not(p or q):
+            return True
+        return False
+
+* then rewrite the entire thing on one line
+
+  .. code-block:: python
+
+    def logical_nor(p, q):
+      return True if not(p or q) else False
+
+* I simplify using implied conditional testing
+
+  .. code-block:: python
+
+    def logical_nor(p, q):
+        return not(p or q)
+
+----
+
+*********************************************************************************
+test_converse_non_implication
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+I add a test for converse nonimplication to ``TestBinaryOperations`` in ``test_truth_table.py``
+
+.. code-block:: python
+
+    def test_converse_non_implication(self):
+        self.assertFalse(src.truth_table.converse_non_implication(True, True))
+        self.assertFalse(src.truth_table.converse_non_implication(True, False))
+        self.assertTrue(src.truth_table.converse_non_implication(False, True))
+        self.assertFalse(src.truth_table.converse_non_implication(False, False))
+
+the terminal shows :ref:`AttributeError`
+
+green: make it pass
+#################################################################################
+
+* I add a:ref:`function<functions>`definition to ``truth_table.py``
+
+  .. code-block:: python
+
+    def converse_non_implication(p, q):
+        return False
+
+  since the first two cases pass, the terminal shows :ref:`AssertionError` for the third case
+* I add a condition for it
+
+  .. code-block:: python
+
+    def converse_non_implication(p, q):
+        if p == False and q == True:
+            return True
+        return False
+
+  all the tests pass
+
+refactor: make it better
+#################################################################################
+
+* I use implied conditional testing with not_ for the first part of the if statement
+
+  .. code-block:: python
+
+    def converse_non_implication(p, q):
+        if not p and q  == True:
+            return True
+        return False
+
+  and the test passes
+
+* I do the same for the second part of the statement
+
+  .. code-block:: python
+
+    def converse_non_implication(p, q):
+        if not p and q:
+            return True
+        return False
+
+* I add an else clause
+
+  .. code-block:: python
+
+    def converse_non_implication(p, q):
+        if not p and q:
+            return True
+        else:
+          return False
+
+* then I rewrite as a ``return`` statement
+
+  .. code-block:: python
+
+    def converse_non_implication(p, q):
+        return not p and q
+
+  Another success! All tests pass
+
+----
+
+*********************************************************************************
+review
+*********************************************************************************
 
 
 ----
