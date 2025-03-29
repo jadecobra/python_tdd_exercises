@@ -16,6 +16,8 @@ requirements
 
 :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` with ``truth_table`` as the name of the project
 
+----
+
 *********************************************************************************
 test_exclusive_disjunction
 *********************************************************************************
