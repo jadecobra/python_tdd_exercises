@@ -37,7 +37,7 @@ who is this for?
 how can I use this?
 *********************************************************************************
 
-Start with :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` because it is needed by the other chapters,  then choose how you go through the chapters based on what you like, or you could go through the :ref:`how-tos` section step by step, the other chapters cover :ref:`errors`, :doc:`data_structures/data_structures`, :ref:`functions`, and :ref:`classes`
+Start with :ref:`how to make a python test driven development environment <how to make a python test driven development environment>` because it is needed by the other chapters,  then choose how you go through the chapters based on what you like, or you could go through the :ref:`how-tos` section step by step, the other chapters cover :ref:`errors`, :ref:`data structures`, :ref:`functions`, and :ref:`classes`
 
 Here are a few things I would do if I were in your shoes to make the process more fun
 
@@ -77,6 +77,7 @@ howtos
 table of contents
 *********************************************************************************
 
+
 .. toctree::
   :maxdepth: 2
   :titlesonly:
@@ -86,7 +87,7 @@ table of contents
   data_structures/data_structures
   functions/functions
   classes/classes
-  tests<catalog_of_tests>
+  catalog of tests<catalog_of_tests>
   tests and solutions<catalog_of_code>
   learning_models
   dot_notation
@@ -117,4 +118,4 @@ Here is a playlist I like to listen to when programming
 
 ----
 
-:ref:`search`
+:ref:`search <search>`
