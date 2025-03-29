@@ -56,12 +56,8 @@ Operations
   :titlesonly:
 
   truth_table/01_nullary_unary_operations
-  truth_table/02_logical_conjunction_disjunction
-  truth_table/03_logical_implication_equality
-  truth_table/04_exclusive_disjunction_logical_nand
-  truth_table/06_logical_nand
-  truth_table/07_logical_nor
-  truth_table/08_converse_non_implication
+  truth_table/02_binary_operations_i
+  truth_table/03_binary_operations_ii
   truth_table/09_material_non_implication
   truth_table/10_negate
   truth_table/11_project
