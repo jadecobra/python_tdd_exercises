@@ -84,6 +84,7 @@ table of contents
   conventions
   exceptions/exceptions
   data_structures/data_structures
+  data_structures/booleans/truth_table
   functions/functions
   classes/classes
   tests<catalog_of_tests>

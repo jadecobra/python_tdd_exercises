@@ -59,7 +59,7 @@ Operations
   truth_table/02_binary_operations_i
   truth_table/03_binary_operations_ii
   truth_table/04_binary_operations_iii
-  truth_table/03_binary_operations_iv
+  truth_table/05_binary_operations_iv
 
 ----
 
