@@ -58,11 +58,8 @@ Operations
   truth_table/01_nullary_unary_operations
   truth_table/02_binary_operations_i
   truth_table/03_binary_operations_ii
-  truth_table/09_material_non_implication
-  truth_table/10_negate
-  truth_table/11_project
-  truth_table/12_converse_implication
-  truth_table/13_true_lies
+  truth_table/04_binary_operations_iii
+  truth_table/03_binary_operations_iv
 
 ----
 
