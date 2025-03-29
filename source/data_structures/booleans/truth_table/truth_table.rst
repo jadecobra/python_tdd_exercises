@@ -1,4 +1,4 @@
-.. include:: ../../links.rst
+.. include:: ../../../links.rst
 
 #################################################################################
 booleans: truth table
@@ -55,11 +55,11 @@ Operations
   :maxdepth: 2
   :titlesonly:
 
-  truth_table/01_nullary_unary_operations
-  truth_table/02_binary_operations_i
-  truth_table/03_binary_operations_ii
-  truth_table/04_binary_operations_iii
-  truth_table/05_binary_operations_iv
+  01_nullary_unary_operations
+  02_binary_operations_i
+  03_binary_operations_ii
+  04_binary_operations_iii
+  05_binary_operations_iv
 
 ----
 

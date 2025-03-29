@@ -12,7 +12,7 @@ The following tests cover a few data structures in python
 
   none
   booleans/booleans
-  booleans/truth_table
+  booleans/truth_table/truth_table
   lists/lists
   lists/list_comprehensions
   dictionaries
