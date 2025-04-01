@@ -422,7 +422,7 @@ refactor: make it better
         self.assertTrue(src.truth_table.logical_disjunction(False, True))
         self.assertFalse(src.truth_table.logical_disjunction(False, False))
 
-  the terminal shows green, so I add an `if statement`_ to make sure it is right
+  the terminal shows green. I add an `if statement`_ to make sure
 
   .. code-block:: python
 
@@ -458,7 +458,7 @@ refactor: make it better
                 return True
         return p and q
 
-  the test passes, and I add an `if statement`_ for the first case
+  the test passes, I also add an `if statement`_ for the first case
 
   .. code-block:: python
 
