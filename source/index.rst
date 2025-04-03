@@ -77,7 +77,6 @@ howtos
 table of contents
 *********************************************************************************
 
-
 .. toctree::
   :maxdepth: 2
   :titlesonly:
@@ -85,6 +84,7 @@ table of contents
   conventions
   exceptions/exceptions
   data_structures/data_structures
+  data_structures/booleans/truth_table/truth_table
   functions/functions
   classes/classes
   catalog of tests<catalog_of_tests>

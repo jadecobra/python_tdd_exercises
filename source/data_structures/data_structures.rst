@@ -8,7 +8,7 @@ The following tests cover a few data structures in python
 
 .. toctree::
   :titlesonly:
-  :maxdepth: 1
+  :maxdepth: 3
 
   none
   booleans/booleans

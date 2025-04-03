@@ -17,7 +17,7 @@ The tests in this chapter cover the following Exceptions_
   AttributeError
   TypeError
 
-there is also a how to on handling Exceptions_ in tests and programs
+the chapters below cover handling Exceptions_ in tests and programs
 
 .. toctree::
   :maxdepth: 1
