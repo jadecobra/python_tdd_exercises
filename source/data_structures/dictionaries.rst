@@ -11,7 +11,7 @@ dictionaries
 
 This chapter goes over `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ in Python. Dictionaries, also called Mappings, are key-value pairs that represent data, values can be any Python object_.
 
-I think this is the most important data structure to know as it can hold all the other data structures and in your programming journey you will come across `JSON <https://en.wikipedia.org/wiki/JSON>`_ which you can read and write as `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+I think this is the most important data structure to know as it can hold all the other data structures and in your programming journey you will come across JSON_ which you can read and write as `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
 ----
 
@@ -203,12 +203,12 @@ I make the values in the test to make it pass
           {1: 'boom'}
       )
 
-the terminal shows passing tests confirming that `integers <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ can be used as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
+the terminal shows passing tests confirming that integers_ can be used as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
 
 refactor: make it better
 #################################################################################
 
-* I know I can use `integers <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ and `strings <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys. I want to add a test to see if I can use `floats <https://docs.python.org/3/library/functions.html?highlight=float#float>`_
+* I know I can use integers_ and strings_ as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys. I want to add a test to see if I can use floats_
 
   .. code-block:: python
 
@@ -244,7 +244,7 @@ refactor: make it better
           {2.5: 'works'}
       )
 
-  the terminal shows passing tests confirming that I can use `integers <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ and `floats <https://docs.python.org/3/library/functions.html?highlight=float#float>`_ as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
+  the terminal shows passing tests confirming that I can use integers_ and floats_ as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
 
 ----
 
@@ -269,6 +269,7 @@ I add a test to find out if it is possible to use :ref:`False<test_what_is_false
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
+  :force:
 
   AssertionError: {False: 'boom'} != {False: 'bap'}
   - {False: 'boom'}
@@ -312,6 +313,7 @@ refactor: make it better
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
+    :force:
 
     AssertionError: {True: 'bap'} != {True: 'boom'}
     - {True: 'bap'}
@@ -334,7 +336,7 @@ refactor: make it better
             {True: 'bap'}
         )
 
-So far from the tests, I see that I can use `booleans <https://docs.python.org/3/library/stdtypes.html#boolean-type-bool>`_, `floats <https://docs.python.org/3/library/functions.html?highlight=float#float>`_, `integers <https://docs.python.org/3/library/functions.html?highlight=int#int>`_ and `strings <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
+So far from the tests, I see that I can use :ref:`booleans`, floats_, integers_ and strings_ as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
 
 ----
 
@@ -357,6 +359,7 @@ I add a test to ``TestDictionaries`` to see if I can use tuples as `dictionary <
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
+  :force:
 
   AssertionError: {(1, 2): 'value'} != {(1, 2): 'key'}
   - {(1, 2): 'value'}
@@ -377,7 +380,7 @@ I make the values to make the test pass
       {(1, 2): "value"}
   )
 
-the tests so far show that I can use tuples_, `booleans <https://docs.python.org/3/library/stdtypes.html#boolean-type-bool>`_, `floats <https://docs.python.org/3/library/functions.html?highlight=float#float>`_, `integers <https://docs.python.org/3/library/functions.html?highlight=int#int>`_, and `strings <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_ as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
+the tests so far show that I can use tuples_, :ref:`booleans`, floats_, integers_, and strings_ as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
 
 ----
 
@@ -499,16 +502,16 @@ and the terminal shows passing tests. I cannot use a `dictionary <https://docs.p
 
 from these tests I know that I can make `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with the following data structures as keys
 
-* `strings <https://docs.python.org/3/library/string.html?highlight=string#module-string>`_
-* `booleans <https://docs.python.org/3/library/stdtypes.html#boolean-type-bool>`_
-* `integers <https://docs.python.org/3/library/functions.html?highlight=int#int>`_
-* `floats <https://docs.python.org/3/library/functions.html?highlight=float#float>`_
+* strings_
+* :ref:`booleans`
+* integers_
+* floats_
 * tuples_
 
 and I cannot make `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with the following data structures as keys
 
 * :ref:`lists`
-* `sets <https://docs.python.org/3/tutorial/datastructures.html#sets>`_
+* sets_
 * `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
 ----
@@ -658,7 +661,7 @@ I add a test for both cases
       a_dictionary['non_existent_key']
       a_dictionary['ky1']
 
-and the terminal shows a `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=keyerror#KeyError>`_
+and the terminal shows a KeyError_
 
 .. code-block:: python
 
@@ -1217,6 +1220,7 @@ green: make it pass
   the terminal shows :ref:`AssertionError` confirming that ``a_dictionary`` is different
 
   .. code-block:: python
+    :force:
 
     AssertionError: {'whitening': 'peroxide', 'traditional': 'c[53 chars]gar'} != {'basic': 'toothpaste', 'whitening': 'perox[76 chars]gar'}
     + {'basic': 'toothpaste',
