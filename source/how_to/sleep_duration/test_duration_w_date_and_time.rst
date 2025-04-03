@@ -884,7 +884,7 @@ I also ran into the following Exceptions_
 * :ref:`AttributeError`
 * ValueError_
 
-Would you like to :ref:`write the solution without looking at test_sleep_duration.py?<test_duration_tests>`
+Would you like to :ref:`write the solution without looking at test_sleep_duration.py? <how to measure sleep duration: test_duration_tests>`
 
 ----
 

@@ -841,7 +841,7 @@ I also ran into the following Exceptions_
 * NameError_
 * :ref:`AttributeError`
 
-Would you like to :ref:`test duration with hours and minutes<test_duration_w_hours_and_minutes>`?
+Would you like to :ref:`test duration with hours and minutes? <how to measure sleep duration: test_duration_w_hours_and_minutes>`
 
 ----
 
