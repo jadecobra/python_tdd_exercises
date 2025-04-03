@@ -41,6 +41,7 @@ I add a new TestCase_ to ``test_truth_table.py``
 the terminal shows :ref:`AttributeError`
 
 .. code-block:: python
+  :force:
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_conjunction'. Did you mean: 'logical_negation'?
 
@@ -337,6 +338,7 @@ I add another test to the ``TestBinaryOperations`` TestCase_
 and the terminal shows :ref:`AttributeError`
 
 .. code-block:: python
+  :force:
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_disjunction'. Did you mean: 'logical_conjunction'?
 
@@ -682,6 +684,7 @@ I add a test
 the terminal shows :ref:`AttributeError`
 
 .. code-block:: python
+  :force:
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_implication'. Did you mean: 'logical_disjunction'?
 
@@ -1039,6 +1042,7 @@ I add a new test
 the terminal shows :ref:`AttributeError`
 
 .. code-block:: python
+  :force:
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_equality'. Did you mean: 'logical_identity'?
 
@@ -1466,7 +1470,7 @@ refactor: make it better
     def logical_equality(p, q):
         return p == q
 
----
+----
 
 *********************************************************************************
 review
@@ -1474,11 +1478,13 @@ review
 
 I ran tests for
 
-* ``logical conjunction`` which is and_
-* ``logical_disjunction`` which is or_
-* ``logical negation`` which is not_
+* :ref:`logical negation<test_logical_negation>` which is not_
+* :ref:`logical conjunction <test_logical_conjunction>` which is and_
+* :ref:`logical disjunction <test_logical_disjunction>` which is or_
+* :ref:`logical implication <test_logical_implication>`
+* :ref:`logical equality <test_logical_equality>`
 
-:ref:`Logical Implication and Logical Equality<truth table: Logical Implication and Logical Equality>` are next
+do you want more :ref:`more binary operations? <truth table: Binary Operations II>`
 
 ----
 

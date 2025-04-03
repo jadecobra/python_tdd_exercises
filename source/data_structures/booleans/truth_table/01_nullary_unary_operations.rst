@@ -109,6 +109,7 @@ I add another test
 the terminal shows :ref:`AttributeError`
 
 .. code-block:: python
+  :force:
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_false'. Did you mean: 'logical_true'?
 

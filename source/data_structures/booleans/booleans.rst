@@ -1171,7 +1171,7 @@ From the tests I can see that
 * True_ is not False_
 * True_ and False_ are booleans_
 
-Would you like to :doc:`test the truth table<truth_table>`?
+Would you like to :doc:`test the truth table? <booleans: truth table>`
 
 ----
 
