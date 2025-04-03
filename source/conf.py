@@ -28,14 +28,16 @@ html_theme_options = {
 
 extensions = ['sphinx.ext.autosectionlabel']
 
+# -- Options for ePub output -------------------------------------------------
 epub_theme = 'epub'
 epub_description = 'pumping python: how I solve problems with Test Driven Development'
 epub_cover = ('_static/DRY.png', '')
 
+# -- Options for LaTeX output -------------------------------------------------
 latex_logo = '_static/DRY.png'
 latex_show_pagerefs = True
 latex_show_urls = 'inline'
-latex_them = 'howto' # 'manual'
+latex_theme = 'howto' # 'manual'
 
 text_sectionchars = '#*=-~"+`'
 

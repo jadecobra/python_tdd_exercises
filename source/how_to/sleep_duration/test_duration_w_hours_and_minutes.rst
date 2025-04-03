@@ -511,8 +511,8 @@ The challenge is to write a program that calculates the difference between a giv
 * :ref:`test_converting_strings_to_numbers`
 * `test_floor_aka_integer_division`_
 * `test_the_modulo_operation`_
-* :ref:`test_duration_w_hours<test_duration_w_hours>`
-* `test_duration_w_hours_and_minutes`_ where I
+* :ref:`test_duration_w_hours<how to measure sleep duration: test_duration_w_hours>`
+* :ref:`test_duration_w_hours_and_minutes<how to measure sleep duration: test_duration_w_hours_and_minutes>` where I
 
   - used `random.randint`_ to generate random numbers
 
@@ -526,7 +526,7 @@ The challenge is to write a program that calculates the difference between a giv
     * by using `floor (integer) division`_ to get the hours
     * and the modulo_ operation to get the minutes
 
-Would you like to :ref:`test duration with an earlier wake than sleep time<test_duration_w_an_earlier_wake_than_sleep_time>`?
+Would you like to :ref:`test duration with an earlier wake than sleep time<how to measure sleep duration: test_duration_w_an_earlier_wake_than_sleep_time>`?
 
 ----
 
