@@ -44,7 +44,6 @@ the terminal shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_conjunction'. Did you mean: 'logical_negation'?
 
-
 green: make it pass
 #################################################################################
 
