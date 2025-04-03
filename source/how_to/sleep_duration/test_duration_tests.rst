@@ -301,6 +301,7 @@ green: make it pass
   and get a SyntaxError_ with this message
 
   .. code-block:: python
+    :force:
 
     SyntaxError: invalid syntax. Perhaps you forgot a comma?
 

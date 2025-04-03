@@ -482,7 +482,7 @@ green: make it pass
 #################################################################################
 
 
-* I add a definition for the:ref:`function<functions>`to ``truth_table.py`` returning :ref:`True<test_what_is_true>` since 3 out of the 4 cases return it
+* I add a definition for the :ref:`function<functions>` to ``truth_table.py`` returning :ref:`True<test_what_is_true>` since 3 out of the 4 cases return it
 
   .. code-block:: python
 
@@ -592,7 +592,7 @@ and the terminal shows :ref:`AttributeError`
 green: make it pass
 #################################################################################
 
-* I add a:ref:`function<functions>`definition to ``truth_table.py``
+* I add a :ref:`function<functions>` definition to ``truth_table.py``
 
   .. code-block:: python
 
@@ -676,7 +676,7 @@ the terminal shows :ref:`AttributeError`
 green: make it pass
 #################################################################################
 
-* I add a:ref:`function<functions>`definition to ``truth_table.py``
+* I add a :ref:`function<functions>` definition to ``truth_table.py``
 
   .. code-block:: python
 

@@ -20,7 +20,6 @@ how to make a class in Python
 * use a name that tells what the collection of :ref:`attributes<AttributeError>` and :ref:`methods (functions) <functions>` does - this is hard to do and is something I am still learning
 
 ----
-.. _test_defining_classes_w_pass
 
 *********************************************************************************
 test_defining_classes_w_pass
@@ -106,7 +105,7 @@ green: make it pass
     # NameError
     # IndentationError
 
-*Python has the `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword to use as a placeholder for moments like this cue `Kelly Clarkson <https://youtu.be/S7b8ADhadJU?si=TxScdecOYlsxB5uW>`_
+* Python has the `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword to use as a placeholder for moments like this cue `Kelly Clarkson <https://youtu.be/S7b8ADhadJU?si=TxScdecOYlsxB5uW>`_
 
   .. code-block:: python
 

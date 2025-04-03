@@ -5,8 +5,6 @@
 functions: test_singleton_functions
 #################################################################################
 
-----
-
 .. contents:: table of contents
   :local:
   :depth: 1
@@ -77,7 +75,7 @@ the terminal shows :ref:`AttributeError`
 green: make it pass
 ---------------------------------------------------------------------------------
 
-and I add a:ref:`function<functions>`for ``singleton_w_inputs`` to ``functions.py``
+and I add a :ref:`function <functions>` for ``singleton_w_inputs`` to ``functions.py``
 
 .. code-block:: python
 

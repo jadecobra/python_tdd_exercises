@@ -39,7 +39,7 @@ green: make it pass
 #################################################################################
 
 
-* I add a:ref:`function<functions>`definition to ``truth_table.py``
+* I add a :ref:`function<functions>` definition to ``truth_table.py``
 
   .. code-block:: python
 
@@ -120,7 +120,7 @@ and the terminal shows :ref:`AttributeError`
 green: make it pass
 #################################################################################
 
-* then I add a:ref:`function<functions>`definition to ``truth_table.py``
+* then I add a :ref:`function<functions>` definition to ``truth_table.py``
 
   .. code-block:: python
 
@@ -200,7 +200,7 @@ green: make it pass
 #################################################################################
 
 
-* I add a:ref:`function<functions>`definition to ``truth_table.py``
+* I add a :ref:`function<functions>` definition to ``truth_table.py``
 
   .. code-block:: python
 
@@ -258,7 +258,7 @@ green: make it pass
 #################################################################################
 
 
-* then I add a:ref:`function<functions>`definition to ``truth_table.py``
+* then I add a :ref:`function<functions>` definition to ``truth_table.py``
 
   .. code-block:: python
 
@@ -342,7 +342,7 @@ green: make it pass
 #################################################################################
 
 
-* When I add a:ref:`function<functions>`definition to ``truth_table.py``
+* When I add a :ref:`function<functions>` definition to ``truth_table.py``
 
   .. code-block:: python
 

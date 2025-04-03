@@ -694,6 +694,7 @@ green: make it pass
   the test summary info shows that every test has :ref:`AssertionError`
 
   .. code-block:: python
+    :force:
 
     AssertionError: True != 'I received: True'
     AssertionError: <class 'object'> != "I received: <class 'object'>"

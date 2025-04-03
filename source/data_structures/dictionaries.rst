@@ -63,14 +63,14 @@ refactor: make it better
     # ModuleNotFoundError
     # AttributeError
 
-* I add a:ref:`function<functions>`definition to ``dictionaries.py``
+* I add a :ref:`function<functions>` definition to ``dictionaries.py``
 
   .. code-block:: python
 
     def a_dict():
         return None
 
-  and the terminal shows :ref:`AssertionError` since the:ref:`function<functions>`I defined returns :ref:`None` instead of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+  and the terminal shows :ref:`AssertionError` since the :ref:`function<functions>` I defined returns :ref:`None` instead of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
   .. code-block:: python
 
@@ -90,7 +90,7 @@ refactor: make it better
       E    AssertionError: {} != {'key': 'value'}
 
   - ``AssertionError: {} != {'key': 'value'}`` shows that two values are not equal
-  - the value on the left ``{}`` is what the:ref:`function<functions>`returns, in other words the result of calling ``dictionaries.a_dict()`` from the test
+  - the value on the left ``{}`` is what the :ref:`function<functions>` returns, in other words the result of calling ``dictionaries.a_dict()`` from the test
   - the value on the right ``{'key': 'value'}`` is what is expected
   - ``!=`` means ``not equal to``
 
@@ -484,7 +484,7 @@ and the terminal shows :ref:`TypeError`
 green: make it pass
 #################################################################################
 
-I add an :doc:`exception handler</how_to/exception_handling_tests>` to the test to confirm the findings
+I add an :ref:`how to test that an Exception is raised` to the test to confirm the findings
 
 .. code-block:: python
 
@@ -680,7 +680,7 @@ green: make it pass
     # TypeError
     # KeyError
 
-* then add an :doc:`exception handler</how_to/exception_handling_tests>` to confirm that the error is raised
+* then add an :ref:`how to test that an Exception is raised` to confirm that the error is raised
 
   .. code-block:: python
 
@@ -702,7 +702,7 @@ green: make it pass
     >       a_dictionary['ky1']
     E       KeyError: 'ky1'
 
-  and I add it to the :doc:`exception handler</how_to/exception_handling_tests>` to make the test pass
+  and I add it to the :ref:`how to test that an Exception is raised` to make the test pass
 
   .. code-block:: python
 
@@ -1037,7 +1037,7 @@ refactor: make it better
         )
         self.assertIsNone(a_dictionary['another_key'])
 
-* I now add a test for setting the default value to something other th:ref:`None`
+* I now add a test for setting the default value to something other th :ref:`None`
 
   .. code-block:: python
 

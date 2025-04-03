@@ -865,15 +865,15 @@ The challenge was to write a program that calculates the difference between a gi
 * :ref:`test_converting_strings_to_numbers`
 * :ref:`test_floor_aka_integer_division`
 * :ref:`test_the_modulo_operation`
-* :ref:`test_duration_w_hours<test_duration_w_hours>`
+* :ref:`test_duration_w_hours <how to measure sleep duration: test_duration_w_hours>`
 * :ref:`test_duration_calculation`
-* :ref:`test_duration_w_an_earlier_wake_than_sleep_time<test_duration_w_an_earlier_wake_than_sleep_time>`
-* :ref:`test_duration_w_hours_and_minutes<test_duration_w_hours_and_minutes>`
+* :ref:`test_duration_w_an_earlier_wake_than_sleep_time <how to measure sleep duration: test_duration_w_an_earlier_wake_than_sleep_time>`
+* :ref:`test_duration_w_hours_and_minutes<how to measure sleep duration: test_duration_w_hours_and_minutes>`
 * `test_datetime_objects`_ where I used `python's online documentation`_ to read about the `datetime.datetime.strptime`_ :ref:`method<functions>` which I used to change a string_ to a `datetime.datetime`_ object
 * `test_get_datetime`_
-* `test_duration_w_date_and_time`_ where I used
+* :ref:`test_duration_w_date_and_time <how to measure sleep duration: test_duration_w_date_and_time>` where I used
 
-  - `random.randint`_ and an :doc:`exception handler</how_to/exception_handling_tests>` to generate timestamps with random dates and times that are :doc:`interpolated </how_to/pass_values>` in strings for ``wake_time`` and ``sleep_time``
+  - `random.randint`_ and an :ref:`how to test that an Exception is raised` to generate timestamps with random dates and times that are :ref:`how to pass values` in strings for ``wake_time`` and ``sleep_time``
   - a `while statement`_ to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<functions>` raises ValueError_ with a message and returns the right difference between the two when ``wake_time`` is later than or the same as ``sleep_time``
 
 I also ran into the following Exceptions_

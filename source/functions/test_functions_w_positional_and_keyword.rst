@@ -60,7 +60,7 @@ green: make it pass
         )
 
   the terminal shows :ref:`AttributeError`
-* I add a definition for the:ref:`function<functions>`to ``functions.py``
+* I add a definition for the :ref:`function<functions>` to ``functions.py``
 
   .. code-block:: python
 
@@ -128,7 +128,7 @@ green: make it pass
 refactor: make it better
 ---------------------------------------------------------------------------------
 
-Hold on a second. This looks exactly like what I did in ``test_functions_w_positional_arguments``. I cannot tell from the :ref:`function<functions>` signature which argument is positional and which is a keyword argument and do not want to wait for the:ref:`function<functions>`to fail when I send in values to find out
+Hold on a second. This looks exactly like what I did in ``test_functions_w_positional_arguments``. I cannot tell from the :ref:`function<functions>` signature which argument is positional and which is a keyword argument and do not want to wait for the :ref:`function<functions>` to fail when I send in values to find out
 
 * I make the signature of ``takes_positional_and_keyword_arguments`` to have a default value for the keyword argument
 
@@ -198,9 +198,9 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
             ()
         )
 
-  the terminal shows :ref:`TypeError` because the:ref:`function<functions>`signature only has two keyword arguments which are not provided in the call
+  the terminal shows :ref:`TypeError` because the :ref:`function<functions>` signature only has two keyword arguments which are not provided in the call
 
-* using what I know from previous tests I can alter the:ref:`function<functions>`to use starred expressions
+* using what I know from previous tests I can alter the :ref:`function<functions>` to use starred expressions
 
   .. code-block:: python
 
@@ -356,7 +356,7 @@ From the tests I know that
 * I can use ``**name`` to represent any number of keyword arguments
 * that keyword arguments are represented as :ref:`dictionaries`  with curly braces - ``{}``
 * I can use ``*name`` to represent any number of positional arguments
-* that positional arguments are represented as `tuples <https://docs.python.org/3/library/stdtypes.html#tuple>`_ with parentheses - ``()``
+* that positional arguments are represented as tuples_ with parentheses - ``()``
 * that passthrough :ref:`functions` return what they receive as input
 * that singleton :ref:`functions` return the same thing every time they are called
 * :ref:`functions` are defined using the def_ keyword

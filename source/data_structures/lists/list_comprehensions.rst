@@ -186,7 +186,7 @@ refactor: make it better
     # AttributeError
     # TypeError
 
-  then change the signature of the:ref:`function<functions>`to take in an argument
+  then change the signature of the :ref:`function<functions>` to take in an argument
 
   .. code-block:: python
 
@@ -199,7 +199,7 @@ refactor: make it better
 
     AssertionError: None != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-* When I make the:ref:`function<functions>`return the result of calling the :ref:`list <lists>` constructor_ with ``argument`` as input
+* When I make the :ref:`function<functions>` return the result of calling the :ref:`list <lists>` constructor_ with ``argument`` as input
 
   .. code-block:: python
 
@@ -279,7 +279,7 @@ green: make it pass
 
     AttributeError: module 'list_comprehensions' has no attribute 'for_loop'
 
-* I add a:ref:`function<functions>`definition called ``for_loop`` to ``list_comprehensions.py``
+* I add a :ref:`function<functions>` definition called ``for_loop`` to ``list_comprehensions.py``
 
   .. code-block:: python
 
@@ -292,7 +292,7 @@ green: make it pass
 
     TypeError: for_loop() takes 0 positional arguments but 1 was given
 
-* I make the signature of the:ref:`function<functions>`to take input
+* I make the signature of the :ref:`function<functions>` to take input
 
   .. code-block:: python
 
@@ -305,7 +305,7 @@ green: make it pass
 
     AssertionError: None != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-* I make the behavior of the:ref:`function<functions>`to use a ``for`` loop
+* I make the behavior of the :ref:`function<functions>` to use a ``for`` loop
 
   .. code-block:: python
 
@@ -434,7 +434,7 @@ green: make it pass
 
     AttributeError: module 'list_comprehensions' has no attribute 'list_comprehension'
 
-* I add a:ref:`function<functions>`that uses a list comprehension to ``list_comprehensions.py``
+* I add a :ref:`function<functions>` that uses a list comprehension to ``list_comprehensions.py``
 
   .. code-block:: python
 
@@ -583,7 +583,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
 
     AttributeError: module 'list_comprehensions' has no attribute 'get_even_numbers'
 
-* I add a:ref:`function<functions>`definition to ``list_comprehensions.py`` using the `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ I just wrote
+* I add a :ref:`function<functions>` definition to ``list_comprehensions.py`` using the `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ I just wrote
 
   .. code-block:: python
 
@@ -673,7 +673,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
 
     AttributeError: module 'list_comprehensions' has no attribute 'get_odd_numbers'
 
-* I define a:ref:`function<functions>`that returns a list comprehension in ``list_comprehensions.py``
+* I define a :ref:`function<functions>` that returns a list comprehension in ``list_comprehensions.py``
 
   .. code-block:: python
 

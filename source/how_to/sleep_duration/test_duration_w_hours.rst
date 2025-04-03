@@ -764,7 +764,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
 
   and the terminal shows passing tests! Celebration Time!!
 
-* I add a:ref:`function<functions>`to get the hours part of a given timestamp since it is the only part that changes in the solution
+* I add a :ref:`function<functions>` to get the hours part of a given timestamp since it is the only part that changes in the solution
 
   .. code-block:: python
 
@@ -831,7 +831,7 @@ The challenge is to write a program that calculates the difference between a giv
 
 * `test_duration_w_hours`_ where I
 
-  - used `random.randint`_ to generate random numbers from the 24 hours in a day and :doc:`interpolated </how_to/pass_values>` them in the timestamps
+  - used `random.randint`_ to generate random numbers from the 24 hours in a day and :ref:`how to pass values` them in the timestamps
   - then test that the ``duration`` :ref:`function<functions>` subtracts the hour for ``sleep_time`` from the hour for ``wake_time``
 
 I also ran into the following Exceptions_

@@ -1,11 +1,8 @@
 .. include:: ../links.rst
 
-
 #################################################################################
 functions: test_functions_w_keyword_arguments
 #################################################################################
-
-----
 
 .. contents:: table of contents
   :local:
@@ -15,7 +12,7 @@ functions: test_functions_w_keyword_arguments
 
 There is an inherent problem with using positional arguments in functions. It requires the inputs to always be supplied in the right order. If the program is dependent on that order, then it will behave in an unintended way when it receives input out of order.
 
-To ensure the:ref:`function<functions>`behaves right regardless of what order the user provides the input I can use Keyword Arguments
+To ensure the :ref:`function<functions>` behaves right regardless of what order the user provides the input I can use Keyword Arguments
 
 *********************************************************************************
 test_functions_w_keyword_arguments
@@ -42,7 +39,7 @@ the terminal shows :ref:`AttributeError`
 green: make it pass
 ---------------------------------------------------------------------------------
 
-* I add a:ref:`function<functions>`definition to ``functions.py``
+* I add a :ref:`function<functions>` definition to ``functions.py``
 
   .. code-block:: python
 
@@ -108,9 +105,9 @@ refactor: make it better
               ('my_first_name', 'my_last_name')
           )
 
-  the terminal shows passing tests. Unlike in ``test_functions_w_positional_arguments`` using the name when passing inputs, ensures the:ref:`function<functions>`always shows output in the right order regardless of the order in which the input data is given
+  the terminal shows passing tests. Unlike in ``test_functions_w_positional_arguments`` using the name when passing inputs, ensures the :ref:`function<functions>` always shows output in the right order regardless of the order in which the input data is given
 
-* The:ref:`function<functions>`currently only takes in 2 keyword arguments. What if I want a:ref:`function<functions>`that can take in any number of keyword arguments? There is a starred expression for keyword arguments - ``**``. I add an assertion
+* The :ref:`function<functions>` currently only takes in 2 keyword arguments. What if I want a :ref:`function<functions>` that can take in any number of keyword arguments? There is a starred expression for keyword arguments - ``**``. I add an assertion
 
   .. code-block:: python
 
@@ -312,13 +309,13 @@ From the tests I know
 * I can use ``**name`` to represent any number of keyword arguments
 * that keyword arguments are represented as :ref:`dictionaries`  with curly braces - ``{}``
 * I can use ``*name`` to represent any number of positional arguments
-* that positional arguments are represented as `tuples <https://docs.python.org/3/library/stdtypes.html#tuple>`_ with parentheses - ``()``
+* that positional arguments are represented as tuples_ with parentheses - ``()``
 * that passthrough :ref:`functions` return what they receive as input
 * that singleton :ref:`functions` return the same thing every time they are called
 * :ref:`functions` are defined using the def_ keyword
 * :ref:`functions` return :ref:`None` by default
 
-Would you like to :ref:`test functions` with positional and keyword arguments?<test_functions_w_positional_and_keyword_arguments>`
+Would you like to :ref:`test functions with positional and keyword arguments? <test_functions_w_positional_and_keyword_arguments>`
 
 ----
 

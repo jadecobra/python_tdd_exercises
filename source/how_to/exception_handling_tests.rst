@@ -666,7 +666,7 @@ refactor: make it better
 
   because it is not IndexError_
 
-* as a rule of thumb I write one line of code for one :doc:`exception handler</how_to/exception_handling_tests>` to know which line caused which error
+* as a rule of thumb I write one line of code for one :ref:`how to test that an Exception is raised` to know which line caused which error
 
   .. code-block:: python
 
