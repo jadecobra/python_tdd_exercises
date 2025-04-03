@@ -127,6 +127,7 @@ refactor: make it better
   the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
+    :force:
 
     AttributeError: module 'src.attribute_error' has no attribute 'variable_01'. Did you mean: 'variable_00'?
 
@@ -164,6 +165,7 @@ refactor: make it better
   the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
+    :force:
 
     AttributeError: module 'src.attribute_error' has no attribute 'variable_02'. Did you mean: 'variable_00'?
 
@@ -190,6 +192,7 @@ refactor: make it better
   the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
+    :force:
 
     AttributeError: module 'src.attribute_error' has no attribute 'variable_03'. Did you mean: 'variable_00'?
 
@@ -286,6 +289,7 @@ refactor: make it better
   the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
+    :force:
 
     AttributeError: module 'src.attribute_error' has no attribute 'function_01'. Did you mean: 'function_00'?
 
@@ -314,6 +318,7 @@ refactor: make it better
   the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
+    :force:
 
     AttributeError: module 'src.attribute_error' has no attribute 'function_02'. Did you mean: 'function_00'?
 
@@ -345,6 +350,7 @@ refactor: make it better
   the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
+    :force:
 
     AttributeError: module 'src.attribute_error' has no attribute 'function_03'. Did you mean: 'function_00'?
 
@@ -487,6 +493,7 @@ refactor: make it better
   and the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
+    :force:
 
     AttributeError: type object 'AClass' has no attribute 'attribute_01'. Did you mean: 'attribute_00'?
 
@@ -513,6 +520,7 @@ refactor: make it better
   the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
+    :force:
 
      AttributeError: type object 'AClass' has no attribute 'attribute_02'. Did you mean: 'attribute_00'?
 
@@ -539,6 +547,7 @@ refactor: make it better
   and the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
+    :force:
 
      AttributeError: type object 'AClass' has no attribute 'attribute_03'. Did you mean: 'attribute_00'?
 
@@ -631,6 +640,7 @@ refactor: make it better
   the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
+    :force:
 
     AttributeError: type object 'AClass' has no attribute 'method_01'. Did you mean: 'method_00'?
 
@@ -662,6 +672,7 @@ refactor: make it better
   the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
+    :force:
 
     AttributeError: type object 'AClass' has no attribute 'method_02'. Did you mean: 'method_00'?
 
@@ -697,6 +708,7 @@ refactor: make it better
   and the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
+    :force:
 
     AttributeError: type object 'AClass' has no attribute 'method_03'. Did you mean: 'method_00'?
 
