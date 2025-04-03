@@ -5,8 +5,6 @@
 classes: test_classes_w_initializers
 #################################################################################
 
-----
-
 .. contents:: table of contents
   :local:
   :depth: 1
