@@ -368,7 +368,7 @@ CONGRATULATIONS! If you made it this far and typed along with me, You know
 * how to define a class with an initializer
 * how to view the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of a class
 
-Would you like to :ref:`test_classes_w_initializers`?
+Would you like to :ref:`test_classes_w_initializers? <classes: test_classes_w_initializers>`
 
 ----
 

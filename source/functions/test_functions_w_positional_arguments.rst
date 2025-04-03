@@ -5,8 +5,6 @@
 functions: test_functions_w_positional_arguments
 #################################################################################
 
-----
-
 .. contents:: table of contents
   :local:
   :depth: 1

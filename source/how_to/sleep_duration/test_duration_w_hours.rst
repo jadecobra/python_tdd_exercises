@@ -829,7 +829,7 @@ The challenge is to write a program that calculates the difference between a giv
 
 * `test_converting_strings_to_numbers`_ with the int_ constructor_
 
-* `test_duration_w_hours`_ where I
+* :ref:`test_duration_w_hours <how to measure sleep duration: test_duration_w_hours>` where I
 
   - used `random.randint`_ to generate random numbers from the 24 hours in a day and :ref:`how to pass values` them in the timestamps
   - then test that the ``duration`` :ref:`function<functions>` subtracts the hour for ``sleep_time`` from the hour for ``wake_time``

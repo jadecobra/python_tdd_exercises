@@ -740,9 +740,230 @@ refactor: make it better
 ----
 
 *********************************************************************************
+test_material_non_implication
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+I add a test for material non-implication to ``TestBinaryOperations`` in ``test_truth_table.py``
+
+.. code-block:: python
+
+    def test_material_non_implication(self):
+        self.assertFalse(src.truth_table.material_non_implication(True, True))
+        self.assertTrue(src.truth_table.material_non_implication(True, False))
+        self.assertFalse(src.truth_table.material_non_implication(False, True))
+        self.assertFalse(src.truth_table.material_non_implication(False, False))
+
+the terminal shows :ref:`AttributeError`
+
+green: make it pass
+#################################################################################
+
+
+* I add a :ref:`function<functions>` definition to ``truth_table.py``
+
+  .. code-block:: python
+
+    def material_non_implication(p, q):
+        return False
+
+  the terminal shows :ref:`AssertionError` for the second case
+* I add a condition for it
+
+  .. code-block:: python
+
+      def material_non_implication(p, q):
+          if p == True and q == False:
+              return True
+          return False
+
+  and the tests pass
+
+refactor: make it better
+#################################################################################
+
+
+* I use implied conditional testing for the first part of the if statement
+
+  .. code-block:: python
+
+    def material_non_implication(p, q):
+        if p and q == False:
+            return True
+        else:
+            return False
+
+  all tests still pass
+
+* then change the second part to use not_
+
+  .. code-block:: python
+
+    def material_non_implication(p, q):
+        if p and not q:
+            return True
+        else:
+            return False
+
+* I rewrite with a ``return`` statement
+
+  .. code-block:: python
+
+    def material_non_implication(p, q):
+        return p and not q
+
+  and I am still green
+
+----
+
+*********************************************************************************
+test_converse_implication
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+I add a test for converse implication to ``TestBinaryOperations`` in ``test_truth_table.py``
+
+.. code-block:: python
+
+    def test_converse_implication(self):
+        self.assertTrue(src.truth_table.converse_implication(True, True))
+        self.assertTrue(src.truth_table.converse_implication(True, False))
+        self.assertFalse(src.truth_table.converse_implication(False, True))
+        self.assertTrue(src.truth_table.converse_implication(False, False))
+
+the terminal shows :ref:`AttributeError`
+
+green: make it pass
+#################################################################################
+
+* I add a :ref:`function<functions>` definition to ``truth_table.py``
+
+  .. code-block:: python
+
+    def converse_implication(p, q):
+        return False
+
+  and the terminal shows :ref:`AssertionError` for the first case
+* I make the return value
+
+  .. code-block:: python
+
+    def converse_implication(p, q):
+        return True
+
+  the terminal shows :ref:`AssertionError` for the third case
+* I add a condition for it and an explicit else_ clause
+
+  .. code-block:: python
+
+    def converse_implication(p, q):
+        if p == False and q == True:
+            return False
+        else:
+            return True
+
+  all the tests pass
+
+refactor: make it better
+#################################################################################
+
+* I change the ``if`` condition using python's implied conditional testing
+
+  .. code-block:: python
+
+    def converse_implication(p, q):
+        if not p and q:
+            return False
+        else:
+            return True
+
+  the tests are still passing
+* I make ``else`` to the opposite of the `if statement`_
+
+  .. code-block:: python
+
+    def converse_implication(p, q):
+        if not p and q:
+            return False
+        if not (not p and q):
+            return True
+
+* When I "multiply" out the values in the second condition I get
+
+  .. code-block:: python
+
+    def converse_implication(p, q):
+        if not p and q:
+            return False
+        if (not not p) (not and) (not q):
+            return True
+
+  the terminal shows a SyntaxError_
+* which I fix by canceling out ``not not`` and replacing ``not and`` with or_
+
+  .. code-block:: python
+
+    def converse_implication(p, q):
+        if not p and q:
+            return False
+        if p or not q:
+            return True
+
+* then reorder the statements
+
+  .. code-block:: python
+
+    def converse_implication(p, q):
+        if p or not q:
+            return True
+        if not p and q:
+            return False
+
+* I change the second condition with ``else``
+
+  .. code-block:: python
+
+    def converse_implication(p, q):
+        if p or not q:
+            return True
+        else:
+            return False
+
+* then simplify it to one line
+
+  .. code-block:: python
+
+    def converse_implication(p, q):
+        return p or not q
+
+  I win again! All tests pass
+
+----
+
+*********************************************************************************
 review
 *********************************************************************************
 
+
+I ran tests for
+
+* :ref:`logical negation<test_logical_negation>` which is not_
+* :ref:`logical conjunction <test_logical_conjunction>` which is and_
+* :ref:`logical NAND <test_logical_nand>`
+* :ref:`logical disjunction <test_logical_disjunction>` which is or_
+* :ref:`logical NOR <test_logical_nor>`
+* :ref:`logical implication <test_logical_implication>`
+* :ref:`converse non implication <test_converse_non_implication>`
+* :ref:`logical equality <test_logical_equality>`
+* :ref:`exclusive disjunction <test_exclusive_disjunction>`
+* :ref:`material non-implication <test_material_non_implication>`
+* :ref:`converse implication <test_converse_implication>`
+
+do you want more :ref:`more binary operations? <truth table: Binary Operations III>`
 
 ----
 
