@@ -42,7 +42,7 @@ class TestBinaryOperations(unittest.TestCase):
         self.assertTrue(src.truth_table.logical_implication(False, True))
         self.assertTrue(src.truth_table.logical_implication(False, False))
 
-    def test_logical_equality_or_biconditional(self):
+    def test_logical_equality(self):
         self.assertTrue(src.truth_table.logical_equality(True, True))
         self.assertFalse(src.truth_table.logical_equality(True, False))
         self.assertFalse(src.truth_table.logical_equality(False, True))

@@ -1018,7 +1018,10 @@ I add a new test
 
 .. code-block:: python
 
-  def test_logical_equality_or_biconditional(self):
+  def test_logical_implication(self):
+      ...
+
+  def test_logical_equality(self):
       self.assertTrue(src.truth_table.logical_equality(True, True))
 
 the terminal shows :ref:`AttributeError`
@@ -1031,9 +1034,12 @@ the terminal shows :ref:`AttributeError`
 green: make it pass
 #################################################################################
 
-* I add a definition
+* I add a :ref:`function<functions>` definition
 
   .. code-block:: python
+
+    def logical_implication(p, q):
+        return not p or q
 
     def logical_equality(p, q):
         return not p or q
@@ -1047,18 +1053,41 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_logical_equality_or_biconditional(self):
+    def test_logical_equality(self):
         self.assertTrue(src.truth_table.logical_equality(True, True))
         self.assertFalse(src.truth_table.logical_equality(True, False))
 
-  the terminal still shows green. Should I be worried?
+  the terminal still shows green. I add an `if statement`_ to be sure
 
+  .. code-block:: python
+
+    def logical_equality(p, q):
+        if p == True and q == False:
+            return True
+        return not p or q
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  I change the `return statement`_
+
+  .. code-block:: python
+
+    def logical_equality(p, q):
+        if p == True and q == False:
+            return False
+        return not p or q
+
+  the terminal shows green again
 
 * I add another case
 
   .. code-block:: python
 
-    def test_logical_equality_or_biconditional(self):
+    def test_logical_equality(self):
         self.assertTrue(src.truth_table.logical_equality(True, True))
         self.assertFalse(src.truth_table.logical_equality(True, False))
         self.assertFalse(src.truth_table.logical_equality(False, True))
@@ -1069,14 +1098,15 @@ refactor: make it better
 
     AssertionError: True is not false
 
-  Phew! The tests still work. I add an `if statement`_
+  I add another `if statement`_
 
   .. code-block:: python
 
     def logical_equality(p, q):
-        if p == False:
-            if q == True:
-                return False
+        if p == False and q == True:
+            return False
+        if p == True and q == False:
+            return False
         return not p or q
 
   the test passes
@@ -1085,24 +1115,23 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_logical_equality_or_biconditional(self):
+    def test_logical_equality(self):
         self.assertTrue(src.truth_table.logical_equality(True, True))
         self.assertFalse(src.truth_table.logical_equality(True, False))
         self.assertFalse(src.truth_table.logical_equality(False, True))
         self.assertTrue(src.truth_table.logical_equality(False, False))
 
-  and the test is still green. There are still only two results but this time :ref:`True<test_what_is_true>` happens in two of the cases and  :ref:`False<test_what_is_false>` happens in the other two.
-
-* I add an `if statement`_ for the last case
+  and the test is still green. I add an `if statement`
 
   .. code-block:: python
 
     def logical_equality(p, q):
-        if p == False:
-            if q == False:
-                return False
-            if q == True:
-                return False
+        if p == False and q == False:
+            return False
+        if p == False and q == True:
+            return False
+        if p == True and q == False:
+            return False
         return not p or q
 
   the terminal shows :ref:`AssertionError`
@@ -1111,331 +1140,211 @@ refactor: make it better
 
     AssertionError: False is not true
 
-  I fix the line to make it pass, then add a statement for the first case
+  I fix the line then add an `if statement` for the first case
 
   .. code-block:: python
 
     def logical_equality(p, q):
-        if p == True:
-            if q == True:
-                return False
-        if p == False:
-            if q == False:
-                return True
-            if q == True:
-                return False
+        if p == False and q == False:
+            return True
+        if p == False and q == True:
+            return False
+        if p == True and q == False:
+            return False
+        if p == True and q == True:
+            return False
         return not p or q
 
-  the terminal shows :ref:`AssertionError`
+  which gives me :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: False is not true
 
-  I fix the line then add an `if statement`_ for the secibd case
+  I fix the `return statement`_ and remove ``return not p or q``
 
   .. code-block:: python
 
     def logical_equality(p, q):
-        if p == True:
-            if q == False:
-                return True
-            if q == True:
-                return True
-        if p == False:
-            if q == False:
-                return True
-            if q == True:
-                return False
-        return not p or q
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: True is not false
-
-  I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the `return statement`_ and comment out ``return not p or q``
-
-  .. code-block:: python
-
-    def logical_equality(p, q):
-        if p == True:
-            if q == False:
-                return False
-            if q == True:
-                return True
-        if p == False:
-            if q == False:
-                return True
-            if q == True:
-                return False
-        # return not p or q
-
-  the terminal shows green again
-
-* I simplify the `if statements`
-
-  .. code-block:: python
-
-    def logical_equality(p, q):
+        if p == False and q == False:
+            return True
+        if p == False and q == True:
+            return False
         if p == True and q == False:
             return False
+        if p == True and q == True:
+            return True
+
+  the test is green again.
+
+* There are still only two results, this time :ref:`True<test_what_is_true>` happens in two of the cases and  :ref:`False<test_what_is_false>` happens in the other two. I move the `if statement`_ for the first case to the top so I have the two cases that return :ref:`True<test_what_is_true>` together
+
+  .. code-block:: python
+
+    def logical_equality(p, q):
         if p == True and q == True:
             return True
         if p == False and q == False:
             return True
         if p == False and q == True:
             return False
-        # if p == True:
-        #     if q == False:
-        #         return False
-        #     if q == True:
-        #         return True
-        # if p == False:
-        #     if q == False:
-        #         return True
-        #     if q == True:
-        #         return False
+        if p == True and q == False:
+            return False
 
-  I remove the commented lines then change the order of statements
+  still green. I rewrite the first line
 
   .. code-block:: python
 
     def logical_equality(p, q):
+        if bool(p) and bool(q):
+        # if p == True and q == True:
+            return True
+        if p == False and q == False:
+            return True
         if p == False and q == True:
             return False
         if p == True and q == False:
             return False
-        if p == True and q == True:
-            return True
-        if p == False and q == False:
-            return True
 
-  the terminal still shows green. I rewrite the first `if statement`_ in terms of :ref:`True<test_what_is_true>`
+  the terminal still shows green. I make the line simpler
 
   .. code-block:: python
 
     def logical_equality(p, q):
-        if p != True and q == True:
-        # if p == False and q == True:
+        if p and q:
+        # if bool(p) and bool(q):
+            return True
+        if p == False and q == False:
+            return True
+        if p == False and q == True:
             return False
         if p == True and q == False:
             return False
-        if p == True and q == True:
-            return True
-        if p == False and q == False:
-            return True
 
-  the test is still green, I do the same thing with the second statement
+  I rewrite the second `if statement`_ in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
 
     def logical_equality(p, q):
-        if p != True and q == True:
-            return False
-        if p == True and q != True:
-        # if p == True and q == False:
-            return False
-        if p == True and q == True:
-            return True
-        if p == False and q == False:
-            return True
-
-  still green, I do the next statement
-
-  .. code-block:: python
-
-    def logical_equality(p, q):
-        if p != True and q == True:
-            return False
-        if p == True and q != True:
-            return False
-        if p == True and q == True:
+        if p and q:
             return True
         if p != True and q != True:
         # if p == False and q == False:
             return True
+        if p == False and q == True:
+            return False
+        if p == True and q == False:
+            return False
 
-  the terminal is green. I rewrite the statements using hidden truth value testing
+  the terminal still shows green. I rewrite it with bool_
 
   .. code-block:: python
 
     def logical_equality(p, q):
-        if not p and q:
-        # if p != True and q == True:
-            return False
-        if p == True and q != True:
-            return False
-        if p == True and q == True:
-            return True
-        if p != True and q != True:
-            return True
-
-  still green, I do it with the next line
-
-  .. code-block:: python
-
-    def logical_equality(p, q):
-        if not p and q:
-            return False
-        if p and not q:
-        # if p == True and q != True:
-            return False
-        if p == True and q == True:
-            return True
-        if p != True and q != True:
-            return True
-
-  the terminal shows green, I do the next line
-
-  .. code-block:: python
-
-    def logical_equality(p, q):
-        if not p and q:
-            return False
-        if p and not q:
-            return False
-        if p and q:
-        # if p == True and q == True:
-            return True
-        if p != True and q != True:
-            return True
-
-  still green. I do the last line
-
-  .. code-block:: python
-
-    def logical_equality(p, q):
-        if not p and q:
-            return False
-        if p and not q:
-            return False
         if p and q:
             return True
-        if not p and not q:
+        if not bool(p) and not bool(q):
         # if p != True and q != True:
             return True
+        if p == False and q == True:
+            return False
+        if p == True and q == False:
+            return False
 
-  the terminal shows green
-
-* the two cases that are :ref:`False<test_what_is_false>` can be combined using or_
+  still green, I make the line simpler
 
   .. code-block:: python
 
     def logical_equality(p, q):
-        if (not p and q) or (p and not q):
-            return False
-        else:
-            return True
-        if not p and q:
-            return False
-        if p and not q:
-            return False
         if p and q:
             return True
         if not p and not q:
+        # if not bool(p) and not bool(q):
             return True
-
-  green again. I remove the other `if statements`_ and replace the else_ clause with the opposite statement
-
-  .. code-block:: python
-
-    def logical_equality(p, q):
-        if (not p and q) or (p and not q):
+        if p == False and q == True:
             return False
-        if not ((not p and q) or (p and not q)):
-        # else:
-            return True
-
-  the terminal still shows green. I change the order then add an else_ clause
-
-  .. code-block:: python
-
-    def logical_equality(p, q):
-        if not ((not p and q) or (p and not q)):
-            return True
-        else:
-        # if (not p and q) or (p and not q):
+        if p == True and q == False:
             return False
 
-  still green. I try to "multiply" out the first statement
+  the terminal still shows green. not_ happens twice on this line, I try to factor it out by rewriting the line in terms of it
 
   .. code-block:: python
 
     def logical_equality(p, q):
-        if (not (not p and q)) and (not (p and not q)):
-        # if not ((not p and q) or (p and not q)):
+        if p and q:
             return True
-        else:
+        if not p not or not q:
+        # if not p and not q:
+            return True
+        if p == False and q == True:
+            return False
+        if p == True and q == False:
             return False
 
-  this is getting confusing. I try to "multiply" out the first group in the statement
+  and get SyntaxError_
+
+  .. code-block:: python
+
+    SyntaxError: invalid syntax
+
+  I factor out not_
 
   .. code-block:: python
 
     def logical_equality(p, q):
-        if (not not p not and not q) and (not (p and not q)):
-        # if (not (not p and q)) and (not (p and not q)):
+        if p and q:
             return True
-        else:
+        if not (p or q):
+        # if not p not or not q:
+        # if not p and not q:
+            return True
+        if p == False and q == True:
+            return False
+        if p == True and q == False:
             return False
 
-  ``not and`` is or_
+  the terminal shows green again and I remove the commented lines
+
+* I can use or_ to put the two cases that are :ref:`True<test_what_is_true>` together
 
   .. code-block:: python
 
     def logical_equality(p, q):
-        if (p or not q) and (not (p and not q)):
-        # if (not (not p and q)) and (not (p and not q)):
-            return True
-        else:
-            return False
-
-  the terminal shows green. I do the second part
-
-  .. code-block:: python
-
-    def logical_equality(p, q):
-        if (p or not q) and (not p not and not not q):
-        # if (p or not q) and (not (p and not q)):
+        if (p and q) or not (p or q):
             return True
         else:
             return False
+        if p and q:
+            return True
+        if not (p or q):
+            return True
+        if p == False and q == True:
+            return False
+        if p == True and q == False:
+            return False
 
-  using the correct terms
+  still green. I remove the other statements then use a `conditional expression`_
 
   .. code-block:: python
 
     def logical_equality(p, q):
-        if (p or not q) and (not p or q):
-        # if (p or not q) and (not (p and not q)):
+        return True if (p and q) or not (p or q) else False
+        if (p and q) or not (p or q):
             return True
         else:
             return False
 
-  still green. I add a `conditional expression`_ (`ternary operator`_)
+  the terminal shows green. I remove the other statements and make it simpler
 
   .. code-block:: python
 
     def logical_equality(p, q):
-        return True if (p or not q) and (not p or q) else False
-        if (p or not q) and (not p or q):
-            return True
-        else:
-            return False
-
-  the terminal shows green. I remove the other `if statements`_ and use implicit truth value testing
-
-  .. code-block:: python
-
-    def logical_equality(p, q):
-        return (p or not q) and (not p or q)
-        return True if (p or not q) and (not p or q) else False
+        return (p and q) or not (p or q)
+        return True if (p and q) or not (p or q) else False
 
   still green. I remove the second `return statement`_ and all tests are still passing
 
-* The funny thing is all this work could have been achieved by using the ``==`` symbol, since the two cases where :ref:`True<test_what_is_true>` is the result are cases where ``p`` and ``q`` are the same
+* The funny thing is all this work could have been done with the ``==`` symbol, since the two cases where :ref:`True<test_what_is_true>` is the result are cases where ``p`` and ``q`` are the same
 
   .. code-block:: python
 
