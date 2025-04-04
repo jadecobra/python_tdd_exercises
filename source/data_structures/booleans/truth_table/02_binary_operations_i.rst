@@ -18,6 +18,8 @@ requirements
 
 There are 16 binary operations, they take two inputs that could be either :ref:`True <test_what_is_true>` or :ref:`False <test_what_is_false>`
 
+----
+
 *********************************************************************************
 test_logical_conjunction
 *********************************************************************************
@@ -216,7 +218,7 @@ refactor: make it better
 
     AssertionError: False is not true
 
-  I change :ref:`False <test_what_is_false>` to :ref:`True<test_what_is_true>` in the new line and and comment out the last `return statement`_
+  I change :ref:`False <test_what_is_false>` to :ref:`True<test_what_is_true>` on the new line and comment out the last `return statement`_
 
   .. code-block:: python
 
@@ -277,7 +279,7 @@ refactor: make it better
         else:
             return False
 
-  the test is still green, Python tests ``p`` and ``q`` for truth in the background, I remove the commented line
+  the test is still green, Python tests if ``p`` and ``q`` are :ref:`True<test_what_is_true>` in the background, I remove the commented line
 
 * Python has `ternary operators`_ (`conditional expressions`_) which allows me to write the `if statements`_ in a simpler way
 
@@ -290,7 +292,7 @@ refactor: make it better
         else:
             return False
 
-  the terminal shows green, I remove the other `if statements`_ and rewrite the `return statement`_ to make it simpler, thanks to Python's truth value testing
+  the terminal shows green, I remove the other `if statements`_ and rewrite the `return statement`_ to make it simpler thanks to Python's truth value testing
 
   .. code-block:: python
 
