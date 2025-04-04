@@ -284,24 +284,57 @@ I add a test for Logical NAND
 
   def test_logical_nand(self):
       self.assertFalse(src.truth_table.logical_nand(True, True))
-      self.assertTrue(src.truth_table.logical_nand(True, False))
-      self.assertTrue(src.truth_table.logical_nand(False, True))
-      self.assertTrue(src.truth_table.logical_nand(False, False))
 
 the terminal shows :ref:`AttributeError`
 
 green: make it pass
 #################################################################################
 
+I add a definition for the :ref:`function<functions>`
 
-* I add a definition for the :ref:`function<functions>` to ``truth_table.py`` returning :ref:`True<test_what_is_true>` since 3 out of the 4 cases return it
+.. code-block:: python
 
-  .. code-block:: python
+  def exclusive_disjunction(p, q):
+      return p != q
+      return not (p == q)
+      return (not p and q) or (p and not q)
 
-    def logical_nand(p, q):
-      return True
 
-  the terminal shows :ref:`AssertionError` for the first case
+  def logical_nand(p, q):
+    return True
+
+the terminal shows :ref:`AssertionError`
+
+
+
+
+
+
+
+refactor: make it better
+#################################################################################
+
+.. code-block:: python
+
+  def test_logical_nand(self):
+      self.assertFalse(src.truth_table.logical_nand(True, True))
+      self.assertTrue(src.truth_table.logical_nand(True, False))
+
+.. code-block:: python
+
+  def test_logical_nand(self):
+      self.assertFalse(src.truth_table.logical_nand(True, True))
+      self.assertTrue(src.truth_table.logical_nand(True, False))
+      self.assertTrue(src.truth_table.logical_nand(False, True))
+
+.. code-block:: python
+
+  def test_logical_nand(self):
+      self.assertFalse(src.truth_table.logical_nand(True, True))
+      self.assertTrue(src.truth_table.logical_nand(True, False))
+      self.assertTrue(src.truth_table.logical_nand(False, True))
+      self.assertTrue(src.truth_table.logical_nand(False, False))
+
 * and I add a condition for the one case that returns :ref:`False<test_what_is_false>`
 
   .. code-block:: python
@@ -313,8 +346,6 @@ green: make it pass
 
   Green! All tests pass
 
-refactor: make it better
-#################################################################################
 
 * I add an else_ clause to be explicit
 

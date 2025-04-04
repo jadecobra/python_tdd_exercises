@@ -351,6 +351,10 @@ I add the :ref:`function<functions>`
 
 .. code-block:: python
 
+  def logical_conjunction(p, q):
+    return p and q
+
+
   def logical_disjunction(p, q):
       return p and q
 
@@ -713,6 +717,7 @@ I add the :ref:`method<functions>`
   def logical_disjunction(p, q):
       return p or q
 
+
   def logical_implication(p, q):
       return p or q
 
@@ -1040,6 +1045,7 @@ green: make it pass
 
     def logical_implication(p, q):
         return not p or q
+
 
     def logical_equality(p, q):
         return not p or q
