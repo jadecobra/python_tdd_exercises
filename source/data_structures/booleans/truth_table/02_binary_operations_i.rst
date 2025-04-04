@@ -686,12 +686,15 @@ test_logical_implication
 red: make it fail
 #################################################################################
 
-I add a test
+I add a new test
 
 .. code-block:: python
 
-    def test_logical_or_material_implication(self):
-        self.assertTrue(src.truth_table.logical_implication(True, True))
+  def test_logical_disjunction_aka_or(self):
+      ...
+
+  def test_logical_implication(self):
+      self.assertTrue(src.truth_table.logical_implication(True, True))
 
 the terminal shows :ref:`AttributeError`
 
@@ -707,20 +710,22 @@ I add the :ref:`method<functions>`
 
 .. code-block:: python
 
+  def logical_disjunction(p, q):
+      return p or q
+
   def logical_implication(p, q):
       return p or q
 
-the terminal shows green
+the test passes
 
 refactor: make it better
 #################################################################################
-
 
 * I add the next case
 
   .. code-block:: python
 
-    def test_logical_or_material_implication(self):
+    def test_logical_implication(self):
         self.assertTrue(src.truth_table.logical_implication(True, True))
         self.assertFalse(src.truth_table.logical_implication(True, False))
 
@@ -735,9 +740,8 @@ refactor: make it better
   .. code-block:: python
 
     def logical_implication(p, q):
-        if p == True:
-            if q == False:
-                return False
+        if p == True and q == False:
+            return False
         return p or q
 
   the terminal shows green again
@@ -746,7 +750,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_logical_or_material_implication(self):
+    def test_logical_implication(self):
         self.assertTrue(src.truth_table.logical_implication(True, True))
         self.assertFalse(src.truth_table.logical_implication(True, False))
         self.assertTrue(src.truth_table.logical_implication(False, True))
@@ -756,12 +760,10 @@ refactor: make it better
   .. code-block:: python
 
     def logical_implication(p, q):
-        if p == True:
-            if q == False:
-                return False
-        if p == False:
-            if q == True:
-                return False
+        if p == False and q == True:
+            return False
+        if p == True and q == False:
+            return False
         return p or q
 
   the terminal shows :ref:`AssertionError`
@@ -775,12 +777,10 @@ refactor: make it better
   .. code-block:: python
 
     def logical_implication(p, q):
-        if p == True:
-            if q == False:
-                return False
-        if p == False:
-            if q == True:
-                return True
+        if p == False and q == True:
+            return True
+        if p == True and q == False:
+            return False
         return p or q
 
   the test is green again
@@ -789,7 +789,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_logical_or_material_implication(self):
+    def test_logical_implication(self):
         self.assertTrue(src.truth_table.logical_implication(True, True))
         self.assertFalse(src.truth_table.logical_implication(True, False))
         self.assertTrue(src.truth_table.logical_implication(False, True))
@@ -806,14 +806,12 @@ refactor: make it better
   .. code-block:: python
 
     def logical_implication(p, q):
-        if p == True:
-            if q == False:
-                return False
-        if p == False:
-            if q == True:
-                return True
-            if q == False:
-                return True
+        if p == False and q == False:
+            return False
+        if p == False and q == True:
+            return True
+        if p == True and q == False:
+            return False
         return p or q
 
   the test passes
@@ -823,16 +821,14 @@ refactor: make it better
   .. code-block:: python
 
     def logical_implication(p, q):
-        if p == True:
-            if q == True:
-                return False
-            if q == False:
-                return False
-        if p == False:
-            if q == True:
-                return True
-            if q == False:
-                return True
+        if p == False and q == False:
+            return False
+        if p == False and q == True:
+            return True
+        if p == True and q == False:
+            return False
+        if p == True and q == True:
+            return False
         return p or q
 
   the terminal shows :ref:`AssertionError`
@@ -846,40 +842,17 @@ refactor: make it better
   .. code-block:: python
 
     def logical_implication(p, q):
-        if p == True:
-            if q == True:
-                return True
-            if q == False:
-                return False
-        if p == False:
-            if q == True:
-                return True
-            if q == False:
-                return True
+        if p == False and q == False:
+            return False
+        if p == False and q == True:
+            return True
+        if p == True and q == False:
+            return False
+        if p == True and q == True:
+            return True
         return p or q
 
-  and the test passes
-
-* I comment out ``return p or q``
-
-  .. code-block:: python
-
-    def logical_implication(p, q):
-        if p == True:
-            if q == True:
-                return True
-            if q == False:
-                return False
-        if p == False:
-            if q == True:
-                return True
-            if q == False:
-                return True
-        # return p or q
-
-  the terminal still shows green, so I remove the line
-
-* I write an `if statement` for the one case where the outcome is :ref:`False <test_what_is_false>`
+  the test passes and I remove ``return p or q``, then use the one case where the outcome is :ref:`False <test_what_is_false>` with an else_ clause
 
   .. code-block:: python
 
@@ -888,16 +861,14 @@ refactor: make it better
             return False
         else:
             return True
-        if p == True:
-            if q == True:
-                return True
-            if q == False:
-                return False
-        if p == False:
-            if q == True:
-                return True
-            if q == False:
-                return True
+        if p == False and q == False:
+            return False
+        if p == False and q == True:
+            return True
+        if p == True and q == False:
+            return False
+        if p == True and q == True:
+            return True
 
   the terminal still shows green. I remove the other `if statements`_
 
@@ -909,60 +880,44 @@ refactor: make it better
         else:
             return True
 
-  I can rewrite the first line in terms of :ref:`True<test_what_is_true>`
+  I rewrite the else_ block as the opposite of the `if statement`_
 
   .. code-block:: python
 
     def logical_implication(p, q):
-        if p == True and q != True:
+        if p == True and q == False:
+            return False
+        if not (p == True and q == False):
+        # else:
+            return True
+
+  the terminal shows green. I remove the commented line and move the `if statement`_ that returns :ref:`True <test_what_is_true>` to the top then change the second statement to an else_ clause
+
+  .. code-block:: python
+
+    def logical_implication(p, q):
+        if not (p == True and q == False):
+            return True
+        else:
         # if p == True and q == False:
             return False
-        else:
-            return True
 
-  the terminal shows green. I remove the commented line and rewrite the first line with bool_
+  still green, I remove the commented line and multiply not_ by each symbol in the parentheses
 
   .. code-block:: python
 
     def logical_implication(p, q):
-        if bool(p) == True and bool(q) != True:
-        # if p == True and q != True:
-            return False
-        else:
+        if not p not == not True not and not q not == not False:
+        # if not (p == True and q == False):
             return True
+        else:
+            return False
 
-  the tests are still passing. I remove the commented line and rewrite the first line again using not_
+  the terminal shows SyntaxError_
 
   .. code-block:: python
 
-    def logical_implication(p, q):
-        if bool(p) == True and not bool(q) == True:
-        # if bool(p) == True and bool(q) != True:
-            return False
-        else:
-            return True
-
-  the test is still green, I remove the commented line then remove the repetition
-
-  .. code-block:: python
-
-    def logical_implication(p, q):
-        if bool(p) and not bool(q):
-        # if bool(p) == True and not bool(q) == True:
-            return False
-        else:
-            return True
-
-  still green, I remove the commented line and remove bool_
-
-  .. code-block:: python
-
-    def logical_implication(p, q):
-        if p and not q:
-        # if bool(p) and not bool(q):
-            return False
-        else:
-            return True
+    SyntaxError: invalid syntax
 
   the test is still green. I remove the commented line and rewrite the else_ statement with the opposite `if statement`_
 
