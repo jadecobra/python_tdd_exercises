@@ -619,8 +619,7 @@ refactor: make it better
         else:
             return False
 
-
-  ``not p != True`` is the same as ``p == True``. I remove the commented line then rewrite it with bool_
+  still green, I remove the commented line and rewrite it with bool_
 
   .. code-block:: python
 
