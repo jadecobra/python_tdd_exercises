@@ -52,6 +52,7 @@ I add the :ref:`function<functions>`
       return p == q
       return (p and q) or not (p or q)
 
+
   def exclusive_disjunction(p, q):
       return p == q
 
@@ -301,53 +302,77 @@ I add a definition for the :ref:`function<functions>`
 
 
   def logical_nand(p, q):
-    return True
+      return p != q
 
-the terminal shows :ref:`AssertionError`
-
-
-
-
-
-
+the terminal shows green
 
 refactor: make it better
 #################################################################################
 
-.. code-block:: python
+* I add the next case
 
-  def test_logical_nand(self):
-      self.assertFalse(src.truth_table.logical_nand(True, True))
-      self.assertTrue(src.truth_table.logical_nand(True, False))
+  .. code-block:: python
 
-.. code-block:: python
+    def test_logical_nand(self):
+        self.assertFalse(src.truth_table.logical_nand(True, True))
+        self.assertTrue(src.truth_table.logical_nand(True, False))
 
-  def test_logical_nand(self):
-      self.assertFalse(src.truth_table.logical_nand(True, True))
-      self.assertTrue(src.truth_table.logical_nand(True, False))
-      self.assertTrue(src.truth_table.logical_nand(False, True))
+  the terminal still shows green
 
-.. code-block:: python
+* I add another case
 
-  def test_logical_nand(self):
-      self.assertFalse(src.truth_table.logical_nand(True, True))
-      self.assertTrue(src.truth_table.logical_nand(True, False))
-      self.assertTrue(src.truth_table.logical_nand(False, True))
-      self.assertTrue(src.truth_table.logical_nand(False, False))
+  .. code-block:: python
 
-* and I add a condition for the one case that returns :ref:`False<test_what_is_false>`
+    def test_logical_nand(self):
+        self.assertFalse(src.truth_table.logical_nand(True, True))
+        self.assertTrue(src.truth_table.logical_nand(True, False))
+        self.assertTrue(src.truth_table.logical_nand(False, True))
+
+  still green. I wonder if the test is broken
+
+* I add the last case
+
+  .. code-block:: python
+
+    def test_logical_nand(self):
+        self.assertFalse(src.truth_table.logical_nand(True, True))
+        self.assertTrue(src.truth_table.logical_nand(True, False))
+        self.assertTrue(src.truth_table.logical_nand(False, True))
+        self.assertTrue(src.truth_table.logical_nand(False, False))
+
+  which gives me :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  okay! The test still works. I add an `if statement`_
+
+  .. code-block:: python
+
+    def logical_nand(p, q):
+        if p == False and q == False:
+            return True
+        return p != q
+
+* I add an `if statement`_ for the one case that returns :ref:`False<test_what_is_false>`
 
   .. code-block:: python
 
     def logical_nand(p, q):
         if p == True and q == True:
-            return False
-        return True
+            return True
+        if p == False and q == False:
+            return True
+        return p != q
 
-  Green! All tests pass
+  the terminal shows :ref:`AssertionError`
 
+  .. code-block:: python
 
-* I add an else_ clause to be explicit
+    AssertionError: True is not false
+
+  I change the `return statement`_ then add an else_ clause
 
   .. code-block:: python
 
@@ -356,18 +381,22 @@ refactor: make it better
             return False
         else:
             return True
+        if p == False and q == False:
+            return True
+        return p != q
 
-* then change the first condition to an implied conditional test
+  the test is green again, I remove the other statements and rewrite the first line
 
   .. code-block:: python
 
     def logical_nand(p, q):
         if p and q:
+        # if p == True and q == True:
             return False
         else:
             return True
 
-* I make the else_ clause to the opposite of the `if statement`_
+  then write the opposite of the `if statement`_ for the else_ clause
 
   .. code-block:: python
 
@@ -375,41 +404,38 @@ refactor: make it better
         if p and q:
             return False
         if not (p and q):
+        # else:
             return True
 
-* then reorder the statements
+  I move the two statements at the bottom to the top then add a new else_ clause
 
   .. code-block:: python
 
     def logical_nand(p, q):
-        if not(p and q):
-            return True
-        if p and q:
-            return False
-
-* I change the second statement with ``else`` to simplify
-
-  .. code-block:: python
-
-    def logical_nand(p, q):
-        if not(p and q):
+        if not (p and q):
             return True
         else:
+        # if p and q:
             return False
 
-* then change it to a one line `return statement`_
+  the test is still green. I rewrite it as a `conditional expression`_
 
   .. code-block:: python
 
     def logical_nand(p, q):
-        return True if not(p and q) else False
+        return not (p and q)
+        if not (p and q):
+            return True
+        else:
+        # if p and q:
+            return False
 
-* which I simplify to
+  I remove the other statements
 
   .. code-block:: python
 
     def logical_nand(p, q):
-        return not(p and q)
+        return not (p and q)
 
 ----
 
