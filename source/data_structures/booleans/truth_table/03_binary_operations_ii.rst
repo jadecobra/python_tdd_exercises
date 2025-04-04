@@ -93,12 +93,12 @@ refactor: make it better
 
   .. code-block:: python
 
-def exclusive_disjunction(p, q):
-    if p == True and q == False:
-        return True
-    if p == True and q == True:
-        return False
-    return p == q
+    def exclusive_disjunction(p, q):
+        if p == True and q == False:
+            return True
+        if p == True and q == True:
+            return False
+        return p == q
 
   the test passes
 
