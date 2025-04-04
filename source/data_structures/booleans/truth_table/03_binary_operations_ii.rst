@@ -288,6 +288,11 @@ I add a test for Logical NAND
 
 the terminal shows :ref:`AttributeError`
 
+.. code-block:: python
+  :force:
+
+  AttributeError: module 'src.truth_table' has no attribute 'logical_nand'. Did you mean: 'logical_false'?
+
 green: make it pass
 #################################################################################
 
@@ -446,9 +451,98 @@ test_logical_nor
 red: make it fail
 #################################################################################
 
-I add a test for exclusive disjunction to ``TestBinaryOperations`` in ``test_truth_table.py``
+I add another test
 
 .. code-block:: python
+
+    def test_logical_nand(self):
+        ...
+
+    def test_logical_nor(self):
+        self.assertFalse(src.truth_table.logical_nor(True, True))
+
+and the terminal shows :ref:`AttributeError`
+
+.. code-block:: python
+  :force:
+
+  AttributeError: module 'src.truth_table' has no attribute 'logical_nor'. Did you mean: 'logical_nand'?
+
+green: make it pass
+#################################################################################
+
+I add a :ref:`function<functions>` definition to ``truth_table.py``
+
+.. code-block:: python
+
+  def logical_nand(p, q):
+      return not (p and q)
+
+
+  def logical_nor(p, q):
+      return not (p and q)
+
+the test passes
+
+refactor: make it better
+#################################################################################
+
+* I add the next case
+
+  .. code-block:: python
+
+    def test_logical_nor(self):
+        self.assertFalse(src.truth_table.logical_nor(True, True))
+        self.assertFalse(src.truth_table.logical_nor(True, False))
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  I add an `if statement`_
+
+  .. code-block:: python
+
+    def logical_nor(p, q):
+        if p and not q:
+            return False
+        return not (p and q)
+
+  the test passes
+
+* on to the next case
+
+  .. code-block:: python
+
+    def test_logical_nor(self):
+        self.assertFalse(src.truth_table.logical_nor(True, True))
+        self.assertFalse(src.truth_table.logical_nor(True, False))
+        self.assertFalse(src.truth_table.logical_nor(False, True))
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  I add another `if statement`
+
+  .. code-block:: python
+
+    def logical_nor(p, q):
+        if not p and q:
+            return False
+        if p and not q:
+            return False
+        return not (p and q)
+
+  the test passes
+
+* I add the last case
+
+  .. code-block:: python
 
     def test_logical_nor(self):
         self.assertFalse(src.truth_table.logical_nor(True, True))
@@ -456,70 +550,71 @@ I add a test for exclusive disjunction to ``TestBinaryOperations`` in ``test_tru
         self.assertFalse(src.truth_table.logical_nor(False, True))
         self.assertTrue(src.truth_table.logical_nor(False, False))
 
-and the terminal shows :ref:`AttributeError`
+  and the test stays green
 
-green: make it pass
-#################################################################################
-
-* I add a :ref:`function<functions>` definition to ``truth_table.py``
-
-  .. code-block:: python
-
-    def logical_nor(p, q):
-        return False
-
-* and the first 3 pass, there is a failure for the 4th case, so I add a condition for it
-
-  .. code-block:: python
-
-    def logical_nor(p, q):
-        if p == False and q == False:
-            return True
-        return False
-
-refactor: make it better
-#################################################################################
-
-* I restate the ``if`` condition using hidden conditional testing
+* I add an `if statement`_ for the one case where the result is :ref:`True<test_what_is_true>` with an else_ clause
 
   .. code-block:: python
 
     def logical_nor(p, q):
         if not p and not q:
             return True
-        return False
+        else:
+            return False
+        if not p and q:
+            return False
+        if p and not q:
+            return False
+        return not (p and q)
 
-* I abstract the repetition of not_ by rewriting the entire statement in terms of not_
+  the terminal still shows green, I remove the other statements and rewrite the `if statement`_ to factor out not_ since it happens two timems
 
   .. code-block:: python
 
     def logical_nor(p, q):
-        if (not p) (not or) (not q):
+        if not p not or not q:
+        # if not p and not q:
             return True
-        return False
+        else:
+            return False
 
-  the terminal shows a SyntaxError_ and I rewrite the statement with proper syntax, "factoring" out the not_
+  the terminal shows SyntaxError_
+
+  .. code-block:: python
+
+    SyntaxError: invalid syntax
+
+  I fix the line
 
   .. code-block:: python
 
     def logical_nor(p, q):
-        if not(p or q):
+        if not (p or q):
+        # if not p not or not q:
+        # if not p and not q:
             return True
-        return False
+        else:
+            return False
 
-* then rewrite the entire thing on one line
-
-  .. code-block:: python
-
-    def logical_nor(p, q):
-      return True if not(p or q) else False
-
-* I simplify using implied conditional testing
+  still green. I rewrite it as a `conditional expression`_
 
   .. code-block:: python
 
     def logical_nor(p, q):
-        return not(p or q)
+        return not (p or q)
+        if not (p or q):
+        # if not p not or not q:
+        # if not p and not q:
+            return True
+        else:
+            return False
+
+  still green, I remove the other statements
+
+  .. code-block:: python
+
+    def logical_nor(p, q):
+        return not (p or q)
 
 ----
 
