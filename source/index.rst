@@ -113,7 +113,7 @@ Here is a playlist I like to listen to when programming
 
 .. raw:: html
 
-  <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=4AjlrNFMuyInE1an&amp;list=PLWuEDVEvwXgqQZ-TPhLgmQSD7NsNlK_OW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=IFHOPos8_ubUVe8y&amp;list=PLWuEDVEvwXgqQZ-TPhLgmQSD7NsNlK_OW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 ----
