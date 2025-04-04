@@ -425,7 +425,7 @@ refactor: make it better
         self.assertTrue(src.truth_table.logical_disjunction(False, True))
         self.assertFalse(src.truth_table.logical_disjunction(False, False))
 
-  the terminal shows green. I add an `if statement`_ to make sure
+  the terminal shows green. I add an `if statement`_ to double check the last case
 
   .. code-block:: python
 
@@ -476,7 +476,7 @@ refactor: make it better
                 return True
             if q == True:
                 return False
-        # return p and q
+        return p and q
 
   the terminal shows :ref:`AssertionError`
 
@@ -499,11 +499,11 @@ refactor: make it better
                 return True
             if q == True:
                 return True
-        # return p and q
+        return p and q
 
-  the terminal shows green again and I remove the commented line
+  the terminal shows green again and I remove ``return p and q``
 
-* There are also only two results for ``logical_disjunction`` - :ref:`True<test_what_is_true>` in one case and :ref:`False<test_what_is_false>` in the other 3 cases. I add a new `if statement`_ with an else_ clause
+* There are only two results for ``logical_disjunction`` as well - :ref:`True<test_what_is_true>` in the first 3 cases and :ref:`False<test_what_is_false>` in the last case. I add a new `if statement`_ with an else_ clause
 
   .. code-block:: python
 
@@ -523,7 +523,7 @@ refactor: make it better
             if q == True:
                 return True
 
-  the terminal still shows green. I remove the other `if statements`_, then write the opposite of the `if statement`_
+  the terminal still shows green. I remove the other statements then write the opposite of the `if statement`_
 
   .. code-block:: python
 
@@ -544,7 +544,7 @@ refactor: make it better
         # else:
             return True
 
-  still green. I remove the commented line and move the first two lines to the bottome
+  still green. I remove the commented line and move the first two lines to the bottom
 
   .. code-block:: python
 
@@ -565,7 +565,7 @@ refactor: make it better
         # if p == False and q == False:
             return False
 
-  the terminal shows green. I remove the commented line and "multiply" not_ by each symbol in the parentheses
+  the terminal shows green. I remove the commented line and "multiply" not_ by each symbol in the parentheses to make it simpler
 
   .. code-block:: python
 
@@ -597,7 +597,18 @@ refactor: make it better
         else:
             return False
 
-  and the test passes. I remove the commented line and rewrite the first line to remove not_
+  and the test passes. I remove the commented line and rewrite the `if statement`_
+
+  .. code-block:: python
+
+    def logical_disjunction(p, q):
+        if not p == False or not q == False:
+        # if not p != True or not q != True:
+            return True
+        else:
+            return False
+
+  ``not x == False`` is the same as ``x == True``, I rewrite the `if statement`_ to show this
 
   .. code-block:: python
 
