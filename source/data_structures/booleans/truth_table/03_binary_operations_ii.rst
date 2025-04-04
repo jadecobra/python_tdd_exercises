@@ -29,6 +29,9 @@ I add a new test
 
 .. code-block:: python
 
+  def test_logical_equality(self):
+      ...
+
   def test_exclusive_disjunction(self):
       self.assertFalse(src.truth_table.exclusive_disjunction(True, True))
 
@@ -45,8 +48,12 @@ I add the :ref:`function<functions>`
 
 .. code-block:: python
 
+  def logical_equality(p, q):
+      return p == q
+      return (p and q) or not (p or q)
+
   def exclusive_disjunction(p, q):
-      return (p or not q) and (not p or q)
+      return p == q
 
 the terminal shows :ref:`AssertionError`
 
@@ -54,14 +61,16 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: True is not false
 
-I change the `return statement`
+I add an `if statement`_
 
 .. code-block:: python
 
   def exclusive_disjunction(p, q):
-      return False
+      if p == True and q == True:
+          return False
+      return p == q
 
-and the test passes
+the test passes
 
 refactor: make it better
 #################################################################################
@@ -84,10 +93,12 @@ refactor: make it better
 
   .. code-block:: python
 
-    def exclusive_disjunction(p, q):
-        if p == True and q == False:
-            return True
+def exclusive_disjunction(p, q):
+    if p == True and q == False:
+        return True
+    if p == True and q == True:
         return False
+    return p == q
 
   the test passes
 
@@ -115,7 +126,11 @@ refactor: make it better
             return True
         if p == True and q == False:
             return True
-        return False
+        if p == True and q == True:
+            return False
+        return p == q
+
+  the test passes
 
 * I add the last case
 
@@ -127,9 +142,13 @@ refactor: make it better
         self.assertTrue(src.truth_table.exclusive_disjunction(False, True))
         self.assertFalse(src.truth_table.exclusive_disjunction(False, False))
 
-  and the terminal shows green
+  and the terminal shows :ref:`AssertionError`
 
-* I add an `if statement`_ for the last case
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  I add an `if statement`_ for it
 
   .. code-block:: python
 
@@ -140,301 +159,94 @@ refactor: make it better
             return True
         if p == True and q == False:
             return True
-        return False
+        if p == True and q == True:
+            return False
+        return p == q
 
-  then add another one for the first case
+  the terminal shows green
+
+* I remove ``return p == q`` and move the last case to the bottom to put the two cases that return :ref:`True<test_what_is_true>` together
 
   .. code-block:: python
 
     def exclusive_disjunction(p, q):
+        if p == False and q == True:
+            return True
+        if p == True and q == False:
+            return True
         if p == True and q == True:
             return False
         if p == False and q == False:
             return False
-        if p == False and q == True:
-            return True
-        if p == True and q == False:
-            return True
-        # return False
 
-  the terminal still shows green
-
-* I rewrite the statements in terms of :ref:`True<test_what_is_true>`
+  still green. I rewrite the first statement
 
   .. code-block:: python
 
     def exclusive_disjunction(p, q):
-        if p and q:
-        # if p == True and q == True:
-            return False
-        if p != True and q != True:
-            return False
-        if p == False and q == True:
-            return True
-        if p == True and q == False:
-            return True
-
-  the test is still green, so I change the next statement
-
-  .. code-block:: python
-
-    def exclusive_disjunction(p, q):
-        if p and q:
-            return False
-        if not p and not q:
-        # if p != True and q != True:
-            return False
-        if p == False and q == True:
-            return True
-        if p == True and q == False:
-            return True
-
-  still green, on to the next one
-
-  .. code-block:: python
-
-    def exclusive_disjunction(p, q):
-        if p and q:
-            return False
-        if not p and not q:
-            return False
         if not p and q:
         # if p == False and q == True:
             return True
         if p == True and q == False:
             return True
+        if p == True and q == True:
+            return False
+        if p == False and q == False:
+            return False
 
-  the terminal still shows green. I change the next statement
+  the terminal still shows green. I rewrite the second statement
 
   .. code-block:: python
 
     def exclusive_disjunction(p, q):
-        if p and q:
-            return False
-        if not p and not q:
-            return False
         if not p and q:
             return True
         if p and not q:
         # if p == True and q == False:
             return True
-
-  still green.
-
-* not_ shows up twice in the second `if statement`_, I "factor" it out
-
-  .. code-block:: python
-
-    def exclusive_disjunction(p, q):
-        if p and q:
-            return False
-        if not (p or q):
-        # if not p and not q:
-            return False
-        if not p and q:
-            return True
-        if p and not q:
-            return True
-
-  the terminal still shows green
-
-* I add the two statements that return :ref:`False<test_what_is_false>`
-
-  .. code-block:: python
-
-    def exclusive_disjunction(p, q):
-        if (p and q) or not (p or q):
-            return False
-        else:
-            return True
-        if p and q:
-            return False
-        if not (p or q):
-            return False
-        if not p and q:
-            return True
-        if p and not q:
-            return True
-
-  the terminal still shows green
-
-* I want the statement that returns :ref:`True<test_what_is_true>`, I use it to replace the else_ clause
-
-  .. code-block:: python
-
-    def exclusive_disjunction(p, q):
-        if (p and q) or not (p or q):
-            return False
-        if not ((p and q) or not (p or q)):
-        # else:
-            return True
-
-  the terminal still shows green. I reorder the `if statements`_
-
-  .. code-block:: python
-
-    def exclusive_disjunction(p, q):
-        if not ((p and q) or not (p or q)):
-            return True
-        else:
-        # if (p and q) or not (p or q):
-            return False
-
-  still green. I "multiply" out the statement
-
-  .. code-block:: python
-
-    def exclusive_disjunction(p, q):
-        if not (p and q) not or not (not (p or q)):
-        # if not ((p and q) or not (p or q)):
-            return True
-        else:
-            return False
-
-  not_ or_ is and_
-
-  .. code-block:: python
-
-    def exclusive_disjunction(p, q):
-        if not (p and q) and not (not (p or q)):
-        # if not ((p and q) or not (p or q)):
-            return True
-        else:
-            return False
-
-  not_ not_ cancels out
-
-  .. code-block:: python
-
-    def exclusive_disjunction(p, q):
-        if not (p and q) and (p or q):
-        # if not (p and q) and not (not (p or q)):
-            return True
-        else:
-            return False
-
-* I can now use `conditional expressions`_
-
-  .. code-block:: python
-
-    def exclusive_disjunction(p, q):
-        return True if not (p and q) and (p or q) else False
-        if not (p and q) and (p or q):
-        # if not (p and q) and not (not (p or q)):
-            return True
-        else:
-            return False
-
-  the terminal shows green. I can make it simpler
-
-  .. code-block:: python
-
-    def exclusive_disjunction(p, q):
-        return not (p and q) and (p or q)
-        return True if not (p and q) and (p or q) else False
-
-  still green, I remove the second `return statement`
-
-
-* Just like with ``logical_equality`` there is a simpler solution. Since the :ref:`function<functions>` returns :ref:`False<test_what_is_false>` when both ``p`` and ``q`` are the same
-
-  .. code-block:: python
-
-    def exclusive_disjunction(p, q):
-        if p == q:
-            return False
-        else:
-            return True
-
-  I change the else_ clause to use the opposite of the `if statement`_
-
-  .. code-block:: python
-
-
-
-* I add a condition to resolve it
-
-  .. code-block:: python
-
-    def exclusive_disjunction(p, q):
         if p == True and q == True:
             return False
         if p == False and q == False:
             return False
-        return True
 
-  and all the tests pass. Wonderful!
-
-
-
-
-
-
-
-* In the first case ``p`` and ``q`` have the same value, I can change the statement to reflect this like I did with ``logical_equality``
+  still green. I use or_ to put the two statements that return :ref:`True<test_what_is_true>` together
 
   .. code-block:: python
 
     def exclusive_disjunction(p, q):
-        if p == q:
+        if (not p and q) or (p and not q):
+            return True
+        else:
+            return False
+        if not p and q:
+            return True
+        if p and not q:
+            return True
+        if p == True and q == True:
             return False
         if p == False and q == False:
             return False
-        return True
 
-  tests still pass
-* the second statement looks similar, I can rewrite it as
+  the test is still green. I remove the other `if statements`_ and use a `conditional expression`_
 
   .. code-block:: python
 
     def exclusive_disjunction(p, q):
-      if p == q:
-          return False
-      if p == q:
-          return False
-      return True
-
-* I remove the repetition since it is exactly the same statement as the first
-
-  .. code-block:: python
-
-    def exclusive_disjunction(p, q):
-        if p == q:
-            return False
-        return True
-
-* I add an else_ clause to be explicit
-
-  .. code-block:: python
-
-    def exclusive_disjunction(p, q):
-        if p == q:
-            return False
+        return (not p and q) or (p and not q)
+        if (not p and q) or (p and not q):
+            return True
         else:
-            return True
+            return False
 
-* then rewrite it as the opposite `if statement`_
+  the terminal still shows green. I remove the other statements
 
   .. code-block:: python
 
     def exclusive_disjunction(p, q):
-        if p == q:
-            return False
-        if p != q:
-            return True
+        return (not p and q) or (p and not q)
 
-* I reorder the statements
 
-  .. code-block:: python
-
-    def exclusive_disjunction(p, q):
-        if p != q:
-            return True
-        if p == q:
-            return False
-
-* then change the second one with ``else``
-
+* since the :ref:`function<functions>` returns :ref:`True<test_what_is_true>` in the two cases when ``p`` and ``q`` are NOT the same, it could also have been written this way
   .. code-block:: python
 
     def exclusive_disjunction(p, q):
@@ -443,14 +255,14 @@ refactor: make it better
         else:
             return False
 
-* time to use the one line `return statement`_
+  or
 
   .. code-block:: python
 
     def exclusive_disjunction(p, q):
-        return True if p != q else False
+        return not (p == q)
 
-* then using implied conditional testing I can simplify it to
+  or
 
   .. code-block:: python
 
@@ -466,15 +278,15 @@ test_logical_nand
 red: make it fail
 #################################################################################
 
-I add a test for Logical NAND to ``TestBinaryOperations`` in ``test_truth_table.py``
+I add a test for Logical NAND
 
 .. code-block:: python
 
-    def test_logical_nand(self):
-        self.assertFalse(src.truth_table.logical_nand(True, True))
-        self.assertTrue(src.truth_table.logical_nand(True, False))
-        self.assertTrue(src.truth_table.logical_nand(False, True))
-        self.assertTrue(src.truth_table.logical_nand(False, False))
+  def test_logical_nand(self):
+      self.assertFalse(src.truth_table.logical_nand(True, True))
+      self.assertTrue(src.truth_table.logical_nand(True, False))
+      self.assertTrue(src.truth_table.logical_nand(False, True))
+      self.assertTrue(src.truth_table.logical_nand(False, False))
 
 the terminal shows :ref:`AttributeError`
 

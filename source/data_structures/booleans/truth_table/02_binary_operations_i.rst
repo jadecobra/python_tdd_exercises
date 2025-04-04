@@ -1342,9 +1342,14 @@ refactor: make it better
         return (p and q) or not (p or q)
         return True if (p and q) or not (p or q) else False
 
-  still green. I remove the second `return statement`_ and all tests are still passing
+  still green. I remove the second `return statement`_
 
-* The funny thing is all this work could have been done with the ``==`` symbol, since the two cases where :ref:`True<test_what_is_true>` is the result are cases where ``p`` and ``q`` are the same
+  .. code-block:: python
+
+    def logical_equality(p, q):
+        return (p and q) or not (p or q)
+
+  and all tests are still passing. All of this could have been done with the ``==`` symbol, since the two cases where :ref:`True<test_what_is_true>` is the result are cases where ``p`` and ``q`` are the same
 
   .. code-block:: python
 
