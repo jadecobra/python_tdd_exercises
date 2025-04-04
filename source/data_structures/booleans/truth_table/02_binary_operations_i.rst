@@ -919,50 +919,65 @@ refactor: make it better
 
     SyntaxError: invalid syntax
 
-  the test is still green. I remove the commented line and rewrite the else_ statement with the opposite `if statement`_
+  - not_ ``==`` is ``!=``
+  - not_ :ref:`True<test_what_is_true>` is :ref:`False<test_what_is_false>`
+  - not_ :ref:`False<test_what_is_false>` is :ref:`True<test_what_is_true>`
+  - not_ and_ is or_
 
   .. code-block:: python
 
     def logical_implication(p, q):
-        if p and not q:
-            return False
-        if not (p and not q):
-            return True
-
-  the terminal shows green. I move the first two lines to the bottom and rewrite the `if statement`_ with an else_ clause
-
-  .. code-block:: python
-
-    def logical_implication(p, q):
-        if not (p and not q):
-            return True
-        else:
-        # if p and not q:
-            return False
-
-  the test is still green, I remove the commented line and "multiply" out the first statement since it has not_ twice
-
-  .. code-block:: python
-
-    def logical_implication(p, q):
-        if not p not and not not q:
-        if not (p and not q):
+        if not p != False or not q != True:
+        # if not (p == True and q == False):
             return True
         else:
             return False
 
-  ``not and`` is or_ and ``not not`` cancels out
+  the test is still green. I remove the commented line, then rewrite the statement to remove ``!=``
+
+  .. code-block:: python
+
+    def logical_implication(p, q):
+        if not p == True or not q == False:
+        # if not p != False or not q != True:
+            return True
+        else:
+            return False
+
+  still green. ``not x == False`` is the same as ``x == True``, I rewrite the statement
+
+  .. code-block:: python
+
+    def logical_implication(p, q):
+        if not bool(p) or q == True:
+        # if not p == True or not q == False:
+            return True
+        else:
+            return False
+
+  the test is still green, I rewrite the statement again
+
+  .. code-block:: python
+
+    def logical_implication(p, q):
+        if not p or bool(q):
+        # if not bool(p) or q == True:
+            return True
+        else:
+            return False
+
+  still green
 
   .. code-block:: python
 
     def logical_implication(p, q):
         if not p or q:
-        # if not (p and not q):
+        # if not p or bool(q):
             return True
         else:
             return False
 
-  the terminal still shows green, I remove the comment and rewrite the statement as a `conditional expression`_
+  the terminal still shows green, I remove the commented and rewrite the statement as a `conditional expression`_
 
   .. code-block:: python
 
