@@ -1010,6 +1010,16 @@ refactor: make it better
 
   and all tests are still passing
 
+* I change the name of the test
+
+  .. code-block:: python
+
+    def test_logical_aka_material_implication(self):
+        self.assertTrue(src.truth_table.logical_implication(True, True))
+        self.assertFalse(src.truth_table.logical_implication(True, False))
+        self.assertTrue(src.truth_table.logical_implication(False, True))
+        self.assertTrue(src.truth_table.logical_implication(False, False))
+
 ----
 
 *********************************************************************************
@@ -1023,7 +1033,7 @@ I add a new test
 
 .. code-block:: python
 
-  def test_logical_implication(self):
+  def test_logical_aka_material_implication(self):
       ...
 
   def test_logical_equality(self):
