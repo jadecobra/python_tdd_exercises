@@ -1717,11 +1717,12 @@ review
 
 I ran tests for
 
-* :ref:`logical negation<test_logical_negation>` which is not_
-* :ref:`logical conjunction <test_logical_conjunction>` which is and_
-* :ref:`logical disjunction <test_logical_disjunction>` which is or_
-* :ref:`logical implication <test_logical_implication>`
-* :ref:`logical equality <test_logical_equality>`
+* :ref:`Logical Negation<test_logical_negation>` which is not_
+* :ref:`Logical Conjunction <test_logical_conjunction>` which is and_
+* :ref:`Logical Disjunction <test_logical_disjunction>` which is or_
+* :ref:`Logical or Material Implication <test_logical_implication>`
+* :ref:`Converse Implication <test_converse_implication>`
+* :ref:`Logical Equality <test_logical_equality>`
 
 do you want more :ref:`more binary operations? <truth table: Binary Operations II>`
 
