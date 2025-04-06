@@ -1340,7 +1340,6 @@ I ran tests for
 * :ref:`Logical Disjunction <test_logical_disjunction>` which is or_
 * :ref:`Logical or Material Implication <test_logical_implication>`
 * :ref:`Converse Implication <test_converse_implication>`
-* :ref:`Logical Equality <test_logical_equality>`
 
 do you want more :ref:`more binary operations? <truth table: Binary Operations II>`
 

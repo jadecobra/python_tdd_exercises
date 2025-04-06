@@ -449,12 +449,63 @@ refactor: make it better
         self.assertTrue(src.truth_table.project_first(True, True))
         self.assertTrue(src.truth_table.project_first(True, False))
 
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  I add an `if statement`_
+
+  .. code-block:: python
+
+    def project_first(p, q):
+        if p and not q:
+            return True
+        return p == q
+
+  the test passes
+
+* on to the next case
+
   .. code-block:: python
 
     def test_project_first(self):
         self.assertTrue(src.truth_table.project_first(True, True))
         self.assertTrue(src.truth_table.project_first(True, False))
         self.assertFalse(src.truth_table.project_first(False, True))
+
+  the terminal still shows green. I add an `if statement`_ to be sure
+
+  .. code-block:: python
+
+    def project_first(p, q):
+        if not p and q:
+            return True
+        if p and not q:
+            return True
+        return p == q
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  I fix the `return statement`_
+
+  .. code-block:: python
+
+    def project_first(p, q):
+        if not p and q:
+            return False
+        if p and not q:
+            return True
+        return p == q
+
+  the test passes
+
+* I add the next case
 
   .. code-block:: python
 
@@ -464,31 +515,99 @@ refactor: make it better
         self.assertFalse(src.truth_table.project_first(False, True))
         self.assertFalse(src.truth_table.project_first(False, False))
 
-* I use implied conditional testing to simplify the statements
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  I add an `if statement`_
+
+  .. code-block:: python
+
+    def project_first(p, q):
+        if not p and not q:
+            return False
+        if not p and q:
+            return False
+        if p and not q:
+            return True
+        return p == q
+
+  the test passes
+
+* I add an `if statement`_ for the first case
+
+  .. code-block:: python
+
+    def project_first(p, q):
+        if not p and not q:
+            return False
+        if not p and q:
+            return False
+        if p and not q:
+            return True
+        if p and q:
+            return False
+        return p == q
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  I fix the line
+
+  .. code-block:: python
+
+    def project_first(p, q):
+        if not p and not q:
+            return False
+        if not p and q:
+            return False
+        if p and not q:
+            return True
+        if p and q:
+            return True
+
+  the test passes
+
+* this :ref:`function<functions>` returns :ref:`True<test_what_is_true>` when ``p`` is :ref:`True<test_what_is_true>` and returns :ref:`False<test_what_is_false>` when it is not. I add a simpler `if statement`
 
   .. code-block:: python
 
     def project_first(p, q):
         if p:
             return True
-        if not p:
+        else:
             return False
+        if not p and not q:
+            return False
+        if not p and q:
+            return False
+        if p and not q:
+            return True
+        if p and q:
+            return True
 
-* I simplify again
-
-  .. code-block:: python
-
-    def project_first(p, q):
-        return True if p else False
-
-* then simplify some more
+  the test is still green, I remove the other lines and use a `conditional expression`_
 
   .. code-block:: python
 
     def project_first(p, q):
         return p
+        if p:
+            return True
+        else:
+            return False
 
-  I am still green. Lovely!
+  still green. I remove the other statements
+
+  .. code-block:: python
+
+    def project_first(p, q):
+        return p
 
 ----
 
