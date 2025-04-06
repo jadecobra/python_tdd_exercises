@@ -1342,7 +1342,7 @@ I add a new test
 
 .. code-block:: python
 
-  def test_logical_aka_material_implication(self):
+  def test_converse_implication(self):
       ...
 
   def test_logical_equality(self):
@@ -1362,12 +1362,12 @@ green: make it pass
 
   .. code-block:: python
 
-    def logical_implication(p, q):
-        return not p or q
+    def converse_implication(p, q):
+        return p or not q
 
 
     def logical_equality(p, q):
-        return not p or q
+        return p or not q
 
   the terminal shows green
 
@@ -1382,29 +1382,20 @@ refactor: make it better
         self.assertTrue(src.truth_table.logical_equality(True, True))
         self.assertFalse(src.truth_table.logical_equality(True, False))
 
-  the terminal still shows green. I add an `if statement`_ to be sure
-
-  .. code-block:: python
-
-    def logical_equality(p, q):
-        if p == True and q == False:
-            return True
-        return not p or q
-
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: True is not false
 
-  I change the `return statement`_
+  I add an `if statement`_
 
   .. code-block:: python
 
     def logical_equality(p, q):
         if p == True and q == False:
             return False
-        return not p or q
+        return p or not q
 
   the terminal shows green again
 
@@ -1417,13 +1408,24 @@ refactor: make it better
         self.assertFalse(src.truth_table.logical_equality(True, False))
         self.assertFalse(src.truth_table.logical_equality(False, True))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal still shows green. I add an `if statement`_ to make sure
+
+  .. code-block:: python
+
+    def logical_equality(p, q):
+        if p == False and q == True:
+            return True
+        if p == True and q == False:
+            return False
+        return p or not q
+
+  which gives me :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: True is not false
 
-  I add another `if statement`_
+  I change the `return statement`_
 
   .. code-block:: python
 
@@ -1432,7 +1434,7 @@ refactor: make it better
             return False
         if p == True and q == False:
             return False
-        return not p or q
+        return p or not q
 
   the test passes
 
@@ -1457,7 +1459,7 @@ refactor: make it better
             return False
         if p == True and q == False:
             return False
-        return not p or q
+        return p or not q
 
   the terminal shows :ref:`AssertionError`
 
@@ -1478,7 +1480,7 @@ refactor: make it better
             return False
         if p == True and q == True:
             return False
-        return not p or q
+        return p or not q
 
   which gives me :ref:`AssertionError`
 
@@ -1486,7 +1488,7 @@ refactor: make it better
 
     AssertionError: False is not true
 
-  I fix the `return statement`_ and remove ``return not p or q``
+  I fix the `return statement`_ and remove ``return p or not q``
 
   .. code-block:: python
 
@@ -1500,9 +1502,9 @@ refactor: make it better
         if p == True and q == True:
             return True
 
-  the test is green again.
+  the test is green again
 
-* There are still only two results, this time :ref:`True<test_what_is_true>` happens in two of the cases and  :ref:`False<test_what_is_false>` happens in the other two. I move the `if statement`_ for the first case to the top so I have the two cases that return :ref:`True<test_what_is_true>` together
+* There are still only two results, this time :ref:`True<test_what_is_true>` happens in two of the cases and :ref:`False<test_what_is_false>` happens in the other two. I move the `if statement`_ for the first case to the top so I have the two cases that return :ref:`True<test_what_is_true>` together
 
   .. code-block:: python
 
@@ -1591,14 +1593,14 @@ refactor: make it better
         if p == True and q == False:
             return False
 
-  the terminal still shows green. not_ happens twice on this line, I try to factor it out by rewriting the line in terms of it
+  the terminal still shows green. not_ happens twice on this line, I try to factor it out like in Algebra_
 
   .. code-block:: python
 
     def logical_equality(p, q):
         if p and q:
             return True
-        if not p not or not q:
+        if not (p and q):
         # if not p and not q:
             return True
         if p == False and q == True:
@@ -1606,13 +1608,29 @@ refactor: make it better
         if p == True and q == False:
             return False
 
-  and get SyntaxError_
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    SyntaxError: invalid syntax
+    AssertionError: True is not false
 
-  I factor out not_
+  I made a mistake. I "multiply" out the statement to check what I wrote
+
+  .. code-block:: python
+
+    def logical_equality(p, q):
+        if p and q:
+            return True
+        if not (p and q):
+        if not p not and not q:
+        # if not p and not q:
+            return True
+        if p == False and q == True:
+            return False
+        if p == True and q == False:
+            return False
+
+  the mistake is that ``not and`` is or_, I need something that multiplies out to ``if not p not or not q``. I change the statement
 
   .. code-block:: python
 
@@ -1628,7 +1646,7 @@ refactor: make it better
         if p == True and q == False:
             return False
 
-  the terminal shows green again and I remove the commented lines
+  green again
 
 * I can use or_ to put the two cases that are :ref:`True<test_what_is_true>` together
 

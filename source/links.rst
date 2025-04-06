@@ -132,6 +132,7 @@
 .. _Set-ExecutionPolicy: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.4&viewFallbackFrom=powershell-6
 .. _Write-Output: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-output?view=powershell-7.4
 
+.. _Algebra: https://en.wikipedia.org/wiki/Algebra
 .. _Debian: https://www.debian.org
 .. _False: https://docs.python.org/3/library/constants.html?highlight=true#False
 .. _remove duplication: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
