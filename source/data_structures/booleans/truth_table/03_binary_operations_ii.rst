@@ -67,7 +67,7 @@ I add an `if statement`_
 .. code-block:: python
 
   def exclusive_disjunction(p, q):
-      if p == True and q == True:
+      if p and q:
           return False
       return p == q
 
@@ -95,9 +95,9 @@ refactor: make it better
   .. code-block:: python
 
     def exclusive_disjunction(p, q):
-        if p == True and q == False:
+        if p and not q:
             return True
-        if p == True and q == True:
+        if p and q:
             return False
         return p == q
 
@@ -123,11 +123,11 @@ refactor: make it better
   .. code-block:: python
 
     def exclusive_disjunction(p, q):
-        if p == False and q == True:
+        if not p and q:
             return True
-        if p == True and q == False:
+        if p and not q:
             return True
-        if p == True and q == True:
+        if p and q:
             return False
         return p == q
 
@@ -154,13 +154,13 @@ refactor: make it better
   .. code-block:: python
 
     def exclusive_disjunction(p, q):
-        if p == False and q == False:
+        if not p and not q:
             return False
-        if p == False and q == True:
+        if not p and q:
             return True
-        if p == True and q == False:
+        if p and not q:
             return True
-        if p == True and q == True:
+        if p and q:
             return False
         return p == q
 
@@ -171,43 +171,13 @@ refactor: make it better
   .. code-block:: python
 
     def exclusive_disjunction(p, q):
-        if p == False and q == True:
-            return True
-        if p == True and q == False:
-            return True
-        if p == True and q == True:
-            return False
-        if p == False and q == False:
-            return False
-
-  still green. I rewrite the first statement
-
-  .. code-block:: python
-
-    def exclusive_disjunction(p, q):
-        if not p and q:
-        # if p == False and q == True:
-            return True
-        if p == True and q == False:
-            return True
-        if p == True and q == True:
-            return False
-        if p == False and q == False:
-            return False
-
-  the terminal still shows green. I rewrite the second statement
-
-  .. code-block:: python
-
-    def exclusive_disjunction(p, q):
         if not p and q:
             return True
         if p and not q:
-        # if p == True and q == False:
             return True
-        if p == True and q == True:
+        if p and q:
             return False
-        if p == False and q == False:
+        if not p and not q:
             return False
 
   still green. I use or_ to put the two statements that return :ref:`True<test_what_is_true>` together
@@ -223,12 +193,12 @@ refactor: make it better
             return True
         if p and not q:
             return True
-        if p == True and q == True:
+        if p and q:
             return False
-        if p == False and q == False:
+        if not p and not q:
             return False
 
-  the test is still green. I remove the other `if statements`_ and use a `conditional expression`_
+  the terminal still shows green. I remove the other `if statements`_ and use a `conditional expression`_
 
   .. code-block:: python
 
@@ -246,8 +216,8 @@ refactor: make it better
     def exclusive_disjunction(p, q):
         return (not p and q) or (p and not q)
 
+* since the :ref:`function<functions>` returns :ref:`True<test_what_is_true>` in the two cases when ``p`` and ``q`` are NOT the same, it could also be written as
 
-* since the :ref:`function<functions>` returns :ref:`True<test_what_is_true>` in the two cases when ``p`` and ``q`` are NOT the same, it could also have been written this way
   .. code-block:: python
 
     def exclusive_disjunction(p, q):
