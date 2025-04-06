@@ -154,50 +154,6 @@ green: make it pass
 
 ----
 
-
-
-*********************************************************************************
-test_tautology
-*********************************************************************************
-
-red: make it fail
-#################################################################################
-
-I add a test for tautology to ``TestBinaryOperations`` in ``test_truth_table.py``
-
-.. code-block:: python
-
-    def test_tautology(self):
-        self.assertTrue(src.truth_table.tautology(True, True))
-        self.assertTrue(src.truth_table.tautology(True, False))
-        self.assertTrue(src.truth_table.tautology(False, True))
-        self.assertTrue(src.truth_table.tautology(False, False))
-
-the terminal shows :ref:`AttributeError`
-
-green: make it pass
-#################################################################################
-
-
-* I add a :ref:`function<functions>` definition to ``truth_table.py``
-
-  .. code-block:: python
-
-    def tautology(p, q):
-        return False
-
-  the terminal shows :ref:`AssertionError` for the first case
-* I change the return value
-
-  .. code-block:: python
-
-    def tautology(p, q):
-        return True
-
-  and the test passes. Easy
-
-----
-
 *********************************************************************************
 test_contradiction
 *********************************************************************************

@@ -802,6 +802,120 @@ refactor: make it better
 ----
 
 *********************************************************************************
+test_tautology
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+I add a test
+
+.. code-block:: python
+
+  def test_project_second(self):
+      ...
+
+  def test_tautology(self):
+      self.assertTrue(src.truth_table.tautology(True, True))
+      self.assertTrue(src.truth_table.tautology(True, False))
+      self.assertTrue(src.truth_table.tautology(False, True))
+      self.assertTrue(src.truth_table.tautology(False, False))
+
+the terminal shows :ref:`AttributeError`
+
+.. code-block:: python
+
+  AttributeError: module 'src.truth_table' has no attribute 'tautology'
+
+green: make it pass
+#################################################################################
+
+I add a :ref:`function<functions>` definition
+
+.. code-block:: python
+
+  def project_second(p, q):
+      return q
+
+
+  def tautology(p, q):
+      return q
+
+refactor: make it better
+#################################################################################
+
+* I add the next case
+
+  .. code-block:: python
+
+    def test_tautology(self):
+        self.assertTrue(src.truth_table.tautology(True, True))
+        self.assertTrue(src.truth_table.tautology(True, False))
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  I add an `if statement`_
+
+  .. code-block:: python
+
+    def tautology(p, q):
+        if p and not q:
+            return True
+        return q
+
+  the test passes
+
+* I add another case
+
+  .. code-block:: python
+
+    def test_tautology(self):
+        self.assertTrue(src.truth_table.tautology(True, True))
+        self.assertTrue(src.truth_table.tautology(True, False))
+        self.assertTrue(src.truth_table.tautology(False, True))
+
+  the test is still green
+
+* I add the last case
+
+  .. code-block:: python
+
+    def test_tautology(self):
+        self.assertTrue(src.truth_table.tautology(True, True))
+        self.assertTrue(src.truth_table.tautology(True, False))
+        self.assertTrue(src.truth_table.tautology(False, True))
+        self.assertTrue(src.truth_table.tautology(False, False))
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  there is only one result for this operation, it is a :ref:`singleton function<test_singleton_functions>`
+
+  .. code-block:: python
+
+    def tautology(p, q):
+        return True
+        if p and not q:
+            return True
+        return q
+
+  the test passes and I remove the other statements
+
+  .. code-blocK:: python
+
+    def tautology(p, q):
+        return True
+
+----
+
+*********************************************************************************
 test_exclusive_disjunction
 *********************************************************************************
 
