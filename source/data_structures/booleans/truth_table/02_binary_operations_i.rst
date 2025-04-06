@@ -1333,13 +1333,13 @@ refactor: make it better
 review
 *********************************************************************************
 
-I ran tests for
+From the tests I know that
 
-* :ref:`Logical Negation<test_logical_negation>` which is not_
-* :ref:`Logical Conjunction <test_logical_conjunction>` which is and_
-* :ref:`Logical Disjunction <test_logical_disjunction>` which is or_
-* :ref:`Logical or Material Implication <test_logical_implication>`
-* :ref:`Converse Implication <test_converse_implication>`
+*  :ref:`Converse Implication <test_converse_implication>` returns ``p or not q``
+* :ref:`Logical or Material Implication  <test_logical_implication>` returns ``not p or q``
+* :ref:`Logical Disjunction <test_logical_disjunction>` is or_
+* :ref:`Logical Conjunction <test_logical_conjunction>` is and_
+* :ref:`Logical Negation<test_logical_negation>` is not_
 
 do you want more :ref:`more binary operations? <truth table: Binary Operations II>`
 

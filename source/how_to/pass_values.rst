@@ -172,7 +172,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-The problem with this solution is that ``text`` is a :doc:`singleton function </functions/test_singleton_functions>`, it does not care about the input and will always return ``'I received: hello'``. I want it to return the value it receives as part of the message.
+The problem with this solution is that ``text`` is a :ref:`singleton function<test_singleton_functions>`, it does not care about the input and will always return ``'I received: hello'``. I want it to return the value it receives as part of the message.
 
 red: make it fail
 ---------------------------------------------------------------------------------

@@ -1143,14 +1143,21 @@ refactor: make it better
 review
 *********************************************************************************
 
-I ran tests for
+From the tests I know that
 
-* :ref:`Logical Negation <test_logical_negation>` which is not_
-* :ref:`Logical Conjunction <test_logical_conjunction>` which is and_ as well as :ref:`Logical NAND <test_logical_nand>`
-* :ref:`Logical Disjunction <test_logical_disjunction>` which is or_ as well as :ref:`Logical NOR <test_logical_nor>`
-* :ref:`Logical Implication aka Material Implication<test_logical_implication>` and :ref:`Material NonImplication <test_material_non_implication>`
-* :ref:`Converse NonImplication <test_converse_non_implication>` and :ref:`Converse Implication <test_converse_implication>`
-* :ref:`Logical Equality <test_logical_equality>` and :ref:`Exclusive Disjunction <test_exclusive_disjunction>`
+* :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
+* :ref:`Tautology <test_tautology>` always returns :ref:`True<test_what_is_true>`
+* :ref:`Negate Second <test_negate_second>` always returns ``not q``
+* :ref:`Project Second <test_project_second>` always returns ``q``
+* :ref:`Negate First<test_negate_first>` always returns ``not p``
+* :ref:`Project First <test_project_first>` always returns ``p``
+* :ref:`Logical Equality <test_logical_equality>` is ``==``
+*  :ref:`Converse Implication <test_converse_implication>` returns ``p or not q``
+* :ref:`Logical or Material Implication  <test_logical_implication>` returns ``not p or q``
+* :ref:`Logical Disjunction <test_logical_disjunction>` is or_
+* :ref:`Logical Conjunction <test_logical_conjunction>` is and_
+* :ref:`Logical Negation<test_logical_negation>` is not_
+
 
 do you want more :ref:`more binary operations? <truth table: Binary Operations III>`
 
