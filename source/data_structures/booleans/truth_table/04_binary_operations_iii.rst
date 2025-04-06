@@ -154,66 +154,7 @@ green: make it pass
 
 ----
 
-*********************************************************************************
-test_project_second
-*********************************************************************************
 
-red: make it fail
-#################################################################################
-
-I add a test for project second to ``TestBinaryOperations``
-
-.. code-block:: python
-
-    def test_project_second(self):
-        self.assertTrue(src.truth_table.project_second(True, True))
-        self.assertFalse(src.truth_table.project_second(True, False))
-        self.assertTrue(src.truth_table.project_second(False, True))
-        self.assertFalse(src.truth_table.project_second(False, False))
-
-the terminal shows :ref:`AttributeError`
-
-green: make it pass
-#################################################################################
-
-* When I add a :ref:`function<functions>` definition to ``truth_table.py``
-
-  .. code-block:: python
-
-    def project_second(p, q):
-        return False
-
-  the terminal shows :ref:`AssertionError` for the first case
-* and I make the return value to make it pass
-
-  .. code-block:: python
-
-    def project_second(p, q):
-        return True
-
-  the terminal shows :ref:`AssertionError` for the second case
-* before I add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction``, ``negate_first``, ``negate_second`` and ``project_first`` because 2 out of the 4 cases have the same return value. I see that
-
-  * when ``q == True`` the result is :ref:`True<test_what_is_true>`
-  * when ``q == False`` the result is :ref:`False<test_what_is_false>`
-
-* What if I try using the conclusion from ``project_first``?
-
-  .. code-block:: python
-
-    def project_second(p, q):
-        return p
-
-  the terminal still shows :ref:`AssertionError`
-* What if I return ``q`` instead?
-  .. code-block:: python
-
-    def project_second(p, q):
-        return q
-
-  All tests pass and it is a simple line
-
-----
 
 *********************************************************************************
 test_tautology

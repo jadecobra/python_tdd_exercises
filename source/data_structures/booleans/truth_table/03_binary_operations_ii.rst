@@ -612,6 +612,196 @@ refactor: make it better
 ----
 
 *********************************************************************************
+test_project_second
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+I add another test
+
+.. code-block:: python
+
+  def test_project_first(self):
+      ...
+
+  def test_project_second(self):
+      self.assertTrue(src.truth_table.project_second(True, True))
+
+the terminal shows :ref:`AttributeError`
+
+.. code-block:: python
+
+  AttributeError: module 'src.truth_table' has no attribute 'project_second'
+
+green: make it pass
+#################################################################################
+
+When I add a :ref:`function<functions>` definition for it
+
+.. code-block:: python
+
+  def project_first(p, q):
+      return p
+
+
+  def project_second(p, q):
+      return p
+
+the test passes
+
+refactor: make it better
+#################################################################################
+
+* I add the second test
+
+  .. code-block:: python
+
+    def test_project_second(self):
+        self.assertTrue(src.truth_table.project_second(True, True))
+        self.assertFalse(src.truth_table.project_second(True, False))
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  I add an `if statement`_
+
+  .. code-block:: python
+
+    def project_second(p, q):
+        if p and not q:
+            return False
+        return p
+
+* I add the next case
+
+  .. code-block:: python
+
+    def test_project_second(self):
+        self.assertTrue(src.truth_table.project_second(True, True))
+        self.assertFalse(src.truth_table.project_second(True, False))
+        self.assertTrue(src.truth_table.project_second(False, True))
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  I add another `if statement`
+
+  .. code-block:: python
+
+    def project_second(p, q):
+        if not p and q:
+            return True
+        if p and not q:
+            return False
+        return p
+
+  green again
+
+* I add the last case
+
+  .. code-block:: python
+
+    def test_project_second(self):
+        self.assertTrue(src.truth_table.project_second(True, True))
+        self.assertFalse(src.truth_table.project_second(True, False))
+        self.assertTrue(src.truth_table.project_second(False, True))
+        self.assertFalse(src.truth_table.project_second(False, False))
+
+  and the test is still green, I still add an `if statement`_ for it
+
+  .. code-block:: python
+
+    def project_second(p, q):
+        if not p and not q:
+            return True
+        if not p and q:
+            return True
+        if p and not q:
+            return False
+        return p
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  I change the `return statement`_ then add an `if statement`_ for the first case
+
+  .. code-block:: python
+
+    def project_second(p, q):
+        if not p and not q:
+            return False
+        if not p and q:
+            return True
+        if p and not q:
+            return False
+        if p and q:
+            return True
+
+  the terminal shows green.
+
+* This :ref:`function<functions>` also returns :ref:`True<test_what_is_true>` in two of the cases and :ref:`False<test_what_is_false>` in the other two, I put them together
+
+  .. code-block:: python
+
+    def project_second(p, q):
+        if not p and not q:
+            return False
+        if p and not q:
+            return False
+        if p and q:
+            return True
+        if not p and q:
+            return True
+
+  it looks like it returns :ref:`True<test_what_is_true>` when ``q`` is :ref:`True<test_what_is_true>` and returns :ref:`False<test_what_is_false>` when it is not. I add a simpler `if statement` like I did with :ref:`Project First<test_project_first>`
+
+  .. code-block:: python
+
+    def project_second(p, q):
+        if q:
+            return True
+        else:
+            return False
+        if not p and not q:
+            return False
+        if p and not q:
+            return False
+        if p and q:
+            return True
+        if not p and q:
+            return True
+
+  the test is still green. I remove the other statements and use a `conditional expression`
+
+  .. code-block:: python
+
+    def project_second(p, q):
+        return q
+        if q:
+            return True
+        else:
+            return False
+
+  still green. I remove the other statements
+
+  .. code-block:: python
+
+    def project_second(p, q):
+        return q
+
+----
+
+*********************************************************************************
 test_exclusive_disjunction
 *********************************************************************************
 
