@@ -369,6 +369,144 @@ refactor: make it better
 ----
 
 *********************************************************************************
+test_material_non_implication
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+I add another test
+
+.. code-block:: python
+
+    def test_converse_non_implication(self):
+        ...
+
+    def test_material_non_implication(self):
+        self.assertFalse(src.truth_table.material_non_implication(True, True))
+
+the terminal shows :ref:`AttributeError`
+
+.. code-block:: python
+
+  AttributeError: module 'src.truth_table' has no attribute 'material_non_implication'
+
+green: make it pass
+#################################################################################
+
+I add a :ref:`function<functions>`
+
+.. code-block:: python
+
+  def converse_non_implication(p, q):
+      return not p and q
+
+
+  def material_non_implication(p, q):
+      return not p and q
+
+the test passes
+
+refactor: make it better
+#################################################################################
+
+* I add another case
+
+  .. code-block:: python
+
+    def test_material_non_implication(self):
+        self.assertFalse(src.truth_table.material_non_implication(True, True))
+        self.assertTrue(src.truth_table.material_non_implication(True, False))
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  I add an `if statement`_ for it
+
+  .. code-block:: python
+
+    def material_non_implication(p, q):
+        if p and not q:
+            return True
+        return not p and q
+
+  the test passes
+
+* I add the next case
+
+  .. code-block:: python
+
+    def test_material_non_implication(self):
+        self.assertFalse(src.truth_table.material_non_implication(True, True))
+        self.assertTrue(src.truth_table.material_non_implication(True, False))
+        self.assertFalse(src.truth_table.material_non_implication(False, True))
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  I add another `if statement`_
+
+  .. code-block:: python
+
+    def material_non_implication(p, q):
+        if not p and q:
+            return False
+        if p and not q:
+            return True
+        return not p and q
+
+* I add the last case
+
+  .. code-block:: python
+
+    def test_material_non_implication(self):
+        self.assertFalse(src.truth_table.material_non_implication(True, True))
+        self.assertTrue(src.truth_table.material_non_implication(True, False))
+        self.assertFalse(src.truth_table.material_non_implication(False, True))
+        self.assertFalse(src.truth_table.material_non_implication(False, False))
+
+  the terminal shows green
+
+* I move the `if statement`_ for the case where the result is :ref:`True<test_what_is_true>` to the top of the :ref:`function<functions>` then add an else_ clause
+
+  .. code-block:: python
+
+    def material_non_implication(p, q):
+        if p and not q:
+            return True
+        else:
+            return False
+        if not p and q:
+            return False
+        return not p and q
+
+  still green. I use a `conditional expression`_
+
+  .. code-block:: python
+
+    def material_non_implication(p, q):
+        return p and not q
+        if p and not q:
+            return True
+        else:
+            return False
+
+  the test is still green. I remove the other statements
+
+  .. code-block:: python
+
+    def material_non_implication(p, q):
+        return p and not q
+
+----
+
+*********************************************************************************
 test_logical_nand
 *********************************************************************************
 
@@ -713,147 +851,6 @@ refactor: make it better
         return not (p or q)
 
 ----
-
-*********************************************************************************
-test_material_non_implication
-*********************************************************************************
-
-red: make it fail
-#################################################################################
-
-I add another test
-
-.. code-block:: python
-
-    def test_logical_nor(self):
-        ...
-
-    def test_material_non_implication(self):
-        self.assertFalse(src.truth_table.material_non_implication(True, True))
-
-the terminal shows :ref:`AttributeError`
-
-.. code-block:: python
-
-  AttributeError: module 'src.truth_table' has no attribute 'material_non_implication'
-
-green: make it pass
-#################################################################################
-
-I add a :ref:`function<functions>`
-
-.. code-block:: python
-
-  def logical_nor(p, q):
-      return not (p or q)
-
-
-  def material_non_implication(p, q):
-      return not (p or q)
-
-the test passes
-
-refactor: make it better
-#################################################################################
-
-* I add another case
-
-  .. code-block:: python
-
-    def test_material_non_implication(self):
-        self.assertFalse(src.truth_table.material_non_implication(True, True))
-        self.assertTrue(src.truth_table.material_non_implication(True, False))
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: False is not true
-
-  I add an `if statement`_ for it
-
-  .. code-block:: python
-
-    def material_non_implication(p, q):
-        if p and not q:
-            return True
-        return not (p or q)
-
-  the test passes
-
-* I add the next case
-
-  .. code-block:: python
-
-    def test_material_non_implication(self):
-        self.assertFalse(src.truth_table.material_non_implication(True, True))
-        self.assertTrue(src.truth_table.material_non_implication(True, False))
-        self.assertFalse(src.truth_table.material_non_implication(False, True))
-
-  the test is still green
-
-* I add the last case
-
-  .. code-block:: python
-
-    def test_material_non_implication(self):
-        self.assertFalse(src.truth_table.material_non_implication(True, True))
-        self.assertTrue(src.truth_table.material_non_implication(True, False))
-        self.assertFalse(src.truth_table.material_non_implication(False, True))
-        self.assertFalse(src.truth_table.material_non_implication(False, False))
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: True is not false
-
-  I add an `if statement`_ for it
-
-  .. code-block:: python
-
-    def material_non_implication(p, q):
-        if not p and not q:
-            return False
-        if p and not q:
-            return True
-        return not (p or q)
-
-  the test passes
-
-* I move the `if statement`_ for the case where the result is :ref:`True<test_what_is_true>` to the top of the :ref:`function<functions>` then add an else_ clause
-
-  .. code-block:: python
-
-    def material_non_implication(p, q):
-        if p and not q:
-            return True
-        else:
-            return False
-        if not p and not q:
-            return False
-        return not (p or q)
-
-  still green. I use a `conditional expression`_
-
-  .. code-block:: python
-
-    def material_non_implication(p, q):
-        return p and not q
-        if p and not q:
-            return True
-        else:
-            return False
-
-  the test is still green. I remove the other statements
-
-  .. code-block:: python
-
-    def material_non_implication(p, q):
-        return p and not q
-
-----
-
 
 *********************************************************************************
 review
