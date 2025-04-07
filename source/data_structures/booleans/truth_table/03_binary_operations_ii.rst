@@ -908,7 +908,7 @@ refactor: make it better
 
   the test passes and I remove the other statements
 
-  .. code-blocK:: python
+  .. code-block:: python
 
     def tautology(p, q):
         return True
@@ -1010,9 +1010,77 @@ test_negate_second
 red: make it fail
 #################################################################################
 
-I add a test for negate second to ``TestBinaryOperations``
+I add a test
 
 .. code-block:: python
+
+  def test_negate_second(self):
+      self.assertFalse(src.truth_table.negate_second(True, True))
+
+and the terminal shows :ref:`AttributeError`
+
+.. code-block:: python
+
+  AttributeError: module 'src.truth_table' has no attribute 'negate_second'
+
+green: make it pass
+#################################################################################
+
+I add a :ref:`function<functions>` definition to ``truth_table.py``
+
+.. code-block:: python
+
+  def contradiction(p, q):
+      return False
+
+
+  def negate_second(p, q):
+      return False
+
+the test passes
+
+refactor: make it better
+#################################################################################
+
+* I add the next case
+
+  .. code-block:: python
+
+    def test_negate_second(self):
+        self.assertFalse(src.truth_table.negate_second(True, True))
+        self.assertTrue(src.truth_table.negate_second(True, False))
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  I add an `if statement`_
+
+  .. code-block:: python
+
+    def negate_second(p, q):
+        if p and not q:
+            return True
+        return False
+
+  the test passes
+
+* I add the third case
+
+  .. code-block:: python
+
+    def test_negate_second(self):
+        self.assertFalse(src.truth_table.negate_second(True, True))
+        self.assertTrue(src.truth_table.negate_second(True, False))
+        self.assertFalse(src.truth_table.negate_second(False, True))
+
+  the test is still passing
+
+* I add another case
+
+  .. code-block:: python
 
     def test_negate_second(self):
         self.assertFalse(src.truth_table.negate_second(True, True))
@@ -1020,41 +1088,50 @@ I add a test for negate second to ``TestBinaryOperations``
         self.assertFalse(src.truth_table.negate_second(False, True))
         self.assertTrue(src.truth_table.negate_second(False, False))
 
-and the terminal shows :ref:`AttributeError`
+  the terminal shows :ref:`AssertionError`
 
-green: make it pass
-#################################################################################
+  .. code-block:: python
 
+    AssertionError: False is not true
 
-* I add a :ref:`function<functions>` definition to ``truth_table.py``
+  I add another `if statement`_
+
+  .. code-block:: python
+
+  the test is green again
+
+* The two `if statements`_ that return :ref:`True<test_what_is_true>` have ``not q``, so I write and `if statement`_ with it
 
   .. code-block:: python
 
     def negate_second(p, q):
+        if not q:
+            return True
+        else:
+            return False
+        if not p and not q:
+            return True
+        if p and not q:
+            return True
         return False
 
-  and the terminal shows :ref:`AssertionError` for the third case
-* before I add a condition for it, this looks similar to ``logical_equality``, ``exclusive_disjunction`` and ``negate_first`` because 2 out of the 4 cases have the same return value. I see that
-
-  - when ``q == True`` the result is :ref:`False<test_what_is_false>`
-  - when ``q == False`` the result is :ref:`True<test_what_is_true>`
-
-* What if I try using the conclusion from ``negate_first``?
-
-  .. code-block:: python
-
-    def negate_second(p, q):
-        return not p
-
-  the terminal still shows :ref:`AssertionError`
-* What if I try ``q`` instead?
+  the terminal still shows green. I use a `ternary operator`_
 
   .. code-block:: python
 
     def negate_second(p, q):
         return not q
+        if not q:
+            return True
+        else:
+            return False
 
-  All tests pass. Fantastic!
+  still green. I remove the other statements
+
+  .. code-block:: python
+
+    def negate_second(p, q):
+        return not q
 
 ----
 

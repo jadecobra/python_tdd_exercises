@@ -845,7 +845,7 @@ refactor: make it better
 
 * I do the same thing for the ``first_name`` variable
 
-  .. code-blocK:: python
+  .. code-block:: python
 
     def test_function_w_keyword_arguments(self):
         first_name = random.choice((
