@@ -1,6 +1,6 @@
 .. include:: ../../../links.rst
 
-.. _truth_table_
+.. _truth_table:
 
 #################################################################################
 booleans: truth table
