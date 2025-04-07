@@ -54,48 +54,6 @@ class TestBinaryOperations(unittest.TestCase):
         self.assertFalse(src.truth_table.logical_equality(False, True))
         self.assertTrue(src.truth_table.logical_equality(False, False))
 
-    def test_exclusive_disjunction(self):
-        self.assertFalse(src.truth_table.exclusive_disjunction(True, True))
-        self.assertTrue(src.truth_table.exclusive_disjunction(True, False))
-        self.assertTrue(src.truth_table.exclusive_disjunction(False, True))
-        self.assertFalse(src.truth_table.exclusive_disjunction(False, False))
-
-    def test_converse_non_implication(self):
-        self.assertFalse(src.truth_table.converse_non_implication(True, True))
-        self.assertFalse(src.truth_table.converse_non_implication(True, False))
-        self.assertTrue(src.truth_table.converse_non_implication(False, True))
-        self.assertFalse(src.truth_table.converse_non_implication(False, False))
-
-    def test_material_non_implication(self):
-        self.assertFalse(src.truth_table.material_non_implication(True, True))
-        self.assertTrue(src.truth_table.material_non_implication(True, False))
-        self.assertFalse(src.truth_table.material_non_implication(False, True))
-        self.assertFalse(src.truth_table.material_non_implication(False, False))
-
-    def test_logical_nor(self):
-        self.assertFalse(src.truth_table.logical_nor(True, True))
-        self.assertFalse(src.truth_table.logical_nor(True, False))
-        self.assertFalse(src.truth_table.logical_nor(False, True))
-        self.assertTrue(src.truth_table.logical_nor(False, False))
-
-    def test_logical_nand(self):
-        self.assertFalse(src.truth_table.logical_nand(True, True))
-        self.assertTrue(src.truth_table.logical_nand(True, False))
-        self.assertTrue(src.truth_table.logical_nand(False, True))
-        self.assertTrue(src.truth_table.logical_nand(False, False))
-
-    def test_negate_first(self):
-        self.assertFalse(src.truth_table.negate_first(True, True))
-        self.assertFalse(src.truth_table.negate_first(True, False))
-        self.assertTrue(src.truth_table.negate_first(False, True))
-        self.assertTrue(src.truth_table.negate_first(False, False))
-
-    def test_negate_second(self):
-        self.assertFalse(src.truth_table.negate_second(True, True))
-        self.assertTrue(src.truth_table.negate_second(True, False))
-        self.assertFalse(src.truth_table.negate_second(False, True))
-        self.assertTrue(src.truth_table.negate_second(False, False))
-
     def test_project_first(self):
         self.assertTrue(src.truth_table.project_first(True, True))
         self.assertTrue(src.truth_table.project_first(True, False))
@@ -120,10 +78,21 @@ class TestBinaryOperations(unittest.TestCase):
         self.assertFalse(src.truth_table.contradiction(False, True))
         self.assertFalse(src.truth_table.contradiction(False, False))
 
+    def test_negate_second(self):
+        self.assertFalse(src.truth_table.negate_second(True, True))
+        self.assertTrue(src.truth_table.negate_second(True, False))
+        self.assertFalse(src.truth_table.negate_second(False, True))
+        self.assertTrue(src.truth_table.negate_second(False, False))
+
+    def test_negate_first(self):
+        self.assertFalse(src.truth_table.negate_first(True, True))
+        self.assertFalse(src.truth_table.negate_first(True, False))
+        self.assertTrue(src.truth_table.negate_first(False, True))
+        self.assertTrue(src.truth_table.negate_first(False, False))
+
 
 # Exceptions Encountered
 # AssertionError
-# ModuleNotFoundError
 # AttributeError
 # TypeError
 # SyntaxError

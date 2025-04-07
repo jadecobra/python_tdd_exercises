@@ -29,7 +29,7 @@ I add a new test
 
 .. code-block:: python
 
-  def test_logical_equality(self):
+  def test_negate_first(self):
       ...
 
   def test_exclusive_disjunction(self):
@@ -48,28 +48,12 @@ I add the :ref:`function<functions>`
 
 .. code-block:: python
 
-  def logical_equality(p, q):
-      return p == q
-      return (p and q) or not (p or q)
+  def negate_first(p, q):
+      return not p
 
 
   def exclusive_disjunction(p, q):
-      return p == q
-
-the terminal shows :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: True is not false
-
-I add an `if statement`_
-
-.. code-block:: python
-
-  def exclusive_disjunction(p, q):
-      if p and q:
-          return False
-      return p == q
+      return not p
 
 the test passes
 
@@ -97,9 +81,7 @@ refactor: make it better
     def exclusive_disjunction(p, q):
         if p and not q:
             return True
-        if p and q:
-            return False
-        return p == q
+        return not p
 
   the test passes
 
@@ -112,13 +94,24 @@ refactor: make it better
         self.assertTrue(src.truth_table.exclusive_disjunction(True, False))
         self.assertTrue(src.truth_table.exclusive_disjunction(False, True))
 
+  the test is still green. I add an `if statement`_
+
+  .. code-block:: python
+
+    def exclusive_disjunction(p, q):
+        if not p and q:
+            return False
+        if p and not q:
+            return True
+        return not p
+
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: False is not true
 
-  I add another `if statement`_
+  I change the `return statement`_
 
   .. code-block:: python
 
@@ -127,9 +120,7 @@ refactor: make it better
             return True
         if p and not q:
             return True
-        if p and q:
-            return False
-        return p == q
+        return not p
 
   the test passes
 
@@ -160,27 +151,11 @@ refactor: make it better
             return True
         if p and not q:
             return True
-        if p and q:
-            return False
-        return p == q
+        return not p
 
-  the terminal shows green
+  the test passes
 
-* I remove ``return p == q`` and move the last case to the bottom to put the two cases that return :ref:`True<test_what_is_true>` together
-
-  .. code-block:: python
-
-    def exclusive_disjunction(p, q):
-        if not p and q:
-            return True
-        if p and not q:
-            return True
-        if p and q:
-            return False
-        if not p and not q:
-            return False
-
-  still green. I use or_ to put the two statements that return :ref:`True<test_what_is_true>` together
+* I use or_ to write one statement that covers the two cases which return :ref:`True<test_what_is_true>`
 
   .. code-block:: python
 
@@ -189,16 +164,15 @@ refactor: make it better
             return True
         else:
             return False
+        if not p and not q:
+            return False
         if not p and q:
             return True
         if p and not q:
             return True
-        if p and q:
-            return False
-        if not p and not q:
-            return False
+        return not p
 
-  the terminal still shows green. I remove the other `if statements`_ and use a `conditional expression`_
+  still green. I use a `conditional expressions`_
 
   .. code-block:: python
 
@@ -216,7 +190,7 @@ refactor: make it better
     def exclusive_disjunction(p, q):
         return (not p and q) or (p and not q)
 
-* since the :ref:`function<functions>` returns :ref:`True<test_what_is_true>` in the two cases when ``p`` and ``q`` are NOT the same, it could also be written as
+* This :ref:`function<functions>` returns :ref:`True<test_what_is_true>` in the two cases when ``p`` and ``q`` are NOT the same, it could also be written as
 
   .. code-block:: python
 
@@ -225,6 +199,7 @@ refactor: make it better
             return True
         else:
             return False
+        return (not p and q) or (p and not q)
 
   or
 
@@ -232,6 +207,7 @@ refactor: make it better
 
     def exclusive_disjunction(p, q):
         return not (p == q)
+        return (not p and q) or (p and not q)
 
   or
 
@@ -239,6 +215,8 @@ refactor: make it better
 
     def exclusive_disjunction(p, q):
         return p != q
+        return not (p == q)
+        return (not p and q) or (p and not q)
 
 ----
 
@@ -321,7 +299,35 @@ refactor: make it better
         self.assertFalse(src.truth_table.converse_non_implication(True, False))
         self.assertTrue(src.truth_table.converse_non_implication(False, True))
 
-  the test is still green
+  the test is still green. I add an `if statement`_
+
+  .. code-block:: python
+
+    def converse_non_implication(p, q):
+        if not p and q:
+            return False
+        if p and not q:
+            return False
+        return p != q
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  I make it return :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+
+    def converse_non_implication(p, q):
+        if not p and q:
+            return True
+        if p and not q:
+            return False
+        return p != q
+
+  the test is green again
 
 * I add the fourth case
 
@@ -333,9 +339,41 @@ refactor: make it better
         self.assertTrue(src.truth_table.converse_non_implication(False, True))
         self.assertFalse(src.truth_table.converse_non_implication(False, False))
 
-  the terminal still shows green
+  the terminal still shows green. I add another `if statement`_
 
-* I add an `if statement`_ with an else_ clause for the case where the result is :ref:`True<test_what_is_true>`
+  .. code-block:: python
+
+    def converse_non_implication(p, q):
+        if not p and not q:
+            return True
+        if not p and q:
+            return True
+        if p and not q:
+            return False
+        return p != q
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  I change the `return statement`_
+
+  .. code-block:: python
+
+    def converse_non_implication(p, q):
+        if not p and not q:
+            return False
+        if not p and q:
+            return True
+        if p and not q:
+            return False
+        return p != q
+
+  the test is green again
+
+* I move the statement where :ref:`True<test_what_is_true>` is the result to the top then add an else_ clause
 
   .. code-block:: python
 
@@ -343,6 +381,8 @@ refactor: make it better
         if not p and q:
             return True
         else:
+            return False
+        if not p and not q:
             return False
         if p and not q:
             return False
@@ -388,8 +428,9 @@ I add another test
 the terminal shows :ref:`AttributeError`
 
 .. code-block:: python
+  :force:
 
-  AttributeError: module 'src.truth_table' has no attribute 'material_non_implication'
+  AttributeError: module 'src.truth_table' has no attribute 'material_non_implication'. Did you mean: 'converse_non_implication'?
 
 green: make it pass
 #################################################################################
@@ -471,7 +512,39 @@ refactor: make it better
         self.assertFalse(src.truth_table.material_non_implication(False, True))
         self.assertFalse(src.truth_table.material_non_implication(False, False))
 
-  the terminal shows green
+  the terminal shows green. I add an `if statement`_
+
+  .. code-block:: python
+
+    def material_non_implication(p, q):
+        if not p and not q:
+            return True
+        if not p and q:
+            return False
+        if p and not q:
+            return True
+        return not p and q
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  I change the line to fix it
+
+  .. code-block:: python
+
+    def material_non_implication(p, q):
+        if not p and not q:
+            return False
+        if not p and q:
+            return False
+        if p and not q:
+            return True
+        return not p and q
+
+  the test is green again
 
 * I move the `if statement`_ for the case where the result is :ref:`True<test_what_is_true>` to the top of the :ref:`function<functions>` then add an else_ clause
 
@@ -481,6 +554,8 @@ refactor: make it better
         if p and not q:
             return True
         else:
+            return False
+        if not p and not q:
             return False
         if not p and q:
             return False
