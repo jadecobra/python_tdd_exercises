@@ -965,7 +965,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-*YOU DID IT!* You made it to the end of the :ref:`Truth Table<truth_table>` series. The tests show that for any Binary Operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
+*YOU DID IT!* You made it to the end of the :ref:`Truth Table <truth_table>` series. The tests show that for any Binary Operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
 
 * :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
 * :ref:`Tautology <test_tautology>` always returns :ref:`True<test_what_is_true>`
@@ -973,16 +973,16 @@ review
 * :ref:`Project Second <test_project_second>` always returns ``q``
 * :ref:`Negate First<test_negate_first>` always returns ``not p``
 * :ref:`Project First <test_project_first>` always returns ``p``
-* :ref:`Exclusive Disjunction <test_exclusive_disjunction>` is ``!=`` or the opposite of :ref:`Logical Equality <test_logical_equality>`, I will call it ``Logical Inequality``
+* :ref:`Exclusive Disjunction <test_exclusive_disjunction>` is ``!=``, or the :ref:`Logical Negation<test_logical_negation>` of :ref:`Logical Equality <test_logical_equality>`
 * :ref:`Logical Equality <test_logical_equality>` is ``==``
 * :ref:`Converse NonImplication <test_converse_non_implication>` returns ``not p and q``
 *  :ref:`Converse Implication <test_converse_implication>` returns ``p or not q``
 * :ref:`Material NonImplication <test_material_non_implication>` returns ``p and not q``
 * :ref:`Logical or Material Implication  <test_logical_implication>` returns ``not p or q``
 * :ref:`Logical NOR <test_logical_nor>` returns ``not (p or q)``
-* :ref:`Logical Disjunction <test_logical_disjunction>` is or_
+* :ref:`Logical Disjunction <test_logical_disjunction>` returns ``p or q``
 * :ref:`Logical NAND <test_logical_nand>` returns ``not (p and q)``
-* :ref:`Logical Conjunction <test_logical_conjunction>` is and_
+* :ref:`Logical Conjunction <test_logical_conjunction>` returns ``p and q``
 * :ref:`Logical Negation<test_logical_negation>` is not_
 * not_ or_ is and_
 * not_ and_ is or_
