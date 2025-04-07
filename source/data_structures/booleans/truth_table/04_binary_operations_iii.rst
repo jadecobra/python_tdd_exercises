@@ -658,7 +658,35 @@ refactor: make it better
         self.assertFalse(src.truth_table.logical_nor(True, False))
         self.assertFalse(src.truth_table.logical_nor(False, True))
 
-  the test is still green
+  the test is still green. I add an `if statement`_ that should cause a failure
+
+  .. code-block:: python
+
+    def logical_nor(p, q):
+        if not p and q:
+            return True
+        if p and not q:
+            return False
+        return p and not q
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the `return statement`_
+
+  .. code-block:: python
+
+    def logical_nor(p, q):
+        if not p and q:
+            return False
+        if p and not q:
+            return False
+        return p and not q
+
+  and the test is green again
 
 * I add the last case
 
@@ -676,13 +704,15 @@ refactor: make it better
 
     AssertionError: False is not true
 
-  I add an `if statement`_
+  I add another `if statement`_
 
   .. code-block:: python
 
     def logical_nor(p, q):
         if not p and not q:
             return True
+        if not p and q:
+            return False
         if p and not q:
             return False
         return p and not q
@@ -697,6 +727,8 @@ refactor: make it better
         if not p and not q:
             return True
         else:
+            return False
+        if not p and q:
             return False
         if p and not q:
             return False
@@ -857,7 +889,18 @@ refactor: make it better
         self.assertTrue(src.truth_table.logical_nand(False, True))
         self.assertTrue(src.truth_table.logical_nand(False, False))
 
-  and the test passes
+  the test passes. I add an `if statement`_ to see it fail
+
+  .. code-block:: python
+
+    def logical_nand(p, q):
+        if not p and not q:
+            return True
+        if not p and q:
+            return True
+        if p and not q:
+            return True
+        return not (p or q)
 
 * I add an `if statement`_ for the one case that returns :ref:`False<test_what_is_false>` then add an else_ clause
 
@@ -867,6 +910,8 @@ refactor: make it better
         if p and q:
             return False
         else:
+            return True
+        if not p and not q:
             return True
         if not p and q:
             return True
@@ -907,7 +952,7 @@ refactor: make it better
         else:
             return False
 
-  I remove the other statements
+  still green. I remove the other statements
 
   .. code-block:: python
 
@@ -920,7 +965,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-*YOU DID IT!* You made it to the end of the ``Truth Table`` series. Summarizing what the tests have shown so far, I know that for any boolean operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
+*YOU DID IT!* You made it to the end of the :ref:`Truth Table<truth_table>` series. The tests show that for any Binary Operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
 
 * :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
 * :ref:`Tautology <test_tautology>` always returns :ref:`True<test_what_is_true>`

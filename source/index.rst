@@ -71,7 +71,7 @@ howtos
   how_to/make_person
   how_to/exception_handling_tests
   how_to/exception_handling_programs
-  how_to/sleep_duration
+  how_to/sleep_duration/sleep_duration
 
 *********************************************************************************
 table of contents
