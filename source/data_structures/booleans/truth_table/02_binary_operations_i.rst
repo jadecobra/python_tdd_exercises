@@ -959,6 +959,215 @@ refactor: make it better
 ----
 
 *********************************************************************************
+test_negate_first
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+I add a test for negate first to ``TestBinaryOperations`` in ``test_truth_table.py``
+
+.. code-block:: python
+
+  def test_converse_non_implication(self):
+      ...
+
+  def test_negate_first(self):
+      self.assertFalse(src.truth_table.negate_first(True, True))
+
+and the terminal shows :ref:`AttributeError`
+
+.. code-block:: python
+
+  AttributeError: module 'src.truth_table' has no attribute 'negate_first'
+
+green: make it pass
+#################################################################################
+
+I add the :ref:`function<functions>` definition
+
+.. code-block:: python
+
+  def converse_non_implication(p, q):
+      return not p and q
+
+
+  def negate_first(p, q):
+      return not p and q
+
+the test passes
+
+refactor: make it better
+#################################################################################
+
+* I add the second case
+
+  .. code-block:: python
+
+    def test_negate_first(self):
+        self.assertFalse(src.truth_table.negate_first(True, True))
+        self.assertFalse(src.truth_table.negate_first(True, False))
+
+  the test is still green. I add an `if statement`_
+
+  .. code-block:: python
+
+    def negate_first(p, q):
+        if p == True and q == False:
+            return True
+        return not p and q
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  I fix the `return statement`_
+
+  .. code-block:: python
+
+    def negate_first(p, q):
+        if p == True and q == False:
+            return False
+        return not p and q
+
+  the test is green again
+
+* I add the next case
+
+  .. code-block:: python
+
+    def test_negate_first(self):
+        self.assertFalse(src.truth_table.negate_first(True, True))
+        self.assertFalse(src.truth_table.negate_first(True, False))
+        self.assertTrue(src.truth_table.negate_first(False, True))
+
+  the terminal still shows green. I add another `if statement`_
+
+  .. code-block:: python
+
+    def negate_first(p, q):
+        if p == False and q == True:
+            return False
+        if p == True and q == False:
+            return False
+        return not p and q
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  I fix the new statement
+
+  .. code-block:: python
+
+    def negate_first(p, q):
+        if p == False and q == True:
+            return True
+        if p == True and q == False:
+            return False
+        return not p and q
+
+  the test passes
+
+* I add the last case
+
+  .. code-block:: python
+
+    def test_negate_first(self):
+        self.assertFalse(src.truth_table.negate_first(True, True))
+        self.assertFalse(src.truth_table.negate_first(True, False))
+        self.assertTrue(src.truth_table.negate_first(False, True))
+        self.assertTrue(src.truth_table.negate_first(False, False))
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    def negate_first(p, q):
+        if p == False and q == False:
+            return True
+        if p == False and q == True:
+            return True
+        if p == True and q == False:
+            return False
+        return not p and q
+
+  the terminal shows green again
+
+* The two cases where the :ref:`function<functions>` returns :ref:`True<test_what_is_true>` are when ``p`` is :ref:`False<test_what_is_false>` so I do not need ``q`` for this one, I add a new `if statement`_ with an else_ clause
+
+  .. code-block:: python
+
+    def negate_first(p, q):
+        if p == False:
+            return True
+        else:
+            return False
+        if p == False and q == False:
+            return True
+        if p == False and q == True:
+            return True
+        if p == True and q == False:
+            return False
+        return not p and q
+
+  the test is still green. I remove the other statements and use bool_
+
+  .. code-block:: python
+
+    def negate_first(p, q):
+        if not bool(p):
+        # if p == False:
+            return True
+        else:
+            return False
+
+  still green, I remove the commented line and simplify the `if statement`_
+
+  .. code-block:: python
+
+    def negate_first(p, q):
+        if not p:
+        # if not bool(p):
+            return True
+        else:
+            return False
+
+  the test is still green. I add a `ternary operator`_
+
+  .. code-block:: python
+
+    def negate_first(p, q):
+        return True if not p else False
+        if not p:
+            return True
+        else:
+            return False
+
+  which is the same as
+
+  .. code-block:: python
+
+    def negate_first(p, q):
+        return not p
+        return True if not p else False
+
+  all the tests are still passing. I remove the second `return statement`
+
+  .. code-block:: python
+
+    def negate_first(p, q):
+        return not p
+
+  ah, just like the name
+
+----
+
+*********************************************************************************
 test_logical_disjunction
 *********************************************************************************
 
