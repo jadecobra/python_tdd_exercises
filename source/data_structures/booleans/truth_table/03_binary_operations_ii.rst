@@ -689,12 +689,11 @@ I add another test to the ``TestBinaryOperations`` TestCase_
 
   def test_logical_conjunction(self):
       ...
-      self.assertFalse(src.truth_table.logical_conjunction(False, False))
 
   def test_logical_disjunction(self):
       self.assertTrue(src.truth_table.logical_disjunction(True, True))
 
-and the terminal shows :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 .. code-block:: python
   :force:
@@ -708,12 +707,12 @@ I add the :ref:`function<functions>`
 
 .. code-block:: python
 
-  def logical_conjunction(p, q):
-    return p and q
+  def tautology(p, q):
+      return True
 
 
   def logical_disjunction(p, q):
-      return p and q
+      return True
 
 the test passes
 
@@ -728,23 +727,7 @@ refactor: make it better
         self.assertTrue(src.truth_table.logical_disjunction(True, True))
         self.assertTrue(src.truth_table.logical_disjunction(True, False))
 
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: False is not true
-
-  I add an `if statement`_
-
-  .. code-block:: python
-
-    def logical_disjunction(p, q):
-        if p == True:
-            if q == False:
-                return True
-        return p and q
-
-  the test passes
+  the terminal still shows green which matches the return value of the :ref:`function<functions>`
 
 * I add the next case
 
@@ -755,28 +738,9 @@ refactor: make it better
         self.assertTrue(src.truth_table.logical_disjunction(True, False))
         self.assertTrue(src.truth_table.logical_disjunction(False, True))
 
-  the terminal shows :ref:`AssertionError`
+  the test is still green
 
-  .. code-block:: python
-
-    AssertionError: False is not true
-
-  I add an `if statement`_ for this case
-
-  .. code-block:: python
-
-    def logical_disjunction(p, q):
-        if p == False:
-            if q == True:
-                return True
-        if p == True:
-            if q == False:
-                return True
-        return p and q
-
-  the test passes
-
-* I add the last case
+* I add the fourth case
 
   .. code-block:: python
 
@@ -786,156 +750,60 @@ refactor: make it better
         self.assertTrue(src.truth_table.logical_disjunction(False, True))
         self.assertFalse(src.truth_table.logical_disjunction(False, False))
 
-  the terminal shows green. I add an `if statement`_ to double check the last case
-
-  .. code-block:: python
-
-    def logical_disjunction(p, q):
-        if p == False:
-            if q == False:
-                return True
-            if q == True:
-                return True
-        if p == True:
-            if q == False:
-                return True
-        return p and q
-
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: True is not false
-
-  I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the `return statement`_
-
-  .. code-block:: python
-
     def logical_disjunction(p, q):
-        if p == False:
-            if q == False:
-                return False
-            if q == True:
-                return True
-        if p == True:
-            if q == False:
-                return True
-        return p and q
-
-  the test passes, I also add an `if statement`_ for the first case
-
-  .. code-block:: python
-
-    def logical_disjunction(p, q):
-        if p == False:
-            if q == False:
-                return False
-            if q == True:
-                return True
-        if p == True:
-            if q == False:
-                return True
-            if q == True:
-                return False
-        return p and q
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: False is not true
-
-  I change the `return statement`_
-
-  .. code-block:: python
-
-    def logical_disjunction(p, q):
-        if p == False:
-            if q == False:
-                return False
-            if q == True:
-                return True
-        if p == True:
-            if q == False:
-                return True
-            if q == True:
-                return True
-        return p and q
-
-  the terminal shows green again and I remove ``return p and q``
-
-* There are only two results for ``logical_disjunction`` as well - :ref:`True<test_what_is_true>` in the first 3 cases and :ref:`False<test_what_is_false>` in the last case. I add a new `if statement`_ with an else_ clause
-
-  .. code-block:: python
-
-    def logical_disjunction(p, q):
-        if p == False and q == False:
+        if not p and not q:
             return False
-        else:
-            return True
-        if p == False:
-            if q == False:
-                return False
-            if q == True:
-                return True
-        if p == True:
-            if q == False:
-                return True
-            if q == True:
-                return True
+        return True
 
-  the terminal still shows green. I remove the other statements then write the opposite of the `if statement`_
+  the test passes. I add an else_ clause to make it clearer
 
   .. code-block:: python
 
     def logical_disjunction(p, q):
-        if p == False and q == False:
+        if not p and not q:
             return False
         else:
             return True
 
-  the test is still green. I remove the commented line and rewrite the else_ clause with the opposite of the `if statement`_ using ``logical_negation(not)``
+  the terminal still shows green
+
+* I rewrite the else_ clause using not_ with the `if statement`_
 
   .. code-block:: python
 
     def logical_disjunction(p, q):
-        if p == False and q == False:
+        if not p and not q:
             return False
-        if not (p == False and q == False):
+        if not (not p and not q):
         # else:
             return True
 
-  still green. I remove the commented line and move the first two lines to the bottom
+  still green. I move the first two lines to the bottom then add an else_ clause
 
   .. code-block:: python
 
     def logical_disjunction(p, q):
-        if not (p == False and q == False):
-            return True
-        if p == False and q == False:
-            return False
-
-  the test is still green. I change the second `if statement` to an else_ clause
-
-  .. code-block:: python
-
-    def logical_disjunction(p, q):
-        if not (p == False and q == False):
+        if not (not p and not q):
             return True
         else:
-        # if p == False and q == False:
+        # if not p and not q:
             return False
 
-  the terminal shows green. I remove the commented line and "multiply" not_ by each symbol in the parentheses to make it simpler
+  the test is still green. I "multiply" not_ by each symbol in the parentheses to make it simpler
 
   .. code-block:: python
 
     def logical_disjunction(p, q):
-        if not p not == not False not and not q not == not False:
-        # if not (p == False and q == False):
+        if not not p not and not not q:
+        # if not (not p and not q):
             return True
         else:
             return False
+
 
   the terminal shows SyntaxError_
 
@@ -943,100 +811,50 @@ refactor: make it better
 
     SyntaxError: invalid syntax
 
-  - not_ ``==`` is ``!=``
-  - not_ :ref:`False<test_what_is_false>` is :ref:`True<test_what_is_true>`
+  I add it to the list of Exceptions_ encountered
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AssertionError
+    # AttributeError
+    # TypeError
+    # SyntaxError
+
+  then I fix the line
+
+  - not_ not_ cancels out
   - not_ and_ is or_
 
-  I fix the line
-
-  .. code-block:: python
-
-    def logical_disjunction(p, q):
-        if not p != True or not q != True:
-        # if not (p == False and q == False):
-            return True
-        else:
-            return False
-
-  and the test passes. I remove the commented line and rewrite the `if statement`_
-
-  .. code-block:: python
-
-    def logical_disjunction(p, q):
-        if not p == False or not q == False:
-        # if not p != True or not q != True:
-            return True
-        else:
-            return False
-
-  ``not x == False`` is the same as ``x == True``, I rewrite the `if statement`_ to show this
-
-  .. code-block:: python
-
-    def logical_disjunction(p, q):
-        if p == True or q == True:
-        # if not p != True or not q != True:
-            return True
-        else:
-            return False
-
-  still green, I remove the commented line and rewrite it with bool_
-
-  .. code-block:: python
-
-    def logical_disjunction(p, q):
-        if bool(p) or bool(q):
-        # if p == True or q == True:
-            return True
-        else:
-            return False
-
-  I remove the comment and rewrite the `if statement`_ with Python's hidden truth value testing
-
   .. code-block:: python
 
     def logical_disjunction(p, q):
         if p or q:
-        # if bool(p) or bool(q):
+        # if not not p not and not not q:
+        # if not (not p and not q):
             return True
         else:
             return False
 
-  still green. I rewrite the statements as a `conditional expression`_
 
-  .. code-block:: python
-
-    def logical_disjunction(p, q):
-        return True if p or q else False
-        if p or q:
-            return True
-        else:
-            return False
-
-  the test is still green. I remove the `if statements`_ then use a simpler `return statement`_
+  the test passes. I rewrite the statements as a `conditional expression`_
 
   .. code-block:: python
 
     def logical_disjunction(p, q):
         return p or q
-        return True if p or q else False
+        if p or q:
+            return True
+        else:
+            return False
 
-  green again. I remove the second `return statement`_
+
+  the test is still green. I remove the `if statements`_
 
   .. code-block:: python
 
     def logical_disjunction(p, q):
         return p or q
-
-  then rename the test
-
-  .. code-block:: python
-
-    def test_logical_disjunction(self):
-        self.assertTrue(src.truth_table.logical_disjunction(True, True))
-        self.assertTrue(src.truth_table.logical_disjunction(True, False))
-        self.assertTrue(src.truth_table.logical_disjunction(False, True))
-        self.assertFalse(src.truth_table.logical_disjunction(False, False))
 
 ----
 
