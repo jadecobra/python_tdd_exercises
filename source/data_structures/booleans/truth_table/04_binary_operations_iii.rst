@@ -394,6 +394,238 @@ refactor: make it better
 ----
 
 *********************************************************************************
+test_project_first
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+I add a new TestCase_ to ``test_truth_table.py``
+
+.. code-block:: python
+
+  class TestBinaryOperations(unittest.TestCase):
+
+      def test_project_first(self):
+          self.assertTrue(src.truth_table.project_first(True, True))
+
+the terminal shows :ref:`AttributeError`
+
+.. code-block:: python
+
+  AttributeError: module 'src.truth_table' has no attribute 'project_first'
+
+green: make it pass
+#################################################################################
+
+I add the a :ref:`function<functions>` definition for it in ``truth_table.py``
+
+.. code-block:: python
+
+  def logical_negation(argument):
+      return not argument
+
+
+  def project_first(argument):
+      return not argument
+
+the terminal shows :ref:`TypeError`
+
+.. code-block:: python
+
+  TypeError: project_first() takes 1 positional argument but 2 were given
+
+I change the signature to make it accept two inputs
+
+.. code-block:: python
+
+  def project_first(p, q):
+      return not p
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: False is not true
+
+I change the `return statement`_
+
+.. code-block:: python
+
+refactor: make it better
+#################################################################################
+
+* I add the next case
+
+  .. code-block:: python
+
+    def test_project_first(self):
+        self.assertTrue(src.truth_table.project_first(True, True))
+        self.assertTrue(src.truth_table.project_first(True, False))
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  I add an `if statement`_
+
+  .. code-block:: python
+
+    def project_first(p, q):
+        if p and not q:
+            return True
+        return p == q
+
+  the test passes
+
+* on to the next case
+
+  .. code-block:: python
+
+    def test_project_first(self):
+        self.assertTrue(src.truth_table.project_first(True, True))
+        self.assertTrue(src.truth_table.project_first(True, False))
+        self.assertFalse(src.truth_table.project_first(False, True))
+
+  the terminal still shows green. I add an `if statement`_ to be sure
+
+  .. code-block:: python
+
+    def project_first(p, q):
+        if not p and q:
+            return True
+        if p and not q:
+            return True
+        return p == q
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  I fix the `return statement`_
+
+  .. code-block:: python
+
+    def project_first(p, q):
+        if not p and q:
+            return False
+        if p and not q:
+            return True
+        return p == q
+
+  the test passes
+
+* I add the next case
+
+  .. code-block:: python
+
+    def test_project_first(self):
+        self.assertTrue(src.truth_table.project_first(True, True))
+        self.assertTrue(src.truth_table.project_first(True, False))
+        self.assertFalse(src.truth_table.project_first(False, True))
+        self.assertFalse(src.truth_table.project_first(False, False))
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  I add an `if statement`_
+
+  .. code-block:: python
+
+    def project_first(p, q):
+        if not p and not q:
+            return False
+        if not p and q:
+            return False
+        if p and not q:
+            return True
+        return p == q
+
+  the test passes
+
+* I add an `if statement`_ for the first case
+
+  .. code-block:: python
+
+    def project_first(p, q):
+        if not p and not q:
+            return False
+        if not p and q:
+            return False
+        if p and not q:
+            return True
+        if p and q:
+            return False
+        return p == q
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  I fix the line
+
+  .. code-block:: python
+
+    def project_first(p, q):
+        if not p and not q:
+            return False
+        if not p and q:
+            return False
+        if p and not q:
+            return True
+        if p and q:
+            return True
+
+  the test passes
+
+* this :ref:`function<functions>` returns :ref:`True<test_what_is_true>` when ``p`` is :ref:`True<test_what_is_true>` and returns :ref:`False<test_what_is_false>` when it is not. I add a simpler `if statement`
+
+  .. code-block:: python
+
+    def project_first(p, q):
+        if p:
+            return True
+        else:
+            return False
+        if not p and not q:
+            return False
+        if not p and q:
+            return False
+        if p and not q:
+            return True
+        if p and q:
+            return True
+
+  the test is still green, I remove the other lines and use a `conditional expression`_
+
+  .. code-block:: python
+
+    def project_first(p, q):
+        return p
+        if p:
+            return True
+        else:
+            return False
+
+  still green. I remove the other statements
+
+  .. code-block:: python
+
+    def project_first(p, q):
+        return p
+
+----
+
+*********************************************************************************
 test_logical_nor
 *********************************************************************************
 
