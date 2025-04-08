@@ -234,11 +234,11 @@ test_logical_nand
 red: make it fail
 #################################################################################
 
-I add a test for Logical NAND
+I add a new test
 
 .. code-block:: python
 
-  def test_logical_nor(self):
+  def test_negate_first(self):
       ...
 
   def test_logical_nand(self):
@@ -249,7 +249,7 @@ the terminal shows :ref:`AttributeError`
 .. code-block:: python
   :force:
 
-  AttributeError: module 'src.truth_table' has no attribute 'logical_nand'. Did you mean: 'logical_nor'?
+  AttributeError: module 'src.truth_table' has no attribute 'logical_nand'. Did you mean: 'logical_false'?
 
 green: make it pass
 #################################################################################
@@ -258,12 +258,12 @@ I add a definition for the :ref:`function<functions>`
 
 .. code-block:: python
 
-  def logical_nor(p, q):
-      return not (p or q)
+  def negate_first(p, q):
+      return not p
 
 
   def logical_nand(p, q):
-      return not (p or q)
+      return not p
 
 the terminal shows green
 
@@ -289,9 +289,9 @@ refactor: make it better
   .. code-block:: python
 
     def logical_nand(p, q):
-        if p and not q:
+        if p == True and q == False:
             return True
-        return not (p or q)
+        return not p
 
   the test passes
 
@@ -304,22 +304,33 @@ refactor: make it better
         self.assertTrue(src.truth_table.logical_nand(True, False))
         self.assertTrue(src.truth_table.logical_nand(False, True))
 
+  the terminal shows green, I add an `if statement`_
+
+  .. code-block:: python
+
+    def logical_nand(p, q):
+        if p == False and q == True:
+            return False
+        if p == True and q == False:
+            return True
+        return not p
+
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: False is not true
 
-  I add another `if statement`_
+  I change the statement
 
   .. code-block:: python
 
     def logical_nand(p, q):
-        if not p and q:
+        if p == False and q == True:
             return True
-        if p and not q:
+        if p == True and q == False:
             return True
-        return not (p or q)
+        return not p
 
   green again
 
@@ -338,32 +349,73 @@ refactor: make it better
   .. code-block:: python
 
     def logical_nand(p, q):
-        if not p and not q:
+        if p == False and q == False:
+            return False
+        if p == False and q == True:
             return True
-        if not p and q:
+        if p == True and q == False:
             return True
-        if p and not q:
-            return True
-        return not (p or q)
+        return not p
 
-* I add an `if statement`_ for the one case that returns :ref:`False<test_what_is_false>` then add an else_ clause
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  I change the `return statement`_
+
+  .. code-block:: python
+
+    def logical_nand(p, q):
+        if p == False and q == False:
+            return True
+        if p == False and q == True:
+            return True
+        if p == True and q == False:
+            return True
+        return not p
+
+* there are still only 2 results - :ref:`True<test_what_is_true>` in 3 cases and :ref:`False<test_what_is_false>` in one case. I add an `if statement`_ for that case with an else_ clause
+
+  .. code-block:: python
+
+    def logical_nand(p, q):
+        if p == True and q == True:
+            return False
+        else:
+            return True
+        if p == False and q == False:
+            return True
+        if p == False and q == True:
+            return True
+        if p == True and q == False:
+            return True
+        return not p
+
+  I use bool_ to rewrite the first `if statement`_, I did this with :ref:`Logical Conjunction<test_logical_conjunction>`
+
+  .. code-block:: python
+
+    def logical_nand(p, q):
+        if bool(p) and bool(q):
+        # if p == True and q == True:
+            return False
+        else:
+            return True
+
+  which is the same as
 
   .. code-block:: python
 
     def logical_nand(p, q):
         if p and q:
+        # if bool(p) and bool(q):
             return False
         else:
             return True
-        if not p and not q:
-            return True
-        if not p and q:
-            return True
-        if p and not q:
-            return True
-        return not (p or q)
 
-  the test is still green, I write the opposite of the `if statement`_ for the else_ clause
+  the test is still green. I want to use a `conditional expression`_, which means I have to rewrite this in terms of :ref:`True<test_what_is_true>`. I write the :ref:`logical negation<test_logical_negation>` of the `if statement`_ for the else_ clause with not_
 
   .. code-block:: python
 
@@ -390,18 +442,140 @@ refactor: make it better
   .. code-block:: python
 
     def logical_nand(p, q):
-        return not (p and q)
+        return True if not (p and q) else False
         if not (p and q):
             return True
         else:
             return False
 
-  still green. I remove the other statements
+  still green. I remove the other statements and use the simpler `return statement`
 
   .. code-block:: python
 
     def logical_nand(p, q):
         return not (p and q)
+        return True if not (p and q) else False
+
+  I remove the second `return statement`_
+
+  .. code-block:: python
+
+    def logical_nand(p, q):
+        return not (p and q)
+
+----
+
+*********************************************************************************
+test_tautology
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+I add a test
+
+.. code-block:: python
+
+  def test_logical_nand(self):
+      ...
+
+  def test_tautology(self):
+      self.assertTrue(src.truth_table.tautology(True, True))
+      self.assertTrue(src.truth_table.tautology(True, False))
+      self.assertTrue(src.truth_table.tautology(False, True))
+      self.assertTrue(src.truth_table.tautology(False, False))
+
+the terminal shows :ref:`AttributeError`
+
+.. code-block:: python
+
+  AttributeError: module 'src.truth_table' has no attribute 'tautology'
+
+green: make it pass
+#################################################################################
+
+I add a :ref:`function<functions>` definition
+
+.. code-block:: python
+
+  def project_second(p, q):
+      return q
+
+
+  def tautology(p, q):
+      return q
+
+refactor: make it better
+#################################################################################
+
+* I add the next case
+
+  .. code-block:: python
+
+    def test_tautology(self):
+        self.assertTrue(src.truth_table.tautology(True, True))
+        self.assertTrue(src.truth_table.tautology(True, False))
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  I add an `if statement`_
+
+  .. code-block:: python
+
+    def tautology(p, q):
+        if p and not q:
+            return True
+        return q
+
+  the test passes
+
+* I add another case
+
+  .. code-block:: python
+
+    def test_tautology(self):
+        self.assertTrue(src.truth_table.tautology(True, True))
+        self.assertTrue(src.truth_table.tautology(True, False))
+        self.assertTrue(src.truth_table.tautology(False, True))
+
+  the test is still green
+
+* I add the last case
+
+  .. code-block:: python
+
+    def test_tautology(self):
+        self.assertTrue(src.truth_table.tautology(True, True))
+        self.assertTrue(src.truth_table.tautology(True, False))
+        self.assertTrue(src.truth_table.tautology(False, True))
+        self.assertTrue(src.truth_table.tautology(False, False))
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  there is only one result for this operation, it is a :ref:`singleton function<test_singleton_functions>`
+
+  .. code-block:: python
+
+    def tautology(p, q):
+        return True
+        if p and not q:
+            return True
+        return q
+
+  the test passes and I remove the other statements
+
+  .. code-block:: python
+
+    def tautology(p, q):
+        return True
 
 ----
 
@@ -782,119 +956,6 @@ refactor: make it better
 
     def logical_equality(p, q):
         return p == q
-
-----
-*********************************************************************************
-test_tautology
-*********************************************************************************
-
-red: make it fail
-#################################################################################
-
-I add a test
-
-.. code-block:: python
-
-  def test_project_second(self):
-      ...
-
-  def test_tautology(self):
-      self.assertTrue(src.truth_table.tautology(True, True))
-      self.assertTrue(src.truth_table.tautology(True, False))
-      self.assertTrue(src.truth_table.tautology(False, True))
-      self.assertTrue(src.truth_table.tautology(False, False))
-
-the terminal shows :ref:`AttributeError`
-
-.. code-block:: python
-
-  AttributeError: module 'src.truth_table' has no attribute 'tautology'
-
-green: make it pass
-#################################################################################
-
-I add a :ref:`function<functions>` definition
-
-.. code-block:: python
-
-  def project_second(p, q):
-      return q
-
-
-  def tautology(p, q):
-      return q
-
-refactor: make it better
-#################################################################################
-
-* I add the next case
-
-  .. code-block:: python
-
-    def test_tautology(self):
-        self.assertTrue(src.truth_table.tautology(True, True))
-        self.assertTrue(src.truth_table.tautology(True, False))
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: False is not true
-
-  I add an `if statement`_
-
-  .. code-block:: python
-
-    def tautology(p, q):
-        if p and not q:
-            return True
-        return q
-
-  the test passes
-
-* I add another case
-
-  .. code-block:: python
-
-    def test_tautology(self):
-        self.assertTrue(src.truth_table.tautology(True, True))
-        self.assertTrue(src.truth_table.tautology(True, False))
-        self.assertTrue(src.truth_table.tautology(False, True))
-
-  the test is still green
-
-* I add the last case
-
-  .. code-block:: python
-
-    def test_tautology(self):
-        self.assertTrue(src.truth_table.tautology(True, True))
-        self.assertTrue(src.truth_table.tautology(True, False))
-        self.assertTrue(src.truth_table.tautology(False, True))
-        self.assertTrue(src.truth_table.tautology(False, False))
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: False is not true
-
-  there is only one result for this operation, it is a :ref:`singleton function<test_singleton_functions>`
-
-  .. code-block:: python
-
-    def tautology(p, q):
-        return True
-        if p and not q:
-            return True
-        return q
-
-  the test passes and I remove the other statements
-
-  .. code-block:: python
-
-    def tautology(p, q):
-        return True
 
 ----
 
