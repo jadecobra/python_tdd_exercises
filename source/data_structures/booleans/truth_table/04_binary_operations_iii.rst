@@ -1,5 +1,7 @@
 .. include:: ../../../links.rst
 
+.. _binary_operations_iii:
+
 #################################################################################
 truth table: Binary Operations III
 #################################################################################
@@ -390,6 +392,138 @@ refactor: make it better
 
     def material_non_implication(p, q):
         return p and not q
+
+----
+
+*********************************************************************************
+test_negate_second
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+I add a test
+
+.. code-block:: python
+
+  def test_negate_second(self):
+      self.assertFalse(src.truth_table.negate_second(True, True))
+
+and the terminal shows :ref:`AttributeError`
+
+.. code-block:: python
+
+  AttributeError: module 'src.truth_table' has no attribute 'negate_second'
+
+green: make it pass
+#################################################################################
+
+I add a :ref:`function<functions>` definition to ``truth_table.py``
+
+.. code-block:: python
+
+  def contradiction(p, q):
+      return False
+
+
+  def negate_second(p, q):
+      return False
+
+the test passes
+
+refactor: make it better
+#################################################################################
+
+* I add the next case
+
+  .. code-block:: python
+
+    def test_negate_second(self):
+        self.assertFalse(src.truth_table.negate_second(True, True))
+        self.assertTrue(src.truth_table.negate_second(True, False))
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  I add an `if statement`_
+
+  .. code-block:: python
+
+    def negate_second(p, q):
+        if p and not q:
+            return True
+        return False
+
+  the test passes
+
+* I add the third case
+
+  .. code-block:: python
+
+    def test_negate_second(self):
+        self.assertFalse(src.truth_table.negate_second(True, True))
+        self.assertTrue(src.truth_table.negate_second(True, False))
+        self.assertFalse(src.truth_table.negate_second(False, True))
+
+  the test is still passing
+
+* I add another case
+
+  .. code-block:: python
+
+    def test_negate_second(self):
+        self.assertFalse(src.truth_table.negate_second(True, True))
+        self.assertTrue(src.truth_table.negate_second(True, False))
+        self.assertFalse(src.truth_table.negate_second(False, True))
+        self.assertTrue(src.truth_table.negate_second(False, False))
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  I add another `if statement`_
+
+  .. code-block:: python
+
+  the test is green again
+
+* The two `if statements`_ that return :ref:`True<test_what_is_true>` have ``not q``, so I write and `if statement`_ with it
+
+  .. code-block:: python
+
+    def negate_second(p, q):
+        if not q:
+            return True
+        else:
+            return False
+        if not p and not q:
+            return True
+        if p and not q:
+            return True
+        return False
+
+  the terminal still shows green. I use a `ternary operator`_
+
+  .. code-block:: python
+
+    def negate_second(p, q):
+        return not q
+        if not q:
+            return True
+        else:
+            return False
+
+  still green. I remove the other statements
+
+  .. code-block:: python
+
+    def negate_second(p, q):
+        return not q
 
 ----
 

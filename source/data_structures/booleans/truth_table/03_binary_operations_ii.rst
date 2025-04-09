@@ -1,5 +1,7 @@
 .. include:: ../../../links.rst
 
+.. _binary_operations_ii:
+
 #################################################################################
 truth table: Binary Operations II
 #################################################################################
@@ -859,156 +861,19 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_negate_second
-*********************************************************************************
-
-red: make it fail
-#################################################################################
-
-I add a test
-
-.. code-block:: python
-
-  def test_negate_second(self):
-      self.assertFalse(src.truth_table.negate_second(True, True))
-
-and the terminal shows :ref:`AttributeError`
-
-.. code-block:: python
-
-  AttributeError: module 'src.truth_table' has no attribute 'negate_second'
-
-green: make it pass
-#################################################################################
-
-I add a :ref:`function<functions>` definition to ``truth_table.py``
-
-.. code-block:: python
-
-  def contradiction(p, q):
-      return False
-
-
-  def negate_second(p, q):
-      return False
-
-the test passes
-
-refactor: make it better
-#################################################################################
-
-* I add the next case
-
-  .. code-block:: python
-
-    def test_negate_second(self):
-        self.assertFalse(src.truth_table.negate_second(True, True))
-        self.assertTrue(src.truth_table.negate_second(True, False))
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: False is not true
-
-  I add an `if statement`_
-
-  .. code-block:: python
-
-    def negate_second(p, q):
-        if p and not q:
-            return True
-        return False
-
-  the test passes
-
-* I add the third case
-
-  .. code-block:: python
-
-    def test_negate_second(self):
-        self.assertFalse(src.truth_table.negate_second(True, True))
-        self.assertTrue(src.truth_table.negate_second(True, False))
-        self.assertFalse(src.truth_table.negate_second(False, True))
-
-  the test is still passing
-
-* I add another case
-
-  .. code-block:: python
-
-    def test_negate_second(self):
-        self.assertFalse(src.truth_table.negate_second(True, True))
-        self.assertTrue(src.truth_table.negate_second(True, False))
-        self.assertFalse(src.truth_table.negate_second(False, True))
-        self.assertTrue(src.truth_table.negate_second(False, False))
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: False is not true
-
-  I add another `if statement`_
-
-  .. code-block:: python
-
-  the test is green again
-
-* The two `if statements`_ that return :ref:`True<test_what_is_true>` have ``not q``, so I write and `if statement`_ with it
-
-  .. code-block:: python
-
-    def negate_second(p, q):
-        if not q:
-            return True
-        else:
-            return False
-        if not p and not q:
-            return True
-        if p and not q:
-            return True
-        return False
-
-  the terminal still shows green. I use a `ternary operator`_
-
-  .. code-block:: python
-
-    def negate_second(p, q):
-        return not q
-        if not q:
-            return True
-        else:
-            return False
-
-  still green. I remove the other statements
-
-  .. code-block:: python
-
-    def negate_second(p, q):
-        return not q
-
-----
-
-*********************************************************************************
 review
 *********************************************************************************
 
 From the tests I know that
 
-* :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
+* :ref:`Logical Disjunction <test_logical_disjunction>` returns ``p or q``
 * :ref:`Tautology <test_tautology>` always returns :ref:`True<test_what_is_true>`
-* :ref:`Negate Second <test_negate_second>` always returns ``not q``
-* :ref:`Project Second <test_project_second>` always returns ``q``
+* :ref:`Logical NAND <test_logical_nand>` returns ``not (p and q)``
 * :ref:`Negate First<test_negate_first>` always returns ``not p``
-* :ref:`Project First <test_project_first>` always returns ``p``
-* :ref:`Logical Equality <test_logical_equality>` is ``==``
-*  :ref:`Converse Implication <test_converse_implication>` returns ``p or not q``
-* :ref:`Logical or Material Implication  <test_logical_implication>` returns ``not p or q``
-* :ref:`Logical Disjunction <test_logical_disjunction>` is or_
-* :ref:`Logical Conjunction <test_logical_conjunction>` is and_
-* :ref:`Logical Negation<test_logical_negation>` is not_
-
+* :ref:`Converse NonImplication <test_converse_non_implication>` returns ``not p and q``
+* :ref:`Project Second <test_project_second>` always returns ``q``
+* :ref:`Logical Conjunction <test_logical_conjunction>` returns ``p and q``
+* :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
 
 do you want to test more :ref:`more binary operations? <truth table: Binary Operations III>`
 
