@@ -93,7 +93,7 @@ refactor: make it better
         self.assertFalse(src.truth_table.contradiction(True, True))
         self.assertFalse(src.truth_table.contradiction(True, False))
 
-  the test is still green. I change the `return statement` to make sure the test works
+  the test is still green. I change the `return statement`_ to make sure the test works
 
   .. code-block:: python
 
@@ -124,7 +124,7 @@ refactor: make it better
 
     AssertionError: True is not false
 
-  the test expects :ref:`False<test_what_is_false>` in the 3 cases so far, I change the `return statement` to match
+  the test expects :ref:`False<test_what_is_false>` in the 3 cases so far, I change the `return statement`_ to match
 
   .. code-block:: python
 
@@ -348,7 +348,7 @@ refactor: make it better
 
   the terminal shows green again.
 
-* There are only 2 results for this operation, in the first case the :ref:`function<functions>` returns `True <test_what_is_true>` and in the other 3 cases it returns `False <test_what_is_false>`. I remove the commented line and rewrite the `if statement`_ for the case where the result is `True <test_what_is_true>` then use an else_ clause for the other cases
+* There are only 2 results for this operation, in the first case the :ref:`function<functions>` returns :ref:`True <test_what_is_true>` and in the other 3 cases it returns :ref:`False <test_what_is_false>`. I remove the commented line and rewrite the `if statement`_ for the case where the result is :ref:`True <test_what_is_true>` then use an else_ clause for the other cases
 
   .. code-block:: python
 
