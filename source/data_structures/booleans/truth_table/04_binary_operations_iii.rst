@@ -296,7 +296,7 @@ I add another test
 
 .. code-block:: python
 
-    def test_converse_non_implication(self):
+    def test_exclusive_disjunction(self):
         ...
 
     def test_material_non_implication(self):
@@ -316,12 +316,13 @@ I add a :ref:`function<functions>`
 
 .. code-block:: python
 
-  def converse_non_implication(p, q):
-      return not p and q
+  def exclusive_disjunction(p, q):
+      return p != q
+      return (not p and q) or (p and not q)
 
 
   def material_non_implication(p, q):
-      return not p and q
+      return p != q
 
 the test passes
 
@@ -336,13 +337,22 @@ refactor: make it better
         self.assertFalse(src.truth_table.material_non_implication(True, True))
         self.assertTrue(src.truth_table.material_non_implication(True, False))
 
+  the test is still green, I add an `if statement`_
+
+  .. code-block:: python
+
+    def material_non_implication(p, q):
+        if p and not q:
+            return False
+        return p != q
+
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: False is not true
 
-  I add an `if statement`_ for it
+  I fix the statement
 
   .. code-block:: python
 
@@ -377,7 +387,9 @@ refactor: make it better
             return False
         if p and not q:
             return True
-        return not p and q
+        return p != q
+
+  the test passes
 
 * I add the last case
 
@@ -400,7 +412,7 @@ refactor: make it better
             return False
         if p and not q:
             return True
-        return not p and q
+        return p != q
 
   the terminal shows :ref:`AssertionError`
 
@@ -419,7 +431,7 @@ refactor: make it better
             return False
         if p and not q:
             return True
-        return not p and q
+        return p != q
 
   the test is green again
 
@@ -436,7 +448,7 @@ refactor: make it better
             return False
         if not p and q:
             return False
-        return not p and q
+        return p != q
 
   still green. I use a `conditional expression`_
 
