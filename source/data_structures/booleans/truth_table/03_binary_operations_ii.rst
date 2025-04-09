@@ -875,7 +875,7 @@ From the tests I know that
 * :ref:`Logical Conjunction <test_logical_conjunction>` returns ``p and q``
 * :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
 
-do you want to test more :ref:`more binary operations? <truth table: Binary Operations III>`
+do you want to :ref:`test more binary operations? <binary_operations_iii>`
 
 ----
 

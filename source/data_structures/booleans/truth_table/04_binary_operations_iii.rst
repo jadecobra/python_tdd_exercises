@@ -31,7 +31,7 @@ I add a new test
 
 .. code-block:: python
 
-  def test_negate_first(self):
+  def test_logical_disjunction(self):
       ...
 
   def test_exclusive_disjunction(self):
@@ -50,12 +50,27 @@ I add the :ref:`function<functions>`
 
 .. code-block:: python
 
-  def negate_first(p, q):
-      return not p
+  def logical_disjunction(p, q):
+      return p or q
 
 
   def exclusive_disjunction(p, q):
-      return not p
+      return p or q
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: True is not false
+
+I add an `if statement`_
+
+.. code-block:: python
+
+    def exclusive_disjunction(p, q):
+        if p and q:
+            return False
+        return p or q
 
 the test passes
 
@@ -70,22 +85,35 @@ refactor: make it better
         self.assertFalse(src.truth_table.exclusive_disjunction(True, True))
         self.assertTrue(src.truth_table.exclusive_disjunction(True, False))
 
+  the terminal still shows green. I add an `if statement`_ to see it fail
+
+  .. code-block:: python
+
+    def exclusive_disjunction(p, q):
+        if p and not q:
+            return False
+        if p and q:
+            return False
+        return p or q
+
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: False is not true
 
-  I add an `if statement`_
+  I change the `return statement`_
 
   .. code-block:: python
 
     def exclusive_disjunction(p, q):
         if p and not q:
             return True
-        return not p
+        if p and q:
+            return False
+        return p or q
 
-  the test passes
+  the test is green again
 
 * I add the next case
 
@@ -96,7 +124,7 @@ refactor: make it better
         self.assertTrue(src.truth_table.exclusive_disjunction(True, False))
         self.assertTrue(src.truth_table.exclusive_disjunction(False, True))
 
-  the test is still green. I add an `if statement`_
+  the test is still green. I add another `if statement`_
 
   .. code-block:: python
 
@@ -105,7 +133,9 @@ refactor: make it better
             return False
         if p and not q:
             return True
-        return not p
+        if p and q:
+            return False
+        return p or q
 
   the terminal shows :ref:`AssertionError`
 
@@ -122,9 +152,11 @@ refactor: make it better
             return True
         if p and not q:
             return True
-        return not p
+        if p and q:
+            return False
+        return p or q
 
-  the test passes
+  the test is green
 
 * I add the last case
 
@@ -136,13 +168,28 @@ refactor: make it better
         self.assertTrue(src.truth_table.exclusive_disjunction(False, True))
         self.assertFalse(src.truth_table.exclusive_disjunction(False, False))
 
-  and the terminal shows :ref:`AssertionError`
+  and the terminal still shows green. I add an `if statement`_
+
+  .. code-block:: python
+
+    def exclusive_disjunction(p, q):
+        if not p and not q:
+            return True
+        if not p and q:
+            return True
+        if p and not q:
+            return True
+        if p and q:
+            return False
+        return p or q
+
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: True is not false
 
-  I add an `if statement`_ for it
+  I fix the line and remove ``return p or q``
 
   .. code-block:: python
 
@@ -153,11 +200,26 @@ refactor: make it better
             return True
         if p and not q:
             return True
-        return not p
+        if p and q:
+            return False
 
-  the test passes
+  the test is green again
 
-* I use or_ to write one statement that covers the two cases which return :ref:`True<test_what_is_true>`
+* There are two cases where the result is :ref:`False<test_what_is_false>` and two where the result is :ref:`True<test_what_is_true>`. I move the top `if statement`_ to the bottom to have the two that return :ref:`True<test_what_is_true>` together
+
+  .. code-block:: python
+
+    def exclusive_disjunction(p, q):
+        if not p and q:
+            return True
+        if p and not q:
+            return True
+        if p and q:
+            return False
+        if not p and not q:
+            return False
+
+  I use or_ to make one `if statement`_ that puts the two that return :ref:`True<test_what_is_true>` together
 
   .. code-block:: python
 
@@ -166,15 +228,16 @@ refactor: make it better
             return True
         else:
             return False
-        if not p and not q:
-            return False
         if not p and q:
             return True
         if p and not q:
             return True
-        return not p
+        if p and q:
+            return False
+        if not p and not q:
+            return False
 
-  still green. I use a `conditional expressions`_
+  still green. I remove the other statements and use a `ternary operator`_
 
   .. code-block:: python
 
@@ -2019,7 +2082,7 @@ review
 * :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
 * :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` are booleans_
 
-Would you like to :doc:`test lists</data_structures/lists/lists>`?
+do you want to :ref:`test more binary operations? <binary_operations_iv>`
 
 ----
 
