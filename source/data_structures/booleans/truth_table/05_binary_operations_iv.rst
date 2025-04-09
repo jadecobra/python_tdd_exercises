@@ -205,33 +205,22 @@ refactor: make it better
 
   the test is green again
 
-* This test expects :ref:`True<test_what_is_true>` in 2 of the cases and :ref:`False<test_what_is_false>` in the other 2 The 2 `if statements`_ that return :ref:`True<test_what_is_true>` have ``not q``, so I write and `if statement`_ with it
-
-  .. code-block:: python
-
-    def negate_second(p, q):
-        if not q:
-            return True
-        else:
-            return False
-        if not p and not q:
-            return True
-        if p and not q:
-            return True
-        return False
-
-  the terminal still shows green. I use a `ternary operator`_
+* This test expects :ref:`True<test_what_is_true>` in 2 of the cases and :ref:`False<test_what_is_false>` in the other 2. The 2 `if statements`_ that return :ref:`True<test_what_is_true>` have ``not q``, so I write a `conditional expression`_ with it
 
   .. code-block:: python
 
     def negate_second(p, q):
         return not q
-        if not q:
+        if not p and not q:
             return True
-        else:
+        if not p and q:
+            return False
+        if p and not q:
+            return True
+        if p and q:
             return False
 
-  still green. I remove the other statements
+  the terminal still shows green. I remove the other statements
 
   .. code-block:: python
 
