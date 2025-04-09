@@ -750,7 +750,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-*YOU DID IT!* You made it to the end of the :ref:`Truth Table <truth_table>` series. The tests show that for any Binary Operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
+The tests show that for any Binary Operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
 
 * :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
 * :ref:`Tautology <test_tautology>` always returns :ref:`True<test_what_is_true>`
