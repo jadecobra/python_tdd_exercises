@@ -251,21 +251,21 @@ and the terminal shows :ref:`AttributeError`
 .. code-block:: python
   :force:
 
-  AttributeError: module 'src.truth_table' has no attribute 'logical_nor'. Did you mean: 'logical_true'?
+  AttributeError: module 'src.truth_table' has no attribute 'logical_nor'. Did you mean: 'logical_nand'?
 
 green: make it pass
 #################################################################################
 
-I add a :ref:`function<functions>` definition to ``truth_table.py``
+I add a :ref:`function<functions>`
 
 .. code-block:: python
 
-  def material_non_implication(p, q):
-      return p and not q
+  def negate_second(p, q):
+      return not q
 
 
   def logical_nor(p, q):
-      return p and not q
+      return not q
 
 the test passes
 
@@ -293,7 +293,7 @@ refactor: make it better
     def logical_nor(p, q):
         if p and not q:
             return False
-        return p and not q
+        return not q
 
   the test passes
 
@@ -306,35 +306,7 @@ refactor: make it better
         self.assertFalse(src.truth_table.logical_nor(True, False))
         self.assertFalse(src.truth_table.logical_nor(False, True))
 
-  the test is still green. I add an `if statement`_ that should cause a failure
-
-  .. code-block:: python
-
-    def logical_nor(p, q):
-        if not p and q:
-            return True
-        if p and not q:
-            return False
-        return p and not q
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: True is not false
-
-  I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the `return statement`_
-
-  .. code-block:: python
-
-    def logical_nor(p, q):
-        if not p and q:
-            return False
-        if p and not q:
-            return False
-        return p and not q
-
-  and the test is green again
+  the test is still green
 
 * I add the last case
 
@@ -346,28 +318,9 @@ refactor: make it better
         self.assertFalse(src.truth_table.logical_nor(False, True))
         self.assertTrue(src.truth_table.logical_nor(False, False))
 
-  and the terminal shows :ref:`AssertionError`
+  still green
 
-  .. code-block:: python
-
-    AssertionError: False is not true
-
-  I add another `if statement`_
-
-  .. code-block:: python
-
-    def logical_nor(p, q):
-        if not p and not q:
-            return True
-        if not p and q:
-            return False
-        if p and not q:
-            return False
-        return p and not q
-
-  the terminal shows green again
-
-* I add an else_ clause to the last `if statement`_
+* I add an `if statement`_ with an else_ clause for the last case which returns :ref:`True<test_what_is_true>`
 
   .. code-block:: python
 
@@ -376,11 +329,9 @@ refactor: make it better
             return True
         else:
             return False
-        if not p and q:
-            return False
         if p and not q:
             return False
-        return p and not q
+        return not q
 
   the terminal still shows green, I remove the other statements and rewrite the `if statement`_ to factor out not_ since it happens 2 times
 
