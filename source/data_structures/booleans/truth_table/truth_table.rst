@@ -62,7 +62,7 @@ Operations
   03_binary_operations_ii
   04_binary_operations_iii
   05_binary_operations_iv
-  06_test_truth_table_tests
+  test_truth_table_tests
 
 ----
 
