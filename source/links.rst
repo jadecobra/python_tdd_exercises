@@ -6,6 +6,7 @@
 .. _if statement: https://docs.python.org/3/reference/compound_stmts.html#the-if-statement
 .. _if statements: https://docs.python.org/3/tutorial/controlflow.html#if-statements
 .. _return statement: https://docs.python.org/3/reference/simple_stmts.html#the-return-statement
+.. _return statements: https://docs.python.org/3/reference/simple_stmts.html#the-return-statement
 .. _ternary operator: https://docs.python.org/3/reference/expressions.html#conditional-expressions
 .. _ternary operators: https://docs.python.org/3/reference/expressions.html#conditional-expressions
 .. _try statement: https://docs.python.org/3/reference/compound_stmts.html#the-try-statement
@@ -144,6 +145,7 @@
 .. _Refactoring: https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk
 .. _Regular Expressions: https://en.wikipedia.org/wiki/Regular_expression
 .. _True: https://docs.python.org/3/library/constants.html?highlight=true#True
+.. _Truth Table: https://en.wikipedia.org/wiki/Truth_table
 .. _Test Driven Development: https://en.wikipedia.org/wiki/Test-driven_development
 .. _Test Driven Development by Example: https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk
 .. _The Abstraction Principle: https://en.wikipedia.org/wiki/Abstraction_principle_(computer_programming)

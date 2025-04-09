@@ -750,34 +750,26 @@ refactor: make it better
 review
 *********************************************************************************
 
-The tests show that for any Binary Operation involving 2 inputs: ``p`` and ``q`` which can take the values :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
+From the tests I know that
 
-* :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
-* :ref:`Tautology <test_tautology>` always returns :ref:`True<test_what_is_true>`
-* :ref:`Negate Second <test_negate_second>` always returns ``not q``
-* :ref:`Project Second <test_project_second>` always returns ``q``
-* :ref:`Negate First<test_negate_first>` always returns ``not p``
-* :ref:`Project First <test_project_first>` always returns ``p``
-* :ref:`Exclusive Disjunction <test_exclusive_disjunction>` is ``!=``, or the :ref:`Logical Negation<test_logical_negation>` of :ref:`Logical Equality <test_logical_equality>`
-* :ref:`Logical Equality <test_logical_equality>` is ``==``
-* :ref:`Converse NonImplication <test_converse_non_implication>` returns ``not p and q``
-*  :ref:`Converse Implication <test_converse_implication>` returns ``p or not q``
-* :ref:`Material NonImplication <test_material_non_implication>` returns ``p and not q``
 * :ref:`Logical or Material Implication  <test_logical_or_material_implication>` returns ``not p or q``
+* :ref:`Logical Equality <test_logical_equality>` is ``==``
 * :ref:`Logical NOR <test_logical_nor>` returns ``not (p or q)``
+* :ref:`Negate Second <test_negate_second>` always returns ``not q``
+*  :ref:`Converse Implication <test_converse_implication>` returns ``p or not q``
+* :ref:`Project First <test_project_first>` always returns ``p``
+* :ref:`Material NonImplication <test_material_non_implication>` returns ``p and not q``
+* :ref:`Exclusive Disjunction <test_exclusive_disjunction>` is ``!=``, or the :ref:`Logical Negation<test_logical_negation>` of :ref:`Logical Equality <test_logical_equality>`
 * :ref:`Logical Disjunction <test_logical_disjunction>` returns ``p or q``
+* :ref:`Tautology <test_tautology>` always returns :ref:`True<test_what_is_true>`
 * :ref:`Logical NAND <test_logical_nand>` returns ``not (p and q)``
+* :ref:`Negate First<test_negate_first>` always returns ``not p``
+* :ref:`Converse NonImplication <test_converse_non_implication>` returns ``not p and q``
+* :ref:`Project Second <test_project_second>` always returns ``q``
 * :ref:`Logical Conjunction <test_logical_conjunction>` returns ``p and q``
-* :ref:`Logical Negation<test_logical_negation>` is not_
-* not_ or_ is and_
-* not_ and_ is or_
-* not_ :ref:`False<test_what_is_false>` is :ref:`True<test_what_is_true>`
-* not_ :ref:`True<test_what_is_true>` is :ref:`False<test_what_is_false>`
-* :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`
-* :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
-* :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` are booleans_
+* :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
 
-Would you like to :doc:`test lists</data_structures/lists/lists>`?
+Would you like to :ref:`test the truth table tests?<test_truth_table_tests>`
 
 ----
 
