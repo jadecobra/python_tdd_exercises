@@ -3,7 +3,7 @@
 .. _binary_operations_iv:
 
 #################################################################################
-truth table: test_truth_table
+truth table: Binary Operations IV
 #################################################################################
 
 .. contents:: table of contents

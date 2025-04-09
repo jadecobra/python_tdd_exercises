@@ -1,9 +1,9 @@
 .. include:: ../../../links.rst
 
-.. _binary_operations_iv:
+.. _test_truth_table_tests:
 
 #################################################################################
-truth table: test_truth_table
+truth table: test_truth_table_tests
 #################################################################################
 
 .. contents:: table of contents
