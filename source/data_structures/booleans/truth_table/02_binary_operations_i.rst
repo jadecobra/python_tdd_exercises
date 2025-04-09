@@ -18,7 +18,7 @@ requirements
 
 :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` with ``truth_table`` as the name of the project
 
-There are 16 binary operations, they take two inputs that can be :ref:`True <test_what_is_true>` or :ref:`False <test_what_is_false>`, which gives them all four cases
+There are 16 binary operations, they take 2 inputs that can be :ref:`True <test_what_is_true>` or :ref:`False <test_what_is_false>`, which gives them all four cases
 
 * :ref:`True <test_what_is_true>`, :ref:`True <test_what_is_true>`
 * :ref:`True <test_what_is_true>`, :ref:`False <test_what_is_false>`
@@ -348,7 +348,7 @@ refactor: make it better
 
   the terminal shows green again.
 
-* There are only two results for this operation, in the first case the :ref:`function<functions>` returns `True <test_what_is_true>` and in the other 3 cases it returns `False <test_what_is_false>`. I remove the commented line and rewrite the `if statement`_ for the case where the result is `True <test_what_is_true>` then use an else_ clause for the other cases
+* There are only 2 results for this operation, in the first case the :ref:`function<functions>` returns `True <test_what_is_true>` and in the other 3 cases it returns `False <test_what_is_false>`. I remove the commented line and rewrite the `if statement`_ for the case where the result is `True <test_what_is_true>` then use an else_ clause for the other cases
 
   .. code-block:: python
 
@@ -886,7 +886,7 @@ refactor: make it better
 
   the test is green again. I remove ``return q``
 
-* there are only two results like with :ref:`Logical Conjunction<test_logical_conjunction>`, in one case the :ref:`function<functions>` return :ref:`True<test_what_is_true>` and in the other 3 it returns :ref:`False<test_what_is_false>`. I use an `if statement`_ for the case that returns :ref:`True<test_what_is_true>`
+* there are only 2 results like with :ref:`Logical Conjunction<test_logical_conjunction>`, in one case the :ref:`function<functions>` return :ref:`True<test_what_is_true>` and in the other 3 it returns :ref:`False<test_what_is_false>`. I use an `if statement`_ for the case that returns :ref:`True<test_what_is_true>`
 
   .. code-block:: python
 

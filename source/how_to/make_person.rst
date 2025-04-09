@@ -327,7 +327,7 @@ green: make it pass
 
   and the test passes
 
-* ``'first_name'`` appears twice in the test, which means I have to make a change in two places if I want a different value for it. I add a variable to remove the repetition
+* ``'first_name'`` appears twice in the test, which means I have to make a change in 2 places if I want a different value for it. I add a variable to remove the repetition
 
   .. code-block:: python
 

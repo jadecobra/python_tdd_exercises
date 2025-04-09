@@ -89,7 +89,7 @@ refactor: make it better
 
       E    AssertionError: {} != {'key': 'value'}
 
-  - ``AssertionError: {} != {'key': 'value'}`` shows that two values are not equal
+  - ``AssertionError: {} != {'key': 'value'}`` shows that 2 values are not equal
   - the value on the left ``{}`` is what the :ref:`function<functions>` returns, in other words the result of calling ``dictionaries.a_dict()`` from the test
   - the value on the right ``{'key': 'value'}`` is what is expected
   - ``!=`` means ``not equal to``
@@ -131,8 +131,8 @@ refactor: make it better
         dict(key='value')
     )
 
-  the terminal shows passing tests, because ``dict(key='value')`` and ``{'key': 'value'}`` are two ways of representing the same thing
-* I can add another test to confirm, even though it repeats the two tests above
+  the terminal shows passing tests, because ``dict(key='value')`` and ``{'key': 'value'}`` are 2 ways of representing the same thing
+* I can add another test to confirm, even though it repeats the 2 tests above
 
   .. code-block:: python
 
@@ -183,7 +183,7 @@ I add a failing test to ``TestDictionaries``
           {'one': 'boom'}
       )
 
-the terminal shows :ref:`AssertionError` since the two values are different
+the terminal shows :ref:`AssertionError` since the 2 values are different
 
 .. code-block:: python
 
@@ -1076,7 +1076,7 @@ refactor: make it better
 
   all tests pass, and I add what I know about `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_ to the list of :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
-test_adding_two_dictionaries
+test_adding_2_dictionaries
 ---------------------------------------------------
 
 What if I want to add the ``keys`` and ``values`` of one `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ to another?

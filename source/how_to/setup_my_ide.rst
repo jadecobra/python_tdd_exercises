@@ -65,7 +65,7 @@ When working with just the Integrated Development Environment, I have the follow
       :width: 600
       :alt: Terminal Window on the right
 
-This setup helps me answer two questions
+This setup helps me answer 2 questions
 
 * what is the same?
 * what is different?

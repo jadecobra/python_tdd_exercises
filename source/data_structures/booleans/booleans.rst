@@ -16,7 +16,7 @@ booleans
 
 ----
 
-There are two booleans_ - True_ and False_
+There are 2 booleans_ - True_ and False_
 
 *********************************************************************************
 test_what_is_false
@@ -1130,7 +1130,7 @@ refactor: make it better
         self.assertTrue({1, 2, 3, 'n'})
         self.assertTrue({'key': 'value'})
 
-  then I add the last two notes
+  then I add the last 2 notes
 
   .. code-block:: python
 

@@ -160,7 +160,7 @@ refactor: make it better
 
   the terminal shows green again
 
-* The two cases where the :ref:`function<functions>` returns :ref:`True<test_what_is_true>` are when ``p`` is :ref:`False<test_what_is_false>` so I do not need ``q`` for this one, I add a new `if statement`_ with an else_ clause
+* The 2 cases where the :ref:`function<functions>` returns :ref:`True<test_what_is_true>` are when ``p`` is :ref:`False<test_what_is_false>` so I do not need ``q`` for this one, I add a new `if statement`_ with an else_ clause
 
   .. code-block:: python
 
@@ -428,7 +428,7 @@ refactor: make it better
         # else:
             return True
 
-  I move the two statements at the bottom to the top then add a new else_ clause
+  I move the 2 statements at the bottom to the top then add a new else_ clause
 
   .. code-block:: python
 
@@ -784,7 +784,7 @@ refactor: make it better
         # else:
             return True
 
-  still green. I move the first two lines to the bottom then add an else_ clause
+  still green. I move the first 2 lines to the bottom then add an else_ clause
 
   .. code-block:: python
 

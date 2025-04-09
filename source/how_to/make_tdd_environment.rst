@@ -109,7 +109,7 @@ how to manually make a python test driven development environment
 
     touch tests/__init__.py
 
-  .. WARNING:: make sure to use two underscores (__) for ``__init__.py``
+  .. WARNING:: make sure to use 2 underscores (__) for ``__init__.py``
 
   .. admonition:: on Windows_ without `Windows Subsystem Linux`_ use ``New-Item``
 

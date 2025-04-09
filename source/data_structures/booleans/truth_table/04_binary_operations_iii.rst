@@ -205,7 +205,7 @@ refactor: make it better
 
   the test is green again
 
-* There are two cases where the result is :ref:`False<test_what_is_false>` and two where the result is :ref:`True<test_what_is_true>`. I move the top `if statement`_ to the bottom to have the two that return :ref:`True<test_what_is_true>` together
+* There are 2 cases where the result is :ref:`False<test_what_is_false>` and 2 where the result is :ref:`True<test_what_is_true>`. I move the top `if statement`_ to the bottom to have the 2 that return :ref:`True<test_what_is_true>` together
 
   .. code-block:: python
 
@@ -219,7 +219,7 @@ refactor: make it better
         if not p and not q:
             return False
 
-  I use or_ to make one `if statement`_ that puts the two that return :ref:`True<test_what_is_true>` together
+  I use or_ to make one `if statement`_ that puts the 2 that return :ref:`True<test_what_is_true>` together
 
   .. code-block:: python
 
@@ -255,7 +255,7 @@ refactor: make it better
     def exclusive_disjunction(p, q):
         return (not p and q) or (p and not q)
 
-* This :ref:`function<functions>` returns :ref:`True<test_what_is_true>` in the two cases when ``p`` and ``q`` are NOT the same, it could also be written as
+* This :ref:`function<functions>` returns :ref:`True<test_what_is_true>` in the 2 cases when ``p`` and ``q`` are NOT the same, it could also be written as
 
   .. code-block:: python
 
@@ -563,7 +563,7 @@ refactor: make it better
             return True
         return p and not q
 
-  the test is green again. These two statements both return :ref:`True<test_what_is_true>` and ``p`` is the same in both cases. I rewrite the `if statements`_ with an else_ clause since most of the operations so far only have 2 results
+  the test is green again. These 2 statements both return :ref:`True<test_what_is_true>` and ``p`` is the same in both cases. I rewrite the `if statements`_ with an else_ clause since most of the operations so far only have 2 results
 
   .. code-block:: python
 

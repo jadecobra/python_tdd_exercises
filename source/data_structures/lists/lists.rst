@@ -496,7 +496,7 @@ green: make it pass
 
     Diff is 748 characters long. Set self.maxDiff to None to see it
 
-  `maxDiff <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff>`_ is an attribute of the `unittest.TestCase`_ :ref:`class <classes>` that sets the maximum amount of characters to show in the comparison between the two objects  in the terminal. When it is set to :ref:`None` there is no limit to the number of characters
+  `maxDiff <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff>`_ is an attribute of the `unittest.TestCase`_ :ref:`class <classes>` that sets the maximum amount of characters to show in the comparison between the 2 objects  in the terminal. When it is set to :ref:`None` there is no limit to the number of characters
 * I add ``self.maxDiff`` to the test
 
   .. code-block:: python

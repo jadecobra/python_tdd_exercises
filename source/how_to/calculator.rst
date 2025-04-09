@@ -925,7 +925,7 @@ green: make it pass
     AssertionError: (10, 6) != 4
     AssertionError: (7, -10) != 17
 
-  the name of the :ref:`function<functions>` is ``subtract`` and the test expects the difference between the two inputs
+  the name of the :ref:`function<functions>` is ``subtract`` and the test expects the difference between the 2 inputs
 
 * I make the `return statement`_ match the expectation
 

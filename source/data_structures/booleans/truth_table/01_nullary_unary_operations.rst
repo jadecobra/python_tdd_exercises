@@ -26,7 +26,7 @@ requirements
 Nullary Operations
 *********************************************************************************
 
-There are two Nullary operations, they do not take input and always return the same value, they are :ref:`singleton functions<test_singleton_functions>`
+There are 2 Nullary operations, they do not take input and always return the same value, they are :ref:`singleton functions<test_singleton_functions>`
 
 * :ref:`Logical True<test_logical_true>`
 * :ref:`Logical False<test_logical_false>`
@@ -148,7 +148,7 @@ green: make it pass
 Unary Operations
 *********************************************************************************
 
-There are two unary operations, they each take one input
+There are 2 unary operations, they each take one input
 
 * :ref:`Logical Identity<test_logical_identity>`
 * :ref:`Logical Negation<test_logical_negation>`

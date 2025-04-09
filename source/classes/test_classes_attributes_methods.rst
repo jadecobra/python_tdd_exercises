@@ -353,7 +353,7 @@ I copy the values from the terminal to change the expectation of the test
           ]
       )
 
-and it passes, the last two values in the list are ``attribute`` and ``method`` which I defined earlier
+and it passes, the last 2 values in the list are ``attribute`` and ``method`` which I defined earlier
 
 ----
 

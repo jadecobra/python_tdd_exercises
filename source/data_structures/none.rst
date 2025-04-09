@@ -169,7 +169,7 @@ refactor: make it better
 
   and the test passes
 
-* The `unittest.TestCase`_ :ref:`class<classes>` has two :ref:`methods<functions>` I can use to test if an object_ is an instance of a :ref:`class<classes>` or not, I use them to test if :ref:`None` is a boolean_
+* The `unittest.TestCase`_ :ref:`class<classes>` has 2 :ref:`methods<functions>` I can use to test if an object_ is an instance of a :ref:`class<classes>` or not, I use them to test if :ref:`None` is a boolean_
 
   .. code-block:: python
 
@@ -249,7 +249,7 @@ refactor: make it better
         self.assertIsInstance(True, bool)
         self.assertNotIsInstance(None, bool)
 
-  the test passes, and I change the last two notes I added
+  the test passes, and I change the last 2 notes I added
 
   .. code-block:: python
 

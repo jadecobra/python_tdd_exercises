@@ -449,7 +449,7 @@ green: make it pass
     def list_comprehension(iterable):
         return [item for item in iterable]
 
-  I made two :ref:`functions<functions>`, one that uses a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ loop and another that uses a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ to do the same thing. The difference between
+  I made 2 :ref:`functions<functions>`, one that uses a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ loop and another that uses a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ to do the same thing. The difference between
 
   .. code-block:: python
 

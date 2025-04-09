@@ -636,7 +636,7 @@ refactor: make it better
             a_list[4]
             a_list[-5]
 
-  If I add a `raise statement`_ between the two lines
+  If I add a `raise statement`_ between the 2 lines
 
   .. code-block:: python
 

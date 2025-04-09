@@ -31,10 +31,13 @@ I add a test
 
 .. code-block:: python
 
+  def test_converse_implication(self):
+      ...
+
   def test_negate_second(self):
       self.assertFalse(src.truth_table.negate_second(True, True))
 
-and the terminal shows :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -47,12 +50,27 @@ I add a :ref:`function<functions>` definition to ``truth_table.py``
 
 .. code-block:: python
 
-  def contradiction(p, q):
-      return False
+  def converse_implication(p, q):
+      return p or not q
 
 
   def negate_second(p, q):
-      return False
+      return p or not q
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: True is not false
+
+I add an `if statement`_
+
+.. code-block:: python
+
+  def negate_second(p, q):
+      if p and q:
+          return False
+      return p or not q
 
 the test passes
 
@@ -67,22 +85,35 @@ refactor: make it better
         self.assertFalse(src.truth_table.negate_second(True, True))
         self.assertTrue(src.truth_table.negate_second(True, False))
 
+  the test is still green. I add an `if statement`_
+
+  .. code-block:: python
+
+    def negate_second(p, q):
+        if p and not q:
+            return False
+        if p and q:
+            return False
+        return p or not q
+
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: False is not true
 
-  I add an `if statement`_
+  I change the statement
 
   .. code-block:: python
 
     def negate_second(p, q):
         if p and not q:
             return True
-        return False
+        if p and q:
+            return False
+        return p or not q
 
-  the test passes
+  the test is green again
 
 * I add the third case
 
@@ -93,9 +124,41 @@ refactor: make it better
         self.assertTrue(src.truth_table.negate_second(True, False))
         self.assertFalse(src.truth_table.negate_second(False, True))
 
-  the test is still passing
+  the test is still passing. I add an `if statement`_
 
-* I add another case
+  .. code-block:: python
+
+    def negate_second(p, q):
+        if not p and q:
+            return True
+        if p and not q:
+            return True
+        if p and q:
+            return False
+        return p or not q
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  I fix the line
+
+  .. code-block:: python
+
+    def negate_second(p, q):
+        if not p and q:
+            return False
+        if p and not q:
+            return True
+        if p and q:
+            return False
+        return p or not q
+
+  and the test passes
+
+* then I add another case
 
   .. code-block:: python
 
@@ -105,19 +168,44 @@ refactor: make it better
         self.assertFalse(src.truth_table.negate_second(False, True))
         self.assertTrue(src.truth_table.negate_second(False, False))
 
+  the test is still green. I add an `if statement`_
+
+  .. code-block:: python
+
+    def negate_second(p, |q):
+        if not p and not q:
+            return False
+        if not p and q:
+            return False
+        if p and not q:
+            return True
+        if p and q:
+            return False
+        return p or not q|
+
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: False is not true
 
-  I add another `if statement`_
+  I fix the `return statement`_ and remove ``return p or not q``
 
   .. code-block:: python
 
+    def negate_second(p, q):
+        if not p and not q:
+            return True
+        if not p and q:
+            return False
+        if p and not q:
+            return True
+        if p and q:
+            return False
+
   the test is green again
 
-* The two `if statements`_ that return :ref:`True<test_what_is_true>` have ``not q``, so I write and `if statement`_ with it
+* This test expects :ref:`True<test_what_is_true>` in 2 of the cases and :ref:`False<test_what_is_false>` in the other 2 The 2 `if statements`_ that return :ref:`True<test_what_is_true>` have ``not q``, so I write and `if statement`_ with it
 
   .. code-block:: python
 
@@ -305,7 +393,7 @@ refactor: make it better
             return False
         return p and not q
 
-  the terminal still shows green, I remove the other statements and rewrite the `if statement`_ to factor out not_ since it happens two times
+  the terminal still shows green, I remove the other statements and rewrite the `if statement`_ to factor out not_ since it happens 2 times
 
   .. code-block:: python
 
@@ -353,6 +441,7 @@ refactor: make it better
         return not (p or q)
 
 ----
+
 *********************************************************************************
 test_logical_equality
 *********************************************************************************
@@ -526,7 +615,7 @@ refactor: make it better
 
   the test is green again
 
-* There are still only two results, this time :ref:`True<test_what_is_true>` happens in two of the cases and :ref:`False<test_what_is_false>` happens in the other two. I move the `if statement`_ for the first case to the top so I have the two cases that return :ref:`True<test_what_is_true>` together
+* There are still only 2 results, this time :ref:`True<test_what_is_true>` happens in 2 of the cases and :ref:`False<test_what_is_false>` happens in the other 2. I move the `if statement`_ for the first case to the top so I have the 2 cases that return :ref:`True<test_what_is_true>` together
 
   .. code-block:: python
 
@@ -670,7 +759,7 @@ refactor: make it better
 
   green again
 
-* I can use or_ to put the two cases that are :ref:`True<test_what_is_true>` together
+* I can use or_ to put the 2 cases that are :ref:`True<test_what_is_true>` together
 
   .. code-block:: python
 
@@ -714,7 +803,7 @@ refactor: make it better
     def logical_equality(p, q):
         return (p and q) or not (p or q)
 
-  and all tests are still passing. All of this could have been done with the ``==`` symbol, since the two cases where :ref:`True<test_what_is_true>` is the result are cases where ``p`` and ``q`` are the same
+  and all tests are still passing. All of this could have been done with the ``==`` symbol, since the 2 cases where :ref:`True<test_what_is_true>` is the result are cases where ``p`` and ``q`` are the same
 
   .. code-block:: python
 

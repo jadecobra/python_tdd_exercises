@@ -416,7 +416,7 @@ These statements can be summed up as - :ref:`True<test_what_is_true>`, :ref:`Fal
 test_assertion_error_w_equality
 *********************************************************************************
 
-I can also test if two things are equal
+I can also test if 2 things are equal
 
 red: make it fail
 #################################################################################

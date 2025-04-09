@@ -196,7 +196,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
             ()
         )
 
-  the terminal shows :ref:`TypeError` because the :ref:`function<functions>` signature only has two keyword arguments which are not provided in the call
+  the terminal shows :ref:`TypeError` because the :ref:`function<functions>` signature only has 2 keyword arguments which are not provided in the call
 
 * using what I know from previous tests I can alter the :ref:`function<functions>` to use starred expressions
 

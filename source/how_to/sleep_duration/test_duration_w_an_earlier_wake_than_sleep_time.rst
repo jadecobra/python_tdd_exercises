@@ -456,7 +456,7 @@ The challenge is to write a program that calculates the difference between a giv
 * :ref:`test_duration_w_hours <how to measure sleep duration: test_duration_w_hours>`
 * :ref:`test_duration_calculation`
 * :ref:`test_duration_w_an_earlier_wake_than_sleep_time  <how to measure sleep duration: test_duration_w_an_earlier_wake_than_sleep_time>`
-* :ref:`test_duration_w_hours_and_minutes <how to measure sleep duration: test_duration_w_hours_and_minutes>` where I used a `while statement`_ to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<functions>` raises ValueError_ with a message and returns the right difference between the two when ``wake_time`` is later than or the same as ``sleep_time``
+* :ref:`test_duration_w_hours_and_minutes <how to measure sleep duration: test_duration_w_hours_and_minutes>` where I used a `while statement`_ to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<functions>` raises ValueError_ with a message and returns the right difference between the 2 when ``wake_time`` is later than or the same as ``sleep_time``
 
 
 Would you like to :ref:`test duration with timestamps that have dates? <how to measure sleep duration: test_duration_w_date_and_time>`
