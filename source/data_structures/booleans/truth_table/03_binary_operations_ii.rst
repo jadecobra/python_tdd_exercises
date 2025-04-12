@@ -243,7 +243,20 @@ I add a definition for the :ref:`function<functions>`
 
 
   def logical_nand(p, q):
-      return not p
+      return True
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: True is not false
+
+when I change the `return statement`_
+
+.. code-block:: python
+
+  def logical_nand(p, q):
+      return False
 
 the terminal shows green
 
@@ -269,9 +282,9 @@ refactor: make it better
   .. code-block:: python
 
     def logical_nand(p, q):
-        if p and not q:
+        if p == True and q == False:
             return True
-        return not p
+        return False
 
   the test passes
 
@@ -284,33 +297,22 @@ refactor: make it better
         self.assertTrue(src.truth_table.logical_nand(True, False))
         self.assertTrue(src.truth_table.logical_nand(False, True))
 
-  the terminal shows green, I add an `if statement`_
-
-  .. code-block:: python
-
-    def logical_nand(p, q):
-        if not p and q:
-            return False
-        if p and not q:
-            return True
-        return not p
-
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: False is not true
 
-  I change the statement
+  I add another `if statement`
 
   .. code-block:: python
 
     def logical_nand(p, q):
-        if not p and q:
+        if p == False and q == True:
             return True
-        if p and not q:
+        if p == True and q == False:
             return True
-        return not p
+        return False
 
   green again
 
@@ -324,39 +326,28 @@ refactor: make it better
         self.assertTrue(src.truth_table.logical_nand(False, True))
         self.assertTrue(src.truth_table.logical_nand(False, False))
 
-  the test passes. I add an `if statement`_ to see it fail
-
-  .. code-block:: python
-
-    def logical_nand(p, q):
-        if not p and not q:
-            return False
-        if not p and q:
-            return True
-        if p and not q:
-            return True
-        return not p
-
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: False is not true
 
-  I change the `return statement`_
+  I add an `if statement`_
 
   .. code-block:: python
 
     def logical_nand(p, q):
-        if not p and not q:
+        if p == False and q == False:
             return True
-        if not p and q:
+        if p == False and q == True:
             return True
-        if p and not q:
+        if p == True and q == False:
             return True
-        return not p
+        return False
 
-* there are still only 2 results - :ref:`True<test_what_is_true>` in 3 cases and :ref:`False<test_what_is_false>` in one case. I add an `if statement`_ for that case with an else_ clause
+  the test is green again
+
+* the :ref:`function<functions>` returns :ref:`True<test_what_is_true>` in 3 cases and :ref:`False<test_what_is_false>` in one case. I add an `if statement`_ for that case with an else_ clause
 
   .. code-block:: python
 
@@ -371,31 +362,20 @@ refactor: make it better
             return True
         if p == True and q == False:
             return True
-        return not p
+        return False
 
-  I use bool_ to rewrite the first `if statement`_, I did this with :ref:`Logical Conjunction<test_logical_conjunction>`
-
-  .. code-block:: python
-
-    def logical_nand(p, q):
-        if bool(p) and bool(q):
-        # if p == True and q == True:
-            return False
-        else:
-            return True
-
-  which is the same as
+  the test is still green. I use the simpler `if statement`_ I learned from :ref:`Logical Conjunction<test_logical_conjunction>`
 
   .. code-block:: python
 
     def logical_nand(p, q):
         if p and q:
-        # if bool(p) and bool(q):
+        # if p == True and q == True:
             return False
         else:
             return True
 
-  the test is still green. I want to use a `conditional expression`_, which means I have to rewrite this in terms of :ref:`True<test_what_is_true>`. I write the :ref:`logical negation<test_logical_negation>` of the `if statement`_ for the else_ clause with not_
+  still green. I want to use a `conditional expression`_, which means I have to rewrite this in terms of :ref:`True<test_what_is_true>`. I write the :ref:`logical negation<test_logical_negation>` of the `if statement`_ for the else_ clause with not_
 
   .. code-block:: python
 
@@ -422,21 +402,13 @@ refactor: make it better
   .. code-block:: python
 
     def logical_nand(p, q):
-        return True if not (p and q) else False
+        return not (p and q)
         if not (p and q):
             return True
         else:
             return False
 
-  still green. I remove the other statements and use the simpler `return statement`
-
-  .. code-block:: python
-
-    def logical_nand(p, q):
-        return not (p and q)
-        return True if not (p and q) else False
-
-  I remove the second `return statement`_
+  I remove the other statements
 
   .. code-block:: python
 
