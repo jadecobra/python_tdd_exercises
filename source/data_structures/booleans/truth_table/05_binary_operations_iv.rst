@@ -768,6 +768,7 @@ From the tests I know that
 * :ref:`Project Second <test_project_second>` always returns ``q``
 * :ref:`Logical Conjunction <test_logical_conjunction>` returns ``p and q``
 * :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
+* :ref:`Logical Negation<test_logical_negation>` is not_
 
 Would you like to :ref:`test the truth table tests?<test_truth_table_tests>`
 

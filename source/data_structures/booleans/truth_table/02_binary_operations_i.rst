@@ -306,7 +306,7 @@ refactor: make it better
 
   the terminal shows green
 
-* I add an `if statement` for the first case to make it clearer
+* I add an `if statement`_ for the first case to make it clearer
 
   .. code-block:: python
 
@@ -977,6 +977,7 @@ From the tests I know that
 * :ref:`Project Second <test_project_second>` always returns ``q``
 * :ref:`Logical Conjunction <test_logical_conjunction>` returns ``p and q``
 * :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
+* :ref:`Logical Negation<test_logical_negation>` is not_
 
 do you want to :ref:`test more binary operations? <binary_operations_ii>`
 

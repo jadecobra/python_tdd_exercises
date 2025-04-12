@@ -41,6 +41,7 @@
 .. _datetime.timedelta: https://docs.python.org/3/library/datetime.html?highlight=datetime#timedelta-objects
 .. _def: https://docs.python.org/3/reference/lexical_analysis.html#keywords
 .. _dict: https://docs.python.org/3/library/stdtypes.html#dict
+.. _dictionary: https://docs.python.org/3/tutorial/datastructures.html#dictionaries
 .. _dir: https://docs.python.org/3/library/functions.html?highlight=dir#dir
 .. _echo: https://man7.org/linux/man-pages/man1/echo.1.html
 .. _else: https://docs.python.org/3/reference/compound_stmts.html#else

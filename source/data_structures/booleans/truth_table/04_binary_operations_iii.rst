@@ -810,7 +810,7 @@ From the tests I know that
 *  :ref:`Converse Implication <test_converse_implication>` returns ``p or not q``
 * :ref:`Project First <test_project_first>` always returns ``p``
 * :ref:`Material NonImplication <test_material_non_implication>` returns ``p and not q``
-* :ref:`Exclusive Disjunction <test_exclusive_disjunction>` is ``!=``, or the :ref:`Logical Negation<test_logical_negation>` of :ref:`Logical Equality <test_logical_equality>`
+* :ref:`Exclusive Disjunction <test_exclusive_disjunction>` is ``!=``
 * :ref:`Logical Disjunction <test_logical_disjunction>` returns ``p or q``
 * :ref:`Tautology <test_tautology>` always returns :ref:`True<test_what_is_true>`
 * :ref:`Logical NAND <test_logical_nand>` returns ``not (p and q)``
@@ -819,6 +819,7 @@ From the tests I know that
 * :ref:`Project Second <test_project_second>` always returns ``q``
 * :ref:`Logical Conjunction <test_logical_conjunction>` returns ``p and q``
 * :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
+* :ref:`Logical Negation<test_logical_negation>` is not_
 
 do you want to :ref:`test more binary operations? <binary_operations_iv>`
 

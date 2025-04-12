@@ -55,7 +55,20 @@ I add the :ref:`function<functions>` definition
 
 
   def negate_first(p, q):
-      return not p and q
+      return True
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: True is not false
+
+I change the `return statement`_
+
+.. code-block:: python
+
+  def negate_first(p, q):
+      return False
 
 the test passes
 
@@ -70,31 +83,7 @@ refactor: make it better
         self.assertFalse(src.truth_table.negate_first(True, True))
         self.assertFalse(src.truth_table.negate_first(True, False))
 
-  the test is still green. I add an `if statement`_
-
-  .. code-block:: python
-
-    def negate_first(p, q):
-        if p == True and q == False:
-            return True
-        return not p and q
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: True is not false
-
-  I fix the `return statement`_
-
-  .. code-block:: python
-
-    def negate_first(p, q):
-        if p == True and q == False:
-            return False
-        return not p and q
-
-  the test is green again
+  the test is still green
 
 * I add the next case
 
@@ -105,33 +94,20 @@ refactor: make it better
         self.assertFalse(src.truth_table.negate_first(True, False))
         self.assertTrue(src.truth_table.negate_first(False, True))
 
-  the terminal still shows green. I add another `if statement`_
-
-  .. code-block:: python
-
-    def negate_first(p, q):
-        if p == False and q == True:
-            return False
-        if p == True and q == False:
-            return False
-        return not p and q
-
-  the terminal shows :ref:`AssertionError`
+  the terminal  shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: False is not true
 
-  I fix the new statement
+  I add an `if statement`_
 
   .. code-block:: python
 
     def negate_first(p, q):
         if p == False and q == True:
             return True
-        if p == True and q == False:
-            return False
-        return not p and q
+        return False
 
   the test passes
 
@@ -149,16 +125,20 @@ refactor: make it better
 
   .. code-block:: python
 
+    AssertionError: False is not true
+
+  I add an `if statement`_ for it
+
+  .. code-block:: python
+
     def negate_first(p, q):
         if p == False and q == False:
             return True
         if p == False and q == True:
             return True
-        if p == True and q == False:
-            return False
-        return not p and q
+        return False
 
-  the terminal shows green again
+  the test is green again
 
 * The 2 cases where the :ref:`function<functions>` returns :ref:`True<test_what_is_true>` are when ``p`` is :ref:`False<test_what_is_false>` so I do not need ``q`` for this one, I add a new `if statement`_ with an else_ clause
 
@@ -173,9 +153,7 @@ refactor: make it better
             return True
         if p == False and q == True:
             return True
-        if p == True and q == False:
-            return False
-        return not p and q
+        return False
 
   the test is still green. I remove the other statements and use bool_
 
@@ -291,7 +269,7 @@ refactor: make it better
   .. code-block:: python
 
     def logical_nand(p, q):
-        if p == True and q == False:
+        if p and not q:
             return True
         return not p
 
@@ -311,9 +289,9 @@ refactor: make it better
   .. code-block:: python
 
     def logical_nand(p, q):
-        if p == False and q == True:
+        if not p and q:
             return False
-        if p == True and q == False:
+        if p and not q:
             return True
         return not p
 
@@ -328,9 +306,9 @@ refactor: make it better
   .. code-block:: python
 
     def logical_nand(p, q):
-        if p == False and q == True:
+        if not p and q:
             return True
-        if p == True and q == False:
+        if p and not q:
             return True
         return not p
 
@@ -351,11 +329,11 @@ refactor: make it better
   .. code-block:: python
 
     def logical_nand(p, q):
-        if p == False and q == False:
+        if not p and not q:
             return False
-        if p == False and q == True:
+        if not p and q:
             return True
-        if p == True and q == False:
+        if p and not q:
             return True
         return not p
 
@@ -370,11 +348,11 @@ refactor: make it better
   .. code-block:: python
 
     def logical_nand(p, q):
-        if p == False and q == False:
+        if not p and not q:
             return True
-        if p == False and q == True:
+        if not p and q:
             return True
-        if p == True and q == False:
+        if p and not q:
             return True
         return not p
 
@@ -874,6 +852,7 @@ From the tests I know that
 * :ref:`Project Second <test_project_second>` always returns ``q``
 * :ref:`Logical Conjunction <test_logical_conjunction>` returns ``p and q``
 * :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
+* :ref:`Logical Negation<test_logical_negation>` is not_
 
 do you want to :ref:`test more binary operations? <binary_operations_iii>`
 
