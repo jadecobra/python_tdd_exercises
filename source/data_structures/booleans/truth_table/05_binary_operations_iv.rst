@@ -55,7 +55,7 @@ I add a :ref:`function<functions>` definition to ``truth_table.py``
 
 
   def negate_second(p, q):
-      return p or not q
+      return False
 
 the terminal shows :ref:`AssertionError`
 
@@ -63,14 +63,12 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: True is not false
 
-I add an `if statement`_
+I change the `return statement`_
 
 .. code-block:: python
 
   def negate_second(p, q):
-      if p and q:
-          return False
-      return p or not q
+      return False
 
 the test passes
 
@@ -85,35 +83,22 @@ refactor: make it better
         self.assertFalse(src.truth_table.negate_second(True, True))
         self.assertTrue(src.truth_table.negate_second(True, False))
 
-  the test is still green. I add an `if statement`_
-
-  .. code-block:: python
-
-    def negate_second(p, q):
-        if p and not q:
-            return False
-        if p and q:
-            return False
-        return p or not q
-
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: False is not true
 
-  I change the statement
+  I add an `if statement`_
 
   .. code-block:: python
 
     def negate_second(p, q):
         if p and not q:
             return True
-        if p and q:
-            return False
-        return p or not q
+        return False
 
-  the test is green again
+  the test passes
 
 * I add the third case
 
@@ -124,39 +109,7 @@ refactor: make it better
         self.assertTrue(src.truth_table.negate_second(True, False))
         self.assertFalse(src.truth_table.negate_second(False, True))
 
-  the test is still passing. I add an `if statement`_
-
-  .. code-block:: python
-
-    def negate_second(p, q):
-        if not p and q:
-            return True
-        if p and not q:
-            return True
-        if p and q:
-            return False
-        return p or not q
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: True is not false
-
-  I fix the line
-
-  .. code-block:: python
-
-    def negate_second(p, q):
-        if not p and q:
-            return False
-        if p and not q:
-            return True
-        if p and q:
-            return False
-        return p or not q
-
-  and the test passes
+  the test is still passing
 
 * then I add another case
 
@@ -168,44 +121,27 @@ refactor: make it better
         self.assertFalse(src.truth_table.negate_second(False, True))
         self.assertTrue(src.truth_table.negate_second(False, False))
 
-  the test is still green. I add an `if statement`_
-
-  .. code-block:: python
-
-    def negate_second(p, |q):
-        if not p and not q:
-            return False
-        if not p and q:
-            return False
-        if p and not q:
-            return True
-        if p and q:
-            return False
-        return p or not q|
-
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: False is not true
 
-  I fix the `return statement`_ and remove ``return p or not q``
+  I add another `if statement`_
 
   .. code-block:: python
 
     def negate_second(p, q):
         if not p and not q:
             return True
-        if not p and q:
-            return False
         if p and not q:
             return True
-        if p and q:
-            return False
+        return False
+
 
   the test is green again
 
-* This test expects :ref:`True<test_what_is_true>` in 2 of the cases and :ref:`False<test_what_is_false>` in the other 2. The 2 `if statements`_ that return :ref:`True<test_what_is_true>` have ``not q``, so I write a `conditional expression`_ with it
+* the :ref:`function<functions>` returns :ref:`True<test_what_is_true>` when ``q`` is :ref:`False<test_what_is_false>` so I write a `conditional expression`_ with it
 
   .. code-block:: python
 
@@ -213,12 +149,10 @@ refactor: make it better
         return not q
         if not p and not q:
             return True
-        if not p and q:
-            return False
         if p and not q:
             return True
-        if p and q:
-            return False
+        return False
+
 
   the terminal still shows green. I remove the other statements
 
@@ -265,7 +199,20 @@ I add a :ref:`function<functions>`
 
 
   def logical_nor(p, q):
-      return not q
+      return True
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: True is not false
+
+I fix the `return statement`
+
+.. code-block:: python
+
+  def logical_nor(p, q):
+      return False
 
 the test passes
 
@@ -280,22 +227,7 @@ refactor: make it better
         self.assertFalse(src.truth_table.logical_nor(True, True))
         self.assertFalse(src.truth_table.logical_nor(True, False))
 
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: True is not false
-
-  I add an `if statement`_
-
-  .. code-block:: python
-
-    def logical_nor(p, q):
-        if p and not q:
-            return False
-        return not q
-
-  the test passes
+  the terminal still shows green
 
 * on to the next case
 
@@ -318,31 +250,27 @@ refactor: make it better
         self.assertFalse(src.truth_table.logical_nor(False, True))
         self.assertTrue(src.truth_table.logical_nor(False, False))
 
-  still green
+  the terminal shows :ref:`AssertionError`
 
-* I add an `if statement`_ with an else_ clause for the last case which returns :ref:`True<test_what_is_true>`
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  I add a `conditional expression`_
 
   .. code-block:: python
 
     def logical_nor(p, q):
-        if not p and not q:
-            return True
-        else:
-            return False
-        if p and not q:
-            return False
-        return not q
+        return not p and not q
+        return False
 
-  the terminal still shows green, I remove the other statements and rewrite the `if statement`_ to factor out not_ since it happens 2 times
+* I want to factor out not_ since it happens 2 times
 
   .. code-block:: python
 
     def logical_nor(p, q):
-        if not p not or not q:
-        # if not p and not q:
-            return True
-        else:
-            return False
+        return not p not and not q
+        return not p and not q
 
   the terminal shows SyntaxError_
 
@@ -350,30 +278,44 @@ refactor: make it better
 
     SyntaxError: invalid syntax
 
-  I fix the line
+  I fix the line - not_ and_ is or_
 
   .. code-block:: python
 
     def logical_nor(p, q):
-        if not (p or q):
-        # if not p not or not q:
-        # if not p and not q:
-            return True
-        else:
-            return False
+        return not p or not q
+        return not p and not q
 
-  still green. I rewrite it as a `conditional expression`_
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  I made a mistake with my "factoring", I should have used ``not or`` to replace ``and``. I try again
+
+  .. code-block:: python
+
+    def logical_nor(p, q):
+        return not p not or not q
+        return not p and not q
+
+  the terminal shows SyntaxError_
+
+  .. code-block:: python
+
+    SyntaxError: invalid syntax
+
+  I factor out the not_
 
   .. code-block:: python
 
     def logical_nor(p, q):
         return not (p or q)
-        if not (p or q):
-            return True
-        else:
-            return False
+        # return not p not or not q
+        return not p and not q
 
-  still green, I remove the other statements
+  green again, I remove the other statements
 
   .. code-block:: python
 
@@ -418,7 +360,7 @@ I add a :ref:`function<functions>` definition
 
 
   def logical_equality(p, q):
-      return not (p or q)
+      False
 
 the terminal shows :ref:`AssertionError`
 
@@ -426,14 +368,12 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: False is not true
 
-I add an `if statement`_
+I change the `return statement`_
 
 .. code-block:: python
 
   def logical_equality(p, q):
-      if p and q:
-          return True
-      return not (p or q)
+      return True
 
 the test passes
 
@@ -448,7 +388,22 @@ refactor: make it better
         self.assertTrue(src.truth_table.logical_equality(True, True))
         self.assertFalse(src.truth_table.logical_equality(True, False))
 
-  the test is still green
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  I add an `if statement`_
+
+  .. code-block:: python
+
+    def logical_equality(p, q):
+        if p and not q:
+            return False
+        return True
+
+  the test passes
 
 * I add another case
 
@@ -459,7 +414,24 @@ refactor: make it better
         self.assertFalse(src.truth_table.logical_equality(True, False))
         self.assertFalse(src.truth_table.logical_equality(False, True))
 
-  the terminal still shows green
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  I add another `if statement`_
+
+  .. code-block:: python
+
+    def logical_equality(p, q):
+        if not p and q:
+            return False
+        if p and not q:
+            return False
+        return True
+
+  the test passes
 
 * I add the last case
 
@@ -473,70 +445,111 @@ refactor: make it better
 
   and the test is still green
 
-* This test expects :ref:`True<test_what_is_true>` in 2 of the cases and :ref:`False<test_what_is_false>`  in the other 2. I add an `if statement`_ for the other case where :ref:`True<test_what_is_true>` is expected
+* This test expects :ref:`True<test_what_is_true>` in 2 of the cases and :ref:`False<test_what_is_false>`  in the other 2. I use or_ to put the 2 statements that return :ref:`False<test_what_is_false>` together
 
   .. code-block:: python
 
     def logical_equality(p, q):
-        if not p and not q:
+        if (not p and q) or (p and not q):
             return False
-        if p and q:
+        else:
             return True
-        return not (p or q)
+        if not p and q:
+            return False
+        if p and not q:
+            return False
+        return True
 
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: False is not true
-
-  I fix the `return statement`_
-
-  .. code-block:: python
-
-    def logical_equality(p, q):
-        if not p and not q:
-            return True
-        if p and q:
-            return True
-        return not (p or q)
-
-  the test is green again. I factor out not_ like I did in :ref:`Negate Second <test_negate_second>` since it happens 2 times in this statement
+  still green. I use not_ to write another `if statement`_
 
   .. code-block:: python
 
     def logical_equality(p, q):
-        if not (p or q):
-        # if not p and not q:
+        if (not p and q) or (p and not q):
+            return False
+        if not ((not p and q) or (p and not q)):
+        # else:
             return True
-        if p and q:
-            return True
-        return not (p or q)
 
-  the terminal still shows green
-
-* I use or_ to make 1 `if statement`_ for these 2 cases
+  still green. I change the order
 
   .. code-block:: python
 
     def logical_equality(p, q):
-        if not (p or q) or (p and q):
+        if not ((not p and q) or (p and not q)):
+            return True
+        else:
+        # if (not p and q) or (p and not q):
+            return False
+
+  the test is still green. I multiply not_ by every symbol in the parentheses
+
+  .. code-block:: python
+
+    def logical_equality(p, q):
+        if not (not p and q) not or not (p and not q):
+        # if not ((not p and q) or (p and not q)):
             return True
         else:
             return False
-        if not (p or q):
-            return True
-        if p and q:
-            return True
-        return not (p or q)
 
-  still green. I remove the other statements and use a `conditional expression`_
+  the terminal shows SyntaxError_
+
+  .. code-block:: python
+
+    SyntaxError: invalid syntax
+
+  I fix the line - not_ or_ is and_
 
   .. code-block:: python
 
     def logical_equality(p, q):
-        return not (p or q) or (p and q)
-        if not (p or q) or (p and q):
+        if not (not p and q) and not (p and not q):
+        # if not (not p and q) not or not (p and not q):
+        # if not ((not p and q) or (p and not q)):
+            return True
+        else:
+            return False
+
+  the test is green again. I "multiply" not_ by each symbol in the parentheses
+
+  .. code-block:: python
+
+    def logical_equality(p, q):
+        if (not not p not and not q) and (not p not and not not q):
+        # if not (not p and q) and not (p and not q):
+            return True
+        else:
+            return False
+
+  the terminal shows SyntaxError_
+
+  .. code-block:: python
+
+    SyntaxError: invalid syntax
+
+  I fix the line
+
+  - not_ not_ cancels out
+  - not_ and_ is or
+
+  .. code-block:: python
+
+    def logical_equality(p, q):
+        if (p or not q) and (not p or q):
+        # if (not not p not and not q) and (not p not and not not q):
+        # if not (not p and q) and not (p and not q):
+            return True
+        else:
+            return False
+
+  the test is green again. I remove the other statements and use a `conditional expression`_
+
+  .. code-block:: python
+
+    def logical_equality(p, q):
+        return (p or not q) and (not p or q)
+        if (p or not q) and (not p or q):
             return True
         else:
             return False
@@ -546,9 +559,11 @@ refactor: make it better
   .. code-block:: python
 
     def logical_equality(p, q):
-        return (p and q) or not (p or q)
+        return (p or not q) and (not p or q)
 
-  and all tests are still passing. All of this could have been done with the ``==`` symbol, since the 2 cases where :ref:`True<test_what_is_true>` is the result are cases where ``p`` and ``q`` are the same
+  and all tests are still passing.
+
+* All of this could have been done with the ``==`` symbol, since the 2 cases where :ref:`True<test_what_is_true>` is the result are cases where ``p`` and ``q`` are the same
 
   .. code-block:: python
 
@@ -557,6 +572,7 @@ refactor: make it better
             return True
         else:
             return False
+        return (p or not q) and (not p or q)
 
   which is the same as the `conditional expression`_
 
@@ -564,6 +580,19 @@ refactor: make it better
 
     def logical_equality(p, q):
         return p == q
+        if p == q:
+            return True
+        else:
+            return False
+        return (p or not q) and (not p or q)
+
+  I remove the other statements
+
+  .. code-block:: python
+
+    def logical_equality(p, q):
+        return p == q
+        return (p or not q) and (not p or q)
 
 ----
 
@@ -759,7 +788,7 @@ From the tests I know that
 *  :ref:`Converse Implication <test_converse_implication>` returns ``p or not q``
 * :ref:`Project First <test_project_first>` always returns ``p``
 * :ref:`Material NonImplication <test_material_non_implication>` returns ``p and not q``
-* :ref:`Exclusive Disjunction <test_exclusive_disjunction>` is ``!=``, or the :ref:`Logical Negation<test_logical_negation>` of :ref:`Logical Equality <test_logical_equality>`
+* :ref:`Exclusive Disjunction <test_exclusive_disjunction>` returns ``p != q``, or the :ref:`Logical Negation<test_logical_negation>` of :ref:`Logical Equality <test_logical_equality>`
 * :ref:`Logical Disjunction <test_logical_disjunction>` returns ``p or q``
 * :ref:`Tautology <test_tautology>` always returns :ref:`True<test_what_is_true>`
 * :ref:`Logical NAND <test_logical_nand>` returns ``not (p and q)``

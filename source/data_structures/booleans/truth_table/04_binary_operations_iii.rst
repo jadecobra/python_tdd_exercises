@@ -630,7 +630,7 @@ refactor: make it better
         else:
             return False
 
-  the terminal shows :ref:`SyntaxError`
+  the terminal shows SyntaxError_
 
   .. code-block:: python
 
@@ -680,7 +680,7 @@ From the tests I know that
 *  :ref:`Converse Implication <test_converse_implication>` returns ``p or not q``
 * :ref:`Project First <test_project_first>` always returns ``p``
 * :ref:`Material NonImplication <test_material_non_implication>` returns ``p and not q``
-* :ref:`Exclusive Disjunction <test_exclusive_disjunction>` is ``!=``
+* :ref:`Exclusive Disjunction <test_exclusive_disjunction>` returns ``p != q``
 * :ref:`Logical Disjunction <test_logical_disjunction>` returns ``p or q``
 * :ref:`Tautology <test_tautology>` always returns :ref:`True<test_what_is_true>`
 * :ref:`Logical NAND <test_logical_nand>` returns ``not (p and q)``
