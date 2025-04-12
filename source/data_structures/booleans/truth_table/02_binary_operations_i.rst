@@ -99,7 +99,6 @@ refactor: make it better
 
     def contradiction(p, q):
         return True
-        return not p
 
   the terminal shows :ref:`AssertionError`
 
@@ -107,7 +106,14 @@ refactor: make it better
 
     AssertionError: True is not false
 
-  I remove the new statement and the test is green again
+  I change the `return statement`
+
+  .. code-block:: python
+
+    def contradiction(p, q):
+        return False
+
+  the test is green again
 
 * I add the next case
 
@@ -118,20 +124,7 @@ refactor: make it better
         self.assertFalse(src.truth_table.contradiction(True, False))
         self.assertFalse(src.truth_table.contradiction(False, True))
 
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: True is not false
-
-  the test expects :ref:`False<test_what_is_false>` in the 3 cases so far, I change the `return statement`_ to match
-
-  .. code-block:: python
-
-    def contradiction(p, q):
-        return False
-
-  green again
+  the test is still passing
 
 * I add the fourth case
 
@@ -143,7 +136,7 @@ refactor: make it better
         self.assertFalse(src.truth_table.contradiction(False, True))
         self.assertFalse(src.truth_table.contradiction(False, False))
 
-  another case that expects :ref:`False<test_what_is_false>`, the test is still green! :ref:`contradiction<test_contradiction>` is a :ref:`singleton function<test_singleton_functions>` it always returns :ref:`False<test_what_is_false>`
+  another case that expects :ref:`False<test_what_is_false>`, the test is still green! :ref:`contradiction<test_contradiction>` always returns :ref:`False<test_what_is_false>`
 
 ----
 
@@ -198,7 +191,7 @@ I change :ref:`False <test_what_is_false>` to :ref:`True <test_what_is_true>` in
   def logical_conjunction(p, q):
       return True
 
-and the test passes
+the test passes
 
 refactor: make it better
 #################################################################################
@@ -320,35 +313,9 @@ refactor: make it better
             if q == False:
                 return False
             if q == True:
-                return False
-        return True
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: False is not true
-
-  I change :ref:`False <test_what_is_false>` to :ref:`True<test_what_is_true>` on the new line and comment out the last `return statement`_
-
-  .. code-block:: python
-
-    def logical_conjunction(p, q):
-        if p == False:
-            if q == False:
-                return False
-            if q == True:
-                return False
-        if p == True:
-            if q == False:
-                return False
-            if q == True:
                 return True
-        # return True
 
-  the terminal shows green again.
-
-* There are only 2 results for this operation, in the first case the :ref:`function<functions>` returns :ref:`True <test_what_is_true>` and in the other 3 cases it returns :ref:`False <test_what_is_false>`. I remove the commented line and rewrite the `if statement`_ for the case where the result is :ref:`True <test_what_is_true>` then use an else_ clause for the other cases
+* There are only 2 results for this operation, in the first case the :ref:`function<functions>` returns :ref:`True <test_what_is_true>` and in the other 3 cases it returns :ref:`False <test_what_is_false>`. I rewrite the `if statement`_ for the case where the result is :ref:`True <test_what_is_true>` then use an else_ clause for the other cases
 
   .. code-block:: python
 
@@ -455,7 +422,20 @@ When I add a :ref:`function<functions>` definition for it
 
 
   def project_second(p, q):
-      return p and q
+      return False
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: False is not true
+
+I change the `return statement`_
+
+.. code-block:: python
+
+  def project_second(p, q):
+      return True
 
 the test passes
 
@@ -470,23 +450,13 @@ refactor: make it better
         self.assertTrue(src.truth_table.project_second(True, True))
         self.assertFalse(src.truth_table.project_second(True, False))
 
-  the terminal shows green. I add an `if statement`_ to make sure it works
-
-  .. code-block:: python
-
-    def project_second(p, q):
-        if p == True:
-            if q == False:
-                return True
-        return p and q
-
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: True is not false
 
-  I change the `return statement`_ I added
+  I add an `if statement`_
 
   .. code-block:: python
 
@@ -494,7 +464,7 @@ refactor: make it better
         if p == True:
             if q == False:
                 return False
-        return p and q
+        return True
 
   the test passes
 
@@ -507,26 +477,7 @@ refactor: make it better
         self.assertFalse(src.truth_table.project_second(True, False))
         self.assertTrue(src.truth_table.project_second(False, True))
 
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: False is not true
-
-  I add another `if statement`
-
-  .. code-block:: python
-
-    def project_second(p, q):
-        if p == False:
-            if q == True:
-                return True
-        if p == True:
-            if q == False:
-                return False
-        return p and q
-
-  the test is green again
+  the terminal still shows green
 
 * I add the last case
 
@@ -538,28 +489,13 @@ refactor: make it better
         self.assertTrue(src.truth_table.project_second(False, True))
         self.assertFalse(src.truth_table.project_second(False, False))
 
-  and the test is still green, I add an `if statement`_ for it anyways
-
-  .. code-block:: python
-
-    def project_second(p, q):
-        if p == False:
-            if q == False:
-                return True
-            if q == True:
-                return True
-        if p == True:
-            if q == False:
-                return False
-        return p and q
-
-  the terminal shows :ref:`AssertionError`
+  and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: True is not false
 
-  I change the `return statement`_
+  I add another `if statement`_
 
   .. code-block:: python
 
@@ -567,54 +503,12 @@ refactor: make it better
         if p == False:
             if q == False:
                 return False
-            if q == True:
-                return True
         if p == True:
             if q == False:
                 return False
-        return p and q
+        return True
 
-  the test passes and I add an `if statement`_ for the first case
-
-  .. code-block:: python
-
-    def project_second(p, q):
-        if p == False:
-            if q == False:
-                return False
-            if q == True:
-                return True
-        if p == True:
-            if q == False:
-                return False
-            if q == True:
-                return False
-        return p and q
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: False is not true
-
-  I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in the line I added
-
-  .. code-block:: python
-
-    def project_second(p, q):
-        if p == False:
-            if q == False:
-                return False
-            if q == True:
-                return True
-        if p == True:
-            if q == False:
-                return False
-            if q == True:
-                return True
-        return p and q
-
-  the test is green again. and remove ``return p and q``
+  the test passes
 
 * This :ref:`function<functions>` returns :ref:`True<test_what_is_true>` when ``q`` is :ref:`True<test_what_is_true>` and returns :ref:`False<test_what_is_false>` when it is not. I rewrite the statements in terms of ``q`` with an else_ clause
 
@@ -628,13 +522,10 @@ refactor: make it better
         if p == False:
             if q == False:
                 return False
-            if q == True:
-                return True
         if p == True:
             if q == False:
                 return False
-            if q == True:
-                return True
+        return True
 
   the test is still green, I remove the other `if statements`_
 
@@ -673,13 +564,21 @@ refactor: make it better
   .. code-block:: python
 
     def project_second(p, q):
-        return q
+        return True if q else False
         if q:
             return True
         else:
             return False
 
-  the terminal shows all tests are still passing. I remove the other statements
+  the terminal shows all tests are still passing. I use the simpler `return statement`
+
+  .. code-block:: python
+
+    def project_second(p, q):
+        return q
+        return True if q else False
+
+  still green. I remove the other statement
 
   .. code-block:: python
 
@@ -724,7 +623,7 @@ I add the :ref:`function<functions>`
 
 
   def converse_non_implication(p, q):
-      return q
+      return True
 
 the terminal shows :ref:`AssertionError`
 
@@ -732,17 +631,15 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: True is not false
 
-I add an `if statement`_
+I fix the `return statement`
 
 .. code-block:: python
 
   def converse_non_implication(p, q):
-      if p == True:
-          if q == True:
-              return False
-      return q
+      return False
 
 the test passes
+
 
 refactor: make it better
 #################################################################################
@@ -755,37 +652,7 @@ refactor: make it better
         self.assertFalse(src.truth_table.converse_non_implication(True, True))
         self.assertFalse(src.truth_table.converse_non_implication(True, False))
 
-  the terminal still shows green. I add another `if statement`_ to make sure
-
-  .. code-block:: python
-
-    def converse_non_implication(p, q):
-        if p == True:
-            if q == False:
-                return True
-            if q == True:
-                return False
-        return q
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: True is not false
-
-  I fix the statement
-
-  .. code-block:: python
-
-    def converse_non_implication(p, q):
-        if p == True:
-            if q == False:
-                return False
-            if q == True:
-                return False
-        return q
-
-  the test is green again
+  the terminal still shows green
 
 * I add the third case
 
@@ -796,28 +663,13 @@ refactor: make it better
         self.assertFalse(src.truth_table.converse_non_implication(True, False))
         self.assertTrue(src.truth_table.converse_non_implication(False, True))
 
-  the test is still green. I add another `if statement`_ to check
-
-  .. code-block:: python
-
-    def converse_non_implication(p, q):
-        if p == False:
-            if q == True:
-                return False
-        if p == True:
-            if q == False:
-                return False
-            if q == True:
-                return False
-        return q
-
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: False is not true
 
-  I make it return :ref:`True<test_what_is_true>`
+  I add an `if statement`_
 
   .. code-block:: python
 
@@ -825,12 +677,7 @@ refactor: make it better
         if p == False:
             if q == True:
                 return True
-        if p == True:
-            if q == False:
-                return False
-            if q == True:
-                return False
-        return q
+        return False
 
   the test is green again
 
@@ -844,49 +691,9 @@ refactor: make it better
         self.assertTrue(src.truth_table.converse_non_implication(False, True))
         self.assertFalse(src.truth_table.converse_non_implication(False, False))
 
-  the terminal still shows green. I add one more `if statement`_
+  the terminal still shows green
 
-  .. code-block:: python
-
-    def converse_non_implication(p, q):
-        if p == False:
-            if q == False:
-                return True
-            if q == True:
-                return True
-        if p == True:
-            if q == False:
-                return False
-            if q == True:
-                return False
-        return q
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: True is not false
-
-  I change the `return statement`_
-
-  .. code-block:: python
-
-    def converse_non_implication(p, q):
-        if p == False:
-            if q == False:
-                return False
-            if q == True:
-                return True
-        if p == True:
-            if q == False:
-                return False
-            if q == True:
-                return False
-        return q
-
-  the test is green again. I remove ``return q``
-
-* there are only 2 results like with :ref:`Logical Conjunction<test_logical_conjunction>`, in one case the :ref:`function<functions>` return :ref:`True<test_what_is_true>` and in the other 3 it returns :ref:`False<test_what_is_false>`. I use an `if statement`_ for the case that returns :ref:`True<test_what_is_true>`
+* I rewrite the `if statement`_ for the case that returns :ref:`True<test_what_is_true>` then add an else_ clause
 
   .. code-block:: python
 
@@ -896,17 +703,11 @@ refactor: make it better
         else:
             return False
         if p == False:
-            if q == False:
-                return False
             if q == True:
                 return True
-        if p == True:
-            if q == False:
-                return False
-            if q == True:
-                return False
+        return False
 
-  the terminal still shows green. I remove the other `if statements`_ and change the first statement with bool_
+  the terminal still shows green. I remove the other statements and change the first statement with ``!=``, :ref:`True<test_what_is_true>` bool_
 
   .. code-block:: python
 
@@ -917,7 +718,7 @@ refactor: make it better
         else:
             return False
 
-  still green. I remove the comment and rewrite the line again, using bool_ and not_ for the first part
+  still green. I remove the comment and rewrite the line again, using not_ and bool_ for the first part
 
   .. code-block:: python
 

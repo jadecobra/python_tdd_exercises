@@ -452,7 +452,7 @@ I add a :ref:`function<functions>` definition
 
 
   def tautology(p, q):
-      return not (p and q)
+      return False
 
 the terminal shows :ref:`AssertionError`
 
@@ -460,14 +460,12 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: False is not true
 
-I add an `if statement`_
+I change the `return statement`_
 
 .. code-block:: python
 
   def tautology(p, q):
-      if p and q:
-          return True
-      return not (p and q)
+      return True
 
 the test passes
 
@@ -482,35 +480,7 @@ refactor: make it better
         self.assertTrue(src.truth_table.tautology(True, True))
         self.assertTrue(src.truth_table.tautology(True, False))
 
-  the terminal shows green. I add an `if statement`_
-
-  .. code-block:: python
-
-    def tautology(p, q):
-        if p and not q:
-            return False
-        if p and q:
-            return True
-        return not (p and q)
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: False is not true
-
-  I fix it
-
-  .. code-block:: python
-
-    def tautology(p, q):
-        if p and not q:
-            return True
-        if p and q:
-            return True
-        return not (p and q)
-
-  the test passes
+  the terminal still shows green
 
 * I add another case
 
@@ -521,39 +491,7 @@ refactor: make it better
         self.assertTrue(src.truth_table.tautology(True, False))
         self.assertTrue(src.truth_table.tautology(False, True))
 
-  the test is still green. I add another `if statement`_
-
-  .. code-block:: python
-
-    def tautology(p, q):
-        if not p and q:
-            return False
-        if p and not q:
-            return True
-        if p and q:
-            return True
-        return not (p and q)
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: False is not true
-
-  I change the `return statement`
-
-  .. code-block:: python
-
-    def tautology(p, q):
-        if not p and q:
-            return True
-        if p and not q:
-            return True
-        if p and q:
-            return True
-        return not (p and q)
-
-  the test is green again
+  the test is still green.
 
 * I add the last case
 
@@ -565,66 +503,7 @@ refactor: make it better
         self.assertTrue(src.truth_table.tautology(False, True))
         self.assertTrue(src.truth_table.tautology(False, False))
 
-  still green. I add an `if statement`_
-
-  .. code-block:: python
-
-    def tautology(p, q):
-        if not p and not q:
-            return False
-        if not p and q:
-            return True
-        if p and not q:
-            return True
-        if p and q:
-            return True
-        return not (p and q)
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: False is not true
-
-  I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in the `return statement`_
-
-  .. code-block:: python
-
-    def tautology(p, q):
-        if not p and not q:
-            return True
-        if not p and q:
-            return True
-        if p and not q:
-            return True
-        if p and q:
-            return True
-        return not (p and q)
-
-  the test is green again
-
-* There is only one result for this operation, it is a :ref:`singleton function<test_singleton_functions>`, I do not need the `if statement`_
-
-  .. code-block:: python
-
-    def tautology(p, q):
-        return True
-        if not p and not q:
-            return True
-        if not p and q:
-            return True
-        if p and not q:
-            return True
-        if p and q:
-            return True
-        return not (p and q)
-
-  the test passes and I remove the other statements
-
-  .. code-block:: python
-
-    def tautology(p, q):
-        return True
+  still green, there is only one result for this operation
 
 ----
 
@@ -664,6 +543,19 @@ I add the :ref:`function<functions>`
 
 
   def logical_disjunction(p, q):
+      return False
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: False is not true
+
+I fix it
+
+.. code-block:: python
+
+  def logical_disjunction(p, q):
       return True
 
 the test passes
@@ -679,7 +571,7 @@ refactor: make it better
         self.assertTrue(src.truth_table.logical_disjunction(True, True))
         self.assertTrue(src.truth_table.logical_disjunction(True, False))
 
-  the terminal still shows green which matches the return value of the :ref:`function<functions>`
+  the terminal still shows green
 
 * I add the next case
 
@@ -706,12 +598,20 @@ refactor: make it better
 
   .. code-block:: python
 
+    AssertionError: True is not false
+
+  I add an `if statement`_
+
+  .. code-block:: python
+
     def logical_disjunction(p, q):
         if not p and not q:
             return False
         return True
 
-  the test passes. I add an else_ clause to make it clearer
+  the test passes
+
+* I add an else_ clause to make it clearer
 
   .. code-block:: python
 
@@ -723,7 +623,7 @@ refactor: make it better
 
   the terminal still shows green
 
-* I rewrite the else_ clause using not_ with the `if statement`_
+* I rewrite the else_ clause using not_
 
   .. code-block:: python
 
@@ -756,7 +656,6 @@ refactor: make it better
         else:
             return False
 
-
   the terminal shows SyntaxError_
 
   .. code-block:: python
@@ -788,7 +687,6 @@ refactor: make it better
         else:
             return False
 
-
   the test passes. I rewrite the statements as a `conditional expression`_
 
   .. code-block:: python
@@ -800,8 +698,7 @@ refactor: make it better
         else:
             return False
 
-
-  the test is still green. I remove the `if statements`_
+  the test is still green. I remove the other statements
 
   .. code-block:: python
 
