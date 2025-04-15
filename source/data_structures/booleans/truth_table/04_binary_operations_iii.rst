@@ -546,7 +546,7 @@ refactor: make it better
 
   the terminal still shows green
 
-* I use not_ for the second `return statement`
+* I use not_ for the second `return statement`_
 
   .. code-block:: python
 

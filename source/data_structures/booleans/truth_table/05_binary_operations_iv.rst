@@ -649,7 +649,7 @@ refactor: make it better
 
   the test is still passing
 
-* I use not_ to add another `if statement` for the other cases
+* I use not_ to add another `if statement`_ for the other cases
 
   .. code-block:: python
 
