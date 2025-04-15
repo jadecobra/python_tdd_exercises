@@ -106,7 +106,7 @@ refactor: make it better
 
     AssertionError: True is not false
 
-  I change the `return statement`
+  I change the `return statement`_
 
   .. code-block:: python
 
@@ -174,19 +174,6 @@ I add the :ref:`function<functions>`
   def contradiction(p, q):
       return False
 
-
-  def logical_conjunction(p, q):
-      return False
-
-and the terminal shows :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: False is not true
-
-I change :ref:`False <test_what_is_false>` to :ref:`True <test_what_is_true>` in the `return statement`_
-
-.. code-block:: python
 
   def logical_conjunction(p, q):
       return True
@@ -422,19 +409,6 @@ When I add a :ref:`function<functions>` definition for it
 
 
   def project_second(p, q):
-      return False
-
-the terminal shows :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: False is not true
-
-I change the `return statement`_
-
-.. code-block:: python
-
-  def project_second(p, q):
       return True
 
 the test passes
@@ -570,7 +544,7 @@ refactor: make it better
         else:
             return False
 
-  the terminal shows all tests are still passing. I use the simpler `return statement`
+  the terminal shows all tests are still passing. I use the simpler `return statement`_
 
   .. code-block:: python
 
@@ -620,20 +594,6 @@ I add the :ref:`function<functions>`
   def project_second(p, q):
       return q
 
-
-
-  def converse_non_implication(p, q):
-      return True
-
-the terminal shows :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: True is not false
-
-I fix the `return statement`
-
-.. code-block:: python
 
   def converse_non_implication(p, q):
       return False
@@ -759,7 +719,7 @@ refactor: make it better
         return not p and q
         return True if not p and q else False
 
-  all tests are still passing. I remove the second `return statement`
+  all tests are still passing. I remove the second `return statement`_
 
   .. code-block:: python
 
