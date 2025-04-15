@@ -55,19 +55,6 @@ I add the :ref:`function<functions>`
 
 
   def exclusive_disjunction(p, q):
-      return True
-
-the terminal shows :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: True is not false
-
-I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the `return statement`_
-
-.. code-block:: python
-
-  def exclusive_disjunction(p, q):
       return False
 
 the test passes
@@ -268,19 +255,6 @@ I add a :ref:`function<functions>`
 
 
   def material_non_implication(p, q):
-      return True
-
-the terminal shows :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: True is not false
-
-I change the statement
-
-.. code-block:: python
-
-  def material_non_implication(p, q):
       return False
 
 the test passes
@@ -388,19 +362,6 @@ I add the a :ref:`function<functions>` definition for it in ``truth_table.py``
   def material_non_implication(p, q):
       return p and not q
 
-
-  def project_first(p, q):
-      return False
-
-the terminal shows :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: False is not true
-
-I change the line
-
-.. code-block:: python
 
   def project_first(p, q):
       return True
@@ -528,19 +489,6 @@ I add a :ref:`function<functions>` definition to ``truth_table.py``
   def project_first(p, q):
       return p
 
-
-  def converse_implication(p, q):
-      return False
-
-the terminal shows :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: False is not true
-
-I change the `return statement`_
-
-.. code-block:: python
 
   def converse_implication(p, q):
       return True

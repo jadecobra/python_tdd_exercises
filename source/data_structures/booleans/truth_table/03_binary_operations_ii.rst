@@ -55,19 +55,6 @@ I add the :ref:`function<functions>` definition
 
 
   def negate_first(p, q):
-      return True
-
-the terminal shows :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: True is not false
-
-I change the `return statement`_
-
-.. code-block:: python
-
-  def negate_first(p, q):
       return False
 
 the test passes
@@ -243,22 +230,9 @@ I add a definition for the :ref:`function<functions>`
 
 
   def logical_nand(p, q):
-      return True
-
-the terminal shows :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: True is not false
-
-when I change the `return statement`_
-
-.. code-block:: python
-
-  def logical_nand(p, q):
       return False
 
-the terminal shows green
+the terminal shows green again
 
 refactor: make it better
 #################################################################################
@@ -452,19 +426,6 @@ I add a :ref:`function<functions>` definition
 
 
   def tautology(p, q):
-      return False
-
-the terminal shows :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: False is not true
-
-I change the `return statement`_
-
-.. code-block:: python
-
-  def tautology(p, q):
       return True
 
 the test passes
@@ -541,19 +502,6 @@ I add the :ref:`function<functions>`
   def tautology(p, q):
       return True
 
-
-  def logical_disjunction(p, q):
-      return False
-
-the terminal shows :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: False is not true
-
-I fix it
-
-.. code-block:: python
 
   def logical_disjunction(p, q):
       return True

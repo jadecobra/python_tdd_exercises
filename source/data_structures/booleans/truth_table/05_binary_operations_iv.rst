@@ -57,19 +57,6 @@ I add a :ref:`function<functions>` definition to ``truth_table.py``
   def negate_second(p, q):
       return False
 
-the terminal shows :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: True is not false
-
-I change the `return statement`_
-
-.. code-block:: python
-
-  def negate_second(p, q):
-      return False
-
 the test passes
 
 refactor: make it better
@@ -197,19 +184,6 @@ I add a :ref:`function<functions>`
   def negate_second(p, q):
       return not q
 
-
-  def logical_nor(p, q):
-      return True
-
-the terminal shows :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: True is not false
-
-I fix the `return statement`
-
-.. code-block:: python
 
   def logical_nor(p, q):
       return False
@@ -358,19 +332,6 @@ I add a :ref:`function<functions>` definition
   def logical_nor(p, q):
       return not (p or q)
 
-
-  def logical_equality(p, q):
-      False
-
-the terminal shows :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: False is not true
-
-I change the `return statement`_
-
-.. code-block:: python
 
   def logical_equality(p, q):
       return True
@@ -631,19 +592,6 @@ I add the :ref:`method<functions>`
       return p == q
       return (p or not q) and (not p or q)
 
-
-  def logical_implication(p, q):
-      return False
-
-the terminal shows :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: False is not true
-
-I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in the `return statement`_
-
-.. code-block:: python
 
   def logical_implication(p, q):
       return True
