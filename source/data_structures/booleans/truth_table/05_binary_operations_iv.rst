@@ -629,11 +629,24 @@ I add the :ref:`method<functions>`
 
   def logical_equality(p, q):
       return p == q
-      return not (p or q) or (p and q)
+      return (p or not q) and (not p or q)
 
 
   def logical_implication(p, q):
-      return p == q
+      return False
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: False is not true
+
+I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in the `return statement`_
+
+.. code-block:: python
+
+  def logical_implication(p, q):
+      return True
 
 the test passes
 
@@ -648,7 +661,22 @@ refactor: make it better
         self.assertTrue(src.truth_table.logical_implication(True, True))
         self.assertFalse(src.truth_table.logical_implication(True, False))
 
-  the terminal shows green again
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  I add `if statement`_
+
+  .. code-block:: python
+
+    def logical_implication(p, q):
+        if p and not q:
+            return False
+        return True
+
+  the terminal shows green
 
 * I add the next case
 
@@ -659,22 +687,7 @@ refactor: make it better
         self.assertFalse(src.truth_table.logical_implication(True, False))
         self.assertTrue(src.truth_table.logical_implication(False, True))
 
-  the terminal shows shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: False is not true
-
-  I add an `if statement`_
-
-  .. code-block:: python
-
-    def logical_implication(p, q):
-        if not p and q:
-            return True
-        return p == q
-
-  the test is green again
+  the test is still green
 
 * I add the fourth case
 
@@ -686,22 +699,9 @@ refactor: make it better
         self.assertTrue(src.truth_table.logical_implication(False, True))
         self.assertTrue(src.truth_table.logical_implication(False, False))
 
-  the terminal shows green
+  the test is still passing
 
-* I add an `if statement`_ with an else_ clause for the case where the result is :ref:`False<test_what_is_false>`
-
-  .. code-block:: python
-
-    def logical_implication(p, q):
-        if p and not q:
-            return False
-        else:
-            return True
-        if not p and q:
-            return True
-        return p == q
-
-  the terminal still shows green. I rewrite the else_ block as the :ref:`logical negation<test_logical_negation>` of the `if statement`_
+* I use not_ to add another `if statement` for the other cases
 
   .. code-block:: python
 
@@ -709,10 +709,9 @@ refactor: make it better
         if p and not q:
             return False
         if not (p and not q):
-        # else:
             return True
 
-  still green. I move the `if statement`_ that returns :ref:`True <test_what_is_true>` to the top then change the second statement to an else_ clause
+  I change the order then add an else_ clause
 
   .. code-block:: python
 
@@ -742,8 +741,8 @@ refactor: make it better
 
   I fix the line
 
-  - not_ not_ cancels out
   - not_ and_ is or_
+  - not_ not_ cancels out
 
   .. code-block:: python
 
@@ -755,7 +754,7 @@ refactor: make it better
         else:
             return False
 
-  the test is passing again. I use a `ternary operator`_
+  the test is passing again. I add a simple `return statement`_
 
   .. code-block:: python
 
@@ -782,13 +781,13 @@ review
 From the tests I know that
 
 * :ref:`Logical or Material Implication  <test_logical_or_material_implication>` returns ``not p or q``
-* :ref:`Logical Equality <test_logical_equality>` is ``==``
+* :ref:`Logical Equality <test_logical_equality>` returns ``p == q``
 * :ref:`Logical NOR <test_logical_nor>` returns ``not (p or q)``
 * :ref:`Negate Second <test_negate_second>` always returns ``not q``
 *  :ref:`Converse Implication <test_converse_implication>` returns ``p or not q``
 * :ref:`Project First <test_project_first>` always returns ``p``
 * :ref:`Material NonImplication <test_material_non_implication>` returns ``p and not q``
-* :ref:`Exclusive Disjunction <test_exclusive_disjunction>` returns ``p != q``, or the :ref:`Logical Negation<test_logical_negation>` of :ref:`Logical Equality <test_logical_equality>`
+* :ref:`Exclusive Disjunction <test_exclusive_disjunction>` returns ``p != q``
 * :ref:`Logical Disjunction <test_logical_disjunction>` returns ``p or q``
 * :ref:`Tautology <test_tautology>` always returns :ref:`True<test_what_is_true>`
 * :ref:`Logical NAND <test_logical_nand>` returns ``not (p and q)``
