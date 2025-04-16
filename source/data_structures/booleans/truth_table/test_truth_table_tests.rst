@@ -1103,7 +1103,7 @@ I ran tests for the operations of the `Truth Table`_ involving booleans_ which c
 * :ref:`Converse NonImplication <test_converse_non_implication>` returns ``not p and q``
 *  :ref:`Converse Implication <test_converse_implication>` returns ``p or not q``
 * :ref:`Material NonImplication <test_material_non_implication>` returns ``p and not q``
-* :ref:`Logical or Material Implication  <test_logical_or_material_implication>` returns ``not p or q``
+* :ref:`Logical or Material Implication  <test_material_implication>` returns ``not p or q``
 * :ref:`Logical NOR <test_logical_nor>` returns ``not (p or q)``
 * :ref:`Logical Disjunction <test_logical_disjunction>` returns ``p or q``
 * :ref:`Logical NAND <test_logical_nand>` returns ``not (p and q)``

@@ -18,7 +18,7 @@ requirements
 
 :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` with ``truth_table`` as the name of the project
 
-There are 16 binary operations, they take 2 inputs that can be :ref:`True <test_what_is_true>` or :ref:`False <test_what_is_false>`, which gives them all four cases
+There are 16 binary operations, they take 2 inputs that can be :ref:`True <test_what_is_true>` or :ref:`False <test_what_is_false>`, which gives them four cases
 
 * :ref:`True <test_what_is_true>`, :ref:`True <test_what_is_true>`
 * :ref:`True <test_what_is_true>`, :ref:`False <test_what_is_false>`

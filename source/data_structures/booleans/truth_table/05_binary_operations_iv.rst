@@ -558,7 +558,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_logical_or_material_implication
+test_material_implication
 *********************************************************************************
 
 red: make it fail
@@ -571,7 +571,7 @@ I add a new test
   def test_logical_equality(self):
       ...
 
-  def test_logical_or_material_implication(self):
+  def test_material_implication(self):
       self.assertTrue(src.truth_table.logical_implication(True, True))
 
 the terminal shows :ref:`AttributeError`
@@ -605,7 +605,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_logical_or_material_implication(self):
+    def test_material_implication(self):
         self.assertTrue(src.truth_table.logical_implication(True, True))
         self.assertFalse(src.truth_table.logical_implication(True, False))
 
@@ -630,7 +630,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_logical_or_material_implication(self):
+    def test_material_implication(self):
         self.assertTrue(src.truth_table.logical_implication(True, True))
         self.assertFalse(src.truth_table.logical_implication(True, False))
         self.assertTrue(src.truth_table.logical_implication(False, True))
@@ -641,7 +641,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_logical_or_material_implication(self):
+    def test_material_implication(self):
         self.assertTrue(src.truth_table.logical_implication(True, True))
         self.assertFalse(src.truth_table.logical_implication(True, False))
         self.assertTrue(src.truth_table.logical_implication(False, True))
@@ -728,7 +728,7 @@ review
 
 From the tests I know that
 
-* :ref:`Logical or Material Implication  <test_logical_or_material_implication>` returns ``not p or q``
+* :ref:`Logical or Material Implication  <test_material_implication>` returns ``not p or q``
 * :ref:`Logical Equality <test_logical_equality>` returns ``p == q``
 * :ref:`Logical NOR <test_logical_nor>` returns ``not (p or q)``
 * :ref:`Negate Second <test_negate_second>` always returns ``not q``

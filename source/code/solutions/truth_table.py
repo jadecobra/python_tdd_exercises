@@ -26,7 +26,6 @@ def project_second(p, q):
     return q
 
 
-
 def converse_non_implication(p, q):
     return not p and q
 
@@ -49,6 +48,7 @@ def logical_disjunction(p, q):
 
 def exclusive_disjunction(p, q):
     return p != q
+    return not (p == q)
     return (not p and q) or (p and not q)
 
 
@@ -74,8 +74,8 @@ def logical_nor(p, q):
 
 def logical_equality(p, q):
     return p == q
-    return not (p or q) or (p and q)
+    return (p or not q) and (not p or q)
 
 
-def logical_implication(p, q):
+def material_implication(p, q):
     return not p or q
