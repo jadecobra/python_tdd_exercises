@@ -127,7 +127,7 @@ refactor: make it better
 
   and the terminal still shows green
 
-* There are 2 cases where the result is :ref:`False<test_what_is_false>` and 2 where the result is :ref:`True<test_what_is_true>`. I use or_ to make one `if statement`_ that puts the 2 that return :ref:`True<test_what_is_true>` together
+* I use or_ to make one `if statement`_ for the 2 that return :ref:`True<test_what_is_true>`
 
   .. code-block:: python
 
@@ -142,7 +142,7 @@ refactor: make it better
             return True
         return False
 
-  still green. I remove the other statements and use a `ternary operator`_
+  the test is still green. I use a simple `return statement`_
 
   .. code-block:: python
 
@@ -171,39 +171,16 @@ refactor: make it better
             return True
         return (not p and q) or (p and not q)
 
-  rewriting the else_ clause with not_
+  which I can change to a `return statement`_
 
   .. code-block:: python
 
     def exclusive_disjunction(p, q):
+        return not (p == q)
         if p == q:
             return False
-        if not (p == q):
-        # else:
-            return True
-        return (not p and q) or (p and not q)
-
-  still green. I change the order
-
-  .. code-block:: python
-
-    def exclusive_disjunction(p, q):
-        if not (p == q):
-            return True
         else:
-            return False
-        return (not p and q) or (p and not q)
-
-  then rewrite with a single `return statement`_
-
-  .. code-block:: python
-
-    def exclusive_disjunction(p, q):
-        return not(p == q)
-        if not (p == q):
             return True
-        else:
-            return False
         return (not p and q) or (p and not q)
 
   or
@@ -214,6 +191,8 @@ refactor: make it better
         return p != q
         return not (p == q)
         return (not p and q) or (p and not q)
+
+  ``!=`` is the symbol for NOT equal
 
 ----
 
@@ -310,7 +289,7 @@ refactor: make it better
 
   the terminal still shows green
 
-* I use a `conditional expression`_
+* There is only one case where the result is :ref:`True<test_what_is_true>`, I add the simple `return statement`_
 
   .. code-block:: python
 
@@ -355,7 +334,7 @@ the terminal shows :ref:`AttributeError`
 green: make it pass
 #################################################################################
 
-I add the a :ref:`function<functions>` definition for it in ``truth_table.py``
+I add a :ref:`function<functions>` definition for it
 
 .. code-block:: python
 
@@ -434,7 +413,7 @@ refactor: make it better
             return False
         return True
 
-* the :ref:`function<functions>` returns the same value as ``p``. I use a `conditional expression`_
+* the :ref:`function<functions>` returns the same value as ``p``. I add another `return statement`_
 
   .. code-block:: python
 
@@ -546,37 +525,23 @@ refactor: make it better
 
   the terminal still shows green
 
-* I use not_ for the second `return statement`_
+* I add a `return statement`_
 
   .. code-block:: python
 
     def converse_implication(p, q):
+        return not (not p and q)
         if not p and q:
             return False
-        if not (not p and q):
-            return True
-
-  still green. I move the two statements from the bottom to the top then add an else_ clause
-
-  .. code-block:: python
-
-    def converse_implication(p, q):
-        if not (not p and q):
-            return True
-        else:
-        # if not p and q:
-            return False
+        return True
 
   I "multiply" not_ by the symbols in the parentheses
 
   .. code-block:: python
 
     def converse_implication(p, q):
-        if not not p not and not q:
-        # if not (not p and q):
-            return True
-        else:
-            return False
+        return not not p not and not q
+        return not (not p and q)
 
   the terminal shows SyntaxError_
 
@@ -584,31 +549,21 @@ refactor: make it better
 
     SyntaxError: invalid syntax
 
-  I fix the line
-
-  - not_ not_ cancels out
-  - not_ and_ is or
+  I fix the line, not_ and_ is or_
 
   .. code-block:: python
 
     def converse_implication(p, q):
-        if p or not q:
-        # if not not p not and not q:
-        # if not (not p and q):
-            return True
-        else:
-            return False
+        return not not p or not q
+        return not (not p and q)
 
-  back to green. I use a `conditional expression`_
+  back to green. I remove not_ not_ since it cancels out
 
   .. code-block:: python
 
     def converse_implication(p, q):
         return p or not q
-        if p or not q:
-            return True
-        else:
-            return False
+        return not (not p and q)
 
   all the tests are still green. I remove the other statements
 
@@ -623,7 +578,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-From the tests I know that
+I know from the tests that Binary Operations take 2 inputs which could be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``p`` and the second ``q``
 
 *  :ref:`Converse Implication <test_converse_implication>` returns ``p or not q``
 * :ref:`Project First <test_project_first>` always returns ``p``
@@ -637,7 +592,6 @@ From the tests I know that
 * :ref:`Project Second <test_project_second>` always returns ``q``
 * :ref:`Logical Conjunction <test_logical_conjunction>` returns ``p and q``
 * :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
-* :ref:`Logical Negation<test_logical_negation>` is not_
 
 do you want to :ref:`test more binary operations? <binary_operations_iv>`
 
