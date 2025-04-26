@@ -125,10 +125,9 @@ refactor: make it better
             return True
         return False
 
-
   the test is green again
 
-* the :ref:`function<functions>` returns :ref:`True<test_what_is_true>` when ``q`` is :ref:`False<test_what_is_false>` so I write a `conditional expression`_ with it
+* the :ref:`function<functions>` returns :ref:`True<test_what_is_true>` when ``q`` is :ref:`False<test_what_is_false>`, I write another `return statement`_
 
   .. code-block:: python
 
@@ -139,7 +138,6 @@ refactor: make it better
         if p and not q:
             return True
         return False
-
 
   the terminal still shows green. I remove the other statements
 
@@ -230,7 +228,7 @@ refactor: make it better
 
     AssertionError: False is not true
 
-  I add a `conditional expression`_
+  I add a `return statement`_
 
   .. code-block:: python
 
@@ -238,26 +236,14 @@ refactor: make it better
         return not p and not q
         return False
 
+  the test passes
+
 * I want to factor out not_ since it happens 2 times
 
   .. code-block:: python
 
     def logical_nor(p, q):
-        return not p not and not q
-        return not p and not q
-
-  the terminal shows SyntaxError_
-
-  .. code-block:: python
-
-    SyntaxError: invalid syntax
-
-  I fix the line - not_ and_ is or_
-
-  .. code-block:: python
-
-    def logical_nor(p, q):
-        return not p or not q
+        return not (p and q)
         return not p and not q
 
   the terminal shows :ref:`AssertionError`
@@ -266,13 +252,15 @@ refactor: make it better
 
     AssertionError: True is not false
 
-  I made a mistake with my "factoring", I should have used ``not or`` to replace ``and``. I try again
+  I made a mistake, the `return statement`_ is :ref:`logical nand<test_logical_nand>`. I multiply the statement to show the mistake
 
   .. code-block:: python
 
     def logical_nor(p, q):
-        return not p not or not q
+        return not (p and q)
+        return not p not and not q
         return not p and not q
+
 
   the terminal shows SyntaxError_
 
@@ -280,7 +268,7 @@ refactor: make it better
 
     SyntaxError: invalid syntax
 
-  I factor out the not_
+  not_ and_ is or_, I should have used not_ or_, I change the `return statement`_
 
   .. code-block:: python
 
@@ -421,67 +409,24 @@ refactor: make it better
             return False
         return True
 
-  still green. I use not_ to write another `if statement`_
+  still green. I use not_ to write the `return statement`_
 
   .. code-block:: python
 
     def logical_equality(p, q):
+        return not ((not p and q) or (p and not q):)
         if (not p and q) or (p and not q):
             return False
-        if not ((not p and q) or (p and not q)):
-        # else:
-            return True
-
-  still green. I change the order
-
-  .. code-block:: python
-
-    def logical_equality(p, q):
-        if not ((not p and q) or (p and not q)):
-            return True
         else:
-        # if (not p and q) or (p and not q):
-            return False
+            return True
 
   the test is still green. I multiply not_ by every symbol in the parentheses
 
   .. code-block:: python
 
     def logical_equality(p, q):
-        if not (not p and q) not or not (p and not q):
-        # if not ((not p and q) or (p and not q)):
-            return True
-        else:
-            return False
-
-  the terminal shows SyntaxError_
-
-  .. code-block:: python
-
-    SyntaxError: invalid syntax
-
-  I fix the line - not_ or_ is and_
-
-  .. code-block:: python
-
-    def logical_equality(p, q):
-        if not (not p and q) and not (p and not q):
-        # if not (not p and q) not or not (p and not q):
-        # if not ((not p and q) or (p and not q)):
-            return True
-        else:
-            return False
-
-  the test is green again. I "multiply" not_ by each symbol in the parentheses
-
-  .. code-block:: python
-
-    def logical_equality(p, q):
-        if (not not p not and not q) and (not p not and not not q):
-        # if not (not p and q) and not (p and not q):
-            return True
-        else:
-            return False
+        return (not not p not and not q) not or (not p not and not not q)
+        return not ((not p and q) or (p and not q):)
 
   the terminal shows SyntaxError_
 
@@ -491,29 +436,22 @@ refactor: make it better
 
   I fix the line
 
-  - not_ not_ cancels out
-  - not_ and_ is or
+  - not_ and_ is or_
+  - not_ or_ is and_
 
   .. code-block:: python
 
     def logical_equality(p, q):
-        if (p or not q) and (not p or q):
-        # if (not not p not and not q) and (not p not and not not q):
-        # if not (not p and q) and not (p and not q):
-            return True
-        else:
-            return False
+        return (not not p or not q) and (not p or not not q)
+        return not ((not p and q) or (p and not q):)
 
-  the test is green again. I remove the other statements and use a `conditional expression`_
+  the test is green again. I remove not_ not_
 
   .. code-block:: python
 
     def logical_equality(p, q):
         return (p or not q) and (not p or q)
-        if (p or not q) and (not p or q):
-            return True
-        else:
-            return False
+        return not ((not p and q) or (p and not q):)
 
   the terminal shows green. I remove the other statements
 
@@ -525,29 +463,6 @@ refactor: make it better
   and all tests are still passing.
 
 * All of this could have been done with the ``==`` symbol, since the 2 cases where :ref:`True<test_what_is_true>` is the result are cases where ``p`` and ``q`` are the same
-
-  .. code-block:: python
-
-    def logical_equality(p, q):
-        if p == q:
-            return True
-        else:
-            return False
-        return (p or not q) and (not p or q)
-
-  which is the same as the `conditional expression`_
-
-  .. code-block:: python
-
-    def logical_equality(p, q):
-        return p == q
-        if p == q:
-            return True
-        else:
-            return False
-        return (p or not q) and (not p or q)
-
-  I remove the other statements
 
   .. code-block:: python
 
@@ -572,14 +487,14 @@ I add a new test
       ...
 
   def test_material_implication(self):
-      self.assertTrue(src.truth_table.logical_implication(True, True))
+      self.assertTrue(src.truth_table.material_implication(True, True))
 
 the terminal shows :ref:`AttributeError`
 
 .. code-block:: python
   :force:
 
-  AttributeError: module 'src.truth_table' has no attribute 'logical_implication'. Did you mean: 'logical_disjunction'?
+  AttributeError: module 'src.truth_table' has no attribute 'material_implication'
 
 green: make it pass
 #################################################################################
@@ -593,7 +508,7 @@ I add the :ref:`method<functions>`
       return (p or not q) and (not p or q)
 
 
-  def logical_implication(p, q):
+  def material_implication(p, q):
       return True
 
 the test passes
@@ -606,8 +521,8 @@ refactor: make it better
   .. code-block:: python
 
     def test_material_implication(self):
-        self.assertTrue(src.truth_table.logical_implication(True, True))
-        self.assertFalse(src.truth_table.logical_implication(True, False))
+        self.assertTrue(src.truth_table.material_implication(True, True))
+        self.assertFalse(src.truth_table.material_implication(True, False))
 
   the terminal shows :ref:`AssertionError`
 
@@ -615,11 +530,11 @@ refactor: make it better
 
     AssertionError: True is not false
 
-  I add `if statement`_
+  I add an `if statement`_
 
   .. code-block:: python
 
-    def logical_implication(p, q):
+    def material_implication(p, q):
         if p and not q:
             return False
         return True
@@ -631,9 +546,9 @@ refactor: make it better
   .. code-block:: python
 
     def test_material_implication(self):
-        self.assertTrue(src.truth_table.logical_implication(True, True))
-        self.assertFalse(src.truth_table.logical_implication(True, False))
-        self.assertTrue(src.truth_table.logical_implication(False, True))
+        self.assertTrue(src.truth_table.material_implication(True, True))
+        self.assertFalse(src.truth_table.material_implication(True, False))
+        self.assertTrue(src.truth_table.material_implication(False, True))
 
   the test is still green
 
@@ -642,44 +557,30 @@ refactor: make it better
   .. code-block:: python
 
     def test_material_implication(self):
-        self.assertTrue(src.truth_table.logical_implication(True, True))
-        self.assertFalse(src.truth_table.logical_implication(True, False))
-        self.assertTrue(src.truth_table.logical_implication(False, True))
-        self.assertTrue(src.truth_table.logical_implication(False, False))
+        self.assertTrue(src.truth_table.material_implication(True, True))
+        self.assertFalse(src.truth_table.material_implication(True, False))
+        self.assertTrue(src.truth_table.material_implication(False, True))
+        self.assertTrue(src.truth_table.material_implication(False, False))
 
   the test is still passing
 
-* I use not_ to add another `if statement`_ for the other cases
+* I add a `return statement` with not_
 
   .. code-block:: python
 
-    def logical_implication(p, q):
+    def material_implication(p, q):
+        return not (p and not q)
         if p and not q:
             return False
-        if not (p and not q):
-            return True
+        return True
 
-  I change the order then add an else_ clause
-
-  .. code-block:: python
-
-    def logical_implication(p, q):
-        if not (p and not q):
-            return True
-        else:
-        # if p and not q:
-            return False
-
-  still green, I "multiply" not_ by every symbol in the parentheses
+  still green, I "multiply" not_ by the symbols in the parentheses
 
   .. code-block:: python
 
-    def logical_implication(p, q):
-        if not p not and not not q:
-        # if not (p and not q):
-            return True
-        else:
-            return False
+    def material_implication(p, q):
+        return not p not and not not q
+        return not (p and not q)
 
   the terminal shows SyntaxError_
 
@@ -689,35 +590,25 @@ refactor: make it better
 
   I fix the line
 
-  - not_ and_ is or_
-  - not_ not_ cancels out
+  .. code-block:: python
+
+    def material_implication(p, q):
+        return not p or not not q
+        return not (p and not q)
+
+  the test is passing again. I remove not_ not_
 
   .. code-block:: python
 
-    def logical_implication(p, q):
-        if not p or q:
-        # if not p not and not not q:
-        # if not (p and not q):
-            return True
-        else:
-            return False
-
-  the test is passing again. I add a simple `return statement`_
-
-  .. code-block:: python
-
-    def logical_implication(p, q):
+    def material_implication(p, q):
         return not p or q
-        if not p or q:
-            return True
-        else:
-            return False
+        return not (p and not q)
 
-  and all tests are still passing. I remove the rest of the statements
+  all tests are still passing. I remove the other statement
 
   .. code-block:: python
 
-    def logical_implication(p, q):
+    def material_implication(p, q):
         return not p or q
 
 ----
@@ -726,7 +617,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-From the tests I know that
+I know from the tests that Binary Operations take 2 inputs which could be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``p`` and the second ``q``
 
 * :ref:`Logical or Material Implication  <test_material_implication>` returns ``not p or q``
 * :ref:`Logical Equality <test_logical_equality>` returns ``p == q``
@@ -744,7 +635,6 @@ From the tests I know that
 * :ref:`Project Second <test_project_second>` always returns ``q``
 * :ref:`Logical Conjunction <test_logical_conjunction>` returns ``p and q``
 * :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
-* :ref:`Logical Negation<test_logical_negation>` is not_
 
 Would you like to :ref:`test the truth table tests?<test_truth_table_tests>`
 

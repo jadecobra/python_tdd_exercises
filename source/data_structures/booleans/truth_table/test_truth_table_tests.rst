@@ -334,13 +334,13 @@ green: make it pass
 
   .. code-block:: python
 
-    AttributeError: module 'src.truth_table' has no attribute 'logical_implication'
+    AttributeError: module 'src.truth_table' has no attribute 'material_implication'
 
   I add the :ref:`function<functions>`
 
   .. code-block:: python
 
-    def logical_implication(a, b):
+    def material_implication(a, b):
         return (a, b)
 
   the terminal shows :ref:`AssertionError`
@@ -353,7 +353,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def logical_implication(a, b):
+    def material_implication(a, b):
         if a == True and b == False:
             return False
         return (a, b)
