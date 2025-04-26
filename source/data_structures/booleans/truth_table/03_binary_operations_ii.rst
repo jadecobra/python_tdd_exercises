@@ -127,7 +127,7 @@ refactor: make it better
 
   the test is green again
 
-* The 2 cases where the :ref:`function<functions>` returns :ref:`True<test_what_is_true>` are when ``p`` is :ref:`False<test_what_is_false>` so I do not need ``q`` for this one, I add a new `if statement`_ with an else_ clause
+* The 2 cases where the :ref:`function<functions>` returns :ref:`True<test_what_is_true>` are when ``p`` is :ref:`False<test_what_is_false>`, I add a new `if statement`_ with an else_ clause
 
   .. code-block:: python
 
@@ -175,7 +175,7 @@ refactor: make it better
         else:
             return False
 
-  which is the same as
+  I change it to the simpler form
 
   .. code-block:: python
 
@@ -189,8 +189,6 @@ refactor: make it better
 
     def negate_first(p, q):
         return not p
-
-  ah, just like the name
 
 ----
 
@@ -277,7 +275,7 @@ refactor: make it better
 
     AssertionError: False is not true
 
-  I add another `if statement`
+  I add an `if statement`
 
   .. code-block:: python
 
@@ -306,7 +304,7 @@ refactor: make it better
 
     AssertionError: False is not true
 
-  I add an `if statement`_
+  I add another `if statement`_
 
   .. code-block:: python
 
@@ -321,7 +319,7 @@ refactor: make it better
 
   the test is green again
 
-* the :ref:`function<functions>` returns :ref:`True<test_what_is_true>` in 3 cases and :ref:`False<test_what_is_false>` in one case. I add an `if statement`_ for that case with an else_ clause
+* I add an `if statement`_ for the one case that returns :ref:`True<test_what_is_true>` with an else_ clause for the other 3 that return :ref:`False<test_what_is_false>`
 
   .. code-block:: python
 
@@ -338,7 +336,7 @@ refactor: make it better
             return True
         return False
 
-  the test is still green. I use the simpler `if statement`_ I learned from :ref:`Logical Conjunction<test_logical_conjunction>`
+  the test is still green. From :ref:`Logical Conjunction<test_logical_conjunction>` I know I can change the first statement
 
   .. code-block:: python
 
@@ -349,7 +347,7 @@ refactor: make it better
         else:
             return True
 
-  still green. I want to use a `conditional expression`_, which means I have to rewrite this in terms of :ref:`True<test_what_is_true>`. I write the :ref:`logical negation<test_logical_negation>` of the `if statement`_ for the else_ clause with not_
+  still green. I want to use a `conditional expression`_, which means I have to use an `if statement`_ that returns :ref:`True<test_what_is_true>`. I use :ref:`logical negation<test_logical_negation>` to change the else_ clause with not_
 
   .. code-block:: python
 
@@ -360,34 +358,25 @@ refactor: make it better
         # else:
             return True
 
-  I move the 2 statements at the bottom to the top then add a new else_ clause
-
-  .. code-block:: python
-
-    def logical_nand(p, q):
-        if not (p and q):
-            return True
-        else:
-        # if p and q:
-            return False
-
-  the test is still green. I rewrite it as a `conditional expression`_
+  the test is still green. I use the simple `return statement`_
 
   .. code-block:: python
 
     def logical_nand(p, q):
         return not (p and q)
+        if p and q:
+            return False
         if not (p and q):
             return True
-        else:
-            return False
 
-  I remove the other statements
+  still green, I remove the other statements.
 
   .. code-block:: python
 
     def logical_nand(p, q):
         return not (p and q)
+
+  When the `if statement`_ returns :ref:`False<test_what_is_false>` I can return its :ref:`logical negation<test_logical_negation>` with not_
 
 ----
 
@@ -464,7 +453,7 @@ refactor: make it better
         self.assertTrue(src.truth_table.tautology(False, True))
         self.assertTrue(src.truth_table.tautology(False, False))
 
-  still green, there is only one result for this operation
+  still green, there is only one result for this operation.
 
 ----
 
@@ -475,7 +464,7 @@ test_logical_disjunction
 red: make it fail
 #################################################################################
 
-I add another test to the ``TestBinaryOperations`` TestCase_
+I add another test
 
 .. code-block:: python
 
@@ -553,56 +542,41 @@ refactor: make it better
   .. code-block:: python
 
     def logical_disjunction(p, q):
-        if not p and not q:
+        if p == False and q == False:
             return False
         return True
 
   the test passes
 
-* I add an else_ clause to make it clearer
+* I can change the `if statement`_
 
   .. code-block:: python
 
     def logical_disjunction(p, q):
         if not p and not q:
+        # if p == False and q == False:
             return False
-        else:
-            return True
+        return True
 
   the terminal still shows green
 
-* I rewrite the else_ clause using not_
+* I use a simple `return statement`_ with not_
 
   .. code-block:: python
 
     def logical_disjunction(p, q):
+        return not (not p and not q):
         if not p and not q:
             return False
-        if not (not p and not q):
-        # else:
-            return True
+        return True
 
-  still green. I move the first 2 lines to the bottom then add an else_ clause
+  the test is still green. not_ appears 3 times in this statement, I "multiply" it by each symbol in the parentheses to make the statement simpler
 
   .. code-block:: python
 
     def logical_disjunction(p, q):
-        if not (not p and not q):
-            return True
-        else:
-        # if not p and not q:
-            return False
-
-  the test is still green. I "multiply" not_ by each symbol in the parentheses to make it simpler
-
-  .. code-block:: python
-
-    def logical_disjunction(p, q):
-        if not not p not and not not q:
-        # if not (not p and not q):
-            return True
-        else:
-            return False
+        return not not p not and not not q:
+        return not (not p and not q):
 
   the terminal shows SyntaxError_
 
@@ -620,33 +594,15 @@ refactor: make it better
     # TypeError
     # SyntaxError
 
-  then I fix the line
-
-  - not_ not_ cancels out
-  - not_ and_ is or_
+  then I fix the line, not_ and_ is or_
 
   .. code-block:: python
 
     def logical_disjunction(p, q):
-        if p or q:
-        # if not not p not and not not q:
-        # if not (not p and not q):
-            return True
-        else:
-            return False
+        return not not p or not not q:
+        return not (not p and not q):
 
-  the test passes. I rewrite the statements as a `conditional expression`_
-
-  .. code-block:: python
-
-    def logical_disjunction(p, q):
-        return p or q
-        if p or q:
-            return True
-        else:
-            return False
-
-  the test is still green. I remove the other statements
+  the test passes. not_ not_ cancels out, so I remove them from the statement
 
   .. code-block:: python
 
@@ -659,7 +615,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-From the tests I know that
+I know from the tests that Binary Operations take 2 inputs which could be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``p`` and the second ``q``
 
 * :ref:`Logical Disjunction <test_logical_disjunction>` returns ``p or q``
 * :ref:`Tautology <test_tautology>` always returns :ref:`True<test_what_is_true>`
@@ -669,7 +625,6 @@ From the tests I know that
 * :ref:`Project Second <test_project_second>` always returns ``q``
 * :ref:`Logical Conjunction <test_logical_conjunction>` returns ``p and q``
 * :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
-* :ref:`Logical Negation<test_logical_negation>` is not_
 
 do you want to :ref:`test more binary operations? <binary_operations_iii>`
 
