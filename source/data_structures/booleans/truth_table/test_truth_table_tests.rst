@@ -119,7 +119,6 @@ green: make it pass
 
     def project_second(a, b):
         return False
-        return True
 
   the terminal shows :ref:`AssertionError`
 
@@ -127,14 +126,12 @@ green: make it pass
 
     AssertionError: False is not true
 
-  this test expects :ref:`False<test_what_is_false>` sometimes and :ref:`True<test_what_is_true>` other times. I return the inputs to see why
+  this test expects :ref:`False<test_what_is_false>` sometimes and :ref:`True<test_what_is_true>` other times. I return the inputs instead
 
   .. code-block:: python
 
     def project_second(a, b):
         return (a, b)
-        return False
-        return True
 
   the terminal shows :ref:`AssertionError`
 
@@ -149,8 +146,6 @@ green: make it pass
     def project_second(a, b):
         return b
         return (a, b)
-        return False
-        return True
 
   I remove the other `return statements`_
 

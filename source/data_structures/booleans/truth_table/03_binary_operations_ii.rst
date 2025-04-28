@@ -615,7 +615,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-I know from the tests that Binary Operations take 2 inputs which could be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``p`` and the second ``q``
+Binary Operations take 2 inputs which could be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``p`` and the second ``q``, the tests show that
 
 * :ref:`Logical Disjunction <test_logical_disjunction>` returns ``p or q``
 * :ref:`Tautology <test_tautology>` always returns :ref:`True<test_what_is_true>`
