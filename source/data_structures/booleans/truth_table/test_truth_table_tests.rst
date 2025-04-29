@@ -68,7 +68,7 @@ green: make it pass
     def tautology():
         return None
 
-  the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -78,7 +78,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def tautology(a, b):
+    def tautology(x, y):
         return None
 
   the terminal shows :ref:`AssertionError`
@@ -91,7 +91,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def tautology(a, b):
+    def tautology(x, y):
         return True
 
 * I have another :ref:`AttributeError`
@@ -104,7 +104,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def project_second(a, b):
+    def project_second(x, y):
         return True
 
   the terminal shows :ref:`AssertionError`
@@ -117,7 +117,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def project_second(a, b):
+    def project_second(x, y):
         return False
 
   the terminal shows :ref:`AssertionError`
@@ -130,8 +130,8 @@ green: make it pass
 
   .. code-block:: python
 
-    def project_second(a, b):
-        return (a, b)
+    def project_second(x, y):
+        return (x, y)
 
   the terminal shows :ref:`AssertionError`
 
@@ -143,15 +143,15 @@ green: make it pass
 
   .. code-block:: python
 
-    def project_second(a, b):
+    def project_second(x, y):
         return b
-        return (a, b)
+        return (x, y)
 
   I remove the other `return statements`_
 
   .. code-block:: python
 
-    def project_second(a, b):
+    def project_second(x, y):
         return b
 
 * I have the next :ref:`AttributeError`
@@ -164,7 +164,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def project_first(a, b):
+    def project_first(x, y):
         return b
 
   the terminal shows :ref:`AssertionError`
@@ -177,7 +177,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def project_first(a, b):
+    def project_first(x, y):
         return a
 
   the name is a clue
@@ -192,7 +192,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def negate_second(a, b):
+    def negate_second(x, y):
         return a
 
   the terminal shows :ref:`AssertionError`
@@ -205,8 +205,8 @@ green: make it pass
 
   .. code-block:: python
 
-    def negate_second(a, b):
-        return (a, b)
+    def negate_second(x, y):
+        return (x, y)
 
   the terminal shows :ref:`AssertionError`
 
@@ -218,7 +218,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def negate_second(a, b):
+    def negate_second(x, y):
         return not b
 
 * I get the next :ref:`AttributeError`
@@ -231,7 +231,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def negate_first(a, b):
+    def negate_first(x, y):
         return not a
 
 * the terminal shows the next :ref:`AttributeError`
@@ -244,7 +244,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def material_non_implication(a, b):
+    def material_non_implication(x, y):
         return not a
 
   the terminal shows :ref:`AssertionError`
@@ -257,7 +257,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def material_non_implication(a, b):
+    def material_non_implication(x, y):
         return False
 
   the terminal shows :ref:`AssertionError`
@@ -270,8 +270,8 @@ green: make it pass
 
   .. code-block:: python
 
-    def material_non_implication(a, b):
-        return (a, b)
+    def material_non_implication(x, y):
+        return (x, y)
         return False
 
   the terminal shows :ref:`AssertionError`
@@ -284,10 +284,10 @@ green: make it pass
 
   .. code-block:: python
 
-    def material_non_implication(a, b):
+    def material_non_implication(x, y):
         if a == True and b == True:
             return False
-        return (a, b)
+        return (x, y)
 
   the terminal shows :ref:`AssertionError`
 
@@ -299,12 +299,12 @@ green: make it pass
 
   .. code-block:: python
 
-    def material_non_implication(a, b):
+    def material_non_implication(x, y):
         if a == False and b == True:
             return False
         if a == True and b == True:
             return False
-        return (a, b)
+        return (x, y)
 
   the terminal shows :ref:`AssertionError`
 
@@ -316,14 +316,14 @@ green: make it pass
 
   .. code-block:: python
 
-    def material_non_implication(a, b):
+    def material_non_implication(x, y):
         if a == False and b == False:
             return False
         if a == False and b == True:
             return False
         if a == True and b == True:
             return False
-        return (a, b)
+        return (x, y)
 
 * I get the next :ref:`AttributeError`
 
@@ -335,8 +335,8 @@ green: make it pass
 
   .. code-block:: python
 
-    def material_implication(a, b):
-        return (a, b)
+    def material_implication(x, y):
+        return (x, y)
 
   the terminal shows :ref:`AssertionError`
 
@@ -348,10 +348,10 @@ green: make it pass
 
   .. code-block:: python
 
-    def material_implication(a, b):
+    def material_implication(x, y):
         if a == True and b == False:
             return False
-        return (a, b)
+        return (x, y)
 
 * I get the next :ref:`AttributeError`
 
@@ -363,8 +363,8 @@ green: make it pass
 
   .. code-block:: python
 
-    def logical_nor(a, b):
-        return (a, b)
+    def logical_nor(x, y):
+        return (x, y)
 
   the terminal shows :ref:`AssertionError`
 
@@ -376,10 +376,10 @@ green: make it pass
 
   .. code-block:: python
 
-    def logical_nor(a, b):
+    def logical_nor(x, y):
         if a == True and b == True:
             return False
-        return (a, b)
+        return (x, y)
 
   the terminal shows :ref:`AssertionError`
 
@@ -391,12 +391,12 @@ green: make it pass
 
   .. code-block:: python
 
-    def logical_nor(a, b):
+    def logical_nor(x, y):
         if a == True and b == False:
             return False
         if a == True and b == True:
             return False
-        return (a, b)
+        return (x, y)
 
   the terminal shows :ref:`AssertionError`
 
@@ -408,14 +408,14 @@ green: make it pass
 
   .. code-block:: python
 
-    def logical_nor(a, b):
+    def logical_nor(x, y):
         if a == False and b == True:
             return False
         if a == True and b == False:
             return False
         if a == True and b == True:
             return False
-        return (a, b)
+        return (x, y)
 
 * I get :ref:`AttributeError`
 
@@ -428,8 +428,8 @@ green: make it pass
 
   .. code-block:: python
 
-    def logical_nand(a, b):
-        return (a, b)
+    def logical_nand(x, y):
+        return (x, y)
 
   the terminal shows :ref:`AssertionError`
 
@@ -441,10 +441,10 @@ green: make it pass
 
   .. code-block:: python
 
-    def logical_nand(a, b):
+    def logical_nand(x, y):
         if a == True and b == True:
             return False
-        return (a, b)
+        return (x, y)
 
 * on to the next :ref:`AttributeError`
 
@@ -456,8 +456,8 @@ green: make it pass
 
   .. code-block:: python
 
-    def logical_equality(a, b):
-        return (a, b)
+    def logical_equality(x, y):
+        return (x, y)
 
   the terminal shows :ref:`AssertionError`
 
@@ -469,10 +469,10 @@ green: make it pass
 
   .. code-block:: python
 
-    def logical_equality(a, b):
+    def logical_equality(x, y):
         if a == True and b == False:
             return False
-        return (a, b)
+        return (x, y)
 
   the terminal shows :ref:`AssertionError`
 
@@ -484,12 +484,12 @@ green: make it pass
 
   .. code-block:: python
 
-    def logical_equality(a, b):
+    def logical_equality(x, y):
         if a == False and b == True:
             return False
         if a == True and b == False:
             return False
-        return (a, b)
+        return (x, y)
 
 * another :ref:`AttributeError`
 
@@ -502,8 +502,8 @@ green: make it pass
 
   .. code-block:: python
 
-    def logical_disjunction(a, b):
-        return (a, b)
+    def logical_disjunction(x, y):
+        return (x, y)
 
   the terminal shows :ref:`AssertionError`
 
@@ -515,10 +515,10 @@ green: make it pass
 
   .. code-block:: python
 
-    def logical_disjunction(a, b):
+    def logical_disjunction(x, y):
         if a == False and b == False:
             return False
-        return (a, b)
+        return (x, y)
 
 * the next :ref:`AttributeError`
 
@@ -531,8 +531,8 @@ green: make it pass
 
   .. code-block:: python
 
-    def logical_conjunction(a, b):
-        return (a, b)
+    def logical_conjunction(x, y):
+        return (x, y)
 
   the terminal shows :ref:`AssertionError`
 
@@ -544,10 +544,10 @@ green: make it pass
 
   .. code-block:: python
 
-    def logical_conjunction(a, b):
+    def logical_conjunction(x, y):
         if a == True and b == False:
             return False
-        return (a, b)
+        return (x, y)
 
   the terminal shows :ref:`AssertionError`
 
@@ -559,12 +559,12 @@ green: make it pass
 
   .. code-block:: python
 
-    def logical_conjunction(a, b):
+    def logical_conjunction(x, y):
         if a == False and b == True:
             return False
         if a == True and b == False:
             return False
-        return (a, b)
+        return (x, y)
 
   the terminal shows :ref:`AssertionError`
 
@@ -576,14 +576,14 @@ green: make it pass
 
   .. code-block:: python
 
-    def logical_conjunction(a, b):
+    def logical_conjunction(x, y):
         if a == False and b == False:
             return False
         if a == False and b == True:
             return False
         if a == True and b == False:
             return False
-        return (a, b)
+        return (x, y)
 
 * I get another :ref:`AttributeError`
 
@@ -595,8 +595,8 @@ green: make it pass
 
   .. code-block:: python
 
-    def exclusive_disjunction(a, b):
-        return (a, b)
+    def exclusive_disjunction(x, y):
+        return (x, y)
 
   the terminal shows :ref:`AssertionError`
 
@@ -608,10 +608,10 @@ green: make it pass
 
   .. code-block:: python
 
-    def exclusive_disjunction(a, b):
+    def exclusive_disjunction(x, y):
         if a == True and b == True:
             return False
-        return (a, b)
+        return (x, y)
 
   the terminal shows :ref:`AssertionError`
 
@@ -623,12 +623,12 @@ green: make it pass
 
   .. code-block:: python
 
-    def exclusive_disjunction(a, b):
+    def exclusive_disjunction(x, y):
         if a == False and b == False:
             return False
         if a == True and b == True:
             return False
-        return (a, b)
+        return (x, y)
 
 * next :ref:`AttributeError`
 
@@ -641,8 +641,8 @@ green: make it pass
 
   .. code-block:: python
 
-    def material_non_implication(a, b):
-        return (a, b)
+    def material_non_implication(x, y):
+        return (x, y)
 
   the terminal shows :ref:`AssertionError`
 
@@ -654,10 +654,10 @@ green: make it pass
 
   .. code-block:: python
 
-    def material_non_implication(a, b):
+    def material_non_implication(x, y):
         if a == True and b == True:
             return False
-        return (a, b)
+        return (x, y)
 
   the terminal shows :ref:`AssertionError`
 
@@ -669,12 +669,12 @@ green: make it pass
 
   .. code-block:: python
 
-    def material_non_implication(a, b):
+    def material_non_implication(x, y):
         if a == False and b == True:
             return False
         if a == True and b == True:
             return False
-        return (a, b)
+        return (x, y)
 
   the terminal shows :ref:`AssertionError`
 
@@ -686,14 +686,14 @@ green: make it pass
 
   .. code-block:: python
 
-    def material_non_implication(a, b):
+    def material_non_implication(x, y):
         if a == False and b == False:
             return False
         if a == False and b == True:
             return False
         if a == True and b == True:
             return False
-        return (a, b)
+        return (x, y)
 
 * I have the next :ref:`AttributeError`
 
@@ -706,8 +706,8 @@ green: make it pass
 
   .. code-block:: python
 
-    def converse_non_implication(a, b):
-        return (a, b)
+    def converse_non_implication(x, y):
+        return (x, y)
 
   the terminal shows :ref:`AssertionError`
 
@@ -719,10 +719,10 @@ green: make it pass
 
   .. code-block:: python
 
-    def converse_non_implication(a, b):
+    def converse_non_implication(x, y):
         if a == True and b == True:
             return False
-        return (a, b)
+        return (x, y)
 
   the terminal shows :ref:`AssertionError`
 
@@ -734,12 +734,12 @@ green: make it pass
 
   .. code-block:: python
 
-    def converse_non_implication(a, b):
+    def converse_non_implication(x, y):
         if a == True and b == False:
             return False
         if a == True and b == True:
             return False
-        return (a, b)
+        return (x, y)
 
   the terminal shows :ref:`AssertionError`
 
@@ -751,14 +751,14 @@ green: make it pass
 
   .. code-block:: python
 
-    def converse_non_implication(a, b):
+    def converse_non_implication(x, y):
         if a == False and b == False:
             return False
         if a == True and b == False:
             return False
         if a == True and b == True:
             return False
-        return (a, b)
+        return (x, y)
 
 * the terminal shows :ref:`AttributeError`
 
@@ -771,8 +771,8 @@ green: make it pass
 
   .. code-block:: python
 
-    def converse_non_implication(a, b):
-        return (a, b)
+    def converse_non_implication(x, y):
+        return (x, y)
 
   the terminal shows :ref:`AssertionError`
 
@@ -784,10 +784,10 @@ green: make it pass
 
   .. code-block:: python
 
-    def converse_non_implication(a, b):
+    def converse_non_implication(x, y):
         if a == True and b == True:
             return False
-        return (a, b)
+        return (x, y)
 
   the terminal shows :ref:`AssertionError`
 
@@ -799,12 +799,12 @@ green: make it pass
 
   .. code-block:: python
 
-    def converse_non_implication(a, b):
+    def converse_non_implication(x, y):
         if a == True and b == False:
             return False
         if a == True and b == True:
             return False
-        return (a, b)
+        return (x, y)
 
   the terminal shows :ref:`AssertionError`
 
@@ -816,14 +816,14 @@ green: make it pass
 
   .. code-block:: python
 
-    def converse_non_implication(a, b):
+    def converse_non_implication(x, y):
         if a == False and b == False:
             return False
         if a == True and b == False:
             return False
         if a == True and b == True:
             return False
-        return (a, b)
+        return (x, y)
 
 * next :ref:`AttributeError`
 
@@ -836,8 +836,8 @@ green: make it pass
 
   .. code-block:: python
 
-    def converse_implication(a, b):
-        return (a, b)
+    def converse_implication(x, y):
+        return (x, y)
 
   the terminal shows :ref:`AssertionError`
 
@@ -849,10 +849,10 @@ green: make it pass
 
   .. code-block:: python
 
-    def converse_implication(a, b):
+    def converse_implication(x, y):
         if a == False and b == True:
             return False
-        return (a, b)
+        return (x, y)
 
 * the next :ref:`AttributeError`
 
@@ -864,8 +864,8 @@ green: make it pass
 
   .. code-block:: python
 
-    def contradiction(a, b):
-        return (a, b)
+    def contradiction(x, y):
+        return (x, y)
 
   the terminal shows :ref:`AssertionError`
 
@@ -877,10 +877,10 @@ green: make it pass
 
   .. code-block:: python
 
-    def contradiction(a, b):
+    def contradiction(x, y):
         if a == True and b == True:
             return False
-        return (a, b)
+        return (x, y)
 
   the terminal shows :ref:`AssertionError`
 
@@ -892,12 +892,12 @@ green: make it pass
 
   .. code-block:: python
 
-    def contradiction(a, b):
+    def contradiction(x, y):
         if a == True and b == False:
             return False
         if a == True and b == True:
             return False
-        return (a, b)
+        return (x, y)
 
   the terminal shows :ref:`AssertionError`
 
@@ -909,14 +909,14 @@ green: make it pass
 
   .. code-block:: python
 
-    def contradiction(a, b):
+    def contradiction(x, y):
         if a == False and b == True:
             return False
         if a == True and b == False:
             return False
         if a == True and b == True:
             return False
-        return (a, b)
+        return (x, y)
 
   the terminal shows :ref:`AssertionError`
 
@@ -928,7 +928,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def contradiction(a, b):
+    def contradiction(x, y):
         if a == False and b == False:
             return False
         if a == False and b == True:
@@ -937,7 +937,7 @@ green: make it pass
             return False
         if a == True and b == True:
             return False
-        return (a, b)
+        return (x, y)
 
 * another :ref:`AttributeError`
 
@@ -950,8 +950,8 @@ green: make it pass
 
   .. code-block:: python
 
-    def logical_negation(a, b):
-        return (a, b)
+    def logical_negation(x, y):
+        return (x, y)
 
   the terminal shows :ref:`TypeError`
 
