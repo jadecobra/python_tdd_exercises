@@ -91,7 +91,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def tautoy(x, y):
+    def tautology(x, y):
         return True
 
 * I have another :ref:`AttributeError`
@@ -269,34 +269,7 @@ green: make it pass
   .. code-block:: python
 
     def material_non_implication(x, y):
-        return not a
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: False is not true
-
-  I change the `return statement`_
-
-  .. code-block:: python
-
-    def material_non_implication(x, y):
-        return False
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: False is not true
-
-  I return the inputs
-
-  .. code-block:: python
-
-    def material_non_implication(x, y):
         return x, y
-        return False
 
   the terminal shows :ref:`AssertionError`
 
@@ -304,13 +277,12 @@ green: make it pass
 
     AssertionError: (True, True) is not false
 
-  this test also expects :ref:`True<test_what_is_true>` in some cases and :ref:`False<test_what_is_false>` in others. I add an `if statement`_
+  I add an `if statement`_
 
   .. code-block:: python
 
     def material_non_implication(x, y):
-        if a == True and b == True:
-            return False
+        if (x, y) == (True, True): return False
         return x, y
 
   the terminal shows :ref:`AssertionError`
@@ -324,10 +296,8 @@ green: make it pass
   .. code-block:: python
 
     def material_non_implication(x, y):
-        if a == False and b == True:
-            return False
-        if a == True and b == True:
-            return False
+        if (x, y) == (True, True): return False
+        if (x, y) == (False, True): return False
         return x, y
 
   the terminal shows :ref:`AssertionError`
@@ -336,20 +306,17 @@ green: make it pass
 
     AssertionError: (False, False) is not false
 
-  I add another `if statement`_
+  another `if statement`_
 
   .. code-block:: python
 
     def material_non_implication(x, y):
-        if a == False and b == False:
-            return False
-        if a == False and b == True:
-            return False
-        if a == True and b == True:
-            return False
+        if (x, y) == (True, True): return False
+        if (x, y) == (False, True): return False
+        if (x, y) == (False, False): return False
         return x, y
 
-* I get the next :ref:`AttributeError`
+* the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -373,11 +340,10 @@ green: make it pass
   .. code-block:: python
 
     def material_implication(x, y):
-        if a == True and b == False:
-            return False
+        if (x, y) == (True, False): return False
         return x, y
 
-* I get the next :ref:`AttributeError`
+* I get :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -401,8 +367,7 @@ green: make it pass
   .. code-block:: python
 
     def logical_nor(x, y):
-        if a == True and b == True:
-            return False
+        if (x, y) == (True, True): return False
         return x, y
 
   the terminal shows :ref:`AssertionError`
@@ -411,15 +376,13 @@ green: make it pass
 
     AssertionError: (True, False) is not false
 
-  I add another `if statement`_
+  another `if statement`_
 
   .. code-block:: python
 
     def logical_nor(x, y):
-        if a == True and b == False:
-            return False
-        if a == True and b == True:
-            return False
+        if (x, y) == (True, True): return False
+        if (x, y) == (True, False): return False
         return x, y
 
   the terminal shows :ref:`AssertionError`
@@ -433,12 +396,9 @@ green: make it pass
   .. code-block:: python
 
     def logical_nor(x, y):
-        if a == False and b == True:
-            return False
-        if a == True and b == False:
-            return False
-        if a == True and b == True:
-            return False
+        if (x, y) == (True, True): return False
+        if (x, y) == (True, False): return False
+        if (x, y) == (False, True): return False
         return x, y
 
 * I get :ref:`AttributeError`
@@ -466,8 +426,7 @@ green: make it pass
   .. code-block:: python
 
     def logical_nand(x, y):
-        if a == True and b == True:
-            return False
+        if (x, y) == (True, True): return False
         return x, y
 
 * on to the next :ref:`AttributeError`
@@ -494,8 +453,7 @@ green: make it pass
   .. code-block:: python
 
     def logical_equality(x, y):
-        if a == True and b == False:
-            return False
+        if (x, y) == (True, False): return False
         return x, y
 
   the terminal shows :ref:`AssertionError`
@@ -509,10 +467,8 @@ green: make it pass
   .. code-block:: python
 
     def logical_equality(x, y):
-        if a == False and b == True:
-            return False
-        if a == True and b == False:
-            return False
+        if (x, y) == (True, False): return False
+        if (x, y) == (False, True): return False
         return x, y
 
 * another :ref:`AttributeError`
@@ -520,9 +476,9 @@ green: make it pass
   .. code-block:: python
     :force:
 
-    AttributeError: module 'src.truth_table' has no attribute 'logical_disjunction'. Did you mean: 'logical_implication'?
+    AttributeError: module 'src.truth_table' has no attribute 'logical_disjunction'
 
-  I add a :ref:`function<functions>`
+  I add the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -540,8 +496,7 @@ green: make it pass
   .. code-block:: python
 
     def logical_disjunction(x, y):
-        if a == False and b == False:
-            return False
+        if (x, y) == (False, False): return False
         return x, y
 
 * the next :ref:`AttributeError`
@@ -569,8 +524,7 @@ green: make it pass
   .. code-block:: python
 
     def logical_conjunction(x, y):
-        if a == True and b == False:
-            return False
+        if (x, y) == (True, False): return False
         return x, y
 
   the terminal shows :ref:`AssertionError`
@@ -584,10 +538,8 @@ green: make it pass
   .. code-block:: python
 
     def logical_conjunction(x, y):
-        if a == False and b == True:
-            return False
-        if a == True and b == False:
-            return False
+        if (x, y) == (True, False): return False
+        if (x, y) == (False, True): return False
         return x, y
 
   the terminal shows :ref:`AssertionError`
@@ -601,12 +553,9 @@ green: make it pass
   .. code-block:: python
 
     def logical_conjunction(x, y):
-        if a == False and b == False:
-            return False
-        if a == False and b == True:
-            return False
-        if a == True and b == False:
-            return False
+        if (x, y) == (True, False): return False
+        if (x, y) == (False, True): return False
+        if (x, y) == (False, False): return False
         return x, y
 
 * I get another :ref:`AttributeError`
@@ -633,8 +582,7 @@ green: make it pass
   .. code-block:: python
 
     def exclusive_disjunction(x, y):
-        if a == True and b == True:
-            return False
+        if (x, y) == (True, True): return False
         return x, y
 
   the terminal shows :ref:`AssertionError`
@@ -648,10 +596,8 @@ green: make it pass
   .. code-block:: python
 
     def exclusive_disjunction(x, y):
-        if a == False and b == False:
-            return False
-        if a == True and b == True:
-            return False
+        if (x, y) == (True, True): return False
+        if (x, y) == (False, False): return False
         return x, y
 
 * next :ref:`AttributeError`
@@ -665,71 +611,6 @@ green: make it pass
 
   .. code-block:: python
 
-    def material_non_implication(x, y):
-        return x, y
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: (True, True) is not false
-
-  I add an `if statement`_
-
-  .. code-block:: python
-
-    def material_non_implication(x, y):
-        if a == True and b == True:
-            return False
-        return x, y
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: (False, True) is not false
-
-  I add another `if statement`_
-
-  .. code-block:: python
-
-    def material_non_implication(x, y):
-        if a == False and b == True:
-            return False
-        if a == True and b == True:
-            return False
-        return x, y
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: (False, False) is not false
-
-  I add an `if statement`_
-
-  .. code-block:: python
-
-    def material_non_implication(x, y):
-        if a == False and b == False:
-            return False
-        if a == False and b == True:
-            return False
-        if a == True and b == True:
-            return False
-        return x, y
-
-* I have the next :ref:`AttributeError`
-
-  .. code-block:: python
-    :force:
-
-    AttributeError: module 'src.truth_table' has no attribute 'converse_non_implication'. Did you mean: 'material_non_implication'?
-
-  I add the :ref:`function<functions>`
-
-  .. code-block:: python
-
     def converse_non_implication(x, y):
         return x, y
 
@@ -744,8 +625,7 @@ green: make it pass
   .. code-block:: python
 
     def converse_non_implication(x, y):
-        if a == True and b == True:
-            return False
+        if (x, y) == (True, True): return False
         return x, y
 
   the terminal shows :ref:`AssertionError`
@@ -759,10 +639,8 @@ green: make it pass
   .. code-block:: python
 
     def converse_non_implication(x, y):
-        if a == True and b == False:
-            return False
-        if a == True and b == True:
-            return False
+        if (x, y) == (True, True): return False
+        if (x, y) == (True, False): return False
         return x, y
 
   the terminal shows :ref:`AssertionError`
@@ -771,82 +649,14 @@ green: make it pass
 
     AssertionError: (False, False) is not false
 
-  I add a new `if statement`_
-
-  .. code-block:: python
-
-    def converse_non_implication(x, y):
-        if a == False and b == False:
-            return False
-        if a == True and b == False:
-            return False
-        if a == True and b == True:
-            return False
-        return x, y
-
-* the terminal shows :ref:`AttributeError`
-
-  .. code-block:: python
-    :force:
-
-    AttributeError: module 'src.truth_table' has no attribute 'converse_implication'. Did you mean: 'converse_non_implication'?
-
-  I add a :ref:`function<functions>`
-
-  .. code-block:: python
-
-    def converse_non_implication(x, y):
-        return x, y
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: (True, True) is not false
-
   I add an `if statement`_
 
   .. code-block:: python
 
     def converse_non_implication(x, y):
-        if a == True and b == True:
-            return False
-        return x, y
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: (True, False) is not false
-
-  I add an `if statement`_
-
-  .. code-block:: python
-
-    def converse_non_implication(x, y):
-        if a == True and b == False:
-            return False
-        if a == True and b == True:
-            return False
-        return x, y
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: (False, False) is not false
-
-  I add another `if statement`_
-
-  .. code-block:: python
-
-    def converse_non_implication(x, y):
-        if a == False and b == False:
-            return False
-        if a == True and b == False:
-            return False
-        if a == True and b == True:
-            return False
+        if (x, y) == (True, True): return False
+        if (x, y) == (True, False): return False
+        if (x, y) == (False, False): return False
         return x, y
 
 * next :ref:`AttributeError`
@@ -874,11 +684,10 @@ green: make it pass
   .. code-block:: python
 
     def converse_implication(x, y):
-        if a == False and b == True:
-            return False
+        if (x, y) == (False, True): return False
         return x, y
 
-* the next :ref:`AttributeError`
+* I get :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -902,8 +711,7 @@ green: make it pass
   .. code-block:: python
 
     def contradiction(x, y):
-        if a == True and b == True:
-            return False
+        if (x, y) == (True, True): return False
         return x, y
 
   the terminal shows :ref:`AssertionError`
@@ -917,10 +725,8 @@ green: make it pass
   .. code-block:: python
 
     def contradiction(x, y):
-        if a == True and b == False:
-            return False
-        if a == True and b == True:
-            return False
+        if (x, y) == (True, True): return False
+        if (x, y) == (True, False): return False
         return x, y
 
   the terminal shows :ref:`AssertionError`
@@ -934,12 +740,9 @@ green: make it pass
   .. code-block:: python
 
     def contradiction(x, y):
-        if a == False and b == True:
-            return False
-        if a == True and b == False:
-            return False
-        if a == True and b == True:
-            return False
+        if (x, y) == (True, True): return False
+        if (x, y) == (True, False): return False
+        if (x, y) == (False, True): return False
         return x, y
 
   the terminal shows :ref:`AssertionError`
@@ -953,17 +756,13 @@ green: make it pass
   .. code-block:: python
 
     def contradiction(x, y):
-        if a == False and b == False:
-            return False
-        if a == False and b == True:
-            return False
-        if a == True and b == False:
-            return False
-        if a == True and b == True:
-            return False
+        if (x, y) == (True, True): return False
+        if (x, y) == (True, False): return False
+        if (x, y) == (False, True): return False
+        if (x, y) == (False, False): return False
         return x, y
 
-* another :ref:`AttributeError`
+* the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
     :force:
@@ -981,29 +780,29 @@ green: make it pass
 
   .. code-block:: python
 
-    TypeError: logical_negation() missing 1 required positional argument: 'b'
+    TypeError: logical_negation() missing 1 required positional argument: 'x'
 
   I change the signature
 
   .. code-block:: python
 
-    def logical_negation(a):
-        return (a, )
+    def logical_negation(x):
+        return x
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: (True,) is not false
+    AssertionError: True is not false
 
-  ah, it expects the opposite. I change the `return statement`_ with not_
+  ah, it expects the opposite. I add not_ to the `return statement`_
 
   .. code-block:: python
 
-    def logical_negation(a):
-        return not a
+    def logical_negation(x):
+        return not x
 
-* The terminal shows :ref:`AttributeError`
+* the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
     :force:
@@ -1014,23 +813,10 @@ green: make it pass
 
   .. code-block:: python
 
-    def logical_identity(a):
-        return (a,)
+    def logical_identity(x):
+        return x
 
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: (False, ) is not false
-
-  okay, the input and output are the same, I change the `return statement`_
-
-  .. code-block:: python
-
-    def logical_identity(a):
-        return a
-
-* the next :ref:`AttributeError`
+* the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
     :force:
@@ -1041,14 +827,14 @@ green: make it pass
 
   .. code-block:: python
 
-    def logical_true(a):
-        return a
+    def logical_true(x):
+        return x
 
   the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
-    TypeError: logical_true() missing 1 required positional argument: 'a'
+    TypeError: logical_true() missing 1 required positional argument: 'x'
 
   I remove the input parameter
 
@@ -1082,19 +868,6 @@ green: make it pass
   .. code-block:: python
 
     def logical_false():
-        return True
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: True is not false
-
-  I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the `return statement`_
-
-  .. code-block:: python
-
-    def logical_false():
         return False
 
   the terminal shows green!
@@ -1102,8 +875,306 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-This is your part. See if you can refactor each operation to a `conditional expression`_. Good Luck!
+Since all the tests are passing, I can refactor the :ref:`functions<functions>` to make them simpler
 
+* :ref:`contradiction<test_contradiction>` returns :ref:`False<test_what_is_false>` in every case, I can use a simple `return statement`_
+
+  .. code-block:: python
+
+    def contradiction(x, y):
+        return False
+        if (x, y) == (True, True): return False
+        if (x, y) == (True, False): return False
+        if (x, y) == (False, True): return False
+        if (x, y) == (False, False): return False
+        return x, y
+
+  the test is still green. I remove the other statements
+
+  .. code-block:: python
+
+    def contradiction(x, y):
+        return False
+
+* I use a one line `return statement`_ for :ref:`converse_implication<test_converse_implication>` to return the opposite of the `if statement`_
+
+  .. code-block:: python
+
+    def converse_implication(x, y):
+        return (x, y) != (False, True)
+        if (x, y) == (False, True): return False
+        return x, y
+
+  still green. I remove the other statements
+
+  .. code-block:: python
+
+    def converse_implication(x, y):
+        return (x, y) != (False, True)
+
+* :ref:`converse_non_implication<test_converse_non_implication>` has only one case that returns :ref:`True<test_what_is_true>`, I use that
+
+  .. code-block:: python
+
+    def converse_non_implication(x, y):
+        return (x, y) == (False, True)
+        if (x, y) == (True, True): return False
+        if (x, y) == (True, False): return False
+        if (x, y) == (False, False): return False
+        return x, y
+
+  the terminal still shows green and I remove the other statements
+
+  .. code-block:: python
+
+    def converse_non_implication(x, y):
+        return (x, y) == (False, True)
+
+* :ref:`exclusive_disjunction<test_exclusive_disjunction>` has two `if statements`_ I try to combine them
+
+  .. code-block:: python
+
+    def exclusive_disjunction(x, y):
+        return (x, y) != (True, True) or (x, y) != (False, False)
+        if (x, y) == (True, True): return False
+        if (x, y) == (False, False): return False
+        return x, y
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  Oops! It looks like I cannot do that since the statements are the opposite of the `if statements`_, I change or_ to and_
+
+  .. code-block:: python
+
+    def exclusive_disjunction(x, y):
+        return (x, y) != (True, True) and (x, y) != (False, False)
+        if (x, y) == (True, True): return False
+        if (x, y) == (False, False): return False
+        return x, y
+
+  the test is green again, I remove the other statements
+
+  .. code-block:: python
+
+    def exclusive_disjunction(x, y):
+        return (x, y) != (True, True) and (x, y) != (False, False)
+
+* :ref:`logical_conjunction<test_logical_conjunction>` only has one case that returns :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+
+    def logical_conjunction(x, y):
+        return (x, y) == (True, True)
+        if (x, y) == (True, False): return False
+        if (x, y) == (False, True): return False
+        if (x, y) == (False, False): return False
+        return x, y
+
+  still green, I remove the other statements
+
+  .. code-block:: python
+
+    def logical_conjunction(x, y):
+        return (x, y) == (True, True)
+
+* :ref:`logical_disjunction<test_logical_disjunction>` only has one case that returns :ref:`False<test_what_is_false>`
+
+  .. code-block:: python
+
+    def logical_disjunction(x, y):
+        return (x, y) != (False, False)
+
+* :ref:`logical_equality<test_logical_equality>` has two `if statements`_, I put their opposites together
+
+  .. code-block:: python
+
+    def logical_equality(x, y):
+        return (x, y) != (True, False) and (x, y) != (False, True)
+
+  the terminal still shows green
+
+* I use the opposite of condition in the `if statement`_ for :ref:`logical_nand<test_logical_nand>`
+
+  .. code-block:: python
+
+    def logical_nand(x, y):
+        return (x, y) != (True, True)
+
+  still green
+
+* :ref:`logical_nor<test_logical_nor>` only has one case that returns :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+
+    def logical_nor(x, y):
+        return (x, y) == (False, False)
+
+* :ref:`material_non_implication<test_material_non_implication>` and :ref:`material_implication<test_material_implication>`
+
+  .. code-block:: python
+
+    def material_non_implication(x, y):
+        return (x, y) == (True, False)
+
+
+    def material_implication(x, y):
+        return (x, y) != (True, False)
+
+* ``x`` is :ref:`True<test_what_is_true>` in both cases of :ref:`negate_first<test_negate_first>` that return :ref:`False<test_what_is_false>`
+
+  .. code-block:: python
+
+    def negate_first(x, y):
+        return x != True
+
+* ``y`` is :ref:`True<test_what_is_true>` in both cases of :ref:`negate_second<test_negate_second>` that return :ref:`False<test_what_is_false>`
+
+  .. code-block:: python
+
+    def negate_second(x, y):
+        return y != True
+
+  I change the `return statement`_
+
+  .. code-block:: python
+
+    def negate_second(x, y):
+        return not y == True
+        return y != True
+
+  since ``not y`` is equal to :ref:`True<test_what_is_true>` I can remove the duplication
+
+  .. code-block:: python
+
+    def negate_second(x, y):
+        return not y
+
+  the test is still green
+
+* I do the same thing with :ref:`negate_first<test_negate_first>`
+
+  .. code-block:: python
+
+    def negate_first(x, y):
+        return not x
+
+  still green
+
+* I use this with :ref:`material_non_implication<test_material_non_implication>`
+
+  .. code-block:: python
+
+    def material_non_implication(x, y):
+        return x and not y
+
+  the terminal shows all tests are still passing
+
+* I try it with :ref:`material_implication<test_material_implication>`
+
+  .. code-block:: python
+
+    def material_implication(x, y):
+        return not x and y
+        return (x, y) != (True, False)
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  I made a mistake, ``!=`` is not and_, I change it to or_
+
+  .. code-block:: python
+
+    def material_implication(x, y):
+        return not x or y
+
+  the test is green again
+
+* I use this with :ref:`logical_nor<test_logical_nor>`
+
+  .. code-block:: python
+
+    def logical_nor(x, y):
+        return not x and not y
+
+  which factors to
+
+  .. code-block:: python
+
+    def logical_nor(x, y):
+        return not (x or y)
+
+* :ref:`logical_nand<test_logical_nand>`
+
+  .. code-block:: python
+
+    def logical_nand(x, y):
+        return not x or not y
+
+  still green and it factors to
+
+  .. code-block:: python
+
+    def logical_nand(x, y):
+        return not (x and y)
+
+* I do it with :ref:`logical_equality<test_logical_equality>`
+
+  .. code-block:: python
+
+    def logical_equality(x, y):
+        return (not x or y) and (x or not y)
+        return (x, y) != (True, False) and (x, y) != (False, True)
+
+  the tests are all still passing, I remove the other statement
+
+* :ref:`logical_disjunction<test_logical_disjunction>` and :ref:`logical_conjunction<test_logical_conjunction>`
+
+  .. code-block:: python
+
+    def logical_disjunction(x, y):
+        return x or y
+
+
+    def logical_conjunction(x, y):
+        return x and y
+
+* :ref:`exclusive_disjunction<test_exclusive_disjunction>` has 2 conditions
+
+  .. code-block:: python
+
+    def exclusive_disjunction(x, y):
+        return (not x or not y) and (x or y)
+        return (x, y) != (True, True) and (x, y) != (False, False)
+
+  still green, I can factor out not_ from the first part of the statement
+
+  .. code-block:: python
+
+    def exclusive_disjunction(x, y):
+        return not (x and y) and (x or y)
+        return (not x or not y) and (x or y)
+
+  the test is still green. I remove the other statement
+
+* :ref:`converse_non_implication<test_converse_non_implication>` and :ref:`converse_implication<test_converse_implication>`
+
+  .. code-block:: python
+
+    def converse_non_implication(x, y):
+        return not x and y
+
+
+    def converse_implication(x, y):
+        return x or not y
+
+all the tests are still passing
 
 *********************************************************************************
 review
