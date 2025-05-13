@@ -208,7 +208,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-The ``add`` :ref:`function<functions>` passes the test but does not meet the actual requirement because it always returns ``1``, it does not care about the inputs. I want it to do a calculation with the inputs and return the result
+The ``add`` :ref:`function<functions>` passes the test but does not meet the actual requirement because it always returns ``1``. I want it to do a calculation with the inputs and return the result
 
 red: make it fail
 ---------------------------------------------------------------------------------

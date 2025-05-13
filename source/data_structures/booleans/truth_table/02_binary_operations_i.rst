@@ -672,7 +672,7 @@ Binary Operations take 2 inputs which could be :ref:`True<test_what_is_true>` or
 * :ref:`Converse NonImplication <test_converse_non_implication>` returns ``not p and q``
 * :ref:`Project Second <test_project_second>` always returns ``q``
 * :ref:`Logical Conjunction <test_logical_conjunction>` returns ``p and q``
-* :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`, it does not care about the inputs
+* :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
 
 do you want to :ref:`test more binary operations? <binary_operations_ii>`
 
