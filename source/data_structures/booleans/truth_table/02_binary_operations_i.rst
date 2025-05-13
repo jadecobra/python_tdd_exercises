@@ -279,7 +279,7 @@ refactor: make it better
 
   the terminal shows green
 
-* I add an `if statement`_ for the first case to make it clearer
+* I add an `if statement`_ for the first case
 
   .. code-block:: python
 
@@ -295,7 +295,7 @@ refactor: make it better
             if q == True:
                 return True
 
-* There are only 2 results for this operation, in the first case the :ref:`function<functions>` returns :ref:`True <test_what_is_true>` and in the other 3 cases it returns :ref:`False <test_what_is_false>`. I rewrite the `if statement`_ for the case where the result is :ref:`True <test_what_is_true>` then use an else_ clause for the other cases
+* There are only 2 results for this operation, in the first case the :ref:`function<functions>` returns :ref:`True <test_what_is_true>` and in the other 3 cases it returns :ref:`False <test_what_is_false>`. I change the `if statement`_ for the case where the result is :ref:`True <test_what_is_true>` then use an else_ clause for the other cases
 
   .. code-block:: python
 
@@ -326,7 +326,7 @@ refactor: make it better
         else:
             return False
 
-  still green. ``bool(x)`` checks if ``x`` is :ref:`True <test_what_is_true>`. I remove the commented line and rewrite the first line to make it simpler
+  still green. ``bool(x)`` checks if ``x`` is :ref:`True <test_what_is_true>`. I remove the commented line and change the first line to make it simpler
 
   .. code-block:: python
 
@@ -339,7 +339,7 @@ refactor: make it better
 
   the test is still green, Python tests if ``p`` and ``q`` are :ref:`True<test_what_is_true>` in the background, I remove the commented line
 
-* Python has `ternary operators`_ or `conditional expressions`_ which allow me to write the `if statements`_ as one line
+* Python has `ternary operators`_ or `conditional expressions`_ which allow me to write the `if statement`_ and the else_ clause as one line
 
   .. code-block:: python
 
@@ -350,7 +350,7 @@ refactor: make it better
         else:
             return False
 
-  the terminal shows green, I remove the other `if statements`_ and rewrite the `return statement`_ in an even simpler way thanks to Python's truth value testing
+  the terminal shows green, I remove the other `if statements`_ and use a simpler statement
 
   .. code-block:: python
 
@@ -591,7 +591,7 @@ refactor: make it better
 
   the terminal still shows green
 
-* I can put the two `if statements`_ together with ``and``
+* I can use and_ to put the two `if statements`_ together
 
   .. code-block:: python
 
@@ -602,7 +602,7 @@ refactor: make it better
                 return True
         return False
 
-  the terminal still shows green. I remove the other statements and rewrite the first line with :ref:`logical negation<test_logical_negation>` and bool_
+  the terminal still shows green. I remove the other statements and change the first line with :ref:`logical negation<test_logical_negation>` and bool_
 
   .. code-block:: python
 
@@ -613,7 +613,7 @@ refactor: make it better
         else:
             return False
 
-  still green. I remove the comment and rewrite the line again
+  still green. I remove the comment and change the line again
 
   .. code-block:: python
 

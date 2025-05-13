@@ -24,7 +24,7 @@ in other words
 
   program(argument) -> output_data
 
-``program`` is the ``function`` that carries out the processing of ``argument`` to return ``output_data``
+``program`` is the ``function`` that processes ``argument`` to return ``output_data``
 
 ``functions`` are defined using the def_ keyword, a name, parentheses and a colon at the end
 
