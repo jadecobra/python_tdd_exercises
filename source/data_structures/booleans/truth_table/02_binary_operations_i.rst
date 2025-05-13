@@ -12,18 +12,19 @@ truth table: Binary Operations I
 
 ----
 
+There are 16 binary operations, they all take 2 inputs and each of the inputs can be :ref:`True <test_what_is_true>` or :ref:`False <test_what_is_false>`. This gives four cases
+
+* :ref:`True <test_what_is_true>`, :ref:`True <test_what_is_true>`
+* :ref:`True <test_what_is_true>`, :ref:`False <test_what_is_false>`
+* :ref:`False <test_what_is_false>`, :ref:`True <test_what_is_true>`
+* :ref:`False <test_what_is_false>`, :ref:`False <test_what_is_false>`
+
 *********************************************************************************
 requirements
 *********************************************************************************
 
 :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` with ``truth_table`` as the name of the project
 
-There are 16 binary operations, they all take 2 inputs, each of the inputs can be :ref:`True <test_what_is_true>` or :ref:`False <test_what_is_false>`, which gives four cases
-
-* :ref:`True <test_what_is_true>`, :ref:`True <test_what_is_true>`
-* :ref:`True <test_what_is_true>`, :ref:`False <test_what_is_false>`
-* :ref:`False <test_what_is_false>`, :ref:`True <test_what_is_true>`
-* :ref:`False <test_what_is_false>`, :ref:`False <test_what_is_false>`
 
 ----
 
@@ -129,7 +130,7 @@ refactor: make it better
         self.assertFalse(src.truth_table.contradiction(False, True))
         self.assertFalse(src.truth_table.contradiction(False, False))
 
-  another case that expects :ref:`False<test_what_is_false>`, the test is still green! :ref:`contradiction<test_contradiction>` always returns :ref:`False<test_what_is_false>`
+  the test is still green! :ref:`Contradiction<test_contradiction>` always returns :ref:`False<test_what_is_false>`
 
 ----
 
@@ -190,7 +191,7 @@ refactor: make it better
 
     AssertionError: True is not false
 
-  when I add a `return statement`_ for :ref:`False <test_what_is_true>`
+  I make the :ref:`function<functions>` return :ref:`False <test_what_is_true>`
 
   .. code-block:: python
 
@@ -204,7 +205,7 @@ refactor: make it better
 
     AssertionError: False is not true
 
-  for the line that was passing before. ``logical_conjunction`` has to choose whether to return :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` based on the inputs. I can make it do that with `if statements`_
+  The line that was passing before is now failing. ``logical_conjunction`` has to choose whether to return :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` based on the inputs. I can make it do that with `if statements`_
 
   .. code-block:: python
 
@@ -214,7 +215,7 @@ refactor: make it better
                 return False
         return True
 
-  the test passes.  The :ref:`function<functions>` returns :ref:`False<test_what_is_false>` when ``p`` is :ref:`True<test_what_is_true>` and ``q`` is :ref:`False<test_what_is_false>`,  otherwise it returns :ref:`True<test_what_is_true>` by default
+  the test passes.  The :ref:`function<functions>` returns :ref:`False<test_what_is_false>` when ``p`` is :ref:`True<test_what_is_true>` and ``q`` is :ref:`False<test_what_is_false>`,  otherwise it returns :ref:`True<test_what_is_true>`
 
 * I add the next case
 
@@ -277,7 +278,7 @@ refactor: make it better
                 return False
         return True
 
-  the terminal shows green
+  the test passes
 
 * I add an `if statement`_ for the first case
 
@@ -295,7 +296,7 @@ refactor: make it better
             if q == True:
                 return True
 
-* There are only 2 results for this operation, in the first case the :ref:`function<functions>` returns :ref:`True <test_what_is_true>` and in the other 3 cases it returns :ref:`False <test_what_is_false>`. I change the `if statement`_ for the case where the result is :ref:`True <test_what_is_true>` then use an else_ clause for the other cases
+* There are only 2 results for this operation, in the first case the :ref:`function<functions>` returns :ref:`True <test_what_is_true>` and in the other 3 cases it returns :ref:`False <test_what_is_false>`. I can use an `if statement`_ for the case where the result is :ref:`True <test_what_is_true>` and an else_ clause for the other cases
 
   .. code-block:: python
 
@@ -326,7 +327,7 @@ refactor: make it better
         else:
             return False
 
-  still green. ``bool(x)`` checks if ``x`` is :ref:`True <test_what_is_true>`. I remove the commented line and change the first line to make it simpler
+  still green. ``bool(x)`` checks if ``x`` is :ref:`True <test_what_is_true>`. I remove the commented line then change the first line to make it simpler
 
   .. code-block:: python
 
@@ -350,7 +351,7 @@ refactor: make it better
         else:
             return False
 
-  the terminal shows green, I remove the other `if statements`_ and use a simpler statement
+  the terminal shows green, I remove the other `if statements`_ then use a simpler statement
 
   .. code-block:: python
 
@@ -477,7 +478,7 @@ refactor: make it better
 
   the test passes
 
-* This :ref:`function<functions>` returns :ref:`True<test_what_is_true>` when ``q`` is :ref:`True<test_what_is_true>` and returns :ref:`False<test_what_is_false>` when ``q`` is :ref:`False<test_what_is_false>`. I add a new statement to show this
+* This :ref:`function<functions>` returns :ref:`False<test_what_is_false>` when ``q`` is :ref:`False<test_what_is_false>` and returns :ref:`True<test_what_is_true>` when ``q`` is :ref:`True<test_what_is_true>`. I add a new statement to show this
 
   .. code-block:: python
 
@@ -589,9 +590,9 @@ refactor: make it better
         self.assertTrue(src.truth_table.converse_non_implication(False, True))
         self.assertFalse(src.truth_table.converse_non_implication(False, False))
 
-  the terminal still shows green
+  the test is still passing
 
-* I can use and_ to put the two `if statements`_ together
+* I can use ``and`` to put the two `if statements`_ together
 
   .. code-block:: python
 
@@ -602,7 +603,7 @@ refactor: make it better
                 return True
         return False
 
-  the terminal still shows green. I remove the other statements and change the first line with :ref:`logical negation<test_logical_negation>` and bool_
+  the terminal still shows green. I remove the other statements then change the first line with :ref:`logical negation<test_logical_negation>` and bool_
 
   .. code-block:: python
 
@@ -624,7 +625,7 @@ refactor: make it better
         else:
             return False
 
-  the test is still green. I remove the commented line and make the line simpler
+  the test is still green. I remove the commented line and make `if statement`_ simpler
 
   .. code-block:: python
 
