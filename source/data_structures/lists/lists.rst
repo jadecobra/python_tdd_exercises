@@ -25,6 +25,39 @@ A list_ is an object_ that can hold other objects_
 * Lists can be changed after creation by performing an operation, this means they are mutable
 * Lists can be looped over
 
+*********************************************************************************
+requirements
+*********************************************************************************
+
+* I open a terminal to run :ref:`makePythonTdd.sh` with ``lists`` as the name of the project
+
+  .. code-block:: python
+
+    ./makePythonTdd.sh lists
+
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+
+    .. code-block:: python
+
+      ./makePythonTdd.ps1 lists
+
+  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    E       AssertionError: True is not false
+
+    tests/test_lists.py:7: AssertionError
+
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_lists.py:7`` to open it in the editor
+* then change ``True`` to ``False`` to make the test pass
+* I add an `import statement`_
+
+  .. code-block:: python
+
+    import unittest
+    import src.lists
+
 
 *********************************************************************************
 test_making_a_list
