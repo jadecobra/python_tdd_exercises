@@ -127,7 +127,7 @@ refactor: make it better
 
   and the terminal still shows green
 
-* I use or_ to make one `if statement`_ for the 2 that return :ref:`True<test_what_is_true>`
+* I can put the two `if statements`_ that return :ref:`True<test_what_is_true>` together with :ref:`Logical Disjunction<test_logical_disjunction>`
 
   .. code-block:: python
 
@@ -160,7 +160,7 @@ refactor: make it better
     def exclusive_disjunction(p, q):
         return (not p and q) or (p and not q)
 
-* This :ref:`function<functions>` returns :ref:`True<test_what_is_true>` in the 2 cases when ``p`` and ``q`` are NOT the same, it could also be written as
+* This :ref:`function<functions>` returns :ref:`False<test_what_is_false>` in the 2 cases when ``p`` and ``q`` are the same, it could also be written as
 
   .. code-block:: python
 
@@ -557,7 +557,7 @@ refactor: make it better
         return not not p or not q
         return not (not p and q)
 
-  back to green. I remove not_ not_ since it cancels out
+  back to green. I remove not_ not_ since it cancels out, the negation of a negation is the original thing
 
   .. code-block:: python
 
@@ -580,7 +580,7 @@ review
 
 Binary Operations take 2 inputs which could be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``p`` and the second ``q``, the tests show that
 
-*  :ref:`Converse Implication <test_converse_implication>` returns ``p or not q``
+* :ref:`Converse Implication <test_converse_implication>` returns ``p or not q``
 * :ref:`Project First <test_project_first>` always returns ``p``
 * :ref:`Material NonImplication <test_material_non_implication>` returns ``p and not q``
 * :ref:`Exclusive Disjunction <test_exclusive_disjunction>` returns ``p != q``
