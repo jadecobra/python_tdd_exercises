@@ -27,7 +27,7 @@ test_negate_first
 red: make it fail
 #################################################################################
 
-I add a test for negate first to ``TestBinaryOperations`` in ``test_truth_table.py``
+I add a test to the ``TestBinaryOperations`` :ref:`class<classes>` in ``test_truth_table.py``
 
 .. code-block:: python
 
@@ -114,7 +114,7 @@ refactor: make it better
 
     AssertionError: False is not true
 
-  I add an `if statement`_ for it
+  I add an `if statement`_ for the case
 
   .. code-block:: python
 
@@ -142,7 +142,7 @@ refactor: make it better
             return True
         return False
 
-  the test is still green. I remove the other statements and use bool_
+  the test is still green. I remove the other statements then use bool_
 
   .. code-block:: python
 
@@ -153,7 +153,7 @@ refactor: make it better
         else:
             return False
 
-  still green, I remove the commented line and simplify the `if statement`_
+  the test is still passing, I remove the commented line and simplify the `if statement`_
 
   .. code-block:: python
 
@@ -319,7 +319,7 @@ refactor: make it better
 
   the test is green again
 
-* I add an `if statement`_ for the one case that returns :ref:`True<test_what_is_true>` with an else_ clause for the other 3 that return :ref:`False<test_what_is_false>`
+* I add an `if statement`_ for the one case that returns :ref:`False<test_what_is_false>` with an else_ clause for the other 3 that return :ref:`True<test_what_is_true>`
 
   .. code-block:: python
 
@@ -358,7 +358,7 @@ refactor: make it better
         # else:
             return True
 
-  the test is still green. I use the simple `return statement`_
+  the test is still green, I use the simple `return statement`_
 
   .. code-block:: python
 
@@ -369,7 +369,7 @@ refactor: make it better
         if not (p and q):
             return True
 
-  still green, I remove the other statements.
+  the test is still passing, I remove the other statements.
 
   .. code-block:: python
 
@@ -570,7 +570,7 @@ refactor: make it better
             return False
         return True
 
-  the test is still green. not_ appears 3 times in this statement, I "multiply" it by each symbol in the parentheses to make the statement simpler
+  the test is still green, ``not`` appears 3 times in this statement, I "multiply" it by each symbol in the parentheses to try to make the statement simpler
 
   .. code-block:: python
 
