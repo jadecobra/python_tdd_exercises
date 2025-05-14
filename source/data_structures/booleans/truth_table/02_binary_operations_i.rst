@@ -29,7 +29,6 @@ requirements
 
 :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` with ``truth_table`` as the name of the project
 
-
 ----
 
 *********************************************************************************
@@ -98,7 +97,7 @@ refactor: make it better
         self.assertFalse(src.truth_table.contradiction(True, True))
         self.assertFalse(src.truth_table.contradiction(True, False))
 
-  the test is still green.
+  the test is still green
 
 * I add the next case
 
@@ -195,7 +194,7 @@ refactor: make it better
 
     AssertionError: True is not false
 
-  I make the :ref:`function<functions>` return :ref:`False <test_what_is_true>`
+  I make the :ref:`function<functions>` return :ref:`False <test_what_is_false>`
 
   .. code-block:: python
 
@@ -629,7 +628,7 @@ refactor: make it better
         else:
             return False
 
-  the test is still green. I remove the commented line and make `if statement`_ simpler
+  the test is still green. I remove the commented line and make the `if statement`_ simpler
 
   .. code-block:: python
 
