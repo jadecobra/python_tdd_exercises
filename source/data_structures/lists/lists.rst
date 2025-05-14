@@ -51,22 +51,17 @@ requirements
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_lists.py:7`` to open it in the editor
 * then change ``True`` to ``False`` to make the test pass
-* I add an `import statement`_
 
-  .. code-block:: python
-
-    import unittest
-    import src.lists
-
+----
 
 *********************************************************************************
 test_making_a_list
 *********************************************************************************
 
 red: make it fail
-==================
+#################################################################################
 
-I make a file called ``test_lists.py`` in the ``tests`` folder with the following code
+I change ``test_failure`` to ``test_making_a_list``
 
 .. code-block:: python
 
@@ -86,7 +81,8 @@ the terminal shows :ref:`TypeError`
 
 
 green: make it pass
-===================
+#################################################################################
+
 * I add the error to the list of Exceptions_ encountered
 
   .. code-block:: python
@@ -95,17 +91,16 @@ green: make it pass
     # AssertionError
     # TypeError
 
-  - Looking at the error I see that the list_ constructor_ expects one argument but four are given in the test, so I am not following the signature for making lists
-  - a constructor_ is a :ref:`function<functions>` that is used to make an instance of a :ref:`class <classes>`
-  - I read python's documentation for `lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ and see that the list_ constructor_ takes an iterable_ as input
-  - An iterable_ is an object I can go over its items one by one in a loop - tuples_, `lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_, sets_ and :ref:`dictionaries` are iterable
+  - :ref:`TypeError` is raised because the list_ constructor_ expects one argument but I gave four in the test. I am not following the signature for making lists
+  - a constructor_ is a :ref:`function<functions>` that is used to make an instance of a :ref:`class <classes>`. The list_ constructor_ takes an iterable_ as input
+  - An iterable_ is an object with items I can go over one by one in a loop - tuples_, `lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_, sets_ and :ref:`dictionaries` are iterable_
 
-* I make the values provided to the list_ constructor_ a tuple_ by placing them in parentheses
+* I change the values provided to the list_ constructor_ to a tuple_ by placing them in parentheses
 
   .. code-block:: python
 
     def test_making_a_list(self):
-        self.assertEqual(list((0, 1, 2, 3)), [])
+        self.assertEqual(list((0, 1, 2, 3)), None)
 
   and get :ref:`AssertionError` in the terminal
 
@@ -113,7 +108,7 @@ green: make it pass
 
     AssertionError: [0, 1, 2, 3] != None
 
-* When I make the right side match the values on the left from the terminal
+* When I change the right side to match the values on the left from the terminal
 
   .. code-block:: python
 
@@ -123,27 +118,27 @@ green: make it pass
   the test passes
 
 refactor: make it better
-=========================
+#################################################################################
 
-* I can make a list with the list_ constructor_ but the passing test also shows I can make a list with ``[]`` which uses less characters. I add a test for it
+I can make a list with the list_ constructor_ and the passing test shows I can make a list with ``[]`` which uses less characters. I add a test for it
 
-  .. code-block:: python
+.. code-block:: python
 
-    def test_making_a_list_w_square_brackets(self):
-        self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 4)))
+  def test_making_a_list_w_square_brackets(self):
+      self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 4)))
 
-  the terminal shows :ref:`AssertionError` for the last value
+the terminal shows :ref:`AssertionError` for the last value
 
-  .. code-block:: python
+.. code-block:: python
 
-    AssertionError: Lists differ: [0, 1, 2, 3] != [0, 1, 2, 4]
+  AssertionError: Lists differ: [0, 1, 2, 3] != [0, 1, 2, 4]
 
-* and I change the value in the test to make it pass
+I change the value in the test to make it pass
 
-  .. code-block:: python
+.. code-block:: python
 
-    def test_making_a_list_w_square_brackets(self):
-        self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 3)))
+  def test_making_a_list_w_square_brackets(self):
+      self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 3)))
 
 ----
 
@@ -152,9 +147,9 @@ test_adding_an_item_to_a_list
 *********************************************************************************
 
 red: make it fail
-===================
+#################################################################################
 
-I add a test for adding items to an existing list with the `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>`
+I add a test for adding items to an existing list_ with the `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>`
 
 .. code-block:: python
 
@@ -176,7 +171,7 @@ the terminal shows :ref:`AssertionError` because the values in ``a_list`` change
   AssertionError: Lists differ: [0, 1, 2, 3, 4] != [0, 1, 2, 3]
 
 green: make it pass
-===================
+#################################################################################
 
 I make the values in the test match the values in the terminal
 
@@ -199,7 +194,7 @@ test_removing_an_item_from_a_list
 *********************************************************************************
 
 red: make it fail
-===================
+#################################################################################
 
 Since I know how to add an item to a list_ I want to add a test for taking away an item from a list using the `remove <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ method
 
@@ -218,7 +213,7 @@ the terminal shows :ref:`AssertionError` because ``2`` is no longer in ``a_list`
   AssertionError: Lists differ: [0, 1, 3] != [0, 1, 2, 3]
 
 green: make it pass
-===================
+#################################################################################
 
 I make the values match the values in the terminal and the test passes
 
@@ -231,7 +226,7 @@ I make the values match the values in the terminal and the test passes
         self.assertEqual(a_list, [0, 1, 3])
 
 refactor: make it better
-=========================
+#################################################################################
 
 What happens when there is more than one of the same item in a list? How does Python decide which of them to remove when I call ``.remove(item)`` on a list_?
 
@@ -270,7 +265,7 @@ test_removing_the_last_item_from_a_list
 *********************************************************************************
 
 red: make it fail
-===================
+#################################################################################
 
 I add a test for taking away the last item from a list_
 
@@ -295,7 +290,7 @@ the terminal shows :ref:`AssertionError` for the test that checks the value of t
   E       AssertionError: 3 != 0
 
 green: make it pass
-===================
+#################################################################################
 
 * I make the value in the test match the actual value popped
 
@@ -332,7 +327,7 @@ test_getting_items_from_a_list
 To view an item in a list_ I can provide the position as an index in ``[]`` to the list_. Python uses zero-based indexing which means the positions of items starts at 0. I can also view items from the right side of the list_ by using negative numbers
 
 red: make it fail
-===================
+#################################################################################
 
 I add a failing test for indexing a list_
 
@@ -358,7 +353,7 @@ the terminal shows :ref:`AssertionError`
   - first
 
 green: make it pass
-===================
+#################################################################################
 
 * I change the value in the test to make the failing line pass
 
@@ -430,7 +425,7 @@ test_index_error
 IndexError_ is raised when I try to get an item from a list but use a number that is greater than the number of items in the list_.
 
 red: make it fail
-===================
+#################################################################################
 
 I add a failing test to show this
 
@@ -448,7 +443,7 @@ the terminal shows IndexError_
   E       IndexError: list index out of range
 
 green: make it pass
-===================
+#################################################################################
 
 * I add IndexError_ to the list of Exceptions_ encountered
 
@@ -471,7 +466,7 @@ green: make it pass
   `unittest.TestCase.assertRaises`_ takes an Exception_ as input and confirms that it is raised. You can read more about ``self.assertRaises`` in :doc:`/how_to/exception_handling_tests`
 
 refactor: make it better
-=========================
+#################################################################################
 
 * I add one more line to test indexing with a negative number that is greater than the length of the list
 
@@ -502,7 +497,7 @@ test_list_attributes_and_methods
 The chapter on :ref:`classes` shows how to view the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of an object_ by using the dir_ :ref:`function<functions>`. Let us try it for `lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
 
 red: make it fail
-===================
+#################################################################################
 
 I add a failing test using the dir_ :ref:`function<functions>`
 
@@ -521,7 +516,7 @@ the terminal shows :ref:`AssertionError`
     AssertionError: Lists differ: ['__add__', '__class__', '__class_getitem_[552 chars]ort'] != []
 
 green: make it pass
-===================
+#################################################################################
 
 * The terminal also shows a recommendation on how to see the difference between ``dir(list)`` and ``[]``
 
@@ -610,7 +605,7 @@ green: make it pass
   and the terminal shows passing tests
 
 refactor: make it better
-=========================
+#################################################################################
 
 There are more :ref:`methods<functions>` listed than what I have reviewed. Based on their names, I can make a guess at what they do, and I know some from the tests above
 
