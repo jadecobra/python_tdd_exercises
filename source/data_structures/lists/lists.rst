@@ -591,15 +591,14 @@ I add a failing test to show this
 .. code-block:: python
 
   def test_index_error(self):
-      a_list = ['first', 'second', 'third', 'fourth']
+      a_list = ['a', 'b', 'c', 'd']
       a_list[5]
 
 the terminal shows IndexError_
 
 .. code-block:: python
 
-  >       a_list[5]
-  E       IndexError: list index out of range
+  IndexError: list index out of range
 
 green: make it pass
 #################################################################################
@@ -613,7 +612,7 @@ green: make it pass
     # TypeError
     # IndexError
 
-* then use `unittest.TestCase.assertRaises`_ to make sure that the ``IndexError`` gets raised and the test passes
+* then I use `unittest.TestCase.assertRaises`_ to make sure that IndexError_ gets raised
 
   .. code-block:: python
 
@@ -622,12 +621,12 @@ green: make it pass
         with self.assertRaises(IndexError):
             a_list[5]
 
-  `unittest.TestCase.assertRaises`_ takes an Exception_ as input and makes sure that it is raised. You can read more about ``self.assertRaises`` in :doc:`/how_to/exception_handling_tests`
+  the test passes. `unittest.TestCase.assertRaises`_ takes an Exception_ as input and makes sure it is raised by the code in its context. You can read more about in :doc:`/how_to/exception_handling_tests`
 
 refactor: make it better
 #################################################################################
 
-* I add one more line to test indexing with a negative number that is greater than the length of the list
+* I add one more line to test indexing with a negative number that is greater than the length of the list_
 
   .. code-block:: python
 
@@ -638,13 +637,23 @@ refactor: make it better
         a_list[-5]
 
   the terminal shows IndexError_
-* When I indent the line under the `self.assertRaises` context, the test passes
 
   .. code-block:: python
 
-    with self.assertRaises(IndexError):
-        a_list[5]
-        a_list[-5]
+    IndexError: list index out of range
+
+* I add another assertRaises_
+
+  .. code-block:: python
+
+    def test_index_error(self):
+        a_list = ['a', 'b', 'c', 'd']
+        with self.assertRaises(IndexError):
+            a_list[5]
+        with self.assertRaises(IndexError):
+            a_list[-5]
+
+  the test passes
 
 ----
 
