@@ -23,7 +23,6 @@ A list_ is an :ref:`object<classes>` that can hold other objects_
 * Lists can be made with the list_ constructor_
 * Lists can hold any :ref:`object<classes>`
 * Lists can be changed after creation by performing an operation, this means they are mutable
-* Lists can be looped over
 
 *********************************************************************************
 requirements
@@ -666,15 +665,15 @@ The chapter on :ref:`classes` shows how to view the :ref:`attributes<AttributeEr
 red: make it fail
 #################################################################################
 
-I add a failing test using the dir_ :ref:`function<functions>`
+I add a failing test
 
 .. code-block:: python
 
-    def test_list_attributes_and_methods(self):
-        self.assertEqual(
-            dir(list),
-            []
-        )
+  def test_list_attributes_and_methods(self):
+      self.assertEqual(
+          dir(list),
+          []
+      )
 
 the terminal shows :ref:`AssertionError`
 
@@ -685,13 +684,14 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-* The terminal also shows a recommendation on how to see the difference between ``dir(list)`` and ``[]``
+* The terminal also shows a recommendation on how to see the differences between ``dir(list)`` and ``[]``
 
   .. code-block:: python
 
     Diff is 748 characters long. Set self.maxDiff to None to see it
 
-  `maxDiff <https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff>`_ is an attribute of the `unittest.TestCase`_ :ref:`class <classes>` that sets the maximum amount of characters to show in the comparison between the 2 objects  in the terminal. When it is set to :ref:`None` there is no limit to the number of characters
+* `unittest.TestCase.maxDiff`_ is an attribute of the `unittest.TestCase`_ :ref:`class <classes>` that sets the maximum number of characters to show when comparing 2 objects in the terminal. When it is set to :ref:`None` there is no limit to the number of characters
+
 * I add ``self.maxDiff`` to the test
 
   .. code-block:: python
@@ -713,78 +713,78 @@ green: make it pass
 
   .. code-block:: python
 
-      def test_list_attributes_and_methods(self):
-          self.maxDiff = None
-          self.assertEqual(
-              dir(list),
-              [
-                  '__add__',
-                  '__class__',
-                  '__class_getitem__',
-                  '__contains__',
-                  '__delattr__',
-                  '__delitem__',
-                  '__dir__',
-                  '__doc__',
-                  '__eq__',
-                  '__format__',
-                  '__ge__',
-                  '__getattribute__',
-                  '__getitem__',
-                  '__getstate__',
-                  '__gt__',
-                  '__hash__',
-                  '__iadd__',
-                  '__imul__',
-                  '__init__',
-                  '__init_subclass__',
-                  '__iter__',
-                  '__le__',
-                  '__len__',
-                  '__lt__',
-                  '__mul__',
-                  '__ne__',
-                  '__new__',
-                  '__reduce__',
-                  '__reduce_ex__',
-                  '__repr__',
-                  '__reversed__',
-                  '__rmul__',
-                  '__setattr__',
-                  '__setitem__',
-                  '__sizeof__',
-                  '__str__',
-                  '__subclasshook__',
-                  'append',
-                  'clear',
-                  'copy',
-                  'count',
-                  'extend',
-                  'index',
-                  'insert',
-                  'pop',
-                  'remove',
-                  'reverse',
-                  'sort'
-              ]
-          )
+    def test_list_attributes_and_methods(self):
+        self.maxDiff = None
+        self.assertEqual(
+            dir(list),
+            [
+                '__add__',
+                '__class__',
+                '__class_getitem__',
+                '__contains__',
+                '__delattr__',
+                '__delitem__',
+                '__dir__',
+                '__doc__',
+                '__eq__',
+                '__format__',
+                '__ge__',
+                '__getattribute__',
+                '__getitem__',
+                '__getstate__',
+                '__gt__',
+                '__hash__',
+                '__iadd__',
+                '__imul__',
+                '__init__',
+                '__init_subclass__',
+                '__iter__',
+                '__le__',
+                '__len__',
+                '__lt__',
+                '__mul__',
+                '__ne__',
+                '__new__',
+                '__reduce__',
+                '__reduce_ex__',
+                '__repr__',
+                '__reversed__',
+                '__rmul__',
+                '__setattr__',
+                '__setitem__',
+                '__sizeof__',
+                '__str__',
+                '__subclasshook__',
+                'append',
+                'clear',
+                'copy',
+                'count',
+                'extend',
+                'index',
+                'insert',
+                'pop',
+                'remove',
+                'reverse',
+                'sort'
+            ]
+        )
 
   and the terminal shows passing tests
 
 refactor: make it better
 #################################################################################
 
-There are more :ref:`methods<functions>` listed than what I have reviewed. Based on their names, I can make a guess at what they do, and I know some from the tests above
+There are more :ref:`methods<functions>` listed than what have been tested, You can make a guess at what some of them do from their names
 
-* append - adds an item to the list
+* append_ - adds an item to the list
 * clear - does this clear the items in the list?
 * copy - does this make a copy of the list?
 * count - does this count the number of items in the list?
 * extend - does this extend the list?
 * index
 * insert - does this place an item in the list? what's the difference between this and append?
-* pop - takes away the last item in the list
-* remove - takes away the first occurrence of a given item in the list
+* pop_ - takes away the last item in the list
+* remove_ - takes away the first occurrence of a given item in the list
 * reverse - does this reverse the list?
 * sort - does this sort the items in the list?
 
@@ -800,23 +800,6 @@ review
 * Lists can be made with the list_ constructor_
 * Lists can hold any :ref:`object<classes>`
 * Lists can be changed after creation by performing an operation, this means they are mutable
-* Lists can be looped over
-
-I ran the following tests to show things I can do with lists in Python
-
-* `test_make_a_list`_
-* `test_add_to_a_list`_
-* `test_remove_from_a_list`_
-* `test_remove_last_item_from_a_list`_
-* `test_get_item_from_a_list`_
-* `test_index_error`_
-* `test_list_attributes_and_methods`_
-
-and ran into the following Exceptions_
-
-* :ref:`AssertionError`
-* :ref:`TypeError`
-* IndexError_
 
 Would you like to :doc:`test list comprehensions?</data_structures/lists/list_comprehensions>`
 
