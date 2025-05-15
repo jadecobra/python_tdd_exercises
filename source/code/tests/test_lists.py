@@ -15,7 +15,7 @@ class TestLists(unittest.TestCase):
             list((0, 1, 2, 3))
         )
 
-    def test_adding_an_item_to_a_list(self):
+    def test_adding_to_a_list(self):
         a_list = [0, 1, 2, 3]
         self.assertEqual(a_list, [0, 1, 2, 3])
         a_list.append(4)

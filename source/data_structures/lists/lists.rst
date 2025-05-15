@@ -143,7 +143,7 @@ I change the value in the test to make it pass
 ----
 
 *********************************************************************************
-test_adding_an_item_to_a_list
+test_adding_to_a_list
 *********************************************************************************
 
 red: make it fail
@@ -153,14 +153,14 @@ I add a test for adding items to an existing list_ with the `append <https://doc
 
 .. code-block:: python
 
-    def test_adding_an_item_to_a_list(self):
+    def test_adding_to_a_list(self):
         a_list = [0, 1, 2, 3]
         self.assertEqual(a_list, [0, 1, 2, 3])
         a_list.append(4)
         self.assertEqual(a_list, [0, 1, 2, 3])
 
-- ``a_list = [0, 1, 2, 3]`` makes a list of 4 items and calls it ``a_list``
-- the first ``self.assertEqual(a_list, [0, 1, 2, 3])`` checks that ``a_list`` has the four items
+- ``a_list = [0, 1, 2, 3]`` makes a list of 4 items and names it ``a_list``
+- the first ``self.assertEqual(a_list, [0, 1, 2, 3])`` checks that ``a_list`` points to the four items
 - ``a_list.append(4)`` calls the `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` of the list
 - ``self.assertEqual(a_list, [0, 1, 2, 3])`` checks what ``a_list`` has after `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ is called
 
@@ -173,17 +173,17 @@ the terminal shows :ref:`AssertionError` because the values in ``a_list`` change
 green: make it pass
 #################################################################################
 
-I make the values in the test match the values in the terminal
+I change the values in the test to match the values in the terminal
 
 .. code-block:: python
 
-    def test_adding_an_item_to_a_list(self):
+    def test_adding_to_a_list(self):
         a_list = [0, 1, 2, 3]
         self.assertEqual(a_list, [0, 1, 2, 3])
         a_list.append(4)
         self.assertEqual(a_list, [0, 1, 2, 3, 4])
 
-and it shows passing tests.
+the test passes
 
 I started with a list that had 4 things, added something using the `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ method, then confirmed what I added is now part of the list
 
@@ -638,7 +638,7 @@ review
 I ran the following tests to show things I can do with lists in Python
 
 * `test_making_a_list`_
-* `test_adding_an_item_to_a_list`_
+* `test_adding_to_a_list`_
 * `test_removing_an_item_from_a_list`_
 * `test_removing_the_last_item_from_a_list`_
 * `test_getting_items_from_a_list`_
