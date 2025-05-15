@@ -18,11 +18,9 @@ lists
 
 A list_ is an :ref:`object<classes>` that can hold other objects_
 
-
-* Lists are represented with ``[]``
-* Lists can be made with the list_ constructor_
-* Lists can hold any :ref:`object<classes>`
-* Lists can be changed after creation by performing an operation, this means they are mutable
+* they are represented with ``[]``
+* they can be made with the list_ constructor_
+* they can be changed after they exist by performing an operation, this means they are mutable
 
 *********************************************************************************
 requirements
