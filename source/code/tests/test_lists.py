@@ -30,7 +30,7 @@ class TestLists(unittest.TestCase):
         a_list.remove(2)
         self.assertEqual(a_list, [0, 1, 2, 3, 2])
 
-    def test_remove_last_item_from_a_list(self):
+    def test_remove_last_item_in_a_list(self):
         a_list = [0, 1, 2, 3]
 
         self.assertEqual(a_list, [0, 1, 2, 3])

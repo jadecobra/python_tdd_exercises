@@ -265,7 +265,7 @@ the remove_ :ref:`method<functions>` takes away the first item when the item exi
 ----
 
 *********************************************************************************
-test_remove_last_item_from_a_list
+test_remove_last_item_in_a_list
 *********************************************************************************
 
 red: make it fail
@@ -275,7 +275,7 @@ I add another test
 
 .. code-block:: python
 
-  def test_remove_last_item_from_a_list(self):
+  def test_remove_last_item_in_a_list(self):
       a_list = [0, 1, 2, 3]
 
       self.assertEqual(a_list, [0, 1, 2, 3])
@@ -309,7 +309,7 @@ I add another failing line
 
 .. code-block:: python
 
-  def test_remove_last_item_from_a_list(self):
+  def test_remove_last_item_in_a_list(self):
       a_list = [0, 1, 2, 3]
 
       self.assertEqual(a_list, [0, 1, 2, 3])
@@ -327,7 +327,7 @@ I change the expected values to match
 
 .. code-block:: python
 
-  def test_remove_last_item_from_a_list(self):
+  def test_remove_last_item_in_a_list(self):
       a_list = [0, 1, 2, 3]
 
       self.assertEqual(a_list, [0, 1, 2, 3])
@@ -781,7 +781,7 @@ There are more :ref:`methods<functions>` listed than what have been tested, You 
 * extend - does this extend the list?
 * index
 * insert - does this place an item in the list? what's the difference between this and append?
-* :ref:`pop<test_remove_last_item_from_a_list>` - takes away the last item in the list
+* :ref:`pop<test_remove_last_item_in_a_list>` - takes away the last item in the list
 * :ref:`remove<test_remove_from_a_list>` - takes away the first occurrence of a given item in the list
 * reverse - does this reverse the list?
 * sort - does this sort the items in the list?
