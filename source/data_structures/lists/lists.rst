@@ -340,7 +340,7 @@ all the tests are still green
 ----
 
 *********************************************************************************
-test_get_item_from_a_list
+test_view_item_in_a_list
 *********************************************************************************
 
 I can provide the position of an item I want to see, as an index in ``[]``. Python uses zero-based indexing which means the positions of items starts at ``0``. I can also view items from the right side of the list_ by using negative numbers
@@ -352,7 +352,7 @@ I add a failing test for indexing a list_
 
 .. code-block:: python
 
-  def test_get_item_from_a_list(self):
+  def test_view_item_in_a_list(self):
       a_list = ['first', 'second', 'third', 'fourth']
 
       self.assertEqual(a_list[0], '')
@@ -381,7 +381,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_get_item_from_a_list(self):
+    def test_view_item_in_a_list(self):
         a_list = ['first', 'second', 'third', 'fourth']
 
         self.assertEqual(a_list[0], 'first')
@@ -405,7 +405,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_get_item_from_a_list(self):
+    def test_view_item_in_a_list(self):
         a_list = ['first', 'second', 'third', 'fourth']
 
         self.assertEqual(a_list[0], 'first')
@@ -774,15 +774,15 @@ refactor: make it better
 
 There are more :ref:`methods<functions>` listed than what have been tested, You can make a guess at what some of them do from their names
 
-* append_ - adds an item to the list
+* :ref:`append<test_add_to_a_list>` - adds an item to the list
 * clear - does this clear the items in the list?
 * copy - does this make a copy of the list?
 * count - does this count the number of items in the list?
 * extend - does this extend the list?
 * index
 * insert - does this place an item in the list? what's the difference between this and append?
-* pop_ - takes away the last item in the list
-* remove_ - takes away the first occurrence of a given item in the list
+* :ref:`pop<test_remove_last_item_from_a_list>` - takes away the last item in the list
+* :ref:`remove<test_remove_from_a_list>` - takes away the first occurrence of a given item in the list
 * reverse - does this reverse the list?
 * sort - does this sort the items in the list?
 
