@@ -79,6 +79,9 @@ the terminal shows :ref:`TypeError`
 
   TypeError: list expected at most 1 argument, got 4
 
+* :ref:`TypeError` is raised because the list_ constructor_ expects one argument but I gave four in the test. I am not following the signature for making lists
+* a constructor_ is a :ref:`function<functions>` that is used to make an instance of a :ref:`class <classes>`. The list_ constructor_ takes an iterable_ as input
+* An iterable_ is an object with items I can go over one by one in a loop - tuples_, `lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_, sets_ and :ref:`dictionaries` are iterable_
 
 green: make it pass
 #################################################################################
@@ -90,10 +93,6 @@ green: make it pass
     # Exceptions Encountered
     # AssertionError
     # TypeError
-
-  - :ref:`TypeError` is raised because the list_ constructor_ expects one argument but I gave four in the test. I am not following the signature for making lists
-  - a constructor_ is a :ref:`function<functions>` that is used to make an instance of a :ref:`class <classes>`. The list_ constructor_ takes an iterable_ as input
-  - An iterable_ is an object with items I can go over one by one in a loop - tuples_, `lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_, sets_ and :ref:`dictionaries` are iterable_
 
 * I change the values provided to the list_ constructor_ to a tuple_ by placing them in parentheses
 
@@ -155,6 +154,7 @@ I add a test for adding items to an existing list_ with the append_ :ref:`method
 
     def test_add_to_a_list(self):
         a_list = [0, 1, 2, 3]
+
         self.assertEqual(a_list, [0, 1, 2, 3])
         a_list.append(4)
         self.assertEqual(a_list, [0, 1, 2, 3])
@@ -179,6 +179,7 @@ I change the values in the test to match the values in the terminal
 
     def test_add_to_a_list(self):
         a_list = [0, 1, 2, 3]
+
         self.assertEqual(a_list, [0, 1, 2, 3])
         a_list.append(4)
         self.assertEqual(a_list, [0, 1, 2, 3, 4])
@@ -202,6 +203,7 @@ I add a test for removing an item from a list with the remove_ :ref:`method<func
 
     def test_remove_from_a_list(self):
         a_list = [0, 1, 2, 3]
+
         self.assertEqual(a_list, [0, 1, 2, 3])
         a_list.remove(2)
         self.assertEqual(a_list, [0, 1, 2, 3])
@@ -223,6 +225,7 @@ I change the values to match the terminal
 
     def test_remove_from_a_list(self):
         a_list = [0, 1, 2, 3]
+
         self.assertEqual(a_list, [0, 1, 2, 3])
         a_list.remove(2)
         self.assertEqual(a_list, [0, 1, 3])
@@ -238,6 +241,7 @@ I want to see which item Python removes when there is more than one of the same 
 
   def test_remove_from_a_list_when_multiple_exist(self):
       a_list = [0, 2, 1, 2, 3, 2]
+
       self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
       a_list.remove(2)
       self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
@@ -254,6 +258,7 @@ I change the values on the right to match the values from the terminal
 
   def test_remove_from_a_list_when_multiple_exist(self):
       a_list = [0, 2, 1, 2, 3, 2]
+
       self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
       a_list.remove(2)
       self.assertEqual(a_list, [0, 1, 2, 3, 2])
@@ -275,6 +280,7 @@ I add another test
 
   def test_remove_last_item_from_a_list(self):
       a_list = [0, 1, 2, 3]
+
       self.assertEqual(a_list, [0, 1, 2, 3])
       last_item = a_list.pop()
       self.assertEqual(last_item, 0)
@@ -308,6 +314,7 @@ I add another failing line
 
   def test_remove_last_item_from_a_list(self):
       a_list = [0, 1, 2, 3]
+
       self.assertEqual(a_list, [0, 1, 2, 3])
       last_item = a_list.pop()
       self.assertEqual(last_item, 3)
@@ -325,6 +332,7 @@ I change the expected values to match
 
   def test_remove_last_item_from_a_list(self):
       a_list = [0, 1, 2, 3]
+
       self.assertEqual(a_list, [0, 1, 2, 3])
       last_item = a_list.pop()
       self.assertEqual(last_item, 3)
