@@ -292,7 +292,7 @@ I make ``classes.py`` to make the tests pass by defining the class, attribute an
 test_object_attributes_and_methods
 *********************************************************************************
 
-To view what :ref:`attributes<AttributeError>` and ``methods`` are defined for any object_ I can call ``dir`` on the object_.
+To view what :ref:`attributes<AttributeError>` and ``methods`` are defined for any :ref:`object<classes>` I can call ``dir`` on the :ref:`object<classes>`.
 
 The ``dir`` :ref:`method<functions>` returns a :ref:`list <lists>` of all :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the object provided to it as input
 

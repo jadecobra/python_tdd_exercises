@@ -169,7 +169,7 @@ refactor: make it better
 
   and the test passes
 
-* The `unittest.TestCase`_ :ref:`class<classes>` has 2 :ref:`methods<functions>` I can use to test if an object_ is an instance of a :ref:`class<classes>` or not, I use them to test if :ref:`None` is a boolean_
+* The `unittest.TestCase`_ :ref:`class<classes>` has 2 :ref:`methods<functions>` I can use to test if an :ref:`object<classes>` is an instance of a :ref:`class<classes>` or not, I use them to test if :ref:`None` is a boolean_
 
   .. code-block:: python
 

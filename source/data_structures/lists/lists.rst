@@ -16,12 +16,12 @@ lists
 
 ----
 
-A list_ is an object_ that can hold other objects_
+A list_ is an :ref:`object<classes>` that can hold other objects_
 
 
 * Lists are represented with ``[]``
 * Lists can be made with the list_ constructor_
-* Lists can hold any object_
+* Lists can hold any :ref:`object<classes>`
 * Lists can be changed after creation by performing an operation, this means they are mutable
 * Lists can be looped over
 
@@ -657,12 +657,11 @@ refactor: make it better
 
 ----
 
-
 *********************************************************************************
 test_list_attributes_and_methods
 *********************************************************************************
 
-The chapter on :ref:`classes` shows how to view the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of an object_ by using the dir_ :ref:`function<functions>`. Let us try it for `lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
+The chapter on :ref:`classes` shows how to view the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of an :ref:`object<classes>` by using the dir_ :ref:`function<functions>`. Let us try it for `lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
 
 red: make it fail
 #################################################################################
@@ -799,7 +798,7 @@ review
 
 * Lists are represented with ``[]``
 * Lists can be made with the list_ constructor_
-* Lists can hold any object_
+* Lists can hold any :ref:`object<classes>`
 * Lists can be changed after creation by performing an operation, this means they are mutable
 * Lists can be looped over
 

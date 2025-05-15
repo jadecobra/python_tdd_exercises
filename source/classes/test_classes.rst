@@ -123,8 +123,8 @@ Here is a quick review of what has happened so far
 
 * `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is a placeholder
 * ``self.assertIsInstance`` is a `unittest.TestCase`_ :ref:`method<functions>` that checks if the first input to the :ref:`method<functions>` is an instance of the second input
-* the test ``self.assertIsInstance(classes.ClassWithPass(), object)`` checks if ``ClassWithPass`` is an object_
-* in Python everything is an object_ , which means if it exists in Python there is a class definition for it somewhere or it inherits from a class
+* the test ``self.assertIsInstance(classes.ClassWithPass(), object)`` checks if ``ClassWithPass`` is an :ref:`object<classes>`
+* in Python everything is an :ref:`object<classes>` , which means if it exists in Python there is a class definition for it somewhere or it inherits from a class
 
 ----
 
@@ -217,7 +217,7 @@ green: make it pass
 
   the terminal shows all tests passed
 
-* then I change the definition to explicitly state the parent object_
+* then I change the definition to explicitly state the parent :ref:`object<classes>`
 
   .. code-block:: python
 
@@ -233,17 +233,17 @@ Here is a little summary
 
 * classes can be defined
 
-  - with parentheses stating what object_ the class inherits from
-  - with parentheses without stating what object_ the class inherits from
+  - with parentheses stating what :ref:`object<classes>` the class inherits from
+  - with parentheses without stating what :ref:`object<classes>` the class inherits from
   - without parentheses
   - `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is a placeholder
 
-* classes by default inherit from the object_ class, because in each of the tests, whether the parent is stated or not, each class I defined is an ``instance`` of an object_
+* classes by default inherit from the :ref:`object<classes>` class, because in each of the tests, whether the parent is stated or not, each class I defined is an ``instance`` of an :ref:`object<classes>`
 
 .. admonition:: Zen of Python (:PEP:`20`)
 
 
-  I prefer to use the explicit form of class definitions with the parent object_ in parentheses, from the `Zen of Python`:
+  I prefer to use the explicit form of class definitions with the parent :ref:`object<classes>` in parentheses, from the `Zen of Python`:
   ``Explicit is better than implicit``
 
 Would you like to :doc:`test_classes_attributes_methods`?

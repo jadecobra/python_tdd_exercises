@@ -16,7 +16,7 @@ TypeError
 
 ----
 
-The `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ is raised when an object_ is used in a way that it should not be.
+The `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ is raised when an :ref:`object<classes>` is used in a way that it should not be.
 
 *********************************************************************************
 test_type_error_w_non_callables
