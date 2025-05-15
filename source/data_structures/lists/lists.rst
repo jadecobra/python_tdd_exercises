@@ -185,7 +185,7 @@ I change the values in the test to match the values in the terminal
 
 the test passes
 
-I started with a list that had 4 things, added something using the append_ method, then confirmed what I added is now part of the list
+I started with a list_ that had 4 things, added something using the append_ :ref:`method<functions>`, then checked if what I added is now part of the list_
 
 ----
 
@@ -217,7 +217,7 @@ because ``2`` is no longer in ``a_list`` after ``a_list.remove(2)`` is called
 green: make it pass
 #################################################################################
 
-I change the values to match the values in the terminal and the test passes
+I change the values to match the terminal
 
 .. code-block:: python
 
@@ -226,6 +226,8 @@ I change the values to match the values in the terminal and the test passes
         self.assertEqual(a_list, [0, 1, 2, 3])
         a_list.remove(2)
         self.assertEqual(a_list, [0, 1, 3])
+
+the test passes
 
 refactor: make it better
 #################################################################################
@@ -240,7 +242,7 @@ I want to see which item Python removes when there is more than one of the same 
       a_list.remove(2)
       self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
 
-and get :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -261,7 +263,7 @@ the remove_ :ref:`method<functions>` takes away the first item when the item exi
 ----
 
 *********************************************************************************
-test_removing_the_last_item_from_a_list
+test_remove_last_item_from_a_list
 *********************************************************************************
 
 red: make it fail
@@ -271,12 +273,11 @@ I add another test
 
 .. code-block:: python
 
-    def test_removing_the_last_item_from_a_list(self):
-        a_list = [0, 1, 2, 3]
-        self.assertEqual(a_list, [0, 1, 2, 3])
-        last_item = a_list.pop()
-        self.assertEqual(last_item, 0)
-        self.assertEqual(a_list, [0, 1, 2, 3])
+  def test_remove_last_item_from_a_list(self):
+      a_list = [0, 1, 2, 3]
+      self.assertEqual(a_list, [0, 1, 2, 3])
+      last_item = a_list.pop()
+      self.assertEqual(last_item, 0)
 
 the terminal shows :ref:`AssertionError`
 
@@ -285,47 +286,59 @@ the terminal shows :ref:`AssertionError`
   >       self.assertEqual(last_item, 0)
   E       AssertionError: 3 != 0
 
-* ``last_item = a_list.pop()`` calls the pop_ method of ``a_list`` and uses ``last_item`` as a name to represent the value that is returned
-* ``self.assertEqual(last_item, 0)`` checks that ``last_item`` is equal to ``0``
-* ``self.assertEqual(a_list, [0, 1, 2, 3])`` checks the values that remain in ``a_list`` after calling pop_
-
+``last_item = a_list.pop()`` calls the pop_ :ref:`method<functions>` of ``a_list`` and names the result ``last_item``
 
 green: make it pass
 #################################################################################
 
-* I make the value in the test match the actual value popped
+I change the value in the test to match the value that was popped
 
-  .. code-block:: python
+.. code-block:: python
 
-    self.assertEqual(last_item, 3)
+  self.assertEqual(last_item, 3)
 
-  and the terminal shows :ref:`AssertionError` for the values of ``a_list`` after the last item is popped
+the test passes
 
-  .. code-block:: python
+refactor: make it better
+#################################################################################
 
-    AssertionError: Lists differ: [0, 1, 2] != [0, 1, 2, 3]
+I add another failing line
 
-* I change the values in the test that checks the values of ``a_list`` after calling pop_
+.. code-block:: python
 
-  .. code-block:: python
+  def test_remove_last_item_from_a_list(self):
+      a_list = [0, 1, 2, 3]
+      self.assertEqual(a_list, [0, 1, 2, 3])
+      last_item = a_list.pop()
+      self.assertEqual(last_item, 3)
+      self.assertEqual(a_list, [0, 1, 2, 3])
 
-    def test_removing_the_last_item_from_a_list(self):
-        a_list = [0, 1, 2, 3]
-        self.assertEqual(a_list, [0, 1, 2, 3])
-        last_item = a_list.pop()
-        self.assertEqual(last_item, 3)
-        self.assertEqual(a_list, [0, 1, 2])
+the terminal shows :ref:`AssertionError`
 
-  and get passing tests
+.. code-block:: python
+
+  AssertionError: Lists differ: [0, 1, 2] != [0, 1, 2, 3]
+
+I change the expected values to match
+
+.. code-block:: python
+
+  def test_remove_last_item_from_a_list(self):
+      a_list = [0, 1, 2, 3]
+      self.assertEqual(a_list, [0, 1, 2, 3])
+      last_item = a_list.pop()
+      self.assertEqual(last_item, 3)
+      self.assertEqual(a_list, [0, 1, 2])
+
+all the tests are still green
 
 ----
-
 
 *********************************************************************************
 test_getting_items_from_a_list
 *********************************************************************************
 
-To view an item in a list_ I can provide the position as an index in ``[]`` to the list_. Python uses zero-based indexing which means the positions of items starts at 0. I can also view items from the right side of the list_ by using negative numbers
+To view an item in a list_ I can provide the position as an index in ``[]``. Python uses zero-based indexing which means the positions of items starts at ``0``. I can also view items from the right side of the list_ by using negative numbers
 
 red: make it fail
 #################################################################################
@@ -336,7 +349,6 @@ I add a failing test for indexing a list_
 
     def test_getting_items_from_a_list(self):
         a_list = ['first', 'second', 'third', 'fourth']
-        self.assertEqual(a_list, ['first', 'second', 'third', 'fourth'])
         self.assertEqual(a_list[0], '')
         self.assertEqual(a_list[2], '')
         self.assertEqual(a_list[1], '')
@@ -356,21 +368,26 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-* I change the value in the test to make the failing line pass
+I change the value in the test
 
-  .. code-block:: python
+.. code-block:: python
 
-    def test_getting_items_from_a_list(self):
-        a_list = ['first', 'second', 'third', 'fourth']
-        self.assertEqual(a_list, ['first', 'second', 'third', 'fourth'])
-        self.assertEqual(a_list[0], 'first')
-        self.assertEqual(a_list[2], '')
-        self.assertEqual(a_list[1], '')
-        self.assertEqual(a_list[3], '')
-        self.assertEqual(a_list[-1], '')
-        self.assertEqual(a_list[-3], '')
-        self.assertEqual(a_list[-2], '')
-        self.assertEqual(a_list[-4], '')
+  def test_getting_items_from_a_list(self):
+      a_list = ['first', 'second', 'third', 'fourth']
+      self.assertEqual(a_list, ['first', 'second', 'third', 'fourth'])
+      self.assertEqual(a_list[0], 'first')
+      self.assertEqual(a_list[2], '')
+      self.assertEqual(a_list[1], '')
+      self.assertEqual(a_list[3], '')
+      self.assertEqual(a_list[-1], '')
+      self.assertEqual(a_list[-3], '')
+      self.assertEqual(a_list[-2], '')
+      self.assertEqual(a_list[-4], '')
+
+the test passes
+
+
+
 
   the terminal shows :ref:`AssertionError` for the next test
 
@@ -641,7 +658,7 @@ I ran the following tests to show things I can do with lists in Python
 * `test_making_a_list`_
 * `test_adding_to_a_list`_
 * `test_removing_from_a_list`_
-* `test_removing_the_last_item_from_a_list`_
+* `test_remove_last_item_from_a_list`_
 * `test_getting_items_from_a_list`_
 * `test_index_error`_
 * `test_list_attributes_and_methods`_
