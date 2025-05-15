@@ -9,7 +9,7 @@ class TestListComprehensions(unittest.TestCase):
         self.assertEqual(self.a_list, [])
         self.container = range(10)
 
-    def test_making_a_list_from_an_iterable(self):
+    def test_make_a_list_from_an_iterable(self):
         for item in self.container:
             self.a_list.append(item)
         self.assertEqual(
@@ -22,7 +22,7 @@ class TestListComprehensions(unittest.TestCase):
             self.a_list
         )
 
-    def test_making_a_list_w_a_for_loop(self):
+    def test_make_a_list_w_a_for_loop(self):
         for item in self.container:
             self.a_list.append(item)
 

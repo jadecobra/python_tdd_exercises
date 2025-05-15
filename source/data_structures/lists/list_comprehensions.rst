@@ -20,7 +20,7 @@ lists: list comprehensions
 
 
 *********************************************************************************
-test_making_a_list_from_an_iterable
+test_make_a_list_from_an_iterable
 *********************************************************************************
 
 red: make it fail
@@ -35,7 +35,7 @@ I add a file called ``test_list_comprehensions.py`` to the ``tests`` folder with
 
   class TestListComprehensions(unittest.TestCase):
 
-      def test_making_a_list_from_an_iterable(self):
+      def test_make_a_list_from_an_iterable(self):
           a_list = []
           self.assertEqual(a_list, [])
 
@@ -65,7 +65,7 @@ I make the values in the test match the result
 
 .. code-block:: python
 
-  def test_making_a_list_from_an_iterable(self):
+  def test_make_a_list_from_an_iterable(self):
       a_list = []
       self.assertEqual(a_list, [])
 
@@ -219,7 +219,7 @@ From the tests I see that I can make a :ref:`list <lists>` from any iterable by 
 ----
 
 *********************************************************************************
-test_making_a_list_w_a_for_loop
+test_make_a_list_w_a_for_loop
 *********************************************************************************
 
 red: make it fail
@@ -229,7 +229,7 @@ I add a test for making a list with a `for <https://docs.python.org/3/tutorial/c
 
 .. code-block:: python
 
-    def test_making_a_list_w_a_for_loop(self):
+    def test_make_a_list_w_a_for_loop(self):
         a_list = []
         self.assertEqual(a_list, [])
 
@@ -256,7 +256,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_making_a_list_w_a_for_loop(self):
+    def test_make_a_list_w_a_for_loop(self):
         a_list = []
         self.assertEqual(a_list, [])
 
@@ -699,11 +699,11 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
         self.a_list = []
         self.assertEqual(self.a_list, [])
 
-* I make a reference to ``self.a_list`` in ``test_making_a_list_from_an_iterable``
+* I make a reference to ``self.a_list`` in ``test_make_a_list_from_an_iterable``
 
   .. code-block:: python
 
-    def test_making_a_list_from_an_iterable(self):
+    def test_make_a_list_from_an_iterable(self):
         a_list = []
         self.assertEqual(a_list, [])
 
@@ -721,11 +721,11 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
         )
 
   the terminal still shows passing tests
-* I remove the creation of the empty list and verification from ``test_making_a_list_from_an_iterable``
+* I remove the creation of the empty list and verification from ``test_make_a_list_from_an_iterable``
 
   .. code-block:: python
 
-    def test_making_a_list_from_an_iterable(self):
+    def test_make_a_list_from_an_iterable(self):
         container = range(10)
         for item in container:
             self.a_list.append(item)
@@ -744,7 +744,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
 
   .. code-block:: python
 
-    def test_making_a_list_w_a_for_loop(self):
+    def test_make_a_list_w_a_for_loop(self):
         container = range(10)
         for item in container:
             self.a_list.append(item)
@@ -818,7 +818,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
         self.assertEqual(self.a_list, [])
         self.container = range(10)
 
-    def test_making_a_list_from_an_iterable(self):
+    def test_make_a_list_from_an_iterable(self):
         for item in self.container:
             self.a_list.append(item)
 
@@ -832,7 +832,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
             self.a_list
         )
 
-    def test_making_a_list_w_a_for_loop(self):
+    def test_make_a_list_w_a_for_loop(self):
         for item in self.container:
             self.a_list.append(item)
 

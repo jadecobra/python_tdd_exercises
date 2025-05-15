@@ -3,31 +3,31 @@ import unittest
 
 class TestLists(unittest.TestCase):
 
-    def test_making_a_list(self):
+    def test_make_a_list(self):
         self.assertEqual(
             list((0, 1, 2, 3)),
             [0, 1, 2, 3]
         )
 
-    def test_making_a_list_w_square_brackets(self):
+    def test_make_a_list_w_square_brackets(self):
         self.assertEqual(
             [0, 1, 2, 3],
             list((0, 1, 2, 3))
         )
 
-    def test_adding_to_a_list(self):
+    def test_add_to_a_list(self):
         a_list = [0, 1, 2, 3]
         self.assertEqual(a_list, [0, 1, 2, 3])
         a_list.append(4)
         self.assertEqual(a_list, [0, 1, 2, 3, 4])
 
-    def test_removing_from_a_list(self):
+    def test_remove_from_list(self):
         a_list = [0, 1, 2, 3]
         self.assertEqual(a_list, [0, 1, 2, 3])
         a_list.remove(2)
         self.assertEqual(a_list, [0, 1, 3])
 
-    def test_removing_from_a_list_when_multiple_exist(self):
+    def test_remove_item_from_list_when_multiple_exist(self):
         a_list = [0, 2, 1, 2, 3, 2]
         self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
         a_list.remove(2)

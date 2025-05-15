@@ -55,13 +55,13 @@ requirements
 ----
 
 *********************************************************************************
-test_making_a_list
+test_make_a_list
 *********************************************************************************
 
 red: make it fail
 #################################################################################
 
-I change ``test_failure`` to ``test_making_a_list``
+I change ``test_failure`` to ``test_make_a_list``
 
 .. code-block:: python
 
@@ -70,7 +70,7 @@ I change ``test_failure`` to ``test_making_a_list``
 
   class TestLists(unittest.TestCase):
 
-      def test_making_a_list(self):
+      def test_make_a_list(self):
           self.assertEqual(list(0, 1, 2, 3), None)
 
 the terminal shows :ref:`TypeError`
@@ -99,7 +99,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_making_a_list(self):
+    def test_make_a_list(self):
         self.assertEqual(list((0, 1, 2, 3)), None)
 
   and get :ref:`AssertionError` in the terminal
@@ -112,7 +112,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_making_a_list(self):
+    def test_make_a_list(self):
         self.assertEqual(list((0, 1, 2, 3)), [0, 1, 2, 3])
 
   the test passes
@@ -124,7 +124,7 @@ I can make a list with the list_ constructor_ and the passing test shows I can m
 
 .. code-block:: python
 
-  def test_making_a_list_w_square_brackets(self):
+  def test_make_a_list_w_square_brackets(self):
       self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 4)))
 
 the terminal shows :ref:`AssertionError` for the last value
@@ -137,13 +137,13 @@ I change the value in the test to make it pass
 
 .. code-block:: python
 
-  def test_making_a_list_w_square_brackets(self):
+  def test_make_a_list_w_square_brackets(self):
       self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 3)))
 
 ----
 
 *********************************************************************************
-test_adding_to_a_list
+test_add_to_a_list
 *********************************************************************************
 
 red: make it fail
@@ -153,7 +153,7 @@ I add a test for adding items to an existing list_ with the append_ :ref:`method
 
 .. code-block:: python
 
-    def test_adding_to_a_list(self):
+    def test_add_to_a_list(self):
         a_list = [0, 1, 2, 3]
         self.assertEqual(a_list, [0, 1, 2, 3])
         a_list.append(4)
@@ -177,7 +177,7 @@ I change the values in the test to match the values in the terminal
 
 .. code-block:: python
 
-    def test_adding_to_a_list(self):
+    def test_add_to_a_list(self):
         a_list = [0, 1, 2, 3]
         self.assertEqual(a_list, [0, 1, 2, 3])
         a_list.append(4)
@@ -190,7 +190,7 @@ I started with a list_ that had 4 things, added something using the append_ :ref
 ----
 
 *********************************************************************************
-test_removing_from_a_list
+test_remove_from_list
 *********************************************************************************
 
 red: make it fail
@@ -200,7 +200,7 @@ I add a test for removing an item from a list with the remove_ :ref:`method<func
 
 .. code-block:: python
 
-    def test_removing_from_a_list(self):
+    def test_remove_from_list(self):
         a_list = [0, 1, 2, 3]
         self.assertEqual(a_list, [0, 1, 2, 3])
         a_list.remove(2)
@@ -221,7 +221,7 @@ I change the values to match the terminal
 
 .. code-block:: python
 
-    def test_removing_from_a_list(self):
+    def test_remove_from_list(self):
         a_list = [0, 1, 2, 3]
         self.assertEqual(a_list, [0, 1, 2, 3])
         a_list.remove(2)
@@ -236,7 +236,7 @@ I want to see which item Python removes when there is more than one of the same 
 
 .. code-block:: python
 
-  def test_removing_from_a_list_when_multiple_exist(self):
+  def test_remove_item_from_list_when_multiple_exist(self):
       a_list = [0, 2, 1, 2, 3, 2]
       self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
       a_list.remove(2)
@@ -252,7 +252,7 @@ I change the values on the right to match the values from the terminal
 
 .. code-block:: python
 
-  def test_remove_an_item_from_a_list_when_multiple_exist(self):
+  def test_remove_item_from_list_when_multiple_exist(self):
       a_list = [0, 2, 1, 2, 3, 2]
       self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
       a_list.remove(2)
@@ -655,9 +655,9 @@ review
 
 I ran the following tests to show things I can do with lists in Python
 
-* `test_making_a_list`_
-* `test_adding_to_a_list`_
-* `test_removing_from_a_list`_
+* `test_make_a_list`_
+* `test_add_to_a_list`_
+* `test_remove_from_list`_
 * `test_remove_last_item_from_a_list`_
 * `test_getting_items_from_a_list`_
 * `test_index_error`_

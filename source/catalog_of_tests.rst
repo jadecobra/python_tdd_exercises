@@ -136,9 +136,9 @@ test_truth_table
 test_lists
 *********************************************************************************
 
-#. :ref:`test_making_a_list`
-#. :ref:`test_adding_to_a_list`
-#. :ref:`test_removing_from_a_list`
+#. :ref:`test_make_a_list`
+#. :ref:`test_add_to_a_list`
+#. :ref:`test_remove_from_list`
 #. :ref:`test_remove_last_item_from_a_list`
 #. :ref:`test_getting_items_from_a_list`
 #. :ref:`test_index_error`
@@ -148,8 +148,8 @@ test_lists
 test_list_comprehensions
 *********************************************************************************
 
-#. :ref:`test_making_a_list_from_an_iterable`
-#. :ref:`test_making_a_list_w_a_for_loop`
+#. :ref:`test_make_a_list_from_an_iterable`
+#. :ref:`test_make_a_list_w_a_for_loop`
 #. :ref:`test_making_lists_w_list_comprehensions`
 
 *********************************************************************************
