@@ -45,7 +45,7 @@ I add a file called ``test_list_comprehensions.py`` to the ``tests`` folder with
           self.assertEqual(a_list, [])
 
 * ``a_list = []`` makes an empty list called ``a_list``
-* ``self.assertEqual(a_list, [])`` confirms that ``a_list`` is empty since it is equal to ``[]``
+* ``self.assertEqual(a_list, [])`` makes sure that ``a_list`` is empty since it is equal to ``[]``
 * ``container = range(10)`` makes an iterable_ of numbers from 0 to 9 with the `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ constructor_ and calls it ``container``
 * `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ makes an iterable_ of numbers from 0 to the given number minus 1
 * ``for item in container:`` uses a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ statement to make a loop that goes over every item of ``container``

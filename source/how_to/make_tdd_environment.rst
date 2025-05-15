@@ -360,7 +360,7 @@ how to make a virtual environment
 
       [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 
-    Type ``Y`` to confirm the change and it will enable scripts that have been signed by a verified publisher to run on your computer, you can read more at `Set-ExecutionPolicy`_
+    Type ``Y`` to accept the change and it will enable scripts that have been signed by a verified publisher to run on your computer, you can read more at `Set-ExecutionPolicy`_
 
     To activate the virtual environment, go back to the terminal you were working in before the Execution Policy change and type
 

@@ -577,7 +577,6 @@ refactor: make it better
 
 ----
 
-
 *********************************************************************************
 test_index_error
 *********************************************************************************
@@ -591,9 +590,9 @@ I add a failing test to show this
 
 .. code-block:: python
 
-    def test_index_error(self):
-        a_list = ['first', 'second', 'third', 'fourth']
-        a_list[5]
+  def test_index_error(self):
+      a_list = ['first', 'second', 'third', 'fourth']
+      a_list[5]
 
 the terminal shows IndexError_
 
@@ -614,7 +613,7 @@ green: make it pass
     # TypeError
     # IndexError
 
-* then add a ``self.assertRaises`` to confirm that the ``IndexError`` gets raised and the test passes
+* then use `unittest.TestCase.assertRaises`_ to make sure that the ``IndexError`` gets raised and the test passes
 
   .. code-block:: python
 
@@ -623,7 +622,7 @@ green: make it pass
         with self.assertRaises(IndexError):
             a_list[5]
 
-  `unittest.TestCase.assertRaises`_ takes an Exception_ as input and confirms that it is raised. You can read more about ``self.assertRaises`` in :doc:`/how_to/exception_handling_tests`
+  `unittest.TestCase.assertRaises`_ takes an Exception_ as input and makes sure that it is raised. You can read more about ``self.assertRaises`` in :doc:`/how_to/exception_handling_tests`
 
 refactor: make it better
 #################################################################################

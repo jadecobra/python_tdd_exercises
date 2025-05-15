@@ -132,7 +132,7 @@ refactor: make it better
     )
 
   the terminal shows passing tests, because ``dict(key='value')`` and ``{'key': 'value'}`` are 2 ways of representing the same thing
-* I can add another test to confirm, even though it repeats the 2 tests above
+* I can add another test to make sure, even though it repeats the 2 tests above
 
   .. code-block:: python
 
@@ -203,7 +203,7 @@ I make the values in the test to make it pass
           {1: 'boom'}
       )
 
-the terminal shows passing tests confirming that integers_ can be used as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
+the terminal shows passing tests showing that integers_ can be used as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
 
 refactor: make it better
 #################################################################################
@@ -244,7 +244,7 @@ refactor: make it better
           {2.5: 'works'}
       )
 
-  the terminal shows passing tests confirming that I can use integers_ and floats_ as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
+  the terminal shows passing tests showing that I can use integers_ and floats_ as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
 
 ----
 
@@ -415,7 +415,7 @@ I add :ref:`TypeError` to the list of Exceptions_ encountered
 green: make it pass
 #################################################################################
 
-I can use ``self.assertRaises`` to confirm that an error is raised by some code without having it crash the tests. I use it here to confirm that Python raises :ref:`TypeError` when I try to make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a :ref:`list <lists>` as the key
+I can use ``self.assertRaises`` to make sure that an error is raised by some code without having it crash the tests. I use it here to make sure that Python raises :ref:`TypeError` when I try to make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a :ref:`list <lists>` as the key
 
 .. code-block:: python
 
@@ -487,7 +487,7 @@ and the terminal shows :ref:`TypeError`
 green: make it pass
 #################################################################################
 
-I add an :ref:`how to test that an Exception is raised` to the test to confirm the findings
+I add an :ref:`how to test that an Exception is raised` to the test to test the findings
 
 .. code-block:: python
 
@@ -683,7 +683,7 @@ green: make it pass
     # TypeError
     # KeyError
 
-* then add an :ref:`how to test that an Exception is raised` to confirm that the error is raised
+* then add an :ref:`how to test that an Exception is raised` to make sure that the error is raised
 
   .. code-block:: python
 
@@ -962,7 +962,7 @@ and the terminal shows KeyError_
 green: make it pass
 #################################################################################
 
-I add ``self.assertRaises`` to confirm that KeyError_ gets raised for the test to pass
+I add ``self.assertRaises`` to make sure that KeyError_ gets raised for the test to pass
 
 .. code-block:: python
 
@@ -1193,7 +1193,7 @@ green: make it pass
         }
         self.assertEqual(a_dictionary.pop("basic"), "toothpaste")
 
-* then add a test to confirm that ``a_dictionary`` has changed
+* then add a test to make sure that ``a_dictionary`` has changed
 
   .. code-block:: python
 
@@ -1217,7 +1217,7 @@ green: make it pass
             }
         )
 
-  the terminal shows :ref:`AssertionError` confirming that ``a_dictionary`` is different
+  the terminal shows :ref:`AssertionError` showing that ``a_dictionary`` is different
 
   .. code-block:: python
     :force:
