@@ -347,9 +347,10 @@ I add a failing test for indexing a list_
 
 .. code-block:: python
 
-    def test_get_item_from_a_list(self):
-        a_list = ['first', 'second', 'third', 'fourth']
-        self.assertEqual(a_list[0], '')
+  def test_get_item_from_a_list(self):
+      a_list = ['first', 'second', 'third', 'fourth']
+
+      self.assertEqual(a_list[0], '')
 
 the terminal shows :ref:`AssertionError`
 
@@ -371,26 +372,27 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add another line
+* I add another line, this time with a negative number
 
   .. code-block:: python
 
     def test_get_item_from_a_list(self):
         a_list = ['first', 'second', 'third', 'fourth']
+
         self.assertEqual(a_list[0], 'first')
-        self.assertEqual(a_list[2], '')
+        self.assertEqual(a_list[-4], '')
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: 'third' != ''
+    AssertionError: 'first' != ''
 
   then I change the value to match
 
   .. code-block:: python
 
-    self.assertEqual(a_list[2], 'third')
+    self.assertEqual(a_list[-4], 'first')
 
   the test passes
 
@@ -400,8 +402,62 @@ refactor: make it better
 
     def test_get_item_from_a_list(self):
         a_list = ['first', 'second', 'third', 'fourth']
+
         self.assertEqual(a_list[0], 'first')
+        self.assertEqual(a_list[-4], 'first')
+        self.assertEqual(a_list[2], '')
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 'third' != ''
+
+  I change the test to match
+
+  .. code-block:: python
+
+    self.assertEqual(a_list[2], 'third')
+
+  the terminal shows green again
+
+* I add another line with a negative number
+
+  .. code-block:: python
+
+    def test_getting_items_from_a_list(self):
+        a_list = ['first', 'second', 'third', 'fourth']
+
+        self.assertEqual(a_list[0], 'first')
+        self.assertEqual(a_list[-4], 'first')
         self.assertEqual(a_list[2], 'third')
+        self.assertEqual(a_list[-2], '')
+
+  and get :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 'third' != ''
+
+  I change the expectation
+
+  .. code-block:: python
+
+    self.assertEqual(a_list[-2], 'third')
+
+  the test passes
+
+* I add another line
+
+  .. code-block:: python
+
+    def test_getting_items_from_a_list(self):
+        a_list = ['first', 'second', 'third', 'fourth']
+
+        self.assertEqual(a_list[0], 'first')
+        self.assertEqual(a_list[-4], 'first')
+        self.assertEqual(a_list[2], 'third')
+        self.assertEqual(a_list[-2], 'third')
         self.assertEqual(a_list[1], '')
 
   the terminal shows :ref:`AssertionError`
@@ -410,62 +466,11 @@ refactor: make it better
 
     AssertionError: 'second' != ''
 
-  I change the test to match
-
-  .. code-block:: python
-
-    self.assertEqual(a_list[1], 'second')
-
-  the terminal shows green again
-
-* I add another line
-
-  .. code-block:: python
-
-    def test_getting_items_from_a_list(self):
-        a_list = ['first', 'second', 'third', 'fourth']
-        self.assertEqual(a_list[0], 'first')
-        self.assertEqual(a_list[2], 'third')
-        self.assertEqual(a_list[1], 'second')
-        self.assertEqual(a_list[3], '')
-
-  and get :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: 'fourth' != ''
-
-  I change the expectation
-
-  .. code-block:: python
-
-    self.assertEqual(a_list[3], 'fourth')
-
-  the test passes
-
-* I add another line using a negative number to index the list_
-
-  .. code-block:: python
-
-    def test_getting_items_from_a_list(self):
-        a_list = ['first', 'second', 'third', 'fourth']
-        self.assertEqual(a_list[0], 'first')
-        self.assertEqual(a_list[2], 'third')
-        self.assertEqual(a_list[1], 'second')
-        self.assertEqual(a_list[3], 'fourth')
-        self.assertEqual(a_list[-1], '')
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: 'fourth' != ''
-
   I make the test pass
 
   .. code-block:: python
 
-    self.assertEqual(a_list[-1], 'fourth')
+    self.assertEqual(a_list[1], 'second')
 
 * I add another one
 
@@ -473,11 +478,12 @@ refactor: make it better
 
     def test_getting_items_from_a_list(self):
         a_list = ['first', 'second', 'third', 'fourth']
+
         self.assertEqual(a_list[0], 'first')
+        self.assertEqual(a_list[-4], 'first')
         self.assertEqual(a_list[2], 'third')
+        self.assertEqual(a_list[-2], 'third')
         self.assertEqual(a_list[1], 'second')
-        self.assertEqual(a_list[3], 'fourth')
-        self.assertEqual(a_list[-1], 'fourth')
         self.assertEqual(a_list[-3], '')
 
   the terminal shows :ref:`AssertionError`
@@ -500,25 +506,26 @@ refactor: make it better
 
     def test_getting_items_from_a_list(self):
         a_list = ['first', 'second', 'third', 'fourth']
+
         self.assertEqual(a_list[0], 'first')
+        self.assertEqual(a_list[-4], 'first')
         self.assertEqual(a_list[2], 'third')
+        self.assertEqual(a_list[-2], 'third')
         self.assertEqual(a_list[1], 'second')
-        self.assertEqual(a_list[3], 'fourth')
-        self.assertEqual(a_list[-1], 'fourth')
         self.assertEqual(a_list[-3], 'second')
-        self.assertEqual(a_list[-2], '')
+        self.assertEqual(a_list[3], '')
 
   and get :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: 'third' != ''
+    AssertionError: 'fourth' != ''
 
   I make the test pass
 
   .. code-block:: python
 
-    self.assertEqual(a_list[-2], 'third')
+    self.assertEqual(a_list[3], 'fourth')
 
 * then add another line
 
@@ -526,20 +533,21 @@ refactor: make it better
 
     def test_getting_items_from_a_list(self):
         a_list = ['first', 'second', 'third', 'fourth']
+
         self.assertEqual(a_list[0], 'first')
+        self.assertEqual(a_list[-4], 'first')
         self.assertEqual(a_list[2], 'third')
-        self.assertEqual(a_list[1], 'second')
-        self.assertEqual(a_list[3], 'fourth')
-        self.assertEqual(a_list[-1], 'fourth')
-        self.assertEqual(a_list[-3], 'second')
         self.assertEqual(a_list[-2], 'third')
-        self.assertEqual(a_list[-4], '')
+        self.assertEqual(a_list[1], 'second')
+        self.assertEqual(a_list[-3], 'second')
+        self.assertEqual(a_list[3], 'fourth')
+        self.assertEqual(a_list[-1], '')
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: 'first' != ''
+    AssertionError: 'fourth' != ''
 
   I make the test pass
 
@@ -547,14 +555,15 @@ refactor: make it better
 
     def test_getting_items_from_a_list(self):
         a_list = ['first', 'second', 'third', 'fourth']
+
         self.assertEqual(a_list[0], 'first')
+        self.assertEqual(a_list[-4], 'first')
         self.assertEqual(a_list[2], 'third')
+        self.assertEqual(a_list[-2], 'third')
         self.assertEqual(a_list[1], 'second')
+        self.assertEqual(a_list[-3], 'second')
         self.assertEqual(a_list[3], 'fourth')
         self.assertEqual(a_list[-1], 'fourth')
-        self.assertEqual(a_list[-3], 'second')
-        self.assertEqual(a_list[-2], 'third')
-        self.assertEqual(a_list[-4], 'first')
 
   all tests are still passing
 
