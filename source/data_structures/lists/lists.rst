@@ -149,7 +149,7 @@ test_adding_to_a_list
 red: make it fail
 #################################################################################
 
-I add a test for adding items to an existing list_ with the `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>`
+I add a test for adding items to an existing list_ with the append_ :ref:`method<functions>`
 
 .. code-block:: python
 
@@ -161,8 +161,8 @@ I add a test for adding items to an existing list_ with the `append <https://doc
 
 - ``a_list = [0, 1, 2, 3]`` makes a list of 4 items and names it ``a_list``
 - the first ``self.assertEqual(a_list, [0, 1, 2, 3])`` checks that ``a_list`` points to the four items
-- ``a_list.append(4)`` calls the `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` of the list
-- ``self.assertEqual(a_list, [0, 1, 2, 3])`` checks what ``a_list`` has after `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ is called
+- ``a_list.append(4)`` calls the append_ :ref:`method<functions>` of the list
+- ``self.assertEqual(a_list, [0, 1, 2, 3])`` checks what ``a_list`` has after append_ is called
 
 the terminal shows :ref:`AssertionError` because the values in ``a_list`` change after ``a_list.append(4)`` is called
 
@@ -185,41 +185,43 @@ I change the values in the test to match the values in the terminal
 
 the test passes
 
-I started with a list that had 4 things, added something using the `append <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ method, then confirmed what I added is now part of the list
+I started with a list that had 4 things, added something using the append_ method, then confirmed what I added is now part of the list
 
 ----
 
 *********************************************************************************
-test_removing_an_item_from_a_list
+test_removing_from_a_list
 *********************************************************************************
 
 red: make it fail
 #################################################################################
 
-Since I know how to add an item to a list_ I want to add a test for taking away an item from a list using the `remove <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ method
+I add a test for removing an item from a list with the remove_ :ref:`method<functions>`
 
 .. code-block:: python
 
-    def test_removing_an_item_from_a_list(self):
+    def test_removing_from_a_list(self):
         a_list = [0, 1, 2, 3]
         self.assertEqual(a_list, [0, 1, 2, 3])
         a_list.remove(2)
         self.assertEqual(a_list, [0, 1, 2, 3])
 
-the terminal shows :ref:`AssertionError` because ``2`` is no longer in ``a_list`` after ``a_list.remove(2)`` is called
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
   AssertionError: Lists differ: [0, 1, 3] != [0, 1, 2, 3]
 
+because ``2`` is no longer in ``a_list`` after ``a_list.remove(2)`` is called
+
 green: make it pass
 #################################################################################
 
-I make the values match the values in the terminal and the test passes
+I change the values to match the values in the terminal and the test passes
 
 .. code-block:: python
 
-    def test_removing_an_item_from_a_list(self):
+    def test_removing_from_a_list(self):
         a_list = [0, 1, 2, 3]
         self.assertEqual(a_list, [0, 1, 2, 3])
         a_list.remove(2)
@@ -228,35 +230,33 @@ I make the values match the values in the terminal and the test passes
 refactor: make it better
 #################################################################################
 
-What happens when there is more than one of the same item in a list? How does Python decide which of them to remove when I call ``.remove(item)`` on a list_?
+I want to see which item Python removes when there is more than one of the same item in a list_ and I call ``list.remove(item)``
 
-* I add a failing test to find out
+.. code-block:: python
 
-  .. code-block:: python
+  def test_removing_from_a_list_when_multiple_exist(self):
+      a_list = [0, 2, 1, 2, 3, 2]
+      self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
+      a_list.remove(2)
+      self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
 
-    def test_removing_an_item_from_a_list_when_multiple_exist(self):
-        a_list = [0, 2, 1, 2, 3, 2]
-        self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
-        a_list.remove(2)
-        self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
+and get :ref:`AssertionError`
 
-  and get :ref:`AssertionError` in the terminal
+.. code-block:: python
 
-  .. code-block:: python
+  AssertionError: Lists differ: [0, 1, 2, 3, 2] != [0, 2, 1, 2, 3, 2]
 
-    AssertionError: Lists differ: [0, 1, 2, 3, 2] != [0, 2, 1, 2, 3, 2]
+I change the values on the right to match the values from the terminal
 
-* then I make the values on the right match the values from the terminal to make it pass
+.. code-block:: python
 
-  .. code-block:: python
+  def test_remove_an_item_from_a_list_when_multiple_exist(self):
+      a_list = [0, 2, 1, 2, 3, 2]
+      self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
+      a_list.remove(2)
+      self.assertEqual(a_list, [0, 1, 2, 3, 2])
 
-    def test_remove_an_item_from_a_list_when_multiple_exist(self):
-        a_list = [0, 2, 1, 2, 3, 2]
-        self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
-        a_list.remove(2)
-        self.assertEqual(a_list, [0, 1, 2, 3, 2])
-
-  From the test I see that the `remove <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` takes away the first item when there is more than one of the same item in a list_
+the remove_ :ref:`method<functions>` takes away the first item when the item exists more than once in a list_
 
 ----
 
@@ -267,7 +267,7 @@ test_removing_the_last_item_from_a_list
 red: make it fail
 #################################################################################
 
-I add a test for taking away the last item from a list_
+I add another test
 
 .. code-block:: python
 
@@ -278,16 +278,17 @@ I add a test for taking away the last item from a list_
         self.assertEqual(last_item, 0)
         self.assertEqual(a_list, [0, 1, 2, 3])
 
-* ``last_item = a_list.pop()`` calls the `pop <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ method of ``a_list`` and uses ``last_item`` as a name to represent the value that is returned
-* ``self.assertEqual(last_item, 0)`` checks that ``last_item`` is equal to ``0``
-* ``self.assertEqual(a_list, [0, 1, 2, 3])`` checks the values that remain in ``a_list`` after calling `pop <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
-
-the terminal shows :ref:`AssertionError` for the test that checks the value of the popped item called ``last_item``
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
   >       self.assertEqual(last_item, 0)
   E       AssertionError: 3 != 0
+
+* ``last_item = a_list.pop()`` calls the pop_ method of ``a_list`` and uses ``last_item`` as a name to represent the value that is returned
+* ``self.assertEqual(last_item, 0)`` checks that ``last_item`` is equal to ``0``
+* ``self.assertEqual(a_list, [0, 1, 2, 3])`` checks the values that remain in ``a_list`` after calling pop_
+
 
 green: make it pass
 #################################################################################
@@ -304,7 +305,7 @@ green: make it pass
 
     AssertionError: Lists differ: [0, 1, 2] != [0, 1, 2, 3]
 
-* I change the values in the test that checks the values of ``a_list`` after calling `pop <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
+* I change the values in the test that checks the values of ``a_list`` after calling pop_
 
   .. code-block:: python
 
@@ -639,7 +640,7 @@ I ran the following tests to show things I can do with lists in Python
 
 * `test_making_a_list`_
 * `test_adding_to_a_list`_
-* `test_removing_an_item_from_a_list`_
+* `test_removing_from_a_list`_
 * `test_removing_the_last_item_from_a_list`_
 * `test_getting_items_from_a_list`_
 * `test_index_error`_

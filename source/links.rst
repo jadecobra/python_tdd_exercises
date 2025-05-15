@@ -13,6 +13,7 @@
 .. _while statement: https://docs.python.org/3/reference/compound_stmts.html#the-while-statement
 
 .. _and: https://docs.python.org/3/reference/expressions.html#and
+.. _append: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _arithmetic: https://en.wikipedia.org/wiki/Arithmetic
 .. _assert: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
 .. _assertEqual: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertEqual
@@ -65,13 +66,14 @@
 .. _object: https://docs.python.org/3/glossary.html#term-object
 .. _objects: https://docs.python.org/3/glossary.html#term-object
 .. _or: https://docs.python.org/3/reference/expressions.html#or
-.. _python package: https://docs.python.org/3/glossary.html#term-regular-package
-.. _python packages: https://docs.python.org/3/glossary.html#term-regular-package
 .. _pip: https://pypi.org/project/pip/
+.. _pop: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _pytest: https://docs.pytest.org/
 .. _pytest-watch: https://pypi.org/project/pytest-watch/
 .. _python koans:
+.. _python package: https://docs.python.org/3/glossary.html#term-regular-package
 .. _python package manager: https://pypi.org/project/pip/
+.. _python packages: https://docs.python.org/3/glossary.html#term-regular-package
 .. _python documentation for strings: https://docs.python.org/3/library/string.html?highlight=string#module-string
 .. _python's online documentation: https://docs.python.org/3/search.html
 .. _python standard library: https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library
@@ -79,6 +81,7 @@
 .. _random: https://docs.python.org/3/library/random.html?highlight=random#module-random
 .. _random.randint: https://docs.python.org/3/library/random.html?highlight=random#random.randint
 .. _random.choice: https://docs.python.org/3/library/random.html#random.choice
+.. _remove: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _static method: https://docs.python.org/3/library/functions.html#staticmethod
 .. _set: https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
 .. _sets: https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
