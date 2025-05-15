@@ -21,13 +21,13 @@ class TestLists(unittest.TestCase):
         a_list.append(4)
         self.assertEqual(a_list, [0, 1, 2, 3, 4])
 
-    def test_remove_from_list(self):
+    def test_remove_from_a_list(self):
         a_list = [0, 1, 2, 3]
         self.assertEqual(a_list, [0, 1, 2, 3])
         a_list.remove(2)
         self.assertEqual(a_list, [0, 1, 3])
 
-    def test_remove_item_from_list_when_multiple_exist(self):
+    def test_remove_from_a_list_when_multiple_exist(self):
         a_list = [0, 2, 1, 2, 3, 2]
         self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
         a_list.remove(2)
@@ -40,7 +40,7 @@ class TestLists(unittest.TestCase):
         self.assertEqual(last_item, 3)
         self.assertEqual(a_list, [0, 1, 2])
 
-    def test_getting_items_from_a_list(self):
+    def test_get_item_from_a_list(self):
         a_list = ['first', 'second', 'third', 'fourth']
         self.assertEqual(
             a_list,

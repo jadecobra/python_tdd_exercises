@@ -138,9 +138,9 @@ test_lists
 
 #. :ref:`test_make_a_list`
 #. :ref:`test_add_to_a_list`
-#. :ref:`test_remove_from_list`
+#. :ref:`test_remove_from_a_list`
 #. :ref:`test_remove_last_item_from_a_list`
-#. :ref:`test_getting_items_from_a_list`
+#. :ref:`test_get_item_from_a_list`
 #. :ref:`test_index_error`
 #. :ref:`test_list_attributes_and_methods`
 

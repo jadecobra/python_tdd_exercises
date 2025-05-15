@@ -190,7 +190,7 @@ I started with a list_ that had 4 things, added something using the append_ :ref
 ----
 
 *********************************************************************************
-test_remove_from_list
+test_remove_from_a_list
 *********************************************************************************
 
 red: make it fail
@@ -200,7 +200,7 @@ I add a test for removing an item from a list with the remove_ :ref:`method<func
 
 .. code-block:: python
 
-    def test_remove_from_list(self):
+    def test_remove_from_a_list(self):
         a_list = [0, 1, 2, 3]
         self.assertEqual(a_list, [0, 1, 2, 3])
         a_list.remove(2)
@@ -221,7 +221,7 @@ I change the values to match the terminal
 
 .. code-block:: python
 
-    def test_remove_from_list(self):
+    def test_remove_from_a_list(self):
         a_list = [0, 1, 2, 3]
         self.assertEqual(a_list, [0, 1, 2, 3])
         a_list.remove(2)
@@ -236,7 +236,7 @@ I want to see which item Python removes when there is more than one of the same 
 
 .. code-block:: python
 
-  def test_remove_item_from_list_when_multiple_exist(self):
+  def test_remove_from_a_list_when_multiple_exist(self):
       a_list = [0, 2, 1, 2, 3, 2]
       self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
       a_list.remove(2)
@@ -252,7 +252,7 @@ I change the values on the right to match the values from the terminal
 
 .. code-block:: python
 
-  def test_remove_item_from_list_when_multiple_exist(self):
+  def test_remove_from_a_list_when_multiple_exist(self):
       a_list = [0, 2, 1, 2, 3, 2]
       self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
       a_list.remove(2)
@@ -335,10 +335,10 @@ all the tests are still green
 ----
 
 *********************************************************************************
-test_getting_items_from_a_list
+test_get_item_from_a_list
 *********************************************************************************
 
-To view an item in a list_ I can provide the position as an index in ``[]``. Python uses zero-based indexing which means the positions of items starts at ``0``. I can also view items from the right side of the list_ by using negative numbers
+I can provide the position of an item I want to see, as an index in ``[]``. Python uses zero-based indexing which means the positions of items starts at ``0``. I can also view items from the right side of the list_ by using negative numbers
 
 red: make it fail
 #################################################################################
@@ -347,23 +347,15 @@ I add a failing test for indexing a list_
 
 .. code-block:: python
 
-    def test_getting_items_from_a_list(self):
+    def test_get_item_from_a_list(self):
         a_list = ['first', 'second', 'third', 'fourth']
         self.assertEqual(a_list[0], '')
-        self.assertEqual(a_list[2], '')
-        self.assertEqual(a_list[1], '')
-        self.assertEqual(a_list[3], '')
-        self.assertEqual(a_list[-1], '')
-        self.assertEqual(a_list[-3], '')
-        self.assertEqual(a_list[-2], '')
-        self.assertEqual(a_list[-4], '')
 
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
   AssertionError: 'first' != ''
-  - first
 
 green: make it pass
 #################################################################################
@@ -372,58 +364,189 @@ I change the value in the test
 
 .. code-block:: python
 
-  def test_getting_items_from_a_list(self):
-      a_list = ['first', 'second', 'third', 'fourth']
-      self.assertEqual(a_list, ['first', 'second', 'third', 'fourth'])
-      self.assertEqual(a_list[0], 'first')
-      self.assertEqual(a_list[2], '')
-      self.assertEqual(a_list[1], '')
-      self.assertEqual(a_list[3], '')
-      self.assertEqual(a_list[-1], '')
-      self.assertEqual(a_list[-3], '')
-      self.assertEqual(a_list[-2], '')
-      self.assertEqual(a_list[-4], '')
+  self.assertEqual(a_list[0], 'first')
 
 the test passes
 
+refactor: make it better
+#################################################################################
 
+* I add another line
 
+  .. code-block:: python
 
-  the terminal shows :ref:`AssertionError` for the next test
+    def test_get_item_from_a_list(self):
+        a_list = ['first', 'second', 'third', 'fourth']
+        self.assertEqual(a_list[0], 'first')
+        self.assertEqual(a_list[2], '')
+
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: 'third' != ''
 
-* I make the value match what is in the terminal
+  then I change the value to match
 
   .. code-block:: python
 
-    def test_getting_items_from_a_list(self):
+    self.assertEqual(a_list[2], 'third')
+
+  the test passes
+
+* I add a failing line
+
+  .. code-block:: python
+
+    def test_get_item_from_a_list(self):
         a_list = ['first', 'second', 'third', 'fourth']
-        self.assertEqual(a_list, ['first', 'second', 'third', 'fourth'])
         self.assertEqual(a_list[0], 'first')
         self.assertEqual(a_list[2], 'third')
         self.assertEqual(a_list[1], '')
-        self.assertEqual(a_list[3], '')
-        self.assertEqual(a_list[-1], '')
-        self.assertEqual(a_list[-3], '')
-        self.assertEqual(a_list[-2], '')
-        self.assertEqual(a_list[-4], '')
 
-  and get a failure for the next test
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: 'second' != ''
 
-* I change each failing line until all the tests pass
+  I change the test to match
+
+  .. code-block:: python
+
+    self.assertEqual(a_list[1], 'second')
+
+  the terminal shows green again
+
+* I add another line
 
   .. code-block:: python
 
     def test_getting_items_from_a_list(self):
         a_list = ['first', 'second', 'third', 'fourth']
-        self.assertEqual(a_list, ['first', 'second', 'third', 'fourth'])
+        self.assertEqual(a_list[0], 'first')
+        self.assertEqual(a_list[2], 'third')
+        self.assertEqual(a_list[1], 'second')
+        self.assertEqual(a_list[3], '')
+
+  and get :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 'fourth' != ''
+
+  I change the expectation
+
+  .. code-block:: python
+
+    self.assertEqual(a_list[3], 'fourth')
+
+  the test passes
+
+* I add another line using a negative number to index the list_
+
+  .. code-block:: python
+
+    def test_getting_items_from_a_list(self):
+        a_list = ['first', 'second', 'third', 'fourth']
+        self.assertEqual(a_list[0], 'first')
+        self.assertEqual(a_list[2], 'third')
+        self.assertEqual(a_list[1], 'second')
+        self.assertEqual(a_list[3], 'fourth')
+        self.assertEqual(a_list[-1], '')
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 'fourth' != ''
+
+  I make the test pass
+
+  .. code-block:: python
+
+    self.assertEqual(a_list[-1], 'fourth')
+
+* I add another one
+
+  .. code-block:: python
+
+    def test_getting_items_from_a_list(self):
+        a_list = ['first', 'second', 'third', 'fourth']
+        self.assertEqual(a_list[0], 'first')
+        self.assertEqual(a_list[2], 'third')
+        self.assertEqual(a_list[1], 'second')
+        self.assertEqual(a_list[3], 'fourth')
+        self.assertEqual(a_list[-1], 'fourth')
+        self.assertEqual(a_list[-3], '')
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 'second' != ''
+
+  I change the value
+
+  .. code-block:: python
+
+    self.assertEqual(a_list[-3], 'second')
+
+  the test passes
+
+* I add another line
+
+  .. code-block:: python
+
+    def test_getting_items_from_a_list(self):
+        a_list = ['first', 'second', 'third', 'fourth']
+        self.assertEqual(a_list[0], 'first')
+        self.assertEqual(a_list[2], 'third')
+        self.assertEqual(a_list[1], 'second')
+        self.assertEqual(a_list[3], 'fourth')
+        self.assertEqual(a_list[-1], 'fourth')
+        self.assertEqual(a_list[-3], 'second')
+        self.assertEqual(a_list[-2], '')
+
+  and get :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 'third' != ''
+
+  I make the test pass
+
+  .. code-block:: python
+
+    self.assertEqual(a_list[-2], 'third')
+
+* then add another line
+
+  .. code-block:: python
+
+    def test_getting_items_from_a_list(self):
+        a_list = ['first', 'second', 'third', 'fourth']
+        self.assertEqual(a_list[0], 'first')
+        self.assertEqual(a_list[2], 'third')
+        self.assertEqual(a_list[1], 'second')
+        self.assertEqual(a_list[3], 'fourth')
+        self.assertEqual(a_list[-1], 'fourth')
+        self.assertEqual(a_list[-3], 'second')
+        self.assertEqual(a_list[-2], 'third')
+        self.assertEqual(a_list[-4], '')
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 'first' != ''
+
+  I make the test pass
+
+  .. code-block:: python
+
+    def test_getting_items_from_a_list(self):
+        a_list = ['first', 'second', 'third', 'fourth']
         self.assertEqual(a_list[0], 'first')
         self.assertEqual(a_list[2], 'third')
         self.assertEqual(a_list[1], 'second')
@@ -432,6 +555,8 @@ the test passes
         self.assertEqual(a_list[-3], 'second')
         self.assertEqual(a_list[-2], 'third')
         self.assertEqual(a_list[-4], 'first')
+
+  all tests are still passing
 
 ----
 
@@ -657,9 +782,9 @@ I ran the following tests to show things I can do with lists in Python
 
 * `test_make_a_list`_
 * `test_add_to_a_list`_
-* `test_remove_from_list`_
+* `test_remove_from_a_list`_
 * `test_remove_last_item_from_a_list`_
-* `test_getting_items_from_a_list`_
+* `test_get_item_from_a_list`_
 * `test_index_error`_
 * `test_list_attributes_and_methods`_
 
