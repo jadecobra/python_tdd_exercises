@@ -38,7 +38,7 @@ class TestLists(unittest.TestCase):
         self.assertEqual(last_item, 3)
         self.assertEqual(a_list, [0, 1, 2])
 
-    def test_view_item_in_a_list(self):
+    def test_view_items_in_a_list(self):
         a_list = ['first', 'second', 'third', 'fourth']
 
         self.assertEqual(a_list[0], 'first')

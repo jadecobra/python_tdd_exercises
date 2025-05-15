@@ -340,7 +340,7 @@ all the tests are still green
 ----
 
 *********************************************************************************
-test_view_item_in_a_list
+test_view_items_in_a_list
 *********************************************************************************
 
 I can provide the position of an item I want to see, as an index in ``[]``. Python uses zero-based indexing which means the positions of items starts at ``0``. I can also view items from the right side of the list_ by using negative numbers
@@ -352,7 +352,7 @@ I add a failing test for indexing a list_
 
 .. code-block:: python
 
-  def test_view_item_in_a_list(self):
+  def test_view_items_in_a_list(self):
       a_list = ['first', 'second', 'third', 'fourth']
 
       self.assertEqual(a_list[0], '')
@@ -381,7 +381,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_view_item_in_a_list(self):
+    def test_view_items_in_a_list(self):
         a_list = ['first', 'second', 'third', 'fourth']
 
         self.assertEqual(a_list[0], 'first')
@@ -405,7 +405,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_view_item_in_a_list(self):
+    def test_view_items_in_a_list(self):
         a_list = ['first', 'second', 'third', 'fourth']
 
         self.assertEqual(a_list[0], 'first')
@@ -430,7 +430,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_getting_items_from_a_list(self):
+    def test_view_items_in_a_list(self):
         a_list = ['first', 'second', 'third', 'fourth']
 
         self.assertEqual(a_list[0], 'first')
@@ -456,7 +456,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_getting_items_from_a_list(self):
+    def test_view_items_in_a_list(self):
         a_list = ['first', 'second', 'third', 'fourth']
 
         self.assertEqual(a_list[0], 'first')
@@ -481,7 +481,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_getting_items_from_a_list(self):
+    def test_view_items_in_a_list(self):
         a_list = ['first', 'second', 'third', 'fourth']
 
         self.assertEqual(a_list[0], 'first')
@@ -509,7 +509,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_getting_items_from_a_list(self):
+    def test_view_items_in_a_list(self):
         a_list = ['first', 'second', 'third', 'fourth']
 
         self.assertEqual(a_list[0], 'first')
@@ -536,7 +536,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_getting_items_from_a_list(self):
+    def test_view_items_in_a_list(self):
         a_list = ['first', 'second', 'third', 'fourth']
 
         self.assertEqual(a_list[0], 'first')
@@ -558,7 +558,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_getting_items_from_a_list(self):
+    def test_view_items_in_a_list(self):
         a_list = ['first', 'second', 'third', 'fourth']
 
         self.assertEqual(a_list[0], 'first')
