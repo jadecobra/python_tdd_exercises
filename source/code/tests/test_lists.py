@@ -4,37 +4,35 @@ import unittest
 class TestLists(unittest.TestCase):
 
     def test_make_a_list(self):
-        self.assertEqual(
-            list((0, 1, 2, 3)),
-            [0, 1, 2, 3]
-        )
+        self.assertEqual(list((0, 1, 2, 3)), [0, 1, 2, 3])
 
     def test_make_a_list_w_square_brackets(self):
-        self.assertEqual(
-            [0, 1, 2, 3],
-            list((0, 1, 2, 3))
-        )
+        self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 3)))
 
     def test_add_to_a_list(self):
         a_list = [0, 1, 2, 3]
+
         self.assertEqual(a_list, [0, 1, 2, 3])
         a_list.append(4)
         self.assertEqual(a_list, [0, 1, 2, 3, 4])
 
     def test_remove_from_a_list(self):
         a_list = [0, 1, 2, 3]
+
         self.assertEqual(a_list, [0, 1, 2, 3])
         a_list.remove(2)
         self.assertEqual(a_list, [0, 1, 3])
 
     def test_remove_from_a_list_when_multiple_exist(self):
         a_list = [0, 2, 1, 2, 3, 2]
+
         self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
         a_list.remove(2)
         self.assertEqual(a_list, [0, 1, 2, 3, 2])
 
     def test_remove_last_item_from_a_list(self):
         a_list = [0, 1, 2, 3]
+
         self.assertEqual(a_list, [0, 1, 2, 3])
         last_item = a_list.pop()
         self.assertEqual(last_item, 3)
@@ -42,23 +40,21 @@ class TestLists(unittest.TestCase):
 
     def test_get_item_from_a_list(self):
         a_list = ['first', 'second', 'third', 'fourth']
-        self.assertEqual(
-            a_list,
-            ['first', 'second', 'third', 'fourth']
-        )
+
         self.assertEqual(a_list[0], 'first')
+        self.assertEqual(a_list[-4], 'first')
         self.assertEqual(a_list[2], 'third')
+        self.assertEqual(a_list[-2], 'third')
         self.assertEqual(a_list[1], 'second')
+        self.assertEqual(a_list[-3], 'second')
         self.assertEqual(a_list[3], 'fourth')
         self.assertEqual(a_list[-1], 'fourth')
-        self.assertEqual(a_list[-3], 'second')
-        self.assertEqual(a_list[-2], 'third')
-        self.assertEqual(a_list[-4], 'first')
 
     def test_index_error(self):
-        a_list = ['first', 'second', 'third', 'fourth']
+        a_list = ['a', 'b', 'c', 'd']
         with self.assertRaises(IndexError):
             a_list[5]
+        with self.assertRaises(IndexError):
             a_list[-5]
 
     def test_list_attributes_and_methods(self):
@@ -116,6 +112,7 @@ class TestLists(unittest.TestCase):
                 'sort'
             ]
         )
+
 
 # Exceptions Encountered
 # AssertionError
