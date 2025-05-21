@@ -183,7 +183,7 @@ refactor: make it better
         return not p
         return True if not p else False
 
-  all the tests are still passing. I remove the second `return statement`
+  all tests are still passing. I remove the second `return statement`_
 
   .. code-block:: python
 
@@ -249,12 +249,12 @@ refactor: make it better
 
     AssertionError: False is not true
 
-  I add an `if statement`_
+  I add an `if statement`_ using what I know so far
 
   .. code-block:: python
 
     def logical_nand(p, q):
-        if p == True and q == False:
+        if p and not q
             return True
         return False
 
@@ -275,14 +275,14 @@ refactor: make it better
 
     AssertionError: False is not true
 
-  I add an `if statement`
+  I add an `if statement`_
 
   .. code-block:: python
 
     def logical_nand(p, q):
-        if p == False and q == True:
+        if not p and q:
             return True
-        if p == True and q == False:
+        if p and not q:
             return True
         return False
 
@@ -309,45 +309,34 @@ refactor: make it better
   .. code-block:: python
 
     def logical_nand(p, q):
-        if p == False and q == False:
+        if not p and not q:
             return True
-        if p == False and q == True:
+        if not p and q:
             return True
-        if p == True and q == False:
+        if p and not q:
             return True
         return False
 
   the test is green again
 
-* I add an `if statement`_ for the one case that returns :ref:`False<test_what_is_false>` with an else_ clause for the other 3 that return :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-
-    def logical_nand(p, q):
-        if p == True and q == True:
-            return False
-        else:
-            return True
-        if p == False and q == False:
-            return True
-        if p == False and q == True:
-            return True
-        if p == True and q == False:
-            return True
-        return False
-
-  the test is still green. From :ref:`Logical Conjunction<test_logical_conjunction>` I know I can change the first statement
+* I add an `if statement`_ for the case that returns :ref:`False<test_what_is_false>` with an else_ clause for the other 3 that return :ref:`True<test_what_is_true>`
 
   .. code-block:: python
 
     def logical_nand(p, q):
         if p and q:
-        # if p == True and q == True:
             return False
         else:
             return True
+        if not p and not q:
+            return True
+        if not p and q:
+            return True
+        if p and not q:
+            return True
+        return False
 
-  still green. I want to use a `conditional expression`_, which means I have to use an `if statement`_ that returns :ref:`True<test_what_is_true>`. I use :ref:`logical negation<test_logical_negation>` to change the else_ clause with not_
+  the test is still green. I want to use a single `return statement`_, which means I have to use an `if statement`_ that returns :ref:`True<test_what_is_true>`. I use :ref:`logical negation<test_logical_negation>` to change the else_ clause with not_
 
   .. code-block:: python
 
@@ -376,7 +365,7 @@ refactor: make it better
     def logical_nand(p, q):
         return not (p and q)
 
-  When the `if statement`_ returns :ref:`False<test_what_is_false>` I can return its :ref:`logical negation<test_logical_negation>` with not_
+  When there is only one `if statement`_ that returns :ref:`False<test_what_is_false>` with an else_ clause, I can return its :ref:`logical negation<test_logical_negation>` with not_
 
 ----
 
@@ -542,25 +531,13 @@ refactor: make it better
   .. code-block:: python
 
     def logical_disjunction(p, q):
-        if p == False and q == False:
+        if not p and not q:
             return False
         return True
 
   the test passes
 
-* I can change the `if statement`_
-
-  .. code-block:: python
-
-    def logical_disjunction(p, q):
-        if not p and not q:
-        # if p == False and q == False:
-            return False
-        return True
-
-  the terminal still shows green
-
-* I use a simple `return statement`_ with not_
+* I know from :ref:`Logical NAND<test_logical_nand>` that I can return the negation of the `if statement`_ that returns :ref:`False<test_what_is_false>`
 
   .. code-block:: python
 
@@ -602,7 +579,7 @@ refactor: make it better
         return not not p or not not q:
         return not (not p and not q):
 
-  the test passes. not_ not_ cancels out, so I remove them from the statement
+  the test passes. not_ not_ cancels out, so I remove it from the statement
 
   .. code-block:: python
 
@@ -615,7 +592,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-Binary Operations take 2 inputs which could be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``p`` and the second ``q``, the tests show that
+Binary Operations take 2 inputs, each which could be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``p`` and the second ``q``, the tests show that
 
 * :ref:`Logical Disjunction <test_logical_disjunction>` returns ``p or q``
 * :ref:`Tautology <test_tautology>` always returns :ref:`True<test_what_is_true>`
