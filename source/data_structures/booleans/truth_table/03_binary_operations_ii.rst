@@ -6,6 +6,10 @@
 truth table: Binary Operations II
 #################################################################################
 
+.. raw:: html
+
+  <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/q_oGDjNG3_I?si=khc7CXDeEA5V46L0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 .. contents:: table of contents
   :local:
   :depth: 1
@@ -16,7 +20,7 @@ truth table: Binary Operations II
 requirements
 *********************************************************************************
 
-:doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` with ``truth_table`` as the name of the project
+:ref:`Binary Operations I<truth table: Binary Operations I>`
 
 ----
 
@@ -134,15 +138,13 @@ refactor: make it better
     def negate_first(p, q):
         if p == False:
             return True
-        else:
-            return False
         if p == False and q == False:
             return True
         if p == False and q == True:
             return True
         return False
 
-  the test is still green. I remove the other statements then use bool_
+  the test is still green. I remove the other `if statements`_ then use bool_ with not_
 
   .. code-block:: python
 
@@ -150,8 +152,7 @@ refactor: make it better
         if not bool(p):
         # if p == False:
             return True
-        else:
-            return False
+        return False
 
   the test is still passing, I remove the commented line and simplify the `if statement`_
 
@@ -161,8 +162,7 @@ refactor: make it better
         if not p:
         # if not bool(p):
             return True
-        else:
-            return False
+        return False
 
   the test is still green. I add a `ternary operator`_
 
@@ -172,10 +172,9 @@ refactor: make it better
         return True if not p else False
         if not p:
             return True
-        else:
-            return False
+        return False
 
-  I change it to the simpler form
+  the test is still passing. I change the `return statement`_ to the simpler form
 
   .. code-block:: python
 
@@ -249,7 +248,7 @@ refactor: make it better
 
     AssertionError: False is not true
 
-  I add an `if statement`_ using what I know so far
+  using what I know so far, I add an `if statement`_
 
   .. code-block:: python
 
@@ -592,7 +591,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-Binary Operations take 2 inputs, each of the inputs could be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``p`` and the second ``q``, the tests show that
+Binary Operations take 2 inputs, each of them could be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``p`` and the second ``q``, the tests show that
 
 * :ref:`Logical Disjunction <test_logical_disjunction>` returns ``p or q``
 * :ref:`Tautology <test_tautology>` always returns :ref:`True<test_what_is_true>`
