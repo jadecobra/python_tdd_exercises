@@ -1180,7 +1180,7 @@ all the tests are still passing
 review
 *********************************************************************************
 
-I ran tests for the operations of the `Truth Table`_ involving booleans_ which can either be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
+I ran tests for the operations of the `Truth Table`_ involving booleans_ which can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
 
 * :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
 * :ref:`Tautology <test_tautology>` always returns :ref:`True<test_what_is_true>`

@@ -430,7 +430,7 @@ refactor: make it better
         self.assertTrue(src.truth_table.tautology(True, False))
         self.assertTrue(src.truth_table.tautology(False, True))
 
-  the test is still green.
+  the test is still green
 
 * I add the last case
 
@@ -457,7 +457,7 @@ I add another test
 
 .. code-block:: python
 
-  def test_logical_conjunction(self):
+  def test_tautology(self):
       ...
 
   def test_logical_disjunction(self):
@@ -571,7 +571,7 @@ refactor: make it better
     # TypeError
     # SyntaxError
 
-  then I fix the line, not_ and_ is or_
+  then I fix the line by changing not_ and_ to or_
 
   .. code-block:: python
 
@@ -592,7 +592,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-Binary Operations take 2 inputs, each which could be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``p`` and the second ``q``, the tests show that
+Binary Operations take 2 inputs, each of the inputs could be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``p`` and the second ``q``, the tests show that
 
 * :ref:`Logical Disjunction <test_logical_disjunction>` returns ``p or q``
 * :ref:`Tautology <test_tautology>` always returns :ref:`True<test_what_is_true>`
