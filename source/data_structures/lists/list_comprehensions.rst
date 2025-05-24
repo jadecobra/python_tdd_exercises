@@ -16,17 +16,45 @@ lists: list comprehensions
 
 ----
 
-`List Comprehensions <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#list-comprehensions>`_ are a way to make a :ref:`list <lists>` from an iterable_. It is a simple way to go over every item in the :ref:`list <lists>` and perform an operation usually in one line
+`List Comprehensions <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#list-comprehensions>`_ are a way to make a :ref:`list <lists>` from an iterable_. It is a simple way to go over every item in and perform an operation usually in one line
 
+*********************************************************************************
+requirements
+*********************************************************************************
+
+* I open a terminal to run :ref:`makePythonTdd.sh` with ``list_comprehensions`` as the name of the project
+
+  .. code-block:: python
+
+    ./makePythonTdd.sh list_comprehensions
+
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+
+    .. code-block:: python
+
+      ./makePythonTdd.ps1 list_comprehensions
+
+  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    E       AssertionError: True is not false
+
+    tests/test_list_comprehensions.py:7: AssertionError
+
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_list_comprehensions.py:7`` to open it in the editor
+* then change ``True`` to ``False`` to make the test pass
+
+----
 
 *********************************************************************************
 test_make_a_list_from_an_iterable
 *********************************************************************************
 
 red: make it fail
----------------------------------------------------------------------------------
+#################################################################################
 
-I add a file called ``test_list_comprehensions.py`` to the ``tests`` folder with the following code
+I change ``test_failure`` to ``test_make_a_list_from_an_iterable``
 
 .. code-block:: python
 
@@ -37,20 +65,16 @@ I add a file called ``test_list_comprehensions.py`` to the ``tests`` folder with
 
       def test_make_a_list_from_an_iterable(self):
           a_list = []
-          self.assertEqual(a_list, [])
 
           container = range(10)
           for item in container:
               a_list.append(item)
           self.assertEqual(a_list, [])
 
-* ``a_list = []`` makes an empty list called ``a_list``
-* ``self.assertEqual(a_list, [])`` makes sure that ``a_list`` is empty since it is equal to ``[]``
-* ``container = range(10)`` makes an iterable_ of numbers from 0 to 9 with the `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ constructor_ and calls it ``container``
-* `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ makes an iterable_ of numbers from 0 to the given number minus 1
-* ``for item in container:`` uses a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ statement to make a loop that goes over every item of ``container``
-* ``a_list.append(item)`` adds the item from ``container`` to ``a_list`` on each cycle of the loop, using the ``append`` :ref:`method<functions>`, see :doc:`/data_structures/lists/lists` for more details
-* the second ``self.assertEqual(a_list, [])`` checks to see if ``a_list`` is still empty after the operation
+* I make an empty list with ``a_list = []`` then make a variable with ``container = range(10)``, it makes an iterable_ of numbers with the range_ constructor_, which goes from 0 to 1 less than the number given, in this case it will be 0 to 9
+* ``for item in container:`` uses a `for loop`_ to go over every item of ``container``
+* ``a_list.append(item)`` adds the item from ``container`` to ``a_list`` on each cycle of the loop, using the append_ :ref:`method<functions>`, see :ref:`lists` for more details
+* ``self.assertEqual(a_list, [])`` checks to see if ``a_list`` is still empty after the operation
 
 the terminal shows :ref:`AssertionError` because ``a_list`` is no longer empty, it has 10 items after the loop runs
 
@@ -59,7 +83,7 @@ the terminal shows :ref:`AssertionError` because ``a_list`` is no longer empty, 
   E    AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
 
 green: make it pass
----------------------------------------------------------------------------------
+#################################################################################
 
 I make the values in the test match the result
 
@@ -67,7 +91,6 @@ I make the values in the test match the result
 
   def test_make_a_list_from_an_iterable(self):
       a_list = []
-      self.assertEqual(a_list, [])
 
       container = range(10)
       for item in container:
@@ -77,12 +100,12 @@ I make the values in the test match the result
           [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
       )
 
-and the test passes
+the test passes
 
 refactor: make it better
----------------------------------------------------------------------------------
+#################################################################################
 
-* I add another test to check what happens when I use the :ref:`list <lists>` constructor_ on ``container``
+* I add another test to check what happens when I use the :ref:`list <lists>` constructor_ with ``container``
 
   .. code-block:: python
 
@@ -94,19 +117,20 @@ refactor: make it better
 
       AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
 
-* I make the empty list ``[]`` to ``a_list``
+* I change the expectation to match the result
 
   .. code-block:: python
 
     self.assertEqual(list(container), a_list)
 
-  and the test passes because calling ``list`` on an ``iterable`` makes a :ref:`list <lists>`
+  the test passes, calling the :ref:`list <lists>` constructor_ with an iterable_ makes a :ref:`list <lists>`
+
 * I add another test
 
   .. code-block:: python
 
       self.assertEqual(
-          list_comprehensions.make_a_list(container),
+          src.list_comprehensions.make_a_list(container),
           a_list
       )
 
@@ -223,9 +247,9 @@ test_make_a_list_w_a_for_loop
 *********************************************************************************
 
 red: make it fail
----------------------------------------------------------------------------------
+#################################################################################
 
-I add a test for making a list with a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ loop
+I add a test for making a list with a `for loop`_ loop
 
 .. code-block:: python
 
@@ -250,7 +274,7 @@ the terminal shows :ref:`AssertionError` for the values of ``a_list`` because it
   AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
 
 green: make it pass
----------------------------------------------------------------------------------
+#################################################################################
 
 * I make the values of the test match the result
 
@@ -335,7 +359,7 @@ green: make it pass
 
 From the tests I see that I can make a :ref:`list <lists>` from any iterable by using
 
-* a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ loop
+* a `for loop`_ loop
 * the :ref:`list <lists>` constructor
 
 ----
@@ -345,7 +369,7 @@ test_making_lists_w_list_comprehensions
 ****************************************************************************************
 
 red: make it fail
----------------------------------------------------------------------------------
+#################################################################################
 
 I add a failing test to ``TestListComprehensions``
 
@@ -373,7 +397,7 @@ the terminal shows :ref:`AssertionError`
   AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
 
 green: make it pass
----------------------------------------------------------------------------------
+#################################################################################
 
 * I make the values in the test match the terminal
 
@@ -449,7 +473,7 @@ green: make it pass
     def list_comprehension(iterable):
         return [item for item in iterable]
 
-  I made 2 :ref:`functions<functions>`, one that uses a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ loop and another that uses a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ to do the same thing. The difference between
+  I made 2 :ref:`functions<functions>`, one that uses a `for loop`_ loop and another that uses a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ to do the same thing. The difference between
 
   .. code-block:: python
 
@@ -472,7 +496,7 @@ green: make it pass
   With the list comprehension I can get the same result with less words, lines and steps
 
 refactor: make it better
----------------------------------------------------------------------------------
+#################################################################################
 
 There is more I can do with `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_, I can add conditions to the operations performed
 
@@ -685,7 +709,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
 
   I see from the tests that I can make a :ref:`list <lists>` from any iterable by using
 
-  * a `for <https://docs.python.org/3/tutorial/controlflow.html?highlight=control%20flow#for-statements>`_ loop
+  * a `for loop`_ loop
   * the :ref:`list <lists>` constructor
   * `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_
 
@@ -809,7 +833,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
         )
 
   the terminal still shows passing test
-* In each test I make a `range <https://docs.python.org/3/library/stdtypes.html?highlight=range#range>`_ object named ``container``, I can add this to the ``setUp`` :ref:`method<functions>` and reference it in the tests
+* In each test I make a range_ object named ``container``, I can add this to the ``setUp`` :ref:`method<functions>` and reference it in the tests
 
   .. code-block:: python
 

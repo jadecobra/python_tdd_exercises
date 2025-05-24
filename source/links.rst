@@ -81,6 +81,7 @@
 .. _random: https://docs.python.org/3/library/random.html?highlight=random#module-random
 .. _random.randint: https://docs.python.org/3/library/random.html?highlight=random#random.randint
 .. _random.choice: https://docs.python.org/3/library/random.html#random.choice
+.. _range: https://docs.python.org/3/library/stdtypes.html?highlight=range#range
 .. _remove: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _static method: https://docs.python.org/3/library/functions.html#staticmethod
 .. _set: https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
