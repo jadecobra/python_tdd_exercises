@@ -91,10 +91,11 @@ I make the values in the test match the result
 
   def test_make_a_list_from_an_iterable(self):
       a_list = []
-
       container = range(10)
+
       for item in container:
           a_list.append(item)
+
       self.assertEqual(
           a_list,
           [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -109,13 +110,17 @@ refactor: make it better
 
   .. code-block:: python
 
-      self.assertEqual(list(container), [])
+    self.assertEqual(
+        a_list,
+        [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    )
+    self.assertEqual(list(container), [])
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-      AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
+    AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
 
 * I change the expectation to match the result
 
@@ -129,16 +134,17 @@ refactor: make it better
 
   .. code-block:: python
 
-      self.assertEqual(
-          src.list_comprehensions.make_a_list(container),
-          a_list
-      )
+    self.assertEqual(list(container), a_list)
+    self.assertEqual(
+        src.list_comprehensions.make_a_list(container),
+        a_list
+    )
 
   the terminal shows NameError_
 
   .. code-block:: python
 
-    NameError: name 'list_comprehensions' is not defined
+    NameError: name 'src' is not defined
 
 * I add it to the list of Exceptions_ encountered
 
@@ -148,33 +154,18 @@ refactor: make it better
     # AssertionError
     # NameError
 
-  then add an `import statement`_ for ``list_comprehensions`` at the beginning of ``test_list_comprehensions.py`` to define the name in the tests
+  then add an `import statement`_
 
   .. code-block:: python
 
-    import list_comprehensions
     import unittest
+    import src.list_comprehensions
 
-  the terminal shows :ref:`ModuleNotFoundError`
-
-  .. code-block:: python
-
-    ModuleNotFoundError: No module named 'list_comprehensions'
-
-* I add it to the list of Exceptions_ encountered
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
-    # Exceptions Encountered
-    # AssertionError
-    # NameError
-    # ModuleNotFoundError
-
-  then make a file called ``list_comprehensions.py`` in the project folder and the terminal shows :ref:`AttributeError`
-
-  .. code-block:: python
-
-    AttributeError: module 'list_comprehensions' has no attribute 'make_a_list'
+    AttributeError: module 'src.list_comprehensions' has no attribute 'make_a_list'
 
 * I add the error to the list of Exceptions_ encountered
 
@@ -183,7 +174,6 @@ refactor: make it better
     # Exceptions Encountered
     # AssertionError
     # NameError
-    # ModuleNotFoundError
     # AttributeError
 
   then add a :ref:`function<functions>` definition to ``list_comprehensions.py``
@@ -206,7 +196,6 @@ refactor: make it better
     # Exceptions Encountered
     # AssertionError
     # NameError
-    # ModuleNotFoundError
     # AttributeError
     # TypeError
 
@@ -231,14 +220,15 @@ refactor: make it better
         return list(argument)
 
   the test passes
-* I make the name of the :ref:`function's<functions>` input from ``argument`` to ``iterable`` to make it more explicit
+
+* I change the name of the :ref:`function's<functions>` input from ``argument`` to ``iterable`` to make it more explicit
 
   .. code-block:: python
 
     def make_a_list(iterable):
         return list(iterable)
 
-From the tests I see that I can make a :ref:`list <lists>` from any iterable by using the :ref:`list <lists>` constructor
+I can make a :ref:`list <lists>` from any iterable_ by using the :ref:`list <lists>` constructor
 
 ----
 
@@ -255,9 +245,8 @@ I add a test for making a list with a `for loop`_ loop
 
     def test_make_a_list_w_a_for_loop(self):
         a_list = []
-        self.assertEqual(a_list, [])
-
         container = range(10)
+
         for item in container:
             a_list.append(item)
 
