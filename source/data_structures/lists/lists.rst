@@ -115,81 +115,66 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-I can make a list with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_ and the passing test shows I can make a list with ``[]`` which uses less characters. I add a test for it
+* I can make a list with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_ and the passing test shows I can make a list with ``[]``. I add a test for it
 
-.. code-block:: python
+  .. code-block:: python
 
-  def test_make_a_list_w_square_brackets(self):
-      self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 4)))
+    def test_make_a_list_w_square_brackets(self):
+        self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 4)))
 
-the terminal shows :ref:`AssertionError` for the last value
+  the terminal shows :ref:`AssertionError` for the last value
 
-.. code-block:: python
+  .. code-block:: python
 
-  AssertionError: Lists differ: [0, 1, 2, 3] != [0, 1, 2, 4]
+    AssertionError: Lists differ: [0, 1, 2, 3] != [0, 1, 2, 4]
 
-I change the value in the test to make it pass
+  I change the value in the test to make it pass
 
-.. code-block:: python
+  .. code-block:: python
 
-  def test_make_a_list_w_square_brackets(self):
-      self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 3)))
+    def test_make_a_list_w_square_brackets(self):
+        self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 3)))
 
-----
+  I like making a list with square brackets it uses less characters
 
-*********************************************************************************
-test_make_a_list_from_an_iterable
-*********************************************************************************
+* I add another test
 
-red: make it fail
-#################################################################################
+  .. code-block:: python
 
-I change ``test_failure`` to ``test_make_a_list_from_an_iterable``
+    def test_make_a_list_from_an_iterable(self):
+        iterable = range(4)
+        self.assertEqual(iterable, [])
 
-.. code-block:: python
+  the terminal shows :ref:`AssertionError`
 
-  import unittest
+  .. code-block:: python
 
+    AssertionError: range(0, 4) != []
 
-  class TestListComprehensions(unittest.TestCase):
+  ``range(x)`` makes an iterable_ of numbers that go from a default of ``0`` to the given number minus ``1``, in this case it will be ``0`` to ``3``
 
-      def test_make_a_list_from_an_iterable(self):
-          iterable = range(4)
-          self.assertEqual(iterable, [])
+  I add the :ref:`list<lists>` constructor_
 
-the terminal shows :ref:`AssertionError`
+  .. code-block:: python
 
-.. code-block:: python
+    self.assertEqual(list(iterable), [])
 
-  AssertionError: range(0, 4) != []
+  the terminal shows :ref:`AssertionError`
 
-``range(x)`` makes an iterable_ of numbers that go from a default of ``0`` to the given number minus ``1``, in this case it will be ``0`` to ``3``
+  .. code-block:: python
 
-green: make it pass
-#################################################################################
+    AssertionError: Lists differ: [0, 1, 2, 3] != []
 
-I add the :ref:`list<lists>` constructor_
+  I copy the values from the terminal and paste it as the expectation
 
-.. code-block:: python
+  .. code-block:: python
 
-  self.assertEqual(list(iterable), [])
+    self.assertEqual(
+        list(iterable),
+        [0, 1, 2, 3]
+    )
 
-the terminal shows :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: Lists differ: [0, 1, 2, 3] != []
-
-I copy the values from the terminal and paste it as the expectation
-
-.. code-block:: python
-
-  self.assertEqual(
-      list(iterable),
-      [0, 1, 2, 3]
-  )
-
-the test passes. I can make a :ref:`list <lists>` from any iterable_ by using the :ref:`list <lists>` constructor_
+  the test passes. I can make a :ref:`list <lists>` from any iterable_ by using the :ref:`list <lists>` constructor_
 
 ----
 
@@ -319,7 +304,7 @@ the remove_ :ref:`method<functions>` takes away the first item when the item exi
 ----
 
 *********************************************************************************
-test_remove_last_item_in_a_list
+test_remove_last_item_from_a_list
 *********************************************************************************
 
 red: make it fail
@@ -329,7 +314,7 @@ I add another test
 
 .. code-block:: python
 
-  def test_remove_last_item_in_a_list(self):
+  def test_remove_last_item_from_a_list(self):
       a_list = [0, 1, 2, 3]
 
       self.assertEqual(a_list, [0, 1, 2, 3])
@@ -363,7 +348,7 @@ I add another failing line
 
 .. code-block:: python
 
-  def test_remove_last_item_in_a_list(self):
+  def test_remove_last_item_from_a_list(self):
       a_list = [0, 1, 2, 3]
 
       self.assertEqual(a_list, [0, 1, 2, 3])
@@ -381,7 +366,7 @@ I change the expected values to match
 
 .. code-block:: python
 
-  def test_remove_last_item_in_a_list(self):
+  def test_remove_last_item_from_a_list(self):
       a_list = [0, 1, 2, 3]
 
       self.assertEqual(a_list, [0, 1, 2, 3])
@@ -835,7 +820,7 @@ There are more :ref:`methods<functions>` listed than what have been tested, You 
 * extend - does this extend the list?
 * index
 * insert - does this place an item in the list? what's the difference between this and append?
-* :ref:`pop<test_remove_last_item_in_a_list>` - takes away the last item in the list
+* :ref:`pop<test_remove_last_item_from_a_list>` - takes away the last item in the list
 * :ref:`remove<test_remove_from_a_list>` - takes away the first occurrence of a given item in the list
 * reverse - does this reverse the list?
 * sort - does this sort the items in the list?
