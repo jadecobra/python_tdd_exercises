@@ -275,7 +275,7 @@ I want to see which item Python removes when there is more than one of the same 
 
 .. code-block:: python
 
-  def test_remove_from_a_list_when_multiple_exist(self):
+  def test_remove_from_a_list_when_item_occurs_multiple_times(self):
       a_list = [0, 2, 1, 2, 3, 2]
 
       self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
@@ -292,7 +292,7 @@ I change the values on the right to match the values from the terminal
 
 .. code-block:: python
 
-  def test_remove_from_a_list_when_multiple_exist(self):
+  def test_remove_from_a_list_when_item_occurs_multiple_times(self):
       a_list = [0, 2, 1, 2, 3, 2]
 
       self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])

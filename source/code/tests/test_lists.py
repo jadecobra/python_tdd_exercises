@@ -30,7 +30,7 @@ class TestLists(unittest.TestCase):
         a_list.remove(2)
         self.assertEqual(a_list, [0, 1, 3])
 
-    def test_remove_from_a_list_when_multiple_exist(self):
+    def test_remove_from_a_list_when_item_occurs_multiple_times(self):
         a_list = [0, 2, 1, 2, 3, 2]
 
         self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
