@@ -173,7 +173,7 @@ refactor: make it better
 
   the test passes
 
-  - ``result = []`` makes an empty :ref:`list`
+  - ``result = []`` makes an empty :ref:`list<lists>`
   - ``for item in argument:`` loops over the items of ``argument``
   - ``result.append(item)`` adds each item from ``argument`` to ``result``
   - ``return result`` returns ``result`` after the loop completes
@@ -201,135 +201,104 @@ test_make_a_list_w_list_comprehensions
 red: make it fail
 #################################################################################
 
-I add a failing test to ``TestListComprehensions``
+I add a failing test
 
 .. code-block:: python
 
-    def test_make_a_list_w_list_comprehensions(self):
-        a_list = []
-        self.assertEqual(a_list, [])
+  def test_make_a_list_w_list_comprehensions(self):
+      iterable = range(4)
 
-        iterable = range(10)
-        for item in iterable:
-            a_list.append(item)
-
-        self.assertEqual(a_list, [])
-        self.assertEqual([], a_list)
-        self.assertEqual(
-            list_comprehensions.list_comprehension(iterable),
-            a_list
-        )
+      self.assertEqual(
+          src.list_comprehensions.for_loop(iterable),
+          []
+      )
 
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
+  AssertionError: Lists differ: [0, 1, 2, 3] != []
 
 green: make it pass
 #################################################################################
 
-* I make the values in the test match the terminal
+I make the values in the test match the terminal
 
-  .. code-block:: python
+.. code-block:: python
 
-    def test_make_a_list_w_list_comprehensions(self):
-        a_list = []
-        self.assertEqual(a_list, [])
+      self.assertEqual(
+          src.list_comprehensions.for_loop(iterable),
+          [0, 1, 2, 3]
+      )
 
-        iterable = range(10)
-        for item in iterable:
-            a_list.append(item)
+the test passes
 
-        self.assertEqual(
-            a_list,
-            [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-        )
-        self.assertEqual([], a_list)
-        self.assertEqual(
-            list_comprehensions.list_comprehension(iterable),
-            a_list
-        )
+refactor: make it better
+#################################################################################
 
-  and the terminal shows another :ref:`AssertionError` for the next line
+I change the expectation to use a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_
 
-  .. code-block:: python
+.. code-block:: python
 
-    AssertionError: Lists differ: [] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  self.assertEqual(
+      src.list_comprehensions.for_loop(iterable),
+      # [0, 1, 2, 3]
+      [item for item in iterable]
+  )
 
-* this time I add a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ to show how it is written
+the terminal still shows green. I remove the comment then add another assert_ statement
 
-  .. code-block:: python
+.. code-block:: python
 
-    def test_make_a_list_w_list_comprehensions(self):
-        a_list = []
-        self.assertEqual(a_list, [])
+  self.assertEqual(
+      src.list_comprehensions.list_comprehension(iterable),
+      src.list_comprehensions.for_loop(iterable)
+  )
 
-        iterable = range(10)
-        for item in iterable:
-            a_list.append(item)
+the terminal shows :ref:`AttributeError`
 
-        self.assertEqual(
-            a_list,
-            [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-        )
-        self.assertEqual(
-            [item for item in iterable],
-            a_list
-        )
-        self.assertEqual(
-            list_comprehensions.list_comprehension(iterable),
-            a_list
-        )
+.. code-block:: python
 
-  the terminal now shows :ref:`AttributeError` for the last line
+  AttributeError: module 'src.list_comprehensions' has no attribute 'list_comprehension'
 
-  .. code-block:: python
-
-    AttributeError: module 'list_comprehensions' has no attribute 'list_comprehension'
-
-* I add a :ref:`function<functions>` that uses a list comprehension to ``list_comprehensions.py``
-
-  .. code-block:: python
-
-    def list_comprehension(argument):
-        return [item for item in argument]
-
-  and all tests pass
-* I change ``argument`` to ``iterable`` to be more explicit
+I add a :ref:`function<functions>` that uses a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ to `list_comprehensions.py`
 
   .. code-block:: python
 
     def list_comprehension(iterable):
         return [item for item in iterable]
 
-  I made 2 :ref:`functions<functions>`, one that uses a `for loop`_ loop and another that uses a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ to do the same thing. The difference between
+the test is green again
 
-  .. code-block:: python
+review
+#################################################################################
 
-      a_list = []
-      for item in iterable:
-          a_list.append()
+I made 2 :ref:`functions<functions>`, one that uses a `for loop`_ and another that uses a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ to do the same thing difference between
 
-  and
+.. code-block:: python
 
-  .. code-block:: python
+    a_list = []
+    for item in iterable:
+        a_list.append()
 
-      [item for item in iterable]
+and
 
-  Is that in the first case I have to
+.. code-block:: python
 
-  * make a list
-  * loop through the iterable
-  * add the items I want from the iterable to the list
+    [item for item in iterable]
 
-  With the list comprehension I can get the same result with less words, lines and steps
+the difference between them is that in the first case I have to
+
+* make a :ref:`list<lists>`
+* loop through the iterable_
+* do the operation I want on the item of the iterable_
+
+With the list comprehension I can get the same result in one line that covers all those steps
 
 refactor: make it better
 #################################################################################
 
-There is more I can do with `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_, I can add conditions to the operations performed
-
+There is more I can do with `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_, I can add conditions when I perform an operation
 
 * I add a failing test to ``TestListComprehensions``
 
