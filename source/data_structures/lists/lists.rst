@@ -115,66 +115,73 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* I can make a list with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_ and the passing test shows I can make a list with ``[]``. I add a test for it
+test_make_a_list_w_square_brackets
+---------------------------------------------------------------------------------
+I can make a list with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_ and the passing test shows I can make a list with ``[]``. I add a test for it
 
-  .. code-block:: python
+.. code-block:: python
 
-    def test_make_a_list_w_square_brackets(self):
-        self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 4)))
+  def test_make_a_list_w_square_brackets(self):
+      self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 4)))
 
-  the terminal shows :ref:`AssertionError` for the last value
+the terminal shows :ref:`AssertionError` for the last value
 
-  .. code-block:: python
+.. code-block:: python
 
-    AssertionError: Lists differ: [0, 1, 2, 3] != [0, 1, 2, 4]
+  AssertionError: Lists differ: [0, 1, 2, 3] != [0, 1, 2, 4]
 
-  I change the value in the test to make it pass
+I change the value in the test to make it pass
 
-  .. code-block:: python
+.. code-block:: python
 
-    def test_make_a_list_w_square_brackets(self):
-        self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 3)))
+  def test_make_a_list_w_square_brackets(self):
+      self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 3)))
 
-  I like making a list with square brackets it uses less characters
+I like making a list with square brackets it uses less characters
 
-* I add another test
+----
 
-  .. code-block:: python
+test_make_a_list_from_an_iterable
+---------------------------------------------------------------------------------
 
-    def test_make_a_list_from_an_iterable(self):
-        iterable = range(4)
-        self.assertEqual(iterable, [])
+I add another test
 
-  the terminal shows :ref:`AssertionError`
+.. code-block:: python
 
-  .. code-block:: python
+  def test_make_a_list_from_an_iterable(self):
+      iterable = range(4)
+      self.assertEqual(iterable, [])
 
-    AssertionError: range(0, 4) != []
+the terminal shows :ref:`AssertionError`
 
-  ``range(x)`` makes an iterable_ of numbers that go from a default of ``0`` to the given number minus ``1``, in this case it will be ``0`` to ``3``
+.. code-block:: python
 
-  I add the :ref:`list<lists>` constructor_
+  AssertionError: range(0, 4) != []
 
-  .. code-block:: python
+``range(x)`` makes an iterable_ of numbers that go from a default of ``0`` to the given number minus ``1``, in this case it will be ``0`` to ``3``
 
-    self.assertEqual(list(iterable), [])
+I add the :ref:`list<lists>` constructor_
 
-  the terminal shows :ref:`AssertionError`
+.. code-block:: python
 
-  .. code-block:: python
+  self.assertEqual(list(iterable), [])
 
-    AssertionError: Lists differ: [0, 1, 2, 3] != []
+the terminal shows :ref:`AssertionError`
 
-  I copy the values from the terminal and paste it as the expectation
+.. code-block:: python
 
-  .. code-block:: python
+  AssertionError: Lists differ: [0, 1, 2, 3] != []
 
-    self.assertEqual(
-        list(iterable),
-        [0, 1, 2, 3]
-    )
+I copy the values from the terminal and paste it as the expectation
 
-  the test passes. I can make a :ref:`list <lists>` from any iterable_ by using the :ref:`list <lists>` constructor_
+.. code-block:: python
+
+  self.assertEqual(
+      list(iterable),
+      [0, 1, 2, 3]
+  )
+
+the test passes. I can make a :ref:`list <lists>` from any iterable_ by using the :ref:`list <lists>` constructor_
 
 ----
 
@@ -271,7 +278,12 @@ the test passes
 refactor: make it better
 #################################################################################
 
-I want to see which item Python removes when there is more than one of the same item in a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ and I call ``list.remove(item)``
+----
+
+test_remove_from_a_list_when_item_occurs_multiple_times
+---------------------------------------------------------------------------------
+
+I want to see what happens when there is more than one of the same item in a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ and I call ``list.remove(item)``
 
 .. code-block:: python
 
@@ -303,12 +315,8 @@ the remove_ :ref:`method<functions>` takes away the first item when the item exi
 
 ----
 
-*********************************************************************************
 test_remove_last_item_from_a_list
-*********************************************************************************
-
-red: make it fail
-#################################################################################
+---------------------------------------------------------------------------------
 
 I add another test
 
@@ -330,21 +338,13 @@ the terminal shows :ref:`AssertionError`
 
 ``last_item = a_list.pop()`` calls the pop_ :ref:`method<functions>` of ``a_list`` and names the result ``last_item``
 
-green: make it pass
-#################################################################################
-
 I change the value in the test to match the value that was popped
 
 .. code-block:: python
 
   self.assertEqual(last_item, 3)
 
-the test passes
-
-refactor: make it better
-#################################################################################
-
-I add another failing line
+the test passes. I add another failing line
 
 .. code-block:: python
 
