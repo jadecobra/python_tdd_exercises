@@ -153,7 +153,7 @@ test_list_comprehensions
 *********************************************************************************
 
 #. :ref:`test_make_a_list_w_a_for_loop`
-#. :ref:`test_making_lists_w_list_comprehensions`
+#. :ref:`test_make_a_list_w_list_comprehensions`
 
 *********************************************************************************
 test_functions

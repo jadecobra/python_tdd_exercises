@@ -63,7 +63,7 @@ I change ``test_failure`` to ``test_make_a_list_w_a_for_loop``
 
   class TestListComprehensions(unittest.TestCase):
 
-    def test_make_a_list_from_iterable(self):
+    def test_make_a_list_w_a_for_loop(self):
         a_list = []
         iterable = range(4)
 
@@ -195,7 +195,7 @@ I can make a :ref:`list <lists>` from an iterable_ by using a `for loop`_ or the
 ----
 
 ****************************************************************************************
-test_making_lists_w_list_comprehensions
+test_make_a_list_w_list_comprehensions
 ****************************************************************************************
 
 red: make it fail
@@ -205,7 +205,7 @@ I add a failing test to ``TestListComprehensions``
 
 .. code-block:: python
 
-    def test_making_lists_w_list_comprehensions(self):
+    def test_make_a_list_w_list_comprehensions(self):
         a_list = []
         self.assertEqual(a_list, [])
 
@@ -233,7 +233,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_making_lists_w_list_comprehensions(self):
+    def test_make_a_list_w_list_comprehensions(self):
         a_list = []
         self.assertEqual(a_list, [])
 
@@ -261,7 +261,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_making_lists_w_list_comprehensions(self):
+    def test_make_a_list_w_list_comprehensions(self):
         a_list = []
         self.assertEqual(a_list, [])
 
@@ -612,7 +612,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
             self.a_list
         )
 
-    def test_making_lists_w_list_comprehensions(self):
+    def test_make_a_list_w_list_comprehensions(self):
         iterable = range(10)
         for item in iterable:
             self.a_list.append(item)
@@ -699,7 +699,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
             self.a_list
         )
 
-    def test_making_lists_w_list_comprehensions(self):
+    def test_make_a_list_w_list_comprehensions(self):
         for item in self.iterable:
             self.a_list.append(item)
 
