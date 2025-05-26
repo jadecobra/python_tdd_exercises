@@ -1104,7 +1104,7 @@ refactor: make it better
 
     AssertionError: [] is an instance of <class 'list'>
 
-  ``[]`` is the empty `list<https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. I change the :ref:`method<functions>`
+  ``[]`` is the empty `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -1131,7 +1131,7 @@ refactor: make it better
 
     AssertionError: [1, 2, 3, 'n'] is an instance of <class 'list'>
 
-  ``[1, 2, 3, 'n']`` is a `list<https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. I change the :ref:`method<functions>`
+  ``[1, 2, 3, 'n']`` is a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. I change the :ref:`method<functions>`
 
   .. code-block:: python
 
