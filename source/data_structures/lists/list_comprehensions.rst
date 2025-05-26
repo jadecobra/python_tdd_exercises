@@ -16,7 +16,7 @@ lists: list comprehensions
 
 ----
 
-`List Comprehensions <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#list-comprehensions>`_ are a way to make a :ref:`list <lists>` from an iterable_. It is a simple way to go over every item in and perform an operation usually in one line
+`List Comprehensions <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#list-comprehensions>`_ are a short way to make a :ref:`list <lists>` from an iterable_. It is a simple way to go over every item and perform operations with one line
 
 *********************************************************************************
 requirements
@@ -64,81 +64,60 @@ I change ``test_failure`` to ``test_make_a_list_from_an_iterable``
   class TestListComprehensions(unittest.TestCase):
 
       def test_make_a_list_from_an_iterable(self):
-          a_list = []
+          iterable = range(10)
+          self.assertEqual(iterable, [])
 
-          container = range(10)
-          for item in container:
-              a_list.append(item)
-          self.assertEqual(a_list, [])
-
-* I make an empty list with ``a_list = []`` then make a variable with ``container = range(10)``, it makes an iterable_ of numbers with the range_ constructor_, which goes from 0 to 1 less than the number given, in this case it will be 0 to 9
-* ``for item in container:`` uses a `for loop`_ to go over every item of ``container``
-* ``a_list.append(item)`` adds the item from ``container`` to ``a_list`` on each cycle of the loop, using the append_ :ref:`method<functions>`, see :ref:`lists` for more details
-* ``self.assertEqual(a_list, [])`` checks to see if ``a_list`` is still empty after the operation
-
-the terminal shows :ref:`AssertionError` because ``a_list`` is no longer empty, it has 10 items after the loop runs
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  E    AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
+  AssertionError: range(0, 10) != []
+
+``range(10)`` makes an iterable_ of numbers that go from a default of ``0`` to the given number minus ``1``, in this case it will be ``0`` to ``9``
 
 green: make it pass
 #################################################################################
 
-I make the values in the test match the result
+I add the :ref:`list<lists>` constructor_
 
 .. code-block:: python
 
-  def test_make_a_list_from_an_iterable(self):
-      a_list = []
-      container = range(10)
+  self.assertEqual(list(iterable), [])
 
-      for item in container:
-          a_list.append(item)
+the terminal shows :ref:`AssertionError`
 
-      self.assertEqual(
-          a_list,
-          [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-      )
+.. code-block:: python
+
+  AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
+
+I copy the values from the terminal and paste it as the expectation
+
+.. code-block:: python
+
+  self.assertEqual(
+      list(iterable),
+      [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  )
 
 the test passes
 
 refactor: make it better
 #################################################################################
 
-* I add another test to check what happens when I use the :ref:`list <lists>` constructor_ with ``container``
-
-  .. code-block:: python
-
-    self.assertEqual(
-        a_list,
-        [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    )
-    self.assertEqual(list(container), [])
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
-
-* I change the expectation to match the result
-
-  .. code-block:: python
-
-    self.assertEqual(list(container), a_list)
-
-  the test passes, calling the :ref:`list <lists>` constructor_ with an iterable_ makes a :ref:`list <lists>`
-
 * I add another test
 
   .. code-block:: python
 
-    self.assertEqual(list(container), a_list)
-    self.assertEqual(
-        src.list_comprehensions.make_a_list(container),
-        a_list
-    )
+    def test_make_a_list_from_iterable(self):
+        iterable = range(10)
+        self.assertEqual(
+            list(iterable),
+            [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        )
+        self.assertEqual(
+            src.list_comprehensions.make_a_list(iterable),
+            list(iterable)
+        )
 
   the terminal shows NameError_
 
@@ -199,20 +178,20 @@ refactor: make it better
     # AttributeError
     # TypeError
 
-  then change the signature of the :ref:`function<functions>` to take in an argument
+  then I change the signature of the :ref:`function<functions>` to take in an argument
 
   .. code-block:: python
 
     def make_a_list(argument):
         return None
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: None != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-* When I make the :ref:`function<functions>` return the result of calling the :ref:`list <lists>` constructor_ with ``argument`` as input
+  when I make the :ref:`function<functions>` return the result of calling the :ref:`list <lists>` constructor_ with ``argument`` as input
 
   .. code-block:: python
 
@@ -221,14 +200,14 @@ refactor: make it better
 
   the test passes
 
-* I change the name of the :ref:`function's<functions>` input from ``argument`` to ``iterable`` to make it more explicit
+* I change the name of the input to make it clearer
 
   .. code-block:: python
 
     def make_a_list(iterable):
         return list(iterable)
 
-I can make a :ref:`list <lists>` from any iterable_ by using the :ref:`list <lists>` constructor
+I can make a :ref:`list <lists>` from any iterable_ by using the :ref:`list <lists>` constructor_
 
 ----
 
@@ -245,18 +224,18 @@ I add a test for making a list with a `for loop`_ loop
 
     def test_make_a_list_w_a_for_loop(self):
         a_list = []
-        container = range(10)
+        iterable = range(10)
 
-        for item in container:
+        for item in iterable:
             a_list.append(item)
 
         self.assertEqual(a_list, [])
         self.assertEqual(
-            list_comprehensions.for_loop(container),
+            list_comprehensions.for_loop(iterable),
             a_list
         )
 
-the terminal shows :ref:`AssertionError` for the values of ``a_list`` because it is no longer empty after I loop through ``container`` then add items
+the terminal shows :ref:`AssertionError` for the values of ``a_list`` because it is no longer empty after I loop through ``iterable`` then add items
 
 .. code-block:: python
 
@@ -273,8 +252,8 @@ green: make it pass
         a_list = []
         self.assertEqual(a_list, [])
 
-        container = range(10)
-        for item in container:
+        iterable = range(10)
+        for item in iterable:
             a_list.append(item)
 
         self.assertEqual(
@@ -282,7 +261,7 @@ green: make it pass
             [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
         )
         self.assertEqual(
-            list_comprehensions.for_loop(container),
+            list_comprehensions.for_loop(iterable),
             a_list
         )
 
@@ -368,14 +347,14 @@ I add a failing test to ``TestListComprehensions``
         a_list = []
         self.assertEqual(a_list, [])
 
-        container = range(10)
-        for item in container:
+        iterable = range(10)
+        for item in iterable:
             a_list.append(item)
 
         self.assertEqual(a_list, [])
         self.assertEqual([], a_list)
         self.assertEqual(
-            list_comprehensions.list_comprehension(container),
+            list_comprehensions.list_comprehension(iterable),
             a_list
         )
 
@@ -396,8 +375,8 @@ green: make it pass
         a_list = []
         self.assertEqual(a_list, [])
 
-        container = range(10)
-        for item in container:
+        iterable = range(10)
+        for item in iterable:
             a_list.append(item)
 
         self.assertEqual(
@@ -406,7 +385,7 @@ green: make it pass
         )
         self.assertEqual([], a_list)
         self.assertEqual(
-            list_comprehensions.list_comprehension(container),
+            list_comprehensions.list_comprehension(iterable),
             a_list
         )
 
@@ -424,8 +403,8 @@ green: make it pass
         a_list = []
         self.assertEqual(a_list, [])
 
-        container = range(10)
-        for item in container:
+        iterable = range(10)
+        for item in iterable:
             a_list.append(item)
 
         self.assertEqual(
@@ -433,11 +412,11 @@ green: make it pass
             [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
         )
         self.assertEqual(
-            [item for item in container],
+            [item for item in iterable],
             a_list
         )
         self.assertEqual(
-            list_comprehensions.list_comprehension(container),
+            list_comprehensions.list_comprehension(iterable),
             a_list
         )
 
@@ -467,14 +446,14 @@ green: make it pass
   .. code-block:: python
 
       a_list = []
-      for item in container:
+      for item in iterable:
           a_list.append()
 
   and
 
   .. code-block:: python
 
-      [item for item in container]
+      [item for item in iterable]
 
   Is that in the first case I have to
 
@@ -498,8 +477,8 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
         even_numbers = []
         self.assertEqual(even_numbers, [])
 
-        container = range(10)
-        for item in container:
+        iterable = range(10)
+        for item in iterable:
             if item % 2 == 0:
                 even_numbers.append(item)
 
@@ -509,7 +488,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
             even_numbers
         )
         self.assertEqual(
-            list_comprehensions.get_even_numbers(container),
+            list_comprehensions.get_even_numbers(iterable),
             even_numbers
         )
 
@@ -519,7 +498,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
 
     AssertionError: Lists differ: [0, 2, 4, 6, 8] != []
 
-  - ``if item % 2 == 0:`` checks if the item in ``container`` leaves a remainder of ``0`` when divided by ``2``
+  - ``if item % 2 == 0:`` checks if the item in ``iterable`` leaves a remainder of ``0`` when divided by ``2``
   - ``%`` is a `modulo <https://en.wikipedia.org/wiki/Modulo>`_ operator which divides the number on the left by the number on the right and gives a remainder
   - ``even_numbers.append(item)`` adds ``item`` to ``even_numbers`` if ``item`` divided by ``2`` leaves a remainder of ``0``
 
@@ -531,8 +510,8 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
           even_numbers = []
           self.assertEqual(even_numbers, [])
 
-          container = range(10)
-          for item in container:
+          iterable = range(10)
+          for item in iterable:
               if item % 2 == 0:
                   even_numbers.append(item)
 
@@ -542,7 +521,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
               even_numbers
           )
           self.assertEqual(
-              list_comprehensions.get_even_numbers(container),
+              list_comprehensions.get_even_numbers(iterable),
               even_numbers
           )
 
@@ -560,18 +539,18 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
           even_numbers = []
           self.assertEqual(even_numbers, [])
 
-          container = range(10)
-          for item in container:
+          iterable = range(10)
+          for item in iterable:
               if item % 2 == 0:
                   even_numbers.append(item)
 
           self.assertEqual(even_numbers, [0, 2, 4, 6, 8])
           self.assertEqual(
-              [item for item in container],
+              [item for item in iterable],
               even_numbers
           )
           self.assertEqual(
-              list_comprehensions.get_even_numbers(container),
+              list_comprehensions.get_even_numbers(iterable),
               even_numbers
           )
 
@@ -586,7 +565,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
   .. code-block:: python
 
     self.assertEqual(
-        [item for item in container if item % 2 == 0],
+        [item for item in iterable if item % 2 == 0],
         even_numbers
     )
 
@@ -612,15 +591,15 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
         odd_numbers = []
         self.assertEqual(odd_numbers, [])
 
-        container = range(10)
-        for item in container:
+        iterable = range(10)
+        for item in iterable:
             if item % 2 != 0:
                 odd_numbers.append(item)
 
         self.assertEqual(odd_numbers, [])
         self.assertEqual([], odd_numbers)
         self.assertEqual(
-            list_comprehensions.get_odd_numbers(container),
+            list_comprehensions.get_odd_numbers(iterable),
             odd_numbers
         )
 
@@ -638,15 +617,15 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
         odd_numbers = []
         self.assertEqual(odd_numbers, [])
 
-        container = range(10)
-        for item in container:
+        iterable = range(10)
+        for item in iterable:
             if item % 2 != 0:
                 odd_numbers.append(item)
 
         self.assertEqual(odd_numbers, [1, 3, 5, 7, 9])
         self.assertEqual([], odd_numbers)
         self.assertEqual(
-            list_comprehensions.get_odd_numbers(container),
+            list_comprehensions.get_odd_numbers(iterable),
             odd_numbers
         )
 
@@ -661,7 +640,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
   .. code-block:: python
 
     self.assertEqual(
-        [item for item in container if item % 2 == 0],
+        [item for item in iterable if item % 2 == 0],
         odd_numbers
     )
 
@@ -676,7 +655,7 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
   .. code-block:: python
 
     self.assertEqual(
-        [item for item in container if item % 2 != 0],
+        [item for item in iterable if item % 2 != 0],
         odd_numbers
     )
 
@@ -720,16 +699,16 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
         a_list = []
         self.assertEqual(a_list, [])
 
-        container = range(10)
-        for item in container:
+        iterable = range(10)
+        for item in iterable:
             self.a_list.append(item)
         self.assertEqual(
             self.a_list,
             [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
         )
-        self.assertEqual(list(container), self.a_list)
+        self.assertEqual(list(iterable), self.a_list)
         self.assertEqual(
-            list_comprehensions.make_a_list(container),
+            list_comprehensions.make_a_list(iterable),
             self.a_list
         )
 
@@ -739,16 +718,16 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
   .. code-block:: python
 
     def test_make_a_list_from_an_iterable(self):
-        container = range(10)
-        for item in container:
+        iterable = range(10)
+        for item in iterable:
             self.a_list.append(item)
         self.assertEqual(
             self.a_list,
             [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
         )
-        self.assertEqual(list(container), self.a_list)
+        self.assertEqual(list(iterable), self.a_list)
         self.assertEqual(
-            list_comprehensions.make_a_list(container),
+            list_comprehensions.make_a_list(iterable),
             self.a_list
         )
 
@@ -758,8 +737,8 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
   .. code-block:: python
 
     def test_make_a_list_w_a_for_loop(self):
-        container = range(10)
-        for item in container:
+        iterable = range(10)
+        for item in iterable:
             self.a_list.append(item)
 
         self.assertEqual(
@@ -767,13 +746,13 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
             [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
         )
         self.assertEqual(
-            list_comprehensions.for_loop(container),
+            list_comprehensions.for_loop(iterable),
             self.a_list
         )
 
     def test_making_lists_w_list_comprehensions(self):
-        container = range(10)
-        for item in container:
+        iterable = range(10)
+        for item in iterable:
             self.a_list.append(item)
 
         self.assertEqual(
@@ -781,72 +760,72 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
             [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
         )
         self.assertEqual(
-            [item for item in container],
+            [item for item in iterable],
             self.a_list
         )
         self.assertEqual(
-            list_comprehensions.list_comprehension(container),
+            list_comprehensions.list_comprehension(iterable),
             self.a_list
         )
 
     def test_list_comprehensions_w_conditions_i(self):
-        container = range(10)
-        for item in container:
+        iterable = range(10)
+        for item in iterable:
             if item % 2 == 0:
                 self.a_list.append(item)
 
         self.assertEqual(self.a_list, [0, 2, 4, 6, 8])
         self.assertEqual(
-            [item for item in container if item % 2 == 0],
+            [item for item in iterable if item % 2 == 0],
             self.a_list
         )
         self.assertEqual(
-            list_comprehensions.get_even_numbers(container),
+            list_comprehensions.get_even_numbers(iterable),
             self.a_list
         )
 
     def test_list_comprehensions_w_conditions_ii(self):
-        container = range(10)
-        for item in container:
+        iterable = range(10)
+        for item in iterable:
             if item % 2 != 0:
                 self.a_list.append(item)
 
         self.assertEqual(self.a_list, [1, 3, 5, 7, 9])
         self.assertEqual(
-            [item for item in container if item % 2 != 0],
+            [item for item in iterable if item % 2 != 0],
             self.a_list
         )
         self.assertEqual(
-            list_comprehensions.get_odd_numbers(container),
+            list_comprehensions.get_odd_numbers(iterable),
             self.a_list
         )
 
   the terminal still shows passing test
-* In each test I make a range_ object named ``container``, I can add this to the ``setUp`` :ref:`method<functions>` and reference it in the tests
+* In each test I make a range_ object named ``iterable``, I can add this to the ``setUp`` :ref:`method<functions>` and reference it in the tests
 
   .. code-block:: python
 
     def setUp(self):
         self.a_list = []
         self.assertEqual(self.a_list, [])
-        self.container = range(10)
+        self.iterable = range(10)
 
     def test_make_a_list_from_an_iterable(self):
-        for item in self.container:
+        for item in self.iterable:
             self.a_list.append(item)
 
         self.assertEqual(
             self.a_list,
             [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
         )
-        self.assertEqual(list(self.container), self.a_list)
+        self.assertEqual(list(self.iterable), self.a_list)
         self.assertEqual(
-            list_comprehensions.make_a_list(self.container),
+            list_comprehensions.make_a_list(self.iterable),
             self.a_list
         )
 
     def test_make_a_list_w_a_for_loop(self):
-        for item in self.container:
+        for item in self.iterable:
             self.a_list.append(item)
 
         self.assertEqual(
@@ -854,12 +833,12 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
             [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
         )
         self.assertEqual(
-            list_comprehensions.for_loop(self.container),
+            list_comprehensions.for_loop(self.iterable),
             self.a_list
         )
 
     def test_making_lists_w_list_comprehensions(self):
-        for item in self.container:
+        for item in self.iterable:
             self.a_list.append(item)
 
         self.assertEqual(
@@ -867,41 +846,41 @@ There is more I can do with `list comprehensions <https://docs.python.org/3/glos
             [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
         )
         self.assertEqual(
-            [item for item in self.container],
+            [item for item in self.iterable],
             self.a_list
         )
         self.assertEqual(
-            list_comprehensions.list_comprehension(self.container),
+            list_comprehensions.list_comprehension(self.iterable),
             self.a_list
         )
 
     def test_list_comprehensions_w_conditions_i(self):
-        for item in self.container:
+        for item in self.iterable:
             if item % 2 == 0:
                 self.a_list.append(item)
 
         self.assertEqual(self.a_list, [0, 2, 4, 6, 8])
         self.assertEqual(
-            [item for item in self.container if item % 2 == 0],
+            [item for item in self.iterable if item % 2 == 0],
             self.a_list
         )
         self.assertEqual(
-            list_comprehensions.get_even_numbers(self.container),
+            list_comprehensions.get_even_numbers(self.iterable),
             self.a_list
         )
 
     def test_list_comprehensions_w_conditions_ii(self):
-        for item in self.container:
+        for item in self.iterable:
             if item % 2 != 0:
                 self.a_list.append(item)
 
         self.assertEqual(self.a_list, [1, 3, 5, 7, 9])
         self.assertEqual(
-            [item for item in self.container if item % 2 != 0],
+            [item for item in self.iterable if item % 2 != 0],
             self.a_list
         )
         self.assertEqual(
-            list_comprehensions.get_odd_numbers(self.container),
+            list_comprehensions.get_odd_numbers(self.iterable),
             self.a_list
         )
 

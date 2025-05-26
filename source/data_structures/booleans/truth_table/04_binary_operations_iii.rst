@@ -16,7 +16,7 @@ truth table: Binary Operations III
 requirements
 *********************************************************************************
 
-:doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` with ``truth_table`` as the name of the project
+:ref:`Binary Operations II<truth table: Binary Operations II>`
 
 ----
 
@@ -125,24 +125,22 @@ refactor: make it better
         self.assertTrue(src.truth_table.exclusive_disjunction(False, True))
         self.assertFalse(src.truth_table.exclusive_disjunction(False, False))
 
-  and the terminal still shows green
+  the test is still green
 
-* I can put the two `if statements`_ that return :ref:`True<test_what_is_true>` together with :ref:`Logical Disjunction<test_logical_disjunction>`
+* I can use :ref:`Logical Disjunction<test_logical_disjunction>` to put the two `if statements`_ that return :ref:`True<test_what_is_true>` together
 
   .. code-block:: python
 
     def exclusive_disjunction(p, q):
         if (not p and q) or (p and not q):
             return True
-        else:
-            return False
         if not p and q:
             return True
         if p and not q:
             return True
         return False
 
-  the test is still green. I use a simple `return statement`_
+  the test is still green. I remove the other `if statements`_ then use a simple `return statement`_
 
   .. code-block:: python
 
@@ -150,8 +148,7 @@ refactor: make it better
         return (not p and q) or (p and not q)
         if (not p and q) or (p and not q):
             return True
-        else:
-            return False
+        return False
 
   the terminal still shows green. I remove the other statements
 
@@ -160,7 +157,7 @@ refactor: make it better
     def exclusive_disjunction(p, q):
         return (not p and q) or (p and not q)
 
-* This :ref:`function<functions>` returns :ref:`False<test_what_is_false>` in the 2 cases when ``p`` and ``q`` are the same, it could also be written as
+* This :ref:`function<functions>` returns :ref:`False<test_what_is_false>` in the 2 cases where ``p`` and ``q`` are the same, I can use this `if statement`_
 
   .. code-block:: python
 
@@ -289,7 +286,7 @@ refactor: make it better
 
   the terminal still shows green
 
-* There is only one case where the result is :ref:`True<test_what_is_true>`, I add the simple `return statement`_
+* there is only one case where the result is :ref:`True<test_what_is_true>`, I use a simple `return statement`_
 
   .. code-block:: python
 
@@ -413,7 +410,7 @@ refactor: make it better
             return False
         return True
 
-* the :ref:`function<functions>` returns the same value as ``p``. I add another `return statement`_
+* this :ref:`function<functions>` returns the same value as ``p``. I add another `return statement`_
 
   .. code-block:: python
 
@@ -461,7 +458,7 @@ the terminal shows :ref:`AttributeError`
 green: make it pass
 #################################################################################
 
-I add a :ref:`function<functions>` definition to ``truth_table.py``
+I add a :ref:`function<functions>` definition for it in ``truth_table.py``
 
 .. code-block:: python
 
@@ -549,7 +546,7 @@ refactor: make it better
 
     SyntaxError: invalid syntax
 
-  I fix the line, not_ and_ is or_
+  I change not_ and_ to or_ be correct
 
   .. code-block:: python
 
