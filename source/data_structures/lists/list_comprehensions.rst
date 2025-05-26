@@ -317,7 +317,7 @@ When I use `list comprehensions <https://docs.python.org/3/glossary.html#term-li
 ----
 
 ****************************************************************************************
-test_list_comprehensions_w_conditions
+test_list_comprehensions_w_conditions_i
 ****************************************************************************************
 
 There is more I can do with `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_, I can add conditions when I perform an operation
@@ -418,158 +418,165 @@ refactor: make it better
 
   the test passes
 
-* I add another test
+----
 
-  .. code-block:: python
+test_list_comprehensions_w_conditions_ii
+---------------------------------------------------------------------------------
 
-    def test_list_comprehensions_w_conditions_ii(self):
-        iterable = range(10)
+I add another test
 
-        odd_numbers = []
-        for item in iterable:
-            if item % 2 != 0:
-                odd_numbers.append(item)
+.. code-block:: python
 
-        self.assertEqual(odd_numbers, [])
+  def test_list_comprehensions_w_conditions_ii(self):
+      iterable = range(10)
 
-  the terminal shows :ref:`AssertionError`
+      odd_numbers = []
+      for item in iterable:
+          if item % 2 != 0:
+              odd_numbers.append(item)
 
-  .. code-block:: python
+      self.assertEqual(odd_numbers, [])
 
-    AssertionError: Lists differ: [1, 3, 5, 7, 9] != []
+the terminal shows :ref:`AssertionError`
 
-  I change the expectation to match
+.. code-block:: python
 
-  .. code-block:: python
+  AssertionError: Lists differ: [1, 3, 5, 7, 9] != []
 
-    self.assertEqual(odd_numbers, [1, 3, 5, 7, 9])
+I change the expectation to match
 
-  the test passes. I add another assert_ statement
+.. code-block:: python
 
-  .. code-block:: python
+  self.assertEqual(odd_numbers, [1, 3, 5, 7, 9])
 
-    self.assertEqual(odd_numbers, [1, 3, 5, 7, 9])
-    self.assertEqual(
-        [item for item in iterable],
-        odd_numbers
-    )
+the test passes. I add another assert_ statement
 
-  the terminal shows :ref:`AssertionError`
+.. code-block:: python
 
-  .. code-block:: python
+  self.assertEqual(odd_numbers, [1, 3, 5, 7, 9])
+  self.assertEqual(
+      [item for item in iterable],
+      odd_numbers
+  )
 
-    AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != [1, 3, 5, 7, 9]
+the terminal shows :ref:`AssertionError`
 
-  I add the condition to the `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_
+.. code-block:: python
 
-  .. code-block:: python
+  AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != [1, 3, 5, 7, 9]
 
-    self.assertEqual(
-        [item for item in iterable if item % 2 != 0],
-        odd_numbers
-    )
+I add the condition to the `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_
 
-  the test passes and I add another assert_ statement
+.. code-block:: python
 
-  .. code-block:: python
+  self.assertEqual(
+      [item for item in iterable if item % 2 != 0],
+      odd_numbers
+  )
 
-    self.assertEqual(
-        [item for item in iterable if item % 2 != 0],
-        odd_numbers
-    )
-    self.assertEqual(
-        src.list_comprehensions.get_odd_numbers(iterable),
-        odd_numbers
-    )
+the test passes and I add another assert_ statement
 
-  the terminal shows :ref:`AttributeError`
+.. code-block:: python
 
-  .. code-block:: python
-    :force:
+  self.assertEqual(
+      [item for item in iterable if item % 2 != 0],
+      odd_numbers
+  )
+  self.assertEqual(
+      src.list_comprehensions.get_odd_numbers(iterable),
+      odd_numbers
+  )
 
-    AttributeError: module 'src.list_comprehensions' has no attribute 'get_odd_numbers'. Did you mean: 'get_even_numbers'?
+the terminal shows :ref:`AttributeError`
 
-  I add the :ref:`function<functions>`
+.. code-block:: python
+  :force:
 
-  .. code-block:: python
+  AttributeError: module 'src.list_comprehensions' has no attribute 'get_odd_numbers'. Did you mean: 'get_even_numbers'?
 
-    def get_even_numbers(iterable):
-        return [item for item in iterable if item % 2 == 0]
+I add the :ref:`function<functions>`
+
+.. code-block:: python
+
+  def get_even_numbers(iterable):
+      return [item for item in iterable if item % 2 == 0]
 
 
-    def get_odd_numbers(iterable):
-        return [item for item in iterable if item % 2 != 0]
+  def get_odd_numbers(iterable):
+      return [item for item in iterable if item % 2 != 0]
 
-* I used the same iterable_ for every test, I can remove the repetition by using the setUp_ :ref:`method<functions>`
+----
 
-  .. code-block:: python
+I used the same iterable_ for every test, I can remove the repetition by using the setUp_ :ref:`method<functions>`
 
-    class TestListComprehensions(unittest.TestCase):
+.. code-block:: python
 
-        def setUp(self):
-            self.iterable = range(10)
+  class TestListComprehensions(unittest.TestCase):
 
-  then change all the references to the variable
+      def setUp(self):
+          self.iterable = range(10)
 
-  .. code-block:: python
+then change all the references to the variable
 
-    def test_make_a_list_w_a_for_loop(self):
-        a_list = []
-        for item in self.iterable:
-            a_list.append(item)
+.. code-block:: python
 
-        self.assertEqual(
-            a_list,
-            [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-        )
-        self.assertEqual(
-            src.list_comprehensions.for_loop(self.iterable),
-            a_list
-        )
+  def test_make_a_list_w_a_for_loop(self):
+      a_list = []
+      for item in self.iterable:
+          a_list.append(item)
 
-    def test_make_a_list_w_list_comprehensions(self):
-        self.assertEqual(
-            src.list_comprehensions.for_loop(self.iterable),
-            [item for item in self.iterable]
-        )
-        self.assertEqual(
-            src.list_comprehensions.list_comprehension(self.iterable),
-            src.list_comprehensions.for_loop(self.iterable)
-        )
+      self.assertEqual(
+          a_list,
+          [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+      )
+      self.assertEqual(
+          src.list_comprehensions.for_loop(self.iterable),
+          a_list
+      )
 
-    def test_list_comprehensions_w_conditions_i(self):
-        even_numbers = []
-        for item in self.iterable:
-            if item % 2 == 0:
-                even_numbers.append(item)
+  def test_make_a_list_w_list_comprehensions(self):
+      self.assertEqual(
+          src.list_comprehensions.for_loop(self.iterable),
+          [item for item in self.iterable]
+      )
+      self.assertEqual(
+          src.list_comprehensions.list_comprehension(self.iterable),
+          src.list_comprehensions.for_loop(self.iterable)
+      )
 
-        self.assertEqual(even_numbers, [0, 2, 4, 6, 8])
-        self.assertEqual(
-            [item for item in self.iterable if item % 2 == 0],
-            even_numbers
-        )
-        self.assertEqual(
-            src.list_comprehensions.get_even_numbers(self.iterable),
-            even_numbers
-        )
+  def test_list_comprehensions_w_conditions_i(self):
+      even_numbers = []
+      for item in self.iterable:
+          if item % 2 == 0:
+              even_numbers.append(item)
 
-    def test_list_comprehensions_w_conditions_ii(self):
-        odd_numbers = []
-        for item in self.iterable:
-            if item % 2 != 0:
-                odd_numbers.append(item)
+      self.assertEqual(even_numbers, [0, 2, 4, 6, 8])
+      self.assertEqual(
+          [item for item in self.iterable if item % 2 == 0],
+          even_numbers
+      )
+      self.assertEqual(
+          src.list_comprehensions.get_even_numbers(self.iterable),
+          even_numbers
+      )
 
-        self.assertEqual(odd_numbers, [1, 3, 5, 7, 9])
-        self.assertEqual(
-            [item for item in self.iterable if item % 2 != 0],
-            odd_numbers
-        )
-        self.assertEqual(
-            src.list_comprehensions.get_odd_numbers(self.iterable),
-            odd_numbers
-        )
+  def test_list_comprehensions_w_conditions_ii(self):
+      odd_numbers = []
+      for item in self.iterable:
+          if item % 2 != 0:
+              odd_numbers.append(item)
 
-  the terminal shows all tests are still passing
+      self.assertEqual(odd_numbers, [1, 3, 5, 7, 9])
+      self.assertEqual(
+          [item for item in self.iterable if item % 2 != 0],
+          odd_numbers
+      )
+      self.assertEqual(
+          src.list_comprehensions.get_odd_numbers(self.iterable),
+          odd_numbers
+      )
+
+the terminal shows all tests are still passing
 
 ----
 

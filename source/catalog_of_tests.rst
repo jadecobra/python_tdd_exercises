@@ -44,7 +44,7 @@ test_person_factory
 #. :ref:`test_function_w_default_keyword_arguments`
 
 *********************************************************************************
-test_exceptions
+test_catching_exceptions
 *********************************************************************************
 
 #. :ref:`test_catching_module_not_found_error_in_tests`
@@ -152,7 +152,6 @@ test_truth_table
 #. :ref:`test_logical_nor`
 #. :ref:`test_logical_equality`
 #. :ref:`test_material_implication`
-#. :ref:`test_truth_table_tests<truth table: test_truth_table_tests>`
 
 *********************************************************************************
 test_lists
