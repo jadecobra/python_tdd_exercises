@@ -853,7 +853,7 @@ review
 * Lists can hold any :ref:`object<classes>`
 * Lists can be changed after creation by performing an operation, this means they are mutable
 
-Would you like to :doc:`test list comprehensions?</data_structures/lists/list_comprehensions>`
+Would you like to :ref:`test list comprehensions?<lists: list comprehensions>`
 
 ----
 
