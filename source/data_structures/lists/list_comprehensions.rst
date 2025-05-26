@@ -65,7 +65,7 @@ I change ``test_failure`` to ``test_make_a_list_w_a_for_loop``
 
     def test_make_a_list_w_a_for_loop(self):
         a_list = []
-        iterable = range(4)
+        iterable = range(10)
 
         for item in iterable:
             a_list.append(item)
@@ -219,7 +219,7 @@ I add a failing test
 .. code-block:: python
 
   def test_make_a_list_w_list_comprehensions(self):
-      iterable = range(4)
+      iterable = range(10)
 
       self.assertEqual(
           src.list_comprehensions.for_loop(iterable),
@@ -230,7 +230,7 @@ the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: Lists differ: [0, 1, 2, 3] != []
+  AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
 
 green: make it pass
 #################################################################################
@@ -241,7 +241,7 @@ I make the values in the test match the terminal
 
       self.assertEqual(
           src.list_comprehensions.for_loop(iterable),
-          [0, 1, 2, 3]
+          [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
       )
 
 the test passes
@@ -255,7 +255,7 @@ I change the expectation to use a `list comprehension <https://docs.python.org/3
 
   self.assertEqual(
       src.list_comprehensions.for_loop(iterable),
-      # [0, 1, 2, 3]
+      # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
       [item for item in iterable]
   )
 
@@ -490,6 +490,80 @@ refactor: make it better
 
     def get_odd_numbers(iterable):
         return [item for item in iterable if item % 2 != 0]
+
+* I used the same iterable_ for every test, I can remove the repetition by using the setUp_ :ref:`method<functions>`
+
+  .. code-block:: python
+
+    class TestListComprehensions(unittest.TestCase):
+
+        def setUp(self):
+            self.iterable = range(10)
+
+  then change all the references to the variable
+
+  .. code-block:: python
+
+    def test_make_a_list_w_a_for_loop(self):
+        a_list = []
+
+        for item in self.iterable:
+            a_list.append(item)
+
+        self.assertEqual(
+            a_list,
+            [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        )
+        self.assertEqual(
+            src.list_comprehensions.for_loop(self.iterable),
+            a_list
+        )
+
+    def test_make_a_list_w_list_comprehensions(self):
+        self.assertEqual(
+            src.list_comprehensions.for_loop(self.iterable),
+            [item for item in self.iterable]
+        )
+        self.assertEqual(
+            src.list_comprehensions.list_comprehension(self.iterable),
+            src.list_comprehensions.for_loop(self.iterable)
+        )
+
+    def test_list_comprehensions_w_conditions_i(self):
+        even_numbers = []
+
+        for item in self.iterable:
+            if item % 2 == 0:
+                even_numbers.append(item)
+
+        self.assertEqual(even_numbers, [0, 2, 4, 6, 8])
+        self.assertEqual(
+            [item for item in self.iterable if item % 2 == 0],
+            even_numbers
+        )
+        self.assertEqual(
+            src.list_comprehensions.get_even_numbers(self.iterable),
+            even_numbers
+        )
+
+    def test_list_comprehensions_w_conditions_ii(self):
+        odd_numbers = []
+
+        for item in self.iterable:
+            if item % 2 != 0:
+                odd_numbers.append(item)
+
+        self.assertEqual(odd_numbers, [1, 3, 5, 7, 9])
+        self.assertEqual(
+            [item for item in self.iterable if item % 2 != 0],
+            odd_numbers
+        )
+        self.assertEqual(
+            src.list_comprehensions.get_odd_numbers(self.iterable),
+            odd_numbers
+        )
+
+  the terminal still shows green
 
 ----
 
