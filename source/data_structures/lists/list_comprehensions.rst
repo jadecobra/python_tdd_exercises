@@ -317,7 +317,7 @@ When I use `list comprehensions <https://docs.python.org/3/glossary.html#term-li
 ----
 
 ****************************************************************************************
-test_list_comprehensions_w_conditions_i
+test_list_comprehensions_w_conditions
 ****************************************************************************************
 
 There is more I can do with `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_, I can add conditions when I perform an operation

@@ -132,6 +132,28 @@ test_booleans
 test_truth_table
 *********************************************************************************
 
+#. :ref:`test_logical_true`
+#. :ref:`test_logical_false`
+#. :ref:`test_logical_identity`
+#. :ref:`test_logical_negation`
+#. :ref:`test_contradiction`
+#. :ref:`test_logical_conjunction`
+#. :ref:`test_project_second`
+#. :ref:`test_converse_non_implication`
+#. :ref:`test_negate_first`
+#. :ref:`test_logical_nand`
+#. :ref:`test_tautology`
+#. :ref:`test_logical_disjunction`
+#. :ref:`test_exclusive_disjunction`
+#. :ref:`test_material_non_implication`
+#. :ref:`test_project_first`
+#. :ref:`test_converse_implication`
+#. :ref:`test_negate_second`
+#. :ref:`test_logical_nor`
+#. :ref:`test_logical_equality`
+#. :ref:`test_material_implication`
+#. :ref:`test_truth_table_tests<truth table: test_truth_table_tests>`
+
 *********************************************************************************
 test_lists
 *********************************************************************************
@@ -154,6 +176,7 @@ test_list_comprehensions
 
 #. :ref:`test_make_a_list_w_a_for_loop`
 #. :ref:`test_make_a_list_w_list_comprehensions`
+#. :ref:`test_list_comprehensions_w_conditions`
 
 *********************************************************************************
 test_functions

@@ -10,7 +10,7 @@ truth table: Nullary and Unary Operations
 
 .. contents:: table of contents
   :local:
-  :depth: 1
+  :depth: 2
 
 ----
 
