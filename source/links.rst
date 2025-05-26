@@ -58,7 +58,6 @@
 .. _integer: https://docs.python.org/3/library/functions.html?highlight=int#int
 .. _integers: https://docs.python.org/3/library/functions.html?highlight=int#int
 .. _iterable: https://docs.python.org/3/glossary.html#term-iterable
-.. _list: https://docs.python.org/3/library/stdtypes.html?highlight=list#list
 .. _mkdir: https://man7.org/linux/man-pages/man1/mkdir.1.html
 .. _modulo: https://en.wikipedia.org/wiki/Modulo
 .. _not: https://docs.python.org/3/reference/expressions.html#not

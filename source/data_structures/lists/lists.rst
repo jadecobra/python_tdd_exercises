@@ -16,10 +16,10 @@ lists
 
 ----
 
-A list_ is an :ref:`object<classes>` that can hold other objects_
+A `list<https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ is an :ref:`object<classes>` that can hold other objects_
 
 * they are represented with ``[]``
-* they can be made with the list_ constructor_
+* they can be made with the `list<https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_
 * they can be changed after they exist by performing an operation, this means they are mutable
 
 *********************************************************************************
@@ -76,8 +76,7 @@ the terminal shows :ref:`TypeError`
 
   TypeError: list expected at most 1 argument, got 4
 
-* :ref:`TypeError` is raised because the list_ constructor_ expects one argument but I gave four in the test. I am not following the signature for making lists
-* a constructor_ is a :ref:`function<functions>` that is used to make an instance of a :ref:`class <classes>`. The list_ constructor_ takes an iterable_ as input
+* :ref:`TypeError` is raised because the `list<https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_ expects one argument but I gave four in the test. I am not following the signature for making lists
 * An iterable_ is an object with items I can go over one by one in a loop - tuples_, `lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_, sets_ and :ref:`dictionaries` are iterable_
 
 green: make it pass
@@ -91,7 +90,7 @@ green: make it pass
     # AssertionError
     # TypeError
 
-* I change the values provided to the list_ constructor_ to a tuple_ by placing them in parentheses
+* I change the values provided to the `list<https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_ to a tuple_ by placing them in parentheses
 
   .. code-block:: python
 
@@ -116,7 +115,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-I can make a list with the list_ constructor_ and the passing test shows I can make a list with ``[]`` which uses less characters. I add a test for it
+I can make a list with the `list<https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_ and the passing test shows I can make a list with ``[]`` which uses less characters. I add a test for it
 
 .. code-block:: python
 
@@ -201,7 +200,7 @@ test_add_to_a_list
 red: make it fail
 #################################################################################
 
-I add a test for adding items to an existing list_ with the append_ :ref:`method<functions>`
+I add a test for adding items to an existing `lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ with the append_ :ref:`method<functions>`
 
 .. code-block:: python
 
@@ -238,7 +237,7 @@ I change the values in the test to match the values in the terminal
 
 the test passes
 
-I started with a list_ that had 4 things, added something using the append_ :ref:`method<functions>`, then checked if what I added is now part of the list_
+I started with a `list<https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ that had 4 things, added something using the append_ :ref:`method<functions>`, then checked if the things stayed the same
 
 ----
 
@@ -287,7 +286,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-I want to see which item Python removes when there is more than one of the same item in a list_ and I call ``list.remove(item)``
+I want to see which item Python removes when there is more than one of the same item in a `list<https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ and I call ``list.remove(item)``
 
 .. code-block:: python
 
@@ -315,7 +314,7 @@ I change the values on the right to match the values from the terminal
       a_list.remove(2)
       self.assertEqual(a_list, [0, 1, 2, 3, 2])
 
-the remove_ :ref:`method<functions>` takes away the first item when the item exists more than once in a list_
+the remove_ :ref:`method<functions>` takes away the first item when the item exists more than once in a `list<https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
 ----
 
@@ -398,12 +397,12 @@ all the tests are still green
 test_view_items_in_a_list
 *********************************************************************************
 
-I can provide the position of an item I want to see, as an index in ``[]``. Python uses zero-based indexing which means the positions of items starts at ``0``. I can also view items from the right side of the list_ by using negative numbers
+I can provide the position of an item I want to see, as an index in ``[]``. Python uses zero-based indexing which means the positions of items starts at ``0``. I can also view items from the right side of the `list<https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ by using negative numbers
 
 red: make it fail
 #################################################################################
 
-I add a failing test for indexing a list_
+I add a failing test for indexing a `list<https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
 .. code-block:: python
 
@@ -633,7 +632,7 @@ refactor: make it better
 test_index_error
 *********************************************************************************
 
-IndexError_ is raised when I try to get an item from a list but use a number that is greater than the number of items in the list_.
+IndexError_ is raised when I try to get an item from a `list<https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ but use a number that is greater than range of indexes for it
 
 red: make it fail
 #################################################################################
@@ -678,7 +677,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* I add one more line to test indexing with a negative number that is greater than the length of the list_
+* I add one more line to test indexing with a negative number that is greater than the length of the `list<https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ as a negative number
 
   .. code-block:: python
 
@@ -850,7 +849,7 @@ review
 *********************************************************************************
 
 * Lists are represented with ``[]``
-* Lists can be made with the list_ constructor_
+* Lists can be made with the `list<https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_
 * Lists can hold any :ref:`object<classes>`
 * Lists can be changed after creation by performing an operation, this means they are mutable
 
