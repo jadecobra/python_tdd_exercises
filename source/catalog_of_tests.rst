@@ -174,6 +174,20 @@ test_list_comprehensions
 #. :ref:`test_list_comprehensions_w_conditions_ii`
 
 *********************************************************************************
+test_dictionaries
+*********************************************************************************
+
+#. :ref:`test_make_a_dictionary`
+#. :ref:`test_make_a_list_w_curly_braces`
+#. :ref:`test_make_a_list_from_an_iterable`
+#. :ref:`test_add_to_a_dictionary`
+#. :ref:`test_remove_from_a_dictionary`
+#. :ref:`test_view_keys_of_a_dictionary`
+#. :ref:`test_view_values_of_a_dictionary`
+#. :ref:`test_key_error`
+#. :ref:`test_dictionary_attributes_and_methods`
+
+*********************************************************************************
 test_functions
 *********************************************************************************
 
