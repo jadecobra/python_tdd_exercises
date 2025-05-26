@@ -49,7 +49,7 @@ refactor: make it better
 
     class TestDictionaries(unittest.TestCase):
 
-      def test_making_dictionaries_w_strings_as_keys(self):
+      def test_make_a_dictionary_w_strings_as_keys(self):
           self.assertEqual(
               dictionaries.a_dict(),
               {"key": "value"}
@@ -101,11 +101,11 @@ refactor: make it better
     def a_dict():
         return {'key': 'value'}
 
-* it is also possible to make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ using the dict_ constructor_. I add another test to ``test_making_dictionaries_w_strings_as_keys``
+* it is also possible to make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ using the dict_ constructor_. I add another test to ``test_make_a_dictionary_w_strings_as_keys``
 
   .. code-block:: python
 
-    def test_making_dictionaries_w_strings_as_keys(self):
+    def test_make_a_dictionary_w_strings_as_keys(self):
         self.assertEqual(
             dictionaries.a_dict(),
             {'key': 'value'}
@@ -136,7 +136,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_making_dictionaries_w_strings_as_keys(self):
+    def test_make_a_dictionary_w_strings_as_keys(self):
         self.assertEqual(
             dictionaries.a_dict(),
             {"key": "value"}
@@ -177,7 +177,7 @@ I add a failing test to ``TestDictionaries``
 
 .. code-block:: python
 
-  def test_making_dictionaries_w_numbers_as_keys(self):
+  def test_make_a_dictionary_w_numbers_as_keys(self):
       self.assertEqual(
           {1: 'boom'},
           {'one': 'boom'}
@@ -197,7 +197,7 @@ I make the values in the test to make it pass
 
 .. code-block:: python
 
-  def test_making_dictionaries_w_numbers_as_keys(self):
+  def test_make_a_dictionary_w_numbers_as_keys(self):
       self.assertEqual(
           {1: 'boom'},
           {1: 'boom'}
@@ -212,7 +212,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_making_dictionaries_w_numbers_as_keys(self):
+    def test_make_a_dictionary_w_numbers_as_keys(self):
         self.assertEqual(
             {1: 'boom'},
             {1: 'boom'}
@@ -234,7 +234,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_making_dictionaries_w_numbers_as_keys(self):
+    def test_make_a_dictionary_w_numbers_as_keys(self):
       self.assertEqual(
           {1: 'boom'},
           {1: 'boom'}
@@ -260,7 +260,7 @@ I add a test to find out if it is possible to use :ref:`False<test_what_is_false
 
 .. code-block:: python
 
-  def test_making_dictionaries_w_booleans_as_keys(self):
+  def test_make_a_dictionary_w_booleans_as_keys(self):
       self.assertEqual(
           {False: 'boom'},
           {False: 'bap'}
@@ -285,7 +285,7 @@ I make the values to make them match and tests are green again. Sweet!
 
 .. code-block:: python
 
-  def test_making_dictionaries_w_booleans_as_keys(self):
+  def test_make_a_dictionary_w_booleans_as_keys(self):
       self.assertEqual(
           {False: 'boom'},
           {False: 'boom'}
@@ -300,7 +300,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_making_dictionaries_w_booleans_as_keys(self):
+    def test_make_a_dictionary_w_booleans_as_keys(self):
         self.assertEqual(
             {False: 'boom'},
             {False: 'boom'}
@@ -326,7 +326,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_making_dictionaries_w_booleans_as_keys(self):
+    def test_make_a_dictionary_w_booleans_as_keys(self):
         self.assertEqual(
             {False: 'boom'},
             {False: 'boom'}
@@ -350,7 +350,7 @@ I add a test to ``TestDictionaries`` to see if I can use tuples as `dictionary <
 
 .. code-block:: python
 
-  def test_making_dictionaries_w_tuples_as_keys(self):
+  def test_make_a_dictionary_w_tuples_as_keys(self):
       self.assertEqual(
           {(1, 2): "value"},
           {(1, 2): "key"}
@@ -394,7 +394,7 @@ I add a test to ``TestDictionaries`` using a :ref:`list <lists>` as a key
 
 .. code-block:: python
 
-  def test_making_dictionaries_w_lists_as_keys(self):
+  def test_make_a_dictionary_w_lists_as_keys(self):
       {[1, 2]: "BOOM"}
 
 the terminal shows :ref:`TypeError` because only `hashable <https://docs.python.org/3/glossary.html#term-hashable>`_ types can be used as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys and :ref:`lists` are not `hashable <https://docs.python.org/3/glossary.html#term-hashable>`_
@@ -419,7 +419,7 @@ I can use ``self.assertRaises`` to make sure that an error is raised by some cod
 
 .. code-block:: python
 
-  def test_making_dictionaries_w_lists_as_keys(self):
+  def test_make_a_dictionary_w_lists_as_keys(self):
       with self.assertRaises(TypeError):
           {[1, 2]: "BOOM"}
 
@@ -439,7 +439,7 @@ red: make it fail
 
 .. code-block:: python
 
-  def test_making_dictionaries_w_sets_as_keys(self):
+  def test_make_a_dictionary_w_sets_as_keys(self):
       {{1, 2}: "BOOM"}
 
 the terminal shows :ref:`TypeError`
@@ -455,7 +455,7 @@ I use ``self.assertRaises`` to handle the exception
 
 .. code-block:: python
 
-  def test_making_dictionaries_w_sets_as_keys(self):
+  def test_make_a_dictionary_w_sets_as_keys(self):
       with self.assertRaises(TypeError):
           {{1, 2}: "BOOM"}
 
@@ -473,7 +473,7 @@ I add a new test
 
 .. code-block:: python
 
-  def test_making_dictionaries_w_dictionaries_as_keys(self):
+  def test_make_a_dictionary_w_dictionaries_as_keys(self):
       a_dictionary = {"key": "value"}
       {a_dictionary: "BOOM"}
 
@@ -491,7 +491,7 @@ I add an :ref:`how to test that an Exception is raised` to the test to test the 
 
 .. code-block:: python
 
-    def test_making_dictionaries_w_dictionaries_as_keys(self):
+    def test_make_a_dictionary_w_dictionaries_as_keys(self):
         a_dictionary = {"key": "value"}
         with self.assertRaises(TypeError):
             {a_dictionary: "BOOM"}
@@ -528,7 +528,7 @@ I add a test to ``TestDictionaries`` in ``test_dictionaries.py``
 
 .. code-block:: python
 
-  def test_accessing_dictionary_values(self):
+  def test_get_a_value_from_a_dictionary(self):
       a_dictionary = {"key": "value"}
       self.assertEqual(a_dictionary["key"], "bob")
 
@@ -545,7 +545,7 @@ I make the expected value to make the tests pass
 
 .. code-block:: python
 
-  def test_accessing_dictionary_values(self):
+  def test_get_a_value_from_a_dictionary(self):
       a_dictionary = {"key": "value"}
       self.assertEqual(a_dictionary["key"], "value")
 
@@ -556,7 +556,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_listing_dictionary_values(self):
+    def test_list_dictionary_values(self):
         a_dictionary = {
             'key1': 'value1',
             'key2': 'value2',
@@ -577,7 +577,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_listing_dictionary_values(self):
+    def test_list_dictionary_values(self):
         a_dictionary = {
             'key1': 'value1',
             'key2': 'value2',
@@ -598,7 +598,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_listing_dictionary_keys(self):
+    def test_list_dictionary_keys(self):
         a_dictionary = {
             'key1': 'value1',
             'key2': 'value2',
@@ -620,7 +620,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_listing_dictionary_keys(self):
+    def test_list_dictionary_keys(self):
         a_dictionary = {
             'key1': 'value1',
             'key2': 'value2',
@@ -651,7 +651,7 @@ I add a test for both cases
 
 .. code-block:: python
 
-  def test_dictionaries_raise_key_error_when_key_does_not_exist(self):
+  def test_key_error(self):
       a_dictionary = {
           'key1': 'value1',
           'key2': 'value2',
@@ -687,7 +687,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_dictionaries_raise_key_error_when_key_does_not_exist(self):
+    def test_key_error(self):
         a_dictionary = {
             'key1': 'value1',
             'key2': 'value2',
@@ -709,7 +709,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_dictionaries_raise_key_error_when_key_does_not_exist(self):
+    def test_key_error(self):
         a_dictionary = {
             'key1': 'value1',
             'key2': 'value2',
@@ -726,11 +726,11 @@ refactor: make it better
 What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a key that does not exist and not have Python raise an error when it does not find the key?
 
 
-* I add a test called ``test_how_to_get_a_value_when_a_key_does_not_exist`` to ``TestDictionaries``
+* I add a test called ``test_get_value_when_key_does_not_exist`` to ``TestDictionaries``
 
   .. code-block:: python
 
-    def test_how_to_get_a_value_when_a_key_does_not_exist(self):
+    def test_get_value_when_key_does_not_exist(self):
         a_dictionary = {
             'key1': 'value1',
             'key2': 'value2',
@@ -750,7 +750,7 @@ What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datas
 
   .. code-block:: python
 
-    def test_how_to_get_a_value_when_a_key_does_not_exist(self):
+    def test_get_value_when_key_does_not_exist(self):
         a_dictionary = {
             'key1': 'value1',
             'key2': 'value2',
@@ -764,7 +764,7 @@ What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datas
 
   .. code-block:: python
 
-    def test_how_to_get_a_value_when_a_key_does_not_exist(self):
+    def test_get_value_when_key_does_not_exist(self):
         a_dictionary = {
             'key1': 'value1',
             'key2': 'value2',
@@ -797,7 +797,7 @@ What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datas
 
   .. code-block:: python
 
-    def test_how_to_get_a_value_when_a_key_does_not_exist(self):
+    def test_get_value_when_key_does_not_exist(self):
         a_dictionary = {
             'key1': 'value1',
             'key2': 'value2',
@@ -819,7 +819,7 @@ What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datas
 
   .. code-block:: python
 
-    def test_how_to_get_a_value_when_a_key_does_not_exist(self):
+    def test_get_value_when_key_does_not_exist(self):
         a_dictionary = {
             'key1': 'value1',
             'key2': 'value2',
@@ -844,7 +844,7 @@ I add a new test to ``TestDictionaries``
 
 .. code-block:: python
 
-  def test_dictionary_attributes(self):
+  def test_dictionary_attributes_and_methods(self):
       self.maxDiff = None
       self.assertEqual(
           dir(dictionaries.a_dict()),
@@ -869,7 +869,7 @@ I copy the expected values shown in the terminal to make the test pass
 
 .. code-block:: python
 
-  def test_dictionary_attributes(self):
+  def test_dictionary_attributes_and_methods(self):
       self.maxDiff = None
       self.assertEqual(
           dir(dictionaries.a_dict()),
@@ -953,7 +953,7 @@ I add a failing test
 
 .. code-block:: python
 
-  def test_set_default_for_a_given_key(self):
+  def test_set_default_for_key(self):
       a_dictionary = {'bippity': 'boppity'}
       a_dictionary['another_key']
 
@@ -966,7 +966,7 @@ I add ``self.assertRaises`` to make sure that KeyError_ gets raised for the test
 
 .. code-block:: python
 
-  def test_set_default_for_a_given_key(self):
+  def test_set_default_for_key(self):
       a_dictionary = {'bippity': 'boppity'}
 
       with self.assertRaises(KeyError):
@@ -979,7 +979,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_set_default_for_a_given_key(self):
+    def test_set_default_for_key(self):
         a_dictionary = {'bippity': 'boppity'}
 
         with self.assertRaises(KeyError):
@@ -1004,7 +1004,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_set_default_for_a_given_key(self):
+    def test_set_default_for_key(self):
         a_dictionary = {'bippity': 'boppity'}
 
         with self.assertRaises(KeyError):
@@ -1024,7 +1024,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_set_default_for_a_given_key(self):
+    def test_set_default_for_key(self):
         a_dictionary = {'bippity': 'boppity'}
 
         with self.assertRaises(KeyError):
@@ -1088,7 +1088,7 @@ I add another test to ``TestDictionaries``
 
 .. code-block:: python
 
-  def test_adding_two_dictionaries(self):
+  def test_add_two_dictionaries(self):
       a_dictionary = {
           "basic": "toothpaste",
           "whitening": "peroxide",
@@ -1126,7 +1126,7 @@ I make the values to make the test pass
 
 .. code-block:: python
 
-  def test_adding_two_dictionaries(self):
+  def test_add_two_dictionaries(self):
       a_dictionary = {
           "basic": "toothpaste",
           "whitening": "peroxide",
@@ -1159,7 +1159,7 @@ I add a failing test to ``TestDictionaries``
 
 .. code-block:: python
 
-  def test_pop(self):
+  def test_pop_item_from_dictionary(self):
       a_dictionary = {
           "basic": "toothpaste",
           "whitening": "peroxide",
@@ -1183,7 +1183,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_pop(self):
+    def test_pop_item_from_dictionary(self):
         a_dictionary = {
             "basic": "toothpaste",
             "whitening": "peroxide",
@@ -1197,7 +1197,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_pop(self):
+    def test_pop_item_from_dictionary(self):
         a_dictionary = {
             "basic": "toothpaste",
             "whitening": "peroxide",
@@ -1238,7 +1238,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_pop(self):
+    def test_pop_item_from_dictionary(self):
         a_dictionary = {
             "basic": "toothpaste",
             "whitening": "peroxide",

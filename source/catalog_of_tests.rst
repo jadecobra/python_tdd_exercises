@@ -177,15 +177,22 @@ test_list_comprehensions
 test_dictionaries
 *********************************************************************************
 
-#. :ref:`test_make_a_dictionary`
-#. :ref:`test_make_a_list_w_curly_braces`
-#. :ref:`test_make_a_list_from_an_iterable`
-#. :ref:`test_add_to_a_dictionary`
-#. :ref:`test_remove_from_a_dictionary`
-#. :ref:`test_view_keys_of_a_dictionary`
-#. :ref:`test_view_values_of_a_dictionary`
+#. :ref:`test_make_a_dictionary_w_strings_as_keys`
+#. :ref:`test_make_a_dictionary_w_numbers_as_keys`
+#. :ref:`test_make_a_dictionary_w_booleans_as_keys`
+#. :ref:`test_make_a_dictionary_w_tuples_as_keys`
+#. :ref:`test_make_a_dictionary_w_lists_as_keys`
+#. :ref:`test_make_a_dictionary_w_sets_as_keys`
+#. :ref:`test_make_a_dictionary_w_dictionaries_as_keys`
+#. :ref:`test_get_a_value_from_a_dictionary`
+#. :ref:`test_list_dictionary_values`
+#. :ref:`test_list_dictionary_keys`
 #. :ref:`test_key_error`
-#. :ref:`test_dictionary_attributes_and_methods`
+#. :ref:`test_get_value_when_key_does_not_exist`
+#. :ref:`test_dictionary_attributes_and_methods_and_methods`
+#. :ref:`test_set_default_for_key`
+#. :ref:`test_add_two_dictionaries`
+#. :ref:`test_pop_item_from_dictionary`
 
 *********************************************************************************
 test_functions

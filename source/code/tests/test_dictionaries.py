@@ -4,7 +4,7 @@ import unittest
 
 class TestDictionaries(unittest.TestCase):
 
-    def test_making_dictionaries_w_strings_as_keys(self):
+    def test_make_a_dictionary_w_strings_as_keys(self):
         self.assertEqual(
             dictionaries.a_dict(),
             {"key": "value"}
@@ -18,7 +18,7 @@ class TestDictionaries(unittest.TestCase):
             dict(key='value')
         )
 
-    def test_making_dictionaries_w_numbers_as_keys(self):
+    def test_make_a_dictionary_w_numbers_as_keys(self):
         self.assertEqual(
             {1: 'boom'},
             {1: 'boom'}
@@ -28,7 +28,7 @@ class TestDictionaries(unittest.TestCase):
             {2.5: 'works'}
         )
 
-    def test_making_dictionaries_w_booleans_as_keys(self):
+    def test_make_a_dictionary_w_booleans_as_keys(self):
         self.assertEqual(
             {False: 'boom'},
             {False: 'boom'}
@@ -38,30 +38,30 @@ class TestDictionaries(unittest.TestCase):
             {True: 'bap'}
         )
 
-    def test_making_dictionaries_w_tuples_as_keys(self):
+    def test_make_a_dictionary_w_tuples_as_keys(self):
         self.assertEqual(
             {(1, 2): "value"},
             {(1, 2): "value"}
         )
 
-    def test_making_dictionaries_w_lists_as_keys(self):
+    def test_make_a_dictionary_w_lists_as_keys(self):
         with self.assertRaises(TypeError):
             {[1, 2]: "BOOM"}
 
-    def test_making_dictionaries_w_sets_as_keys(self):
+    def test_make_a_dictionary_w_sets_as_keys(self):
         with self.assertRaises(TypeError):
             {{1, 2}: "BOOM"}
 
-    def test_making_dictionaries_w_dictionaries_as_keys(self):
+    def test_make_a_dictionary_w_dictionaries_as_keys(self):
         a_dictionary = {"key": "value"}
         with self.assertRaises(TypeError):
             {a_dictionary: "BOOM"}
 
-    def test_accessing_dictionary_values(self):
+    def test_get_a_value_from_a_dictionary(self):
         a_dictionary = {"key": "value"}
         self.assertEqual(a_dictionary["key"], "value")
 
-    def test_listing_dictionary_values(self):
+    def test_list_dictionary_values(self):
         a_dictionary = {
             'key1': 'value1',
             'key2': 'value2',
@@ -78,7 +78,7 @@ class TestDictionaries(unittest.TestCase):
             ]
         )
 
-    def test_listing_dictionary_keys(self):
+    def test_list_dictionary_keys(self):
         a_dictionary = {
             'key1': 'value1',
             'key2': 'value2',
@@ -95,7 +95,7 @@ class TestDictionaries(unittest.TestCase):
             ]
         )
 
-    def test_dictionaries_raise_key_error_when_key_does_not_exist(self):
+    def test_key_error(self):
         a_dictionary = {
             'key1': 'value1',
             'key2': 'value2',
@@ -106,7 +106,7 @@ class TestDictionaries(unittest.TestCase):
             a_dictionary['non_existent_key']
             a_dictionary['ky1']
 
-    def test_how_to_get_a_value_when_a_key_does_not_exist(self):
+    def test_get_value_when_key_does_not_exist(self):
         a_dictionary = {
             'key1': 'value1',
             'key2': 'value2',
@@ -117,7 +117,7 @@ class TestDictionaries(unittest.TestCase):
         self.assertIsNone(a_dictionary.get('non_existent_key', None))
         self.assertEqual(a_dictionary.get('key1', None), 'value1')
 
-    def test_dictionary_attributes(self):
+    def test_dictionary_attributes_and_methods(self):
         self.maxDiff = None
         self.assertEqual(
             dir(dictionaries.a_dict()),
@@ -171,7 +171,7 @@ class TestDictionaries(unittest.TestCase):
             ]
         )
 
-    def test_set_default_for_a_given_key(self):
+    def test_set_default_for_key(self):
         a_dictionary = {'bippity': 'boppity'}
 
         with self.assertRaises(KeyError):
@@ -197,7 +197,7 @@ class TestDictionaries(unittest.TestCase):
             }
         )
 
-    def test_adding_two_dictionaries(self):
+    def test_add_two_dictionaries(self):
         a_dictionary = {
             "basic": "toothpaste",
             "whitening": "peroxide",
@@ -218,7 +218,7 @@ class TestDictionaries(unittest.TestCase):
             }
         )
 
-    def test_pop(self):
+    def test_pop_item_from_dictionary(self):
         a_dictionary = {
             "basic": "toothpaste",
             "whitening": "peroxide",
