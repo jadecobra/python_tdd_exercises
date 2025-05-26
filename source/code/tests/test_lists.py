@@ -9,6 +9,13 @@ class TestLists(unittest.TestCase):
     def test_make_a_list_w_square_brackets(self):
         self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 3)))
 
+    def test_make_a_list_from_iterable(self):
+        iterable = range(4)
+        self.assertEqual(
+            list(iterable),
+            [0, 1, 2, 3]
+        )
+
     def test_add_to_a_list(self):
         a_list = [0, 1, 2, 3]
 

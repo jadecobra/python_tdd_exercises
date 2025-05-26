@@ -139,6 +139,62 @@ I change the value in the test to make it pass
 ----
 
 *********************************************************************************
+test_make_a_list_from_an_iterable
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+I change ``test_failure`` to ``test_make_a_list_from_an_iterable``
+
+.. code-block:: python
+
+  import unittest
+
+
+  class TestListComprehensions(unittest.TestCase):
+
+      def test_make_a_list_from_an_iterable(self):
+          iterable = range(4)
+          self.assertEqual(iterable, [])
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: range(0, 4) != []
+
+``range(x)`` makes an iterable_ of numbers that go from a default of ``0`` to the given number minus ``1``, in this case it will be ``0`` to ``3``
+
+green: make it pass
+#################################################################################
+
+I add the :ref:`list<lists>` constructor_
+
+.. code-block:: python
+
+  self.assertEqual(list(iterable), [])
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: Lists differ: [0, 1, 2, 3] != []
+
+I copy the values from the terminal and paste it as the expectation
+
+.. code-block:: python
+
+  self.assertEqual(
+      list(iterable),
+      [0, 1, 2, 3]
+  )
+
+the test passes. I can make a :ref:`list <lists>` from any iterable_ by using the :ref:`list <lists>` constructor_
+
+----
+
+*********************************************************************************
 test_add_to_a_list
 *********************************************************************************
 
@@ -151,15 +207,14 @@ I add a test for adding items to an existing list_ with the append_ :ref:`method
 
     def test_add_to_a_list(self):
         a_list = [0, 1, 2, 3]
+        self.assertIsNone(a_list.append(4))
 
-        self.assertEqual(a_list, [0, 1, 2, 3])
-        a_list.append(4)
-        self.assertEqual(a_list, [0, 1, 2, 3])
+the terminal shows green. The append_ :ref:`method<functions>` returns None_ when it is called, but what does it do to the list?
 
-- ``a_list = [0, 1, 2, 3]`` makes a list of 4 items and names it ``a_list``
-- the first ``self.assertEqual(a_list, [0, 1, 2, 3])`` checks that ``a_list`` points to the four items
-- ``a_list.append(4)`` calls the append_ :ref:`method<functions>` of the list
-- ``self.assertEqual(a_list, [0, 1, 2, 3])`` checks what ``a_list`` has after append_ is called
+.. code-block:: python
+
+  self.assertIsNone(a_list.append(4))
+  self.assertEqual(a_list, [0, 1, 2, 3])
 
 the terminal shows :ref:`AssertionError` because the values in ``a_list`` change after ``a_list.append(4)`` is called
 
