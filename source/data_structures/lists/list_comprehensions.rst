@@ -16,7 +16,7 @@ lists: list comprehensions
 
 ----
 
-`List Comprehensions <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#list-comprehensions>`_ are a short way to make a :ref:`list <lists>` from an iterable_. It is a simple way to go over every item and perform operations with one line
+`List Comprehensions <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#list-comprehensions>`_ are a simple to make a :ref:`list <lists>` from an iterable_, by going over every item and performing operations with one line
 
 *********************************************************************************
 requirements
@@ -47,8 +47,6 @@ requirements
 
 ----
 
-
-
 *********************************************************************************
 test_make_a_list_w_a_for_loop
 *********************************************************************************
@@ -56,7 +54,7 @@ test_make_a_list_w_a_for_loop
 red: make it fail
 #################################################################################
 
-I change ``test_failure`` to ``test_make_a_list_from_an_iterable``
+I change ``test_failure`` to ``test_make_a_list_w_a_for_loop``
 
 .. code-block:: python
 
@@ -65,82 +63,105 @@ I change ``test_failure`` to ``test_make_a_list_from_an_iterable``
 
   class TestListComprehensions(unittest.TestCase):
 
-    def test_make_a_list_w_a_for_loop(self):
+    def test_make_a_list_from_iterable(self):
         a_list = []
-        iterable = range(10)
+        iterable = range(4)
 
         for item in iterable:
             a_list.append(item)
 
         self.assertEqual(a_list, [])
-        self.assertEqual(
-            list_comprehensions.for_loop(iterable),
-            a_list
-        )
 
-the terminal shows :ref:`AssertionError` for the values of ``a_list`` because it is no longer empty after I loop through ``iterable`` then add items
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
+  AssertionError: Lists differ: [0, 1, 2, 3] != []
 
 green: make it pass
 #################################################################################
 
-* I make the values of the test match the result
+I copy the value from the terminal and use it as the expectation
+
+.. code-block:: python
+
+    self.assertEqual(a_list, [0, 1, 2, 3])
+
+the test passes, the list is no longer empty after calling the append_ :ref:`method<functions>` in the `for loop`_ which goes over every item in the iterable_
+
+refactor: make it better
+#################################################################################
+
+* I add another assert_ statement
 
   .. code-block:: python
 
-    def test_make_a_list_w_a_for_loop(self):
-        a_list = []
-        self.assertEqual(a_list, [])
+    self.assertEqual(a_list, [0, 1, 2, 3])
+    self.assertEqual(
+        src.list_comprehensions.for_loop(iterable),
+        a_list
+    )
 
-        iterable = range(10)
-        for item in iterable:
-            a_list.append(item)
-
-        self.assertEqual(
-            a_list,
-            [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-        )
-        self.assertEqual(
-            list_comprehensions.for_loop(iterable),
-            a_list
-        )
-
-  the terminal shows :ref:`AttributeError` since ``list_comprehensions.py`` does not have a definition for ``for_loop``
+  the terminal shows NameError_
 
   .. code-block:: python
 
-    AttributeError: module 'list_comprehensions' has no attribute 'for_loop'
+    NameError: name 'src' is not defined
 
-* I add a :ref:`function<functions>` definition called ``for_loop`` to ``list_comprehensions.py``
+* I add it to the list of Exceptions_ encountered
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AssertionError
+    # NameError
+
+  then I add an `import statement`_
+
+  .. code-block:: python
+
+    import src.list_comprehensions
+    import unittest
+
+  the terminal shows :ref:`AttributeError`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.list_comprehensions' has no attribute 'for_loop'
+
+* I add a :ref:`function<functions>` definition to ``list_comprehensions.py``
 
   .. code-block:: python
 
     def for_loop():
         return None
 
-  and the terminal shows :ref:`TypeError` because the :ref:`function<functions>` signature does not match the call in the test
+  and the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
     TypeError: for_loop() takes 0 positional arguments but 1 was given
 
-* I make the signature of the :ref:`function<functions>` to take input
+* I add the error to the list of Exceptions_ encountered
+
+  .. code-block:: python
+
+    TypeError: for_loop() takes 0 positional arguments but 1 was given
+
+  I change the signature of the :ref:`function<functions>` to take input
 
   .. code-block:: python
 
     def for_loop(argument):
         return None
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: None != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    AssertionError: None != [0, 1, 2, 3]
 
-* I make the behavior of the :ref:`function<functions>` to use a ``for`` loop
+  I add a `for loop`_ to the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -150,13 +171,14 @@ green: make it pass
             result.append(item)
         return result
 
-  - ``result = []`` makes an empty list called ``result``
-  - ``for item in argument:`` makes a loop over the items of ``argument`` which is an iterable_ passed into the function
-  - ``result.append(item)`` adds each item from ``argument`` to the list called ``result``
+  the test passes
+
+  - ``result = []`` makes an empty :ref:`list`
+  - ``for item in argument:`` loops over the items of ``argument``
+  - ``result.append(item)`` adds each item from ``argument`` to ``result``
   - ``return result`` returns ``result`` after the loop completes
 
-  the terminal shows all tests are passing
-* I change the input name from ``argument`` to ``iterable`` to be more explicit
+* I change the input name from ``argument`` to ``iterable`` to make it clearer
 
   .. code-block:: python
 
@@ -168,10 +190,7 @@ green: make it pass
 
   all tests are still passing
 
-From the tests I see that I can make a :ref:`list <lists>` from any iterable by using
-
-* a `for loop`_ loop
-* the :ref:`list <lists>` constructor
+I can make a :ref:`list <lists>` from an iterable_ by using a `for loop`_ or the :ref:`list <lists>` constructor
 
 ----
 

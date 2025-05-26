@@ -613,6 +613,24 @@ refactor: make it better
 
 ----
 
+test_view_parts_of_a_list
+---------------------------------------------------------------------------------
+
+I add another test
+
+.. code-block:: python
+
+  def test_view_parts_of_a_list(self):
+      a_list = ['first', 'second', 'third', 'fourth']
+
+      self.assertEqual(a_list[0:2], [])
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+----
+
 *********************************************************************************
 test_index_error
 *********************************************************************************

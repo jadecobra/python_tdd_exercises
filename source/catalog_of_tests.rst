@@ -144,6 +144,7 @@ test_lists
 #. :ref:`test_remove_from_a_list_when_item_occurs_multiple_times`
 #. :ref:`test_remove_last_item_from_a_list`
 #. :ref:`test_view_items_in_a_list`
+#. :ref:`test_view_parts_of_a_list`
 #. :ref:`test_index_error`
 #. :ref:`test_list_attributes_and_methods`
 
