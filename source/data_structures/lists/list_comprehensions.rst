@@ -76,7 +76,7 @@ the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: Lists differ: [0, 1, 2, 3] != []
+  AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
 
 green: make it pass
 #################################################################################
@@ -85,7 +85,7 @@ I copy the value from the terminal and use it as the expectation
 
 .. code-block:: python
 
-    self.assertEqual(a_list, [0, 1, 2, 3])
+    self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
 the test passes, the list is no longer empty after calling the append_ :ref:`method<functions>` in the `for loop`_ which goes over every item in the iterable_
 
@@ -96,7 +96,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    self.assertEqual(a_list, [0, 1, 2, 3])
+    self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
     self.assertEqual(
         src.list_comprehensions.for_loop(iterable),
         a_list
@@ -108,7 +108,7 @@ refactor: make it better
 
     NameError: name 'src' is not defined
 
-* I add it to the list of Exceptions_ encountered
+  I add it to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -129,7 +129,7 @@ refactor: make it better
 
     AttributeError: module 'src.list_comprehensions' has no attribute 'for_loop'
 
-* I add the error to the list of Exceptions_ encountered
+  I add the error to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -138,7 +138,7 @@ refactor: make it better
     # NameError
     # AttributeError
 
-* I add a :ref:`function<functions>` definition to ``list_comprehensions.py``
+  I add a :ref:`function<functions>` definition to ``list_comprehensions.py``
 
   .. code-block:: python
 
@@ -151,7 +151,7 @@ refactor: make it better
 
     TypeError: for_loop() takes 0 positional arguments but 1 was given
 
-* I add the error to the list of Exceptions_ encountered
+  I add the error to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -172,7 +172,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    AssertionError: None != [0, 1, 2, 3]
+    AssertionError: None != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
   I add a `for loop`_ to the :ref:`function<functions>`
 
@@ -239,10 +239,10 @@ I make the values in the test match the terminal
 
 .. code-block:: python
 
-      self.assertEqual(
-          src.list_comprehensions.for_loop(iterable),
-          [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-      )
+  self.assertEqual(
+      src.list_comprehensions.for_loop(iterable),
+      [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  )
 
 the test passes
 
@@ -264,6 +264,10 @@ the terminal still shows green. I remove the comment then add another assert_ st
 .. code-block:: python
 
   self.assertEqual(
+      src.list_comprehensions.for_loop(iterable),
+      [item for item in iterable]
+  )
+  self.assertEqual(
       src.list_comprehensions.list_comprehension(iterable),
       src.list_comprehensions.for_loop(iterable)
   )
@@ -277,6 +281,13 @@ the terminal shows :ref:`AttributeError`
 I add a :ref:`function<functions>` that uses a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ to `list_comprehensions.py`
 
   .. code-block:: python
+
+    def for_loop(iterable):
+        result = []
+        for item in iterable:
+            result.append(item)
+        return result
+
 
     def list_comprehension(iterable):
         return [item for item in iterable]
@@ -301,12 +312,12 @@ the difference between them is that in the first case I have to
 * loop through the iterable_
 * do the operation I want on the item of the iterable_
 
-With the list comprehension I can get the same result in one line that covers all those steps
+When I use `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_, I get the same result with one line that covers all the steps
 
 ----
 
 ****************************************************************************************
-test_make_a_list_w_list_comprehensions
+test_list_comprehensions_w_conditions_i
 ****************************************************************************************
 
 There is more I can do with `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_, I can add conditions when I perform an operation
@@ -320,8 +331,8 @@ I add a failing test
 
   def test_list_comprehensions_w_conditions_i(self):
       iterable = range(10)
-      even_numbers = []
 
+      even_numbers = []
       for item in iterable:
           if item % 2 == 0:
               even_numbers.append(item)
@@ -376,9 +387,7 @@ refactor: make it better
         even_numbers
     )
 
-  the test passes
-
-* I add another assert_ statement
+  the test passes, I add another assert_ statement
 
   .. code-block:: python
 
@@ -401,6 +410,9 @@ refactor: make it better
 
   .. code-block:: python
 
+    def list_comprehension(iterable):
+        return [item for item in iterable]
+
     def get_even_numbers(iterable):
         return [item for item in iterable if item % 2 == 0]
 
@@ -412,8 +424,8 @@ refactor: make it better
 
     def test_list_comprehensions_w_conditions_ii(self):
         iterable = range(10)
-        odd_numbers = []
 
+        odd_numbers = []
         for item in iterable:
             if item % 2 != 0:
                 odd_numbers.append(item)
@@ -432,9 +444,7 @@ refactor: make it better
 
     self.assertEqual(odd_numbers, [1, 3, 5, 7, 9])
 
-  the test passes
-
-* I add another assert_ statement
+  the test passes. I add another assert_ statement
 
   .. code-block:: python
 
@@ -459,9 +469,7 @@ refactor: make it better
         odd_numbers
     )
 
-  the test passes
-
-* I add another assert_ statement
+  the test passes and I add another assert_ statement
 
   .. code-block:: python
 
@@ -477,10 +485,11 @@ refactor: make it better
   the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
+    :force:
 
     AttributeError: module 'src.list_comprehensions' has no attribute 'get_odd_numbers'. Did you mean: 'get_even_numbers'?
 
-  I add the :ref:`function`
+  I add the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -506,7 +515,6 @@ refactor: make it better
 
     def test_make_a_list_w_a_for_loop(self):
         a_list = []
-
         for item in self.iterable:
             a_list.append(item)
 
@@ -531,7 +539,6 @@ refactor: make it better
 
     def test_list_comprehensions_w_conditions_i(self):
         even_numbers = []
-
         for item in self.iterable:
             if item % 2 == 0:
                 even_numbers.append(item)
@@ -548,7 +555,6 @@ refactor: make it better
 
     def test_list_comprehensions_w_conditions_ii(self):
         odd_numbers = []
-
         for item in self.iterable:
             if item % 2 != 0:
                 odd_numbers.append(item)
@@ -563,7 +569,7 @@ refactor: make it better
             odd_numbers
         )
 
-  the terminal still shows green
+  the terminal shows all tests are still passing
 
 ----
 
