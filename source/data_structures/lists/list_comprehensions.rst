@@ -520,61 +520,56 @@ then change all the references to the variable
 
 .. code-block:: python
 
-  def test_make_a_list_w_a_for_loop(self):
-      a_list = []
-      for item in self.iterable:
-          a_list.append(item)
+    def test_make_a_list_w_a_for_loop(self):
+        a_list = []
+        for item in self.iterable:
+            a_list.append(item)
 
-      self.assertEqual(
-          a_list,
-          [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-      )
-      self.assertEqual(
-          src.list_comprehensions.for_loop(self.iterable),
-          a_list
-      )
+        self.assertEqual(a_list, list(self.iterable))
+        self.assertEqual(
+            src.list_comprehensions.for_loop(self.iterable),
+            a_list
+        )
 
-  def test_make_a_list_w_list_comprehensions(self):
-      self.assertEqual(
-          src.list_comprehensions.for_loop(self.iterable),
-          [item for item in self.iterable]
-      )
-      self.assertEqual(
-          src.list_comprehensions.list_comprehension(self.iterable),
-          src.list_comprehensions.for_loop(self.iterable)
-      )
+    def test_make_a_list_w_list_comprehensions(self):
+        self.assertEqual(
+            src.list_comprehensions.for_loop(self.iterable),
+            [item for item in self.iterable]
+        )
+        self.assertEqual(
+            src.list_comprehensions.list_comprehension(self.iterable),
+            src.list_comprehensions.for_loop(self.iterable)
+        )
 
-  def test_list_comprehensions_w_conditions_i(self):
-      even_numbers = []
-      for item in self.iterable:
-          if item % 2 == 0:
-              even_numbers.append(item)
+    def test_list_comprehensions_w_conditions_i(self):
+        even_numbers = []
+        for item in self.iterable:
+            if item % 2 == 0:
+                even_numbers.append(item)
 
-      self.assertEqual(even_numbers, [0, 2, 4, 6, 8])
-      self.assertEqual(
-          [item for item in self.iterable if item % 2 == 0],
-          even_numbers
-      )
-      self.assertEqual(
-          src.list_comprehensions.get_even_numbers(self.iterable),
-          even_numbers
-      )
+        self.assertEqual(
+            [item for item in self.iterable if item % 2 == 0],
+            even_numbers
+        )
+        self.assertEqual(
+            src.list_comprehensions.get_even_numbers(self.iterable),
+            even_numbers
+        )
 
-  def test_list_comprehensions_w_conditions_ii(self):
-      odd_numbers = []
-      for item in self.iterable:
-          if item % 2 != 0:
-              odd_numbers.append(item)
+    def test_list_comprehensions_w_conditions_ii(self):
+        odd_numbers = []
+        for item in self.iterable:
+            if item % 2 != 0:
+                odd_numbers.append(item)
 
-      self.assertEqual(odd_numbers, [1, 3, 5, 7, 9])
-      self.assertEqual(
-          [item for item in self.iterable if item % 2 != 0],
-          odd_numbers
-      )
-      self.assertEqual(
-          src.list_comprehensions.get_odd_numbers(self.iterable),
-          odd_numbers
-      )
+        self.assertEqual(
+            [item for item in self.iterable if item % 2 != 0],
+            odd_numbers
+        )
+        self.assertEqual(
+            src.list_comprehensions.get_odd_numbers(self.iterable),
+            odd_numbers
+        )
 
 the terminal shows all tests are still passing
 
