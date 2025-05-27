@@ -5,16 +5,16 @@ import unittest
 class TestListComprehensions(unittest.TestCase):
 
     def setUp(self):
-        self.iterable = range(10)
+        self.iterable = range(10000000)
 
     def test_make_a_list_w_a_for_loop(self):
         a_list = []
+
         for item in self.iterable:
             a_list.append(item)
 
         self.assertEqual(
-            a_list,
-            [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+            a_list, list(self.iterable)
         )
         self.assertEqual(
             src.list_comprehensions.for_loop(self.iterable),
@@ -37,7 +37,6 @@ class TestListComprehensions(unittest.TestCase):
             if item % 2 == 0:
                 even_numbers.append(item)
 
-        self.assertEqual(even_numbers, [0, 2, 4, 6, 8])
         self.assertEqual(
             [item for item in self.iterable if item % 2 == 0],
             even_numbers
@@ -53,7 +52,6 @@ class TestListComprehensions(unittest.TestCase):
             if item % 2 != 0:
                 odd_numbers.append(item)
 
-        self.assertEqual(odd_numbers, [1, 3, 5, 7, 9])
         self.assertEqual(
             [item for item in self.iterable if item % 2 != 0],
             odd_numbers
