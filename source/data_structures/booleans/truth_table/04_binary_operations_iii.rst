@@ -168,7 +168,7 @@ refactor: make it better
             return True
         return (not p and q) or (p and not q)
 
-  which I can change to a `return statement`_
+  I can use a simple `return statement`_
 
   .. code-block:: python
 
@@ -180,7 +180,7 @@ refactor: make it better
             return True
         return (not p and q) or (p and not q)
 
-  or
+  even simpler
 
   .. code-block:: python
 
@@ -286,7 +286,7 @@ refactor: make it better
 
   the terminal still shows green
 
-* there is only one case where the result is :ref:`True<test_what_is_true>`, I use a simple `return statement`_
+* there is only one case where the result is :ref:`True<test_what_is_true>`, I add a `return statement`_ for it
 
   .. code-block:: python
 
