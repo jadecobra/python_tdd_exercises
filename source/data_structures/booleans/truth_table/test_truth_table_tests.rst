@@ -1184,7 +1184,9 @@ I ran tests for the operations of the `Truth Table`_ involving booleans_ which c
 * :ref:`Logical True<test_logical_true>` always returns :ref:`True<test_what_is_true>` is also nullary
 * :ref:`Logical Identity<test_logical_identity>` returns what it receives and only takes one input, it is a unary operation
 * :ref:`Logical Negation<test_logical_negation>` returns the negation of its input, it is also unary
-* :ref:`Contradiction<test_contradiction>` to :ref:`Tautology<test_tautology>` are binary operations which take in 2 inputs, in this case I named them ``x`` and ``y``
+
+:ref:`Contradiction<test_contradiction>` to :ref:`Tautology<test_tautology>` are binary operations which take in 2 inputs, in this case I named them ``x`` and ``y``
+
 * :ref:`Contradiction<test_contradiction>` always returns :ref:`False<test_what_is_false>`
 * :ref:`Converse Implication<test_converse_implication>` returns ``x or not y``
 * :ref:`Converse NonImplication<test_converse_non_implication>` returns ``not x and y``
@@ -1201,6 +1203,9 @@ I ran tests for the operations of the `Truth Table`_ involving booleans_ which c
 * :ref:`Project First<test_project_first>` always returns ``x``
 * :ref:`Project Second<test_project_second>` always returns ``y``
 * :ref:`Tautology<test_tautology>` always returns :ref:`True<test_what_is_true>`
+
+As a reminder
+
 * not_ or_ is and_
 * not_ and_ is or_
 * not_ :ref:`False<test_what_is_false>` is :ref:`True<test_what_is_true>`
