@@ -834,7 +834,7 @@ green: make it pass
 
     TypeError: logical_true() missing 1 required positional argument: 'x'
 
-  I remove the input parameter
+  I remove the input parameter and change the `return statement`_
 
   .. code-block:: python
 
@@ -894,7 +894,7 @@ Since all the tests are passing, I can refactor the :ref:`functions<functions>` 
     def contradiction(x, y):
         return False
 
-* I use a one line `return statement`_ for :ref:`converse_implication<test_converse_implication>` to return the opposite of the `if statement`_
+* I use a one line `return statement`_ for :ref:`converse_implication<test_converse_implication>` to return the opposite of the `if statement`_, there is only one case that returns :ref:`False<test_what_is_false>`
 
   .. code-block:: python
 
@@ -944,7 +944,7 @@ Since all the tests are passing, I can refactor the :ref:`functions<functions>` 
 
     AssertionError: True is not false
 
-  Oops! It looks like I cannot do that since the statements are the opposite of the `if statements`_, I change or_ to and_
+  Oops! It looks like I cannot do that since this statement is the opposite of the combination of the 2 `if statements`_, I change or_ to and_
 
   .. code-block:: python
 
@@ -995,7 +995,7 @@ Since all the tests are passing, I can refactor the :ref:`functions<functions>` 
 
   the terminal still shows green
 
-* I use the opposite of condition in the `if statement`_ for :ref:`logical_nand<test_logical_nand>`
+* I use the opposite of the condition in the `if statement`_ for :ref:`logical_nand<test_logical_nand>`
 
   .. code-block:: python
 
@@ -1085,14 +1085,14 @@ Since all the tests are passing, I can refactor the :ref:`functions<functions>` 
 
     AssertionError: False is not true
 
-  I made a mistake, ``!=`` is not and_, I change it to or_
+  I change and_ to or_
 
   .. code-block:: python
 
     def material_implication(x, y):
         return not x or y
 
-  the test is green again
+  the test is green again, I will use or_ when I see ``!=``
 
 * I use this with :ref:`logical_nor<test_logical_nor>`
 
@@ -1180,23 +1180,27 @@ review
 
 I ran tests for the operations of the `Truth Table`_ involving booleans_ which can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
 
-* :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
-* :ref:`Tautology <test_tautology>` always returns :ref:`True<test_what_is_true>`
-* :ref:`Negate Second <test_negate_second>` always returns ``not q``
-* :ref:`Project Second <test_project_second>` always returns ``q``
-* :ref:`Negate First<test_negate_first>` always returns ``not p``
-* :ref:`Project First <test_project_first>` always returns ``p``
-* :ref:`Exclusive Disjunction <test_exclusive_disjunction>` is ``!=``, or the :ref:`Logical Negation<test_logical_negation>` of :ref:`Logical Equality <test_logical_equality>`
-* :ref:`Logical Equality <test_logical_equality>` is ``==``
-* :ref:`Converse NonImplication <test_converse_non_implication>` returns ``not p and q``
-*  :ref:`Converse Implication <test_converse_implication>` returns ``p or not q``
-* :ref:`Material NonImplication <test_material_non_implication>` returns ``p and not q``
-* :ref:`Logical or Material Implication  <test_material_implication>` returns ``not p or q``
-* :ref:`Logical NOR <test_logical_nor>` returns ``not (p or q)``
-* :ref:`Logical Disjunction <test_logical_disjunction>` returns ``p or q``
-* :ref:`Logical NAND <test_logical_nand>` returns ``not (p and q)``
-* :ref:`Logical Conjunction <test_logical_conjunction>` returns ``p and q``
-* :ref:`Logical Negation<test_logical_negation>` is not_
+* :ref:`Logical False<test_logical_false>` always returns :ref:`False<test_what_is_false>` it is a nullary operation, it does not take input
+* :ref:`Logical True<test_logical_true>` always returns :ref:`True<test_what_is_true>` is also nullary
+* :ref:`Logical Identity<test_logical_identity>` returns what it receives and only takes one input, it is a unary operation
+* :ref:`Logical Negation<test_logical_negation>` returns the negation of its input, it is also unary
+* :ref:`Contradiction<test_contradiction>` to :ref:`Tautology<test_tautology>` are binary operations which take in 2 inputs, in this case I named them ``x`` and ``y``
+* :ref:`Contradiction<test_contradiction>` always returns :ref:`False<test_what_is_false>`
+* :ref:`Converse Implication <test_converse_implication>` returns ``x or not y``
+* :ref:`Converse NonImplication <test_converse_non_implication>` returns ``not x and y``
+* :ref:`Exclusive Disjunction <test_exclusive_disjunction>` returns ``x != y``
+* :ref:`Logical Conjunction<test_logical_conjunction>` returns ``x and y``
+* :ref:`Logical Disjunction<test_logical_disjunction>` returns ``x or y``
+* :ref:`Logical Equality<test_logical_equality>` returns ``x == y``
+* :ref:`Logical NAND<test_logical_nand>` returns ``not (x and y)``
+* :ref:`Logical NOR<test_logical_nor>` returns ``not (x or y)``
+* :ref:`Material Implication<test_material_implication>` returns ``not x or y``
+* :ref:`Material NonImplication <test_material_non_implication>` returns ``x and not y``
+* :ref:`Negate First<test_negate_first>` always returns ``not x``
+* :ref:`Negate Second<test_negate_second>` always returns ``not y``
+* :ref:`Project First<test_project_first>` always returns ``x``
+* :ref:`Project Second<test_project_second>` always returns ``y``
+* :ref:`Tautology<test_tautology>` always returns :ref:`True<test_what_is_true>`
 * not_ or_ is and_
 * not_ and_ is or_
 * not_ :ref:`False<test_what_is_false>` is :ref:`True<test_what_is_true>`
