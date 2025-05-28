@@ -1186,9 +1186,9 @@ I ran tests for the operations of the `Truth Table`_ involving booleans_ which c
 * :ref:`Logical Negation<test_logical_negation>` returns the negation of its input, it is also unary
 * :ref:`Contradiction<test_contradiction>` to :ref:`Tautology<test_tautology>` are binary operations which take in 2 inputs, in this case I named them ``x`` and ``y``
 * :ref:`Contradiction<test_contradiction>` always returns :ref:`False<test_what_is_false>`
-* :ref:`Converse Implication <test_converse_implication>` returns ``x or not y``
-* :ref:`Converse NonImplication <test_converse_non_implication>` returns ``not x and y``
-* :ref:`Exclusive Disjunction <test_exclusive_disjunction>` returns ``x != y``
+* :ref:`Converse Implication<test_converse_implication>` returns ``x or not y``
+* :ref:`Converse NonImplication<test_converse_non_implication>` returns ``not x and y``
+* :ref:`Exclusive Disjunction<test_exclusive_disjunction>` returns ``x != y``
 * :ref:`Logical Conjunction<test_logical_conjunction>` returns ``x and y``
 * :ref:`Logical Disjunction<test_logical_disjunction>` returns ``x or y``
 * :ref:`Logical Equality<test_logical_equality>` returns ``x == y``
