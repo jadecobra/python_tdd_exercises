@@ -139,7 +139,7 @@ green: make it pass
 
     AssertionError: (True, False) is not false
 
-  I change the `return statement`_ to return the second input because it is the same as the expectation
+  ``y`` is :ref:`False<test_what_is_false>`, I remove ``x``
 
   .. code-block:: python
 
@@ -165,14 +165,12 @@ green: make it pass
 
     AssertionError: (False, True) is not false
 
-  the first input matches the expectation, I remove the second input from the `return statement`_
+  ``x`` is :ref:`False<test_what_is_false>`, I remove ``y``
 
   .. code-block:: python
 
     def project_first(x, y):
         return x
-
-  the name is a clue
 
 * there is another :ref:`AttributeError`
 
