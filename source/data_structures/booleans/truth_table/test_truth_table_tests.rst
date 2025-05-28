@@ -1190,10 +1190,10 @@ I ran tests for the operations of the `Truth Table`_ involving booleans_ which c
 * :ref:`Contradiction<test_contradiction>` always returns :ref:`False<test_what_is_false>`
 * :ref:`Converse Implication<test_converse_implication>` returns ``x or not y``
 * :ref:`Converse NonImplication<test_converse_non_implication>` returns ``not x and y``
-* :ref:`Exclusive Disjunction<test_exclusive_disjunction>` returns ``x != y``
+* :ref:`Exclusive Disjunction<test_exclusive_disjunction>` returns ``not (x and y) and (x or y)``
 * :ref:`Logical Conjunction<test_logical_conjunction>` returns ``x and y``
 * :ref:`Logical Disjunction<test_logical_disjunction>` returns ``x or y``
-* :ref:`Logical Equality<test_logical_equality>` returns ``x == y``
+* :ref:`Logical Equality<test_logical_equality>` returns ``(not x or y) and (x or not y)``
 * :ref:`Logical NAND<test_logical_nand>` returns ``not (x and y)``
 * :ref:`Logical NOR<test_logical_nor>` returns ``not (x or y)``
 * :ref:`Material Implication<test_material_implication>` returns ``not x or y``
