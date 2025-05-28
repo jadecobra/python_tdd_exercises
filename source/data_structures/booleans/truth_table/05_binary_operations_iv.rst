@@ -16,7 +16,7 @@ truth table: Binary Operations IV
 requirements
 *********************************************************************************
 
-:doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` with ``truth_table`` as the name of the project
+:ref:`Binary Operations III<truth table: Binary Operations III>`
 
 ----
 
@@ -98,7 +98,7 @@ refactor: make it better
 
   the test is still passing
 
-* then I add another case
+* I add another case
 
   .. code-block:: python
 
@@ -238,29 +238,13 @@ refactor: make it better
 
   the test passes
 
-* I want to factor out not_ since it happens 2 times
+* I want to factor out not_ since it happens 2 times, I rewrite the statement in terms of not_
 
   .. code-block:: python
 
     def logical_nor(p, q):
-        return not (p and q)
+        return not p not or not q
         return not p and not q
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: True is not false
-
-  I made a mistake, the `return statement`_ is :ref:`logical nand<test_logical_nand>`. I multiply the statement to show the mistake
-
-  .. code-block:: python
-
-    def logical_nor(p, q):
-        return not (p and q)
-        return not p not and not q
-        return not p and not q
-
 
   the terminal shows SyntaxError_
 
@@ -268,7 +252,7 @@ refactor: make it better
 
     SyntaxError: invalid syntax
 
-  not_ and_ is or_, I should have used not_ or_, I change the `return statement`_
+  I comment out the line then add the correct statement
 
   .. code-block:: python
 
@@ -394,31 +378,28 @@ refactor: make it better
 
   and the test is still green
 
-* This test expects :ref:`True<test_what_is_true>` in 2 of the cases and :ref:`False<test_what_is_false>`  in the other 2. I use or_ to put the 2 statements that return :ref:`False<test_what_is_false>` together
+* this test expects :ref:`True<test_what_is_true>` in 2 of the cases and :ref:`False<test_what_is_false>`  in the other 2. I use or_ to put the 2 statements that return :ref:`False<test_what_is_false>` together
 
   .. code-block:: python
 
     def logical_equality(p, q):
         if (not p and q) or (p and not q):
             return False
-        else:
-            return True
         if not p and q:
             return False
         if p and not q:
             return False
         return True
 
-  still green. I use not_ to write the `return statement`_
+  still green. I remove the other `if statements`_ then use not_ to write the `return statement`_
 
   .. code-block:: python
 
     def logical_equality(p, q):
-        return not ((not p and q) or (p and not q):)
+        return not ((not p and q) or (p and not q)):
         if (not p and q) or (p and not q):
             return False
-        else:
-            return True
+        return True
 
   the test is still green. I multiply not_ by every symbol in the parentheses
 
@@ -434,16 +415,13 @@ refactor: make it better
 
     SyntaxError: invalid syntax
 
-  I fix the line
-
-  - not_ and_ is or_
-  - not_ or_ is and_
+  I change not_ and_ to or_ in both parentheses and not_ or_ to and_ in between them
 
   .. code-block:: python
 
     def logical_equality(p, q):
         return (not not p or not q) and (not p or not not q)
-        return not ((not p and q) or (p and not q):)
+        return not ((not p and q) or (p and not q))
 
   the test is green again. I remove not_ not_
 
@@ -451,7 +429,7 @@ refactor: make it better
 
     def logical_equality(p, q):
         return (p or not q) and (not p or q)
-        return not ((not p and q) or (p and not q):)
+        return not ((not p and q) or (p and not q))
 
   the terminal shows green. I remove the other statements
 
@@ -460,7 +438,7 @@ refactor: make it better
     def logical_equality(p, q):
         return (p or not q) and (not p or q)
 
-  and all tests are still passing.
+  and all the tests are still passing.
 
 * All of this could have been done with the ``==`` symbol, since the 2 cases where :ref:`True<test_what_is_true>` is the result are cases where ``p`` and ``q`` are the same
 
@@ -564,7 +542,7 @@ refactor: make it better
 
   the test is still passing
 
-* I add a `return statement` with not_
+* there is only one case where this one returns :ref:`False<test_what_is_false>`, I add a `return statement`
 
   .. code-block:: python
 
@@ -574,7 +552,7 @@ refactor: make it better
             return False
         return True
 
-  still green, I "multiply" not_ by the symbols in the parentheses
+  the test is still green, I "multiply" not_ by the symbols in the parentheses
 
   .. code-block:: python
 
@@ -588,7 +566,7 @@ refactor: make it better
 
     SyntaxError: invalid syntax
 
-  I fix the line
+  I change not_ and_ to or_
 
   .. code-block:: python
 
