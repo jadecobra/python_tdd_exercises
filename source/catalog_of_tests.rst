@@ -155,14 +155,21 @@ test_lists
 #. :ref:`test_make_a_list`
 #. :ref:`test_make_a_list_w_square_brackets`
 #. :ref:`test_make_a_list_from_an_iterable`
-#. :ref:`test_add_to_a_list`
-#. :ref:`test_remove_from_a_list`
-#. :ref:`test_remove_from_a_list_when_item_occurs_multiple_times`
-#. :ref:`test_remove_last_item_from_a_list`
+#. :ref:`test_attributes_and_methods_of_lists`
+#. :ref:`test_append_adds_to_a_list`
+#. :ref:`test_clear_empties_a_list`
+#. :ref:`test_copy_a_list`
+#. :ref:`test_count_number_of_times_item_is_in_a_list`
+#. :ref:`test_extend_makes_a_list_longer`
+#. :ref:`test_index_returns_position_of_item_in_a_list`
+#. :ref:`test_insert_places_item_at_given_index_in_a_list`
+#. :ref:`test_pop_removes_and_returns_last_item_in_a_list`
+#. :ref:`test_remove_first_occurrence_of_item_from_a_list`
+#. :ref:`test_reverse_a_list`
+#. :ref:`test_sort_a_list`
 #. :ref:`test_view_items_in_a_list`
 #. :ref:`test_view_parts_of_a_list`
 #. :ref:`test_index_error`
-#. :ref:`test_attributes_and_methods_of_lists`
 
 *********************************************************************************
 test_list_comprehensions

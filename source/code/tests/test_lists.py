@@ -84,7 +84,7 @@ class TestLists(unittest.TestCase):
         self.assertEqual(a_list.copy(), [0, 1, 2, 3])
         self.assertEqual(a_list, [0, 1, 2, 3])
 
-    def test_count_occurrence_of_item_in_a_list(self):
+    def test_count_number_of_times_item_is_in_a_list(self):
         a_list = [0, 2, 1, 2, 3, 2]
         self.assertEqual(a_list.count(0), 1)
         self.assertEqual(a_list.count(2), 3)
@@ -110,7 +110,7 @@ class TestLists(unittest.TestCase):
         self.assertIsNone(a_list.insert(0, 1))
         self.assertEqual(a_list, [1, 0, 1, 2, 3])
 
-    def test_pop_removes_and_returns_the_last_item_in_a_list(self):
+    def test_pop_removes_and_returns_last_item_in_a_list(self):
         a_list = [0, 1, 2, 3]
         self.assertEqual(a_list.pop(), 3)
         self.assertEqual(a_list, [0, 1, 2])
