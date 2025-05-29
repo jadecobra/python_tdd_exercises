@@ -316,6 +316,14 @@ the remove_ :ref:`method<functions>` takes away the first item when the item exi
 ----
 
 *********************************************************************************
+test_remove_from_a_list_when_item_not_in_list
+*********************************************************************************
+
+ADD TEXT
+
+----
+
+*********************************************************************************
 test_remove_last_item_from_a_list
 *********************************************************************************
 
@@ -378,8 +386,9 @@ I change the expected values to match
 all the tests are still green
 
 ----
+
 *********************************************************************************
-test_remove_item_from_empty_list
+test_remove_last_item_from_empty_list
 *********************************************************************************
 
 ADD TEXT
@@ -835,8 +844,9 @@ green: make it pass
 
   and the terminal shows passing tests
 
-refactor: make it better
-#################################################################################
+*********************************************************************************
+review
+*********************************************************************************
 
 There are more :ref:`methods<functions>` listed than what have been tested, You can make a guess at what some of them do from their names
 
@@ -853,10 +863,6 @@ There are more :ref:`methods<functions>` listed than what have been tested, You 
 * sort - does this sort the items in the list?
 
 You can add tests for these :ref:`methods<functions>` to find out what they do or `read more about lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list%20remove#more-on-lists>`_
-
-*********************************************************************************
-review
-*********************************************************************************
 
 * Lists are represented with ``[]``
 * Lists can be made with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_
