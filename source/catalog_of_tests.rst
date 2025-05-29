@@ -162,7 +162,7 @@ test_lists
 #. :ref:`test_view_items_in_a_list`
 #. :ref:`test_view_parts_of_a_list`
 #. :ref:`test_index_error`
-#. :ref:`test_list_attributes_and_methods`
+#. :ref:`test_attributes_and_methods_of_lists`
 
 *********************************************************************************
 test_list_comprehensions

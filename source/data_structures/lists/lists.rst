@@ -112,11 +112,12 @@ green: make it pass
 
   the test passes
 
-refactor: make it better
-#################################################################################
+---
 
+*********************************************************************************
 test_make_a_list_w_square_brackets
----------------------------------------------------------------------------------
+*********************************************************************************
+
 I can make a list with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_ and the passing test shows I can make a list with ``[]``. I add a test for it
 
 .. code-block:: python
@@ -141,8 +142,9 @@ I like making a list with square brackets it uses less characters
 
 ----
 
+*********************************************************************************
 test_make_a_list_from_an_iterable
----------------------------------------------------------------------------------
+*********************************************************************************
 
 I add another test
 
@@ -275,11 +277,11 @@ I change the values to match the terminal
 
 the test passes
 
-refactor: make it better
-#################################################################################
+----
 
+*********************************************************************************
 test_remove_from_a_list_when_item_occurs_multiple_times
----------------------------------------------------------------------------------
+*********************************************************************************
 
 I want to see what happens when there is more than one of the same item in a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ and I call ``list.remove(item)``
 
@@ -313,8 +315,9 @@ the remove_ :ref:`method<functions>` takes away the first item when the item exi
 
 ----
 
+*********************************************************************************
 test_remove_last_item_from_a_list
----------------------------------------------------------------------------------
+*********************************************************************************
 
 I add another test
 
@@ -373,6 +376,13 @@ I change the expected values to match
       self.assertEqual(a_list, [0, 1, 2])
 
 all the tests are still green
+
+----
+*********************************************************************************
+test_remove_item_from_empty_list
+*********************************************************************************
+
+ADD TEXT
 
 ----
 
@@ -611,15 +621,16 @@ refactor: make it better
 
 ----
 
+*********************************************************************************
 test_view_parts_of_a_list
----------------------------------------------------------------------------------
+*********************************************************************************
 
 I add another test
 
 .. code-block:: python
 
   def test_view_parts_of_a_list(self):
-      a_list = ['first', 'second', 'third', 'fourth']
+      a_list = ['1st', '2nd', '3rd', '4th']
 
       self.assertEqual(a_list[0:2], [])
 
@@ -710,7 +721,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_list_attributes_and_methods
+test_attributes_and_methods_of_lists
 *********************************************************************************
 
 The chapter on :ref:`classes` shows how to view the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of an :ref:`object<classes>` by using the dir_ :ref:`function<functions>`. Let us try it for `lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
@@ -722,7 +733,7 @@ I add a failing test
 
 .. code-block:: python
 
-  def test_list_attributes_and_methods(self):
+  def test_attributes_and_methods_of_lists(self):
       self.assertEqual(
           dir(list),
           []
@@ -749,7 +760,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_list_attributes_and_methods(self):
+    def test_attributes_and_methods_of_lists(self):
         self.maxDiff = None
         self.assertEqual(
             dir(list),
@@ -766,7 +777,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_list_attributes_and_methods(self):
+    def test_attributes_and_methods_of_lists(self):
         self.maxDiff = None
         self.assertEqual(
             dir(list),
@@ -842,8 +853,6 @@ There are more :ref:`methods<functions>` listed than what have been tested, You 
 * sort - does this sort the items in the list?
 
 You can add tests for these :ref:`methods<functions>` to find out what they do or `read more about lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list%20remove#more-on-lists>`_
-
-.. _lists_review:
 
 *********************************************************************************
 review
