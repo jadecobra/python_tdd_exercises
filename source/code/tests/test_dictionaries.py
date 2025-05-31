@@ -117,7 +117,7 @@ class TestDictionaries(unittest.TestCase):
         self.assertIsNone(a_dictionary.get('non_existent_key', None))
         self.assertEqual(a_dictionary.get('key1', None), 'value1')
 
-    def test_dictionary_attributes_and_methods(self):
+    def test_attributes_and_methods_of_dictionaries(self):
         self.maxDiff = None
         self.assertEqual(
             dir(dictionaries.a_dict()),

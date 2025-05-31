@@ -196,7 +196,7 @@ test_dictionaries
 #. :ref:`test_list_dictionary_keys`
 #. :ref:`test_key_error`
 #. :ref:`test_get_value_when_key_does_not_exist`
-#. :ref:`test_dictionary_attributes_and_methods_and_methods`
+#. :ref:`test_attributes_and_methods_of_dictionaries_and_methods`
 #. :ref:`test_set_default_for_key`
 #. :ref:`test_add_two_dictionaries`
 #. :ref:`test_pop_item_from_dictionary`

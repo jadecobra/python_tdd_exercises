@@ -844,7 +844,7 @@ I add a new test to ``TestDictionaries``
 
 .. code-block:: python
 
-  def test_dictionary_attributes_and_methods(self):
+  def test_attributes_and_methods_of_dictionaries(self):
       self.maxDiff = None
       self.assertEqual(
           dir(dictionaries.a_dict()),
@@ -869,7 +869,7 @@ I copy the expected values shown in the terminal to make the test pass
 
 .. code-block:: python
 
-  def test_dictionary_attributes_and_methods(self):
+  def test_attributes_and_methods_of_dictionaries(self):
       self.maxDiff = None
       self.assertEqual(
           dir(dictionaries.a_dict()),

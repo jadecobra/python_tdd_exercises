@@ -246,7 +246,7 @@ refactor: make it better
 
 
 *********************************************************************************
-test_classes_w_attributes_and_methods
+test_attributes_and_methods_of_classes
 *********************************************************************************
 
 Since I know how to define classes with methods and how to define classes with attributes, what happens when I define a class with both?
@@ -258,7 +258,7 @@ I add another test for a class that has both attributes and methods
 
 .. code-block:: python
 
-  def test_classes_w_attributes_and_methods(self):
+  def test_attributes_and_methods_of_classes(self):
       self.assertEqual(
           classes.ClassWithAttributesAndMethods.attribute,
           'attribute'
@@ -289,7 +289,7 @@ I make ``classes.py`` to make the tests pass by defining the class, attribute an
 
 
 *********************************************************************************
-test_object_attributes_and_methods
+test_attributes_and_methods_of_objects
 *********************************************************************************
 
 To view what :ref:`attributes<AttributeError>` and ``methods`` are defined for any :ref:`object<classes>` I can call ``dir`` on the :ref:`object<classes>`.
@@ -303,7 +303,7 @@ I add a test to ``test_classes.py``
 
 .. code-block:: python
 
-  def test_object_attributes_and_methods(self):
+  def test_attributes_and_methods_of_objects(self):
     self.assertEqual(
         dir(classes.ClassWithAttributesAndMethods),
         []
@@ -318,7 +318,7 @@ I copy the values from the terminal to change the expectation of the test
 
 .. code-block:: python
 
-  def test_object_attributes_and_methods(self):
+  def test_attributes_and_methods_of_objects(self):
       self.assertEqual(
           dir(classes.ClassWithAttributesAndMethods),
           [
