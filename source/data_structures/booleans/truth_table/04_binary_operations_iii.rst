@@ -168,7 +168,7 @@ refactor: make it better
             return True
         return (not p and q) or (p and not q)
 
-  I can use a simple `return statement`_
+  I can change it to a simple `return statement`_
 
   .. code-block:: python
 
@@ -180,7 +180,7 @@ refactor: make it better
             return True
         return (not p and q) or (p and not q)
 
-  even simpler
+  there is an even simpler statement
 
   .. code-block:: python
 
@@ -410,7 +410,7 @@ refactor: make it better
             return False
         return True
 
-* this :ref:`function<functions>` returns the same value as ``p``. I add another `return statement`_
+* I add a `return statement`_ to show that this :ref:`function<functions>` returns the same value as ``p``
 
   .. code-block:: python
 
@@ -546,7 +546,7 @@ refactor: make it better
 
     SyntaxError: invalid syntax
 
-  I change not_ and_ to or_ be correct
+  I change not_ and_ to or_ to be correct
 
   .. code-block:: python
 
@@ -575,7 +575,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-Binary Operations take 2 inputs, each of which could be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``p`` and the second ``q``, the tests show that
+Binary Operations take 2 inputs, each of which could be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``p`` and the second one ``q``, the tests show that
 
 * :ref:`Converse Implication <test_converse_implication>` returns ``p or not q``
 * :ref:`Project First <test_project_first>` always returns ``p``
