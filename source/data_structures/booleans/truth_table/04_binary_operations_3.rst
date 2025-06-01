@@ -91,7 +91,7 @@ refactor: make it better
 
   the test is green again
 
-* I add the next case
+* I add the third case
 
   .. code-block:: python
 
@@ -351,7 +351,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add the next case
+* I add the second case
 
   .. code-block:: python
 
@@ -387,7 +387,7 @@ refactor: make it better
 
   the test passes
 
-* I add the next case
+* I add the last case
 
   .. code-block:: python
 
