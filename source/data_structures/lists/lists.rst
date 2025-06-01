@@ -127,6 +127,9 @@ I add a test
 
 .. code-block:: python
 
+  def test_make_a_list(self):
+      ...
+
   def test_make_a_list_w_square_brackets(self):
       self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 4)))
 
@@ -161,6 +164,9 @@ I add another test
 
 .. code-block:: python
 
+  def test_make_a_list_w_square_brackets(self):
+      ...
+
   def test_make_a_list_from_an_iterable(self):
       self.assertEqual(range(4), [0, 1, 2, 3])
 
@@ -173,7 +179,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-``range(x)`` makes an iterable_ of numbers that go from a default of ``0`` to the given number minus ``1``, in this case it will be ``0`` to ``3``
+``range(x)`` makes a range_ object_ which is an iterable_ of numbers that go from a default of ``0`` to the given number minus ``1``, in this case it will be ``0`` to ``3``
 
 I use it as input to the :ref:`list<lists>` constructor_
 
@@ -197,6 +203,9 @@ red: make it fail
 I add a failing test
 
 .. code-block:: python
+
+  def test_make_a_list_w_an_iterable(self):
+      ...
 
   def test_attributes_and_methods_of_lists(self):
       self.assertEqual(
@@ -300,7 +309,7 @@ green: make it pass
 
   the terminal shows passing tests. We can ignore anything with double underscores (__) for now
 
-* I make a todo list with the methods so I can test them
+* I make a TODO list with the :ref:`methods<functions>` so I can test them
 
   .. code-block:: python
 
@@ -333,42 +342,86 @@ I add a test for the append_ :ref:`method<functions>`
 
 .. code-block:: python
 
+    def test_attributes_and_methods_of_lists(self):
+        ...
+
     def test_append(self):
         a_list = [0, 1, 2, 3]
         self.assertIsNone(a_list.append())
 
 the terminal shows :ref:`TypeError`
 
+.. code-block:: python
+
+  TypeError: list.append() takes exactly one argument (0 given)
+
+green: make it pass
+#################################################################################
+
+I add input
+
+.. code-block:: python
+
+  self.assertIsNone(a_list.append(4))
+
 the terminal shows green. The append_ :ref:`method<functions>` returns None_ when it is called, but what does it do to the list?
+
+refactor: make it better
+#################################################################################
+
+I add another assert_ to find out
 
 .. code-block:: python
 
   self.assertIsNone(a_list.append(4))
   self.assertEqual(a_list, [0, 1, 2, 3])
 
-the terminal shows :ref:`AssertionError` because the values in ``a_list`` change after ``a_list.append(4)`` is called
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
   AssertionError: Lists differ: [0, 1, 2, 3, 4] != [0, 1, 2, 3]
 
-green: make it pass
-#################################################################################
-
-I change the values in the test to match the values in the terminal
+the values in ``a_list`` change after the append_ :ref:`method<functions>` is called. I change the values in the test to match the values in the terminal
 
 .. code-block:: python
 
-    def test_add_to_a_list(self):
-        a_list = [0, 1, 2, 3]
+  self.assertEqual(a_list, [0, 1, 2, 3, 4])
 
-        self.assertEqual(a_list, [0, 1, 2, 3])
-        a_list.append(4)
-        self.assertEqual(a_list, [0, 1, 2, 3, 4])
+the test passes, then I rename the test
 
-the test passes
+.. code-block:: python
 
-I started with a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ that had 4 things, added something using the append_ :ref:`method<functions>`, then checked if the things stayed the same
+  def test_append_adds_to_a_list(self):
+      a_list = [0, 1, 2, 3]
+      self.assertIsNone(a_list.append(4))
+      self.assertEqual(a_list, [0, 1, 2, 3, 4])
+
+I remove append_ from the TODO list
+
+.. code-block:: python
+
+  'clear',
+  'copy',
+  'count',
+  'extend',
+  'index',
+  'insert',
+  'pop',
+  'remove',
+  'reverse',
+  'sort'
+
+----
+
+*********************************************************************************
+test_clear_empties_a_list
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+I add a test for the clear_ :ref:`method<functions>`
 
 ----
 
@@ -482,7 +535,7 @@ the terminal shows :ref:`AssertionError`
   >       self.assertEqual(last_item, 0)
   E       AssertionError: 3 != 0
 
-``last_item = a_list.pop()`` calls the pop_ :ref:`method<functions>` of ``a_list`` and names the result ``last_item``
+``last_item = a_list.pop()`` calls the `pop <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` of ``a_list`` and names the result ``last_item``
 
 I change the value in the test to match the value that was popped
 

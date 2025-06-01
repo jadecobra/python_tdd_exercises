@@ -34,8 +34,11 @@
 .. _cd: https://man7.org/linux/man-pages/man1/cd.1p.html
 .. _chmod: https://en.wikipedia.org/wiki/Chmod
 .. _class: https://docs.python.org/3/reference/lexical_analysis.html#keywords
-.. _constructor: https://en.wikipedia.org/wiki/Constructor_(object-oriented_programming)
+.. _clear: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _comparisons: https://docs.python.org/3/reference/expressions.html?highlight=ternary%20conditional#comparisons
+.. _constructor: https://en.wikipedia.org/wiki/Constructor_(object-oriented_programming)
+.. _copy: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
+.. _count: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _datetime: https://docs.python.org/3/library/datetime.html?highlight=time%20difference#module-datetime
 .. _datetime.datetime: https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects
 .. _datetime.datetime.strptime: https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime.datetime.strptime
@@ -46,6 +49,7 @@
 .. _dir: https://docs.python.org/3/library/functions.html?highlight=dir#dir
 .. _echo: https://man7.org/linux/man-pages/man1/echo.1.html
 .. _else: https://docs.python.org/3/reference/compound_stmts.html#else
+.. _extend: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _float: https://docs.python.org/3/library/functions.html#float
 .. _floats: https://docs.python.org/3/library/functions.html#float
 .. _floor (integer) division: https://en.wikipedia.org/wiki/Division_(mathematics)#Division_in_different_contexts
@@ -54,7 +58,9 @@
 .. _f-strings: https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals
 .. _help system: https://docs.python.org/3/library/functions.html?highlight=dir#help
 .. _history: https://man7.org/linux/man-pages/man3/history.3.html
+.. _index: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _int: https://docs.python.org/3/library/functions.html?highlight=int#int
+.. _insert: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _integer: https://docs.python.org/3/library/functions.html?highlight=int#int
 .. _integers: https://docs.python.org/3/library/functions.html?highlight=int#int
 .. _iterable: https://docs.python.org/3/glossary.html#term-iterable
@@ -66,7 +72,6 @@
 .. _objects: https://docs.python.org/3/glossary.html#term-object
 .. _or: https://docs.python.org/3/reference/expressions.html#or
 .. _pip: https://pypi.org/project/pip/
-.. _pop: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _pytest: https://docs.pytest.org/
 .. _pytest-watch: https://pypi.org/project/pytest-watch/
 .. _python koans:
@@ -82,6 +87,8 @@
 .. _random.choice: https://docs.python.org/3/library/random.html#random.choice
 .. _range: https://docs.python.org/3/library/stdtypes.html?highlight=range#range
 .. _remove: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
+.. _reverse: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
+.. _sort: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _static method: https://docs.python.org/3/library/functions.html#staticmethod
 .. _set: https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
 .. _sets: https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
