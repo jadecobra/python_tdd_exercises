@@ -3,6 +3,6 @@
 data structures: Lists: tests
 #################################################################################
 
-Here is the code in ``tests/test_lists.py``
+the code in ``tests/test_lists.py`` from :ref:`lists`
 
 .. literalinclude:: tests/test_lists.py

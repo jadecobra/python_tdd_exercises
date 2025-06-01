@@ -3,6 +3,6 @@
 data structures: None: tests
 #################################################################################
 
-Here is the code in ``tests/test_none.py``
+the code in ``tests/test_none.py`` from :ref:`None`
 
 .. literalinclude:: tests/test_none.py
