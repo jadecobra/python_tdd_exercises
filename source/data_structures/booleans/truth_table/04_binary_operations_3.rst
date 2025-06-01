@@ -278,7 +278,7 @@ refactor: make it better
 
   the test is still green
 
-* I add the last case
+* I add the fourth case
 
   .. code-block:: python
 
@@ -316,7 +316,7 @@ test_project_first
 red: make it fail
 #################################################################################
 
-I add a new test
+I add a test
 
 .. code-block:: python
 
@@ -462,7 +462,7 @@ the terminal shows :ref:`AttributeError`
 green: make it pass
 #################################################################################
 
-I add a :ref:`function<functions>` definition for it in ``truth_table.py``
+I add a :ref:`function<functions>` definition
 
 .. code-block:: python
 
@@ -514,7 +514,7 @@ refactor: make it better
 
   the test passes
 
-* I add the last case
+* I add another case
 
   .. code-block:: python
 
