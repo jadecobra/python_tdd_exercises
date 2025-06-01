@@ -643,9 +643,13 @@ refactor: make it better
 
     AssertionError: 0 != 1
 
-  I change the value. The count_ method returns ``0`` when the item is not in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+  I change the value
 
-* I rename the test
+  .. code-block:: python
+
+    self.assertEqual(a_list.count(9), 0)
+
+  the test passes. The count_ method returns ``0`` when the item is not in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. I rename the test
 
   .. code-block:: python
 
@@ -653,7 +657,19 @@ refactor: make it better
         a_list = [0, 2, 1, 2, 3, 2]
         self.assertEqual(a_list.count(0), 1)
         self.assertEqual(a_list.count(2), 3)
-        self.assertEqual(a_list.count(9), 1)
+        self.assertEqual(a_list.count(9), 0)
+
+* I remove count_ from the TODO list
+
+  .. code-block:: python
+
+    'extend',
+    'index',
+    'insert',
+    'pop',
+    'remove',
+    'reverse',
+    'sort'
 
 ----
 
