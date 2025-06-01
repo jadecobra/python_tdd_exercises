@@ -482,6 +482,182 @@ I remove clear_ from the TODO list
 ----
 
 *********************************************************************************
+test_copy_a_list
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+I add another test
+
+.. code-block:: python
+
+  def test_clear_empties_a_list(self):
+      ...
+
+  def test_copy(self):
+      a_list = [0, 1, 2, 3]
+      self.assertIsNone(a_list.copy())
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: [0, 1, 2, 3] is not None
+
+green: make it pass
+#################################################################################
+
+I add the value and change the assert_ :ref:`method<functions>`
+
+.. code-block:: python
+
+  def test_copy(self):
+      a_list = [0, 1, 2, 3]
+      self.assertEqual(a_list.copy(), [0, 1, 2, 3])
+
+the copy_ :ref:`method<functions>` returns a copy of the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ but what does it do to the original?
+
+refactor: make it better
+#################################################################################
+
+I add another assert_
+
+.. code-block:: python
+
+  self.assertEqual(a_list.copy(), [0, 1, 2, 3])
+  self.assertEqual(a_list, [0, 1, 2, 3])
+
+the terminal still shows green, the original `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ is still the same. I change the name of the test
+
+.. code-block:: python
+
+  def test_copy_a_list(self):
+      a_list = [0, 1, 2, 3]
+      self.assertEqual(a_list.copy(), [0, 1, 2, 3])
+      self.assertEqual(a_list, [0, 1, 2, 3])
+
+the test is still green, I remove copy_ from the TODO list
+
+.. code-block:: python
+
+  'count',
+  'extend',
+  'index',
+  'insert',
+  'pop',
+  'remove',
+  'reverse',
+  'sort'
+
+----
+
+*********************************************************************************
+test_count
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+I add a test for the next :ref:`method<functions>`
+
+.. code-block:: python
+
+  def test_count(self):
+      a_list = [0, 1, 2, 3]
+      self.assertIsNone(a_list.count())
+
+the terminal shows :ref:`TypeError`
+
+.. code-block:: python
+
+  TypeError: list.count() takes exactly one argument (0 given)
+
+red: make it fail
+#################################################################################
+
+I pass a value to the call
+
+.. code-block:: python
+
+  def test_count(self):
+      a_list = [0, 1, 2, 3]
+      self.assertIsNone(a_list.count(0))
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: 1 is not None
+
+green: make it pass
+#################################################################################
+
+I add the value and change the assert_ :ref:`method<functions>`
+
+.. code-block:: python
+
+  def test_count(self):
+      a_list = [0, 1, 2, 3]
+      self.assertEqual(a_list.count(0), 1)
+
+the test passes. It looks like the count_ :ref:`method<functions>` returns the number of times an item appears
+
+refactor: make it better
+#################################################################################
+
+* I change the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ then add another assert_ call to be sure
+
+  .. code-block:: python
+
+    def test_count(self):
+        a_list = [0, 2, 1, 2, 3, 2]
+        self.assertEqual(a_list.count(0), 1)
+        self.assertEqual(a_list.count(2), 1)
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 3 != 1
+
+  I change the value to match
+
+  .. code-block:: python
+
+    self.assertEqual(a_list.count(2), 3)
+
+  the test passes
+
+* I add another assertion to see what happens when I try to count an item that is not in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+
+  .. code-block:: python
+
+    self.assertEqual(a_list.count(0), 1)
+    self.assertEqual(a_list.count(2), 3)
+    self.assertEqual(a_list.count(9), 1)
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 0 != 1
+
+  I change the value. The count_ method returns ``0`` when the item is not in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+
+* I rename the test
+
+  .. code-block:: python
+
+    def test_count_times_item_is_in_a_list(self):
+        a_list = [0, 2, 1, 2, 3, 2]
+        self.assertEqual(a_list.count(0), 1)
+        self.assertEqual(a_list.count(2), 3)
+        self.assertEqual(a_list.count(9), 1)
+
+----
+
+*********************************************************************************
 test_remove_from_a_list
 *********************************************************************************
 
