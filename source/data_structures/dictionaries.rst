@@ -864,7 +864,7 @@ I copy the expected values shown in the terminal to make the test pass
 
 .. note::
 
-  Your results may vary based on your version of Python
+  Your results can be different because of your version of Python
 
 
 .. code-block:: python

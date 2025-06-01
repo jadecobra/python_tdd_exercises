@@ -10,8 +10,7 @@ class TestLists(unittest.TestCase):
         self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 3)))
 
     def test_make_a_list_w_an_iterable(self):
-        iterable = range(4)
-        self.assertEqual(list(iterable), [0, 1, 2, 3])
+        self.assertEqual(list(range(4)), [0, 1, 2, 3])
 
     def test_attributes_and_methods_of_lists(self):
         self.maxDiff = None

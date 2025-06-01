@@ -186,19 +186,158 @@ the test passes. I can make a :ref:`list <lists>` from any iterable_ by using th
 ----
 
 *********************************************************************************
-test_add_to_a_list
+test_attributes_and_methods_of_lists
+*********************************************************************************
+
+I can look at the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of an :ref:`object<classes>` by using the dir_ :ref:`function<functions>` to see what I can do with `lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
+
+red: make it fail
+#################################################################################
+
+I add a failing test
+
+.. code-block:: python
+
+  def test_attributes_and_methods_of_lists(self):
+      self.assertEqual(
+          dir(list),
+          []
+      )
+
+the terminal shows :ref:`AssertionError`
+
+  .. code-block::python
+
+    AssertionError: Lists differ: ['__add__', '__class__', '__class_getitem_[552 chars]ort'] != []
+
+the terminal also shows a recommendation on how to see the differences between ``dir(list)`` and ``[]``
+
+  .. code-block:: python
+
+    Diff is 748 characters long. Set self.maxDiff to None to see it
+
+`unittest.TestCase.maxDiff`_ is an attribute of the `unittest.TestCase`_ :ref:`class <classes>` that sets the maximum number of characters to show when comparing 2 objects in the terminal, when it is set to :ref:`None` it shows all the differences
+
+green: make it pass
+#################################################################################
+
+* I add ``self.maxDiff`` to the test
+
+  .. code-block:: python
+
+    def test_attributes_and_methods_of_lists(self):
+        self.maxDiff = None
+        self.assertEqual(
+            dir(list),
+            []
+        )
+
+  the terminal shows a long list of items
+
+* I copy and paste the items from the terminal and remove the extra characters
+
+  .. note::
+
+    Your results can be different because of your version of Python
+
+  .. code-block:: python
+
+    def test_attributes_and_methods_of_lists(self):
+        self.maxDiff = None
+        self.assertEqual(
+            dir(list),
+            [
+                '__add__',
+                '__class__',
+                '__class_getitem__',
+                '__contains__',
+                '__delattr__',
+                '__delitem__',
+                '__dir__',
+                '__doc__',
+                '__eq__',
+                '__format__',
+                '__ge__',
+                '__getattribute__',
+                '__getitem__',
+                '__getstate__',
+                '__gt__',
+                '__hash__',
+                '__iadd__',
+                '__imul__',
+                '__init__',
+                '__init_subclass__',
+                '__iter__',
+                '__le__',
+                '__len__',
+                '__lt__',
+                '__mul__',
+                '__ne__',
+                '__new__',
+                '__reduce__',
+                '__reduce_ex__',
+                '__repr__',
+                '__reversed__',
+                '__rmul__',
+                '__setattr__',
+                '__setitem__',
+                '__sizeof__',
+                '__str__',
+                '__subclasshook__',
+                'append',
+                'clear',
+                'copy',
+                'count',
+                'extend',
+                'index',
+                'insert',
+                'pop',
+                'remove',
+                'reverse',
+                'sort'
+            ]
+        )
+
+  the terminal shows passing tests. We can ignore anything with double underscores (__) for now
+
+* I make a todo list with the methods so I can test them
+
+  .. code-block:: python
+
+    'append',
+    'clear',
+    'copy',
+    'count',
+    'extend',
+    'index',
+    'insert',
+    'pop',
+    'remove',
+    'reverse',
+    'sort'
+
+    # Exceptions Encountered
+    # AssertionError
+    # TypeError
+
+----
+
+*********************************************************************************
+test_append_adds_to_a_list
 *********************************************************************************
 
 red: make it fail
 #################################################################################
 
-I add a test for adding items to an existing `lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ with the append_ :ref:`method<functions>`
+I add a test for the append_ :ref:`method<functions>`
 
 .. code-block:: python
 
-    def test_add_to_a_list(self):
+    def test_append(self):
         a_list = [0, 1, 2, 3]
-        self.assertIsNone(a_list.append(4))
+        self.assertIsNone(a_list.append())
+
+the terminal shows :ref:`TypeError`
 
 the terminal shows green. The append_ :ref:`method<functions>` returns None_ when it is called, but what does it do to the list?
 
@@ -726,121 +865,6 @@ refactor: make it better
   the test passes
 
 ----
-
-*********************************************************************************
-test_attributes_and_methods_of_lists
-*********************************************************************************
-
-The chapter on :ref:`classes` shows how to view the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of an :ref:`object<classes>` by using the dir_ :ref:`function<functions>`. Let us try it for `lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
-
-red: make it fail
-#################################################################################
-
-I add a failing test
-
-.. code-block:: python
-
-  def test_attributes_and_methods_of_lists(self):
-      self.assertEqual(
-          dir(list),
-          []
-      )
-
-the terminal shows :ref:`AssertionError`
-
-  .. code-block::python
-
-    AssertionError: Lists differ: ['__add__', '__class__', '__class_getitem_[552 chars]ort'] != []
-
-green: make it pass
-#################################################################################
-
-* The terminal also shows a recommendation on how to see the differences between ``dir(list)`` and ``[]``
-
-  .. code-block:: python
-
-    Diff is 748 characters long. Set self.maxDiff to None to see it
-
-* `unittest.TestCase.maxDiff`_ is an attribute of the `unittest.TestCase`_ :ref:`class <classes>` that sets the maximum number of characters to show when comparing 2 objects in the terminal. When it is set to :ref:`None` there is no limit to the number of characters
-
-* I add ``self.maxDiff`` to the test
-
-  .. code-block:: python
-
-    def test_attributes_and_methods_of_lists(self):
-        self.maxDiff = None
-        self.assertEqual(
-            dir(list),
-            []
-        )
-
-  and the terminal shows a long list of items
-
-* I copy and paste the items from the terminal and remove the extra characters
-
-  .. note::
-
-    Your results may vary based on your version of Python
-
-  .. code-block:: python
-
-    def test_attributes_and_methods_of_lists(self):
-        self.maxDiff = None
-        self.assertEqual(
-            dir(list),
-            [
-                '__add__',
-                '__class__',
-                '__class_getitem__',
-                '__contains__',
-                '__delattr__',
-                '__delitem__',
-                '__dir__',
-                '__doc__',
-                '__eq__',
-                '__format__',
-                '__ge__',
-                '__getattribute__',
-                '__getitem__',
-                '__getstate__',
-                '__gt__',
-                '__hash__',
-                '__iadd__',
-                '__imul__',
-                '__init__',
-                '__init_subclass__',
-                '__iter__',
-                '__le__',
-                '__len__',
-                '__lt__',
-                '__mul__',
-                '__ne__',
-                '__new__',
-                '__reduce__',
-                '__reduce_ex__',
-                '__repr__',
-                '__reversed__',
-                '__rmul__',
-                '__setattr__',
-                '__setitem__',
-                '__sizeof__',
-                '__str__',
-                '__subclasshook__',
-                'append',
-                'clear',
-                'copy',
-                'count',
-                'extend',
-                'index',
-                'insert',
-                'pop',
-                'remove',
-                'reverse',
-                'sort'
-            ]
-        )
-
-  and the terminal shows passing tests
 
 *********************************************************************************
 review
