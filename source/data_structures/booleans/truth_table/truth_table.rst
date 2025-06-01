@@ -58,10 +58,10 @@ Operations
   :titlesonly:
 
   01_nullary_unary_operations
-  02_binary_operations_i
-  03_binary_operations_ii
-  04_binary_operations_iii
-  05_binary_operations_iv
+  02_binary_operations_1
+  03_binary_operations_2
+  04_binary_operations_3
+  05_binary_operations_4
   test_truth_table_tests
 
 ----
