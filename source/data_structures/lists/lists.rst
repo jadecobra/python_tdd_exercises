@@ -118,7 +118,7 @@ green: make it pass
 test_make_a_list_w_square_brackets
 *********************************************************************************
 
-I can make a list with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_ and the passing test shows I can make a list with ``[]``.
+I can make a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_ and the passing test shows I can make one with ``[]``.
 
 red: make it fail
 #################################################################################
@@ -149,7 +149,7 @@ I change the value to match the expectation
   def test_make_a_list_w_square_brackets(self):
       self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 3)))
 
-the test passes. Making a list with square brackets it uses less characters
+the test passes. Making a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ with square brackets uses less characters than with the constructor_
 
 ----
 
@@ -181,13 +181,13 @@ green: make it pass
 
 ``range(x)`` makes a range_ object_ which is an iterable_ of numbers that go from a default of ``0`` to the given number minus ``1``, in this case it will be ``0`` to ``3``
 
-I use it as input to the :ref:`list<lists>` constructor_
+I use it as input to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_
 
 .. code-block:: python
 
   self.assertEqual(list(iterable), [0, 1, 2, 3])
 
-the test passes. I can make a :ref:`list <lists>` from any iterable_ by using the :ref:`list <lists>` constructor_
+the test passes
 
 ----
 
@@ -195,7 +195,7 @@ the test passes. I can make a :ref:`list <lists>` from any iterable_ by using th
 test_attributes_and_methods_of_lists
 *********************************************************************************
 
-I can look at the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of an :ref:`object<classes>` by using the dir_ :ref:`function<functions>` to see what I can do with `lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_
+I can use the the dir_ :ref:`function<functions>` to look at the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
 red: make it fail
 #################################################################################
@@ -309,7 +309,7 @@ green: make it pass
 
   the terminal shows passing tests. We can ignore anything with double underscores (__) for now
 
-* I make a TODO list with the :ref:`methods<functions>` so I can test them
+* I copy and paste the :ref:`methods<functions>` to make a TODO list for tests to add
 
   .. code-block:: python
 
@@ -364,7 +364,7 @@ I add input
 
   self.assertIsNone(a_list.append(4))
 
-the terminal shows green. The append_ :ref:`method<functions>` returns None_ when it is called, but what does it do to the list?
+the terminal shows green. The append_ :ref:`method<functions>` returns None_ when it is called, but what does it do to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_?
 
 refactor: make it better
 #################################################################################
@@ -418,10 +418,66 @@ I remove append_ from the TODO list
 test_clear_empties_a_list
 *********************************************************************************
 
+I add a test for the clear_ :ref:`method<functions>`
+
+.. code-block:: python
+
+  def test_append_adds_to_a_list(self):
+      ...
+
+  def test_clear(self):
+      a_list = [0, 1, 2, 3]
+      self.assertIsNone(a_list.clear())
+
+the terminal shows green. The clear_ :ref:`method<functions>` returns :ref:`None` when it is called, what does it do to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_?
+
 red: make it fail
 #################################################################################
 
-I add a test for the clear_ :ref:`method<functions>`
+I add an assert_ statement
+
+.. code-block:: python
+
+  self.assertIsNone(a_list.clear())
+  self.assertEqual(a_list, [0, 1, 2, 3])
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: Lists differ: [] != [0, 1, 2, 3]
+
+green: make it pass
+#################################################################################
+
+I change the values to match
+
+.. code-block:: python
+
+  self.assertEqual(a_list, [])
+
+the test passes. I change the name of the test to be more descriptive
+
+.. code-block:: python
+
+  def test_clear_empties_a_list(self):
+      a_list = [0, 1, 2, 3]
+      self.assertIsNone(a_list.clear())
+      self.assertEqual(a_list, [])
+
+I remove clear_ from the TODO list
+
+.. code-block:: python
+
+  'copy',
+  'count',
+  'extend',
+  'index',
+  'insert',
+  'pop',
+  'remove',
+  'reverse',
+  'sort'
 
 ----
 
