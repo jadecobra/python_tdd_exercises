@@ -674,6 +674,26 @@ refactor: make it better
 ----
 
 *********************************************************************************
+test_extend
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+time for another test
+
+.. code-block:: python
+
+  def test_count_number_of_times_item_is_in_a_list(self):
+      ...
+
+  def test_extend(self):
+      a_list = [0, 1, 2, 3]
+      self.assertIsNone(a_list.extend())
+
+----
+
+*********************************************************************************
 test_remove_from_a_list
 *********************************************************************************
 
@@ -1171,26 +1191,12 @@ refactor: make it better
 review
 *********************************************************************************
 
-There are more :ref:`methods<functions>` listed than what have been tested, You can make a guess at what some of them do from their names
+I ran tests for `lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list%20remove#more-on-lists>`_
 
-* :ref:`append<test_add_to_a_list>` - adds an item to the list
-* clear - does this clear the items in the list?
-* copy - does this make a copy of the list?
-* count - does this count the number of items in the list?
-* extend - does this extend the list?
-* index
-* insert - does this place an item in the list? what's the difference between this and append?
-* :ref:`pop<test_remove_last_item_from_a_list>` - takes away the last item in the list
-* :ref:`remove<test_remove_from_a_list>` - takes away the first occurrence of a given item in the list
-* reverse - does this reverse the list?
-* sort - does this sort the items in the list?
-
-You can add tests for these :ref:`methods<functions>` to find out what they do or `read more about lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list%20remove#more-on-lists>`_
-
-* Lists are represented with ``[]``
-* Lists can be made with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_
-* Lists can hold any :ref:`object<classes>`
-* Lists can be changed after creation by performing an operation, this means they are mutable
+* they are represented with ``[]``
+* they can be made with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_
+* they can hold any :ref:`object<classes>`
+* they can be changed after creation by performing an operation, this means they are mutable
 
 Would you like to :ref:`test list comprehensions?<lists: list comprehensions>`
 
