@@ -691,6 +691,105 @@ time for another test
       a_list = [0, 1, 2, 3]
       self.assertIsNone(a_list.extend())
 
+the terminal shows :ref:`TypeError`
+
+.. code-block:: python
+
+  TypeError: list.extend() takes exactly one argument (0 given)
+
+green: make it pass
+#################################################################################
+
+I pass a value to the call
+
+.. code-block:: python
+
+  self.assertIsNone(a_list.extend(0))
+
+the terminal shows :ref:`TypeError`
+
+.. code-block:: python
+
+  TypeError: 'int' object is not iterable
+
+I change the value to an iterable_
+
+.. code-block:: python
+
+  self.assertIsNone(a_list.extend((0, 1, 2, 3)))
+
+the test passes. The extend_ :ref:`method<functions>` returns :ref:`None` when called, what does it do to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_?
+
+refactor: make it better
+#################################################################################
+
+
+* I add another assertion
+
+  .. code-block:: python
+
+    self.assertIsNone(a_list.extend((0, 1, 2, 3)))
+    self.assertEqual(a_list, [0, 1, 2, 3])
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: Lists differ: [0, 1, 2, 3, 0, 1, 2, 3] != [0, 1, 2, 3]
+
+  I change the values in the test to match
+
+  .. code-block:: python
+
+    self.assertEqual(a_list, [0, 1, 2, 3, 0, 1, 2, 3])
+
+  the test passes
+
+* I change the values given to the extend_ :ref:`method<functions>`
+
+  .. code-block:: python
+
+    def test_extend(self):
+        a_list = [0, 1, 2, 3]
+        self.assertIsNone(a_list.extend((4, 5, 6, 7)))
+        self.assertEqual(a_list, [0, 1, 2, 3, 0, 1, 2, 3])
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7] != [0, 1, 2, 3, 0, 1, 2, 3]
+
+  I change the values to match
+
+  .. code-block:: python
+
+    self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7])
+
+  the test passes
+
+* I change the name of the test
+
+  .. code-block:: python
+
+    def test_extend_makes_a_list_longer(self):
+        a_list = [0, 1, 2, 3]
+        self.assertIsNone(a_list.extend((4, 5, 6, 7)))
+        self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7])
+
+  the test is still green
+
+* I remove extend_ from the TODO list
+
+  .. code-block:: python
+
+    'index',
+    'insert',
+    'pop',
+    'remove',
+    'reverse',
+    'sort'
+
 ----
 
 *********************************************************************************
