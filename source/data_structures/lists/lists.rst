@@ -76,7 +76,7 @@ the terminal shows :ref:`TypeError`
 
   TypeError: list expected at most 1 argument, got 4
 
-* :ref:`TypeError` is raised because the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_ expects one argument but I gave four in the test. I am not following the signature for making lists
+* :ref:`TypeError` is raised because the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_ expects one argument but I gave four in the test
 * An iterable_ is an object with items I can go over one by one in a loop - tuples_, `lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_, sets_ and :ref:`dictionaries` are iterable_
 
 green: make it pass
@@ -103,7 +103,7 @@ green: make it pass
 
     AssertionError: [0, 1, 2, 3] != None
 
-* When I change the right side to match the values on the left from the terminal
+  when I change the right side to match the values on the left from the terminal
 
   .. code-block:: python
 
@@ -118,7 +118,12 @@ green: make it pass
 test_make_a_list_w_square_brackets
 *********************************************************************************
 
-I can make a list with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_ and the passing test shows I can make a list with ``[]``. I add a test for it
+I can make a list with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_ and the passing test shows I can make a list with ``[]``.
+
+red: make it fail
+#################################################################################
+
+I add a test
 
 .. code-block:: python
 
@@ -131,14 +136,17 @@ the terminal shows :ref:`AssertionError` for the last value
 
   AssertionError: Lists differ: [0, 1, 2, 3] != [0, 1, 2, 4]
 
-I change the value in the test to make it pass
+green: make it pass
+#################################################################################
+
+I change the value to match the expectation
 
 .. code-block:: python
 
   def test_make_a_list_w_square_brackets(self):
       self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 3)))
 
-I like making a list with square brackets it uses less characters
+the test passes. Making a list with square brackets it uses less characters
 
 ----
 
@@ -146,42 +154,32 @@ I like making a list with square brackets it uses less characters
 test_make_a_list_from_an_iterable
 *********************************************************************************
 
+red: make it fail
+#################################################################################
+
 I add another test
 
 .. code-block:: python
 
   def test_make_a_list_from_an_iterable(self):
-      iterable = range(4)
-      self.assertEqual(iterable, [])
+      self.assertEqual(range(4), [0, 1, 2, 3])
 
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: range(0, 4) != []
+  AssertionError: range(0, 4) != [0, 1, 2, 3]
+
+green: make it pass
+#################################################################################
 
 ``range(x)`` makes an iterable_ of numbers that go from a default of ``0`` to the given number minus ``1``, in this case it will be ``0`` to ``3``
 
-I add the :ref:`list<lists>` constructor_
+I use it as input to the :ref:`list<lists>` constructor_
 
 .. code-block:: python
 
-  self.assertEqual(list(iterable), [])
-
-the terminal shows :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: Lists differ: [0, 1, 2, 3] != []
-
-I copy the values from the terminal and paste it as the expectation
-
-.. code-block:: python
-
-  self.assertEqual(
-      list(iterable),
-      [0, 1, 2, 3]
-  )
+  self.assertEqual(list(iterable), [0, 1, 2, 3])
 
 the test passes. I can make a :ref:`list <lists>` from any iterable_ by using the :ref:`list <lists>` constructor_
 
