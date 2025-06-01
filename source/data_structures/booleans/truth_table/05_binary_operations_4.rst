@@ -3,7 +3,7 @@
 .. _binary_operations_iv:
 
 #################################################################################
-truth table: Binary Operations IV
+truth table: Binary Operations part 4
 #################################################################################
 
 .. contents:: table of contents
@@ -16,7 +16,7 @@ truth table: Binary Operations IV
 requirements
 *********************************************************************************
 
-:ref:`Binary Operations III<truth table: Binary Operations III>`
+:ref:`Binary Operations part 3<truth table: Binary Operations part 3>`
 
 ----
 

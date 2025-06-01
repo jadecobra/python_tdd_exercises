@@ -3,7 +3,7 @@
 .. _binary_operations_ii:
 
 #################################################################################
-truth table: Binary Operations II
+truth table: Binary Operations part 2
 #################################################################################
 
 .. raw:: html
@@ -20,7 +20,7 @@ truth table: Binary Operations II
 requirements
 *********************************************************************************
 
-:ref:`Binary Operations I<truth table: Binary Operations I>`
+:ref:`Binary Operations part 1<truth table: Binary Operations part 1>`
 
 ----
 
