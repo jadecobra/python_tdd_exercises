@@ -114,7 +114,7 @@ class TestLists(unittest.TestCase):
         self.assertEqual(a_list.pop(), 3)
         self.assertEqual(a_list, [0, 1, 2])
 
-    def test_remove_first_occurrence_of_item_from_a_list(self):
+    def test_remove_first_instance_of_item_from_a_list(self):
         a_list = [0, 2, 1, 2, 3, 2]
         self.assertIsNone(a_list.remove(2))
         self.assertEqual(a_list, [0, 1, 2, 3, 2])

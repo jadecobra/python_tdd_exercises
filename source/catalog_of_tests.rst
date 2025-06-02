@@ -164,7 +164,7 @@ test_lists
 #. :ref:`test_index_returns_position_of_item_in_a_list`
 #. :ref:`test_insert_places_item_at_given_index_in_a_list`
 #. :ref:`test_pop_removes_and_returns_last_item_in_a_list`
-#. :ref:`test_remove_first_occurrence_of_item_from_a_list`
+#. :ref:`test_remove_first_instance_of_item_from_a_list`
 #. :ref:`test_reverse_a_list`
 #. :ref:`test_sort_a_list`
 #. :ref:`test_view_items_in_a_list`

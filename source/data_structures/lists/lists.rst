@@ -680,7 +680,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_extend
+test_extend_makes_a_list_longer
 *********************************************************************************
 
 red: make it fail
@@ -1134,12 +1134,12 @@ refactor: make it better
 
 * I rename the test
 
-.. code-block:: python
+  .. code-block:: python
 
-  def test_pop_removes_and_returns_last_item_in_a_list(self):
-      a_list = [0, 1, 2, 3]
-      self.assertEqual(a_list.pop(), 3)
-      self.assertEqual(a_list, [0, 1, 2])
+    def test_pop_removes_and_returns_last_item_in_a_list(self):
+        a_list = [0, 1, 2, 3]
+        self.assertEqual(a_list.pop(), 3)
+        self.assertEqual(a_list, [0, 1, 2])
 
 * I remove `pop <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ from the TODO list
 
@@ -1149,27 +1149,117 @@ refactor: make it better
     'reverse',
     'sort'
 
-
 ----
 
 *********************************************************************************
-test_remove_from_a_list
+test_remove_first_instance_of_item_from_a_list
 *********************************************************************************
+
+time for the next :ref:`method<functions>`
+
+.. code-block:: python
+
+  def test_remove(self):
+      a_list = [0, 1, 2, 3]
+      self.assertIsNone(a_list.remove(2))
+
+the terminal shows green, the remove_ :ref:`method<functions>` returns :ref:`None`
 
 red: make it fail
 #################################################################################
 
+I want to know if the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ has changed
+
+.. code-block:: python
+
+  self.assertIsNone(a_list.remove(2))
+  self.assertEqual(a_list, [0, 1, 2, 3])
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: Lists differ: [0, 1, 3] != [0, 1, 2, 3]
+
+the :ref:`method<functions>` removes the item given from the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
 green: make it pass
 #################################################################################
 
+I change the expectation in the assert_ statement
+
+.. code-block:: python
+
+  self.assertEqual(a_list, [0, 1, 3])
+
+the test passes
 
 refactor: make it better
 #################################################################################
 
+* I change the values in ``a_list`` to see what would happen if an item shows up more than once in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
+  .. code-block:: python
 
+    def test_remove(self):
+        a_list = [0, 2, 1, 2, 3, 2]
+        self.assertIsNone(a_list.remove(2))
+        self.assertEqual(a_list, [0, 1, 3])
 
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: Lists differ: [0, 1, 2, 3, 2] != [0, 1, 3]
+
+  the :ref:`method<functions>` removes the first occurrence of a given item from the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. I change the test to match
+
+  .. code-block:: python
+
+    self.assertEqual(a_list, [0, 1, 2, 3, 2])
+
+  the test passes
+
+* I want to know what happens if the item does not exist in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+
+  .. code-block:: python
+
+    self.assertEqual(a_list, [0, 1, 2, 3, 2])
+    self.assertIsNone(a_list.remove(4))
+
+  the terminal shows ValueError_
+
+  .. code-block:: python
+
+    ValueError: list.remove(x): x not in list
+
+  I add assertRaises_ and remove the call to assertIsNone_
+
+  .. code-block:: python
+
+    with self.assertRaises(ValueError):
+        a_list.remove(4)
+
+  the test passes
+
+* I rename the test
+
+  .. code-block:: python
+
+    def test_remove_first_instance_of_item_from_a_list(self):
+        a_list = [0, 2, 1, 2, 3, 2]
+        self.assertIsNone(a_list.remove(2))
+        self.assertEqual(a_list, [0, 1, 2, 3, 2])
+
+        with self.assertRaises(ValueError):
+            a_list.remove(4)
+
+* I take out remove_ from the TODO list
+
+  .. code-block:: python
+
+    'reverse',
+    'sort'
 
 ----
 
