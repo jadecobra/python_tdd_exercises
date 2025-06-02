@@ -1264,162 +1264,87 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_remove_from_a_list
+test_reverse_a_list
 *********************************************************************************
 
 red: make it fail
 #################################################################################
 
-I add a test for removing an item from a list with the remove_ :ref:`method<functions>`
+I add the next test
 
 .. code-block:: python
 
-    def test_remove_from_a_list(self):
-        a_list = [0, 1, 2, 3]
+  def test_reverse(self):
+      a_list = [0, 1, 2, 3]
+      self.assertIsNone(a_list.reverse())
 
-        self.assertEqual(a_list, [0, 1, 2, 3])
-        a_list.remove(2)
-        self.assertEqual(a_list, [0, 1, 2, 3])
-
-the terminal shows :ref:`AssertionError`
+the terminal shows green. This :ref:`method<functions>` returns :ref:`None`. I add an assertion to see what has changed in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
 .. code-block:: python
 
-  AssertionError: Lists differ: [0, 1, 3] != [0, 1, 2, 3]
+  self.assertIsNone(a_list.reverse())
+  self.assertEqual(a_list, [0, 1, 2, 3])
 
-because ``2`` is no longer in ``a_list`` after ``a_list.remove(2)`` is called
+the terminal show :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: Lists differ: [3, 2, 1, 0] != [0, 1, 2, 3]
+
+the :ref:`method<functions>` reverses the order of the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
 green: make it pass
 #################################################################################
 
-I change the values to match the terminal
+I change the expectation
 
 .. code-block:: python
 
-    def test_remove_from_a_list(self):
-        a_list = [0, 1, 2, 3]
-
-        self.assertEqual(a_list, [0, 1, 2, 3])
-        a_list.remove(2)
-        self.assertEqual(a_list, [0, 1, 3])
+  self.assertEqual(a_list, [3, 2, 1, 0])
 
 the test passes
 
-----
+refactor: make it better
+#################################################################################
 
-*********************************************************************************
-test_remove_from_a_list_when_item_occurs_multiple_times
-*********************************************************************************
+* I rename the test
 
-I want to see what happens when there is more than one of the same item in a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ and I call ``list.remove(item)``
+  .. code-block:: python
 
-.. code-block:: python
+    def test_reverse_a_list(self):
+        a_list = [0, 1, 2, 3]
+        self.assertIsNone(a_list.reverse())
+        self.assertEqual(a_list, [3, 2, 1, 0])
 
-  def test_remove_from_a_list_when_item_occurs_multiple_times(self):
-      a_list = [0, 2, 1, 2, 3, 2]
+* I remove the :ref:`method<functions>` from the TODO list
 
-      self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
-      a_list.remove(2)
-      self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
+  .. code-block:: python
 
-the terminal shows :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: Lists differ: [0, 1, 2, 3, 2] != [0, 2, 1, 2, 3, 2]
-
-I change the values on the right to match the values from the terminal
-
-.. code-block:: python
-
-  def test_remove_from_a_list_when_item_occurs_multiple_times(self):
-      a_list = [0, 2, 1, 2, 3, 2]
-
-      self.assertEqual(a_list, [0, 2, 1, 2, 3, 2])
-      a_list.remove(2)
-      self.assertEqual(a_list, [0, 1, 2, 3, 2])
-
-the remove_ :ref:`method<functions>` takes away the first item when the item exists more than once in a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+    'sort'
 
 ----
 
 *********************************************************************************
-test_remove_from_a_list_when_item_not_in_list
+test_sort_a_list
 *********************************************************************************
 
-ADD TEXT
+red: make it fail
+#################################################################################
 
-----
-
-*********************************************************************************
-test_remove_last_item_from_a_list
-*********************************************************************************
-
-I add another test
+I add a test
 
 .. code-block:: python
 
-  def test_remove_last_item_from_a_list(self):
+  def test_sort(self):
       a_list = [0, 1, 2, 3]
+      self.assertIsNone(a_list.sort())
 
-      self.assertEqual(a_list, [0, 1, 2, 3])
-      last_item = a_list.pop()
-      self.assertEqual(last_item, 0)
 
-the terminal shows :ref:`AssertionError`
+green: make it pass
+#################################################################################
 
-.. code-block:: python
-
-  >       self.assertEqual(last_item, 0)
-  E       AssertionError: 3 != 0
-
-``last_item = a_list.pop()`` calls the `pop <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` of ``a_list`` and names the result ``last_item``
-
-I change the value in the test to match the value that was popped
-
-.. code-block:: python
-
-  self.assertEqual(last_item, 3)
-
-the test passes. I add another failing line
-
-.. code-block:: python
-
-  def test_remove_last_item_from_a_list(self):
-      a_list = [0, 1, 2, 3]
-
-      self.assertEqual(a_list, [0, 1, 2, 3])
-      last_item = a_list.pop()
-      self.assertEqual(last_item, 3)
-      self.assertEqual(a_list, [0, 1, 2, 3])
-
-the terminal shows :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: Lists differ: [0, 1, 2] != [0, 1, 2, 3]
-
-I change the expected values to match
-
-.. code-block:: python
-
-  def test_remove_last_item_from_a_list(self):
-      a_list = [0, 1, 2, 3]
-
-      self.assertEqual(a_list, [0, 1, 2, 3])
-      last_item = a_list.pop()
-      self.assertEqual(last_item, 3)
-      self.assertEqual(a_list, [0, 1, 2])
-
-all the tests are still green
-
-----
-
-*********************************************************************************
-test_remove_last_item_from_empty_list
-*********************************************************************************
-
-ADD TEXT
+refactor: make it better
+#################################################################################
 
 ----
 
