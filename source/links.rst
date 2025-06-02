@@ -57,6 +57,7 @@
 .. _f-string: https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals
 .. _f-strings: https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals
 .. _help system: https://docs.python.org/3/library/functions.html?highlight=dir#help
+.. _hashable: https://docs.python.org/3/glossary.html#term-hashable>
 .. _history: https://man7.org/linux/man-pages/man3/history.3.html
 .. _index: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _int: https://docs.python.org/3/library/functions.html?highlight=int#int

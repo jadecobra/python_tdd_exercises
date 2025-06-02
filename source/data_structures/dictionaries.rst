@@ -242,41 +242,38 @@ test_make_a_dictionary_w_tuples_as_keys
 red: make it fail
 #################################################################################
 
-I add a test to ``TestDictionaries`` to see if I can use tuples as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
+I add a test for tuples_
 
 .. code-block:: python
 
+  def test_make_a_dictionary_w_booleans_as_keys(self):
+      ...
+
   def test_make_a_dictionary_w_tuples_as_keys(self):
       self.assertEqual(
-          {(1, 2): "value"},
-          {(1, 2): "key"}
+          {(0, 1): 'value'},
+          {(0, 1): 'key'}
       )
 
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
-  :force:
 
-  AssertionError: {(1, 2): 'value'} != {(1, 2): 'key'}
-  - {(1, 2): 'value'}
-  ?           ^^^^
-
-  + {(1, 2): 'key'}
-  ?           ^ +
+  AssertionError: {(0, 1): 'value'} != {(0, 1): 'key'}
 
 green: make it pass
 #################################################################################
 
-I make the values to make the test pass
+I make the values match
 
 .. code-block:: python
 
   self.assertEqual(
-      {(1, 2): "value"},
-      {(1, 2): "value"}
+      {(0, 1): 'value'},
+      {(0, 1): 'value'}
   )
 
-the tests so far show that I can use tuples_, :ref:`booleans`, floats_, integers_, and strings_ as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
+the test passes
 
 ----
 
@@ -287,42 +284,47 @@ test_make_a_dictionary_w_lists_as_keys
 red: make it fail
 #################################################################################
 
-I add a test to ``TestDictionaries`` using a :ref:`list <lists>` as a key
+I add another test
 
 .. code-block:: python
 
+  def test_make_a_dictionary_w_tuples_as_keys(self):
+      ...
+
   def test_make_a_dictionary_w_lists_as_keys(self):
-      {[1, 2]: "BOOM"}
+      self.assertEqual(
+          {[3, 2, 1]: 'BOOM!'},
+          {[3, 2, 1]: 'bap'}
+      )
 
-the terminal shows :ref:`TypeError` because only `hashable <https://docs.python.org/3/glossary.html#term-hashable>`_ types can be used as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys and :ref:`lists` are not `hashable <https://docs.python.org/3/glossary.html#term-hashable>`_
+the terminal shows :ref:`TypeError`
 
-.. code-block::
+.. code-block:: python
 
-  E    TypeError: unhashable type: 'list'
+  TypeError: unhashable type: 'list'
+
+only hashable_ objects_ can be used as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys and :ref:`lists` are not hashable_
 
 I add :ref:`TypeError` to the list of Exceptions_ encountered
 
 .. code-block:: python
 
   # Exceptions Encountered
-  # ModuleNotFoundError
-  # AttributeError
+  # AssertionError
   # TypeError
 
 green: make it pass
 #################################################################################
 
-I can use ``self.assertRaises`` to make sure that an error is raised by some code without having it crash the tests. I use it here to make sure that Python raises :ref:`TypeError` when I try to make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a :ref:`list <lists>` as the key
+I change the assertEqual_ to assertRaises_
 
 .. code-block:: python
 
   def test_make_a_dictionary_w_lists_as_keys(self):
       with self.assertRaises(TypeError):
-          {[1, 2]: "BOOM"}
+          {[3, 2, 1]: 'BOOM!'}
 
-see :doc:`/how_to/exception_handling_tests` for more details on why that worked.
-
-From the test I see that I cannot make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a :ref:`list <lists>` as a key
+see :doc:`/how_to/exception_handling_tests` for more details on why that worked. I cannot make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a :ref:`list <lists>` as a key
 
 ----
 
