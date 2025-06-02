@@ -332,15 +332,15 @@ see :doc:`/how_to/exception_handling_tests` for more details on why that worked.
 test_make_a_dictionary_w_sets_as_keys
 *********************************************************************************
 
-I try a similar test using a set as a key
-
 red: make it fail
 #################################################################################
+
+I try the same thing with a set_ as a key
 
 .. code-block:: python
 
   def test_make_a_dictionary_w_sets_as_keys(self):
-      {{1, 2}: "BOOM"}
+      {{3, 2, 1}: 'BOOM!'}
 
 the terminal shows :ref:`TypeError`
 
@@ -351,15 +351,15 @@ the terminal shows :ref:`TypeError`
 green: make it pass
 #################################################################################
 
-I use ``self.assertRaises`` to handle the exception
+I add assertRaises_
 
 .. code-block:: python
 
   def test_make_a_dictionary_w_sets_as_keys(self):
       with self.assertRaises(TypeError):
-          {{1, 2}: "BOOM"}
+          {{3, 2, 1}: 'BOOM!'}
 
-Tests are green again. I cannot use a set_ or a :ref:`list <lists>` as a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ key
+the test is green again. I cannot use a set_ as a key in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
 ----
 
