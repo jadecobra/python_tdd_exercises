@@ -65,8 +65,6 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: {'key': 'value'} != None
 
-I can use the `dict <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ constructor_ to make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
-
 green: make it pass
 #################################################################################
 
@@ -78,40 +76,41 @@ I copy the value from the terminal and paste it to replace :ref:`None`
 
 the test passes
 
+*********************************************************************************
+test_make_a_dictionary_w_curly_braces
+*********************************************************************************
 
+I can make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with the `dict <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ constructor_ and the passing test shows I can make one with ``{}``.
 
-I can also make a
+red: make it fail
+#################################################################################
 
+I add a test
 
-* I can also use the `dict <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ constructor_ to . I add another assertion
+.. code-block:: python
 
-  .. code-block:: python
+    def test_make_a_dictionary_w_dict_constructor(self):
+        ...
 
-    self.assertEqual(
-        src.dictionaries.a_dictionary(),
-        {'key': 'value'}
-    )
-    self.assertEqual(
-        dict(key='key'),
-        src.dictionaries.a_dictionary()
-    )
+    def test_make_a_dictionary_w_curly_braces(self):
+        self.assertEqual({'key': 'value'}, dict(key='key'))
 
-  the terminal shows :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
-  .. code-block:: python
+.. code-block:: python
 
-    AssertionError: {'key': 'key'} != {'key': 'value'}
+  AssertionError: {'key': 'value'} != {'key': 'key'}
 
-  I change the value
+green: make it pass
+#################################################################################
 
-  .. code-block:: python
+I make the values match
 
-    self.assertEqual(
-        dict(key='value'),
-        src.dictionaries.a_dictionary()
-    )
+.. code-block:: python
 
-  the test passes
+  self.assertEqual({'key': 'value'}, dict(key='value'))
+
+the test passes
 
 ----
 
