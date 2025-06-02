@@ -133,8 +133,9 @@ green: make it pass
 
 ----
 
-how to make a dictionary with numbers as keys
-------------------------------------------------
+*********************************************************************************
+test_make_a_dictionary_w_numbers_as_keys
+*********************************************************************************
 
 red: make it fail
 #################################################################################
@@ -154,7 +155,6 @@ the terminal shows :ref:`AssertionError` since the 2 values are different
 .. code-block:: python
 
   AssertionError: {1: 'boom'} != {'one': 'boom'}
-
 
 green: make it pass
 #################################################################################
@@ -214,8 +214,9 @@ refactor: make it better
 
 ----
 
-how to make a dictionary with booleans as keys
--------------------------------------------------
+*********************************************************************************
+test_make_a_dictionary_w_booleans_as_keys
+*********************************************************************************
 
 I wonder if it is possible to use :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
 
@@ -306,8 +307,9 @@ So far from the tests, I see that I can use :ref:`booleans`, floats_, integers_ 
 
 ----
 
-how to make a dictionary with tuples as keys
-----------------------------------------------
+*********************************************************************************
+test_make_a_dictionary_w_tuples_as_keys
+*********************************************************************************
 
 red: make it fail
 #################################################################################
@@ -350,8 +352,9 @@ the tests so far show that I can use tuples_, :ref:`booleans`, floats_, integers
 
 ----
 
-Can I make a Dictionary with a list as a key?
--------------------------------------------------
+*********************************************************************************
+test_make_a_dictionary_w_lists_as_keys
+*********************************************************************************
 
 red: make it fail
 #################################################################################
@@ -395,8 +398,9 @@ From the test I see that I cannot make a `dictionary <https://docs.python.org/3/
 
 ----
 
-Can I make a Dictionary with a set as a key?
-------------------------------------------------
+*********************************************************************************
+test_make_a_dictionary_w_sets_as_keys
+*********************************************************************************
 
 I try a similar test using a set as a key
 
@@ -429,8 +433,9 @@ Tests are green again. I cannot use a set_ or a :ref:`list <lists>` as a `dictio
 
 ----
 
-Can I make a Dictionary with a dictionary as a key?
--------------------------------------------------------
+*********************************************************************************
+test_make_a_dictionary_w_dictionaries_as_keys
+*********************************************************************************
 
 red: make it fail
 #################################################################################
@@ -482,8 +487,121 @@ and I cannot make `dictionaries <https://docs.python.org/3/tutorial/datastructur
 
 ----
 
+*********************************************************************************
+test_attributes_and_methods_of_dictionaries
+*********************************************************************************
+
+The chapter on :ref:`classes` shows how to view the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of an object. Let us look at the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+
+red: make it fail
+#################################################################################
+
+I add a new test to ``TestDictionaries``
+
+.. code-block:: python
+
+  def test_attributes_and_methods_of_dictionaries(self):
+      self.maxDiff = None
+      self.assertEqual(
+          dir(src.dictionaries.a_dict()),
+          []
+      )
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: Lists differ: ['__class__', '__class_getitem__', '__cont[530 chars]ues'] != []
+
+green: make it pass
+#################################################################################
+
+I copy the expected values shown in the terminal to make the test pass
+
+.. note::
+
+  Your results can be different because of your version of Python
+
+
+.. code-block:: python
+
+  def test_attributes_and_methods_of_dictionaries(self):
+      self.maxDiff = None
+      self.assertEqual(
+          dir(src.dictionaries.a_dict()),
+          [
+              '__class__',
+              '__class_getitem__',
+              '__contains__',
+              '__delattr__',
+              '__delitem__',
+              '__dir__',
+              '__doc__',
+              '__eq__',
+              '__format__',
+              '__ge__',
+              '__getattribute__',
+              '__getitem__',
+              '__getstate__',
+              '__gt__',
+              '__hash__',
+              '__init__',
+              '__init_subclass__',
+              '__ior__',
+              '__iter__',
+              '__le__',
+              '__len__',
+              '__lt__',
+              '__ne__',
+              '__new__',
+              '__or__',
+              '__reduce__',
+              '__reduce_ex__',
+              '__repr__',
+              '__reversed__',
+              '__ror__',
+              '__setattr__',
+              '__setitem__',
+              '__sizeof__',
+              '__str__',
+              '__subclasshook__',
+              'clear',
+              'copy',
+              'fromkeys',
+              'get',
+              'items',
+              'keys',
+              'pop',
+              'popitem',
+              'setdefault',
+              'update',
+              'values'
+          ]
+      )
+
+
+refactor: make it better
+#################################################################################
+
+I see some of the :ref:`methods<functions>` I have tested so far and others I did not. You can write tests for the others to show what they do and/or `read more about dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_.
+
+* `clear <https://docs.python.org/3/library/stdtypes.html#dict.clear>`_
+* `copy <https://docs.python.org/3/library/stdtypes.html#dict.copy>`_
+* `fromkeys <https://docs.python.org/3/library/stdtypes.html#dict.fromkeys>`_
+* `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ - gets the ``value`` for a ``key`` and returns a default value or :ref:`None` when the key does not exist
+* `items <https://docs.python.org/3/library/stdtypes.html#dict.items>`_
+* `keys <https://docs.python.org/3/library/stdtypes.html#dict.keys>`_ - returns a view of the ``keys`` in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+* `pop <https://docs.python.org/3/library/stdtypes.html#dict.pop>`_
+* `popitem <https://docs.python.org/3/library/stdtypes.html#dict.popitem>`_
+* `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_
+* `change <https://docs.python.org/3/library/stdtypes.html#dict.change>`_
+* `values <https://docs.python.org/3/library/stdtypes.html#dict.values>`_ - returns a view of the ``values`` in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+
+----
+
+*********************************************************************************
 how to access dictionary values
--------------------------------
+*********************************************************************************
 
 The tests so far show how to make `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ and what objects can be used as ``keys``. The following tests show how to access the values of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
@@ -605,8 +723,9 @@ refactor: make it better
 
 ----
 
+*********************************************************************************
 how to get a value when the key does not exist
------------------------------------------------
+*********************************************************************************
 
 Sometimes when I try to access values in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_, I use a key that does not exist or misspell a key that does exist
 
@@ -798,117 +917,11 @@ What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datas
 
 Do you think you could write an implementation for the ``get`` method after reading :doc:`/how_to/exception_handling_programs`?
 
-how to view the attributes and methods of a dictionary
--------------------------------------------------------
+----
 
-The chapter on :ref:`classes` shows how to view the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of an object. Let us look at the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
-
-red: make it fail
-#################################################################################
-
-I add a new test to ``TestDictionaries``
-
-.. code-block:: python
-
-  def test_attributes_and_methods_of_dictionaries(self):
-      self.maxDiff = None
-      self.assertEqual(
-          dir(src.dictionaries.a_dict()),
-          []
-      )
-
-the terminal shows :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: Lists differ: ['__class__', '__class_getitem__', '__cont[530 chars]ues'] != []
-
-green: make it pass
-#################################################################################
-
-I copy the expected values shown in the terminal to make the test pass
-
-.. note::
-
-  Your results can be different because of your version of Python
-
-
-.. code-block:: python
-
-  def test_attributes_and_methods_of_dictionaries(self):
-      self.maxDiff = None
-      self.assertEqual(
-          dir(src.dictionaries.a_dict()),
-          [
-              '__class__',
-              '__class_getitem__',
-              '__contains__',
-              '__delattr__',
-              '__delitem__',
-              '__dir__',
-              '__doc__',
-              '__eq__',
-              '__format__',
-              '__ge__',
-              '__getattribute__',
-              '__getitem__',
-              '__getstate__',
-              '__gt__',
-              '__hash__',
-              '__init__',
-              '__init_subclass__',
-              '__ior__',
-              '__iter__',
-              '__le__',
-              '__len__',
-              '__lt__',
-              '__ne__',
-              '__new__',
-              '__or__',
-              '__reduce__',
-              '__reduce_ex__',
-              '__repr__',
-              '__reversed__',
-              '__ror__',
-              '__setattr__',
-              '__setitem__',
-              '__sizeof__',
-              '__str__',
-              '__subclasshook__',
-              'clear',
-              'copy',
-              'fromkeys',
-              'get',
-              'items',
-              'keys',
-              'pop',
-              'popitem',
-              'setdefault',
-              'update',
-              'values'
-          ]
-      )
-
-
-refactor: make it better
-#################################################################################
-
-I see some of the :ref:`methods<functions>` I have tested so far and others I did not. You can write tests for the others to show what they do and/or `read more about dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_.
-
-* `clear <https://docs.python.org/3/library/stdtypes.html#dict.clear>`_
-* `copy <https://docs.python.org/3/library/stdtypes.html#dict.copy>`_
-* `fromkeys <https://docs.python.org/3/library/stdtypes.html#dict.fromkeys>`_
-* `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ - gets the ``value`` for a ``key`` and returns a default value or :ref:`None` when the key does not exist
-* `items <https://docs.python.org/3/library/stdtypes.html#dict.items>`_
-* `keys <https://docs.python.org/3/library/stdtypes.html#dict.keys>`_ - returns a view of the ``keys`` in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
-* `pop <https://docs.python.org/3/library/stdtypes.html#dict.pop>`_
-* `popitem <https://docs.python.org/3/library/stdtypes.html#dict.popitem>`_
-* `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_
-* `change <https://docs.python.org/3/library/stdtypes.html#dict.change>`_
-* `values <https://docs.python.org/3/library/stdtypes.html#dict.values>`_ - returns a view of the ``values`` in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
-
+*********************************************************************************
 how to set a default value for a given key
--------------------------------------------
+*********************************************************************************
 
 Let us say I want to find out more about the `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_ method
 
@@ -1042,8 +1055,11 @@ refactor: make it better
 
   all tests pass, and I add what I know about `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_ to the list of :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
+----
+
+*********************************************************************************
 test_adding_2_dictionaries
----------------------------------------------------
+*********************************************************************************
 
 What if I want to add the ``keys`` and ``values`` of one `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ to another?
 
@@ -1113,8 +1129,11 @@ I make the values to make the test pass
           }
       )
 
+----
+
+*********************************************************************************
 how to remove an item from a dictionary
-----------------------------------------
+*********************************************************************************
 
 I can remove an item from a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with the `pop <https://docs.python.org/3/library/stdtypes.html#dict.pop>`_ method. It deletes the ``key`` and ``value`` from the `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ and returns the ``value``
 
