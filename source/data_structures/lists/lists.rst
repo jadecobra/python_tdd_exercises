@@ -799,7 +799,7 @@ test_index_returns_position_of_item_in_a_list
 red: make it fail
 #################################################################################
 
-I add a test for the index_ :ref:`method`
+I add a test for the index_ :ref:`method<functions>`
 
 .. code-block:: python
 
@@ -979,6 +979,125 @@ refactor: make it better
     'remove',
     'reverse',
     'sort'
+
+----
+
+*********************************************************************************
+test_insert_places_item_at_given_index_in_a_list
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+I add a test for the next :ref:`method<functions>`
+
+.. code-block:: python
+
+    def test_index_returns_position_of_item_in_a_list(self):
+        ...
+
+    def test_insert(self):
+        a_list = [0, 1, 2, 3]
+        self.assertIsNone(a_list.insert())
+
+the terminal shows :ref:`TypeError`
+
+.. code-block:: python
+
+  TypeError: insert expected 2 arguments, got 0
+
+green: make it pass
+#################################################################################
+
+I pass two values to the :ref:`method<functions>`
+
+.. code-block:: python
+
+  def test_insert(self):
+      a_list = [0, 1, 2, 3]
+      self.assertIsNone(a_list.insert(0, 1))
+
+the test is green, the insert_ :ref:`method<functions>` returns :ref:`None`, what does it do to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_?
+
+refactor: make it better
+#################################################################################
+
+* I add an assertion
+
+  .. code-block:: python
+
+    self.assertIsNone(a_list.insert(0, 1))
+    self.assertEqual(a_list, [0, 1, 2, 3])
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: Lists differ: [1, 0, 1, 2, 3] != [0, 1, 2, 3]
+
+  I add the new value to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+
+  .. code-block:: python
+
+    self.assertEqual(a_list, [1, 0, 1, 2, 3])
+
+  the test passes. The insert_ method places the second input given at the index given as the first input
+
+* I rename the test
+
+  .. code-block:: python
+
+    def test_insert_places_item_at_given_index_in_a_list(self):
+        a_list = [0, 1, 2, 3]
+        self.assertIsNone(a_list.insert(0, 1))
+        self.assertEqual(a_list, [1, 0, 1, 2, 3])
+
+* I remove insert_ from the TODO list
+
+  .. code-block:: python
+
+    'pop',
+    'remove',
+    'reverse',
+    'sort'
+
+----
+
+*********************************************************************************
+test_remove_from_a_list
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+
+green: make it pass
+#################################################################################
+
+
+refactor: make it better
+#################################################################################
+
+----
+
+*********************************************************************************
+test_remove_from_a_list
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+
+green: make it pass
+#################################################################################
+
+
+refactor: make it better
+#################################################################################
+
+
+
+
 
 ----
 
