@@ -20,7 +20,7 @@ A `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ 
 
 * they are represented with ``[]``
 * they can be made with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_
-* they can be changed after they exist by performing an operation, this means they are mutable
+* they can be changed by performing an operation, this means they are mutable
 
 *********************************************************************************
 requirements
@@ -1775,7 +1775,7 @@ I ran tests for `lists <https://docs.python.org/3/tutorial/datastructures.html?h
 * they are represented with ``[]``
 * they can be made with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_
 * they can hold any :ref:`object<classes>`
-* they can be changed after creation by performing an operation, this means they are mutable
+* they can be changed by performing an operation, this means they are mutable
 
 Would you like to :ref:`test list comprehensions?<lists: list comprehensions>`
 
