@@ -121,77 +121,55 @@ test_make_a_dictionary_w_numbers_as_keys
 red: make it fail
 #################################################################################
 
-I add a failing test to ``TestDictionaries``
+I add a failing test
 
 .. code-block:: python
 
   def test_make_a_dictionary_w_numbers_as_keys(self):
-      self.assertEqual(
-          {1: 'boom'},
-          {'one': 'boom'}
-      )
+      self.assertEqual({0: 'boom'}, {'zero': 'boom'})
 
-the terminal shows :ref:`AssertionError` since the 2 values are different
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: {1: 'boom'} != {'one': 'boom'}
+  AssertionError: {0: 'boom'} != {'zero': 'boom'}
 
 green: make it pass
 #################################################################################
 
-I make the values in the test to make it pass
+I change the key in the exception
 
 .. code-block:: python
 
   def test_make_a_dictionary_w_numbers_as_keys(self):
-      self.assertEqual(
-          {1: 'boom'},
-          {1: 'boom'}
-      )
+      self.assertEqual({0: 'boom'}, {0: 'boom'})
 
-the terminal shows passing tests showing that integers_ can be used as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
+
+the test passes. I can use integers_ keys in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
 refactor: make it better
 #################################################################################
 
-* I know I can use integers_ and strings_ as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys. I want to add a test to see if I can use floats_
+I add an assertion for floats_
 
-  .. code-block:: python
+.. code-block:: python
 
-    def test_make_a_dictionary_w_numbers_as_keys(self):
-        self.assertEqual(
-            {1: 'boom'},
-            {1: 'boom'}
-        )
-        self.assertEqual(
-            {2.5: 'works'},
-            {2.5: 'fails'}
-        )
+  self.assertEqual({0: 'boom'}, {0: 'boom'})
+  self.assertEqual({0.1: 'bap'}, {'0.1': 'bap'})
 
-  the terminal shows :ref:`AssertionError` since the values are different
+the terminal shows :ref:`AssertionError`
 
-  .. code-block:: python
+.. code-block:: python
 
-    AssertionError: {2.5: 'works'} != {2.5: 'fails'}
-    - {2.5: 'works'}
-    + {2.5: 'fails'}
+  AssertionError: {0.1: 'bap'} != {'0.1': 'bap'}
 
-* I make the values in the test to make it pass
+I make the keys match
 
-  .. code-block:: python
+.. code-block:: python
 
-    def test_make_a_dictionary_w_numbers_as_keys(self):
-      self.assertEqual(
-          {1: 'boom'},
-          {1: 'boom'}
-      )
-      self.assertEqual(
-          {2.5: 'works'},
-          {2.5: 'works'}
-      )
+  self.assertEqual({0.1: 'bap'}, {0.1: 'bap'})
 
-  the terminal shows passing tests showing that I can use integers_ and floats_ as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
+the test passes. I can use integers_ and floats_ as keys in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
 ----
 
