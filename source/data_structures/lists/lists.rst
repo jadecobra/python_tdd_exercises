@@ -429,7 +429,7 @@ I add a test for the clear_ :ref:`method<functions>`
       a_list = [0, 1, 2, 3]
       self.assertIsNone(a_list.clear())
 
-the terminal shows green. The clear_ :ref:`method<functions>` returns :ref:`None` when it is called, what does it do to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_?
+the terminal shows green. The clear_ :ref:`method<functions>` returns :ref:`None` when it is called. I want to know what it does to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
 red: make it fail
 #################################################################################
@@ -718,7 +718,7 @@ I change the value to an iterable_
 
   self.assertIsNone(a_list.extend((0, 1, 2, 3)))
 
-the test passes. The extend_ :ref:`method<functions>` returns :ref:`None` when called, what does it do to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_?
+the test passes. The extend_ :ref:`method<functions>` returns :ref:`None` when called. I want to know what it does to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
 refactor: make it better
 #################################################################################
@@ -1017,7 +1017,7 @@ I pass two values to the :ref:`method<functions>`
       a_list = [0, 1, 2, 3]
       self.assertIsNone(a_list.insert(0, 1))
 
-the test is green, the insert_ :ref:`method<functions>` returns :ref:`None`, what does it do to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_?
+the test is green. The insert_ :ref:`method<functions>` returns :ref:`None`. I want to know what it does to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
 refactor: make it better
 #################################################################################
@@ -1064,19 +1064,83 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_remove_from_a_list
+test_pop_removes_and_returns_last_item_in_a_list
 *********************************************************************************
 
 red: make it fail
 #################################################################################
 
+I add a new test
+
+.. code-block:: python
+
+  def test_insert_places_item_at_given_index_in_a_list(self):
+      ...
+
+  def test_pop(self):
+      a_list = [0, 1, 2, 3]
+      self.assertIsNone(a_list.pop())
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: 3 is not None
 
 green: make it pass
 #################################################################################
 
+I change the assert_ :ref:`method<functions>` then add the value from the terminal
+
+.. code-block:: python
+
+  def test_pop(self):
+      a_list = [0, 1, 2, 3]
+      self.assertEqual(a_list.pop(), 3)
+
+the test passes. The `pop <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` return the last item in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. I want to know what it does to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
 refactor: make it better
 #################################################################################
+
+* I add an assertion
+
+  .. code-block:: python
+
+    self.assertEqual(a_list.pop(), 3)
+    self.assertEqual(a_list, [0, 1, 2, 3])
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: Lists differ: [0, 1, 2] != [0, 1, 2, 3]
+
+  The `pop <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` removes and returns the last item in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. I change the values in the test to match
+
+  .. code-block:: python
+
+    self.assertEqual(a_list, [0, 1, 2])
+
+  the test passes
+
+* I rename the test
+
+.. code-block:: python
+
+  def test_pop_removes_and_returns_last_item_in_a_list(self):
+      a_list = [0, 1, 2, 3]
+      self.assertEqual(a_list.pop(), 3)
+      self.assertEqual(a_list, [0, 1, 2])
+
+* I remove `pop <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ from the TODO list
+
+  .. code-block:: python
+
+    'remove',
+    'reverse',
+    'sort'
+
 
 ----
 
