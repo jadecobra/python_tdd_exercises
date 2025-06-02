@@ -355,6 +355,8 @@ the terminal shows :ref:`TypeError`
 
   TypeError: list.append() takes exactly one argument (0 given)
 
+the append_ :ref:`method<functions>` returns :ref:`None` when it is called
+
 green: make it pass
 #################################################################################
 
@@ -364,12 +366,12 @@ I add input
 
   self.assertIsNone(a_list.append(4))
 
-the terminal shows green. The append_ :ref:`method<functions>` returns None_ when it is called, but what does it do to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_?
+the terminal shows green
 
 refactor: make it better
 #################################################################################
 
-I add another assert_ to find out
+I add another assert_ to find out what happens to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
 .. code-block:: python
 
@@ -429,12 +431,12 @@ I add a test for the clear_ :ref:`method<functions>`
       a_list = [0, 1, 2, 3]
       self.assertIsNone(a_list.clear())
 
-the terminal shows green. The clear_ :ref:`method<functions>` returns :ref:`None` when it is called. I want to know what it does to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+the terminal shows green. The clear_ :ref:`method<functions>` returns :ref:`None` when it is called
 
 red: make it fail
 #################################################################################
 
-I add an assert_ statement
+I want to know what the :ref:`method<functions>` does to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
 .. code-block:: python
 
@@ -505,6 +507,8 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: [0, 1, 2, 3] is not None
 
+the copy_ :ref:`method<functions>` returns a copy of the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+
 green: make it pass
 #################################################################################
 
@@ -516,12 +520,12 @@ I add the value and change the assert_ :ref:`method<functions>`
       a_list = [0, 1, 2, 3]
       self.assertEqual(a_list.copy(), [0, 1, 2, 3])
 
-the copy_ :ref:`method<functions>` returns a copy of the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ but what does it do to the original?
+the test passes
 
 refactor: make it better
 #################################################################################
 
-I add another assert_
+I add another assertion to see what happened to the original `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
 .. code-block:: python
 
@@ -553,7 +557,7 @@ the test is still green, I remove copy_ from the TODO list
 ----
 
 *********************************************************************************
-test_count
+test_count_number_of_times_item_is_in_a_list
 *********************************************************************************
 
 red: make it fail
@@ -643,13 +647,15 @@ refactor: make it better
 
     AssertionError: 0 != 1
 
-  I change the value
+  The count_ method returns ``0`` when the item is not in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. I change the value
 
   .. code-block:: python
 
     self.assertEqual(a_list.count(9), 0)
 
-  the test passes. The count_ method returns ``0`` when the item is not in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. I rename the test
+  the test passes
+
+* I rename the test
 
   .. code-block:: python
 
@@ -718,13 +724,13 @@ I change the value to an iterable_
 
   self.assertIsNone(a_list.extend((0, 1, 2, 3)))
 
-the test passes. The extend_ :ref:`method<functions>` returns :ref:`None` when called. I want to know what it does to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+the test passes. The extend_ :ref:`method<functions>` returns :ref:`None` when called
 
 refactor: make it better
 #################################################################################
 
 
-* I add another assertion
+* I add another assertion to see what changed in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
   .. code-block:: python
 
@@ -954,7 +960,7 @@ refactor: make it better
 
     self.assertEqual(a_list.index('... last'), 3)
 
-  the test passes. Python uses `zero-based indexing`_ which means the first item has an index ``0`` and the last item has an index of the length of the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ minus ``1``
+  the test passes. Python uses `zero-based indexing`_ which means the first item has an index of  ``0`` and the last item has an index of the length of the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ minus ``1``
 
 * I rename the test
 
@@ -1017,12 +1023,12 @@ I pass two values to the :ref:`method<functions>`
       a_list = [0, 1, 2, 3]
       self.assertIsNone(a_list.insert(0, 1))
 
-the test is green. The insert_ :ref:`method<functions>` returns :ref:`None`. I want to know what it does to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+the test is green. The insert_ :ref:`method<functions>` returns :ref:`None`
 
 refactor: make it better
 #################################################################################
 
-* I add an assertion
+* I add an assertion to find out what changed in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
   .. code-block:: python
 
@@ -1087,6 +1093,8 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: 3 is not None
 
+The `pop <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` returns the last item in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+
 green: make it pass
 #################################################################################
 
@@ -1098,12 +1106,12 @@ I change the assert_ :ref:`method<functions>` then add the value from the termin
       a_list = [0, 1, 2, 3]
       self.assertEqual(a_list.pop(), 3)
 
-the test passes. The `pop <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` return the last item in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. I want to know what it does to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+the test passes
 
 refactor: make it better
 #################################################################################
 
-* I add an assertion
+* I add an assertion to see what the :ref:`method<functions>` does to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
   .. code-block:: python
 
