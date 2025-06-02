@@ -1,7 +1,8 @@
 .. include:: ../links.rst
 
+#################################################################################
 dictionaries
-==============================
+#################################################################################
 
 .. contents:: table of contents
   :local:
@@ -9,14 +10,42 @@ dictionaries
 
 ----
 
-This chapter goes over `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ in Python. Dictionaries, also called Mappings, are key-value pairs that represent data, values can be any Python :ref:`object<classes>`.
+A `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ also known as a Mapping contains key-value pairs, the values can be any any Python :ref:`object<classes>` but not the keys.
 
-I think this is the most important data structure to know as it can hold all the other data structures and in your programming journey you will come across JSON_ which you can read and write as `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+I think this is the most important data structure to know as it can hold all the other data structures and in your programming journey you will come across JSON_ which you can read and write as `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ in Python
+
+*********************************************************************************
+requirements
+*********************************************************************************
+
+* I open a terminal to run :ref:`makePythonTdd.sh` with ``dictionaries`` as the name of the project
+
+  .. code-block:: python
+
+    ./makePythonTdd.sh dictionaries
+
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+
+    .. code-block:: python
+
+      ./makePythonTdd.ps1 dictionaries
+
+  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    E       AssertionError: True is not false
+
+    tests/test_dictionaries.py:7: AssertionError
+
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_dictionaries.py:7`` to open it in the editor
+* then change ``True`` to ``False`` to make the test pass
 
 ----
 
-how to make a dictionary with strings as keys
-------------------------------------------------
+*********************************************************************************
+test_make_a_dictionary_w_strings_as_keys
+*********************************************************************************
 
 red: make it fail
 #################################################################################
