@@ -407,19 +407,18 @@ the test passes. I cannot use a `dictionary <https://docs.python.org/3/tutorial/
 test_attributes_and_methods_of_dictionaries
 *********************************************************************************
 
-The chapter on :ref:`classes` shows how to view the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of an object. Let us look at the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+I can use the the dir_ :ref:`function<functions>` to look at the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
 red: make it fail
 #################################################################################
 
-I add a new test to ``TestDictionaries``
+I add a new test
 
 .. code-block:: python
 
   def test_attributes_and_methods_of_dictionaries(self):
-      self.maxDiff = None
       self.assertEqual(
-          dir(src.dictionaries.a_dict()),
+          dir(dict),
           []
       )
 
@@ -429,15 +428,31 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: Lists differ: ['__class__', '__class_getitem__', '__cont[530 chars]ues'] != []
 
+It also gives me a message to view the entire difference between the two :ref:`lists`
+
+.. code-block:: python
+
+  Diff is 720 characters long. Set self.maxDiff to None to see it.
+
 green: make it pass
 #################################################################################
 
-I copy the expected values shown in the terminal to make the test pass
+I add `unittest.TestCase.maxDiff`_
+
+.. code-block:: python
+
+  def test_attributes_and_methods_of_dictionaries(self):
+      self.maxDiff = None
+      self.assertEqual(
+          dir(dict),
+          []
+      )
+
+the terminal shows the entire difference between the two :ref:`lists`. I copy and paste the expected values from the terminal
 
 .. note::
 
   Your results can be different because of your version of Python
-
 
 .. code-block:: python
 
@@ -446,72 +461,56 @@ I copy the expected values shown in the terminal to make the test pass
       self.assertEqual(
           dir(src.dictionaries.a_dict()),
           [
-              '__class__',
-              '__class_getitem__',
-              '__contains__',
-              '__delattr__',
-              '__delitem__',
-              '__dir__',
-              '__doc__',
-              '__eq__',
-              '__format__',
-              '__ge__',
-              '__getattribute__',
-              '__getitem__',
-              '__getstate__',
-              '__gt__',
-              '__hash__',
-              '__init__',
-              '__init_subclass__',
-              '__ior__',
-              '__iter__',
-              '__le__',
-              '__len__',
-              '__lt__',
-              '__ne__',
-              '__new__',
-              '__or__',
-              '__reduce__',
-              '__reduce_ex__',
-              '__repr__',
-              '__reversed__',
-              '__ror__',
-              '__setattr__',
-              '__setitem__',
-              '__sizeof__',
-              '__str__',
-              '__subclasshook__',
-              'clear',
-              'copy',
-              'fromkeys',
-              'get',
-              'items',
-              'keys',
-              'pop',
-              'popitem',
-              'setdefault',
-              'update',
-              'values'
+                '__class__',
+                '__class_getitem__',
+                '__contains__',
+                '__delattr__',
+                '__delitem__',
+                '__dir__',
+                '__doc__',
+                '__eq__',
+                '__format__',
+                '__ge__',
+                '__getattribute__',
+                '__getitem__',
+                '__getstate__',
+                '__gt__',
+                '__hash__',
+                '__init__',
+                '__init_subclass__',
+                '__ior__',
+                '__iter__',
+                '__le__',
+                '__len__',
+                '__lt__',
+                '__ne__',
+                '__new__',
+                '__or__',
+                '__reduce__',
+                '__reduce_ex__',
+                '__repr__',
+                '__reversed__',
+                '__ror__',
+                '__setattr__',
+                '__setitem__',
+                '__sizeof__',
+                '__str__',
+                '__subclasshook__',
+                'clear',
+                'copy',
+                'fromkeys',
+                'get',
+                'items',
+                'keys',
+                'pop',
+                'popitem',
+                'setdefault',
+                'update',
+                'values'
           ]
       )
 
-
-refactor: make it better
-#################################################################################
-
-I see some of the :ref:`methods<functions>` I have tested so far and others I did not. You can write tests for the others to show what they do and/or `read more about dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_.
-
-* `clear <https://docs.python.org/3/library/stdtypes.html#dict.clear>`_
-* `copy <https://docs.python.org/3/library/stdtypes.html#dict.copy>`_
-* `fromkeys <https://docs.python.org/3/library/stdtypes.html#dict.fromkeys>`_
-* `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ - gets the ``value`` for a ``key`` and returns a default value or :ref:`None` when the key does not exist
-* `items <https://docs.python.org/3/library/stdtypes.html#dict.items>`_
-* `keys <https://docs.python.org/3/library/stdtypes.html#dict.keys>`_ - returns a view of the ``keys`` in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
-* `pop <https://docs.python.org/3/library/stdtypes.html#dict.pop>`_
-* `popitem <https://docs.python.org/3/library/stdtypes.html#dict.popitem>`_
-* `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_
-* `change <https://docs.python.org/3/library/stdtypes.html#dict.change>`_
-* `values <https://docs.python.org/3/library/stdtypes.html#dict.values>`_ - returns a view of the ``values`` in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+the test passes. I make a TODO list with the names that do not have double underscores (__)
 
 ----
 
