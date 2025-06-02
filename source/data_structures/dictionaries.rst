@@ -512,6 +512,25 @@ the terminal shows the entire difference between the two :ref:`lists`. I copy an
 
 the test passes. I make a TODO list with the names that do not have double underscores (__)
 
+.. code-block:: python
+
+  'clear',
+  'copy',
+  'fromkeys',
+  'get',
+  'items',
+  'keys',
+  'pop',
+  'popitem',
+  'setdefault',
+  'update',
+  'values'
+
+  # Exceptions Encountered
+  # AssertionError
+  # TypeError
+
+
 ----
 
 *********************************************************************************
