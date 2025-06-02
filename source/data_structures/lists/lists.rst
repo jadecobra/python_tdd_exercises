@@ -729,7 +729,6 @@ the test passes. The extend_ :ref:`method<functions>` returns :ref:`None` when c
 refactor: make it better
 #################################################################################
 
-
 * I add another assertion to see what changed in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
   .. code-block:: python
@@ -1155,6 +1154,9 @@ refactor: make it better
 test_remove_first_instance_of_item_from_a_list
 *********************************************************************************
 
+red: make it fail
+#################################################################################
+
 time for the next :ref:`method<functions>`
 
 .. code-block:: python
@@ -1163,12 +1165,7 @@ time for the next :ref:`method<functions>`
       a_list = [0, 1, 2, 3]
       self.assertIsNone(a_list.remove(2))
 
-the terminal shows green, the remove_ :ref:`method<functions>` returns :ref:`None`
-
-red: make it fail
-#################################################################################
-
-I want to know if the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ has changed
+the terminal shows green, the remove_ :ref:`method<functions>` returns :ref:`None`. I want to know if the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ has changed
 
 .. code-block:: python
 
