@@ -1581,9 +1581,15 @@ refactor: make it better
 test_view_parts_of_a_list
 *********************************************************************************
 
+red: make it fail
+#################################################################################
+
 I add another test
 
 .. code-block:: python
+
+  def test_view_items_in_a_list(self):
+      ...
 
   def test_view_parts_of_a_list(self):
       a_list = ['1st', '2nd', '3rd', '... last']
@@ -1592,6 +1598,87 @@ I add another test
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
+
+  AssertionError: Lists differ: ['1st', '2nd'] != []
+
+viewing parts of a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ is like indexing, it takes two values in square brackets ``[]``, seperated by a ``:``, the first value is the starting index you want and the second value is the ending index plus ``1``
+
+green: make it pass
+#################################################################################
+
+I change the values to match
+
+.. code-block:: python
+
+  self.assertEqual(a_list[0:2], ['1st', '2nd'])
+
+the test passes
+
+refactor: make it better
+#################################################################################
+
+* I add another assertion
+
+  .. code-block:: python
+
+    self.assertEqual(a_list[0:2], ['1st', '2nd'])
+    self.assertEqual(a_list[0:3], ['1st', '2nd'])
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: Lists differ: ['1st', '2nd', '3rd'] != ['1st', '2nd']
+
+  I add the missing value
+
+  .. code-block:: python
+
+    self.assertEqual(a_list[0:3], ['1st', '2nd', '3rd'])
+
+  the test passes
+
+* I add another line
+
+  .. code-block:: python
+
+    self.assertEqual(a_list[0:3], ['1st', '2nd', '3rd'])
+    self.assertEqual(a_list[1:4], ['2nd', '3rd'])
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: Lists differ: ['2nd', '3rd', '... last'] != ['2nd', '3rd']
+
+  I change the expectation
+
+  .. code-block:: python
+
+    self.assertEqual(a_list[1:4], ['2nd', '3rd', '... last'])
+
+  the test is green again
+
+* One more assert_ statement for good measure
+
+  .. code-block:: python
+
+    self.assertEqual(a_list[1:4], ['2nd', '3rd', '... last'])
+        self.assertEqual(a_list[1:3], ['2nd', '3rd', '... last'])
+
+  I get :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: Lists differ: ['2nd', '3rd'] != ['2nd', '3rd', '... last']
+
+  I change the expectation
+
+  .. code-block:: python
+
+    self.assertEqual(a_list[1:3], ['2nd', '3rd'])
+
+  the test is green again
 
 ----
 
