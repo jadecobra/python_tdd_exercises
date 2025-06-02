@@ -52,7 +52,7 @@ requirements
 ----
 
 *********************************************************************************
-test_make_a_list
+test_make_a_list_w_list_constructor
 *********************************************************************************
 
 red: make it fail
@@ -67,7 +67,7 @@ I change ``test_failure`` to ``test_make_a_list``
 
   class TestLists(unittest.TestCase):
 
-      def test_make_a_list(self):
+      def test_make_a_list_w_list_constructor(self):
           self.assertEqual(list(0, 1, 2, 3), None)
 
 the terminal shows :ref:`TypeError`
@@ -94,7 +94,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_make_a_list(self):
+    def test_make_a_list_w_list_constructor(self):
         self.assertEqual(list((0, 1, 2, 3)), None)
 
   and get :ref:`AssertionError` in the terminal
@@ -107,7 +107,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def test_make_a_list(self):
+    def test_make_a_list_w_list_constructor(self):
         self.assertEqual(list((0, 1, 2, 3)), [0, 1, 2, 3])
 
   the test passes
@@ -127,7 +127,7 @@ I add a test
 
 .. code-block:: python
 
-  def test_make_a_list(self):
+  def test_make_a_list_w_list_constructor(self):
       ...
 
   def test_make_a_list_w_square_brackets(self):
@@ -659,7 +659,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_count_times_item_is_in_a_list(self):
+    def test_count_number_of_times_item_is_in_a_list(self):
         a_list = [0, 2, 1, 2, 3, 2]
         self.assertEqual(a_list.count(0), 1)
         self.assertEqual(a_list.count(2), 3)

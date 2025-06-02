@@ -152,14 +152,14 @@ test_truth_table
 test_lists
 *********************************************************************************
 
-#. :ref:`test_make_a_list`
+#. :ref:`test_make_a_list_w_list_constructor`
 #. :ref:`test_make_a_list_w_square_brackets`
 #. :ref:`test_make_a_list_from_an_iterable`
 #. :ref:`test_attributes_and_methods_of_lists`
 #. :ref:`test_append_adds_to_a_list`
 #. :ref:`test_clear_empties_a_list`
 #. :ref:`test_copy_a_list`
-#. :ref:`test_count_times_item_is_in_a_list`
+#. :ref:`test_count_number_of_times_item_is_in_a_list`
 #. :ref:`test_extend_makes_a_list_longer`
 #. :ref:`test_index_returns_position_of_item_in_a_list`
 #. :ref:`test_insert_places_item_at_given_index_in_a_list`

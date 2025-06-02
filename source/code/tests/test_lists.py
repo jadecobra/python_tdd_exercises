@@ -3,7 +3,7 @@ import unittest
 
 class TestLists(unittest.TestCase):
 
-    def test_make_a_list(self):
+    def test_make_a_list_w_list_constructor(self):
         self.assertEqual(list((0, 1, 2, 3)), [0, 1, 2, 3])
 
     def test_make_a_list_w_square_brackets(self):

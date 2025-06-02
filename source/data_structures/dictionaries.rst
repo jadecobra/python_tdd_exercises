@@ -44,7 +44,7 @@ requirements
 ----
 
 *********************************************************************************
-test_make_a_dictionary_w_strings_as_keys
+test_make_a_dictionary_w_dict_constructor
 *********************************************************************************
 
 red: make it fail
@@ -56,52 +56,34 @@ I change ``test_failure``
 
   class TestDictionaries(unittest.TestCase):
 
-      def test_make_a_dictionary_w_strings_as_keys(self):
-          self.assertEqual(
-              src.dictionaries.a_dictionary(),
-              {'key': 'value'}
-          )
+      def test_make_a_dictionary_w_dict_constructor(self):
+          self.assertEqual(dict(key='value'), None)
 
-the terminal shows NameError_
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  NameError: name 'src' is not defined
+  AssertionError: {'key': 'value'} != None
+
+I can use the `dict <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ constructor_ to make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
 green: make it pass
 #################################################################################
 
-* I add an `import statement`_
+I copy the value from the terminal and paste it to replace :ref:`None`
 
-  .. code-block:: python
+.. code-block:: python
 
-    import src.dictionaries
-    import unittest
+  self.assertEqual(dict(key='value'), {'key': 'value'})
 
-  the terminal shows :ref:`AttributeError`
+the test passes
 
-  .. code-block:: python
 
-    AttributeError: module 'src.dictionaries' has no attribute 'a_dictionary'
 
-* I add it to the list of Exceptions_ encountered
+I can also make a
 
-  .. code-block:: python
 
-    # Exceptions Encountered
-    # AssertionError
-    # AttributeError
-
-* I add a :ref:`function<functions>` definition to ``dictionaries.py``
-
-  .. code-block:: python
-
-    def a_dictionary():
-        return {'key': 'value'}
-
-  the test passes
-
-* I can also use the `dict <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ constructor_ to make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_. I add another assertion
+* I can also use the `dict <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ constructor_ to . I add another assertion
 
   .. code-block:: python
 
