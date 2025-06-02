@@ -1336,12 +1336,56 @@ I add a test
       a_list = [0, 1, 2, 3]
       self.assertIsNone(a_list.sort())
 
+the terminal still shows green. sort_ returns :ref:`None` when called, what does it do to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_?
+
+.. code-block:: python
+
+  def test_sort(self):
+      a_list = [0, 1, 2, 3]
+      self.assertIsNone(a_list.sort())
+      self.assertEqual(a_list, [0, 1, 2, 3])
+
+the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ is still the same. I change the values in ``a_list`` to see if it makes a difference
+
+.. code-block:: python
+
+    def test_sort(self):
+        a_list = [0, 2, 1, 2, 3, 2]
+
+I get :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: Lists differ: [0, 1, 2, 2, 2, 3] != [0, 1, 2, 3]
+
+the sort_ :ref:`method<functions>` arranges the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ in ascending order by default
 
 green: make it pass
 #################################################################################
 
+I change the values to match
+
+.. code-block:: python
+
+  self.assertEqual(a_list, [0, 1, 2, 2, 2, 3])
+
+the test passes
+
 refactor: make it better
 #################################################################################
+
+* I change the name of the test
+
+  .. code-block:: python
+
+    def test_sort_a_list(self):
+        a_list = [0, 2, 1, 2, 3, 2]
+        self.assertIsNone(a_list.sort())
+        self.assertEqual(a_list, [0, 1, 2, 2, 2, 3])
+
+  still green
+
+* I remove sort_ from the TODO list
 
 ----
 
@@ -1349,7 +1393,7 @@ refactor: make it better
 test_view_items_in_a_list
 *********************************************************************************
 
-I can provide the position of an item I want to see, as an index in ``[]``. Python uses zero-based indexing which means the positions of items starts at ``0``. I can also view items from the right side of the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ by using negative numbers
+I can provide the index of an item I want to see in ``[]`` to a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
 red: make it fail
 #################################################################################
