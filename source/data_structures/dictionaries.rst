@@ -374,46 +374,32 @@ I add a new test
 
 .. code-block:: python
 
-  def test_make_a_dictionary_w_dictionaries_as_keys(self):
-      a_dictionary = {"key": "value"}
-      {a_dictionary: "BOOM"}
+  def test_make_a_dictionary_w_sets_as_keys(self):
+      ...
 
-and the terminal shows :ref:`TypeError`
+  def test_make_a_dictionary_w_dictionaries_as_keys(self):
+      a_dictionary = {'key': 'value'}
+      {a_dictionary: 'BOOM!'}
+
+the terminal shows :ref:`TypeError`
 
 .. code-block:: python
 
-  >       {a_dictionary: "BOOM"}
-  E       TypeError: unhashable type: 'dict'
+  TypeError: unhashable type: 'dict'
 
 green: make it pass
 #################################################################################
 
-I add an :ref:`how to test that an Exception is raised` to the test to test the findings
+I add assertRaises
 
 .. code-block:: python
 
     def test_make_a_dictionary_w_dictionaries_as_keys(self):
-        a_dictionary = {"key": "value"}
+        a_dictionary = {'key': 'value'}
         with self.assertRaises(TypeError):
-            {a_dictionary: "BOOM"}
+            {a_dictionary: 'BOOM!'}
 
-and the terminal shows passing tests. I cannot use a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_, set_ or a :ref:`list <lists>` as a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ key
-
-----
-
-from these tests I know that I can make `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with the following data structures as keys
-
-* strings_
-* :ref:`booleans`
-* integers_
-* floats_
-* tuples_
-
-and I cannot make `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with the following data structures as keys
-
-* :ref:`lists`
-* sets_
-* `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+the test passes. I cannot use a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_, set_ or :ref:`list <lists>` as a key in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ they are not hashable_
 
 ----
 
@@ -1174,7 +1160,19 @@ green: make it pass
 
 ----
 
-I ran tests to show
+from these tests I know that I can make `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with the following data structures as keys
+
+* strings_
+* :ref:`booleans`
+* integers_
+* floats_
+* tuples_
+
+and I cannot make `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with the following data structures as keys
+
+* :ref:`lists`
+* sets_
+* `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
 * how to make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 * What objects can be used as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
