@@ -793,6 +793,196 @@ refactor: make it better
 ----
 
 *********************************************************************************
+test_index_returns_position_of_item_in_a_list
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+I add a test for the index_ :ref:`method`
+
+.. code-block:: python
+
+  def test_extend_makes_a_list_longer(self):
+      ...
+
+  def test_index(self):
+      a_list = [0, 1, 2, 3]
+      self.assertIsNone(a_list.index())
+
+the terminal shows :ref:`TypeError`
+
+.. code-block:: python
+
+  TypeError: index expected at least 1 argument, got 0
+
+green: make it pass
+#################################################################################
+
+I add a value to the call
+
+.. code-block:: python
+
+  def test_index(self):
+      a_list = [0, 1, 2, 3]
+      self.assertIsNone(a_list.index(0))
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: 0 is not None
+
+I add the expectation and change the assert_ :ref:`method<functions>`
+
+.. code-block:: python
+
+  def test_index(self):
+      a_list = [0, 1, 2, 3]
+      self.assertEqual(a_list.index(0), 0)
+
+the test passes
+
+refactor: make it better
+#################################################################################
+
+* I change the values in ``a_list``
+
+  .. code-block:: python
+
+    def test_index(self):
+        a_list = ['1st', '2nd', '3rd', '... last']
+        self.assertEqual(a_list.index(0), 0)
+
+  the terminal shows ValueError_
+
+  .. code-block:: python
+
+    ValueError: 0 is not in list
+
+  I add the error to the list of Exceptions_ encountered
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AssertionError
+    # ValueError
+
+  I add assertRaises_ to handle the Exception_ and remove assertEqual_
+
+  .. code-block:: python
+
+    def test_index(self):
+        a_list = ['1st', '2nd', '3rd', '... last']
+
+        with self.assertRaises(ValueError):
+            a_list.index(0)
+
+  the test is green again
+
+* I add a new assertion for the index_ :ref:`method<functions>`
+
+  .. code-block:: python
+
+    def test_index(self):
+        a_list = ['1st', '2nd', '3rd', '... last']
+        self.assertEqual(a_list.index('1st'), 0)
+
+        with self.assertRaises(ValueError):
+            a_list.index(0)
+
+  the test is still green
+
+* I add another assertion
+
+  .. code-block:: python
+
+    self.assertEqual(a_list.index('1st'), 0)
+    self.assertEqual(a_list.index('3rd'), 0)
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 2 != 0
+
+  I change the value in the test
+
+  .. code-block:: python
+
+    self.assertEqual(a_list.index('3rd'), 2)
+
+  the test passes
+
+* I add another call to assertEqual_
+
+  .. code-block:: python
+
+    self.assertEqual(a_list.index('3rd'), 2)
+    self.assertEqual(a_list.index('2nd'), 0)
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 1 != 0
+
+  I change the value to match
+
+  .. code-block:: python
+
+    self.assertEqual(a_list.index('2nd'), 1)
+
+  the test is green again
+
+* I add another assertion
+
+  .. code-block:: python
+
+    self.assertEqual(a_list.index('2nd'), 1)
+    self.assertEqual(a_list.index('... last'), 0)
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 3 != 0
+
+  I change the value in the test to match the one in the terminal
+
+  .. code-block:: python
+
+    self.assertEqual(a_list.index('... last'), 3)
+
+  the test passes. Python uses `zero-based indexing`_ which means the first item has an index ``0`` and the last item has an index of the length of the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ minus ``1``
+
+* I rename the test
+
+  .. code-block:: python
+
+    def test_index_returns_position_of_item_in_a_list(self):
+        a_list = ['1st', '2nd', '3rd', '... last']
+        self.assertEqual(a_list.index('1st'), 0)
+        self.assertEqual(a_list.index('3rd'), 2)
+        self.assertEqual(a_list.index('2nd'), 1)
+        self.assertEqual(a_list.index('... last'), 3)
+
+        with self.assertRaises(ValueError):
+            a_list.index(0)
+
+* I also remove index_ from the TODO list
+
+  .. code-block:: python
+
+    'insert',
+    'pop',
+    'remove',
+    'reverse',
+    'sort'
+
+----
+
+*********************************************************************************
 test_remove_from_a_list
 *********************************************************************************
 
