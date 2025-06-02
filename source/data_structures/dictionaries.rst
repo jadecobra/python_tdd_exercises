@@ -182,87 +182,56 @@ I wonder if it is possible to use :ref:`False<test_what_is_false>` or :ref:`True
 red: make it fail
 #################################################################################
 
-I add a test to find out if it is possible to use :ref:`False<test_what_is_false>` as a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ key
+I add a test
 
 .. code-block:: python
 
-  def test_make_a_dictionary_w_booleans_as_keys(self):
-      self.assertEqual(
-          {False: 'boom'},
-          {False: 'bap'}
-      )
+    def test_make_a_dictionary_w_numbers_as_keys(self):
+        ...
+
+    def test_make_a_dictionary_w_booleans_as_keys(self):
+        self.assertEqual({False: 'boom'}, {'False': 'boom'})
 
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
-  :force:
 
-  AssertionError: {False: 'boom'} != {False: 'bap'}
-  - {False: 'boom'}
-  ?           ^^^
-
-  + {False: 'bap'}
-  ?           ^^
+  AssertionError: {False: 'boom'} != {'False': 'boom'}
 
 green: make it pass
 #################################################################################
 
-I make the values to make them match and tests are green again. Sweet!
+I match the keys
 
 .. code-block:: python
 
-  def test_make_a_dictionary_w_booleans_as_keys(self):
-      self.assertEqual(
-          {False: 'boom'},
-          {False: 'boom'}
-      )
+  self.assertEqual({False: 'boom'}, {False: 'boom'})
 
 I can use :ref:`False<test_what_is_false>` as a key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
 refactor: make it better
 #################################################################################
 
-* I add a test to find out if it is possible to use :ref:`True<test_what_is_true>` as a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ key
+I add another assertion
 
-  .. code-block:: python
+.. code-block:: python
 
-    def test_make_a_dictionary_w_booleans_as_keys(self):
-        self.assertEqual(
-            {False: 'boom'},
-            {False: 'boom'}
-        )
-        self.assertEqual(
-            {True: 'bap'},
-            {True: 'boom'}
-        )
+  self.assertEqual({False: 'boom'}, {False: 'boom'})
+  self.assertEqual({True: 'bap'}, {'True': 'bap'})
 
-  the terminal shows :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
-  .. code-block:: python
-    :force:
+.. code-block:: python
 
-    AssertionError: {True: 'bap'} != {True: 'boom'}
-    - {True: 'bap'}
-    ?          ^^
+  AssertionError: {True: 'bap'} != {'True': 'bap'}
 
-    + {True: 'boom'}
-    ?
+I change the expectation
 
-* and I make the values to make the tests pass
+.. code-block:: python
 
-  .. code-block:: python
+  self.assertEqual({True: 'bap'}, {True: 'bap'})
 
-    def test_make_a_dictionary_w_booleans_as_keys(self):
-        self.assertEqual(
-            {False: 'boom'},
-            {False: 'boom'}
-        )
-        self.assertEqual(
-            {True: 'bap'},
-            {True: 'bap'}
-        )
-
-So far from the tests, I see that I can use :ref:`booleans`, floats_, integers_ and strings_ as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
+the test passes. I can use a boolean_ as a key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
 ----
 
