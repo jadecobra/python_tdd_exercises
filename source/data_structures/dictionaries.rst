@@ -50,149 +50,86 @@ test_make_a_dictionary_w_strings_as_keys
 red: make it fail
 #################################################################################
 
-I add a file called ``test_dictionaries.py`` to the ``tests`` folder with the following import statements
+I change ``test_failure``
 
 .. code-block:: python
 
-  import unittest
-  import dictionaries
+  class TestDictionaries(unittest.TestCase):
 
-the terminal shows :ref:`ModuleNotFoundError`  which I add to the list of Exceptions_ encountered
+      def test_make_a_dictionary_w_strings_as_keys(self):
+          self.assertEqual(
+              src.dictionaries.a_dictionary(),
+              {'key': 'value'}
+          )
+
+the terminal shows NameError_
 
 .. code-block:: python
 
-  # Exceptions Encountered
-  # ModuleNotFoundError
+  NameError: name 'src' is not defined
 
 green: make it pass
 #################################################################################
 
-adding a file called ``dictionaries.py`` to the project folder makes the test pass
-
-refactor: make it better
-#################################################################################
-
-* I add a failing test to show how to make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+* I add an `import statement`_
 
   .. code-block:: python
 
-    class TestDictionaries(unittest.TestCase):
+    import src.dictionaries
+    import unittest
 
-      def test_make_a_dictionary_w_strings_as_keys(self):
-          self.assertEqual(
-              dictionaries.a_dict(),
-              {"key": "value"}
-          )
+  the terminal shows :ref:`AttributeError`
 
-  the terminal shows :ref:`AttributeError` which I add to the list of Exceptions_ encountered
+  .. code-block:: python
+
+    AttributeError: module 'src.dictionaries' has no attribute 'a_dictionary'
+
+* I add it to the list of Exceptions_ encountered
 
   .. code-block:: python
 
     # Exceptions Encountered
-    # ModuleNotFoundError
+    # AssertionError
     # AttributeError
 
 * I add a :ref:`function<functions>` definition to ``dictionaries.py``
 
   .. code-block:: python
 
-    def a_dict():
-        return None
-
-  and the terminal shows :ref:`AssertionError` since the :ref:`function<functions>` I defined returns :ref:`None` instead of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
-
-  .. code-block:: python
-
-    AssertionError: None != {'key': 'value'}
-
-* I make the `return statement`_ send an empty `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
-
-  .. code-block:: python
-
-    def a_dict():
-        return {}
-
-  the terminal still shows :ref:`AssertionError` but with a return value that looks more like what is expected
-
-  .. code-block:: python
-
-      E    AssertionError: {} != {'key': 'value'}
-
-  - ``AssertionError: {} != {'key': 'value'}`` shows that 2 values are not equal
-  - the value on the left ``{}`` is what the :ref:`function<functions>` returns, in other words the result of calling ``dictionaries.a_dict()`` from the test
-  - the value on the right ``{'key': 'value'}`` is what is expected
-  - ``!=`` means ``not equal to``
-
-* I make the `return statement`_ with the expected values and I get a passing test. YES! We are off to a good start
-
-  .. code-block:: python
-
-    def a_dict():
+    def a_dictionary():
         return {'key': 'value'}
 
-* it is also possible to make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ using the dict_ constructor_. I add another test to ``test_make_a_dictionary_w_strings_as_keys``
+  the test passes
+
+* I can also use the `dict <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ constructor_ to make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_. I add another assertion
 
   .. code-block:: python
 
-    def test_make_a_dictionary_w_strings_as_keys(self):
-        self.assertEqual(
-            dictionaries.a_dict(),
-            {'key': 'value'}
-        )
-        self.assertEqual(
-            dictionaries.a_dict(),
-            dict(key='key')
-        )
+    self.assertEqual(
+        src.dictionaries.a_dictionary(),
+        {'key': 'value'}
+    )
+    self.assertEqual(
+        dict(key='key'),
+        src.dictionaries.a_dictionary()
+    )
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-      AssertionError: {'key': 'value'} != {'key': 'key'}
+    AssertionError: {'key': 'key'} != {'key': 'value'}
 
-
-  so I change the test to make it pass
-
-  .. code-block:: python
-
-    self.assertEqual(
-        dictionaries.a_dict(),
-        dict(key='value')
-    )
-
-  the terminal shows passing tests, because ``dict(key='value')`` and ``{'key': 'value'}`` are 2 ways of representing the same thing
-* I can add another test to make sure, even though it repeats the 2 tests above
-
-  .. code-block:: python
-
-    def test_make_a_dictionary_w_strings_as_keys(self):
-        self.assertEqual(
-            dictionaries.a_dict(),
-            {"key": "value"}
-        )
-        self.assertEqual(
-            dictionaries.a_dict(),
-            dict(key='value')
-        )
-        self.assertEqual(
-            {"key": "value"},
-            dict(key='key')
-        )
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: {'key': 'value'} != {'key': 'key'}
-
-* I change the test to make it pass
+  I change the value
 
   .. code-block:: python
 
     self.assertEqual(
-        {"key": "value"},
-        dict(key='value')
+        dict(key='value'),
+        src.dictionaries.a_dictionary()
     )
+
+  the test passes
 
 ----
 
@@ -876,7 +813,7 @@ I add a new test to ``TestDictionaries``
   def test_attributes_and_methods_of_dictionaries(self):
       self.maxDiff = None
       self.assertEqual(
-          dir(dictionaries.a_dict()),
+          dir(src.dictionaries.a_dict()),
           []
       )
 
@@ -901,7 +838,7 @@ I copy the expected values shown in the terminal to make the test pass
   def test_attributes_and_methods_of_dictionaries(self):
       self.maxDiff = None
       self.assertEqual(
-          dir(dictionaries.a_dict()),
+          dir(src.dictionaries.a_dict()),
           [
               '__class__',
               '__class_getitem__',
