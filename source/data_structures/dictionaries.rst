@@ -1121,17 +1121,135 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_pop
+test_pop_removes_and_returns_key_w_value_from_dictionary
 *********************************************************************************
 
 red: make it fail
 #################################################################################
 
+I add a test for the next :ref:`method<functions>`
+
+.. code-block:: python
+
+  def test_keys_returns_keys_of_dictionary(self):
+      ...
+
+  def test_pop(self):
+      a_dictionary = {'key': 'value'}
+      self.assertIsNone(a_dictionary.pop())
+
+the terminal shows :ref:`TypeError`
+
+.. code-block:: python
+
+  TypeError: pop expected at least 1 argument, got 0
+
 green: make it pass
 #################################################################################
 
+I pass a value to the call
+
+.. code-block:: python
+
+  def test_pop(self):
+      a_dictionary = {'key': 'value'}
+      self.assertIsNone(a_dictionary.pop(0))
+
+the terminal shows KeyError_
+
+.. code-block:: python
+
+  KeyError: 0
+
+I change the assertion to assertRaises_
+
+.. code-block:: python
+
+  def test_pop(self):
+      a_dictionary = {'key': 'value'}
+
+      with self.assertRaises(KeyError):
+          a_dictionary.pop(0)
+
+calling the `pop <https://docs.python.org/3/library/stdtypes.html#dict.pop>`_ :ref:`method<functions>` with a key that is not in the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ raises a KeyError_
+
 refactor: make it better
 #################################################################################
+
+* I add another assertion
+
+  .. code-block:: python
+
+    def test_pop(self):
+        a_dictionary = {'key': 'value'}
+        self.assertIsNone(a_dictionary.pop('key'))
+
+        with self.assertRaises(KeyError):
+            a_dictionary.pop(0)
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 'value' is not None
+
+  the `pop <https://docs.python.org/3/library/stdtypes.html#dict.pop>`_ :ref:`method<functions>` returns the value from the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ for the key it is given
+
+* I change the assertion to assertEqual_ and paste the value from the terminal
+
+  .. code-block:: python
+
+    a_dictionary = {'key': 'value'}
+    self.assertEqual(a_dictionary.pop('key'), 'value')
+
+  the test passes
+
+* I add another assertion to see what happens to the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+
+  .. code-block:: python
+
+    self.assertEqual(a_dictionary.pop('key'), 'value')
+    self.assertEqual(a_dictionary, {'key': 'value'})
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {} != {'key': 'value'}
+
+  `pop <https://docs.python.org/3/library/stdtypes.html#dict.pop>`_ :ref:`method<functions>` removes the key-value pair and returns the value from the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ for the key it is given
+
+* I change the value expectation to match
+
+  .. code-block:: python
+
+    self.assertEqual(a_dictionary, {})
+
+  the test passes
+
+* I rename the test
+
+  .. code-block:: python
+
+    def test_pop_removes_and_returns_key_w_value_from_dictionary(self):
+        a_dictionary = {'key': 'value'}
+        self.assertEqual(a_dictionary.pop('key'), 'value')
+        self.assertEqual(a_dictionary, {})
+
+        with self.assertRaises(KeyError):
+            a_dictionary.pop(0)
+
+  the test is still passings
+
+* I remove `pop <https://docs.python.org/3/library/stdtypes.html#dict.pop>`_ from the TODO list
+
+  .. code-block:: python
+
+    'pop',
+    'popitem',
+    'setdefault',
+    'update',
+    'values'
 
 ----
 
