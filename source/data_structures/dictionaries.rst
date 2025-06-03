@@ -590,6 +590,8 @@ refactor: make it better
         self.assertIsNone(a_dictionary.clear())
         self.assertEqual(a_dictionary, {})
 
+  the test is still passing
+
 * I remove `clear <https://docs.python.org/3/library/stdtypes.html#dict.clear>`_ from the TODO list
 
   .. code-block:: python
@@ -608,17 +610,95 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_copy
+test_copy_a_dictionary
 *********************************************************************************
 
 red: make it fail
 #################################################################################
 
+I add a test for the next :ref:`method<functions>`
+
+.. code-block:: python
+
+  def test_clear_empties_a_dictionary(self):
+      a_dictionary = {'key': 'value'}
+      self.assertIsNone(a_dictionary.clear())
+      self.assertEqual(a_dictionary, {})
+
+  def test_copy(self):
+      a_dictionary = {'key': 'value'}
+      self.assertIsNone(a_dictionary.copy())
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: {'key': 'value'} is not None
+
+the `copy <https://docs.python.org/3/library/stdtypes.html#dict.copy>`_ :ref:`method<functions>` returns a copy of the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+
+
 green: make it pass
 #################################################################################
 
+I change the assert_ :ref:`method<functions>` then add the expected value
+
+.. code-block:: python
+
+  def test_copy(self):
+      a_dictionary = {'key': 'value'}
+      self.assertEqual(a_dictionary.copy(), {'key': 'value'})
+
+the test passes
+
 refactor: make it better
 #################################################################################
+
+* I add another assertion to see what happens to the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ after the call
+
+  .. code-block:: python
+
+    self.assertEqual(a_dictionary.copy(), {'key': 'value'})
+    self.assertEqual(a_dictionary, {})
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {'key': 'value'} != {}
+
+  it stays the same. I change the values to match
+
+  .. code-block:: python
+
+    self.assertEqual(a_dictionary, {'key': 'value'})
+
+  the test is green again
+
+* I rename the test
+
+  .. code-block:: python
+
+    def test_copy_a_dictionary(self):
+        a_dictionary = {'key': 'value'}
+        self.assertEqual(a_dictionary.copy(), {'key': 'value'})
+        self.assertEqual(a_dictionary, {'key': 'value'})
+
+  the test is still green
+
+* I remove `copy <https://docs.python.org/3/library/stdtypes.html#dict.copy>`_ from the TODO list
+
+  .. code-block:: python
+
+    'fromkeys',
+    'get',
+    'items',
+    'keys',
+    'pop',
+    'popitem',
+    'setdefault',
+    'update',
+    'values'
 
 ----
 
