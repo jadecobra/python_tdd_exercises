@@ -420,7 +420,7 @@ I remove append_ from the TODO list
 test_clear_empties_a_list
 *********************************************************************************
 
-I add a test for the clear_ :ref:`method<functions>`
+I add a test for the `clear <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>`
 
 .. code-block:: python
 
@@ -431,7 +431,7 @@ I add a test for the clear_ :ref:`method<functions>`
       a_list = [0, 1, 2, 3]
       self.assertIsNone(a_list.clear())
 
-the terminal shows green. The clear_ :ref:`method<functions>` returns :ref:`None` when it is called
+the terminal shows green. The `clear <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` returns :ref:`None` when it is called
 
 red: make it fail
 #################################################################################
@@ -467,7 +467,7 @@ the test passes. I change the name of the test to be more descriptive
       self.assertIsNone(a_list.clear())
       self.assertEqual(a_list, [])
 
-I remove clear_ from the TODO list
+I remove `clear <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ from the TODO list
 
 .. code-block:: python
 
@@ -507,7 +507,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: [0, 1, 2, 3] is not None
 
-the copy_ :ref:`method<functions>` returns a copy of the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+the `copy <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` returns a copy of the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
 green: make it pass
 #################################################################################
@@ -541,7 +541,7 @@ the terminal still shows green, the original `list <https://docs.python.org/3/li
       self.assertEqual(a_list.copy(), [0, 1, 2, 3])
       self.assertEqual(a_list, [0, 1, 2, 3])
 
-the test is still green, I remove copy_ from the TODO list
+the test is still green, I remove `copy <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ from the TODO list
 
 .. code-block:: python
 

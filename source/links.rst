@@ -34,10 +34,8 @@
 .. _cd: https://man7.org/linux/man-pages/man1/cd.1p.html
 .. _chmod: https://en.wikipedia.org/wiki/Chmod
 .. _class: https://docs.python.org/3/reference/lexical_analysis.html#keywords
-.. _clear: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _comparisons: https://docs.python.org/3/reference/expressions.html?highlight=ternary%20conditional#comparisons
 .. _constructor: https://en.wikipedia.org/wiki/Constructor_(object-oriented_programming)
-.. _copy: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _count: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _datetime: https://docs.python.org/3/library/datetime.html?highlight=time%20difference#module-datetime
 .. _datetime.datetime: https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects
