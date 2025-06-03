@@ -713,6 +713,9 @@ I add a test
 
 .. code-block:: python
 
+  def test_copy_a_dictionary(self):
+      ...
+
   def test_fromkeys(self):
       a_dictionary = {'key': 'value'}
       self.assertIsNone(a_dictionary.fromkeys())
@@ -824,11 +827,10 @@ refactor: make it better
 
   still green
 
-* I remove `fromkeys <https://docs.python.org/3/library/stdtypes.html#dict.fromkeys>`_ from the TODO list
+* I remove fromkeys_ from the TODO list
 
   .. code-block:: python
 
-    'fromkeys',
     'get',
     'items',
     'keys',
@@ -841,17 +843,117 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_get
+test_get_value_of_key_from_dictionary
 *********************************************************************************
 
 red: make it fail
 #################################################################################
 
+I add another test
+
+.. code-block:: python
+
+  def test_fromkeys_makes_a_dictionary_from_an_iterable(self):
+      ...
+
+  def test_get(self):
+      a_dictionary = {'key': 'value'}
+      self.assertIsNone(a_dictionary.get())
+
+the terminal shows :ref:`TypeError`
+
+.. code-block:: python
+
+  TypeError: get expected at least 1 argument, got 0
+
 green: make it pass
 #################################################################################
 
+* I add a value to the call
+
+  .. code-block:: python
+
+    self.assertIsNone(a_dictionary.get('key'))
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 'value' is not None
+
+  the get_ :ref:`method<functions>` returns the value for the key it is given from the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+
+* I change the assertion then add the expected value
+
+  .. code-block:: python
+
+    def test_get(self):
+        a_dictionary = {'key': 'value'}
+        self.assertEqual(a_dictionary.get('key'), 'value')
+
+  the test passes
+
 refactor: make it better
 #################################################################################
+
+* I add an assertion to see if the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ changed
+
+  .. code-block:: python
+
+    self.assertEqual(a_dictionary.get('key'), 'value')
+    self.assertEqual(a_dictionary, {})
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {'key': 'value'} != {}
+
+  it stayed the same
+
+* I remove the new statement, I want to see what happens when I give the get_ :ref:`method<functions>` a key that is not in the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+
+  .. code-block:: python
+
+    self.assertEqual(a_dictionary.get('key'), 'value')
+    self.assertEqual(a_dictionary.get(0), {})
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: None != {}
+
+  the get_ :ref:`method<functions>` returns :ref:`None` when the given key is not in the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_. I remove the expectation and change the assertion
+
+  .. code-block:: python
+
+    self.assertIsNone(a_dictionary.get(0))
+
+  the test passes
+
+* I change the name of the test
+
+  .. code-block:: python
+
+    def test_get_value_of_key_from_dictionary(self):
+        a_dictionary = {'key': 'value'}
+        self.assertEqual(a_dictionary.get('key'), 'value')
+        self.assertIsNone(a_dictionary.get(0))
+
+  the test is still green
+
+* I remove get_ from the TODO list
+
+  .. code-block:: python
+
+    'items',
+    'keys',
+    'pop',
+    'popitem',
+    'setdefault',
+    'update',
+    'values'
 
 ----
 
@@ -1192,7 +1294,7 @@ What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datas
     >       self.assertIsNone(a_dictionary['non_existent_key'])
     E       KeyError: 'non_existent_key'
 
-* I can use the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :ref:`method<functions>` when I do not wantPython to raise KeyError_ for a key that does not exist
+* I can use the get_ :ref:`method<functions>` when I do not wantPython to raise KeyError_ for a key that does not exist
 
   .. code-block:: python
 
@@ -1205,7 +1307,7 @@ What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datas
         }
         self.assertIsNone(a_dictionary.get('non_existent_key'))
 
-  the terminal shows a passing test. This means that when I use the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :ref:`method<functions>` and the ``key`` does not exist, I get :ref:`None` as the result.
+  the terminal shows a passing test. This means that when I use the get_ :ref:`method<functions>` and the ``key`` does not exist, I get :ref:`None` as the result.
 * I can state the above explicitly, from the `Zen of Python`_: ``Explicit is better than implicit``
 
   .. code-block:: python
@@ -1234,12 +1336,12 @@ What if I want to access a `dictionary <https://docs.python.org/3/tutorial/datas
     self.assertIsNone(a_dictionary.get('non_existent_key', None))
 
   the terminal shows passing tests.
-* The `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :ref:`method<functions>` takes in 2 inputs
+* The get_ :ref:`method<functions>` takes in 2 inputs
 
   - the ``key``
   - the ``default value`` wanted when the ``key`` does not exist
 
-* I can also use the `get <https://docs.python.org/3/library/stdtypes.html#dict.get>`_ :ref:`method<functions>` to get the value for an existing key
+* I can also use the get_ :ref:`method<functions>` to get the value for an existing key
 
   .. code-block:: python
 

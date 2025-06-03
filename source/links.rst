@@ -52,8 +52,10 @@
 .. _floats: https://docs.python.org/3/library/functions.html#float
 .. _floor (integer) division: https://en.wikipedia.org/wiki/Division_(mathematics)#Division_in_different_contexts
 .. _for loop: https://docs.python.org/3/tutorial/controlflow.html#for-statements
+.. _fromkeys: https://docs.python.org/3/library/stdtypes.html#dict.fromkeys
 .. _f-string: https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals
 .. _f-strings: https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals
+.. _get: https://docs.python.org/3/library/stdtypes.html#dict.get
 .. _help system: https://docs.python.org/3/library/functions.html?highlight=dir#help
 .. _hashable: https://docs.python.org/3/glossary.html#term-hashable>
 .. _history: https://man7.org/linux/man-pages/man3/history.3.html
