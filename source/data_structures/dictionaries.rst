@@ -703,17 +703,140 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_fromkeys
+test_fromkeys_makes_a_dictionary_from_an_iterable
 *********************************************************************************
 
 red: make it fail
 #################################################################################
 
+I add a test
+
+.. code-block:: python
+
+  def test_fromkeys(self):
+      a_dictionary = {'key': 'value'}
+      self.assertIsNone(a_dictionary.fromkeys())
+
+the terminal shows :ref:`TypeError`
+
+.. code-block:: python
+
+  TypeError: fromkeys expected at least 1 argument, got 0
+
 green: make it pass
 #################################################################################
 
+I pass a value to the call
+
+.. code-block:: python
+
+  self.assertIsNone(a_dictionary.fromkeys(0))
+
+the terminal shows :ref:`TypeError`
+
+.. code-block:: python
+
+  TypeError: 'int' object is not iterable
+
+I change the value passed in to a tuple_
+
+.. code-block:: python
+
+  self.assertIsNone(a_dictionary.fromkeys((0, 1, 2, 3)))
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: {0: None, 1: None, 2: None, 3: None} is not None
+
+the `fromkeys <https://docs.python.org/3/library/stdtypes.html#dict.fromkeys>` :ref:`method<functions>` returns a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ that uses the iterable_ given as keys with default values of :ref:`None`. I change the assertion then add the expected values
+
+.. code-block:: python
+
+  def test_fromkeys(self):
+      a_dictionary = {'key': 'value'}
+      self.assertEqual(
+          a_dictionary.fromkeys((0, 1, 2, 3)),
+          {0: None, 1: None, 2: None, 3: None}
+      )
+
+the test passes
+
 refactor: make it better
 #################################################################################
+
+* I add an assert_ statement to see what happens to the first `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ in the test
+
+  .. code-block:: python
+
+    self.assertEqual(
+        a_dictionary.fromkeys((0, 1, 2, 3)),
+        {0: None, 1: None, 2: None, 3: None}
+    )
+    self.assertEqual(a_dictionary, {})
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {'key': 'value'} != {}
+
+  the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ did not change
+
+* I remove it and the assertion
+
+  .. code-block:: python
+
+    def test_fromkeys(self):
+        self.assertEqual(
+            a_dictionary.fromkeys((0, 1, 2, 3)),
+            {0: None, 1: None, 2: None, 3: None}
+        )
+
+  the terminal shows NameError_
+
+  .. code-block:: python
+
+    NameError: name 'a_dictionary' is not defined
+
+  I change the call to use the `dict <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ constructor_
+
+  .. code-block:: python
+
+    def test_fromkeys(self):
+        self.assertEqual(
+            dict.fromkeys((0, 1, 2, 3)),
+            {0: None, 1: None, 2: None, 3: None}
+        )
+
+  the test passes
+
+* I rename the test
+
+  .. code-block:: python
+
+    def test_fromkeys_makes_a_dictionary_from_an_iterable(self):
+        self.assertEqual(
+            dict.fromkeys((0, 1, 2, 3)),
+            {0: None, 1: None, 2: None, 3: None}
+        )
+
+  still green
+
+* I remove `fromkeys <https://docs.python.org/3/library/stdtypes.html#dict.fromkeys>`_ from the TODO list
+
+  .. code-block:: python
+
+    'fromkeys',
+    'get',
+    'items',
+    'keys',
+    'pop',
+    'popitem',
+    'setdefault',
+    'update',
+    'values'
 
 ----
 
