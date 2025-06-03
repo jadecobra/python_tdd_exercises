@@ -533,11 +533,8 @@ the test passes. I make a TODO list with the names that do not have double under
 ----
 
 *********************************************************************************
-test_clear
+test_clear_empties_a_dictionary
 *********************************************************************************
-
-red: make it fail
-#################################################################################
 
 I add a test for the :ref:`method<functions>`
 
@@ -550,12 +547,63 @@ I add a test for the :ref:`method<functions>`
         a_dictionary = {'key': 'value'}
         self.assertIsNone(a_dictionary.clear())
 
+the terminal shows green. The `clear <https://docs.python.org/3/library/stdtypes.html#dict.clear>`_ :ref:`method<functions>` returns :ref:`None`
+
+red: make it fail
+#################################################################################
+
+I add an assertion to see what changed in the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+
+.. code-block:: python
+
+  self.assertIsNone(a_dictionary.clear())
+  self.assertEqual(a_dictionary, {'key': 'value'})
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: {} != {'key': 'value'}
+
+the `clear <https://docs.python.org/3/library/stdtypes.html#dict.clear>`_ :ref:`method<functions>` empties the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
 green: make it pass
 #################################################################################
 
+I change the values to match
+
+.. code-block:: python
+
+  self.assertEqual(a_dictionary, {})
+
+the test passes. ``{}`` is how Python represents an empty `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+
 refactor: make it better
 #################################################################################
+
+* I rename the test
+
+  .. code-block:: python
+
+    def test_clear_empties_a_dictionary(self):
+        a_dictionary = {'key': 'value'}
+        self.assertIsNone(a_dictionary.clear())
+        self.assertEqual(a_dictionary, {})
+
+* I remove `clear <https://docs.python.org/3/library/stdtypes.html#dict.clear>`_ from the TODO list
+
+  .. code-block:: python
+
+    'copy',
+    'fromkeys',
+    'get',
+    'items',
+    'keys',
+    'pop',
+    'popitem',
+    'setdefault',
+    'update',
+    'values'
 
 ----
 
