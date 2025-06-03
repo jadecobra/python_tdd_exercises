@@ -1245,7 +1245,6 @@ refactor: make it better
 
   .. code-block:: python
 
-    'pop',
     'popitem',
     'setdefault',
     'update',
@@ -1254,17 +1253,205 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_popitem
+test_popitem_removes_and_returns_last_key_value_pair_from_dictionary
 *********************************************************************************
 
 red: make it fail
 #################################################################################
 
+I add a failing test
+
+.. code-block:: python
+
+  def test_pop_removes_and_returns_key_w_value_from_dictionary(self):
+      ...
+
+  def test_pop_item(self):
+      a_dictionary = {'key': 'value'}
+      self.assertIsNone(a_dictionary.popitem())
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: ('key', 'value') is not None
+
+the `popitem <https://docs.python.org/3/library/stdtypes.html#dict.popitem>`_ :ref:`method<functions>` returns the key-value pair as a tuple_
+
 green: make it pass
 #################################################################################
 
+I change the assertion and paste the value from the terminal
+
+.. code-block:: python
+
+    a_dictionary = {'key': 'value'}
+    self.assertEqual(a_dictionary.popitem(), ('key', 'value'))
+
+the test passes
+
 refactor: make it better
 #################################################################################
+
+* I want to know what the `popitem <https://docs.python.org/3/library/stdtypes.html#dict.popitem>`_ :ref:`method<functions>` does to the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+
+  .. code-block:: python
+
+    self.assertEqual(a_dictionary.popitem(), ('key', 'value'))
+    self.assertEqual(a_dictionary, {'key': 'value'})
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {} != {'key': 'value'}
+
+  `popitem <https://docs.python.org/3/library/stdtypes.html#dict.popitem>`_ removes and returns the key-value pair given from the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+
+* I change the value
+
+  .. code-block:: python
+
+    self.assertEqual(a_dictionary, {})
+
+  the test passes
+
+* I add another assertion
+
+  .. code-block:: python
+
+    self.assertEqual(a_dictionary, {})
+    self.assertEqual(a_dictionary.popitem(), None)
+
+  the terminal shows KeyError_
+
+  .. code-block:: python
+
+    KeyError: 'popitem(): dictionary is empty'
+
+  I change the assertion to assertRaises_
+
+  .. code-block:: python
+
+    self.assertEqual(a_dictionary, {})
+
+    with self.assertRaises(KeyError):
+        a_dictionary.popitem()
+
+  the test passes
+
+* this operation does not take input, I change the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ to see how it behaves
+
+  .. code-block:: python
+
+    a_dictionary = {
+        'key1': 'value1',
+        'key2': 'value2'
+    }
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: Tuples differ: ('key2', 'value2') != ('key', 'value')
+
+  I change the expectation to match
+
+  .. code-block:: python
+
+    self.assertEqual(
+        a_dictionary.popitem(),
+        ('key2', 'value2')
+    )
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {'key1': 'value1'} != {}
+
+  I change the value to match
+
+  .. code-block:: python
+
+    self.assertEqual(a_dictionary, {'key1': 'value1'})
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: KeyError not raised
+
+  I change the assertRaises_ to assertEqual_
+
+  .. code-block:: python
+
+    self.assertEqual(
+        a_dictionary.popitem(),
+        ('key1', 'value1')
+    )
+
+  `popitem <https://docs.python.org/3/library/stdtypes.html#dict.popitem>`_ returns the last key-value pair in the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+
+* I add another call to the :ref:`method<functions>` that should fail
+
+  .. code-block:: python
+
+    self.assertEqual(
+        a_dictionary.popitem(),
+        ('key1', 'value1')
+    )
+    a_dictionary.popitem()
+
+  the terminal shows KeyError_
+
+  .. code-block:: python
+
+    KeyError: 'popitem(): dictionary is empty'
+
+  I add assertRaises_
+
+  .. code-block:: python
+
+    self.assertEqual(
+        a_dictionary.popitem(),
+        ('key1', 'value1')
+    )
+
+    with self.assertRaises(KeyError):
+        a_dictionary.popitem()
+
+  the test passes
+
+* I change the name of the test
+
+  .. code-block:: python
+
+    def test_popitem_removes_and_returns_last_key_value_pair_from_dictionary(self):
+        a_dictionary = {
+            'key1': 'value1',
+            'key2': 'value2'
+        }
+        self.assertEqual(
+            a_dictionary.popitem(),
+            ('key2', 'value2')
+        )
+        self.assertEqual(a_dictionary, {'key1': 'value1'})
+        self.assertEqual(
+            a_dictionary.popitem(),
+            ('key1', 'value1')
+        )
+
+        with self.assertRaises(KeyError):
+            a_dictionary.popitem()
+
+* I remove `popitem <https://docs.python.org/3/library/stdtypes.html#dict.popitem>`_ from the TODO list
+
+  .. code-block:: python
+
+    'setdefault',
+    'update',
+    'values'
 
 ----
 
