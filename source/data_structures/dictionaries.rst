@@ -958,17 +958,89 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_items
+test_items_returns_keys_and_values_of_dictionary
 *********************************************************************************
 
 red: make it fail
 #################################################################################
 
+I add a test for the next :ref:`method<functions>`
+
+.. code-block:: python
+
+  def test_get_value_of_key_from_dictionary(self):
+      ...
+
+  def test_items(self):
+      a_dictionary = {'key': 'value'}
+      self.assertIsNone(a_dictionary.items())
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: dict_items([('key', 'value')]) is not None
+
+the items_ :ref:`methods<functions>` returns a ``dict_items`` object_ that contains the keys and values of the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+
 green: make it pass
 #################################################################################
 
+I copy and paste the value from the terminal
+
+.. code-block:: python
+
+  self.assertIsNone(a_dictionary.items(), dict_items([('key', 'value')]))
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  NameError: name 'dict_items' is not defined
+
+the ``dict_items`` object has a :ref:`list<lists>` that contains a tuple_, I use that
+
+.. code-block:: python
+
+  self.assertIsNone(a_dictionary.items(), [('key', 'value')])
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: dict_items([('key', 'value')]) is not None : [('key', 'value')]
+
+I change the assertion and wrap the call in the :ref:`list<lists>` constructor
+
+.. code-block:: python
+
+  self.assertEqual(list(a_dictionary.items()), [('key', 'value')])
+
+the test passes
+
 refactor: make it better
 #################################################################################
+
+* I rename the test
+
+  .. code-block:: python
+
+    def test_items_returns_keys_and_values_of_dictionary(self):
+        a_dictionary = {'key': 'value'}
+        self.assertEqual(list(a_dictionary.items()), [('key', 'value')])
+
+  the test is still green
+
+* I remove items_ from the TODO list
+
+  .. code-block:: python
+
+    'keys',
+    'pop',
+    'popitem',
+    'setdefault',
+    'update',
+    'values'
 
 ----
 
