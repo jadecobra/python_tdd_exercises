@@ -1045,17 +1045,78 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_keys
+test_keys_returns_keys_of_dictionary
 *********************************************************************************
 
 red: make it fail
 #################################################################################
 
+I add the next test
+
+.. code-block:: python
+
+  def test_items_returns_keys_and_values_of_dictionary(self):
+      ...
+
+  def test_keys(self):
+      a_dictionary = {'key': 'value'}
+      self.assertIsNone(a_dictionary.keys())
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: dict_keys(['key']) is not None
+
+this is like :ref:`test_items_returns_keys_and_values_of_dictionary`
+
 green: make it pass
 #################################################################################
 
+I copy and paste the values from the terminal then change the assertion
+
+.. code-block:: python
+
+  def test_keys(self):
+      a_dictionary = {'key': 'value'}
+      self.assertEqual(a_dictionary.keys(), dict_keys(['key']))
+
+the terminal shows NameError_
+
+.. code-block:: python
+
+  NameError: name 'dict_keys' is not defined
+
+the keys_ :ref:`method<functions>` returns ``dict_keys`` object_ that has the keys of the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_. I change the expectation to a :ref:`list<lists>` and use the :ref:`list<lists>` constructor_ to wrap the call
+
+.. code-block:: python
+
+  self.assertEqual(list(a_dictionary.keys()), ['key'])
+
+the test passes
+
 refactor: make it better
 #################################################################################
+
+* I rename the test
+
+  .. code-block:: python
+
+    def test_keys_returns_keys_of_dictionary(self):
+        a_dictionary = {'key': 'value'}
+        self.assertEqual(list(a_dictionary.keys()), ['key'])
+
+  the test is still green
+
+* I remove keys_ from the TODO list
+
+  .. code-block:: python
+
+    'pop',
+    'popitem',
+    'setdefault',
+    'update',
+    'values'
 
 ----
 
