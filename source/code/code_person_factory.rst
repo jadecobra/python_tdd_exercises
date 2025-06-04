@@ -15,6 +15,6 @@ the code in ``tests/test_person.py`` from :ref:`how to make a person`
 solution
 *********************************************************************************
 
-Here is the solution in ``person.py``
+the solution in in ``person.py`` from :ref:`how to make a person`
 
 .. literalinclude:: solutions/person.py

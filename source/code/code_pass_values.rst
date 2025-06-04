@@ -15,6 +15,6 @@ the code in ``tests/test_telephone.py`` from :ref:`how to pass values`
 solution
 *********************************************************************************
 
-Here is the solution in ``telephone.py``
+the solution in in ``telephone.py`` from :ref:`how to pass values`
 
 .. literalinclude:: solutions/telephone.py

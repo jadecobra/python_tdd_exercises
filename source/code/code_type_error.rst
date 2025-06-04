@@ -15,6 +15,6 @@ the code in ``tests/test_type_error.py`` from :ref:`TypeError`
 solutions
 *********************************************************************************
 
-Here is the solution in ``type_error.py``
+the solution in in ``type_error.py`` from :ref:`TypeError`
 
 .. literalinclude:: solutions/type_error.py

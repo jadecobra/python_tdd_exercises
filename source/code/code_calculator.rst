@@ -15,6 +15,6 @@ the code in ``tests/test_calculator.py`` from :ref:`how to make a calculator`
 solutions
 *********************************************************************************
 
-Here are the solutions in ``calculator.py``
+the solutions in ``calculator.py`` from :ref:`how to make a calculator`
 
 .. literalinclude:: solutions/calculator.py

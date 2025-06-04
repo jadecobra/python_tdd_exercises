@@ -16,6 +16,6 @@ the code in ``tests/test_attribute_error.py`` from :ref:`AttributeError`
 solutions
 *********************************************************************************
 
-Here are the solutions in ``module.py``
+the solutions in ``module.py`` from :ref:`AttributeError`
 
 .. literalinclude:: solutions/attribute_error.py

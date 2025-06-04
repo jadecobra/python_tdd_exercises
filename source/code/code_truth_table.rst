@@ -15,6 +15,6 @@ the code in ``tests/test_truth_table.py`` from :ref:`booleans: truth table`
 solutions
 *********************************************************************************
 
-Here are the solutions in ``truth_table.py``
+the solutions in ``truth_table.py`` from :ref:`booleans: truth table`
 
 .. literalinclude:: solutions/truth_table.py

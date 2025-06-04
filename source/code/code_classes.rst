@@ -7,7 +7,7 @@ classes: tests and solutions
 tests
 *********************************************************************************
 
-the code in ``tests/test_classes.py`` :ref:`classes`
+the code in ``tests/test_classes.py`` from :ref:`classes`
 
 .. literalinclude:: tests/test_classes.py
 
@@ -16,6 +16,6 @@ solutions
 *********************************************************************************
 
 
-Here are the solutions in ``classes.py``
+the solutions in ``classes.py`` from :ref:`classes`
 
 .. literalinclude:: solutions/classes.py

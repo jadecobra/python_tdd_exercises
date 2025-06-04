@@ -15,6 +15,6 @@ the code in ``tests/test_functions.py`` from :ref:`functions`
 solutions
 *********************************************************************************
 
-Here are the solutions in ``functions.py``
+the solutions in ``functions.py`` from :ref:`functions`
 
 .. literalinclude:: solutions/functions.py

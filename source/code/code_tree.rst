@@ -15,6 +15,6 @@ the code in ``tests/test_tree.py``
 solutions
 *********************************************************************************
 
-Here are the solutions in ``tree.py``
+the solutions in ``tree.py``
 
 .. literalinclude:: solutions/tree.py

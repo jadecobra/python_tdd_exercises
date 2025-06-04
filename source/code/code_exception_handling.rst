@@ -15,6 +15,6 @@ the code in ``tests/test_exceptions.py`` from :ref:`how to handle Exceptions in 
 solutions
 *********************************************************************************
 
-Here are the solutions in ``exceptions.py``
+the solutions in ``exceptions.py`` from :ref:`how to handle Exceptions in programs`
 
 .. literalinclude:: solutions/exceptions.py
