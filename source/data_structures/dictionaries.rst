@@ -1699,7 +1699,7 @@ refactor: make it better
 
     AssertionError: {'key': 'new value', 'key1': 'value1', 'another_key': 'another value'} != {'key': 'value', 'key1': 'value1', 'another_key': 'another value'}
 
-  the update_ :ref:`method<functions>` updates the value for existing keys in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_. I change the expectation to match
+  the update_ :ref:`method<functions>` changes the value for an existing key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_. I change the expectation to match
 
   .. code-block:: python
 
@@ -1743,141 +1743,102 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_values
+test_values_returns_all_values_of_a_dictionary
 *********************************************************************************
 
 red: make it fail
 #################################################################################
 
-green: make it pass
-#################################################################################
-
-refactor: make it better
-#################################################################################
-
-----
-
-*********************************************************************************
-how to access dictionary values
-*********************************************************************************
-
-The tests so far show how to make `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ and what objects can be used as ``keys``. The following tests show how to access the values of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
-
-red: make it fail
-#################################################################################
-
-I add a test to ``TestDictionaries`` in ``test_dictionaries.py``
+I add a test for the last :ref:`method<functions>`
 
 .. code-block:: python
 
-  def test_get_a_value_from_a_dictionary(self):
-      a_dictionary = {"key": "value"}
-      self.assertEqual(a_dictionary["key"], "bob")
+  def test_update_makes_a_dictionary_bigger(self):
+        ...
 
-the terminal shows :ref:`AssertionError` because ``bob`` is not equal to ``value``. I can get a value for a key by providing the key in square brackets to the dictionary
+  def test_values(self):
+      a_dictionary = {'key': 'value'}
+      self.assertIsNone(a_dictionary.values())
+
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: 'value' != 'bob'
+  AssertionError: dict_values(['value']) is not None
+
+this is like :ref:`test_items_returns_keys_and_values_of_dictionary` and  :ref:`test_keys_returns_keys_of_dictionary`
 
 green: make it pass
 #################################################################################
 
-I make the expected value to make the tests pass
+I change the assertIsNone_ to assertEqual_ and change the expectation to a list
 
 .. code-block:: python
 
-  def test_get_a_value_from_a_dictionary(self):
-      a_dictionary = {"key": "value"}
-      self.assertEqual(a_dictionary["key"], "value")
+  a_dictionary = {'key': 'value'}
+  self.assertEqual(a_dictionary.values(), ['value'])
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: dict_values(['value']) != ['value']
+
+I wrap the call in the :ref:`list<lists>` constructor_
+
+.. code-block:: python
+
+  self.assertEqual(list(a_dictionary.values()), ['value'])
+
+the test passes
 
 refactor: make it better
 #################################################################################
 
-* I can also show all the values of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ as a :ref:`list <lists>` without the keys
+* I add more keys and values to the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
   .. code-block:: python
 
-    def test_list_dictionary_values(self):
+    def test_values(self):
         a_dictionary = {
-            'key1': 'value1',
-            'key2': 'value2',
-            'key3': 'value3',
-            'keyN': 'valueN',
+            'a_key': 'a value',
+            'another_key': 'another value',
         }
-        self.assertEqual(
-            list(a_dictionary.values()), []
-        )
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: Lists differ: ['value1', 'value2', 'value3', 'valueN'] != []
+    AssertionError: Lists differ: ['a value', 'another value'] != ['value']
 
-* the tests pass when I make the values in the test to make them match the result
+  I change the values
 
   .. code-block:: python
 
-    def test_list_dictionary_values(self):
+    self.assertEqual(
+        list(a_dictionary.values()),
+        ['a value', 'another value']
+    )
+
+  the test passes
+
+* I rename the test
+
+  .. code-block:: python
+
+    def test_values_returns_all_values_of_a_dictionary(self):
         a_dictionary = {
-            'key1': 'value1',
-            'key2': 'value2',
-            'key3': 'value3',
-            'keyN': 'valueN',
+            'a_key': 'a value',
+            'another_key': 'another value',
         }
         self.assertEqual(
             list(a_dictionary.values()),
-            [
-                'value1',
-                'value2',
-                'value3',
-                'valueN',
-            ]
+            ['a value', 'another value']
         )
 
-* I can also show the keys of a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ as a :ref:`list <lists>`
+  the test passes
 
-  .. code-block:: python
-
-    def test_list_dictionary_keys(self):
-        a_dictionary = {
-            'key1': 'value1',
-            'key2': 'value2',
-            'key3': 'value3',
-            'keyN': 'valueN',
-        }
-        self.assertEqual(
-            list(a_dictionary.keys()),
-            []
-        )
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: Lists differ: ['key1', 'key2', 'key3', 'keyN'] != []
-
-* I add the values to the empty list in the test to make it pass
-
-  .. code-block:: python
-
-    def test_list_dictionary_keys(self):
-        a_dictionary = {
-            'key1': 'value1',
-            'key2': 'value2',
-            'key3': 'value3',
-            'keyN': 'valueN',
-        }
-        self.assertEqual(
-            list(a_dictionary.keys()),
-            [
-                'key1',
-                'key2',
-                'key3',
-                'keyN',
-            ]
-        )
+* I remove the values_ from the TODO list
 
 ----
 

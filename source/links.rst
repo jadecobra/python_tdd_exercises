@@ -126,6 +126,7 @@
 .. _unittest.TestCase.setUp: https://docs.python.org/3/library/unittest.html#unittest.TestCase.setUp
 .. _unittest.TestCase.assertIsInstance: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsInstance
 .. _update: https://docs.python.org/3/library/stdtypes.html#dict.update
+.. _values: https://docs.python.org/3/library/stdtypes.html#dict.values
 .. _venv: https://docs.python.org/3/library/venv.html#module-venv
 .. _virtual environment: https://docs.python.org/3/glossary.html#term-virtual-environment
 .. _zero-based indexing: https://en.wikipedia.org/wiki/Zero-based_numbering
