@@ -1456,17 +1456,126 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_setdefault
+test_setdefault_adds_key_w_a_default_value_to_a_dictionary
 *********************************************************************************
 
 red: make it fail
 #################################################################################
 
+I add a test
+
+.. code-block:: python
+
+  def test_setdefault(self):
+      a_dictionary = {'key': 'value'}
+      self.assertIsNone(a_dictionary.setdefault())
+
+the terminal shows :ref:`TypeError`
+
+.. code-block:: python
+
+  TypeError: setdefault expected at least 1 argument, got 0
+
 green: make it pass
 #################################################################################
 
+I pass a value in the call
+
+.. code-block:: python
+
+  self.assertIsNone(a_dictionary.setdefault(0))
+
+the test passes
+
 refactor: make it better
 #################################################################################
+
+* I add an assertion to see what changed in the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+
+  .. code-block:: python
+
+    self.assertIsNone(a_dictionary.setdefault(0))
+    self.assertEqual(a_dictionary, {'key': 'value'})
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {'key': 'value', 0: None} != {'key': 'value'}
+
+  `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_ adds the given key to the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ with a default value of :ref:`None` and returns the default value
+
+* I change the expectation to match
+
+  .. code-block:: python
+
+    self.assertEqual(
+        a_dictionary,
+        {
+            'key': 'value',
+            0: None,
+        }
+    )
+
+  the test passes
+
+* I add another test to see what happens when the key is already in the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+
+  .. code-block:: python
+
+    self.assertEqual(
+        a_dictionary,
+        {
+            'key': 'value',
+            0: None,
+        }
+    )
+    self.assertIsNone(a_dictionary.setdefault('key'))
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 'value' is not None
+
+  `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_ returns the value for the key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ when the key already exists
+
+* I paste the value from the terminal then change the assertion to assertEqual_
+
+  .. code-block:: python
+
+    self.assertEqual(
+        a_dictionary.setdefault('key'), 'value'
+    )
+
+  the test passes
+
+* I rename the test
+
+  .. code-block:: python
+
+    def test_setdefault_adds_key_w_a_default_value_to_a_dictionary(self):
+        a_dictionary = {'key': 'value'}
+        self.assertIsNone(a_dictionary.setdefault(0))
+        self.assertEqual(
+            a_dictionary,
+            {
+                'key': 'value',
+                0: None,
+            }
+        )
+        self.assertEqual(
+            a_dictionary.setdefault('key'), 'value'
+        )
+
+  the test is still green
+
+* I remove `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_ from the TODO list
+
+  .. code-block:: python
+
+    'update',
+    'values'
 
 ----
 
