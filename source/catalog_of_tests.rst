@@ -184,22 +184,27 @@ test_list_comprehensions
 test_dictionaries
 *********************************************************************************
 
-#. :ref:`test_make_a_dictionary_w_strings_as_keys`
+#. :ref:`test_make_a_dictionary_w_dict_constructor`
+#. :ref:`test_make_a_dictionary_w_curly_braces`
 #. :ref:`test_make_a_dictionary_w_numbers_as_keys`
 #. :ref:`test_make_a_dictionary_w_booleans_as_keys`
 #. :ref:`test_make_a_dictionary_w_tuples_as_keys`
 #. :ref:`test_make_a_dictionary_w_lists_as_keys`
 #. :ref:`test_make_a_dictionary_w_sets_as_keys`
 #. :ref:`test_make_a_dictionary_w_dictionaries_as_keys`
-#. :ref:`test_get_a_value_from_a_dictionary`
-#. :ref:`test_list_dictionary_values`
-#. :ref:`test_list_dictionary_keys`
+#. :ref:`test_attributes_and_methods_of_dictionaries`
+#. :ref:`test_clear_empties_a_dictionary`
+#. :ref:`test_copy_a_dictionary`
+#. :ref:`test_fromkeys_makes_a_dictionary_from_an_iterable`
+#. :ref:`test_get_value_of_key_from_dictionary`
+#. :ref:`test_items_returns_keys_and_values_of_dictionary`
+#. :ref:`test_keys_returns_keys_of_dictionary`
+#. :ref:`test_pop_removes_and_returns_key_w_value_from_dictionary`
+#. :ref:`test_popitem_removes_and_returns_last_key_value_pair_from_dictionary`
+#. :ref:`test_setdefault_adds_key_w_a_default_value_to_a_dictionary`
+#. :ref:`test_update_makes_a_dictionary_bigger`
+#. :ref:`test_values_returns_all_values_of_a_dictionary`
 #. :ref:`test_key_error`
-#. :ref:`test_get_value_when_key_does_not_exist`
-#. :ref:`test_attributes_and_methods_of_dictionaries_and_methods`
-#. :ref:`test_set_default_for_key`
-#. :ref:`test_add_two_dictionaries`
-#. :ref:`test_pop_item_from_dictionary`
 
 *********************************************************************************
 test_functions

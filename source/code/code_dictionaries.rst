@@ -10,12 +10,3 @@ tests
 the code in ``tests/test_dictionaries.py`` from :ref:`dictionaries`
 
 .. literalinclude:: tests/test_dictionaries.py
-
-
-*********************************************************************************
-solution
-*********************************************************************************
-
-Here is the solution in ``dictionaries.py``
-
-.. literalinclude:: solutions/dictionaries.py
