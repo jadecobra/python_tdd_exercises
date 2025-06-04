@@ -2,6 +2,9 @@ import random
 import src.list_comprehensions
 import unittest
 
+def condition(item):
+    return item % 2 == 0
+
 
 class TestListComprehensions(unittest.TestCase):
 
@@ -32,31 +35,31 @@ class TestListComprehensions(unittest.TestCase):
     def test_list_comprehensions_w_conditions_i(self):
         even_numbers = []
         for item in self.iterable:
-            if item % 2 == 0:
+            if condition(item):
                 even_numbers.append(item)
 
         self.assertEqual(
             even_numbers,
-            [item for item in self.iterable if item % 2 == 0]
+            [item for item in self.iterable if condition(item)]
         )
         self.assertEqual(
             src.list_comprehensions.get_even_numbers(self.iterable),
-            [item for item in self.iterable if item % 2 == 0]
+            [item for item in self.iterable if condition(item)]
         )
 
     def test_list_comprehensions_w_conditions_ii(self):
         odd_numbers = []
         for item in self.iterable:
-            if item % 2 != 0:
+            if not condition(item):
                 odd_numbers.append(item)
 
         self.assertEqual(
             odd_numbers,
-            [item for item in self.iterable if item % 2 != 0]
+            [item for item in self.iterable if not condition(item)]
         )
         self.assertEqual(
             src.list_comprehensions.get_odd_numbers(self.iterable),
-            [item for item in self.iterable if item % 2 != 0]
+            [item for item in self.iterable if not condition(item)]
         )
 
 
