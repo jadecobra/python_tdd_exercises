@@ -1,7 +1,3 @@
-def make_a_list(iterable):
-    return list(iterable)
-
-
 def for_loop(iterable):
     result = []
     for item in iterable:

@@ -26,7 +26,7 @@ class TestListComprehensions(unittest.TestCase):
         )
         self.assertEqual(
             src.list_comprehensions.list_comprehension(self.iterable),
-            src.list_comprehensions.for_loop(self.iterable)
+            [item for item in self.iterable]
         )
 
     def test_list_comprehensions_w_conditions_i(self):
@@ -41,7 +41,7 @@ class TestListComprehensions(unittest.TestCase):
         )
         self.assertEqual(
             src.list_comprehensions.get_even_numbers(self.iterable),
-            even_numbers
+            [item for item in self.iterable if item % 2 == 0]
         )
 
     def test_list_comprehensions_w_conditions_ii(self):
@@ -56,7 +56,7 @@ class TestListComprehensions(unittest.TestCase):
         )
         self.assertEqual(
             src.list_comprehensions.get_odd_numbers(self.iterable),
-            odd_numbers
+            [item for item in self.iterable if item % 2 != 0]
         )
 
 
@@ -64,4 +64,3 @@ class TestListComprehensions(unittest.TestCase):
 # AssertionError
 # NameError
 # AttributeError
-# TypeError
