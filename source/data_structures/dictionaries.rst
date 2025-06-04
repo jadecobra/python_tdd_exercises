@@ -110,7 +110,69 @@ I make the values match
 
   self.assertEqual({'key': 'value'}, dict(key='value'))
 
-the test passes
+the test
+
+----
+
+*********************************************************************************
+test_make_a_dictionary_w_booleans_as_keys
+*********************************************************************************
+
+I wonder if it is possible to use :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
+
+red: make it fail
+#################################################################################
+
+I add a test
+
+.. code-block:: python
+
+    def test_make_a_dictionary_w_curly_braces(self):
+        ...
+
+    def test_make_a_dictionary_w_booleans_as_keys(self):
+        self.assertEqual({False: 'boom'}, {'False': 'boom'})
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: {False: 'boom'} != {'False': 'boom'}
+
+green: make it pass
+#################################################################################
+
+I match the keys
+
+.. code-block:: python
+
+  self.assertEqual({False: 'boom'}, {False: 'boom'})
+
+I can use :ref:`False<test_what_is_false>` as a key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+
+refactor: make it better
+#################################################################################
+
+I add another assertion
+
+.. code-block:: python
+
+  self.assertEqual({False: 'boom'}, {False: 'boom'})
+  self.assertEqual({True: 'bap'}, {'True': 'bap'})
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: {True: 'bap'} != {'True': 'bap'}
+
+I change the expectation
+
+.. code-block:: python
+
+  self.assertEqual({True: 'bap'}, {True: 'bap'})
+
+the test passes. I can use a boolean_ as a key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
 ----
 
@@ -124,6 +186,9 @@ red: make it fail
 I add a failing test
 
 .. code-block:: python
+
+  def test_make_a_dictionary_w_booleans_as_keys(self):
+      ...
 
   def test_make_a_dictionary_w_numbers_as_keys(self):
       self.assertEqual({0: 'boom'}, {'zero': 'boom'})
@@ -170,68 +235,6 @@ I make the keys match
   self.assertEqual({0.1: 'bap'}, {0.1: 'bap'})
 
 the test passes. I can use integers_ and floats_ as keys in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
-
-----
-
-*********************************************************************************
-test_make_a_dictionary_w_booleans_as_keys
-*********************************************************************************
-
-I wonder if it is possible to use :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
-
-red: make it fail
-#################################################################################
-
-I add a test
-
-.. code-block:: python
-
-    def test_make_a_dictionary_w_numbers_as_keys(self):
-        ...
-
-    def test_make_a_dictionary_w_booleans_as_keys(self):
-        self.assertEqual({False: 'boom'}, {'False': 'boom'})
-
-the terminal shows :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: {False: 'boom'} != {'False': 'boom'}
-
-green: make it pass
-#################################################################################
-
-I match the keys
-
-.. code-block:: python
-
-  self.assertEqual({False: 'boom'}, {False: 'boom'})
-
-I can use :ref:`False<test_what_is_false>` as a key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
-
-refactor: make it better
-#################################################################################
-
-I add another assertion
-
-.. code-block:: python
-
-  self.assertEqual({False: 'boom'}, {False: 'boom'})
-  self.assertEqual({True: 'bap'}, {'True': 'bap'})
-
-the terminal shows :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: {True: 'bap'} != {'True': 'bap'}
-
-I change the expectation
-
-.. code-block:: python
-
-  self.assertEqual({True: 'bap'}, {True: 'bap'})
-
-the test passes. I can use a boolean_ as a key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
 ----
 
@@ -958,7 +961,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_items_returns_keys_and_values_of_a_dictionary
+test_pop_removes_key_and_returns_its_value_from_a_dictionary
 *********************************************************************************
 
 red: make it fail
@@ -1025,7 +1028,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_items_returns_keys_and_values_of_a_dictionary(self):
+    def test_pop_removes_key_and_returns_its_value_from_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(list(a_dictionary.items()), [('key', 'value')])
 
@@ -1055,7 +1058,7 @@ I add the next test
 
 .. code-block:: python
 
-  def test_items_returns_keys_and_values_of_a_dictionary(self):
+  def test_pop_removes_key_and_returns_its_value_from_a_dictionary(self):
       ...
 
   def test_keys(self):
@@ -1068,7 +1071,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: dict_keys(['key']) is not None
 
-this is like :ref:`test_items_returns_keys_and_values_of_a_dictionary`
+this is like :ref:`test_pop_removes_key_and_returns_its_value_from_a_dictionary`
 
 green: make it pass
 #################################################################################
@@ -1766,7 +1769,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: dict_values(['value']) is not None
 
-this is like :ref:`test_items_returns_keys_and_values_of_a_dictionary` and  :ref:`test_keys_of_a_dictionary`
+this is like :ref:`test_pop_removes_key_and_returns_its_value_from_a_dictionary` and  :ref:`test_keys_of_a_dictionary`
 
 green: make it pass
 #################################################################################

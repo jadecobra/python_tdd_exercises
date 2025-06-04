@@ -112,7 +112,7 @@ class TestDictionaries(unittest.TestCase):
         self.assertEqual(a_dictionary.get('key'), 'value')
         self.assertIsNone(a_dictionary.get(0))
 
-    def test_items_returns_keys_and_values_of_a_dictionary(self):
+    def test_pop_removes_key_and_returns_its_value_from_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(list(a_dictionary.items()), [('key', 'value')])
 
