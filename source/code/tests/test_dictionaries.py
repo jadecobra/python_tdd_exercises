@@ -1,126 +1,46 @@
-import dictionaries
+import src.dictionaries
 import unittest
 
 
 class TestDictionaries(unittest.TestCase):
 
-    def test_make_a_dictionary_w_strings_as_keys(self):
-        self.assertEqual(
-            dictionaries.a_dict(),
-            {"key": "value"}
-        )
-        self.assertEqual(
-            dictionaries.a_dict(),
-            dict(key='value')
-        )
-        self.assertEqual(
-            {"key": "value"},
-            dict(key='value')
-        )
+    def test_make_a_dictionary_w_dict_constructor(self):
+        self.assertEqual(dict(key='value'), {'key': 'value'})
+
+    def test_make_a_dictionary_w_curly_braces(self):
+        self.assertEqual({'key': 'value'}, dict(key='value'))
 
     def test_make_a_dictionary_w_numbers_as_keys(self):
-        self.assertEqual(
-            {1: 'boom'},
-            {1: 'boom'}
-        )
-        self.assertEqual(
-            {2.5: 'works'},
-            {2.5: 'works'}
-        )
+        self.assertEqual({0: 'boom'}, {0: 'boom'})
+        self.assertEqual({0.1: 'bap'}, {0.1: 'bap'})
 
     def test_make_a_dictionary_w_booleans_as_keys(self):
-        self.assertEqual(
-            {False: 'boom'},
-            {False: 'boom'}
-        )
-        self.assertEqual(
-            {True: 'bap'},
-            {True: 'bap'}
-        )
+        self.assertEqual({False: 'boom'}, {False: 'boom'})
+        self.assertEqual({True: 'bap'}, {True: 'bap'})
 
     def test_make_a_dictionary_w_tuples_as_keys(self):
         self.assertEqual(
-            {(1, 2): "value"},
-            {(1, 2): "value"}
+            {(0, 1): 'value'},
+            {(0, 1): 'value'}
         )
 
     def test_make_a_dictionary_w_lists_as_keys(self):
         with self.assertRaises(TypeError):
-            {[1, 2]: "BOOM"}
+            {[3, 2, 1]: 'BOOM!'}
 
     def test_make_a_dictionary_w_sets_as_keys(self):
         with self.assertRaises(TypeError):
-            {{1, 2}: "BOOM"}
+            {{3, 2, 1}: 'BOOM!'}
 
     def test_make_a_dictionary_w_dictionaries_as_keys(self):
-        a_dictionary = {"key": "value"}
+        a_dictionary = {'key': 'value'}
         with self.assertRaises(TypeError):
-            {a_dictionary: "BOOM"}
-
-    def test_get_a_value_from_a_dictionary(self):
-        a_dictionary = {"key": "value"}
-        self.assertEqual(a_dictionary["key"], "value")
-
-    def test_list_dictionary_values(self):
-        a_dictionary = {
-            'key1': 'value1',
-            'key2': 'value2',
-            'key3': 'value3',
-            'keyN': 'valueN',
-        }
-        self.assertEqual(
-            list(a_dictionary.values()),
-            [
-                'value1',
-                'value2',
-                'value3',
-                'valueN',
-            ]
-        )
-
-    def test_list_dictionary_keys(self):
-        a_dictionary = {
-            'key1': 'value1',
-            'key2': 'value2',
-            'key3': 'value3',
-            'keyN': 'valueN',
-        }
-        self.assertEqual(
-            list(a_dictionary.keys()),
-            [
-                'key1',
-                'key2',
-                'key3',
-                'keyN',
-            ]
-        )
-
-    def test_key_error(self):
-        a_dictionary = {
-            'key1': 'value1',
-            'key2': 'value2',
-            'key3': 'value3',
-            'keyN': 'valueN',
-        }
-        with self.assertRaises(KeyError):
-            a_dictionary['non_existent_key']
-            a_dictionary['ky1']
-
-    def test_get_value_when_key_does_not_exist(self):
-        a_dictionary = {
-            'key1': 'value1',
-            'key2': 'value2',
-            'key3': 'value3',
-            'keyN': 'valueN',
-        }
-        self.assertIsNone(a_dictionary.get('non_existent_key'))
-        self.assertIsNone(a_dictionary.get('non_existent_key', None))
-        self.assertEqual(a_dictionary.get('key1', None), 'value1')
+            {a_dictionary: 'BOOM!'}
 
     def test_attributes_and_methods_of_dictionaries(self):
         self.maxDiff = None
         self.assertEqual(
-            dir(dictionaries.a_dict()),
+            dir(dict),
             [
                 '__class__',
                 '__class_getitem__',
@@ -171,75 +91,113 @@ class TestDictionaries(unittest.TestCase):
             ]
         )
 
-    def test_set_default_for_key(self):
-        a_dictionary = {'bippity': 'boppity'}
+    def test_clear_empties_a_dictionary(self):
+        a_dictionary = {'key': 'value'}
+        self.assertIsNone(a_dictionary.clear())
+        self.assertEqual(a_dictionary, {})
+
+    def test_copy_a_dictionary(self):
+        a_dictionary = {'key': 'value'}
+        self.assertEqual(a_dictionary.copy(), {'key': 'value'})
+        self.assertEqual(a_dictionary, {'key': 'value'})
+
+    def test_fromkeys_makes_a_dictionary_from_an_iterable(self):
+        self.assertEqual(
+            dict.fromkeys((0, 1, 2, 3)),
+            {0: None, 1: None, 2: None, 3: None}
+        )
+
+    def test_get_value_of_key_from_dictionary(self):
+        a_dictionary = {'key': 'value'}
+        self.assertEqual(a_dictionary.get('key'), 'value')
+        self.assertIsNone(a_dictionary.get(0))
+
+    def test_items_returns_keys_and_values_of_dictionary(self):
+        a_dictionary = {'key': 'value'}
+        self.assertEqual(list(a_dictionary.items()), [('key', 'value')])
+
+    def test_keys_returns_keys_of_dictionary(self):
+        a_dictionary = {'key': 'value'}
+        self.assertEqual(list(a_dictionary.keys()), ['key'])
+
+    def test_pop_removes_and_returns_key_w_value_from_dictionary(self):
+        a_dictionary = {'key': 'value'}
+        self.assertEqual(a_dictionary.pop('key'), 'value')
+        self.assertEqual(a_dictionary, {})
 
         with self.assertRaises(KeyError):
-            a_dictionary['another_key']
+            a_dictionary.pop(0)
 
-        a_dictionary.setdefault('another_key')
-        self.assertEqual(
-            a_dictionary,
-            {
-                'bippity': 'boppity',
-                'another_key': None
-            }
-        )
-        self.assertIsNone(a_dictionary['another_key'])
-
-        a_dictionary.setdefault('a_new_key', 'a_default_value')
-        self.assertEqual(
-            a_dictionary,
-            {
-                'bippity': 'boppity',
-                'another_key': None,
-                'a_new_key': 'a_default_value',
-            }
-        )
-
-    def test_add_two_dictionaries(self):
+    def test_popitem_removes_and_returns_last_key_value_pair_from_dictionary(self):
         a_dictionary = {
-            "basic": "toothpaste",
-            "whitening": "peroxide",
+            'key1': 'value1',
+            'key2': 'value2'
         }
-        a_dictionary.update({
-            "traditional": "chewing stick",
-            "browning": "tobacco",
-            "decaying": "sugar",
-        })
+        self.assertEqual(
+            a_dictionary.popitem(),
+            ('key2', 'value2')
+        )
+        self.assertEqual(a_dictionary, {'key1': 'value1'})
+        self.assertEqual(
+            a_dictionary.popitem(),
+            ('key1', 'value1')
+        )
+
+        with self.assertRaises(KeyError):
+            a_dictionary.popitem()
+
+    def test_setdefault_adds_key_w_a_default_value_to_a_dictionary(self):
+        a_dictionary = {'key': 'value'}
+        self.assertIsNone(a_dictionary.setdefault(0))
         self.assertEqual(
             a_dictionary,
             {
-                "basic": "toothpaste",
-                "whitening": "peroxide",
-                "traditional": "chewing stick",
-                "browning": "tobacco",
-                "decaying": "sugar",
+                'key': 'value',
+                0: None,
+            }
+        )
+        self.assertEqual(
+            a_dictionary.setdefault('key'), 'value'
+        )
+
+    def test_update_makes_a_dictionary_bigger(self):
+        a_dictionary = {'key': 'value'}
+        self.assertIsNone(a_dictionary.update({'key1': 'value1'}))
+        self.assertIsNone(a_dictionary.update(another_key='another value'))
+        self.assertIsNone(a_dictionary.update(key='new value'))
+        self.assertEqual(
+            a_dictionary,
+            {
+                'key': 'new value',
+                'key1': 'value1',
+                'another_key': 'another value'
             }
         )
 
-    def test_pop_item_from_dictionary(self):
+    def test_values_returns_all_values_of_a_dictionary(self):
         a_dictionary = {
-            "basic": "toothpaste",
-            "whitening": "peroxide",
-            "traditional": "chewing stick",
-            "browning": "tobacco",
-            "decaying": "sugar",
+            'a_key': 'a value',
+            'another_key': 'another value',
         }
-        self.assertEqual(a_dictionary.pop("basic"), "toothpaste")
         self.assertEqual(
-            a_dictionary,
-            {
-                "whitening": "peroxide",
-                "traditional": "chewing stick",
-                "browning": "tobacco",
-                "decaying": "sugar",
-            }
+            list(a_dictionary.values()),
+            ['a value', 'another value']
         )
+
+    def test_key_error(self):
+        a_dictionary = {'key': 'value'}
+        self.assertEqual(a_dictionary['key'], 'value')
+
+        with self.assertRaises(KeyError):
+            a_dictionary['this_key_does_not_exist']
+        with self.assertRaises(KeyError):
+            {}.popitem()
+        with self.assertRaises(KeyError):
+            a_dictionary.pop('this_key_does_not_exist')
+
+        self.assertIsNone(a_dictionary.get('this_key_does_not_exist'))
 
 
 # Exceptions Encountered
-# ModuleNotFoundError
-# AttributeError
+# AssertionError
 # TypeError
-# KeyError

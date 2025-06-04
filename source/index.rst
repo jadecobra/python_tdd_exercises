@@ -27,7 +27,7 @@ who is this for?
   - :ref:`AssertionError`
   - :ref:`AttributeError`
   - IndexError_
-  - KeyError_
+  - :ref:`KeyError <test_key_error>`
   - :ref:`ModuleNotFoundError`
   - NameError_
   - :ref:`TypeError`

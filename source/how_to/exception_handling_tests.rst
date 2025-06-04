@@ -463,7 +463,7 @@ red: make it fail
     def test_catching_key_error_in_tests(self):
         {'key': 'value'}['does_not_exist']
 
-  I get KeyError_
+  I get :ref:`KeyError <test_key_error>`
 
   .. code-block:: python
 
@@ -618,7 +618,7 @@ refactor: make it better
         with self.assertRaises(ModuleNotFoundError):
             {'key': 'value'}['does_not_exist']
 
-  shows KeyError_
+  shows :ref:`KeyError <test_key_error>`
 
   .. code-block:: python
 
@@ -691,7 +691,7 @@ I have a way to catch Exceptions_ in tests and ran into the following
 * :ref:`AttributeError`
 * :ref:`TypeError`
 * IndexError_
-* KeyError_
+* :ref:`KeyError <test_key_error>`
 * ZeroDivisionError_
 
 Would you like to test :doc:`handling Exceptions in programs?</how_to/exception_handling_programs>`
