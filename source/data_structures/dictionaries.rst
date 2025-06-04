@@ -1503,7 +1503,7 @@ refactor: make it better
 
     AssertionError: {'key': 'value', 0: None} != {'key': 'value'}
 
-  `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_ adds the given key to the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ with a default value of :ref:`None` and returns the default value
+  setdefault_ adds the given key to the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ with a default value of :ref:`None` and returns the default value
 
 * I change the expectation to match
 
@@ -1538,7 +1538,7 @@ refactor: make it better
 
     AssertionError: 'value' is not None
 
-  `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_ returns the value for the key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ when the key already exists
+  setdefault_ returns the value for the key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ when the key already exists
 
 * I paste the value from the terminal then change the assertion to assertEqual_
 
@@ -1570,7 +1570,7 @@ refactor: make it better
 
   the test is still green
 
-* I remove `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_ from the TODO list
+* I remove setdefault_ from the TODO list
 
   .. code-block:: python
 
@@ -1580,17 +1580,165 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_update
+test_update_makes_a_dictionary_bigger
 *********************************************************************************
 
 red: make it fail
 #################################################################################
 
+* I add a test for the next :ref:`method<functions>`
+
+  .. code-block:: python
+
+    def test_update(self):
+        a_dictionary = {'key': 'value'}
+        self.assertIsNone(a_dictionary.update())
+
+  the test is green. The update_ :ref:`method<functions>` returns :ref:`None`
+
+* I add an assertion to see what it does to the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+
+  .. code-block:: python
+
+        self.assertIsNone(a_dictionary.update())
+
+    self.assertEqual(a_dictionary, {})
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {'key': 'value'} != {}
+
+  the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ stayed the same, the test has to get better
+
 green: make it pass
 #################################################################################
 
+I change the values in the expectation to match the terminal
+
+.. code-block:: python
+
+  self.assertEqual(a_dictionary, {'key': 'value'})
+
+the test passes
+
 refactor: make it better
 #################################################################################
+
+* I check the Python documentation for the update_ :ref:`method<functions>` and see that it takes a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ as input. I add one to the call
+
+  .. code-block:: python
+
+    def test_update(self):
+        a_dictionary = {'key': 'value'}
+        self.assertIsNone(a_dictionary.update({'key1': 'value1'}))
+        self.assertEqual(a_dictionary, {'key': 'value'})
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {'key': 'value', 'key1': 'value1'} != {'key': 'value'}
+
+  the update_ :ref:`method<functions>` adds the key-value pairs from the given `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ to the existing one
+
+* I change the expectation to match the values from the terminal
+
+  .. code-block:: python
+
+    self.assertIsNone(a_dictionary.update({'key1': 'value1'}))
+    self.assertEqual(
+        a_dictionary,
+        {
+            'key': 'value',
+            'key1': 'value1'
+        }
+    )
+
+  the test passes
+
+* I add another assertion
+
+  .. code-block:: python
+
+    self.assertIsNone(a_dictionary.update({'key1': 'value1'}))
+    self.assertIsNone(a_dictionary.update(another_key='another value'))
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {'key': 'value', 'key1': 'value1', 'another_key': 'another value'} != {'key': 'value', 'key1': 'value1'}
+
+  the update_ :ref:`method<functions>` accepts keyword arguments. I change the values to match
+
+  .. code-block:: python
+
+    self.assertEqual(
+        a_dictionary,
+        {
+            'key': 'value',
+            'key1': 'value1',
+            'another_key': 'another value'
+        }
+    )
+
+  the test passes
+
+* I want to know what would happen if the key already exists in the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+
+  .. code-block:: python
+
+    self.assertIsNone(a_dictionary.update(another_key='another value'))
+    self.assertIsNone(a_dictionary.update(key='new value'))
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {'key': 'new value', 'key1': 'value1', 'another_key': 'another value'} != {'key': 'value', 'key1': 'value1', 'another_key': 'another value'}
+
+  the update_ :ref:`method<functions>` updates the value for existing keys in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_. I change the expectation to match
+
+  .. code-block:: python
+
+    self.assertEqual(
+        a_dictionary,
+        {
+            'key': 'new value',
+            'key1': 'value1',
+            'another_key': 'another value'
+        }
+    )
+
+  the test passes
+
+* I rename the test
+
+  .. code-block:: python
+
+    def test_update_makes_a_dictionary_bigger(self):
+        a_dictionary = {'key': 'value'}
+        self.assertIsNone(a_dictionary.update({'key1': 'value1'}))
+        self.assertIsNone(a_dictionary.update(another_key='another value'))
+        self.assertIsNone(a_dictionary.update(key='new value'))
+        self.assertEqual(
+            a_dictionary,
+            {
+                'key': 'new value',
+                'key1': 'value1',
+                'another_key': 'another value'
+            }
+        )
+
+  the test is still green
+
+* I remove update_ from the TODO list
+
+  .. code-block:: python
+
+    'values'
 
 ----
 
@@ -1933,7 +2081,7 @@ Do you think you could write an implementation for the ``get`` method after read
 how to set a default value for a given key
 *********************************************************************************
 
-Let us say I want to find out more about the `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_ method
+Let us say I want to find out more about the setdefault_ method
 
 red: make it fail
 #################################################################################
@@ -1964,7 +2112,7 @@ I add ``self.assertRaises`` to make sure that KeyError_ gets raised for the test
 refactor: make it better
 #################################################################################
 
-* Then I add a test for `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_
+* Then I add a test for setdefault_
 
   .. code-block:: python
 
@@ -2009,7 +2157,7 @@ refactor: make it better
         )
 
   - when I first try to access the value for ``another_key`` in ``a_dictionary`` I get KeyError_ because it does not exist in the `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
-  - after using `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_ and passing in ``another_key`` as the key, it gets added to the `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ so I do not get KeyError_ when I try to access it again
+  - after using setdefault_ and passing in ``another_key`` as the key, it gets added to the `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ so I do not get KeyError_ when I try to access it again
 
   .. code-block:: python
 
@@ -2063,7 +2211,7 @@ refactor: make it better
         }
     )
 
-  all tests pass, and I add what I know about `setdefault <https://docs.python.org/3/library/stdtypes.html#dict.setdefault>`_ to the list of :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+  all tests pass, and I add what I know about setdefault_ to the list of :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
 ----
 
