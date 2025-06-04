@@ -843,7 +843,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_get_value_of_key_from_dictionary
+test_get_value_of_key_from_a_dictionary
 *********************************************************************************
 
 red: make it fail
@@ -936,7 +936,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_get_value_of_key_from_dictionary(self):
+    def test_get_value_of_key_from_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(a_dictionary.get('key'), 'value')
         self.assertIsNone(a_dictionary.get(0))
@@ -958,7 +958,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_items_returns_keys_and_values_of_dictionary
+test_items_returns_keys_and_values_of_a_dictionary
 *********************************************************************************
 
 red: make it fail
@@ -968,7 +968,7 @@ I add a test for the next :ref:`method<functions>`
 
 .. code-block:: python
 
-  def test_get_value_of_key_from_dictionary(self):
+  def test_get_value_of_key_from_a_dictionary(self):
       ...
 
   def test_items(self):
@@ -1025,7 +1025,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_items_returns_keys_and_values_of_dictionary(self):
+    def test_items_returns_keys_and_values_of_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(list(a_dictionary.items()), [('key', 'value')])
 
@@ -1045,7 +1045,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_keys_returns_keys_of_dictionary
+test_keys_of_a_dictionary
 *********************************************************************************
 
 red: make it fail
@@ -1055,7 +1055,7 @@ I add the next test
 
 .. code-block:: python
 
-  def test_items_returns_keys_and_values_of_dictionary(self):
+  def test_items_returns_keys_and_values_of_a_dictionary(self):
       ...
 
   def test_keys(self):
@@ -1068,7 +1068,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: dict_keys(['key']) is not None
 
-this is like :ref:`test_items_returns_keys_and_values_of_dictionary`
+this is like :ref:`test_items_returns_keys_and_values_of_a_dictionary`
 
 green: make it pass
 #################################################################################
@@ -1102,7 +1102,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_keys_returns_keys_of_dictionary(self):
+    def test_keys_of_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(list(a_dictionary.keys()), ['key'])
 
@@ -1121,7 +1121,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_pop_removes_and_returns_key_w_value_from_dictionary
+test_pop_removes_and_returns_key_w_value_from_a_dictionary
 *********************************************************************************
 
 red: make it fail
@@ -1131,7 +1131,7 @@ I add a test for the next :ref:`method<functions>`
 
 .. code-block:: python
 
-  def test_keys_returns_keys_of_dictionary(self):
+  def test_keys_of_a_dictionary(self):
       ...
 
   def test_pop(self):
@@ -1231,7 +1231,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_pop_removes_and_returns_key_w_value_from_dictionary(self):
+    def test_pop_removes_and_returns_key_w_value_from_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(a_dictionary.pop('key'), 'value')
         self.assertEqual(a_dictionary, {})
@@ -1253,7 +1253,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_popitem_removes_and_returns_last_key_value_pair_from_dictionary
+test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary
 *********************************************************************************
 
 red: make it fail
@@ -1263,7 +1263,7 @@ I add a failing test
 
 .. code-block:: python
 
-  def test_pop_removes_and_returns_key_w_value_from_dictionary(self):
+  def test_pop_removes_and_returns_key_w_value_from_a_dictionary(self):
       ...
 
   def test_pop_item(self):
@@ -1427,7 +1427,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_popitem_removes_and_returns_last_key_value_pair_from_dictionary(self):
+    def test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary(self):
         a_dictionary = {
             'key1': 'value1',
             'key2': 'value2'
@@ -1580,7 +1580,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_update_makes_a_dictionary_bigger
+test_update_a_dictionary
 *********************************************************************************
 
 red: make it fail
@@ -1718,7 +1718,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_update_makes_a_dictionary_bigger(self):
+    def test_update_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertIsNone(a_dictionary.update({'key1': 'value1'}))
         self.assertIsNone(a_dictionary.update(another_key='another value'))
@@ -1743,7 +1743,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_values_returns_all_values_of_a_dictionary
+test_values_of_a_dictionary
 *********************************************************************************
 
 red: make it fail
@@ -1753,7 +1753,7 @@ I add a test for the last :ref:`method<functions>`
 
 .. code-block:: python
 
-  def test_update_makes_a_dictionary_bigger(self):
+  def test_update_a_dictionary(self):
         ...
 
   def test_values(self):
@@ -1766,7 +1766,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: dict_values(['value']) is not None
 
-this is like :ref:`test_items_returns_keys_and_values_of_dictionary` and  :ref:`test_keys_returns_keys_of_dictionary`
+this is like :ref:`test_items_returns_keys_and_values_of_a_dictionary` and  :ref:`test_keys_of_a_dictionary`
 
 green: make it pass
 #################################################################################
@@ -1826,7 +1826,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_values_returns_all_values_of_a_dictionary(self):
+    def test_values_of_a_dictionary(self):
         a_dictionary = {
             'a_key': 'a value',
             'another_key': 'another value',
@@ -1853,7 +1853,7 @@ I add a test
 
 .. code-block:: python
 
-    def test_values_returns_all_values_of_a_dictionary(self):
+    def test_values_of_a_dictionary(self):
         ...
 
     def test_key_error(self):
@@ -1906,7 +1906,7 @@ refactor: make it better
 
   the test passes
 
-* I know from :ref:`test_popitem_removes_and_returns_last_key_value_pair_from_dictionary` that I get `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_  when I call the :ref:`method<functions>` on an empty `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+* I know from :ref:`test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary` that I get `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_  when I call the :ref:`method<functions>` on an empty `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
   .. code-block::
 
@@ -1929,7 +1929,7 @@ refactor: make it better
     with self.assertRaises(KeyError):
         {}.popitem()
 
-* I also get `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ when I call :ref:`pop <test_pop_removes_and_returns_key_w_value_from_dictionary>` with a key that does not exist in the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+* I also get `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ when I call :ref:`pop <test_pop_removes_and_returns_key_w_value_from_a_dictionary>` with a key that does not exist in the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
   .. code-block:: python
 

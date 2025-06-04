@@ -107,20 +107,20 @@ class TestDictionaries(unittest.TestCase):
             {0: None, 1: None, 2: None, 3: None}
         )
 
-    def test_get_value_of_key_from_dictionary(self):
+    def test_get_value_of_key_from_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(a_dictionary.get('key'), 'value')
         self.assertIsNone(a_dictionary.get(0))
 
-    def test_items_returns_keys_and_values_of_dictionary(self):
+    def test_items_returns_keys_and_values_of_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(list(a_dictionary.items()), [('key', 'value')])
 
-    def test_keys_returns_keys_of_dictionary(self):
+    def test_keys_of_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(list(a_dictionary.keys()), ['key'])
 
-    def test_pop_removes_and_returns_key_w_value_from_dictionary(self):
+    def test_pop_removes_and_returns_key_w_value_from_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(a_dictionary.pop('key'), 'value')
         self.assertEqual(a_dictionary, {})
@@ -128,7 +128,7 @@ class TestDictionaries(unittest.TestCase):
         with self.assertRaises(KeyError):
             a_dictionary.pop(0)
 
-    def test_popitem_removes_and_returns_last_key_value_pair_from_dictionary(self):
+    def test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary(self):
         a_dictionary = {
             'key1': 'value1',
             'key2': 'value2'
@@ -160,7 +160,7 @@ class TestDictionaries(unittest.TestCase):
             a_dictionary.setdefault('key'), 'value'
         )
 
-    def test_update_makes_a_dictionary_bigger(self):
+    def test_update_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertIsNone(a_dictionary.update({'key1': 'value1'}))
         self.assertIsNone(a_dictionary.update(another_key='another value'))
@@ -174,7 +174,7 @@ class TestDictionaries(unittest.TestCase):
             }
         )
 
-    def test_values_returns_all_values_of_a_dictionary(self):
+    def test_values_of_a_dictionary(self):
         a_dictionary = {
             'a_key': 'a value',
             'another_key': 'another value',
