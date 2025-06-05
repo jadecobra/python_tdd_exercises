@@ -10,7 +10,7 @@ class TestLists(unittest.TestCase):
         self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 3)))
 
     def test_make_a_list_w_an_iterable(self):
-        self.assertEqual(list(range(4)), [0, 1, 2, 3])
+        self.assertEqual(list(range(0, 4)), [0, 1, 2, 3])
 
     def test_attributes_and_methods_of_lists(self):
         self.maxDiff = None
@@ -127,7 +127,7 @@ class TestLists(unittest.TestCase):
         self.assertIsNone(a_list.reverse())
         self.assertEqual(a_list, [3, 2, 1, 0])
 
-    def test_sort_a_list(self):
+    def test_sort(self):
         a_list = [0, 2, 1, 2, 3, 2]
         self.assertIsNone(a_list.sort())
         self.assertEqual(a_list, [0, 1, 2, 2, 2, 3])
@@ -157,7 +157,8 @@ class TestLists(unittest.TestCase):
             a_list[4]
         with self.assertRaises(IndexError):
             a_list[-5]
-
+        with self.assertRaises(IndexError):
+            [].pop()
 
 
 # Exceptions Encountered
