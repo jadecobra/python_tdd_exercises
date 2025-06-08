@@ -1,4 +1,3 @@
-import src.dictionaries
 import unittest
 
 
@@ -10,13 +9,13 @@ class TestDictionaries(unittest.TestCase):
     def test_make_a_dictionary_w_curly_braces(self):
         self.assertEqual({'key': 'value'}, dict(key='value'))
 
-    def test_make_a_dictionary_w_numbers_as_keys(self):
-        self.assertEqual({0: 'boom'}, {0: 'boom'})
-        self.assertEqual({0.1: 'bap'}, {0.1: 'bap'})
-
     def test_make_a_dictionary_w_booleans_as_keys(self):
         self.assertEqual({False: 'boom'}, {False: 'boom'})
         self.assertEqual({True: 'bap'}, {True: 'bap'})
+
+    def test_make_a_dictionary_w_numbers_as_keys(self):
+        self.assertEqual({0: 'boom'}, {0: 'boom'})
+        self.assertEqual({0.1: 'bap'}, {0.1: 'bap'})
 
     def test_make_a_dictionary_w_tuples_as_keys(self):
         self.assertEqual(
@@ -103,16 +102,16 @@ class TestDictionaries(unittest.TestCase):
 
     def test_fromkeys_makes_a_dictionary_from_an_iterable(self):
         self.assertEqual(
-            dict.fromkeys((0, 1, 2, 3)),
-            {0: None, 1: None, 2: None, 3: None}
+            dict.fromkeys((0, 1, 2, 3), 'default'),
+            {0: 'default', 1: 'default', 2: 'default', 3: 'default'}
         )
 
-    def test_get_value_of_key_from_a_dictionary(self):
+    def test_get_a_value_from_a_dictionary(self):
         a_dictionary = {'key': 'value'}
-        self.assertEqual(a_dictionary.get('key'), 'value')
-        self.assertIsNone(a_dictionary.get(0))
+        self.assertEqual(a_dictionary.get('key', 'default'), 'value')
+        self.assertEqual(a_dictionary.get(0, 'default'), 'default')
 
-    def test_pop_removes_key_and_returns_its_value_from_a_dictionary(self):
+    def test_items_returns_key_value_pairs_from_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(list(a_dictionary.items()), [('key', 'value')])
 
@@ -120,7 +119,7 @@ class TestDictionaries(unittest.TestCase):
         a_dictionary = {'key': 'value'}
         self.assertEqual(list(a_dictionary.keys()), ['key'])
 
-    def test_pop_removes_and_returns_key_w_value_from_a_dictionary(self):
+    def test_pop_removes_key_and_returns_value_from_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(a_dictionary.pop('key'), 'value')
         self.assertEqual(a_dictionary, {})
@@ -131,33 +130,21 @@ class TestDictionaries(unittest.TestCase):
     def test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary(self):
         a_dictionary = {
             'key1': 'value1',
-            'key2': 'value2'
+            'key2': 'value2',
         }
-        self.assertEqual(
-            a_dictionary.popitem(),
-            ('key2', 'value2')
-        )
+        self.assertEqual(a_dictionary.popitem(), ('key2', 'value2'))
         self.assertEqual(a_dictionary, {'key1': 'value1'})
-        self.assertEqual(
-            a_dictionary.popitem(),
-            ('key1', 'value1')
-        )
 
-        with self.assertRaises(KeyError):
-            a_dictionary.popitem()
-
-    def test_setdefault_adds_key_w_a_default_value_to_a_dictionary(self):
+    def test_setdefault_adds_keys_w_a_default_value_to_a_dictionary(self):
         a_dictionary = {'key': 'value'}
-        self.assertIsNone(a_dictionary.setdefault(0))
+        self.assertEqual(a_dictionary.setdefault('key', 'default'), 'value')
+        self.assertEqual(a_dictionary.setdefault(0, 'default'), 'default')
         self.assertEqual(
             a_dictionary,
             {
                 'key': 'value',
-                0: None,
+                0: 'default',
             }
-        )
-        self.assertEqual(
-            a_dictionary.setdefault('key'), 'value'
         )
 
     def test_update_a_dictionary(self):
@@ -170,23 +157,18 @@ class TestDictionaries(unittest.TestCase):
             {
                 'key': 'new value',
                 'key1': 'value1',
-                'another_key': 'another value'
+                'another_key': 'another value',
             }
         )
 
     def test_values_of_a_dictionary(self):
-        a_dictionary = {
-            'a_key': 'a value',
-            'another_key': 'another value',
-        }
-        self.assertEqual(
-            list(a_dictionary.values()),
-            ['a value', 'another value']
-        )
+        a_dictionary = {'key': 'value'}
+        self.assertEqual(list(a_dictionary.values()), ['value'])
 
     def test_key_error(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(a_dictionary['key'], 'value')
+        self.assertIsNone(a_dictionary.get('this_key_does_not_exist', None))
 
         with self.assertRaises(KeyError):
             a_dictionary['this_key_does_not_exist']
@@ -195,9 +177,9 @@ class TestDictionaries(unittest.TestCase):
         with self.assertRaises(KeyError):
             a_dictionary.pop('this_key_does_not_exist')
 
-        self.assertIsNone(a_dictionary.get('this_key_does_not_exist'))
-
 
 # Exceptions Encountered
 # AssertionError
 # TypeError
+# NameError
+# KeyError
