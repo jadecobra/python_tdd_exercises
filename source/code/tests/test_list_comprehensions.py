@@ -2,8 +2,9 @@ import random
 import src.list_comprehensions
 import unittest
 
-def is_even(item):
-    return item % 2 == 0
+
+def is_even(number):
+    return number % 2 == 0
 
 
 class TestListComprehensions(unittest.TestCase):
@@ -19,7 +20,7 @@ class TestListComprehensions(unittest.TestCase):
         self.assertEqual(a_list, list(self.iterable))
         self.assertEqual(
             src.list_comprehensions.for_loop(self.iterable),
-            a_list
+            list(self.iterable)
         )
 
     def test_make_a_list_w_list_comprehensions(self):
