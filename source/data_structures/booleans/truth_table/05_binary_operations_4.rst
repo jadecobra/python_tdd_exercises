@@ -238,7 +238,7 @@ refactor: make it better
 
   the test passes
 
-* I want to factor out "not_" since it happens 2 times, I rewrite the statement in terms of not_
+* I want to factor out "not_" since it happens 2 times, I rewrite the statement in terms of it
 
   .. code-block:: python
 
