@@ -127,7 +127,7 @@ refactor: make it better
 
   the test is green again
 
-* the :ref:`function<functions>` returns :ref:`True<test_what_is_true>` when ``q`` is :ref:`False<test_what_is_false>`, I write another `return statement`_
+* this :ref:`function<functions>` returns :ref:`True<test_what_is_true>` in the two cases where ``q`` is :ref:`False<test_what_is_false>`, I add a `return statement`_
 
   .. code-block:: python
 
@@ -139,7 +139,7 @@ refactor: make it better
             return True
         return False
 
-  the terminal still shows green. I remove the other statements
+  the test is still green. I remove the other statements
 
   .. code-block:: python
 
@@ -165,7 +165,7 @@ I add another test
     def test_logical_nor(self):
         self.assertFalse(src.truth_table.logical_nor(True, True))
 
-and the terminal shows :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 .. code-block:: python
   :force:
@@ -228,7 +228,7 @@ refactor: make it better
 
     AssertionError: False is not true
 
-  I add a `return statement`_
+  this is the only case that returns :ref:`True<test_what_is_true>`, I add a `return statement`_ for it
 
   .. code-block:: python
 
@@ -378,7 +378,7 @@ refactor: make it better
 
   and the test is still green
 
-* this test expects :ref:`True<test_what_is_true>` in 2 of the cases and :ref:`False<test_what_is_false>`  in the other 2. I use or_ to put the 2 statements that return :ref:`False<test_what_is_false>` together
+* I use or_ to put the 2 statements that return :ref:`False<test_what_is_false>` together
 
   .. code-block:: python
 
@@ -391,7 +391,7 @@ refactor: make it better
             return False
         return True
 
-  still green. I remove the other `if statements`_ then use not_ to write the `return statement`_
+  still green. I remove the other `if statements`_ then write a new `return statement`_
 
   .. code-block:: python
 
@@ -401,7 +401,7 @@ refactor: make it better
             return False
         return True
 
-  the test is still green. I multiply not_ by every symbol in the parentheses
+  the test is still green. I "multiply" not_ by every symbol in the parentheses
 
   .. code-block:: python
 
@@ -423,7 +423,7 @@ refactor: make it better
         return (not not p or not q) and (not p or not not q)
         return not ((not p and q) or (p and not q))
 
-  the test is green again. I remove not_ not_
+  the test is green again. I remove not_ not_ from both parentheses
 
   .. code-block:: python
 
@@ -431,22 +431,24 @@ refactor: make it better
         return (p or not q) and (not p or q)
         return not ((not p and q) or (p and not q))
 
-  the terminal shows green. I remove the other statements
+  the terminal shows green. I remove the other line
 
   .. code-block:: python
 
     def logical_equality(p, q):
         return (p or not q) and (not p or q)
 
-  and all the tests are still passing.
+  all the tests are still passing.
 
-* All of this could have been done with the ``==`` symbol, since the 2 cases where :ref:`True<test_what_is_true>` is the result are cases where ``p`` and ``q`` are the same
+* The 2 cases where :ref:`True<test_what_is_true>` is the result are cases where ``p`` and ``q`` are the same, which means I can write a simpler `return statement`_
 
   .. code-block:: python
 
     def logical_equality(p, q):
         return p == q
         return (p or not q) and (not p or q)
+
+  the test is still green
 
 ----
 
@@ -542,7 +544,7 @@ refactor: make it better
 
   the test is still passing
 
-* there is only one case where this one returns :ref:`False<test_what_is_false>`, I add a `return statement`
+* there is only one case where this :ref:`function<functions>` returns :ref:`False<test_what_is_false>`, I add a `return statement`_ for it
 
   .. code-block:: python
 
@@ -574,7 +576,7 @@ refactor: make it better
         return not p or not not q
         return not (p and not q)
 
-  the test is passing again. I remove not_ not_
+  the test is green again. I remove not_ not_
 
   .. code-block:: python
 
@@ -595,9 +597,9 @@ refactor: make it better
 review
 *********************************************************************************
 
-Binary Operations take 2 inputs, each of the inputs could be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``p`` and the second ``q``, the tests show that
+Binary Operations take 2 inputs, each of the inputs can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``p`` and the second one ``q``, the tests show that
 
-* :ref:`Logical or Material Implication  <test_material_implication>` returns ``not p or q``
+* :ref:`Material Implication  <test_material_implication>` returns ``not p or q``
 * :ref:`Logical Equality <test_logical_equality>` returns ``p == q``
 * :ref:`Logical NOR <test_logical_nor>` returns ``not (p or q)``
 * :ref:`Negate Second <test_negate_second>` always returns ``not q``
