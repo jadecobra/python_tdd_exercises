@@ -536,7 +536,7 @@ refactor: make it better
             return False
         return True
 
-  I "multiply" not_ by the symbols in the parentheses
+  I "multiply not_" by the symbols in the parentheses
 
   .. code-block:: python
 

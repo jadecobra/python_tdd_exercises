@@ -401,7 +401,7 @@ refactor: make it better
             return False
         return True
 
-  the test is still green. I "multiply" not_ by every symbol in the parentheses
+  the test is still green. I "multiply not_" by every symbol in the parentheses
 
   .. code-block:: python
 
@@ -554,7 +554,7 @@ refactor: make it better
             return False
         return True
 
-  the test is still green, I "multiply" not_ by the symbols in the parentheses
+  the test is still green, I "multiply not_" by the symbols in the parentheses
 
   .. code-block:: python
 
