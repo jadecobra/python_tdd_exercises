@@ -114,7 +114,7 @@ refactor: make it better
 
     AssertionError: False is not true
 
-  I add another `if statement`_
+  I add an `if statement`_ for the case
 
   .. code-block:: python
 
@@ -376,9 +376,9 @@ refactor: make it better
         self.assertFalse(src.truth_table.logical_equality(False, True))
         self.assertTrue(src.truth_table.logical_equality(False, False))
 
-  and the test is still green
+  the test is still green
 
-* I use or_ to put the 2 statements that return :ref:`False<test_what_is_false>` together
+* I use "or_" to put the 2 statements that return :ref:`False<test_what_is_false>` together
 
   .. code-block:: python
 
@@ -415,7 +415,7 @@ refactor: make it better
 
     SyntaxError: invalid syntax
 
-  I change not_ and_ to or_ in both parentheses and not_ or_ to and_ in between them
+  I change "not_ and_" to "or_" in both parentheses and "not_ or_" to "and_" in between them
 
   .. code-block:: python
 
@@ -423,7 +423,7 @@ refactor: make it better
         return (not not p or not q) and (not p or not not q)
         return not ((not p and q) or (p and not q))
 
-  the test is green again. I remove not_ not_ from both parentheses
+  the test is green again. I remove "not_ not_" from both parentheses
 
   .. code-block:: python
 
@@ -568,7 +568,7 @@ refactor: make it better
 
     SyntaxError: invalid syntax
 
-  I change not_ and_ to or_
+  I change "not_ and_" to or_
 
   .. code-block:: python
 
@@ -576,7 +576,7 @@ refactor: make it better
         return not p or not not q
         return not (p and not q)
 
-  the test is green again. I remove not_ not_
+  the test is green again. I remove "not_ not_"
 
   .. code-block:: python
 

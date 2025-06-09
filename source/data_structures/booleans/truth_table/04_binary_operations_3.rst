@@ -550,7 +550,7 @@ refactor: make it better
 
     SyntaxError: invalid syntax
 
-  I change not_ and_ to or_ to be correct
+  I change "not_ and_" to "or_" to be correct
 
   .. code-block:: python
 
@@ -558,7 +558,7 @@ refactor: make it better
         return not not p or not q
         return not (not p and q)
 
-  back to green. I remove not_ not_ since it cancels out, the negation of a negation is the original thing
+  back to green. I remove "not_ not_" since it cancels out, the negation of a negation is the original thing
 
   .. code-block:: python
 

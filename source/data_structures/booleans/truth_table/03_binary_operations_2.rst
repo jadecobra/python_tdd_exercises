@@ -570,7 +570,7 @@ refactor: make it better
     # TypeError
     # SyntaxError
 
-  then I fix the line by changing not_ and_ to or_
+  then I fix the line by changing "not_ and_" to or_
 
   .. code-block:: python
 
@@ -578,7 +578,7 @@ refactor: make it better
         return not not p or not not q:
         return not (not p and not q):
 
-  the test passes. not_ not_ cancels out, so I remove it from the statement
+  the test passes. "not_ not_" cancels out, so I remove it from the statement
 
   .. code-block:: python
 

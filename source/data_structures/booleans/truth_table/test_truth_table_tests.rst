@@ -944,7 +944,7 @@ Since all the tests are passing, I can refactor the :ref:`functions<functions>` 
 
     AssertionError: True is not false
 
-  Oops! It looks like I cannot do that since this statement is the opposite of the combination of the 2 `if statements`_, I change or_ to and_
+  Oops! It looks like I cannot do that since this statement is the opposite of the combination of the 2 `if statements`_, I change "or_" to and_
 
   .. code-block:: python
 
@@ -1085,14 +1085,14 @@ Since all the tests are passing, I can refactor the :ref:`functions<functions>` 
 
     AssertionError: False is not true
 
-  I change and_ to or_
+  I change "and_" to or_
 
   .. code-block:: python
 
     def material_implication(x, y):
         return not x or y
 
-  the test is green again, I will use or_ when I see ``!=``
+  the test is green again, I will use "or_" when I see ``!=``
 
 * I use this with :ref:`logical_nor<test_logical_nor>`
 
@@ -1206,8 +1206,8 @@ I ran tests for the operations of the `Truth Table`_ involving booleans_ which c
 
 As a reminder
 
-* not_ or_ is and_
-* not_ and_ is or_
+* "not_ or_" is and_
+* "not_ and_" is or_
 * not_ :ref:`False<test_what_is_false>` is :ref:`True<test_what_is_true>`
 * not_ :ref:`True<test_what_is_true>` is :ref:`False<test_what_is_false>`
 * :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`
