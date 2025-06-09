@@ -238,7 +238,7 @@ refactor: make it better
 
   the test passes
 
-* I want to factor out not_ since it happens 2 times, I rewrite the statement in terms of not_
+* I want to factor out "not_" since it happens 2 times, I rewrite the statement in terms of not_
 
   .. code-block:: python
 
@@ -415,7 +415,7 @@ refactor: make it better
 
     SyntaxError: invalid syntax
 
-  I change "not_ and_" to "or_" in both parentheses and "not_" to "and_" in between them
+  I change "not_ and_" to "or_" in both parentheses and "not_ or_" to "and_" in between them
 
   .. code-block:: python
 

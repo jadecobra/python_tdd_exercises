@@ -366,7 +366,7 @@ refactor: make it better
 
     AssertionError: True is not false
 
-  the expectation of the test is that when :ref:`True<test_what_is_true>` is given, the result is :ref:`False<test_what_is_false>` and when :ref:`False<test_what_is_false>` is given, the result is :ref:`True<test_what_is_true>`, I can make that happen with the not_ keyword
+  the expectation of the test is that when :ref:`True<test_what_is_true>` is given, the result is :ref:`False<test_what_is_false>` and when :ref:`False<test_what_is_false>` is given, the result is :ref:`True<test_what_is_true>`, I can make that happen with the "not_" keyword
 
   .. code-block:: python
 

@@ -793,7 +793,7 @@ green: make it pass
 
     AssertionError: True is not false
 
-  ah, it expects the opposite. I add not_ to the `return statement`_
+  ah, it expects the opposite. I add "not_" to the `return statement`_
 
   .. code-block:: python
 
@@ -1151,7 +1151,7 @@ Since all the tests are passing, I can refactor the :ref:`functions<functions>` 
         return (not x or not y) and (x or y)
         return (x, y) != (True, True) and (x, y) != (False, False)
 
-  still green, I can factor out not_ from the first part of the statement
+  still green, I can factor out "not_" from the first part of the statement
 
   .. code-block:: python
 
