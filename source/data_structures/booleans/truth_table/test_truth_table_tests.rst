@@ -1085,7 +1085,7 @@ Since all the tests are passing, I can refactor the :ref:`functions<functions>` 
 
     AssertionError: False is not true
 
-  I change "and_" to or_
+  I change "and_" to
 
   .. code-block:: python
 
@@ -1206,8 +1206,8 @@ I ran tests for the operations of the `Truth Table`_ involving booleans_ which c
 
 As a reminder
 
-* "not_ or_" is and_
-* "not_ and_" is or_
+* "not_ or_" is "and_"
+* "not_ and_" is "or_"
 * not_ :ref:`False<test_what_is_false>` is :ref:`True<test_what_is_true>`
 * not_ :ref:`True<test_what_is_true>` is :ref:`False<test_what_is_false>`
 * :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`

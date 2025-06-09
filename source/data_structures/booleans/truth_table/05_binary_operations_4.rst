@@ -415,7 +415,7 @@ refactor: make it better
 
     SyntaxError: invalid syntax
 
-  I change "not_ and_" to "or_" in both parentheses and "not_ or_" to "and_" in between them
+  I change "not_ and_" to "or_" in both parentheses and "not_" to "and_" in between them
 
   .. code-block:: python
 
@@ -568,7 +568,7 @@ refactor: make it better
 
     SyntaxError: invalid syntax
 
-  I change "not_ and_" to or_
+  I change "not_ and_" to "or_"
 
   .. code-block:: python
 

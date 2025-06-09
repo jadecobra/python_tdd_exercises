@@ -570,7 +570,7 @@ refactor: make it better
     # TypeError
     # SyntaxError
 
-  then I fix the line by changing "not_ and_" to or_
+  then I fix the line by changing "not_ and_" to "or_"
 
   .. code-block:: python
 
